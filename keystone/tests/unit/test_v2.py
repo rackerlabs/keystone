@@ -1434,7 +1434,7 @@ class TestFernetTokenProviderV2(RestfulTestCase):
         return {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex,
                 'description': uuid.uuid4().hex,
-                'domain_id': 'default',
+                'domain_id': CONF.identity.default_domain_id,
                 'enabled': True}
 
     def config_overrides(self):

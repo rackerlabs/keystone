@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    This changes multiple fixtures within default_fixtures to use valid uuids
+    for their 'id' values. Also changed load_fixtures to build the fixtures
+    based on the default_fixtures' 'name' value, rather than 'id'. Replaced
+    many instances of invalid hard-coded ids to use random uuids or
+    default_fixture ids.
