@@ -24,6 +24,12 @@ def _prop(name):
 class RequestContext(oslo_context.RequestContext):
 
     def __init__(self, **kwargs):
+        self.user_id = kwargs.pop('user_id ', None)
+        self.project_id = kwargs.pop('project_id ', None)
+        self.domain_id = kwargs.pop('domain_id ', None)
+        self.user_domain_id = kwargs.pop('user_domain_id ', None)
+        self.project_domain_id = kwargs.pop('project_domain_id ', None)
+
         self.project_name = kwargs.pop('project_name', None)
         self.domain_name = kwargs.pop('domain_name', None)
         self.username = kwargs.pop('username', None)
@@ -47,8 +53,7 @@ class RequestContext(oslo_context.RequestContext):
         kwargs.setdefault('request_id', environ.get('openstack.request_id'))
         return super(RequestContext, cls).from_environ(environ, **kwargs)
 
-    user_id = _prop('user')
-    project_id = _prop('tenant')
-    domain_id = _prop('domain')
-    user_domain_id = _prop('user_domain')
-    project_domain_id = _prop('project_domain')
+    def _gone(self, *args, **kwargs):
+        raise Exception('sorry this is not gone')
+
+    user = tenant = domain = user_domain = project_domain = _gone
