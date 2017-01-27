@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_42328660",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-27T22:37:34Z",
+      "side": 1,
+      "message": "is tools/ even packaged in keystone rpms and debs?? it\u0027s supposed to be developer tools",
+      "range": {
+        "startLine": 84,
+        "startChar": 37,
+        "endLine": 84,
+        "endChar": 42
+      },
+      "revId": "72ec9022d07a7c2006287a2e68dccc29b6a8283b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_4280c6c0",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-27T22:37:34Z",
+      "side": 1,
+      "message": "how is this run in an automated fashion?",
+      "range": {
+        "startLine": 84,
+        "startChar": 4,
+        "endLine": 84,
+        "endChar": 25
+      },
+      "revId": "72ec9022d07a7c2006287a2e68dccc29b6a8283b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
