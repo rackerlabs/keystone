@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_423e068d",
+        "filename": "keystone/common/context.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T22:20:24Z",
+      "side": 0,
+      "message": "We can probably remove this. It was to make sure nothing (at least that was hit during tests) was using these things.",
+      "revId": "169e66ab8800148c4052a46d2cb321af33e44f77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
