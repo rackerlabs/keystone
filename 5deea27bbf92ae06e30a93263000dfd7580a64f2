@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_a473417f",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-27T17:57:31Z",
+      "side": 1,
+      "message": "when the user is created, or upon administrative reset.",
+      "range": {
+        "startLine": 137,
+        "startChar": 61,
+        "endLine": 137,
+        "endChar": 75
+      },
+      "revId": "5deea27bbf92ae06e30a93263000dfd7580a64f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_e4c9c979",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-27T17:57:31Z",
+      "side": 1,
+      "message": "s/check/requirement",
+      "range": {
+        "startLine": 140,
+        "startChar": 25,
+        "endLine": 140,
+        "endChar": 30
+      },
+      "revId": "5deea27bbf92ae06e30a93263000dfd7580a64f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_e4f2a9d1",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-27T17:57:31Z",
+      "side": 1,
+      "message": "Replace this whole sentence with:\n\n\"Before accessing any services, affected users will have to change their password.",
+      "range": {
+        "startLine": 138,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 9
+      },
+      "revId": "5deea27bbf92ae06e30a93263000dfd7580a64f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_64831905",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-27T17:57:31Z",
+      "side": 1,
+      "message": "s/ attribute `ignore_password_expiry`/  attribute `ignore_password_expiry` to `True` for the desired user via the update user API.",
+      "range": {
+        "startLine": 141,
+        "startChar": 13,
+        "endLine": 141,
+        "endChar": 48
+      },
+      "revId": "5deea27bbf92ae06e30a93263000dfd7580a64f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_21190389",
+        "filename": "releasenotes/notes/pci-force-password-change-after-reset-ca22c216ec26cc9b.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-27T17:57:31Z",
+      "side": 1,
+      "message": "rename this to bug-1645487-ca22c216ec26cc9b.yaml",
+      "revId": "5deea27bbf92ae06e30a93263000dfd7580a64f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_640a3923",
+        "filename": "releasenotes/notes/pci-force-password-change-after-reset-ca22c216ec26cc9b.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-27T17:57:31Z",
+      "side": 1,
+      "message": "s/in ``keystone.conf``/ to ``True``\n\ni think the square brackets are enough to indicate keystone.conf needs to be changed, we\u0027ve been doing that in many places",
+      "range": {
+        "startLine": 8,
+        "startChar": 61,
+        "endLine": 9,
+        "endChar": 21
+      },
+      "revId": "5deea27bbf92ae06e30a93263000dfd7580a64f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
