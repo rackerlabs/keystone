@@ -16,6 +16,24 @@
       "revId": "169e66ab8800148c4052a46d2cb321af33e44f77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_42c366ed",
+        "filename": "keystone/common/context.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T22:40:55Z",
+      "side": 0,
+      "message": "Actually we can. olso.context is doing this for us: http://git.openstack.org/cgit/openstack/oslo.context/tree/oslo_context/context.py#n253",
+      "parentUuid": "3a461143_423e068d",
+      "revId": "169e66ab8800148c4052a46d2cb321af33e44f77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
