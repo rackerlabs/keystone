@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_bdba96df",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T00:13:22Z",
+      "side": 1,
+      "message": "Changed this so that passwords expire during create/update.",
+      "parentUuid": "3a461143_799be972",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_f6a8c6dd",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 5
@@ -78,6 +96,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_7dc90e78",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T00:13:22Z",
+      "side": 1,
+      "message": "Reworded this in the latest patch.",
+      "parentUuid": "3a461143_b902b107",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_3908812d",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 5
@@ -89,6 +125,24 @@
       "writtenOn": "2017-01-26T21:36:28Z",
       "side": 1,
       "message": "I thought previous iterations has wording that operators need to be careful enabling this, with a strong emphasis on coordinating it with users.",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_3dcf8680",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T00:13:22Z",
+      "side": 1,
+      "message": "Steve over write that text based on feedback from Dolph.",
+      "parentUuid": "3a461143_3908812d",
       "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -152,6 +206,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_bd88d623",
+        "filename": "keystone/identity/backends/resource_options.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T00:13:22Z",
+      "side": 1,
+      "message": "Agree, left this as a number.",
+      "parentUuid": "3a461143_79c0492b",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_798cc97f",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 5
@@ -181,6 +253,24 @@
       "side": 1,
       "message": "++",
       "parentUuid": "3a461143_798cc97f",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_fd825eff",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T00:13:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_bcec5f2a",
       "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -292,6 +382,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_3d7dc61c",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T00:13:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_3c36afe7",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_fce0a7fc",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 5
@@ -326,6 +434,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_3dcb0655",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 829,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T00:13:22Z",
+      "side": 1,
+      "message": "The logic has changed now where I\u0027m setting the password to expire on create/update user. No longer during auth.",
+      "parentUuid": "3a461143_bcb9bfcd",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_bc2e1ff8",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 5
@@ -337,6 +463,24 @@
       "writtenOn": "2017-01-26T21:36:28Z",
       "side": 1,
       "message": "We don\u0027t need to use freezegun here? Is this because we are interacting with the identity API directly and not going through the token provider, which will compare the issued_at time of the token to the revocation list?",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_5dc6124a",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 881,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T00:13:22Z",
+      "side": 1,
+      "message": "Yes, correct.",
+      "parentUuid": "3a461143_bc2e1ff8",
       "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -360,6 +504,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_7ddcae12",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1004,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T00:13:22Z",
+      "side": 1,
+      "message": "Yes, however because we\u0027ve changed the business logic, this no longer applies.",
+      "parentUuid": "3a461143_3c506f5e",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_bcbfff5e",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 5
@@ -371,6 +533,24 @@
       "writtenOn": "2017-01-26T21:36:28Z",
       "side": 1,
       "message": "This fails because `whatever` isn\u0027t registered as an option, right?",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_dd07627f",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1815,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T00:13:22Z",
+      "side": 1,
+      "message": "Yes, and we don\u0027t allow additional attributes in options.",
+      "parentUuid": "3a461143_bcbfff5e",
       "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

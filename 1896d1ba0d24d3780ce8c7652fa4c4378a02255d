@@ -34,6 +34,24 @@
       "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_dda4c2ba",
+        "filename": "keystone/identity/backends/resource_options.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T00:13:22Z",
+      "side": 0,
+      "message": "Made this a constant in the latest patch.",
+      "parentUuid": "3a461143_7cb5972f",
+      "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
