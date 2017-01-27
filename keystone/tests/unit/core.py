@@ -493,8 +493,8 @@ class BaseTestCase(testtools.TestCase):
                                                  side_effect=UnexpectedExit))
         self.useFixture(log_fixture.get_logging_handle_error_fixture())
 
-        warnings.filterwarnings('error', category=DeprecationWarning,
-                                module='^keystone\\.')
+        #warnings.filterwarnings('error', category=DeprecationWarning,
+        #                       module='^keystone\\.')
         warnings.simplefilter('error', exc.SAWarning)
         self.addCleanup(warnings.resetwarnings)
         # Ensure we have an empty threadlocal context at the start of each
