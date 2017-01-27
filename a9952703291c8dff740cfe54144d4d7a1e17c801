@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_431aa16f",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-27T12:41:10Z",
+      "side": 1,
+      "message": "this gives an idea of ownership (not association), which is not accurate for groups/users relationship with projects/domains.",
+      "range": {
+        "startLine": 294,
+        "startChar": 70,
+        "endLine": 294,
+        "endChar": 80
+      },
+      "revId": "a9952703291c8dff740cfe54144d4d7a1e17c801",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
