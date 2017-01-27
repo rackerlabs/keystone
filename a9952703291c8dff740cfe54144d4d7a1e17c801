@@ -22,6 +22,23 @@
       "revId": "a9952703291c8dff740cfe54144d4d7a1e17c801",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_997dd870",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:31:59Z",
+      "side": 1,
+      "message": "I\u0027m not 100% sure what this is saying. Users can\u0027t be in multiple domains, but they can have authorization to use multiple domains.",
+      "revId": "a9952703291c8dff740cfe54144d4d7a1e17c801",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
