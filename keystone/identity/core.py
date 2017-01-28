@@ -903,6 +903,57 @@ class Manager(manager.Manager):
                 # backward compatible
                 pass
 
+    def _validate_federated_objects(self, fed_dict):
+        # Use existing methods in the federation backend to check for us if
+        # the idp and protocol is valid. If not, an exception Not Found error
+        # will be raised.
+        for fed_obj in fed_dict:
+            self.federation_api.get_idp(fed_obj["idp_id"])
+            for protocols in fed_obj['protocols']:
+                self.federation_api.get_protocol(fed_obj["idp_id"],
+                                                 protocols['protocol_id'])
+
+    def _create_federated_objects(self, user_ref, fed_dict):
+        # Create the federated objects from the passed in user and federated
+        # dictionary.
+        for fed_obj in fed_dict:
+            for protocols in fed_obj['protocols']:
+                federated_dict = {
+                    'user_id': user_ref['id'],
+                    'idp_id': fed_obj['idp_id'],
+                    'protocol_id': protocols['protocol_id'],
+                    'unique_id': protocols['unique_id'],
+                    'display_name': user_ref['name']
+                }
+                self.shadow_users_api.create_federated_object(
+                    federated_dict)
+
+    def _create_user_with_federated_object(self, user, driver):
+        # If the user did not pass a federated object along inside the user
+        # object then we simply create the user as normal and give it the empty
+        # federated object to display back to the user.
+        if 'federated' not in user:
+            user = driver.create_user(user['id'], user)
+            user['federated'] = []
+            return user
+        # Otherwise, we check that federated is not an empty list and validate
+        # that the idps and protocols are valid and already exist in the
+        # database before using them to create the federated objects and the
+        # associated user.
+        else:
+            user_ref = user.copy()
+            if user_ref['federated']:
+                self._validate_federated_objects(user_ref['federated'])
+                del user['federated']
+                user = driver.create_user(user['id'], user)
+                self._create_federated_objects(user_ref, user_ref['federated'])
+                user['federated'] = user_ref['federated']
+            else:
+                del user['federated']
+                user = driver.create_user(user['id'], user)
+                user['federated'] = []
+            return user
+
     @domains_configured
     @exception_translated('user')
     def create_user(self, user_ref, initiator=None):
@@ -926,7 +977,8 @@ class Manager(manager.Manager):
         # the underlying driver so that it could conform to rules set down by
         # that particular driver type.
         user['id'] = uuid.uuid4().hex
-        ref = driver.create_user(user['id'], user)
+        # Create federated objects that were passed with the user, if any.
+        ref = self._create_user_with_federated_object(user, driver)
         notifications.Audit.created(self._USER, user['id'], initiator)
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
@@ -938,6 +990,10 @@ class Manager(manager.Manager):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(user_id))
         ref = driver.get_user(entity_id)
+        # Get users associated federated objects and put them into the user
+        # dictionary. If there are no currently associated objects at the
+        # moment then it will return an empty list to be displayed to the user.
+        ref['federated'] = self.shadow_users_api.get_federated_objects(user_id)
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
@@ -1042,6 +1098,37 @@ class Manager(manager.Manager):
             if new_ref['domain_id'] != orig_ref['domain_id']:
                 raise exception.ValidationError(_('Cannot change Domain ID'))
 
+    def _update_user_with_federated_objects(self, user, driver, entity_id):
+        # If the user did not pass a federated object along inside the user
+        # object then we simply create the user as normal and add the
+        # currently associated federated objects to user to be added to the
+        # dictionary.
+        if 'federated' not in user:
+            user = driver.update_user(entity_id, user)
+            user['federated'] = self.shadow_users_api.get_federated_objects(
+                user['id'])
+            return user
+        # Otherwise, we check that federated is not an empty list and validate
+        # that the idps and protocols are valid and already exist in the
+        # database before using them. Once they are validated, we proceed with
+        # deleting the current users federated objects to overwrite it with
+        # what the federated object list the user has passed in.
+        else:
+            user_ref = user.copy()
+            if user_ref['federated']:
+                self._validate_federated_objects(user_ref['federated'])
+                self.shadow_users_api.delete_federated_user(entity_id)
+                del user['federated']
+                user = driver.update_user(entity_id, user)
+                self._create_federated_objects(user, user_ref['federated'])
+                user['federated'] = user_ref['federated']
+            else:
+                del user['federated']
+                user = driver.update_user(entity_id, user)
+                user['federated'] = (
+                    self.shadow_users_api.get_federated_objects(user['id']))
+            return user
+
     @domains_configured
     @exception_translated('user')
     def update_user(self, user_id, user_ref, initiator=None):
@@ -1072,7 +1159,7 @@ class Manager(manager.Manager):
         self.get_user_by_name.invalidate(self, old_user_ref['name'],
                                          old_user_ref['domain_id'])
 
-        ref = driver.update_user(entity_id, user)
+        ref = self._update_user_with_federated_objects(user, driver, entity_id)
 
         notifications.Audit.updated(self._USER, user_id, initiator)
 

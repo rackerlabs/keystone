@@ -1,0 +1,5 @@
+---
+upgrade:
+  - Adds helper function to allow the get users to add all associated federated
+    users in the user reponse in the get users API
+    (``GET /v3/users/{user_id}``).
