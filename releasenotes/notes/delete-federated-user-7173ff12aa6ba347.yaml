@@ -1,0 +1,4 @@
+---
+upgrade:
+  - |
+    Adds a method that deletes federated objects associated with a user.

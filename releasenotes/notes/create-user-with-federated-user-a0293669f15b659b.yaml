@@ -1,0 +1,5 @@
+---
+upgrade:
+  - Adds functionality to allow the inclusion of a federated attribute to
+    the user to create associated federated users in the create user API
+    (``POST /v3/users/``).

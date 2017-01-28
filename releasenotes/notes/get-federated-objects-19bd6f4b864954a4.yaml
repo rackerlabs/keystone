@@ -1,0 +1,5 @@
+---
+upgrade:
+  - |
+    Added a method in the shadow_backends that gets all federated objects that
+    are associated with a user.
