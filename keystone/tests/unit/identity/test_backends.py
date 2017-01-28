@@ -64,7 +64,10 @@ class IdentityTests(object):
         #               not be returned by the api
         self.user_sna.pop('password')
         self.user_sna['enabled'] = True
-        self.assertUserDictEqual(self.user_sna, user_ref)
+        self.assertEqual(self.user_sna['name'], user_ref['name'])
+        self.assertEqual(self.user_sna['domain_id'], user_ref['domain_id'])
+        self.assertEqual(self.user_sna['email'], user_ref['email'])
+        self.assertEqual(self.user_sna['id'], user_ref['id'])
 
     def test_authenticate_and_get_roles_no_metadata(self):
         user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
@@ -137,7 +140,11 @@ class IdentityTests(object):
             self.identity_api._get_domain_driver_and_entity_id(ref['id']))
         driver.delete_user(entity_id)
 
-        self.assertDictEqual(ref, self.identity_api.get_user(ref['id']))
+        user_ref = self.identity_api.get_user(ref['id'])
+        self.assertEqual(ref['name'], user_ref['name'])
+        self.assertEqual(ref['domain_id'], user_ref['domain_id'])
+        self.assertEqual(ref['email'], user_ref['email'])
+        self.assertEqual(ref['id'], user_ref['id'])
         self.identity_api.get_user.invalidate(self.identity_api, ref['id'])
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user, ref['id'])
@@ -168,7 +175,10 @@ class IdentityTests(object):
         #               it easier to authenticate in tests, but should
         #               not be returned by the api
         self.user_foo.pop('password')
-        self.assertDictEqual(self.user_foo, user_ref)
+        self.assertEqual(self.user_foo['name'], user_ref['name'])
+        self.assertEqual(self.user_foo['domain_id'], user_ref['domain_id'])
+        self.assertEqual(self.user_foo['email'], user_ref['email'])
+        self.assertEqual(self.user_foo['id'], user_ref['id'])
 
     @unit.skip_if_cache_disabled('identity')
     def test_cache_layer_get_user_by_name(self):

@@ -1,0 +1,5 @@
+---
+upgrade:
+  - Adds helper function to allow user to include federated object attribute to
+    the user to create federated users along with users in create user API
+    (``POST /v3/users/``).
