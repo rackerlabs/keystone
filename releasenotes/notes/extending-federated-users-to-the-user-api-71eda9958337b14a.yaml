@@ -1,0 +1,17 @@
+---
+features:
+  - |
+    `GET /v3/users/{user_id}` returns a federated attribute to show the
+    users currenlty associated federated objects. `POST /v3/users` allows an
+    operator to add a federated attribute containing a list of federated
+    objects to associate with the user. `PATCH /v3/users` allows the operator
+    to update a users associated federated objects by adding the federated
+    attribute to the user object.
+
+upgrade:
+  - |
+    Added these new methods to the shadow users backend:
+    ``delete_federated_users``, ``create_federated_object``,
+    ``get_federated_objects``. These methods are needed to support federated
+    attributes via the user API. If you have a custom implementation for the
+    shadow users backend, you will need implement the new methods.
