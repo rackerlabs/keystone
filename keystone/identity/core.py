@@ -902,6 +902,43 @@ class Manager(manager.Manager):
                 # backward compatible
                 pass
 
+    def _validate_federated_objects(self, fed_dict):
+        for fed_obj in fed_dict:
+            self.federation_api.get_idp(fed_obj["idp_id"])
+            for protocols in fed_obj['protocols']:
+                self.federation_api.get_protocol(fed_obj["idp_id"],
+                                                 protocols['protocol_id'])
+
+    def _create_federated_objects_with_user(self, user_ref, fed_dict):
+        for fed_obj in fed_dict:
+            for protocols in fed_obj['protocols']:
+                federated_dict = {
+                    'user_id': user_ref['id'],
+                    'idp_id': fed_obj['idp_id'],
+                    'protocol_id': protocols['protocol_id'],
+                    'unique_id': protocols['unique_id'],
+                    'display_name': user_ref['name']
+                }
+                self.shadow_users_api.create_federated_object(
+                    federated_dict)
+
+    def _handle_create_user_federated_attributes(self, user, driver):
+        if 'federated' not in user:
+            user = driver.create_user(user['id'], user)
+            user['federated'] = []
+            return user
+        else:
+            user_ref = user.copy()
+            del user['federated']
+            user = driver.create_user(user['id'], user)
+            user['federated'] = []
+            if user_ref['federated']:
+                self._validate_federated_objects(user_ref['federated'])
+                self._create_federated_objects_with_user(user_ref,
+                                                         user_ref['federated'])
+                user['federated'] = user_ref['federated']
+            return user
+
     @domains_configured
     @exception_translated('user')
     def create_user(self, user_ref, initiator=None):
@@ -925,7 +962,7 @@ class Manager(manager.Manager):
         # the underlying driver so that it could conform to rules set down by
         # that particular driver type.
         user['id'] = uuid.uuid4().hex
-        ref = driver.create_user(user['id'], user)
+        ref = self._handle_create_user_federated_attributes(user, driver)
         notifications.Audit.created(self._USER, user['id'], initiator)
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
@@ -937,6 +974,7 @@ class Manager(manager.Manager):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(user_id))
         ref = driver.get_user(entity_id)
+        ref['federated'] = self.shadow_users_api.get_fed_objects(user_id)
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
@@ -1041,6 +1079,27 @@ class Manager(manager.Manager):
             if new_ref['domain_id'] != orig_ref['domain_id']:
                 raise exception.ValidationError(_('Cannot change Domain ID'))
 
+    def _handle_federated_attribute_update(self, user, driver, entity_id):
+        if 'federated' not in user:
+            user = driver.update_user(entity_id, user)
+            user['federated'] = self.shadow_users_api.get_fed_objects(
+                user['id'])
+            return user
+        else:
+            user_ref = user.copy()
+            del user['federated']
+            user = driver.update_user(entity_id, user)
+            if user_ref['federated']:
+                self._validate_federated_objects(user_ref['federated'])
+                self.shadow_users_api.delete_federated_users(entity_id)
+                self._create_federated_objects_with_user(user,
+                                                         user_ref['federated'])
+                user['federated'] = user_ref['federated']
+            else:
+                user['federated'] = self.shadow_users_api.get_fed_objects(
+                    user['id'])
+            return user
+
     @domains_configured
     @exception_translated('user')
     def update_user(self, user_id, user_ref, initiator=None):
@@ -1071,7 +1130,8 @@ class Manager(manager.Manager):
         self.get_user_by_name.invalidate(self, old_user_ref['name'],
                                          old_user_ref['domain_id'])
 
-        ref = driver.update_user(entity_id, user)
+        ref = self._handle_federated_attribute_update(
+            user, driver, entity_id)
 
         notifications.Audit.updated(self._USER, user_id, initiator)
 

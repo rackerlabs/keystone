@@ -106,6 +106,11 @@ Request Parameters
    - default_project_id: default_project_id_request_body
    - domain_id: user_domain_id_request_body
    - enabled: enabled_user_request_body
+   - federated: federated_object
+   - idp_id: idp_id_request_body
+   - protocols: protocols
+   - protocol_id: protocol_id_request_body
+   - unique_id: unique_id_request_body
    - name: user_name_create_request_body
    - password: password_request_body
 
@@ -113,6 +118,11 @@ Request Example
 ---------------
 
 .. literalinclude:: ./samples/admin/user-create-request.json
+   :language: javascript
+
+Or
+
+.. literalinclude:: ./samples/admin/user-create-request-with-federated.json
    :language: javascript
 
 Response Parameters
@@ -124,6 +134,11 @@ Response Parameters
    - default_project_id: default_project_id_response_body
    - domain_id: domain_id_response_body
    - enabled: enabled_user_response_body
+   - federated: federated_object
+   - idp_id: idp_id_response_body
+   - protocols: protocols
+   - protocol_id: protocol_id_response_body
+   - unique_id: unique_id_response_body
    - id: id_user_body
    - links: links_user
    - name: user_name_response_body
@@ -169,6 +184,11 @@ Response Parameters
    - default_project_id: default_project_id_response_body
    - domain_id: domain_id_response_body
    - enabled: enabled_user_response_body
+   - federated: federated_object
+   - idp_id: idp_id_response_body
+   - protocols: protocols
+   - protocol_id: protocol_id_response_body
+   - unique_id: unique_id_response_body
    - id: id_user_body
    - links: links_user
    - name: user_name_response_body
@@ -219,6 +239,11 @@ Request Parameters
    - default_project_id: default_project_id_update_body
    - domain_id: user_domain_id_update_body
    - enabled: enabled_user_update_body
+   - federated: federated_object
+   - idp_id: idp_id_request_body
+   - protocols: protocols
+   - protocol_id: protocol_id_request_body
+   - unique_id: unique_id_request_body
    - name: user_name_update_body
    - password: user_update_password_body
 
@@ -237,6 +262,11 @@ Response Parameters
    - default_project_id: default_project_id_response_body
    - domain_id: domain_id_response_body
    - enabled: enabled_user_response_body
+   - federated: federated_object
+   - idp_id: idp_id_response_body
+   - protocols: protocols
+   - protocol_id: protocol_id_response_body
+   - unique_id: unique_id_response_body
    - id: id_user_body
    - links: links_user
    - name: user_name_response_body
@@ -364,8 +394,7 @@ Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/user_chan
 Changes the password for a user.
 
 .. note::
-    This API can be called directly without authenticating and providing a token in the
-    ``X-Auth-Token`` request header.
+    This API call does not require a token for authentication.
 
 Response Codes
 --------------
