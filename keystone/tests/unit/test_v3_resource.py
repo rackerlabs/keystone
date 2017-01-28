@@ -383,7 +383,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.assertDictEqual(group, r)
         r = self.identity_api.get_user(self.user['id'])
         self.user.pop('password')
-        self.assertDictEqual(self.user, r)
+        self.assertUserDictEqual(self.user, r)
         r = self.credential_api.get_credential(credential['id'])
         self.assertDictEqual(credential, r)
 

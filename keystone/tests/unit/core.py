@@ -842,7 +842,7 @@ class TestCase(BaseTestCase):
                 excName = str(expected_exception)
             raise self.failureException("%s not raised" % excName)
 
-    def assertUserDictEqual(self, expected, observed, message=''):
+    def assertUserDictEqual(self, expected, observed):
         """Assert that a user dict is equal to another user dict.
 
         User dictionaries have some variable values that should be ignored in
@@ -850,15 +850,8 @@ class TestCase(BaseTestCase):
         when comparing the user dictionary. This normalized these differences
         that should not change the comparison.
         """
-        # NOTE(notmorgan): An empty option list is the same as no options being
-        # specified in the user_ref. This removes options if it is empty in
-        # observed if options is not specified in the expected value.
-        if ('options' in observed and not observed['options'] and
-                'options' not in expected):
-            observed = observed.copy()
-            del observed['options']
-
-        self.assertDictEqual(expected, observed, message)
+        self.assertTrue(all(expected[key] == observed[key]
+                            for key in expected if key in observed))
 
     @property
     def ipv6_enabled(self):
