@@ -1,0 +1,8 @@
+---
+upgrade:
+  - |
+    Added these new methods to the shadow_users backend:
+    ``delete_federated_users``, ``create_federated_object``,
+    ``get_federated_objects``. These methods are needed to support federated
+    attributes via the user API. If you have a custom implementation for the
+    shadow users backend, you will need implement the new methods.
