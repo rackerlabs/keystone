@@ -1,0 +1,5 @@
+---
+upgrade:
+  - Adds helper function to allow user to include federated object attribute to
+    the user to update federated objects associated with the user in update
+    user API (``PATCH /v3/users/{user_id}``).
