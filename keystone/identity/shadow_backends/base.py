@@ -19,9 +19,59 @@ import six
 from keystone import exception
 
 
+def federated_objects_to_list(fed_ref):
+    """Create a new reformatted federated object list using the one passed in.
+
+    When returning federated objects with a user we only need the attributes
+    idp_id, protocol_id, and unique_id. Therefore, we pull these elements out
+    of the fed_ref and create a newly formatted list with the needed
+    information.
+
+    :returns: new_fed_ref
+    """
+    if not fed_ref:
+        return []
+
+    fed = []
+    idps = set()
+    # Group idp protocols into their respective lists
+    for fed_dict in fed_ref:
+        if fed_dict['idp_id'] in idps:
+            for idp_group in fed:
+                if fed_dict['idp_id'] in idp_group['idp_id']:
+                    idp_group['protocols'].append(
+                        {
+                            "protocol_id": fed_dict['protocol_id'],
+                            "unique_id": fed_dict['unique_id']
+                        }
+                    )
+        else:
+            fed.append(
+                {
+                    "idp_id": fed_dict['idp_id'],
+                    'protocols': [
+                        {
+                            "protocol_id": fed_dict['protocol_id'],
+                            "unique_id": fed_dict['unique_id']
+                        }
+                    ]
+                }
+            )
+            idps.add(fed_dict['idp_id'])
+    return fed
+
+
 @six.add_metaclass(abc.ABCMeta)
 class ShadowUsersDriverBase(object):
     """Interface description for an Shadow Users driver."""
+
+    @abc.abstractmethod
+    def create_user_federated_attribute(self, fed_dict):
+        """Create a new federated object.
+
+        :param dict federated_dict: Reference to the federated user
+        """
+        raise exception.NotImplemented()
 
     @abc.abstractmethod
     def create_federated_user(self, domain_id, federated_dict):
@@ -30,6 +80,24 @@ class ShadowUsersDriverBase(object):
         :param domain_id: The domain ID of the IdP used for the federated user
         :param dict federated_dict: Reference to the federated user
         :returns dict: Containing the user reference
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def delete_user_federated_attribute(self, user_id):
+        """Delete a user's federated objects.
+
+        :param user_id: Unique identifier of the user
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def get_user_federated_objects(self, user_id):
+        """Get all federated objects for a user.
+
+        :param user_id: Unique identifier of the user
+        :returns list: Containing the user's federated objects
 
         """
         raise exception.NotImplemented()
