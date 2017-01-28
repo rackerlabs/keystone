@@ -1,0 +1,7 @@
+---
+upgrade:
+  - |
+    Added a few methods in the shadow_backends. delete_federated_users will
+    delete federated objects associated with a user. create_federated_object
+    creates a federated user. get_federated_objects will get all federated
+    objects that are associated with a user.

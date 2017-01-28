@@ -38,6 +38,10 @@ class LdapPoolCommonTestMixin(object):
         # by default use_pool and use_auth_pool is enabled in test pool config
         user_ref = self.identity_api.get_user(self.user_foo['id'])
         self.user_foo.pop('password')
+        self.assertEqual(self.user_foo['name'], user_ref['name'])
+        self.assertEqual(self.user_foo['domain_id'], user_ref['domain_id'])
+        self.assertEqual(self.user_foo['email'], user_ref['email'])
+        self.assertEqual(self.user_foo['id'], user_ref['id'])
         self.assertDictEqual(self.user_foo, user_ref)
 
         handler = common_ldap._get_connection(CONF.ldap.url, use_pool=True)
@@ -181,7 +185,10 @@ class LdapPoolCommonTestMixin(object):
 
         self.user_sna.pop('password')
         self.user_sna['enabled'] = True
-        self.assertUserDictEqual(self.user_sna, user_ref)
+        self.assertEqual(self.user_sna['name'], user_ref['name'])
+        self.assertEqual(self.user_sna['domain_id'], user_ref['domain_id'])
+        self.assertEqual(self.user_sna['email'], user_ref['email'])
+        self.assertEqual(self.user_sna['id'], user_ref['id'])
 
         new_password = 'new_password'
         user_ref['password'] = new_password
