@@ -860,6 +860,19 @@ class TestCase(BaseTestCase):
 
         self.assertDictEqual(expected, observed, message)
 
+    def assertUserDictsEqual(self, user1, user2):
+        """Assert that a user dict is equal to another user dict.
+
+           Instead of making strict assumptions that all APIs return users with
+           the same number of keys and that those keys must all match up we
+           simply test that all keys that both user1 and user2 contain have
+           equivalent values. This is useful when grabbing a user from get_user
+           which will have more information about the specific user than a user
+           from list_users.
+        """
+        self.assertTrue(
+            all(user1[k] == user2[k] for k in user1.viewkeys() & user2))
+
     @property
     def ipv6_enabled(self):
         if socket.has_ipv6:
