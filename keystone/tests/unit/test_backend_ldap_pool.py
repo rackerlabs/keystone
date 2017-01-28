@@ -38,8 +38,7 @@ class LdapPoolCommonTestMixin(object):
         # by default use_pool and use_auth_pool is enabled in test pool config
         user_ref = self.identity_api.get_user(self.user_foo['id'])
         self.user_foo.pop('password')
-        self.assertDictEqual(self.user_foo, user_ref)
-
+        self.assertUserDictsEqual(self.user_foo, user_ref)
         handler = common_ldap._get_connection(CONF.ldap.url, use_pool=True)
         self.assertIsInstance(handler, common_ldap.PooledLDAPHandler)
 
@@ -181,7 +180,7 @@ class LdapPoolCommonTestMixin(object):
 
         self.user_sna.pop('password')
         self.user_sna['enabled'] = True
-        self.assertUserDictEqual(self.user_sna, user_ref)
+        self.assertUserDictsEqual(self.user_sna, user_ref)
 
         new_password = 'new_password'
         user_ref['password'] = new_password
@@ -195,7 +194,7 @@ class LdapPoolCommonTestMixin(object):
             password=new_password)
 
         user_ref.pop('password')
-        self.assertUserDictEqual(user_ref, user_ref2)
+        self.assertUserDictsEqual(user_ref, user_ref2)
 
         # Authentication with old password would not work here as there
         # is only one connection in pool which get bind again with updated
