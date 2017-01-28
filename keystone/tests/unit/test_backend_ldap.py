@@ -2226,7 +2226,11 @@ class BaseMultiLDAPandSQLIdentity(object):
                 ref, domain_id, driver, map.EntityType.USER)
             user = user.copy()
             del user['password']
-            self.assertDictEqual(user, ref)
+            self.assertEqual(user['name'], ref['name'])
+            self.assertEqual(user['domain_id'], ref['domain_id'])
+            self.assertEqual(user['email'], ref['email'])
+            self.assertEqual(user['id'], ref['id'])
+            self.assertEqual(user['enabled'], ref['enabled'])
         else:
             # TODO(henry-nash): Use AssertRaises here, although
             # there appears to be an issue with using driver.get_user
