@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_e8e981e7",
+        "filename": "keystone/identity/backends/resource_options.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-29T18:40:14Z",
+      "side": 1,
+      "message": "too many blank lines...",
+      "revId": "160032b048e937101aeb274da689d8cdbc6581a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
