@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a461143_482b7594",
+        "filename": "keystone/identity/backends/resource_options.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-29T20:57:26Z",
+      "side": 1,
+      "message": "Nope, you can totally have 1 item, aka Token as a valid rule if you want. It may be something like.\n\n[[\"password\", \"totp\"], [\"token\"], [\"external\"], [\"mapped\"]]",
+      "parentUuid": "3a461143_487d35b0",
+      "range": {
+        "startLine": 81,
+        "startChar": 16,
+        "endLine": 85,
+        "endChar": 18
+      },
+      "revId": "6722b2acae35555eff1836197a99fc99e85af779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_684cb19e",
         "filename": "keystone/identity/backends/resource_options.py",
         "patchSetId": 13
@@ -36,6 +60,30 @@
       "writtenOn": "2017-01-29T20:45:40Z",
       "side": 1,
       "message": "maybe pull this out so it looks cleaner? just a suggestion",
+      "range": {
+        "startLine": 75,
+        "startChar": 8,
+        "endLine": 90,
+        "endChar": 9
+      },
+      "revId": "6722b2acae35555eff1836197a99fc99e85af779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_881f1d6b",
+        "filename": "keystone/identity/backends/resource_options.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-29T20:57:26Z",
+      "side": 1,
+      "message": "explain?",
+      "parentUuid": "3a461143_684cb19e",
       "range": {
         "startLine": 75,
         "startChar": 8,
