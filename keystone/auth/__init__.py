@@ -12,4 +12,5 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.auth.core import *  # noqa
 from keystone.auth import controllers  # noqa
