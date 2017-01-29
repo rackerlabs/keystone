@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_282b9095",
+        "filename": "releasenotes/notes/bug-1659995-f3e716de743b7291.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-29T00:53:58Z",
+      "side": 1,
+      "message": "Remove the starting A.",
+      "range": {
+        "startLine": 5,
+        "startChar": 4,
+        "endLine": 5,
+        "endChar": 5
+      },
+      "revId": "885c3f1dbbb4225adfd59e5508b199cf9095b488",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
