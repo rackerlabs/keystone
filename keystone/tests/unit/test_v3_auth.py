@@ -50,7 +50,7 @@ CONF = keystone.conf.CONF
 class TestAuthInfo(common_auth.AuthTestMixin, testcase.TestCase):
     def setUp(self):
         super(TestAuthInfo, self).setUp()
-        auth.controllers.load_auth_methods()
+        auth.core.load_auth_methods()
 
     def test_unsupported_auth_method(self):
         auth_data = {'methods': ['abc']}
