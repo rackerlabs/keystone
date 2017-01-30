@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_b1d42b20",
+        "filename": "keystone/common/resource_options.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-30T15:51:07Z",
+      "side": 1,
+      "message": "Can we allow this now that we are in string freeze?",
+      "revId": "47cd72911cff2bc42e9c4b867f35952104d69e70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
