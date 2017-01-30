@@ -22,6 +22,30 @@
       "revId": "71c93897f3d5624f0ac854b02b6156a74291c476",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_36975149",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 16157
+      },
+      "writtenOn": "2017-01-30T15:28:25Z",
+      "side": 1,
+      "message": "Fixed per:\n\nhttp://eavesdrop.openstack.org/irclogs/%23openstack-keystone/%23openstack-keystone.2017-01-30.log.html",
+      "parentUuid": "3a461143_003e8fd9",
+      "range": {
+        "startLine": 295,
+        "startChar": 43,
+        "endLine": 296,
+        "endChar": 11
+      },
+      "revId": "71c93897f3d5624f0ac854b02b6156a74291c476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
