@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_866ff029",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-30T18:25:54Z",
+      "side": 1,
+      "message": "a user update ?",
+      "range": {
+        "startLine": 60,
+        "startChar": 52,
+        "endLine": 60,
+        "endChar": 61
+      },
+      "revId": "d7da958ca667630c7bb6ac843b0726ed64e435e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_468188c2",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-30T18:25:54Z",
+      "side": 1,
+      "message": "PATCH, POST is for creation.",
+      "range": {
+        "startLine": 61,
+        "startChar": 3,
+        "endLine": 61,
+        "endChar": 13
+      },
+      "revId": "d7da958ca667630c7bb6ac843b0726ed64e435e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_e6e0b498",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-30T18:25:54Z",
+      "side": 1,
+      "message": "a user update ?",
+      "range": {
+        "startLine": 93,
+        "startChar": 58,
+        "endLine": 93,
+        "endChar": 67
+      },
+      "revId": "d7da958ca667630c7bb6ac843b0726ed64e435e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_46e6e8b0",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-30T18:25:54Z",
+      "side": 1,
+      "message": "PATCH, POST is for creation.",
+      "range": {
+        "startLine": 94,
+        "startChar": 3,
+        "endLine": 94,
+        "endChar": 14
+      },
+      "revId": "d7da958ca667630c7bb6ac843b0726ed64e435e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_e6f7d456",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-30T18:25:54Z",
+      "side": 1,
+      "message": "same comments as above.",
+      "range": {
+        "startLine": 129,
+        "startChar": 40,
+        "endLine": 130,
+        "endChar": 46
+      },
+      "revId": "d7da958ca667630c7bb6ac843b0726ed64e435e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
