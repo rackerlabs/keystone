@@ -98,6 +98,24 @@
       "revId": "2e7c7c955e4a206ca8dff64031dccec932654c45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_e3c89b24",
+        "filename": "keystone/auth/plugins/base.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-30T23:26:03Z",
+      "side": 1,
+      "message": "Yeah, a single release note and docs in a patch.",
+      "parentUuid": "3a461143_4d852005",
+      "revId": "2e7c7c955e4a206ca8dff64031dccec932654c45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
