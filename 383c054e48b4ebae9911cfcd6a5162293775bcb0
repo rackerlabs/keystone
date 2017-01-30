@@ -22,6 +22,30 @@
       "revId": "383c054e48b4ebae9911cfcd6a5162293775bcb0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_6dfbbcc1",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-30T22:03:51Z",
+      "side": 0,
+      "message": "no, these were briefly introduced in the previous patch in the chain https://review.openstack.org/#/c/423548/11/keystone/auth/controllers.py",
+      "parentUuid": "3a461143_6123cea7",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 42
+      },
+      "revId": "383c054e48b4ebae9911cfcd6a5162293775bcb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
