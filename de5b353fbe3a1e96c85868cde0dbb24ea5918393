@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_ec0c1cee",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2944,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-30T16:10:01Z",
+      "side": 1,
+      "message": "We could add another assertion here to make sure the user was removed, too. I\u0027m not sure if that made it into the version that landed in master and if not, that something we can clean up in master later. I don\u0027t think that would be something we\u0027d *have* to back port, just something I noticed and thought I\u0027d leave a comment on in the event we wanted to fix master [0].\n\n\n[0] https://github.com/openstack/keystone/blob/781db8e67a08674ad27310be2aa21d73868f8a3b/keystone/tests/unit/test_v3_federation.py#L3074-L3075",
+      "revId": "de5b353fbe3a1e96c85868cde0dbb24ea5918393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
