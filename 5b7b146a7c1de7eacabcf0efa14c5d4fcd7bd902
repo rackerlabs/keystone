@@ -34,6 +34,24 @@
       "revId": "5b7b146a7c1de7eacabcf0efa14c5d4fcd7bd902",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_c1e56238",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2925,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-30T18:37:21Z",
+      "side": 1,
+      "message": "And my understanding was that it should not even be possible to create cross-domain implied roles, which seems like it is possible, as per design (for me should be a bug to create something that is not useful at all).",
+      "parentUuid": "3a461143_617f4e66",
+      "revId": "5b7b146a7c1de7eacabcf0efa14c5d4fcd7bd902",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
