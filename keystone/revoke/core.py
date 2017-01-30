@@ -28,7 +28,7 @@ CONF = keystone.conf.CONF
 
 EXTENSION_DATA = {
     'name': 'OpenStack Revoke API',
-    'namespace': 'http://docs.openstack.org/identity/api/ext/'
+    'namespace': 'https://docs.openstack.org/identity/api/ext/'
                  'OS-REVOKE/v1.0',
     'alias': 'OS-REVOKE',
     'updated': '2014-02-24T20:51:0-00:00',

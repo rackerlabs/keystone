@@ -30,7 +30,7 @@ MEMOIZE = cache.get_memoization_decorator(group='federation')
 CONF = keystone.conf.CONF
 EXTENSION_DATA = {
     'name': 'OpenStack Federation APIs',
-    'namespace': 'http://docs.openstack.org/identity/api/ext/'
+    'namespace': 'https://docs.openstack.org/identity/api/ext/'
                  'OS-FEDERATION/v1.0',
     'alias': 'OS-FEDERATION',
     'updated': '2013-12-17T12:00:0-00:00',

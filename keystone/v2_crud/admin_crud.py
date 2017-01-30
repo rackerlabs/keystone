@@ -23,7 +23,7 @@ from keystone import resource
 extension.register_admin_extension(
     'OS-KSADM', {
         'name': 'OpenStack Keystone Admin',
-        'namespace': 'http://docs.openstack.org/identity/api/ext/'
+        'namespace': 'https://docs.openstack.org/identity/api/ext/'
                      'OS-KSADM/v1.0',
         'alias': 'OS-KSADM',
         'updated': '2013-07-11T17:14:00-00:00',

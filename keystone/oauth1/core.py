@@ -61,7 +61,7 @@ def token_generator(*args, **kwargs):
 
 EXTENSION_DATA = {
     'name': 'OpenStack OAUTH1 API',
-    'namespace': 'http://docs.openstack.org/identity/api/ext/'
+    'namespace': 'https://docs.openstack.org/identity/api/ext/'
                  'OS-OAUTH1/v1.0',
     'alias': 'OS-OAUTH1',
     'updated': '2013-07-07T12:00:0-00:00',

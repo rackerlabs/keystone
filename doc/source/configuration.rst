@@ -1277,7 +1277,7 @@ It's important that the healthcheck go to the front of the pipeline for the
 most efficient checks.
 
 For more information and configuration options for the middleware see
-`oslo.middleware <http://docs.openstack.org/developer/oslo.middleware/api.html#oslo_middleware.Healthcheck>`_.
+`oslo.middleware <https://docs.openstack.org/developer/oslo.middleware/api.html#oslo_middleware.Healthcheck>`_.
 
 .. _`API protection with RBAC`:
 
@@ -1489,8 +1489,8 @@ There are two supported clients, `python-keystoneclient`_ project provides
 python bindings and `python-openstackclient`_ provides a command line
 interface.
 
-.. _`python-openstackclient`: http://docs.openstack.org/developer/python-openstackclient/
-.. _`python-keystoneclient`: http://docs.openstack.org/developer/python-keystoneclient/
+.. _`python-openstackclient`: https://docs.openstack.org/developer/python-openstackclient/
+.. _`python-keystoneclient`: https://docs.openstack.org/developer/python-keystoneclient/
 
 
 Authenticating with a Password via CLI

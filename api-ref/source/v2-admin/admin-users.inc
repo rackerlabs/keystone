@@ -185,7 +185,7 @@ Show user details (admin endpoint)
 
 Shows details for a user, by ID.
 
-The `openstack user show <http://docs.openstack.org/cli-
+The `openstack user show <https://docs.openstack.org/cli-
 reference/openstack.html#openstack-user-show>`_ command supports
 showing user details by name or ID. However, the command actually
 looks up the user ID for a user name and queries the user by ID.
