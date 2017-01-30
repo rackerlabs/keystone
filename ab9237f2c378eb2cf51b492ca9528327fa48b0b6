@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_fbfe8dac",
+        "filename": "keystone/identity/backends/resource_options.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-30T17:44:16Z",
+      "side": 1,
+      "message": "FWIW, this should never be hit except by developers. This is also validated at the API layer in schema. The only reason you\u0027d hit this is if you were submitting a rule list that didn\u0027t go through the schema validator.",
+      "parentUuid": "3a461143_20fb8bc2",
+      "revId": "ab9237f2c378eb2cf51b492ca9528327fa48b0b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_80b99f17",
         "filename": "keystone/identity/backends/resource_options.py",
         "patchSetId": 14
@@ -48,6 +66,24 @@
       "side": 1,
       "message": "hard string freeze is only enacted when rc1 is tagged\n\nhttps://releases.openstack.org/ocata/schedule.html#o-hard-sf",
       "parentUuid": "3a461143_80b99f17",
+      "revId": "ab9237f2c378eb2cf51b492ca9528327fa48b0b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_3b33b5ac",
+        "filename": "keystone/identity/backends/resource_options.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-30T17:44:16Z",
+      "side": 1,
+      "message": "What steve said.",
+      "parentUuid": "3a461143_18eb5f14",
       "revId": "ab9237f2c378eb2cf51b492ca9528327fa48b0b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
