@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_28fc4271",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1931,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-30T22:37:27Z",
+      "side": 1,
+      "message": "++ nice",
+      "revId": "3782f80bf5848b01fd51991ce669121b3a006535",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
