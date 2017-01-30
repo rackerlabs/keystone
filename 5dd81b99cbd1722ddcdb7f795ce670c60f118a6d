@@ -88,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_c372bf10",
+        "filename": "keystone/auth/plugins/base.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-30T23:24:43Z",
+      "side": 1,
+      "message": "It isn\u0027t really \"authenticated\" it really is a success/failure. Authentication isn\u0027t complete until all method handlers are run.\n\n*shrug* we could change it down the road.",
+      "parentUuid": "3a461143_52a21b4c",
+      "revId": "5dd81b99cbd1722ddcdb7f795ce670c60f118a6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_52d4dbbb",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 11
@@ -99,6 +117,24 @@
       "writtenOn": "2017-01-30T21:53:38Z",
       "side": 1,
       "message": "FWIW - just to make sure I\u0027m understanding this correctly. This now means (and enforces) external methods to be completely done authenticating a user at this point, correct? Multi-step authentication processes will not work with external authentication.\n\nBecause once `status` is set to `True` that user is authenticated.",
+      "revId": "5dd81b99cbd1722ddcdb7f795ce670c60f118a6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_a375b3fa",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-30T23:24:43Z",
+      "side": 1,
+      "message": "Well, it means the plugin \"succeeded\", it doesn\u0027t mean the user is authenticated. the user must still end up with user_id in response_data by *one* of the auth plugins (all should do it,but techincally only one has to)\n\nYou can still do multistep (look at the ChallengeResponse plugin in the tests) if needed. External should also never hit this point until the auth is complete as it relies on REMOTE_USER env-var.",
+      "parentUuid": "3a461143_52d4dbbb",
       "revId": "5dd81b99cbd1722ddcdb7f795ce670c60f118a6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
