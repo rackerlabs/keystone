@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "3a461143_21c1c654",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-30T18:44:13Z",
+      "side": 1,
+      "message": "keep this lowercased. The standard is to use lowercasing for project code names. Newer docs reflect this. Ref: https://governance.openstack.org/tc/reference/service-project-naming.html#project-name-guidelines",
+      "revId": "60ddc3e8c7a1d9cda44af59d924a923f35d127a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_d88e3778",
         "filename": "doc/source/architecture.rst",
         "patchSetId": 8
