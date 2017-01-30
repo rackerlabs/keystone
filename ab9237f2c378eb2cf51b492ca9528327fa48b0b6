@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_20fb8bc2",
+        "filename": "keystone/identity/backends/resource_options.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-30T14:54:30Z",
+      "side": 1,
+      "message": "\"list of lists of strings\" can be a little confusing to read, but I\u0027m not sure how else to word this yet.",
+      "revId": "ab9237f2c378eb2cf51b492ca9528327fa48b0b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_80b99f17",
+        "filename": "keystone/identity/backends/resource_options.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-30T14:54:30Z",
+      "side": 1,
+      "message": "We will have to double check on this now that we are in a hard string freeze.",
+      "revId": "ab9237f2c378eb2cf51b492ca9528327fa48b0b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
