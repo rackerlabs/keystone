@@ -16,6 +16,24 @@
       "revId": "2e7c7c955e4a206ca8dff64031dccec932654c45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_9bd02921",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-30T17:49:08Z",
+      "side": 1,
+      "message": "It has to be an iterable, this is catching the case of a None.",
+      "parentUuid": "3a461143_7b91c4f0",
+      "revId": "2e7c7c955e4a206ca8dff64031dccec932654c45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
