@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_a0a21bac",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1859,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-30T14:51:58Z",
+      "side": 1,
+      "message": "nit: \u0027multiple_options\u0027 as I\u0027m sure more are coming",
+      "range": {
+        "startLine": 1859,
+        "startChar": 30,
+        "endLine": 1859,
+        "endChar": 33
+      },
+      "revId": "9844fa1e264fe52276d9bd804b26b518ef3aaa24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_00ae8f97",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1868,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-30T14:51:58Z",
+      "side": 1,
+      "message": "nit: same",
+      "range": {
+        "startLine": 1868,
+        "startChar": 30,
+        "endLine": 1868,
+        "endChar": 33
+      },
+      "revId": "9844fa1e264fe52276d9bd804b26b518ef3aaa24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
