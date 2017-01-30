@@ -16,6 +16,24 @@
       "revId": "47cd72911cff2bc42e9c4b867f35952104d69e70",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_38a2dbfd",
+        "filename": "keystone/common/resource_options.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-30T17:16:29Z",
+      "side": 1,
+      "message": "yes, hard string freeze only happens after we tag rc1\n\nhttps://releases.openstack.org/ocata/schedule.html#o-hard-sf\n\nHard StringFreeze\n\nThis happens when the RC1 for the project is tagged. At this point, ideally no strings are changed (or added, or removed), to give translator time to finish up their efforts.",
+      "parentUuid": "3a461143_b1d42b20",
+      "revId": "47cd72911cff2bc42e9c4b867f35952104d69e70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
