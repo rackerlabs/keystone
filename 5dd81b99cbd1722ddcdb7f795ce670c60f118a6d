@@ -68,6 +68,40 @@
       "revId": "5dd81b99cbd1722ddcdb7f795ce670c60f118a6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_52a21b4c",
+        "filename": "keystone/auth/plugins/base.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-30T21:53:38Z",
+      "side": 1,
+      "message": "For me - `authenticated` seems like a natural replacement for `status`.\n\nWe could change this later - but we\u0027ll have to advertise the change since it will require folks maintaining their own auth plugins to make changes.\n\nWe should probably write a release note for those users, too.",
+      "revId": "5dd81b99cbd1722ddcdb7f795ce670c60f118a6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_52d4dbbb",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-30T21:53:38Z",
+      "side": 1,
+      "message": "FWIW - just to make sure I\u0027m understanding this correctly. This now means (and enforces) external methods to be completely done authenticating a user at this point, correct? Multi-step authentication processes will not work with external authentication.\n\nBecause once `status` is set to `True` that user is authenticated.",
+      "revId": "5dd81b99cbd1722ddcdb7f795ce670c60f118a6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
