@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_dbe398d7",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 551,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-30T15:06:05Z",
+      "side": 1,
+      "message": "For some reason I was thinking of this as web requests, and not the Auth object.",
+      "parentUuid": "3a461143_0015af47",
+      "revId": "5dd81b99cbd1722ddcdb7f795ce670c60f118a6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_9b46704d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 11
