@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_0c7088db",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2925,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-30T16:22:20Z",
+      "side": 1,
+      "message": "Just to confirm - this fails because domain specific roles can\u0027t be inferred across domains, right?",
+      "revId": "5b7b146a7c1de7eacabcf0efa14c5d4fcd7bd902",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
