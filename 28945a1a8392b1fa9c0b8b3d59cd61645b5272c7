@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_27d7164c",
+        "filename": "releasenotes/notes/bug-1659995-f3e716de743b7291.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-30T19:35:14Z",
+      "side": 1,
+      "message": "The way these read make it seem like we should say:\n\n  user[\u0027options\u0027][\u0027ignore_lockout_failure_attempts\u0027] \u003d True\n  user[\u0027options\u0027][\u0027ignore_password_expiry\u0027] \u003d True\n  user[\u0027options\u0027][\u0027ignore_change_password_upon_first_use\u0027] \u003d True\n\nAlso - I\u0027m not sure how detailed we want to be here, but would it be beneficial to explain that False doesn\u0027t need to be set for each user?",
+      "revId": "28945a1a8392b1fa9c0b8b3d59cd61645b5272c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
