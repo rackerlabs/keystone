@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_019daabb",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-30T18:35:19Z",
+      "side": 0,
+      "message": "these classes are public symbols, don\u0027t we need to keep them available at current location too ?",
+      "revId": "e35d11b20db362bee20778a9e12e12edd499a6fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
