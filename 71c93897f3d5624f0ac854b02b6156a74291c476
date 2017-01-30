@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_003e8fd9",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-30T14:57:19Z",
+      "side": 1,
+      "message": "only domains contains users/groups, not projects.",
+      "range": {
+        "startLine": 295,
+        "startChar": 43,
+        "endLine": 296,
+        "endChar": 11
+      },
+      "revId": "71c93897f3d5624f0ac854b02b6156a74291c476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
