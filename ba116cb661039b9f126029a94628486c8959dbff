@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_29962893",
+        "filename": "keystone/conf/identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-30T06:08:02Z",
+      "side": 1,
+      "message": "not so sure we can change this, i haven\u0027t reviewed the patch in full, but this is a non-starter. way too many depend on the default domain id being \"default\"",
+      "range": {
+        "startLine": 21,
+        "startChar": 13,
+        "endLine": 21,
+        "endChar": 45
+      },
+      "revId": "ba116cb661039b9f126029a94628486c8959dbff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
