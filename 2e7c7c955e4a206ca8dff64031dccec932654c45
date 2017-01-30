@@ -81,6 +81,23 @@
       "revId": "2e7c7c955e4a206ca8dff64031dccec932654c45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_4d852005",
+        "filename": "keystone/auth/plugins/base.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-30T22:09:13Z",
+      "side": 1,
+      "message": "I think my only nit would be to see if we can add some information that explains the difference between `response_data` and `response_body`. As a reviewer I see that all plugins set `response_body` to None before returning it to whatever called the .authenticate() method. Where-as `response_data` clearly contains things that were previously in `auth_context`... I think these are also things we\u0027ll need a release note for, but I left that comment on a previous review, too.\n\nAre we planning on just writing one release note for all changes auth plugin maintainers are suppose to follow?",
+      "revId": "2e7c7c955e4a206ca8dff64031dccec932654c45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
