@@ -22,6 +22,30 @@
       "revId": "113055774a04c6ed2339e4918e3abda325e8a59f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_3b98e769",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-31T18:10:24Z",
+      "side": 1,
+      "message": "Not sure we can fix it. it is not directly reported as such because it may not be fixable.",
+      "parentUuid": "3a461143_b854ddc9",
+      "range": {
+        "startLine": 232,
+        "startChar": 26,
+        "endLine": 233,
+        "endChar": 44
+      },
+      "revId": "113055774a04c6ed2339e4918e3abda325e8a59f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
