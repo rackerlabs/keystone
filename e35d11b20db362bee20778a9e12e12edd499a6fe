@@ -16,6 +16,24 @@
       "revId": "e35d11b20db362bee20778a9e12e12edd499a6fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_2876fb3d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-31T04:58:25Z",
+      "side": 0,
+      "message": "we could, but i\u0027m not sure anyone is extending the controller?\n\nwe driver interface was the more important part that folks were extending.",
+      "parentUuid": "3a461143_019daabb",
+      "revId": "e35d11b20db362bee20778a9e12e12edd499a6fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
