@@ -2,6 +2,115 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a461143_ad18441f",
+        "filename": "keystone/auth/__init__.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-31T04:53:41Z",
+      "side": 1,
+      "message": "no need for a blank line here",
+      "revId": "383c054e48b4ebae9911cfcd6a5162293775bcb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_081f7f08",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-31T04:53:41Z",
+      "side": 1,
+      "message": "unnecessary refactor",
+      "range": {
+        "startLine": 411,
+        "startChar": 12,
+        "endLine": 413,
+        "endChar": 49
+      },
+      "revId": "383c054e48b4ebae9911cfcd6a5162293775bcb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_68d64329",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-31T04:53:41Z",
+      "side": 1,
+      "message": "why pass in the set and not the list (once it\u0027s been made unique)?",
+      "range": {
+        "startLine": 417,
+        "startChar": 45,
+        "endLine": 417,
+        "endChar": 61
+      },
+      "revId": "383c054e48b4ebae9911cfcd6a5162293775bcb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_48ec27f3",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-31T04:53:41Z",
+      "side": 1,
+      "message": "slight optimization: check if mfa_rules_enabled first, then return True if disabled.\n\nthis will eliminate the rules fetch, and the parsing of rule structure",
+      "range": {
+        "startLine": 102,
+        "startChar": 8,
+        "endLine": 103,
+        "endChar": 49
+      },
+      "revId": "383c054e48b4ebae9911cfcd6a5162293775bcb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_88c0cf51",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-31T04:53:41Z",
+      "side": 1,
+      "message": "ah okay, i get why you passed in the set now",
+      "range": {
+        "startLine": 121,
+        "startChar": 12,
+        "endLine": 121,
+        "endChar": 59
+      },
+      "revId": "383c054e48b4ebae9911cfcd6a5162293775bcb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_2d81b4c3",
         "filename": "keystone/auth/core.py",
         "patchSetId": 11
@@ -13,6 +122,29 @@
       "writtenOn": "2017-01-30T22:30:30Z",
       "side": 1,
       "message": "nit: s/,/./",
+      "revId": "383c054e48b4ebae9911cfcd6a5162293775bcb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_08cdbf84",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-31T04:53:41Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be in the loop? or at least the part that adds to \"found_rules\"?",
+      "range": {
+        "startLine": 188,
+        "startChar": 16,
+        "endLine": 194,
+        "endChar": 43
+      },
       "revId": "383c054e48b4ebae9911cfcd6a5162293775bcb0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
