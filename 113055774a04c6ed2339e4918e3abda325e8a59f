@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_b854ddc9",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-31T17:42:38Z",
+      "side": 1,
+      "message": "is there a bug reported or something ? if we leave this as it is we\u0027ll never get back to it again.",
+      "range": {
+        "startLine": 232,
+        "startChar": 26,
+        "endLine": 233,
+        "endChar": 44
+      },
+      "revId": "113055774a04c6ed2339e4918e3abda325e8a59f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
