@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_3511cb04",
+        "filename": "releasenotes/notes/MFA-Rules-User-Options-Added-feb95fd907be4b40.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-31T22:04:11Z",
+      "side": 1,
+      "message": "I don\u0027t wanna :P",
+      "parentUuid": "3a461143_82e5e709",
+      "revId": "9c6b34c4495d713a50c09fbf1f6e3d112575b21d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_22b3530b",
         "filename": "releasenotes/notes/MFA-Rules-User-Options-Added-feb95fd907be4b40.yaml",
         "patchSetId": 3
@@ -30,6 +48,30 @@
       "writtenOn": "2017-01-31T22:00:38Z",
       "side": 1,
       "message": "add this in the beginning:\n\n      [`blueprint per-user-auth-plugin-reqs \u003chttps://blueprints.launchpad.net/keystone/+spec/per-user-auth-plugin-reqs\u003e`_]",
+      "range": {
+        "startLine": 3,
+        "startChar": 4,
+        "endLine": 3,
+        "endChar": 5
+      },
+      "revId": "9c6b34c4495d713a50c09fbf1f6e3d112575b21d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_55fc97b7",
+        "filename": "releasenotes/notes/MFA-Rules-User-Options-Added-feb95fd907be4b40.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-31T22:04:11Z",
+      "side": 1,
+      "message": "See above response ^_^",
+      "parentUuid": "3a461143_22b3530b",
       "range": {
         "startLine": 3,
         "startChar": 4,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "3a461143_b5fdbbb2",
+        "filename": "releasenotes/notes/MFA-Rules-User-Options-Added-feb95fd907be4b40.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-31T22:04:11Z",
+      "side": 1,
+      "message": "You just like using big words ;)",
+      "parentUuid": "3a461143_c2c28f52",
+      "range": {
+        "startLine": 4,
+        "startChar": 71,
+        "endLine": 5,
+        "endChar": 12
+      },
+      "revId": "9c6b34c4495d713a50c09fbf1f6e3d112575b21d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_f52bc37f",
         "filename": "releasenotes/notes/MFA-Rules-User-Options-Added-feb95fd907be4b40.yaml",
         "patchSetId": 3
@@ -88,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "3a461143_3528eb32",
+        "filename": "releasenotes/notes/MFA-Rules-User-Options-Added-feb95fd907be4b40.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-31T22:04:11Z",
+      "side": 1,
+      "message": "... *huff* fine! hehe, fixed in next.",
+      "parentUuid": "3a461143_f52bc37f",
+      "range": {
+        "startLine": 19,
+        "startChar": 42,
+        "endLine": 19,
+        "endChar": 43
+      },
+      "revId": "9c6b34c4495d713a50c09fbf1f6e3d112575b21d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_5599f7c2",
         "filename": "releasenotes/notes/MFA-Rules-User-Options-Added-feb95fd907be4b40.yaml",
         "patchSetId": 3
@@ -99,6 +189,30 @@
       "writtenOn": "2017-01-31T22:00:38Z",
       "side": 1,
       "message": "same comment as above",
+      "range": {
+        "startLine": 32,
+        "startChar": 12,
+        "endLine": 32,
+        "endChar": 13
+      },
+      "revId": "9c6b34c4495d713a50c09fbf1f6e3d112575b21d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_5523b755",
+        "filename": "releasenotes/notes/MFA-Rules-User-Options-Added-feb95fd907be4b40.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-31T22:04:11Z",
+      "side": 1,
+      "message": "same as above",
+      "parentUuid": "3a461143_5599f7c2",
       "range": {
         "startLine": 32,
         "startChar": 12,
