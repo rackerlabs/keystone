@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_5077579f",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-31T15:06:31Z",
+      "side": 1,
+      "message": "This is the default - any reason we need to explicitly specify it?",
+      "revId": "c4881c1c00de436d758c33caf63b1fffb838fed4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_b0431b12",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-31T15:06:31Z",
+      "side": 1,
+      "message": "So this just means that users shouldn\u0027t be able to ask for tokens within the same time as updating resource options for a user?",
+      "revId": "c4881c1c00de436d758c33caf63b1fffb838fed4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_10beaffe",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-31T15:06:31Z",
+      "side": 1,
+      "message": "We could add a little more validation here - but this should cover the case.",
+      "revId": "c4881c1c00de436d758c33caf63b1fffb838fed4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
