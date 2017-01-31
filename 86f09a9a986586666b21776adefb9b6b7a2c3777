@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "3a461143_ff4f248f",
+        "filename": "releasenotes/notes/MFA-Rules-User-Options-Added-feb95fd907be4b40.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-31T21:30:32Z",
+      "side": 1,
+      "message": "Singluar here not, those. See next.",
+      "parentUuid": "3a461143_7f117451",
+      "range": {
+        "startLine": 22,
+        "startChar": 57,
+        "endLine": 22,
+        "endChar": 75
+      },
+      "revId": "86f09a9a986586666b21776adefb9b6b7a2c3777",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_df28a888",
         "filename": "releasenotes/notes/MFA-Rules-User-Options-Added-feb95fd907be4b40.yaml",
         "patchSetId": 2
@@ -82,6 +106,30 @@
       "writtenOn": "2017-01-31T21:07:50Z",
       "side": 1,
       "message": "\"the ruleset\"",
+      "range": {
+        "startLine": 24,
+        "startChar": 45,
+        "endLine": 24,
+        "endChar": 58
+      },
+      "revId": "86f09a9a986586666b21776adefb9b6b7a2c3777",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_1f43106d",
+        "filename": "releasenotes/notes/MFA-Rules-User-Options-Added-feb95fd907be4b40.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-31T21:30:32Z",
+      "side": 1,
+      "message": "Fixed in next.",
+      "parentUuid": "3a461143_df28a888",
       "range": {
         "startLine": 24,
         "startChar": 45,
@@ -117,6 +165,30 @@
     },
     {
       "key": {
+        "uuid": "3a461143_3f460c7b",
+        "filename": "releasenotes/notes/MFA-Rules-User-Options-Added-feb95fd907be4b40.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-31T21:30:32Z",
+      "side": 1,
+      "message": "rule set propbably.",
+      "parentUuid": "3a461143_3f70cca3",
+      "range": {
+        "startLine": 27,
+        "startChar": 20,
+        "endLine": 27,
+        "endChar": 29
+      },
+      "revId": "86f09a9a986586666b21776adefb9b6b7a2c3777",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_ff3c8494",
         "filename": "releasenotes/notes/MFA-Rules-User-Options-Added-feb95fd907be4b40.yaml",
         "patchSetId": 2
@@ -128,6 +200,30 @@
       "writtenOn": "2017-01-31T21:07:50Z",
       "side": 1,
       "message": "Maybe \"(regardless if they set the User-Option)\" or \", regardless if they set the User-Option,\"",
+      "range": {
+        "startLine": 39,
+        "startChar": 57,
+        "endLine": 40,
+        "endChar": 24
+      },
+      "revId": "86f09a9a986586666b21776adefb9b6b7a2c3777",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_9f570025",
+        "filename": "releasenotes/notes/MFA-Rules-User-Options-Added-feb95fd907be4b40.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-31T21:30:32Z",
+      "side": 1,
+      "message": "comma, not )\n\nin next",
+      "parentUuid": "3a461143_ff3c8494",
       "range": {
         "startLine": 39,
         "startChar": 57,
