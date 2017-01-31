@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_70661352",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-31T15:14:05Z",
+      "side": 1,
+      "message": "This note is begging for someone to come ask \"why\" we don\u0027t like for/else statements. We should elaborate on it here as well.",
+      "revId": "772c1c59c090c960a6c5651fb44da9045d4ae75e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

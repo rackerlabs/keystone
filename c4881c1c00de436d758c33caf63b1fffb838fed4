@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_b0e95bb9",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-31T15:14:05Z",
+      "side": 0,
+      "message": "These two cases could probably be combined:\n\n  rule_set \u003d []\n  if not rules or not isinstance(rules, list):\n      # NOTE(notmorgan): If the rules aren\u0027t a list, then we know the rules\n      # were somehow corrupted and we should not use them. If there are\n      # no rules available, then there is nothing for us to do and we can\n      # exit early.\n      # log message\n      return rule_set",
+      "revId": "c4881c1c00de436d758c33caf63b1fffb838fed4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
