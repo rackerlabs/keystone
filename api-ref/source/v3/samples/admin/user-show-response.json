@@ -3,6 +3,17 @@
         "default_project_id": "263fd9",
         "domain_id": "1789d1",
         "enabled": true,
+        "federated": [
+            {
+                "idp_id": "myidp",
+                "protocols": [
+                    {
+                        "protocol_id": "saml2",
+                        "unique_id": "jdoe"
+                    }
+                ]
+            }
+        ],
         "id": "9fe1d3",
         "links": {
             "self": "https://example.com/identity/v3/users/9fe1d3"
