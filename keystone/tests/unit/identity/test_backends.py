@@ -64,6 +64,7 @@ class IdentityTests(object):
         #               not be returned by the api
         self.user_sna.pop('password')
         self.user_sna['enabled'] = True
+        self.user_sna['is_local'] = (True if user_ref['is_local'] else False)
         self.assertUserDictEqual(self.user_sna, user_ref)
 
     def test_authenticate_and_get_roles_no_metadata(self):

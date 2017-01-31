@@ -112,6 +112,7 @@ class IdentityDriverTests(object):
             'enabled': True,
             'default_project_id': uuid.uuid4().hex,
             'password_expires_at': None,
+            'is_local': True,
             'options': {}
         }
         if self.driver.is_domain_aware():

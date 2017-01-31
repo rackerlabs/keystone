@@ -1,0 +1,6 @@
+---
+upgrade:
+  - We have added the ``is_local`` attribute to the
+    user table. This is to distinguish between local
+    and federated users for asserting the user domain
+    and other such things.

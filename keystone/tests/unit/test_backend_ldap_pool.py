@@ -181,6 +181,7 @@ class LdapPoolCommonTestMixin(object):
 
         self.user_sna.pop('password')
         self.user_sna['enabled'] = True
+        self.user_sna['is_local'] = False
         self.assertUserDictEqual(self.user_sna, user_ref)
 
         new_password = 'new_password'

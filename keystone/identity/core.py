@@ -947,6 +947,8 @@ class Manager(manager.Manager):
         """
         if user is None:
             user = self.get_user(user_id)
+        if not user.get('is_local', True):
+            raise AssertionError(_('User is not local: %s') % user_id)
         self.resource_api.assert_domain_enabled(user['domain_id'])
         if not user.get('enabled', True):
             raise AssertionError(_('User is disabled: %s') % user_id)

@@ -32,8 +32,8 @@ CONF = keystone.conf.CONF
 class User(sql.ModelBase, sql.DictBase):
     __tablename__ = 'user'
     attributes = ['id', 'name', 'domain_id', 'password', 'enabled',
-                  'default_project_id', 'password_expires_at']
-    readonly_attributes = ['id', 'password_expires_at']
+                  'default_project_id', 'password_expires_at', 'is_local']
+    readonly_attributes = ['id', 'password_expires_at', 'is_local']
     resource_options_registry = iro.USER_OPTIONS_REGISTRY
     id = sql.Column(sql.String(64), primary_key=True)
     domain_id = sql.Column(sql.String(64), nullable=False)
@@ -127,6 +127,12 @@ class User(sql.ModelBase, sql.DictBase):
         """Return whether password is expired or not."""
         if self.password_expires_at:
             return datetime.datetime.utcnow() >= self.password_expires_at
+        return False
+
+    @property
+    def is_local(self):
+        if self.local_user:
+            return True
         return False
 
     @password.setter
@@ -241,8 +247,11 @@ class User(sql.ModelBase, sql.DictBase):
         resource_options = {}
         options = new_dict.pop('options', {})
         password_expires_at_key = 'password_expires_at'
+        is_local_key = 'is_local'
         if password_expires_at_key in user_dict:
             del new_dict[password_expires_at_key]
+        if is_local_key in user_dict:
+            del new_dict[is_local_key]
         for opt in cls.resource_options_registry.options:
             if opt.option_name in options:
                 opt_value = options[opt.option_name]
