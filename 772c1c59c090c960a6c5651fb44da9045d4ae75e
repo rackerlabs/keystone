@@ -16,6 +16,24 @@
       "revId": "772c1c59c090c960a6c5651fb44da9045d4ae75e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_a6b685f6",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-31T15:51:14Z",
+      "side": 1,
+      "message": "Hehe....... i couldadjust the phrasing. \"This is an example of an implementation that is maintainable and intuative in contrast with fore/else statements.\"",
+      "parentUuid": "3a461143_70661352",
+      "revId": "772c1c59c090c960a6c5651fb44da9045d4ae75e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

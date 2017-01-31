@@ -16,6 +16,24 @@
       "revId": "c4881c1c00de436d758c33caf63b1fffb838fed4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_c6eab1da",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-31T15:51:14Z",
+      "side": 0,
+      "message": "The reason they are not combined is for the error logging. It\u0027s going to have a conditional in either case. This seemed easiest to read. I\u0027m happy to re-spin if this is a blocker.",
+      "parentUuid": "3a461143_b0e95bb9",
+      "revId": "c4881c1c00de436d758c33caf63b1fffb838fed4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
