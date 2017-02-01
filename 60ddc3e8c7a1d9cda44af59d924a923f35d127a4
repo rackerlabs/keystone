@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_c81c426d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 16157
+      },
+      "writtenOn": "2017-02-01T22:59:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_75862cdc",
+      "revId": "60ddc3e8c7a1d9cda44af59d924a923f35d127a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_21c1c654",
         "filename": "doc/source/architecture.rst",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_a86456e5",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 16157
+      },
+      "writtenOn": "2017-02-01T22:59:00Z",
+      "side": 1,
+      "message": "Even when starting a sentence? The rest of the document conforms to lowercase in all instances except when starting a sentence or as part of a title/header.",
+      "parentUuid": "3a461143_21c1c654",
+      "revId": "60ddc3e8c7a1d9cda44af59d924a923f35d127a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_d88e3778",
         "filename": "doc/source/architecture.rst",
         "patchSetId": 8
@@ -47,6 +83,24 @@
       "writtenOn": "2017-01-30T17:35:13Z",
       "side": 1,
       "message": "We could clarify the \"relation\" portion of this.\n\n  While most backends allow assignments to span across domains, some\n  may not.\n\n(shrug?)",
+      "revId": "60ddc3e8c7a1d9cda44af59d924a923f35d127a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_88407a37",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 16157
+      },
+      "writtenOn": "2017-02-01T22:59:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_d88e3778",
       "revId": "60ddc3e8c7a1d9cda44af59d924a923f35d127a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
