@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_6987b412",
+        "filename": "keystone/identity/id_generators/sha256.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-02T17:23:42Z",
+      "side": 1,
+      "message": "This sha256 generator supplies a 64 char hex string (which pycadf promptly complains about). If we need to keep this, then I\u0027m not sure if this patchset is doable without making changes to pycadf.",
+      "parentUuid": "3a461143_4a1042a9",
+      "revId": "59db112060f3efce011bc962d506a78ce1364506",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_8a694a28",
         "filename": "keystone/tests/unit/default_fixtures.py",
         "patchSetId": 6
@@ -30,6 +48,30 @@
       "writtenOn": "2017-02-02T04:47:38Z",
       "side": 1,
       "message": "why not just use uuid.uuid4().hex here?",
+      "range": {
+        "startLine": 23,
+        "startChar": 21,
+        "endLine": 23,
+        "endChar": 53
+      },
+      "revId": "59db112060f3efce011bc962d506a78ce1364506",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_3f315aed",
+        "filename": "keystone/tests/unit/default_fixtures.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-02T17:23:42Z",
+      "side": 1,
+      "message": "will do",
+      "parentUuid": "3a461143_8a694a28",
       "range": {
         "startLine": 23,
         "startChar": 21,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "3a461143_2c069a20",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-02T17:23:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_8a506a60",
+      "range": {
+        "startLine": 73,
+        "startChar": 8,
+        "endLine": 73,
+        "endChar": 45
+      },
+      "revId": "59db112060f3efce011bc962d506a78ce1364506",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_4ad5a2b7",
         "filename": "keystone/tests/unit/test_v2.py",
         "patchSetId": 6
@@ -76,6 +142,30 @@
       "writtenOn": "2017-02-02T04:47:38Z",
       "side": 1,
       "message": "why not use: CONF.identity.default_domain_id instead ?\n\nsame question applies for many instances of importing the fixture",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 54
+      },
+      "revId": "59db112060f3efce011bc962d506a78ce1364506",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_9f088e2a",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-02T17:23:42Z",
+      "side": 1,
+      "message": "yeah, I thought I would be needing to know the specific uuid but I think I can just call that from the CONF and it should be fine.",
+      "parentUuid": "3a461143_4ad5a2b7",
       "range": {
         "startLine": 29,
         "startChar": 0,
