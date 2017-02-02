@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_b7aad483",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-02T22:25:42Z",
+      "side": 1,
+      "message": "We have a bug floating around for this somewhere. If we land this we can close it!\n\nhttps://bugs.launchpad.net/keystone/+bug/1642212\n\n  Closes-Bug: 1642212",
+      "revId": "8740db35fc724852c7fccd33d0dde603a65035e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_99933ffa",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-02T22:25:42Z",
+      "side": 1,
+      "message": "We could actually test this by adding unit tests to test_sql_upgrade. We\u0027d be able to put the database in weird states before running `keystone-manage db_sync --check` to ensure a useful message is logged.",
+      "revId": "8740db35fc724852c7fccd33d0dde603a65035e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_b972bb0f",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-02T22:25:42Z",
+      "side": 1,
+      "message": "Based on the information we have here - we could even make some assumptions about the repository as a whole. For example, if the version of the migrate repository is less than the state of the expand repository, we know the operator\u0027s next step is probably to ``keystone-manage db_sync --migrate``.\n\nProviding the version information is no doubt useful, but if I\u0027m an operator that doesn\u0027t completely understand the implementation details of how keystone achieves rolling upgrades, these numbers don\u0027t really mean much to me.\n\nWe could even check for extremely strange cases where the contract repo is ahead of the migrate repo and wave a *huge* red flag at the operator if we wanted to.",
+      "revId": "8740db35fc724852c7fccd33d0dde603a65035e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_19990f6f",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-02T22:25:42Z",
+      "side": 1,
+      "message": "We typically leave the printing of information to keystone/cmd/cli.py. I\u0027d suggest only modifying this file to give you the information you need about the various migration repositories. Then from keystone/cmd/cli.py you can call this function and then translate or relay the data however you want.",
+      "revId": "8740db35fc724852c7fccd33d0dde603a65035e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
