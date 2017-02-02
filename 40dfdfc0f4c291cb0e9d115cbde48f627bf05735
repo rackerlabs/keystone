@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_26a083a5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-02-02T13:00:24Z",
+      "side": 1,
+      "message": "Agreed with previous review, please add\n\n    Related-Bug: #1489118",
+      "revId": "40dfdfc0f4c291cb0e9d115cbde48f627bf05735",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
