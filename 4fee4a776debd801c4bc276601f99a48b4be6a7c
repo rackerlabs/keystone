@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_657efeaf",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 771,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-02T14:39:19Z",
+      "side": 1,
+      "message": "why add content_length here? it\u0027s not added to the other webob.Responses?",
+      "range": {
+        "startLine": 771,
+        "startChar": 26,
+        "endLine": 771,
+        "endChar": 51
+      },
+      "revId": "4fee4a776debd801c4bc276601f99a48b4be6a7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
