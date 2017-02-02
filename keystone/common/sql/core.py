@@ -123,7 +123,15 @@ class JsonBlob(sql_types.TypeDecorator):
         return jsonutils.loads(value)
 
 
-class DictBase(models.ModelBase):
+class ModelDictMixinWithExtras(models.ModelBase):
+    """Mixin making model behave with dict-like interfaces includes extras.
+
+    NOTE: DO NOT USE THIS FOR FUTURE SQL MODELS. "Extra" column is a legacy
+          concept that should not be carried forward with new SQL models
+          as the concept of "arbitrary" properties is not in line with
+          the design philosophy of Keystone.
+    """
+    
     attributes = []
 
     @classmethod
