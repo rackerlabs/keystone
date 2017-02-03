@@ -101,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_6e87c60f",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-02-03T20:54:44Z",
+      "side": 1,
+      "message": "Yeah, I would vote for capital, but understand the reasoning.",
+      "parentUuid": "1a430d35_3b65fe44",
+      "revId": "6f892f2cddeb40c0130037d5cb4f1c099bda202a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_034c626f",
         "filename": "doc/source/federation/mapping_combinations.rst",
         "patchSetId": 2
