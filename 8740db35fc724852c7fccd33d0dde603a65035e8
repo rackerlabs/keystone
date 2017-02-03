@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_34ad3632",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-03T16:22:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_b7aad483",
+      "revId": "8740db35fc724852c7fccd33d0dde603a65035e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_99933ffa",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2017-02-02T22:25:42Z",
       "side": 1,
       "message": "We could actually test this by adding unit tests to test_sql_upgrade. We\u0027d be able to put the database in weird states before running `keystone-manage db_sync --check` to ensure a useful message is logged.",
+      "revId": "8740db35fc724852c7fccd33d0dde603a65035e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_74a7be4f",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-03T16:22:19Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a461143_99933ffa",
       "revId": "8740db35fc724852c7fccd33d0dde603a65035e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
