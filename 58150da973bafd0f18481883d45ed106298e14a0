@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_58949536",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-03T18:16:16Z",
+      "side": 1,
+      "message": "Sweet! In addition to this we could also wrap https://github.com/openstack/keystone/blob/474b762561809f5936b6fd6572f8cebff6e5151d/keystone/token/persistence/backends/sql.py#L84 in a versionutils deprecation object - https://github.com/openstack/keystone/blob/474b762561809f5936b6fd6572f8cebff6e5151d/keystone/contrib/endpoint_filter/backends/catalog_sql.py#L24-L29",
+      "revId": "58150da973bafd0f18481883d45ed106298e14a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_9887dd0e",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-03T18:16:16Z",
+      "side": 1,
+      "message": "Do we use the literal patterns in deprecation messages? \n\n  \u0027UUID Token Provider `keystone.conf [token] provider\u003duuid`\u0027",
+      "revId": "58150da973bafd0f18481883d45ed106298e14a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_b87c9921",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-03T18:16:16Z",
+      "side": 1,
+      "message": "Same question here.",
+      "revId": "58150da973bafd0f18481883d45ed106298e14a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
