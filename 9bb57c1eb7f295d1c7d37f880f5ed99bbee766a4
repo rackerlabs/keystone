@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_4c7e92e5",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1508,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-03T22:02:10Z",
+      "side": 0,
+      "message": "\\o/ I love seeing patches that remove these",
+      "revId": "9bb57c1eb7f295d1c7d37f880f5ed99bbee766a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
