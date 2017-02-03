@@ -1,0 +1,7 @@
+---
+fixes:
+  - >
+    [`bug 1615339 <https://bugs.launchpad.net/keystone/+bug/1615339>`_]
+    The response content type when creating request tokens or access tokens
+    has changed to ``application/x-www-form-urlencoded``. The old value
+    ``application/x-www-urlformencoded`` is invalid and will no longer be used.

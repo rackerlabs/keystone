@@ -1,0 +1,15 @@
+---
+features:
+  - >
+    [`bug 1661604 <https://bugs.launchpad.net/keystone/+bug/1661604>`_]
+    Support for ``osprofiler`` was added. This cross-project profiling library
+    allows a request to be traced through all OpenStack services that support
+    ``osprofilers``. To initiate tracing the `--profile <HMAC_KEY>` option needs
+    to be added. Configuration and usage details can be found in
+    `OSProfiler documentation <https://docs.openstack.org/developer/osprofiler/api.html>`_
+upgrade:
+  - >
+    [`bug 1661604 <https://bugs.launchpad.net/keystone/+bug/1661604>`_]
+    OSprofiler support was introduced. To allow its usage the
+    ``keystone-paste.ini`` file needs to be modified to contain ``osprofiler``
+    middleware.
