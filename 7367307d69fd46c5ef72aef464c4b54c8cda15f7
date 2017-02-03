@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_2e94de35",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-02-03T20:54:37Z",
+      "side": 1,
+      "message": "Sorry more uses of \"we\"",
+      "range": {
+        "startLine": 108,
+        "startChar": 6,
+        "endLine": 108,
+        "endChar": 8
+      },
+      "revId": "7367307d69fd46c5ef72aef464c4b54c8cda15f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_4e992a6e",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-02-03T20:54:37Z",
+      "side": 1,
+      "message": "Sorry more uses of \"we\"",
+      "range": {
+        "startLine": 109,
+        "startChar": 34,
+        "endLine": 109,
+        "endChar": 36
+      },
+      "revId": "7367307d69fd46c5ef72aef464c4b54c8cda15f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_8ea3129e",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-02-03T20:54:37Z",
+      "side": 1,
+      "message": "Sorry more uses of \"we\"",
+      "range": {
+        "startLine": 110,
+        "startChar": 60,
+        "endLine": 110,
+        "endChar": 62
+      },
+      "revId": "7367307d69fd46c5ef72aef464c4b54c8cda15f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_aea0ce91",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-02-03T20:54:37Z",
+      "side": 1,
+      "message": "Sorry more uses of \"we\"",
+      "range": {
+        "startLine": 114,
+        "startChar": 8,
+        "endLine": 114,
+        "endChar": 10
+      },
+      "revId": "7367307d69fd46c5ef72aef464c4b54c8cda15f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
