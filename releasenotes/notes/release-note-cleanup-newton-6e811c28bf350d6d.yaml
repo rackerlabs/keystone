@@ -1,0 +1,87 @@
+---
+features:
+  - >
+    [`blueprint keystone-manage-doctor <https://blueprints.launchpad.net/keystone/+spec/keystone-manage-doctor>`_]
+    Added a CLI command, ``keystone-manage doctor``, which can be run to diagnose
+    a given keystone deployment. The `doctor` will recommend best-practices for
+    performance and security. It is recommended to run the `doctor` before and
+    after an upgrade.
+fixes:
+  - >
+    [`bug 1661604 <https://bugs.launchpad.net/keystone/+bug/1661604>`_]
+    Prohibit global ``roles`` from implying ``domain specific roles``.
+  - >
+    [`bug 1590587 <https://bugs.launchpad.net/keystone/+bug/1590587>`_]
+    Prohibit cross-domain ``domain specific roles``.
+  - >
+    [`bug 1520321 <https://bugs.launchpad.net/keystone/+bug/1520321>`_]
+    Improve user experience with ``keystone-manage token_flush``. When using
+    memcache and fernet tokens it is not necessary to run the ``keystone-manage
+    token_flush`` command. If using the KVS token driver, no longer throw
+    ``NotImplemented`` errors, simply pass and log a warning message.
+  - >
+    [`bug 1603038 <https://bugs.launchpad.net/keystone/+bug/1603038>`_]
+    Due to a refactoring, using the ``ADMIN_TOKEN`` would result in a traceback
+    in the keystone log, the request would still succeed. Skip middleware
+    processing if the ``ADMIN_TOKEN`` is used in the request.
+  - >
+    [`bug 1600394 <https://bugs.launchpad.net/keystone/+bug/1600394>`_]
+    Fixed ``ValueError: too many values to unpack`` error when using memcached.
+    Update the sample uwsgi files (``keystone-uwsgi-admin.ini`` and
+    ``keystone-uwsgi-public.ini`` to include ``lazy-apps=True``.
+  - >
+    [`bug 1597101 <https://bugs.launchpad.net/keystone/+bug/1597101>`_]
+    [`bug 1482701 <https://bugs.launchpad.net/keystone/+bug/1482701>`_]
+    Ensure a federated users ``username`` value appears correctly in the token,
+    which is used in Horizon when configured with WebSSO.
+  - >
+    [`bug 1590779 <https://bugs.launchpad.net/keystone/+bug/1590779>`_]
+    Improve performance of keystone when using memcached. Cache region
+    invalidation was not designed to work across processes. To improve performance
+    keys are now invalidated across regions.
+  - >
+    [`bug 1592169 <https://bugs.launchpad.net/keystone/+bug/1592169>`_]
+    Cached tokens would break the Liberty to Mitaka upgrade. Included a fix to
+    add a dummy ``domain_id`` column to ``role`` caching. This fix was backported
+    to ``stable/mitaka``.
+  - >
+    [`bug 1572341 <https://bugs.launchpad.net/keystone/+bug/1572341>`_]
+    Hardcoded indices would cause upgrades from Icehouse, Juno or Kilo to
+    Mitaka would fail. Logic was added to check for indices programmatically.
+  - >
+    [`bug 1562934 <https://bugs.launchpad.net/keystone/+bug/1562934>`_]
+    Hardcoded constraint names would cause upgrades from Liberty to Mitaka to
+    fail. Logic was added to check for constraint names programmatically.
+  - >
+    [`bug 1598040 <https://bugs.launchpad.net/keystone/+bug/1598040>`_]
+    When listing ``revoke events``, then ``revoked_at`` field will now be
+    included.
+  - >
+    [`bug 1588927 <https://bugs.launchpad.net/keystone/+bug/1588927>`_]
+    Listing groups with a filter (i.e. ``GET /v3/groups?name=<name>``) will
+    now honor the ``[ldap] group_filter`` config option.
+    [`bug 1577804 <https://bugs.launchpad.net/keystone/+bug/1577804>`_]
+    Listing users with a filter (i.e. ``GET /v3/users?name=<name>``) will
+    now honor the ``[ldap] user_filter`` config option.
+  - >
+    [`bug 1433402 <https://bugs.launchpad.net/keystone/+bug/1433402>`_]
+    Allow domain admins to list users in a group with a domain scoped token.
+  - >
+    [`bug 1558670 <https://bugs.launchpad.net/keystone/+bug/1558670>`_]
+    Add conflict validation when updating ``identity providers``, so a ``409
+    Conflict`` is raised, rather than a ``500 Internal Server Error``.
+  - >
+    [`bug 1576315 <https://bugs.launchpad.net/keystone/+bug/1576315>`_]
+    If fernet tokens are configured but no keys are detected, rather than fail
+    at token issuance, keystone will not start.
+upgrade:
+  - >
+    [`Related to bug 1433402 <https://bugs.launchpad.net/keystone/+bug/1433402>`_]
+    The ``identity:list_groups_for_user`` rule has been changed in
+    ``policy.v3cloudsample.json``. From::
+
+      "identity:list_groups_for_user": "rule:owner or rule:admin_and_matching_domain_id"
+
+    To::
+
+      "identity:list_groups_for_user": "rule:owner or rule:admin_and_matching_target_user_domain_id"

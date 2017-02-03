@@ -1,0 +1,22 @@
+---
+features:
+  - >
+    [`blueprint shadow-users-newton <https://blueprints.launchpad.net/keystone/+spec/shadow-users-newton>`_]
+    `Role assignments` can now be created and delete on federated users, at the
+    individual `user` level, rather than inheriting authorization from a `group`.
+upgrade:
+  - >
+    [`blueprint shadow-users-newton <https://blueprints.launchpad.net/keystone/+spec/shadow-users-newton>`_]
+    The ``identity:list_projects_for_groups`` and ``identity:list_domains_for_groups``
+    policies have been changed to better reflect their purpose. These entries were
+    only used to allowed ephemeral federated users to discover authorization,
+    however with federated users no longer being ephemeral, the policies were
+    renamed in ``policy.json`` and ``policy.v3cloudsample.json``. From::
+
+      "identity:list_projects_for_groups": ""
+      "identity:list_domains_for_groups": ""
+
+    To::
+
+      "identity:list_projects_for_user": ""
+      "identity:list_domains_for_user": ""
