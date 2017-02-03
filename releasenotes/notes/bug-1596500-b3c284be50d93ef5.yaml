@@ -1,0 +1,8 @@
+---
+upgrade:
+  - >
+    [`bug 1596500 <https://bugs.launchpad.net/keystone/+bug/1596500>`_]
+    The ``created_at`` field of a user password may be reset if trailing the
+    master development branch. Note that this will only affect deployments that
+    have PCI support enabled, via the ``[security_compliance]`` configuration
+    options.

@@ -1,0 +1,36 @@
+---
+features:
+  - >
+    [`blueprint pci-dss <https://blueprints.launchpad.net/keystone/+spec/pci-dss>`_]
+    Added PCI-DSS support for users stored in a SQL backend. To enable PCI-DSS
+    support refer to the various options in the ``[security_compliance]`` section
+    of `keystone.conf`.
+
+    The following is a brief summary of the available options:
+     * Account/user lockout, see ``[security_compliance] lockout_failure_attempts``
+       and ``[security_compliance] lockout_duration``
+     * Disable inactive users, see ``[security_compliance] disable_user_account_days_inactive``
+     * Password expiration, see ``[security_compliance] password_expires_days``
+     * Password strength requirements, see ``[security_compliance] password_regex``
+       and ``[security_compliance] password_regex_description``
+     * Unique password history, see ``[security_compliance] unique_last_password_count``
+       and ``[security_compliance] minimum_password_age``
+
+    If PCI support is enabled, via the ``[security_compliance]`` configuration
+    options, then the ``password_expires_at`` field will be populated with a
+    timestamp. Otherwise, it will default to ``null``, indicating the password
+    does not expire.
+other:
+  - >
+    [`blueprint pci-dss <https://blueprints.launchpad.net/keystone/+spec/pci-dss>`_]
+    A new method ``change_password`` was added to
+    ``keystone.identity.backends.base.IdentityDriverV8``.
+
+    Third-party extensions that extend the abstract class (``IdentityDriverV8``)
+    should implement this new method.
+
+    The method has the following signature::
+
+      change_password(self, user_id, new_password)
+
+    Nothing is returned.
