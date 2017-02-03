@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_ae3c4e30",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-03T20:58:54Z",
+      "side": 1,
+      "message": "most of the time we have this as:\n\n  \u003cresource\u003e_\u003cattribute\u003e\n\nso  \"group_name\" and \"role_name\" may fit better here",
+      "range": {
+        "startLine": 193,
+        "startChar": 0,
+        "endLine": 204,
+        "endChar": 14
+      },
+      "revId": "cad8b1bc4fff00efce466b477150f84f04d613a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_8e26b214",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1434,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-03T20:58:54Z",
+      "side": 1,
+      "message": "dupe of the one below?",
+      "range": {
+        "startLine": 1434,
+        "startChar": 0,
+        "endLine": 1434,
+        "endChar": 22
+      },
+      "revId": "cad8b1bc4fff00efce466b477150f84f04d613a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
