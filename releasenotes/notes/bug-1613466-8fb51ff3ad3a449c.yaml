@@ -1,0 +1,5 @@
+fixes:
+  - >
+    [`bug 1613466 <https://bugs.launchpad.net/keystone/+bug/1613466>`_]
+    Prevent updating a `credential` to an `ec2 credential` without specifying
+    a ``project_id``. This now produces a `400 Bad Request` error.

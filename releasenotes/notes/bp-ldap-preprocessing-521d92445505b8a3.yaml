@@ -1,0 +1,10 @@
+---
+features:
+  - >
+    [`blueprint ldap-preprocessing <https://blueprints.launchpad.net/keystone/+spec/ldap-preprocessing>`_]
+    The ``keystone-manage mapping_populate`` command was added. This command
+    will pre-populate user entries with all users from LDAP. This will improve
+    performance when users authenticate. It should be used when an LDAP is first
+    configured, or after calling ``keystone-manage mapping_purge``, before any
+    queries related to the domain are made. For more information see
+    ``keystone-manage mapping_populate --help``
