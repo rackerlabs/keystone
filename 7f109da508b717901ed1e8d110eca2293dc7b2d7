@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_157f38ab",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 788,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-03T18:00:49Z",
+      "side": 1,
+      "message": "I wonder if we should include `required` in these, too?",
+      "revId": "7f109da508b717901ed1e8d110eca2293dc7b2d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
