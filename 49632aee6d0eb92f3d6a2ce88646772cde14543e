@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_356ef9c9",
+        "filename": "api-ref/source/v3/service-catalog.inc",
+        "patchSetId": 5
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-03T15:45:22Z",
+      "side": 1,
+      "message": "I\u0027d *love* to give these better names. Nothing about `region_id_1` tells me the only difference between it and `region_id` is the fact it\u0027s not required.\n\nhttps://github.com/openstack/keystone/blob/cf9f0357cdee0ade5f41a562da92418a4645d251/api-ref/source/v3/parameters.yaml#L1434-L1447\n\nI suppose we can do that in a separate patch though. It\u0027s not going to affect the docs and it\u0027s only for developer readability.",
+      "revId": "49632aee6d0eb92f3d6a2ce88646772cde14543e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
