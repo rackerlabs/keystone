@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_bbf56e84",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-03T20:32:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_2374fe33",
+      "revId": "6f892f2cddeb40c0130037d5cb4f1c099bda202a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_3e9b31cb",
         "filename": "doc/source/federation/mapping_combinations.rst",
         "patchSetId": 2
@@ -42,6 +60,24 @@
         "endLine": 27,
         "endChar": 8
       },
+      "revId": "6f892f2cddeb40c0130037d5cb4f1c099bda202a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_3b65fe44",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-03T20:32:48Z",
+      "side": 1,
+      "message": "I was treating \u0027keystone\u0027 as the project name since we longer officially title case it. There is differing opinions on if it\u0027s the first work in a sentence. I typically go with the iPhone approach...it\u0027s the name so the case always stays. I\u0027ll change this is other disagree or if there is some official rule (I could not find one in the past)",
+      "parentUuid": "1a430d35_3e9b31cb",
       "revId": "6f892f2cddeb40c0130037d5cb4f1c099bda202a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_bb51ee64",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-03T20:32:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_e33cb631",
+      "revId": "6f892f2cddeb40c0130037d5cb4f1c099bda202a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_febe09fe",
         "filename": "doc/source/federation/mapping_combinations.rst",
         "patchSetId": 2
@@ -88,6 +142,24 @@
         "endLine": 104,
         "endChar": 45
       },
+      "revId": "6f892f2cddeb40c0130037d5cb4f1c099bda202a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_1bc76213",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-03T20:32:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_febe09fe",
       "revId": "6f892f2cddeb40c0130037d5cb4f1c099bda202a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -134,6 +206,42 @@
         "endLine": 190,
         "endChar": 31
       },
+      "revId": "6f892f2cddeb40c0130037d5cb4f1c099bda202a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_3bf33e75",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-03T20:32:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_1e18351d",
+      "revId": "6f892f2cddeb40c0130037d5cb4f1c099bda202a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_3b9a5e15",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-03T20:32:48Z",
+      "side": 1,
+      "message": "Done. I rephrased this in a prior version, but backed off and accidentally left this in.",
+      "parentUuid": "1a430d35_def6add6",
       "revId": "6f892f2cddeb40c0130037d5cb4f1c099bda202a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
