@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_0fc2c933",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-03T17:01:31Z",
+      "side": 1,
+      "message": "s/not any/no/",
+      "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_4fe211d7",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-03T17:01:31Z",
+      "side": 1,
+      "message": "Why the trailing space?",
+      "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_4f94d136",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-03T17:01:31Z",
+      "side": 1,
+      "message": "Missing the spaces after the \u0027:\u0027",
+      "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_0faba975",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-03T17:01:31Z",
+      "side": 1,
+      "message": "remove the trailing \u0027 %s\u0027 from the string and replace \u0027 %\u0027 with \u0027,\u0027",
+      "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_ef9f3d5d",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-03T17:01:31Z",
+      "side": 1,
+      "message": "This is creating an instance so \u0027instance\u0027 is a much better name than klass.",
+      "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_0f9d6965",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-03T17:01:31Z",
+      "side": 1,
+      "message": "Why access a protected method here?",
+      "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
