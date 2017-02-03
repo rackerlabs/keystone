@@ -22,6 +22,24 @@
       "revId": "b8b1e189306539007b6afa052b6c9f909cad41a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_98819d4d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-03T18:10:38Z",
+      "side": 1,
+      "message": "This could even be collapsed into the paragraph above since it doesn\u0027t make sense to have a list of one.",
+      "parentUuid": "1a430d35_757c0121",
+      "revId": "b8b1e189306539007b6afa052b6c9f909cad41a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
