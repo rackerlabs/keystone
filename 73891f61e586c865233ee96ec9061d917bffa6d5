@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_1549f85f",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-03T18:40:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_0fc2c933",
+      "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_2b44da72",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 5
@@ -47,6 +65,24 @@
       "writtenOn": "2017-02-03T17:31:18Z",
       "side": 1,
       "message": "s/db/database/",
+      "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_5579c092",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-03T18:40:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_2b44da72",
       "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_756ebcca",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-03T18:40:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_4fe211d7",
+      "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_4f94d136",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 5
@@ -81,6 +135,24 @@
       "writtenOn": "2017-02-03T17:01:31Z",
       "side": 1,
       "message": "Missing the spaces after the \u0027:\u0027",
+      "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_b8e73911",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-03T18:40:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_4f94d136",
       "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_d8e4050f",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-03T18:40:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_6f834dcd",
+      "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_0faba975",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 5
@@ -115,6 +205,24 @@
       "writtenOn": "2017-02-03T17:01:31Z",
       "side": 1,
       "message": "remove the trailing \u0027 %s\u0027 from the string and replace \u0027 %\u0027 with \u0027,\u0027",
+      "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_18ef6de9",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-03T18:40:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_0faba975",
       "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +263,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_38ba69e2",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-03T18:40:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_ef9f3d5d",
+      "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_0f9d6965",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 5
@@ -166,6 +292,24 @@
       "writtenOn": "2017-02-03T17:01:31Z",
       "side": 1,
       "message": "Why access a protected method here?",
+      "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_78b4f1f1",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-03T18:40:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_0f9d6965",
       "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +333,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_98b99dec",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-03T18:40:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_2f1225b5",
+      "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_92889ee9",
         "filename": "keystone/common/sql/upgrades.py",
         "patchSetId": 5
@@ -200,6 +362,24 @@
       "writtenOn": "2017-02-03T17:31:18Z",
       "side": 1,
       "message": "I\u0027d say that we strictly rely on information provided from the database and not try to loop in repository versions just yet. If that\u0027s the case, we could just use get_db_version() to get the versions of each repository, then we wouldn\u0027t need to make any changes to this module at all.",
+      "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_d8cb2571",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-03T18:40:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_92889ee9",
       "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
