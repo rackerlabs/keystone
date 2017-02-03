@@ -16,6 +16,23 @@
       "revId": "aaf30da59c1c00e60a865418548a1ce1803dc740",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_f155571d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-03T21:39:13Z",
+      "side": 1,
+      "message": "Yeah - we could probably get rid of this. We keep conflict messages around when we backport fixes to stable branches. Since we\u0027re not doing that here - we don\u0027t have to follow that pattern.",
+      "revId": "aaf30da59c1c00e60a865418548a1ce1803dc740",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
