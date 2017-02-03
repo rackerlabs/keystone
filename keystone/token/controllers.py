@@ -19,6 +19,7 @@ from keystone.common import utils
 from keystoneclient.common import cms
 from oslo_log import log
 from oslo_serialization import jsonutils
+from oslo_utils import timeutils
 import six
 
 from keystone.common import controller
@@ -551,7 +552,12 @@ class V2TokenDataHelper(object):
             raise exception.Unauthorized(msg)
 
         token = {}
-        token['expires'] = v3_token.get('expires_at')
+        expires = v3_token.get('expires_at')
+        expiration_dt = datetime.datetime.strptime(
+            expires.rstrip('Z'),
+            '%Y-%m-%dT%H:%M:%S.%f'
+        )
+        token['expires'] = timeutils.isotime(at=expiration_dt)
         token['issued_at'] = v3_token.get('issued_at')
         token['audit_ids'] = v3_token.get('audit_ids')
         if v3_token.get('bind'):
