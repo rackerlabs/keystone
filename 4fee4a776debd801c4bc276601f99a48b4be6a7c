@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_0249b35f",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 766,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2017-02-03T22:52:13Z",
+      "side": 1,
+      "message": "Hi David, yes I read the commit message but I think some erroneous conclusions have been drawn.\n\nYou need to pass the charset parameter to the Response constructor and it will perform the encoding.\n\nThe Response constructor also allows you to pass the content_type and it has smarts enough to add the charset to it and to add it to the headers, however it only does this if you don\u0027t pass a headerlist because it presumes the act of passing in headers implies you know better what the headers need to be. If there is only the need to add a content-type header it\u0027s better to pass it as a keyword arg and allow the Response object to manage it rather than a headerlist containing only a content-type. However, this does not apply to this particular use of the Response object because we must add other headers, therefore we must include the content-type in the headerlist.\n\nOne minor problem with the content-type that is hardcoded is it omits the charset parameter. It defaults to utf-8 for JSON so it\u0027s probably not a big deal but in the interest of completeness the charset should be explicit.\n\nPassing in a headerlist does not prevent the content-length from being added to the headers.\n\nBelow is a tiny Python program that illustrates these points\n\n----------------------------------\nfrom webob.response import Response\n\nbody \u003d u\u0027foobar\u0027\n\nheaders \u003d []\nheaders.append((\u0027Vary\u0027, \u0027X-Auth-Token\u0027))\nheaders.append((\u0027Content-Type\u0027, \u0027application/json; charset\u003dutf-8\u0027))\n\nresponse \u003d Response(body\u003dbody,\n                    charset\u003d\u0027utf-8\u0027,\n                    headerlist\u003dheaders\n                    )\n\nprint response.body.__class__\nprint response\n----------------------------------\n\nThis is the output:\n\n----------------------------------\n\u003ctype \u0027str\u0027\u003e\n200 OK\nVary: X-Auth-Token\nContent-Type: application/json; charset\u003dutf-8\nContent-Length: 6\n\nfoobar\n----------------------------------\nWe can see that the unicode body was encoded (because body is now a str type and the Content-Length is correctly set.\n\nI tested this against the master branch of WebOb. If there is some version of WebOb that is not behaving this way then it\u0027s WebOb that needs fixing.\n\nIn summary I think the actual fix is to add the charset keyword parameter to the Response object and it would be wise but not essential to also add the charset parameter to the Content-Type header.",
+      "parentUuid": "1a430d35_ab4e0abf",
+      "revId": "4fee4a776debd801c4bc276601f99a48b4be6a7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_657efeaf",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 3
@@ -119,6 +137,23 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_82f843e7",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2017-02-03T22:52:13Z",
+      "side": 1,
+      "message": "See prior comment concerning the wisdom of using the content_type keyword parameter when the only header to add is Content-Type, the Response object also needs the charset parameter added.",
+      "revId": "4fee4a776debd801c4bc276601f99a48b4be6a7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_9e4965d3",
         "filename": "keystone/token/_simple_cert.py",
         "patchSetId": 3
@@ -130,6 +165,23 @@
       "writtenOn": "2017-02-02T21:50:31Z",
       "side": 1,
       "message": "See prior comment considering setting charset instead of encoding body.",
+      "revId": "4fee4a776debd801c4bc276601f99a48b4be6a7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_e2be67fe",
+        "filename": "keystone/token/_simple_cert.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2017-02-03T22:52:13Z",
+      "side": 1,
+      "message": "See prior comment concerning the wisdom of using the content_type keyword parameter when the only header to add is Content-Type, the Response object also needs the charset parameter added.",
       "revId": "4fee4a776debd801c4bc276601f99a48b4be6a7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
