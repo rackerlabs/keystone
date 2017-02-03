@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_0c8e4a78",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2017-02-03T21:49:13Z",
+      "side": 1,
+      "message": "++ for doing it this way, rather than a direct call from the resource methods!",
+      "range": {
+        "startLine": 493,
+        "startChar": 0,
+        "endLine": 493,
+        "endChar": 63
+      },
+      "revId": "3b688b0725d5d35f128f480fb2212d60b6b24174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_6c58aefb",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2017-02-03T21:49:13Z",
+      "side": 1,
+      "message": "So this would work.  However, I am concerned about performance in the case when the user population is large. Would it not be more efficient to instead of implementing a list_users_with_default_project_id() method in the driver, but instead to implement an unset_default_project_id() method which used a single SQL statement to zero out the project ID?",
+      "range": {
+        "startLine": 526,
+        "startChar": 0,
+        "endLine": 540,
+        "endChar": 78
+      },
+      "revId": "3b688b0725d5d35f128f480fb2212d60b6b24174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
