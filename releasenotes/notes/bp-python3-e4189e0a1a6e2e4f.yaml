@@ -1,0 +1,14 @@
+---
+prelude: >
+  - Keystone now supports Python 3.
+features:
+  - >
+    [`blueprint python3 <https://blueprints.launchpad.net/keystone/+spec/python3>`_]
+    Keystone now supports being run under Python 3, specifically version 3.4 is
+    used in our unit tests.
+
+    As a part of moving to Python 3, keystone now relies on `pyldap
+    <https://github.com/pyldap/pyldap>`_  instead of `python-ldap
+    <https://www.python-ldap.org>`_ as the latter is not maintained and only
+    works in Python 2.X. ``pyldap`` is a drop-in replacement of ``python-ldap``
+    with modifications to be Python 3 compatible.
