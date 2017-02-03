@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_757c0121",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-02-03T15:55:35Z",
+      "side": 1,
+      "message": "nit: make singular.",
+      "range": {
+        "startLine": 595,
+        "startChar": 0,
+        "endLine": 595,
+        "endChar": 33
+      },
+      "revId": "b8b1e189306539007b6afa052b6c9f909cad41a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
