@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a430d35_5e31dda1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-03T18:54:52Z",
+      "side": 1,
+      "message": "This should work now - https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-pike\n\nbp*",
+      "revId": "58150da973bafd0f18481883d45ed106298e14a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_58949536",
         "filename": "keystone/conf/token.py",
         "patchSetId": 3
