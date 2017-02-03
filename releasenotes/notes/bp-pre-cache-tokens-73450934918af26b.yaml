@@ -1,0 +1,7 @@
+---
+features:
+  - >
+    [`blueprint pci-dss <https://blueprints.launchpad.net/keystone/+spec/pci-dss>`_]
+    New configuration option ``[token] cache_on_issue`` was added that enables
+    tokens to be cached on issuance. This reduces the time necessary to validate
+    the token (the first time).
