@@ -101,6 +101,40 @@
       "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_2f1225b5",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-03T17:04:00Z",
+      "side": 1,
+      "message": "What are you converting to unicode and then to an int? Seems like you wouldn\u0027t need to convert to unicode at all.",
+      "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_cf236104",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 699,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-03T17:04:00Z",
+      "side": 1,
+      "message": "This seems strange. Why would you have to mock a config object?",
+      "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
