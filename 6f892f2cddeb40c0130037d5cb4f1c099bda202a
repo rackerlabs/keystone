@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_3e9b31cb",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-02-03T18:56:08Z",
+      "side": 1,
+      "message": "Keystone",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 8
+      },
+      "revId": "6f892f2cddeb40c0130037d5cb4f1c099bda202a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_e33cb631",
         "filename": "doc/source/federation/mapping_combinations.rst",
         "patchSetId": 2
@@ -41,6 +64,75 @@
         "startChar": 34,
         "endLine": 83,
         "endChar": 38
+      },
+      "revId": "6f892f2cddeb40c0130037d5cb4f1c099bda202a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_febe09fe",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-02-03T18:56:08Z",
+      "side": 1,
+      "message": "Probably better to use Keystone than \"We\"",
+      "range": {
+        "startLine": 104,
+        "startChar": 43,
+        "endLine": 104,
+        "endChar": 45
+      },
+      "revId": "6f892f2cddeb40c0130037d5cb4f1c099bda202a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_1e18351d",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-02-03T18:56:08Z",
+      "side": 1,
+      "message": "JSON,",
+      "range": {
+        "startLine": 190,
+        "startChar": 44,
+        "endLine": 190,
+        "endChar": 48
+      },
+      "revId": "6f892f2cddeb40c0130037d5cb4f1c099bda202a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_def6add6",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-02-03T18:56:08Z",
+      "side": 1,
+      "message": "\"is\" was correct.  file is singular",
+      "range": {
+        "startLine": 190,
+        "startChar": 28,
+        "endLine": 190,
+        "endChar": 31
       },
       "revId": "6f892f2cddeb40c0130037d5cb4f1c099bda202a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
