@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_ab4e0abf",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 766,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-03T16:42:25Z",
+      "side": 1,
+      "message": "@John, The commit I mention in the commit message shows what WebOb actually does. It will not deal with the encoding if you are adding headers.",
+      "parentUuid": "3a461143_f3df020a",
+      "revId": "4fee4a776debd801c4bc276601f99a48b4be6a7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_657efeaf",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 3
@@ -60,6 +78,24 @@
         "endLine": 771,
         "endChar": 51
       },
+      "revId": "4fee4a776debd801c4bc276601f99a48b4be6a7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_ab20caf8",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 771,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-03T16:42:25Z",
+      "side": 1,
+      "message": "@Steve, Which other responses? I thought I got them all?\n\n@John, The commit I mention in the commit message shows what WebOb actually does. It will not add content-length if you are providing headers.",
+      "parentUuid": "3a461143_7e3cb9bf",
       "revId": "4fee4a776debd801c4bc276601f99a48b4be6a7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
