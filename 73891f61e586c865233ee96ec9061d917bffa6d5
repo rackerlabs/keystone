@@ -121,6 +121,23 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_759f9c03",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-03T17:57:20Z",
+      "side": 1,
+      "message": "Also a static method won\u0027t get a cls.",
+      "revId": "73891f61e586c865233ee96ec9061d917bffa6d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_ef9f3d5d",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 5
