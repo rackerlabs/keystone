@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_4eca0aa3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-03T21:35:10Z",
+      "side": 1,
+      "message": "You\u0027re good about keeping things in workflow-1 when you\u0027re iterating on it. You could remove the WIP from the commit title.",
+      "revId": "cb8e2c451b84e6d1bebacffa4eac908dfbd1513e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_aef52e84",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-03T21:35:10Z",
+      "side": 1,
+      "message": "Couldn\u0027t this call?\n\n  expand_version \u003d upgrades.get_db_version(repo\u003d\u0027expand\u0027)\n  ...",
+      "revId": "cb8e2c451b84e6d1bebacffa4eac908dfbd1513e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_6e034674",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-03T21:35:10Z",
+      "side": 1,
+      "message": "Are the versions going to be called from cli.py instead of here, too?",
+      "revId": "cb8e2c451b84e6d1bebacffa4eac908dfbd1513e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_ae6a8e18",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1651,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-03T21:35:10Z",
+      "side": 1,
+      "message": "This is an awesome test and could probably be proposed on it\u0027s own since it is not directly related to the bug we\u0027re fixing with this patch.",
+      "revId": "cb8e2c451b84e6d1bebacffa4eac908dfbd1513e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_ce20bafa",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1660,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-03T21:35:10Z",
+      "side": 1,
+      "message": "We could replace the if/else here with specific assertion statements:\n\n  self.assertEqual(expand_version, 1)\n  self.assertEqual(migrate_version, 1)\n  self.assertEqual(contract_version, 2)",
+      "revId": "cb8e2c451b84e6d1bebacffa4eac908dfbd1513e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_f14b97ae",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1678,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-03T21:35:10Z",
+      "side": 1,
+      "message": "I don\u0027t think you need lines1677 or 1678 because you\u0027ve already migrated to version 1 of both the migrate and contract repos.",
+      "revId": "cb8e2c451b84e6d1bebacffa4eac908dfbd1513e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_d1e5bba8",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1683,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-03T21:35:10Z",
+      "side": 1,
+      "message": "You could probably omit this line since we\u0027ve already migrated the expand repository to version 2.",
+      "revId": "cb8e2c451b84e6d1bebacffa4eac908dfbd1513e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_51e8eb7c",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1685,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-03T21:35:10Z",
+      "side": 1,
+      "message": "You could omit this line since we\u0027ve already migrated the contract repository to version 1.",
+      "revId": "cb8e2c451b84e6d1bebacffa4eac908dfbd1513e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_31cc3f35",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1686,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-03T21:35:10Z",
+      "side": 1,
+      "message": "We could end this test by coming full circle with\n\n    self.contract(2)\n    # assert all versions are the same and the error message\n    # is similar to line 1672.",
+      "revId": "cb8e2c451b84e6d1bebacffa4eac908dfbd1513e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
