@@ -190,15 +190,15 @@ links:
   in: body
   required: true
   type: object
-name_1:
+name_group:
   description: |
-    The role name.
+    The name of the group.
   in: body
   required: true
   type: string
-name_2:
+name_role:
   description: |
-    The name of the group.
+    The role name.
   in: body
   required: true
   type: string

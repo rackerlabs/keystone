@@ -304,7 +304,7 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - region_id: region_id
+   - region_id: region_id_required
    - links: endpoints_links
    - url: endpoint_url
    - region: endpoint_region
@@ -354,7 +354,7 @@ Request Parameters
    - enabled: endpoint_enabled_notRequired
    - interface: endpoint_interface
    - service_id: service_id
-   - region_id: region_id_1
+   - region_id: region_id_notRequired
 
 Request Example
 ---------------
@@ -375,7 +375,7 @@ Response Parameters
    - interface: endpoint_interface
    - service_id: service_id
    - id: endpoint_id
-   - region_id: region_id
+   - region_id: region_id_required
 
 
 Show endpoint details
