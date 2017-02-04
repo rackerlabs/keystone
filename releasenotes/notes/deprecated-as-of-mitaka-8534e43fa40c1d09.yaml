@@ -1,5 +1,16 @@
 ---
+prelude: >
+    - Deprecated all v2.0 APIs. Most v2.0 APIs will be removed in the 'Q' release.
+      However, the authentication APIs and EC2 APIs are indefinitely deprecated.
+
+    - Deprecated the PKI and PKIz token formats. They will be removed in the 'O' release.
 deprecations:
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    Deprecated all v2.0 APIs. The keystone team recommends using v3 APIs instead.
+    Most v2.0 APIs will be removed in the 'Q' release. However, the authentication
+    APIs and EC2 APIs are indefinitely deprecated and will not be removed in
+    the 'Q' release.
   - >
     [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
     As of the Mitaka release, the PKI and PKIz token formats have been
@@ -16,6 +27,11 @@ deprecations:
     removed in the 'O' release.
   - >
     [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    The file ``httpd/keystone.py`` has been deprecated in favor of
+    ``keystone-wsgi-admin`` and ``keystone-wsgi-public`` and may be removed in
+    the 'O' release.
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
     As of the Mitaka release, the auth plugin `keystone.auth.plugins.saml2.Saml2`
     has been deprecated. It is recommended to use `keystone.auth.plugins.mapped.Mapped`
     instead. The ``saml2`` plugin will be removed in the 'O' release.
@@ -24,3 +40,59 @@ deprecations:
     As of the Mitaka release, the simple_cert_extension is deprecated since it
     is only used in support of the PKI and PKIz token formats.  It will be
     removed in the 'O' release.
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    The V8 Assignment driver interface is deprecated. Support for the V8
+    Assignment driver interface is planned to be removed in the 'O' release of
+    OpenStack.
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    The V8 Role driver interface is deprecated. Support for the V8 Role driver
+    interface is planned to be removed in the 'O' release of OpenStack.
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    The V8 Resource driver interface is deprecated. Support for the V8
+    Resource driver interface is planned to be removed in the 'O' release of
+    OpenStack.
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    The V8 Federation driver interface is deprecated in favor of the V9
+    Federation driver interface. Support for the V8 Federation driver
+    interface is planned to be removed in the 'O' release of OpenStack.
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    The ``admin_token_auth`` filter must now be placed before the
+    ``build_auth_context`` filter in `keystone-paste.ini`.
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    Deprecate the ``enabled`` option from ``[endpoint_policy]``, it will be
+    removed in the 'O' release, and the extension will always be enabled.
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    The token ``memcache`` and ``memcache_pool`` persistence backends have been
+    deprecated in favor of using Fernet tokens (which require no persistence).
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    ``keystone.common.cache.backends.memcache_pool``,
+    ``keystone.common.cache.backends.mongo``, and
+    ``keystone.common.cache.backends.noop`` are deprecated in favor of
+    oslo.cache backends. The keystone backends will be removed in the 'O'
+    release.
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    The ``[os_inherit] enabled`` configuration option is deprecated. The feature
+    is now always enabled. This configuration option will be removed in the 'O'
+    release.
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    Use of ``$(tenant_id)s`` in the catalog endpoints is deprecated in favor
+    of ``$(project_id)s``. Support for the former will be removed in the 'O'
+    release.
+upgrade:
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    Keystone now uses ``oslo.cache``. Update the ``[cache]`` section of
+    ``keystone.conf`` to point to ``oslo.cache`` backends:
+    ``oslo_cache.memcache_pool`` or ``oslo_cache.mongo``. See `oslo.cache
+    <https://docs.openstack.org/developer/oslo.cache>`_ for additional
+    documentation.

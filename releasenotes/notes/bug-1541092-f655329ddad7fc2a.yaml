@@ -1,0 +1,15 @@
+---
+upgrade:
+  - >
+    [`bug 1541092 <https://bugs.launchpad.net/keystone/+bug/1541092>`_]
+    Several old database migrations were squashed into the initial database
+    load of keystone. Therefore only database upgrades from Kilo and newer are
+    supported.
+other:
+  - >
+    [`bug 1541092 <https://bugs.launchpad.net/keystone/+bug/1541092>`_]
+    ``keystone-manage db_sync`` will no longer create the ``Default`` domain
+    (with name `default` and ID `default`). This domain is used as the domain
+    for any users created using the legacy v2.0 API. A default domain is created
+    by ``keystone-manage bootstrap`` and when a user or project is created using
+    the legacy v2.0 API.
