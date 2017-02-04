@@ -42,3 +42,14 @@ other:
     [`blueprint removed-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/removed-as-of-mitaka>`_]
     Removed Revoke KVS backend (``keystone.revoke.backends.kvs.Revoke``).
     This was deprecated in the Juno release.
+  - >
+    [`blueprint removed-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/removed-as-of-mitaka>`_]
+    The ``list_project_ids_for_user``, ``list_domain_ids_for_user``,
+    ``list_user_ids_for_project``, ``list_project_ids_for_groups``,
+    ``list_domain_ids_for_groups``, ``list_role_ids_for_groups_on_project`` and
+    ``list_role_ids_for_groups_on_domain`` methods have been removed from the
+    ``V9AssignmentDriver`` class.
+  - >
+    [`blueprint removed-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/removed-as-of-mitaka>`_]
+    The ability to validate a trust-scoped token against the v2.0 API has been
+    removed in favor of using the v3 API.
