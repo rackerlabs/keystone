@@ -1,0 +1,21 @@
+---
+upgrade:
+  - >
+    [`bug 1473553 <https://bugs.launchpad.net/keystone/+bug/1473553>`_]
+    The ``keystone-paste.ini`` must be updated to put the ``admin_token_auth``
+    middleware before ``build_auth_context``. See the sample
+    `keystone-paste.ini` for the correct `pipeline` value. Having
+    ``admin_token_auth`` after ``build_auth_context`` is deprecated and will
+    not be supported in a future release.
+security:
+  - >
+    [`bug 1473553 <https://bugs.launchpad.net/keystone/+bug/1473553>`_]
+    The admin_token method of authentication was never intended to be
+    used for any purpose other than bootstrapping an install. However
+    many deployments had to leave the ``admin_token`` method enabled due
+    to restrictions on editing the paste file used to configure the
+    web pipelines.  To minimize the risk from this mechanism, the
+    ``admin_token`` configuration value now defaults to a python ``None``
+    value.  In addition, if the value is set to ``None``, either explicitly or
+    implicitly, the `admin_token` will not be enabled, and an attempt to
+    use it will lead to a failed authentication.
