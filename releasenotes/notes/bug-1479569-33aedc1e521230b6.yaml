@@ -1,0 +1,6 @@
+---
+features:
+  - >
+    [`bug 1479569 <https://bugs.launchpad.net/keystone/+bug/1479569>`_]
+    User, group, project, domain and role ``names`` can optionally be added to the body
+    when listing role assignments ``(GET /role_assignments?include_names=True)``
