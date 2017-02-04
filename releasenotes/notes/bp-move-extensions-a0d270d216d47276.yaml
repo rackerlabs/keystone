@@ -1,6 +1,7 @@
 ---
 upgrade:
   - >
+    [`blueprint move-extensions <https://blueprints.launchpad.net/keystone/+spec/move-extensions>`_]
     The `keystone-paste.ini` file must be updated to remove extension
     filters, and their use in ``[pipeline:api_v3]``.
     Remove the following filters: ``[filter:oauth1_extension]``,
