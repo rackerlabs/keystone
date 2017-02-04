@@ -1,0 +1,7 @@
+---
+upgrade:
+  - >
+    [`bug 1526660 <https://bugs.launchpad.net/keystone/+bug/1526660>`_]
+    The ``[os_inherit] enabled`` configuration option now defaults to ``True``.
+    If it is required to continue with this portion of the API disabled, then
+    override the default setting by explicitly setting the option to False.

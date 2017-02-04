@@ -1,0 +1,9 @@
+---
+features:
+  - >
+    [`bug 968696 <https://bugs.launchpad.net/keystone/+bug/968696>`_]
+    A pair of configuration options, ``[resource] admin_project_domain_name``
+    and ``[resource] admin_project_name`` have been added. If these are defined,
+    any scoped token issued for that project will have an additional identifier
+    in the token -- ``is_admin_project``, set to ``True``. This value can be
+    checked by policy rules in ``keystone.conf``.
