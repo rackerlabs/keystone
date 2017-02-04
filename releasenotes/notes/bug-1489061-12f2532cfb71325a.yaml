@@ -1,0 +1,7 @@
+---
+fixes:
+  - >
+    [`bug 1489061 <https://bugs.launchpad.net/keystone/+bug/1489061>`_]
+    Caching has been added ``catalog`` resources. This affects both the v2 and
+    v3 APIs. As a result this should provide a performance benefit to
+    fernet-based deployments.

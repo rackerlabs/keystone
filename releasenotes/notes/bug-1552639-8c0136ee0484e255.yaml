@@ -1,0 +1,7 @@
+---
+fixes:
+  - >
+    [`bug 1552639 <https://bugs.launchpad.net/keystone/+bug/1552639>`_]
+    Support has now been added to send notification events on ``user/group``
+    membership. When a user is added or removed from a group a notification will
+    be sent including the identifiers of both the user and the group.
