@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_e1d664c4",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 766,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2017-02-04T00:36:59Z",
+      "side": 1,
+      "message": "David, one change I noticed in WebOb 1.7.0 is if there is no body then no Content-Length header is added. Is that the problem you\u0027re trying to solve? I noticed it affects the test_render_response_no_body() test in test_wsgi.py. My understanding is the absence of the Content-Length header is permissible when there is no body. See https://www.w3.org/Protocols/HTTP/1.0/draft-ietf-http-spec.html#Entity-Body.",
+      "parentUuid": "1a430d35_0249b35f",
+      "revId": "4fee4a776debd801c4bc276601f99a48b4be6a7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_657efeaf",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 3
