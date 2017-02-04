@@ -1,0 +1,22 @@
+---
+fixes:
+  - >
+    [`bug 1535878 <https://bugs.launchpad.net/keystone/+bug/1535878>`_]
+    Originally, to perform ``GET /projects/{project_id}``, the provided policy
+    files required a user to have at least project admin level of permission.
+    They have been updated to allow it to be performed by any user who has a
+    role on the project.
+upgrade:
+  - |
+    [`bug 1535878 <https://bugs.launchpad.net/keystone/+bug/1535878>`_]
+    A minor change to the ``policy.json`` sample file was added to allow users
+    to fetch information about their own project, the following line::
+
+      "identity:get_project": "rule:admin_required"
+
+    Was updated to::
+
+      "identity:get_project": "rule:admin_required or project_id:%(target.project.id)s"
+
+    Adjust configuration tools as necessary, see the ``fixes`` section for more
+    details on this change.
