@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_a9396843",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-06T17:19:37Z",
+      "side": 1,
+      "message": "will do!",
+      "parentUuid": "1a430d35_e6363fe6",
+      "revId": "0df96ab296aba1233d6839fa5ad3c24365e7af8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_064d0b6c",
         "filename": "keystone/tests/unit/assignment/test_backends.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2017-02-06T17:05:50Z",
       "side": 1,
       "message": "What\u0027s wrong with just using:\n\n  default_fixtures.ADMIN_ROLE_ID \n\ndirectly? They should have the same value once default_fixtures is imported, right? Or is it because default_fixtures gets imported more than once and the value changes? If that is the case, we should leave a comment so that another developer doesn\u0027t come along and remove this or spend time trying to refactor it without understand the reason.",
+      "revId": "0df96ab296aba1233d6839fa5ad3c24365e7af8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_49056478",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-06T17:19:37Z",
+      "side": 1,
+      "message": "That should be fine, I think it was just easier for me to put them as shorter-named constants up top, but I agree that someone down the road might be confused why they are there.",
+      "parentUuid": "1a430d35_064d0b6c",
       "revId": "0df96ab296aba1233d6839fa5ad3c24365e7af8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +100,24 @@
       "writtenOn": "2017-02-06T17:05:50Z",
       "side": 1,
       "message": "We could link to the bug report here, since we have one. Also, just double checking but does this require anything from operators?",
+      "revId": "0df96ab296aba1233d6839fa5ad3c24365e7af8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_89d2ecd0",
+        "filename": "releasenotes/notes/use-uuids-with-pycadf-19892295e870103e.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-06T17:19:37Z",
+      "side": 1,
+      "message": "I don\u0027t think this directly impacts operators (other than maybe seeing much less warnings in the logs due to the pycadf change), the changes are all within keystone\u0027s tests.",
+      "parentUuid": "1a430d35_c6dce3e6",
       "revId": "0df96ab296aba1233d6839fa5ad3c24365e7af8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
