@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_62278d64",
+        "filename": "releasenotes/notes/bp-allow-expired-f5d845b9601bc1ef.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-06T23:11:29Z",
+      "side": 1,
+      "message": "\u0027decryptable\u0027",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 17,
+        "endChar": 14
+      },
+      "revId": "e9f309015413f81cf26b1f2e6e23c1a38adba3ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_0217a9ed",
+        "filename": "releasenotes/notes/bug-1561054-dbe88b552a936a05.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-06T23:11:29Z",
+      "side": 1,
+      "message": "could add \u0027by\u0027 here: \"done by running\"",
+      "range": {
+        "startLine": 9,
+        "startChar": 20,
+        "endLine": 9,
+        "endChar": 21
+      },
+      "revId": "e9f309015413f81cf26b1f2e6e23c1a38adba3ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
