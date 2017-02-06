@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_741be71b",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1179,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-02-06T11:54:57Z",
+      "side": 1,
+      "message": "This is not fixing anything, just adding a blankspace ?",
+      "range": {
+        "startLine": 1179,
+        "startChar": 48,
+        "endLine": 1179,
+        "endChar": 49
+      },
+      "revId": "f0938de4274d7f9399bc5d6c81a186e1f4d5eb28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
