@@ -25,6 +25,41 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_08e42d39",
+        "filename": "releasenotes/notes/bp-credential-encryption-93dcb67b3508e91a.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-06T21:33:28Z",
+      "side": 1,
+      "message": "Yeah - I think this is meant to say there will be a service outage for the credential api *if* following the rolling upgrade steps. If you\u0027re not following the rolling upgrade steps, then you\u0027re going to see a service outage anyway.",
+      "parentUuid": "1a430d35_5431a70a",
+      "revId": "50f5dffdcdc76baecfad36ca26f8f2c5ce17af7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_885c9dee",
+        "filename": "releasenotes/notes/bp-ldap-preprocessing-521d92445505b8a3.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-06T21:33:28Z",
+      "side": 1,
+      "message": "nit: It should be used after initially configuring LDAP, or after calling...",
+      "revId": "50f5dffdcdc76baecfad36ca26f8f2c5ce17af7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_f42293b8",
         "filename": "releasenotes/notes/bp-pre-cache-tokens-73450934918af26b.yaml",
         "patchSetId": 3
@@ -42,6 +77,58 @@
         "endLine": 4,
         "endChar": 80
       },
+      "revId": "50f5dffdcdc76baecfad36ca26f8f2c5ce17af7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_c8f5c5cb",
+        "filename": "releasenotes/notes/bp-pre-cache-tokens-73450934918af26b.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-06T21:33:28Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1a430d35_f42293b8",
+      "revId": "50f5dffdcdc76baecfad36ca26f8f2c5ce17af7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_4830f59e",
+        "filename": "releasenotes/notes/bp-python3-e4189e0a1a6e2e4f.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-06T21:33:28Z",
+      "side": 1,
+      "message": "nit: As part of supporting the OpenStack community goal to adopt Python 3...",
+      "revId": "50f5dffdcdc76baecfad36ca26f8f2c5ce17af7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_88e1fd00",
+        "filename": "releasenotes/notes/bp-shadow-users-newton-dcd7bd148efef049.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-06T21:33:28Z",
+      "side": 1,
+      "message": "s/rules/policies/",
       "revId": "50f5dffdcdc76baecfad36ca26f8f2c5ce17af7e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
