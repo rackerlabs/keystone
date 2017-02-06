@@ -39,6 +39,7 @@ WARNING::
 """
 
 import json
+import os
 import uuid
 
 import migrate
@@ -1646,6 +1647,28 @@ class VersionTests(SqlMigrateBase):
         self.assertEqual(
             self.repos[DATA_MIGRATION_REPO].max_version,
             self.repos[CONTRACT_REPO].max_version)
+
+    def test_migrate_repos_file_names_have_prefix(self):
+        versions_path = '/versions'
+        # test expand
+        expand_list = os.listdir(
+            self.repos[EXPAND_REPO].repo_path + versions_path)
+        self.assertRepoFileNamePrefix(expand_list, 'expand')
+        # test migrate
+        migrate_list = os.listdir(
+            self.repos[DATA_MIGRATION_REPO].repo_path + versions_path)
+        self.assertRepoFileNamePrefix(migrate_list, 'migrate')
+        # test contract
+        contract_list = os.listdir(
+            self.repos[CONTRACT_REPO].repo_path + versions_path)
+        self.assertRepoFileNamePrefix(contract_list, 'contract')
+
+    def assertRepoFileNamePrefix(self, repo_list, prefix):
+        if(len(repo_list) > 1):
+            file_name = sorted(repo_list)[-2]
+            pattern = '^[0-9]{3,}_PREFIX_|^[0-9]{3,}_placeholder.py'
+            pattern = pattern.replace('PREFIX', prefix)
+            self.assertRegexpMatches(file_name, pattern)
 
 
 class FullMigration(SqlMigrateBase, unit.TestCase):
