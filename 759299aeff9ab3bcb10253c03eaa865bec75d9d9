@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_e4f9d781",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-06T17:44:05Z",
+      "side": 1,
+      "message": "It\u0027s likely that the operator will have to make the decision to restore from a backup. We might want to be generic here and just stress the need for operator intervention to figure out what happened.",
+      "revId": "759299aeff9ab3bcb10253c03eaa865bec75d9d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_a40d0f92",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-06T17:44:05Z",
+      "side": 1,
+      "message": "We could print out the versions here like you did in a previous patch. The current statements are helpful, but we could provide operators with the actual schema information, too.",
+      "revId": "759299aeff9ab3bcb10253c03eaa865bec75d9d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
