@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_6845b16e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-06T21:46:27Z",
+      "side": 1,
+      "message": "Awesome! You should totally throw this up somewhere so other folks can use it :)",
+      "revId": "7281a04e48ab07d259b972440f99f1b560c883f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
