@@ -19,6 +19,93 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_c2ca016e",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-06T23:26:43Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1a430d35_7321229f",
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_22a2e5ae",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-06T23:26:43Z",
+      "side": 1,
+      "message": "I think this should be capitalized since it\u0027s the beginning of a sentence?",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 1
+      },
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_029c0968",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-06T23:26:43Z",
+      "side": 1,
+      "message": "If we change the above mentioned IdP to \"Identity Provider\", we could abbreviate it here.",
+      "range": {
+        "startLine": 36,
+        "startChar": 3,
+        "endLine": 36,
+        "endChar": 20
+      },
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_82863911",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-06T23:26:43Z",
+      "side": 1,
+      "message": "Same here",
+      "range": {
+        "startLine": 37,
+        "startChar": 67,
+        "endLine": 38,
+        "endChar": 8
+      },
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_b3faaabb",
         "filename": "doc/source/federation/mapping_combinations.rst",
         "patchSetId": 5
@@ -53,6 +140,93 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_82eb99af",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-06T23:26:43Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1a430d35_332dda46",
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_62ff8d67",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-06T23:26:43Z",
+      "side": 1,
+      "message": "Maybe capitalize this as well?",
+      "range": {
+        "startLine": 104,
+        "startChar": 43,
+        "endLine": 104,
+        "endChar": 44
+      },
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_2213c5b9",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-06T23:26:43Z",
+      "side": 1,
+      "message": "add a \u0027,\u0027 here after \"First\"",
+      "range": {
+        "startLine": 108,
+        "startChar": 5,
+        "endLine": 108,
+        "endChar": 6
+      },
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_227ae5f1",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-06T23:26:43Z",
+      "side": 1,
+      "message": "\u0027,\u0027 after \"match\"",
+      "range": {
+        "startLine": 109,
+        "startChar": 40,
+        "endLine": 109,
+        "endChar": 41
+      },
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_73acc2a0",
         "filename": "doc/source/federation/mapping_combinations.rst",
         "patchSetId": 5
@@ -81,6 +255,52 @@
       "writtenOn": "2017-02-06T22:09:50Z",
       "side": 1,
       "message": "nit: The index of the direct mapping starts at zero.",
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_e24ffdba",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 786,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-06T23:26:43Z",
+      "side": 1,
+      "message": "nit: I think this was fine as \"authenticates\"",
+      "range": {
+        "startLine": 786,
+        "startChar": 12,
+        "endLine": 786,
+        "endChar": 13
+      },
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_a2033541",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 892,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-06T23:26:43Z",
+      "side": 1,
+      "message": "I think these are supposed to be capitalized.",
+      "range": {
+        "startLine": 892,
+        "startChar": 4,
+        "endLine": 892,
+        "endChar": 20
+      },
       "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
