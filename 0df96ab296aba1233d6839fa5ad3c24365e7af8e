@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_e6363fe6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-06T17:05:50Z",
+      "side": 1,
+      "message": "This doesn\u0027t need a: \n\n  Depends-On: I58bba04c21c2d24fd37850c9ecc6fac99deb3fc4\n\n?",
+      "revId": "0df96ab296aba1233d6839fa5ad3c24365e7af8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_064d0b6c",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-06T17:05:50Z",
+      "side": 1,
+      "message": "What\u0027s wrong with just using:\n\n  default_fixtures.ADMIN_ROLE_ID \n\ndirectly? They should have the same value once default_fixtures is imported, right? Or is it because default_fixtures gets imported more than once and the value changes? If that is the case, we should leave a comment so that another developer doesn\u0027t come along and remove this or spend time trying to refactor it without understand the reason.",
+      "revId": "0df96ab296aba1233d6839fa5ad3c24365e7af8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_e6f47f88",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-06T17:05:50Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "0df96ab296aba1233d6839fa5ad3c24365e7af8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_c6dce3e6",
+        "filename": "releasenotes/notes/use-uuids-with-pycadf-19892295e870103e.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-06T17:05:50Z",
+      "side": 1,
+      "message": "We could link to the bug report here, since we have one. Also, just double checking but does this require anything from operators?",
+      "revId": "0df96ab296aba1233d6839fa5ad3c24365e7af8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
