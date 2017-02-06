@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_442c6bab",
+        "filename": "api-ref/source/v2-admin/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-06T17:56:51Z",
+      "side": 0,
+      "message": "This isn\u0027t used in the v2 docs at all? I would assume this because trusts should only be create-able via the v3 API.",
+      "revId": "aeb51c84bb92d02715208aa8435aa3fd36564c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_7f3bae9c",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-06T17:56:51Z",
+      "side": 0,
+      "message": "Huh - didn\u0027t we *just* fix the naming convention for these?",
+      "revId": "aeb51c84bb92d02715208aa8435aa3fd36564c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

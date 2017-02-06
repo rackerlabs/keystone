@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_c4a3fb4d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-06T17:56:51Z",
+      "side": 1,
+      "message": "Did you use a repeatable process for figuring out which of these parameters were removed? Describing it here might help educate other developers. If it was a manual process that\u0027s fine, just curious.",
+      "revId": "e59bb8113fc9b05c3edd0baafb4668a85e8708a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
