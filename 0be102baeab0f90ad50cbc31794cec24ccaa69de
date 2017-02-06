@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_7321229f",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-06T22:09:50Z",
+      "side": 1,
+      "message": "Is this the first use of `IdP` in the overall document? Does it need to be changed to `Identity Provider (IdP)`?",
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_b3faaabb",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-06T22:09:50Z",
+      "side": 1,
+      "message": "nit: the local groups the federated user will be placed in (?)",
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_332dda46",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-06T22:09:50Z",
+      "side": 1,
+      "message": "objects*?",
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_73acc2a0",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-06T22:09:50Z",
+      "side": 1,
+      "message": "Is it possible/useful to include things inside the `user` and `projects` entities? Just to show how it\u0027s aggregated together afterwords?\n\n  {\n      \"local\": [\n          {\n              \"user\": {\n                  \"name\": \"jsmith\",\n                  \"other-user-attribute\": \"value\"\n              },\n              \"user\": {\n                  \"email\": \"jsmith@example.com\",\n                  \"another-user-attribute\": \"value2\"\n              }\n          }\n      ]",
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_139c5e68",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-06T22:09:50Z",
+      "side": 1,
+      "message": "nit: The index of the direct mapping starts at zero.",
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
