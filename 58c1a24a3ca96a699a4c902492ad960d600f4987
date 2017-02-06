@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_08c18d2e",
+        "filename": "releasenotes/notes/bp-bootstrap-192500228cc6e574.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-06T21:42:38Z",
+      "side": 1,
+      "message": "keystone*?\n\nI thought I remember being told at one point that we no longer capitalize keystone as `keystone` is the project\u0027s official name?",
+      "revId": "58c1a24a3ca96a699a4c902492ad960d600f4987",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
