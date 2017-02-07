@@ -18,6 +18,8 @@ import functools
 import os.path
 import re
 import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 import weakref
 
 import ldap.controls
