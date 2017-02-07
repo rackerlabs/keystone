@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_148176c3",
+        "filename": "README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-02-07T20:53:57Z",
+      "side": 1,
+      "message": "passive aggressive whitespace",
+      "revId": "74e019d30f2b802c64ddb9f4692256da5cb4176c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_546f7e2a",
+        "filename": "README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-02-07T20:53:57Z",
+      "side": 1,
+      "message": "passive aggressive whitespace",
+      "revId": "74e019d30f2b802c64ddb9f4692256da5cb4176c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
