@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_5b427811",
+        "filename": "keystone/identity/backends/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 22219
+      },
+      "writtenOn": "2017-02-07T01:06:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_ec1d7e67",
+      "revId": "3b688b0725d5d35f128f480fb2212d60b6b24174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_4c2bf282",
         "filename": "keystone/identity/backends/base.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_bb47dc1b",
+        "filename": "keystone/identity/backends/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 22219
+      },
+      "writtenOn": "2017-02-07T01:06:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_4c2bf282",
+      "revId": "3b688b0725d5d35f128f480fb2212d60b6b24174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_0c600ace",
         "filename": "keystone/identity/backends/base.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2017-02-03T22:02:10Z",
       "side": 1,
       "message": "nit: \n\n  :returns: a list of users that have the project ID set as their `default_project_id`.\n\nOr something along those lines. I like to be super verbose when writing docs strings for interfaces because they help developers maintaining their own implementations. Someone somewhere might have to implement this method for their specific backend. By providing as much information as we can in the doc string will keep them from having to reverse engineer it from our code :)",
+      "revId": "3b688b0725d5d35f128f480fb2212d60b6b24174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_fb5164d9",
+        "filename": "keystone/identity/backends/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 22219
+      },
+      "writtenOn": "2017-02-07T01:06:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_0c600ace",
       "revId": "3b688b0725d5d35f128f480fb2212d60b6b24174",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -93,6 +147,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_3b620cae",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 22219
+      },
+      "writtenOn": "2017-02-07T01:06:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_2c05c6c1",
+      "revId": "3b688b0725d5d35f128f480fb2212d60b6b24174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_0c748a33",
         "filename": "keystone/identity/core.py",
         "patchSetId": 2
@@ -110,6 +182,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_5b5998fd",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 22219
+      },
+      "writtenOn": "2017-02-07T01:06:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_0c748a33",
+      "revId": "3b688b0725d5d35f128f480fb2212d60b6b24174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_ecf2de99",
         "filename": "keystone/identity/core.py",
         "patchSetId": 2
@@ -121,6 +211,24 @@
       "writtenOn": "2017-02-03T22:02:10Z",
       "side": 1,
       "message": "I would have to imagine this is going to be a highly unlikely case since we *just* got the list of users on line 528. I\u0027d wouldn\u0027t mind doing: \n\nhttp://cdn.pasteraw.com/306jjslhj1uvnbfpf3chkj9rwhzf14\n\nfor the sake of simplicity.",
+      "revId": "3b688b0725d5d35f128f480fb2212d60b6b24174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_7b5c94ed",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 22219
+      },
+      "writtenOn": "2017-02-07T01:06:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_ecf2de99",
       "revId": "3b688b0725d5d35f128f480fb2212d60b6b24174",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -162,6 +270,30 @@
       "side": 1,
       "message": "Oh - that\u0027s an interesting case, too. I wouldn\u0027t mind seeing that implementation either!",
       "parentUuid": "1a430d35_6c58aefb",
+      "revId": "3b688b0725d5d35f128f480fb2212d60b6b24174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_fbffa4a7",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 22219
+      },
+      "writtenOn": "2017-02-07T01:06:38Z",
+      "side": 1,
+      "message": "Thanks for the feedback henry, I like this approach and I\u0027ve modified it to fit this approach. I marked it as WIP because unit testing are failing -- but the functionality is working and updating the correct columns in the db like it\u0027s suppose to.",
+      "parentUuid": "1a430d35_6c58aefb",
+      "range": {
+        "startLine": 526,
+        "startChar": 0,
+        "endLine": 540,
+        "endChar": 78
+      },
       "revId": "3b688b0725d5d35f128f480fb2212d60b6b24174",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
