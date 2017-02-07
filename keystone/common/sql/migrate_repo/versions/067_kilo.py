@@ -66,7 +66,7 @@ def upgrade(migrate_engine):
         sql.Column('extra', ks_sql.JsonBlob.impl),
         sql.Column('enabled', sql.Boolean, nullable=False, default=True,
                    server_default='1'),
-        sql.Column('region_id', sql.String(length=255), nullable=True),
+        sql.Column('region_id', sql.String(length=64), nullable=True),
         mysql_engine='InnoDB',
         mysql_charset='utf8')
 
@@ -175,9 +175,9 @@ def upgrade(migrate_engine):
     region = sql.Table(
         'region',
         meta,
-        sql.Column('id', sql.String(255), primary_key=True),
+        sql.Column('id', sql.String(64), primary_key=True),
         sql.Column('description', sql.String(255), nullable=False),
-        sql.Column('parent_region_id', sql.String(255), nullable=True),
+        sql.Column('parent_region_id', sql.String(64), nullable=True),
         sql.Column('extra', sql.Text()),
         mysql_engine='InnoDB',
         mysql_charset='utf8')
