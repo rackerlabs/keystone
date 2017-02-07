@@ -291,3 +291,17 @@ def contract_schema():
 
     """
     _sync_repo(repo_name=CONTRACT_REPO)
+
+
+def get_fk_name(inspector, table, fk_column):
+    """Find the name of foreign key in a table.
+
+    This will use the inspecter object on a given table and column with
+    a foreign key constraint to return the name of the foreign key. This
+    is useful for operations where foreign keys have to be dropped and
+    recreated when table changes are being made.
+
+    """
+    for fk in inspector.get_foreign_keys(table):
+        if fk_column in fk['constrained_columns']:
+            return fk['name']

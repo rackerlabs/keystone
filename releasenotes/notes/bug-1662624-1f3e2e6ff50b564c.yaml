@@ -1,0 +1,10 @@
+---
+fixes:
+  - >
+    [`bug 1662624 <https://bugs.launchpad.net/keystone/+bug/1662624>`_]
+    Corrects two contract_repo scripts to properly drop and re-create several
+    foreign keys as part of upgrades. This allows Keystone to support the
+    MySQL Cluster (NDB) which is stricter on SQL operations against tables.
+    Additionally, adds the get_fk_name() to upgrades module to assist in
+    the process of preserving the foreign key names when doing these drop
+    and re-create operations.
