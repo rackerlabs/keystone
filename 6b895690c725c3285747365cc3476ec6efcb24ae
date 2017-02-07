@@ -43,6 +43,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_88b9ca17",
+        "filename": "keystone/identity/backends/base.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 22219
+      },
+      "writtenOn": "2017-02-07T21:10:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_674ce09e",
+      "revId": "6b895690c725c3285747365cc3476ec6efcb24ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_62604ea6",
         "filename": "keystone/identity/backends/base.py",
         "patchSetId": 4
@@ -71,6 +89,24 @@
       "writtenOn": "2017-02-07T15:21:30Z",
       "side": 1,
       "message": "We can get rid of this last `param` and `type` lines if we omit `hints` from the method signature.",
+      "revId": "6b895690c725c3285747365cc3476ec6efcb24ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_68bc9e06",
+        "filename": "keystone/identity/backends/base.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 22219
+      },
+      "writtenOn": "2017-02-07T21:10:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_622e8e44",
       "revId": "6b895690c725c3285747365cc3476ec6efcb24ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
