@@ -1,0 +1,13 @@
+---
+fixes:
+  - >
+    [`bug 1662624 <https://bugs.launchpad.net/keystone/+bug/1662624>`_]
+    Corrects two contract_repo scripts to properly drop and re-create several
+    foreign keys as part of upgrades. This allows Keystone to support the
+    MySQL Cluster (NDB) which is stricter on SQL operations against tables.
+    Additionally, adds the get_fk_name() to upgrades module to assist in
+    the process of preserving the foreign key names when doing these drop
+    and re-create operations. Operators should take note that when enabling
+    MySQL Cluster (NDB), this is for new installations or migration
+    scenarios only. For more information, please refer to the
+    `oslo.db documentation <https://docs.openstack.org/oslo.db/latest/reference/opts.html >`_
