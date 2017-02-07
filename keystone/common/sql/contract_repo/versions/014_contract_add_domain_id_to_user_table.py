@@ -11,6 +11,9 @@
 # under the License.
 
 import migrate
+
+from oslo_db.sqlalchemy import utils
+
 import sqlalchemy as sql
 from sqlalchemy.engine import reflection
 
@@ -27,13 +30,13 @@ def upgrade(migrate_engine):
     nonlocal_user = sql.Table('nonlocal_user', meta, autoload=True)
 
     # drop previous fk constraints
-    fk_name = _get_fk_name(inspector, 'local_user', 'user_id')
+    fk_name = utils.get_fk_name(inspector, 'local_user', 'user_id')
     if fk_name:
         migrate.ForeignKeyConstraint(columns=[local_user.c.user_id],
                                      refcolumns=[user.c.id],
                                      name=fk_name).drop()
 
-    fk_name = _get_fk_name(inspector, 'nonlocal_user', 'user_id')
+    fk_name = utils.get_fk_name(inspector, 'nonlocal_user', 'user_id')
     if fk_name:
         migrate.ForeignKeyConstraint(columns=[nonlocal_user.c.user_id],
                                      refcolumns=[user.c.id],
@@ -87,9 +90,3 @@ def upgrade(migrate_engine):
         migrate_engine.execute(drop_local_user_update_trigger)
         migrate_engine.execute(drop_nonlocal_user_insert_trigger)
         migrate_engine.execute(drop_nonlocal_user_update_trigger)
-
-
-def _get_fk_name(inspector, table, fk_column):
-    for fk in inspector.get_foreign_keys(table):
-        if fk_column in fk['constrained_columns']:
-            return fk['name']
