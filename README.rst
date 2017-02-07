@@ -1,5 +1,5 @@
 ========================
-Team and repository tags
+ Team and repository tags
 ========================
 
 .. image:: https://governance.openstack.org/badges/keystone.svg
@@ -11,7 +11,7 @@ Team and repository tags
 OpenStack Keystone
 ==================
 
-Keystone provides authentication, authorization and service discovery
+Keystone  provides authentication, authorization and service discovery
 mechanisms via HTTP primarily for use by projects in the OpenStack family. It
 is most commonly deployed as an HTTP interface to existing identity systems,
 such as LDAP.
