@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_0b9cf45b",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 716,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-07T22:04:11Z",
+      "side": 1,
+      "message": "i thought we were backing out the domain changes? undo this?",
+      "range": {
+        "startLine": 716,
+        "startChar": 16,
+        "endLine": 716,
+        "endChar": 55
+      },
+      "revId": "d1ab8d0456dbc82cc51b15734fa2929f8c9fbe0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_8ba8e478",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-07T22:04:11Z",
+      "side": 1,
+      "message": "i thought we were backing out the domain changes? undo this?",
+      "range": {
+        "startLine": 461,
+        "startChar": 25,
+        "endLine": 461,
+        "endChar": 56
+      },
+      "revId": "d1ab8d0456dbc82cc51b15734fa2929f8c9fbe0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_ebade884",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-07T22:04:11Z",
+      "side": 1,
+      "message": "i thought we were backing out the domain changes? undo these?",
+      "revId": "d1ab8d0456dbc82cc51b15734fa2929f8c9fbe0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_4bc99c58",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-07T22:04:11Z",
+      "side": 1,
+      "message": "i thought we were backing out the domain changes? undo these?",
+      "revId": "d1ab8d0456dbc82cc51b15734fa2929f8c9fbe0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_0b85d405",
+        "filename": "keystone/version/__init__.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-07T22:04:11Z",
+      "side": 1,
+      "message": "historically we\u0027ve only changed this for major versions, whats the reasoning behind this change?",
+      "revId": "d1ab8d0456dbc82cc51b15734fa2929f8c9fbe0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_cba74cbb",
+        "filename": "releasenotes/notes/use-uuids-with-pycadf-19892295e870103e.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-07T22:04:11Z",
+      "side": 1,
+      "message": "theres no end-user impact here, no need to create a release note",
+      "revId": "d1ab8d0456dbc82cc51b15734fa2929f8c9fbe0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
