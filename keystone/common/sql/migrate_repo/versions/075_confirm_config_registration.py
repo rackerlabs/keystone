@@ -10,9 +10,11 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+from oslo_config import cfg
 import sqlalchemy as sql
 
 REGISTRATION_TABLE = 'config_register'
+CONF = cfg.CONF
 
 
 def upgrade(migrate_engine):
@@ -24,6 +26,6 @@ def upgrade(migrate_engine):
         meta,
         sql.Column('type', sql.String(64), primary_key=True),
         sql.Column('domain_id', sql.String(64), nullable=False),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
     registration_table.create(migrate_engine, checkfirst=True)

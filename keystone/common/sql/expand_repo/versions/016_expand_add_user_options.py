@@ -10,9 +10,12 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+from oslo_config import cfg
 import sqlalchemy as sql
 
 from keystone.common import sql as ks_sql
+
+CONF = cfg.CONF
 
 
 def upgrade(migrate_engine):
@@ -28,7 +31,7 @@ def upgrade(migrate_engine):
         sql.Column('option_id', sql.String(4), nullable=False,
                    primary_key=True),
         sql.Column('option_value', ks_sql.JsonBlob, nullable=True),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
 
     user_option.create(migrate_engine, checkfirst=True)
