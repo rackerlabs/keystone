@@ -39,7 +39,9 @@ class User(sql.ModelBase, sql.DictBase):
     domain_id = sql.Column(sql.String(64), nullable=False)
     _enabled = sql.Column('enabled', sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
-    default_project_id = sql.Column(sql.String(64))
+    default_project_id = sql.Column(sql.String(64),
+                                    sql.ForeignKey('project.id',
+                                    ondelete='SET NULL'))
     _resource_option_mapper = orm.relationship(
         'UserOption',
         single_parent=True,
