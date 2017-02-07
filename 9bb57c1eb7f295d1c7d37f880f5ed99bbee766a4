@@ -16,6 +16,23 @@
       "revId": "9bb57c1eb7f295d1c7d37f880f5ed99bbee766a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_16ea6bdb",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1517,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-07T15:26:57Z",
+      "side": 0,
+      "message": "According to the most recent failures [0], this seems to be failing on the same key error as before. We should inspect the user reference here to and make sure we are actually populating the `default_project_id` attribute. If we aren\u0027t then we could very well be doing something wrong in our tests.\n\n[0] http://logs.openstack.org/47/429047/4/check/gate-keystone-python27-ubuntu-xenial/1cdb30f/testr_results.html.gz",
+      "revId": "9bb57c1eb7f295d1c7d37f880f5ed99bbee766a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
