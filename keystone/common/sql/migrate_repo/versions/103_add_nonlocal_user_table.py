@@ -10,7 +10,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_config import cfg
 import sqlalchemy as sql
+
+CONF = cfg.CONF
 
 
 def upgrade(migrate_engine):
@@ -27,6 +30,6 @@ def upgrade(migrate_engine):
         sql.Column('user_id', sql.String(64),
                    sql.ForeignKey(user_table.c.id, ondelete='CASCADE'),
                    nullable=False),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
     nonlocal_user_table.create(migrate_engine, checkfirst=True)

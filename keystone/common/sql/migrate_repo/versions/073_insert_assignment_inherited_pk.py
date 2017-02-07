@@ -11,10 +11,13 @@
 # under the License.
 
 import migrate
+from oslo_config import cfg
 import sqlalchemy as sql
 from sqlalchemy.orm import sessionmaker
 
 from keystone.assignment.backends import sql as assignment_sql
+
+CONF = cfg.CONF
 
 
 def upgrade(migrate_engine):
@@ -57,7 +60,7 @@ def upgrade(migrate_engine):
                        nullable=False),
             sql.PrimaryKeyConstraint('type', 'actor_id', 'target_id',
                                      'role_id', 'inherited'),
-            mysql_engine='InnoDB',
+            mysql_engine=CONF.database.mysql_storage_engine,
             mysql_charset='utf8')
 
         # Create the new assignment table

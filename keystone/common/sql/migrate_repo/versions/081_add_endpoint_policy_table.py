@@ -12,9 +12,12 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_config import cfg
 import sqlalchemy as sql
 
 from keystone.common.sql import upgrades
+
+CONF = cfg.CONF
 
 
 def upgrade(migrate_engine):
@@ -48,7 +51,7 @@ def upgrade(migrate_engine):
         sql.Column('region_id', sql.String(64),
                    nullable=True),
         sql.UniqueConstraint('endpoint_id', 'service_id', 'region_id'),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
 
     endpoint_policy_table.create(migrate_engine, checkfirst=True)

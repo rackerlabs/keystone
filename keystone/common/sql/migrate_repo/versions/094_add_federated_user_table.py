@@ -11,7 +11,10 @@
 # under the License.
 
 import migrate
+from oslo_config import cfg
 import sqlalchemy as sql
+
+CONF = cfg.CONF
 
 
 def upgrade(migrate_engine):
@@ -36,7 +39,7 @@ def upgrade(migrate_engine):
         sql.Column('unique_id', sql.String(255), nullable=False),
         sql.Column('display_name', sql.String(255), nullable=True),
         sql.UniqueConstraint('idp_id', 'protocol_id', 'unique_id'),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
     federated_table.create(migrate_engine, checkfirst=True)
 

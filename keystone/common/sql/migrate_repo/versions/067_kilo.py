@@ -12,6 +12,7 @@
 
 
 import migrate
+from oslo_config import cfg
 from oslo_log import log
 import sqlalchemy as sql
 
@@ -22,6 +23,7 @@ from keystone.identity.mapping_backends import mapping as mapping_backend
 
 
 LOG = log.getLogger(__name__)
+CONF = cfg.CONF
 
 
 def upgrade(migrate_engine):
@@ -45,7 +47,7 @@ def upgrade(migrate_engine):
         sql.Column('blob', ks_sql.JsonBlob, nullable=False),
         sql.Column('type', sql.String(length=255), nullable=False),
         sql.Column('extra', ks_sql.JsonBlob.impl),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
 
     domain = sql.Table(
@@ -54,7 +56,7 @@ def upgrade(migrate_engine):
         sql.Column('name', sql.String(length=64), nullable=False),
         sql.Column('enabled', sql.Boolean, default=True, nullable=False),
         sql.Column('extra', ks_sql.JsonBlob.impl),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
 
     endpoint = sql.Table(
@@ -68,7 +70,7 @@ def upgrade(migrate_engine):
         sql.Column('enabled', sql.Boolean, nullable=False, default=True,
                    server_default='1'),
         sql.Column('region_id', sql.String(length=255), nullable=True),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
 
     group = sql.Table(
@@ -78,7 +80,7 @@ def upgrade(migrate_engine):
         sql.Column('name', sql.String(length=64), nullable=False),
         sql.Column('description', sql.Text),
         sql.Column('extra', ks_sql.JsonBlob.impl),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
 
     policy = sql.Table(
@@ -87,7 +89,7 @@ def upgrade(migrate_engine):
         sql.Column('type', sql.String(length=255), nullable=False),
         sql.Column('blob', ks_sql.JsonBlob, nullable=False),
         sql.Column('extra', ks_sql.JsonBlob.impl),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
 
     project = sql.Table(
@@ -99,7 +101,7 @@ def upgrade(migrate_engine):
         sql.Column('enabled', sql.Boolean),
         sql.Column('domain_id', sql.String(length=64), nullable=False),
         sql.Column('parent_id', sql.String(64), nullable=True),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
 
     role = sql.Table(
@@ -107,7 +109,7 @@ def upgrade(migrate_engine):
         sql.Column('id', sql.String(length=64), primary_key=True),
         sql.Column('name', sql.String(length=255), nullable=False),
         sql.Column('extra', ks_sql.JsonBlob.impl),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
 
     service = sql.Table(
@@ -117,7 +119,7 @@ def upgrade(migrate_engine):
         sql.Column('enabled', sql.Boolean, nullable=False, default=True,
                    server_default='1'),
         sql.Column('extra', ks_sql.JsonBlob.impl),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
 
     token = sql.Table(
@@ -128,7 +130,7 @@ def upgrade(migrate_engine):
         sql.Column('valid', sql.Boolean, default=True, nullable=False),
         sql.Column('trust_id', sql.String(length=64)),
         sql.Column('user_id', sql.String(length=64)),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
 
     trust = sql.Table(
@@ -142,7 +144,7 @@ def upgrade(migrate_engine):
         sql.Column('expires_at', sql.DateTime),
         sql.Column('remaining_uses', sql.Integer, nullable=True),
         sql.Column('extra', ks_sql.JsonBlob.impl),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
 
     trust_role = sql.Table(
@@ -151,7 +153,7 @@ def upgrade(migrate_engine):
                    nullable=False),
         sql.Column('role_id', sql.String(length=64), primary_key=True,
                    nullable=False),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
 
     user = sql.Table(
@@ -163,14 +165,14 @@ def upgrade(migrate_engine):
         sql.Column('enabled', sql.Boolean),
         sql.Column('domain_id', sql.String(length=64), nullable=False),
         sql.Column('default_project_id', sql.String(length=64)),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
 
     user_group_membership = sql.Table(
         'user_group_membership', meta,
         sql.Column('user_id', sql.String(length=64), primary_key=True),
         sql.Column('group_id', sql.String(length=64), primary_key=True),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
 
     region = sql.Table(
@@ -180,7 +182,7 @@ def upgrade(migrate_engine):
         sql.Column('description', sql.String(255), nullable=False),
         sql.Column('parent_region_id', sql.String(255), nullable=True),
         sql.Column('extra', sql.Text()),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
 
     assignment = sql.Table(
@@ -198,7 +200,7 @@ def upgrade(migrate_engine):
         sql.Column('role_id', sql.String(64), nullable=False),
         sql.Column('inherited', sql.Boolean, default=False, nullable=False),
         sql.PrimaryKeyConstraint('type', 'actor_id', 'target_id', 'role_id'),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
 
     mapping = sql.Table(
@@ -212,7 +214,7 @@ def upgrade(migrate_engine):
             mapping_backend.EntityType.GROUP,
             name='entity_type'),
             nullable=False),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
 
     domain_config_whitelist = sql.Table(
@@ -222,7 +224,7 @@ def upgrade(migrate_engine):
         sql.Column('group', sql.String(255), primary_key=True),
         sql.Column('option', sql.String(255), primary_key=True),
         sql.Column('value', ks_sql.JsonBlob.impl, nullable=False),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
 
     domain_config_sensitive = sql.Table(
@@ -232,7 +234,7 @@ def upgrade(migrate_engine):
         sql.Column('group', sql.String(255), primary_key=True),
         sql.Column('option', sql.String(255), primary_key=True),
         sql.Column('value', ks_sql.JsonBlob.impl, nullable=False),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
 
     # create all tables
