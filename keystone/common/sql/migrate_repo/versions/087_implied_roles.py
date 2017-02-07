@@ -12,10 +12,12 @@
 
 
 import migrate
+from oslo_config import cfg
 import sqlalchemy as sql
 
 
 ROLE_TABLE = 'role'
+CONF = cfg.CONF
 
 
 def upgrade(migrate_engine):
@@ -27,7 +29,7 @@ def upgrade(migrate_engine):
         sql.Column('prior_role_id', sql.String(length=64), primary_key=True),
         sql.Column(
             'implied_role_id', sql.String(length=64), primary_key=True),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
     implied_role.create()
     role = sql.Table(ROLE_TABLE, meta, autoload=True)

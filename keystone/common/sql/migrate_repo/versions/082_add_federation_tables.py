@@ -45,7 +45,7 @@ def upgrade(migrate_engine):
         sql.Column('id', sql.String(64), primary_key=True),
         sql.Column('enabled', sql.Boolean, nullable=False),
         sql.Column('description', sql.Text(), nullable=True),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
     idp_table.create(migrate_engine, checkfirst=True)
 
@@ -57,7 +57,7 @@ def upgrade(migrate_engine):
                    sql.ForeignKey('identity_provider.id', ondelete='CASCADE'),
                    primary_key=True),
         sql.Column('mapping_id', sql.String(64), nullable=False),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
     federation_protocol_table.create(migrate_engine, checkfirst=True)
 
@@ -66,7 +66,7 @@ def upgrade(migrate_engine):
         meta,
         sql.Column('id', sql.String(64), primary_key=True),
         sql.Column('rules', sql.Text(), nullable=False),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
     mapping_table.create(migrate_engine, checkfirst=True)
 
@@ -81,7 +81,7 @@ def upgrade(migrate_engine):
         sql.Column('sp_url', sql.String(256), nullable=False),
         sql.Column(_RELAY_STATE_PREFIX, sql.String(256), nullable=False,
                    server_default=relay_state_prefix_default),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
     sp_table.create(migrate_engine, checkfirst=True)
 
@@ -92,6 +92,6 @@ def upgrade(migrate_engine):
         sql.Column('idp_id', sql.String(64),
                    sql.ForeignKey('identity_provider.id', ondelete='CASCADE')),
         sql.Column('remote_id', sql.String(255), primary_key=True),
-        mysql_engine='InnoDB',
+        mysql_engine=CONF.database.mysql_storage_engine,
         mysql_charset='utf8')
     remote_id_table.create(migrate_engine, checkfirst=True)
