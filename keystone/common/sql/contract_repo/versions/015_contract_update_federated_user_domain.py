@@ -10,7 +10,12 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import migrate
+
+from oslo_db.sqlalchemy import utils
+
 import sqlalchemy as sql
+from sqlalchemy.engine import reflection
 
 from keystone.common.sql import upgrades
 
@@ -18,9 +23,34 @@ from keystone.common.sql import upgrades
 def upgrade(migrate_engine):
     meta = sql.MetaData()
     meta.bind = migrate_engine
+    inspector = reflection.Inspector.from_engine(migrate_engine)
 
     user_table = sql.Table('user', meta, autoload=True)
-    user_table.c.domain_id.alter(nullable=False)
+    local_usr_table = sql.Table('local_user', meta, autoload=True)
+    nlocal_usr_table = sql.Table('nonlocal_user', meta, autoload=True)
+    project_table = sql.Table('project', meta, autoload=True)
+
+    # Drop foreign key first
+    fkc_name = utils.get_foreign_key_constraint_name(inspector,
+                                                     'user',
+                                                     'domain_id')
+    if fkc_name:
+        migrate.ForeignKeyConstraint(columns=[user_table.c.domain_id],
+                                     refcolumns=[project_table.c.id],
+                                     name=fkc_name).drop()
+
+    # Recreate foreign keys and alter table attribute
+    with utils.recreate_foreign_keys(migrate_engine,
+                                     'user',
+                                     'id',
+                                     referents=['local_user',
+                                                'nonlocal_user']):
+        user_table.c.domain_id.alter(nullable=False)
+
+    # Add foreign key back
+    migrate.ForeignKeyConstraint(columns=[user_table.c.domain_id],
+                                 refcolumns=[project_table.c.id],
+                                 name=fkc_name).create()
 
     if upgrades.USE_TRIGGERS:
         if migrate_engine.name == 'postgresql':

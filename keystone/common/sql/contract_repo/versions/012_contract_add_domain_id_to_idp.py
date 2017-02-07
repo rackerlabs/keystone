@@ -10,6 +10,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_db.sqlalchemy import utils
+
 import sqlalchemy as sql
 
 from keystone.common.sql import upgrades
@@ -20,7 +22,13 @@ def upgrade(migrate_engine):
     meta.bind = migrate_engine
 
     idp_table = sql.Table('identity_provider', meta, autoload=True)
-    idp_table.c.domain_id.alter(nullable=False, unique=True)
+
+    # Recreate foreign key constraint and alter column attribute
+    with utils.recreate_foreign_keys(migrate_engine,
+                                     'project',
+                                     'id',
+                                     referents=['identity_provider']):
+        idp_table.c.domain_id.alter(nullable=False, unique=True)
 
     if upgrades.USE_TRIGGERS:
         if migrate_engine.name == 'postgresql':
