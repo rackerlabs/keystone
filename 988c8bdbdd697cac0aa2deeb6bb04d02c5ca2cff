@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_d7fdf8b1",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T21:41:04Z",
+      "side": 1,
+      "message": "Oh - I meant the ability to enforce mutual exclusion with argparse. I don\u0027t think it would make sense to expect ``keystone-manage db_sync --expand --check`` to work. In that case I\u0027d expect the CLI to throw me some sort of error saying \"hey, either run --expand or --check\"\n\nhttps://docs.python.org/3/library/argparse.html#mutual-exclusion",
+      "parentUuid": "1a430d35_58a13af7",
+      "revId": "988c8bdbdd697cac0aa2deeb6bb04d02c5ca2cff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_47295f89",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 22
@@ -136,6 +154,24 @@
       "side": 1,
       "message": "isn\u0027t this essentially what is already being done with the first elif? If latest_version isn\u0027t greater than expanded_version we essentially handle the fact that the expand is already up to date and therefore can use this to check if migrate and contract are also updated to the same version",
       "parentUuid": "1a430d35_27a8d376",
+      "revId": "988c8bdbdd697cac0aa2deeb6bb04d02c5ca2cff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_b754ecc9",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T21:41:04Z",
+      "side": 1,
+      "message": "That\u0027s true - I think I just tend to lean one the side of being verbose (paranoid even) in the checking?",
+      "parentUuid": "1a430d35_d870ca74",
       "revId": "988c8bdbdd697cac0aa2deeb6bb04d02c5ca2cff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
