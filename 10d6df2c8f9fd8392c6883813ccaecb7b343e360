@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_f443dcac",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1675,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-08T17:14:52Z",
+      "side": 1,
+      "message": "Done and the condition is there in case we ever start over with an empty/new repo.",
+      "parentUuid": "1a430d35_57dcdb72",
+      "range": {
+        "startLine": 1675,
+        "startChar": 8,
+        "endLine": 1675,
+        "endChar": 31
+      },
+      "revId": "10d6df2c8f9fd8392c6883813ccaecb7b343e360",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_d73d2b90",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2017-02-08T00:41:12Z",
       "side": 1,
       "message": "hmm? a single file from a list of file? add a comment?",
+      "range": {
+        "startLine": 1676,
+        "startChar": 12,
+        "endLine": 1676,
+        "endChar": 45
+      },
+      "revId": "10d6df2c8f9fd8392c6883813ccaecb7b343e360",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_1415c89a",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1676,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-08T17:14:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_d73d2b90",
       "range": {
         "startLine": 1676,
         "startChar": 12,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_341804d3",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1678,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-08T17:14:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_b75fbfe3",
+      "range": {
+        "startLine": 1678,
+        "startChar": 36,
+        "endLine": 1678,
+        "endChar": 74
+      },
+      "revId": "10d6df2c8f9fd8392c6883813ccaecb7b343e360",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_574a1b27",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 4
@@ -82,6 +154,30 @@
       "writtenOn": "2017-02-08T00:41:12Z",
       "side": 1,
       "message": "replace \"the repo file name\" with $file_name?",
+      "range": {
+        "startLine": 1680,
+        "startChar": 49,
+        "endLine": 1680,
+        "endChar": 67
+      },
+      "revId": "10d6df2c8f9fd8392c6883813ccaecb7b343e360",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_740e0c8d",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1680,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-08T17:14:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_574a1b27",
       "range": {
         "startLine": 1680,
         "startChar": 49,
