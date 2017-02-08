@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_137cf5b3",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T21:35:40Z",
+      "side": 1,
+      "message": "We might be able to get this for free if we `raise` an exception.\n\nhttps://github.com/openstack/keystone/blob/master/keystone/cmd/cli.py#L1118-L1119",
+      "revId": "01bc7796fa320f382b4e43623ca8ae16de289f72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_77444449",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T21:35:40Z",
+      "side": 1,
+      "message": "We could be safe here and include the migration_script_version in the comparison as well.",
+      "revId": "01bc7796fa320f382b4e43623ca8ae16de289f72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_b7614cd5",
+        "filename": "releasenotes/notes/bug-1642212-9964dfd3af0184bd.yaml",
+        "patchSetId": 24
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T21:35:40Z",
+      "side": 1,
+      "message": "We should add the status code descriptions to the dev docs\n\nhttps://github.com/openstack/keystone/blob/master/doc/source/upgrading.rst",
+      "revId": "01bc7796fa320f382b4e43623ca8ae16de289f72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
