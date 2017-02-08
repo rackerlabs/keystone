@@ -106,6 +106,7 @@ def handle_scoped_token(request, token_ref, federation_api, identity_api):
     response_data['group_ids'] = group_ids
     response_data[federation_constants.IDENTITY_PROVIDER] = identity_provider
     response_data[federation_constants.PROTOCOL] = protocol
+    response_data.setdefault('method_names', ['token']).extend(token_ref.methods)
 
     return response_data
 
