@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_0098181b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T23:28:23Z",
+      "side": 1,
+      "message": "We should document these in our developer docs as keystone release note conventions, that way we don\u0027t have to go through and clean things up at the end of a release :)",
+      "revId": "c1b352f0a18fa357c4e71ce6ccf0988808937b30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
