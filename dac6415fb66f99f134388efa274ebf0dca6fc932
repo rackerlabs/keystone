@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_1d507f31",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T22:59:20Z",
+      "side": 1,
+      "message": "Per David\u0027s previous comment, did we come to consensus on how to move forward with this? I know we talked about it extensively in a recent meeting, but whatever the outcome was we should document it here somehow (so we can find it and reference it later).",
+      "revId": "dac6415fb66f99f134388efa274ebf0dca6fc932",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
