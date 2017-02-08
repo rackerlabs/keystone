@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_da5c3d1b",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T22:10:11Z",
+      "side": 1,
+      "message": "s/main auth middleware/keystone.middleware.auth.AuthContextMiddleware/",
+      "revId": "c133c399c489d9478417663b737ec835adb93381",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_5af5adea",
+        "filename": "releasenotes/notes/removed-as-of-pike-deadbeefdeadbeef.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T22:10:11Z",
+      "side": 1,
+      "message": "We should list other filter so that reader know exactly what we\u0027re talking about.",
+      "revId": "c133c399c489d9478417663b737ec835adb93381",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
