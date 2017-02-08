@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_3aef0b1f",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T17:47:48Z",
+      "side": 1,
+      "message": "We also need to find the max version of the installed migration scripts.",
+      "revId": "36a49906f8f3c8926ac3b10277e3283b173b55bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_7a2273a4",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T17:47:48Z",
+      "side": 1,
+      "message": "This probably doesn\u0027t need to be logged since it\u0027s going to be available by inspecting the return code (sorry if this came across differently in the paste!).",
+      "revId": "36a49906f8f3c8926ac3b10277e3283b173b55bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
