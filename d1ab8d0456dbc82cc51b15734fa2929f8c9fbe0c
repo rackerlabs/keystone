@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_1c01986a",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 716,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-08T00:13:44Z",
+      "side": 1,
+      "message": "ah, sure will do!",
+      "parentUuid": "1a430d35_0b9cf45b",
+      "range": {
+        "startLine": 716,
+        "startChar": 16,
+        "endLine": 716,
+        "endChar": 55
+      },
+      "revId": "d1ab8d0456dbc82cc51b15734fa2929f8c9fbe0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_8ba8e478",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 11
@@ -99,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_3c41f4a9",
+        "filename": "keystone/version/__init__.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-08T00:13:44Z",
+      "side": 1,
+      "message": "I think it was discussed about bumping the version for pycadf, but we should be able to just bump the pycadf version I would assume? This does not need to be changed here though, I will revert this.",
+      "parentUuid": "1a430d35_0b85d405",
+      "revId": "d1ab8d0456dbc82cc51b15734fa2929f8c9fbe0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_cba74cbb",
         "filename": "releasenotes/notes/use-uuids-with-pycadf-19892295e870103e.yaml",
         "patchSetId": 11
@@ -110,6 +152,24 @@
       "writtenOn": "2017-02-07T22:04:11Z",
       "side": 1,
       "message": "theres no end-user impact here, no need to create a release note",
+      "revId": "d1ab8d0456dbc82cc51b15734fa2929f8c9fbe0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_1c0fd888",
+        "filename": "releasenotes/notes/use-uuids-with-pycadf-19892295e870103e.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-08T00:13:44Z",
+      "side": 1,
+      "message": "ah ok, thanks Steve",
+      "parentUuid": "1a430d35_cba74cbb",
       "revId": "d1ab8d0456dbc82cc51b15734fa2929f8c9fbe0c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
