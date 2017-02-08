@@ -25,6 +25,23 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_8bf51bee",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 6816
+      },
+      "writtenOn": "2017-02-08T16:06:53Z",
+      "side": 1,
+      "message": "Ideally I\u0027d like to see the return codes are Steve suggested in PS18. Return codes are unambiguous and therefore very useful in automation tooling - it allows us to easily detect state and react accordingly.\n\nIf return codes are too hard to do, then ideally the output to stdout should be in a format that has the key information shown in a way that will never change. For example:\n\ncurrent state (in one word that will never change)\nnext step\nexplanation\n\nThen we\u0027re able to easily parse stdout and will likely only ever care about the first line/word - the rest of the info is for humans, not tools.",
+      "revId": "24045d6ee3d67360a50f9b664d74ea7ac0cc8052",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_48f4195a",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 19
