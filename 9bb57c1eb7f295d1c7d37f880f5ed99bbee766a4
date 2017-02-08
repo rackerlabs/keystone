@@ -46,6 +46,30 @@
       "revId": "9bb57c1eb7f295d1c7d37f880f5ed99bbee766a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_72d9e521",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-08T01:55:02Z",
+      "side": 0,
+      "message": "the rebase button did all the work",
+      "parentUuid": "1a430d35_527b0928",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 75
+      },
+      "revId": "9bb57c1eb7f295d1c7d37f880f5ed99bbee766a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
