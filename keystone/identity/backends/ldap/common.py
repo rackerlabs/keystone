@@ -1176,6 +1176,7 @@ class BaseLdap(object):
             self.tree_dn = (
                 getattr(conf.ldap, '%s_tree_dn' % self.options_name)
                 or '%s,%s' % (self.DEFAULT_OU, conf.ldap.suffix))
+            self.tree_dn = utf8_encode(self.tree_dn)
 
             idatt = '%s_id_attribute' % self.options_name
             self.id_attr = getattr(conf.ldap, idatt) or self.DEFAULT_ID_ATTR
