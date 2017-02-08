@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_6811d55c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 6816
+      },
+      "writtenOn": "2017-02-08T16:03:18Z",
+      "side": 1,
+      "message": "RC \u003d 1 is the universal RC for an general error, so you\u0027ll want to avoid that one\n\nhere\u0027s an example reference: http://www.tldp.org/LDP/abs/html/exitcodes.html\n\nyou may just want to use 2 or 3 onwards instead",
+      "parentUuid": "1a430d35_f9a12795",
+      "revId": "88d8580c9fe7a3f32c4a46fa43ac32adc9961b54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_39a80f77",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 18
