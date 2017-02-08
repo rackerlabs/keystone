@@ -22,6 +22,24 @@
       "revId": "ae1ecd8ed9b2fe47e0178aae42048347daf07035",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_fd6013a7",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T22:40:35Z",
+      "side": 1,
+      "message": "The convention we seem to take for these types of changes is adding it to the top of the file: \n\nhttps://github.com/openstack/keystone/blob/029476272fb869c6413aa4e70f4cae6f890e598f/keystone/tests/unit/test_validation.py#L1\nhttps://github.com/openstack/keystone/blob/029476272fb869c6413aa4e70f4cae6f890e598f/keystone/tests/unit/test_wsgi.py#L1\nhttps://github.com/openstack/keystone/blob/029476272fb869c6413aa4e70f4cae6f890e598f/keystone/tests/unit/mapping_fixtures.py#L1\nhttps://github.com/openstack/keystone/blob/029476272fb869c6413aa4e70f4cae6f890e598f/keystone/tests/unit/test_backend_id_mapping_sql.py#L1\nhttps://github.com/openstack/keystone/blob/029476272fb869c6413aa4e70f4cae6f890e598f/keystone/tests/unit/identity/backends/test_ldap_common.py#L1\nhttps://github.com/openstack/keystone/blob/029476272fb869c6413aa4e70f4cae6f890e598f/keystone/tests/unit/test_backend_ldap.py#L1\nhttps://github.com/openstack/keystone/blob/029476272fb869c6413aa4e70f4cae6f890e598f/keystone/tests/unit/common/test_utils.py#L1\n\nAlso - we try to add some sort of test to ensure the encoding works as expected: \n\nhttps://github.com/openstack/keystone/commit/944bd0a2dca60a5b144378587a13220d33298051",
+      "parentUuid": "1a430d35_f1015207",
+      "revId": "ae1ecd8ed9b2fe47e0178aae42048347daf07035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
