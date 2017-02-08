@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_ebacdf8d",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-08T16:15:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_8884410b",
+      "range": {
+        "startLine": 450,
+        "startChar": 40,
+        "endLine": 450,
+        "endChar": 57
+      },
+      "revId": "24045d6ee3d67360a50f9b664d74ea7ac0cc8052",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_8bf51bee",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 19
@@ -53,6 +77,30 @@
       "writtenOn": "2017-02-08T16:00:08Z",
       "side": 1,
       "message": "This is a lot of verbiage, which is probably duplicated in the documentation. I\u0027d suggest simply giving the state, next stage and refer to the documentation. ie skip the explanation - that belongs in docs.\n\nThe docs reference should also include some way of figuring out the URL to be series specific, eg: https://docs.openstack.org/developer/keystone/upgrading.html\nversus the following when it releases:\nhttps://docs.openstack.org/developer/keystone/ocata/upgrading.html",
+      "range": {
+        "startLine": 467,
+        "startChar": 0,
+        "endLine": 487,
+        "endChar": 57
+      },
+      "revId": "24045d6ee3d67360a50f9b664d74ea7ac0cc8052",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_8b9b5b65",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 487,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-08T16:15:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_48f4195a",
       "range": {
         "startLine": 467,
         "startChar": 0,
