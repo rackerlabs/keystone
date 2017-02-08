@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_27fe13ae",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T19:35:47Z",
+      "side": 1,
+      "message": "We don\u0027t intend on this being using in conjunction with `--expand`, `--migrate`, or `--contract`. We should add a test to ensure it\u0027s mutually exclusive with that group.",
+      "revId": "988c8bdbdd697cac0aa2deeb6bb04d02c5ca2cff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_47295f89",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T19:35:47Z",
+      "side": 1,
+      "message": "nit: I\u0027d probably call this something like `migration_script_version`, since `latest` can mean difference things depending on the repo.",
+      "revId": "988c8bdbdd697cac0aa2deeb6bb04d02c5ca2cff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_876d07ce",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T19:35:47Z",
+      "side": 1,
+      "message": "This would technically be the unhappiest of paths, right? In this case I\u0027d expect the return code to be 1 (error).",
+      "revId": "988c8bdbdd697cac0aa2deeb6bb04d02c5ca2cff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_27a8d376",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T19:35:47Z",
+      "side": 1,
+      "message": "This needs to make sure we take into account the migration script versions, too. I\u0027d double check with our operators on this, but I\u0027d assume that if the latest migration script versions match the three repository version, we\u0027d return 0, a successful non-error code.\n\nRestructuring this might make readability easier, too:\n\n  expand_version \u003d upgrades.get_db_version(repo\u003d\u0027expand_repo\u0027)\n  migrate_version \u003d ...\n  contract_version \u003d ...\n  script_version \u003d ...\n\n  status \u003d 0\n  if script_version \u003d\u003d expand_version \u003d\u003d migrate_version \u003d\u003d contract_version:\n      msg \u003d \u0027everything is up to date and you have no pending migrations!\u0027\n  elif script_version \u003e expand_version:\n      msg \u003d \u0027...\u0027\n      status \u003d 2\n  elif expand_version \u003e migrate_version:\n      msg \u003d \u0027...\u0027\n      status \u003d 3\n  ...\n  else:\n      status \u003d 1\n      msg \u003d \u0027something real bad happened\u0027\n      # this could essentially result in an error or raise one",
+      "revId": "988c8bdbdd697cac0aa2deeb6bb04d02c5ca2cff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_c428ed9c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T19:35:47Z",
+      "side": 1,
+      "message": "s/command/repository/ ?",
+      "revId": "988c8bdbdd697cac0aa2deeb6bb04d02c5ca2cff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_47ca3f1c",
+        "filename": "releasenotes/notes/bug-1642212-9964dfd3af0184bd.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T19:35:47Z",
+      "side": 1,
+      "message": "++ we should also add some documentation in this patch that explains the state of the error codes.",
+      "revId": "988c8bdbdd697cac0aa2deeb6bb04d02c5ca2cff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
