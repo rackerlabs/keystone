@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_1d1ebf6f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T23:05:04Z",
+      "side": 1,
+      "message": "Let\u0027s tag this to a related bug: \n\n  Related-Bug: 1615014\n\nThis patch is relevant because it\u0027s exposing a case that proves the bug exists.",
+      "revId": "d531063c146be420c5fbb6b445d9467c4b9d32f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
