@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_9db2b4e3",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-08T20:26:43Z",
+      "side": 1,
+      "message": "What\u0027s the and_ for here?",
+      "revId": "adf9ab09dcf210e036d9056c5b77444934bfcc92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_1d716444",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-08T20:26:43Z",
+      "side": 1,
+      "message": "Why are you committing here?",
+      "revId": "adf9ab09dcf210e036d9056c5b77444934bfcc92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_5d312c59",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1516,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-08T20:26:43Z",
+      "side": 1,
+      "message": "This seems to always fail for me. Users are not guaranteed to have the default_project_id set. In this case you expect it to be set be cause you are comparing it against a project. So I think there is a bug in the code.",
+      "revId": "adf9ab09dcf210e036d9056c5b77444934bfcc92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
