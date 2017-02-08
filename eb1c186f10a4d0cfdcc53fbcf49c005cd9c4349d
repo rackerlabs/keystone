@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_c2161d4b",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1677,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-08T19:43:48Z",
+      "side": 1,
+      "message": "ah so you\u0027re only validating the last one, i see. i guess that works, assuming we do migrations once at a time.",
+      "range": {
+        "startLine": 1676,
+        "startChar": 12,
+        "endLine": 1677,
+        "endChar": 45
+      },
+      "revId": "eb1c186f10a4d0cfdcc53fbcf49c005cd9c4349d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
