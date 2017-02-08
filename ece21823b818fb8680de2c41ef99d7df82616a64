@@ -1,0 +1,153 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_149decbb",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-08T04:13:04Z",
+      "side": 1,
+      "message": "super nit (i\u0027m sorry), but can you put the white spaces to the right end of the string? since thats what you do everywhere else :)",
+      "range": {
+        "startLine": 450,
+        "startChar": 33,
+        "endLine": 453,
+        "endChar": 78
+      },
+      "revId": "ece21823b818fb8680de2c41ef99d7df82616a64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_d4b7e437",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-08T04:13:04Z",
+      "side": 1,
+      "message": "wrap this in backticks or double quotes",
+      "range": {
+        "startLine": 466,
+        "startChar": 36,
+        "endLine": 466,
+        "endChar": 69
+      },
+      "revId": "ece21823b818fb8680de2c41ef99d7df82616a64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_14840c5c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-08T04:13:04Z",
+      "side": 1,
+      "message": "wrap this in backticks or double quotes",
+      "range": {
+        "startLine": 483,
+        "startChar": 57,
+        "endLine": 484,
+        "endChar": 44
+      },
+      "revId": "ece21823b818fb8680de2c41ef99d7df82616a64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_94b1dc49",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-08T04:13:04Z",
+      "side": 1,
+      "message": "https*",
+      "range": {
+        "startLine": 488,
+        "startChar": 35,
+        "endLine": 488,
+        "endChar": 39
+      },
+      "revId": "ece21823b818fb8680de2c41ef99d7df82616a64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_0d15e447",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-08T04:13:04Z",
+      "side": 1,
+      "message": "i\u0027m sure others have chimed in, but what about making _check_db_sync_status a class method and referring to it as DbSync._check_...() ?",
+      "range": {
+        "startLine": 498,
+        "startChar": 8,
+        "endLine": 498,
+        "endChar": 27
+      },
+      "revId": "ece21823b818fb8680de2c41ef99d7df82616a64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_0d47a477",
+        "filename": "releasenotes/notes/add-db-sync-check-command-9964dfd3af0184bd.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-08T04:13:04Z",
+      "side": 1,
+      "message": "rename this to:\n\n  bug-1642212-9964dfd3af0184bd.yaml",
+      "revId": "ece21823b818fb8680de2c41ef99d7df82616a64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_2d2700cb",
+        "filename": "releasenotes/notes/add-db-sync-check-command-9964dfd3af0184bd.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-08T04:13:04Z",
+      "side": 1,
+      "message": "write this in the past tense and use highlighting where appropriate, for example:\n\n---\nfeatures:\n  - |\n    Added an option ``--check`` to ``keystone-manage db_sync``, the option will\n    allow a user to check the status of rolling upgrades in the database.",
+      "revId": "ece21823b818fb8680de2c41ef99d7df82616a64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
