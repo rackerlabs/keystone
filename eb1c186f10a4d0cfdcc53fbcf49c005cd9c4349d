@@ -22,6 +22,24 @@
       "revId": "eb1c186f10a4d0cfdcc53fbcf49c005cd9c4349d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_134955b7",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1677,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T21:26:11Z",
+      "side": 1,
+      "message": "Right - is that something we can automatically assume? Wouldn\u0027t that break here though: \n\nhttps://github.com/openstack/keystone/commit/2edf887e09abfa2b69d87ecd57520b48457eb32a",
+      "parentUuid": "1a430d35_c2161d4b",
+      "revId": "eb1c186f10a4d0cfdcc53fbcf49c005cd9c4349d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
