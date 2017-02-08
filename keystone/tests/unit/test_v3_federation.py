@@ -2151,9 +2151,6 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
                 self.assertEqual(domains_ref, domains,
                                  'match failed for url %s' % url)
 
-    @utils.wip('This will fail because of bug #1501032. The returned method'
-               'list should contain "saml2". This is documented in bug '
-               '1501032.')
     def test_full_workflow(self):
         """Test 'standard' workflow for granting access tokens.
 
@@ -2178,8 +2175,6 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
 
         r = self.v3_create_token(v3_scope_request)
         token_resp = r.result['token']
-        # FIXME(lbragstad): 'token' should be in the list of methods returned
-        # but it isn't. This is documented in bug 1501032.
         self.assertIn('token', token_resp['methods'])
         self.assertIn('saml2', token_resp['methods'])
         self._check_project_scoped_token_attributes(token_resp, project['id'])
