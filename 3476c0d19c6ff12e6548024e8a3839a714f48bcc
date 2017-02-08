@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_fd1493a0",
+        "filename": "keystone/tests/unit/catalog/test_backends.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T22:57:19Z",
+      "side": 1,
+      "message": "We shouldn\u0027t lose any test coverage for being able to specify our own \"non-uuid\" like IDs with this, do we?",
+      "revId": "3476c0d19c6ff12e6548024e8a3839a714f48bcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_fdc9f326",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T22:57:19Z",
+      "side": 1,
+      "message": "I\u0027m not sure how this change fits into this patch? Wasn\u0027t this related to Steve\u0027s comment on patch set 11?",
+      "revId": "3476c0d19c6ff12e6548024e8a3839a714f48bcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
