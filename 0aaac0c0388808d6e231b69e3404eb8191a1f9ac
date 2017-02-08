@@ -16,6 +16,23 @@
       "revId": "0aaac0c0388808d6e231b69e3404eb8191a1f9ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_e0486cb5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T23:25:05Z",
+      "side": 1,
+      "message": "This is proposed to the stable/ocata branch.",
+      "revId": "0aaac0c0388808d6e231b69e3404eb8191a1f9ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
