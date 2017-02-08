@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_e275d9ca",
+        "filename": "keystone/identity/backends/base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 22219
+      },
+      "writtenOn": "2017-02-08T20:11:25Z",
+      "side": 1,
+      "message": "Going to add next patch set.",
+      "parentUuid": "1a430d35_be531c16",
+      "revId": "fcfba624e1241ef317f0121429d2023a8816fe82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_6b4c98c8",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_826c1509",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 22219
+      },
+      "writtenOn": "2017-02-08T20:11:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_6b4c98c8",
+      "revId": "fcfba624e1241ef317f0121429d2023a8816fe82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_ab19208a",
         "filename": "keystone/identity/core.py",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2017-02-07T22:14:55Z",
       "side": 1,
       "message": "We could add a comment here that explains the rational for using notification instead of FK constraints.",
+      "revId": "fcfba624e1241ef317f0121429d2023a8816fe82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_227c41b4",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 22219
+      },
+      "writtenOn": "2017-02-08T20:11:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_ab19208a",
       "revId": "fcfba624e1241ef317f0121429d2023a8816fe82",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
