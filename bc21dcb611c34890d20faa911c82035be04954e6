@@ -22,6 +22,24 @@
       "revId": "bc21dcb611c34890d20faa911c82035be04954e6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_20a7d4bd",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T23:15:33Z",
+      "side": 1,
+      "message": "You just want to make sure we include a statement that says users can belong to multiple domains, too? I feel like that is addressed in the second sentence, which explicitly calls out that behavior with domains.",
+      "parentUuid": "1a430d35_7602eb70",
+      "revId": "bc21dcb611c34890d20faa911c82035be04954e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
