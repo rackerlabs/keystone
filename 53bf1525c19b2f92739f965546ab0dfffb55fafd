@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_e0714c0d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-08T23:24:04Z",
+      "side": 1,
+      "message": "Would it be possible to cherry-pick these with the \"cherry picked from\" statement that includes the Change-Id of the parent change? I was under the impression that was common practice for backports, but I could be wrong.",
+      "revId": "53bf1525c19b2f92739f965546ab0dfffb55fafd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
