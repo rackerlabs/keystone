@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_92fe51ac",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-08T01:44:26Z",
+      "side": 0,
+      "message": "hmm this may have been removed accidentally when rebasing?",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 75
+      },
+      "revId": "9bb57c1eb7f295d1c7d37f880f5ed99bbee766a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
