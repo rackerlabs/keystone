@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_1a296f8a",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-08T17:45:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_b99b1f65",
+      "range": {
+        "startLine": 464,
+        "startChar": 12,
+        "endLine": 465,
+        "endChar": 42
+      },
+      "revId": "88d8580c9fe7a3f32c4a46fa43ac32adc9961b54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_f9a12795",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 18
@@ -60,6 +84,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_da1c476c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-08T17:45:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_6811d55c",
+      "revId": "88d8580c9fe7a3f32c4a46fa43ac32adc9961b54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_39a80f77",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 18
@@ -71,6 +113,30 @@
       "writtenOn": "2017-02-08T11:55:29Z",
       "side": 1,
       "message": "set return_code \u003d 2 after this",
+      "range": {
+        "startLine": 487,
+        "startChar": 25,
+        "endLine": 487,
+        "endChar": 57
+      },
+      "revId": "88d8580c9fe7a3f32c4a46fa43ac32adc9961b54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_1a024f0a",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 487,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-08T17:45:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_39a80f77",
       "range": {
         "startLine": 487,
         "startChar": 25,
@@ -106,6 +172,30 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_ff001504",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-08T17:45:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_b9b23fe3",
+      "range": {
+        "startLine": 491,
+        "startChar": 25,
+        "endLine": 491,
+        "endChar": 52
+      },
+      "revId": "88d8580c9fe7a3f32c4a46fa43ac32adc9961b54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_59079b81",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 18
@@ -117,6 +207,30 @@
       "writtenOn": "2017-02-08T11:55:29Z",
       "side": 1,
       "message": "exit with\n\n  sys.exit(return_code)",
+      "range": {
+        "startLine": 496,
+        "startChar": 25,
+        "endLine": 496,
+        "endChar": 55
+      },
+      "revId": "88d8580c9fe7a3f32c4a46fa43ac32adc9961b54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_df051914",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-08T17:45:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_59079b81",
       "range": {
         "startLine": 496,
         "startChar": 25,
