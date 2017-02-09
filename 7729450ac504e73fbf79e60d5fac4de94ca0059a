@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_cf8ab463",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-09T05:56:33Z",
+      "side": 1,
+      "message": "This could be moved to the bottom of the message, after a description of why the change is needed.",
+      "revId": "7729450ac504e73fbf79e60d5fac4de94ca0059a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_afb8082b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-09T05:56:33Z",
+      "side": 1,
+      "message": "This would make a great title line for the commit message. We have some good examples of various commit messages on our wiki: \n\nhttps://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "7729450ac504e73fbf79e60d5fac4de94ca0059a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

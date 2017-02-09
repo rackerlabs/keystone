@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_ef2e9041",
+        "filename": "keystone/common/sql/migrate_repo/versions/067_kilo.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-09T05:56:33Z",
+      "side": 0,
+      "message": "Are we allowed to make modifications to this repo now that we have switched to using the rolling upgrade model?",
+      "revId": "66d3c3493c001528cd4e08c1acd078365feab9bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
