@@ -96,6 +96,24 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_13dbf6ee",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-09T22:17:49Z",
+      "side": 1,
+      "message": "Yeah, I\u0027m fine with it either way. The \"rules\" seem a bit confusing with keeping it lowercase vs proper noun.",
+      "parentUuid": "fa31d9ce_f039f842",
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_029c0968",
         "filename": "doc/source/federation/mapping_combinations.rst",
         "patchSetId": 5
