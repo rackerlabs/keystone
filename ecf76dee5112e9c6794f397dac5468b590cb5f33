@@ -45,6 +45,125 @@
       "revId": "ecf76dee5112e9c6794f397dac5468b590cb5f33",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_c3ba7171",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-09T19:05:24Z",
+      "side": 1,
+      "message": "Is there any reason to make this protected?",
+      "revId": "ecf76dee5112e9c6794f397dac5468b590cb5f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_433e812a",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-09T19:05:24Z",
+      "side": 1,
+      "message": "(nit) I think that this can be done with two comparisons \u0027contract \u003e migrate\u0027 and \u0027migrate \u003e expand\u0027",
+      "revId": "ecf76dee5112e9c6794f397dac5468b590cb5f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_4324c1c5",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-09T19:05:24Z",
+      "side": 1,
+      "message": "(nit) To make tests cleaner maybe the main() should be the thing that actually does the exit?",
+      "revId": "ecf76dee5112e9c6794f397dac5468b590cb5f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_0311d95d",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 1687,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-09T19:05:24Z",
+      "side": 1,
+      "message": "You should probably just be catching SystemExit. You would not want the test to accidentally pass because there in a different exception thrown after the message  (from the assert below) was logged.",
+      "revId": "ecf76dee5112e9c6794f397dac5468b590cb5f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_3e126859",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 1696,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-09T19:05:24Z",
+      "side": 1,
+      "message": "same",
+      "revId": "ecf76dee5112e9c6794f397dac5468b590cb5f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_5e3654e8",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 1705,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-09T19:05:24Z",
+      "side": 1,
+      "message": "same",
+      "revId": "ecf76dee5112e9c6794f397dac5468b590cb5f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_9e30bcea",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 1715,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-09T19:05:24Z",
+      "side": 1,
+      "message": "same",
+      "revId": "ecf76dee5112e9c6794f397dac5468b590cb5f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
