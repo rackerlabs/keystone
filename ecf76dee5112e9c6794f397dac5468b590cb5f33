@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_34d0d1f7",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 27
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 6816
+      },
+      "writtenOn": "2017-02-09T17:04:17Z",
+      "side": 1,
+      "message": "nit: your",
+      "range": {
+        "startLine": 238,
+        "startChar": 73,
+        "endLine": 238,
+        "endChar": 76
+      },
+      "revId": "ecf76dee5112e9c6794f397dac5468b590cb5f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_54f47d86",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 27
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 6816
+      },
+      "writtenOn": "2017-02-09T17:04:17Z",
+      "side": 1,
+      "message": "\u0027by\u0027 may be better here\n\nThat said, I\u0027m not sure that this speculative statement adds any value. Personally I\u0027d just leave it at the end of the first sentence.",
+      "range": {
+        "startLine": 240,
+        "startChar": 2,
+        "endLine": 240,
+        "endChar": 6
+      },
+      "revId": "ecf76dee5112e9c6794f397dac5468b590cb5f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
