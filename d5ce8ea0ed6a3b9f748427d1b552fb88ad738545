@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_fd9e25b7",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-02-09T20:45:32Z",
+      "side": 1,
+      "message": "228GddkyypVr~",
+      "revId": "d5ce8ea0ed6a3b9f748427d1b552fb88ad738545",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_dd9fa963",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-02-09T20:45:32Z",
+      "side": 1,
+      "message": "I feel like this should be debug level? I\u0027m not sure this is handy on every execution (when I can just check the directories), but it\u0027s definitely handy for a certain audience.",
+      "revId": "d5ce8ea0ed6a3b9f748427d1b552fb88ad738545",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_7d78752c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-02-09T20:45:32Z",
+      "side": 1,
+      "message": "Based on the other commands here, it seems like the function itself should be responsible for raising it\u0027s own system exit.",
+      "revId": "d5ce8ea0ed6a3b9f748427d1b552fb88ad738545",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_8aedeb90",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1718,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-02-09T20:45:32Z",
+      "side": 1,
+      "message": "This should raise an exception at some point (see test_that_running_upgrades_out_of_order_passes)",
+      "revId": "d5ce8ea0ed6a3b9f748427d1b552fb88ad738545",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
