@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_1e3f6cd7",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 27
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-09T19:42:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_34d0d1f7",
+      "range": {
+        "startLine": 238,
+        "startChar": 73,
+        "endLine": 238,
+        "endChar": 76
+      },
+      "revId": "ecf76dee5112e9c6794f397dac5468b590cb5f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_54f47d86",
         "filename": "doc/source/upgrading.rst",
         "patchSetId": 27
@@ -36,6 +60,30 @@
       "writtenOn": "2017-02-09T17:04:17Z",
       "side": 1,
       "message": "\u0027by\u0027 may be better here\n\nThat said, I\u0027m not sure that this speculative statement adds any value. Personally I\u0027d just leave it at the end of the first sentence.",
+      "range": {
+        "startLine": 240,
+        "startChar": 2,
+        "endLine": 240,
+        "endChar": 6
+      },
+      "revId": "ecf76dee5112e9c6794f397dac5468b590cb5f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_fe39c0f3",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 27
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-09T19:42:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_54f47d86",
       "range": {
         "startLine": 240,
         "startChar": 2,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_59366ee8",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-09T19:42:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_c3ba7171",
+      "revId": "ecf76dee5112e9c6794f397dac5468b590cb5f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_433e812a",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 27
@@ -76,6 +142,24 @@
       "writtenOn": "2017-02-09T19:05:24Z",
       "side": 1,
       "message": "(nit) I think that this can be done with two comparisons \u0027contract \u003e migrate\u0027 and \u0027migrate \u003e expand\u0027",
+      "revId": "ecf76dee5112e9c6794f397dac5468b590cb5f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_3939a2d9",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-09T19:42:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_433e812a",
       "revId": "ecf76dee5112e9c6794f397dac5468b590cb5f33",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -99,6 +183,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_9947f64a",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-09T19:42:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_4324c1c5",
+      "revId": "ecf76dee5112e9c6794f397dac5468b590cb5f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_0311d95d",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 27
@@ -110,6 +212,24 @@
       "writtenOn": "2017-02-09T19:05:24Z",
       "side": 1,
       "message": "You should probably just be catching SystemExit. You would not want the test to accidentally pass because there in a different exception thrown after the message  (from the assert below) was logged.",
+      "revId": "ecf76dee5112e9c6794f397dac5468b590cb5f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_b92af22d",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 1687,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-09T19:42:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_0311d95d",
       "revId": "ecf76dee5112e9c6794f397dac5468b590cb5f33",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -133,6 +253,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_192a262d",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 1696,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-09T19:42:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_3e126859",
+      "revId": "ecf76dee5112e9c6794f397dac5468b590cb5f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_5e3654e8",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 27
@@ -150,6 +288,24 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_391fe20a",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 1705,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-09T19:42:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_5e3654e8",
+      "revId": "ecf76dee5112e9c6794f397dac5468b590cb5f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_9e30bcea",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 27
@@ -161,6 +317,24 @@
       "writtenOn": "2017-02-09T19:05:24Z",
       "side": 1,
       "message": "same",
+      "revId": "ecf76dee5112e9c6794f397dac5468b590cb5f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_79196a22",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 1715,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-09T19:42:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_9e30bcea",
       "revId": "ecf76dee5112e9c6794f397dac5468b590cb5f33",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
