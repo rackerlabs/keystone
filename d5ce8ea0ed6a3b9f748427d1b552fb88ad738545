@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_4d930dfb",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-09T21:20:22Z",
+      "side": 1,
+      "message": "I had him change to this to make the tests nicer. Specifically to make checking status codes simpler. I think it also makes sense to not exit from anywhere besides main when possible.",
+      "parentUuid": "1a430d35_7d78752c",
+      "revId": "d5ce8ea0ed6a3b9f748427d1b552fb88ad738545",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa31d9ce_8aedeb90",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 28
