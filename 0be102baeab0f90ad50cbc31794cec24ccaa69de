@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_50f2c49b",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-09T21:52:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_7321229f",
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_22a2e5ae",
         "filename": "doc/source/federation/mapping_combinations.rst",
         "patchSetId": 5
@@ -54,6 +72,24 @@
         "endLine": 27,
         "endChar": 1
       },
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_f039f842",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-09T21:52:07Z",
+      "side": 1,
+      "message": "Did you see my prior comment about this?",
+      "parentUuid": "1a430d35_22a2e5ae",
       "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -83,6 +119,24 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_90119cb2",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-09T21:52:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_029c0968",
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_82863911",
         "filename": "doc/source/federation/mapping_combinations.rst",
         "patchSetId": 5
@@ -106,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_9078bcfa",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-09T21:52:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_82863911",
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_b3faaabb",
         "filename": "doc/source/federation/mapping_combinations.rst",
         "patchSetId": 5
@@ -117,6 +189,24 @@
       "writtenOn": "2017-02-06T22:09:50Z",
       "side": 1,
       "message": "nit: the local groups the federated user will be placed in (?)",
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_50fc843e",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-09T21:52:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_b3faaabb",
       "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -151,6 +241,24 @@
       "writtenOn": "2017-02-06T23:26:43Z",
       "side": 1,
       "message": "++",
+      "parentUuid": "1a430d35_332dda46",
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_10dbecee",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-09T21:52:07Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "1a430d35_332dda46",
       "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -204,6 +312,24 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_10892ccb",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-09T21:52:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_2213c5b9",
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_227ae5f1",
         "filename": "doc/source/federation/mapping_combinations.rst",
         "patchSetId": 5
@@ -227,6 +353,24 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_5093a4fa",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-09T21:52:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_227ae5f1",
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_73acc2a0",
         "filename": "doc/source/federation/mapping_combinations.rst",
         "patchSetId": 5
@@ -244,6 +388,24 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_10776cd5",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-09T21:52:07Z",
+      "side": 1,
+      "message": "You mean put something like this in the example below?",
+      "parentUuid": "1a430d35_73acc2a0",
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_139c5e68",
         "filename": "doc/source/federation/mapping_combinations.rst",
         "patchSetId": 5
@@ -255,6 +417,24 @@
       "writtenOn": "2017-02-06T22:09:50Z",
       "side": 1,
       "message": "nit: The index of the direct mapping starts at zero.",
+      "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_90627c15",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-09T21:52:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_139c5e68",
       "revId": "0be102baeab0f90ad50cbc31794cec24ccaa69de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
