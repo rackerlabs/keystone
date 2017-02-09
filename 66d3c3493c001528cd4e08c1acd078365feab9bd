@@ -16,6 +16,24 @@
       "revId": "66d3c3493c001528cd4e08c1acd078365feab9bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_534e4ec2",
+        "filename": "keystone/common/sql/migrate_repo/versions/067_kilo.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 19283
+      },
+      "writtenOn": "2017-02-09T22:20:20Z",
+      "side": 0,
+      "message": "I\u0027ve had to make this change so that the base database schema will work with MySQL Cluster (NDB). It only affects the setting of the mysql_engine setting based on the mysql_storage_engine setting from oslo.db in the keystone.conf file. It shouldn\u0027t change anything for users who are using MySQL (InnoDB).",
+      "parentUuid": "1a430d35_ef2e9041",
+      "revId": "66d3c3493c001528cd4e08c1acd078365feab9bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

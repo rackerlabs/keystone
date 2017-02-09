@@ -33,6 +33,24 @@
       "revId": "7729450ac504e73fbf79e60d5fac4de94ca0059a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_73d8b21e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 19283
+      },
+      "writtenOn": "2017-02-09T22:20:20Z",
+      "side": 1,
+      "message": "I\u0027ll fix this up. \n\nThanks,\nOctave",
+      "parentUuid": "1a430d35_afb8082b",
+      "revId": "7729450ac504e73fbf79e60d5fac4de94ca0059a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
