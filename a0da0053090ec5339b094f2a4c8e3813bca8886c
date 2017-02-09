@@ -206,6 +206,23 @@
       "revId": "a0da0053090ec5339b094f2a4c8e3813bca8886c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_2f56d805",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 1672,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-09T05:47:02Z",
+      "side": 1,
+      "message": "We\u0027re not expecting an exception to be caught here are we? Does the following cause an error? \n\n  log_info \u003d self.useFixture(fixtures.FakeLogger(level\u003dlog.INFO))\n  checker._check_db_sync_status()\n  self.assertIn(\"keystone-manage db_sync --expand\", log_info.output)",
+      "revId": "a0da0053090ec5339b094f2a4c8e3813bca8886c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
