@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_651f0ab8",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-09T16:25:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_8616e049",
+      "range": {
+        "startLine": 235,
+        "startChar": 19,
+        "endLine": 235,
+        "endChar": 20
+      },
+      "revId": "a0da0053090ec5339b094f2a4c8e3813bca8886c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_46087828",
         "filename": "doc/source/upgrading.rst",
         "patchSetId": 25
@@ -36,6 +60,30 @@
       "writtenOn": "2017-02-09T00:21:11Z",
       "side": 1,
       "message": "``db_sync``",
+      "range": {
+        "startLine": 236,
+        "startChar": 35,
+        "endLine": 236,
+        "endChar": 42
+      },
+      "revId": "a0da0053090ec5339b094f2a4c8e3813bca8886c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_a5773207",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-09T16:25:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_46087828",
       "range": {
         "startLine": 236,
         "startChar": 35,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_e5813ac5",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-09T16:25:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_c61c686c",
+      "range": {
+        "startLine": 238,
+        "startChar": 19,
+        "endLine": 238,
+        "endChar": 20
+      },
+      "revId": "a0da0053090ec5339b094f2a4c8e3813bca8886c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_660bb424",
         "filename": "doc/source/upgrading.rst",
         "patchSetId": 25
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_45692e25",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-09T16:25:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_660bb424",
+      "range": {
+        "startLine": 240,
+        "startChar": 11,
+        "endLine": 240,
+        "endChar": 18
+      },
+      "revId": "a0da0053090ec5339b094f2a4c8e3813bca8886c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_e617a442",
         "filename": "doc/source/upgrading.rst",
         "patchSetId": 25
@@ -105,6 +201,30 @@
       "writtenOn": "2017-02-09T00:21:11Z",
       "side": 1,
       "message": "``2``",
+      "range": {
+        "startLine": 242,
+        "startChar": 19,
+        "endLine": 242,
+        "endChar": 20
+      },
+      "revId": "a0da0053090ec5339b094f2a4c8e3813bca8886c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_65762a08",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-09T16:25:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_e617a442",
       "range": {
         "startLine": 242,
         "startChar": 19,
@@ -163,6 +283,54 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_45504e5f",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-09T16:25:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_262c4c98",
+      "range": {
+        "startLine": 246,
+        "startChar": 19,
+        "endLine": 246,
+        "endChar": 20
+      },
+      "revId": "a0da0053090ec5339b094f2a4c8e3813bca8886c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_85731615",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-09T16:25:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_267a8c88",
+      "range": {
+        "startLine": 246,
+        "startChar": 21,
+        "endLine": 246,
+        "endChar": 46
+      },
+      "revId": "a0da0053090ec5339b094f2a4c8e3813bca8886c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_6622d4a4",
         "filename": "doc/source/upgrading.rst",
         "patchSetId": 25
@@ -209,6 +377,54 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_a55e5277",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-09T16:25:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_a63f5cb2",
+      "range": {
+        "startLine": 249,
+        "startChar": 21,
+        "endLine": 249,
+        "endChar": 46
+      },
+      "revId": "a0da0053090ec5339b094f2a4c8e3813bca8886c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_e5585a8d",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-09T16:25:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_6622d4a4",
+      "range": {
+        "startLine": 249,
+        "startChar": 19,
+        "endLine": 249,
+        "endChar": 20
+      },
+      "revId": "a0da0053090ec5339b094f2a4c8e3813bca8886c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_2f56d805",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 25
@@ -220,6 +436,24 @@
       "writtenOn": "2017-02-09T05:47:02Z",
       "side": 1,
       "message": "We\u0027re not expecting an exception to be caught here are we? Does the following cause an error? \n\n  log_info \u003d self.useFixture(fixtures.FakeLogger(level\u003dlog.INFO))\n  checker._check_db_sync_status()\n  self.assertIn(\"keystone-manage db_sync --expand\", log_info.output)",
+      "revId": "a0da0053090ec5339b094f2a4c8e3813bca8886c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_25718278",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 1672,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-09T16:25:21Z",
+      "side": 1,
+      "message": "trying to call the helper function directly through checker raises the error and causes userFixtures FakeLogger to receive an unexpected error, the exception is caught and asserted instead",
+      "parentUuid": "1a430d35_2f56d805",
       "revId": "a0da0053090ec5339b094f2a4c8e3813bca8886c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
