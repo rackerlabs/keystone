@@ -156,6 +156,24 @@
       "revId": "58150da973bafd0f18481883d45ed106298e14a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_ef2db0fe",
+        "filename": "releasenotes/notes/deprecated-as-of-pike-506f9aca91674550.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-09T06:05:42Z",
+      "side": 1,
+      "message": "Yeah - that makes sense. I think calling it out explicitly would make it more noticeable for readers.",
+      "parentUuid": "1a430d35_7b46a624",
+      "revId": "58150da973bafd0f18481883d45ed106298e14a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
