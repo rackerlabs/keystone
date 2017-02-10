@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa31d9ce_1b5dc4e9",
+        "filename": "keystone/tests/unit/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-10T05:05:52Z",
+      "side": 1,
+      "message": "Could capitalize this while we are here.",
+      "range": {
+        "startLine": 172,
+        "startChar": 10,
+        "endLine": 172,
+        "endChar": 11
+      },
+      "revId": "35dbaddf06610b4392910cbb2d12b49e7343c537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa31d9ce_ca67d823",
         "filename": "keystone/tests/unit/fakeldap.py",
         "patchSetId": 1
