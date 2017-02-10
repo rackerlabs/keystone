@@ -33,6 +33,24 @@
       "revId": "0aaac0c0388808d6e231b69e3404eb8191a1f9ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_2087b310",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-10T04:33:12Z",
+      "side": 1,
+      "message": "yeah, i have to ask doug about that, i think the only way to apply these to http://docs.openstack.org/releasenotes/keystone/mitaka.html is to backport them all the way through",
+      "parentUuid": "1a430d35_e0486cb5",
+      "revId": "0aaac0c0388808d6e231b69e3404eb8191a1f9ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
