@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa31d9ce_45dd996f",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-10T03:29:44Z",
+      "side": 1,
+      "message": "does \"list of `\u003crule\u003e` objects\" make sense?",
+      "range": {
+        "startLine": 69,
+        "startChar": 55,
+        "endLine": 69,
+        "endChar": 68
+      },
+      "revId": "0015e1a41e0ea355cc278db0eb060d1bab26fa7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
