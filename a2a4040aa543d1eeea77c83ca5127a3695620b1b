@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_c3ecfac9",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-10T21:00:51Z",
+      "side": 1,
+      "message": "Simply for strictly defining an issue with an independent return code during automation, but honestly I have no objections to this since it technically all means the same thing e.i. begin the first step of rolling upgrades",
+      "parentUuid": "fa31d9ce_883ce194",
+      "revId": "a2a4040aa543d1eeea77c83ca5127a3695620b1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa31d9ce_0893915c",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 2
@@ -47,6 +65,24 @@
       "writtenOn": "2017-02-10T20:03:12Z",
       "side": 1,
       "message": "Is there any other cases in get_db_version that could raise this exception? I don\u0027t know, asking for a friend.",
+      "revId": "a2a4040aa543d1eeea77c83ca5127a3695620b1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_431e4abb",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-10T21:00:51Z",
+      "side": 1,
+      "message": "hmm well according to the logs of where the error was traveling to, this is where it ends up https://github.com/openstack/oslo.db/blob/master/oslo_db/sqlalchemy/migration.py#L140-L159\nboth raise exception.DBMigrationError one for invalid version and another for a database that is already controlled. I can address both possibilities in the log. But now that this could be more than one possible reason shouldn\u0027t this status code in fact be 1 as \"caused by general error\" instead of 2?",
+      "parentUuid": "fa31d9ce_0893915c",
       "revId": "a2a4040aa543d1eeea77c83ca5127a3695620b1b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
