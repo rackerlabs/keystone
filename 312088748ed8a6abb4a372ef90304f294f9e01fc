@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa31d9ce_87e4f93b",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-10T02:26:51Z",
+      "side": 1,
+      "message": "(nit) i wouldn\u0027t do the assignment here since you don\u0027t use the query variable. Also I think update() returns the number of changed rows and not a query object.",
+      "revId": "312088748ed8a6abb4a372ef90304f294f9e01fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
