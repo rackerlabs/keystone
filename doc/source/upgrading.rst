@@ -225,7 +225,7 @@ authenticate requests normally.
    the previous release.
 
 Using db_sync check
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 In order to check the current state of your rolling upgrades, you may run the
 command ``keystone-manage db_sync --check``. This will inform you of any

@@ -47,6 +47,7 @@ from migrate.versioning import repository
 from migrate.versioning import script
 import mock
 from oslo_db import exception as db_exception
+from oslo_db.sqlalchemy import migration
 from oslo_db.sqlalchemy import test_base
 from oslo_log import log
 from sqlalchemy.engine import reflection
@@ -1673,6 +1674,17 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         self.assertTrue(2, contract)
         self.assertTrue(1, expand)
         self.assertTrue(1, migrate)
+
+    @mock.patch('keystone.cmd.cli.upgrades.get_db_version')
+    def test_db_sync_check_when_database_is_empty(self, mocked_get_db_version):
+        e = migration.exception.DbMigrationError("Invalid version")
+        mocked_get_db_version.side_effect = e
+        checker = cli.DbSync()
+
+        log_info = self.useFixture(fixtures.FakeLogger(level=log.INFO))
+        status = checker.check_db_sync_status()
+        self.assertIn("include version control", log_info.output)
+        self.assertEqual(status, 1)
 
     def test_db_sync_check(self):
         checker = cli.DbSync()
