@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa31d9ce_e7f21506",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-10T03:11:57Z",
+      "side": 1,
+      "message": "isn\u0027t this \"noqa\" ?",
+      "range": {
+        "startLine": 149,
+        "startChar": 44,
+        "endLine": 149,
+        "endChar": 51
+      },
+      "revId": "dce7c52de91a8717e2c16ff74ce13802e7d6a573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_aa78e4f9",
+        "filename": "keystone/oauth1/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-10T03:11:57Z",
+      "side": 1,
+      "message": "we can probably remove this",
+      "range": {
+        "startLine": 38,
+        "startChar": 4,
+        "endLine": 38,
+        "endChar": 54
+      },
+      "revId": "dce7c52de91a8717e2c16ff74ce13802e7d6a573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_ea82dcc7",
+        "filename": "keystone/policy/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-10T03:11:57Z",
+      "side": 1,
+      "message": "delete this too",
+      "range": {
+        "startLine": 26,
+        "startChar": 4,
+        "endLine": 26,
+        "endChar": 38
+      },
+      "revId": "dce7c52de91a8717e2c16ff74ce13802e7d6a573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
