@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa31d9ce_1ae59b08",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-10T19:13:57Z",
+      "side": 1,
+      "message": "nit remove \"information of\"",
+      "revId": "312088748ed8a6abb4a372ef90304f294f9e01fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa31d9ce_87e4f93b",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 9
@@ -31,6 +48,75 @@
       "side": 1,
       "message": "awe, Good catch",
       "parentUuid": "fa31d9ce_87e4f93b",
+      "revId": "312088748ed8a6abb4a372ef90304f294f9e01fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_1ac83b55",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-10T19:13:57Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "fa31d9ce_d2c4cd41",
+      "revId": "312088748ed8a6abb4a372ef90304f294f9e01fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_bafe4f69",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-10T19:13:57Z",
+      "side": 1,
+      "message": "nit: s/a//",
+      "revId": "312088748ed8a6abb4a372ef90304f294f9e01fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_da030372",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-10T19:13:57Z",
+      "side": 1,
+      "message": "Awesome description!",
+      "revId": "312088748ed8a6abb4a372ef90304f294f9e01fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_1a6bdb1f",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1509,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-10T19:13:57Z",
+      "side": 1,
+      "message": "We encourage most deployments to enable cache. This effectively makes the call after the project is deleted return stale information with the user reference (advertise a default project ID that doesn\u0027t exist).\n\nI think instead we should prune that user from the cache so that when a get user call is made after a default project ID cleaned up, we return the most accurate information that we can.",
       "revId": "312088748ed8a6abb4a372ef90304f294f9e01fc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
