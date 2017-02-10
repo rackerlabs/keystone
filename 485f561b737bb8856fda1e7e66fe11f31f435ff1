@@ -22,6 +22,30 @@
       "revId": "485f561b737bb8856fda1e7e66fe11f31f435ff1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_71795593",
+        "filename": "keystone/releasenotes/notes/unset-user-default_project_id-when-project-is-deleted-4d42c841b6e7e54e.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 22219
+      },
+      "writtenOn": "2017-02-10T23:03:34Z",
+      "side": 1,
+      "message": "Thanks Ron, first patch for the team was very fun. more to come :)",
+      "parentUuid": "fa31d9ce_fe235403",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 15
+      },
+      "revId": "485f561b737bb8856fda1e7e66fe11f31f435ff1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
