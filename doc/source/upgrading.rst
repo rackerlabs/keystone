@@ -225,7 +225,7 @@ authenticate requests normally.
    the previous release.
 
 Using db_sync check
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 In order to check the current state of your rolling upgrades, you may run the
 command ``keystone-manage db_sync --check``. This will inform you of any
@@ -247,3 +247,6 @@ can make from your current version. Here are a list of possible return codes.
 
 * A return code of ``4`` means that the expansion and data migration stages are
   complete, and the next step is to run ``keystone-manage db_sync --contract``.
+
+* A return code of ``5`` means that the database is not currently under version
+  control.
