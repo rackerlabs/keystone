@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_44e4c20c",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-10T00:06:16Z",
+      "side": 1,
+      "message": "I don\u0027t think the sentence should be broken up like that.",
+      "parentUuid": "fa31d9ce_04256aaa",
+      "revId": "63d7fcb354b5c3113fd9227d0e4d71f7c45a0108",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa31d9ce_c4519210",
         "filename": "doc/source/federation/mapping_combinations.rst",
         "patchSetId": 7
@@ -48,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_84179aec",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-10T00:06:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa31d9ce_c4519210",
+      "revId": "63d7fcb354b5c3113fd9227d0e4d71f7c45a0108",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa31d9ce_845f9a0d",
         "filename": "doc/source/federation/mapping_combinations.rst",
         "patchSetId": 7
@@ -65,6 +101,42 @@
         "endLine": 103,
         "endChar": 48
       },
+      "revId": "63d7fcb354b5c3113fd9227d0e4d71f7c45a0108",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_04e2ca03",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-10T00:06:16Z",
+      "side": 1,
+      "message": "I\u0027m not intending a break pause here",
+      "parentUuid": "fa31d9ce_845f9a0d",
+      "revId": "63d7fcb354b5c3113fd9227d0e4d71f7c45a0108",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_84eebaea",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-10T00:06:16Z",
+      "side": 1,
+      "message": "I\u0027m not intending a break pause here",
+      "parentUuid": "fa31d9ce_845f9a0d",
       "revId": "63d7fcb354b5c3113fd9227d0e4d71f7c45a0108",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
