@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa31d9ce_4013c75c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-10T04:08:11Z",
+      "side": 1,
+      "message": "you can make this patch depend on the oslo.db one by writing out:\n\n  Depends-On: I9f1fd2a87fdf75332de2339d3ff4f08ce9220dcf\n\nin the commit message",
+      "revId": "188c77c2dab9af0be68fdcfa610c7e77243009cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_801dbf68",
+        "filename": "keystone/common/sql/contract_repo/versions/012_contract_add_domain_id_to_idp.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-10T04:08:11Z",
+      "side": 1,
+      "message": "this is the only change that makes me a bit nervous",
+      "revId": "188c77c2dab9af0be68fdcfa610c7e77243009cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
