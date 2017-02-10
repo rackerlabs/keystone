@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa31d9ce_5b5e32ea",
+        "filename": "keystone/releasenotes/notes/unset-user-default_project_id-when-project-is-deleted-4d42c841b6e7e54e.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-10T21:59:53Z",
+      "side": 1,
+      "message": "nit: this sentence is confusing to me. How about: \"Currently, if a project is deleted, it is not removed as a user\u0027s default project ID.\"",
+      "range": {
+        "startLine": 4,
+        "startChar": 4,
+        "endLine": 5,
+        "endChar": 63
+      },
+      "revId": "75042657868bec328cffd7d2910d970a99984a6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_fbf606d6",
+        "filename": "keystone/releasenotes/notes/unset-user-default_project_id-when-project-is-deleted-4d42c841b6e7e54e.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-10T21:59:53Z",
+      "side": 1,
+      "message": "Now the default project ID is set to None, however...",
+      "range": {
+        "startLine": 5,
+        "startChar": 65,
+        "endLine": 6,
+        "endChar": 25
+      },
+      "revId": "75042657868bec328cffd7d2910d970a99984a6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
