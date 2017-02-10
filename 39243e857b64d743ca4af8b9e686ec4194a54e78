@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa31d9ce_de7cd022",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-02-10T22:38:39Z",
+      "side": 1,
+      "message": "this doesn\u0027t describe what is being done in the commit. Basically, the commit removes the file encoding - since jenkins is fine with it, means it was really unnecessary and the change makes sense. Please update the commit message accordingly.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 33
+      },
+      "revId": "39243e857b64d743ca4af8b9e686ec4194a54e78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
