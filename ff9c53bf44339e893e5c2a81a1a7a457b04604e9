@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa31d9ce_fc8d2a7c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 14805
+      },
+      "writtenOn": "2017-02-10T17:00:37Z",
+      "side": 1,
+      "message": "missing a space between \u0027Please\u0027 and \u0027include\u0027",
+      "range": {
+        "startLine": 467,
+        "startChar": 68,
+        "endLine": 468,
+        "endChar": 33
+      },
+      "revId": "ff9c53bf44339e893e5c2a81a1a7a457b04604e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_7c25baa9",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 14805
+      },
+      "writtenOn": "2017-02-10T17:00:37Z",
+      "side": 1,
+      "message": "could this have either its own status code or return 2 to show that an expand is needed?",
+      "revId": "ff9c53bf44339e893e5c2a81a1a7a457b04604e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
