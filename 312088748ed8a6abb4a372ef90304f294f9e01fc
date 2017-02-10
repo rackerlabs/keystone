@@ -123,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_ae6e0dc7",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-10T20:47:35Z",
+      "side": 1,
+      "message": "Yeah, as we discussed in IRC, since there is minimal risk in having stale data, we don\u0027t need to invalidate the cache. We can also do this in a subsequent patch if needed.",
+      "parentUuid": "fa31d9ce_482d89a6",
+      "revId": "312088748ed8a6abb4a372ef90304f294f9e01fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa31d9ce_1a6bdb1f",
         "filename": "keystone/tests/unit/resource/test_backends.py",
         "patchSetId": 9
