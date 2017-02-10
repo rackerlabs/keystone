@@ -16,6 +16,29 @@
       "revId": "312088748ed8a6abb4a372ef90304f294f9e01fc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_a6f55f84",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1518,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-10T16:25:40Z",
+      "side": 1,
+      "message": "nit: LDAP",
+      "range": {
+        "startLine": 1518,
+        "startChar": 10,
+        "endLine": 1518,
+        "endChar": 14
+      },
+      "revId": "312088748ed8a6abb4a372ef90304f294f9e01fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
