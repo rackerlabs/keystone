@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa31d9ce_9aa6ebbf",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 692,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-02-10T19:06:33Z",
+      "side": 1,
+      "message": "can\u0027t this be affected by internationalization? I guess that checking the status value is enough.",
+      "range": {
+        "startLine": 692,
+        "startChar": 8,
+        "endLine": 692,
+        "endChar": 65
+      },
+      "revId": "a2a4040aa543d1eeea77c83ca5127a3695620b1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
