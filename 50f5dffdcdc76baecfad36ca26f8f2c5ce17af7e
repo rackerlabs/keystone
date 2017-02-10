@@ -43,6 +43,24 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_00b0efdc",
+        "filename": "releasenotes/notes/bp-credential-encryption-93dcb67b3508e91a.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-10T04:42:34Z",
+      "side": 1,
+      "message": "Lance is right. But I think that is expected, if you do not use rolling upgrades there will always be an outage. Do I need to add something here?",
+      "parentUuid": "1a430d35_08e42d39",
+      "revId": "50f5dffdcdc76baecfad36ca26f8f2c5ce17af7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_885c9dee",
         "filename": "releasenotes/notes/bp-ldap-preprocessing-521d92445505b8a3.yaml",
         "patchSetId": 3
@@ -54,6 +72,24 @@
       "writtenOn": "2017-02-06T21:33:28Z",
       "side": 1,
       "message": "nit: It should be used after initially configuring LDAP, or after calling...",
+      "revId": "50f5dffdcdc76baecfad36ca26f8f2c5ce17af7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_e0e11bd2",
+        "filename": "releasenotes/notes/bp-ldap-preprocessing-521d92445505b8a3.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-10T04:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_885c9dee",
       "revId": "50f5dffdcdc76baecfad36ca26f8f2c5ce17af7e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -101,6 +137,30 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_a0c1e330",
+        "filename": "releasenotes/notes/bp-pre-cache-tokens-73450934918af26b.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-10T04:42:34Z",
+      "side": 1,
+      "message": "oops",
+      "parentUuid": "1a430d35_f42293b8",
+      "range": {
+        "startLine": 4,
+        "startChar": 25,
+        "endLine": 4,
+        "endChar": 80
+      },
+      "revId": "50f5dffdcdc76baecfad36ca26f8f2c5ce17af7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_4830f59e",
         "filename": "releasenotes/notes/bp-python3-e4189e0a1a6e2e4f.yaml",
         "patchSetId": 3
@@ -118,6 +178,24 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_e0083b94",
+        "filename": "releasenotes/notes/bp-python3-e4189e0a1a6e2e4f.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-10T04:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_4830f59e",
+      "revId": "50f5dffdcdc76baecfad36ca26f8f2c5ce17af7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_88e1fd00",
         "filename": "releasenotes/notes/bp-shadow-users-newton-dcd7bd148efef049.yaml",
         "patchSetId": 3
@@ -129,6 +207,24 @@
       "writtenOn": "2017-02-06T21:33:28Z",
       "side": 1,
       "message": "s/rules/policies/",
+      "revId": "50f5dffdcdc76baecfad36ca26f8f2c5ce17af7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_a0ef23af",
+        "filename": "releasenotes/notes/bp-shadow-users-newton-dcd7bd148efef049.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-10T04:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_88e1fd00",
       "revId": "50f5dffdcdc76baecfad36ca26f8f2c5ce17af7e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -158,6 +254,30 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_e02f5bf4",
+        "filename": "releasenotes/notes/bug-1590587-8f120604a6625852.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-10T04:42:34Z",
+      "side": 1,
+      "message": "thanks :)",
+      "parentUuid": "1a430d35_d48917cc",
+      "range": {
+        "startLine": 7,
+        "startChar": 37,
+        "endLine": 7,
+        "endChar": 57
+      },
+      "revId": "50f5dffdcdc76baecfad36ca26f8f2c5ce17af7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_af2516ac",
         "filename": "releasenotes/notes/bug-1596500-b3c284be50d93ef5.yaml",
         "patchSetId": 3
@@ -169,6 +289,30 @@
       "writtenOn": "2017-02-05T05:10:41Z",
       "side": 1,
       "message": "It\u0027s not clear what\u0027s the master actually mean here with time gone,maybe say the Newton stable release instead?",
+      "range": {
+        "startLine": 6,
+        "startChar": 4,
+        "endLine": 6,
+        "endChar": 22
+      },
+      "revId": "50f5dffdcdc76baecfad36ca26f8f2c5ce17af7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_203a5337",
+        "filename": "releasenotes/notes/bug-1596500-b3c284be50d93ef5.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-10T04:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a430d35_af2516ac",
       "range": {
         "startLine": 6,
         "startChar": 4,
