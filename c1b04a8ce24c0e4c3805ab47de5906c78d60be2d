@@ -16,6 +16,259 @@
       "revId": "c1b04a8ce24c0e4c3805ab47de5906c78d60be2d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_2126b9ba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-10T16:52:14Z",
+      "side": 1,
+      "message": "Rather than adding these comments here, I think it\u0027s more appropriate to add them in the code. Commit messages should just summarize the change.",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 23
+      },
+      "revId": "c1b04a8ce24c0e4c3805ab47de5906c78d60be2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_a141c93b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-10T16:52:14Z",
+      "side": 1,
+      "message": "Add: Implements: bp support-federated-attr",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 0
+      },
+      "revId": "c1b04a8ce24c0e4c3805ab47de5906c78d60be2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_81b925ec",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 912,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-10T16:52:14Z",
+      "side": 1,
+      "message": "nit: _create_federated_objects",
+      "range": {
+        "startLine": 912,
+        "startChar": 8,
+        "endLine": 912,
+        "endChar": 43
+      },
+      "revId": "c1b04a8ce24c0e4c3805ab47de5906c78d60be2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_e1f101cf",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 925,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-10T16:52:14Z",
+      "side": 1,
+      "message": "nit: how about: _create_user_with_federated_object",
+      "range": {
+        "startLine": 925,
+        "startChar": 8,
+        "endLine": 925,
+        "endChar": 48
+      },
+      "revId": "c1b04a8ce24c0e4c3805ab47de5906c78d60be2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_0101b5ae",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 936,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-10T16:52:14Z",
+      "side": 1,
+      "message": "Shouldn\u0027t you validate before creating the user? Otherwise, you\u0027ll create the user, but then a exception is raised, such as IdentityProviderNotFound.",
+      "range": {
+        "startLine": 936,
+        "startChar": 16,
+        "endLine": 936,
+        "endChar": 71
+      },
+      "revId": "c1b04a8ce24c0e4c3805ab47de5906c78d60be2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_61ab518a",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1082,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-10T16:52:14Z",
+      "side": 1,
+      "message": "nit: _update_user_with_federated_objects",
+      "range": {
+        "startLine": 1082,
+        "startChar": 8,
+        "endLine": 1082,
+        "endChar": 42
+      },
+      "revId": "c1b04a8ce24c0e4c3805ab47de5906c78d60be2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_c1923d57",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1093,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-10T16:52:14Z",
+      "side": 1,
+      "message": "again, I\u0027d suggest validating first",
+      "range": {
+        "startLine": 1093,
+        "startChar": 16,
+        "endLine": 1093,
+        "endChar": 71
+      },
+      "revId": "c1b04a8ce24c0e4c3805ab47de5906c78d60be2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_4109ed94",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-10T16:52:14Z",
+      "side": 1,
+      "message": "this is not really filtering, right? how about: federated_object_to_dict(...)",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 28
+      },
+      "revId": "c1b04a8ce24c0e4c3805ab47de5906c78d60be2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_41300d57",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-10T16:52:14Z",
+      "side": 1,
+      "message": "nit: user",
+      "range": {
+        "startLine": 46,
+        "startChar": 25,
+        "endLine": 46,
+        "endChar": 30
+      },
+      "revId": "c1b04a8ce24c0e4c3805ab47de5906c78d60be2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_e12021fa",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-10T16:52:14Z",
+      "side": 1,
+      "message": "nit: get_federated_objects",
+      "range": {
+        "startLine": 58,
+        "startChar": 8,
+        "endLine": 58,
+        "endChar": 23
+      },
+      "revId": "c1b04a8ce24c0e4c3805ab47de5906c78d60be2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_c186bdb8",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1154,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-10T16:52:14Z",
+      "side": 1,
+      "message": "Suggest adding tests when creating/updating a federated object with an invalid idp, protocol_id",
+      "range": {
+        "startLine": 1154,
+        "startChar": 4,
+        "endLine": 1154,
+        "endChar": 7
+      },
+      "revId": "c1b04a8ce24c0e4c3805ab47de5906c78d60be2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
