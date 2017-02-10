@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_c3d6bac4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 19283
+      },
+      "writtenOn": "2017-02-10T20:45:54Z",
+      "side": 1,
+      "message": "I\u0027ll add this in. Thanks, Octave",
+      "parentUuid": "fa31d9ce_4013c75c",
+      "revId": "188c77c2dab9af0be68fdcfa610c7e77243009cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa31d9ce_801dbf68",
         "filename": "keystone/common/sql/contract_repo/versions/012_contract_add_domain_id_to_idp.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2017-02-10T04:08:11Z",
       "side": 1,
       "message": "this is the only change that makes me a bit nervous",
+      "revId": "188c77c2dab9af0be68fdcfa610c7e77243009cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_c3179a4f",
+        "filename": "keystone/common/sql/contract_repo/versions/012_contract_add_domain_id_to_idp.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19283
+      },
+      "writtenOn": "2017-02-10T20:45:54Z",
+      "side": 1,
+      "message": "Hi Steve,\n\nThe bits I\u0027ve added here are to remove and then add back the foreign key constraint around the table column alter for domain_id in the identity_provider table on line 35. InnoDB is very relaxed about these types of changes, while NDB is more strict. However, there are other examples of the proper flows being done when updating a table or column that has foreign key constraints. If you look at 014_contract_add_domain_id_to_user_table.py, you\u0027ll see that it does the FKC drops before making the table changes, which is the right way to do these table modifications. I\u0027ve tested this on InnoDB and NDB, without any error messages in the db_sync operation. \n\nLet me know if you have any other concerns.\n\nThanks,\nOctave",
+      "parentUuid": "fa31d9ce_801dbf68",
       "revId": "188c77c2dab9af0be68fdcfa610c7e77243009cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
