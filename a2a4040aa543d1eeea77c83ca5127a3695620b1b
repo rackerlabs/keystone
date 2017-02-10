@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa31d9ce_e8963d93",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-10T20:03:12Z",
+      "side": 1,
+      "message": "s/on/for/",
+      "revId": "a2a4040aa543d1eeea77c83ca5127a3695620b1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_883ce194",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-10T20:03:12Z",
+      "side": 1,
+      "message": "Is there any reason why this isn\u0027t just a 2? (Not saying it should be...just curious)",
+      "revId": "a2a4040aa543d1eeea77c83ca5127a3695620b1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_0893915c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-10T20:03:12Z",
+      "side": 1,
+      "message": "Is there any other cases in get_db_version that could raise this exception? I don\u0027t know, asking for a friend.",
+      "revId": "a2a4040aa543d1eeea77c83ca5127a3695620b1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_c887b90d",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-10T20:03:12Z",
+      "side": 1,
+      "message": "Does this mean I should add it to Subversion?",
+      "revId": "a2a4040aa543d1eeea77c83ca5127a3695620b1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa31d9ce_9aa6ebbf",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 2
@@ -43,6 +111,24 @@
         "endLine": 692,
         "endChar": 65
       },
+      "revId": "a2a4040aa543d1eeea77c83ca5127a3695620b1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_689b2dca",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 692,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-10T20:03:12Z",
+      "side": 1,
+      "message": "No. We don\u0027t use translated strings when running tests.",
+      "parentUuid": "fa31d9ce_9aa6ebbf",
       "revId": "a2a4040aa543d1eeea77c83ca5127a3695620b1b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
