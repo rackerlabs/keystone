@@ -16,6 +16,24 @@
       "revId": "aeb51c84bb92d02715208aa8435aa3fd36564c72",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_ca03580c",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-02-10T02:49:08Z",
+      "side": 0,
+      "message": "s/not irrelevant/not relevant. :)",
+      "parentUuid": "fa31d9ce_0749e98b",
+      "revId": "aeb51c84bb92d02715208aa8435aa3fd36564c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
