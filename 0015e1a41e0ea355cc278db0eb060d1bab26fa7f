@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa31d9ce_37c19be5",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-10T17:45:22Z",
+      "side": 1,
+      "message": "I\u0027m not clear as to what you mean by this or why it is relevant.",
+      "range": {
+        "startLine": 29,
+        "startChar": 38,
+        "endLine": 30,
+        "endChar": 36
+      },
+      "revId": "0015e1a41e0ea355cc278db0eb060d1bab26fa7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa31d9ce_45dd996f",
         "filename": "doc/source/federation/mapping_combinations.rst",
         "patchSetId": 8
