@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa31d9ce_9ee7b8e3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-02-10T22:42:44Z",
+      "side": 1,
+      "message": "can you include more details in the commit message?",
+      "revId": "a7677be518d193518286ba3539541bb6d75970ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_beb55cce",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1759,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-02-10T22:42:44Z",
+      "side": 1,
+      "message": "ugh... we still have this :(",
+      "range": {
+        "startLine": 1759,
+        "startChar": 19,
+        "endLine": 1759,
+        "endChar": 26
+      },
+      "revId": "a7677be518d193518286ba3539541bb6d75970ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
