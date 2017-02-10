@@ -139,6 +139,29 @@
       "revId": "75042657868bec328cffd7d2910d970a99984a6e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_1ec90879",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1539,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-02-10T22:35:28Z",
+      "side": 1,
+      "message": "maybe add a comment stating that, once the project is removed, the None field is not returned.",
+      "range": {
+        "startLine": 1539,
+        "startChar": 8,
+        "endLine": 1539,
+        "endChar": 52
+      },
+      "revId": "75042657868bec328cffd7d2910d970a99984a6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
