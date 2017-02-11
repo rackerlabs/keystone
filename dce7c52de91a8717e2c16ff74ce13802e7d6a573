@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_72ca3070",
+        "filename": "keystone/oauth1/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-02-11T05:59:31Z",
+      "side": 1,
+      "message": "Out of scope for this patch, but likely yes.",
+      "parentUuid": "fa31d9ce_aa78e4f9",
+      "range": {
+        "startLine": 38,
+        "startChar": 4,
+        "endLine": 38,
+        "endChar": 54
+      },
+      "revId": "dce7c52de91a8717e2c16ff74ce13802e7d6a573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa31d9ce_ea82dcc7",
         "filename": "keystone/policy/backends/sql.py",
         "patchSetId": 4
@@ -59,6 +83,30 @@
       "writtenOn": "2017-02-10T03:11:57Z",
       "side": 1,
       "message": "delete this too",
+      "range": {
+        "startLine": 26,
+        "startChar": 4,
+        "endLine": 26,
+        "endChar": 38
+      },
+      "revId": "dce7c52de91a8717e2c16ff74ce13802e7d6a573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_92c9647b",
+        "filename": "keystone/policy/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-02-11T05:59:31Z",
+      "side": 1,
+      "message": "Same as other one. out of scope for this patch, doable though.",
+      "parentUuid": "fa31d9ce_ea82dcc7",
       "range": {
         "startLine": 26,
         "startChar": 4,
