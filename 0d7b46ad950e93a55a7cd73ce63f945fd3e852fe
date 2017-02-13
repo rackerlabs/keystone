@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa31d9ce_fd8b1366",
+        "filename": "keystone/common/sql/migrate_repo/versions/081_add_endpoint_policy_table.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2017-02-13T20:07:27Z",
+      "side": 1,
+      "message": "OK.  So I would propose that passing through \"mysql_storage_engine\" plainly like this is too fine grained.  It implies that someone could stick \"MyISAM\" or \"ARIA\" in there, which is not the case; things will break badly.  In oslo.db, the fact that one wants to use \"ndb\" should be a coarse-grained configuration setting; \"CONF.database.mysql_use_ndb\"; then here, mysql_engine would call upon an oslo_db function called \"get_effective_mysql_engine(conn)\" - it\u0027s passed a Connection or Engine (migrate_engine here is an Engine).  Connection/Engine.info will have the \"use_ndb\" flag inside of it which was set up within oslo.db.engines.create_engine().   This allows the consumption of CONF.database.* to remain local to the Engine object that gets set up without a separate need to track CONF.* settings to it; then oslo.db is called upon to make the determination what it means to be \"ndb\" or \"non ndb\".",
+      "revId": "0d7b46ad950e93a55a7cd73ce63f945fd3e852fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
