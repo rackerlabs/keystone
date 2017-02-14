@@ -22,6 +22,30 @@
       "revId": "9c474958b16ca1775fd1f1c09b870817708d1ea2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_73748067",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-02-14T19:19:34Z",
+      "side": 0,
+      "message": "yes, we had to put this because the bug.",
+      "parentUuid": "fa31d9ce_136fcf2b",
+      "range": {
+        "startLine": 284,
+        "startChar": 9,
+        "endLine": 291,
+        "endChar": 10
+      },
+      "revId": "9c474958b16ca1775fd1f1c09b870817708d1ea2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_f32dd046",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-02-14T19:19:34Z",
+      "side": 1,
+      "message": "I meant the \"Related-Bug\", should I rephrase it?",
+      "parentUuid": "fa31d9ce_f3379b4a",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 19
+      },
+      "revId": "e84de06f9ac939eefaeb9156be7256304969117f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa31d9ce_9313bfb7",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2017-02-14T15:51:59Z",
       "side": 1,
       "message": "s/wrong/each/ ??",
+      "range": {
+        "startLine": 10,
+        "startChar": 42,
+        "endLine": 10,
+        "endChar": 47
+      },
+      "revId": "e84de06f9ac939eefaeb9156be7256304969117f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_93f814c5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-02-14T19:19:34Z",
+      "side": 1,
+      "message": "I guess it is \"wrong\", we had to add the exception to the data_migration banned operation tests although the data_migration script were empty.",
+      "parentUuid": "fa31d9ce_9313bfb7",
       "range": {
         "startLine": 10,
         "startChar": 42,
