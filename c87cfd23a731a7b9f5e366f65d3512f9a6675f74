@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa31d9ce_bc133db7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-02-14T13:20:15Z",
+      "side": 1,
+      "message": "this isn\u0027t describing the patch. You are actually adding a space to make the comments in the file uniform.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 43
+      },
+      "revId": "c87cfd23a731a7b9f5e366f65d3512f9a6675f74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
