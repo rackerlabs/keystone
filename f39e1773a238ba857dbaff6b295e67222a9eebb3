@@ -1,0 +1,326 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa31d9ce_d9a54d47",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 909,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-14T21:07:47Z",
+      "side": 1,
+      "message": "++",
+      "range": {
+        "startLine": 907,
+        "startChar": 8,
+        "endLine": 909,
+        "endChar": 25
+      },
+      "revId": "f39e1773a238ba857dbaff6b295e67222a9eebb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_f94bf184",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 918,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-14T21:07:47Z",
+      "side": 1,
+      "message": "nit: I don\u0027t think you need this comment",
+      "range": {
+        "startLine": 917,
+        "startChar": 8,
+        "endLine": 918,
+        "endChar": 21
+      },
+      "revId": "f39e1773a238ba857dbaff6b295e67222a9eebb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_ab32fcef",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 942,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-14T21:07:47Z",
+      "side": 1,
+      "message": "nit: this could be shorten to \"otherwise, validate the federated object and create the user.\"",
+      "range": {
+        "startLine": 939,
+        "startChar": 8,
+        "endLine": 942,
+        "endChar": 26
+      },
+      "revId": "f39e1773a238ba857dbaff6b295e67222a9eebb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_0b8f882a",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 954,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-14T21:07:47Z",
+      "side": 1,
+      "message": "nit: This could have been handled in the first if statement, since they both result in an federated empty list e.g.:\nhttp://paste.openstack.org/show/598890/",
+      "range": {
+        "startLine": 951,
+        "startChar": 12,
+        "endLine": 954,
+        "endChar": 38
+      },
+      "revId": "f39e1773a238ba857dbaff6b295e67222a9eebb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_2b7a8c77",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 995,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-14T21:07:47Z",
+      "side": 1,
+      "message": "nit: I think this could be shorten to \"add user federated objects\"",
+      "range": {
+        "startLine": 993,
+        "startChar": 8,
+        "endLine": 995,
+        "endChar": 79
+      },
+      "revId": "f39e1773a238ba857dbaff6b295e67222a9eebb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_0b67884d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 996,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-14T21:07:47Z",
+      "side": 1,
+      "message": "You need to add this new method to the abstract base class:\nhttps://github.com/openstack/keystone/blob/master/keystone/identity/shadow_backends/base.py\n\nAnd also add release notes for this change.",
+      "range": {
+        "startLine": 996,
+        "startChar": 49,
+        "endLine": 996,
+        "endChar": 70
+      },
+      "revId": "f39e1773a238ba857dbaff6b295e67222a9eebb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_cb49f0b8",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1115,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-14T21:07:47Z",
+      "side": 1,
+      "message": "nit: Too wordy in my opinion, but could just be my preference.",
+      "range": {
+        "startLine": 1111,
+        "startChar": 8,
+        "endLine": 1115,
+        "endChar": 64
+      },
+      "revId": "f39e1773a238ba857dbaff6b295e67222a9eebb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_2bae0c81",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1129,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-14T21:07:47Z",
+      "side": 1,
+      "message": "nit: Likewise, this could have been combined with the first if statement.",
+      "range": {
+        "startLine": 1125,
+        "startChar": 12,
+        "endLine": 1129,
+        "endChar": 76
+      },
+      "revId": "f39e1773a238ba857dbaff6b295e67222a9eebb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_2bfc4c71",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-14T21:07:47Z",
+      "side": 1,
+      "message": "++",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 29
+      },
+      "revId": "f39e1773a238ba857dbaff6b295e67222a9eebb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_0b6a28ee",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-14T21:07:47Z",
+      "side": 1,
+      "message": "Why is this needed?",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 29
+      },
+      "revId": "f39e1773a238ba857dbaff6b295e67222a9eebb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_eb4b1485",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-14T21:07:47Z",
+      "side": 1,
+      "message": "You need to add this to the abstract base class:\nhttps://github.com/openstack/keystone/blob/master/keystone/identity/shadow_backends/base.py",
+      "range": {
+        "startLine": 53,
+        "startChar": 8,
+        "endLine": 53,
+        "endChar": 31
+      },
+      "revId": "f39e1773a238ba857dbaff6b295e67222a9eebb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_0b514836",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-14T21:07:47Z",
+      "side": 1,
+      "message": "Same:\nhttps://github.com/openstack/keystone/blob/master/keystone/identity/shadow_backends/base.py",
+      "range": {
+        "startLine": 58,
+        "startChar": 8,
+        "endLine": 58,
+        "endChar": 29
+      },
+      "revId": "f39e1773a238ba857dbaff6b295e67222a9eebb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_6b2724ca",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1273,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-14T21:07:47Z",
+      "side": 1,
+      "message": "I think we should test the federated validation here is well; ensure it returns the correct response.",
+      "range": {
+        "startLine": 1273,
+        "startChar": 8,
+        "endLine": 1273,
+        "endChar": 50
+      },
+      "revId": "f39e1773a238ba857dbaff6b295e67222a9eebb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_ee008203",
+        "filename": "releasenotes/notes/create-user-with-federated-user-a0293669f15b659b.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-14T21:07:47Z",
+      "side": 1,
+      "message": "Huh? What helper function?",
+      "range": {
+        "startLine": 3,
+        "startChar": 4,
+        "endLine": 3,
+        "endChar": 24
+      },
+      "revId": "f39e1773a238ba857dbaff6b295e67222a9eebb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
