@@ -16,6 +16,40 @@
       "revId": "06e69c4c2ede946066c96bca3c860a615997c476",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_36c68c9a",
+        "filename": "keystone/releasenotes/notes/unset-user-default_project_id-when-project-is-deleted-4d42c841b6e7e54e.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-14T12:32:56Z",
+      "side": 1,
+      "message": "Is memcache going to die :-P  I\u0027ll propose different language in another patch so we can get this through.",
+      "revId": "06e69c4c2ede946066c96bca3c860a615997c476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_364dac3e",
+        "filename": "keystone/releasenotes/notes/unset-user-default_project_id-when-project-is-deleted-4d42c841b6e7e54e.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-02-14T12:32:56Z",
+      "side": 1,
+      "message": "(nit) user\u0027s",
+      "revId": "06e69c4c2ede946066c96bca3c860a615997c476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
