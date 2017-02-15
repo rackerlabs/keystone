@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa31d9ce_8587b5b3",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 972,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-15T19:11:01Z",
+      "side": 1,
+      "message": "nit: you are creating the user and I think your method name is descriptive enough, so you don\u0027t need this comment.",
+      "range": {
+        "startLine": 972,
+        "startChar": 8,
+        "endLine": 972,
+        "endChar": 74
+      },
+      "revId": "2226a97a379d3baa0337560a2c834b3f257bae37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_45b85d75",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 985,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-15T19:11:01Z",
+      "side": 1,
+      "message": "++",
+      "range": {
+        "startLine": 985,
+        "startChar": 8,
+        "endLine": 985,
+        "endChar": 38
+      },
+      "revId": "2226a97a379d3baa0337560a2c834b3f257bae37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_650f2137",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-15T19:11:01Z",
+      "side": 1,
+      "message": "this should be \u0027delete_federated_objects\u0027 as you are not deleting the user, only the federated attributes.",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 29
+      },
+      "revId": "2226a97a379d3baa0337560a2c834b3f257bae37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_686b78b7",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1314,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-15T19:11:01Z",
+      "side": 1,
+      "message": "You should make this a separate test",
+      "range": {
+        "startLine": 1307,
+        "startChar": 8,
+        "endLine": 1314,
+        "endChar": 56
+      },
+      "revId": "2226a97a379d3baa0337560a2c834b3f257bae37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_684e183c",
+        "filename": "releasenotes/notes/extending-federated-users-to-the-user-api-71eda9958337b14a.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-15T19:11:01Z",
+      "side": 1,
+      "message": "Suggestion: \nAdded new methods to the shadows users backend: ``delete_federated_users``, ``create_federated_object``, ``get_federated_objects``. These methods are needed to support federated attributes via the user API.",
+      "range": {
+        "startLine": 4,
+        "startChar": 4,
+        "endLine": 4,
+        "endChar": 9
+      },
+      "revId": "2226a97a379d3baa0337560a2c834b3f257bae37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_6898d878",
+        "filename": "releasenotes/notes/extending-federated-users-to-the-user-api-71eda9958337b14a.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-15T19:11:01Z",
+      "side": 1,
+      "message": "I think you can take this part out.",
+      "range": {
+        "startLine": 4,
+        "startChar": 48,
+        "endLine": 7,
+        "endChar": 44
+      },
+      "revId": "2226a97a379d3baa0337560a2c834b3f257bae37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_88f7ccd1",
+        "filename": "releasenotes/notes/extending-federated-users-to-the-user-api-71eda9958337b14a.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-15T19:11:01Z",
+      "side": 1,
+      "message": "If you have a custom implementation for the shadow users backend, you will need implement the new methods.",
+      "range": {
+        "startLine": 7,
+        "startChar": 45,
+        "endLine": 8,
+        "endChar": 69
+      },
+      "revId": "2226a97a379d3baa0337560a2c834b3f257bae37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
