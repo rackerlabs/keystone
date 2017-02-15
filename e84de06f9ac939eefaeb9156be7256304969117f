@@ -93,6 +93,29 @@
       "revId": "e84de06f9ac939eefaeb9156be7256304969117f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_96eaa672",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2017-02-15T11:07:04Z",
+      "side": 1,
+      "message": "let me rephrase Henry\u0027s question: should it be Related-Bug or Closes-Bug?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 11
+      },
+      "revId": "e84de06f9ac939eefaeb9156be7256304969117f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
