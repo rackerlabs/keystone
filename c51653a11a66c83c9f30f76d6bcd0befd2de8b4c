@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa31d9ce_cca391b0",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-15T22:28:22Z",
+      "side": 1,
+      "message": "you need to change this to: delete_federated_objects",
+      "range": {
+        "startLine": 86,
+        "startChar": 8,
+        "endLine": 86,
+        "endChar": 29
+      },
+      "revId": "c51653a11a66c83c9f30f76d6bcd0befd2de8b4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_6c93855b",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-15T22:28:22Z",
+      "side": 1,
+      "message": "++",
+      "range": {
+        "startLine": 321,
+        "startChar": 8,
+        "endLine": 321,
+        "endChar": 60
+      },
+      "revId": "c51653a11a66c83c9f30f76d6bcd0befd2de8b4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_ec94d537",
+        "filename": "releasenotes/notes/extending-federated-users-to-the-user-api-71eda9958337b14a.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-15T22:28:22Z",
+      "side": 1,
+      "message": "nit: shadow user backend",
+      "range": {
+        "startLine": 4,
+        "startChar": 35,
+        "endLine": 4,
+        "endChar": 43
+      },
+      "revId": "c51653a11a66c83c9f30f76d6bcd0befd2de8b4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
