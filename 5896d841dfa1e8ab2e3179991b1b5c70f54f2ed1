@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa31d9ce_a2bc99dc",
+        "filename": "releasenotes/notes/deprecated-as-of-pike-506f9aca91674550.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-02-16T06:33:20Z",
+      "side": 1,
+      "message": "default,",
+      "range": {
+        "startLine": 6,
+        "startChar": 19,
+        "endLine": 6,
+        "endChar": 26
+      },
+      "revId": "5896d841dfa1e8ab2e3179991b1b5c70f54f2ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_62f0e1c9",
+        "filename": "releasenotes/notes/deprecated-as-of-pike-506f9aca91674550.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-02-16T06:33:20Z",
+      "side": 1,
+      "message": "extra .",
+      "range": {
+        "startLine": 11,
+        "startChar": 49,
+        "endLine": 11,
+        "endChar": 50
+      },
+      "revId": "5896d841dfa1e8ab2e3179991b1b5c70f54f2ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
