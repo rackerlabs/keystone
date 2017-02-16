@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa31d9ce_cf28e388",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 929,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-16T18:06:39Z",
+      "side": 1,
+      "message": "nit: _create_user_with_federated_objects (plural)",
+      "range": {
+        "startLine": 929,
+        "startChar": 8,
+        "endLine": 929,
+        "endChar": 42
+      },
+      "revId": "7ed4db28481194429f1899021d6ecc290ec1dd5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_2c6fcdfc",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-16T18:06:39Z",
+      "side": 1,
+      "message": "nit: returns a list, right?",
+      "range": {
+        "startLine": 98,
+        "startChar": 17,
+        "endLine": 98,
+        "endChar": 21
+      },
+      "revId": "7ed4db28481194429f1899021d6ecc290ec1dd5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_4fb2334d",
+        "filename": "releasenotes/notes/extending-federated-users-to-the-user-api-71eda9958337b14a.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-16T18:06:39Z",
+      "side": 1,
+      "message": "nit: either remove the \u0027_\u0027 or add ``shadow_users``",
+      "range": {
+        "startLine": 4,
+        "startChar": 41,
+        "endLine": 4,
+        "endChar": 42
+      },
+      "revId": "7ed4db28481194429f1899021d6ecc290ec1dd5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
