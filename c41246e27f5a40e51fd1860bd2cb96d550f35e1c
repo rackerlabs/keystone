@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_b81685a5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-17T23:31:05Z",
+      "side": 1,
+      "message": "nit: Default policies can now be maintained in code and registered via listing mechanisms in the policies module.",
+      "revId": "c41246e27f5a40e51fd1860bd2cb96d550f35e1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_1826b116",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-17T23:31:05Z",
+      "side": 1,
+      "message": "nit: As we go, we can remove the duplicated default policies from our policy.json file.",
+      "revId": "c41246e27f5a40e51fd1860bd2cb96d550f35e1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_183f9126",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-17T23:31:05Z",
+      "side": 1,
+      "message": "Lines 20 and 21 could be removed now since we\u0027ve implied it with line 23.",
+      "revId": "c41246e27f5a40e51fd1860bd2cb96d550f35e1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_186dd132",
+        "filename": "keystone/policies/user.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-17T23:31:05Z",
+      "side": 1,
+      "message": "nit: we typically don\u0027t have newlines in our list definitions, the new list item could start on the next line so long as there is a comma in between the items.",
+      "revId": "c41246e27f5a40e51fd1860bd2cb96d550f35e1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
