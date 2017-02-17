@@ -20,6 +20,7 @@ from oslo_policy import policy as common_policy
 
 import keystone.conf
 from keystone import exception
+from keystone import policies
 from keystone.policy.backends import base
 
 
@@ -33,6 +34,13 @@ _ENFORCER = None
 def reset():
     global _ENFORCER
     _ENFORCER = None
+
+
+def register_rules(enforcer):
+    # NOTE(lbragstad): The oslo.policy.Enforcer object will accept a list of
+    # rules and register them as default values so long as an override doesn't
+    # exist in an existing policy file somewhere.
+    enforcer.register_defaults(policies.list_rules())
 
 
 def init():
