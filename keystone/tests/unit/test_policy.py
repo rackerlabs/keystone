@@ -23,6 +23,7 @@ from testtools import matchers
 
 import keystone.conf
 from keystone import exception
+from keystone import policies
 from keystone.policy.backends import rules
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
@@ -204,6 +205,7 @@ class PolicyJsonTestCase(unit.TestCase):
 
         standard_policy = unit.dirs.etc('policy.json')
         enforcer = common_policy.Enforcer(CONF, policy_file=standard_policy)
+        enforcer.register_defaults(policies.list_rules())
         result = enforcer.enforce(action, target, credentials)
         self.assertTrue(result)
 
