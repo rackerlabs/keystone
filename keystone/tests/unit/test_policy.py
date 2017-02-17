@@ -21,6 +21,7 @@ from oslo_policy import policy as common_policy
 import six
 from testtools import matchers
 
+from keystone.common import policies
 import keystone.conf
 from keystone import exception
 from keystone.policy.backends import rules
@@ -175,6 +176,18 @@ class PolicyJsonTestCase(unit.TestCase):
     def _load_entries(self, filename):
         return set(json.load(open(filename)))
 
+    def _add_missing_default_rules(self, rules):
+        """Add default rules and their values to the given rules dict.
+
+        The given rules dict may have an incomplete set of policy rules.
+        This method will add the default policy rules and their values to the
+        dict. It will not override the existing rules. This method is temporary
+        and is only needed until we move all policy.json rules into code.
+        """
+        for rule in policies.list_rules():
+            if rule.name not in rules:
+                rules[rule.name] = rule.check_str
+
     def test_json_examples_have_matching_entries(self):
         policy_keys = self._load_entries(unit.dirs.etc('policy.json'))
         cloud_policy_keys = self._load_entries(
@@ -202,9 +215,11 @@ class PolicyJsonTestCase(unit.TestCase):
                        'is_admin_project': True, 'project_id': None,
                        'domain_id': uuid.uuid4().hex}
 
-        standard_policy = unit.dirs.etc('policy.json')
-        enforcer = common_policy.Enforcer(CONF, policy_file=standard_policy)
-        result = enforcer.enforce(action, target, credentials)
+        # Since we are moving policy.json defaults to code, we instead call
+        # `rules.init()` which does the enforce setup for us with the added
+        # bonus of registering the in code default policies.
+        rules.init()
+        result = rules._ENFORCER.enforce(action, target, credentials)
         self.assertTrue(result)
 
         domain_policy = unit.dirs.etc('policy.v3cloudsample.json')
@@ -215,8 +230,8 @@ class PolicyJsonTestCase(unit.TestCase):
     def test_all_targets_documented(self):
         # All the targets in the sample policy file must be documented in
         # doc/source/policy_mapping.rst.
-
-        policy_keys = self._load_entries(unit.dirs.etc('policy.json'))
+        policy_keys = json.load(open((unit.dirs.etc('policy.json'))))
+        self._add_missing_default_rules(policy_keys)
 
         # These keys are in the policy.json but aren't targets.
         policy_rule_keys = [
