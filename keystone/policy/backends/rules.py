@@ -20,6 +20,7 @@ from oslo_policy import policy as common_policy
 
 import keystone.conf
 from keystone import exception
+from keystone import policies
 from keystone.policy.backends import base
 
 
@@ -40,6 +41,7 @@ def init():
     if not _ENFORCER:
         _ENFORCER = common_policy.Enforcer(CONF)
 
+    register_rules(_ENFORCER)
 
 def enforce(credentials, action, target, do_raise=True):
     """Verify that the action is valid on the target in this context.
@@ -67,6 +69,10 @@ def enforce(credentials, action, target, do_raise=True):
                      do_raise=do_raise)
 
     return _ENFORCER.enforce(action, target, credentials, **extra)
+
+
+def register_rules(enforcer):
+    enforcer.register_defaults(policies.list_rules())
 
 
 class Policy(base.PolicyDriverBase):
