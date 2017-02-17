@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_0ccab31a",
+        "filename": "doc/source/devref/api_curl_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 7665
+      },
+      "writtenOn": "2017-02-17T17:06:44Z",
+      "side": 1,
+      "message": "Thanks, I wasn\u0027t sure whether to do that or not.  Done.",
+      "parentUuid": "fa31d9ce_2ce777e5",
+      "revId": "85648be403f17ac73c72d4d828b71e115f2c6a7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa31d9ce_ac49a7d2",
         "filename": "doc/source/devref/api_curl_examples.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2017-02-17T17:00:16Z",
       "side": 1,
       "message": "Any reason to not keep the example response in bash?",
+      "revId": "85648be403f17ac73c72d4d828b71e115f2c6a7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_ace527a9",
+        "filename": "doc/source/devref/api_curl_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 7665
+      },
+      "writtenOn": "2017-02-17T17:06:44Z",
+      "side": 1,
+      "message": "Nope.",
+      "parentUuid": "fa31d9ce_ac49a7d2",
       "revId": "85648be403f17ac73c72d4d828b71e115f2c6a7e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_eced5f8f",
+        "filename": "doc/source/devref/api_curl_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7665
+      },
+      "writtenOn": "2017-02-17T17:06:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa31d9ce_cca89b7a",
+      "revId": "85648be403f17ac73c72d4d828b71e115f2c6a7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa31d9ce_8cf3039f",
         "filename": "doc/source/devref/api_curl_examples.rst",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2017-02-17T17:00:16Z",
       "side": 1,
       "message": "Same comment here - unless there is a technically reason for specifying it that I am not aware of.",
+      "revId": "85648be403f17ac73c72d4d828b71e115f2c6a7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_2ce8577c",
+        "filename": "doc/source/devref/api_curl_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 7665
+      },
+      "writtenOn": "2017-02-17T17:06:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa31d9ce_8cf3039f",
       "revId": "85648be403f17ac73c72d4d828b71e115f2c6a7e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
