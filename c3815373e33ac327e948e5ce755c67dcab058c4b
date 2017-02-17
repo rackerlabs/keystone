@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_92c60215",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-17T21:48:59Z",
+      "side": 1,
+      "message": "This is pretty darn close to what we want anyway - I\u0027d go ahead and remove the WIP portion.\n\nWe could also do one of two things, either break the implementation up and propose moving user defaults in to a separate commit or add more detail to this commit message about including users here.",
+      "revId": "c3815373e33ac327e948e5ce755c67dcab058c4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_32d8f6ef",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-17T21:48:59Z",
+      "side": 1,
+      "message": "We can follow the convention \n\npartially-implements blueprint policy-in-code\n\n(more info in https://wiki.openstack.org/wiki/GitCommitMessages#Including_external_references )",
+      "revId": "c3815373e33ac327e948e5ce755c67dcab058c4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_52f2ca9b",
+        "filename": "keystone/policies/user.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-17T21:48:59Z",
+      "side": 1,
+      "message": "We typically follow the openstack guidelines for import conventions [0]. \n\nSo here we would actually like oslo_policy before keystone since it is a third-party library with respect to keystone.\n\n  from oslo_policy import policy \n\n  from keystone.policies import base\n\n[0] https://docs.openstack.org/developer/hacking/#import-order-template",
+      "revId": "c3815373e33ac327e948e5ce755c67dcab058c4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_b2ba26bf",
+        "filename": "keystone/policies/user.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-17T21:48:59Z",
+      "side": 1,
+      "message": "I\u0027d just go ahead and use all of these directly below.",
+      "revId": "c3815373e33ac327e948e5ce755c67dcab058c4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_f2873ed5",
+        "filename": "keystone/policies/user.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-17T21:48:59Z",
+      "side": 1,
+      "message": "nit: user_policies or user_rules?",
+      "revId": "c3815373e33ac327e948e5ce755c67dcab058c4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_32c71647",
+        "filename": "keystone/policies/user.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-17T21:48:59Z",
+      "side": 1,
+      "message": "Like this:\n\n  policy.RuleDefault(\n      name\u003dbase.IDENTITY_API % \u0027get_user\u0027,\n      check_str\u003dbase.RULE_ADMIN_OR_OWNER\n  )",
+      "revId": "c3815373e33ac327e948e5ce755c67dcab058c4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
