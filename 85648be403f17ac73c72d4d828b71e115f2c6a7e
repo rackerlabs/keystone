@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa31d9ce_2ce777e5",
+        "filename": "doc/source/devref/api_curl_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-17T17:00:16Z",
+      "side": 1,
+      "message": "I\u0027d say this is implied clearly in the example.",
+      "revId": "85648be403f17ac73c72d4d828b71e115f2c6a7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_ac49a7d2",
+        "filename": "doc/source/devref/api_curl_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-17T17:00:16Z",
+      "side": 1,
+      "message": "Any reason to not keep the example response in bash?",
+      "revId": "85648be403f17ac73c72d4d828b71e115f2c6a7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_cca89b7a",
+        "filename": "doc/source/devref/api_curl_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-17T17:00:16Z",
+      "side": 1,
+      "message": "So long as the tabs are addressed, I think this is a great improvement.",
+      "revId": "85648be403f17ac73c72d4d828b71e115f2c6a7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_8cf3039f",
+        "filename": "doc/source/devref/api_curl_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-17T17:00:16Z",
+      "side": 1,
+      "message": "Same comment here - unless there is a technically reason for specifying it that I am not aware of.",
+      "revId": "85648be403f17ac73c72d4d828b71e115f2c6a7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
