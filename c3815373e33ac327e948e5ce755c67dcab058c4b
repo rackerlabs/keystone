@@ -101,6 +101,23 @@
       "revId": "c3815373e33ac327e948e5ce755c67dcab058c4b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_ddb32b09",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-17T22:17:17Z",
+      "side": 1,
+      "message": "Also - I\u0027m wondering if this should be in the if block above.",
+      "revId": "c3815373e33ac327e948e5ce755c67dcab058c4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
