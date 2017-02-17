@@ -12,9 +12,13 @@
 
 import itertools
 
+from keystone.policies import users
+
 
 def list_rules():
     # TODO(lbragstad): As we start to move policy defaults into code, we need
     # to add new defaults to this generator. This ensures our
     # oslo.policy.Enforcer doens't have any gaps or protected APIs.
-    return itertools.chain()
+    return itertools.chain(
+        users.list_rules()
+    )
