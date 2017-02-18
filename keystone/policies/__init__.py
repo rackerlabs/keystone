@@ -14,11 +14,17 @@
 import itertools
 
 from keystone.policies import base
+from keystone.policies import domain
+from keystone.policies import groups
+from keystone.policies import project
 from keystone.policies import user
 
 
 def list_rules():
     return itertools.chain(
         base.list_rules(),
-        user.list_rules()
+        user.list_rules(),
+        domain.list_rules(),
+        project.list_rules(),
+        groups.list_rules()
     )
