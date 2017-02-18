@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_a11729ec",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-18T17:17:15Z",
+      "side": 1,
+      "message": "nit: We could make the commit messages a bit more descriptive here (instead of breaking things into \"parts\"). Which also helps if we go dig through commits histories after things land, too.\n\n  Introduce in-code policies and move catalog defaults into code\n\nWe could also break down the commit message but listing everything we\u0027re changing, too.\n\n  This commit does the following:\n    - Introduces framework for registering default policies in code\n    - Moves default endpoint policies into code\n    - Moves default service policies into code\n    - Moves default region policies into code\n   \nDepending on the reviewer\u0027s style, if they start with the commit message they get a very good idea of exactly what you\u0027re doing from the commit message.",
+      "revId": "1e86f96d88930b8f40103728ea0d8bd22b693046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_61e4510d",
+        "filename": "keystone/policies/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-18T17:17:15Z",
+      "side": 1,
+      "message": "Looks like antwash already has quite a bit of this plumbing done [0]. We could rebase this on top of his work to reduce duplication and only target moving catalog default policies into code.\n\n\n[0] https://review.openstack.org/#/c/435609",
+      "revId": "1e86f96d88930b8f40103728ea0d8bd22b693046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_e1be81d3",
+        "filename": "keystone/policies/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-18T17:17:15Z",
+      "side": 1,
+      "message": "I love how clean this looks, nice work!",
+      "revId": "1e86f96d88930b8f40103728ea0d8bd22b693046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_c1b97dee",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-18T17:17:15Z",
+      "side": 1,
+      "message": "Same comment here as in base.py.",
+      "revId": "1e86f96d88930b8f40103728ea0d8bd22b693046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_a1c5695c",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-18T17:17:15Z",
+      "side": 1,
+      "message": "nit: This is only being used from within this class, meaning it would be a great candidate for private method naming:\n\n  def _add_missing_default_rules(self, rules)",
+      "revId": "1e86f96d88930b8f40103728ea0d8bd22b693046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_c1a09da8",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-18T17:17:15Z",
+      "side": 1,
+      "message": "rules*",
+      "revId": "1e86f96d88930b8f40103728ea0d8bd22b693046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_21b099f4",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-18T17:17:15Z",
+      "side": 1,
+      "message": "We could also elaborate that this is only needed while we transition from testing policy.json to in-code defaults. I assume once all of our defaults are in code, we won\u0027t need this utility anymore.",
+      "revId": "1e86f96d88930b8f40103728ea0d8bd22b693046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_21b979ea",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-18T17:17:15Z",
+      "side": 1,
+      "message": "We should add a comment here that explains what this .init() is doing.",
+      "revId": "1e86f96d88930b8f40103728ea0d8bd22b693046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
