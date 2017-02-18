@@ -15,10 +15,8 @@ from oslo_policy import policy
 from keystone.policies import base
 
 region_policies = [
-    policy.RuleDefault(name=base.IDENTITY % 'get_region',
-                       check_str=base.RULE_ANY),
-    policy.RuleDefault(name=base.IDENTITY % 'list_regions',
-                       check_str=base.RULE_ANY),
+    policy.RuleDefault(name=base.IDENTITY % 'get_region', check_str=""),
+    policy.RuleDefault(name=base.IDENTITY % 'list_regions', check_str=""),
     policy.RuleDefault(name=base.IDENTITY % 'create_region',
                        check_str=base.RULE_ADMIN_REQUIRED),
     policy.RuleDefault(name=base.IDENTITY % 'update_region',

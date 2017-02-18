@@ -12,16 +12,68 @@
 
 import itertools
 
+from keystone.policies import access_token
+from keystone.policies import auth
 from keystone.policies import base
+from keystone.policies import consumer
+from keystone.policies import credential
+from keystone.policies import domain
+from keystone.policies import domain_config
+from keystone.policies import ec2_credential
 from keystone.policies import endpoint
+from keystone.policies import for_user
+from keystone.policies import grant
+from keystone.policies import group
+from keystone.policies import group_endpoint
+from keystone.policies import identity_provider
+from keystone.policies import implied_role
+from keystone.policies import mapping
+from keystone.policies import policy
+from keystone.policies import policy_association
+from keystone.policies import project
+from keystone.policies import project_endpoint
+from keystone.policies import protocol
 from keystone.policies import region
+from keystone.policies import revoke_event
+from keystone.policies import role
+from keystone.policies import role_assignment
 from keystone.policies import service
+from keystone.policies import service_provider
+from keystone.policies import token_revocation
+from keystone.policies import trust
+from keystone.policies import user
 
 
 def list_rules():
     return itertools.chain(
         base.list_rules(),
+        access_token.list_rules(),
+        auth.list_rules(),
+        consumer.list_rules(),
+        credential.list_rules(),
+        domain.list_rules(),
+        domain_config.list_rules(),
+        ec2_credential.list_rules(),
         endpoint.list_rules(),
+        for_user.list_rules(),
+        grant.list_rules(),
+        group.list_rules(),
+        group_endpoint.list_rules(),
+        identity_provider.list_rules(),
+        implied_role.list_rules(),
+        mapping.list_rules(),
+        policy.list_rules(),
+        policy_association.list_rules(),
+        project.list_rules(),
+        project_endpoint.list_rules(),
+        protocol.list_rules(),
         region.list_rules(),
-        service.list_rules()
+        revoke_event.list_rules(),
+        role.list_rules(),
+        role_assignment.list_rules(),
+        service.list_rules(),
+        service_provider.list_rules(),
+        token_revocation.list_rules(),
+        trust.list_rules(),
+        user.list_rules(),
     )
