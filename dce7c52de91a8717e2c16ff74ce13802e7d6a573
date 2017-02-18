@@ -25,6 +25,23 @@
     },
     {
       "key": {
+        "uuid": "da36d5c6_619371a4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-02-18T16:27:07Z",
+      "side": 1,
+      "message": "It would be nice for noob reviewers like me if this commit message explained the \"why\" of this change, I didn\u0027t understand until I got to the new docstring in the WithExtras class.",
+      "revId": "dce7c52de91a8717e2c16ff74ce13802e7d6a573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_1572f7e5",
         "filename": "doc/source/devref/api_change_tutorial.rst",
         "patchSetId": 4
@@ -36,6 +53,30 @@
       "writtenOn": "2017-02-18T09:20:10Z",
       "side": 1,
       "message": "...hmm, this is not consistent with the code you have changed unthough I understand it\u0027s only an example. https://review.openstack.org/#/c/428472/4/keystone/assignment/role_backends/sql.py",
+      "range": {
+        "startLine": 90,
+        "startChar": 35,
+        "endLine": 90,
+        "endChar": 53
+      },
+      "revId": "dce7c52de91a8717e2c16ff74ce13802e7d6a573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_2b6878ba",
+        "filename": "doc/source/devref/api_change_tutorial.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-02-18T16:27:07Z",
+      "side": 1,
+      "message": "The example is supposed to be forward-looking, so I think using this mixin in the example is fine. It\u0027s just happens to be that the real class currently uses the other mixin.",
+      "parentUuid": "da36d5c6_1572f7e5",
       "range": {
         "startLine": 90,
         "startChar": 35,
@@ -82,6 +123,30 @@
       "writtenOn": "2017-02-18T09:20:10Z",
       "side": 1,
       "message": "Both of above are columns but not table attributes, I feel the change here is not backward compatible (the using of to_dict will show us the different data).",
+      "range": {
+        "startLine": 271,
+        "startChar": 4,
+        "endLine": 272,
+        "endChar": 60
+      },
+      "revId": "dce7c52de91a8717e2c16ff74ce13802e7d6a573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_41af4de3",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-02-18T16:27:07Z",
+      "side": 1,
+      "message": "I don\u0027t think it matters. The only time failed_auth_count and failed_auth_at are used (like here http://git.openstack.org/cgit/openstack/keystone/tree/keystone/identity/backends/sql.py#n103) they\u0027re are referred to as object attributes, not as dict keys, so it looks safe to me.",
+      "parentUuid": "da36d5c6_68e7d640",
       "range": {
         "startLine": 271,
         "startChar": 4,
