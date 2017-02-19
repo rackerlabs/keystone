@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da36d5c6_175d97e9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 22219
+      },
+      "writtenOn": "2017-02-19T00:49:30Z",
+      "side": 1,
+      "message": "Thanks for the feedback lance! I will update the unit test next patchset.",
+      "parentUuid": "da36d5c6_b81685a5",
+      "revId": "c41246e27f5a40e51fd1860bd2cb96d550f35e1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_1826b116",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
