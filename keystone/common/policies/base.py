@@ -15,6 +15,9 @@ from oslo_policy import policy
 IDENTITY = 'identity:%s'
 RULE_ADMIN_REQUIRED = 'rule:admin_required'
 RULE_ADMIN_OR_OWNER = 'rule:admin_or_owner'
+RULE_ADMIN_OR_TOKEN_SUBJECT = 'rule:admin_or_token_subject'
+RULE_SERVICE_ADMIN_OR_TOKEN_SUBJECT = 'rule:service_admin_or_token_subject'
+RULE_ADMIN_OR_SERVICE = 'rule:service_or_admin'
 
 
 rules = [
