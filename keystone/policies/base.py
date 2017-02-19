@@ -15,6 +15,7 @@ from oslo_policy import policy
 IDENTITY = 'identity:%s'
 RULE_ADMIN_REQUIRED = 'rule:admin_required'
 RULE_ADMIN_OR_OWNER = 'rule:admin_or_owner'
+RULE_TRUST_OWNER = 'user_id:%(trust.trustor_user_id)s'
 
 
 rules = [
