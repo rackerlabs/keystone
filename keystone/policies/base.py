@@ -15,6 +15,7 @@ from oslo_policy import policy
 IDENTITY = 'identity:%s'
 RULE_ADMIN_REQUIRED = 'rule:admin_required'
 RULE_ADMIN_OR_OWNER = 'rule:admin_or_owner'
+RULE_REVOKE_EVENT_OR_ADMIN = 'rule:revoke_event_or_admin'
 
 
 rules = [
