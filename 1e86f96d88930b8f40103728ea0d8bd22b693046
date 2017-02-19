@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "da36d5c6_b7520adc",
+        "filename": "keystone/policies/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-19T06:33:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da36d5c6_61e4510d",
+      "revId": "1e86f96d88930b8f40103728ea0d8bd22b693046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_e1be81d3",
         "filename": "keystone/policies/service.py",
         "patchSetId": 2
@@ -47,6 +65,24 @@
       "writtenOn": "2017-02-18T17:17:15Z",
       "side": 1,
       "message": "I love how clean this looks, nice work!",
+      "revId": "1e86f96d88930b8f40103728ea0d8bd22b693046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_d75dbeed",
+        "filename": "keystone/policies/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-19T06:33:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da36d5c6_e1be81d3",
       "revId": "1e86f96d88930b8f40103728ea0d8bd22b693046",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "da36d5c6_f762c2ac",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-19T06:33:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da36d5c6_c1b97dee",
+      "revId": "1e86f96d88930b8f40103728ea0d8bd22b693046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_a1c5695c",
         "filename": "keystone/tests/unit/test_policy.py",
         "patchSetId": 2
@@ -81,6 +135,24 @@
       "writtenOn": "2017-02-18T17:17:15Z",
       "side": 1,
       "message": "nit: This is only being used from within this class, meaning it would be a great candidate for private method naming:\n\n  def _add_missing_default_rules(self, rules)",
+      "revId": "1e86f96d88930b8f40103728ea0d8bd22b693046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_175836fa",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-19T06:33:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da36d5c6_a1c5695c",
       "revId": "1e86f96d88930b8f40103728ea0d8bd22b693046",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "da36d5c6_375d3aea",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-19T06:33:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da36d5c6_c1a09da8",
+      "revId": "1e86f96d88930b8f40103728ea0d8bd22b693046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_21b099f4",
         "filename": "keystone/tests/unit/test_policy.py",
         "patchSetId": 2
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "da36d5c6_776fb292",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-19T06:33:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da36d5c6_21b099f4",
+      "revId": "1e86f96d88930b8f40103728ea0d8bd22b693046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_21b979ea",
         "filename": "keystone/tests/unit/test_policy.py",
         "patchSetId": 2
@@ -132,6 +240,24 @@
       "writtenOn": "2017-02-18T17:17:15Z",
       "side": 1,
       "message": "We should add a comment here that explains what this .init() is doing.",
+      "revId": "1e86f96d88930b8f40103728ea0d8bd22b693046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_976c269e",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-19T06:33:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da36d5c6_21b979ea",
       "revId": "1e86f96d88930b8f40103728ea0d8bd22b693046",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
