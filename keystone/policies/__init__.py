@@ -13,15 +13,27 @@
 import itertools
 
 from keystone.policies import base
+from keystone.policies import credential
+from keystone.policies import domain
+from keystone.policies import ec2_credential
 from keystone.policies import endpoint
+from keystone.policies import group
+from keystone.policies import project
 from keystone.policies import region
 from keystone.policies import service
+from keystone.policies import user
 
 
 def list_rules():
     return itertools.chain(
         base.list_rules(),
+        credential.list_rules(),
+        domain.list_rules(),
+        ec2_credential.list_rules(),
         endpoint.list_rules(),
+        group.list_rules(),
+        project.list_rules(),
         region.list_rules(),
-        service.list_rules()
+        service.list_rules(),
+        user.list_rules(),
     )
