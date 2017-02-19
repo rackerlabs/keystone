@@ -17,10 +17,16 @@ from keystone.policies import credential
 from keystone.policies import domain
 from keystone.policies import ec2_credential
 from keystone.policies import endpoint
+from keystone.policies import grant
 from keystone.policies import group
+from keystone.policies import implied_role
+from keystone.policies import policy
 from keystone.policies import project
 from keystone.policies import region
+from keystone.policies import role
+from keystone.policies import role_assignment
 from keystone.policies import service
+from keystone.policies import token_revocation
 from keystone.policies import user
 
 
@@ -31,9 +37,15 @@ def list_rules():
         domain.list_rules(),
         ec2_credential.list_rules(),
         endpoint.list_rules(),
+        grant.list_rules(),
         group.list_rules(),
+        implied_role.list_rules(),
+        policy.list_rules(),
         project.list_rules(),
         region.list_rules(),
+        role.list_rules(),
+        role_assignment.list_rules(),
         service.list_rules(),
+        token_revocation.list_rules(),
         user.list_rules(),
     )
