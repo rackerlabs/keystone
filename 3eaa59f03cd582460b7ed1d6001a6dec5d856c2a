@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da36d5c6_3d4fbe93",
+        "filename": "keystone/policies/auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-20T18:03:35Z",
+      "side": 1,
+      "message": "Will do as requested in part 4 for all files",
+      "parentUuid": "da36d5c6_0249b75f",
+      "revId": "3eaa59f03cd582460b7ed1d6001a6dec5d856c2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_421d6f72",
         "filename": "keystone/policies/domain_config.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2017-02-20T17:18:44Z",
       "side": 1,
       "message": "Same comment here as in the previous module.",
+      "revId": "3eaa59f03cd582460b7ed1d6001a6dec5d856c2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_b8657ce2",
+        "filename": "keystone/policies/domain_config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-20T18:03:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da36d5c6_421d6f72",
       "revId": "3eaa59f03cd582460b7ed1d6001a6dec5d856c2a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da36d5c6_f81a946d",
+        "filename": "keystone/policies/for_user.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-20T18:03:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da36d5c6_c2095f33",
+      "revId": "3eaa59f03cd582460b7ed1d6001a6dec5d856c2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_3d041e14",
         "filename": "keystone/policies/policy_association.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2017-02-20T17:18:44Z",
       "side": 1,
       "message": "Same comment here as in auth.py.",
+      "revId": "3eaa59f03cd582460b7ed1d6001a6dec5d856c2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_586e40ca",
+        "filename": "keystone/policies/policy_association.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-20T18:03:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da36d5c6_3d041e14",
       "revId": "3eaa59f03cd582460b7ed1d6001a6dec5d856c2a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
