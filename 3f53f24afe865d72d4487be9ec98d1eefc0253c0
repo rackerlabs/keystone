@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_675fe572",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-20T16:48:22Z",
+      "side": 1,
+      "message": "nit: code \n\nonly to be consistent with the rest of the patches.",
+      "revId": "3f53f24afe865d72d4487be9ec98d1eefc0253c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_07c70913",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-20T16:48:22Z",
+      "side": 1,
+      "message": "Add a space between project_endpoint and policies.",
+      "revId": "3f53f24afe865d72d4487be9ec98d1eefc0253c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_a7747dcf",
+        "filename": "keystone/policies/group_endpoint.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-20T16:48:22Z",
+      "side": 1,
+      "message": "++ I actually really like this indentation convention. I find that it looks clean and consistent in a lot of cases. I\u0027d be OK making all of these that way.\n\n  policy.RuleDefault(\n      name\u003dbase.IDENTITY % \u0027list_projects_associated_with_endpoint_group\u0027,\n      check_str\u003dbase.RULE_ADMIN_REQUIRED\n  ),\n\nIt looks good in cases where you have long strings (like this one), but it also looks good when you don\u0027t.\n\n  policy.RuleDefault(\n      name\u003dbase.IDENTITY % \u0027create_endpoint_group\u0027,\n      check_str\u003dbase.RULE_ADMIN_REQUIRED\n  ),",
+      "revId": "3f53f24afe865d72d4487be9ec98d1eefc0253c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_a709dd33",
+        "filename": "keystone/policies/trust.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-20T16:48:22Z",
+      "side": 1,
+      "message": "nit: single quotes to be consistent with the rest of the strings in the module?",
+      "revId": "3f53f24afe865d72d4487be9ec98d1eefc0253c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
