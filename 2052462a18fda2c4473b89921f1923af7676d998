@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_a8953741",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 906,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-02-20T12:04:10Z",
+      "side": 1,
+      "message": "is it s list or a dict? In the JSON schema, the type is array (list).",
+      "range": {
+        "startLine": 906,
+        "startChar": 42,
+        "endLine": 906,
+        "endChar": 50
+      },
+      "revId": "2052462a18fda2c4473b89921f1923af7676d998",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_c8cb4b71",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 908,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-02-20T12:04:10Z",
+      "side": 1,
+      "message": "are",
+      "range": {
+        "startLine": 908,
+        "startChar": 31,
+        "endLine": 908,
+        "endChar": 33
+      },
+      "revId": "2052462a18fda2c4473b89921f1923af7676d998",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_a820d74a",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 935,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-02-20T12:04:10Z",
+      "side": 1,
+      "message": "this is not possible if the condition above is true, right?",
+      "range": {
+        "startLine": 934,
+        "startChar": 0,
+        "endLine": 935,
+        "endChar": 37
+      },
+      "revId": "2052462a18fda2c4473b89921f1923af7676d998",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_28ddc714",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-02-20T12:04:10Z",
+      "side": 1,
+      "message": "I know this was decided in the spec, but only \"federated\" can be confusing - if I\u0027m consuming the users API and see a \"federated: []\", the field won\u0027t be clear just by its name. Can we discuss a better name for the attribute? Maybe \"federated_attributes\".",
+      "range": {
+        "startLine": 937,
+        "startChar": 18,
+        "endLine": 937,
+        "endChar": 27
+      },
+      "revId": "2052462a18fda2c4473b89921f1923af7676d998",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_883a3335",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-02-20T12:04:10Z",
+      "side": 1,
+      "message": "this isn\u0027t creating a dict, but a list.",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 29
+      },
+      "revId": "2052462a18fda2c4473b89921f1923af7676d998",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_a8261714",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-02-20T12:04:10Z",
+      "side": 1,
+      "message": "I would suggest this and the others methods to be called: \"*_user_federated_attribute\". What do you think?",
+      "range": {
+        "startLine": 68,
+        "startChar": 8,
+        "endLine": 68,
+        "endChar": 31
+      },
+      "revId": "2052462a18fda2c4473b89921f1923af7676d998",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_c86a6b1a",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 871,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-02-20T12:04:10Z",
+      "side": 1,
+      "message": "ok... this isn\u0027t looking good. A \"GET /users\" returns different objects than a \"GET /users/\u003cuser_id\u003e\"? Please don\u0027t do that.",
+      "range": {
+        "startLine": 869,
+        "startChar": 27,
+        "endLine": 871,
+        "endChar": 23
+      },
+      "revId": "2052462a18fda2c4473b89921f1923af7676d998",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_a8545754",
+        "filename": "releasenotes/notes/extending-federated-users-to-the-user-api-71eda9958337b14a.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-02-20T12:04:10Z",
+      "side": 1,
+      "message": "cite the API change? (the inclusion of the new attribute)",
+      "revId": "2052462a18fda2c4473b89921f1923af7676d998",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
