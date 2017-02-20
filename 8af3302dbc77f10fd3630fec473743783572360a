@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_ddb94230",
+        "filename": "keystone/policies/region.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-20T17:22:54Z",
+      "side": 1,
+      "message": "Mixing single and double quotes. We typically don\u0027t mix them unless there is a technical reason to. It\u0027s nice to follow the same convention (single or double) throughout a module.",
+      "revId": "8af3302dbc77f10fd3630fec473743783572360a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_3d87be62",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-20T17:22:54Z",
+      "side": 1,
+      "message": "nit: `rules.init()`",
+      "revId": "8af3302dbc77f10fd3630fec473743783572360a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
