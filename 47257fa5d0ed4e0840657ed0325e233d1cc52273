@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da36d5c6_51ab8389",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-20T15:52:36Z",
+      "side": 1,
+      "message": "It doesn\u0027t look like this last line is being done in this commit. It looks like this commit is moving catalog policies.",
+      "revId": "47257fa5d0ed4e0840657ed0325e233d1cc52273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_aa76103c",
         "filename": "/COMMIT_MSG",
         "patchSetId": 6
@@ -19,6 +36,24 @@
         "endLine": 23,
         "endChar": 45
       },
+      "revId": "47257fa5d0ed4e0840657ed0325e233d1cc52273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_b1c11f83",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-20T15:52:36Z",
+      "side": 1,
+      "message": "The specification is still in review and I expect we will be talking about it at length during the PTG. Our policy session is on Thursday afternoon.",
+      "parentUuid": "da36d5c6_aa76103c",
       "revId": "47257fa5d0ed4e0840657ed0325e233d1cc52273",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
