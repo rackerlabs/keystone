@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da36d5c6_5d447273",
+        "filename": "keystone/policies/base.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-20T17:53:46Z",
+      "side": 1,
+      "message": "We should pass these in as kwargs like we do in other places:\n\n  policy.RuleDefault(\n      name\u003d\u0027admin_required\u0027,\n      check_str\u003d\u0027role:admin or is_admin:1\u0027\n  ),\n\nAlso, since later patch use the indentation convention above we should maybe just start doing it now so that everything ends up being consistent.",
+      "revId": "13e95e261e5d07af177fec39eb2737267b02b63b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_9d950a42",
         "filename": "keystone/tests/unit/test_policy.py",
         "patchSetId": 8
