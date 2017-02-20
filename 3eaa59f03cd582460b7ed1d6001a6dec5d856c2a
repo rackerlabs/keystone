@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_0249b75f",
+        "filename": "keystone/policies/auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-20T17:18:44Z",
+      "side": 1,
+      "message": "For consistency, we should follow the same indentation convention throughout the series. Which could be any of the following:\n\n  policy.RuleDefault(name\u003dbase.IDENTITY % \u0027get_auth_catalog\u0027, check_str\u003d\u0027\u0027),\n\nor\n\n  policy.RuleDefault(name\u003dbase.IDENTITY % \u0027get_auth_catalog\u0027,\n                     check_str\u003d\u0027\u0027),\n\nor\n\n  policy.RuleDefault(\n      name\u003dbase.IDENTITY % \u0027get_auth_catalog\u0027,\n      check_str\u003d\u0027\u0027\n  ),\n\nI think I prefer the last one because it gives us a lot of bang for our buck with long strings and look consistent everywhere. We could also standardize on either single or double quotes here instead of mixing.",
+      "revId": "3eaa59f03cd582460b7ed1d6001a6dec5d856c2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_421d6f72",
+        "filename": "keystone/policies/domain_config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-20T17:18:44Z",
+      "side": 1,
+      "message": "Same comment here as in the previous module.",
+      "revId": "3eaa59f03cd582460b7ed1d6001a6dec5d856c2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_c2095f33",
+        "filename": "keystone/policies/for_user.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-20T17:18:44Z",
+      "side": 1,
+      "message": "Mixing single and double quotes.",
+      "revId": "3eaa59f03cd582460b7ed1d6001a6dec5d856c2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_3d041e14",
+        "filename": "keystone/policies/policy_association.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-20T17:18:44Z",
+      "side": 1,
+      "message": "Same comment here as in auth.py.",
+      "revId": "3eaa59f03cd582460b7ed1d6001a6dec5d856c2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
