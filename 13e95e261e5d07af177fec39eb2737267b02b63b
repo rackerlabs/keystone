@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_9d950a42",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-20T17:32:02Z",
+      "side": 1,
+      "message": "nit: rules* \n\n:)",
+      "revId": "13e95e261e5d07af177fec39eb2737267b02b63b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
