@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da36d5c6_04ee278b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 22219
+      },
+      "writtenOn": "2017-02-20T16:20:03Z",
+      "side": 1,
+      "message": "I will update the commit message, it was original doing this but Richard made changes and didn\u0027t update the commit message.",
+      "parentUuid": "da36d5c6_51ab8389",
+      "revId": "47257fa5d0ed4e0840657ed0325e233d1cc52273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_aa76103c",
         "filename": "/COMMIT_MSG",
         "patchSetId": 6
