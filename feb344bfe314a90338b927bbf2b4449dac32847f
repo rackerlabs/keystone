@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "da36d5c6_dd1a2217",
+        "filename": "etc/policy.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-20T17:30:58Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "da36d5c6_9d68aabc",
+      "revId": "feb344bfe314a90338b927bbf2b4449dac32847f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_bdbe77d2",
         "filename": "keystone/policy/backends/rules.py",
         "patchSetId": 1
