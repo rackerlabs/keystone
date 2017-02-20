@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da36d5c6_e71d95be",
+        "filename": "keystone/policies/domain.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-20T16:54:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da36d5c6_d1f2139a",
+      "revId": "ec1551a62b1dd11c6db6e2701db5530506f6328e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_9126db14",
         "filename": "keystone/policies/ec2_credential.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2017-02-20T16:01:29Z",
       "side": 1,
       "message": "Same comment here as in the previous module. Also another improvement would be to pull this out into a global variable since it\u0027s used in two places. This would also give us an opportunity to give it a really good name since it\u0027s a long policy:\n\n  RULE_ADMIN_OR_CREDENTIAL_OWNER \u003d ...",
+      "revId": "ec1551a62b1dd11c6db6e2701db5530506f6328e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_e703d50d",
+        "filename": "keystone/policies/ec2_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-20T16:54:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da36d5c6_9126db14",
       "revId": "ec1551a62b1dd11c6db6e2701db5530506f6328e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da36d5c6_22ff9b02",
+        "filename": "keystone/policies/ec2_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-20T16:54:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da36d5c6_b123df04",
+      "revId": "ec1551a62b1dd11c6db6e2701db5530506f6328e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_31360f04",
         "filename": "keystone/policies/project.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2017-02-20T16:01:29Z",
       "side": 1,
       "message": "Same comment here as in previous modules. Even though we only use it in one place, I wouldn\u0027t mind having it pulled into it\u0027s own variable since it gives us an opportunity to supply a great name. Same comment for quotes, too.",
+      "revId": "ec1551a62b1dd11c6db6e2701db5530506f6328e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_e262e3d7",
+        "filename": "keystone/policies/project.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-20T16:54:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da36d5c6_31360f04",
       "revId": "ec1551a62b1dd11c6db6e2701db5530506f6328e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
