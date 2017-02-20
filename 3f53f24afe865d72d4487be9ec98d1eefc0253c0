@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "da36d5c6_9d134a5c",
+        "filename": "keystone/policies/group_endpoint.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-20T17:52:51Z",
+      "side": 1,
+      "message": "You\u0027re a lot of work, you know that lance? ;)",
+      "parentUuid": "da36d5c6_a7747dcf",
+      "revId": "3f53f24afe865d72d4487be9ec98d1eefc0253c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_a709dd33",
         "filename": "keystone/policies/trust.py",
         "patchSetId": 1
@@ -64,6 +82,24 @@
       "writtenOn": "2017-02-20T16:48:22Z",
       "side": 1,
       "message": "nit: single quotes to be consistent with the rest of the strings in the module?",
+      "revId": "3f53f24afe865d72d4487be9ec98d1eefc0253c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_3d2b3e84",
+        "filename": "keystone/policies/trust.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-20T17:52:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da36d5c6_a709dd33",
       "revId": "3f53f24afe865d72d4487be9ec98d1eefc0253c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
