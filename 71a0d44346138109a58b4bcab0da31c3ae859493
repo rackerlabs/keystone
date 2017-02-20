@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da36d5c6_42cc8f35",
+        "filename": "keystone/policies/token_revocation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-20T17:15:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da36d5c6_673a8538",
+      "revId": "71a0d44346138109a58b4bcab0da31c3ae859493",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_e74675be",
         "filename": "keystone/policies/token_revocation.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2017-02-20T16:40:17Z",
       "side": 1,
       "message": "Same comment here. We could apply that same pattern to all of these, even if they are used only once.",
+      "revId": "71a0d44346138109a58b4bcab0da31c3ae859493",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_22c79b13",
+        "filename": "keystone/policies/token_revocation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-20T17:15:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da36d5c6_e74675be",
       "revId": "71a0d44346138109a58b4bcab0da31c3ae859493",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
