@@ -116,6 +116,40 @@
       "revId": "c51653a11a66c83c9f30f76d6bcd0befd2de8b4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_bafd583c",
+        "filename": "releasenotes/notes/extending-federated-users-to-the-user-api-71eda9958337b14a.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-02-21T12:58:56Z",
+      "side": 1,
+      "message": "This leaves me wondering which backend(s)?",
+      "revId": "c51653a11a66c83c9f30f76d6bcd0befd2de8b4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_1a990420",
+        "filename": "releasenotes/notes/extending-federated-users-to-the-user-api-71eda9958337b14a.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-02-21T12:58:56Z",
+      "side": 1,
+      "message": "This sentence should be first so that operators can quickly identify whether this release note applies to them or not, and move on.",
+      "revId": "c51653a11a66c83c9f30f76d6bcd0befd2de8b4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
