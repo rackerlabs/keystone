@@ -15,7 +15,7 @@
 Upgrading Keystone
 ==================
 
-As of the Newton release, keystone supports two different approaches to
+As of the Ocata release, keystone supports two different approaches to
 upgrading across releases. The traditional approach requires a significant
 outage to be scheduled for the entire duration of the upgrade process. The more
 modern approach results in zero downtime, but is more complicated due to a
