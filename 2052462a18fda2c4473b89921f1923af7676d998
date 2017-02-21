@@ -163,6 +163,30 @@
     },
     {
       "key": {
+        "uuid": "da36d5c6_4d556d1b",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 871,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-21T23:49:59Z",
+      "side": 1,
+      "message": "I\u0027m okay with this as it\u0027s not uncommon for a list method to only return a subset of attributes. Whereas a get method will return more detail.",
+      "parentUuid": "da36d5c6_c86a6b1a",
+      "range": {
+        "startLine": 869,
+        "startChar": 27,
+        "endLine": 871,
+        "endChar": 23
+      },
+      "revId": "2052462a18fda2c4473b89921f1923af7676d998",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_a8545754",
         "filename": "releasenotes/notes/extending-federated-users-to-the-user-api-71eda9958337b14a.yaml",
         "patchSetId": 20
