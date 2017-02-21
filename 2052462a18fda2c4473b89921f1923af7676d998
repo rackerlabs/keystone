@@ -94,6 +94,30 @@
     },
     {
       "key": {
+        "uuid": "da36d5c6_ed2621cd",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-02-21T23:52:29Z",
+      "side": 1,
+      "message": "I don\u0027t like federated_attributes, it would be like adding name_attribute or password_attribute. Attribute should be implied.",
+      "parentUuid": "da36d5c6_28ddc714",
+      "range": {
+        "startLine": 937,
+        "startChar": 18,
+        "endLine": 937,
+        "endChar": 27
+      },
+      "revId": "2052462a18fda2c4473b89921f1923af7676d998",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_883a3335",
         "filename": "keystone/identity/shadow_backends/base.py",
         "patchSetId": 20
