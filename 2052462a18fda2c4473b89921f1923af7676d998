@@ -213,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "da36d5c6_46b41e81",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-23T20:21:44Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "da36d5c6_883a3335",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 29
+      },
+      "revId": "2052462a18fda2c4473b89921f1923af7676d998",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_a8261714",
         "filename": "keystone/identity/shadow_backends/base.py",
         "patchSetId": 20
