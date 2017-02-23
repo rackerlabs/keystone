@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_b896e9ed",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-02-23T14:32:11Z",
+      "side": 1,
+      "message": "Is there any reason we are using this? If you are completely removing the use of a policy file in the unit tests and we are exclusively using the in code defaults shouldn\u0027t we remove this and have it load all defaults in code?",
+      "range": {
+        "startLine": 187,
+        "startChar": 12,
+        "endLine": 187,
+        "endChar": 38
+      },
+      "revId": "086f62a7a156d7f6a8c17e013284c2813f14b345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
