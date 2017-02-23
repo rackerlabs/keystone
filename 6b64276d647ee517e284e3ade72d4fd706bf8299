@@ -16,6 +16,24 @@
       "revId": "6b64276d647ee517e284e3ade72d4fd706bf8299",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_2f2389a8",
+        "filename": "doc/source/federation/websso.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-02-23T15:53:42Z",
+      "side": 1,
+      "message": "You would still need to restart keystone, which in most cases means restarting apache, if you had updated keystone.conf.",
+      "parentUuid": "da36d5c6_8991d5f3",
+      "revId": "6b64276d647ee517e284e3ade72d4fd706bf8299",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
