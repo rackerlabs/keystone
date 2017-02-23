@@ -259,6 +259,31 @@ def get_db_version(repo=LEGACY_REPO):
             session.get_bind(), find_repo(repo), get_init_version())
 
 
+def validate_upgrade_order(repo_name):
+    """Validate the db_sync command it not run out of order.
+
+    This is run before allowing the db_sync command execute. db_sync needs to
+    have expand run before migrate and migrate run before expand. Compare that
+    the current command the operator wants to run will not be greater than the
+    previous command.
+
+    """
+    db_sync_order = {'data_migration_repo': 'expand_repo',
+                     'contract_repo': 'data_migration_repo'}
+    # find the version that the current command will upgrade to.
+    abs_path = find_repo(repo_name)
+    repo = migrate.versioning.repository.Repository(abs_path)
+    current_cmd_version = int(max(repo.versions.versions))
+    # get the version of the command that is run before the current one.
+    previous_cmd_version = get_db_version(repo=db_sync_order[repo_name])
+
+    if previous_cmd_version < current_cmd_version:
+        raise Exception('Version (%d) of %s is greater than the version (%d) '
+                        'of %d.' % (
+                            current_cmd_version, repo_name,
+                            previous_cmd_version, db_sync_order[repo_name]))
+
+
 def expand_schema():
     """Expand the database schema ahead of data migration.
 
@@ -279,6 +304,7 @@ def migrate_data():
     schema has been expanded for the new release.
 
     """
+    validate_upgrade_order(DATA_MIGRATION_REPO)
     _sync_repo(repo_name=DATA_MIGRATION_REPO)
 
 
@@ -290,4 +316,5 @@ def contract_schema():
     tables/columns that are no longer required.
 
     """
+    validate_upgrade_order(CONTRACT_REPO)
     _sync_repo(repo_name=CONTRACT_REPO)
