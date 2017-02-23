@@ -22,6 +22,30 @@
       "revId": "1d4c72cd6fdad2c75e6b16ecf089852c604b8cd5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_8f9d5568",
+        "filename": "doc/source/federation/mellon.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-02-23T16:03:18Z",
+      "side": 0,
+      "message": "It is not strictly required for auth_mellon to work, and if it were required we should mention setting SSLEngine and other required parameters in the vhost file.",
+      "parentUuid": "da36d5c6_4427c4c9",
+      "range": {
+        "startLine": 76,
+        "startChar": 13,
+        "endLine": 76,
+        "endChar": 16
+      },
+      "revId": "1d4c72cd6fdad2c75e6b16ecf089852c604b8cd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

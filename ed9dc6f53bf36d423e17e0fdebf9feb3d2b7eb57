@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "da36d5c6_8fc2b532",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-02-23T16:03:18Z",
+      "side": 1,
+      "message": "Fixed, actually the SSO entityID is specific to the shibboleth config file, in the actual metadata it is the EntityDescriptor entityID parameter.",
+      "parentUuid": "da36d5c6_e4c278e8",
+      "range": {
+        "startLine": 172,
+        "startChar": 19,
+        "endLine": 172,
+        "endChar": 25
+      },
+      "revId": "ed9dc6f53bf36d423e17e0fdebf9feb3d2b7eb57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_e4cd1832",
         "filename": "doc/source/federation/configure_federation.rst",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2017-02-23T15:55:46Z",
       "side": 1,
       "message": "(nit) \"Keystone IdP\". It\u0027s being shown without a blank space for me as \"KeystoneIdP\"",
+      "range": {
+        "startLine": 173,
+        "startChar": 0,
+        "endLine": 173,
+        "endChar": 11
+      },
+      "revId": "ed9dc6f53bf36d423e17e0fdebf9feb3d2b7eb57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_0f8085f6",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-02-23T16:03:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da36d5c6_e4cd1832",
       "range": {
         "startLine": 173,
         "startChar": 0,
