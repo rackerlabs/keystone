@@ -258,6 +258,16 @@ def get_db_version(repo=LEGACY_REPO):
         return migration.db_version(
             session.get_bind(), find_repo(repo), get_init_version())
 
+def validate_upgrade_order(self, repo_name):
+    """Validate the db_sync command it not run out of order.
+
+    This is run before allowing the db_sync command execute. db_sync needs to
+    have expand run before migrate and migrate run before expand.
+
+    """
+    db_sync_order = {'expand_repo':'migrate_repo',
+                     'data_migration_repo':'expand_repo',
+                     'contract_repo':'data_migration_repo'}
 
 def expand_schema():
     """Expand the database schema ahead of data migration.
