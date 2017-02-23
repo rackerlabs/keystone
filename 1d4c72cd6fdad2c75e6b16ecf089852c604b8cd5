@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_2c80e9bf",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3171,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-02-23T20:55:27Z",
+      "side": 0,
+      "message": "This is the only difference between patchset 4 and 5, but since I rebased diff between 4 and 5 got ugly.",
+      "revId": "1d4c72cd6fdad2c75e6b16ecf089852c604b8cd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
