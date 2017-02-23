@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_e3d6e4ef",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-23T19:57:39Z",
+      "side": 1,
+      "message": "Would we want to just get rid of this test since it doesn\u0027t assert anything now?",
+      "range": {
+        "startLine": 393,
+        "startChar": 0,
+        "endLine": 399,
+        "endChar": 55
+      },
+      "revId": "eeb9c3ab20a34f417e94ba25a52699620936191c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
