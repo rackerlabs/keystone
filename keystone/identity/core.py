@@ -928,6 +928,8 @@ class Manager(manager.Manager):
         user['id'] = uuid.uuid4().hex
         ref = driver.create_user(user['id'], user)
         notifications.Audit.created(self._USER, user['id'], initiator)
+        if ref.get('options', None) is None:
+            ref['options'] = {}
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
@@ -938,6 +940,8 @@ class Manager(manager.Manager):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(user_id))
         ref = driver.get_user(entity_id)
+        if ref.get('options', None) is None:
+            ref['options'] = {}
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
@@ -958,6 +962,8 @@ class Manager(manager.Manager):
     def get_user_by_name(self, user_name, domain_id):
         driver = self._select_identity_driver(domain_id)
         ref = driver.get_user_by_name(user_name, domain_id)
+        if ref.get('options', None) is None:
+            ref['options'] = {}
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
@@ -1080,6 +1086,9 @@ class Manager(manager.Manager):
                           user['enabled'] != old_user_ref.get('enabled'))
         if enabled_change or user.get('password') is not None:
             self.emit_invalidate_user_token_persistence(user_id)
+
+        if ref.get('options', None) is None:
+            ref['options'] = {}
 
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
