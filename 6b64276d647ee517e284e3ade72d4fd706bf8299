@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_8991d5f3",
+        "filename": "doc/source/federation/websso.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-02-23T15:33:28Z",
+      "side": 1,
+      "message": "If only step 1 was executed, is a restart necessary ?\n\nIf not, as the steps 2-6 are optional, we should mention something like \"if you have run one of the steps 2-6, you should restart apache...\"",
+      "revId": "6b64276d647ee517e284e3ade72d4fd706bf8299",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
