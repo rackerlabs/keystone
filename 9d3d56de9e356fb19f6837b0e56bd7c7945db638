@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_4d0b602a",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 941,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-02-23T18:58:39Z",
+      "side": 1,
+      "message": "NIT: this is the default behavior of the .get() method, you do not need to specify \"None\" as the second argument.",
+      "range": {
+        "startLine": 941,
+        "startChar": 19,
+        "endLine": 941,
+        "endChar": 34
+      },
+      "revId": "9d3d56de9e356fb19f6837b0e56bd7c7945db638",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
