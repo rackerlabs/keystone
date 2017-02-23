@@ -19,6 +19,7 @@ import os
 import migrate
 from migrate import exceptions
 from migrate.versioning import api as versioning_api
+from oslo_db import exception as db_exception
 from oslo_db.sqlalchemy import migration
 import six
 import sqlalchemy
@@ -56,6 +57,7 @@ class Repository(object):
         upgrade = True
         version = versioning_api._migrate_version(
             self.schema_, version, upgrade, err)
+        validate_upgrade_order(self.repo_name, target_repo_version=version)
         if not current_schema:
             current_schema = self.schema_
         changeset = current_schema.changeset(version)
@@ -259,6 +261,36 @@ def get_db_version(repo=LEGACY_REPO):
             session.get_bind(), find_repo(repo), get_init_version())
 
 
+def validate_upgrade_order(repo_name, target_repo_version=None):
+    """Validate the db_sync command is not run out of order.
+
+    This is run before allowing the db_sync command execute. db_sync must have
+    expand, migrate, and contract run in that order. Compare the current
+    command's upgrade version the operator wants to run will not be greater
+    than the preceding command's upgrade version.
+
+    """
+    db_sync_order = {'expand_repo': 'migrate_repo',
+                     'data_migration_repo': 'expand_repo',
+                     'contract_repo': 'data_migration_repo'}
+    # validate the repo_name is one of the db_sync commands or exit.
+    if repo_name not in db_sync_order.keys():
+        return
+    # find the version that the current command will upgrade to.
+    if not target_repo_version:
+        abs_path = find_repo(repo_name)
+        repo = migrate.versioning.repository.Repository(abs_path)
+        target_repo_version = int(max(repo.versions.versions))
+    # get the version of the command that is run before the current one.
+    dependency_repo_version = get_db_version(repo=db_sync_order[repo_name])
+
+    if dependency_repo_version < target_repo_version:
+        raise db_exception.DBMigrationError(
+            'Version (%d) of %s is greater than the version (%d) of %s.' % (
+                target_repo_version, repo_name,
+                dependency_repo_version, db_sync_order[repo_name]))
+
+
 def expand_schema():
     """Expand the database schema ahead of data migration.
 
@@ -279,6 +311,7 @@ def migrate_data():
     schema has been expanded for the new release.
 
     """
+    validate_upgrade_order(DATA_MIGRATION_REPO)
     _sync_repo(repo_name=DATA_MIGRATION_REPO)
 
 
@@ -290,4 +323,5 @@ def contract_schema():
     tables/columns that are no longer required.
 
     """
+    validate_upgrade_order(CONTRACT_REPO)
     _sync_repo(repo_name=CONTRACT_REPO)

@@ -474,13 +474,7 @@ class DbSync(BaseApp):
             upgrades.find_repo('expand_repo'))
         migration_script_version = int(max(repo.versions.versions))
 
-        if (contract_version > migrate_version or migrate_version >
-                expand_version):
-            LOG.info(_LI('Your database is out of sync. For more information '
-                         'refer to https://docs.openstack.org/developer/'
-                         'keystone/upgrading.html'))
-            status = 1
-        elif migration_script_version > expand_version:
+        if migration_script_version > expand_version:
             LOG.info(_LI('Your database is not up to date. Your first step is '
                          'to run `keystone-manage db_sync --expand`.'))
             status = 2
