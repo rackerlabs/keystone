@@ -22,6 +22,30 @@
       "revId": "eeb9c3ab20a34f417e94ba25a52699620936191c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_ec67b1b4",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-02-23T20:50:22Z",
+      "side": 1,
+      "message": "Not sure. It still sort of does something and I\u0027m trying to restrict this review to only removing \u0027delete\u0027 bits.",
+      "parentUuid": "da36d5c6_e3d6e4ef",
+      "range": {
+        "startLine": 393,
+        "startChar": 0,
+        "endLine": 399,
+        "endChar": 55
+      },
+      "revId": "eeb9c3ab20a34f417e94ba25a52699620936191c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
