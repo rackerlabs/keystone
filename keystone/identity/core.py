@@ -938,6 +938,8 @@ class Manager(manager.Manager):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(user_id))
         ref = driver.get_user(entity_id)
+        if ref.get('options', None) is None:
+            ref['options'] = {}
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
