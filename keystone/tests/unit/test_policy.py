@@ -21,9 +21,9 @@ from oslo_policy import policy as common_policy
 import six
 from testtools import matchers
 
+from keystone.common import policy_enforcement
 import keystone.conf
 from keystone import exception
-from keystone.policy.backends import rules
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit.ksfixtures import temporaryfile
@@ -50,11 +50,12 @@ class PolicyFileTestCase(unit.TestCase):
         empty_credentials = {}
         with open(self.tmpfilename, "w") as policyfile:
             policyfile.write("""{"example:test": []}""")
-        rules.enforce(empty_credentials, action, self.target)
+        policy_enforcement.enforce(empty_credentials, action, self.target)
         with open(self.tmpfilename, "w") as policyfile:
             policyfile.write("""{"example:test": ["false:false"]}""")
-        rules._ENFORCER.clear()
-        self.assertRaises(exception.ForbiddenAction, rules.enforce,
+        policy_enforcement._ENFORCER.clear()
+        self.assertRaises(exception.ForbiddenAction,
+                          policy_enforcement.enforce,
                           empty_credentials, action, self.target)
 
 
@@ -81,39 +82,43 @@ class PolicyTestCase(unit.TestCase):
 
     def _set_rules(self):
         these_rules = common_policy.Rules.from_dict(self.rules)
-        rules._ENFORCER.set_rules(these_rules)
+        policy_enforcement._ENFORCER.set_rules(these_rules)
 
     def test_enforce_nonexistent_action_throws(self):
         action = "example:noexist"
-        self.assertRaises(exception.ForbiddenAction, rules.enforce,
-                          self.credentials, action, self.target)
+        self.assertRaises(exception.ForbiddenAction,
+                          policy_enforcement.enforce, self.credentials, action,
+                          self.target)
 
     def test_enforce_bad_action_throws(self):
         action = "example:denied"
-        self.assertRaises(exception.ForbiddenAction, rules.enforce,
-                          self.credentials, action, self.target)
+        self.assertRaises(exception.ForbiddenAction,
+                          policy_enforcement.enforce, self.credentials, action,
+                          self.target)
 
     def test_enforce_good_action(self):
         action = "example:allowed"
-        rules.enforce(self.credentials, action, self.target)
+        policy_enforcement.enforce(self.credentials, action, self.target)
 
     def test_templatized_enforcement(self):
         target_mine = {'project_id': 'fake'}
         target_not_mine = {'project_id': 'another'}
         credentials = {'project_id': 'fake', 'roles': []}
         action = "example:my_file"
-        rules.enforce(credentials, action, target_mine)
-        self.assertRaises(exception.ForbiddenAction, rules.enforce,
-                          credentials, action, target_not_mine)
+        policy_enforcement.enforce(credentials, action, target_mine)
+        self.assertRaises(exception.ForbiddenAction,
+                          policy_enforcement.enforce, credentials, action,
+                          target_not_mine)
 
     def test_early_AND_enforcement(self):
         action = "example:early_and_fail"
-        self.assertRaises(exception.ForbiddenAction, rules.enforce,
-                          self.credentials, action, self.target)
+        self.assertRaises(exception.ForbiddenAction,
+                          policy_enforcement.enforce, self.credentials, action,
+                          self.target)
 
     def test_early_OR_enforcement(self):
         action = "example:early_or_success"
-        rules.enforce(self.credentials, action, self.target)
+        policy_enforcement.enforce(self.credentials, action, self.target)
 
     def test_ignore_case_role_check(self):
         lowercase_action = "example:lowercase_admin"
@@ -121,8 +126,10 @@ class PolicyTestCase(unit.TestCase):
         # NOTE(dprince): We mix case in the Admin role here to ensure
         # case is ignored
         admin_credentials = {'roles': ['AdMiN']}
-        rules.enforce(admin_credentials, lowercase_action, self.target)
-        rules.enforce(admin_credentials, uppercase_action, self.target)
+        policy_enforcement.enforce(admin_credentials, lowercase_action,
+                                   self.target)
+        policy_enforcement.enforce(admin_credentials, uppercase_action,
+                                   self.target)
 
 
 class DefaultPolicyTestCase(unit.TestCase):
@@ -142,21 +149,22 @@ class DefaultPolicyTestCase(unit.TestCase):
         # monkeypatch load_roles() so it does nothing. This seem like a bug in
         # Oslo policy as we shouldn't have to reload the rules if they have
         # already been set using set_rules().
-        self._old_load_rules = rules._ENFORCER.load_rules
-        self.addCleanup(setattr, rules._ENFORCER, 'load_rules',
+        self._old_load_rules = policy_enforcement._ENFORCER.load_rules
+        self.addCleanup(setattr, policy_enforcement._ENFORCER, 'load_rules',
                         self._old_load_rules)
-        rules._ENFORCER.load_rules = lambda *args, **kwargs: None
+        policy_enforcement._ENFORCER.load_rules = lambda *args, **kwargs: None
 
     def _set_rules(self, default_rule):
         these_rules = common_policy.Rules.from_dict(self.rules, default_rule)
-        rules._ENFORCER.set_rules(these_rules)
+        policy_enforcement._ENFORCER.set_rules(these_rules)
 
     def test_policy_called(self):
-        self.assertRaises(exception.ForbiddenAction, rules.enforce,
-                          self.credentials, "example:exist", {})
+        self.assertRaises(exception.ForbiddenAction,
+                          policy_enforcement.enforce, self.credentials,
+                          "example:exist", {})
 
     def test_not_found_policy_calls_default(self):
-        rules.enforce(self.credentials, "example:noexist", {})
+        policy_enforcement.enforce(self.credentials, "example:noexist", {})
 
     def test_default_not_found(self):
         new_default_rule = "default_noexist"
@@ -164,10 +172,11 @@ class DefaultPolicyTestCase(unit.TestCase):
         # as it is recreating the rules with its own default_rule instead
         # of the default_rule passed in from set_rules(). I think this is a
         # bug in Oslo policy.
-        rules._ENFORCER.default_rule = new_default_rule
+        policy_enforcement._ENFORCER.default_rule = new_default_rule
         self._set_rules(new_default_rule)
-        self.assertRaises(exception.ForbiddenAction, rules.enforce,
-                          self.credentials, "example:noexist", {})
+        self.assertRaises(exception.ForbiddenAction,
+                          policy_enforcement.enforce, self.credentials,
+                          "example:noexist", {})
 
 
 class PolicyJsonTestCase(unit.TestCase):
@@ -220,9 +229,10 @@ class PolicyJsonTestCase(unit.TestCase):
 
         # These keys are in the policy.json but aren't targets.
         policy_rule_keys = [
-            'admin_or_owner', 'admin_or_token_subject', 'admin_required',
-            'default', 'owner', 'service_admin_or_token_subject',
-            'service_or_admin', 'service_role', 'token_subject', ]
+            '_forbidden', 'admin_or_owner', 'admin_or_token_subject',
+            'admin_required', 'default', 'owner',
+            'service_admin_or_token_subject', 'service_or_admin',
+            'service_role', 'token_subject', ]
 
         def read_doc_targets():
             # Parse the doc/source/policy_mapping.rst file and return the

@@ -15,8 +15,10 @@
 import json
 import uuid
 
+from oslo_policy import policy as common_policy
 from six.moves import http_client
 
+from keystone.common import policy_enforcement
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
 
@@ -26,11 +28,23 @@ class PolicyTestCase(test_v3.RestfulTestCase):
 
     def setUp(self):
         super(PolicyTestCase, self).setUp()
+        self._set_policy()
         self.policy = unit.new_policy_ref()
         self.policy_id = self.policy['id']
         self.policy_api.create_policy(
             self.policy_id,
             self.policy.copy())
+
+    def _set_policy(self):
+        rules = {
+            "identity:get_policy": "role:admin or is_admin:1",
+            "identity:list_policies": "role:admin or is_admin:1",
+            "identity:create_policy": "role:admin or is_admin:1",
+            "identity:update_policy": "role:admin or is_admin:1",
+            "identity:delete_policy": "role:admin or is_admin:1",
+        }
+        policy_enforcement._ENFORCER.set_rules(
+            common_policy.Rules.from_dict(rules))
 
     # policy crud tests
 

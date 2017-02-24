@@ -12,9 +12,11 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+from oslo_policy import policy as common_policy
 from six.moves import http_client
 from testtools import matchers
 
+from keystone.common import policy_enforcement
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
 
@@ -32,6 +34,7 @@ class EndpointPolicyTestCase(test_v3.RestfulTestCase):
 
     def setUp(self):
         super(EndpointPolicyTestCase, self).setUp()
+        self._set_policy()
         self.policy = unit.new_policy_ref()
         self.policy_api.create_policy(self.policy['id'], self.policy)
         self.service = unit.new_service_ref()
@@ -42,6 +45,41 @@ class EndpointPolicyTestCase(test_v3.RestfulTestCase):
         self.catalog_api.create_endpoint(self.endpoint['id'], self.endpoint)
         self.region = unit.new_region_ref()
         self.catalog_api.create_region(self.region)
+
+    def _set_policy(self):
+        rules = {
+            "admin_required": "role:admin or is_admin:1",
+            "identity:get_policy": "rule:admin_required",
+            "identity:list_policies": "rule:admin_required",
+            "identity:create_policy": "rule:admin_required",
+            "identity:update_policy": "rule:admin_required",
+            "identity:delete_policy": "rule:admin_required",
+            "identity:delete_service": "rule:admin_required",
+            "identity:delete_endpoint": "rule:admin_required",
+            "identity:delete_region": "rule:admin_required",
+            "identity:create_policy_association_for_endpoint":
+                "rule:admin_required",
+            "identity:check_policy_association_for_endpoint":
+                "rule:admin_required",
+            "identity:delete_policy_association_for_endpoint":
+                "rule:admin_required",
+            "identity:create_policy_association_for_service":
+                "rule:admin_required",
+            "identity:check_policy_association_for_service":
+                "rule:admin_required",
+            "identity:delete_policy_association_for_service":
+                "rule:admin_required",
+            "identity:create_policy_association_for_region_and_service":
+                "rule:admin_required",
+            "identity:check_policy_association_for_region_and_service":
+                "rule:admin_required",
+            "identity:delete_policy_association_for_region_and_service":
+                "rule:admin_required",
+            "identity:get_policy_for_endpoint": "rule:admin_required",
+            "identity:list_endpoints_for_policy": "rule:admin_required",
+        }
+        policy_enforcement._ENFORCER.set_rules(
+            common_policy.Rules.from_dict(rules))
 
     def assert_head_and_get_return_same_response(self, url, expected_status):
         self.get(url, expected_status=expected_status)

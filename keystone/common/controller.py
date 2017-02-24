@@ -23,6 +23,7 @@ import six
 from keystone.common import authorization
 from keystone.common import dependency
 from keystone.common import driver_hints
+from keystone.common import policy_enforcement
 from keystone.common import utils
 from keystone.common import wsgi
 import keystone.conf
@@ -157,9 +158,8 @@ def protected(callback=None):
                 # Add in the kwargs, which means that any entity provided as a
                 # parameter for calls like create and update will be included.
                 policy_dict.update(kwargs)
-                self.policy_api.enforce(creds,
-                                        action,
-                                        utils.flatten_dict(policy_dict))
+                policy_enforcement.enforce(
+                    creds, action, utils.flatten_dict(policy_dict))
                 LOG.debug('RBAC: Authorization granted')
             return f(self, request, *args, **kwargs)
         return inner
@@ -225,9 +225,8 @@ def filterprotected(*filters, **callback):
                     for key in kwargs:
                         target[key] = kwargs[key]
 
-                    self.policy_api.enforce(creds,
-                                            action,
-                                            utils.flatten_dict(target))
+                    policy_enforcement.enforce(
+                        creds, action, utils.flatten_dict(target))
 
                     LOG.debug('RBAC: Authorization granted')
             else:
@@ -402,7 +401,7 @@ class V2Controller(wsgi.Application):
         return o
 
 
-@dependency.requires('policy_api', 'token_provider_api')
+@dependency.requires('token_provider_api')
 class V3Controller(wsgi.Application):
     """Base controller class for Identity API v3.
 
@@ -772,9 +771,8 @@ class V3Controller(wsgi.Application):
             policy_dict.update(prep_info['input_attr'])
             if 'filter_attr' in prep_info:
                 policy_dict.update(prep_info['filter_attr'])
-            self.policy_api.enforce(creds,
-                                    action,
-                                    utils.flatten_dict(policy_dict))
+            policy_enforcement.enforce(
+                creds, action, utils.flatten_dict(policy_dict))
             LOG.debug('RBAC: Authorization granted')
 
     @classmethod

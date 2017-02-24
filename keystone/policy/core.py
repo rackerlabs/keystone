@@ -14,6 +14,8 @@
 
 """Main entry point into the Policy service."""
 
+from oslo_log import versionutils
+
 from keystone.common import dependency
 from keystone.common import manager
 import keystone.conf
@@ -39,6 +41,14 @@ class Manager(manager.Manager):
 
     def __init__(self):
         super(Manager, self).__init__(CONF.policy.driver)
+
+    @versionutils.deprecated(
+        as_of=versionutils.deprecated.PIKE,
+        in_favor_of='keystone.common.policy_enforcement.enforce',
+        remove_in=0,
+        what='policy_api.enforce')
+    def enforce(self, credentials, action, target):
+        return self.driver.enforce(credentials, action, target)
 
     def create_policy(self, policy_id, policy, initiator=None):
         ref = self.driver.create_policy(policy_id, policy)

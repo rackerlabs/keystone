@@ -340,38 +340,18 @@ contain the matches. For example:
   credentials = {'user_id': 'foo', 'is_admin': 1, 'roles': ['nova:netadmin']}
 
   # An admin only call:
-  policy_api.enforce(('is_admin:1',), credentials)
+  keystone.common.policy_enforcement.enforce(('is_admin:1',), credentials)
 
   # An admin or owner call:
-  policy_api.enforce(('is_admin:1', 'user_id:foo'), credentials)
+   keystone.common.policy_enforcement.enforce(('is_admin:1', 'user_id:foo'), credentials)
 
   # A netadmin call:
-  policy_api.enforce(('roles:nova:netadmin',), credentials)
+   keystone.common.policy_enforcement.enforce(('roles:nova:netadmin',), credentials)
 
 Credentials are generally built from the user metadata in the 'extras' part
 of the Identity API. So, adding a 'role' to the user just means adding the role
 to the user metadata.
 
-
-Capability RBAC
----------------
-
-(Not yet implemented.)
-
-Another approach to authorization can be action-based, with a mapping of roles
-to which capabilities are allowed for that role. For example:
-
-.. code-block:: python
-
-  credentials = {'user_id': 'foo', 'is_admin': 1, 'roles': ['nova:netadmin']}
-
-  # add a policy
-  policy_api.add_policy('action:nova:add_network', ('roles:nova:netadmin',))
-
-  policy_api.enforce(('action:nova:add_network',), credentials)
-
-In the backend this would look up the policy for 'action:nova:add_network' and
-then do what is effectively a 'Simple Match' style match against the credentials.
 
 Approach to Authentication
 ==========================
