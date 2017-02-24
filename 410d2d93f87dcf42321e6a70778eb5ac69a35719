@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_e3fb2045",
+        "filename": "keystone/common/policies/access_token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-02-24T18:39:28Z",
+      "side": 1,
+      "message": "Since these policies along with the consumers policy all tie to */OS-OAUTH1/* APIs should they be gathered into 1 policy group named ``oauth1_policies``?",
+      "revId": "410d2d93f87dcf42321e6a70778eb5ac69a35719",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
