@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_f984ba0b",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-24T15:47:02Z",
+      "side": 1,
+      "message": "extra whitespace here",
+      "range": {
+        "startLine": 173,
+        "startChar": 10,
+        "endLine": 173,
+        "endChar": 11
+      },
+      "revId": "3ecdffa811c21dc025c9200f7a23e924306b91c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_99b9fece",
+        "filename": "doc/source/federation/mellon.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-24T15:47:02Z",
+      "side": 1,
+      "message": "extra whitespace",
+      "range": {
+        "startLine": 102,
+        "startChar": 19,
+        "endLine": 102,
+        "endChar": 20
+      },
+      "revId": "3ecdffa811c21dc025c9200f7a23e924306b91c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_59c4e63e",
+        "filename": "doc/source/federation/mellon.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-24T15:47:02Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 103,
+        "startChar": 38,
+        "endLine": 103,
+        "endChar": 39
+      },
+      "revId": "3ecdffa811c21dc025c9200f7a23e924306b91c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_b9e322d8",
+        "filename": "doc/source/federation/mellon.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-24T15:47:02Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 105,
+        "startChar": 8,
+        "endLine": 105,
+        "endChar": 9
+      },
+      "revId": "3ecdffa811c21dc025c9200f7a23e924306b91c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
