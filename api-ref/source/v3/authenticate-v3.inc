@@ -550,7 +550,7 @@ Request
 .. rest_parameters:: parameters.yaml
 
    - X-Auth-Token: X-Auth-Token
-   - X-Subject-Token: X-Subject-Token
+   - X-Subject-Token: X-Subject-Token_not_required
 
 Response Parameters
 -------------------
