@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_24029e0a",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2017-02-24T19:30:43Z",
+      "side": 1,
+      "message": "if the change below works, we can delete these lines - since I added these to get round the case that for a domain scoped token, is_admin_project was not defined.",
+      "range": {
+        "startLine": 197,
+        "startChar": 8,
+        "endLine": 199,
+        "endChar": 24
+      },
+      "revId": "9632a002ae8c13c590995453faf3901bff8b49de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
