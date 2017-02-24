@@ -122,12 +122,11 @@ and `role assignments
 both of which are exposed to the CLI via `python-openstackclient
 <https://pypi.python.org/pypi/python-openstackclient/>`_.
 
-For example, create a new domain and project like this:
+For example, create a new domain:
 
 .. code-block:: bash
 
     $ openstack domain create federated_domain
-    $ openstack project create federated_project --domain federated_domain
 
 And a new group like this:
 
@@ -135,12 +134,11 @@ And a new group like this:
 
     $ openstack group create federated_users
 
-Add the group to the domain and project:
+Add the group to the domain:
 
 .. code-block:: bash
 
     $ openstack role add --group federated_users --domain federated_domain Member
-    $ openstack role add --group federated_users --project federated_project Member
 
 We'll later add a mapping that makes all federated users a part of this group
 and therefore members of the new domain.
