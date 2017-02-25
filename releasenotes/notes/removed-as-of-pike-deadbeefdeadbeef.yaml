@@ -26,3 +26,7 @@ other:
     value set to "true" in the user's ``options`` attribute (e.g.
     ``user['options']['ignore_password_expiry'] = True``) with a user update
     call.
+  - >
+    [`blueprint removed-as-of-pike <https://blueprints.launchpad.net/keystone/+spec/removed-as-of-pike>`_]
+    The ``keystone.common.ldap`` module was removed from the code tree. Use
+    ``keystone.identity.backends.ldap.common`` which has the same functionality.
