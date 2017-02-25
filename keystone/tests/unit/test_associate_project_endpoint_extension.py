@@ -27,7 +27,7 @@ class EndpointFilterTestCase(test_v3.RestfulTestCase):
     def config_overrides(self):
         super(EndpointFilterTestCase, self).config_overrides()
         self.config_fixture.config(
-            group='catalog', driver='endpoint_filter.sql')
+            group='catalog', driver='sql')
 
     def setUp(self):
         super(EndpointFilterTestCase, self).setUp()
