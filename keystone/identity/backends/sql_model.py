@@ -20,6 +20,7 @@ from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy import orm
 from sqlalchemy.orm import collections
 
+from keystone.common import password_hashing
 from keystone.common import resource_options
 from keystone.common import sql
 import keystone.conf
@@ -33,7 +34,7 @@ class User(sql.ModelBase, sql.DictBase):
     __tablename__ = 'user'
     attributes = ['id', 'name', 'domain_id', 'password', 'enabled',
                   'default_project_id', 'password_expires_at']
-    readonly_attributes = ['id', 'password_expires_at']
+    readonly_attributes = ['id', 'password_expires_at', 'password']
     resource_options_registry = iro.USER_OPTIONS_REGISTRY
     id = sql.Column(sql.String(64), primary_key=True)
     domain_id = sql.Column(sql.String(64), nullable=False)
@@ -105,7 +106,10 @@ class User(sql.ModelBase, sql.DictBase):
     def password(self):
         """Return the current password."""
         if self.password_ref:
-            return self.password_ref.password
+            if self.password_ref.password_hash is not None:
+                return self.password_ref.password_hash
+            else:
+                return self.password_ref.password
         return None
 
     @property
@@ -125,7 +129,7 @@ class User(sql.ModelBase, sql.DictBase):
     @property
     def password_is_expired(self):
         """Return whether password is expired or not."""
-        if self.password_expires_at:
+        if self.password_expires_at and not self._password_expiry_exempt():
             return datetime.datetime.utcnow() >= self.password_expires_at
         return False
 
@@ -143,13 +147,30 @@ class User(sql.ModelBase, sql.DictBase):
             if not ref.expires_at or ref.expires_at > now:
                 ref.expires_at = now
         new_password_ref = Password()
-        new_password_ref.password = value
+
+        hashed_passwd = None
+        hashed_compat = None
+        if value is not None:
+            # NOTE(notmorgan): hash the passwords, never directly bind the
+            # "value" in the unhashed form to hashed_passwd or hashed_compat
+            # to ensure the unhashed password cannot end up in the db. If an
+            # unhashed password ends up in the DB, it cannot be used for auth,
+            # it is however incorrect and could leak user credentials (due to
+            # users doing insecure things such as sharing passwords across
+            # different systems) to unauthorized parties.
+            hashed_passwd = password_hashing.hash_password(value)
+
+            # TODO(notmorgan): Remove this compat code in Q release.
+            if CONF.identity.rolling_upgrade_password_hash_compat:
+                hashed_compat = password_hashing.hash_password_compat(value)
+
+        new_password_ref.password_hash = hashed_passwd
+        new_password_ref.password = hashed_compat
         new_password_ref.created_at = now
         new_password_ref.expires_at = self._get_password_expires_at(now)
         self.local_user.passwords.append(new_password_ref)
 
-    def _get_password_expires_at(self, created_at):
-        expires_days = CONF.security_compliance.password_expires_days
+    def _password_expiry_exempt(self):
         # NOTE(notmorgan): This option is deprecated and subject to removal
         # in a future release.
         ignore_list = CONF.security_compliance.password_expires_ignore_user_ids
@@ -168,7 +189,12 @@ class User(sql.ModelBase, sql.DictBase):
             self.get_resource_option(iro.IGNORE_PASSWORD_EXPIRY_OPT.option_id),
             'option_value',
             False)
-        if (self.id not in ignore_list) and not ignore_pw_expiry:
+
+        return (self.id in ignore_list) or ignore_pw_expiry
+
+    def _get_password_expires_at(self, created_at):
+        expires_days = CONF.security_compliance.password_expires_days
+        if not self._password_expiry_exempt():
             if expires_days:
                 expired_date = (created_at +
                                 datetime.timedelta(days=expires_days))
@@ -281,12 +307,17 @@ class LocalUser(sql.ModelBase, sql.DictBase):
 
 class Password(sql.ModelBase, sql.DictBase):
     __tablename__ = 'password'
-    attributes = ['id', 'local_user_id', 'password', 'created_at',
-                  'expires_at']
+    attributes = ['id', 'local_user_id', 'password', 'password_hash',
+                  'created_at', 'expires_at']
     id = sql.Column(sql.Integer, primary_key=True)
     local_user_id = sql.Column(sql.Integer, sql.ForeignKey('local_user.id',
                                ondelete='CASCADE'))
+    # TODO(notmorgan): in the Q release the "password" field can be dropped as
+    # long as data migration exists to move the hashes over to the
+    # password_hash column if no value is in the password_hash column.
     password = sql.Column(sql.String(128), nullable=True)
+    password_hash = sql.Column(sql.String(255), nullable=True)
+
     # created_at default set here to safe guard in case it gets missed
     created_at = sql.Column(sql.DateTime, nullable=False,
                             default=datetime.datetime.utcnow)
