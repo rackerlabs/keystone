@@ -367,19 +367,27 @@ projects and domains that are accessible.
 Read more about `listing resources
 <https://developer.openstack.org/api-ref/identity/v3-ext/#list-projects-a-federated-user-can-access>`__.
 
-~~~~~~~~~~~~
-Example cURL
-~~~~~~~~~~~~
+~~~~~~~
+Example
+~~~~~~~
 
 .. code-block:: bash
 
-    $ curl -X GET -H "X-Auth-Token: <unscoped token>" http://localhost:5000/v3/OS-FEDERATION/projects
+    $ OS_AUTH_TYPE=token
+    $ OS_IDENTITY_API_VERSION=3
+    $ OS_TOKEN=<unscoped token>
+    $ OS_AUTH_URL=http://localhost:5000/v3
+    $ openstack federation project list
 
 or
 
 .. code-block:: bash
 
-    $ curl -X GET -H "X-Auth-Token: <unscoped token>" http://localhost:5000/v3/OS-FEDERATION/domains
+    $ OS_AUTH_TYPE=token
+    $ OS_IDENTITY_API_VERSION=3
+    $ OS_TOKEN=<unscoped token>
+    $ OS_AUTH_URL=http://localhost:5000/v3
+    $ openstack federation domain list
 
 Get a scoped token
 ~~~~~~~~~~~~~~~~~~
@@ -391,13 +399,19 @@ sufficient to uniquely identify a project or domain.
 Read more about `getting a scoped token
 <https://developer.openstack.org/api-ref/identity/v3-ext/#request-a-scoped-os-federation-token>`__.
 
-~~~~~~~~~~~~
-Example cURL
-~~~~~~~~~~~~
+~~~~~~~
+Example
+~~~~~~~
 
 .. code-block:: bash
 
-    $ curl -X POST -H "Content-Type: application/json" -d '{"auth":{"identity":{"methods":["mapped"],"mapped":{"id":"<unscoped_token_id>"}},"scope":{"project":{"domain": {"name": "federated_domain"},"name":"federated_project"}}}}' -D - http://localhost:5000/v3/auth/tokens
+    $ OS_AUTH_TYPE=token
+    $ OS_IDENTITY_API_VERSION=3
+    $ OS_TOKEN=<unscoped token>
+    $ OS_AUTH_URL=http://localhost:5000/v3
+    $ OS_PROJECT_DOMAIN_NAME=federated_domain
+    $ OS_PROJECT_NAME=federated_project
+    $ openstack token issue
 
 --------------------------------------
 Keystone as an Identity Provider (IdP)
