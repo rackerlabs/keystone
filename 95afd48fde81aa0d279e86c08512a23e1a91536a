@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_5788eec6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-02-27T19:28:56Z",
+      "side": 1,
+      "message": "I like this change, although I think the original reasoning was to reflect that we support multiple IdP\u0027s. Still, this should make it easier to translate to/from upstream docs in the future.",
+      "revId": "95afd48fde81aa0d279e86c08512a23e1a91536a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
