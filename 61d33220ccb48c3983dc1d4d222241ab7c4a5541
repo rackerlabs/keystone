@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_a0dabe15",
+        "filename": "keystone/common/policies/ec2_credential.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-27T21:05:07Z",
+      "side": 1,
+      "message": "Based on the values being removed from policy.json, shouldn\u0027t this be base.RULE_ADMIN_OR_OWNER ?",
+      "revId": "61d33220ccb48c3983dc1d4d222241ab7c4a5541",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_20fdee6e",
+        "filename": "keystone/common/policies/ec2_credential.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-27T21:05:07Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "61d33220ccb48c3983dc1d4d222241ab7c4a5541",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
