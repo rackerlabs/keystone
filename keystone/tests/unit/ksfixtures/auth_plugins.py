@@ -41,8 +41,8 @@ class LoadAuthPlugins(fixtures.Fixture):
         super(LoadAuthPlugins, self).__init__()
         self.method_names = method_names
         # NOTE(dstanek): This fixutre will load the requested auth
-        # methods as part of its setup. We need to save any exising
-        # plugins so that we care restore the in the cleanup.
+        # methods as part of its setup. We need to save any existing
+        # plugins so that we can restore them in the cleanup.
         self.saved = {}
 
     def setUp(self):
