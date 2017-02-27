@@ -18,6 +18,7 @@ from oslo_db import api as oslo_db_api
 import sqlalchemy
 
 from keystone.common import driver_hints
+from keystone.common import password_hashing
 from keystone.common import resource_options
 from keystone.common import sql
 from keystone.common import utils
@@ -125,7 +126,7 @@ class Identity(base.IdentityDriverBase):
 
     @sql.handle_conflicts(conflict_type='user')
     def create_user(self, user_id, user):
-        user = utils.hash_user_password(user)
+        user = password_hashing.hash_user_password(user)
         with sql.session_for_write() as session:
             user_ref = model.User.from_dict(user)
             if self._change_password_required(user_ref):
@@ -206,7 +207,7 @@ class Identity(base.IdentityDriverBase):
         with sql.session_for_write() as session:
             user_ref = self._get_user(session, user_id)
             old_user_dict = user_ref.to_dict()
-            user = utils.hash_user_password(user)
+            user = password_hashing.hash_user_password(user)
             for k in user:
                 old_user_dict[k] = user[k]
             new_user = model.User.from_dict(old_user_dict)
