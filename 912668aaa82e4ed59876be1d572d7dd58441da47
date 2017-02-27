@@ -22,6 +22,30 @@
       "revId": "912668aaa82e4ed59876be1d572d7dd58441da47",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_de424a67",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-02-27T12:28:27Z",
+      "side": 1,
+      "message": "You\u0027re right, thanks",
+      "parentUuid": "da36d5c6_dedb2a4d",
+      "range": {
+        "startLine": 376,
+        "startChar": 0,
+        "endLine": 379,
+        "endChar": 42
+      },
+      "revId": "912668aaa82e4ed59876be1d572d7dd58441da47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
