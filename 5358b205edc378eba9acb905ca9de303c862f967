@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_b7020a0a",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-27T20:54:22Z",
+      "side": 1,
+      "message": "Very nice. Now we could go through and audit the existing controllers to see if they are requiring the policy_api only for this function and remove it.",
+      "revId": "5358b205edc378eba9acb905ca9de303c862f967",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_801cda14",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-27T20:54:22Z",
+      "side": 1,
+      "message": "Based on what I can tell, this is only here for testing purposes. We should add a doc string in a subsequent patch explaining that.",
+      "revId": "5358b205edc378eba9acb905ca9de303c862f967",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
