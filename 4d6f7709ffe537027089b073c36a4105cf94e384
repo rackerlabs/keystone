@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_d7bdbfd8",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-02-27T19:15:49Z",
+      "side": 1,
+      "message": "nit: is",
+      "range": {
+        "startLine": 264,
+        "startChar": 36,
+        "endLine": 264,
+        "endChar": 38
+      },
+      "revId": "4d6f7709ffe537027089b073c36a4105cf94e384",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_b7b4cbd4",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-02-27T19:15:49Z",
+      "side": 1,
+      "message": "contract",
+      "range": {
+        "startLine": 267,
+        "startChar": 58,
+        "endLine": 267,
+        "endChar": 64
+      },
+      "revId": "4d6f7709ffe537027089b073c36a4105cf94e384",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_37245bc5",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-02-27T19:15:49Z",
+      "side": 1,
+      "message": "nit: Not sure I agree with the choice of variable name here. ``current`` and ``previous`` is very ambiguous, especially when referring to upgrading (and since it\u0027s not really current but the upgrade target version). Something like ``target_repo_version`` and ``dependency_repo_version`` might be better.",
+      "range": {
+        "startLine": 283,
+        "startChar": 4,
+        "endLine": 283,
+        "endChar": 12
+      },
+      "revId": "4d6f7709ffe537027089b073c36a4105cf94e384",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
