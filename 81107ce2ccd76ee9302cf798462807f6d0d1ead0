@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_11f22206",
+        "filename": "keystone/token/_simple_cert.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-02-27T02:43:30Z",
+      "side": 0,
+      "message": "not sure if we can remove these, i don\u0027t see a deprecation period anywhere here, and we are now removing an API, shouldn\u0027t we keep the API alive and return something saying it\u0027s been removed (rather than a 404).",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 70
+      },
+      "revId": "81107ce2ccd76ee9302cf798462807f6d0d1ead0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
