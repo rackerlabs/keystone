@@ -68,6 +68,30 @@
       "revId": "59daccbbcd5bcd9e5b817d3afc981a536554c8d3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_948fe073",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-02-27T03:38:32Z",
+      "side": 1,
+      "message": "We will still need \"X-Subject-Token\" here for the other API calls that do require/use it.",
+      "parentUuid": "da36d5c6_315ac6f2",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 14
+      },
+      "revId": "59daccbbcd5bcd9e5b817d3afc981a536554c8d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
