@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "da36d5c6_12712de1",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-02-27T19:19:16Z",
+      "side": 1,
+      "message": "is*",
+      "range": {
+        "startLine": 264,
+        "startChar": 36,
+        "endLine": 264,
+        "endChar": 38
+      },
+      "revId": "4d6f7709ffe537027089b073c36a4105cf94e384",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_b7b4cbd4",
         "filename": "keystone/common/sql/upgrades.py",
         "patchSetId": 3
@@ -41,6 +64,29 @@
         "startChar": 58,
         "endLine": 267,
         "endChar": 64
+      },
+      "revId": "4d6f7709ffe537027089b073c36a4105cf94e384",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_d5293f8b",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-02-27T19:19:16Z",
+      "side": 1,
+      "message": "I\u0027d consider rewording this so it\u0027s more clear which expand, migrate, and contract sync versions need to run when.",
+      "range": {
+        "startLine": 266,
+        "startChar": 61,
+        "endLine": 267,
+        "endChar": 65
       },
       "revId": "4d6f7709ffe537027089b073c36a4105cf94e384",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
