@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_dedb2a4d",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2017-02-27T12:10:26Z",
+      "side": 1,
+      "message": "i think this is wrong: http://paste.openstack.org/show/600590/\nThe variables need to be right before the command or export should be used",
+      "range": {
+        "startLine": 376,
+        "startChar": 0,
+        "endLine": 379,
+        "endChar": 42
+      },
+      "revId": "912668aaa82e4ed59876be1d572d7dd58441da47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
