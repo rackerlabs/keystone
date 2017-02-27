@@ -22,6 +22,30 @@
       "revId": "16d696120565284fcfb254276932650d1370bd1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_9d1fe5b6",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-02-27T20:35:59Z",
+      "side": 1,
+      "message": "You\u0027re right, it was doing exactly that. The correct auth type here is actually token_endpoint which openstackclient will detect correctly if we use OS_URL instead of OS_AUTH_URL. We still need the token auth type later to scope the token.",
+      "parentUuid": "da36d5c6_68f19695",
+      "range": {
+        "startLine": 376,
+        "startChar": 13,
+        "endLine": 376,
+        "endChar": 31
+      },
+      "revId": "16d696120565284fcfb254276932650d1370bd1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
