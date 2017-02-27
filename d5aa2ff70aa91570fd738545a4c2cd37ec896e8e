@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_78ededee",
+        "filename": "releasenotes/notes/v2-dep-d6e7ab2d08119549.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-02-27T15:27:49Z",
+      "side": 1,
+      "message": "NIT: Whitespace.",
+      "range": {
+        "startLine": 5,
+        "startChar": 94,
+        "endLine": 5,
+        "endChar": 95
+      },
+      "revId": "d5aa2ff70aa91570fd738545a4c2cd37ec896e8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
