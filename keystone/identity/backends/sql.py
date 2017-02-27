@@ -18,9 +18,9 @@ from oslo_db import api as oslo_db_api
 import sqlalchemy
 
 from keystone.common import driver_hints
+from keystone.common import password_hashing
 from keystone.common import resource_options
 from keystone.common import sql
-from keystone.common import utils
 import keystone.conf
 from keystone import exception
 from keystone.i18n import _
@@ -52,7 +52,7 @@ class Identity(base.IdentityDriverBase):
         https://blueprints.launchpad.net/keystone/+spec/sql-identiy-pam
 
         """
-        return utils.check_password(password, user_ref.password)
+        return password_hashing.check_password(password, user_ref.password)
 
     # Identity interface
     def authenticate(self, user_id, password):
@@ -125,7 +125,7 @@ class Identity(base.IdentityDriverBase):
 
     @sql.handle_conflicts(conflict_type='user')
     def create_user(self, user_id, user):
-        user = utils.hash_user_password(user)
+        user = password_hashing.hash_user_password(user)
         with sql.session_for_write() as session:
             user_ref = model.User.from_dict(user)
             if self._change_password_required(user_ref):
@@ -206,7 +206,7 @@ class Identity(base.IdentityDriverBase):
         with sql.session_for_write() as session:
             user_ref = self._get_user(session, user_id)
             old_user_dict = user_ref.to_dict()
-            user = utils.hash_user_password(user)
+            user = password_hashing.hash_user_password(user)
             for k in user:
                 old_user_dict[k] = user[k]
             new_user = model.User.from_dict(old_user_dict)
@@ -238,7 +238,8 @@ class Identity(base.IdentityDriverBase):
         # Validate the new password against the remaining passwords.
         if unique_cnt > 1:
             for password_ref in user_ref.local_user.passwords:
-                if utils.check_password(password, password_ref.password):
+                if password_hashing.check_password(password,
+                                                   password_ref.password):
                     raise exception.PasswordHistoryValidationError(
                         unique_count=unique_cnt)
 
@@ -248,7 +249,7 @@ class Identity(base.IdentityDriverBase):
             if user_ref.password_ref and user_ref.password_ref.self_service:
                 self._validate_minimum_password_age(user_ref)
             self._validate_password_history(new_password, user_ref)
-            user_ref.password = utils.hash_password(new_password)
+            user_ref.password = password_hashing.hash_password(new_password)
             user_ref.password_ref.self_service = True
 
     def _validate_minimum_password_age(self, user_ref):

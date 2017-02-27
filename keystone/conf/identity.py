@@ -109,6 +109,56 @@ Maximum number of entities that will be returned in an identity collection.
 """))
 
 
+password_hash_algorithm = cfg.StrOpt(
+    'password_hash_algorithm',
+    choices=['bcrypt', 'scrypt'],
+    default='bcrypt',
+    help=utils.fmt("""
+The password hashing algorithm to use for passwords stored within keystone.
+"""))
+
+password_hash_rounds = cfg.IntOpt(
+    'password_hash_rounds',
+    min=4,
+    max=31,
+    help=utils.fmt("""
+This option represents a trade off between security and performance. Higher
+values lead to slower performance, but higher security. Changing this option
+will only affect newly created passwords as existing password hashes already
+have a fixed number of rounds applied, so it is safe to tune this option in a
+running cluster.
+
+The default in passlib for bcrypt is 12.
+The default in passlib for scrypt is 16.
+
+WARNING: If using scrypt, increasing this value increases BOTH time AND
+memory requirements to hash a password.
+"""))
+
+scrypt_salt_bytesize = cfg.IntOpt(
+    'scrypt_salt_bytesize',
+    min=0,
+    max=1024,
+    help=utils.fmt("""
+Number of bytes to use in scrypt hashing salt. Default in passlib is 16 bytes.
+"""))
+
+scrypt_block_size = cfg.IntOpt(
+    'scrypt_block_size',
+    help=utils.fmt("""
+Optional block size to pass to scrypt hash function (the ``r`` parameter).
+Useful for tuning scrypt to optimal performance for your CPU architecture.
+Defaults in passlib to 8.
+"""))
+
+scrypt_paralellism = cfg.IntOpt(
+    'scrypt_parallelism',
+    help=utils.fmt("""
+Optional parallelism to pass to scrypt hash function (the ``p`` parameter).
+Defaults in passlib to 1
+"""))
+
+
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
     default_domain_id,
@@ -120,6 +170,11 @@ ALL_OPTS = [
     cache_time,
     max_password_length,
     list_limit,
+    password_hash_algorithm,
+    password_hash_rounds,
+    scrypt_block_size,
+    scrypt_paralellism,
+    scrypt_salt_bytesize,
 ]
 
 
