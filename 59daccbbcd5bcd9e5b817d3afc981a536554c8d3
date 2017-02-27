@@ -22,6 +22,52 @@
       "revId": "59daccbbcd5bcd9e5b817d3afc981a536554c8d3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_b1e1562c",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 24903
+      },
+      "writtenOn": "2017-02-27T02:48:48Z",
+      "side": 1,
+      "message": "\"X-Subject-Token\" is not required, you can remove it directly.",
+      "range": {
+        "startLine": 553,
+        "startChar": 22,
+        "endLine": 553,
+        "endChar": 50
+      },
+      "revId": "59daccbbcd5bcd9e5b817d3afc981a536554c8d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_315ac6f2",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 24903
+      },
+      "writtenOn": "2017-02-27T02:48:48Z",
+      "side": 1,
+      "message": "\"X-Subject-Token\" is not required, I suggest remove \"X-Subject-Token\" and \"X-Subject-Token_not_required\" directly.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 14
+      },
+      "revId": "59daccbbcd5bcd9e5b817d3afc981a536554c8d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
