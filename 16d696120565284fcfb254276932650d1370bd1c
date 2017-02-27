@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_68f19695",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2017-02-27T17:11:54Z",
+      "side": 1,
+      "message": "i am not sure that this is the equivalent of what was in the docs before. I am afraid that osc will take this token, request another token and then will use it to fetch the resource.\n\nCould you please set these variables, run `openstack federation project list --debug` and post output somewhere? If no, i will do it myself, but a little later, probably tomorrow.",
+      "range": {
+        "startLine": 376,
+        "startChar": 13,
+        "endLine": 376,
+        "endChar": 31
+      },
+      "revId": "16d696120565284fcfb254276932650d1370bd1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
