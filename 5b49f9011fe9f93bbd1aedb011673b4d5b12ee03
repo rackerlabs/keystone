@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_91cfdeb2",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-02-28T14:26:33Z",
+      "side": 1,
+      "message": "command\u0027s",
+      "range": {
+        "startLine": 268,
+        "startChar": 4,
+        "endLine": 268,
+        "endChar": 11
+      },
+      "revId": "5b49f9011fe9f93bbd1aedb011673b4d5b12ee03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
