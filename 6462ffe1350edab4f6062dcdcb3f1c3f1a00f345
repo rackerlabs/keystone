@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_001c6a76",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-02-28T21:47:06Z",
+      "side": 1,
+      "message": "We should synergize our policy so that we can enforce policy via policy!",
+      "revId": "6462ffe1350edab4f6062dcdcb3f1c3f1a00f345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
