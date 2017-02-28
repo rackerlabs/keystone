@@ -55,6 +55,20 @@ WHITELISTED_PROPERTIES = [
 RESOURCE_ID_NAMESPACE = uuid.UUID('4332ecab-770b-4288-a680-b9aca3b1b153')
 
 
+SUPPORTED_HASHERS = frozenset([passlib.hash.pbkdf2_sha512,
+                               passlib.hash.sha512_crypt])
+# NOTE(notmorgan): Build the list of prefixes. All hashed passwords are
+# '$<ident>$<metadata>$<hash>') so we can do a fast-lookup on the hasher to
+# use. If has hasher has multiple ident options it is encoded in the
+# .ident_values attribute whereas hashers that have a single option
+# (sha512_crypt) only has the .ident attribute. This is only used for
+# verification of passwords, not for actual hashing.
+_HASHER_IDENT_MAP = {}
+for mod in SUPPORTED_HASHERS:
+    for prefix in getattr(mod, 'ident_valuse', (mod.ident,)):
+        _HASHER_IDENT_MAP[prefix] = mod
+
+
 def resource_uuid(value):
     """Convert input to valid UUID hex digits."""
     try:
@@ -129,11 +143,19 @@ def hash_user_password(user):
     return dict(user, password=hash_password(password))
 
 
+def _get_hasher_based_on_ident(hashed_pw):
+    ident = hashed_pw[0:hashed_pw.index('$', 1) + 1]
+    try:
+        return _HASHER_IDENT_MAP[ident]
+    except KeyError:
+        raise ValueError(_('Unknown password hasher for ident %s') % ident)
+
+
 def hash_password(password):
     """Hash a password. Hard."""
     password_utf8 = verify_length_and_trunc_password(password).encode('utf-8')
-    return passlib.hash.sha512_crypt.hash(
-        password_utf8, rounds=CONF.crypt_strength)
+    params = {'rounds': CONF.crypt_strength}
+    return passlib.hash.pbkdf2_sha512.using(**params).hash(password_utf8)
 
 
 def check_password(password, hashed):
@@ -146,7 +168,8 @@ def check_password(password, hashed):
     if password is None or hashed is None:
         return False
     password_utf8 = verify_length_and_trunc_password(password).encode('utf-8')
-    return passlib.hash.sha512_crypt.verify(password_utf8, hashed)
+    hasher = _get_hasher_based_on_ident(hashed)
+    return hasher.verify(password_utf8, hashed)
 
 
 def attr_as_boolean(val_attr):

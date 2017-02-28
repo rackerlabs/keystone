@@ -18,6 +18,7 @@ import uuid
 import freezegun
 from oslo_config import fixture as config_fixture
 from oslo_log import log
+import passlib.hash
 import six
 
 from keystone.common import fernet_utils
@@ -77,6 +78,18 @@ class UtilsTestCase(unit.BaseTestCase):
         hashed = common_utils.hash_password(password)
         self.assertTrue(common_utils.check_password(password, hashed))
         self.assertFalse(common_utils.check_password(wrong, hashed))
+
+    def test_password_verify_sha512_crypt(self):
+        password = uuid.uuid4().hex
+        hashed = passlib.hash.sha512_crypt.hash(
+            password, rounds=CONF.crypt_strength)
+        common_utils.check_password(password, hashed)
+
+    def test_password_verify_unknown_ident(self):
+        password = uuid.uuid4().hex
+        hashed = passlib.hash.pbkdf2_sha1.hash(password)
+        self.assertRaises(ValueError, common_utils.check_password,
+                          password, hashed)
 
     def test_verify_normal_password_strict(self):
         self.config_fixture.config(strict_password_check=False)
