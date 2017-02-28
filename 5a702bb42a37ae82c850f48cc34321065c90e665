@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_25ca6950",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-02-28T16:36:06Z",
+      "side": 1,
+      "message": "It would be interesting to investigate if it\u0027s worth it to programmatically compose rules with OR. Like for example a function ``any_of(rule1, rule2)`` which would compose the string \"rule1 or rule2\", ``any_of(RULE_ADMIN, TARGET_DOMAIN)`` would create the string as defined in ``RULE_ADMIN_OR_TARGET_DOMAIN``. This might simplify composition of rules in the long run.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 67
+      },
+      "revId": "5a702bb42a37ae82c850f48cc34321065c90e665",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
