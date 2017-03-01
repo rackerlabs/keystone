@@ -359,6 +359,29 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_5a729aae",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-03-01T20:49:23Z",
+      "side": 1,
+      "message": "This isn\u0027t entirely testing replace, but only the first element of the federated array. Remove the indices or check the length also.",
+      "range": {
+        "startLine": 376,
+        "startChar": 8,
+        "endLine": 376,
+        "endChar": 59
+      },
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_7acf5e7f",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 28
@@ -387,6 +410,29 @@
       "writtenOn": "2017-03-01T20:40:36Z",
       "side": 1,
       "message": "Same comment here as in the previous testing module.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_b7772f39",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1252,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-03-01T20:49:23Z",
+      "side": 1,
+      "message": "Is this copy really necessary? You\u0027re not modifying the object, just comparing it.",
+      "range": {
+        "startLine": 1252,
+        "startChar": 32,
+        "endLine": 1252,
+        "endChar": 38
+      },
       "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -444,6 +490,29 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_17163ba7",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1299,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-03-01T20:49:23Z",
+      "side": 1,
+      "message": "Again, this seems unnecessary.",
+      "range": {
+        "startLine": 1299,
+        "startChar": 37,
+        "endLine": 1299,
+        "endChar": 43
+      },
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_baae3683",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 28
@@ -455,6 +524,29 @@
       "writtenOn": "2017-03-01T20:40:36Z",
       "side": 1,
       "message": "Same comment here as in the previous testing module.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_572a732d",
+        "filename": "releasenotes/notes/extending-federated-users-to-the-user-api-71eda9958337b14a.yaml",
+        "patchSetId": 28
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-03-01T20:49:23Z",
+      "side": 1,
+      "message": "nit: to",
+      "range": {
+        "startLine": 12,
+        "startChar": 8,
+        "endLine": 12,
+        "endChar": 9
+      },
       "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
