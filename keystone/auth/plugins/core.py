@@ -71,9 +71,7 @@ def convert_integer_to_method_list(method_int):
         return []
 
     method_map = construct_method_map_from_config()
-    method_ints = []
-    for k, v in method_map.items():
-        method_ints.append(k)
+    method_ints = method_map.keys()
     method_ints.sort(reverse=True)
 
     confirmed_methods = []
