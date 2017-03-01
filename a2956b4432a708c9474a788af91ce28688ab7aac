@@ -1,0 +1,463 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_a530dc02",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 909,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "I\u0027d recommend using either single quotes or double quotes consistently.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_c52b1093",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 911,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_d75e6311",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 914,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "This is creating a shadow user based on the federated attributes. The current name makes it seem like we\u0027re creating identity providers/protocols/mappings/etc...",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_a5829c92",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "Hmm I wonder if we could loop this in to our jsonschema validation layer. If user[\u0027federated\u0027] is in the request, is must not be empty (or something like that). It should totally be optional, but it just should be empty if it is included.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_654c2443",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "s/\"// ?",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_b791ef9b",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1095,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "This is a duplicated check from above. If we somehow work this into the schema for users, we could reuse it for both create and update requests.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_17d47b45",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "Is there a way to tell jsonschema that if this is in the request, it must be populated? Maybe something like this: http://json-schema.org/latest/json-schema-validation.html#rfc.section.5.14\n\nThat means we could remove that extra if statement from keystone/identity/core.py and leave more validation up to jsonschema.\n\n\n  \u0027federated\u0027: {\n      \u0027type\u0027: \u0027array\u0027,\n      \u0027minProperties\u0027: 1,\n      ...\n\nAlso, the convention in this file seems to be using single quotes.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_d79bc370",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "Unrelated whitespace change?",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_979f8b4f",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "Is there a specific reason to pull the user reference out into it\u0027s own variable? \n\n  self.assertUserDictEqual(\n      ref,\n      self.identity_api.get_user(ref[\u0027id\u0027])\n  )",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_375b3f89",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "Interesting, I would have expected these steps to be taken care of when we call .setUp() from the parent classes.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_7703f742",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "nit: use single quotes or double quotes consistently.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_777857c5",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "nit: user single quotes or double quotes consistently.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_b782cf92",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_573fd3d5",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "For cases like there we typically stick to using uuids\n\n  unique_id \u003d uuid.uuid4().hex\n\nWhich we can still use in assertions later since we have it in a variable.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_faffcefe",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "We could also pass this into the identity API too. Or we could make .get() calling the entire flow from the router -\u003e controller -\u003e manager and so on.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_3a588632",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "We could make this assertion stronger by ensuring the values we get back from the API are what we expect them to be.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_3745ff6f",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_775f7741",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_1aed8225",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_9ad97286",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_bae8f611",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_7acf5e7f",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1224,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "We have methods very similar to this established in; \n\nhttps://github.com/openstack/keystone/blob/a66d0735b2829c8bdb30f2dc07e4b4400ceddc3b/keystone/tests/unit/test_v3.py#L979\n\n\nWe could add a new one called assertValidFederatedUser",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_bac9d67a",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1244,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "Same comment here as in the previous testing module.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_5a453a15",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1258,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "nit: I\u0027d update the doc string here to include something about how the expected outcome is some sort of failure.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_dac4ca60",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1267,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "Same comment here as in the previous testing module.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_9a917255",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1283,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "Same comment here about single versus double quotes.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_baae3683",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1314,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T20:40:36Z",
+      "side": 1,
+      "message": "Same comment here as in the previous testing module.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
