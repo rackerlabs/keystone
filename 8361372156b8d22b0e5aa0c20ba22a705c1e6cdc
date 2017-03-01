@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_4302f53f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 909,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-01T07:09:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_02a47e55",
+      "range": {
+        "startLine": 907,
+        "startChar": 8,
+        "endLine": 909,
+        "endChar": 25
+      },
+      "revId": "8361372156b8d22b0e5aa0c20ba22a705c1e6cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_7d1a3b70",
         "filename": "keystone/identity/core.py",
         "patchSetId": 22
@@ -59,6 +83,30 @@
       "writtenOn": "2017-02-28T17:02:21Z",
       "side": 1,
       "message": "nit: update",
+      "range": {
+        "startLine": 1093,
+        "startChar": 32,
+        "endLine": 1093,
+        "endChar": 38
+      },
+      "revId": "8361372156b8d22b0e5aa0c20ba22a705c1e6cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_638619bb",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1093,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-01T07:09:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_7d1a3b70",
       "range": {
         "startLine": 1093,
         "startChar": 32,
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_83930dfa",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1104,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-01T07:09:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_3d37e3e4",
+      "range": {
+        "startLine": 1104,
+        "startChar": 14,
+        "endLine": 1104,
+        "endChar": 20
+      },
+      "revId": "8361372156b8d22b0e5aa0c20ba22a705c1e6cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_9d5fef74",
         "filename": "keystone/identity/shadow_backends/base.py",
         "patchSetId": 22
@@ -105,6 +177,30 @@
       "writtenOn": "2017-02-28T17:02:21Z",
       "side": 1,
       "message": "create_user_federated_attribute sounds strange to me because you are not creating a single attribute. I\u0027d suggest create_federated_object since you have used the name \"federated_objects\" in other parts of the code.",
+      "range": {
+        "startLine": 69,
+        "startChar": 8,
+        "endLine": 69,
+        "endChar": 39
+      },
+      "revId": "8361372156b8d22b0e5aa0c20ba22a705c1e6cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_c3626516",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-01T07:09:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_9d5fef74",
       "range": {
         "startLine": 69,
         "startChar": 8,
@@ -140,6 +236,30 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_6ab6d78b",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-01T07:09:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_5d4e57c2",
+      "range": {
+        "startLine": 88,
+        "startChar": 8,
+        "endLine": 88,
+        "endChar": 39
+      },
+      "revId": "8361372156b8d22b0e5aa0c20ba22a705c1e6cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_ddd087cc",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 22
@@ -163,6 +283,30 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_2340a156",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 863,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-01T07:09:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_ddd087cc",
+      "range": {
+        "startLine": 863,
+        "startChar": 8,
+        "endLine": 863,
+        "endChar": 28
+      },
+      "revId": "8361372156b8d22b0e5aa0c20ba22a705c1e6cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_2f416a3a",
         "filename": "keystone/tests/unit/identity/test_backends.py",
         "patchSetId": 22
@@ -174,6 +318,30 @@
       "writtenOn": "2017-02-28T17:02:21Z",
       "side": 1,
       "message": "It\u0027s not clear to me what the difference is between assertUserDictEqual and assertUsersDictEqual by the name. Why not just fix assertUserDictEqual instead of creating a new method?",
+      "range": {
+        "startLine": 68,
+        "startChar": 13,
+        "endLine": 68,
+        "endChar": 33
+      },
+      "revId": "8361372156b8d22b0e5aa0c20ba22a705c1e6cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_832f8da0",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-01T07:09:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_2f416a3a",
       "range": {
         "startLine": 68,
         "startChar": 13,
@@ -233,6 +401,54 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_1eb932ea",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-01T07:09:42Z",
+      "side": 1,
+      "message": "used the backend method I had already created ``create_fedeated_object`` in shadow backend. The reason I originally did not use the create_federated_user was because it creates its own user with a federated user and I hadnt yet created the backend method that created a federated user that was associated with a valid user_id at the time.",
+      "parentUuid": "ba2be162_88908cee",
+      "range": {
+        "startLine": 208,
+        "startChar": 4,
+        "endLine": 211,
+        "endChar": 38
+      },
+      "revId": "8361372156b8d22b0e5aa0c20ba22a705c1e6cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_5e92ca58",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-01T07:09:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_c52fcdf4",
+      "range": {
+        "startLine": 208,
+        "startChar": 4,
+        "endLine": 211,
+        "endChar": 38
+      },
+      "revId": "8361372156b8d22b0e5aa0c20ba22a705c1e6cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_05ed658b",
         "filename": "keystone/tests/unit/identity/test_core.py",
         "patchSetId": 22
@@ -279,6 +495,30 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_3ea356a0",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-01T07:09:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_650381b9",
+      "range": {
+        "startLine": 250,
+        "startChar": 10,
+        "endLine": 250,
+        "endChar": 11
+      },
+      "revId": "8361372156b8d22b0e5aa0c20ba22a705c1e6cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_a562d914",
         "filename": "keystone/tests/unit/identity/test_core.py",
         "patchSetId": 22
@@ -290,6 +530,30 @@
       "writtenOn": "2017-02-28T17:02:21Z",
       "side": 1,
       "message": "Why not use your new shadow methods to create the federated object:\nself.shadow_users_api.create_user_federated_attribute(...)",
+      "range": {
+        "startLine": 255,
+        "startChar": 8,
+        "endLine": 255,
+        "endChar": 51
+      },
+      "revId": "8361372156b8d22b0e5aa0c20ba22a705c1e6cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_1e9e9256",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-01T07:09:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_a562d914",
       "range": {
         "startLine": 255,
         "startChar": 8,
@@ -325,6 +589,30 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_eddbc119",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-01T07:09:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_a59499e8",
+      "range": {
+        "startLine": 258,
+        "startChar": 8,
+        "endLine": 258,
+        "endChar": 42
+      },
+      "revId": "8361372156b8d22b0e5aa0c20ba22a705c1e6cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_e81f4859",
         "filename": "keystone/tests/unit/identity/test_core.py",
         "patchSetId": 22
@@ -336,6 +624,30 @@
       "writtenOn": "2017-02-28T17:02:21Z",
       "side": 1,
       "message": "assign to a variable",
+      "range": {
+        "startLine": 311,
+        "startChar": 26,
+        "endLine": 311,
+        "endChar": 35
+      },
+      "revId": "8361372156b8d22b0e5aa0c20ba22a705c1e6cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_be490691",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-01T07:09:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_e81f4859",
       "range": {
         "startLine": 311,
         "startChar": 26,
@@ -417,6 +729,30 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_d8c15982",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1271,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-01T07:09:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_48e4d40c",
+      "range": {
+        "startLine": 1257,
+        "startChar": 8,
+        "endLine": 1271,
+        "endChar": 54
+      },
+      "revId": "8361372156b8d22b0e5aa0c20ba22a705c1e6cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_287c0020",
         "filename": "releasenotes/notes/extending-federated-users-to-the-user-api-71eda9958337b14a.yaml",
         "patchSetId": 22
@@ -451,6 +787,30 @@
       "writtenOn": "2017-02-28T17:02:21Z",
       "side": 1,
       "message": "suggestion: \"now returns a federated object associated with the user if any\"",
+      "range": {
+        "startLine": 4,
+        "startChar": 30,
+        "endLine": 5,
+        "endChar": 48
+      },
+      "revId": "8361372156b8d22b0e5aa0c20ba22a705c1e6cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_f8553dc6",
+        "filename": "releasenotes/notes/extending-federated-users-to-the-user-api-71eda9958337b14a.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-01T07:09:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_c8ba84c0",
       "range": {
         "startLine": 4,
         "startChar": 30,
@@ -509,6 +869,30 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_d8487930",
+        "filename": "releasenotes/notes/extending-federated-users-to-the-user-api-71eda9958337b14a.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-01T07:09:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_a8039075",
+      "range": {
+        "startLine": 6,
+        "startChar": 16,
+        "endLine": 7,
+        "endChar": 11
+      },
+      "revId": "8361372156b8d22b0e5aa0c20ba22a705c1e6cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_68f2789c",
         "filename": "releasenotes/notes/extending-federated-users-to-the-user-api-71eda9958337b14a.yaml",
         "patchSetId": 22
@@ -532,6 +916,30 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_1853f1e2",
+        "filename": "releasenotes/notes/extending-federated-users-to-the-user-api-71eda9958337b14a.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-01T07:09:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_68f2789c",
+      "range": {
+        "startLine": 8,
+        "startChar": 51,
+        "endLine": 9,
+        "endChar": 32
+      },
+      "revId": "8361372156b8d22b0e5aa0c20ba22a705c1e6cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_e8590890",
         "filename": "releasenotes/notes/extending-federated-users-to-the-user-api-71eda9958337b14a.yaml",
         "patchSetId": 22
@@ -543,6 +951,30 @@
       "writtenOn": "2017-02-28T17:02:21Z",
       "side": 1,
       "message": "actually, currently it\u0027s delete_user_federated_attribute, but I\u0027d suggest delete_federated_object",
+      "range": {
+        "startLine": 14,
+        "startChar": 6,
+        "endLine": 14,
+        "endChar": 28
+      },
+      "revId": "8361372156b8d22b0e5aa0c20ba22a705c1e6cdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_780f8de1",
+        "filename": "releasenotes/notes/extending-federated-users-to-the-user-api-71eda9958337b14a.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-01T07:09:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_e8590890",
       "range": {
         "startLine": 14,
         "startChar": 6,
