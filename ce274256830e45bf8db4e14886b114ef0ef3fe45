@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_86691bc1",
+        "filename": "keystone/conf/identity.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-01T22:08:33Z",
+      "side": 1,
+      "message": "This is reused, and each backend uses a different default. 12 is default for bcrypt,\n16 is for scrypt, and both of those are invalid for pbkdf2_sha512. Basically, we are letting passlib dictate the specifics but the help text is being used to communicate what the defaults are (which are different) dpeending on the selection.\n\nDefaulting to 12 would make scrypt less secure when used w/o adjusting the rounds and would prevent pdkfd2 from working at all w/o changing this option.",
+      "parentUuid": "ba2be162_f0744d9d",
+      "revId": "ce274256830e45bf8db4e14886b114ef0ef3fe45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_70977d90",
         "filename": "keystone/conf/identity.py",
         "patchSetId": 9

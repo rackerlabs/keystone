@@ -16,6 +16,24 @@
       "revId": "6fde9ef943afc0e32bd4092af87ea46824dcd515",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_c6ba3323",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-01T22:08:33Z",
+      "side": 0,
+      "message": "Nope, the code that does hashing has been pushing into the sql model itself. \n\nThe logic is in the setter for the @hybrid_property on the User_ref.password",
+      "parentUuid": "ba2be162_f037edad",
+      "revId": "6fde9ef943afc0e32bd4092af87ea46824dcd515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
