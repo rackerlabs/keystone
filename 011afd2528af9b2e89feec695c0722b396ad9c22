@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_b05100db",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-01T17:04:32Z",
+      "side": 1,
+      "message": "Cool.",
+      "revId": "011afd2528af9b2e89feec695c0722b396ad9c22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
