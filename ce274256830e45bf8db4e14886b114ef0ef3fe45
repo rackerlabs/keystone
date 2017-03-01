@@ -51,6 +51,24 @@
       "revId": "ce274256830e45bf8db4e14886b114ef0ef3fe45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_c691539b",
+        "filename": "keystone/conf/identity.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-01T22:10:55Z",
+      "side": 1,
+      "message": "This option is there for tuning purposes, 99% of deployments will never touch this. This might need to be min of 1.\n\nI\u0027m letting people who want to use scrypt have access to the more in depth features it provides (depending on the TMTO the deployer wants).",
+      "parentUuid": "ba2be162_70977d90",
+      "revId": "ce274256830e45bf8db4e14886b114ef0ef3fe45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
