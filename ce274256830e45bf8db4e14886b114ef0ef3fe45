@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_f0744d9d",
+        "filename": "keystone/conf/identity.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T22:00:52Z",
+      "side": 1,
+      "message": "If the default hash algorithm is going to be bcrypt, we can safely default this to 12. We need to be explicit in each description how these options are related though.",
+      "revId": "ce274256830e45bf8db4e14886b114ef0ef3fe45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_70977d90",
+        "filename": "keystone/conf/identity.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T22:00:52Z",
+      "side": 1,
+      "message": "Should we not have a default specified in the method signature?",
+      "revId": "ce274256830e45bf8db4e14886b114ef0ef3fe45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
