@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_7d1daa72",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T15:00:42Z",
+      "side": 1,
+      "message": "Same comment here as some of the previous patches in the chain. This should be:\n\n  bp policy-in-code\n\nor \n\n  blueprint policy-in-code",
+      "revId": "aeac84a5a7b42cf555cdd45db47584418e583aa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
