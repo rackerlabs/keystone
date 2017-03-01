@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_90595c5d",
+        "filename": "keystone/common/sql/contract_repo/versions/012_contract_add_domain_id_to_idp.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-01T17:22:28Z",
+      "side": 1,
+      "message": "Assuming this can be documented, this probably belongs in keystone.common.sql.upgrades",
+      "revId": "9245c53046e0988a15fdbf22cd5a2f641dd5990b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_702148b4",
+        "filename": "keystone/common/sql/contract_repo/versions/015_contract_update_federated_user_domain.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-01T17:22:28Z",
+      "side": 1,
+      "message": "Same as the other file -- which is why this deserves to be in a common module.",
+      "revId": "9245c53046e0988a15fdbf22cd5a2f641dd5990b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
