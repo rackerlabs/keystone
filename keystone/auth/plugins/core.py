@@ -72,7 +72,7 @@ def convert_integer_to_method_list(method_int):
 
     method_map = construct_method_map_from_config()
     method_ints = []
-    for k, v in method_map.items():
+    for k in method_map.keys():
         method_ints.append(k)
     method_ints.sort(reverse=True)
 
