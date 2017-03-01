@@ -115,6 +115,30 @@
       "revId": "e266df04b0c8fd7b9c502eff510c960ddfb089a8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_539535e2",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-03-01T15:22:12Z",
+      "side": 1,
+      "message": "With the other methods you don\u0027t have \u0027user\u0027 in the method name.",
+      "parentUuid": "ba2be162_d33f6523",
+      "range": {
+        "startLine": 96,
+        "startChar": 8,
+        "endLine": 96,
+        "endChar": 34
+      },
+      "revId": "e266df04b0c8fd7b9c502eff510c960ddfb089a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
