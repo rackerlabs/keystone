@@ -85,7 +85,7 @@ class IdentityTests(object):
         #               it easier to authenticate in tests, but should
         #               not be returned by the api
         user.pop('password')
-        self.assertDictContainsSubset(user, user_ref)
+        self.assertUserDictEqual(user, user_ref)
         role_list = self.assignment_api.get_roles_for_user_and_project(
             new_user['id'], self.tenant_baz['id'])
         self.assertEqual(1, len(role_list))
@@ -119,7 +119,7 @@ class IdentityTests(object):
         # empty dict, because otherwise auth will blow up for whatever
         # case misses this.
         self.assertIn('options', user_ref)
-        self.assertDictEqual(self.user_foo, user_ref)
+        self.assertUserDictEqual(self.user_foo, user_ref)
 
     def test_get_user_returns_required_attributes(self):
         user_ref = self.identity_api.get_user(self.user_foo['id'])
@@ -141,7 +141,7 @@ class IdentityTests(object):
             self.identity_api._get_domain_driver_and_entity_id(ref['id']))
         driver.delete_user(entity_id)
 
-        self.assertDictEqual(ref, self.identity_api.get_user(ref['id']))
+        self.assertUserDictEqual(ref, self.identity_api.get_user(ref['id']))
         self.identity_api.get_user.invalidate(self.identity_api, ref['id'])
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user, ref['id'])
@@ -154,8 +154,8 @@ class IdentityTests(object):
         self.identity_api.get_user(ref['id'])
         # update using identity api and get back updated user.
         user_updated = self.identity_api.update_user(ref['id'], user)
-        self.assertDictContainsSubset(self.identity_api.get_user(ref['id']),
-                                      user_updated)
+        self.assertUserDictEqual(self.identity_api.get_user(ref['id']),
+                                 user_updated)
         self.assertDictContainsSubset(
             self.identity_api.get_user_by_name(ref['name'], ref['domain_id']),
             user_updated)
@@ -172,7 +172,7 @@ class IdentityTests(object):
         #               it easier to authenticate in tests, but should
         #               not be returned by the api
         self.user_foo.pop('password')
-        self.assertDictEqual(self.user_foo, user_ref)
+        self.assertUserDictEqual(self.user_foo, user_ref)
 
     @unit.skip_if_cache_disabled('identity')
     def test_cache_layer_get_user_by_name(self):
@@ -185,7 +185,7 @@ class IdentityTests(object):
             self.identity_api._get_domain_driver_and_entity_id(ref['id']))
         driver.delete_user(entity_id)
 
-        self.assertDictEqual(ref, self.identity_api.get_user_by_name(
+        self.assertDictContainsSubset(ref, self.identity_api.get_user_by_name(
             user['name'], CONF.identity.default_domain_id))
         self.identity_api.get_user_by_name.invalidate(
             self.identity_api, user['name'], CONF.identity.default_domain_id)
@@ -198,8 +198,8 @@ class IdentityTests(object):
                                                  user['domain_id'])
         user['description'] = uuid.uuid4().hex
         user_updated = self.identity_api.update_user(ref['id'], user)
-        self.assertDictContainsSubset(self.identity_api.get_user(ref['id']),
-                                      user_updated)
+        self.assertUserDictEqual(self.identity_api.get_user(ref['id']),
+                                 user_updated)
         self.assertDictContainsSubset(
             self.identity_api.get_user_by_name(ref['name'], ref['domain_id']),
             user_updated)
@@ -543,7 +543,7 @@ class IdentityTests(object):
         new_user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
         original_user = new_user.copy()
         self.identity_api.create_user(new_user)
-        self.assertDictEqual(original_user, new_user)
+        self.assertUserDictEqual(original_user, new_user)
 
     def test_update_user_enable(self):
         user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
@@ -603,7 +603,7 @@ class IdentityTests(object):
         #                SqlIdentity.test_update_project_returns_extra
         updated_user.pop('extra', None)
 
-        self.assertDictEqual(user_ref, updated_user)
+        self.assertUserDictEqual(user_ref, updated_user)
 
         user_ref = self.identity_api.get_user(user_ref['id'])
         self.assertEqual(changed_name, user_ref['name'])
@@ -930,14 +930,14 @@ class IdentityTests(object):
         user_ref = self.identity_api.get_user(user['id'])
         del user_dict['password']
         user_ref_dict = {x: user_ref[x] for x in user_ref}
-        self.assertDictContainsSubset(user_dict, user_ref_dict)
+        self.assertUserDictEqual(user_dict, user_ref_dict)
 
         user_dict['password'] = uuid.uuid4().hex
         self.identity_api.update_user(user['id'], user_dict)
         user_ref = self.identity_api.get_user(user['id'])
         del user_dict['password']
         user_ref_dict = {x: user_ref[x] for x in user_ref}
-        self.assertDictContainsSubset(user_dict, user_ref_dict)
+        self.assertUserDictEqual(user_dict, user_ref_dict)
 
         self.identity_api.delete_user(user['id'])
         self.assertRaises(exception.UserNotFound,
@@ -1004,7 +1004,7 @@ class IdentityTests(object):
         self.assertIs(False, updated_user_ref['enabled'])
 
         user_ref = self.identity_api.get_user(user['id'])
-        self.assertDictEqual(updated_user_ref, user_ref)
+        self.assertUserDictEqual(updated_user_ref, user_ref)
 
     @unit.skip_if_no_multiple_domains_support
     def test_list_domains_filtered_and_limited(self):

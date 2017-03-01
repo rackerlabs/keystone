@@ -952,6 +952,9 @@ class Manager(manager.Manager):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(user_id))
         ref = driver.get_user(entity_id)
+        # Add user's federated objects
+        ref['federated'] = self.shadow_users_api.get_user_federated_objects(
+            user_id)
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
