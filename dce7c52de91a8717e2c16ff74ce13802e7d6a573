@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_021b651c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-01T16:53:42Z",
+      "side": 1,
+      "message": "+1 The benefit of this patch is not obvious.",
+      "parentUuid": "da36d5c6_619371a4",
+      "revId": "dce7c52de91a8717e2c16ff74ce13802e7d6a573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_1572f7e5",
         "filename": "doc/source/devref/api_change_tutorial.rst",
         "patchSetId": 4
@@ -83,6 +101,23 @@
         "endLine": 90,
         "endChar": 53
       },
+      "revId": "dce7c52de91a8717e2c16ff74ce13802e7d6a573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_e279f130",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-01T16:53:42Z",
+      "side": 1,
+      "message": "You can use an RST-style note or warning here for docs:\n\n  .. note:\n\nBut, more importantly, it will be so easy to accidentally extend this class if you just copy existing model code around. Would it be possible to enumerate all the classes that are allowed to extend this class in a unit test, and fail if there are any unexpected child classes?",
       "revId": "dce7c52de91a8717e2c16ff74ce13802e7d6a573",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
