@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_cbec13ca",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T14:41:17Z",
+      "side": 1,
+      "message": "This changed from patchset 20, it should be: \n\n  bp policy-in-code\n\nor \n\n  blueprint policy-in-code\n\nThis is easier for reviews to get to since it links automatically with gerrit based on the bp and blueprint keywords. It also ensures that we are leaving the links to the reviews that implement the spec in the whiteboard section of the blueprint.",
+      "revId": "5d01f9b079b06546f9c0587d309073748fa48719",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
