@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_30e98581",
+        "filename": "keystone/tests/unit/ksfixtures/auth_plugins.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-03-01T21:32:00Z",
+      "side": 1,
+      "message": "since you\u0027re here already.",
+      "range": {
+        "startLine": 43,
+        "startChar": 30,
+        "endLine": 43,
+        "endChar": 37
+      },
+      "revId": "3bc7616df3c021daf10b0251e856bc573fbc6233",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
