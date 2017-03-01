@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_3dd97222",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 25
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-03-01T14:56:29Z",
+      "side": 1,
+      "message": "This should be:\nImplements: bp support-federated-attr\n\nhttps://wiki.openstack.org/wiki/GitCommitMessages",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 113
+      },
+      "revId": "e266df04b0c8fd7b9c502eff510c960ddfb089a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_5d2b86eb",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-03-01T14:56:29Z",
+      "side": 1,
+      "message": "++",
+      "range": {
+        "startLine": 69,
+        "startChar": 8,
+        "endLine": 69,
+        "endChar": 31
+      },
+      "revId": "e266df04b0c8fd7b9c502eff510c960ddfb089a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_dd3f7623",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-03-01T14:56:29Z",
+      "side": 1,
+      "message": "++",
+      "range": {
+        "startLine": 88,
+        "startChar": 8,
+        "endLine": 88,
+        "endChar": 31
+      },
+      "revId": "e266df04b0c8fd7b9c502eff510c960ddfb089a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_3d4c12c7",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-03-01T14:56:29Z",
+      "side": 1,
+      "message": "nit: This could be get_federated_objects to be consistent with the other methods, but I\u0027m okay with it as is.",
+      "range": {
+        "startLine": 96,
+        "startChar": 8,
+        "endLine": 96,
+        "endChar": 34
+      },
+      "revId": "e266df04b0c8fd7b9c502eff510c960ddfb089a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
