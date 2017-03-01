@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_c1e85d13",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T22:39:00Z",
+      "side": 1,
+      "message": "Nice, are we able to recreate the issue with a test at all?",
+      "revId": "79fcecb09e8e61a555161527a1f81436f26df750",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
