@@ -376,7 +376,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
     def test_user_filter(self):
         user_ref = self.identity_api.get_user(self.user_foo['id'])
         self.user_foo.pop('password')
-        self.assertDictEqual(self.user_foo, user_ref)
+        self.assertUserDictEqual(self.user_foo, user_ref)
 
         driver = self.identity_api._select_identity_driver(
             user_ref['domain_id'])
@@ -2234,7 +2234,7 @@ class BaseMultiLDAPandSQLIdentity(object):
                 ref, domain_id, driver, map.EntityType.USER)
             user = user.copy()
             del user['password']
-            self.assertDictEqual(user, ref)
+            self.assertUserDictEqual(user, ref)
         else:
             # TODO(henry-nash): Use AssertRaises here, although
             # there appears to be an issue with using driver.get_user
