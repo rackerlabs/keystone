@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_fd1d1a10",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-01T14:49:52Z",
+      "side": 1,
+      "message": "This should be:\n\n  bp policy-in-code\n\nor \n\n  blueprint policy-in-code\n\nSince we have gerrit setup to automatically link to Launchpad based on the `bp` and `blueprint` keywords. We also have tooling that links the change to the blueprint whiteboard, which is useful for tracking which changes implemented a specific feature.",
+      "revId": "9a41dd87399989449b8124f080e4d93ba72dd951",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
