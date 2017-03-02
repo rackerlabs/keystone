@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_99030e42",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T16:07:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_b84c5343",
+      "range": {
+        "startLine": 279,
+        "startChar": 0,
+        "endLine": 280,
+        "endChar": 61
+      },
+      "revId": "3c206e1d68500a66e1534aaef7c0e315febb98c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_d8910754",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 5
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_7939fa40",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1671,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T16:07:17Z",
+      "side": 1,
+      "message": "This patch is to address running a db_sync command ahead of another to a higher version. Downgrading is already prevented and tested here: https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_sql_upgrade.py#L1601-L1606",
+      "parentUuid": "ba2be162_d8910754",
+      "range": {
+        "startLine": 1670,
+        "startChar": 0,
+        "endLine": 1671,
+        "endChar": 20
+      },
+      "revId": "3c206e1d68500a66e1534aaef7c0e315febb98c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_d89f474e",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 5
@@ -59,6 +107,30 @@
       "writtenOn": "2017-03-02T14:05:12Z",
       "side": 1,
       "message": "is there a reason for not using assertRaise here?",
+      "range": {
+        "startLine": 1672,
+        "startChar": 0,
+        "endLine": 1677,
+        "endChar": 79
+      },
+      "revId": "3c206e1d68500a66e1534aaef7c0e315febb98c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_74ec9f8f",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1677,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T16:07:17Z",
+      "side": 1,
+      "message": "Good idea, added the check above to assert that both the exception and the correct message are raised with the corresponding command",
+      "parentUuid": "ba2be162_d89f474e",
       "range": {
         "startLine": 1672,
         "startChar": 0,
