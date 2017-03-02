@@ -22,6 +22,30 @@
       "revId": "59d7b1fcd710a0eff289f467bbb82a07037a51b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_e20b6728",
+        "filename": "keystone/tests/unit/common/test_database_conflicts.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-03-02T19:20:35Z",
+      "side": 1,
+      "message": "I just copied and pasted from other tests so I have no idea :)",
+      "parentUuid": "ba2be162_bfb18849",
+      "range": {
+        "startLine": 142,
+        "startChar": 0,
+        "endLine": 147,
+        "endChar": 56
+      },
+      "revId": "59d7b1fcd710a0eff289f467bbb82a07037a51b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
