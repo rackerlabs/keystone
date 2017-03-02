@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_f2634ada",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-02T13:37:27Z",
+      "side": 1,
+      "message": "maybe: check if role exists on the user before revoke/delete",
+      "range": {
+        "startLine": 352,
+        "startChar": 54,
+        "endLine": 352,
+        "endChar": 60
+      },
+      "revId": "2cb842cd645cbfcad4ccd62200340ce4616a8aa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_72a67a11",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-02T13:37:27Z",
+      "side": 1,
+      "message": "revoke/delete",
+      "range": {
+        "startLine": 360,
+        "startChar": 59,
+        "endLine": 360,
+        "endChar": 65
+      },
+      "revId": "2cb842cd645cbfcad4ccd62200340ce4616a8aa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_32bb22e7",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-02T13:37:27Z",
+      "side": 1,
+      "message": "nice test",
+      "range": {
+        "startLine": 368,
+        "startChar": 12,
+        "endLine": 368,
+        "endChar": 58
+      },
+      "revId": "2cb842cd645cbfcad4ccd62200340ce4616a8aa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_f277ca37",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-02T13:37:27Z",
+      "side": 1,
+      "message": "not related: this test is hard to read because it uses something that is not to it [1]\n\n[1] https://testing.googleblog.com/2017/01/testing-on-toilet-keep-cause-and-effect.html",
+      "range": {
+        "startLine": 369,
+        "startChar": 0,
+        "endLine": 371,
+        "endChar": 69
+      },
+      "revId": "2cb842cd645cbfcad4ccd62200340ce4616a8aa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
