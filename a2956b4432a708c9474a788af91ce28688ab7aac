@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_223bf8d2",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 909,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_a530dc02",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_c52b1093",
         "filename": "keystone/identity/core.py",
         "patchSetId": 28
@@ -30,6 +48,24 @@
       "writtenOn": "2017-03-01T20:40:36Z",
       "side": 1,
       "message": "Same comment here.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_e220009e",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 911,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_c52b1093",
       "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_1c4e5a96",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 914,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "providers, protocols, mappings, unique_id, etc are attributes that make up a federated object which is being done below, I could understand if it was saying create_federated_attributes?",
+      "parentUuid": "ba2be162_d75e6311",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_a5829c92",
         "filename": "keystone/identity/core.py",
         "patchSetId": 28
@@ -64,6 +118,24 @@
       "writtenOn": "2017-03-01T20:40:36Z",
       "side": 1,
       "message": "Hmm I wonder if we could loop this in to our jsonschema validation layer. If user[\u0027federated\u0027] is in the request, is must not be empty (or something like that). It should totally be optional, but it just should be empty if it is included.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_022434ad",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_a5829c92",
       "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_5c48d287",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_654c2443",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_b791ef9b",
         "filename": "keystone/identity/core.py",
         "patchSetId": 28
@@ -98,6 +188,24 @@
       "writtenOn": "2017-03-01T20:40:36Z",
       "side": 1,
       "message": "This is a duplicated check from above. If we somehow work this into the schema for users, we could reuse it for both create and update requests.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_42362ce8",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1095,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_b791ef9b",
       "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_c2293c8b",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Almost!",
+      "parentUuid": "ba2be162_17d47b45",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_d79bc370",
         "filename": "keystone/tests/unit/identity/test_backends.py",
         "patchSetId": 28
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_8247444a",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_d79bc370",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_979f8b4f",
         "filename": "keystone/tests/unit/identity/test_backends.py",
         "patchSetId": 28
@@ -149,6 +293,24 @@
       "writtenOn": "2017-03-01T20:40:36Z",
       "side": 1,
       "message": "Is there a specific reason to pull the user reference out into it\u0027s own variable? \n\n  self.assertUserDictEqual(\n      ref,\n      self.identity_api.get_user(ref[\u0027id\u0027])\n  )",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_624c1071",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_979f8b4f",
       "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +351,24 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_82682489",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_7703f742",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_777857c5",
         "filename": "keystone/tests/unit/identity/test_core.py",
         "patchSetId": 28
@@ -200,6 +380,24 @@
       "writtenOn": "2017-03-01T20:40:36Z",
       "side": 1,
       "message": "nit: user single quotes or double quotes consistently.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_a20528c3",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_777857c5",
       "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +421,24 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_c2085cdc",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_b782cf92",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_573fd3d5",
         "filename": "keystone/tests/unit/identity/test_core.py",
         "patchSetId": 28
@@ -234,6 +450,24 @@
       "writtenOn": "2017-03-01T20:40:36Z",
       "side": 1,
       "message": "For cases like there we typically stick to using uuids\n\n  unique_id \u003d uuid.uuid4().hex\n\nWhich we can still use in assertions later since we have it in a variable.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_a22c484b",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_573fd3d5",
       "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +525,24 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_0286f412",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_3745ff6f",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_775f7741",
         "filename": "keystone/tests/unit/identity/test_core.py",
         "patchSetId": 28
@@ -302,6 +554,24 @@
       "writtenOn": "2017-03-01T20:40:36Z",
       "side": 1,
       "message": "Same comment here as above.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_227db81c",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_775f7741",
       "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -325,6 +595,24 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_4278ec2b",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_1aed8225",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_9ad97286",
         "filename": "keystone/tests/unit/identity/test_core.py",
         "patchSetId": 28
@@ -336,6 +624,24 @@
       "writtenOn": "2017-03-01T20:40:36Z",
       "side": 1,
       "message": "Same comment here as above.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_6277b03a",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_9ad97286",
       "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -359,6 +665,24 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_c2b93ccd",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_bae8f611",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_5a729aae",
         "filename": "keystone/tests/unit/identity/test_core.py",
         "patchSetId": 28
@@ -370,6 +694,30 @@
       "writtenOn": "2017-03-01T20:49:23Z",
       "side": 1,
       "message": "This isn\u0027t entirely testing replace, but only the first element of the federated array. Remove the indices or check the length also.",
+      "range": {
+        "startLine": 376,
+        "startChar": 8,
+        "endLine": 376,
+        "endChar": 59
+      },
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_a2b608da",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_5a729aae",
       "range": {
         "startLine": 376,
         "startChar": 8,
@@ -416,6 +764,24 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_a2bc486d",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1244,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_bac9d67a",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_b7772f39",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 28
@@ -456,6 +822,24 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_02ba746e",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1258,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_5a453a15",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_dac4ca60",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 28
@@ -473,6 +857,24 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_22b13890",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1267,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_dac4ca60",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_9a917255",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 28
@@ -484,6 +886,24 @@
       "writtenOn": "2017-03-01T20:40:36Z",
       "side": 1,
       "message": "Same comment here about single versus double quotes.",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_62ab301e",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1283,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_9a917255",
       "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -513,6 +933,30 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_82a66451",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1299,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_17163ba7",
+      "range": {
+        "startLine": 1299,
+        "startChar": 37,
+        "endLine": 1299,
+        "endChar": 43
+      },
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_baae3683",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 28
@@ -530,6 +974,24 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_a55e12e7",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1314,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_baae3683",
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_572a732d",
         "filename": "releasenotes/notes/extending-federated-users-to-the-user-api-71eda9958337b14a.yaml",
         "patchSetId": 28
@@ -541,6 +1003,30 @@
       "writtenOn": "2017-03-01T20:49:23Z",
       "side": 1,
       "message": "nit: to",
+      "range": {
+        "startLine": 12,
+        "startChar": 8,
+        "endLine": 12,
+        "endChar": 9
+      },
+      "revId": "a2956b4432a708c9474a788af91ce28688ab7aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_052a7e2c",
+        "filename": "releasenotes/notes/extending-federated-users-to-the-user-api-71eda9958337b14a.yaml",
+        "patchSetId": 28
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-02T00:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_572a732d",
       "range": {
         "startLine": 12,
         "startChar": 8,
