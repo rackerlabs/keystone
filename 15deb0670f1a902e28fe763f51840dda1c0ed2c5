@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_a9f6b2f6",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-03-02T21:04:57Z",
+      "side": 1,
+      "message": "Couldn\u0027t this be changed to just:\n\"method_ints \u003d method_map.keys()\"\nor\nhttps://pythonhosted.org/six/#six.viewkeys?",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 29
+      },
+      "revId": "15deb0670f1a902e28fe763f51840dda1c0ed2c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
