@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_bfb18849",
+        "filename": "keystone/tests/unit/common/test_database_conflicts.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-02T18:40:08Z",
+      "side": 1,
+      "message": "is there a reason besides being the pattern in this file for not using assertRaises? (here and in the other tests)",
+      "range": {
+        "startLine": 142,
+        "startChar": 0,
+        "endLine": 147,
+        "endChar": 56
+      },
+      "revId": "59d7b1fcd710a0eff289f467bbb82a07037a51b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
