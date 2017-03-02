@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_df40fc36",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 24005
+      },
+      "writtenOn": "2017-03-02T18:42:06Z",
+      "side": 0,
+      "message": "Lance, Here revocation events are not created instead in an environment where tokens are persisted, this call send notification[0] to delete tokens which is listened by call back handler[1] and delete the tokens to invalidate them.\n\n[0] https://github.com/openstack/keystone/blob/master/keystone/identity/core.py#L1278\n[1] https://github.com/openstack/keystone/blob/master/keystone/token/provider.py#L94",
+      "parentUuid": "ba2be162_bb928a9d",
+      "revId": "8ea94cf4723d855ec8848943318a05a1899cf9fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_28057279",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 1
