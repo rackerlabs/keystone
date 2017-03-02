@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_b84c5343",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-02T14:05:12Z",
+      "side": 1,
+      "message": "why not only do this if \"version\" is None?",
+      "range": {
+        "startLine": 279,
+        "startChar": 0,
+        "endLine": 280,
+        "endChar": 61
+      },
+      "revId": "3c206e1d68500a66e1534aaef7c0e315febb98c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_d8910754",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1671,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-02T14:05:12Z",
+      "side": 1,
+      "message": "also add a test for the version number? Like: running everything up to version 2 and try to run self.expand(1) again.",
+      "range": {
+        "startLine": 1670,
+        "startChar": 0,
+        "endLine": 1671,
+        "endChar": 20
+      },
+      "revId": "3c206e1d68500a66e1534aaef7c0e315febb98c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_d89f474e",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1677,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-02T14:05:12Z",
+      "side": 1,
+      "message": "is there a reason for not using assertRaise here?",
+      "range": {
+        "startLine": 1672,
+        "startChar": 0,
+        "endLine": 1677,
+        "endChar": 79
+      },
+      "revId": "3c206e1d68500a66e1534aaef7c0e315febb98c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
