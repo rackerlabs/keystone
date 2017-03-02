@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_bb53636a",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1672,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-02T16:45:28Z",
+      "side": 1,
+      "message": "also check that self.migrate(2) fails?",
+      "revId": "326ba5fe9a57d89ad5fac4524cad89901f5d9372",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_3b67734e",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1678,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-02T16:45:28Z",
+      "side": 1,
+      "message": "don\u0027t think this is necessary, since it is being checked in the line above.",
+      "range": {
+        "startLine": 1673,
+        "startChar": 0,
+        "endLine": 1678,
+        "endChar": 79
+      },
+      "revId": "326ba5fe9a57d89ad5fac4524cad89901f5d9372",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
