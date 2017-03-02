@@ -16,6 +16,24 @@
       "revId": "79fcecb09e8e61a555161527a1f81436f26df750",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_d2fe4637",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-02T13:43:35Z",
+      "side": 1,
+      "message": "Think it can be easily reproduced by a test.",
+      "parentUuid": "ba2be162_c1e85d13",
+      "revId": "79fcecb09e8e61a555161527a1f81436f26df750",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
