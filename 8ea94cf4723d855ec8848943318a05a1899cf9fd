@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_cd476f75",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-02T22:37:57Z",
+      "side": 0,
+      "message": "Ah - for some reason I always seem to get that mixed up with the callback. Thanks!",
+      "parentUuid": "ba2be162_df40fc36",
+      "revId": "8ea94cf4723d855ec8848943318a05a1899cf9fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_28057279",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 1
