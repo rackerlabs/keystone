@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_bb928a9d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-02T17:33:23Z",
+      "side": 0,
+      "message": "We rebuild the token at validation time, so I\u0027m wondering if the revocation event is even needed anymore. We might be able to get away with removing the revocation events in these cases. We",
+      "revId": "8ea94cf4723d855ec8848943318a05a1899cf9fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_28057279",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-02T17:33:23Z",
+      "side": 0,
+      "message": "Unrelated whitespace change?",
+      "revId": "8ea94cf4723d855ec8848943318a05a1899cf9fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

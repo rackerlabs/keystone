@@ -25,6 +25,23 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_9bd226ff",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-02T17:33:23Z",
+      "side": 1,
+      "message": "I would pass these in as kwargs since the method signature specifies them that way.",
+      "revId": "2cb842cd645cbfcad4ccd62200340ce4616a8aa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_72a67a11",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 1
