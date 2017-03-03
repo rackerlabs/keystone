@@ -1,0 +1,8 @@
+---
+
+upgrade:
+  - >
+    [`blueprint name-field-consistency <https://blueprints.launchpad.net/keystone/+spec/name-field-consistency>`_]
+    To maintain consistency the name field in projects and groups has been
+    changed to 255 characters. This is to match users and roles which already
+    had a name field of 255 characters.
