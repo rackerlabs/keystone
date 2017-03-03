@@ -22,6 +22,30 @@
       "revId": "15deb0670f1a902e28fe763f51840dda1c0ed2c5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_05b301ea",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-03T13:39:46Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ba2be162_a9f6b2f6",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 29
+      },
+      "revId": "15deb0670f1a902e28fe763f51840dda1c0ed2c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
