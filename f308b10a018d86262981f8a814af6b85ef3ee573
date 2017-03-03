@@ -22,6 +22,30 @@
       "revId": "f308b10a018d86262981f8a814af6b85ef3ee573",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_ed896c27",
+        "filename": "keystone/tests/unit/common/test_database_conflicts.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-03-03T17:00:38Z",
+      "side": 1,
+      "message": "+1. It\u0027s a short example and helps a lot to have it inline without a net connection (during flights).",
+      "parentUuid": "ba2be162_2d6c64cf",
+      "range": {
+        "startLine": 39,
+        "startChar": 10,
+        "endLine": 39,
+        "endChar": 72
+      },
+      "revId": "f308b10a018d86262981f8a814af6b85ef3ee573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
