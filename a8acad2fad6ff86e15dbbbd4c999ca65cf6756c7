@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_20ce2c2e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-03-03T16:24:03Z",
+      "side": 1,
+      "message": "Why is it no longer the case? A better explanation here would be helpful to reviewers.",
+      "revId": "a8acad2fad6ff86e15dbbbd4c999ca65cf6756c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
