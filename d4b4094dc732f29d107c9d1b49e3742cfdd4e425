@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_8d25500a",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-03T16:56:51Z",
+      "side": 0,
+      "message": "this change is out of scope for the bug. Please split the change between domain_scope supporting is-admin and non-domain-scope.",
+      "range": {
+        "startLine": 198,
+        "startChar": 1,
+        "endLine": 199,
+        "endChar": 24
+      },
+      "revId": "d4b4094dc732f29d107c9d1b49e3742cfdd4e425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
