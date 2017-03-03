@@ -46,6 +46,24 @@
       "revId": "59d7b1fcd710a0eff289f467bbb82a07037a51b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_29961f3f",
+        "filename": "keystone/tests/unit/common/test_database_conflicts.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-03T15:17:54Z",
+      "side": 1,
+      "message": "I did some digging on this because I was curious. It turns out that we could accomplish this same thing without the try/except by leveraging the context manager functionality of assertRaises [0]:\n\n\n    def test_domain_duplicate_conflict_gives_name(self):                          \n        domain \u003d unit.new_domain_ref()                                            \n        self.resource_api.create_domain(domain[\u0027id\u0027], domain)                     \n        domain[\u0027id\u0027] \u003d uuid.uuid4().hex                                           \n        with self.assertRaises(exception.Conflict) as context_manager:            \n            self.resource_api.create_domain(domain[\u0027id\u0027], domain)                                                                                                                                                                                                             \n            self.assertIn(                                                        \n                \"%s\" % domain[\u0027name\u0027], repr(context_manager.exception)            \n            )\n\n\nBut we effectively can\u0027t because we are using testtools. The testtools library reimplemented the assertRaises function but didn\u0027t include support for using assertRaises to return a context manager [1]. The above code snippet fails with the following [2].\n\n[0] https://docs.python.org/2/library/unittest.html#unittest.TestCase.assertRaises\n[1] https://github.com/testing-cabal/testtools/blob/a3c7102f42b220cc320fa28c8d5d82967e14931c/testtools/testcase.py#L464-L487\n[2] http://cdn.pasteraw.com/97zgb4zpyeqo436hj0de7fd6lx25zyb",
+      "parentUuid": "ba2be162_e20b6728",
+      "revId": "59d7b1fcd710a0eff289f467bbb82a07037a51b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
