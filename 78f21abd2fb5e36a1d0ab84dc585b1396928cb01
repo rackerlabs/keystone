@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_69b3b7e9",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-03-03T14:42:32Z",
+      "side": 1,
+      "message": "This is not valid python3. keys() doesn\u0027t return a list and the dict_keys object that is returned does not have a sort(). If method_ints is only iterated over once then you could do this:\n\n  method_ints \u003d sorted(method_map, reverse\u003dTrue)",
+      "revId": "78f21abd2fb5e36a1d0ab84dc585b1396928cb01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
