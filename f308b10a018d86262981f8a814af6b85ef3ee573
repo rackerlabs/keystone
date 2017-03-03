@@ -46,6 +46,24 @@
       "revId": "f308b10a018d86262981f8a814af6b85ef3ee573",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_a3985c6b",
+        "filename": "keystone/tests/unit/common/test_database_conflicts.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-03-03T19:28:39Z",
+      "side": 1,
+      "message": "i\u0027m not sure the example is even worth having.",
+      "parentUuid": "ba2be162_ed896c27",
+      "revId": "f308b10a018d86262981f8a814af6b85ef3ee573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
