@@ -377,7 +377,7 @@ class Group(sql.ModelBase, sql.ModelDictMixinWithExtras):
     __tablename__ = 'group'
     attributes = ['id', 'name', 'domain_id', 'description']
     id = sql.Column(sql.String(64), primary_key=True)
-    name = sql.Column(sql.String(64), nullable=False)
+    name = sql.Column(sql.String(255), nullable=False)
     domain_id = sql.Column(sql.String(64), nullable=False)
     description = sql.Column(sql.Text())
     extra = sql.Column(sql.JsonBlob())
