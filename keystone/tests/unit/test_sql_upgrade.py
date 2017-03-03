@@ -2326,6 +2326,31 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         self.assertTableColumns(user_option,
                                 ['user_id', 'option_id', 'option_value'])
 
+    def test_migration_110_consistent_name_fields(self):
+        project_table_name = 'project'
+        group_table_name = 'group'
+        self.expand(22)
+        self.migrate(22)
+        self.contract(22)
+        project_table = sqlalchemy.Table(
+            project_table_name, self.metadata, autoload=True)
+        self.assertEqual(project_table.c.name.type.length, 64)
+
+        group_table = sqlalchemy.Table(
+            group_table_name, self.metadata, autoload=True)
+        self.assertEqual(group_table.c.name.type.length, 64)
+
+        self.expand(23)
+        self.migrate(23)
+        self.contract(23)
+        project_table = sqlalchemy.Table(
+            project_table_name, self.metadata, autoload=True)
+        self.assertEqual(project_table.c.name.type.length, 255)
+
+        group_table = sqlalchemy.Table(
+            group_table_name, self.metadata, autoload=True)
+        self.assertEqual(group_table.c.name.type.length, 255)
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
