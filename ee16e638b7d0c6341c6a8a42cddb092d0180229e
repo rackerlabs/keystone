@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_e61514e5",
+        "filename": "releasenotes/notes/removed-as-of-pike-deadbeefdeadbeef.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-03T14:14:22Z",
+      "side": 1,
+      "message": "the password_expires_days setting",
+      "range": {
+        "startLine": 25,
+        "startChar": 47,
+        "endLine": 25,
+        "endChar": 62
+      },
+      "revId": "ee16e638b7d0c6341c6a8a42cddb092d0180229e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_86e9b8e8",
+        "filename": "releasenotes/notes/removed-as-of-pike-deadbeefdeadbeef.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-03T14:14:22Z",
+      "side": 1,
+      "message": "user update",
+      "range": {
+        "startLine": 28,
+        "startChar": 6,
+        "endLine": 28,
+        "endChar": 17
+      },
+      "revId": "ee16e638b7d0c6341c6a8a42cddb092d0180229e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
