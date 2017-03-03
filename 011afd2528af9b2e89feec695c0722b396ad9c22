@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_094a2926",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-03-03T19:58:32Z",
+      "side": 1,
+      "message": "I tried to salvage examples when I could",
+      "parentUuid": "ba2be162_b05100db",
+      "revId": "011afd2528af9b2e89feec695c0722b396ad9c22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_c97e5169",
         "filename": "setup.cfg",
         "patchSetId": 1
