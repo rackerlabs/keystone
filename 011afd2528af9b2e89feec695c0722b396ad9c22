@@ -16,6 +16,29 @@
       "revId": "011afd2528af9b2e89feec695c0722b396ad9c22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_c97e5169",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-03-03T19:56:31Z",
+      "side": 1,
+      "message": "sphinx upper constraint was raised to 1.5.2 so I will uncomment this",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 22
+      },
+      "revId": "011afd2528af9b2e89feec695c0722b396ad9c22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
