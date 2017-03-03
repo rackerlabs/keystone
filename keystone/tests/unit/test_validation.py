@@ -367,7 +367,7 @@ class ProjectValidationTestCase(unit.BaseTestCase):
 
     def test_validate_project_request_with_name_too_long(self):
         """Exception is raised when `name` is too long."""
-        long_project_name = 'a' * 65
+        long_project_name = 'a' * 256
         request_to_validate = {'name': long_project_name}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_project_validator.validate,
@@ -449,7 +449,7 @@ class ProjectValidationTestCase(unit.BaseTestCase):
 
     def test_validate_project_update_request_with_name_too_long_fails(self):
         """Exception raised when updating a project with `name` too long."""
-        long_project_name = 'a' * 65
+        long_project_name = 'a' * 256
         request_to_validate = {'name': long_project_name}
         self.assertRaises(exception.SchemaValidationError,
                           self.update_project_validator.validate,
@@ -569,7 +569,7 @@ class DomainValidationTestCase(unit.BaseTestCase):
 
     def test_validate_domain_request_with_name_too_long(self):
         """Exception is raised when `name` is too long."""
-        long_domain_name = 'a' * 65
+        long_domain_name = 'a' * 256
         request_to_validate = {'name': long_domain_name}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_domain_validator.validate,
@@ -628,7 +628,7 @@ class DomainValidationTestCase(unit.BaseTestCase):
 
     def test_validate_domain_update_request_with_name_too_long_fails(self):
         """Exception raised when updating a domain with `name` too long."""
-        long_domain_name = 'a' * 65
+        long_domain_name = 'a' * 256
         request_to_validate = {'name': long_domain_name}
         self.assertRaises(exception.SchemaValidationError,
                           self.update_domain_validator.validate,
