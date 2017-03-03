@@ -2421,6 +2421,31 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         pw_table = sqlalchemy.Table('password', meta, autoload=True)
         self.assertFalse(pw_table.c.created_at_int.nullable)
 
+    def test_migration_30_consistent_name_fields(self):
+        project_table_name = 'project'
+        group_table_name = 'group'
+        self.expand(29)
+        self.migrate(29)
+        self.contract(29)
+        project_table = sqlalchemy.Table(
+            project_table_name, self.metadata, autoload=True)
+        self.assertEqual(project_table.c.name.type.length, 64)
+
+        group_table = sqlalchemy.Table(
+            group_table_name, self.metadata, autoload=True)
+        self.assertEqual(group_table.c.name.type.length, 64)
+
+        self.expand(30)
+        self.migrate(30)
+        self.contract(30)
+        project_table = sqlalchemy.Table(
+            project_table_name, self.metadata, autoload=True)
+        self.assertEqual(project_table.c.name.type.length, 255)
+
+        group_table = sqlalchemy.Table(
+            group_table_name, self.metadata, autoload=True)
+        self.assertEqual(group_table.c.name.type.length, 255)
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
