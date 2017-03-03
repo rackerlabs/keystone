@@ -16,7 +16,7 @@ from keystone.common.validation import parameter_types
 _name_properties = {
     'type': 'string',
     'minLength': 1,
-    'maxLength': 64,
+    'maxLength': 255,
     'pattern': '[\S]+'
 }
 
