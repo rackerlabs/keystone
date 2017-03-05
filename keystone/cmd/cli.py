@@ -367,10 +367,11 @@ class BootStrap(BaseApp):
                     LOG.info(_LI('Created %(interface)s endpoint %(url)s'),
                              {'interface': interface, 'url': url})
                 else:
-                    # NOTE(jamielennox): electing not to update existing
-                    # endpoints here. There may be call to do so in future.
-                    LOG.info(_LI('Skipping %s endpoint as already created'),
-                             interface)
+                    endpoint_ref['url'] = url
+                    self.catalog_manager.update_endpoint(
+                        endpoint_id=endpoint_ref['id'],
+                        endpoint_ref=endpoint_ref)
+                    LOG.info(_LI('%s endpoint updated'), interface)
 
                 self.endpoints[interface] = endpoint_ref['id']
 
