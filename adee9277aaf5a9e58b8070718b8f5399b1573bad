@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_92f8b94b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 909,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-03-06T19:09:36Z",
+      "side": 1,
+      "message": "Instead of listing all of these options manually, can we just get the list of ldap options from conf/ldap.py (and remove options marked secret such as password)?",
+      "revId": "adee9277aaf5a9e58b8070718b8f5399b1573bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_928fd9cb",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 920,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-03-06T19:09:36Z",
+      "side": 1,
+      "message": "Similar could be done here to gather all ldap options marked secret.",
+      "revId": "adee9277aaf5a9e58b8070718b8f5399b1573bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
