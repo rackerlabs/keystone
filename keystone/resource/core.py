@@ -907,12 +907,13 @@ class DomainConfigManager(manager.Manager):
             'user_additional_attribute_mapping', 'group_tree_dn',
             'group_filter', 'group_objectclass', 'group_id_attribute',
             'group_name_attribute', 'group_member_attribute',
-            'group_desc_attribute', 'group_attribute_ignore',
-            'group_additional_attribute_mapping', 'tls_cacertfile',
-            'tls_cacertdir', 'use_tls', 'tls_req_cert', 'use_pool',
-            'pool_size', 'pool_retry_max', 'pool_retry_delay',
-            'pool_connection_timeout', 'pool_connection_lifetime',
-            'use_auth_pool', 'auth_pool_size', 'auth_pool_connection_lifetime'
+            'group_members_are_ids', 'group_desc_attribute',
+            'group_attribute_ignore', 'group_additional_attribute_mapping',
+            'group_ad_nesting', 'tls_cacertfile', 'tls_cacertdir', 'use_tls',
+            'tls_req_cert', 'use_pool', 'pool_size', 'pool_retry_max',
+            'pool_retry_delay', 'pool_connection_timeout',
+            'pool_connection_lifetime', 'use_auth_pool', 'auth_pool_size',
+            'auth_pool_connection_lifetime'
         ]
     }
     sensitive_options = {
