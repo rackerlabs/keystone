@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    The ldap config group_members_are_ids has been added to the whitelisted
+    options allowing it to now be used in `keystone-manage
+    domain_config_upload`
