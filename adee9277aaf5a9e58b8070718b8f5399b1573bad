@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "9a30ddce_2d493e60",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 909,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-03-07T22:35:30Z",
+      "side": 1,
+      "message": "Ok, makes sense",
+      "parentUuid": "9a30ddce_0ad9c5f3",
+      "revId": "adee9277aaf5a9e58b8070718b8f5399b1573bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_928fd9cb",
         "filename": "keystone/resource/core.py",
         "patchSetId": 2
