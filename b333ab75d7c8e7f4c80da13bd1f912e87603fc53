@@ -22,6 +22,29 @@
       "revId": "b333ab75d7c8e7f4c80da13bd1f912e87603fc53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_4932eff2",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-07T19:02:36Z",
+      "side": 1,
+      "message": "This could be @property for easier use.",
+      "range": {
+        "startLine": 172,
+        "startChar": 8,
+        "endLine": 172,
+        "endChar": 30
+      },
+      "revId": "b333ab75d7c8e7f4c80da13bd1f912e87603fc53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
