@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_6a63211b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 22
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-03-07T20:31:23Z",
+      "side": 1,
+      "message": "nit: this is usually put inside \u003c \u003e",
+      "range": {
+        "startLine": 26,
+        "startChar": 31,
+        "endLine": 26,
+        "endChar": 50
+      },
+      "revId": "95c3ae146e84b1c58f90997ea0734144eb137e8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
