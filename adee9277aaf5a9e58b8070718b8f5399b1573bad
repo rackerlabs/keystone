@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9a30ddce_0ad9c5f3",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 909,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-07T20:28:02Z",
+      "side": 1,
+      "message": "So after talking this over with lance, the reason we don\u0027t/haven\u0027t done this yet is because of security issues. The argument is that it is better to manually and explicitly state the whitelist fields we do allow to be modified than pull everything from CONF and then have to prune out the things we don\u0027t allow. It\u0027s a \u0027deny all and note the acceptions\u0027 vs \u0027accept all and note the exceptions\u0027 case. For example, if we were to pull all ldap keys from CONF into whitelist and remove the elements we don\u0027t want, that might cause a security gap if we later add anything under ldap gropu in CONF file that shouldn\u0027t be whitelisted, and forget to remove the element from the whitelist in the code.",
+      "parentUuid": "ba2be162_92f8b94b",
+      "revId": "adee9277aaf5a9e58b8070718b8f5399b1573bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_928fd9cb",
         "filename": "keystone/resource/core.py",
         "patchSetId": 2
