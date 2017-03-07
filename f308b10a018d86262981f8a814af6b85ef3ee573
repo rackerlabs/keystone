@@ -64,6 +64,24 @@
       "revId": "f308b10a018d86262981f8a814af6b85ef3ee573",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_8994e737",
+        "filename": "keystone/tests/unit/common/test_database_conflicts.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-07T19:10:22Z",
+      "side": 1,
+      "message": "I went back and forth on this. It is trivia, I can remove. New patch on the way!",
+      "parentUuid": "ba2be162_a3985c6b",
+      "revId": "f308b10a018d86262981f8a814af6b85ef3ee573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
