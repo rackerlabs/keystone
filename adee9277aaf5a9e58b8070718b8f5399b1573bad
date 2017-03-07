@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a30ddce_ec73be4b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 909,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-07T15:55:22Z",
+      "side": 1,
+      "message": "I like your thinking. I need to look more into this. It appears that if you were to grab CONF.ldap.keys() you would end up whitelisting more items than we want even if you remove options marked secret.",
+      "parentUuid": "ba2be162_92f8b94b",
+      "revId": "adee9277aaf5a9e58b8070718b8f5399b1573bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_928fd9cb",
         "filename": "keystone/resource/core.py",
         "patchSetId": 2
