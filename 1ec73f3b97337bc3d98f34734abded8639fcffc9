@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_f2c47a41",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-07T15:02:35Z",
+      "side": 0,
+      "message": "I forgot about this test.",
+      "revId": "1ec73f3b97337bc3d98f34734abded8639fcffc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_72b08ade",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-07T15:02:35Z",
+      "side": 0,
+      "message": "Forgot about this!",
+      "revId": "1ec73f3b97337bc3d98f34734abded8639fcffc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
