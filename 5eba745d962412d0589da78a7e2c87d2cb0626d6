@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_69ab458a",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-07T14:15:21Z",
+      "side": 0,
+      "message": "Your \"temporary\" key is going to be loaded here, regardless of the *.tmp extension, because it\u0027s a valid key in the expected directory. If the temp file is empty because the disk is full, as described in the bug, then you\u0027re going to get the same behavior described in the bug.",
+      "revId": "5eba745d962412d0589da78a7e2c87d2cb0626d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

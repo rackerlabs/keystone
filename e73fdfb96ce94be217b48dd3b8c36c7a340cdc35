@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_6957c502",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-07T14:15:21Z",
+      "side": 1,
+      "message": "A \"why\" would be valuable to document here.",
+      "revId": "e73fdfb96ce94be217b48dd3b8c36c7a340cdc35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_e94bb557",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-07T14:15:21Z",
+      "side": 1,
+      "message": "This filename is just going to be loaded as a normal key.",
+      "revId": "e73fdfb96ce94be217b48dd3b8c36c7a340cdc35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_e9e7353e",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-07T14:15:21Z",
+      "side": 1,
+      "message": "This should not be in the finally block, as it should obviously only run if the try block was successful.",
+      "revId": "e73fdfb96ce94be217b48dd3b8c36c7a340cdc35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_e95575c6",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-07T14:15:21Z",
+      "side": 1,
+      "message": "I\u0027m not sure this logging provides the operator any value at the INFO level.",
+      "revId": "e73fdfb96ce94be217b48dd3b8c36c7a340cdc35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_89e23902",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-07T14:15:21Z",
+      "side": 1,
+      "message": "Why does this need to be done before the current primary is promoted?",
+      "revId": "e73fdfb96ce94be217b48dd3b8c36c7a340cdc35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
