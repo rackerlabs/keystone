@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_deedb38c",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-07T18:59:55Z",
+      "side": 1,
+      "message": "This will be fixed to pull the hash-ident out vs. leaning on the password.hash_algo config, this is an incorrect error.\n\nfixed in either followup or subsequent patchset.",
+      "range": {
+        "startLine": 53,
+        "startChar": 12,
+        "endLine": 53,
+        "endChar": 50
+      },
+      "revId": "b333ab75d7c8e7f4c80da13bd1f912e87603fc53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
