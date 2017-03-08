@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a30ddce_8d0afc1f",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-08T22:34:20Z",
+      "side": 0,
+      "message": "I think this is the message Dolph was referring to in his review of patch set 7. I wouldn\u0027t mind keeping this message around since it is helpful and it points people to docs in the event things go haywire.",
+      "revId": "724c9b7cd91a97fca8af7f7ec4ec8ef3d450681b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_54833156",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 7

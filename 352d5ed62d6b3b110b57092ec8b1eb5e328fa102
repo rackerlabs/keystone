@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_2d69108c",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-08T22:34:20Z",
+      "side": 1,
+      "message": "This could be generalized like the error in cli.py, as an operator that typically gives me a little more to go on since it\u0027s including documentation.",
+      "revId": "352d5ed62d6b3b110b57092ec8b1eb5e328fa102",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
