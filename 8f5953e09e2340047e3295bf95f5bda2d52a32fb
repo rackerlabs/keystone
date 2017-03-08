@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_a586fe62",
+        "filename": "keystone/tests/unit/common/test_database_conflicts.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-08T19:23:07Z",
+      "side": 1,
+      "message": "FIXME\u0027s indicate the code is broken and should not be trusted to perform it\u0027s intended function. This is just a TODO.",
+      "revId": "8f5953e09e2340047e3295bf95f5bda2d52a32fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_054d0a3e",
+        "filename": "keystone/tests/unit/common/test_database_conflicts.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-08T19:23:07Z",
+      "side": 1,
+      "message": "You used the term \"module\" in L30, which indicates to me that this should be a module-level doctstring, but the inline comment is included in just one arbitrary test case. How about making it a class-level docstring, because it appears to apply to every test case in the class?",
+      "revId": "8f5953e09e2340047e3295bf95f5bda2d52a32fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
