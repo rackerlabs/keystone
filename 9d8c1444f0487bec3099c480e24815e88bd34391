@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_8363bfdb",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-08T14:56:56Z",
+      "side": 1,
+      "message": "This doc string is slightly misleading compared to name of the assertion.",
+      "revId": "9d8c1444f0487bec3099c480e24815e88bd34391",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
