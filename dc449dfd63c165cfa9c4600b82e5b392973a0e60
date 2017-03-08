@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_6a64ce48",
+        "filename": "releasenotes/notes/bug-1652012-b3aea7c0d5affdb6.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-08T22:15:33Z",
+      "side": 1,
+      "message": "`is_admin_project`",
+      "revId": "dc449dfd63c165cfa9c4600b82e5b392973a0e60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_0a7992f6",
+        "filename": "releasenotes/notes/bug-1652012-b3aea7c0d5affdb6.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-08T22:15:33Z",
+      "side": 1,
+      "message": "s/.././",
+      "revId": "dc449dfd63c165cfa9c4600b82e5b392973a0e60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
