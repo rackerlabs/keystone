@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "9a30ddce_f7f507cb",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 909,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-08T21:42:58Z",
+      "side": 1,
+      "message": "I completely agree that this would be good to document somewhere.",
+      "parentUuid": "9a30ddce_c5585235",
+      "revId": "adee9277aaf5a9e58b8070718b8f5399b1573bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_85757a99",
         "filename": "keystone/resource/core.py",
         "patchSetId": 2
