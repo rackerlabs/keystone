@@ -73,6 +73,41 @@
     },
     {
       "key": {
+        "uuid": "9a30ddce_c5585235",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 909,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-08T19:18:54Z",
+      "side": 1,
+      "message": "Richard: perhaps in a separate patch, you should document that reasoning in an inline comment to prevent a similar refactor attempt in the future.",
+      "parentUuid": "9a30ddce_2d493e60",
+      "revId": "adee9277aaf5a9e58b8070718b8f5399b1573bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_85757a99",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 913,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-08T19:18:54Z",
+      "side": 1,
+      "message": "Because there are multiple items per line here, combining the re-sorting of the list with an addition makes this patch unnecessarily difficult to review. Next time, propose the refactor first, then you\u0027re actual change in a separate review.",
+      "revId": "adee9277aaf5a9e58b8070718b8f5399b1573bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_928fd9cb",
         "filename": "keystone/resource/core.py",
         "patchSetId": 2
