@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_37315fed",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-08T21:11:08Z",
+      "side": 1,
+      "message": "the (the default) part is redundant with the method signature. Maybe something like:\n\n  :param do_raise: if True a PolicyNotAuthorized exception is raised if\n                   the policy check fails, otherwise failed policy checks result\n                   in this method returning `False`.",
+      "revId": "6b0ef2c7e094bd1fb8a7662542decf11143fa280",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
