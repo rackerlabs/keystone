@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a30ddce_347ebdae",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-08T21:56:40Z",
+      "side": 1,
+      "message": "Elaborate? Why unnecessarily validate everything else every time when you are only running a single command at a time which is dependent on the db_sync command that must be run before it?",
+      "parentUuid": "9a30ddce_4031b004",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_d469e1bf",
         "filename": "keystone/common/sql/upgrades.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2017-03-08T20:37:49Z",
       "side": 1,
       "message": "Documenting what the parameters actually mean would be helpful to understand what this method is actually validating.",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_17361be6",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-08T21:56:40Z",
+      "side": 1,
+      "message": "++ Done",
+      "parentUuid": "9a30ddce_d469e1bf",
       "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a30ddce_b7862f11",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-08T21:56:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a30ddce_e08704d5",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_80648822",
         "filename": "keystone/common/sql/upgrades.py",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2017-03-08T20:37:49Z",
       "side": 1,
       "message": "This comment just re-iterates what the code is doing, not why it\u0027s doing it. Why is it safe to exit early? Why would repo_name ever not be in the set of known keys?",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_977dab70",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-08T21:56:40Z",
+      "side": 1,
+      "message": "Legacy Repository. https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_sql_upgrade.py#L226-L228",
+      "parentUuid": "9a30ddce_80648822",
       "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9a30ddce_97f4cbf2",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-08T21:56:40Z",
+      "side": 1,
+      "message": "Because db_sync command doesn\u0027t need a version to be supplied by the user and can upgrade to the latest when none is given?",
+      "parentUuid": "9a30ddce_c045a070",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_f436e5e5",
         "filename": "keystone/common/sql/upgrades.py",
         "patchSetId": 7
@@ -98,6 +188,24 @@
       "writtenOn": "2017-03-08T20:37:49Z",
       "side": 1,
       "message": "?",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_374b1fb2",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-08T21:56:40Z",
+      "side": 1,
+      "message": "As outlined here: https://bugs.launchpad.net/keystone/+bug/1615014\nWe validate the command that the user wants to run is not attempting to upgrade ahead of the command that comes before it. Hope this helps",
+      "parentUuid": "9a30ddce_f436e5e5",
       "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "9a30ddce_57b7b3d7",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-08T21:56:40Z",
+      "side": 1,
+      "message": "\"removed in this patch\"? What is being removed?",
+      "parentUuid": "9a30ddce_c0592000",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_74d4b546",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 7
@@ -132,6 +258,24 @@
       "writtenOn": "2017-03-08T20:37:49Z",
       "side": 1,
       "message": "The optional argument is unused.",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_1731bb05",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1662,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-08T21:56:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a30ddce_74d4b546",
       "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "9a30ddce_372cffaa",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1666,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-08T21:56:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a30ddce_14e9b914",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_f447c51a",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 7
@@ -166,6 +328,24 @@
       "writtenOn": "2017-03-08T20:37:49Z",
       "side": 1,
       "message": "Comment is redundant with the method name.",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_8aa6620e",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1674,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-08T21:56:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a30ddce_f447c51a",
       "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "9a30ddce_cab05a46",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1676,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-08T21:56:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a30ddce_d4c5618e",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_9442090f",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 7
@@ -206,6 +404,24 @@
     },
     {
       "key": {
+        "uuid": "9a30ddce_eaab5ed4",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1681,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-08T21:56:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a30ddce_9442090f",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_743bd59c",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 7
@@ -217,6 +433,24 @@
       "writtenOn": "2017-03-08T20:37:49Z",
       "side": 1,
       "message": "Comment is redundant with the method name.",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_0abb5228",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1687,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-08T21:56:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a30ddce_743bd59c",
       "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
