@@ -57,6 +57,24 @@
       "revId": "011afd2528af9b2e89feec695c0722b396ad9c22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_6da5c8b3",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-08T22:37:05Z",
+      "side": 1,
+      "message": "Looks like we use 1.5.1 today: \n\nhttps://github.com/openstack/keystone/blob/master/test-requirements.txt#L25",
+      "parentUuid": "ba2be162_c97e5169",
+      "revId": "011afd2528af9b2e89feec695c0722b396ad9c22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
