@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_ce807749",
+        "filename": "keystone/tests/unit/filtering.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-03-08T17:14:22Z",
+      "side": 1,
+      "message": "Not sure how this got here.",
+      "revId": "293b73d0a6f370ed0caaa3f2370e7bc5d6c455d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
