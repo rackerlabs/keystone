@@ -13,6 +13,7 @@
 import base64
 import datetime
 import hashlib
+import mock
 import os
 import uuid
 
@@ -560,6 +561,24 @@ class TestFernetKeyRotation(unit.TestCase):
         # that we don't see it again later.
         self.key_repo_signatures.add(signature)
 
+        # Remember the most-recently seen repository signature.
+        self.previous_key_repo_signatures = signature
+
+    def assertUnchangedRepositoryState(self):
+        """Ensure that the current key repo state has not changed.
+
+        The repository state must first be validated by
+        ``assertUniqueRepositoryState`` before it can be validated to be
+        unchanged by this method.
+
+        """
+        # This is assigned to a variable because it takes some work to
+        # calculate.
+        signature = self.key_repository_signature
+
+        # Ensure the signature is equivalent to the last one we saw.
+        self.assertEqual(signature, self.previous_key_repo_signatures)
+
     def test_rotation(self):
         # Initializing a key repository results in this many keys. We don't
         # support max_active_keys being set any lower.
@@ -621,6 +640,47 @@ class TestFernetKeyRotation(unit.TestCase):
                 exp_keys.append(next_key_number)
                 next_key_number += 1
                 self.assertEqual(exp_keys, self.keys)
+
+    def test_rotation_disk_write_fail(self):
+        # Init the key repository
+        self.useFixture(
+            ksfixtures.KeyRepository(
+                self.config_fixture,
+                'fernet_tokens',
+                CONF.fernet_tokens.max_active_keys
+            )
+        )
+
+        # Ensure that the init key repository contains 2 new keys.
+        self.assertUniqueRepositoryState()
+        self.assertEqual(2, self.key_repository_size)
+
+        key_utils = fernet_utils.FernetUtils(
+            CONF.fernet_tokens.key_repository,
+            CONF.fernet_tokens.max_active_keys
+        )
+
+        # Simulate the disk full situation
+        mock_open = mock.mock_open()
+        file_handle = mock_open()
+        file_handle.flush.side_effect = IOError('disk full')
+
+        # The first attempt at rotation succeeds without error.
+        with mock.patch('keystone.common.fernet_utils.open', mock_open):
+            key_utils.rotate_keys()
+
+        # However, the number of keys and content of each remains the same.
+        self.assertUnchangedRepositoryState()
+
+        # When we attempt to rotate again, we begin receiving OSErrors.
+        self.assertRaises(OSError, key_utils.rotate_keys)
+
+        # However, the key repository remains the same.
+        self.assertUnchangedRepositoryState()
+
+        # This behavior continues, preventing rotation.
+        self.assertRaises(OSError, key_utils.rotate_keys)
+        self.assertUnchangedRepositoryState()
 
     def test_non_numeric_files(self):
         self.useFixture(
