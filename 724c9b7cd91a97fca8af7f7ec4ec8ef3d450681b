@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_54833156",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1662,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-08T20:37:49Z",
+      "side": 0,
+      "message": "As far as I can tell, you can\u0027t make keystone do things out of order if you use keystone-manage. Only the unit tests are able to reach past the validation done by keystone-manage to force upgrades out of order, so this patch shifts that validation to be done later?",
+      "revId": "724c9b7cd91a97fca8af7f7ec4ec8ef3d450681b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

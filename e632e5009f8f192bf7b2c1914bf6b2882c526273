@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_4031b004",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-08T20:37:49Z",
+      "side": 1,
+      "message": "Why only validate the state of one repo, instead of just validating them all, like the old code intended to do?",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_d469e1bf",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-08T20:37:49Z",
+      "side": 1,
+      "message": "Documenting what the parameters actually mean would be helpful to understand what this method is actually validating.",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_e08704d5",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-08T20:37:49Z",
+      "side": 1,
+      "message": "This dictionary is super confusing, and deserves an inline comment to explain what the keys and values actually mean. Also, use the constants at the top of the module.",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_80648822",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-08T20:37:49Z",
+      "side": 1,
+      "message": "This comment just re-iterates what the code is doing, not why it\u0027s doing it. Why is it safe to exit early? Why would repo_name ever not be in the set of known keys?",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_c045a070",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-08T20:37:49Z",
+      "side": 1,
+      "message": "Why is this argument optional?",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_f436e5e5",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-08T20:37:49Z",
+      "side": 1,
+      "message": "?",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_c0592000",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-08T20:37:49Z",
+      "side": 1,
+      "message": "The operator-focused error message removed in this patch describes roughly what is wrong and provides additional information as to what recourse the operator has (the goal being to help operators understand, and hopefully resolve, the situation).\n\nBy contrast, this error message is just a mathematical statement that doesn\u0027t even imply that something is wrong about the condition being described. The error might as well say \"1 + 1 \u003d 2\",",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_74d4b546",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1662,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-08T20:37:49Z",
+      "side": 1,
+      "message": "The optional argument is unused.",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_14e9b914",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1666,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-08T20:37:49Z",
+      "side": 1,
+      "message": "This is asserting that the expand repo version is non-zero, and if it\u0027s zero, then it\u0027s going to print \"1\" in the unit test logs.",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_f447c51a",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1674,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-08T20:37:49Z",
+      "side": 1,
+      "message": "Comment is redundant with the method name.",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_d4c5618e",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1676,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-08T20:37:49Z",
+      "side": 1,
+      "message": "extra parens",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_9442090f",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1681,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-08T20:37:49Z",
+      "side": 1,
+      "message": "Comment is redundant with the method name.",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_743bd59c",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1687,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-08T20:37:49Z",
+      "side": 1,
+      "message": "Comment is redundant with the method name.",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
