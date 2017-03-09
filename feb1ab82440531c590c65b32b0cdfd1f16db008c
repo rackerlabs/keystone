@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_0016bcf0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 26
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-03-09T14:09:59Z",
+      "side": 1,
+      "message": "nit: s/in code/in-code/",
+      "range": {
+        "startLine": 18,
+        "startChar": 53,
+        "endLine": 18,
+        "endChar": 60
+      },
+      "revId": "feb1ab82440531c590c65b32b0cdfd1f16db008c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_e0efe8e6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 26
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-03-09T14:09:59Z",
+      "side": 1,
+      "message": "nit: s/in code/in-code/",
+      "range": {
+        "startLine": 19,
+        "startChar": 21,
+        "endLine": 19,
+        "endChar": 28
+      },
+      "revId": "feb1ab82440531c590c65b32b0cdfd1f16db008c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_4b7b758c",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-03-09T14:09:59Z",
+      "side": 1,
+      "message": "it doesn\u0027t get much more useless than a rule that a allows us to replace \"role:service\" with \"rule:service_role\"... I\u0027d say it\u0027s even counterproductive. But this isn\u0027t new to this patch, so I\u0027d be ok cleaning it up in a later patch if necessary.",
+      "range": {
+        "startLine": 25,
+        "startChar": 14,
+        "endLine": 25,
+        "endChar": 26
+      },
+      "revId": "feb1ab82440531c590c65b32b0cdfd1f16db008c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_00a6bc52",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-03-09T14:09:59Z",
+      "side": 1,
+      "message": "we\u0027ve gone a little crazy with these policy rules that have long names and are never checked directly. As an operator, it would be much easier to have fewer rules and read a check_str for the API I\u0027m trying to call that does the AND\u0027ing, OR\u0027ing, NOT\u0027ing, etc... so I don\u0027t have to go lookup \u0027service_admin_or_token_subject\u0027, then go lookup \u0027service_or_admin\u0027, etc. I\u0027d be fine cleaning that up in a later patch, though, if need be.",
+      "range": {
+        "startLine": 43,
+        "startChar": 14,
+        "endLine": 43,
+        "endChar": 44
+      },
+      "revId": "feb1ab82440531c590c65b32b0cdfd1f16db008c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_4080b4c0",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-03-09T14:09:59Z",
+      "side": 1,
+      "message": "In the current system, the \u0027default\u0027 rule is checked by oslo.policy when the rule that it was told to check is not found. Once all policy defaults are in code, that will never be possible anymore, making the \u0027default\u0027 rule obsolete. So it\u0027s not needed here... just leave it in the policy.json file, and when that file is deleted it would just go away.",
+      "range": {
+        "startLine": 46,
+        "startChar": 14,
+        "endLine": 46,
+        "endChar": 21
+      },
+      "revId": "feb1ab82440531c590c65b32b0cdfd1f16db008c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_8b448d1b",
+        "filename": "keystone/common/policies/endpoint.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-03-09T14:09:59Z",
+      "side": 1,
+      "message": "I\u0027d like to see the format change to \"identity:endpoint:get\", but that\u0027s probably a follow-on patch.",
+      "range": {
+        "startLine": 19,
+        "startChar": 30,
+        "endLine": 19,
+        "endChar": 42
+      },
+      "revId": "feb1ab82440531c590c65b32b0cdfd1f16db008c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_468fec29",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-03-09T14:09:59Z",
+      "side": 1,
+      "message": "should just be able to pass all of this on the enforce() call all the time, and let oslo.policy ignore exc and action when do_raise\u003d\u003dFalse, right? Or at least set do_raise on the enforce call rather than in extra.",
+      "range": {
+        "startLine": 63,
+        "startChar": 4,
+        "endLine": 63,
+        "endChar": 15
+      },
+      "revId": "feb1ab82440531c590c65b32b0cdfd1f16db008c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
