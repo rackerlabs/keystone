@@ -1,0 +1,234 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_1298bb77",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 894,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-03-09T20:42:48Z",
+      "side": 1,
+      "message": "pulling",
+      "range": {
+        "startLine": 894,
+        "startChar": 61,
+        "endLine": 894,
+        "endChar": 65
+      },
+      "revId": "444f558b297428851ac1bb64cbe8856b71c9b560",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_928aeb19",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 895,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-03-09T20:42:48Z",
+      "side": 1,
+      "message": "pruning",
+      "range": {
+        "startLine": 895,
+        "startChar": 40,
+        "endLine": 895,
+        "endChar": 45
+      },
+      "revId": "444f558b297428851ac1bb64cbe8856b71c9b560",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_127fdb15",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 895,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-03-09T20:42:48Z",
+      "side": 1,
+      "message": "them",
+      "range": {
+        "startLine": 895,
+        "startChar": 46,
+        "endLine": 895,
+        "endChar": 53
+      },
+      "revId": "444f558b297428851ac1bb64cbe8856b71c9b560",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_5275d32f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 896,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-03-09T20:42:48Z",
+      "side": 1,
+      "message": "wouldn\u0027t",
+      "range": {
+        "startLine": 896,
+        "startChar": 71,
+        "endLine": 896,
+        "endChar": 74
+      },
+      "revId": "444f558b297428851ac1bb64cbe8856b71c9b560",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_f29c075f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 897,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-03-09T20:42:48Z",
+      "side": 1,
+      "message": "was",
+      "range": {
+        "startLine": 897,
+        "startChar": 76,
+        "endLine": 897,
+        "endChar": 78
+      },
+      "revId": "444f558b297428851ac1bb64cbe8856b71c9b560",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_b2bd2fb9",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 898,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-03-09T20:42:48Z",
+      "side": 1,
+      "message": "In",
+      "range": {
+        "startLine": 898,
+        "startChar": 16,
+        "endLine": 898,
+        "endChar": 18
+      },
+      "revId": "444f558b297428851ac1bb64cbe8856b71c9b560",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_52acf38b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 898,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-03-09T20:42:48Z",
+      "side": 1,
+      "message": ".",
+      "range": {
+        "startLine": 898,
+        "startChar": 14,
+        "endLine": 898,
+        "endChar": 15
+      },
+      "revId": "444f558b297428851ac1bb64cbe8856b71c9b560",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_521f93b6",
+        "filename": "releasenotes/notes/add-group-members-are-ids-whitelist-687833a3edd6657a.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-03-09T20:42:48Z",
+      "side": 1,
+      "message": "[`bug 1527759 \u003chttps://bugs.launchpad.net/keystone/+bug/1670382\u003e`_]",
+      "range": {
+        "startLine": 3,
+        "startChar": 4,
+        "endLine": 3,
+        "endChar": 5
+      },
+      "revId": "444f558b297428851ac1bb64cbe8856b71c9b560",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_12d43bea",
+        "filename": "releasenotes/notes/add-group-members-are-ids-whitelist-687833a3edd6657a.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-03-09T20:42:48Z",
+      "side": 1,
+      "message": "have",
+      "range": {
+        "startLine": 4,
+        "startChar": 42,
+        "endLine": 4,
+        "endChar": 45
+      },
+      "revId": "444f558b297428851ac1bb64cbe8856b71c9b560",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_b280cfc1",
+        "filename": "releasenotes/notes/add-group-members-are-ids-whitelist-687833a3edd6657a.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-03-09T20:42:48Z",
+      "side": 1,
+      "message": "Not just this CLI but also the domain config API.",
+      "range": {
+        "startLine": 5,
+        "startChar": 42,
+        "endLine": 6,
+        "endChar": 25
+      },
+      "revId": "444f558b297428851ac1bb64cbe8856b71c9b560",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
