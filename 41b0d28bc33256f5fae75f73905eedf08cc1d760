@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a30ddce_e327e0c7",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 764,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-03-09T20:07:54Z",
+      "side": 0,
+      "message": "Removing a user from a group means deleting stuff in LDAP, and I\u0027m removing the logic for that. So this part of the test is unnecessary. https://github.com/openstack/keystone/blob/master/keystone/identity/backends/ldap/common.py#L1615",
+      "parentUuid": "9a30ddce_856c71d1",
+      "revId": "41b0d28bc33256f5fae75f73905eedf08cc1d760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_058fa175",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 7
@@ -47,6 +65,24 @@
       "writtenOn": "2017-03-09T18:04:21Z",
       "side": 0,
       "message": "++, otherwise this test doesn\u0027t really assert anything",
+      "parentUuid": "9a30ddce_058fa175",
+      "revId": "41b0d28bc33256f5fae75f73905eedf08cc1d760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_7e962340",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-03-09T20:07:54Z",
+      "side": 0,
+      "message": "Is it okay if I do this more nicely in a follow-up patch? Because in a lot of the tests here I have removed the delete part completely instead of asserting for that exception. I would prefer to be consistent and add a few tests specifically for this kind of forbidden behavior.",
       "parentUuid": "9a30ddce_058fa175",
       "revId": "41b0d28bc33256f5fae75f73905eedf08cc1d760",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",

@@ -16,6 +16,24 @@
       "revId": "dfb57c681ebfd8ef07dc41512ae46ad7e907a7a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_fe6773e6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-03-09T20:07:54Z",
+      "side": 1,
+      "message": "The possibility to do any change to LDAP has been already removed in Ocata, this is just cleanup for the unit tests and remaining logic.\n\nI can change the topic, but the release note already exists as I linked you in IRC.",
+      "parentUuid": "9a30ddce_69d2f75d",
+      "revId": "dfb57c681ebfd8ef07dc41512ae46ad7e907a7a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
