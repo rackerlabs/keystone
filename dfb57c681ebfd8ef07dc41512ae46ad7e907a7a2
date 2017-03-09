@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_69d2f75d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-09T17:31:17Z",
+      "side": 1,
+      "message": "This was deprecated and staged for removal wasn\u0027t it? If so, we should tag it as removed-as-of-pike and add a release note.",
+      "revId": "dfb57c681ebfd8ef07dc41512ae46ad7e907a7a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

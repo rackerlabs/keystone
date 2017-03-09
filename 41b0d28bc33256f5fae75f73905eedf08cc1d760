@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_856c71d1",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 764,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-09T17:31:17Z",
+      "side": 0,
+      "message": "Is this not still a valid part of the test?",
+      "revId": "41b0d28bc33256f5fae75f73905eedf08cc1d760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_058fa175",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-09T17:31:17Z",
+      "side": 0,
+      "message": "Instead of deleting this assertion - we should update it to expect a read-only warning, which is more descriptive of the ldap behavior we\u0027re expecting.",
+      "revId": "41b0d28bc33256f5fae75f73905eedf08cc1d760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
