@@ -33,6 +33,24 @@
       "revId": "41b0d28bc33256f5fae75f73905eedf08cc1d760",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_ecfb55bf",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-03-09T18:04:21Z",
+      "side": 0,
+      "message": "++, otherwise this test doesn\u0027t really assert anything",
+      "parentUuid": "9a30ddce_058fa175",
+      "revId": "41b0d28bc33256f5fae75f73905eedf08cc1d760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
