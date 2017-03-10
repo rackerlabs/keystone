@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "9a30ddce_cb43a06a",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-10T19:32:38Z",
+      "side": 1,
+      "message": "Those were not questions for code review, they were questions that your inline comment should be preemptively answering.",
+      "parentUuid": "9a30ddce_977dab70",
+      "revId": "e632e5009f8f192bf7b2c1914bf6b2882c526273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_c045a070",
         "filename": "keystone/common/sql/upgrades.py",
         "patchSetId": 7
