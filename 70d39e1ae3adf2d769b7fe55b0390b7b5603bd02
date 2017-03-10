@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_3f49dfb7",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-03-10T16:10:23Z",
+      "side": 1,
+      "message": "Why not use repo.latest? \nhttps://sqlalchemy-migrate.readthedocs.io/en/latest/api.html#migrate.versioning.repository.Repository.latest",
+      "revId": "70d39e1ae3adf2d769b7fe55b0390b7b5603bd02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_f37f85dd",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-03-10T16:10:23Z",
+      "side": 1,
+      "message": "This causes a nasty traceback to be emitted to the screen, I wonder if it might be more friendly to catch the except in keystone/cmd/cli.py and just log the message and return an error code?",
+      "revId": "70d39e1ae3adf2d769b7fe55b0390b7b5603bd02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
