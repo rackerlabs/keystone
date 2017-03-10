@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9a30ddce_647915c8",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 764,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-03-10T14:36:27Z",
+      "side": 0,
+      "message": "What about for sql backends? Isn\u0027t this test inherited by both? I see Steve\u0027s comment that it\u0027s safe to remove but I\u0027m not clear on why.",
+      "parentUuid": "9a30ddce_e327e0c7",
+      "revId": "41b0d28bc33256f5fae75f73905eedf08cc1d760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_058fa175",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 7
