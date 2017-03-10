@@ -33,6 +33,24 @@
       "revId": "bbb66d02de1961a4f396906636748720a33933f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_cdaad084",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-10T22:48:46Z",
+      "side": 1,
+      "message": "Actually - that probably doesn\u0027t make sense here since the notes are specific to the releases.",
+      "parentUuid": "1a430d35_2066f450",
+      "revId": "bbb66d02de1961a4f396906636748720a33933f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
