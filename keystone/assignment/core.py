@@ -1118,7 +1118,6 @@ class RoleManager(manager.Manager):
         self.assignment_api.delete_tokens_for_role_assignments(role_id)
         self.assignment_api.delete_role_assignments(role_id)
         self.driver.delete_role(role_id)
-        notifications.Audit.deleted(self._ROLE, role_id, initiator)
         self.get_role.invalidate(self, role_id)
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
