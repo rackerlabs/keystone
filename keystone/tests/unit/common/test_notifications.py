@@ -424,14 +424,6 @@ class NotificationsForEntities(BaseNotificationTest):
         self._assert_last_audit(project_ref['id'], DELETED_OPERATION,
                                 'project', cadftaxonomy.SECURITY_PROJECT)
 
-    def test_delete_role(self):
-        role_ref = unit.new_role_ref()
-        self.role_api.create_role(role_ref['id'], role_ref)
-        self.role_api.delete_role(role_ref['id'])
-        self._assert_last_note(role_ref['id'], DELETED_OPERATION, 'role')
-        self._assert_last_audit(role_ref['id'], DELETED_OPERATION, 'role',
-                                cadftaxonomy.SECURITY_ROLE)
-
     def test_delete_user(self):
         user_ref = unit.new_user_ref(domain_id=self.domain_id)
         user_ref = self.identity_api.create_user(user_ref)
@@ -917,33 +909,6 @@ class V2Notifications(BaseNotificationTest):
         self._assert_initiator_data_is_set(DELETED_OPERATION,
                                            'user',
                                            cadftaxonomy.SECURITY_ACCOUNT_USER)
-
-    def test_role(self):
-        token = self.get_scoped_token()
-        resp = self.admin_request(
-            method='POST',
-            path='/v2.0/OS-KSADM/roles',
-            body={
-                'role': {
-                    'name': uuid.uuid4().hex,
-                    'description': uuid.uuid4().hex,
-                },
-            },
-            token=token,
-        )
-        role_id = resp.result.get('role').get('id')
-        self._assert_initiator_data_is_set(CREATED_OPERATION,
-                                           'role',
-                                           cadftaxonomy.SECURITY_ROLE)
-        # test for delete role
-        self.admin_request(
-            method='DELETE',
-            path='/v2.0/OS-KSADM/roles/%s' % role_id,
-            token=token,
-        )
-        self._assert_initiator_data_is_set(DELETED_OPERATION,
-                                           'role',
-                                           cadftaxonomy.SECURITY_ROLE)
 
     def test_service_and_endpoint(self):
         token = self.get_scoped_token()
