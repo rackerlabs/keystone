@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_45bfa6a9",
+        "filename": "releasenotes/notes/removed-as-of-pike-deadbeefdeadbeef.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-10T16:37:47Z",
+      "side": 1,
+      "message": "why? Think you need to elaborate the reason why it was removed.",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 70
+      },
+      "revId": "5b431504004767c560dd711af17a2ade62d57e31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_e5cdfa66",
+        "filename": "releasenotes/notes/removed-as-of-pike-deadbeefdeadbeef.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-10T16:37:47Z",
+      "side": 1,
+      "message": "can you elaborate more here? This is not very clear since you are claiming the removal of the module due a deprecation.",
+      "range": {
+        "startLine": 31,
+        "startChar": 72,
+        "endLine": 32,
+        "endChar": 79
+      },
+      "revId": "5b431504004767c560dd711af17a2ade62d57e31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
