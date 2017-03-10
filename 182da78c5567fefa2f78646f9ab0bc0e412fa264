@@ -16,6 +16,24 @@
       "revId": "182da78c5567fefa2f78646f9ab0bc0e412fa264",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_adcd9c32",
+        "filename": "releasenotes/notes/add-group-members-are-ids-whitelist-687833a3edd6657a.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-10T23:05:17Z",
+      "side": 1,
+      "message": "Ahh thanks lance",
+      "parentUuid": "9a30ddce_7cb99814",
+      "revId": "182da78c5567fefa2f78646f9ab0bc0e412fa264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
