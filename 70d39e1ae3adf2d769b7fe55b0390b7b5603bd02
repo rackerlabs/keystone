@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a30ddce_1ccedc62",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-10T21:28:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a30ddce_fe42e0ac",
+      "revId": "70d39e1ae3adf2d769b7fe55b0390b7b5603bd02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_7e6190a8",
         "filename": "keystone/common/sql/upgrades.py",
         "patchSetId": 10
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a30ddce_bc31505c",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-10T21:28:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a30ddce_7e6190a8",
+      "revId": "70d39e1ae3adf2d769b7fe55b0390b7b5603bd02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_7ebd10d7",
         "filename": "keystone/common/sql/upgrades.py",
         "patchSetId": 10
@@ -47,6 +83,24 @@
       "writtenOn": "2017-03-10T19:49:59Z",
       "side": 1,
       "message": "\"None\" (likely) won\u0027t be specified explicitly, since it\u0027s the default parameter.\n\ns/too/to/",
+      "revId": "70d39e1ae3adf2d769b7fe55b0390b7b5603bd02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_fc8588ce",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-10T21:28:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a30ddce_7ebd10d7",
       "revId": "70d39e1ae3adf2d769b7fe55b0390b7b5603bd02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9a30ddce_7718d375",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-10T21:28:45Z",
+      "side": 1,
+      "message": "Nice! Thanks for the link",
+      "parentUuid": "9a30ddce_3f49dfb7",
+      "revId": "70d39e1ae3adf2d769b7fe55b0390b7b5603bd02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_f37f85dd",
         "filename": "keystone/common/sql/upgrades.py",
         "patchSetId": 10
@@ -152,6 +224,24 @@
       "side": 1,
       "message": "++ I do think it\u0027s appropriate to raise an exception here (as opposed to printing anything, for example), because this module does not know, and should not presume to know, what it\u0027s caller is.",
       "parentUuid": "9a30ddce_14123a57",
+      "revId": "70d39e1ae3adf2d769b7fe55b0390b7b5603bd02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_97e0e7ce",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-10T21:28:45Z",
+      "side": 1,
+      "message": "I have to agree with dolph. And the convention for lower level modules (as can be seen throughout this file) seems to be raising the corresponding exception.",
+      "parentUuid": "9a30ddce_9e956434",
       "revId": "70d39e1ae3adf2d769b7fe55b0390b7b5603bd02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

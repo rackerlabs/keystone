@@ -34,6 +34,24 @@
       "revId": "7048b6759b7a25592555ab206c1767a2243ac9b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_9c8bac1e",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1757,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-10T21:28:45Z",
+      "side": 0,
+      "message": "Ahh. Well ultimately this patch makes the first if statement check in --check redundant and unnecessary so I had removed it and with it, this test. However, after adding it back I forgot to re-add this test as well. Will change back",
+      "parentUuid": "9a30ddce_9e7f24df",
+      "revId": "7048b6759b7a25592555ab206c1767a2243ac9b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
