@@ -16,6 +16,24 @@
       "revId": "7048b6759b7a25592555ab206c1767a2243ac9b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_9e7f24df",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1757,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-10T19:49:59Z",
+      "side": 0,
+      "message": "+1 I was wondering this, too. I don\u0027t see anything invalid about this test after this patch?",
+      "parentUuid": "9a30ddce_02dcc471",
+      "revId": "7048b6759b7a25592555ab206c1767a2243ac9b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a30ddce_fe42e0ac",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-10T19:49:59Z",
+      "side": 1,
+      "message": "This module doesn\u0027t know anything about \"the db_sync command\" from keystone-manage, as it\u0027s a lower-level module concerned with sqlalchemy migrate\u0027s db_sync *function*. Rather, you\u0027re validating the state of the migration repos and the intended change of state.",
+      "revId": "70d39e1ae3adf2d769b7fe55b0390b7b5603bd02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_7e6190a8",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-10T19:49:59Z",
+      "side": 1,
+      "message": "spelling. in vi:\n\n  set spell spelllang\u003den_us",
+      "revId": "70d39e1ae3adf2d769b7fe55b0390b7b5603bd02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_7ebd10d7",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-10T19:49:59Z",
+      "side": 1,
+      "message": "\"None\" (likely) won\u0027t be specified explicitly, since it\u0027s the default parameter.\n\ns/too/to/",
+      "revId": "70d39e1ae3adf2d769b7fe55b0390b7b5603bd02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_1e941441",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-10T19:49:59Z",
+      "side": 1,
+      "message": "You\u0027re making up the term \u0027parent command\u0027 here, which isn\u0027t helpful. Explain the relationship between the keys and values and how the dictionary is to be used.",
+      "revId": "70d39e1ae3adf2d769b7fe55b0390b7b5603bd02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_3f49dfb7",
         "filename": "keystone/common/sql/upgrades.py",
         "patchSetId": 10
@@ -13,6 +81,24 @@
       "writtenOn": "2017-03-10T16:10:23Z",
       "side": 1,
       "message": "Why not use repo.latest? \nhttps://sqlalchemy-migrate.readthedocs.io/en/latest/api.html#migrate.versioning.repository.Repository.latest",
+      "revId": "70d39e1ae3adf2d769b7fe55b0390b7b5603bd02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_7e3a709a",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-10T19:49:59Z",
+      "side": 1,
+      "message": "I\u0027m not sure I knew that was a thing, but +1",
+      "parentUuid": "9a30ddce_3f49dfb7",
       "revId": "70d39e1ae3adf2d769b7fe55b0390b7b5603bd02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -48,6 +134,24 @@
       "side": 1,
       "message": "++",
       "parentUuid": "9a30ddce_f37f85dd",
+      "revId": "70d39e1ae3adf2d769b7fe55b0390b7b5603bd02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_9e956434",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-10T19:49:59Z",
+      "side": 1,
+      "message": "++ I do think it\u0027s appropriate to raise an exception here (as opposed to printing anything, for example), because this module does not know, and should not presume to know, what it\u0027s caller is.",
+      "parentUuid": "9a30ddce_14123a57",
       "revId": "70d39e1ae3adf2d769b7fe55b0390b7b5603bd02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
