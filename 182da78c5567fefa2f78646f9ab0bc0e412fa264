@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_7cb99814",
+        "filename": "releasenotes/notes/add-group-members-are-ids-whitelist-687833a3edd6657a.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-10T20:38:11Z",
+      "side": 1,
+      "message": "The undocumented convention for these is to use the bug number in the name of the release note, like the following\n\nhttps://github.com/openstack/keystone/blob/master/releasenotes/notes/bug-1638603-354ee4167e6e.yaml",
+      "revId": "182da78c5567fefa2f78646f9ab0bc0e412fa264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
