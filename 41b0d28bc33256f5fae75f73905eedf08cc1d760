@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "9a30ddce_0225a407",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 764,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-03-10T16:20:15Z",
+      "side": 0,
+      "message": "That\u0027s true. It\u0027s inherited by SQL also, however the list_groups functionality is pretty extensively tested without this bit. The other approach would be for me to copy paste this test into the LDAP tests so that it overwrites this inherited test and remove this part there. I was trying to avoid extensive copy-pastes.",
+      "parentUuid": "9a30ddce_647915c8",
+      "revId": "41b0d28bc33256f5fae75f73905eedf08cc1d760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_058fa175",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 7
