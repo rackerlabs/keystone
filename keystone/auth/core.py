@@ -374,6 +374,9 @@ class UserMFARulesValidator(object):
                   ``False`` means rules do not match.
         """
         user_ref = self.identity_api.get_user(user_id)
+        if not 'options' in user_ref:
+            return True
+
         mfa_rules = user_ref['options'].get(ro.MFA_RULES_OPT.option_name, [])
         mfa_rules_enabled = user_ref['options'].get(
             ro.MFA_ENABLED_OPT.option_name, True)
