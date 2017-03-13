@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_819240f4",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1757,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-13T14:47:33Z",
+      "side": 0,
+      "message": "Instead of removing the test completely we should see if we can assert an exception is raised when contracting the database. It looks a little strange to remove this test in a patch that enforces upgrade order.\n\nAlso - we could keep it, catch the exception, and double check to make sure things are still logged. Operators running this will likely check the logs if they hit this type of situation.",
+      "revId": "cd642d2d4e67f60712bbbac87d81ecfcae292fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

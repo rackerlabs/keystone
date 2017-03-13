@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_36e9d8b7",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-13T14:47:33Z",
+      "side": 1,
+      "message": "s/command/command to/",
+      "revId": "430ae2a067f03196673aadea8af9dc4c4cc09fe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_81f080ca",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-13T14:47:33Z",
+      "side": 1,
+      "message": "The last two sentences are difficult to read. I\u0027d suggest playing with the wording so that both read more naturally. Maybe something like the following?\n\n\"Ensure the upgrade step and version specified by the operator remains consistent with the upgrade process\"\n\nSometimes it is easier to describe complicated situations by using examples.",
+      "revId": "430ae2a067f03196673aadea8af9dc4c4cc09fe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_41984878",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-13T14:47:33Z",
+      "side": 1,
+      "message": "nit s/repo_name/The repo_name/",
+      "revId": "430ae2a067f03196673aadea8af9dc4c4cc09fe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
