@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a30ddce_195c007c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-13T15:58:14Z",
+      "side": 1,
+      "message": "For backports we typically have a Cherry-Picked from section that links back to the original patch that landed in master. Is there any reason to not include that here?\n\nAlso, we can probably amend this commit message with a section that explains anything we had to change in order to backport this to stable/newton. This would be similar to if we resolved conflicts in the backport but kept the Conflicts section of the commit message to document the conflict and what we did to resolve it.",
+      "revId": "de5b353fbe3a1e96c85868cde0dbb24ea5918393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_ec0c1cee",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 5
