@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "9a30ddce_67755cc9",
+        "filename": "releasenotes/notes/add-group-members-are-ids-whitelist-687833a3edd6657a.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-13T14:59:05Z",
+      "side": 1,
+      "message": "We should also rename this file to be consistent with some of the release note conventions Steve did.\n\n  bug-1670382-687833a3edd6657a.yaml\n\nLike how this one is named: \n\nhttps://github.com/openstack/keystone/blob/master/releasenotes/notes/bug-1017606-98313bb4c1edf250.yaml",
+      "parentUuid": "9a30ddce_9ab80777",
+      "revId": "16d97b23a88957814771a05ff2a66e1bf76c735d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_daaeff2c",
         "filename": "releasenotes/notes/add-group-members-are-ids-whitelist-687833a3edd6657a.yaml",
         "patchSetId": 5
