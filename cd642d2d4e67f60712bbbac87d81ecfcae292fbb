@@ -16,6 +16,24 @@
       "revId": "cd642d2d4e67f60712bbbac87d81ecfcae292fbb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_427a06be",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1757,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-13T15:24:07Z",
+      "side": 0,
+      "message": "If we do a try catch, however, it will still be returning the message from the new validation method and therefore not really be testing db_sync check since it will fail inside validate_upgrade_order long before it can in db_sync check right? Unless of course I just start mocking things",
+      "parentUuid": "9a30ddce_819240f4",
+      "revId": "cd642d2d4e67f60712bbbac87d81ecfcae292fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
