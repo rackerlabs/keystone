@@ -245,6 +245,24 @@
       "revId": "70d39e1ae3adf2d769b7fe55b0390b7b5603bd02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_0ad3d760",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-03-13T08:13:31Z",
+      "side": 1,
+      "message": "When I said \"catch the except[tion] in keystone/cmd/cli.py\" I wasn\u0027t advocating for removing the exception here, I just meant it would be nice to catch it in keystone-manage.",
+      "parentUuid": "9a30ddce_97e0e7ce",
+      "revId": "70d39e1ae3adf2d769b7fe55b0390b7b5603bd02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
