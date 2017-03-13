@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a25e98e_8db6e23b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-13T21:07:13Z",
+      "side": 1,
+      "message": "Since both commits are in the same project, you can accomplish this by having one patch dependent on another when you propose them for review, instead of relying on the Depends-On functionality.\n\nDepends-On is really useful for making sure patches that have cross-project dependencies are honored.",
+      "revId": "4bd9f9cbccbfc763ea0abab3496f6de630aaa08b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_411dd164",
         "filename": "setup.cfg",
         "patchSetId": 2
