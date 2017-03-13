@@ -160,6 +160,24 @@
       "revId": "feb1ab82440531c590c65b32b0cdfd1f16db008c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a25e98e_1bb06f8b",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-13T20:59:01Z",
+      "side": 1,
+      "message": "Yeah - that makes sense. That\u0027d be a good thing to note for a separate patch. Since this is a refactor, I\u0027d like to keep most of the functionality the same even if it is suboptimal is some respects.",
+      "parentUuid": "9a30ddce_468fec29",
+      "revId": "feb1ab82440531c590c65b32b0cdfd1f16db008c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
