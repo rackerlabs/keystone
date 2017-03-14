@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a1ff146_fea3814d",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-03-14T16:11:51Z",
+      "side": 1,
+      "message": "like a bug-fix or a new feature.",
+      "range": {
+        "startLine": 164,
+        "startChar": 45,
+        "endLine": 165,
+        "endChar": 9
+      },
+      "revId": "71ecc4cf8fe4aaff359b0af8cad2d57274ca82fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1ff146_5e2f35a1",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-03-14T16:11:51Z",
+      "side": 1,
+      "message": "Release notes should be easy to read and maintain; should link back to appropriate documentation readers may need.",
+      "range": {
+        "startLine": 166,
+        "startChar": 17,
+        "endLine": 167,
+        "endChar": 67
+      },
+      "revId": "71ecc4cf8fe4aaff359b0af8cad2d57274ca82fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1ff146_594bcf59",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-03-14T16:11:51Z",
+      "side": 1,
+      "message": "include why",
+      "range": {
+        "startLine": 181,
+        "startChar": 31,
+        "endLine": 181,
+        "endChar": 42
+      },
+      "revId": "71ecc4cf8fe4aaff359b0af8cad2d57274ca82fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1ff146_795fab0e",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-03-14T16:11:51Z",
+      "side": 1,
+      "message": "but not include implementation details, as that can be found in the commit",
+      "range": {
+        "startLine": 181,
+        "startChar": 72,
+        "endLine": 182,
+        "endChar": 76
+      },
+      "revId": "71ecc4cf8fe4aaff359b0af8cad2d57274ca82fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1ff146_d9a41f0a",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-03-14T16:11:51Z",
+      "side": 1,
+      "message": "remove \u0027also\u0027",
+      "range": {
+        "startLine": 183,
+        "startChar": 7,
+        "endLine": 183,
+        "endChar": 11
+      },
+      "revId": "71ecc4cf8fe4aaff359b0af8cad2d57274ca82fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1ff146_d97b3f7a",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-03-14T16:11:51Z",
+      "side": 1,
+      "message": "As with",
+      "range": {
+        "startLine": 209,
+        "startChar": 0,
+        "endLine": 209,
+        "endChar": 13
+      },
+      "revId": "71ecc4cf8fe4aaff359b0af8cad2d57274ca82fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
