@@ -164,9 +164,9 @@ class FederatedSetupMixin(object):
         }
         return idp
 
-    def proto_ref(self, mapping_id=None):
+    def proto_ref(self, protocol_id=None, mapping_id=None):
         proto = {
-            'id': uuid.uuid4().hex,
+            'id': protocol_id or uuid.uuid4().hex,
             'mapping_id': mapping_id or uuid.uuid4().hex
         }
         return proto
@@ -3054,20 +3054,68 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
             self.assertNotIn(project['id'], user_project_ids)
             user_project_ids.append(project['id'])
 
-    def test_delete_protocol_after_federated_authentication(self):
+    def _create_custom_idp_and_protocol(self):
+        # Create an identity provider
+        idp = self.idp_ref()
+        self.federation_api.create_idp(idp['id'], idp)
+
         # Create a protocol
-        protocol = self.proto_ref(mapping_id=self.mapping['id'])
+        # TODO(rodrigods): we are forcing the protocol_id to be "saml2" because
+        # it is used as authentication method at "federated_authentication"
+        # from the federation controller. "saml2" has been deprecated as
+        # authentication method, however, the tests still uses it and passing
+        # another one like "mapped" fails.
+        protocol = self.proto_ref(protocol_id='saml2',
+                                  mapping_id=self.mapping['id'])
         self.federation_api.create_protocol(
-            self.IDP, protocol['id'], protocol)
+            idp['id'], protocol['id'], protocol)
 
-        # Authenticate to create a new federated_user entry with a foreign
-        # key pointing to the protocol
-        r = self._issue_unscoped_token()
-        user_id = r.json_body['token']['user']['id']
-        self.assertNotEmpty(self.identity_api.get_user(user_id))
+        return idp, protocol
 
-        # Now we should be able to delete the protocol
-        self.federation_api.delete_protocol(self.IDP, protocol['id'])
+    def test_delete_idp_after_federated_authentication(self):
+        idp, protocol = self._create_custom_idp_and_protocol()
+
+        # Authenticate to create two new federated_user entries pointing to the
+        # protocol
+        r = self._issue_unscoped_token(idp=idp['id'])
+        user_id1 = r.json_body['token']['user']['id']
+        r = self._issue_unscoped_token(idp=idp['id'])
+        user_id2 = r.json_body['token']['user']['id']
+
+        # Delete the identity provider
+        self.federation_api.delete_idp(idp['id'])
+        # Assert both users have been deleted as consequence from the protocol
+        # deletion
+        self.assertRaises(exception.NotFound,
+                          self.identity_api.get_user,
+                          user_id1)
+        self.assertRaises(exception.NotFound,
+                          self.identity_api.get_user,
+                          user_id2)
+
+    def test_delete_protocol_after_federated_authentication(self):
+        idp, protocol = self._create_custom_idp_and_protocol()
+
+        # Authenticate to create two new federated_user entries pointing to the
+        # protocol
+        r = self._issue_unscoped_token(idp=idp['id'])
+        user_id1 = r.json_body['token']['user']['id']
+        r = self._issue_unscoped_token(idp=idp['id'])
+        user_id2 = r.json_body['token']['user']['id']
+
+        self.assertNotEmpty(self.identity_api.get_user(user_id1))
+        self.assertNotEmpty(self.identity_api.get_user(user_id2))
+
+        # Delete the protocol
+        self.federation_api.delete_protocol(idp['id'], protocol['id'])
+        # Assert both users have been deleted as consequence from the protocol
+        # deletion
+        self.assertRaises(exception.NotFound,
+                          self.identity_api.get_user,
+                          user_id1)
+        self.assertRaises(exception.NotFound,
+                          self.identity_api.get_user,
+                          user_id2)
 
     def _authenticate_via_saml(self):
         r = self._issue_unscoped_token()
