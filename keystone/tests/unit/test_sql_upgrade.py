@@ -2326,6 +2326,24 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         self.assertTableColumns(user_option,
                                 ['user_id', 'option_id', 'option_value'])
 
+    def test_migration_023_drop_federated_user_fks(self):
+        if self.engine.name == 'sqlite':
+            self.skipTest('sqlite backend does not support foreign keys')
+
+        self.expand(22)
+        self.migrate(22)
+        self.contract(22)
+
+        self.assertTrue(self.does_fk_exist('federated_user', 'idp_id'))
+        self.assertTrue(self.does_fk_exist('federated_user', 'protocol_id'))
+
+        self.expand(23)
+        self.migrate(23)
+        self.contract(23)
+
+        self.assertFalse(self.does_fk_exist('federated_user', 'idp_id'))
+        self.assertFalse(self.does_fk_exist('federated_user', 'protocol_id'))
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
