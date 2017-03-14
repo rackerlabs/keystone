@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a1ff146_cd6c610b",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-03-14T15:10:35Z",
+      "side": 1,
+      "message": "s/unsure/ensure\n\nDon\u0027t want to be unsure of our release notes :)",
+      "range": {
+        "startLine": 168,
+        "startChar": 36,
+        "endLine": 168,
+        "endChar": 42
+      },
+      "revId": "e1c8600349f49c0a5cf75bc4d965b1fe4bc9f7f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
