@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a1ff146_4a968595",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-03-14T22:04:18Z",
+      "side": 1,
+      "message": "echoing what was previously said, yes please rename to something like \u0027_check_protection\u0027",
+      "range": {
+        "startLine": 208,
+        "startChar": 4,
+        "endLine": 208,
+        "endChar": 21
+      },
+      "revId": "d7bec4ba39c6db636f7c7886418b2f041cd61a7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
