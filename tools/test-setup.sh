@@ -8,14 +8,12 @@
 
 # The root password for the MySQL database; pass it in via
 # MYSQL_ROOT_PW.
-DB_ROOT_PW=${MYSQL_ROOT_PW:-insecure_slave}
+DB_ROOT_PW=${MYSQL_ROOT_PW:-admin}
 
 # This user and its password are used by the tests, if you change it,
 # your tests might fail.
 DB_USER=openstack_citest
 DB_PW=openstack_citest
-
-sudo -H mysqladmin -u root password $DB_ROOT_PW
 
 # It's best practice to remove anonymous users from the database.  If
 # a anonymous user exists, then it matches first for connections and
