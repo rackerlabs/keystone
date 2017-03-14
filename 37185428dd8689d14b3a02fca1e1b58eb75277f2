@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a22e58a_7cf6afd8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-14T13:19:52Z",
+      "side": 1,
+      "message": "this is true, but it is wrong. We should not return 204 as response from HEADs :)",
+      "range": {
+        "startLine": 10,
+        "startChar": 28,
+        "endLine": 10,
+        "endChar": 44
+      },
+      "revId": "37185428dd8689d14b3a02fca1e1b58eb75277f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
