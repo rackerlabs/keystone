@@ -16,6 +16,7 @@ import uuid
 
 from keystone.common import cache
 from keystone.common import dependency
+from keystone.common import driver_hints
 from keystone.common import extension
 from keystone.common import manager
 import keystone.conf
@@ -45,7 +46,7 @@ extension.register_public_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 
 
 @dependency.provider('federation_api')
-@dependency.requires('resource_api')
+@dependency.requires('identity_api', 'resource_api')
 class Manager(manager.Manager):
     """Default pivot point for the Federation backend.
 
@@ -81,6 +82,32 @@ class Manager(manager.Manager):
 
     def _assert_valid_domain_id(self, domain_id):
         self.resource_api.get_domain(domain_id)
+
+    def delete_idp(self, idp_id):
+        """Delete an identity provider.
+
+        Before we delete the identity provider, we need to remove all
+        the federated_users that reference it. To do this we
+        call the delete function for these entities, which are
+        themselves responsible for deleting any additional data
+        associated with them.
+
+        """
+        fed_users_list = self._list_federated_users(idp_id=idp_id)
+        self._delete_federated_users(fed_users_list)
+        self.driver.delete_idp(idp_id)
+
+    def _list_federated_users(self, idp_id=None, protocol_id=None):
+        hints = driver_hints.Hints()
+        if idp_id:
+            hints.add_filter('idp_id', idp_id)
+        if protocol_id:
+            hints.add_filter('protocol_id', protocol_id)
+        return self.identity_api.list_users(hints=hints)
+
+    def _delete_federated_users(self, fed_users_list):
+        for fed_users in fed_users_list:
+            self.identity_api.delete_user(fed_users['id'])
 
     @MEMOIZE
     def get_enabled_service_providers(self):
@@ -144,3 +171,18 @@ class Manager(manager.Manager):
         except exception.MappingNotFound:
             msg = _('Invalid mapping id: %s')
             raise exception.ValidationError(message=(msg % mapping_id))
+
+    def delete_protocol(self, idp_id, protocol_id):
+        """Delete a protocol.
+
+        Before we delete the protocol, we need to remove all
+        the federated_users that reference it. To do this we
+        call the delete function for these entities, which are
+        themselves responsible for deleting any additional data
+        associated with them.
+
+        """
+        fed_users_list = self._list_federated_users(
+            idp_id=idp_id, protocol_id=protocol_id)
+        self._delete_federated_users(fed_users_list)
+        self.driver.delete_protocol(idp_id, protocol_id)
