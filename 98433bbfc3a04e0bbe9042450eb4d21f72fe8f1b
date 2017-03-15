@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a1ff146_66527115",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-15T17:42:05Z",
+      "side": 1,
+      "message": "nit: we use \"bug-fix\" and \"bug fix\", it is better to stick to one or another.",
+      "range": {
+        "startLine": 172,
+        "startChar": 25,
+        "endLine": 172,
+        "endChar": 32
+      },
+      "revId": "98433bbfc3a04e0bbe9042450eb4d21f72fe8f1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
