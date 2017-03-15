@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a1ff146_4072b6ae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 19283
+      },
+      "writtenOn": "2017-03-15T19:43:20Z",
+      "side": 1,
+      "message": "Agreed. What is the process for me to update the keystone release notes?",
+      "parentUuid": "9a30ddce_a9aeaf7e",
+      "revId": "9245c53046e0988a15fdbf22cd5a2f641dd5990b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_09f89b7a",
         "filename": "/COMMIT_MSG",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a1ff146_80d90e86",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 19283
+      },
+      "writtenOn": "2017-03-15T19:43:20Z",
+      "side": 1,
+      "message": "Fortunately, with the changes I\u0027m making to oslo_db, I\u0027ll only need to make the changes that are in this patch as I\u0027ve moved a great deal of the logic up to that level.",
+      "parentUuid": "9a30ddce_09f89b7a",
+      "revId": "9245c53046e0988a15fdbf22cd5a2f641dd5990b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_90595c5d",
         "filename": "keystone/common/sql/contract_repo/versions/012_contract_add_domain_id_to_idp.py",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2017-03-01T17:22:28Z",
       "side": 1,
       "message": "Assuming this can be documented, this probably belongs in keystone.common.sql.upgrades",
+      "revId": "9245c53046e0988a15fdbf22cd5a2f641dd5990b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1ff146_a01e0a61",
+        "filename": "keystone/common/sql/contract_repo/versions/012_contract_add_domain_id_to_idp.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 19283
+      },
+      "writtenOn": "2017-03-15T19:43:20Z",
+      "side": 1,
+      "message": "I did see this in a few other sqlalchemy scripts in Keystone. I do agree we should move this to a common place. Are you okay with me making that change as part of this patch?",
+      "parentUuid": "ba2be162_90595c5d",
       "revId": "9245c53046e0988a15fdbf22cd5a2f641dd5990b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
