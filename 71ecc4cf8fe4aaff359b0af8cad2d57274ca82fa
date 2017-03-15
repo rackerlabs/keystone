@@ -49,6 +49,42 @@
     },
     {
       "key": {
+        "uuid": "3a1ff146_63ab4e75",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-15T14:05:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a1ff146_fea3814d",
+      "revId": "71ecc4cf8fe4aaff359b0af8cad2d57274ca82fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1ff146_83b68ada",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-15T14:05:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a1ff146_0097f090",
+      "revId": "71ecc4cf8fe4aaff359b0af8cad2d57274ca82fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a1ff146_5e2f35a1",
         "filename": "doc/source/devref/development_best_practices.rst",
         "patchSetId": 3
@@ -72,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "3a1ff146_63d98e21",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-15T14:05:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a1ff146_5e2f35a1",
+      "revId": "71ecc4cf8fe4aaff359b0af8cad2d57274ca82fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a1ff146_594bcf59",
         "filename": "doc/source/devref/development_best_practices.rst",
         "patchSetId": 3
@@ -89,6 +143,24 @@
         "endLine": 181,
         "endChar": 42
       },
+      "revId": "71ecc4cf8fe4aaff359b0af8cad2d57274ca82fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1ff146_23f6b68f",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-15T14:05:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a1ff146_594bcf59",
       "revId": "71ecc4cf8fe4aaff359b0af8cad2d57274ca82fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -142,6 +214,42 @@
     },
     {
       "key": {
+        "uuid": "3a1ff146_e3881eea",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-15T14:05:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a1ff146_795fab0e",
+      "revId": "71ecc4cf8fe4aaff359b0af8cad2d57274ca82fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1ff146_036e1a2f",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-15T14:05:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a1ff146_004c5041",
+      "revId": "71ecc4cf8fe4aaff359b0af8cad2d57274ca82fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a1ff146_d9a41f0a",
         "filename": "doc/source/devref/development_best_practices.rst",
         "patchSetId": 3
@@ -189,6 +297,42 @@
     },
     {
       "key": {
+        "uuid": "3a1ff146_83c76a11",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-15T14:05:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a1ff146_d9a41f0a",
+      "revId": "71ecc4cf8fe4aaff359b0af8cad2d57274ca82fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1ff146_a3cc6636",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-15T14:05:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a1ff146_605344e2",
+      "revId": "71ecc4cf8fe4aaff359b0af8cad2d57274ca82fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a1ff146_00737081",
         "filename": "doc/source/devref/development_best_practices.rst",
         "patchSetId": 3
@@ -212,6 +356,24 @@
     },
     {
       "key": {
+        "uuid": "3a1ff146_23d956f4",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-15T14:05:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a1ff146_00737081",
+      "revId": "71ecc4cf8fe4aaff359b0af8cad2d57274ca82fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a1ff146_00fa90bd",
         "filename": "doc/source/devref/development_best_practices.rst",
         "patchSetId": 3
@@ -229,6 +391,24 @@
         "endLine": 201,
         "endChar": 78
       },
+      "revId": "71ecc4cf8fe4aaff359b0af8cad2d57274ca82fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1ff146_43fd7239",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-15T14:05:08Z",
+      "side": 1,
+      "message": "I\u0027ll leave as slug for now, since that seems to be the best name I can come up with for this.",
+      "parentUuid": "3a1ff146_00fa90bd",
       "revId": "71ecc4cf8fe4aaff359b0af8cad2d57274ca82fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -281,6 +461,24 @@
     },
     {
       "key": {
+        "uuid": "3a1ff146_038a9abf",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-15T14:05:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a1ff146_c026b867",
+      "revId": "71ecc4cf8fe4aaff359b0af8cad2d57274ca82fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a1ff146_40a008a0",
         "filename": "doc/source/devref/development_best_practices.rst",
         "patchSetId": 3
@@ -298,6 +496,24 @@
         "endLine": 226,
         "endChar": 6
       },
+      "revId": "71ecc4cf8fe4aaff359b0af8cad2d57274ca82fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1ff146_a3c1c6e6",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-15T14:05:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a1ff146_40a008a0",
       "revId": "71ecc4cf8fe4aaff359b0af8cad2d57274ca82fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
