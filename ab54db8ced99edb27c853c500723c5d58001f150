@@ -16,6 +16,23 @@
       "revId": "ab54db8ced99edb27c853c500723c5d58001f150",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1ff146_9392439e",
+        "filename": "etc/policy.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-15T21:28:04Z",
+      "side": 0,
+      "message": "I think removing this file all together is going to cause some failures. I experienced it when I attempted to remove it awhile ago.\n\nI\u0027d be fine leaving an empty dictionary for now:\n\n  {}\n\nWe can remove the file and address the failures in a subsequent patch, I\u0027ve started some of the work already - https://review.openstack.org/#/c/437388/",
+      "revId": "ab54db8ced99edb27c853c500723c5d58001f150",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
