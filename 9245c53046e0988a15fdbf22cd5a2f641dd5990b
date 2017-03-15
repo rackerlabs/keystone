@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a1ff146_c1722849",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-15T21:08:43Z",
+      "side": 1,
+      "message": "We *just* merged some handy-dandy developer documentation for release notes. You can find them here:\n\nhttps://docs.openstack.org/developer/keystone/devref/development_best_practices.html#release-notes",
+      "parentUuid": "3a1ff146_4072b6ae",
+      "revId": "9245c53046e0988a15fdbf22cd5a2f641dd5990b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_09f89b7a",
         "filename": "/COMMIT_MSG",
         "patchSetId": 5
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "I did see this in a few other sqlalchemy scripts in Keystone. I do agree we should move this to a common place. Are you okay with me making that change as part of this patch?",
       "parentUuid": "ba2be162_90595c5d",
+      "revId": "9245c53046e0988a15fdbf22cd5a2f641dd5990b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1ff146_c1d788eb",
+        "filename": "keystone/common/sql/contract_repo/versions/012_contract_add_domain_id_to_idp.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-15T21:08:43Z",
+      "side": 1,
+      "message": "I don\u0027t see a problem with that. Docs would be nice, too.",
+      "parentUuid": "3a1ff146_a01e0a61",
       "revId": "9245c53046e0988a15fdbf22cd5a2f641dd5990b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
