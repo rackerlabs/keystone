@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a1ff146_0f21d19f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-15T18:26:32Z",
+      "side": 1,
+      "message": "this can just be:\n\n  blueprint policy-in-code \n\nsince Gerrit is configured to pick those key words up and link them automatically.",
+      "revId": "6bd66b3e9ce4ffa4a6c989486929ff0c6cef4421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
