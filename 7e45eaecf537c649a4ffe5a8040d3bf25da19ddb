@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a1ff146_b5a49157",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-15T16:58:13Z",
+      "side": 1,
+      "message": "To be consistent with other naming conventions in this file I would expect this to read: \n\n  RULE_SERVICE_OR_ADMIN \u003d \u0027rule:service_or_admin\u0027\n\nBut this is something can be done in a follow up if another patch set isn\u0027t pushed.",
+      "revId": "7e45eaecf537c649a4ffe5a8040d3bf25da19ddb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
