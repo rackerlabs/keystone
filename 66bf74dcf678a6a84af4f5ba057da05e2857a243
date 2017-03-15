@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a1ff146_215bfc88",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-15T21:14:48Z",
+      "side": 1,
+      "message": "This could be RULE_SERVICE_OR_ADMIN to be consistent with the rest of the naming conventions here.",
+      "revId": "66bf74dcf678a6a84af4f5ba057da05e2857a243",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1ff146_a1fd2c3c",
+        "filename": "keystone/common/policies/revoke_event.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-15T21:14:48Z",
+      "side": 1,
+      "message": "This should be RULE_SERVICE_OR_ADMIN according to the policy file.",
+      "revId": "66bf74dcf678a6a84af4f5ba057da05e2857a243",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

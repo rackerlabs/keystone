@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a1ff146_c11ce8c3",
+        "filename": "etc/policy.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-15T21:14:48Z",
+      "side": 0,
+      "message": "Next stop is removing this whole file!",
+      "revId": "ab54db8ced99edb27c853c500723c5d58001f150",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
