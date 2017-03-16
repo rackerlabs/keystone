@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a1ff146_9d3b2c38",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-16T01:52:21Z",
+      "side": 1,
+      "message": "Steve had a good comment on patch set 9 about adding some more detail to the commit message, specific how all this ties together and why we need it.",
+      "revId": "d7bec4ba39c6db636f7c7886418b2f041cd61a7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a1ff146_7dbccd6c",
         "filename": "/COMMIT_MSG",
         "patchSetId": 13
@@ -19,6 +36,23 @@
         "endLine": 11,
         "endChar": 59
       },
+      "revId": "d7bec4ba39c6db636f7c7886418b2f041cd61a7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1ff146_1de1fcd0",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-16T01:52:21Z",
+      "side": 1,
+      "message": "I agree with David here - this isn\u0027t a convention we typically do in keystone so I\u0027d like to avoid introducing a one-off name like this.",
       "revId": "d7bec4ba39c6db636f7c7886418b2f041cd61a7a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
