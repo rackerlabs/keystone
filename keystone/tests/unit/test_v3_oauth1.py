@@ -1026,15 +1026,6 @@ class OAuthNotificationTests(OAuth1Tests,
                               'auth': self.access_token.key.decode()})
         self.assertResponseStatus(resp, http_client.NO_CONTENT)
 
-        # Test to ensure the delete access token notification is sent
-        self._assert_notify_sent(access_key_string,
-                                 test_notifications.DELETED_OPERATION,
-                                 'OS-OAUTH1:access_token')
-        self._assert_last_audit(access_key_string,
-                                test_notifications.DELETED_OPERATION,
-                                'OS-OAUTH1:access_token',
-                                cadftaxonomy.SECURITY_CREDENTIAL)
-
 
 class OAuthCADFNotificationTests(OAuthNotificationTests):
 
