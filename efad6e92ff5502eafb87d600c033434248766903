@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a1ced50_ff124861",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2017-03-20T12:56:48Z",
+      "side": 1,
+      "message": "If the operator has set a limit on the number of entries that can be returned by ldap, might this fail to retrieve them all - and hence result in an error below?",
+      "range": {
+        "startLine": 120,
+        "startChar": 49,
+        "endLine": 120,
+        "endChar": 66
+      },
+      "revId": "efad6e92ff5502eafb87d600c033434248766903",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
