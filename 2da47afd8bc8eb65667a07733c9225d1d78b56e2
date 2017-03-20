@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a1ced50_47646021",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1121,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-20T21:19:58Z",
+      "side": 0,
+      "message": "Actually - this should probably stay around. Notifications weren\u0027t implemented solely for the use of revocation events. We started using them  as a mechanism to trigger revocation events afterwords.\n\nThere could be applications outside of OpenStack consuming these.",
+      "revId": "2da47afd8bc8eb65667a07733c9225d1d78b56e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
