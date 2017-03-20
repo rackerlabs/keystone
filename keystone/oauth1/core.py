@@ -167,8 +167,6 @@ class Manager(manager.Manager):
 
     def delete_access_token(self, user_id, access_token_id, initiator=None):
         ret = self.driver.delete_access_token(user_id, access_token_id)
-        notifications.Audit.deleted(self._ACCESS_TOKEN, access_token_id,
-                                    initiator)
         return ret
 
     def create_request_token(self, consumer_id, requested_project,
