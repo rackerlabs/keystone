@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a1ced50_95459e18",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 769,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-20T22:05:35Z",
+      "side": 1,
+      "message": "According to the WebOb implementation - this is already the default value.",
+      "revId": "e33bb73fe5e3fd9a0762cdaaa34c6b07744cc65c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
