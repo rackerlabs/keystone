@@ -43,6 +43,48 @@
     },
     {
       "key": {
+        "uuid": "1a1ced50_69694a25",
+        "filename": "releasenotes/notes/add-group-members-are-ids-whitelist-687833a3edd6657a.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-20T12:09:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a30ddce_67755cc9",
+      "revId": "16d97b23a88957814771a05ff2a66e1bf76c735d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_496e4e30",
+        "filename": "releasenotes/notes/add-group-members-are-ids-whitelist-687833a3edd6657a.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-20T12:09:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a30ddce_9ab80777",
+      "range": {
+        "startLine": 4,
+        "startChar": 10,
+        "endLine": 4,
+        "endChar": 17
+      },
+      "revId": "16d97b23a88957814771a05ff2a66e1bf76c735d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_daaeff2c",
         "filename": "releasenotes/notes/add-group-members-are-ids-whitelist-687833a3edd6657a.yaml",
         "patchSetId": 5
@@ -54,6 +96,30 @@
       "writtenOn": "2017-03-11T06:01:45Z",
       "side": 1,
       "message": "actually has (which you originally had was correct single it\u0027s a singular option being added. It ending with an \u0027s\u0027 threw me off.",
+      "range": {
+        "startLine": 5,
+        "startChar": 42,
+        "endLine": 5,
+        "endChar": 46
+      },
+      "revId": "16d97b23a88957814771a05ff2a66e1bf76c735d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_897846f4",
+        "filename": "releasenotes/notes/add-group-members-are-ids-whitelist-687833a3edd6657a.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-20T12:09:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a30ddce_daaeff2c",
       "range": {
         "startLine": 5,
         "startChar": 42,
