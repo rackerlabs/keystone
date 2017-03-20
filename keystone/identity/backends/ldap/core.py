@@ -117,6 +117,7 @@ class Identity(base.IdentityDriverBase):
         return self.group.get_all_filtered(hints)
 
     def list_users_in_group(self, group_id, hints):
+        all_users = {user['id']:user for user in self.user.get_all()}
         users = []
         for user_key in self.group.list_group_users(group_id):
             if self.conf.ldap.group_members_are_ids:
@@ -125,8 +126,8 @@ class Identity(base.IdentityDriverBase):
                 user_id = self.user._dn_to_id(user_key)
 
             try:
-                users.append(self.user.get_filtered(user_id))
-            except exception.UserNotFound:
+                users.append(self.user.filter_attributes(all_users[user_id]))
+            except KeyError:
                 msg = ('Group member `%(user_key)s` not found in'
                        ' `%(group_id)s`. The user should be removed'
                        ' from the group. The user will be ignored.')
