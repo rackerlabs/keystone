@@ -22,6 +22,30 @@
       "revId": "efad6e92ff5502eafb87d600c033434248766903",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_23ada631",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-03-20T16:04:09Z",
+      "side": 1,
+      "message": "Well, I made a mistake here - I should have written self.user.get_all(hints\u003dhints). Then yes, it would end up unnecessarily triggering the error.\n\nI suppose disregarding the list limit could potentially have a worse performance impact than querying each user one at a time, I\u0027ll have to think about whether there is a good way to do this.",
+      "parentUuid": "1a1ced50_ff124861",
+      "range": {
+        "startLine": 120,
+        "startChar": 49,
+        "endLine": 120,
+        "endChar": 66
+      },
+      "revId": "efad6e92ff5502eafb87d600c033434248766903",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
