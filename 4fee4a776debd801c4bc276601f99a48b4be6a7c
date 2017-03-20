@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "1a1ced50_4a4b8587",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 766,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-20T21:58:10Z",
+      "side": 1,
+      "message": "Isn\u0027t \u0027utf-8\u0027 the default charset according to the WebOb implementation? \n\nhttps://github.com/Pylons/webob/commit/35fd585",
+      "parentUuid": "1a430d35_e1d664c4",
+      "revId": "4fee4a776debd801c4bc276601f99a48b4be6a7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_657efeaf",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 3
