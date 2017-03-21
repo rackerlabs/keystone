@@ -22,6 +22,30 @@
       "revId": "2290586d91b45de71a9b004aec2c62b065d2ddc5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_4a51c00d",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2017-03-21T00:49:20Z",
+      "side": 1,
+      "message": "+1. This kind of hackery definitely needs a comment",
+      "parentUuid": "1a1ced50_ca6935c0",
+      "range": {
+        "startLine": 439,
+        "startChar": 8,
+        "endLine": 439,
+        "endChar": 58
+      },
+      "revId": "2290586d91b45de71a9b004aec2c62b065d2ddc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
