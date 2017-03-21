@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_ac6d4b34",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-21T14:49:51Z",
+      "side": 1,
+      "message": "Gerrit and the bug bot do not recognize this misspelling.",
+      "revId": "d75fb65b0b9967d2a4ef7a56436c21628bcc35a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
