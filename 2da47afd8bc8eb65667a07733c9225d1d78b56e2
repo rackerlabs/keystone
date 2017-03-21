@@ -16,6 +16,24 @@
       "revId": "2da47afd8bc8eb65667a07733c9225d1d78b56e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_2472d97b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1121,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-21T15:53:37Z",
+      "side": 0,
+      "message": "Ahh, okay. Cause when looking within keystone there is nothing that that line in assignments is being used for other than revocation. For example, I know that this \nhttps://github.com/openstack/keystone/blob/master/keystone/assignment/core.py#L70-L74\nis an example of using notification for something other than revocation. Did not consider anything using notifications outside of openstack. Better safe than sorry, and all the original tests are happy with the minimal cleanup.",
+      "parentUuid": "1a1ced50_47646021",
+      "revId": "2da47afd8bc8eb65667a07733c9225d1d78b56e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
