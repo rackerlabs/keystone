@@ -154,19 +154,10 @@ class CheckForLoggingIssues(BaseASTChecker):
     USING_DEPRECATED_WARN = 'K009 Using the deprecated Logger.warn'
     LOG_MODULES = ('logging', 'oslo_log.log')
     I18N_MODULES = (
-        'keystone.i18n._',
-        'keystone.i18n._LI',
-        'keystone.i18n._LW',
-        'keystone.i18n._LE',
-        'keystone.i18n._LC',
+        'keystone.i18n._'
     )
     TRANS_HELPER_MAP = {
-        'debug': None,
-        'info': '_LI',
-        'warning': '_LW',
-        'error': '_LE',
-        'exception': '_LE',
-        'critical': '_LC',
+        'debug': None
     }
 
     def __init__(self, tree, filename):
