@@ -144,11 +144,6 @@ class HackingLogging(fixtures.Fixture):
                 import logging as stlib_logging
                 from keystone.i18n import _
                 from keystone.i18n import _ as oslo_i18n
-                from keystone.i18n import _LC
-                from keystone.i18n import _LE
-                from keystone.i18n import _LE as error_hint
-                from keystone.i18n import _LI
-                from keystone.i18n import _LW
                 from oslo_log import log
                 from oslo_log import log as oslo_logging
     """
@@ -162,7 +157,7 @@ class HackingLogging(fixtures.Fixture):
                 class C:
                     def __init__(self):
                         LOG.warning(oslo_i18n('text', {}))
-                        LOG.warning(_LW('text', {}))
+                        LOG.warning('text', {})
             """,
             'expected_errors': [
                 (3, 9, 'K006'),
@@ -180,7 +175,7 @@ class HackingLogging(fixtures.Fixture):
                             _('text'), {}
                         )
                         self.L.warning(
-                            _LW('text'), {}
+                            'text', {}
                         )
             """,
             'expected_errors': [
@@ -205,7 +200,7 @@ class HackingLogging(fixtures.Fixture):
                     def __init__(self):
                         self.LOG = oslo_logging.getLogger()
                         self.LOG.critical(_('text'))
-                        self.LOG.critical(_LC('text'))
+                        self.LOG.critical('text')
             """,
             'expected_errors': [
                 (5, 26, 'K006'),
@@ -217,7 +212,7 @@ class HackingLogging(fixtures.Fixture):
                 # translation on a separate line
                 msg = _('text')
                 LOG.exception(msg)
-                msg = _LE('text')
+                msg = 'text'
                 LOG.exception(msg)
             """,
             'expected_errors': [
@@ -229,10 +224,10 @@ class HackingLogging(fixtures.Fixture):
                 LOG = logging.getLogger()
 
                 # ensure the correct helper is being used
-                LOG.warning(_LI('this should cause an error'))
+                LOG.warning('this should cause an error')
 
                 # debug should not allow any helpers either
-                LOG.debug(_LI('this should cause an error'))
+                LOG.debug('this should cause an error')
             """,
             'expected_errors': [
                 (4, 12, 'K006'),
@@ -301,7 +296,7 @@ class HackingLogging(fixtures.Fixture):
         {
             'code': """
                 LOG = log.getLogger(__name__)
-                msg = _LW('text')
+                msg = 'text'
                 LOG.warning(msg)
                 raise Exception(msg)
             """,
@@ -312,7 +307,7 @@ class HackingLogging(fixtures.Fixture):
         {
             'code': """
                 LOG = log.getLogger(__name__)
-                msg = _LW('text')
+                msg = 'text'
                 LOG.warning(msg)
                 msg = _('something else')
                 raise Exception(msg)
@@ -322,7 +317,7 @@ class HackingLogging(fixtures.Fixture):
         {
             'code': """
                 LOG = log.getLogger(__name__)
-                msg = _LW('hello %s') % 'world'
+                msg = 'hello %s' % 'world'
                 LOG.warning(msg)
                 raise Exception(msg)
             """,
@@ -333,7 +328,7 @@ class HackingLogging(fixtures.Fixture):
         {
             'code': """
                 LOG = log.getLogger(__name__)
-                msg = _LW('hello %s') % 'world'
+                msg = 'hello %s' % 'world'
                 LOG.warning(msg)
             """,
             'expected_errors': [],
@@ -370,7 +365,7 @@ class HackingLogging(fixtures.Fixture):
                 try:
                     pass
                 except AssertionError as e:
-                    msg = _LW('some message')
+                    msg = 'some message'
                     LOG.warning(msg)
                     raise exception.Unauthorized(message=msg)
             """,
@@ -385,7 +380,7 @@ class HackingLogging(fixtures.Fixture):
                 # Logger.warn has been deprecated in Python3 in favor of
                 # Logger.warning
                 LOG = log.getLogger(__name__)
-                LOG.warn(_LW('text'))
+                LOG.warn('text')
         """,
         'expected_errors': [
             (4, 9, 'K009'),
