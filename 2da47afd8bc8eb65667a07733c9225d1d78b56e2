@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a1ced50_641691f2",
+        "filename": "keystone/oauth1/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-21T15:55:28Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "1a1ced50_ca3bf5cf",
+      "revId": "2da47afd8bc8eb65667a07733c9225d1d78b56e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a1ced50_c7dcd0e6",
         "filename": "keystone/revoke/core.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2017-03-20T21:20:53Z",
       "side": 0,
       "message": "I think we can get by with just removing this bit. I think we should still publish the notification for deleting access tokens since other applications could be consuming those notifications.\n\nI\u0027ve updated https://review.openstack.org/#/c/444424/ with the same comment.",
+      "revId": "2da47afd8bc8eb65667a07733c9225d1d78b56e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_440275b5",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-21T15:55:28Z",
+      "side": 0,
+      "message": "I see, replied to your comment on that review.",
+      "parentUuid": "1a1ced50_c7dcd0e6",
       "revId": "2da47afd8bc8eb65667a07733c9225d1d78b56e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
