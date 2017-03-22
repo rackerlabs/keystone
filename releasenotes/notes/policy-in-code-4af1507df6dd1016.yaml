@@ -1,0 +1,10 @@
+---
+upgrade:
+  - >
+    Default policy is now being implemented in code. You may overwrite these
+    values using the policy.json file. If you currently make modifications to
+    the default policy file, you will have to continue maintaining those
+    changes. If you modify a subset or non of the policy entries, you can
+    essentially remove the policies that are default or the policy file.
+    For more information, please refer to the spec:
+    https://specs.openstack.org/openstack/keystone-specs/specs/keystone/pike/policy-in-code.html
