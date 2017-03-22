@@ -16,6 +16,24 @@
       "revId": "6d1c88ce88f88015d88ed84d95867a00067a0aeb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_3ee567db",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-03-22T08:00:02Z",
+      "side": 1,
+      "message": "That\u0027s correct. This patch does nothing to speed up listing all users in a group, it only enhances looking up one user.",
+      "parentUuid": "1a1ced50_4a67cae8",
+      "revId": "6d1c88ce88f88015d88ed84d95867a00067a0aeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
