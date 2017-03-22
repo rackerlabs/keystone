@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a1ced50_877ef467",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-22T19:01:53Z",
+      "side": 1,
+      "message": "Per my other comment, we should try and include a link to test coverage ensuring the removal of this method isn\u0027t going to result in regression as a result of gaps in testing.\n\nWe should also clarify in the commit message that this isn\u0027t something that is exposed to an external API, so it\u0027s obvious that we aren\u0027t going to remove something end-users depend on.",
+      "revId": "dac2f84d5b6aab62f7a6d4e2f8dc31cab05608aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

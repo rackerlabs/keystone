@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a1ced50_870b5423",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-22T19:01:53Z",
+      "side": 0,
+      "message": "To the best of my knowledge - it doesn\u0027t look like this is called anywhere. It would be nice to double check to make sure we have a test somewhere the ensure we do the following:\n\n  - give a user a role on a project\n  - validate we can get a token\n  - removes role assignment from user on project\n  - checks that the token is invalid\n\nOnly because that\u0027s what this would have been used for. If we have pre-existing test coverage then we know we\u0027re not going to regress. A link to the test would be a good thing to put into the commit message, too (that goes for the patches I have up to, if applicable).",
+      "revId": "91f7299e88c677e9980f7d99e73f3676f7c50545",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_bc2303bc",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 589,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-22T19:01:53Z",
+      "side": 0,
+      "message": "the `test_cleanup` method looks like the only thing that calls this. This could be removed, too.",
+      "revId": "91f7299e88c677e9980f7d99e73f3676f7c50545",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
