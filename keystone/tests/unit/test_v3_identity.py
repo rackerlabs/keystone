@@ -1222,3 +1222,54 @@ class UserFederatedAttributesTests(test_v3.RestfulTestCase):
         ref['federated'][0]['idp_id'] = idp['id']
         self.post('/users', body={'user': ref}, token=self.get_admin_token(),
                   expected_status=http.client.NOT_FOUND)
+
+    def test_update_user_with_federated_attributes(self):
+        """Call ``PATCH /users/{user_id}``."""
+        user = self.fed_user.copy()
+        del user['id']
+        user['name'] = 'James Doe'
+        idp, protocol = self._create_federated_attributes()
+        user['federated'] = [
+            {
+                'idp_id': idp['id'],
+                'protocols': [
+                    {
+                        'protocol_id': protocol['id'],
+                        'unique_id': 'jdoe'
+                    }
+                ]
+            }
+        ]
+        r = self.patch('/users/%(user_id)s' % {
+            'user_id': self.fed_user['id']},
+            body={'user': user})
+        resp_user = r.result['user']
+        self.assertEqual(user['name'], resp_user['name'])
+        self.assertEqual(user['federated'], resp_user['federated'])
+        self.assertValidUserResponse(r, user)
+
+    def test_update_user_fails_when_given_invalid_idp_and_protocols(self):
+        """Call ``PATCH /users/{user_id}``."""
+        idp, protocol = self._create_federated_attributes()
+        ref = unit.new_user_ref(domain_id=self.domain_id)
+        ref['federated'] = [
+            {
+                'idp_id': 'fakeidp',
+                'protocols': [
+                    {
+                        'protocol_id': 'fakeprotocol_id',
+                        'unique_id': uuid.uuid4().hex
+                    }
+                ]
+            }
+        ]
+
+        self.patch('/users/%(user_id)s' % {
+            'user_id': ref['id']},
+            body={'user': ref},
+            expected_status=http.client.NOT_FOUND)
+        ref['federated'][0]['idp_id'] = idp['id']
+        self.patch('/users/%(user_id)s' % {
+            'user_id': ref['id']},
+            body={'user': ref},
+            expected_status=http.client.NOT_FOUND)
