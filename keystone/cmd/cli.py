@@ -861,47 +861,26 @@ class MappingPurge(BaseApp):
     @classmethod
     def add_argument_parser(cls, subparsers):
         parser = super(MappingPurge, cls).add_argument_parser(subparsers)
-        parser.add_argument('--all', default=False, action='store_true',
-                            help=('Purge all mappings.'))
-        parser.add_argument('--domain-name', default=None,
-                            help=('Purge any mappings for the domain '
-                                  'specified.'))
-        parser.add_argument('--public-id', default=None,
-                            help=('Purge the mapping for the Public ID '
-                                  'specified.'))
-        parser.add_argument('--local-id', default=None,
-                            help=('Purge the mappings for the Local ID '
-                                  'specified.'))
-        parser.add_argument('--type', default=None, choices=['user', 'group'],
-                            help=('Purge any mappings for the type '
-                                  'specified.'))
+        exclusive_group = parser.add_mutually_exclusive_group(required=True)
+        exclusive_group.add_argument('--all', default=False,
+                                     action='store_true',
+                                     help=('Purge all mappings.'))
+        exclusive_group.add_argument('--domain-name', default=None,
+                                     help=('Purge any mappings for the '
+                                           'domain specified.'))
+        exclusive_group.add_argument('--public-id', default=None,
+                                     help=('Purge the mapping for the Public '
+                                           'ID specified.'))
+        exclusive_group.add_argument('--local-id', default=None,
+                                     help=('Purge the mappings for the Local '
+                                           'ID specified.'))
+        exclusive_group.add_argument('--type', default=None, choices=['user',
+                                     'group'], help=('Purge any mappings for '
+                                     'the type specified.'))
         return parser
 
     @staticmethod
     def main():
-        def validate_options():
-            # NOTE(henry-nash): It would be nice to use the argparse automated
-            # checking for this validation, but the only way I can see doing
-            # that is to make the default (i.e. if no optional parameters
-            # are specified) to purge all mappings - and that sounds too
-            # dangerous as a default.  So we use it in a slightly
-            # unconventional way, where all parameters are optional, but you
-            # must specify at least one.
-            if (CONF.command.all is False and
-                CONF.command.domain_name is None and
-                CONF.command.public_id is None and
-                CONF.command.local_id is None and
-                    CONF.command.type is None):
-                raise ValueError(_('At least one option must be provided'))
-
-            if (CONF.command.all is True and
-                (CONF.command.domain_name is not None or
-                 CONF.command.public_id is not None or
-                 CONF.command.local_id is not None or
-                 CONF.command.type is not None)):
-                raise ValueError(_('--all option cannot be mixed with '
-                                   'other options'))
-
         def get_domain_id(name):
             try:
                 return resource_manager.get_domain_by_name(name)['id']
