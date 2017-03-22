@@ -210,8 +210,12 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
                 id=resource_base.NULL_DOMAIN_ID,
                 name=resource_base.NULL_DOMAIN_ID
             )
-            PROVIDERS.resource_api.create_domain(resource_base.NULL_DOMAIN_ID,
-                                                 root_domain)
+            try:
+                PROVIDERS.resource_api.create_domain(
+                    resource_base.NULL_DOMAIN_ID, root_domain)
+            except exception.Conflict:
+                # the root domain already exists, skip now.
+                pass
             domain = unit.new_domain_ref(
                 description=(u'The default domain'),
                 id=DEFAULT_DOMAIN_ID,

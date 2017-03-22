@@ -26,6 +26,8 @@ from keystone import identity
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
+from keystone.tests.unit import test_shadow_users
+from keystone.tests.unit import test_v3
 
 
 CONF = keystone.conf.CONF
@@ -181,3 +183,33 @@ class TestDatabaseDomainConfigs(unit.TestCase):
         self.assertEqual(CONF.ldap.suffix, res.ldap.suffix)
         self.assertEqual(CONF.ldap.use_tls, res.ldap.use_tls)
         self.assertEqual(CONF.ldap.query_scope, res.ldap.query_scope)
+
+
+class TestUserWithFederatedUser(test_v3.RestfulTestCase,
+                                test_shadow_users.ShadowUsersTests):
+
+    def setUp(self):
+        super(TestUserWithFederatedUser, self).setUp()
+        self.useFixture(database.Database())
+        self.load_backends()
+
+    def assertFederatedDictsEqual(self, fed_dict, fed_object):
+        self.assertEqual(fed_dict['idp_id'], fed_object['idp_id'])
+        self.assertEqual(fed_dict['protocol_id'],
+                         fed_object['protocols'][0]['protocol_id'])
+        self.assertEqual(fed_dict['unique_id'],
+                         fed_object['protocols'][0]['unique_id'])
+
+    def test_get_user_when_user_has_federated_object(self):
+        fed_dict = unit.new_federated_user_ref(idp_id=self.idp['id'],
+                                               protocol_id=self.protocol['id'])
+        user = self.shadow_users_api.create_federated_user(
+            self.domain_id, fed_dict)
+
+        # test that the user returns a federated object and that there is only
+        # one returned
+        user_ref = self.identity_api.get_user(user['id'])
+        self.assertIn('federated', user_ref)
+        self.assertEqual(1, len(user_ref['federated']))
+
+        self.assertFederatedDictsEqual(fed_dict, user_ref['federated'][0])
