@@ -1,0 +1,12 @@
+---
+upgrade:
+  - >
+    Default policy is now being implemented in code. You may overwrite these
+    values using the policy.json file. If you currently make modifications to
+    the default policy file, you will have to continue maintaining those
+    changes. If you modify a subset or none of the policy entries, you can
+    essentially remove the policies that are default or the policy file.
+    For information on oslo policy usage, please see:
+    https://docs.openstack.org/developer/oslo.policy/usage.html#list-of-redundant-configuration
+    For more information on the change, please refer to the spec:
+    https://docs.openstack.org/developer/keystone/devref/development_best_practices.html#release-notes
