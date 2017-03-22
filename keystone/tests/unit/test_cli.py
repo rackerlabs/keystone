@@ -16,6 +16,7 @@ import logging
 import os
 import uuid
 
+import argparse
 import fixtures
 import mock
 import oslo_config.fixture
@@ -1317,3 +1318,35 @@ class TokenFernetDoctorTests(unit.TestCase):
         mock_utils.FernetUtils().load_keys.return_value = True
         self.assertFalse(
             tokens_fernet.symptom_usability_of_Fernet_key_repository())
+
+
+class TestMappingPurge(unit.SQLDriverOverrides, unit.TestCase):
+
+    def test_add_argument_parser_with_all(self):
+        parser_test = argparse.ArgumentParser()
+        subparsers = parser_test.add_subparsers()
+        parser = cli.MappingPurge.add_argument_parser(subparsers)
+        options = parser.parse_args(['--all'])
+        self.assertEqual(True, options.all)
+
+    def test_add_argument_parser_with_domain_name(self):
+        parser_test = argparse.ArgumentParser()
+        subparsers = parser_test.add_subparsers()
+        parser = cli.MappingPurge.add_argument_parser(subparsers)
+        options = parser.parse_args(['--domain-name',
+                                     'CONF.command.domain_name'])
+        self.assertIsNotNone(options.domain_name)
+
+    def test_add_argument_parser_with_local_id(self):
+        parser_test = argparse.ArgumentParser()
+        subparsers = parser_test.add_subparsers()
+        parser = cli.MappingPurge.add_argument_parser(subparsers)
+        options = parser.parse_args(['--local-id', 'CONF.command.local_id'])
+        self.assertIsNotNone(options.local_id)
+
+    def test_add_argument_parser_with_type(self):
+        parser_test = argparse.ArgumentParser()
+        subparsers = parser_test.add_subparsers()
+        parser = cli.MappingPurge.add_argument_parser(subparsers)
+        options = parser.parse_args(['--type', 'user'])
+        self.assertEqual('user', options.type)
