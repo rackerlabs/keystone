@@ -26,6 +26,7 @@ from keystone import identity
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
+from keystone.tests.unit import test_shadow_users
 from keystone.tests.unit import test_v3
 
 
@@ -184,7 +185,8 @@ class TestDatabaseDomainConfigs(unit.TestCase):
         self.assertEqual(CONF.ldap.query_scope, res.ldap.query_scope)
 
 
-class TestUserWithFederatedUser(test_v3.RestfulTestCase):
+class TestUserWithFederatedUser(test_v3.RestfulTestCase,
+                                test_shadow_users.ShadowUsersTests):
     def setUp(self):
         super(TestUserWithFederatedUser, self).setUp()
         self.useFixture(database.Database())
@@ -211,3 +213,63 @@ class TestUserWithFederatedUser(test_v3.RestfulTestCase):
         # Verify that all federated attributes are present
         self.assertTrue('federated' in user_ref)
         self._assert_fed_dicts(fed_dict, user_ref['federated'][0])
+
+    def test_create_user_with_invalid_idp_and_protocol_fails(self):
+        baduser = unit.new_user_ref(domain_id=self.domain['id'])
+        baduser['federated'] = [
+            {
+                'idp_id': 'fakeidp',
+                'protocols': [
+                    {
+                        'protocol_id': 'nonexistent',
+                        'unique_id': 'unknown'
+                    }
+                ]
+            }
+        ]
+        # Check validation works by throwing a federated object with
+        # invalid idp_id, protocol_id inside the user passed to create_user.
+        self.assertRaises(exception.IdentityProviderNotFound,
+                          self.identity_api.create_user,
+                          baduser)
+
+        baduser['federated'][0]['idp_id'] = self.idp['id']
+        self.assertRaises(exception.FederatedProtocolNotFound,
+                          self.identity_api.create_user,
+                          baduser)
+
+    def test_create_user_with_federated_attributes(self):
+        # Create the schema of a federated attribute being passed in with a
+        # user.
+        user = unit.new_user_ref(domain_id=self.domain['id'])
+        unique_id = uuid.uuid4().hex
+        user['federated'] = [
+            {
+                'idp_id': self.idp['id'],
+                'protocols': [
+                    {
+                        'protocol_id': self.protocol['id'],
+                        'unique_id': unique_id
+                    }
+                ]
+            }
+        ]
+
+        # Test that there are no current federated_users that match our users
+        # federated object and create the user
+        self.assertRaises(exception.UserNotFound,
+                          self.shadow_users_api.get_federated_user,
+                          self.idp['id'],
+                          self.protocol['id'],
+                          unique_id)
+
+        ref = self.identity_api.create_user(user)
+
+        # Test that the user and federated object now exists
+        self.assertEqual(user['name'], ref['name'])
+        self.assertEqual(user['federated'], ref['federated'])
+        fed_user = self.shadow_users_api.get_federated_user(
+            self.idp['id'],
+            self.protocol['id'],
+            unique_id)
+        self.assertIsNotNone(fed_user)
