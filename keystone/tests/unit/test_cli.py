@@ -16,6 +16,7 @@ import logging
 import os
 import uuid
 
+import argparse
 import fixtures
 import mock
 import oslo_config.fixture
@@ -1317,3 +1318,22 @@ class TokenFernetDoctorTests(unit.TestCase):
         mock_utils.FernetUtils().load_keys.return_value = True
         self.assertFalse(
             tokens_fernet.symptom_usability_of_Fernet_key_repository())
+
+
+class TestMappingPurge(unit.SQLDriverOverrides, unit.TestCase):
+
+    def test_add_argument_parser(self):
+        parser_test = argparse.ArgumentParser()
+        subparsers = parser_test.add_subparsers()
+        parser = cli.MappingPurge.add_argument_parser(subparsers)
+        options = parser.parse_args(['--all'])
+        if (options.all is False and
+                options.domain_name is None and
+                options.local_id is None and
+                options.type is None):
+            status = "At least one value must be present"
+            self.assertRaises(ValueError, status)
+            self.assertTrue(options.all)
+            self.assertFalse(options.domain_name)
+            self.assertFalse(options.local_id)
+            self.assertFalse(options.type)
