@@ -19,6 +19,35 @@ import six
 from keystone import exception
 
 
+def federated_objects_to_list(fed_ref):
+    """Create a new reformatted federated object list using the one passed in.
+
+    When returning federated objects with a user we only need the attributes
+    idp_id, protocol_id, and unique_id. Therefore, we pull these elements out
+    of the fed_ref and create a newly formatted list with the needed
+    information.
+
+    :returns: new_fed_ref
+    """
+    if not fed_ref:
+        return []
+
+    fed = dict()
+    for fed_dict in fed_ref:
+        fed.setdefault(
+            fed_dict['idp_id'],
+            {
+                'idp_id': fed_dict['idp_id'],
+                'protocols': []
+            }
+        )['protocols'].append({
+            'protocol_id': fed_dict['protocol_id'],
+            'unique_id': fed_dict['unique_id']
+        })
+
+    return list(fed.values())
+
+
 @six.add_metaclass(abc.ABCMeta)
 class ShadowUsersDriverBase(object):
     """Interface description for an Shadow Users driver."""
@@ -31,6 +60,16 @@ class ShadowUsersDriverBase(object):
         :param dict federated_dict: Reference to the federated user
         :param email: Federated user's email
         :returns dict: Containing the user reference
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def get_federated_objects(self, user_id):
+        """Get all federated objects for a user.
+
+        :param user_id: Unique identifier of the user
+        :returns list: Containing the user's federated objects
 
         """
         raise exception.NotImplemented()
