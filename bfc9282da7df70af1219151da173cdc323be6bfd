@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a1ced50_403a1d9a",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-03-22T22:50:25Z",
+      "side": 1,
+      "message": "was this moved for the sake of alphabetizing them? i preferred it the other way, it was more logical.",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 43
+      },
+      "revId": "bfc9282da7df70af1219151da173cdc323be6bfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_80409508",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-03-22T22:50:25Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 43
+      },
+      "revId": "bfc9282da7df70af1219151da173cdc323be6bfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_a05af1ef",
+        "filename": "keystone/common/policies/for_user.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-03-22T22:50:25Z",
+      "side": 1,
+      "message": "eww to the file name, why not place these under proejct.py and user.py?",
+      "revId": "bfc9282da7df70af1219151da173cdc323be6bfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
