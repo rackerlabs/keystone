@@ -25,6 +25,7 @@ from oslotest import mockpatch
 from six.moves import configparser
 from six.moves import range
 from testtools import matchers
+import argparse
 
 from keystone.auth import controllers
 from keystone.cmd import cli
@@ -1317,3 +1318,79 @@ class TokenFernetDoctorTests(unit.TestCase):
         mock_utils.FernetUtils().load_keys.return_value = True
         self.assertFalse(
             tokens_fernet.symptom_usability_of_Fernet_key_repository())
+
+    def test_add_argument_parser_with_all(self):
+        parser_test = argparse.ArgumentParser()
+        subparsers = parser_test.add_subparsers()
+        parser = cli.MappingPurge.add_argument_parser(subparsers)
+#       self.assertIsInstance(parser, parser_test)
+        options = parser.parse_args([
+            '--all', '--domain-name', '--public-id',
+            '--local-id', '--type'
+        ])
+        self.assertEqual(True, options.all)
+        self.assertEqual(False, options.domain-name)
+        self.assertEqual(False, options.public-id)
+        self.assertEqual(False, options.local-id)
+        self.assertEqual(False, options.type)
+
+    def test_add_argument_parser_with_domain_name(self):
+        parser_test = argparse.ArgumentParser()
+        subparsers = parser_test.add_subparsers()
+        parser = cli.MappingPurge.add_argument_parser(subparsers)
+#       self.assertIsInstance(parser, parser_test)
+        options = parser.parse_args([
+            '--all', '--domain-name', '--public-id',
+            '--local-id', '--type'
+        ])
+        self.assertEqual(False, options.all)
+        self.assertEqual(True, options.domain-name)
+        self.assertEqual(False, options.public-id)
+        self.assertEqual(False, options.local-id)
+        self.assertEqual(False, options.type)
+
+    def test_add_argument_parser_with_public_id(self):
+        parser = argparse.ArgumentParser()
+        subparsers = parser.add_subparsers()
+        parser_mock = cli.MappingPurge.add_argument_parser(subparsers)
+#       self.assertIsInstance(parser, parser_test)
+        options = parser.parse_args([
+            '--all', '--domain-name', '--public-id',
+            '--local-id', '--type'
+        ])
+        self.assertEqual(False, options.all)
+        self.assertEqual(False, options.domain-name)
+        self.assertEqual(True, options.public-id)
+        self.assertEqual(False, options.local-id)
+        self.assertEqual(False, options.type)
+
+    def test_add_argument_parser_with_local_id(self):
+        parser_test = argparse.ArgumentParser()
+        subparsers = parser_test.add_subparsers()
+        parser = cli.MappingPurge.add_argument_parser(subparsers)
+#       self.assertIsInstance(parser, parser_test)
+        options = parser.parse_args([
+            '--all', '--domain-name', '--public-id',
+            '--local-id', '--type'
+        ])
+        self.assertEqual(False, options.all)
+        self.assertEqual(False, options.domain-name)
+        self.assertEqual(False, options.public-id)
+        self.assertEqual(True, options.local-id)
+        self.assertEqual(False, options.type)
+
+    def test_add_argument_parser_with_type(self):
+        parser_test = argparse.ArgumentParser()
+        subparsers = parser_test.add_subparsers()
+        parser = cli.MappingPurge.add_argument_parser(subparsers)
+#       self.assertIsInstance(parser, parser_test)
+        options = parser.parse_args([
+            '--all', '--domain-name', '--public-id',
+            '--local-id', '--type'
+        ])
+        self.assertEqual(False, options.all)
+        self.assertEqual(False, options.domain-name)
+        self.assertEqual(False, options.public-id)
+        self.assertEqual(False, options.local-id)
+        self.assertEqual(True, options.type)
+
