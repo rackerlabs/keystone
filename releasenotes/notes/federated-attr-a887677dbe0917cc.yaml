@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    Federated attributes can be used to query for users.  The three
+    paramaters of idp_id, protocol_id, and unique_id together can be
+    used to select a user from a Federated Identity provider that has
+    previously authenticated via the identity service.
