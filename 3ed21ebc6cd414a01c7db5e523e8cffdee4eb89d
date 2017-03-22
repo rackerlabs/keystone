@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a1ced50_4f988e1c",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-22T21:22:48Z",
+      "side": 1,
+      "message": "Sean had a concern about removing these from the nova project [0]. Has his concerned been addressed outside the review somewhere? \n\n\n[0] https://review.openstack.org/#/c/439500",
+      "revId": "3ed21ebc6cd414a01c7db5e523e8cffdee4eb89d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
