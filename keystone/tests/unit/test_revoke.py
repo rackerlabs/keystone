@@ -693,12 +693,6 @@ class RevokeListTests(unit.TestCase):
         self._assertEmpty(self.revoke_events)
         for i in range(0, 10):
             events.append(
-                self._revoke_by_domain_role_assignment(uuid.uuid4().hex,
-                                                       uuid.uuid4().hex))
-            events.append(
-                self._revoke_by_domain_role_assignment(uuid.uuid4().hex,
-                                                       uuid.uuid4().hex))
-            events.append(
                 self._revoke_by_user_and_project(uuid.uuid4().hex,
                                                  uuid.uuid4().hex))
 
