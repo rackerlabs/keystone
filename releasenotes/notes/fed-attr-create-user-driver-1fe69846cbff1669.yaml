@@ -1,0 +1,8 @@
+---
+other:
+  - |
+    [`bug 1816076 <https://bugs.launchpad.net/keystone/+bug/1816076>`_]
+    The shadow users backend now supports a new `create_federated_object`,
+    used for creating a reference to federated users before their first
+    authentication. If you're using a custom shadow backend, you must
+    update your driver to support the new method.
