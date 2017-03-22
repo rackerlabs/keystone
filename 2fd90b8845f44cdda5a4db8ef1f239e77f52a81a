@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a1ced50_427f8adf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-22T19:41:22Z",
+      "side": 1,
+      "message": "We should include some links to tests that cover this behavior. It makes things easier for reviewers (especially if the change is only removing code and not modifying any tests with it).",
+      "revId": "2fd90b8845f44cdda5a4db8ef1f239e77f52a81a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
