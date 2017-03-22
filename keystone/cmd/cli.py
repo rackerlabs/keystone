@@ -861,24 +861,27 @@ class MappingPurge(BaseApp):
     @classmethod
     def add_argument_parser(cls, subparsers):
         parser = super(MappingPurge, cls).add_argument_parser(subparsers)
-        parser.add_argument('--all', default=False, action='store_true',
-                            help=('Purge all mappings.'))
-        parser.add_argument('--domain-name', default=None,
-                            help=('Purge any mappings for the domain '
-                                  'specified.'))
-        parser.add_argument('--public-id', default=None,
-                            help=('Purge the mapping for the Public ID '
-                                  'specified.'))
-        parser.add_argument('--local-id', default=None,
-                            help=('Purge the mappings for the Local ID '
-                                  'specified.'))
-        parser.add_argument('--type', default=None, choices=['user', 'group'],
-                            help=('Purge any mappings for the type '
-                                  'specified.'))
+        group = parser.add_argument_group('Options (At least one required)')
+        group.add_argument('--all', default=False, action='store_true',
+                           help=('Purge all mappings. If chosen, no others '
+                                 'may be supplied.'))
+        group.add_argument('--domain-name', default=None,
+                           help=('Purge any mappings for the domain '
+                                 'specified.'))
+        group.add_argument('--public-id', default=None,
+                           help=('Purge the mapping for the Public ID '
+                                 'specified.'))
+        group.add_argument('--local-id', default=None,
+                           help=('Purge the mappings for the Local ID '
+                                 'specified.'))
+        group.add_argument('--type', default=None, choices=['user', 'group'],
+                           help=('Purge any mappings for the type '
+                                 'specified.'))
         return parser
 
     @staticmethod
     def main():
+
         def validate_options():
             # NOTE(henry-nash): It would be nice to use the argparse automated
             # checking for this validation, but the only way I can see doing
@@ -887,20 +890,35 @@ class MappingPurge(BaseApp):
             # dangerous as a default.  So we use it in a slightly
             # unconventional way, where all parameters are optional, but you
             # must specify at least one.
-            if (CONF.command.all is False and
-                CONF.command.domain_name is None and
-                CONF.command.public_id is None and
-                CONF.command.local_id is None and
-                    CONF.command.type is None):
+            check_for_at_least_one_option(mapping)
+            check_for_all_option_only(mapping)
+
+        def check_for_at_least_one_option(args):
+            # If no options supplied, raise error
+            if (len(args) == 0):
                 raise ValueError(_('At least one option must be provided'))
 
-            if (CONF.command.all is True and
-                (CONF.command.domain_name is not None or
-                 CONF.command.public_id is not None or
-                 CONF.command.local_id is not None or
-                 CONF.command.type is not None)):
+        def check_for_all_option_only(args):
+            # Supplying --all option and other options is not supported
+            if ('all' in args and len(args) > 1):
                 raise ValueError(_('--all option cannot be mixed with '
                                    'other options'))
+
+        def get_mapping(args):
+            # Returns the mapping from the options supplied
+            # domain_id is retrieved after validating options
+            mapping = {}
+            if args.all is True:
+                mapping['all'] = args.all
+            if args.domain_name is not None:
+                mapping['domain_name'] = args.domain_name
+            if args.public_id is not None:
+                mapping['public_id'] = args.public_id
+            if args.local_id is not None:
+                mapping['local_id'] = args.local_id
+            if args.type is not None:
+                mapping['type'] = args.type
+            return mapping
 
         def get_domain_id(name):
             try:
@@ -909,27 +927,22 @@ class MappingPurge(BaseApp):
                 raise ValueError(_("Unknown domain '%(name)s' specified by "
                                    "--domain-name") % {'name': name})
 
+        mapping = get_mapping(CONF.command)
         validate_options()
         drivers = backends.load_backends()
         resource_manager = drivers['resource_api']
         mapping_manager = drivers['id_mapping_api']
-
         # Now that we have validated the options, we know that at least one
         # option has been specified, and if it was the --all option then this
         # was the only option specified.
         #
         # The mapping dict is used to filter which mappings are purged, so
         # leaving it empty means purge them all
-        mapping = {}
-        if CONF.command.domain_name is not None:
-            mapping['domain_id'] = get_domain_id(CONF.command.domain_name)
-        if CONF.command.public_id is not None:
-            mapping['public_id'] = CONF.command.public_id
-        if CONF.command.local_id is not None:
-            mapping['local_id'] = CONF.command.local_id
-        if CONF.command.type is not None:
-            mapping['type'] = CONF.command.type
-
+        if ('all' in mapping):
+            mapping.clear()
+        domain_name = mapping.pop('domain_name', None)
+        if (domain_name):
+            mapping['domain_id'] = get_domain_id(domain_name)
         mapping_manager.purge_mappings(mapping)
 
 
