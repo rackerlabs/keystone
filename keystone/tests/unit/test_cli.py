@@ -16,6 +16,7 @@ import logging
 import os
 import uuid
 
+import argparse
 import fixtures
 import mock
 import oslo_config.fixture
@@ -1317,3 +1318,80 @@ class TokenFernetDoctorTests(unit.TestCase):
         mock_utils.FernetUtils().load_keys.return_value = True
         self.assertFalse(
             tokens_fernet.symptom_usability_of_Fernet_key_repository())
+
+
+class TestMappingPurge(unit.SQLDriverOverrides, unit.TestCase):
+
+    def test_add_argument_parser_no_arguments(self):
+        parser_test = argparse.ArgumentParser()
+        subparsers = parser_test.add_subparsers()
+        parser = cli.MappingPurge.add_argument_parser(subparsers)
+        args = ([])
+        self.assertRaises(unit.UnexpectedExit, parser.parse_args, args)
+
+    def test_add_argument_parser_with_more_than_one_arguments(self):
+        parser_test = argparse.ArgumentParser()
+        subparsers = parser_test.add_subparsers()
+        parser = cli.MappingPurge.add_argument_parser(subparsers)
+        args = (['--all', '--local-id', 'user'])
+        self.assertRaises(unit.UnexpectedExit, parser.parse_args, args)
+
+    def test_add_argument_parser_with_all(self):
+        parser_test = argparse.ArgumentParser()
+        subparsers = parser_test.add_subparsers()
+        parser = cli.MappingPurge.add_argument_parser(subparsers)
+        args = (['--all'])
+        raised = False
+        try:
+            parser.parse_args(args)
+        except Exception:
+            raised = True
+        self.assertFalse(raised, 'Exception raised')
+
+    def test_add_argument_parser_with_domain_name(self):
+        parser_test = argparse.ArgumentParser()
+        subparsers = parser_test.add_subparsers()
+        parser = cli.MappingPurge.add_argument_parser(subparsers)
+        args = (['--domain-name', uuid.uuid4().hex])
+        raised = False
+        try:
+            parser.parse_args(args)
+        except Exception:
+            raised = True
+        self.assertFalse(raised, 'Exception raised')
+
+    def test_add_argument_parser_with_public_id(self):
+        parser_test = argparse.ArgumentParser()
+        subparsers = parser_test.add_subparsers()
+        parser = cli.MappingPurge.add_argument_parser(subparsers)
+        args = (['--public-id', uuid.uuid4().hex])
+        raised = False
+        try:
+            parser.parse_args(args)
+        except Exception:
+            raised = True
+        self.assertFalse(raised, 'Exception raised')
+
+    def test_add_argument_parser_with_local_id(self):
+        parser_test = argparse.ArgumentParser()
+        subparsers = parser_test.add_subparsers()
+        parser = cli.MappingPurge.add_argument_parser(subparsers)
+        args = (['--local-id', uuid.uuid4().hex])
+        raised = False
+        try:
+            parser.parse_args(args)
+        except Exception:
+            raised = True
+        self.assertFalse(raised, 'Exception raised')
+
+    def test_add_argument_parser_with_type(self):
+        parser_test = argparse.ArgumentParser()
+        subparsers = parser_test.add_subparsers()
+        parser = cli.MappingPurge.add_argument_parser(subparsers)
+        args = (['--type', 'user'])
+        raised = False
+        try:
+            parser.parse_args(args)
+        except Exception:
+            raised = True
+        self.assertFalse(raised, 'Exception raised')
