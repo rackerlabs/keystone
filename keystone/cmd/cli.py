@@ -861,20 +861,22 @@ class MappingPurge(BaseApp):
     @classmethod
     def add_argument_parser(cls, subparsers):
         parser = super(MappingPurge, cls).add_argument_parser(subparsers)
-        parser.add_argument('--all', default=False, action='store_true',
-                            help=('Purge all mappings.'))
-        parser.add_argument('--domain-name', default=None,
-                            help=('Purge any mappings for the domain '
-                                  'specified.'))
-        parser.add_argument('--public-id', default=None,
-                            help=('Purge the mapping for the Public ID '
-                                  'specified.'))
-        parser.add_argument('--local-id', default=None,
-                            help=('Purge the mappings for the Local ID '
-                                  'specified.'))
-        parser.add_argument('--type', default=None, choices=['user', 'group'],
-                            help=('Purge any mappings for the type '
-                                  'specified.'))
+        exclusive_group = parser.add_mutually_exclusive_group(required=True)
+        exclusive_group.add_argument('--all', default=False,
+                                     action='store_true',
+                                     help=('Purge all mappings.'))
+        exclusive_group.add_argument('--domain-name', default=None,
+                                     help=('Purge any mappings for the '
+                                           'domain specified.'))
+        exclusive_group.add_argument('--public-id', default=None,
+                                     help=('Purge the mapping for the Public '
+                                           'ID specified.'))
+        exclusive_group.add_argument('--local-id', default=None,
+                                     help=('Purge the mappings for the Local '
+                                           'ID specified.'))
+        exclusive_group.add_argument('--type', default=None, choices=['user',
+                                     'group'], help=('Purge any mappings for '
+                                     'the type specified.'))
         return parser
 
     @staticmethod
