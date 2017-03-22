@@ -50,6 +50,24 @@
       "revId": "ab54db8ced99edb27c853c500723c5d58001f150",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_5b2ccc98",
+        "filename": "etc/policy.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-22T23:24:32Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "1a1ced50_00b9052e",
+      "revId": "ab54db8ced99edb27c853c500723c5d58001f150",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
