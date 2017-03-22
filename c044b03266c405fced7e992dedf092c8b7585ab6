@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a1ced50_47bcfcba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-22T19:13:07Z",
+      "side": 1,
+      "message": "We could make the same improvements to this commit message [0]. I think it is easier for reviewers when we provide them with links that ensure we aren\u0027t going to go backwards (I know the tests exist somewhere, it\u0027s just a matter of linking to them).\n\n[0] https://review.openstack.org/#/c/448613/",
+      "revId": "c044b03266c405fced7e992dedf092c8b7585ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
