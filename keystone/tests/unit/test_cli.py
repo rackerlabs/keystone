@@ -16,6 +16,7 @@ import logging
 import os
 import uuid
 
+import argparse
 import fixtures
 import mock
 import oslo_config.fixture
@@ -1317,3 +1318,25 @@ class TokenFernetDoctorTests(unit.TestCase):
         mock_utils.FernetUtils().load_keys.return_value = True
         self.assertFalse(
             tokens_fernet.symptom_usability_of_Fernet_key_repository())
+
+
+class TestMappingPurge(unit.SQLDriverOverrides, unit.TestCase):
+
+    def test_add_argument_parse(self):
+        parser_test = argparse.ArgumentParser()
+        subparsers = parser_test.add_subparsers()
+        self.parser = cli.MappingPurge.add_argument_parser(subparsers)
+        args = ([])
+        self.assertRaises(unit.UnexpectedExit, self.parser.parse_args, args)
+        args = (['--all', '--local-id', 'user'])
+        self.assertRaises(unit.UnexpectedExit, self.parser.parse_args, args)
+        args = (['--all'])
+        self.parser.parse_args(args)
+        args = (['--domain-name', uuid.uuid4().hex])
+        self.parser.parse_args(args)
+        args = (['--public-id', uuid.uuid4().hex])
+        self.parser.parse_args(args)
+        args = (['--local-id', uuid.uuid4().hex])
+        self.parser.parse_args(args)
+        args = (['--type', 'user'])
+        self.parser.parse_args(args)
