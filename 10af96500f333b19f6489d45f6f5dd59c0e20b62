@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a1ced50_b65cff7d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-22T20:12:13Z",
+      "side": 1,
+      "message": "Same comments here as in https://review.openstack.org/#/c/447606/1//COMMIT_MSG",
+      "revId": "10af96500f333b19f6489d45f6f5dd59c0e20b62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
