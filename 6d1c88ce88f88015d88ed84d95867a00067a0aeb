@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a1ced50_4a67cae8",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-22T01:39:53Z",
+      "side": 1,
+      "message": "If I\u0027m understanding this correctly - this is still doing the round trip, right? It\u0027s building the original list on line 128 and then double checking that each user exists in the directory on line 131?",
+      "revId": "6d1c88ce88f88015d88ed84d95867a00067a0aeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
