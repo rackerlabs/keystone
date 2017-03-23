@@ -15,21 +15,36 @@ from oslo_policy import policy
 from keystone.common.policies import base
 
 mapping_policies = [
-    policy.RuleDefault(
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_mapping',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Create mapping',
+        operations=[{'path': '/v3/OS-FEDERATION/mappings/{mapping_id}',
+                     'method': 'PUT'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_mapping',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Get mapping',
+        operations=[{'path': '/v3/OS-FEDERATION/mappings/{mapping_id}',
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_mappings',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='List mapping',
+        operations=[{'path': '/v3/OS-FEDERATION/mappings',
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_mapping',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Delete mapping',
+        operations=[{'path': '/v3/OS-FEDERATION/mappings/{mapping_id}',
+                     'method': 'DELETE'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_mapping',
-        check_str=base.RULE_ADMIN_REQUIRED)
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Update mapping',
+        operations=[{'path': '/v3/OS-FEDERATION/mappings/{mapping_id}',
+                     'method': 'PATCH'}])
 ]
 
 
