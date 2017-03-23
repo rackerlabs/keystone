@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a1ced50_0ca3d650",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-23T20:28:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a1ced50_18e6b116",
+      "range": {
+        "startLine": 42,
+        "startChar": 5,
+        "endLine": 42,
+        "endChar": 23
+      },
+      "revId": "4a18bd9e473c0e1ed4b58de6b723db9a91b7f411",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a1ced50_78c4055f",
         "filename": "keystone/identity/shadow_backends/base.py",
         "patchSetId": 5
@@ -36,6 +60,30 @@
       "writtenOn": "2017-03-23T17:27:11Z",
       "side": 1,
       "message": "can you refactor this? :)",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 10
+      },
+      "revId": "4a18bd9e473c0e1ed4b58de6b723db9a91b7f411",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_2c6c1236",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-23T20:28:34Z",
+      "side": 1,
+      "message": "Refactor the spec or the code? If the code, elaborate please :)\nI could add a comment explaining the process like they mention here: http://stackoverflow.com/questions/3483520/use-cases-for-the-setdefault-dict-method ?",
+      "parentUuid": "1a1ced50_78c4055f",
       "range": {
         "startLine": 49,
         "startChar": 0,
@@ -82,6 +130,30 @@
       "writtenOn": "2017-03-23T17:27:11Z",
       "side": 1,
       "message": "I think would be good to follow the \"assertEqual\" naming convention (assertFedDicts) - I know we have this kind of examples in our code, however this is the \"default\" for Python tests.",
+      "range": {
+        "startLine": 188,
+        "startChar": 8,
+        "endLine": 188,
+        "endChar": 25
+      },
+      "revId": "4a18bd9e473c0e1ed4b58de6b723db9a91b7f411",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_45829cca",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-23T20:28:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a1ced50_b88bdd1d",
       "range": {
         "startLine": 188,
         "startChar": 8,
