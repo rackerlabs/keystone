@@ -14,19 +14,76 @@ from oslo_policy import policy
 
 from keystone.common.policies import base
 
+grant_resources = [
+    {'path': '/v3/projects/{project_id}/users/{user_id}/roles/{role_id}'},
+    {'path': '/v3/projects/{project_id}/groups/{group_id}/roles/{role_id}'},
+    {'path': '/v3/domains/{domain_id}/users/{user_id}/roles/{role_id}'},
+    {'path': '/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}'},
+    {
+        'path': ('/v3/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/'
+                 '{role_id}/inherited_to_projects')
+    },
+    {
+        'path': ('/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/'
+                 '{role_id}/inherited_to_projects')
+    },
+    {
+        'path': ('/v3/OS-INHERIT/projects/{project_id}/users/{user_id}/roles/'
+                 '{role_id}/inherited_to_projects')
+    },
+    {
+        'path': ('/v3/OS-INHERIT/projects/{project_id}/groups/{group_id}/'
+                 'roles/{role_id}/inherited_to_projects')
+    }
+]
+
+grant_collections = [
+    {'path': '/v3/projects/{project_id}/users/{user_id}/roles'},
+    {'path': '/v3/projects/{project_id}/groups/{group_id}/roles'},
+    {'path': '/v3/domains/{domain_id}/users/{user_id}/roles'},
+    {'path': '/v3/domains/{domain_id}/groups/{group_id}/role'},
+    {
+        'path': ('/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/'
+                 'inherited_to_projects')
+    },
+    {
+        'path': ('/v3/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/'
+                 'inherited_to_projects')
+    }
+]
+
+
+def get_operations(path_dic, method):
+    operation = []
+
+    for p in path_dic:
+        p['method'] = method
+        operation.append(p)
+
+    return operation
+
+
 grant_policies = [
-    policy.RuleDefault(
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'check_grant',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Check grant.',
+        operations=get_operations(grant_resources, 'HEAD')),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_grants',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='List grants.',
+        operations=get_operations(grant_collections, 'GET')),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_grant',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Create grant.',
+        operations=get_operations(grant_resources, 'PUT')),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'revoke_grant',
-        check_str=base.RULE_ADMIN_REQUIRED),
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Revoke grant.',
+        operations=get_operations(grant_resources, 'DELETE'))
 ]
 
 
