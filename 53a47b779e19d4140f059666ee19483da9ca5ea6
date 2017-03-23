@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_052494c5",
+        "filename": "releasenotes/notes/bug-1670382-ee851ba4f364d608.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T20:30:57Z",
+      "side": 1,
+      "message": "nit: `group_members_are_ids`",
+      "revId": "53a47b779e19d4140f059666ee19483da9ca5ea6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
