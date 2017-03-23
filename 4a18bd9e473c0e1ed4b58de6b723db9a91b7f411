@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a1ced50_18e6b116",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-23T17:27:11Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 42,
+        "startChar": 5,
+        "endLine": 42,
+        "endChar": 23
+      },
+      "revId": "4a18bd9e473c0e1ed4b58de6b723db9a91b7f411",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_78c4055f",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-23T17:27:11Z",
+      "side": 1,
+      "message": "can you refactor this? :)",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 10
+      },
+      "revId": "4a18bd9e473c0e1ed4b58de6b723db9a91b7f411",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_989f0165",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-23T17:27:11Z",
+      "side": 1,
+      "message": "this might be included in the refactoring",
+      "range": {
+        "startLine": 60,
+        "startChar": 11,
+        "endLine": 60,
+        "endChar": 29
+      },
+      "revId": "4a18bd9e473c0e1ed4b58de6b723db9a91b7f411",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_b88bdd1d",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-23T17:27:11Z",
+      "side": 1,
+      "message": "I think would be good to follow the \"assertEqual\" naming convention (assertFedDicts) - I know we have this kind of examples in our code, however this is the \"default\" for Python tests.",
+      "range": {
+        "startLine": 188,
+        "startChar": 8,
+        "endLine": 188,
+        "endChar": 25
+      },
+      "revId": "4a18bd9e473c0e1ed4b58de6b723db9a91b7f411",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
