@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a1ced50_af48f48b",
+        "filename": "doc/source/devref/functional_testing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T18:32:17Z",
+      "side": 1,
+      "message": "This could go into even greater detail about what keystone thinks functional testing is. For example, how does this differ from the functional-like tests we have in the keystone/tests/unit/test_v3_*.py modules. That might be a great way to set the stage for the rest of the document.",
+      "revId": "3f2abbe7d081758a605e11568a4fcacbc71e6091",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_8f1c18c3",
+        "filename": "doc/source/devref/functional_testing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T18:32:17Z",
+      "side": 1,
+      "message": "For the sake of readability, the two items in this list could be consolidated in to the above paragraph.\n\n  ... available under `keystone_tempest_plugin`. The first is a voting\n  job that exposes both the v2 and v3 endpoint (more details can be\n  elaborated on here). The second is a non-voting job that exposes only\n  the v3 endpoint, but takes additional steps to setup things required for\n  federated workflows in order to run federated test cases (more details\n  can be elaborated on here).",
+      "revId": "3f2abbe7d081758a605e11568a4fcacbc71e6091",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_0feca88e",
+        "filename": "doc/source/devref/functional_testing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T18:32:17Z",
+      "side": 1,
+      "message": "This is a great place to explain the role of the devstack plugin. For example, it could say that the whole purpose of the devstack plugin is to give the maintainers of the project the flexibility to setup keystone in specific ways before testing (using hooks from devstack, etc..).\n\nAs a developer reading the document, it gives me an idea of why this devstack thing exists within keystone, why I should use it, and when its usage is appropriate.\n\nIt could also describe when in the functional testing process I need to contribute to the devstack plugin. For example, if I want to develop some new tests for a new thing, my first step might be to contribute to the devstack plugin that adds functionality for the new thing. Then my next step would be writing tests, but those live somewhere else, etc..",
+      "revId": "3f2abbe7d081758a605e11568a4fcacbc71e6091",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
