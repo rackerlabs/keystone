@@ -15,24 +15,46 @@ from oslo_policy import policy
 from keystone.common.policies import base
 
 access_token_policies = [
-    policy.RuleDefault(
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'authorize_request_token',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Authorize request token',
+        operations=[{'path': '/v3/OS-OAUTH1/authorize/{request_token_id}',
+                     'method': 'PUT'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_access_token',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Get access token',
+        operations=[{'path': ('/v3/users/{user_id}/OS-OAUTH1/access_tokens/'
+                              '{access_token_id}'),
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_access_token_role',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Get access token role',
+        operations=[{'path': ('/v3/users/{user_id}/OS-OAUTH1/access_tokens/'
+                              '{access_token_id}/roles/{role_id}'),
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_access_tokens',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='List access tokens',
+        operations=[{'path': '/v3/users/{user_id}/OS-OAUTH1/access_tokens',
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_access_token_roles',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='List access token roles',
+        operations=[{'path': ('/v3/users/{user_id}/OS-OAUTH1/access_tokens/'
+                              '{access_token_id}/roles'),
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_access_token',
-        check_str=base.RULE_ADMIN_REQUIRED)
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Delete access token',
+        operations=[{'path': ('/v3/users/{user_id}/OS-OAUTH1/access_tokens/'
+                              '{access_token_id}'),
+                     'method': 'DELETE'}])
 ]
 
 
