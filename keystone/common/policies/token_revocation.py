@@ -15,21 +15,36 @@ from oslo_policy import policy
 from keystone.common.policies import base
 
 token_revocation_policies = [
-    policy.RuleDefault(
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'check_token',
-        check_str=base.RULE_ADMIN_OR_TOKEN_SUBJECT),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_OR_TOKEN_SUBJECT,
+        description='Check token.',
+        operations=[{'path': '/v3/auth/tokens',
+                     'method': 'HEAD'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'validate_token',
-        check_str=base.RULE_SERVICE_ADMIN_OR_TOKEN_SUBJECT),
-    policy.RuleDefault(
+        check_str=base.RULE_SERVICE_ADMIN_OR_TOKEN_SUBJECT,
+        description='Validate auth token.',
+        operations=[{'path': '/v3/auth/tokens',
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'validate_token_head',
-        check_str=base.RULE_SERVICE_OR_ADMIN),
-    policy.RuleDefault(
+        check_str=base.RULE_SERVICE_OR_ADMIN,
+        description='Validate token head.',
+        operations=[{'path': '/v2.0/tokens/{token_id}',
+                     'method': 'HEAD'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'revocation_list',
-        check_str=base.RULE_SERVICE_OR_ADMIN),
-    policy.RuleDefault(
+        check_str=base.RULE_SERVICE_OR_ADMIN,
+        description='List revoked PKI tokens.',
+        operations=[{'path': '/v3/auth/tokens/OS-PKI/revoked',
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'revoke_token',
-        check_str=base.RULE_ADMIN_OR_TOKEN_SUBJECT),
+        check_str=base.RULE_ADMIN_OR_TOKEN_SUBJECT,
+        description='Revoke subject token.',
+        operations=[{'path': '/v3/auth/tokens',
+                     'method': 'DELETE'}])
 ]
 
 
