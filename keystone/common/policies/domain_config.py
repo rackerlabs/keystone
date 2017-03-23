@@ -14,25 +14,64 @@ from oslo_policy import policy
 
 from keystone.common.policies import base
 
+
 domain_config_policies = [
-    policy.RuleDefault(
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_domain_config',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Create domain configuration',
+        operations=[{'path': '/v3/domains/{domain_id}/config',
+                     'method': 'PUT'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_domain_config',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Get domain configuration',
+        operations=[{'path': '/v3/domains/{domain_id}/config',
+                     'method': 'GET'},
+                    {'path': '/v3/domains/{domain_id}/config/{group}',
+                     'method': 'GET'},
+                    {'path': '/v3/domains/{domain_id}/config/{group}/{option}',
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_security_compliance_domain_config',
-        check_str=''),
-    policy.RuleDefault(
+        check_str='',
+        description='Get security compliance domain configuration',
+        operations=[{'path': ('/v3/domains/{domain_id}/config/'
+                              'security_compliance'),
+                     'method': 'GET'},
+                    {'path': ('v3/domains/{domain_id}/config/'
+                              'security_compliance/{option}'),
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_domain_config',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Update domain configuration',
+        operations=[{'path': '/v3/domains/{domain_id}/config',
+                     'method': 'PATCH'},
+                    {'path': '/v3/domains/{domain_id}/config/{group}',
+                     'method': 'PATCH'},
+                    {'path': '/v3/domains/{domain_id}/config/{group}/{option}',
+                     'method': 'PATCH'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_domain_config',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Delete domain configuration',
+        operations=[{'path': '/v3/domains/{domain_id}/config',
+                     'method': 'DELETE'},
+                    {'path': '/v3/domains/{domain_id}/config/{group}',
+                     'method': 'DELETE'},
+                    {'path': '/v3/domains/{domain_id}/config/{group}/{option}',
+                     'method': 'DELETE'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_domain_config_default',
-        check_str=base.RULE_ADMIN_REQUIRED)
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Get domain configuration default',
+        operations=[{'path': '/v3/domains/config/default',
+                     'method': 'GET'},
+                    {'path': '/v3/domains/config/{group}/default',
+                     'method': 'GET'},
+                    {'path': '/v3/domains/config/{group}/{option}/default',
+                     'method': 'GET'}])
 ]
 
 
