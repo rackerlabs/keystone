@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_ebc74145",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T21:17:20Z",
+      "side": 1,
+      "message": "Does it make sense to wrap this in a deprecated utility?",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_eb686122",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T21:17:20Z",
+      "side": 1,
+      "message": "This could be moved up to line 111 after the break. We could then make this exception specific to support and bump it up a couple lines.\n\n  _(\u0027Password Hash Algorithm %s not supported\u0027)\n\nThat way operators have a little more information to go on (is the hasher value empty or did I specify an unsupported hasher).",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_a88dbf7c",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T21:17:20Z",
+      "side": 1,
+      "message": "Do we need `deprecated_for_removal` here, too?",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_08738b82",
+        "filename": "keystone/conf/identity.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T21:17:20Z",
+      "side": 1,
+      "message": "nit: By conventions, it looks like all other literals in the module use single backticks instead of double.",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_e8e2a701",
+        "filename": "keystone/conf/identity.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T21:17:20Z",
+      "side": 1,
+      "message": "I assume these two options (`scrypt_paralellism` and `scrypt_block_size`) are both only valid if `password_hash_algorithm\u003dscrypt`.\n\nThat might be a good thing to add to both of these (like how we specifically denote that certain PCI configuration options only work if sql is the identity driver).",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_68c0d751",
+        "filename": "keystone/conf/identity.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T21:17:20Z",
+      "side": 1,
+      "message": "There should be anything stopping us from deprecating this immediately, using the oslo.config tooling.",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_88b79bd9",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T21:17:20Z",
+      "side": 1,
+      "message": "AFAICT this is only changing for the sake of readability?",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_a8e01f98",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T21:17:20Z",
+      "side": 1,
+      "message": "Should we do these with the other algorithms we support?",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_ab5019d6",
+        "filename": "releasenotes/notes/bug_1543048_and_1668503-7ead4e15faaab778.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T21:17:20Z",
+      "side": 1,
+      "message": "From an operator perspective what happens if I don\u0027t do this last step? Is this a timing thing? Do I have to switch this back within X amount of time after I run my contract phase?",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_4b274d66",
+        "filename": "releasenotes/notes/bug_1543048_and_1668503-7ead4e15faaab778.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T21:17:20Z",
+      "side": 1,
+      "message": "Might be worth noting here that administrators can force users to upgrade their passwords, which eludes to one possible way administrators can go about making that change happen.",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

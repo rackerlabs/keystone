@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_ab9a596b",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T21:17:20Z",
+      "side": 0,
+      "message": "I\u0027m trying to piece together where this is happening now.",
+      "revId": "1ec73f3b97337bc3d98f34734abded8639fcffc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
