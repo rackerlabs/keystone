@@ -22,6 +22,40 @@
       "revId": "3c35f5bd23c9f7af80271da1d75e362d4cc5c077",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_4f64e0e4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T18:14:41Z",
+      "side": 1,
+      "message": "I think we could reword this to say this commit is removing the default policy file *and* addressing a couple minor comments from a previous patch.\n\nThen we could close out the blueprint, too:\n\n  implements blueprint policy-in-code",
+      "revId": "3c35f5bd23c9f7af80271da1d75e362d4cc5c077",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_8f8c1881",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T18:14:41Z",
+      "side": 1,
+      "message": "Trailing whitespace",
+      "revId": "3c35f5bd23c9f7af80271da1d75e362d4cc5c077",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

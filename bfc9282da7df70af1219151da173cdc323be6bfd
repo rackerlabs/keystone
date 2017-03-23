@@ -16,6 +16,24 @@
       "revId": "bfc9282da7df70af1219151da173cdc323be6bfd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_2f408435",
+        "filename": "etc/policy.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T18:14:41Z",
+      "side": 0,
+      "message": "Yeah - that way we would have two patches:\n\n - one patch to address comments from part 5\n - one patch to remove the policy file from source and refactor the tests\n\nI threw that up some time ago once all the patches to move policies into code were proposed. My thinking behind it was that we should have a patch the removes the policy file from source and we should use that to close the blueprint, since that should prove we moved all policy into code by default.",
+      "parentUuid": "1a1ced50_c5b8da2c",
+      "revId": "bfc9282da7df70af1219151da173cdc323be6bfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
