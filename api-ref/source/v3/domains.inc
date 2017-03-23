@@ -81,11 +81,11 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
+   - description: domain_description_request_body
    - domain: domain
    - enabled: domain_enabled_request_body
-   - description: domain_description_request_body
    - name: domain_name_request_body
- 
+
 Request Example
 ---------------
 
