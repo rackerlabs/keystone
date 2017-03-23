@@ -15,12 +15,18 @@ from oslo_policy import policy
 from keystone.common.policies import base
 
 service_policies = [
-    policy.RuleDefault(
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_projects_for_user',
-        check_str=''),
-    policy.RuleDefault(
+        check_str='',
+        description='List projects for user',
+        operations=[{'path': '/v3/OS-FEDERATION/projects',
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_domains_for_user',
-        check_str=''),
+        check_str='',
+        description='List domains for user',
+        operations=[{'path': '/v3/OS-FEDERATION/domains',
+                     'method': 'GET'}]),
 ]
 
 
