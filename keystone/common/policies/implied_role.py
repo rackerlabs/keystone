@@ -15,24 +15,47 @@ from oslo_policy import policy
 from keystone.common.policies import base
 
 implied_role_policies = [
-    policy.RuleDefault(
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_implied_role',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description=('Get information for an implied role associated with a '
+                     'superior role.'),
+        operations=[{'path': ('/v3/roles/{prior_role_id}/implies/'
+                              '{implied_role_id}'),
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_implied_roles',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Get a list of implied roles for a superior prior.',
+        operations=[{'path': '/v3/roles/{prior_role_id}/implies',
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_implied_role',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Create role inference rule.',
+        operations=[{'path': ('/v3/roles/{prior_role_id}/implies/'
+                              '{implied_role_id}'),
+                     'method': 'PUT'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_implied_role',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Delete role inference rule.',
+        operations=[{'path': ('/v3/roles/{prior_role_id}/implies/'
+                              '{implied_role_id}'),
+                     'method': 'DELETE'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_role_inference_rules',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='List all role inference rules.',
+        operations=[{'path': '/v3/role_inferences',
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'check_implied_role',
-        check_str=base.RULE_ADMIN_REQUIRED),
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Check role inference rule.',
+        operations=[{'path': ('/v3/roles/{prior_role_id}/implies/'
+                              '{implied_role_id}'),
+                     'method': 'HEAD'}])
 ]
 
 
