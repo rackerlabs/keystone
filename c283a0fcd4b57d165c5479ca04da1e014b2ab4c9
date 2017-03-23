@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_9c27ddb7",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7353
+      },
+      "writtenOn": "2017-03-23T22:24:58Z",
+      "side": 1,
+      "message": "++ this would be useful to know who has or has not followed the mandate to reset their passwords.",
+      "parentUuid": "ffe62b97_31e11a00",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_ebc74145",
         "filename": "keystone/common/password_hashing.py",
         "patchSetId": 13
@@ -138,6 +156,29 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_5c083527",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 7353
+      },
+      "writtenOn": "2017-03-23T22:24:58Z",
+      "side": 1,
+      "message": "Could this be removed in R instead of Q? Asking because I\u0027m under the impression that we\u0027re going to have to force all users of a given cloud to reset their passwords and in some of my environments I\u0027ve hundreds, if not thousands of users which means coordinating a mass (forced) password reset for all users across all clouds and that may be a tough pill to swallow when trying to get it done for all deployments within a single cycle.",
+      "range": {
+        "startLine": 162,
+        "startChar": 0,
+        "endLine": 164,
+        "endChar": 76
+      },
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_a8e01f98",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 13
@@ -149,6 +190,29 @@
       "writtenOn": "2017-03-23T21:17:20Z",
       "side": 1,
       "message": "Should we do these with the other algorithms we support?",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_515b7e86",
+        "filename": "releasenotes/notes/bug_1543048_and_1668503-7ead4e15faaab778.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7353
+      },
+      "writtenOn": "2017-03-23T22:24:58Z",
+      "side": 1,
+      "message": "I think it may be worth while to spell out to folks that ALL users of the cloud will be forced to reset their passwords in order to ensure strong hashing within the PIKE cycle and that will need to be done before folks are able to upgrade to R. \n\nThis is assuming I\u0027m understanding the PR correctly.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 7
+      },
       "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -201,6 +265,29 @@
       "writtenOn": "2017-03-23T21:17:20Z",
       "side": 1,
       "message": "Might be worth noting here that administrators can force users to upgrade their passwords, which eludes to one possible way administrators can go about making that change happen.",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_9ce8fd16",
+        "filename": "releasenotes/notes/bug_1543048_and_1668503-7ead4e15faaab778.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7353
+      },
+      "writtenOn": "2017-03-23T22:24:58Z",
+      "side": 1,
+      "message": "I\u0027d also like to have this, or something like it, sent out as some form of a security advisory. When I force my users to reset their passwords they\u0027re going to ask why. Having an OSSA security advisory published to https://security.openstack.org/ossalist.html (or something similar) would likely make a lot of those questions go away while also providing my Product and C-Type folks a reason as to why we\u0027re forcing our users to do this.",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 9
+      },
       "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
