@@ -155,6 +155,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_f679682f",
+        "filename": "releasenotes/notes/bug_1543048_and_1668503-7ead4e15faaab778.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T21:31:02Z",
+      "side": 1,
+      "message": "This has to be switched back to False after a deployment is running all Pike code and an admin has forced all users to reset their passwords, right?",
+      "parentUuid": "ffe62b97_ab5019d6",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_4b274d66",
         "filename": "releasenotes/notes/bug_1543048_and_1668503-7ead4e15faaab778.yaml",
         "patchSetId": 13
