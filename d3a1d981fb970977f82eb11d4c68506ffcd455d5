@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a1ced50_42d91783",
+        "filename": "keystone/common/sql/contract_repo/versions/023_contract_drop_federated_user_fks.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T18:59:30Z",
+      "side": 1,
+      "message": "At first glance, I didn\u0027t think this would work with our upgrade process because I thought for a second that we would have a race condition between nodes don\u0027t have the constraint in the manager layers once the foreign keys are dropped.\n\nTurns out that isn\u0027t the case because according to our rolling upgrade documentation, all nodes in the deployment should be running the latest release *before* the contract phase is executed. Which means the constraint should be honored throughout the entire upgrade either in the API or in the DB. But, for a brief period of time we should have the constraint duplicated because we\u0027ll be checking it at the API layer on nodes that have new code, and at the DB layer for the nodes that have the older code.\n\nThat might make a good comment for other reviews or maybe other contributors looking to do something similar?",
+      "revId": "d3a1d981fb970977f82eb11d4c68506ffcd455d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_e25683cd",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T18:59:30Z",
+      "side": 1,
+      "message": "To be consistent with other methods in this module (and in other keystone APIs), we should add a documentation string fro `idp_id`.",
+      "revId": "d3a1d981fb970977f82eb11d4c68506ffcd455d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_a28d6b2c",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T18:59:30Z",
+      "side": 1,
+      "message": "nit: I\u0027d be in favor of foregoing this method and just keeping the idp or protocol specific hints logic in the respective `delete_idp` and `delete_protocol` method, since it keeps the business logic in the method.\n\n\n  def delete_idp(self, idp_id):\n      \u003csnip docstrings\u003e\n      hints \u003d driver_hints.Hints()\n      hints.add_filter(\u0027idp_id\u0027, idp_id)\n      idp_users \u003d self.identity_api.list_users(hints\u003dhints)\n      for user in idp_users:\n          self.identity_api.delete_user(user[\u0027id\u0027])",
+      "revId": "d3a1d981fb970977f82eb11d4c68506ffcd455d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_42c6774a",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T18:59:30Z",
+      "side": 1,
+      "message": "Similar comments here as above - specifically for the documentation strings.",
+      "revId": "d3a1d981fb970977f82eb11d4c68506ffcd455d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_a25e4b77",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3074,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T18:59:30Z",
+      "side": 1,
+      "message": "nit: I like to try and work the expected outcome into the test name somewhere. For example:\n\n  def test_deleting_idp_deletes_federated_user_associated_to_idp(self):\n\nor something along those lines. It gives readers of the test the situation and the expected behavior the test is exercising all in one place.",
+      "revId": "d3a1d981fb970977f82eb11d4c68506ffcd455d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_a202cb70",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3083,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T18:59:30Z",
+      "side": 1,
+      "message": "We could add an assertion here checking that the users exist with the identity API.",
+      "revId": "d3a1d981fb970977f82eb11d4c68506ffcd455d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_c2634740",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3095,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T18:59:30Z",
+      "side": 1,
+      "message": "Same nit here about test naming.",
+      "revId": "d3a1d981fb970977f82eb11d4c68506ffcd455d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_e2cf6327",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3105,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-23T18:59:30Z",
+      "side": 1,
+      "message": "We should use these same assertions in the test above, too!\n\nGreat tests by the way.",
+      "revId": "d3a1d981fb970977f82eb11d4c68506ffcd455d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
