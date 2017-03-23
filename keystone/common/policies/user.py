@@ -15,30 +15,54 @@ from oslo_policy import policy
 from keystone.common.policies import base
 
 user_policies = [
-    policy.RuleDefault(
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_user',
-        check_str=base.RULE_ADMIN_OR_OWNER),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_OR_OWNER,
+        description='Show user details',
+        operations=[{'path': '/v3/users/{user_id}',
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_users',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='List users',
+        operations=[{'path': '/v3/users',
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_projects_for_user',
-        check_str=''),
-    policy.RuleDefault(
+        check_str='',
+        description='List projects for user',
+        operations=[{'path': '/v3/OS-FEDERATION/projects',
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_domains_for_user',
-        check_str=''),
-    policy.RuleDefault(
+        check_str='',
+        description='List domains for user',
+        operations=[{'path': '/v3/OS-FEDERATION/domains',
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_user',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Create user',
+        operations=[{'path': '/v3/users',
+                     'method': 'POST'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_user',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Update user',
+        operations=[{'path': '/v3/users/{user_id}',
+                     'method': 'PATCH'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_user',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Delete user',
+        operations=[{'path': '/v3/users/{user_id}',
+                     'method': 'DELETE'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'change_password',
-        check_str=base.RULE_ADMIN_OR_OWNER),
+        check_str=base.RULE_ADMIN_OR_OWNER,
+        description='Change password for user',
+        operations=[{'path': '/v3/users/{user_id}/password',
+                     'method': 'POST'}])
 ]
 
 
