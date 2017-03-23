@@ -16,21 +16,41 @@ from keystone.common.policies import base
 
 project_endpoint_policies = [
 
-    policy.RuleDefault(
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_projects_for_endpoint',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='List projects for endpoint.',
+        operations=[{'path': ('/v3/OS-EP-FILTER/endpoints/{endpoint_id}/'
+                              'projects'),
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'add_endpoint_to_project',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Add endpoint to project.',
+        operations=[{'path': ('/v3/OS-EP-FILTER/projects/{project_id}/'
+                              'endpoints/{endpoint_id}'),
+                     'method': 'PUT'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'check_endpoint_in_project',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Check if endpoint in project.',
+        operations=[{'path': ('/v3/OS-EP-FILTER/projects/{project_id}/'
+                              'endpoints/{endpoint_id}'),
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_endpoints_for_project',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='List endpoints for a project.',
+        operations=[{'path': ('/v3/OS-EP-FILTER/projects/{project_id}/'
+                              'endpoints'),
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'remove_endpoint_from_project',
-        check_str=base.RULE_ADMIN_REQUIRED)
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Remove endpoint from a project.',
+        operations=[{'path': ('/v3/OS-EP-FILTER/projects/{project_id}/'
+                              'endpoints/{endpoint_id}'),
+                     'method': 'DELETE'}])
 ]
 
 
