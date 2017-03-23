@@ -15,21 +15,36 @@ from oslo_policy import policy
 from keystone.common.policies import base
 
 service_provider_policies = [
-    policy.RuleDefault(
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_service_provider',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Create service provider',
+        operations=[{'path': '/v3/OS-FEDERATION/service_providers/{sp_id}',
+                     'method': 'PUT'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_service_providers',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='List service providers',
+        operations=[{'path': '/v3/OS-FEDERATION/service_providers',
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_service_provider',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Get service provider',
+        operations=[{'path': '/v3/OS-FEDERATION/service_providers/{sp_id}',
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_service_provider',
-        check_str=base.RULE_ADMIN_REQUIRED),
-    policy.RuleDefault(
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Update service provider',
+        operations=[{'path': '/v3/OS-FEDERATION/service_providers/{sp_id}',
+                     'method': 'PATCH'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_service_provider',
-        check_str=base.RULE_ADMIN_REQUIRED)
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Delete service provider',
+        operations=[{'path': '/v3/OS-FEDERATION/service_providers/{sp_id}',
+                     'method': 'DELETE'}])
 ]
 
 
