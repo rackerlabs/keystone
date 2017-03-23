@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a1ced50_c5b8da2c",
+        "filename": "etc/policy.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-03-23T01:45:21Z",
+      "side": 0,
+      "message": "i didn\u0027t realize this was being done here: https://review.openstack.org/#/c/437388/1\n\nyou can undo this change and the tests/ changes to make this easier",
+      "revId": "bfc9282da7df70af1219151da173cdc323be6bfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
