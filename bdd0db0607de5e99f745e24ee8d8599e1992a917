@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a1ced50_a3981a1d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 957,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-23T16:11:43Z",
+      "side": 1,
+      "message": "Ah, just following the spec still. Plan to tack on another patch as a dependancy on the last one to fix the two tests it fails in the other repo and add fed object back",
+      "parentUuid": "1a1ced50_faf1da01",
+      "range": {
+        "startLine": 956,
+        "startChar": 0,
+        "endLine": 957,
+        "endChar": 42
+      },
+      "revId": "bdd0db0607de5e99f745e24ee8d8599e1992a917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a1ced50_1ae956b7",
         "filename": "keystone/identity/shadow_backends/base.py",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2017-03-23T12:50:39Z",
       "side": 1,
       "message": "put an example of the list returned in this method.",
+      "range": {
+        "startLine": 26,
+        "startChar": 4,
+        "endLine": 26,
+        "endChar": 38
+      },
+      "revId": "bdd0db0607de5e99f745e24ee8d8599e1992a917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_e37052df",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-23T16:11:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a1ced50_1ae956b7",
       "range": {
         "startLine": 26,
         "startChar": 4,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "1a1ced50_23734ae9",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-23T16:11:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a1ced50_ba3922a6",
+      "range": {
+        "startLine": 35,
+        "startChar": 10,
+        "endLine": 35,
+        "endChar": 16
+      },
+      "revId": "bdd0db0607de5e99f745e24ee8d8599e1992a917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a1ced50_7a024ab5",
         "filename": "keystone/identity/shadow_backends/base.py",
         "patchSetId": 3
@@ -82,6 +154,30 @@
       "writtenOn": "2017-03-23T12:50:39Z",
       "side": 1,
       "message": "this couldn\u0027t be harder to read.",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 10
+      },
+      "revId": "bdd0db0607de5e99f745e24ee8d8599e1992a917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_23850aad",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-23T16:11:43Z",
+      "side": 1,
+      "message": "Ah, the reformatting has to account for multiple objects and protocols to follow \nhttps://specs.openstack.org/openstack/keystone-specs/specs/keystone/ocata/support-federated-attr.html",
+      "parentUuid": "1a1ced50_7a024ab5",
       "range": {
         "startLine": 37,
         "startChar": 0,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "1a1ced50_cc3f0386",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-23T16:11:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a1ced50_9a1466e9",
+      "range": {
+        "startLine": 195,
+        "startChar": 13,
+        "endLine": 195,
+        "endChar": 22
+      },
+      "revId": "bdd0db0607de5e99f745e24ee8d8599e1992a917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a1ced50_7af08ac9",
         "filename": "keystone/tests/unit/identity/test_core.py",
         "patchSetId": 3
@@ -140,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "1a1ced50_ec44bf1c",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-23T16:11:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a1ced50_7af08ac9",
+      "range": {
+        "startLine": 203,
+        "startChar": 8,
+        "endLine": 203,
+        "endChar": 48
+      },
+      "revId": "bdd0db0607de5e99f745e24ee8d8599e1992a917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a1ced50_9aa706a6",
         "filename": "keystone/tests/unit/identity/test_core.py",
         "patchSetId": 3
@@ -151,6 +295,30 @@
       "writtenOn": "2017-03-23T12:50:39Z",
       "side": 1,
       "message": "again?",
+      "range": {
+        "startLine": 207,
+        "startChar": 8,
+        "endLine": 207,
+        "endChar": 48
+      },
+      "revId": "bdd0db0607de5e99f745e24ee8d8599e1992a917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1ced50_0c4afb27",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-23T16:11:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a1ced50_9aa706a6",
       "range": {
         "startLine": 207,
         "startChar": 8,
