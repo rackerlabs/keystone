@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_d24ad07e",
+        "filename": "keystone/common/sql/contract_repo/versions/023_contract_drop_federated_user_fks.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-24T14:24:54Z",
+      "side": 1,
+      "message": "yep, excellent observation. Will try to translate in a comment here.",
+      "parentUuid": "1a1ced50_42d91783",
+      "revId": "d3a1d981fb970977f82eb11d4c68506ffcd455d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a1ced50_e25683cd",
         "filename": "keystone/federation/core.py",
         "patchSetId": 5
@@ -47,6 +65,24 @@
       "writtenOn": "2017-03-23T18:59:30Z",
       "side": 1,
       "message": "nit: I\u0027d be in favor of foregoing this method and just keeping the idp or protocol specific hints logic in the respective `delete_idp` and `delete_protocol` method, since it keeps the business logic in the method.\n\n\n  def delete_idp(self, idp_id):\n      \u003csnip docstrings\u003e\n      hints \u003d driver_hints.Hints()\n      hints.add_filter(\u0027idp_id\u0027, idp_id)\n      idp_users \u003d self.identity_api.list_users(hints\u003dhints)\n      for user in idp_users:\n          self.identity_api.delete_user(user[\u0027id\u0027])",
+      "revId": "d3a1d981fb970977f82eb11d4c68506ffcd455d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_4d32a1f3",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-24T14:24:54Z",
+      "side": 1,
+      "message": "I tend to disagree here. We are creating a method that has only one, well defined goal and it is being shared between two other methods.",
+      "parentUuid": "1a1ced50_a28d6b2c",
       "revId": "d3a1d981fb970977f82eb11d4c68506ffcd455d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_ed7df56e",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3074,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-24T14:24:54Z",
+      "side": 1,
+      "message": "++ nice suggestion",
+      "parentUuid": "1a1ced50_a25e4b77",
+      "revId": "d3a1d981fb970977f82eb11d4c68506ffcd455d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a1ced50_a202cb70",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 5
@@ -98,6 +152,24 @@
       "writtenOn": "2017-03-23T18:59:30Z",
       "side": 1,
       "message": "We could add an assertion here checking that the users exist with the identity API.",
+      "revId": "d3a1d981fb970977f82eb11d4c68506ffcd455d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_4de3c134",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3083,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-24T14:24:54Z",
+      "side": 1,
+      "message": "does it?",
+      "parentUuid": "1a1ced50_a202cb70",
       "revId": "d3a1d981fb970977f82eb11d4c68506ffcd455d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
