@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_866078d0",
+        "filename": "keystone/common/policies/service_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-24T20:36:45Z",
+      "side": 1,
+      "message": "Create federated service provider*?",
+      "revId": "a6286d24e7f0348c40c3c6ecc4f852e0a042508f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_e66984be",
+        "filename": "keystone/common/policies/service_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-24T20:36:45Z",
+      "side": 1,
+      "message": "I\u0027m going back and forth on whether or not we should use `sp_id` or `service_provider_id` for the sake of document completeness.",
+      "revId": "a6286d24e7f0348c40c3c6ecc4f852e0a042508f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
