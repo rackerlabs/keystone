@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_6060bca6",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-24T19:50:26Z",
+      "side": 0,
+      "message": "Actually - it turns out that this is a byproduct of the tests using a different entry point to this functionality than that cli does. The cli uses these methods to expand, migrate, and contract schemas. The unit tests within keystone use upgrade and pass the path/version of the repository to upgrade.\n\nIn the future, maybe we can look into consolidating this so that there is a single entry point for this. As a result, we won\u0027t have false positives in our coverage document and the overall design will be easier to understand from a developer perspective.",
+      "parentUuid": "ffe62b97_92043a19",
+      "revId": "cd642d2d4e67f60712bbbac87d81ecfcae292fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_150ed433",
         "filename": "keystone/common/sql/upgrades.py",
         "patchSetId": 15
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_60bc3cdc",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-24T19:50:26Z",
+      "side": 0,
+      "message": "Same comment as above.",
+      "parentUuid": "ffe62b97_150ed433",
+      "revId": "cd642d2d4e67f60712bbbac87d81ecfcae292fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_d50f4c2c",
         "filename": "keystone/common/sql/upgrades.py",
         "patchSetId": 15
@@ -47,6 +83,24 @@
       "writtenOn": "2017-03-24T19:05:37Z",
       "side": 0,
       "message": "Same comment here.",
+      "revId": "cd642d2d4e67f60712bbbac87d81ecfcae292fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_40c13854",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-24T19:50:26Z",
+      "side": 0,
+      "message": "Same comment as above.",
+      "parentUuid": "ffe62b97_d50f4c2c",
       "revId": "cd642d2d4e67f60712bbbac87d81ecfcae292fbb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
