@@ -143,12 +143,6 @@ class HackingLogging(fixtures.Fixture):
                 import logging
                 import logging as stlib_logging
                 from keystone.i18n import _
-                from keystone.i18n import _ as oslo_i18n
-                from keystone.i18n import _LC
-                from keystone.i18n import _LE
-                from keystone.i18n import _LE as error_hint
-                from keystone.i18n import _LI
-                from keystone.i18n import _LW
                 from oslo_log import log
                 from oslo_log import log as oslo_logging
     """
@@ -161,8 +155,8 @@ class HackingLogging(fixtures.Fixture):
                 LOG.info(_('text'))
                 class C:
                     def __init__(self):
-                        LOG.warning(oslo_i18n('text', {}))
-                        LOG.warning(_LW('text', {}))
+                        LOG.warning(_('text', {}))
+                        LOG.warning(_('text', {}))
             """,
             'expected_errors': [
                 (3, 9, 'K006'),
@@ -180,7 +174,7 @@ class HackingLogging(fixtures.Fixture):
                             _('text'), {}
                         )
                         self.L.warning(
-                            _LW('text'), {}
+                            _('text'), {}
                         )
             """,
             'expected_errors': [
@@ -191,8 +185,7 @@ class HackingLogging(fixtures.Fixture):
             'code': """
                 # oslo logging and specifying a logger
                 L = log.getLogger(__name__)
-                L.error(oslo_i18n('text'))
-                L.error(error_hint('text'))
+                L.error(_('text'))
             """,
             'expected_errors': [
                 (3, 8, 'K006'),
@@ -217,7 +210,7 @@ class HackingLogging(fixtures.Fixture):
                 # translation on a separate line
                 msg = _('text')
                 LOG.exception(msg)
-                msg = _LE('text')
+                msg = _('text')
                 LOG.exception(msg)
             """,
             'expected_errors': [
@@ -229,10 +222,10 @@ class HackingLogging(fixtures.Fixture):
                 LOG = logging.getLogger()
 
                 # ensure the correct helper is being used
-                LOG.warning(_LI('this should cause an error'))
+                LOG.warning(_('this should cause an error'))
 
                 # debug should not allow any helpers either
-                LOG.debug(_LI('this should cause an error'))
+                LOG.debug(_('this should cause an error'))
             """,
             'expected_errors': [
                 (4, 12, 'K006'),
@@ -301,7 +294,7 @@ class HackingLogging(fixtures.Fixture):
         {
             'code': """
                 LOG = log.getLogger(__name__)
-                msg = _LW('text')
+                msg = _('text')
                 LOG.warning(msg)
                 raise Exception(msg)
             """,
@@ -312,7 +305,7 @@ class HackingLogging(fixtures.Fixture):
         {
             'code': """
                 LOG = log.getLogger(__name__)
-                msg = _LW('text')
+                msg = _('text')
                 LOG.warning(msg)
                 msg = _('something else')
                 raise Exception(msg)
@@ -322,7 +315,7 @@ class HackingLogging(fixtures.Fixture):
         {
             'code': """
                 LOG = log.getLogger(__name__)
-                msg = _LW('hello %s') % 'world'
+                msg = _('hello %s') % 'world'
                 LOG.warning(msg)
                 raise Exception(msg)
             """,
@@ -333,7 +326,7 @@ class HackingLogging(fixtures.Fixture):
         {
             'code': """
                 LOG = log.getLogger(__name__)
-                msg = _LW('hello %s') % 'world'
+                msg = _('hello %s') % 'world'
                 LOG.warning(msg)
             """,
             'expected_errors': [],
@@ -365,12 +358,11 @@ class HackingLogging(fixtures.Fixture):
         },
         {
             'code': """
-                # this should error since we are using _LW instead of _
                 LOG = log.getLogger(__name__)
                 try:
                     pass
                 except AssertionError as e:
-                    msg = _LW('some message')
+                    msg = _('some message')
                     LOG.warning(msg)
                     raise exception.Unauthorized(message=msg)
             """,
@@ -385,7 +377,7 @@ class HackingLogging(fixtures.Fixture):
                 # Logger.warn has been deprecated in Python3 in favor of
                 # Logger.warning
                 LOG = log.getLogger(__name__)
-                LOG.warn(_LW('text'))
+                LOG.warn(_('text'))
         """,
         'expected_errors': [
             (4, 9, 'K009'),
@@ -399,7 +391,7 @@ class HackingLogging(fixtures.Fixture):
                 L0.debug(_('text'))
                 class C:
                     def __init__(self):
-                        L0.debug(oslo_i18n('text', {}))
+                        L0.debug(_('text', {}))
 
                 # stdlib logging w/ alias and specifying a logger
                 class C:
@@ -412,7 +404,7 @@ class HackingLogging(fixtures.Fixture):
 
                 # oslo logging and specifying a logger
                 L2 = logging.getLogger(__name__)
-                L2.debug(oslo_i18n('text'))
+                L2.debug(_('text'))
 
                 # oslo logging w/ alias
                 class C:
