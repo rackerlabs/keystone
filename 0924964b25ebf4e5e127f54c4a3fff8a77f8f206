@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_db3bfdce",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-24T20:08:48Z",
+      "side": 1,
+      "message": "How did this happen? It looks like the release note was create manually, instead of using the reno tool.",
+      "revId": "0924964b25ebf4e5e127f54c4a3fff8a77f8f206",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

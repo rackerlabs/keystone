@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_bb66f9ec",
+        "filename": "releasenotes/notes/unset-user-default_project_id-when-project-is-deleted-4d42c841b6e7e54e.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-24T20:08:48Z",
+      "side": 0,
+      "message": "We should take this opportunity to make this adhere to our release note conventions [0].\n\n[0] https://docs.openstack.org/developer/keystone/devref/development_best_practices.html#release-notes",
+      "revId": "62a0d2f295793928527530ae6540fe7e210dcd43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
