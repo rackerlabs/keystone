@@ -176,20 +176,19 @@ class PolicyJsonTestCase(unit.TestCase):
     def _load_entries(self, filename):
         return set(json.load(open(filename)))
 
-    def _add_missing_default_rules(self, rules):
-        """Add default rules and their values to the given rules dict.
+    def _get_default_policy_rules(self):
+        """Return a dictionary of all in-code policies.
 
-        The given rules dict may have an incomplete set of policy rules.
-        This method will add the default policy rules and their values to the
-        dict. It will not override the existing rules. This method is temporary
-        and is only needed until we move all policy.json rules into code.
+        All policies should have a default value that is tracked in code,
+        populates a dictionary with those policies, and returns it.
         """
+        rules = dict()
         for rule in policies.list_rules():
-            if rule.name not in rules:
-                rules[rule.name] = rule.check_str
+            rules[rule.name] = rule.check_str
+        return rules
 
     def test_json_examples_have_matching_entries(self):
-        policy_keys = self._load_entries(unit.dirs.etc('policy.json'))
+        policy_keys = self._get_default_policy_rules()
         cloud_policy_keys = self._load_entries(
             unit.dirs.etc('policy.v3cloudsample.json'))
 
@@ -228,10 +227,7 @@ class PolicyJsonTestCase(unit.TestCase):
         self.assertTrue(result)
 
     def test_all_targets_documented(self):
-        # All the targets in the sample policy file must be documented in
-        # doc/source/policy_mapping.rst.
-        policy_keys = json.load(open((unit.dirs.etc('policy.json'))))
-        self._add_missing_default_rules(policy_keys)
+        policy_keys = self._get_default_policy_rules()
 
         # These keys are in the policy.json but aren't targets.
         policy_rule_keys = [
