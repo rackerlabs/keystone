@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ffe62b97_6628d485",
+        "filename": "releasenotes/notes/bug-1523369-4d42c841b6e7e54e.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-24T20:32:59Z",
+      "side": 0,
+      "message": "We typically don\u0027t need two backticks for literals, one should be good.",
+      "revId": "62a0d2f295793928527530ae6540fe7e210dcd43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_bb66f9ec",
         "filename": "releasenotes/notes/unset-user-default_project_id-when-project-is-deleted-4d42c841b6e7e54e.yaml",
         "patchSetId": 1
