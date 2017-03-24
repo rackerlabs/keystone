@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_9bda1515",
+        "filename": "keystone/common/policies/region.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-24T20:31:40Z",
+      "side": 1,
+      "message": "According to the catalog router, this can also be a PUT:\n\nhttps://github.com/openstack/keystone/blob/62a0d2f295793928527530ae6540fe7e210dcd43/keystone/catalog/routers.py#L85",
+      "revId": "e256e8535993ab4d1a1b29035fb70c6e747ee11b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
