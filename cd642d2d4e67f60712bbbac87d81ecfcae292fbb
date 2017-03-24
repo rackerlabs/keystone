@@ -52,6 +52,23 @@
       "revId": "cd642d2d4e67f60712bbbac87d81ecfcae292fbb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_25fad141",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1748,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-24T15:22:30Z",
+      "side": 0,
+      "message": "This is essentially the same test as the one on line 1715 now, just with different repository versions. Keeping the logging would be useful though. Since this case is covered in the above tests - I\u0027d be fine removing this one test in favor of three other tests that test more cases.",
+      "revId": "cd642d2d4e67f60712bbbac87d81ecfcae292fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
