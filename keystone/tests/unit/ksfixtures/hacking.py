@@ -30,35 +30,25 @@ class HackingCode(fixtures.Fixture):
         'code': """
                 def f():
                     pass
-
                 def f(a, b='', c=None):
                     pass
-
                 def f(bad=[]):
                     pass
-
                 def f(foo, bad=[], more_bad=[x for x in range(3)]):
                     pass
-
                 def f(foo, bad={}):
                     pass
-
                 def f(foo, bad={}, another_bad=[], fine=None):
                     pass
-
                 def f(bad=[]): # noqa
                     pass
-
                 def funcs(bad=dict(), more_bad=list(), even_more_bad=set()):
                     "creating mutables through builtins"
-
                 def funcs(bad=something(), more_bad=some_object.something()):
                     "defaults from any functions"
-
                 def f(bad=set(), more_bad={x for x in range(3)},
                        even_more_bad={1, 2, 3}):
                     "set and set comprehession"
-
                 def f(bad={x: x for x in range(3)}):
                     "dict comprehension"
             """,
@@ -90,9 +80,7 @@ class HackingCode(fixtures.Fixture):
     comments_begin_with_space = {
         'code': """
             # This is a good comment
-
             #This is a bad one
-
             # This is alright and can
             #    be continued with extra indentation
             #    if that's what the developer wants.
@@ -104,7 +92,6 @@ class HackingCode(fixtures.Fixture):
     asserting_none_equality = {
         'code': """
             class Test(object):
-
                 def test(self):
                     self.assertEqual('', '')
                     self.assertEqual('', None)
@@ -227,10 +214,8 @@ class HackingLogging(fixtures.Fixture):
         {
             'code': """
                 LOG = logging.getLogger()
-
                 # ensure the correct helper is being used
                 LOG.warning(_LI('this should cause an error'))
-
                 # debug should not allow any helpers either
                 LOG.debug(_LI('this should cause an error'))
             """,
@@ -400,7 +385,6 @@ class HackingLogging(fixtures.Fixture):
                 class C:
                     def __init__(self):
                         L0.debug(oslo_i18n('text', {}))
-
                 # stdlib logging w/ alias and specifying a logger
                 class C:
                     def __init__(self):
@@ -409,21 +393,17 @@ class HackingLogging(fixtures.Fixture):
                         self.L1.debug(
                             _('text'), {}
                         )
-
                 # oslo logging and specifying a logger
                 L2 = logging.getLogger(__name__)
                 L2.debug(oslo_i18n('text'))
-
                 # oslo logging w/ alias
                 class C:
                     def __init__(self):
                         self.L3 = oslo_logging.getLogger()
                         self.L3.debug(_('text'))
-
                 # translation on a separate line
                 msg = _('text')
                 L2.debug(msg)
-
                 # this should not fail
                 if True:
                     msg = _('message %s') % X
@@ -432,7 +412,6 @@ class HackingLogging(fixtures.Fixture):
                 if True:
                     msg = 'message'
                     L2.debug(msg)
-
                 # this should not fail
                 if True:
                     if True:
@@ -450,5 +429,4 @@ class HackingLogging(fixtures.Fixture):
             (25, 22, 'K005'),
             (29, 9, 'K005'),
         ]
-    }
-
+}
