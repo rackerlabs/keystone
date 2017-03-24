@@ -34,6 +34,24 @@
       "revId": "cd642d2d4e67f60712bbbac87d81ecfcae292fbb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_45da7517",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1757,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-24T15:17:51Z",
+      "side": 0,
+      "message": "Yeah - either way it would be nice to have the behavior documented in a test somewhere. We should just show that it is done somehow so that we know we won\u0027t regress.",
+      "parentUuid": "9a30ddce_427a06be",
+      "revId": "cd642d2d4e67f60712bbbac87d81ecfcae292fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
