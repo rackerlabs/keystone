@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_a0c5a43e",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-03-24T19:56:10Z",
+      "side": 1,
+      "message": "s/users/objects",
+      "range": {
+        "startLine": 195,
+        "startChar": 46,
+        "endLine": 195,
+        "endChar": 51
+      },
+      "revId": "f38d326704911cacf09d2b4bfc9214696d743811",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
