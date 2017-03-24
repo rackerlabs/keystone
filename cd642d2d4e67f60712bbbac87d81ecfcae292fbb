@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "ffe62b97_92043a19",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-24T19:05:37Z",
+      "side": 0,
+      "message": "According a coverage report generated from this patch, this is untested.",
+      "revId": "cd642d2d4e67f60712bbbac87d81ecfcae292fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_150ed433",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-24T19:05:37Z",
+      "side": 0,
+      "message": "Same comment here.",
+      "revId": "cd642d2d4e67f60712bbbac87d81ecfcae292fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_d50f4c2c",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-24T19:05:37Z",
+      "side": 0,
+      "message": "Same comment here.",
+      "revId": "cd642d2d4e67f60712bbbac87d81ecfcae292fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_819240f4",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 14

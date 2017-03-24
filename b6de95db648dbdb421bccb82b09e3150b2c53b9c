@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_552d7c93",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-24T19:05:37Z",
+      "side": 1,
+      "message": "This case seems to be untested according to http://104.130.175.68/cover/keystone_common_sql_upgrades_py.html",
+      "revId": "b6de95db648dbdb421bccb82b09e3150b2c53b9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
