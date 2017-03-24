@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_c670c075",
+        "filename": "keystone/common/policies/revoke_event.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-24T20:41:09Z",
+      "side": 1,
+      "message": "List revocation events*\n\nAlso, I don\u0027t think this API is very useful anymore... I wonder if we should duplicate the fact it doesn\u0027t do much here or not.. I\u0027ll let other weigh in on that though.",
+      "revId": "c750239af9a3631256d4eca66cc50445b169b135",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
