@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_a582614e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-24T15:13:58Z",
+      "side": 1,
+      "message": "Too long for title character limit",
+      "parentUuid": "1a1ced50_a5667eea",
+      "range": {
+        "startLine": 7,
+        "startChar": 28,
+        "endLine": 7,
+        "endChar": 31
+      },
+      "revId": "3c35f5bd23c9f7af80271da1d75e362d4cc5c077",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a1ced50_4f64e0e4",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -36,6 +60,24 @@
       "writtenOn": "2017-03-23T18:14:41Z",
       "side": 1,
       "message": "I think we could reword this to say this commit is removing the default policy file *and* addressing a couple minor comments from a previous patch.\n\nThen we could close out the blueprint, too:\n\n  implements blueprint policy-in-code",
+      "revId": "3c35f5bd23c9f7af80271da1d75e362d4cc5c077",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_65ab39d6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-24T15:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a1ced50_4f64e0e4",
       "revId": "3c35f5bd23c9f7af80271da1d75e362d4cc5c077",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

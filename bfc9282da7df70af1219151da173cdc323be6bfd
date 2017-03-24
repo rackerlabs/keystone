@@ -34,6 +34,42 @@
       "revId": "bfc9282da7df70af1219151da173cdc323be6bfd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_258e5178",
+        "filename": "etc/policy.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-24T15:13:58Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "1a1ced50_c5b8da2c",
+      "revId": "bfc9282da7df70af1219151da173cdc323be6bfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_c540c50a",
+        "filename": "etc/policy.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-24T15:13:58Z",
+      "side": 0,
+      "message": "With it being proposed a while back before the moving of all the folders and files around theres a nasty merge conflict that I can\u0027t simply just rebase and fix. I\u0027d have to cherry pick/squash stuff and since I am lazy, its easier/faster to just propose a new one off what is now merged.",
+      "parentUuid": "1a1ced50_2f408435",
+      "revId": "bfc9282da7df70af1219151da173cdc323be6bfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
