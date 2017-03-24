@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_c0cd485e",
+        "filename": "releasenotes/notes/bug_1674415-e8a7345aa2b05ab7.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-24T19:57:36Z",
+      "side": 1,
+      "message": "According to our developer documentation for release notes, we should include a link to the bug [0].\n\n[0] https://docs.openstack.org/developer/keystone/devref/development_best_practices.html#release-notes",
+      "revId": "94af46e74cbac815a333226807f2e284b1918255",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
