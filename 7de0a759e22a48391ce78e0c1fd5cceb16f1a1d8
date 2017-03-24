@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_865198db",
+        "filename": "keystone/tests/unit/test_exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-03-24T20:41:30Z",
+      "side": 0,
+      "message": "I think all of these tests are useless and should be removed.",
+      "revId": "7de0a759e22a48391ce78e0c1fd5cceb16f1a1d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
