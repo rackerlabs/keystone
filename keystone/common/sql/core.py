@@ -277,7 +277,7 @@ def _filter(model, query, hints):
                   Any filters satisfied here will be removed so that
                   the caller will know if any filters remain.
 
-    :returns query: query, updated with any filters satisfied
+    :returns: query query, updated with any filters satisfied
 
     """
     def inexact_filter(model, query, filter_, satisfied_filters):
@@ -289,7 +289,7 @@ def _filter(model, query, hints):
         :param list satisfied_filters: filter_ will be added if it is
                                        satisfied.
 
-        :returns query: query updated to add any inexact filters we could
+        :returns: query query updated to add any inexact filters we could
                         satisfy
 
         """
@@ -329,7 +329,7 @@ def _filter(model, query, hints):
         :param dict filter_: describes this filter
         :param list satisfied_filters: filter_ will be added if it is
                                        satisfied.
-        :returns query: query updated to add any exact filters we could
+        :returns: query query updated to add any exact filters we could
                         satisfy
         """
         key = filter_['name']
