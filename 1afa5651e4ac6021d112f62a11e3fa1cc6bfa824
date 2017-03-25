@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_a785b3af",
+        "filename": "keystone/common/policies/access_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-25T01:49:03Z",
+      "side": 1,
+      "message": "These doc strings seem inconsistent with what\u0027s being proposed here [0], which is fine but we should probably update them in a separate patch set. Documenting it here since I stumbled across it in this review.\n\n[0] https://github.com/openstack/keystone/blob/62a0d2f295793928527530ae6540fe7e210dcd43/keystone/oauth1/routers.py#L60-L62",
+      "revId": "1afa5651e4ac6021d112f62a11e3fa1cc6bfa824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_073b3feb",
+        "filename": "keystone/common/policies/access_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-25T01:49:03Z",
+      "side": 1,
+      "message": "Get access token for user by access token ID.*",
+      "revId": "1afa5651e4ac6021d112f62a11e3fa1cc6bfa824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_07469f7d",
+        "filename": "keystone/common/policies/access_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-25T01:49:03Z",
+      "side": 1,
+      "message": "Get roles for user access token.*",
+      "revId": "1afa5651e4ac6021d112f62a11e3fa1cc6bfa824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_677d6bb0",
+        "filename": "keystone/common/policies/access_token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-25T01:49:03Z",
+      "side": 1,
+      "message": "List access tokens for user*",
+      "revId": "1afa5651e4ac6021d112f62a11e3fa1cc6bfa824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
