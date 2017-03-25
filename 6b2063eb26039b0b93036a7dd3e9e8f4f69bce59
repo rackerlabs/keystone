@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_a2aec12b",
+        "filename": "keystone/common/policies/for_user.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-25T02:57:51Z",
+      "side": 0,
+      "message": "This module was going to get collapsed into keystone/common/policies/user.py right?",
+      "revId": "6b2063eb26039b0b93036a7dd3e9e8f4f69bce59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

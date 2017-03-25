@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_c27665d9",
+        "filename": "keystone/common/policies/for_user.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-25T02:57:51Z",
+      "side": 1,
+      "message": "The federated path of these API is deprecated in favor of /v3/auth/projects/ and /v3/auth/domains/. Do we cover those in a separate patch set? \n\nhttps://github.com/openstack/keystone/blob/62a0d2f295793928527530ae6540fe7e210dcd43/keystone/federation/routers.py#L193-L204",
+      "revId": "f3a8fb82358d208828d8e20064efed83b2c2c288",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
