@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_a22121b7",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-25T03:01:53Z",
+      "side": 1,
+      "message": "nit: I\u0027d be fine just leaving this as: \n\n  Validate token\n\nto be consistent with other description in this module.",
+      "revId": "2f51e1bceb51ef3c59df7c8e9527f7cd6cd687b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_6256792c",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-25T03:01:53Z",
+      "side": 1,
+      "message": "Weird.. we have two different policies for v2.0 token validation and v3 token validation?",
+      "revId": "2f51e1bceb51ef3c59df7c8e9527f7cd6cd687b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
