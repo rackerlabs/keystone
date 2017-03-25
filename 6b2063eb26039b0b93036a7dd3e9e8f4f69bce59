@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_c6f68090",
+        "filename": "keystone/common/policies/domain_config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-25T01:15:55Z",
+      "side": 1,
+      "message": "I think that maybe this needs to go into a little more detail about each type of path that\u0027s possible here. For example, it\u0027s possible to get a domain config for an entire domain, a specific group, or a specific option in the group. That level of detail might help operators understand why there are three different paths that allow getting a domain configuration.\n\nThis would apply to the rest of the changes in this module, too.",
+      "revId": "6b2063eb26039b0b93036a7dd3e9e8f4f69bce59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_c63b2036",
+        "filename": "keystone/common/policies/domain_config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-25T01:15:55Z",
+      "side": 1,
+      "message": "Can\u0027t this also be done with HEAD, too? For reference I\u0027m comparing this to https://github.com/openstack/keystone/blob/62a0d2f295793928527530ae6540fe7e210dcd43/keystone/resource/routers.py#L51",
+      "revId": "6b2063eb26039b0b93036a7dd3e9e8f4f69bce59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
