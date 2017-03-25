@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_22c3d1ef",
+        "filename": "keystone/common/policies/trust.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-25T02:53:38Z",
+      "side": 0,
+      "message": "This looks like it\u0027s missing the GET trust API [0]\n\n[0] https://github.com/openstack/keystone/blob/62a0d2f295793928527530ae6540fe7e210dcd43/keystone/trust/routers.py#L45",
+      "revId": "e8fe456ed66e93ed674d6db8c8910edfb2b5644f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
