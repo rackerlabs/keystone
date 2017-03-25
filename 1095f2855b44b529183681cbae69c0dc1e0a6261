@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_a7f6d38e",
+        "filename": "keystone/common/policies/mapping.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-25T01:31:39Z",
+      "side": 1,
+      "message": "Create federated mapping*? \n\nI think federated helps give more context as to what the mapping is for.",
+      "revId": "1095f2855b44b529183681cbae69c0dc1e0a6261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_270be38e",
+        "filename": "keystone/common/policies/mapping.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-25T01:31:39Z",
+      "side": 1,
+      "message": "We should update this comment [0] because according to this and the federation routers it\u0027s incorrect. This can be done in a separate patch, just wanted to document it here since I noticed it.\n\n[0] https://github.com/openstack/keystone/blob/62a0d2f295793928527530ae6540fe7e210dcd43/keystone/federation/routers.py#L56",
+      "revId": "1095f2855b44b529183681cbae69c0dc1e0a6261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
