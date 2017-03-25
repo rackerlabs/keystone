@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_c2978590",
+        "filename": "keystone/common/policies/group.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-25T02:42:02Z",
+      "side": 1,
+      "message": "The routers say this is also something we can do with HEAD.\n\nhttps://github.com/openstack/keystone/blob/62a0d2f295793928527530ae6540fe7e210dcd43/keystone/identity/routers.py",
+      "revId": "5a2fb0a88e5b73f4915d714ae5bbd953f52cc63f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_628e7979",
+        "filename": "keystone/common/policies/group.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-25T02:42:02Z",
+      "side": 1,
+      "message": "This should be PATCH",
+      "revId": "5a2fb0a88e5b73f4915d714ae5bbd953f52cc63f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_824f3dbc",
+        "filename": "keystone/common/policies/group.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-25T02:42:02Z",
+      "side": 1,
+      "message": "According to the routers this is something we can do with HEAD as well.\n\nhttps://github.com/openstack/keystone/blob/62a0d2f295793928527530ae6540fe7e210dcd43/keystone/identity/routers.py#L63",
+      "revId": "5a2fb0a88e5b73f4915d714ae5bbd953f52cc63f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
