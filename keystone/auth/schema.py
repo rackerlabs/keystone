@@ -53,6 +53,10 @@ token_issue = {
             'required': ['methods', ],
         },
         'scope': {
+        # For explicit unscoped authentication the type should not be strictly string.
+        # Although keystone server specifies the value to be 'unscoped', old
+        # versions of keystoneauth might still be using "scope": {'unscoped': {}} 
+        # https://bugs.launchpad.net/keystoneauth/+bug/1637682/
             'type': ['object', 'string'],
             'properties': {
                 'project': {
