@@ -247,7 +247,7 @@ Request
    - name: user_name
    - auth: auth
    - user: user
-   - scope: scope_string
+   - scope: explicit_unscoped_string
    - password: password
    - id: user_id
    - identity: identity

@@ -824,6 +824,21 @@ expires_at:
   in: body
   required: true
   type: string
+explicit_unscoped_string:
+  description: |
+    The authorization scope.  (Since v3.4) Specify
+    ``unscoped`` to make an explicit unscoped token request, which
+    returns an unscoped response without any authorization. This
+    request behaves the same as a token request with no scope where
+    the user has no default project defined.  If you do not make an
+    explicit ``unscoped`` token request and your role has a default
+    project, the response might return a project- scoped token. If a
+    default project is not defined, a token is issued without an
+    explicit scope of authorization, which is the same as asking for
+    an explicit unscoped token.
+  in: body
+  required: false
+  type: string
 extras:
   description: |
     A set of metadata key and value pairs, if any.
@@ -1326,16 +1341,8 @@ roles:
   type: array
 scope_string:
   description: |
-    The authorization scope.  (Since v3.4) Specify
-    ``unscoped`` to make an explicit unscoped token request, which
-    returns an unscoped response without any authorization. This
-    request behaves the same as a token request with no scope where
-    the user has no default project defined.  If you do not make an
-    explicit ``unscoped`` token request and your role has a default
-    project, the response might return a project- scoped token. If a
-    default project is not defined, a token is issued without an
-    explicit scope of authorization, which is the same as asking for
-    an explicit unscoped token.
+    The authorization scope. Specify the id or 
+    the name of project/domain.
   in: body
   required: false
   type: string
