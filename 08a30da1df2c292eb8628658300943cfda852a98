@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_06977aee",
+        "filename": "keystone/common/policies/identity_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T22:16:52Z",
+      "side": 1,
+      "message": "Punctuation.",
+      "revId": "08a30da1df2c292eb8628658300943cfda852a98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
