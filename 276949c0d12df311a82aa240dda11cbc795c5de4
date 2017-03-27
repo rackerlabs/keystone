@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_35ad0d88",
+        "filename": "keystone/common/policies/trust.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T19:26:20Z",
+      "side": 1,
+      "message": "We should consistently either end descriptions with punctuation or not. It might be easier to implement punctuation in oslo.policy than have each description contain it.\n\nEither way, it should be consistent. Some patches I\u0027m seeing have punctuation proposed (like https://review.openstack.org/#/c/449265/2/keystone/common/policies/access_token.py ) and other don\u0027t (like this one).",
+      "revId": "276949c0d12df311a82aa240dda11cbc795c5de4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
