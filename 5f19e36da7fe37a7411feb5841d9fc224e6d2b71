@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_b0d12bd0",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T19:27:25Z",
+      "side": 1,
+      "message": "These should end with punctuation.",
+      "revId": "5f19e36da7fe37a7411feb5841d9fc224e6d2b71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
