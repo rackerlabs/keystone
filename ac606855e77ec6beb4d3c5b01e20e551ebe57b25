@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_b917e151",
+        "filename": "keystone/common/policies/revoke_event.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-27T17:01:36Z",
+      "side": 1,
+      "message": "ultra nit: but I\u0027d prefer it if the method always preceded the path, as that\u0027s you read HTTP requests. e.g.\n\n  GET /v3/OS-REVOKE/events\n\nnot:\n\n  /v3/OS-REVOKE/events GET",
+      "revId": "ac606855e77ec6beb4d3c5b01e20e551ebe57b25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
