@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_5a5b2053",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T18:37:20Z",
+      "side": 1,
+      "message": "nit: Show details about a specific user.",
+      "revId": "b1c663992589a567bc9e4cf211164e02d9798407",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_553771e4",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T18:37:20Z",
+      "side": 1,
+      "message": "FWIW - these are deprecated API in favor of /v3/auth/projects and v3/auth/domains. While I think we should still document them in generated policy files, I wonder if we should advertise they are deprecated in generated policy files, too?",
+      "revId": "b1c663992589a567bc9e4cf211164e02d9798407",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
