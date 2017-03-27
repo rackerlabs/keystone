@@ -263,6 +263,24 @@
       "revId": "70d39e1ae3adf2d769b7fe55b0390b7b5603bd02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_b29c900e",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-27T19:50:33Z",
+      "side": 1,
+      "message": "+2",
+      "parentUuid": "9a30ddce_0ad3d760",
+      "revId": "70d39e1ae3adf2d769b7fe55b0390b7b5603bd02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
