@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_92d3ccd5",
+        "filename": "keystone/common/policies/region.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T20:49:29Z",
+      "side": 1,
+      "message": "Let\u0027s use punctuation here to be consistent with the direction of the rest of the policy-docs patches.",
+      "revId": "520fc21709c908f25db7fe671942cfd6c39c8004",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
