@@ -16,6 +16,24 @@
       "revId": "c750239af9a3631256d4eca66cc50445b169b135",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_4b36b8e8",
+        "filename": "keystone/common/policies/revoke_event.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-27T17:01:28Z",
+      "side": 1,
+      "message": "Likely true (you never know what operators are doing); but I don\u0027t think this is the best place to document that (presumption).",
+      "parentUuid": "ffe62b97_c670c075",
+      "revId": "c750239af9a3631256d4eca66cc50445b169b135",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
