@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_bb9c6b0e",
+        "filename": "keystone/common/policies/policy_association.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T21:07:11Z",
+      "side": 1,
+      "message": "We should add punctuation to these descriptions to be consistent with the rest of the patches in this series.",
+      "revId": "c55762ebf74204afd1e67ec0162be437344aff2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_5bb0bf8a",
+        "filename": "keystone/common/policies/policy_association.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T21:07:11Z",
+      "side": 1,
+      "message": "nit:\n\n  Associate a policy to a specific endpoint.",
+      "revId": "c55762ebf74204afd1e67ec0162be437344aff2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_bb6a2bea",
+        "filename": "keystone/common/policies/policy_association.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T21:07:11Z",
+      "side": 1,
+      "message": "nit: \n\n  Associate a policy to a specific service.",
+      "revId": "c55762ebf74204afd1e67ec0162be437344aff2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_3b7e1baf",
+        "filename": "keystone/common/policies/policy_association.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T21:07:11Z",
+      "side": 1,
+      "message": "nit:\n\n  Associate a policy to a specific region and service combination.",
+      "revId": "c55762ebf74204afd1e67ec0162be437344aff2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
