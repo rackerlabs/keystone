@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_6d9f575f",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-27T15:44:51Z",
+      "side": 1,
+      "message": "comma?",
+      "range": {
+        "startLine": 280,
+        "startChar": 25,
+        "endLine": 280,
+        "endChar": 26
+      },
+      "revId": "828b0ff61b7af74ce3b024535b1f7d68e2e863ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
