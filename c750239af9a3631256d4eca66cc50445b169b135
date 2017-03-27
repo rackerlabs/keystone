@@ -34,6 +34,24 @@
       "revId": "c750239af9a3631256d4eca66cc50445b169b135",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_7bd14323",
+        "filename": "keystone/common/policies/revoke_event.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T20:56:14Z",
+      "side": 1,
+      "message": "We had a brief discussion about this in IRC today. The consensus was that we shouldn\u0027t use policy descriptions to duplicate information documented in other parts of keystone, specifically the APIs in question.",
+      "parentUuid": "ffe62b97_4b36b8e8",
+      "revId": "c750239af9a3631256d4eca66cc50445b169b135",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
