@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_595c6e7d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 18176
+      },
+      "writtenOn": "2017-03-27T13:22:30Z",
+      "side": 1,
+      "message": "Please include a brief description of what the problem scenario is, along with the intent/result of the fix. Please read the Git commit message structure[1] to get a clear idea, it will help you in all your future contributions. \n\n[1] https://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "75948664b4412394d4bb0cca667ed93f55e7dc21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_79797291",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 18176
+      },
+      "writtenOn": "2017-03-27T13:22:30Z",
+      "side": 1,
+      "message": "A good practice is to use the Closes-Bug notation instead. Please replace it by, Closes-bug:",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 13
+      },
+      "revId": "75948664b4412394d4bb0cca667ed93f55e7dc21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_7dfef437",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 18176
+      },
+      "writtenOn": "2017-03-27T13:22:30Z",
+      "side": 1,
+      "message": "I guess there should be another case after this one, namely, Token authentication with explicit unscoped authorization just like we had 3 cases for Password Authentication. Please see this link [1], it talks about the 3 cases for Token Authentication.\n\n[1] https://github.com/openstack/keystone-specs/blob/master/attic/v3/identity-api-v3.rst#unscoped",
+      "range": {
+        "startLine": 323,
+        "startChar": 26,
+        "endLine": 323,
+        "endChar": 46
+      },
+      "revId": "75948664b4412394d4bb0cca667ed93f55e7dc21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_36bf6962",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 827,
+      "author": {
+        "id": 18176
+      },
+      "writtenOn": "2017-03-27T13:22:30Z",
+      "side": 1,
+      "message": "Is there any reason for which you preferred describing the explicit_unscoped_string here? I think it would be better to include it immediately after the scope_string, just to keep the two together. \n\nLet\u0027s see what others think on this one, I don\u0027t know if it really matters.",
+      "range": {
+        "startLine": 827,
+        "startChar": 0,
+        "endLine": 827,
+        "endChar": 25
+      },
+      "revId": "75948664b4412394d4bb0cca667ed93f55e7dc21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_36d3e962",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 835,
+      "author": {
+        "id": 18176
+      },
+      "writtenOn": "2017-03-27T13:22:30Z",
+      "side": 1,
+      "message": "Maybe replace with \"If an explicit, ``unscoped`` token request is not made and the role has a default project, then the response might return a project-scoped token\"",
+      "range": {
+        "startLine": 833,
+        "startChar": 46,
+        "endLine": 835,
+        "endChar": 63
+      },
+      "revId": "75948664b4412394d4bb0cca667ed93f55e7dc21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_93e2c700",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1345,
+      "author": {
+        "id": 18176
+      },
+      "writtenOn": "2017-03-27T13:22:30Z",
+      "side": 1,
+      "message": "Maybe the following would be a better, more complete description.\n\nThe authorization scope, including either a project or a domain (Since v3.4). If both a domain and a project are specified, an HTTP 400 Bad Request will be returned, as a token cannot be simultaneously scoped to both a project and a domain. An id is sufficient to uniquely identify a project but if a project is specified by name, then the domain of the project must also be specified in order to uniquely identify the project. A domain scope may be specified by either the domain\u0027s id or name with equivalent results.",
+      "range": {
+        "startLine": 1344,
+        "startChar": 4,
+        "endLine": 1345,
+        "endChar": 31
+      },
+      "revId": "75948664b4412394d4bb0cca667ed93f55e7dc21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
