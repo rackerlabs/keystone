@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_461a226f",
+        "filename": "keystone/common/policies/auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T21:19:02Z",
+      "side": 1,
+      "message": "nit: Instead of using the term scopes we could do:\n\n  List all projects a user has access to via role assignments. This\n  includes direct role assignments given to the user on a project as well\n  as any role assignments given to a group the user is a member of.",
+      "revId": "a85c0e6aa6bf2ccd310299f63d5aa914472c165c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_863dcac5",
+        "filename": "keystone/common/policies/auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T21:19:02Z",
+      "side": 1,
+      "message": "nit: Same comment here as above.",
+      "revId": "a85c0e6aa6bf2ccd310299f63d5aa914472c165c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
