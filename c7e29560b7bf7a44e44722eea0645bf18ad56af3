@@ -33,6 +33,24 @@
       "revId": "c7e29560b7bf7a44e44722eea0645bf18ad56af3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_617cf01e",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1748,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-27T21:54:17Z",
+      "side": 0,
+      "message": "The condition \u0027IS\u0027 unreachable, and the \u0027critical failure\u0027 it triggers on any db_sync is db_exception.DBMigrationError which is already being tested in the unit tests added. Elaborate?",
+      "parentUuid": "ffe62b97_1271fc0c",
+      "revId": "c7e29560b7bf7a44e44722eea0645bf18ad56af3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

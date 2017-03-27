@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_e1efe01b",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-27T21:54:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffe62b97_3219a021",
+      "revId": "2304da1ee382ab9cc9fb0bf6e11bf8d97524ad8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_32c76067",
         "filename": "keystone/common/sql/upgrades.py",
         "patchSetId": 18
@@ -47,6 +65,24 @@
       "writtenOn": "2017-03-27T19:48:19Z",
       "side": 1,
       "message": "Ending a sentence with a preposition?! This is the sort of bloody nonsense up with which I will not put.",
+      "revId": "2304da1ee382ab9cc9fb0bf6e11bf8d97524ad8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_a1f558ef",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-27T21:54:17Z",
+      "side": 1,
+      "message": "so petty :p",
+      "parentUuid": "ffe62b97_32c76067",
       "revId": "2304da1ee382ab9cc9fb0bf6e11bf8d97524ad8a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_01ebe412",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1701,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-27T21:54:17Z",
+      "side": 1,
+      "message": "Correct on the assumption of incorrect. Just setting versions to 1. Not sure how 1 becomes an error message since this isn\u0027t being used as a return for validation. This is only setting expand, migrate, contract versions for the following unit tests and verifying (as a sanity check) that they all have been set to 1.",
+      "parentUuid": "ffe62b97_92ecec8f",
+      "revId": "2304da1ee382ab9cc9fb0bf6e11bf8d97524ad8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_d27f14de",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 18
@@ -105,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_e1536016",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1709,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-27T21:54:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffe62b97_d27f14de",
+      "revId": "2304da1ee382ab9cc9fb0bf6e11bf8d97524ad8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_724048a6",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 18
@@ -116,6 +188,24 @@
       "writtenOn": "2017-03-27T19:48:19Z",
       "side": 1,
       "message": "-1 Data migration should be allowed to run ahead of schema contraction.",
+      "revId": "2304da1ee382ab9cc9fb0bf6e11bf8d97524ad8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_014f646b",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1711,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-27T21:54:17Z",
+      "side": 1,
+      "message": "ah, in reality its the spelling of the test. s/contract/expand/",
+      "parentUuid": "ffe62b97_724048a6",
       "revId": "2304da1ee382ab9cc9fb0bf6e11bf8d97524ad8a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
