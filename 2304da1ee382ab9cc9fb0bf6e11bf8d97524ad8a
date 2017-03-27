@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_92ecec8f",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1701,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-27T19:49:48Z",
+      "side": 1,
+      "message": "caveat emptor: my assumption that it\u0027s a string may be incorrect, but the assertion is still wrong.",
+      "parentUuid": "ffe62b97_12d57ce5",
+      "revId": "2304da1ee382ab9cc9fb0bf6e11bf8d97524ad8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_d27f14de",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 18
