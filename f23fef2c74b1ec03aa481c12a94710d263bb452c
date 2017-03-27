@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_06a3fab3",
+        "filename": "keystone/common/policies/endpoint_group.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T21:30:11Z",
+      "side": 1,
+      "message": "Punctuation.",
+      "revId": "f23fef2c74b1ec03aa481c12a94710d263bb452c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_0691ba47",
+        "filename": "keystone/common/policies/endpoint_group.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T21:30:11Z",
+      "side": 1,
+      "message": "nit:\n\n  List all endpoints associated to a specific endpoint group.",
+      "revId": "f23fef2c74b1ec03aa481c12a94710d263bb452c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_86a4aaa7",
+        "filename": "keystone/common/policies/endpoint_group.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T21:30:11Z",
+      "side": 1,
+      "message": "I don\u0027t think the wording here is accurate. I think this API is designed to return an endpoint group reference based on an endpoint group ID and project ID. The tricky part is relaying that in terms that are easy for developers and operators to understand.",
+      "revId": "f23fef2c74b1ec03aa481c12a94710d263bb452c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_06641a49",
+        "filename": "keystone/common/policies/endpoint_group.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T21:30:11Z",
+      "side": 1,
+      "message": "nit:\n\n  List endpoint groups associated to a specific project.",
+      "revId": "f23fef2c74b1ec03aa481c12a94710d263bb452c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
