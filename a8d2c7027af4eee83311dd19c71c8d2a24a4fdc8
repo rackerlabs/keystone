@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "ffe62b97_707e031a",
+        "filename": "keystone/common/sql/contract_repo/versions/012_contract_add_domain_id_to_idp.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-27T19:19:21Z",
+      "side": 1,
+      "message": "For the duration of time that this constraint does not exist at the database level, is the application enforcing a similar constraint? I wouldn\u0027t want L38 to fail because an invalid project ID was slipped into this table.",
+      "revId": "a8d2c7027af4eee83311dd19c71c8d2a24a4fdc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_f08fb320",
+        "filename": "keystone/common/sql/contract_repo/versions/015_contract_update_federated_user_domain.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-27T19:19:21Z",
+      "side": 1,
+      "message": "Same comment/question as previous file.",
+      "revId": "a8d2c7027af4eee83311dd19c71c8d2a24a4fdc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a1ced50_d95cf527",
         "filename": "releasenotes/notes/bug-1662624-1f3e2e6ff50b564c.yaml",
         "patchSetId": 7
@@ -31,6 +65,24 @@
       "side": 1,
       "message": "The changes in these patches don\u0027t require any operator intervention. If an operator wants to use MySQL Cluster (NDB), they only need to to set \"mysql_enable_ndb\u003dTrue\" in the keystone.conf file. I can add that to the release note, if that makes sense.",
       "parentUuid": "1a1ced50_d95cf527",
+      "revId": "a8d2c7027af4eee83311dd19c71c8d2a24a4fdc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_10a8d774",
+        "filename": "releasenotes/notes/bug-1662624-1f3e2e6ff50b564c.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-27T19:19:21Z",
+      "side": 1,
+      "message": "I don\u0027t think that\u0027s necessary.",
+      "parentUuid": "1a1ced50_5f91c5ef",
       "revId": "a8d2c7027af4eee83311dd19c71c8d2a24a4fdc8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
