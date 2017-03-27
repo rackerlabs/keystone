@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_66e52609",
+        "filename": "keystone/common/policies/implied_role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T21:20:20Z",
+      "side": 1,
+      "message": "Punctuation.",
+      "revId": "e255ab3605adeeb7f657ab568640bb6165c17cde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
