@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_b21ff059",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-27T19:48:19Z",
+      "side": 1,
+      "message": "You should probably reconfigure git:\n\n  git config --global user.name \"Richard Avelar\"\n  git commit --amend --no-edit \u0026\u0026 git-review",
+      "revId": "2304da1ee382ab9cc9fb0bf6e11bf8d97524ad8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_3219a021",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-27T19:48:19Z",
+      "side": 1,
+      "message": "Expecting \"legacy \u003e\u003d expand\" does not make any sense, as eventually the expand repo version number will overtake the legacy repository version number, and that\u0027s fine. The legacy repo is just frozen. The legacy repo should be at the maximum version before allowing ANY schema expansions, data migrations, or schema contractions to be run, but that\u0027s it. The version number otherwise does not matter.\n\nI also don\u0027t think you a need an \"etc\" when you might as well enumerate all the rules.",
+      "revId": "2304da1ee382ab9cc9fb0bf6e11bf8d97524ad8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_32c76067",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-27T19:48:19Z",
+      "side": 1,
+      "message": "Ending a sentence with a preposition?! This is the sort of bloody nonsense up with which I will not put.",
+      "revId": "2304da1ee382ab9cc9fb0bf6e11bf8d97524ad8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_12d57ce5",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1701,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-27T19:48:19Z",
+      "side": 1,
+      "message": "-1 As mentioned in a previous review, using assertTrue here does not make any sense. \"1\" becomes the error message when the repo version is falsey, which (IIRC) will never happen because they\u0027re strings, starting with \"0\" which is already truthy.",
+      "revId": "2304da1ee382ab9cc9fb0bf6e11bf8d97524ad8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_d27f14de",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1709,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-27T19:48:19Z",
+      "side": 1,
+      "message": "-1 The legacy version absolutely does not matter to expand, only that all legacy migrations have already been run.",
+      "revId": "2304da1ee382ab9cc9fb0bf6e11bf8d97524ad8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_724048a6",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1711,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-27T19:48:19Z",
+      "side": 1,
+      "message": "-1 Data migration should be allowed to run ahead of schema contraction.",
+      "revId": "2304da1ee382ab9cc9fb0bf6e11bf8d97524ad8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
