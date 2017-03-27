@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_3ef9774c",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-03-27T16:38:45Z",
+      "side": 1,
+      "message": "The expand repo key...*and so on. Should be removed. You are just repeating what the code says.",
+      "revId": "d33f257fcc46003768c1cf14246aef37a26e89e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_de0e0b8c",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-03-27T16:38:45Z",
+      "side": 1,
+      "message": ".keys() is redundant.\n\nAny reason you don\u0027t just check to see if it is the LEGACY_REPO explicitly? They you wouldn\u0027t need the comment on 286.",
+      "revId": "d33f257fcc46003768c1cf14246aef37a26e89e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
