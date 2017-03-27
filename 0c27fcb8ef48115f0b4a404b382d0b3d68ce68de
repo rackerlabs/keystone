@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_5bcaff4d",
+        "filename": "keystone/common/policies/group.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T21:03:24Z",
+      "side": 1,
+      "message": "We should add punctuation to be consistent with the direction of the rest of the patches.",
+      "revId": "0c27fcb8ef48115f0b4a404b382d0b3d68ce68de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_bb80ebc0",
+        "filename": "keystone/common/policies/group.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T21:03:24Z",
+      "side": 1,
+      "message": "nit: We typically reference user/group relationships as memberships. So maybe something like:\n\n  List group memberships for a user.\n\nor\n\n  List groups a user is a member of.",
+      "revId": "0c27fcb8ef48115f0b4a404b382d0b3d68ce68de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_9bd3e7d5",
+        "filename": "keystone/common/policies/group.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T21:03:24Z",
+      "side": 1,
+      "message": "nit:\n\n  List members of a specific group.",
+      "revId": "0c27fcb8ef48115f0b4a404b382d0b3d68ce68de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_dbf60f64",
+        "filename": "keystone/common/policies/group.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T21:03:24Z",
+      "side": 1,
+      "message": "nit: \n\n  Check whether a user is a member of a group.",
+      "revId": "0c27fcb8ef48115f0b4a404b382d0b3d68ce68de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
