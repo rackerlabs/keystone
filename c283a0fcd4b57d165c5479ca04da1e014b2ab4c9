@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "ffe62b97_8ba3a09e",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-03-27T17:38:03Z",
+      "side": 1,
+      "message": "module imports, this imports a class.",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_abb544cf",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-03-27T17:38:03Z",
+      "side": 1,
+      "message": "New section for third-party imports",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_8bd160fe",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-03-27T17:38:03Z",
+      "side": 1,
+      "message": "_LW can be removed. Debug translations are going away soon https://review.openstack.org/#/c/447864/",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_31e11a00",
         "filename": "keystone/common/password_hashing.py",
         "patchSetId": 13
@@ -37,6 +88,40 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_8b2840e2",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-03-27T17:38:03Z",
+      "side": 1,
+      "message": "No need to translate the log message here.",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_6b517c62",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-03-27T17:38:03Z",
+      "side": 1,
+      "message": "Are expecting something passed in that isn\u0027t a string?",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_ebc74145",
         "filename": "keystone/common/password_hashing.py",
         "patchSetId": 13
@@ -54,6 +139,23 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_2b8ed4cf",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-03-27T17:38:03Z",
+      "side": 1,
+      "message": "Why isn\u0027t SUPPORTED_HASHERS a dict so that we don\u0027t have to do this logic for every hash?",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_eb686122",
         "filename": "keystone/common/password_hashing.py",
         "patchSetId": 13
@@ -65,6 +167,58 @@
       "writtenOn": "2017-03-23T21:17:20Z",
       "side": 1,
       "message": "This could be moved up to line 111 after the break. We could then make this exception specific to support and bump it up a couple lines.\n\n  _(\u0027Password Hash Algorithm %s not supported\u0027)\n\nThat way operators have a little more information to go on (is the hasher value empty or did I specify an unsupported hasher).",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_eb346cfd",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-03-27T17:38:03Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ffe62b97_eb686122",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_8b0e0039",
+        "filename": "keystone/common/sql/expand_repo/versions/023_expand_add_second_password_column_for_expanded_hash_sizes.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-03-27T17:38:03Z",
+      "side": 1,
+      "message": "Why are we only doing 255 then?",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_2e182273",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-03-27T17:38:03Z",
+      "side": 1,
+      "message": "This line will conflict with the patch I referred to earlier.",
       "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -150,6 +304,24 @@
       "writtenOn": "2017-03-23T21:17:20Z",
       "side": 1,
       "message": "AFAICT this is only changing for the sake of readability?",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_0e2f9e3f",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-03-27T17:38:03Z",
+      "side": 1,
+      "message": "It\u0027s additionally setting the password on the user_ref before checking if a change is required. is this a mistake?",
+      "parentUuid": "ffe62b97_88b79bd9",
       "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
