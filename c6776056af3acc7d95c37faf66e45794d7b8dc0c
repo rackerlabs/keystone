@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_12721c4a",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T19:43:46Z",
+      "side": 1,
+      "message": "Add punctuation to be consistent with the rest of the descriptions in this module.",
+      "revId": "c6776056af3acc7d95c37faf66e45794d7b8dc0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_72a4c8a6",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T19:43:46Z",
+      "side": 1,
+      "message": "nit: List all projects a user has access to via a role assignment.",
+      "revId": "c6776056af3acc7d95c37faf66e45794d7b8dc0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_32aac070",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T19:43:46Z",
+      "side": 1,
+      "message": "nit: List all domains a user has access to via a role assignment.",
+      "revId": "c6776056af3acc7d95c37faf66e45794d7b8dc0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
