@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_55d8917d",
+        "filename": "keystone/common/policies/trust.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-27T18:44:54Z",
+      "side": 1,
+      "message": "nit: Lists trusts*",
+      "revId": "8c683be46dbbe969ae7c12fba09990b73baf40f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
