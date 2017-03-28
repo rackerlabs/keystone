@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_3825da5c",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2017-03-28T14:53:04Z",
+      "side": 1,
+      "message": "This sounds strange to me. Should it be a new sentence separate from the one above? Or is there something missing?",
+      "revId": "bb99436bbf8f7a7566e8d7cf670a4e8be1f08b56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
