@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_c23710ff",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-28T17:53:56Z",
+      "side": 1,
+      "message": "nit: the link to the spec and using bp policy-docs is redundant since they both link to the same place anyway. Moving to DocumentedRuleDefault helps us document policy, it doesn\u0027t necessarily help us define a richer policy. In order to get a richer policy, we need some more planning and orchestration around role definitions, which might happen at a later time in a different spec. The first section of this commit message is slightly misleading when considering the implementation being proposed.",
+      "revId": "f4db02cedbc6df422e81aa7e205ed4a964c3673a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_65428e40",
+        "filename": "keystone/common/policies/group.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-28T17:53:56Z",
+      "side": 1,
+      "message": "This is adding a user to a group.",
+      "revId": "f4db02cedbc6df422e81aa7e205ed4a964c3673a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
