@@ -109,17 +109,6 @@ _INVALID_FILTERS = ['some string', 1, 0, True, False]
 _INVALID_NAMES = [True, 24, ' ', '']
 
 
-def expected_validation_failure(msg):
-    def wrapper(f):
-        def wrapped(self, *args, **kwargs):
-            args = (self,) + args
-            e = self.assertRaises(exception.ValidationError, f,
-                                  *args, **kwargs)
-            self.assertIn(msg, six.text_type(e))
-        return wrapped
-    return wrapper
-
-
 class EntityValidationTestCase(unit.BaseTestCase):
 
     def setUp(self):
