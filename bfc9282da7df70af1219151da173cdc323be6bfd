@@ -70,6 +70,24 @@
       "revId": "bfc9282da7df70af1219151da173cdc323be6bfd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_697cb282",
+        "filename": "etc/policy.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-28T15:40:33Z",
+      "side": 0,
+      "message": "Update: I\u0027ve abandon https://review.openstack.org/#/c/437388/1 in favor of this approach.",
+      "parentUuid": "ffe62b97_258e5178",
+      "revId": "bfc9282da7df70af1219151da173cdc323be6bfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
