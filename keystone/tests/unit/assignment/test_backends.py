@@ -1263,7 +1263,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
                               role_id=uuid.uuid4().hex, **kwargs)
 
         def assert_role_assignment_not_found_exception(f, **kwargs):
-            self.assertRaises(exception.RoleAssignmentNotFound, f,
+            self.assertRaises(exception.RoleNotFound, f,
                               role_id=uuid.uuid4().hex, **kwargs)
 
         user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
