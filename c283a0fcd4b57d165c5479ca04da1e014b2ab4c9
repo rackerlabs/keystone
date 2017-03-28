@@ -708,6 +708,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_e6ea21d6",
+        "filename": "releasenotes/notes/bug_1543048_and_1668503-7ead4e15faaab778.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-28T20:49:32Z",
+      "side": 1,
+      "message": "In fact... we don\u0027t even have the contract migration implemented since we can\u0027t eliminate the column until Q (with a data migration as well) without breaking code.",
+      "parentUuid": "ffe62b97_e616a149",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_4b274d66",
         "filename": "releasenotes/notes/bug_1543048_and_1668503-7ead4e15faaab778.yaml",
         "patchSetId": 13
