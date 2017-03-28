@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_346f2cfd",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-28T12:55:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a1ced50_e25683cd",
+      "revId": "d3a1d981fb970977f82eb11d4c68506ffcd455d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a1ced50_a28d6b2c",
         "filename": "keystone/federation/core.py",
         "patchSetId": 5
@@ -100,6 +118,24 @@
       "writtenOn": "2017-03-23T18:59:30Z",
       "side": 1,
       "message": "Similar comments here as above - specifically for the documentation strings.",
+      "revId": "d3a1d981fb970977f82eb11d4c68506ffcd455d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_9432780f",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-28T12:55:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a1ced50_42c6774a",
       "revId": "d3a1d981fb970977f82eb11d4c68506ffcd455d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -204,6 +240,24 @@
       "writtenOn": "2017-03-23T18:59:30Z",
       "side": 1,
       "message": "We should use these same assertions in the test above, too!\n\nGreat tests by the way.",
+      "revId": "d3a1d981fb970977f82eb11d4c68506ffcd455d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_777c9682",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3105,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-28T12:55:56Z",
+      "side": 1,
+      "message": "thought I had put them there too! Good catch",
+      "parentUuid": "1a1ced50_e2cf6327",
       "revId": "d3a1d981fb970977f82eb11d4c68506ffcd455d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
