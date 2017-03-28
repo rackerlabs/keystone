@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_a98bda65",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-28T15:43:11Z",
+      "side": 1,
+      "message": "Tip: you can always link things automatically in gerrit using the Change-Id of the patch you want to reference:\n\n  Id6e3c0ac54b21d85e68625a5b52fe2559fb70f24\n\nSometimes this makes wording/formatting of commit messages cleaner. Not that it needs to change for this patch, just documenting it here in case it\u0027s useful.",
+      "revId": "678a10b4aff4698b38e980de3dc510908d341ad5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
