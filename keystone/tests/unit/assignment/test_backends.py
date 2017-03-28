@@ -1262,49 +1262,47 @@ class AssignmentTests(AssignmentTestHelperMixin):
             self.assertRaises(exception.RoleNotFound, f,
                               role_id=uuid.uuid4().hex, **kwargs)
 
-        def assert_role_assignment_not_found_exception(f, **kwargs):
-            self.assertRaises(exception.RoleAssignmentNotFound, f,
-                              role_id=uuid.uuid4().hex, **kwargs)
+            user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+            user_resp = self.identity_api.create_user(user)
+            group = unit.new_group_ref(
+                domain_id=CONF.identity.default_domain_id)
+            group_resp = self.identity_api.create_group(group)
+            project = unit.new_project_ref(
+                domain_id=CONF.identity.default_domain_id)
+            project_resp = self.resource_api.create_project(project['id'],
+                                                            project)
 
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
-        user_resp = self.identity_api.create_user(user)
-        group = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
-        group_resp = self.identity_api.create_group(group)
-        project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
-        project_resp = self.resource_api.create_project(project['id'], project)
+            for manager_call in [self.assignment_api.create_grant,
+                                 self.assignment_api.get_grant]:
+                assert_role_not_found_exception(
+                    manager_call,
+                    user_id=user_resp['id'], project_id=project_resp['id'])
+                assert_role_not_found_exception(
+                    manager_call,
+                    group_id=group_resp['id'], project_id=project_resp['id'])
+                assert_role_not_found_exception(
+                    manager_call,
+                    user_id=user_resp['id'],
+                    domain_id=CONF.identity.default_domain_id)
+                assert_role_not_found_exception(
+                    manager_call,
+                    group_id=group_resp['id'],
+                    domain_id=CONF.identity.default_domain_id)
 
-        for manager_call in [self.assignment_api.create_grant,
-                             self.assignment_api.get_grant]:
             assert_role_not_found_exception(
-                manager_call,
+                self.assignment_api.delete_grant,
                 user_id=user_resp['id'], project_id=project_resp['id'])
             assert_role_not_found_exception(
-                manager_call,
+                self.assignment_api.delete_grant,
                 group_id=group_resp['id'], project_id=project_resp['id'])
             assert_role_not_found_exception(
-                manager_call,
+                self.assignment_api.delete_grant,
                 user_id=user_resp['id'],
                 domain_id=CONF.identity.default_domain_id)
             assert_role_not_found_exception(
-                manager_call,
+                self.assignment_api.delete_grant,
                 group_id=group_resp['id'],
                 domain_id=CONF.identity.default_domain_id)
-
-        assert_role_assignment_not_found_exception(
-            self.assignment_api.delete_grant,
-            user_id=user_resp['id'], project_id=project_resp['id'])
-        assert_role_assignment_not_found_exception(
-            self.assignment_api.delete_grant,
-            group_id=group_resp['id'], project_id=project_resp['id'])
-        assert_role_assignment_not_found_exception(
-            self.assignment_api.delete_grant,
-            user_id=user_resp['id'],
-            domain_id=CONF.identity.default_domain_id)
-        assert_role_assignment_not_found_exception(
-            self.assignment_api.delete_grant,
-            group_id=group_resp['id'],
-            domain_id=CONF.identity.default_domain_id)
 
     def test_multi_role_grant_by_user_group_on_project_domain(self):
         role_list = []
