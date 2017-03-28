@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_2f024e0c",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-28T02:16:11Z",
+      "side": 1,
+      "message": "nit: move satisfy under query?",
+      "range": {
+        "startLine": 293,
+        "startChar": 24,
+        "endLine": 293,
+        "endChar": 31
+      },
+      "revId": "1bcc24620f6548de8fed4508fd9a06f86d91a6e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_d206e91c",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-28T02:16:11Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 333,
+        "startChar": 24,
+        "endLine": 333,
+        "endChar": 31
+      },
+      "revId": "1bcc24620f6548de8fed4508fd9a06f86d91a6e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_122a117e",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-28T02:16:11Z",
+      "side": 1,
+      "message": "This may be misleading as it appears that the method will just return the same query it receives back out to the calling function.",
+      "range": {
+        "startLine": 375,
+        "startChar": 14,
+        "endLine": 375,
+        "endChar": 19
+      },
+      "revId": "1bcc24620f6548de8fed4508fd9a06f86d91a6e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_b22485b0",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-28T02:16:11Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 402,
+        "startChar": 14,
+        "endLine": 402,
+        "endChar": 19
+      },
+      "revId": "1bcc24620f6548de8fed4508fd9a06f86d91a6e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
