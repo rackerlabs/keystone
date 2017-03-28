@@ -1263,16 +1263,18 @@ class AssignmentTests(AssignmentTestHelperMixin):
                               role_id=uuid.uuid4().hex, **kwargs)
 
         def assert_role_assignment_not_found_exception(f, **kwargs):
-            self.assertRaises(exception.RoleAssignmentNotFound, f,
+            self.assertRaises(exception.RoleNotFound, f,
                               role_id=uuid.uuid4().hex, **kwargs)
 
         user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
         user_resp = self.identity_api.create_user(user)
-        group = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
+        group = unit.new_group_ref(
+            domain_id=CONF.identity.default_domain_id)
         group_resp = self.identity_api.create_group(group)
         project = unit.new_project_ref(
             domain_id=CONF.identity.default_domain_id)
-        project_resp = self.resource_api.create_project(project['id'], project)
+        project_resp = self.resource_api.create_project(project['id'],
+                                                        project)
 
         for manager_call in [self.assignment_api.create_grant,
                              self.assignment_api.get_grant]:
