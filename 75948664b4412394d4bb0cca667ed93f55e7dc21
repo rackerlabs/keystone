@@ -107,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_f9ef981b",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 25559
+      },
+      "writtenOn": "2017-03-28T18:24:05Z",
+      "side": 1,
+      "message": "I agree with you, there needs to be a new case added \"Token authentication with explicit unscoped authorization\", but I\u0027m not sure whether it should be part of this PR. It will require creating new example and adding specific parameters, so I can send a separate review for that which is not directly related to this bug. Whats say?",
+      "parentUuid": "ffe62b97_7dfef437",
+      "range": {
+        "startLine": 323,
+        "startChar": 26,
+        "endLine": 323,
+        "endChar": 46
+      },
+      "revId": "75948664b4412394d4bb0cca667ed93f55e7dc21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_36bf6962",
         "filename": "api-ref/source/v3/parameters.yaml",
         "patchSetId": 1
@@ -118,6 +142,30 @@
       "writtenOn": "2017-03-27T13:22:30Z",
       "side": 1,
       "message": "Is there any reason for which you preferred describing the explicit_unscoped_string here? I think it would be better to include it immediately after the scope_string, just to keep the two together. \n\nLet\u0027s see what others think on this one, I don\u0027t know if it really matters.",
+      "range": {
+        "startLine": 827,
+        "startChar": 0,
+        "endLine": 827,
+        "endChar": 25
+      },
+      "revId": "75948664b4412394d4bb0cca667ed93f55e7dc21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_645ad44f",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 827,
+      "author": {
+        "id": 25559
+      },
+      "writtenOn": "2017-03-28T18:24:05Z",
+      "side": 1,
+      "message": "I initially did the same, but then tox -e api-ref gave an error, I guess these parameters need to be defined in an alphabetic order (which I tried and eventually that succeeded)",
+      "parentUuid": "ffe62b97_36bf6962",
       "range": {
         "startLine": 827,
         "startChar": 0,
