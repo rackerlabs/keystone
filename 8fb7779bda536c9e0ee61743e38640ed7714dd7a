@@ -16,6 +16,24 @@
       "revId": "8fb7779bda536c9e0ee61743e38640ed7714dd7a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_b7f7be59",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1323,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-03-28T13:12:26Z",
+      "side": 1,
+      "message": "++\n\nyou should add tests that exercise the mutual exclusivity. Otherwise, this lgtm.",
+      "parentUuid": "ffe62b97_8854b054",
+      "revId": "8fb7779bda536c9e0ee61743e38640ed7714dd7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
