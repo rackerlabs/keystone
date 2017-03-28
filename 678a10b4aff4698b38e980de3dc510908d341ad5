@@ -16,6 +16,24 @@
       "revId": "678a10b4aff4698b38e980de3dc510908d341ad5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_ffdbd4e9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-28T16:21:44Z",
+      "side": 1,
+      "message": "Thanks lance, useful tip",
+      "parentUuid": "ffe62b97_a98bda65",
+      "revId": "678a10b4aff4698b38e980de3dc510908d341ad5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
