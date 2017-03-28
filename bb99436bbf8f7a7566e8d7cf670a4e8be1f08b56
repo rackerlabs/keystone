@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ffe62b97_ee3c48c9",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-28T15:28:28Z",
+      "side": 1,
+      "message": "Could remove \u0027should\u0027 here since it\u0027s not subjective anymore. We must keep default policies in code.",
+      "revId": "bb99436bbf8f7a7566e8d7cf670a4e8be1f08b56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_3825da5c",
         "filename": "keystone/tests/unit/test_policy.py",
         "patchSetId": 5
@@ -30,6 +47,24 @@
       "writtenOn": "2017-03-28T15:22:50Z",
       "side": 1,
       "message": "Ahh missing punctuation, thanks Jens!",
+      "parentUuid": "ffe62b97_3825da5c",
+      "revId": "bb99436bbf8f7a7566e8d7cf670a4e8be1f08b56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_0ef52ced",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-28T15:28:28Z",
+      "side": 1,
+      "message": "How about: \n\n  All policies have a default value that is maintained in tree. This method\n  returns a dictionary containing all default policies.",
       "parentUuid": "ffe62b97_3825da5c",
       "revId": "bb99436bbf8f7a7566e8d7cf670a4e8be1f08b56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",

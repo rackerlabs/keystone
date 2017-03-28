@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_ee74486a",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-28T15:28:28Z",
+      "side": 0,
+      "message": "Now this is only used on line 192. Since we only use it in one place for one file, it goes from code reuse to needless indirection.",
+      "revId": "62a0d2f295793928527530ae6540fe7e210dcd43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_eee7a811",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-28T15:28:28Z",
+      "side": 0,
+      "message": "Based on the comment above, we can do the loading inline since nothing else in the modules uses _load_entries():\n\n  cloud_policy_keys \u003d set(\n      json.load(open(unit.dirs.etc(\u0027policy.v3cloudsample.json\u0027)))\n  )\n\nI assume we could remove this at some point too once we have a better policy file, but that\u0027ll be future work.",
+      "revId": "62a0d2f295793928527530ae6540fe7e210dcd43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
