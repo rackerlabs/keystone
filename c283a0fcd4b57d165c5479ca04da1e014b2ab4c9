@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_e3bfb3a7",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-28T20:40:19Z",
+      "side": 1,
+      "message": "We should fix hacking then. If hacking isn\u0027t detecting this as a non-module import, we should correct that. Having reviewers needing to do this/quibble about imports is incorrect.\n\nI can change it but will say we need to fix hacking as well. If hacking does not explicitly block importing classes, then we should stop requiring that.",
+      "parentUuid": "ffe62b97_8ba3a09e",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_abb544cf",
         "filename": "keystone/common/password_hashing.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2017-03-27T17:38:03Z",
       "side": 1,
       "message": "New section for third-party imports",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_a3e3ebd8",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-28T20:40:19Z",
+      "side": 1,
+      "message": "This was a typo, it should be a space above oslo.",
+      "parentUuid": "ffe62b97_abb544cf",
       "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_8325875e",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-28T20:40:19Z",
+      "side": 1,
+      "message": "I would consider that out of scope of this patch, but worth doing in a separate (additional) patchset after this one.",
+      "parentUuid": "ffe62b97_9c27ddb7",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_8b2840e2",
         "filename": "keystone/common/password_hashing.py",
         "patchSetId": 13
@@ -105,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_8357c7ca",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-28T20:40:19Z",
+      "side": 1,
+      "message": "This was copied from utils. Code was not changed. Can change it in one fell swoop if desired (this comment applies to any other _LW\u0027s/_LEs/etc.",
+      "parentUuid": "ffe62b97_8b2840e2",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_6b517c62",
         "filename": "keystone/common/password_hashing.py",
         "patchSetId": 13
@@ -116,6 +188,24 @@
       "writtenOn": "2017-03-27T17:38:03Z",
       "side": 1,
       "message": "Are expecting something passed in that isn\u0027t a string?",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_63ade399",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-28T20:40:19Z",
+      "side": 1,
+      "message": "Copied from utils. I didn\u0027t want to change logic / exceptions in this case (anything used in utils that didn\u0027t need to be updated specifically was not)",
+      "parentUuid": "ffe62b97_6b517c62",
       "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -150,6 +240,24 @@
       "writtenOn": "2017-03-27T17:38:03Z",
       "side": 1,
       "message": "Why isn\u0027t SUPPORTED_HASHERS a dict so that we don\u0027t have to do this logic for every hash?",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_e3e0d328",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-28T20:40:19Z",
+      "side": 1,
+      "message": "For the stupidest of stupid reasons:\n\nTo ensure nothing can \"add\" to the set. We could make it a dict, but we don\u0027t have a FrozenDict and I was trying to avoid creating a new class.\n\nI really want to be sure that code doesn\u0027t accidentally mutate the data at runtime. It\u0027s suspenders and a belt for the cost of a small iteration\n\nHappy to make it a dict if that is really desired.",
+      "parentUuid": "ffe62b97_2b8ed4cf",
       "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -191,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_e31573e6",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-28T20:40:19Z",
+      "side": 1,
+      "message": "This error is already indicating explicitly what was configured in keystone conf. This",
+      "parentUuid": "ffe62b97_eb686122",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_8b0e0039",
         "filename": "keystone/common/sql/expand_repo/versions/023_expand_add_second_password_column_for_expanded_hash_sizes.py",
         "patchSetId": 13
@@ -202,6 +328,24 @@
       "writtenOn": "2017-03-27T17:38:03Z",
       "side": 1,
       "message": "Why are we only doing 255 then?",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_23cfdb56",
+        "filename": "keystone/common/sql/expand_repo/versions/023_expand_add_second_password_column_for_expanded_hash_sizes.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-28T20:40:19Z",
+      "side": 1,
+      "message": "Because people get cranky about extra bytes being used in MySQL columns to store the varchar. We could also just use a textcolumn *shrug*.",
+      "parentUuid": "ffe62b97_8b0e0039",
       "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -225,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_c3070f82",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-28T20:40:19Z",
+      "side": 1,
+      "message": "Conflicts can be resolved with a rebase or update depending on when/whichever lands first.",
+      "parentUuid": "ffe62b97_2e182273",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_a88dbf7c",
         "filename": "keystone/conf/default.py",
         "patchSetId": 13
@@ -236,6 +398,24 @@
       "writtenOn": "2017-03-23T21:17:20Z",
       "side": 1,
       "message": "Do we need `deprecated_for_removal` here, too?",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_a331ab5c",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-28T20:40:19Z",
+      "side": 1,
+      "message": "Possibly?",
+      "parentUuid": "ffe62b97_a88dbf7c",
       "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -328,6 +508,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_83cea72a",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-28T20:40:19Z",
+      "side": 1,
+      "message": "No not a mistake. The password hashing is done in the SQL model now, not independently in a separate function. This prevents any \"Set password\" that is not hashed, meaning plain-text, in the DB and consolidates how we hash the password.\n\nchange_password_required is specific to saying \"hey this password was administratively changed and must be changed before next login\". See (above, copied here for visibility):\n\n    def _change_password_required(self, user):\n        if not CONF.security_compliance.change_password_upon_first_use:\n            return False\n        ignore_option \u003d user.get_resource_option(\n            options.IGNORE_CHANGE_PASSWORD_OPT.option_id)\n        return not (ignore_option and ignore_option.option_value is True)",
+      "parentUuid": "ffe62b97_0e2f9e3f",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_5c083527",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 13
@@ -339,6 +537,30 @@
       "writtenOn": "2017-03-23T22:24:58Z",
       "side": 1,
       "message": "Could this be removed in R instead of Q? Asking because I\u0027m under the impression that we\u0027re going to have to force all users of a given cloud to reset their passwords and in some of my environments I\u0027ve hundreds, if not thousands of users which means coordinating a mass (forced) password reset for all users across all clouds and that may be a tough pill to swallow when trying to get it done for all deployments within a single cycle.",
+      "range": {
+        "startLine": 162,
+        "startChar": 0,
+        "endLine": 164,
+        "endChar": 76
+      },
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_235ebb43",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-28T20:40:19Z",
+      "side": 1,
+      "message": "Users with old passwords will still be able to validate their passwords, even if they have not changed.\n\nThis option is only telling keystone to continue placing the old password with the less-secure hashing in the DB. The old-hash column (password_ref.password) is only used by Keystones that predate Pike. This option is only needed if you are running Pike Keystones and Pre-Pike keystones in a rolling-upgrade.\n\nSo, I am assuming we are only supporting running Pike with Ocata keystones during a rolling upgrade, not a Queens Keystone and an Ocata keystone on the same DB backend.\n\n\nTL;DR: This is only used during rolling upgrades. User passwords that have not been changed will still validate. That is a core design of this code: do not break users if a password is not changed (that is an operator choice).",
+      "parentUuid": "ffe62b97_5c083527",
       "range": {
         "startLine": 162,
         "startChar": 0,
@@ -368,6 +590,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_63160358",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-28T20:40:19Z",
+      "side": 1,
+      "message": "We could. This is just verifying that the compat hash is not generated. It would be a different test case if we want to test all password hashing options we have.",
+      "parentUuid": "ffe62b97_a8e01f98",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_515b7e86",
         "filename": "releasenotes/notes/bug_1543048_and_1668503-7ead4e15faaab778.yaml",
         "patchSetId": 13
@@ -379,6 +619,30 @@
       "writtenOn": "2017-03-23T22:24:58Z",
       "side": 1,
       "message": "I think it may be worth while to spell out to folks that ALL users of the cloud will be forced to reset their passwords in order to ensure strong hashing within the PIKE cycle and that will need to be done before folks are able to upgrade to R. \n\nThis is assuming I\u0027m understanding the PR correctly.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 7
+      },
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_0305f713",
+        "filename": "releasenotes/notes/bug_1543048_and_1668503-7ead4e15faaab778.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-28T20:40:19Z",
+      "side": 1,
+      "message": "User passwords that are not set after this code lands will continue to validate, just using the less secure hash. Passwords that are set after this code has landed (Pike) will use the new hash(ing).\n\nWe do not want to break users. The core of this code is to ensure users are not broken even if they do not change their passwords. If we were to go with a hard break, the patchset would have been much, much, much smaller.",
+      "parentUuid": "ffe62b97_515b7e86",
       "range": {
         "startLine": 16,
         "startChar": 0,
@@ -426,6 +690,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_e616a149",
+        "filename": "releasenotes/notes/bug_1543048_and_1668503-7ead4e15faaab778.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-28T20:40:19Z",
+      "side": 1,
+      "message": "Not even after all users have been forced to do a password change. Simply after all keystones are running pike code.\n\nOld passwords will continue to validate, full stop. \n\nWe cannot break users because a password wasn\u0027t reset. \n\nAn operator may require a password change, but that is on them, we do not have any such requirements in code.",
+      "parentUuid": "ffe62b97_f679682f",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_4b274d66",
         "filename": "releasenotes/notes/bug_1543048_and_1668503-7ead4e15faaab778.yaml",
         "patchSetId": 13
@@ -454,6 +736,30 @@
       "writtenOn": "2017-03-23T22:24:58Z",
       "side": 1,
       "message": "I\u0027d also like to have this, or something like it, sent out as some form of a security advisory. When I force my users to reset their passwords they\u0027re going to ask why. Having an OSSA security advisory published to https://security.openstack.org/ossalist.html (or something similar) would likely make a lot of those questions go away while also providing my Product and C-Type folks a reason as to why we\u0027re forcing our users to do this.",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 9
+      },
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_c69cbdc1",
+        "filename": "releasenotes/notes/bug_1543048_and_1668503-7ead4e15faaab778.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-03-28T20:40:19Z",
+      "side": 1,
+      "message": "We can work to have an OSSN published. This cannot be an OSSA, as it will not be backported.",
+      "parentUuid": "ffe62b97_9ce8fd16",
       "range": {
         "startLine": 29,
         "startChar": 0,
