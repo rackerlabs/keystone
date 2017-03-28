@@ -33,6 +33,23 @@
       "revId": "62a0d2f295793928527530ae6540fe7e210dcd43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_62de046e",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-28T17:36:43Z",
+      "side": 0,
+      "message": "Now that this isn\u0027t used to load the default policy file, it becomes more of an indirection rather than useful code re-use. I\u0027d opt to just remove the _load_entries method in favor of doing it inline here. Which is something we can do in a follow up if needed.",
+      "revId": "62a0d2f295793928527530ae6540fe7e210dcd43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
