@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_f84bf227",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-28T14:51:47Z",
+      "side": 1,
+      "message": "You just mentioned in the last comment that testing expand doesn\u0027t make any sense? In addition, we already have _sync_common_repo which is inside expand_schema to ensure legacy repo has run.",
+      "parentUuid": "ffe62b97_08ce4781",
+      "revId": "ca9e958e155c8d2eef40ddde041ed5709e27a315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_08dbe77b",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 20
