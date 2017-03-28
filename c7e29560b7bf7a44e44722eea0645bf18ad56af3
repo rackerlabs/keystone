@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_283d8bc3",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-28T14:04:02Z",
+      "side": 0,
+      "message": "Does anything check that the expand repo can be run safely? (that all legacy migrations have been run previously)",
+      "revId": "c7e29560b7bf7a44e44722eea0645bf18ad56af3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_1271fc0c",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 18

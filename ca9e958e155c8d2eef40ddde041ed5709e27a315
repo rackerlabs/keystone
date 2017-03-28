@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_08ce4781",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-28T14:04:02Z",
+      "side": 1,
+      "message": "If the repo you\u0027re validating is the expand repo, then you should be validating that the legacy repo has been run to completion.",
+      "revId": "ca9e958e155c8d2eef40ddde041ed5709e27a315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_08dbe77b",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 1703,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-28T14:04:02Z",
+      "side": 1,
+      "message": "-1 Seriously, you\u0027re using assertTrue here. This is not what you want, and the old tests were similarly broken.",
+      "revId": "ca9e958e155c8d2eef40ddde041ed5709e27a315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_48ad6f99",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 1711,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-03-28T14:04:02Z",
+      "side": 1,
+      "message": "You\u0027re missing a test where you try to run expand without first finishing legacy migrations.",
+      "revId": "ca9e958e155c8d2eef40ddde041ed5709e27a315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
