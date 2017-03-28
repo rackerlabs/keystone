@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_c252703b",
+        "filename": "keystone/common/policies/endpoint.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-28T17:49:15Z",
+      "side": 1,
+      "message": "nit: endpoint* since it\u0027s not possible to create endpoints in batches.",
+      "revId": "bf8e111e704416a6b4bee928b3e7779890396e97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
