@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ffe62b97_463cfbdf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-29T19:28:25Z",
+      "side": 1,
+      "message": "nit: introduced",
+      "revId": "e854455985f355f3c197d6b247998157a16771ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_2662170b",
         "filename": "keystone/common/policies/policy_association.py",
         "patchSetId": 4
@@ -19,6 +36,23 @@
         "endLine": 31,
         "endChar": 35
       },
+      "revId": "e854455985f355f3c197d6b247998157a16771ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_e11419eb",
+        "filename": "keystone/common/policies/policy_association.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-29T19:28:25Z",
+      "side": 1,
+      "message": "This is also something it looks like our router makes available via HEAD.\n\nhttps://github.com/openstack/keystone/blob/36da6f0c8660968e1ddacab274bace3abd78c0cb/keystone/endpoint_policy/routers.py#L50",
       "revId": "e854455985f355f3c197d6b247998157a16771ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -48,6 +82,23 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_e1c2d952",
+        "filename": "keystone/common/policies/policy_association.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-29T19:28:25Z",
+      "side": 1,
+      "message": "Same comment here: \n\nhttps://github.com/openstack/keystone/blob/36da6f0c8660968e1ddacab274bace3abd78c0cb/keystone/endpoint_policy/routers.py#L63",
+      "revId": "e854455985f355f3c197d6b247998157a16771ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_66393ff0",
         "filename": "keystone/common/policies/policy_association.py",
         "patchSetId": 4
@@ -65,6 +116,40 @@
         "endLine": 75,
         "endChar": 35
       },
+      "revId": "e854455985f355f3c197d6b247998157a16771ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_418065f5",
+        "filename": "keystone/common/policies/policy_association.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-29T19:28:25Z",
+      "side": 1,
+      "message": "Same comment here: \n\nhttps://github.com/openstack/keystone/blob/36da6f0c8660968e1ddacab274bace3abd78c0cb/keystone/endpoint_policy/routers.py#L76",
+      "revId": "e854455985f355f3c197d6b247998157a16771ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_a1529111",
+        "filename": "keystone/common/policies/policy_association.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-29T19:28:25Z",
+      "side": 1,
+      "message": "Based on the router for this API, this can also be done with HEAD.\n\nhttps://github.com/openstack/keystone/blob/36da6f0c8660968e1ddacab274bace3abd78c0cb/keystone/endpoint_policy/routers.py#L37\n\nWhich is misleading since it\u0027s not even documented in our API reference (https://developer.openstack.org/api-ref/identity/v3-ext/index.html?expanded\u003dshow-the-effective-policy-associated-with-an-endpoint-detail#os-endpoint-policy-api)",
       "revId": "e854455985f355f3c197d6b247998157a16771ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
