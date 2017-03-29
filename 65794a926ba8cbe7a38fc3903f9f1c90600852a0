@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_e1977944",
+        "filename": "keystone/common/policies/access_token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-29T19:28:03Z",
+      "side": 1,
+      "message": "isn\u0027t this on a single role? given the /roles/{role_id} at the end of the url",
+      "range": {
+        "startLine": 34,
+        "startChar": 25,
+        "endLine": 34,
+        "endChar": 30
+      },
+      "revId": "65794a926ba8cbe7a38fc3903f9f1c90600852a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
