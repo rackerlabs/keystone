@@ -16,6 +16,24 @@
       "revId": "d187b7e6d5e18eccec857df969f7bf501d3efd54",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_ca0a7b1e",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1935,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-03-29T00:08:07Z",
+      "side": 0,
+      "message": "This is the problem with slicing up a really large change. This was removed in a later patch, so I just removed it here first.",
+      "parentUuid": "ffe62b97_28c7b298",
+      "revId": "d187b7e6d5e18eccec857df969f7bf501d3efd54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
