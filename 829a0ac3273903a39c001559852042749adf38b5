@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_262222ba",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-29T15:28:05Z",
+      "side": 1,
+      "message": "Actually only removed access_token_id from the list. It wasn\u0027t being used anywhere int the tests.",
+      "revId": "829a0ac3273903a39c001559852042749adf38b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
