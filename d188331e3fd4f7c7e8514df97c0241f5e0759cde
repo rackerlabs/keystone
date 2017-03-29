@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_401f4607",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-29T17:12:39Z",
+      "side": 1,
+      "message": "The problem with pointing to master is that it subject to change depending on whatever changes are made to that module after this merges (i.e. someone can refactor things and line 151 is no longer the start of the method). This can be confusing for people later. Instead, we can reference exactly what we mean and guarantee we can find it in the future by using commits to timestamp the link:\n\nhttps://github.com/openstack/keystone/blob/36da6f0c8660968e1ddacab274bace3abd78c0cb/keystone/models/revoke_model.py#L151-L208",
+      "revId": "d188331e3fd4f7c7e8514df97c0241f5e0759cde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
