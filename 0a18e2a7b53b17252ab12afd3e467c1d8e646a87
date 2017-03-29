@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_0686f3b9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-29T19:13:45Z",
+      "side": 1,
+      "message": "nit: introduced",
+      "revId": "0a18e2a7b53b17252ab12afd3e467c1d8e646a87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_e6fb0f44",
+        "filename": "keystone/common/policies/ec2_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-29T19:13:45Z",
+      "side": 1,
+      "message": "nit: credentials",
+      "revId": "0a18e2a7b53b17252ab12afd3e467c1d8e646a87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
