@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_a1f5f158",
+        "filename": "keystone/common/policies/ec2_credential.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-29T19:34:44Z",
+      "side": 0,
+      "message": "It appears this is missing authenticate:\n\nhttps://github.com/openstack/keystone/blob/36da6f0c8660968e1ddacab274bace3abd78c0cb/keystone/contrib/ec2/routers.py#L65-L69",
+      "revId": "9034755743875de39363dbdcd35477e82e37ea1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
