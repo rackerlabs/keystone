@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_e36b0182",
+        "filename": "keystone/common/sql/contract_repo/versions/023_contract_drop_federated_user_fks.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-29T18:46:44Z",
+      "side": 1,
+      "message": "This first sentence could be amended to say that this is per our rolling upgrade documentation.",
+      "revId": "db3a1657e630d15b7d49c325e0ac05527016765a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_e3fb0144",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-29T18:46:44Z",
+      "side": 1,
+      "message": "I still think this indirection isn\u0027t really necessary but we can continue to discuss and fix later if we reach a different conclusion.",
+      "revId": "db3a1657e630d15b7d49c325e0ac05527016765a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
