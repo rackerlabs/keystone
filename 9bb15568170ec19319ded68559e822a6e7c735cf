@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_06c3938a",
+        "filename": "etc/keystone-policy-generator.conf",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-29T18:58:50Z",
+      "side": 1,
+      "message": "so we\u0027re adoption the .yaml format by default now ?",
+      "range": {
+        "startLine": 2,
+        "startChar": 34,
+        "endLine": 2,
+        "endChar": 38
+      },
+      "revId": "9bb15568170ec19319ded68559e822a6e7c735cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_e66b0f82",
+        "filename": "setup.cfg",
+        "patchSetId": 6
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-29T18:58:50Z",
+      "side": 1,
+      "message": "matches with what is used in https://review.openstack.org/#/c/449675/10/keystone/tests/unit/test_policy.py",
+      "range": {
+        "startLine": 190,
+        "startChar": 31,
+        "endLine": 190,
+        "endChar": 50
+      },
+      "revId": "9bb15568170ec19319ded68559e822a6e7c735cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
