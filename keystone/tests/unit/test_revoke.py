@@ -93,9 +93,8 @@ def _matches(event, token_values):
     # not match the event. The numerous return False indicate
     # that the token is still valid and short-circuits the
     # rest of the logic.
-    attribute_names = ['project_id',
-                       'expires_at', 'trust_id', 'consumer_id',
-                       'access_token_id', 'audit_id', 'audit_chain_id']
+    attribute_names = ['project_id', 'expires_at', 'trust_id',
+                       'consumer_id', 'audit_id', 'audit_chain_id']
     for attribute_name in attribute_names:
         if getattr(event, attribute_name) is not None:
             if (getattr(event, attribute_name) !=
