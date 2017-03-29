@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_15c18de5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-29T13:30:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffe62b97_78b1fb46",
+      "revId": "625b440a7b3defd39694f1b2133d030fd9457606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_38e5b338",
         "filename": "/COMMIT_MSG",
         "patchSetId": 7
@@ -47,6 +65,24 @@
       "writtenOn": "2017-03-29T10:03:00Z",
       "side": 1,
       "message": "Nit: ... a couple of tests ...",
+      "revId": "625b440a7b3defd39694f1b2133d030fd9457606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_3553713b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-29T13:30:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffe62b97_38e5b338",
       "revId": "625b440a7b3defd39694f1b2133d030fd9457606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
