@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_c300fd04",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-29T18:51:29Z",
+      "side": 1,
+      "message": "What kind of translations is this going to support? OpenStack has recently made the decision that we are no longer going to support translations for log messages [0]. This isn\u0027t for the translation of log messages, is it? \n\n[0] http://lists.openstack.org/pipermail/openstack-dev/2017-March/113365.html",
+      "revId": "67b0205727b89930f9aa2711dd6c8ab26ced5473",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
