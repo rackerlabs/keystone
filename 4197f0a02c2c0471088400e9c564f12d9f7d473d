@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_75de8e3e",
+        "filename": "keystone/common/policies/protocol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-03-29T16:51:19Z",
+      "side": 1,
+      "message": "federation",
+      "range": {
+        "startLine": 21,
+        "startChar": 27,
+        "endLine": 21,
+        "endChar": 28
+      },
+      "revId": "4197f0a02c2c0471088400e9c564f12d9f7d473d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
