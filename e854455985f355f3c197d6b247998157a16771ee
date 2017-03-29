@@ -59,6 +59,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_81e54dde",
+        "filename": "keystone/common/policies/policy_association.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-29T19:31:19Z",
+      "side": 1,
+      "message": "We should be able to accomplish this with another operation in the list:\n\n  operations\u003d[\n      {\u0027path\u0027: \u0027/v3/policies/{policy_id}/OS-ENDPOINT-POLICY/endpoints/{endpoint_id}\u0027,\n       \u0027method\u0027: \u0027GET\u0027},\n      {\u0027path\u0027: \u0027/v3/policies/{policy_id}/OS-ENDPOINT-POLICY/endpoints/{endpoint_id}\u0027,\n       \u0027method\u0027: \u0027HEAD\u0027}\n  ]",
+      "parentUuid": "ffe62b97_e11419eb",
+      "revId": "e854455985f355f3c197d6b247998157a16771ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_c6524b35",
         "filename": "keystone/common/policies/policy_association.py",
         "patchSetId": 4
