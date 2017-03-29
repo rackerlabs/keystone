@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_e0c09ae3",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-03-29T17:19:13Z",
+      "side": 0,
+      "message": "These and the other fields are being accounted for and tested here: https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_revoke.py#L161-L163",
+      "parentUuid": "ffe62b97_75eb2e77",
+      "revId": "3432685a1e387f35e28777c9a42133f3bc145179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_558b8ac1",
         "filename": "keystone/tests/unit/test_revoke.py",
         "patchSetId": 2
