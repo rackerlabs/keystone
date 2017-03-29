@@ -16,6 +16,24 @@
       "revId": "67b0205727b89930f9aa2711dd6c8ab26ced5473",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_7cf1d200",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-03-29T19:42:42Z",
+      "side": 1,
+      "message": "No. This is basically a potential mishandling of unicode data.",
+      "parentUuid": "ffe62b97_c300fd04",
+      "revId": "67b0205727b89930f9aa2711dd6c8ab26ced5473",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
