@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "ffe62b97_cfc029e4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-03-29T16:20:00Z",
+      "side": 1,
+      "message": "nit: Moving forward. I\u0027d rather have you title explicitly with what you addressed rather than ambiguously mention \"comments in a prior review\". And also include the description of the changes in the commit message. Reduces the jumping around between reviews and hunting for old comments from reviewers.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 38
+      },
+      "revId": "678a10b4aff4698b38e980de3dc510908d341ad5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_a98bda65",
         "filename": "/COMMIT_MSG",
         "patchSetId": 5
