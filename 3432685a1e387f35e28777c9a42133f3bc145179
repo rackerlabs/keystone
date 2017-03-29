@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_8689e375",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-29T18:55:57Z",
+      "side": 0,
+      "message": "this could\u0027ve been kept",
+      "range": {
+        "startLine": 231,
+        "startChar": 0,
+        "endLine": 232,
+        "endChar": 40
+      },
+      "revId": "3432685a1e387f35e28777c9a42133f3bc145179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
