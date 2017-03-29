@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_d539daa3",
+        "filename": "keystone/common/policies/mapping.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-03-29T16:48:40Z",
+      "side": 1,
+      "message": "I feel \u0027federated\u0027 is a misleading term here. \u0027federation\u0027 might be a more suitable term, since the mapping is not federated, but it\u0027s of a federation.",
+      "range": {
+        "startLine": 21,
+        "startChar": 28,
+        "endLine": 21,
+        "endChar": 37
+      },
+      "revId": "c4f05600bdfa323da38a9a32cb95068af1c0b00f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
