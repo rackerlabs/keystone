@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_5ca60e11",
+        "filename": "keystone/common/policies/project_endpoint.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-29T19:42:08Z",
+      "side": 1,
+      "message": "this probably should be a HEAD, as it\u0027s a check operation (no return)",
+      "range": {
+        "startLine": 39,
+        "startChar": 32,
+        "endLine": 39,
+        "endChar": 35
+      },
+      "revId": "ede2ba82858cb727dad818aedcad52158258a586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
