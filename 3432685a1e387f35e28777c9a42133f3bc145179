@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_75eb2e77",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-03-29T17:03:22Z",
+      "side": 0,
+      "message": "None of this is in the existing function. Should it be? Maybe it wasn\u0027t being used?",
+      "revId": "3432685a1e387f35e28777c9a42133f3bc145179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_558b8ac1",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-03-29T17:03:22Z",
+      "side": 0,
+      "message": "Same with this",
+      "revId": "3432685a1e387f35e28777c9a42133f3bc145179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_15062221",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-03-29T17:03:22Z",
+      "side": 0,
+      "message": "Same here",
+      "revId": "3432685a1e387f35e28777c9a42133f3bc145179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_e02ada7c",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-03-29T17:03:22Z",
+      "side": 0,
+      "message": "Same here",
+      "revId": "3432685a1e387f35e28777c9a42133f3bc145179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
