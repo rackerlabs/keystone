@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_7aee6f22",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1348,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-29T22:26:00Z",
+      "side": 1,
+      "message": "ID",
+      "range": {
+        "startLine": 1348,
+        "startChar": 21,
+        "endLine": 1348,
+        "endChar": 23
+      },
+      "revId": "afd42f801b7669e4305d471b33b82548b6be25ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_9aeb7311",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1352,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-29T22:26:00Z",
+      "side": 1,
+      "message": "I\u0027d replace this by just \"ID\"",
+      "range": {
+        "startLine": 1352,
+        "startChar": 24,
+        "endLine": 1352,
+        "endChar": 39
+      },
+      "revId": "afd42f801b7669e4305d471b33b82548b6be25ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
