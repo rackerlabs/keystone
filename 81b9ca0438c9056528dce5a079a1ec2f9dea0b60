@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_a1ccd134",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-29T19:36:05Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this also include a token_id ? or does keystone just validate the token in the X-Auth-Token header?\n\nMaybe then change this to \"Validate auth token.\"?",
+      "range": {
+        "startLine": 28,
+        "startChar": 29,
+        "endLine": 28,
+        "endChar": 46
+      },
+      "revId": "81b9ca0438c9056528dce5a079a1ec2f9dea0b60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_61eb6977",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-29T19:36:05Z",
+      "side": 1,
+      "message": "List PKI revoked tokens.\n\nIt\u0027s important to show it\u0027s for PKI tokens only",
+      "range": {
+        "startLine": 39,
+        "startChar": 21,
+        "endLine": 39,
+        "endChar": 41
+      },
+      "revId": "81b9ca0438c9056528dce5a079a1ec2f9dea0b60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_a1c3b1ec",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-29T19:36:05Z",
+      "side": 1,
+      "message": "Would \"Revoke subject token.\" be more complete?",
+      "range": {
+        "startLine": 45,
+        "startChar": 21,
+        "endLine": 45,
+        "endChar": 34
+      },
+      "revId": "81b9ca0438c9056528dce5a079a1ec2f9dea0b60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
