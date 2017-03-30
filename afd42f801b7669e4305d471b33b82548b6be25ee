@@ -2,6 +2,98 @@
   "comments": [
     {
       "key": {
+        "uuid": "ffe62b97_82fd3a0a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 18176
+      },
+      "writtenOn": "2017-03-30T08:49:55Z",
+      "side": 1,
+      "message": "Update scope parameter\u0027s description in v3 API-ref\n\nPlease see the link mentioned in the 1st patch set, it says \u0027The first line should not end with a period\u0027.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 39
+      },
+      "revId": "afd42f801b7669e4305d471b33b82548b6be25ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_62ec7629",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 18176
+      },
+      "writtenOn": "2017-03-30T08:49:55Z",
+      "side": 1,
+      "message": "the scope parameter in API docs is",
+      "range": {
+        "startLine": 9,
+        "startChar": 19,
+        "endLine": 9,
+        "endChar": 53
+      },
+      "revId": "afd42f801b7669e4305d471b33b82548b6be25ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_c2e4623f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 18176
+      },
+      "writtenOn": "2017-03-30T08:49:55Z",
+      "side": 1,
+      "message": "doesn\u0027t",
+      "range": {
+        "startLine": 10,
+        "startChar": 47,
+        "endLine": 10,
+        "endChar": 53
+      },
+      "revId": "afd42f801b7669e4305d471b33b82548b6be25ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_82d09a55",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 18176
+      },
+      "writtenOn": "2017-03-30T08:49:55Z",
+      "side": 1,
+      "message": "ID",
+      "range": {
+        "startLine": 12,
+        "startChar": 44,
+        "endLine": 12,
+        "endChar": 46
+      },
+      "revId": "afd42f801b7669e4305d471b33b82548b6be25ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_7aee6f22",
         "filename": "api-ref/source/v3/parameters.yaml",
         "patchSetId": 3
