@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_67a5a6b5",
+        "filename": "keystone/common/policies/endpoint_group.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T18:02:22Z",
+      "side": 1,
+      "message": "where is the specified ID ?\n\n/{endpoint_group_id}",
+      "revId": "3e36d23ff20df93afd0f12a126d46a923175f72d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_a79a8e6b",
+        "filename": "keystone/common/policies/endpoint_group.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T18:02:22Z",
+      "side": 1,
+      "message": "the URL below says it\u0027s listing projects",
+      "range": {
+        "startLine": 53,
+        "startChar": 31,
+        "endLine": 53,
+        "endChar": 40
+      },
+      "revId": "3e36d23ff20df93afd0f12a126d46a923175f72d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_4783c205",
+        "filename": "keystone/common/policies/endpoint_group.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T18:02:22Z",
+      "side": 1,
+      "message": "make this description consistent with the one just above it",
+      "range": {
+        "startLine": 61,
+        "startChar": 20,
+        "endLine": 61,
+        "endChar": 68
+      },
+      "revId": "3e36d23ff20df93afd0f12a126d46a923175f72d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_e779b62f",
+        "filename": "keystone/common/policies/endpoint_group.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T18:02:22Z",
+      "side": 1,
+      "message": "should this be check ? is there a HEAD avaialable here as well ?",
+      "range": {
+        "startLine": 68,
+        "startChar": 22,
+        "endLine": 68,
+        "endChar": 25
+      },
+      "revId": "3e36d23ff20df93afd0f12a126d46a923175f72d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
