@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_64c244ec",
+        "filename": "keystone/common/policies/mapping.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T17:48:08Z",
+      "side": 1,
+      "message": "mappings (plural)",
+      "range": {
+        "startLine": 33,
+        "startChar": 37,
+        "endLine": 33,
+        "endChar": 44
+      },
+      "revId": "860709a35dfbbec3d4562fefba1bc77178deacb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
