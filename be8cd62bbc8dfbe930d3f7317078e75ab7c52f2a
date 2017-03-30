@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_640a448b",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T17:40:03Z",
+      "side": 1,
+      "message": "(nit) operations (plural)",
+      "range": {
+        "startLine": 57,
+        "startChar": 4,
+        "endLine": 57,
+        "endChar": 13
+      },
+      "revId": "be8cd62bbc8dfbe930d3f7317078e75ab7c52f2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_04d018f7",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T17:40:03Z",
+      "side": 1,
+      "message": "what the difference between grant_collections and grant_resources? this is not obvious and it\u0027s a bit tricky to understand as it is.\n\n\nis this really better than just specifying everything in operations\u003d below, just as all the other patches ?\n\nat least add some comments to grant_resources and grant_collections as it is not obvious the differecent, neither get_operations.",
+      "revId": "be8cd62bbc8dfbe930d3f7317078e75ab7c52f2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
