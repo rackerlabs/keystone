@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_841308b9",
+        "filename": "releasenotes/notes/bp-policy-in-code-722372a27291b9cd.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-30T17:49:44Z",
+      "side": 1,
+      "message": "This could be highlighted in the features section, too.",
+      "revId": "6b1e1e4ed962272579c569c6570d2c1fd5132db4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_a4728c10",
+        "filename": "releasenotes/notes/bp-policy-in-code-722372a27291b9cd.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-30T17:49:44Z",
+      "side": 1,
+      "message": "nit: following the convention:\n\n  `[`blueprint policy-in-code \u003chttps://blueprints.launchpad.net/keystone/+spec/policy-in-code\u003e`_]\n  Keystone now supports the ability to register default policies in code.\n  This makes policy file maintenance easier by allowing duplicated default\n  policies to be removed from the policy file. The only policies that should\n  exist within a deployments policy file after Pike should be policy\n  overrides. To generate sample policy files from default values, prune\n  default policies from existing policy files, or familiarize yourself with\n  general policy usage, please see the `usage documentation\n  \u003chttps://docs.openstack.org/developer/oslo.policy/usage.html\u003e`_ \n  provided in oslo.policy.\n\nYou don\u0027t have to follow this directly, but this is just an example of how I try to write release notes from the perspective of the operator that has to read them. The other big thing I try to include right away is a link to the blueprint, which contains a link to the spec as well as all the patches in the implementation (which are helpful for the operators who are curious enough to see exactly how we did it).",
+      "revId": "6b1e1e4ed962272579c569c6570d2c1fd5132db4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_24043c7b",
+        "filename": "releasenotes/notes/bp-policy-in-code-722372a27291b9cd.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-30T17:49:44Z",
+      "side": 1,
+      "message": "This can be a link in rst:\n\n  For more information on policy usage, see the oslo.policy\n  `usage documentation \u003chttps://docs.openstack.org/developer/oslo.policy/usage.html\u003e`_.",
+      "revId": "6b1e1e4ed962272579c569c6570d2c1fd5132db4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_a4ef2caf",
+        "filename": "releasenotes/notes/bp-policy-in-code-722372a27291b9cd.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-30T17:49:44Z",
+      "side": 1,
+      "message": "This is pointing to keystone release note documentation :)",
+      "revId": "6b1e1e4ed962272579c569c6570d2c1fd5132db4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
