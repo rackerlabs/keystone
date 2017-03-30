@@ -149,6 +149,24 @@
     },
     {
       "key": {
+        "uuid": "ffe62b97_a5f84849",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 18176
+      },
+      "writtenOn": "2017-03-30T09:03:06Z",
+      "side": 1,
+      "message": "Yeah, that would work. But seeing the comments on the bug[1] and requirement of a separate case as mentioned above, I am wondering if we should use the tag \u0027Partial-Bug\u0027 instead of \u0027Closes-bug\u0027, as more work is required to completely fix the issue. What do you think?\n\n[1] https://bugs.launchpad.net/keystone/+bug/1637682\nPartial-Bug",
+      "parentUuid": "ffe62b97_6206dd22",
+      "revId": "75948664b4412394d4bb0cca667ed93f55e7dc21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_36bf6962",
         "filename": "api-ref/source/v3/parameters.yaml",
         "patchSetId": 1
