@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_849428ea",
+        "filename": "keystone/common/policies/domain_config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T17:46:44Z",
+      "side": 1,
+      "message": "isn\u0027t there a HEAD for these too ? IIRC we have HEAD for every GET request available",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 40
+      },
+      "revId": "0f3c4c4dd3e7d26d5dfea11c7f742452ee3c17d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
