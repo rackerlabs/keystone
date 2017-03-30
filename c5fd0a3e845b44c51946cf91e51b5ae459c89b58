@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_99f12105",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-30T15:01:12Z",
+      "side": 1,
+      "message": "Could fix up the commit message here like we\u0027ve done with the other.",
+      "revId": "c5fd0a3e845b44c51946cf91e51b5ae459c89b58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
