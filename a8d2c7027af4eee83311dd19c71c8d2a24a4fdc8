@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dfeb2761_f0ff2e32",
+        "filename": "keystone/common/sql/contract_repo/versions/012_contract_add_domain_id_to_idp.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 19283
+      },
+      "writtenOn": "2017-03-30T19:55:21Z",
+      "side": 1,
+      "message": "I haven\u0027t seen any examples of Keystone or other services doing anything intelligent in these use cases where a constraint is dropped, table is changed, and then the constraint is recreated. There are other examples in keystone already that do this, look at 014_contract_add_domain_id_to_user_table.py for example.",
+      "parentUuid": "ffe62b97_707e031a",
+      "revId": "a8d2c7027af4eee83311dd19c71c8d2a24a4fdc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_f08fb320",
         "filename": "keystone/common/sql/contract_repo/versions/015_contract_update_federated_user_domain.py",
         "patchSetId": 7
@@ -83,6 +101,24 @@
       "side": 1,
       "message": "I don\u0027t think that\u0027s necessary.",
       "parentUuid": "1a1ced50_5f91c5ef",
+      "revId": "a8d2c7027af4eee83311dd19c71c8d2a24a4fdc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_10b17290",
+        "filename": "releasenotes/notes/bug-1662624-1f3e2e6ff50b564c.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 19283
+      },
+      "writtenOn": "2017-03-30T19:55:21Z",
+      "side": 1,
+      "message": "If folks agree that we don\u0027t need this release note, I\u0027ll remove it.",
+      "parentUuid": "ffe62b97_10a8d774",
       "revId": "a8d2c7027af4eee83311dd19c71c8d2a24a4fdc8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
