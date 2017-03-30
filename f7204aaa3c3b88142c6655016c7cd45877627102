@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_87ef8a86",
+        "filename": "keystone/common/policies/trust.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T18:09:43Z",
+      "side": 1,
+      "message": "\u0027role\u0027 (singular), otherwise it\u0027d be confusing with the API just above",
+      "range": {
+        "startLine": 39,
+        "startChar": 25,
+        "endLine": 39,
+        "endChar": 30
+      },
+      "revId": "f7204aaa3c3b88142c6655016c7cd45877627102",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
