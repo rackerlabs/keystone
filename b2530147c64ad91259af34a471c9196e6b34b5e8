@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_8478a8f8",
+        "filename": "keystone/common/policies/policy_association.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T17:43:37Z",
+      "side": 1,
+      "message": "I still find it weird that we have GET for operations like this (besides HEAD, which makes sense). however this is not what your patch is adding, it\u0027s just documenting what exists .. :(",
+      "range": {
+        "startLine": 29,
+        "startChar": 20,
+        "endLine": 31,
+        "endChar": 38
+      },
+      "revId": "b2530147c64ad91259af34a471c9196e6b34b5e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
