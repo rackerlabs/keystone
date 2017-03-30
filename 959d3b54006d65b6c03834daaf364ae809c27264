@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_475bc286",
+        "filename": "keystone/common/policies/consumer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T18:08:26Z",
+      "side": 1,
+      "message": "as in federation, I argue we should add OAuth1 in these descriptions...\n\n    \u0027Show OAuth1 consumer details.\u0027\n    \u0027Update OAuth1 consumer.\u0027\n\nWhat do you think ?",
+      "revId": "959d3b54006d65b6c03834daaf364ae809c27264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
