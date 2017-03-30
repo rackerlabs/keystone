@@ -462,6 +462,64 @@ class RevokeTests(object):
         self.identity_api.delete_group(group2['id'])
         self.assertEqual(2, len(revocation_backend.list_events()))
 
+    def test_by_project_and_user_and_role(self):
+        user_id1 = uuid.uuid4().hex
+        user_id2 = uuid.uuid4().hex
+        project_id = uuid.uuid4().hex
+        token_data = _sample_blank_token()
+        token_data['user_id'] = user_id2
+        token_data['project_id'] = project_id
+
+        self._assertTokenNotRevoked(token_data)
+        self.revoke_api.revoke_by_user_and_project(user_id2, project_id)
+        self._assertTokenRevoked(token_data)
+
+    def test_by_domain_user(self):
+        # If revoke a domain, then a token for a user in the domain is revoked
+        user_id = uuid.uuid4().hex
+        domain_id = uuid.uuid4().hex
+        token_data = _sample_blank_token()
+        token_data['user_id'] = user_id
+        token_data['identity_domain_id'] = domain_id
+
+        self._assertTokenNotRevoked(token_data)
+        self.revoke_api.revoke(revoke_model.RevokeEvent(domain_id=domain_id))
+        self._assertTokenRevoked(token_data)
+
+    def test_by_domain_project(self):
+        # If revoke a domain, then a token scoped to a project in the domain
+        # is revoked.
+        user_id = uuid.uuid4().hex
+        user_domain_id = uuid.uuid4().hex
+        project_id = uuid.uuid4().hex
+        project_domain_id = uuid.uuid4().hex
+
+        token_data = _sample_blank_token()
+        token_data['user_id'] = user_id
+        token_data['identity_domain_id'] = user_domain_id
+        token_data['project_id'] = project_id
+        token_data['assignment_domain_id'] = project_domain_id
+
+        self._assertTokenNotRevoked(token_data)
+        self.revoke_api.revoke(
+            revoke_model.RevokeEvent(domain_id=project_domain_id))
+        self._assertTokenRevoked(token_data)
+
+    def test_by_domain_domain(self):
+        # If revoke a domain, then a token scoped to the domain is revoked.
+        user_id = uuid.uuid4().hex
+        user_domain_id = uuid.uuid4().hex
+        domain_id = uuid.uuid4().hex
+
+        token_data = _sample_blank_token()
+        token_data['user_id'] = user_id
+        token_data['identity_domain_id'] = user_domain_id
+        token_data['assignment_domain_id'] = domain_id
+
+        self._assertTokenNotRevoked(token_data)
+        self.revoke_api.revoke(revoke_model.RevokeEvent(domain_id=domain_id))
+        self._assertTokenRevoked(token_data)
+
 
 class UUIDSqlRevokeTests(test_backend_sql.SqlTests, RevokeTests):
     def config_overrides(self):
@@ -517,11 +575,6 @@ class RevokeListTests(unit.TestCase):
             revoke_model.is_revoked(self.revoke_events, token_data),
             'Token should not be revoked')
 
-    def _revoke_by_user(self, user_id):
-        return add_event(
-            self.revoke_events,
-            revoke_model.RevokeEvent(user_id=user_id))
-
     def _revoke_by_audit_chain_id(self, audit_chain_id, project_id=None,
                                   domain_id=None):
         event = add_event(
@@ -532,29 +585,6 @@ class RevokeListTests(unit.TestCase):
         )
         self.events.append(event)
         return event
-
-    def _revoke_by_expiration(self, user_id, expires_at, project_id=None,
-                              domain_id=None):
-        event = add_event(
-            self.revoke_events,
-            revoke_model.RevokeEvent(user_id=user_id,
-                                     expires_at=expires_at,
-                                     project_id=project_id,
-                                     domain_id=domain_id))
-        self.events.append(event)
-        return event
-
-    def _revoke_by_user_and_project(self, user_id, project_id):
-        event = add_event(self.revoke_events,
-                          revoke_model.RevokeEvent(project_id=project_id,
-                                                   user_id=user_id))
-        self.events.append(event)
-        return event
-
-    def _revoke_by_domain(self, domain_id):
-        event = add_event(self.revoke_events,
-                          revoke_model.RevokeEvent(domain_id=domain_id))
-        self.events.append(event)
 
     def test_revoke_by_audit_chain_id(self):
         audit_id = common.build_audit_info(parent_audit_id=None)[0]
@@ -579,81 +609,3 @@ class RevokeListTests(unit.TestCase):
     def remove_event(self, event):
         self.events.remove(event)
         remove_event(self.revoke_events, event)
-
-    def test_by_project_and_user_and_role(self):
-        user_id1 = uuid.uuid4().hex
-        user_id2 = uuid.uuid4().hex
-        project_id = uuid.uuid4().hex
-        self.events.append(self._revoke_by_user(user_id1))
-        self.events.append(
-            self._revoke_by_user_and_project(user_id2, project_id))
-        token_data = _sample_blank_token()
-        token_data['user_id'] = user_id2
-        token_data['project_id'] = project_id
-        self._assertTokenRevoked(token_data)
-
-    def test_by_domain_user(self):
-        # If revoke a domain, then a token for a user in the domain is revoked
-
-        user_id = uuid.uuid4().hex
-        domain_id = uuid.uuid4().hex
-
-        token_data = _sample_blank_token()
-        token_data['user_id'] = user_id
-        token_data['identity_domain_id'] = domain_id
-
-        self._revoke_by_domain(domain_id)
-
-        self._assertTokenRevoked(token_data)
-
-    def test_by_domain_project(self):
-        # If revoke a domain, then a token scoped to a project in the domain
-        # is revoked.
-
-        user_id = uuid.uuid4().hex
-        user_domain_id = uuid.uuid4().hex
-
-        project_id = uuid.uuid4().hex
-        project_domain_id = uuid.uuid4().hex
-
-        token_data = _sample_blank_token()
-        token_data['user_id'] = user_id
-        token_data['identity_domain_id'] = user_domain_id
-        token_data['project_id'] = project_id
-        token_data['assignment_domain_id'] = project_domain_id
-
-        self._revoke_by_domain(project_domain_id)
-
-        self._assertTokenRevoked(token_data)
-
-    def test_by_domain_domain(self):
-        # If revoke a domain, then a token scoped to the domain is revoked.
-
-        user_id = uuid.uuid4().hex
-        user_domain_id = uuid.uuid4().hex
-
-        domain_id = uuid.uuid4().hex
-
-        token_data = _sample_blank_token()
-        token_data['user_id'] = user_id
-        token_data['identity_domain_id'] = user_domain_id
-        token_data['assignment_domain_id'] = domain_id
-
-        self._revoke_by_domain(domain_id)
-
-        self._assertTokenRevoked(token_data)
-
-    def _assertEmpty(self, collection):
-        return self.assertEqual(0, len(collection), "collection not empty")
-
-    def test_cleanup(self):
-        events = self.events
-        self._assertEmpty(self.revoke_events)
-        for i in range(0, 10):
-            events.append(
-                self._revoke_by_user_and_project(uuid.uuid4().hex,
-                                                 uuid.uuid4().hex))
-
-        for event in self.events:
-            remove_event(self.revoke_events, event)
-        self._assertEmpty(self.revoke_events)
