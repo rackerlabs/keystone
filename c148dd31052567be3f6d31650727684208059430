@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_04c5b88e",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T17:33:19Z",
+      "side": 1,
+      "message": "why not just \"Show user details\" to be in consistent with all other entities (as you\u0027ve been doing in other patches)",
+      "range": {
+        "startLine": 21,
+        "startChar": 21,
+        "endLine": 21,
+        "endChar": 55
+      },
+      "revId": "c148dd31052567be3f6d31650727684208059430",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_a4696c8c",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T17:33:19Z",
+      "side": 1,
+      "message": "I\u0027d say \"via role assignments\" as there can be multiple on the same project/domain",
+      "range": {
+        "startLine": 33,
+        "startChar": 65,
+        "endLine": 34,
+        "endChar": 32
+      },
+      "revId": "c148dd31052567be3f6d31650727684208059430",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_640924dc",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T17:33:19Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 40,
+        "startChar": 66,
+        "endLine": 41,
+        "endChar": 33
+      },
+      "revId": "c148dd31052567be3f6d31650727684208059430",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
