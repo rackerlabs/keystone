@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_4434e04a",
+        "filename": "keystone/common/policies/protocol.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T17:41:07Z",
+      "side": 1,
+      "message": "remove this /{protocol_id} as it\u0027s listing.",
+      "range": {
+        "startLine": 44,
+        "startChar": 40,
+        "endLine": 44,
+        "endChar": 54
+      },
+      "revId": "40d9393f7f480e9a5ab2d2fe6b5f4cbccd5f1e54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
