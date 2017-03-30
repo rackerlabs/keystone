@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "dfeb2761_8430a809",
+        "filename": "keystone/common/policies/mapping.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T17:50:10Z",
+      "side": 1,
+      "message": "update these to \"federated\" to be in consistence with https://review.openstack.org/#/c/449347",
+      "range": {
+        "startLine": 21,
+        "startChar": 28,
+        "endLine": 21,
+        "endChar": 38
+      },
+      "revId": "860709a35dfbbec3d4562fefba1bc77178deacb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_6435a4f7",
+        "filename": "keystone/common/policies/mapping.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T17:50:10Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 27,
+        "startChar": 25,
+        "endLine": 27,
+        "endChar": 35
+      },
+      "revId": "860709a35dfbbec3d4562fefba1bc77178deacb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfeb2761_64c244ec",
         "filename": "keystone/common/policies/mapping.py",
         "patchSetId": 5
@@ -18,6 +64,75 @@
         "startChar": 37,
         "endLine": 33,
         "endChar": 44
+      },
+      "revId": "860709a35dfbbec3d4562fefba1bc77178deacb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_443aa0e7",
+        "filename": "keystone/common/policies/mapping.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T17:50:10Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 33,
+        "startChar": 26,
+        "endLine": 33,
+        "endChar": 36
+      },
+      "revId": "860709a35dfbbec3d4562fefba1bc77178deacb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_e42094b3",
+        "filename": "keystone/common/policies/mapping.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T17:50:10Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 39,
+        "startChar": 28,
+        "endLine": 39,
+        "endChar": 38
+      },
+      "revId": "860709a35dfbbec3d4562fefba1bc77178deacb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_c42d90a9",
+        "filename": "keystone/common/policies/mapping.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T17:50:10Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 45,
+        "startChar": 28,
+        "endLine": 45,
+        "endChar": 38
       },
       "revId": "860709a35dfbbec3d4562fefba1bc77178deacb0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
