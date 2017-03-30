@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_d02f7ea5",
+        "filename": "releasenotes/notes/policy-in-code-4af1507df6dd1016.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-30T14:27:03Z",
+      "side": 1,
+      "message": "According to convention, we use `bp` in the note name:\n\nhttps://docs.openstack.org/developer/keystone/devref/development_best_practices.html#release-notes",
+      "revId": "4617ef66b22d7ca97120257a59a100f5b7fcf551",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_b39e44b6",
+        "filename": "releasenotes/notes/policy-in-code-4af1507df6dd1016.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-30T14:27:03Z",
+      "side": 1,
+      "message": "We also need to link to some documentation. Right now deployers more than likely have a policy file. It can be filled with defaults, contain overrides, or a mix of the two. We should point them to some usage documentation that allows them to prune default policies from their policy files so they don\u0027t have to maintain them anymore.",
+      "revId": "4617ef66b22d7ca97120257a59a100f5b7fcf551",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_13e5f038",
+        "filename": "releasenotes/notes/policy-in-code-4af1507df6dd1016.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-30T14:27:03Z",
+      "side": 1,
+      "message": "none*",
+      "revId": "4617ef66b22d7ca97120257a59a100f5b7fcf551",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffe62b97_b01d1a75",
+        "filename": "releasenotes/notes/policy-in-code-4af1507df6dd1016.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-03-30T14:27:03Z",
+      "side": 1,
+      "message": "We should make this a link like how we do in the example: \n\nhttps://docs.openstack.org/developer/keystone/devref/development_best_practices.html#release-notes",
+      "revId": "4617ef66b22d7ca97120257a59a100f5b7fcf551",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
