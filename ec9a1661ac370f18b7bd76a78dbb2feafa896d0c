@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_21a30e52",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T17:25:08Z",
+      "side": 1,
+      "message": "introduced",
+      "range": {
+        "startLine": 9,
+        "startChar": 23,
+        "endLine": 9,
+        "endChar": 32
+      },
+      "revId": "ec9a1661ac370f18b7bd76a78dbb2feafa896d0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_c1aa2218",
+        "filename": "keystone/common/policies/policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T17:25:08Z",
+      "side": 1,
+      "message": "POST",
+      "range": {
+        "startLine": 35,
+        "startChar": 32,
+        "endLine": 35,
+        "endChar": 35
+      },
+      "revId": "ec9a1661ac370f18b7bd76a78dbb2feafa896d0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
