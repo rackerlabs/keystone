@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_7ebadcc0",
+        "filename": "api-ref/source/v3/domains.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-03-30T04:02:53Z",
+      "side": 1,
+      "message": "this is the top level \"domain\"\n\n  {\"domain\":\n    {\"descrtion\": foo,\n     \"enabled\": bar,\n      \"name\": baz\n     }\n   }",
+      "range": {
+        "startLine": 85,
+        "startChar": 3,
+        "endLine": 85,
+        "endChar": 19
+      },
+      "revId": "70a31652e0fc2dd9753f64571a0360ad13d2e88f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
