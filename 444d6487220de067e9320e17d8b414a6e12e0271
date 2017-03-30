@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_a744ceb8",
+        "filename": "keystone/common/policies/implied_role.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T18:06:39Z",
+      "side": 1,
+      "message": "(inference) is a bit confusing for me.. what about\n\n\"List implied roles for prior role.\" would be clearer for me, what\u0027s your opinion ?",
+      "range": {
+        "startLine": 28,
+        "startChar": 21,
+        "endLine": 28,
+        "endChar": 61
+      },
+      "revId": "444d6487220de067e9320e17d8b414a6e12e0271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_c7d91223",
+        "filename": "keystone/common/policies/implied_role.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T18:06:39Z",
+      "side": 1,
+      "message": "\"Check\" would be more consistent with all the other APIs you\u0027ve been documenting",
+      "range": {
+        "startLine": 54,
+        "startChar": 21,
+        "endLine": 54,
+        "endChar": 28
+      },
+      "revId": "444d6487220de067e9320e17d8b414a6e12e0271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
