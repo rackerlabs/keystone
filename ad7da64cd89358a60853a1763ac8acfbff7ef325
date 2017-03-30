@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_e76f7690",
+        "filename": "keystone/common/policies/region.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-03-30T17:57:56Z",
+      "side": 1,
+      "message": "/v3/regions/{region_id}\n\nhttps://github.com/openstack/keystone/blob/dafbf5b/keystone/catalog/routers.py#L85",
+      "range": {
+        "startLine": 36,
+        "startChar": 30,
+        "endLine": 36,
+        "endChar": 41
+      },
+      "revId": "ad7da64cd89358a60853a1763ac8acfbff7ef325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
