@@ -2883,6 +2883,38 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         token_resp = r.result['token']
         self.assertIn('domain', token_resp)
 
+    def test_mapped_local_user_roles(self):
+        # create local user
+        user = self._create_user()
+        
+        # create project and role
+        project_ref = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id)
+        self.resource_api.create_project(project_ref['id'], project_ref)
+        role_ref = unit.new_role_ref()
+        self.role_api.create_role(role_ref['id'], role_ref)
+        
+        # assign project role to the local user
+        self.assignment_api.add_role_to_user_and_project(
+            user['id'], project_ref['id'], role_ref['id'])
+
+        # create a mapping that maps the federated user to the local user
+            
+        # request unscoped token
+        
+        # request scoped token
+        
+        # validate local user role exists
+
+    def _create_user(self):
+        user = {
+            'name': uuid.uuid4().hex,
+            'domain_id': CONF.identity.default_domain_id,
+            'enabled': True,
+            'password': uuid.uuid4().hex
+        }
+        return self.identity_api.create_user(user)
+
     def test_auth_projects_matches_federation_projects(self):
         # create project and role
         project_ref = unit.new_project_ref(
