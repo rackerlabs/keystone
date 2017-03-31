@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "dfeb2761_f2e95280",
+        "filename": "keystone/common/policies/group.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 22219
+      },
+      "writtenOn": "2017-03-31T15:42:35Z",
+      "side": 1,
+      "message": "Samuel here\u0027s the link to this API: https://developer.openstack.org/api-ref/identity/v3/?expanded\u003dlist-groups-to-which-a-user-belongs-detail",
+      "parentUuid": "ffe62b97_6115a948",
+      "range": {
+        "startLine": 36,
+        "startChar": 20,
+        "endLine": 37,
+        "endChar": 38
+      },
+      "revId": "f4db02cedbc6df422e81aa7e205ed4a964c3673a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_65428e40",
         "filename": "keystone/common/policies/group.py",
         "patchSetId": 5
