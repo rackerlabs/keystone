@@ -22,6 +22,30 @@
       "revId": "f074bd0610bca0bacf2db785d5330d99dfb4dc7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_901d2f75",
+        "filename": "keystone/common/policies/project_endpoint.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 22219
+      },
+      "writtenOn": "2017-04-03T13:11:42Z",
+      "side": 1,
+      "message": "Sam I see what you mean, but here both get and head are used https://github.com/openstack/keystone/blob/master/keystone/catalog/routers.py#L110",
+      "parentUuid": "dfeb2761_647a4489",
+      "range": {
+        "startLine": 37,
+        "startChar": 20,
+        "endLine": 39,
+        "endChar": 38
+      },
+      "revId": "f074bd0610bca0bacf2db785d5330d99dfb4dc7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
