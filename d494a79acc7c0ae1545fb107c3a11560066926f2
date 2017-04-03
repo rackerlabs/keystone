@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_5509d129",
+        "filename": "keystone/common/policies/trust.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-03T15:27:29Z",
+      "side": 1,
+      "message": "does this return a role ? this is a HEAD method, this should be \u0027Check role in trust.\u0027 as it won\u0027t get/return anything imo",
+      "range": {
+        "startLine": 39,
+        "startChar": 21,
+        "endLine": 39,
+        "endChar": 24
+      },
+      "revId": "d494a79acc7c0ae1545fb107c3a11560066926f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
