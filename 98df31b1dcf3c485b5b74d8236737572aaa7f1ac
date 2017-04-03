@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_4ac243eb",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-04-03T18:54:51Z",
+      "side": 0,
+      "message": "This is a test which is run by the test framework, so it\u0027s not unused.",
+      "revId": "98df31b1dcf3c485b5b74d8236737572aaa7f1ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
