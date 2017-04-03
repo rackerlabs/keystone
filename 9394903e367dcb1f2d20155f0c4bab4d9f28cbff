@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_5a469e7e",
+        "filename": "keystone/common/policies/group.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-03T15:26:00Z",
+      "side": 1,
+      "message": "I still think this should not exist, see my comment on patchset 5",
+      "range": {
+        "startLine": 36,
+        "startChar": 20,
+        "endLine": 37,
+        "endChar": 38
+      },
+      "revId": "9394903e367dcb1f2d20155f0c4bab4d9f28cbff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
