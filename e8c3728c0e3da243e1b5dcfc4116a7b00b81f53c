@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_37de4711",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-04-03T20:58:59Z",
+      "side": 1,
+      "message": "This is revoking the token, not the user and project.",
+      "range": {
+        "startLine": 452,
+        "startChar": 8,
+        "endLine": 452,
+        "endChar": 35
+      },
+      "revId": "e8c3728c0e3da243e1b5dcfc4116a7b00b81f53c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
