@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_f43b3de8",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1005,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-04-03T20:40:51Z",
+      "side": 1,
+      "message": "Are these used anywhere? I looked through and I couldn\u0027t find anywhere they are currently, but I could have missed it.",
+      "range": {
+        "startLine": 1004,
+        "startChar": 0,
+        "endLine": 1005,
+        "endChar": 27
+      },
+      "revId": "5565811c48aa8c86a71b095475ac67e5aab843e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
