@@ -22,6 +22,30 @@
       "revId": "e8c3728c0e3da243e1b5dcfc4116a7b00b81f53c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_831dd167",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-04-03T22:59:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfeb2761_37de4711",
+      "range": {
+        "startLine": 452,
+        "startChar": 8,
+        "endLine": 452,
+        "endChar": 35
+      },
+      "revId": "e8c3728c0e3da243e1b5dcfc4116a7b00b81f53c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
