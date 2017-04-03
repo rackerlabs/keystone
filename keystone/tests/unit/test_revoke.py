@@ -39,12 +39,6 @@ def _future_time():
     return future_time
 
 
-def _past_time():
-    expire_delta = datetime.timedelta(days=-1000)
-    past_time = timeutils.utcnow() + expire_delta
-    return past_time
-
-
 def _sample_blank_token():
     issued_delta = datetime.timedelta(minutes=-2)
     issued_at = timeutils.utcnow() + issued_delta
@@ -677,18 +671,3 @@ class RevokeListTests(unit.TestCase):
         self._revoke_by_domain(domain_id)
 
         self._assertTokenRevoked(token_data)
-
-    def _assertEmpty(self, collection):
-        return self.assertEqual(0, len(collection), "collection not empty")
-
-    def test_cleanup(self):
-        events = self.events
-        self._assertEmpty(self.revoke_events)
-        for i in range(0, 10):
-            events.append(
-                self._revoke_by_user_and_project(uuid.uuid4().hex,
-                                                 uuid.uuid4().hex))
-
-        for event in self.events:
-            remove_event(self.revoke_events, event)
-        self._assertEmpty(self.revoke_events)
