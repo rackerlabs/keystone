@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_f3bfe5f8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-04-03T13:18:11Z",
+      "side": 1,
+      "message": "For consistency, I think we should update this commit as well according to lance\u0027s previous comment: https://review.openstack.org/#/c/449341/3..6//COMMIT_MSG\nOtherwise, this is looking good.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 29
+      },
+      "revId": "7bf0d72ef53654535971c51c3773c5b64eb9dc9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
