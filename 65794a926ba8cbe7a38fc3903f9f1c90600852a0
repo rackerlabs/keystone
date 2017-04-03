@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "dfeb2761_b3d27d5b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-04-03T13:17:52Z",
+      "side": 1,
+      "message": "For consistency, I think we should update this commit as well according to lance\u0027s previous comment: https://review.openstack.org/#/c/449341/3..6//COMMIT_MSG\nOtherwise, this is looking good.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 29
+      },
+      "revId": "65794a926ba8cbe7a38fc3903f9f1c90600852a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_e1977944",
         "filename": "keystone/common/policies/access_token.py",
         "patchSetId": 3
