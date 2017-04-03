@@ -22,6 +22,23 @@
       "revId": "514dd2d0449befcab2709a3030a53a5f4abcba58",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_89c17d31",
+        "filename": "keystone/common/policies/role_assignment.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-03T17:54:53Z",
+      "side": 1,
+      "message": "Most keystone operations/policies are pretty straight forward (i.e. list_users). Providing a description is essentially removing the underscores and adding sentence casing (\"List users.\"). Which isn\u0027t adding any additional value to the reader, but that can be hard to do with a description when the policy is already really simple.\n\n\nBut this one could certainly benefit from some additional context. What tree are we talking about here? What does the tree consist of?",
+      "revId": "514dd2d0449befcab2709a3030a53a5f4abcba58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
