@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_1ad46c47",
+        "filename": "keystone/common/policies/mapping.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-04-04T14:58:59Z",
+      "side": 1,
+      "message": "whenever talking about \"mapping\", we should include \"rules\". So I suggest to replace the occurrences of \"mapping\" here to \"mapping rules\".\n\nExample:\n\n  - Create a new federated mapping rule.\n  - Get a federated mapping rule.\n  - Listing federated mapping rules.",
+      "range": {
+        "startLine": 21,
+        "startChar": 38,
+        "endLine": 21,
+        "endChar": 45
+      },
+      "revId": "4d9801e5cb60074ff0ffe077c14eb11e0700bc82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
