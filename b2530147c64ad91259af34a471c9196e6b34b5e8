@@ -39,6 +39,24 @@
       "revId": "b2530147c64ad91259af34a471c9196e6b34b5e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_f031e95b",
+        "filename": "keystone/common/policies/policy_association.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-04T15:45:33Z",
+      "side": 1,
+      "message": "Actually - I think this is correct. For some reason I was thinking this should return a list of policies for a given endpoint, but that doesn\u0027t seem to be the case according to the implementation [0].\n\n[0] https://github.com/openstack/keystone/blob/master/keystone/endpoint_policy/core.py#L188",
+      "parentUuid": "dfeb2761_b0436113",
+      "revId": "b2530147c64ad91259af34a471c9196e6b34b5e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
