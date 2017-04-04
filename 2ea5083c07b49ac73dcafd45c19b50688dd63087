@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_2b8da5d2",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-04-04T14:33:32Z",
+      "side": 1,
+      "message": "can trim these extra header indicators off",
+      "range": {
+        "startLine": 369,
+        "startChar": 57,
+        "endLine": 369,
+        "endChar": 60
+      },
+      "revId": "2ea5083c07b49ac73dcafd45c19b50688dd63087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_4ba90922",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-04-04T14:33:32Z",
+      "side": 1,
+      "message": "Over 80 chars here, this will likely fail pep8 (or sphinx for api-ref)",
+      "range": {
+        "startLine": 375,
+        "startChar": 99,
+        "endLine": 375,
+        "endChar": 123
+      },
+      "revId": "2ea5083c07b49ac73dcafd45c19b50688dd63087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_4b7ea9af",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 829,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-04-04T14:33:32Z",
+      "side": 1,
+      "message": "nit: extra whitespace here",
+      "range": {
+        "startLine": 829,
+        "startChar": 29,
+        "endLine": 829,
+        "endChar": 30
+      },
+      "revId": "2ea5083c07b49ac73dcafd45c19b50688dd63087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_ab165554",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 829,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-04-04T14:33:32Z",
+      "side": 1,
+      "message": "I would say move the period to the end of \"(Since v3.4)\" to match below.",
+      "range": {
+        "startLine": 829,
+        "startChar": 27,
+        "endLine": 829,
+        "endChar": 28
+      },
+      "revId": "2ea5083c07b49ac73dcafd45c19b50688dd63087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_cb3879ef",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 835,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-04-04T14:33:32Z",
+      "side": 1,
+      "message": "Not sure if \"might\" is appropriate here, it should either return a project-scoped token or not (unless we truly do not know for sure)",
+      "range": {
+        "startLine": 835,
+        "startChar": 31,
+        "endLine": 835,
+        "endChar": 36
+      },
+      "revId": "2ea5083c07b49ac73dcafd45c19b50688dd63087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
