@@ -16,6 +16,24 @@
       "revId": "351f3ce3c643886dff36077a25e93d2a92969787",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_fae308d8",
+        "filename": "keystone/common/policies/policy.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 22219
+      },
+      "writtenOn": "2017-04-04T15:06:04Z",
+      "side": 1,
+      "message": "Done, not sure how this patch set missed the punctuation faze.",
+      "parentUuid": "dfeb2761_7ac49891",
+      "revId": "351f3ce3c643886dff36077a25e93d2a92969787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
