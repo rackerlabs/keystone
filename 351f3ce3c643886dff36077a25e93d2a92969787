@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_7ac49891",
+        "filename": "keystone/common/policies/policy.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-04T14:59:21Z",
+      "side": 1,
+      "message": "Some of the policy docs patches have punctuation in the descriptions. I assume that\u0027s a convention we want to follow for all patches?",
+      "revId": "351f3ce3c643886dff36077a25e93d2a92969787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
