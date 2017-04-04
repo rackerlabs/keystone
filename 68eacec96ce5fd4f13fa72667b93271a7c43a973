@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_b02481b0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-04T15:33:50Z",
+      "side": 1,
+      "message": "This is already automatically linked on line 19 using the bp policy-docs syntax.",
+      "revId": "68eacec96ce5fd4f13fa72667b93271a7c43a973",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
