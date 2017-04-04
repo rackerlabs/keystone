@@ -22,6 +22,24 @@
       "revId": "4d9801e5cb60074ff0ffe077c14eb11e0700bc82",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_b32a4b29",
+        "filename": "keystone/common/policies/mapping.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-04T16:02:12Z",
+      "side": 1,
+      "message": "Can\u0027t a mapping contain multiple rules? If so, why do we not make the wording plural? Mappings are essentially a list of dictionaries that contain \u0027local and \u0027remote\u0027 rules.",
+      "parentUuid": "dfeb2761_1ad46c47",
+      "revId": "4d9801e5cb60074ff0ffe077c14eb11e0700bc82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
