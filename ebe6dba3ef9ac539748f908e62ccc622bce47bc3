@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_2e392ea3",
+        "filename": "keystone/common/policies/implied_role.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-04T16:30:32Z",
+      "side": 1,
+      "message": "It wouldn\u0027t be a bad idea here to elaborate a bit. What exactly is happening between the two roles? What do we mean by inference?",
+      "revId": "ebe6dba3ef9ac539748f908e62ccc622bce47bc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_ae965e4b",
+        "filename": "keystone/common/policies/implied_role.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-04T16:30:32Z",
+      "side": 1,
+      "message": "I think it would help if we level set the term \u0027prior role\u0027. I think the big thing that would help in the readability of this document is to define what role implies the other. If A implies B, and I have B I shouldn\u0027t be able to do things A is allowed to do. But if I have A I should be able to do things B is allowed to do.\n\nIt would be good to map that example into these descriptions somehow.",
+      "revId": "ebe6dba3ef9ac539748f908e62ccc622bce47bc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
