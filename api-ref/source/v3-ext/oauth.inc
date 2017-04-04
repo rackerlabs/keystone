@@ -209,7 +209,7 @@ Create request token
 
 Enables a consumer to get an unauthorized request token.
 
-Supported signature methods: ``HMAC-SHA1``
+Supported signature methods: ``HMAC-SHA256``
 
 The consumer must provide all required OAuth parameters in the
 request. See `Consumer Obtains a Request Token

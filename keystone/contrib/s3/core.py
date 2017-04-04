@@ -95,7 +95,7 @@ class S3Controller(controllers.Ec2ControllerV3):
             b64_encode = base64.encodestring
         else:
             b64_encode = base64.encodebytes
-        signed = b64_encode(hmac.new(key, string_to_sign, hashlib.sha1)
+        signed = b64_encode(hmac.new(key, string_to_sign, hashlib.sha256)
                             .digest()).decode('utf-8').strip()
         return signed
 

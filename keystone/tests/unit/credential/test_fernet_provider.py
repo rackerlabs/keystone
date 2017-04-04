@@ -67,7 +67,7 @@ class TestFernetCredentialProviderWithNullKey(unit.TestCase):
 
     def test_encryption_with_null_key(self):
         null_key = fernet_utils.NULL_KEY
-        null_key_hash = hashlib.sha1(null_key).hexdigest()
+        null_key_hash = hashlib.sha256(null_key).hexdigest()
 
         blob = uuid.uuid4().hex
         encrypted_blob, primary_key_hash = self.provider.encrypt(blob)

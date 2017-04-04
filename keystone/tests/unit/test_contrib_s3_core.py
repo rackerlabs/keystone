@@ -41,7 +41,7 @@ class S3ContribCore(test_v3.RestfulTestCase):
     def test_good_response(self):
         sts = 'string to sign'  # opaque string from swift3
         sig = hmac.new(self.cred_blob['secret'].encode('ascii'),
-                       sts.encode('ascii'), hashlib.sha1).digest()
+                       sts.encode('ascii'), hashlib.sha256).digest()
         resp = self.post(
             '/s3tokens',
             body={'credentials': {
@@ -86,7 +86,8 @@ class S3ContribCore(test_v3.RestfulTestCase):
                        'saWNhdGlvbi9vY3RldC1zdHJlYW0KVHVlLCAxMSBEZWMgMjAxM'
                        'iAyMTo0MTo0MSBHTVQKL2NvbnRfczMvdXBsb2FkZWRfZnJ'
                        'vbV9zMy50eHQ=',
-                       'signature': 'IL4QLcLVaYgylF9iHj6Wb8BGZsw='}
+                       'signature': '0vFZQRL/JJxuzWWNr/TKYKtBmhGBvN'
+                       'H1tkEjsNslXCQ='}
 
         self.assertIsNone(self.controller.check_signature(creds_ref,
                                                           credentials))

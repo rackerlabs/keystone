@@ -57,7 +57,7 @@ def primary_key_hash(keys):
     """Calculate a hash of the primary key used for encryption."""
     if isinstance(keys[0], six.text_type):
         keys[0] = keys[0].encode('utf-8')
-    return hashlib.sha1(keys[0]).hexdigest()
+    return hashlib.sha256(keys[0]).hexdigest()
 
 
 class Provider(core.Provider):
