@@ -22,6 +22,24 @@
       "revId": "498ddaa81801954c7c75068ffa3baa28a8ca0f83",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_e83d75dd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-04T20:07:08Z",
+      "side": 1,
+      "message": "I wouldn\u0027t consider this something to hold up the patch. All three say the exact same thing.",
+      "parentUuid": "dfeb2761_5f309de8",
+      "revId": "498ddaa81801954c7c75068ffa3baa28a8ca0f83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
