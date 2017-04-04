@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_939987c5",
+        "filename": "keystone/common/policies/role_assignment.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-04T15:58:00Z",
+      "side": 1,
+      "message": "Based on the router, it looks like this can be done using GET and HEAD [0] [1]\n\n[0] https://github.com/openstack/keystone/blob/master/keystone/assignment/routers.py#L199-L200\n[1] https://github.com/openstack/keystone/blob/master/keystone/assignment/controllers.py#L995-L997",
+      "revId": "363a7d70d947154860834c9f01c802a98f627114",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
