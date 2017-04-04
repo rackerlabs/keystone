@@ -16,6 +16,24 @@
       "revId": "363a7d70d947154860834c9f01c802a98f627114",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_53c77f65",
+        "filename": "keystone/common/policies/role_assignment.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 22219
+      },
+      "writtenOn": "2017-04-04T16:04:33Z",
+      "side": 1,
+      "message": "Nice catch. Will update",
+      "parentUuid": "dfeb2761_939987c5",
+      "revId": "363a7d70d947154860834c9f01c802a98f627114",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
