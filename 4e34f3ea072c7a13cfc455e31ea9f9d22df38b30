@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_6eaa9671",
+        "filename": "keystone/common/policies/role_assignment.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-04T16:31:45Z",
+      "side": 1,
+      "message": "nit: a*",
+      "revId": "4e34f3ea072c7a13cfc455e31ea9f9d22df38b30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
