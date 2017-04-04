@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_5f309de8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-04-04T18:00:02Z",
+      "side": 1,
+      "message": "\"A new policy class that requires additional parameters when defining policy objects was introduced.\"\n\nor \n\n\"A new policy class was introduced. It required additional parameters when defining policy objects.\"",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 50
+      },
+      "revId": "498ddaa81801954c7c75068ffa3baa28a8ca0f83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
