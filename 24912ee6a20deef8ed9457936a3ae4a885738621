@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_101c4d76",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-04T15:54:55Z",
+      "side": 1,
+      "message": "This should contain a list of all the things we\u0027re removing along with a dedicated reason why we don\u0027t need them anymore.\n\nThe other option would be to break each group of tests into their own change and have the commit message explain why we don\u0027t need that test coverage anymore.\n\nSince this is a 150 line change, I\u0027d be fine elaborating on all the details here.",
+      "revId": "24912ee6a20deef8ed9457936a3ae4a885738621",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
