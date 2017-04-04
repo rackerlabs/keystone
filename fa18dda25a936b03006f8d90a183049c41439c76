@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_2e16cea9",
+        "filename": "keystone/common/policies/mapping.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-04T16:35:57Z",
+      "side": 1,
+      "message": "nit: \n\n  Create a new federated mapping containing one or more sets of rules.",
+      "revId": "fa18dda25a936b03006f8d90a183049c41439c76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
