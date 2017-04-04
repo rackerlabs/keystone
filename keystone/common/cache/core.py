@@ -14,11 +14,11 @@
 
 """Keystone Caching Layer Implementation."""
 
+import hashlib
 import os
 
 import dogpile.cache
 from dogpile.cache import region
-from dogpile.cache import util
 from oslo_cache import core as cache
 
 from keystone.common.cache import _context_cache
@@ -135,21 +135,20 @@ def configure_cache(region=None):
             region_manager)
 
 
-def _sha1_mangle_key(key):
-    """Wrapper for dogpile's sha1_mangle_key.
+def _sha256_mangle_key(key):
+    """Wrapper for sha256().
 
-    dogpile's sha1_mangle_key function expects an encoded string, so we
+    hashlibs's sha256() function expects an encoded string, so we
     should take steps to properly handle multiple inputs before passing
     the key through.
 
-    NOTE(dstanek): this was copied directly from olso_cache
     """
     try:
         key = key.encode('utf-8', errors='xmlcharrefreplace')
     except (UnicodeError, AttributeError):
         # NOTE(stevemar): if encoding fails just continue anyway.
         pass
-    return util.sha1_mangle_key(key)
+    return hashlib.sha256(key).hexdigest()
 
 
 def configure_invalidation_region():
@@ -169,12 +168,12 @@ def configure_invalidation_region():
     CACHE_INVALIDATION_REGION.wrap(_context_cache._ResponseCacheProxy)
 
     # NOTE(morganfainberg): if the backend requests the use of a
-    # key_mangler, we should respect that key_mangler function.  If a
-    # key_mangler is not defined by the backend, use the sha1_mangle_key
-    # mangler provided by dogpile.cache. This ensures we always use a fixed
+    # key_mangler, we should respect that key_mangler function. If a
+    # key_mangler is not defined by the backend, use the _sha256_mangle_key
+    # mangler provided by keystone. This ensures we always use a fixed
     # size cache-key.
     if CACHE_INVALIDATION_REGION.key_mangler is None:
-        CACHE_INVALIDATION_REGION.key_mangler = _sha1_mangle_key
+        CACHE_INVALIDATION_REGION.key_mangler = _sha256_mangle_key
 
 
 def get_memoization_decorator(group, expiration_group=None, region=None):

@@ -61,7 +61,7 @@ def _generate_totp_passcode(secret):
 
     decoded = base64.b32decode(secret)
     totp = crypto_totp.TOTP(
-        decoded, 6, hashes.SHA1(), 30, backend=default_backend())
+        decoded, 6, hashes.SHA256(), 30, backend=default_backend())
     return totp.generate(timeutils.utcnow_ts(microsecond=True)).decode('utf-8')
 
 

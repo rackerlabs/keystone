@@ -325,14 +325,15 @@ class SAMLGenerator(object):
             <CanonicalizationMethod
               Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
             <SignatureMethod
-              Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+              Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
             <Reference URI="#<Assertion ID>">
               <Transforms>
                 <Transform
             Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
                <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
               </Transforms>
-             <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+             <DigestMethod Algorithm=
+                 "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
              <DigestValue />
             </Reference>
           </SignedInfo>

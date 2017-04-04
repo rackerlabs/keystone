@@ -178,7 +178,7 @@ class TokenlessAuthHelper(object):
         The default issuer attribute SSL_CLIENT_I_DN in the environment is
         built with the following formula -
 
-        base64_idp = sha1(env['SSL_CLIENT_I_DN'])
+        base64_idp = sha256(env['SSL_CLIENT_I_DN'])
 
         :returns: base64_idp like the above example
         :rtype: str

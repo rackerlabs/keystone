@@ -503,7 +503,7 @@ class TestFernetKeyRotation(unit.TestCase):
         keys.sort()
 
         # Create the thumbprint using all keys in the repository.
-        signature = hashlib.sha1()
+        signature = hashlib.sha256()
         for key in keys:
             # Need to convert key to six.binary_type for update.
             signature.update(key.encode('utf-8'))
