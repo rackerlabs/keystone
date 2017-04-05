@@ -48,6 +48,24 @@
     },
     {
       "key": {
+        "uuid": "bff0334d_793e562a",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T22:18:13Z",
+      "side": 1,
+      "message": "This doesn\u0027t list projects for \"a user\", this returns the list of projects accessible to the token in context. In other words, \"what projects can I generate a scoped token for?\" I\u0027m not sure how that should be worded as a doc, though.",
+      "parentUuid": "dfeb2761_a4696c8c",
+      "revId": "c148dd31052567be3f6d31650727684208059430",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfeb2761_640924dc",
         "filename": "keystone/common/policies/user.py",
         "patchSetId": 8
@@ -65,6 +83,57 @@
         "endLine": 41,
         "endChar": 33
       },
+      "revId": "c148dd31052567be3f6d31650727684208059430",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_9960fa34",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T22:18:13Z",
+      "side": 1,
+      "message": "Create *a* user, and so on for the other description strings below.",
+      "revId": "c148dd31052567be3f6d31650727684208059430",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_b9e97e81",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T22:18:13Z",
+      "side": 1,
+      "message": "\"Update a user, including administrative password resets.\"",
+      "revId": "c148dd31052567be3f6d31650727684208059430",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_79dad6e9",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T22:18:13Z",
+      "side": 1,
+      "message": "This is not quite accurate, and potentially breaking if it\u0027s interpreted as \"change password for any user.\" It\u0027s intended for a self-service password change, and requires a secondary password challenge. How about:\n\n  \"Self-service password change.\"",
       "revId": "c148dd31052567be3f6d31650727684208059430",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
