@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "bff0334d_e7a88278",
+        "filename": "keystone/common/policies/mapping.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T21:39:41Z",
+      "side": 1,
+      "message": "+1",
+      "revId": "c79d5aa3a7e84a1f60ff2ae7d1b639e97634a8bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfeb2761_4b533640",
         "filename": "keystone/common/policies/mapping.py",
         "patchSetId": 10
@@ -19,6 +36,41 @@
         "endLine": 28,
         "endChar": 48
       },
+      "revId": "c79d5aa3a7e84a1f60ff2ae7d1b639e97634a8bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_67afd294",
+        "filename": "keystone/common/policies/mapping.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T21:39:41Z",
+      "side": 1,
+      "message": "\"Get a federated mapping.\"",
+      "parentUuid": "dfeb2761_4b533640",
+      "revId": "c79d5aa3a7e84a1f60ff2ae7d1b639e97634a8bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_27c8aa53",
+        "filename": "keystone/common/policies/mapping.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T21:39:41Z",
+      "side": 1,
+      "message": "\"List federated mappings.\"",
       "revId": "c79d5aa3a7e84a1f60ff2ae7d1b639e97634a8bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -48,6 +100,24 @@
     },
     {
       "key": {
+        "uuid": "bff0334d_47a28e9c",
+        "filename": "keystone/common/policies/mapping.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T21:39:41Z",
+      "side": 1,
+      "message": "\"Delete a federated mapping.\"",
+      "parentUuid": "dfeb2761_8b7b7ebc",
+      "revId": "c79d5aa3a7e84a1f60ff2ae7d1b639e97634a8bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfeb2761_ab7e42ac",
         "filename": "keystone/common/policies/mapping.py",
         "patchSetId": 10
@@ -65,6 +135,24 @@
         "endLine": 46,
         "endChar": 51
       },
+      "revId": "c79d5aa3a7e84a1f60ff2ae7d1b639e97634a8bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_07ac868a",
+        "filename": "keystone/common/policies/mapping.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T21:39:41Z",
+      "side": 1,
+      "message": "\"Update a federated mapping.\"",
+      "parentUuid": "dfeb2761_ab7e42ac",
       "revId": "c79d5aa3a7e84a1f60ff2ae7d1b639e97634a8bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
