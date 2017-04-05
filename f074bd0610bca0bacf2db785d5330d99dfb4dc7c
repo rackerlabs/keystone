@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "bff0334d_8734164c",
+        "filename": "keystone/common/policies/project_endpoint.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T21:46:23Z",
+      "side": 1,
+      "message": "\"List projects allowed to access an endpoint.\"",
+      "revId": "f074bd0610bca0bacf2db785d5330d99dfb4dc7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_a7183ad3",
+        "filename": "keystone/common/policies/project_endpoint.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T21:46:23Z",
+      "side": 1,
+      "message": "\"Allow project to access an endpoint.\"",
+      "revId": "f074bd0610bca0bacf2db785d5330d99dfb4dc7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_671232b4",
+        "filename": "keystone/common/policies/project_endpoint.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T21:46:23Z",
+      "side": 1,
+      "message": "\"Check if a project is allowed to access an endpoint.\"",
+      "revId": "f074bd0610bca0bacf2db785d5330d99dfb4dc7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfeb2761_647a4489",
         "filename": "keystone/common/policies/project_endpoint.py",
         "patchSetId": 4
@@ -43,6 +94,58 @@
         "endLine": 39,
         "endChar": 38
       },
+      "revId": "f074bd0610bca0bacf2db785d5330d99dfb4dc7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_8782d6c7",
+        "filename": "keystone/common/policies/project_endpoint.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T21:46:23Z",
+      "side": 1,
+      "message": "But what does the GET call return? That looks like a bug in the router.",
+      "parentUuid": "dfeb2761_901d2f75",
+      "revId": "f074bd0610bca0bacf2db785d5330d99dfb4dc7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_e71d22be",
+        "filename": "keystone/common/policies/project_endpoint.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T21:46:23Z",
+      "side": 1,
+      "message": "\"List the endpoints a project is allowed to access.\"",
+      "revId": "f074bd0610bca0bacf2db785d5330d99dfb4dc7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_4755ee4f",
+        "filename": "keystone/common/policies/project_endpoint.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T21:46:23Z",
+      "side": 1,
+      "message": "\"Remove access to an endpoint from a project that has previously been given explicit access.\"",
       "revId": "f074bd0610bca0bacf2db785d5330d99dfb4dc7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
