@@ -62,6 +62,24 @@
       "revId": "a1683df77f8b71de938b7aef577d05d883667ccd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_06c92c77",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1300,
+      "author": {
+        "id": 22219
+      },
+      "writtenOn": "2017-04-05T20:25:22Z",
+      "side": 1,
+      "message": "The exception being return now is exception.RoleNotFound instead of exception.RoleAssignmentNotFound.",
+      "parentUuid": "bff0334d_12f3aaa0",
+      "revId": "a1683df77f8b71de938b7aef577d05d883667ccd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
