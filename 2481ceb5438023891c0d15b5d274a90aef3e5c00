@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bff0334d_6788f21e",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1550,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-04-05T21:39:21Z",
+      "side": 0,
+      "message": "It\u0027s deleting an attribute of a user when it\u0027s updated to a None value. My next patch will be similar to this one, but remove all update operations (hopefully).",
+      "parentUuid": "bff0334d_95b7a487",
+      "range": {
+        "startLine": 1550,
+        "startChar": 36,
+        "endLine": 1550,
+        "endChar": 51
+      },
+      "revId": "2481ceb5438023891c0d15b5d274a90aef3e5c00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bff0334d_55b11c8f",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 8
@@ -36,6 +60,30 @@
       "writtenOn": "2017-04-05T19:08:15Z",
       "side": 0,
       "message": "here again",
+      "range": {
+        "startLine": 1828,
+        "startChar": 20,
+        "endLine": 1828,
+        "endChar": 35
+      },
+      "revId": "2481ceb5438023891c0d15b5d274a90aef3e5c00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_87b1b6e4",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1828,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-04-05T21:39:21Z",
+      "side": 0,
+      "message": "This is deleting the \u0027enabled\u0027 attribute.",
+      "parentUuid": "bff0334d_55b11c8f",
       "range": {
         "startLine": 1828,
         "startChar": 20,
