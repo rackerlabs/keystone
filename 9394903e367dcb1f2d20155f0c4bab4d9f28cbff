@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "bff0334d_8f878cd8",
+        "filename": "keystone/common/policies/group.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-05T23:43:52Z",
+      "side": 1,
+      "message": "this has HEAD as well. groups use the generic router [1]. the generic router defines GET and HEAD for get_ operations, see [2].\n\n\n[1] https://github.com/openstack/keystone/blob/master/keystone/identity/routers.py#L72-L75\n[2] https://github.com/openstack/keystone/blob/master/keystone/common/router.py#L48-L52",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 40
+      },
+      "revId": "9394903e367dcb1f2d20155f0c4bab4d9f28cbff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_4f52a469",
+        "filename": "keystone/common/policies/group.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-05T23:43:52Z",
+      "side": 1,
+      "message": "same here, same reasoning above, see [1]\n\n[1] https://github.com/openstack/keystone/blob/master/keystone/common/router.py#L43-L47",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 40
+      },
+      "revId": "9394903e367dcb1f2d20155f0c4bab4d9f28cbff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfeb2761_5a469e7e",
         "filename": "keystone/common/policies/group.py",
         "patchSetId": 7
@@ -18,6 +64,76 @@
         "startChar": 20,
         "endLine": 37,
         "endChar": 38
+      },
+      "revId": "9394903e367dcb1f2d20155f0c4bab4d9f28cbff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_8fee6c86",
+        "filename": "keystone/common/policies/group.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-05T23:43:52Z",
+      "side": 1,
+      "message": "After reporting https://bugs.launchpad.net/keystone/+bug/1680040 and talking to notmorgan and dstanek on IRC, I am convinced this makes sense.",
+      "parentUuid": "dfeb2761_5a469e7e",
+      "range": {
+        "startLine": 36,
+        "startChar": 20,
+        "endLine": 37,
+        "endChar": 38
+      },
+      "revId": "9394903e367dcb1f2d20155f0c4bab4d9f28cbff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_2f92c0f7",
+        "filename": "keystone/common/policies/group.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-05T23:43:52Z",
+      "side": 1,
+      "message": "this has head as well:\n\nhttps://github.com/openstack/keystone/blob/master/keystone/identity/routers.py#L50-L69",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 40
+      },
+      "revId": "9394903e367dcb1f2d20155f0c4bab4d9f28cbff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_8fbc2c6a",
+        "filename": "keystone/common/policies/group.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-05T23:43:52Z",
+      "side": 1,
+      "message": "this is not showing anything, it\u0027s adding user to group, please update description",
+      "range": {
+        "startLine": 79,
+        "startChar": 21,
+        "endLine": 79,
+        "endChar": 25
       },
       "revId": "9394903e367dcb1f2d20155f0c4bab4d9f28cbff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
