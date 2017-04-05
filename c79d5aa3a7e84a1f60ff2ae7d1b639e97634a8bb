@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_4b533640",
+        "filename": "keystone/common/policies/mapping.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-05T00:09:31Z",
+      "side": 1,
+      "message": "singular",
+      "range": {
+        "startLine": 28,
+        "startChar": 47,
+        "endLine": 28,
+        "endChar": 48
+      },
+      "revId": "c79d5aa3a7e84a1f60ff2ae7d1b639e97634a8bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_8b7b7ebc",
+        "filename": "keystone/common/policies/mapping.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-05T00:09:31Z",
+      "side": 1,
+      "message": "singular",
+      "range": {
+        "startLine": 40,
+        "startChar": 50,
+        "endLine": 40,
+        "endChar": 51
+      },
+      "revId": "c79d5aa3a7e84a1f60ff2ae7d1b639e97634a8bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_ab7e42ac",
+        "filename": "keystone/common/policies/mapping.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-05T00:09:31Z",
+      "side": 1,
+      "message": "singular",
+      "range": {
+        "startLine": 46,
+        "startChar": 50,
+        "endLine": 46,
+        "endChar": 51
+      },
+      "revId": "c79d5aa3a7e84a1f60ff2ae7d1b639e97634a8bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
