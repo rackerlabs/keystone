@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff0334d_8c6f9dc4",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 526,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T21:08:00Z",
+      "side": 0,
+      "message": "It appears you can delete this function, as it\u0027s now unused.",
+      "revId": "9421c5f67b93aaa6ca02ca7f9c405a780f7d918a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_0c026db5",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T21:08:00Z",
+      "side": 0,
+      "message": "This one is still used in L658.",
+      "revId": "9421c5f67b93aaa6ca02ca7f9c405a780f7d918a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_6c2c5947",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T21:08:00Z",
+      "side": 0,
+      "message": "And then there\u0027s this, which is just fantastic.",
+      "revId": "9421c5f67b93aaa6ca02ca7f9c405a780f7d918a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_8c279d65",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 693,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T21:08:00Z",
+      "side": 0,
+      "message": "^",
+      "revId": "9421c5f67b93aaa6ca02ca7f9c405a780f7d918a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
