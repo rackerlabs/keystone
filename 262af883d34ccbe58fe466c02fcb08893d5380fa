@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "bff0334d_9d19148a",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1261,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-04-05T16:24:59Z",
+      "side": 1,
+      "message": "also, this can be refactored to assertRoleNotFoundException",
+      "range": {
+        "startLine": 1261,
+        "startChar": 12,
+        "endLine": 1261,
+        "endChar": 43
+      },
+      "revId": "262af883d34ccbe58fe466c02fcb08893d5380fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_cd017808",
         "filename": "keystone/tests/unit/assignment/test_backends.py",
         "patchSetId": 1
