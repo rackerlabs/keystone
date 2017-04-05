@@ -48,6 +48,23 @@
     },
     {
       "key": {
+        "uuid": "bff0334d_5947121f",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-05T22:11:16Z",
+      "side": 1,
+      "message": "X-Auth-Token shouldn\u0027t come back here.",
+      "revId": "2ea5083c07b49ac73dcafd45c19b50688dd63087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfeb2761_4b7ea9af",
         "filename": "api-ref/source/v3/parameters.yaml",
         "patchSetId": 6
@@ -111,6 +128,58 @@
         "endLine": 835,
         "endChar": 36
       },
+      "revId": "2ea5083c07b49ac73dcafd45c19b50688dd63087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_99afda93",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 835,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-05T22:11:16Z",
+      "side": 1,
+      "message": "I agree. If the user has a default project and a role assignment on that project they will get a project-scoped token even if they authenticate without scope in the request. If that is the case, they must provide a \"unscoped\" in the scope request in order to get an unscoped token.\n\nWe need to omit the ambiguity in this statement. Doing so will be helpful since this behavior has caused confusion before.",
+      "parentUuid": "dfeb2761_cb3879ef",
+      "revId": "2ea5083c07b49ac73dcafd45c19b50688dd63087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_999d9a5b",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1351,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-05T22:11:16Z",
+      "side": 1,
+      "message": "nit: identify the project by name.",
+      "revId": "2ea5083c07b49ac73dcafd45c19b50688dd63087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_39c56e3d",
+        "filename": "keystone/auth/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-05T22:11:16Z",
+      "side": 1,
+      "message": "nit: \n\n  using `\"scope\": {\u0027unscoped\u0027: {}}` instead of `\"scope\": \"unscoped\"`",
       "revId": "2ea5083c07b49ac73dcafd45c19b50688dd63087",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
