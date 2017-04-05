@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff0334d_b593c84f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-05T18:57:05Z",
+      "side": 1,
+      "message": "keystone gate is failing as per https://review.openstack.org/#/c/437563/6",
+      "revId": "56c85071852b41812e6fc2d7611842026de13f41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
