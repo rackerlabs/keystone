@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff0334d_87a4160a",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T21:27:21Z",
+      "side": 1,
+      "message": "The way I understand this name, you\u0027re testing something about the length of a single event, and then passing in a length and a token. Based on the name alone, I have no idea what you\u0027re testing until I read the implementation. So, I\u0027d request a better name.\n\nDespite it\u0027s name, list_events is really returning the list of events that match a token, thus indicating that it\u0027s been revoked, right?\n\nSo, why not add another (perhaps required?) argument to _assertTokenRevoked so that you can call:\n\n  self._assertTokenRevoked(token, matching_events\u003d2)\n\nSimilarly, matching zero events is implied by _assertTokenNotRevoked()",
+      "revId": "9e95793f924a5bffa2f1c905e830dad974ed7810",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
