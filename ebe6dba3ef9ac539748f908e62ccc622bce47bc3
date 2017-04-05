@@ -33,6 +33,24 @@
       "revId": "ebe6dba3ef9ac539748f908e62ccc622bce47bc3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_47f96e7e",
+        "filename": "keystone/common/policies/implied_role.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T21:40:54Z",
+      "side": 1,
+      "message": "Yeah, that threw me off, too.",
+      "parentUuid": "dfeb2761_ae965e4b",
+      "revId": "ebe6dba3ef9ac539748f908e62ccc622bce47bc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
