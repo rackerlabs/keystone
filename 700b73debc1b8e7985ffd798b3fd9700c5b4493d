@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff0334d_d29f77b2",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-05T23:54:18Z",
+      "side": 1,
+      "message": "there could be another test revoking only by project and showing both were revoked",
+      "revId": "700b73debc1b8e7985ffd798b3fd9700c5b4493d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
