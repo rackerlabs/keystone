@@ -45,6 +45,29 @@
       "revId": "45a1610df466a41494f343d4c2569509aa087f14",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_32858eae",
+        "filename": "keystone/common/policies/access_token.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-05T18:37:08Z",
+      "side": 1,
+      "message": "Please make it explicit it\u0027s dealing with *OAUTH1* tokens.\n\nFor example:\n\n    Authorize OAUTH1 request token.\n    Get OAUTH1 access token for user by access token ID.\n    List OAUTH1 access tokens for user.\n    ...",
+      "range": {
+        "startLine": 21,
+        "startChar": 21,
+        "endLine": 21,
+        "endChar": 45
+      },
+      "revId": "45a1610df466a41494f343d4c2569509aa087f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
