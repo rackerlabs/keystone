@@ -34,6 +34,24 @@
       "revId": "56c85071852b41812e6fc2d7611842026de13f41",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_b89f3fb3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-04-05T19:19:06Z",
+      "side": 1,
+      "message": "Hmm, I should probably clarify this. I tested this patch with browne\u0027s bandit change and it passes (same with the keystoneclient change).",
+      "parentUuid": "bff0334d_f5c15030",
+      "revId": "56c85071852b41812e6fc2d7611842026de13f41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
