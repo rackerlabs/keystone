@@ -16,6 +16,24 @@
       "revId": "1792f2667c491b8c3a07346afba7bfe5d635247e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_6c60d933",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T21:16:06Z",
+      "side": 1,
+      "message": "... or maybe that\u0027s not what this title is referring to at all.",
+      "parentUuid": "bff0334d_ace141d3",
+      "revId": "1792f2667c491b8c3a07346afba7bfe5d635247e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
