@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff0334d_ec6cf09d",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1265,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-04-05T17:54:11Z",
+      "side": 1,
+      "message": "You can remove this method now",
+      "range": {
+        "startLine": 1265,
+        "startChar": 12,
+        "endLine": 1265,
+        "endChar": 54
+      },
+      "revId": "3771f6814de72917c99e82313531876381511603",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
