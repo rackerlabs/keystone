@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff0334d_92821ac8",
+        "filename": "keystone/common/policies/role_assignment.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-05T18:34:00Z",
+      "side": 1,
+      "message": "this one also has a HEAD.",
+      "revId": "1128939b69af744d0725ec00500a11a051b9b1aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
