@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff0334d_07ab661d",
+        "filename": "keystone/common/policies/trust.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T21:48:26Z",
+      "side": 1,
+      "message": "\"List roles delegated by a trust.\"",
+      "revId": "0d4c663ad71b8f09b1ad58433bd859416776cec6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_47884ec5",
+        "filename": "keystone/common/policies/trust.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T21:48:26Z",
+      "side": 1,
+      "message": "This checks to see if a trust delegates a particular role.",
+      "revId": "0d4c663ad71b8f09b1ad58433bd859416776cec6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_e78e42cf",
+        "filename": "keystone/common/policies/trust.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-05T21:48:26Z",
+      "side": 1,
+      "message": "Use the term \"revoke\"",
+      "revId": "0d4c663ad71b8f09b1ad58433bd859416776cec6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
