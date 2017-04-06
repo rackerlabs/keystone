@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff0334d_a29ecc60",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-06T13:18:15Z",
+      "side": 1,
+      "message": "this has head too, as the router is the generic one\n\nhttps://github.com/openstack/keystone/blob/master/keystone/assignment/routers.py#L71-L74\n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/router.py#L43-L52",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 40
+      },
+      "revId": "d0fbac046fb64b0ce0fce945a41c950cf579fd19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_829bc870",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-06T13:18:15Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 40
+      },
+      "revId": "d0fbac046fb64b0ce0fce945a41c950cf579fd19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_428f002a",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-06T13:18:15Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 40
+      },
+      "revId": "d0fbac046fb64b0ce0fce945a41c950cf579fd19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_e27df41c",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-06T13:18:15Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 40
+      },
+      "revId": "d0fbac046fb64b0ce0fce945a41c950cf579fd19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
