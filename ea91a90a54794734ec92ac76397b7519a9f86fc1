@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff0334d_8ec65967",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-06T12:11:53Z",
+      "side": 1,
+      "message": "expand before migrate ? these math operators got me confused",
+      "range": {
+        "startLine": 269,
+        "startChar": 30,
+        "endLine": 269,
+        "endChar": 47
+      },
+      "revId": "ea91a90a54794734ec92ac76397b7519a9f86fc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_0ebda964",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1720,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-06T12:11:53Z",
+      "side": 1,
+      "message": "is this just running contact without expand+migrate?\n\nit\u0027d be great if were exhaustive on these tests:\n\n    just migrate\n    just contract\n    run expand then contract\n\ncan you please add the missing test case?\n\nalso, what if we check on the error message being given? would that be good since we\u0027ll be sure what\u0027s the reason of the DBMigrationError?",
+      "revId": "ea91a90a54794734ec92ac76397b7519a9f86fc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
