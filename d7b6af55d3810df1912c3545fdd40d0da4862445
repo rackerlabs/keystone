@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff0334d_0d9fd95f",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-06T21:40:35Z",
+      "side": 1,
+      "message": "Aha - so this step would have otherwise been done when `flush()` is called on line 292, right? Which commits all the changes at once, instead of truly doing it in batches.",
+      "revId": "d7b6af55d3810df1912c3545fdd40d0da4862445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
