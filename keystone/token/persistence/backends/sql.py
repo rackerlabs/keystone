@@ -285,6 +285,7 @@ class Token(token.persistence.TokenDriverBase):
                 delete_query = query.filter(TokenModel.expires <=
                                             expiry_time)
                 row_count = delete_query.delete(synchronize_session=False)
+                session.commit()
                 total_removed += row_count
                 LOG.debug('Removed %d total expired tokens', total_removed)
 
