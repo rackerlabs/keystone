@@ -81,6 +81,24 @@
       "revId": "ea91a90a54794734ec92ac76397b7519a9f86fc1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_527e9c19",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1720,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-06T21:08:14Z",
+      "side": 1,
+      "message": "so the test above is also running expand + migrate in _set_db_sync_command_versions ? they both call the same method",
+      "parentUuid": "bff0334d_68e9c518",
+      "revId": "ea91a90a54794734ec92ac76397b7519a9f86fc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
