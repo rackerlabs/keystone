@@ -16,6 +16,24 @@
       "revId": "9e95793f924a5bffa2f1c905e830dad974ed7810",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_fd391541",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-04-06T13:50:14Z",
+      "side": 1,
+      "message": "I like your thinking, Done",
+      "parentUuid": "bff0334d_87a4160a",
+      "revId": "9e95793f924a5bffa2f1c905e830dad974ed7810",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
