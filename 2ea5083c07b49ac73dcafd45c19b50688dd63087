@@ -65,6 +65,24 @@
     },
     {
       "key": {
+        "uuid": "bff0334d_05b9c978",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 25559
+      },
+      "writtenOn": "2017-04-07T17:12:32Z",
+      "side": 1,
+      "message": "okay, in which other cases this token comes in parameter, as the other 5 cases mention this parameter in Response.",
+      "parentUuid": "bff0334d_5947121f",
+      "revId": "2ea5083c07b49ac73dcafd45c19b50688dd63087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfeb2761_4b7ea9af",
         "filename": "api-ref/source/v3/parameters.yaml",
         "patchSetId": 6
