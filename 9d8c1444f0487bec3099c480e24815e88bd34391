@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bff0334d_06a550b5",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-07T18:04:33Z",
+      "side": 1,
+      "message": "Whoops.",
+      "parentUuid": "9a30ddce_8363bfdb",
+      "revId": "9d8c1444f0487bec3099c480e24815e88bd34391",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a30ddce_c32bf7e9",
         "filename": "keystone/tests/unit/token/test_fernet_provider.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2017-03-08T15:35:52Z",
       "side": 1,
       "message": "Is this last bit necessary for the assertion (only asking because I typically don\u0027t see assertions setting values of any kind)?",
+      "revId": "9d8c1444f0487bec3099c480e24815e88bd34391",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_068e702d",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-04-07T18:04:33Z",
+      "side": 1,
+      "message": "Yes, actually. The way this assertion is used, it compares the last set of signatures it saw versus the current set, in order to ensure that they\u0027re unique (or non-unique). In this method, we just tested that they\u0027re already equal, so this line actually only needs to be in assertUniqueRepositoryState().",
+      "parentUuid": "9a30ddce_c32bf7e9",
       "revId": "9d8c1444f0487bec3099c480e24815e88bd34391",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
