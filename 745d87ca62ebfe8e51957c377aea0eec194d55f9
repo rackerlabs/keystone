@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff0334d_178e8dcf",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 905,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-04-08T13:08:24Z",
+      "side": 1,
+      "message": "you can remove this logic now",
+      "range": {
+        "startLine": 884,
+        "startChar": 0,
+        "endLine": 905,
+        "endChar": 52
+      },
+      "revId": "745d87ca62ebfe8e51957c377aea0eec194d55f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_f7be8963",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1334,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-04-08T13:08:24Z",
+      "side": 1,
+      "message": "remove the white space here",
+      "range": {
+        "startLine": 1334,
+        "startChar": 56,
+        "endLine": 1334,
+        "endChar": 64
+      },
+      "revId": "745d87ca62ebfe8e51957c377aea0eec194d55f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_d7c145e6",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1334,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-04-08T13:08:24Z",
+      "side": 1,
+      "message": "\"At least\"",
+      "range": {
+        "startLine": 1334,
+        "startChar": 22,
+        "endLine": 1334,
+        "endChar": 29
+      },
+      "revId": "745d87ca62ebfe8e51957c377aea0eec194d55f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
