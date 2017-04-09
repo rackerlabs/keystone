@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff0334d_a448ca86",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1333,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-09T15:17:22Z",
+      "side": 1,
+      "message": "I am confused about how these options are exercised - it looks like line 1329 will guarantee options.all to be true",
+      "revId": "70e1ac995903f3fc88e95ab23db628242d9c4111",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
