@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff0334d_80c23258",
+        "filename": "releasenotes/notes/bp-policy-in-code-722372a27291b9cd.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-10T18:23:31Z",
+      "side": 1,
+      "message": "Why should we duplicate the same thing in features and upgrade ? Does the feature description describes the upgrade impact ? We could possibly split the feature description from the upgrade actions between there topics.",
+      "revId": "08feb508a8cb5c8ddcaaf6708f525c962592cde4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
