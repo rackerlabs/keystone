@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff0334d_9b9ce3c0",
+        "filename": "keystone/common/policies/project_endpoint.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-10T18:40:41Z",
+      "side": 1,
+      "message": "does it error if not ?\n\nthis details could\u0027ve been omitted.",
+      "range": {
+        "startLine": 53,
+        "startChar": 66,
+        "endLine": 54,
+        "endChar": 60
+      },
+      "revId": "273e8417d4a14a4c6d7eb514bce0cb317bd13d25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
