@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff0334d_e0569e2a",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-10T18:36:41Z",
+      "side": 1,
+      "message": "both should have HEAD, as the default router is used\n\nhttps://github.com/openstack/keystone/blob/master/keystone/identity/routers.py#L36-L39\n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/router.py#L43-L52",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 40
+      },
+      "revId": "e7220edf149f7231b20089615e910268e24ff018",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
