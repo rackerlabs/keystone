@@ -16,6 +16,24 @@
       "revId": "d7b6af55d3810df1912c3545fdd40d0da4862445",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_09f65cfa",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-04-10T13:08:37Z",
+      "side": 1,
+      "message": "maybe add a comment here, but lgtm",
+      "parentUuid": "bff0334d_0d9fd95f",
+      "revId": "d7b6af55d3810df1912c3545fdd40d0da4862445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
