@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "bff0334d_4610c2a8",
+        "filename": "keystone/common/sql/contract_repo/versions/023_contract_url_patterns.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-04-10T20:22:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bff0334d_8fd613c3",
+      "revId": "5565811c48aa8c86a71b095475ac67e5aab843e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bff0334d_4fe00b97",
         "filename": "keystone/common/sql/data_migration_repo/versions/023_migrate_url_patterns.py",
         "patchSetId": 14
@@ -53,6 +71,24 @@
       "writtenOn": "2017-04-07T19:43:55Z",
       "side": 1,
       "message": "^ Remove",
+      "revId": "5565811c48aa8c86a71b095475ac67e5aab843e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_e61eb6b9",
+        "filename": "keystone/common/sql/data_migration_repo/versions/023_migrate_url_patterns.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-04-10T20:22:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bff0334d_4fe00b97",
       "revId": "5565811c48aa8c86a71b095475ac67e5aab843e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -76,6 +112,24 @@
     },
     {
       "key": {
+        "uuid": "bff0334d_86680a1d",
+        "filename": "keystone/tests/unit/assignment/role_backends/test_sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-04-10T20:22:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bff0334d_0f88c36e",
+      "revId": "5565811c48aa8c86a71b095475ac67e5aab843e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bff0334d_2fc82720",
         "filename": "keystone/tests/unit/assignment/test_core.py",
         "patchSetId": 14
@@ -87,6 +141,24 @@
       "writtenOn": "2017-04-07T19:43:55Z",
       "side": 1,
       "message": "The comment is redundant with the @wip. Explain what\u0027s missing, and when this can be expected to be removed.\n\n  Feature X isn\u0027t implemented\n\n  API call X doesn\u0027t support parameter Y\n\netc",
+      "revId": "5565811c48aa8c86a71b095475ac67e5aab843e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_813d9490",
+        "filename": "keystone/tests/unit/assignment/test_core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-04-10T20:22:26Z",
+      "side": 1,
+      "message": "These 2 tests were mistakenly included here. Removed.",
+      "parentUuid": "bff0334d_2fc82720",
       "revId": "5565811c48aa8c86a71b095475ac67e5aab843e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
