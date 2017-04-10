@@ -16,6 +16,24 @@
       "revId": "70e1ac995903f3fc88e95ab23db628242d9c4111",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_497d847d",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1333,
+      "author": {
+        "id": 19690
+      },
+      "writtenOn": "2017-04-10T13:04:41Z",
+      "side": 1,
+      "message": "The idea is to check the conditions with single option enabled. I would appreciate any suggestion or workaround.",
+      "parentUuid": "bff0334d_a448ca86",
+      "revId": "70e1ac995903f3fc88e95ab23db628242d9c4111",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
