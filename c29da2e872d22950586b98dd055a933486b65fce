@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff0334d_7ace8f63",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-11T20:43:06Z",
+      "side": 1,
+      "message": "what\u0027s the advantage of this approach ? Please explain what\u0027s wrong with the existing code\n\ndoes it happen in other places in keystone ?",
+      "revId": "c29da2e872d22950586b98dd055a933486b65fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
