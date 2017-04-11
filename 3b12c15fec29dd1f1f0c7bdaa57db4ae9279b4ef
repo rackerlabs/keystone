@@ -39,6 +39,40 @@
       "revId": "3b12c15fec29dd1f1f0c7bdaa57db4ae9279b4ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_1da787bf",
+        "filename": "keystone/common/policies/endpoint_group.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-11T15:49:55Z",
+      "side": 1,
+      "message": "This is a little difficult to read. Maybe something like \"Check if an endpoint group is associated with a project\"",
+      "revId": "3b12c15fec29dd1f1f0c7bdaa57db4ae9279b4ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_ddb7dff4",
+        "filename": "keystone/common/policies/endpoint_group.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-11T15:49:55Z",
+      "side": 1,
+      "message": "nit: \"Allow a project to access an endpoint group\"",
+      "revId": "3b12c15fec29dd1f1f0c7bdaa57db4ae9279b4ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
