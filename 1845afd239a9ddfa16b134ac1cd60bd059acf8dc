@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff0334d_f9de303c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-11T19:44:25Z",
+      "side": 1,
+      "message": "Is a 403 still returned if a user attempts to write to an ldap-backed keystone? What catches that logic if it\u0027s no longer being caught by the logic you\u0027re removing?",
+      "revId": "1845afd239a9ddfa16b134ac1cd60bd059acf8dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_f9e870b3",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-11T19:44:25Z",
+      "side": 1,
+      "message": "Aha - nice. This essentially answers the question I had in the commit message.",
+      "revId": "1845afd239a9ddfa16b134ac1cd60bd059acf8dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_19ff9467",
+        "filename": "keystone/tests/unit/filtering.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-11T19:44:25Z",
+      "side": 1,
+      "message": "We could log something here so that operators have some insight, just saying \"hey, someone is trying to write to LDAP but its not supported\"",
+      "revId": "1845afd239a9ddfa16b134ac1cd60bd059acf8dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
