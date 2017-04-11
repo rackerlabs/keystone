@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bff0334d_d497b147",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-04-11T20:09:18Z",
+      "side": 1,
+      "message": "As answered in IRC, [0][1] already did that. More specifically: \n\nhttps://github.com/openstack/keystone/blob/af4e98c770d771144463e6dd49cb4b559d48c403/keystone/identity/backends/ldap/core.py#L155-L161\n\nhttps://github.com/openstack/keystone/blob/fa63f893d487d54fe932e42ad9b53eea7a24932f/keystone/tests/unit/ksfixtures/ldapdb.py#L29",
+      "parentUuid": "bff0334d_f9de303c",
+      "revId": "1845afd239a9ddfa16b134ac1cd60bd059acf8dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bff0334d_f9e870b3",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 9
@@ -47,6 +65,24 @@
       "writtenOn": "2017-04-11T19:44:25Z",
       "side": 1,
       "message": "We could log something here so that operators have some insight, just saying \"hey, someone is trying to write to LDAP but its not supported\"",
+      "revId": "1845afd239a9ddfa16b134ac1cd60bd059acf8dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_54bf21d0",
+        "filename": "keystone/tests/unit/filtering.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-04-11T20:09:18Z",
+      "side": 1,
+      "message": "As answered in IRC, that has already been done in [0][1] (references in commit message)",
+      "parentUuid": "bff0334d_19ff9467",
       "revId": "1845afd239a9ddfa16b134ac1cd60bd059acf8dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

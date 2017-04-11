@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bff0334d_94c80974",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-04-11T20:09:18Z",
+      "side": 0,
+      "message": "Nice catch! Will do in the next patchset.",
+      "parentUuid": "bff0334d_19b1d4e1",
+      "revId": "c45912533620b7dc2d6bd2dac293b7dcb39759ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bff0334d_19343449",
         "filename": "keystone/tests/unit/identity/test_backends.py",
         "patchSetId": 9
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "bff0334d_14dcf943",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 764,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-04-11T20:09:18Z",
+      "side": 0,
+      "message": "Will do in the next patchset.",
+      "parentUuid": "bff0334d_19343449",
+      "revId": "c45912533620b7dc2d6bd2dac293b7dcb39759ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bff0334d_b93c282f",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 9
@@ -47,6 +83,24 @@
       "writtenOn": "2017-04-11T19:44:25Z",
       "side": 0,
       "message": "Is this whole test being removed because this bit is no longer relevant?",
+      "revId": "c45912533620b7dc2d6bd2dac293b7dcb39759ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_543161a2",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 695,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-04-11T20:09:18Z",
+      "side": 0,
+      "message": "Yes. The tests purpose is checking that bypassing the user interface and using directly the driver to delete a user results in the user not showing up in the group list anymore. We already have tests for creating a group and adding it to a user, so this test would basically be a duplicate of those without the delete bit.",
+      "parentUuid": "bff0334d_b93c282f",
       "revId": "c45912533620b7dc2d6bd2dac293b7dcb39759ff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
