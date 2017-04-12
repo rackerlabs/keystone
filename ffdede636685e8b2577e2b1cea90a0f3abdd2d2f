@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff0334d_16e97ee4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-12T14:35:39Z",
+      "side": 1,
+      "message": "Okay, but what is the advantage of this ? Please describe in the commit message",
+      "revId": "ffdede636685e8b2577e2b1cea90a0f3abdd2d2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
