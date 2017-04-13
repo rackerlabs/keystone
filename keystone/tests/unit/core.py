@@ -410,6 +410,7 @@ def new_route_ref(**kwargs):
         'service': uuid.uuid4().hex,
         'verb': uuid.uuid4().hex,
         'path': uuid.uuid4().hex,
+        'body_key': None,
         'role_id': uuid.uuid4().hex,
 
     }
