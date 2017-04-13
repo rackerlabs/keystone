@@ -273,13 +273,14 @@ class RoleTable(sql.ModelBase, sql.ModelDictMixinWithExtras):
 class RouteTable(sql.ModelBase, sql.ModelDictMixin):
 
     __tablename__ = 'route'
-    attributes = ['id', 'service', 'verb', 'path', 'role_id']
+    attributes = ['id', 'service', 'verb', 'path', 'body_key', 'role_id']
     id = sql.Column(sql.String(64), primary_key=True)
 
     id = sql.Column(sql.String(length=64), primary_key=True)
     service = sql.Column(sql.String(length=64), nullable=False)
     verb = sql.Column(sql.String(length=64))
     path = sql.Column(sql.Text, nullable=False)
+    body_key = sql.Column(sql.Text, nullable=True)
     role_id = sql.Column(sql.String(length=64))
 
     @classmethod

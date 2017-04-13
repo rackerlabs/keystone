@@ -3027,7 +3027,7 @@ def bulk_routes_validator(*args, **kwargs):
 
 
 class RouteTests(test_v3.RestfulTestCase, test_v3.AssignmentTestMixin,
-                      unit.TestCase):
+                 unit.TestCase):
 
     service_1_rules = {
         'routes': [
@@ -3108,7 +3108,7 @@ class RouteTests(test_v3.RestfulTestCase, test_v3.AssignmentTestMixin,
 
         get_response = self.get('/routes/%s' % route_1_id)
         self.assertValidRouteResponse(get_response,
-                                           route_1_updated['route'])
+                                      route_1_updated['route'])
 
         bad_route_1_updated = {
             'route': {
@@ -3138,11 +3138,11 @@ class RouteTests(test_v3.RestfulTestCase, test_v3.AssignmentTestMixin,
             'id': route_1_id
         }
         self.assertValidRouteResponse(patch_response,
-                                           route_1_subset_expected)
+                                      route_1_subset_expected)
 
         get_response = self.get('/routes/%s' % route_1_id)
         self.assertValidRouteResponse(get_response,
-                                           route_1_subset_expected)
+                                      route_1_subset_expected)
 
         self.delete('/routes/%s' % route_1_id)
         get_response = self.get('/routes/%s' % route_1_id,
@@ -3159,7 +3159,7 @@ class RouteTests(test_v3.RestfulTestCase, test_v3.AssignmentTestMixin,
                 post_response = self.post('/routes',
                                           body={'route': new_route})
                 self.assertValidRouteResponse(post_response,
-                                                   new_route)
+                                              new_route)
         list_response = self.get('/routes')
         self.assertValidListResponse(
             list_response, 'routes', route_validator,
