@@ -34,6 +34,64 @@
       "revId": "70e1ac995903f3fc88e95ab23db628242d9c4111",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_bc4dc173",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1333,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-17T21:22:56Z",
+      "side": 1,
+      "message": "You should test that the exception is raised when no options are set, then set each option individually, then try setting more than one option and test that an exception is raised. There\u0027s no need for a conditional unless you wanted to involve a loop somehow. The way this is written, these assertions will never be reached.",
+      "parentUuid": "bff0334d_497d847d",
+      "revId": "70e1ac995903f3fc88e95ab23db628242d9c4111",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_9c3a0596",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1335,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-17T21:22:56Z",
+      "side": 1,
+      "message": "assertRaises needs to be run on a function:\n\nhttps://docs.python.org/2/library/unittest.html#unittest.TestCase.assertRaises",
+      "revId": "70e1ac995903f3fc88e95ab23db628242d9c4111",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_5c447d1b",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1339,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-17T21:22:56Z",
+      "side": 1,
+      "message": "These aren\u0027t really necessary",
+      "range": {
+        "startLine": 1336,
+        "startChar": 12,
+        "endLine": 1339,
+        "endChar": 42
+      },
+      "revId": "70e1ac995903f3fc88e95ab23db628242d9c4111",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
