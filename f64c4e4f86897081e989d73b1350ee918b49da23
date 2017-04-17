@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ffa3b31_a5912e9c",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-17T14:22:16Z",
+      "side": 1,
+      "message": "\u0027Z\u0027 is expected to be at the end in tempest tests, which maybe means this is a backward incompatible change.\n\nIf we really need to fix this, tempest tests would need to be updated",
+      "revId": "f64c4e4f86897081e989d73b1350ee918b49da23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
