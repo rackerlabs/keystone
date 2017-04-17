@@ -16,6 +16,24 @@
       "revId": "3ed21ebc6cd414a01c7db5e523e8cffdee4eb89d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_255abef2",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-17T14:25:52Z",
+      "side": 1,
+      "message": "Lance, all comments have been addressed there and the changed merged. Can you please take another look and see if you still have concerns?",
+      "parentUuid": "1a1ced50_4f988e1c",
+      "revId": "3ed21ebc6cd414a01c7db5e523e8cffdee4eb89d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
