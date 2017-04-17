@@ -52,6 +52,24 @@
       "revId": "d7b6af55d3810df1912c3545fdd40d0da4862445",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_3f7bf18c",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-17T12:55:16Z",
+      "side": 1,
+      "message": "As per https://review.openstack.org/#/c/454894 this should contain:\n\n   if not session.autocommit:\n\nCorrect ?",
+      "parentUuid": "7ffa3b31_0865afb5",
+      "revId": "d7b6af55d3810df1912c3545fdd40d0da4862445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
