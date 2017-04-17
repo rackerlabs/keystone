@@ -39,6 +39,24 @@
       "revId": "be8cd62bbc8dfbe930d3f7317078e75ab7c52f2a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_3f952341",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 22219
+      },
+      "writtenOn": "2017-04-17T22:12:34Z",
+      "side": 1,
+      "message": "The naming between \u0027grant_collections\u0027 and \u0027grant_resources\u0027 doesn\u0027t indicate a difference. However the both contain different sets of \u0027paths\u0027.\n\nI went about doing it this way to cut down the duplication of code when doing \u0027operations\u003d\u0027blahblahblah\u0027\u0027",
+      "parentUuid": "dfeb2761_04d018f7",
+      "revId": "be8cd62bbc8dfbe930d3f7317078e75ab7c52f2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
