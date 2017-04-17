@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ffa3b31_d602ac0b",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 1748,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-17T21:05:31Z",
+      "side": 0,
+      "message": "I see a few different comments asking for this not to be removed. I see that you explained that this condition is no longer reachable. I think that if it\u0027s not possible to reach a condition that would satisfy this test, the code that logs the \"Your database is out of sync\" message should be removed. Otherwise, this test should stay.",
+      "revId": "2dbd5d99bbf71ad5c4a81f54e8d4ce0de258ab00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
