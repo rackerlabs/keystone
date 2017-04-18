@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ffa3b31_a490df4f",
+        "filename": "keystone/common/policies/domain_config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-18T22:42:26Z",
+      "side": 1,
+      "message": "I wouldn\u0027t be opposed to breaking this block into three separate sections. The first would document the ability to return the entire configuration for a specific domain. The second would document the ability to return a specific configuration group for a domain. The third would document the ability to return a specific option within a group for a given domain. I think that will help show the relationship between each variation, while clearly documenting each.",
+      "revId": "bd6cd44dfaded1f89b394238ff14803274f04f94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
