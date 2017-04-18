@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ffa3b31_eee496ae",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2017-04-18T14:02:49Z",
+      "side": 1,
+      "message": "I know this was as it was before, but maybe this would be clearer if it said :To add tests for new drivers,...\"",
+      "range": {
+        "startLine": 337,
+        "startChar": 0,
+        "endLine": 337,
+        "endChar": 18
+      },
+      "revId": "6a0d0fe97aa0fcf66018ac97481b074680e35ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
