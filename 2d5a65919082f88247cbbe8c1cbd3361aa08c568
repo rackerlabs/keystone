@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ffa3b31_6b46387f",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-18T13:41:24Z",
+      "side": 1,
+      "message": "A comment explaining this would be nice",
+      "revId": "2d5a65919082f88247cbbe8c1cbd3361aa08c568",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
