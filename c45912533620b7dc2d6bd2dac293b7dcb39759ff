@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "7ffa3b31_83fe00ac",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 764,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-04-18T18:13:26Z",
+      "side": 0,
+      "message": "Actually this cannot be done here since this test is shared by all backends, not just ldap.",
+      "parentUuid": "bff0334d_14dcf943",
+      "revId": "c45912533620b7dc2d6bd2dac293b7dcb39759ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bff0334d_b93c282f",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 9
