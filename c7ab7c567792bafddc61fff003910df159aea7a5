@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ffa3b31_2e74be67",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-04-18T13:47:18Z",
+      "side": 0,
+      "message": "this was unintentional but it actually makes the section uniform, all the bullet points are separated by one blank line, not two",
+      "revId": "c7ab7c567792bafddc61fff003910df159aea7a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
