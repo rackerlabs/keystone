@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7ffa3b31_69de3512",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-18T20:11:15Z",
+      "side": 0,
+      "message": "Can probably remove this too? http://git.openstack.org/cgit/openstack/keystone/tree/keystone/tests/unit/fakeldap.py#n45",
+      "revId": "c45912533620b7dc2d6bd2dac293b7dcb39759ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bff0334d_19b1d4e1",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 9
@@ -84,6 +101,23 @@
       "side": 0,
       "message": "Actually this cannot be done here since this test is shared by all backends, not just ldap.",
       "parentUuid": "bff0334d_14dcf943",
+      "revId": "c45912533620b7dc2d6bd2dac293b7dcb39759ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_6964f522",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 782,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-18T20:11:15Z",
+      "side": 0,
+      "message": "Could this get moved over to keystone.tests.unit.test_backends_sql?",
       "revId": "c45912533620b7dc2d6bd2dac293b7dcb39759ff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
