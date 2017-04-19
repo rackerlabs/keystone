@@ -101,6 +101,7 @@ Developers Documentation
    devref/api_change_tutorial
    devref/http-api
    devref/services
+   devref/rbac
 
 Sample Configuration File
 =========================
