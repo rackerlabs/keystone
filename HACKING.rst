@@ -31,6 +31,9 @@ Use the common logging module, and ensure you ``getLogger``::
 
     LOG.debug('Foobar')
 
+Logging messages should not be translated. If a message is used for
+both an exception and logging it should be translated.
+
 
 AssertEqual argument order
 --------------------------

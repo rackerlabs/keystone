@@ -156,11 +156,6 @@ class CheckForTranslationIssues(BaseASTChecker):
     )
     TRANS_HELPER_MAP = {
         'debug': None,
-        'info': '_LI',
-        'warning': '_LW',
-        'error': '_LE',
-        'exception': '_LE',
-        'critical': '_LC',
     }
 
     def __init__(self, tree, filename):
