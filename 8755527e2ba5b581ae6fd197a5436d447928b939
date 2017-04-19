@@ -187,6 +187,30 @@
       "revId": "8755527e2ba5b581ae6fd197a5436d447928b939",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_491c72c0",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-19T20:43:07Z",
+      "side": 1,
+      "message": "Sure - I\u0027m coming at this as someone who doesn\u0027t know much about the tempest plugin, so my feeling is that since you brought it up I\u0027d like to see an example of it, but I don\u0027t have strong feelings about what the example is.",
+      "parentUuid": "7ffa3b31_e9969e3e",
+      "range": {
+        "startLine": 489,
+        "startChar": 0,
+        "endLine": 491,
+        "endChar": 49
+      },
+      "revId": "8755527e2ba5b581ae6fd197a5436d447928b939",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
