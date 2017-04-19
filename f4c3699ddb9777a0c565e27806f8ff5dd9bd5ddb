@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "7ffa3b31_4378df28",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-04-19T15:57:02Z",
+      "side": 1,
+      "message": "should not be in wsgi.  The authorization code was scattered all over the code base, and this is consolidating it in one module.  Only a minimal aspect should be reflected in the web-specific technology files.  Access is a cross cutting concern, and should be remote-technology agnostic.",
+      "parentUuid": "3a1ff146_fb3a7397",
+      "revId": "f4c3699ddb9777a0c565e27806f8ff5dd9bd5ddb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a1ff146_1b102f01",
         "filename": "keystone/common/authorization.py",
         "patchSetId": 12
@@ -47,6 +65,24 @@
       "writtenOn": "2017-03-15T20:13:32Z",
       "side": 1,
       "message": "This is going to have to be refactored since the policy_api isn\u0027t going to be implementing `enforce` anymore.",
+      "revId": "f4c3699ddb9777a0c565e27806f8ff5dd9bd5ddb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_c3998f6e",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-04-19T15:57:02Z",
+      "side": 1,
+      "message": "agreed, but in a later review.  Attempting to keep this as a straight move.",
+      "parentUuid": "3a1ff146_1b102f01",
       "revId": "f4c3699ddb9777a0c565e27806f8ff5dd9bd5ddb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "7ffa3b31_639e3b55",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-04-19T15:57:02Z",
+      "side": 1,
+      "message": "yes...this was put in due to the cycle of dependencies.  It will go away eventually.",
+      "parentUuid": "3a1ff146_ef3475fc",
+      "revId": "f4c3699ddb9777a0c565e27806f8ff5dd9bd5ddb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a1ff146_c0e1469c",
         "filename": "keystone/common/authorization.py",
         "patchSetId": 12
@@ -81,6 +135,24 @@
       "writtenOn": "2017-03-15T20:13:32Z",
       "side": 1,
       "message": "There was a note here from Henry about making this method a member of v3 authentication only - since it\u0027s a v3-ism. We should keep that around because it would be nice refactor to have.",
+      "revId": "f4c3699ddb9777a0c565e27806f8ff5dd9bd5ddb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_e3bb6bc1",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-04-19T15:57:02Z",
+      "side": 1,
+      "message": "v2 has gone away, and this is going to have longer legs than just v3.  I think I managed to fulfill the intention of that comment by moving it here.",
+      "parentUuid": "3a1ff146_c0e1469c",
       "revId": "f4c3699ddb9777a0c565e27806f8ff5dd9bd5ddb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "dfeb2761_347bb8f5",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-04-19T15:57:02Z",
+      "side": 1,
+      "message": "Yep.  Just tried to keep the change as clear as possible.  Will remove and unindent.",
+      "parentUuid": "3a1ff146_120ad421",
+      "revId": "f4c3699ddb9777a0c565e27806f8ff5dd9bd5ddb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a1ff146_9235e4db",
         "filename": "keystone/common/authorization.py",
         "patchSetId": 12
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "dfeb2761_d4100cab",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-04-19T15:57:02Z",
+      "side": 1,
+      "message": "Because it really is controller specific code, and is never used for enforcing `admin` role.",
+      "parentUuid": "3a1ff146_9235e4db",
+      "revId": "f4c3699ddb9777a0c565e27806f8ff5dd9bd5ddb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a1ff146_af027d09",
         "filename": "keystone/common/authorization.py",
         "patchSetId": 12
@@ -132,6 +240,24 @@
       "writtenOn": "2017-03-15T20:13:32Z",
       "side": 1,
       "message": "This should be indented properly to be with the else statement like it was in the previous implementation.",
+      "revId": "f4c3699ddb9777a0c565e27806f8ff5dd9bd5ddb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_7446e0c2",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-04-19T15:57:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a1ff146_af027d09",
       "revId": "f4c3699ddb9777a0c565e27806f8ff5dd9bd5ddb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
