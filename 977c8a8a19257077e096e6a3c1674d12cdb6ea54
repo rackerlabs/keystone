@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ffa3b31_515e6644",
+        "filename": "keystone/common/policies/ec2_credential.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-19T14:51:20Z",
+      "side": 1,
+      "message": "So this is what you were asking me about the other day?! I\u0027ll do some double checking here because using the \u0027\u0027 technically means that the token sent with the request has to be valid in order to pass policy checks. That might not be the case if there isn\u0027t a token sent in the request or if the user is authenticating with a username and password. Let me do some double checking here just to make sure I didn\u0027t mislead you :)",
+      "revId": "977c8a8a19257077e096e6a3c1674d12cdb6ea54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
