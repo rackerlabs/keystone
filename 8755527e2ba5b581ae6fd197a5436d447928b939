@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7ffa3b31_a996564b",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-04-19T20:35:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ffa3b31_09678abf",
+      "range": {
+        "startLine": 483,
+        "startChar": 16,
+        "endLine": 484,
+        "endChar": 35
+      },
+      "revId": "8755527e2ba5b581ae6fd197a5436d447928b939",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ffa3b31_49ba320a",
         "filename": "doc/source/devref/development_best_practices.rst",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2017-04-19T20:25:35Z",
       "side": 1,
       "message": "omit this, the module is just keystone_tempest_plugin.tests.base",
+      "range": {
+        "startLine": 488,
+        "startChar": 8,
+        "endLine": 488,
+        "endChar": 17
+      },
+      "revId": "8755527e2ba5b581ae6fd197a5436d447928b939",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_0991ca4e",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-04-19T20:35:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ffa3b31_49ba320a",
       "range": {
         "startLine": 488,
         "startChar": 8,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "7ffa3b31_e981fefc",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-04-19T20:35:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ffa3b31_093e6a8b",
+      "range": {
+        "startLine": 489,
+        "startChar": 31,
+        "endLine": 489,
+        "endChar": 40
+      },
+      "revId": "8755527e2ba5b581ae6fd197a5436d447928b939",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ffa3b31_aead3c9c",
         "filename": "doc/source/devref/development_best_practices.rst",
         "patchSetId": 1
@@ -82,6 +154,30 @@
       "writtenOn": "2017-04-19T20:25:35Z",
       "side": 1,
       "message": "I don\u0027t really see this demonstrated in the example",
+      "range": {
+        "startLine": 489,
+        "startChar": 0,
+        "endLine": 491,
+        "endChar": 49
+      },
+      "revId": "8755527e2ba5b581ae6fd197a5436d447928b939",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_e9969e3e",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-04-19T20:35:10Z",
+      "side": 1,
+      "message": "hmm maybe include a snip from an API test? What do you think?",
+      "parentUuid": "7ffa3b31_aead3c9c",
       "range": {
         "startLine": 489,
         "startChar": 0,
