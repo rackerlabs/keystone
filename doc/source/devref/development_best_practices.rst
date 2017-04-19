@@ -474,6 +474,109 @@ from the tempest directory:
 .. _tempest: https://git.openstack.org/cgit/openstack/tempest
 .. _tempest plugin: https://docs.openstack.org/developer/tempest/plugin.html
 
+Writing new API & Scenario Tests
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When writing tests for the keystone tempest plugin, we should follow the
+official tempest guidelines, details about the guidelines can be found at the
+`tempest coding guide`_. There are also specific guides for the API and
+scenario tests: `Tempest Field Guide to API tests`_ and
+`Tempest Guide to Scenario tests`_.
+
+The keystone tempest plugin also provides a base class. For most cases, the
+tests should inherit from it:
+:class:`keystone_tempest_plugin.tests.base.BaseIdentityTest`.
+New API services clients :mod:`keystone_tempest_plugin.services`
+(which are used to communicate with the REST API from
+the services) should also be added to this class.
+
+To illustrate, let's analyze the scenario test that checks the complete
+federation authentication workflow
+(:py:mod:`keystone_tempest_plugin.tests.scenario.test_federated_authentication.py`).
+
+First, it inherits from the
+:class:`keystone_tempest_plugin.tests.base.BaseIdentityTest` class:
+
+.. code-block:: python
+
+    class TestSaml2EcpFederatedAuthentication(base.BaseIdentityTest):
+
+In the test setup, all of the needed resources are created using the API
+service clients. To setup the resources, some settings that comes from the
+environment are used:
+
+.. code-block:: python
+
+    def _setup_settings(self):
+        self.idp_id = CONF.fed_scenario.idp_id
+        self.idp_url = CONF.fed_scenario.idp_ecp_url
+        self.keystone_v3_endpoint = CONF.identity.uri_v3
+        self.password = CONF.fed_scenario.idp_password
+        self.protocol_id = CONF.fed_scenario.protocol_id
+        self.username = CONF.fed_scenario.idp_username
+
+    ...
+
+    def setUp(self):
+        super(TestSaml2EcpFederatedAuthentication, self).setUp()
+        self._setup_settings()
+
+        # Reset client's session to avoid getting garbage from another runs
+        self.saml2_client.reset_session()
+
+        # Setup identity provider, mapping and protocol
+        self._setup_idp()
+        self._setup_mapping()
+        self._setup_protocol()
+
+Finally, the tests perform the complete workflow of the feature, asserting its
+correctness in each step:
+
+.. code-block:: python
+
+    def _request_unscoped_token(self):
+        resp = self.saml2_client.send_service_provider_request(
+            self.keystone_v3_endpoint, self.idp_id, self.protocol_id)
+        self.assertEqual(http_client.OK, resp.status_code)
+        saml2_authn_request = etree.XML(resp.content)
+
+        relay_state = self._str_from_xml(
+            saml2_authn_request, self.ECP_RELAY_STATE)
+        sp_consumer_url = self._str_from_xml(
+            saml2_authn_request, self.ECP_SERVICE_PROVIDER_CONSUMER_URL)
+
+        # Perform the authn request to the identity provider
+        resp = self.saml2_client.send_identity_provider_authn_request(
+            saml2_authn_request, self.idp_url, self.username, self.password)
+        self.assertEqual(http_client.OK, resp.status_code)
+        saml2_idp_authn_response = etree.XML(resp.content)
+
+        idp_consumer_url = self._str_from_xml(
+            saml2_idp_authn_response, self.ECP_IDP_CONSUMER_URL)
+
+        # Assert that both saml2_authn_request and saml2_idp_authn_response
+        # have the same consumer URL.
+        self.assertEqual(sp_consumer_url, idp_consumer_url)
+
+        ...
+
+
+    @testtools.skipUnless(CONF.identity_feature_enabled.federation,
+                          "Federated Identity feature not enabled")
+    def test_request_unscoped_token(self):
+        self._request_unscoped_token()
+
+Notice that the ``test_request_unscoped_token`` test only executes if the the
+``federation`` feature flag is enabled.
+
+.. NOTE::
+   For each patch submitted upstream, all of the tests from the keystone
+   tempest plugin are executed in the
+   ``gate-keystone-dsvm-functional-v3-only-*`` job.
+
+.. _Tempest Field Guide to Scenario tests: https://docs.openstack.org/developer/tempest/field_guide/scenario.html
+.. _Tempest Field Guide to API tests: https://docs.openstack.org/developer/tempest/field_guide/api.html
+.. _tempest coding guide: https://docs.openstack.org/developer/tempest/HACKING.html
 
 Developing ``doctor`` checks
 ============================
