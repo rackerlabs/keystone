@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7ffa3b31_e71eacb9",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-04-20T14:55:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ffa3b31_cced17b8",
+      "range": {
+        "startLine": 494,
+        "startChar": 60,
+        "endLine": 494,
+        "endChar": 70
+      },
+      "revId": "e347876329fdfb6dc000058caabc2f178d6ba11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ffa3b31_2c40fba4",
         "filename": "doc/source/devref/development_best_practices.rst",
         "patchSetId": 4
@@ -59,6 +83,30 @@
       "writtenOn": "2017-04-20T14:13:18Z",
       "side": 1,
       "message": "I think I would move this whole section below the first example, so the logical flow is \"Inherit from BaseIdentityTest, here\u0027s an example ... Use services clients, here\u0027s an example\"",
+      "range": {
+        "startLine": 489,
+        "startChar": 0,
+        "endLine": 523,
+        "endChar": 71
+      },
+      "revId": "e347876329fdfb6dc000058caabc2f178d6ba11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_276ed42e",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-04-20T14:55:37Z",
+      "side": 1,
+      "message": "hmm makes sense :)",
+      "parentUuid": "7ffa3b31_2c7fdb15",
       "range": {
         "startLine": 489,
         "startChar": 0,
