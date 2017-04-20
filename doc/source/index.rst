@@ -110,6 +110,14 @@ Sample Configuration File
 
     sample_config
 
+Sample Policy File
+==================
+
+.. toctree::
+    :maxdepth: 1
+
+    sample_policy
+
 Man Pages
 =========
 
