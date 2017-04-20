@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ffa3b31_c9317b5c",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-20T20:29:09Z",
+      "side": 1,
+      "message": "Dolph had an additional comment here on patch set 8.",
+      "revId": "da9bab9a8dcd2c311a366fc3f94fa472a681da25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
