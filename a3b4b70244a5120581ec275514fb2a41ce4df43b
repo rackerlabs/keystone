@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "7ffa3b31_0902c30b",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-20T20:53:49Z",
+      "side": 1,
+      "message": "nit: Check a token.",
+      "revId": "a3b4b70244a5120581ec275514fb2a41ce4df43b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_740b5e23",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-20T20:53:49Z",
+      "side": 1,
+      "message": "As a reading, I\u0027m not entirely sure what we mean by \u0027auth\u0027 here. This is simply validating a token. \n\nnit: Validate a token.",
+      "revId": "a3b4b70244a5120581ec275514fb2a41ce4df43b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ffa3b31_f45d2e15",
         "filename": "keystone/common/policies/token_revocation.py",
         "patchSetId": 5
@@ -19,6 +53,40 @@
         "endLine": 33,
         "endChar": 40
       },
+      "revId": "a3b4b70244a5120581ec275514fb2a41ce4df43b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_f4440e49",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-20T20:53:49Z",
+      "side": 1,
+      "message": "This is doing the same thing as the policy above, but it\u0027s done on a separate path (which I assume is the reason why we have a separate policy for it, but that doesn\u0027t really make sense to me).\n\nI find the reference to head in the description here an anti-pattern with respect to the rest of the policies we\u0027ve committed. We can gather the HTTP verb by looking at the method generated from line 35. Instead, I\u0027d keep this as \"Validate a token\". We could also do this for GET /v2.0/tokens/{token_id} which is also \"Validate a token.\".",
+      "revId": "a3b4b70244a5120581ec275514fb2a41ce4df43b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_49756bca",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-20T20:53:49Z",
+      "side": 1,
+      "message": "Why is this the only one with v2.0 in the path? There are other v2.0 routes in keystone/token/routers.py that aren\u0027t documented here, like GET /v2.0/tokens/{token_id}",
       "revId": "a3b4b70244a5120581ec275514fb2a41ce4df43b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ffa3b31_690f0737",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-20T20:53:49Z",
+      "side": 0,
+      "message": "There are operations in this list that don\u0027t necessarily pertain to token revocation. For example, token validation is not necessarily a token revocation thing, it a token validation thing.\n\nFor improved readability, this could be renamed to something more representative of these operations as a whole.",
+      "revId": "9034755743875de39363dbdcd35477e82e37ea1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
