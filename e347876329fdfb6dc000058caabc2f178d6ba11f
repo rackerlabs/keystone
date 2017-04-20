@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ffa3b31_cced17b8",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-20T14:13:18Z",
+      "side": 1,
+      "message": "typo, ``idps_client``",
+      "range": {
+        "startLine": 494,
+        "startChar": 60,
+        "endLine": 494,
+        "endChar": 70
+      },
+      "revId": "e347876329fdfb6dc000058caabc2f178d6ba11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_2c40fba4",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-20T14:13:18Z",
+      "side": 1,
+      "message": "I was going to point out the typo in \"Indentity\" but actually that\u0027s really the class name :(",
+      "range": {
+        "startLine": 500,
+        "startChar": 10,
+        "endLine": 500,
+        "endChar": 19
+      },
+      "revId": "e347876329fdfb6dc000058caabc2f178d6ba11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_2c7fdb15",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-20T14:13:18Z",
+      "side": 1,
+      "message": "I think I would move this whole section below the first example, so the logical flow is \"Inherit from BaseIdentityTest, here\u0027s an example ... Use services clients, here\u0027s an example\"",
+      "range": {
+        "startLine": 489,
+        "startChar": 0,
+        "endLine": 523,
+        "endChar": 71
+      },
+      "revId": "e347876329fdfb6dc000058caabc2f178d6ba11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
