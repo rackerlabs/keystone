@@ -36,3 +36,4 @@ keystone/locale/*/LC_MESSAGES/*.mo
 releasenotes/build
 # sample config included in docs
 doc/source/_static/keystone.conf.sample
+etc/keystone.policy.yaml.sample
