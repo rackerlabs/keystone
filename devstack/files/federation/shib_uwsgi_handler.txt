@@ -1,0 +1,21 @@
+ProxyPass /Shibboleth.sso !
+<Location ~ "/identity/v3/auth/OS-FEDERATION/websso/mapped">
+  AuthType shibboleth
+  Require valid-user
+  ShibRequestSetting requireSession 1
+  ShibRequireSession On
+  ShibExportAssertion Off
+</Location>
+<Location /Shibboleth.sso>
+  SetHandler shib
+</Location>
+<Location /identity/v3/OS-FEDERATION/identity_providers/%IDP_ID%/protocols/mapped/auth>
+  ShibRequestSetting requireSession 1
+  AuthType shibboleth
+  ShibExportAssertion Off
+  Require valid-user
+</Location>
+<Location ~ "/identity/v3/auth/OS-FEDERATION/identity_providers/%IDP_ID%/protocols/mapped/websso">
+  AuthType shibboleth
+  Require valid-user
+</Location>
