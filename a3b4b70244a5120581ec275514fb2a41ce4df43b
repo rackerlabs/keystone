@@ -76,6 +76,24 @@
     },
     {
       "key": {
+        "uuid": "7ffa3b31_74b8fee3",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-20T21:05:00Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7ffa3b31_f4440e49",
+      "revId": "a3b4b70244a5120581ec275514fb2a41ce4df43b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ffa3b31_49756bca",
         "filename": "keystone/common/policies/token_revocation.py",
         "patchSetId": 5
