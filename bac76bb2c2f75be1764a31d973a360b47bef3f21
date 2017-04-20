@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ffa3b31_8f06d31b",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3390,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-20T21:23:36Z",
+      "side": 1,
+      "message": "might as well fix  the whole thing, \"inherited\" not \"inheritied\"",
+      "range": {
+        "startLine": 3390,
+        "startChar": 46,
+        "endLine": 3390,
+        "endChar": 56
+      },
+      "revId": "bac76bb2c2f75be1764a31d973a360b47bef3f21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
