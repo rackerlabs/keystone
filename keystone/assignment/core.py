@@ -938,14 +938,30 @@ class Manager(manager.Manager):
                     _domain = self.resource_api.get_domain(value)
                     new_assign['domain_name'] = _domain['name']
                 elif key == 'user_id':
-                    _user = self.identity_api.get_user(value)
+                    try:
+                        # Note(knikolla): Try to get the user, otherwise
+                        # if the user has been deleted in the backend
+                        # use populate the values.
+                        _user = self.identity_api.get_user(value)
+                    except exception.NotFound:
+                        _user['name'] = 'N/A'
+                        _user['user_domain_id'] = 'N/A'
+                        _user['user_domain_name'] = 'N/A'
                     new_assign['user_name'] = _user['name']
                     new_assign['user_domain_id'] = _user['domain_id']
                     new_assign['user_domain_name'] = (
                         self.resource_api.get_domain(_user['domain_id'])
                         ['name'])
                 elif key == 'group_id':
-                    _group = self.identity_api.get_group(value)
+                    try:
+                        # Note(knikolla): Try to get the group, otherwise
+                        # if the group has been deleted in the backend
+                        # use empty values.
+                        _group = self.identity_api.get_group(value)
+                    except exception.NotFound:
+                        _group['name'] = 'N/A'
+                        _group['group_domain_id'] = 'N/A'
+                        _group['group_domain_name'] = 'N/A'
                     new_assign['group_name'] = _group['name']
                     new_assign['group_domain_id'] = _group['domain_id']
                     new_assign['group_domain_name'] = (
