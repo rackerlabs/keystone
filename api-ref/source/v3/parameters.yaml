@@ -1059,6 +1059,12 @@ password_request_body:
   in: body
   required: false
   type: string
+path_query:
+  description: |
+    Filters the response by path.
+  in: query
+  required: false
+  type: string
 policies:
   description: |
     A ``policies`` object.
@@ -1324,6 +1330,12 @@ roles:
   in: body
   required: true
   type: array
+routes:
+  description: |
+    A list of ``route`` objects, each containing:
+  in: body
+  required: true
+  type: array
 scope_string:
   description: |
     The authorization scope.  (Since v3.4) Specify
@@ -1511,3 +1523,9 @@ users_object:
   in: body
   required: true
   type: array
+verb_query:
+ description: |
+    Filters the response by a verb (HTTP method).
+  in: query
+  required: false
+  type: string

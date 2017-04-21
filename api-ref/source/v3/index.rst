@@ -154,6 +154,7 @@ This page lists the Identity API operations in the following order:
 * `Projects`_
 * `Regions`_
 * `Roles`_
+* `Routes`_
 * `Service catalog and endpoints`_
 * `Users`_
 * `OS-INHERIT API`_
@@ -172,5 +173,6 @@ This page lists the Identity API operations in the following order:
 .. include:: projects.inc
 .. include:: regions-v3.inc
 .. include:: roles.inc
+.. include:: routes.inc
 .. include:: service-catalog.inc
 .. include:: users.inc
