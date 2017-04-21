@@ -34,6 +34,24 @@
       "revId": "c29eca28b444f0c7488032929638238668861159",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_dda6b9c1",
+        "filename": "doc/source/sample_policy.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-04-21T19:47:31Z",
+      "side": 1,
+      "message": "If we have this documented somewhere else i\u0027d be OK pushing it through. I just don\u0027t want people to start copying again.",
+      "parentUuid": "7ffa3b31_dd0a39d0",
+      "revId": "c29eca28b444f0c7488032929638238668861159",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
