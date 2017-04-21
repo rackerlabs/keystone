@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ffa3b31_66671bb9",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-21T14:27:35Z",
+      "side": 1,
+      "message": "Nothing that you need to change, but as a side note it\u0027s interesting and confusing to me that *_as_ids and *_as_list has different behavior here.",
+      "revId": "070d623f0391dfed9e17b11c47471610ec8694c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_66b27b4b",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-21T14:27:35Z",
+      "side": 1,
+      "message": "Is there ever a case when this wouldn\u0027t be true? In order to make this request you must be authenticated, so the user id will be in the request context.",
+      "range": {
+        "startLine": 247,
+        "startChar": 40,
+        "endLine": 248,
+        "endChar": 23
+      },
+      "revId": "070d623f0391dfed9e17b11c47471610ec8694c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_66e03b27",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-21T14:27:35Z",
+      "side": 1,
+      "message": "nit - will, not should (same note below)",
+      "range": {
+        "startLine": 248,
+        "startChar": 43,
+        "endLine": 248,
+        "endChar": 49
+      },
+      "revId": "070d623f0391dfed9e17b11c47471610ec8694c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
