@@ -16,6 +16,24 @@
       "revId": "c29eca28b444f0c7488032929638238668861159",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_dd0a39d0",
+        "filename": "doc/source/sample_policy.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-21T19:40:47Z",
+      "side": 1,
+      "message": "Yeah - that is true. I attempted to keep this formatted similarly to the existing sample configuration doc, but i can respin if necessary.",
+      "parentUuid": "7ffa3b31_3de59d38",
+      "revId": "c29eca28b444f0c7488032929638238668861159",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
