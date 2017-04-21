@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ffa3b31_9d0baad4",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-04-21T02:13:16Z",
+      "side": 1,
+      "message": "you could make this one section \"Sample files\" and list both here",
+      "range": {
+        "startLine": 105,
+        "startChar": 0,
+        "endLine": 114,
+        "endChar": 18
+      },
+      "revId": "e90f97d51d3ca48eb0eac00872032e26892cc2bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
