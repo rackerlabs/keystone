@@ -1,0 +1,12 @@
+{
+    "route": {
+        "id": "b8c0c59d62ff40a799546f2c2e30d351",
+        "links": {
+            "self": "http://192.168.0.16/identity/v3/routes/b8c0c59d62ff40a799546f2c2e30d351"
+        },
+        "path": "/servers/{server_id}",
+        "role_id": "0869e95ac37340bf892a1059473fae0a",
+        "service": "compute",
+        "verb": "GET"
+    }
+}

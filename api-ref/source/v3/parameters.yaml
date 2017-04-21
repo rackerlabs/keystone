@@ -96,6 +96,12 @@ role_id_path:
   in: path
   required: true
   type: string
+route_id_path:
+  description: |
+    The route ID.
+  in: path
+  required: true
+  type: string
 service_id_path:
   description: |
     The service ID.
@@ -1059,6 +1065,18 @@ password_request_body:
   in: body
   required: false
   type: string
+path_query:
+  description: |
+    Filters the response by path.
+  in: query
+  required: false
+  type: string
+path_response_body:
+  description: |
+    The path of the route.
+  in: body
+  required: true
+  type: string
 policies:
   description: |
     A ``policies`` object.
@@ -1324,6 +1342,24 @@ roles:
   in: body
   required: true
   type: array
+route_id_response_body:
+  description: |
+    The route ID.
+  in: body
+  required: true
+  type: string
+route:
+  description: |
+    A ``route`` object, containing:
+  in: body
+  required: true
+  type: object
+routes:
+  description: |
+    A list of ``route`` objects, each containing:
+  in: body
+  required: true
+  type: array
 scope_string:
   description: |
     The authorization scope.  (Since v3.4) Specify
@@ -1511,3 +1547,15 @@ users_object:
   in: body
   required: true
   type: array
+verb_query:
+ description: |
+    Filters the response by a verb (HTTP method).
+  in: query
+  required: false
+  type: string
+verb_response_body:
+  description: |
+    The HTTP verb of the route.
+  in: body
+  required: true
+  type: string

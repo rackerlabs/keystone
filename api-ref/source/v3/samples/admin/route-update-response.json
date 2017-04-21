@@ -1,0 +1,12 @@
+{
+    "route": {
+        "service": "compute",
+        "links": {
+            "self": "http://192.168.0.16/identity/v3/routes/ee2efbb7c29c4aed84dca659a2c3f182"
+        },
+        "role_id": "0869e95ac37340bf892a1059473fae0a",
+        "verb": "POST",
+        "path": "/servers/{server_id}/action",
+        "id": "ee2efbb7c29c4aed84dca659a2c3f182"
+    }
+}

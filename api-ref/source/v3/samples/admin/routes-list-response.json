@@ -1,0 +1,39 @@
+{
+    "links": {
+        "next": null,
+        "previous": null,
+        "self": "http://192.168.0.16/identity/v3/routes"
+    },
+    "routes": [
+        {
+            "id": "3dab533667864db8891e4b47701424f8",
+            "links": {
+                "self": "http://192.168.0.16/identity/v3/routes/3dab533667864db8891e4b47701424f8"
+            },
+            "path": "/servers",
+            "role_id": "0869e95ac37340bf892a1059473fae0a",
+            "service": "compute",
+            "verb": "GET"
+        },
+        {
+            "id": "b8c0c59d62ff40a799546f2c2e30d351",
+            "links": {
+                "self": "http://192.168.0.16/identity/v3/routes/b8c0c59d62ff40a799546f2c2e30d351"
+            },
+            "path": "/servers/{server_id}",
+            "role_id": "0869e95ac37340bf892a1059473fae0a",
+            "service": "compute",
+            "verb": "GET"
+        },
+        {
+            "id": "cd5faaf87a154857a8c743536a78a9dd",
+            "links": {
+                "self": "http://192.168.0.16/identity/v3/routes/cd5faaf87a154857a8c743536a78a9dd"
+            },
+            "path": "/",
+            "role_id": "0869e95ac37340bf892a1059473fae0a",
+            "service": "compute",
+            "verb": "GET"
+        }
+    ]
+}

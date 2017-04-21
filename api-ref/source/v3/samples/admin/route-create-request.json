@@ -1,0 +1,8 @@
+{
+    "route": {
+        "path": "/servers/{server_id}/action",
+        "role_id": "0869e95ac37340bf892a1059473fae0a",
+        "verb": "*",
+        "service": "compute"
+  }
+}
