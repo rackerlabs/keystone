@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ffa3b31_3de59d38",
+        "filename": "doc/source/sample_policy.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-04-21T19:35:33Z",
+      "side": 1,
+      "message": "This first lines sort of implies the current state of copy and hack. Really we want them to only steal the lines they need to hack right?",
+      "revId": "c29eca28b444f0c7488032929638238668861159",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
