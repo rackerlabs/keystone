@@ -579,6 +579,27 @@ class AssignmentTests(AssignmentTestHelperMixin):
             role_id=uuid.uuid4().hex)
         self.assertEqual([], assignment_list)
 
+    def test_list_role_assignments_user_not_found(self):
+        def _user_not_found(value):
+            raise exception.UserNotFound(user_id=value)
+
+        with mock.patch.object(self.identity_api, 'get_user',
+                               _user_not_found):
+            assignment_list = self.assignment_api.list_role_assignments(
+                include_names=True
+            )
+
+    def test_list_role_assignments_group_not_found(self):
+        def _group_not_found(value):
+            raise exception.GroupNotFound(group_id=value)
+
+        with mock.patch.object(self.identity_api, 'get_group',
+                               _group_not_found):
+            assignment_list = self.assignment_api.list_role_assignments(
+                include_names=True
+            )
+
+
     def test_add_duplicate_role_grant(self):
         roles_ref = self.assignment_api.get_roles_for_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'])
