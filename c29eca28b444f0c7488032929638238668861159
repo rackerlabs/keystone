@@ -52,6 +52,24 @@
       "revId": "c29eca28b444f0c7488032929638238668861159",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_2088a41d",
+        "filename": "doc/source/sample_policy.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-21T21:47:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ffa3b31_dda6b9c1",
+      "revId": "c29eca28b444f0c7488032929638238668861159",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
