@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_32d596ba",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1324,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-22T15:11:59Z",
+      "side": 1,
+      "message": "I think it would be fine to squash these cases all in one test_add_argument_parser test the way you had before, or alternately to use a setUp() method to put the common code in.",
+      "revId": "6b02e686f499c67f141b2e376b68b57e14d04c09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_72cb1e1e",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1346,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-22T15:11:59Z",
+      "side": 1,
+      "message": "You don\u0027t need the try/except, you could condense it to just this line - if it raises an unexpected exception then it fails the test, if it doesn\u0027t then it passes",
+      "range": {
+        "startLine": 1346,
+        "startChar": 12,
+        "endLine": 1346,
+        "endChar": 35
+      },
+      "revId": "6b02e686f499c67f141b2e376b68b57e14d04c09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
