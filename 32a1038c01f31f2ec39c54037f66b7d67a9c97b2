@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_52b70288",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-22T15:52:03Z",
+      "side": 1,
+      "message": "Missing the {role_id} part of the path",
+      "range": {
+        "startLine": 78,
+        "startChar": 30,
+        "endLine": 78,
+        "endChar": 39
+      },
+      "revId": "32a1038c01f31f2ec39c54037f66b7d67a9c97b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_92bd8a6a",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-22T15:52:03Z",
+      "side": 1,
+      "message": "Missing the {role_id} part of the path",
+      "range": {
+        "startLine": 84,
+        "startChar": 30,
+        "endLine": 84,
+        "endChar": 39
+      },
+      "revId": "32a1038c01f31f2ec39c54037f66b7d67a9c97b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
