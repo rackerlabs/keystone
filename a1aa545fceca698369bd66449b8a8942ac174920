@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_599ee263",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-24T21:15:56Z",
+      "side": 1,
+      "message": "Probably want to keep the |sudo tee -a approach to fix the permissions issue",
+      "revId": "a1aa545fceca698369bd66449b8a8942ac174920",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
