@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5ff73747_4be184fe",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 25273
+      },
+      "writtenOn": "2017-04-24T03:22:15Z",
+      "side": 1,
+      "message": "*_as_ids is just shown project ids as nested dictionaries, not filtered by user id.",
+      "parentUuid": "7ffa3b31_66671bb9",
+      "revId": "070d623f0391dfed9e17b11c47471610ec8694c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ffa3b31_66b27b4b",
         "filename": "api-ref/source/v3/parameters.yaml",
         "patchSetId": 2
@@ -58,6 +76,30 @@
         "startChar": 43,
         "endLine": 248,
         "endChar": 49
+      },
+      "revId": "070d623f0391dfed9e17b11c47471610ec8694c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_abbb68e3",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 25273
+      },
+      "writtenOn": "2017-04-24T03:22:15Z",
+      "side": 1,
+      "message": "If you use admin_token in the request, there is not user id in the context.",
+      "parentUuid": "7ffa3b31_66b27b4b",
+      "range": {
+        "startLine": 247,
+        "startChar": 40,
+        "endLine": 248,
+        "endChar": 23
       },
       "revId": "070d623f0391dfed9e17b11c47471610ec8694c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
