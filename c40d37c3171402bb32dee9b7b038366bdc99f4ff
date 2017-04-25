@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5ff73747_243754e6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2017-04-25T13:32:34Z",
+      "side": 1,
+      "message": "*A new release, pbr 3.0\n\nSorry - I drafted a bootload of these for various python-*client projects and didn\u0027t want to go back and fix them all, heh. Happy for you to reword this here if it would help",
+      "parentUuid": "5ff73747_fef33d9d",
+      "range": {
+        "startLine": 9,
+        "startChar": 3,
+        "endLine": 9,
+        "endChar": 26
+      },
+      "revId": "c40d37c3171402bb32dee9b7b038366bdc99f4ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ffa3b31_8fd05021",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -54,6 +78,24 @@
       "side": 1,
       "message": "++ a link would be nice so reviewers can confirm what\u0027s being said here",
       "parentUuid": "7ffa3b31_8fd05021",
+      "revId": "c40d37c3171402bb32dee9b7b038366bdc99f4ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_c49b10c7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2017-04-25T13:32:34Z",
+      "side": 1,
+      "message": "This review [1] is the one that introduces the new behavior. That\u0027s part of the pbr 3.0 release [2]\n\n[1] https://review.openstack.org/#/c/456156/\n[2] https://github.com/openstack-dev/pbr/tree/3.0.0",
+      "parentUuid": "5ff73747_7e35ed45",
       "revId": "c40d37c3171402bb32dee9b7b038366bdc99f4ff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
