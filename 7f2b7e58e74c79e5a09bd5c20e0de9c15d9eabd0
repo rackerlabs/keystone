@@ -22,6 +22,30 @@
       "revId": "7f2b7e58e74c79e5a09bd5c20e0de9c15d9eabd0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_e9ba6508",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-25T13:05:16Z",
+      "side": 0,
+      "message": "I agree. This is more correct, the fact is that some backends just don\u0027t support multiple domains (such as LDAP) thus they can\u0027t support many-to-many since there is just one domain! (default)",
+      "parentUuid": "1a430d35_f6d7bbea",
+      "range": {
+        "startLine": 296,
+        "startChar": 0,
+        "endLine": 297,
+        "endChar": 34
+      },
+      "revId": "7f2b7e58e74c79e5a09bd5c20e0de9c15d9eabd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
