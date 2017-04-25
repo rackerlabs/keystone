@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_474cab9d",
+        "filename": "api-ref/source/v3-ext/samples/OS-OAUTH1/access-token-role-show-response.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-25T09:49:31Z",
+      "side": 1,
+      "message": "(nit) unnecessary comma",
+      "range": {
+        "startLine": 8,
+        "startChar": 23,
+        "endLine": 8,
+        "endChar": 24
+      },
+      "revId": "1f45acbcf286bafc1f0d39566582b0b0283069b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_27687ff3",
+        "filename": "api-ref/source/v3-ext/samples/OS-OAUTH1/access-token-roles-list-response.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-25T09:49:31Z",
+      "side": 1,
+      "message": "This is the access token ID and it can\u0027t be the same ID as one of the roles. This is matching the ID of the first role in the list. Just replace this by an unique ID",
+      "range": {
+        "startLine": 23,
+        "startChar": 85,
+        "endLine": 23,
+        "endChar": 91
+      },
+      "revId": "1f45acbcf286bafc1f0d39566582b0b0283069b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
