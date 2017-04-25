@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_15d80c7d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-25T11:18:33Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem to be the case in any of the examples you updated. This means quotation marks are optional in those cases and they are not wrong.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 92
+      },
+      "revId": "92755ea951303277e15fdf229f280bb5ab4f1e98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
