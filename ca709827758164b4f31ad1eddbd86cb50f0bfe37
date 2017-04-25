@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_fb022fb4",
+        "filename": "doc/source/conf.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-25T12:11:48Z",
+      "side": 1,
+      "message": "checked against nova and this is following the pattern",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 43
+      },
+      "revId": "ca709827758164b4f31ad1eddbd86cb50f0bfe37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
