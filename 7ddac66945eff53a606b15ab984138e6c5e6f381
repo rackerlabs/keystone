@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "5ff73747_fe77bd39",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-25T12:45:23Z",
+      "side": 1,
+      "message": "what about resource_paths?",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 15
+      },
+      "revId": "7ddac66945eff53a606b15ab984138e6c5e6f381",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_de72c149",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-25T12:45:23Z",
+      "side": 1,
+      "message": "and collection_paths?",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 17
+      },
+      "revId": "7ddac66945eff53a606b15ab984138e6c5e6f381",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ff73747_b2c1a631",
         "filename": "keystone/common/policies/grant.py",
         "patchSetId": 4
@@ -19,6 +65,64 @@
         "endLine": 57,
         "endChar": 13
       },
+      "revId": "7ddac66945eff53a606b15ab984138e6c5e6f381",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_be8ff521",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-25T12:45:23Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5ff73747_b2c1a631",
+      "range": {
+        "startLine": 57,
+        "startChar": 4,
+        "endLine": 57,
+        "endChar": 13
+      },
+      "revId": "7ddac66945eff53a606b15ab984138e6c5e6f381",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_dea761a7",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-25T12:45:23Z",
+      "side": 1,
+      "message": "this also has GET",
+      "revId": "7ddac66945eff53a606b15ab984138e6c5e6f381",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_7eb28de8",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-25T12:45:23Z",
+      "side": 1,
+      "message": "This also has HEAD",
       "revId": "7ddac66945eff53a606b15ab984138e6c5e6f381",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
