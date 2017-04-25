@@ -1,0 +1,10 @@
+{
+    "role": {
+        "id": "6be26a",
+        "domain_id": "7cf37b",
+        "links": {
+            "self": "http://example.com/identity/v3/roles/6be26a"
+        },
+        "name": "admin",
+    }
+}
