@@ -104,6 +104,30 @@
       "revId": "070d623f0391dfed9e17b11c47471610ec8694c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_353f8826",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-25T11:28:03Z",
+      "side": 1,
+      "message": "admin_token is deprecated and strongly not recommended. It\u0027s primary purpose was for bootstrapping, but keystone manage bootstrap exists now.\n\nI think it\u0027s fine (and better) to document as suggested by Colleen, with something like:\n\n    \"The returned list will only contain projects the user in the context has access to.\"",
+      "parentUuid": "5ff73747_abbb68e3",
+      "range": {
+        "startLine": 247,
+        "startChar": 40,
+        "endLine": 248,
+        "endChar": 23
+      },
+      "revId": "070d623f0391dfed9e17b11c47471610ec8694c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
