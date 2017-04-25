@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5ff73747_fef33d9d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-25T12:49:16Z",
+      "side": 1,
+      "message": "which?",
+      "range": {
+        "startLine": 9,
+        "startChar": 3,
+        "endLine": 9,
+        "endChar": 26
+      },
+      "revId": "c40d37c3171402bb32dee9b7b038366bdc99f4ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ffa3b31_8fd05021",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -13,6 +36,24 @@
       "writtenOn": "2017-04-19T10:25:54Z",
       "side": 1,
       "message": "nit, would be nice to provide a link to the change that causes this (though I was able to find it)",
+      "revId": "c40d37c3171402bb32dee9b7b038366bdc99f4ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_7e35ed45",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-25T12:49:16Z",
+      "side": 1,
+      "message": "++ a link would be nice so reviewers can confirm what\u0027s being said here",
+      "parentUuid": "7ffa3b31_8fd05021",
       "revId": "c40d37c3171402bb32dee9b7b038366bdc99f4ff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
