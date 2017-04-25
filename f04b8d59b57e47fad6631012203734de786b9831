@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_ec3b85c5",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-04-25T18:43:16Z",
+      "side": 1,
+      "message": "s/your/your `devstack`/",
+      "revId": "f04b8d59b57e47fad6631012203734de786b9831",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
