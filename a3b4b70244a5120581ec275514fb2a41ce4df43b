@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5ff73747_f876b506",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-25T12:05:42Z",
+      "side": 1,
+      "message": "++\n\nI also checked if this is just a HEAD and doesn\u0027t have a GET too. This is correct as it is.",
+      "parentUuid": "7ffa3b31_0902c30b",
+      "revId": "a3b4b70244a5120581ec275514fb2a41ce4df43b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ffa3b31_740b5e23",
         "filename": "keystone/common/policies/token_revocation.py",
         "patchSetId": 5
@@ -30,6 +48,41 @@
       "writtenOn": "2017-04-20T20:53:49Z",
       "side": 1,
       "message": "As a reading, I\u0027m not entirely sure what we mean by \u0027auth\u0027 here. This is simply validating a token. \n\nnit: Validate a token.",
+      "revId": "a3b4b70244a5120581ec275514fb2a41ce4df43b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_f84fd5ba",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-25T12:05:42Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7ffa3b31_740b5e23",
+      "revId": "a3b4b70244a5120581ec275514fb2a41ce4df43b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_18516163",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-25T12:05:42Z",
+      "side": 1,
+      "message": "I also checked if this is just a GET and doesn\u0027t have a HEAD too. This is correct as it is.",
       "revId": "a3b4b70244a5120581ec275514fb2a41ce4df43b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
