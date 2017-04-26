@@ -128,6 +128,30 @@
       "revId": "070d623f0391dfed9e17b11c47471610ec8694c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_1b7ee018",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 25273
+      },
+      "writtenOn": "2017-04-26T01:30:23Z",
+      "side": 1,
+      "message": "OK, I\u0027m agree with it.",
+      "parentUuid": "5ff73747_353f8826",
+      "range": {
+        "startLine": 247,
+        "startChar": 40,
+        "endLine": 248,
+        "endChar": 23
+      },
+      "revId": "070d623f0391dfed9e17b11c47471610ec8694c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
