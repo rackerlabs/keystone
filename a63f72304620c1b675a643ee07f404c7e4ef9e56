@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_66b3c00b",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-04-27T19:28:30Z",
+      "side": 0,
+      "message": "+1 for getting rid of this comment that makes assumptions about how the admin_required rule is configured.",
+      "revId": "a63f72304620c1b675a643ee07f404c7e4ef9e56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

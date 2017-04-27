@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_46dfa439",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-04-27T19:28:30Z",
+      "side": 1,
+      "message": "This is not clear enough. The changes proposed here do not check is_admin_project, so how is that involved? If you\u0027re trying to set things up to add a check for is_admin_project to the admin_required rule, which is what I think you must be doing, I seriously worry about what you\u0027re doing. Checking is_admin_project in admin_required sounds like a terrible idea that would ripple alarmingly given the dependence on admin_required in so many other rules.\n\nBut the change itself seems good. Provides more consistency and flexibility in that policy check. Even if it opens the door for you to shoot yourself in the foot, as it seems like you may be trying to do per the above. So a commit message about that consistency/flexibility would be fine.",
+      "range": {
+        "startLine": 10,
+        "startChar": 33,
+        "endLine": 10,
+        "endChar": 49
+      },
+      "revId": "223355464764e5cde8fb59ea207e4c67bf669ad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_6632a060",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-04-27T19:28:30Z",
+      "side": 1,
+      "message": "nit:spelling",
+      "range": {
+        "startLine": 11,
+        "startChar": 50,
+        "endLine": 11,
+        "endChar": 59
+      },
+      "revId": "223355464764e5cde8fb59ea207e4c67bf669ad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
