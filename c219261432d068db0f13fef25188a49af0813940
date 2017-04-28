@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_d94dc99a",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2017-04-28T07:29:50Z",
+      "side": 1,
+      "message": "I\u0027m not sure that a user reading this would know what \"in the context\" would mean.\n\nMaybe an alternative wording might be:\n\n\"Only those projects on which the user has an effective role assignment will be included in the list\"",
+      "range": {
+        "startLine": 247,
+        "startChar": 39,
+        "endLine": 248,
+        "endChar": 72
+      },
+      "revId": "c219261432d068db0f13fef25188a49af0813940",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_b952fd39",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2017-04-28T07:29:50Z",
+      "side": 1,
+      "message": "as above",
+      "range": {
+        "startLine": 367,
+        "startChar": 18,
+        "endLine": 368,
+        "endChar": 51
+      },
+      "revId": "c219261432d068db0f13fef25188a49af0813940",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
