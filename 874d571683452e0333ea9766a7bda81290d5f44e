@@ -22,6 +22,30 @@
       "revId": "874d571683452e0333ea9766a7bda81290d5f44e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_391dbf73",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1185,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2017-04-28T14:36:40Z",
+      "side": 0,
+      "message": "So test with  password_expires_days\u003d1 ?  I\u0027m not keystone expert :-), hope keystone folks can help fix failures in https://etherpad.openstack.org/p/keystone_enforce_type_issues",
+      "parentUuid": "5ff73747_19e323db",
+      "range": {
+        "startLine": 1185,
+        "startChar": 12,
+        "endLine": 1185,
+        "endChar": 68
+      },
+      "revId": "874d571683452e0333ea9766a7bda81290d5f44e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
