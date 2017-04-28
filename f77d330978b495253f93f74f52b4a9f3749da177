@@ -16,6 +16,24 @@
       "revId": "f77d330978b495253f93f74f52b4a9f3749da177",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_99acd3ed",
+        "filename": "keystone/tests/unit/ksfixtures/hacking.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-28T14:14:29Z",
+      "side": 0,
+      "message": "I agree. This is enforcing the behavior you are stating in the commit message. I\u0027d rather add more tests to it to make sure log messages do not get translated than remove them.",
+      "parentUuid": "5ff73747_01f17395",
+      "revId": "f77d330978b495253f93f74f52b4a9f3749da177",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
