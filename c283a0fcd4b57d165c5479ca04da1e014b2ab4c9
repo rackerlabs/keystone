@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "5ff73747_c58a8068",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7353
+      },
+      "writtenOn": "2017-04-28T02:56:56Z",
+      "side": 1,
+      "message": "+1 agreeded out of scope but a follow on providing this functionality would be excellent, especially from an operator perspective.",
+      "parentUuid": "ffe62b97_8325875e",
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffe62b97_8b2840e2",
         "filename": "keystone/common/password_hashing.py",
         "patchSetId": 13
@@ -778,6 +796,30 @@
       "side": 1,
       "message": "We can work to have an OSSN published. This cannot be an OSSA, as it will not be backported.",
       "parentUuid": "ffe62b97_9ce8fd16",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 9
+      },
+      "revId": "c283a0fcd4b57d165c5479ca04da1e014b2ab4c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_65de0c6e",
+        "filename": "releasenotes/notes/bug_1543048_and_1668503-7ead4e15faaab778.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7353
+      },
+      "writtenOn": "2017-04-28T02:56:56Z",
+      "side": 1,
+      "message": "+1 an OSSN would be greatly appreciated and more than enough. If there\u0027s anything I can help with to get that, published I\u0027d be happy to lend a hand.",
+      "parentUuid": "ffe62b97_c69cbdc1",
       "range": {
         "startLine": 29,
         "startChar": 0,
