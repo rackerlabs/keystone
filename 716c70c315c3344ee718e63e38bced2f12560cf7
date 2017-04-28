@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_59a64bad",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4007,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-28T14:22:08Z",
+      "side": 0,
+      "message": "Well, this is testing it\u0027s throwing a keystone exception. Even if oslo is the one throwing the exception, it is good to test we are wrapping it.",
+      "revId": "716c70c315c3344ee718e63e38bced2f12560cf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
