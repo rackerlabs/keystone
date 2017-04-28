@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_13c3f658",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-04-28T20:40:37Z",
+      "side": 1,
+      "message": "Absolutely not. That\u0027s a nasty, nasty hack. Fix it right, not quick and dirty and hard to maintain or understand.\n\nIt is also wrong to start requiring is_admin_project:True for all things that require admin access. Some things only require being an admin. Other things only require being an admin plus checking that you\u0027re scoped to the right project OR is_admin_project:True. Other things require being an admin AND is_admin_project:True. This is not an across-the-board situation.",
+      "revId": "e2f7ca81d42b501fa57c29d94b6ae54dfc4b1280",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_53c17fe4",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-04-28T20:40:37Z",
+      "side": 1,
+      "message": "move this up 2 lines... kwargs and args aren\u0027t needed for this.",
+      "revId": "e2f7ca81d42b501fa57c29d94b6ae54dfc4b1280",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_d3b46f82",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-04-28T20:40:37Z",
+      "side": 1,
+      "message": "this comment now seems out of place. Has nothing to do with what\u0027s immediately before or after it.",
+      "revId": "e2f7ca81d42b501fa57c29d94b6ae54dfc4b1280",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_13089725",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-04-28T20:40:37Z",
+      "side": 1,
+      "message": "only keep trying to pick a domain_id if not project.get(\u0027is_domain\u0027, False) so that the default behavior when creating a new domain is that it doesn\u0027t have a parent.",
+      "revId": "e2f7ca81d42b501fa57c29d94b6ae54dfc4b1280",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_3837f001",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-04-28T20:40:37Z",
+      "side": 1,
+      "message": "should also support the case that you have a project-scoped token and want to create the new project in the same domain as the current project. I didn\u0027t check, but wouldn\u0027t request.context.domain_id be None in that case?",
+      "revId": "e2f7ca81d42b501fa57c29d94b6ae54dfc4b1280",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_b87420d0",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-04-28T20:40:37Z",
+      "side": 1,
+      "message": "I believe we\u0027re trying to get rid of default_domain_id, not start using it in more places...",
+      "range": {
+        "startLine": 261,
+        "startChar": 42,
+        "endLine": 261,
+        "endChar": 59
+      },
+      "revId": "e2f7ca81d42b501fa57c29d94b6ae54dfc4b1280",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
