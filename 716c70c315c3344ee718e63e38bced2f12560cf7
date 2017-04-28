@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "5ff73747_11989767",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4005,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-28T16:35:11Z",
+      "side": 0,
+      "message": "Ok so our self.generator.generate_metadata should be reworked to not check that again, if oslo does that for us already. Could you update it ?",
+      "parentUuid": "5ff73747_31a153f9",
+      "range": {
+        "startLine": 4005,
+        "startChar": 12,
+        "endLine": 4005,
+        "endChar": 39
+      },
+      "revId": "716c70c315c3344ee718e63e38bced2f12560cf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ff73747_59a64bad",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 1
