@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_01f17395",
+        "filename": "keystone/tests/unit/ksfixtures/hacking.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-28T10:31:26Z",
+      "side": 0,
+      "message": "This test is supposed to be enforcing exactly the thing this patch is about, I don\u0027t think removing it is the right way to go.",
+      "revId": "f77d330978b495253f93f74f52b4a9f3749da177",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
