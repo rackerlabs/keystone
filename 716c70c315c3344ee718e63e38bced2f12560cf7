@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5ff73747_1969e3f7",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4005,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2017-04-28T14:34:20Z",
+      "side": 0,
+      "message": "it will raise ValueError here.",
+      "range": {
+        "startLine": 4005,
+        "startChar": 12,
+        "endLine": 4005,
+        "endChar": 39
+      },
+      "revId": "716c70c315c3344ee718e63e38bced2f12560cf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ff73747_59a64bad",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 1
@@ -31,6 +54,24 @@
       "side": 0,
       "message": "It\u0027s testing that the response to an HTTP request is a validation error: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/exception.py#n89\n\nbut this test will never get that far because oslo.config will fail to set the value in the first place. If we really care to test that part then the test should be in test_config.py or somewhere that\u0027s not structured around making client requests.",
       "parentUuid": "5ff73747_59a64bad",
+      "revId": "716c70c315c3344ee718e63e38bced2f12560cf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_19c443f4",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4007,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2017-04-28T14:34:20Z",
+      "side": 0,
+      "message": "oslo.config test the case that value is  in or not in choices carefully, so we don\u0027t test this in consuming projects, this test seems duplicated.\n\nSee https://github.com/openstack/oslo.config/blob/master/oslo_config/tests/test_cfg.py#L3278-L3290",
+      "parentUuid": "5ff73747_59de4bda",
       "revId": "716c70c315c3344ee718e63e38bced2f12560cf7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
