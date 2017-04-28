@@ -22,6 +22,24 @@
       "revId": "716c70c315c3344ee718e63e38bced2f12560cf7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_6da266fe",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-04-28T11:53:39Z",
+      "side": 1,
+      "message": "Yes and I think that is true because the test is defining the option as a string when it should be a boolean. This breaks because oslo.config is no longer making that translation in the newer version.",
+      "parentUuid": "5ff73747_dc16d249",
+      "revId": "716c70c315c3344ee718e63e38bced2f12560cf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
