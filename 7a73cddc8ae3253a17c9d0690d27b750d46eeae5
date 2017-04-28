@@ -16,6 +16,24 @@
       "revId": "7a73cddc8ae3253a17c9d0690d27b750d46eeae5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_e54e9c6d",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2017-04-28T02:50:09Z",
+      "side": 1,
+      "message": "yeah, this try to fix part of http://logs.openstack.org/11/459411/1/check/gate-cross-keystone-python27-ubuntu-xenial/ffc7b24/testr_results.html.gz.\n\nBetter in another patch",
+      "parentUuid": "5ff73747_6495f332",
+      "revId": "7a73cddc8ae3253a17c9d0690d27b750d46eeae5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
