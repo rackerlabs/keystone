@@ -70,6 +70,30 @@
       "revId": "874d571683452e0333ea9766a7bda81290d5f44e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_71b91b13",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1185,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2017-04-28T16:26:45Z",
+      "side": 0,
+      "message": "Look at https://github.com/openstack/keystone/blob/master/keystone/conf/security_compliance.py#L56-L58, maybe we\u0027ll make min\u003d0 ?",
+      "parentUuid": "5ff73747_2e20ceab",
+      "range": {
+        "startLine": 1185,
+        "startChar": 12,
+        "endLine": 1185,
+        "endChar": 68
+      },
+      "revId": "874d571683452e0333ea9766a7bda81290d5f44e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
