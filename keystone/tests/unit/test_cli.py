@@ -1174,16 +1174,6 @@ class SecurityComplianceDoctorTests(unit.TestCase):
             security_compliance.
             symptom_minimum_password_age_greater_than_expires_days())
 
-    def test_minimum_password_age_and_password_expires_days_deactivated(self):
-        # No Symptom Detected: Both values are deactivated to 0
-        self.config_fixture.config(group='security_compliance',
-                                   minimum_password_age=0)
-        self.config_fixture.config(group='security_compliance',
-                                   password_expires_days=0)
-        self.assertFalse(
-            security_compliance.
-            symptom_minimum_password_age_greater_than_expires_days())
-
     def test_invalid_password_regular_expression(self):
         # Symptom Detected: Regular expression is invalid
         self.config_fixture.config(
