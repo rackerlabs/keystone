@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5ff73747_312ef391",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-04-28T16:21:04Z",
+      "side": 1,
+      "message": "Because that is a follow on commit.  This is the rationale for it.\nIf you don\u0027t like the verbage, then change it to what you want.",
+      "parentUuid": "5ff73747_46dfa439",
+      "range": {
+        "startLine": 10,
+        "startChar": 33,
+        "endLine": 10,
+        "endChar": 49
+      },
+      "revId": "223355464764e5cde8fb59ea207e4c67bf669ad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ff73747_6632a060",
         "filename": "/COMMIT_MSG",
         "patchSetId": 15
@@ -36,6 +60,30 @@
       "writtenOn": "2017-04-27T19:28:30Z",
       "side": 1,
       "message": "nit:spelling",
+      "range": {
+        "startLine": 11,
+        "startChar": 50,
+        "endLine": 11,
+        "endChar": 59
+      },
+      "revId": "223355464764e5cde8fb59ea207e4c67bf669ad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_d13eafbf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-04-28T16:21:04Z",
+      "side": 1,
+      "message": "In the future, just fix these and repost.",
+      "parentUuid": "5ff73747_6632a060",
       "range": {
         "startLine": 11,
         "startChar": 50,
