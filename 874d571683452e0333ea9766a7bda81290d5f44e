@@ -46,6 +46,30 @@
       "revId": "874d571683452e0333ea9766a7bda81290d5f44e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_2e20ceab",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1185,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-04-28T16:19:13Z",
+      "side": 0,
+      "message": "if set to 0 it means it\u0027s deactivated, which is what this is test case is doing",
+      "parentUuid": "5ff73747_391dbf73",
+      "range": {
+        "startLine": 1185,
+        "startChar": 12,
+        "endLine": 1185,
+        "endChar": 68
+      },
+      "revId": "874d571683452e0333ea9766a7bda81290d5f44e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
