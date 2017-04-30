@@ -1168,7 +1168,7 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
     @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
     def test_user_enabled_invert_no_enabled_value(self, mock_ldap_get):
         self.config_fixture.config(group='ldap', user_enabled_invert=True,
-                                   user_enabled_default=False)
+                                   user_enabled_default='False')
         # Mock the search results to return an entry with
         # no enabled value.
         mock_ldap_get.return_value = (
@@ -1299,21 +1299,6 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
         # debug_level. Check to make sure the value of debug_level
         # is as expected.
         self.assertEqual(level, mocked_fakeldap.call_args[-1]['debug_level'])
-
-    def test_wrong_ldap_scope(self):
-        self.config_fixture.config(group='ldap', query_scope=uuid.uuid4().hex)
-        self.assertRaisesRegexp(
-            ValueError,
-            'Invalid LDAP scope: %s. *' % CONF.ldap.query_scope,
-            identity.backends.ldap.Identity)
-
-    def test_wrong_alias_dereferencing(self):
-        self.config_fixture.config(group='ldap',
-                                   alias_dereferencing=uuid.uuid4().hex)
-        self.assertRaisesRegexp(
-            ValueError,
-            'Invalid LDAP deref option: %s\.' % CONF.ldap.alias_dereferencing,
-            identity.backends.ldap.Identity)
 
     def test_user_extra_attribute_mapping(self):
         self.config_fixture.config(
