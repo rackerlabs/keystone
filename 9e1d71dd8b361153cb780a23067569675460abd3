@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_6bcd9283",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 865,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-04-30T14:29:22Z",
+      "side": 1,
+      "message": "It would be better to use freezegun, see an example here: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/tests/unit/identity/test_backend_sql.py#n572",
+      "revId": "9e1d71dd8b361153cb780a23067569675460abd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
