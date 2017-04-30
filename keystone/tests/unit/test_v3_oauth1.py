@@ -14,6 +14,7 @@
 
 import copy
 import random
+import time
 import uuid
 
 import mock
@@ -839,7 +840,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
                       resp_data['error']['message'])
 
     def test_expired_authorizing_request_token(self):
-        self.config_fixture.config(group='oauth1', request_token_duration=-1)
+        self.config_fixture.config(group='oauth1', request_token_duration=1)
 
         consumer = self._create_single_consumer()
         consumer_id = consumer['id']
@@ -860,10 +861,12 @@ class MaliciousOAuth1Tests(OAuth1Tests):
 
         url = self._authorize_request_token(request_key)
         body = {'roles': [{'id': self.role_id}]}
+        # NOTE(gcb) hacking wait for more than request_token_duration
+        time.sleep(1.1)
         self.put(url, body=body, expected_status=http_client.UNAUTHORIZED)
 
     def test_expired_creating_keystone_token(self):
-        self.config_fixture.config(group='oauth1', access_token_duration=-1)
+        self.config_fixture.config(group='oauth1', access_token_duration=1)
         consumer = self._create_single_consumer()
         consumer_id = consumer['id']
         consumer_secret = consumer['secret']
@@ -900,6 +903,8 @@ class MaliciousOAuth1Tests(OAuth1Tests):
 
         url, headers, body = self._get_oauth_token(self.consumer,
                                                    self.access_token)
+        # NOTE(gcb) hacking wait for more than access_token_duration
+        time.sleep(1.1)
         self.post(url, headers=headers, body=body,
                   expected_status=http_client.UNAUTHORIZED)
 
