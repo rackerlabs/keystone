@@ -16,6 +16,24 @@
       "revId": "932ab37853358c0fd32d2c5816c317d37b568312",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_1ec4053f",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1171,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2017-05-01T15:02:48Z",
+      "side": 1,
+      "message": "user_enabled_default is StrOpt, so we expect to pass string here, need dig more.",
+      "parentUuid": "5ff73747_8b2a1ed8",
+      "revId": "932ab37853358c0fd32d2c5816c317d37b568312",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
