@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_dafb3f44",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-05-01T23:52:29Z",
+      "side": 1,
+      "message": "In addition to my comments from patch set 20 (which still apply), I\u0027ve noticed that this doesn\u0027t help with any of the other rules that involve admin checks. E.g. get_user checks RULE_ADMIN_OR_OWNER, which doesn\u0027t check is_admin_project, so any admin can get_user for any user.",
+      "revId": "3c19f7218059573bb35887f6c40c5f68c0c94059",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_1a62c70a",
+        "filename": "keystone/common/policies/domain.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-05-01T23:52:29Z",
+      "side": 1,
+      "message": "this is clearly wrong. If it\u0027s necessary to get a patch into tempest before we can fix keystone, then so be it.",
+      "revId": "3c19f7218059573bb35887f6c40c5f68c0c94059",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_3a3c63df",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-05-01T23:52:29Z",
+      "side": 1,
+      "message": "... and that should be the point of this fix... so why aren\u0027t we adding one?",
+      "revId": "3c19f7218059573bb35887f6c40c5f68c0c94059",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_7a366b05",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-05-01T23:52:29Z",
+      "side": 1,
+      "message": "changing the default, even to something that is equivalent to the previous default, is going to confuse folks.",
+      "revId": "3c19f7218059573bb35887f6c40c5f68c0c94059",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
