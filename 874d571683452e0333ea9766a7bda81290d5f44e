@@ -190,6 +190,24 @@
       "revId": "874d571683452e0333ea9766a7bda81290d5f44e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_52126264",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1185,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-02T14:42:09Z",
+      "side": 0,
+      "message": "If I remember the implementation correctly, there was a patch that laid down all the configuration options first [0]. This option was changed later when the specific PCI-DSS requirement was implemented (as linked in the comment above).\n\nIf this value defaulted to 1 the implementation would break (see the if statement on line 158) [1]. The implied default is to not include the option at all (or comment out password_expires_days), which works in the implementation because `None` is returned:\n\n  Python 2.7.9 (default, Apr  2 2015, 15:33:21) \n  [GCC 4.9.2] on linux2\n  Type \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n  \u003e\u003e\u003e import keystone.conf\n  \u003e\u003e\u003e CONF \u003d keystone.conf.CONF\n  \u003e\u003e\u003e from keystone.server import common\n  \u003e\u003e\u003e common.configure()\n  \u003e\u003e\u003e CONF.security_compliance.password_expires_days\n  \u003e\u003e\u003e print CONF.security_compliance.password_expires_days\n  None\n  \u003e\u003e\u003e \n\n\nSo - maybe what we can do is refactor the test so that a value *isn\u0027t* specified to better model how an operator would achieve that behavior in the real world, since setting password_expires_day \u003d 0 fails keystone on start up.\n\n[0] https://review.openstack.org/#/c/314679/20/keystone/common/config.py\n[1] https://github.com/openstack/keystone/blob/e18923daa1e3bdf4ee444ebe44e6dd11e65676ec/keystone/identity/backends/sql_model.py#L150-L162",
+      "parentUuid": "5ff73747_0caddfe9",
+      "revId": "874d571683452e0333ea9766a7bda81290d5f44e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
