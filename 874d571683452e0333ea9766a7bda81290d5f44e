@@ -166,6 +166,30 @@
       "revId": "874d571683452e0333ea9766a7bda81290d5f44e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_0caddfe9",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1185,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-05-02T13:33:44Z",
+      "side": 0,
+      "message": "Maybe this should test with password_expires_days\u003dNone since that\u0027s the default (not 0)? Does that even work for an IntOpt?",
+      "parentUuid": "5ff73747_cf2132b6",
+      "range": {
+        "startLine": 1185,
+        "startChar": 12,
+        "endLine": 1185,
+        "endChar": 68
+      },
+      "revId": "874d571683452e0333ea9766a7bda81290d5f44e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
