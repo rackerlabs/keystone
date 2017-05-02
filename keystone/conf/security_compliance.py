@@ -57,8 +57,10 @@ password_expires_days = cfg.IntOpt(
     'password_expires_days',
     min=1,
     help=utils.fmt("""
-The number of days for which a password will be considered valid
-before requiring it to be changed. This feature is disabled by default. If
+The number of days for which a password will be considered valid before
+requiring it to be changed. This feature is considered disabled if not defined
+in configuration, which is the default behavior. This feature can be enabled by
+setting the value to any number greater than the minimum value of 1. If
 enabled, new password changes will have an expiration date, however existing
 passwords would not be impacted. This feature depends on the `sql` backend for
 the `[identity] driver`.
