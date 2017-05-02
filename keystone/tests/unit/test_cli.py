@@ -1175,8 +1175,15 @@ class SecurityComplianceDoctorTests(unit.TestCase):
             symptom_minimum_password_age_greater_than_expires_days())
 
     def test_minimum_password_age_and_password_expires_days_deactivated(self):
-        # No Symptom Detected: when minimum_password_age's default value is 0
-        # and password_expires_days' default value is None
+        # No Symptom Detected: Since the default value of `keystone.conf
+        # [security_compliance] minimum_password_age` is 0 to show that it is
+        # disabled. The minimum allowed value of `keystone.conf
+        # [security_compliance] password_expires_days` is 1, so setting it to 0
+        # is not a realistic test since it isn't something you can do in a real
+        # deployment with oslo.config type checking. Instead, we will leave the
+        # option undefined to show that it is actually disabled since `None` is
+        # returned for options that are registered without a default but not
+        # defined in a configuration file.
         self.assertFalse(
             security_compliance.
             symptom_minimum_password_age_greater_than_expires_days())
