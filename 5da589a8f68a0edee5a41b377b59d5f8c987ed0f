@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_8c044f80",
+        "filename": "keystone/federation/idp.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 572,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-05-02T13:45:37Z",
+      "side": 1,
+      "message": "I think this is correct. Looking at the saml schema for a ContactPerson the ContactType seems to be required.",
+      "revId": "5da589a8f68a0edee5a41b377b59d5f8c987ed0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
