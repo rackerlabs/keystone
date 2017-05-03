@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_cf334062",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-05-03T15:40:00Z",
+      "side": 1,
+      "message": "So setting this to 1 it would still be disabled?",
+      "range": {
+        "startLine": 62,
+        "startChar": 49,
+        "endLine": 63,
+        "endChar": 67
+      },
+      "revId": "dea317dfaa7951d91f0c35f726bb3f892201bd1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
