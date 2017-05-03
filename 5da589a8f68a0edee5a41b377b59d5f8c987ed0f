@@ -16,6 +16,24 @@
       "revId": "5da589a8f68a0edee5a41b377b59d5f8c987ed0f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_74c41b93",
+        "filename": "keystone/federation/idp.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 572,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2017-05-03T01:44:11Z",
+      "side": 1,
+      "message": "yes, type checking occurs when getting option value like this, so we need check its value by this.",
+      "parentUuid": "5ff73747_8c044f80",
+      "revId": "5da589a8f68a0edee5a41b377b59d5f8c987ed0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
