@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5ff73747_c4e0d4fd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2017-05-03T09:17:15Z",
+      "side": 1,
+      "message": "yeah, customer can set with any string except \u0027True\u0027, \"False\u0027 can be used frequently. \n\nTo be clear:  string s s.lower()\u003d\u0027true\u0027 or any string b  b.lower()!\u003d\u0027true\u0027",
+      "parentUuid": "5ff73747_047a3c87",
+      "range": {
+        "startLine": 12,
+        "startChar": 38,
+        "endLine": 12,
+        "endChar": 48
+      },
+      "revId": "c12550e076bcbf6572f59e756c821180e4419fc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ff73747_840e4c30",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2017-05-03T09:03:08Z",
       "side": 1,
       "message": "I\u0027m not quite sure of the relevancy of this line....that section of code highlighted is only responsible for special handling of the final \u0027enabled\u0027 attribute, I think, as opposed to the processing of the \u0027user_enabled_default\u0027 attribute.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 137
+      },
+      "revId": "c12550e076bcbf6572f59e756c821180e4419fc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_84cc0c62",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2017-05-03T09:17:15Z",
+      "side": 1,
+      "message": "We got value self.enabled_default in \nin https://github.com/openstack/keystone/blob/af4e98c770d771144463e6dd49cb4b559d48c403/keystone/identity/backends/ldap/core.py#L291\n\nthen to handle with the logic in above code section.  Maybe we can just remove the link.",
+      "parentUuid": "5ff73747_840e4c30",
       "range": {
         "startLine": 15,
         "startChar": 0,
