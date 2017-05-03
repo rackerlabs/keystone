@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5ff73747_63aa0dd3",
+        "filename": "keystone/oauth1/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2017-05-03T13:40:39Z",
+      "side": 1,
+      "message": "when request_token_duration equals -1, it will pass the check  before I changed -1 to 1. so we\u0027d better make it explicitly",
+      "parentUuid": "5ff73747_402dc7a6",
+      "revId": "9ebaa3611938f28e89961b2a03574537d0bcc412",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ff73747_60f56383",
         "filename": "keystone/tests/unit/test_v3_oauth1.py",
         "patchSetId": 3
@@ -48,6 +66,24 @@
       "side": 1,
       "message": "I don\u0027t mind having this in the older format because it easier to figure out what\u0027s going on. If we do change this to 2 second, it should be well commented. Otherwise it may appear arbitrary and hard for others to understand. Also - the test could fail if the default value of CONF.oauth1.access_token_duration ever changes anything greater than 1.",
       "parentUuid": "5ff73747_60f56383",
+      "revId": "9ebaa3611938f28e89961b2a03574537d0bcc412",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_e3317da4",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 912,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2017-05-03T13:40:39Z",
+      "side": 1,
+      "message": "okay, keeping the older format make sense to me.",
+      "parentUuid": "5ff73747_40e387a5",
       "revId": "9ebaa3611938f28e89961b2a03574537d0bcc412",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
