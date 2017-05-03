@@ -22,6 +22,24 @@
       "revId": "b2ea2ca80d8e5e54227e956d00edd4298125988f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_c3e8c17d",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1188,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-03T13:49:22Z",
+      "side": 1,
+      "message": "Good catch - I\u0027ve cherry-picked this fix on top of yours so that we can merge the comment.",
+      "parentUuid": "5ff73747_a3a38300",
+      "revId": "b2ea2ca80d8e5e54227e956d00edd4298125988f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
