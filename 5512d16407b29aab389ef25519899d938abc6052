@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f044301_c52d90a9",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 947,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-05-03T21:24:50Z",
+      "side": 1,
+      "message": "I guess it\u0027s pretty unlikely that someone would have a user named \"N/A\", but I\u0027m still not wild about making that a special string value here... is there a good reason you didn\u0027t use \u0027\u0027 (empty string)?",
+      "revId": "5512d16407b29aab389ef25519899d938abc6052",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f044301_3026b0b9",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 950,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-05-03T21:24:50Z",
+      "side": 1,
+      "message": "I think it would probably make more sense to not return the name/domain_id/domain_name in this case. E.g.:\n\ntry:\n    _user \u003d self.identity_api.get_user(value)\nexcept exception.NotFound:\n    # log a warning\nelse:\n    # set new_assign values based on _user",
+      "revId": "5512d16407b29aab389ef25519899d938abc6052",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f044301_30a910df",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 962,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-05-03T21:24:50Z",
+      "side": 1,
+      "message": "same comments as above.",
+      "revId": "5512d16407b29aab389ef25519899d938abc6052",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
