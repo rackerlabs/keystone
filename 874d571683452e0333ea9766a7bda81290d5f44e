@@ -208,6 +208,48 @@
       "revId": "874d571683452e0333ea9766a7bda81290d5f44e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_54935fa4",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1185,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2017-05-03T01:40:50Z",
+      "side": 0,
+      "message": "all config option\u0027s default value is None if we don\u0027t give it one.  None works for all of Opts, see https://github.com/openstack/oslo.config/blob/master/oslo_config/cfg.py#L2664",
+      "parentUuid": "5ff73747_0caddfe9",
+      "range": {
+        "startLine": 1185,
+        "startChar": 12,
+        "endLine": 1185,
+        "endChar": 68
+      },
+      "revId": "874d571683452e0333ea9766a7bda81290d5f44e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_d4ec0f2b",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1185,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2017-05-03T01:40:50Z",
+      "side": 0,
+      "message": "agree, we don\u0027t override option password_expires_days\u0027s value , that means its value is the default value \u0027None\u0027.",
+      "parentUuid": "5ff73747_52126264",
+      "revId": "874d571683452e0333ea9766a7bda81290d5f44e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
