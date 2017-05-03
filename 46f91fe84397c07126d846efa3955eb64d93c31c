@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_dbd42fc0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-05-03T12:03:18Z",
+      "side": 1,
+      "message": "I\u0027d remove the word native because fixtures in a third-party package.",
+      "revId": "46f91fe84397c07126d846efa3955eb64d93c31c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
