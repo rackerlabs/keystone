@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_43ef11e9",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1171,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-03T13:42:21Z",
+      "side": 0,
+      "message": "This test is still adding some value because it\u0027s testing something other than just config. Is there any reason to not keep this test?",
+      "revId": "e18923daa1e3bdf4ee444ebe44e6dd11e65676ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
