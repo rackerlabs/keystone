@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_de077818",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 842,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-03T13:55:53Z",
+      "side": 0,
+      "message": "For other reviewers, this is actually invalid because the minimum value of request_token_duration and access_token_duration is 0, so setting this to -1 isn\u0027t something that\u0027s realistic in a deployment.",
+      "revId": "e18923daa1e3bdf4ee444ebe44e6dd11e65676ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
