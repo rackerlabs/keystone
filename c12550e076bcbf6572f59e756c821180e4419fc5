@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_047a3c87",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2017-05-03T09:03:08Z",
+      "side": 1,
+      "message": "is there a reason to set this to \u0027non-True\u0027 as opposed to \u0027False\u0027. I would think the later is what a customer would set it to.",
+      "range": {
+        "startLine": 12,
+        "startChar": 38,
+        "endLine": 12,
+        "endChar": 48
+      },
+      "revId": "c12550e076bcbf6572f59e756c821180e4419fc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_840e4c30",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2017-05-03T09:03:08Z",
+      "side": 1,
+      "message": "I\u0027m not quite sure of the relevancy of this line....that section of code highlighted is only responsible for special handling of the final \u0027enabled\u0027 attribute, I think, as opposed to the processing of the \u0027user_enabled_default\u0027 attribute.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 137
+      },
+      "revId": "c12550e076bcbf6572f59e756c821180e4419fc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
