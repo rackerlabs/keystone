@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5ff73747_0330e906",
+        "filename": "keystone/oauth1/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-03T13:53:32Z",
+      "side": 1,
+      "message": "Aha - sure. Good catch.",
+      "parentUuid": "5ff73747_63aa0dd3",
+      "revId": "9ebaa3611938f28e89961b2a03574537d0bcc412",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ff73747_60f56383",
         "filename": "keystone/tests/unit/test_v3_oauth1.py",
         "patchSetId": 3
