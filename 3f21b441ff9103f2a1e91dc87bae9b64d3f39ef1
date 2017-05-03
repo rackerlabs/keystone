@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_87e2ce00",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-05-03T09:41:29Z",
+      "side": 1,
+      "message": "you changed it to use freezegun",
+      "range": {
+        "startLine": 10,
+        "startChar": 43,
+        "endLine": 10,
+        "endChar": 75
+      },
+      "revId": "3f21b441ff9103f2a1e91dc87bae9b64d3f39ef1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_07d7de25",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 868,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-05-03T09:41:29Z",
+      "side": 1,
+      "message": "I think you could just say seconds\u003d2 here",
+      "revId": "3f21b441ff9103f2a1e91dc87bae9b64d3f39ef1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
