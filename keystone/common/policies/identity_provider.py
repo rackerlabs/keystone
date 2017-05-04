@@ -17,7 +17,7 @@ from keystone.common.policies import base
 identity_provider_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_identity_provider',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED,
         description='Create identity provider.',
         operations=[{'path': '/v3/OS-FEDERATION/identity_providers/{idp_id}',
                      'method': 'PUT'}]),
@@ -35,13 +35,13 @@ identity_provider_policies = [
                      'method': 'GET'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_identity_provider',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED,
         description='Update identity provider.',
         operations=[{'path': '/v3/OS-FEDERATION/identity_providers/{idp_id}',
                      'method': 'PATCH'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_identity_provider',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED,
         description='Delete identity provider.',
         operations=[{'path': '/v3/OS-FEDERATION/identity_providers/{idp_id}',
                      'method': 'DELETE'}])

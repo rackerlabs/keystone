@@ -17,14 +17,14 @@ from keystone.common.policies import base
 protocol_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_protocol',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED,
         description='Create federated protocol.',
         operations=[{'path': ('/v3/OS-FEDERATION/identity_providers/{idp_id}/'
                               'protocols/{protocol_id}'),
                      'method': 'PUT'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_protocol',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED,
         description='Update federated protocol.',
         operations=[{'path': ('/v3/OS-FEDERATION/identity_providers/{idp_id}/'
                               'protocols/{protocol_id}'),
@@ -45,7 +45,7 @@ protocol_policies = [
                      'method': 'GET'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_protocol',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED,
         description='Delete federated protocol.',
         operations=[{'path': ('/v3/OS-FEDERATION/identity_providers/{idp_id}/'
                               'protocols/{protocol_id}'),
