@@ -416,6 +416,16 @@ class IdentityTestPolicySample(test_v3.RestfulTestCase):
                                          user_id=self.admin_user['id'],
                                          project_id=self.project['id'])
 
+        default_domain = self.resource_api.get_domain(
+            CONF.identity.default_domain_id)
+
+        self.config_fixture.config(
+            group='resource',
+            admin_project_name=self.project['name'])
+        self.config_fixture.config(
+            group='resource',
+            admin_project_domain_name=default_domain['name'])
+
     def test_user_validate_same_token(self):
         # Given a non-admin user token, the token can be used to validate
         # itself.
@@ -1009,10 +1019,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.assertNotEqual(self.domainB['id'], self.just_a_user['domain_id'])
         self.assertValidUserResponse(r, self.just_a_user)
 
-        # Finally, show that we can create a new user without any surprises.
-        # But if we specify a 'domain-id' instead of a 'domain_id', we get a
-        # Forbidden response because we fail a policy check before
-        # normalization occurs.
+        # Show that we can create a new user without any surprises.
         user_ref = unit.new_user_ref(domain_id=self.domainA['id'])
         r = self.post(
             '/users',
@@ -1020,12 +1027,20 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
             body={'user': user_ref},
             expected_status=http_client.CREATED)
         self.assertValidUserResponse(r, ref=user_ref)
+
+        # In the past, if we specified a 'domain-id' instead of a
+        # 'domain_id', we would get a Forbidden response because
+        # we would fail a policy check before normalization occurs.
+        # Now that normalization has been moved before the policy check
+        # it creates the user properly.
+        user_ref = unit.new_user_ref(domain_id=self.domainA['id'])
         user_ref['domain-id'] = user_ref.pop('domain_id')
-        self.post(
+        r = self.post(
             '/users',
             auth=self.auth,
-            body={'user': user_ref},
-            expected_status=exception.ForbiddenAction.code)
+            body={'user': user_ref})
+        user_ref['domain_id'] = user_ref.pop('domain-id')
+        self.assertValidUserResponse(r, ref=user_ref)
 
     def test_user_management_by_cloud_admin(self):
         # Test users management with a cloud admin. This user should
