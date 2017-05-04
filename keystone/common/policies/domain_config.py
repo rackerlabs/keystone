@@ -18,7 +18,7 @@ from keystone.common.policies import base
 domain_config_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_domain_config',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED,
         description='Create domain configuration.',
         operations=[
             {
@@ -29,7 +29,7 @@ domain_config_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_domain_config',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED,
         description=('Get the entire domain configuration for a domain, an '
                      'option group within a domain, or a specific '
                      'configuration option within a group for a domain.'),
@@ -88,7 +88,7 @@ domain_config_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_domain_config',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED,
         description=('Update domain configuration for either a domain, '
                      'specific group or a specific option in a group.'),
         operations=[
@@ -108,7 +108,7 @@ domain_config_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_domain_config',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED,
         description=('Delete domain configuration for either a domain, '
                      'specific group or a specific option in a group.'),
         operations=[
@@ -128,7 +128,7 @@ domain_config_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_domain_config_default',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED,
         description=('Get domain configuration default for either a domain, '
                      'specific group or a specific option in a group.'),
         operations=[
