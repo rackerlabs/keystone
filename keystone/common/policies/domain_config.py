@@ -17,22 +17,22 @@ from keystone.common.policies import base
 domain_config_policies = [
     policy.RuleDefault(
         name=base.IDENTITY % 'create_domain_config',
-        check_str=base.RULE_ADMIN_REQUIRED),
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED),
     policy.RuleDefault(
         name=base.IDENTITY % 'get_domain_config',
-        check_str=base.RULE_ADMIN_REQUIRED),
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED),
     policy.RuleDefault(
         name=base.IDENTITY % 'get_security_compliance_domain_config',
         check_str=''),
     policy.RuleDefault(
         name=base.IDENTITY % 'update_domain_config',
-        check_str=base.RULE_ADMIN_REQUIRED),
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED),
     policy.RuleDefault(
         name=base.IDENTITY % 'delete_domain_config',
-        check_str=base.RULE_ADMIN_REQUIRED),
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED),
     policy.RuleDefault(
         name=base.IDENTITY % 'get_domain_config_default',
-        check_str=base.RULE_ADMIN_REQUIRED)
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED)
 ]
 
 
