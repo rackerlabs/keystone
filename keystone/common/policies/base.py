@@ -14,6 +14,10 @@ from oslo_policy import policy
 
 IDENTITY = 'identity:%s'
 RULE_ADMIN_REQUIRED = 'rule:admin_required'
+RULE_ADMIN_PROJECT_REQUIRED = '(rule:admin_required and is_admin_project:True)'
+RULE_DEFAULT_DOMAIN_ADMIN = (
+    '(rule:admin_required ) and '
+    '(is_admin_project:True or domain_id:default)')
 RULE_ADMIN_OR_OWNER = 'rule:admin_or_owner'
 RULE_ADMIN_OR_CREDENTIAL_OWNER = (
     'rule:admin_required or '
