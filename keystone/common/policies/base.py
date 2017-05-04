@@ -14,6 +14,14 @@ from oslo_policy import policy
 
 IDENTITY = 'identity:%s'
 RULE_ADMIN_REQUIRED = 'rule:admin_required'
+
+# Domain and Service operations are also often performed with
+# tokens scoped to the default domain that contain admin roles.
+# This pattern has been "grandfathered in" as well.
+RULE_ADMIN_PROJECT_REQUIRED = (
+    'is_admin:1 or '
+    '(role:admin and is_admin_project:True) or '
+    '(role:admin and is_domain_scoped:True and domain_id:default)')
 RULE_ADMIN_OR_OWNER = 'rule:admin_or_owner'
 RULE_ADMIN_OR_CREDENTIAL_OWNER = (
     'rule:admin_required or '

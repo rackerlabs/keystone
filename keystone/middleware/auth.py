@@ -177,6 +177,7 @@ class AuthContextMiddleware(auth_token.BaseAuthProtocol):
             return
 
         kwargs = {
+            'is_domain_scoped': False,
             'authenticated': False,
             'overwrite': True}
 
@@ -201,7 +202,8 @@ class AuthContextMiddleware(auth_token.BaseAuthProtocol):
             if token.domain_scoped:
                 # Domain scoped tokens should never have is_admin_project set
                 # Even if KSA defaults it otherwise.  The two mechanisms are
-                # parallel; only ione or the other should be used for access.
+                # parallel; only one or the other should be used for access.
+                kwargs['is_domain_scoped'] = True
                 kwargs['is_admin_project'] = False
                 kwargs['domain_id'] = token.domain_id
                 kwargs['domain_name'] = token.domain_name
