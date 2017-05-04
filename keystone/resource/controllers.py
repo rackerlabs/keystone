@@ -19,6 +19,7 @@ import uuid
 
 from six.moves import http_client
 
+from keystone.common import authorization
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import validation
@@ -249,18 +250,44 @@ class ProjectV3(controller.V3Controller):
         super(ProjectV3, self).__init__()
         self.get_member_from_driver = self.resource_api.get_project
 
-    @controller.protected()
     def create_project(self, request, project):
+
+        request.assert_authenticated()
         validation.lazy_validate(schema.project_create, project)
+
         ref = self._assign_unique_id(self._normalize_dict(project))
 
+        # For regular projects (i.e. those not acing as a domain), if
+        # "domain_id" is not specified, but "parent_id" is specified,
+        # then the domain ID of the parent will be used. If neither
+        # "domain_id" or "parent_id" is specified, we will default to
+        # the domain to which the client's token is scoped.
         if not ref.get('is_domain'):
+            domain_id = ref.get('domain_id')
+            parent_id = ref.get('parent_id')
+            if not domain_id and parent_id:
+                parent_ref = self.resource_api.get_project(parent_id)
+                domain_id = parent_ref.get('domain_id')
+            if not domain_id:
+                domain_id = request.context.domain_id
+            if not domain_id:
+                domain_id = request.context.project_domain_id
+            ref['domain_id'] = domain_id
             ref = self._normalize_domain_id(request, ref)
+
         # Our API requires that you specify the location in the hierarchy
-        # unambiguously. This could be by parent_id or, if it is a top level
-        # project, just by providing a domain_id.
+        # unambiguously. This could be by parent_id or, if it's a top level
+        # project, by providing a domain_id.
         if not ref.get('parent_id'):
             ref['parent_id'] = ref.get('domain_id')
+
+        kwargs = {'project': ref}
+        args = [self, request, ref]
+
+        authorization.check_policy(
+            self, request, 'create_project',
+            filter_attr=None, input_attr=kwargs, target_attr=None,
+            args=args, kwargs=kwargs)
 
         try:
             ref = self.resource_api.create_project(
