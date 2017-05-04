@@ -14,6 +14,7 @@ from oslo_policy import policy
 
 IDENTITY = 'identity:%s'
 RULE_ADMIN_REQUIRED = 'rule:admin_required'
+RULE_ADMIN_PROJECT_REQUIRED = '(rule:admin_required and token.is_admin_project:True)'
 RULE_ADMIN_OR_OWNER = 'rule:admin_or_owner'
 RULE_ADMIN_OR_CREDENTIAL_OWNER = (
     'rule:admin_required or '

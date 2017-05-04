@@ -17,7 +17,7 @@ from keystone.common.policies import base
 mapping_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_mapping',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED,
         description=('Create a new federated mapping containing one or '
                      'more sets of rules.'),
         operations=[{'path': '/v3/OS-FEDERATION/mappings/{mapping_id}',
@@ -54,13 +54,13 @@ mapping_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_mapping',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED,
         description='Delete a federated mapping.',
         operations=[{'path': '/v3/OS-FEDERATION/mappings/{mapping_id}',
                      'method': 'DELETE'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_mapping',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED,
         description='Update a federated mapping.',
         operations=[{'path': '/v3/OS-FEDERATION/mappings/{mapping_id}',
                      'method': 'PATCH'}])
