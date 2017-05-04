@@ -514,6 +514,9 @@ the ``X-Subject-Token`` token is immediately not valid, regardless
 of the ``expires_at`` attribute value. An additional
 ``X-Auth-Token`` is not required.
 
+* Note: This call doesn't delete the token as the rest method and just
+  makes it invalid.
+
 Normal response codes: 204
 
 Error response codes: 413,415,405,404,403,401,400,503,409
