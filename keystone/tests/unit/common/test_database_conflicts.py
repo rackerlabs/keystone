@@ -264,3 +264,18 @@ class DuplicateTestCase(test_v3.RestfulTestCase):
                           % service_ref['id'], repr(e))
         else:
             self.fail("Create duplicate region did not raise a conflict")
+
+    def test_idp_duplicate_conflict_gives_name(self):
+        idp = {
+            'id': uuid.uuid4().hex,
+            'enabled': True,
+            'description': uuid.uuid4().hex
+        }
+        self.federation_api.create_idp(idp['id'], idp)
+        try:
+            self.federation_api.create_idp(idp['id'], idp)
+        except exception.Conflict as e:
+            self.assertIn("Duplicate entry: %s"
+                          % idp['id'], repr(e))
+        else:
+            self.fail("Create duplicate idp did not raise a conflict")
