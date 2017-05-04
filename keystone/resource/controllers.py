@@ -17,6 +17,7 @@
 
 from six.moves import http_client
 
+from keystone.common import authorization
 from keystone.common import controller
 from keystone.common import provider_api
 from keystone.common import validation
@@ -160,8 +161,8 @@ class ProjectV3(controller.V3Controller):
         super(ProjectV3, self).__init__()
         self.get_member_from_driver = PROVIDERS.resource_api.get_project
 
-    @controller.protected()
     def create_project(self, request, project):
+        request.assert_authenticated()
         validation.lazy_validate(schema.project_create, project)
         ref = self._assign_unique_id(self._normalize_dict(project))
 
@@ -173,6 +174,8 @@ class ProjectV3(controller.V3Controller):
         if not ref.get('parent_id'):
             ref['parent_id'] = ref.get('domain_id')
 
+        authorization.check_policy_input(self, request,
+                                         'create_project', 'project', ref)
         try:
             ref = PROVIDERS.resource_api.create_project(
                 ref['id'],

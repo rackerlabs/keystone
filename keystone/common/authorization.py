@@ -131,6 +131,15 @@ def check_protection(controller, request, prep_info, target_attr=None,
                  *args, **kwargs)
 
 
+def check_policy_input(controller, request, function_name,
+                       input_attr_name, input_attr):
+    check_policy(controller, request,
+                 pol_base.IDENTITY % function_name,
+                 None,
+                 {input_attr_name: input_attr},
+                 None)
+
+
 def check_policy(controller, request, action,
                  filter_attr=None, input_attr=None, target_attr=None,
                  *args, **kwargs):
