@@ -60,11 +60,18 @@ class Manager(manager.Manager):
         super(Manager, self).__init__(CONF.federation.driver)
 
     def create_idp(self, idp_id, idp):
+        idp_domain_auto_flag = False
         if not idp.get('domain_id'):
             idp['domain_id'] = self._create_idp_domain(idp_id)
+            idp_domain_auto_flag = True
         else:
             self._assert_valid_domain_id(idp['domain_id'])
-        return self.driver.create_idp(idp_id, idp)
+        try:
+            return self.driver.create_idp(idp_id, idp)
+        except exception.Conflict, Exception:
+            if idp_domain_auto_flag:
+                self._delete_idp_auto_generated_domain(idp['domain_id'])
+            raise
 
     def _create_idp_domain(self, idp_id):
         domain_id = uuid.uuid4().hex
@@ -81,6 +88,11 @@ class Manager(manager.Manager):
 
     def _assert_valid_domain_id(self, domain_id):
         self.resource_api.get_domain(domain_id)
+
+    def _delete_idp_auto_generated_domain(self, domain_id):
+        domain = {'enabled': False}
+        self.resource_api.update_domain(domain_id, domain)
+        self.resource_api.delete_domain(domain_id)
 
     @MEMOIZE
     def get_enabled_service_providers(self):
