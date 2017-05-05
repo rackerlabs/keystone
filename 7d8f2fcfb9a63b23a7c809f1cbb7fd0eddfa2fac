@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f044301_78be3366",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-05T04:51:08Z",
+      "side": 1,
+      "message": "We should refactor this in a later patch to change the method name - since it\u0027s not really a wrapper at all.",
+      "revId": "7d8f2fcfb9a63b23a7c809f1cbb7fd0eddfa2fac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
