@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f044301_2e79732e",
+        "filename": "api-ref/source/v3/samples/admin/get-role-inferences-response.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-05T18:18:43Z",
+      "side": 0,
+      "message": "I\u0027m looking through the docs to see where this is duplicated, but I\u0027m not finding. Where is the duplication happening?",
+      "revId": "da472c5f3b9c9d80f54284300a818acc2741c7e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
