@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f044301_8e5c077f",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-05T18:34:08Z",
+      "side": 1,
+      "message": "I get why we\u0027re catching the Conflict, but why we are catching an Exception? This is going to mask any other errors that happen at the layer below the Manager, which can lead to poor user experience if the error was not caused by a conflict.",
+      "revId": "b5499bab48a91a96e96e8a08ec8e8f8d1ac4bce8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f044301_6e5f7b72",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-05T18:34:08Z",
+      "side": 1,
+      "message": "If we take the pre-processing route - we won\u0027t need this cleanup logic.",
+      "revId": "b5499bab48a91a96e96e8a08ec8e8f8d1ac4bce8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f044301_aeca2317",
+        "filename": "keystone/tests/unit/common/test_database_conflicts.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-05T18:34:08Z",
+      "side": 1,
+      "message": "We should an API test to test_v3_federation.py since that tests the behavior of the federation APIs. Maybe somewhere in our restful identity provider tests [0]\n\n[0] https://github.com/openstack/keystone/blob/da472c5f3b9c9d80f54284300a818acc2741c7e9/keystone/tests/unit/test_v3_federation.py#L787",
+      "revId": "b5499bab48a91a96e96e8a08ec8e8f8d1ac4bce8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f044301_0e77d704",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-05T18:34:08Z",
+      "side": 0,
+      "message": "Another possible solution here that doesn\u0027t require all the cleanup logic is to check if an Identity Provider exists with the given ID before entering the create logic.",
+      "revId": "c287714cd33a8a1681fb4199e9f46e7ae46d5db1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
