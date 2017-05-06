@@ -16,6 +16,24 @@
       "revId": "da472c5f3b9c9d80f54284300a818acc2741c7e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f044301_cf92064c",
+        "filename": "api-ref/source/v3/samples/admin/get-role-inferences-response.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 23081
+      },
+      "writtenOn": "2017-05-06T01:06:41Z",
+      "side": 0,
+      "message": "Hi, Lance, thanks for reviewing.\nHere I mean the \u0027links\u0027 object that this patch removed is not found in the response body of get role inferences api.",
+      "parentUuid": "3f044301_2e79732e",
+      "revId": "da472c5f3b9c9d80f54284300a818acc2741c7e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
