@@ -220,6 +220,11 @@ Response Parameters
    - id: user_id
    - name: user_name
 
+Response Example
+----------------
+.. literalinclude:: ./samples/admin/auth-password-project-scoped-response.json
+   :language: javascript
+
 
 Password authentication with explicit unscoped authorization
 ============================================================
@@ -277,6 +282,11 @@ Response Parameters
    - id: user_id
    - name: user_name
 
+Response Example
+----------------
+.. literalinclude:: ./samples/admin/auth-password-explicit-unscoped-response.json
+   :language: javascript
+
 
 Token authentication with unscoped authorization
 ================================================
@@ -318,6 +328,11 @@ Response Parameters
 
    - X-Subject-Token: X-Subject-Token
    - X-Auth-Token: X-Auth-Token
+
+Response Example
+----------------
+.. literalinclude:: ./samples/admin/auth-token-unscoped-response.json
+   :language: javascript
 
 
 Token authentication with scoped authorization
@@ -364,6 +379,11 @@ Response Parameters
    - X-Subject-Token: X-Subject-Token
    - X-Auth-Token: X-Auth-Token
 
+Response Example
+----------------
+.. literalinclude:: ./samples/admin/auth-token-scoped-response.json
+   :language: javascript
+
 
 Token authentication with explicit unscoped authorization
 =========================================================
@@ -409,6 +429,11 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - X-Subject-Token: X-Subject-Token
+
+Response Example
+----------------
+.. literalinclude:: ./samples/admin/auth-token-unscoped-response.json
+   :language: javascript
 
 
 Validate and show information for token
