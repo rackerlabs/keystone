@@ -34,7 +34,7 @@ file on disk), and a `endpoint_filter.sql` option (which supports arbitrary
 service catalogs per project).
 """))
 
-aching = cfg.BoolOpt(
+caching = cfg.BoolOpt(
     'caching',
     default=True,
     help=utils.fmt("""
