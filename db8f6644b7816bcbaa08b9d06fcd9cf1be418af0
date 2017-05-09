@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f044301_9f3c01c9",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-05-09T13:10:50Z",
+      "side": 0,
+      "message": "Removing this would change the HTTP return code from 504 to 500, going from a \"Gateway Timeout\" to \"Internal Server Error\". The meaning of the error changes from a timeout to perhaps a server exception.",
+      "range": {
+        "startLine": 600,
+        "startChar": 11,
+        "endLine": 600,
+        "endChar": 14
+      },
+      "revId": "db8f6644b7816bcbaa08b9d06fcd9cf1be418af0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
