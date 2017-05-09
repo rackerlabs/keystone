@@ -65,3 +65,10 @@ def enforce(credentials, action, target, do_raise=True):
 
 def register_rules(enforcer):
     enforcer.register_defaults(policies.list_rules())
+
+
+def get_policy():
+    init()
+    _ENFORCER.load_rules()
+    return [(item.name, str(item.check_str)) for item in
+            _ENFORCER.registered_rules.values()]
