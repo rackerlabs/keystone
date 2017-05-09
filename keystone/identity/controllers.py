@@ -18,6 +18,7 @@ from oslo_log import log
 
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.common import policy
 from keystone.common import validation
 import keystone.conf
 from keystone import exception
@@ -355,3 +356,15 @@ class GroupV3(controller.V3Controller):
         self.identity_api.delete_group(
             group_id, initiator=request.audit_initiator
         )
+
+
+class PolicyV3(controller.V3Controller):
+
+    def download_policy(self, request):
+        self.assert_admin(request)
+        rules = policy.get_policy()
+        rules_dict = {}
+        for rule in rules:
+            temp_dict = {rule[0]: rule[1]}
+            rules_dict.update(temp_dict)
+        return rules_dict

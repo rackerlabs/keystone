@@ -82,3 +82,9 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'user_id': json_home.Parameters.USER_ID,
             })
+
+        policy_controller = controllers.PolicyV3()
+        mapper.connect('/policy',
+                       controller=policy_controller,
+                       action='download_policy',
+                       conditions=dict(method=['GET']))
