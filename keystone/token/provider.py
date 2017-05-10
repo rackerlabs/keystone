@@ -210,7 +210,8 @@ class Manager(manager.Manager):
             # Token has not expired and has not been revoked.
             return None
         else:
-            raise exception.TokenNotFound(_('Failed to validate token'))
+            msg = _('Failed to validate token: token has expired')
+            raise exception.TokenNotFound(msg)
 
     def issue_token(self, user_id, method_names, expires_at=None,
                     project_id=None, is_domain=False, domain_id=None,
