@@ -210,6 +210,7 @@ class Manager(manager.Manager):
             # Token has not expired and has not been revoked.
             return None
         else:
+            LOG.debug('Token has expired.')
             raise exception.TokenNotFound(_('Failed to validate token'))
 
     def issue_token(self, user_id, method_names, expires_at=None,
