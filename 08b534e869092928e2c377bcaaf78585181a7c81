@@ -16,6 +16,24 @@
       "revId": "08b534e869092928e2c377bcaaf78585181a7c81",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f044301_ec959034",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 8205
+      },
+      "writtenOn": "2017-05-10T13:12:05Z",
+      "side": 1,
+      "message": "Will check and amend in next patch.",
+      "parentUuid": "3f044301_0c7b27be",
+      "revId": "08b534e869092928e2c377bcaaf78585181a7c81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
