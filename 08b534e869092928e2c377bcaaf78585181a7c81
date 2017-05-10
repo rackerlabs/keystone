@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f044301_0c7b27be",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 25640
+      },
+      "writtenOn": "2017-05-10T02:00:15Z",
+      "side": 1,
+      "message": "There have been a PolicyV3 in policy. PolicyV3 here will be ambiguous.",
+      "revId": "08b534e869092928e2c377bcaaf78585181a7c81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
