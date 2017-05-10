@@ -159,6 +159,7 @@ class Manager(manager.Manager):
     def validate_token(self, token_id, window_seconds=0):
         if not token_id:
             raise exception.TokenNotFound(_('No token in the request'))
+        token = token_id
 
         try:
             # NOTE(lbragstad): Only go to persistent storage if we have a token
@@ -167,11 +168,11 @@ class Manager(manager.Manager):
             # id.
             if self._needs_persistence:
                 token_ref = self._persistence.get_token(token_id)
-                # Overload the token_id variable to be a token reference
+                # Change the token variable to be a token reference
                 # instead.
-                token_id = token_ref
-            token_ref = self._validate_token(token_id)
-            self._is_valid_token(token_ref, window_seconds=window_seconds)
+                token = token_ref
+            token_ref = self._validate_token(token)
+            self._is_valid_token(token_ref, token_id, window_seconds=window_seconds)
             return token_ref
         except exception.Unauthorized as e:
             LOG.debug('Unable to validate token: %s', e)
@@ -181,7 +182,7 @@ class Manager(manager.Manager):
     def _validate_token(self, token_id):
         return self.driver.validate_token(token_id)
 
-    def _is_valid_token(self, token, window_seconds=0):
+    def _is_valid_token(self, token, token_id, window_seconds=0):
         """Verify the token is valid format and has not expired."""
         current_time = timeutils.normalize_time(timeutils.utcnow())
 
@@ -210,6 +211,7 @@ class Manager(manager.Manager):
             # Token has not expired and has not been revoked.
             return None
         else:
+            LOG.warning('Token %s has expired', token_id)
             raise exception.TokenNotFound(_('Failed to validate token'))
 
     def issue_token(self, user_id, method_names, expires_at=None,
