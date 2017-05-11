@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f044301_506995f6",
+        "filename": "api-ref/source/v3/credentials.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-05-11T20:18:57Z",
+      "side": 1,
+      "message": "\"types of credentials\" or \"credentials types\"",
+      "range": {
+        "startLine": 8,
+        "startChar": 67,
+        "endLine": 9,
+        "endChar": 10
+      },
+      "revId": "3b9876569aa1639efaf45a763f2ca3862b7cb58a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f044301_306a89ec",
+        "filename": "api-ref/source/v3/credentials.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-05-11T20:18:57Z",
+      "side": 1,
+      "message": "require",
+      "range": {
+        "startLine": 9,
+        "startChar": 11,
+        "endLine": 9,
+        "endChar": 19
+      },
+      "revId": "3b9876569aa1639efaf45a763f2ca3862b7cb58a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
