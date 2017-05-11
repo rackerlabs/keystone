@@ -4,10 +4,10 @@
  Credentials
 =============
 
-In exchange for a set of authentication credentials that the user
-submits, the Identity service generates and returns a token. A
-token represents the authenticated identity of a user and,
-optionally, grants authorization on a specific project or domain.
+In exchange for a set of authentication messages that the user submits,
+the Identity service generates and returns a credential. Different type
+credential requires different format blob which is a string that contains
+a JSON-serialized dictionary.
 
 You can list all credentials, and create, show details for, update,
 and delete a credential.
