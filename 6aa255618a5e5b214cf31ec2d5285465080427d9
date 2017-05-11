@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f044301_3f801f46",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-05-11T14:30:18Z",
+      "side": 1,
+      "message": "I do not agree with this comment being here. This is backend specific information that doesn\u0027t belong in the API documentation. It depends on if the operator is using UUID or Fernet and therefore it belongs to the \"Token providers\" documentation (there is already a comparison between the two with regards to non-persistence there).",
+      "range": {
+        "startLine": 517,
+        "startChar": 0,
+        "endLine": 518,
+        "endChar": 19
+      },
+      "revId": "6aa255618a5e5b214cf31ec2d5285465080427d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
