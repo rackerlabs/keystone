@@ -16,6 +16,24 @@
       "revId": "bbb9d20da03c1d19f445c08eee01c5689a938060",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f044301_3fec9f8d",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-05-11T14:49:55Z",
+      "side": 1,
+      "message": "This is done in: https://review.openstack.org/#/c/464009/",
+      "parentUuid": "5ff73747_5653ac6b",
+      "revId": "bbb9d20da03c1d19f445c08eee01c5689a938060",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
