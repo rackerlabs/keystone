@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f013ff3_9e2a398e",
+        "filename": "api-ref/source/v3/credentials.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-05-12T15:34:10Z",
+      "side": 1,
+      "message": "The identity service stores the credentials. It doesn\u0027t generate them as far as I know. Therefore the wording here is incorrect.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 55
+      },
+      "revId": "f754df0314ac35d6227020d5924ac9389a08ba10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f013ff3_de8441b4",
+        "filename": "api-ref/source/v3/credentials.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-05-12T15:34:10Z",
+      "side": 1,
+      "message": "a",
+      "range": {
+        "startLine": 9,
+        "startChar": 22,
+        "endLine": 9,
+        "endChar": 23
+      },
+      "revId": "f754df0314ac35d6227020d5924ac9389a08ba10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
