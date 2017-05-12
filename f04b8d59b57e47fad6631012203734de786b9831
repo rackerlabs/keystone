@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "1f013ff3_103bb2d1",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-05-12T21:02:53Z",
+      "side": 1,
+      "message": "Use \u0027require\u0027 instead as this is known ahead of time.",
+      "range": {
+        "startLine": 447,
+        "startChar": 37,
+        "endLine": 447,
+        "endChar": 47
+      },
+      "revId": "f04b8d59b57e47fad6631012203734de786b9831",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f013ff3_707af688",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-05-12T21:02:53Z",
+      "side": 1,
+      "message": "\u0027specific\u0027 is redundant since you are referring to \u0027specific scenarios\u0027 in the previous sentence.",
+      "range": {
+        "startLine": 449,
+        "startChar": 0,
+        "endLine": 449,
+        "endChar": 8
+      },
+      "revId": "f04b8d59b57e47fad6631012203734de786b9831",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ff73747_ec3b85c5",
         "filename": "doc/source/devref/development_best_practices.rst",
         "patchSetId": 2
