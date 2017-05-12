@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f013ff3_90d1025b",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-05-12T21:16:53Z",
+      "side": 1,
+      "message": "Please catch the actual exception that is raised in the case where the IdP is not found. https://github.com/openstack/keystone/blob/master/keystone/federation/backends/sql.py#L201",
+      "revId": "7f3eda7444dc89f29a0c33c22d3f0ac614eb9ba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f013ff3_10c5f28e",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-05-12T21:16:53Z",
+      "side": 1,
+      "message": "All-caps signifies a global variable, which this is not.",
+      "range": {
+        "startLine": 83,
+        "startChar": 8,
+        "endLine": 83,
+        "endChar": 25
+      },
+      "revId": "7f3eda7444dc89f29a0c33c22d3f0ac614eb9ba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f013ff3_50593afc",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-05-12T21:16:53Z",
+      "side": 1,
+      "message": "I\u0027m not sure logging here is required, since the exception isn\u0027t being caught anywhere, therefore the exception itself will get logged.",
+      "range": {
+        "startLine": 86,
+        "startChar": 8,
+        "endLine": 87,
+        "endChar": 58
+      },
+      "revId": "7f3eda7444dc89f29a0c33c22d3f0ac614eb9ba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
