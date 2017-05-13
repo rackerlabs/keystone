@@ -62,6 +62,30 @@
       "revId": "7f3eda7444dc89f29a0c33c22d3f0ac614eb9ba6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f013ff3_47a3c150",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 17430
+      },
+      "writtenOn": "2017-05-13T10:36:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f013ff3_50593afc",
+      "range": {
+        "startLine": 86,
+        "startChar": 8,
+        "endLine": 87,
+        "endChar": 58
+      },
+      "revId": "7f3eda7444dc89f29a0c33c22d3f0ac614eb9ba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
