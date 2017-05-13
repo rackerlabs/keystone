@@ -1029,6 +1029,26 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
                                  keys_to_check=keys_to_check,
                                  ref=expected)
 
+    def test_create_idps_with_id_repeated(self):
+        # Create an identity provider, save its ID, and count the number of
+        # domains.
+        resp = self._create_default_idp()
+        idp_id = resp.json_body['identity_provider']['id']
+        domains = self.resource_api.list_domains()
+        number_of_domains = len(domains)
+
+        # Create an identity provider with the same ID to intentionally cause
+        # a conflict and the number of domains should not increase for idp
+        # creating error.
+
+        resp = self.put(
+            self.base_url(suffix=idp_id),
+            body={'identity_provider': self.default_body.copy()},
+            expected_status=http_client.CONFLICT
+        )
+        domains = self.resource_api.list_domains()
+        self.assertEqual(number_of_domains, len(domains))
+
     def test_update_idp_remote_ids(self):
         """Update IdP's remote_ids parameter."""
         body = self.default_body.copy()
