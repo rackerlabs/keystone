@@ -12,6 +12,8 @@
 
 """Main entry point into the Federation service."""
 
+from oslo_log import log
+import six
 import uuid
 
 from keystone.common import cache
@@ -28,6 +30,7 @@ from keystone.i18n import _
 MEMOIZE = cache.get_memoization_decorator(group='federation')
 
 CONF = keystone.conf.CONF
+LOG = log.getLogger(__name__)
 EXTENSION_DATA = {
     'name': 'OpenStack Federation APIs',
     'namespace': 'https://docs.openstack.org/identity/api/ext/'
@@ -60,11 +63,28 @@ class Manager(manager.Manager):
         super(Manager, self).__init__(CONF.federation.driver)
 
     def create_idp(self, idp_id, idp):
+        if self._check_if_idp_exist(idp_id):
+            self._handle_idp_conflict(idp_id)
+
         if not idp.get('domain_id'):
             idp['domain_id'] = self._create_idp_domain(idp_id)
         else:
             self._assert_valid_domain_id(idp['domain_id'])
         return self.driver.create_idp(idp_id, idp)
+
+    def _check_if_idp_exist(self, idp_id):
+        try:
+            self.get_idp(idp_id)
+            return True
+        except exception.IdentityProviderNotFound:
+            return False
+
+    def _handle_idp_conflict(self, idp_id):
+        conflict_type = 'identity_provider'
+        details = six.text_type(idp_id)
+        msg = _('Duplicate entry: %s')
+        msg = msg % idp_id
+        raise exception.Conflict(type=conflict_type, details=msg)
 
     def _create_idp_domain(self, idp_id):
         domain_id = uuid.uuid4().hex
