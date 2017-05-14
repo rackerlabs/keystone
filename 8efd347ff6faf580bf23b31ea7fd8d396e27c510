@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f013ff3_f3496b60",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-05-14T10:36:17Z",
+      "side": 1,
+      "message": "It would be nice if we didn\u0027t auto commit. This is actually a race condition. An unlikely one, but indeed a race.",
+      "revId": "8efd347ff6faf580bf23b31ea7fd8d396e27c510",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
