@@ -16,6 +16,24 @@
       "revId": "8efd347ff6faf580bf23b31ea7fd8d396e27c510",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f013ff3_e7e2c02f",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 17430
+      },
+      "writtenOn": "2017-05-15T07:19:53Z",
+      "side": 1,
+      "message": "Thanks for review. Here, I think it may not be a race condition. I have do a test:\nI create one idp and at the same time I get another idp, it is ok.\n\nAnd would you please tell me why it is a race condition? Thanks.",
+      "parentUuid": "1f013ff3_f3496b60",
+      "revId": "8efd347ff6faf580bf23b31ea7fd8d396e27c510",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
