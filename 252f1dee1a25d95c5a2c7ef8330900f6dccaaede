@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f013ff3_f24a49aa",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 967,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-16T17:27:49Z",
+      "side": 1,
+      "message": "neat!",
+      "range": {
+        "startLine": 967,
+        "startChar": 48,
+        "endLine": 967,
+        "endChar": 57
+      },
+      "revId": "252f1dee1a25d95c5a2c7ef8330900f6dccaaede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f013ff3_3251d163",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-16T17:27:49Z",
+      "side": 1,
+      "message": "so these tests check calling the operation won\u0027t fail anymore, but they don\u0027t check on the format of the response.\n\nyou could improve these by having data and checking the entities will be returned with \"\" attributes.",
+      "revId": "252f1dee1a25d95c5a2c7ef8330900f6dccaaede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f013ff3_725f5972",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 602,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-16T17:27:49Z",
+      "side": 1,
+      "message": "(nit) double blank line will probably fail pep8",
+      "revId": "252f1dee1a25d95c5a2c7ef8330900f6dccaaede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
