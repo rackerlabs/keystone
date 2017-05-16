@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f013ff3_6141c539",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-05-16T20:26:22Z",
+      "side": 1,
+      "message": "This message gets presented back to the end user who called the keystone API. We shouldn\u0027t be telling that user that keystone is using LDAP, much less what the URL of the LDAP server is. This needs to be more generic. Maybe just \"identity backend\"?",
+      "range": {
+        "startLine": 599,
+        "startChar": 34,
+        "endLine": 599,
+        "endChar": 55
+      },
+      "revId": "52cf38698dc10266f4888af41376d03774078e95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
