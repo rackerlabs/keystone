@@ -22,6 +22,30 @@
       "revId": "db8f6644b7816bcbaa08b9d06fcd9cf1be418af0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f013ff3_01e20130",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-05-16T20:31:15Z",
+      "side": 0,
+      "message": "either 500 or 504 are probably ok here. Changing the code makes this more generic, which seems like a good idea... the API caller doesn\u0027t need to know there was a timeout. And there\u0027s no backward compatibility concern with this change because it\u0027s generally agreed that you don\u0027t have to worry about that for 5xx errors... Folks may code to specific 2xx errors, but shouldn\u0027t be coding for 5xx errors (they should be fixing them). So changing from 504 to 500 should be fine.",
+      "parentUuid": "3f044301_9f3c01c9",
+      "range": {
+        "startLine": 600,
+        "startChar": 11,
+        "endLine": 600,
+        "endChar": 14
+      },
+      "revId": "db8f6644b7816bcbaa08b9d06fcd9cf1be418af0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
