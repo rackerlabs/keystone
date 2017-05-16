@@ -24,7 +24,6 @@ from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import utils
 from keystone.common import validation
-from keystone.common import wsgi
 import keystone.conf
 from keystone import exception
 from keystone.federation import constants
@@ -149,8 +148,8 @@ class Auth(controller.V3Controller):
             if trust:
                 self.trust_api.consume_use(trust['id'])
 
-            return render_token_data_response(token_id, token_data,
-                                              created=True)
+            return controller.render_token_data_response(token_id, token_data,
+                                                         created=True)
         except exception.TrustNotFound as e:
             LOG.warning(six.text_type(e))
             raise exception.Unauthorized(e)
@@ -305,7 +304,7 @@ class Auth(controller.V3Controller):
         # NOTE(morganfainberg): The code in
         # ``keystone.common.wsgi.render_response`` will remove the content
         # body.
-        return render_token_data_response(token_id, token_data)
+        return controller.render_token_data_response(token_id, token_data)
 
     @controller.protected()
     def revoke_token(self, request):
@@ -321,7 +320,7 @@ class Auth(controller.V3Controller):
             token_id, window_seconds=window_seconds)
         if not include_catalog and 'catalog' in token_data['token']:
             del token_data['token']['catalog']
-        return render_token_data_response(token_id, token_data)
+        return controller.render_token_data_response(token_id, token_data)
 
     @controller.protected()
     def revocation_list(self, request):
@@ -422,22 +421,3 @@ class Auth(controller.V3Controller):
             'links': {'self': self.base_url(request.context_dict,
                                             path='auth/catalog')}
         }
-
-
-# FIXME(gyee): not sure if it belongs here or keystone.common. Park it here
-# for now.
-def render_token_data_response(token_id, token_data, created=False):
-    """Render token data HTTP response.
-
-    Stash token ID into the X-Subject-Token header.
-
-    """
-    headers = [('X-Subject-Token', token_id)]
-
-    if created:
-        status = (201, 'Created')
-    else:
-        status = (200, 'OK')
-
-    return wsgi.render_response(body=token_data,
-                                status=status, headers=headers)
