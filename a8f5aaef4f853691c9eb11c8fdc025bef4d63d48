@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f013ff3_21e5fda8",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 706,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-05-16T20:55:49Z",
+      "side": 1,
+      "message": "That one single unit test is failing because [0][1] doesn\u0027t want x-subject-token in the response headers. This differs from the previous behavior of s3, which didn\u0027t include any headers in the response [2]. You should provide an optional parameter whether to include headers or not.\n\n0. https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_contrib_s3_core.py#L54\n\n1. https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_v3.py#L557-L558\n\n2. https://github.com/openstack/keystone/blob/master/keystone/contrib/s3/core.py#L135",
+      "revId": "a8f5aaef4f853691c9eb11c8fdc025bef4d63d48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
