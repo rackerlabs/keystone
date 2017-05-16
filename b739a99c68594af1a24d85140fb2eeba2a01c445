@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f013ff3_abb20ce5",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-16T19:17:49Z",
+      "side": 1,
+      "message": "just assert this is not empty one line before the loop so we can make sure we\u0027re effectively testing anything",
+      "range": {
+        "startLine": 591,
+        "startChar": 26,
+        "endLine": 591,
+        "endChar": 41
+      },
+      "revId": "b739a99c68594af1a24d85140fb2eeba2a01c445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
