@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f013ff3_94b54c34",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 947,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-16T01:04:18Z",
+      "side": 1,
+      "message": "Do we know what happened to them? Why don\u0027t just say the user has not been found in the identity backend?",
+      "range": {
+        "startLine": 947,
+        "startChar": 50,
+        "endLine": 947,
+        "endChar": 62
+      },
+      "revId": "2dbeef6a1890c827097e7010c41c608070571076",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f013ff3_347e786b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 966,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-16T01:04:18Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 966,
+        "startChar": 52,
+        "endLine": 966,
+        "endChar": 65
+      },
+      "revId": "2dbeef6a1890c827097e7010c41c608070571076",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
