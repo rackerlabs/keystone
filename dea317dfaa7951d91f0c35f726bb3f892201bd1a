@@ -64,6 +64,24 @@
       "revId": "dea317dfaa7951d91f0c35f726bb3f892201bd1a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f013ff3_510b568d",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-16T00:37:34Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1f013ff3_d7563b07",
+      "revId": "dea317dfaa7951d91f0c35f726bb3f892201bd1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
