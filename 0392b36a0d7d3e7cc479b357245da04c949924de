@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f013ff3_2b815c90",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-16T19:34:30Z",
+      "side": 1,
+      "message": "I like the way you get out of the mocking context here as it is not needed anymore",
+      "revId": "0392b36a0d7d3e7cc479b357245da04c949924de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
