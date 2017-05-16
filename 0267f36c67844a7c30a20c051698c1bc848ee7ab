@@ -22,6 +22,30 @@
       "revId": "0267f36c67844a7c30a20c051698c1bc848ee7ab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f013ff3_26cab36c",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-05-16T19:57:27Z",
+      "side": 1,
+      "message": "Interesting. I played a bit around and this seems to be a bug as `not direct_maps`  will never evaluate to True, since the actual list object is _matches.http://paste.openstack.org/show/609716/",
+      "parentUuid": "1f013ff3_328431b1",
+      "range": {
+        "startLine": 531,
+        "startChar": 30,
+        "endLine": 531,
+        "endChar": 39
+      },
+      "revId": "0267f36c67844a7c30a20c051698c1bc848ee7ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
