@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f013ff3_863e27d8",
+        "filename": "api-ref/source/v3/credentials.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-05-16T20:22:06Z",
+      "side": 1,
+      "message": "This sentence needs to be rewritten from scratch. It doesn\u0027t read too well and is somewhat confusing. Please explain what a credential is, and that a user can store credentials into keystone. Optionally explain why they would want to store credentials there.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 78
+      },
+      "revId": "5ea3543da0a076fa95566766d6182e09cc7866f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
