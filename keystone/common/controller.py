@@ -18,6 +18,7 @@ import uuid
 from oslo_log import log
 from oslo_log import versionutils
 import six
+from six.moves import http_client
 
 from keystone.common import authorization
 from keystone.common import dependency
@@ -692,3 +693,18 @@ class V3Controller(wsgi.Application):
         for blocked_param in blocked_keys:
             del ref[blocked_param]
         return ref
+
+
+def render_token_data_response(token_id, token_data, created=False):
+    """Render token data HTTP response.
+    """
+    if created:
+        status = (http_client.CREATED,
+                  http_client.responses[http_client.CREATED])
+    else:
+        status = (http_client.OK,
+                  http_client.responses[http_client.OK])
+    headers = [('X-Subject-Token', token_id)]
+    return wsgi.render_response(body=token_data,
+                                status=status,
+                                headers=headers)
