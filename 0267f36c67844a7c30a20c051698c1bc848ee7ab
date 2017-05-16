@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f013ff3_328431b1",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-16T17:37:28Z",
+      "side": 1,
+      "message": "isn\u0027t this checking for when direct_maps is not empty? I see L525 chcks for None already\n\nI am just not getting why checking in a private/internal attribute is buying us.\nwas the behavior wrong before this change? If so we need a bug report and tests",
+      "range": {
+        "startLine": 531,
+        "startChar": 30,
+        "endLine": 531,
+        "endChar": 39
+      },
+      "revId": "0267f36c67844a7c30a20c051698c1bc848ee7ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
