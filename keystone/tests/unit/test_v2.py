@@ -985,6 +985,11 @@ class RestfulTestCase(rest.RestfulTestCase):
             self.tenant_bar['id'],
             self.role_admin['id'])
 
+    def assertValidErrorResponse(self, r):
+        self.assertIsNotNone(r.result.get('error'))
+        self.assertValidError(r.result['error'])
+        self.assertEqual(r.result['error']['code'], r.status_code)
+
 
 class V2TestCase(object):
 
