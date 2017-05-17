@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_f4cb986f",
+        "filename": "keystone/exception.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-05-17T13:59:24Z",
+      "side": 1,
+      "message": "I just realized that since this switched to using debug_message_format, the message we put here is only going to be returned when insecure_debug is True. In that case, if we leave it that way, it would be ok to say \"LDAP server\" here.",
+      "range": {
+        "startLine": 599,
+        "startChar": 30,
+        "endLine": 599,
+        "endChar": 46
+      },
+      "revId": "cd16b7885c69c2b7f6d80be00c3a1c341fef9681",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
