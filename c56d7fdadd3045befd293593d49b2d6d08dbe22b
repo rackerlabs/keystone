@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_4b5bba2d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 698,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-05-17T17:29:42Z",
+      "side": 1,
+      "message": "this whitespace here is making pep8 fail.",
+      "range": {
+        "startLine": 698,
+        "startChar": 52,
+        "endLine": 698,
+        "endChar": 53
+      },
+      "revId": "c56d7fdadd3045befd293593d49b2d6d08dbe22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_8b09d2de",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 699,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-05-17T17:29:42Z",
+      "side": 1,
+      "message": "You are not using the passed in credentials and there is no explanation as to how the presence of `credentials` correlates to the presence of x-auth-token and headers. I would rather make this a True/False parameter with a clear defined name such as include_token\u003dTrue.",
+      "range": {
+        "startLine": 699,
+        "startChar": 46,
+        "endLine": 699,
+        "endChar": 62
+      },
+      "revId": "c56d7fdadd3045befd293593d49b2d6d08dbe22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_6b279e66",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-05-17T17:29:42Z",
+      "side": 1,
+      "message": "Following up on the comment on the other file, render_token_data_response doesn\u0027t need to know the relationship between the presence of a token and credentials, or the actual credentials. Pass include_token\u003dTrue if credentials is None else False.",
+      "range": {
+        "startLine": 381,
+        "startChar": 53,
+        "endLine": 381,
+        "endChar": 76
+      },
+      "revId": "c56d7fdadd3045befd293593d49b2d6d08dbe22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
