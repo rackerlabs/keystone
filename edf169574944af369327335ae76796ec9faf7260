@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_d189b826",
+        "filename": "doc/source/devref/api_curl_examples.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 981,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-05-17T20:20:40Z",
+      "side": 1,
+      "message": "This be broken up like the others by line using \u0027\\\u0027",
+      "range": {
+        "startLine": 981,
+        "startChar": 0,
+        "endLine": 981,
+        "endChar": 196
+      },
+      "revId": "edf169574944af369327335ae76796ec9faf7260",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_51f9287e",
+        "filename": "doc/source/devref/api_curl_examples.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1052,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-05-17T20:20:40Z",
+      "side": 1,
+      "message": "I\u0027m fine with this though since it fits under the 79 chars and only has one header.",
+      "range": {
+        "startLine": 1052,
+        "startChar": 0,
+        "endLine": 1052,
+        "endChar": 94
+      },
+      "revId": "edf169574944af369327335ae76796ec9faf7260",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
