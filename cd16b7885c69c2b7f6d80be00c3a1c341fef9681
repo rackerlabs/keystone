@@ -22,6 +22,30 @@
       "revId": "cd16b7885c69c2b7f6d80be00c3a1c341fef9681",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_cb2a2a8f",
+        "filename": "keystone/exception.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-05-17T17:36:23Z",
+      "side": 1,
+      "message": "That was why I +1-ed earlier. I believe that amount of information should be in the debugging logs, since they\u0027re... debugging logs. And it\u0027s not presented back to the user.",
+      "parentUuid": "ff0f0b1f_f4cb986f",
+      "range": {
+        "startLine": 599,
+        "startChar": 30,
+        "endLine": 599,
+        "endChar": 46
+      },
+      "revId": "cd16b7885c69c2b7f6d80be00c3a1c341fef9681",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
