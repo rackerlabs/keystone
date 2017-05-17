@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_4e7625db",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-05-17T19:52:10Z",
+      "side": 1,
+      "message": "Could you also include the changes for the removal of issue_v2_token token provider along with the 5 to 4 values unpacking error?",
+      "revId": "769c85363e5abc39dfb29c884733f5ad4a436eed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_8e3afde4",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-05-17T19:52:10Z",
+      "side": 1,
+      "message": "Not sure if project or tenant is the correct naming here, but this seems ok to me",
+      "range": {
+        "startLine": 278,
+        "startChar": 19,
+        "endLine": 278,
+        "endChar": 26
+      },
+      "revId": "769c85363e5abc39dfb29c884733f5ad4a436eed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
