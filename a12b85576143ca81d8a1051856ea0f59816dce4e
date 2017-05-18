@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_808873c6",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-18T12:09:45Z",
+      "side": 1,
+      "message": "for credentials it was returning a response with body, status and headers too",
+      "revId": "a12b85576143ca81d8a1051856ea0f59816dce4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
