@@ -16,6 +16,23 @@
       "revId": "d01c7f1b962ef75cfacc63d8a5c2f4d5e05017cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_60731fe9",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-18T12:12:29Z",
+      "side": 0,
+      "message": "if this has a different behavior than all the others (not including headers), you might just want to keep this function here so the default behavior is overriden",
+      "revId": "d01c7f1b962ef75cfacc63d8a5c2f4d5e05017cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

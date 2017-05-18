@@ -16,6 +16,24 @@
       "revId": "a12b85576143ca81d8a1051856ea0f59816dce4e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_e0504f35",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-18T12:12:29Z",
+      "side": 1,
+      "message": "maybe you could just remove this second if/else statement and just do:\n\n    headers \u003d [(\u0027X-Subject-Token\u0027, token_id)]\n        return wsgi.render_response(body\u003dtoken_data,\n                                    status\u003dstatus,\n                                    headers\u003dheaders)\n\n\nand leave the method override to s3, which has a different behavior, see comment there",
+      "parentUuid": "ff0f0b1f_808873c6",
+      "revId": "a12b85576143ca81d8a1051856ea0f59816dce4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
