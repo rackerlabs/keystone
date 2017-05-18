@@ -21,6 +21,7 @@ import fixtures
 import ldap
 import mock
 from oslo_log import versionutils
+from oslo_log import log
 import pkg_resources
 from six.moves import http_client
 from six.moves import range
@@ -44,6 +45,7 @@ from keystone.tests.unit.resource import test_backends as resource_tests
 
 
 CONF = keystone.conf.CONF
+LOG = log.getLogger(__name__)
 
 
 def _assert_backends(testcase, **kwargs):
@@ -309,6 +311,50 @@ class ResourceTests(resource_tests.ResourceTests):
 
     def test_list_projects_for_alternate_domain(self):
         self.skip_test_overrides('N/A: LDAP does not support multiple domains')
+
+
+def _get_ldap_handler(identity_driver):
+    conn = identity_driver.user.get_connection().conn
+    if isinstance(conn, common_ldap.PooledLDAPHandler):
+        conn = conn._get_pool_connection()
+    return conn
+
+
+def _update_ldap_directory(identity_driver, directory):
+    conn = identity_driver.user.get_connection().conn
+
+    if isinstance(conn, common_ldap.PooledLDAPHandler):
+        with conn._get_pool_connection() as conn:
+            conn.update_directory(directory)
+    else:
+        conn.update_directory(directory)
+
+
+def _create_user(identity_driver, user_id, user):
+    key = 'ldap:cn=%s,ou=Users,cn=example,cn=com' % user_id
+    ref = {
+        'objectClass': ['person', 'inetOrgPerson'],
+        'sn': [user['name']],
+        'cn': [user['id']],
+        'enabled': [str(user['enabled']).upper()],
+        'userPassword': [user['password']]
+    }
+    if 'email' in user:
+        ref['mail'] = [user['email']]
+    if 'description' in user:
+        ref['description'] = [user['description']]
+
+    _update_ldap_directory(identity_driver, {key: ref})
+
+    user = user.copy()
+    user['id'] = user_id
+
+    LOG.info('Created user through mock: %s' % str(user))
+
+    return user
+
+
+keystone.identity.backends.ldap.core.Identity.create_user = _create_user
 
 
 class LDAPTestSetup(object):

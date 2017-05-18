@@ -157,8 +157,7 @@ class Identity(base.IdentityDriverBase):
             raise exception.Forbidden(READ_ONLY_LDAP_ERROR_MESSAGE)
 
     def create_user(self, user_id, user):
-        self._disallow_write()
-        return self._create_user(user_id, user)
+        raise exception.Forbidden(READ_ONLY_LDAP_ERROR_MESSAGE)
 
     def update_user(self, user_id, user):
         self._disallow_write()

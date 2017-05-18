@@ -236,6 +236,19 @@ class FakeLdap(common.LDAPHandler):
         super(FakeLdap, self).__init__(conn=conn)
         self._ldap_options = {ldap.OPT_DEREF: ldap.DEREF_NEVER}
 
+    def update_directory(self, directory):
+        self._update_object(self.db, directory)
+        self.db.sync()
+
+    def _update_object(self, old, new):
+        for k, v in new.items():
+            if not v:
+                del old[k]
+            elif isinstance(v, dict):
+                self._update_object(old.setdefault(k, {}), v)
+            else:
+                old[k] = v
+
     def connect(self, url, page_size=0, alias_dereferencing=None,
                 use_tls=False, tls_cacertfile=None, tls_cacertdir=None,
                 tls_req_cert='demand', chase_referrals=None, debug_level=None,
