@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "ff0f0b1f_16d70df0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-18T13:00:57Z",
+      "side": 1,
+      "message": "what is the advantage of this change ? what does the buy us?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 15
+      },
+      "revId": "cd16b7885c69c2b7f6d80be00c3a1c341fef9681",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_56f6a591",
+        "filename": "keystone/exception.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-18T13:00:57Z",
+      "side": 1,
+      "message": "this is now with status code 500 from its parent, is that more appropriate? why?",
+      "revId": "cd16b7885c69c2b7f6d80be00c3a1c341fef9681",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff0f0b1f_f4cb986f",
         "filename": "keystone/exception.py",
         "patchSetId": 5
