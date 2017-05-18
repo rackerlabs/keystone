@@ -1,19 +1,3 @@
-..
-      Copyright 2011-2012 OpenStack Foundation
-      All Rights Reserved.
-
-      Licensed under the Apache License, Version 2.0 (the "License"); you may
-      not use this file except in compliance with the License. You may obtain
-      a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-      Unless required by applicable law or agreed to in writing, software
-      distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-      WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
-      License for the specific language governing permissions and limitations
-      under the License.
-
 ========================================
 Keystone, the OpenStack Identity Service
 ========================================
@@ -36,6 +20,19 @@ community.
 
 .. _`source tree`: https://git.openstack.org/cgit/openstack/keystone/tree/doc/source
 
+In this section, you will find documentation relevant to developing
+Keystone.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   getting-started/index.rst
+   configuration.rst
+   advanced-topics/index.rst
+   devref/index.rst
+
 Related Identity Projects
 =========================
 
@@ -46,61 +43,6 @@ client library`_.
 .. _`WSGI middleware`: https://docs.openstack.org/developer/keystonemiddleware/
 .. _`Authentication library`: https://docs.openstack.org/developer/keystoneauth/
 .. _`Python client library`: https://docs.openstack.org/developer/python-keystoneclient/
-
-Getting Started
-===============
-
-.. toctree::
-    :maxdepth: 1
-
-    installing
-    upgrading
-    performance
-    apache-httpd
-    architecture
-    policy_mapping
-    community
-
-Configuration
-=============
-
-.. toctree::
-   :maxdepth: 2
-
-   configuration
-
-Advanced Topics
-===============
-
-.. toctree::
-   :maxdepth: 2
-
-   federation/federated_identity
-.. toctree::
-   :maxdepth: 1
-
-   configure_tokenless_x509
-   auth-totp
-   event_notifications
-   external-auth
-   security_compliance
-
-Developers Documentation
-========================
-.. toctree::
-   :maxdepth: 2
-
-   devref/development_best_practices
-
-.. toctree::
-   :maxdepth: 1
-
-   devref/development.environment
-   devref/developing_drivers
-   devref/api_curl_examples
-   devref/api_change_tutorial
-   devref/http-api
-   devref/services
 
 Sample Files
 ============
@@ -125,10 +67,3 @@ Code Documentation
    :maxdepth: 1
 
    api/modules
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

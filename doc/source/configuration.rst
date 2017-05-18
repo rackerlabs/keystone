@@ -530,7 +530,7 @@ Keystone provides three authentication methods by default. ``password`` handles
 password authentication and ``token`` handles token authentication.
 ``external`` is used in conjunction with authentication performed by a
 container web server that sets the ``REMOTE_USER`` environment variable. For
-more details, refer to :doc:`External Authentication <external-auth>`.
+more details, refer to External Authentication.
 
 How to Implement an Authentication Plugin
 -----------------------------------------
