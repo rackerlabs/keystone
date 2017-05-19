@@ -34,6 +34,24 @@
       "revId": "8efd347ff6faf580bf23b31ea7fd8d396e27c510",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_ed77f839",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-05-19T17:38:39Z",
+      "side": 1,
+      "message": "I agree that this is highly unlikely. Let me see if I understood correctly.\n\nConsider the scenario when the same create idp api call is issued twice and at the same time (trying to create the same idp). \n\n1. `create_idp` method here will check if the idp exists. Both calls go through.\n\n2. Then it will try to create the idp domain. Both calls will be assigning different ids, therefore there will not be a conflict and both will go through. Two domains are created with different ids.\n\n3. Both calls will now try to create the idp, only one will go through, the other will get a Conflict since the idp has already been created. The domain will still have been created though.\n\nMaybe the create_idp can be wrapped in a try except, with orphan domain cleanup in the case of hitting this unlikely race condition.",
+      "parentUuid": "1f013ff3_e7e2c02f",
+      "revId": "8efd347ff6faf580bf23b31ea7fd8d396e27c510",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
