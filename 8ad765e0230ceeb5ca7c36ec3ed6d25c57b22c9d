@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_cd72f449",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-19T17:38:05Z",
+      "side": 1,
+      "message": "Nice - thanks for doing this.",
+      "revId": "8ad765e0230ceeb5ca7c36ec3ed6d25c57b22c9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_cd5e7411",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-19T17:38:05Z",
+      "side": 1,
+      "message": "Note - we could refactor this at some point in the future to reference the variable in common directly.",
+      "revId": "8ad765e0230ceeb5ca7c36ec3ed6d25c57b22c9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_8d319ca5",
+        "filename": "keystone/conf/identity.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-19T17:38:05Z",
+      "side": 1,
+      "message": "So - just to be clear. The work flow would be:\n\n - start upgrading to Pike\n - ensure this is set to true for all Pike nodes\n - after all nodes are running Pike, set this back to False\n\nright?",
+      "revId": "8ad765e0230ceeb5ca7c36ec3ed6d25c57b22c9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_8da4fcba",
+        "filename": "releasenotes/notes/bug_1543048_and_1668503-7ead4e15faaab778.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-19T17:38:05Z",
+      "side": 1,
+      "message": "++ sweet - this answers my question. Nice note!",
+      "revId": "8ad765e0230ceeb5ca7c36ec3ed6d25c57b22c9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
