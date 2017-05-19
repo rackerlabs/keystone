@@ -1276,9 +1276,15 @@ class BaseLdap(object):
         else:
             return self._id_to_dn_string(object_id)
 
-    @staticmethod
-    def _dn_to_id(dn):
-        return utf8_decode(ldap.dn.str2dn(utf8_encode(dn))[0][0][1])
+    def _dn_to_id(self, dn):
+        dn_search = self.get_connection().search_s(
+            dn, self.LDAP_SCOPE,
+            '(objectClass=%(objclass)s)' % {'objclass': self.object_class})
+
+        if dn_search:
+            return dn_search[0][1][self.id_attr][0]
+        else:
+            return utf8_decode(ldap.dn.str2dn(utf8_encode(dn))[0][0][1])
 
     def _ldap_res_to_model(self, res):
         # LDAP attribute names may be returned in a different case than
