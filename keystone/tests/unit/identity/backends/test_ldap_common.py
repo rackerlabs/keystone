@@ -22,7 +22,9 @@ from oslo_config import fixture as config_fixture
 
 from keystone.common import driver_hints
 import keystone.conf
+from keystone import exception
 from keystone.identity.backends.ldap import common as common_ldap
+from keystone.identity.backends.ldap import models
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import fakeldap
@@ -407,6 +409,10 @@ class LDAPPagedResultsTest(unit.TestCase):
 class CommonLdapTestCase(unit.BaseTestCase):
     """These test cases call functions in keystone.common.ldap."""
 
+    def setUp(self):
+        super(CommonLdapTestCase, self).setUp()
+        self.config_fixture = self.useFixture(config_fixture.Config(CONF))
+
     def test_binary_attribute_values(self):
         result = [(
             'cn=junk,dc=example,dc=com',
@@ -509,6 +515,48 @@ class CommonLdapTestCase(unit.BaseTestCase):
             py_result = common_ldap.convert_ldap_result(result)
             # The user name should still be a string value.
             self.assertEqual(user_name, py_result[0][1]['user_name'][0])
+
+    @mock.patch.object(common_ldap.KeystoneLDAPHandler,'search_s')
+    @mock.patch.object(common_ldap.KeystoneLDAPHandler,'simple_bind_s')
+    def test_dn_to_id_with_user_id_attributes(self, mock_ldap_bind,
+                                              mock_search_s):
+
+        class FakeUserApi(common_ldap.BaseLdap):
+            DEFAULT_OU = 'ou = Users'
+            DEFAULT_STRUCTURAL_CLASSES = ['person']
+            DEFAULT_ID_ATTR = 'cn'
+            DEFAULT_OBJECTCLASS = 'inetOrgPerson'
+            NotFound = exception.UserNotFound
+            options_name = 'user'
+            attribute_options_names = {'password': 'pass',
+            'email': 'mail',
+            'name': 'name',
+            'description': 'description',
+            'enabled': 'enabled',
+            'default_project_id': 'default_project_id'}
+            immutable_attrs = ['id']
+
+            model = models.User
+
+        dn = 'cn=johndoe,dc=example,dc=com'
+        id_attrs = ['cn', 'sn', 'uid']
+
+        for id_attr in id_attrs:
+            self.config_fixture.config(group='ldap',
+                                       user_id_attribute=id_attr)
+
+            base_ldap = FakeUserApi(self.config_fixture.conf)
+
+            user_id = uuid.uuid4().hex
+            mock_search_s.return_value = [(
+                dn,
+                {
+                    id_attr: [user_id]
+                }
+            ), ]
+
+            self.assertEqual(user_id, base_ldap._dn_to_id(dn))
+
 
 
 class LDAPFilterQueryCompositionTest(unit.BaseTestCase):

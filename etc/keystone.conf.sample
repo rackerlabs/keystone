@@ -1160,7 +1160,8 @@
 
 # The LDAP attribute mapped to user IDs in keystone. This must NOT be a
 # multivalued attribute. User IDs are expected to be globally unique across
-# keystone domains and URL-safe. (string value)
+# keystone domains and URL-safe. `[ldap] query_scope` must be set to `sub`
+# when using a value other than `cn`. (string value)
 #user_id_attribute = cn
 
 # The LDAP attribute mapped to user names in keystone. User names are expected
