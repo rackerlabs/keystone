@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ff0f0b1f_50443b1b",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-05-19T18:04:40Z",
+      "side": 1,
+      "message": "I think all cases are referencing the new location, but I wanted to be 100% safe here.",
+      "parentUuid": "ff0f0b1f_cd5e7411",
+      "revId": "8ad765e0230ceeb5ca7c36ec3ed6d25c57b22c9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff0f0b1f_8d319ca5",
         "filename": "keystone/conf/identity.py",
         "patchSetId": 17
