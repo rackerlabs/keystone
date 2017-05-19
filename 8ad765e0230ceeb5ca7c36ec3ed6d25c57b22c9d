@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "ff0f0b1f_d0e16b2c",
+        "filename": "keystone/conf/identity.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-05-19T18:03:39Z",
+      "side": 1,
+      "message": "Correct. This is only ever used in the rolling upgrade model where you might have Ocata and Pike nodes running at the same time.",
+      "parentUuid": "ff0f0b1f_8d319ca5",
+      "revId": "8ad765e0230ceeb5ca7c36ec3ed6d25c57b22c9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff0f0b1f_8da4fcba",
         "filename": "releasenotes/notes/bug_1543048_and_1668503-7ead4e15faaab778.yaml",
         "patchSetId": 17
