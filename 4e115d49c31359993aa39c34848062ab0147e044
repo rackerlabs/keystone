@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_6a2bd181",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-05-19T15:09:45Z",
+      "side": 1,
+      "message": "To be consistent with the rest of the methods, can you move this to the `_populate_implied_role_response` method which is right above.",
+      "range": {
+        "startLine": 515,
+        "startChar": 8,
+        "endLine": 518,
+        "endChar": 9
+      },
+      "revId": "4e115d49c31359993aa39c34848062ab0147e044",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
