@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_dffe2137",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 716,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-05-19T15:09:39Z",
+      "side": 0,
+      "message": "I\u0027m pretty sure that this is actually calling [0] rather than the python 3 library call (which was renamed to assertRaisesRegex) but they are named the same. It looks like this might have been done for compatibility between python 2 \u0026 3.\n\nIt looks like assertRaisesRegexp was only used here though, so if we can change it to assertRaisesRegex I wonder if we can remove [0] as well.\n\nI am also curious about how this passes the py27 gate, assertRaisesRegex isn\u0027t part of python 2 from what I can tell.\n\n[0] https://github.com/openstack/keystone/blob/646a42d5a684d78ed40cfba1f4ce09cfc414febb/keystone/tests/unit/core.py#L792",
+      "range": {
+        "startLine": 716,
+        "startChar": 8,
+        "endLine": 716,
+        "endChar": 31
+      },
+      "revId": "4418fe3cfa368e15f5f72e32f52bbf4779f6d704",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
