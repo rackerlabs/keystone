@@ -912,7 +912,6 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         attr = self._fetch_attribute_from_response(resp, 'identity_provider')
         self.assertIdpDomainCreated(attr['id'], attr['domain_id'])
 
-    @utils.wip('This will fail because of bug #1688188')
     def test_conflicting_idp_results_in_unhandled_domain_cleanup(self):
         # NOTE(lbragstad): Create an identity provider, save its ID, and count
         # the number of domains.

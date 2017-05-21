@@ -60,11 +60,46 @@ class Manager(manager.Manager):
         super(Manager, self).__init__(CONF.federation.driver)
 
     def create_idp(self, idp_id, idp):
+        if self._check_if_idp_exists(idp_id):
+            self._raise_idp_conflict(idp_id)
+
+        auto_created_domain = False
         if not idp.get('domain_id'):
             idp['domain_id'] = self._create_idp_domain(idp_id)
+            auto_created_domain = True
         else:
             self._assert_valid_domain_id(idp['domain_id'])
-        return self.driver.create_idp(idp_id, idp)
+
+        # NOTE(yangweiwei): When the same idp is created twice at the same
+        # time, only one will go through, while the other will get a conflict
+        # since the idp has already been created. During the process of idp
+        # api call here, two domains are created with different ids
+        # successfully, but one of which should be cleared for the idp created
+        # failed.
+        try:
+            return self.driver.create_idp(idp_id, idp)
+        except exception.Conflict:
+            if auto_created_domain:
+                self._delete_domain_by_id(idp['domain_id'])
+            raise
+
+    def _check_if_idp_exists(self, idp_id):
+        try:
+            self.get_idp(idp_id)
+            return True
+        except exception.IdentityProviderNotFound:
+            return False
+
+    def _delete_domain_by_id(self, domain_id):
+        domain = {'enabled': False}
+        self.resource_api.update_domain(domain_id, domain)
+        self.resource_api.delete_domain(domain_id)
+
+    def _raise_idp_conflict(self, idp_id):
+        conflict_type = 'identity_provider'
+        msg = _('Duplicate entry: %s')
+        msg = msg % idp_id
+        raise exception.Conflict(type=conflict_type, details=msg)
 
     def _create_idp_domain(self, idp_id):
         domain_id = uuid.uuid4().hex
