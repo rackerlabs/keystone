@@ -22,6 +22,30 @@
       "revId": "4418fe3cfa368e15f5f72e32f52bbf4779f6d704",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_aa20b0b1",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 716,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-21T11:15:24Z",
+      "side": 0,
+      "message": "Great catch Gage! I am also not sure why this is passing the Python 2.7 gate. I looked into the docs and only assertRaisesRegexp seems to exist for Python 2. This change has been done for keystone client a while ago when we had both 2.6 and 2.7 gates. It would be nice to understand what is doing the magic in the background.\n\n\n[1] https://docs.python.org/2/library/unittest.html#unittest.TestCase.assertRaisesRegexp\n[2] https://review.openstack.org/#/c/168125",
+      "parentUuid": "ff0f0b1f_dffe2137",
+      "range": {
+        "startLine": 716,
+        "startChar": 8,
+        "endLine": 716,
+        "endChar": 31
+      },
+      "revId": "4418fe3cfa368e15f5f72e32f52bbf4779f6d704",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
