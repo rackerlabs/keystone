@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_ad5799ca",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-22T11:36:20Z",
+      "side": 1,
+      "message": "I am not getting why this is needed. you should be able to fix the bug with the code below: if create_idp has failed and the domain was auto created, delete it.",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 44
+      },
+      "revId": "70bc3ee3dea9ea76d2cad3a66b305c79b2eed046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_cd340d96",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-22T11:36:20Z",
+      "side": 1,
+      "message": "(nit)I would add the code directly here instead of adding a few auxiliar functions:\n\n    self.resource_api.update_domain(idp[\u0027domain_id\u0027], {\u0027enabled\u0027: False})\n    self.resource_api.delete_domain(idp[\u0027domain_id\u0027])",
+      "range": {
+        "startLine": 83,
+        "startChar": 16,
+        "endLine": 83,
+        "endChar": 59
+      },
+      "revId": "70bc3ee3dea9ea76d2cad3a66b305c79b2eed046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
