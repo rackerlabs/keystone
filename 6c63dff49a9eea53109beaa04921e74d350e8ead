@@ -52,6 +52,24 @@
       "revId": "6c63dff49a9eea53109beaa04921e74d350e8ead",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_d13823ef",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-05-22T15:20:31Z",
+      "side": 1,
+      "message": "This shouldn\u0027t be a warning. People using expired tokens happens all the time, a lot of clients are coded to handle refreshing a token when it expires and they will keep using it until that happens.\n\nAlso there is no need to log the token and please don\u0027t do so.",
+      "parentUuid": "ff0f0b1f_8a16fb54",
+      "revId": "6c63dff49a9eea53109beaa04921e74d350e8ead",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
