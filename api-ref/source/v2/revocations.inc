@@ -13,6 +13,8 @@ List Revoked Tokens (v2)
 
 List the revoked tokens.
 
+* Note: This call will return tokens which are invalid and have not expired.
+
 Normal response codes: 200
 
 Error response codes: 400,401,403,404,405,413,503

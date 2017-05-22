@@ -1429,8 +1429,8 @@ services:
   type: array
 signed:
   description: |
-    List of expired PKI tokens, signed by the
-    cryptographic message syntax (CMS).
+    List of PKI tokens which are invalid and have not expired,
+    signed by the cryptographic message syntax (CMS).
   in: body
   required: true
   type: string
