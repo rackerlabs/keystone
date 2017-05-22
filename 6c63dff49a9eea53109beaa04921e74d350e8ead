@@ -34,6 +34,24 @@
       "revId": "6c63dff49a9eea53109beaa04921e74d350e8ead",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_8a16fb54",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-05-22T11:22:24Z",
+      "side": 1,
+      "message": "This conflicts with Kristi and Rodrigo\u0027s advice to identify the token, so we need some consensus here.",
+      "parentUuid": "ff0f0b1f_8ad39bd5",
+      "revId": "6c63dff49a9eea53109beaa04921e74d350e8ead",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
