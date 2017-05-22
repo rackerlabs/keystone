@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_67aac3d2",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-05-22T08:50:50Z",
+      "side": 1,
+      "message": "I was fine with this message at the debug level in the earlier patchset, but I think including the token ID at warning level or in the exception is problematic. The token ID is a bearer token and log warnings and exceptions are not necessarily as locked down as debug logs. This change dangerously exposes the token.",
+      "revId": "6c63dff49a9eea53109beaa04921e74d350e8ead",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
