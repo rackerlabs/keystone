@@ -16,6 +16,24 @@
       "revId": "6c63dff49a9eea53109beaa04921e74d350e8ead",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_8ad39bd5",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-22T11:17:17Z",
+      "side": 1,
+      "message": "++ please don\u0027t write tokens in logs",
+      "parentUuid": "ff0f0b1f_67aac3d2",
+      "revId": "6c63dff49a9eea53109beaa04921e74d350e8ead",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
