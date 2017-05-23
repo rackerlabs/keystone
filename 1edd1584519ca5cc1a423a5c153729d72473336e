@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_1a4c5940",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-05-23T08:51:31Z",
+      "side": 1,
+      "message": "2017-05-23 06:38:14.134895 |   /home/jenkins/workspace/gate-keystone-pep8-ubuntu-xenial$ /home/jenkins/workspace/gate-keystone-pep8-ubuntu-xenial/.tox/pep8/bin/flake8 \n2017-05-23 06:38:24.100964 | ./keystone/federation/core.py:84:49: F821 undefined name \u0027domain_id\u0027\n2017-05-23 06:38:24.101061 |                 self.resource_api.update_domain(domain_id, domain)\n2017-05-23 06:38:24.101087 |                                                 ^\n2017-05-23 06:38:24.101114 | ./keystone/federation/core.py:85:49: F821 undefined name \u0027domain_id\u0027\n2017-05-23 06:38:24.101139 |                 self.resource_api.delete_domain(domain_id)\n\n\nlooks like it should be idp[\u0027domain_id\u0027]?",
+      "revId": "1edd1584519ca5cc1a423a5c153729d72473336e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
