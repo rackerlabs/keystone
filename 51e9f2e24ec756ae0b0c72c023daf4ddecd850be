@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_d701da06",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-05-24T20:28:51Z",
+      "side": 1,
+      "message": "Could you clarify the message for this change? It\u0027s not really adding notes more-so than clarifying the difference between an invalid vs expired token.",
+      "revId": "51e9f2e24ec756ae0b0c72c023daf4ddecd850be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
