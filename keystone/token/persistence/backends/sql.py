@@ -98,7 +98,7 @@ class Token(token.persistence.TokenDriverBase):
                 raise exception.TokenNotFound(token_id=token_id)
             return token_ref.to_dict()
 
-    def create_token(self, token_id, data):
+    def create_token(self, data):
         data_copy = copy.deepcopy(data)
         if not data_copy.get('expires'):
             data_copy['expires'] = common.default_expire_time()

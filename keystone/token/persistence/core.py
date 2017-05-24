@@ -60,7 +60,7 @@ class PersistenceManager(manager.Manager):
     def create_token(self, token_id, data):
         data_copy = copy.deepcopy(data)
         data_copy['id'] = token_id
-        ret = self.driver.create_token(token_id, data_copy)
+        ret = self.driver.create_token(data_copy)
         if MEMOIZE.should_cache(ret):
             # NOTE(morganfainberg): when doing a cache set, you must pass the
             # same arguments through, the same as invalidate (this includes
