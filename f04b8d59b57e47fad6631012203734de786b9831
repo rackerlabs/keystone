@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ff0f0b1f_4353c86b",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-05-24T23:16:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f013ff3_103bb2d1",
+      "range": {
+        "startLine": 447,
+        "startChar": 37,
+        "endLine": 447,
+        "endChar": 47
+      },
+      "revId": "f04b8d59b57e47fad6631012203734de786b9831",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f013ff3_707af688",
         "filename": "doc/source/devref/development_best_practices.rst",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "ff0f0b1f_234e94c0",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-05-24T23:16:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f013ff3_707af688",
+      "range": {
+        "startLine": 449,
+        "startChar": 0,
+        "endLine": 449,
+        "endChar": 8
+      },
+      "revId": "f04b8d59b57e47fad6631012203734de786b9831",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ff73747_ec3b85c5",
         "filename": "doc/source/devref/development_best_practices.rst",
         "patchSetId": 2
@@ -59,6 +107,24 @@
       "writtenOn": "2017-04-25T18:43:16Z",
       "side": 1,
       "message": "s/your/your `devstack`/",
+      "revId": "f04b8d59b57e47fad6631012203734de786b9831",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_034950b5",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-05-24T23:16:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ff73747_ec3b85c5",
       "revId": "f04b8d59b57e47fad6631012203734de786b9831",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
