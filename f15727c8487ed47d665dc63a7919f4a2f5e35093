@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_1a54f253",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-25T21:35:43Z",
+      "side": 1,
+      "message": "nit: We could make this a bit more descriptive so that the reader knows which backend we\u0027re referring to.",
+      "revId": "f15727c8487ed47d665dc63a7919f4a2f5e35093",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_9a612215",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1450,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-25T21:35:43Z",
+      "side": 1,
+      "message": "The indentation here is causing pep8 to fail. We can mitigate this by doing something like:\n\n  project_list \u003d self.assignment_api.get_roles_for_user_and_project(\n      user1[\u0027id\u0027], project1[\u0027id\u0027]\n  )",
+      "revId": "f15727c8487ed47d665dc63a7919f4a2f5e35093",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_7ac1aee4",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1451,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-25T21:35:43Z",
+      "side": 1,
+      "message": "I wonder if the mock isn\u0027t working properly here because the assertion fails with 4 instead of 2.",
+      "revId": "f15727c8487ed47d665dc63a7919f4a2f5e35093",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_3a70d6dc",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1461,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-25T21:35:43Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "revId": "f15727c8487ed47d665dc63a7919f4a2f5e35093",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
