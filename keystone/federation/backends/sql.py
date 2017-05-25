@@ -299,6 +299,25 @@ class Federation(base.FederationDriverBase):
             raise exception.MappingNotFound(mapping_id=mapping_id)
         return mapping_ref
 
+    def _trans_unicode_to_str(self, map_value):
+        value = {}
+        for k, v in map_value.items():
+            if isinstance(v, dict):
+                map_value = self._trans_unicode_to_str(v)
+            elif isinstance(v, list):
+                map_value = [self._check_if_unicode(item)
+                             for item in v]
+            else:
+                map_value = v.encode('utf-8')
+            value[k] = map_value
+        return value
+
+    def _check_if_unicode(self, v):
+        if isinstance(v, unicode):
+            return v.encode('utf-8')
+        else:
+            return _trans_unicode_to_str(v)
+
     @sql.handle_conflicts(conflict_type='mapping')
     def create_mapping(self, mapping_id, mapping):
         ref = {}
@@ -343,7 +362,12 @@ class Federation(base.FederationDriverBase):
             protocol_ref = self._get_protocol(session, idp_id, protocol_id)
             mapping_id = protocol_ref.mapping_id
             mapping_ref = self._get_mapping(session, mapping_id)
-            return mapping_ref.to_dict()
+
+            # NOTE(yangweiwei): Mapping rules are saved in unicode type, but
+            # some actions like database openration should use values in
+            # mapping rules and its' type should be str.
+            mapping_ref = self._trans_unicode_to_str(mapping_ref.to_dict())
+            return mapping_ref
 
     # Service Provider CRUD
     @sql.handle_conflicts(conflict_type='service_provider')
