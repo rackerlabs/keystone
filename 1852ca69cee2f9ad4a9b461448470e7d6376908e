@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_0b094230",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 725,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-05-25T23:52:35Z",
+      "side": 1,
+      "message": "We should just grab the (micro)version from [0].\n\n[0] https://github.com/openstack/keystone/blob/master/keystone/version/controllers.py#L103",
+      "range": {
+        "startLine": 725,
+        "startChar": 31,
+        "endLine": 725,
+        "endChar": 45
+      },
+      "revId": "1852ca69cee2f9ad4a9b461448470e7d6376908e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_2611db54",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-05-25T23:52:35Z",
+      "side": 1,
+      "message": "This header should conform to [1], i.e,\n\n   OpenStack-API-Version: [SERVICE_TYPE] version_number\n\n[1] https://specs.openstack.org/openstack/api-wg/guidelines/microversion_specification.html",
+      "range": {
+        "startLine": 734,
+        "startChar": 25,
+        "endLine": 734,
+        "endChar": 52
+      },
+      "revId": "1852ca69cee2f9ad4a9b461448470e7d6376908e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
