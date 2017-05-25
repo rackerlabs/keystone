@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "ff0f0b1f_3a3e96da",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-25T21:40:52Z",
+      "side": 1,
+      "message": "++ broken links can be frustrating, but we should clean this up later for sure.",
+      "parentUuid": "ff0f0b1f_b7052d16",
+      "revId": "eb5d05306838adf1a4ed2d189e19dae8843be03f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff0f0b1f_d238afd3",
         "filename": "doc/source/devref/development_best_practices.rst",
         "patchSetId": 3
@@ -36,6 +54,24 @@
       "writtenOn": "2017-05-25T13:35:46Z",
       "side": 1,
       "message": "Is this still going to work if/when the tempest plugin is split out? https://review.openstack.org/#/c/369749/",
+      "revId": "eb5d05306838adf1a4ed2d189e19dae8843be03f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_550c7b3a",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-25T21:40:52Z",
+      "side": 1,
+      "message": "My guess is we will need to add another step to the docs the pulls the plugin from somewhere else, since it won\u0027t be in tree anymore.",
+      "parentUuid": "ff0f0b1f_d238afd3",
       "revId": "eb5d05306838adf1a4ed2d189e19dae8843be03f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
