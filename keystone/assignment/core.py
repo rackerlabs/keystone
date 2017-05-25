@@ -463,9 +463,19 @@ class Manager(manager.Manager):
             if user_id:
                 return [create_group_assignment(ref, user_id=user_id)]
 
+            # Note(prashkre): Try to get the users in a group,
+            # if a group wasn't found in the backend, users are set
+            # as empty list.
+            try:
+                users = self.identity_api.list_users_in_group(ref['group_id'])
+            except exception.GroupNotFound:
+                msg = ('Group %(group)s not found in the'
+                       ' backend but still has role assignments.')
+                LOG.warning(msg, {'group': ref['group_id']})
+                users = []
+
             return [create_group_assignment(ref, user_id=m['id'])
-                    for m in self.identity_api.list_users_in_group(
-                        ref['group_id'])]
+                    for m in users]
 
         def expand_inherited_assignment(ref, user_id, project_id, subtree_ids,
                                         expand_groups):
