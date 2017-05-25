@@ -1349,6 +1349,9 @@ class AssignmentTests(AssignmentTestHelperMixin):
             domain_id=CONF.identity.default_domain_id)
 
     def test_multi_role_grant_by_user_group_on_project_domain(self):
+        def _group_not_found(value):
+            raise exception.GroupNotFound(group_id=value)
+
         role_list = []
         for _ in range(10):
             role = unit.new_role_ref()
@@ -1437,6 +1440,30 @@ class AssignmentTests(AssignmentTestHelperMixin):
         self.assertIn(role_list[1]['id'], combined_role_list)
         self.assertIn(role_list[2]['id'], combined_role_list)
         self.assertIn(role_list[3]['id'], combined_role_list)
+
+        # Note(prashkre): Mock list_users_in_group to return
+        # GroupNotFound to replicate the behaviour of group
+        # being deleted directly in the backend and still having
+        # role assignments.
+        with mock.patch.object(self.identity_api, 'list_users_in_group',
+                               _group_not_found):
+            a_proj_list = self.assignment_api.get_roles_for_user_and_project(
+                              user1['id'], project1['id'])
+        self.assertEqual(2, len(a_proj_list))
+        self.assertIn(role_list[4]['id'], a_proj_list)
+        self.assertIn(role_list[5]['id'], a_proj_list)
+        self.assertNotIn(role_list[6]['id'], a_proj_list)
+        self.assertNotIn(role_list[7]['id'], a_proj_list)
+
+        with mock.patch.object(self.identity_api, 'list_users_in_group',
+                               _group_not_found):
+            a_domain_list = self.assignment_api.get_roles_for_user_and_project(
+                                user1['id'], domain1['id'])
+        self.assertEqual(2, len(a_domain_list))
+        self.assertIn(role_list[0]['id'], a_domain_list)
+        self.assertIn(role_list[1]['id'], a_domain_list)
+        self.assertNotIn(role_list[2]['id'], a_domain_list)
+        self.assertNotIn(role_list[3]['id'], a_domain_list)
 
     def test_multi_group_grants_on_project_domain(self):
         """Test multiple group roles for user on project and domain.
