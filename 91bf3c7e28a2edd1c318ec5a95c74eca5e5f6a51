@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_9579f394",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-25T21:49:25Z",
+      "side": 1,
+      "message": "This didn\u0027t fail functional tests somehow?",
+      "revId": "91bf3c7e28a2edd1c318ec5a95c74eca5e5f6a51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_555d9be7",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-25T21:49:25Z",
+      "side": 1,
+      "message": "As a developer reading this, I feel like this should be followed with a sentence that clearly explains what benefits/tools/utilities this class provides me. For example, inheriting from this class provides a set of common utilities that are useful for writing tempest functional tests. Like A, B, C.",
+      "revId": "91bf3c7e28a2edd1c318ec5a95c74eca5e5f6a51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
