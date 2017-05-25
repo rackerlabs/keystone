@@ -23,6 +23,7 @@ from six.moves import http_client
 from testtools import matchers as tt_matchers
 import webob
 
+from keystone.common import api_version_request
 from keystone.common import json_home
 from keystone.tests import unit
 from keystone.tests.unit import utils
@@ -1038,3 +1039,40 @@ class VersionBehindSslTestCase(unit.TestCase):
         expected = self._get_expected('https://%s:%s/' % (host_name,
                                                           host_port))
         self.assertThat(data, _VersionsEqual(expected))
+
+
+class MicroversionHeadersTestCase(unit.TestCase):
+    def setUp(self):
+        super(MicroversionHeadersTestCase, self).setUp()
+        self.load_backends()
+        self.public_app = self.loadapp('keystone', 'main')
+        self.admin_app = self.loadapp('keystone', 'admin')
+
+        self.admin_port = random.randint(10000, 30000)
+        self.public_port = random.randint(40000, 60000)
+
+        self.config_fixture.config(
+            public_endpoint='http://localhost:%d' % self.public_port,
+            admin_endpoint='http://localhost:%d' % self.admin_port)
+
+    def test_v2_version_headers(self):
+        client = TestClient(self.public_app)
+        resp = client.get('/v2.0/')
+        vf = api_version_request.VersionFactory()
+
+        self.assertEqual(http_client.OK, resp.status_int)
+        self.assertIn('X-Auth-Token', resp.headers.get('Vary'))
+        self.assertIn('OpenStack-API-Version', resp.headers.get('Vary'))
+        self.assertEqual('identity ' + vf.deprecated_api_version,
+                         resp.headers.get('OpenStack-API-Version'))
+
+    def test_v3_version_headers(self):
+        client = TestClient(self.public_app)
+        resp = client.get('/v3/')
+        vf = api_version_request.VersionFactory()
+
+        self.assertEqual(http_client.OK, resp.status_int)
+        self.assertIn('X-Auth-Token', resp.headers.get('Vary'))
+        self.assertIn('OpenStack-API-Version', resp.headers.get('Vary'))
+        self.assertEqual('identity ' + vf.max_api_version,
+                         resp.headers.get('OpenStack-API-Version'))
