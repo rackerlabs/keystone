@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ff0f0b1f_70f1cd01",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-05-25T22:33:34Z",
+      "side": 1,
+      "message": "we probably just shouldn\u0027t mention the backend at all. I don\u0027t think that\u0027s terminology users are instantly familiar with, and doesn\u0027t really seem important here... just \"Group %(group)s not found but still has role assignments\" should work.",
+      "parentUuid": "ff0f0b1f_1a54f253",
+      "revId": "f15727c8487ed47d665dc63a7919f4a2f5e35093",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff0f0b1f_9a612215",
         "filename": "keystone/tests/unit/assignment/test_backends.py",
         "patchSetId": 3
@@ -47,6 +65,24 @@
       "writtenOn": "2017-05-25T21:35:43Z",
       "side": 1,
       "message": "I wonder if the mock isn\u0027t working properly here because the assertion fails with 4 instead of 2.",
+      "revId": "f15727c8487ed47d665dc63a7919f4a2f5e35093",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_505da9e7",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1451,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-05-25T22:33:34Z",
+      "side": 1,
+      "message": "I think that\u0027s actually correct... the 2 user assignments still come back, but the 2 group assignments no longer show for the user because the group is not found (and a user can\u0027t be in a group that doesn\u0027t exist).",
+      "parentUuid": "ff0f0b1f_7ac1aee4",
       "revId": "f15727c8487ed47d665dc63a7919f4a2f5e35093",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
