@@ -1,0 +1,76 @@
+# Copyright 2017 AT&T Corporation.
+# All Rights Reserved.
+#
+#    Licensed under the Apache License, Version 2.0 (the "License"); you may
+#    not use this file except in compliance with the License. You may obtain
+#    a copy of the License at
+#
+#         http://www.apache.org/licenses/LICENSE-2.0
+#
+#    Unless required by applicable law or agreed to in writing, software
+#    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+#    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+#    License for the specific language governing permissions and limitations
+#    under the License.
+
+REST_API_VERSION_HISTORY = """
+
+    REST API Version History:
+
+    * 1.0 Depricated
+    * 2.0 Depricated
+    * 3.0 Current: v3.8
+
+"""
+
+# Placeholders for microversions
+_MIN_API_VERSION = "3.0"
+_MAX_API_VERSION = "3.8"
+_LEGACY_API_VERSION1 = "1.0"
+_LEGACY_API_VERSION2 = "2.0"
+
+
+def min_api_version():
+    version = _MIN_API_VERSION
+    status =  'stable'
+    updated = '2017-02-22T00:00:00Z'
+    return (version, status, updated)
+
+
+def max_api_version():
+    version = _MAX_API_VERSION
+    status =  'stable'
+    updated = '2017-02-22T00:00:00Z'
+    return (version, status, updated)
+
+def legacy_api_version1():
+    version = _LEGACY_API_VERSION1
+    status =  'deprecated'
+    updated = '2015-08-04T00:00:00Z'
+    return (version, status, updated)
+
+
+def legacy_api_version2():
+    version = _LEGACY_API_VERSION2
+    status =  'deprecated'
+    updated = '2016-08-04T00:00:00Z'
+    return (version, status, updated)
+
+
+class APIVersionRequest(object):
+    """This class represents an API Version Request.
+
+    This class includes convenience methods for manipulation
+    and comparison of version numbers as needed to implement
+    API microversions.
+    """
+
+    def get_version(self, version_string):
+        status = "3.0"
+        if 'v3' in version_string:
+            status = "3.8"
+        elif 'v2' in version_string:
+            status = "2.0"
+        elif 'v1' in version_string:
+            status = "1.0"
+        return status
