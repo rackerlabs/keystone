@@ -23,6 +23,7 @@ from six.moves import http_client
 from testtools import matchers as tt_matchers
 import webob
 
+from keystone.common import api_version_request
 from keystone.common import json_home
 from keystone.tests import unit
 from keystone.tests.unit import utils
@@ -1038,3 +1039,43 @@ class VersionBehindSslTestCase(unit.TestCase):
         expected = self._get_expected('https://%s:%s/' % (host_name,
                                                           host_port))
         self.assertThat(data, _VersionsEqual(expected))
+
+
+class MicroversionHeadersTestCase(unit.TestCase):
+    def setUp(self):
+        super(MicroversionHeadersTestCase, self).setUp()
+        self.load_backends()
+        self.public_app = self.loadapp('keystone', 'main')
+        self.admin_app = self.loadapp('keystone', 'admin')
+
+        self.admin_port = random.randint(10000, 30000)
+        self.public_port = random.randint(40000, 60000)
+
+        self.config_fixture.config(
+            public_endpoint='http://localhost:%d' % self.public_port,
+            admin_endpoint='http://localhost:%d' % self.admin_port)
+
+    def test_deprecated_api_version_headers(self):
+        client = TestClient(self.public_app)
+        # test any deprecated version, just making sure we get back the same
+        version = 'v' + random.choice(api_version_request.DEPRECATED_VERSIONS)
+        resp = client.get('/%s/' % version)
+
+        self.assertEqual(http_client.OK, resp.status_int)
+        self.assertIn('X-Auth-Token', resp.headers.get('Vary'))
+        self.assertIn('OpenStack-API-Version', resp.headers.get('Vary'))
+        self.assertEqual('identity ' + api_version_request.
+                         VERSIONS[version]['version'],
+                         resp.headers.get('OpenStack-API-Version'))
+
+    def test_max_api_version_headers(self):
+        client = TestClient(self.public_app)
+        version = max(api_version_request.VERSIONS.keys())
+        resp = client.get('/%s/' % version)
+
+        self.assertEqual(http_client.OK, resp.status_int)
+        self.assertIn('X-Auth-Token', resp.headers.get('Vary'))
+        self.assertIn('OpenStack-API-Version', resp.headers.get('Vary'))
+        self.assertEqual('identity ' + api_version_request.
+                         VERSIONS[version]['version'],
+                         resp.headers.get('OpenStack-API-Version'))

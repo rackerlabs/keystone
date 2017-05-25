@@ -34,6 +34,7 @@ from six.moves import http_client
 import webob.dec
 import webob.exc
 
+from keystone.common import api_version_request
 from keystone.common import authorization
 from keystone.common import dependency
 from keystone.common import json_home
@@ -47,6 +48,9 @@ from keystone.models import token_model
 
 CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
+
+# Environment variable user to pass version requests
+API_VERSION_REQUEST_HEADER = 'OpenStack-API-Version'
 
 # Environment variable used to pass the request context
 CONTEXT_ENV = 'openstack.context'
@@ -224,6 +228,14 @@ class Application(BaseApplication):
 
         params = self._normalize_dict(params)
 
+        url = wsgiref.util.application_uri(req.environ)
+        version = None
+
+        if 'v3' in url:
+            version = api_version_request.VERSIONS['v3']['version']
+        elif 'v2.0' in url:
+            version = api_version_request.VERSIONS['v2.0']['version']
+
         try:
             result = method(req, **params)
         except exception.Unauthorized as e:
@@ -233,27 +245,32 @@ class Application(BaseApplication):
                 {'exception': e, 'remote_addr': req.environ['REMOTE_ADDR']})
             return render_exception(e,
                                     context=req.context_dict,
-                                    user_locale=best_match_language(req))
+                                    user_locale=best_match_language(req),
+                                    ex_version=version)
         except exception.Error as e:
             LOG.warning(six.text_type(e))
             return render_exception(e,
                                     context=req.context_dict,
-                                    user_locale=best_match_language(req))
+                                    user_locale=best_match_language(req),
+                                    ex_version=version)
         except TypeError as e:
             LOG.exception(six.text_type(e))
             return render_exception(exception.ValidationError(e),
                                     context=req.context_dict,
-                                    user_locale=best_match_language(req))
+                                    user_locale=best_match_language(req),
+                                    ex_version=version)
         except Exception as e:
             LOG.exception(six.text_type(e))
             return render_exception(exception.UnexpectedError(exception=e),
                                     context=req.context_dict,
-                                    user_locale=best_match_language(req))
+                                    user_locale=best_match_language(req),
+                                    ex_version=version)
 
         if result is None:
             return render_response(
                 status=(http_client.NO_CONTENT,
-                        http_client.responses[http_client.NO_CONTENT]))
+                        http_client.responses[http_client.NO_CONTENT]),
+                version=version)
         elif isinstance(result, six.string_types):
             return result
         elif isinstance(result, webob.Response):
@@ -264,7 +281,8 @@ class Application(BaseApplication):
         response_code = self._get_response_code(req)
         return render_response(body=result,
                                status=response_code,
-                               method=req.method)
+                               method=req.method,
+                               version=version)
 
     def _get_response_code(self, req):
         req_method = req.environ['REQUEST_METHOD']
@@ -687,13 +705,19 @@ class V3ExtensionRouter(ExtensionRouter, RoutersBase):
         return response
 
 
-def render_response(body=None, status=None, headers=None, method=None):
+def render_response(body=None, status=None, headers=None,
+                    method=None, version=None):
     """Form a WSGI response."""
     if headers is None:
         headers = []
     else:
         headers = list(headers)
-    headers.append(('Vary', 'X-Auth-Token'))
+
+    if version:
+        headers.append(('Vary', 'X-Auth-Token, ' + API_VERSION_REQUEST_HEADER))
+        headers.append((API_VERSION_REQUEST_HEADER, 'identity ' + version))
+    else:
+        headers.append(('Vary', 'X-Auth-Token'))
 
     if body is None:
         body = b''
@@ -765,7 +789,8 @@ def render_response(body=None, status=None, headers=None, method=None):
     return resp
 
 
-def render_exception(error, context=None, request=None, user_locale=None):
+def render_exception(error, context=None, request=None,
+                     user_locale=None, ex_version=None):
     """Form a WSGI response based on the current error."""
     error_message = error.args[0]
     message = oslo_i18n.translate(error_message, desired_locale=user_locale)
@@ -796,4 +821,5 @@ def render_exception(error, context=None, request=None, user_locale=None):
         headers.append(('WWW-Authenticate', 'Keystone uri="%s"' % url))
     return render_response(status=(error.code, error.title),
                            body=body,
-                           headers=headers)
+                           headers=headers,
+                           version=ex_version)

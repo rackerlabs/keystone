@@ -16,6 +16,7 @@ from oslo_serialization import jsonutils
 from six.moves import http_client
 import webob
 
+from keystone.common import api_version_request
 from keystone.common import extension
 from keystone.common import json_home
 from keystone.common import wsgi
@@ -117,10 +118,11 @@ class Version(wsgi.Application):
         """The list of versions is dependent on the context."""
         versions = {}
         if 'v2.0' in _VERSIONS:
+            v2_version_info = api_version_request.VERSIONS['v2.0']
             versions['v2.0'] = {
-                'id': 'v2.0',
-                'status': 'deprecated',
-                'updated': '2016-08-04T00:00:00Z',
+                'id': 'v' + v2_version_info['version'],
+                'status': v2_version_info['status'],
+                'updated': v2_version_info['last_updated'],
                 'links': [
                     {
                         'rel': 'self',
@@ -140,10 +142,11 @@ class Version(wsgi.Application):
             }
 
         if 'v3' in _VERSIONS:
+            v3_version_info = api_version_request.VERSIONS['v3']
             versions['v3'] = {
-                'id': 'v3.8',
-                'status': 'stable',
-                'updated': '2017-02-22T00:00:00Z',
+                'id': 'v' + v3_version_info['version'],
+                'status': v3_version_info['status'],
+                'updated': v3_version_info['last_updated'],
                 'links': [
                     {
                         'rel': 'self',
@@ -183,8 +186,9 @@ class Version(wsgi.Application):
         versions = self._get_versions_list(request.context_dict)
         if 'v2.0' in _VERSIONS:
             return wsgi.render_response(body={
-                'version': versions['v2.0']
-            })
+                'version': versions['v2.0']},
+                version=api_version_request.VERSIONS['v2.0']['version']
+            )
         else:
             raise exception.VersionNotFound(version='v2.0')
 
@@ -210,7 +214,8 @@ class Version(wsgi.Application):
                     headers=(('Content-Type', MimeTypes.JSON_HOME),))
 
             return wsgi.render_response(body={
-                'version': versions['v3']
-            })
+                'version': versions['v3']},
+                version=api_version_request.VERSIONS['v3']['version']
+            )
         else:
             raise exception.VersionNotFound(version='v3')
