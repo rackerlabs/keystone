@@ -92,6 +92,7 @@ Request
 .. rest_parameters:: parameters.yaml
 
    - user_id: user_id_query
+   - type: credential_type_not_required
 
 Response Parameters
 -------------------
