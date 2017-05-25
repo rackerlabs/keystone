@@ -26,6 +26,7 @@ from six.moves import http_client
 from testtools import matchers
 import webob
 
+from keystone.common import api_version_request
 from keystone.common import wsgi
 from keystone import exception
 from keystone.server import wsgi as server_wsgi
@@ -158,6 +159,27 @@ class ApplicationTest(BaseWSGITest):
         resp = wsgi.render_response(headers=[('Custom-Header', 'Some-Value')])
         self.assertEqual('Some-Value', resp.headers.get('Custom-Header'))
         self.assertEqual('X-Auth-Token', resp.headers.get('Vary'))
+
+    def test_render_response_max_version_headers(self):
+        vf = api_version_request.VersionFactory()
+        version = vf.max_api_version
+
+        resp = wsgi.render_response(version=version)
+
+        self.assertEqual('X-Auth-Token, OpenStack-API-Version',
+                         resp.headers.get('Vary'))
+        self.assertEqual('identity ' + version,
+                         resp.headers.get('OpenStack-API-Version'))
+
+    def test_render_response_deprecated_version_headers(self):
+        vf = api_version_request.VersionFactory()
+        version = vf.deprecated_api_version
+        resp = wsgi.render_response(version=version)
+
+        self.assertEqual('X-Auth-Token, OpenStack-API-Version',
+                         resp.headers.get('Vary'))
+        self.assertEqual('identity ' + version,
+                         resp.headers.get('OpenStack-API-Version'))
 
     def test_render_response_non_str_headers_converted(self):
         resp = wsgi.render_response(

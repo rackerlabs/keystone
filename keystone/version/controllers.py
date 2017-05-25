@@ -16,6 +16,7 @@ from oslo_serialization import jsonutils
 from six.moves import http_client
 import webob
 
+from keystone.common import api_version_request
 from keystone.common import extension
 from keystone.common import json_home
 from keystone.common import wsgi
@@ -116,11 +117,12 @@ class Version(wsgi.Application):
     def _get_versions_list(self, context):
         """The list of versions is dependent on the context."""
         versions = {}
+        vf = api_version_request.VersionFactory()
         if 'v2.0' in _VERSIONS:
             versions['v2.0'] = {
-                'id': 'v2.0',
-                'status': 'deprecated',
-                'updated': '2016-08-04T00:00:00Z',
+                'id': 'v' + vf.deprecated_api_version,
+                'status': vf.stability(vf.deprecated_api_version),
+                'updated': vf.last_updated(vf.deprecated_api_version),
                 'links': [
                     {
                         'rel': 'self',
@@ -129,6 +131,7 @@ class Version(wsgi.Application):
                         'rel': 'describedby',
                         'type': 'text/html',
                         'href': 'https://docs.openstack.org/'
+
                     }
                 ],
                 'media-types': [
@@ -141,9 +144,9 @@ class Version(wsgi.Application):
 
         if 'v3' in _VERSIONS:
             versions['v3'] = {
-                'id': 'v3.8',
-                'status': 'stable',
-                'updated': '2017-02-22T00:00:00Z',
+                'id': 'v' + vf.max_api_version,
+                'status': vf.stability(vf.max_api_version),
+                'updated': vf.last_updated(vf.max_api_version),
                 'links': [
                     {
                         'rel': 'self',
@@ -183,8 +186,10 @@ class Version(wsgi.Application):
         versions = self._get_versions_list(request.context_dict)
         if 'v2.0' in _VERSIONS:
             return wsgi.render_response(body={
-                'version': versions['v2.0']
-            })
+                'version': versions['v2.0']},
+                # get the version and strip the 'v' in front
+                version=versions['v2.0']['id'][1:]
+            )
         else:
             raise exception.VersionNotFound(version='v2.0')
 
@@ -210,7 +215,9 @@ class Version(wsgi.Application):
                     headers=(('Content-Type', MimeTypes.JSON_HOME),))
 
             return wsgi.render_response(body={
-                'version': versions['v3']
-            })
+                'version': versions['v3']},
+                # get the version and strip the 'v' in front
+                version=versions['v3']['id'][1:]
+            )
         else:
             raise exception.VersionNotFound(version='v3')
