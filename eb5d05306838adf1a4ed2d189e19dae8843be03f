@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_b7052d16",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-05-25T13:35:46Z",
+      "side": 1,
+      "message": "I wandered down a rabbit hole trying to figure out why this didn\u0027t render a link. First of all it should be \"py:mod`keystone_tempest_plugin`\" since keystone_tempest_plugin is under the root directory and it\u0027s its own module, not a function. But we\u0027ve also disabled the autodocs for this module in setup.cfg, so there\u0027s nothing to link to. Maybe instead of trying to use the sphinx docs, this could just reference the `keystone_tempest_plugin/` directory?",
+      "range": {
+        "startLine": 446,
+        "startChar": 0,
+        "endLine": 446,
+        "endChar": 41
+      },
+      "revId": "eb5d05306838adf1a4ed2d189e19dae8843be03f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_d238afd3",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-05-25T13:35:46Z",
+      "side": 1,
+      "message": "Is this still going to work if/when the tempest plugin is split out? https://review.openstack.org/#/c/369749/",
+      "revId": "eb5d05306838adf1a4ed2d189e19dae8843be03f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
