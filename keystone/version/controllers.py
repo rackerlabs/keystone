@@ -16,6 +16,7 @@ from oslo_serialization import jsonutils
 from six.moves import http_client
 import webob
 
+from keystone.common import api_version_request
 from keystone.common import extension
 from keystone.common import json_home
 from keystone.common import wsgi
@@ -118,9 +119,12 @@ class Version(wsgi.Application):
         versions = {}
         if 'v2.0' in _VERSIONS:
             versions['v2.0'] = {
-                'id': 'v2.0',
-                'status': 'deprecated',
-                'updated': '2016-08-04T00:00:00Z',
+                'id': 'v' + api_version_request.
+                deprecated_api_version()['version'],
+                'status': api_version_request.
+                deprecated_api_version()['status'],
+                'updated': api_version_request.
+                deprecated_api_version()['updated'],
                 'links': [
                     {
                         'rel': 'self',
@@ -129,6 +133,7 @@ class Version(wsgi.Application):
                         'rel': 'describedby',
                         'type': 'text/html',
                         'href': 'https://docs.openstack.org/'
+
                     }
                 ],
                 'media-types': [
@@ -141,9 +146,10 @@ class Version(wsgi.Application):
 
         if 'v3' in _VERSIONS:
             versions['v3'] = {
-                'id': 'v3.8',
-                'status': 'stable',
-                'updated': '2017-02-22T00:00:00Z',
+                'id': 'v' + api_version_request.
+                max_api_version()['version'],
+                'status': api_version_request.max_api_version()['status'],
+                'updated': api_version_request.max_api_version()['updated'],
                 'links': [
                     {
                         'rel': 'self',
