@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_75e89f7b",
+        "filename": "keystone/federation/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-25T22:14:20Z",
+      "side": 1,
+      "message": "The six library has ways to help deal with these situations if the problem is py2 -\u003e py3 incompatibilities.\n\nhttps://pythonhosted.org/six/",
+      "revId": "97e7e0fe285f2c94cd8baa5b7bc5b8a7cc1dd592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_95657348",
+        "filename": "keystone/federation/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-25T22:14:20Z",
+      "side": 1,
+      "message": "This seems to have broken a bunch of py3 tests. I wonder why this doesn\u0027t fail when we use similar mappings in our testing fixtures.\n\nhttps://github.com/openstack/keystone/blob/c3ca06ff47cced16ea9de3d6ef1a6c583bb3cf38/keystone/tests/unit/mapping_fixtures.py#L565-L574",
+      "revId": "97e7e0fe285f2c94cd8baa5b7bc5b8a7cc1dd592",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
