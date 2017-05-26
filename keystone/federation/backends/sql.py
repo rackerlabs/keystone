@@ -299,6 +299,31 @@ class Federation(base.FederationDriverBase):
             raise exception.MappingNotFound(mapping_id=mapping_id)
         return mapping_ref
 
+    def _trans_text_to_str(self, map_value):
+        value = {}
+        for k, v in map_value.items():
+            if isinstance(v, dict):
+                map_value = self._trans_text_to_str(v)
+            elif isinstance(v, list):
+                map_value = [self._check_if_text(item)
+                             for item in v]
+            else:
+                if six.PY2:
+                    map_value = v.encode('utf-8')
+                else:
+                    map_value = v
+            value[k] = map_value
+        return value
+
+    def _check_if_text(self, v):
+        if isinstance(v, six.text_type):
+            if six.PY2:
+                return v.encode('utf-8')
+            else:
+                return v
+        else:
+            return self._trans_text_to_str(v)
+
     @sql.handle_conflicts(conflict_type='mapping')
     def create_mapping(self, mapping_id, mapping):
         ref = {}
@@ -343,7 +368,15 @@ class Federation(base.FederationDriverBase):
             protocol_ref = self._get_protocol(session, idp_id, protocol_id)
             mapping_id = protocol_ref.mapping_id
             mapping_ref = self._get_mapping(session, mapping_id)
-            return mapping_ref.to_dict()
+
+            # NOTE(yangweiwei): Mapping rules are saved in text type, but
+            # some actions like database openration should use values in
+            # mapping rules and its' type should be str. In Python 3, it is
+            # not a problem, but in Python 2, text type is in unicode style.
+            # So, transport the value type which should be compatible with
+            # Python 3.
+            mapping_ref = self._trans_text_to_str(mapping_ref.to_dict())
+            return mapping_ref
 
     # Service Provider CRUD
     @sql.handle_conflicts(conflict_type='service_provider')
