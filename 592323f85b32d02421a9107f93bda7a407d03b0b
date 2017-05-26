@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_2a561d08",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-05-26T23:18:24Z",
+      "side": 1,
+      "message": "Validate on upload.",
+      "revId": "592323f85b32d02421a9107f93bda7a407d03b0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_ea3f05b3",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-05-26T23:18:24Z",
+      "side": 1,
+      "message": "validate on update.  Common code with create.",
+      "revId": "592323f85b32d02421a9107f93bda7a407d03b0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
