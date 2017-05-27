@@ -433,21 +433,33 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         self.assertRaises(exception.ValidationError, rp.process, assertion)
 
     def test_rule_engine_no_groups_allowed(self):
-        """Should return user mapped to no groups.
+        """Test for the correct error when groups are not in the blacklist.
 
-        The EMPLOYEE_ASSERTION should successfully have a match
-        in MAPPING_GROUPS_WHITELIST, but 'whitelist' should filter out
-        the group values from the assertion and thus map to no groups.
+        All value checked not in the whitelist should return mapping errors.
+        For whitelist here should be set who should satisfy this rule even
+        though he may meet other type.
 
         """
         mapping = mapping_fixtures.MAPPING_GROUPS_WHITELIST
         assertion = mapping_fixtures.EMPLOYEE_ASSERTION
         rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
-        mapped_properties = rp.process(assertion)
-        self.assertIsNotNone(mapped_properties)
-        self.assertListEqual(mapped_properties['group_names'], [])
-        self.assertListEqual(mapped_properties['group_ids'], [])
-        self.assertEqual('tbo', mapped_properties['user']['name'])
+        self.assertRaises(exception.DirectMappingError,
+                          rp.process,
+                          assertion)
+
+    def test_rule_engine_user_in_blacklist(self):
+        """Test for the correct error when user is in the blacklist.
+
+        If only one type is checked and the value is in the blacklist, the
+        user may not get the local mapping.
+        """
+        mapping = mapping_fixtures.MAPPING_USER_BLACKLIST
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
+        assertion = mapping_fixtures.ANOTHER_TESTER_ASSERTION
+
+        self.assertRaises(exception.DirectMappingError,
+                          rp.process,
+                          assertion)
 
     def test_mapping_federated_domain_specified(self):
         """Test mapping engine when domain 'ephemeral' is explicitly set.

@@ -1714,3 +1714,29 @@ MAPPING_PROJECTS_WITHOUT_NAME = {
         },
     ]
 }
+
+MAPPING_USER_BLACKLIST = {
+    "rules": [
+        {
+            "local": [
+                {
+                    "user": {
+                        "name": "{0}",
+                        "domain": {
+                            "id": FEDERATED_DOMAIN
+                        },
+                        "type": "ephemeral"
+                    }
+                }
+            ],
+            "remote": [
+                {
+                    "type": "UserName",
+                    "blacklist": [
+                        "IamTester"
+                    ]
+                }
+            ]
+        }
+    ]
+}
