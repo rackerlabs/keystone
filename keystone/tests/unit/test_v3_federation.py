@@ -1931,6 +1931,50 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         token_groups = token_resp['token']['user']['OS-FEDERATION']['groups']
         self.assertEqual(0, len(token_groups))
 
+    def test_issue_unscoped_token_with_only_local_user(self):
+        """Verify that token with only local user not contains OS-FEDERATION
+
+        This test is required because of bug 1693704.
+        """
+        user = unit.new_user_ref(CONF.identity.default_domain_id)
+        self.identity_api.create_user(user)
+        rules = {
+            'rules': [
+                {
+                    'local': [
+                        {
+                            'user': {
+                                'name': user['name'],
+                                'domain': {
+                                    'id': CONF.identity.default_domain_id
+                                },
+                                'type': 'local'
+                            }
+                        }
+                    ],
+                    'remote': [
+                        {
+                            'type': 'UserName'
+                        },
+                        {
+                            'type': 'orgPersonType',
+                            'any_one_of': [
+                                'NoGroupsOrg'
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        self.federation_api.update_mapping(self.mapping['id'], rules)
+        r = self._issue_unscoped_token(assertion='USER_NO_GROUPS_ASSERTION')
+        self.assertIsNotNone(r.headers.get('X-Subject-Token'))
+        token_resp = r.json_body
+
+        # If 'groups' exists in token and it should be contained in 
+        # token_resp['token']['user']['OS-FEDERATION']
+        self.assertNotIn('OS-FEDERATION', token_resp['token']['user'])
+
     def test_issue_scoped_token_no_groups(self):
         """Verify that token without groups cannot get scoped to project.
 
