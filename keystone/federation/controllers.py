@@ -447,8 +447,10 @@ class DomainV3(controller.V3Controller):
         :returns: list of accessible domains
 
         """
-        domains = self.assignment_api.list_domains_for_groups(
-            request.auth_context['group_ids'])
+        domains = []
+        if request.auth_context['group_ids']:
+            domains = self.assignment_api.list_domains_for_groups(
+                request.auth_context['group_ids'])
         domains = domains + self.assignment_api.list_domains_for_user(
             request.auth_context['user_id'])
         # remove duplicates
@@ -473,8 +475,10 @@ class ProjectAssignmentV3(controller.V3Controller):
         :returns: list of accessible projects
 
         """
-        projects = self.assignment_api.list_projects_for_groups(
-            request.auth_context['group_ids'])
+        projects = []
+        if request.auth_context['group_ids']:
+            projects = self.assignment_api.list_projects_for_groups(
+                request.auth_context['group_ids'])
         projects = projects + self.assignment_api.list_projects_for_user(
             request.auth_context['user_id'])
         # remove duplicates
