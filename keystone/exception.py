@@ -451,6 +451,18 @@ class DomainConfigNotFound(NotFound):
                        'configuration for domain %(domain_id)s.')
 
 
+class RegisteredLimitNotFound(NotFound):
+    message_format = _("Could not find registered limit for "
+                       "service type %(service_type)s in region %(region)s "
+                       "with name %(resource_name)s.")
+
+
+class LimitNotFound(NotFound):
+    message_format = _("Could not find limit in %(project_id) for "
+                       "service type %(service_type)s in region %(region)s "
+                       "with name %(resource_name)s.")
+
+
 class ConfigRegistrationNotFound(Exception):
     # This is used internally between the domain config backend and the
     # manager, so should not escape to the client.  If it did, it is a coding
