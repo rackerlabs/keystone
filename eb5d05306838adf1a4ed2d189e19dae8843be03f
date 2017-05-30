@@ -16,6 +16,24 @@
       "revId": "eb5d05306838adf1a4ed2d189e19dae8843be03f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_45183074",
+        "filename": "keystone_tempest_plugin/tests/api/identity/v3/test_identity_providers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-05-30T14:50:35Z",
+      "side": 0,
+      "message": "see comment in commit message. Also, see the results from the job itself [1] :)\n\n[1] http://logs.openstack.org/07/458207/8/check/gate-keystone-dsvm-functional-v3-only-ubuntu-xenial-nv/82e1081/console.html",
+      "parentUuid": "ff0f0b1f_153cc3bd",
+      "revId": "eb5d05306838adf1a4ed2d189e19dae8843be03f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
