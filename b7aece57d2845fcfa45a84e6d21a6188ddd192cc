@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df140735_ddf889c5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-30T16:41:08Z",
+      "side": 1,
+      "message": "This should be Closes-Bug: 1687593 shouldn\u0027t it? I don\u0027t see any other patches needed to fix this up for review, so long as the functional tests are included.",
+      "revId": "b7aece57d2845fcfa45a84e6d21a6188ddd192cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
