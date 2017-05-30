@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "df140735_22363d05",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-05-30T19:10:16Z",
+      "side": 1,
+      "message": "we could give exact numbers, yes, but I thought it was actually better this way. num_effective being \u003e len(assignment_list) shows that there was expansion. If we did a check for a number, it\u0027s a lot less clear to a reader where that number came from and easier to mess things up in future edits.",
+      "parentUuid": "df140735_57057ac1",
+      "revId": "d09c337619fed8664272848abb3a1351dd5e4c85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df140735_97c9d279",
         "filename": "keystone/tests/unit/assignment/test_backends.py",
         "patchSetId": 7
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "df140735_a2212db7",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-05-30T19:10:16Z",
+      "side": 1,
+      "message": "same response as above.",
+      "parentUuid": "df140735_97c9d279",
+      "revId": "d09c337619fed8664272848abb3a1351dd5e4c85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df140735_17b262e7",
         "filename": "keystone/tests/unit/assignment/test_backends.py",
         "patchSetId": 7
@@ -47,6 +83,24 @@
       "writtenOn": "2017-05-30T15:50:49Z",
       "side": 1,
       "message": "How does this not raise read-only errors when we setup the original groups and users at the beginning of the test then?",
+      "revId": "d09c337619fed8664272848abb3a1351dd5e4c85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_45e93b18",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-05-30T19:10:16Z",
+      "side": 1,
+      "message": "because things have been hacked to still allow group/user creation for LDAP for UT, but not deletion. See https://github.com/openstack/keystone/blob/master/keystone/identity/backends/ldap/core.py#L154-L168 . I chatted with knikolla about this on Friday, and he\u0027s in the process of working on improving LDAP tests but was ok with what I\u0027d done here for now.",
+      "parentUuid": "df140735_17b262e7",
       "revId": "d09c337619fed8664272848abb3a1351dd5e4c85",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
