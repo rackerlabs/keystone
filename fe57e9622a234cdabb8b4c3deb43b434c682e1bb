@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df140735_629b1572",
+        "filename": "requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-05-30T18:44:13Z",
+      "side": 1,
+      "message": "Is there a reason for changing these requirements?",
+      "revId": "fe57e9622a234cdabb8b4c3deb43b434c682e1bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
