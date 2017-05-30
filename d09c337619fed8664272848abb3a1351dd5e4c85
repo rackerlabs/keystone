@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df140735_57057ac1",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-30T15:50:49Z",
+      "side": 1,
+      "message": "Don\u0027t we know the values of these? Can\u0027t these be more explicit assertions that help readers understand exactly what the values are?",
+      "revId": "d09c337619fed8664272848abb3a1351dd5e4c85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_97c9d279",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-30T15:50:49Z",
+      "side": 1,
+      "message": "Same comment here. I think the readability of the test would be improved significantly. \n\nThis is also something we can do in a follow-on patch.",
+      "revId": "d09c337619fed8664272848abb3a1351dd5e4c85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_17b262e7",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-30T15:50:49Z",
+      "side": 1,
+      "message": "How does this not raise read-only errors when we setup the original groups and users at the beginning of the test then?",
+      "revId": "d09c337619fed8664272848abb3a1351dd5e4c85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
