@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df140735_6308a0d8",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-31T14:19:07Z",
+      "side": 0,
+      "message": "What is the point of removing this copyright header? This is not related to this patch goal at all. Please revert",
+      "revId": "c3ca06ff47cced16ea9de3d6ef1a6c583bb3cf38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df140735_1256d45d",
+        "filename": "doc/source/advanced-topics/external-auth.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-31T14:19:07Z",
+      "side": 1,
+      "message": "why did this need to be changed?",
+      "revId": "875b80f4b0549efa27677c934884e536c8a64866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_b24a88a9",
+        "filename": "doc/source/advanced-topics/external-auth.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-31T14:19:07Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "875b80f4b0549efa27677c934884e536c8a64866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_e3227001",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-31T14:19:07Z",
+      "side": 1,
+      "message": "this is not true, there is docs about installing, performance, etc etc",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 9
+      },
+      "revId": "875b80f4b0549efa27677c934884e536c8a64866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_e3acb036",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-31T14:19:07Z",
+      "side": 1,
+      "message": "it would be great if we could keep the sections here, as it was before.\n\nexample:\n\n    Getting Started\n    \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n    .. toctree::\n        :maxdepth: 2\n\n        getting-started/index.rst\n\n\nrather than a single toc for everything.\n\nthe benefit of what I am proposing is we could add useful description about the docs being listed here. for example\n\n    Getting Started\n    \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n\n    The documentation in this section provides guidance on how to get started with keystone, such as installing an upgrading, its architecture, ...\n\n    .. toctree::\n        :maxdepth: 2\n\n        getting-started/index.rst\n\nSo it looks more human-friendly rather than just a toc tree. I would like to see what others think about it too",
+      "revId": "875b80f4b0549efa27677c934884e536c8a64866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_a316b8f0",
+        "filename": "doc/source/sample_files/index.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-31T14:19:07Z",
+      "side": 1,
+      "message": "use spaces in these so it\u0027s consistent with the rest of the docs",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 1
+      },
+      "revId": "875b80f4b0549efa27677c934884e536c8a64866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_03d1e4fb",
+        "filename": "doc/source/sample_files/index.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-31T14:19:07Z",
+      "side": 1,
+      "message": "here",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 1
+      },
+      "revId": "875b80f4b0549efa27677c934884e536c8a64866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_a3d598e7",
+        "filename": "doc/source/sample_files/index.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-31T14:19:07Z",
+      "side": 1,
+      "message": "and here",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 1
+      },
+      "revId": "875b80f4b0549efa27677c934884e536c8a64866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
