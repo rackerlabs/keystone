@@ -16,6 +16,24 @@
       "revId": "2fdf89554f75c46e20e4b0ec4c373037da2cfe53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_c31c0c6c",
+        "filename": "keystone/tests/unit/default_fixtures.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-05-31T13:52:34Z",
+      "side": 1,
+      "message": "Since this is a straight backport, I\u0027d rather it match the patch for master.",
+      "parentUuid": "df140735_1277f4d6",
+      "revId": "2fdf89554f75c46e20e4b0ec4c373037da2cfe53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
