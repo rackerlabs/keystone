@@ -52,6 +52,24 @@
       "revId": "2fdf89554f75c46e20e4b0ec4c373037da2cfe53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_c2df5dd4",
+        "filename": "keystone/tests/unit/default_fixtures.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-05-31T19:21:38Z",
+      "side": 1,
+      "message": "I\u0027m good with this change. We talked about it in IRC: \n\nhttp://eavesdrop.openstack.org/irclogs/%23openstack-keystone/%23openstack-keystone.2017-05-31.log.html#t2017-05-31T15:37:06",
+      "parentUuid": "df140735_c34acc53",
+      "revId": "2fdf89554f75c46e20e4b0ec4c373037da2cfe53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
