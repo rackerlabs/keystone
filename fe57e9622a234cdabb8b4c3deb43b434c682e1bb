@@ -16,6 +16,24 @@
       "revId": "fe57e9622a234cdabb8b4c3deb43b434c682e1bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_f81fbf6d",
+        "filename": "requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25559
+      },
+      "writtenOn": "2017-05-31T13:52:11Z",
+      "side": 1,
+      "message": "I don\u0027t know exactly, I didn\u0027t make this change. It came from the last commit by gerritbot.",
+      "parentUuid": "df140735_629b1572",
+      "revId": "fe57e9622a234cdabb8b4c3deb43b434c682e1bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
