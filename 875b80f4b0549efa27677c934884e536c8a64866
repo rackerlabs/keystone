@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "df140735_7b572404",
+        "filename": "doc/source/advanced-topics/external-auth.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 10607
+      },
+      "writtenOn": "2017-05-31T16:11:27Z",
+      "side": 1,
+      "message": "Oh, I accidentally removed the link here. That can be put back in.",
+      "parentUuid": "df140735_1256d45d",
+      "revId": "875b80f4b0549efa27677c934884e536c8a64866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df140735_b24a88a9",
         "filename": "doc/source/advanced-topics/external-auth.rst",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2017-05-31T14:19:07Z",
       "side": 1,
       "message": "same here",
+      "revId": "875b80f4b0549efa27677c934884e536c8a64866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_3b41ac3a",
+        "filename": "doc/source/advanced-topics/external-auth.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 10607
+      },
+      "writtenOn": "2017-05-31T16:11:27Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "df140735_b24a88a9",
       "revId": "875b80f4b0549efa27677c934884e536c8a64866",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,30 @@
       "side": 1,
       "message": "Yeah we could move this to the correct section if we use the example from below.",
       "parentUuid": "df140735_e3227001",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 9
+      },
+      "revId": "875b80f4b0549efa27677c934884e536c8a64866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_7b7044a6",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 10607
+      },
+      "writtenOn": "2017-05-31T16:11:27Z",
+      "side": 1,
+      "message": "This just needs to be updated :) I think this patch should concentrate on implementing the layout, then focusing on editorial stuff",
+      "parentUuid": "df140735_8414daa1",
       "range": {
         "startLine": 23,
         "startChar": 0,
@@ -130,6 +190,24 @@
       "side": 1,
       "message": "I like this idea",
       "parentUuid": "df140735_e3acb036",
+      "revId": "875b80f4b0549efa27677c934884e536c8a64866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_bb4dbc73",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 10607
+      },
+      "writtenOn": "2017-05-31T16:11:27Z",
+      "side": 1,
+      "message": "The idea is that you separate the pages, and this is just a landing zone that you can move out to.\n\nI admittedly prefer it this way, and have encouraged the development of this setup rather than using what you used to have. But, it\u0027s personal preference.",
+      "parentUuid": "df140735_a4eebeb1",
       "revId": "875b80f4b0549efa27677c934884e536c8a64866",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
