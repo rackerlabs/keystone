@@ -102,6 +102,13 @@ Developers Documentation
    devref/http-api
    devref/services
 
+Administrator Guide
+===================
+.. toctree::
+   :maxdepth: 2
+
+   admin-guide/source/identity-management
+
 Sample Files
 ============
 
