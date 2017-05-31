@@ -214,6 +214,24 @@
     },
     {
       "key": {
+        "uuid": "df140735_911779a4",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-31T17:22:28Z",
+      "side": 1,
+      "message": "But in some cases it doesn\u0027t look good, examples:\n- you click on \"Developers Documentation\" and it just gets you to another page that contains just another toc tree\n- you click on \"Related Identity Projects\" and there is just a sentence with around 20 words in there\n- you click on \"Sample Files\" and just another toctree\n\nPutting the content from those files directly in the main file would make perfect sense to me (as we had before), so that it won\u0027t look like we\u0027re navigating a file system :-)\n\nLet\u0027s see what others think about it",
+      "parentUuid": "df140735_bb4dbc73",
+      "revId": "875b80f4b0549efa27677c934884e536c8a64866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df140735_a316b8f0",
         "filename": "doc/source/sample_files/index.rst",
         "patchSetId": 7
