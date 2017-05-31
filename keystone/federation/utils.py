@@ -811,6 +811,8 @@ class RuleProcessor(object):
                 direct_map_values = [v for v in direct_map_values
                                      if v in whitelisted_values]
 
+            if not direct_map_values:
+                return None
             direct_maps.add(direct_map_values)
 
             LOG.debug('updating a direct mapping: %s', direct_map_values)
