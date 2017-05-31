@@ -95,8 +95,3 @@ token validation from keystone (i.e.: nova, cinder, swift, etc.).
 
 * ``check_revocations_for_cached``: Leave this option disabled to improve
   performance, but enable it if you're using PKI tokens.
-
-* ``hash_algorithms``: If you're using PKI tokens, then use a high performance
-  hash algorithm to improve performance, or choose a more rigorous hash
-  algorithm to improve security. This option is ignored for other token
-  formats.
