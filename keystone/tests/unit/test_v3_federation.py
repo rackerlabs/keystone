@@ -2117,6 +2117,48 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
             self.TOKEN_SCOPE_DOMAIN_D_FROM_CUSTOMER,
             expected_status=http_client.UNAUTHORIZED)
 
+    @utils.wip('This will fail because of bug #1693704')
+    def test_list_federation_projects_with_domain_scoped_token(self):
+        # NOTE(yangweiwei): Create a domain-scope token, save its Token ID,
+        # and request for federation projects with it.
+        user = unit.new_user_ref(CONF.identity.default_domain_id)
+        self.identity_api.create_user(user)
+        rules = {
+            'rules': [
+                {
+                    'local': [
+                        {
+                            'user': {
+                                'name': user['name'],
+                                'domain': {
+                                    'id': CONF.identity.default_domain_id
+                                },
+                                'type': 'local'
+                            }
+                        }
+                    ],
+                    'remote': [
+                        {
+                            'type': 'UserName'
+                        },
+                        {
+                            'type': 'orgPersonType',
+                            'any_one_of': [
+                                'NoGroupsOrg'
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        self.federation_api.update_mapping(self.mapping['id'], rules)
+        r = self._issue_unscoped_token(assertion='USER_NO_GROUPS_ASSERTION')
+        token = r.headers.get('X-Subject-Token')
+
+        # With the domain-scoped token, get the federation projects and it
+        # should return correctly but now it will raise KeyError.
+        self.get('/OS-FEDERATION/projects', token=token)
+
     def test_list_projects(self):
         urls = ('/OS-FEDERATION/projects', '/auth/projects')
 
