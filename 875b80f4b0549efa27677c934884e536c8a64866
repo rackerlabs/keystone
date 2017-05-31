@@ -232,6 +232,58 @@
     },
     {
       "key": {
+        "uuid": "df140735_67b8a375",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-05-31T18:45:04Z",
+      "side": 1,
+      "message": "I hear what Samuel is saying. I think we might be able to alleviate some of his concern with a little refactoring, though. E.g. \"Related Identity Projects\" shouldn\u0027t be a separate page, it should stay on this one (it\u0027s just links to other projects). \"Sample Files\" should move under \"Configuring Keystone\" (either here or in a follow-up). And we could add some text to \"Developer Documentation\" so that it\u0027s *not* just a TOC page.",
+      "parentUuid": "df140735_911779a4",
+      "revId": "875b80f4b0549efa27677c934884e536c8a64866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_e7da7315",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-05-31T18:45:04Z",
+      "side": 1,
+      "message": "why was \"related_projects\" moved from the top? I think that really needs to stay on the main page, at the top, not be split out to its own page. It\u0027s just links to other projects.",
+      "revId": "875b80f4b0549efa27677c934884e536c8a64866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_273f4b26",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-05-31T18:45:04Z",
+      "side": 1,
+      "message": "There is a different (better) search facility in the new theme, but we seem to have lost the other \"Indices and Tables\" links: genindex and modindex... Can we get those back, or make them more obvious if I\u0027m just missing them? Could call it just \"Indices\", since there aren\u0027t any tables.",
+      "revId": "875b80f4b0549efa27677c934884e536c8a64866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df140735_a316b8f0",
         "filename": "doc/source/sample_files/index.rst",
         "patchSetId": 7
