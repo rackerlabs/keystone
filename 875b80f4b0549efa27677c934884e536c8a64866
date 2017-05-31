@@ -76,6 +76,24 @@
     },
     {
       "key": {
+        "uuid": "df140735_dea983dd",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-05-31T14:24:55Z",
+      "side": 1,
+      "message": "Or even better, we could just include the content from the other files here\n\nfor example\n\n    include getting-started/index.rst (this is not the right syntax)\n\nso that the section header, the description (as I suggested), and the toc is included from there.",
+      "parentUuid": "df140735_e3acb036",
+      "revId": "875b80f4b0549efa27677c934884e536c8a64866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df140735_a316b8f0",
         "filename": "doc/source/sample_files/index.rst",
         "patchSetId": 7
