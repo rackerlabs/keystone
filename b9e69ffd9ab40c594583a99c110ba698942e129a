@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df140735_1bacbb32",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 25640
+      },
+      "writtenOn": "2017-05-31T06:18:51Z",
+      "side": 1,
+      "message": "you should add \n‘from keystone.tests.unit import default_fixtures’ here",
+      "revId": "b9e69ffd9ab40c594583a99c110ba698942e129a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
