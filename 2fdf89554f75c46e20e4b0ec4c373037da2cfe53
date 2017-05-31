@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df140735_1277f4d6",
+        "filename": "keystone/tests/unit/default_fixtures.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-05-31T12:58:19Z",
+      "side": 1,
+      "message": "rather than add MEMBER_ROLE_ID here, which could impact other tests, should we just change our new test to use a different role that already exists here in default_fixtures? I\u0027m not sure which approach the cores would prefer.",
+      "revId": "2fdf89554f75c46e20e4b0ec4c373037da2cfe53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
