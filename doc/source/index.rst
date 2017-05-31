@@ -83,6 +83,7 @@ the keystone service.
 
     configuration.rst
     advanced-topics/index.rst
+    admin/identity-management.rst
     sample_files/index.rst
 
 API Documentation
