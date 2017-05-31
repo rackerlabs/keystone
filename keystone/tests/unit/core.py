@@ -789,8 +789,8 @@ class TestCase(BaseTestCase):
     def assertNotEmpty(self, l):
         self.assertGreater(len(l), 0)
 
-    def assertRaisesRegexp(self, expected_exception, expected_regexp,
-                           callable_obj, *args, **kwargs):
+    def assertRaisesRegex(self, expected_exception, expected_regexp,
+                          callable_obj, *args, **kwargs):
         """Assert that the message in a raised exception matches a regexp."""
         try:
             callable_obj(*args, **kwargs)
