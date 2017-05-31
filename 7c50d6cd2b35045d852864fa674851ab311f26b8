@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "df140735_86ecd4f3",
+        "filename": "doc/source/admin-guide/source/identity-caching-layer.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-05-31T22:26:07Z",
+      "side": 1,
+      "message": "On second thought, looking at the current docs at:\n\nhttps://docs.openstack.org/admin-guide/identity-certificates-for-pki.html\n\nit appears to render the same as the others so this may not really be needed here. Could be something to do in a later patch.",
+      "parentUuid": "df140735_51a2014d",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 13
+      },
+      "revId": "7c50d6cd2b35045d852864fa674851ab311f26b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df140735_716d0503",
         "filename": "doc/source/admin-guide/source/identity-keystone-usage-and-features.rst",
         "patchSetId": 1
