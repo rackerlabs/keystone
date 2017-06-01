@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "df140735_d7ea6573",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 792,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-01T14:59:45Z",
+      "side": 1,
+      "message": "Yeah, from this [0] it looks like we could probably remove it and it should still work with py27 and py35, I think six does some alias\u0027ing in the background for assertRaisesRegex() vs assertRaisesRegexp().\n\n[0] https://review.openstack.org/#/c/466177/",
+      "parentUuid": "df140735_20295a89",
+      "range": {
+        "startLine": 792,
+        "startChar": 8,
+        "endLine": 792,
+        "endChar": 25
+      },
+      "revId": "b3361096fe775b5c8d45448cdb9fc2953a328aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df140735_257a8cf0",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 2
