@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df140735_e686ebdb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-01T03:03:46Z",
+      "side": 1,
+      "message": "extra whitespace here",
+      "range": {
+        "startLine": 10,
+        "startChar": 66,
+        "endLine": 10,
+        "endChar": 67
+      },
+      "revId": "b3361096fe775b5c8d45448cdb9fc2953a328aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_46c8f720",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 792,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-01T03:03:46Z",
+      "side": 1,
+      "message": "I wonder if we could name this something different than the same function from python 3 to avoid future confusion?",
+      "range": {
+        "startLine": 792,
+        "startChar": 8,
+        "endLine": 792,
+        "endChar": 25
+      },
+      "revId": "b3361096fe775b5c8d45448cdb9fc2953a328aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
