@@ -45,6 +45,53 @@
       "revId": "b3361096fe775b5c8d45448cdb9fc2953a328aee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_20295a89",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 792,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-06-01T13:43:03Z",
+      "side": 1,
+      "message": "I\u0027m not really clear on why we\u0027re reimplementing it at all, it seems like maybe to fix things for python2.6? Iea67ad10d02db82fc8ed79b1096ddb5233925bfd",
+      "parentUuid": "df140735_46c8f720",
+      "range": {
+        "startLine": 792,
+        "startChar": 8,
+        "endLine": 792,
+        "endChar": 25
+      },
+      "revId": "b3361096fe775b5c8d45448cdb9fc2953a328aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_257a8cf0",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 794,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-06-01T13:43:03Z",
+      "side": 1,
+      "message": "This should be changed too",
+      "range": {
+        "startLine": 794,
+        "startChar": 67,
+        "endLine": 794,
+        "endChar": 73
+      },
+      "revId": "b3361096fe775b5c8d45448cdb9fc2953a328aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
