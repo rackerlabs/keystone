@@ -288,6 +288,18 @@ class AuthWithToken(object):
             self.controller.authenticate,
             self.make_request(), body_dict)
 
+    def test_auth_token_with_invalid_whitespace(self):
+        """Token with bad whitespace will be considered invalid."""
+        body_dict = _build_user_auth(username='foo',
+                                     password='foo2')
+        token = self.controller.authenticate(self.make_request(),
+                                             body_dict)
+        token['access']['token']['id'] += '\r'
+        body_dict = _build_user_auth(token=token['access']['token'])
+
+        # Tokens with weird characters should be stripped
+        self.controller.authenticate(self.make_request(), body_dict)
+
     def test_auth_unscoped_token_no_project(self):
         """Verify getting an unscoped token with an unscoped token."""
         body_dict = _build_user_auth(
