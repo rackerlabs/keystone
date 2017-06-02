@@ -797,9 +797,12 @@ class TestCase(BaseTestCase):
     def assertNotEmpty(self, l):
         self.assertGreater(len(l), 0)
 
-    def assertRaisesRegexp(self, expected_exception, expected_regexp,
-                           callable_obj, *args, **kwargs):
-        """Assert that the message in a raised exception matches a regexp."""
+    def assertExceptionRegex(self, expected_exception, expected_regexp,
+                             callable_obj, *args, **kwargs):
+        """Assert that the message in a raised exception matches a regexp.
+
+        This is a replacement for assertRaisesRegexp() from py26.
+        """
         try:
             callable_obj(*args, **kwargs)
         except expected_exception as exc_value:
