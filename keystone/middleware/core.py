@@ -12,6 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import re
+
 from oslo_log import log
 from oslo_log import versionutils
 from oslo_serialization import jsonutils
@@ -44,7 +46,9 @@ class TokenAuthMiddleware(wsgi.Middleware):
         context = request.environ.get(CONTEXT_ENV, {})
         context['token_id'] = token
         if SUBJECT_TOKEN_HEADER in request.headers:
-            context['subject_token_id'] = request.headers[SUBJECT_TOKEN_HEADER]
+            subject_token = request.headers[SUBJECT_TOKEN_HEADER]
+            subject_token = re.sub(r"\r$", "", subject_token)
+            context['subject_token_id'] = subject_token
         request.environ[CONTEXT_ENV] = context
 
 
