@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+
 from oslo_log import log
 from oslo_log import versionutils
 from oslo_serialization import jsonutils
@@ -40,11 +41,11 @@ PARAMS_ENV = wsgi.PARAMS_ENV
 
 class TokenAuthMiddleware(wsgi.Middleware):
     def process_request(self, request):
-        token = request.headers.get(AUTH_TOKEN_HEADER)
+        token = request.headers.get(AUTH_TOKEN_HEADER).strip()
         context = request.environ.get(CONTEXT_ENV, {})
         context['token_id'] = token
         if SUBJECT_TOKEN_HEADER in request.headers:
-            context['subject_token_id'] = request.headers[SUBJECT_TOKEN_HEADER]
+            context['subject_token_id'] = request.headers[SUBJECT_TOKEN_HEADER].strip()
         request.environ[CONTEXT_ENV] = context
 
 
