@@ -110,6 +110,24 @@ class TokenAuthMiddlewareTest(MiddlewareRequestTestBase):
         context = req.environ[middleware.CONTEXT_ENV]
         self.assertEqual('MAGIC', context['token_id'])
 
+    def test_stripped_auth_token(self):
+        # testing the case when whitepsace and carriage returns
+        # are included in X-Auth-Token in order to prevent an
+        # unauthoried 401 error code
+        headers = {middleware.AUTH_TOKEN_HEADER: '     TOKEN     '}
+        req = self._do_middleware_request(headers=headers)
+        context = req.environ[middleware.CONTEXT_ENV]
+        self.assertEqual('TOKEN', context['token_id'])
+
+    def test_stripped_subj_token(self):
+        # testing the case when whitepsace and carriage returns
+        # are included in X-Subject-Token in order to prevent an
+        # unauthoried 401 error code
+        headers = {middleware.SUBJECT_TOKEN_HEADER: '     TOKEN     '}
+        req = self._do_middleware_request(headers=headers)
+        context = req.environ[middleware.CONTEXT_ENV]
+        self.assertEqual('TOKEN', context['subject_token_id'])
+
 
 class JsonBodyMiddlewareTest(MiddlewareRequestTestBase):
 
