@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df140735_3a115905",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-06-02T17:24:34Z",
+      "side": 1,
+      "message": "Since we don\u0027t test on 2.6 anymore I think we can just remove this function entirely.",
+      "revId": "18e4d6c7e96b55d0c9867a22a5cbcddb5a23a710",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
