@@ -370,7 +370,8 @@ class TokenAuthenticationMethod(BaseAuthenticationMethod):
             raise exception.ValidationError(
                 attribute='id', target='token')
 
-        old_token = auth['token']['id']
+        # Remove any whitespace characters that may have been accidentally added
+        old_token = auth['token']['id'].strip()
         if len(old_token) > CONF.max_token_size:
             raise exception.ValidationSizeError(attribute='token',
                                                 size=CONF.max_token_size)
