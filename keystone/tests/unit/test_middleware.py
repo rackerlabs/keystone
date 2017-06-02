@@ -110,6 +110,13 @@ class TokenAuthMiddlewareTest(MiddlewareRequestTestBase):
         context = req.environ[middleware.CONTEXT_ENV]
         self.assertEqual('MAGIC', context['token_id'])
 
+    def test_stripped_token(self):
+        """verify that context['token_id'] equals TOKEN."""
+        headers = {middleware.AUTH_TOKEN_HEADER: '     TOKEN     '}
+        req = self._do_middleware_request(headers=headers)
+        context = req.environ[middleware.CONTEXT_ENV]
+        self.assertEqual('TOKEN', context['token_id'])
+
 
 class JsonBodyMiddlewareTest(MiddlewareRequestTestBase):
 
