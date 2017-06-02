@@ -41,10 +41,15 @@ PARAMS_ENV = wsgi.PARAMS_ENV
 class TokenAuthMiddleware(wsgi.Middleware):
     def process_request(self, request):
         token = request.headers.get(AUTH_TOKEN_HEADER)
+        if token:
+            token = token.strip()
         context = request.environ.get(CONTEXT_ENV, {})
         context['token_id'] = token
         if SUBJECT_TOKEN_HEADER in request.headers:
-            context['subject_token_id'] = request.headers[SUBJECT_TOKEN_HEADER]
+            subject_token = request.headers[SUBJECT_TOKEN_HEADER]
+            if subject_token:
+                subject_token = subject_token.strip()
+            context['subject_token_id'] = subject_token
         request.environ[CONTEXT_ENV] = context
 
 
