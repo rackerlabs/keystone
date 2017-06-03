@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df140735_5fd3ccd5",
+        "filename": "doc/source/performance.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-03T22:43:54Z",
+      "side": 0,
+      "message": "Well, this does not make sense anymore, PKI and PKIz have been removed, see Ocata release notes https://docs.openstack.org/releasenotes/keystone/ocata.html\n\n\"If you\u0027re using PKI tokens\". It is not possible to be using them for this release.",
+      "revId": "4eff64b5fe5620c9bfcc7b93405fe17448b993d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
