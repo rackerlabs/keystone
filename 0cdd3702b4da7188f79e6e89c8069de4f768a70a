@@ -56,6 +56,30 @@
       "revId": "0cdd3702b4da7188f79e6e89c8069de4f768a70a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_bf7ae8ed",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-03T22:19:17Z",
+      "side": 1,
+      "message": "++ just add .strip(\u0027\\r\u0027) at the end\n\nBTW why does this contain \\r at the end?",
+      "parentUuid": "df140735_226febfc",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 55
+      },
+      "revId": "0cdd3702b4da7188f79e6e89c8069de4f768a70a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
