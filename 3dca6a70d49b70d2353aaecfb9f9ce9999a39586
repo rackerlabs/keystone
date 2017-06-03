@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df140735_7f9c500d",
+        "filename": "api-ref/source/v3/credentials.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-03T22:59:28Z",
+      "side": 1,
+      "message": "\" or ``type``\"",
+      "range": {
+        "startLine": 82,
+        "startChar": 43,
+        "endLine": 82,
+        "endChar": 44
+      },
+      "revId": "3dca6a70d49b70d2353aaecfb9f9ce9999a39586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_9f9ba416",
+        "filename": "api-ref/source/v3/credentials.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-03T22:59:28Z",
+      "side": 1,
+      "message": "\"or credential type.\"",
+      "range": {
+        "startLine": 83,
+        "startChar": 36,
+        "endLine": 83,
+        "endChar": 37
+      },
+      "revId": "3dca6a70d49b70d2353aaecfb9f9ce9999a39586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
