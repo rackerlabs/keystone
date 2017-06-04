@@ -104,6 +104,30 @@
       "revId": "0cdd3702b4da7188f79e6e89c8069de4f768a70a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_b4dd66e1",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-06-04T20:46:53Z",
+      "side": 1,
+      "message": "Please include the reason in the commit message even though it\u0027s explained in the bug.",
+      "parentUuid": "df140735_b46fa629",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 55
+      },
+      "revId": "0cdd3702b4da7188f79e6e89c8069de4f768a70a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
