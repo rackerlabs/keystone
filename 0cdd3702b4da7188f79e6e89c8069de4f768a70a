@@ -80,6 +80,30 @@
       "revId": "0cdd3702b4da7188f79e6e89c8069de4f768a70a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_b46fa629",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-06-04T20:34:11Z",
+      "side": 1,
+      "message": "I don\u0027t think the \u0027\\r\u0027 is really necessary... might as well strip any whitespace, not just \u0027\\r\u0027.\n\nAs to why it\u0027s happening... see the LP bug.",
+      "parentUuid": "df140735_bf7ae8ed",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 55
+      },
+      "revId": "0cdd3702b4da7188f79e6e89c8069de4f768a70a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
