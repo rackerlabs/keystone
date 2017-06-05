@@ -1538,6 +1538,103 @@ class ResourceTests(object):
         user = self.identity_api.get_user(user['id'])
         self.assertNotIn('default_project_id', user)
 
+    def test_list_project_tag(self):
+        # GET /v3/projects/{project_id}/tags
+
+        project = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id)
+        project_tag = unit.new_project_ref(
+            project_id=project['id'])
+        project_tag_ref = self.resource_api.list_project_tag(project['id'])
+        self.assertEqual(project_tag, project_tag_ref)
+
+    def test_list_project_tag_returns_not_found(self):
+        self.assertRaises(exception.ProjectTagNotFound,
+                          self.resource_api.list_project_tag,
+                          uuid.uuid4().hex)
+
+    def test_list_project_tags_with_invalid_project_id(self):
+        self.assertRaises(exception.ProjectTagNotFound,
+                          self.resource_api.list_project_tag,
+                          uuid.uuid4().hex)
+
+    def test_check_if_project_contains_tag(self):
+        # GET /v3/projects/{project_id}/tags/{tag}
+
+        project = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id)
+        project_tag = unit.new_project_ref(
+            project_id=project['id'],
+            name='a')
+        contains_tag = self.resource_api.check_if_project_contains_tag(
+            project['id'], project_tag['name'])
+        self.assertTrue(contains_tag)
+
+    def test_create_project_tag_with_trailing_whitespace(self):
+        # PUT /v3/projects/{project_id}/tags/{tag}
+
+        project = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id)
+        project_id = project['id']
+        project_tag = unit.new_project_tag_ref(project_id=project_id)
+        project_tag_name = project_tag['name'] = (project_tag['name'] + '    ')
+        project_tag_returned = self.resource_api.create_project_tag(
+            project_id, project_tag['name'])
+        project_tag_id = project_tag['id']
+        self.assertEqual(project_tag_id, project_tag_returned['id'])
+        self.assertEqual(
+            project_tag_name.strip(), project_tag_returned['name'])
+
+    def test_create_project_tag_long_name_fails(self):
+        project = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id)
+        project_id = project['id']
+        project_tag = unit.new_project_tag_ref(
+            name='a' * 65, project_id=project_id)
+        self.assertRaises(exception.ValidationError,
+                          self.resource_api.create_project_tag,
+                          project_tag['id'],
+                          project_tag)
+
+    def test_update_project_tags(self):
+        # PUT /v3/projects/{projecti_id}/tags
+        self.assertRaises(exception.ProjectNotFound,
+                          self.resource_api.update_project_tags,
+                          uuid.uuid4().hex, '0')
+
+    def test_update_project_tags_returns_not_found(self):
+        self.assertRaises(exception.ProjectNotFound,
+                          self.resource_api.update_project_tags,
+                          uuid.uuid4().hex, '0')
+
+    def test_delete_project_tag_returns_not_found(self):
+        # DELETE /v3/projects/{project_id}/tags/{tag}
+
+        self.assertRaises(exception.ProjectNotFound,
+                          self.resource_api.delete_project_tag,
+                          uuid.uuid4().hex,
+                          uuid.uuid4().hex)
+
+    def test_delete_all_tags(self):
+        project = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id)
+        project_id = project['id']
+        project_tag = unit.new_project_tag_ref(
+            name='a', project_id=project_id)
+        project_tag_alt = unit.new_project_tag_ref(
+            name='b', project_id=project_id)
+        self.resource_api.update_project_tags(
+            project_id, [project_tag, project_tag_alt])
+        self.resource_api.delete_all_project_tags(project_id)
+        self.assertRaises(exception.ProjectTagNotFound,
+                          self.resource_api.list_project_tag,
+                          project_id)
+
+    def test_delete_all_tags_returns_not_found(self):
+        self.assertRaises(exception.ProjectNotFound,
+                          self.resource_api.delete_all_project_tags,
+                          uuid.uuid4().hex)
+
 
 class ResourceDriverTests(object):
     """Test for the resource driver.
@@ -1615,3 +1712,53 @@ class ResourceDriverTests(object):
         }
         self.assertRaises(exception.Conflict, self.driver.create_project,
                           project_id, project)
+
+    def test_create_project_tag(self):
+        project_tag_id = uuid.uuid4().hex
+        project_tag = {
+            'name': uuid.uuid4().hex,
+            'id': project_tag_id,
+            'project_id': uuid.uuid4().hex,
+        }
+        self.driver.create_project_tag(project_tag_id, project_tag)
+
+    def test_create_project_tag_null_tag_name(self):
+        project_tag_id = uuid.uuid4().hex
+        project_tag = {
+            'name': None,
+            'id': project_tag_id,
+            'project_id': uuid.uuid4().hex
+        }
+        self.assertRaises(exception.UnexpectedError,
+                          self.driver.create_project_tag,
+                          project_tag_id,
+                          project_tag)
+
+    def test_create_project_tag_null_project_id(self):
+        project_tag_id = uuid.uuid4().hex
+        project_tag = {
+            'name': uuid.uuid4().hex,
+            'id': project_tag_id,
+            'project_id': None,
+        }
+        self.assertRaises(exception.UnexpectedError,
+                          self.driver.create_project_tag,
+                          project_tag_id,
+                          project_tag)
+
+    def test_create_project_tags_same_id_conflict(self):
+        project_tag_id = uuid.uuid4().hex
+        project_tag = {
+            'name': uuid.uuid4().hex,
+            'id': project_tag_id,
+            'project_id': uuid.uuid4().hex,
+        }
+        self.driver.create_project_tag(project_tag_id, project_tag)
+
+        project_tag = {
+            'name': uuid.uuid4().hex,
+            'id': project_tag_id,
+            'project_id': uuid.uuid4().hex,
+        }
+        self.assertRaises(exception.Conflict, self.driver.create_project_tag,
+                          project_tag_id, project_tag)
