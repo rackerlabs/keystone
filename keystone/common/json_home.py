@@ -40,6 +40,7 @@ def build_v3_extension_parameter_relation(extension_name, extension_version,
         'https://docs.openstack.org/api/openstack-identity/3/ext/%s/%s/param/'
         '%s' % (extension_name, extension_version, parameter_name))
 
+# TODO(aselius): Change the parameters for tags_id
 
 class Parameters(object):
     """Relationships for Common parameters."""
@@ -53,6 +54,7 @@ class Parameters(object):
     ROLE_ID = build_v3_parameter_relation('role_id')
     SERVICE_ID = build_v3_parameter_relation('service_id')
     USER_ID = build_v3_parameter_relation('user_id')
+    #TAG_VALUE = build_v3_parameter_relation('tag_value')
 
 
 class Status(object):

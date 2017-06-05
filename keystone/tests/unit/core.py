@@ -21,6 +21,7 @@ import hashlib
 import json
 import ldap
 import os
+import re
 import shutil
 import socket
 import sys
@@ -207,6 +208,7 @@ def skip_if_no_multiple_domains_support(f):
 class UnexpectedExit(Exception):
     pass
 
+# TODO(aselius): Write a new project tag reference
 
 def new_region_ref(parent_region_id=None, **kwargs):
     ref = {
@@ -619,14 +621,6 @@ class TestCase(BaseTestCase):
                 'keystone.notifications=INFO',
                 'keystone.identity.backends.ldap.common=INFO',
             ])
-        # NOTE(notmorgan): Set password rounds low here to ensure speedy
-        # tests. This is explicitly set because the tests here are not testing
-        # the integrity of the password hashing, just that the correct form
-        # of hashing has been used. Note that 4 is the lowest for bcrypt
-        # allowed in the `[identity] password_hash_rounds` setting
-        self.config_fixture.config(group='identity', password_hash_rounds=4)
-        self.config_fixture.config(crypt_strength=1000)
-
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
@@ -795,6 +789,32 @@ class TestCase(BaseTestCase):
 
     def assertNotEmpty(self, l):
         self.assertGreater(len(l), 0)
+
+    def assertRaisesRegexp(self, expected_exception, expected_regexp,
+                           callable_obj, *args, **kwargs):
+        """Assert that the message in a raised exception matches a regexp."""
+        try:
+            callable_obj(*args, **kwargs)
+        except expected_exception as exc_value:
+            if isinstance(expected_regexp, six.string_types):
+                expected_regexp = re.compile(expected_regexp)
+
+            if isinstance(exc_value.args[0], six.text_type):
+                if not expected_regexp.search(six.text_type(exc_value)):
+                    raise self.failureException(
+                        '"%s" does not match "%s"' %
+                        (expected_regexp.pattern, six.text_type(exc_value)))
+            else:
+                if not expected_regexp.search(str(exc_value)):
+                    raise self.failureException(
+                        '"%s" does not match "%s"' %
+                        (expected_regexp.pattern, str(exc_value)))
+        else:
+            if hasattr(expected_exception, '__name__'):
+                excName = expected_exception.__name__
+            else:
+                excName = str(expected_exception)
+            raise self.failureException("%s not raised" % excName)
 
     def assertUserDictEqual(self, expected, observed, message=''):
         """Assert that a user dict is equal to another user dict.

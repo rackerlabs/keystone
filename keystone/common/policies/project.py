@@ -50,7 +50,20 @@ project_policies = [
         check_str=base.RULE_ADMIN_REQUIRED,
         description='Delete project.',
         operations=[{'path': '/v3/projects/{project_id}',
-                     'method': 'DELETE'}])
+                     'method': 'DELETE'}]),
+
+    ## TODO(aselius): add PUT projects/{project_id}/tags
+    ## add GETprojects/{project_id}/tags/{value}
+    ## add PUT projects/{project_id}/tags/{value}
+    ## add DELETE projects/{project_id}/tags
+    ## add DELETE projects/{project_id}/tags/{value}
+
+    policy.DocumentedRuleDefault(
+        name=base.IDENTITY % 'get_project_tags',
+        check_str=base.RULE_ADMIN_OR_OWNER,
+        description="List tags a project",
+        operations=[{'path': '/v3/projects/{project_id}/tags',
+                     'method': 'GET'}])
 ]
 
 
