@@ -1538,6 +1538,28 @@ class ResourceTests(object):
         user = self.identity_api.get_user(user['id'])
         self.assertNotIn('default_project_id', user)
 
+    def test_create_project_tag_with_trailing_whitespace(self):
+        project = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id)
+        project_id = project['id']
+        project_name = project['name'] = (project['name'] + '    ')
+        project_returned = self.resource_api.create_project(project_id,
+                                                            project)
+        self.assertEqual(project_id, project_returned['id'])
+        self.assertEqual(project_name.strip(), project_returned['name'])
+
+    def test_create_project_tag_long_name_fails(self):
+
+
+    def test_create_project_tag_with_invalid_project_id(self):
+
+
+    def test_get_project_tag(self):
+
+
+    def test_delete_project_tag(self):
+
+
 
 class ResourceDriverTests(object):
     """Test for the resource driver.
@@ -1615,3 +1637,39 @@ class ResourceDriverTests(object):
         }
         self.assertRaises(exception.Conflict, self.driver.create_project,
                           project_id, project)
+
+    def test_create_project_tag(self):
+        project_tag_id = uuid.uuid4().hex
+        project_tag = {
+            'name': uuid.uuid4().hex,
+            'id': project_tag_id,
+            'project_id': uuid.uuid4().hex,
+        }
+        self.driver.create_project_tag(project_tag_id, project_tag)
+
+    def test_create_project_tag_null_project_id(self):
+        project_tag_id = uuid.uuid4().hex
+        project_tag = {
+            'name': uuid.uuid4().hex,
+            'id': project_tag_id,
+            'project_id': None,
+        }
+        self.assertRaises(exception.UnexpectedError, self.driver.create_project_tag,
+                          project_tag_id, project_tag)
+
+    def test_create_project_tags_same_id_conflict(self):
+        project_tag_id = uuid.uuid4().hex
+        project_tag = {
+            'name': uuid.uuid4().hex,
+            'id': project_tag_id,
+            'project_id': uuid.uuid4().hex,
+        }
+        self.driver.create_project_tag(project_tag_id, project_tag)
+
+        project_tag = {
+            'name': uuid.uuid4().hex,
+            'id': project_tag_id,
+            'project_id': uuid.uuid4().hex,
+        }
+        self.assertRaises(exception.Conflict, self.driver.create_project_tag,
+                          project_tag_id, project_tag)

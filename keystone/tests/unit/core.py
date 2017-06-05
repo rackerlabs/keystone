@@ -207,6 +207,7 @@ def skip_if_no_multiple_domains_support(f):
 class UnexpectedExit(Exception):
     pass
 
+# TODO(aselius): Wrtie a new project tag reference
 
 def new_region_ref(parent_region_id=None, **kwargs):
     ref = {

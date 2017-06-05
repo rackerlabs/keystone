@@ -113,6 +113,31 @@ class Routers(wsgi.RoutersBase):
                     'config_option')
             })
 
+        self._add_resource(
+            mapper, config_controller,
+            path='/projects/{project_id}/tags',
+            get_action='list_project_tags',
+            put_action='modify_list_project_tags',
+            delete_action='delete_all_project_tags',
+            rel=json_home.build_v3_resource_relation(
+                ''),
+            path_vars={
+                'project_id': json_home.Parameters.PROJECT_ID
+            })
+
+        self._add_resource(
+            mapper, config_controller,
+            path='/projects/{project_id}/tags/{value}',
+            get_action='check_project_has_tag',
+            put_action='create_project_tag',
+            delete_action='delete_project_tag',
+            rel=json_home.build_v3_resource_relation(
+                ''),
+            path_vars={
+                'project_id': json_home.Parameters.PROJECT_ID,
+                'value': json_home.Parameters.TAG_VALUE
+            })
+
         routers.append(
             router.Router(controllers.ProjectV3(),
                           'projects', 'project',
