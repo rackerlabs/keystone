@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df140735_8d07d518",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-05T20:37:40Z",
+      "side": 1,
+      "message": "i agree with Colleen\u0027s statement here. I think the change is fine but it was hard to figure out exactly what the issue was from the bug report for the commit message.\n\nThe commit message here could be something like:\n\n  Improve exception logging for DirectMappingError\n\n  Previously, when `keystone.conf [DEFAULT] insecure_debug` was set to False,\n  an error would returns details and specifics about how the mapping failed. When\n  enabling `keystone.conf [DEFAULT] insecure_debug`, the error was replaced with\n  a much more opaque message, which is counter-intuitive to the purpose of\n  `insecure_debug`. This change updates the debug attribute of the\n  DirectMappingError exception so that it provides useful information when\n  `insecure_debug` is enable.",
+      "revId": "78eb44266cfc3e5053b71c27df7b7030641dbf53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
