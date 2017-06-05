@@ -14,6 +14,7 @@ from oslo_config import cfg
 
 from keystone.conf import utils
 
+# NOTE(aselius): Where driver is set. Probably no need to touch conf
 
 driver = cfg.StrOpt(
     'driver',

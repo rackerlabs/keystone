@@ -38,6 +38,7 @@ def get_project_from_domain(domain_ref):
 # details.
 NULL_DOMAIN_ID = '<<keystone.domain.root>>'
 
+# TODO(aselius): Add the base driver methods here
 
 @six.add_metaclass(abc.ABCMeta)
 class ResourceDriverBase(object):

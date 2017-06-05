@@ -31,6 +31,7 @@ from keystone.resource import schema
 
 CONF = keystone.conf.CONF
 
+# TODO(aselius): Add crud for tags
 
 @dependency.requires('resource_api')
 class Tenant(controller.V2Controller):
@@ -239,6 +240,7 @@ class DomainConfigV3(controller.V3Controller):
         ref = self.domain_config_api.get_config_default(group, option)
         return {self.member_name: ref}
 
+# TODO(aselius): Use the resource_api in core.py as wrapper for the function and call it.
 
 @dependency.requires('resource_api')
 class ProjectV3(controller.V3Controller):
@@ -347,3 +349,12 @@ class ProjectV3(controller.V3Controller):
         return self.resource_api.delete_project(
             project_id,
             initiator=request.audit_initiator)
+
+    @controller.protected()
+    def create_project_tag(self, request, project_tag):
+        validation.lazy_validate(schema.project_tag_create, project_tag)
+        ref = self._assign_unique_id(self._normalize_dict(project_tag))
+        ref = self.resource_api.create_project_tag(
+            ref['id'], ref, initiator=request.audit_initiator
+        )
+        return ProjectV3.wrap_member(request.context_dict, ref)
