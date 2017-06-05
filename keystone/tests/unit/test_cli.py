@@ -1359,6 +1359,18 @@ class TestMappingPurge(unit.SQLDriverOverrides, unit.BaseTestCase):
         res = self.parser.parse_args(args)
         self.assertTrue(vars(res)['all'])
 
+    def test_mapping_purge_requires_at_least_one_argument(self):
+        args = ([])
+        self.assertRaises(unit.UnexpectedExit, self.parser.parse_args, args)
+
+    def test_mapping_purge_fails_with_more_than_one_argument(self):
+        args = (['--all', '--local-id', 'user'])
+        self.assertRaises(unit.UnexpectedExit, self.parser.parse_args, args)
+
+    def test_mapping_purge_with_all_argument_succeeds(self):
+        args = (['--all'])
+        self.parser.parse_args(args)
+
     def test_mapping_purge_with_domain_name_argument_succeeds(self):
         args = (['--domain-name', uuid.uuid4().hex])
         self.parser.parse_args(args)
