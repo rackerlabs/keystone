@@ -16,6 +16,24 @@
       "revId": "4eff64b5fe5620c9bfcc7b93405fe17448b993d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_4d341ede",
+        "filename": "doc/source/performance.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-05T19:59:55Z",
+      "side": 0,
+      "message": "This change could be expanded to investigate if some of these methods are still needed [0].\n\n[0] https://github.com/openstack/keystonemiddleware/blob/1e06a64d4e68630bd285eec14db23fd6ef0e8742/keystonemiddleware/auth_token/__init__.py#L691-L708",
+      "parentUuid": "df140735_5fd3ccd5",
+      "revId": "4eff64b5fe5620c9bfcc7b93405fe17448b993d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
