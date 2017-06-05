@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df140735_b089d275",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-05T21:35:09Z",
+      "side": 0,
+      "message": "I think you might need to keep setup.py, not sure if sphinx will complain or not",
+      "range": {
+        "startLine": 76,
+        "startChar": 48,
+        "endLine": 76,
+        "endChar": 56
+      },
+      "revId": "115ae543807ea807c3ca8263b0b70cba44a37405",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
