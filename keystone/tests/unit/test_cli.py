@@ -1322,21 +1322,36 @@ class TokenFernetDoctorTests(unit.TestCase):
 
 class TestMappingPurge(unit.SQLDriverOverrides, unit.TestCase):
 
-    def test_add_argument_parse(self):
+    def setUp(self):
         parser_test = argparse.ArgumentParser()
         subparsers = parser_test.add_subparsers()
         self.parser = cli.MappingPurge.add_argument_parser(subparsers)
+        super(TestMappingPurge, self).setUp()
+
+    def test_mapping_purge_requires_at_least_one_argument(self):
         args = ([])
         self.assertRaises(unit.UnexpectedExit, self.parser.parse_args, args)
+
+    def test_mapping_purge_fails_with_more_than_one_argument(self):
         args = (['--all', '--local-id', 'user'])
         self.assertRaises(unit.UnexpectedExit, self.parser.parse_args, args)
+
+    def test_mapping_purge_with_all_argument_succeeds(self):
         args = (['--all'])
         self.parser.parse_args(args)
+
+    def test_mapping_purge_with_domain_name_argument_succeeds(self):
         args = (['--domain-name', uuid.uuid4().hex])
         self.parser.parse_args(args)
+
+    def test_mapping_purge_with_public_id_argument_succeeds(self):
         args = (['--public-id', uuid.uuid4().hex])
         self.parser.parse_args(args)
+
+    def test_mapping_purge_with_local_id_argument_succeeds(self):
         args = (['--local-id', uuid.uuid4().hex])
         self.parser.parse_args(args)
+
+    def test_mapping_purge_with_type_argument_succeeds(self):
         args = (['--type', 'user'])
         self.parser.parse_args(args)
