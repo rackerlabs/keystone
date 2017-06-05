@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df140735_b0043216",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1330,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-05T21:28:55Z",
+      "side": 1,
+      "message": "We can isolate each of these cases into their own tests if we want to ease readability here. But, that\u0027s something we can do in a follow on patch.",
+      "revId": "c6bcfad4ebd91baf7268e8a695c360de2f2dd8eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
