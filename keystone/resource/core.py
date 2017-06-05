@@ -216,6 +216,17 @@ class Manager(manager.Manager):
                                          ret['domain_id'])
         return ret
 
+    # TODO(aselius): Define create project tag here on the resource api
+    def create_project_tag(self, project_tag_id, project_tag, initiator=None):
+        project_tag = project_tag.copy()
+
+        project_tag.setdefault('enabled', True)
+        project_tag['name'] = project_tag['name'].strip()
+
+        project_tag.setdefault('project_id', None)
+
+        return project_tag
+
     def assert_domain_enabled(self, domain_id, domain=None):
         """Assert the Domain is enabled.
 

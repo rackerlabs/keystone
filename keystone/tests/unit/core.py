@@ -21,6 +21,7 @@ import hashlib
 import json
 import ldap
 import os
+import re
 import shutil
 import socket
 import sys
@@ -292,6 +293,19 @@ def new_project_ref(domain_id=None, is_domain=False, **kwargs):
     # since specifying it is optional depending on where the project sits in
     # the hierarchy (and a parent_id of None has meaning - i.e. it's a top
     # level project).
+    ref.update(kwargs)
+    return ref
+
+# TODO(aselius): Write a new project tag reference
+
+
+def new_project_tag_ref(project_id=None, **kwargs):
+    ref = {
+        'id': uuid.uuid4().hex,
+        'name': uuid.uuid64().hex,
+        'project_id': project_id,
+        'endabled': True
+    }
     ref.update(kwargs)
     return ref
 
@@ -795,6 +809,32 @@ class TestCase(BaseTestCase):
 
     def assertNotEmpty(self, l):
         self.assertGreater(len(l), 0)
+
+    def assertRaisesRegexp(self, expected_exception, expected_regexp,
+                           callable_obj, *args, **kwargs):
+        """Assert that the message in a raised exception matches a regexp."""
+        try:
+            callable_obj(*args, **kwargs)
+        except expected_exception as exc_value:
+            if isinstance(expected_regexp, six.string_types):
+                expected_regexp = re.compile(expected_regexp)
+
+            if isinstance(exc_value.args[0], six.text_type):
+                if not expected_regexp.search(six.text_type(exc_value)):
+                    raise self.failureException(
+                        '"%s" does not match "%s"' %
+                        (expected_regexp.pattern, six.text_type(exc_value)))
+            else:
+                if not expected_regexp.search(str(exc_value)):
+                    raise self.failureException(
+                        '"%s" does not match "%s"' %
+                        (expected_regexp.pattern, str(exc_value)))
+        else:
+            if hasattr(expected_exception, '__name__'):
+                excName = expected_exception.__name__
+            else:
+                excName = str(expected_exception)
+            raise self.failureException("%s not raised" % excName)
 
     def assertUserDictEqual(self, expected, observed, message=''):
         """Assert that a user dict is equal to another user dict.
