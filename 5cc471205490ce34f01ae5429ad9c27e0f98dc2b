@@ -22,6 +22,24 @@
       "revId": "5cc471205490ce34f01ae5429ad9c27e0f98dc2b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_e252b7de",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-06T21:09:37Z",
+      "side": 1,
+      "message": "It was - but we can\u0027t remove the API because it would be a backwards incompatible change :(",
+      "parentUuid": "df140735_93c5940d",
+      "revId": "5cc471205490ce34f01ae5429ad9c27e0f98dc2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
