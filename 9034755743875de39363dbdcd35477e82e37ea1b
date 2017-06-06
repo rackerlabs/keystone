@@ -16,6 +16,42 @@
       "revId": "9034755743875de39363dbdcd35477e82e37ea1b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_a8c4a360",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-06T19:34:23Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "7ffa3b31_690f0737",
+      "revId": "9034755743875de39363dbdcd35477e82e37ea1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_88779f09",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-06T19:34:23Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "7ffa3b31_690f0737",
+      "revId": "9034755743875de39363dbdcd35477e82e37ea1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

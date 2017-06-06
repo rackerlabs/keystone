@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "df140735_e8ca9b6c",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-06T19:34:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ffa3b31_0902c30b",
+      "revId": "a3b4b70244a5120581ec275514fb2a41ce4df43b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ffa3b31_740b5e23",
         "filename": "keystone/common/policies/token_revocation.py",
         "patchSetId": 5
@@ -65,6 +83,24 @@
       "writtenOn": "2017-04-25T12:05:42Z",
       "side": 1,
       "message": "++",
+      "parentUuid": "7ffa3b31_740b5e23",
+      "revId": "a3b4b70244a5120581ec275514fb2a41ce4df43b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_08ceef82",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-06T19:34:23Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "7ffa3b31_740b5e23",
       "revId": "a3b4b70244a5120581ec275514fb2a41ce4df43b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -147,6 +183,24 @@
     },
     {
       "key": {
+        "uuid": "df140735_889f9f64",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-06T19:34:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ffa3b31_74b8fee3",
+      "revId": "a3b4b70244a5120581ec275514fb2a41ce4df43b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ffa3b31_49756bca",
         "filename": "keystone/common/policies/token_revocation.py",
         "patchSetId": 5
@@ -158,6 +212,24 @@
       "writtenOn": "2017-04-20T20:53:49Z",
       "side": 1,
       "message": "Why is this the only one with v2.0 in the path? There are other v2.0 routes in keystone/token/routers.py that aren\u0027t documented here, like GET /v2.0/tokens/{token_id}",
+      "revId": "a3b4b70244a5120581ec275514fb2a41ce4df43b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_687c4beb",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-06T19:34:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ffa3b31_49756bca",
       "revId": "a3b4b70244a5120581ec275514fb2a41ce4df43b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
