@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df140735_93c5940d",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-06T20:08:31Z",
+      "side": 1,
+      "message": "Any reason we are keeping this? I thought PKI tokens were removed in Ocata.",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 39
+      },
+      "revId": "5cc471205490ce34f01ae5429ad9c27e0f98dc2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
