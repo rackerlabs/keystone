@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "df140735_bc7e49e1",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 879,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-06T01:44:18Z",
+      "side": 1,
+      "message": "There could be a combination of --domain-name --public-id --local-id and --type, and now that\u0027s not possible anymore since they are all mutually exclusive",
+      "revId": "c6bcfad4ebd91baf7268e8a695c360de2f2dd8eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df140735_b0043216",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 10
