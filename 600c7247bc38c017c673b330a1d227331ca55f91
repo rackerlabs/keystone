@@ -16,6 +16,24 @@
       "revId": "600c7247bc38c017c673b330a1d227331ca55f91",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_f53de6ba",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2531,
+      "author": {
+        "id": 23081
+      },
+      "writtenOn": "2017-06-06T12:44:52Z",
+      "side": 1,
+      "message": "Hi, Samuel, thanks for your reviewing.\n\nSorry for not fully understanding what you mean.\n\nI think just copy \n     \"self.assertThat(response[\u0027links\u0027][\u0027self\u0027],\n                        matchers.EndsWith(\u0027/v3%s\u0027 % url))\"\ninto _assert_two_rules_defined and _assert_one_rule_defined, it maybe not enough to test the api response of getting role inference rule. Though some assertions are repeated with other api reponse (like get implied role), they\u0027re different apis. So I think it\u0027s better to keep this new created test.\n\nLooking forward your suggestion, :)",
+      "parentUuid": "df140735_7b042d15",
+      "revId": "600c7247bc38c017c673b330a1d227331ca55f91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
