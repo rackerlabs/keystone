@@ -40,6 +40,24 @@
       "revId": "5cc471205490ce34f01ae5429ad9c27e0f98dc2b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_42872311",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-06-06T21:16:52Z",
+      "side": 1,
+      "message": "If the functionality was removed isn\u0027t that already a backwards incompatible change? Pretending the API still works doesn\u0027t help anyone.",
+      "parentUuid": "df140735_e252b7de",
+      "revId": "5cc471205490ce34f01ae5429ad9c27e0f98dc2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
