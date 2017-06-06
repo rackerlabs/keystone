@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df140735_7b042d15",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2531,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-06T09:30:44Z",
+      "side": 1,
+      "message": "this is fine, but this part of the tests is just checking on implied roles, there is a code below (starting on line 2541) that make assertions on the rules\n\nYou could simply copy \n\n    self.assertThat(response[\u0027links\u0027][\u0027self\u0027],\n                        matchers.EndsWith(\u0027/v3%s\u0027 % url))\n\ninto _assert_two_rules_defined and _assert_one_rule_defined and that should be all (those methods are already called somewhere else, so that will get tested without needing any further change as you needed in L2536-2539).",
+      "revId": "600c7247bc38c017c673b330a1d227331ca55f91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
