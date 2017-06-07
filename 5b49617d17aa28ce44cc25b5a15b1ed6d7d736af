@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf091321_61f46c5c",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-07T21:12:17Z",
+      "side": 1,
+      "message": "although maybe we could use just one method and have both head and get",
+      "revId": "5b49617d17aa28ce44cc25b5a15b1ed6d7d736af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
