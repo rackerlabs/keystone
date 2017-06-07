@@ -834,7 +834,7 @@ explicit_unscoped_string:
     returns an unscoped response without any authorization. This
     request behaves the same as a token request with no scope where
     the user has no default project defined. If an explicit,
-    ``unscoped`` token request is not made and the role has a default
+    ``unscoped`` token request is not made and the user has a default
     project, then the response will return a project-scoped token.
     If a default project is not defined, a token is issued without an
     explicit scope of authorization, which is the same as asking for
