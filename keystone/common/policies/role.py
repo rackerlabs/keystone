@@ -75,13 +75,13 @@ role_policies = [
         name=base.IDENTITY % 'update_domain_role',
         check_str=base.RULE_ADMIN_REQUIRED,
         description='Update domain role.',
-        operations=[{'path': '/v3/roles',
+        operations=[{'path': '/v3/roles/{role_id}',
                      'method': 'PATCH'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_domain_role',
         check_str=base.RULE_ADMIN_REQUIRED,
         description='Delete domain role.',
-        operations=[{'path': '/v3/roles',
+        operations=[{'path': '/v3/roles/{role_id}',
                      'method': 'DELETE'}])
 ]
 
