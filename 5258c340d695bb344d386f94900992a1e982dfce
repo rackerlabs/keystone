@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df140735_a1ea5da9",
+        "filename": "keystone/common/policies/trust.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-07T20:34:36Z",
+      "side": 0,
+      "message": "Something about how this is rendering is causing tests to fail.",
+      "revId": "5258c340d695bb344d386f94900992a1e982dfce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
