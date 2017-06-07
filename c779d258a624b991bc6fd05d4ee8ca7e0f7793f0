@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "bf091321_fe87f9b5",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-07T20:50:26Z",
+      "side": 1,
+      "message": "If there is a bug report detailing this inconsistency, we should reference it here.",
+      "parentUuid": "bf091321_fecff954",
+      "revId": "c779d258a624b991bc6fd05d4ee8ca7e0f7793f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df140735_e32e15f9",
         "filename": "keystone/common/policies/grant.py",
         "patchSetId": 7
@@ -48,6 +66,74 @@
       "writtenOn": "2017-06-07T18:38:44Z",
       "side": 1,
       "message": "Should we add the possibility of listing grants for the inherited project role assignments too? I guess the list_role_assignments API is much more used for this purpose (and for domains and list role assignments in general).",
+      "revId": "c779d258a624b991bc6fd05d4ee8ca7e0f7793f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf091321_61510c0f",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-07T20:50:26Z",
+      "side": 1,
+      "message": "nit: where grants on the target are inherited to all projects in the subtree, if applicable.",
+      "revId": "c779d258a624b991bc6fd05d4ee8ca7e0f7793f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf091321_5e1ee570",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-07T20:50:26Z",
+      "side": 1,
+      "message": "Is this only true for domains?",
+      "revId": "c779d258a624b991bc6fd05d4ee8ca7e0f7793f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf091321_4121689f",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-07T20:50:26Z",
+      "side": 1,
+      "message": "nit: where grants on the target are inherited to all projects in the subtree, if applicable.",
+      "revId": "c779d258a624b991bc6fd05d4ee8ca7e0f7793f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf091321_e1651ce3",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-07T20:50:26Z",
+      "side": 1,
+      "message": "nit: where grants on the target are inherited to all project in the subtree, if applicable.",
       "revId": "c779d258a624b991bc6fd05d4ee8ca7e0f7793f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
