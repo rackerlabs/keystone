@@ -34,6 +34,9 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, auth_controller,
             path='/auth/tokens/OS-PKI/revoked',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='revocation_list',
             rel=json_home.build_v3_extension_resource_relation(
                 'OS-PKI', '1.0', 'revocations'))
@@ -41,17 +44,26 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, auth_controller,
             path='/auth/catalog',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='get_auth_catalog',
             rel=json_home.build_v3_resource_relation('auth_catalog'))
 
         self._add_resource(
             mapper, auth_controller,
             path='/auth/projects',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='get_auth_projects',
             rel=json_home.build_v3_resource_relation('auth_projects'))
 
         self._add_resource(
             mapper, auth_controller,
             path='/auth/domains',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='get_auth_domains',
             rel=json_home.build_v3_resource_relation('auth_domains'))

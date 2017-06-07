@@ -60,11 +60,17 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, controller,
             path=self._construct_url('ca'),
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='get_ca_certificate',
             rel=build_resource_relation(resource_name='ca_certificate'))
         self._add_resource(
             mapper, controller,
             path=self._construct_url('certificates'),
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='list_certificates',
             rel=build_resource_relation(resource_name='certificates'))
 

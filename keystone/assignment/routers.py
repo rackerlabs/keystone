@@ -75,6 +75,9 @@ class Routers(wsgi.RoutersBase):
             mapper, implied_roles_controller,
             path='/roles/{prior_role_id}/implies',
             rel=json_home.build_v3_resource_relation('implied_roles'),
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='list_implied_roles',
             status=json_home.Status.EXPERIMENTAL,
             path_vars={
@@ -88,6 +91,8 @@ class Routers(wsgi.RoutersBase):
             put_action='create_implied_role',
             delete_action='delete_implied_role',
             head_action='check_implied_role',
+            # NOTE(lbragstad): get_head_action is not used here because
+            # head_action is explicitly used in this API.
             get_action='get_implied_role',
             rel=json_home.build_v3_resource_relation('implied_role'),
             status=json_home.Status.EXPERIMENTAL,
@@ -99,6 +104,9 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, implied_roles_controller,
             path='/role_inferences',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='list_role_inference_rules',
             rel=json_home.build_v3_resource_relation('role_inferences'),
             status=json_home.Status.EXPERIMENTAL,
@@ -229,6 +237,9 @@ class Routers(wsgi.RoutersBase):
             mapper, grant_controller,
             path='/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/'
             'inherited_to_projects',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='list_grants',
             rel=build_os_inherit_relation(
                 resource_name='domain_group_roles_inherited_to_projects'),
@@ -240,6 +251,9 @@ class Routers(wsgi.RoutersBase):
             mapper, grant_controller,
             path='/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/'
             'inherited_to_projects',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='list_grants',
             rel=build_os_inherit_relation(
                 resource_name='domain_user_roles_inherited_to_projects'),

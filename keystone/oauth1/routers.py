@@ -73,12 +73,18 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, consumer_controller,
             path='/OS-OAUTH1/consumers',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='list_consumers',
             post_action='create_consumer',
             rel=build_resource_relation(resource_name='consumers'))
         self._add_resource(
             mapper, consumer_controller,
             path='/OS-OAUTH1/consumers/{consumer_id}',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='get_consumer',
             patch_action='update_consumer',
             delete_action='delete_consumer',
@@ -92,6 +98,9 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, access_token_controller,
             path='/users/{user_id}/OS-OAUTH1/access_tokens',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='list_access_tokens',
             rel=build_resource_relation(resource_name='user_access_tokens'),
             path_vars={
@@ -100,6 +109,9 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, access_token_controller,
             path='/users/{user_id}/OS-OAUTH1/access_tokens/{access_token_id}',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='get_access_token',
             delete_action='delete_access_token',
             rel=build_resource_relation(resource_name='user_access_token'),
@@ -111,6 +123,9 @@ class Routers(wsgi.RoutersBase):
             mapper, access_token_roles_controller,
             path='/users/{user_id}/OS-OAUTH1/access_tokens/{access_token_id}/'
             'roles',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='list_access_token_roles',
             rel=build_resource_relation(
                 resource_name='user_access_token_roles'),
@@ -122,6 +137,9 @@ class Routers(wsgi.RoutersBase):
             mapper, access_token_roles_controller,
             path='/users/{user_id}/OS-OAUTH1/access_tokens/{access_token_id}/'
             'roles/{role_id}',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='get_access_token_role',
             rel=build_resource_relation(
                 resource_name='user_access_token_role'),
