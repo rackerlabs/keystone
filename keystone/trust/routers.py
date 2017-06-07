@@ -36,12 +36,18 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, trust_controller,
             path='/OS-TRUST/trusts',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='list_trusts',
             post_action='create_trust',
             rel=_build_resource_relation(resource_name='trusts'))
         self._add_resource(
             mapper, trust_controller,
             path='/OS-TRUST/trusts/{trust_id}',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='get_trust',
             delete_action='delete_trust',
             rel=_build_resource_relation(resource_name='trust'),
@@ -51,6 +57,9 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, trust_controller,
             path='/OS-TRUST/trusts/{trust_id}/roles',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='list_roles_for_trust',
             rel=_build_resource_relation(resource_name='trust_roles'),
             path_vars={

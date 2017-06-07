@@ -88,12 +88,18 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, config_controller,
             path='/domains/config/default',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='get_domain_config_default',
             rel=json_home.build_v3_resource_relation('domain_config_default'))
 
         self._add_resource(
             mapper, config_controller,
             path='/domains/config/{group}/default',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='get_domain_config_default',
             rel=json_home.build_v3_resource_relation(
                 'domain_config_default_group'),
@@ -104,6 +110,9 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, config_controller,
             path='/domains/config/{group}/{option}/default',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='get_domain_config_default',
             rel=json_home.build_v3_resource_relation(
                 'domain_config_default_option'),

@@ -99,6 +99,9 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, endpoint_filter_controller,
             path=self.PATH_PREFIX + '/endpoints/{endpoint_id}/projects',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='list_projects_for_endpoint',
             rel=build_resource_relation(resource_name='endpoint_projects'),
             path_vars={
@@ -118,6 +121,9 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, endpoint_filter_controller,
             path=self.PATH_PREFIX + '/projects/{project_id}/endpoints',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='list_endpoints_for_project',
             rel=build_resource_relation(resource_name='project_endpoints'),
             path_vars={
@@ -126,6 +132,9 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, endpoint_group_controller,
             path=self.PATH_PREFIX + '/projects/{project_id}/endpoint_groups',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='list_endpoint_groups_for_project',
             rel=build_resource_relation(
                 resource_name='project_endpoint_groups'),
@@ -135,6 +144,9 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, endpoint_group_controller,
             path=self.PATH_PREFIX + '/endpoint_groups',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='list_endpoint_groups',
             post_action='create_endpoint_group',
             rel=build_resource_relation(resource_name='endpoint_groups'))
@@ -164,6 +176,9 @@ class Routers(wsgi.RoutersBase):
             mapper, endpoint_group_controller,
             path=self.PATH_PREFIX + self.PATH_ENDPOINT_GROUPS + (
                 '/projects'),
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='list_projects_associated_with_endpoint_group',
             rel=build_resource_relation(
                 resource_name='projects_associated_with_endpoint_group'),
@@ -174,6 +189,9 @@ class Routers(wsgi.RoutersBase):
             mapper, endpoint_group_controller,
             path=self.PATH_PREFIX + self.PATH_ENDPOINT_GROUPS + (
                 '/endpoints'),
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='list_endpoints_associated_with_endpoint_group',
             rel=build_resource_relation(
                 resource_name='endpoints_in_endpoint_group'),

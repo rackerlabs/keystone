@@ -110,6 +110,9 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, idp_controller,
             path=self._construct_url('identity_providers/{idp_id}'),
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='get_identity_provider',
             put_action='create_identity_provider',
             patch_action='update_identity_provider',
@@ -121,6 +124,9 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, idp_controller,
             path=self._construct_url('identity_providers'),
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='list_identity_providers',
             rel=build_resource_relation(resource_name='identity_providers'))
 
@@ -130,6 +136,9 @@ class Routers(wsgi.RoutersBase):
             mapper, protocol_controller,
             path=self._construct_url('identity_providers/{idp_id}/protocols/'
                                      '{protocol_id}'),
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='get_protocol',
             put_action='create_protocol',
             patch_action='update_protocol',
@@ -143,6 +152,9 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, protocol_controller,
             path=self._construct_url('identity_providers/{idp_id}/protocols'),
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='list_protocols',
             rel=build_resource_relation(
                 resource_name='identity_provider_protocols'),
@@ -155,6 +167,9 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, mapping_controller,
             path=self._construct_url('mappings/{mapping_id}'),
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='get_mapping',
             put_action='create_mapping',
             patch_action='update_mapping',
@@ -167,6 +182,9 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, mapping_controller,
             path=self._construct_url('mappings'),
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='list_mappings',
             rel=build_resource_relation(resource_name='mappings'))
 
@@ -175,6 +193,9 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, sp_controller,
             path=self._construct_url('service_providers/{sp_id}'),
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='get_service_provider',
             put_action='create_service_provider',
             patch_action='update_service_provider',
@@ -187,6 +208,9 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, sp_controller,
             path=self._construct_url('service_providers'),
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='list_service_providers',
             rel=build_resource_relation(resource_name='service_providers'))
 
@@ -194,12 +218,18 @@ class Routers(wsgi.RoutersBase):
             mapper, domain_controller,
             path=self._construct_url('domains'),
             new_path='/auth/domains',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='list_domains_for_user',
             rel=build_resource_relation(resource_name='domains'))
         self._add_resource(
             mapper, project_controller,
             path=self._construct_url('projects'),
             new_path='/auth/projects',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='list_projects_for_user',
             rel=build_resource_relation(resource_name='projects'))
 
@@ -248,5 +278,8 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, saml_metadata_controller,
             path=self._construct_url('saml2/metadata'),
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='get_metadata',
             rel=build_resource_relation(resource_name='metadata'))

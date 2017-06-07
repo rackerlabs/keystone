@@ -72,6 +72,9 @@ class Ec2ExtensionV3(wsgi.V3ExtensionRouter):
         self._add_resource(
             mapper, ec2_controller,
             path='/users/{user_id}/credentials/OS-EC2',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='ec2_list_credentials',
             post_action='ec2_create_credential',
             rel=build_resource_relation(resource_name='user_credentials'),
@@ -81,6 +84,9 @@ class Ec2ExtensionV3(wsgi.V3ExtensionRouter):
         self._add_resource(
             mapper, ec2_controller,
             path='/users/{user_id}/credentials/OS-EC2/{credential_id}',
+            # FIXME(lbragstad): HEAD requests should be supported for all
+            # existing GET APIs that don't implement HEAD already. This should
+            # be changed to get_head_action.
             get_action='ec2_get_credential',
             delete_action='ec2_delete_credential',
             rel=build_resource_relation(resource_name='user_credential'),
