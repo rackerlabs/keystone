@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df140735_e32e15f9",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-07T18:38:44Z",
+      "side": 1,
+      "message": "Should we add the possibility of listing grants for the inherited project role assignments too? I guess the list_role_assignments API is much more used for this purpose (and for domains and list role assignments in general).",
+      "revId": "c779d258a624b991bc6fd05d4ee8ca7e0f7793f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
