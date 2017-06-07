@@ -72,6 +72,75 @@
     },
     {
       "key": {
+        "uuid": "df140735_75ee7622",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 18176
+      },
+      "writtenOn": "2017-06-07T05:45:03Z",
+      "side": 1,
+      "message": "The former was correct, can you please put it back to External Authentication?",
+      "range": {
+        "startLine": 533,
+        "startChar": 29,
+        "endLine": 533,
+        "endChar": 51
+      },
+      "revId": "875b80f4b0549efa27677c934884e536c8a64866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_95a34ab2",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 582,
+      "author": {
+        "id": 18176
+      },
+      "writtenOn": "2017-06-07T05:45:03Z",
+      "side": 1,
+      "message": "Same here, External Authentication",
+      "range": {
+        "startLine": 582,
+        "startChar": 49,
+        "endLine": 582,
+        "endChar": 71
+      },
+      "revId": "875b80f4b0549efa27677c934884e536c8a64866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_edc05f2d",
+        "filename": "doc/source/getting-started/installing.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 18176
+      },
+      "writtenOn": "2017-06-07T05:45:03Z",
+      "side": 1,
+      "message": "Same here!\n\n\u003cWhether we choose to remove the copyright header or retain it, the decision should be consistent throughout.\n\nRegarding what to be done, I think we can have a discussion of this on the IRC first, cause there seem to be different opinions regarding this in the comment section.\u003e",
+      "range": {
+        "startLine": 2,
+        "startChar": 6,
+        "endLine": 16,
+        "endChar": 24
+      },
+      "revId": "875b80f4b0549efa27677c934884e536c8a64866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df140735_e3227001",
         "filename": "doc/source/index.rst",
         "patchSetId": 7
@@ -244,6 +313,24 @@
       "side": 1,
       "message": "I hear what Samuel is saying. I think we might be able to alleviate some of his concern with a little refactoring, though. E.g. \"Related Identity Projects\" shouldn\u0027t be a separate page, it should stay on this one (it\u0027s just links to other projects). \"Sample Files\" should move under \"Configuring Keystone\" (either here or in a follow-up). And we could add some text to \"Developer Documentation\" so that it\u0027s *not* just a TOC page.",
       "parentUuid": "df140735_911779a4",
+      "revId": "875b80f4b0549efa27677c934884e536c8a64866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_90557cfd",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 18176
+      },
+      "writtenOn": "2017-06-07T05:45:03Z",
+      "side": 1,
+      "message": "Yeah, I agree with Matthew, Samuel\u0027s idea makes sense.",
+      "parentUuid": "df140735_67b8a375",
       "revId": "875b80f4b0549efa27677c934884e536c8a64866",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

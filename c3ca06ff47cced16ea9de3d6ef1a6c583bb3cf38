@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "df140735_cdb6bbdd",
+        "filename": "doc/source/getting-started/apache-httpd.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 18176
+      },
+      "writtenOn": "2017-06-07T05:45:03Z",
+      "side": 0,
+      "message": "Whether we choose to remove the copyright header or retain it, the decision should be consistent throughout.\n\nRegarding what to be done, I think we can have a discussion of this on the IRC first, cause there seem to be different opinions regarding this in the comment section.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 24
+      },
+      "revId": "c3ca06ff47cced16ea9de3d6ef1a6c583bb3cf38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df140735_6308a0d8",
         "filename": "doc/source/index.rst",
         "patchSetId": 7
