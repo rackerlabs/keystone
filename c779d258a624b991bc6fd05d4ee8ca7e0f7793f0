@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bf091321_de5b1552",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-07T20:46:03Z",
+      "side": 1,
+      "message": "The latter, we should add because it currently isn\u0027t present.",
+      "parentUuid": "bf091321_fecff954",
+      "revId": "c779d258a624b991bc6fd05d4ee8ca7e0f7793f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df140735_e32e15f9",
         "filename": "keystone/common/policies/grant.py",
         "patchSetId": 7
