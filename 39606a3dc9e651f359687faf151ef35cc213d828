@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df140735_21ec0df2",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-07T15:57:21Z",
+      "side": 1,
+      "message": "This is how the documentation renders [0].\n\nAfter looking at it, we should probably improve the description here. It looks a bit lop-sided when you see all the URLs and a super short description. Maybe something like:\n\n  description\u003d\u0027Check a grant between a target and an actor. A target \u0027\n  \u0027can be either a domain or a project. An actor can be either a user \u0027\n  \u0027or a group. These terms also apply to the OS-INHERIT API which \u0027\n  \u0027allows assignments on the target to be inherited to targets below it \u0027\n  \u0027if applicable.\u0027\n\nFeel free to elaborate on that as needed, just figured we could provide a bit more information.\n\n[0] http://paste.openstack.org/show/611734/",
+      "revId": "39606a3dc9e651f359687faf151ef35cc213d828",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_21c52d5c",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-07T15:57:21Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "39606a3dc9e651f359687faf151ef35cc213d828",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_c1a9d190",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-07T15:57:21Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "39606a3dc9e651f359687faf151ef35cc213d828",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_a1aedd95",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-07T15:57:21Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "39606a3dc9e651f359687faf151ef35cc213d828",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
