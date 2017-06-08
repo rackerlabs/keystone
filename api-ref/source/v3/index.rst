@@ -164,6 +164,7 @@ This page lists the Identity API operations in the following order:
 * `Groups`_
 * `Policies`_
 * `Projects`_
+* `Project Tags`_
 * `Regions`_
 * `Roles`_
 * `Service catalog and endpoints`_
@@ -182,6 +183,7 @@ This page lists the Identity API operations in the following order:
 .. include:: os-pki.inc
 .. include:: policies.inc
 .. include:: projects.inc
+.. include:: project-tags.inc
 .. include:: regions-v3.inc
 .. include:: roles.inc
 .. include:: service-catalog.inc
