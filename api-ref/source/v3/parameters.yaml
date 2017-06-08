@@ -371,6 +371,13 @@ subtree_as_list:
   required: false
   type: key-only, no value expected
   min_version: 3.4
+tag:
+  description: |
+    A simple string assigned to a project. Can be used for assigning values
+    to projects and filtering based on those values.
+  in: query
+  required: false
+  type: string
 unique_id_query:
   description: |
     Filters the response by a unique ID.
@@ -1255,6 +1262,12 @@ project_parent_id_response_body:
   required: true
   type: string
   min_version: 3.4
+project_tags_response_body:
+  description: |
+    A list of simple strings assigned to a project.
+  in: body
+  required: true
+  type: array
 projects:
   description: |
     A list of ``project`` objects, each containing:
@@ -1434,6 +1447,12 @@ signed:
   in: body
   required: true
   type: string
+tags:
+  description: |
+    A list of simple strings assinged to a project.
+  in: body
+  required: true
+  type: array
 token:
   description: |
     A ``token`` object.
