@@ -1,0 +1,20 @@
+---
+features:
+  - |
+    [`blueprint project-tags <https://blueprints.launchpad.net/keystone/+spec/project-tags>`_]
+    Projects have a new property called tags. These tags
+    are simple strings that can be used to allow projects
+    to be filtered/searched. Project tags will have the
+    following restrictions:
+
+        * Tags are case sensitive
+        * ‘/’ is not allowed to be in a tag name
+        * Commas are not allowed to be in a tag name in order to simplify
+          requests that specify lists of tags
+        * All other characters are allowed to be in a tag
+        * Each project can have up to 50 tags
+        * Each tag can be up to 60 characters
+
+    Project tags are implemented following the guidelines
+    set by the API Working Group.
+    https://specs.openstack.org/openstack/api-wg/guidelines/tags.html
