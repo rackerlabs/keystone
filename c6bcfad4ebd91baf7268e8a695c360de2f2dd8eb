@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bf091321_14f03790",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 879,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2017-06-08T10:57:37Z",
+      "side": 1,
+      "message": "I agree, we need to maintain the ability for multiple options. For instance, local_id by definition needs to have a domain identifier with it (e.g. --domain-name -local-id)",
+      "parentUuid": "df140735_bc7e49e1",
+      "revId": "c6bcfad4ebd91baf7268e8a695c360de2f2dd8eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df140735_b0043216",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 10
