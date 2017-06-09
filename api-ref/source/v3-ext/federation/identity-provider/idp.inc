@@ -80,7 +80,25 @@ Response Example
    :language: javascript
 
 
-Get Identity provider
+Check identity providers
+========================
+
+.. rest_method::  HEAD /v3/OS-FEDERATION/identity_providers
+
+Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/identity_providers``
+
+Normal response codes: 200
+
+Request
+-------
+
+.. rest_parameters:: federation/identity-provider/parameters.yaml
+
+    - id: id_query
+    - enabled: enabled_query
+
+
+Get identity provider
 =====================
 
 .. rest_method::  GET /v3/OS-FEDERATION/identity_providers/{id}
@@ -113,6 +131,23 @@ Response Example
 
 .. literalinclude:: federation/identity-provider/samples/get-response.json
    :language: javascript
+
+
+Check identity provider
+=======================
+
+.. rest_method::  HEAD /v3/OS-FEDERATION/identity_providers/{id}
+
+Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/identity_provider``
+
+Normal response codes: 200
+
+Request
+-------
+
+.. rest_parameters:: federation/identity-provider/parameters.yaml
+
+    - id: id_path
 
 
 Delete identity provider
