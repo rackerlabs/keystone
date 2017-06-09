@@ -71,6 +71,23 @@ Response Example
    :language: javascript
 
 
+Check a mapping
+===============
+
+.. rest_method::  HEAD /v3/OS-FEDERATION/mappings/{id}
+
+Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/mapping``
+
+Normal response codes: 200
+
+Request
+-------
+
+.. rest_parameters:: federation/mapping/parameters.yaml
+
+   - id: id_path
+
+
 Update a mapping
 ================
 
@@ -132,6 +149,16 @@ Response Example
 
 .. literalinclude:: federation/mapping/samples/list-response.json
    :language: javascript
+
+
+Check mappings
+==============
+
+.. rest_method::  HEAD /v3/OS-FEDERATION/mappings
+
+Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/mappings``
+
+Normal response codes: 200
 
 
 Delete a mapping
