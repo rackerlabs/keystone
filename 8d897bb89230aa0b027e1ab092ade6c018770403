@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f231b9d_f9add3ea",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-09T15:39:32Z",
+      "side": 1,
+      "message": "This should describe the change and what it is improving. This helps others review the change and understand why it is needed. Otherwise they need to piece together the reason for the patch based on their interpretation of the committers code.\n\nFor some useful commit message tips feel free to check out https://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "8d897bb89230aa0b027e1ab092ade6c018770403",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_561ed470",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-09T15:39:32Z",
+      "side": 1,
+      "message": "s/old/original/\n\nThis comment is pretty clear to see by the logic of the code. We could take the opportunity to include *why* the logic is that way it is. For example:\n\n  # To prevent users from never having to re-authenticate, the original token\n  # expiration time is maintained in the new token. Not doing this would make it\n  # possible for a user continuously bump token expiration through token rescoping\n  # without proving their identity.",
+      "revId": "8d897bb89230aa0b027e1ab092ade6c018770403",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
