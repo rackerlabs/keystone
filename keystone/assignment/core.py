@@ -155,12 +155,7 @@ class Manager(manager.Manager):
                      CONF.member_role_id)
             role = {'id': CONF.member_role_id,
                     'name': CONF.member_role_name}
-            try:
-                self.role_api.create_role(CONF.member_role_id, role)
-            except exception.Conflict:
-                LOG.info("Creating the default role %s failed because it "
-                         "was already created",
-                         CONF.member_role_id)
+            self.role_api.create_role(CONF.member_role_id, role)
 
     def add_user_to_project(self, tenant_id, user_id):
         """Add user to a tenant by creating a default role relationship.
