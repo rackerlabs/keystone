@@ -80,6 +80,24 @@ Response Example
    :language: javascript
 
 
+Check identity providers
+========================
+
+.. rest_method::  HEAD /v3/OS-FEDERATION/identity_providers
+
+Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/identity_providers``
+
+Normal response codes: 200
+
+Request
+-------
+
+.. rest_parameters:: federation/identity-provider/parameters.yaml
+
+    - id: id_query
+    - enabled: enabled_query
+
+
 Get Identity provider
 =====================
 
@@ -113,6 +131,23 @@ Response Example
 
 .. literalinclude:: federation/identity-provider/samples/get-response.json
    :language: javascript
+
+
+Check identity provider
+=======================
+
+.. rest_method::  HEAD /v3/OS-FEDERATION/identity_providers/{id}
+
+Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/identity_provider``
+
+Normal response codes: 200
+
+Request
+-------
+
+.. rest_parameters:: federation/identity-provider/parameters.yaml
+
+    - id: id_path
 
 
 Delete identity provider
@@ -255,6 +290,23 @@ Response Example
    :language: javascript
 
 
+Check all protocol and attribute mappings of an identity provider
+=================================================================
+
+.. rest_method::  HEAD /v3/OS-FEDERATION/identity_providers/{id}/protocols
+
+Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/identity_provider_protocols``
+
+Normal response codes: 200
+
+Request
+-------
+
+.. rest_parameters:: federation/identity-provider/parameters.yaml
+
+    - id: id_path
+
+
 Get a protocol and attribute mapping for an identity provider
 =============================================================
 
@@ -284,6 +336,24 @@ Response Example
 
 .. literalinclude:: federation/identity-provider/samples/get-protocol-response.json
    :language: javascript
+
+
+Check a protocol and attribute mapping for an identity provider
+=============================================================
+
+.. rest_method::  HEAD /v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}
+
+Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/identity_provider_protocol``
+
+Normal response codes: 200
+
+Request
+-------
+
+.. rest_parameters:: federation/identity-provider/parameters.yaml
+
+    - idp_id: id_path
+    - protocol_id: protocol_id
 
 
 Update the attribute mapping for an identity provider and protocol

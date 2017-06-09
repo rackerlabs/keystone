@@ -72,6 +72,16 @@ Response Example
    :language: javascript
 
 
+Check Service Providers
+=======================
+
+.. rest_method::  HEAD /v3/OS-FEDERATION/service_providers
+
+Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/service_providers``
+
+Normal response codes: 200
+
+
 Get Service Provider
 ====================
 
@@ -106,6 +116,23 @@ Response Example
 
 .. literalinclude:: federation/service-provider/samples/get-response.json
    :language: javascript
+
+
+Check Service Provider
+====================
+
+.. rest_method::  HEAD /v3/OS-FEDERATION/service_providers/{id}
+
+Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/service_provider``
+
+Normal response codes: 200
+
+Request
+-------
+
+.. rest_parameters:: federation/service-provider/parameters.yaml
+
+   - id: id_path
 
 
 Delete Service Provider

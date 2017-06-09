@@ -35,6 +35,19 @@ Response Example
    :language: javascript
 
 
+Check projects a federated user can access
+==========================================
+
+.. rest_method::  HEAD /v3/OS-FEDERATION/projects
+
+Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/projects``
+
+Normal response codes: 200
+
+**Deprecated in v1.1**. Use core ``GET /auth/projects``. This call has the same
+response format.
+
+
 List domains a federated user can access
 ========================================
 
@@ -65,3 +78,16 @@ Response Example
 
 .. literalinclude:: federation/projects-domains/samples/domain-list-response.json
    :language: javascript
+
+
+Check domains a federated user can access
+=========================================
+
+.. rest_method::  HEAD /v3/OS-FEDERATION/domains
+
+Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/domains``
+
+Normal response codes: 200
+
+**Deprecated in v1.1**. Use core ``GET /auth/domains``. This call has the same
+response format.
