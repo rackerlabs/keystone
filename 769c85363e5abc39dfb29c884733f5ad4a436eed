@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f231b9d_5c7dd5e5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-09T16:52:26Z",
+      "side": 1,
+      "message": "Yeah - that wouldn\u0027t be bad for auditing. If I recall - it was one of the patches I proposed in a very large series to refactor and clean up the token provider API.",
+      "parentUuid": "ff0f0b1f_4e7625db",
+      "revId": "769c85363e5abc39dfb29c884733f5ad4a436eed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff0f0b1f_8e3afde4",
         "filename": "keystone/contrib/ec2/controllers.py",
         "patchSetId": 1
