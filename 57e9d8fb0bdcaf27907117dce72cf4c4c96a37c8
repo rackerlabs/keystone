@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f231b9d_5635b4f6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-09T15:30:11Z",
+      "side": 1,
+      "message": "This would be a good opportunity to explain what\u0027s wrong with the current definition and why you\u0027re fixing it. This helps others reviewing the change.",
+      "revId": "57e9d8fb0bdcaf27907117dce72cf4c4c96a37c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_56501433",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-09T15:30:11Z",
+      "side": 1,
+      "message": "A user not only needs a default project defined in their user reference, but they also need to have a role assignment on that default project.\n\n  If an explicit ``unscoped`` token request it made and the user has a role\n  on their default project, then the response will return a project-scoped token.",
+      "revId": "57e9d8fb0bdcaf27907117dce72cf4c4c96a37c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
