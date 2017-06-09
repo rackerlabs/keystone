@@ -102,6 +102,9 @@ def token_authenticate(request, token_ref):
             # issued prior to audit id existing, the chain is not tracked.
             token_audit_id = None
 
+        # The new token expires at the time which is equal to
+        # expiration time of the old token in the request, instead
+        # of varing based on current time.
         response_data.setdefault('expires_at', token_ref.expires)
         response_data['audit_id'] = token_audit_id
         response_data.setdefault('user_id', token_ref.user_id)
