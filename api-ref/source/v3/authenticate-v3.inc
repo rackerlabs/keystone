@@ -567,6 +567,31 @@ Response Example
    :language: javascript
 
 
+Check service catalog
+=====================
+
+.. rest_method:: HEAD /v3/auth/catalog
+
+Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_catalog``
+
+New in version 3.3
+
+
+This call executes the same processing as it's GET counterpart but does not
+include the response body.
+
+Normal response codes: 200
+
+Error response codes: 413,415,405,404,403,401,400,503,409
+
+Request
+-------
+
+.. rest_parameters:: parameters.yaml
+
+   - X-Auth-Token: X-Auth-Token
+
+
 Get available project scopes
 ============================
 
@@ -582,7 +607,7 @@ to based on the X-Auth-Token provided in the request.
 The structure of the response is exactly the same as listing projects
 for a user.
 
-Normal response codes: 204
+Normal response codes: 200
 
 Error response codes: 413,415,405,404,403,401,400,503,409
 
@@ -611,6 +636,30 @@ Response Example
    :language: javascript
 
 
+Check available project scopes
+==============================
+
+.. rest_method:: HEAD /v3/auth/projects
+
+Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_projects``
+
+New in version 3.3
+
+This call executes the same processing as it's GET counterpart but does not
+include a response body.
+
+Normal response codes: 200
+
+Error response codes: 413,415,405,404,403,401,400,503,409
+
+Request
+-------
+
+.. rest_parameters:: parameters.yaml
+
+   - X-Auth-Token: X-Auth-Token
+
+
 Get available domain scopes
 ===========================
 
@@ -625,7 +674,7 @@ to based on the X-Auth-Token provided in the request.
 
 The structure is the same as listing domains.
 
-Normal response codes: 204
+Normal response codes: 200
 
 Error response codes: 413,415,405,404,403,401,400,503,409
 
@@ -652,3 +701,27 @@ Response Example
 
 .. literalinclude:: ./samples/admin/get-available-domain-scopes-response.json
    :language: javascript
+
+
+Check available domain scopes
+=============================
+
+.. rest_method:: HEAD /v3/auth/domains
+
+Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_domains``
+
+New in version 3.3
+
+This call executes the same processing as it's GET counterpart but does not
+include a response body.
+
+Normal response codes: 200
+
+Error response codes: 413,415,405,404,403,401,400,503,409
+
+Request
+-------
+
+.. rest_parameters:: parameters.yaml
+
+   - X-Auth-Token: X-Auth-Token
