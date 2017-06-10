@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f231b9d_f17f1fa9",
+        "filename": "api-ref/source/v3/domains-config-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-06-10T04:55:16Z",
+      "side": 1,
+      "message": "Should this be just one :?  It seems to render \n\n   Relationship:: https://docs... \n\nif there are two.",
+      "range": {
+        "startLine": 45,
+        "startChar": 12,
+        "endLine": 45,
+        "endChar": 14
+      },
+      "revId": "f133a3ad79fc576dd39ad1b37322de80e5d120b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_b162c715",
+        "filename": "api-ref/source/v3/domains-config-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-06-10T04:55:16Z",
+      "side": 1,
+      "message": "Ditto",
+      "range": {
+        "startLine": 74,
+        "startChar": 12,
+        "endLine": 74,
+        "endChar": 14
+      },
+      "revId": "f133a3ad79fc576dd39ad1b37322de80e5d120b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
