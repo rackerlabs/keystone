@@ -42,7 +42,7 @@ Show default configuration settings
 The default configuration settings for the options that can be overridden
 can be retrieved.
 
-Relationship:: 
+Relationship::
 ``https://docs.openstack.org/api/openstack-identity/3/rel/domain_config_default``
 
 Response Parameters
@@ -62,6 +62,17 @@ Response Example
 
 .. literalinclude:: ./samples/admin/domain-config-default-response.json
    :language: javascript
+
+Check default configuration settings
+====================================
+
+.. rest_method:: HEAD /v3/domains/config/default
+
+The default configuration settings for the options that can be overridden
+can be retrieved.
+
+Relationship::
+``https://docs.openstack.org/api/openstack-identity/3/rel/domain_config_default``
 
 Show default configuration for a group
 ======================================
@@ -102,6 +113,20 @@ Response Example
 
 .. literalinclude:: ./samples/admin/domain-config-group-default-response.json
    :language: javascript
+
+Check default configuration for a group
+=======================================
+
+.. rest_method:: HEAD /v3/domains/config/{group}/default
+
+Reads the default configuration settings for a specific group.
+
+Relationship:
+``https://docs.openstack.org/api/openstack-identity/3/rel/domain_config_default``
+
+The API supports only the ``identity`` and ``ldap`` groups.
+
+Normal response codes: 200
 
 Show default option for a group
 ===============================
@@ -145,6 +170,22 @@ Response Example
 .. literalinclude:: ./samples/admin/domain-config-group-option-default-response.json
    :language: javascript
 
+Check default option for a group
+================================
+
+.. rest_method:: HEAD /v3/domains/config/{group}/{option}/default
+
+Reads the default configuration setting for an option within a group.
+
+Relationship:
+``https://docs.openstack.org/api/openstack-identity/3/rel/domain_config_default``
+
+
+The API supports only the ``identity`` and ``ldap`` groups. For the
+``ldap`` group, a valid value is ``url`` or ``user_tree_dn``. For
+the ``identity`` group, a valid value is ``driver``.
+
+Normal response codes: 200
 
 Show domain group option configuration
 ======================================
