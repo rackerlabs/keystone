@@ -127,8 +127,8 @@ Response Example
    :language: javascript
 
 
-List all mappings
-=================
+List mappings
+=============
 
 .. rest_method::  GET /v3/OS-FEDERATION/mappings
 
