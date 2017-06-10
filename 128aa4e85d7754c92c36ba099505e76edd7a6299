@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f231b9d_71b1cfe1",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/idp.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-10T03:44:13Z",
+      "side": 0,
+      "message": "This actually didn\u0027t render as a list in the documentation. Instead it was a sentence. I opted to just include the normal response code. We can add this back when we have a strategy for applying this pattern consistently across all entities in our docs.",
+      "revId": "128aa4e85d7754c92c36ba099505e76edd7a6299",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
