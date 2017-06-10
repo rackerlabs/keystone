@@ -5043,12 +5043,16 @@ class TestAuthContext(unit.TestCase):
 
 class TestAuthSpecificData(test_v3.RestfulTestCase):
 
-    def test_get_catalog_project_scoped_token(self):
+    def test_get_catalog_with_project_scoped_token(self):
         """Call ``GET /auth/catalog`` with a project-scoped token."""
-        r = self.get('/auth/catalog')
+        r = self.get('/auth/catalog', expected_status=http_client.OK)
         self.assertValidCatalogResponse(r)
 
-    def test_get_catalog_domain_scoped_token(self):
+    def test_head_catalog_with_project_scoped_token(self):
+        """Call ``HEAD /auth/catalog`` with a project-scoped token."""
+        self.head('/auth/catalog', expected_status=http_client.OK)
+
+    def test_get_catalog_with_domain_scoped_token(self):
         """Call ``GET /auth/catalog`` with a domain-scoped token."""
         # grant a domain role to a user
         self.put(path='/domains/%s/users/%s/roles/%s' % (
@@ -5062,9 +5066,32 @@ class TestAuthSpecificData(test_v3.RestfulTestCase):
                 domain_id=self.domain['id']),
             expected_status=http_client.FORBIDDEN)
 
-    def test_get_catalog_unscoped_token(self):
+    def test_head_catalog_with_domain_scoped_token(self):
+        """Call ``HEAD /auth/catalog`` with a domain-scoped token."""
+        # grant a domain role to a user
+        self.put(path='/domains/%s/users/%s/roles/%s' % (
+            self.domain['id'], self.user['id'], self.role['id']))
+
+        self.head(
+            '/auth/catalog',
+            auth=self.build_authentication_request(
+                user_id=self.user['id'],
+                password=self.user['password'],
+                domain_id=self.domain['id']),
+            expected_status=http_client.FORBIDDEN)
+
+    def test_get_catalog_with_unscoped_token(self):
         """Call ``GET /auth/catalog`` with an unscoped token."""
         self.get(
+            '/auth/catalog',
+            auth=self.build_authentication_request(
+                user_id=self.default_domain_user['id'],
+                password=self.default_domain_user['password']),
+            expected_status=http_client.FORBIDDEN)
+
+    def test_head_catalog_with_unscoped_token(self):
+        """Call ``HEAD /auth/catalog`` with an unscoped token."""
+        self.head(
             '/auth/catalog',
             auth=self.build_authentication_request(
                 user_id=self.default_domain_user['id'],
@@ -5078,18 +5105,27 @@ class TestAuthSpecificData(test_v3.RestfulTestCase):
             noauth=True,
             expected_status=http_client.UNAUTHORIZED)
 
-    def test_get_projects_project_scoped_token(self):
-        r = self.get('/auth/projects')
+    def test_get_projects_with_project_scoped_token(self):
+        r = self.get('/auth/projects', expected_status=http_client.OK)
         self.assertThat(r.json['projects'], matchers.HasLength(1))
         self.assertValidProjectListResponse(r)
 
-    def test_get_domains_project_scoped_token(self):
+    def test_head_projects_with_project_scoped_token(self):
+        self.head('/auth/projects', expected_status=http_client.OK)
+
+    def test_get_domains_with_project_scoped_token(self):
         self.put(path='/domains/%s/users/%s/roles/%s' % (
             self.domain['id'], self.user['id'], self.role['id']))
 
-        r = self.get('/auth/domains')
+        r = self.get('/auth/domains', expected_status=http_client.OK)
         self.assertThat(r.json['domains'], matchers.HasLength(1))
         self.assertValidDomainListResponse(r)
+
+    def test_head_domains_with_project_scoped_token(self):
+        self.put(path='/domains/%s/users/%s/roles/%s' % (
+            self.domain['id'], self.user['id'], self.role['id']))
+
+        self.head('/auth/domains', expected_status=http_client.OK)
 
 
 class TestTrustAuthFernetTokenProvider(TrustAPIBehavior, TestTrustChain):
