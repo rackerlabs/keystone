@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f231b9d_a8c8ea54",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-12T18:49:27Z",
+      "side": 1,
+      "message": "It\u0027s in the authenticate-v3.inc document.",
+      "parentUuid": "7f231b9d_6c5b3487",
+      "revId": "0b030defb58a23c8d1d9a8ae3000a1f2caaf9f97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_ac614c3c",
         "filename": "api-ref/source/v3/authenticate-v3.inc",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7f231b9d_28bdfab6",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 594,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-12T18:49:27Z",
+      "side": 1,
+      "message": "++ agreed, I\u0027ll remove this.",
+      "parentUuid": "7f231b9d_ac614c3c",
+      "revId": "0b030defb58a23c8d1d9a8ae3000a1f2caaf9f97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_cc724812",
         "filename": "api-ref/source/v3/os-pki.inc",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2017-06-10T08:38:13Z",
       "side": 1,
       "message": "I don\u0027t think it makes sense to document HEAD for a list operation. We include HEAD for completeness but its value doesn\u0027t have special meaning in the same way that for example HEAD /projects/{}/users/{}/roles/{} does.",
+      "revId": "0b030defb58a23c8d1d9a8ae3000a1f2caaf9f97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_c8a2069b",
+        "filename": "api-ref/source/v3/os-pki.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-12T18:49:27Z",
+      "side": 1,
+      "message": "Agreed - based on our discussion earlier we can document this in a blanket statement for all HEAD APIs. I\u0027ll remove this.",
+      "parentUuid": "7f231b9d_cc724812",
       "revId": "0b030defb58a23c8d1d9a8ae3000a1f2caaf9f97",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
