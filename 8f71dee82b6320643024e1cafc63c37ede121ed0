@@ -16,6 +16,24 @@
       "revId": "8f71dee82b6320643024e1cafc63c37ede121ed0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_e8d02253",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-06-12T18:36:26Z",
+      "side": 1,
+      "message": "We already can. This is an option, see above (strict_password_check). Default is we do not enforce the length. Folks wanted this way back in the day.",
+      "parentUuid": "7f231b9d_65a9db79",
+      "revId": "8f71dee82b6320643024e1cafc63c37ede121ed0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
