@@ -43,6 +43,24 @@
     },
     {
       "key": {
+        "uuid": "7f231b9d_517eace4",
+        "filename": "api-ref/source/v3/domains-config-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-12T15:12:34Z",
+      "side": 1,
+      "message": "Fixed in https://review.openstack.org/#/c/473496/",
+      "parentUuid": "7f231b9d_718f6823",
+      "revId": "f133a3ad79fc576dd39ad1b37322de80e5d120b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_b162c715",
         "filename": "api-ref/source/v3/domains-config-v3.inc",
         "patchSetId": 1
