@@ -22,6 +22,24 @@
       "revId": "668d8cdb98facf0635200e8a5709dd92211e47b4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_342e7343",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 601,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-12T20:48:44Z",
+      "side": 1,
+      "message": "I don\u0027t understand the comment. Can you provide an example? Do you mean refactor this into its own test?",
+      "parentUuid": "7f231b9d_c83e8628",
+      "revId": "668d8cdb98facf0635200e8a5709dd92211e47b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
