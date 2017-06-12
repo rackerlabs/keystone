@@ -42,7 +42,7 @@ Show default configuration settings
 The default configuration settings for the options that can be overridden
 can be retrieved.
 
-Relationship::
+Relationship:
 ``https://docs.openstack.org/api/openstack-identity/3/rel/domain_config_default``
 
 Response Parameters
@@ -71,7 +71,7 @@ Check default configuration settings
 The default configuration settings for the options that can be overridden
 can be retrieved.
 
-Relationship::
+Relationship:
 ``https://docs.openstack.org/api/openstack-identity/3/rel/domain_config_default``
 
 Show default configuration for a group
