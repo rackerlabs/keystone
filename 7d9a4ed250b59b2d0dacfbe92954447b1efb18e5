@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f231b9d_97e08298",
+        "filename": "keystone/common/policies/identity_provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-13T20:42:49Z",
+      "side": 1,
+      "message": "extremely tiny nit: bracket placement is different",
+      "range": {
+        "startLine": 31,
+        "startChar": 31,
+        "endLine": 31,
+        "endChar": 33
+      },
+      "revId": "7d9a4ed250b59b2d0dacfbe92954447b1efb18e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
