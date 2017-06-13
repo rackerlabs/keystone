@@ -118,6 +118,23 @@
       "revId": "863feb14724e24fc8479b764f8489b67611dea59",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_389c085c",
+        "filename": "keystone/trust/routers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-13T16:17:33Z",
+      "side": 1,
+      "message": "I pulled these into their own change: https://review.openstack.org/473902",
+      "revId": "863feb14724e24fc8479b764f8489b67611dea59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
