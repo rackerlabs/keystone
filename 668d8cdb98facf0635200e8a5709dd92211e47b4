@@ -40,6 +40,24 @@
       "revId": "668d8cdb98facf0635200e8a5709dd92211e47b4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_16d598b9",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 601,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-06-13T19:21:39Z",
+      "side": 1,
+      "message": "I think he means doing it in two separate lines. Similar to 592-595. r \u003d self.get(); self.assertEqual(). I\u0027m okay with the way it is now. It\u0027s also mostly consistent with the way self.get also has an expected status parameter when we don\u0027t care about the response body.",
+      "parentUuid": "7f231b9d_342e7343",
+      "revId": "668d8cdb98facf0635200e8a5709dd92211e47b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
