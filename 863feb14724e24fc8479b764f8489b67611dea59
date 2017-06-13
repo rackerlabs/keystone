@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7f231b9d_c21d1e10",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-13T16:51:59Z",
+      "side": 1,
+      "message": "I add these in a separate change: https://review.openstack.org/473912",
+      "revId": "863feb14724e24fc8479b764f8489b67611dea59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_51a37350",
         "filename": "keystone/auth/routers.py",
         "patchSetId": 4
