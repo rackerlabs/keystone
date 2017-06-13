@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7f231b9d_57e1cacf",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 759,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-13T20:32:53Z",
+      "side": 1,
+      "message": "yeah same here as what Kristi said",
+      "range": {
+        "startLine": 759,
+        "startChar": 34,
+        "endLine": 759,
+        "endChar": 49
+      },
+      "revId": "4058ae6e1df7a4ed635005e13205e20b937617c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_96c5285e",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 1
