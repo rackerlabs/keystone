@@ -113,17 +113,20 @@ class EndpointPolicyTestCase(test_v3.RestfulTestCase):
         self.assertValidPolicyResponse(r, ref=self.policy)
 
     def test_list_endpoints_for_policy(self):
-        """GET /policies/%(policy_id}/endpoints."""
-        self.put('/policies/%(policy_id)s/OS-ENDPOINT-POLICY'
-                 '/endpoints/%(endpoint_id)s' % {
-                     'policy_id': self.policy['id'],
-                     'endpoint_id': self.endpoint['id']})
+        """GET & HEAD /policies/%(policy_id}/endpoints."""
+        url = (
+            '/policies/%(policy_id)s/OS-ENDPOINT-POLICY'
+            '/endpoints' % {'policy_id': self.policy['id']}
+        )
+        self.put(
+            url + '/' + self.endpoint['id'],
+            expected_status=http_client.NO_CONTENT
+        )
 
-        r = self.get('/policies/%(policy_id)s/OS-ENDPOINT-POLICY'
-                     '/endpoints' % {
-                         'policy_id': self.policy['id']})
+        r = self.get(url, expected_status=http_client.OK)
         self.assertValidEndpointListResponse(r, ref=self.endpoint)
         self.assertThat(r.result.get('endpoints'), matchers.HasLength(1))
+        self.head(url, expected_status=http_client.OK)
 
     def test_endpoint_association_cleanup_when_endpoint_deleted(self):
         url = ('/policies/%(policy_id)s/OS-ENDPOINT-POLICY'
