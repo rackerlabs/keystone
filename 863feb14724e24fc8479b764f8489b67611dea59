@@ -101,6 +101,23 @@
       "revId": "863feb14724e24fc8479b764f8489b67611dea59",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_78796091",
+        "filename": "keystone/token/_simple_cert.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-13T16:05:10Z",
+      "side": 1,
+      "message": "These were pulled out into their own change: https://review.openstack.org/#/c/473893/",
+      "revId": "863feb14724e24fc8479b764f8489b67611dea59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
