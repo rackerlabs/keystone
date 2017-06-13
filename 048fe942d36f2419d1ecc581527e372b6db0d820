@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f231b9d_e9735ab0",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-13T20:55:37Z",
+      "side": 1,
+      "message": "This shouldn\u0027t really be global, should probably rework this.",
+      "range": {
+        "startLine": 426,
+        "startChar": 8,
+        "endLine": 426,
+        "endChar": 14
+      },
+      "revId": "048fe942d36f2419d1ecc581527e372b6db0d820",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
