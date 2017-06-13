@@ -22,6 +22,30 @@
       "revId": "0664dba67d76975f841f14c6bc65efb3b8ec0f46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_69318aec",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-13T20:52:41Z",
+      "side": 1,
+      "message": "I like this idea, would be cool to have some get_and_head check.",
+      "parentUuid": "7f231b9d_76616ca9",
+      "range": {
+        "startLine": 116,
+        "startChar": 12,
+        "endLine": 117,
+        "endChar": 59
+      },
+      "revId": "0664dba67d76975f841f14c6bc65efb3b8ec0f46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
