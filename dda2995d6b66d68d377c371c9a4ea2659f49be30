@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f231b9d_208ca67d",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-06-14T16:11:41Z",
+      "side": 1,
+      "message": "we don\u0027t actually ever use the domain_id var this line sets, so it probably makes more sense to replace this try/except with:\n\nif \u0027domain_id\u0027 not in project...",
+      "revId": "dda2995d6b66d68d377c371c9a4ea2659f49be30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
