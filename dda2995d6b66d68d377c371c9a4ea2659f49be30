@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f231b9d_f7fd4c6e",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-14T22:38:38Z",
+      "side": 1,
+      "message": "lemme know how that looks",
+      "parentUuid": "7f231b9d_bb6a2bea",
+      "revId": "dda2995d6b66d68d377c371c9a4ea2659f49be30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_208ca67d",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2017-06-14T16:11:41Z",
       "side": 1,
       "message": "we don\u0027t actually ever use the domain_id var this line sets, so it probably makes more sense to replace this try/except with:\n\nif \u0027domain_id\u0027 not in project...",
+      "revId": "dda2995d6b66d68d377c371c9a4ea2659f49be30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_170d68a0",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-14T22:38:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_208ca67d",
       "revId": "dda2995d6b66d68d377c371c9a4ea2659f49be30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -59,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "7f231b9d_77f13c95",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-14T22:38:38Z",
+      "side": 1,
+      "message": "lemme know if this is more correct",
+      "parentUuid": "7f231b9d_dbe3a7d8",
+      "range": {
+        "startLine": 262,
+        "startChar": 0,
+        "endLine": 265,
+        "endChar": 48
+      },
+      "revId": "dda2995d6b66d68d377c371c9a4ea2659f49be30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_fb1b037e",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 4
@@ -70,6 +130,30 @@
       "writtenOn": "2017-06-14T16:51:19Z",
       "side": 1,
       "message": "I think the domain_id logic we\u0027re adding above is largely just the reverse of this... and as such, they should probably be together for better clarity.",
+      "range": {
+        "startLine": 270,
+        "startChar": 0,
+        "endLine": 274,
+        "endChar": 51
+      },
+      "revId": "dda2995d6b66d68d377c371c9a4ea2659f49be30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_57ee40b4",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-14T22:38:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_fb1b037e",
       "range": {
         "startLine": 270,
         "startChar": 0,
