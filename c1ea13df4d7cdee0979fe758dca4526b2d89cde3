@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f231b9d_527411fe",
+        "filename": "keystone/tests/unit/test_v3_endpoint_policy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-14T21:21:02Z",
+      "side": 1,
+      "message": "nit: I think expected_status is NO_CONTENT by default for v3. Was this on purpose to repeat it?",
+      "range": {
+        "startLine": 123,
+        "startChar": 12,
+        "endLine": 123,
+        "endChar": 50
+      },
+      "revId": "c1ea13df4d7cdee0979fe758dca4526b2d89cde3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
