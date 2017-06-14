@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7f231b9d_bb6a2bea",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-06-14T16:51:19Z",
+      "side": 1,
+      "message": "Should add a comment explaining that we\u0027re figuring domain_id here, if not set explicitly, so that that information is available to be checked against policy.",
+      "revId": "dda2995d6b66d68d377c371c9a4ea2659f49be30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_208ca67d",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 4
@@ -35,6 +52,29 @@
         "startChar": 0,
         "endLine": 265,
         "endChar": 48
+      },
+      "revId": "dda2995d6b66d68d377c371c9a4ea2659f49be30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_fb1b037e",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-06-14T16:51:19Z",
+      "side": 1,
+      "message": "I think the domain_id logic we\u0027re adding above is largely just the reverse of this... and as such, they should probably be together for better clarity.",
+      "range": {
+        "startLine": 270,
+        "startChar": 0,
+        "endLine": 274,
+        "endChar": 51
       },
       "revId": "dda2995d6b66d68d377c371c9a4ea2659f49be30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
