@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f231b9d_f41f8a58",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-14T21:31:32Z",
+      "side": 1,
+      "message": "nit: this might also be redundant (refer to [0], ignore if on purpose) default for get is OK\n\n[0] https://review.openstack.org/#/c/473885/1/keystone/tests/unit/test_v3_endpoint_policy.py",
+      "range": {
+        "startLine": 164,
+        "startChar": 57,
+        "endLine": 164,
+        "endChar": 59
+      },
+      "revId": "a25d5d0e0fdb8689974db4ded8132fd52ab37786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_920f4936",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-14T21:31:32Z",
+      "side": 1,
+      "message": "Ditto",
+      "range": {
+        "startLine": 325,
+        "startChar": 29,
+        "endLine": 325,
+        "endChar": 59
+      },
+      "revId": "a25d5d0e0fdb8689974db4ded8132fd52ab37786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_720cad40",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-14T21:31:32Z",
+      "side": 1,
+      "message": "Ditto",
+      "range": {
+        "startLine": 340,
+        "startChar": 57,
+        "endLine": 340,
+        "endChar": 59
+      },
+      "revId": "a25d5d0e0fdb8689974db4ded8132fd52ab37786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_34018206",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-14T21:31:32Z",
+      "side": 1,
+      "message": "Ditto",
+      "range": {
+        "startLine": 364,
+        "startChar": 57,
+        "endLine": 364,
+        "endChar": 59
+      },
+      "revId": "a25d5d0e0fdb8689974db4ded8132fd52ab37786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_1406861e",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-14T21:31:32Z",
+      "side": 1,
+      "message": "Ditto",
+      "range": {
+        "startLine": 378,
+        "startChar": 57,
+        "endLine": 378,
+        "endChar": 59
+      },
+      "revId": "a25d5d0e0fdb8689974db4ded8132fd52ab37786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_f4066a1c",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-14T21:31:32Z",
+      "side": 1,
+      "message": "Ditto",
+      "range": {
+        "startLine": 401,
+        "startChar": 57,
+        "endLine": 401,
+        "endChar": 59
+      },
+      "revId": "a25d5d0e0fdb8689974db4ded8132fd52ab37786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_b4147245",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-14T21:31:32Z",
+      "side": 1,
+      "message": "Ditto",
+      "range": {
+        "startLine": 415,
+        "startChar": 57,
+        "endLine": 415,
+        "endChar": 59
+      },
+      "revId": "a25d5d0e0fdb8689974db4ded8132fd52ab37786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
