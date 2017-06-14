@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f231b9d_b7a474a7",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-14T22:37:13Z",
+      "side": 1,
+      "message": "nit: refer to https://review.openstack.org/#/c/473891/1/keystone/tests/unit/test_v3_oauth1.py",
+      "range": {
+        "startLine": 90,
+        "startChar": 46,
+        "endLine": 90,
+        "endChar": 56
+      },
+      "revId": "5f4c2f5b8dca82b9f3a605d73bc987477a425468",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
