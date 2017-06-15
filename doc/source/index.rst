@@ -100,6 +100,14 @@ Administrator Guides
 
     admin/identity-management.rst
 
+Configuration Options
+~~~~~~~~~~~~~~~~~~~~~
+
+.. toctree::
+    :maxdepth: 2
+
+    configuration/samples/index.rst
+
 API Documentation
 ~~~~~~~~~~~~~~~~~
 An end user can find the specific API documentation here, `OpenStack's Identity API`_.
