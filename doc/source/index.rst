@@ -69,6 +69,14 @@ Configuration
 
    configuration
 
+Configuration References
+========================
+
+.. toctree::
+   :maxdepth: 2
+
+   config-ref/identity
+
 Advanced Topics
 ===============
 
