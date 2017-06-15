@@ -91,6 +91,7 @@ the keystone service.
     configuration.rst
     advanced-topics/index.rst
     sample_files/index.rst
+    config-ref/identity
 
 Administrator Guides
 ~~~~~~~~~~~~~~~~~~~~
