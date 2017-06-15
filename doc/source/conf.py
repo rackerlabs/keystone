@@ -56,6 +56,7 @@ extensions = ['sphinx.ext.autodoc',
               'oslo_policy.sphinxpolicygen',
               'oslosphinx',
               'ext.support_matrix',
+              'ext.remote'
               ]
 
 config_generator_config_file = '../../config-generator/keystone.conf'
