@@ -54,6 +54,7 @@ Getting Started
     :maxdepth: 1
 
     installing
+    install-guides/keystone
     upgrading
     performance
     apache-httpd
