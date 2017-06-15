@@ -20,7 +20,7 @@ from sphinx.directives import code
 class RemoteCodeBlock(code.CodeBlock):
     def run(self):
 
-        r = requests.get(self.content[0],proxies={'https':'https://10.7.0.1:8080'})
+        r = requests.get(self.content[0])
         if r.status_code != 200:
             raise Exception
 

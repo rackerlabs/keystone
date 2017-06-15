@@ -7,33 +7,33 @@ The Identity service is configured in the ``/etc/keystone/keystone.conf`` file.
 The following tables provide a comprehensive list of the Identity
 service options.
 
-.. include:: tables/keystone-assignment.rst
-.. include:: tables/keystone-auth.rst
-.. include:: tables/keystone-ca.rst
-.. include:: tables/keystone-catalog.rst
-.. include:: tables/keystone-common.rst
-.. include:: tables/keystone-compliance.rst
-.. include:: tables/keystone-credential.rst
-.. include:: tables/keystone-debug.rst
-.. include:: tables/keystone-domain.rst
-.. include:: tables/keystone-federation.rst
-.. include:: tables/keystone-fernet_tokens.rst
-.. include:: tables/keystone-identity.rst
-.. include:: tables/keystone-kvs.rst
-.. include:: tables/keystone-ldap.rst
-.. include:: tables/keystone-mapping.rst
-.. include:: tables/keystone-memcache.rst
-.. include:: tables/keystone-oauth.rst
-.. include:: tables/keystone-os_inherit.rst
-.. include:: tables/keystone-policy.rst
-.. include:: tables/keystone-revoke.rst
-.. include:: tables/keystone-role.rst
-.. include:: tables/keystone-saml.rst
-.. include:: tables/keystone-security.rst
-.. include:: tables/keystone-token.rst
-.. include:: tables/keystone-tokenless.rst
-.. include:: tables/keystone-trust.rst
-.. include:: tables/keystone-redis.rst
+.. include:: tables/keystone-assignment.inc
+.. include:: tables/keystone-auth.inc
+.. include:: tables/keystone-ca.inc
+.. include:: tables/keystone-catalog.inc
+.. include:: tables/keystone-common.inc
+.. include:: tables/keystone-compliance.inc
+.. include:: tables/keystone-credential.inc
+.. include:: tables/keystone-debug.inc
+.. include:: tables/keystone-domain.inc
+.. include:: tables/keystone-federation.inc
+.. include:: tables/keystone-fernet_tokens.inc
+.. include:: tables/keystone-identity.inc
+.. include:: tables/keystone-kvs.inc
+.. include:: tables/keystone-ldap.inc
+.. include:: tables/keystone-mapping.inc
+.. include:: tables/keystone-memcache.inc
+.. include:: tables/keystone-oauth.inc
+.. include:: tables/keystone-os_inherit.inc
+.. include:: tables/keystone-policy.inc
+.. include:: tables/keystone-revoke.inc
+.. include:: tables/keystone-role.inc
+.. include:: tables/keystone-saml.inc
+.. include:: tables/keystone-security.inc
+.. include:: tables/keystone-token.inc
+.. include:: tables/keystone-tokenless.inc
+.. include:: tables/keystone-trust.inc
+.. include:: tables/keystone-redis.inc
 
 Domain-specific Identity drivers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

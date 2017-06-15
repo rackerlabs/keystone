@@ -24,4 +24,6 @@ distribution and `OpenStack Administrator Guide
 
    The common configurations for shared service and libraries,
    such as database connections and RPC messaging,
-   are described at :doc:`common-configurations`.
+   are described at `Common Configuration
+   <https://docs.openstack.org/ocata/config-reference/
+   common-configurations.html>`_.

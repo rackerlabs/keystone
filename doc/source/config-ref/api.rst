@@ -7,5 +7,5 @@ Configuration options
 
 The Identity API can be configured by changing the following options:
 
-.. include:: tables/keystone-api-op.rst
+.. include:: tables/keystone-api.inc
 

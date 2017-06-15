@@ -9,7 +9,7 @@ capability to be cached usually has a ``caching`` option that will toggle
 caching for that specific section. By default, caching is globally disabled.
 Options are as follows:
 
-.. include:: tables/keystone-cache.rst
+.. include:: tables/keystone-cache.inc
 
 Current functional back ends are:
 
