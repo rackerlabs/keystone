@@ -392,8 +392,11 @@ class V3TokenDataHelper(object):
             trustee_user_ref = (self.identity_api.get_user(
                                 trust['trustee_user_id']))
             try:
-                self.resource_api.assert_domain_enabled(
-                    trustor_user_ref['domain_id'])
+                # it is possible that trustor is domainless because he came
+                # from federation
+                if trustor_user_ref['domain_id']:
+                    self.resource_api.assert_domain_enabled(
+		        trustor_user_ref['domain_id'])
             except AssertionError:
                 raise exception.TokenNotFound(_('Trustor domain is disabled.'))
             try:
@@ -417,8 +420,17 @@ class V3TokenDataHelper(object):
                 })
         filtered_user = {
             'id': user_ref['id'],
-            'name': user_ref['name'],
-            'domain': self._get_filtered_domain(user_ref['domain_id'])}
+            'name': user_ref['name']}
+        # NOTE(breton): in Newton federated users don't have domain. Below is
+        # a workaround for it.
+        if user_ref['domain_id']:
+            filtered_user['domain'] = self._get_filtered_domain(
+                user_ref['domain_id'])
+        else:
+            filtered_user['domain'] = {
+                'name': 'Federated',
+                'id': 'Federated',
+            }
         token_data['user'] = filtered_user
 
     def _populate_oauth_section(self, token_data, access_token):

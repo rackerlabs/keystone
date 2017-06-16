@@ -41,6 +41,18 @@ environment. For `mod_shib`, this would be `Shib-Identity-Provider`. For For
 could be `MELLON_IDP`.
 """))
 
+cache_group_membership_in_db = cfg.BoolOpt('cache_group_membership_in_db',
+    default=False,
+    help=utils.fmt("""
+When turned on, Keystone will save in DB group
+membership for federated users. Enabling this
+option is the only way so far to make trusts
+delegated by federated users work. The downside is
+that a trust could be used even after the
+delegating user's permissions were changed in IdP,
+unless that change was propagated to Keystone by
+some automation script."""))
+
 federated_domain_name = cfg.StrOpt(
     'federated_domain_name',
     default='Federated',
@@ -89,6 +101,7 @@ ALL_OPTS = [
     assertion_prefix,
     remote_id_attribute,
     federated_domain_name,
+    cache_group_membership_in_db,
     trusted_dashboard,
     sso_callback_template,
     caching,

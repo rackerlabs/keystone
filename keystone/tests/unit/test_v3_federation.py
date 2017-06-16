@@ -1624,7 +1624,7 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
 class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
 
     def auth_plugin_config_override(self):
-        methods = ['saml2']
+        methods = ['saml2', 'password']  # password is required for trusts
         super(FederatedTokenTests, self).auth_plugin_config_override(methods)
 
     def setUp(self):
@@ -2955,6 +2955,47 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         for project in user_projects:
             self.assertNotIn(project['id'], user_project_ids)
             user_project_ids.append(project['id'])
+
+    def test_trust_usage(self):
+        self.config_fixture.config(group='federation',
+                                   cache_group_membership_in_db=True)
+
+        # create trustee
+        trustee_user = unit.create_user(self.identity_api,
+                                        domain_id=self.domain_id)
+        trustee_user_id = trustee_user['id']
+
+        # authenticate employee
+        user_id, unscoped_token = self._authenticate_via_saml()
+        v3_scope_request = self._scope_request(
+            unscoped_token, 'project',
+            self.proj_employees['id'])
+        r = self.v3_create_token(v3_scope_request,
+                                 expected_status=http_client.CREATED)
+        scoped_token = r.headers['X-Subject-Token']
+
+        # create a trust from employee to trustee
+        ref = unit.new_trust_ref(
+            trustor_user_id=user_id,
+            trustee_user_id=trustee_user_id,
+            project_id=self.proj_employees['id'],
+            role_ids=[self.role_employee['id']])
+        r = self.post('/OS-TRUST/trusts', body={'trust': ref},
+                      token=scoped_token)
+        trust = self.assertValidTrustResponse(r)
+
+        # use the trust
+        # get a v3 trust-scoped token as the trustee
+        auth_data = self.build_authentication_request(
+            user_id=trustee_user_id,
+            password=trustee_user['password'],
+            trust_id=trust['id'])
+        r = self.v3_create_token(auth_data)
+        # NOTE(breton): it should be assertValidProjectScopedTokenResponse,
+        # but for some reason it checks for self.role_id which has nothing to
+        # with this test case. That's why assertValidScopedTokenResponse
+        self.assertValidScopedTokenResponse(
+            r, trustee_user)
 
     def _authenticate_via_saml(self):
         r = self._issue_unscoped_token()
