@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f231b9d_9fe831b3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-16T18:01:46Z",
+      "side": 1,
+      "message": "We should list out which endpoints we\u0027re applying the fix to. In addition to that, we can list which endpoints we have left to fix and if those are coming in a subsequent patch set.\n\nWhat\u0027s left to do to close this one out?",
+      "revId": "c864bcc1ce405147604eccc6332e31044c3e80cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_ff084592",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-16T18:01:46Z",
+      "side": 1,
+      "message": "Based on the wording of this commit message, I assume this will be closed when we cover all endpoints?",
+      "revId": "c864bcc1ce405147604eccc6332e31044c3e80cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_7ffc356f",
+        "filename": "keystone/common/api_version_request.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-16T18:01:46Z",
+      "side": 1,
+      "message": "Deprecated*",
+      "revId": "c864bcc1ce405147604eccc6332e31044c3e80cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_bf33ed61",
+        "filename": "keystone/common/api_version_request.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-16T18:01:46Z",
+      "side": 1,
+      "message": "_DEPRECATED_API_VERSION*\n\nI don\u0027t think the \u00272\u0027 in the variable name is necessary here. We get that information as a result of the assignment.",
+      "revId": "c864bcc1ce405147604eccc6332e31044c3e80cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_df30e958",
+        "filename": "keystone/common/api_version_request.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-16T18:01:46Z",
+      "side": 1,
+      "message": "deprecated*",
+      "revId": "c864bcc1ce405147604eccc6332e31044c3e80cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_1f49c1b5",
+        "filename": "keystone/common/api_version_request.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-16T18:01:46Z",
+      "side": 1,
+      "message": "These could be attributes, which would make reading the code using this a little easier.",
+      "revId": "c864bcc1ce405147604eccc6332e31044c3e80cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_7f2af5da",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-16T18:01:46Z",
+      "side": 1,
+      "message": "nit: OpenStack-API-Version?\n\nIt is suppose to be OpenStack-Api-Version or OpenStack-API-Version? Not sure it matters, but just for the sake of consistency.",
+      "revId": "c864bcc1ce405147604eccc6332e31044c3e80cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_ffc96525",
+        "filename": "keystone/version/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-16T18:01:46Z",
+      "side": 1,
+      "message": "Instead of using indexes, it would make the code easier to read if these were attributes.",
+      "revId": "c864bcc1ce405147604eccc6332e31044c3e80cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_5f017937",
+        "filename": "keystone/version/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-16T18:01:46Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "c864bcc1ce405147604eccc6332e31044c3e80cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
