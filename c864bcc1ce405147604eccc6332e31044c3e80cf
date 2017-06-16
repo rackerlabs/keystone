@@ -104,6 +104,23 @@
     },
     {
       "key": {
+        "uuid": "7f231b9d_0bb97f13",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-06-16T20:30:31Z",
+      "side": 1,
+      "message": "Just a thought: Instead of getting the version from the path used, couldn\u0027t we get the version from the controller instead? Have the controller tell render_response what version it is.",
+      "revId": "c864bcc1ce405147604eccc6332e31044c3e80cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_7f2af5da",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 8
@@ -132,6 +149,24 @@
       "writtenOn": "2017-06-16T18:01:46Z",
       "side": 1,
       "message": "Instead of using indexes, it would make the code easier to read if these were attributes.",
+      "revId": "c864bcc1ce405147604eccc6332e31044c3e80cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_6bdfd368",
+        "filename": "keystone/version/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-06-16T20:30:31Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7f231b9d_ffc96525",
       "revId": "c864bcc1ce405147604eccc6332e31044c3e80cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
