@@ -1012,7 +1012,6 @@ class Manager(manager.Manager):
 
         # Iterate over the assignments for this role and build the list of
         # user or user+project IDs for the tokens we need to delete
-        user_ids = set()
         user_and_project_ids = list()
         for assignment in assignments:
             # If we have a project assignment, then record both the user and
@@ -1057,16 +1056,10 @@ class Manager(manager.Manager):
                         self._emit_invalidate_user_token_persistence(
                             user['id'])
 
-        # Now process the built up lists.  Before issuing calls to delete any
-        # tokens, let's try and minimize the number of calls by pruning out
-        # any user+project deletions where a general token deletion for that
-        # same user is also planned.
-        user_and_project_ids_to_action = []
-        for user_and_project_id in user_and_project_ids:
-            if user_and_project_id[0] not in user_ids:
-                user_and_project_ids_to_action.append(user_and_project_id)
-
-        for user_id, project_id in user_and_project_ids_to_action:
+        # use set() to remove duplicates when the user has a role assignment
+        # on a project and a group (in which the user is part of) has the same
+        # role on that project too.
+        for user_id, project_id in set(user_and_project_ids):
             payload = {'user_id': user_id, 'project_id': project_id}
             notifications.Audit.internal(
                 notifications.INVALIDATE_USER_PROJECT_TOKEN_PERSISTENCE,
