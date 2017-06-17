@@ -1012,7 +1012,6 @@ class Manager(manager.Manager):
 
         # Iterate over the assignments for this role and build the list of
         # user or user+project IDs for the tokens we need to delete
-        user_ids = set()
         user_and_project_ids = list()
         for assignment in assignments:
             # If we have a project assignment, then record both the user and
@@ -1060,11 +1059,8 @@ class Manager(manager.Manager):
         # Now process the built up lists.  Before issuing calls to delete any
         # tokens, let's try and minimize the number of calls by pruning out
         # any user+project deletions where a general token deletion for that
-        # same user is also planned.
-        user_and_project_ids_to_action = []
-        for user_and_project_id in user_and_project_ids:
-            if user_and_project_id[0] not in user_ids:
-                user_and_project_ids_to_action.append(user_and_project_id)
+        # same user+project is also planned.
+        user_and_project_ids_to_action = set(user_and_project_ids)
 
         for user_id, project_id in user_and_project_ids_to_action:
             payload = {'user_id': user_id, 'project_id': project_id}
