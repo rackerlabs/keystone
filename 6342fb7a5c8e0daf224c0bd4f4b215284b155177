@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f231b9d_ea928f9f",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-19T20:06:35Z",
+      "side": 1,
+      "message": "tagged*",
+      "range": {
+        "startLine": 7,
+        "startChar": 32,
+        "endLine": 7,
+        "endChar": 37
+      },
+      "revId": "6342fb7a5c8e0daf224c0bd4f4b215284b155177",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
