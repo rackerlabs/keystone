@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f231b9d_16d4dcbc",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1066,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-19T18:36:50Z",
+      "side": 0,
+      "message": "I think this actually doesn\u0027t work. It looks like user_ids is never added to, so this statement will always return true. So this change looks like it fixes the issue.",
+      "range": {
+        "startLine": 1066,
+        "startChar": 45,
+        "endLine": 1066,
+        "endChar": 53
+      },
+      "revId": "45265c0ddffa399fcb10bed6eac98069decdf910",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
