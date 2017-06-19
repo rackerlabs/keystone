@@ -22,6 +22,29 @@
       "revId": "6342fb7a5c8e0daf224c0bd4f4b215284b155177",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_aa16d7f0",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-06-19T20:16:40Z",
+      "side": 1,
+      "message": "missing .. rest_parameters:: directive, see rendering at [0]\n\n[0] http://docs-draft.openstack.org/96/472396/6/check/gate-keystone-api-ref/8594451//api-ref/build/html/v3/index.html?expanded\u003dlist-tags-for-a-project-detail,check-if-project-contains-tag-detail,remove-all-tags-from-a-project-detail,delete-single-tag-from-project-detail,modify-tag-list-for-a-project-detail,add-single-tag-to-a-project-detail#check-if-project-contains-tag",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 13
+      },
+      "revId": "6342fb7a5c8e0daf224c0bd4f4b215284b155177",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
