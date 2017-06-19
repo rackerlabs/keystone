@@ -121,6 +121,24 @@
     },
     {
       "key": {
+        "uuid": "7f231b9d_ec7f5212",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-19T17:42:38Z",
+      "side": 1,
+      "message": "I agree with this Kristi. I also think its better convention to fetch from the controller.",
+      "parentUuid": "7f231b9d_0bb97f13",
+      "revId": "c864bcc1ce405147604eccc6332e31044c3e80cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_7f2af5da",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 8
