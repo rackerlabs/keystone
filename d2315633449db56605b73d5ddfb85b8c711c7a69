@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_841310b9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-20T15:38:34Z",
+      "side": 1,
+      "message": "We should update the branch here to be doc-migration to match the spec: \n\nhttps://review.openstack.org/#/c/472275/8/specs/pike/os-manuals-migration.rst@240",
+      "revId": "d2315633449db56605b73d5ddfb85b8c711c7a69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
