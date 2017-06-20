@@ -22,6 +22,30 @@
       "revId": "5f4c2f5b8dca82b9f3a605d73bc987477a425468",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_6d732bb3",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2017-06-20T07:57:57Z",
+      "side": 1,
+      "message": "if there is an issue here, then it should be handled as a separate patch (and bug report)",
+      "parentUuid": "7f231b9d_b7a474a7",
+      "range": {
+        "startLine": 90,
+        "startChar": 46,
+        "endLine": 90,
+        "endChar": 56
+      },
+      "revId": "5f4c2f5b8dca82b9f3a605d73bc987477a425468",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
