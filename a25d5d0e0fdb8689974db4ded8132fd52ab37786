@@ -49,6 +49,24 @@
     },
     {
       "key": {
+        "uuid": "5f201791_ad2dc847",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-20T19:31:39Z",
+      "side": 1,
+      "message": "Oh - yes it was for clarity. I can refactor those bits out. Good catch.",
+      "parentUuid": "7f231b9d_ad3a6395",
+      "revId": "a25d5d0e0fdb8689974db4ded8132fd52ab37786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_920f4936",
         "filename": "keystone/tests/unit/test_v3_oauth1.py",
         "patchSetId": 1
