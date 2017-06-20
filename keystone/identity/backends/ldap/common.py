@@ -1248,6 +1248,10 @@ class BaseLdap(object):
                 conn.simple_bind_s()
 
             return conn
+        except ldap.INVALID_CREDENTIALS:
+            msg = self.LDAP_URL + ' - Invalid Credentials'
+            raise exception.LDAPServerConnectionError(
+                url=msg)
         except ldap.SERVER_DOWN:
             raise exception.LDAPServerConnectionError(
                 url=self.LDAP_URL)
