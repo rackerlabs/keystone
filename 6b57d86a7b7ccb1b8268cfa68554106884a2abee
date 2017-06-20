@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f201791_5b1efb70",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-20T14:23:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_c5eea4ec",
+      "range": {
+        "startLine": 15,
+        "startChar": 4,
+        "endLine": 15,
+        "endChar": 6
+      },
+      "revId": "6b57d86a7b7ccb1b8268cfa68554106884a2abee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_25879812",
         "filename": "api-ref/source/v3/project-tags.inc",
         "patchSetId": 7
@@ -36,6 +60,30 @@
       "writtenOn": "2017-06-19T21:02:26Z",
       "side": 1,
       "message": "nit: it seems like list and create share the same sample json",
+      "range": {
+        "startLine": 142,
+        "startChar": 49,
+        "endLine": 142,
+        "endChar": 53
+      },
+      "revId": "6b57d86a7b7ccb1b8268cfa68554106884a2abee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_9b2a538e",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-20T14:23:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_25879812",
       "range": {
         "startLine": 142,
         "startChar": 49,
