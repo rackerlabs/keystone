@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "5f201791_c305747c",
+        "filename": "keystone/common/policies/implied_role.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-20T21:58:12Z",
+      "side": 1,
+      "message": "After my change goes in, these will have to be updated to support HEAD: \n\nhttps://review.openstack.org/#/c/473912/2/keystone/assignment/routers.py",
+      "revId": "921f410685b37d88a9ec18d4326c820c906238f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f201791_83b1bce4",
         "filename": "keystone/common/policies/implied_role.py",
         "patchSetId": 6
