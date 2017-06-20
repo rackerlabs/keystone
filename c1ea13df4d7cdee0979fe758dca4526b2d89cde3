@@ -22,6 +22,24 @@
       "revId": "c1ea13df4d7cdee0979fe758dca4526b2d89cde3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_cd4484ba",
+        "filename": "keystone/tests/unit/test_v3_endpoint_policy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-20T19:44:32Z",
+      "side": 1,
+      "message": "Ah - this was for clarity, but I\u0027m ok removing it for now. If we decide to take a super explicit stance on this, we can remove the default and force it to be specified on every self.put()",
+      "parentUuid": "7f231b9d_527411fe",
+      "revId": "c1ea13df4d7cdee0979fe758dca4526b2d89cde3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
