@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_48baa2de",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-20T20:28:20Z",
+      "side": 1,
+      "message": "I don\u0027t think we need a separate rule for tags here (yet).",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 43
+      },
+      "revId": "261144e4376e407c91d641ce1ffc965046fad54c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_a82db647",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-20T20:28:20Z",
+      "side": 1,
+      "message": "I don\u0027t think you need this. In the spec we had decided that we will simply use the policy from /v3/projects.",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 40
+      },
+      "revId": "261144e4376e407c91d641ce1ffc965046fad54c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_e89dee66",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-20T20:28:20Z",
+      "side": 1,
+      "message": "We will also need to enforce regex here per the spec[0]. An easier regex to check against would probably be something like:\n\n/\\\\|,/g\n\nwhere that should match anything that is an INVALID tag.\n\nhttps://github.com/openstack/keystone-specs/blob/master/specs/keystone/pike/project-tags.rst#proposed-changes",
+      "range": {
+        "startLine": 224,
+        "startChar": 8,
+        "endLine": 224,
+        "endChar": 57
+      },
+      "revId": "261144e4376e407c91d641ce1ffc965046fad54c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_08c26a86",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-20T20:28:20Z",
+      "side": 1,
+      "message": "Part of below",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 9
+      },
+      "revId": "261144e4376e407c91d641ce1ffc965046fad54c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_0894aa8a",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-20T20:28:20Z",
+      "side": 1,
+      "message": "enabled*",
+      "range": {
+        "startLine": 307,
+        "startChar": 9,
+        "endLine": 307,
+        "endChar": 17
+      },
+      "revId": "261144e4376e407c91d641ce1ffc965046fad54c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_28c5268f",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-20T20:28:20Z",
+      "side": 1,
+      "message": "I think this patchset may need a rebase, this was removed in a previous change: https://review.openstack.org/#/c/470360/",
+      "range": {
+        "startLine": 813,
+        "startChar": 0,
+        "endLine": 837,
+        "endChar": 66
+      },
+      "revId": "261144e4376e407c91d641ce1ffc965046fad54c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
