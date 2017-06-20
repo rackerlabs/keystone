@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_2994078b",
+        "filename": "keystone/common/api_version_request.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-20T23:35:11Z",
+      "side": 1,
+      "message": "Some of Lance\u0027s comment from the previous patch hasn\u0027t been addressed.\ns/Depricated/Deprecated",
+      "range": {
+        "startLine": 20,
+        "startChar": 10,
+        "endLine": 20,
+        "endChar": 20
+      },
+      "revId": "44d128005b757af831c0675156052a7788fcd462",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_e98def7b",
+        "filename": "keystone/common/api_version_request.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-20T23:35:11Z",
+      "side": 1,
+      "message": "_DEPRECATED_API_VERSION",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 24
+      },
+      "revId": "44d128005b757af831c0675156052a7788fcd462",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_c9e8f317",
+        "filename": "keystone/common/api_version_request.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-20T23:35:11Z",
+      "side": 1,
+      "message": "deprecated",
+      "range": {
+        "startLine": 45,
+        "startChar": 4,
+        "endLine": 45,
+        "endChar": 14
+      },
+      "revId": "44d128005b757af831c0675156052a7788fcd462",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_29d9a782",
+        "filename": "keystone/version/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-20T23:35:11Z",
+      "side": 1,
+      "message": "deprecated",
+      "range": {
+        "startLine": 123,
+        "startChar": 16,
+        "endLine": 123,
+        "endChar": 39
+      },
+      "revId": "44d128005b757af831c0675156052a7788fcd462",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_e9e28f2f",
+        "filename": "keystone/version/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-20T23:35:11Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 125,
+        "startChar": 16,
+        "endLine": 125,
+        "endChar": 39
+      },
+      "revId": "44d128005b757af831c0675156052a7788fcd462",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_69d0bf51",
+        "filename": "keystone/version/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-20T23:35:11Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 127,
+        "startChar": 16,
+        "endLine": 127,
+        "endChar": 39
+      },
+      "revId": "44d128005b757af831c0675156052a7788fcd462",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
