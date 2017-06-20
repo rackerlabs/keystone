@@ -727,6 +727,13 @@ class BaseLDAPIdentity(LDAPTestSetup, IdentityTests, AssignmentTests,
                           user_id=user['id'],
                           password=None)
 
+    def test_authenticate_wrong_credentials(self):
+        self.assertRaises(exception.LDAPInvalidCredentialsError,
+                          self.identity_api.driver.user.get_connection,
+                          user='demo',
+                          password='demo',
+                          end_user_auth=True)
+
     @mock.patch.object(versionutils, 'report_deprecated_feature')
     def test_user_crud(self, mock_deprecator):
         # NOTE(stevemar): As of the Mitaka release, we now check for calls that
