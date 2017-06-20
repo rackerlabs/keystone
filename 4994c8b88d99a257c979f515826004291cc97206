@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_a3c03852",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-20T21:53:04Z",
+      "side": 1,
+      "message": "Cool - I\u0027ll remove this when my patches merge.",
+      "revId": "4994c8b88d99a257c979f515826004291cc97206",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_63afc094",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-20T21:53:04Z",
+      "side": 1,
+      "message": "I\u0027ll have to update this when https://review.openstack.org/#/c/473912/2/keystone/assignment/routers.py merges",
+      "revId": "4994c8b88d99a257c979f515826004291cc97206",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
