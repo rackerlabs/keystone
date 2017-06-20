@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_a3bdd969",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-20T21:35:31Z",
+      "side": 1,
+      "message": "Shouldn\u0027t need this",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 43
+      },
+      "revId": "fe472f9154840af2c9fe3ab25f6dc8a1a9bbb120",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_a3627915",
+        "filename": "keystone/conf/resource.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-20T21:35:31Z",
+      "side": 1,
+      "message": "Don\u0027t need to touch anything here.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 68
+      },
+      "revId": "fe472f9154840af2c9fe3ab25f6dc8a1a9bbb120",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_43a3a550",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1598,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-20T21:35:31Z",
+      "side": 1,
+      "message": "We also should add a test for valid \u0026 invalid regex tags as part of the url-safe checking.",
+      "revId": "fe472f9154840af2c9fe3ab25f6dc8a1a9bbb120",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_e3fcf13f",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1603,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-20T21:35:31Z",
+      "side": 1,
+      "message": "This looks like a copy of the one below.",
+      "range": {
+        "startLine": 1601,
+        "startChar": 0,
+        "endLine": 1603,
+        "endChar": 48
+      },
+      "revId": "fe472f9154840af2c9fe3ab25f6dc8a1a9bbb120",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
