@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_e3a87078",
+        "filename": "keystone/common/policies/implied_role.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-20T21:57:23Z",
+      "side": 1,
+      "message": "nit: we might be able to simplify this further without introducing yet another term (superior). \n\n  \u0027Get information about an association between two roles. When a relationship \u0027\n  \u0027exists between a prior_role and an implied_role and the prior_role is assigned \u0027\n  \u0027to a user, the user also assumes the implied role.\u0027\n\nBut in better wording? This might be something you can recycle in other descriptions here, too.",
+      "revId": "921f410685b37d88a9ec18d4326c820c906238f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_83b1bce4",
+        "filename": "keystone/common/policies/implied_role.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-20T21:57:23Z",
+      "side": 1,
+      "message": "nit: Check if a inference relationship exists between two roles* ?",
+      "revId": "921f410685b37d88a9ec18d4326c820c906238f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
