@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_ef517d64",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-20T16:04:08Z",
+      "side": 1,
+      "message": "Is this still under WIP? I rendered this locally and it looks like it\u0027s ready for some reviews.",
+      "revId": "e7afec6435fa75a5acf76275a0ad7a571e090352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_efd61dc4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-20T16:04:08Z",
+      "side": 1,
+      "message": "nit: For readability within Gerrit, it\u0027s recommended that you wrap git commit messages at 70 characters. This makes it so Gerrit can render the message without needed a horizontal scroll bar :)",
+      "revId": "e7afec6435fa75a5acf76275a0ad7a571e090352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_efff3d32",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-20T16:04:08Z",
+      "side": 1,
+      "message": "Since this is massaging information in the guides, we can track this against the doc-migration branch so that we\u0027re keeping tabs on the work.",
+      "revId": "e7afec6435fa75a5acf76275a0ad7a571e090352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_aa3133ef",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-20T16:04:08Z",
+      "side": 1,
+      "message": "I wonder if we should re-label this as API Documentation since user can mean so many different things (operators are users, developers can be users, api consumers can be users, etc..)\n\nWhat if we did something like:\n\n  API Documentation\n  ~~~~~~~~~~~~~~~~~\n\n  Users can find the full Identity API in the `OpenStack Identity API`_ documentation.",
+      "revId": "e7afec6435fa75a5acf76275a0ad7a571e090352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_ca90ef98",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-20T16:04:08Z",
+      "side": 1,
+      "message": "If we do rename the User Documentation section -\u003e API Documentation, it might not be a bad idea to list that one last and keep the Operator Documentation section next to the Developer Documentation sections.",
+      "revId": "e7afec6435fa75a5acf76275a0ad7a571e090352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
