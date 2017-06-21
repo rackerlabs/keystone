@@ -12,6 +12,5 @@ Developers Documentation
 
    development_environment.rst
    developing_drivers.rst
-   api_curl_examples.rst
    api_change_tutorial.rst
    services.rst
