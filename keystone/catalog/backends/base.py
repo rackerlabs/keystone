@@ -268,13 +268,15 @@ class CatalogDriverBase(object):
         """
         v2_catalog = self.get_catalog(user_id, project_id)
         v3_catalog = []
+        v3_services = {}
 
         for region_name, region in v2_catalog.items():
             for service_type, service in region.items():
-                service_v3 = {
-                    'type': service_type,
-                    'endpoints': []
-                }
+                if service_type not in v3_services:
+                    v3_services[service_type] = {
+                        'type': service_type,
+                        'endpoints': []
+                    }
 
                 for attr, value in service.items():
                     # Attributes that end in URL are interfaces. In the V2
@@ -285,7 +287,7 @@ class CatalogDriverBase(object):
                     #   'region: '<region_name>' }
                     if attr.endswith('URL'):
                         v3_interface = attr[:-len('URL')]
-                        service_v3['endpoints'].append({
+                        v3_services[service_type]['endpoints'].append({
                             'interface': v3_interface,
                             'region': region_name,
                             'url': value,
@@ -293,9 +295,10 @@ class CatalogDriverBase(object):
                         continue
 
                     # Other attributes are copied to the service.
-                    service_v3[attr] = value
+                    v3_services[service_type][attr] = value
 
-                v3_catalog.append(service_v3)
+        for v3_service in v3_services.values():
+            v3_catalog.append(v3_service)
 
         return v3_catalog
 
