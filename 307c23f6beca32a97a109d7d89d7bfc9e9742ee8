@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_0260efa4",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-21T14:15:13Z",
+      "side": 1,
+      "message": "This might be out of scope for this specific issue, but shouldn\u0027t we strip() both x-auth-token and x-subject-token?\n\nA user can pass an x-subject-token and an x-auth-token to validate the token in the x-subject-token header, shouldn\u0027t we take the same steps to sanitize that data?\n\nI\u0027m not sure if that\u0027s actually an issue, but we could try and recreate it. I\u0027d be fine documenting that and fixing in a separate patch though, too.",
+      "revId": "307c23f6beca32a97a109d7d89d7bfc9e9742ee8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
