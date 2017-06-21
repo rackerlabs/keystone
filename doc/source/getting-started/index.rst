@@ -3,10 +3,11 @@ Getting Started
 ===============
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     installing.rst
     upgrading.rst
+    best-practises.rst
     performance.rst
     apache-httpd.rst
     architecture.rst
