@@ -46,6 +46,24 @@
       "revId": "40e2ecbfdd7ad73dcef4f4ca9ee49571c21ff57a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_22a9ab7a",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1254,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-21T14:21:07Z",
+      "side": 1,
+      "message": "Every time we get to this point, we\u0027ll be advertising that self.LDAP_URL is wrong. That seems a bit misleading since the exception excepts ldap.INVALID_CREDENTIALS. If the exception we\u0027re catching from ldap means something other than that, we should update with a comment.\n\nAs I read this, it seems like I\u0027m going to get some Invalid URL exception when I supply wrong credentials. Also, should we be exposing the LDAP url to the user? Can we relay that information in a more opaque but useful way?",
+      "parentUuid": "5f201791_45915f52",
+      "revId": "40e2ecbfdd7ad73dcef4f4ca9ee49571c21ff57a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
