@@ -58,6 +58,24 @@
       "revId": "5cc471205490ce34f01ae5429ad9c27e0f98dc2b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_f63255a7",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-21T16:08:57Z",
+      "side": 1,
+      "message": "That\u0027s a good point - Morgan had some good context around how to handle this. I can follow up with him.",
+      "parentUuid": "df140735_42872311",
+      "revId": "5cc471205490ce34f01ae5429ad9c27e0f98dc2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
