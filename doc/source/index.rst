@@ -79,3 +79,8 @@ the keystone service.
 API Documentation
 ~~~~~~~~~~~~~~~~~
 An end user can find the specific API documentation here, `OpenStack's Identity API`_.
+
+.. toctree::
+    :maxdepth: 2
+
+    api_curl_examples.rst
