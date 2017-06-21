@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_3bac368b",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-21T15:44:26Z",
+      "side": 1,
+      "message": "Not sure if we want to let the user know that it\u0027s authenticating against an LDAP server specifically? Otherwise I think we could go with maybe a more generic message about what backend is being used.",
+      "range": {
+        "startLine": 603,
+        "startChar": 55,
+        "endLine": 603,
+        "endChar": 66
+      },
+      "revId": "379b3005b851325f35e0a38938e76295afc3a44f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
