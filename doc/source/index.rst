@@ -48,6 +48,7 @@ please see the subsequent sections.
 
     related_projects.rst
     getting-started/index.rst
+    http-api.rst
     man/index.rst
     code_documentation.rst
     indices-tables.rst
