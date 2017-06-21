@@ -22,6 +22,24 @@
       "revId": "7d9a4ed250b59b2d0dacfbe92954447b1efb18e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_d832e8a7",
+        "filename": "keystone/common/policies/identity_provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-21T15:06:16Z",
+      "side": 1,
+      "message": "Aha - good catch.",
+      "parentUuid": "7f231b9d_97e08298",
+      "revId": "7d9a4ed250b59b2d0dacfbe92954447b1efb18e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
