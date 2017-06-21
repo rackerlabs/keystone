@@ -22,6 +22,24 @@
       "revId": "f8bd2b7a627466f8b1650fc9d604b924f67728fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_d80ae888",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5105,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-21T15:11:14Z",
+      "side": 1,
+      "message": "Probably - let me test locally and push a new revision if so.",
+      "parentUuid": "7f231b9d_fca31d9d",
+      "revId": "f8bd2b7a627466f8b1650fc9d604b924f67728fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
