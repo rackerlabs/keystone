@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_16f3880c",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-21T21:54:44Z",
+      "side": 1,
+      "message": "I wouldn\u0027t be opposed to omitting these in favor of better API docs. Historically, the curl example documentation was tailored to developers doing things without a client.\n\nInstead of tacking this on as an extension of the API reference section, we should see what\u0027s different between the curl examples and the API reference and make the API reference better.",
+      "revId": "ceb973fc46bdc152ad48bddf79660215059ee5ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
