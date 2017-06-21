@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_e5e17dd2",
+        "filename": "doc/source/getting-started/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 25559
+      },
+      "writtenOn": "2017-06-21T14:46:25Z",
+      "side": 1,
+      "message": "The sections here listed are very small and linked to each other, so rather than adding different elements in toctree, I made under a single section. Now they all render on the same page.",
+      "range": {
+        "startLine": 9,
+        "startChar": 17,
+        "endLine": 10,
+        "endChar": 4
+      },
+      "revId": "955f008abab2694662cb161d842d412b9459c63c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
