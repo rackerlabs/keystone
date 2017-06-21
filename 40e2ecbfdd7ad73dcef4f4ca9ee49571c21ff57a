@@ -64,6 +64,24 @@
       "revId": "40e2ecbfdd7ad73dcef4f4ca9ee49571c21ff57a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_3b91d69a",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1254,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-21T15:34:15Z",
+      "side": 1,
+      "message": "I was reusing [0] which shouldn\u0027t expose the LDAP url to the user, but we can create an exception specifically for this situation with a better message for the user.\n\n[0] https://github.com/openstack/keystone/blob/master/keystone/exception.py#L597",
+      "parentUuid": "5f201791_22a9ab7a",
+      "revId": "40e2ecbfdd7ad73dcef4f4ca9ee49571c21ff57a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
