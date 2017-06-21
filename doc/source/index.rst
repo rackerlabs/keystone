@@ -74,6 +74,9 @@ the keystone service.
 
     configuration.rst
     advanced-topics/index.rst
+    operator-docs/database-migration.rst
+    operator-docs/id-manage.rst
+    operator-docs/translated-responses.rst
     sample_files/index.rst
 
 API Documentation
