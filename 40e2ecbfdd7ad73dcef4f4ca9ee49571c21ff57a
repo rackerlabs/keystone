@@ -22,6 +22,30 @@
       "revId": "40e2ecbfdd7ad73dcef4f4ca9ee49571c21ff57a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_45915f52",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1254,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2017-06-21T07:56:54Z",
+      "side": 1,
+      "message": "I agree...given that we are doing the work to give ourselves a better message, let\u0027s make it nice!",
+      "parentUuid": "5f201791_6cd0c8f8",
+      "range": {
+        "startLine": 1253,
+        "startChar": 28,
+        "endLine": 1254,
+        "endChar": 23
+      },
+      "revId": "40e2ecbfdd7ad73dcef4f4ca9ee49571c21ff57a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
