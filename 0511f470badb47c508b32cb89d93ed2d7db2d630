@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_b63854d3",
+        "filename": "doc/source/getting-started/best-practises.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-21T21:51:00Z",
+      "side": 1,
+      "message": "best-practices*",
+      "revId": "0511f470badb47c508b32cb89d93ed2d7db2d630",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_16570805",
+        "filename": "doc/source/getting-started/best-practises.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-21T21:51:00Z",
+      "side": 1,
+      "message": "We could update this to have the develop generate their own sample instead of relying on the one in tree - which is only updated periodically.",
+      "revId": "0511f470badb47c508b32cb89d93ed2d7db2d630",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_7632bcf3",
+        "filename": "doc/source/getting-started/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-21T21:51:00Z",
+      "side": 1,
+      "message": "best-practices*",
+      "revId": "0511f470badb47c508b32cb89d93ed2d7db2d630",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
