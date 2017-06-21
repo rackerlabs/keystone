@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f201791_d83b089a",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-21T15:04:18Z",
+      "side": 1,
+      "message": "Removed the expected_status for the sake of redundancy.",
+      "revId": "0664dba67d76975f841f14c6bc65efb3b8ec0f46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_76616ca9",
         "filename": "keystone/tests/unit/test_v3_trust.py",
         "patchSetId": 1
@@ -43,6 +60,58 @@
         "endLine": 117,
         "endChar": 59
       },
+      "revId": "0664dba67d76975f841f14c6bc65efb3b8ec0f46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_98d0f052",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-21T15:04:18Z",
+      "side": 1,
+      "message": "Yeah - there is a lot of duplication of patterns here... which is something we could definitely improve.",
+      "parentUuid": "7f231b9d_69318aec",
+      "revId": "0664dba67d76975f841f14c6bc65efb3b8ec0f46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_9845901a",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-21T15:04:18Z",
+      "side": 1,
+      "message": "Removed the expected_status for the sake of redundancy.",
+      "revId": "0664dba67d76975f841f14c6bc65efb3b8ec0f46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_784ab427",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-21T15:04:18Z",
+      "side": 1,
+      "message": "Removed the expected_status for the sake of redundancy.",
       "revId": "0664dba67d76975f841f14c6bc65efb3b8ec0f46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
