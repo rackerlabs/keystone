@@ -264,8 +264,8 @@ class ProjectV3(controller.V3Controller):
         # the domain to which the client's token is scoped.
         if not ref.get('is_domain'):
             domain_id = ref.get('domain_id')
-            if not domain_id:
-                domain_id = ref.get('parent_id')
+            # if not domain_id:
+            #    domain_id = ref.get('parent_id')
             if not domain_id:
                 domain_id = request.context.domain_id
             if not domain_id:
