@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_6cd0c8f8",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1254,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-06-21T05:44:58Z",
+      "side": 1,
+      "message": "Perhaps we can create a new exception with different message format.  \"self.LDAP_URL + \u0027 - Invalid Credentials\u0027\" isn\u0027t a valid url.",
+      "range": {
+        "startLine": 1253,
+        "startChar": 28,
+        "endLine": 1254,
+        "endChar": 23
+      },
+      "revId": "40e2ecbfdd7ad73dcef4f4ca9ee49571c21ff57a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
