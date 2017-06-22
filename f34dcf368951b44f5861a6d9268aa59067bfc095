@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_d4596c5a",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-22T18:20:16Z",
+      "side": 1,
+      "message": "and I think we need a new private method for this instead of using the same method used by Project, since domain_id is not going to be in the ref. Or might not even need this at all",
+      "range": {
+        "startLine": 226,
+        "startChar": 31,
+        "endLine": 226,
+        "endChar": 48
+      },
+      "revId": "f34dcf368951b44f5861a6d9268aa59067bfc095",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_f408e82d",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-22T18:20:16Z",
+      "side": 1,
+      "message": "this also.",
+      "range": {
+        "startLine": 235,
+        "startChar": 16,
+        "endLine": 235,
+        "endChar": 63
+      },
+      "revId": "f34dcf368951b44f5861a6d9268aa59067bfc095",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_bf35a9dc",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-22T18:20:16Z",
+      "side": 1,
+      "message": "with sql.session_for_read() as session:",
+      "range": {
+        "startLine": 251,
+        "startChar": 8,
+        "endLine": 251,
+        "endChar": 13
+      },
+      "revId": "f34dcf368951b44f5861a6d9268aa59067bfc095",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_ff120158",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-22T18:20:16Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 257,
+        "startChar": 34,
+        "endLine": 257,
+        "endChar": 51
+      },
+      "revId": "f34dcf368951b44f5861a6d9268aa59067bfc095",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_5f9e95b8",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-22T18:20:16Z",
+      "side": 1,
+      "message": "i think this would get 3 arguments expected, got 2",
+      "range": {
+        "startLine": 284,
+        "startChar": 36,
+        "endLine": 284,
+        "endChar": 54
+      },
+      "revId": "f34dcf368951b44f5861a6d9268aa59067bfc095",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_d4abac1a",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-22T18:20:16Z",
+      "side": 1,
+      "message": "should delete this at some point",
+      "range": {
+        "startLine": 327,
+        "startChar": 0,
+        "endLine": 328,
+        "endChar": 35
+      },
+      "revId": "f34dcf368951b44f5861a6d9268aa59067bfc095",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
