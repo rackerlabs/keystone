@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_b445d045",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-22T17:42:48Z",
+      "side": 0,
+      "message": "This whole paragraph could be reworked to just explain keystone\u0027s support SQL as a persistent token backend.",
+      "revId": "6b24ba507c2a001e2b95ee598e0f0f5b66c11bff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_5470bca5",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-22T17:42:48Z",
+      "side": 0,
+      "message": "A list of one doesn\u0027t make too much sense. Instead, we could just have a statement that says keystone support SQL for persisting tokens and that\u0027s it.",
+      "revId": "6b24ba507c2a001e2b95ee598e0f0f5b66c11bff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
