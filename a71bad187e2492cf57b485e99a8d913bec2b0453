@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_d49e0c62",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-22T17:54:32Z",
+      "side": 1,
+      "message": "never mind on this since session is passed... pep8 just complains",
+      "range": {
+        "startLine": 245,
+        "startChar": 16,
+        "endLine": 245,
+        "endChar": 23
+      },
+      "revId": "a71bad187e2492cf57b485e99a8d913bec2b0453",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
