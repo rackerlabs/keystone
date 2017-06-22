@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_711d0a72",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-06-22T17:36:51Z",
+      "side": 1,
+      "message": "It",
+      "range": {
+        "startLine": 592,
+        "startChar": 44,
+        "endLine": 592,
+        "endChar": 49
+      },
+      "revId": "a802f56a71c4fd32acf38a5f282dedee21384382",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_d12e1ea4",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-06-22T17:36:51Z",
+      "side": 1,
+      "message": "s/backends/backend",
+      "range": {
+        "startLine": 592,
+        "startChar": 34,
+        "endLine": 592,
+        "endChar": 42
+      },
+      "revId": "a802f56a71c4fd32acf38a5f282dedee21384382",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
