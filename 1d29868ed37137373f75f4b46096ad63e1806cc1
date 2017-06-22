@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_cd30b6eb",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 664,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-06-22T22:28:31Z",
+      "side": 0,
+      "message": "This section is describing how the migration code works under the hood and how developers should be writing migration code, it\u0027s not about how an operator should run a migration. I don\u0027t think it should be moved.",
+      "revId": "1d29868ed37137373f75f4b46096ad63e1806cc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_6d576204",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 727,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-06-22T22:28:31Z",
+      "side": 0,
+      "message": "This is describing the implementation details of domain-specific backends, it is not relevant to operators. I do not think it should be moved.",
+      "revId": "1d29868ed37137373f75f4b46096ad63e1806cc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_4d5a662a",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 765,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-06-22T22:28:31Z",
+      "side": 0,
+      "message": "This is about generating translations, it is not relevant to operators. I do not think it should be moved.",
+      "revId": "1d29868ed37137373f75f4b46096ad63e1806cc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
