@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f201791_949534e7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 25559
+      },
+      "writtenOn": "2017-06-22T18:09:39Z",
+      "side": 1,
+      "message": "Yes this patch is quite under progress, the docs migrated are being worked upon by the docs team (OS related changes). We may even need to abandon this. Also it needs some changes in overall layout.",
+      "parentUuid": "5f201791_94d3f438",
+      "revId": "327e99520f15bc0b86796f8a32c1f211e79cb07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f201791_3444201b",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
