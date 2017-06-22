@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f201791_74bf38d0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-22T17:52:32Z",
+      "side": 1,
+      "message": "We can add a:\n\n  Depends-On: Ia750cb049c0f53a234ea70ce1f2bbbb7a2aa9454\n\nhere to make sure the specification merges before any of the migration happens.",
+      "revId": "d2315633449db56605b73d5ddfb85b8c711c7a69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f201791_841310b9",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
