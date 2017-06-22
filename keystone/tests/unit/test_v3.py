@@ -875,6 +875,11 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             self.assertEqual(ref['domain_id'], entity['domain_id'])
         return entity
 
+    def assertValidProjectTag(self, entity, ref=None):
+        if ref:
+            self.assertEqual(ref['project_id'], entity['project_id'])
+        return entity
+
     # user validation
 
     def assertValidUserListResponse(self, resp, *args, **kwargs):
