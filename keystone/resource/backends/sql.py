@@ -11,6 +11,7 @@
 # under the License.
 
 from oslo_log import log
+from six import text_type
 
 from keystone.common import driver_hints
 from keystone.common import sql
@@ -33,6 +34,12 @@ class Resource(base.ResourceDriverBase):
             return new_ref
         else:
             return ref
+
+    def _encode_list_to_unicode(self, values):
+        new_values = []
+        for val in values:
+            new_values.append(text_type(val))
+        return new_values
 
     def _is_hidden_ref(self, ref):
         return ref.id == base.NULL_DOMAIN_ID
@@ -164,6 +171,87 @@ class Resource(base.ResourceDriverBase):
                 project = parent_project
             return parents
 
+    def list_projects_with_tags(self, tag_names):
+        with sql.session_for_read() as session:
+            tag_names = self._encode_list_to_unicode(tag_names)
+            # filter with names to get the related project ids
+            relevant_project_ids = []
+            filtered_project_ids = []
+            # Extract out unique project ids that contain any of
+            # provided tags
+            query = session.query(ProjectTag)
+            query = query.filter(ProjectTag.name.in_(tag_names))
+            query = query.distinct(
+                ProjectTag.project_id).group_by(ProjectTag.project_id)
+            for q in query:
+                    relevant_project_ids.append(q['project_id'])
+            # With a unique list, query the ProjectTags table
+            # and filter out the project ids if the relevant ids
+            # identified have the exact same tag names provided
+            for project_id in relevant_project_ids:
+                query = session.query(ProjectTag)
+                query = query.filter(ProjectTag.project_id == project_id)
+                result = map(lambda x: x['name'], query.all())
+                if sorted(result) == sorted(tag_names):
+                    filtered_project_ids.append(project_id)
+            return filtered_project_ids
+
+    def list_projects_with_tags_any(self, tag_names):
+        with sql.session_for_read() as session:
+            tag_names = self._encode_list_to_unicode(tag_names)
+            filtered_project_ids = []
+            query = session.query(ProjectTag)
+            query = query.filter(ProjectTag.name.in_(tag_names))
+            query = query.distinct(
+                ProjectTag.project_id).group_by(ProjectTag.project_id)
+            for q in query:
+                filtered_project_ids.append(q['project_id'])
+            return filtered_project_ids
+
+    def list_projects_not_tags(self, tag_names):
+        with sql.session_for_read() as session:
+            tag_names = self._encode_list_to_unicode(tag_names)
+            relevant_project_ids = []
+            blacklist_project_ids = []
+            filtered_project_ids = []
+            query = session.query(ProjectTag)
+            query = query.filter(ProjectTag.name.in_(tag_names))
+            query = query.distinct(
+                ProjectTag.project_id).group_by(ProjectTag.project_id)
+            for q in query:
+                    relevant_project_ids.append(q['project_id'])
+            for relevant_id in relevant_project_ids:
+                query = session.query(ProjectTag)
+                query = query.filter(ProjectTag.project_id == relevant_id)
+                names = query.distinct(ProjectTag.name).all()
+                result = map(lambda x: x['name'], names)
+                if sorted(result) == sorted(tag_names):
+                    blacklist_project_ids.append(relevant_id)
+            query = session.query(Project)
+            for q in query:
+                if q['id'] not in blacklist_project_ids:
+                    filtered_project_ids.append(q['id'])
+            return filtered_project_ids
+
+    def list_projects_not_tags_any(self, tag_names):
+        with sql.session_for_read() as session:
+            tag_names = self._encode_list_to_unicode(tag_names)
+            blacklist_project_ids = []
+            filtered_project_ids = []
+            # if project_id associated with a tag, then blacklist that tag
+            query = session.query(ProjectTag)
+            query = query.filter(ProjectTag.name.in_(tag_names))
+            query = query.distinct(
+                ProjectTag.project_id).group_by(ProjectTag.project_id)
+            for q in query:
+                    blacklist_project_ids.append(q['project_id'])
+            # list all project is except for those blacklisted
+            query = session.query(Project)
+            for q in query:
+                if q['id'] not in blacklist_project_ids:
+                    filtered_project_ids.append(q['id'])
+            return filtered_project_ids
+
     def is_leaf_project(self, project_id):
         with sql.session_for_read() as session:
             project_refs = self._get_children(session, [project_id])
@@ -217,6 +305,53 @@ class Resource(base.ResourceDriverBase):
                                 'deleted.', project_id)
             query.delete(synchronize_session=False)
 
+    def get_project_tag(self, project_id, tag_name):
+        with sql.session_for_read() as session:
+            query = session.query(ProjectTag)
+            query = query.filter(ProjectTag.project_id == project_id)
+            tag_name = text_type(tag_name)
+            try:
+                project_tag_ref = query.filter(
+                    ProjectTag.name == tag_name).one()
+            except sql.NotFound:
+                raise exception.ProjectTagNotFound(project_tag=tag_name)
+            return project_tag_ref.to_dict()
+
+    @sql.handle_conflicts(conflict_type='project_tag')
+    def create_project_tag(self, project_tag):
+        with sql.session_for_write() as session:
+            project_tag['name'] = text_type(project_tag['name'])
+            project_tag_ref = ProjectTag.from_dict(project_tag)
+            session.merge(project_tag_ref)
+            return project_tag_ref.to_dict()
+
+    def list_project_tags(self, project_id):
+        with sql.session_for_read() as session:
+            query = session.query(ProjectTag)
+            project_tag_refs = query.filter(
+                ProjectTag.project_id == project_id)
+            return [project_tag_ref.to_dict()['name']
+                    for project_tag_ref in project_tag_refs]
+
+    @sql.handle_conflicts(conflict_type='project_tag')
+    def delete_project_tag(self, project_id, tag_name):
+        with sql.session_for_write() as session:
+            query = session.query(ProjectTag)
+            tag_name = text_type(tag_name)
+            # below won't work with filter_limit_query unless hint is passed
+            query = query.filter(
+                ProjectTag.project_id == project_id)
+            project_tag_refs = query.filter(
+                ProjectTag.name == tag_name).delete()
+
+    @sql.handle_conflicts(conflict_type='project_tag')
+    def delete_project_tags(self, project_id):
+        with sql.session_for_write() as session:
+            query = session.query(ProjectTag)
+            # below won't work with filter_limit_query unless hint is passed
+            project_tag_refs = query.filter(
+                ProjectTag.project_id == project_id).delete()
+
 
 class Project(sql.ModelBase, sql.ModelDictMixinWithExtras):
     # NOTE(henry-nash): From the manager and above perspective, the domain_id
@@ -249,3 +384,18 @@ class Project(sql.ModelBase, sql.ModelDictMixinWithExtras):
     # Unique constraint across two columns to create the separation
     # rather than just only 'name' being unique
     __table_args__ = (sql.UniqueConstraint('domain_id', 'name'),)
+
+
+class ProjectTag(sql.ModelBase, sql.ModelDictMixin):
+
+    def to_dict(self):
+        d = super(ProjectTag, self).to_dict()
+        return d
+
+    __tablename__ = 'project_tag'
+    attributes = ['project_id', 'name']
+    project_id = sql.Column(
+        sql.String(64), sql.ForeignKey('project.id', ondelete='CASCADE'),
+        nullable=False, primary_key=True)
+    name = sql.Column(sql.Unicode(60), nullable=False, primary_key=True)
+    __table_args__ = (sql.UniqueConstraint('project_id', 'name'),)
