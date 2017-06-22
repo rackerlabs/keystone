@@ -22,8 +22,8 @@ Prerequisites
 -------------
 
 In order to follow this tutorial, it is assumed that you have read our
-:doc:`development_best_practices` and :doc:`../getting-started/architecture`
-documents.
+:doc:`../getting-started/basic-guidelines` and
+:doc:`../getting-started/architecture` documents.
 
 Proposing a change
 ------------------
