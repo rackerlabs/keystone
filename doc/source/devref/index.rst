@@ -24,8 +24,5 @@
    testing-keystone.rst
    doctor-checks.rst
    api_change_tutorial.rst
-   services.rst
-   filtering-responsibilities.rst
-   list-truncation.rst
-   caching-layer.rst
-   developing_drivers.rst
+   architecture.rst
+   external-dev.rst
