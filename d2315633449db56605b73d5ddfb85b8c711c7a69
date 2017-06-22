@@ -16,6 +16,91 @@
       "revId": "d2315633449db56605b73d5ddfb85b8c711c7a69",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_0be22430",
+        "filename": "doc/source/admin-guide/identity-caching-layer.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-22T15:49:14Z",
+      "side": 1,
+      "message": "We have our own version of this document in our devref as well. We should consolidate the two into a single document and keep it in the admin-guide.",
+      "revId": "d2315633449db56605b73d5ddfb85b8c711c7a69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_eb76c8a4",
+        "filename": "doc/source/admin-guide/identity-certificates-for-pki.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-22T15:49:14Z",
+      "side": 1,
+      "message": "Since keystone doesn\u0027t support PKI tokens and hasn\u0027t for a while now, we should rip this out in a subsequent patch.",
+      "revId": "d2315633449db56605b73d5ddfb85b8c711c7a69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_0b8d847a",
+        "filename": "doc/source/admin-guide/identity-integrate-with-ldap.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-22T15:49:14Z",
+      "side": 1,
+      "message": "We have a \"Using an LDAP server\" section in out devref somewhere. We should port valuable bits from that document to this one and remove it. Integrating with LDAP seems to fit perfectly in the admin-guide so it\u0027d be great to have a single document, or source of truth for it.",
+      "revId": "d2315633449db56605b73d5ddfb85b8c711c7a69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_2bf160ce",
+        "filename": "doc/source/admin-guide/identity-keystone-usage-and-features.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-22T15:49:14Z",
+      "side": 1,
+      "message": "This note can be removed - https://github.com/openstack/keystone/commit/b8b1e189306539007b6afa052b6c9f909cad41a0",
+      "revId": "d2315633449db56605b73d5ddfb85b8c711c7a69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_cb3aec96",
+        "filename": "doc/source/admin-guide/identity-security-compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-22T15:49:14Z",
+      "side": 1,
+      "message": "Same comment here. We have our own version of this document in devref that we can now consolidate into a single, well written document.",
+      "revId": "d2315633449db56605b73d5ddfb85b8c711c7a69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
