@@ -239,6 +239,8 @@ class DomainConfigV3(controller.V3Controller):
         ref = self.domain_config_api.get_config_default(group, option)
         return {self.member_name: ref}
 
+# TODO(aselius): Use the resource_api in core.py as wrapper for the function
+
 
 @dependency.requires('resource_api')
 class ProjectV3(controller.V3Controller):
@@ -280,6 +282,9 @@ class ProjectV3(controller.V3Controller):
         if 'is_domain' not in request.params:
             hints.add_filter('is_domain', '0')
         refs = self.resource_api.list_projects(hints=hints)
+        for ref in refs:
+            ref['tags'] = self.resource_api.list_project_tags_by_name(
+                ref['id'])
         return ProjectV3.wrap_collection(request.context_dict,
                                          refs, hints=hints)
 
@@ -329,6 +334,7 @@ class ProjectV3(controller.V3Controller):
     @controller.protected()
     def get_project(self, request, project_id):
         ref = self.resource_api.get_project(project_id)
+        ref['tags'] = self.resource_api.list_project_tags_by_name(ref['id'])
         self._expand_project_ref(request, ref)
         return ProjectV3.wrap_member(request.context_dict, ref)
 
@@ -345,5 +351,79 @@ class ProjectV3(controller.V3Controller):
     @controller.protected()
     def delete_project(self, request, project_id):
         return self.resource_api.delete_project(
+            project_id,
+            initiator=request.audit_initiator)
+
+
+@dependency.requires('resource_api')
+class ProjectTagV3(controller.V3Controller):
+    # TODO(aselius): Add notifications for created, updated, deleted.
+    collection_name = 'tags'
+    member_name = 'tag'
+
+    def __init__(self):
+        super(ProjectTagV3, self).__init__()
+        self.get_member_from_driver = self.resource_api.get_project_tag
+
+    @controller.protected()
+    def create_project_tag(self, request, project_tag):
+        validation.lazy_validate(schema.project_tag_create, project_tag)
+        ref = self._assign_unique_id(self._normalize_dict(project_tag))
+
+        try:
+            ref = self.resource_api.create_project_tag(
+                ref['id'], ref, initiator=request.audit_initiator)
+        except (exception.ProjectNotFound) as e:
+            raise exception.ValidationError(e)
+        return ProjectTagV3.wrap_member(request.context_dict, ref)
+
+    @controller.protected()
+    def get_project_tag(self, request, project_tag_id):
+        ref = self.resource_api.get_project_tag(project_tag_id)
+        return ProjectTagV3.wrap_member(request.context_dict, ref)
+
+    @controller.protected()
+    def check_if_project_contains_tag(self, request, project_id,
+                                      project_tag_id):
+        ref = self.resource_api.check_if_project_contains_tag(
+            project_id, project_tag_id)
+        return ProjectTagV3.wrap_member(request.context_dict, ref)
+
+    @controller.protected()
+    def delete_project_tag(self, request, project_tag_id):
+        return self.resoure_api.delete_project_tag(
+            project_tag_id,
+            initiator=request.audit_initiator)
+
+    # TODO(aselius): Add hints to provide more info about limits etc.
+    @controller.protected()
+    def list_project_tags(self, request, project_tag_id):
+        refs = self.resource_api.list_project_tags(project_tag_id)
+        return ProjectTagV3.wrap_collection(request.context_dict, refs)
+
+    def _construct_project_tag_ref(self, **kwargs):
+        ref = {
+            'id': None,
+            'name': None,
+            'project_id': None
+        }
+        ref.update(kwargs)
+        return ref
+
+    @controller.protected()
+    def update_project_tags(self, request, project_id, project_tag_names):
+        validation.lazy(schema.project_tag_update, project_tag_names)
+        project_tags = []
+        for project_tag_name in project_tag_names:
+            project_tag = self._assign_unique_id(
+                self._construct_project_tag_ref(name=project_tag_name))
+            project_tags.append(project_tag)
+        ref = self.resource_api.update_project_tag(
+            project_id, project_tags, initiator=request.audit_initiator)
+        return ProjectTagV3.wrap_member(request.context_dict, ref)
+
+    @controller.protected()
+    def remove_all_project_tags(self, request, project_id):
+        return self.resource_api.remove_all_project_tags(
             project_id,
             initiator=request.audit_initiator)
