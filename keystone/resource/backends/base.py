@@ -261,3 +261,78 @@ class ResourceDriverBase(object):
 
         """
         raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def get_project_tag(self, project_id, tag_name):
+        """Get project tag for project.
+
+        :param project_id:
+        :param tag_name:
+
+        :raises keystone.exception.ProjectTagNotFound: if project_tag
+                                                       does not exist
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def create_project_tag(self, project_tag):
+        """Create the specified tag and adds it to the list in the project.
+
+        :param dict project_tag: The new project tag
+
+        Project tags schema::
+
+            type: object
+            properties:
+                name:
+                    type: string
+                project_id:
+                    type: [string, null]
+            required: [name, project_id]
+            additionalProperties: false
+
+        :returns: tag location in the header.
+        :raises keystone.exception.ProjectNotFound: if project_id does not
+                                                    exist
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def list_project_tags(self, project_id):
+        """List project tags for the provided project id.
+
+        :param project_id:
+
+        :returns: a dictionary of project tag names.
+        :raises keystone.exception.ProjectNotFound: if project_id does not
+                                                    exist
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def delete_project_tag(self, project_id, tag_name):
+        """Delete project tag with provided tag id.
+
+        :param project_id:
+        :param tag_name:
+
+        :raises keystone.exception.ProjectNotFound: if project_id does not
+                                                    exist
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def delete_all_project_tags(self, project_id):
+        """Remove the entire tag list from the given project.
+
+        :param project_id:
+
+        :raises keystone.exception.ProjectNotFound: if project_id does not
+                                                    exist
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
