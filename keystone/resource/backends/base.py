@@ -261,3 +261,15 @@ class ResourceDriverBase(object):
 
         """
         raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def list_projects_by_tags(self, tags, operator):
+        """Filter for projects by tags.
+
+        :param tags:
+        :param operator:
+
+        :returns: a list of filtered project IDs
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
