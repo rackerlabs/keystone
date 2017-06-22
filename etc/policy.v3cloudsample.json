@@ -46,7 +46,7 @@
     "identity:delete_project_tag": "rule:admin_required",
     "identity:get_project_tag": "rule:admin_required",
     "identity:list_project_tags": "rule:admin_required",
-    "identity:remove_all_project_tags": "rule:admin_required",
+    "identity:delete_all_project_tags": "rule:admin_required",
     "identity:update_project_tags": "rule:admin_required",
 
     "admin_and_matching_target_user_domain_id": "rule:admin_required and domain_id:%(target.user.domain_id)s",
