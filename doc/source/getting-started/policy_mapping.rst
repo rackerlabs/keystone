@@ -205,6 +205,12 @@ identity:delete_domain_config                              - DELETE /v3/domains/
 identity:get_domain_config_default                         - GET /v3/domains/config/default
                                                            - GET /v3/domains/config/{group}/default
                                                            - GET /v3/domains/config/{group}/{option}/default
+identity:create_project_tag                                - PUT /v3/projects/{project_id}/tags/{tag_name}
+identity:delete_project_tag                                - DELETE /v3/projects/{project_id}/tags/{tag_name}
+identity:get_project_tag                                   - GET /v3/projects/{project_id}/tags/{tag_name}
+identity:list_project_tags                                 - GET /v3/projects/{project_id}/tags
+identity:remove_all_project_tags                           - PUT /v3/projects/{project_id}/tags
+identity:update_project_tags                               - PUT /v3/projects/{project_id}/tags
 =========================================================  ===
 
 .. _grant_resources:
