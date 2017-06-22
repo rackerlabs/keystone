@@ -712,6 +712,104 @@ class ResourceTestCase(test_v3.RestfulTestCase,
 
         return projects
 
+    def _create_project_and_tags(self, tag_size=1):
+        """Create a project and a number of tags attached to that project.
+
+        :param tag_size: the desired number of tags created with a specified
+                         project.
+
+        :returns project: the project that was created.
+        :returns tags: a list of project tags that were attached to the
+                       project.
+        """
+        new_ref = unit.new_project_ref()
+        resp = self.post('/projects', body={'project': new_ref})
+
+        tags = []
+
+        for i in range(tag_size):
+            tag_ref = unit.new_project_tag_ref(project_id=new_ref['id'])
+            resp = self.put('/projects/$(project_id)s/tags/%(value)s' % {
+                'project_id': tag_ref['project_id'],
+                'value': tag_ref['name']})
+            self.assertValidProjectTagResponse(resp, tag_ref)
+
+            tags.append(resp.result)
+
+        return resp.result, tags
+
+    def test_list_projects_filtering_by_tags(self):
+        """Call ``GET /projects?tags={tags}``."""
+        project, tags = self._create_project_and_tags(tag_size=2)
+        # Create a list of tags and a project
+        tag_names = []
+        for tag in tags:
+            tag_names.append(tag['tag']['name'])
+        # Extract out the tag names from list of tag objects
+
+        # self.get with query and valid projectlistresponse
+        r = self.get('/projects?tags=$(values)s' % {
+            'values': ''.join(tag_names)})
+        self.assertValidProjectListResponse(r)
+        # values from response should be equal to the project
+        # created above
+        projects_result = r.result['projects']
+        self.assertEqual(project, projects_result)
+
+    def test_list_projects_filtering_by_tags_any(self):
+        """Call ``GET /projects?tags-any={tags}``."""
+        project, tags = self._create_project_and_tags(tag_size=2)
+        # Create a list of tags and a project
+        tag_names = []
+        # Extract out the tag names from list of tag objects
+
+        # self.get with query and valid projectlistresponse
+        r = self.get('/projects?tags-any=$(values)s' % {
+            'values': tag_names[0]})
+        self.assertValidProjectListResponse(r)
+        # values from response should be equal to the project
+        # created above
+        projects_result = r.result['projects']
+        self.assertEqual(project, projects_result)
+
+    # Theses tests are a little different - they need to ref
+    # projects not associated with the tags
+    def test_list_projects_filtering_by_not_tags(self):
+        """Call ``GET /projects?not-tags={tags}``."""
+        project, tags = self._create_project_and_tags(tag_size=2)
+        # Create a list of tags and a project
+        tag_names = []
+        for tag in tags:
+            tag_names.append(tag['tag']['name'])
+        # Extract out the tag names from list of tag objects
+
+        # self.get with query and valid projectlistresponse
+        r = self.get('/projects?not-tags=$(values)s' % {
+            'values': ''.join(tag_names)})
+        self.assertValidProjectListResponse(r)
+        # values from response should be equal to the project
+        # created above
+        projects_result = r.result['projects']
+        self.assertEqual(project, projects_result)
+
+    def test_list_projects_filtering_by_not_tags_any(self):
+        """Call ``GET /projects?not-tags-any={tags}``."""
+        project, tags = self._create_project_and_tags(tag_size=2)
+        # Create a list of tags and a project
+        tag_names = []
+        for tag in tags:
+            tag_names.append(tag['tag']['name'])
+        # Extract out the tag names from list of tag objects
+
+        # self.get with query and valid projectlistresponse
+        r = self.get('/projects?tags=$(values)s' % {
+            'values': ''.join(tag_names)})
+        self.assertValidProjectListResponse(r)
+        # values from response should be equal to the project
+        # created above
+        projects_result = r.result['projects']
+        self.assertEqual(project, projects_result)
+
     def test_list_projects_filtering_by_parent_id(self):
         """Call ``GET /projects?parent_id={project_id}``."""
         projects = self._create_projects_hierarchy(hierarchy_size=2)
@@ -734,6 +832,9 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.assertValidProjectListResponse(r)
 
         projects_result = r.result['projects']
+        # deleting tags in order to match unit ref obj
+        for project_result in projects_result:
+            del project_result['tags']
         expected_list = [projects[1]['project']]
 
         # projects[0] has projects[1] as child
@@ -747,6 +848,9 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.assertValidProjectListResponse(r)
 
         projects_result = r.result['projects']
+        # deleting tags in order to match unit ref obj
+        for project_result in projects_result:
+            del project_result['tags']
         expected_list = [projects[2]['project'], projects[3]['project']]
 
         # projects[1] has projects[2] and projects[3] as children
@@ -759,6 +863,9 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.assertValidProjectListResponse(r)
 
         projects_result = r.result['projects']
+        # deleting tags in order to match unit ref obj
+        for project_result in projects_result:
+            del project_result['tags']
         expected_list = []
 
         # projects[2] has no child, projects_result must be an empty list
@@ -1311,6 +1418,125 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             '/projects/%(project_id)s' % {
                 'project_id': projects[0]['project']['id']},
             expected_status=http_client.FORBIDDEN)
+
+    def test_create_project_tag(self):
+        """Call ``PUT /projects/{project_id}/tags``."""
+        tag_ref = unit.new_project_tag_ref(project_id=self.project_id)
+        r = self.put(
+            '/projects/%(project_id)s/tags/%(value)s' % {
+                'project_id': self.project_id,
+                'value': tag_ref['name']},
+            expected_status=http_client.OK)
+        self.assertValidProjectTagResponse(r, tag_ref)
+
+    def test_project_contains_tag(self):
+        """Call ``GET /projects/{project_id}/tags``."""
+        tag_ref = unit.new_project_tag_ref(project_id=self.project_id)
+        # Create tag to find
+        self.put(
+            '/projects/%(project_id)s/tags/%(value)s' % {
+                'project_id': self.project_id,
+                'value': tag_ref['name']},
+            expected_status=http_client.OK)
+        r = self.get(
+            '/projects/%(project_id)s/tags/%(value)s' % {
+                'project_id': self.project_id,
+                'value': tag_ref['name']},
+            expected_status=http_client.OK)
+        self.assertTrue(r)
+
+    def test_delete_project_tag(self):
+        """Call ``Delete /projects/{project_id}/tags``."""
+        tag_ref = unit.new_project_tag_ref(project_id=self.project_id)
+        # Create tag to delete
+        self.put(
+            '/projects/%(project_id)s/tags/%(value)s' % {
+                'project_id': self.project_id,
+                'value': tag_ref['name']},
+            expected_status=http_client.OK)
+        self.delete(
+            '/projects/%(project_id)s/tags/%(value)s' % {
+                'project_id': self.project_id,
+                'value': tag_ref['name']},
+            expected_status=http_client.NO_CONTENT)
+
+    def test_create_project_tag_invalid_project_id(self):
+        """Call ``POST /projects/{project_id}/tags/{value}`` invalid id."""
+        ref = unit.new_project_tag_ref(project_id=uuid.uuid4().hex)
+        url = "/projects/%(project_id)s" % {'project_id': ref['project_id']}
+        self.post(url, body={'project_tag': ref},
+                  expected_status=http_client.BAD_REQUEST)
+
+    def test_create_project_tag_unsafe(self):
+        """Call ``POST /projects/{project_id}/tags/{value} unsafe names``."""
+        unsafe_name = 'i am not / safe'
+
+        self.config_fixture.config(group='resource',
+                                   project_name_url_safe='off')
+        ref = unit.new_project_tag_ref(name=unsafe_name)
+        url = "/projects/%(project_id)s" % {
+            'project_id': ref['project_id']}
+        self.post(
+            url,
+            body={'project_tag': ref})
+
+        for config_setting in ['new', 'strict']:
+            self.config_fixture.config(group='resource',
+                                       project_name_url_safe=config_setting)
+            ref = unit.new_project_tag_ref(name=unsafe_name)
+            self.post(
+                url,
+                body={'project_tag': ref},
+                expected_status=http_client.BAD_REQUEST)
+
+    def test_list_project_tags(self):
+        """Call ``GET /projects/{project_id}/tags``."""
+        ref = unit.new_project_tag_ref()
+
+        url = "/projects/%(project_id)s" % {
+            'project_id': ref['project_id']}
+        r = self.get(url)
+        self.assertValidProjectTagListResponse(r, ref)
+
+    def test_update_project_tags(self):
+        """Call ``PATCH /projects/{project_id}``."""
+        ref = unit.new_project_ref(domain_id=self.domain_id,
+                                   parent_id=self.project['parent_id'])
+        del ref['id']
+        r = self.patch(
+            '/projects/%(project_id)s' % {
+                'project_id': self.project_id},
+            body={'project': ref})
+        self.assertValidProjectResponse(r, ref)
+
+    def test_update_project_tags_unsafe(self):
+        """Call ``POST /projects/{project_id} with unsafe names``."""
+        unsafe_name = 'i am not / safe'
+
+        self.config_fixture.config(group='resource',
+                                   project_name_url_safe='off')
+        ref = unit.new_project_ref(name=unsafe_name,
+                                   domain_id=self.domain_id,
+                                   parent_id=self.project['parent_id'])
+        del ref['id']
+        self.patch(
+            '/projects/%(project_id)s' % {
+                'project_id': self.project_id},
+            body={'project': ref})
+
+        unsafe_name = 'i am still not / safe'
+        for config_setting in ['new', 'strict']:
+            self.config_fixture.config(group='resource',
+                                       project_name_url_safe=config_setting)
+            ref = unit.new_project_ref(name=unsafe_name,
+                                       domain_id=self.domain_id,
+                                       parent_id=self.project['parent_id'])
+            del ref['id']
+            self.patch(
+                '/projects/%(project_id)s' % {
+                    'project_id': self.project_id},
+                body={'project': ref},
+                expected_status=http_client.BAD_REQUEST)
 
 
 class ResourceV3toV2MethodsTestCase(unit.TestCase):
