@@ -25,6 +25,7 @@ RULE_ADMIN_OR_TARGET_PROJECT = (
     'rule:admin_required or '
     'project_id:%(target.project.id)s')
 RULE_ADMIN_OR_TOKEN_SUBJECT = 'rule:admin_or_token_subject'
+RULE_PROJECT_ADMIN_REQUIRED = 'rule:admin_required'
 RULE_REVOKE_EVENT_OR_ADMIN = 'rule:revoke_event_or_admin'
 RULE_SERVICE_ADMIN_OR_TOKEN_SUBJECT = 'rule:service_admin_or_token_subject'
 RULE_SERVICE_OR_ADMIN = 'rule:service_or_admin'
