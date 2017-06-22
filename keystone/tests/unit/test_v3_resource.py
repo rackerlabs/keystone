@@ -734,6 +734,9 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.assertValidProjectListResponse(r)
 
         projects_result = r.result['projects']
+        # deleting tags in order to match unit ref obj
+        for project_result in projects_result:
+            del project_result['tags']
         expected_list = [projects[1]['project']]
 
         # projects[0] has projects[1] as child
@@ -747,6 +750,9 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.assertValidProjectListResponse(r)
 
         projects_result = r.result['projects']
+        # deleting tags in order to match unit ref obj
+        for project_result in projects_result:
+            del project_result['tags']
         expected_list = [projects[2]['project'], projects[3]['project']]
 
         # projects[1] has projects[2] and projects[3] as children
@@ -759,6 +765,9 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.assertValidProjectListResponse(r)
 
         projects_result = r.result['projects']
+        # deleting tags in order to match unit ref obj
+        for project_result in projects_result:
+            del project_result['tags']
         expected_list = []
 
         # projects[2] has no child, projects_result must be an empty list
@@ -1311,6 +1320,47 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             '/projects/%(project_id)s' % {
                 'project_id': projects[0]['project']['id']},
             expected_status=http_client.FORBIDDEN)
+
+    def test_create_project_tag(self):
+        """Call ``PUT /projects/{project_id}/tags``."""
+        tag_ref = unit.new_project_tag_ref(project_id=self.project_id)
+        r = self.put(
+            '/projects/%(project_id)s/tags/%(value)s' % {
+                'project_id': self.project_id,
+                'value': tag_ref['name']},
+            expected_status=http_client.OK)
+        self.assertValidProjectTagResponse(r, tag_ref)
+
+    def test_project_contains_tag(self):
+        """Call ``GET /projects/{project_id}/tags``."""
+        tag_ref = unit.new_project_tag_ref(project_id=self.project_id)
+        # Create tag to find
+        self.put(
+            '/projects/%(project_id)s/tags/%(value)s' % {
+                'project_id': self.project_id,
+                'value': tag_ref['name']},
+            expected_status=http_client.OK)
+        r = self.get(
+            '/projects/%(project_id)s/tags/%(value)s' % {
+                'project_id': self.project_id,
+                'value': tag_ref['name']},
+            expected_status=http_client.OK)
+        self.assertTrue(r)
+
+    def test_delete_project_tag(self):
+        """Call ``Delete /projects/{project_id}/tags``."""
+        tag_ref = unit.new_project_tag_ref(project_id=self.project_id)
+        # Create tag to delete
+        self.put(
+            '/projects/%(project_id)s/tags/%(value)s' % {
+                'project_id': self.project_id,
+                'value': tag_ref['name']},
+            expected_status=http_client.OK)
+        self.delete(
+            '/projects/%(project_id)s/tags/%(value)s' % {
+                'project_id': self.project_id,
+                'value': tag_ref['name']},
+            expected_status=http_client.NO_CONTENT)
 
 
 class ResourceV3toV2MethodsTestCase(unit.TestCase):
