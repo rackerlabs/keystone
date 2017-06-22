@@ -33,6 +33,24 @@
       "revId": "d63d1cb75a6bf4168e34a81e9cffb03b71546557",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_941414a2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-06-22T18:03:30Z",
+      "side": 1,
+      "message": "Yes. since there cannot be two global roles with the same name.",
+      "parentUuid": "5f201791_b4727048",
+      "revId": "d63d1cb75a6bf4168e34a81e9cffb03b71546557",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
