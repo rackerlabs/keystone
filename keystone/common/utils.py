@@ -120,6 +120,22 @@ def attr_as_boolean(val_attr):
     return strutils.bool_from_string(val_attr, default=True)
 
 
+def remove_duplicate_resources(resource_list):
+    """Return a list with duplicate resources removed.
+
+    This compares duplicates based on resource id. This is to account
+    for resources that can contain values, such as a list of tags that
+    will not be guaranteed to be in order.
+    """
+    new_list = []
+    ids = set()
+    for r in resource_list:
+        if r.get('id') not in ids:
+            ids.add(r['id'])
+            new_list.append(r)
+    return new_list
+
+
 def get_blob_from_credential(credential):
     try:
         blob = jsonutils.loads(credential.blob)
