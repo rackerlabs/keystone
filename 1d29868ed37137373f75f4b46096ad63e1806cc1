@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_d7d5e9e6",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-22T21:26:57Z",
+      "side": 1,
+      "message": "Agree with Lance\u0027s comment, the cURL examples seem more suited to developers who are testing functionality quickly without setting up some client and this page could be left in the devref section rather than here (where we could have actual API documentation)",
+      "range": {
+        "startLine": 86,
+        "startChar": 4,
+        "endLine": 86,
+        "endChar": 25
+      },
+      "revId": "1d29868ed37137373f75f4b46096ad63e1806cc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
