@@ -286,7 +286,7 @@ def new_project_ref(domain_id=None, is_domain=False, **kwargs):
         'description': uuid.uuid4().hex,
         'enabled': True,
         'domain_id': domain_id,
-        'is_domain': is_domain,
+        'is_domain': is_domain
     }
     # NOTE(henry-nash): We don't include parent_id in the initial list above
     # since specifying it is optional depending on where the project sits in
