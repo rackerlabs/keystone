@@ -89,6 +89,15 @@ class ValidationError(Error):
     title = http_client.responses[http_client.BAD_REQUEST]
 
 
+class InvalidError(Error):
+    message_format = _("Invalid %(attribute)s in %(target)s."
+                       " The server could not comply with the request"
+                       " since it is either malformed or otherwise"
+                       " incorrect.")
+    code = int(http_client.BAD_REQUEST)
+    title = http_client.responses[http_client.BAD_REQUEST]
+
+
 class URLValidationError(ValidationError):
     message_format = _("Cannot create an endpoint with an invalid URL:"
                        " %(url)s.")
@@ -389,6 +398,10 @@ class DomainNotFound(NotFound):
 
 class ProjectNotFound(NotFound):
     message_format = _("Could not find project: %(project_id)s.")
+
+
+class ProjectTagNotFound(NotFound):
+    message_format = _("Could not find project tag: %(project_tag_id)s.")
 
 
 class TokenNotFound(NotFound):
