@@ -37,6 +37,7 @@ def get_project_from_domain(domain_ref):
 # None. See comment in Project class of resource/backends/sql.py for more
 # details.
 NULL_DOMAIN_ID = '<<keystone.domain.root>>'
+NULL_PROJECT_ID = '<<kesytone.project.root>>'
 
 
 @six.add_metaclass(abc.ABCMeta)
@@ -258,6 +259,112 @@ class ResourceDriverBase(object):
                       implement if at all possible.
 
         :returns: a list of project_refs or an empty list.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def get_project_tag(self, project_tag_id):
+        """Get project tag by its ID.
+
+        :returns: project_tag_ref
+        :raises keystone.exception.ProjectTagNotFound: if project_tag_id
+                                                       does not exist
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+<<<<<<< 1fc8231304c99e82d803cadac3ac7317fb66eca4
+    def create_project_tag(self, project_tag):
+        """Create the specified tag and adds it to the list in the project.
+
+        :param dict project_tag: The new project tag
+
+        Project tags schema::
+
+            type: object
+            properties:
+                id:
+                    type: string
+                name:
+                    type: string
+                project_id:
+                    type: [string, null]
+<<<<<<< 1fc8231304c99e82d803cadac3ac7317fb66eca4
+=======
+                enabled:
+                    type: boolean
+>>>>>>> WIP: Add project tags
+            required: [id, name, project_id]
+            additionalProperties: true
+
+        :raises keystone.exception.ProjectNotFound: if project_id does not
+                                                    exist
+        :raises keystone.exception.Conflict: if tag with the same id already
+                                             exist or same tag name under the
+                                             same project
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def check_if_project_contains_tag(self, project_id, project_tag_id):
+        """Check if the specified project contains the specified tag.
+
+        :param project_id:
+        :param project_tag_id:
+
+        :returns: project_tag_ref
+        :raises keystone.exception.ProjectNotFound: if project_id does not
+                                                    exist
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def list_project_tags(self, project_id):
+        """List project tags for the provided project id.
+
+        :param project_id:
+
+        :returns: a list of project_tag_refs.
+        :raises keystone.exception.ProjectNotFound: if project_id does not
+                                                    exist
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def update_project_tags(self, project_id, project_tag_names):
+        """Modify project tags associated with a specified project.
+
+        :param project_id:
+        :param project_tag_names: List of tag name values
+
+        :raises keystone.exception.Conflict: if project tag name values
+                                             have a conflict
+        :raises keystone.exception.ProjectNotFound: if project_id does not
+                                                    exist
+
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def delete_project_tag(self, project_id, project_tag_name):
+        """Delete project tag with provided tag id.
+
+        :param project_tag_id:
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def remove_all_project_tags(self, project_id):
+        """Remove the entire tag list from the given project.
+
+        :param project_id:
 
         """
         raise exception.NotImplemented()  # pragma: no cover
