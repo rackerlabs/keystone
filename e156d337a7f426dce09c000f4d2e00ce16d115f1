@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_f40223b4",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 5117,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-06-22T20:44:22Z",
+      "side": 1,
+      "message": "I would really rather these be split into separate tests, not because it matters at all but because all the others are that way. I\u0027ll fix in a followup.",
+      "revId": "e156d337a7f426dce09c000f4d2e00ce16d115f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
