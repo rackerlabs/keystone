@@ -17,15 +17,15 @@
 .. toctree::
    :maxdepth: 1
    
+   development_environment.rst
    build-docs.rst
    generate-sample-config.rst
    release-notes.rst
    testing-keystone.rst
    doctor-checks.rst
+   api_change_tutorial.rst
+   services.rst
    filtering-responsibilities.rst
    list-truncation.rst
    caching-layer.rst
-   development_environment.rst
    developing_drivers.rst
-   api_change_tutorial.rst
-   services.rst
