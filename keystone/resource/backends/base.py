@@ -261,3 +261,64 @@ class ResourceDriverBase(object):
 
         """
         raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def get_project_tag(self, project_id, tag_name):
+        """Get project tag for project.
+
+        :returns: project_tag_ref
+        :raises keystone.exception.ProjectTagNotFound: if project_tag
+                                                       does not exist
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def create_project_tag(self, project_tag):
+        """Create the specified tag and adds it to the list in the project.
+
+        :param dict project_tag: The new project tag
+
+        Project tags schema::
+
+            type: object
+            properties:
+                name:
+                    type: string
+                project_id:
+                    type: [string, null]
+            required: [name, project_id]
+            additionalProperties: false
+
+        :raises keystone.exception.ProjectNotFound: if project_id does not
+                                                    exist
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def list_project_tags(self, project_id):
+        """List project tags for the provided project id.
+
+        :param project_id:
+
+        :returns: a dictionary of project tag names.
+        :raises keystone.exception.ProjectNotFound: if project_id does not
+                                                    exist
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def delete_project_tag(self, project_id, tag_name):
+        """Delete project tag with provided tag id."""
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def delete_all_project_tags(self, project_id):
+        """Remove the entire tag list from the given project.
+
+        :param project_id:
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
