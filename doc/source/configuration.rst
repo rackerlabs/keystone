@@ -589,7 +589,7 @@ Token Persistence Driver
 
 Keystone supports customizable token persistence drivers. These can be
 specified in the ``[token]`` section of the configuration file. Keystone
-provides two non-test persistence backends. These can be set with the
+provides one non-test persistence backends. These can be set with the
 ``[token] driver`` configuration option.
 
 The drivers keystone provides are:
