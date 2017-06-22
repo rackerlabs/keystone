@@ -21,24 +21,17 @@ Contributor Documentation
 .. toctree::
    :maxdepth: 1
 
-   setup.rst
-   conf.rst
-   run-keystone.rst
-   initialise.rst
-   interact.rst
+   basic-guidelines.rst
+   http-api.rst
    development_environment.rst
    build-docs.rst
    generate-sample-config.rst
    release-notes.rst
    testing-keystone.rst
    doctor-checks.rst
-   http-api.rst
    api_change_tutorial.rst
    database-migrations.rst
    id-manage.rst
    translated-responses.rst
-   caching-layer.rst
-   filtering-responsibilities.rst
-   list-truncation.rst
-   services.rst
-   developing_drivers.rst
+   architecture.rst
+   external-dev.rst

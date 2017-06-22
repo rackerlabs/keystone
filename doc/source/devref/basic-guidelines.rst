@@ -14,6 +14,43 @@
       License for the specific language governing permissions and limitations
       under the License.
 
+================
+Basic Guidelines
+================
+
+Setting up Keystone
+===================
+
+Get your development environment set up according to
+:doc:`development_environment`. It is recommended that you install
+Keystone into a virtualenv.
+
+Configuring Keystone
+====================
+
+Keystone requires a configuration file. There is a sample configuration file
+that can be used to get started:
+
+.. code-block:: bash
+
+    $ cp etc/keystone.conf.sample etc/keystone.conf
+
+The defaults are enough to get you going, but you can make any changes if
+needed.
+
+Running Keystone
+================
+
+To run the Keystone Admin and API server instances, use:
+
+.. code-block:: bash
+
+    $ uwsgi --http 127.0.0.1:35357 --wsgi-file $(which keystone-wsgi-admin)
+
+This runs Keystone with the configuration the etc/ directory of the project.
+See :doc:`../configuration` for details on how Keystone is configured. By default,
+Keystone is configured with SQL backends.
+
 Initializing Keystone
 =====================
 
@@ -66,4 +103,13 @@ The `python-openstackclient`_ can be installed using the following:
 
     $ pip install python-openstackclient
 
+Interacting with Keystone
+=========================
+
+You can also interact with keystone through its REST API. There is a Python
+keystone client library `python-keystoneclient`_ which interacts exclusively
+through the REST API, and a command-line interface `python-openstackclient`_
+command-line interface.
+
+.. _`python-keystoneclient`: https://git.openstack.org/cgit/openstack/python-keystoneclient
 .. _`python-openstackclient`: https://git.openstack.org/cgit/openstack/python-openstackclient
