@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_14dda46f",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-22T17:47:13Z",
+      "side": 1,
+      "message": "isnt there a sql.session_for_read() as session required?",
+      "range": {
+        "startLine": 245,
+        "startChar": 16,
+        "endLine": 245,
+        "endChar": 23
+      },
+      "revId": "d635a21c51edb6ea3b91e889380d66a53067ea66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_94d2d45b",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-22T17:47:13Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 251,
+        "startChar": 16,
+        "endLine": 251,
+        "endChar": 23
+      },
+      "revId": "d635a21c51edb6ea3b91e889380d66a53067ea66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_d454cccc",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1626,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-22T17:47:13Z",
+      "side": 1,
+      "message": "this test needs to be cleaned up.. but I\u0027ll uncomment out in the meanwhile for pep8",
+      "range": {
+        "startLine": 1625,
+        "startChar": 8,
+        "endLine": 1626,
+        "endChar": 56
+      },
+      "revId": "d635a21c51edb6ea3b91e889380d66a53067ea66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
