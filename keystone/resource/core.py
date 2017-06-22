@@ -32,6 +32,8 @@ from keystone.token import provider as token_provider
 CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
 MEMOIZE = cache.get_memoization_decorator(group='resource')
+MAX_PROJECT_TAG_COUNT = 50
+MAX_PROJECT_TAG_NAME_LENGTH = 60
 
 
 @dependency.provider('resource_api')
@@ -49,10 +51,22 @@ class Manager(manager.Manager):
 
     _DOMAIN = 'domain'
     _PROJECT = 'project'
+    _PROJECT_TAG = 'project tag'
 
     def __init__(self):
         resource_driver = CONF.resource.driver
         super(Manager, self).__init__(resource_driver)
+
+    def _check_limit(self, project_id, name):
+        current_tags = self.driver.list_project_tags(project_id)
+        if len(current_tags) > MAX_PROJECT_TAG_COUNT:
+            raise exception.ValidationError(
+                attribute="fewer than %d" % MAX_PROJECT_TAG_COUNT,
+                target="project " + project_id)
+        if len(name) > MAX_PROJECT_TAG_NAME_LENGTH:
+            raise exception.ValidationError(
+                attribute="fewer than %d" % MAX_PROJECT_TAG_NAME_LENGTH,
+                target="project " + project_id)
 
     def _get_hierarchy_depth(self, parents_list):
         return len(parents_list) + 1
@@ -872,6 +886,75 @@ class Manager(manager.Manager):
             if new_ref['domain_id'] != orig_ref['domain_id']:
                 raise exception.ValidationError(_('Cannot change Domain ID'))
 
+    def list_project_with_tags(self, tag_names):
+        """Filter projects that contain all provided tags."""
+        self.driver.filter_projects_with_tags(tag_names)
+
+    def list_project_with_tags_any(self, tag_names):
+        """Filter projects that contain at least one provided tags."""
+        self.driver.filter_projects_with_tags(tag_names)
+
+    def list_project_not_tags(self, tag_names):
+        """Filter projects that do not contain provided tags."""
+        self.driver.filter_projects_with_tags(tag_names)
+
+    def list_project_not_tags_any(self, tag_names):
+        """Filter projects that do not contain at least one provided tags."""
+        self.driver.filter_projects_with_tags(tag_names)
+
+    def create_project_tag(self, project_tag_id, project_tag, initiator=None):
+
+        project_id = project_tag['project_id']
+        project_tag['name'] = project_tag['name'].strip()
+        self._check_limit(project_id, project_tag['name'])
+        # NOTE(aselius): By invoking _check_limit you are making having a valid
+        # project id attached mandatory, since list_tags will throw an invalid
+        # project exception
+        project_tag = project_tag.copy()
+        # TODO(aselius): Evaluate if the regex is actually url safe
+        if (utils.is_not_url_safe(project_tag['name'])):
+            self._raise_reserved_character_exception(
+                'Project Tag', project_tag['name'])
+        project_tag_id = project_tag['id']
+        project_tag.setdefault('project_id', None)
+        try:
+            ret = self.driver.create_project_tag(project_tag_id, project_tag)
+        except exception.Conflict:
+            raise exception.Conflict(
+                type='project_tag',
+                details=self._generate_p)
+        notifications.Audit.created(
+            self._PROJECT_TAG, project_tag_id, initiator)
+        return ret
+
+    def check_if_project_contains_tag(self, project_id, project_tag_name):
+        return self.driver.check_if_project_contains_tag(project_id,
+                                                         project_tag_name)
+
+    def list_project_tags(self, project_id):
+        return self.driver.list_project_tags(project_id)
+
+    def list_project_tags_by_name(self, project_id):
+        return self.driver.list_project_tags_by_name(project_id)
+
+    def delete_project_tag(self, project_id, project_tag_name):
+        try:
+            self.driver.get_project_tag_by_name(project_id, project_tag_name)
+        except exception.ProjectTagNotFound:
+            raise exception.ProjectTagNotFound(project_tag_id=project_tag_name)
+        return self.driver.delete_project_tag(project_id, project_tag_name)
+
+    def remove_all_project_tags(self, project_id):
+        return self.driver.remove_all_project_tags(project_id)
+
+    def _create_project_tags_with_presets(self, project_id, project_name):
+        return []
+
+    def update_project_tags(self, project_id, project_tags):
+        # project = self.driver.get_project(project_id)
+        self.driver.remove_all_project_tags(project_id)
+        # Note(aselius): Need a method which will change the name
+        self.driver.update_project_tags(project_id, project_tags)
 
 MEMOIZE_CONFIG = cache.get_memoization_decorator(group='domain_config')
 
