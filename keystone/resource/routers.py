@@ -117,3 +117,18 @@ class Routers(wsgi.RoutersBase):
             router.Router(controllers.ProjectV3(),
                           'projects', 'project',
                           resource_descriptions=self.v3_resources))
+
+        routers.append(
+            router.Router(controllers.ProjectTagV3(),
+                          'tags', 'tag',
+                          resource_descriptions=self.v3_resources))
+
+        # self._add_resource(
+        #     mapper, config_controller,
+        #     path='/v3/projects/{project_id}/tags',
+        #     get_action='list_project_tags',
+        #     rel=json_home.build_v3_resource_relation(
+        #         'project_tags'),
+        #     path_vars={
+        #         'project_id':json_home.Parameters.PROJECT_ID
+        #     })
