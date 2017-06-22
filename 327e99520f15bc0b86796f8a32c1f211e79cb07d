@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_94d3f438",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-22T17:50:32Z",
+      "side": 1,
+      "message": "This looks like it\u0027s pretty close, is WIP needed anymore?",
+      "revId": "327e99520f15bc0b86796f8a32c1f211e79cb07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_3444201b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-22T17:50:32Z",
+      "side": 1,
+      "message": "We can add a:\n\n  Depends-On: Ia750cb049c0f53a234ea70ce1f2bbbb7a2aa9454\n\nHere to make sure the specification merges before any migration bits do.",
+      "revId": "327e99520f15bc0b86796f8a32c1f211e79cb07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_342b0031",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-22T17:50:32Z",
+      "side": 1,
+      "message": "I think we should make this it\u0027s own top-level section instead of nesting it under the getting started section.\n\nIdeally - this should be a sibling section of the admin-guide.",
+      "revId": "327e99520f15bc0b86796f8a32c1f211e79cb07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
