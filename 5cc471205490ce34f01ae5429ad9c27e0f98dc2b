@@ -76,6 +76,24 @@
       "revId": "5cc471205490ce34f01ae5429ad9c27e0f98dc2b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_3a7e476b",
+        "filename": "keystone/common/policies/token_revocation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-06-22T19:00:41Z",
+      "side": 1,
+      "message": "This has to exist, it needs to return an empty list. The API cannot disappear as per the contract.\n\nSo in short, we keep this forever \u003d/ We simply return an empty result list.",
+      "parentUuid": "5f201791_f63255a7",
+      "revId": "5cc471205490ce34f01ae5429ad9c27e0f98dc2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
