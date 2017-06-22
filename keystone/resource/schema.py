@@ -101,3 +101,17 @@ tenant_update = {
     'minProperties': 1,
     'additionalProperties': True
 }
+
+# TODO(aselius): Specify the project_tag schema
+_project_tag_properties = {
+    'project_id': validation.nullable(parameter_types.id_string),
+    'id': validation.nullable(parameter_types.id_string),
+    'name': _name_properties
+}
+
+project_tag_create = {
+    'type': 'object',
+    'properties': _project_tag_properties,
+    'required': ['project_id', 'name'],
+    'additionalProperties': False
+}

@@ -20,6 +20,10 @@ from keystone.resource.backends import base
 
 LOG = log.getLogger(__name__)
 
+# TODO(aselius): Add project tag information under resources.
+# TODO(aselius): Add tag id and stuff on Project class
+# TODO(aselius): SQL Crud for various project tag related fns.
+
 
 class Resource(base.ResourceDriverBase):
 
@@ -34,14 +38,31 @@ class Resource(base.ResourceDriverBase):
         else:
             return ref
 
+    def _encode_project_id(self, ref):
+        if 'project_id' in ref and ref['project_id'] is None:
+            new_ref = ref.copy()
+            new_ref['project_id'] = base.NULL_PROJECT_ID
+            return new_ref
+        else:
+            return ref
+
     def _is_hidden_ref(self, ref):
-        return ref.id == base.NULL_DOMAIN_ID
+        if 'domain_id' in ref:
+            return ref.id == base.NULL_DOMAIN_ID
+        if 'project_id' in ref:
+            return ref.id == base.NULL_PROJECT_ID
 
     def _get_project(self, session, project_id):
         project_ref = session.query(Project).get(project_id)
         if project_ref is None or self._is_hidden_ref(project_ref):
             raise exception.ProjectNotFound(project_id=project_id)
         return project_ref
+
+    def _get_project_tag(self, session, project_tag_id):
+        project_tag_ref = session.query(ProjectTag).get(project_tag_id)
+        if project_tag_ref is None or self._is_hidden_ref(project_tag_ref):
+            raise exception.ProjectTagNotFound(project_tag_id=project_tag_id)
+        return project_tag_ref
 
     def get_project(self, project_id):
         with sql.session_for_read() as session:
@@ -217,6 +238,93 @@ class Resource(base.ResourceDriverBase):
                                 'deleted.' % project_id)
             query.delete(synchronize_session=False)
 
+    def get_project_tag(self, project_tag_id):
+        with sql.session_for_read() as session:
+            return self._get_project_tag(
+                session, project_tag_id).to_dict()
+
+    def get_project_tag_by_name(self, project_tag_name, project_id):
+        with sql.session_for_read() as session:
+            query = session.query(ProjectTag)
+            query = query.filter_by(name=project_tag_name)
+            if project_id is None:
+                query = query.filter_by(
+                    project_id=base.NULL_PROJECT_ID)
+            else:
+                query = query.filter_by(project_id=project_id)
+            try:
+                project_tag_ref = query.one()
+            except sql.NotFound:
+                raise exception.ProjectTagNotFound(
+                    project_tag_id=project_tag_name)
+
+            return project_tag_ref.to_dict()
+
+    @sql.handle_conflicts(conflict_type='project_tag')
+    def create_project_tag(self, project_tag_id, project_tag):
+        with sql.session_for_write() as session:
+            project_tag_ref = ProjectTag.from_dict(project_tag)
+            session.add(project_tag_ref)
+            return project_tag_ref.to_dict()
+
+    def list_project_tags(self, project_id):
+        with sql.session_for_read() as session:
+            try:
+                self._get_project(session, project_id)
+            except exception.ProjectNotFound:
+                raise exception.ProjectNotFound(project_id=project_id)
+            query = session.query(ProjectTag)
+            project_tag_refs = query.filter(
+                ProjectTag.project_id == project_id)
+            return [project_tag_ref.to_dict()
+                    for project_tag_ref in project_tag_refs]
+
+    def check_if_project_contains_tag(self, project_id, project_tag_id):
+        if not project_id:
+            return []
+        else:
+            with sql.session_for_read() as session:
+                query = self._get_project_tag(session, project_tag_id)
+                query = query.filter(ProjectTag.id == project_tag_id)
+                if query:
+                    return True
+                else:
+                    return []
+
+    @sql.handle_conflicts(conflict_type='project_tag')
+    def update_project_tag(self, project_id, project_tag_id, project_tags):
+        with sql.session_for_write() as session:
+            new_project_tags = []
+            for project_tag in project_tags:
+                project_tag_ref = self._get_project_tag(
+                    session, project_tag_id)
+                old_project_tag_dict = project_tag_ref.to_dict()
+                old_project_tag_dict = self._encode_domain_id(
+                    old_project_tag_dict)
+                new_project_tag = ProjectTag.from_dict(old_project_tag_dict)
+                for attr in ProjectTag.attributes:
+                    if attr != 'id':
+                        setattr(project_tag_ref, attr,
+                                getattr(new_project_tag, attr))
+                new_project_tags.append(project_tag_ref.to_dict())
+            return new_project_tags
+
+    @sql.handle_conflicts(conflict_type='project_tag')
+    def delete_project_tag(self, project_tag_id):
+        with sql.session_for_write() as session:
+            project_tag_ref = self._get_project_tag(
+                session, project_tag_id)
+            session.delete(project_tag_ref)
+
+    @sql.handle_conflicts(conflict_type='project_tag')
+    def remove_all_project_tags(self, project_id):
+        with sql.session_for_write() as session:
+            query = session.query(ProjectTag)
+            project_tag_refs = sql.filter_limit_query(
+                ProjectTag.project_id == project_id, query)
+            for project_tag_ref in project_tag_refs:
+                session.delete(project_tag_ref)
+
 
 class Project(sql.ModelBase, sql.ModelDictMixinWithExtras):
     # NOTE(henry-nash): From the manager and above perspective, the domain_id
@@ -249,3 +357,21 @@ class Project(sql.ModelBase, sql.ModelDictMixinWithExtras):
     # Unique constraint across two columns to create the separation
     # rather than just only 'name' being unique
     __table_args__ = (sql.UniqueConstraint('domain_id', 'name'),)
+
+
+class ProjectTag(sql.ModelBase, sql.ModelDictMixin):
+
+    def to_dict(self):
+        d = super(ProjectTag, self).to_dict()
+        if d['project_id'] == base.NULL_PROJECT_ID:
+            d['domain_id'] = None
+        return d
+
+    __tablename__ = 'project_tag'
+    attributes = ['id', 'project_id', 'name']
+    id = sql.Column(sql.String(64), primary_key=True)
+    project_id = sql.Column(
+        sql.String(64), sql.ForeignKey('project.id', ondelete='CASCADE'),
+        nullable=False)
+    name = sql.Column(sql.String(80), nullable=False)
+    __table_args__ = (sql.UniqueConstraint('project_id', 'name'),)

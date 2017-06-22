@@ -13,6 +13,7 @@
 """Main entry point into the Resource service."""
 
 from oslo_log import log
+import re
 import six
 
 from keystone import assignment
@@ -49,10 +50,18 @@ class Manager(manager.Manager):
 
     _DOMAIN = 'domain'
     _PROJECT = 'project'
+    _PROJECT_TAG = 'project tag'
 
     def __init__(self):
         resource_driver = CONF.resource.driver
         super(Manager, self).__init__(resource_driver)
+
+    def _check_limit(self, project_id):
+        current_tags = self.driver.list_project_tags(project_id)
+        if len(current_tags) > 50:
+                raise exception.InvalidError(
+                    attribute="number of tags (max 50)",
+                    target="project " + project_id)
 
     def _get_hierarchy_depth(self, parents_list):
         return len(parents_list) + 1
@@ -872,6 +881,50 @@ class Manager(manager.Manager):
             if new_ref['domain_id'] != orig_ref['domain_id']:
                 raise exception.ValidationError(_('Cannot change Domain ID'))
 
+    def create_project_tag(self, project_id, project_tag, initiator=None):
+
+        self._check_limit(project_id)
+
+        project_tag = project_tag.copy()
+
+        project_tag['name'] = project_tag['name'].strip()
+
+        regex = re.search('\\\\|\||\,|\/|\{|\}|\^|\~|\[|\]|\`|\<|\>|\#|\%',
+                          project_tag['name'])
+        if regex is not None:
+            raise exception.InvalidError(
+                attribute=regex.group(),
+                target="tag name: " + project_tag['name'])
+
+        project_tag_id = project_tag['id']
+        project_tag.setdefault('project_id', None)
+        try:
+            ret = self.driver.create_project_tag(project_tag_id, project_tag)
+        except exception.Conflict:
+            raise exception.Conflict(
+                type='project_tag',
+                details=self._generate_p)
+        notifications.Audit.created(
+            self._PROJECT_TAG, project_tag_id, initiator)
+        return ret
+
+    def check_if_project_contains_tag(self, project_id, project_tag_id):
+        return self.driver.check_if_project_contains_tag(project_id,
+                                                         project_tag_id)
+
+    def list_project_tags(self, project_id):
+        return self.driver.list_project_tags(project_id)
+
+    def delete_project_tag(self, project_tag_id):
+        return self.driver.delete_project_tag(project_tag_id)
+
+    def delete_all_project_tags(self, project_id):
+        return self.remove_all_project_tags(project_id)
+
+    def update_project_tags(self, project_id, project_tags_id, project_tags):
+        for project_tag in self.list_project_tags(project_id):
+            if project_tag not in project_tags:
+                self.delete_project_tag(project_id, project_tag['id'])
 
 MEMOIZE_CONFIG = cache.get_memoization_decorator(group='domain_config')
 
