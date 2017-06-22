@@ -401,6 +401,64 @@ following property:
     invalid, so typically the generator selection should be considered
     immutable for a given installation.
 
+Token Drivers and Providers
+===========================
+
+Token Persistence Driver
+------------------------
+
+Keystone supports customizable token persistence drivers. These can be
+specified in the ``[token]`` section of the configuration file. Keystone
+provides one non-test persistence backend. It can be set with the
+``[token] driver`` configuration option.
+
+The drivers keystone provides are:
+
+* ``sql`` - The SQL-based (default) token persistence engine. Implemented by
+  :class:`keystone.token.persistence.backends.sql.Token`
+
+Token Provider
+--------------
+
+Keystone supports customizable token providers and it is specified in the
+``[token]`` section of the configuration file. Keystone provides two token
+provider options (``fernet`` and ``uuid``, with ``fernet`` being the default).
+Users may register their own token provider by configuring the
+``[token] provider`` property.
+
+* ``fernet`` - A Fernet based token provider. Implemented by
+  :class:`keystone.token.providers.fernet.Provider`
+
+* ``uuid`` - A UUID based token provider. Implemented by
+  :class:`keystone.token.providers.uuid.Provider`
+
+
+UUID or Fernet?
+^^^^^^^^^^^^^^^
+Each token format uses different technologies to achieve various performance,
+scaling and architectural requirements.
+
+UUID tokens contain randomly generated UUID4 IDs that are issued and
+validated by the identity service. They are encoded using their hex digest for
+transport and are thus URL-friendly. They must be persisted by the identity
+service in order to be later validated. Revoking them is simply a matter of
+deleting them from the token persistence backend.
+
+Fernet tokens contain a limited amount of identity and authorization data in a
+`MessagePacked <http://msgpack.org/>`_ payload. The payload is then wrapped as
+a `Fernet <https://github.com/fernet/spec>`_ message for transport, where
+Fernet provides the required web safe characteristics for use in URLs and
+headers. Fernet tokens require symmetric encryption keys which can be
+established using ``keystone-manage fernet_setup`` and periodically rotated
+using ``keystone-manage fernet_rotate``.
+
+.. WARNING::
+    UUID and Fernet tokens are both bearer tokens, meaning that they
+    must be protected from unnecessary disclosure to prevent unauthorized
+    access.
+
+.. support_matrix:: admin/token-support-matrix.ini
+
 Certificates for PKI
 ====================
 
