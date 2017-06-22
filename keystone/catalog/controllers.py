@@ -565,6 +565,8 @@ class EndpointGroupV3Controller(controller.V3Controller):
             project = self.resource_api.get_project(
                 endpoint_group_ref['project_id'])
             if project:
+                project['tags'] = self.resource_api.list_project_tags(
+                    endpoint_group_ref['project_id'])
                 projects.append(project)
         return resource.controllers.ProjectV3.wrap_collection(
             request.context_dict, projects)
