@@ -16,6 +16,24 @@
       "revId": "977c8a8a19257077e096e6a3c1674d12cdb6ea54",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_fa21ef4e",
+        "filename": "keystone/common/policies/ec2_credential.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-22T19:06:16Z",
+      "side": 1,
+      "message": "It doesn\u0027t look like these are protected via policy, just like normal authentication flows [0]. We need another patch set that removes this from the generated policy.\n\n[0] https://github.com/openstack/keystone/blob/f992b1ce42d6d553146f538f7874fa40f1934cd8/keystone/contrib/ec2/controllers.py#L387",
+      "parentUuid": "7ffa3b31_515e6644",
+      "revId": "977c8a8a19257077e096e6a3c1674d12cdb6ea54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
