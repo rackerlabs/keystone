@@ -734,6 +734,9 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.assertValidProjectListResponse(r)
 
         projects_result = r.result['projects']
+        # deleting tags in order to match unit ref obj
+        for project_result in projects_result:
+            del project_result['tags']
         expected_list = [projects[1]['project']]
 
         # projects[0] has projects[1] as child
@@ -747,6 +750,9 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.assertValidProjectListResponse(r)
 
         projects_result = r.result['projects']
+        # deleting tags in order to match unit ref obj
+        for project_result in projects_result:
+            del project_result['tags']
         expected_list = [projects[2]['project'], projects[3]['project']]
 
         # projects[1] has projects[2] and projects[3] as children
@@ -759,6 +765,9 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.assertValidProjectListResponse(r)
 
         projects_result = r.result['projects']
+        # deleting tags in order to match unit ref obj
+        for project_result in projects_result:
+            del project_result['tags']
         expected_list = []
 
         # projects[2] has no child, projects_result must be an empty list
