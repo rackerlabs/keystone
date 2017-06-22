@@ -472,6 +472,9 @@ class EndpointFilterV3Controller(controller.V3Controller):
 
         projects = [self.resource_api.get_project(
             ref['project_id']) for ref in refs]
+        for project in projects:
+            project['tags'] = self.resource_api.list_project_tags(
+                project['id'])
         return resource.controllers.ProjectV3.wrap_collection(
             request.context_dict, projects)
 
