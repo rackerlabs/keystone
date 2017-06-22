@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_3ae77043",
+        "filename": "doc/source/getting-started/apache-httpd.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-22T15:09:08Z",
+      "side": 0,
+      "message": "Once we merge the installation guide from openstack-manuals, I\u0027d be in favor of removing this guide. The openstack-manuals guide documents apache by default.\n\nOnly making the comment here so we can address it later.",
+      "revId": "f992b1ce42d6d553146f538f7874fa40f1934cd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_5a790c2d",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-22T15:09:08Z",
+      "side": 0,
+      "message": "We could probably make this statement a bit more general. The future of documentation for OpenStack is going to push more of *all* documentation into each of the projects. We already include a bunch of stuff not only for contributors, but developers and operators.\n\nWe can catch this in a follow on patch if needed.",
+      "revId": "f992b1ce42d6d553146f538f7874fa40f1934cd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_da099c95",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-22T15:09:08Z",
+      "side": 0,
+      "message": "After generating and reading the docs a few times, I wonder if we should rename this to Contributor Documentation instead of Developer Documentation. Developer can mean a couple different things depending on who you are. We intend it to be \"keystone\" developers but this could be interpreted as \"application\" developers writing things on top of OpenStack, which isn\u0027t what the section is for.\n\nMaybe all information that is specific to contributing to keystone needs to be in a Contributor Documentation section?",
+      "revId": "f992b1ce42d6d553146f538f7874fa40f1934cd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

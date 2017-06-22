@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_3a1c1011",
+        "filename": "doc/source/related_projects.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-22T15:09:08Z",
+      "side": 1,
+      "message": "Since this is a small amount of (important) information, I think we should keep this on the main page under the description of what the OpenStack Identity service (like it was in the old format).",
+      "revId": "459f078d0ce7c5a1bf1579a6883d785414d23c23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
