@@ -14,8 +14,8 @@
       License for the specific language governing permissions and limitations
       under the License.
 
-Generating a new sample config file
-===================================
+Generating a sample config file
+===============================
 
 Keystone's sample configuration file ``etc/keystone.conf.sample`` is automatically
 generated based upon all of the options available within Keystone. These options
