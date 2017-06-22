@@ -872,6 +872,39 @@ class Manager(manager.Manager):
             if new_ref['domain_id'] != orig_ref['domain_id']:
                 raise exception.ValidationError(_('Cannot change Domain ID'))
 
+    # TODO(aselius): Define create project tag here on the resource api
+    def create_project_tag(self, project_id, project_tag, initiator=None):
+        # project_tag = project_tag.copy()
+
+        # project_tag.setdefault('enabled', True)
+        project_tag['name'] = project_tag['name'].strip()
+        # TODO(aselius): meet regex rules in proposed specs
+
+        project_tag.setdefault('project_id', None)
+
+        return project_tag
+
+    def check_if_project_contains_tag(self, project_id, project_tag):
+        return self.driver.check_if_project_contains_tag(project_id,
+                                                         project_tag)
+
+    def list_project_tags(self, project_id, hints=None):
+        project_tags = self.driver.list_project_tags(
+            project_id, hints or driver_hints.Hints())
+        return project_tags
+
+    def delete_project_tag(self, project_id, project_tag_id):
+        ret = self.driver.delete_project_tag(project_id, project_tag_id)
+        return ret
+
+    def delete_all_project_tags(self, project_id):
+        for project_tag in self.list_project_tags(project_id):
+            self.delete_project_tag(project_tag)
+
+    def update_project_tags(self, project_id, project_tags):
+        for project_tag in self.list_project_tags(project_id):
+            if project_tag not in project_tags:
+                self.delete_project_tag(project_id, project_tag['id'])
 
 MEMOIZE_CONFIG = cache.get_memoization_decorator(group='domain_config')
 

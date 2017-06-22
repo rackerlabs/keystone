@@ -261,3 +261,46 @@ class ResourceDriverBase(object):
 
         """
         raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def create_project_tag(self, project_tag_id, project_tag):
+        """Create the specified tag and adds it to the list in the project.
+
+        :param project_tag_id: This parameter can be ignored.
+        :param dict project_tag: The new project tag
+
+        Project tags schema::
+
+            type: object
+            properties:
+                id:
+                    type: string
+                name:
+                    type: string
+                project_id:
+                    type: [string, null]
+                enabled:
+                    type: boolean
+            required: [id, name, project_id]
+            additionalProperties: true
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def delete_project_tag(self, project_id, tag_value):
+        """Remove a single tag from a project.
+
+        :param project_id:
+        :param tag_value:
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def remove_all_project_tags(self, project_id):
+        """Remove the entire tag list from the given project.
+
+        :param project_id
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
