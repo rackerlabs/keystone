@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_caf89c4a",
+        "filename": "doc/source/getting-started/basic-guidelines.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-06-22T22:16:27Z",
+      "side": 1,
+      "message": "Everything here is really geared toward developers getting a development environment set up, I\u0027m not sure I understand why it would be moved into a general-purpose section.",
+      "range": {
+        "startLine": 24,
+        "startChar": 9,
+        "endLine": 24,
+        "endChar": 32
+      },
+      "revId": "efcb2e943ecbbf29c535f0a0fc7d7d24faae3783",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
