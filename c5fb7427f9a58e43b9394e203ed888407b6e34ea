@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_14ffdf34",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-22T21:00:06Z",
+      "side": 1,
+      "message": "This is kinda weird here, maybe change to \u0027as\u0027?",
+      "range": {
+        "startLine": 226,
+        "startChar": 60,
+        "endLine": 226,
+        "endChar": 63
+      },
+      "revId": "c5fb7427f9a58e43b9394e203ed888407b6e34ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_54a2f74c",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-22T21:00:06Z",
+      "side": 1,
+      "message": "This repeats the above paragraph. Could we go with something like \"Once development began on the v3 API, ...\"?",
+      "range": {
+        "startLine": 231,
+        "startChar": 0,
+        "endLine": 231,
+        "endChar": 36
+      },
+      "revId": "c5fb7427f9a58e43b9394e203ed888407b6e34ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_f49223f6",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-22T21:00:06Z",
+      "side": 1,
+      "message": "applications*",
+      "range": {
+        "startLine": 231,
+        "startChar": 48,
+        "endLine": 231,
+        "endChar": 59
+      },
+      "revId": "c5fb7427f9a58e43b9394e203ed888407b6e34ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
