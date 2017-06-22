@@ -950,6 +950,9 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
                 domain_id=self.domains[1]['id'],
                 parent_id=self.projects[2]['id']))
 
+            for p in self.projects:
+                p.pop('tags', None)
+
             for domain in self.domains:
                 this_domain = domain.copy()
                 if 'extra' in this_domain:
