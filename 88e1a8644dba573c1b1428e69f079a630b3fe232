@@ -22,6 +22,30 @@
       "revId": "88e1a8644dba573c1b1428e69f079a630b3fe232",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_63d1b3cd",
+        "filename": "doc/source/devref/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-23T01:13:31Z",
+      "side": 1,
+      "message": "++\n\nI suggested to remove in the parent, these will need a rebase anyways",
+      "parentUuid": "5f201791_d402870b",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 3
+      },
+      "revId": "88e1a8644dba573c1b1428e69f079a630b3fe232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
