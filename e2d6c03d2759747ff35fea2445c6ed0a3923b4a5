@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_98d667c3",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-23T15:45:47Z",
+      "side": 1,
+      "message": "We should try and collapse the above section into this one if possible. We should aim to provide a single source of truth for all configuration information.",
+      "revId": "e2d6c03d2759747ff35fea2445c6ed0a3923b4a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
