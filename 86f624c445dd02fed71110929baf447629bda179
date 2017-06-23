@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_c371a70e",
+        "filename": "doc/source/devref/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-23T01:11:50Z",
+      "side": 1,
+      "message": "remove trailing spaces",
+      "revId": "86f624c445dd02fed71110929baf447629bda179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
