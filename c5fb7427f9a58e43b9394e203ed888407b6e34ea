@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "5f201791_58556ac5",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-23T18:44:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f201791_14ffdf34",
+      "revId": "c5fb7427f9a58e43b9394e203ed888407b6e34ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f201791_54a2f74c",
         "filename": "doc/source/http-api.rst",
         "patchSetId": 1
@@ -71,6 +89,42 @@
     },
     {
       "key": {
+        "uuid": "5f201791_786f0692",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-23T18:44:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f201791_f49223f6",
+      "revId": "c5fb7427f9a58e43b9394e203ed888407b6e34ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_b85d9eea",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-23T18:44:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f201791_54a2f74c",
+      "revId": "c5fb7427f9a58e43b9394e203ed888407b6e34ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f201791_23897bc9",
         "filename": "doc/source/http-api.rst",
         "patchSetId": 1
@@ -88,6 +142,24 @@
         "endLine": 236,
         "endChar": 30
       },
+      "revId": "c5fb7427f9a58e43b9394e203ed888407b6e34ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_38698e8a",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-23T18:44:27Z",
+      "side": 1,
+      "message": "I kept it as Keystone to be consistent with the rest of the document.",
+      "parentUuid": "5f201791_23897bc9",
       "revId": "c5fb7427f9a58e43b9394e203ed888407b6e34ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
