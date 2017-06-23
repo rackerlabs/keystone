@@ -22,6 +22,30 @@
       "revId": "1d29868ed37137373f75f4b46096ad63e1806cc1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_83928f4a",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-23T00:58:40Z",
+      "side": 1,
+      "message": "well, if we think it that way, we wouldnt need API docs, just docs about the clients.\n\nif we have docs on HTTP APis for users, we consider that some of them may use those APIs directly, and having curl examples may make sense\n\nI wouldnt be opposed to migrating and keep this for now, we can see what happens once we migrate and compare this with the other docs coming from opesntack-manuals",
+      "parentUuid": "5f201791_d7d5e9e6",
+      "range": {
+        "startLine": 86,
+        "startChar": 4,
+        "endLine": 86,
+        "endChar": 25
+      },
+      "revId": "1d29868ed37137373f75f4b46096ad63e1806cc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
