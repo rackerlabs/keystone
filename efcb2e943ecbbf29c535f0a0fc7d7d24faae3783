@@ -22,6 +22,30 @@
       "revId": "efcb2e943ecbbf29c535f0a0fc7d7d24faae3783",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_a3a10bac",
+        "filename": "doc/source/getting-started/basic-guidelines.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-23T00:55:15Z",
+      "side": 1,
+      "message": "hmm this makes sense as deployers wont setup keystone this way I guess. they would use apache instead\n\nand users (who use the HTTP APIs) dont need to set up a keystone server.",
+      "parentUuid": "5f201791_caf89c4a",
+      "range": {
+        "startLine": 24,
+        "startChar": 9,
+        "endLine": 24,
+        "endChar": 32
+      },
+      "revId": "efcb2e943ecbbf29c535f0a0fc7d7d24faae3783",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
