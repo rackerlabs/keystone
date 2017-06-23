@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_1ed0161f",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-23T01:56:13Z",
+      "side": 1,
+      "message": "fixing the test :)",
+      "range": {
+        "startLine": 469,
+        "startChar": 34,
+        "endLine": 469,
+        "endChar": 42
+      },
+      "revId": "b56dc828221cb0ea5ab33acb0c09b61c24012e6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
