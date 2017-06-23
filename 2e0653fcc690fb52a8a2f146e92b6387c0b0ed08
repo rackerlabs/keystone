@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_983c22c9",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-23T18:31:18Z",
+      "side": 1,
+      "message": "Actually - would we be able to pull this out into it\u0027s own section? That way we keep the documentation separate until we\u0027ve had a change to go through everything in our Operator Documentation and consolidate it into the admin-guide (like what we\u0027re going to do with the installation guide).",
+      "revId": "2e0653fcc690fb52a8a2f146e92b6387c0b0ed08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
