@@ -8,8 +8,6 @@ services.
 
    Perform these commands on the controller node.
 
-
-
 2. Unset the temporary ``OS_AUTH_URL`` and ``OS_PASSWORD``
    environment variable:
 
