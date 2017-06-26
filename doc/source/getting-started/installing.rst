@@ -96,36 +96,13 @@ bash script called `lib/keystone`_
 
 .. _lib/keystone: https://git.openstack.org/cgit/openstack-dev/devstack/tree/lib/keystone
 
-Installing from packages: Ubuntu
---------------------------------
+Installing from packages
+------------------------
 
-To install keystone on Ubuntu:
+.. toctree::
 
-.. code-block:: bash
-
-    $ sudo apt-get install keystone
-
-In using Ubuntu's packages, the packages will set up a user account for
-the Keystone service (`keystone`), and place default configurations in
-``/etc/keystone``. As of this writing, the defaults for Keystone backends are
-all SQL based, stored locally in SQLite.
-
-Once installed, you still need to initialize data in Keystone, which you can
-find described in :doc:`../configuration`.
-
-Installing from packages: Fedora
---------------------------------
-
-To install Keystone on Fedora refer to the steps found in the `OpenStack
-Install Guide`_.
-
-To install the packages:
-
-.. code-block:: bash
-
-    $ sudo yum install openstack-keystone
-
-Once installed, you still need to initialize data in Keystone, which you can
-find described in :doc:`../configuration`.
-
-.. _`OpenStack Install Guide`: https://docs.openstack.org/liberty/install-guide-rdo/keystone-install.html
+   ../install/common/get-started-identity.rst
+   ../install/install.rst
+   ../install/users.rst
+   ../install/verify.rst
+   ../install/openrc.rst
