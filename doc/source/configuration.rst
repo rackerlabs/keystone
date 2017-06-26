@@ -584,153 +584,115 @@ plugins specified in ``methods``. This effectively disables external
 authentication. For more details, refer to :doc:`External Authentication
 <advanced-topics/external-auth>`.
 
-Caching Layer
-=============
+Token Drivers and Providers
+===========================
 
-Keystone's configuration file offers two separate sections related to caching,
-``[memcache]`` and ``[cache]``. The ``[memcache]`` section provides caching
-options to configure memcache backends. For example, if your deployment issues
-UUID tokens (``[token] provider = uuid``) and your token storage driver is
-memcache (``[token] driver = kvs``), the configuration options in the
-``[memcache]`` section will effect token storage behavior. The ``[cache]``
-section is provided through the ``oslo.cache`` library and consists of options
-to configure the caching of data between a particular keystone subsystem (e.g.
-``token``, ``identity``, etc) and its configured storage backend. For example,
-if your deployment's identity backend is using SQL (``[identity] driver =
-sql``) and you have caching enabled (``[cache] enabled = true``),
-``oslo.cache`` will cache responses from SQL improving the overall performance
-of the identity subsystem. The options in the ``[cache]`` section will effect
-the caching layer in-between a keystone subsystem and its storage backend.
+Token Persistence Driver
+------------------------
 
-Keystone uses the `dogpile.cache`_ library which allows for flexible cache
-backends. The majority of the caching configuration options are set in the
-``[cache]`` section.  However, each section that has the capability to be
-cached usually has a ``caching`` boolean value that will toggle caching for
-that specific section.  The current default behavior is that global and
-subsystem caching is enabled.
+Keystone supports customizable token persistence drivers. These can be
+specified in the ``[token]`` section of the configuration file. Keystone
+provides two non-test persistence backends. These can be set with the
+``[token] driver`` configuration option.
 
-``[cache]`` configuration section
----------------------------------
+The drivers keystone provides are:
 
-* ``enabled`` - enables/disables caching across all of keystone
-* ``debug_cache_backend`` - enables more in-depth logging from the cache
-  backend (get, set, delete, etc)
-* ``backend`` - the caching backend module to use e.g.
-  ``dogpile.cache.memcached``
+* ``sql`` - The SQL-based (default) token persistence engine. Implemented by
+  :class:`keystone.token.persistence.backends.sql.Token`
 
-    .. NOTE::
-        A given ``backend`` must be registered with ``dogpile.cache`` before it
-        can be used. The default backend is the keystone no-op backend
-        (``keystone.common.cache.noop``). If caching is desired a different
-        backend will need to be specified. Current functional backends are:
 
-    * ``dogpile.cache.memcached`` - Memcached backend using the standard
-      `python-memcached`_ library (recommended for use with Apache httpd with
-      ``mod_wsgi``)
-    * ``dogpile.cache.pylibmc`` - Memcached backend using the `pylibmc`_
-      library
-    * ``dogpile.cache.bmemcached`` - Memcached using `python-binary-memcached`_
-      library.
-    * ``dogpile.cache.redis`` - `Redis`_ backend
-    * ``dogpile.cache.dbm`` - local DBM file backend
-    * ``dogpile.cache.memory`` - in-memory cache
-    * ``oslo_cache.mongo`` - MongoDB as caching backend
-    * ``oslo_cache.memcache_pool`` - Memcache with pooling.
-      This implementation also provides client connection re-use.
+Token Provider
+--------------
 
-        .. WARNING::
-            ``dogpile.cache.memory`` is not suitable for use outside of unit
-            testing as it does not cleanup its internal cache on cache
-            expiration, does not provide isolation to the cached data (values
-            in the store can be inadvertently changed without extra layers of
-            data protection added), and does not share cache between processes.
-            This means that caching and cache invalidation will not be
-            consistent or reliable when using ``keystone`` and the
-            ``dogpile.cache.memory`` backend under any real workload.
+Keystone supports customizable token providers and it is specified in the
+``[token]`` section of the configuration file. Keystone provides two token
+provider options (``fernet`` and ``uuid``, with ``fernet`` being the default).
+Users may register their own token provider by configuring the
+``[token] provider`` property.
 
-* ``expiration_time`` - int, the default length of time to cache a specific
-  value. A value of ``0`` indicates to not cache anything. It is recommended
-  that the ``enabled`` option be used to disable cache instead of setting this
-  to ``0``.
-* ``backend_argument`` - an argument passed to the backend when instantiated
-  ``backend_argument`` should be specified once per argument to be passed to
-  the backend and in the format of ``<argument name>:<argument value>``. e.g.:
-  ``backend_argument = host:localhost``
-* ``proxies`` - comma delimited list of `ProxyBackends`_ e.g.
-  ``my.example.Proxy, my.example.Proxy2``
+* ``fernet`` - A Fernet based token provider. Implemented by
+  :class:`keystone.token.providers.fernet.Provider`
 
-Current keystone systems that have caching capabilities:
-    * ``token``
-        The token system has a separate ``cache_time`` configuration option,
-        that can be set to a value above or below the global
-        ``expiration_time`` default, allowing for different caching behavior
-        from the other systems in keystone. This option is set in the
-        ``[token]`` section of the configuration file.
+* ``uuid`` - A UUID based token provider. Implemented by
+  :class:`keystone.token.providers.uuid.Provider`
 
-        The Token Revocation List cache time is handled by the configuration
-        option ``revocation_cache_time`` in the ``[token]`` section. The
-        revocation list is refreshed whenever a token is revoked. It typically
-        sees significantly more requests than specific token retrievals or
-        token validation calls.
-    * ``resource``
-        The resource system has a separate ``cache_time`` configuration option,
-        that can be set to a value above or below the global
-        ``expiration_time`` default, allowing for different caching behavior
-        from the other systems in keystone. This option is set in the
-        ``[resource]`` section of the configuration file.
 
-        Currently ``resource`` has caching for ``project`` and ``domain``
-        specific requests (primarily around the CRUD actions).  The
-        ``list_projects`` and ``list_domains`` methods are not subject to
-        caching.
+UUID or Fernet?
+^^^^^^^^^^^^^^^
+Each token format uses different technologies to achieve various performance,
+scaling and architectural requirements.
 
-        .. WARNING::
-            Be aware that if a read-only ``resource`` backend is in use, the
-            cache will not immediately reflect changes on the back end.  Any
-            given change may take up to the ``cache_time`` (if set in the
-            ``[resource]`` section of the configuration) or the global
-            ``expiration_time`` (set in the ``[cache]`` section of the
-            configuration) before it is reflected. If this type of delay (when
-            using a read-only ``resource`` backend) is an issue, it is
-            recommended that caching be disabled on ``resource``. To disable
-            caching specifically on ``resource``, in the ``[resource]`` section
-            of the configuration set ``caching`` to ``False``.
-    * ``role``
-        Currently ``role`` has caching for ``get_role``, but not for ``list_roles``.
-        The role system has a separate ``cache_time`` configuration option,
-        that can be set to a value above or below the global ``expiration_time``
-        default, allowing for different caching behavior from the other systems in
-        keystone.  This option is set in the ``[role]`` section of the
-        configuration file.
+UUID tokens contain randomly generated UUID4 IDs that are issued and
+validated by the identity service. They are encoded using their hex digest for
+transport and are thus URL-friendly. They must be persisted by the identity
+service in order to be later validated. Revoking them is simply a matter of
+deleting them from the token persistence backend.
 
-        .. WARNING::
-            Be aware that if a read-only ``role`` backend is in use, the cache
-            will not immediately reflect changes on the back end.  Any given change
-            may take up to the ``cache_time`` (if set in the ``[role]``
-            section of the configuration) or the global ``expiration_time`` (set in
-            the ``[cache]`` section of the configuration) before it is reflected.
-            If this type of delay (when using a read-only ``role`` backend) is
-            an issue, it is recommended that caching be disabled on ``role``.
-            To disable caching specifically on ``role``, in the ``[role]``
-            section of the configuration set ``caching`` to ``False``.
+Fernet tokens contain a limited amount of identity and authorization data in a
+`MessagePacked <http://msgpack.org/>`_ payload. The payload is then wrapped as
+a `Fernet <https://github.com/fernet/spec>`_ message for transport, where
+Fernet provides the required web safe characteristics for use in URLs and
+headers. Fernet tokens require symmetric encryption keys which can be
+established using ``keystone-manage fernet_setup`` and periodically rotated
+using ``keystone-manage fernet_rotate``.
 
-For more information about the different backends (and configuration options):
-    * `dogpile.cache.backends.memory`_
-    * `dogpile.cache.backends.memcached`_
-    * `dogpile.cache.backends.redis`_
-    * `dogpile.cache.backends.file`_
+.. WARNING::
+    UUID and Fernet tokens are both bearer tokens, meaning that they
+    must be protected from unnecessary disclosure to prevent unauthorized
+    access.
 
-.. _`dogpile.cache`: http://dogpilecache.readthedocs.org/en/latest/
-.. _`python-memcached`: http://www.tummy.com/software/python-memcached/
-.. _`pylibmc`: http://sendapatch.se/projects/pylibmc/index.html
-.. _`python-binary-memcached`: https://github.com/jaysonsantos/python-binary-memcached
-.. _`Redis`: http://redis.io/
-.. _`dogpile.cache.backends.memory`: http://dogpilecache.readthedocs.org/en/latest/api.html#memory-backend
-.. _`dogpile.cache.backends.memcached`: http://dogpilecache.readthedocs.org/en/latest/api.html#memcached-backends
-.. _`dogpile.cache.backends.redis`: http://dogpilecache.readthedocs.org/en/latest/api.html#redis-backends
-.. _`dogpile.cache.backends.file`: http://dogpilecache.readthedocs.org/en/latest/api.html#file-backends
-.. _`ProxyBackends`: http://dogpilecache.readthedocs.org/en/latest/api.html#proxy-backends
+.. support_matrix:: token-support-matrix.ini
 
+Encryption Keys for Fernet Tokens
+=================================
+
+``keystone-manage fernet_setup`` will attempt to create a key repository as
+configured in the ``[fernet_tokens]`` section of ``keystone.conf`` and
+bootstrap it with encryption keys.
+
+A single 256-bit key is actually composed of two smaller keys: a 128-bit key
+used for SHA256 HMAC signing and a 128-bit key used for AES encryption. See the
+`Fernet token <https://github.com/fernet/spec>`_ specification for more detail.
+
+``keystone-manage fernet_rotate`` will rotate encryption keys through the
+following states:
+
+* **Staged key**: In a key rotation, a new key is introduced into the rotation
+  in this state. Only one key is considered to be the *staged* key at any given
+  time. This key will become the *primary* during the *next* key rotation. This
+  key is only used to validate tokens and serves to avoid race conditions in
+  multi-node deployments (all nodes should recognize all *primary* keys in the
+  deployment at all times). In a multi-node keystone deployment this would
+  allow for the *staged* key to be replicated to all keystone nodes before
+  being promoted to *primary* on a single node. This prevents the case where a
+  *primary* key is created on one keystone node and tokens encrypted/signed with
+  that new *primary* are rejected on another keystone node because the new
+  *primary* doesn't exist there yet.
+
+* **Primary key**: In a key rotation, the old *staged* key is promoted to be
+  the *primary*. Only one key is considered to be the *primary* key at any
+  given time. This is the key used to generate new tokens. This key is also
+  used to validate previously generated tokens.
+
+* **Secondary keys**: In a key rotation, the old *primary* key is demoted to be
+  a *secondary* key. *Secondary* keys are only used to validate previously
+  generated tokens. You can maintain any number of *secondary* keys, up to
+  ``[fernet_tokens] max_active_keys`` (where "active" refers to the sum of all
+  recognized keys in any state: *staged*, *primary* or *secondary*). When
+  ``max_active_keys`` is exceeded during a key rotation, the oldest keys are
+  discarded.
+
+When a new primary key is created, all new tokens will be encrypted using the
+new primary key. The old primary key is demoted to a secondary key, which can
+still be used for validating tokens. Excess secondary keys (beyond
+``[fernet_tokens] max_active_keys``) are revoked. Revoked keys are permanently
+deleted.
+
+Rotating keys too frequently, or with ``[fernet_tokens] max_active_keys`` set
+too low, will cause tokens to become invalid prior to their expiration. As
+tokens may be fetched beyond there initial expiration period keys should not be
+fully rotated within the period of ``[token] expiration`` + ``[token]
+allow_expired_window`` seconds to prevent the tokens becoming unavailable.
 
 Certificates for PKI
 ====================
