@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_52e4fedf",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-26T16:24:30Z",
+      "side": 1,
+      "message": "We should probably add an abstract for list_project_tags",
+      "revId": "560578d2c2e0dcfb6448c73dc2e0363abdd001d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_b2bfd2a8",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-26T16:24:30Z",
+      "side": 1,
+      "message": "Does this need to be a write?",
+      "range": {
+        "startLine": 248,
+        "startChar": 29,
+        "endLine": 248,
+        "endChar": 34
+      },
+      "revId": "560578d2c2e0dcfb6448c73dc2e0363abdd001d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
