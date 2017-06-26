@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_06d2bf00",
+        "filename": "doc/source/admin/identity-fernet-token-faq.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-26T22:36:12Z",
+      "side": 1,
+      "message": "that",
+      "range": {
+        "startLine": 11,
+        "startChar": 33,
+        "endLine": 11,
+        "endChar": 36
+      },
+      "revId": "2c89dee8c8dd07a278b6e3ec2c8850dc36237395",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
