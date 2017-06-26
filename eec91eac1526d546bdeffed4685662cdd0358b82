@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_06e87fdf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-26T22:17:36Z",
+      "side": 1,
+      "message": "I am not finding the copy in the admin-guide in https://docs.openstack.org/developer/keystone/admin/identity-management.html\n\nCan you please add a link?",
+      "revId": "eec91eac1526d546bdeffed4685662cdd0358b82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
