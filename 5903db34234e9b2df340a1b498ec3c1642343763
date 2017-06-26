@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_35ce072d",
+        "filename": "doc/source/admin/identity-tokens.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-26T21:29:02Z",
+      "side": 1,
+      "message": "This should be:\n\n  We recommend\n\nAccording to the OpenStack Writing Guidelines:\n\nhttps://docs.openstack.org/contributor-guide/writing-style/general-writing-guidelines.html",
+      "revId": "5903db34234e9b2df340a1b498ec3c1642343763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
