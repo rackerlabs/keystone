@@ -1050,22 +1050,6 @@ See `API Specification for Endpoint Policy <https://developer.openstack.org/
 api-ref/identity/v3-ext/index.html#os-endpoint-policy-api>`_
 for the details of API definition.
 
-Logging
-=======
-
-Logging is configured externally to the rest of keystone. Configure the path to
-your logging configuration file using the ``[DEFAULT] log_config_append``
-option of ``keystone.conf``. If you wish to route all your logging through
-syslog, set the ``[DEFAULT] use_syslog`` option.
-
-A sample ``log_config_append`` file is included with the project at
-``etc/logging.conf.sample``. Like other OpenStack projects, keystone uses the
-`Python logging module`_, which includes extensive configuration options for
-choosing the output levels and formats.
-
-.. _Paste: http://pythonpaste.org/
-.. _`Python logging module`: http://docs.python.org/library/logging.html
-
 SSL
 ===
 
