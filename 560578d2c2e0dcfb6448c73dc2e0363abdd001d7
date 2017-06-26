@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f201791_d2e12e9d",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-26T16:28:08Z",
+      "side": 1,
+      "message": "It was temporarily taken out because of a gate issue, but will add it back.",
+      "parentUuid": "5f201791_52e4fedf",
+      "revId": "560578d2c2e0dcfb6448c73dc2e0363abdd001d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f201791_b2bfd2a8",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 16
