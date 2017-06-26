@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_283eaa8a",
+        "filename": "doc/source/admin/identity-tokens.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-26T20:50:27Z",
+      "side": 1,
+      "message": "is",
+      "range": {
+        "startLine": 95,
+        "startChar": 6,
+        "endLine": 95,
+        "endChar": 8
+      },
+      "revId": "dd8da2bd4dfdc9c98019edc6b43a49b07dbaf6d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
