@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_010cf791",
+        "filename": "doc/source/install/keystone-install-debian.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 25559
+      },
+      "writtenOn": "2017-06-26T14:33:34Z",
+      "side": 1,
+      "message": "Is this under work? Any specific reason why point 1 is not here, or should I just change this to 1?",
+      "revId": "8b4662e1c1c2753176933deb04f93c495129efd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
