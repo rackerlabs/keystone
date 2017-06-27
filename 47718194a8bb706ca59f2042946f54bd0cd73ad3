@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_8afc72b5",
+        "filename": "doc/source/admin/identity-integrate-with-ldap.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-06-27T16:21:32Z",
+      "side": 1,
+      "message": "Might want to also say that 0 disables it entirely? Given that you\u0027re referring to `enabling` it in the warning below.",
+      "revId": "47718194a8bb706ca59f2042946f54bd0cd73ad3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_8aea32d5",
+        "filename": "doc/source/admin/identity-integrate-with-ldap.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-06-27T16:21:32Z",
+      "side": 1,
+      "message": "/available able/available/",
+      "revId": "47718194a8bb706ca59f2042946f54bd0cd73ad3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
