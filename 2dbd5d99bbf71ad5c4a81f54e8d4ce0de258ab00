@@ -16,6 +16,24 @@
       "revId": "2dbd5d99bbf71ad5c4a81f54e8d4ce0de258ab00",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_0afcd9b2",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 1748,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-27T20:47:53Z",
+      "side": 0,
+      "message": "I attempted to address this concern in the latest patch set.",
+      "parentUuid": "7ffa3b31_d602ac0b",
+      "revId": "2dbd5d99bbf71ad5c4a81f54e8d4ce0de258ab00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
