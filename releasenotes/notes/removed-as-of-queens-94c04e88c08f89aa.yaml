@@ -6,3 +6,9 @@ other:
     and will no longer create a default member role. Please create any
     additional roles you need after running ``bootstrap`` by using the
     ``openstack role create`` command.
+  - >
+    [`blueprint removed-as-of-queens <https://blueprints.launchpad.net/keystone/+spec/removed-as-of-queens>`_]
+    Removed the ability to directly import authentication methods. This
+    functionality was staged for removal during the Newton release and it is
+    being removed now. The use of loading via stevedore entrypoints is
+    recommended instead.
