@@ -22,6 +22,52 @@
       "revId": "2c89dee8c8dd07a278b6e3ec2c8850dc36237395",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_97eddbb8",
+        "filename": "doc/source/admin/identity-fernet-token-faq.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-06-27T01:31:46Z",
+      "side": 1,
+      "message": "part of it is here",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 75
+      },
+      "revId": "2c89dee8c8dd07a278b6e3ec2c8850dc36237395",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_f73f6f22",
+        "filename": "doc/source/admin/identity-tokens.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-06-27T01:31:46Z",
+      "side": 1,
+      "message": "part of it is also here",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 79
+      },
+      "revId": "2c89dee8c8dd07a278b6e3ec2c8850dc36237395",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
