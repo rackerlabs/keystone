@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_15e07e25",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 815,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-06-27T21:26:21Z",
+      "side": 1,
+      "message": "This is not correct. It is valid to have neither a blacklist or whitelist, but this will return None if there is no blacklist or whitelist, when it should return an empty array.",
+      "revId": "2344132268fe04e076c07d206924c9a7f40aa0e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_b5caea9d",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-06-27T21:26:21Z",
+      "side": 1,
+      "message": "This is a major change in behavior, if your change is breaking this test then it is changing functionality in a backwards incompatible way",
+      "revId": "2344132268fe04e076c07d206924c9a7f40aa0e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
