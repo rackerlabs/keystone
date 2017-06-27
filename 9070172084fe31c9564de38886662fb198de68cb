@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_042e0d91",
+        "filename": "doc/source/getting-started/apache-httpd.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-27T22:36:07Z",
+      "side": 0,
+      "message": "These bits might still be useful - we should double check to see if they are in the existing admin-guide, operator guide, or installation guide somewhere (I checked the installation guide but didn\u0027t see any reference to selinux there).",
+      "revId": "9070172084fe31c9564de38886662fb198de68cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_c42375a6",
+        "filename": "doc/source/getting-started/apache-httpd.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-27T22:36:07Z",
+      "side": 0,
+      "message": "Same comment here.",
+      "revId": "9070172084fe31c9564de38886662fb198de68cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
