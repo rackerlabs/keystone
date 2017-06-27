@@ -22,6 +22,30 @@
       "revId": "41c7bf14798740aae46c3a9b1649aeb7777ea785",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_873c5f2f",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-27T23:42:22Z",
+      "side": 1,
+      "message": "Haven\u0027t finished fixing this but working on it.",
+      "parentUuid": "5f201791_bbac22ed",
+      "range": {
+        "startLine": 252,
+        "startChar": 0,
+        "endLine": 255,
+        "endChar": 32
+      },
+      "revId": "41c7bf14798740aae46c3a9b1649aeb7777ea785",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
