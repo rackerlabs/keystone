@@ -633,6 +633,17 @@ class Manager(manager.Manager):
             project_id, _projects_indexed_by_parent(subtree_list))
         return subtree_as_ids
 
+    @MEMOIZE
+    def list_projects_from_ids(self, ids):
+        """Return a list of project references based on a list of IDs.
+
+        :param ids: a list of project IDs.
+
+        :returns: a list of project references
+
+        """
+        return self.list_projects_from_ids(ids)
+
     def list_domains_from_ids(self, domain_ids):
         """List domains for the provided list of ids.
 
