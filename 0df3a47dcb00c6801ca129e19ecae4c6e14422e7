@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_d068d4f5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-27T22:31:12Z",
+      "side": 1,
+      "message": "This is more than likely going to require a Depends-On in the commit message to link this change with the necessary changes in keystonemiddleware [0].\n\nWe should make sure we coordinate the two appropriately. Let me know if you\u0027d like help with this. I\u0027m happy to lend a hand.\n\n[0] https://github.com/openstack/keystonemiddleware/blob/b9e01bda73e3ea8ac4266e90760ab60025f6da7d/keystonemiddleware/auth_token/_opts.py#L171-L183",
+      "revId": "0df3a47dcb00c6801ca129e19ecae4c6e14422e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
