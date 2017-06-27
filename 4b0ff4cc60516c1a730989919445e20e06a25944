@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_b432070f",
+        "filename": "doc/source/admin/identity-caching-layer.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 10607
+      },
+      "writtenOn": "2017-06-27T10:08:26Z",
+      "side": 1,
+      "message": "to ``False`` (it\u0027s marked up as it is a setting",
+      "range": {
+        "startLine": 48,
+        "startChar": 34,
+        "endLine": 48,
+        "endChar": 39
+      },
+      "revId": "4b0ff4cc60516c1a730989919445e20e06a25944",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_543df3da",
+        "filename": "doc/source/admin/identity-caching-layer.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 10607
+      },
+      "writtenOn": "2017-06-27T10:08:26Z",
+      "side": 1,
+      "message": "they have * - please do not use contractions. This is for translation purposes :)",
+      "range": {
+        "startLine": 122,
+        "startChar": 28,
+        "endLine": 122,
+        "endChar": 35
+      },
+      "revId": "4b0ff4cc60516c1a730989919445e20e06a25944",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
