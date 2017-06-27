@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_a19ab05e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1062,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-06-27T19:30:30Z",
+      "side": 1,
+      "message": "This comment doesn\u0027t apply as we are not pruning anything.  Perhaps we can remove it.",
+      "range": {
+        "startLine": 1059,
+        "startChar": 0,
+        "endLine": 1062,
+        "endChar": 44
+      },
+      "revId": "5a57daa55cb3cd00b009de3497cca4b763539da4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
