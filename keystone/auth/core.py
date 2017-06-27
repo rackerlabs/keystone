@@ -13,8 +13,6 @@
 import sys
 
 from oslo_log import log
-from oslo_log import versionutils
-from oslo_utils import importutils
 import six
 import stevedore
 
@@ -43,20 +41,11 @@ def load_auth_method(method):
                                                  invoke_on_load=True)
         return driver_manager.driver
     except RuntimeError:
-        LOG.debug('Failed to load the %s driver (%s) using stevedore, will '
-                  'attempt to load using import_object instead.',
-                  method, plugin_name)
-
-    driver = importutils.import_object(plugin_name)
-
-    msg = (_(
-        'Direct import of auth plugin %(name)r is deprecated as of Liberty in '
-        'favor of its entrypoint from %(namespace)r and may be removed in '
-        'N.') %
-        {'name': plugin_name, 'namespace': namespace})
-    versionutils.report_deprecated_feature(LOG, msg)
-
-    return driver
+        msg = (_('Failed to load the %(method)s driver (%(name)s) using '
+                 'stevedore. As of Pike, direct import is not supported '
+                 'anymore. Use the driver\'s entrypoint from %(namespace)r') %
+               {'method': method, 'name': plugin_name, 'namespace': namespace})
+        raise RuntimeError(msg)
 
 
 def load_auth_methods():
