@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_24ec6928",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-27T22:42:22Z",
+      "side": 1,
+      "message": "If we do decide to add these in this section, we could highlight that this is some what unofficial documentation (we don\u0027t generate it automatically) and it is maintained manually. It can become outdated as things change. We can add that statement here or at the beginning of api_curl_examples.rst.",
+      "revId": "8e82fc9e4d47d909b804a5d8fc0564108c0d36a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
