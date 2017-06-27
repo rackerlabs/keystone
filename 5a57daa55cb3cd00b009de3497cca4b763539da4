@@ -22,6 +22,24 @@
       "revId": "5a57daa55cb3cd00b009de3497cca4b763539da4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_2416ae4a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1062,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-27T19:46:33Z",
+      "side": 1,
+      "message": "Actually - I wonder how much this is needed now that we rebuild the entire token context at validation time regardless of persistence.",
+      "parentUuid": "5f201791_a19ab05e",
+      "revId": "5a57daa55cb3cd00b009de3497cca4b763539da4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
