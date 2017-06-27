@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_bbac22ed",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-06-27T17:46:27Z",
+      "side": 1,
+      "message": "This is kind of strange.  This function returns a boolean here, but returns an empty array on Line 247.",
+      "range": {
+        "startLine": 252,
+        "startChar": 0,
+        "endLine": 255,
+        "endChar": 32
+      },
+      "revId": "41c7bf14798740aae46c3a9b1649aeb7777ea785",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
