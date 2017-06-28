@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_e1919f53",
+        "filename": "keystone/common/api_version_request.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-28T18:59:41Z",
+      "side": 1,
+      "message": "We could restructure this as a class and have the methods here be more like attributes.",
+      "revId": "23723c83254ab2238fde7ae7afc83919fc10e1c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_a143a73e",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-28T18:59:41Z",
+      "side": 1,
+      "message": "Instead of calling a module level method and passing self, what if we kept the logic inside __call__ and determined the version here instead?",
+      "revId": "23723c83254ab2238fde7ae7afc83919fc10e1c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
