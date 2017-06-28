@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_d419c821",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2155,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-28T16:40:56Z",
+      "side": 1,
+      "message": "According to the test name and comments, isn\u0027t this suppose to be a domain-scoped token?\n\nAlso - I think the assertion is causing the key error here. The assertion isn\u0027t providing any groups, which might mean that there won\u0027t be any groups supplied in the token.",
+      "revId": "f3a32ff8b616eb9dce2ef5c1bbb85c5bee865a45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_74c1d453",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2160,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-28T16:40:56Z",
+      "side": 1,
+      "message": "This API is deprecated in favor of /auth/projects/ \n\nhttps://developer.openstack.org/api-ref/identity/v3-ext/index.html?expanded\u003dlist-projects-a-federated-user-can-access-detail#os-federation-api",
+      "revId": "f3a32ff8b616eb9dce2ef5c1bbb85c5bee865a45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
