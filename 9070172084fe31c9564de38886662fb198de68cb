@@ -33,6 +33,24 @@
       "revId": "9070172084fe31c9564de38886662fb198de68cb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_7aa0b142",
+        "filename": "doc/source/getting-started/apache-httpd.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 25559
+      },
+      "writtenOn": "2017-06-28T06:57:14Z",
+      "side": 0,
+      "message": "I couldn\u0027t find it anywhere but may be this particular section can be added to https://github.com/openstack/keystone/blob/80202297ec76426351ae913f8f1cf583ccda10ce/doc/source/configuration.rst, whats say?",
+      "parentUuid": "5f201791_c42375a6",
+      "revId": "9070172084fe31c9564de38886662fb198de68cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
