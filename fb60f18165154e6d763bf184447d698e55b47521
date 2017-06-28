@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_68b459f2",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 916,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-28T15:07:54Z",
+      "side": 0,
+      "message": "The test name could be updated here since it\u0027s inaccurate now that you\u0027ve fixed the bug.",
+      "revId": "fb60f18165154e6d763bf184447d698e55b47521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_e8ee29eb",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 929,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-28T15:07:54Z",
+      "side": 0,
+      "message": "This comment isn\u0027t necessarily accurate now that the bug is fixed. We should take the opportunity to update it, saying the domain isn\u0027t created because we\u0027re detecting if the idp already exists prior to creating the domain.",
+      "revId": "fb60f18165154e6d763bf184447d698e55b47521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
