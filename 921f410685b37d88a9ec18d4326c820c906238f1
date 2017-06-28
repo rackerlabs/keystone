@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f201791_d4aae86e",
+        "filename": "keystone/common/policies/implied_role.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-28T16:54:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f201791_e3a87078",
+      "revId": "921f410685b37d88a9ec18d4326c820c906238f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f201791_c305747c",
         "filename": "keystone/common/policies/implied_role.py",
         "patchSetId": 6
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "5f201791_c848085d",
+        "filename": "keystone/common/policies/implied_role.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-28T16:54:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f201791_7058e086",
+      "revId": "921f410685b37d88a9ec18d4326c820c906238f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f201791_83b1bce4",
         "filename": "keystone/common/policies/implied_role.py",
         "patchSetId": 6
@@ -65,6 +101,24 @@
       "writtenOn": "2017-06-20T21:57:23Z",
       "side": 1,
       "message": "nit: Check if a inference relationship exists between two roles* ?",
+      "revId": "921f410685b37d88a9ec18d4326c820c906238f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_8878d08f",
+        "filename": "keystone/common/policies/implied_role.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-28T16:54:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f201791_83b1bce4",
       "revId": "921f410685b37d88a9ec18d4326c820c906238f1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
