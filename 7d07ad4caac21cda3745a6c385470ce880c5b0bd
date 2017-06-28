@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_3f0fbd88",
+        "filename": "doc/source/devref/setup.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-28T13:26:39Z",
+      "side": 1,
+      "message": "pull in the content from\n\n    Configuring Keystone\n    Running Keystone\n    Initializing Keystone\n    Interacting with Keystone\n\nas subsections, so we wont need separate files for these (that can be put together)",
+      "revId": "7d07ad4caac21cda3745a6c385470ce880c5b0bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
