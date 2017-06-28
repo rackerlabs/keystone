@@ -57,6 +57,24 @@
       "revId": "769c85363e5abc39dfb29c884733f5ad4a436eed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_1ecd1ab6",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-28T17:57:02Z",
+      "side": 1,
+      "message": "I think project is fine here even though it\u0027s technically v2 context. The user should only see tenant since this is a variable name.",
+      "parentUuid": "ff0f0b1f_8e3afde4",
+      "revId": "769c85363e5abc39dfb29c884733f5ad4a436eed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
