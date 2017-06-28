@@ -22,11 +22,6 @@ REST_API_VERSION_HISTORY = """
 
 """
 
-# Placeholders for microversions
-_MIN_API_VERSION = "3.0"
-_MAX_API_VERSION = "3.8"
-_DEPRECATED_API_VERSION = "2.0"
-
 
 def min_api_version():
     version = _MIN_API_VERSION
@@ -47,3 +42,36 @@ def deprecated_api_version():
     status = 'deprecated'
     updated = '2016-08-04T00:00:00Z'
     return {"version": version, "status": status, "updated": updated}
+
+
+class VersionFactory(object):
+
+    _min_api_version = '3.0'
+    _max_api_version = '3.8'
+    _deprecated_api_version = '2.0'
+
+    @property
+    def deprecated_api_version(self):
+        return self._deprecated_api_version
+
+    @property
+    def max_api_version(self):
+        return self._max_api_version
+
+    @property
+    def min_api_version(self):
+        return self._min_api_version
+
+    def stability(self, version):
+        if version == self.deprecated_api_version:
+            status = 'deprecated'
+        else:
+            status = 'stable'
+        return status
+
+    def last_updated(self, version):
+        if version == self.deprecated_api_version:
+            last_updated = '2016-08-04T00:00:00Z'
+        else:
+            last_updated = '2017-02-22T00:00:00Z'
+        return last_updated

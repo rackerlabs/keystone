@@ -228,7 +228,15 @@ class Application(BaseApplication):
 
         params = self._normalize_dict(params)
 
-        version = set_api_version_request(self)
+        vf = api_version_request.VersionFactory()
+
+        controller = importutils.import_class('keystone.common.controller')
+        if isinstance(self, controller.V3Controller):
+            version = vf.max_api_version
+        elif isinstance(self, controller.V2Controller):
+            version = vf.deprecated_api_version
+        else:
+            version = None
 
         try:
             result = method(req, **params)
@@ -697,19 +705,6 @@ class V3ExtensionRouter(ExtensionRouter, RoutersBase):
         response.body = jsonutils.dump_as_bytes(response_data,
                                                 cls=utils.SmarterEncoder)
         return response
-
-
-def set_api_version_request(self):
-    controller = importutils.import_class('keystone.common.controller')
-
-    if isinstance(self, controller.V3Controller):
-        version = api_version_request.max_api_version()['version']
-    elif isinstance(self, controller.V2Controller):
-        version = api_version_request.deprecated_api_version()['version']
-    else:
-        version = None
-
-    return version
 
 
 def render_response(body=None, status=None, headers=None,

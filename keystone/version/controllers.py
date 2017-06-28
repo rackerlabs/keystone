@@ -117,14 +117,12 @@ class Version(wsgi.Application):
     def _get_versions_list(self, context):
         """The list of versions is dependent on the context."""
         versions = {}
+        vf = api_version_request.VersionFactory()
         if 'v2.0' in _VERSIONS:
             versions['v2.0'] = {
-                'id': 'v' + api_version_request.
-                deprecated_api_version()['version'],
-                'status': api_version_request.
-                deprecated_api_version()['status'],
-                'updated': api_version_request.
-                deprecated_api_version()['updated'],
+                'id': 'v' + vf.deprecated_api_version,
+                'status': vf.stability(vf.deprecated_api_version),
+                'updated': vf.last_updated(vf.deprecated_api_version),
                 'links': [
                     {
                         'rel': 'self',
@@ -146,10 +144,9 @@ class Version(wsgi.Application):
 
         if 'v3' in _VERSIONS:
             versions['v3'] = {
-                'id': 'v' + api_version_request.
-                max_api_version()['version'],
-                'status': api_version_request.max_api_version()['status'],
-                'updated': api_version_request.max_api_version()['updated'],
+                'id': 'v' + vf.max_api_version,
+                'status': vf.stability(vf.max_api_version),
+                'updated': vf.last_updated(vf.max_api_version),
                 'links': [
                     {
                         'rel': 'self',
