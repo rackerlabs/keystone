@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_fcd266ff",
+        "filename": "keystone/common/policies/trust.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-28T19:33:58Z",
+      "side": 1,
+      "message": "I think this also supports HEAD.\n\nhttps://review.openstack.org/#/c/473902/2/keystone/trust/routers.py",
+      "revId": "01911024e8639099db3cf4dd4b4c287c3b334588",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_7c089690",
+        "filename": "keystone/common/policies/trust.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-28T19:33:58Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "01911024e8639099db3cf4dd4b4c287c3b334588",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
