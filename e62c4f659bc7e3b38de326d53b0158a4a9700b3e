@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_9acef660",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-06-28T00:33:52Z",
+      "side": 1,
+      "message": "I don\u0027t think we have an this ``extra`` column of JsonBlob.",
+      "range": {
+        "startLine": 231,
+        "startChar": 0,
+        "endLine": 231,
+        "endChar": 46
+      },
+      "revId": "e62c4f659bc7e3b38de326d53b0158a4a9700b3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
