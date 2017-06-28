@@ -22,6 +22,30 @@
       "revId": "e62c4f659bc7e3b38de326d53b0158a4a9700b3e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_7952ed14",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-28T15:59:44Z",
+      "side": 1,
+      "message": "I added this in because of the ModelDictMixinWithExtras extension made in the ProjectTag class in sql.py but I just realized that class has the comments below. I\u0027ll work around it and get rid of extra.\n\n\"NOTE: DO NOT USE THIS FOR FUTURE SQL MODELS. \"Extra\" column is a legacy concept that should not be carried forward with new SQL models as the concept of \"arbitrary\" properties is not in line with the design philosophy of Keystone.\"",
+      "parentUuid": "5f201791_9acef660",
+      "range": {
+        "startLine": 231,
+        "startChar": 0,
+        "endLine": 231,
+        "endChar": 46
+      },
+      "revId": "e62c4f659bc7e3b38de326d53b0158a4a9700b3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
