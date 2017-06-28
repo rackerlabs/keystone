@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f201791_793c2d92",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-28T16:10:52Z",
+      "side": 1,
+      "message": "replace with ModelDictMixin",
+      "range": {
+        "startLine": 360,
+        "startChar": 36,
+        "endLine": 360,
+        "endChar": 60
+      },
+      "revId": "e62c4f659bc7e3b38de326d53b0158a4a9700b3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_39423510",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-28T16:10:52Z",
+      "side": 1,
+      "message": "Delete",
+      "range": {
+        "startLine": 376,
+        "startChar": 4,
+        "endLine": 376,
+        "endChar": 9
+      },
+      "revId": "e62c4f659bc7e3b38de326d53b0158a4a9700b3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f201791_9acef660",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 19
