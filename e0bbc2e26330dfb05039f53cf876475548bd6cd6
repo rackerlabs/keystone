@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_a5917c49",
+        "filename": "doc/source/devref/development_environment.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-28T14:31:42Z",
+      "side": 1,
+      "message": "I can go either way with this one. I like having \"Development\" here because it\u0027s descriptive of what kind of environment it is.",
+      "revId": "e0bbc2e26330dfb05039f53cf876475548bd6cd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_8551e038",
+        "filename": "doc/source/devref/list-truncation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-28T14:31:42Z",
+      "side": 1,
+      "message": "This seems to be rendering each section as it\u0027s own page in the documentation, instead of a section on the main contributor page.",
+      "revId": "e0bbc2e26330dfb05039f53cf876475548bd6cd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

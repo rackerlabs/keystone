@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_659da408",
+        "filename": "doc/source/devref/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-28T14:31:42Z",
+      "side": 0,
+      "message": "There are a lot of sections in this document that have only one or two sentences. It seems like a lot of clicking around for contributors to have to go through to read the docs. I wonder if another approach would be to consolidate all this into a single doc with sections on a single page. The advantage would be that it flows from topic to topic as the user reads the document.\n\nIt would also give us a basis to structure the doc. For example, the sections at the top would be introductory sections on how to contribute and evolve from there.",
+      "revId": "7d07ad4caac21cda3745a6c385470ce880c5b0bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
