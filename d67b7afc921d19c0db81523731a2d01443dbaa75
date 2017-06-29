@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_970d6992",
+        "filename": "releasenotes/notes/invalid-ldap-credential-exception-c0e6dbc524de2b56.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-06-29T21:10:46Z",
+      "side": 1,
+      "message": "This could be linked to the bug report like the example we have in the docs [0] under the Release Notes section. It could also be as simple as \"We mask invalid credentials for LDAP backends the same way we do for SQL.\"\n\n[0] https://docs.openstack.org/developer/keystone/devref/development_best_practices.html",
+      "revId": "d67b7afc921d19c0db81523731a2d01443dbaa75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
