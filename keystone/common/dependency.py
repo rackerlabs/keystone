@@ -37,7 +37,7 @@ _factories = {}
 
 
 def _set_provider(name, provider):
-    _original_provider, where_registered = _REGISTRY.get(name, (None, None))
+    _original_provider, where_registered = _REGISTRY.get(name)
     if where_registered:
         raise Exception('%s already has a registered provider, at\n%s' %
                         (name, ''.join(where_registered)))
@@ -51,7 +51,7 @@ GET_OPTIONAL = object()
 def get_provider(name, optional=GET_REQUIRED):
     if optional is GET_REQUIRED:
         return _REGISTRY[name][0]
-    return _REGISTRY.get(name, (None, None))[0]
+    return _REGISTRY.get(name)[0]
 
 
 class UnresolvableDependencyException(Exception):
