@@ -1,0 +1,10 @@
+---
+fixes:
+  - |
+    [`bug 1688188 <https://bugs.launchpad.net/keystone/+bug/1688188>`_]
+    Create an identity provider with the same ID to intentionally cause a
+    conflict. If the requested body does not contain the domain and then domain
+    for identity provider is going to be created before the conflict is raised
+    from the database layer. So the auto-generated domain needs to be cleaned
+    up. But if the requeste body specifies the domain and it does not need to
+    clean up the domain.
