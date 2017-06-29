@@ -22,6 +22,53 @@
       "revId": "a566ce5c2637840683babae644c06703e492df87",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_e1d17f59",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-29T19:42:50Z",
+      "side": 1,
+      "message": "Disregard the above comment.\nHowever you do need to check if the request.header.get(AUTH) is actually not empty. I suggest something like if token: or something to fix this.",
+      "parentUuid": "3f1d235d_865e61e4",
+      "range": {
+        "startLine": 44,
+        "startChar": 54,
+        "endLine": 44,
+        "endChar": 62
+      },
+      "revId": "a566ce5c2637840683babae644c06703e492df87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_61c56f8e",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-29T19:42:50Z",
+      "side": 1,
+      "message": "Ditto here",
+      "range": {
+        "startLine": 48,
+        "startChar": 12,
+        "endLine": 48,
+        "endChar": 79
+      },
+      "revId": "a566ce5c2637840683babae644c06703e492df87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
