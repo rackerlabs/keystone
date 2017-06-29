@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_c6a0e4a8",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2017-06-29T13:27:41Z",
+      "side": 1,
+      "message": "This is not really appropriate here, it likely works because flush_expired_tokens() is not embedded inside another enginefacade database operation.   For one thing, the flag is reset here but is then not restored to its original value after the routine.   Additionally, it would be better to just call session.begin() after the session.commit() right below.",
+      "revId": "a09ea125ac571afcf3f1e84b4e4a38ce9b0cffaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
