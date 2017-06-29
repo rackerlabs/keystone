@@ -16,6 +16,64 @@
       "revId": "c6832e7319432b37b50e01ef04c3025d39c9e756",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_fe37eee2",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-29T09:38:15Z",
+      "side": 0,
+      "message": "++",
+      "parentUuid": "3f1d235d_e9c73d45",
+      "revId": "c6832e7319432b37b50e01ef04c3025d39c9e756",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_5e56e208",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-29T09:38:15Z",
+      "side": 0,
+      "message": "same here",
+      "revId": "c6832e7319432b37b50e01ef04c3025d39c9e756",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_3e744699",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-29T09:38:15Z",
+      "side": 0,
+      "message": "same for these, they need to return None inside a list",
+      "range": {
+        "startLine": 78,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 48
+      },
+      "revId": "c6832e7319432b37b50e01ef04c3025d39c9e756",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
