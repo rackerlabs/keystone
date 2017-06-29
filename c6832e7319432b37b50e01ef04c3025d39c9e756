@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_e9c73d45",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 25587
+      },
+      "writtenOn": "2017-06-29T09:05:10Z",
+      "side": 0,
+      "message": "The name will return None type object, and it will try to break that None type object in two, which is not possible, hence be append (none,none) to assign None to both the variables separately, same for all the other cases.",
+      "revId": "c6832e7319432b37b50e01ef04c3025d39c9e756",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
