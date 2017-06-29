@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_865e61e4",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-29T19:12:25Z",
+      "side": 1,
+      "message": "move this to context[\u0027token_id\u0027] \u003d token",
+      "range": {
+        "startLine": 44,
+        "startChar": 54,
+        "endLine": 44,
+        "endChar": 62
+      },
+      "revId": "a566ce5c2637840683babae644c06703e492df87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
