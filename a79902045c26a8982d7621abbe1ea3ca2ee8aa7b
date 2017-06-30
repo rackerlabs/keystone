@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_20519137",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-30T17:03:42Z",
+      "side": 1,
+      "message": "remove this extra line break",
+      "revId": "a79902045c26a8982d7621abbe1ea3ca2ee8aa7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

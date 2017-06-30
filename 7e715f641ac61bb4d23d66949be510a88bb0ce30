@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_a02121b7",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-30T17:03:42Z",
+      "side": 0,
+      "message": "Add this line break back in, typically we separate the imports based on library/third party/local [0].\n\nHere\u0027s another example from keystone [1]\n\n\n[0] https://www.python.org/dev/peps/pep-0008/#imports\n[1] https://github.com/openstack/keystone/blob/master/keystone/token/provider.py",
+      "revId": "7e715f641ac61bb4d23d66949be510a88bb0ce30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
