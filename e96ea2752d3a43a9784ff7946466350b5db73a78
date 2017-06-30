@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_024b3659",
+        "filename": "doc/source/admin/identity-keystone-usage-and-features.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-30T19:52:35Z",
+      "side": 1,
+      "message": "nit: https*",
+      "range": {
+        "startLine": 50,
+        "startChar": 29,
+        "endLine": 50,
+        "endChar": 33
+      },
+      "revId": "e96ea2752d3a43a9784ff7946466350b5db73a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
