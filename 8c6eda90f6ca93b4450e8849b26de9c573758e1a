@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_02c69649",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-30T20:03:50Z",
+      "side": 1,
+      "message": "nit: updates",
+      "range": {
+        "startLine": 111,
+        "startChar": 14,
+        "endLine": 111,
+        "endChar": 22
+      },
+      "revId": "8c6eda90f6ca93b4450e8849b26de9c573758e1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
