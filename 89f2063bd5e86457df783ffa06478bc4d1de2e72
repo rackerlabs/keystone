@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_2551a337",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-30T17:56:26Z",
+      "side": 1,
+      "message": "did not add to context, which is making the gate check go haywire. will add.",
+      "range": {
+        "startLine": 121,
+        "startChar": 52,
+        "endLine": 121,
+        "endChar": 66
+      },
+      "revId": "89f2063bd5e86457df783ffa06478bc4d1de2e72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_3b63021d",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-30T17:56:26Z",
+      "side": 1,
+      "message": "fix. this doesnt actually filter with project_id",
+      "range": {
+        "startLine": 282,
+        "startChar": 8,
+        "endLine": 282,
+        "endChar": 37
+      },
+      "revId": "89f2063bd5e86457df783ffa06478bc4d1de2e72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_bb76f2d7",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-30T17:56:26Z",
+      "side": 1,
+      "message": "WIP",
+      "range": {
+        "startLine": 295,
+        "startChar": 8,
+        "endLine": 295,
+        "endChar": 26
+      },
+      "revId": "89f2063bd5e86457df783ffa06478bc4d1de2e72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_96cc2b8a",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-06-30T17:56:26Z",
+      "side": 1,
+      "message": "this will just return query since hints is None",
+      "range": {
+        "startLine": 323,
+        "startChar": 35,
+        "endLine": 323,
+        "endChar": 53
+      },
+      "revId": "89f2063bd5e86457df783ffa06478bc4d1de2e72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
