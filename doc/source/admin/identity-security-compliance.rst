@@ -77,16 +77,23 @@ passwords will not be impacted. If you want existing passwords to have an
 expiration date, you would need to run a SQL script against the password table
 in the database to update the expires_at column.
 
-In addition, you can set it so that passwords never expire for some users by
-adding their user ID to ``password_expires_ignore_user_ids`` list:
+If there exists a user whos password you do not want to expire, keystone
+supports setting that user's option 'ignore_password_expiry' to true:
 
-.. code-block:: ini
+`/v3/users/3a54353c9dcc44f690975ea768512f6a`
 
-    [security_compliance]
-    password_expires_ignore_user_ids = [3a54353c9dcc44f690975ea768512f6a]
+.. code-block:: JSON
 
-In this example, the password for user ID ``3a54353c9dcc44f690975ea768512f6a``
-would never expire.
+    {
+        user: {
+            options: {
+                "ignore_password_expiry": true
+            }
+        }
+    }
+
+In this example, the password expiration for user ID
+``3a54353c9dcc44f690975ea768512f6a`` would not be honored.
 
 Indicating password strength requirements
 -----------------------------------------
