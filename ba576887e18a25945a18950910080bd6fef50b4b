@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_5c035574",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-06-30T18:45:31Z",
+      "side": 1,
+      "message": "make a test with subject token too",
+      "revId": "ba576887e18a25945a18950910080bd6fef50b4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
