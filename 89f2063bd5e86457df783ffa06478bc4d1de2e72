@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "3f1d235d_b0028808",
+        "filename": "keystone/exception.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-30T21:16:02Z",
+      "side": 1,
+      "message": "I mentioned it in another note, but this just seems to be a copy of the \"ValidationError\" with slightly different wording. We can just tweak the \"attribute\" value to fit with \"ValidationError\"",
+      "range": {
+        "startLine": 92,
+        "startChar": 6,
+        "endLine": 92,
+        "endChar": 18
+      },
+      "revId": "89f2063bd5e86457df783ffa06478bc4d1de2e72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f1d235d_3b63021d",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 25
@@ -87,6 +110,98 @@
         "startChar": 35,
         "endLine": 323,
         "endChar": 53
+      },
+      "revId": "89f2063bd5e86457df783ffa06478bc4d1de2e72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_65eaf4ac",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-30T21:16:02Z",
+      "side": 1,
+      "message": "We should probably put this value up top as a global constant, maybe something like \"MAX_PROJECT_TAG_COUNT\".",
+      "range": {
+        "startLine": 61,
+        "startChar": 31,
+        "endLine": 61,
+        "endChar": 33
+      },
+      "revId": "89f2063bd5e86457df783ffa06478bc4d1de2e72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_0577c004",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-30T21:16:02Z",
+      "side": 1,
+      "message": "We don\u0027t really need this new exception, we could use the existing \"ValidationError\" and change the attribute below to something like \"no more than %d tags\" % MAX_PROJECT_TAG_COUNT",
+      "range": {
+        "startLine": 62,
+        "startChar": 32,
+        "endLine": 62,
+        "endChar": 44
+      },
+      "revId": "89f2063bd5e86457df783ffa06478bc4d1de2e72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_25d63cc5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 892,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-30T21:16:02Z",
+      "side": 1,
+      "message": "This might not be really 100% URL safe, it would be better to go with the invalid regex example:\n\n/\\\\|,/g",
+      "range": {
+        "startLine": 892,
+        "startChar": 27,
+        "endLine": 892,
+        "endChar": 73
+      },
+      "revId": "89f2063bd5e86457df783ffa06478bc4d1de2e72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_05fea036",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 896,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-30T21:16:02Z",
+      "side": 1,
+      "message": "nit: replace with something like \"project tags containing URL safe characters\"",
+      "range": {
+        "startLine": 896,
+        "startChar": 26,
+        "endLine": 896,
+        "endChar": 39
       },
       "revId": "89f2063bd5e86457df783ffa06478bc4d1de2e72",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",

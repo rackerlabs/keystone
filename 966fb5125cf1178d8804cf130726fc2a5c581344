@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_700cf03a",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-06-30T21:16:02Z",
+      "side": 0,
+      "message": "Remove this, we don\u0027t need to change this file",
+      "revId": "966fb5125cf1178d8804cf130726fc2a5c581344",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
