@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_2dc76115",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-06-30T04:32:58Z",
+      "side": 1,
+      "message": ".strip() doesn\u0027t change the ``token`` string, it returns a stripped string.  You will need to be reassigned back to ``token``.",
+      "range": {
+        "startLine": 46,
+        "startChar": 12,
+        "endLine": 46,
+        "endChar": 25
+      },
+      "revId": "abdcf241b78d93331e342b2d665a51127c2d0066",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_8d69d526",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-06-30T04:32:58Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 52,
+        "startChar": 16,
+        "endLine": 52,
+        "endChar": 37
+      },
+      "revId": "abdcf241b78d93331e342b2d665a51127c2d0066",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_8dd795c0",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-06-30T04:32:58Z",
+      "side": 1,
+      "message": "The stripping would have happened in the code, so you don\u0027t want to .strip() here.  If you .strip() here, it will always work and won\u0027t test the code.",
+      "range": {
+        "startLine": 118,
+        "startChar": 53,
+        "endLine": 118,
+        "endChar": 61
+      },
+      "revId": "abdcf241b78d93331e342b2d665a51127c2d0066",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
