@@ -5,8 +5,10 @@ Configuration References
 .. toctree::
    :maxdepth: 1
 
+   config-options.rst
    token-provider.rst
    federated-identity.rst
+   policy.rst
    caching.rst
    samples/index.rst
 
