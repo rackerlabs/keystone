@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_320652d0",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-03T19:31:33Z",
+      "side": 1,
+      "message": "We should change this to \"%d or fewer\" so we avoid any confusion, this currently sounds like you can only have 49 tags per project.",
+      "range": {
+        "startLine": 64,
+        "startChar": 27,
+        "endLine": 64,
+        "endChar": 40
+      },
+      "revId": "8c6f78ab8018f45883238a9668d3f8d422c7cb4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
