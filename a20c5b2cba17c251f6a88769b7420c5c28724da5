@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_e6ddbc42",
+        "filename": "keystone/exception.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-03T23:04:32Z",
+      "side": 1,
+      "message": "forgot to pull down from edit made on gerrit. remove this next patch",
+      "range": {
+        "startLine": 92,
+        "startChar": 6,
+        "endLine": 92,
+        "endChar": 18
+      },
+      "revId": "a20c5b2cba17c251f6a88769b7420c5c28724da5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
