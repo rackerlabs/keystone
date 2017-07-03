@@ -103,9 +103,6 @@ _build_ec2tokens_relation = functools.partial(
 REVOCATIONS_RELATION = json_home.build_v3_extension_resource_relation(
     'OS-PKI', '1.0', 'revocations')
 
-_build_simple_cert_relation = functools.partial(
-    json_home.build_v3_extension_resource_relation,
-    extension_name='OS-SIMPLE-CERT', extension_version='1.0')
 
 _build_trust_relation = functools.partial(
     json_home.build_v3_extension_resource_relation, extension_name='OS-TRUST',
@@ -243,10 +240,6 @@ V3_JSON_HOME_RESOURCES = {
     'https://docs.openstack.org/api/openstack-identity/3/ext/OS-REVOKE/1.0/rel'
     '/events': {
         'href': '/OS-REVOKE/events'},
-    _build_simple_cert_relation(resource_name='ca_certificate'): {
-        'href': '/OS-SIMPLE-CERT/ca'},
-    _build_simple_cert_relation(resource_name='certificates'): {
-        'href': '/OS-SIMPLE-CERT/certificates'},
     _build_trust_relation(resource_name='trust'):
     {
         'href-template': '/OS-TRUST/trusts/{trust_id}',
