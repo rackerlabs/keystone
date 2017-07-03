@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_ac5b2c52",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-03T19:07:15Z",
+      "side": 1,
+      "message": "If the users have access to your log messages, there is a much larger issue than knowing that their token is unscoped.",
+      "range": {
+        "startLine": 13,
+        "startChar": 18,
+        "endLine": 13,
+        "endChar": 57
+      },
+      "revId": "3fbdadafe7c32c019af422491175e8cbf9f0d12f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_0c47c07a",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-03T19:07:15Z",
+      "side": 1,
+      "message": "I would say either keep this at warning or change to info. We would have to enable debugging for anyone to see these messages.",
+      "range": {
+        "startLine": 202,
+        "startChar": 24,
+        "endLine": 202,
+        "endChar": 28
+      },
+      "revId": "3fbdadafe7c32c019af422491175e8cbf9f0d12f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_6c55141d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-03T19:07:15Z",
+      "side": 1,
+      "message": "If we are throwing exceptions, warning makes more sense.",
+      "range": {
+        "startLine": 218,
+        "startChar": 16,
+        "endLine": 218,
+        "endChar": 21
+      },
+      "revId": "3fbdadafe7c32c019af422491175e8cbf9f0d12f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
