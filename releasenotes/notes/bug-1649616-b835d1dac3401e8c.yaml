@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    [`bug 1689616 <https://bugs.launchpad.net/keystone/+bug/1649616>`_]
+    Definitive fix for token flush when expired tokens becomes large enough.
+    During a backport patch for this fix it was found some problems in
+    the previous approach like, It didn't enabled back the session.autocommit.
+    In addition, we have a better approach for this holding a new connection
+    open in the commit transaction instead of disable/enable autocommit.
