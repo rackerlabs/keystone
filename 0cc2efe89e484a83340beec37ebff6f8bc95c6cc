@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_533f7eb3",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1163,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2017-07-04T12:18:59Z",
+      "side": 1,
+      "message": "hum, I\u0027m not a big fan of this change, this sounds like change the order of the checks, if we take a look in the code https://github.com/openstack/keystone/blob/master/keystone/resource/core.py#L192 the first check, if the domain_id was not specified, will be to verify the parent_id and not the domain in the client\u0027s scoped token.",
+      "revId": "0cc2efe89e484a83340beec37ebff6f8bc95c6cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
