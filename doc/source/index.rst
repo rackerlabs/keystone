@@ -57,7 +57,7 @@ Installation Guides
 General Information
 ~~~~~~~~~~~~~~~~~~~
 
-This section sontains the general information related to keystone which is commom to all
+This section contains the general information related to keystone which is commom to all
 the developers, users and operators. For documentation specific to the any of these three,
 please see the subsequent sections.
 
