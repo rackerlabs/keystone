@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_99cc266b",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 25254
+      },
+      "writtenOn": "2017-07-04T04:11:47Z",
+      "side": 1,
+      "message": "common",
+      "range": {
+        "startLine": 60,
+        "startChar": 75,
+        "endLine": 60,
+        "endChar": 81
+      },
+      "revId": "0c2caf5aeaff5c42f8b2a27b63aab221bd433803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
