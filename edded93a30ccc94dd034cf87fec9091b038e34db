@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_b8a8f18b",
+        "filename": "doc/ext/remote.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-04T11:55:46Z",
+      "side": 1,
+      "message": "remove blank line from beginning of file",
+      "revId": "edded93a30ccc94dd034cf87fec9091b038e34db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_b8b3510a",
+        "filename": "doc/source/config-ref/figures/keystone-federation.svg",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-04T11:55:46Z",
+      "side": 1,
+      "message": "would be nice to have this as a structured xml document as opposed to an one-liner",
+      "revId": "edded93a30ccc94dd034cf87fec9091b038e34db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
