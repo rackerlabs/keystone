@@ -22,6 +22,24 @@
       "revId": "9070172084fe31c9564de38886662fb198de68cb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_9a0cdfec",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 693,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-05T15:55:56Z",
+      "side": 0,
+      "message": "It is - most of this lives within the fernet FAQ section.",
+      "parentUuid": "5f201791_86c80f22",
+      "revId": "9070172084fe31c9564de38886662fb198de68cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
