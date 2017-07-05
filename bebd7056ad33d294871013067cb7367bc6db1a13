@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_5ace3cb4",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-05T21:34:12Z",
+      "side": 0,
+      "message": "We need to double check the implementation - but this statement lacks certainty. We should be able to say \"users will be locked out...\" instead of \"users may be locked out\". We\u0027re describing the applications default behavior, which we should be able to describe without being subjective.",
+      "revId": "bebd7056ad33d294871013067cb7367bc6db1a13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_daa6ccab",
+        "filename": "doc/source/advanced-topics/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-05T21:34:12Z",
+      "side": 0,
+      "message": "++",
+      "revId": "bebd7056ad33d294871013067cb7367bc6db1a13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

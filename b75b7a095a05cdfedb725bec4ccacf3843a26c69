@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_fab50833",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-05T21:34:12Z",
+      "side": 1,
+      "message": "Other parts of the admin-guide do not use capital casing for section titles. I\u0027m indifference on the format - but we should have it consistent across the entire guide.\n\nAlex may be able to provide more guidance here on the style [0].\n\n[0] https://docs.openstack.org/contributor-guide/",
+      "revId": "b75b7a095a05cdfedb725bec4ccacf3843a26c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_9a0bb4d4",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-05T21:34:12Z",
+      "side": 1,
+      "message": "This might benefit in readability by breaking this into multiple sentences. One describing what you\u0027re doing and the second describing how to do it.\n\n\"You can ensure specific users are never locked out. This can be useful for service accounts or administrative users. You can do this by setting ..\"",
+      "revId": "b75b7a095a05cdfedb725bec4ccacf3843a26c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_7a3e988b",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-05T21:34:12Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "revId": "b75b7a095a05cdfedb725bec4ccacf3843a26c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_5a119c03",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-05T21:34:12Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "revId": "b75b7a095a05cdfedb725bec4ccacf3843a26c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_1a20c447",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-05T21:34:12Z",
+      "side": 1,
+      "message": "nit: upon next authentication*",
+      "revId": "b75b7a095a05cdfedb725bec4ccacf3843a26c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_9aa734be",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-05T21:34:12Z",
+      "side": 1,
+      "message": "We could remove the use case from the first sentence and just describe the ability for specific users to be whitelisted from functionality.",
+      "revId": "b75b7a095a05cdfedb725bec4ccacf3843a26c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_ba90b044",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-05T21:34:12Z",
+      "side": 1,
+      "message": "We could caution that it is imperative that the description matches the actual regex in order for the user experience to not suffer.",
+      "revId": "b75b7a095a05cdfedb725bec4ccacf3843a26c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
