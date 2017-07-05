@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f1d235d_10ce6381",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-05T22:48:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f1d235d_fab50833",
+      "revId": "b75b7a095a05cdfedb725bec4ccacf3843a26c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f1d235d_9a0bb4d4",
         "filename": "doc/source/admin/identity-security-compliance.rst",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2017-07-05T21:34:12Z",
       "side": 1,
       "message": "This might benefit in readability by breaking this into multiple sentences. One describing what you\u0027re doing and the second describing how to do it.\n\n\"You can ensure specific users are never locked out. This can be useful for service accounts or administrative users. You can do this by setting ..\"",
+      "revId": "b75b7a095a05cdfedb725bec4ccacf3843a26c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_70b3570b",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-05T22:48:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f1d235d_9a0bb4d4",
       "revId": "b75b7a095a05cdfedb725bec4ccacf3843a26c69",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "3f1d235d_50b85be3",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-05T22:48:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f1d235d_1a20c447",
+      "revId": "b75b7a095a05cdfedb725bec4ccacf3843a26c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f1d235d_9aa734be",
         "filename": "doc/source/admin/identity-security-compliance.rst",
         "patchSetId": 2
@@ -104,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "3f1d235d_90c27358",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-05T22:48:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f1d235d_9aa734be",
+      "revId": "b75b7a095a05cdfedb725bec4ccacf3843a26c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f1d235d_ba90b044",
         "filename": "doc/source/admin/identity-security-compliance.rst",
         "patchSetId": 2
@@ -115,6 +187,24 @@
       "writtenOn": "2017-07-05T21:34:12Z",
       "side": 1,
       "message": "We could caution that it is imperative that the description matches the actual regex in order for the user experience to not suffer.",
+      "revId": "b75b7a095a05cdfedb725bec4ccacf3843a26c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_d0ea2bd6",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-05T22:48:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f1d235d_ba90b044",
       "revId": "b75b7a095a05cdfedb725bec4ccacf3843a26c69",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

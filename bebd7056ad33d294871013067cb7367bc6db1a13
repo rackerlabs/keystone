@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f1d235d_70c917aa",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-05T22:48:08Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "3f1d235d_5ace3cb4",
+      "revId": "bebd7056ad33d294871013067cb7367bc6db1a13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f1d235d_daa6ccab",
         "filename": "doc/source/advanced-topics/index.rst",
         "patchSetId": 2
