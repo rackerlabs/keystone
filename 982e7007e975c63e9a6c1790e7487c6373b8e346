@@ -85,6 +85,24 @@
       "revId": "982e7007e975c63e9a6c1790e7487c6373b8e346",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_903f3ab3",
+        "filename": "doc/source/config-ref/policy.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 25559
+      },
+      "writtenOn": "2017-07-05T03:02:53Z",
+      "side": 1,
+      "message": "but isn\u0027t the keystone.conf file rendered here, http://docs-draft.openstack.org/31/479631/2/check/gate-keystone-docs-ubuntu-xenial/231710d//doc/build/html/config-ref/config-options.html",
+      "parentUuid": "3f1d235d_58d9ddf0",
+      "revId": "982e7007e975c63e9a6c1790e7487c6373b8e346",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
