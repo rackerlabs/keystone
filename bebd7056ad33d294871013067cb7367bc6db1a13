@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_84b35d0a",
+        "filename": "doc/source/conf.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-05T20:21:56Z",
+      "side": 0,
+      "message": "Based on the comment below - this looks like it\u0027s specific to customization, which I don\u0027t think we\u0027re doing.",
+      "revId": "bebd7056ad33d294871013067cb7367bc6db1a13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
