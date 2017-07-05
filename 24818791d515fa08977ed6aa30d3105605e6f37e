@@ -16,6 +16,24 @@
       "revId": "24818791d515fa08977ed6aa30d3105605e6f37e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_10e54309",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2017-07-05T22:45:54Z",
+      "side": 1,
+      "message": "Sure, this makes much sense, I\u0027ll add a comment explaining the change.",
+      "parentUuid": "3f1d235d_fa198879",
+      "revId": "24818791d515fa08977ed6aa30d3105605e6f37e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
