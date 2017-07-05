@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_8b3da890",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-05T23:42:41Z",
+      "side": 1,
+      "message": "ref to default fixtures",
+      "range": {
+        "startLine": 290,
+        "startChar": 9,
+        "endLine": 290,
+        "endChar": 13
+      },
+      "revId": "581adb90affedd0d908f7d33b1de4f8bb72a4fb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_ebbc1c07",
+        "filename": "keystone/tests/unit/default_fixtures.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-05T23:42:41Z",
+      "side": 1,
+      "message": "this and the change to core.py in unit tests may not be needed.\nCheck again.",
+      "range": {
+        "startLine": 37,
+        "startChar": 9,
+        "endLine": 37,
+        "endChar": 13
+      },
+      "revId": "581adb90affedd0d908f7d33b1de4f8bb72a4fb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
