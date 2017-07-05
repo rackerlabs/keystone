@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_14fbfe46",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2017-07-05T18:55:32Z",
+      "side": 1,
+      "message": "mmm I don\u0027t think this will work, as a \"subtransaction\" is just a lexical scope, doesn\u0027t actually do anything.  it makes the commit() below have no effect database wise, because it\u0027s waiting for one level of nesting introduced by the \"subtransaction\" to close out first.\n\nHere\u0027s the flow:\n\n  with sql.session_for_write() as session:  # \u003c--- calls session.begin()\n\n      for criteria in stuff:\n           session.query(TokenModel).filter(criteria).delete()\n       \n      session.commit()  # \u003c---- emits connection.commit() on DBAPI connection\n\n      # now we want to continue the loop with a transaction still going on.  so begin again:\n      session.begin()  # tells SQLAlchemy to \"begin\"\n\n\n  # end of \"with\" block, calls session.commit()\n\nKeep in mind that underneath all of SQLAlchemy, the DBAPI itself is in a \"never autocommit\" mode; that is, BEGIN is emitted automatically as soon as any work is done; COMMIT is emitted when one calls connection.commit().  So SQLAlchemy is only simulating \"begin\" here in any case, it is in fact automatic by the DBAPI.",
+      "revId": "5294951c0e1a8bb9d5253845ea1c06900c145893",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
