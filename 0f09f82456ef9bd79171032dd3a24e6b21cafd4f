@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_440f8536",
+        "filename": "doc/source/admin/token-provider.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-05T20:37:38Z",
+      "side": 1,
+      "message": "This document doesn\u0027t really add any value outside of what we\u0027ve already documented [0] [1]. We can remove this in a subsequent patch.\n\n[0] https://docs.openstack.org/keystone/latest/admin/identity-tokens.html\n[1] https://docs.openstack.org/keystone/latest/admin/identity-fernet-token-faq.html",
+      "revId": "0f09f82456ef9bd79171032dd3a24e6b21cafd4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_9705cd13",
+        "filename": "doc/source/configuration/samples/policy-json.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-05T20:37:38Z",
+      "side": 1,
+      "message": "policy.yaml to be consistent with the example we\u0027re rendering.",
+      "revId": "0f09f82456ef9bd79171032dd3a24e6b21cafd4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_570bb522",
+        "filename": "doc/source/configuration/samples/policy-json.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-05T20:37:38Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "0f09f82456ef9bd79171032dd3a24e6b21cafd4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
