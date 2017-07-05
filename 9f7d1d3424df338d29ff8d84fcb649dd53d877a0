@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_55728dae",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-05T21:51:07Z",
+      "side": 1,
+      "message": "Add docs explaining the test is important, but this doesn\u0027t give us more context outside of just reading the test anyway. We could replace this with a simple comment that describe *why* we need to do this, instead of *what* we\u0027re doing.",
+      "revId": "9f7d1d3424df338d29ff8d84fcb649dd53d877a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_156895b6",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-05T21:51:07Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "9f7d1d3424df338d29ff8d84fcb649dd53d877a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
