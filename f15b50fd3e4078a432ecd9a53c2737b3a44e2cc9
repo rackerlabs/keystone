@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_92a60dab",
+        "filename": "doc/source/config-ref/samples/keystone-conf.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2017-07-05T13:26:49Z",
+      "side": 1,
+      "message": "Please use the sample file generator to avoid having to link to something remotely. We find that, given the frequency of our builds, remote links tend to cause issues like timeouts or build failures when the network has a glitch.",
+      "revId": "f15b50fd3e4078a432ecd9a53c2737b3a44e2cc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_b2c22933",
+        "filename": "doc/source/config-ref/samples/policy-json.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2017-07-05T13:26:49Z",
+      "side": 1,
+      "message": "Same here, use the generator in oslo.policy: https://docs.openstack.org/oslo.policy/latest/user/sphinxpolicygen.html",
+      "revId": "f15b50fd3e4078a432ecd9a53c2737b3a44e2cc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
