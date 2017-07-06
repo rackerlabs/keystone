@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "3f1d235d_7bd8beed",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-06T14:29:09Z",
+      "side": 0,
+      "message": "Any reason to not make these read like sentences?",
+      "revId": "bebd7056ad33d294871013067cb7367bc6db1a13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f1d235d_daa6ccab",
         "filename": "doc/source/advanced-topics/index.rst",
         "patchSetId": 2

@@ -111,6 +111,23 @@
     },
     {
       "key": {
+        "uuid": "3f1d235d_fbccce35",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-06T14:29:09Z",
+      "side": 1,
+      "message": "nit: Configuring password strength requirements *?",
+      "revId": "b76046cbbdaee2374284ccc5a2203804cf31b387",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f1d235d_c25db347",
         "filename": "doc/source/admin/identity-security-compliance.rst",
         "patchSetId": 3
