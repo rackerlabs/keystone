@@ -114,11 +114,10 @@ class Manager(manager.Manager):
         if parent_ref['is_domain']:
             if parent_ref['id'] != domain['id']:
                 raise exception.ValidationError(
-                    message=_('Cannot create project, since its parent '
-                              '(%(domain_id)s) is acting as a domain, '
-                              'but project\'s specified parent_id '
-                              '(%(parent_id)s) does not match '
-                              'this domain_id.')
+                    message=_('Cannot create project, since it specifies '
+                              'parent_id (%(parent_id)s) is acting as '
+                              'a domain, but its parent_id does not '
+                              'match this domain_id (%(domain_id)s).')
                     % {'domain_id': domain['id'],
                        'parent_id': parent_ref['id']})
         else:
@@ -126,7 +125,7 @@ class Manager(manager.Manager):
             if parent_domain_id != domain['id']:
                 raise exception.ValidationError(
                     message=_('Cannot create project, since it specifies '
-                              'its owner as domain %(domain_id)s, but '
+                              'its domain_id %(domain_id)s, but '
                               'specifies a parent in a different domain '
                               '(%(parent_domain_id)s).')
                     % {'domain_id': domain['id'],
