@@ -452,7 +452,8 @@ class DomainV3(controller.V3Controller):
         domains = domains + self.assignment_api.list_domains_for_user(
             request.auth_context['user_id'])
         # remove duplicates
-        domains = [dict(t) for t in set([tuple(d.items()) for d in domains])]
+        domains = [dict(t) for t in set(
+            [tuple(sorted(d.items())) for d in domains])]
         return DomainV3.wrap_collection(request.context_dict, domains)
 
 
@@ -478,7 +479,7 @@ class ProjectAssignmentV3(controller.V3Controller):
         projects = projects + self.assignment_api.list_projects_for_user(
             request.auth_context['user_id'])
         # remove duplicates
-        projects = [dict(t) for t in set([tuple(d.items()) for d in projects])]
+        projects = [dict(t) for t in set([tuple(sorted(d.items())) for d in projects])]
         return ProjectAssignmentV3.wrap_collection(request.context_dict,
                                                    projects)
 
