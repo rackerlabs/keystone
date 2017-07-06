@@ -16,6 +16,24 @@
       "revId": "cb9f1e1b09fc3bd34f5dce43c4a046ab7c660506",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_d4b43ff4",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-06T15:27:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f1d235d_74956b86",
+      "revId": "cb9f1e1b09fc3bd34f5dce43c4a046ab7c660506",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
