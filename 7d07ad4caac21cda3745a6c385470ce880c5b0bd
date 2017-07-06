@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3f1d235d_cf070c18",
+        "filename": "doc/source/devref/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-06T15:43:58Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "7d07ad4caac21cda3745a6c385470ce880c5b0bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f201791_3f0fbd88",
         "filename": "doc/source/devref/setup.rst",
         "patchSetId": 3
