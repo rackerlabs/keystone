@@ -3147,6 +3147,43 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
             self.assertNotIn(project['id'], user_project_ids)
             user_project_ids.append(project['id'])
 
+    @mock.patch.object(keystone.assignment.core.Manager,
+                       'list_projects_for_user')
+    @mock.patch.object(keystone.assignment.core.Manager,
+                       'list_projects_for_groups')
+    def test_list_projects_with_duplicates(
+            self, fake_list_projects_for_user, fake_list_projects_for_groups):
+
+        class ObjectWithItems(object):
+            def __init__(self, key_pairs):
+                self.key_pairs = key_pairs
+
+            def items(self):
+                return self.key_pairs
+
+        fake_list_projects_for_groups.return_value = [
+            ObjectWithItems((('id', '1'), ('description', 'some text')))]
+        fake_list_projects_for_user.return_value = [
+            ObjectWithItems((('description', 'some text'), ('id', '1')))]
+
+        project_ref = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id)
+        self.resource_api.create_project(project_ref['id'], project_ref)
+        role_ref = unit.new_role_ref()
+        self.role_api.create_role(role_ref['id'], role_ref)
+
+        # authenticate via saml get back a user id
+        user_id, unscoped_token = self._authenticate_via_saml()
+
+        # assign project role to federated user
+        self.assignment_api.add_role_to_user_and_project(
+            user_id, project_ref['id'], role_ref['id'])
+
+        # get federation projects
+        r = self.get('/OS-FEDERATION/projects', token=unscoped_token)
+        fed_projects = r.result['projects']
+        self.assertThat(fed_projects, matchers.HasLength(1))
+
     def test_delete_protocol_after_federated_authentication(self):
         # Create a protocol
         protocol = self.proto_ref(mapping_id=self.mapping['id'])
@@ -3161,6 +3198,36 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
 
         # Now we should be able to delete the protocol
         self.federation_api.delete_protocol(self.IDP, protocol['id'])
+
+    @mock.patch.object(keystone.assignment.core.Manager,
+                       'list_domains_for_user')
+    @mock.patch.object(keystone.assignment.core.Manager,
+                       'list_domains_for_groups')
+    def test_list_domains_for_user_duplicates_elimination(
+            self, fake_list_domains_for_groups, fake_list_domains_for_user):
+
+        class ObjectWithItems(object):
+            def __init__(self, key_pairs):
+                self.key_pairs = key_pairs
+
+            def items(self):
+                return self.key_pairs
+
+        fake_list_domains_for_groups.return_value = [
+            ObjectWithItems((('id', '1'), ('description', 'some text')))]
+        fake_list_domains_for_user.return_value = [
+            ObjectWithItems((('description', 'some text'), ('id', '1')))]
+
+        role_ref = unit.new_role_ref()
+        self.role_api.create_role(role_ref['id'], role_ref)
+
+        # authenticate via saml get back a user id and token
+        user_id, unscoped_token = self._authenticate_via_saml()
+
+        # get federation group domains
+        r = self.get('/OS-FEDERATION/domains', token=unscoped_token)
+        user_domains = r.result['domains']
+        self.assertThat(user_domains, matchers.HasLength(1))
 
     def _authenticate_via_saml(self):
         r = self._issue_unscoped_token()

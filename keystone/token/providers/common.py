@@ -193,7 +193,7 @@ class V3TokenDataHelper(object):
                                                  project_id)
 
         # remove duplicates
-        roles = [dict(t) for t in set([tuple(d.items()) for d in roles])]
+        roles = [dict(t) for t in set([tuple(sorted(d.items())) for d in roles])]
 
         check_roles(roles, user_id, project_id, domain_id)
         token_data['roles'] = roles
