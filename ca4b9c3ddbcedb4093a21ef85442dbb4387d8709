@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_50d26dd2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-06T23:22:08Z",
+      "side": 1,
+      "message": "The title needs to be \u003e\u003d 50 characters. Could do something like:\n\n\"Handle auto created domain with duplicate idp\"\nor\n\"Clean auto-gen domain when creating duplicate idp\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 70
+      },
+      "revId": "ca4b9c3ddbcedb4093a21ef85442dbb4387d8709",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
