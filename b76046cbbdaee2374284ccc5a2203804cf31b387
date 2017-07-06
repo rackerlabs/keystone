@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f1d235d_b929be37",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-06T15:07:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f1d235d_a206371f",
+      "range": {
+        "startLine": 4,
+        "startChar": 9,
+        "endLine": 4,
+        "endChar": 10
+      },
+      "revId": "b76046cbbdaee2374284ccc5a2203804cf31b387",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f1d235d_42c403f5",
         "filename": "doc/source/admin/identity-security-compliance.rst",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2017-07-06T09:27:08Z",
       "side": 1,
       "message": "feature, you *",
+      "range": {
+        "startLine": 89,
+        "startChar": 23,
+        "endLine": 89,
+        "endChar": 30
+      },
+      "revId": "b76046cbbdaee2374284ccc5a2203804cf31b387",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_59018aae",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-06T15:07:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f1d235d_42c403f5",
       "range": {
         "startLine": 89,
         "startChar": 23,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "3f1d235d_b9109e01",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-06T15:07:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f1d235d_e2b42f82",
+      "revId": "b76046cbbdaee2374284ccc5a2203804cf31b387",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f1d235d_4269a3f6",
         "filename": "doc/source/admin/identity-security-compliance.rst",
         "patchSetId": 3
@@ -76,6 +142,30 @@
       "writtenOn": "2017-07-06T09:27:08Z",
       "side": 1,
       "message": "whose*",
+      "range": {
+        "startLine": 137,
+        "startChar": 23,
+        "endLine": 137,
+        "endChar": 27
+      },
+      "revId": "b76046cbbdaee2374284ccc5a2203804cf31b387",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_198d5231",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-06T15:07:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f1d235d_4269a3f6",
       "range": {
         "startLine": 137,
         "startChar": 23,
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "3f1d235d_f98f3627",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-06T15:07:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f1d235d_226c6706",
+      "range": {
+        "startLine": 139,
+        "startChar": 50,
+        "endLine": 139,
+        "endChar": 51
+      },
+      "revId": "b76046cbbdaee2374284ccc5a2203804cf31b387",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f1d235d_fbccce35",
         "filename": "doc/source/admin/identity-security-compliance.rst",
         "patchSetId": 3
@@ -128,6 +242,24 @@
     },
     {
       "key": {
+        "uuid": "3f1d235d_3915aee5",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-06T15:07:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f1d235d_fbccce35",
+      "revId": "b76046cbbdaee2374284ccc5a2203804cf31b387",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f1d235d_c25db347",
         "filename": "doc/source/admin/identity-security-compliance.rst",
         "patchSetId": 3
@@ -139,6 +271,30 @@
       "writtenOn": "2017-07-06T09:27:08Z",
       "side": 1,
       "message": "Personally just recommend to stay consistent and use the code block rather than the double colon, but in this instance, I don\u0027t think you need it at all. De-dent the list :)",
+      "range": {
+        "startLine": 165,
+        "startChar": 0,
+        "endLine": 165,
+        "endChar": 2
+      },
+      "revId": "b76046cbbdaee2374284ccc5a2203804cf31b387",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_791fa607",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-06T15:07:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f1d235d_c25db347",
       "range": {
         "startLine": 165,
         "startChar": 0,
