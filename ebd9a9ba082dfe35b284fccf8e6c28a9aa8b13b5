@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_e6ffb1a8",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-06T01:08:40Z",
+      "side": 1,
+      "message": "We need to add \u0027\\r\u0027 and \u0027\\n\u0027 here to test carriage return/newline removal, could add \u0027\\t\u0027 too for tabs.",
+      "range": {
+        "startLine": 117,
+        "startChar": 49,
+        "endLine": 117,
+        "endChar": 66
+      },
+      "revId": "ebd9a9ba082dfe35b284fccf8e6c28a9aa8b13b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_86347d94",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-06T01:08:40Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 126,
+        "startChar": 52,
+        "endLine": 126,
+        "endChar": 69
+      },
+      "revId": "ebd9a9ba082dfe35b284fccf8e6c28a9aa8b13b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
