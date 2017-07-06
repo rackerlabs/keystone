@@ -51,6 +51,24 @@
       "revId": "9070172084fe31c9564de38886662fb198de68cb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_1e09b894",
+        "filename": "doc/source/getting-started/apache-httpd.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-06T14:49:11Z",
+      "side": 0,
+      "message": "Yeah - we can add that later as we see fit. The information documented here is documented pretty well in the FAQ or token sections of the admin-guide. The selinux section above can be added to our development environment section since that\u0027s current getting overhauled anyway.",
+      "parentUuid": "5f201791_7aa0b142",
+      "revId": "9070172084fe31c9564de38886662fb198de68cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
