@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_1e653846",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-06T14:51:56Z",
+      "side": 1,
+      "message": "These sections were consolidated here - https://review.openstack.org/#/c/477638/2",
+      "revId": "fbe870a7f822d02029f21ab7b41fdcf36f114bfc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
