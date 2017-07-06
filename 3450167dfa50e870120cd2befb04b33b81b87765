@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_ede4063e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-06T22:17:29Z",
+      "side": 1,
+      "message": "Actually we could cleanup this commit message to better describe the changes being made. Maybe something like:\n\n\nTrim whitespace from request header tokens\n\nThis change removes any leading and trailing whitespaces\nfrom the X-Auth-Token and X-Subject-Token headers.\n\nThis removes invalid characters such as carriage\nreturns from either X-Auth or X-Subject tokens that would\ncause keystone to see the token as invalid and return\na 401 unauthorized response when the actual token value\nwas valid.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 47
+      },
+      "revId": "3450167dfa50e870120cd2befb04b33b81b87765",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
