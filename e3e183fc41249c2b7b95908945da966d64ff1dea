@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_b9b3fee8",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2017-07-06T15:10:13Z",
+      "side": 1,
+      "message": "\"COMMIT is emitted when SQLAlchemy invokes commit() on the underlying DBAPI connection\"",
+      "revId": "e3e183fc41249c2b7b95908945da966d64ff1dea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_99a5e2a4",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2017-07-06T15:10:13Z",
+      "side": 1,
+      "message": "if we want the comments here then I\u0027d make this one like:\n\n # Tells SQLAlchemy to \"begin\", e.g. hold a new connection open in a transaction",
+      "revId": "e3e183fc41249c2b7b95908945da966d64ff1dea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_79c9e656",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2017-07-06T15:10:13Z",
+      "side": 1,
+      "message": "..\n\n   # when the \"with: \" block ends, the final \"session.commit()\" is emitted by enginefacade",
+      "revId": "e3e183fc41249c2b7b95908945da966d64ff1dea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
