@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_340c653a",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-07T17:41:50Z",
+      "side": 1,
+      "message": "i think i\u0027ll move this out to the controller to satisfy most of the pre-written unit tests that have hashing. Instead of going into these tests and doing del ref[\u0027tags\u0027]",
+      "range": {
+        "startLine": 103,
+        "startChar": 12,
+        "endLine": 103,
+        "endChar": 16
+      },
+      "revId": "647825a34dae527c8ec6ad8de89d8a2318633ce5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_143f29b6",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-07T17:41:50Z",
+      "side": 1,
+      "message": "add the rest of the actions in the controller",
+      "range": {
+        "startLine": 355,
+        "startChar": 6,
+        "endLine": 355,
+        "endChar": 18
+      },
+      "revId": "647825a34dae527c8ec6ad8de89d8a2318633ce5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_146849b8",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-07T17:41:50Z",
+      "side": 1,
+      "message": "think of revising the collection/member names",
+      "range": {
+        "startLine": 357,
+        "startChar": 4,
+        "endLine": 357,
+        "endChar": 19
+      },
+      "revId": "647825a34dae527c8ec6ad8de89d8a2318633ce5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_9499f9d1",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-07T17:41:50Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 121,
+        "startChar": 8,
+        "endLine": 121,
+        "endChar": 15
+      },
+      "revId": "647825a34dae527c8ec6ad8de89d8a2318633ce5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_b4b3d54d",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-07T17:41:50Z",
+      "side": 1,
+      "message": "add_resource for /tags and /tags/{value}",
+      "range": {
+        "startLine": 126,
+        "startChar": 10,
+        "endLine": 126,
+        "endChar": 14
+      },
+      "revId": "647825a34dae527c8ec6ad8de89d8a2318633ce5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_f4926d9f",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-07T17:41:50Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 277,
+        "startChar": 9,
+        "endLine": 277,
+        "endChar": 13
+      },
+      "revId": "647825a34dae527c8ec6ad8de89d8a2318633ce5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_14960996",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-07T17:41:50Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 292,
+        "startChar": 9,
+        "endLine": 292,
+        "endChar": 13
+      },
+      "revId": "647825a34dae527c8ec6ad8de89d8a2318633ce5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_547c8171",
+        "filename": "keystone/tests/unit/default_fixtures.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-07T17:41:50Z",
+      "side": 1,
+      "message": "remove all tags",
+      "range": {
+        "startLine": 55,
+        "startChar": 9,
+        "endLine": 55,
+        "endChar": 13
+      },
+      "revId": "647825a34dae527c8ec6ad8de89d8a2318633ce5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
