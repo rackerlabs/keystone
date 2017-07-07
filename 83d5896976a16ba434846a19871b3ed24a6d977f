@@ -22,6 +22,24 @@
       "revId": "83d5896976a16ba434846a19871b3ed24a6d977f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_fe9dae57",
+        "filename": "doc/source/admin/identity-integrate-with-ldap.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-07T16:53:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f1d235d_bb1628f1",
+      "revId": "83d5896976a16ba434846a19871b3ed24a6d977f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
