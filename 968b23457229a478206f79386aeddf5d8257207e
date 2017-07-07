@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_26ac5beb",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-07T00:25:50Z",
+      "side": 1,
+      "message": "whitespace*",
+      "revId": "968b23457229a478206f79386aeddf5d8257207e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_06b71f3c",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-07T00:25:50Z",
+      "side": 1,
+      "message": "whitespace*",
+      "revId": "968b23457229a478206f79386aeddf5d8257207e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
