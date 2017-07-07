@@ -42,15 +42,25 @@ different version of the above, please document your configuration here!
 .. _git: http://git-scm.com/
 .. _Python: http://www.python.org/
 
-Getting the latest code
-=======================
+Installing from source
+======================
 
-Make a clone of the code from our git repository and enter the directory:
+Clone the git repository and install it using ``pip``:
 
 .. code-block:: bash
 
     $ git clone https://git.openstack.org/openstack/keystone.git
     $ cd keystone
+    $ pip install -e .
+
+.. NOTE::
+
+    This step is guaranteed to fail if you do not have the proper binary
+    dependencies already installed on your development system. Maintaining a
+    list of platform-specific dependencies is outside the scope of this
+    documentation, but is within scope of DEVSTACK_.
+
+.. _DEVSTACK: https://docs.openstack.org/developer/devstack/
 
 Development environment
 =======================
@@ -66,6 +76,27 @@ environment. After running it, notice the existence of a `.tox` directory.
 .. _`Project Team Guide: Python Project Guide`: https://docs.openstack.org/project-team-guide/project-setup/python.html
 .. _virtualenv: http://www.virtualenv.org/
 
+Deploying configuration files
+=============================
+
+You should have all the pieces you need to run Keystone installed on your
+system. The following commands should be available on the command-line path:
+
+* ``keystone`` the Keystone client, used to interact with Keystone
+* ``keystone-manage`` used to bootstrap Keystone data
+
+You will find sample configuration files in ``etc/``:
+
+* ``keystone.conf``
+* ``keystone-paste.ini``
+* ``logging.conf``
+* ``policy.json``
+* ``default_catalog.templates``
+
+From here, refer to :doc:`../configuration` to choose which backend drivers to
+enable and use. Once configured, you should be able to run Keystone by issuing
+the command:
+
 Verifying keystone is set up
 ============================
 
@@ -78,8 +109,21 @@ Once set up, you should be able to invoke Python and import the libraries:
 If you can import keystone without a traceback, you should be ready to move on
 to :doc:`development_best_practices`.
 
+You can run keystone using a host of wsgi implementations or web servers. The
+following uses ``uwsgi``:
+
+.. code-block:: bash
+
+    $ uwsgi --http 127.0.0.1:35357 --wsgi-file $(which keystone-wsgi-admin)
+
 Database setup
 ==============
 
 The script ``tools/test-setup.sh`` sets up databases as used by the
 unit tests.
+
+Bootstrapping a test deployment
+===============================
+
+You can use the ``keystone-manage bootstrap`` command to pre-populate the
+database with necessary data.
