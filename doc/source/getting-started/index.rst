@@ -6,7 +6,6 @@ Getting Started
     :maxdepth: 1
 
     installing.rst
-    upgrading.rst
     performance.rst
     apache-httpd.rst
     architecture.rst
