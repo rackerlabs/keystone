@@ -22,6 +22,30 @@
       "revId": "3425fd4ac8b1ca3590d7cd26cb9fc582b84ae475",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_2b43ff43",
+        "filename": "doc/source/admin/identity-performance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-07-07T03:59:47Z",
+      "side": 1,
+      "message": "yah, just remove it",
+      "parentUuid": "3f1d235d_686e9dc9",
+      "range": {
+        "startLine": 35,
+        "startChar": 36,
+        "endLine": 35,
+        "endChar": 40
+      },
+      "revId": "3425fd4ac8b1ca3590d7cd26cb9fc582b84ae475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
