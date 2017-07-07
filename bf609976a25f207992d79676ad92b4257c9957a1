@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_29cbeb72",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-07T21:32:23Z",
+      "side": 1,
+      "message": "a lot of things going haywire b/c this should be list_project_tags_by_name",
+      "range": {
+        "startLine": 286,
+        "startChar": 44,
+        "endLine": 286,
+        "endChar": 68
+      },
+      "revId": "bf609976a25f207992d79676ad92b4257c9957a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_09c82f72",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-07T21:32:23Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 336,
+        "startChar": 40,
+        "endLine": 336,
+        "endChar": 64
+      },
+      "revId": "bf609976a25f207992d79676ad92b4257c9957a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_ea0048ae",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1703,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-07T21:32:23Z",
+      "side": 1,
+      "message": "this should be ProjectNotFound",
+      "range": {
+        "startLine": 1703,
+        "startChar": 36,
+        "endLine": 1703,
+        "endChar": 54
+      },
+      "revId": "bf609976a25f207992d79676ad92b4257c9957a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_6a26786b",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1728,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-07T21:32:23Z",
+      "side": 1,
+      "message": "add a case for testing if the tags are removed in cascade when projects that they are attached to are deleted",
+      "revId": "bf609976a25f207992d79676ad92b4257c9957a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_cac46c62",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1729,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-07T21:32:23Z",
+      "side": 1,
+      "message": "also add a test for checking if the 50 tags per project is enforced or not",
+      "revId": "bf609976a25f207992d79676ad92b4257c9957a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
