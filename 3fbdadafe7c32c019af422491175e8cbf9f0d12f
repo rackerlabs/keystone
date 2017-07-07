@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f1d235d_0edb9f7d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-07-07T15:15:36Z",
+      "side": 1,
+      "message": "The intent is still valid, logging sensitive information to disk runs the risk that the disk will be compromised, or transmitting logs to a log server runs the risk that it will be intercepted in transit, and it\u0027s generally recommended to not log sensitive information: https://wiki.openstack.org/wiki/Security/Guidelines/logging_guidelines",
+      "parentUuid": "3f1d235d_ac5b2c52",
+      "range": {
+        "startLine": 13,
+        "startChar": 18,
+        "endLine": 13,
+        "endChar": 57
+      },
+      "revId": "3fbdadafe7c32c019af422491175e8cbf9f0d12f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f1d235d_0c47c07a",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 3
