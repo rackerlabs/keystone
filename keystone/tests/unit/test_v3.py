@@ -1048,9 +1048,11 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         if entity['scope'].get('project'):
             self.assertIsNone(entity['scope'].get('domain'))
             self.assertIsNotNone(entity['scope']['project'].get('id'))
-        else:
+        elif entity['scope'].get('domain'):
             self.assertIsNotNone(entity['scope'].get('domain'))
             self.assertIsNotNone(entity['scope']['domain'].get('id'))
+        else:
+            self.assertEqual(entity['scope'], 'global')
 
         # An assignment link should be present
         self.assertIsNotNone(entity.get('links'))

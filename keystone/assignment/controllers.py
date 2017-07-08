@@ -632,7 +632,7 @@ class GrantAssignmentV3(controller.V3Controller):
 
         if domain_id:
             ref['domain'] = self.resource_api.get_domain(domain_id)
-        else:
+        elif project_id:
             ref['project'] = self.resource_api.get_project(project_id)
 
         self.check_protection(request, protection, ref)
@@ -645,9 +645,21 @@ class GrantAssignmentV3(controller.V3Controller):
         self._require_user_xor_group(user_id, group_id)
 
         self.assignment_api.create_grant(
-            role_id, user_id, group_id, domain_id, project_id,
-            self._check_if_inherited(request.context_dict),
-            request.context_dict)
+            role_id, user_id=user_id, group_id=group_id, domain_id=domain_id,
+            project_id=project_id,
+            inherited_to_projects=self._check_if_inherited(
+                request.context_dict
+            ),
+            context=request.context_dict)
+
+    @controller.protected(callback=_check_grant_protection)
+    def create_global_grant(self, request, role_id, user_id=None,
+                            group_id=None):
+        """Grant a role globally to either a user or a group."""
+        self._require_user_xor_group(user_id, group_id)
+        self.assignment_api.create_grant(
+            role_id, user_id=user_id, group_id=group_id, is_global=True,
+            context=request.context_dict)
 
     @controller.protected(callback=_check_grant_protection)
     def list_grants(self, request, user_id=None,
@@ -662,6 +674,15 @@ class GrantAssignmentV3(controller.V3Controller):
         return GrantAssignmentV3.wrap_collection(request.context_dict, refs)
 
     @controller.protected(callback=_check_grant_protection)
+    def list_global_grants(self, request, user_id=None, group_id=None):
+        """List global role assignments for a user or group."""
+        self._require_user_xor_group(user_id, group_id)
+        refs = self.assignment_api.list_grants(
+            user_id=user_id, group_id=group_id, is_global=True,
+        )
+        return GrantAssignmentV3.wrap_collection(request.context_dict, refs)
+
+    @controller.protected(callback=_check_grant_protection)
     def check_grant(self, request, role_id, user_id=None,
                     group_id=None, domain_id=None, project_id=None):
         """Check if a role has been granted on either a domain or project."""
@@ -671,6 +692,17 @@ class GrantAssignmentV3(controller.V3Controller):
         self.assignment_api.get_grant(
             role_id, user_id, group_id, domain_id, project_id,
             self._check_if_inherited(request.context_dict))
+
+    @controller.protected(callback=_check_grant_protection)
+    def check_global_grant(self, request, role_id, user_id=None,
+                           group_id=None):
+        """Check if a user or group has a role assigned globally."""
+        self._require_user_xor_group(user_id, group_id)
+
+        self.assignment_api.get_grant(
+            role_id, user_id=user_id, group_id=group_id, is_global=True,
+            inherited_to_projects=False
+        )
 
     # NOTE(lbragstad): This will allow users to clean up role assignments
     # from the backend in the event the user was removed prior to the role
@@ -687,6 +719,17 @@ class GrantAssignmentV3(controller.V3Controller):
             role_id, user_id, group_id, domain_id, project_id,
             self._check_if_inherited(request.context_dict),
             request.context_dict)
+
+    @controller.protected(callback=functools.partial(
+        _check_grant_protection, allow_no_user=True))
+    def revoke_global_grant(self, request, role_id, user_id=None,
+                            group_id=None):
+        """Revoke a global role from a user or group."""
+        self._require_user_xor_group(user_id, group_id)
+
+        self.assignment_api.delete_grant(
+            role_id, user_id=user_id, group_id=group_id, is_global=True
+        )
 
 
 @dependency.requires('assignment_api', 'identity_api', 'resource_api')
@@ -767,6 +810,7 @@ class RoleAssignmentV3(controller.V3Controller):
         """
         formatted_entity = {'links': {}}
         inherited_assignment = entity.get('inherited_to_projects')
+        formatted_link = ''
 
         if 'project_id' in entity:
             if 'project_name' in entity:
@@ -798,6 +842,8 @@ class RoleAssignmentV3(controller.V3Controller):
                 formatted_entity['scope'] = {
                     'domain': {'id': entity['domain_id']}}
             formatted_link = '/domains/%s' % entity['domain_id']
+        elif 'global' in entity:
+            formatted_entity['scope'] = 'global'
 
         if 'user_id' in entity:
             if 'user_name' in entity:

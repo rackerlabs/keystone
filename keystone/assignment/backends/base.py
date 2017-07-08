@@ -52,7 +52,7 @@ class AssignmentDriverBase(object):
 
     @abc.abstractmethod
     def create_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None,
+                     global_token=None, domain_id=None, project_id=None,
                      inherited_to_projects=False):
         """Create a new assignment/grant.
 
@@ -65,7 +65,7 @@ class AssignmentDriverBase(object):
 
     @abc.abstractmethod
     def list_grant_role_ids(self, user_id=None, group_id=None,
-                            domain_id=None, project_id=None,
+                            global_token=None, domain_id=None, project_id=None,
                             inherited_to_projects=False):
         """List role ids for assignments/grants."""
         raise exception.NotImplemented()  # pragma: no cover
@@ -85,7 +85,7 @@ class AssignmentDriverBase(object):
 
     @abc.abstractmethod
     def delete_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None,
+                     global_token=None, domain_id=None, project_id=None,
                      inherited_to_projects=False):
         """Delete assignments/grants.
 
