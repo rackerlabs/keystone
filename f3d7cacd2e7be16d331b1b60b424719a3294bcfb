@@ -46,6 +46,30 @@
       "revId": "f3d7cacd2e7be16d331b1b60b424719a3294bcfb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_750c1094",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 25273
+      },
+      "writtenOn": "2017-07-08T03:31:31Z",
+      "side": 1,
+      "message": "If not specify its parent, the parent_id will set to be its domain_id, will not raise this exception.",
+      "parentUuid": "3f1d235d_fd6a5b19",
+      "range": {
+        "startLine": 117,
+        "startChar": 63,
+        "endLine": 119,
+        "endChar": 39
+      },
+      "revId": "f3d7cacd2e7be16d331b1b60b424719a3294bcfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
