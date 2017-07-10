@@ -70,6 +70,30 @@
       "revId": "f3d7cacd2e7be16d331b1b60b424719a3294bcfb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_2a3bb29c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-07-10T17:15:51Z",
+      "side": 1,
+      "message": "\u003e It would specify that the parent is a domain though in this case wouldn\u0027t it?\n\nIf this exception is reached then we can infer some properties about the parent but the project itself doesn\u0027t have a database column for what kind of resource its parent is, so the wording here is just confusing to me.",
+      "parentUuid": "3f1d235d_750c1094",
+      "range": {
+        "startLine": 117,
+        "startChar": 63,
+        "endLine": 119,
+        "endChar": 39
+      },
+      "revId": "f3d7cacd2e7be16d331b1b60b424719a3294bcfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
