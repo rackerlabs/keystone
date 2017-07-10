@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "3f1d235d_2a1852d1",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-10T17:23:20Z",
+      "side": 1,
+      "message": "so you mean validate at the controller level with lazy_validate and add to the schema right?",
+      "parentUuid": "3f1d235d_c7f797d4",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 47
+      },
+      "revId": "b722f77c2a5ba206ee91e15bd3083b281c097f4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f1d235d_c7f8b77d",
         "filename": "keystone/resource/core.py",
         "patchSetId": 39
