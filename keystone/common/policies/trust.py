@@ -17,7 +17,7 @@ from keystone.common.policies import base
 trust_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_trust',
-        check_str=base.RULE_TRUST_OWNER,
+        check_str='',
         description='Create trust.',
         operations=[{'path': '/v3/OS-TRUST/trusts',
                      'method': 'POST'}]),
