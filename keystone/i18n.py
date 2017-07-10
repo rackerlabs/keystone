@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+# TEST
 """oslo.i18n integration module.
 
 See https://docs.openstack.org/developer/oslo.i18n/usage.html .
