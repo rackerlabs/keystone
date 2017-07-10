@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_10ba6edd",
+        "filename": "keystone/common/policies/identity_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-10T13:41:40Z",
+      "side": 1,
+      "message": "this can be really dangerous and it is super easy for operators to not notice the change and miss this in their policy files. I am not sure this is worth it\n\nthis needs at least a release note",
+      "revId": "9df8c96dddaa7e9601c49233fc12bd5050a9a373",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
