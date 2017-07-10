@@ -40,10 +40,8 @@ class TestTrustOperations(test_v3.RestfulTestCase):
         self.trustee_user_id = self.trustee_user['id']
 
     def test_create_trust_bad_request(self):
-        # The server returns a 403 Forbidden rather than a 400 Bad Request, see
-        # bug 1133435
         self.post('/OS-TRUST/trusts', body={'trust': {}},
-                  expected_status=http_client.FORBIDDEN)
+                  expected_status=http_client.BAD_REQUEST)
 
     def test_trust_crud(self):
         # create a new trust
