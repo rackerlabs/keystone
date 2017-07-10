@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_07ffcf67",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-10T16:54:24Z",
+      "side": 1,
+      "message": "Move out to schema validation",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 32
+      },
+      "revId": "b722f77c2a5ba206ee91e15bd3083b281c097f4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_c7f797d4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-10T16:54:24Z",
+      "side": 1,
+      "message": "We can move this out to JSON schema validation\n\nhttps://spacetelescope.github.io/understanding-json-schema/index.html",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 47
+      },
+      "revId": "b722f77c2a5ba206ee91e15bd3083b281c097f4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_c7f8b77d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 941,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-10T16:54:24Z",
+      "side": 1,
+      "message": "need schema validation here",
+      "range": {
+        "startLine": 941,
+        "startChar": 8,
+        "endLine": 941,
+        "endChar": 27
+      },
+      "revId": "b722f77c2a5ba206ee91e15bd3083b281c097f4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_87b75f3b",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-10T16:54:24Z",
+      "side": 1,
+      "message": "example",
+      "range": {
+        "startLine": 19,
+        "startChar": 5,
+        "endLine": 19,
+        "endChar": 14
+      },
+      "revId": "b722f77c2a5ba206ee91e15bd3083b281c097f4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_a7aa5bcf",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-10T16:54:24Z",
+      "side": 1,
+      "message": "We can add \"maxLength: 60\" here, and use schema validation to validate this rather than checking in code.",
+      "range": {
+        "startLine": 106,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 23
+      },
+      "revId": "b722f77c2a5ba206ee91e15bd3083b281c097f4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_c77c3722",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-10T16:54:24Z",
+      "side": 1,
+      "message": "We should be able to do the max length 50 of the list of tags validation here.",
+      "range": {
+        "startLine": 113,
+        "startChar": 0,
+        "endLine": 116,
+        "endChar": 33
+      },
+      "revId": "b722f77c2a5ba206ee91e15bd3083b281c097f4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
