@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_95ebdada",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-11T19:26:36Z",
+      "side": 1,
+      "message": "We should add unit tests to test this specific case of the templated catalog [0].\n\n[0] https://github.com/openstack/keystone/blob/0731dab01a5d2da9650b67ebe8b91e825795c0ba/keystone/tests/unit/test_backend_templated.py",
+      "revId": "e8d078a736d643afb2a68ae54514596c61ab08bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
