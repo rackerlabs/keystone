@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_bb6484e6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-11T21:53:52Z",
+      "side": 1,
+      "message": "This could use a:\n\n  bp deprecated-as-of-pike",
+      "revId": "1baee91d9be8feba4ad9019d275c86fbb82a30b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
