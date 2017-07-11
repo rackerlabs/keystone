@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_401a1f7d",
+        "filename": "releasenotes/notes/bug-1703369-9a901d627a1e0316.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-11T21:49:09Z",
+      "side": 1,
+      "message": "wrap in ``\n\n  ``policy.json``",
+      "revId": "77fe519b143b269c5720c197a82a146521738c1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
