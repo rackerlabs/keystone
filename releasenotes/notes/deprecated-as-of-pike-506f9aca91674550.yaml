@@ -8,4 +8,4 @@ deprecations:
       implemented for fernet.
 
     * Token persistence driver/code (SQL) is deprecated with this patch since
-      it is only used by the UUID token provider..
+      it is only used by the UUID token provider.
