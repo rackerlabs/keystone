@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3f1d235d_55e0a2cc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-11T19:27:29Z",
+      "side": 1,
+      "message": "Since we have a bug report open for this issue - we can add:\n\n  Closes-Bug: 1703666",
+      "revId": "e8d078a736d643afb2a68ae54514596c61ab08bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f1d235d_95ebdada",
         "filename": "keystone/catalog/backends/templated.py",
         "patchSetId": 4
