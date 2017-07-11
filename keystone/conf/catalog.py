@@ -11,6 +11,7 @@
 # under the License.
 
 from oslo_config import cfg
+from oslo_log import versionutils
 
 from keystone.conf import utils
 
@@ -18,6 +19,8 @@ from keystone.conf import utils
 template_file = cfg.StrOpt(
     'template_file',
     default='default_catalog.templates',
+    deprecated_since=versionutils.deprecated.PIKE,
+    deprecated_reason='templated catalog is deprecated in PIKE',
     help=utils.fmt("""
 Absolute path to the file used for the templated catalog backend. This option
 is only used if the `[catalog] driver` is set to `templated`.

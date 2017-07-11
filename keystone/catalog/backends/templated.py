@@ -16,6 +16,7 @@ import itertools
 import os.path
 
 from oslo_log import log
+from oslo_log import versionutils
 
 from keystone.catalog.backends import base
 from keystone.common import utils
@@ -87,6 +88,10 @@ class Catalog(base.CatalogDriverBase):
 
     """
 
+    @versionutils.deprecated(as_of=versionutils.deprecated.PIKE,
+                             in_favor_of='SQL Catalog Backend',
+                             remove_in=2,
+                             what='Templated Catalog Backend.')
     def __init__(self, templates=None):
         super(Catalog, self).__init__()
         if templates:
