@@ -8,4 +8,9 @@ deprecations:
       implemented for fernet.
 
     * Token persistence driver/code (SQL) is deprecated with this patch since
-      it is only used by the UUID token provider..
+      it is only used by the UUID token provider.
+
+    * Templated Catalog is deprecated as of Pike. It was largely untested and
+      did not enforce a correct catalog form being emitted. The templated
+      catalog will be removed in the R release. It is advised deployments
+      move to utilizing the SQL catalog backend.
