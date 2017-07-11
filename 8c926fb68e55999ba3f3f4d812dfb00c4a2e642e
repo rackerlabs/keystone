@@ -22,6 +22,30 @@
       "revId": "8c926fb68e55999ba3f3f4d812dfb00c4a2e642e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_e89490ea",
+        "filename": "doc/source/install/keystone-openrc.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8021
+      },
+      "writtenOn": "2017-07-11T08:14:22Z",
+      "side": 1,
+      "message": "How about \u0027... they are accessible and secure.\u0027? :)",
+      "parentUuid": "3f1d235d_b986f064",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 43
+      },
+      "revId": "8c926fb68e55999ba3f3f4d812dfb00c4a2e642e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
