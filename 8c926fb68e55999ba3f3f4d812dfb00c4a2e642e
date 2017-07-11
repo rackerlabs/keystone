@@ -46,6 +46,30 @@
       "revId": "8c926fb68e55999ba3f3f4d812dfb00c4a2e642e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_c442d1ab",
+        "filename": "doc/source/install/keystone-openrc.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-11T14:32:48Z",
+      "side": 1,
+      "message": "yeah, something like \"...they are accessible and located in a secure place as appropriate by your deployment, as they contain sensitive credentials.\"",
+      "parentUuid": "3f1d235d_e89490ea",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 43
+      },
+      "revId": "8c926fb68e55999ba3f3f4d812dfb00c4a2e642e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
