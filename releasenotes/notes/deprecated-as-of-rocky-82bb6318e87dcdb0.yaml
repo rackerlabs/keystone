@@ -1,0 +1,7 @@
+---
+deprecations:
+  - >
+    Templated Catalog is deprecated as of Rocky. It was largely untested and
+    did not enforce a correct catalog form being emitted. The templated
+    catalog will be removed in the T release. It is advised deployments
+    move to utilizing the SQL catalog backend.
