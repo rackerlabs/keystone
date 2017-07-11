@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_a6136f66",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-11T04:44:35Z",
+      "side": 1,
+      "message": "Will need to change to check_protection so that \"identity:\" gets appended here.",
+      "range": {
+        "startLine": 223,
+        "startChar": 22,
+        "endLine": 223,
+        "endChar": 34
+      },
+      "revId": "02ab8daabc072301ace92d89245ee9f1218fe5fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
