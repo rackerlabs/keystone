@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_89c074e2",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1560,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-07-11T14:21:54Z",
+      "side": 0,
+      "message": "I don\u0027t see this information copied over, I think losing it would be a loss",
+      "range": {
+        "startLine": 1547,
+        "startChar": 0,
+        "endLine": 1560,
+        "endChar": 26
+      },
+      "revId": "bcae07ebdc1f3c87dc7d777dca7546e1bff77057",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_a4feb502",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1593,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-07-11T14:21:54Z",
+      "side": 0,
+      "message": "same with this, the other guide is lacking these details",
+      "range": {
+        "startLine": 1571,
+        "startChar": 0,
+        "endLine": 1593,
+        "endChar": 14
+      },
+      "revId": "bcae07ebdc1f3c87dc7d777dca7546e1bff77057",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_a49a35c2",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1832,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-07-11T14:21:54Z",
+      "side": 0,
+      "message": "This section seems to be missing too",
+      "range": {
+        "startLine": 1820,
+        "startChar": 0,
+        "endLine": 1832,
+        "endChar": 50
+      },
+      "revId": "bcae07ebdc1f3c87dc7d777dca7546e1bff77057",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
