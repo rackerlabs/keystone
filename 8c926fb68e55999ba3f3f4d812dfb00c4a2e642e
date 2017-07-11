@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_b986f064",
+        "filename": "doc/source/install/keystone-openrc.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-11T04:51:50Z",
+      "side": 1,
+      "message": "Would we want to make sure that the location is somewhat secure as well? Since we are suggesting putting the admin/demo password in them?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 43
+      },
+      "revId": "8c926fb68e55999ba3f3f4d812dfb00c4a2e642e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
