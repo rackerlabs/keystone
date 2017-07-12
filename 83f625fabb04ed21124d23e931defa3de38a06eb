@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_32065288",
+        "filename": "doc/source/install/keystone-openrc.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-12T01:32:58Z",
+      "side": 1,
+      "message": "nit: \n\n  \".. place appropriate for your deployment, as they do contain sensitive credentials.\"",
+      "revId": "83f625fabb04ed21124d23e931defa3de38a06eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
