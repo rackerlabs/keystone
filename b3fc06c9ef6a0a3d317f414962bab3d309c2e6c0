@@ -22,6 +22,24 @@
       "revId": "b3fc06c9ef6a0a3d317f414962bab3d309c2e6c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_b0ecc629",
+        "filename": "doc/source/admin/token-provider.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-13T20:14:58Z",
+      "side": 0,
+      "message": "That might be something better suited for the Contributor documentation.",
+      "parentUuid": "1f1a1f67_a50dc138",
+      "revId": "b3fc06c9ef6a0a3d317f414962bab3d309c2e6c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
