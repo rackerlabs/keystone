@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_04557f1d",
+        "filename": "doc/source/admin/identity-integrate-with-ldap.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-13T21:13:13Z",
+      "side": 1,
+      "message": "advertise*",
+      "range": {
+        "startLine": 383,
+        "startChar": 15,
+        "endLine": 383,
+        "endChar": 24
+      },
+      "revId": "d65112995b02d715ce33006249bc5fabff5181db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_a4148b4f",
+        "filename": "doc/source/admin/identity-integrate-with-ldap.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-13T21:13:13Z",
+      "side": 1,
+      "message": "operation*",
+      "range": {
+        "startLine": 411,
+        "startChar": 19,
+        "endLine": 411,
+        "endChar": 29
+      },
+      "revId": "d65112995b02d715ce33006249bc5fabff5181db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
