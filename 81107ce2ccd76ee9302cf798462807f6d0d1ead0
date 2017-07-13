@@ -22,6 +22,24 @@
       "revId": "81107ce2ccd76ee9302cf798462807f6d0d1ead0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_a06c9c36",
+        "filename": "keystone/token/_simple_cert.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-13T02:47:42Z",
+      "side": 0,
+      "message": "That\u0027s how Morgan deprecated the policy and credential APIs.",
+      "parentUuid": "da36d5c6_11f22206",
+      "revId": "81107ce2ccd76ee9302cf798462807f6d0d1ead0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
