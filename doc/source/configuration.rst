@@ -54,6 +54,7 @@ files for each Server application.
 * ``etc/logging.conf.sample``
 * ``etc/default_catalog.templates``
 * ``etc/sso_callback_template.html``
+* ``etc/policy.v3cloudsample.json``
 
 ``keystone.conf`` sections
 --------------------------
