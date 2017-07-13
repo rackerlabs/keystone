@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_10225a01",
+        "filename": "doc/source/devref/build-docs.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-13T20:41:32Z",
+      "side": 1,
+      "message": "This is going to make it so each readers have to click on each section in order to view it. Versus the old way where all the sections rendered in the parent document. Having a document that you can scroll through requires less navigation over all , which is nice for small sections like this.",
+      "revId": "cf8978fe74ba4a3b385af61e0b8fc7d52e17e19d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
