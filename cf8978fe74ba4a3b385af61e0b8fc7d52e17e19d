@@ -16,6 +16,24 @@
       "revId": "cf8978fe74ba4a3b385af61e0b8fc7d52e17e19d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_5d746668",
+        "filename": "doc/source/devref/build-docs.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 25559
+      },
+      "writtenOn": "2017-07-13T22:52:45Z",
+      "side": 1,
+      "message": "I think this is addressed in the following patch, https://review.openstack.org/#/c/476635",
+      "parentUuid": "1f1a1f67_10225a01",
+      "revId": "cf8978fe74ba4a3b385af61e0b8fc7d52e17e19d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
