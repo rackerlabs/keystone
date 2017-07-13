@@ -26,6 +26,14 @@ Absolute path to the file used for the templated catalog backend. This option
 is only used if the `[catalog] driver` is set to `templated`.
 """))
 
+yaml_catalog_file = cfg.StrOpt(
+    'yaml_catalog_file',
+    default='catalog.yaml',
+    help=utils.fmt("""
+Absolute path to the yaml file with catalog data. This option is only used
+if the `[catalog] driver` is set to `filesystem`.
+"""))
+
 driver = cfg.StrOpt(
     'driver',
     default='sql',
@@ -66,6 +74,7 @@ have enough services or endpoints to exceed a reasonable limit.
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
     template_file,
+    yaml_catalog_file,
     driver,
     caching,
     cache_time,
