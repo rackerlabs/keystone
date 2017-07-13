@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_fd1692f1",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 22623
+      },
+      "writtenOn": "2017-07-13T22:55:17Z",
+      "side": 1,
+      "message": "Maybe we should use yaml.safe_load here?",
+      "revId": "772e7a01f1ba7d3f103509e970fdbbacbea97544",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
