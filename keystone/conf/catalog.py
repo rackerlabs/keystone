@@ -23,6 +23,16 @@ Absolute path to the file used for the templated catalog backend. This option
 is only used if the `[catalog] driver` is set to `templated`.
 """))
 
+catalog_file = cfg.StrOpt(
+    'catalog_file',
+    default='catalog.yaml',
+    deprecated_name='template_file',
+    deprecated_group='catalog',
+    help=utils.fmt("""
+Absolute path to the file with catalog data. This option is only used
+if the `[catalog] driver` is set to `filesystem` or `templated`.
+"""))
+
 driver = cfg.StrOpt(
     'driver',
     default='sql',
@@ -30,8 +40,8 @@ driver = cfg.StrOpt(
 Entry point for the catalog driver in the `keystone.catalog` namespace.
 Keystone provides a `sql` option (which supports basic CRUD operations through
 SQL), a `templated` option (which loads the catalog from a templated catalog
-file on disk), and a `endpoint_filter.sql` option (which supports arbitrary
-service catalogs per project).
+file on disk), and a `filesystem` option (which loads the catalog from a yaml
+catalog file on disk).
 """))
 
 caching = cfg.BoolOpt(
@@ -63,6 +73,7 @@ have enough services or endpoints to exceed a reasonable limit.
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
     template_file,
+    catalog_file,
     driver,
     caching,
     cache_time,
