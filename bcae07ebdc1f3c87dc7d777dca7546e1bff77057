@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "1f1a1f67_ca63131a",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1560,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-13T19:56:56Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "3f1d235d_89c074e2",
+      "revId": "bcae07ebdc1f3c87dc7d777dca7546e1bff77057",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f1d235d_a4feb502",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 4
@@ -48,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "1f1a1f67_b50838d9",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1593,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-13T19:56:56Z",
+      "side": 0,
+      "message": "Ok - I took a shot at moving this over. I had to guess in a few parts since I don\u0027t have an Active Directory to test against (it seems this example was tailored to AD).",
+      "parentUuid": "3f1d235d_a4feb502",
+      "revId": "bcae07ebdc1f3c87dc7d777dca7546e1bff77057",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f1d235d_a49a35c2",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 4
@@ -65,6 +101,24 @@
         "endLine": 1832,
         "endChar": 50
       },
+      "revId": "bcae07ebdc1f3c87dc7d777dca7546e1bff77057",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_15adac87",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1832,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-13T19:56:56Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "3f1d235d_a49a35c2",
       "revId": "bcae07ebdc1f3c87dc7d777dca7546e1bff77057",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
