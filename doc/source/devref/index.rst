@@ -34,6 +34,7 @@ Contributor Documentation
    http-api.rst
    api_change_tutorial.rst
    auth-plugins.rst
+   token-provider.rst
    database-migrations.rst
    id-manage.rst
    translated-responses.rst
