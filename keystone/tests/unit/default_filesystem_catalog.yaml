@@ -1,0 +1,43 @@
+endpoints:
+  EndpointOne:
+    interfaces:
+      -
+        type: public
+        url: "https://identity.example.com"
+      -
+        type: internal
+        url: "https://internal-indentity.example.com"
+      -
+        type: admin
+        url: "https://admin-identity.example.com"
+      -
+        type: other
+        url: "https://something-else-identity.example.com"
+    region: RegionOne
+    service: ServiceOne
+  EndpointTwo:
+    interfaces:
+      -
+        type: public
+        url: "https://compute.example.com/v2.1/"
+    region: RegionOne
+    service: ServiceTwo
+  EndpointThree:
+    interfaces:
+      -
+        type: public
+        url: "https://volume.example.com/v2/$(project_id)s"
+    region: RegionOne
+    service: ServiceThree
+regions:
+  RegionOne:
+  RegionTwo:
+    description: "Second Region"
+    parent_region_id: RegionOne
+services:
+  ServiceOne:
+    type: identity
+  ServiceThree:
+    type: volume
+  ServiceTwo:
+    type: compute

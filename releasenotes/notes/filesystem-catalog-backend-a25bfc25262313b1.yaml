@@ -1,0 +1,9 @@
+---
+features:
+  - >
+   [`blueprint filesystem-catalog-backend <https://blueprints.launchpad.net/keystone/+spec/filesystem-catalog-backend>`_]
+   Added a new filesystem backend for catalog. Now Keystone support yaml file
+   as the catalog's backend. Please note that it's a readonly backend.
+   Operators should define the catalog structure firstly in the yaml file
+   before starting Keystone service. And this new backend is only used for
+   Keystone V3.
