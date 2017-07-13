@@ -116,6 +116,24 @@
       "revId": "3fbdadafe7c32c019af422491175e8cbf9f0d12f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_6077a43c",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-13T02:41:03Z",
+      "side": 1,
+      "message": "This doesn\u0027t throw an exception though. The messages here are restricted to logs.\n\nHowever, there is a common pattern in keystone where the same message is used in the log and the Exception, which can be returned to the user. Decoupling these things is what Brant was eluding to in the bug report Colleen referenced.\n\nhttps://bugs.launchpad.net/keystone/+bug/1479523",
+      "parentUuid": "3f1d235d_6c55141d",
+      "revId": "3fbdadafe7c32c019af422491175e8cbf9f0d12f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
