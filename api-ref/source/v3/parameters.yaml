@@ -882,7 +882,9 @@ group_domain_id:
   type: string
 group_domain_id_request_body:
   description: |
-    The ID of the domain of the group.
+    The ID of the domain of the group. If the domain id is not specified,
+    the Identity service implementation will use the domain scoping from
+    the token.
   in: body
   required: true
   type: string
@@ -1454,7 +1456,9 @@ user_domain_id:
   type: string
 user_domain_id_request_body:
   description: |
-    The ID of the domain for the user.
+    The ID of the domain for the user. If the domain id is not specified,
+    the Identity service implementation will use the domain scoping from
+    the token.
   in: body
   required: false
   type: string
