@@ -16,6 +16,24 @@
       "revId": "5c73bf0c6cdcd3c671f92363e2eb7bff05176e0e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_dc3cd8c9",
+        "filename": "releasenotes/notes/bug-1662624-1f3e2e6ff50b564c.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 19283
+      },
+      "writtenOn": "2017-07-14T18:43:15Z",
+      "side": 1,
+      "message": "I removed the whitespace. Let\u0027s see if this works, if not, I\u0027ll add the []\u0027s.",
+      "parentUuid": "1f1a1f67_e13ed1d8",
+      "revId": "5c73bf0c6cdcd3c671f92363e2eb7bff05176e0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
