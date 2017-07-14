@@ -16,6 +16,23 @@
       "revId": "966fb5125cf1178d8804cf130726fc2a5c581344",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_57509ed4",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-14T23:26:58Z",
+      "side": 0,
+      "message": "Unrelated whitespace change",
+      "revId": "966fb5125cf1178d8804cf130726fc2a5c581344",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

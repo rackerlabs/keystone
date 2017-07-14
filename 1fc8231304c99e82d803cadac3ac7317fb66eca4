@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_d7cf0eae",
+        "filename": "keystone/common/sql/expand_repo/versions/024_expand_add_project_tags_table.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-14T23:26:58Z",
+      "side": 1,
+      "message": "The migration and the resulting tests can probably get pulled out into their own change. That might help keep the overall patch set smaller and easier to review. This one is getting quite large.",
+      "revId": "1fc8231304c99e82d803cadac3ac7317fb66eca4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_f741ea0c",
+        "filename": "keystone/exception.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-14T23:26:58Z",
+      "side": 1,
+      "message": "This is another good example of something that can be pulled out into it\u0027s own change making an easy review.",
+      "revId": "1fc8231304c99e82d803cadac3ac7317fb66eca4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_172fc6f6",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-14T23:26:58Z",
+      "side": 1,
+      "message": "What about doing something like:\n\n  def _expand_project_list(self, request, ref):\n      params \u003d request.params\n\n      tagged_projects \u003d []\n      tag_map \u003d {\n          \u0027tags\u0027: \u0027list_projects_with_tags\u0027,\n          \u0027tags-any\u0027: \u0027list_projects_with_tags_any\u0027,\n          \u0027not-tags\u0027: \u0027list_projects_not_tags\u0027,\n          \u0027not-tags-any\u0027: \u0027list_projects_not_tags_any\u0027\n      }\n      for k, v in tag_map.items():\n          tag_set  \u003d params[k]\n          if k in params and self.query_filter_is_true(tag_set):\n              tagged_projects.append(getattr(self.resource_api, v)(tag_set))\n      return tagged_projects\n\nThis was totally back of the napkin, so it might need some ironing. This way you might not need as many if statements to get the same result. You also don\u0027t have to convert form tag to boolean back to tag.",
+      "revId": "1fc8231304c99e82d803cadac3ac7317fb66eca4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
