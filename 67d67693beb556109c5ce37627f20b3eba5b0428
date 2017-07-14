@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_4d637443",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3153,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-14T21:09:33Z",
+      "side": 1,
+      "message": "Why do we have to mock these out? How come we can\u0027t just rely on the normal backends to recreate the issue?",
+      "revId": "67d67693beb556109c5ce37627f20b3eba5b0428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_edbb606f",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3183,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-14T21:09:33Z",
+      "side": 1,
+      "message": "This needs to test the /auth/projects API, too. The /OS-FEDERATION/projects path and the /auth/projects both do the same thing, so we should ensure we test them equally.",
+      "revId": "67d67693beb556109c5ce37627f20b3eba5b0428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_cdb2e494",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3205,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-14T21:09:33Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "revId": "67d67693beb556109c5ce37627f20b3eba5b0428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_2d671828",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3228,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-14T21:09:33Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "revId": "67d67693beb556109c5ce37627f20b3eba5b0428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_6d7cf0b4",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-14T21:09:33Z",
+      "side": 1,
+      "message": "The bug report doesn\u0027t mention anything about pruning duplicate roles from the token response. This seems different from what\u0027s reported in the bug. Is this tested somewhere?",
+      "revId": "67d67693beb556109c5ce37627f20b3eba5b0428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
