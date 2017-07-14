@@ -16,6 +16,24 @@
       "revId": "2bb452c251097f0f6af358831434a8e3ab451f54",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_0bcd6cb7",
+        "filename": "releasenotes/notes/bug-1662624-1f3e2e6ff50b564c.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 19283
+      },
+      "writtenOn": "2017-07-14T17:06:57Z",
+      "side": 1,
+      "message": "Sure, is there another way to put in the release note?",
+      "parentUuid": "1f1a1f67_2b51480f",
+      "revId": "2bb452c251097f0f6af358831434a8e3ab451f54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
