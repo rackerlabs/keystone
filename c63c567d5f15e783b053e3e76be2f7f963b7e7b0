@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_2ba5c8b5",
+        "filename": "releasenotes/notes/bug-1662624-1f3e2e6ff50b564c.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-14T17:14:20Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "c63c567d5f15e783b053e3e76be2f7f963b7e7b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
