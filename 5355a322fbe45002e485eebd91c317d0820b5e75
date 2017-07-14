@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_cda3049e",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-14T20:53:04Z",
+      "side": 1,
+      "message": "If we are going to try and include this in the official documentation - we need to clearly explain what it is and what purpose it fills.\n\nMost readers stumble over this because it\u0027s kind of confusing why it was developed originally.",
+      "revId": "5355a322fbe45002e485eebd91c317d0820b5e75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
