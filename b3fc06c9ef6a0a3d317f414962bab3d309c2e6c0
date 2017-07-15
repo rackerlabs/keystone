@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_6ec17c80",
+        "filename": "doc/source/devref/index.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-15T18:21:37Z",
+      "side": 0,
+      "message": "The development_environment.rst document has quite a bit of overall/duplication with setup.rst, conf.rst, run-keystone.rst. It\u0027d be nice to remove the development_environment.rst section and just port the relevant information to the sections above. We are modifying this in a subsequent patch too though: https://review.openstack.org/#/c/476606/5/doc/source/devref/index.rst",
+      "revId": "b3fc06c9ef6a0a3d317f414962bab3d309c2e6c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
