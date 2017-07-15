@@ -24,6 +24,9 @@ IDP_REMOTE_ID=${IDP_REMOTE_ID:-https://idp.testshib.org/idp/shibboleth}
 IDP_ECP_URL=${IDP_ECP_URL:-https://idp.testshib.org/idp/profile/SAML2/SOAP/ECP}
 IDP_METADATA_URL=${IDP_METADATA_URL:-http://www.testshib.org/metadata/testshib-providers.xml}
 
+KEYSTONE_METADATA_URL=${KEYSTONE_METADATA_URL:-"http://$HOST_IP/identity/v3/OS-FEDERATION/saml2/metadata"}
+KEYSTONE_REMOTE_ID=${KEYSTONE_REMOTE_ID:-"http://$HOST_IP/identity/v3/OS-FEDERATION/saml2/idp"}
+
 MAPPING_REMOTE_TYPE=${MAPPING_REMOTE_TYPE:-eppn}
 MAPPING_USER_NAME=${MAPPING_USER_NAME:-"{0}"}
 
@@ -58,9 +61,26 @@ function configure_apache {
     restart_apache_server
 }
 
+function configure_shibboleth {
+    # Copy a templated /etc/shibboleth/shibboleth2.xml file...
+    sudo cp $FEDERATION_FILES/shibboleth2.xml $SHIBBOLETH_XML
+    # ... and replace the %HOST_IP%, %IDP_REMOTE_ID%,and %IDP_METADATA_URL% placeholders
+    sudo sed -i -e "
+        s|%HOST_IP%|$HOST_IP|g;
+        s|%IDP_REMOTE_ID%|$IDP_REMOTE_ID|g;
+        s|%KEYSTONE_REMOTE_ID%|$KEYSTONE_REMOTE_ID|g;
+        s|%IDP_METADATA_URL%|$IDP_METADATA_URL|g;
+        s|%KEYSTONE_METADATA_URL%|$KEYSTONE_METADATA_URL|g;
+        " $SHIBBOLETH_XML
+
+    sudo cp "$FEDERATION_FILES/attribute-map.xml" $ATTRIBUTE_MAP
+
+    restart_service shibd
+}
+
 function install_federation {
     if is_ubuntu; then
-        install_package libapache2-mod-shib2
+        install_package libapache2-mod-shib2 xmlsec1
 
         # Create a new keypair for Shibboleth
         sudo shib-keygen -f
@@ -71,7 +91,10 @@ function install_federation {
         # NOTE(knikolla): For CentOS/RHEL, installing shibboleth is tricky
         # It requires adding a separate repo not officially supported
         echo "Skipping installation of shibboleth for non ubuntu host"
+        install_package xmlsec1-openssl
     fi
+
+    pip_install pysaml2
 }
 
 function upload_sp_metadata {
@@ -88,30 +111,38 @@ function upload_sp_metadata {
 }
 
 function configure_federation {
-    configure_apache
-
-    # Copy a templated /etc/shibboleth/shibboleth2.xml file...
-    sudo cp $FEDERATION_FILES/shibboleth2.xml $SHIBBOLETH_XML
-    # ... and replace the %HOST_IP%, %IDP_REMOTE_ID%,and %IDP_METADATA_URL% placeholders
-    sudo sed -i -e "
-        s|%HOST_IP%|$HOST_IP|g;
-        s|%IDP_REMOTE_ID%|$IDP_REMOTE_ID|g;
-        s|%IDP_METADATA_URL%|$IDP_METADATA_URL|g;
-        " $SHIBBOLETH_XML
-
-    sudo cp "$FEDERATION_FILES/attribute-map.xml" $ATTRIBUTE_MAP
-
-    restart_service shibd
-
-    # Enable the mapped auth method in /etc/keystone.conf
-    iniset $KEYSTONE_CONF auth methods "external,password,token,mapped"
+    # Enable the mapped auth method in /etc/keystone.conf and alias mapped to k2k
+    iniset $KEYSTONE_CONF auth methods "external,password,token,mapped,k2k"
+    iniset $KEYSTONE_CONF auth k2k "keystone.auth.plugins.mapped.Mapped"
 
     # Specify the header that contains information about the identity provider
     iniset $KEYSTONE_CONF mapped remote_id_attribute "Shib-Identity-Provider"
 
+    # Configure certificates and keys for Keystone as an IdP
+    if is_service_enabled tls-proxy; then
+        iniset $KEYSTONE_CONF saml certfile "$INT_CA_DIR/$DEVSTACK_CERT_NAME.crt"
+        iniset $KEYSTONE_CONF saml keyfile "$INT_CA_DIR/private/$DEVSTACK_CERT_NAME.key"
+    else
+        openssl genrsa -out /etc/keystone/ca.key 4096
+        openssl req -new -x509 -days 1826 -key /etc/keystone/ca.key -out /etc/keystone/ca.crt \
+            -subj "/C=US/ST=Denial/L=Springfield/O=Dis/CN=www.example.com"
+
+        iniset $KEYSTONE_CONF saml certfile "/etc/keystone/ca.crt"
+        iniset $KEYSTONE_CONF saml keyfile "/etc/keystone/ca.key"
+    fi
+
+    iniset $KEYSTONE_CONF saml idp_entity_id "$KEYSTONE_AUTH_URI/v3/OS-FEDERATION/saml2/idp"
+    iniset $KEYSTONE_CONF saml idp_sso_endpoint "$KEYSTONE_AUTH_URI/v3/OS-FEDERATION/saml2/sso"
+    iniset $KEYSTONE_CONF saml idp_metadata_path "/etc/keystone/keystone_idp_metadata.xml"
+
     if [[ "$WSGI_MODE" == "uwsgi" ]]; then
         restart_service "devstack@keystone"
     fi
+
+    keystone-manage saml_idp_metadata > /etc/keystone/keystone_idp_metadata.xml
+
+    configure_shibboleth
+    configure_apache
 
     # Register the service provider
     upload_sp_metadata
