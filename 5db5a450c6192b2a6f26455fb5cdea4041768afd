@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_8e74d869",
+        "filename": "doc/source/devref/basic-guidelines.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-15T18:24:49Z",
+      "side": 1,
+      "message": "Instead of linking to the development environment section, we can just include it here can\u0027t we? Some of what is already here falls into the development environment category, so it might make sense to merge both documents together.",
+      "revId": "5db5a450c6192b2a6f26455fb5cdea4041768afd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
