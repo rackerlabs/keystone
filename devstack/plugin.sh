@@ -23,6 +23,9 @@ source $KEYSTONE_PLUGIN/lib/federation.sh
 if [[ "$1" == "stack" && "$2" == "install" ]]; then
     # This phase is executed after the projects have been installed
     echo "Keystone plugin - Install phase"
+    if is_service_enabled keystone-idp; then
+        install_keystone_idp
+    fi
     if is_service_enabled keystone-saml2-federation; then
         install_federation
     fi
@@ -31,6 +34,9 @@ elif [[ "$1" == "stack" && "$2" == "post-config" ]]; then
     # This phase is executed after the projects have been configured and
     # before they are started
     echo "Keystone plugin - Post-config phase"
+    if is_service_enabled keystone-idp; then
+        configure_keystone_idp
+    fi
     if is_service_enabled keystone-saml2-federation; then
         configure_federation
     fi

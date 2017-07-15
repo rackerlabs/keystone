@@ -137,3 +137,25 @@ function uninstall_federation {
         echo "Skipping uninstallation of shibboleth for non ubuntu host"
     fi
 }
+
+function install_keystone_idp {
+    if is_ubuntu; then
+        install_package xmlsec1
+    elif is_fedora; then
+        install_package xmlsec1-openssl
+    fi
+
+    pip_install pysaml2
+}
+
+function configure_keystone_idp {
+    iniset $KEYSTONE_CONF saml certfile "$INT_CA_DIR/$DEVSTACK_CERT_NAME.crt"
+    iniset $KEYSTONE_CONF saml keyfile "$INT_CA_DIR/private/$DEVSTACK_CERT_NAME.key"
+    iniset $KEYSTONE_CONF saml idp_entity_id "https://$HOST_IP/identity/v3/OS-FEDERATION/saml2/idp"
+    iniset $KEYSTONE_CONF saml idp_sso_endpoint "https://$HOST_IP/identity/v3/OS-FEDERATION/saml2/sso"
+    iniset $KEYSTONE_CONF saml idp_metadata_path "/etc/keystone/keystone_idp_metadata.xml"
+
+    keystone-manage saml_idp_metadata > /etc/keystone/keystone_idp_metadata.xml
+
+    restart_service "devstack@keystone"
+}
