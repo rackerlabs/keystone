@@ -19,15 +19,22 @@ https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPConfiguration
         <!-- https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPSessions -->
         <Sessions lifetime="28800" timeout="3600" checkAddress="false" relayState="ss:mem" handlerSSL="false">
 
-            <!-- Triggers a login request directly to the TestShib IdP. -->
-            <!-- https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPServiceSSO -->
-            <SSO entityID="%IDP_REMOTE_ID%" ECP="true">
-                SAML2 SAML1
-            </SSO>
-
             <!-- SAML and local-only logout. -->
             <!-- https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPServiceLogout -->
             <Logout>SAML2 Local</Logout>
+
+            <!-- manually defined additional DS initiators - without isDefault and with custom IDs and Locations -->
+            <SessionInitiator
+                    type="Chaining" Location="/testshib" id="TestShib"
+                    relayState="cookie" entityID="%IDP_REMOTE_ID%" isDefault="true">
+                <SessionInitiator type="SAML2" defaultACSIndex="1" acsByIndex="false" template="bindingTemplate.html"/>
+            </SessionInitiator>
+
+            <SessionInitiator
+                    type="Chaining" Location="/keystone" id="Keystone"
+                    relayState="cookie" entityID="%KEYSTONE_REMOTE_ID%" isDefault="false">
+                <SessionInitiator type="SAML2" defaultACSIndex="1" acsByIndex="false" template="bindingTemplate.html"/>
+            </SessionInitiator>
 
             <!--
                 Handlers allow you to interact with the SP and gather more information.  Try them out!
@@ -55,7 +62,10 @@ https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPConfiguration
 
         <!-- Loads and trusts a metadata file that describes only the Testshib IdP and how to communicate with it. -->
         <MetadataProvider type="XML" uri="%IDP_METADATA_URL%"
-                          backingFilePath="metadata.xml" reloadInterval="180000" />
+                          backingFilePath="idp_metadata.xml" reloadInterval="180000" />
+
+        <MetadataProvider type="XML" uri="%KEYSTONE_METADATA_URL%"
+                          backingFilePath="keystone_metadata.xml" reloadInterval="180000" />
 
         <!-- Attribute and trust options you shouldn't need to change. -->
         <AttributeExtractor type="XML" validate="true" path="attribute-map.xml"/>
