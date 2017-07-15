@@ -55,7 +55,10 @@ https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPConfiguration
 
         <!-- Loads and trusts a metadata file that describes only the Testshib IdP and how to communicate with it. -->
         <MetadataProvider type="XML" uri="%IDP_METADATA_URL%"
-                          backingFilePath="metadata.xml" reloadInterval="180000" />
+                          backingFilePath="idp_metadata.xml" reloadInterval="180000" />
+
+        <MetadataProvider type="XML" uri="%KEYSTONE_METADATA_URL%"
+                          backingFilePath="keystone_metadata.xml" reloadInterval="180000" />
 
         <!-- Attribute and trust options you shouldn't need to change. -->
         <AttributeExtractor type="XML" validate="true" path="attribute-map.xml"/>
