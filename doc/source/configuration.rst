@@ -18,93 +18,116 @@
 Configuring Keystone
 ====================
 
-Config Files
-============
+Bootstrapping Keystone with ``keystone-manage bootstrap``
+=========================================================
 
-Once keystone is installed, keystone is configured via a primary configuration
-file (``etc/keystone.conf``), a PasteDeploy configuration file
-(``etc/keystone-paste.ini``), possibly a separate logging configuration file,
-and initializing data into keystone using the command line client.
+Setting up projects, users, and roles
+-------------------------------------
 
-The keystone configuration files are an ``ini`` file format based on Paste_, a
-common system used to configure Python WSGI based applications. The PasteDeploy
-configuration entries (WSGI pipeline definitions) can be provided in a separate
-``keystone-paste.ini`` file, while general and driver-specific configuration
-parameters are in the primary configuration file ``keystone.conf``.
+The ``keystone-manage bootstrap`` command will create a user, project and role,
+and will assign the newly created role to the newly created user on the newly
+created project. By default, the names of these new resources will be called
+``admin``.
+
+The defaults may be overridden by calling ``--bootstrap-username``,
+``--bootstrap-project-name`` and ``--bootstrap-role-name``. Each of these have
+an environment variable equivalent: ``OS_BOOTSTRAP_USERNAME``,
+``OS_BOOTSTRAP_PROJECT_NAME`` and ``OS_BOOTSTRAP_ROLE_NAME``.
+
+A user password must also be supplied. This can be passed in as either
+``--bootstrap-password``, or set as an environment variable using
+``OS_BOOTSTRAP_PASSWORD``.
+
+Optionally, if specified by ``--bootstrap-public-url``,
+``--bootstrap-admin-url`` and/or ``--bootstrap-internal-url`` or the equivalent
+environment variables, the command will create an identity service with the
+specified endpoint information. You may also configure the
+``--bootstrap-region-id`` and ``--bootstrap-service-name`` for the endpoints to
+your deployment's requirements.
 
 .. NOTE::
 
-   Since keystone's PasteDeploy configuration file has been separated
-   from the main keystone configuration file, ``keystone.conf``, all
-   local configuration or driver-specific configuration parameters must
-   go in the main keystone configuration file instead of the PasteDeploy
-   configuration file, i.e. configuration in ``keystone-paste.ini``
-   is not supported.
+    It is strongly encouraged to configure the identity service and its
+    endpoints while bootstrapping keystone.
 
-.. _Paste: http://pythonpaste.org/
+Minimally, keystone can be bootstrapped with:
 
-Sample Configuration Files
---------------------------
+.. code-block:: bash
 
-The ``etc/`` folder distributed with keystone contains example configuration
-files for each Server application.
+    $ keystone-manage bootstrap --bootstrap-password s3cr3t
 
-* ``etc/keystone.conf.sample``
-* ``etc/keystone-paste.ini``
-* ``etc/logging.conf.sample``
-* ``etc/default_catalog.templates``
-* ``etc/sso_callback_template.html``
+Verbosely, keystone can be bootstrapped with:
 
-``keystone.conf`` sections
---------------------------
+.. code-block:: bash
 
-The primary configuration file is organized into the following sections:
+    $ keystone-manage bootstrap \
+        --bootstrap-password s3cr3t \
+        --bootstrap-username admin \
+        --bootstrap-project-name admin \
+        --bootstrap-role-name admin \
+        --bootstrap-service-name keystone \
+        --bootstrap-region-id RegionOne \
+        --bootstrap-admin-url http://localhost:35357 \
+        --bootstrap-public-url http://localhost:5000 \
+        --bootstrap-internal-url http://localhost:5000
 
-* ``[DEFAULT]`` - General configuration
-* ``[assignment]`` - Assignment system driver configuration
-* ``[auth]`` - Authentication plugin configuration
-* ``[cache]`` - Caching layer configuration
-* ``[catalog]`` - Service catalog driver configuration
-* ``[credential]`` - Credential system driver configuration
-* ``[domain_config]`` - Domain configuration
-* ``[endpoint_filter]`` - Endpoint filtering configuration
-* ``[endpoint_policy]`` - Endpoint policy configuration
-* ``[federation]`` - Federation driver configuration
-* ``[fernet_tokens]`` - Fernet token configuration
-* ``[identity]`` - Identity system driver configuration
-* ``[identity_mapping]`` - Identity mapping system driver configuration
-* ``[ldap]`` - LDAP configuration options
-* ``[memcache]`` - Memcache configuration options
-* ``[oauth1]`` - OAuth 1.0a system driver configuration
-* ``[paste_deploy]`` - Pointer to the PasteDeploy configuration file
-* ``[policy]`` - Policy system driver configuration for RBAC
-* ``[resource]`` - Resource system driver configuration
-* ``[revoke]`` - Revocation system driver configuration
-* ``[role]`` - Role system driver configuration
-* ``[saml]`` - SAML configuration options
-* ``[security_compliance]`` - Security compliance configuration
-* ``[shadow_users]`` - Shadow user configuration
-* ``[signing]`` - Cryptographic signatures for PKI based tokens
-* ``[token]`` - Token driver & token provider configuration
-* ``[tokenless_auth]`` - Tokenless authentication configuration
-* ``[trust]`` - Trust configuration
+This will create an ``admin`` user with the ``admin`` role on the ``admin``
+project. The user will have the password specified in the command. Note that
+both the user and the project will be created in the ``default`` domain. By not
+creating an endpoint in the catalog users will need to provide endpoint
+overrides to perform additional identity operations.
 
-The keystone primary configuration file is expected to be named
-``keystone.conf``. When starting keystone, you can specify a different
-configuration file to use with ``--config-file``. If you do **not** specify a
-configuration file, keystone will look in the following directories for a
-configuration file, in order:
+By creating an ``admin`` user and an identity endpoint deployers may
+authenticate to keystone and perform identity operations like creating
+additional services and endpoints using that ``admin`` user. This will preclude
+the need to ever use or configure the ``admin_token`` (described below).
 
-* ``~/.keystone/``
-* ``~/``
-* ``/etc/keystone/``
-* ``/etc/``
+To test a proper configuration, a user can use OpenStackClient CLI:
 
-PasteDeploy configuration file is specified by the ``config_file`` parameter in
-``[paste_deploy]`` section of the primary configuration file. If the parameter
-is not an absolute path, then keystone looks for it in the same directories as
-above. If not specified, WSGI pipeline definitions are loaded from the primary
-configuration file.
+.. code-block:: bash
+
+    $ openstack project list --os-username admin --os-project-name admin \
+        --os-user-domain-id default --os-project-domain-id default \
+        --os-identity-api-version 3 --os-auth-url http://localhost:5000 \
+        --os-password s3cr3t
+
+Bootstrapping Keystone with ``ADMIN_TOKEN``
+===========================================
+
+.. NOTE::
+
+    It is strongly recommended to configure the identity service with the
+     ``keystone-manage bootstrap`` command and not the ``ADMIN_TOKEN``.
+
+
+Admin Token
+-----------
+
+For a default installation of Keystone, before you can use the REST API, you
+need to define an authorization token. This is configured in ``keystone.conf``
+file under the section ``[DEFAULT]``. In the sample file provided with the
+Keystone project, the line defining this token is::
+
+    [DEFAULT]
+    admin_token = ADMIN
+
+A "shared secret" that can be used to bootstrap Keystone. This token does not
+represent a user, and carries no explicit authorization.
+To disable in production (highly recommended), remove
+``AdminTokenAuthMiddleware`` from your paste application pipelines (for example,
+in ``keystone-paste.ini``)
+
+Setting up projects, users, and roles
+-------------------------------------
+
+You need to minimally define a project, user, and role to link the project and
+user as the most basic set of details to get other services authenticating
+and authorizing with Keystone.
+
+You will also want to create service users for nova, glance, swift, etc. to
+be able to use to authenticate users against Keystone. The ``auth_token``
+middleware supports using either the shared secret described above as
+`admin_token` or users for each service.
 
 Setting up other OpenStack Services
 ===================================
