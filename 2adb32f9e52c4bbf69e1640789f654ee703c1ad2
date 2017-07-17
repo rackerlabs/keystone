@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_f01f8205",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-17T21:13:18Z",
+      "side": 1,
+      "message": "Since we are validating via schema, we can remove these",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 32
+      },
+      "revId": "2adb32f9e52c4bbf69e1640789f654ee703c1ad2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_b0158ae7",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-17T21:13:18Z",
+      "side": 1,
+      "message": "Can remove this as well",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 47
+      },
+      "revId": "2adb32f9e52c4bbf69e1640789f654ee703c1ad2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_d0eda6f0",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 925,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-17T21:13:18Z",
+      "side": 1,
+      "message": "We can maybe keep this, this looks like it could be useful for url-safe checking.",
+      "range": {
+        "startLine": 923,
+        "startChar": 0,
+        "endLine": 925,
+        "endChar": 51
+      },
+      "revId": "2adb32f9e52c4bbf69e1640789f654ee703c1ad2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_70349293",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-17T21:13:18Z",
+      "side": 1,
+      "message": "This was moved to https://review.openstack.org/#/c/484483/",
+      "revId": "2adb32f9e52c4bbf69e1640789f654ee703c1ad2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
