@@ -70,6 +70,24 @@
       "revId": "fb7070ca5cc908977349fc0b42a6a6409ac0d7bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_aa707b09",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-17T20:08:43Z",
+      "side": 1,
+      "message": "We could add more posts to this test to show that you get a 400 in any case where at least one of the required attributes is missing, regardless of which attribute that is. That seems like a good addition. Not necessarily tied to this change, but if it helps move this along...",
+      "parentUuid": "1f1a1f67_272a662b",
+      "revId": "fb7070ca5cc908977349fc0b42a6a6409ac0d7bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
