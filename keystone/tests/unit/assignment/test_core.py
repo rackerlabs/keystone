@@ -59,6 +59,7 @@ class RoleTests(object):
         self.assertDictEqual(role, role_ref_dict)
 
         role['name'] = uuid.uuid4().hex
+        role['description'] = uuid.uuid4().hex
         updated_role_ref = self.role_api.update_role(role['id'], role)
         role_ref = self.role_api.get_role(role['id'])
         role_ref_dict = {x: role_ref[x] for x in role_ref}
