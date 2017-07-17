@@ -16,6 +16,24 @@
       "revId": "b3fc06c9ef6a0a3d317f414962bab3d309c2e6c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_cc43ee6b",
+        "filename": "doc/source/devref/index.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 25559
+      },
+      "writtenOn": "2017-07-17T06:50:33Z",
+      "side": 0,
+      "message": "The subsequent patches will anyway change after the changes. This patch was meant for expanding the best practices section, I\u0027ll start a similar new patch for development_environment too.",
+      "parentUuid": "1f1a1f67_6ec17c80",
+      "revId": "b3fc06c9ef6a0a3d317f414962bab3d309c2e6c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1f1a1f67_ec0c6aa6",
+        "filename": "doc/source/devref/conf.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 25559
+      },
+      "writtenOn": "2017-07-17T06:50:33Z",
+      "side": 1,
+      "message": "makes sense, I\u0027ll update this.",
+      "parentUuid": "1f1a1f67_4eb9202c",
+      "revId": "61dc9a4f90254d75bc446e2c0a9e34bab4d26192",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_0eea080e",
         "filename": "doc/source/devref/generate-sample-config.rst",
         "patchSetId": 6
