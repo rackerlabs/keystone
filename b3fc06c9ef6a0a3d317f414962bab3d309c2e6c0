@@ -34,6 +34,24 @@
       "revId": "b3fc06c9ef6a0a3d317f414962bab3d309c2e6c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_282118b1",
+        "filename": "doc/source/devref/index.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-17T18:24:46Z",
+      "side": 0,
+      "message": "Sounds good - thanks!",
+      "parentUuid": "1f1a1f67_cc43ee6b",
+      "revId": "b3fc06c9ef6a0a3d317f414962bab3d309c2e6c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
