@@ -48,6 +48,28 @@ project_update = {
     'additionalProperties': True
 }
 
+project_tag_create = {
+    'type': 'string',
+    'required': [],
+    'additionalProperties': False
+}
+
+project_tag_update = {
+    'type': 'array',
+    'items': {
+        'type': 'string',
+        'minLength': 1,
+        'maxLength': 60,
+        # NOTE(gagehugo) This pattern is for tags which follows the
+        # guidelines as set by the API-WG, which matches anything that
+        # does not contain a '/' or ','.
+        # https://specs.openstack.org/openstack/api-wg/guidelines/tags.html
+        'pattern': '^[^,/]*$'
+    },
+    'maxItems': 50,
+    'uniqueItems': True
+}
+
 _domain_properties = {
     'description': validation.nullable(parameter_types.description),
     'enabled': parameter_types.boolean,
