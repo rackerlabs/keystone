@@ -450,6 +450,18 @@ class ProjectValidationTestCase(unit.BaseTestCase):
                               request_to_validate)
 
 
+class ProjectTagsValidationTestCase(unit.BaseTestCase):
+    """Test for V3 Project Tags API validation."""
+
+    def setUp(self):
+        super(ProjectTagsValidationTestCase, self).setUp()
+
+        self.tags = []
+
+        create = resource_schema.project_tag_create
+        self.create_project_validator = validators.SchemaValidator(create)
+
+
 class DomainValidationTestCase(unit.BaseTestCase):
     """Test for V3 Domain API validation."""
 
