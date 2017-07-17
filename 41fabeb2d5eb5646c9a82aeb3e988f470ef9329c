@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_d67d9eb2",
+        "filename": "releasenotes/notes/project-tags-1e72a6779d9d02c5.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-17T22:47:21Z",
+      "side": 1,
+      "message": "Most of this is documented in the API ref or spec - which is already linked, but a link to the API ref would be good.",
+      "revId": "41fabeb2d5eb5646c9a82aeb3e988f470ef9329c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_d6a8fe20",
+        "filename": "releasenotes/notes/project-tags-1e72a6779d9d02c5.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-17T22:47:21Z",
+      "side": 1,
+      "message": "Could make this an rst link.",
+      "revId": "41fabeb2d5eb5646c9a82aeb3e988f470ef9329c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
