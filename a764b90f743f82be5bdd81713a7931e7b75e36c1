@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_ea25530a",
+        "filename": "doc/source/devref/index.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-17T20:10:12Z",
+      "side": 0,
+      "message": "The git clone section of this document can be collapsed in the basic-guidelines.rst section. The basic-guidelines.rst section already has a bunch of information about development environment setup. It makes sense to continue that there instead of having another section for it.",
+      "revId": "a764b90f743f82be5bdd81713a7931e7b75e36c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_0a576f5a",
+        "filename": "doc/source/devref/index.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-17T20:10:12Z",
+      "side": 0,
+      "message": "The build-docs.rst section is super short and it could easily be incorporated into the testing-keystone.rst section, since that document has a focus on testing anyway.",
+      "revId": "a764b90f743f82be5bdd81713a7931e7b75e36c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
