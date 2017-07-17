@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1f1a1f67_fb952388",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-17T21:42:57Z",
+      "side": 1,
+      "message": "These bits won\u0027t be required anymore since we don\u0027t support extensions.",
+      "revId": "6a900dcb543509f09e72c84486d325c1256790e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_2c3df28e",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 11
