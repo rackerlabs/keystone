@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_87deda0e",
+        "filename": "keystone/common/sql/contract_repo/versions/024_contract_add_project_tags_table.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-17T19:22:43Z",
+      "side": 1,
+      "message": "This has been moved to a separate patch",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 8
+      },
+      "revId": "5c1581fa7bb759d4a332776d558c83c47d77c726",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_67e3beda",
+        "filename": "keystone/common/sql/data_migration_repo/versions/024_migrate_add_project_tags_table.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-17T19:22:43Z",
+      "side": 1,
+      "message": "This has been moved to a separate patch",
+      "revId": "5c1581fa7bb759d4a332776d558c83c47d77c726",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_47e442e0",
+        "filename": "keystone/common/sql/expand_repo/versions/024_expand_add_project_tags_table.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-17T19:22:43Z",
+      "side": 1,
+      "message": "This has been moved to a separate patch",
+      "revId": "5c1581fa7bb759d4a332776d558c83c47d77c726",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_27e946b6",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-17T19:22:43Z",
+      "side": 1,
+      "message": "This has been moved to a separate patch",
+      "revId": "5c1581fa7bb759d4a332776d558c83c47d77c726",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
