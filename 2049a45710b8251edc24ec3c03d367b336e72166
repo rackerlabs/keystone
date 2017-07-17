@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_09c30b5f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-07-17T13:19:54Z",
+      "side": 1,
+      "message": "i\u0027d phrase this in the context of keystone, not OSC.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 71
+      },
+      "revId": "2049a45710b8251edc24ec3c03d367b336e72166",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_89c4bb92",
+        "filename": "keystone/tests/unit/assignment/test_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-07-17T13:19:54Z",
+      "side": 1,
+      "message": "this test shouldn\u0027t change",
+      "range": {
+        "startLine": 30,
+        "startChar": 8,
+        "endLine": 30,
+        "endChar": 45
+      },
+      "revId": "2049a45710b8251edc24ec3c03d367b336e72166",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_49ba230a",
+        "filename": "keystone/tests/unit/assignment/test_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-07-17T13:19:54Z",
+      "side": 1,
+      "message": "this test shouldn\u0027t change",
+      "range": {
+        "startLine": 42,
+        "startChar": 8,
+        "endLine": 42,
+        "endChar": 45
+      },
+      "revId": "2049a45710b8251edc24ec3c03d367b336e72166",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_09d9cb7d",
+        "filename": "keystone/tests/unit/assignment/test_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-07-17T13:19:54Z",
+      "side": 1,
+      "message": "use uuid.uuid4().hex here instead",
+      "range": {
+        "startLine": 65,
+        "startChar": 30,
+        "endLine": 65,
+        "endChar": 48
+      },
+      "revId": "2049a45710b8251edc24ec3c03d367b336e72166",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_293927a3",
+        "filename": "keystone/tests/unit/assignment/test_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-07-17T13:19:54Z",
+      "side": 1,
+      "message": "this test shouldn\u0027t change",
+      "range": {
+        "startLine": 92,
+        "startChar": 8,
+        "endLine": 92,
+        "endChar": 34
+      },
+      "revId": "2049a45710b8251edc24ec3c03d367b336e72166",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_09daeb4a",
+        "filename": "releasenotes/notes/add-description-to-role-cb7ec3b490528165.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-07-17T13:19:54Z",
+      "side": 1,
+      "message": "I\u0027d phrase this in the context of a keystone operator... something like:\n\n\"Added support for a ``description`` attribute for V3 Identity Roles, must run database migration 110 or greater, see API docs for details.\"",
+      "range": {
+        "startLine": 4,
+        "startChar": 4,
+        "endLine": 8,
+        "endChar": 38
+      },
+      "revId": "2049a45710b8251edc24ec3c03d367b336e72166",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
