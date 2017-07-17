@@ -22,6 +22,29 @@
       "revId": "1689ce25115f956765bd6b0628034036e27a4664",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_a1b9becc",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-17T23:17:20Z",
+      "side": 1,
+      "message": "6*",
+      "range": {
+        "startLine": 231,
+        "startChar": 37,
+        "endLine": 231,
+        "endChar": 38
+      },
+      "revId": "1689ce25115f956765bd6b0628034036e27a4664",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
