@@ -52,6 +52,24 @@
       "revId": "fb7070ca5cc908977349fc0b42a6a6409ac0d7bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_272a662b",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-17T19:12:10Z",
+      "side": 1,
+      "message": "I guess what I meant by ^ is that a test that singles out the trustor case would help in understand this change. Because an empty trust body could result in a 400 for multiple attributes, right?",
+      "parentUuid": "1f1a1f67_a78b1666",
+      "revId": "fb7070ca5cc908977349fc0b42a6a6409ac0d7bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
