@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_343e178c",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-17T16:03:41Z",
+      "side": 1,
+      "message": "No need to use six here - https://wiki.openstack.org/wiki/Python3#Common_patterns",
+      "revId": "44a8ae454ae45162a949e6916c01f71b3363f90d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_74992f77",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-17T16:03:41Z",
+      "side": 1,
+      "message": "If we do take this approach, we should make it so that this filtering is initiated by the client. That way the default behavior is preserved and the ability to filter based on None is something clients can opt into.",
+      "revId": "44a8ae454ae45162a949e6916c01f71b3363f90d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_94004bad",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-17T16:03:41Z",
+      "side": 1,
+      "message": "sql.DictBase is no longer available. Instead there are a couple mixins the enforce more strict requirements on extras.",
+      "revId": "44a8ae454ae45162a949e6916c01f71b3363f90d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
