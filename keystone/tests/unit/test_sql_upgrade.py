@@ -2356,6 +2356,14 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         self.assertTableColumns(user_option,
                                 ['user_id', 'option_id', 'option_value'])
 
+    def test_migration_024_expand_add_project_tags_table(self):
+        self.expand(24)
+        self.migrate(24)
+        self.contract(24)
+
+        table_name = 'project_tag'
+        self.assertTableExists(table_name)
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
