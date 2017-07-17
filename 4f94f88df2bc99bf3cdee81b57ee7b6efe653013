@@ -16,6 +16,29 @@
       "revId": "4f94f88df2bc99bf3cdee81b57ee7b6efe653013",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_aa42bba9",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-17T20:06:40Z",
+      "side": 1,
+      "message": "unrelated comma, please remove",
+      "range": {
+        "startLine": 276,
+        "startChar": 23,
+        "endLine": 276,
+        "endChar": 24
+      },
+      "revId": "4f94f88df2bc99bf3cdee81b57ee7b6efe653013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
