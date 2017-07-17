@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1f1a1f67_10cd5e65",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 23625
+      },
+      "writtenOn": "2017-07-17T21:18:54Z",
+      "side": 1,
+      "message": "How are we validating in the schema? There is no way to have the schema check with the sql to see if there are too many tags",
+      "parentUuid": "1f1a1f67_f01f8205",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 32
+      },
+      "revId": "2adb32f9e52c4bbf69e1640789f654ee703c1ad2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_b0158ae7",
         "filename": "keystone/resource/core.py",
         "patchSetId": 57
