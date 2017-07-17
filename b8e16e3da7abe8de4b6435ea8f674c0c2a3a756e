@@ -50,6 +50,24 @@
       "revId": "b8e16e3da7abe8de4b6435ea8f674c0c2a3a756e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_9b1bcf7f",
+        "filename": "keystone/common/sql/expand_repo/versions/024_contract_add_project_tags_table.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-17T22:20:56Z",
+      "side": 1,
+      "message": "yeah I copied without double checking, will fix",
+      "parentUuid": "1f1a1f67_aa53db38",
+      "revId": "b8e16e3da7abe8de4b6435ea8f674c0c2a3a756e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
