@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "1f1a1f67_361052a8",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-17T22:41:29Z",
+      "side": 1,
+      "message": "Well, we can remove the name length. For tag updating, we can leave the count value here",
+      "parentUuid": "1f1a1f67_10cd5e65",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 32
+      },
+      "revId": "2adb32f9e52c4bbf69e1640789f654ee703c1ad2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_b0158ae7",
         "filename": "keystone/resource/core.py",
         "patchSetId": 57
@@ -88,6 +112,29 @@
         "startChar": 0,
         "endLine": 925,
         "endChar": 51
+      },
+      "revId": "2adb32f9e52c4bbf69e1640789f654ee703c1ad2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_166e762e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 965,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-17T22:41:29Z",
+      "side": 1,
+      "message": "https://github.com/openstack/nova/blob/9dde4fe0eacc01c135401da3313c493caa99a30c/nova/api/openstack/compute/server_tags.py#L105-L152",
+      "range": {
+        "startLine": 965,
+        "startChar": 8,
+        "endLine": 965,
+        "endChar": 28
       },
       "revId": "2adb32f9e52c4bbf69e1640789f654ee703c1ad2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
