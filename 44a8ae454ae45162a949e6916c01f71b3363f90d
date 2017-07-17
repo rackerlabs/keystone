@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1f1a1f67_b47587cd",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-17T16:19:14Z",
+      "side": 1,
+      "message": "Otherwise - this is a backwards incompatible API change.",
+      "parentUuid": "1f1a1f67_74992f77",
+      "revId": "44a8ae454ae45162a949e6916c01f71b3363f90d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_94004bad",
         "filename": "keystone/tests/unit/common/test_sql_core.py",
         "patchSetId": 1
