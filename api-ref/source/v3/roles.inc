@@ -167,6 +167,7 @@ Request Parameters
    - role: role
    - name: role_name_create_body
    - domain_id: domain_id_response_body
+   - description: role_description_create_body
 
 Request Example
 ---------------
@@ -190,7 +191,7 @@ Response Parameters
    - id: role_id_response_body
    - links: link_response_body
    - name: role_name_response_body
-
+   - description: role_description_response_body
 
 Show role details
 =================

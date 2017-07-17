@@ -70,6 +70,26 @@ class RoleTests(object):
                           self.role_api.get_role,
                           role['id'])
 
+    def test_role_crud_with_description(self):
+        role = unit.new_role_ref()
+        self.role_api.create_role(role['id'], role)
+        role_ref = self.role_api.get_role(role['id'])
+        role_ref_dict = {x: role_ref[x] for x in role_ref}
+        self.assertDictEqual(role, role_ref_dict)
+
+        role['name'] = uuid.uuid4().hex
+        role['description'] = uuid.uuid4().hex
+        updated_role_ref = self.role_api.update_role(role['id'], role)
+        role_ref = self.role_api.get_role(role['id'])
+        role_ref_dict = {x: role_ref[x] for x in role_ref}
+        self.assertDictEqual(role, role_ref_dict)
+        self.assertDictEqual(role_ref_dict, updated_role_ref)
+
+        self.role_api.delete_role(role['id'])
+        self.assertRaises(exception.RoleNotFound,
+                          self.role_api.get_role,
+                          role['id'])
+
     def test_update_role_returns_not_found(self):
         role = unit.new_role_ref()
         self.assertRaises(exception.RoleNotFound,
