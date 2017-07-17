@@ -2356,6 +2356,78 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         self.assertTableColumns(user_option,
                                 ['user_id', 'option_id', 'option_value'])
 
+    def test_migration_024_expand_add_project_tags_table(self):
+        if self.engine.name == 'sqlite':
+            self.skipTest('sqlite backend does not support foreign keys')
+
+        self.expand(23)
+        self.migrate(23)
+        self.contract(23)
+
+        table_name = 'project_tag'
+        self.assertTableDoesNotExist(table_name)
+
+        self.expand(24)
+        self.migrate(24)
+        self.contract(24)
+
+        self.assertTableExists(table_name)
+        self.assertTableColumns(
+            table_name,
+            ['project_id', 'name'])
+
+        project_table = sqlalchemy.Table(
+            'project', self.metadata, autoload=True)
+        tag_table = sqlalchemy.Table(
+            'project_tag', self.metadata, autoload=True)
+
+        session = self.sessionmaker()
+        project_id = uuid.uuid4().hex
+
+        project = {
+            'id': project_id,
+            'name': uuid.uuid4().hex,
+            'enabled': True,
+            'domain_id': resource_base.NULL_DOMAIN_ID,
+            'is_domain': False
+        }
+
+        tag = {
+            'project_id': project_id,
+            'name': uuid.uuid4().hex
+        }
+
+        self.insert_dict(session, 'project', project)
+        self.insert_dict(session, 'project_tag', tag)
+
+        # Test if the table insertion works
+        tags_query = session.query(tag_table).filter_by(
+            project_id=project_id).all()
+        self.assertThat(tags_query, matchers.HasLength(1))
+
+        # Test inserting a duplicate tag will error
+        self.assertRaises(db_exception.DBDuplicateEntry,
+                          self.insert_dict,
+                          session, 'project_tag', tag)
+
+        # Test foreign key is enforced.  We will create a project_id with only
+        # half of the string of a normal uuid to ensure it is invalid.
+        tag_with_bad_project_id = {
+            'project_id': uuid.uuid4().hex[:16],
+            'name': uuid.uuid4().hex
+        }
+        self.assertRaises(db_exception.DBReferenceError,
+                          self.insert_dict,
+                          session, 'project_tag', tag_with_bad_project_id)
+
+        # Test the tags are cleaned up when the associated project is deleted.
+        session.execute(
+            project_table.delete().where(project_table.c.id == project_id)
+        )
+        tags_query = session.query(tag_table).filter_by(
+            project_id=project_id).all()
+        self.assertThat(tags_query, matchers.HasLength(0))
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
