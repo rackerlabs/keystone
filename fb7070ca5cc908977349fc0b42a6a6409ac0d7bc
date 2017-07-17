@@ -88,6 +88,24 @@
       "revId": "fb7070ca5cc908977349fc0b42a6a6409ac0d7bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_6a370301",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-17T20:17:48Z",
+      "side": 1,
+      "message": "actually, that already exists for the other 2 required props, but not for trustor... Done.",
+      "parentUuid": "1f1a1f67_aa707b09",
+      "revId": "fb7070ca5cc908977349fc0b42a6a6409ac0d7bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
