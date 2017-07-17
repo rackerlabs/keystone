@@ -1489,6 +1489,22 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
                                  'expires_at',
                                  'self_service'])
 
+    def test_migration_110_add_role_description(self):
+        role_table = 'role'
+        self.upgrade(109)
+        self.assertTableColumns(role_table,
+                                ['id',
+                                 'name',
+                                 'extra',
+                                 'domain_id'])
+        self.upgrade(110)
+        self.assertTableColumns(role_table,
+                                ['id',
+                                 'name',
+                                 'extra',
+                                 'domain_id',
+                                 'description'])
+
 
 class MySQLOpportunisticUpgradeTestCase(SqlLegacyRepoUpgradeTests):
     FIXTURE = test_base.MySQLOpportunisticFixture

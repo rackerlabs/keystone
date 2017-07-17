@@ -29,7 +29,8 @@ class RoleTests(object):
 
     def test_create_duplicate_role_name_fails(self):
         role_id = uuid.uuid4().hex
-        role = unit.new_role_ref(id=role_id, name='fake1name')
+        role = unit.new_role_ref(id=role_id, name='fake1name',
+                                 description='test_description')
         self.role_api.create_role(role_id, role)
         new_role_id = uuid.uuid4().hex
         role['id'] = new_role_id
@@ -41,8 +42,10 @@ class RoleTests(object):
     def test_rename_duplicate_role_name_fails(self):
         role_id1 = uuid.uuid4().hex
         role_id2 = uuid.uuid4().hex
-        role1 = unit.new_role_ref(id=role_id1, name='fake1name')
-        role2 = unit.new_role_ref(id=role_id2, name='fake2name')
+        role1 = unit.new_role_ref(id=role_id1, name='fake1name',
+                                  description='test_description')
+        role2 = unit.new_role_ref(id=role_id2, name='fake2name',
+                                  description='test_description')
         self.role_api.create_role(role_id1, role1)
         self.role_api.create_role(role_id2, role2)
         role1['name'] = 'fake2name'
@@ -59,6 +62,7 @@ class RoleTests(object):
         self.assertDictEqual(role, role_ref_dict)
 
         role['name'] = uuid.uuid4().hex
+        role['description'] = 'test_description'
         updated_role_ref = self.role_api.update_role(role['id'], role)
         role_ref = self.role_api.get_role(role['id'])
         role_ref_dict = {x: role_ref[x] for x in role_ref}
@@ -93,6 +97,7 @@ class RoleTests(object):
         role_ref = self.role_api.get_role(role_id)
         updated_role_ref = copy.deepcopy(role_ref)
         updated_role_ref['name'] = uuid.uuid4().hex
+        updated_role_ref['description'] = uuid.uuid4().hex
         # Update role, bypassing the role api manager
         self.role_api.driver.update_role(role_id, updated_role_ref)
         # Verify get_role still returns old ref
