@@ -20,6 +20,17 @@ _name_properties = {
     'pattern': '[\S]+'
 }
 
+_project_tag_name_properties = {
+    'type': 'string',
+    'minLength': 1,
+    'maxLength': 60,
+    # NOTE(gagehugo) This pattern is for tags which follows the guidelines
+    # as set by the API-WG, which matches anything that does not contain
+    # a '/' or ','.
+    # https://specs.openstack.org/openstack/api-wg/guidelines/tags.html
+    'pattern': '^[^,/]*$'
+}
+
 _project_properties = {
     'description': validation.nullable(parameter_types.description),
     # NOTE(htruta): domain_id is nullable for projects acting as a domain.
@@ -46,6 +57,28 @@ project_update = {
     # NOTE(lbragstad): Make sure at least one property is being updated
     'minProperties': 1,
     'additionalProperties': True
+}
+
+_project_tags_properties = {
+    'type': 'array',
+    'items': _project_tag_name_properties,
+    # NOTE(gagehugo) A project can have up to 50 tags
+    'maxItems': 50
+}
+
+project_tag_create = {
+    'type': 'string',
+    'required': [],
+    'additionalProperties': False
+}
+
+project_tag_update = {
+    'type': 'object',
+    'properties': {
+        'tags': _project_tags_properties
+    },
+    'required': ['tags'],
+    'additionalProperties': False
 }
 
 _domain_properties = {
