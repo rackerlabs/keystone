@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_f59c260f",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 18602
+      },
+      "writtenOn": "2017-07-17T11:53:48Z",
+      "side": 1,
+      "message": "you could delete the linebreak here.",
+      "revId": "2ef52acef5238b7fc45c59003a21497383c9eb65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_983ac7c9",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 18602
+      },
+      "writtenOn": "2017-07-17T11:53:48Z",
+      "side": 1,
+      "message": "You got error in tests because of this line. As you change the signature that was tested in [1]. So, instead of 1 parameter, LOG.warning now is being called with 2 parameters. So you need to adjust the unit test.\n\n[1]: https://github.com/openstack/keystone/blob/master/keystone/tests/unit/resource/test_core.py#L560",
+      "range": {
+        "startLine": 216,
+        "startChar": 20,
+        "endLine": 217,
+        "endChar": 55
+      },
+      "revId": "2ef52acef5238b7fc45c59003a21497383c9eb65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
