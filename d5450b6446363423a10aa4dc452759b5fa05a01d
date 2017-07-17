@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_ad42d5a9",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-07-17T20:42:14Z",
+      "side": 1,
+      "message": "This is a break in the API. This must be reverted. Sorry.",
+      "range": {
+        "startLine": 43,
+        "startChar": 1,
+        "endLine": 44,
+        "endChar": 58
+      },
+      "revId": "d5450b6446363423a10aa4dc452759b5fa05a01d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
