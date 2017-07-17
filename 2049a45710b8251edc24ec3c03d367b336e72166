@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "1f1a1f67_21813bc4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-17T15:52:09Z",
+      "side": 1,
+      "message": "++ \n\nThis could be phrased so that folks know keystone now supports descriptions for roles. Subsequent patches to the clients (OSC) will elaborate on the client support bits.",
+      "parentUuid": "1f1a1f67_09c30b5f",
+      "revId": "2049a45710b8251edc24ec3c03d367b336e72166",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_89c4bb92",
         "filename": "keystone/tests/unit/assignment/test_core.py",
         "patchSetId": 1
@@ -134,6 +152,24 @@
         "endLine": 8,
         "endChar": 38
       },
+      "revId": "2049a45710b8251edc24ec3c03d367b336e72166",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_b4110755",
+        "filename": "releasenotes/notes/add-description-to-role-cb7ec3b490528165.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-17T15:52:09Z",
+      "side": 1,
+      "message": "++ \n\nThis should also link to the bug report so that operators can find additional context. Documentation on how to do that can be found in our contributor guide:\n\nhttps://docs.openstack.org/keystone/latest/devref/development_best_practices.html",
+      "parentUuid": "1f1a1f67_09daeb4a",
       "revId": "2049a45710b8251edc24ec3c03d367b336e72166",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

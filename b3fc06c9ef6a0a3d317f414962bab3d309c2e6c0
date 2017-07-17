@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_21393bf1",
+        "filename": "keystone/tests/unit/assignment/test_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-17T15:52:09Z",
+      "side": 0,
+      "message": "I agree with all of Steve\u0027s comments. Since `description` is an option attribute, it doesn\u0027t need to be included in all tests. An additional test case that ensures the description is set on a role would suffice.",
+      "revId": "b3fc06c9ef6a0a3d317f414962bab3d309c2e6c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
