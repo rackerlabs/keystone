@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_0a7f6f15",
+        "filename": "doc/source/devref/development_environment.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-17T20:01:58Z",
+      "side": 1,
+      "message": "Even though this is isolated to the devref section (which is targeted towards developers), I don\u0027t mind having it explicitly call out the fact this is for \"development\" environments. But I also think most of this can be collapsed in the previous sections.",
+      "revId": "a764b90f743f82be5bdd81713a7931e7b75e36c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
