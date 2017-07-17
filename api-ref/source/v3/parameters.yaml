@@ -1324,11 +1324,23 @@ role_name_create_body:
   in: body
   required: true
   type: string
+role_description_create_body:
+  description: |
+    Add description about the role.
+  in: body
+  required: false
+  type: string
 role_name_response_body:
   description: |
     The role name.
   in: body
   required: true
+  type: string
+role_description_response_body:
+  description: |
+    Add description about the role.
+  in: body
+  required: false
   type: string
 role_name_update_body:
   description: |

@@ -1489,6 +1489,22 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
                                  'expires_at',
                                  'self_service'])
 
+    def test_migration_110_add_role_description(self):
+        role_table = 'role'
+        self.upgrade(109)
+        self.assertTableColumns(role_table,
+                                ['id',
+                                 'name',
+                                 'extra',
+                                 'domain_id'])
+        self.upgrade(110)
+        self.assertTableColumns(role_table,
+                                ['id',
+                                 'name',
+                                 'extra',
+                                 'domain_id',
+                                 'description'])
+
 
 class MySQLOpportunisticUpgradeTestCase(SqlLegacyRepoUpgradeTests):
     FIXTURE = test_base.MySQLOpportunisticFixture
@@ -1618,7 +1634,7 @@ class VersionTests(SqlMigrateBase):
 
         """
         # Note to reviewers: this version number should never change.
-        self.assertEqual(109, self.repos[LEGACY_REPO].max_version)
+        self.assertEqual(110, self.repos[LEGACY_REPO].max_version)
 
     def test_migrate_repos_stay_in_lockstep(self):
         """Rolling upgrade repositories should always stay in lockstep.
