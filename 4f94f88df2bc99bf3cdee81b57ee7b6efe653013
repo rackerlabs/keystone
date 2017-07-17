@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_6a31435a",
+        "filename": "keystone/exception.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-17T20:05:08Z",
+      "side": 1,
+      "message": "This was pulled out into https://review.openstack.org/#/c/484471/",
+      "revId": "4f94f88df2bc99bf3cdee81b57ee7b6efe653013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
