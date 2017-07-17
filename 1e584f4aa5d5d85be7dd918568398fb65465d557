@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_4d9c610d",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-07-17T20:49:03Z",
+      "side": 1,
+      "message": "My understanding is this should be similar to nova\u0027s tag call [0], so it would just be a list of string. Since the project_id should be already in the path, do we need this in the json body as well?\n\n[0] https://developer.openstack.org/api-ref/compute/?expanded\u003dreplace-tags-detail#replace-tags",
+      "range": {
+        "startLine": 70,
+        "startChar": 18,
+        "endLine": 70,
+        "endChar": 28
+      },
+      "revId": "1e584f4aa5d5d85be7dd918568398fb65465d557",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
