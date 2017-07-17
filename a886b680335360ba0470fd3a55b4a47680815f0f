@@ -16,6 +16,24 @@
       "revId": "a886b680335360ba0470fd3a55b4a47680815f0f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_ec7c6a84",
+        "filename": "doc/source/admin/identity-management.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 25559
+      },
+      "writtenOn": "2017-07-17T06:19:06Z",
+      "side": 1,
+      "message": "yes, I just migrated project specific stuff earlier, these two were written somewhere else in the specs and got missed.",
+      "parentUuid": "1f1a1f67_6ee29c03",
+      "revId": "a886b680335360ba0470fd3a55b4a47680815f0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
