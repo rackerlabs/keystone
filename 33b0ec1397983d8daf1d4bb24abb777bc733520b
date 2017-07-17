@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_ca2bb792",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2352,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-17T20:19:33Z",
+      "side": 0,
+      "message": "Could do an assertion like this to make it clear we\u0027re checking for the presence of the table before *and* after the migrations.",
+      "revId": "33b0ec1397983d8daf1d4bb24abb777bc733520b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

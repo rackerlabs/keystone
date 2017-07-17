@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_2a16ab56",
+        "filename": "keystone/common/sql/contract_repo/versions/024_contract_add_project_tags_table.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-17T20:19:33Z",
+      "side": 1,
+      "message": "Same comment here regarding the file naming.",
+      "revId": "b8e16e3da7abe8de4b6435ea8f674c0c2a3a756e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_0a0f6f37",
+        "filename": "keystone/common/sql/data_migration_repo/versions/024_contract_add_project_tags_table.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-17T20:19:33Z",
+      "side": 1,
+      "message": "Same comment here regarding the file naming.",
+      "revId": "b8e16e3da7abe8de4b6435ea8f674c0c2a3a756e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_aa53db38",
+        "filename": "keystone/common/sql/expand_repo/versions/024_contract_add_project_tags_table.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-17T20:19:33Z",
+      "side": 1,
+      "message": "I think this file is named wrong. I think the convention is to use something like:\n\n  expand_repo/versions/024_expand_add_project_tags_table.py",
+      "revId": "b8e16e3da7abe8de4b6435ea8f674c0c2a3a756e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
