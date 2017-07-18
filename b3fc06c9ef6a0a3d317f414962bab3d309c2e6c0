@@ -40,6 +40,24 @@
       "revId": "b3fc06c9ef6a0a3d317f414962bab3d309c2e6c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_51598132",
+        "filename": "doc/source/admin/token-provider.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-18T13:35:23Z",
+      "side": 0,
+      "message": "Yes, please add something like this to the contributor docs. it;s useful for people who write their own token providers",
+      "parentUuid": "1f1a1f67_b0ecc629",
+      "revId": "b3fc06c9ef6a0a3d317f414962bab3d309c2e6c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
