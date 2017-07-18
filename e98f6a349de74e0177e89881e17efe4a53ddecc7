@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_307bb57b",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-07-18T00:44:21Z",
+      "side": 1,
+      "message": "Please do not use strings as Primary Keys. The PK should be an autoinc int. If you need a resource externally representable, you may have a tag_id that is a UUID.",
+      "range": {
+        "startLine": 473,
+        "startChar": 4,
+        "endLine": 473,
+        "endChar": 53
+      },
+      "revId": "e98f6a349de74e0177e89881e17efe4a53ddecc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
