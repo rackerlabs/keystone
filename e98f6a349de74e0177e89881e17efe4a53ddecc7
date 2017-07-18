@@ -22,6 +22,30 @@
       "revId": "e98f6a349de74e0177e89881e17efe4a53ddecc7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_93161349",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2017-07-18T01:30:52Z",
+      "side": 1,
+      "message": "But then wouldn\u0027t there be confusion between id and tag_id? That sounds like a bug waiting to happen.\n\nIn truth this resource probably shouldn\u0027t ever be queried or filtered by the id from a user perspective since tags aren\u0027t shared across multiple projects, and most queries will be by name.\n\nBut... If there is a use case to have the id usable, what\u0027s wrong with UUID as PK? All other Keystone resources seem to already do that, makes sense to keep that convention the same.",
+      "parentUuid": "1f1a1f67_307bb57b",
+      "range": {
+        "startLine": 473,
+        "startChar": 4,
+        "endLine": 473,
+        "endChar": 53
+      },
+      "revId": "e98f6a349de74e0177e89881e17efe4a53ddecc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
