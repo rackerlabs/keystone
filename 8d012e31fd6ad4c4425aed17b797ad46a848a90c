@@ -40,6 +40,24 @@
       "revId": "8d012e31fd6ad4c4425aed17b797ad46a848a90c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_65e03227",
+        "filename": "keystone/conf/catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-07-18T16:51:09Z",
+      "side": 1,
+      "message": "Yeah, the option is needed. I wouldn\u0027t want to overload/change format on the \"template_file\". If we are loading from disk we need to allow folks to specify where.\n\nBasically what lance said (it is an intended case).",
+      "parentUuid": "1f1a1f67_913954d8",
+      "revId": "8d012e31fd6ad4c4425aed17b797ad46a848a90c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
