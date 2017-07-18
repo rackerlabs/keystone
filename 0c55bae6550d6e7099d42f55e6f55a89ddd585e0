@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_fa33bd60",
+        "filename": "doc/source/devref/development_environment.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-07-18T16:35:43Z",
+      "side": 1,
+      "message": "Actually, I think that was correct before with the P: https://www.python.org/download/releases/2.7/",
+      "range": {
+        "startLine": 36,
+        "startChar": 2,
+        "endLine": 36,
+        "endChar": 3
+      },
+      "revId": "0c55bae6550d6e7099d42f55e6f55a89ddd585e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
