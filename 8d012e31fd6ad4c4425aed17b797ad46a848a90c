@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "1f1a1f67_3dc80572",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-18T22:31:45Z",
+      "side": 1,
+      "message": "so this is the ID?\nif so, why arent the endpoints represented in the same way?\ne.g L70 would be\n\n    EndpointThree:",
+      "range": {
+        "startLine": 79,
+        "startChar": 10,
+        "endLine": 79,
+        "endChar": 19
+      },
+      "revId": "8d012e31fd6ad4c4425aed17b797ad46a848a90c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_aedd0fe1",
         "filename": "keystone/conf/catalog.py",
         "patchSetId": 3
