@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1f1a1f67_536e2e2f",
+        "filename": "doc/source/devref/index.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-18T10:22:46Z",
+      "side": 0,
+      "message": "what if we get this whole document and collapse into basic-guidelines?\n\nthen we could call the whole section \u0027setting up keystone\u0027 since that\u0027s what it is doing anyways. basic-guidelines don\u0027t tell much imo",
+      "parentUuid": "1f1a1f67_ea25530a",
+      "revId": "a764b90f743f82be5bdd81713a7931e7b75e36c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_0a576f5a",
         "filename": "doc/source/devref/index.rst",
         "patchSetId": 5
