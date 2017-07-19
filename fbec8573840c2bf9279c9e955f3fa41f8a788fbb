@@ -143,6 +143,24 @@
     },
     {
       "key": {
+        "uuid": "1f1a1f67_d1dfa363",
+        "filename": "releasenotes/notes/bp-policy-in-code-722372a27291b9cd.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-19T14:33:03Z",
+      "side": 1,
+      "message": "Matt\u0027s comment would make a good addition to the docs. Just a section somewhere in the operator guide or the configuration guide that says \"Hey, if you\u0027re looking to implement a default rule, here is how you would do it\".",
+      "parentUuid": "1f1a1f67_ae3966a4",
+      "revId": "fbec8573840c2bf9279c9e955f3fa41f8a788fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_fbe27e9f",
         "filename": "releasenotes/notes/bp-policy-in-code-722372a27291b9cd.yaml",
         "patchSetId": 4
