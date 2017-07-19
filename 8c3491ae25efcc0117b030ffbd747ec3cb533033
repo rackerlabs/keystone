@@ -22,6 +22,30 @@
       "revId": "8c3491ae25efcc0117b030ffbd747ec3cb533033",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_06373501",
+        "filename": "releasenotes/notes/add-description-to-role-cb7ec3b490528165.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 20401
+      },
+      "writtenOn": "2017-07-19T04:50:20Z",
+      "side": 1,
+      "message": "According to the Steve\u0027s comment for patch 1 i\u0027ve added this statement. I guess it is necessary.",
+      "parentUuid": "1f1a1f67_91a159fb",
+      "range": {
+        "startLine": 5,
+        "startChar": 73,
+        "endLine": 6,
+        "endChar": 64
+      },
+      "revId": "8c3491ae25efcc0117b030ffbd747ec3cb533033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
