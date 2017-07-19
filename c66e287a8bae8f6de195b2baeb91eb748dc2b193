@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_2add39df",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-19T18:19:04Z",
+      "side": 1,
+      "message": "Could use a new line after the title here.\n\n  WIP: filter users and groups in ldap\n\n  Closes-Bug: #1704205",
+      "revId": "c66e287a8bae8f6de195b2baeb91eb748dc2b193",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
