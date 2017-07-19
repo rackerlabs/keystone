@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_c01fc1b4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 67
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-19T22:40:33Z",
+      "side": 1,
+      "message": "this should be fine for sanity (and getting the tests to pass purposes) but technically this should happen automatically with sqlA but we can leave it for now",
+      "range": {
+        "startLine": 507,
+        "startChar": 17,
+        "endLine": 507,
+        "endChar": 40
+      },
+      "revId": "a8e9146661b373c9a5661a07f338717bd2834166",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
