@@ -1383,14 +1383,24 @@ class BaseLdap(object):
         return values
 
     def _ldap_get(self, object_id, ldap_filter=None):
+        # TODO(prashkre): add functional testing for missing name_attr.
+
+        # name_attr is added in ldap search query to enforce that ldap
+        # name attribute has a value. This keeps keystone away from entities
+        # that don't have names.
+        # for e.g. In ldap configuration, if user_name_attribute = personName,
+        # then query will find user only if 'personName' attribute is set
+        # with some value on user.
         query = (u'(&(%(id_attr)s=%(id)s)'
                  u'%(filter)s'
-                 u'(objectClass=%(object_class)s))'
+                 u'(objectClass=%(object_class)s)'
+                 u'(!(!(%(name_attr)s=*))))'
                  % {'id_attr': self.id_attr,
                     'id': ldap.filter.escape_filter_chars(
                         six.text_type(object_id)),
                     'filter': (ldap_filter or self.ldap_filter or ''),
-                    'object_class': self.object_class})
+                    'object_class': self.object_class,
+                    'name_attr': self.attribute_mapping.get('name')})
         with self.get_connection() as conn:
             try:
                 attrs = list(set(([self.id_attr] +

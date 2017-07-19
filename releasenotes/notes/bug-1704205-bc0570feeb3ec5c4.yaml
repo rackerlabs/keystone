@@ -1,0 +1,11 @@
+---
+features:
+  - |
+    [`bug 1652012 <https://bugs.launchpad.net/keystone/+bug/1704205>`_]
+    With ldap as identity backend driver, when some users/groups configured
+    without name attributes then identity API's(like GET effective
+    role-assignments with user_names) that are dealing with name attribues
+    are running into an error state. To avoid such cases, changes are made
+    to ignore users and groups who have missing ldap user_name_attribute
+    and group_name_attribute respectively. This keeps keystone from having
+    to deal with entities that don't have names.
