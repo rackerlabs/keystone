@@ -45,6 +45,30 @@
       "revId": "a802f56a71c4fd32acf38a5f282dedee21384382",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_9beeea1f",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-19T13:39:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f201791_d12e1ea4",
+      "range": {
+        "startLine": 592,
+        "startChar": 34,
+        "endLine": 592,
+        "endChar": 42
+      },
+      "revId": "a802f56a71c4fd32acf38a5f282dedee21384382",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
