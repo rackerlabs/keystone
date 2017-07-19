@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_7871d9a7",
+        "filename": "doc/source/devref/token-provider.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-19T10:47:01Z",
+      "side": 1,
+      "message": "it defaults to fernet. I am okay with updating in a followup",
+      "range": {
+        "startLine": 28,
+        "startChar": 2,
+        "endLine": 31,
+        "endChar": 12
+      },
+      "revId": "95b843979910551b19fee1480beaa3a2be13408f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
