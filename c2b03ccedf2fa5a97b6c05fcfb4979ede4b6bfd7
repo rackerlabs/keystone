@@ -72,6 +72,29 @@
     },
     {
       "key": {
+        "uuid": "1f1a1f67_35eb5a78",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 925,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-19T18:48:21Z",
+      "side": 1,
+      "message": "We need to fix this as well, we should be able to just insert the name/project_id",
+      "range": {
+        "startLine": 925,
+        "startChar": 8,
+        "endLine": 925,
+        "endChar": 44
+      },
+      "revId": "c2b03ccedf2fa5a97b6c05fcfb4979ede4b6bfd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_9d0a5acf",
         "filename": "keystone/tests/unit/resource/test_backends.py",
         "patchSetId": 64
