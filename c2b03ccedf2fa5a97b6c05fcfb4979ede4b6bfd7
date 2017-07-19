@@ -25,6 +25,53 @@
     },
     {
       "key": {
+        "uuid": "1f1a1f67_a1c054e2",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-19T17:00:52Z",
+      "side": 1,
+      "message": "yeah for some of these the wrapper actually needs to be taken out.",
+      "parentUuid": "1f1a1f67_a13974a4",
+      "range": {
+        "startLine": 242,
+        "startChar": 0,
+        "endLine": 242,
+        "endChar": 76
+      },
+      "revId": "c2b03ccedf2fa5a97b6c05fcfb4979ede4b6bfd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_0174a8cd",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-19T17:00:52Z",
+      "side": 1,
+      "message": "this is why tag dictionary is currently returned when listing projects. need to bring list_tag_names_in_list back",
+      "range": {
+        "startLine": 292,
+        "startChar": 44,
+        "endLine": 292,
+        "endChar": 61
+      },
+      "revId": "c2b03ccedf2fa5a97b6c05fcfb4979ede4b6bfd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_9d0a5acf",
         "filename": "keystone/tests/unit/resource/test_backends.py",
         "patchSetId": 64
@@ -36,6 +83,30 @@
       "writtenOn": "2017-07-19T16:44:57Z",
       "side": 1,
       "message": "We can delete this",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 28
+      },
+      "revId": "c2b03ccedf2fa5a97b6c05fcfb4979ede4b6bfd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_21b4447f",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-19T17:00:52Z",
+      "side": 1,
+      "message": "agreed",
+      "parentUuid": "1f1a1f67_9d0a5acf",
       "range": {
         "startLine": 35,
         "startChar": 0,
