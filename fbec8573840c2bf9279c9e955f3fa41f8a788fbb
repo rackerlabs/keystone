@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_3b8b56c3",
+        "filename": "releasenotes/notes/bp-policy-in-code-722372a27291b9cd.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-19T13:57:12Z",
+      "side": 1,
+      "message": "could not?",
+      "range": {
+        "startLine": 10,
+        "startChar": 64,
+        "endLine": 10,
+        "endChar": 70
+      },
+      "revId": "fbec8573840c2bf9279c9e955f3fa41f8a788fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_9b9a6a11",
+        "filename": "releasenotes/notes/bp-policy-in-code-722372a27291b9cd.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-19T13:57:12Z",
+      "side": 1,
+      "message": "was?",
+      "range": {
+        "startLine": 10,
+        "startChar": 20,
+        "endLine": 10,
+        "endChar": 22
+      },
+      "revId": "fbec8573840c2bf9279c9e955f3fa41f8a788fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_7bcf8e28",
+        "filename": "releasenotes/notes/bp-policy-in-code-722372a27291b9cd.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-19T13:57:12Z",
+      "side": 1,
+      "message": "in fact the default rule does not exist (and should not exist in deployments) anymore, I think explaining + advising them to remove from deployments would be better/more direct advice.",
+      "range": {
+        "startLine": 26,
+        "startChar": 25,
+        "endLine": 27,
+        "endChar": 9
+      },
+      "revId": "fbec8573840c2bf9279c9e955f3fa41f8a788fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_fbe27e9f",
+        "filename": "releasenotes/notes/bp-policy-in-code-722372a27291b9cd.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-19T13:57:12Z",
+      "side": 1,
+      "message": "this overall statement is a bit confusing to me",
+      "revId": "fbec8573840c2bf9279c9e955f3fa41f8a788fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
