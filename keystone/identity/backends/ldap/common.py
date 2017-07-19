@@ -1382,6 +1382,23 @@ class BaseLdap(object):
             conn.add_s(self._id_to_dn(values['id']), attrs)
         return values
 
+    # NOTE(prashkre): Filter ldap search results on an attribute to ensure
+    # that attribute has a value set on ldap. This keeps keystone away
+    # from entities that don't have attribute value set on ldap.
+    # for e.g. In ldap configuration, if user_name_attribute = personName
+    # then it will ignore ldap users who don't have 'personName' attribute
+    # value set on user.
+    def _filter_ldap_result_by_attr(self, ldap_result, ldap_attr_name=None):
+        attr = None
+        if ldap_attr_name:
+            attr = self.attribute_mapping.get(ldap_attr_name)
+        if attr is None:
+            return ldap_result
+        return [obj for obj in ldap_result
+                if obj[1].get(attr) and obj[1].get(attr)[0]]
+
+    # TODO(prashkre): add functional testing for missing name attibute
+    # on ldap entities.
     def _ldap_get(self, object_id, ldap_filter=None):
         query = (u'(&(%(id_attr)s=%(id)s)'
                  u'%(filter)s'
@@ -1402,8 +1419,11 @@ class BaseLdap(object):
                                     attrs)
             except ldap.NO_SUCH_OBJECT:
                 return None
+
+        # NOTE(prashkre): Filter ldap search result to keep keystone away
+        # from entities that don't have names.
         try:
-            return res[0]
+            return self._filter_ldap_result_by_attr(res, 'name')[0]
         except IndexError:
             return None
 
@@ -1421,6 +1441,8 @@ class BaseLdap(object):
             except ldap.NO_SUCH_OBJECT:
                 return []
 
+    # TODO(prashkre): add functional testing for missing name attibute
+    # on ldap entities.
     @driver_hints.truncated
     def _ldap_get_all(self, hints, ldap_filter=None):
         query = u'(&%s(objectClass=%s)(%s=*))' % (
@@ -1433,17 +1455,25 @@ class BaseLdap(object):
                           list(self.extra_attr_mapping.keys()))))
         if hints.limit:
             sizelimit = hints.limit['limit']
-            return self._ldap_get_limited(self.tree_dn,
-                                          self.LDAP_SCOPE,
-                                          query,
-                                          attrs,
-                                          sizelimit)
+            res = self._ldap_get_limited(self.tree_dn,
+                                         self.LDAP_SCOPE,
+                                         query,
+                                         attrs,
+                                         sizelimit)
+            # NOTE(prashkre): Filter ldap search result to keep keystone away
+            # from entities that don't have names.
+            return self._filter_ldap_result_by_attr(res, 'name')
+
         with self.get_connection() as conn:
             try:
-                return conn.search_s(self.tree_dn,
-                                     self.LDAP_SCOPE,
-                                     query,
-                                     attrs)
+                res = conn.search_s(self.tree_dn,
+                                    self.LDAP_SCOPE,
+                                    query,
+                                    attrs)
+
+                # NOTE(prashkre): Filter ldap search result to keep keystone
+                # away from entities that don't have names.
+                return self._filter_ldap_result_by_attr(res, 'name')
             except ldap.NO_SUCH_OBJECT:
                 return []
 
