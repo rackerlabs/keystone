@@ -48,6 +48,54 @@
     },
     {
       "key": {
+        "uuid": "1f1a1f67_6e558ef9",
+        "filename": "releasenotes/notes/bp-policy-in-code-722372a27291b9cd.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-19T14:07:47Z",
+      "side": 1,
+      "message": "no, cannot is the correct verb tense here.",
+      "parentUuid": "1f1a1f67_3b8b56c3",
+      "range": {
+        "startLine": 10,
+        "startChar": 64,
+        "endLine": 10,
+        "endChar": 70
+      },
+      "revId": "fbec8573840c2bf9279c9e955f3fa41f8a788fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_ce2ee28a",
+        "filename": "releasenotes/notes/bp-policy-in-code-722372a27291b9cd.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-19T14:07:47Z",
+      "side": 1,
+      "message": "\u0027is\u0027 is actually correct, since oslo_policy still has a default rule. I was careful to say that there\u0027s no longer a default value for the default rule, not that the rule itself no longer applies. It still does. See https://github.com/openstack/oslo.policy/blob/master/oslo_policy/policy.py#L213-L221",
+      "parentUuid": "1f1a1f67_9b9a6a11",
+      "range": {
+        "startLine": 10,
+        "startChar": 20,
+        "endLine": 10,
+        "endChar": 22
+      },
+      "revId": "fbec8573840c2bf9279c9e955f3fa41f8a788fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_7bcf8e28",
         "filename": "releasenotes/notes/bp-policy-in-code-722372a27291b9cd.yaml",
         "patchSetId": 4
@@ -59,6 +107,30 @@
       "writtenOn": "2017-07-19T13:57:12Z",
       "side": 1,
       "message": "in fact the default rule does not exist (and should not exist in deployments) anymore, I think explaining + advising them to remove from deployments would be better/more direct advice.",
+      "range": {
+        "startLine": 26,
+        "startChar": 25,
+        "endLine": 27,
+        "endChar": 9
+      },
+      "revId": "fbec8573840c2bf9279c9e955f3fa41f8a788fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_ae3966a4",
+        "filename": "releasenotes/notes/bp-policy-in-code-722372a27291b9cd.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-19T14:07:47Z",
+      "side": 1,
+      "message": "this is not true, as explained above. There is still a default rule, we\u0027re just not configuring a default value for it because we don\u0027t care about/use it. If an operator is extending keystone APIs with their own custom APIs, or monkey-patching keystone code to do additional policy checks, or something funky like that, and they don\u0027t code default values for those checks they are introducing, they may (and still can) want to use the default rule. But that\u0027s totally on them and not something we care about or need to address.",
+      "parentUuid": "1f1a1f67_7bcf8e28",
       "range": {
         "startLine": 26,
         "startChar": 25,
