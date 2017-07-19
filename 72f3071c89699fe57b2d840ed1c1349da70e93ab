@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_4cce5a63",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-19T15:07:33Z",
+      "side": 1,
+      "message": "shouldn\u0027t this also be hooked to the project_tag_name_properties?",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 18
+      },
+      "revId": "72f3071c89699fe57b2d840ed1c1349da70e93ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_0c4742be",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-19T15:07:33Z",
+      "side": 1,
+      "message": "i recall Nicolas telling me that whats passed into the validate is just the \"tags\" parsed out from the object and the result was a list. May need to coordinate on this to get it synced up",
+      "range": {
+        "startLine": 76,
+        "startChar": 13,
+        "endLine": 76,
+        "endChar": 19
+      },
+      "revId": "72f3071c89699fe57b2d840ed1c1349da70e93ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
