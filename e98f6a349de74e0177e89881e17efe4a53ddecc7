@@ -46,6 +46,30 @@
       "revId": "e98f6a349de74e0177e89881e17efe4a53ddecc7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_6386e0bb",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-07-19T00:11:45Z",
+      "side": 1,
+      "message": "We have been migrating away from the PK being uuids where at all possible. This is due to how the indexing and references work for FKs and the like internal to the application.\n\ntl;dr the convention is mostly \"use auto_inc int\" for PK for new schema additions and migrate to auto_inc int where possible. Some thing are not really possible to migrate easily and those have been left alone.",
+      "parentUuid": "1f1a1f67_93161349",
+      "range": {
+        "startLine": 473,
+        "startChar": 4,
+        "endLine": 473,
+        "endChar": 53
+      },
+      "revId": "e98f6a349de74e0177e89881e17efe4a53ddecc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
