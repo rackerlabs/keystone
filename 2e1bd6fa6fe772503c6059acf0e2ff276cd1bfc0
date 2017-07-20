@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1f1a1f67_2061ac3a",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-20T22:03:50Z",
+      "side": 1,
+      "message": "yup create just takes in a tag name, and the update is the list of tag names",
+      "parentUuid": "1f1a1f67_b82e16f8",
+      "revId": "2e1bd6fa6fe772503c6059acf0e2ff276cd1bfc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_586b821e",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 11
