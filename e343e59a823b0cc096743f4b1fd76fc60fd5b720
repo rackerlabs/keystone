@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_18586a54",
+        "filename": "keystone/common/sql/expand_repo/versions/024_expand_add_project_tags_table.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-20T19:13:51Z",
+      "side": 1,
+      "message": "Do all tags on a project have to be unique? I can\u0027t have [\u0027blue\u0027, \u0027red\u0027, \u0027green\u0027, \u0027blue\u0027] tags on a project, can I? I don\u0027t think I saw any bits in the spec on that. The reason why I ask is because if we don\u0027t allow multiple of the same tags, then we might be able to use a uniqueness constraint between the project_id and the name to ensure ever tag is unique, instead of having an ID we\u0027ll never use.",
+      "revId": "e343e59a823b0cc096743f4b1fd76fc60fd5b720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_3809e630",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2373,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-20T19:13:51Z",
+      "side": 1,
+      "message": "This should also probably test the foreign key constrain with project name some where.\n\n  - create a project in the database\n  - create some tags for that project\n  - delete the project\n  - assert the tags were also removed",
+      "revId": "e343e59a823b0cc096743f4b1fd76fc60fd5b720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
