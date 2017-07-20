@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_734a0084",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-07-20T03:59:45Z",
+      "side": 1,
+      "message": "can probably rewritten this using list comprehension:\n\n  tags \u003d [\u0027tag%d\u0027 % i for i in range(_MAX_PROJECT_TAG_COUNT)]",
+      "range": {
+        "startLine": 530,
+        "startChar": 0,
+        "endLine": 532,
+        "endChar": 39
+      },
+      "revId": "785ddf7f3e81f357d20079644a67663a16c9d9b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
