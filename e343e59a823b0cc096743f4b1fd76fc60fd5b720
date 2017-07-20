@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1f1a1f67_f717fca2",
+        "filename": "keystone/common/sql/expand_repo/versions/024_expand_add_project_tags_table.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-20T20:10:43Z",
+      "side": 1,
+      "message": "to elaborate [\u0027blue\u0027, \u0027red\u0027, \u0027green\u0027, \u0027blue\u0027] is not allowed. However, tag names can be duplicates iff they have different project ids.",
+      "parentUuid": "1f1a1f67_73bb0172",
+      "revId": "e343e59a823b0cc096743f4b1fd76fc60fd5b720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_3809e630",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 10
