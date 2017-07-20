@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_79a9ad8e",
+        "filename": "doc/source/configuration/policy.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 25559
+      },
+      "writtenOn": "2017-07-20T14:33:30Z",
+      "side": 1,
+      "message": "I have made the toctree depth as 2, but what should be the section headline here? If I remove it I just get lots of config options listed on the previous page.",
+      "revId": "da5c9d7bd4c1ffb56f7d748497383a8d6006d69d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
