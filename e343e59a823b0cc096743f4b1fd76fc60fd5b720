@@ -55,6 +55,29 @@
     },
     {
       "key": {
+        "uuid": "1f1a1f67_26d1c458",
+        "filename": "keystone/common/sql/expand_repo/versions/024_expand_add_project_tags_table.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-20T23:09:55Z",
+      "side": 1,
+      "message": "on another note, if we want the names to be case sensitive we need to include a collation and indicate binary. So, String(60) -\u003e String(60, collation\u003d\u0027utf8_bin\u0027)\n\ncollation reference- http://docs.sqlalchemy.org/en/latest/core/type_basics.html\nI confirmed on keystone: http://paste.openstack.org/show/616093/",
+      "range": {
+        "startLine": 31,
+        "startChar": 31,
+        "endLine": 31,
+        "endChar": 41
+      },
+      "revId": "e343e59a823b0cc096743f4b1fd76fc60fd5b720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_3809e630",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 10
