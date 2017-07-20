@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "1f1a1f67_57c47040",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-20T20:08:03Z",
+      "side": 1,
+      "message": "We have a separate module dedicated to testing the schemas we define for create and update. There are some examples you can use to build out tests for this, too [0].\n\n[0] https://github.com/openstack/keystone/blob/025e844fc485c23be1de033473f3cadd7486b642/keystone/tests/unit/test_validation.py#L354-L366",
+      "revId": "8c3491ae25efcc0117b030ffbd747ec3cb533033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_f7093c95",
+        "filename": "keystone/tests/unit/assignment/test_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-20T20:08:03Z",
+      "side": 1,
+      "message": "We could probably elaborate on this a little bit and create a dedicated test for this. Some that tests descriptions can be created for role as asserts the value is what it should be. We can do the same thing for role updates.",
+      "revId": "8c3491ae25efcc0117b030ffbd747ec3cb533033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_91a159fb",
         "filename": "releasenotes/notes/add-description-to-role-cb7ec3b490528165.yaml",
         "patchSetId": 2
