@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1f1a1f67_cbae9997",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1386,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-20T22:38:04Z",
+      "side": 1,
+      "message": "We can add something to this comment that says this should be functionally tested once keystone has support for functional tests in the gate (like we do with federation).",
+      "revId": "6cc06bff11d44825de50d5d46433ec99f3c1d002",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_973fa8b4",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 3
