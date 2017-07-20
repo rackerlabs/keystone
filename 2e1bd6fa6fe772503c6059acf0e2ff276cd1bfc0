@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1f1a1f67_b3ecf929",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-20T19:21:13Z",
+      "side": 1,
+      "message": "Currently we have \"project_tag_create\" for adding a single tag, which \"project_tag_update\" for the list.",
+      "parentUuid": "1f1a1f67_b82e16f8",
+      "revId": "2e1bd6fa6fe772503c6059acf0e2ff276cd1bfc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_586b821e",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2017-07-20T19:09:23Z",
       "side": 1,
       "message": "nit: you can exercise some reuse here:\n\n  def test_validate_create_project_tags_invalid_characters(self):\n      for invalid_tag in [uuid.uuid4().hex + \u0027,\u0027, uuid.uuid4().hex + \u0027/\u0027]\n          self.assertRaises(exception.SchemaValidationError,\n                            self.create_project_tags_validator.validate,\n                            invalid_tag)",
+      "revId": "2e1bd6fa6fe772503c6059acf0e2ff276cd1bfc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_13e5ed38",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-20T19:21:13Z",
+      "side": 1,
+      "message": "cool, will do!",
+      "parentUuid": "1f1a1f67_586b821e",
       "revId": "2e1bd6fa6fe772503c6059acf0e2ff276cd1bfc0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "1f1a1f67_136ccd9a",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-20T19:21:13Z",
+      "side": 1,
+      "message": "oh good catch",
+      "parentUuid": "1f1a1f67_18fcea3c",
+      "revId": "2e1bd6fa6fe772503c6059acf0e2ff276cd1bfc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_989d9a0c",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 11
@@ -81,6 +135,24 @@
       "writtenOn": "2017-07-20T19:09:23Z",
       "side": 1,
       "message": "We could add another test case that ensure we can\u0027t update a project with 51 tags, right?",
+      "revId": "2e1bd6fa6fe772503c6059acf0e2ff276cd1bfc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_735d41e8",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-20T19:21:13Z",
+      "side": 1,
+      "message": "sure",
+      "parentUuid": "1f1a1f67_989d9a0c",
       "revId": "2e1bd6fa6fe772503c6059acf0e2ff276cd1bfc0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
