@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_ffbd9d02",
+        "filename": "releasenotes/notes/bug-1703369-9a901d627a1e0316.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-20T15:14:19Z",
+      "side": 1,
+      "message": "probably need to adjust this for the stable branch release note.",
+      "range": {
+        "startLine": 6,
+        "startChar": 33,
+        "endLine": 6,
+        "endChar": 53
+      },
+      "revId": "9a34b352fbd98ac00f46e037eeecbedb81c6a0a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
