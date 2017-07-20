@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_57e350a5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-20T20:15:26Z",
+      "side": 1,
+      "message": "There\u0027s no blueprint for this?",
+      "revId": "1394b0c6b1604ac252f421435f482106aec9e5cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_d79d200b",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-20T20:15:26Z",
+      "side": 1,
+      "message": "nit: SHIBBOLETH_XML_FILE?",
+      "revId": "1394b0c6b1604ac252f421435f482106aec9e5cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
