@@ -22,6 +22,24 @@
       "revId": "8038f545daa31354e08a4063209295439005c0b8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_9d58ecfa",
+        "filename": "releasenotes/notes/bug-1703369-9a901d627a1e0316.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-20T18:21:43Z",
+      "side": 1,
+      "message": "Took a crack at it.",
+      "parentUuid": "1f1a1f67_1fd8597d",
+      "revId": "8038f545daa31354e08a4063209295439005c0b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
