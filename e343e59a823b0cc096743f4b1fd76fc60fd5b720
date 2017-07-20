@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1f1a1f67_73bb0172",
+        "filename": "keystone/common/sql/expand_repo/versions/024_expand_add_project_tags_table.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-07-20T19:42:30Z",
+      "side": 1,
+      "message": "All tags will be unique, no duplicates. And yes we were discussing the tag_id issue. We will probably remove it because of the name being unique (like you mentioned) and then can add in the constraints between the name and project_id.",
+      "parentUuid": "1f1a1f67_18586a54",
+      "revId": "e343e59a823b0cc096743f4b1fd76fc60fd5b720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_3809e630",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 10
