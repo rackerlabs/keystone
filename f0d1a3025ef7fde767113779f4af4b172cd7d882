@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "1f1a1f67_b1e8797c",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-20T16:38:34Z",
+      "side": 1,
+      "message": "we can revert it, as long as the tests are updated",
+      "parentUuid": "1f1a1f67_915d7deb",
+      "range": {
+        "startLine": 292,
+        "startChar": 17,
+        "endLine": 292,
+        "endChar": 21
+      },
+      "revId": "f0d1a3025ef7fde767113779f4af4b172cd7d882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_71c42193",
         "filename": "keystone/resource/core.py",
         "patchSetId": 70
@@ -94,6 +118,30 @@
     },
     {
       "key": {
+        "uuid": "1f1a1f67_f1bcb16d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 944,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-20T16:38:34Z",
+      "side": 1,
+      "message": "There was the issue though with it being:\n\n{ \"tags\": \"tags\": []}}\n\nBut you\u0027re right in that we need it to be a single dict.",
+      "parentUuid": "1f1a1f67_71c42193",
+      "range": {
+        "startLine": 944,
+        "startChar": 8,
+        "endLine": 944,
+        "endChar": 14
+      },
+      "revId": "f0d1a3025ef7fde767113779f4af4b172cd7d882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_118ded7a",
         "filename": "keystone/resource/routers.py",
         "patchSetId": 70
@@ -105,6 +153,30 @@
       "writtenOn": "2017-07-20T16:32:12Z",
       "side": 1,
       "message": "why was this reverted back to get_action?\nFrom our discussion i rmbr we wanted to be able to just call a HEAD request to list and get",
+      "range": {
+        "startLine": 125,
+        "startChar": 12,
+        "endLine": 125,
+        "endChar": 22
+      },
+      "revId": "f0d1a3025ef7fde767113779f4af4b172cd7d882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_f1615113",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-20T16:38:34Z",
+      "side": 1,
+      "message": "This shouldn\u0027t have been reverted, we need to call HEAD",
+      "parentUuid": "1f1a1f67_118ded7a",
       "range": {
         "startLine": 125,
         "startChar": 12,
@@ -197,6 +269,24 @@
       "writtenOn": "2017-07-20T16:32:12Z",
       "side": 1,
       "message": "it seems like assertValidProjectTagResponse was taken out from this.\nDo we not need to check the validity of the format? If we think that the schema alone is fine with it, we should delete the assertValidProjectTagResponse and others related to tags in test_v3.py",
+      "revId": "f0d1a3025ef7fde767113779f4af4b172cd7d882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_f14a7181",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 733,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-20T16:38:34Z",
+      "side": 1,
+      "message": "I\u0027m fine with it as long as the tests pass, they were failing on assertValidProjectTagResponse with None !\u003d O(None).",
+      "parentUuid": "1f1a1f67_31efc9ea",
       "revId": "f0d1a3025ef7fde767113779f4af4b172cd7d882",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
