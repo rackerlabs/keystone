@@ -70,6 +70,30 @@
       "revId": "e98f6a349de74e0177e89881e17efe4a53ddecc7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_7ef2ca71",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2017-07-20T00:49:56Z",
+      "side": 1,
+      "message": "Ah cool! Good to know. :)\n\nAt any rate, this model doesn\u0027t really need direct UUID reference anyway since query by id here from a user perspective isn\u0027t useful.",
+      "parentUuid": "1f1a1f67_6386e0bb",
+      "range": {
+        "startLine": 473,
+        "startChar": 4,
+        "endLine": 473,
+        "endChar": 53
+      },
+      "revId": "e98f6a349de74e0177e89881e17efe4a53ddecc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
