@@ -45,6 +45,207 @@
       "revId": "f0d1a3025ef7fde767113779f4af4b172cd7d882",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_915d7deb",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-20T16:32:12Z",
+      "side": 1,
+      "message": "this was .update because list project_tags was returning a dict on patchset 67, and i believe 68.",
+      "range": {
+        "startLine": 292,
+        "startChar": 17,
+        "endLine": 292,
+        "endChar": 21
+      },
+      "revId": "f0d1a3025ef7fde767113779f4af4b172cd7d882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_71c42193",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 944,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-20T16:32:12Z",
+      "side": 1,
+      "message": "we put a wrapper here so that it would enclose it in a dict with k, v with k \u003d \u0027tags\u0027, but since that was taken out the response is now a list",
+      "range": {
+        "startLine": 944,
+        "startChar": 8,
+        "endLine": 944,
+        "endChar": 14
+      },
+      "revId": "f0d1a3025ef7fde767113779f4af4b172cd7d882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_118ded7a",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-20T16:32:12Z",
+      "side": 1,
+      "message": "why was this reverted back to get_action?\nFrom our discussion i rmbr we wanted to be able to just call a HEAD request to list and get",
+      "range": {
+        "startLine": 125,
+        "startChar": 12,
+        "endLine": 125,
+        "endChar": 22
+      },
+      "revId": "f0d1a3025ef7fde767113779f4af4b172cd7d882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_f1e71146",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-20T16:32:12Z",
+      "side": 1,
+      "message": "ditto (im guessing this is the result of a rebase issue?)",
+      "range": {
+        "startLine": 137,
+        "startChar": 12,
+        "endLine": 137,
+        "endChar": 22
+      },
+      "revId": "f0d1a3025ef7fde767113779f4af4b172cd7d882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_f1b6f1dc",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 1608,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-20T16:32:12Z",
+      "side": 1,
+      "message": "this should change if the list_project_tags response is going to be changed to a dict to project_tag_ref[\u0027tags\u0027][0]",
+      "range": {
+        "startLine": 1608,
+        "startChar": 34,
+        "endLine": 1608,
+        "endChar": 52
+      },
+      "revId": "f0d1a3025ef7fde767113779f4af4b172cd7d882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_91ae9d96",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 1687,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-20T16:32:12Z",
+      "side": 1,
+      "message": "nice catch!",
+      "range": {
+        "startLine": 1687,
+        "startChar": 36,
+        "endLine": 1687,
+        "endChar": 54
+      },
+      "revId": "f0d1a3025ef7fde767113779f4af4b172cd7d882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_31efc9ea",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 733,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-20T16:32:12Z",
+      "side": 1,
+      "message": "it seems like assertValidProjectTagResponse was taken out from this.\nDo we not need to check the validity of the format? If we think that the schema alone is fine with it, we should delete the assertValidProjectTagResponse and others related to tags in test_v3.py",
+      "revId": "f0d1a3025ef7fde767113779f4af4b172cd7d882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_11d60df3",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 744,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-20T16:32:12Z",
+      "side": 1,
+      "message": "nice catch. i forgot to change this after create_tags was changed",
+      "range": {
+        "startLine": 744,
+        "startChar": 29,
+        "endLine": 744,
+        "endChar": 32
+      },
+      "revId": "f0d1a3025ef7fde767113779f4af4b172cd7d882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_b10d19ea",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-20T16:32:12Z",
+      "side": 1,
+      "message": "thanks for adding this.. this was one of the things that were lost during rebase :D",
+      "range": {
+        "startLine": 303,
+        "startChar": 4,
+        "endLine": 303,
+        "endChar": 13
+      },
+      "revId": "f0d1a3025ef7fde767113779f4af4b172cd7d882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
