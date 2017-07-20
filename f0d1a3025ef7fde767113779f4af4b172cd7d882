@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_91445d1d",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-20T16:23:57Z",
+      "side": 1,
+      "message": "should be Integer",
+      "range": {
+        "startLine": 300,
+        "startChar": 26,
+        "endLine": 300,
+        "endChar": 32
+      },
+      "revId": "f0d1a3025ef7fde767113779f4af4b172cd7d882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_315349e5",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 70
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-20T16:23:57Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 305,
+        "startChar": 16,
+        "endLine": 306,
+        "endChar": 33
+      },
+      "revId": "f0d1a3025ef7fde767113779f4af4b172cd7d882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
