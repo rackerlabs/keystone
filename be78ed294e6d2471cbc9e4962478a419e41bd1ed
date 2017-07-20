@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_f9fb7d44",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1389,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-20T14:41:49Z",
+      "side": 1,
+      "message": "I\u0027d like to see a comment explaining this for future readers of the code. E.g. \"enforce that the name attribute has a value\"",
+      "revId": "be78ed294e6d2471cbc9e4962478a419e41bd1ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
