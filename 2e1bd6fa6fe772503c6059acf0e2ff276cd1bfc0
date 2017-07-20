@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_b82e16f8",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-20T19:09:23Z",
+      "side": 1,
+      "message": "Doesn\u0027t this have to associated to a list and string type, since it\u0027s possible to add a single tag to a project (e.g. a string) as well as a list (e.g. array)?",
+      "revId": "2e1bd6fa6fe772503c6059acf0e2ff276cd1bfc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_586b821e",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-20T19:09:23Z",
+      "side": 1,
+      "message": "nit: you can exercise some reuse here:\n\n  def test_validate_create_project_tags_invalid_characters(self):\n      for invalid_tag in [uuid.uuid4().hex + \u0027,\u0027, uuid.uuid4().hex + \u0027/\u0027]\n          self.assertRaises(exception.SchemaValidationError,\n                            self.create_project_tags_validator.validate,\n                            invalid_tag)",
+      "revId": "2e1bd6fa6fe772503c6059acf0e2ff276cd1bfc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_b8ca9617",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-20T19:09:23Z",
+      "side": 1,
+      "message": "Same comment here about reuse (just use sets instead).",
+      "revId": "2e1bd6fa6fe772503c6059acf0e2ff276cd1bfc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_18fcea3c",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-20T19:09:23Z",
+      "side": 1,
+      "message": "The failure here actually happens when calling self.create_project_tags_validator.",
+      "revId": "2e1bd6fa6fe772503c6059acf0e2ff276cd1bfc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_989d9a0c",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-20T19:09:23Z",
+      "side": 1,
+      "message": "We could add another test case that ensure we can\u0027t update a project with 51 tags, right?",
+      "revId": "2e1bd6fa6fe772503c6059acf0e2ff276cd1bfc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
