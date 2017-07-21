@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1f1a1f67_bc3a6aca",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-07-21T14:06:42Z",
+      "side": 1,
+      "message": "There\u0027s a spec to document the effort but not a blueprint. http://specs.openstack.org/openstack/keystone-specs/specs/keystone/ongoing/devstack-plugin.html",
+      "parentUuid": "1f1a1f67_57e350a5",
+      "revId": "1394b0c6b1604ac252f421435f482106aec9e5cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_d79d200b",
         "filename": "devstack/lib/federation.sh",
         "patchSetId": 2
