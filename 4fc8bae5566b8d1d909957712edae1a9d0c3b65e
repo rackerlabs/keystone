@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_817884f8",
+        "filename": "keystone/common/sql/expand_repo/versions/024_expand_add_project_tags_table.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-21T21:05:42Z",
+      "side": 1,
+      "message": "this will be treated case sensitive as long as we use id as the primary key, but if we step away from using ids, and use project_id-name as the primary keys, \u00271234-aaa\u0027 and \u00271234-AAA\u0027 will be treated duplicates.",
+      "range": {
+        "startLine": 35,
+        "startChar": 20,
+        "endLine": 35,
+        "endChar": 24
+      },
+      "revId": "4fc8bae5566b8d1d909957712edae1a9d0c3b65e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
