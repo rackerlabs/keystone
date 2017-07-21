@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_c7621cd9",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-21T22:05:19Z",
+      "side": 1,
+      "message": "this is needed for resource/backends/sql.py class ProjectTag",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 7
+      },
+      "revId": "499ad3f14b9680b5a3a8847044be81692afc41f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
