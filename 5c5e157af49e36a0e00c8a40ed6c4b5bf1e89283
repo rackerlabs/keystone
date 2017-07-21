@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_eb381e3e",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1388,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-21T13:07:42Z",
+      "side": 1,
+      "message": "I think you\u0027re supposed to prefix this with \"NOTE(prashkre)\".",
+      "revId": "5c5e157af49e36a0e00c8a40ed6c4b5bf1e89283",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_ab90e64f",
+        "filename": "releasenotes/notes/bug-1704205-bc0570feeb3ec5c4.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-21T13:07:42Z",
+      "side": 1,
+      "message": "there are some grammatical and other issues here... Rather than list them all, I\u0027d suggest the following replacement:\n\nAll users and groups are required to have a name. Prior to this fix, Keystone was not properly enforcing this for LDAP users and groups. Keystone will now ignore users and groups that do not have a value for the LDAP attribute which Keystone has been configured to use for that entity\u0027s name.",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 48
+      },
+      "revId": "5c5e157af49e36a0e00c8a40ed6c4b5bf1e89283",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
