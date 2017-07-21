@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_d25e3744",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2017-07-21T11:18:47Z",
+      "side": 1,
+      "message": "Looks like we should remove some tests too.\n\n keystone.tests.unit.test_policy.PolicyJsonTestCase.test_all_targets_documented is broken after this change.",
+      "revId": "750538689ac2c4a656ebd87ced3d79efeaae7798",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
