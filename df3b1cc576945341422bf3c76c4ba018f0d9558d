@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_0c404b35",
+        "filename": "doc/source/devref/auth-plugins.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-07-21T21:19:07Z",
+      "side": 1,
+      "message": "nit",
+      "revId": "df3b1cc576945341422bf3c76c4ba018f0d9558d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
