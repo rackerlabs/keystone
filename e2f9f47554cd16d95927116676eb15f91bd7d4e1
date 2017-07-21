@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_95efa6af",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 73
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-21T18:16:38Z",
+      "side": 1,
+      "message": "this should now have collation since that was added",
+      "range": {
+        "startLine": 428,
+        "startChar": 4,
+        "endLine": 428,
+        "endChar": 8
+      },
+      "revId": "e2f9f47554cd16d95927116676eb15f91bd7d4e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
