@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_efd616c4",
+        "filename": "keystone/common/sql/contract_repo/versions/012_contract_add_domain_id_to_idp.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2017-07-22T02:27:59Z",
+      "side": 1,
+      "message": "only  \"if ndb.ndb_status(engine)\", drops and recreates like these can be non-performant, lock tables, etc. and are unnecessary",
+      "revId": "7e38beca82b68eb13eee4686670e387f6938c78b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_8fef8a86",
+        "filename": "keystone/common/sql/contract_repo/versions/015_contract_update_federated_user_domain.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2017-07-22T02:27:59Z",
+      "side": 1,
+      "message": "all of this must be only for ndb, the autoloads here, changes, adds, drops, all take time and are complex",
+      "revId": "7e38beca82b68eb13eee4686670e387f6938c78b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_0f039a44",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2017-07-22T02:27:59Z",
+      "side": 1,
+      "message": "is this not in oslo.db?   it\u0027s being repeated throughout multiple projects and should be a library function",
+      "revId": "7e38beca82b68eb13eee4686670e387f6938c78b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
