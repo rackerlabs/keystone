@@ -25,6 +25,122 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_f2400b0a",
+        "filename": "keystone/common/json_home.py",
+        "patchSetId": 87
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-24T22:20:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_77e40dad",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 50
+      },
+      "revId": "ccbc030b7597b97c731ed87762851a1fa212001b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_72541bcb",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 87
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-24T22:20:40Z",
+      "side": 1,
+      "message": "delete",
+      "range": {
+        "startLine": 291,
+        "startChar": 8,
+        "endLine": 291,
+        "endChar": 30
+      },
+      "revId": "ccbc030b7597b97c731ed87762851a1fa212001b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_3260d3a5",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 87
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-24T22:20:40Z",
+      "side": 1,
+      "message": "add id: type:integer",
+      "range": {
+        "startLine": 298,
+        "startChar": 16,
+        "endLine": 298,
+        "endChar": 20
+      },
+      "revId": "ccbc030b7597b97c731ed87762851a1fa212001b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_120a6fd1",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 87
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-24T22:20:40Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 430,
+        "startChar": 10,
+        "endLine": 430,
+        "endChar": 19
+      },
+      "revId": "ccbc030b7597b97c731ed87762851a1fa212001b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_f20ecbe3",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 87
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-24T22:20:40Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 226,
+        "startChar": 6,
+        "endLine": 227,
+        "endChar": 18
+      },
+      "revId": "ccbc030b7597b97c731ed87762851a1fa212001b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_77abed1c",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 87
@@ -41,6 +157,53 @@
         "startChar": 3,
         "endLine": 318,
         "endChar": 57
+      },
+      "revId": "ccbc030b7597b97c731ed87762851a1fa212001b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_322e9343",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 87
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-24T22:20:40Z",
+      "side": 1,
+      "message": "most of them are covered in test_backend. this can go",
+      "parentUuid": "ff346bd7_77abed1c",
+      "range": {
+        "startLine": 318,
+        "startChar": 3,
+        "endLine": 318,
+        "endChar": 57
+      },
+      "revId": "ccbc030b7597b97c731ed87762851a1fa212001b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_721bfb1a",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 87
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-24T22:20:40Z",
+      "side": 1,
+      "message": "tag names",
+      "range": {
+        "startLine": 722,
+        "startChar": 41,
+        "endLine": 722,
+        "endChar": 45
       },
       "revId": "ccbc030b7597b97c731ed87762851a1fa212001b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
