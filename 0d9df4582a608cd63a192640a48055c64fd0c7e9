@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_022d8842",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-24T16:10:44Z",
+      "side": 1,
+      "message": "We don\u0027t need it. This is something vestigial that we were working with that we got rid of but forgot to delete. Thanks for pointing out",
+      "parentUuid": "ff346bd7_bf3db9bc",
+      "revId": "0d9df4582a608cd63a192640a48055c64fd0c7e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_9ce443ae",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 80
@@ -30,6 +48,24 @@
       "writtenOn": "2017-07-24T15:39:36Z",
       "side": 1,
       "message": "what function?",
+      "revId": "0d9df4582a608cd63a192640a48055c64fd0c7e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_3fcc2934",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-24T16:10:44Z",
+      "side": 1,
+      "message": "apologies forgot to flush out the todos completed. will get rid of.",
+      "parentUuid": "ff346bd7_9ce443ae",
       "revId": "0d9df4582a608cd63a192640a48055c64fd0c7e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -59,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_ffd581ba",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-24T16:10:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_fcd58fba",
+      "range": {
+        "startLine": 284,
+        "startChar": 0,
+        "endLine": 287,
+        "endChar": 53
+      },
+      "revId": "0d9df4582a608cd63a192640a48055c64fd0c7e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_3c9af713",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 80
@@ -70,6 +130,24 @@
       "writtenOn": "2017-07-24T15:39:36Z",
       "side": 1,
       "message": "same here, a function doc would be useful",
+      "revId": "0d9df4582a608cd63a192640a48055c64fd0c7e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_9fe435ae",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-24T16:10:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_3c9af713",
       "revId": "0d9df4582a608cd63a192640a48055c64fd0c7e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -99,6 +177,30 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_22dd2c42",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-24T16:10:44Z",
+      "side": 1,
+      "message": "like the other todos this was something jotted down way early and which can be deleted now. sorry about the mess. i\u0027ll go and double check to see all the todos have been resolved / deleted",
+      "parentUuid": "ff346bd7_5c637b1b",
+      "range": {
+        "startLine": 415,
+        "startChar": 31,
+        "endLine": 415,
+        "endChar": 68
+      },
+      "revId": "0d9df4582a608cd63a192640a48055c64fd0c7e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_3f042915",
         "filename": "keystone/resource/core.py",
         "patchSetId": 80
@@ -110,6 +212,24 @@
       "writtenOn": "2017-07-24T15:39:36Z",
       "side": 1,
       "message": "what\u0027s the rationale to have a separate controller but not a separate manager for proejct tags?",
+      "revId": "0d9df4582a608cd63a192640a48055c64fd0c7e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_df763dd9",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 887,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-24T16:10:44Z",
+      "side": 1,
+      "message": "i think the reason why we did this was because tags are a property of projects, but are still separate entities and collections (benchmarked domains vs projects)",
+      "parentUuid": "ff346bd7_3f042915",
       "revId": "0d9df4582a608cd63a192640a48055c64fd0c7e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
