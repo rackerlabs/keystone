@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "ff346bd7_a4712fe3",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 456,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-24T14:22:00Z",
+      "side": 1,
+      "message": "I am not getting how just sorting these items is fixing the issue",
+      "range": {
+        "startLine": 456,
+        "startChar": 19,
+        "endLine": 456,
+        "endChar": 25
+      },
+      "revId": "67d67693beb556109c5ce37627f20b3eba5b0428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_4d637443",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 3
@@ -13,6 +36,24 @@
       "writtenOn": "2017-07-14T21:09:33Z",
       "side": 1,
       "message": "Why do we have to mock these out? How come we can\u0027t just rely on the normal backends to recreate the issue?",
+      "revId": "67d67693beb556109c5ce37627f20b3eba5b0428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_24565f2b",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3153,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-24T14:22:00Z",
+      "side": 1,
+      "message": "++\n\nWould be nice to have a test alone in a separate commit exposing the issue before we fix it. We can\u0027t make sure the bug is real if we can\u0027t verify it",
+      "parentUuid": "1f1a1f67_4d637443",
       "revId": "67d67693beb556109c5ce37627f20b3eba5b0428",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
