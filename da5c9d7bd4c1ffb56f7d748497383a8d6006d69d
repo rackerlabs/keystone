@@ -16,6 +16,24 @@
       "revId": "da5c9d7bd4c1ffb56f7d748497383a8d6006d69d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_eb626a16",
+        "filename": "doc/source/configuration/policy.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-24T13:00:41Z",
+      "side": 1,
+      "message": "I\u0027d be okay with listing the config options in the previous page if there arent too many.\n\nHaving this \"Configuration\" sections seems like a workaround :-)",
+      "parentUuid": "1f1a1f67_79a9ad8e",
+      "revId": "da5c9d7bd4c1ffb56f7d748497383a8d6006d69d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
