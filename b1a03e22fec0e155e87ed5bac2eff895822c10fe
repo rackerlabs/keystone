@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_a43fefd4",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1396,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-07-24T14:20:14Z",
+      "side": 1,
+      "message": "Honestly, rather than check for none I would make attr_name a required parameter. Since the entire point of the function is to filter_results_by_attr.",
+      "parentUuid": "ff346bd7_8e040c7d",
+      "range": {
+        "startLine": 1392,
+        "startChar": 0,
+        "endLine": 1396,
+        "endChar": 30
+      },
+      "revId": "b1a03e22fec0e155e87ed5bac2eff895822c10fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_84a2ab99",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 6
@@ -70,6 +94,24 @@
       "writtenOn": "2017-07-24T14:09:05Z",
       "side": 1,
       "message": "since we\u0027re only returning the first entry (I\u0027m talking about the [0]) we could improve the efficiency here by only calling _filter_ldap_result_by_attr with {res[0]} instead of with the whole res",
+      "revId": "b1a03e22fec0e155e87ed5bac2eff895822c10fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_640a2727",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1426,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-07-24T14:20:14Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ff346bd7_2e21a0fc",
       "revId": "b1a03e22fec0e155e87ed5bac2eff895822c10fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
