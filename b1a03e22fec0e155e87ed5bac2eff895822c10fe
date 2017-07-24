@@ -1,0 +1,129 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_8e040c7d",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1396,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-24T14:09:05Z",
+      "side": 1,
+      "message": "better:\n\n        if not ldap_attr_name:\n            return ldap_result\n        attr \u003d self.attribute_mapping.get(ldap_attr_name)",
+      "range": {
+        "startLine": 1392,
+        "startChar": 0,
+        "endLine": 1396,
+        "endChar": 30
+      },
+      "revId": "b1a03e22fec0e155e87ed5bac2eff895822c10fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_84a2ab99",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1400,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-24T14:09:05Z",
+      "side": 1,
+      "message": "I would probably move this down next to where we call _filter_ldap_result_by_attr",
+      "revId": "b1a03e22fec0e155e87ed5bac2eff895822c10fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_cecb341c",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1424,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-24T14:09:05Z",
+      "side": 1,
+      "message": "NOTE should explain why we\u0027re doing it this way instead of in the query (i.e. performance).",
+      "revId": "b1a03e22fec0e155e87ed5bac2eff895822c10fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_2e21a0fc",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1426,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-24T14:09:05Z",
+      "side": 1,
+      "message": "since we\u0027re only returning the first entry (I\u0027m talking about the [0]) we could improve the efficiency here by only calling _filter_ldap_result_by_attr with {res[0]} instead of with the whole res",
+      "revId": "b1a03e22fec0e155e87ed5bac2eff895822c10fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_24a9bf7a",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1444,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-24T14:09:05Z",
+      "side": 1,
+      "message": "I would probably move this down next to where we call _filter_ldap_result_by_attr",
+      "revId": "b1a03e22fec0e155e87ed5bac2eff895822c10fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_84d06bf9",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1463,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-24T14:09:05Z",
+      "side": 1,
+      "message": "NOTE should explain why we\u0027re doing it this way instead of in the query (i.e. performance).",
+      "revId": "b1a03e22fec0e155e87ed5bac2eff895822c10fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_8912c657",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1474,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-24T14:09:05Z",
+      "side": 1,
+      "message": "this doesn\u0027t really need to be inside the try block, and we could remove duplication with lines 1463-5 by moving the with block into a new else block and then only doing this once after the if/else",
+      "revId": "b1a03e22fec0e155e87ed5bac2eff895822c10fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
