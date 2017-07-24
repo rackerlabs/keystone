@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_bf3db9bc",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-24T15:39:36Z",
+      "side": 1,
+      "message": "why is this needed?\n\nfor the domain case, it is needed for representing the most top level domain (which is a project already). e.g the parent domain of the default domain that exists in keystone",
+      "revId": "0d9df4582a608cd63a192640a48055c64fd0c7e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_9ce443ae",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-24T15:39:36Z",
+      "side": 1,
+      "message": "what function?",
+      "revId": "0d9df4582a608cd63a192640a48055c64fd0c7e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_fcd58fba",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-24T15:39:36Z",
+      "side": 1,
+      "message": "it is not obvious what this portion of code is doing. please add a comment",
+      "range": {
+        "startLine": 284,
+        "startChar": 0,
+        "endLine": 287,
+        "endChar": 53
+      },
+      "revId": "0d9df4582a608cd63a192640a48055c64fd0c7e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_3c9af713",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-24T15:39:36Z",
+      "side": 1,
+      "message": "same here, a function doc would be useful",
+      "revId": "0d9df4582a608cd63a192640a48055c64fd0c7e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_5c637b1b",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-24T15:39:36Z",
+      "side": 1,
+      "message": "hint on the name is the only thing I can imagine for this tag entity",
+      "range": {
+        "startLine": 415,
+        "startChar": 31,
+        "endLine": 415,
+        "endChar": 68
+      },
+      "revId": "0d9df4582a608cd63a192640a48055c64fd0c7e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_3f042915",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 887,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-24T15:39:36Z",
+      "side": 1,
+      "message": "what\u0027s the rationale to have a separate controller but not a separate manager for proejct tags?",
+      "revId": "0d9df4582a608cd63a192640a48055c64fd0c7e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
