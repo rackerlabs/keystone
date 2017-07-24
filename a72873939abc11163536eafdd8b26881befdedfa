@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_b2216350",
+        "filename": "releasenotes/notes/bug-1704205-bc0570feeb3ec5c4.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-24T22:20:20Z",
+      "side": 1,
+      "message": "This is pointing to the wrong bug I think, which is causing the failure.",
+      "revId": "a72873939abc11163536eafdd8b26881befdedfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
