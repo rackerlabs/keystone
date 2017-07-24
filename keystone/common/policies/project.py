@@ -51,6 +51,42 @@ project_policies = [
         description='Delete project.',
         operations=[{'path': '/v3/projects/{project_id}',
                      'method': 'DELETE'}])
+    policy.DocumentedRuleDefault(
+        name=base.IDENTITY % 'list_project_tags',
+        check_str=base.RULE_ADMIN_OR_TARGET_PROJECT,
+        description='List tags for a project.',
+        operations=[{'path': '/v3/projects/{project_id}/tags',
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
+        name=base.IDENTITY % 'get_project_tag',
+        check_str=base.RULE_ADMIN_OR_TARGET_PROJECT,
+        description='Check if project contains a tag.',
+        operations=[{'path': '/v3/projects/{project_id}/tags/{value}',
+                     'method': 'GET'}]),
+    policy.DocumentedRuleDefault(
+        name=base.IDENTITY % 'update_project_tags',
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Update project tags.',
+        operations=[{'path': '/v3/projects/{project_id}/tags',
+                     'method': 'PUT'}]),
+    policy.DocumentedRuleDefault(
+        name=base.IDENTITY % 'create_project_tag',
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Update project tags.',
+        operations=[{'path': '/v3/projects/{project_id}/tags/{value}',
+                     'method': 'PUT'}]),
+    policy.DocumentedRuleDefault(
+        name=base.IDENTITY % 'remove_all_project_tags',
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Remove all tags from a project.',
+        operations=[{'path': '/v3/projects/{project_id}/tags',
+                     'method': 'DELETE'}]),
+    policy.DocumentedRuleDefault(
+        name=base.IDENTITY % 'delete_project_tag',
+        check_str=base.RULE_ADMIN_REQUIRED,
+        description='Delete specified tag from project.',
+        operations=[{'path': '/v3/projects/{project_id}/tags/{value}',
+                     'method': 'DELETE'}])
 ]
 
 
