@@ -49,6 +49,54 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_31945837",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1396,
+      "author": {
+        "id": 24005
+      },
+      "writtenOn": "2017-07-24T19:23:14Z",
+      "side": 1,
+      "message": "Thanks Matt for your comment. Fixed it in new patch.",
+      "parentUuid": "ff346bd7_8e040c7d",
+      "range": {
+        "startLine": 1392,
+        "startChar": 0,
+        "endLine": 1396,
+        "endChar": 30
+      },
+      "revId": "b1a03e22fec0e155e87ed5bac2eff895822c10fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_318fb82b",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1396,
+      "author": {
+        "id": 24005
+      },
+      "writtenOn": "2017-07-24T19:23:14Z",
+      "side": 1,
+      "message": "Thanks knikolla for your comment. Fixed it in new patch.",
+      "parentUuid": "ff346bd7_a43fefd4",
+      "range": {
+        "startLine": 1392,
+        "startChar": 0,
+        "endLine": 1396,
+        "endChar": 30
+      },
+      "revId": "b1a03e22fec0e155e87ed5bac2eff895822c10fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_84a2ab99",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 6
@@ -66,6 +114,24 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_f1eb70ad",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1400,
+      "author": {
+        "id": 24005
+      },
+      "writtenOn": "2017-07-24T19:23:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_84a2ab99",
+      "revId": "b1a03e22fec0e155e87ed5bac2eff895822c10fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_cecb341c",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 6
@@ -77,6 +143,24 @@
       "writtenOn": "2017-07-24T14:09:05Z",
       "side": 1,
       "message": "NOTE should explain why we\u0027re doing it this way instead of in the query (i.e. performance).",
+      "revId": "b1a03e22fec0e155e87ed5bac2eff895822c10fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_d1d06cfa",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1424,
+      "author": {
+        "id": 24005
+      },
+      "writtenOn": "2017-07-24T19:23:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_cecb341c",
       "revId": "b1a03e22fec0e155e87ed5bac2eff895822c10fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -118,6 +202,24 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_71d780ef",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1426,
+      "author": {
+        "id": 24005
+      },
+      "writtenOn": "2017-07-24T19:23:14Z",
+      "side": 1,
+      "message": "Since ldap search query has id_attr, ldap search result(res) is expected to have only one user object which is in res[0\n\nAnother reason why I have passed whole result(res) instead of res[0] \u003d\u003d\u003e result(res) is of type \u003clist\u003e containing list of user tuple objects i.e. res[0] is of type \u003ctuple\u003e. So if we pass res[0] instead of res then _filter_ldap_result_by_attr() method needs to filter user objects based on its ldap_result argument type. So I felt passing whole result(res) would be better to avoid unnecessary logic based on ldap_result argument type in _filter_ldap_result_by_attr().",
+      "parentUuid": "ff346bd7_2e21a0fc",
+      "revId": "b1a03e22fec0e155e87ed5bac2eff895822c10fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_24a9bf7a",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 6
@@ -129,6 +231,24 @@
       "writtenOn": "2017-07-24T14:09:05Z",
       "side": 1,
       "message": "I would probably move this down next to where we call _filter_ldap_result_by_attr",
+      "revId": "b1a03e22fec0e155e87ed5bac2eff895822c10fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_e35ba32b",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1444,
+      "author": {
+        "id": 24005
+      },
+      "writtenOn": "2017-07-24T19:23:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_24a9bf7a",
       "revId": "b1a03e22fec0e155e87ed5bac2eff895822c10fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -152,6 +272,24 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_834a9752",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1463,
+      "author": {
+        "id": 24005
+      },
+      "writtenOn": "2017-07-24T19:23:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_84d06bf9",
+      "revId": "b1a03e22fec0e155e87ed5bac2eff895822c10fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_8912c657",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 6
@@ -163,6 +301,24 @@
       "writtenOn": "2017-07-24T14:09:05Z",
       "side": 1,
       "message": "this doesn\u0027t really need to be inside the try block, and we could remove duplication with lines 1463-5 by moving the with block into a new else block and then only doing this once after the if/else",
+      "revId": "b1a03e22fec0e155e87ed5bac2eff895822c10fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_6347b34d",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1474,
+      "author": {
+        "id": 24005
+      },
+      "writtenOn": "2017-07-24T19:23:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_8912c657",
       "revId": "b1a03e22fec0e155e87ed5bac2eff895822c10fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
