@@ -16,6 +16,24 @@
       "revId": "8d7606055464124d51db6d66628bdb76ac6b86f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_a3aebb2b",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1427,
+      "author": {
+        "id": 24005
+      },
+      "writtenOn": "2017-07-24T19:40:55Z",
+      "side": 1,
+      "message": "Thanks knikolla. Fixed it new patch. Sorry, I perceived Matthew previous comment in a different way and left it as it was.",
+      "parentUuid": "ff346bd7_432eef43",
+      "revId": "8d7606055464124d51db6d66628bdb76ac6b86f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
