@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_77e40dad",
+        "filename": "keystone/common/json_home.py",
+        "patchSetId": 87
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-24T22:06:56Z",
+      "side": 1,
+      "message": "Is this done?",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 50
+      },
+      "revId": "ccbc030b7597b97c731ed87762851a1fa212001b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_77abed1c",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 87
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-24T22:06:56Z",
+      "side": 1,
+      "message": "Still need to do these?",
+      "range": {
+        "startLine": 318,
+        "startChar": 3,
+        "endLine": 318,
+        "endChar": 57
+      },
+      "revId": "ccbc030b7597b97c731ed87762851a1fa212001b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
