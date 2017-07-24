@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_e3af2392",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 83
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 23625
+      },
+      "writtenOn": "2017-07-24T19:34:32Z",
+      "side": 1,
+      "message": "should there be an ID parameter added back in here?",
+      "range": {
+        "startLine": 302,
+        "startChar": 10,
+        "endLine": 302,
+        "endChar": 11
+      },
+      "revId": "5416f25d9b9f26b2deaf7c5ed5c81b5648ce6dd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_23e2cbd6",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 83
+      },
+      "lineNbr": 901,
+      "author": {
+        "id": 23625
+      },
+      "writtenOn": "2017-07-24T19:34:32Z",
+      "side": 1,
+      "message": "are these still being used?",
+      "range": {
+        "startLine": 878,
+        "startChar": 4,
+        "endLine": 901,
+        "endChar": 21
+      },
+      "revId": "5416f25d9b9f26b2deaf7c5ed5c81b5648ce6dd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_631e93bb",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 83
+      },
+      "lineNbr": 829,
+      "author": {
+        "id": 23625
+      },
+      "writtenOn": "2017-07-24T19:34:32Z",
+      "side": 1,
+      "message": "should we add tags to the new_project_ref instead of popping them here?",
+      "range": {
+        "startLine": 827,
+        "startChar": 9,
+        "endLine": 829,
+        "endChar": 38
+      },
+      "revId": "5416f25d9b9f26b2deaf7c5ed5c81b5648ce6dd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
