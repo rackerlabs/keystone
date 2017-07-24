@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_0d893074",
+        "filename": "keystone/common/sql/contract_repo/versions/012_contract_add_domain_id_to_idp.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 19283
+      },
+      "writtenOn": "2017-07-24T23:09:32Z",
+      "side": 1,
+      "message": "This is something that should be fixed regardless of NDB. There are actually other examples of foreign keys being dropped and recreated in Keystone. This one was just missed for some reason.",
+      "parentUuid": "ff346bd7_efd616c4",
+      "revId": "7e38beca82b68eb13eee4686670e387f6938c78b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_8fef8a86",
         "filename": "keystone/common/sql/contract_repo/versions/015_contract_update_federated_user_domain.py",
         "patchSetId": 13
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_0dd81051",
+        "filename": "keystone/common/sql/contract_repo/versions/015_contract_update_federated_user_domain.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 19283
+      },
+      "writtenOn": "2017-07-24T23:09:32Z",
+      "side": 1,
+      "message": "There are other examples in Keystone where foreign keys are dropped and recreated around tables changes. These ones were missed for some reason. If we want to do something smart here, perhaps we should have oslo.db intercept these kinds of table changes and do the right thing with foreign keys. If you\u0027re looking for an example of this elsewhere in keystone already, you can look in the scripts:\n\n014_contract_add_domain_id_to_user_table.py\n092_make_implied_roles_fks_cascaded.py\n\nPoint here is that this isn\u0027t specific to NDB. InnoDB is a bit forgiving around this. If we want to make the databases more portable, we should be following proper SQL flows when updating stuff.",
+      "parentUuid": "ff346bd7_8fef8a86",
+      "revId": "7e38beca82b68eb13eee4686670e387f6938c78b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_0f039a44",
         "filename": "keystone/common/sql/upgrades.py",
         "patchSetId": 13
@@ -47,6 +83,24 @@
       "writtenOn": "2017-07-22T02:27:59Z",
       "side": 1,
       "message": "is this not in oslo.db?   it\u0027s being repeated throughout multiple projects and should be a library function",
+      "revId": "7e38beca82b68eb13eee4686670e387f6938c78b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_8de3e005",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 19283
+      },
+      "writtenOn": "2017-07-24T23:09:32Z",
+      "side": 1,
+      "message": "I\u0027m all for moving this to oslo.db and making it accessible globally.",
+      "parentUuid": "ff346bd7_0f039a44",
       "revId": "7e38beca82b68eb13eee4686670e387f6938c78b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
