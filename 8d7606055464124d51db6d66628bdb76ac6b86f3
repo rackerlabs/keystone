@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_432eef43",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1427,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-07-24T19:22:08Z",
+      "side": 1,
+      "message": "Matthew had a good point in the prior patchset about only sending a list with the first item to the function. So you should be doing self._filter_ldap_result_by_attr(res[:1], \u0027name\u0027)",
+      "revId": "8d7606055464124d51db6d66628bdb76ac6b86f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
