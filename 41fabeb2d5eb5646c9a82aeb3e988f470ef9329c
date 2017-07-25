@@ -2,6 +2,69 @@
   "comments": [
     {
       "key": {
+        "uuid": "ff346bd7_c2e1992c",
+        "filename": "releasenotes/notes/project-tags-1e72a6779d9d02c5.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-25T14:44:23Z",
+      "side": 1,
+      "message": "properties",
+      "range": {
+        "startLine": 8,
+        "startChar": 14,
+        "endLine": 8,
+        "endChar": 26
+      },
+      "revId": "41fabeb2d5eb5646c9a82aeb3e988f470ef9329c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_42cfe9af",
+        "filename": "releasenotes/notes/project-tags-1e72a6779d9d02c5.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-25T14:44:23Z",
+      "side": 1,
+      "message": "may put in a single sentence. just tell it\u0027s not allowed, I dont think we need to explain too much why we dont allow them (in order to simplify          requests that specify lists of tags)",
+      "range": {
+        "startLine": 11,
+        "startChar": 10,
+        "endLine": 13,
+        "endChar": 45
+      },
+      "revId": "41fabeb2d5eb5646c9a82aeb3e988f470ef9329c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_823a7195",
+        "filename": "releasenotes/notes/project-tags-1e72a6779d9d02c5.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-25T14:44:23Z",
+      "side": 1,
+      "message": "can be removed",
+      "revId": "41fabeb2d5eb5646c9a82aeb3e988f470ef9329c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_d67d9eb2",
         "filename": "releasenotes/notes/project-tags-1e72a6779d9d02c5.yaml",
         "patchSetId": 13
@@ -19,6 +82,24 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_02468122",
+        "filename": "releasenotes/notes/project-tags-1e72a6779d9d02c5.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-25T14:44:23Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1f1a1f67_d67d9eb2",
+      "revId": "41fabeb2d5eb5646c9a82aeb3e988f470ef9329c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_d6a8fe20",
         "filename": "releasenotes/notes/project-tags-1e72a6779d9d02c5.yaml",
         "patchSetId": 13
@@ -30,6 +111,24 @@
       "writtenOn": "2017-07-17T22:47:21Z",
       "side": 1,
       "message": "Could make this an rst link.",
+      "revId": "41fabeb2d5eb5646c9a82aeb3e988f470ef9329c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_224bc52b",
+        "filename": "releasenotes/notes/project-tags-1e72a6779d9d02c5.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-25T14:44:23Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1f1a1f67_d6a8fe20",
       "revId": "41fabeb2d5eb5646c9a82aeb3e988f470ef9329c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
