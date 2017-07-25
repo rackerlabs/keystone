@@ -35,10 +35,10 @@ Prerequisites
 
 Keystone must be running in a web container with https enabled; tests have
 been done with Apache/2.4.7 running on Ubuntu 14.04 . Please refer to
-`running-keystone-in-httpd`_ and `apache-certificate-and-key-installation`_
+`Install and Configure Keystone in Ubuntu <../install/
+keystone-install-ubuntu>`_ and `apache-certificate-and-key-installation`_
 as references for this setup.
 
-.. _`running-keystone-in-httpd`: https://docs.openstack.org/developer/keystone/apache-httpd.html
 .. _`apache-certificate-and-key-installation`: https://www.digitalocean.com/community/tutorials/how-to-create-a-ssl-certificate-on-apache-for-ubuntu-14-04
 
 --------------------
