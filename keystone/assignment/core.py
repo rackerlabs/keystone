@@ -223,7 +223,8 @@ class Manager(manager.Manager):
 
     # TODO(henry-nash): We might want to consider list limiting this at some
     # point in the future.
-    def list_projects_for_user(self, user_id, hints=None):
+    @MEMOIZE_COMPUTED_ASSIGNMENTS
+    def list_projects_for_user(self, user_id):
         assignment_list = self.list_role_assignments(
             user_id=user_id, effective=True)
         # Use set() to process the list to remove any duplicates
