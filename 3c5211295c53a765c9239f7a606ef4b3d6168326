@@ -16,6 +16,24 @@
       "revId": "3c5211295c53a765c9239f7a606ef4b3d6168326",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_028441b0",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-25T14:58:26Z",
+      "side": 1,
+      "message": "Tags is an array of strings, this is for when you update with a body containing tags.  The create schema is just for when you update with one tag in the url ie /v3/projects/{project_id}/tags/{value}",
+      "parentUuid": "ff346bd7_3fd402bd",
+      "revId": "3c5211295c53a765c9239f7a606ef4b3d6168326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
