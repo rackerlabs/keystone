@@ -95,6 +95,10 @@ function configure_federation {
     # Specify the header that contains information about the identity provider
     iniset $KEYSTONE_CONF mapped remote_id_attribute "Shib-Identity-Provider"
 
+    if [[ "$WSGI_MODE" == "uwsgi" ]]; then
+        restart_service "devstack@keystone"
+    fi
+
     # Register the service provider
     upload_sp_metadata
 }
