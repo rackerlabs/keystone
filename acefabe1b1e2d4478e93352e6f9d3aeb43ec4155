@@ -105,6 +105,24 @@
       "revId": "acefabe1b1e2d4478e93352e6f9d3aeb43ec4155",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_26f4f25a",
+        "filename": "keystone/common/policies/project_tags.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-25T17:49:51Z",
+      "side": 1,
+      "message": "Yes. Or just use the normal project workflow and treat tags as any other project attribute?",
+      "parentUuid": "ff346bd7_66bb1a0e",
+      "revId": "acefabe1b1e2d4478e93352e6f9d3aeb43ec4155",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
