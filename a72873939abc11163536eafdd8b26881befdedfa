@@ -16,6 +16,24 @@
       "revId": "a72873939abc11163536eafdd8b26881befdedfa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_340e7532",
+        "filename": "releasenotes/notes/bug-1704205-bc0570feeb3ec5c4.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 24005
+      },
+      "writtenOn": "2017-07-25T07:03:36Z",
+      "side": 1,
+      "message": "lbragstad: Thank you for pointing this. Fixed it in the patch 9.",
+      "parentUuid": "ff346bd7_b2216350",
+      "revId": "a72873939abc11163536eafdd8b26881befdedfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
