@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_df2e16a4",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-25T14:36:15Z",
+      "side": 1,
+      "message": "this is not enforcing PROJECT in the rule, so this is a bad name. just use RULE_ADMIN_REQUIRED instead of doing the same thing and calling it something else here",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 27
+      },
+      "revId": "acefabe1b1e2d4478e93352e6f9d3aeb43ec4155",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_6209cd2a",
+        "filename": "keystone/common/policies/project_tags.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-25T14:36:15Z",
+      "side": 1,
+      "message": "I am wondering if we need a complete set of different rules for protecting these VS just protecting with the regular project update API. at the end this is just an attribute of projects anyways. you may even create a project with some tags already",
+      "revId": "acefabe1b1e2d4478e93352e6f9d3aeb43ec4155",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
