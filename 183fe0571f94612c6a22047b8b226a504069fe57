@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_b5ada632",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-25T20:39:19Z",
+      "side": 1,
+      "message": "We don\u0027t need the equivalent for apache here?",
+      "revId": "183fe0571f94612c6a22047b8b226a504069fe57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
