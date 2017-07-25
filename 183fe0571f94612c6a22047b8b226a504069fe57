@@ -16,6 +16,24 @@
       "revId": "183fe0571f94612c6a22047b8b226a504069fe57",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_e0412a3b",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-07-25T20:44:44Z",
+      "side": 1,
+      "message": "I do not think so. This broke at around the same time as moving to systemd/uwsgi and it was working fine prior to that. Furthermore it\u0027s deprecated.",
+      "parentUuid": "ff346bd7_b5ada632",
+      "revId": "183fe0571f94612c6a22047b8b226a504069fe57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
