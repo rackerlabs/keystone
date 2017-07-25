@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_d591559b",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 91
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-25T15:05:00Z",
+      "side": 1,
+      "message": "This is building the location url of the tag, this is returned with nova server tags so we added it here.",
+      "parentUuid": "ff346bd7_125a5629",
+      "range": {
+        "startLine": 399,
+        "startChar": 0,
+        "endLine": 403,
+        "endChar": 32
+      },
+      "revId": "3031b3af1695370db5e121ab6e1ececd9d3840df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_f2aeb2e5",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 91
@@ -59,6 +83,30 @@
       "writtenOn": "2017-07-25T13:32:38Z",
       "side": 1,
       "message": "why? is it forbidden/an error to not have any tag on a project?",
+      "range": {
+        "startLine": 418,
+        "startChar": 0,
+        "endLine": 419,
+        "endChar": 70
+      },
+      "revId": "3031b3af1695370db5e121ab6e1ececd9d3840df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_95d3cd38",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 91
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-25T15:05:00Z",
+      "side": 1,
+      "message": "We may not need this, we could just return an empty list instead.",
+      "parentUuid": "ff346bd7_f2aeb2e5",
       "range": {
         "startLine": 418,
         "startChar": 0,
@@ -105,6 +153,24 @@
       "writtenOn": "2017-07-25T13:32:38Z",
       "side": 1,
       "message": "unrelated please revert so it\u0027s one file less to look at",
+      "revId": "3031b3af1695370db5e121ab6e1ececd9d3840df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_95bceddc",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 91
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-25T15:05:00Z",
+      "side": 1,
+      "message": "will do",
+      "parentUuid": "ff346bd7_e75f123f",
       "revId": "3031b3af1695370db5e121ab6e1ececd9d3840df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
