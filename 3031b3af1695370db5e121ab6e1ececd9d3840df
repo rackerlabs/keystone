@@ -142,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_c9953942",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 91
+      },
+      "lineNbr": 895,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-25T18:29:34Z",
+      "side": 1,
+      "message": "good point",
+      "parentUuid": "ff346bd7_52d57e42",
+      "range": {
+        "startLine": 891,
+        "startChar": 0,
+        "endLine": 895,
+        "endChar": 66
+      },
+      "revId": "3031b3af1695370db5e121ab6e1ececd9d3840df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_e75f123f",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 91
