@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_dfabb61a",
+        "filename": "keystone/common/sql/expand_repo/versions/024_expand_add_project_tags_table.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-25T14:34:03Z",
+      "side": 1,
+      "message": "remove this comment, not needed",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 37
+      },
+      "revId": "c4369c1020a3d6113ee7e3a27bc88a229f8dd581",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_1f601e01",
+        "filename": "keystone/common/sql/expand_repo/versions/024_expand_add_project_tags_table.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-25T14:34:03Z",
+      "side": 1,
+      "message": "we dont need an ID. we can just make project_id,name the Pk\n\nsee comment https://review.openstack.org/#/c/484529/3/specs/keystone/pike/project-tags.rst",
+      "revId": "c4369c1020a3d6113ee7e3a27bc88a229f8dd581",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_ff71dadf",
+        "filename": "keystone/common/sql/expand_repo/versions/024_expand_add_project_tags_table.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-25T14:34:03Z",
+      "side": 1,
+      "message": "why doesnt string work?\n\nplease add a comment stating why this needs to be unicode, as different from all the other types used in keystone (this was added just for this)",
+      "range": {
+        "startLine": 36,
+        "startChar": 23,
+        "endLine": 36,
+        "endChar": 30
+      },
+      "revId": "c4369c1020a3d6113ee7e3a27bc88a229f8dd581",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
