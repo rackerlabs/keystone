@@ -1,0 +1,181 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_53cc5dbb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-25T15:55:48Z",
+      "side": 1,
+      "message": "Please explain why so everyone understands.",
+      "revId": "4ec6adeae530d6bbe06f4936fb4001b54449d6ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_b33029ea",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-25T15:55:48Z",
+      "side": 1,
+      "message": "current patch set uses check_protection",
+      "range": {
+        "startLine": 10,
+        "startChar": 14,
+        "endLine": 10,
+        "endChar": 26
+      },
+      "revId": "4ec6adeae530d6bbe06f4936fb4001b54449d6ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_b34a69a9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-25T15:55:48Z",
+      "side": 1,
+      "message": "why isn\u0027t this a separate change? Isn\u0027t it unrelated?",
+      "revId": "4ec6adeae530d6bbe06f4936fb4001b54449d6ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_133c95c6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-25T15:55:48Z",
+      "side": 1,
+      "message": "retrieve",
+      "range": {
+        "startLine": 13,
+        "startChar": 37,
+        "endLine": 13,
+        "endChar": 44
+      },
+      "revId": "4ec6adeae530d6bbe06f4936fb4001b54449d6ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_738d2130",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-25T15:55:48Z",
+      "side": 1,
+      "message": "check_policy doesn\u0027t actually do anything with args, so rather than set some I would rather we remove *args from the signature for check_policy.",
+      "revId": "4ec6adeae530d6bbe06f4936fb4001b54449d6ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_586d9c02",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-25T15:55:48Z",
+      "side": 1,
+      "message": "you\u0027re calling check_protection but with the kwargs for check_policy. Either go back to check_policy and use  pol_base.IDENTITY % \u0027create_user\u0027 instead of just \u0027create_user\u0027 or construct and pass prep_info to check_protection.",
+      "revId": "4ec6adeae530d6bbe06f4936fb4001b54449d6ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_5300dd67",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-25T15:55:48Z",
+      "side": 1,
+      "message": "acting",
+      "range": {
+        "startLine": 259,
+        "startChar": 47,
+        "endLine": 259,
+        "endChar": 52
+      },
+      "revId": "4ec6adeae530d6bbe06f4936fb4001b54449d6ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_9362c53d",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-25T15:55:48Z",
+      "side": 1,
+      "message": "I expect we also need to handle the case where the entity pointed to by parent_id is a domain. I.e. the user chose to specify the id as parent_id but it could just as well have been specified as domain_id because it actually is a domain.",
+      "range": {
+        "startLine": 261,
+        "startChar": 19,
+        "endLine": 261,
+        "endChar": 55
+      },
+      "revId": "4ec6adeae530d6bbe06f4936fb4001b54449d6ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_134b752b",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-25T15:55:48Z",
+      "side": 1,
+      "message": "either s/\u0027create_project\u0027/pol_base.IDENTITY % \u0027create_project\u0027/ or switch to using check_protection.",
+      "revId": "4ec6adeae530d6bbe06f4936fb4001b54449d6ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
