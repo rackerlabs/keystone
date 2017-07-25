@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_c2bab908",
+        "filename": "keystone/common/sql/expand_repo/versions/024_expand_add_project_tags_table.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-07-25T15:04:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_dfabb61a",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 37
+      },
+      "revId": "c4369c1020a3d6113ee7e3a27bc88a229f8dd581",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_1f601e01",
         "filename": "keystone/common/sql/expand_repo/versions/024_expand_add_project_tags_table.py",
         "patchSetId": 20
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_75d50943",
+        "filename": "keystone/common/sql/expand_repo/versions/024_expand_add_project_tags_table.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-07-25T15:04:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_1f601e01",
+      "revId": "c4369c1020a3d6113ee7e3a27bc88a229f8dd581",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_ff71dadf",
         "filename": "keystone/common/sql/expand_repo/versions/024_expand_add_project_tags_table.py",
         "patchSetId": 20
@@ -53,6 +95,30 @@
       "writtenOn": "2017-07-25T14:34:03Z",
       "side": 1,
       "message": "why doesnt string work?\n\nplease add a comment stating why this needs to be unicode, as different from all the other types used in keystone (this was added just for this)",
+      "range": {
+        "startLine": 36,
+        "startChar": 23,
+        "endLine": 36,
+        "endChar": 30
+      },
+      "revId": "c4369c1020a3d6113ee7e3a27bc88a229f8dd581",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_d5f035cc",
+        "filename": "keystone/common/sql/expand_repo/versions/024_expand_add_project_tags_table.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-07-25T15:04:43Z",
+      "side": 1,
+      "message": "This is to mirror nova\u0027s behavior with server tag to allow for tags to be case sensitive.  Postgresql\u0027s columns are already case sensitive; but not for MySQL.  I will add a note to explain this.",
+      "parentUuid": "ff346bd7_ff71dadf",
       "range": {
         "startLine": 36,
         "startChar": 23,
