@@ -72,6 +72,23 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_26c07250",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 22623
+      },
+      "writtenOn": "2017-07-25T17:39:21Z",
+      "side": 1,
+      "message": "This could potentially be None? Which would throw a \n\u003e AttributeError: \u0027NoneType\u0027 object has no attribute \u0027setdefault\u0027",
+      "revId": "8d012e31fd6ad4c4425aed17b797ad46a848a90c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_aedd0fe1",
         "filename": "keystone/conf/catalog.py",
         "patchSetId": 3
