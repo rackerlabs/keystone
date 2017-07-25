@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_3fd402bd",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-25T14:31:23Z",
+      "side": 1,
+      "message": "is it an array of tags or a string separated by commas, as it is for creating?\n\nwhy is it inconsistent between those 2 apis?",
+      "revId": "3c5211295c53a765c9239f7a606ef4b3d6168326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
