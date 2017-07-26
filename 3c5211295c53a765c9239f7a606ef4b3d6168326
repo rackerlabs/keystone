@@ -52,6 +52,24 @@
       "revId": "3c5211295c53a765c9239f7a606ef4b3d6168326",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_b6435013",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T15:10:14Z",
+      "side": 1,
+      "message": "This threw me off too the first time I read it. A comment clarifying when project_tag_update is used and when project_tag_create is used might help.",
+      "parentUuid": "ff346bd7_3ae1a5d1",
+      "revId": "3c5211295c53a765c9239f7a606ef4b3d6168326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
