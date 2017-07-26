@@ -1476,8 +1476,8 @@ class MappingManager(manager.Manager):
         # Purge mapping is rarely used and only used by the command client,
         # it's quite complex to invalidate part of the cache based on the purge
         # filters, so here invalidate the whole cache when purging mappings.
-        self.driver.purge_mappings(purge_filter)
         ID_MAPPING_REGION.invalidate()
+        return self.driver.purge_mappings(purge_filter)
 
 
 class ShadowUsersManager(manager.Manager):

@@ -838,6 +838,17 @@ class MappingPurge(BaseApp):
         parser.add_argument('--type', default=None, choices=['user', 'group'],
                             help=('Purge any mappings for the type '
                                   'specified.'))
+        parser.add_argument('--invalid', default=None,
+                            action='store_true',
+                            help=('Purge only mappings which have become '
+                                  'invalid. Must be used in combination with'
+                                  ' the other filters.'))
+        parser.add_argument('--assignments', default=False,
+                            action='store_true',
+                            help=('Remove assignments of the entities to be '
+                                  'purged. Must be used in combination with '
+                                  'the other filters.'))
+
         return parser
 
     @staticmethod
@@ -876,6 +887,7 @@ class MappingPurge(BaseApp):
         drivers = backends.load_backends()
         resource_manager = drivers['resource_api']
         mapping_manager = drivers['id_mapping_api']
+        assignment_manager = drivers['assignment_api']
 
         # Now that we have validated the options, we know that at least one
         # option has been specified, and if it was the --all option then this
@@ -892,8 +904,19 @@ class MappingPurge(BaseApp):
             mapping['local_id'] = CONF.command.local_id
         if CONF.command.type is not None:
             mapping['type'] = CONF.command.type
+        if CONF.command.invalid:
+            mapping['invalid'] = CONF.command.invalid
 
-        mapping_manager.purge_mappings(mapping)
+        purged = mapping_manager.purge_mappings(mapping)
+
+        if CONF.command.assignments:
+            for p in purged:
+                roles = assignment_manager.list_role_assignments(
+                    user_id=p.get('user', None),
+                    group_id=p.get('group', None)
+                )
+                for r in roles:
+                    assignment_manager.delete_grant(**r)
 
 
 DOMAIN_CONF_FHEAD = 'keystone.'
