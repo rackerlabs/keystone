@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_78570e28",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 887,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T19:04:32Z",
+      "side": 1,
+      "message": "With the current logic - it will actually default to the domain specified in configuration [0].\n\nnit:\n\n  If a domain ID is not provided in the request, the Identity service will attempt to\n  pull the domain ID from the token used in the request. Note that this requires the\n  use of a domain-scoped token.\n\n[0] https://github.com/openstack/keystone/blob/7569c0a6bf1f847a7fe5d96a2f39ea024712b5a1/keystone/common/controller.py#L620-L656",
+      "revId": "96f02ef094c2364afa077611bb6aac20f5a9af22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
