@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_8226bf14",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T17:56:07Z",
+      "side": 1,
+      "message": "What\u0027s let to do before WIP can be removed?",
+      "revId": "79adbd686fa168fa97dc7ba50495fd23f3c7f94f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_62c3db39",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T17:56:07Z",
+      "side": 1,
+      "message": "Does this need to be associated to bp devstack-plugin ?\n\nLooks like it\u0027s listed as a work item in the spec [0]\n\n[0] http://specs.openstack.org/openstack/keystone-specs/specs/keystone/ongoing/devstack-plugin.html#work-items",
+      "revId": "79adbd686fa168fa97dc7ba50495fd23f3c7f94f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
