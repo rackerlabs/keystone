@@ -636,24 +636,13 @@ class V3Controller(wsgi.Application):
                   'explicitly include a domain for this resource to '
                   'belong to.'))
 
-        # TODO(henry-nash): We should issue an exception here since if
-        # a v3 call does not explicitly specify the domain_id in the
-        # entity, it should be using a domain scoped token.  However,
-        # the current tempest heat tests issue a v3 call without this.
-        # This is raised as bug #1283539.  Once this is fixed, we
-        # should remove the line below and replace it with an error.
-        #
-        # Ahead of actually changing the code to raise an exception, we
-        # issue a deprecation warning.
-        versionutils.report_deprecated_feature(
-            LOG,
-            'Not specifying a domain during a create user, group or '
-            'project call, and relying on falling back to the '
-            'default domain, is deprecated as of Liberty. There is no '
-            'plan to remove this compatibility, however, future API '
-            'versions may remove this, so please specify the domain '
-            'explicitly or use a domain-scoped token.')
-        return CONF.identity.default_domain_id
+        raise exception.ValidationError(_(
+            'The entity in the request does not include a `domain_id` in the '
+            'reference and the domain cannot be implied from a token because '
+            'a domain-scoped token was not used in the request. Please '
+            'explicitly set the `domain_id` of the entity or use a '
+            'domain-scoped token in the request.'
+        ))
 
     def _normalize_domain_id(self, request, ref):
         """Fill in domain_id if not specified in a v3 call."""

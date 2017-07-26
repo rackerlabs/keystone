@@ -589,7 +589,10 @@ class ResourceTestCase(test_v3.RestfulTestCase,
 
         self.config_fixture.config(group='resource',
                                    project_name_url_safe='off')
-        ref = unit.new_project_ref(name=unsafe_name)
+        ref = unit.new_project_ref(
+            name=unsafe_name,
+            domain_id=CONF.identity.default_domain_id
+        )
         self.post(
             '/projects',
             body={'project': ref})
@@ -597,7 +600,10 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         for config_setting in ['new', 'strict']:
             self.config_fixture.config(group='resource',
                                        project_name_url_safe=config_setting)
-            ref = unit.new_project_ref(name=unsafe_name)
+            ref = unit.new_project_ref(
+                name=unsafe_name,
+                domain_id=CONF.identity.default_domain_id
+            )
             self.post(
                 '/projects',
                 body={'project': ref},
@@ -608,7 +614,10 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         unsafe_name = 'i am not / safe'
 
         # By default, we should be able to create unsafe names
-        ref = unit.new_project_ref(name=unsafe_name)
+        ref = unit.new_project_ref(
+            name=unsafe_name,
+            domain_id=CONF.identity.default_domain_id
+        )
         self.post(
             '/projects',
             body={'project': ref})
