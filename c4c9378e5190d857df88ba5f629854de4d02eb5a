@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_73716c0c",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 100
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 23625
+      },
+      "writtenOn": "2017-07-26T21:26:55Z",
+      "side": 1,
+      "message": "Dont need this import anymore?",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 25
+      },
+      "revId": "c4c9378e5190d857df88ba5f629854de4d02eb5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_961a7e6c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 100
+      },
+      "lineNbr": 895,
+      "author": {
+        "id": 23625
+      },
+      "writtenOn": "2017-07-26T21:26:55Z",
+      "side": 1,
+      "message": "This can go...",
+      "range": {
+        "startLine": 891,
+        "startChar": 0,
+        "endLine": 895,
+        "endChar": 66
+      },
+      "revId": "c4c9378e5190d857df88ba5f629854de4d02eb5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_362f528f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 100
+      },
+      "lineNbr": 988,
+      "author": {
+        "id": 23625
+      },
+      "writtenOn": "2017-07-26T21:26:55Z",
+      "side": 1,
+      "message": "This can go...",
+      "range": {
+        "startLine": 988,
+        "startChar": 0,
+        "endLine": 988,
+        "endChar": 46
+      },
+      "revId": "c4c9378e5190d857df88ba5f629854de4d02eb5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_166e8ec8",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 100
+      },
+      "lineNbr": 881,
+      "author": {
+        "id": 23625
+      },
+      "writtenOn": "2017-07-26T21:26:55Z",
+      "side": 1,
+      "message": "Not used.",
+      "range": {
+        "startLine": 878,
+        "startChar": 0,
+        "endLine": 881,
+        "endChar": 21
+      },
+      "revId": "c4c9378e5190d857df88ba5f629854de4d02eb5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
