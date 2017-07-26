@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "ff346bd7_962cbeac",
+        "filename": "keystone/common/context.py",
+        "patchSetId": 102
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 23625
+      },
+      "writtenOn": "2017-07-26T21:57:03Z",
+      "side": 1,
+      "message": "project_tag_id is no more!",
+      "range": {
+        "startLine": 32,
+        "startChar": 42,
+        "endLine": 32,
+        "endChar": 56
+      },
+      "revId": "8c481485b4b99a2d9bcad9d747133d71fc48ef3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_362192b1",
+        "filename": "keystone/common/json_home.py",
+        "patchSetId": 102
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 23625
+      },
+      "writtenOn": "2017-07-26T21:57:03Z",
+      "side": 1,
+      "message": "project_tag_id is no more!",
+      "range": {
+        "startLine": 56,
+        "startChar": 50,
+        "endLine": 56,
+        "endChar": 64
+      },
+      "revId": "8c481485b4b99a2d9bcad9d747133d71fc48ef3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_d60fe634",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 102
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 23625
+      },
+      "writtenOn": "2017-07-26T21:57:03Z",
+      "side": 1,
+      "message": "more project_tag_id...",
+      "range": {
+        "startLine": 120,
+        "startChar": 24,
+        "endLine": 120,
+        "endChar": 38
+      },
+      "revId": "8c481485b4b99a2d9bcad9d747133d71fc48ef3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_5691b646",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 102
