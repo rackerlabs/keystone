@@ -51,6 +51,24 @@
       "revId": "dc3d0407ffbdad6fac1f0c12bc7f89d75d5eb589",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_cc164056",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 2389,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-26T17:18:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_b6ba306b",
+      "revId": "dc3d0407ffbdad6fac1f0c12bc7f89d75d5eb589",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
