@@ -22,6 +22,30 @@
       "revId": "fda245897931f27d0951599b6a0e1e916d21ad84",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_42c0d72a",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 14070
+      },
+      "writtenOn": "2017-07-26T17:52:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_22915348",
+      "range": {
+        "startLine": 61,
+        "startChar": 66,
+        "endLine": 61,
+        "endChar": 69
+      },
+      "revId": "fda245897931f27d0951599b6a0e1e916d21ad84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
