@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_f18a0268",
+        "filename": "keystone/exception.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T15:54:11Z",
+      "side": 1,
+      "message": "nit:\n\n  project_tag_name \n\nonly for the sake of clarify? We don\u0027t expect to ever emit the actual project_tag_id, do we?",
+      "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_d10c9eed",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T15:54:11Z",
+      "side": 1,
+      "message": "I think these two lines could be removed.",
+      "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_d1813efd",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T15:54:11Z",
+      "side": 1,
+      "message": "We typically use wrap_member for handling this.",
+      "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_51c30e39",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T15:54:11Z",
+      "side": 1,
+      "message": "This needs to return I think\n\n  ref \u003d self.resource_api.get_project_tag(project_id, value)\n  return ProjectTagV3.wrap_member(request.context_dict, ref)",
+      "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_f1f68263",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T15:54:11Z",
+      "side": 1,
+      "message": "Since _create_project_and_tags uses a kwarg, it helps readability to call it that way:\n\n  project, tags \u003d self._create_project_and_tags(tag_size\u003d2)",
+      "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_d1113e5f",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 754,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T15:54:11Z",
+      "side": 1,
+      "message": "What project is being returned here? I might help to call the utility method twice to and make an assertion:\n\n  project1, tags1 \u003d self._create_project_and_tags(tag_size\u003d2)\n  project2, tags2 \u003d self._create_project_and_tags(tag_size\u003d2)\n  tag_string \u003d \u0027,\u0027.join(tags1)\n  resp \u003d self.get(\n      \u0027/projects?not-tags\u003d%(values)s\u0027 % {\u0027values\u0027: tag_string}\n  )\n  self.assertValidProjectListResponse(resp)\n  self.assertNotEqual(project[\u0027id\u0027], resp.result[\u0027projects\u0027][0][\u0027id\u0027])\n  # or iterate through every project returned and ensure it\u0027s not project1[\u0027id\u0027]\n  # or check that project2[\u0027id\u0027] is in the response.",
+      "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_710cd240",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 758,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T15:54:11Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_3c174148",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 1392,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T15:54:11Z",
+      "side": 1,
+      "message": "nit:\n\n  \u0027value\u0027: uuid.uuid4().hex\n\nonly for the sake of consistency with other tests that assume 404.",
+      "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_fc7c1984",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 1415,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T15:54:11Z",
+      "side": 1,
+      "message": "This test could also ask for a list of all project tags and assert it is 0",
+      "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_fca1b9f9",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 1482,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T15:54:11Z",
+      "side": 1,
+      "message": "This also supports HEAD requests. We should make sure we test that path, too.",
+      "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
