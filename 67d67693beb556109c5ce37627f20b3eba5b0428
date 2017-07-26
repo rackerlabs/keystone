@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_28502dd4",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 456,
+      "author": {
+        "id": 6508
+      },
+      "writtenOn": "2017-07-26T07:04:27Z",
+      "side": 1,
+      "message": "So, here we create set of tuples. The set will remove duplicates. \n\n[tuple((d.items())) for d in domains] will return list of tuples where each tuple contains (key, value) pairs from appropriate domain dict. \n\nSo, if domains looked like\ndomains \u003d [{\u0027a\u0027: 1, \u0027b\u0027: 2}, {\u0027b\u0027: 2, \u0027a\u0027: 1}]\n\nthen\n[tuple((d.items())) for d in domains] will return \n[((\u0027a\u0027, 1), (\u0027b\u0027, 2)), ((\u0027b\u0027, 2), (\u0027a\u0027, 1))]\n\nNow if you create set from this list you will recieve 2 items in this set, but if these values were sorted in the stage of getting dict items, set would have contained only 1 item.",
+      "parentUuid": "ff346bd7_a4712fe3",
+      "range": {
+        "startLine": 456,
+        "startChar": 19,
+        "endLine": 456,
+        "endChar": 25
+      },
+      "revId": "67d67693beb556109c5ce37627f20b3eba5b0428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_4d637443",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 3
@@ -122,6 +146,24 @@
       "writtenOn": "2017-07-14T21:09:33Z",
       "side": 1,
       "message": "The bug report doesn\u0027t mention anything about pruning duplicate roles from the token response. This seems different from what\u0027s reported in the bug. Is this tested somewhere?",
+      "revId": "67d67693beb556109c5ce37627f20b3eba5b0428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_480371b9",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 6508
+      },
+      "writtenOn": "2017-07-26T07:04:27Z",
+      "side": 1,
+      "message": "yes, this issue was the first found",
+      "parentUuid": "1f1a1f67_6d7cf0b4",
       "revId": "67d67693beb556109c5ce37627f20b3eba5b0428",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
