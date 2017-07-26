@@ -16,6 +16,24 @@
       "revId": "1eb5d18af609440d4922b3f67456d7b7a08d439d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_301bdad0",
+        "filename": "doc/source/devref/token-provider.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 25559
+      },
+      "writtenOn": "2017-07-26T20:43:01Z",
+      "side": 1,
+      "message": "okay, then what about the line after this, \"Implemented by :class:`keystone.token.providers.uuid.Provider.\" ?",
+      "parentUuid": "ff346bd7_b7434a13",
+      "revId": "1eb5d18af609440d4922b3f67456d7b7a08d439d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
