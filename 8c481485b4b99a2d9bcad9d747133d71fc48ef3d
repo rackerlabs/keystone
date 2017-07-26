@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_5691b646",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 102
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-26T21:39:09Z",
+      "side": 1,
+      "message": "So about using \u0027path\u0027, this will return something like http://localhost:35357/projects/6c21e83b0646459e81f788cbabf28412/tags/blah\nwithout specifying the api version. its enough to pass tests, but if we want the version in there, we need to do something like r[\u0027host_url\u0027] + r[\u0027environment\u0027][\u0027REQUEST_URI\u0027]. (Which is why i had the try except in the previous create_project_tag",
+      "range": {
+        "startLine": 428,
+        "startChar": 7,
+        "endLine": 428,
+        "endChar": 33
+      },
+      "revId": "8c481485b4b99a2d9bcad9d747133d71fc48ef3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
