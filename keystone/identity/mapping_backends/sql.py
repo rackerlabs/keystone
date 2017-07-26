@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone import exception
 from keystone.common import dependency
 from keystone.common import sql
 from keystone.identity.mapping_backends import base
@@ -35,7 +36,7 @@ class IDMapping(sql.ModelBase, sql.ModelDictMixin):
         sql.UniqueConstraint('domain_id', 'local_id', 'entity_type'),)
 
 
-@dependency.requires('id_generator_api')
+@dependency.requires('id_generator_api', 'identity_api', 'assignment_api')
 class Mapping(base.MappingDriverBase):
 
     def get_public_id(self, local_entity):
@@ -104,4 +105,29 @@ class Mapping(base.MappingDriverBase):
             if 'entity_type' in purge_filter:
                 query = query.filter_by(
                     entity_type=purge_filter['entity_type'])
+
+            rows = query.select()
+            for row in rows:
+                if row.entity_type == identity_mapping.EntityType.GROUP:
+                    try:
+                        self.identity_api.get_group(row.public_id)
+                    except exception.UserNotFound:
+                        projects = self.assignment_api.list_projects_for_group(
+                            row.public_id
+                        )
+                        for project in projects:
+                            self.assignment_api.remove_group_from_project(
+                                project['id'], row.public_id
+                            )
+                elif row.entity_type == identity_mapping.EntityType.USER:
+                    try:
+                        self.identity_api.get_user(row.public_id)
+                    except exception.UserNotFound:
+                        projects = self.assignment_api.list_projects_for_user(
+                            row.public_id
+                        )
+                        for project in projects:
+                            self.assignment_api.remove_user_from_project(
+                                project['id'], row.public_id
+                            )
             query.delete()
