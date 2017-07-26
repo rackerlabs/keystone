@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_37451a44",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T16:15:23Z",
+      "side": 1,
+      "message": "nit: s/assigned/associated/ ?",
+      "revId": "656ab4a300b07a713f414d60661740c9f103ccd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_776842b8",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 1452,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T16:15:23Z",
+      "side": 1,
+      "message": "assigned* or associated?",
+      "revId": "656ab4a300b07a713f414d60661740c9f103ccd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_9c262dce",
+        "filename": "releasenotes/notes/project-tags-1e72a6779d9d02c5.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T16:15:23Z",
+      "side": 1,
+      "message": "This could be an rst link which will get rendered automatically in the release notes.",
+      "revId": "656ab4a300b07a713f414d60661740c9f103ccd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_5c2c45ab",
+        "filename": "releasenotes/notes/project-tags-1e72a6779d9d02c5.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T16:15:23Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "656ab4a300b07a713f414d60661740c9f103ccd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
