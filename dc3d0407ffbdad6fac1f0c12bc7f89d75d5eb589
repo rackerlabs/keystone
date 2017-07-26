@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_3cee21b4",
+        "filename": "keystone/common/sql/expand_repo/versions/024_expand_add_project_tags_table.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-26T16:03:53Z",
+      "side": 1,
+      "message": "No the id column was added back when this was rebased, it should be removed.",
+      "parentUuid": "ff346bd7_51330ef7",
+      "revId": "dc3d0407ffbdad6fac1f0c12bc7f89d75d5eb589",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_b6ba306b",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 22
