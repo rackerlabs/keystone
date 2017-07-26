@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_b6f590ef",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T15:10:21Z",
+      "side": 1,
+      "message": "Ah - ok that makes sense.",
+      "parentUuid": "1f1a1f67_2061ac3a",
+      "revId": "2e1bd6fa6fe772503c6059acf0e2ff276cd1bfc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_586b821e",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 11
