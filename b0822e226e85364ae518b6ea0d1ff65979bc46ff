@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_7cf8297a",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-26T16:03:46Z",
+      "side": 1,
+      "message": "maybe project_tags_update since it\u0027s actually updating (replacing) all the tags at once",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 18
+      },
+      "revId": "b0822e226e85364ae518b6ea0d1ff65979bc46ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
