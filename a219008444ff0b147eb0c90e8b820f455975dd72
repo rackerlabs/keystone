@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_1c1c7d76",
+        "filename": "doc/source/getting-started/policy_mapping.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-26T17:17:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_9c962d4c",
+      "range": {
+        "startLine": 46,
+        "startChar": 9,
+        "endLine": 46,
+        "endChar": 15
+      },
+      "revId": "a219008444ff0b147eb0c90e8b820f455975dd72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_763f28b4",
         "filename": "keystone/common/policies/project.py",
         "patchSetId": 4
@@ -71,6 +95,24 @@
       "side": 1,
       "message": "++",
       "parentUuid": "ff346bd7_5648a45a",
+      "revId": "a219008444ff0b147eb0c90e8b820f455975dd72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_cc3d20de",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-26T17:17:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_9c7f4d14",
       "revId": "a219008444ff0b147eb0c90e8b820f455975dd72",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
