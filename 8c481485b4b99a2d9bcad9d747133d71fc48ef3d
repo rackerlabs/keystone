@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_59868968",
+        "filename": "keystone/common/context.py",
+        "patchSetId": 102
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-26T22:06:07Z",
+      "side": 1,
+      "message": "the whole line could probably go",
+      "parentUuid": "ff346bd7_962cbeac",
+      "range": {
+        "startLine": 32,
+        "startChar": 42,
+        "endLine": 32,
+        "endChar": 56
+      },
+      "revId": "8c481485b4b99a2d9bcad9d747133d71fc48ef3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_362192b1",
         "filename": "keystone/common/json_home.py",
         "patchSetId": 102
@@ -36,6 +60,30 @@
       "writtenOn": "2017-07-26T21:57:03Z",
       "side": 1,
       "message": "project_tag_id is no more!",
+      "range": {
+        "startLine": 56,
+        "startChar": 50,
+        "endLine": 56,
+        "endChar": 64
+      },
+      "revId": "8c481485b4b99a2d9bcad9d747133d71fc48ef3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_59eb2912",
+        "filename": "keystone/common/json_home.py",
+        "patchSetId": 102
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-26T22:06:07Z",
+      "side": 1,
+      "message": "ditto whole line could prolly go",
+      "parentUuid": "ff346bd7_362192b1",
       "range": {
         "startLine": 56,
         "startChar": 50,
@@ -64,6 +112,29 @@
         "startChar": 24,
         "endLine": 120,
         "endChar": 38
+      },
+      "revId": "8c481485b4b99a2d9bcad9d747133d71fc48ef3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_d9def96b",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 102
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-26T22:06:07Z",
+      "side": 1,
+      "message": "the whole initiator can go i think, if this is needed for the notification.. should changed to the PKs?",
+      "range": {
+        "startLine": 120,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 66
       },
       "revId": "8c481485b4b99a2d9bcad9d747133d71fc48ef3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -133,6 +204,29 @@
         "startChar": 3,
         "endLine": 324,
         "endChar": 26
+      },
+      "revId": "8c481485b4b99a2d9bcad9d747133d71fc48ef3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_16120e63",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 102
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-26T22:06:07Z",
+      "side": 1,
+      "message": "this can go now i believe.",
+      "range": {
+        "startLine": 327,
+        "startChar": 12,
+        "endLine": 328,
+        "endChar": 20
       },
       "revId": "8c481485b4b99a2d9bcad9d747133d71fc48ef3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
