@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_51330ef7",
+        "filename": "keystone/common/sql/expand_repo/versions/024_expand_add_project_tags_table.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T15:27:17Z",
+      "side": 1,
+      "message": "We have a uniqueness constraint, but we also have an `id` column. Just to clarify, the `id` column is required in order to support case sensitive tags, right?",
+      "revId": "dc3d0407ffbdad6fac1f0c12bc7f89d75d5eb589",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_b6ba306b",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 2389,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T15:27:17Z",
+      "side": 1,
+      "message": "nit: \n\n  \u0027name\u0027: uuid.uuid4().hex",
+      "revId": "dc3d0407ffbdad6fac1f0c12bc7f89d75d5eb589",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
