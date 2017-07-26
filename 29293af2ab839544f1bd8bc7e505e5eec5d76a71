@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_137c6070",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T20:55:24Z",
+      "side": 1,
+      "message": "Is it possible to invoke these bits from keystone-manage or cli.py instead of in a driver? It\u0027s odd to have a backend have this many dependencies on managers.",
+      "revId": "29293af2ab839544f1bd8bc7e505e5eec5d76a71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
