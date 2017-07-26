@@ -13,6 +13,7 @@
 # under the License.
 
 from keystone.common import sql
+from keystone import exception
 from keystone.identity.mapping_backends import base
 from keystone.identity.mapping_backends import mapping as identity_mapping
 
@@ -102,4 +103,32 @@ class Mapping(base.MappingDriverBase):
             if 'entity_type' in purge_filter:
                 query = query.filter_by(
                     entity_type=purge_filter['entity_type'])
+
+            if 'invalid' in purge_filter:
+                rows = query.all()
+                for row in rows:
+                    if row.entity_type == identity_mapping.EntityType.GROUP:
+                        try:
+                            self.identity_api.get_group(row.public_id)
+                            # Note(knikolla): If we get past the above call
+                            # without an exception, the mapping is still
+                            # valid and we remove it from the list.
+                            query = query.filter(
+                                IDMapping.public_id != row.public_id
+                            )
+                        except exception.UserNotFound:
+                            pass
+
+                    elif row.entity_type == identity_mapping.EntityType.USER:
+                        try:
+                            self.identity_api.get_user(row.public_id)
+                            query = query.filter(
+                                IDMapping.public_id != row.public_id
+                            )
+                        except exception.UserNotFound:
+                            pass
+
+            rows = query.all()
+            purged = [{x.entity_type.lower(): x.public_id} for x in rows]
             query.delete()
+            return purged
