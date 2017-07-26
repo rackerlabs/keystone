@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_776ba21d",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 98
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-26T16:27:06Z",
+      "side": 1,
+      "message": "so, the project manager shoudl return the project representations wiht the tags attribute within it already. so we dont need to do the same thing at all the other places that use project\n\nthis helps for consistency on how we\u0027ve been doing it all over.\n\nnormally we just add \u0027links\u0027 at controller level. the entity already comes fully represented as a dict from managers",
+      "revId": "d580090cfc3e46765bd571c3430ea4a6dfaee79d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
