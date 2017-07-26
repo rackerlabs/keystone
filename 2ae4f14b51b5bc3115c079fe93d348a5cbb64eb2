@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_9374d0ff",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T21:15:07Z",
+      "side": 1,
+      "message": "This was ported to the contributor guide [0].\n\n[0] https://review.openstack.org/#/c/484168/",
+      "revId": "2ae4f14b51b5bc3115c079fe93d348a5cbb64eb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
