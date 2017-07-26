@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_34ec0ef2",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 96
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-26T04:27:29Z",
+      "side": 0,
+      "message": "This shouldn\u0027t be part of this change, not sure if this is a random whitespace?",
+      "range": {
+        "startLine": 125,
+        "startChar": 0,
+        "endLine": 125,
+        "endChar": 1
+      },
+      "revId": "dc3d0407ffbdad6fac1f0c12bc7f89d75d5eb589",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
