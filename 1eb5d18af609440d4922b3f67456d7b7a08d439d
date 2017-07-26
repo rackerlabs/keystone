@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_b7434a13",
+        "filename": "doc/source/devref/token-provider.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T16:18:03Z",
+      "side": 1,
+      "message": "This bit can be removed since it\u0027s not really relevant for writing your own token provider and the default is Fernet.",
+      "revId": "1eb5d18af609440d4922b3f67456d7b7a08d439d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
