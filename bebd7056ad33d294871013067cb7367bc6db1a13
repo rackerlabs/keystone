@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_02388fec",
+        "filename": "keystone/token/_simple_cert.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T18:01:17Z",
+      "side": 0,
+      "message": "We can\u0027t remove this. We should keep the routers and API unless we implement support for microversions or implement v4. I don\u0027t think there is anything stopping us from returning an empty list in the response though.",
+      "revId": "bebd7056ad33d294871013067cb7367bc6db1a13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
