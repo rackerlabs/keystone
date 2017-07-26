@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_763f28b4",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T15:05:40Z",
+      "side": 1,
+      "message": "This is for updating multiple tags.",
+      "revId": "a219008444ff0b147eb0c90e8b820f455975dd72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_5648a45a",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-26T15:05:40Z",
+      "side": 1,
+      "message": "This is for updating a single tag.",
+      "revId": "a219008444ff0b147eb0c90e8b820f455975dd72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
