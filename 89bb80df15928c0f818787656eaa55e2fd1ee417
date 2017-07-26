@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_e96a16eb",
+        "filename": "keystone/exception.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-26T17:03:39Z",
+      "side": 1,
+      "message": "this should actually be the tag_name, we swayed back and forth between having project_tag_ids as PKs and having name-project_ids as PKs, and this was neglected. Things that do raise this exception pass in the name atm however.",
+      "parentUuid": "ff346bd7_f18a0268",
+      "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_d10c9eed",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 97
@@ -30,6 +48,24 @@
       "writtenOn": "2017-07-26T15:54:11Z",
       "side": 1,
       "message": "I think these two lines could be removed.",
+      "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_d7380eef",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-26T17:03:39Z",
+      "side": 1,
+      "message": "good catch. i think this was there before we put the lambda in in list projects. yes this can be removed",
+      "parentUuid": "ff346bd7_d10c9eed",
       "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_e90b367a",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-26T17:03:39Z",
+      "side": 1,
+      "message": "so something along the lines of..\n        ref \u003d self.resource_api.create_project_tag(\n            project_id, value, initiator\u003drequest.audit_initiator)\n        r \u003d ProectTagV3.wrap_member(request.context_dict, ref)\nseem good to you?",
+      "parentUuid": "ff346bd7_d1813efd",
+      "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_51c30e39",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 97
@@ -64,6 +118,24 @@
       "writtenOn": "2017-07-26T15:54:11Z",
       "side": 1,
       "message": "This needs to return I think\n\n  ref \u003d self.resource_api.get_project_tag(project_id, value)\n  return ProjectTagV3.wrap_member(request.context_dict, ref)",
+      "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_29f25e71",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-26T17:03:39Z",
+      "side": 1,
+      "message": "get_project_tag doesnt actually return a body as per the spec and the nova server tags we benchmarked [0]\n\n0: https://developer.openstack.org/api-ref/compute/?expanded\u003dcheck-tag-existence-detail#add-a-single-tag",
+      "parentUuid": "ff346bd7_51c30e39",
       "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_a961ae07",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-26T17:03:39Z",
+      "side": 1,
+      "message": "sounds good",
+      "parentUuid": "ff346bd7_f1f68263",
+      "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_d1113e5f",
         "filename": "keystone/tests/unit/test_v3_resource.py",
         "patchSetId": 97
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_cc43e012",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 754,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-26T17:03:39Z",
+      "side": 1,
+      "message": "so the result of the not-tags would be an empty array, since not-tags looks for projects that strictly do not contain all of the tags passed in. I feel like that suffices, but if you feel that doesnt actually test its functionality we can change it.",
+      "parentUuid": "ff346bd7_d1113e5f",
+      "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_710cd240",
         "filename": "keystone/tests/unit/test_v3_resource.py",
         "patchSetId": 97
@@ -115,6 +223,24 @@
       "writtenOn": "2017-07-26T15:54:11Z",
       "side": 1,
       "message": "Same comment here as above.",
+      "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_ec57c4c9",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 758,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-26T17:03:39Z",
+      "side": 1,
+      "message": "same as above.",
+      "parentUuid": "ff346bd7_710cd240",
       "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +281,24 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_6c6bd484",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 1415,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-26T17:03:39Z",
+      "side": 1,
+      "message": "sounds good",
+      "parentUuid": "ff346bd7_fc7c1984",
+      "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_fca1b9f9",
         "filename": "keystone/tests/unit/test_v3_resource.py",
         "patchSetId": 97
@@ -166,6 +310,24 @@
       "writtenOn": "2017-07-26T15:54:11Z",
       "side": 1,
       "message": "This also supports HEAD requests. We should make sure we test that path, too.",
+      "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_acfadcb9",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 97
+      },
+      "lineNbr": 1482,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-26T17:03:39Z",
+      "side": 1,
+      "message": "sounds good. do you think a separate test is better or all in one?",
+      "parentUuid": "ff346bd7_fca1b9f9",
       "revId": "89bb80df15928c0f818787656eaa55e2fd1ee417",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
