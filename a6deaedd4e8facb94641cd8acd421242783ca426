@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "ff346bd7_5d11aa03",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-07-27T20:33:10Z",
+      "side": 1,
+      "message": "This is wrong. Since the list_project_tags policy above has the same path and head method.",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 41
+      },
+      "revId": "a6deaedd4e8facb94641cd8acd421242783ca426",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_a73763ff",
         "filename": "keystone/common/policies/project.py",
         "patchSetId": 11
