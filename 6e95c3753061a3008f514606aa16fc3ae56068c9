@@ -1,0 +1,463 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_6ffb9f78",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "Doesn\u0027t look like we have a test case for this in this patch set.",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_f29c16c1",
+        "filename": "keystone/common/context.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "What are these bits for? This is usually specific to context stuff.",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_b2f0cefe",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "Ah - this is what the context bits are for. We don\u0027t this for all things in keystone though. As far as notifications go, should we just send a notification saying the project tags were modified?",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_922a6a29",
+        "filename": "keystone/exception.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "nit: since project tags are considered unique based on the tag name and the project id, we don\u0027t really have a project tag ID. I\u0027d be in favor of renaming this to project_tag_name to be more explicit.",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_52264217",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "The interface definitions are another change that is easy to break out into a separate change (in case that helps you at all).",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_32ee1eed",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "We should document the parameters as well, to be consistent with the other interfaces here.",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_92adca9c",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "Doesn\u0027t this also require the project in order to adhere to the FK constraint with the project table?",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_d290f24c",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "a dictionary or a list?",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_929b8a64",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "nit: missing documentation strings.",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_d2cd9231",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "This feels like it\u0027s something that should be done in the manager or controller since it\u0027s dealing with input. We typically try and refrain from putting this login in drivers so that it can be reused across backend implementations.",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_724026a6",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "No interface definition for these?",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_b2e44ee1",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "Don\u0027t we need the project id here?",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_32f17e96",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "This bit is inconsistent with the documentation string in the abstract base class.",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_92ecaa8f",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "It\u0027s possible to use hybrid properties in sql to give you this information in the driver instead of doing it manually here. We do this across the identity backend with the different user types.\n\nWhat you can do is define a hybrid property called tags on the sql driver for projects. When you call project.tags you can tell it to list all tags associated to the project by having it query a separate table [0].\n\nI haven\u0027t benchmarked this approach, but I\u0027d guess that it\u0027s probably more efficient than carrying this logic in python.\n\n[0] https://github.com/openstack/keystone/blob/c3b5d2d77b029880521912e43ad963f9b0c5bf99/keystone/identity/backends/sql_model.py#L71",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_75d25002",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "We\u0027d be able to omit this if we have a hybrid property in the backend. The tags for a project would come back as an attribute automatically.",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_15ee64b3",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "nit: that naming of this method is throwing me off. The name implies that we\u0027re expanding a list of project from IDs or something like that, which doesn\u0027t really seem to be the case. Judging the code, this is more responsible for handling the appropriate filters.",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_754010a6",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "I think lines 327 and 328 can be omitted.",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_f515209d",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "Same comments here regarding the hybrid property. Ideally - all the changes in this class would effectively be done by the hybrid_property in the backend.",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_95481487",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "We typically wrap responses using the wrap_member() method. This comment applies to all methods here.",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_15e1c42a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "nit: this method is raising validation errors, but i\u0027m not sure what\u0027s being validated or when. Instead, one way to decouple this, is to have the method return True or False answer the question \"is the current tag limit at capacity?\". Then the methods in the API or Manager, are responsible for raising the ValidationErrors\n\n  def _is_project_over_tag_limit(self, project_id):\n  \"\"\"Check the capacity of the current tags associate to a project.\"\"\"\n      return len(self.driver.list_project_tags(project_id)) \u003e\u003d MAX_PROJECT_TAG_COUNT\n\nthen we can do things like:\n\n  def create_project_tag(self, project_id, tag_name):\n      if is_project_over_tag_limit(project_id):\n          raise exception.ValidationError(...)",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_151664f2",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be done by the FK constraint?",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_d5957c34",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 967,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "nit: this doc string doesn\u0027t necessarily describe the behavior of the API.",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_003060e7",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 610,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "Was the presence of the tags attribute causing tests to fail somehow?",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_60b04c44",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 1568,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "This doesn\u0027t actually create the tags in the backend. Is it suppose to?\n\n  ...\n  tags \u003d []\n  for _ in range(0, tag_size if tag_size else 1):\n      tags.append(uuid.uuid4().hex)\n  project \u003d unit.new_project_ref(\n      domain_id\u003dCONF.identity.default_domain_id,\n      tags\u003dtags\n  )\n  return self.resource_api.create_project(project[\u0027id\u0027], project)\n\nThen you have everything encapsulated in a reference from the Manager without having to pass a tuple.",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_60996cc2",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 1573,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "nit: the value of this shouldn\u0027t matter since we\u0027re saving it to a variable for later.",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_c03db88f",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 1593,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "nit: pass this argument as a kwarg since it\u0027s defined as one. That way if the method ever changes to something like;\n\n  def _create_project_and_tags(self, other_arg\u003dNone, tag_size\u003d1):\n\nWe won\u0027t break these tests.",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_8011f006",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 1607,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 1,
+      "message": "This must be asserting a project from setup isn\u0027t in the response. For the sake of having clarity and completeness in the test, I would be in favor of creating two projects in the test instead of relying on something from setup. This would break if setup ever changes and the project we\u0027re relying on in the assertion isn\u0027t created.",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

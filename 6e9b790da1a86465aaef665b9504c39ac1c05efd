@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_6fcddf64",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 105
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T17:03:58Z",
+      "side": 0,
+      "message": "Why remove these?",
+      "revId": "6e9b790da1a86465aaef665b9504c39ac1c05efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
