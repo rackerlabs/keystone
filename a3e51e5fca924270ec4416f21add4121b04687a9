@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_c729478a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T19:59:28Z",
+      "side": 1,
+      "message": "Awesome work - since this includes tests we can close another bug I opened last year!\n\n  Closes-Bug: #1635389",
+      "revId": "a3e51e5fca924270ec4416f21add4121b04687a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_07b62f3f",
+        "filename": "keystone/tests/unit/test_contrib_ec2_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T19:59:28Z",
+      "side": 1,
+      "message": "This doesn\u0027t appear to be used in the tests anywhere. I was able to remove this locally and everything still passed.",
+      "revId": "a3e51e5fca924270ec4416f21add4121b04687a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_873e9f88",
+        "filename": "keystone/tests/unit/test_contrib_ec2_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T19:59:28Z",
+      "side": 1,
+      "message": "nit: I\u0027d recommend adding conditions to the test title to be a little more descriptive of the case.\n\n  test_valid_authentication_response_with_proper_secret\n\nOr something along those lines",
+      "revId": "a3e51e5fca924270ec4416f21add4121b04687a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_0752afde",
+        "filename": "keystone/tests/unit/test_contrib_ec2_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T19:59:28Z",
+      "side": 1,
+      "message": "We could break these into their own tests, too. Maybe something like: \n\nhttp://paste.openstack.org/show/616786/",
+      "revId": "a3e51e5fca924270ec4416f21add4121b04687a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_a790834b",
+        "filename": "keystone/tests/unit/test_contrib_ec2_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T19:59:28Z",
+      "side": 1,
+      "message": "nit: single quotes for consistency with the rest of the module.",
+      "revId": "a3e51e5fca924270ec4416f21add4121b04687a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_27201348",
+        "filename": "keystone/tests/unit/test_contrib_ec2_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T19:59:28Z",
+      "side": 1,
+      "message": "Looks like this is already done in the parent setUp() method:\n\nhttps://github.com/openstack/keystone/blob/c3b5d2d77b029880521912e43ad963f9b0c5bf99/keystone/tests/unit/rest.py#L61",
+      "revId": "a3e51e5fca924270ec4416f21add4121b04687a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_87f0dffe",
+        "filename": "keystone/tests/unit/test_contrib_ec2_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T19:59:28Z",
+      "side": 1,
+      "message": "This doesn\u0027t appear to be used anywhere. I was able to remove this locally and the tests still passed.",
+      "revId": "a3e51e5fca924270ec4416f21add4121b04687a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_07ee2fec",
+        "filename": "keystone/tests/unit/test_contrib_ec2_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T19:59:28Z",
+      "side": 1,
+      "message": "Same naming comments here.",
+      "revId": "a3e51e5fca924270ec4416f21add4121b04687a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_277c931d",
+        "filename": "keystone/tests/unit/test_contrib_ec2_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T19:59:28Z",
+      "side": 1,
+      "message": "Same comment here about quotes.",
+      "revId": "a3e51e5fca924270ec4416f21add4121b04687a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
