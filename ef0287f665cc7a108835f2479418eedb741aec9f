@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_4ff7bbd4",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T15:16:41Z",
+      "side": 1,
+      "message": "Looks like this was reverted?",
+      "revId": "ef0287f665cc7a108835f2479418eedb741aec9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
