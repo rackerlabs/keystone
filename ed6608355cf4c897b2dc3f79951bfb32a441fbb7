@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_cc85ee5b",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T19:25:23Z",
+      "side": 1,
+      "message": "We typically just combine this with the GET request, like this [0]. Then you don\u0027t need a separate policy target in the controller.\n\n[0] https://github.com/openstack/keystone/blob/c3b5d2d77b029880521912e43ad963f9b0c5bf99/keystone/common/policies/role_assignment.py#L22-L25",
+      "revId": "ed6608355cf4c897b2dc3f79951bfb32a441fbb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
