@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_ba6f7929",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 108
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T21:34:45Z",
+      "side": 1,
+      "message": "This should come back in the reference when you use properties in the resource driver.",
+      "revId": "4d9f8716c126b9e262cd52ff163dd0f9df1d0a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_5a708d08",
+        "filename": "keystone/common/context.py",
+        "patchSetId": 108
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T21:34:45Z",
+      "side": 1,
+      "message": "comment here from a previous patch set still applies.",
+      "revId": "4d9f8716c126b9e262cd52ff163dd0f9df1d0a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_da5d9d79",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 108
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T21:34:45Z",
+      "side": 1,
+      "message": "I think this still requires the project id.",
+      "revId": "4d9f8716c126b9e262cd52ff163dd0f9df1d0a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
