@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ff346bd7_065e3811",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 666,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-27T17:27:06Z",
+      "side": 1,
+      "message": "could have checked 60 works before asseting 61 breaks",
+      "revId": "55dd5b128759cfb0744f4c74fe419d66b7bbfe8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_1b9c5568",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 18
@@ -13,6 +30,23 @@
       "writtenOn": "2017-07-27T17:10:10Z",
       "side": 1,
       "message": "Why not keep these as global variables so they can be reused?",
+      "revId": "55dd5b128759cfb0744f4c74fe419d66b7bbfe8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_a6a2ccfa",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-27T17:27:06Z",
+      "side": 1,
+      "message": "same here, could have checked 50 tags works..\n\n\nsame comments valid for all above.",
       "revId": "55dd5b128759cfb0744f4c74fe419d66b7bbfe8a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
