@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_3a92694d",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 2415,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T21:27:22Z",
+      "side": 1,
+      "message": "Comments from the previous patch set still apply.",
+      "revId": "ba9a4e37d47b34cfcd9404888347ab6b6be1a3f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
