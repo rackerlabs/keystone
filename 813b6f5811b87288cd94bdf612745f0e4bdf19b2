@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_2c723a7c",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 2402,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T19:27:42Z",
+      "side": 1,
+      "message": "We should also test the unique constraint. If we attempt to add the tag twice, we should expect an error since we create the Uniqueness constraint.\n\nIn addition to that - we can also test the FK bits here, too.",
+      "revId": "813b6f5811b87288cd94bdf612745f0e4bdf19b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_ac662ac0",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 2415,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-27T19:27:42Z",
+      "side": 1,
+      "message": "Is this required? I don\u0027t see this in other tests",
+      "revId": "813b6f5811b87288cd94bdf612745f0e4bdf19b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
