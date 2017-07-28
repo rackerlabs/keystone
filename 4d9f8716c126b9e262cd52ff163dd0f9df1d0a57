@@ -212,6 +212,30 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_d42092b3",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 108
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T18:20:20Z",
+      "side": 1,
+      "message": "actually it seems using ~ProjectTag or using notin_ and reducing the code down to look like tags-any fails to work for me. I\u0027ll leave this for now.",
+      "parentUuid": "df3967d1_f13f28b3",
+      "range": {
+        "startLine": 250,
+        "startChar": 12,
+        "endLine": 250,
+        "endChar": 64
+      },
+      "revId": "4d9f8716c126b9e262cd52ff163dd0f9df1d0a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_bd6bddee",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 108
