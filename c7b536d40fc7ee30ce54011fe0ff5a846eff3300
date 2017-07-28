@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_8224345f",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1393,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-28T13:59:56Z",
+      "side": 1,
+      "message": "so if the attribute is unkown, we ignore the filtering and return the entity as is?",
+      "range": {
+        "startLine": 1393,
+        "startChar": 15,
+        "endLine": 1393,
+        "endChar": 19
+      },
+      "revId": "c7b536d40fc7ee30ce54011fe0ff5a846eff3300",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_22fc68b3",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1396,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-28T13:59:56Z",
+      "side": 1,
+      "message": "this is checking on the value of the attribute, correct?\n\nIs the result of obj[1].get(attr) a tuple? What are the values in that tuple?",
+      "range": {
+        "startLine": 1396,
+        "startChar": 40,
+        "endLine": 1396,
+        "endChar": 59
+      },
+      "revId": "c7b536d40fc7ee30ce54011fe0ff5a846eff3300",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
