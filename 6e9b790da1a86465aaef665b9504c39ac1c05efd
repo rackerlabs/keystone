@@ -16,6 +16,24 @@
       "revId": "6e9b790da1a86465aaef665b9504c39ac1c05efd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_854bf285",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 105
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T19:52:51Z",
+      "side": 0,
+      "message": "https://review.openstack.org/#/c/486757/12/etc/policy.v3cloudsample.json",
+      "parentUuid": "ff346bd7_6fcddf64",
+      "revId": "6e9b790da1a86465aaef665b9504c39ac1c05efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

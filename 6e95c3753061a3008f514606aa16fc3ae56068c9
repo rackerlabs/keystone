@@ -315,6 +315,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_205e74e6",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T19:52:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_724026a6",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_b2e44ee1",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 105
@@ -471,6 +489,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_c06c489e",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T19:52:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_754010a6",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_f515209d",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 105
@@ -592,6 +628,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_60091cdc",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 967,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T19:52:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_d5957c34",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_003060e7",
         "filename": "keystone/tests/unit/resource/test_backends.py",
         "patchSetId": 105
@@ -609,6 +663,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_e09e2c53",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 610,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T19:52:51Z",
+      "side": 1,
+      "message": "it did before, but since now tags can be created when creating a project this can go.",
+      "parentUuid": "ff346bd7_003060e7",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_60b04c44",
         "filename": "keystone/tests/unit/resource/test_backends.py",
         "patchSetId": 105
@@ -620,6 +692,24 @@
       "writtenOn": "2017-07-27T17:03:58Z",
       "side": 1,
       "message": "This doesn\u0027t actually create the tags in the backend. Is it suppose to?\n\n  ...\n  tags \u003d []\n  for _ in range(0, tag_size if tag_size else 1):\n      tags.append(uuid.uuid4().hex)\n  project \u003d unit.new_project_ref(\n      domain_id\u003dCONF.identity.default_domain_id,\n      tags\u003dtags\n  )\n  return self.resource_api.create_project(project[\u0027id\u0027], project)\n\nThen you have everything encapsulated in a reference from the Manager without having to pass a tuple.",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_60035c0f",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 1568,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T19:52:51Z",
+      "side": 1,
+      "message": "It\u0027s not supposed to create the tags in this internal. It returns a list of tags for flexibility because there were occasions when we needed a project created and tag names but not the tags themselves created.",
+      "parentUuid": "ff346bd7_60b04c44",
       "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -660,6 +750,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_e0462c22",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 1593,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T19:52:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_c03db88f",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_8011f006",
         "filename": "keystone/tests/unit/resource/test_backends.py",
         "patchSetId": 105
@@ -671,6 +779,24 @@
       "writtenOn": "2017-07-27T17:03:58Z",
       "side": 1,
       "message": "This must be asserting a project from setup isn\u0027t in the response. For the sake of having clarity and completeness in the test, I would be in favor of creating two projects in the test instead of relying on something from setup. This would break if setup ever changes and the project we\u0027re relying on in the assertion isn\u0027t created.",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_20af9495",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 1607,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T19:52:51Z",
+      "side": 1,
+      "message": "Not entirely sure what you mean.. did you mean self.project defined in the setup? this is just asserting the project created from _create_project_and_tags",
+      "parentUuid": "ff346bd7_8011f006",
       "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
