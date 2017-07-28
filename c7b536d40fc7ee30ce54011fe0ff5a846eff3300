@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_9d581931",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1393,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-28T14:23:11Z",
+      "side": 1,
+      "message": "yeah, that doesn\u0027t seem right... prashkre, it seems like the caller messed up if they specified an ldap_attr_name that isn\u0027t valid in attribute_mapping, right? Is there a valid case where the caller should be allowed to specify an ldap_attr_name that doesn\u0027t exist in attribute_mapping? If not, we should raise an exception and make them fix that. Maybe just remove the \"if not attr\" check entirely?\n\nIf there is a valid case for ldap_attr_name not existing in attribute_mapping, we need more information about what that is in order to decide what the best way to handle it is.",
+      "parentUuid": "ff346bd7_8224345f",
+      "range": {
+        "startLine": 1393,
+        "startChar": 15,
+        "endLine": 1393,
+        "endChar": 19
+      },
+      "revId": "c7b536d40fc7ee30ce54011fe0ff5a846eff3300",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_22fc68b3",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 9
