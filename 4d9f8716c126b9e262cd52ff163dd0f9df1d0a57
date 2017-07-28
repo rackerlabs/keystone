@@ -50,6 +50,139 @@
       "revId": "4d9f8716c126b9e262cd52ff163dd0f9df1d0a57",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_7d9a15b9",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 108
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-07-28T15:06:41Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ff346bd7_da5d9d79",
+      "revId": "4d9f8716c126b9e262cd52ff163dd0f9df1d0a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_9d9a595f",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 108
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-07-28T15:06:41Z",
+      "side": 1,
+      "message": "This comment doesn\u0027t match the code below. You\u0027re actually comparing the lists of tags.",
+      "range": {
+        "startLine": 188,
+        "startChar": 14,
+        "endLine": 192,
+        "endChar": 45
+      },
+      "revId": "4d9f8716c126b9e262cd52ff163dd0f9df1d0a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_9db379e9",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 108
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-07-28T15:06:41Z",
+      "side": 1,
+      "message": "Is it necessary to do distinct? You\u0027ve already placed a uniqueness contraint on (project_id, name)",
+      "range": {
+        "startLine": 196,
+        "startChar": 16,
+        "endLine": 196,
+        "endChar": 61
+      },
+      "revId": "4d9f8716c126b9e262cd52ff163dd0f9df1d0a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_bd5abd7f",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 108
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-07-28T15:06:41Z",
+      "side": 1,
+      "message": "You can get the inverse of this directly. https://stackoverflow.com/questions/26182027/how-to-use-not-in-clause-in-sqlalchemy-orm-query",
+      "range": {
+        "startLine": 250,
+        "startChar": 12,
+        "endLine": 250,
+        "endChar": 64
+      },
+      "revId": "4d9f8716c126b9e262cd52ff163dd0f9df1d0a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_bd6bddee",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 108
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-07-28T15:06:41Z",
+      "side": 1,
+      "message": "Can do delete directly after this filter. http://docs.sqlalchemy.org/en/latest/orm/query.html#sqlalchemy.orm.query.Query.delete",
+      "range": {
+        "startLine": 351,
+        "startChar": 12,
+        "endLine": 352,
+        "endChar": 44
+      },
+      "revId": "4d9f8716c126b9e262cd52ff163dd0f9df1d0a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_fd65e51e",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 108
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-07-28T15:06:41Z",
+      "side": 1,
+      "message": "Can do delete directly after this filter. http://docs.sqlalchemy.org/en/latest/orm/query.html#sqlalchemy.orm.query.Query.delete",
+      "range": {
+        "startLine": 361,
+        "startChar": 12,
+        "endLine": 362,
+        "endChar": 52
+      },
+      "revId": "4d9f8716c126b9e262cd52ff163dd0f9df1d0a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
