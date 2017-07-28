@@ -420,6 +420,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_c0fc4840",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T20:23:34Z",
+      "side": 1,
+      "message": "Thanks for all the feedback. Is this method actually possible for resources though? It doesn\u0027t construct a model the same way Users does.",
+      "parentUuid": "ff346bd7_92ecaa8f",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_75d25002",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 105
@@ -693,6 +711,24 @@
       "side": 1,
       "message": "With handling tag logic in the controller yes, when we move to the hybrid model, then we should remove this",
       "parentUuid": "df3967d1_e09e2c53",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_abe2452e",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 610,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T20:23:34Z",
+      "side": 1,
+      "message": "we are going to leave it in for the meanwhile since tags are still put in on the api for list and get projects",
+      "parentUuid": "df3967d1_20ee7488",
       "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
