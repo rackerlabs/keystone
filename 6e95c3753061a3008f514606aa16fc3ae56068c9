@@ -681,6 +681,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_20ee7488",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 610,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-07-28T20:05:20Z",
+      "side": 1,
+      "message": "With handling tag logic in the controller yes, when we move to the hybrid model, then we should remove this",
+      "parentUuid": "df3967d1_e09e2c53",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_60b04c44",
         "filename": "keystone/tests/unit/resource/test_backends.py",
         "patchSetId": 105
