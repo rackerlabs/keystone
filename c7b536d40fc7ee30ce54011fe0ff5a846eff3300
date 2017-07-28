@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_8005207d",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1393,
+      "author": {
+        "id": 24005
+      },
+      "writtenOn": "2017-07-28T19:55:17Z",
+      "side": 1,
+      "message": "yes, it is the mess up that caller creates when attribute specified is not in attribute_mapping at [0] and [1]. I don\u0027t see any scenario where caller can specify attribute not in attribute_mapping but there is one such situation we need to consider in ldap configuration[2], where attribute value itself is None i.e. user_name_attribute \u003d None with ldap_attr_name \u003d \"name\".\n\nIn such situation, ldap query searches users/groups based on {user/group}_id_attribute and how do we process further? Do we ignore filtering by returning the result as it is now or raise an exception to correct the ldap configuration?\n\n\n[0]\nhttps://github.com/openstack/keystone/blob/master/keystone/identity/backends/ldap/core.py#L243\n\n[1]\nhttps://github.com/openstack/keystone/blob/master/keystone/identity/backends/ldap/core.py#L362\n\n[2]\n[ldap] \nurl \u003d ldap://9.9.9.9\nuser_name_attribute \u003d None\nuser_id_attribute \u003d uid\nuser_mail_attribute \u003d None",
+      "parentUuid": "ff346bd7_9d581931",
+      "range": {
+        "startLine": 1393,
+        "startChar": 15,
+        "endLine": 1393,
+        "endChar": 19
+      },
+      "revId": "c7b536d40fc7ee30ce54011fe0ff5a846eff3300",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_22fc68b3",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 9
@@ -60,6 +84,30 @@
       "writtenOn": "2017-07-28T13:59:56Z",
       "side": 1,
       "message": "this is checking on the value of the attribute, correct?\n\nIs the result of obj[1].get(attr) a tuple? What are the values in that tuple?",
+      "range": {
+        "startLine": 1396,
+        "startChar": 40,
+        "endLine": 1396,
+        "endChar": 59
+      },
+      "revId": "c7b536d40fc7ee30ce54011fe0ff5a846eff3300",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_ba9df567",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1396,
+      "author": {
+        "id": 24005
+      },
+      "writtenOn": "2017-07-28T19:55:17Z",
+      "side": 1,
+      "message": "Lets consider the ldap configuration as shown in [1]\n\none example of obj is (u\u0027uid\u003dfakeUid,c\u003dfake,ou\u003dfakedomain,o\u003dfakeorg\u0027, {\u0027identity\u0027: [u\u0027fakename\u0027], \u0027mail\u0027: [u\u0027fake@fakeorg.org\u0027], \u0027uid\u0027: [u\u0027fakeUid\u0027]}) where ldap_result is a list of type \u003ctuple\u003e,\n\nSince _filter_ldap_result_by_attr() method is being called with ldap_attr_name \u003d \"name\", from [0] and [1] attr is being set with value \"identity\" from self.attribute_mapping\n\n\nSo,\nobj[1].get(attr) is [u\u0027fakename\u0027], which is a list and in if conditional statement, it checks for list is empty or None.\n\nobj[1].get(attr)[0] is fakename, which is a string and in if conditional statement, it checks for empty string or None.\n\n\n[0] https://github.com/openstack/keystone/blob/master/keystone/identity/backends/ldap/common.py#L1155\nhttps://github.com/openstack/keystone/blob/master/keystone/identity/backends/ldap/core.py#L243\n\n[1]\n[ldap]\nurl \u003d ldap://9.9.9.9\nuser_name_attribute \u003d identity\nuser_id_attribute \u003d uid\nuser_mail_attribute \u003d mail",
+      "parentUuid": "ff346bd7_22fc68b3",
       "range": {
         "startLine": 1396,
         "startChar": 40,
