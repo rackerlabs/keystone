@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_14e17aff",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 2402,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-07-28T18:02:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_2c723a7c",
+      "revId": "813b6f5811b87288cd94bdf612745f0e4bdf19b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_ac662ac0",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 28
@@ -30,6 +48,24 @@
       "writtenOn": "2017-07-27T19:27:42Z",
       "side": 1,
       "message": "Is this required? I don\u0027t see this in other tests",
+      "revId": "813b6f5811b87288cd94bdf612745f0e4bdf19b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_4e3a0b99",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 2415,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-07-28T18:02:59Z",
+      "side": 1,
+      "message": "Probably not as we are not doing another upgrade during the test - but there are tests that has them at the end to clean up: https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_sql_upgrade.py#L724\n\nWill remove",
+      "parentUuid": "ff346bd7_ac662ac0",
       "revId": "813b6f5811b87288cd94bdf612745f0e4bdf19b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
