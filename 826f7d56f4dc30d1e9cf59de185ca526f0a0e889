@@ -16,6 +16,24 @@
       "revId": "826f7d56f4dc30d1e9cf59de185ca526f0a0e889",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_252c4646",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 109
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 23625
+      },
+      "writtenOn": "2017-07-28T19:06:24Z",
+      "side": 1,
+      "message": "project_tag is an object with the tag name and the project Id. This was done for consistency with the create project which also passes in an object. Is passing the project_id and a tag_name preferred?",
+      "parentUuid": "df3967d1_5af4c95b",
+      "revId": "826f7d56f4dc30d1e9cf59de185ca526f0a0e889",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
