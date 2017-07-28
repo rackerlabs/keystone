@@ -94,6 +94,30 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_4349abb4",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 108
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T17:41:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_9d9a595f",
+      "range": {
+        "startLine": 188,
+        "startChar": 14,
+        "endLine": 192,
+        "endChar": 45
+      },
+      "revId": "4d9f8716c126b9e262cd52ff163dd0f9df1d0a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_9db379e9",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 108
@@ -105,6 +129,30 @@
       "writtenOn": "2017-07-28T15:06:41Z",
       "side": 1,
       "message": "Is it necessary to do distinct? You\u0027ve already placed a uniqueness contraint on (project_id, name)",
+      "range": {
+        "startLine": 196,
+        "startChar": 16,
+        "endLine": 196,
+        "endChar": 61
+      },
+      "revId": "4d9f8716c126b9e262cd52ff163dd0f9df1d0a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_c3d23bd1",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 108
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T17:41:06Z",
+      "side": 1,
+      "message": "can be deleted",
+      "parentUuid": "ff346bd7_9db379e9",
       "range": {
         "startLine": 196,
         "startChar": 16,
@@ -140,6 +188,30 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_f13f28b3",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 108
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T17:41:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_bd5abd7f",
+      "range": {
+        "startLine": 250,
+        "startChar": 12,
+        "endLine": 250,
+        "endChar": 64
+      },
+      "revId": "4d9f8716c126b9e262cd52ff163dd0f9df1d0a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_bd6bddee",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 108
@@ -163,6 +235,30 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_5151540e",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 108
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T17:41:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_bd6bddee",
+      "range": {
+        "startLine": 351,
+        "startChar": 12,
+        "endLine": 352,
+        "endChar": 44
+      },
+      "revId": "4d9f8716c126b9e262cd52ff163dd0f9df1d0a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_fd65e51e",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 108
@@ -174,6 +270,30 @@
       "writtenOn": "2017-07-28T15:06:41Z",
       "side": 1,
       "message": "Can do delete directly after this filter. http://docs.sqlalchemy.org/en/latest/orm/query.html#sqlalchemy.orm.query.Query.delete",
+      "range": {
+        "startLine": 361,
+        "startChar": 12,
+        "endLine": 362,
+        "endChar": 52
+      },
+      "revId": "4d9f8716c126b9e262cd52ff163dd0f9df1d0a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_3156d008",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 108
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T17:41:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_fd65e51e",
       "range": {
         "startLine": 361,
         "startChar": 12,
