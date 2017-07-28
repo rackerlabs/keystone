@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_b2b42781",
+        "filename": "doc/source/install/keystone-install-ubuntu.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-28T15:33:00Z",
+      "side": 1,
+      "message": "We have guides for redhat and suse as well. Those should probably be updated if this is relevant for those, too.",
+      "revId": "b9c0252a4c0433ef6cef392696a4affbb335fcaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
