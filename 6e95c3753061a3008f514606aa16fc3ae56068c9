@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_45b74a88",
+        "filename": "keystone/common/context.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T19:22:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_f29c16c1",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_b2f0cefe",
         "filename": "keystone/common/request.py",
         "patchSetId": 105
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_65c24eec",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T19:22:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_b2f0cefe",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_922a6a29",
         "filename": "keystone/exception.py",
         "patchSetId": 105
@@ -64,6 +100,24 @@
       "writtenOn": "2017-07-27T17:03:58Z",
       "side": 1,
       "message": "nit: since project tags are considered unique based on the tag name and the project id, we don\u0027t really have a project tag ID. I\u0027d be in favor of renaming this to project_tag_name to be more explicit.",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_a58ef6cd",
+        "filename": "keystone/exception.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T19:22:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_922a6a29",
       "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_058822c4",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T19:22:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_32ee1eed",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_92adca9c",
         "filename": "keystone/resource/backends/base.py",
         "patchSetId": 105
@@ -115,6 +187,24 @@
       "writtenOn": "2017-07-27T17:03:58Z",
       "side": 1,
       "message": "Doesn\u0027t this also require the project in order to adhere to the FK constraint with the project table?",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_459e2a08",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T19:22:49Z",
+      "side": 1,
+      "message": "Done: refer to comment in core",
+      "parentUuid": "ff346bd7_92adca9c",
       "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +228,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_a5f9564e",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T19:22:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_d290f24c",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_929b8a64",
         "filename": "keystone/resource/backends/base.py",
         "patchSetId": 105
@@ -149,6 +257,24 @@
       "writtenOn": "2017-07-27T17:03:58Z",
       "side": 1,
       "message": "nit: missing documentation strings.",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_65992e1e",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T19:22:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_929b8a64",
       "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +332,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_25d566ba",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T19:22:49Z",
+      "side": 1,
+      "message": "we actually didnt since it was a dict containing project_id and tag_name in it (we did this for consistency) but we changed it to project_id and tag_name for clarity.",
+      "parentUuid": "ff346bd7_b2e44ee1",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_32f17e96",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 105
@@ -217,6 +361,24 @@
       "writtenOn": "2017-07-27T17:03:58Z",
       "side": 1,
       "message": "This bit is inconsistent with the documentation string in the abstract base class.",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_e5d63ec4",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T19:22:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_32f17e96",
       "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -274,6 +436,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_05270215",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T19:22:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_15ee64b3",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_754010a6",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 105
@@ -325,6 +505,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_450d0a8f",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T19:22:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_95481487",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_15e1c42a",
         "filename": "keystone/resource/core.py",
         "patchSetId": 105
@@ -353,6 +551,24 @@
       "writtenOn": "2017-07-27T17:03:58Z",
       "side": 1,
       "message": "Shouldn\u0027t this be done by the FK constraint?",
+      "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_c5d9fa22",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 105
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-07-28T19:22:49Z",
+      "side": 1,
+      "message": "It does. this is for tests. cascade\u003dTrue is only passed in as a kwarg on tests (eg. test_delete_project_cascade)",
+      "parentUuid": "ff346bd7_151664f2",
       "revId": "6e95c3753061a3008f514606aa16fc3ae56068c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
