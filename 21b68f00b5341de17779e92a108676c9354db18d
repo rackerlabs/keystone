@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_e5f1c702",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2125,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-28T15:48:06Z",
+      "side": 1,
+      "message": "With federated identity - you shouldn\u0027t need to create the user before you authenticate. The SAML assertion should prove the identity of the user authenticating.",
+      "revId": "21b68f00b5341de17779e92a108676c9354db18d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_8571db78",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2160,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-28T15:48:06Z",
+      "side": 1,
+      "message": "This doesn\u0027t fail when using /v3/auth/projects API.",
+      "revId": "21b68f00b5341de17779e92a108676c9354db18d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
