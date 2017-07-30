@@ -1,0 +1,9 @@
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Workflow+1: Colleen Murphy <colleen@gazlene.net>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Sun, 30 Jul 2017 12:07:23 +0000
+Reviewed-on: https://review.openstack.org/487465
+Project: openstack/keystone
+Branch: refs/heads/master
