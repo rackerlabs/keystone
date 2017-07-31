@@ -16,6 +16,24 @@
       "revId": "b9c0252a4c0433ef6cef392696a4affbb335fcaf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_c1cd405e",
+        "filename": "doc/source/install/keystone-install-ubuntu.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-07-31T17:56:59Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ff346bd7_b2b42781",
+      "revId": "b9c0252a4c0433ef6cef392696a4affbb335fcaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
