@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df3967d1_dbd091fa",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-31T16:39:59Z",
+      "side": 1,
+      "message": "This was moved to a different section of the administrator\u0027s guide. I don\u0027t think we should add it back to the Operator guide (which we\u0027re actively trying to consolidate into the administrator\u0027s guide).\n\nhttps://docs.openstack.org/keystone/latest/admin/token-provider.html",
+      "revId": "798e3eb41a332949a8ea4ef0cabe0a46ce90fb74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
