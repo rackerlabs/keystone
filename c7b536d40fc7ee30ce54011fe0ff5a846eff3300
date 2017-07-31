@@ -121,6 +121,30 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_cfcb301c",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1393,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-07-31T14:07:57Z",
+      "side": 1,
+      "message": "you could replace \"attr \u003d self.attribute_mapping.get(ldap_attr_name)\" with \"attr \u003d self.attribute_mapping[ldap_attr_name]\" and that will raise an exception if ldap_attr_name isn\u0027t part of the mapping.",
+      "parentUuid": "df3967d1_a7e6da15",
+      "range": {
+        "startLine": 1393,
+        "startChar": 15,
+        "endLine": 1393,
+        "endChar": 19
+      },
+      "revId": "c7b536d40fc7ee30ce54011fe0ff5a846eff3300",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_22fc68b3",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 9
