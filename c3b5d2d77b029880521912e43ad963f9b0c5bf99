@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df3967d1_bbd70dc0",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-31T16:47:25Z",
+      "side": 0,
+      "message": "This use to set up testshib, but now it looks like it only does keystone as an idp. Is it useful to offer both paths?",
+      "revId": "c3b5d2d77b029880521912e43ad963f9b0c5bf99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

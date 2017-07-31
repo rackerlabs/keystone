@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df3967d1_3b19ddd6",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-31T16:47:25Z",
+      "side": 1,
+      "message": "nit: It would be nice if these env names were more description of which keystone we are talking about. We should also try and match the convention with the IDP_* envs above. Maybe we can refactor each to be more description of what they are?\n\n  TESTSHIB_IDP_METADATA_URL\u003d..\n  \u003csnip\u003e\n  KEYSTONE_IDP_METADATA_URL\u003d...\n  KEYSTONE_IDP_REMOTE_ID\u003d...",
+      "revId": "bab5fb68922b4eb0045653e48011c682ca242c9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
