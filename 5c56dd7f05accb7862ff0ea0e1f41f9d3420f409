@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df3967d1_3b367d05",
+        "filename": "keystone/common/api_version_request.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-31T17:06:08Z",
+      "side": 1,
+      "message": "This doesn\u0027t appear to be used anywhere.",
+      "revId": "5c56dd7f05accb7862ff0ea0e1f41f9d3420f409",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_5b63811b",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-31T17:06:08Z",
+      "side": 1,
+      "message": "We always have a URL in the request don\u0027t we? Can\u0027t we always assume the last case to work instead of inspecting the class and comparing it to the V2 and V3 controllers?",
+      "revId": "5c56dd7f05accb7862ff0ea0e1f41f9d3420f409",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_9b80c98d",
+        "filename": "keystone/version/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-31T17:06:08Z",
+      "side": 1,
+      "message": "Unrelated whitespace change.",
+      "revId": "5c56dd7f05accb7862ff0ea0e1f41f9d3420f409",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_9b59e95b",
+        "filename": "keystone/version/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-31T17:06:08Z",
+      "side": 1,
+      "message": "Hmm - I feel the complexity of this statement should encourage us to make the VersionFactory smarter.",
+      "revId": "5c56dd7f05accb7862ff0ea0e1f41f9d3420f409",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
