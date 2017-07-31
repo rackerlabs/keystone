@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_5e600fa6",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-07-31T17:07:29Z",
+      "side": 1,
+      "message": "Actually - having a URL isn\u0027t the problem, it\u0027s possible that the url might not contain a version (kind of like what devstack does). So basing this on the controller might be for the best?\n\nI\u0027m playing with this locally to see what it looks like.",
+      "parentUuid": "df3967d1_5b63811b",
+      "revId": "5c56dd7f05accb7862ff0ea0e1f41f9d3420f409",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df3967d1_9b80c98d",
         "filename": "keystone/version/controllers.py",
         "patchSetId": 13
