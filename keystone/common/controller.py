@@ -158,8 +158,23 @@ def protected_wrapper(self, f, check_function, request, filter_attr,
     check_function(self, request, prep_info, *args, **kwargs)
 
 
+class VersionData(object):
+
+    def __init__(self, version, min_version, max_version, status,
+                 last_updated):
+        self.version = version
+        self.min_version = min_version
+        self.max_version = max_version
+        self.status = status
+        self.last_updated = last_updated
+
+
 class V2Controller(wsgi.Application):
     """Base controller class for Identity API v2."""
+
+    version_object = VersionData(
+        '2.0', '2.0', '2.0', 'deprecated', '2016-08-04T00:00:00Z'
+    )
 
     def _normalize_domain_id(self, request, ref):
         """Fill in domain_id since v2 calls are not domain-aware.
@@ -342,6 +357,9 @@ class V3Controller(wsgi.Application):
     collection_name = 'entities'
     member_name = 'entity'
     get_member_from_driver = None
+    version_object = VersionData(
+        '3.0', '3.0', '3.8', 'stable', '2017-02-22T00:00:00Z'
+    )
 
     @classmethod
     def base_url(cls, context, path=None):

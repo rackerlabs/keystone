@@ -34,7 +34,6 @@ from six.moves import http_client
 import webob.dec
 import webob.exc
 
-from keystone.common import api_version_request
 from keystone.common import authorization
 from keystone.common import dependency
 from keystone.common import json_home
@@ -227,21 +226,7 @@ class Application(BaseApplication):
         })
 
         params = self._normalize_dict(params)
-
-        url = wsgiref.util.application_uri(req.environ)
-        version = None
-        vf = api_version_request.VersionFactory()
-        controller = importutils.import_class('keystone.common.controller')
-
-        if isinstance(self, controller.V3Controller):
-            version = vf.max_api_version
-        elif isinstance(self, controller.V2Controller):
-            version = vf.deprecated_api_version
-        elif url:
-            if "v3" in url:
-                version = vf.max_api_version
-            elif "v2.0" in url:
-                version = vf.deprecated_api_version
+        version = self.version_object.version
 
         try:
             result = method(req, **params)

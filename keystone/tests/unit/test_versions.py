@@ -23,6 +23,7 @@ from six.moves import http_client
 from testtools import matchers as tt_matchers
 import webob
 
+from keystone.common import controller
 from keystone.common import json_home
 from keystone.tests import unit
 from keystone.tests.unit import utils
@@ -1038,3 +1039,26 @@ class VersionBehindSslTestCase(unit.TestCase):
         expected = self._get_expected('https://%s:%s/' % (host_name,
                                                           host_port))
         self.assertThat(data, _VersionsEqual(expected))
+
+
+class VersionFactoryTestCase(unit.TestCase):
+
+    def test_v2_controller_returns_v2_version_object(self):
+        v2_controller = controller.V2Controller()
+        self.assertEqual(v2_controller.version_object.version, '2.0')
+        self.assertEqual(v2_controller.version_object.min_version, '2.0')
+        self.assertEqual(v2_controller.version_object.max_version, '2.0')
+        self.assertEqual(v2_controller.version_object.status, 'deprecated')
+        self.assertEqual(
+            v2_controller.version_object.last_updated, '2016-08-04T00:00:00Z'
+        )
+
+    def test_v3_controller_returns_v3_version_object(self):
+        v3_controller = controller.V3Controller()
+        self.assertEqual(v3_controller.version_object.version, '3.0')
+        self.assertEqual(v3_controller.version_object.min_version, '3.0')
+        self.assertEqual(v3_controller.version_object.max_version, '3.8')
+        self.assertEqual(v3_controller.version_object.status, 'stable')
+        self.assertEqual(
+            v3_controller.version_object.last_updated, '2017-02-22T00:00:00Z'
+        )
