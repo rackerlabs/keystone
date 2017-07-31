@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_a7e6da15",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1393,
+      "author": {
+        "id": 24005
+      },
+      "writtenOn": "2017-07-31T11:06:54Z",
+      "side": 1,
+      "message": "Sorry Matthew, it won\u0027t result in stack trace instead it will return empty list because in the conditional statement if obj[1].get(attr) and obj[1].get(attr)[0] \u003e\u003e obj[1].get(attr) would always be None because in the situation we discussed above, attr was None. So, I think we need to choose between raising an exception to have ldap attribute value needed or return the ldap_result as it is.",
+      "parentUuid": "df3967d1_408298ca",
+      "range": {
+        "startLine": 1393,
+        "startChar": 15,
+        "endLine": 1393,
+        "endChar": 19
+      },
+      "revId": "c7b536d40fc7ee30ce54011fe0ff5a846eff3300",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_22fc68b3",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 9
