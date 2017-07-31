@@ -145,6 +145,30 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_c49f8e4e",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1393,
+      "author": {
+        "id": 24005
+      },
+      "writtenOn": "2017-07-31T18:54:26Z",
+      "side": 1,
+      "message": "\"attr \u003d self.attribute_mapping[ldap_attr_name]\" will fix the case where _filter_ldap_result_by_attr is invoked with ldap_attr_name that isn\u0027t in self.attribute_mapping.\n\nBut it won\u0027t fix the case of below ldap configuration where \"group_name_attribute \u003d None\". \n\n[ldap]\ngroup_id_attribute \u003d cn\ngroup_name_attribute \u003d None\ngroup_desc_attribute \u003d fakedesc\n\nlets assume, _filter_ldap_result_by_attr is invoked with ldap_attr_name \u003d \"name\", at [0] and [1]  self.attribute_mapping was set with {\"name\": \"None\", \u0027description\u0027: \u0027fakedesc\u0027} from ldap config, then attr \u003d self.attribute_mapping[ldap_attr_name] will assign value of \"None\"(type\u003cstr\u003e) but won\u0027t raise any exception. So to handle such case explicitly checking for \"None\" or empty string and raising an exception.\n\n\n[0]\nhttps://github.com/openstack/keystone/blob/master/keystone/identity/backends/ldap/common.py#L1155\n[1]\nhttps://github.com/openstack/keystone/blob/master/keystone/identity/backends/ldap/core.py#L362",
+      "parentUuid": "df3967d1_cfcb301c",
+      "range": {
+        "startLine": 1393,
+        "startChar": 15,
+        "endLine": 1393,
+        "endChar": 19
+      },
+      "revId": "c7b536d40fc7ee30ce54011fe0ff5a846eff3300",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_22fc68b3",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 9
