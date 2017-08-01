@@ -155,6 +155,24 @@
       "revId": "5c56dd7f05accb7862ff0ea0e1f41f9d3420f409",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_43700fdd",
+        "filename": "keystone/version/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 23674
+      },
+      "writtenOn": "2017-08-01T18:42:18Z",
+      "side": 1,
+      "message": "This actually just has to do with the formatting from get_versions_list(). I was using the versions dict it returns since we already have it but I could create a version factory and get the version like that as well if you think that\u0027s better.",
+      "parentUuid": "df3967d1_9b59e95b",
+      "revId": "5c56dd7f05accb7862ff0ea0e1f41f9d3420f409",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
