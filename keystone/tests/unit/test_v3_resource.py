@@ -22,7 +22,6 @@ from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import test_v3
-from keystone.tests.unit import utils as test_utils
 
 
 CONF = keystone.conf.CONF
@@ -647,7 +646,6 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         ref['domain_id'] = self.domain['id']
         self.assertValidProjectResponse(r, ref)
 
-    @test_utils.wip('waiting for support for parent_id to imply domain_id')
     def test_create_project_with_parent_id_and_no_domain_id(self):
         """Call ``POST /projects``."""
         # With only the parent_id, the domain_id should be
@@ -661,6 +659,44 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                          r.result['project']['domain_id'])
         ref_child['domain_id'] = self.domain['id']
         self.assertValidProjectResponse(r, ref_child)
+
+    def test_create_project_with_parent_id_and_domain_id(self):
+        """Call ``POST /projects``."""
+        ref_child = unit.new_project_ref(parent_id=self.project['id'],
+                                         domain_id=self.project['domain_id'])
+        r = self.post(
+            '/projects',
+            body={'project': ref_child})
+        self.assertEqual(self.project['domain_id'],
+                         r.result['project']['domain_id'])
+        ref_child['domain_id'] = self.domain['id']
+        self.assertValidProjectResponse(r, ref_child)
+
+    def test_create_project_with_project_scoped_token(self):
+        # Create an authentication request for a project scoped token
+        auth = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            project_id=self.project['id'])
+
+        # Without domain_id and parent_id, the domain_id should be
+        # normalized to the domain of the project on the token, when
+        # using a project scoped token.
+        ref = unit.new_project_ref()
+        r = self.post(
+            '/projects',
+            auth=auth,
+            body={'project': ref})
+        ref['domain_id'] = self.project['domain_id']
+        self.assertValidProjectResponse(r, ref)
+
+    def test_create_project_with_parent_domain_and_domain_id_not_same(self):
+        ref = unit.new_project_ref(parent_id=self.project['id'],
+                                   domain_id=uuid.uuid4().hex)
+        self.post(
+            '/projects',
+            body={'project': ref},
+            expected_status=http_client.BAD_REQUEST)
 
     def _create_projects_hierarchy(self, hierarchy_size=1):
         """Create a single-branched project hierarchy with the specified size.

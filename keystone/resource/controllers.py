@@ -164,9 +164,8 @@ class ProjectV3(controller.V3Controller):
     def create_project(self, request, project):
         validation.lazy_validate(schema.project_create, project)
         ref = self._assign_unique_id(self._normalize_dict(project))
+        self._normalize_project_domain_id(request, ref)
 
-        if not ref.get('is_domain'):
-            ref = self._normalize_domain_id(request, ref)
         # Our API requires that you specify the location in the hierarchy
         # unambiguously. This could be by parent_id or, if it is a top level
         # project, just by providing a domain_id.
@@ -181,6 +180,34 @@ class ProjectV3(controller.V3Controller):
         except (exception.DomainNotFound, exception.ProjectNotFound) as e:
             raise exception.ValidationError(e)
         return ProjectV3.wrap_member(request.context_dict, ref)
+
+    def _normalize_project_domain_id(self, request, ref):
+        # For projects that are not acting as a domain, if "domain_id"
+        # is not specified, but "parent_id" is, then the domain ID of
+        # the parent will be used. If neither ID is specified, we will
+        # default to the domain that the client's token is scoped. If
+        # both IDs are specified, but they do not indicate the same
+        # domain, a "Bad Request (400)" will be returned.
+        if not ref.get('is_domain'):
+            parent_id = ref.get('parent_id')
+            domain_id = ref.get('domain_id')
+            if parent_id:
+                domain_id = self._check_parent_domain_id(parent_id,
+                                                         domain_id)
+            if not domain_id:
+                domain_id = (request.context.domain_id or
+                             request.context.project_domain_id)
+            ref['domain_id'] = domain_id
+
+    def _check_parent_domain_id(self, parent_id, domain_id):
+        if domain_id:
+            return domain_id
+        parent_ref = self.resource_api.get_project(parent_id)
+        if parent_ref.get('is_domain'):
+            ref_id = parent_ref.get('id')
+        else:
+            ref_id = parent_ref.get('domain_id')
+        return ref_id
 
     @controller.filterprotected('domain_id', 'enabled', 'name',
                                 'parent_id', 'is_domain')
