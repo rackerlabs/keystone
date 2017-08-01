@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df3967d1_a3769ba3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-08-01T18:49:33Z",
+      "side": 1,
+      "message": "\"domain scoped by the token\" (assuming that means either domain_id or project_domain_id from the token, as the code is doing today) should always yield an id, so you shouldn\u0027t need to rely on default domain as a backstop.\n\nAnd I didn\u0027t see anything for default domain in the code... did I miss it?",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 29
+      },
+      "revId": "97278557a0b817583fa8dd3a741ea34b01217f8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_a31a1b7a",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-08-01T18:49:33Z",
+      "side": 1,
+      "message": "the way you\u0027ve got this written, parent_id takes precedence over domain_id if both are present. Based on the comment above, I\u0027m thinking that\u0027s probably not intentional. May need an irc discussion of what the behavior should be in that case.\n\nWhatever we decide, we probably want to make clear in a comment here.",
+      "range": {
+        "startLine": 267,
+        "startChar": 16,
+        "endLine": 267,
+        "endChar": 47
+      },
+      "revId": "97278557a0b817583fa8dd3a741ea34b01217f8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_00cb1d72",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-08-01T18:49:33Z",
+      "side": 1,
+      "message": "I\u0027d prefer this just be an else. Would be a lot more readable, and consistent with whatever decision we make on parent_id vs. domain_id precedence.",
+      "range": {
+        "startLine": 269,
+        "startChar": 16,
+        "endLine": 269,
+        "endChar": 32
+      },
+      "revId": "97278557a0b817583fa8dd3a741ea34b01217f8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_964d1774",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-08-01T18:49:33Z",
+      "side": 1,
+      "message": "we should test the cases that:\n1) both parent_id and domain_id are specified.\n2) neither is specified and it\u0027s a domain-scoped token\n3) neither is specified and it\u0027s a project-scoped token",
+      "revId": "97278557a0b817583fa8dd3a741ea34b01217f8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
