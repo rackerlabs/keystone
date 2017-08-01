@@ -133,6 +133,24 @@
       "revId": "97278557a0b817583fa8dd3a741ea34b01217f8c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_2af6f8fa",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-01T21:14:36Z",
+      "side": 1,
+      "message": "It looks like 2 is tested here: https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_v3_resource.py#L616-L672\n\nBut we can definitely test 1 and 3",
+      "parentUuid": "df3967d1_964d1774",
+      "revId": "97278557a0b817583fa8dd3a741ea34b01217f8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
