@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df3967d1_aaa66852",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-08-01T21:43:15Z",
+      "side": 1,
+      "message": "remove \"either\"",
+      "range": {
+        "startLine": 15,
+        "startChar": 19,
+        "endLine": 15,
+        "endChar": 25
+      },
+      "revId": "401d07a4d99e27b02b64b53e9f5b007798ffbe80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
