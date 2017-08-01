@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_45224fa6",
+        "filename": "doc/source/cli/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-01T21:46:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df3967d1_aa7b08bc",
+      "revId": "2b89824413121f957356a9a868c1855821fb5dd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df3967d1_ca076c1c",
         "filename": "doc/source/index.rst",
         "patchSetId": 1
@@ -42,6 +60,24 @@
         "endLine": 104,
         "endChar": 63
       },
+      "revId": "2b89824413121f957356a9a868c1855821fb5dd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_c54abf53",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-01T21:46:36Z",
+      "side": 1,
+      "message": "That\u0027s a good point - I wondering how much of that type of documentation should be pulled into this section.",
+      "parentUuid": "df3967d1_ca076c1c",
       "revId": "2b89824413121f957356a9a868c1855821fb5dd5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
