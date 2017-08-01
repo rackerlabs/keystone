@@ -23,7 +23,6 @@ from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import test_v3
-from keystone.tests.unit import utils as test_utils
 
 
 CONF = keystone.conf.CONF
@@ -671,7 +670,6 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         ref['domain_id'] = self.domain['id']
         self.assertValidProjectResponse(r, ref)
 
-    @test_utils.wip('waiting for support for parent_id to imply domain_id')
     def test_create_project_with_parent_id_and_no_domain_id(self):
         """Call ``POST /projects``."""
         # With only the parent_id, the domain_id should be
