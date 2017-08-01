@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_540e878d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-01T20:12:13Z",
+      "side": 1,
+      "message": "Yeah it\u0027s here:\n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/controller.py#L620-L662\n\nBut realistically we should never hit this, so I can update the message.",
+      "parentUuid": "df3967d1_a3769ba3",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 29
+      },
+      "revId": "97278557a0b817583fa8dd3a741ea34b01217f8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df3967d1_a31a1b7a",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 1
@@ -59,6 +83,30 @@
       "writtenOn": "2017-08-01T18:49:33Z",
       "side": 1,
       "message": "I\u0027d prefer this just be an else. Would be a lot more readable, and consistent with whatever decision we make on parent_id vs. domain_id precedence.",
+      "range": {
+        "startLine": 269,
+        "startChar": 16,
+        "endLine": 269,
+        "endChar": 32
+      },
+      "revId": "97278557a0b817583fa8dd3a741ea34b01217f8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_74098b93",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-01T20:12:13Z",
+      "side": 1,
+      "message": "sure!",
+      "parentUuid": "df3967d1_00cb1d72",
       "range": {
         "startLine": 269,
         "startChar": 16,
