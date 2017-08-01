@@ -33,6 +33,40 @@
       "revId": "704037df7ff95847cd1d9dbdbee87aa0683c9c4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_0f0ea63a",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1280,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-08-01T21:19:26Z",
+      "side": 1,
+      "message": "This turns this from a basic string helper function to a network connection function, which could significantly affect performance and worries me. Have you considered it from that side?",
+      "revId": "704037df7ff95847cd1d9dbdbee87aa0683c9c4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_8a3724b1",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-08-01T21:19:26Z",
+      "side": 1,
+      "message": "This test is structured differently from any other test, so it would help to add comments to explain why it\u0027s different. For example, why are you creating a new LDAP model for this test? I would hope this could be tested with the real model with a couple of mocked methods/side effects?",
+      "revId": "704037df7ff95847cd1d9dbdbee87aa0683c9c4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
