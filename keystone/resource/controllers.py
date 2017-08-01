@@ -254,8 +254,39 @@ class ProjectV3(controller.V3Controller):
         validation.lazy_validate(schema.project_create, project)
         ref = self._assign_unique_id(self._normalize_dict(project))
 
+        # For regular projects (i.e. those not acting as a domain), if
+        # "domain_id" is not specified, but "parent_id" is specified, then
+        # the domain ID of the parent will be used. If neither "domain_id"
+        # or "parent_id" is specified, we will default to the domain to
+        # which the client's token is scoped. If both "domain_id`" and
+        # "parent_id" are specified, and they do not indicate the same
+        # domain, a "Bad Request (400)" will be returned.
         if not ref.get('is_domain'):
+            domain_id = ref.get('domain_id')
+            parent_id = ref.get('parent_id')
+            if parent_id and not domain_id:
+                parent_ref = self.resource_api.get_project(parent_id)
+                if parent_ref.get('is_domain'):
+                    domain_id = parent_ref.get('id')
+                else:
+                    domain_id = parent_ref.get('domain_id')
+            elif parent_id and domain_id:
+                parent_ref = self.resource_api.get_project(parent_id)
+                msg = _('Project domain_id does not match parent '
+                        'domain id.')
+                if parent_ref.get('is_domain'):
+                    if parent_ref.get('id') != domain_id:
+                        raise exception.ValidationError(msg)
+                else:
+                    if parent_ref.get('domain_id') != domain_id:
+                        raise exception.ValidationError(msg)
+            if not domain_id:
+                domain_id = request.context.domain_id
+            if not domain_id:
+                domain_id = request.context.project_domain_id
+            ref['domain_id'] = domain_id
             ref = self._normalize_domain_id(request, ref)
+
         # Our API requires that you specify the location in the hierarchy
         # unambiguously. This could be by parent_id or, if it is a top level
         # project, just by providing a domain_id.
