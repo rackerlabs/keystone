@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df3967d1_45d36e61",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-01T22:35:33Z",
+      "side": 1,
+      "message": "This can be reused for the global role stuff right? Since that appears to be the direction we\u0027re going based on the operator thread?",
+      "revId": "07ab0e05602cc1dc521ca96eca10b825c54194dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
