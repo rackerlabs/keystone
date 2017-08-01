@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "df3967d1_764f5392",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-08-01T19:13:07Z",
+      "side": 1,
+      "message": "a little more explanation of why would be nice",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 17
+      },
+      "revId": "6431e2be005572762a23a33e7932cb6457a87327",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df3967d1_56d1efcc",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 12
