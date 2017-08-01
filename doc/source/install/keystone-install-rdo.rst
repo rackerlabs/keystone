@@ -141,12 +141,85 @@ Configure the Apache HTTP server
       ServerName controller
 
    .. end
+   
+#. Create the ``/etc/httpd/conf.d/wsgi-keystone.conf`` file with the following
+   content:
+   
+   .. path /etc/httpd/conf.d/wsgi-keystone.conf
+   .. code-block:: apache
 
-#. Create a link to the ``/usr/share/keystone/wsgi-keystone.conf`` file:
+      Listen 5000
+      Listen 35357
 
-   .. code-block:: console
+      <VirtualHost *:5000>
+          WSGIDaemonProcess keystone-public processes=5 threads=1 user=keystone group=keystone \
+      display-name=%{GROUP}
+          WSGIProcessGroup keystone-public
+          WSGIScriptAlias / /usr/local/bin/keystone-wsgi-public
+          WSGIApplicationGroup %{GLOBAL}
+          WSGIPassAuthorization On
+          LimitRequestBody 114688
+          <IfVersion >= 2.4>
+            ErrorLogFormat "%{cu}t %M"
+          </IfVersion>
+          ErrorLog /var/log/httpd/keystone.log
+          CustomLog /var/log/httpd/keystone_access.log combined
 
-      # ln -s /usr/share/keystone/wsgi-keystone.conf /etc/httpd/conf.d/
+          <Directory /usr/local/bin>
+              <IfVersion >= 2.4>
+                  Require all granted
+              </IfVersion>
+              <IfVersion < 2.4>
+                  Order allow,deny
+                  Allow from all
+              </IfVersion>
+          </Directory>
+      </VirtualHost>
+
+      <VirtualHost *:35357>
+          WSGIDaemonProcess keystone-admin processes=5 threads=1 user=keystone group=keystone \
+      display-name=%{GROUP}
+          WSGIProcessGroup keystone-admin
+          WSGIScriptAlias / /usr/local/bin/keystone-wsgi-admin
+          WSGIApplicationGroup %{GLOBAL}
+          WSGIPassAuthorization On
+          LimitRequestBody 114688
+          <IfVersion >= 2.4>
+            ErrorLogFormat "%{cu}t %M"
+          </IfVersion>
+          ErrorLog /var/log/httpd/keystone.log
+          CustomLog /var/log/httpd/keystone_access.log combined
+
+          <Directory /usr/local/bin>
+              <IfVersion >= 2.4>
+                  Require all granted
+              </IfVersion>
+              <IfVersion < 2.4>
+                  Order allow,deny
+                  Allow from all
+              </IfVersion>
+          </Directory>
+      </VirtualHost>
+
+      Alias /identity /usr/local/bin/keystone-wsgi-public
+      <Location /identity>
+          SetHandler wsgi-script
+          Options +ExecCGI
+
+          WSGIProcessGroup keystone-public
+          WSGIApplicationGroup %{GLOBAL}
+          WSGIPassAuthorization On
+      </Location>
+
+      Alias /identity_admin /usr/local/bin/keystone-wsgi-admin
+      <Location /identity_admin>
+          SetHandler wsgi-script
+          Options +ExecCGI
+
+          WSGIProcessGroup keystone-admin
+          WSGIApplicationGroup %{GLOBAL}
+          WSGIPassAuthorization On
+      </Location>
 
    .. end
 
