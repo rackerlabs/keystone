@@ -59,6 +59,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_0b5a2329",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-01T15:42:11Z",
+      "side": 1,
+      "message": "We could pull this part out",
+      "parentUuid": "ff346bd7_b34a69a9",
+      "revId": "4ec6adeae530d6bbe06f4936fb4001b54449d6ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_133c95c6",
         "filename": "/COMMIT_MSG",
         "patchSetId": 11
@@ -110,6 +128,24 @@
       "writtenOn": "2017-07-25T15:55:48Z",
       "side": 1,
       "message": "you\u0027re calling check_protection but with the kwargs for check_policy. Either go back to check_policy and use  pol_base.IDENTITY % \u0027create_user\u0027 instead of just \u0027create_user\u0027 or construct and pass prep_info to check_protection.",
+      "revId": "4ec6adeae530d6bbe06f4936fb4001b54449d6ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_3370b9dc",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-01T15:42:11Z",
+      "side": 1,
+      "message": "will do",
+      "parentUuid": "ff346bd7_586d9c02",
       "revId": "4ec6adeae530d6bbe06f4936fb4001b54449d6ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
