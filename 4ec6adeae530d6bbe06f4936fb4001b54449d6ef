@@ -117,6 +117,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_5198de19",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-01T17:05:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_738d2130",
+      "revId": "4ec6adeae530d6bbe06f4936fb4001b54449d6ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff346bd7_586d9c02",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 11
@@ -209,6 +227,24 @@
       "writtenOn": "2017-07-25T15:55:48Z",
       "side": 1,
       "message": "either s/\u0027create_project\u0027/pol_base.IDENTITY % \u0027create_project\u0027/ or switch to using check_protection.",
+      "revId": "4ec6adeae530d6bbe06f4936fb4001b54449d6ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_11a2564c",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-01T17:05:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff346bd7_134b752b",
       "revId": "4ec6adeae530d6bbe06f4936fb4001b54449d6ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
