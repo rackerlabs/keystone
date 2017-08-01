@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df3967d1_56d1efcc",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-08-01T19:10:40Z",
+      "side": 1,
+      "message": "nit: check_policy (when called by check_protection) is going to merge prep_info[\u0027input_attr\u0027] and kwargs into the same dict, so you don\u0027t need to specify both if they\u0027re the same.",
+      "range": {
+        "startLine": 224,
+        "startChar": 12,
+        "endLine": 224,
+        "endChar": 32
+      },
+      "revId": "6431e2be005572762a23a33e7932cb6457a87327",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_36ed4b8b",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-08-01T19:10:40Z",
+      "side": 1,
+      "message": "nit: target_attr\u0027s default is None, so you don\u0027t really need to specify this.",
+      "range": {
+        "startLine": 229,
+        "startChar": 12,
+        "endLine": 229,
+        "endChar": 28
+      },
+      "revId": "6431e2be005572762a23a33e7932cb6457a87327",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_d64f1fbb",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-08-01T19:10:40Z",
+      "side": 1,
+      "message": "nit: check_policy (when called by check_protection) is going to merge prep_info[\u0027input_attr\u0027] and kwargs into the same dict, so you don\u0027t need to specify both if they\u0027re the same.",
+      "range": {
+        "startLine": 272,
+        "startChar": 12,
+        "endLine": 272,
+        "endChar": 32
+      },
+      "revId": "6431e2be005572762a23a33e7932cb6457a87327",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_f6f46389",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-08-01T19:10:40Z",
+      "side": 1,
+      "message": "nit: target_attr\u0027s default is None, so you don\u0027t really need to specify this.",
+      "range": {
+        "startLine": 277,
+        "startChar": 12,
+        "endLine": 277,
+        "endChar": 30
+      },
+      "revId": "6431e2be005572762a23a33e7932cb6457a87327",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
