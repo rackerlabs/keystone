@@ -16,6 +16,24 @@
       "revId": "07ab0e05602cc1dc521ca96eca10b825c54194dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_856ef692",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-01T22:39:44Z",
+      "side": 1,
+      "message": "I believe so, this is more just tweaking how the user/project creation references policy rules.",
+      "parentUuid": "df3967d1_45d36e61",
+      "revId": "07ab0e05602cc1dc521ca96eca10b825c54194dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
