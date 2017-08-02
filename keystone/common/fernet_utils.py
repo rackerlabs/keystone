@@ -222,7 +222,7 @@ class FernetUtils(object):
         LOG.info('Starting key rotation with %(count)s key files: '
                  '%(list)s', {
                      'count': len(key_files),
-                     'list': list(key_files.values())})
+                     'list': key_files.values()})
 
         # add a tmp new key to the rotation, which will be the *next* primary
         self._create_tmp_new_key(keystone_user_id, keystone_group_id)
