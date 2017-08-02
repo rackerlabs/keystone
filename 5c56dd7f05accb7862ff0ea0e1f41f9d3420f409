@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_5c7212e5",
+        "filename": "keystone/common/api_version_request.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 23674
+      },
+      "writtenOn": "2017-08-02T14:41:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df3967d1_3b367d05",
+      "revId": "5c56dd7f05accb7862ff0ea0e1f41f9d3420f409",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df3967d1_21352c47",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 13
@@ -135,6 +153,24 @@
       "writtenOn": "2017-07-31T17:06:08Z",
       "side": 1,
       "message": "Unrelated whitespace change.",
+      "revId": "5c56dd7f05accb7862ff0ea0e1f41f9d3420f409",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_3c818e90",
+        "filename": "keystone/version/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 23674
+      },
+      "writtenOn": "2017-08-02T14:41:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df3967d1_9b80c98d",
       "revId": "5c56dd7f05accb7862ff0ea0e1f41f9d3420f409",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
