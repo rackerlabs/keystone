@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df3967d1_01a3fab3",
+        "filename": "doc/source/install/keystone-install-ubuntu.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-02T18:14:36Z",
+      "side": 1,
+      "message": "This doesn\u0027t look like it\u0027s consistent with the RDO or SUSE guides. We should keep all of them in sync if we\u0027re going to make this change.",
+      "revId": "c52f9a9d1716a36bd9cdc65ac05e7aa10e955df3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
