@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_28eca9f1",
+        "filename": "doc/source/admin/identity-integrate-with-ldap.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-02T13:55:23Z",
+      "side": 0,
+      "message": "These options don\u0027t actually exist anymore. I went to look them up but they went away when we moved to full read-only access. It was mostly here as a way for deployments to move from read-write -\u003e read-only.",
+      "parentUuid": "df3967d1_e850e10c",
+      "revId": "bcae07ebdc1f3c87dc7d777dca7546e1bff77057",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f1d235d_89c074e2",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 4

@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_a812d907",
+        "filename": "doc/source/admin/identity-integrate-with-ldap.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-02T13:55:23Z",
+      "side": 1,
+      "message": "Good idea - I can\u0027t seem to find a consistent link to a man page though. I wonder if we should remove this bit then? Or refactor it to say something else. As a reader - it\u0027s frustrating to go research something you just read and you can\u0027t find anything.",
+      "parentUuid": "df3967d1_cd140f51",
+      "revId": "d65112995b02d715ce33006249bc5fabff5181db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df3967d1_28182973",
         "filename": "doc/source/admin/identity-integrate-with-ldap.rst",
         "patchSetId": 5
@@ -42,6 +60,24 @@
         "endLine": 153,
         "endChar": 55
       },
+      "revId": "d65112995b02d715ce33006249bc5fabff5181db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_48036db9",
+        "filename": "doc/source/admin/identity-integrate-with-ldap.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-02T13:55:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df3967d1_28182973",
       "revId": "d65112995b02d715ce33006249bc5fabff5181db",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_88d03521",
+        "filename": "doc/source/admin/identity-integrate-with-ldap.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-02T13:55:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f1a1f67_04557f1d",
+      "revId": "d65112995b02d715ce33006249bc5fabff5181db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_a4148b4f",
         "filename": "doc/source/admin/identity-integrate-with-ldap.rst",
         "patchSetId": 5
@@ -88,6 +142,24 @@
         "endLine": 411,
         "endChar": 29
       },
+      "revId": "d65112995b02d715ce33006249bc5fabff5181db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_e8a461bb",
+        "filename": "doc/source/admin/identity-integrate-with-ldap.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-02T13:55:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f1a1f67_a4148b4f",
       "revId": "d65112995b02d715ce33006249bc5fabff5181db",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
