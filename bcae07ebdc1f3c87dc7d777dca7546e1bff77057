@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "df3967d1_e850e10c",
+        "filename": "doc/source/admin/identity-integrate-with-ldap.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-08-02T13:46:55Z",
+      "side": 0,
+      "message": "are we losing this bit?",
+      "range": {
+        "startLine": 191,
+        "startChar": 0,
+        "endLine": 204,
+        "endChar": 32
+      },
+      "revId": "bcae07ebdc1f3c87dc7d777dca7546e1bff77057",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f1d235d_89c074e2",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 4
