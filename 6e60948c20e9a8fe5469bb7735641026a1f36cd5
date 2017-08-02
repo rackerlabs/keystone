@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df3967d1_0a8c2f34",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-08-02T19:32:47Z",
+      "side": 1,
+      "message": "Does this need a try/except in the case of a race for creating the domain?",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 38
+      },
+      "revId": "6e60948c20e9a8fe5469bb7735641026a1f36cd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
