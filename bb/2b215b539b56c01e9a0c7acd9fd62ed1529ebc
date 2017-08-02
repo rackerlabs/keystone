@@ -1,0 +1,13 @@
+Code-Review+1: Matthew Edmonds <edmondsw@us.ibm.com>
+Code-Review+1: Kristi Nikolla <knikolla@bu.edu>
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: Gage Hugo <gagehugo@gmail.com>
+Code-Review+2: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Workflow+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 02 Aug 2017 16:20:57 +0000
+Reviewed-on: https://review.openstack.org/485302
+Project: openstack/keystone
+Branch: refs/heads/master
