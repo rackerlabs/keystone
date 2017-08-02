@@ -40,6 +40,24 @@
       "revId": "6e60948c20e9a8fe5469bb7735641026a1f36cd5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_aa02c36d",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-08-02T19:36:19Z",
+      "side": 1,
+      "message": "possible. unlikely actually, was mis-reading as idp_id being used directly vs in the description.",
+      "parentUuid": "df3967d1_6aca9b4e",
+      "revId": "6e60948c20e9a8fe5469bb7735641026a1f36cd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
