@@ -43,6 +43,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_2873894f",
+        "filename": "doc/source/admin/identity-integrate-with-ldap.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-08-02T13:57:08Z",
+      "side": 1,
+      "message": "yeah maybe w ecan remove , \"and the possible flags are documented in the OpenLDAP manpages\"",
+      "parentUuid": "df3967d1_a812d907",
+      "revId": "d65112995b02d715ce33006249bc5fabff5181db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df3967d1_28182973",
         "filename": "doc/source/admin/identity-integrate-with-ldap.rst",
         "patchSetId": 5
