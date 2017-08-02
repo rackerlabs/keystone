@@ -22,6 +22,24 @@
       "revId": "6e60948c20e9a8fe5469bb7735641026a1f36cd5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_6aca9b4e",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-02T19:34:48Z",
+      "side": 1,
+      "message": "Oh - in the case two processes get a create_idp request and they generate the same random uuid for the domain not present in the reference?",
+      "parentUuid": "df3967d1_0a8c2f34",
+      "revId": "6e60948c20e9a8fe5469bb7735641026a1f36cd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
