@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df3967d1_3df044fe",
+        "filename": "keystone/common/api_version_request.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-08-03T14:06:17Z",
+      "side": 1,
+      "message": "I would rather not call this a Factory - that\u0027s not what it is https://www.tutorialspoint.com/design_pattern/factory_pattern.htm",
+      "revId": "e4342171921be823d9aa7d01819d3a1ff447fedd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_ddc7f895",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-08-03T14:06:17Z",
+      "side": 1,
+      "message": "Let\u0027s call this API_VERSION_REQUEST_HEADER the way nova does. It\u0027s not a version itself, it\u0027s a string representing a header name.",
+      "revId": "e4342171921be823d9aa7d01819d3a1ff447fedd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
