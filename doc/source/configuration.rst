@@ -873,7 +873,7 @@ service to initialize and update data within Keystone. Generally,
 ``keystone-manage`` is only used for operations that cannot be accomplished
 with the HTTP API, such data import/export and database migrations.
 
-.. include:: man/commands.rst
+.. include:: cli/commands.rst
 
 Supported clients
 =================
