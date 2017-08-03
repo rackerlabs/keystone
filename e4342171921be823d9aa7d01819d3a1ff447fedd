@@ -19,6 +19,64 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_5c054010",
+        "filename": "keystone/common/api_version_request.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-08-03T18:34:11Z",
+      "side": 1,
+      "message": "++. Don\u0027t really see much benefit in it being a class at all in fact, since nothing inside of it is instance specific. The properties below are also unnecessary and unpythonic.",
+      "parentUuid": "df3967d1_3df044fe",
+      "revId": "e4342171921be823d9aa7d01819d3a1ff447fedd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_1c7218ae",
+        "filename": "keystone/common/api_version_request.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-08-03T18:34:11Z",
+      "side": 1,
+      "message": "We could theoretically have more than one deprecated version. This limits us in that regard. I would argue that this should be a list of dictionaries. Where dictionaries have keys for \u0027version\u0027 and \u0027last_updated\u0027.",
+      "revId": "e4342171921be823d9aa7d01819d3a1ff447fedd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_7c8b641e",
+        "filename": "keystone/common/api_version_request.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-08-03T18:34:11Z",
+      "side": 1,
+      "message": "I feel strongly about not dividing the version information into multiple files and methods which is what we\u0027re doing here. Put all of these in a dictionary with the version as the key. So you have VERSIONS \u003d { \u0027v3\u0027: { \u0027status\u0027: \u0027stable\u0027, \u0027last_updated\u0027: date }, \u0027v2\u0027: {...} }. Have a list for DEPRECATED_VERSIONS \u003d [\u0027v2.0\u0027] where v2.0 is the key in the VERSIONS dictionary.",
+      "range": {
+        "startLine": 44,
+        "startChar": 12,
+        "endLine": 46,
+        "endChar": 49
+      },
+      "revId": "e4342171921be823d9aa7d01819d3a1ff447fedd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df3967d1_ddc7f895",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 14
@@ -30,6 +88,70 @@
       "writtenOn": "2017-08-03T14:06:17Z",
       "side": 1,
       "message": "Let\u0027s call this API_VERSION_REQUEST_HEADER the way nova does. It\u0027s not a version itself, it\u0027s a string representing a header name.",
+      "revId": "e4342171921be823d9aa7d01819d3a1ff447fedd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_a953cc38",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-08-03T18:34:11Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "df3967d1_ddc7f895",
+      "revId": "e4342171921be823d9aa7d01819d3a1ff447fedd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_fcaf54e0",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1066,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-08-03T18:34:11Z",
+      "side": 1,
+      "message": "Why use the factory and method at all? This is always going to be 2.0. Assuming 3 becomes deprecated in the future, this test is going to fail and have to be updated.",
+      "range": {
+        "startLine": 1066,
+        "startChar": 39,
+        "endLine": 1066,
+        "endChar": 64
+      },
+      "revId": "e4342171921be823d9aa7d01819d3a1ff447fedd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_bca9cc7c",
+        "filename": "keystone/version/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-08-03T18:34:11Z",
+      "side": 1,
+      "message": "comments in api_version_request apply. Please access stuff from there via v2.0 as a key rather than deprecated_version.",
+      "range": {
+        "startLine": 120,
+        "startChar": 8,
+        "endLine": 125,
+        "endChar": 70
+      },
       "revId": "e4342171921be823d9aa7d01819d3a1ff447fedd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
