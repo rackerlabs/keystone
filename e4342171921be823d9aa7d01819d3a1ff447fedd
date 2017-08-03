@@ -135,6 +135,30 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_ff0e2639",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1066,
+      "author": {
+        "id": 23674
+      },
+      "writtenOn": "2017-08-03T19:50:20Z",
+      "side": 1,
+      "message": "Good point really I should have used vf to define the URL as well as the point of the test is really not to test v2 or v3 headers vs sending the headers for the deprecated or max and getting the right versions back.",
+      "parentUuid": "df3967d1_fcaf54e0",
+      "range": {
+        "startLine": 1066,
+        "startChar": 39,
+        "endLine": 1066,
+        "endChar": 64
+      },
+      "revId": "e4342171921be823d9aa7d01819d3a1ff447fedd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df3967d1_bca9cc7c",
         "filename": "keystone/version/controllers.py",
         "patchSetId": 14
