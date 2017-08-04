@@ -1,0 +1,14 @@
+Code-Review+1: Matthew Edmonds <edmondsw@us.ibm.com>
+Code-Review+1: Kristi Nikolla <knikolla@bu.edu>
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+1: Huan Peng <penghuan@gohighsec.com>
+Code-Review+1: yang wang <wangy@rc.inesa.com>
+Code-Review+2: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Workflow+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 04 Aug 2017 16:54:26 +0000
+Reviewed-on: https://review.openstack.org/485818
+Project: openstack/keystone
+Branch: refs/heads/master
