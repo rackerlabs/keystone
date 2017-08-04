@@ -12,11 +12,9 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import datetime
 import sys
 
-from keystoneclient.common import cms
-from oslo_serialization import jsonutils
+from oslo_log import log
 import six
 
 from keystone.common import controller
@@ -31,6 +29,7 @@ from keystone.token.providers import common
 
 
 CONF = keystone.conf.CONF
+LOG = log.getLogger(__name__)
 
 
 def authentication_method_generator(request, auth):
@@ -223,21 +222,12 @@ class Auth(controller.V2Controller):
     @controller.v2_deprecated
     @controller.protected()
     def revocation_list(self, request):
-        if not CONF.token.revoke_by_id:
-            raise exception.Gone()
-        tokens = self.token_provider_api.list_revoked_tokens()
-
-        for t in tokens:
-            expires = t['expires']
-            if expires and isinstance(expires, datetime.datetime):
-                t['expires'] = utils.isotime(expires)
-        data = {'revoked': tokens}
-        json_data = jsonutils.dumps(data)
-        signed_text = cms.cms_sign_text(json_data,
-                                        CONF.signing.certfile,
-                                        CONF.signing.keyfile)
-
-        return {'signed': signed_text}
+        # NOTE(notmorgan): with PKI_SETUP removed, always raise "GONE". The
+        # PKI signing options have been deprecated for removal and are slated
+        # to be removed soon. The revocation_list was also only intended for
+        # use with the PKI tokens (regardless that it worked with UUID tokens)
+        # and it does not work with fernet tokens at all.
+        raise exception.Gone()
 
     @controller.v2_deprecated
     def endpoints(self, request, token_id):
