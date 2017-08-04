@@ -1210,14 +1210,13 @@ class V2TestCase(object):
             path='/v2.0/tokens/revoked',
             expected_status=http_client.UNAUTHORIZED)
 
-    def test_fetch_revocation_list_admin_200(self):
+    def test_fetch_revocation_list_admin_410(self):
         token = self.get_scoped_token()
         r = self.admin_request(
             method='GET',
             path='/v2.0/tokens/revoked',
             token=token,
-            expected_status=http_client.OK)
-        self.assertValidRevocationListResponse(r)
+            expected_status=http_client.GONE)
 
     def assertValidRevocationListResponse(self, response):
         self.assertIsNotNone(response.result['signed'])

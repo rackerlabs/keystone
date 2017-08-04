@@ -325,31 +325,12 @@ class Auth(controller.V3Controller):
 
     @controller.protected()
     def revocation_list(self, request):
-        if not CONF.token.revoke_by_id:
-            raise exception.Gone()
-
-        audit_id_only = 'audit_id_only' in request.params
-
-        tokens = self.token_provider_api.list_revoked_tokens()
-
-        for t in tokens:
-            expires = t['expires']
-            if not (expires and isinstance(expires, six.text_type)):
-                t['expires'] = utils.isotime(expires)
-            if audit_id_only:
-                t.pop('id', None)
-        data = {'revoked': tokens}
-
-        if audit_id_only:
-            # No need to obfuscate if no token IDs.
-            return data
-
-        json_data = jsonutils.dumps(data)
-        signed_text = cms.cms_sign_text(json_data,
-                                        CONF.signing.certfile,
-                                        CONF.signing.keyfile)
-
-        return {'signed': signed_text}
+        # NOTE(notmorgan): with PKI_SETUP removed, always raise "GONE". The
+        # PKI signing options have been deprecated for removal and are slated
+        # to be removed soon. The revocation_list was also only intended for
+        # use with the PKI tokens (regardless that it worked with UUID tokens)
+        # and it does not work with fernet tokens at all.
+        raise exception.Gone()
 
     def _combine_lists_uniquely(self, a, b):
         # it's most likely that only one of these will be filled so avoid
