@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_7cefcde8",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 1310,
+      "author": {
+        "id": 20401
+      },
+      "writtenOn": "2017-08-04T12:12:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df3967d1_5ccd402f",
+      "range": {
+        "startLine": 1310,
+        "startChar": 4,
+        "endLine": 1310,
+        "endChar": 7
+      },
+      "revId": "03a5a514d71352cd4e1d41d820e6a9154de98426",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df3967d1_df95a288",
         "filename": "keystone/tests/unit/assignment/test_core.py",
         "patchSetId": 5
@@ -36,6 +60,24 @@
       "writtenOn": "2017-08-03T18:55:03Z",
       "side": 1,
       "message": "I would like to see that creating a role without a description or removing the description of a role still works. This isn\u0027t tested since new_role_ref now always includes a description on the returned ref.",
+      "revId": "03a5a514d71352cd4e1d41d820e6a9154de98426",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_9ce4b10e",
+        "filename": "keystone/tests/unit/assignment/test_core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 20401
+      },
+      "writtenOn": "2017-08-04T12:12:32Z",
+      "side": 1,
+      "message": "At line 54 (def test_role_crud(self):) in the same file we are creating a role without description, i guess that is what you are looking for. If not let me know i\u0027ll add a 2 more test cases 1) for creating a role with out description 2) to remove the description of a role",
+      "parentUuid": "df3967d1_df95a288",
       "revId": "03a5a514d71352cd4e1d41d820e6a9154de98426",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
