@@ -81,6 +81,24 @@
       "revId": "03a5a514d71352cd4e1d41d820e6a9154de98426",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_aecdf385",
+        "filename": "keystone/tests/unit/assignment/test_core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-08-04T15:27:23Z",
+      "side": 1,
+      "message": "In `tests/unit/core.py`, you have updated new_role_ref to always have description in the returned dictionary. That means that the function in line 54 is actually creating a role with a description. Therefore the test above is a subset of this one.",
+      "parentUuid": "df3967d1_9ce4b10e",
+      "revId": "03a5a514d71352cd4e1d41d820e6a9154de98426",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
