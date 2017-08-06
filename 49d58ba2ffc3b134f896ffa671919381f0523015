@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf3e73b7_423bb4d0",
+        "filename": "doc/source/advanced-topics/configure_tokenless_x509.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-08-06T14:28:51Z",
+      "side": 1,
+      "message": "Looks like this was removed? https://review.openstack.org/#/c/477632/",
+      "revId": "49d58ba2ffc3b134f896ffa671919381f0523015",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf3e73b7_625b582e",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-08-06T14:28:51Z",
+      "side": 1,
+      "message": "This seems to 404 still, is it supposed to be /admin/identity-upgrading.html?",
+      "revId": "49d58ba2ffc3b134f896ffa671919381f0523015",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
