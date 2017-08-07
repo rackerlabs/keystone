@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf3e73b7_1505d2c2",
+        "filename": "doc/source/advanced-topics/federation/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-07T14:19:01Z",
+      "side": 1,
+      "message": "Providing a domain id or the domain id the local user belongs to? Judging by the conventions in the example below - the user must belong into the domain being referenced in order for this to work.",
+      "revId": "cb6b32cc59261afa00dcf55fcb34b275aaeb91b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
