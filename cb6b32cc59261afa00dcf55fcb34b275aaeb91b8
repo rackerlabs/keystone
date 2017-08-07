@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "bf3e73b7_b513a60d",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-08-07T14:22:11Z",
+      "side": 1,
+      "message": "It would make sense to also update this since we\u0027re touching this sentence. This is no longer the case, the user becomes a member of the domain of the identity provider.",
+      "range": {
+        "startLine": 175,
+        "startChar": 57,
+        "endLine": 176,
+        "endChar": 37
+      },
+      "revId": "cb6b32cc59261afa00dcf55fcb34b275aaeb91b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf3e73b7_1505d2c2",
         "filename": "doc/source/advanced-topics/federation/mapping_combinations.rst",
         "patchSetId": 1
@@ -13,6 +36,29 @@
       "writtenOn": "2017-08-07T14:19:01Z",
       "side": 1,
       "message": "Providing a domain id or the domain id the local user belongs to? Judging by the conventions in the example below - the user must belong into the domain being referenced in order for this to work.",
+      "revId": "cb6b32cc59261afa00dcf55fcb34b275aaeb91b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf3e73b7_3518d61b",
+        "filename": "doc/source/advanced-topics/federation/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-08-07T14:22:11Z",
+      "side": 1,
+      "message": "same comment.",
+      "range": {
+        "startLine": 436,
+        "startChar": 41,
+        "endLine": 437,
+        "endChar": 19
+      },
       "revId": "cb6b32cc59261afa00dcf55fcb34b275aaeb91b8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
