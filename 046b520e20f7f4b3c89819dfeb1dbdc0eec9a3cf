@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf3e73b7_0ca8281d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-08-07T18:38:22Z",
+      "side": 1,
+      "message": "the code changed is:\n\n    if *not* isinstance(obj, dict) and hasattr(obj, \u0027iteritems\u0027):\n        return dict(obj.iteritems())\n\nSo we\u0027re not using iteritems on dictionaries as this states",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 54
+      },
+      "revId": "046b520e20f7f4b3c89819dfeb1dbdc0eec9a3cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
