@@ -96,7 +96,7 @@ class SmarterEncoder(jsonutils.json.JSONEncoder):
 
     def default(self, obj):
         if not isinstance(obj, dict) and hasattr(obj, 'iteritems'):
-            return dict(obj.iteritems())
+            return dict(obj.items())
         return super(SmarterEncoder, self).default(obj)
 
 
