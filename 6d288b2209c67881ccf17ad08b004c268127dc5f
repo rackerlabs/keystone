@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf3e73b7_21065888",
+        "filename": "doc/source/admin/federated-identity.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-08-07T16:18:09Z",
+      "side": 1,
+      "message": "Maybe this one could be relative too?",
+      "revId": "6d288b2209c67881ccf17ad08b004c268127dc5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf3e73b7_819f444f",
+        "filename": "doc/source/advanced-topics/configure_tokenless_x509.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-08-07T16:18:09Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem to resolve, I think it needs a .html\n\nIs there a way we could not give preferential treatment to Ubuntu? We have the same install doc for rhel and suse too. Maybe just link to the install index page?",
+      "range": {
+        "startLine": 38,
+        "startChar": 43,
+        "endLine": 39,
+        "endChar": 23
+      },
+      "revId": "6d288b2209c67881ccf17ad08b004c268127dc5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
