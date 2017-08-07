@@ -2706,6 +2706,45 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         }
         limit_table.insert().values(limit_without_region).execute()
 
+    def test_migration_034_adds_description_to_role(self):
+        self.expand(33)
+        self.migrate(33)
+        self.contract(33)
+
+        role_table_name = 'role'
+        self.assertTableColumns(
+            role_table_name,
+            ['id', 'name', 'domain_id', 'extra']
+        )
+
+        self.expand(34)
+        self.migrate(34)
+        self.contract(34)
+
+        self.assertTableColumns(
+            role_table_name,
+            ['id', 'name', 'domain_id', 'extra', 'description']
+        )
+
+        role_table = sqlalchemy.Table(
+            role_table_name, self.metadata, autoload=True
+        )
+
+        role = {
+            'id': uuid.uuid4().hex,
+            'name': "test",
+            'domain_id': resource_base.NULL_DOMAIN_ID,
+            'description': "This is a string"
+        }
+        role_table.insert().values(role).execute()
+
+        role_without_description = {
+            'id': uuid.uuid4().hex,
+            'name': "test1",
+            'domain_id': resource_base.NULL_DOMAIN_ID
+        }
+        role_table.insert().values(role_without_description).execute()
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
