@@ -71,6 +71,26 @@ class UtilsTestCase(unit.BaseTestCase):
         self.assertRaises(ValueError, common_utils.resource_uuid,
                           value)
 
+    def test_remove_duplicate_dicts_from_list(self):
+        dict_list = []
+        dup_value = {
+            'id': 0,
+            'name': uuid.uuid4().hex,
+            'tags': ['foo', 0]
+        }
+        dict_list.append(dup_value)
+        for i in range(1, 10):
+            new_dict = {
+                'id': i,
+                'name': uuid.uuid4().hex,
+                'tags': ['foo', i]
+            }
+            dict_list.append(new_dict)
+        dict_list.append(dup_value)
+        # Should be 12 values in the list, remove the duplicate
+        result = common_utils.remove_duplicate_dicts_from_list(dict_list)
+        self.assertNotEqual(len(result), len(dict_list))
+
     def test_hash(self):
         password = 'right'
         wrong = 'wrongwrong'  # Two wrongs don't make a right
