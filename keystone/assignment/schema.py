@@ -30,7 +30,8 @@ role_create_v2 = {
 # Schema for Identity v3 API
 
 _role_properties = {
-    'name': parameter_types.name
+    'name': parameter_types.name,
+    'description': parameter_types.description
 }
 
 role_create = {
