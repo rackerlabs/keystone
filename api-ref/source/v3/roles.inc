@@ -128,6 +128,7 @@ Response Parameters
    - id: role_id_response_body
    - links: link_response_body
    - name: role_name_response_body
+   - description: role_description_response_body
 
 Response Example
 ----------------
@@ -167,6 +168,7 @@ Request Parameters
    - role: role
    - name: role_name_create_body
    - domain_id: role_domain_id_request_body
+   - description: role_description_create_body
 
 Request Example
 ---------------
@@ -190,6 +192,7 @@ Response Parameters
    - id: role_id_response_body
    - links: link_response_body
    - name: role_name_response_body
+   - description: role_description_response_body
 
 
 Show role details
@@ -232,6 +235,7 @@ Response Parameters
    - id: role_id_response_body
    - links: link_response_body
    - name: role_name_response_body
+   - description: role_description_response_body
 
 Response Example
 ----------------
@@ -272,6 +276,7 @@ Request Parameters
    - role_id: role_id_path
    - role: role
    - name: role_name_update_body
+   - description: role_description_update_body
 
 Request Example
 ---------------
@@ -289,6 +294,7 @@ Response Parameters
    - id: role_id_response_body
    - links: link_response_body
    - name: role_name_response_body
+   - description: role_description_response_body
 
 Response Example
 ----------------
