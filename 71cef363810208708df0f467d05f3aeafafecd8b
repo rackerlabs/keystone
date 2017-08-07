@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf3e73b7_60c9fe76",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 112
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-07T14:56:55Z",
+      "side": 0,
+      "message": "These were changed because lists aren\u0027t hashable",
+      "range": {
+        "startLine": 455,
+        "startChar": 18,
+        "endLine": 455,
+        "endChar": 77
+      },
+      "revId": "71cef363810208708df0f467d05f3aeafafecd8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf3e73b7_20b896c6",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 112
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-07T14:56:55Z",
+      "side": 0,
+      "message": "Put this back",
+      "revId": "71cef363810208708df0f467d05f3aeafafecd8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

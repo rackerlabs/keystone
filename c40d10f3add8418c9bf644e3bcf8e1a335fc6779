@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf3e73b7_c0b66ada",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 112
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-07T14:56:55Z",
+      "side": 1,
+      "message": "remove this",
+      "revId": "c40d10f3add8418c9bf644e3bcf8e1a335fc6779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
