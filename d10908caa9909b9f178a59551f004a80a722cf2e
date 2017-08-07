@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf3e73b7_16edd5ee",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-08-07T17:21:36Z",
+      "side": 1,
+      "message": "nit: the",
+      "range": {
+        "startLine": 176,
+        "startChar": 3,
+        "endLine": 176,
+        "endChar": 10
+      },
+      "revId": "d10908caa9909b9f178a59551f004a80a722cf2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf3e73b7_d6d74d23",
+        "filename": "doc/source/advanced-topics/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-08-07T17:21:36Z",
+      "side": 1,
+      "message": "There is no need for this note anymore.",
+      "range": {
+        "startLine": 440,
+        "startChar": 0,
+        "endLine": 443,
+        "endChar": 29
+      },
+      "revId": "d10908caa9909b9f178a59551f004a80a722cf2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
