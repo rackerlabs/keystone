@@ -530,7 +530,14 @@ class Manager(manager.Manager):
 
         """
         project_id = payload['resource_info']
-        self.driver.unset_default_project_id(project_id)
+        try:
+            self.driver.unset_default_project_id(project_id)
+        except exception.Forbidden:
+            # NOTE(lbragstad): If the driver throws a Forbidden here, we can't
+            # clear the project ID from the user reference. This is the case
+            # when the LDAP driver is used because LDAP is read-only and throws
+            # a HTTP 403 Forbidden when attempting to write to it.
+            pass
 
     # Domain ID normalization methods
     def _set_domain_id_and_mapping(self, ref, domain_id, driver,

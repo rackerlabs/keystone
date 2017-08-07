@@ -1723,6 +1723,22 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
         self.assertEqual('crap', user_ref['id'])
         self.assertEqual('Foo Bar', user_ref['name'])
 
+    def test_identity_manager_catches_forbidden_when_deleting_a_project(self):
+        # The identity API registers a callback that listens for notifications
+        # that a project has been deleted. When it recieves one, it uses the ID
+        # and attempts to clear any users who have `default_project_id`
+        # attributes associated to that project. Since the LDAP backend is
+        # read-only, clearing the `default_project_id` raises a 403 Forbidden.
+        # Let's test that the exception is raised, caught, and handled properly
+        # by the identity API manager. A read-only LDAP shouldn't cause a 403
+        # Forbidden when the project has already been removed.
+        common_ldap.WRITABLE = False
+        project = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id
+        )
+        project = self.resource_api.create_project(project['id'], project)
+        self.resource_api.delete_project(project['id'])
+
 
 class LDAPLimitTests(unit.TestCase, identity_tests.LimitTests):
     def setUp(self):
