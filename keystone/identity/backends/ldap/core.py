@@ -89,7 +89,7 @@ class Identity(base.IdentityDriverBase):
     def unset_default_project_id(self, project_id):
         # This function is not implemented for the LDAP backend. The LDAP
         # backend is readonly.
-        self._disallow_write()
+        pass
 
     def get_user_by_name(self, user_name, domain_id):
         # domain_id will already have been handled in the Manager layer,
