@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "9f436f4f_2a1be01b",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-08T17:49:50Z",
+      "side": 1,
+      "message": "ah good catch!",
+      "parentUuid": "9f436f4f_2a4ac054",
+      "revId": "8483006312406f7b95b1673acbfaa48c2fec3b91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_3bf8d5c2",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 4
