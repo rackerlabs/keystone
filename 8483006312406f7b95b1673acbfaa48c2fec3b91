@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9f436f4f_d631a0ee",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-08T16:55:08Z",
+      "side": 1,
+      "message": "I don\u0027t think there is a bug for this currently (maybe there should be?). This change was spawned from [0] in which it was pointed out that we are currently not following the api-ref in terms of what the domain defaults to[1] (parent vs token). I am also curious to why the test-skipping which is removed in this change exists.\n\n[0] https://review.openstack.org/#/c/462670/\n\n[1] https://github.com/openstack/keystone/blob/master/api-ref/source/v3/parameters.yaml#L1162-L1168",
+      "parentUuid": "9f436f4f_fb536de1",
+      "revId": "8483006312406f7b95b1673acbfaa48c2fec3b91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_db9ae96c",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2017-08-08T16:32:58Z",
       "side": 1,
       "message": "Is this behavior documented in the API reference for POST /v3/projects/ ?",
+      "revId": "8483006312406f7b95b1673acbfaa48c2fec3b91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_1b3bd138",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-08T16:55:08Z",
+      "side": 1,
+      "message": "That comment was taken from [0].  This was brought up my edmondsw in this[1] change, which all this was pulled out from.\n\n[0] https://github.com/openstack/keystone/blob/master/api-ref/source/v3/parameters.yaml#L1162-L1168\n\n[1] https://review.openstack.org/#/c/462670/",
+      "parentUuid": "9f436f4f_db9ae96c",
       "revId": "8483006312406f7b95b1673acbfaa48c2fec3b91",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9f436f4f_1bf63191",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-08T16:55:08Z",
+      "side": 1,
+      "message": "I wondered about moving that logic into[0], but perhaps something for projects.\n\n[0] https://github.com/openstack/keystone/blob/master/keystone/common/controller.py#L620-L662",
+      "parentUuid": "9f436f4f_3bf8d5c2",
+      "revId": "8483006312406f7b95b1673acbfaa48c2fec3b91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_5baf1994",
         "filename": "keystone/tests/unit/test_v3_resource.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2017-08-08T16:32:58Z",
       "side": 1,
       "message": "This seems somewhat backwards incompatible. What happened before when domain_id wasn\u0027t specified in project reference?",
+      "revId": "8483006312406f7b95b1673acbfaa48c2fec3b91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_bbbde569",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 704,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-08T16:55:08Z",
+      "side": 1,
+      "message": "It defaults to the domain_id scoped from the token.[0]\n\n[0] https://github.com/openstack/keystone/blob/master/keystone/common/controller.py#L620-L662",
+      "parentUuid": "9f436f4f_5baf1994",
       "revId": "8483006312406f7b95b1673acbfaa48c2fec3b91",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
