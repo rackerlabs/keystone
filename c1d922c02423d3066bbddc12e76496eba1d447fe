@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9f436f4f_4b54e1ca",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-08-08T23:24:05Z",
+      "side": 1,
+      "message": "why, don\u0027t we want to list disabled projects when we list projects for a user?",
+      "range": {
+        "startLine": 335,
+        "startChar": 14,
+        "endLine": 337,
+        "endChar": 49
+      },
+      "revId": "c1d922c02423d3066bbddc12e76496eba1d447fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_4b63c1dd",
         "filename": "keystone/resource/core.py",
         "patchSetId": 3
@@ -13,6 +36,24 @@
       "writtenOn": "2017-08-08T23:17:40Z",
       "side": 1,
       "message": "this should be invalidated not only in this case\n\nalso when a grant for that \u003cuser\u003e is removed or added, when a new project is added (may have an inherited grant for that \u003cuser\u003e in a parent), when a project is also removed (for the same reason).\n\nreplace \u003cuser\u003e with \u003cgroup in which that user is in\u003e in the sentence above.\n\nwhen a group that user was in is deleted. when the user is added to a new group too.\n\nthose should be all cases.",
+      "revId": "c1d922c02423d3066bbddc12e76496eba1d447fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_8bc52991",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-08-08T23:24:05Z",
+      "side": 1,
+      "message": "hmm. it\u0027s using the same COMPUTED_ASSIGNMENTS_REGION that was already used. so all those cases are already covered. I am wondering why we really need this case, see question above",
+      "parentUuid": "9f436f4f_4b63c1dd",
       "revId": "c1d922c02423d3066bbddc12e76496eba1d447fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
