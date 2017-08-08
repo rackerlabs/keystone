@@ -530,7 +530,13 @@ class Manager(manager.Manager):
 
         """
         project_id = payload['resource_info']
-        self.driver.unset_default_project_id(project_id)
+        # NOTE(lbragstad): The data structure that holds the mapping of domain
+        # -> driver is a nested dictionary. If a project has been deleted,
+        # ensure each domain identity backend, including the default, has been
+        # called to clear the project id from user references stored in that
+        # specific backend.
+        for domain, d in self.domain_configs.items():
+            d['driver'].unset_default_project_id(project_id)
 
     # Domain ID normalization methods
     def _set_domain_id_and_mapping(self, ref, domain_id, driver,
