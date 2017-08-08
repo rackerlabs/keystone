@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "9f436f4f_2a4ac054",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-08-08T17:39:41Z",
+      "side": 1,
+      "message": "reading what you linked from the api ref, I realized this change is not handling the 400 case it describes [0].\n\n[0] https://github.com/openstack/keystone/blob/master/api-ref/source/v3/parameters.yaml#L1166-L1168",
+      "parentUuid": "9f436f4f_1b3bd138",
+      "revId": "8483006312406f7b95b1673acbfaa48c2fec3b91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_3bf8d5c2",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 4
