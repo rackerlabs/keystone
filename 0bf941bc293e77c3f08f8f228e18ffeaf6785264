@@ -36,6 +36,58 @@
     },
     {
       "key": {
+        "uuid": "9f436f4f_ed75f299",
+        "filename": "keystone/common/api_version_request.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-08-08T18:24:09Z",
+      "side": 1,
+      "message": "it\u0027s also incorrect in the sense that we don\u0027t really support 3.0 anymore... it\u0027s 2.0 or 3.8, period.",
+      "parentUuid": "9f436f4f_8eef8e86",
+      "revId": "0bf941bc293e77c3f08f8f228e18ffeaf6785264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_0db5d631",
+        "filename": "keystone/common/api_version_request.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-08-08T18:24:09Z",
+      "side": 1,
+      "message": "where does this date come from? And is it accurate?",
+      "revId": "0bf941bc293e77c3f08f8f228e18ffeaf6785264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_ed83b255",
+        "filename": "keystone/common/api_version_request.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-08-08T18:24:09Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "0bf941bc293e77c3f08f8f228e18ffeaf6785264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_ee097a31",
         "filename": "keystone/common/api_version_request.py",
         "patchSetId": 15
