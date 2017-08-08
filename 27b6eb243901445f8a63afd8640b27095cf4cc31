@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_b935e8f9",
+        "filename": "api-ref/source/v3/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-08T21:30:17Z",
+      "side": 1,
+      "message": "This section should probably go somewhere else, it looks weird here right before the list of operations. Or we could add a header below as well.",
+      "range": {
+        "startLine": 157,
+        "startChar": 0,
+        "endLine": 171,
+        "endChar": 45
+      },
+      "revId": "27b6eb243901445f8a63afd8640b27095cf4cc31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
