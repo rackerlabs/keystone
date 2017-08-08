@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_4b63c1dd",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-08-08T23:17:40Z",
+      "side": 1,
+      "message": "this should be invalidated not only in this case\n\nalso when a grant for that \u003cuser\u003e is removed or added, when a new project is added (may have an inherited grant for that \u003cuser\u003e in a parent), when a project is also removed (for the same reason).\n\nreplace \u003cuser\u003e with \u003cgroup in which that user is in\u003e in the sentence above.\n\nwhen a group that user was in is deleted. when the user is added to a new group too.\n\nthose should be all cases.",
+      "revId": "c1d922c02423d3066bbddc12e76496eba1d447fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
