@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9f436f4f_810d1c92",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-08T13:45:36Z",
+      "side": 1,
+      "message": "That\u0027s a fair point. The only thing this by us, given the point you just made, is a consistent 204 in the event a out-of-tree driver raises a 403 in this case. So, I guess the question is, how important is that case to us?",
+      "parentUuid": "9f436f4f_984b5486",
+      "revId": "40b964faa571a4df2a4ff5eb3ad2fb7367f940db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_989474ea",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
         "endLine": 1732,
         "endChar": 79
       },
+      "revId": "40b964faa571a4df2a4ff5eb3ad2fb7367f940db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_24cc3e88",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1732,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-08T13:45:36Z",
+      "side": 1,
+      "message": "Took a shot at mocking this - let me know if that covers your concerns.",
+      "parentUuid": "9f436f4f_989474ea",
       "revId": "40b964faa571a4df2a4ff5eb3ad2fb7367f940db",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
