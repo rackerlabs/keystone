@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_80e18d01",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-08T19:14:05Z",
+      "side": 1,
+      "message": "Closes-Bug: 1696308",
+      "revId": "38c48873b9e3dac2fce8643cad281b230afdffd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_201b011c",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-08T19:14:05Z",
+      "side": 1,
+      "message": "This doesn\u0027t result in a 2XX -\u003e 410 at all does it?",
+      "revId": "38c48873b9e3dac2fce8643cad281b230afdffd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
