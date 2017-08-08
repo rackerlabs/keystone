@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_416cd435",
+        "filename": "doc/source/install/keystone-install-obs.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-08-08T13:26:39Z",
+      "side": 1,
+      "message": "This is not correct, the package installs it to /usr/bin",
+      "revId": "89c67348caf1b2657b7d2b33096b8a64f80058cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_815bdc85",
+        "filename": "doc/source/install/keystone-install-obs.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-08-08T13:26:39Z",
+      "side": 1,
+      "message": "I really wouldn\u0027t change anything about this file without being really sure that it is necessary and correct for this distribution.",
+      "revId": "89c67348caf1b2657b7d2b33096b8a64f80058cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
