@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_9b7a2186",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 874,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-08T16:17:08Z",
+      "side": 0,
+      "message": "This whole bit could be removed from this section since our goal is to eventually consolidate this entire document into other parts of the documentation (like the admin guide or the configuration reference). This is now duplicated in both the CLI guide and the Operator Documentation.",
+      "revId": "fffc84db79fabb2bb35367387dd4b19e9dafb6d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
