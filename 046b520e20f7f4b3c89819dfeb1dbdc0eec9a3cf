@@ -22,6 +22,23 @@
       "revId": "046b520e20f7f4b3c89819dfeb1dbdc0eec9a3cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_2470be72",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-08-08T15:09:49Z",
+      "side": 1,
+      "message": "This wasn\u0027t using six. At a minimum the commit message should accurately state what changed and why.",
+      "revId": "046b520e20f7f4b3c89819dfeb1dbdc0eec9a3cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
