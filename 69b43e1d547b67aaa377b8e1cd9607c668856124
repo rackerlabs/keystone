@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_aaa595b7",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1740,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-08-08T14:48:48Z",
+      "side": 1,
+      "message": "The mocked object wouldn\u0027t raise the exception.",
+      "range": {
+        "startLine": 1740,
+        "startChar": 12,
+        "endLine": 1740,
+        "endChar": 53
+      },
+      "revId": "69b43e1d547b67aaa377b8e1cd9607c668856124",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
