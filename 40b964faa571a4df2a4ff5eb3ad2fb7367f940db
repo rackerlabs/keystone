@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_984b5486",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-08-08T09:09:24Z",
+      "side": 1,
+      "message": "I don\u0027t object to doing it this way but I wonder why not just change http://git.openstack.org/cgit/openstack/keystone/tree/keystone/identity/backends/ldap/core.py?id\u003d86b4b4a74717ed0e89f65cbca8683ea117bd9f19#n92 to stop raising the 401 in the first place? I don\u0027t think there\u0027s ever going to be a possibility that common_ldap.WRITABLE is true so I wonder why bother going the extra mile to check it.",
+      "revId": "40b964faa571a4df2a4ff5eb3ad2fb7367f940db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_989474ea",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1732,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-08-08T09:09:24Z",
+      "side": 1,
+      "message": "Technically this is only testing that we don\u0027t see an exception, not that it was raised, caught, and handled.",
+      "range": {
+        "startLine": 1732,
+        "startChar": 8,
+        "endLine": 1732,
+        "endChar": 79
+      },
+      "revId": "40b964faa571a4df2a4ff5eb3ad2fb7367f940db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
