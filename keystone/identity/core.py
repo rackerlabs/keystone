@@ -530,7 +530,10 @@ class Manager(manager.Manager):
 
         """
         project_id = payload['resource_info']
-        self.driver.unset_default_project_id(project_id)
+        from pprint import pprint
+        pprint(self.domain_configs)
+        for domain, d in self.domain_configs.items():
+            d['driver'].unset_default_project_id(project_id)
 
     # Domain ID normalization methods
     def _set_domain_id_and_mapping(self, ref, domain_id, driver,
