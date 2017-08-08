@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9f436f4f_10697024",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-08T16:11:21Z",
+      "side": 1,
+      "message": "This should be explicit in describing what endpoints are added and which one are coming later. It makes it easier to track and follow up if there are other patches that need to be proposed.",
+      "revId": "0bf941bc293e77c3f08f8f228e18ffeaf6785264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_8eef8e86",
         "filename": "keystone/common/api_version_request.py",
         "patchSetId": 15
@@ -30,6 +47,23 @@
       "writtenOn": "2017-08-08T10:09:17Z",
       "side": 1,
       "message": "What is the value of adding this new module instead of building it into keystone/version/controllers.py and keystone/version/__init__.py?",
+      "revId": "0bf941bc293e77c3f08f8f228e18ffeaf6785264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_507138e0",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-08T16:11:21Z",
+      "side": 1,
+      "message": "This doesn\u0027t feel very pythonic. The Application class is extended by the controller classes. It would make sense that the controllers (keystone.common.controller.V2Controller, keystone.common.controller.V3Controller) understand the versions they support and the Application (or controller class) simply sets the version based on properties defined in the controller. Or the version information can be pushed into the controller. The controller layers are still responsible for web-like functionality before passing control to the managers, so doing this there might not be a bad option if that makes more sense.\n\nYou can also ensure anything that inherits from or uses the common.controllers has the needed functionality.",
       "revId": "0bf941bc293e77c3f08f8f228e18ffeaf6785264",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
