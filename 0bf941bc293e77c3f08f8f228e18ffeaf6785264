@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_8eef8e86",
+        "filename": "keystone/common/api_version_request.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-08-08T10:09:17Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem to be used anywhere, and is also incorrect - we still support 2.0",
+      "revId": "0bf941bc293e77c3f08f8f228e18ffeaf6785264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_ee097a31",
+        "filename": "keystone/common/api_version_request.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-08-08T10:09:17Z",
+      "side": 1,
+      "message": "What is the value of adding this new module instead of building it into keystone/version/controllers.py and keystone/version/__init__.py?",
+      "revId": "0bf941bc293e77c3f08f8f228e18ffeaf6785264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_113bbfd1",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 793,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-08-08T10:09:17Z",
+      "side": 1,
+      "message": "Why not just call this \u0027version\u0027 for consistency?",
+      "range": {
+        "startLine": 793,
+        "startChar": 39,
+        "endLine": 793,
+        "endChar": 49
+      },
+      "revId": "0bf941bc293e77c3f08f8f228e18ffeaf6785264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
