@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_fb536de1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-08T16:32:58Z",
+      "side": 1,
+      "message": "Was the need for this behavior reported in a bug?",
+      "revId": "8483006312406f7b95b1673acbfaa48c2fec3b91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_db9ae96c",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-08T16:32:58Z",
+      "side": 1,
+      "message": "Is this behavior documented in the API reference for POST /v3/projects/ ?",
+      "revId": "8483006312406f7b95b1673acbfaa48c2fec3b91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_3bf8d5c2",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-08T16:32:58Z",
+      "side": 1,
+      "message": "Even though this logic is only used in this method - I\u0027m inclined to suggest pulling it out into its own method.",
+      "revId": "8483006312406f7b95b1673acbfaa48c2fec3b91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_5baf1994",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 704,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-08T16:32:58Z",
+      "side": 1,
+      "message": "This seems somewhat backwards incompatible. What happened before when domain_id wasn\u0027t specified in project reference?",
+      "revId": "8483006312406f7b95b1673acbfaa48c2fec3b91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
