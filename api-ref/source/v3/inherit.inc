@@ -17,7 +17,7 @@ Assign role to user on projects owned by domain
 
 .. rest_method::  PUT /v3/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/{role_id}/inherited_to_projects
 
-Relationship:
+Relationship_:
 ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-INHERIT/1.0/rel/domain_user_role_inherited_to_projects``
 
 Assigns a role to a user in projects owned by a domain.
@@ -42,7 +42,7 @@ Assign role to group on projects owned by a domain
 
 .. rest_method::  PUT /v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects
 
-Relationship:
+Relationship_:
 ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-INHERIT/1.0/rel/domain_group_role_inherited_to_projects``
 
 The inherited role is only applied to the owned projects (both existing and
@@ -65,7 +65,7 @@ List user's inherited project roles on a domain
 
 .. rest_method::  GET /v3/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/inherited_to_projects
 
-Relationship:
+Relationship_:
 ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-INHERIT/1.0/rel/domain_user_roles_inherited_to_projects``
 
 The list only contains those role assignments to the domain that were specified
@@ -93,7 +93,7 @@ List group's inherited project roles on domain
 
 .. rest_method::  GET /v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/inherited_to_projects
 
-Relationship:
+Relationship_:
 ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-INHERIT/1.0/rel/domain_group_roles_inherited_to_projects``
 
 The list only contains those role assignments to the domain that were specified
@@ -121,7 +121,7 @@ Check if user has an inherited project role on domain
 
 .. rest_method::  HEAD /v3/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/{role_id}/inherited_to_projects
 
-Relationship:
+Relationship_:
 ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-INHERIT/1.0/rel/domain_user_role_inherited_to_projects``
 
 Checks whether a user has an inherited project role in a domain.
@@ -143,7 +143,7 @@ Check if group has an inherited project role on domain
 
 .. rest_method::  HEAD /v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects
 
-Relationship:
+Relationship_:
 ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-INHERIT/1.0/rel/domain_group_role_inherited_to_projects``
 
 Checks whether a group has an inherited project role in a domain.
@@ -165,7 +165,7 @@ Revoke an inherited project role from user on domain
 
 .. rest_method::  DELETE /v3/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/{role_id}/inherited_to_projects
 
-Relationship:
+Relationship_:
 ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-INHERIT/1.0/rel/domain_user_role_inherited_to_projects``
 
 Revokes an inherited project role from a user in a domain.
@@ -187,7 +187,7 @@ Revoke an inherited project role from group on domain
 
 .. rest_method::  DELETE /v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects
 
-Relationship:
+Relationship_:
 ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-INHERIT/1.0/rel/domain_group_role_inherited_to_projects``
 
 Revokes an inherited project role from a group in a domain.
@@ -209,7 +209,7 @@ Assign role to user on projects in a subtree
 
 .. rest_method::  PUT /v3/OS-INHERIT/projects/{project_id}/users/{user_id}/roles/{role_id}/inherited_to_projects
 
-Relationship:
+Relationship_:
 ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-INHERIT/1.0/rel/project_user_role_inherited_to_projects``
 
 The inherited role assignment is anchored to a project and applied to its
@@ -238,7 +238,7 @@ Assign role to group on projects in a subtree
 
 .. rest_method::  PUT /v3/OS-INHERIT/projects/{project_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects
 
-Relationship:
+Relationship_:
 ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-INHERIT/1.0/rel/project_group_role_inherited_to_projects``
 
 The inherited role assignment is anchored to a project and applied to its
@@ -267,7 +267,7 @@ Check if user has an inherited project role on project
 
 .. rest_method::  HEAD /v3/OS-INHERIT/projects/{project_id}/users/{user_id}/roles/{role_id}/inherited_to_projects
 
-Relationship:
+Relationship_:
 ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-INHERIT/1.0/rel/project_user_role_inherited_to_projects``
 
 Checks whether a user has a role assignment with the ``inherited_to_projects`` flag in a project.
@@ -289,7 +289,7 @@ Check if group has an inherited project role on project
 
 .. rest_method::  HEAD /v3/OS-INHERIT/projects/{project_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects
 
-Relationship:
+Relationship_:
 ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-INHERIT/1.0/rel/project_group_role_inherited_to_projects``
 
 Checks whether a group has a role assignment with the ``inherited_to_projects`` flag in a project.
@@ -311,7 +311,7 @@ Revoke an inherited project role from user on project
 
 .. rest_method::  DELETE /v3/OS-INHERIT/projects/{project_id}/users/{user_id}/roles/{role_id}/inherited_to_projects
 
-Relationship:
+Relationship_:
 ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-INHERIT/1.0/rel/project_user_role_inherited_to_projects``
 
 Normal response codes: 204
@@ -331,7 +331,7 @@ Revoke an inherited project role from group on project
 
 .. rest_method::  DELETE /v3/OS-INHERIT/projects/{project_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects
 
-Relationship:
+Relationship_:
 ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-INHERIT/1.0/rel/project_group_role_inherited_to_projects``
 
 Normal response codes: 204
@@ -351,7 +351,7 @@ List role assignments
 
 .. rest_method::  GET /v3/role_assignments
 
-Relationship:
+Relationship_:
 ``https://docs.openstack.org/api/openstack-identity/3/rel/role_assignments``
 
 Optional query parameters:

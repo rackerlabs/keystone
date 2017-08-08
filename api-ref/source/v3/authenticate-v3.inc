@@ -99,7 +99,7 @@ Password authentication with unscoped authorization
 
 .. rest_method::  POST /v3/auth/tokens
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
+Relationship_: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
 
 Authenticates an identity and generates a token. Uses the password authentication method. Authorization is unscoped.
 
@@ -161,7 +161,7 @@ Password authentication with scoped authorization
 
 .. rest_method::  POST /v3/auth/tokens
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
+Relationship_: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
 
 Authenticates an identity and generates a token. Uses the password authentication method and scopes authorization to a project or domain.
 
@@ -231,7 +231,7 @@ Password authentication with explicit unscoped authorization
 
 .. rest_method::  POST /v3/auth/tokens
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
+Relationship_: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
 
 Authenticates an identity and generates a token. Uses the password authentication method with explicit unscoped authorization.
 
@@ -293,7 +293,7 @@ Token authentication with unscoped authorization
 
 .. rest_method::  POST /v3/auth/tokens
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
+Relationship_: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
 
 Authenticates an identity and generates a token. Uses the token authentication method. Authorization is unscoped.
 
@@ -339,7 +339,7 @@ Token authentication with scoped authorization
 
 .. rest_method::  POST /v3/auth/tokens
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
+Relationship_: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
 
 Authenticates an identity and generates a token. Uses the token authentication method and scopes authorization to a project or domain.
 
@@ -388,7 +388,7 @@ Token authentication with explicit unscoped authorization
 
 .. rest_method::  POST /v3/auth/tokens
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
+Relationship_: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
 
 Authenticates an identity and generates a token.
 Uses the token authentication method with explicit unscoped authorization.
@@ -439,7 +439,7 @@ Validate and show information for token
 
 .. rest_method::  GET /v3/auth/tokens
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
+Relationship_: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
 
 Validates and shows information for a token, including its expiration date and authorization scope.
 
@@ -495,7 +495,7 @@ Check token
 
 .. rest_method::  HEAD /v3/auth/tokens
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
+Relationship_: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
 
 Validates a token.
 
@@ -527,7 +527,7 @@ Revoke token
 
 .. rest_method::  DELETE /v3/auth/tokens
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
+Relationship_: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
 
 Revokes a token.
 
@@ -554,7 +554,7 @@ Get service catalog
 
 .. rest_method:: GET /v3/auth/catalog
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_catalog``
+Relationship_: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_catalog``
 
 New in version 3.3
 
@@ -597,7 +597,7 @@ Get available project scopes
 
 .. rest_method:: GET /v3/auth/projects
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_projects``
+Relationship_: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_projects``
 
 New in version 3.3
 
@@ -641,7 +641,7 @@ Get available domain scopes
 
 .. rest_method:: GET /v3/auth/domains
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_domains``
+Relationship_: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_domains``
 
 New in version 3.3
 

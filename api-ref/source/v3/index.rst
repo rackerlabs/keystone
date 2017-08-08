@@ -154,6 +154,25 @@ These features are considered stable as of February 20, 2013.
 - Partial updates are performed using the HTTP ``PATCH`` method
 - Token ID values no longer appear in URLs
 
+=============
+Relationships
+=============
+
+The entries within the operations below contain a relationship link, which
+appears as a valid URI, however these are actually
+URN (Uniform Resource Name), which are similar to GUID except it uses a URI
+syntax so that it is easier to be read. These links do not resolve to
+anything valid, but exist to show a relationship. For example:
+
+For a user representation there might be a dictionary key ``relationships``
+and the value would map URN to URL. So ``GET /user/1234/`` gives you a user
+representation. Then you could do something like
+``/user[relationships][http://does-not-exist#user-groups]`` to find a URL
+that can be used to retrieve a user's groups.
+
+=======================
+Identity API Operations
+=======================
 
 This page lists the Identity API operations in the following order:
 
@@ -186,3 +205,5 @@ This page lists the Identity API operations in the following order:
 .. include:: roles.inc
 .. include:: service-catalog.inc
 .. include:: users.inc
+
+.. _Relationship: index.html#relationships

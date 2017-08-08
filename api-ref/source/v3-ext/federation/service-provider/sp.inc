@@ -5,7 +5,7 @@ Register a service provider
 
 .. rest_method::  PUT /v3/OS-FEDERATION/service_providers/{id}
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/service_provider``
+Relationship_: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/service_provider``
 
 Normal response codes: 201
 
@@ -51,7 +51,7 @@ List service providers
 
 .. rest_method::  GET /v3/OS-FEDERATION/service_providers
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/service_providers``
+Relationship_: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/service_providers``
 
 Normal response codes: 200
 
@@ -75,7 +75,7 @@ Get Service Provider
 
 .. rest_method::  GET /v3/OS-FEDERATION/service_providers/{id}
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/service_provider``
+Relationship_: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/service_provider``
 
 Normal response codes: 200
 
@@ -111,7 +111,7 @@ Delete Service Provider
 
 .. rest_method::  DELETE /v3/OS-FEDERATION/service_providers/{id}
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/service_provider``
+Relationship_: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/service_provider``
 
 Normal response codes: 204
 
@@ -128,7 +128,7 @@ Update service provider
 
 .. rest_method::  PATCH /v3/OS-FEDERATION/service_providers/{id}
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/service_provider``
+Relationship_: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/service_provider``
 
 Normal response codes: 200
 

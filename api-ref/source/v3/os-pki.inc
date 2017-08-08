@@ -9,7 +9,7 @@ List revoked tokens
 
 .. rest_method:: GET /v3/auth/tokens/OS-PKI/revoked
 
-Relationship:
+Relationship_:
 ``https://docs.openstack.org/api/openstack-identity/3/rel/tokens/OS-PKI/revoked``
 
 Lists revoked PKI tokens.
