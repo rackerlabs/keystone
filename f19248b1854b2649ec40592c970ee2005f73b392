@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_f01c7e6b",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-09T23:26:35Z",
+      "side": 1,
+      "message": "Could summarize this a bit imo",
+      "range": {
+        "startLine": 257,
+        "startChar": 8,
+        "endLine": 263,
+        "endChar": 57
+      },
+      "revId": "f19248b1854b2649ec40592c970ee2005f73b392",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_3013265f",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-09T23:26:35Z",
+      "side": 1,
+      "message": "This is gross and needs to be moved/refactored.",
+      "range": {
+        "startLine": 264,
+        "startChar": 8,
+        "endLine": 288,
+        "endChar": 57
+      },
+      "revId": "f19248b1854b2649ec40592c970ee2005f73b392",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
