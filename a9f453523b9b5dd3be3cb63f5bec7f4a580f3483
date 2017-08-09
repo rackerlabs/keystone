@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_1ff5d857",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-09T18:17:26Z",
+      "side": 1,
+      "message": "How many calls were made previously?",
+      "revId": "a9f453523b9b5dd3be3cb63f5bec7f4a580f3483",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_3ff09c67",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-09T18:17:26Z",
+      "side": 1,
+      "message": "How many users where in the deployment?",
+      "revId": "a9f453523b9b5dd3be3cb63f5bec7f4a580f3483",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
