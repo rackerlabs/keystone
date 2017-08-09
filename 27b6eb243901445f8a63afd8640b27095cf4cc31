@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9f436f4f_6cbc4905",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-09T14:32:37Z",
+      "side": 1,
+      "message": "I wonder if all of these are needed? Or if we can have a single blanket statement like we do in index.rst?",
+      "revId": "27b6eb243901445f8a63afd8640b27095cf4cc31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_b935e8f9",
         "filename": "api-ref/source/v3/index.rst",
         "patchSetId": 1
