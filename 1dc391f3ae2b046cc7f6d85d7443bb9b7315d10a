@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_abd0cef8",
+        "filename": "api-ref/source/v3-ext/index.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-09T20:47:46Z",
+      "side": 1,
+      "message": "s/So//\n\nIsolating this line out on it\u0027s own seems a little odd. It feels like there should be some code after it since it ends with a colon. Maybe work this into the next paragraph?",
+      "revId": "1dc391f3ae2b046cc7f6d85d7443bb9b7315d10a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
