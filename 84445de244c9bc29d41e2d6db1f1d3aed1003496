@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_09000a67",
+        "filename": "api-ref/source/v3/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-09T16:50:26Z",
+      "side": 1,
+      "message": "I think this statement will suffice for now. If we keep getting questions on Relationships then we can look at ways to advertise this better.",
+      "revId": "84445de244c9bc29d41e2d6db1f1d3aed1003496",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
