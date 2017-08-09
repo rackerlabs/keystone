@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_6cffa9aa",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-09T14:36:32Z",
+      "side": 1,
+      "message": "Extra newline here.",
+      "revId": "51a7b1dfbb05d9191ea618944b4741d4d08c0c09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_0c281d32",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-09T14:36:32Z",
+      "side": 1,
+      "message": "nit: \n\n  A user\u0027s default project must not be a domain.",
+      "revId": "51a7b1dfbb05d9191ea618944b4741d4d08c0c09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
