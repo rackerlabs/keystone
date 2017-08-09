@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_47a836da",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-09T21:06:53Z",
+      "side": 1,
+      "message": "This is apparently necessary because the default driver doesn\u0027t appear to be in the self.domain_configs dictionary...",
+      "revId": "980e324e22cd101f655b4e594a69128443c04643",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
