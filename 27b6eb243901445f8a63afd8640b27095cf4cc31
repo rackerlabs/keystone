@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9f436f4f_d2274c12",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-09T15:42:26Z",
+      "side": 1,
+      "message": "These should link to the blanket statement in index.rst. This may be unnecessary though.",
+      "parentUuid": "9f436f4f_6cbc4905",
+      "revId": "27b6eb243901445f8a63afd8640b27095cf4cc31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_b935e8f9",
         "filename": "api-ref/source/v3/index.rst",
         "patchSetId": 1
