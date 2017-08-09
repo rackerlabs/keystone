@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_9069b726",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-08-09T20:24:05Z",
+      "side": 1,
+      "message": "dicussed this on the IRC again\n\nthis is needed because, evne if the actual response from list_role_assignments will be the same after disabling a project, the return of list_projects_for_user would be different, because it does\n\n    return self.resource_api.list_projects_from_ids(project_ids)\n\nas we don\u0027t want to create another cache region just for this (and do not invalidate the region COMPUTED_ASSIGNMENTS_REGION when the assignments are actually still valid), I think it is fine to do this here",
+      "revId": "63124f703a81074793360c1b91711b6ee5a76196",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
