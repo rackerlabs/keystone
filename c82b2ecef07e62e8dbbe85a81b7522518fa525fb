@@ -16,6 +16,23 @@
       "revId": "c82b2ecef07e62e8dbbe85a81b7522518fa525fb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_3a9b0aca",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-09T18:33:14Z",
+      "side": 1,
+      "message": "This might require some rework, but another option might to do this in a meta class that performs validation on the class when it\u0027s instantiated. As a result you can register class existence with metaclasses [0].\n\nThat might be a fun exercise - I\u0027ll see if I can pick that up.\n\n\n[0] Item 34 from Effective Python :)",
+      "revId": "c82b2ecef07e62e8dbbe85a81b7522518fa525fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
