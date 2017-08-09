@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "9f436f4f_11d3a83a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-09T01:24:57Z",
+      "side": 1,
+      "message": "This is covering the case where: \n\n  - a user lists all projects they have access to via GET /v3/users/{user_id}/projects\n  - an admin disables a project the user has access to\n  - the user still sees the disable project in the list because the cache wasn\u0027t invalidated",
+      "parentUuid": "9f436f4f_4b54e1ca",
+      "revId": "c1d922c02423d3066bbddc12e76496eba1d447fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_4b63c1dd",
         "filename": "keystone/resource/core.py",
         "patchSetId": 3
