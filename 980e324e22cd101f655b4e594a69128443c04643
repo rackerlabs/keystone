@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9f436f4f_6a5adff3",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-08-09T21:51:47Z",
+      "side": 1,
+      "message": "You could have constructed a single iterator of the drivers:\n\n  drivers \u003d itertools.chain(self.domain_configs.values(), [{\u0027driver\u0027: self.driver}])\n  for d in drivers:\n      d[\u0027driver\u0027].unset_default_project_id(project_id)\n  except exception.Forbidden:\n      pass\n\nThis just compresses into a single try/except. This change isn\u0027t needed to accept the code and it may make it less readable overall. YMMV",
+      "range": {
+        "startLine": 533,
+        "startChar": 9,
+        "endLine": 533,
+        "endChar": 53
+      },
+      "revId": "980e324e22cd101f655b4e594a69128443c04643",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_47a836da",
         "filename": "keystone/identity/core.py",
         "patchSetId": 4
