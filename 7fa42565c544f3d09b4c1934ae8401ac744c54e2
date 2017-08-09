@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_12b83474",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-09T15:48:26Z",
+      "side": 1,
+      "message": "This is a rather later try/except that accepts a general assertion error - we should consider scoping this down to prevent the handling of unwanted issues.",
+      "revId": "7fa42565c544f3d09b4c1934ae8401ac744c54e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
