@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "9f436f4f_2ddd1170",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-09T22:41:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f436f4f_6a5adff3",
+      "revId": "980e324e22cd101f655b4e594a69128443c04643",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_47a836da",
         "filename": "keystone/identity/core.py",
         "patchSetId": 4
