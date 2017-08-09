@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_eb2136a1",
+        "filename": "api-ref/source/v3-ext/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-08-09T20:32:20Z",
+      "side": 1,
+      "message": "is there or not this ``relationships`` things in our APIs descriptions? Isn\u0027t this consistent so we can affirm \"there is\"",
+      "range": {
+        "startLine": 17,
+        "startChar": 26,
+        "endLine": 17,
+        "endChar": 42
+      },
+      "revId": "22b84a7ba312f323cbe48281cb9546d78d2744ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_6b4ae655",
+        "filename": "api-ref/source/v3-ext/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-08-09T20:32:20Z",
+      "side": 1,
+      "message": "remove this slash, it is confusing I thought this was a URL :-)\n\nwhat about doing as python and use the quotation marks?\nuser[\u0027relationships\u0027][\u0027http://does-not-exist#user-groups\u0027]",
+      "range": {
+        "startLine": 20,
+        "startChar": 2,
+        "endLine": 20,
+        "endChar": 3
+      },
+      "revId": "22b84a7ba312f323cbe48281cb9546d78d2744ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_eba4960a",
+        "filename": "api-ref/source/v3-ext/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-08-09T20:32:20Z",
+      "side": 1,
+      "message": "does this exist in keystone responses?",
+      "revId": "22b84a7ba312f323cbe48281cb9546d78d2744ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
