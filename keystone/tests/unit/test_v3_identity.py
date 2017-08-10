@@ -666,6 +666,22 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
         self.assertNotIn(new_password, log_fix.output)
 
+    def test_update_password_works(self):
+        for i in range(100):
+            user_ref = unit.create_user(
+                self.identity_api, domain_id=self.domain['id'])
+
+            new_password = uuid.uuid4().hex
+            auth_ref = self.build_authentication_request(
+                user_id=user_ref['id'], password=new_password)
+
+            self.patch('/users/%s' % user_ref['id'],
+                       body={'user': {'password': new_password}})
+
+            # auth with new credentials
+            self.post('/auth/tokens', body=auth_ref,
+                      expected_status=http_client.CREATED)
+
     def test_setting_default_project_id_to_domain_failed(self):
         """Call ``POST and PATCH /users`` default_project_id=domain_id.
 
