@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_17f478f1",
+        "filename": "keystone/server/backends.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-10T22:12:55Z",
+      "side": 1,
+      "message": "Most of the tests pass now that this has been rebased (about 23 tests still fail). If we get all tests passing and the other approach hasn\u0027t been squared away yet [0], we should add a note to refactor the registration pattern here in favor of something less error-prone.\n\n[0] https://review.openstack.org/#/c/492621/",
+      "revId": "58f6d125dba1e7287b96d17555331226c7800e7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
