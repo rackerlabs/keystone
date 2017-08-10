@@ -123,7 +123,6 @@ def validate_oauth_params(query_string):
         raise exception.ValidationError(message=msg)
 
 
-@dependency.provider('oauth_api')
 class Manager(manager.Manager):
     """Default pivot point for the OAuth1 backend.
 

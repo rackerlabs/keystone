@@ -85,7 +85,7 @@ class DomainConfigs(dict):
     lock = threading.Lock()
 
     def _load_driver(self, domain_config):
-        return manager.load_driver(Manager.driver_namespace,
+        return manager.load_driver(IdentityAPI.driver_namespace,
                                    domain_config['cfg'].identity.driver,
                                    domain_config['cfg'])
 
@@ -435,10 +435,9 @@ def exception_translated(exception_type):
 
 
 @notifications.listener
-@dependency.provider('identity_api')
 @dependency.requires('assignment_api', 'credential_api', 'id_mapping_api',
                      'resource_api', 'shadow_users_api', 'federation_api')
-class Manager(manager.Manager):
+class IdentityAPI(manager.Manager):
     """Default pivot point for the Identity backend.
 
     See :mod:`keystone.common.manager.Manager` for more details on how this
@@ -483,7 +482,7 @@ class Manager(manager.Manager):
     _GROUP = 'group'
 
     def __init__(self):
-        super(Manager, self).__init__(CONF.identity.driver)
+        super(IdentityAPI, self).__init__(CONF.identity.driver)
         self.domain_configs = DomainConfigs()
 
         self.event_callbacks = {
@@ -1418,7 +1417,6 @@ class Manager(manager.Manager):
         return user_dict
 
 
-@dependency.provider('id_mapping_api')
 class MappingManager(manager.Manager):
     """Default pivot point for the ID Mapping backend."""
 
@@ -1470,7 +1468,6 @@ class MappingManager(manager.Manager):
         ID_MAPPING_REGION.invalidate()
 
 
-@dependency.provider('shadow_users_api')
 class ShadowUsersManager(manager.Manager):
     """Default pivot point for the Shadow Users backend."""
 

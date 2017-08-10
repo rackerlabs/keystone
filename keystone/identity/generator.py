@@ -27,7 +27,6 @@ from keystone import exception
 CONF = keystone.conf.CONF
 
 
-@dependency.provider('id_generator_api')
 class Manager(manager.Manager):
     """Default pivot point for the identifier generator backend."""
 

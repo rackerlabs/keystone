@@ -46,10 +46,9 @@ MEMOIZE_COMPUTED_ASSIGNMENTS = cache.get_memoization_decorator(
 
 
 @notifications.listener
-@dependency.provider('assignment_api')
 @dependency.requires('credential_api', 'identity_api', 'resource_api',
                      'role_api')
-class Manager(manager.Manager):
+class AssignmentAPI(manager.Manager):
     """Default pivot point for the Assignment backend.
 
     See :class:`keystone.common.manager.Manager` for more details on how this
@@ -65,7 +64,7 @@ class Manager(manager.Manager):
 
     def __init__(self):
         assignment_driver = CONF.assignment.driver
-        super(Manager, self).__init__(assignment_driver)
+        super(AssignmentAPI, self).__init__(assignment_driver)
 
         self.event_callbacks = {
             notifications.ACTIONS.deleted: {
@@ -1074,9 +1073,8 @@ class Manager(manager.Manager):
             )
 
 
-@dependency.provider('role_api')
 @dependency.requires('assignment_api')
-class RoleManager(manager.Manager):
+class RoleAPI(manager.Manager):
     """Default pivot point for the Role backend."""
 
     driver_namespace = 'keystone.role'
@@ -1092,7 +1090,7 @@ class RoleManager(manager.Manager):
             assignment_manager = dependency.get_provider('assignment_api')
             role_driver = assignment_manager.default_role_driver()
 
-        super(RoleManager, self).__init__(role_driver)
+        super(RoleAPI, self).__init__(role_driver)
 
     def _append_null_domain_id(f):
         """Append a domain_id field to a role dict if it is not already there.

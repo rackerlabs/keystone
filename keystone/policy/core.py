@@ -24,7 +24,6 @@ from keystone import notifications
 CONF = keystone.conf.CONF
 
 
-@dependency.provider('policy_api')
 class Manager(manager.Manager):
     """Default pivot point for the Policy backend.
 

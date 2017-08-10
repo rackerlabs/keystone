@@ -41,9 +41,8 @@ MEMOIZE_COMPUTED_CATALOG = cache.get_memoization_decorator(
     region=COMPUTED_CATALOG_REGION)
 
 
-@dependency.provider('catalog_api')
 @dependency.requires('resource_api')
-class Manager(manager.Manager):
+class CatalogAPI(manager.Manager):
     """Default pivot point for the Catalog backend.
 
     See :mod:`keystone.common.manager.Manager` for more details on how this
@@ -58,7 +57,7 @@ class Manager(manager.Manager):
     _REGION = 'region'
 
     def __init__(self):
-        super(Manager, self).__init__(CONF.catalog.driver)
+        super(CatalogAPI, self).__init__(CONF.catalog.driver)
 
     def create_region(self, region_ref, initiator=None):
         # Check duplicate ID

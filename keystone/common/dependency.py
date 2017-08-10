@@ -36,7 +36,7 @@ _future_dependencies = {}
 _factories = {}
 
 
-def _set_provider(name, provider):
+def set_provider(name, provider):
     _original_provider, where_registered = _REGISTRY.get(name, (None, None))
     if where_registered:
         raise Exception('%s already has a registered provider, at\n%s' %
@@ -94,7 +94,7 @@ def provider(name):
             def __wrapped_init__(self, *args, **kwargs):
                 """Initialize the wrapped object and add it to the registry."""
                 init(self, *args, **kwargs)
-                _set_provider(name, self)
+                set_provider(name, self)
                 resolve_future_dependencies(__provider_name=name)
 
             return __wrapped_init__

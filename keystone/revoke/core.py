@@ -53,7 +53,6 @@ MEMOIZE = cache.get_memoization_decorator(
     region=REVOKE_REGION)
 
 
-@dependency.provider('revoke_api')
 class Manager(manager.Manager):
     """Default pivot point for the Revoke backend.
 

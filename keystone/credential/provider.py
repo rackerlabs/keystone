@@ -18,7 +18,6 @@ import keystone.conf
 CONF = keystone.conf.CONF
 
 
-@dependency.provider('credential_provider_api')
 class Manager(manager.Manager):
 
     driver_namespace = 'keystone.credential.provider'
