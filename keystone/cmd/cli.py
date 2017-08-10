@@ -1100,11 +1100,6 @@ class DomainConfigUpload(BaseApp):
 
     @staticmethod
     def main():
-        versionutils.report_deprecated_feature(
-            LOG,
-            "keystone-manage domain_config_upload is deprecated as of "
-            "Newton in favor of setting domain config options via the API "
-            "and may be removed in 'P' release.")
         dcu = DomainConfigUploadFiles()
         status = dcu.run()
         if status is not None:
