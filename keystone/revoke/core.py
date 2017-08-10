@@ -53,8 +53,7 @@ MEMOIZE = cache.get_memoization_decorator(
     region=REVOKE_REGION)
 
 
-@dependency.provider('revoke_api')
-class Manager(manager.Manager):
+class RevokeApi(manager.Manager):
     """Default pivot point for the Revoke backend.
 
     Performs common logic for recording revocations.
@@ -67,7 +66,7 @@ class Manager(manager.Manager):
     driver_namespace = 'keystone.revoke'
 
     def __init__(self):
-        super(Manager, self).__init__(CONF.revoke.driver)
+        super(RevokeApi, self).__init__(CONF.revoke.driver)
         self._register_listeners()
         self.model = revoke_model
 

@@ -44,9 +44,8 @@ extension.register_admin_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 extension.register_public_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 
 
-@dependency.provider('federation_api')
 @dependency.requires('resource_api')
-class Manager(manager.Manager):
+class FederationApi(manager.Manager):
     """Default pivot point for the Federation backend.
 
     See :mod:`keystone.common.manager.Manager` for more details on how this
@@ -57,7 +56,7 @@ class Manager(manager.Manager):
     driver_namespace = 'keystone.federation'
 
     def __init__(self):
-        super(Manager, self).__init__(CONF.federation.driver)
+        super(FederationApi, self).__init__(CONF.federation.driver)
 
     def create_idp(self, idp_id, idp):
         auto_created_domain = False

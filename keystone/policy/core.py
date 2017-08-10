@@ -14,7 +14,6 @@
 
 """Main entry point into the Policy service."""
 
-from keystone.common import dependency
 from keystone.common import manager
 import keystone.conf
 from keystone import exception
@@ -24,8 +23,7 @@ from keystone import notifications
 CONF = keystone.conf.CONF
 
 
-@dependency.provider('policy_api')
-class Manager(manager.Manager):
+class PolicyApi(manager.Manager):
     """Default pivot point for the Policy backend.
 
     See :mod:`keystone.common.manager.Manager` for more details on how this
@@ -38,7 +36,7 @@ class Manager(manager.Manager):
     _POLICY = 'policy'
 
     def __init__(self):
-        super(Manager, self).__init__(CONF.policy.driver)
+        super(PolicyApi, self).__init__(CONF.policy.driver)
 
     def create_policy(self, policy_id, policy, initiator=None):
         ref = self.driver.create_policy(policy_id, policy)

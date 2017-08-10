@@ -14,6 +14,7 @@
 
 import functools
 import inspect
+import re
 import time
 import types
 
@@ -21,6 +22,7 @@ from oslo_log import log
 import six
 import stevedore
 
+from keystone.common import dependency
 from keystone.i18n import _
 
 
@@ -149,6 +151,31 @@ class _TraceMeta(type):
         return type.__new__(meta, classname, bases, final_cls_dict)
 
 
+class DependencyRegistry(type):
+    """A metaclass that builds a registry of objects.
+
+    The old @dependency.provider() decorator used a naming convention for each
+    API. The keystone.identity.Manager() object would be exposed as
+    `identity_api`. The goal is to maintain the useability of
+    `self.identity_api.do_something()` but without requiring each subclass of
+    `keystone.common.manager.Manager` to know its "dependency name". We should
+    be able to get this information through the conventional naming of each
+    `Manager` subclass.
+
+    """
+
+    def register_class(name, cls):
+        parts = [p.lower() for p in re.split(r'([A-Z][a-z]*)', name) if p]
+        name = '_'.join(parts)
+        dependency.set_provider(name, cls)
+
+    def __new__(meta, name, bases, class_dict):
+        cls = type.__new__(meta, name, bases, class_dict)
+        DependencyRegistry.register_class(name, cls)
+        return cls
+
+
+@six.add_metaclass(DependencyRegistry)
 @six.add_metaclass(_TraceMeta)
 class Manager(object):
     """Base class for intermediary request layer.
