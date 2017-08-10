@@ -50,9 +50,8 @@ V3 = token_model.V3
 VERSIONS = token_model.VERSIONS
 
 
-@dependency.provider('token_provider_api')
 @dependency.requires('assignment_api', 'revoke_api')
-class Manager(manager.Manager):
+class TokenProviderApi(manager.Manager):
     """Default pivot point for the token provider backend.
 
     See :mod:`keystone.common.manager.Manager` for more details on how this
@@ -70,7 +69,7 @@ class Manager(manager.Manager):
     _persistence_manager = None
 
     def __init__(self):
-        super(Manager, self).__init__(CONF.token.provider)
+        super(TokenProviderApi, self).__init__(CONF.token.provider)
         self._register_callback_listeners()
 
     def _register_callback_listeners(self):

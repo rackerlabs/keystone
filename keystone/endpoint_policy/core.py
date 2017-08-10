@@ -25,9 +25,8 @@ CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
 
 
-@dependency.provider('endpoint_policy_api')
 @dependency.requires('catalog_api', 'policy_api')
-class Manager(manager.Manager):
+class EndpointPolicyApi(manager.Manager):
     """Default pivot point for the Endpoint Policy backend.
 
     See :mod:`keystone.common.manager.Manager` for more details on how this
@@ -38,7 +37,7 @@ class Manager(manager.Manager):
     driver_namespace = 'keystone.endpoint_policy'
 
     def __init__(self):
-        super(Manager, self).__init__(CONF.endpoint_policy.driver)
+        super(EndpointPolicyApi, self).__init__(CONF.endpoint_policy.driver)
 
     def _assert_valid_association(self, endpoint_id, service_id, region_id):
         """Assert that the association is supported.
