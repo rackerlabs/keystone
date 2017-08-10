@@ -34,8 +34,10 @@ class EndpointFilterCatalog(sql.Catalog):
 
         services = {}
 
-        dict_of_endpoint_refs = (self.catalog_api.
-                                 list_endpoints_for_project(project_id))
+        dict_of_endpoint_refs = {}
+        if project_id:
+            dict_of_endpoint_refs = (self.catalog_api.
+                                     list_endpoints_for_project(project_id))
 
         if (not dict_of_endpoint_refs and
                 CONF.endpoint_filter.return_all_endpoints_if_no_filter):
