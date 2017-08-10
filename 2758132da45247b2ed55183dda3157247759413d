@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_b2aa5acf",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 864,
+      "author": {
+        "id": 26325
+      },
+      "writtenOn": "2017-08-10T23:05:21Z",
+      "side": 1,
+      "message": "\u0027keystone-manage mapping_purge --help\u0027 now produces: \n(see https://bugs.launchpad.net/keystone/+bug/1645568\nfor previous output)\n\nkeystone-manage mapping_purge --help\nusage: keystone-manage [bootstrap|credential_migrate|credential_rotate|credential_setup|db_sync|db_version|doctor|domain_config_upload|fernet_rotate|fernet_setup|mapping_populate|mapping_purge|mapping_engine|pki_setup|saml_idp_metadata|token_flush] mapping_purge\n       [-h] [--all] [--domain-name DOMAIN_NAME] [--public-id PUBLIC_ID]\n       [--local-id LOCAL_ID] [--type {user,group}]\n\noptional arguments:\n  -h, --help            show this help message and exit\n\nOptions (At least one required):\n  --all                 Purge all mappings. If chosen, no others may be\n                        supplied.\n  --domain-name DOMAIN_NAME\n                        Purge any mappings for the domain specified.\n  --public-id PUBLIC_ID\n                        Purge the mapping for the Public ID specified.\n  --local-id LOCAL_ID   Purge the mappings for the Local ID specified.\n  --type {user,group}   Purge any mappings for the type specified.",
+      "range": {
+        "startLine": 864,
+        "startChar": 55,
+        "endLine": 864,
+        "endChar": 60
+      },
+      "revId": "2758132da45247b2ed55183dda3157247759413d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
