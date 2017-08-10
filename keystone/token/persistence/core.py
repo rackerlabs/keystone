@@ -168,8 +168,7 @@ class PersistenceManager(manager.Manager):
 
 
 @dependency.requires('token_provider_api')
-@dependency.provider('token_api')
-class Manager(object):
+class TokenApi(object):
     """The token_api provider.
 
     This class is a proxy class to the token_provider_api's persistence
@@ -178,7 +177,7 @@ class Manager(object):
 
     def __init__(self):
         # NOTE(morganfainberg): __init__ is required for dependency processing.
-        super(Manager, self).__init__()
+        super(TokenApi, self).__init__()
 
     def __getattr__(self, item):
         """Forward calls to the `token_provider_api` persistence manager."""

@@ -34,10 +34,9 @@ LOG = log.getLogger(__name__)
 MEMOIZE = cache.get_memoization_decorator(group='resource')
 
 
-@dependency.provider('resource_api')
 @dependency.requires('assignment_api', 'credential_api', 'domain_config_api',
                      'identity_api', 'trust_api')
-class Manager(manager.Manager):
+class ResourceApi(manager.Manager):
     """Default pivot point for the Resource backend.
 
     See :mod:`keystone.common.manager.Manager` for more details on how this
@@ -52,7 +51,7 @@ class Manager(manager.Manager):
 
     def __init__(self):
         resource_driver = CONF.resource.driver
-        super(Manager, self).__init__(resource_driver)
+        super(ResourceApi, self).__init__(resource_driver)
 
     def _get_hierarchy_depth(self, parents_list):
         return len(parents_list) + 1
@@ -876,8 +875,7 @@ class Manager(manager.Manager):
 MEMOIZE_CONFIG = cache.get_memoization_decorator(group='domain_config')
 
 
-@dependency.provider('domain_config_api')
-class DomainConfigManager(manager.Manager):
+class DomainConfigApi(manager.Manager):
     """Default pivot point for the Domain Config backend."""
 
     # NOTE(henry-nash): In order for a config option to be stored in the
@@ -926,7 +924,7 @@ class DomainConfigManager(manager.Manager):
     }
 
     def __init__(self):
-        super(DomainConfigManager, self).__init__(CONF.domain_config.driver)
+        super(DomainConfigApi, self).__init__(CONF.domain_config.driver)
 
     def _assert_valid_config(self, config):
         """Ensure the options in the config are valid.

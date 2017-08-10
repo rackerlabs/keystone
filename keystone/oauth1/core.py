@@ -123,8 +123,7 @@ def validate_oauth_params(query_string):
         raise exception.ValidationError(message=msg)
 
 
-@dependency.provider('oauth_api')
-class Manager(manager.Manager):
+class OauthApi(manager.Manager):
     """Default pivot point for the OAuth1 backend.
 
     See :mod:`keystone.common.manager.Manager` for more details on how this
@@ -139,7 +138,7 @@ class Manager(manager.Manager):
     _CONSUMER = "OS-OAUTH1:consumer"
 
     def __init__(self):
-        super(Manager, self).__init__(CONF.oauth1.driver)
+        super(OauthApi, self).__init__(CONF.oauth1.driver)
 
     def create_consumer(self, consumer_ref, initiator=None):
         consumer_ref = consumer_ref.copy()

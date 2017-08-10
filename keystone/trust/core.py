@@ -28,8 +28,7 @@ CONF = keystone.conf.CONF
 
 
 @dependency.requires('identity_api')
-@dependency.provider('trust_api')
-class Manager(manager.Manager):
+class TrustApi(manager.Manager):
     """Default pivot point for the Trust backend.
 
     See :mod:`keystone.common.manager.Manager` for more details on how this
@@ -42,7 +41,7 @@ class Manager(manager.Manager):
     _TRUST = "OS-TRUST:trust"
 
     def __init__(self):
-        super(Manager, self).__init__(CONF.trust.driver)
+        super(TrustApi, self).__init__(CONF.trust.driver)
         notifications.register_event_callback(
             notifications.ACTIONS.deleted, 'user',
             self._on_user_delete)
