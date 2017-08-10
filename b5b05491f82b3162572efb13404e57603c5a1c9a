@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_f6369fe7",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-08-10T19:03:25Z",
+      "side": 1,
+      "message": "Make this a private object.",
+      "range": {
+        "startLine": 154,
+        "startChar": 6,
+        "endLine": 154,
+        "endChar": 24
+      },
+      "revId": "b5b05491f82b3162572efb13404e57603c5a1c9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
