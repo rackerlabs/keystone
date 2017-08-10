@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "9f436f4f_ec3ecbd8",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-10T21:59:24Z",
+      "side": 1,
+      "message": "We do this already by invalidating the cache when a user is added or removed from a project: \n\nhttps://github.com/openstack/keystone/blob/6a1d5b0e4dad11a8c99fc2da187df5a36cf83f49/keystone/assignment/core.py#L181\n\nhttps://github.com/openstack/keystone/blob/6a1d5b0e4dad11a8c99fc2da187df5a36cf83f49/keystone/assignment/core.py#L222\n\nhttps://github.com/openstack/keystone/blob/6a1d5b0e4dad11a8c99fc2da187df5a36cf83f49/keystone/assignment/core.py#L289",
+      "parentUuid": "9f436f4f_0cb90f79",
+      "revId": "63124f703a81074793360c1b91711b6ee5a76196",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_acad6332",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 5
@@ -42,6 +60,24 @@
         "endLine": 244,
         "endChar": 33
       },
+      "revId": "63124f703a81074793360c1b91711b6ee5a76196",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_cc2547c4",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-10T21:59:24Z",
+      "side": 1,
+      "message": "Ditto",
+      "parentUuid": "9f436f4f_acad6332",
       "revId": "63124f703a81074793360c1b91711b6ee5a76196",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
