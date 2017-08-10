@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "9f436f4f_0cb90f79",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2017-08-10T21:55:35Z",
+      "side": 1,
+      "message": "I presume we will invalidate the cache if the user\u0027s project assignment changes?",
+      "range": {
+        "startLine": 226,
+        "startChar": 5,
+        "endLine": 226,
+        "endChar": 33
+      },
+      "revId": "63124f703a81074793360c1b91711b6ee5a76196",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_acad6332",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2017-08-10T21:55:35Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 244,
+        "startChar": 5,
+        "endLine": 244,
+        "endChar": 33
+      },
+      "revId": "63124f703a81074793360c1b91711b6ee5a76196",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_9069b726",
         "filename": "keystone/resource/core.py",
         "patchSetId": 5
