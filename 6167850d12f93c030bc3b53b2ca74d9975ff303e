@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_74ddeb6e",
+        "filename": "doc/source/admin/federated-identity.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-11T13:46:54Z",
+      "side": 0,
+      "message": "This link still works for me - but either is fine I think.",
+      "revId": "6167850d12f93c030bc3b53b2ca74d9975ff303e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
