@@ -22,6 +22,126 @@
       "revId": "2758132da45247b2ed55183dda3157247759413d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_c866382a",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1324,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-08-11T15:59:31Z",
+      "side": 1,
+      "message": "white space after test class",
+      "revId": "2758132da45247b2ed55183dda3157247759413d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_68b2ac96",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1325,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-08-11T15:59:31Z",
+      "side": 1,
+      "message": "unnecessary whitespace",
+      "revId": "2758132da45247b2ed55183dda3157247759413d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_c8c198e6",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1342,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-08-11T15:59:31Z",
+      "side": 1,
+      "message": "i dont think these are needed",
+      "range": {
+        "startLine": 1339,
+        "startChar": 0,
+        "endLine": 1342,
+        "endChar": 46
+      },
+      "revId": "2758132da45247b2ed55183dda3157247759413d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_887030de",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1349,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-08-11T15:59:31Z",
+      "side": 1,
+      "message": "Initialize the self.command s on the setup",
+      "revId": "2758132da45247b2ed55183dda3157247759413d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_488488b1",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1359,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-08-11T15:59:31Z",
+      "side": 1,
+      "message": "mockpatch is getting deprecated. replace with fixtures.MockPatchObject",
+      "range": {
+        "startLine": 1359,
+        "startChar": 24,
+        "endLine": 1359,
+        "endChar": 33
+      },
+      "revId": "2758132da45247b2ed55183dda3157247759413d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_487248e5",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1372,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-08-11T15:59:31Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 1372,
+        "startChar": 24,
+        "endLine": 1372,
+        "endChar": 33
+      },
+      "revId": "2758132da45247b2ed55183dda3157247759413d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
