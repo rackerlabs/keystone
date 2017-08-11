@@ -1,0 +1,13 @@
+Code-Review+1: Eric Fried <efried@us.ibm.com>
+Code-Review+1: Kristi Nikolla <knikolla@bu.edu>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+1: Nguyen Van Trung <trungnv@vn.fujitsu.com>
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Workflow+1: Colleen Murphy <colleen@gazlene.net>
+Code-Review+2: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 11 Aug 2017 20:14:35 +0000
+Reviewed-on: https://review.openstack.org/479998
+Project: openstack/keystone
+Branch: refs/heads/master
