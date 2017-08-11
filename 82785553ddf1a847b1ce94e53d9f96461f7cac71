@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_b72235a3",
+        "filename": "doc/source/advanced-topics/configure_tokenless_x509.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-08-11T14:12:34Z",
+      "side": 1,
+      "message": "working just fine now.",
+      "revId": "82785553ddf1a847b1ce94e53d9f96461f7cac71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
