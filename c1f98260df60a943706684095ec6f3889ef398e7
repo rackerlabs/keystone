@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_5f755bca",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 884,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-11T17:12:13Z",
+      "side": 1,
+      "message": "Unnecessary line break",
+      "revId": "c1f98260df60a943706684095ec6f3889ef398e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
