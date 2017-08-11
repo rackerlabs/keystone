@@ -38,8 +38,10 @@ WARNING::
     all data will be lost.
 """
 
+import datetime
 import json
 import os
+import pytz
 import uuid
 
 import fixtures
@@ -2352,6 +2354,47 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         self.contract(16)
         self.assertTableColumns(user_option,
                                 ['user_id', 'option_id', 'option_value'])
+
+    def test_migration_024_add_created_expires_at_int_columns_password(self):
+        self.expand(24)
+        self.migrate(23)
+        self.contract(23)
+
+        # Create User and Local User
+        user_table = sqlalchemy.Table('user', self.metadata, autoload=True)
+        user_id = uuid.uuid4().hex
+        user = {'id': user_id, 'enabled': True, 'domain_id': 'default'}
+        user_table.insert().values(user).execute()
+        local_user_table = sqlalchemy.Table('local_user', self.metadata,
+                                            autoload=True)
+        local_user = {
+            'id': 1, 'user_id': user_id, 'domain_id': user['domain_id'],
+            'name': 'name'}
+
+        local_user_table.insert().values(local_user).execute()
+
+        password_table = sqlalchemy.Table('password',
+                                          self.metadata, autoload=True)
+        password_data = {
+            'local_user_id': local_user['id'],
+            'created_at': datetime.datetime.utcnow(),
+            'expires_at': datetime.datetime.utcnow()}
+        password_table.insert().values(password_data).execute()
+
+        self.migrate(24)
+        passwords = list(password_table.select().execute())
+
+        epoch = datetime.datetime.fromtimestamp(0, tz=pytz.UTC)
+
+        for p in passwords:
+            c = (p.created_at.replace(tzinfo=pytz.UTC) - epoch).total_seconds()
+            e = (p.expires_at.replace(tzinfo=pytz.UTC) - epoch).total_seconds()
+            self.assertEqual(p.created_at_int, int(c * 1000000))
+            self.assertEqual(p.expires_at_int, int(e * 1000000))
+
+        # Test contract phase and ensure data can not be null
+        self.contract(24)
+        password_table.insert().values(password_data).execute()
 
 
 class MySQLOpportunisticFullMigration(FullMigration):
