@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_177c4a70",
+        "filename": "keystone/common/sql/data_migration_repo/versions/024_migrate_create_created_at_int_columns.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-13T04:43:56Z",
+      "side": 1,
+      "message": "There isn\u0027t anything to block the update or creation of passwords is there? Thinking abou the case where the expired_at changes during the migration. Or if a new password is created during the migration.",
+      "revId": "920e146f57e34ab1b533c5f08b7db106881dd176",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
