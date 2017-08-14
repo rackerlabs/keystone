@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9f436f4f_cd6617c2",
+        "filename": "keystone/common/sql/contract_repo/versions/024_contract_create_created_at_int_columns.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T21:45:52Z",
+      "side": 1,
+      "message": "Done. I talked to Sean about this in IRC [0].\n\n[0] http://eavesdrop.openstack.org/irclogs/%23openstack-release/%23openstack-release.2017-08-14.log.html#t2017-08-14T20:28:22",
+      "parentUuid": "9f436f4f_4ea222fe",
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_8e2fea3d",
         "filename": "keystone/common/sql/contract_repo/versions/024_contract_create_created_at_int_columns.py",
         "patchSetId": 7
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9f436f4f_8d5c8fed",
+        "filename": "keystone/common/sql/contract_repo/versions/024_contract_create_created_at_int_columns.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T21:45:52Z",
+      "side": 1,
+      "message": "Disregard.",
+      "parentUuid": "9f436f4f_8e2fea3d",
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_0e141a43",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 7
@@ -47,6 +83,24 @@
       "writtenOn": "2017-08-14T19:27:29Z",
       "side": 1,
       "message": "nit: need a space after `must` to avoid:\n\n  Programming Error: value to be stored mustbe a datetime object.",
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_8d112f07",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T21:45:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f436f4f_0e141a43",
       "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -140,6 +194,24 @@
         "endLine": 24,
         "endChar": 31
       },
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_4dcea782",
+        "filename": "keystone/common/sql/expand_repo/versions/024_expand_create_created_at_int_columns.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T21:45:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f436f4f_732eef92",
       "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -280,6 +352,24 @@
     },
     {
       "key": {
+        "uuid": "9f436f4f_6dd28b02",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2358,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T21:45:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f436f4f_0ea41aa5",
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_53e40be0",
         "filename": "releasenotes/notes/password-created-at-stored-as-int-abb59adda73fd78e.yaml",
         "patchSetId": 7
@@ -291,6 +381,24 @@
       "writtenOn": "2017-08-14T19:27:29Z",
       "side": 1,
       "message": "bug-1702211 to be consistent with other release notes (and to give readers a link to additional context in the bug report).\n\nhttps://docs.openstack.org/keystone/latest/contributor/release-notes.html",
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_cd68571e",
+        "filename": "releasenotes/notes/password-created-at-stored-as-int-abb59adda73fd78e.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T21:45:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f436f4f_53e40be0",
       "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -314,6 +422,24 @@
     },
     {
       "key": {
+        "uuid": "9f436f4f_ed631b41",
+        "filename": "releasenotes/notes/password-created-at-stored-as-int-abb59adda73fd78e.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T21:45:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f436f4f_13d20301",
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_536acbec",
         "filename": "releasenotes/notes/password-created-at-stored-as-int-abb59adda73fd78e.yaml",
         "patchSetId": 7
@@ -325,6 +451,24 @@
       "writtenOn": "2017-08-14T19:27:29Z",
       "side": 1,
       "message": "Same nit here as above.",
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_ad59938e",
+        "filename": "releasenotes/notes/password-created-at-stored-as-int-abb59adda73fd78e.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T21:45:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f436f4f_536acbec",
       "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
