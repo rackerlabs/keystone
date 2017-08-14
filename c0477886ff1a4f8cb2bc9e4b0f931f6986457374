@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9f436f4f_b3a697aa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-08-14T18:50:25Z",
+      "side": 1,
+      "message": "If an operator is using non-SQL resource, I\u0027d be shocked, short of carrying custom code they aren\u0027t contributing anyway. It is effectively impossible to do so for any non-EOL OpenStack releases.",
+      "parentUuid": "9f436f4f_18d10024",
+      "revId": "c0477886ff1a4f8cb2bc9e4b0f931f6986457374",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_dd012a3a",
         "filename": "keystone/conf/resource.py",
         "patchSetId": 1
@@ -70,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "9f436f4f_d3747b38",
+        "filename": "keystone/conf/resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-08-14T18:50:25Z",
+      "side": 1,
+      "message": "If SQL identity, in any way shape or form, is used, Resource is required, you cannot run non-SQL resource and any form of SQL identity. Non-SQL identity (LDAP as default), is exceedingly rare. No one is plugging their own resource backend.\n\nThe options are: 1) backport dropping FK migrations *or* 2) this fix. There are no other options.",
+      "parentUuid": "9f436f4f_988bb01d",
+      "revId": "c0477886ff1a4f8cb2bc9e4b0f931f6986457374",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_389ba466",
         "filename": "keystone/resource/core.py",
         "patchSetId": 1
@@ -81,6 +117,24 @@
       "writtenOn": "2017-08-14T18:08:43Z",
       "side": 1,
       "message": "What if a deployment is using something else in Ocata? When they upgrade to Pike, they see the deprecation, but they don\u0027t really have any time to migrate.",
+      "revId": "c0477886ff1a4f8cb2bc9e4b0f931f6986457374",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_93def30e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-08-14T18:50:25Z",
+      "side": 1,
+      "message": "They can\u0027t in Ocata either. This is not a Pike problem, the issue was introduced in Ocata and fixing it is backporting a FK drop to Ocata. This fix should be backported to Ocata as well, but I was focused on the Pike RC.",
+      "parentUuid": "9f436f4f_389ba466",
       "revId": "c0477886ff1a4f8cb2bc9e4b0f931f6986457374",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -115,6 +169,24 @@
       "writtenOn": "2017-08-14T18:08:43Z",
       "side": 1,
       "message": "This patch doesn\u0027t take into account the identity backend at all when determining which resource backend to use. It always uses the sql backend, regardless of the backend being used for identity.",
+      "revId": "c0477886ff1a4f8cb2bc9e4b0f931f6986457374",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_13fb2379",
+        "filename": "releasenotes/notes/resource-backend-sql-only-03154d8712b36bd0.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-08-14T18:50:25Z",
+      "side": 1,
+      "message": "That is correct. Almost every single deployment uses sql identity of some sort. If that is the case (even domain-specific drivers) you cannot use anything but resource SQL.",
+      "parentUuid": "9f436f4f_38596434",
       "revId": "c0477886ff1a4f8cb2bc9e4b0f931f6986457374",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
