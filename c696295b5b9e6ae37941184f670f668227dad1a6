@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "9f436f4f_a9c3c856",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-08-14T20:11:17Z",
+      "side": 1,
+      "message": "*shrug* this is something we have to have, so just send a notification. Usually \"adding\" is less of an issue than \"changing\"",
+      "parentUuid": "9f436f4f_8e292a8b",
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_ee955688",
         "filename": "keystone/common/sql/data_migration_repo/versions/024_migrate_create_created_at_int_columns.py",
         "patchSetId": 7
@@ -81,6 +99,24 @@
       "writtenOn": "2017-08-14T19:27:29Z",
       "side": 1,
       "message": "I think we need a big sticker/comment here explaining *why* we can\u0027t do the migration here. Our development process and documentation for operators says that this is the step that does the migration of data, but for this specific case, we\u0027re doing it in the contract phase.\n\nI think justifying it or explaining the reasoning in the comments will help avoid confusion in the future.",
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_0996544d",
+        "filename": "keystone/common/sql/data_migration_repo/versions/024_migrate_create_created_at_int_columns.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-08-14T20:11:17Z",
+      "side": 1,
+      "message": "I disagree, please feel free to add, but this is consistent with other no-op migrates.",
+      "parentUuid": "9f436f4f_ee955688",
       "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -174,6 +210,24 @@
     },
     {
       "key": {
+        "uuid": "9f436f4f_c99bac70",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-08-14T20:11:17Z",
+      "side": 1,
+      "message": "somewhat. the default is (server) 0,",
+      "parentUuid": "9f436f4f_0e4c1a40",
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_0ede5a6c",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 7
@@ -185,6 +239,24 @@
       "writtenOn": "2017-08-14T19:27:29Z",
       "side": 1,
       "message": "Does this need to be a hybrid_property? This looks like it\u0027s just comparing attributes of the class.",
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_a9986874",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-08-14T20:11:17Z",
+      "side": 1,
+      "message": "Not sure. Does it?",
+      "parentUuid": "9f436f4f_0ede5a6c",
       "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
