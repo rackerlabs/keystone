@@ -15,7 +15,7 @@
 
 # For more information on Devstack plugins, including a more detailed
 # explanation on when the different steps are executed please see:
-# http://docs.openstack.org/developer/devstack/plugins.html
+# https://docs.openstack.org/devstack/latest/plugins.html
 
 if [[ "$1" == "stack" && "$2" == "install" ]]; then
     # This phase is executed after the projects have been installed
