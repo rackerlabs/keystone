@@ -1,0 +1,8 @@
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Workflow+1: Lance Bragstad <lbragstad@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Mon, 14 Aug 2017 21:57:52 +0000
+Reviewed-on: https://review.openstack.org/492844
+Project: openstack/keystone
+Branch: refs/heads/master
