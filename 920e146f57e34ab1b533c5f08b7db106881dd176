@@ -16,6 +16,24 @@
       "revId": "920e146f57e34ab1b533c5f08b7db106881dd176",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_5da8ac8b",
+        "filename": "keystone/common/sql/data_migration_repo/versions/024_migrate_create_created_at_int_columns.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-08-14T05:19:01Z",
+      "side": 1,
+      "message": "Don\u0027t migrate when your nodes are active. There is no good way to manage this without explicitly locking the table. The \"rolling\" upgrade causes a lot of headaches, this is one of them.",
+      "parentUuid": "9f436f4f_177c4a70",
+      "revId": "920e146f57e34ab1b533c5f08b7db106881dd176",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
