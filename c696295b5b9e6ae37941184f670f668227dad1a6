@@ -2,6 +2,91 @@
   "comments": [
     {
       "key": {
+        "uuid": "9f436f4f_4ea222fe",
+        "filename": "keystone/common/sql/contract_repo/versions/024_contract_create_created_at_int_columns.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T19:27:29Z",
+      "side": 1,
+      "message": "We don\u0027t appear to have this in our requirements, test or otherwise. It is in global-requirements though [0].\n\nCan we add requirements like this after requirements freeze [1].\n\n[0] https://github.com/openstack/requirements/blob/master/global-requirements.txt#L277\n\n[1] https://releases.openstack.org/pike/schedule.html#p-rf",
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_8e2fea3d",
+        "filename": "keystone/common/sql/contract_repo/versions/024_contract_create_created_at_int_columns.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T19:27:29Z",
+      "side": 1,
+      "message": "The only reason we need this here is because we didn\u0027t specify the default in the expand phase of the migration, right? The created_at_int column is already not nullable according to the expand script.",
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_0e141a43",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T19:27:29Z",
+      "side": 1,
+      "message": "nit: need a space after `must` to avoid:\n\n  Programming Error: value to be stored mustbe a datetime object.",
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_8e292a8b",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T19:27:29Z",
+      "side": 1,
+      "message": "Also - Pike is in stringfreeze. How does this apply to that?",
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_ee955688",
+        "filename": "keystone/common/sql/data_migration_repo/versions/024_migrate_create_created_at_int_columns.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T19:27:29Z",
+      "side": 1,
+      "message": "I think we need a big sticker/comment here explaining *why* we can\u0027t do the migration here. Our development process and documentation for operators says that this is the step that does the migration of data, but for this specific case, we\u0027re doing it in the contract phase.\n\nI think justifying it or explaining the reasoning in the comments will help avoid confusion in the future.",
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_732eef92",
         "filename": "keystone/common/sql/expand_repo/versions/024_expand_create_created_at_int_columns.py",
         "patchSetId": 7
@@ -66,6 +151,108 @@
         "endLine": 26,
         "endChar": 53
       },
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_0e4c1a40",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T19:27:29Z",
+      "side": 1,
+      "message": "Is the comment here still valid? These definitions aren\u0027t setting defaults.",
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_0ede5a6c",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T19:27:29Z",
+      "side": 1,
+      "message": "Does this need to be a hybrid_property? This looks like it\u0027s just comparing attributes of the class.",
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_0ea41aa5",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2358,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T19:27:29Z",
+      "side": 1,
+      "message": "nit: could ensure the columns don\u0027t exist prior to expanding to 24:\n\n  self.expand(23)\n  self.migrate(23)\n  self.contract(23)\n\n  self.assertTableColumns(...)\n\n  self.expand(24)\n\n  self.assertTableColumns(\n      \u0027password\u0027,\n      [\u0027id\u0027, \u0027local_user_id\u0027, \u0027password\u0027, \u0027password_hash\u0027, \u0027created_at\u0027, \u0027created_at_in\u0027,\n       \u0027expires_at\u0027, \u0027expires_at_int\u0027]\n  )\n\n  ...",
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_53e40be0",
+        "filename": "releasenotes/notes/password-created-at-stored-as-int-abb59adda73fd78e.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T19:27:29Z",
+      "side": 1,
+      "message": "bug-1702211 to be consistent with other release notes (and to give readers a link to additional context in the bug report).\n\nhttps://docs.openstack.org/keystone/latest/contributor/release-notes.html",
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_13d20301",
+        "filename": "releasenotes/notes/password-created-at-stored-as-int-abb59adda73fd78e.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T19:27:29Z",
+      "side": 1,
+      "message": "created_at could be a literal.",
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_536acbec",
+        "filename": "releasenotes/notes/password-created-at-stored-as-int-abb59adda73fd78e.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T19:27:29Z",
+      "side": 1,
+      "message": "Same nit here as above.",
       "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
