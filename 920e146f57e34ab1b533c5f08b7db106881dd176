@@ -34,6 +34,23 @@
       "revId": "920e146f57e34ab1b533c5f08b7db106881dd176",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_7d8c9035",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2402,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-08-14T05:21:23Z",
+      "side": 1,
+      "message": "This needs to actually expect an exception and verify the created_at_int cannot be null.",
+      "revId": "920e146f57e34ab1b533c5f08b7db106881dd176",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
