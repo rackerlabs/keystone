@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_ceff32a9",
+        "filename": "keystone/common/sql/contract_repo/versions/015_contract_update_federated_user_domain.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2017-08-14T19:19:56Z",
+      "side": 1,
+      "message": "OK, I\u0027m going to pull the \"reduce boilerplate\" handle on this one again, this is all kinds of detailed, brittle stuff that can be 100% automated.   Internally it should be using alembic ops so that we don\u0027t need to go through the whole effort of autoloading the whole table which is completely unnecessary.\n\nthe one feature that isn\u0027t built into SQLAlchemy reflection right now is the ability to locate all the referents for a given column, so the API function will for now still refer to the names of tables we care about.  however, it can do everything else internally quite simply and will look like this:\n\n    from oslo_db.sqlalchemy.util import recreate_fks\n\n    with recreate_fks(\n        migrate_engine, \"user_table\", \n        referents\u003d[\n            \"local_user\", \"nonlocal_user\", \"project\"\n        ]):\n        user_table.c.domain_id.alter(nullable\u003dFalse)\n\nisn\u0027t that a lot nicer / easier to read?",
+      "revId": "6adbf27e74510f5049a442df6eacd903a7409e78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
