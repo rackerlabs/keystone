@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_3d6a76ec",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T18:08:43Z",
+      "side": 0,
+      "message": "Why not just keep this as-is and use the default sql backend?",
+      "revId": "99b3641fa0eb99d903488b2f04f9b69b79b3ff16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

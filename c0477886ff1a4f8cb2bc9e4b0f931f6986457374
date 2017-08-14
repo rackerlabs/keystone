@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_b8eaf4d4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T18:08:43Z",
+      "side": 1,
+      "message": "Duplicate sentence.",
+      "revId": "c0477886ff1a4f8cb2bc9e4b0f931f6986457374",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_18d10024",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T18:08:43Z",
+      "side": 1,
+      "message": "This justification here, from a developer perspective makes sense, but having numbers and input from operators would be good.",
+      "revId": "c0477886ff1a4f8cb2bc9e4b0f931f6986457374",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_dd012a3a",
+        "filename": "keystone/conf/resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T18:08:43Z",
+      "side": 1,
+      "message": "s/changed// ?",
+      "revId": "c0477886ff1a4f8cb2bc9e4b0f931f6986457374",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_988bb01d",
+        "filename": "keystone/conf/resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T18:08:43Z",
+      "side": 1,
+      "message": "Removing this makes it so that people can\u0027t plug in their own sql backend if they are writing their own. Why can\u0027t we have one option, that defaults to sql, and leave this as is?",
+      "revId": "c0477886ff1a4f8cb2bc9e4b0f931f6986457374",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_389ba466",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T18:08:43Z",
+      "side": 1,
+      "message": "What if a deployment is using something else in Ocata? When they upgrade to Pike, they see the deprecation, but they don\u0027t really have any time to migrate.",
+      "revId": "c0477886ff1a4f8cb2bc9e4b0f931f6986457374",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_dd224ab9",
+        "filename": "releasenotes/notes/resource-backend-sql-only-03154d8712b36bd0.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T18:08:43Z",
+      "side": 1,
+      "message": "This could also justify an upgrade note, since deployments configuring something other than SQL for the resource backend will be impacted on upgrade.",
+      "revId": "c0477886ff1a4f8cb2bc9e4b0f931f6986457374",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_38596434",
+        "filename": "releasenotes/notes/resource-backend-sql-only-03154d8712b36bd0.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-14T18:08:43Z",
+      "side": 1,
+      "message": "This patch doesn\u0027t take into account the identity backend at all when determining which resource backend to use. It always uses the sql backend, regardless of the backend being used for identity.",
+      "revId": "c0477886ff1a4f8cb2bc9e4b0f931f6986457374",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
