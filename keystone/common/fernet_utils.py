@@ -134,7 +134,7 @@ class FernetUtils(object):
         create_success = False
         try:
             with open(key_file, 'w') as f:
-                # convert key to str for the file.
+                # convert key from str to unicode for the file.
                 f.write(key.decode('utf-8'))
                 f.flush()
                 create_success = True
