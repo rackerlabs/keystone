@@ -45,6 +45,30 @@
       "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_336f47fd",
+        "filename": "keystone/common/sql/expand_repo/versions/024_expand_create_created_at_int_columns.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-08-14T19:01:57Z",
+      "side": 1,
+      "message": "Nope, Doesn\u0027t impact anything here. The Model is representative of the way everything should look post contract.",
+      "parentUuid": "9f436f4f_b3445748",
+      "range": {
+        "startLine": 25,
+        "startChar": 38,
+        "endLine": 26,
+        "endChar": 53
+      },
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
