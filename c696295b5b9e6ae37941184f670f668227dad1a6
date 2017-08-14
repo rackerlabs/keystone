@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_732eef92",
+        "filename": "keystone/common/sql/expand_repo/versions/024_expand_create_created_at_int_columns.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-08-14T18:32:04Z",
+      "side": 1,
+      "message": "nit nullable",
+      "range": {
+        "startLine": 24,
+        "startChar": 23,
+        "endLine": 24,
+        "endChar": 31
+      },
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_b3445748",
+        "filename": "keystone/common/sql/expand_repo/versions/024_expand_create_created_at_int_columns.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-08-14T18:32:04Z",
+      "side": 1,
+      "message": "if this differs from the sql model, won\u0027t be there any issues when the code in the server (sqlalchemy will be expecting waht\u0027s in the code) does not match what the database has somewhen between expand - contract in the migration process?",
+      "range": {
+        "startLine": 25,
+        "startChar": 38,
+        "endLine": 26,
+        "endChar": 53
+      },
+      "revId": "c696295b5b9e6ae37941184f670f668227dad1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
