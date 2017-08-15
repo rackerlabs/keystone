@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_ec52dd12",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-08-15T21:14:22Z",
+      "side": 1,
+      "message": "In my opinion: The content is correct, but this needs rephrasing to be more clear. Something along the lines of \"The user is not added to the group, but for the duration of the token they will receive the same authorization as if they were.\"\n\nAlso on another note, with shadow users, the concept of ephemeral users needs to be revised.",
+      "range": {
+        "startLine": 217,
+        "startChar": 40,
+        "endLine": 220,
+        "endChar": 26
+      },
+      "revId": "4d7d6377be036cf8c8dc5efeea45422c98d0389d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
