@@ -5,6 +5,24 @@ The Identity service provides authentication services for each OpenStack
 service. The authentication service uses a combination of domains,
 projects, users, and roles.
 
+#. Although a default domain named 'default' is created automatically in before 
+   steps, a formal way to create a domain as follow:
+
+   .. code-block:: console
+
+      $ openstack domain create --description "An Example Domain" example
+
+      +-------------+----------------------------------+
+      | Field       | Value                            |
+      +-------------+----------------------------------+
+      | description | An Example Domain               |
+      | enabled     | True                             |
+      | id          | 2f4f80574fd84fe6ba9067228ae0a50c |
+      | name        | example                          |
+      +-------------+----------------------------------+
+
+   .. end
+
 #. This guide uses a service project that contains a unique user for each
    service that you add to your environment. Create the ``service``
    project:
