@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9f436f4f_aabefafb",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-08-15T19:00:52Z",
+      "side": 1,
+      "message": "well, manager is responsible for the business logic, while driver is responsible for dealing with backend specific logic (which means how the data is stored). \n\nif you\u0027re talking about putting this all into the manager that inherits from keystone/common/manager.py and is in resource/core.py I am opposed to it as I don;t see any benefit on not following what we do elsewhere in keystone (and what the layers are actually documented for)",
+      "revId": "3d46c8a5d93529b4050bab635486cfa6b05c9a85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_46bb14c4",
         "filename": "releasenotes/notes/resource-backend-sql-only-03154d8712b36bd0.yaml",
         "patchSetId": 3
