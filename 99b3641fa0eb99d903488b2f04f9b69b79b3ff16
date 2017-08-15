@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_0771980c",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-15T02:37:21Z",
+      "side": 0,
+      "message": "I feel like this was more saying that it\u0027s converting the key from bytes to a string, not sure if it really needs to specify that it\u0027s a unicode string.",
+      "range": {
+        "startLine": 137,
+        "startChar": 30,
+        "endLine": 137,
+        "endChar": 37
+      },
+      "revId": "99b3641fa0eb99d903488b2f04f9b69b79b3ff16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
