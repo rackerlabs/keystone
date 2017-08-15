@@ -16,6 +16,24 @@
       "revId": "3d46c8a5d93529b4050bab635486cfa6b05c9a85",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_11d0a4c8",
+        "filename": "releasenotes/notes/resource-backend-sql-only-03154d8712b36bd0.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-15T14:39:55Z",
+      "side": 1,
+      "message": "I threw this up on the mailing list: \n\nhttp://lists.openstack.org/pipermail/openstack-dev/2017-August/121139.html",
+      "parentUuid": "9f436f4f_46bb14c4",
+      "revId": "3d46c8a5d93529b4050bab635486cfa6b05c9a85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
