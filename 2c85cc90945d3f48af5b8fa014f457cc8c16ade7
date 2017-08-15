@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_82a7b60b",
+        "filename": "doc/source/install/keystone-users.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-15T03:04:09Z",
+      "side": 1,
+      "message": "Maybe change this to something like:\n\n\"Although the \"default\" domain already exists from the previous steps in this guide, a formal way to create a new domain would be:\"",
+      "range": {
+        "startLine": 8,
+        "startChar": 3,
+        "endLine": 9,
+        "endChar": 52
+      },
+      "revId": "2c85cc90945d3f48af5b8fa014f457cc8c16ade7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
