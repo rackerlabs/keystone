@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9f436f4f_85ed69b8",
+        "filename": "keystone/common/sql/contract_repo/versions/024_contract_create_created_at_int_columns.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-08-15T19:57:58Z",
+      "side": 1,
+      "message": "Nice, this comment clarified a lot of questions I had.",
+      "revId": "38974af24c47a6c26bb627250657a4d9ed5aa881",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_aa75dafb",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 10
@@ -13,6 +30,30 @@
       "writtenOn": "2017-08-15T19:18:18Z",
       "side": 1,
       "message": "don\u0027t create_at_int and expires_at_int need server_default\u003d0 below then?",
+      "range": {
+        "startLine": 315,
+        "startChar": 4,
+        "endLine": 315,
+        "endChar": 54
+      },
+      "revId": "38974af24c47a6c26bb627250657a4d9ed5aa881",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_059bb965",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-08-15T19:57:58Z",
+      "side": 1,
+      "message": "answered in https://review.openstack.org/#/c/493259/7/keystone/identity/backends/sql_model.py\n\nI\u0027d rephrase to \"the default is 0, and 0 indicate...\". set gives the idea it\u0027s setting (explicitly)",
+      "parentUuid": "9f436f4f_aa75dafb",
       "range": {
         "startLine": 315,
         "startChar": 4,
