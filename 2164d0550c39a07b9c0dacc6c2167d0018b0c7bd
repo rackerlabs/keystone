@@ -16,6 +16,24 @@
       "revId": "2164d0550c39a07b9c0dacc6c2167d0018b0c7bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_43be61b4",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-08-15T16:07:29Z",
+      "side": 0,
+      "message": "That is the plan. In R these drop (contract only)",
+      "parentUuid": "9f436f4f_2340fd06",
+      "revId": "2164d0550c39a07b9c0dacc6c2167d0018b0c7bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
