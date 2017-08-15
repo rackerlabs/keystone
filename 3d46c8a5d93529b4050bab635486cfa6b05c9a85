@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9f436f4f_4a0b0ed5",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-08-15T19:02:00Z",
+      "side": 1,
+      "message": "if you mean removing the driver abstract interface in resource/core.py in favor of this single implementation (there will still be a driver), I am okay as it wont make snese to have an interface just for this",
+      "parentUuid": "9f436f4f_aabefafb",
+      "revId": "3d46c8a5d93529b4050bab635486cfa6b05c9a85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_46bb14c4",
         "filename": "releasenotes/notes/resource-backend-sql-only-03154d8712b36bd0.yaml",
         "patchSetId": 3
