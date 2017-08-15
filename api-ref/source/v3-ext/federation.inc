@@ -214,7 +214,10 @@ Required attributes:
        ]
 
    This assigns authorization attributes, by way of role assignments on the
-   specified group, to ephemeral users.
+   specified group, to ephemeral users. Setting this mapping does not add the
+   ephemeral user to the group and the user is not a member of the group.
+   Only authorization for the user is same as role assignments to the group
+   on a project or domain.
 
    ::
 
