@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_00028f6f",
+        "filename": "keystone/common/sql/contract_repo/versions/024_contract_create_created_at_int_columns.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-15T16:02:58Z",
+      "side": 1,
+      "message": "\"additive only\" requirements?\n\nI thought we were doing this in the contract phase because we need to ensure all nodes are running Pike code before we upgrade all the password entries in order to avoid a partial outage?",
+      "revId": "d57b26cce293f2fbd2aa10b260dfe4d766a9826d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_e0978b47",
+        "filename": "keystone/common/sql/data_migration_repo/versions/024_migrate_create_created_at_int_columns.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-15T16:02:58Z",
+      "side": 1,
+      "message": "once* (this was probably my spelling mistake)",
+      "revId": "d57b26cce293f2fbd2aa10b260dfe4d766a9826d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_2340fd06",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-15T16:02:58Z",
+      "side": 0,
+      "message": "We can remove these once Rocky opens for development, right? Once migration 24 runs, we should need to keep track of these columns in SQL.",
+      "revId": "2164d0550c39a07b9c0dacc6c2167d0018b0c7bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
