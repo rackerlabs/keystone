@@ -16,6 +16,24 @@
       "revId": "6bb7490ad354c807fed8dd250237b78e82f390ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_0524d9ad",
+        "filename": "doc/source/install/keystone-users.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-15T19:33:10Z",
+      "side": 1,
+      "message": "++, this would be good",
+      "parentUuid": "9f436f4f_6a98121b",
+      "revId": "6bb7490ad354c807fed8dd250237b78e82f390ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
