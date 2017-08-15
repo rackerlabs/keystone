@@ -63,6 +63,52 @@
       "revId": "38974af24c47a6c26bb627250657a4d9ed5aa881",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_e52af5d8",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-08-15T19:59:24Z",
+      "side": 1,
+      "message": "just for between expand and contract, since self.created_at_int might be None",
+      "range": {
+        "startLine": 324,
+        "startChar": 35,
+        "endLine": 324,
+        "endChar": 54
+      },
+      "revId": "38974af24c47a6c26bb627250657a4d9ed5aa881",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_a5206df8",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-08-15T19:59:24Z",
+      "side": 1,
+      "message": "just for between expand and contract, since self.created_at_int might be None even if self._expires at is not!",
+      "range": {
+        "startLine": 333,
+        "startChar": 15,
+        "endLine": 333,
+        "endChar": 54
+      },
+      "revId": "38974af24c47a6c26bb627250657a4d9ed5aa881",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
