@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_07df58d6",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-15T02:39:07Z",
+      "side": 1,
+      "message": "Not a fan of these magic values, wonder if we could put them in a common location? It\u0027s used here, as well as in the migration.",
+      "range": {
+        "startLine": 158,
+        "startChar": 62,
+        "endLine": 158,
+        "endChar": 69
+      },
+      "revId": "bbad9c8178d5d1b4bb8b2ea210186d4ae77fef86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
