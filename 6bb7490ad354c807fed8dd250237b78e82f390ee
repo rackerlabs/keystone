@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_6a98121b",
+        "filename": "doc/source/install/keystone-users.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-15T19:23:39Z",
+      "side": 1,
+      "message": "Specifically the `keystone-manage bootstrap` step. I can see the value of elaborating on what exactly creates this special default domain.",
+      "revId": "6bb7490ad354c807fed8dd250237b78e82f390ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
