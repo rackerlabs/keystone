@@ -52,6 +52,24 @@
       "revId": "2164d0550c39a07b9c0dacc6c2167d0018b0c7bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_03ecd98c",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-08-15T16:15:26Z",
+      "side": 0,
+      "message": "No Local changes.",
+      "parentUuid": "9f436f4f_235b5d87",
+      "revId": "2164d0550c39a07b9c0dacc6c2167d0018b0c7bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
