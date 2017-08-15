@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_4787a0b6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-15T02:46:46Z",
+      "side": 1,
+      "message": "The title needs to be \u003c 50 chars. Would be good to see a description of why this change was made below.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 63
+      },
+      "revId": "0cabfb36559f6404724dca3ac83060d4dea312e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
