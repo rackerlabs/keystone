@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9f436f4f_6615cf48",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-16T20:17:31Z",
+      "side": 1,
+      "message": "After doing some digging - this isn\u0027t true. The oslo.policy library doesn\u0027t come up with a result when passed `domain-id` and we tell it to raise a 403 when there isn\u0027t a result.\n\nhttps://github.com/openstack/oslo.policy/blob/master/oslo_policy/policy.py#L746-L748\n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/policy.py#L60-L61",
+      "revId": "65d3f7f4ea4dc9c3f857aa076bab9464447e5d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_e6977f44",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 17
