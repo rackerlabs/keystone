@@ -1,0 +1,8 @@
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 16 Aug 2017 16:59:46 +0000
+Reviewed-on: https://review.openstack.org/493260
+Project: openstack/keystone
+Branch: refs/heads/stable/pike
