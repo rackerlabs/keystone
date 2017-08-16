@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_e6977f44",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-08-16T19:50:04Z",
+      "side": 1,
+      "message": "I think we want this one line lower, after assert_authenticated. If there\u0027s a good reason for it to go here, then the other file needs to change as well for consistency.",
+      "revId": "65d3f7f4ea4dc9c3f857aa076bab9464447e5d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
