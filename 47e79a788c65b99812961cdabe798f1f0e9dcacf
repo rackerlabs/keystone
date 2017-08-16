@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_a84ee193",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-08-16T23:07:24Z",
+      "side": 1,
+      "message": "probably doesnt need to be in the common controller, move to resource controller if possible.",
+      "revId": "47e79a788c65b99812961cdabe798f1f0e9dcacf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
