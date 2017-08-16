@@ -2059,10 +2059,6 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
             self._check_project_scoped_token_attributes(token_resp,
                                                         project_id_ref)
 
-    @utils.wip('This fails intermittently and is related to bug 1701324. '
-               'The intended behavior is that the roles in the token will '
-               'be unique, since there is no reason to advertize the two of '
-               'the same role in a single token.')
     def test_scope_to_project_with_duplicate_roles_returns_single_role(self):
         r = self.v3_create_token(self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_ADMIN)
 
