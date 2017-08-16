@@ -52,6 +52,24 @@
       "revId": "67b3b2021b580a5261c191ce24615410568fd1d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_66714fa8",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-08-16T19:34:11Z",
+      "side": 1,
+      "message": "@ayoung, the reasoning you added in the commit message of ps16 is great, but that doesn\u0027t mean the schema validation needs to be after the normalization as well, does it? Seems like we should:\n\n1) schema validation\n2) normalization\n3) policy check\n\nThe important thing that we needed to move was the policy check, not the schema validation, right?",
+      "parentUuid": "9f436f4f_a62df795",
+      "revId": "67b3b2021b580a5261c191ce24615410568fd1d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
