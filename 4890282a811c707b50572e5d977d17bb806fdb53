@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_7610ea00",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2017-08-16T12:05:50Z",
+      "side": 1,
+      "message": "(at the risk of too many cook\u0027s spoiling the broth), since it is the domain_id specified in this request that is likely as fault, maybe swap round the last two items, i.e.:\n:\n\"Cannot create project, the parent (%(parent_id)s) is acting as a domain, but the this project\u0027s domain id (%(domain_id)s) does not match the parent\u0027s id.\"",
+      "range": {
+        "startLine": 117,
+        "startChar": 30,
+        "endLine": 120,
+        "endChar": 68
+      },
+      "revId": "4890282a811c707b50572e5d977d17bb806fdb53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
