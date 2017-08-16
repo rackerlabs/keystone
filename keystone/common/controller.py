@@ -491,6 +491,55 @@ class V3Controller(wsgi.Application):
             comparator = filter['comparator']
             key = filter['name']
 
+            if 'tag' in key:
+                filter_value = filter['value']
+                target_value = ref['tags']
+                if comparator == 'startswith':
+                    attr = 'startswith'
+                elif comparator == 'endswith':
+                    attr = 'endswith'
+                elif comparator == 'contains':
+                    attr = None
+
+                if attr is not None:
+                    if key == 'tags':
+                        if target_value == []:
+                            return False
+                        elif all(getattr(tag, attr)(filter_value) for tag in target_value):
+                            return True
+                        else:
+                            return False
+                    elif key == 'tags_any':
+                        return any(getattr(tag, attr)(filter_value) for tag in target_value)
+                    elif key == 'not_tags':
+                        if target_value == []:
+                            return True
+                        elif all(getattr(tag, attr)(filter_value) for tag in target_value):
+                            return False
+                        else:
+                            return True
+                    elif key == 'not_tags_any':
+                        return not any(getattr(tag, attr)(filter_value) for tag in target_value)
+                elif comparator == 'contains':
+                    if key == 'tags':
+                        if target_value == []:
+                            return False
+                        elif all( (filter_value in tag) for tag in target_value):
+                            return True
+                        else:
+                            return False
+                    elif key == 'tags_any':
+                        return any( (filter_value in tag) for tag in target_value)
+                    elif key == 'not_tags':
+                        if target_value == []:
+                            return True
+                        elif all( (filter_value in tag) for tag in target_value):
+                            return False
+                        else:
+                            return True
+                    elif key == 'not_tags_any':
+                        return not any( (filter_value in tag) for tag in target_value)
+
             if key in ref:
                 filter_value = filter['value']
                 target_value = ref[key]
