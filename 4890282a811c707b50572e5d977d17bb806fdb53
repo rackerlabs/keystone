@@ -22,6 +22,30 @@
       "revId": "4890282a811c707b50572e5d977d17bb806fdb53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_05e4b80b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-16T21:20:16Z",
+      "side": 1,
+      "message": "++, without the extra \"the\" before \"this project\u0027s domain id...\"\n\nthanks Henry!",
+      "parentUuid": "9f436f4f_7610ea00",
+      "range": {
+        "startLine": 117,
+        "startChar": 30,
+        "endLine": 120,
+        "endChar": 68
+      },
+      "revId": "4890282a811c707b50572e5d977d17bb806fdb53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
