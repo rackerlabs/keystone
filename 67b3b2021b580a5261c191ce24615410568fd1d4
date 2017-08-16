@@ -34,6 +34,24 @@
       "revId": "67b3b2021b580a5261c191ce24615410568fd1d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_a62df795",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-08-16T19:27:18Z",
+      "side": 1,
+      "message": "I think that it will break that way.  The normalization does some of the work for filling out the user data.  The normalization does not write any data, just fills out more, so we can use it for the policy check.",
+      "parentUuid": "9f436f4f_cb7b64f2",
+      "revId": "67b3b2021b580a5261c191ce24615410568fd1d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
