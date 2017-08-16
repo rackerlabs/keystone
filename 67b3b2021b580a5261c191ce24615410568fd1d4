@@ -16,6 +16,24 @@
       "revId": "67b3b2021b580a5261c191ce24615410568fd1d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_cb7b64f2",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-16T19:15:39Z",
+      "side": 1,
+      "message": "Yeah this should be moved up before normalizing anything",
+      "parentUuid": "9f436f4f_4bc894a4",
+      "revId": "67b3b2021b580a5261c191ce24615410568fd1d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
