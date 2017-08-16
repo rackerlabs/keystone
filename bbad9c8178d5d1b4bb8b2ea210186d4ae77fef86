@@ -22,6 +22,24 @@
       "revId": "bbad9c8178d5d1b4bb8b2ea210186d4ae77fef86",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_82d2e8cf",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-16T14:46:12Z",
+      "side": 1,
+      "message": "Specifically 1000000? It\u0027s kind of described below. If we do decide to pull this out somewhere, we\u0027ll need another patch to master.",
+      "parentUuid": "9f436f4f_07df58d6",
+      "revId": "bbad9c8178d5d1b4bb8b2ea210186d4ae77fef86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
