@@ -19,10 +19,12 @@ from keystone.i18n import _
 
 
 class AssignmentType(object):
-    USER_PROJECT = 'UserProject'
-    GROUP_PROJECT = 'GroupProject'
+    USER_GLOBAL = 'UserGlobal'
     USER_DOMAIN = 'UserDomain'
+    USER_PROJECT = 'UserProject'
+    GROUP_GLOBAL = 'GroupGlobal'
     GROUP_DOMAIN = 'GroupDomain'
+    GROUP_PROJECT = 'GroupProject'
 
     @classmethod
     def calculate_type(cls, user_id, group_id, project_id, domain_id):
@@ -31,11 +33,13 @@ class AssignmentType(object):
                 return cls.USER_PROJECT
             if domain_id:
                 return cls.USER_DOMAIN
+            return cls.USER_GLOBAL
         if group_id:
             if project_id:
                 return cls.GROUP_PROJECT
             if domain_id:
                 return cls.GROUP_DOMAIN
+            return cls.GROUP_GLOBAL
         # Invalid parameters combination
         raise exception.AssignmentTypeCalculationError(**locals())
 
@@ -46,7 +50,7 @@ class Assignment(base.AssignmentDriverBase):
         return 'sql'
 
     def create_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None,
+                     global_token=None, domain_id=None, project_id=None,
                      inherited_to_projects=False):
 
         assignment_type = AssignmentType.calculate_type(
@@ -56,7 +60,7 @@ class Assignment(base.AssignmentDriverBase):
                 session.add(RoleAssignment(
                     type=assignment_type,
                     actor_id=user_id or group_id,
-                    target_id=project_id or domain_id,
+                    target_id=project_id or domain_id or global_token,
                     role_id=role_id,
                     inherited=inherited_to_projects))
         except sql.DBDuplicateEntry:  # nosec : The v3 grant APIs are silent if
@@ -64,50 +68,52 @@ class Assignment(base.AssignmentDriverBase):
             pass
 
     def list_grant_role_ids(self, user_id=None, group_id=None,
-                            domain_id=None, project_id=None,
+                            global_token=None, domain_id=None, project_id=None,
                             inherited_to_projects=False):
+        target_id = (project_id or domain_id or global_token)
         with sql.session_for_read() as session:
             q = session.query(RoleAssignment.role_id)
             q = q.filter(RoleAssignment.actor_id == (user_id or group_id))
-            q = q.filter(RoleAssignment.target_id == (project_id or domain_id))
+            q = q.filter(RoleAssignment.target_id == target_id)
             q = q.filter(RoleAssignment.inherited == inherited_to_projects)
             return [x.role_id for x in q.all()]
 
     def _build_grant_filter(self, session, role_id, user_id, group_id,
-                            domain_id, project_id, inherited_to_projects):
+                            global_token, domain_id, project_id,
+                            inherited_to_projects):
         q = session.query(RoleAssignment)
         q = q.filter_by(actor_id=user_id or group_id)
-        q = q.filter_by(target_id=project_id or domain_id)
+        q = q.filter_by(target_id=project_id or domain_id or global_token)
         q = q.filter_by(role_id=role_id)
         q = q.filter_by(inherited=inherited_to_projects)
         return q
 
     def check_grant_role_id(self, role_id, user_id=None, group_id=None,
-                            domain_id=None, project_id=None,
+                            global_token=None, domain_id=None, project_id=None,
                             inherited_to_projects=False):
         with sql.session_for_read() as session:
             try:
                 q = self._build_grant_filter(
-                    session, role_id, user_id, group_id, domain_id, project_id,
-                    inherited_to_projects)
+                    session, role_id, user_id, group_id, global_token,
+                    domain_id, project_id, inherited_to_projects)
                 q.one()
             except sql.NotFound:
                 actor_id = user_id or group_id
-                target_id = domain_id or project_id
+                target_id = domain_id or project_id or global_token
                 raise exception.RoleAssignmentNotFound(role_id=role_id,
                                                        actor_id=actor_id,
                                                        target_id=target_id)
 
     def delete_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None,
+                     global_token=None, domain_id=None, project_id=None,
                      inherited_to_projects=False):
         with sql.session_for_write() as session:
             q = self._build_grant_filter(
-                session, role_id, user_id, group_id, domain_id, project_id,
-                inherited_to_projects)
+                session, role_id, user_id, group_id, global_token, domain_id,
+                project_id, inherited_to_projects)
             if not q.delete(False):
                 actor_id = user_id or group_id
-                target_id = domain_id or project_id
+                target_id = domain_id or project_id or global_token
                 raise exception.RoleAssignmentNotFound(role_id=role_id,
                                                        actor_id=actor_id,
                                                        target_id=target_id)
@@ -136,16 +142,27 @@ class Assignment(base.AssignmentDriverBase):
                     role_id)
 
     def _get_user_assignment_types(self):
-        return [AssignmentType.USER_PROJECT, AssignmentType.USER_DOMAIN]
+        return [
+            AssignmentType.USER_PROJECT,
+            AssignmentType.USER_DOMAIN,
+            AssignmentType.USER_GLOBAL
+        ]
 
     def _get_group_assignment_types(self):
-        return [AssignmentType.GROUP_PROJECT, AssignmentType.GROUP_DOMAIN]
+        return [
+            AssignmentType.GROUP_PROJECT,
+            AssignmentType.GROUP_DOMAIN,
+            AssignmentType.GROUP_GLOBAL
+        ]
 
     def _get_project_assignment_types(self):
         return [AssignmentType.USER_PROJECT, AssignmentType.GROUP_PROJECT]
 
     def _get_domain_assignment_types(self):
         return [AssignmentType.USER_DOMAIN, AssignmentType.GROUP_DOMAIN]
+
+    def _get_global_assignment_types(self):
+        return [AssignmentType.USER_GLOBAL, AssignmentType.GROUP_GLOBAL]
 
     def _get_assignment_types(self, user, group, project, domain):
         """Return a list of role assignment types based on provided entities.
@@ -181,6 +198,8 @@ class Assignment(base.AssignmentDriverBase):
             target_types = self._get_project_assignment_types()
         elif domain:
             target_types = self._get_domain_assignment_types()
+        else:
+            target_types = self._get_global_assignment_types()
 
         if actor_types and target_types:
             return list(set(actor_types).intersection(target_types))
@@ -189,8 +208,8 @@ class Assignment(base.AssignmentDriverBase):
 
     def list_role_assignments(self, role_id=None,
                               user_id=None, group_ids=None,
-                              domain_id=None, project_ids=None,
-                              inherited_to_projects=None):
+                              list_globals=None, domain_id=None,
+                              project_ids=None, inherited_to_projects=None):
 
         def denormalize_role(ref):
             assignment = {}
@@ -200,12 +219,18 @@ class Assignment(base.AssignmentDriverBase):
             elif ref.type == AssignmentType.USER_DOMAIN:
                 assignment['user_id'] = ref.actor_id
                 assignment['domain_id'] = ref.target_id
+            elif ref.type == AssignmentType.USER_GLOBAL:
+                assignment['user_id'] = ref.actor_id
+                assignment['global'] = True
             elif ref.type == AssignmentType.GROUP_PROJECT:
                 assignment['group_id'] = ref.actor_id
                 assignment['project_id'] = ref.target_id
             elif ref.type == AssignmentType.GROUP_DOMAIN:
                 assignment['group_id'] = ref.actor_id
                 assignment['domain_id'] = ref.target_id
+            elif ref.type == AssignmentType.GROUP_GLOBAL:
+                assignment['group_id'] = ref.actor_id
+                assignment['global'] = True
             else:
                 raise exception.Error(message=_(
                     'Unexpected assignment type encountered, %s') %
@@ -224,6 +249,8 @@ class Assignment(base.AssignmentDriverBase):
                 targets = project_ids
             elif domain_id:
                 targets = [domain_id]
+            elif list_globals:
+                targets = ['global']
 
             actors = None
             if group_ids:
@@ -295,6 +322,7 @@ class RoleAssignment(sql.ModelBase, sql.ModelDictMixin):
     type = sql.Column(
         sql.Enum(AssignmentType.USER_PROJECT, AssignmentType.GROUP_PROJECT,
                  AssignmentType.USER_DOMAIN, AssignmentType.GROUP_DOMAIN,
+                 AssignmentType.USER_GLOBAL, AssignmentType.GROUP_GLOBAL,
                  name='type'),
         nullable=False)
     actor_id = sql.Column(sql.String(64), nullable=False)
