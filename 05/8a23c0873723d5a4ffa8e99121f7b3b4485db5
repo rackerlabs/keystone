@@ -1,0 +1,9 @@
+Code-Review+2: ayoung <ayoung@redhat.com>
+Code-Review+2: Kristi Nikolla <knikolla@bu.edu>
+Workflow+1: Kristi Nikolla <knikolla@bu.edu>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 16 Aug 2017 21:04:36 +0000
+Reviewed-on: https://review.openstack.org/494049
+Project: openstack/keystone
+Branch: refs/heads/master
