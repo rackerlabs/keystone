@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_cb6244ae",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-16T19:09:03Z",
+      "side": 0,
+      "message": "Yeah - like this. This validates the request as it comes from the user, instead of after we normalize it.",
+      "revId": "9cbd6bc0ebdc17976804d892ff8e7ac89e273b64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
