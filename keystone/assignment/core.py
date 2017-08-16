@@ -321,8 +321,10 @@ class Manager(manager.Manager):
                     role_id=role_id,
                     project_id=project_id)
 
-        self.driver.create_grant(role_id, user_id, group_id, domain_id,
-                                 project_id, inherited_to_projects)
+        self.driver.create_grant(
+            role_id, user_id=user_id, group_id=group_id, domain_id=domain_id,
+            project_id=project_id, inherited_to_projects=inherited_to_projects
+        )
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     def get_grant(self, role_id, user_id=None, group_id=None,
@@ -389,8 +391,10 @@ class Manager(manager.Manager):
             self.resource_api.get_domain(domain_id)
         if project_id:
             self.resource_api.get_project(project_id)
-        self.driver.delete_grant(role_id, user_id, group_id, domain_id,
-                                 project_id, inherited_to_projects)
+        self.driver.delete_grant(
+            role_id, user_id=user_id, group_id=group_id, domain_id=domain_id,
+            project_id=project_id, inherited_to_projects=inherited_to_projects
+        )
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     # The methods _expand_indirect_assignment, _list_direct_role_assignments
