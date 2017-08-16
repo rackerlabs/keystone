@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_2a132a68",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2064,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-16T01:31:42Z",
+      "side": 1,
+      "message": "s/the//",
+      "revId": "428f39111db8427e250f7ada98511644f7862ded",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_0a162656",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2071,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-16T01:31:42Z",
+      "side": 1,
+      "message": "somewhere*",
+      "revId": "428f39111db8427e250f7ada98511644f7862ded",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
