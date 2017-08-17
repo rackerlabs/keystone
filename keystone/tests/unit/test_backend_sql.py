@@ -995,6 +995,23 @@ class SqlImpliedRoles(SqlTests, assignment_tests.ImpliedRoleTests):
     pass
 
 
+class GlobalRolesTestCase(SqlTests, assignment_tests.GlobalRoleTests):
+
+    def setUp(self):
+        super(GlobalRolesTestCase, self).setUp()
+        role_ref = unit.new_role_ref()
+        role = self.role_api.create_role(role_ref['id'], role_ref)
+        self.role_id = role['id']
+
+        user_ref = unit.new_user_ref(CONF.identity.default_domain_id)
+        user = self.identity_api.create_user(user_ref)
+        self.user_id = user['id']
+
+        group_ref = unit.new_group_ref(CONF.identity.default_domain_id)
+        group = self.identity_api.create_group(group_ref)
+        self.group_id = group['id']
+
+
 class SqlTokenCacheInvalidationWithUUID(SqlTests,
                                         token_tests.TokenCacheInvalidation):
     def setUp(self):
