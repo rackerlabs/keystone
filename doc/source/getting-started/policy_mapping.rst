@@ -85,6 +85,11 @@ identity:delete_implied_role                               DELETE /v3/roles/{pri
 identity:list_role_inference_rules                         GET /v3/role_inferences
 identity:check_implied_role                                HEAD /v3/roles/{prior_role_id}/implies/{implied_role_id}
 
+identity:check_global_grant                                GET `global_grant_resources`_
+identity:list_global_grants                                GET `global_grant_collections`_
+identity:create_global_grant                               PUT `global_grant_resources`_
+identity:revoke_global_grant                               DELETE `global_grant_resources`_
+
 identity:check_grant                                       GET `grant_resources`_
 identity:list_grants                                       GET `grant_collections`_
 identity:create_grant                                      PUT `grant_resources`_
@@ -205,6 +210,21 @@ identity:get_domain_config_default                         - GET /v3/domains/con
                                                            - GET /v3/domains/config/{group}/default
                                                            - GET /v3/domains/config/{group}/{option}/default
 =========================================================  ===
+
+
+.. _global_grant_resources:
+
+*global_grant_resources* are:
+
+- /v3/users/{user_id}/roles/{role_id}
+- /v3/groups/{group_id}/roles/{role_id}
+
+.. _global_grant_collections:
+
+*global_grant_collections* are:
+
+- /v3/users/{user_id}/roles
+- /v3/groups/{group_id}/roles
 
 .. _grant_resources:
 

@@ -206,6 +206,19 @@ V3_JSON_HOME_RESOURCES = {
         'href-vars': {
             'domain_id': json_home.Parameters.DOMAIN_ID,
             'group_id': json_home.Parameters.GROUP_ID}},
+    json_home.build_v3_resource_relation('user_role'): {
+        'href-template': '/users/{user_id}/roles/{role_id}',
+        'href-vars': {
+            'user_id': json_home.Parameters.USER_ID,
+            'role_id': json_home.Parameters.ROLE_ID
+        }
+    },
+    json_home.build_v3_resource_relation('user_roles'): {
+        'href-template': '/users/{user_id}/roles',
+        'href-vars': {
+            'user_id': json_home.Parameters.USER_ID
+        }
+    },
     json_home.build_v3_resource_relation('domain_user_role'): {
         'href-template':
         '/domains/{domain_id}/users/{user_id}/roles/{role_id}',

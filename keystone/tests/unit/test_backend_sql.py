@@ -1008,7 +1008,7 @@ class GlobalRolesTestCase(SqlTests, assignment_tests.GlobalRoleTests):
         self.user_id = user['id']
 
         group_ref = unit.new_group_ref(CONF.identity.default_domain_id)
-        group  = self.identity_api.create_group(group_ref)
+        group = self.identity_api.create_group(group_ref)
         self.group_id = group['id']
 
 

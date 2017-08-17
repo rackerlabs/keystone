@@ -3075,3 +3075,164 @@ class ListUserProjectsTestCase(test_v3.RestfulTestCase):
             projects_result = result.json['projects']
             self.assertEqual(1, len(projects_result))
             self.assertEqual(self.projects[i]['id'], projects_result[0]['id'])
+
+class UserGlobalRoleAssignmentTestCase(test_v3.RestfulTestCase):
+
+    def _create_new_role(self):
+        """Create a role available for use anywhere and return the ID."""
+        ref = unit.new_role_ref()
+        response = self.post('/roles', body={'role': ref})
+        # We only really need the role ID, so omit the rest of the response and
+        # just return the ID of the role we just created.
+        return response.json_body['role']['id']
+
+    def test_assign_global_role_to_user(self):
+        # create a new role
+        global_role_id = self._create_new_role()
+
+        # assign the role to the user globally
+        member_url = '/users/%s/roles/%s' % (self.user['id'], global_role_id)
+        self.put(member_url)
+
+        # validate the role assignment
+        self.head(member_url)
+
+        # list global roles
+        collection_url = '/users/%s/roles' % self.user['id']
+        response = self.get(collection_url)
+
+        # FIXME(lbragstad): We should build or enhance one of the existing role
+        # assignment assertions to support global roles.
+
+    def test_list_role_assignments_for_user_returns_all_assignments(self):
+        # create a new role
+        global_role_id = self._create_new_role()
+
+        # assign the role to the user globally
+        member_url = '/users/%s/roles/%s' % (self.user['id'], global_role_id)
+        self.put(member_url)
+
+        # the response should contain one role assignment for the global role
+        # and one for a role that was setup during setUp().
+        response = self.get('/role_assignments?user.id=%s' % self.user['id'])
+        self.assertEqual(len(response.json_body['role_assignments']), 2)
+
+    def test_list_global_roles_for_user_returns_global_roles(self):
+        # create a new role
+        global_role_id = self._create_new_role()
+
+        # assign the role to the user globally
+        member_url = '/users/%s/roles/%s' % (self.user['id'], global_role_id)
+        self.put(member_url)
+
+        # list global roles
+        collection_url = '/users/%s/roles' % self.user['id']
+        response = self.get(collection_url)
+
+        # assert role is in list
+
+    def test_list_global_roles_for_user_returns_non_without_assignment(self):
+        # list global roles for user
+        collection_url = '/users/%s/roles' % self.user['id']
+        response = self.get(collection_url)
+
+        # assert that the user doesn't have any global role assignments, which
+        # is denoted by an empty list
+        self.assertEqual(response.json_body['roles'], [])
+
+    def test_list_global_roles_for_user_does_not_return_project_roles(self):
+        # create a new role
+        global_role_id = self._create_new_role()
+
+        # assign the role to the user globally
+        member_url = '/users/%s/roles/%s' % (self.user['id'], global_role_id)
+        self.put(member_url)
+
+        # list project role assignments and save the role id of that
+        # assignment, this assignment was created during setUp
+        response = self.get(
+            '/projects/%s/users/%s/roles' % (
+                self.project['id'], self.user['id']
+            )
+        )
+        self.assertEqual(len(response.json_body['roles']), 1)
+        project_role_id = response.json_body['roles'][0]['id']
+
+        # list global role assignments
+        collection_url = '/users/%s/roles' % self.user['id']
+        response = self.get(collection_url)
+
+        # assert the project role assignment is not in the global role
+        # assignments
+        for role in response.json_body['roles']:
+            self.assertNotEqual(role['id'], project_role_id)
+
+    def test_list_global_roles_for_user_does_not_return_domain_roles(self):
+        # create a new global role and a new domain role
+        global_role_id = self._create_new_role()
+        domain_role_id = self._create_new_role()
+
+        # assign a role to the user on a domain
+        domain_member_url = '/domains/%s/users/%s/roles/%s' % (
+            self.user['domain_id'], self.user['id'], domain_role_id
+        )
+        self.put(domain_member_url)
+
+        # assign the new role to the user globally
+        member_url = '/users/%s/roles/%s' % (self.user['id'], global_role_id)
+        self.put(member_url)
+
+        # list domain role assignments
+        response = self.get(
+            '/domains/%s/users/%s/roles' % (
+                self.user['domain_id'], self.user['id']
+            )
+        )
+        self.assertEqual(len(response.json_body['roles']), 1)
+
+        # list global role assignments
+        collection_url = '/users/%s/roles' % self.user['id']
+        response = self.get(collection_url)
+
+        # assert the domain role assignment is not in the global role
+        # assignments
+        for role in response.json_body['roles']:
+            self.assertNotEqual(role['id'], domain_role_id)
+
+    def test_check_user_has_global_role_when_assignment_exists(self):
+        # create a new role
+        global_role_id = self._create_new_role()
+
+        # assign the role to the user globally
+        member_url = '/users/%s/roles/%s' % (self.user['id'], global_role_id)
+        self.put(member_url)
+
+        # check the user has the global role assignment
+        self.head(member_url)
+
+    def test_check_user_does_not_have_global_role_without_assignment(self):
+        # create a new role
+        global_role_id = self._create_new_role()
+
+        # check the user does't have the global role assignment
+        member_url = '/users/%s/roles/%s' % (self.user['id'], global_role_id)
+        self.head(member_url, expected_status=http_client.NOT_FOUND)
+
+    def test_unassign_global_role_from_user(self):
+        # create a new role
+        global_role_id = self._create_new_role()
+
+        # assign the role to the user globally
+        member_url = '/users/%s/roles/%s' % (self.user['id'], global_role_id)
+        self.put(member_url)
+
+        # ensure the user has the role assignment
+        self.head(member_url)
+
+        # remove the global role assignment from the user
+        self.delete(member_url)
+
+        # ensure the user doesn't have any global role assignments
+        collection_url = '/users/%s/roles' % self.user['id']
+        response = self.get(collection_url)
+        self.assertEqual(len(response.json_body['roles']), 0)
