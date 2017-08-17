@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_2e6e74ff",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 24269
+      },
+      "writtenOn": "2017-08-17T07:27:38Z",
+      "side": 1,
+      "message": "Hi, in routers.py, should revoke_global_grant be added? such as:\n\nself._add_resource(\n            mapper, grant_controller,\n            path\u003d\u0027/users/{user_id}/roles/{role_id}\u0027,\n            get_head_action\u003d\u0027check_global_grant\u0027,\n            put_action\u003d\u0027create_global_grant\u0027,\n            delete_action\u003d\u0027revoke_global_grant\u0027,\n            rel\u003djson_home.build_v3_resource_relation(\u0027user_roles\u0027),\n            path_vars\u003d{\n                \u0027user_id\u0027: json_home.Parameters.USER_ID,\n                \u0027role_id\u0027: json_home.Parameters.ROLE_ID\n            })",
+      "range": {
+        "startLine": 722,
+        "startChar": 8,
+        "endLine": 722,
+        "endChar": 27
+      },
+      "revId": "a9509dd92fabbb4e5f117672c68e5f371d1206d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
