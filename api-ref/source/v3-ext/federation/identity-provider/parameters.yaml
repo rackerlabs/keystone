@@ -46,14 +46,14 @@ domain_id:
     users that authenticate with the Identity Provider will be created under
     the domain specified.
   in: body
-  required: true
+  required: false
   type: string
 
 enabled:
   description: |
     Whether the Identity Provider is enabled or not
   in: body
-  required: true
+  required: false
   type: bool
 
 id_body:
@@ -102,5 +102,5 @@ remote_ids:
   description: |
     List of the unique Identity Provider's remote IDs
   in: body
-  required: true
+  required: false
   type: array

@@ -31,7 +31,7 @@ enabled:
   description: |
     Whether the Service Provider is enabled or not
   in: body
-  required: true
+  required: false
   type: bool
 
 id_body:
