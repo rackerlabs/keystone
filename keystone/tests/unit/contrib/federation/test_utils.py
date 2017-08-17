@@ -32,8 +32,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
     """A class for testing the mapping rule engine."""
 
     def assertValidMappedUserObject(self, mapped_properties,
-                                    user_type='ephemeral',
-                                    domain_id=None):
+                                    user_type='ephemeral'):
         """Check whether mapped properties object has 'user' within.
 
         According to today's rules, RuleProcessor does not have to issue user's
@@ -45,11 +44,6 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         user = mapped_properties['user']
         self.assertIn('type', user)
         self.assertEqual(user_type, user['type'])
-        self.assertIn('domain', user)
-        domain = user['domain']
-        domain_name_or_id = domain.get('id') or domain.get('name')
-        domain_ref = domain_id or 'Federated'
-        self.assertEqual(domain_ref, domain_name_or_id)
 
     def test_rule_engine_any_one_of_and_direct_mapping(self):
         """Should return user's name and group id EMPLOYEE_GROUP_ID.
@@ -486,8 +480,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         mapped_properties = rp.process(assertion)
         self.assertIsNotNone(mapped_properties)
         self.assertValidMappedUserObject(
-            mapped_properties, user_type='local',
-            domain_id=mapping_fixtures.LOCAL_DOMAIN)
+            mapped_properties, user_type='local')
 
     def test_user_identifications_name(self):
         """Test varius mapping options and how users are identified.
