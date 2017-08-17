@@ -3787,3 +3787,183 @@ class ImpliedRoleTests(AssignmentTestHelperMixin):
             ]
         }
         self.execute_assignment_plan(test_plan)
+
+
+class GlobalRoleTests(object):
+    def test_grant_global_role_assignment_to_user(self):
+        assignments = self.assignment_api.list_role_assignments(
+            user_id=self.user_id
+        )
+        self.assertEqual(len(assignments), 0)
+
+        self.assignment_api.create_grant(
+            self.role_id, user_id=self.user_id, is_global=True
+        )
+
+        assignments = self.assignment_api.list_role_assignments(
+            user_id=self.user_id
+        )
+        self.assertEqual(len(assignments), 1)
+        self.assertEqual(assignments[0]['role_id'], self.role_id)
+        self.assertTrue(assignments[0]['global'])
+
+    def test_remove_global_role_assignment_from_user(self):
+        assignments = self.assignment_api.list_role_assignments(
+            user_id=self.user_id
+        )
+        self.assertEqual(len(assignments), 0)
+
+        self.assignment_api.create_grant(
+            self.role_id, user_id=self.user_id, is_global=True
+        )
+
+        assignments = self.assignment_api.list_role_assignments(
+            user_id=self.user_id
+        )
+        self.assertEqual(len(assignments), 1)
+
+        self.assignment_api.delete_grant(
+            self.role_id, user_id=self.user_id, is_global=True
+        )
+
+        assignments = self.assignment_api.list_role_assignments(
+            user_id=self.user_id
+        )
+        self.assertEqual(len(assignments), 0)
+
+    def test_list_global_role_assignments_for_user(self):
+        role = unit.new_role_ref()
+        role = self.role_api.create_role(role['id'], role)
+
+        assignments = self.assignment_api.list_role_assignments(
+            user_id=self.user_id
+        )
+        self.assertEqual(len(assignments), 0)
+
+        self.assignment_api.create_grant(
+            self.role_id, user_id=self.user_id, is_global=True
+        )
+        self.assignment_api.create_grant(
+            role['id'], user_id=self.user_id, is_global=True
+        )
+
+        assignments = self.assignment_api.list_role_assignments(
+            user_id=self.user_id
+        )
+        self.assertEqual(len(assignments), 2)
+
+        for assignment in assignments:
+            self.assertTrue(assignment['global'])
+
+    def test_list_user_role_assignments_includes_global_assignments(self):
+        project = unit.new_project_ref(CONF.identity.default_domain_id)
+        project = self.resource_api.create_project(project['id'], project)
+
+        role = unit.new_role_ref()
+        role = self.role_api.create_role(role['id'], role)
+
+        self.assignment_api.create_grant(
+            self.role_id, user_id=self.user_id, is_global=True
+        )
+        self.assignment_api.create_grant(
+            role['id'], user_id=self.user_id, project_id=project['id']
+        )
+
+        assignments = self.assignment_api.list_role_assignments(
+            user_id=self.user_id
+        )
+        self.assertEqual(len(assignments), 2)
+        for assignment in assignments:
+            if assignment['role_id'] == self.role_id:
+                self.assertTrue(assignment['global'])
+            else:
+                self.assertEqual(assignment['project_id'], project['id'])
+
+    def test_grant_global_role_assignment_to_group(self):
+        assignments = self.assignment_api.list_role_assignments(
+            group_id=self.group_id
+        )
+        self.assertEqual(len(assignments), 0)
+
+        self.assignment_api.create_grant(
+            self.role_id, group_id=self.group_id, is_global=True
+        )
+
+        assignments = self.assignment_api.list_role_assignments(
+            group_id=self.group_id
+        )
+        self.assertEqual(len(assignments), 1)
+        self.assertEqual(assignments[0]['role_id'], self.role_id)
+        self.assertTrue(assignments[0]['global'])
+
+    def test_remove_global_role_assignment_from_group(self):
+        assignments = self.assignment_api.list_role_assignments(
+            group_id=self.group_id
+        )
+        self.assertEqual(len(assignments), 0)
+
+        self.assignment_api.create_grant(
+            self.role_id, group_id=self.group_id, is_global=True
+        )
+
+        assignments = self.assignment_api.list_role_assignments(
+            group_id=self.group_id
+        )
+        self.assertEqual(len(assignments), 1)
+
+        self.assignment_api.delete_grant(
+            self.role_id, group_id=self.group_id, is_global=True
+        )
+
+        assignments = self.assignment_api.list_role_assignments(
+            group_id=self.group_id
+        )
+        self.assertEqual(len(assignments), 0)
+
+    def test_list_global_role_assignments_for_group(self):
+        role = unit.new_role_ref()
+        role = self.role_api.create_role(role['id'], role)
+
+        assignments = self.assignment_api.list_role_assignments(
+            group_id=self.group_id
+        )
+        self.assertEqual(len(assignments), 0)
+
+        self.assignment_api.create_grant(
+            self.role_id, group_id=self.group_id, is_global=True
+        )
+        self.assignment_api.create_grant(
+            role['id'], group_id=self.group_id, is_global=True
+        )
+
+        assignments = self.assignment_api.list_role_assignments(
+            group_id=self.group_id
+        )
+        self.assertEqual(len(assignments), 2)
+
+        for assignment in assignments:
+            self.assertTrue(assignment['global'])
+
+    def test_list_group_role_assignments_includes_global_assignments(self):
+        project = unit.new_project_ref(CONF.identity.default_domain_id)
+        project = self.resource_api.create_project(project['id'], project)
+
+        role = unit.new_role_ref()
+        role = self.role_api.create_role(role['id'], role)
+
+        self.assignment_api.create_grant(
+            self.role_id, group_id=self.group_id, is_global=True
+        )
+        self.assignment_api.create_grant(
+            role['id'], group_id=self.group_id, project_id=project['id']
+        )
+
+        assignments = self.assignment_api.list_role_assignments(
+            group_id=self.group_id
+        )
+        self.assertEqual(len(assignments), 2)
+        for assignment in assignments:
+            if assignment['role_id'] == self.role_id:
+                self.assertTrue(assignment['global'])
+            else:
+                self.assertEqual(assignment['project_id'], project['id'])
