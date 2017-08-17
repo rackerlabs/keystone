@@ -22,6 +22,24 @@
       "revId": "a9509dd92fabbb4e5f117672c68e5f371d1206d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_0e495e31",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-17T18:49:27Z",
+      "side": 1,
+      "message": "Yep! Good catch",
+      "parentUuid": "9f436f4f_2e6e74ff",
+      "revId": "a9509dd92fabbb4e5f117672c68e5f371d1206d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
