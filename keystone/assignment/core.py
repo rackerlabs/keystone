@@ -306,7 +306,7 @@ class Manager(manager.Manager):
 
     @notifications.role_assignment('created')
     def create_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None,
+                     is_global=False, domain_id=None, project_id=None,
                      inherited_to_projects=False, context=None):
         role = self.role_api.get_role(role_id)
         if domain_id:
@@ -322,13 +322,14 @@ class Manager(manager.Manager):
                     project_id=project_id)
 
         self.driver.create_grant(
-            role_id, user_id=user_id, group_id=group_id, domain_id=domain_id,
+            role_id, user_id=user_id, group_id=group_id,
+            is_global=is_global, domain_id=domain_id,
             project_id=project_id, inherited_to_projects=inherited_to_projects
         )
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     def get_grant(self, role_id, user_id=None, group_id=None,
-                  domain_id=None, project_id=None,
+                  is_global=False, domain_id=None, project_id=None,
                   inherited_to_projects=False):
         role_ref = self.role_api.get_role(role_id)
         if domain_id:
@@ -336,21 +337,23 @@ class Manager(manager.Manager):
         if project_id:
             self.resource_api.get_project(project_id)
         self.check_grant_role_id(
-            role_id, user_id=user_id, group_id=group_id, domain_id=domain_id,
+            role_id, user_id=user_id, group_id=group_id,
+            is_global=is_global, domain_id=domain_id,
             project_id=project_id, inherited_to_projects=inherited_to_projects
         )
         return role_ref
 
     def list_grants(self, user_id=None, group_id=None,
-                    domain_id=None, project_id=None,
+                    is_global=False, domain_id=None, project_id=None,
                     inherited_to_projects=False):
         if domain_id:
             self.resource_api.get_domain(domain_id)
         if project_id:
             self.resource_api.get_project(project_id)
         grant_ids = self.list_grant_role_ids(
-            user_id=user_id, group_id=group_id, domain_id=domain_id,
-            project_id=project_id, inherited_to_projects=inherited_to_projects
+            user_id=user_id, group_id=group_id, is_global=is_global,
+            domain_id=domain_id, project_id=project_id,
+            inherited_to_projects=inherited_to_projects
         )
         return self.role_api.list_roles_from_ids(grant_ids)
 
@@ -360,7 +363,7 @@ class Manager(manager.Manager):
 
     @notifications.role_assignment('deleted')
     def delete_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None,
+                     is_global=False, domain_id=None, project_id=None,
                      inherited_to_projects=False, context=None):
 
         # check if role exist before any processing
@@ -369,7 +372,8 @@ class Manager(manager.Manager):
         if group_id is None:
             # check if role exists on the user before revoke
             self.check_grant_role_id(
-                role_id, user_id=user_id, group_id=None, domain_id=domain_id,
+                role_id, user_id=user_id, group_id=None,
+                is_global=is_global, domain_id=domain_id,
                 project_id=project_id,
                 inherited_to_projects=inherited_to_projects
             )
@@ -381,7 +385,8 @@ class Manager(manager.Manager):
                 # check if role exists on the group before revoke
                 self.check_grant_role_id(
                     role_id, user_id=None, group_id=group_id,
-                    domain_id=domain_id, project_id=project_id,
+                    is_global=is_global, domain_id=domain_id,
+                    project_id=project_id,
                     inherited_to_projects=inherited_to_projects
                 )
                 if CONF.token.revoke_by_id:
@@ -401,7 +406,8 @@ class Manager(manager.Manager):
         if project_id:
             self.resource_api.get_project(project_id)
         self.driver.delete_grant(
-            role_id, user_id=user_id, group_id=group_id, domain_id=domain_id,
+            role_id, user_id=user_id, group_id=group_id,
+            is_global=is_global, domain_id=domain_id,
             project_id=project_id, inherited_to_projects=inherited_to_projects
         )
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
