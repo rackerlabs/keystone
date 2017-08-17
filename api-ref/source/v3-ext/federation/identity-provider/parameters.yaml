@@ -42,18 +42,21 @@ description:
 
 domain_id:
   description: |
-    The ID of a domain that is associated with the Identity Provider. Federated
-    users that authenticate with the Identity Provider will be created under
-    the domain specified.
+    The ID of a domain that is associated with the Identity Provider. If the
+    value is not specified by the client, the service will automatically create
+    a domain and associate it to the Identity Provider. Federated users that
+    authenticate with the Identity Provider will be created under the domain
+    specified.
   in: body
-  required: true
+  required: false
   type: string
 
 enabled:
   description: |
-    Whether the Identity Provider is enabled or not
+    Whether the Identity Provider is enabled or not. If the value is not
+    specified by the client, the service will default this to false.
   in: body
-  required: true
+  required: false
   type: bool
 
 id_body:
@@ -100,7 +103,8 @@ protocols_links:
 
 remote_ids:
   description: |
-    List of the unique Identity Provider's remote IDs
+    List of the unique Identity Provider's remote IDs. If the value is not
+    specified by the client, the list will be empty.
   in: body
-  required: true
+  required: false
   type: array

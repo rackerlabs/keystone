@@ -29,9 +29,11 @@ description:
 
 enabled:
   description: |
-    Whether the Service Provider is enabled or not
+    Whether the Service Provider is enabled or not. If the value
+    is not specified by the client, the service will default this
+    to false.
   in: body
-  required: true
+  required: false
   type: bool
 
 id_body:
