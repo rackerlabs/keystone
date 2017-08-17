@@ -718,7 +718,8 @@ class Manager(manager.Manager):
         return filter_results
 
     def _list_effective_role_assignments(self, role_id, user_id, group_id,
-                                         domain_id, project_id, subtree_ids,
+                                         is_global, domain_id, project_id,
+                                         subtree_ids,
                                          inherited, source_from_group_ids,
                                          strip_domain_roles):
         """List role assignments in effective mode.
@@ -741,7 +742,8 @@ class Manager(manager.Manager):
         """
         def list_role_assignments_for_actor(
                 role_id, inherited, user_id=None, group_ids=None,
-                project_id=None, subtree_ids=None, domain_id=None):
+                is_global=False, project_id=None, subtree_ids=None,
+                domain_id=None):
             """List role assignments for actor on target.
 
             List direct and indirect assignments for an actor, optionally
@@ -756,6 +758,7 @@ class Manager(manager.Manager):
                             user.
             :param group_ids: A list of groups required. Only one of user_id
                               and group_ids can be specified
+            :param is_global: If True, return roles assigned globally
             :param project_id: If specified, only include those assignments
                                that affect at least this project, with
                                additionally any projects specified in
@@ -788,7 +791,7 @@ class Manager(manager.Manager):
             if inherited is False or inherited is None:
                 # Get non inherited assignments
                 non_inherited_refs = self.driver.list_role_assignments(
-                    role_id=role_id, domain_id=domain_id,
+                    role_id=role_id, is_global=is_global, domain_id=domain_id,
                     project_ids=project_ids_of_interest, user_id=user_id,
                     group_ids=group_ids, inherited_to_projects=False)
 
@@ -885,8 +888,8 @@ class Manager(manager.Manager):
         return refs
 
     def _list_direct_role_assignments(self, role_id, user_id, group_id,
-                                      domain_id, project_id, subtree_ids,
-                                      inherited):
+                                      is_global, domain_id, project_id,
+                                      subtree_ids, inherited):
         """List role assignments without applying expansion.
 
         Returns a list of direct role assignments, where their attributes match
@@ -903,12 +906,13 @@ class Manager(manager.Manager):
                 project_ids_of_interest = [project_id]
 
         return self.driver.list_role_assignments(
-            role_id=role_id, user_id=user_id, group_ids=group_ids,
-            domain_id=domain_id, project_ids=project_ids_of_interest,
+            role_id=role_id, user_id=user_id, is_global=is_global,
+            group_ids=group_ids, domain_id=domain_id,
+            project_ids=project_ids_of_interest,
             inherited_to_projects=inherited)
 
     def list_role_assignments(self, role_id=None, user_id=None, group_id=None,
-                              domain_id=None, project_id=None,
+                              is_global=False, domain_id=None, project_id=None,
                               include_subtree=False, inherited=None,
                               effective=None, include_names=False,
                               source_from_group_ids=None,
@@ -958,12 +962,12 @@ class Manager(manager.Manager):
 
         if effective:
             role_assignments = self._list_effective_role_assignments(
-                role_id, user_id, group_id, domain_id, project_id,
+                role_id, user_id, group_id, is_global, domain_id, project_id,
                 subtree_ids, inherited, source_from_group_ids,
                 strip_domain_roles)
         else:
             role_assignments = self._list_direct_role_assignments(
-                role_id, user_id, group_id, domain_id, project_id,
+                role_id, user_id, group_id, is_global, domain_id, project_id,
                 subtree_ids, inherited)
 
         if include_names:
