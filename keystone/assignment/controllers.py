@@ -650,11 +650,12 @@ class GrantAssignmentV3(controller.V3Controller):
             context=request.context_dict)
 
     @controller.protected(callback=_check_grant_protection)
-    def create_global_grant(self, request, role_id, user_id=None):
-        """Grant a role globally to a user."""
-        self._require_user_xor_group(user_id, None)
+    def create_global_grant(self, request, role_id, user_id=None,
+                            group_id=None):
+        """Grant a role globally to a user or group."""
+        self._require_user_xor_group(user_id, group_id)
         self.assignment_api.create_grant(
-            role_id, user_id=user_id, is_global=True,
+            role_id, user_id=user_id, group_id=group_id, is_global=True,
             context=request.context_dict
         )
 
@@ -673,10 +674,12 @@ class GrantAssignmentV3(controller.V3Controller):
         return GrantAssignmentV3.wrap_collection(request.context_dict, refs)
 
     @controller.protected(callback=_check_grant_protection)
-    def list_global_grants(self, request, user_id=None):
-        """List global role assignments for a user."""
-        self._require_user_xor_group(user_id, None)
-        refs = self.assignment_api.list_grants(user_id=user_id, is_global=True)
+    def list_global_grants(self, request, user_id=None, group_id=None):
+        """List global role assignments for a user or group."""
+        self._require_user_xor_group(user_id, group_id)
+        refs = self.assignment_api.list_grants(
+            user_id=user_id, group_id=group_id, is_global=True
+        )
         return GrantAssignmentV3.wrap_collection(request.context_dict, refs)
 
     @controller.protected(callback=_check_grant_protection)
@@ -693,11 +696,12 @@ class GrantAssignmentV3(controller.V3Controller):
         )
 
     @controller.protected(callback=_check_grant_protection)
-    def check_global_grant(self, request, role_id, user_id=None):
-        """Check a user has a role assigned globally."""
-        self._require_user_xor_group(user_id, None)
+    def check_global_grant(self, request, role_id, user_id=None,
+                           group_id=None):
+        """Check a user or group has a role assigned globally."""
+        self._require_user_xor_group(user_id, group_id)
         self.assignment_api.get_grant(
-            role_id, user_id=user_id, is_global=True
+            role_id, user_id=user_id, group_id=group_id, is_global=True
         )
 
     # NOTE(lbragstad): This will allow users to clean up role assignments
@@ -719,11 +723,12 @@ class GrantAssignmentV3(controller.V3Controller):
 
     @controller.protected(callback=functools.partial(
         _check_grant_protection, allow_no_user=True))
-    def revoke_global_grant(self, request, role_id, user_id=None):
-        """Revoke a global role from a user."""
-        self._require_user_xor_group(user_id, None)
+    def revoke_global_grant(self, request, role_id, user_id=None,
+                            group_id=None):
+        """Revoke a global role from a user or group."""
+        self._require_user_xor_group(user_id, group_id)
         self.assignment_api.delete_grant(
-            role_id, user_id=user_id, is_global=True,
+            role_id, user_id=user_id, group_id=group_id, is_global=True,
             context=request.context_dict
         )
 

@@ -211,6 +211,25 @@ class Routers(wsgi.RoutersBase):
                 'role_id': json_home.Parameters.ROLE_ID
             })
         self._add_resource(
+            mapper, grant_controller,
+            path='/groups/{group_id}/roles',
+            get_head_action='list_global_grants',
+            rel=json_home.build_v3_resource_relation('group_roles'),
+            path_vars={
+                'group_id': json_home.Parameters.GROUP_ID
+            })
+        self._add_resource(
+            mapper, grant_controller,
+            path='/groups/{group_id}/roles/{role_id}',
+            get_head_action='check_global_grant',
+            put_action='create_global_grant',
+            delete_action='revoke_global_grant',
+            rel=json_home.build_v3_resource_relation('group_role'),
+            path_vars={
+                'group_id': json_home.Parameters.GROUP_ID,
+                'role_id': json_home.Parameters.ROLE_ID
+            })
+        self._add_resource(
             mapper, controllers.RoleAssignmentV3(),
             path='/role_assignments',
             get_head_action='list_role_assignments_wrapper',

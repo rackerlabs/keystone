@@ -3077,7 +3077,12 @@ class ListUserProjectsTestCase(test_v3.RestfulTestCase):
             self.assertEqual(self.projects[i]['id'], projects_result[0]['id'])
 
 
-class UserGlobalRoleAssignmentTestCase(test_v3.RestfulTestCase):
+class GlobalRoleAssignmentTestCase(test_v3.RestfulTestCase):
+
+    def setUp(self):
+        super(GlobalRoleAssignmentTestCase, self).setUp()
+        group = unit.new_group_ref(CONF.identity.default_domain_id)
+        self.group = self.identity_api.create_group(group)
 
     def _create_new_role(self):
         """Create a role available for use anywhere and return the ID."""
@@ -3249,6 +3254,182 @@ class UserGlobalRoleAssignmentTestCase(test_v3.RestfulTestCase):
         response = self.get(
             '/role_assignments?scope.global&user.id=%(user_id)s' % {
                 'user_id': self.user['id']
+            }
+        )
+        self.assertEqual(len(response.json_body['role_assignments']), 0)
+        self.assertValidRoleAssignmentListResponse(response)
+
+    def test_assign_global_role_to_group(self):
+        global_role_id = self._create_new_role()
+
+        # assign the role to the user globally
+        member_url = '/groups/%s/roles/%s' % (self.group['id'], global_role_id)
+        self.put(member_url)
+
+        # validate the role assignment
+        self.head(member_url)
+
+        # list global roles
+        collection_url = '/groups/%s/roles' % self.group['id']
+        self.get(collection_url)
+        self.head(collection_url, expected_status=http_client.OK)
+
+        response = self.get(
+            '/role_assignments?scope.global&group.id=%(group_id)s' % {
+                'group_id': self.group['id']
+            }
+        )
+        self.assertValidRoleAssignmentListResponse(response)
+
+    def test_list_role_assignments_for_group_returns_all_assignments(self):
+        global_role_id = self._create_new_role()
+        project = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id
+        )
+        project = self.resource_api.create_project(project['id'], project)
+
+        # assign the group a role on a project
+        member_url = '/projects/%s/groups/%s/roles/%s' % (
+            project['id'], self.group['id'], self.role['id']
+        )
+        self.put(member_url)
+
+        # assign the role to the group globally
+        member_url = '/groups/%s/roles/%s' % (self.group['id'], global_role_id)
+        self.put(member_url)
+
+        response = self.get('/role_assignments?group.id=%s' % self.group['id'])
+        self.assertEqual(len(response.json_body['role_assignments']), 2)
+        self.assertValidRoleAssignmentListResponse(response)
+
+    def test_list_global_roles_for_group_returns_none_without_assignment(self):
+        # list global roles for group
+        collection_url = '/groups/%s/roles' % self.group['id']
+        response = self.get(collection_url)
+
+        # assert that the group doesn't have any global role assignments, which
+        # is denoted by an empty list
+        self.assertEqual(response.json_body['roles'], [])
+
+        response = self.get(
+            '/role_assignments?scope.global&group.id=%(group_id)s' % {
+                'group_id': self.group['id']
+            }
+        )
+        self.assertEqual(len(response.json_body['role_assignments']), 0)
+        self.assertValidRoleAssignmentListResponse(response)
+
+    def test_list_global_roles_for_group_does_not_return_project_roles(self):
+        global_role_id = self._create_new_role()
+        project_role_id = self._create_new_role()
+        project = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id
+        )
+        project = self.resource_api.create_project(project['id'], project)
+
+        # assign the group a role on a project
+        member_url = '/projects/%s/groups/%s/roles/%s' % (
+            project['id'], self.group['id'], project_role_id
+        )
+        self.put(member_url)
+
+        # assign the role to the group globally
+        member_url = '/groups/%s/roles/%s' % (self.group['id'], global_role_id)
+        self.put(member_url)
+
+        # list global role assignments
+        collection_url = '/groups/%s/roles' % self.group['id']
+        response = self.get(collection_url)
+
+        # assert the project role assignment is not in the global role
+        # assignments
+        for role in response.json_body['roles']:
+            self.assertNotEqual(role['id'], project_role_id)
+
+    def test_list_global_roles_for_group_does_not_return_domain_roles(self):
+        global_role_id = self._create_new_role()
+        domain_role_id = self._create_new_role()
+
+        # assign a role to the group on a domain
+        domain_member_url = '/domains/%s/groups/%s/roles/%s' % (
+            self.group['domain_id'], self.group['id'], domain_role_id
+        )
+        self.put(domain_member_url)
+
+        # assign the new role to the group globally
+        member_url = '/groups/%s/roles/%s' % (self.group['id'], global_role_id)
+        self.put(member_url)
+
+        # list domain role assignments
+        response = self.get(
+            '/domains/%s/groups/%s/roles' % (
+                self.group['domain_id'], self.group['id']
+            )
+        )
+        self.assertEqual(len(response.json_body['roles']), 1)
+
+        # list global role assignments
+        collection_url = '/groups/%s/roles' % self.group['id']
+        response = self.get(collection_url)
+
+        # assert the domain role assignment is not in the global role
+        # assignments
+        for role in response.json_body['roles']:
+            self.assertNotEqual(role['id'], domain_role_id)
+
+    def test_check_group_has_global_role_when_assignment_exists(self):
+        global_role_id = self._create_new_role()
+
+        # assign the role to the group globally
+        member_url = '/groups/%s/roles/%s' % (self.group['id'], global_role_id)
+        self.put(member_url)
+
+        # check the group has the global role assignment
+        self.head(member_url)
+
+    def test_check_group_does_not_have_global_role_without_assignment(self):
+        global_role_id = self._create_new_role()
+
+        # check the group does't have the global role assignment
+        member_url = '/groups/%s/roles/%s' % (self.group['id'], global_role_id)
+        self.head(member_url, expected_status=http_client.NOT_FOUND)
+
+        response = self.get(
+            '/role_assignments?scope.global&group.id=%(group_id)s' % {
+                'group_id': self.group['id']
+            }
+        )
+        self.assertEqual(len(response.json_body['role_assignments']), 0)
+        self.assertValidRoleAssignmentListResponse(response)
+
+    def test_unassign_global_role_from_group(self):
+        global_role_id = self._create_new_role()
+
+        # assign the role to the group globally
+        member_url = '/groups/%s/roles/%s' % (self.group['id'], global_role_id)
+        self.put(member_url)
+
+        # ensure the group has the role assignment
+        self.head(member_url)
+
+        response = self.get(
+            '/role_assignments?scope.global&group.id=%(group_id)s' % {
+                'group_id': self.group['id']
+            }
+        )
+        self.assertEqual(len(response.json_body['role_assignments']), 1)
+        self.assertValidRoleAssignmentListResponse(response)
+
+        # remove the global role assignment from the group
+        self.delete(member_url)
+
+        # ensure the group doesn't have any global role assignments
+        collection_url = '/groups/%s/roles' % self.group['id']
+        response = self.get(collection_url)
+        self.assertEqual(len(response.json_body['roles']), 0)
+        response = self.get(
+            '/role_assignments?scope.global&group.id=%(group_id)s' % {
+                'group_id': self.group['id']
             }
         )
         self.assertEqual(len(response.json_body['role_assignments']), 0)
