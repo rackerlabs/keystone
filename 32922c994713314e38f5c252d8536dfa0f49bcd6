@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_fa791993",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-08-18T13:20:53Z",
+      "side": 1,
+      "message": "What does this buy us versus sending the bool directly?",
+      "range": {
+        "startLine": 326,
+        "startChar": 8,
+        "endLine": 326,
+        "endChar": 58
+      },
+      "revId": "32922c994713314e38f5c252d8536dfa0f49bcd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
