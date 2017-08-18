@@ -217,12 +217,14 @@ identity:get_domain_config_default                         - GET /v3/domains/con
 *global_grant_resources* are:
 
 - /v3/users/{user_id}/roles/{role_id}
+- /v3/groups/{group_id}/roles/{role_id}
 
 .. _global_grant_collections:
 
 *global_grant_collections* are:
 
 - /v3/users/{user_id}/roles
+- /v3/groups/{group_id}/roles
 
 .. _grant_resources:
 

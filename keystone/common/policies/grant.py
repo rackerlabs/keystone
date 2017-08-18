@@ -29,6 +29,7 @@ resource_paths += ['/OS-INHERIT' + path + '/inherited_to_projects'
 
 global_resource_paths = [
     '/users/{user_id}/roles/{role_id}',
+    '/groups/{group_id}/roles/{role_id}'
 ]
 
 
@@ -42,6 +43,7 @@ collection_paths = [
 
 global_collection_paths = [
     '/users/{user_id}/roles',
+    '/groups/{group_id}/roles'
 ]
 
 
@@ -111,25 +113,25 @@ grant_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'check_global_grant',
         check_str=base.RULE_ADMIN_REQUIRED,
-        description='Check a user has a global role assignment.',
+        description='Check a user or group  has a global role assignment.',
         operations=list_operations(global_resource_paths, ['HEAD', 'GET'])
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_global_grants',
         check_str=base.RULE_ADMIN_REQUIRED,
-        description='List global role assignments for a user.',
+        description='List global role assignments for a user or group.',
         operations=list_operations(global_collection_paths, ['HEAD', 'GET'])
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_global_grant',
         check_str=base.RULE_ADMIN_REQUIRED,
-        description='Grant a user a role globally.',
+        description='Grant a user or group a role globally.',
         operations=list_operations(global_resource_paths, ['PUT'])
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'revoke_global_grant',
         check_str=base.RULE_ADMIN_REQUIRED,
-        description='Revoke a role from a user globally.',
+        description='Revoke a role from a user or group globally.',
         operations=list_operations(global_resource_paths, ['DELETE'])
     )
 ]
