@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_285f560f",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-18T16:04:16Z",
+      "side": 1,
+      "message": "We should document the list and what type the \u0027resource\u0027 is. Here we\u0027re talking about a list of dictionaries, right?\n\nFWIW - I tested a few different implementations of this and timed them locally [0] [1]. Filtering duplicates based on containment seemed to be the fastest for me [2].\n\n[0] https://gist.github.com/lbragstad/a81776e2c679f728c19cad7f3a35703f\n[1] http://paste.openstack.org/show/618785/\n[2] https://gist.github.com/lbragstad/a81776e2c679f728c19cad7f3a35703f#file-attempt-py-L26-L34",
+      "revId": "ff7c81fb3e843b177482bce78e21f26f71f029f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_486cda9b",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-18T16:04:16Z",
+      "side": 1,
+      "message": "This actually does a deep copy comparison - which means you don\u0027t even have to deal with a set of id separately:\n\n  unique_resources \u003d []\n  for resource in resource_list:\n      if resource not in unique_resources:\n          unique_resources.append(resource)\n  return unique_resources\n\nAnd while this probably isn\u0027t likely in our specific case - it works with the following data set:\n\n  d1 \u003d {\u0027id\u0027: 1, \u0027foo\u0027: \u0027bar\u0027}\n  d2 \u003d {\u0027id\u0027: 1, \u0027foo\u0027: \u0027baz\u0027}\n\nWhere-as only comparing ID and assuming both dictionaries are equal based on the id only means ^ those are equal.",
+      "revId": "ff7c81fb3e843b177482bce78e21f26f71f029f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
