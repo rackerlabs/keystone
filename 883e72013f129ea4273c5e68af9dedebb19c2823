@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_b17a61b7",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-08-21T21:15:19Z",
+      "side": 1,
+      "message": "having trouble finding how to edit a method inside of a class method. There has to be a better way than overriding the base projectv3 class\u0027s filter method with the same + new code.",
+      "revId": "883e72013f129ea4273c5e68af9dedebb19c2823",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_d1aa8517",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-08-21T21:15:19Z",
+      "side": 1,
+      "message": "3 nested ifs are too complex. Need a better way to do this",
+      "revId": "883e72013f129ea4273c5e68af9dedebb19c2823",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
