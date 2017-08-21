@@ -272,7 +272,8 @@ class ProjectV3(controller.V3Controller):
         return ProjectV3.wrap_member(request.context_dict, ref)
 
     @controller.filterprotected('domain_id', 'enabled', 'name',
-                                'parent_id', 'is_domain')
+                                'parent_id', 'is_domain', 'tags',
+                                'tags_any', 'not_tags', 'not_tags_any')
     def list_projects(self, request, filters):
         hints = ProjectV3.build_driver_hints(request, filters)
         # If 'is_domain' has not been included as a query, we default it to
@@ -280,8 +281,63 @@ class ProjectV3(controller.V3Controller):
         if 'is_domain' not in request.params:
             hints.add_filter('is_domain', '0')
         refs = self.resource_api.list_projects(hints=hints)
+        refs = self._filter_by_tags(refs, hints)
         return ProjectV3.wrap_collection(request.context_dict,
                                          refs, hints=hints)
+
+    def _filter_by_tags(self, refs, hints):
+        def _tags_any(matches, target_value):
+            return any(matches)
+
+        def _not_tags(matches, target_value):
+            return not _tags(matches, target_value)
+
+        def _not_tags_any(matches, target_value):
+            return True if not target_value else not any(matches)
+
+        def _tags(matches, target_value):
+            return False if not target_value else all(matches)
+
+        def _found_match(filter, ref):
+            # NOTE(otleimat): Function pointers to helper functions
+            # simplify tag filtering greatly because this is
+            # essentially a large switch statement
+            key = filter['name'].replace("_", "-")
+            comparator = filter['comparator']
+            target_value = ref['tags']
+            filter_value = filter['value']
+
+            inexact_checker = {'tags-any': _tags_any, 'not-tags': _not_tags,
+                               'not-tags-any': _not_tags_any, 'tags': _tags}
+            # Only do a tag filter search if the request matches any of the
+            # supported searches
+            if key in inexact_checker.keys():
+                target_value = ref['tags']
+                if comparator == 'startswith' or comparator == 'endswith':
+                    # If a 'startswith' or 'endswith' request is made, search
+                    # any edge matches in the target_value and record an array
+                    # of true/false values
+                    edge_matches = [getattr(tag, comparator)(
+                        filter_value) for tag in target_value]
+                    # This will route the matched occurences to whichever
+                    # helper function needs to be hit
+                    return inexact_checker[key](edge_matches, target_value)
+                elif comparator == 'contains':
+                    # a 'contains' search requires a different target array
+                    contains_matches = [(filter_value in tag)
+                                        for tag in target_value]
+                    return inexact_checker[key](contains_matches, target_value)
+                else:
+                    # Silently ignore unsupported filters
+                    return True
+            return False
+        # Only reassign refs if a specific tag filter is applied
+        for f in hints.filters:
+            if f['comparator'] is not 'equals' and 'tag' in f['name']:
+                return [r for r in refs if _found_match(
+                    f, r)]
+        # If it isnt a special case, return given refs parameter
+        return refs
 
     def _expand_project_ref(self, request, ref):
         params = request.params

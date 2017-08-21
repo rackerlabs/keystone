@@ -411,7 +411,9 @@ class V3Controller(wsgi.Application):
         # limited the output if it found there were filters it was unable to
         # handle.
 
-        if hints is not None:
+        # Bypass filter_by_attributes if a tag filter search was done
+        if hints is not None and not any('tag' in key['name'] for
+                                         key in hints.filters):
             refs = cls.filter_by_attributes(refs, hints)
 
         list_limited, refs = cls.limit(refs, hints)
