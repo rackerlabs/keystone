@@ -1,0 +1,8 @@
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Workflow+1: Lance Bragstad <lbragstad@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 23 Aug 2017 15:20:33 +0000
+Reviewed-on: https://review.openstack.org/496343
+Project: openstack/keystone
+Branch: refs/heads/stable/pike
