@@ -45,6 +45,42 @@
       "revId": "0e30adf7d2e61e92e106e3c9caf4d16b3e5140ed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_32f0e1c9",
+        "filename": "doc/source/contributor/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-23T13:39:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f287b81_16f5eecb",
+      "revId": "0e30adf7d2e61e92e106e3c9caf4d16b3e5140ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_12ede5ee",
+        "filename": "doc/source/contributor/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-23T13:39:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f287b81_996c6e09",
+      "revId": "0e30adf7d2e61e92e106e3c9caf4d16b3e5140ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
