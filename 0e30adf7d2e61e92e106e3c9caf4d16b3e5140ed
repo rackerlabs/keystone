@@ -22,6 +22,29 @@
       "revId": "0e30adf7d2e61e92e106e3c9caf4d16b3e5140ed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_996c6e09",
+        "filename": "doc/source/contributor/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-23T01:23:45Z",
+      "side": 1,
+      "message": "could replace \"can\" with \"will\" since this is how we got here",
+      "range": {
+        "startLine": 38,
+        "startChar": 34,
+        "endLine": 38,
+        "endChar": 37
+      },
+      "revId": "0e30adf7d2e61e92e106e3c9caf4d16b3e5140ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
