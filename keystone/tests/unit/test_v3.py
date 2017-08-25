@@ -25,6 +25,7 @@ from keystone import auth
 from keystone.common import authorization
 from keystone.common import cache
 from keystone.common.validation import validators
+from keystone.common.validation import parameter_types
 from keystone import exception
 from keystone import middleware
 from keystone.tests.common import auth as common_auth
@@ -40,7 +41,8 @@ TIME_FORMAT = unit.TIME_FORMAT
 class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
                       common_auth.AuthTestMixin):
 
-    def generate_token_schema(self, domain_scoped=False, project_scoped=False):
+    def generate_token_schema(self, global_scoped=False, domain_scoped=False,
+                              project_scoped=False):
         """Return a dictionary of token properties to validate against."""
         properties = {
             'audit_ids': {
@@ -99,7 +101,22 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             }
         }
 
-        if domain_scoped:
+        if global_scoped:
+            properties['global'] = parameter_types.boolean
+            properties['roles'] = {
+                'type': 'array',
+                'items': {
+                    'type': 'object',
+                    'properties': {
+                        'id': {'type': 'string', },
+                        'name': {'type': 'string', },
+                    },
+                    'required': ['id', 'name', ],
+                    'additionalProperties': False,
+                },
+                'minItems': 1,
+            }
+        elif domain_scoped:
             properties['catalog'] = {'type': 'array'}
             properties['roles'] = {
                 'type': 'array',
@@ -156,6 +173,9 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             'additionalProperties': False
         }
 
+        if global_scoped:
+            schema['required'].extend(['global', 'roles'])
+            schema['optional'].append('catalog')
         if domain_scoped:
             schema['required'].extend(['domain', 'roles'])
             schema['optional'].append('catalog')
@@ -681,6 +701,19 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         validator_object.validate(token)
 
         return token
+
+    def assertValidGloballyScopedTokenResponse(self, r, *args, **kwargs):
+        token = self.assertValidTokenResponse(r)
+        self.assertTrue(token['global'])
+
+        # get global token schema
+        global_scoped_token_schema = self.generate_token_schema(
+            global_scoped=True
+        )
+        validator_object = validators.SchemaValidator(
+            global_scoped_token_schema
+        )
+        validator_object.validate(token)
 
     def assertEqualTokens(self, a, b):
         """Assert that two tokens are equal.
