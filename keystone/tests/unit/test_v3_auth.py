@@ -630,6 +630,59 @@ class TokenAPITests(object):
             expected_status=http_client.NOT_FOUND
         )
 
+    # Global-scoped token tests
+    def test_create_global_token(self):
+        # grant user a role globally
+        from pprint import pprint
+        path = '/users/%(user_id)s/roles/%(role_id)s' % {
+            'user_id': self.user['id'],
+            'role_id': self.role_id
+        }
+        pprint(path)
+        self.put(path=path)
+
+        auth_request_body = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            is_global=True
+        )
+        pprint(auth_request_body)
+
+        response = self.v3_create_token(auth_request_body)
+
+    def test_create_global_token_with_username(self):
+        pass
+
+    def test_create_global_token_with_user_id(self):
+        pass
+
+    def test_create_global_token_fails_without_global_assignment(self):
+        pass
+
+    def test_global_token_is_invalid_after_disabling_user(self):
+        pass
+
+    def test_global_token_is_invalid_after_disabling_group(self):
+        pass
+
+    def test_validate_global_token_against_v2_fails(self):
+        pass
+
+    def test_create_global_token_via_global_group_assignment(self):
+        pass
+
+    def test_revoke_global_token(self):
+        pass
+
+    def test_global_token_is_invalid_after_deleting_global_role(self):
+        pass
+
+    def test_rescoping_with_global_token_can_fail(self):
+        pass
+
+    def test_rescoping_with_global_token_can_succeed(self):
+        pass
+
     def test_create_domain_token_scoped_with_domain_id_and_user_id(self):
         # grant the user a role on the domain
         path = '/domains/%s/users/%s/roles/%s' % (
