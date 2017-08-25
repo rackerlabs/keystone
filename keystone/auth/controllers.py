@@ -111,15 +111,29 @@ class Auth(controller.V3Controller):
         validate_issue_token_auth(auth)
 
         try:
-            auth_info = core.AuthInfo.create(auth=auth)
             auth_context = core.AuthContext(extras={},
                                             method_names=[],
                                             bind={})
+            auth_info = core.AuthInfo.create(
+                auth=auth, auth_context=auth_context
+            )
             self.authenticate(request, auth_info, auth_context)
-            if auth_context.get('access_token_id'):
-                auth_info.set_scope(None, auth_context['project_id'], None)
             self._check_and_set_default_scoping(auth_info, auth_context)
-            (domain_id, project_id, trust, unscoped) = auth_info.get_scope()
+            domain_id = None
+            project_id = None
+            trust = None
+
+            if auth_info.is_domain_scoped:
+                domain_id = auth_info.scope
+            elif auth_info.is_project_scoped:
+                project_id = auth_info.scope
+            elif auth_info.is_trust_scoped:
+                trust_ref = auth_info.scope
+                if trust_ref.get('project_id') is not None:
+                    project_id = trust_ref.get('project_id')
+                else:
+                    trust = trust_ref
+            # (domain_id, project_id, trust, unscoped) = auth_info.get_scope()
 
             # NOTE(notmorgan): only methods that actually run and succeed will
             # be in the auth_context['method_names'] list. Do not blindly take
@@ -156,8 +170,9 @@ class Auth(controller.V3Controller):
             raise exception.Unauthorized(e)
 
     def _check_and_set_default_scoping(self, auth_info, auth_context):
-        (domain_id, project_id, trust, unscoped) = auth_info.get_scope()
-        if trust:
+        # (domain_id, project_id, trust, unscoped) = auth_info.get_scope()
+        if auth_info.is_trust_scoped:
+            auth_info.get_scope()
             project_id = trust['project_id']
         if domain_id or project_id or trust:
             # scope is specified
