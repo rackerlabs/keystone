@@ -614,6 +614,11 @@ class V2TokenDataHelper(object):
                     'v2.0 API.')
             raise exception.Unauthorized(msg)
 
+        if 'global' in v3_token:
+            msg = ('Unable to validate globally-scoped tokens using the '
+                   'v2.0  API')
+            raise exception.Unauthorized(msg)
+
         # Set user roles
         user['roles'] = []
         role_ids = []

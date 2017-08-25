@@ -10,6 +10,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.common.validation import parameter_types
+
 token_issue = {
     'type': 'object',
     'properties': {
@@ -82,6 +84,7 @@ token_issue = {
                         'name': {'type': 'string', },
                     },
                 },
+                'global': parameter_types.boolean,
             },
         },
     },
