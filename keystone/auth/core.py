@@ -137,19 +137,16 @@ class AuthInfo(object):
     """Encapsulation of "auth" request."""
 
     @staticmethod
-    def create(auth=None, scope_only=False):
-        auth_info = AuthInfo(auth=auth)
-        auth_info._validate_and_normalize_auth_data(scope_only)
+    def create(auth=None, auth_context=None, scope_only=False):
+        auth_info = AuthInfo(auth=auth, auth_context=auth_context)
+        auth_info._validate_auth_request(scope_only)
         return auth_info
 
-    def __init__(self, auth=None):
+    def __init__(self, auth=None, auth_context=None):
         self.auth = auth
-        self._scope_data = (None, None, None, None)
-        # self._scope_data is (domain_id, project_id, trust_ref, unscoped)
-        # project scope: (None, project_id, None, None)
-        # domain scope: (domain_id, None, None, None)
-        # trust scope: (None, None, trust_ref, None)
-        # unscoped: (None, None, None, 'unscoped')
+        self.auth_context = auth_context
+        self.scope_identifier = None
+        self._scope = None
 
     def _assert_project_is_enabled(self, project_ref):
         # ensure the project is enabled
@@ -229,37 +226,36 @@ class AuthInfo(object):
         return trust
 
     def _validate_and_normalize_scope_data(self):
-        """Validate and normalize scope data."""
+        """Validate and normalize the scope in an authentication request."""
         if 'scope' not in self.auth:
             return
+
         if sum(['project' in self.auth['scope'],
                 'domain' in self.auth['scope'],
                 'unscoped' in self.auth['scope'],
                 'OS-TRUST:trust' in self.auth['scope']]) != 1:
-            raise exception.ValidationError(
-                attribute='project, domain, OS-TRUST:trust or unscoped',
-                target='scope')
+             raise exception.ValidationError(
+                 attribute='project, domain, OS-TRUST:trust or unscoped',
+                 target='scope')
+
         if 'unscoped' in self.auth['scope']:
-            self._scope_data = (None, None, None, 'unscoped')
-            return
-        if 'project' in self.auth['scope']:
+            self._scope = 'unscoped'
+        elif 'project' in self.auth['scope']:
             project_ref = self._lookup_project(self.auth['scope']['project'])
-            self._scope_data = (None, project_ref['id'], None, None)
+            self._scope = 'project'
         elif 'domain' in self.auth['scope']:
             domain_ref = self._lookup_domain(self.auth['scope']['domain'])
-            self._scope_data = (domain_ref['id'], None, None, None)
+            self._scope = 'domain'
         elif 'OS-TRUST:trust' in self.auth['scope']:
             if not CONF.trust.enabled:
                 raise exception.Forbidden('Trusts are disabled.')
             trust_ref = self._lookup_trust(
                 self.auth['scope']['OS-TRUST:trust'])
             # TODO(ayoung): when trusts support domains, fill in domain data
+            self._scope = 'trust'
             if trust_ref.get('project_id') is not None:
                 project_ref = self._lookup_project(
                     {'id': trust_ref['project_id']})
-                self._scope_data = (None, project_ref['id'], trust_ref, None)
-            else:
-                self._scope_data = (None, None, trust_ref, None)
 
     def _validate_auth_methods(self):
         # make sure all the method data/payload are provided
@@ -273,7 +269,7 @@ class AuthInfo(object):
             if method_name not in AUTH_METHODS:
                 raise exception.AuthMethodNotSupported()
 
-    def _validate_and_normalize_auth_data(self, scope_only=False):
+    def _validate_auth_request(self, scope_only=False):
         """Make sure "auth" is valid.
 
         :param scope_only: If it is True, auth methods will not be
@@ -319,24 +315,32 @@ class AuthInfo(object):
                                             target='identity')
         return self.auth['identity'][method]
 
-    def get_scope(self):
-        """Get scope information.
+    @property
+    def is_unscoped(self):
+        return self._scope == 'unscoped'
 
-        Verify and return the scoping information.
+    @property
+    def is_domain_scoped(self):
+        return self._scope == 'domain'
 
-        :returns: (domain_id, project_id, trust_ref, unscoped).
-                   If scope to a project, (None, project_id, None, None)
-                   will be returned.
-                   If scoped to a domain, (domain_id, None, None, None)
-                   will be returned.
-                   If scoped to a trust, (None, project_id, trust_ref, None),
-                   Will be returned, where the project_id comes from the
-                   trust definition.
-                   If unscoped, (None, None, None, 'unscoped') will be
-                   returned.
+    @property
+    def is_project_scoped(self):
+        return self._scope == 'project'
 
-        """
-        return self._scope_data
+    @property
+    def is_trust_scoped(self):
+        return self._scope == 'trust'
+
+    @property
+    def scope(self):
+        if self.is_domain_scoped:
+            return self.domain_id
+        elif self.is_project_scoped:
+            if self.auth_context.get('access_token_id'):
+                return self.auth_context['project_id']
+            return self.project_id
+        elif self.is_trust_scoped:
+            return self._lookup_trust(self.auth['scope']['OS-TRUST:trust'])
 
     def set_scope(self, domain_id=None, project_id=None, trust=None,
                   unscoped=None):
