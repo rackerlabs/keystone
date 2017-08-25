@@ -27,6 +27,7 @@ import keystone.conf
 from keystone import exception
 from keystone.i18n import _
 from keystone import notifications
+from keystone.token import provider as token_provider
 
 
 CONF = keystone.conf.CONF
@@ -108,6 +109,27 @@ class Manager(manager.Manager):
         assignment_list = self.list_role_assignments(
             user_id=user_id, project_id=tenant_id, effective=True)
         # Use set() to process the list to remove any duplicates
+        return list(set([x['role_id'] for x in assignment_list]))
+
+    # FIXME(lbragstad): This should be a cacheable method, just like
+    # get_roles_for_user_and_project and get_roles_for_user_and_domain, but it
+    # causes issues with tests. The cache invalidation strategy implemented in
+    # keystone doesn't take cache regions across multiple python processes into
+    # account. Which means it's possible to get a list of stale roles by
+    # calling this method immediately after deleting a role (which should
+    # invalidate the COMPUTED_ASSIGNMENTS_REGION cache).
+    def get_global_roles_for_user(self, user_id):
+        """List all roles given to a user globally.
+
+        This includes direct role assignments and roles assigned to groups a
+        user is a member of.
+
+        :returns: a list of role ids.
+
+        """
+        assignment_list = self.list_role_assignments(
+            user_id=user_id, is_global=True, effective=True, inherited=False
+        )
         return list(set([x['role_id'] for x in assignment_list]))
 
     @MEMOIZE_COMPUTED_ASSIGNMENTS
@@ -857,8 +879,8 @@ class Manager(manager.Manager):
         # Matching on the specified role is performed at the end.
         direct_refs = list_role_assignments_for_actor(
             role_id=None, user_id=user_id, group_ids=source_from_group_ids,
-            project_id=project_id, subtree_ids=subtree_ids,
-            domain_id=domain_id, inherited=inherited)
+            is_global=is_global, project_id=project_id,
+            subtree_ids=subtree_ids, domain_id=domain_id, inherited=inherited)
 
         # And those from the user's groups, so long as we are not restricting
         # to a set of source groups (in which case we already got those
@@ -870,7 +892,8 @@ class Manager(manager.Manager):
                 group_refs = list_role_assignments_for_actor(
                     role_id=None, project_id=project_id,
                     subtree_ids=subtree_ids, group_ids=group_ids,
-                    domain_id=domain_id, inherited=inherited)
+                    is_global=is_global, domain_id=domain_id,
+                    inherited=inherited)
 
         # Expand grouping and inheritance on retrieved role assignments
         refs = []
@@ -1185,6 +1208,7 @@ class RoleManager(manager.Manager):
         notifications.Audit.deleted(self._ROLE, role_id, initiator)
         self.get_role.invalidate(self, role_id)
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
+        token_provider.TOKENS_REGION.invalidate()
 
     # TODO(ayoung): Add notification
     def create_implied_role(self, prior_role_id, implied_role_id):
