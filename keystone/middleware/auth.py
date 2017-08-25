@@ -59,7 +59,7 @@ class AuthContextMiddleware(auth_token.BaseAuthProtocol):
         """
         tokenless_helper = tokenless_auth.TokenlessAuthHelper(request.environ)
 
-        (domain_id, project_id, trust_ref, unscoped) = (
+        (domain_id, project_id, trust_ref, unscoped, global_token) = (
             tokenless_helper.get_scope())
         user_ref = tokenless_helper.get_mapped_user(
             project_id,

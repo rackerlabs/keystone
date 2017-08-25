@@ -109,14 +109,16 @@ class V3TokenDataHelper(object):
             filtered_project['domain'] = None
         return filtered_project
 
-    def _populate_scope(self, token_data, domain_id, project_id):
+    def _populate_scope(self, token_data, is_global, domain_id, project_id):
         if 'domain' in token_data or 'project' in token_data:
             # scope already exist, no need to populate it again
             return
 
-        if domain_id:
+        if is_global:
+            token_data['global'] = True
+        elif domain_id:
             token_data['domain'] = self._get_filtered_domain(domain_id)
-        if project_id:
+        elif project_id:
             token_data['project'] = self._get_filtered_project(project_id)
             project_ref = self.resource_api.get_project(project_id)
             token_data['is_domain'] = project_ref['is_domain']
@@ -139,19 +141,21 @@ class V3TokenDataHelper(object):
             project['name'] == admin_project_name and
             project['domain']['name'] == admin_project_domain_name)
 
-    def _get_roles_for_user(self, user_id, domain_id, project_id):
+    def _get_roles_for_user(self, user_id, is_global, domain_id, project_id):
         roles = []
-        if domain_id:
+        if is_global:
+            roles = self.assignment_api.get_global_roles_for_user(user_id)
+        elif domain_id:
             roles = self.assignment_api.get_roles_for_user_and_domain(
                 user_id, domain_id)
-        if project_id:
+        elif project_id:
             roles = self.assignment_api.get_roles_for_user_and_project(
                 user_id, project_id)
         return [self.role_api.get_role(role_id) for role_id in roles]
 
     def populate_roles_for_federated_user(self, token_data, group_ids,
                                           project_id=None, domain_id=None,
-                                          user_id=None):
+                                          user_id=None, is_global=False):
         """Populate roles basing on provided groups and project/domain.
 
         Used for federated users with dynamically assigned groups.
@@ -163,6 +167,7 @@ class V3TokenDataHelper(object):
         :param project_id: project ID to scope to
         :param domain_id: domain ID to scope to
         :param user_id: user ID
+        :param is_global: boolean denoting global scope
 
         :raises keystone.exception.Unauthorized: when no roles were found
 
@@ -189,7 +194,7 @@ class V3TokenDataHelper(object):
         roles = self.assignment_api.get_roles_for_groups(group_ids,
                                                          project_id,
                                                          domain_id)
-        roles = roles + self._get_roles_for_user(user_id, domain_id,
+        roles = roles + self._get_roles_for_user(user_id, is_global, domain_id,
                                                  project_id)
 
         # NOTE(lbragstad): Remove duplicate role references from a list of
@@ -261,8 +266,8 @@ class V3TokenDataHelper(object):
             token_data['OS-OAUTH1'] = ({'access_token_id': access_token_id,
                                         'consumer_id': consumer_id})
 
-    def _populate_roles(self, token_data, user_id, domain_id, project_id,
-                        trust, access_token):
+    def _populate_roles(self, token_data, user_id, is_global, domain_id,
+                        project_id, trust, access_token):
         if 'roles' in token_data:
             # no need to repopulate roles
             return
@@ -301,7 +306,7 @@ class V3TokenDataHelper(object):
             token_project_id = project_id
             token_domain_id = domain_id
 
-        if token_domain_id or token_project_id:
+        if is_global or token_domain_id or token_project_id:
             filtered_roles = []
             if CONF.trust.enabled and trust:
                 # First expand out any roles that were in the trust to include
@@ -333,6 +338,7 @@ class V3TokenDataHelper(object):
                             _('Trustee has no delegated roles.'))
             else:
                 for role in self._get_roles_for_user(token_user_id,
+                                                     is_global,
                                                      token_domain_id,
                                                      token_project_id):
                     filtered_roles.append({'id': role['id'],
@@ -345,11 +351,15 @@ class V3TokenDataHelper(object):
                             'to project %(project_id)s') % {
                                 'user_id': user_id,
                                 'project_id': token_project_id}
-                else:
+                elif token_domain_id:
                     msg = _('User %(user_id)s has no access '
                             'to domain %(domain_id)s') % {
                                 'user_id': user_id,
                                 'domain_id': token_domain_id}
+                elif is_global:
+                    msg = _(
+                        'User %(user_id)s has no global access') % {
+                            'user_id': user_id}
                 LOG.debug(msg)
                 raise exception.Unauthorized(msg)
 
@@ -396,10 +406,10 @@ class V3TokenDataHelper(object):
             LOG.error(msg)
             raise exception.UnexpectedError(msg)
 
-    def get_token_data(self, user_id, method_names, domain_id=None,
-                       project_id=None, expires=None, trust=None, token=None,
-                       include_catalog=True, bind=None, access_token=None,
-                       issued_at=None, audit_info=None):
+    def get_token_data(self, user_id, method_names, is_global=False,
+                       domain_id=None, project_id=None, expires=None,
+                       trust=None, token=None, include_catalog=True, bind=None,
+                       access_token=None, issued_at=None, audit_info=None):
         token_data = {'methods': method_names}
 
         # We've probably already written these to the token
@@ -411,12 +421,12 @@ class V3TokenDataHelper(object):
         if bind:
             token_data['bind'] = bind
 
-        self._populate_scope(token_data, domain_id, project_id)
+        self._populate_scope(token_data, is_global, domain_id, project_id)
         if token_data.get('project'):
             self._populate_is_admin_project(token_data)
         self._populate_user(token_data, user_id, trust)
-        self._populate_roles(token_data, user_id, domain_id, project_id, trust,
-                             access_token)
+        self._populate_roles(token_data, user_id, is_global, domain_id,
+                             project_id, trust, access_token)
         self._populate_audit_info(token_data, audit_info)
 
         if include_catalog:
@@ -456,8 +466,8 @@ class BaseProvider(base.Provider):
                 federation_constants.PROTOCOL in auth_context)
 
     def issue_token(self, user_id, method_names, expires_at=None,
-                    project_id=None, domain_id=None, auth_context=None,
-                    trust=None, include_catalog=True,
+                    is_global=False, project_id=None, domain_id=None,
+                    auth_context=None, trust=None, include_catalog=True,
                     parent_audit_id=None):
         if auth_context and auth_context.get('bind'):
             # NOTE(lbragstad): Check if the token provider being used actually
@@ -484,6 +494,7 @@ class BaseProvider(base.Provider):
         token_data = self.v3_token_data_helper.get_token_data(
             user_id,
             method_names,
+            is_global=is_global,
             domain_id=domain_id,
             project_id=project_id,
             expires=expires_at,
@@ -591,6 +602,7 @@ class BaseProvider(base.Provider):
                 expires_at = token_data['token']['expires_at']
                 is_global = token_data['token'].get('global', False)
                 audit_ids = token_data['token'].get('audit_ids')
+                is_global = token_data['token'].get('global', False)
                 domain_id = token_data['token'].get('domain', {}).get('id')
                 project_id = token_data['token'].get('project', {}).get('id')
                 access_token = None
@@ -652,6 +664,7 @@ class BaseProvider(base.Provider):
         return self.v3_token_data_helper.get_token_data(
             user_id,
             method_names=methods,
+            is_global=is_global,
             domain_id=domain_id,
             project_id=project_id,
             issued_at=issued_at,
