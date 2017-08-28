@@ -537,6 +537,7 @@ class BaseProvider(base.Provider):
     def validate_token(self, token_id):
         user_id = None  # id of the user of the token
         methods = None  # list of methods used to obtain a token
+        is_global = False  # boolean denoting global scope
         bind = None  # dictionary of bind methods
         issued_at = None  # time at which the token was issued
         expires_at = None  # time at which the token will expire
@@ -588,6 +589,7 @@ class BaseProvider(base.Provider):
                 bind = token_data['token'].get('bind')
                 issued_at = token_data['token']['issued_at']
                 expires_at = token_data['token']['expires_at']
+                is_global = token_data['token'].get('global', False)
                 audit_ids = token_data['token'].get('audit_ids')
                 domain_id = token_data['token'].get('domain', {}).get('id')
                 project_id = token_data['token'].get('project', {}).get('id')
@@ -611,8 +613,9 @@ class BaseProvider(base.Provider):
                     token_dict = {'user': token_ref['user']}
         else:
             try:
-                (user_id, methods, audit_ids, domain_id, project_id, trust_id,
-                    federated_info, access_token_id, issued_at, expires_at) = (
+                (user_id, methods, audit_ids, is_global, domain_id, project_id,
+                    trust_id, federated_info, access_token_id, issued_at,
+                    expires_at) = (
                         self.token_formatter.validate_token(token_id))
             except exception.ValidationError as e:
                 raise exception.TokenNotFound(e)

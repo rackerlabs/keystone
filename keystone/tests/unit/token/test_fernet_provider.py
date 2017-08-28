@@ -322,20 +322,20 @@ class TestPayloads(unit.TestCase):
         self.assertEqual(expected_time_str, actual_time_str)
 
     def _test_payload(self, payload_class, exp_user_id=None, exp_methods=None,
-                      exp_project_id=None, exp_domain_id=None,
-                      exp_trust_id=None, exp_federated_info=None,
-                      exp_access_token_id=None):
+                      exp_is_global=None, exp_project_id=None,
+                      exp_domain_id=None, exp_trust_id=None,
+                      exp_federated_info=None, exp_access_token_id=None):
         exp_user_id = exp_user_id or uuid.uuid4().hex
         exp_methods = exp_methods or ['password']
         exp_expires_at = utils.isotime(timeutils.utcnow(), subsecond=True)
         exp_audit_ids = [common.random_urlsafe_str()]
 
         payload = payload_class.assemble(
-            exp_user_id, exp_methods, exp_project_id, exp_domain_id,
-            exp_expires_at, exp_audit_ids, exp_trust_id, exp_federated_info,
-            exp_access_token_id)
+            exp_user_id, exp_methods, exp_is_global, exp_project_id,
+            exp_domain_id, exp_expires_at, exp_audit_ids, exp_trust_id,
+            exp_federated_info, exp_access_token_id)
 
-        (user_id, methods, project_id,
+        (user_id, methods, is_global, project_id,
          domain_id, expires_at, audit_ids,
          trust_id, federated_info,
          access_token_id) = payload_class.disassemble(payload)
