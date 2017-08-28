@@ -37,9 +37,8 @@ Contents
 
    common/get-started-identity.rst
    keystone-install-ubuntu.rst
-   keystone-users.rst
+   keystone-users-ubuntu.rst
    keystone-verify-ubuntu.rst
-   keystone-openrc.rst
 
 .. Pseudo only directive for each distribution used by the build tool.
    This pseudo only directive for toctree only works fine with Tox.

@@ -20,3 +20,4 @@ the Apache HTTP server to handle requests.
    index-obs
    index-rdo
    index-ubuntu
+   keystone-openrc
