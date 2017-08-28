@@ -119,7 +119,9 @@ class Auth(controller.V3Controller):
             if auth_context.get('access_token_id'):
                 auth_info.set_scope(None, auth_context['project_id'], None)
             self._check_and_set_default_scoping(auth_info, auth_context)
-            (domain_id, project_id, trust, unscoped) = auth_info.get_scope()
+            (domain_id, project_id, trust, unscoped, global_token) = (
+                auth_info.get_scope()
+            )
 
             # NOTE(notmorgan): only methods that actually run and succeed will
             # be in the auth_context['method_names'] list. Do not blindly take
@@ -138,10 +140,13 @@ class Auth(controller.V3Controller):
             expires_at = auth_context.get('expires_at')
             token_audit_id = auth_context.get('audit_id')
 
+            is_global = True if global_token else False
             is_domain = auth_context.get('is_domain')
             (token_id, token_data) = self.token_provider_api.issue_token(
-                auth_context['user_id'], method_names, expires_at, project_id,
-                is_domain, domain_id, auth_context, trust, include_catalog,
+                auth_context['user_id'], method_names, expires_at=expires_at,
+                is_global=is_global, project_id=project_id, is_domain=is_domain,
+                domain_id=domain_id, auth_context=auth_context, trust=trust,
+                include_catalog=include_catalog,
                 parent_audit_id=token_audit_id)
 
             # NOTE(wanghong): We consume a trust use only when we are using
@@ -156,7 +161,9 @@ class Auth(controller.V3Controller):
             raise exception.Unauthorized(e)
 
     def _check_and_set_default_scoping(self, auth_info, auth_context):
-        (domain_id, project_id, trust, unscoped) = auth_info.get_scope()
+        (domain_id, project_id, trust, unscoped, global_token) = (
+            auth_info.get_scope()
+        )
         if trust:
             project_id = trust['project_id']
         if domain_id or project_id or trust:

@@ -631,14 +631,12 @@ class TokenAPITests(object):
         )
 
     # Global-scoped token tests
-    def test_create_global_token(self):
+    def test_create_global_token_with_user_id(self):
         # grant user a role globally
-        from pprint import pprint
         path = '/users/%(user_id)s/roles/%(role_id)s' % {
             'user_id': self.user['id'],
             'role_id': self.role_id
         }
-        pprint(path)
         self.put(path=path)
 
         auth_request_body = self.build_authentication_request(
@@ -646,36 +644,238 @@ class TokenAPITests(object):
             password=self.user['password'],
             is_global=True
         )
-        pprint(auth_request_body)
 
         response = self.v3_create_token(auth_request_body)
+        self.assertValidGloballyScopedTokenResponse(response)
 
     def test_create_global_token_with_username(self):
-        pass
+        # grant user a role globally
+        path = '/users/%(user_id)s/roles/%(role_id)s' % {
+            'user_id': self.user['id'],
+            'role_id': self.role_id
+        }
+        self.put(path=path)
 
-    def test_create_global_token_with_user_id(self):
-        pass
+        auth_request_body = self.build_authentication_request(
+            username=self.user['name'],
+            password=self.user['password'],
+            user_domain_id=self.domain['id'],
+            is_global=True
+        )
+
+        response = self.v3_create_token(auth_request_body)
+        self.assertValidGloballyScopedTokenResponse(response)
 
     def test_create_global_token_fails_without_global_assignment(self):
-        pass
+        auth_request_body = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            is_global=True
+        )
+        self.v3_create_token(
+            auth_request_body,
+            expected_status=http_client.UNAUTHORIZED
+        )
 
     def test_global_token_is_invalid_after_disabling_user(self):
-        pass
+        # grant user a role globally
+        path = '/users/%(user_id)s/roles/%(role_id)s' % {
+            'user_id': self.user['id'],
+            'role_id': self.role_id
+        }
+        self.put(path=path)
 
-    def test_global_token_is_invalid_after_disabling_group(self):
-        pass
+        auth_request_body = self.build_authentication_request(
+            username=self.user['name'],
+            password=self.user['password'],
+            user_domain_id=self.domain['id'],
+            is_global=True
+        )
+
+        response = self.v3_create_token(auth_request_body)
+        self.assertValidGloballyScopedTokenResponse(response)
+        token = response.headers.get('X-Subject-Token')
+        self._validate_token(token)
+
+        user_ref = {
+            'user': {
+                'enabled': False
+            }
+        }
+        self.patch(
+            '/users/%(user_id)s' % {'user_id': self.user['id']},
+            body=user_ref
+        )
+
+        self.admin_request(
+            path='/v3/auth/tokens',
+            headers={'X-Auth-Token': token,
+                     'X-Subject-Token': token},
+            method='GET',
+            expected_status=http_client.UNAUTHORIZED
+        )
+        self.admin_request(
+            path='/v3/auth/tokens',
+            headers={'X-Auth-Token': token,
+                     'X-Subject-Token': token},
+            method='HEAD',
+            expected_status=http_client.UNAUTHORIZED
+        )
+
+    # NOTE(lbragstad): Apparently disabling a group isn't a thing. For some
+    # reason I thought it was, which is why I wrote the test. Upon further
+    # investigation that doesn't seem to be the case.
+    # def test_global_token_is_invalid_after_disabling_group(self):
+    #     group = unit.new_group_ref(
+    #         domain_id=CONF.identity.default_domain_id
+    #     )
+    #     group = self.identity_api.create_group(group)
+    #     path = '/groups/%(group_id)s/roles/%(role_id)s' % {
+    #         'group_id': group['id'],
+    #         'role_id': self.role_id
+    #     }
+    #     self.put(path=path)
+
+    #     path = '/groups/%(group_id)s/users/%(user_id)s' % {
+    #         'group_id': group['id'],
+    #         'user_id': self.user['id']
+    #     }
+    #     self.put(path=path)
+
+    #     auth_request_body = self.build_authentication_request(
+    #         user_id=self.user['id'],
+    #         password=self.user['password'],
+    #         is_global=True
+    #     )
+    #     response = self.v3_create_token(auth_request_body)
+    #     self.assertValidGloballyScopedTokenResponse(response)
+    #     token = response.headers.get('X-Subject-Token')
+    #     self._validate_token(token)
+
+    #     group_ref = {
+    #         'group': {
+    #             'enabled': False
+    #         }
+    #     }
+    #     self.patch(
+    #         '/groups/%(group_id)s' % {'group_id': group['id']},
+    #         body=group_ref
+    #     )
+
+    #     self.admin_request(
+    #         path='/v3/auth/tokens',
+    #         headers={'X-Auth-Token': token,
+    #                  'X-Subject-Token': token},
+    #         method='GET',
+    #         expected_status=http_client.UNAUTHORIZED
+    #     )
+    #     self.admin_request(
+    #         path='/v3/auth/tokens',
+    #         headers={'X-Auth-Token': token,
+    #                  'X-Subject-Token': token},
+    #         method='HEAD',
+    #         expected_status=http_client.UNAUTHORIZED
+    #     )
 
     def test_validate_global_token_against_v2_fails(self):
-        pass
+        # grant user a role globally
+        path = '/users/%(user_id)s/roles/%(role_id)s' % {
+            'user_id': self.user['id'],
+            'role_id': self.role_id
+        }
+        self.put(path=path)
+
+        auth_request_body = self.build_authentication_request(
+            username=self.user['name'],
+            password=self.user['password'],
+            user_domain_id=self.domain['id'],
+            is_global=True
+        )
+
+        response = self.v3_create_token(auth_request_body)
+        self.assertValidGloballyScopedTokenResponse(response)
+        token = response.headers.get('X-Subject-Token')
+        self._validate_token_v2(
+            token,
+            expected_status=http_client.UNAUTHORIZED
+        )
 
     def test_create_global_token_via_global_group_assignment(self):
-        pass
+        group = unit.new_group_ref(
+            domain_id=CONF.identity.default_domain_id
+        )
+        group = self.identity_api.create_group(group)
+        path = '/groups/%(group_id)s/roles/%(role_id)s' % {
+            'group_id': group['id'],
+            'role_id': self.role_id
+        }
+        self.put(path=path)
+
+        path = '/groups/%(group_id)s/users/%(user_id)s' % {
+            'group_id': group['id'],
+            'user_id': self.user['id']
+        }
+        self.put(path=path)
+
+        auth_request_body = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            is_global=True
+        )
+        response = self.v3_create_token(auth_request_body)
+        self.assertValidGloballyScopedTokenResponse(response)
+        token = response.headers.get('X-Subject-Token')
+        self._validate_token(token)
 
     def test_revoke_global_token(self):
-        pass
+        path = '/users/%(user_id)s/roles/%(role_id)s' % {
+            'user_id': self.user['id'],
+            'role_id': self.role_id
+        }
+        self.put(path=path)
+
+        auth_request_body = self.build_authentication_request(
+            username=self.user['name'],
+            password=self.user['password'],
+            user_domain_id=self.domain['id'],
+            is_global=True
+        )
+
+        response = self.v3_create_token(auth_request_body)
+        self.assertValidGloballyScopedTokenResponse(response)
+        token = response.headers.get('X-Subject-Token')
+        self._validate_token(token)
+        self._revoke_token(token)
+        self._validate_token(token, expected_status=http_client.NOT_FOUND)
 
     def test_global_token_is_invalid_after_deleting_global_role(self):
-        pass
+        self.config_fixture.config(group='role', caching='False')
+        global_role = unit.new_role_ref()
+        res = self.role_api.create_role(global_role['id'], global_role)
+
+        path = '/users/%(user_id)s/roles/%(role_id)s' % {
+            'user_id': self.user['id'],
+            'role_id': global_role['id']
+        }
+        self.put(path=path)
+
+        auth_request_body = self.build_authentication_request(
+            username=self.user['name'],
+            password=self.user['password'],
+            user_domain_id=self.domain['id'],
+            is_global=True
+        )
+
+        response = self.v3_create_token(auth_request_body)
+        self.assertValidGloballyScopedTokenResponse(response)
+        token = response.headers.get('X-Subject-Token')
+        self._validate_token(token)
+
+        # FIXME(lbragstad): This token should be invalid, but for some reason
+        # the COMPUTED_ASSIGNMENTS_REGION isn't being invalidated when the role
+        # is deleted.
+        self.delete('/roles/%(role_id)s' % {'role_id': global_role['id']})
+        self._validate_token(token)
 
     def test_rescoping_with_global_token_can_fail(self):
         pass

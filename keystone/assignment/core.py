@@ -111,6 +111,21 @@ class Manager(manager.Manager):
         return list(set([x['role_id'] for x in assignment_list]))
 
     @MEMOIZE_COMPUTED_ASSIGNMENTS
+    def get_global_roles_for_user(self, user_id):
+        """List all roles given to a user globally.
+
+        This includes direct role assignments and roles assigned to groups a
+        user is a member of.
+
+        :returns: a list of role ids.
+
+        """
+        assignment_list = self.list_role_assignments(
+            user_id=user_id, is_global=True, effective=True, inherited=False
+        )
+        return list(set([x['role_id'] for x in assignment_list]))
+
+    @MEMOIZE_COMPUTED_ASSIGNMENTS
     def get_roles_for_user_and_domain(self, user_id, domain_id):
         """Get the roles associated with a user within given domain.
 
@@ -857,8 +872,8 @@ class Manager(manager.Manager):
         # Matching on the specified role is performed at the end.
         direct_refs = list_role_assignments_for_actor(
             role_id=None, user_id=user_id, group_ids=source_from_group_ids,
-            project_id=project_id, subtree_ids=subtree_ids,
-            domain_id=domain_id, inherited=inherited)
+            is_global=is_global, project_id=project_id,
+            subtree_ids=subtree_ids, domain_id=domain_id, inherited=inherited)
 
         # And those from the user's groups, so long as we are not restricting
         # to a set of source groups (in which case we already got those
@@ -870,7 +885,8 @@ class Manager(manager.Manager):
                 group_refs = list_role_assignments_for_actor(
                     role_id=None, project_id=project_id,
                     subtree_ids=subtree_ids, group_ids=group_ids,
-                    domain_id=domain_id, inherited=inherited)
+                    is_global=is_global, domain_id=domain_id,
+                    inherited=inherited)
 
         # Expand grouping and inheritance on retrieved role assignments
         refs = []
