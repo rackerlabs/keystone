@@ -22,6 +22,29 @@
       "revId": "b5b05491f82b3162572efb13404e57603c5a1c9a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_d7ea32d6",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-08-28T21:45:45Z",
+      "side": 1,
+      "message": "This does not do what you think it does. You need to register the instances of the classes. We are effectively making the managers singletons in the keystone use. We might as well double down on that.\n\nYou need to implement something like https://gist.github.com/morganfainberg/dceb6be7c861febbc0e0ef40cfc18016 to register the manager instance.\n\nI have another (alternative) that could solve this just about as easily.",
+      "range": {
+        "startLine": 167,
+        "startChar": 0,
+        "endLine": 175,
+        "endChar": 18
+      },
+      "revId": "b5b05491f82b3162572efb13404e57603c5a1c9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
