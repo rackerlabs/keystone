@@ -162,11 +162,12 @@ class Provider(common.BaseProvider):
             methods.append('token')
         project_id = token_data['access']['token'].get('tenant', {}).get('id')
         domain_id = None
+        is_global = False
         trust_id = token_data['access'].get('trust', {}).get('id')
         access_token_id = None
         federated_info = None
-        return (user_id, expires_at, audit_ids, methods, domain_id, project_id,
-                trust_id, access_token_id, federated_info)
+        return (user_id, expires_at, audit_ids, methods, is_global, domain_id,
+                project_id, trust_id, access_token_id, federated_info)
 
     def _extract_v3_token_data(self, token_data):
         """Extract information from a v3 token reference."""
@@ -174,6 +175,7 @@ class Provider(common.BaseProvider):
         expires_at = token_data['token']['expires_at']
         audit_ids = token_data['token']['audit_ids']
         methods = token_data['token'].get('methods')
+        is_global = token_data['token'].get('global')
         domain_id = token_data['token'].get('domain', {}).get('id')
         project_id = token_data['token'].get('project', {}).get('id')
         trust_id = token_data['token'].get('OS-TRUST:trust', {}).get('id')
@@ -181,8 +183,8 @@ class Provider(common.BaseProvider):
             'access_token_id')
         federated_info = self._build_federated_info(token_data)
 
-        return (user_id, expires_at, audit_ids, methods, domain_id, project_id,
-                trust_id, access_token_id, federated_info)
+        return (user_id, expires_at, audit_ids, methods, is_global, domain_id,
+                project_id, trust_id, access_token_id, federated_info)
 
     def _get_token_id(self, token_data):
         """Generate the token_id based upon the data in token_data.
@@ -195,12 +197,12 @@ class Provider(common.BaseProvider):
         # NOTE(lbragstad): Only v2.0 token responses include an 'access'
         # attribute.
         if token_data.get('access'):
-            (user_id, expires_at, audit_ids, methods, domain_id, project_id,
-                trust_id, access_token_id, federated_info) = (
+            (user_id, expires_at, audit_ids, methods, is_global, domain_id,
+                project_id, trust_id, access_token_id, federated_info) = (
                     self._extract_v2_token_data(token_data))
         else:
-            (user_id, expires_at, audit_ids, methods, domain_id, project_id,
-                trust_id, access_token_id, federated_info) = (
+            (user_id, expires_at, audit_ids, methods, is_global, domain_id,
+                project_id, trust_id, access_token_id, federated_info) = (
                     self._extract_v3_token_data(token_data))
 
         return self.token_formatter.create_token(
@@ -208,6 +210,7 @@ class Provider(common.BaseProvider):
             expires_at,
             audit_ids,
             methods=methods,
+            is_global=is_global,
             domain_id=domain_id,
             project_id=project_id,
             trust_id=trust_id,
