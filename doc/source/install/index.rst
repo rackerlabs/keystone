@@ -17,6 +17,8 @@ the Apache HTTP server to handle requests.
 .. toctree::
    :maxdepth: 3
 
+   common/get-started-identity
    index-obs
    index-rdo
    index-ubuntu
+   keystone-openrc
