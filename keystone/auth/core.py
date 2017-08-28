@@ -144,12 +144,14 @@ class AuthInfo(object):
 
     def __init__(self, auth=None):
         self.auth = auth
-        self._scope_data = (None, None, None, None)
-        # self._scope_data is (domain_id, project_id, trust_ref, unscoped)
-        # project scope: (None, project_id, None, None)
-        # domain scope: (domain_id, None, None, None)
-        # trust scope: (None, None, trust_ref, None)
-        # unscoped: (None, None, None, 'unscoped')
+        self._scope_data = (None, None, None, None, None)
+        # self._scope_data is
+        # (domain_id, project_id, trust_ref, unscoped, global)
+        # project scope: (None, project_id, None, None, None)
+        # domain scope: (domain_id, None, None, None, None)
+        # trust scope: (None, None, trust_ref, None, None)
+        # unscoped: (None, None, None, 'unscoped', None)
+        # global: (None, None, None, None, 'global')
 
     def _assert_project_is_enabled(self, project_ref):
         # ensure the project is enabled
@@ -235,19 +237,22 @@ class AuthInfo(object):
         if sum(['project' in self.auth['scope'],
                 'domain' in self.auth['scope'],
                 'unscoped' in self.auth['scope'],
+                'global' in self.auth['scope'],
                 'OS-TRUST:trust' in self.auth['scope']]) != 1:
             raise exception.ValidationError(
                 attribute='project, domain, OS-TRUST:trust or unscoped',
                 target='scope')
+        if 'global' in self.auth['scope']:
+            self._scope_data = (None, None, None, None, 'global')
         if 'unscoped' in self.auth['scope']:
-            self._scope_data = (None, None, None, 'unscoped')
+            self._scope_data = (None, None, None, 'unscoped', None)
             return
         if 'project' in self.auth['scope']:
             project_ref = self._lookup_project(self.auth['scope']['project'])
-            self._scope_data = (None, project_ref['id'], None, None)
+            self._scope_data = (None, project_ref['id'], None, None, None)
         elif 'domain' in self.auth['scope']:
             domain_ref = self._lookup_domain(self.auth['scope']['domain'])
-            self._scope_data = (domain_ref['id'], None, None, None)
+            self._scope_data = (domain_ref['id'], None, None, None, None)
         elif 'OS-TRUST:trust' in self.auth['scope']:
             if not CONF.trust.enabled:
                 raise exception.Forbidden('Trusts are disabled.')
@@ -257,9 +262,11 @@ class AuthInfo(object):
             if trust_ref.get('project_id') is not None:
                 project_ref = self._lookup_project(
                     {'id': trust_ref['project_id']})
-                self._scope_data = (None, project_ref['id'], trust_ref, None)
+                self._scope_data = (
+                    None, project_ref['id'], trust_ref, None, None
+                )
             else:
-                self._scope_data = (None, None, trust_ref, None)
+                self._scope_data = (None, None, trust_ref, None, None)
 
     def _validate_auth_methods(self):
         # make sure all the method data/payload are provided
@@ -339,7 +346,7 @@ class AuthInfo(object):
         return self._scope_data
 
     def set_scope(self, domain_id=None, project_id=None, trust=None,
-                  unscoped=None):
+                  unscoped=None, global_token=None):
         """Set scope information."""
         if domain_id and project_id:
             msg = _('Scoping to both domain and project is not allowed')
@@ -350,7 +357,9 @@ class AuthInfo(object):
         if project_id and trust:
             msg = _('Scoping to both project and trust is not allowed')
             raise ValueError(msg)
-        self._scope_data = (domain_id, project_id, trust, unscoped)
+        self._scope_data = (
+            domain_id, project_id, trust, unscoped, global_token
+        )
 
 
 @dependency.requires('identity_api')
