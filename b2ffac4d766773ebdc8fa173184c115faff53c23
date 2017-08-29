@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_bd71a878",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-29T21:27:20Z",
+      "side": 1,
+      "message": "nit: the naming here doesn\u0027t have to imply resources, we could also include list in the method name so it\u0027s more descriptive of what we\u0027re operating on.\n\n  def remove_duplicate_dicts_from_list(l):\n\nor \n\n  def remove_duplicate_dictionaries_from_list(l):",
+      "revId": "b2ffac4d766773ebdc8fa173184c115faff53c23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_9dbeecfc",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-29T21:27:20Z",
+      "side": 1,
+      "message": "I think we should add the type of parameter and what we expect it to be here.\n\n  :param resource_list: a list of dictionaries\n  :returns: a list of unique dictionaries\n\nThat way people using it will know what it\u0027s supposed to be used for.",
+      "revId": "b2ffac4d766773ebdc8fa173184c115faff53c23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
