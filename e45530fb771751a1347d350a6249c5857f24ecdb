@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f287b81_f6298d36",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 919,
+      "author": {
+        "id": 26325
+      },
+      "writtenOn": "2017-08-29T23:18:26Z",
+      "side": 1,
+      "message": "They should be all separate ifs to allow for different combinations. But, after talking to Colleen in IRC, I will revert this code and just adapt the unit tests. I\u0027ll upload a new patch tomorrow morning that also addresses your nit in the tests",
+      "parentUuid": "7f287b81_dd6c74cf",
+      "revId": "e45530fb771751a1347d350a6249c5857f24ecdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f287b81_ab0ba127",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 13
