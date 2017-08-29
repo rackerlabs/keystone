@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f287b81_a01a9b13",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-29T22:03:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f287b81_bd71a878",
+      "revId": "b2ffac4d766773ebdc8fa173184c115faff53c23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f287b81_9dbeecfc",
         "filename": "keystone/common/utils.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2017-08-29T21:27:20Z",
       "side": 1,
       "message": "I think we should add the type of parameter and what we expect it to be here.\n\n  :param resource_list: a list of dictionaries\n  :returns: a list of unique dictionaries\n\nThat way people using it will know what it\u0027s supposed to be used for.",
+      "revId": "b2ffac4d766773ebdc8fa173184c115faff53c23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_80155fe7",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-29T22:03:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f287b81_9dbeecfc",
       "revId": "b2ffac4d766773ebdc8fa173184c115faff53c23",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
