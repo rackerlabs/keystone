@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_dd6c74cf",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 919,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-29T21:19:43Z",
+      "side": 1,
+      "message": "Do these all have to be separate if statements or can they be consolidated using if/else? Having an elif will help denote different cases.",
+      "revId": "e45530fb771751a1347d350a6249c5857f24ecdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_ab0ba127",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1404,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-29T21:19:43Z",
+      "side": 1,
+      "message": "nit: \n\n  args.append(uuid.uuid4().hex)\n\njust to show that the value of `1` in particular isn\u0027t significant.",
+      "revId": "e45530fb771751a1347d350a6249c5857f24ecdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
