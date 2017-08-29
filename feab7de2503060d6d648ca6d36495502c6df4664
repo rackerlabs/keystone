@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_b071d078",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-08-29T20:29:21Z",
+      "side": 1,
+      "message": "distribution",
+      "range": {
+        "startLine": 10,
+        "startChar": 16,
+        "endLine": 10,
+        "endChar": 27
+      },
+      "revId": "feab7de2503060d6d648ca6d36495502c6df4664",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_50086cd8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-08-29T20:29:21Z",
+      "side": 1,
+      "message": "I\u0027m not sure I agree with this move, I kind of liked the \"pick your distro\" being the entry point in the install guide. Also the keystone-users page isn\u0027t super specific to a distro, so I feel like we should either move everything non-distro-specific to the top level or keep everything under the distro.",
+      "revId": "feab7de2503060d6d648ca6d36495502c6df4664",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
