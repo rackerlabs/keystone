@@ -958,6 +958,8 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
                     this_domain['extra'] = json.dumps(this_domain['extra'])
                 self.insert_dict(session, 'domain', this_domain)
             for project in self.projects:
+                # Tags are done via relationship, not column
+                project.pop('tags', None)
                 self.insert_dict(session, 'project', project)
 
         def _check_projects(projects):
@@ -2356,7 +2358,6 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
                                 ['user_id', 'option_id', 'option_value'])
 
     def test_migration_024_add_created_expires_at_int_columns_password(self):
-
         self.expand(23)
         self.migrate(23)
         self.contract(23)
