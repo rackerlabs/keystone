@@ -46,6 +46,23 @@
       "revId": "3b6d52b773a2b30fbe1c9c24e9920701311ef97b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_7af690d9",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 11589
+      },
+      "writtenOn": "2017-08-30T14:28:32Z",
+      "side": 1,
+      "message": "docstring needs to be updated accordingly",
+      "revId": "3b6d52b773a2b30fbe1c9c24e9920701311ef97b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
