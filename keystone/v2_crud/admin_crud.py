@@ -53,8 +53,6 @@ class Router(wsgi.ComposableRouter):
         user_controller = identity.controllers.User()
         role_controller = assignment.controllers.Role()
         assignment_role_controller = assignment.controllers.RoleAssignmentV2()
-        service_controller = catalog.controllers.Service()
-        endpoint_controller = catalog.controllers.Endpoint()
 
         # Tenant Operations
         mapper.connect(
@@ -176,45 +174,6 @@ class Router(wsgi.ComposableRouter):
             '/tenants/{tenant_id}/users/{user_id}/roles/OS-KSADM/{role_id}',
             controller=assignment_role_controller,
             action='remove_role_from_user',
-            conditions=dict(method=['DELETE']))
-
-        # Service Operations
-        mapper.connect(
-            '/OS-KSADM/services',
-            controller=service_controller,
-            action='get_services',
-            conditions=dict(method=['GET']))
-        mapper.connect(
-            '/OS-KSADM/services',
-            controller=service_controller,
-            action='create_service',
-            conditions=dict(method=['POST']))
-        mapper.connect(
-            '/OS-KSADM/services/{service_id}',
-            controller=service_controller,
-            action='delete_service',
-            conditions=dict(method=['DELETE']))
-        mapper.connect(
-            '/OS-KSADM/services/{service_id}',
-            controller=service_controller,
-            action='get_service',
-            conditions=dict(method=['GET']))
-
-        # Endpoint Templates
-        mapper.connect(
-            '/endpoints',
-            controller=endpoint_controller,
-            action='get_endpoints',
-            conditions=dict(method=['GET']))
-        mapper.connect(
-            '/endpoints',
-            controller=endpoint_controller,
-            action='create_endpoint',
-            conditions=dict(method=['POST']))
-        mapper.connect(
-            '/endpoints/{endpoint_id}',
-            controller=endpoint_controller,
-            action='delete_endpoint',
             conditions=dict(method=['DELETE']))
 
         # Role Operations
