@@ -50,6 +50,7 @@ class Manager(manager.Manager):
 
     _DOMAIN = 'domain'
     _PROJECT = 'project'
+    _PROJECT_TAG = 'project tag'
 
     def __init__(self):
         # NOTE(morgan): The resource driver must be SQL. This is because there
@@ -881,6 +882,73 @@ class Manager(manager.Manager):
             if new_ref['domain_id'] != orig_ref['domain_id']:
                 raise exception.ValidationError(_('Cannot change Domain ID'))
 
+    def create_project_tag(self, project_id, tag, initiator=None):
+        """Create a new tag on project.
+
+        :param project_id: ID of a project to create a tag for
+        :param tag: The string value of a tag to add
+
+        :returns: The value of the created tag
+        """
+        project = self.driver.get_project(project_id)
+        tag_name = tag.strip()
+        project['tags'].append(tag_name)
+        self.update_project(project_id, {'tags': project['tags']})
+
+        notifications.Audit.created(
+            self._PROJECT_TAG, tag_name, initiator)
+        return tag_name
+
+    def get_project_tag(self, project_id, tag_name):
+        """Return information for a single tag on a project.
+
+        :param project_id: ID of a project to retrive a tag from
+        :param tag_name: Name of a tag to return
+
+        :returns: The tag value
+        """
+        project = self.driver.get_project(project_id)
+        if tag_name not in project.get('tags'):
+            raise exception.ProjectTagNotFound(project_tag=tag_name)
+        return tag_name
+
+    def list_project_tags(self, project_id):
+        """List all tags on project.
+
+        :param project_id: The ID of a project
+
+        :returns: A list of tags from a project
+        """
+        project = self.driver.get_project(project_id)
+        return project.get('tags', [])
+
+    def update_project_tags(self, project_id, tags, initiator=None):
+        """Update all tags on a project.
+
+        :param project_id: The ID of the project to update
+        :param tags: A list of tags to update on the project
+
+        :returns: A list of tags
+        """
+        self.driver.get_project(project_id)
+        tag_list = [t.strip() for t in tags]
+        project = {'tags': tag_list}
+        self.update_project(project_id, project)
+        return tag_list
+
+    def delete_project_tag(self, project_id, tag):
+        """Delete single tag from project.
+
+        :param project_id: The ID of the project
+        :param tag: The tag value to delete
+        """
+        project = self.driver.get_project(project_id)
+        try:
+            project['tags'].remove(tag)
+        except ValueError:
+            raise exception.ProjectTagNotFound(project_tag=tag)
+        self.update_project(project_id, project)
+        notifications.Audit.deleted(self._PROJECT_TAG, tag)
 
 MEMOIZE_CONFIG = cache.get_memoization_decorator(group='domain_config')
 
