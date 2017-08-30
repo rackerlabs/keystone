@@ -11,12 +11,16 @@
 # under the License.
 
 from oslo_log import log
+from six import text_type
+from sqlalchemy.ext.hybrid import hybrid_property
+from sqlalchemy import orm
 
 from keystone.common import driver_hints
 from keystone.common import sql
 from keystone import exception
 from keystone.resource.backends import base
 
+TAG_SEARCH_FILTERS = ('tags', 'tags-any', 'not-tags', 'not-tags-any')
 
 LOG = log.getLogger(__name__)
 
@@ -35,6 +39,11 @@ class Resource(base.ResourceDriverBase):
             return new_ref
         else:
             return ref
+
+    def _encode_tags(self, ref):
+        if ref.get('tags'):
+            ref['tags'] = [text_type(t) for t in ref['tags']]
+        return ref
 
     def _is_hidden_ref(self, ref):
         return ref.id == base.NULL_DOMAIN_ID
@@ -75,12 +84,21 @@ class Resource(base.ResourceDriverBase):
         # know we are able to satisfy any filter of this type in the call to
         # filter_limit_query() below, which will remove the filter from the
         # hints (hence ensuring our substitution is not exposed to the caller).
+        tag_filters = {}
         for f in hints.filters:
             if (f['name'] == 'domain_id' and f['value'] is None):
                 f['value'] = base.NULL_DOMAIN_ID
+            # Handle Project Tags Separately
+            if f['name'] in TAG_SEARCH_FILTERS:
+                tag_filters[f['name']] = f['value']
+                hints.filters.remove(f)
         with sql.session_for_read() as session:
             query = session.query(Project)
             project_refs = sql.filter_limit_query(Project, query, hints)
+            if tag_filters:
+                project_refs = self._filter_projects_by_tags(session,
+                                                             project_refs,
+                                                             tag_filters)
             return [project_ref.to_dict() for project_ref in project_refs
                     if not self._is_hidden_ref(project_ref)]
 
@@ -166,6 +184,58 @@ class Resource(base.ResourceDriverBase):
                 project = parent_project
             return parents
 
+    def _filter_projects_by_tags(self, session, refs, filters):
+        pids = [p['id'] for p in refs]
+        filtered_ids = []
+        query = session.query(ProjectTag)
+        if 'tags' in filters.keys():
+            sorted_tags = sorted(filters['tags'].split(','))
+            subq = query.filter(ProjectTag.name.in_(sorted_tags))
+            for p in subq:
+                subq_tags = query.filter(ProjectTag.project_id ==
+                                         p['project_id'])
+                result = map(lambda x: x['name'], subq_tags.all())
+                if sorted(result) == sorted_tags:
+                    filtered_ids.append(p['project_id'])
+        if 'tags-any' in filters.keys():
+            any_tags = filters['tags-any'].split(',')
+            subq = query.filter(ProjectTag.name.in_(any_tags))
+            for p in subq:
+                filtered_ids.append(p['project_id'])
+        if 'not-tags' in filters.keys():
+            blacklist_ids = []
+            sorted_tags = sorted(filters['not-tags'].split(','))
+            subq = query.filter(ProjectTag.name.in_(sorted_tags))
+            for p in subq:
+                subq_tags = query.filter(ProjectTag.project_id ==
+                                         p['project_id'])
+                result = map(lambda x: x['name'], subq_tags.all())
+                if sorted(result) == sorted_tags:
+                    blacklist_ids.append(p['project_id'])
+            subq = session.query(Project)
+            for q in subq:
+                if q['id'] not in blacklist_ids:
+                    filtered_ids.append(q['id'])
+                elif q['id'] in filtered_ids:
+                    filtered_ids.remove(q['id'])
+        if 'not-tags-any' in filters.keys():
+            blacklist_ids = []
+            any_tags = filters['not-tags-any'].split(',')
+            subq = query.filter(ProjectTag.name.in_(any_tags))
+            for p in subq:
+                blacklist_ids.append(p['project_id'])
+            subq = session.query(Project)
+            for q in subq:
+                if q['id'] not in blacklist_ids:
+                    filtered_ids.append(q['id'])
+                elif q['id'] in filtered_ids:
+                    filtered_ids.remove(q['id'])
+        pids = [p['id'] for p in refs]
+        filtered_ids = set(pids) & set(filtered_ids)
+        query = session.query(Project)
+        query = query.filter(Project.id.in_(filtered_ids))
+        return query.all()
+
     def is_leaf_project(self, project_id):
         with sql.session_for_read() as session:
             project_refs = self._get_children(session, [project_id])
@@ -175,6 +245,7 @@ class Resource(base.ResourceDriverBase):
     @sql.handle_conflicts(conflict_type='project')
     def create_project(self, project_id, project):
         new_project = self._encode_domain_id(project)
+        new_project = self._encode_tags(new_project)
         with sql.session_for_write() as session:
             project_ref = Project.from_dict(new_project)
             session.add(project_ref)
@@ -191,6 +262,7 @@ class Resource(base.ResourceDriverBase):
             # When we read the old_project_dict, any "null" domain_id will have
             # been decoded, so we need to re-encode it
             old_project_dict = self._encode_domain_id(old_project_dict)
+            old_project_dict = self._encode_tags(old_project_dict)
             new_project = Project.from_dict(old_project_dict)
             for attr in Project.attributes:
                 if attr != 'id':
@@ -237,7 +309,7 @@ class Project(sql.ModelBase, sql.ModelDictMixinWithExtras):
 
     __tablename__ = 'project'
     attributes = ['id', 'name', 'domain_id', 'description', 'enabled',
-                  'parent_id', 'is_domain']
+                  'parent_id', 'is_domain', 'tags']
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(64), nullable=False)
     domain_id = sql.Column(sql.String(64), sql.ForeignKey('project.id'),
@@ -248,6 +320,60 @@ class Project(sql.ModelBase, sql.ModelDictMixinWithExtras):
     parent_id = sql.Column(sql.String(64), sql.ForeignKey('project.id'))
     is_domain = sql.Column(sql.Boolean, default=False, nullable=False,
                            server_default='0')
+    _tags = orm.relationship(
+        'ProjectTag',
+        single_parent=True,
+        lazy='subquery',
+        cascade='all,delete-orphan',
+        backref='project',
+        primaryjoin='and_(ProjectTag.project_id==Project.id)'
+    )
+
     # Unique constraint across two columns to create the separation
     # rather than just only 'name' being unique
     __table_args__ = (sql.UniqueConstraint('domain_id', 'name'),)
+
+    @hybrid_property
+    def tags(self):
+        if self._tags:
+            project_tags = []
+            for tag in self._tags:
+                project_tags.append(tag.name)
+            return project_tags
+        return []
+
+    @tags.setter
+    def tags(self, value):
+        self._overwrite_tags()
+        for tag in value:
+            self._add_single_tag(tag)
+
+    @tags.expression
+    def tags(cls):
+        return ProjectTag.name
+
+    def _add_single_tag(self, value):
+        new_tag_ref = ProjectTag()
+        new_tag_ref.project_id = self.id
+        new_tag_ref.name = value
+        self._tags.append(new_tag_ref)
+
+    def _overwrite_tags(self):
+        tags = list(self._tags)
+        for tag in tags:
+            self._tags.remove(tag)
+
+
+class ProjectTag(sql.ModelBase, sql.ModelDictMixin):
+
+    def to_dict(self):
+        d = super(ProjectTag, self).to_dict()
+        return d
+
+    __tablename__ = 'project_tag'
+    attributes = ['project_id', 'name']
+    project_id = sql.Column(
+        sql.String(64), sql.ForeignKey('project.id', ondelete='CASCADE'),
+        nullable=False, primary_key=True)
+    name = sql.Column(sql.Unicode(255), nullable=False, primary_key=True)
+    __table_args__ = (sql.UniqueConstraint('project_id', 'name'),)
