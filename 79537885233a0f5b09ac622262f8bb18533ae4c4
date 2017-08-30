@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_a275fbfb",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 121
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2017-08-30T03:21:28Z",
+      "side": 1,
+      "message": "This doesn\u0027t match the spec...and I understand why (maybe update the spec?)",
+      "range": {
+        "startLine": 351,
+        "startChar": 8,
+        "endLine": 351,
+        "endChar": 22
+      },
+      "revId": "79537885233a0f5b09ac622262f8bb18533ae4c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_8270bf09",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 121
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2017-08-30T03:21:28Z",
+      "side": 1,
+      "message": "why 60?",
+      "range": {
+        "startLine": 353,
+        "startChar": 22,
+        "endLine": 353,
+        "endChar": 37
+      },
+      "revId": "79537885233a0f5b09ac622262f8bb18533ae4c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
