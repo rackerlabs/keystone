@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_faa5dd9f",
+        "filename": "doc/source/getting-started/policy_mapping.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 11589
+      },
+      "writtenOn": "2017-08-30T15:52:24Z",
+      "side": 1,
+      "message": "I\u0027m not sure if this should be here or in the follow up review adding group functionality",
+      "revId": "be0f2bf1155db486d0536cf2e3c9841a7f79671f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_9ab019df",
+        "filename": "doc/source/getting-started/policy_mapping.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 11589
+      },
+      "writtenOn": "2017-08-30T15:52:24Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "be0f2bf1155db486d0536cf2e3c9841a7f79671f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
