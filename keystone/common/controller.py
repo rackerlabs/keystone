@@ -278,6 +278,7 @@ class V2Controller(wsgi.Application):
             V2Controller.filter_domain_id(ref)
             V2Controller.filter_project_parent_id(ref)
             V2Controller.filter_is_domain(ref)
+            ref.pop('tags', None)
             return ref
 
         if isinstance(ref, dict):
