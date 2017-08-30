@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7f287b81_dee21fd5",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 121
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-08-30T10:03:15Z",
+      "side": 1,
+      "message": "This seems to be updated to varchar(64) in the latest spec [0] via commit [1].\n\n[0] https://github.com/openstack/keystone-specs/blob/master/specs/keystone/queens/project-tags.rst\n[1] https://github.com/openstack/keystone-specs/commit/e2c6a37428c07d07ce5aa797f5a373399c476293",
+      "parentUuid": "7f287b81_a275fbfb",
+      "range": {
+        "startLine": 351,
+        "startChar": 8,
+        "endLine": 351,
+        "endChar": 22
+      },
+      "revId": "79537885233a0f5b09ac622262f8bb18533ae4c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f287b81_8270bf09",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 121
@@ -36,6 +60,30 @@
       "writtenOn": "2017-08-30T03:21:28Z",
       "side": 1,
       "message": "why 60?",
+      "range": {
+        "startLine": 353,
+        "startChar": 22,
+        "endLine": 353,
+        "endChar": 37
+      },
+      "revId": "79537885233a0f5b09ac622262f8bb18533ae4c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_5e862fbb",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 121
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-08-30T10:03:15Z",
+      "side": 1,
+      "message": "I don\u0027t recall how we ended up with 60, but it appears others feel it is too restrictive too [2]. We can up it to 80 like nova\u0027s implementation [3] or even larger.  I think there might be worry that if uncapped, this table can balloon in size - but am not sure.\n\n[2] https://review.openstack.org/#/c/484483/25/keystone/resource/schema.py@26\n[3] https://github.com/openstack/nova/blob/master/nova/db/sqlalchemy/models.py#L1470",
+      "parentUuid": "7f287b81_8270bf09",
       "range": {
         "startLine": 353,
         "startChar": 22,
