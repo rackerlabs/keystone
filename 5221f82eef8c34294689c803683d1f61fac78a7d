@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_82fc3fb5",
+        "filename": "keystone/auth/schema.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2017-08-30T02:54:43Z",
+      "side": 1,
+      "message": "++ (we should make the spec match this...)",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 50
+      },
+      "revId": "5221f82eef8c34294689c803683d1f61fac78a7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
