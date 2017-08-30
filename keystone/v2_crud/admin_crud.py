@@ -13,7 +13,6 @@
 # under the License.
 
 from keystone import assignment
-from keystone import catalog
 from keystone.common import extension
 from keystone.common import wsgi
 from keystone import identity
