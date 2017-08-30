@@ -85,6 +85,24 @@
       "revId": "f19bdcb786d4ccdb99937d011d30af81e51c5121",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_378013f5",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-08-30T22:04:54Z",
+      "side": 1,
+      "message": "There are tests for this in the other patch sets, this only tests against the schema",
+      "parentUuid": "7f287b81_906a5fea",
+      "revId": "f19bdcb786d4ccdb99937d011d30af81e51c5121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
