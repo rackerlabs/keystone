@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_8c8b5866",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-30T00:45:58Z",
+      "side": 1,
+      "message": "remove_duplicate_dicts_from_list",
+      "revId": "16b07de32bf13ac2e3df463c459302e4f832ee50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_6cecac29",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-08-30T00:45:58Z",
+      "side": 1,
+      "message": "remove_duplicate_dicts_from_list",
+      "revId": "16b07de32bf13ac2e3df463c459302e4f832ee50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
