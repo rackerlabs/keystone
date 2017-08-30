@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_a7b3cae8",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 24269
+      },
+      "writtenOn": "2017-08-30T05:27:31Z",
+      "side": 1,
+      "message": "If \"project_id\" and \"domain_id\" is None, \"is_global\" is false, the error result will be returned. Therefore I suggest to add parameter \"is_global\".\n\n    def calculate_type(cls, user_id, group_id, project_id, \n                       domain_id, is_global):\n        if user_id:\n            if project_id:\n                return cls.USER_PROJECT\n            if domain_id:\n                return cls.USER_DOMAIN\n            if is_global    \n                return cls.USER_GLOBAL\n        if group_id:\n            if project_id:\n                return cls.GROUP_PROJECT\n            if domain_id:\n                return cls.GROUP_DOMAIN\n            if is_global       \n                return cls.GROUP_GLOBAL\n        # Invalid parameters combination\n        raise exception.AssignmentTypeCalculationError(**locals())",
+      "range": {
+        "startLine": 32,
+        "startChar": 8,
+        "endLine": 32,
+        "endChar": 22
+      },
+      "revId": "3b6d52b773a2b30fbe1c9c24e9920701311ef97b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
