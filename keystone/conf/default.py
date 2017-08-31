@@ -16,11 +16,6 @@ from oslo_log import versionutils
 from keystone.conf import utils
 
 
-_DEPRECATE_PROXY_SSL = utils.fmt("""
-This option has been deprecated in the N release and will be removed in the P
-release. Use oslo.middleware.http_proxy_to_wsgi configuration instead.
-""")
-
 admin_token = cfg.StrOpt(
     'admin_token',
     secret=True,
@@ -157,17 +152,6 @@ If set to true, strict password length checking is performed for password
 manipulation. If a password exceeds the maximum length, the operation will fail
 with an HTTP 403 Forbidden error. If set to false, passwords are automatically
 truncated to the maximum length.
-"""))
-
-secure_proxy_ssl_header = cfg.StrOpt(
-    'secure_proxy_ssl_header',
-    default='HTTP_X_FORWARDED_PROTO',
-    deprecated_for_removal=True,
-    deprecated_reason=_DEPRECATE_PROXY_SSL,
-    deprecated_since=versionutils.deprecated.NEWTON,
-    help=utils.fmt("""
-The HTTP header used to determine the scheme for the original request, even if
-it was removed by an SSL terminating proxy.
 """))
 
 insecure_debug = cfg.BoolOpt(
