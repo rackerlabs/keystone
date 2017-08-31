@@ -200,7 +200,7 @@ class Token(token.persistence.TokenDriverBase):
 
     def _list_tokens_for_consumer(self, user_id, consumer_id):
         tokens = []
-        with sql.session_for_write() as session:
+        with sql.session_for_read() as session:
             now = timeutils.utcnow()
             query = session.query(TokenModel)
             query = query.filter(TokenModel.expires > now)
