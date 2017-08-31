@@ -46,8 +46,6 @@ extension.register_public_extension(
         ]})
 
 
-@dependency.requires('catalog_api', 'identity_api', 'resource_api',
-                     'token_provider_api')
 class UserController(identity.controllers.User):
     def set_user_password(self, request, user_id, user):
         token_id = request.context_dict.get('token_id')

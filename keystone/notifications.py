@@ -31,6 +31,7 @@ from pycadf import reason
 from pycadf import resource
 
 from keystone.common import dependency
+from keystone.common import provider_api
 from keystone.common import utils
 import keystone.conf
 from keystone import exception
@@ -655,8 +656,7 @@ def send_saml_audit_notification(action, request, user_id, group_ids,
     _send_audit_notification(action, initiator, outcome, target, event_type)
 
 
-@dependency.requires('catalog_api')
-class _CatalogHelperObj(object):
+class _CatalogHelperObj(provider_api.ProviderAPIMixin, object):
     """A helper object to allow lookups of identity service id."""
 
 

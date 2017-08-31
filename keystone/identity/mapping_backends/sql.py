@@ -35,7 +35,6 @@ class IDMapping(sql.ModelBase, sql.ModelDictMixin):
         sql.UniqueConstraint('domain_id', 'local_id', 'entity_type'),)
 
 
-@dependency.requires('id_generator_api')
 class Mapping(base.MappingDriverBase):
 
     def get_public_id(self, local_entity):

@@ -27,11 +27,11 @@ from keystone import exception
 CONF = keystone.conf.CONF
 
 
-@dependency.provider('id_generator_api')
 class Manager(manager.Manager):
     """Default pivot point for the identifier generator backend."""
 
     driver_namespace = 'keystone.identity.id_generator'
+    _provides_api = 'id_generator_api'
 
     def __init__(self):
         super(Manager, self).__init__(CONF.identity_mapping.generator)

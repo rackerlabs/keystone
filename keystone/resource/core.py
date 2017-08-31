@@ -35,9 +35,6 @@ LOG = log.getLogger(__name__)
 MEMOIZE = cache.get_memoization_decorator(group='resource')
 
 
-@dependency.provider('resource_api')
-@dependency.requires('assignment_api', 'credential_api', 'domain_config_api',
-                     'identity_api', 'trust_api')
 class Manager(manager.Manager):
     """Default pivot point for the Resource backend.
 
@@ -47,6 +44,7 @@ class Manager(manager.Manager):
     """
 
     driver_namespace = 'keystone.resource'
+    _provides_api = 'resource_api'
 
     _DOMAIN = 'domain'
     _PROJECT = 'project'
@@ -886,7 +884,6 @@ class Manager(manager.Manager):
 MEMOIZE_CONFIG = cache.get_memoization_decorator(group='domain_config')
 
 
-@dependency.provider('domain_config_api')
 class DomainConfigManager(manager.Manager):
     """Default pivot point for the Domain Config backend."""
 
@@ -900,6 +897,7 @@ class DomainConfigManager(manager.Manager):
     # the identity manager are supported.
 
     driver_namespace = 'keystone.resource.domain_config'
+    _provides_api = 'domain_config_api'
 
     # We explicitly state each whitelisted option instead of pulling all ldap
     # options from CONF and selectively pruning them to prevent a security

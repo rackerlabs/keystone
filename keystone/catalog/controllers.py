@@ -32,7 +32,6 @@ from keystone import resource
 INTERFACES = ['public', 'internal', 'admin']
 
 
-@dependency.requires('catalog_api')
 class Service(controller.V2Controller):
 
     @controller.v2_deprecated
@@ -66,7 +65,6 @@ class Service(controller.V2Controller):
         return {'OS-KSADM:service': new_service_ref}
 
 
-@dependency.requires('catalog_api')
 class Endpoint(controller.V2Controller):
 
     @controller.v2_deprecated
@@ -203,7 +201,6 @@ class Endpoint(controller.V2Controller):
             raise exception.EndpointNotFound(endpoint_id=endpoint_id)
 
 
-@dependency.requires('catalog_api')
 class RegionV3(controller.V3Controller):
     collection_name = 'regions'
     member_name = 'region'
@@ -268,7 +265,6 @@ class RegionV3(controller.V3Controller):
         )
 
 
-@dependency.requires('catalog_api')
 class ServiceV3(controller.V3Controller):
     collection_name = 'services'
     member_name = 'service'
@@ -315,7 +311,6 @@ class ServiceV3(controller.V3Controller):
         )
 
 
-@dependency.requires('catalog_api')
 class EndpointV3(controller.V3Controller):
     collection_name = 'endpoints'
     member_name = 'endpoint'
@@ -405,7 +400,6 @@ class EndpointV3(controller.V3Controller):
         )
 
 
-@dependency.requires('catalog_api', 'resource_api')
 class EndpointFilterV3Controller(controller.V3Controller):
 
     def __init__(self):
@@ -476,7 +470,6 @@ class EndpointFilterV3Controller(controller.V3Controller):
             request.context_dict, projects)
 
 
-@dependency.requires('catalog_api', 'resource_api')
 class EndpointGroupV3Controller(controller.V3Controller):
     collection_name = 'endpoint_groups'
     member_name = 'endpoint_group'
@@ -581,7 +574,6 @@ class EndpointGroupV3Controller(controller.V3Controller):
                                           filtered_endpoints)
 
 
-@dependency.requires('catalog_api', 'resource_api')
 class ProjectEndpointGroupV3Controller(controller.V3Controller):
     collection_name = 'project_endpoint_groups'
     member_name = 'project_endpoint_group'

@@ -18,10 +18,10 @@ import keystone.conf
 CONF = keystone.conf.CONF
 
 
-@dependency.provider('credential_provider_api')
 class Manager(manager.Manager):
 
     driver_namespace = 'keystone.credential.provider'
+    _provides_api = 'credential_provider_api'
 
     def __init__(self):
         super(Manager, self).__init__(CONF.credential.provider)

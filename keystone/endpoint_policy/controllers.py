@@ -17,7 +17,6 @@ from keystone.common import dependency
 from keystone import notifications
 
 
-@dependency.requires('policy_api', 'catalog_api', 'endpoint_policy_api')
 class EndpointPolicyV3Controller(controller.V3Controller):
     collection_name = 'endpoints'
     member_name = 'endpoint'

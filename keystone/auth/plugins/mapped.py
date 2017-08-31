@@ -32,8 +32,6 @@ LOG = log.getLogger(__name__)
 METHOD_NAME = 'mapped'
 
 
-@dependency.requires('assignment_api', 'federation_api', 'identity_api',
-                     'resource_api', 'token_provider_api', 'role_api')
 class Mapped(base.AuthMethodHandler):
 
     def _get_token_ref(self, auth_payload):

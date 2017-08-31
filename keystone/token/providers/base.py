@@ -16,11 +16,12 @@ import abc
 
 import six
 
+from keystone.common import provider_api
 from keystone import exception
 
 
 @six.add_metaclass(abc.ABCMeta)
-class Provider(object):
+class Provider(provider_api.ProviderAPIMixin, object):
     """Interface description for a Token provider."""
 
     @abc.abstractmethod

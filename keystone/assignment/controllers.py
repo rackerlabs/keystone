@@ -36,7 +36,6 @@ CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
 
 
-@dependency.requires('assignment_api', 'identity_api', 'token_provider_api')
 class TenantAssignment(controller.V2Controller):
     """The V2 Project APIs that are processing assignments."""
 
@@ -81,7 +80,6 @@ class TenantAssignment(controller.V2Controller):
         return {'users': user_refs}
 
 
-@dependency.requires('assignment_api', 'role_api')
 class Role(controller.V2Controller):
     """The Role management APIs."""
 
@@ -121,7 +119,6 @@ class Role(controller.V2Controller):
         return {'roles': self.role_api.list_roles()}
 
 
-@dependency.requires('assignment_api', 'resource_api', 'role_api')
 class RoleAssignmentV2(controller.V2Controller):
     """The V2 Role APIs that are processing assignments."""
 
@@ -252,7 +249,6 @@ class RoleAssignmentV2(controller.V2Controller):
             user_id, tenant_id, role_id)
 
 
-@dependency.requires('assignment_api', 'resource_api')
 class ProjectAssignmentV3(controller.V3Controller):
     """The V3 Project APIs that are processing assignments."""
 
@@ -272,7 +268,6 @@ class ProjectAssignmentV3(controller.V3Controller):
                                                    hints=hints)
 
 
-@dependency.requires('role_api')
 class RoleV3(controller.V3Controller):
     """The V3 Role CRUD APIs.
 
@@ -437,7 +432,6 @@ class RoleV3(controller.V3Controller):
         return hints
 
 
-@dependency.requires('role_api')
 class ImpliedRolesV3(controller.V3Controller):
     """The V3 ImpliedRoles CRD APIs.  There is no Update."""
 
@@ -574,8 +568,6 @@ class ImpliedRolesV3(controller.V3Controller):
         return results
 
 
-@dependency.requires('assignment_api', 'identity_api', 'resource_api',
-                     'role_api')
 class GrantAssignmentV3(controller.V3Controller):
     """The V3 Grant Assignment APIs."""
 
@@ -694,7 +686,6 @@ class GrantAssignmentV3(controller.V3Controller):
             context=request.context_dict)
 
 
-@dependency.requires('assignment_api', 'identity_api', 'resource_api')
 class RoleAssignmentV3(controller.V3Controller):
     """The V3 Role Assignment APIs, really just list_role_assignment()."""
 

@@ -20,7 +20,7 @@ from oslo_serialization import jsonutils
 import six
 
 from keystone.common import controller
-from keystone.common import dependency
+from keystone.common import provider_api
 from keystone.common import utils
 from keystone.common import wsgi
 import keystone.conf
@@ -65,8 +65,6 @@ class ExternalAuthNotApplicable(Exception):
     pass
 
 
-@dependency.requires('catalog_api', 'identity_api', 'resource_api',
-                     'token_provider_api', 'trust_api')
 class Auth(controller.V2Controller):
 
     @controller.v2_deprecated
@@ -294,8 +292,7 @@ class Auth(controller.V2Controller):
         return {'endpoints': endpoints, 'endpoints_links': []}
 
 
-@dependency.requires('resource_api', 'identity_api')
-class BaseAuthenticationMethod(object):
+class BaseAuthenticationMethod(provider_api.ProviderAPIMixin, object):
     """Common utilities/dependencies for all authentication method classes."""
 
     def _get_project_id_from_auth(self, auth):
@@ -335,7 +332,6 @@ class BaseAuthenticationMethod(object):
         return project_id
 
 
-@dependency.requires('token_provider_api', 'trust_api')
 class TokenAuthenticationMethod(BaseAuthenticationMethod):
     """Authenticate using an existing token."""
 
@@ -516,9 +512,7 @@ class ExternalAuthenticationMethod(BaseAuthenticationMethod):
         return (user_ref, tenant_id, expiry, bind, audit_id)
 
 
-@dependency.requires('catalog_api', 'resource_api',
-                     'trust_api', 'identity_api')
-class V2TokenDataHelper(object):
+class V2TokenDataHelper(provider_api.ProviderAPIMixin, object):
     """Create V2 token data."""
 
     def v3_to_v2_token(self, v3_token_data, token_id):

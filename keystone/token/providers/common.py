@@ -24,7 +24,7 @@ from oslo_utils import timeutils
 import six
 from six.moves.urllib import parse
 
-from keystone.common import dependency
+from keystone.common import provider_api
 from keystone.common import utils
 import keystone.conf
 from keystone import exception
@@ -82,10 +82,7 @@ def build_audit_info(parent_audit_id=None):
     return [audit_id]
 
 
-@dependency.requires('assignment_api', 'catalog_api', 'federation_api',
-                     'identity_api', 'resource_api', 'role_api', 'trust_api',
-                     'oauth_api')
-class V3TokenDataHelper(object):
+class V3TokenDataHelper(provider_api.ProviderAPIMixin, object):
     """Token data helper."""
 
     def __init__(self):
@@ -429,8 +426,6 @@ class V3TokenDataHelper(object):
         return {'token': token_data}
 
 
-@dependency.requires('catalog_api', 'identity_api', 'oauth_api',
-                     'resource_api', 'role_api', 'trust_api')
 class BaseProvider(base.Provider):
     def __init__(self, *args, **kwargs):
         super(BaseProvider, self).__init__(*args, **kwargs)

@@ -23,7 +23,6 @@ from keystone.oauth1 import core as oauth
 from keystone.oauth1 import validator
 
 
-@dependency.requires('oauth_api')
 class OAuth(base.AuthMethodHandler):
     def authenticate(self, request, auth_payload):
         """Turn a signed request with an access key into a keystone token."""

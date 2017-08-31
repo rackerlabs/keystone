@@ -29,7 +29,6 @@ CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
 
 
-@dependency.requires('assignment_api', 'identity_api', 'resource_api')
 class User(controller.V2Controller):
 
     @controller.v2_deprecated
@@ -188,7 +187,6 @@ class User(controller.V2Controller):
         return ref
 
 
-@dependency.requires('identity_api')
 class UserV3(controller.V3Controller):
     collection_name = 'users'
     member_name = 'user'
@@ -298,7 +296,6 @@ class UserV3(controller.V3Controller):
                 'Error when changing user password: %s') % e)
 
 
-@dependency.requires('identity_api')
 class GroupV3(controller.V3Controller):
     collection_name = 'groups'
     member_name = 'group'

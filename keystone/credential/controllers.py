@@ -24,7 +24,6 @@ from keystone import exception
 from keystone.i18n import _
 
 
-@dependency.requires('credential_api')
 class CredentialV3(controller.V3Controller):
     collection_name = 'credentials'
     member_name = 'credential'

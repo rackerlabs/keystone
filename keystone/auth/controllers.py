@@ -82,8 +82,6 @@ def validate_issue_token_auth(auth=None):
                 raise exception.SchemaValidationError(detail=msg)
 
 
-@dependency.requires('assignment_api', 'catalog_api', 'identity_api',
-                     'resource_api', 'token_provider_api', 'trust_api')
 class Auth(controller.V3Controller):
 
     # Note(atiwari): From V3 auth controller code we are

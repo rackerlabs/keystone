@@ -32,7 +32,6 @@ from keystone.resource import schema
 CONF = keystone.conf.CONF
 
 
-@dependency.requires('resource_api')
 class Tenant(controller.V2Controller):
 
     @controller.v2_deprecated
@@ -119,7 +118,6 @@ class Tenant(controller.V2Controller):
         )
 
 
-@dependency.requires('resource_api')
 class DomainV3(controller.V3Controller):
     collection_name = 'domains'
     member_name = 'domain'
@@ -165,8 +163,6 @@ class DomainV3(controller.V3Controller):
         )
 
 
-@dependency.requires('domain_config_api')
-@dependency.requires('resource_api')
 class DomainConfigV3(controller.V3Controller):
     member_name = 'config'
 
@@ -240,7 +236,6 @@ class DomainConfigV3(controller.V3Controller):
         return {self.member_name: ref}
 
 
-@dependency.requires('resource_api')
 class ProjectV3(controller.V3Controller):
     collection_name = 'projects'
     member_name = 'project'

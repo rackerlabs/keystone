@@ -44,8 +44,6 @@ extension.register_admin_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 extension.register_public_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 
 
-@dependency.provider('federation_api')
-@dependency.requires('resource_api')
 class Manager(manager.Manager):
     """Default pivot point for the Federation backend.
 
@@ -55,6 +53,7 @@ class Manager(manager.Manager):
     """
 
     driver_namespace = 'keystone.federation'
+    _provides_api = 'federation_api'
 
     def __init__(self):
         super(Manager, self).__init__(CONF.federation.driver)

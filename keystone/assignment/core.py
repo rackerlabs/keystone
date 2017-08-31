@@ -46,9 +46,6 @@ MEMOIZE_COMPUTED_ASSIGNMENTS = cache.get_memoization_decorator(
 
 
 @notifications.listener
-@dependency.provider('assignment_api')
-@dependency.requires('credential_api', 'identity_api', 'resource_api',
-                     'role_api')
 class Manager(manager.Manager):
     """Default pivot point for the Assignment backend.
 
@@ -58,6 +55,7 @@ class Manager(manager.Manager):
     """
 
     driver_namespace = 'keystone.assignment'
+    _provides_api = 'assignment_api'
 
     _PROJECT = 'project'
     _ROLE_REMOVED_FROM_USER = 'role_removed_from_user'
@@ -1096,12 +1094,11 @@ class Manager(manager.Manager):
             )
 
 
-@dependency.provider('role_api')
-@dependency.requires('assignment_api')
 class RoleManager(manager.Manager):
     """Default pivot point for the Role backend."""
 
     driver_namespace = 'keystone.role'
+    _provides_api = 'role_api'
 
     _ROLE = 'role'
 

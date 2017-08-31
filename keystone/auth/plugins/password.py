@@ -22,7 +22,6 @@ from keystone.i18n import _
 METHOD_NAME = 'password'
 
 
-@dependency.requires('identity_api')
 class Password(base.AuthMethodHandler):
 
     def authenticate(self, request, auth_payload):

@@ -90,7 +90,6 @@ class Endpoint(sql.ModelBase, sql.ModelDictMixinWithExtras):
         return super(Endpoint, cls).from_dict(new_dict)
 
 
-@dependency.requires('catalog_api')
 class Catalog(base.CatalogDriverBase):
     # Regions
     def list_regions(self, hints):

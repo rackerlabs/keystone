@@ -30,7 +30,6 @@ LOG = log.getLogger(__name__)
 CONF = keystone.conf.CONF
 
 
-@dependency.requires('federation_api', 'identity_api', 'token_provider_api')
 class Token(base.AuthMethodHandler):
 
     def _get_token_ref(self, auth_payload):

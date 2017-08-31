@@ -26,8 +26,6 @@ from keystone import exception
 CONF = keystone.conf.CONF
 
 
-@dependency.provider('credential_api')
-@dependency.requires('credential_provider_api')
 class Manager(manager.Manager):
     """Default pivot point for the Credential backend.
 
@@ -37,6 +35,7 @@ class Manager(manager.Manager):
     """
 
     driver_namespace = 'keystone.credential'
+    _provides_api = 'credential_api'
 
     def __init__(self):
         super(Manager, self).__init__(CONF.credential.driver)

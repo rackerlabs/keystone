@@ -65,7 +65,6 @@ def _generate_totp_passcode(secret):
     return totp.generate(timeutils.utcnow_ts(microsecond=True)).decode('utf-8')
 
 
-@dependency.requires('credential_api')
 class TOTP(base.AuthMethodHandler):
 
     def authenticate(self, request, auth_payload):

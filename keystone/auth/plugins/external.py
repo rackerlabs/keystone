@@ -65,7 +65,6 @@ class Base(base.AuthMethodHandler):
         pass
 
 
-@dependency.requires('identity_api')
 class DefaultDomain(Base):
     def _authenticate(self, request):
         """Use remote_user to look up the user in the identity backend."""
@@ -74,7 +73,6 @@ class DefaultDomain(Base):
             CONF.identity.default_domain_id)
 
 
-@dependency.requires('identity_api', 'resource_api')
 class Domain(Base):
     def _authenticate(self, request):
         """Use remote_user to look up the user in the identity backend.

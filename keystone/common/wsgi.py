@@ -36,6 +36,7 @@ import webob.exc
 
 from keystone.common import authorization
 from keystone.common import dependency
+from keystone.common import provider_api
 from keystone.common import json_home
 from keystone.common import request as request_mod
 from keystone.common import utils
@@ -132,7 +133,7 @@ def best_match_language(req):
         oslo_i18n.get_available_languages('keystone'))
 
 
-class BaseApplication(object):
+class BaseApplication(provider_api.ProviderAPIMixin, object):
     """Base WSGI application wrapper. Subclasses need to implement __call__."""
 
     @classmethod
@@ -199,7 +200,6 @@ class BaseApplication(object):
         raise NotImplementedError('You must implement __call__')
 
 
-@dependency.requires('assignment_api', 'policy_api', 'token_provider_api')
 class Application(BaseApplication):
 
     @webob.dec.wsgify(RequestClass=request_mod.Request)
