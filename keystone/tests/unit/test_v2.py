@@ -51,20 +51,6 @@ class CoreApiTests(object):
         self.assertIsNotNone(link.get('type'))
         self.assertIsNotNone(link.get('href'))
 
-    def assertValidTenant(self, tenant):
-        self.assertIsNotNone(tenant.get('id'))
-        self.assertIsNotNone(tenant.get('name'))
-        self.assertNotIn('domain_id', tenant)
-        self.assertNotIn('parent_id', tenant)
-
-    def assertValidUser(self, user):
-        self.assertIsNotNone(user.get('id'))
-        self.assertIsNotNone(user.get('name'))
-
-    def assertValidRole(self, role):
-        self.assertIsNotNone(role.get('id'))
-        self.assertIsNotNone(role.get('name'))
-
     def test_public_not_found(self):
         r = self.public_request(
             path='/%s' % uuid.uuid4().hex,
@@ -152,51 +138,6 @@ class CoreApiTests(object):
         self.public_request(path='/v2.0/tenants',
                             expected_status=http_client.UNAUTHORIZED)
 
-    def _get_user_id(self, r):
-        """Helper method to return user ID from a response.
-
-        This needs to be overridden by child classes
-        based on their content type.
-
-        """
-        raise NotImplementedError()
-
-    def _get_role_id(self, r):
-        """Helper method to return a role ID from a response.
-
-        This needs to be overridden by child classes
-        based on their content type.
-
-        """
-        raise NotImplementedError()
-
-    def _get_role_name(self, r):
-        """Helper method to return role NAME from a response.
-
-        This needs to be overridden by child classes
-        based on their content type.
-
-        """
-        raise NotImplementedError()
-
-    def _get_project_id(self, r):
-        """Helper method to return project ID from a response.
-
-        This needs to be overridden by child classes
-        based on their content type.
-
-        """
-        raise NotImplementedError()
-
-    def assertNoRoles(self, r):
-        """Helper method to assert No Roles.
-
-        This needs to be overridden by child classes
-        based on their content type.
-
-        """
-        raise NotImplementedError()
-
     def test_authenticating_a_user_with_no_password(self):
         token = self.get_scoped_token()
 
@@ -268,23 +209,8 @@ class V2TestCase(object):
             driver='templated',
             template_file=unit.dirs.tests('default_catalog.templates'))
 
-    def _get_user_id(self, r):
-        return r['user']['id']
-
-    def _get_role_name(self, r):
-        return r['roles'][0]['name']
-
-    def _get_role_id(self, r):
-        return r['roles'][0]['id']
-
-    def _get_project_id(self, r):
-        return r['tenant']['id']
-
     def _get_token_id(self, r):
         return r.result['access']['token']['id']
-
-    def assertNoRoles(self, r):
-        self.assertEqual([], r['roles'])
 
     def assertValidErrorResponse(self, r):
         self.assertIsNotNone(r.result.get('error'))
@@ -311,15 +237,6 @@ class V2TestCase(object):
 
     def assertValidExtensionResponse(self, r, expected):
         self.assertValidExtension(r.result.get('extension'), expected)
-
-    def assertValidUser(self, user):
-        super(V2TestCase, self).assertValidUser(user)
-        self.assertNotIn('default_project_id', user)
-        if 'tenantId' in user:
-            # NOTE(morganfainberg): tenantId should never be "None", it gets
-            # filtered out of the object if it is there. This is suspenders
-            # and a belt check to avoid unintended regressions.
-            self.assertIsNotNone(user.get('tenantId'))
 
     def assertValidAuthenticationResponse(self, r,
                                           require_service_catalog=False):
@@ -367,28 +284,6 @@ class V2TestCase(object):
                     # validate service endpoint
                     self.assertIsNotNone(endpoint.get('publicURL'))
 
-    def assertValidTenantListResponse(self, r):
-        self.assertIsNotNone(r.result.get('tenants'))
-        self.assertNotEmpty(r.result['tenants'])
-        for tenant in r.result['tenants']:
-            self.assertValidTenant(tenant)
-            self.assertIsNotNone(tenant.get('enabled'))
-            self.assertIn(tenant.get('enabled'), [True, False])
-
-    def assertValidUserResponse(self, r):
-        self.assertIsNotNone(r.result.get('user'))
-        self.assertValidUser(r.result['user'])
-
-    def assertValidTenantResponse(self, r):
-        self.assertIsNotNone(r.result.get('tenant'))
-        self.assertValidTenant(r.result['tenant'])
-
-    def assertValidRoleListResponse(self, r):
-        self.assertIsNotNone(r.result.get('roles'))
-        self.assertNotEmpty(r.result['roles'])
-        for role in r.result['roles']:
-            self.assertValidRole(role)
-
     def assertValidVersion(self, version):
         super(V2TestCase, self).assertValidVersion(version)
 
@@ -413,26 +308,6 @@ class V2TestCase(object):
 
     def assertValidVersionResponse(self, r):
         self.assertValidVersion(r.result.get('version'))
-
-    def assertValidEndpointListResponse(self, r):
-        self.assertIsNotNone(r.result.get('endpoints'))
-        self.assertNotEmpty(r.result['endpoints'])
-        for endpoint in r.result['endpoints']:
-            self.assertIsNotNone(endpoint.get('id'))
-            self.assertIsNotNone(endpoint.get('name'))
-            self.assertIsNotNone(endpoint.get('type'))
-            self.assertIsNotNone(endpoint.get('publicURL'))
-            self.assertIsNotNone(endpoint.get('internalURL'))
-            self.assertIsNotNone(endpoint.get('adminURL'))
-
-    def get_user_from_response(self, r):
-        return r.result.get('user')
-
-    def get_user_attribute_from_response(self, r, attribute_name):
-        return r.result['user'][attribute_name]
-
-    def assertValidRevocationListResponse(self, response):
-        self.assertIsNotNone(response.result['signed'])
 
 
 class V2TestCaseUUID(V2TestCase, RestfulTestCase, CoreApiTests):
