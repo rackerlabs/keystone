@@ -60,6 +60,7 @@ class TenantAssignment(controller.V2Controller):
         }
         return self.format_project_list(tenant_refs, **params)
 
+
 @dependency.requires('assignment_api', 'resource_api')
 class ProjectAssignmentV3(controller.V3Controller):
     """The V3 Project APIs that are processing assignments."""
