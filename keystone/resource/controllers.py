@@ -190,6 +190,12 @@ class ProjectV3(controller.V3Controller):
         # False (which in query terms means '0')
         if 'is_domain' not in request.params:
             hints.add_filter('is_domain', '0')
+        # If any tags filters are passed in when listing projects, add them
+        # to the hint filters
+        tag_params = ['tags', 'tags-any', 'not-tags', 'not-tags-any']
+        for t in tag_params:
+            if t in request.params:
+                hints.add_filter(t, request.params[t])
         refs = self.resource_api.list_projects(hints=hints)
         return ProjectV3.wrap_collection(request.context_dict,
                                          refs, hints=hints)
@@ -258,3 +264,65 @@ class ProjectV3(controller.V3Controller):
         return self.resource_api.delete_project(
             project_id,
             initiator=request.audit_initiator)
+
+
+@dependency.requires('resource_api')
+class ProjectTagV3(controller.V3Controller):
+    collection_name = 'tags'
+    member_name = 'tag'
+
+    def __init__(self):
+        super(ProjectTagV3, self).__init__()
+        self.get_member_from_driver = self.resource_api.get_project_tag
+
+    @classmethod
+    def _add_self_referential_link(cls, context):
+        return {'links': {'self': context.get('path')}}
+
+    @classmethod
+    def wrap_collection(cls, context, ref):
+        new_ref = cls._add_self_referential_link(context)
+        if not ref:
+            ref = []
+        new_ref[cls.collection_name] = ref
+        return new_ref
+
+    @classmethod
+    def wrap_header(cls, context):
+        try:
+            url = context['host_url'] + context['environment']['REQUEST_URI']
+        except Exception:
+            url = context['path']
+        headers = [('location', url)]
+        return wsgi.render_response(headers=headers)
+
+    @controller.protected()
+    def create_project_tag(self, request, project_id, value):
+        validation.lazy_validate(schema.project_tag_create, value)
+        self.resource_api.create_project_tag(
+            project_id, value, initiator=request.audit_initiator)
+        return ProjectTagV3.wrap_header(request.context_dict)
+
+    @controller.protected()
+    def get_project_tag(self, request, project_id, value):
+        self.resource_api.get_project_tag(project_id, value)
+
+    @controller.protected()
+    def delete_project_tag(self, request, project_id, value):
+        self.resource_api.delete_project_tag(project_id, value)
+
+    @controller.protected()
+    def list_project_tags(self, request, project_id):
+        ref = self.resource_api.list_project_tags(project_id)
+        return ProjectTagV3.wrap_collection(request.context_dict, ref)
+
+    @controller.protected()
+    def update_project_tags(self, request, project_id, tags):
+        validation.lazy_validate(schema.project_tags_update, tags)
+        ref = self.resource_api.update_project_tags(
+            project_id, tags, initiator=request.audit_initiator)
+        return ProjectTagV3.wrap_collection(request.context_dict, ref)
+
+    @controller.protected()
+    def delete_project_tags(self, request, project_id):
+        self.resource_api.update_project_tags(project_id, [])
