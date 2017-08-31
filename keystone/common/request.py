@@ -51,15 +51,6 @@ class Request(webob.Request):
             raise exception.ValidationError(msg)
 
         context['path'] = self.environ['PATH_INFO']
-        scheme = self.environ.get(CONF.secure_proxy_ssl_header)
-        if scheme:
-            # NOTE(andrey-mp): "wsgi.url_scheme" contains the protocol used
-            # before the proxy removed it ('https' usually). So if
-            # the webob.Request instance is modified in order to use this
-            # scheme instead of the one defined by API, the call to
-            # webob.Request.relative_url() will return a URL with the correct
-            # scheme.
-            self.environ['wsgi.url_scheme'] = scheme
         context['host_url'] = self.host_url
         # authentication and authorization attributes are set as environment
         # values by the container and processed by the pipeline. The complete

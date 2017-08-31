@@ -997,11 +997,6 @@ class VersionBehindSslTestCase(unit.TestCase):
         self.load_backends()
         self.public_app = self.loadapp('keystone', 'main')
 
-    def config_overrides(self):
-        super(VersionBehindSslTestCase, self).config_overrides()
-        self.config_fixture.config(
-            secure_proxy_ssl_header='HTTP_X_FORWARDED_PROTO')
-
     def _paste_in_port(self, response, port):
         for link in response['links']:
             if link['rel'] == 'self':
