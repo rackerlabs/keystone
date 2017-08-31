@@ -237,7 +237,7 @@ class Project(sql.ModelBase, sql.ModelDictMixinWithExtras):
 
     __tablename__ = 'project'
     attributes = ['id', 'name', 'domain_id', 'description', 'enabled',
-                  'parent_id', 'is_domain']
+                  'parent_id', 'is_domain','extra']
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(64), nullable=False)
     domain_id = sql.Column(sql.String(64), sql.ForeignKey('project.id'),
