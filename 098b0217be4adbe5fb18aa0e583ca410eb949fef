@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7f287b81_f771390e",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-01T16:23:16Z",
+      "side": 1,
+      "message": "We also have that documented at the controller layer. in a subsequent patch.\n\nhttps://review.openstack.org/#/c/498577/10/keystone/token/controllers.py",
+      "parentUuid": "7f287b81_ee4f5b68",
+      "revId": "098b0217be4adbe5fb18aa0e583ca410eb949fef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f287b81_401f5e07",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 3
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "8th version of the payload?",
       "parentUuid": "7f287b81_401f5e07",
+      "revId": "098b0217be4adbe5fb18aa0e583ca410eb949fef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_57d92df2",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 713,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-01T16:23:16Z",
+      "side": 1,
+      "message": "Yep - the version just increments sequentially and is only used locally in keystone. I opted to add GlobalScopedPayload as version 8 instead of adding it as 0 or 1 and renaming the rest of the payload classes. This version is serialized and encrypted.",
+      "parentUuid": "7f287b81_2e49e35e",
       "revId": "098b0217be4adbe5fb18aa0e583ca410eb949fef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
