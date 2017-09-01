@@ -151,7 +151,7 @@ class Auth(controller.V3Controller):
 
             return render_token_data_response(token_id, token_data,
                                               created=True)
-        except exception.TrustNotFound as e:
+        except (exception.TrustNotFound, exception.TrustUseLimitReached) as e:
             LOG.warning(six.text_type(e))
             raise exception.Unauthorized(e)
 
