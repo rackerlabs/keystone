@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_5cd4bfbd",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 24269
+      },
+      "writtenOn": "2017-09-01T08:07:14Z",
+      "side": 1,
+      "message": "Whethter trust_ref include \u0027project_id\u0027 or not, \n\u0027trust\u0027 should be assigned to \u0027trust_ref\u0027. \nfor example:\n  elif auth_info.is_trust_scoped:\n      trust_ref \u003d auth_info.scope\n      trust \u003d trust_ref\n      if trust_ref.get(\u0027project_id\u0027) is not None:\n          project_id \u003d trust_ref.get(\u0027project_id\u0027)",
+      "range": {
+        "startLine": 132,
+        "startChar": 19,
+        "endLine": 132,
+        "endChar": 28
+      },
+      "revId": "4466adb02a85544207460fc1f2e4c191e17aa6a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
