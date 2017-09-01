@@ -365,4 +365,6 @@ def get_user_unique_id_and_display_name(request, mapped_properties):
         user_id = user_name
 
     user['id'] = parse.quote(user_id)
+    if not user.get('name'):
+        user['name'] = user_name
     return (user['id'], user['name'])
