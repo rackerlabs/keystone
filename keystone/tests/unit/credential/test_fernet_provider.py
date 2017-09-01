@@ -64,7 +64,10 @@ class TestFernetCredentialProviderWithNullKey(unit.TestCase):
 
     def test_encryption_with_null_key(self):
         null_key = fernet_utils.NULL_KEY
-        null_key_hash = hashlib.sha1(null_key).hexdigest()
+        # Below marked as #nosec for Bandit which see's the below as sha1
+        # however the auth is using HMAC-SHA1 which is not considered as
+        # insecure right now. https://review.openstack.org/#/c/453365/
+        null_key_hash = hashlib.sha1(null_key).hexdigest()  # nosec (lhinds)
 
         blob = uuid.uuid4().hex
         encrypted_blob, primary_key_hash = self.provider.encrypt(blob)
