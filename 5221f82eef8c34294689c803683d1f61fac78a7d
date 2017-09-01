@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7f287b81_c61d7174",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1211,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-01T14:39:50Z",
+      "side": 1,
+      "message": "This should be pulled out into it\u0027s own patch to see if it\u0027s applicable to project/domain roles. I don\u0027t think anything here is specific to global roles.",
+      "revId": "5221f82eef8c34294689c803683d1f61fac78a7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f287b81_82fc3fb5",
         "filename": "keystone/auth/schema.py",
         "patchSetId": 10
@@ -19,6 +36,24 @@
         "endLine": 87,
         "endChar": 50
       },
+      "revId": "5221f82eef8c34294689c803683d1f61fac78a7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_660c7d42",
+        "filename": "keystone/auth/schema.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-01T14:39:50Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7f287b81_82fc3fb5",
       "revId": "5221f82eef8c34294689c803683d1f61fac78a7d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
