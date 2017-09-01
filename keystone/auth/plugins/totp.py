@@ -60,8 +60,11 @@ def _generate_totp_passcode(secret):
         secret = secret + b'='
 
     decoded = base64.b32decode(secret)
+    # Marked as #nosec (lhinds) for Bandit which see's the below as sha1
+    # however  auth is using HMAC-SHA1 which is not considered as insecure
+    #  right now. https://review.openstack.org/#/c/453365/
     totp = crypto_totp.TOTP(
-        decoded, 6, hashes.SHA1(), 30, backend=default_backend())
+        decoded, 6, hashes.SHA1(), 30, backend=default_backend())  # nosec
     return totp.generate(timeutils.utcnow_ts(microsecond=True)).decode('utf-8')
 
 

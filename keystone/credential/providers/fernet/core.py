@@ -57,7 +57,10 @@ def primary_key_hash(keys):
     """Calculate a hash of the primary key used for encryption."""
     if isinstance(keys[0], six.text_type):
         keys[0] = keys[0].encode('utf-8')
-    return hashlib.sha1(keys[0]).hexdigest()
+    # Below Marked as #nosec for Bandit which see's the below as sha1
+    # however auth is using HMAC-SHA1 which is not considered as insecure
+    # right now. https://review.openstack.org/#/c/453365/
+    return hashlib.sha1(keys[0]).hexdigest()  # nosec (lhinds)
 
 
 class Provider(core.Provider):
