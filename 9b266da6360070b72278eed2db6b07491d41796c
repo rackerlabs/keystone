@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_d89d490b",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-09-01T21:29:50Z",
+      "side": 1,
+      "message": "nit: extra space here",
+      "range": {
+        "startLine": 116,
+        "startChar": 43,
+        "endLine": 116,
+        "endChar": 44
+      },
+      "revId": "9b266da6360070b72278eed2db6b07491d41796c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
