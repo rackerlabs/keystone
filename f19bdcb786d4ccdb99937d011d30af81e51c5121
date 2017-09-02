@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7f287b81_f20379bd",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 9664
+      },
+      "writtenOn": "2017-09-02T21:16:56Z",
+      "side": 1,
+      "message": "In that case, please make it a config entry. Requiring a code change here is not a reasonable thing from a deployment perspective.",
+      "parentUuid": "7f287b81_9a97fc48",
+      "revId": "f19bdcb786d4ccdb99937d011d30af81e51c5121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f287b81_70dff339",
         "filename": "keystone/resource/schema.py",
         "patchSetId": 25
