@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_9212f508",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 9664
+      },
+      "writtenOn": "2017-09-02T21:16:37Z",
+      "side": 1,
+      "message": "see comment added in #25, please make this a configuration parameter so one doesn\u0027t have to change source for this.",
+      "revId": "c74d07638e692e0c92c2c5eafc872dc0a491a04c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_b20df1e9",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 9664
+      },
+      "writtenOn": "2017-09-02T21:16:37Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be a config parameter as well?",
+      "revId": "c74d07638e692e0c92c2c5eafc872dc0a491a04c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
