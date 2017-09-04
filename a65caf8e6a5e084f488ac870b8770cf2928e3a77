@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "7f287b81_f5b7ca39",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 2478,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-09-04T16:50:21Z",
+      "side": 1,
+      "message": "This is just testing that the migration for adding the tags table was successful and that we can add a tag, and then query it.",
+      "parentUuid": "7f287b81_e96259d8",
+      "range": {
+        "startLine": 2449,
+        "startChar": 0,
+        "endLine": 2478,
+        "endChar": 58
+      },
+      "revId": "a65caf8e6a5e084f488ac870b8770cf2928e3a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f287b81_09a925dc",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 38
