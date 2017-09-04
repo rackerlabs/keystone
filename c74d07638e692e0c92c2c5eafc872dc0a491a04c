@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7f287b81_29c5018f",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-09-04T13:53:30Z",
+      "side": 1,
+      "message": "If there is a request/need to have this as something configurable, sure it\u0027s doable, but it needs to be discussed.\n\nIsn\u0027t there the same need for nova server tags (so we are consistent)?\n\nIt\u0027s technically possible, just add the column lenght to 255 and say it should be configurable between 1 and 255. what happens to existing tags if the config valued is lowered? do we trim them? there is quite a bit of additional complexity if we want this to be configurable.",
+      "parentUuid": "7f287b81_8d0c1643",
+      "revId": "c74d07638e692e0c92c2c5eafc872dc0a491a04c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f287b81_b20df1e9",
         "filename": "keystone/resource/schema.py",
         "patchSetId": 26
