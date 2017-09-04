@@ -68,6 +68,30 @@
       "revId": "dd499f72e181457e15dd0b2e599569f860a0b0dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_4f728daf",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2017-09-04T15:07:10Z",
+      "side": 1,
+      "message": "++ much better - otherwise you could easily write a de-dupe method which would pass by throwing out all indexes that were even, say. I would further test. that the correct item has been removed.",
+      "parentUuid": "7f287b81_6634564b",
+      "range": {
+        "startLine": 92,
+        "startChar": 8,
+        "endLine": 92,
+        "endChar": 56
+      },
+      "revId": "dd499f72e181457e15dd0b2e599569f860a0b0dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
