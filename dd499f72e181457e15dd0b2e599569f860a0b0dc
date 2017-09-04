@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_069d9256",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-09-04T13:26:15Z",
+      "side": 1,
+      "message": "remove_duplicate_dicts_by_id could be a good name too",
+      "range": {
+        "startLine": 455,
+        "startChar": 26,
+        "endLine": 455,
+        "endChar": 58
+      },
+      "revId": "dd499f72e181457e15dd0b2e599569f860a0b0dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_26d08ef7",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-09-04T13:26:15Z",
+      "side": 1,
+      "message": "11 values as range(1,10) gives 9",
+      "range": {
+        "startLine": 90,
+        "startChar": 20,
+        "endLine": 90,
+        "endChar": 22
+      },
+      "revId": "dd499f72e181457e15dd0b2e599569f860a0b0dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_6634564b",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-09-04T13:26:15Z",
+      "side": 1,
+      "message": "self.assertEqual(len(result), len(dict_list)-1)\n\nwould be nice too, as we assert exactly one element was removed",
+      "range": {
+        "startLine": 92,
+        "startChar": 8,
+        "endLine": 92,
+        "endChar": 56
+      },
+      "revId": "dd499f72e181457e15dd0b2e599569f860a0b0dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
