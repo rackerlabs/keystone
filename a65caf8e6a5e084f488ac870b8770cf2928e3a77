@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_e64726bc",
+        "filename": "keystone/common/sql/expand_repo/versions/025_expand_add_project_tags_table.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-09-04T13:49:31Z",
+      "side": 1,
+      "message": "(nit) typo",
+      "range": {
+        "startLine": 23,
+        "startChar": 77,
+        "endLine": 23,
+        "endChar": 78
+      },
+      "revId": "a65caf8e6a5e084f488ac870b8770cf2928e3a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_e96259d8",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 2478,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-09-04T13:49:31Z",
+      "side": 1,
+      "message": "what is this trying to exercise? the table contains only 1 row (for 1 project_id)",
+      "range": {
+        "startLine": 2449,
+        "startChar": 0,
+        "endLine": 2478,
+        "endChar": 58
+      },
+      "revId": "a65caf8e6a5e084f488ac870b8770cf2928e3a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_09a925dc",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 2479,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-09-04T13:49:31Z",
+      "side": 1,
+      "message": "I think it would be better to test the uniqueness/pk constraint.",
+      "revId": "a65caf8e6a5e084f488ac870b8770cf2928e3a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
