@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7f287b81_15ac9633",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-09-04T17:47:31Z",
+      "side": 1,
+      "message": "Yeah I think I like that name more, it describes what it does more accurately.",
+      "parentUuid": "7f287b81_069d9256",
+      "range": {
+        "startLine": 455,
+        "startChar": 26,
+        "endLine": 455,
+        "endChar": 58
+      },
+      "revId": "dd499f72e181457e15dd0b2e599569f860a0b0dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f287b81_26d08ef7",
         "filename": "keystone/tests/unit/common/test_utils.py",
         "patchSetId": 9
@@ -36,6 +60,30 @@
       "writtenOn": "2017-09-04T13:26:15Z",
       "side": 1,
       "message": "11 values as range(1,10) gives 9",
+      "range": {
+        "startLine": 90,
+        "startChar": 20,
+        "endLine": 90,
+        "endChar": 22
+      },
+      "revId": "dd499f72e181457e15dd0b2e599569f860a0b0dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_556fbefb",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-09-04T17:47:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f287b81_26d08ef7",
       "range": {
         "startLine": 90,
         "startChar": 20,
@@ -83,6 +131,30 @@
       "side": 1,
       "message": "++ much better - otherwise you could easily write a de-dupe method which would pass by throwing out all indexes that were even, say. I would further test. that the correct item has been removed.",
       "parentUuid": "7f287b81_6634564b",
+      "range": {
+        "startLine": 92,
+        "startChar": 8,
+        "endLine": 92,
+        "endChar": 56
+      },
+      "revId": "dd499f72e181457e15dd0b2e599569f860a0b0dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_357672da",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-09-04T17:47:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f287b81_4f728daf",
       "range": {
         "startLine": 92,
         "startChar": 8,
