@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "7f287b81_b575c29a",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-09-04T16:46:58Z",
+      "side": 1,
+      "message": "I\u0027ve added this to the keystone meeting agenda for tomorrow (9/5). But as both Tin and Samuel have said, this was deliberate to match nova\u0027s implementation and early on when this spec was being reviewed there was concerns about the complexity of having this value configurable since it ties in to the Project_Tag name column.",
+      "parentUuid": "7f287b81_29c5018f",
+      "revId": "c74d07638e692e0c92c2c5eafc872dc0a491a04c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f287b81_b20df1e9",
         "filename": "keystone/resource/schema.py",
         "patchSetId": 26
