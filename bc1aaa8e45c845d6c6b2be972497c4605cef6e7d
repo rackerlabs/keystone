@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_53bc5adb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-09-05T20:23:05Z",
+      "side": 1,
+      "message": "Since the bug is being closed as invalid this message should probably be reworked. It\u0027s adding a test case to assure existing behavior, not exposing a bug.",
+      "revId": "bc1aaa8e45c845d6c6b2be972497c4605cef6e7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
