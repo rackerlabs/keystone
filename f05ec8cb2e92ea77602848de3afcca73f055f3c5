@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_e476dad8",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 17
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-09-05T22:45:46Z",
+      "side": 1,
+      "message": "This needs to be updated to match the current limits",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 57
+      },
+      "revId": "f05ec8cb2e92ea77602848de3afcca73f055f3c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
