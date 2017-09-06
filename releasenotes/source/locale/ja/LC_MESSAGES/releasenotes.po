@@ -437,7 +437,7 @@ msgstr ""
 "`[cache]` セクションを oslo.cache バックエンドを指すよう、``oslo_cache."
 "memcache_pool`` または ``oslo_cache.mongo`` に、更新しました。 サンプルの設定"
 "ファイルを参照してください。追加のドキュメントを参照してください `oslo."
-"cache<http://docs.openstack.org/developer/oslo.cache>`_"
+"cache<<http://docs.openstack.org/developer/oslo.cache>`_"
 
 msgid ""
 "Keystone now uses oslo.cache. Update the `[cache]` section of `keystone."
