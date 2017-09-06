@@ -46,10 +46,7 @@ class Manager(manager.Manager):
         return ref
 
     def get_policy(self, policy_id):
-        try:
-            return self.driver.get_policy(policy_id)
-        except exception.NotFound:
-            raise exception.PolicyNotFound(policy_id=policy_id)
+        return self.driver.get_policy(policy_id)
 
     def update_policy(self, policy_id, policy, initiator=None):
         if 'id' in policy and policy_id != policy['id']:
