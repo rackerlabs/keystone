@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_f3e202d5",
+        "filename": "keystone/policy/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-09-06T20:45:52Z",
+      "side": 0,
+      "message": "I think this works, since \"NotFound\" is the parent of \"PolicyNotFound\", but it is redundant if all it does is catch the same exception and then re-throw it.\n\nhttps://github.com/openstack/keystone/blob/master/keystone/exception.py#L348",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 63
+      },
+      "revId": "fe87d284224e0fb61230fbd2b33ee99c6aa36b3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_f3bd62b7",
+        "filename": "keystone/policy/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-09-06T20:45:52Z",
+      "side": 0,
+      "message": "It looks like this does the same thing here as well.",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 63
+      },
+      "revId": "fe87d284224e0fb61230fbd2b33ee99c6aa36b3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_b3e8fab2",
+        "filename": "keystone/policy/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-09-06T20:45:52Z",
+      "side": 0,
+      "message": "Same",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 63
+      },
+      "revId": "fe87d284224e0fb61230fbd2b33ee99c6aa36b3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
