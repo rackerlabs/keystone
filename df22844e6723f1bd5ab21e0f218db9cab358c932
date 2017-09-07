@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_f7fe4ead",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-07T18:10:21Z",
+      "side": 1,
+      "message": "s/the auth/hashlib/ ?\n\nThis comment makes it sound like the naming of the hash from hashlib is not what bandit expects...",
+      "revId": "df22844e6723f1bd5ab21e0f218db9cab358c932",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
