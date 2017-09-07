@@ -197,7 +197,7 @@ class SqlModels(SqlTests):
         self.assertExpectedSchema('project', cols)
 
     def test_role_assignment_model(self):
-        cols = (('type', sql.Enum, None),
+        cols = (('assignment_type', sql.String, 64),
                 ('actor_id', sql.String, 64),
                 ('target_id', sql.String, 64),
                 ('role_id', sql.String, 64),
