@@ -2421,6 +2421,81 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         pw_table = sqlalchemy.Table('password', meta, autoload=True)
         self.assertFalse(pw_table.c.created_at_int.nullable)
 
+    def test_migration_030_add_non_enum_assignment_type(self):
+        self.expand(29)
+        self.migrate(29)
+        self.contract(29)
+
+        # Insert some role assignments using dummy values
+        assignment_table_name = 'assignment'
+        assignment_table = sqlalchemy.Table(
+            assignment_table_name, self.metadata, autoload=True
+        )
+        user_id = uuid.uuid4().hex
+        project_id = uuid.uuid4().hex
+        domain_id = uuid.uuid4().hex
+        group_id = uuid.uuid4().hex
+        role_id = uuid.uuid4().hex
+        inherited = False
+
+        project_user_assignment = {
+            'type': 'UserProject',
+            'target_id': project_id,
+            'actor_id': user_id,
+            'role_id': role_id,
+            'inherited': inherited
+        }
+        assignment_table.insert().values(project_user_assignment).execute()
+
+        domain_user_assignment = {
+            'type': 'UserDomain',
+            'target_id': domain_id,
+            'actor_id': user_id,
+            'role_id': role_id,
+            'inherited': inherited
+        }
+        assignment_table.insert().values(domain_user_assignment).execute()
+
+        project_group_assignment = {
+            'type': 'GroupProject',
+            'target_id': project_id,
+            'actor_id': group_id,
+            'role_id': role_id,
+            'inherited': inherited
+        }
+        assignment_table.insert().values(project_group_assignment).execute()
+
+        domain_group_assignment = {
+            'type': 'GroupDomain',
+            'target_id': domain_id,
+            'actor_id': group_id,
+            'role_id': role_id,
+            'inherited': inherited
+        }
+        assignment_table.insert().values(domain_group_assignment).execute()
+
+        self.assertTableColumns(
+            assignment_table_name,
+            ['type', 'actor_id', 'target_id', 'role_id', 'inherited']
+        )
+
+        self.expand(30)
+
+        self.assertTableColumns(
+            assignment_table_name,
+            ['assignment_type', 'type', 'actor_id', 'target_id', 'role_id',
+             'inherited']
+        )
+
+        self.migrate(30)
+
+        for assignment in assignment_table.select().execute():
+            self.assertIsNotNone(assignment.assignment_type)
+            self.assertEqual(assignment.type, assignment.assignment_type)
+
+        self.contract(30)
+
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
