@@ -18,6 +18,11 @@ from keystone import exception
 from keystone.i18n import _
 
 
+# FIXME(lbragstad): This functionality belongs in the manager layer. Business
+# logic should detect the type of assignment being made and pass it to the
+# backend explicitly, allowing the backend to just store what it's been given.
+# This should reduce complexity in the backend and allow more flexibility with
+# AssignmentTypes by not requiring backend changes to extend functionality.
 class AssignmentType(object):
     USER_PROJECT = 'UserProject'
     GROUP_PROJECT = 'GroupProject'
@@ -54,7 +59,7 @@ class Assignment(base.AssignmentDriverBase):
         try:
             with sql.session_for_write() as session:
                 session.add(RoleAssignment(
-                    type=assignment_type,
+                    assignment_type=assignment_type,
                     actor_id=user_id or group_id,
                     target_id=project_id or domain_id,
                     role_id=role_id,
@@ -116,7 +121,7 @@ class Assignment(base.AssignmentDriverBase):
         try:
             with sql.session_for_write() as session:
                 session.add(RoleAssignment(
-                    type=AssignmentType.USER_PROJECT,
+                    assignment_type=AssignmentType.USER_PROJECT,
                     actor_id=user_id, target_id=tenant_id,
                     role_id=role_id, inherited=False))
         except sql.DBDuplicateEntry:
@@ -194,22 +199,22 @@ class Assignment(base.AssignmentDriverBase):
 
         def denormalize_role(ref):
             assignment = {}
-            if ref.type == AssignmentType.USER_PROJECT:
+            if ref.assignment_type == AssignmentType.USER_PROJECT:
                 assignment['user_id'] = ref.actor_id
                 assignment['project_id'] = ref.target_id
-            elif ref.type == AssignmentType.USER_DOMAIN:
+            elif ref.assignment_type == AssignmentType.USER_DOMAIN:
                 assignment['user_id'] = ref.actor_id
                 assignment['domain_id'] = ref.target_id
-            elif ref.type == AssignmentType.GROUP_PROJECT:
+            elif ref.assignment_type == AssignmentType.GROUP_PROJECT:
                 assignment['group_id'] = ref.actor_id
                 assignment['project_id'] = ref.target_id
-            elif ref.type == AssignmentType.GROUP_DOMAIN:
+            elif ref.assignment_type == AssignmentType.GROUP_DOMAIN:
                 assignment['group_id'] = ref.actor_id
                 assignment['domain_id'] = ref.target_id
             else:
                 raise exception.Error(message=_(
                     'Unexpected assignment type encountered, %s') %
-                    ref.type)
+                    ref.assignment_type)
             assignment['role_id'] = ref.role_id
             if ref.inherited:
                 assignment['inherited_to_projects'] = 'projects'
@@ -240,7 +245,9 @@ class Assignment(base.AssignmentDriverBase):
             if targets:
                 query = query.filter(RoleAssignment.target_id.in_(targets))
             if assignment_types:
-                query = query.filter(RoleAssignment.type.in_(assignment_types))
+                query = query.filter(
+                    RoleAssignment.assignment_type.in_(assignment_types)
+                )
             if inherited_to_projects is not None:
                 query = query.filter_by(inherited=inherited_to_projects)
 
@@ -250,8 +257,10 @@ class Assignment(base.AssignmentDriverBase):
         with sql.session_for_write() as session:
             q = session.query(RoleAssignment)
             q = q.filter_by(target_id=project_id).filter(
-                RoleAssignment.type.in_((AssignmentType.USER_PROJECT,
-                                         AssignmentType.GROUP_PROJECT))
+                RoleAssignment.assignment_type.in_(
+                    (AssignmentType.USER_PROJECT,
+                     AssignmentType.GROUP_PROJECT)
+                )
             )
             q.delete(False)
 
@@ -265,16 +274,20 @@ class Assignment(base.AssignmentDriverBase):
         with sql.session_for_write() as session:
             q = session.query(RoleAssignment)
             q = q.filter(RoleAssignment.target_id == domain_id).filter(
-                (RoleAssignment.type == AssignmentType.USER_DOMAIN) |
-                (RoleAssignment.type == AssignmentType.GROUP_DOMAIN))
+                (RoleAssignment.assignment_type == AssignmentType.USER_DOMAIN)
+                or
+                (RoleAssignment.assignment_type == AssignmentType.GROUP_DOMAIN)
+            )
             q.delete(False)
 
     def delete_user_assignments(self, user_id):
         with sql.session_for_write() as session:
             q = session.query(RoleAssignment)
             q = q.filter_by(actor_id=user_id).filter(
-                RoleAssignment.type.in_((AssignmentType.USER_PROJECT,
-                                         AssignmentType.USER_DOMAIN))
+                RoleAssignment.assignment_type.in_(
+                    (AssignmentType.USER_PROJECT,
+                     AssignmentType.USER_DOMAIN)
+                )
             )
             q.delete(False)
 
@@ -282,28 +295,26 @@ class Assignment(base.AssignmentDriverBase):
         with sql.session_for_write() as session:
             q = session.query(RoleAssignment)
             q = q.filter_by(actor_id=group_id).filter(
-                RoleAssignment.type.in_((AssignmentType.GROUP_PROJECT,
-                                         AssignmentType.GROUP_DOMAIN))
+                RoleAssignment.assignment_type.in_(
+                    (AssignmentType.GROUP_PROJECT,
+                     AssignmentType.GROUP_DOMAIN)
+                )
             )
             q.delete(False)
 
 
 class RoleAssignment(sql.ModelBase, sql.ModelDictMixin):
     __tablename__ = 'assignment'
-    attributes = ['type', 'actor_id', 'target_id', 'role_id', 'inherited']
-    # NOTE(henry-nash): Postgres requires a name to be defined for an Enum
-    type = sql.Column(
-        sql.Enum(AssignmentType.USER_PROJECT, AssignmentType.GROUP_PROJECT,
-                 AssignmentType.USER_DOMAIN, AssignmentType.GROUP_DOMAIN,
-                 name='type'),
-        nullable=False)
+    attributes = ['assignment_type', 'actor_id', 'target_id',
+                  'role_id', 'inherited']
+    assignment_type = sql.Column(sql.String(64), nullable=False)
     actor_id = sql.Column(sql.String(64), nullable=False)
     target_id = sql.Column(sql.String(64), nullable=False)
     role_id = sql.Column(sql.String(64), nullable=False)
     inherited = sql.Column(sql.Boolean, default=False, nullable=False)
     __table_args__ = (
-        sql.PrimaryKeyConstraint('type', 'actor_id', 'target_id', 'role_id',
-                                 'inherited'),
+        sql.PrimaryKeyConstraint('assignment_type', 'actor_id', 'target_id',
+                                 'role_id', 'inherited'),
         sql.Index('ix_actor_id', 'actor_id'),
     )
 
