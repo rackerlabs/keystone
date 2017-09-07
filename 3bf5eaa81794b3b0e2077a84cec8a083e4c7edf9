@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_d8f93e4e",
+        "filename": "keystone/common/sql/data_migration_repo/versions/030_migrate_non_enum_assignment_type.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-09-07T22:33:42Z",
+      "side": 1,
+      "message": "This can probably be simplified. We don\u0027t care about actor_id, target_id, role_id, or inherited. You can simply do a blanket update.\n\nWe might be able to do this (have to look at how the backends work) but you might be able to do this in raw sql as a simple update statement instead of an iteration where we need to inspect the values.",
+      "range": {
+        "startLine": 26,
+        "startChar": 8,
+        "endLine": 31,
+        "endChar": 64
+      },
+      "revId": "3bf5eaa81794b3b0e2077a84cec8a083e4c7edf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_38b722f8",
+        "filename": "keystone/common/sql/data_migration_repo/versions/030_migrate_non_enum_assignment_type.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-09-07T22:33:42Z",
+      "side": 1,
+      "message": "This doesn\u0027t guarantee all data is migrated, if a change is made while this is occuring, it will miss that.\n\nNot sure how we handle that.",
+      "range": {
+        "startLine": 25,
+        "startChar": 2,
+        "endLine": 34,
+        "endChar": 24
+      },
+      "revId": "3bf5eaa81794b3b0e2077a84cec8a083e4c7edf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_f8e3da03",
+        "filename": "keystone/common/sql/expand_repo/versions/030_expand_add_non_enum_assignment_type.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-09-07T22:33:42Z",
+      "side": 1,
+      "message": "This is going to need an Index. We need to be able to find by type iirc.",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 5
+      },
+      "revId": "3bf5eaa81794b3b0e2077a84cec8a083e4c7edf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
