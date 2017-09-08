@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "5f2577a7_ad349ddf",
+        "filename": "keystone/common/sql/data_migration_repo/versions/030_migrate_non_enum_assignment_type.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-08T13:53:14Z",
+      "side": 1,
+      "message": "Yeah - this part tripped me up because most cases where we have to modify while iterating over a set, we have an ID of some sort as the PK. \n\n    for thing in things:\n        values \u003d {\u0027key\u0027: some_value}\n        update \u003d thing_table.update().where(\n            thing_table.c.id \u003d\u003d thing.id\n        ).values(values)\n        session.execute(update)\n        session.commit()\n    session.close()\n\nI wasn\u0027t sure how to do that here because the PK for the assignment table is literally every column.",
+      "parentUuid": "7f287b81_d8f93e4e",
+      "revId": "3bf5eaa81794b3b0e2077a84cec8a083e4c7edf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f287b81_38b722f8",
         "filename": "keystone/common/sql/data_migration_repo/versions/030_migrate_non_enum_assignment_type.py",
         "patchSetId": 1
@@ -42,6 +60,24 @@
         "endLine": 34,
         "endChar": 24
       },
+      "revId": "3bf5eaa81794b3b0e2077a84cec8a083e4c7edf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f2577a7_0da971de",
+        "filename": "keystone/common/sql/data_migration_repo/versions/030_migrate_non_enum_assignment_type.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-08T13:53:14Z",
+      "side": 1,
+      "message": "We have two options for handling that. \n\n1.) We can make keystone smart enough to check both columns and pick the right value. If `assignment_type` is None and `type` is not, port the value to `assignment_type`. We\u0027d have to maintain this code for a release. This will mean we have to keep the `type` column until Rocky opens. That is assuming every assignment is touched while Queens is deployed in order to move the assignment `type` to `assignment_type`.\n\n2.) Use a trigger to ensure the data from `type` is put into `assignment_type` if an update happens during a migration. This approach will allow us to drop the `type` column in contract of this migration.\n\nThis also only applies to rolling upgrades or live upgrades. If the data is migrated while keystone is offline, we don\u0027t have an issue.",
+      "parentUuid": "7f287b81_38b722f8",
       "revId": "3bf5eaa81794b3b0e2077a84cec8a083e4c7edf9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
