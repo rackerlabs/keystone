@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f2577a7_8e565c06",
+        "filename": "releasenotes/notes/bp-policy-in-code-722372a27291b9cd.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-11T04:47:47Z",
+      "side": 1,
+      "message": "Because of how release notes are rendered, this will end up as a release note for the Queens release, which isn\u0027t accurate since the policy-in-code work was done in Pike. See the reno documentation for more details [0]. We should ignore this release note from rendering as a Queens release note.\n\n[0] https://docs.openstack.org/reno/latest/user/usage.html#updating-stable-branch-release-notes",
+      "revId": "56427dc4b1b49d4481379dce5f188ca8628af9fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
