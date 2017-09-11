@@ -199,7 +199,6 @@ class BaseApplication(object):
         raise NotImplementedError('You must implement __call__')
 
 
-@dependency.requires('assignment_api', 'policy_api', 'token_provider_api')
 class Application(BaseApplication):
 
     @webob.dec.wsgify(RequestClass=request_mod.Request)
