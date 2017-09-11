@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f2577a7_fa835455",
+        "filename": "doc/source/admin/identity-concepts.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-09-11T17:28:11Z",
+      "side": 1,
+      "message": "I think the equivalent guide is here: https://docs.openstack.org/keystone/latest/admin/cli-keystone-manage-services.html not the keystone-manage doc",
+      "revId": "cdcf946be546235ec604c7bea68a967297afed1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
