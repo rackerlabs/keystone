@@ -16,6 +16,40 @@
       "revId": "56427dc4b1b49d4481379dce5f188ca8628af9fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f2577a7_8e6f7cc4",
+        "filename": "releasenotes/notes/oslo.cache-a9ce47bfa8809efa.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-11T04:50:10Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "56427dc4b1b49d4481379dce5f188ca8628af9fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f2577a7_0e638cde",
+        "filename": "releasenotes/source/locale/ja/LC_MESSAGES/releasenotes.po",
+        "patchSetId": 1
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-11T04:50:10Z",
+      "side": 1,
+      "message": "These are updated automatically. I\u0027d suggest checking with the i18n team [0] before making changes here. \n\n[0] https://wiki.openstack.org/wiki/I18nTeam",
+      "revId": "56427dc4b1b49d4481379dce5f188ca8628af9fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
