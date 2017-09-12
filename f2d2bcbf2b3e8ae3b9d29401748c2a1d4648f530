@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f2577a7_d31cde14",
+        "filename": "keystone/tests/unit/test_no_admin_token_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-09-12T22:16:15Z",
+      "side": 1,
+      "message": "need to update this comment",
+      "range": {
+        "startLine": 55,
+        "startChar": 8,
+        "endLine": 57,
+        "endChar": 44
+      },
+      "revId": "f2d2bcbf2b3e8ae3b9d29401748c2a1d4648f530",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f2577a7_93689687",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1710,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-09-12T22:16:15Z",
+      "side": 1,
+      "message": "validate",
+      "range": {
+        "startLine": 1710,
+        "startChar": 24,
+        "endLine": 1710,
+        "endChar": 27
+      },
+      "revId": "f2d2bcbf2b3e8ae3b9d29401748c2a1d4648f530",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
