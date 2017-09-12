@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f2577a7_76a198a9",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1427,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-09-12T22:16:44Z",
+      "side": 0,
+      "message": "this can all go away too",
+      "range": {
+        "startLine": 1377,
+        "startChar": 0,
+        "endLine": 1427,
+        "endChar": 9
+      },
+      "revId": "62a8dfb3637490d8271b7c7b94b3486e2304d36a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
