@@ -30,6 +30,8 @@ keystone/tests/tmp/
 .project
 .pydevproject
 keystone/locale/*/LC_MESSAGES/*.mo
+.stestr/
+# TODO(gagehugo) Remove .testr.conf and .testrepository when no longer needed
 .testrepository/
 *.db
 # Files created by releasenotes build
