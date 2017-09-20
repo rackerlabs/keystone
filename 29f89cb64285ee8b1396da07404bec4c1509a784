@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf57530f_35d90583",
+        "filename": "api-ref/source/v3/credentials.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-09-20T15:55:17Z",
+      "side": 1,
+      "message": "We should definitely clean up these status codes in a later patch to match the other sections where they are in tables and in order.",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 57
+      },
+      "revId": "29f89cb64285ee8b1396da07404bec4c1509a784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
