@@ -2912,6 +2912,45 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         }
         app_cred_role_table.insert().values(role_rel).execute()
 
+    def test_migration_037_add_domain_id_fk_to_user_table_if_not_present(self):
+        self.expand(36)
+        self.migrate(36)
+        self.contract(36)
+
+        # The FK exists because it was added in 014. Drop it.
+        meta = sqlalchemy.MetaData(self.engine)
+        user = sqlalchemy.Table('user', meta, autoload=True)
+        project = sqlalchemy.Table('project', self.metadata, autoload=True)
+        migrate.ForeignKeyConstraint(columns=[user.c.domain_id],
+                                     refcolumns=[project.c.id]).drop()
+        self.assertFalse(self.does_fk_exist('user', 'domain_id'))
+
+        self.expand(37)
+        self.migrate(37)
+        self.contract(37)
+
+        # Check 035 re-added the FK.
+        self.assertTrue(self.does_fk_exist('user', 'domain_id'))
+
+    def test_migration_037_keep_domain_id_fk_to_user_table_if_present(self):
+        self.expand(36)
+        self.migrate(36)
+        self.contract(36)
+
+        # The FK exists because it was added in 014. Keep it.
+        self.assertTrue(self.does_fk_exist('user', 'domain_id'))
+
+        self.expand(37)
+        self.migrate(37)
+        self.contract(37)
+
+        # Check 035 did not do anything. The FK has not been re-added.
+        inspector = reflection.Inspector.from_engine(self.engine)
+        constrained_columns = []
+        for fk in inspector.get_foreign_keys('user'):
+            constrained_columns.extend(fk['constrained_columns'])
+        self.assertEqual(1, constrained_columns.count('domain_id'))
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
