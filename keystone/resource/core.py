@@ -788,7 +788,7 @@ class Manager(manager.Manager):
         """Delete the contents of a domain.
 
         Before we delete a domain, we need to remove all the entities
-        that are owned by it, i.e. Projects. To do this we
+        that are owned by it, i.e. projects and users. To do this we
         call the delete function for these entities, which are
         themselves responsible for deleting any credentials and role grants
         associated with them as well as revoking any relevant tokens.
@@ -823,6 +823,18 @@ class Manager(manager.Manager):
         examined = set()
         for project in roots:
             _delete_projects(project, proj_refs, examined)
+
+        # And finally, delete the users
+        user_refs = self.identity_api.list_users(domain_scope=domain_id)
+
+        for user in user_refs:
+            try:
+                self.identity_api.delete_user(user['id'])
+            except exception.UserNotFound:
+                LOG.debug(('User %(userid)s not found when deleting domain '
+                           'contents for %(domainid)s, continuing with '
+                           'cleanup.'),
+                          {'userid': user['id'], 'domainid': domain_id})
 
     @manager.response_truncated
     def list_projects(self, hints=None):
