@@ -302,6 +302,42 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             'domain_id': self.domain['id']},
             expected_status=exception.ForbiddenAction.code)
 
+    def test_delete_domain_with_user_and_project(self):
+        domain = unit.new_domain_ref()
+        self.resource_api.create_domain(domain['id'], domain)
+
+        user = unit.new_user_ref(domain_id=domain['id'])
+        user = self.identity_api.create_user(user)
+
+        project = unit.new_project_ref(domain_id=domain['id'])
+        project = self.resource_api.create_project(project['id'], project)
+
+        role = unit.new_role_ref()
+        self.role_api.create_role(role['id'], role)
+
+        self.assignment_api.create_grant(role_id=self.role['id'],
+                                         project_id=project['id'],
+                                         user_id=user['id'])
+
+        domain['enabled'] = False
+        r = self.patch('/domains/%(domain_id)s' % {
+            'domain_id': domain['id']},
+            body={'domain': {'enabled': False}})
+        self.assertValidDomainResponse(r, domain)
+
+        self.delete('/domains/%(domain_id)s' % {'domain_id': domain['id']})
+
+        # Check all the domain2 relevant entities are gone
+        self.assertRaises(exception.DomainNotFound,
+                          self.resource_api.get_domain,
+                          domain['id'])
+        self.assertRaises(exception.ProjectNotFound,
+                          self.resource_api.get_project,
+                          project['id'])
+        self.assertRaises(exception.UserNotFound,
+                          self.identity_api.get_user,
+                          user['id'])
+
     def test_delete_domain(self):
         """Call ``DELETE /domains/{domain_id}``.
 
