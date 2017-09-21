@@ -497,7 +497,6 @@ class Manager(manager.Manager):
                         payload):
         domain_id = payload['resource_info']
 
-        user_refs = self.list_users(domain_scope=domain_id)
         group_refs = self.list_groups(domain_scope=domain_id)
 
         for group in group_refs:
@@ -509,16 +508,6 @@ class Manager(manager.Manager):
                            'contents for %(domainid)s, continuing with '
                            'cleanup.'),
                           {'groupid': group['id'], 'domainid': domain_id})
-
-        # And finally, delete the users themselves
-        for user in user_refs:
-            try:
-                self.delete_user(user['id'])
-            except exception.UserNotFound:
-                LOG.debug(('User %(userid)s not found when deleting domain '
-                           'contents for %(domainid)s, continuing with '
-                           'cleanup.'),
-                          {'userid': user['id'], 'domainid': domain_id})
 
     def _unset_default_project(self, service, resource_type, operation,
                                payload):
