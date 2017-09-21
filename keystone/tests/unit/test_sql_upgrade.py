@@ -2489,6 +2489,16 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
 
         session.close()
 
+    def test_migration_031_add_domain_id_fk_to_user_table(self):
+        self.expand(30)
+        self.migrate(30)
+        self.contract(30)
+        self.assertTrue(self.does_fk_exist('user', 'domain_id'))
+        self.expand(31)
+        self.migrate(31)
+        self.contract(31)
+        self.assertTrue(self.does_fk_exist('user', 'domain_id'))
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture

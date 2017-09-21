@@ -36,7 +36,8 @@ class User(sql.ModelBase, sql.ModelDictMixinWithExtras):
     readonly_attributes = ['id', 'password_expires_at', 'password']
     resource_options_registry = iro.USER_OPTIONS_REGISTRY
     id = sql.Column(sql.String(64), primary_key=True)
-    domain_id = sql.Column(sql.String(64), nullable=False)
+    domain_id = sql.Column(sql.String(64), sql.ForeignKey('project.id'),
+                           nullable=False)
     _enabled = sql.Column('enabled', sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
     default_project_id = sql.Column(sql.String(64), index=True)
