@@ -274,6 +274,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             'domain_id': self.domain['id']},
             expected_status=exception.ForbiddenAction.code)
 
+    @test_utils.wip('bug 1718747')
     def test_delete_domain(self):
         """Call ``DELETE /domains/{domain_id}``.
 
