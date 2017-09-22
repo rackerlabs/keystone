@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_9e0e9ce3",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-09-22T13:06:19Z",
+      "side": 1,
+      "message": "Would this problem not be the same for groups?",
+      "revId": "be9e8941e6980fa590f2fcfb6ecb9fd3b7349a6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
