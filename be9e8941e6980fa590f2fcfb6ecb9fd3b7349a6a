@@ -16,6 +16,24 @@
       "revId": "be9e8941e6980fa590f2fcfb6ecb9fd3b7349a6a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_d130850a",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-09-22T14:05:10Z",
+      "side": 1,
+      "message": "hmm, no because the FK does not exist in that case. I agree it would be great to have them to be consistent, but might be a separate covnersation",
+      "parentUuid": "7f515b1d_9e0e9ce3",
+      "revId": "be9e8941e6980fa590f2fcfb6ecb9fd3b7349a6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
