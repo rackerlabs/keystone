@@ -29,7 +29,6 @@ from keystone import exception
 from keystone import middleware
 from keystone.tests.common import auth as common_auth
 from keystone.tests import unit
-from keystone.tests.unit import rest
 
 
 DEFAULT_DOMAIN_ID = 'default'
@@ -37,8 +36,7 @@ DEFAULT_DOMAIN_ID = 'default'
 TIME_FORMAT = unit.TIME_FORMAT
 
 
-class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
-                      common_auth.AuthTestMixin):
+class RestfulTestCase(unit.SQLDriverOverrides, common_auth.AuthTestMixin):
 
     def generate_token_schema(self, domain_scoped=False, project_scoped=False):
         """Return a dictionary of token properties to validate against."""
