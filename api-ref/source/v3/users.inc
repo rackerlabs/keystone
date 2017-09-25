@@ -324,7 +324,7 @@ List projects for user
 
 Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/user_projects``
 
-List projects for a user.
+List projects to which the user has authorization to access.
 
 Response Codes
 --------------
