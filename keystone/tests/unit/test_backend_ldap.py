@@ -1040,708 +1040,729 @@ class BaseLDAPIdentity(LDAPTestSetup, IdentityTests, AssignmentTests,
                   self).test_remove_foreign_assignments_when_deleting_a_domain)
 
 
-class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
+class LDAPIdentity(object):
+
+    class LDAPIdentityTest(BaseLDAPIdentity, unit.TestCase):
+
+        def assert_backends(self):
+            _assert_backends(self,
+                             assignment='sql',
+                             identity='ldap')
+
+        def test_list_domains(self):
+            domains = self.resource_api.list_domains()
+            default_domain = unit.new_domain_ref(
+                description=u'The default domain',
+                id=CONF.identity.default_domain_id,
+                name=u'Default')
+            self.assertEqual([default_domain], domains)
+
+        def test_authenticate_wrong_credentials(self):
+            self.assertRaises(exception.LDAPInvalidCredentialsError,
+                              self.identity_api.driver.user.get_connection,
+                              user='demo',
+                              password='demo',
+                              end_user_auth=True)
+
+        def test_configurable_allowed_project_actions(self):
+            domain = self._get_domain_fixture()
+            project = unit.new_project_ref(domain_id=domain['id'])
+            project = self.resource_api.create_project(project['id'], project)
+            project_ref = self.resource_api.get_project(project['id'])
+            self.assertEqual(project['id'], project_ref['id'])
+
+            project['enabled'] = False
+            self.resource_api.update_project(project['id'], project)
 
-    def assert_backends(self):
-        _assert_backends(self,
-                         assignment='sql',
-                         identity='ldap')
-
-    def test_list_domains(self):
-        domains = self.resource_api.list_domains()
-        default_domain = unit.new_domain_ref(
-            description=u'The default domain',
-            id=CONF.identity.default_domain_id,
-            name=u'Default')
-        self.assertEqual([default_domain], domains)
-
-    def test_authenticate_wrong_credentials(self):
-        self.assertRaises(exception.LDAPInvalidCredentialsError,
-                          self.identity_api.driver.user.get_connection,
-                          user='demo',
-                          password='demo',
-                          end_user_auth=True)
-
-    def test_configurable_allowed_project_actions(self):
-        domain = self._get_domain_fixture()
-        project = unit.new_project_ref(domain_id=domain['id'])
-        project = self.resource_api.create_project(project['id'], project)
-        project_ref = self.resource_api.get_project(project['id'])
-        self.assertEqual(project['id'], project_ref['id'])
-
-        project['enabled'] = False
-        self.resource_api.update_project(project['id'], project)
-
-        self.resource_api.delete_project(project['id'])
-        self.assertRaises(exception.ProjectNotFound,
-                          self.resource_api.get_project,
-                          project['id'])
-
-    def test_user_enable_attribute_mask(self):
-        self.config_fixture.config(group='ldap', user_enabled_mask=2,
-                                   user_enabled_default='512')
-        self.ldapdb.clear()
-        self.load_backends()
-
-        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
-
-        user_ref = self.identity_api.create_user(user)
-
-        # Use assertIs rather than assertTrue because assertIs will assert the
-        # value is a Boolean as expected.
-        self.assertIs(True, user_ref['enabled'])
-        self.assertNotIn('enabled_nomask', user_ref)
-
-        enabled_vals = self.get_user_enabled_vals(user_ref)
-        self.assertEqual([512], enabled_vals)
-
-        user_ref = self.identity_api.get_user(user_ref['id'])
-        self.assertIs(True, user_ref['enabled'])
-        self.assertNotIn('enabled_nomask', user_ref)
-
-        user['enabled'] = False
-        user_ref = self.identity_api.update_user(user_ref['id'], user)
-        self.assertIs(False, user_ref['enabled'])
-        self.assertNotIn('enabled_nomask', user_ref)
-
-        enabled_vals = self.get_user_enabled_vals(user_ref)
-        self.assertEqual([514], enabled_vals)
-
-        user_ref = self.identity_api.get_user(user_ref['id'])
-        self.assertIs(False, user_ref['enabled'])
-        self.assertNotIn('enabled_nomask', user_ref)
-
-        user['enabled'] = True
-        user_ref = self.identity_api.update_user(user_ref['id'], user)
-        self.assertIs(True, user_ref['enabled'])
-        self.assertNotIn('enabled_nomask', user_ref)
-
-        enabled_vals = self.get_user_enabled_vals(user_ref)
-        self.assertEqual([512], enabled_vals)
-
-        user_ref = self.identity_api.get_user(user_ref['id'])
-        self.assertIs(True, user_ref['enabled'])
-        self.assertNotIn('enabled_nomask', user_ref)
-
-    def test_user_enabled_invert(self):
-        self.config_fixture.config(group='ldap', user_enabled_invert=True,
-                                   user_enabled_default='False')
-        self.ldapdb.clear()
-        self.load_backends()
-
-        user1 = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
-
-        user2 = self.new_user_ref(enabled=False,
-                                  domain_id=CONF.identity.default_domain_id)
-
-        user3 = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
-
-        # Ensure that the LDAP attribute is False for a newly created
-        # enabled user.
-        user_ref = self.identity_api.create_user(user1)
-        self.assertIs(True, user_ref['enabled'])
-        enabled_vals = self.get_user_enabled_vals(user_ref)
-        self.assertEqual([False], enabled_vals)
-        user_ref = self.identity_api.get_user(user_ref['id'])
-        self.assertIs(True, user_ref['enabled'])
-
-        # Ensure that the LDAP attribute is True for a disabled user.
-        user1['enabled'] = False
-        user_ref = self.identity_api.update_user(user_ref['id'], user1)
-        self.assertIs(False, user_ref['enabled'])
-        enabled_vals = self.get_user_enabled_vals(user_ref)
-        self.assertEqual([True], enabled_vals)
-
-        # Enable the user and ensure that the LDAP attribute is True again.
-        user1['enabled'] = True
-        user_ref = self.identity_api.update_user(user_ref['id'], user1)
-        self.assertIs(True, user_ref['enabled'])
-        enabled_vals = self.get_user_enabled_vals(user_ref)
-        self.assertEqual([False], enabled_vals)
-
-        # Ensure that the LDAP attribute is True for a newly created
-        # disabled user.
-        user_ref = self.identity_api.create_user(user2)
-        self.assertIs(False, user_ref['enabled'])
-        enabled_vals = self.get_user_enabled_vals(user_ref)
-        self.assertEqual([True], enabled_vals)
-        user_ref = self.identity_api.get_user(user_ref['id'])
-        self.assertIs(False, user_ref['enabled'])
-
-        # Ensure that the LDAP attribute is inverted for a newly created
-        # user when the user_enabled_default setting is used.
-        user_ref = self.identity_api.create_user(user3)
-        self.assertIs(True, user_ref['enabled'])
-        enabled_vals = self.get_user_enabled_vals(user_ref)
-        self.assertEqual([False], enabled_vals)
-        user_ref = self.identity_api.get_user(user_ref['id'])
-        self.assertIs(True, user_ref['enabled'])
-
-    @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
-    def test_user_enabled_invert_default_str_value(self, mock_ldap_get):
-        self.config_fixture.config(group='ldap', user_enabled_invert=True,
-                                   user_enabled_default='False')
-        # Mock the search results to return an entry with
-        # no enabled value.
-        mock_ldap_get.return_value = (
-            'cn=junk,dc=example,dc=com',
-            {
-                'sn': [uuid.uuid4().hex],
-                'email': [uuid.uuid4().hex],
-                'cn': ['junk']
-            }
-        )
-
-        user_api = identity.backends.ldap.UserApi(CONF)
-        user_ref = user_api.get('junk')
-        # Ensure that the model enabled attribute is inverted
-        # from the resource default.
-        self.assertIs(True, user_ref['enabled'])
-
-    @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
-    def test_user_enabled_attribute_handles_expired(self, mock_ldap_get):
-        # If using 'passwordisexpired' as enabled attribute, and inverting it,
-        # Then an unauthorized user (expired password) should not be enabled.
-        self.config_fixture.config(group='ldap', user_enabled_invert=True,
-                                   user_enabled_attribute='passwordisexpired')
-        mock_ldap_get.return_value = (
-            u'uid=123456789,c=us,ou=our_ldap,o=acme.com',
-            {
-                'uid': [123456789],
-                'mail': ['shaun@acme.com'],
-                'passwordisexpired': ['TRUE'],
-                'cn': ['uid=123456789,c=us,ou=our_ldap,o=acme.com']
-            }
-        )
-
-        user_api = identity.backends.ldap.UserApi(CONF)
-        user_ref = user_api.get('123456789')
-        self.assertIs(False, user_ref['enabled'])
-
-    @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
-    def test_user_enabled_attribute_handles_utf8(self, mock_ldap_get):
-        # If using 'passwordisexpired' as enabled attribute, and inverting it,
-        # and the result is utf8 encoded, then the an authorized user should
-        # be enabled.
-        self.config_fixture.config(group='ldap', user_enabled_invert=True,
-                                   user_enabled_attribute='passwordisexpired')
-        mock_ldap_get.return_value = (
-            u'uid=123456789,c=us,ou=our_ldap,o=acme.com',
-            {
-                'uid': [123456789],
-                'mail': [u'shaun@acme.com'],
-                'passwordisexpired': [u'false'],
-                'cn': [u'uid=123456789,c=us,ou=our_ldap,o=acme.com']
-            }
-        )
-
-        user_api = identity.backends.ldap.UserApi(CONF)
-        user_ref = user_api.get('123456789')
-        self.assertIs(True, user_ref['enabled'])
-
-    @mock.patch.object(common_ldap.KeystoneLDAPHandler, 'simple_bind_s')
-    def test_user_api_get_connection_no_user_password(self, mocked_method):
-        """Bind anonymously when the user and password are blank."""
-        # Ensure the username/password are in-fact blank
-        self.config_fixture.config(group='ldap', user=None, password=None)
-        user_api = identity.backends.ldap.UserApi(CONF)
-        user_api.get_connection(user=None, password=None)
-        self.assertTrue(mocked_method.called)
-
-    @mock.patch.object(common_ldap.KeystoneLDAPHandler, 'connect')
-    def test_chase_referrals_off(self, mocked_fakeldap):
-        self.config_fixture.config(
-            group='ldap',
-            url='fake://memory',
-            chase_referrals=False)
-        user_api = identity.backends.ldap.UserApi(CONF)
-        user_api.get_connection(user=None, password=None)
-
-        # The last call_arg should be a dictionary and should contain
-        # chase_referrals. Check to make sure the value of chase_referrals
-        # is as expected.
-        self.assertFalse(mocked_fakeldap.call_args[-1]['chase_referrals'])
-
-    @mock.patch.object(common_ldap.KeystoneLDAPHandler, 'connect')
-    def test_chase_referrals_on(self, mocked_fakeldap):
-        self.config_fixture.config(
-            group='ldap',
-            url='fake://memory',
-            chase_referrals=True)
-        user_api = identity.backends.ldap.UserApi(CONF)
-        user_api.get_connection(user=None, password=None)
-
-        # The last call_arg should be a dictionary and should contain
-        # chase_referrals. Check to make sure the value of chase_referrals
-        # is as expected.
-        self.assertTrue(mocked_fakeldap.call_args[-1]['chase_referrals'])
-
-    @mock.patch.object(common_ldap.KeystoneLDAPHandler, 'connect')
-    def test_debug_level_set(self, mocked_fakeldap):
-        level = 12345
-        self.config_fixture.config(
-            group='ldap',
-            url='fake://memory',
-            debug_level=level)
-        user_api = identity.backends.ldap.UserApi(CONF)
-        user_api.get_connection(user=None, password=None)
-
-        # The last call_arg should be a dictionary and should contain
-        # debug_level. Check to make sure the value of debug_level
-        # is as expected.
-        self.assertEqual(level, mocked_fakeldap.call_args[-1]['debug_level'])
-
-    def test_user_extra_attribute_mapping(self):
-        self.config_fixture.config(
-            group='ldap',
-            user_additional_attribute_mapping=['description:name'])
-        self.load_backends()
-        user = self.new_user_ref(name='EXTRA_ATTRIBUTES',
-                                 password='extra',
-                                 domain_id=CONF.identity.default_domain_id)
-        user = self.identity_api.create_user(user)
-        dn, attrs = self.identity_api.driver.user._ldap_get(user['id'])
-        self.assertThat([user['name']], matchers.Equals(attrs['description']))
-
-    def test_user_description_attribute_mapping(self):
-        self.config_fixture.config(
-            group='ldap',
-            user_description_attribute='displayName')
-        self.load_backends()
-
-        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id,
-                                 displayName=uuid.uuid4().hex)
-        description = user['displayName']
-        user = self.identity_api.create_user(user)
-        res = self.identity_api.driver.user.get_all()
-
-        new_user = [u for u in res if u['id'] == user['id']][0]
-        self.assertThat(new_user['description'], matchers.Equals(description))
-
-    def test_user_extra_attribute_mapping_description_is_returned(self):
-        # Given a mapping like description:description, the description is
-        # returned.
-
-        self.config_fixture.config(
-            group='ldap',
-            user_additional_attribute_mapping=['description:description'])
-        self.load_backends()
-
-        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id,
-                                 description=uuid.uuid4().hex)
-        description = user['description']
-        user = self.identity_api.create_user(user)
-        res = self.identity_api.driver.user.get_all()
-
-        new_user = [u for u in res if u['id'] == user['id']][0]
-        self.assertThat(new_user['description'], matchers.Equals(description))
-
-    def test_user_with_missing_id(self):
-        # create a user that doesn't have the id attribute
-        ldap_ = self.identity_api.driver.user.get_connection()
-        # `sn` is used for the attribute in the DN because it's allowed by
-        # the entry's objectclasses so that this test could conceivably run in
-        # the live tests.
-        ldap_id_field = 'sn'
-        ldap_id_value = uuid.uuid4().hex
-        dn = '%s=%s,ou=Users,cn=example,cn=com' % (ldap_id_field,
-                                                   ldap_id_value)
-        modlist = [('objectClass', ['person', 'inetOrgPerson']),
-                   (ldap_id_field, [ldap_id_value]),
-                   ('mail', ['email@example.com']),
-                   ('userPassword', [uuid.uuid4().hex])]
-        ldap_.add_s(dn, modlist)
-
-        # make sure the user doesn't break other users
-        users = self.identity_api.driver.user.get_all()
-        self.assertThat(users, matchers.HasLength(len(default_fixtures.USERS)))
-
-    @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
-    def test_user_mixed_case_attribute(self, mock_ldap_get):
-        # Mock the search results to return attribute names
-        # with unexpected case.
-        mock_ldap_get.return_value = (
-            'cn=junk,dc=example,dc=com',
-            {
-                'sN': [uuid.uuid4().hex],
-                'MaIl': [uuid.uuid4().hex],
-                'cn': ['junk']
-            }
-        )
-        user = self.identity_api.get_user('junk')
-        self.assertEqual(mock_ldap_get.return_value[1]['sN'][0],
-                         user['name'])
-        self.assertEqual(mock_ldap_get.return_value[1]['MaIl'][0],
-                         user['email'])
-
-    def test_parse_extra_attribute_mapping(self):
-        option_list = ['description:name', 'gecos:password',
-                       'fake:invalid', 'invalid1', 'invalid2:',
-                       'description:name:something']
-        mapping = self.identity_api.driver.user._parse_extra_attrs(option_list)
-        expected_dict = {'description': 'name', 'gecos': 'password',
-                         'fake': 'invalid', 'invalid2': ''}
-        self.assertDictEqual(expected_dict, mapping)
-
-    def test_create_domain(self):
-        domain = unit.new_domain_ref()
-        self.assertRaises(exception.ValidationError,
-                          self.resource_api.create_domain,
-                          domain['id'],
-                          domain)
-
-    @unit.skip_if_no_multiple_domains_support
-    def test_create_domain_case_sensitivity(self):
-        # domains are read-only, so case sensitivity isn't an issue
-        ref = unit.new_domain_ref()
-        self.assertRaises(exception.Forbidden,
-                          self.resource_api.create_domain,
-                          ref['id'],
-                          ref)
-
-    def test_domain_rename_invalidates_get_domain_by_name_cache(self):
-        parent = super(LDAPIdentity, self)
-        self.assertRaises(
-            exception.Forbidden,
-            parent.test_domain_rename_invalidates_get_domain_by_name_cache)
-
-    def test_project_rename_invalidates_get_project_by_name_cache(self):
-        parent = super(LDAPIdentity, self)
-        self.assertRaises(
-            exception.Forbidden,
-            parent.test_project_rename_invalidates_get_project_by_name_cache)
-
-    def test_project_crud(self):
-        # NOTE(topol): LDAP implementation does not currently support the
-        #              updating of a project name so this method override
-        #              provides a different update test
-        project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
-
-        project = self.resource_api.create_project(project['id'], project)
-        project_ref = self.resource_api.get_project(project['id'])
-
-        self.assertDictEqual(project, project_ref)
-
-        project['description'] = uuid.uuid4().hex
-        self.resource_api.update_project(project['id'], project)
-        project_ref = self.resource_api.get_project(project['id'])
-        self.assertDictEqual(project, project_ref)
-
-        self.resource_api.delete_project(project['id'])
-        self.assertRaises(exception.ProjectNotFound,
-                          self.resource_api.get_project,
-                          project['id'])
-
-    @unit.skip_if_cache_disabled('assignment')
-    def test_cache_layer_project_crud(self):
-        # NOTE(morganfainberg): LDAP implementation does not currently support
-        # updating project names.  This method override provides a different
-        # update test.
-        project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
-        project_id = project['id']
-        # Create a project
-        project = self.resource_api.create_project(project_id, project)
-        self.resource_api.get_project(project_id)
-        updated_project = copy.deepcopy(project)
-        updated_project['description'] = uuid.uuid4().hex
-        # Update project, bypassing resource manager
-        self.resource_api.driver.update_project(project_id,
-                                                updated_project)
-        # Verify get_project still returns the original project_ref
-        self.assertDictContainsSubset(
-            project, self.resource_api.get_project(project_id))
-        # Invalidate cache
-        self.resource_api.get_project.invalidate(self.resource_api,
-                                                 project_id)
-        # Verify get_project now returns the new project
-        self.assertDictContainsSubset(
-            updated_project,
-            self.resource_api.get_project(project_id))
-        # Update project using the resource_api manager back to original
-        self.resource_api.update_project(project['id'], project)
-        # Verify get_project returns the original project_ref
-        self.assertDictContainsSubset(
-            project, self.resource_api.get_project(project_id))
-        # Delete project bypassing resource_api
-        self.resource_api.driver.delete_project(project_id)
-        # Verify get_project still returns the project_ref
-        self.assertDictContainsSubset(
-            project, self.resource_api.get_project(project_id))
-        # Invalidate cache
-        self.resource_api.get_project.invalidate(self.resource_api,
-                                                 project_id)
-        # Verify ProjectNotFound now raised
-        self.assertRaises(exception.ProjectNotFound,
-                          self.resource_api.get_project,
-                          project_id)
-        # recreate project
-        self.resource_api.create_project(project_id, project)
-        self.resource_api.get_project(project_id)
-        # delete project
-        self.resource_api.delete_project(project_id)
-        # Verify ProjectNotFound is raised
-        self.assertRaises(exception.ProjectNotFound,
-                          self.resource_api.get_project,
-                          project_id)
-
-    def test_update_is_domain_field(self):
-        domain = self._get_domain_fixture()
-        project = unit.new_project_ref(domain_id=domain['id'])
-        project = self.resource_api.create_project(project['id'], project)
-
-        # Try to update the is_domain field to True
-        project['is_domain'] = True
-        self.assertRaises(exception.ValidationError,
-                          self.resource_api.update_project,
-                          project['id'], project)
-
-    def test_multi_role_grant_by_user_group_on_project_domain(self):
-        # This is a partial implementation of the standard test that
-        # is defined in unit.assignment.test_backends.py.  It omits
-        # both domain and group grants. since neither of these are
-        # yet supported by the ldap backend.
-
-        role_list = []
-        for _ in range(2):
-            role = unit.new_role_ref()
-            self.role_api.create_role(role['id'], role)
-            role_list.append(role)
-
-        user1 = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
-        user1 = self.identity_api.create_user(user1)
-        project1 = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
-        self.resource_api.create_project(project1['id'], project1)
-
-        self.assignment_api.add_role_to_user_and_project(
-            user_id=user1['id'],
-            tenant_id=project1['id'],
-            role_id=role_list[0]['id'])
-        self.assignment_api.add_role_to_user_and_project(
-            user_id=user1['id'],
-            tenant_id=project1['id'],
-            role_id=role_list[1]['id'])
-
-        # Although list_grants are not yet supported, we can test the
-        # alternate way of getting back lists of grants, where user
-        # and group roles are combined.  Only directly assigned user
-        # roles are available, since group grants are not yet supported
-
-        combined_list = self.assignment_api.get_roles_for_user_and_project(
-            user1['id'],
-            project1['id'])
-        self.assertEqual(2, len(combined_list))
-        self.assertIn(role_list[0]['id'], combined_list)
-        self.assertIn(role_list[1]['id'], combined_list)
-
-        # Finally, although domain roles are not implemented, check we can
-        # issue the combined get roles call with benign results, since thus is
-        # used in token generation
-
-        combined_role_list = self.assignment_api.get_roles_for_user_and_domain(
-            user1['id'], CONF.identity.default_domain_id)
-        self.assertEqual(0, len(combined_role_list))
-
-    def test_get_default_domain_by_name(self):
-        domain = self._get_domain_fixture()
-
-        domain_ref = self.resource_api.get_domain_by_name(domain['name'])
-        self.assertEqual(domain_ref, domain)
-
-    def test_base_ldap_connection_deref_option(self):
-        def get_conn(deref_name):
-            self.config_fixture.config(group='ldap',
-                                       alias_dereferencing=deref_name)
-            base_ldap = common_ldap.BaseLdap(CONF)
-            return base_ldap.get_connection()
-
-        conn = get_conn('default')
-        self.assertEqual(ldap.get_option(ldap.OPT_DEREF),
-                         conn.get_option(ldap.OPT_DEREF))
-
-        conn = get_conn('always')
-        self.assertEqual(ldap.DEREF_ALWAYS,
-                         conn.get_option(ldap.OPT_DEREF))
-
-        conn = get_conn('finding')
-        self.assertEqual(ldap.DEREF_FINDING,
-                         conn.get_option(ldap.OPT_DEREF))
-
-        conn = get_conn('never')
-        self.assertEqual(ldap.DEREF_NEVER,
-                         conn.get_option(ldap.OPT_DEREF))
-
-        conn = get_conn('searching')
-        self.assertEqual(ldap.DEREF_SEARCHING,
-                         conn.get_option(ldap.OPT_DEREF))
-
-    def test_list_users_no_dn(self):
-        users = self.identity_api.list_users()
-        self.assertEqual(len(default_fixtures.USERS), len(users))
-        user_ids = set(user['id'] for user in users)
-        expected_user_ids = set(getattr(self, 'user_%s' % user['name'])['id']
-                                for user in default_fixtures.USERS)
-        for user_ref in users:
-            self.assertNotIn('dn', user_ref)
-        self.assertEqual(expected_user_ids, user_ids)
-
-    def test_list_groups_no_dn(self):
-        # Create some test groups.
-        domain = self._get_domain_fixture()
-        expected_group_ids = []
-        numgroups = 3
-        for _ in range(numgroups):
-            group = unit.new_group_ref(domain_id=domain['id'])
-            group = self.identity_api.create_group(group)
-            expected_group_ids.append(group['id'])
-        # Fetch the test groups and ensure that they don't contain a dn.
-        groups = self.identity_api.list_groups()
-        self.assertEqual(numgroups, len(groups))
-        group_ids = set(group['id'] for group in groups)
-        for group_ref in groups:
-            self.assertNotIn('dn', group_ref)
-        self.assertEqual(set(expected_group_ids), group_ids)
-
-    def test_list_groups_for_user_no_dn(self):
-        # Create a test user.
-        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
-        user = self.identity_api.create_user(user)
-        # Create some test groups and add the test user as a member.
-        domain = self._get_domain_fixture()
-        expected_group_ids = []
-        numgroups = 3
-        for _ in range(numgroups):
-            group = unit.new_group_ref(domain_id=domain['id'])
-            group = self.identity_api.create_group(group)
-            expected_group_ids.append(group['id'])
-            self.identity_api.add_user_to_group(user['id'], group['id'])
-        # Fetch the groups for the test user
-        # and ensure they don't contain a dn.
-        groups = self.identity_api.list_groups_for_user(user['id'])
-        self.assertEqual(numgroups, len(groups))
-        group_ids = set(group['id'] for group in groups)
-        for group_ref in groups:
-            self.assertNotIn('dn', group_ref)
-        self.assertEqual(set(expected_group_ids), group_ids)
-
-    def test_user_id_attribute_in_create(self):
-        driver = self.identity_api._select_identity_driver(
-            CONF.identity.default_domain_id)
-        driver.user.id_attr = 'mail'
-
-        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
-        user = self.identity_api.create_user(user)
-        user_ref = self.identity_api.get_user(user['id'])
-        # 'email' attribute should've created because it is also being used
-        # as user_id
-        self.assertEqual(user_ref['id'], user_ref['email'])
-
-    def test_user_id_attribute_map(self):
-        driver = self.identity_api._select_identity_driver(
-            CONF.identity.default_domain_id)
-        driver.user.id_attr = 'mail'
-
-        user_ref = self.identity_api.get_user(self.user_foo['email'])
-        # the user_id_attribute map should be honored, which means
-        # user_ref['id'] should contains the email attribute
-        self.assertEqual(self.user_foo['email'], user_ref['id'])
-
-    @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
-    def test_get_id_from_dn_for_multivalued_attribute_id(self, mock_ldap_get):
-        driver = self.identity_api._select_identity_driver(
-            CONF.identity.default_domain_id)
-        driver.user.id_attr = 'mail'
-
-        # make 'email' multivalued so we can test the error condition
-        email1 = uuid.uuid4().hex
-        email2 = uuid.uuid4().hex
-        mock_ldap_get.return_value = (
-            'cn=nobodycares,dc=example,dc=com',
-            {
-                'sn': [uuid.uuid4().hex],
-                'mail': [email1, email2],
-                'cn': 'nobodycares'
-            }
-        )
-
-        user_ref = self.identity_api.get_user(email1)
-        # make sure we get the ID from DN (old behavior) if the ID attribute
-        # has multiple values
-        self.assertEqual('nobodycares', user_ref['id'])
-
-    @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
-    def test_id_attribute_not_found(self, mock_ldap_get):
-        mock_ldap_get.return_value = (
-            'cn=nobodycares,dc=example,dc=com',
-            {
-                'sn': [uuid.uuid4().hex],
-            }
-        )
-
-        user_api = identity.backends.ldap.UserApi(CONF)
-        self.assertRaises(exception.NotFound,
-                          user_api.get,
-                          'nobodycares')
-
-    @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
-    def test_user_id_not_in_dn(self, mock_ldap_get):
-        driver = self.identity_api._select_identity_driver(
-            CONF.identity.default_domain_id)
-        driver.user.id_attr = 'uid'
-        driver.user.attribute_mapping['name'] = 'cn'
-
-        mock_ldap_get.return_value = (
-            'foo=bar,dc=example,dc=com',
-            {
-                'sn': [uuid.uuid4().hex],
-                'foo': ['bar'],
-                'cn': ['junk'],
-                'uid': ['crap']
-            }
-        )
-        user_ref = self.identity_api.get_user('crap')
-        self.assertEqual('crap', user_ref['id'])
-        self.assertEqual('junk', user_ref['name'])
-
-    @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
-    def test_user_name_in_dn(self, mock_ldap_get):
-        driver = self.identity_api._select_identity_driver(
-            CONF.identity.default_domain_id)
-        driver.user.id_attr = 'SAMAccountName'
-        driver.user.attribute_mapping['name'] = 'cn'
-
-        mock_ldap_get.return_value = (
-            'cn=Foo Bar,dc=example,dc=com',
-            {
-                'sn': [uuid.uuid4().hex],
-                'cn': ['Foo Bar'],
-                'SAMAccountName': ['crap']
-            }
-        )
-        user_ref = self.identity_api.get_user('crap')
-        self.assertEqual('crap', user_ref['id'])
-        self.assertEqual('Foo Bar', user_ref['name'])
-
-    def test_identity_manager_catches_forbidden_when_deleting_a_project(self):
-        # The identity API registers a callback that listens for notifications
-        # that a project has been deleted. When it receives one, it uses the ID
-        # and attempts to clear any users who have `default_project_id`
-        # attributes associated to that project. Since the LDAP backend is
-        # read-only, clearing the `default_project_id` requires a write which
-        # isn't possible.
-        project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id
-        )
-        project = self.resource_api.create_project(project['id'], project)
-        with mock.patch.object(
-            ldap_identity.Identity, '_disallow_write'
-        ) as mocked:
-            mocked.side_effect = exception.Forbidden()
             self.resource_api.delete_project(project['id'])
+            self.assertRaises(exception.ProjectNotFound,
+                              self.resource_api.get_project,
+                              project['id'])
 
-        mocked.assert_called_once()
+        def test_user_enable_attribute_mask(self):
+            self.config_fixture.config(group='ldap', user_enabled_mask=2,
+                                       user_enabled_default='512')
+            self.ldapdb.clear()
+            self.load_backends()
+
+            user = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+
+            user_ref = self.identity_api.create_user(user)
+
+            # Use assertIs rather than assertTrue because assertIs will assert
+            # the value is a Boolean as expected.
+            self.assertIs(True, user_ref['enabled'])
+            self.assertNotIn('enabled_nomask', user_ref)
+
+            enabled_vals = self.get_user_enabled_vals(user_ref)
+            self.assertEqual([512], enabled_vals)
+
+            user_ref = self.identity_api.get_user(user_ref['id'])
+            self.assertIs(True, user_ref['enabled'])
+            self.assertNotIn('enabled_nomask', user_ref)
+
+            user['enabled'] = False
+            user_ref = self.identity_api.update_user(user_ref['id'], user)
+            self.assertIs(False, user_ref['enabled'])
+            self.assertNotIn('enabled_nomask', user_ref)
+
+            enabled_vals = self.get_user_enabled_vals(user_ref)
+            self.assertEqual([514], enabled_vals)
+
+            user_ref = self.identity_api.get_user(user_ref['id'])
+            self.assertIs(False, user_ref['enabled'])
+            self.assertNotIn('enabled_nomask', user_ref)
+
+            user['enabled'] = True
+            user_ref = self.identity_api.update_user(user_ref['id'], user)
+            self.assertIs(True, user_ref['enabled'])
+            self.assertNotIn('enabled_nomask', user_ref)
+
+            enabled_vals = self.get_user_enabled_vals(user_ref)
+            self.assertEqual([512], enabled_vals)
+
+            user_ref = self.identity_api.get_user(user_ref['id'])
+            self.assertIs(True, user_ref['enabled'])
+            self.assertNotIn('enabled_nomask', user_ref)
+
+        def test_user_enabled_invert(self):
+            self.config_fixture.config(group='ldap', user_enabled_invert=True,
+                                       user_enabled_default='False')
+            self.ldapdb.clear()
+            self.load_backends()
+
+            user1 = self.new_user_ref(
+                domain_id=CONF.identity.default_domain_id)
+
+            user2 = self.new_user_ref(
+                enabled=False,
+                domain_id=CONF.identity.default_domain_id)
+
+            user3 = self.new_user_ref(
+                domain_id=CONF.identity.default_domain_id)
+
+            # Ensure that the LDAP attribute is False for a newly created
+            # enabled user.
+            user_ref = self.identity_api.create_user(user1)
+            self.assertIs(True, user_ref['enabled'])
+            enabled_vals = self.get_user_enabled_vals(user_ref)
+            self.assertEqual([False], enabled_vals)
+            user_ref = self.identity_api.get_user(user_ref['id'])
+            self.assertIs(True, user_ref['enabled'])
+
+            # Ensure that the LDAP attribute is True for a disabled user.
+            user1['enabled'] = False
+            user_ref = self.identity_api.update_user(user_ref['id'], user1)
+            self.assertIs(False, user_ref['enabled'])
+            enabled_vals = self.get_user_enabled_vals(user_ref)
+            self.assertEqual([True], enabled_vals)
+
+            # Enable the user and ensure that the LDAP attribute is True again.
+            user1['enabled'] = True
+            user_ref = self.identity_api.update_user(user_ref['id'], user1)
+            self.assertIs(True, user_ref['enabled'])
+            enabled_vals = self.get_user_enabled_vals(user_ref)
+            self.assertEqual([False], enabled_vals)
+
+            # Ensure that the LDAP attribute is True for a newly created
+            # disabled user.
+            user_ref = self.identity_api.create_user(user2)
+            self.assertIs(False, user_ref['enabled'])
+            enabled_vals = self.get_user_enabled_vals(user_ref)
+            self.assertEqual([True], enabled_vals)
+            user_ref = self.identity_api.get_user(user_ref['id'])
+            self.assertIs(False, user_ref['enabled'])
+
+            # Ensure that the LDAP attribute is inverted for a newly created
+            # user when the user_enabled_default setting is used.
+            user_ref = self.identity_api.create_user(user3)
+            self.assertIs(True, user_ref['enabled'])
+            enabled_vals = self.get_user_enabled_vals(user_ref)
+            self.assertEqual([False], enabled_vals)
+            user_ref = self.identity_api.get_user(user_ref['id'])
+            self.assertIs(True, user_ref['enabled'])
+
+        @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
+        def test_user_enabled_invert_default_str_value(self, mock_ldap_get):
+            self.config_fixture.config(group='ldap', user_enabled_invert=True,
+                                       user_enabled_default='False')
+            # Mock the search results to return an entry with
+            # no enabled value.
+            mock_ldap_get.return_value = (
+                'cn=junk,dc=example,dc=com',
+                {
+                    'sn': [uuid.uuid4().hex],
+                    'email': [uuid.uuid4().hex],
+                    'cn': ['junk']
+                }
+            )
+
+            user_api = identity.backends.ldap.UserApi(CONF)
+            user_ref = user_api.get('junk')
+            # Ensure that the model enabled attribute is inverted
+            # from the resource default.
+            self.assertIs(True, user_ref['enabled'])
+
+        @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
+        def test_user_enabled_attribute_handles_expired(self, mock_ldap_get):
+            # If using 'passwordisexpired' as enabled attribute, and inverting
+            # it, then an unauthorized user (expired password) should not
+            # be enabled.
+            self.config_fixture.config(
+                group='ldap',
+                user_enabled_invert=True,
+                user_enabled_attribute='passwordisexpired')
+            mock_ldap_get.return_value = (
+                u'uid=123456789,c=us,ou=our_ldap,o=acme.com',
+                {
+                    'uid': [123456789],
+                    'mail': ['shaun@acme.com'],
+                    'passwordisexpired': ['TRUE'],
+                    'cn': ['uid=123456789,c=us,ou=our_ldap,o=acme.com']
+                }
+            )
+
+            user_api = identity.backends.ldap.UserApi(CONF)
+            user_ref = user_api.get('123456789')
+            self.assertIs(False, user_ref['enabled'])
+
+        @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
+        def test_user_enabled_attribute_handles_utf8(self, mock_ldap_get):
+            # If using 'passwordisexpired' as enabled attribute, and inverting
+            # it, and the result is utf8 encoded, then the an authorized user
+            # should be enabled.
+            self.config_fixture.config(
+                group='ldap',
+                user_enabled_invert=True,
+                user_enabled_attribute='passwordisexpired')
+            mock_ldap_get.return_value = (
+                u'uid=123456789,c=us,ou=our_ldap,o=acme.com',
+                {
+                    'uid': [123456789],
+                    'mail': [u'shaun@acme.com'],
+                    'passwordisexpired': [u'false'],
+                    'cn': [u'uid=123456789,c=us,ou=our_ldap,o=acme.com']
+                }
+            )
+
+            user_api = identity.backends.ldap.UserApi(CONF)
+            user_ref = user_api.get('123456789')
+            self.assertIs(True, user_ref['enabled'])
+
+        @mock.patch.object(common_ldap.KeystoneLDAPHandler, 'simple_bind_s')
+        def test_user_api_get_connection_no_user_password(self, mocked_method):
+            """Bind anonymously when the user and password are blank."""
+            # Ensure the username/password are in-fact blank
+            self.config_fixture.config(group='ldap', user=None, password=None)
+            user_api = identity.backends.ldap.UserApi(CONF)
+            user_api.get_connection(user=None, password=None)
+            self.assertTrue(mocked_method.called)
+
+        @mock.patch.object(common_ldap.KeystoneLDAPHandler, 'connect')
+        def test_chase_referrals_off(self, mocked_fakeldap):
+            self.config_fixture.config(
+                group='ldap',
+                url='fake://memory',
+                chase_referrals=False)
+            user_api = identity.backends.ldap.UserApi(CONF)
+            user_api.get_connection(user=None, password=None)
+
+            # The last call_arg should be a dictionary and should contain
+            # chase_referrals. Check to make sure the value of chase_referrals
+            # is as expected.
+            self.assertFalse(mocked_fakeldap.call_args[-1]['chase_referrals'])
+
+        @mock.patch.object(common_ldap.KeystoneLDAPHandler, 'connect')
+        def test_chase_referrals_on(self, mocked_fakeldap):
+            self.config_fixture.config(
+                group='ldap',
+                url='fake://memory',
+                chase_referrals=True)
+            user_api = identity.backends.ldap.UserApi(CONF)
+            user_api.get_connection(user=None, password=None)
+
+            # The last call_arg should be a dictionary and should contain
+            # chase_referrals. Check to make sure the value of chase_referrals
+            # is as expected.
+            self.assertTrue(mocked_fakeldap.call_args[-1]['chase_referrals'])
+
+        @mock.patch.object(common_ldap.KeystoneLDAPHandler, 'connect')
+        def test_debug_level_set(self, mocked_fakeldap):
+            level = 12345
+            self.config_fixture.config(
+                group='ldap',
+                url='fake://memory',
+                debug_level=level)
+            user_api = identity.backends.ldap.UserApi(CONF)
+            user_api.get_connection(user=None, password=None)
+
+            # The last call_arg should be a dictionary and should contain
+            # debug_level. Check to make sure the value of debug_level
+            # is as expected.
+            self.assertEqual(level,
+                             mocked_fakeldap.call_args[-1]['debug_level'])
+
+        def test_user_extra_attribute_mapping(self):
+            self.config_fixture.config(
+                group='ldap',
+                user_additional_attribute_mapping=['description:name'])
+            self.load_backends()
+            user = self.new_user_ref(name='EXTRA_ATTRIBUTES',
+                                     password='extra',
+                                     domain_id=CONF.identity.default_domain_id)
+            user = self.identity_api.create_user(user)
+            dn, attrs = self.identity_api.driver.user._ldap_get(user['id'])
+            self.assertThat([user['name']],
+                            matchers.Equals(attrs['description']))
+
+        def test_user_description_attribute_mapping(self):
+            self.config_fixture.config(
+                group='ldap',
+                user_description_attribute='displayName')
+            self.load_backends()
+
+            user = self.new_user_ref(domain_id=CONF.identity.default_domain_id,
+                                     displayName=uuid.uuid4().hex)
+            description = user['displayName']
+            user = self.identity_api.create_user(user)
+            res = self.identity_api.driver.user.get_all()
+
+            new_user = [u for u in res if u['id'] == user['id']][0]
+            self.assertThat(new_user['description'],
+                            matchers.Equals(description))
+
+        def test_user_extra_attribute_mapping_description_is_returned(self):
+            # Given a mapping like description:description, the description is
+            # returned.
+
+            self.config_fixture.config(
+                group='ldap',
+                user_additional_attribute_mapping=['description:description'])
+            self.load_backends()
+
+            user = self.new_user_ref(domain_id=CONF.identity.default_domain_id,
+                                     description=uuid.uuid4().hex)
+            description = user['description']
+            user = self.identity_api.create_user(user)
+            res = self.identity_api.driver.user.get_all()
+
+            new_user = [u for u in res if u['id'] == user['id']][0]
+            self.assertThat(new_user['description'],
+                            matchers.Equals(description))
+
+        def test_user_with_missing_id(self):
+            # create a user that doesn't have the id attribute
+            ldap_ = self.identity_api.driver.user.get_connection()
+            # `sn` is used for the attribute in the DN because it's allowed by
+            # the entry's objectclasses so that this test could conceivably
+            # run inthe live tests.
+            ldap_id_field = 'sn'
+            ldap_id_value = uuid.uuid4().hex
+            dn = '%s=%s,ou=Users,cn=example,cn=com' % (ldap_id_field,
+                                                       ldap_id_value)
+            modlist = [('objectClass', ['person', 'inetOrgPerson']),
+                       (ldap_id_field, [ldap_id_value]),
+                       ('mail', ['email@example.com']),
+                       ('userPassword', [uuid.uuid4().hex])]
+            ldap_.add_s(dn, modlist)
+
+            # make sure the user doesn't break other users
+            users = self.identity_api.driver.user.get_all()
+            self.assertThat(users,
+                            matchers.HasLength(len(default_fixtures.USERS)))
+
+        @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
+        def test_user_mixed_case_attribute(self, mock_ldap_get):
+            # Mock the search results to return attribute names
+            # with unexpected case.
+            mock_ldap_get.return_value = (
+                'cn=junk,dc=example,dc=com',
+                {
+                    'sN': [uuid.uuid4().hex],
+                    'MaIl': [uuid.uuid4().hex],
+                    'cn': ['junk']
+                }
+            )
+            user = self.identity_api.get_user('junk')
+            self.assertEqual(mock_ldap_get.return_value[1]['sN'][0],
+                             user['name'])
+            self.assertEqual(mock_ldap_get.return_value[1]['MaIl'][0],
+                             user['email'])
+
+        def test_parse_extra_attribute_mapping(self):
+            option_list = ['description:name', 'gecos:password',
+                           'fake:invalid', 'invalid1', 'invalid2:',
+                           'description:name:something']
+            mapping = self.identity_api.driver.user._parse_extra_attrs(
+                option_list)
+            expected_dict = {'description': 'name', 'gecos': 'password',
+                             'fake': 'invalid', 'invalid2': ''}
+            self.assertDictEqual(expected_dict, mapping)
+
+        def test_create_domain(self):
+            domain = unit.new_domain_ref()
+            self.assertRaises(exception.ValidationError,
+                              self.resource_api.create_domain,
+                              domain['id'],
+                              domain)
+
+        @unit.skip_if_no_multiple_domains_support
+        def test_create_domain_case_sensitivity(self):
+            # domains are read-only, so case sensitivity isn't an issue
+            ref = unit.new_domain_ref()
+            self.assertRaises(exception.Forbidden,
+                              self.resource_api.create_domain,
+                              ref['id'],
+                              ref)
+
+        def test_domain_rename_invalidates_get_domain_by_name_cache(self):
+            parent = super(LDAPIdentity.LDAPIdentityTest, self)
+            self.assertRaises(
+                exception.Forbidden,
+                parent.test_domain_rename_invalidates_get_domain_by_name_cache)
+
+        def test_project_rename_invalidates_get_project_by_name_cache(self):
+            parent = super(LDAPIdentity.LDAPIdentityTest, self)
+            self.assertRaises(
+                exception.Forbidden,
+                parent.
+                test_project_rename_invalidates_get_project_by_name_cache)
+
+        def test_project_crud(self):
+            # NOTE(topol): LDAP implementation does not currently support the
+            #              updating of a project name so this method override
+            #              provides a different update test
+            project = unit.new_project_ref(
+                domain_id=CONF.identity.default_domain_id)
+
+            project = self.resource_api.create_project(project['id'], project)
+            project_ref = self.resource_api.get_project(project['id'])
+
+            self.assertDictEqual(project, project_ref)
+
+            project['description'] = uuid.uuid4().hex
+            self.resource_api.update_project(project['id'], project)
+            project_ref = self.resource_api.get_project(project['id'])
+            self.assertDictEqual(project, project_ref)
+
+            self.resource_api.delete_project(project['id'])
+            self.assertRaises(exception.ProjectNotFound,
+                              self.resource_api.get_project,
+                              project['id'])
+
+        @unit.skip_if_cache_disabled('assignment')
+        def test_cache_layer_project_crud(self):
+            # NOTE(morganfainberg): LDAP implementation does not currently
+            # support updating project names.  This method override provides
+            # a different update test.
+            project = unit.new_project_ref(
+                domain_id=CONF.identity.default_domain_id)
+            project_id = project['id']
+            # Create a project
+            project = self.resource_api.create_project(project_id, project)
+            self.resource_api.get_project(project_id)
+            updated_project = copy.deepcopy(project)
+            updated_project['description'] = uuid.uuid4().hex
+            # Update project, bypassing resource manager
+            self.resource_api.driver.update_project(project_id,
+                                                    updated_project)
+            # Verify get_project still returns the original project_ref
+            self.assertDictContainsSubset(
+                project, self.resource_api.get_project(project_id))
+            # Invalidate cache
+            self.resource_api.get_project.invalidate(self.resource_api,
+                                                     project_id)
+            # Verify get_project now returns the new project
+            self.assertDictContainsSubset(
+                updated_project,
+                self.resource_api.get_project(project_id))
+            # Update project using the resource_api manager back to original
+            self.resource_api.update_project(project['id'], project)
+            # Verify get_project returns the original project_ref
+            self.assertDictContainsSubset(
+                project, self.resource_api.get_project(project_id))
+            # Delete project bypassing resource_api
+            self.resource_api.driver.delete_project(project_id)
+            # Verify get_project still returns the project_ref
+            self.assertDictContainsSubset(
+                project, self.resource_api.get_project(project_id))
+            # Invalidate cache
+            self.resource_api.get_project.invalidate(self.resource_api,
+                                                     project_id)
+            # Verify ProjectNotFound now raised
+            self.assertRaises(exception.ProjectNotFound,
+                              self.resource_api.get_project,
+                              project_id)
+            # recreate project
+            self.resource_api.create_project(project_id, project)
+            self.resource_api.get_project(project_id)
+            # delete project
+            self.resource_api.delete_project(project_id)
+            # Verify ProjectNotFound is raised
+            self.assertRaises(exception.ProjectNotFound,
+                              self.resource_api.get_project,
+                              project_id)
+
+        def test_update_is_domain_field(self):
+            domain = self._get_domain_fixture()
+            project = unit.new_project_ref(domain_id=domain['id'])
+            project = self.resource_api.create_project(project['id'], project)
+
+            # Try to update the is_domain field to True
+            project['is_domain'] = True
+            self.assertRaises(exception.ValidationError,
+                              self.resource_api.update_project,
+                              project['id'], project)
+
+        def test_multi_role_grant_by_user_group_on_project_domain(self):
+            # This is a partial implementation of the standard test that
+            # is defined in unit.assignment.test_backends.py.  It omits
+            # both domain and group grants. since neither of these are
+            # yet supported by the ldap backend.
+
+            role_list = []
+            for _ in range(2):
+                role = unit.new_role_ref()
+                self.role_api.create_role(role['id'], role)
+                role_list.append(role)
+
+            user1 = self.new_user_ref(
+                domain_id=CONF.identity.default_domain_id)
+            user1 = self.identity_api.create_user(user1)
+            project1 = unit.new_project_ref(
+                domain_id=CONF.identity.default_domain_id)
+            self.resource_api.create_project(project1['id'], project1)
+
+            self.assignment_api.add_role_to_user_and_project(
+                user_id=user1['id'],
+                tenant_id=project1['id'],
+                role_id=role_list[0]['id'])
+            self.assignment_api.add_role_to_user_and_project(
+                user_id=user1['id'],
+                tenant_id=project1['id'],
+                role_id=role_list[1]['id'])
+
+            # Although list_grants are not yet supported, we can test the
+            # alternate way of getting back lists of grants, where user
+            # and group roles are combined.  Only directly assigned user
+            # roles are available, since group grants are not yet supported
+
+            combined_list = self.assignment_api.get_roles_for_user_and_project(
+                user1['id'],
+                project1['id'])
+            self.assertEqual(2, len(combined_list))
+            self.assertIn(role_list[0]['id'], combined_list)
+            self.assertIn(role_list[1]['id'], combined_list)
+
+            # Finally, although domain roles are not implemented, check we can
+            # issue the combined get roles call with benign results, since
+            # thus is used in token generation
+
+            combined_role_list = \
+                self.assignment_api.get_roles_for_user_and_domain(
+                    user1['id'], CONF.identity.default_domain_id)
+            self.assertEqual(0, len(combined_role_list))
+
+        def test_get_default_domain_by_name(self):
+            domain = self._get_domain_fixture()
+
+            domain_ref = self.resource_api.get_domain_by_name(domain['name'])
+            self.assertEqual(domain_ref, domain)
+
+        def test_base_ldap_connection_deref_option(self):
+            def get_conn(deref_name):
+                self.config_fixture.config(group='ldap',
+                                           alias_dereferencing=deref_name)
+                base_ldap = common_ldap.BaseLdap(CONF)
+                return base_ldap.get_connection()
+
+            conn = get_conn('default')
+            self.assertEqual(ldap.get_option(ldap.OPT_DEREF),
+                             conn.get_option(ldap.OPT_DEREF))
+
+            conn = get_conn('always')
+            self.assertEqual(ldap.DEREF_ALWAYS,
+                             conn.get_option(ldap.OPT_DEREF))
+
+            conn = get_conn('finding')
+            self.assertEqual(ldap.DEREF_FINDING,
+                             conn.get_option(ldap.OPT_DEREF))
+
+            conn = get_conn('never')
+            self.assertEqual(ldap.DEREF_NEVER,
+                             conn.get_option(ldap.OPT_DEREF))
+
+            conn = get_conn('searching')
+            self.assertEqual(ldap.DEREF_SEARCHING,
+                             conn.get_option(ldap.OPT_DEREF))
+
+        def test_list_users_no_dn(self):
+            users = self.identity_api.list_users()
+            self.assertEqual(len(default_fixtures.USERS), len(users))
+            user_ids = set(user['id'] for user in users)
+            expected_user_ids = set(getattr(self,
+                                            'user_%s' % user['name'])['id']
+                                    for user in default_fixtures.USERS)
+            for user_ref in users:
+                self.assertNotIn('dn', user_ref)
+            self.assertEqual(expected_user_ids, user_ids)
+
+        def test_list_groups_no_dn(self):
+            # Create some test groups.
+            domain = self._get_domain_fixture()
+            expected_group_ids = []
+            numgroups = 3
+            for _ in range(numgroups):
+                group = unit.new_group_ref(domain_id=domain['id'])
+                group = self.identity_api.create_group(group)
+                expected_group_ids.append(group['id'])
+            # Fetch the test groups and ensure that they don't contain a dn.
+            groups = self.identity_api.list_groups()
+            self.assertEqual(numgroups, len(groups))
+            group_ids = set(group['id'] for group in groups)
+            for group_ref in groups:
+                self.assertNotIn('dn', group_ref)
+            self.assertEqual(set(expected_group_ids), group_ids)
+
+        def test_list_groups_for_user_no_dn(self):
+            # Create a test user.
+            user = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+            user = self.identity_api.create_user(user)
+            # Create some test groups and add the test user as a member.
+            domain = self._get_domain_fixture()
+            expected_group_ids = []
+            numgroups = 3
+            for _ in range(numgroups):
+                group = unit.new_group_ref(domain_id=domain['id'])
+                group = self.identity_api.create_group(group)
+                expected_group_ids.append(group['id'])
+                self.identity_api.add_user_to_group(user['id'], group['id'])
+            # Fetch the groups for the test user
+            # and ensure they don't contain a dn.
+            groups = self.identity_api.list_groups_for_user(user['id'])
+            self.assertEqual(numgroups, len(groups))
+            group_ids = set(group['id'] for group in groups)
+            for group_ref in groups:
+                self.assertNotIn('dn', group_ref)
+            self.assertEqual(set(expected_group_ids), group_ids)
+
+        def test_user_id_attribute_in_create(self):
+            driver = self.identity_api._select_identity_driver(
+                CONF.identity.default_domain_id)
+            driver.user.id_attr = 'mail'
+
+            user = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+            user = self.identity_api.create_user(user)
+            user_ref = self.identity_api.get_user(user['id'])
+            # 'email' attribute should've created because it is also being used
+            # as user_id
+            self.assertEqual(user_ref['id'], user_ref['email'])
+
+        def test_user_id_attribute_map(self):
+            driver = self.identity_api._select_identity_driver(
+                CONF.identity.default_domain_id)
+            driver.user.id_attr = 'mail'
+
+            user_ref = self.identity_api.get_user(self.user_foo['email'])
+            # the user_id_attribute map should be honored, which means
+            # user_ref['id'] should contains the email attribute
+            self.assertEqual(self.user_foo['email'], user_ref['id'])
+
+        @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
+        def test_get_id_from_dn_for_multivalued_attribute_id(self,
+                                                             mock_ldap_get):
+            driver = self.identity_api._select_identity_driver(
+                CONF.identity.default_domain_id)
+            driver.user.id_attr = 'mail'
+
+            # make 'email' multivalued so we can test the error condition
+            email1 = uuid.uuid4().hex
+            email2 = uuid.uuid4().hex
+            mock_ldap_get.return_value = (
+                'cn=nobodycares,dc=example,dc=com',
+                {
+                    'sn': [uuid.uuid4().hex],
+                    'mail': [email1, email2],
+                    'cn': 'nobodycares'
+                }
+            )
+
+            user_ref = self.identity_api.get_user(email1)
+            # make sure we get the ID from DN (old behavior) if the
+            # ID attribute has multiple values
+            self.assertEqual('nobodycares', user_ref['id'])
+
+        @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
+        def test_id_attribute_not_found(self, mock_ldap_get):
+            mock_ldap_get.return_value = (
+                'cn=nobodycares,dc=example,dc=com',
+                {
+                    'sn': [uuid.uuid4().hex],
+                }
+            )
+
+            user_api = identity.backends.ldap.UserApi(CONF)
+            self.assertRaises(exception.NotFound,
+                              user_api.get,
+                              'nobodycares')
+
+        @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
+        def test_user_id_not_in_dn(self, mock_ldap_get):
+            driver = self.identity_api._select_identity_driver(
+                CONF.identity.default_domain_id)
+            driver.user.id_attr = 'uid'
+            driver.user.attribute_mapping['name'] = 'cn'
+
+            mock_ldap_get.return_value = (
+                'foo=bar,dc=example,dc=com',
+                {
+                    'sn': [uuid.uuid4().hex],
+                    'foo': ['bar'],
+                    'cn': ['junk'],
+                    'uid': ['crap']
+                }
+            )
+            user_ref = self.identity_api.get_user('crap')
+            self.assertEqual('crap', user_ref['id'])
+            self.assertEqual('junk', user_ref['name'])
+
+        @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
+        def test_user_name_in_dn(self, mock_ldap_get):
+            driver = self.identity_api._select_identity_driver(
+                CONF.identity.default_domain_id)
+            driver.user.id_attr = 'SAMAccountName'
+            driver.user.attribute_mapping['name'] = 'cn'
+
+            mock_ldap_get.return_value = (
+                'cn=Foo Bar,dc=example,dc=com',
+                {
+                    'sn': [uuid.uuid4().hex],
+                    'cn': ['Foo Bar'],
+                    'SAMAccountName': ['crap']
+                }
+            )
+            user_ref = self.identity_api.get_user('crap')
+            self.assertEqual('crap', user_ref['id'])
+            self.assertEqual('Foo Bar', user_ref['name'])
+
+        def test_identity_manager_catch_forbidden_when_deleting_project(self):
+            # The identity API registers a callback that listens for
+            # notifications that a project has been deleted. When it receives
+            # one, it uses the ID and attempts to clear any users who have
+            # `default_project_id` attributes associated to that project. Since
+            # the LDAP backend is read-only, clearing the `default_project_id`
+            # requires a write which isn't possible.
+            project = unit.new_project_ref(
+                domain_id=CONF.identity.default_domain_id
+            )
+            project = self.resource_api.create_project(project['id'], project)
+            with mock.patch.object(
+                ldap_identity.Identity, '_disallow_write'
+            ) as mocked:
+                mocked.side_effect = exception.Forbidden()
+                self.resource_api.delete_project(project['id'])
+
+            mocked.assert_called_once()
 
 
 class LDAPLimitTests(unit.TestCase, identity_tests.LimitTests):
@@ -1769,14 +1790,14 @@ class LDAPLimitTests(unit.TestCase, identity_tests.LimitTests):
         return config_files
 
 
-class LDAPIdentityEnabledEmulation(LDAPIdentity):
+class LDAPIdentityEnabledEmulation(LDAPIdentity.LDAPIdentityTest):
     def setUp(self):
         super(LDAPIdentityEnabledEmulation, self).setUp()
         _assert_backends(self, identity='ldap')
 
     def load_fixtures(self, fixtures):
         # Override super impl since need to create group container.
-        super(LDAPIdentity, self).load_fixtures(fixtures)
+        super(LDAPIdentity.LDAPIdentityTest, self).load_fixtures(fixtures)
         for obj in [self.tenant_bar, self.tenant_baz, self.user_foo,
                     self.user_two, self.user_badguy]:
             obj.setdefault('enabled', True)

@@ -208,7 +208,7 @@ class LdapPoolCommonTestMixin(object):
 
 
 class LDAPIdentity(LdapPoolCommonTestMixin,
-                   test_backend_ldap.LDAPIdentity,
+                   test_backend_ldap.LDAPIdentity.LDAPIdentityTest,
                    unit.TestCase):
     """Executes tests in existing base class with pooled LDAP handler."""
 
