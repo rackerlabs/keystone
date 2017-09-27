@@ -2421,6 +2421,46 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         pw_table = sqlalchemy.Table('password', meta, autoload=True)
         self.assertFalse(pw_table.c.created_at_int.nullable)
 
+    def test_migration_030_add_system_assignment_table(self):
+        self.expand(29)
+        self.migrate(29)
+        self.contract(29)
+
+        system_assignment_table_name = 'system_assignment'
+        self.assertTableDoesNotExist(system_assignment_table_name)
+
+        self.expand(30)
+        self.migrate(30)
+        self.contract(30)
+
+        self.assertTableExists(system_assignment_table_name)
+        self.assertTableColumns(
+            system_assignment_table_name,
+            ['type', 'actor_id', 'target_id', 'role_id', 'inherited']
+        )
+
+        system_assignment_table = sqlalchemy.Table(
+            system_assignment_table_name, self.metadata, autoload=True
+        )
+
+        system_user = {
+            'type': 'UserSystem',
+            'target_id': uuid.uuid4().hex,
+            'actor_id': uuid.uuid4().hex,
+            'role_id': uuid.uuid4().hex,
+            'inherited': False
+        }
+        system_assignment_table.insert().values(system_user).execute()
+
+        system_group = {
+            'type': 'GroupSystem',
+            'target_id': uuid.uuid4().hex,
+            'actor_id': uuid.uuid4().hex,
+            'role_id': uuid.uuid4().hex,
+            'inherited': False
+        }
+        system_assignment_table.insert().values(system_group).execute()
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
