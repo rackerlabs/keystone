@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_3edee46c",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T20:37:59Z",
+      "side": 1,
+      "message": "We should rebase this patch on master because I don\u0027t think is needed anymore now that we\u0027ve removed the v2.0 resource APIs.",
+      "range": {
+        "startLine": 281,
+        "startChar": 12,
+        "endLine": 281,
+        "endChar": 33
+      },
+      "revId": "8beefa7d7e6bd7333cb99f32b7f118a14996d012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_bed3f45f",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T20:37:59Z",
+      "side": 1,
+      "message": "We should fill in the type here.",
+      "range": {
+        "startLine": 269,
+        "startChar": 15,
+        "endLine": 269,
+        "endChar": 19
+      },
+      "revId": "8beefa7d7e6bd7333cb99f32b7f118a14996d012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_7ec9fca9",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T20:37:59Z",
+      "side": 1,
+      "message": "What is the type/purpose of the operator here?",
+      "range": {
+        "startLine": 270,
+        "startChar": 15,
+        "endLine": 270,
+        "endChar": 23
+      },
+      "revId": "8beefa7d7e6bd7333cb99f32b7f118a14996d012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_3ec70499",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T20:37:59Z",
+      "side": 1,
+      "message": "nit: we could make these private methods since they are not defined in the interface.",
+      "range": {
+        "startLine": 177,
+        "startChar": 8,
+        "endLine": 177,
+        "endChar": 19
+      },
+      "revId": "8beefa7d7e6bd7333cb99f32b7f118a14996d012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_1ec44890",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T20:37:59Z",
+      "side": 1,
+      "message": "same comment here.",
+      "range": {
+        "startLine": 187,
+        "startChar": 8,
+        "endLine": 187,
+        "endChar": 23
+      },
+      "revId": "8beefa7d7e6bd7333cb99f32b7f118a14996d012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_febccc06",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T20:37:59Z",
+      "side": 1,
+      "message": "same comment here.",
+      "range": {
+        "startLine": 190,
+        "startChar": 8,
+        "endLine": 190,
+        "endChar": 23
+      },
+      "revId": "8beefa7d7e6bd7333cb99f32b7f118a14996d012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_deb91015",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T20:37:59Z",
+      "side": 1,
+      "message": "same comment here.",
+      "range": {
+        "startLine": 194,
+        "startChar": 8,
+        "endLine": 194,
+        "endChar": 27
+      },
+      "revId": "8beefa7d7e6bd7333cb99f32b7f118a14996d012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_3ee824e0",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T20:37:59Z",
+      "side": 1,
+      "message": "nit: For some reason the naming of this method makes me think there is some sort of time limit associated to a tag. I had to read what it does to realize this should only be invoked when doing a PUT (right?). Maybe something like `_overwrite_tags` would be more descriptive?",
+      "range": {
+        "startLine": 336,
+        "startChar": 8,
+        "endLine": 336,
+        "endChar": 24
+      },
+      "revId": "8beefa7d7e6bd7333cb99f32b7f118a14996d012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_1e93285d",
+        "filename": "keystone/tests/unit/default_fixtures.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T20:37:59Z",
+      "side": 1,
+      "message": "The TENANTS list here might be removed with the removal of the v2.0 testing stuff. A rebase might make these changes unnecessary.",
+      "range": {
+        "startLine": 37,
+        "startChar": 9,
+        "endLine": 37,
+        "endChar": 13
+      },
+      "revId": "8beefa7d7e6bd7333cb99f32b7f118a14996d012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
