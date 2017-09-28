@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_f97d06b2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:41:30Z",
+      "side": 1,
+      "message": "Nice - this will be a good start on consistency in our api-ref. Since it\u0027s going to be a big change, we can justify its breakdown here. Some tips for commit messages can be found here: https://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "05456e34900cb72f84d64b2f1a3a17a6bfe7adeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
