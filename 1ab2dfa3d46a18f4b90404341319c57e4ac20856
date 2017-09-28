@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_03d86f1b",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T20:03:56Z",
+      "side": 1,
+      "message": "Wasn\u0027t the plan to make this consistent with nova? \n\nhttp://eavesdrop.openstack.org/meetings/keystone/2017/keystone.2017-09-05-18.00.log.html#l-176",
+      "range": {
+        "startLine": 38,
+        "startChar": 16,
+        "endLine": 38,
+        "endChar": 19
+      },
+      "revId": "1ab2dfa3d46a18f4b90404341319c57e4ac20856",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
