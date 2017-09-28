@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_e3531338",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 42
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T20:26:25Z",
+      "side": 1,
+      "message": "It looks like the id column was removed in a previous patch. The expand script only adds a table with two columns, project_id and name. The primary_key being the combination of the two, which seems to make sense since that should always be unique. It will also prevent duplicate tags on the same project.",
+      "range": {
+        "startLine": 10,
+        "startChar": 38,
+        "endLine": 10,
+        "endChar": 40
+      },
+      "revId": "3125c35d17da960ad61eaf1ab9bfac67ccb19e5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_e328b397",
+        "filename": "keystone/common/sql/expand_repo/versions/030_expand_add_project_tags_table.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T20:26:25Z",
+      "side": 1,
+      "message": "Nice - this seems cleaner than having a `id` attribute that we\u0027ll never use.",
+      "range": {
+        "startLine": 39,
+        "startChar": 8,
+        "endLine": 39,
+        "endChar": 51
+      },
+      "revId": "3125c35d17da960ad61eaf1ab9bfac67ccb19e5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_1e3a08cb",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 2426,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T20:26:25Z",
+      "side": 1,
+      "message": "We could isolate this into it\u0027s own test. We can have a test that runs against sqlite/mysql/postgresql that ensures the schema is correct and the table is added in migration 30. A separate test can be written specific to mysql/postgresql that ensures tags are removed when projects are deleted because of the FK (this test would be skipped with sqlite because it doesn\u0027t support FK - at least until https://review.openstack.org/#/c/126030/ ).",
+      "range": {
+        "startLine": 2426,
+        "startChar": 11,
+        "endLine": 2426,
+        "endChar": 73
+      },
+      "revId": "3125c35d17da960ad61eaf1ab9bfac67ccb19e5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
