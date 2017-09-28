@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_43b30799",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 18
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T20:17:30Z",
+      "side": 1,
+      "message": "We should document HEAD here as well since it\u0027s implemented and all v3 GET APIs should also support HEAD.",
+      "range": {
+        "startLine": 26,
+        "startChar": 17,
+        "endLine": 26,
+        "endChar": 20
+      },
+      "revId": "645be37ede0ba03e30db6397afacb49d54c9abce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_03a98f22",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 18
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T20:17:30Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "range": {
+        "startLine": 70,
+        "startChar": 17,
+        "endLine": 70,
+        "endChar": 20
+      },
+      "revId": "645be37ede0ba03e30db6397afacb49d54c9abce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
