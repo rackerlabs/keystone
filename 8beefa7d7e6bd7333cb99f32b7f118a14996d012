@@ -206,6 +206,30 @@
       "revId": "8beefa7d7e6bd7333cb99f32b7f118a14996d012",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_9934d294",
+        "filename": "keystone/tests/unit/default_fixtures.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-09-28T21:11:41Z",
+      "side": 1,
+      "message": "This is used by the base test class[0]. Should rename it to PROJECTS imo.\n\n[0] https://github.com/openstack/keystone/blob/master/keystone/tests/unit/core.py#L716",
+      "parentUuid": "7f515b1d_1e93285d",
+      "range": {
+        "startLine": 37,
+        "startChar": 9,
+        "endLine": 37,
+        "endChar": 13
+      },
+      "revId": "8beefa7d7e6bd7333cb99f32b7f118a14996d012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
