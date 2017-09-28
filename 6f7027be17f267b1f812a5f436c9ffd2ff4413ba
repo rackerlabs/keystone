@@ -1,0 +1,556 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_beb9b4cc",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 888,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "What does this come in as? Something other than a list? Or a string of tags delimited by \u0027,\u0027?",
+      "range": {
+        "startLine": 888,
+        "startChar": 36,
+        "endLine": 888,
+        "endChar": 40
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_debfd0a7",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 889,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "We should add the parameters and return values here.",
+      "range": {
+        "startLine": 889,
+        "startChar": 8,
+        "endLine": 889,
+        "endChar": 44
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_7efd7c6c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 893,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "Would it be possible to just have this return a list of full project references? I suppose that might not make sense in the backend. I was thinking it might be suboptimal to have the backend return a list of ids only for us to turn around and ask for the full references.",
+      "range": {
+        "startLine": 893,
+        "startChar": 34,
+        "endLine": 893,
+        "endChar": 55
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_fef04c93",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 897,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "We should add documentation strings for these.",
+      "range": {
+        "startLine": 897,
+        "startChar": 33,
+        "endLine": 897,
+        "endChar": 66
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_3e4024a5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 912,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "range": {
+        "startLine": 912,
+        "startChar": 30,
+        "endLine": 912,
+        "endChar": 50
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_1e3d682a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 919,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "range": {
+        "startLine": 919,
+        "startChar": 32,
+        "endLine": 919,
+        "endChar": 42
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_1e268816",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 922,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "If the project doesn\u0027t have tags, should this return None or an empty list?",
+      "range": {
+        "startLine": 922,
+        "startChar": 23,
+        "endLine": 922,
+        "endChar": 34
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_de4230ab",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 924,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "range": {
+        "startLine": 924,
+        "startChar": 34,
+        "endLine": 924,
+        "endChar": 66
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_fee16c9c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 925,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "Suggest a wording that is somewhat consistent with the other documentation strings:\n\n  Overwrite existing project tags with a list of new tags",
+      "range": {
+        "startLine": 925,
+        "startChar": 11,
+        "endLine": 925,
+        "endChar": 69
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_be15349e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "range": {
+        "startLine": 932,
+        "startChar": 33,
+        "endLine": 932,
+        "endChar": 48
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_1e544852",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 941,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "nit: This should all fit on a single line.",
+      "range": {
+        "startLine": 940,
+        "startChar": 8,
+        "endLine": 941,
+        "endChar": 35
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_3e8a64be",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1541,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "nit: number_of_tags ?",
+      "range": {
+        "startLine": 1541,
+        "startChar": 39,
+        "endLine": 1541,
+        "endChar": 47
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_7eb57c7d",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1544,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "Tag size seems like:\n\n  tag_size \u003d 6\n  tag \u003d \u0027abcdef\u0027",
+      "range": {
+        "startLine": 1544,
+        "startChar": 15,
+        "endLine": 1544,
+        "endChar": 23
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_3eb3849a",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1548,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "This method seems to return a tuple with tags being one part of that, we should document this also returns a new project.",
+      "range": {
+        "startLine": 1548,
+        "startChar": 17,
+        "endLine": 1548,
+        "endChar": 21
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_be4d349b",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1586,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "nit: we could also assert this value is an empty list.",
+      "range": {
+        "startLine": 1586,
+        "startChar": 34,
+        "endLine": 1586,
+        "endChar": 45
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_fe2bac91",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1594,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "nit: same comment here as above.",
+      "range": {
+        "startLine": 1594,
+        "startChar": 34,
+        "endLine": 1594,
+        "endChar": 45
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_de28f097",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1598,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "nit: this is the default, so we don\u0027t need to specify it here.",
+      "range": {
+        "startLine": 1598,
+        "startChar": 60,
+        "endLine": 1598,
+        "endChar": 61
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_fe04cc19",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1610,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "range": {
+        "startLine": 1610,
+        "startChar": 53,
+        "endLine": 1610,
+        "endChar": 65
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_7906b61e",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1625,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "nit: trims",
+      "range": {
+        "startLine": 1625,
+        "startChar": 32,
+        "endLine": 1625,
+        "endChar": 36
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_393ddec3",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1627,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "This is the default.",
+      "range": {
+        "startLine": 1627,
+        "startChar": 51,
+        "endLine": 1627,
+        "endChar": 61
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_f9198679",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1639,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "is_case_sensitive",
+      "range": {
+        "startLine": 1639,
+        "startChar": 32,
+        "endLine": 1639,
+        "endChar": 59
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_791fd65a",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1640,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "This is the default.",
+      "range": {
+        "startLine": 1640,
+        "startChar": 51,
+        "endLine": 1640,
+        "endChar": 61
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_d916ca49",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1656,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "rogue \u0027i\u0027",
+      "range": {
+        "startLine": 1656,
+        "startChar": 35,
+        "endLine": 1656,
+        "endChar": 36
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_b9778ea0",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1681,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T21:00:04Z",
+      "side": 1,
+      "message": "We can even assert the other tag hasn\u0027t been removed or changed.\n\n  self.assertEqual(project_tag_ref[0], tags[0])",
+      "range": {
+        "startLine": 1681,
+        "startChar": 8,
+        "endLine": 1681,
+        "endChar": 49
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
