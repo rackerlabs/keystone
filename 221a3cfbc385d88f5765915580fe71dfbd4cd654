@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_03462fc1",
+        "filename": "doc/source/getting-started/policy_mapping.rst",
+        "patchSetId": 21
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-28T20:12:04Z",
+      "side": 1,
+      "message": "The specification doesn\u0027t say anything about implementing HEAD for these calls, but this falls into a weird case where we have GET methods without corresponding HEAD APIs.\n\nActually - this is already implemented according to the proposed controller patches: \n\nhttps://review.openstack.org/#/c/499728/4/keystone/resource/routers.py@111\n\nWe should make sure to include them here and in the specification (which should be an easy approval).",
+      "range": {
+        "startLine": 41,
+        "startChar": 59,
+        "endLine": 41,
+        "endChar": 104
+      },
+      "revId": "221a3cfbc385d88f5765915580fe71dfbd4cd654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
