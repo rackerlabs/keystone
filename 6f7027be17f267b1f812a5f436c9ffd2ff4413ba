@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7f515b1d_79c916aa",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 888,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-09-28T21:07:11Z",
+      "side": 1,
+      "message": "This is a string, either a single tag or a list of tags separated by \u0027,\u0027.",
+      "parentUuid": "7f515b1d_beb9b4cc",
+      "range": {
+        "startLine": 888,
+        "startChar": 36,
+        "endLine": 888,
+        "endChar": 40
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f515b1d_debfd0a7",
         "filename": "keystone/resource/core.py",
         "patchSetId": 4
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "7f515b1d_39c71e99",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 889,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-09-28T21:07:11Z",
+      "side": 1,
+      "message": "will do",
+      "parentUuid": "7f515b1d_debfd0a7",
+      "range": {
+        "startLine": 889,
+        "startChar": 8,
+        "endLine": 889,
+        "endChar": 44
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f515b1d_7efd7c6c",
         "filename": "keystone/resource/core.py",
         "patchSetId": 4
@@ -59,6 +107,30 @@
       "writtenOn": "2017-09-28T21:00:04Z",
       "side": 1,
       "message": "Would it be possible to just have this return a list of full project references? I suppose that might not make sense in the backend. I was thinking it might be suboptimal to have the backend return a list of ids only for us to turn around and ask for the full references.",
+      "range": {
+        "startLine": 893,
+        "startChar": 34,
+        "endLine": 893,
+        "endChar": 55
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_d9b92a15",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 893,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-09-28T21:07:11Z",
+      "side": 1,
+      "message": "good point, will look into this",
+      "parentUuid": "7f515b1d_7efd7c6c",
       "range": {
         "startLine": 893,
         "startChar": 34,
@@ -151,6 +223,30 @@
       "writtenOn": "2017-09-28T21:00:04Z",
       "side": 1,
       "message": "If the project doesn\u0027t have tags, should this return None or an empty list?",
+      "range": {
+        "startLine": 922,
+        "startChar": 23,
+        "endLine": 922,
+        "endChar": 34
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_b961ceab",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 922,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-09-28T21:07:11Z",
+      "side": 1,
+      "message": "This could be project.get(\u0027tags\u0027, []) just in case. good catch",
+      "parentUuid": "7f515b1d_1e268816",
       "range": {
         "startLine": 922,
         "startChar": 23,
