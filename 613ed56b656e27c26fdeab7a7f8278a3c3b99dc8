@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_6c3941d5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T16:26:49Z",
+      "side": 1,
+      "message": "Is this waiting on more changes?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 3
+      },
+      "revId": "613ed56b656e27c26fdeab7a7f8278a3c3b99dc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_ac23b9a6",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1043,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T16:26:49Z",
+      "side": 1,
+      "message": "What inherits unit.TestCase now that it\u0027s removed from here? The BaseLDAPIdentity class inherits from other classes but they all subclass object.",
+      "range": {
+        "startLine": 1043,
+        "startChar": 6,
+        "endLine": 1043,
+        "endChar": 18
+      },
+      "revId": "613ed56b656e27c26fdeab7a7f8278a3c3b99dc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
