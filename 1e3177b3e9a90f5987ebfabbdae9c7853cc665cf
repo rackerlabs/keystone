@@ -34,6 +34,24 @@
       "revId": "1e3177b3e9a90f5987ebfabbdae9c7853cc665cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_fb3965a3",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2017-09-29T21:37:16Z",
+      "side": 1,
+      "message": "hmm, agreed that admin seems like an escape hatch there - basically just let admins do all the things. \n\nI agree on the service role not being a project scoped op, my concern is how many people we\u0027d break flipping that switch. Most installers i\u0027ve seen will create a services project and add the services role to it. We would need to fix everything immediately to use is_admin_project with that. \n\nMy point is not that you\u0027re wrong on this, but that if you split this debate out into another review I think we can merge the rest which will be the bigger win as deployments are pretty careful with the service role.",
+      "parentUuid": "7f515b1d_b59adc5e",
+      "revId": "1e3177b3e9a90f5987ebfabbdae9c7853cc665cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
