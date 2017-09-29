@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_8cd35d04",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T16:51:40Z",
+      "side": 1,
+      "message": "Missing link here, add bp microversions\n\nAlso, we should complete this card and document it in this commit message prior to merging this.\n\nhttps://trello.com/c/3AtmXIUs/11-microversions-assessment",
+      "range": {
+        "startLine": 21,
+        "startChar": 10,
+        "endLine": 21,
+        "endChar": 20
+      },
+      "revId": "3c4e10003ac29e4377ec07f8a0597f931d4400c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
