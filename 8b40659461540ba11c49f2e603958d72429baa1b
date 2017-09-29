@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_8ab90016",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T16:18:09Z",
+      "side": 1,
+      "message": "We should add this to the deprecated-as-of-queens bp and add a release note.",
+      "revId": "8b40659461540ba11c49f2e603958d72429baa1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_ca713878",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T16:18:09Z",
+      "side": 1,
+      "message": "We\u0027ll have to maintain this bit forever, right? This was formally handled by the middleware?",
+      "range": {
+        "startLine": 74,
+        "startChar": 8,
+        "endLine": 75,
+        "endChar": 60
+      },
+      "revId": "8b40659461540ba11c49f2e603958d72429baa1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_0a119004",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T16:18:09Z",
+      "side": 1,
+      "message": "+1 for less visual noise!",
+      "range": {
+        "startLine": 130,
+        "startChar": 4,
+        "endLine": 131,
+        "endChar": 28
+      },
+      "revId": "8b40659461540ba11c49f2e603958d72429baa1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_ca01383a",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T16:18:09Z",
+      "side": 1,
+      "message": "Just double checking, but we don\u0027t need an in-favor-of here because AuthContextMiddleware is invoked automatically, right?",
+      "revId": "8b40659461540ba11c49f2e603958d72429baa1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
