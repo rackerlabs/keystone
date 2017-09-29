@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_afde0b3b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T17:48:38Z",
+      "side": 1,
+      "message": "This bit here is confusing since it seems like we\u0027re using keystoneclient in this patch. This patch enables more clients than just python-keystoneclient. Any client writing to keystone HTTP API will be able to consume these new operators.",
+      "range": {
+        "startLine": 9,
+        "startChar": 40,
+        "endLine": 9,
+        "endChar": 54
+      },
+      "revId": "a4b243b1449403925597267856c44d262e0939dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_4fef97e8",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T17:48:38Z",
+      "side": 1,
+      "message": "This comment describes what can be derived from reading the code. This is a great opportunity to share *why* this logic is important to us (e.g. do we do this because using tags and filters is redundant? do they not work well when used together? etc..)",
+      "range": {
+        "startLine": 414,
+        "startChar": 10,
+        "endLine": 414,
+        "endChar": 69
+      },
+      "revId": "a4b243b1449403925597267856c44d262e0939dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_0fa4ffb8",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T17:48:38Z",
+      "side": 1,
+      "message": "This looks like it conflicts with the implementation for \u0027tags\u0027, \u0027tags-any\u0027, \u0027not-tags\u0027, and \u0027not-tags-any\u0027 in https://review.openstack.org/#/c/499728/4/keystone/resource/controllers.py\n\nMaybe this can be done with a little reuse so that it\u0027s easier to add support for new operators.",
+      "range": {
+        "startLine": 288,
+        "startChar": 8,
+        "endLine": 288,
+        "endChar": 23
+      },
+      "revId": "a4b243b1449403925597267856c44d262e0939dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_6fa01391",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T17:48:38Z",
+      "side": 1,
+      "message": "nit: This looks like it can all fit on a single line.",
+      "range": {
+        "startLine": 337,
+        "startChar": 16,
+        "endLine": 338,
+        "endChar": 26
+      },
+      "revId": "a4b243b1449403925597267856c44d262e0939dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_0f099f94",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 718,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T17:48:38Z",
+      "side": 1,
+      "message": "it doesn\u0027t look like this is used s/tags2/_/",
+      "range": {
+        "startLine": 718,
+        "startChar": 18,
+        "endLine": 718,
+        "endChar": 23
+      },
+      "revId": "a4b243b1449403925597267856c44d262e0939dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_8f58ef87",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 720,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T17:48:38Z",
+      "side": 1,
+      "message": "This looks like it builds a list of something (tags, partial tag strings?), but we only ever use the first element of this list on line 722.\n\nIf we only want a piece of a single tag, can\u0027t that be done more simply with:\n\n  # partial_limit is the character limit of the tag we want.\n  # E.g. partial_limit \u003d 2 would return \u0027bl\u0027 for tag \u0027blue\u0027\n  partial_limit \u003d 2\n  partial_tag_string \u003d tags[0][0:partial_limit]\n  # ... do stuff with partial_tag_string\n\nOr are we trying to test every substring of a tag? If that\u0027s the case, I think we\u0027re missing a loop?",
+      "range": {
+        "startLine": 719,
+        "startChar": 8,
+        "endLine": 720,
+        "endChar": 69
+      },
+      "revId": "a4b243b1449403925597267856c44d262e0939dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_cfcf0727",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 749,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T17:48:38Z",
+      "side": 1,
+      "message": "is this defined in the API WG standards somewhere?",
+      "range": {
+        "startLine": 749,
+        "startChar": 35,
+        "endLine": 749,
+        "endChar": 55
+      },
+      "revId": "a4b243b1449403925597267856c44d262e0939dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
