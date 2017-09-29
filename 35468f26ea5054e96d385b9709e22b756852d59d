@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_52b73e3b",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 629,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T18:06:04Z",
+      "side": 1,
+      "message": "You can make the same argument here with: \n\n  GET /role_assignments?group.id\u003d{user_id}\u0026scope.project.id\u003d{project_id}\n\nYou can also make a lot of these calls with domains. Maybe instead of explicitly calling out individual similarities, we can add a general statement at the top of this document saying the /v3/role_assignments API might be worth checking out.",
+      "revId": "35468f26ea5054e96d385b9709e22b756852d59d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
