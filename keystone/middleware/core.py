@@ -16,7 +16,6 @@ from oslo_log import log
 from oslo_log import versionutils
 from oslo_serialization import jsonutils
 
-from keystone.common import authorization
 from keystone.common import wsgi
 from keystone import exception
 
@@ -25,15 +24,28 @@ LOG = log.getLogger(__name__)
 
 
 class TokenAuthMiddleware(wsgi.Middleware):
-    def process_request(self, request):
-        context = request.environ.setdefault(wsgi.CONTEXT_ENV, {})
 
-        token = request.headers.get(authorization.AUTH_TOKEN_HEADER)
-        context['token_id'] = token
+    @versionutils.deprecated(
+        as_of=versionutils.deprecated.QUEENS,
+        what='TokenAuthMiddleware in the paste-ini pipeline.',
+        remove_in=+1)
+    def __init__(self, *args, **kwargs):
+        super(TokenAuthMiddleware, self).__init__(*args, **kwargs)
 
-        subject_token = request.headers.get(authorization.SUBJECT_TOKEN_HEADER)
-        if subject_token:
-            context['subject_token_id'] = subject_token
+        # NOTE(jamielennox): This is deprecated and emits a significant error
+        # message to make sure deployers update their deployments so in the
+        # future release upgrade the deployment does not break.
+        LOG.error('The token_auth middleware functionality has been '
+                  'merged into the main auth middleware '
+                  '(keystone.middleware.auth.AuthContextMiddleware). '
+                  '`admin_token_auth` must be removed from the '
+                  '[pipeline:api_v3], [pipeline:admin_api], and '
+                  '[pipeline:public_api] sections of your paste ini '
+                  'file. The [filter:token_auth] block will also '
+                  'need to be removed from your paste ini file. Failure '
+                  'to remove these elements from your paste ini file will '
+                  'result in keystone to no longer start/run when the '
+                  '`token_auth` is removed in the Rocky release.')
 
 
 class AdminTokenAuthMiddleware(wsgi.Middleware):

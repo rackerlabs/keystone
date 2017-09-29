@@ -23,7 +23,6 @@ from keystone import exception
 from keystone.federation import constants as federation_constants
 from keystone.federation import utils
 from keystone.i18n import _
-from keystone.middleware import core
 from keystone.models import token_model
 from keystone.token.providers import common
 
