@@ -141,7 +141,7 @@ class AuthContextMiddleware(auth_token.BaseAuthProtocol):
         # NOTE(notmorgan): This code is merged over from the admin token
         # middleware and now emits the security warning when the
         # conf.admin_token value is set.
-        token = request.headers.get(core.AUTH_TOKEN_HEADER)
+        token = request.headers.get(authorization.AUTH_TOKEN_HEADER)
         if CONF.admin_token and (token == CONF.admin_token):
             context_env['is_admin'] = True
             LOG.warning(
