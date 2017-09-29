@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_52905e95",
+        "filename": "doc/source/admin/identity-integrate-with-ldap.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T18:08:42Z",
+      "side": 1,
+      "message": "This is probably going to conflict with https://review.openstack.org/#/c/502507/",
+      "revId": "df7f9f7efc34b5c70ebf3031ce992575384410f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
