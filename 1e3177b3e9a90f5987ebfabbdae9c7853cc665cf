@@ -16,6 +16,24 @@
       "revId": "1e3177b3e9a90f5987ebfabbdae9c7853cc665cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_b59adc5e",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-09-29T20:06:26Z",
+      "side": 1,
+      "message": "Because the service role is used to do non-project scoped operations, namely to validate a token, and that is really not something that should be delegated by a project admin.\n\n$ grep -rni RULE_SERVICE_OR_ADMIN keystone/* \nBinary file keystone/common/policies/token_revocation.pyc matches\nkeystone/common/policies/token_revocation.py:20:        check_str\u003dbase.RULE_SERVICE_OR_ADMIN,\nkeystone/common/policies/base.py:31:RULE_SERVICE_OR_ADMIN \u003d \u0027rule:service_or_admin\u0027\nBinary file keystone/common/policies/base.pyc matches\nkeystone/common/policies/revoke_event.py:20:        check_str\u003dbase.RULE_SERVICE_OR_ADMIN,\nBinary file keystone/common/policies/revoke_event.pyc matches\nkeystone/common/policies/token.py:34:        check_str\u003dbase.RULE_SERVICE_OR_ADMIN,",
+      "parentUuid": "7f515b1d_84f22299",
+      "revId": "1e3177b3e9a90f5987ebfabbdae9c7853cc665cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
