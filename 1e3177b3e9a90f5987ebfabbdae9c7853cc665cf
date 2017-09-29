@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_84f22299",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2017-09-29T02:10:19Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem right to me. Why would i have the service role on the admin_project? I would love to see more roles used on admin_project, but i don\u0027t anticipate much use for service.\n\nAlso i see that sam brought this up in patch #9.",
+      "revId": "1e3177b3e9a90f5987ebfabbdae9c7853cc665cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
