@@ -1,0 +1,199 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_6c6701eb",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 19
+      },
+      "lineNbr": 1265,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T16:44:03Z",
+      "side": 1,
+      "message": "We should follow the conventions we covered in the PTG sessions: \n\nhttps://etherpad.openstack.org/p/queens-ptg-keystone-doc-cleanup\n\n  response_project_tags_body_required\n\nor we could do:\n\n  response_body_project_tags_required\n\nif that reads easier?",
+      "range": {
+        "startLine": 1265,
+        "startChar": 0,
+        "endLine": 1265,
+        "endChar": 26
+      },
+      "revId": "c473abb71f87f4d04f55acbea1cf4db9beddb76e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_2c5d8914",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 19
+      },
+      "lineNbr": 1456,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T16:44:03Z",
+      "side": 1,
+      "message": "same comment here.",
+      "range": {
+        "startLine": 1456,
+        "startChar": 0,
+        "endLine": 1456,
+        "endChar": 4
+      },
+      "revId": "c473abb71f87f4d04f55acbea1cf4db9beddb76e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_2cb2294a",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 19
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T16:44:03Z",
+      "side": 1,
+      "message": "nit: Forward slash*",
+      "range": {
+        "startLine": 16,
+        "startChar": 5,
+        "endLine": 16,
+        "endChar": 8
+      },
+      "revId": "c473abb71f87f4d04f55acbea1cf4db9beddb76e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_4cb7a53b",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 19
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T16:44:03Z",
+      "side": 1,
+      "message": "nit: add \u0027,\u0027 to be consistent with the above wording.",
+      "range": {
+        "startLine": 17,
+        "startChar": 5,
+        "endLine": 17,
+        "endChar": 11
+      },
+      "revId": "c473abb71f87f4d04f55acbea1cf4db9beddb76e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_6cda6178",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 19
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T16:44:03Z",
+      "side": 1,
+      "message": "nit: Missing an example here based on the conventions from the documentation session at the PTG?\n\nhttps://etherpad.openstack.org/p/queens-ptg-keystone-doc-cleanup",
+      "revId": "c473abb71f87f4d04f55acbea1cf4db9beddb76e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_8cc8fda5",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 19
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T16:44:03Z",
+      "side": 1,
+      "message": "Since there isn\u0027t any difference between this section and the GET section above it (besides the title), I wonder if we can collapse them somehow?",
+      "range": {
+        "startLine": 148,
+        "startChar": 0,
+        "endLine": 151,
+        "endChar": 58
+      },
+      "revId": "c473abb71f87f4d04f55acbea1cf4db9beddb76e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_6c48212c",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 19
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T16:44:03Z",
+      "side": 1,
+      "message": "nit: filter projects by tags.",
+      "range": {
+        "startLine": 374,
+        "startChar": 14,
+        "endLine": 374,
+        "endChar": 35
+      },
+      "revId": "c473abb71f87f4d04f55acbea1cf4db9beddb76e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_cc5835fb",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 19
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T16:44:03Z",
+      "side": 1,
+      "message": "nit: the `tags` query parameter*",
+      "revId": "c473abb71f87f4d04f55acbea1cf4db9beddb76e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_4c01e5ae",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 19
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T16:44:03Z",
+      "side": 1,
+      "message": "nit: The following example returns projects that ...\n\nThis can apply to other instances in this document, too.",
+      "range": {
+        "startLine": 424,
+        "startChar": 30,
+        "endLine": 424,
+        "endChar": 50
+      },
+      "revId": "c473abb71f87f4d04f55acbea1cf4db9beddb76e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
