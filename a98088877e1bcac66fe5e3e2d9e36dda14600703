@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_afcdebb7",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T17:24:34Z",
+      "side": 1,
+      "message": "We should add some tests that exposes the bug and ensures this fixes it.",
+      "range": {
+        "startLine": 368,
+        "startChar": 3,
+        "endLine": 369,
+        "endChar": 32
+      },
+      "revId": "a98088877e1bcac66fe5e3e2d9e36dda14600703",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
