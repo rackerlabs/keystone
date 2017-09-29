@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_aaaa7c15",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T16:20:32Z",
+      "side": 1,
+      "message": "Nice - thanks for updating for consistency. Let\u0027s make sure we update the specification, too!\n\nhttp://specs.openstack.org/openstack/keystone-specs/specs/keystone/queens/project-tags.html#proposed-changes",
+      "range": {
+        "startLine": 38,
+        "startChar": 16,
+        "endLine": 38,
+        "endChar": 18
+      },
+      "revId": "fc2cb8f076e678adbace0cacf137a7e9af416238",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
