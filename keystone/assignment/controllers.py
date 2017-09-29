@@ -49,6 +49,7 @@ class TenantAssignment(controller.V2Controller):
 
         """
         token_ref = authorization.get_token_ref(request.context_dict)
+        request.policy_complete = True  # no policy check required
 
         tenant_refs = (
             self.assignment_api.list_projects_for_user(token_ref.user_id))

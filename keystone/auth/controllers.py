@@ -109,6 +109,7 @@ class Auth(controller.V3Controller):
         include_catalog = 'nocatalog' not in request.params
 
         validate_issue_token_auth(auth)
+        request.policy_complete = True  # no policy to enforce here
 
         try:
             auth_info = core.AuthInfo.create(auth=auth)

@@ -289,6 +289,9 @@ class UserV3(controller.V3Controller):
         if password is None:
             raise exception.ValidationError(target='user',
                                             attribute='password')
+
+        request.policy_complete = True  # policy checked
+
         try:
             self.identity_api.change_password(
                 request, user_id, original_password,

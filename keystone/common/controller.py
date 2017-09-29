@@ -91,6 +91,8 @@ def protected(callback=None):
 
             protected_wrapper(
                 self, f, check_function, request, None, *args, **kwargs)
+
+            request.policy_complete = True
             return f(self, request, *args, **kwargs)
         return inner
     return wrapper
@@ -135,6 +137,8 @@ def filterprotected(*filters, **callback):
 
             protected_wrapper(
                 self, f, check_function, request, filter_attr, **kwargs)
+
+            request.policy_complete = True
             return f(self, request, filters, **kwargs)
         return wrapper
     return _filterprotected
@@ -160,6 +164,12 @@ def protected_wrapper(self, f, check_function, request, filter_attr,
 
 class V2Controller(wsgi.Application):
     """Base controller class for Identity API v2."""
+
+    def assert_admin(self, request):
+        # For a number of V2 operations assert_admin is the extent of their
+        # policy enforcement so we consider this checked.
+        super(V2Controller, self).assert_admin(request)
+        request.policy_complete = True
 
     def _normalize_domain_id(self, request, ref):
         """Fill in domain_id since v2 calls are not domain-aware.

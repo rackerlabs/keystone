@@ -51,6 +51,7 @@ class TrustV3(controller.V3Controller):
     def get_trust(self, request, trust_id):
         trust = self.trust_api.get_trust(trust_id)
         _trustor_trustee_only(trust, request.context.user_id)
+        request.policy_complete = True  # policy checked
         self._fill_in_roles(request.context_dict, trust)
         return TrustV3.wrap_member(request.context_dict, trust)
 

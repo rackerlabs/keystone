@@ -250,6 +250,14 @@ class Application(BaseApplication):
                                     context=req.context_dict,
                                     user_locale=best_match_language(req))
 
+        if not req.policy_complete:
+            LOG.error("This method call was somehow able to bypass policy "
+                      "enforcement. This is a keystone server bug, and so we "
+                      "are returning a 500 to prevent something bad happening "
+                      "until the code can be fixed.")
+
+            return webob.exc.HTTPInternalServerError()
+
         if result is None:
             return render_response(
                 status=(http_client.NO_CONTENT,

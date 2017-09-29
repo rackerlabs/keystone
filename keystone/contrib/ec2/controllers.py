@@ -112,7 +112,7 @@ class Ec2ControllerCommon(object):
         """
         raise exception.NotImplemented()
 
-    def _authenticate(self, credentials=None, ec2credentials=None):
+    def _authenticate(self, request, credentials=None, ec2credentials=None):
         """Common code shared between the V2 and V3 authenticate methods.
 
         :returns: user_ref, tenant_ref, roles_ref, catalog_ref
@@ -146,6 +146,8 @@ class Ec2ControllerCommon(object):
         except AssertionError as e:
             six.reraise(exception.Unauthorized, exception.Unauthorized(e),
                         sys.exc_info()[2])
+
+        request.policy_complete = True  # policy check has succeeded
 
         roles = self.assignment_api.get_roles_for_user_and_project(
             user_ref['id'], tenant_ref['id']
@@ -276,7 +278,7 @@ class Ec2Controller(Ec2ControllerCommon, controller.V2Controller):
     @controller.v2_ec2_deprecated
     def authenticate(self, request, credentials=None, ec2Credentials=None):
         (user_ref, project_ref, roles_ref, catalog_ref) = self._authenticate(
-            credentials=credentials, ec2credentials=ec2Credentials
+            request, credentials=credentials, ec2credentials=ec2Credentials
         )
 
         method_names = ['ec2credential']
@@ -292,6 +294,7 @@ class Ec2Controller(Ec2ControllerCommon, controller.V2Controller):
     def get_credential(self, request, user_id, credential_id):
         if not self._is_admin(request):
             self._assert_identity(request.context_dict, user_id)
+        request.policy_complete = True  # no policy required
         return super(Ec2Controller, self).get_credential(user_id,
                                                          credential_id)
 
@@ -299,12 +302,14 @@ class Ec2Controller(Ec2ControllerCommon, controller.V2Controller):
     def get_credentials(self, request, user_id):
         if not self._is_admin(request):
             self._assert_identity(request.context_dict, user_id)
+        request.policy_complete = True  # no policy required
         return super(Ec2Controller, self).get_credentials(user_id)
 
     @controller.v2_ec2_deprecated
     def create_credential(self, request, user_id, tenant_id):
         if not self._is_admin(request):
             self._assert_identity(request.context_dict, user_id)
+        request.policy_complete = True  # no policy required
         return super(Ec2Controller, self).create_credential(
             request, user_id, tenant_id)
 
@@ -380,9 +385,9 @@ class Ec2ControllerV3(Ec2ControllerCommon, controller.V3Controller):
         # check_protection to properly be able to perform policy enforcement.
         self.check_protection(request, prep_info, ref)
 
-    def authenticate(self, context, credentials=None, ec2Credentials=None):
+    def authenticate(self, request, credentials=None, ec2Credentials=None):
         (user_ref, project_ref, roles_ref, catalog_ref) = self._authenticate(
-            credentials=credentials, ec2credentials=ec2Credentials
+            request, credentials=credentials, ec2credentials=ec2Credentials
         )
 
         method_names = ['ec2credential']

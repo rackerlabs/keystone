@@ -72,12 +72,14 @@ class Routers(wsgi.RoutersBase):
 @dependency.requires('token_provider_api')
 class SimpleCert(controller.V3Controller):
 
-    def _get_certificate(self, name):
+    def _get_certificate(self, request, name):
         try:
             with open(name, 'r') as f:
                 body = f.read()
         except IOError:
             raise exception.CertificateFilesUnavailable()
+
+        request.policy_complete = True  # no policy check required
 
         # NOTE(jamielennox): We construct the webob Response ourselves here so
         # that we don't pass through the JSON encoding process.
@@ -85,8 +87,8 @@ class SimpleCert(controller.V3Controller):
         return webob.Response(body=body, headerlist=headers,
                               status="200 OK", charset='utf-8')
 
-    def get_ca_certificate(self, context):
-        return self._get_certificate(CONF.signing.ca_certs)
+    def get_ca_certificate(self, request):
+        return self._get_certificate(request, CONF.signing.ca_certs)
 
-    def list_certificates(self, context):
-        return self._get_certificate(CONF.signing.certfile)
+    def list_certificates(self, request):
+        return self._get_certificate(request, CONF.signing.certfile)

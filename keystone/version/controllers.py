@@ -58,9 +58,11 @@ class Extensions(wsgi.Application):
         return None
 
     def get_extensions_info(self, request):
+        request.policy_complete = True  # no policy required
         return {'extensions': {'values': list(self.extensions.values())}}
 
     def get_extension_info(self, request, extension_alias):
+        request.policy_complete = True  # no policy required
         try:
             return {'extension': self.extensions[extension_alias]}
         except KeyError:
@@ -161,7 +163,7 @@ class Version(wsgi.Application):
         return versions
 
     def get_versions(self, request):
-
+        request.policy_complete = True  # no policy to check here
         req_mime_type = v3_mime_type_best_match(request)
         if req_mime_type == MimeTypes.JSON_HOME:
             v3_json_home = request_v3_json_home('/v3')
@@ -180,6 +182,7 @@ class Version(wsgi.Application):
             })
 
     def get_version_v2(self, request):
+        request.policy_complete = True  # no policy to check here
         versions = self._get_versions_list(request.context_dict)
         if 'v2.0' in _VERSIONS:
             return wsgi.render_response(body={
@@ -200,6 +203,7 @@ class Version(wsgi.Application):
         }
 
     def get_version_v3(self, request):
+        request.policy_complete = True  # no policy to check here
         versions = self._get_versions_list(request.context_dict)
         if 'v3' in _VERSIONS:
             req_mime_type = v3_mime_type_best_match(request)

@@ -71,12 +71,14 @@ class Auth(controller.V2Controller):
 
     @controller.v2_deprecated
     def ca_cert(self, request):
+        request.policy_complete = True  # no need to policy check here
         with open(CONF.signing.ca_certs, 'r') as ca_file:
             data = ca_file.read()
         return data
 
     @controller.v2_deprecated
     def signing_cert(self, request):
+        request.policy_complete = True  # no need to policy check here
         with open(CONF.signing.certfile, 'r') as cert_file:
             data = cert_file.read()
         return data
@@ -103,6 +105,7 @@ class Auth(controller.V2Controller):
         Alternatively, this call accepts auth with only a token and tenant
         that will return a token that is scoped to that tenant.
         """
+        request.policy_complete = True  # no need to policy check here
         method = authentication_method_generator(request, auth)
         user_ref, project_id, expiry, bind, audit_id = (
             method.authenticate(request, auth)

@@ -232,6 +232,8 @@ class OAuthControllerV3(controller.V3Controller):
         consumer_id = oauth_headers.get('oauth_consumer_key')
         requested_project_id = request.headers.get('Requested-Project-Id')
 
+        request.policy_complete = True  # no policy check needed here
+
         if not consumer_id:
             raise exception.ValidationError(
                 attribute='oauth_consumer_key', target='request')
@@ -288,6 +290,8 @@ class OAuthControllerV3(controller.V3Controller):
         consumer_id = oauth_headers.get('oauth_consumer_key')
         request_token_id = oauth_headers.get('oauth_token')
         oauth_verifier = oauth_headers.get('oauth_verifier')
+
+        request.policy_complete = True  # no policy check needed here
 
         if not consumer_id:
             raise exception.ValidationError(

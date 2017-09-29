@@ -36,6 +36,7 @@ LOG = logging.getLogger(__name__)
 class Request(webob.Request):
 
     _context_dict = None
+    policy_complete = False
 
     def _get_context_dict(self):
         # allow middleware up the stack to provide context, params and headers.

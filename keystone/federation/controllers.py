@@ -310,6 +310,7 @@ class Auth(auth_controllers.Auth):
             }
         }
 
+        request.policy_complete = True  # no policy check here
         return self.authenticate_for_token(request, auth=auth)
 
     def federated_sso_auth(self, request, protocol_id):
@@ -399,6 +400,7 @@ class Auth(auth_controllers.Auth):
         :returns: SAML Assertion based on properties from the token
         """
         validation.lazy_validate(schema.saml_create, auth)
+        request.policy_complete = True  # no policy check needed
         t = self._create_base_saml_assertion(request.context_dict, auth)
         (response, service_provider) = t
 
@@ -415,6 +417,7 @@ class Auth(auth_controllers.Auth):
         :returns: ECP Assertion based on properties from the token
         """
         validation.lazy_validate(schema.saml_create, auth)
+        request.policy_complete = True  # no policy check needed
         t = self._create_base_saml_assertion(request.context_dict, auth)
         (saml_assertion, service_provider) = t
         relay_state_prefix = service_provider['relay_state_prefix']
@@ -536,8 +539,9 @@ class ServiceProvider(_ControllerBase):
 class SAMLMetadataV3(_ControllerBase):
     member_name = 'metadata'
 
-    def get_metadata(self, context):
+    def get_metadata(self, request):
         metadata_path = CONF.saml.idp_metadata_path
+        request.policy_complete = True  # no policy check needed
         try:
             with open(metadata_path, 'r') as metadata_handler:
                 metadata = metadata_handler.read()
