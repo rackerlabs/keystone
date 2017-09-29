@@ -1,0 +1,8 @@
+---
+prelude: >
+  The token_auth middleware was rolled into keystone and the middleware
+  deprecated.
+upgrade:
+  - Remove token_auth from your keystone paste.ini file.
+deprecations:
+  - The keystone.middleware.core:TokenAuthMiddleware is deprecated for removal.
