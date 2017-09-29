@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "7f515b1d_cfe8277d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T17:56:09Z",
+      "side": 1,
+      "message": "This is all based on the documentation session we had at the PTG about better documentation organization. We should note that here.",
+      "revId": "29f89cb64285ee8b1396da07404bec4c1509a784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_cf3947f2",
+        "filename": "api-ref/source/v3/credentials.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T17:56:09Z",
+      "side": 1,
+      "message": "We can also update these to match the new convention we established in https://etherpad.openstack.org/p/queens-ptg-keystone-doc-cleanup\n\nmaybe:\n\n  request_body_credential_required\n\nor\n\n  request_credential_body_required",
+      "range": {
+        "startLine": 40,
+        "startChar": 17,
+        "endLine": 40,
+        "endChar": 27
+      },
+      "revId": "29f89cb64285ee8b1396da07404bec4c1509a784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf57530f_35d90583",
         "filename": "api-ref/source/v3/credentials.inc",
         "patchSetId": 1
@@ -13,6 +53,30 @@
       "writtenOn": "2017-09-20T15:55:17Z",
       "side": 1,
       "message": "We should definitely clean up these status codes in a later patch to match the other sections where they are in tables and in order.",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 57
+      },
+      "revId": "29f89cb64285ee8b1396da07404bec4c1509a784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_6f013338",
+        "filename": "api-ref/source/v3/credentials.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T17:56:09Z",
+      "side": 1,
+      "message": "++ we should make this a template example for others to use as a reference/example.",
+      "parentUuid": "bf57530f_35d90583",
       "range": {
         "startLine": 70,
         "startChar": 0,
