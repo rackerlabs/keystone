@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_721fda07",
+        "filename": "api-ref/source/v3/policies.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-09-29T18:12:30Z",
+      "side": 1,
+      "message": "I agree with this statement, but there isn\u0027t anything enforcing this in code. If an operator goes to use this, they won\u0027t see a deprecation warning. We should ensure that happens before we merge this.",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 10,
+        "endChar": 29
+      },
+      "revId": "007fb5251a85ee56c698022bc24dcc8f098e60c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
