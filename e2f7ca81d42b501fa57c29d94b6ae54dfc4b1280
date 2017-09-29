@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5ff73747_9336e650",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-09-29T20:06:26Z",
+      "side": 1,
+      "message": "Please stop reviewing these.  You are only doing harm.  If you are willing to do the work to actually fix this, fine. If not, then you should not be holding up the bug fix.\n\nThis is absolutely the right fix for the way the default policy file was defined before.\n\nThere is nothing that is project-specific policy inside keystone.",
+      "parentUuid": "5ff73747_13c3f658",
+      "revId": "e2f7ca81d42b501fa57c29d94b6ae54dfc4b1280",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ff73747_53c17fe4",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 20
@@ -98,6 +116,30 @@
       "writtenOn": "2017-04-28T20:40:37Z",
       "side": 1,
       "message": "I believe we\u0027re trying to get rid of default_domain_id, not start using it in more places...",
+      "range": {
+        "startLine": 261,
+        "startChar": 42,
+        "endLine": 261,
+        "endChar": 59
+      },
+      "revId": "e2f7ca81d42b501fa57c29d94b6ae54dfc4b1280",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_5353be6b",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-09-29T20:06:26Z",
+      "side": 1,
+      "message": "No choice here.",
+      "parentUuid": "5ff73747_b87420d0",
       "range": {
         "startLine": 261,
         "startChar": 42,
