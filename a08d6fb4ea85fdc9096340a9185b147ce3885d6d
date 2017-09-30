@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_13054511",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 26548
+      },
+      "writtenOn": "2017-09-30T03:14:39Z",
+      "side": 1,
+      "message": "for?",
+      "revId": "a08d6fb4ea85fdc9096340a9185b147ce3885d6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_3302810b",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 26548
+      },
+      "writtenOn": "2017-09-30T03:14:39Z",
+      "side": 1,
+      "message": "Also appeared here",
+      "revId": "a08d6fb4ea85fdc9096340a9185b147ce3885d6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
