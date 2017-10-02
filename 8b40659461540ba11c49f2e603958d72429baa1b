@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "7f515b1d_e0365003",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2017-10-02T21:44:50Z",
+      "side": 1,
+      "message": "I honestly don\u0027t think it\u0027s required at all. Part of my goal when changing all the controllers to pass around the full request object was to deprecate this whole context_dict concept and just get what you need from the request.\n\nBut for now it was quicker and easier to add this here.\n\nOnce it\u0027s internal like this it\u0027s just a matter of refactoring it away.",
+      "parentUuid": "7f515b1d_ca713878",
+      "range": {
+        "startLine": 74,
+        "startChar": 8,
+        "endLine": 75,
+        "endChar": 60
+      },
+      "revId": "8b40659461540ba11c49f2e603958d72429baa1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f515b1d_0a119004",
         "filename": "keystone/common/request.py",
         "patchSetId": 1
@@ -76,6 +100,24 @@
       "writtenOn": "2017-09-29T16:18:09Z",
       "side": 1,
       "message": "Just double checking, but we don\u0027t need an in-favor-of here because AuthContextMiddleware is invoked automatically, right?",
+      "revId": "8b40659461540ba11c49f2e603958d72429baa1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_a03cd8e0",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2017-10-02T21:44:50Z",
+      "side": 1,
+      "message": "I entirely copied this from the example below. But yea, it just goes away so you shouldn\u0027t need to reference anything else.",
+      "parentUuid": "7f515b1d_ca01383a",
       "revId": "8b40659461540ba11c49f2e603958d72429baa1b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
