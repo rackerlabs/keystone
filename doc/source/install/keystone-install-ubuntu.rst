@@ -25,7 +25,7 @@ create a database.
 
    .. code-block:: console
 
-      MariaDB [(none)]> CREATE DATABASE keystone;
+      mysql> CREATE DATABASE keystone;
 
    .. end
 
@@ -33,9 +33,9 @@ create a database.
 
    .. code-block:: console
 
-      MariaDB [(none)]> GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'localhost' \
+      mysql> GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'localhost' \
       IDENTIFIED BY 'KEYSTONE_DBPASS';
-      MariaDB [(none)]> GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'%' \
+      mysql> GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'%' \
       IDENTIFIED BY 'KEYSTONE_DBPASS';
 
    .. end
