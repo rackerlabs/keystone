@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "7f515b1d_5c0cba93",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-10-03T22:50:52Z",
+      "side": 1,
+      "message": "This kept on bugging me on the back of my mind as I wrote this and the tags code simultaneously.. I couldn\u0027t think of an elegant way to combine them together.. but let me think about this again.",
+      "parentUuid": "7f515b1d_0fa4ffb8",
+      "range": {
+        "startLine": 288,
+        "startChar": 8,
+        "endLine": 288,
+        "endChar": 23
+      },
+      "revId": "a4b243b1449403925597267856c44d262e0939dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f515b1d_6fa01391",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 8
@@ -128,6 +152,30 @@
       "writtenOn": "2017-09-29T17:48:38Z",
       "side": 1,
       "message": "This looks like it builds a list of something (tags, partial tag strings?), but we only ever use the first element of this list on line 722.\n\nIf we only want a piece of a single tag, can\u0027t that be done more simply with:\n\n  # partial_limit is the character limit of the tag we want.\n  # E.g. partial_limit \u003d 2 would return \u0027bl\u0027 for tag \u0027blue\u0027\n  partial_limit \u003d 2\n  partial_tag_string \u003d tags[0][0:partial_limit]\n  # ... do stuff with partial_tag_string\n\nOr are we trying to test every substring of a tag? If that\u0027s the case, I think we\u0027re missing a loop?",
+      "range": {
+        "startLine": 719,
+        "startChar": 8,
+        "endLine": 720,
+        "endChar": 69
+      },
+      "revId": "a4b243b1449403925597267856c44d262e0939dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_1ca1a296",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 720,
+      "author": {
+        "id": 23659
+      },
+      "writtenOn": "2017-10-03T22:50:52Z",
+      "side": 1,
+      "message": "The former. You are right. There are much simpler ways than having a for loop.",
+      "parentUuid": "7f515b1d_8f58ef87",
       "range": {
         "startLine": 719,
         "startChar": 8,
