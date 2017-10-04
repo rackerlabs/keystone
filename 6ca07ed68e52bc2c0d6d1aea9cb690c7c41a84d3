@@ -16,6 +16,24 @@
       "revId": "6ca07ed68e52bc2c0d6d1aea9cb690c7c41a84d3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_0d627917",
+        "filename": "keystone/policy/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-10-04T14:39:07Z",
+      "side": 1,
+      "message": "without microversions, we don\u0027t have a mechanism to remove APIs, so there can be no removal plan at this point.",
+      "parentUuid": "7f515b1d_85f1a304",
+      "revId": "6ca07ed68e52bc2c0d6d1aea9cb690c7c41a84d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
