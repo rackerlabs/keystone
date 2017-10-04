@@ -96,6 +96,53 @@
     },
     {
       "key": {
+        "uuid": "7f515b1d_2a72bee4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 889,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-04T12:41:29Z",
+      "side": 1,
+      "message": "I\u0027d suggest either make thsi a list of tags or call it tags_string or something like that",
+      "parentUuid": "7f515b1d_debfd0a7",
+      "range": {
+        "startLine": 889,
+        "startChar": 8,
+        "endLine": 889,
+        "endChar": 44
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_6a179653",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 892,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-04T12:41:29Z",
+      "side": 1,
+      "message": "replace all this by\n\n    tag_list \u003d tags.split(\u0027,\u0027)\n\nit doesn\u0027t matter if a , is present",
+      "range": {
+        "startLine": 890,
+        "startChar": 0,
+        "endLine": 892,
+        "endChar": 38
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f515b1d_7efd7c6c",
         "filename": "keystone/resource/core.py",
         "patchSetId": 4
@@ -159,6 +206,29 @@
         "startChar": 33,
         "endLine": 897,
         "endChar": 66
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_c5267bbb",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 902,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-04T12:41:29Z",
+      "side": 1,
+      "message": "so we\u0027re not returning duplicated entry ?",
+      "range": {
+        "startLine": 901,
+        "startChar": 0,
+        "endLine": 902,
+        "endChar": 27
       },
       "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -247,6 +317,30 @@
       "side": 1,
       "message": "This could be project.get(\u0027tags\u0027, []) just in case. good catch",
       "parentUuid": "7f515b1d_1e268816",
+      "range": {
+        "startLine": 922,
+        "startChar": 23,
+        "endLine": 922,
+        "endChar": 34
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_e53057eb",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 922,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-04T12:41:29Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7f515b1d_b961ceab",
       "range": {
         "startLine": 922,
         "startChar": 23,
