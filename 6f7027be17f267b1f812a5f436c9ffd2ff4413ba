@@ -120,6 +120,30 @@
     },
     {
       "key": {
+        "uuid": "7f515b1d_0aeff4b0",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 889,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-04T20:13:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f515b1d_2a72bee4",
+      "range": {
+        "startLine": 889,
+        "startChar": 8,
+        "endLine": 889,
+        "endChar": 44
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f515b1d_6a179653",
         "filename": "keystone/resource/core.py",
         "patchSetId": 4
@@ -131,6 +155,30 @@
       "writtenOn": "2017-10-04T12:41:29Z",
       "side": 1,
       "message": "replace all this by\n\n    tag_list \u003d tags.split(\u0027,\u0027)\n\nit doesn\u0027t matter if a , is present",
+      "range": {
+        "startLine": 890,
+        "startChar": 0,
+        "endLine": 892,
+        "endChar": 38
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_8a38843d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 892,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-04T20:13:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f515b1d_6a179653",
       "range": {
         "startLine": 890,
         "startChar": 0,
@@ -190,6 +238,30 @@
     },
     {
       "key": {
+        "uuid": "7f515b1d_6a3d482b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 893,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-04T20:13:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f515b1d_d9b92a15",
+      "range": {
+        "startLine": 893,
+        "startChar": 34,
+        "endLine": 893,
+        "endChar": 55
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f515b1d_fef04c93",
         "filename": "keystone/resource/core.py",
         "patchSetId": 4
@@ -213,6 +285,30 @@
     },
     {
       "key": {
+        "uuid": "7f515b1d_2a4750bf",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 897,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-04T20:13:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f515b1d_fef04c93",
+      "range": {
+        "startLine": 897,
+        "startChar": 33,
+        "endLine": 897,
+        "endChar": 66
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f515b1d_c5267bbb",
         "filename": "keystone/resource/core.py",
         "patchSetId": 4
@@ -224,6 +320,30 @@
       "writtenOn": "2017-10-04T12:41:29Z",
       "side": 1,
       "message": "so we\u0027re not returning duplicated entry ?",
+      "range": {
+        "startLine": 901,
+        "startChar": 0,
+        "endLine": 902,
+        "endChar": 27
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_9f49eb33",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 902,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-04T20:13:11Z",
+      "side": 1,
+      "message": "No, we will just silently \"fail\" and say that the project contains the tag.",
+      "parentUuid": "7f515b1d_c5267bbb",
       "range": {
         "startLine": 901,
         "startChar": 0,
@@ -353,6 +473,30 @@
     },
     {
       "key": {
+        "uuid": "7f515b1d_ca179ca3",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 922,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-04T20:13:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f515b1d_e53057eb",
+      "range": {
+        "startLine": 922,
+        "startChar": 23,
+        "endLine": 922,
+        "endChar": 34
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f515b1d_de4230ab",
         "filename": "keystone/resource/core.py",
         "patchSetId": 4
@@ -387,6 +531,30 @@
       "writtenOn": "2017-09-28T21:00:04Z",
       "side": 1,
       "message": "Suggest a wording that is somewhat consistent with the other documentation strings:\n\n  Overwrite existing project tags with a list of new tags",
+      "range": {
+        "startLine": 925,
+        "startChar": 11,
+        "endLine": 925,
+        "endChar": 69
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_aa0c6094",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 925,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-04T20:13:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f515b1d_fee16c9c",
       "range": {
         "startLine": 925,
         "startChar": 11,
@@ -445,6 +613,30 @@
     },
     {
       "key": {
+        "uuid": "7f515b1d_6a266819",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 941,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-04T20:13:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f515b1d_1e544852",
+      "range": {
+        "startLine": 940,
+        "startChar": 8,
+        "endLine": 941,
+        "endChar": 35
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f515b1d_3e8a64be",
         "filename": "keystone/tests/unit/resource/test_backends.py",
         "patchSetId": 4
@@ -456,6 +648,30 @@
       "writtenOn": "2017-09-28T21:00:04Z",
       "side": 1,
       "message": "nit: number_of_tags ?",
+      "range": {
+        "startLine": 1541,
+        "startChar": 39,
+        "endLine": 1541,
+        "endChar": 47
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_0a1db4bc",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1541,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-04T20:13:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f515b1d_3e8a64be",
       "range": {
         "startLine": 1541,
         "startChar": 39,
@@ -514,6 +730,30 @@
     },
     {
       "key": {
+        "uuid": "7f515b1d_aa8100c6",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1548,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-04T20:13:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f515b1d_3eb3849a",
+      "range": {
+        "startLine": 1548,
+        "startChar": 17,
+        "endLine": 1548,
+        "endChar": 21
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f515b1d_be4d349b",
         "filename": "keystone/tests/unit/resource/test_backends.py",
         "patchSetId": 4
@@ -525,6 +765,30 @@
       "writtenOn": "2017-09-28T21:00:04Z",
       "side": 1,
       "message": "nit: we could also assert this value is an empty list.",
+      "range": {
+        "startLine": 1586,
+        "startChar": 34,
+        "endLine": 1586,
+        "endChar": 45
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_ea601838",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1586,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-04T20:13:11Z",
+      "side": 1,
+      "message": "This fails when asserting against an empty list, I think the testcase setup creates other projects as well that are returned.",
+      "parentUuid": "7f515b1d_be4d349b",
       "range": {
         "startLine": 1586,
         "startChar": 34,
@@ -571,6 +835,30 @@
       "writtenOn": "2017-09-28T21:00:04Z",
       "side": 1,
       "message": "nit: this is the default, so we don\u0027t need to specify it here.",
+      "range": {
+        "startLine": 1598,
+        "startChar": 60,
+        "endLine": 1598,
+        "endChar": 61
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_ca655c47",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1598,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-04T20:13:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f515b1d_de28f097",
       "range": {
         "startLine": 1598,
         "startChar": 60,
@@ -675,6 +963,30 @@
     },
     {
       "key": {
+        "uuid": "7f515b1d_aa5a2080",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1639,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-04T20:13:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f515b1d_f9198679",
+      "range": {
+        "startLine": 1639,
+        "startChar": 32,
+        "endLine": 1639,
+        "endChar": 59
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f515b1d_791fd65a",
         "filename": "keystone/tests/unit/resource/test_backends.py",
         "patchSetId": 4
@@ -709,6 +1021,30 @@
       "writtenOn": "2017-09-28T21:00:04Z",
       "side": 1,
       "message": "rogue \u0027i\u0027",
+      "range": {
+        "startLine": 1656,
+        "startChar": 35,
+        "endLine": 1656,
+        "endChar": 36
+      },
+      "revId": "6f7027be17f267b1f812a5f436c9ffd2ff4413ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_8a5f6471",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1656,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-04T20:13:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f515b1d_d916ca49",
       "range": {
         "startLine": 1656,
         "startChar": 35,
