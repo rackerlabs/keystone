@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7f515b1d_589a63c5",
+        "filename": "api-ref/source/v3/policies.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-10-04T23:03:44Z",
+      "side": 1,
+      "message": "I would reword this to a more comprehensive sentence, something explaining that although we had the API in place, it was never fully implemented and used.",
+      "range": {
+        "startLine": 9,
+        "startChar": 40,
+        "endLine": 10,
+        "endChar": 11
+      },
+      "revId": "6ca07ed68e52bc2c0d6d1aea9cb690c7c41a84d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f515b1d_85f1a304",
         "filename": "keystone/policy/controllers.py",
         "patchSetId": 2
