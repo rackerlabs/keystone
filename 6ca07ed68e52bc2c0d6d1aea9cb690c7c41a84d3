@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_85f1a304",
+        "filename": "keystone/policy/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-04T12:45:39Z",
+      "side": 1,
+      "message": "when is this going to be removed? I guess we\u0027re getting in the default behavior here that might be 2 releases?",
+      "revId": "6ca07ed68e52bc2c0d6d1aea9cb690c7c41a84d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
