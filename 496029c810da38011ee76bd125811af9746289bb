@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_eeaa5717",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-05T10:47:55Z",
+      "side": 1,
+      "message": "Something like \"Raise Unauthorized for trusts without remaining uses \" would be more descriptive",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 42
+      },
+      "revId": "496029c810da38011ee76bd125811af9746289bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_aebd7f69",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-05T10:47:55Z",
+      "side": 1,
+      "message": "Please expand a bit more here ... why is it better to raise Unauthorized? TrustUseLimitReached seems to be pretty accurate within its description message. Is this for consistency?",
+      "range": {
+        "startLine": 9,
+        "startChar": 36,
+        "endLine": 10,
+        "endChar": 25
+      },
+      "revId": "496029c810da38011ee76bd125811af9746289bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
