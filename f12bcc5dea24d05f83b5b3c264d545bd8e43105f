@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7f515b1d_1a601ba5",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-06T20:47:15Z",
+      "side": 1,
+      "message": "This gets passed in from the controller, I\u0027ll check out your comment there about moving it to the manager.",
+      "parentUuid": "7f515b1d_83acaa35",
+      "range": {
+        "startLine": 187,
+        "startChar": 8,
+        "endLine": 187,
+        "endChar": 24
+      },
+      "revId": "f12bcc5dea24d05f83b5b3c264d545bd8e43105f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f515b1d_c3baa26c",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 8
