@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f515b1d_ba10e7a9",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-06T20:59:27Z",
+      "side": 1,
+      "message": "Good point. This if statement limits the usage of tags query parameters to only being used with each other. I\u0027m not sure if that was the original intent or not.",
+      "parentUuid": "7f515b1d_c672b0ad",
+      "revId": "7f91cfa080124435bf9d0a1a9b3e01468a37baab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f515b1d_a6ae94e4",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 8
