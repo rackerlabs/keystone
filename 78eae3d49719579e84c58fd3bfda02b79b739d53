@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_382e55fa",
+        "filename": "api-ref/source/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-10-06T08:23:51Z",
+      "side": 0,
+      "message": "/home/jenkins/workspace/gate-keystone-api-ref/api-ref/source/v2-ext/index.rst:document isn\u0027t included in any toctree\n\nDoes the file \"/v2-ext/index.rst\" still needed?",
+      "range": {
+        "startLine": 16,
+        "startChar": 4,
+        "endLine": 16,
+        "endChar": 16
+      },
+      "revId": "78eae3d49719579e84c58fd3bfda02b79b739d53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
