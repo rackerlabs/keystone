@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_83acaa35",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-06T17:58:58Z",
+      "side": 1,
+      "message": "is this noop?",
+      "range": {
+        "startLine": 187,
+        "startChar": 8,
+        "endLine": 187,
+        "endChar": 24
+      },
+      "revId": "f12bcc5dea24d05f83b5b3c264d545bd8e43105f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_c3baa26c",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-06T17:58:58Z",
+      "side": 1,
+      "message": "do we need to group?",
+      "range": {
+        "startLine": 209,
+        "startChar": 38,
+        "endLine": 209,
+        "endChar": 70
+      },
+      "revId": "f12bcc5dea24d05f83b5b3c264d545bd8e43105f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_6392cef8",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-06T17:58:58Z",
+      "side": 1,
+      "message": "I don\u0027t think this is necessary, does it? but being explicit doesn\u0027t hurt.",
+      "range": {
+        "startLine": 305,
+        "startChar": 8,
+        "endLine": 305,
+        "endChar": 61
+      },
+      "revId": "f12bcc5dea24d05f83b5b3c264d545bd8e43105f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_c35e2275",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-06T17:58:58Z",
+      "side": 1,
+      "message": "we could simply do:\n\n    return [tag.name for tag in self._tags]",
+      "range": {
+        "startLine": 315,
+        "startChar": 12,
+        "endLine": 318,
+        "endChar": 31
+      },
+      "revId": "f12bcc5dea24d05f83b5b3c264d545bd8e43105f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_a3032642",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-06T17:58:58Z",
+      "side": 1,
+      "message": "_reset_tags ? or something like that?\n\n_overwrite_tags seems to me like we were receiving the new tags to override the existing ones, but this is just deleting the current tags",
+      "range": {
+        "startLine": 337,
+        "startChar": 8,
+        "endLine": 337,
+        "endChar": 23
+      },
+      "revId": "f12bcc5dea24d05f83b5b3c264d545bd8e43105f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_c3a18248",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-06T17:58:58Z",
+      "side": 1,
+      "message": "removing from the list means the tags will be deleted, since we\u0027re using cascade\u003d\u0027delete-orphan\u0027, correct? we should have a test for this",
+      "range": {
+        "startLine": 340,
+        "startChar": 23,
+        "endLine": 340,
+        "endChar": 29
+      },
+      "revId": "f12bcc5dea24d05f83b5b3c264d545bd8e43105f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_a388c6c5",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-06T17:58:58Z",
+      "side": 1,
+      "message": "if both are primary keys, doesn\u0027t it mean they are unique already?",
+      "range": {
+        "startLine": 355,
+        "startChar": 4,
+        "endLine": 355,
+        "endChar": 66
+      },
+      "revId": "f12bcc5dea24d05f83b5b3c264d545bd8e43105f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
