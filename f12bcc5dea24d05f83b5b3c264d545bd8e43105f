@@ -117,6 +117,30 @@
     },
     {
       "key": {
+        "uuid": "7f515b1d_7a0dcf33",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-06T20:38:20Z",
+      "side": 1,
+      "message": "This was my fault. I was under the assumption the original implementation of this method accepted a list of tags, removed the originals, and set the new tags (not sure why I thought that was the case). But that\u0027s the reason why I felt compelled to suggest a new name in Patch Set 4.\n\nIf it\u0027s more appropriate to rename it back to what it was, I retract my previous comment. Sorry for the confusion on my part!",
+      "parentUuid": "7f515b1d_a3032642",
+      "range": {
+        "startLine": 337,
+        "startChar": 8,
+        "endLine": 337,
+        "endChar": 23
+      },
+      "revId": "f12bcc5dea24d05f83b5b3c264d545bd8e43105f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f515b1d_c3a18248",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 8
@@ -151,6 +175,30 @@
       "writtenOn": "2017-10-06T17:58:58Z",
       "side": 1,
       "message": "if both are primary keys, doesn\u0027t it mean they are unique already?",
+      "range": {
+        "startLine": 355,
+        "startChar": 4,
+        "endLine": 355,
+        "endChar": 66
+      },
+      "revId": "f12bcc5dea24d05f83b5b3c264d545bd8e43105f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_1a76dba5",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-06T20:38:20Z",
+      "side": 1,
+      "message": "I think what this is doing is saying a unique constraint exists between the project_id and name attributes of the tag.",
+      "parentUuid": "7f515b1d_a388c6c5",
       "range": {
         "startLine": 355,
         "startChar": 4,
