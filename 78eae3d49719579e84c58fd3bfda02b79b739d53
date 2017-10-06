@@ -22,6 +22,30 @@
       "revId": "78eae3d49719579e84c58fd3bfda02b79b739d53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_a3a9e9dd",
+        "filename": "api-ref/source/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-06T15:29:50Z",
+      "side": 0,
+      "message": "Yes - because there are still things listed in that directory that I haven\u0027t removed.\n\nI was attempting to keep this change self contained so that Suramya could use it as an example for removing the rest of the v2 docs. I\u0027ll add this back in for the time being until we get another patch up to remove all of it.",
+      "parentUuid": "7f515b1d_382e55fa",
+      "range": {
+        "startLine": 16,
+        "startChar": 4,
+        "endLine": 16,
+        "endChar": 16
+      },
+      "revId": "78eae3d49719579e84c58fd3bfda02b79b739d53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
