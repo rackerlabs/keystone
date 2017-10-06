@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_9be66344",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/parameters.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-10-06T08:48:50Z",
+      "side": 1,
+      "message": "Given this is true, any \"GET\" or reponse of \"CREATE\" should return \"domain_id\" in the body, this makes me think it is required for such API, so you might need update those API as well.",
+      "range": {
+        "startLine": 45,
+        "startChar": 70,
+        "endLine": 47,
+        "endChar": 54
+      },
+      "revId": "e8302029a1376ec4138f83eca4940bd99236d40f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_5bd22b5e",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/parameters.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-10-06T08:48:50Z",
+      "side": 1,
+      "message": "same.",
+      "range": {
+        "startLine": 59,
+        "startChar": 2,
+        "endLine": 59,
+        "endChar": 17
+      },
+      "revId": "e8302029a1376ec4138f83eca4940bd99236d40f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
