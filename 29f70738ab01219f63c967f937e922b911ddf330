@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_26e98419",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 893,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-06T18:11:36Z",
+      "side": 1,
+      "message": "this is really confusing/not easy to understand. I could only understand this after looking at the controller/router patch that does the tag operator -\u003e backend method name mapping. please see my suggestion in that patch",
+      "range": {
+        "startLine": 892,
+        "startChar": 25,
+        "endLine": 893,
+        "endChar": 59
+      },
+      "revId": "29f70738ab01219f63c967f937e922b911ddf330",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
