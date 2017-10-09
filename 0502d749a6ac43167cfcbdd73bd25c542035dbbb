@@ -34,6 +34,24 @@
       "revId": "0502d749a6ac43167cfcbdd73bd25c542035dbbb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_f03889d3",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-09T20:58:13Z",
+      "side": 1,
+      "message": "Not sure what I was thinking with the paste files. I must have meant configuration files. Regardless, this makes sense.",
+      "parentUuid": "7f515b1d_57af1a29",
+      "revId": "0502d749a6ac43167cfcbdd73bd25c542035dbbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
