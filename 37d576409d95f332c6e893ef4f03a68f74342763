@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_a1e1b79d",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-09T11:16:25Z",
+      "side": 1,
+      "message": "this seems pretty hard coded ... it would be better if we had constants for these events/operations... that could be used in the place it\u0027s raised too",
+      "range": {
+        "startLine": 87,
+        "startChar": 24,
+        "endLine": 87,
+        "endChar": 34
+      },
+      "revId": "37d576409d95f332c6e893ef4f03a68f74342763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_21e707af",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 766,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-09T11:16:25Z",
+      "side": 1,
+      "message": "WIP?",
+      "range": {
+        "startLine": 766,
+        "startChar": 6,
+        "endLine": 766,
+        "endChar": 12
+      },
+      "revId": "37d576409d95f332c6e893ef4f03a68f74342763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_a18f77cb",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-09T11:16:25Z",
+      "side": 1,
+      "message": "this is not used",
+      "range": {
+        "startLine": 54,
+        "startChar": 40,
+        "endLine": 54,
+        "endChar": 53
+      },
+      "revId": "37d576409d95f332c6e893ef4f03a68f74342763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_01bacb6c",
+        "filename": "releasenotes/notes/bug-1524030-ccff6b0ec9d1cbf2.yaml",
+        "patchSetId": 40
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-09T11:16:25Z",
+      "side": 1,
+      "message": "I think at this point we better have a new release note (for the new cycle)",
+      "revId": "37d576409d95f332c6e893ef4f03a68f74342763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
