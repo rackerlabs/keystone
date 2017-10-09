@@ -27,6 +27,10 @@ scripts to load appropriate credentials for client operations.
    place appropriate for your deployment, as they do contain sensitive
    credentials.
 
+.. note::
+
+   Perform these steps on both the controller node and the compute node.
+
 #. Create and edit the ``admin-openrc`` file and add the following content:
 
    .. note::
