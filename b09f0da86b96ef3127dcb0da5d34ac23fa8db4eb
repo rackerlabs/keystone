@@ -1,0 +1,251 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_83a0f8f5",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 21
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-09T15:20:06Z",
+      "side": 1,
+      "message": "This can follow the same naming convention as below, can\u0027t it?",
+      "range": {
+        "startLine": 374,
+        "startChar": 0,
+        "endLine": 374,
+        "endChar": 3
+      },
+      "revId": "b09f0da86b96ef3127dcb0da5d34ac23fa8db4eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_e35fac0c",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 21
+      },
+      "lineNbr": 1456,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-09T15:20:06Z",
+      "side": 1,
+      "message": "This can follow the same naming convention as above, right?",
+      "range": {
+        "startLine": 1456,
+        "startChar": 0,
+        "endLine": 1456,
+        "endChar": 9
+      },
+      "revId": "b09f0da86b96ef3127dcb0da5d34ac23fa8db4eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_e3e20c30",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 21
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-09T15:20:06Z",
+      "side": 1,
+      "message": "We could just make this a link, instead of a link to another sectino of the document that has the link to the API WG page.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 22
+      },
+      "revId": "b09f0da86b96ef3127dcb0da5d34ac23fa8db4eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_a36094a6",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 21
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-09T15:20:06Z",
+      "side": 1,
+      "message": "Shouldn\u0027t GET and HEAD return the same status code? In this case, I\u0027m sure 204 is more correct, but we do return 200 with GET on the same path.",
+      "revId": "b09f0da86b96ef3127dcb0da5d34ac23fa8db4eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_2374a467",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 21
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-09T15:20:06Z",
+      "side": 1,
+      "message": "Above we actually pull this out into its own example, but here it\u0027s a note. Any specific reason for the difference?",
+      "range": {
+        "startLine": 105,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 33
+      },
+      "revId": "b09f0da86b96ef3127dcb0da5d34ac23fa8db4eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_4310c000",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 21
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-09T15:20:06Z",
+      "side": 1,
+      "message": "This is rendered as an option parameter provided in the query when it\u0027s actually in the path. This should be a required parameter of the path (we might need another tag parameter here with a better name).",
+      "range": {
+        "startLine": 148,
+        "startChar": 10,
+        "endLine": 148,
+        "endChar": 13
+      },
+      "revId": "b09f0da86b96ef3127dcb0da5d34ac23fa8db4eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_c314b0eb",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 21
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-09T15:20:06Z",
+      "side": 1,
+      "message": "Same comment here as above. This is being rendered as an optional query parameter, instead of a required in-path parameter.",
+      "range": {
+        "startLine": 245,
+        "startChar": 10,
+        "endLine": 245,
+        "endChar": 13
+      },
+      "revId": "b09f0da86b96ef3127dcb0da5d34ac23fa8db4eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_a3bc14dc",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 21
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-09T15:20:06Z",
+      "side": 1,
+      "message": "s/the list of//",
+      "range": {
+        "startLine": 267,
+        "startChar": 21,
+        "endLine": 267,
+        "endChar": 32
+      },
+      "revId": "b09f0da86b96ef3127dcb0da5d34ac23fa8db4eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_43ac409e",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 21
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-09T15:20:06Z",
+      "side": 1,
+      "message": "This should be wrapped in `` to be consistent with line 336.",
+      "range": {
+        "startLine": 317,
+        "startChar": 61,
+        "endLine": 317,
+        "endChar": 65
+      },
+      "revId": "b09f0da86b96ef3127dcb0da5d34ac23fa8db4eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_c3971045",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 21
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-09T15:20:06Z",
+      "side": 1,
+      "message": "Same comment here, I think the literal representation would be appropriate (otherwise these are just rendered in italics).",
+      "range": {
+        "startLine": 325,
+        "startChar": 65,
+        "endLine": 325,
+        "endChar": 69
+      },
+      "revId": "b09f0da86b96ef3127dcb0da5d34ac23fa8db4eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_03a0888f",
+        "filename": "api-ref/source/v3/project-tags.inc",
+        "patchSetId": 21
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-09T15:20:06Z",
+      "side": 1,
+      "message": "Remove this bit.",
+      "range": {
+        "startLine": 359,
+        "startChar": 22,
+        "endLine": 359,
+        "endChar": 44
+      },
+      "revId": "b09f0da86b96ef3127dcb0da5d34ac23fa8db4eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
