@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_839a3811",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-09T15:29:06Z",
+      "side": 1,
+      "message": "This will need to be hooked into the token.provider.common package somehow to invoke this code. Otherwise the new payload class will never be used.",
+      "range": {
+        "startLine": 140,
+        "startChar": 64,
+        "endLine": 140,
+        "endChar": 76
+      },
+      "revId": "93939d42cf192b2cb85df870a2cba67467247d47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_c3ddd0dd",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-09T15:29:06Z",
+      "side": 1,
+      "message": "I\u0027d be nice to not need another token payload for this. If we can leverage the existing ProjectScopedPayload work, then we don\u0027t need a separate thing specifically for this.",
+      "range": {
+        "startLine": 701,
+        "startChar": 6,
+        "endLine": 701,
+        "endChar": 30
+      },
+      "revId": "93939d42cf192b2cb85df870a2cba67467247d47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
