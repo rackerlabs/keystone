@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f4e5783_ce5b5752",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-10T03:49:43Z",
+      "side": 1,
+      "message": "This entire method is ugly and can probably be cleaned up a bit.",
+      "range": {
+        "startLine": 187,
+        "startChar": 0,
+        "endLine": 187,
+        "endChar": 63
+      },
+      "revId": "e18d960d7b36ad876b685013775e87d4dbe7115e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
