@@ -22,6 +22,52 @@
       "revId": "e18d960d7b36ad876b685013775e87d4dbe7115e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_ae06db1f",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-10T03:53:15Z",
+      "side": 1,
+      "message": "Could rename \"_add_tag\"",
+      "range": {
+        "startLine": 355,
+        "startChar": 8,
+        "endLine": 355,
+        "endChar": 23
+      },
+      "revId": "e18d960d7b36ad876b685013775e87d4dbe7115e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_4e1e4771",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-10T03:53:15Z",
+      "side": 1,
+      "message": "rename this",
+      "range": {
+        "startLine": 361,
+        "startChar": 9,
+        "endLine": 361,
+        "endChar": 23
+      },
+      "revId": "e18d960d7b36ad876b685013775e87d4dbe7115e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
