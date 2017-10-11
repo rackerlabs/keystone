@@ -40,6 +40,64 @@
       "revId": "5a57daa55cb3cd00b009de3497cca4b763539da4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_232d2f95",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1062,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-11T11:48:22Z",
+      "side": 1,
+      "message": "hmm interesting .. does this mean we don\u0027t need revocation events at all anymore?",
+      "parentUuid": "5f201791_2416ae4a",
+      "revId": "5a57daa55cb3cd00b009de3497cca4b763539da4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_e0bcad6a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1063,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-11T11:48:22Z",
+      "side": 1,
+      "message": "this would remove duplicates when the user has a role assignment on a proejct and a group (in which the user is part of) has the same role on that project too. I think this makes sense and the old code was not doing anything since user_ids was always empty",
+      "revId": "5a57daa55cb3cd00b009de3497cca4b763539da4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_8080598d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1065,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-11T11:48:22Z",
+      "side": 1,
+      "message": "(suggestion) replace this with set(user_and_project_ids) and remove the code above",
+      "range": {
+        "startLine": 1065,
+        "startChar": 35,
+        "endLine": 1065,
+        "endChar": 65
+      },
+      "revId": "5a57daa55cb3cd00b009de3497cca4b763539da4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
