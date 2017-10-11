@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f4e5783_ec4a697e",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-11T10:56:52Z",
+      "side": 1,
+      "message": "these are more related to authn than to authz, but we alreayd have AUTH_CONTEXT_ENV just below and this location seems better than the old one anyways",
+      "revId": "f5bd968a9793ecab90ffb22c8a22eaf32eb7a035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_6c56792c",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-11T10:56:52Z",
+      "side": 1,
+      "message": "not sure why we needed to set the default for wsgi.CONTEXT_ENV to {} in the case it is not present, but this looks fine",
+      "range": {
+        "startLine": 29,
+        "startChar": 34,
+        "endLine": 29,
+        "endChar": 44
+      },
+      "revId": "f5bd968a9793ecab90ffb22c8a22eaf32eb7a035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
