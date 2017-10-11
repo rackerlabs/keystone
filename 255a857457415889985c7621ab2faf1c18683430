@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f4e5783_404dc170",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-11T11:01:15Z",
+      "side": 1,
+      "message": "Would be nice to have the release note as detailed as this",
+      "range": {
+        "startLine": 38,
+        "startChar": 18,
+        "endLine": 48,
+        "endChar": 64
+      },
+      "revId": "255a857457415889985c7621ab2faf1c18683430",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
