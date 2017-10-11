@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5f4e5783_0a73524f",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-11T23:08:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f515b1d_ba10e7a9",
+      "revId": "7f91cfa080124435bf9d0a1a9b3e01468a37baab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f515b1d_a6ae94e4",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 8
@@ -48,6 +66,30 @@
       "writtenOn": "2017-10-06T18:10:10Z",
       "side": 1,
       "message": "well, this is mapping the tag name to a method name that is implemented by the backend.\n\na much better approach would be to pass the filter name down and and map to the proper method in the manager.\n\nin addition, this represents private methods names ....",
+      "range": {
+        "startLine": 208,
+        "startChar": 0,
+        "endLine": 213,
+        "endChar": 9
+      },
+      "revId": "7f91cfa080124435bf9d0a1a9b3e01468a37baab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_ea8fd620",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-11T23:08:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f515b1d_a6ae94e4",
       "range": {
         "startLine": 208,
         "startChar": 0,
