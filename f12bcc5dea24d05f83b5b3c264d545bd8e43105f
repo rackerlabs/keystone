@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "5f4e5783_0ad6b2f2",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-11T23:11:29Z",
+      "side": 1,
+      "message": "Don\u0027t think so",
+      "parentUuid": "7f515b1d_c3baa26c",
+      "range": {
+        "startLine": 209,
+        "startChar": 38,
+        "endLine": 209,
+        "endChar": 70
+      },
+      "revId": "f12bcc5dea24d05f83b5b3c264d545bd8e43105f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f515b1d_6392cef8",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 8
@@ -106,6 +130,30 @@
       "writtenOn": "2017-10-06T17:58:58Z",
       "side": 1,
       "message": "we could simply do:\n\n    return [tag.name for tag in self._tags]",
+      "range": {
+        "startLine": 315,
+        "startChar": 12,
+        "endLine": 318,
+        "endChar": 31
+      },
+      "revId": "f12bcc5dea24d05f83b5b3c264d545bd8e43105f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_ca09ba95",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-11T23:11:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f515b1d_c35e2275",
       "range": {
         "startLine": 315,
         "startChar": 12,
@@ -153,6 +201,30 @@
       "side": 1,
       "message": "This was my fault. I was under the assumption the original implementation of this method accepted a list of tags, removed the originals, and set the new tags (not sure why I thought that was the case). But that\u0027s the reason why I felt compelled to suggest a new name in Patch Set 4.\n\nIf it\u0027s more appropriate to rename it back to what it was, I retract my previous comment. Sorry for the confusion on my part!",
       "parentUuid": "7f515b1d_a3032642",
+      "range": {
+        "startLine": 337,
+        "startChar": 8,
+        "endLine": 337,
+        "endChar": 23
+      },
+      "revId": "f12bcc5dea24d05f83b5b3c264d545bd8e43105f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_6afac675",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-11T23:11:29Z",
+      "side": 1,
+      "message": "Cleaned this up",
+      "parentUuid": "7f515b1d_7a0dcf33",
       "range": {
         "startLine": 337,
         "startChar": 8,
