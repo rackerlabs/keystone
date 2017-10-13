@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f4e5783_72a96122",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-13T20:21:00Z",
+      "side": 1,
+      "message": "nit: add the space here to be consistent with other Exceptions. We can fix the pep8 concern, too:\n\n  message_format \u003d _(\u0027Number of User/Group entities returned by LDAP \u0027\n                     \u0027exceeded size limit. Contact your LDAP \u0027\n                     \u0027administrator.\u0027)",
+      "range": {
+        "startLine": 614,
+        "startChar": 66,
+        "endLine": 614,
+        "endChar": 71
+      },
+      "revId": "9052564385a113b2ae5462802c0784f7ec5c8fc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_4d45a442",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 615,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-13T20:21:00Z",
+      "side": 1,
+      "message": "This is going to be a long shot, but do we want to give more specifics about the actual limit here? \"size limit\" seems vague but I imagine this is going to tie back to a bunch of different implementations and it might be hard to be specific.",
+      "range": {
+        "startLine": 615,
+        "startChar": 34,
+        "endLine": 615,
+        "endChar": 44
+      },
+      "revId": "9052564385a113b2ae5462802c0784f7ec5c8fc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_527b05bd",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-13T20:21:00Z",
+      "side": 1,
+      "message": "PEP8 is complaining about the newline being here.",
+      "revId": "9052564385a113b2ae5462802c0784f7ec5c8fc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_f26af1ea",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 938,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-13T20:21:00Z",
+      "side": 1,
+      "message": "We should be able to add a unit test for this somewhere in out backend suite, even if it is using mocks.",
+      "range": {
+        "startLine": 937,
+        "startChar": 12,
+        "endLine": 938,
+        "endChar": 55
+      },
+      "revId": "9052564385a113b2ae5462802c0784f7ec5c8fc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
