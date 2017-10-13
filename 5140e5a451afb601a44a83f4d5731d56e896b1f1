@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f4e5783_944ccd42",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 912,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-13T18:32:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f4e5783_2feb85dc",
+      "range": {
+        "startLine": 912,
+        "startChar": 18,
+        "endLine": 912,
+        "endChar": 46
+      },
+      "revId": "5140e5a451afb601a44a83f4d5731d56e896b1f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f4e5783_4fc7e165",
         "filename": "keystone/resource/core.py",
         "patchSetId": 10
@@ -36,6 +60,30 @@
       "writtenOn": "2017-10-13T16:04:14Z",
       "side": 1,
       "message": "Same comment here - but in a follow up for sure.",
+      "range": {
+        "startLine": 949,
+        "startChar": 18,
+        "endLine": 949,
+        "endChar": 46
+      },
+      "revId": "5140e5a451afb601a44a83f4d5731d56e896b1f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_5452d5df",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 949,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-13T18:32:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f4e5783_4fc7e165",
       "range": {
         "startLine": 949,
         "startChar": 18,
