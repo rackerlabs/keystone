@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f4e5783_ea1afbc9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-13T16:49:30Z",
+      "side": 1,
+      "message": "tokens*\n\nBecause the token will be invalid regardless when it is invalid. This would just ensure that the tokens in the backend are removed.",
+      "range": {
+        "startLine": 12,
+        "startChar": 34,
+        "endLine": 12,
+        "endChar": 43
+      },
+      "revId": "6c1ad1ae7fad5d743fdafeb0c052a2653358d8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_0ac9d724",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1058,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-13T16:49:30Z",
+      "side": 1,
+      "message": "This needs to be unit tested. I added the steps that I used to recreate this in the bug report [0]. You could use that to start building out test cases.\n\n[0] https://bugs.launchpad.net/keystone/+bug/1700748/comments/2",
+      "revId": "6c1ad1ae7fad5d743fdafeb0c052a2653358d8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
