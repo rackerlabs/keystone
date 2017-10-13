@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f4e5783_24e16c2b",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-13T15:24:20Z",
+      "side": 1,
+      "message": "Ran into an issue here where I couldn\u0027t figure out how to differentiate between making a call with just a tags query vs a call with something like /projects?name\u003dfoo\u0026tags\u003dbar. For now it defaults to querying on tags before other values.",
+      "range": {
+        "startLine": 97,
+        "startChar": 12,
+        "endLine": 101,
+        "endChar": 76
+      },
+      "revId": "dcf1cc1c1ba80093f10847dd509775d8ca5cbcda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
