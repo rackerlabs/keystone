@@ -22,6 +22,30 @@
       "revId": "dcf1cc1c1ba80093f10847dd509775d8ca5cbcda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_afa7750b",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-13T15:51:00Z",
+      "side": 1,
+      "message": "What if this is moved up to the manager? Is is possible to mix querys with other attributes and tags in nova?",
+      "parentUuid": "5f4e5783_24e16c2b",
+      "range": {
+        "startLine": 97,
+        "startChar": 12,
+        "endLine": 101,
+        "endChar": 76
+      },
+      "revId": "dcf1cc1c1ba80093f10847dd509775d8ca5cbcda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
