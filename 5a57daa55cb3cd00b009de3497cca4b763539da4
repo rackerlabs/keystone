@@ -61,6 +61,24 @@
     },
     {
       "key": {
+        "uuid": "5f4e5783_ea8afb67",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1062,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-13T16:25:44Z",
+      "side": 1,
+      "message": "I would suggest the opposite actually. We rely on revocation events more now (for both formats) that we have in the past. It\u0027s a critical path regardless of the implementation.",
+      "parentUuid": "5f4e5783_232d2f95",
+      "revId": "5a57daa55cb3cd00b009de3497cca4b763539da4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f4e5783_e0bcad6a",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 2
