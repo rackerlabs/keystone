@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f4e5783_f7ef831b",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-13T19:05:05Z",
+      "side": 1,
+      "message": "This looks like it can be removed since it\u0027s not used in this module.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 18
+      },
+      "revId": "00f14147b163cdd41b44e65f0499e06db15a0cb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
