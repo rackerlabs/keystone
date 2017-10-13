@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f4e5783_97428f3d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-13T19:02:17Z",
+      "side": 1,
+      "message": "It\u0027d be nice to not have to define this in multiple places. That way if we add support for other tags we don\u0027t have to maintain two lists. We can do that in as a fast follow on patch though.",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 69
+      },
+      "revId": "075184e506048e0f957c3cd7c27dec431dd9a43c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_5761b7d2",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 827,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-13T19:02:17Z",
+      "side": 1,
+      "message": "This results are aggregated in the controller layer, right? The controller is what allows us to filter on tags an other project attributes in the same request, right?\n\nLine 836 only returns a request filtered by project tags.",
+      "range": {
+        "startLine": 827,
+        "startChar": 12,
+        "endLine": 827,
+        "endChar": 51
+      },
+      "revId": "075184e506048e0f957c3cd7c27dec431dd9a43c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
