@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f4e5783_4fd8011d",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-13T16:21:26Z",
+      "side": 1,
+      "message": "It\u0027d be nice to find a way to reuse this with the implementation for the manager tests. Something we can work towards later if we find a nice way to do it.",
+      "range": {
+        "startLine": 687,
+        "startChar": 0,
+        "endLine": 701,
+        "endChar": 43
+      },
+      "revId": "832852415d807d669c23edd2ee5216d991be4f5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_cfe751ac",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1423,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-13T16:21:26Z",
+      "side": 1,
+      "message": "nit: this could be reused from above, but we can do that in a subsequent cleanup patch.\n\n  url \u003d (\n      \u0027/projects/%(project_id)s/tags/%(value)s\u0027 % {\n          \u0027project_id\u0027: self.project_id,\n          \u0027value\u0027: tag\n      }\n  )\n  self.put(url, expected_status\u003dhttp_client.NO_CONTENT)\n  self.get(url, expected_status\u003dhttp_client.NO_CONTENT)",
+      "range": {
+        "startLine": 1423,
+        "startChar": 12,
+        "endLine": 1423,
+        "endChar": 53
+      },
+      "revId": "832852415d807d669c23edd2ee5216d991be4f5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_8fb39998",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1435,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-13T16:21:26Z",
+      "side": 1,
+      "message": "We could assert that the response actually has both tags.",
+      "revId": "832852415d807d669c23edd2ee5216d991be4f5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_ca061f1d",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1439,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-13T16:21:26Z",
+      "side": 1,
+      "message": "We could test head here, too. Then make sure we test it with /projects/{project_id}/tags/ too",
+      "range": {
+        "startLine": 1439,
+        "startChar": 13,
+        "endLine": 1439,
+        "endChar": 16
+      },
+      "revId": "832852415d807d669c23edd2ee5216d991be4f5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
