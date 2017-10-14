@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f4e5783_a9d9a7f3",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-14T03:09:00Z",
+      "side": 1,
+      "message": "Yes, this checks for if you are passing in a tag filter and adds it to the hints filters.",
+      "parentUuid": "5f4e5783_f7054312",
+      "range": {
+        "startLine": 193,
+        "startChar": 0,
+        "endLine": 198,
+        "endChar": 53
+      },
+      "revId": "3b3b47ece4f873551aef10e82455d645e0c2fb48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f4e5783_54053513",
         "filename": "keystone/tests/unit/test_v3_resource.py",
         "patchSetId": 13
