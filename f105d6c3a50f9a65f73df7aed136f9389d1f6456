@@ -57,6 +57,30 @@
       "revId": "f105d6c3a50f9a65f73df7aed136f9389d1f6456",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_1b110a05",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-10-16T09:02:53Z",
+      "side": 1,
+      "message": "We should add it here: http://git.openstack.org/cgit/openstack/keystone/tree/doc/source/contributor/testing-keystone.rst\n\nBut I think it\u0027s fine to do that in a followup patch, this one has been held up for too long already.",
+      "parentUuid": "7f515b1d_6ea723be",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 50
+      },
+      "revId": "f105d6c3a50f9a65f73df7aed136f9389d1f6456",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
