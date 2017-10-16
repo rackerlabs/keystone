@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "5f4e5783_31f075fe",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 615,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-10-16T08:40:44Z",
+      "side": 1,
+      "message": "I\u0027m not sure what other information you could give here, all we have to go on is the exception from pyldap.",
+      "parentUuid": "5f4e5783_4d45a442",
+      "range": {
+        "startLine": 615,
+        "startChar": 34,
+        "endLine": 615,
+        "endChar": 44
+      },
+      "revId": "9052564385a113b2ae5462802c0784f7ec5c8fc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f4e5783_527b05bd",
         "filename": "keystone/exception.py",
         "patchSetId": 2
