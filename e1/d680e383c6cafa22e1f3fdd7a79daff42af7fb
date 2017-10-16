@@ -1,0 +1,12 @@
+Verified+1: Jenkins
+Code-Review+1: Gage Hugo <gagehugo@gmail.com>
+Code-Review+1: chenaidong1 <chen.aidong@zte.com.cn>
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+2: Kristi Nikolla <knikolla@bu.edu>
+Workflow+1: Kristi Nikolla <knikolla@bu.edu>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 16 Oct 2017 19:06:04 +0000
+Reviewed-on: https://review.openstack.org/511974
+Project: openstack/keystone
+Branch: refs/heads/master
