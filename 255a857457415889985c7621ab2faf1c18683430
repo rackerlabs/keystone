@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f4e5783_bb8f96cb",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-10-16T09:26:06Z",
+      "side": 1,
+      "message": "I know we have a precedent for logging errors for deprecation warnings like this but I don\u0027t really think it\u0027s appropriate, it ends up getting confused for a real this-is-breaking-right-now error and makes debugging grenade jobs harder.",
+      "range": {
+        "startLine": 38,
+        "startChar": 8,
+        "endLine": 38,
+        "endChar": 18
+      },
+      "revId": "255a857457415889985c7621ab2faf1c18683430",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f4e5783_404dc170",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 3
@@ -13,6 +36,30 @@
       "writtenOn": "2017-10-11T11:01:15Z",
       "side": 1,
       "message": "Would be nice to have the release note as detailed as this",
+      "range": {
+        "startLine": 38,
+        "startChar": 18,
+        "endLine": 48,
+        "endChar": 64
+      },
+      "revId": "255a857457415889985c7621ab2faf1c18683430",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_5b69c2f6",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-10-16T09:26:06Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5f4e5783_404dc170",
       "range": {
         "startLine": 38,
         "startChar": 18,
