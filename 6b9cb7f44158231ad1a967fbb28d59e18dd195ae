@@ -69,6 +69,30 @@
       "revId": "6b9cb7f44158231ad1a967fbb28d59e18dd195ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_aa0ca793",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-17T23:01:25Z",
+      "side": 1,
+      "message": "This is because the API guidelines[0] are weird for what we are supposed to return when creating a single tag.\n\n[0] https://specs.openstack.org/openstack/api-wg/guidelines/tags.html#addressing-individual-tags",
+      "parentUuid": "5f4e5783_39dedcd9",
+      "range": {
+        "startLine": 291,
+        "startChar": 4,
+        "endLine": 297,
+        "endChar": 52
+      },
+      "revId": "6b9cb7f44158231ad1a967fbb28d59e18dd195ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
