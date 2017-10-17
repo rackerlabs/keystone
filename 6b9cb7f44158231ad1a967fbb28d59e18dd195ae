@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f4e5783_39493cb6",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-10-17T20:48:01Z",
+      "side": 1,
+      "message": "Why does this need to be different than the common one?",
+      "range": {
+        "startLine": 283,
+        "startChar": 4,
+        "endLine": 288,
+        "endChar": 22
+      },
+      "revId": "6b9cb7f44158231ad1a967fbb28d59e18dd195ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_39dedcd9",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-10-17T20:48:01Z",
+      "side": 1,
+      "message": "What is this for? None of the other controller classes have this",
+      "range": {
+        "startLine": 291,
+        "startChar": 4,
+        "endLine": 297,
+        "endChar": 52
+      },
+      "revId": "6b9cb7f44158231ad1a967fbb28d59e18dd195ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
