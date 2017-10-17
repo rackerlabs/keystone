@@ -46,6 +46,30 @@
       "revId": "00f14147b163cdd41b44e65f0499e06db15a0cb0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_e0364e03",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-17T16:31:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f4e5783_c9574358",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 18
+      },
+      "revId": "00f14147b163cdd41b44e65f0499e06db15a0cb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
