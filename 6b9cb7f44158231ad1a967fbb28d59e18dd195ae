@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f4e5783_aadb874c",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-17T22:46:20Z",
+      "side": 1,
+      "message": "The common wrap_collection eventually expects an \u0027id\u0027[0] in the returned reference, which for tags is different since we are only returning a list of tags instead of an entire resource object.\n\n[0] https://github.com/openstack/keystone/blob/master/keystone/common/controller.py#L373",
+      "parentUuid": "5f4e5783_39493cb6",
+      "range": {
+        "startLine": 283,
+        "startChar": 4,
+        "endLine": 288,
+        "endChar": 22
+      },
+      "revId": "6b9cb7f44158231ad1a967fbb28d59e18dd195ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f4e5783_39dedcd9",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 14
