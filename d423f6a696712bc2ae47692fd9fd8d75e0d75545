@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_05f6de90",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2496,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-18T18:30:33Z",
+      "side": 1,
+      "message": "since we run all previous migrations to run 31, I don\u0027t know how we can test this. the fk is added in 14, so it already exists.\n\nthe idea of 31 is to add the FK for deployments launched between the time 14 was merged and now.",
+      "revId": "d423f6a696712bc2ae47692fd9fd8d75e0d75545",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
