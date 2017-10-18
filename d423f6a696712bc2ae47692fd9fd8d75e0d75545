@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "3f4b6375_e5062221",
+        "filename": "keystone/common/sql/expand_repo/versions/031_expand_add_domain_id_fk_to_user_table.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-10-18T18:55:26Z",
+      "side": 1,
+      "message": "This might break if the FK already exists. you likely need to inspect the table and check to see if the FK exists and then only add it if it does not.\n\nIs this safe for the \"rolling upgrade\" expand only requirements?",
+      "range": {
+        "startLine": 24,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 56
+      },
+      "revId": "d423f6a696712bc2ae47692fd9fd8d75e0d75545",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_100f3a2f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 830,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-10-18T18:55:26Z",
+      "side": 1,
+      "message": "We could, instead of using this logic, in code, lean on the backend to do the delete via a FK CASCADE delete.\n\nWould a CASCADE be preferable to doing it like this?",
+      "range": {
+        "startLine": 820,
+        "startChar": 0,
+        "endLine": 830,
+        "endChar": 72
+      },
+      "revId": "d423f6a696712bc2ae47692fd9fd8d75e0d75545",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f4b6375_05f6de90",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 4
@@ -13,6 +59,24 @@
       "writtenOn": "2017-10-18T18:30:33Z",
       "side": 1,
       "message": "since we run all previous migrations to run 31, I don\u0027t know how we can test this. the fk is added in 14, so it already exists.\n\nthe idea of 31 is to add the FK for deployments launched between the time 14 was merged and now.",
+      "revId": "d423f6a696712bc2ae47692fd9fd8d75e0d75545",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_d031a2ee",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2496,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-10-18T18:55:26Z",
+      "side": 1,
+      "message": "Explicitly drop the FK, then run 31 and check to make sure it is was re-added.\n\nThis is going to require an explicit new metadata object that is loaded *after* the FK drop and self.does_fk_exist wont work.",
+      "parentUuid": "3f4b6375_05f6de90",
       "revId": "d423f6a696712bc2ae47692fd9fd8d75e0d75545",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
