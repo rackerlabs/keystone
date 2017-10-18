@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_f0913ef3",
+        "filename": "keystone/assignment/backends/base.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-10-18T19:30:15Z",
+      "side": 1,
+      "message": "s/grants/grant/",
+      "range": {
+        "startLine": 186,
+        "startChar": 21,
+        "endLine": 186,
+        "endChar": 27
+      },
+      "revId": "19a8ceb3dfeb2278ff5250fe38e7d4d42971dcc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
