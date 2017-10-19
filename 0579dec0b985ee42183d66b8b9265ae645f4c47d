@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_64b57131",
+        "filename": "api-ref/source/v3/index.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-19T21:02:23Z",
+      "side": 1,
+      "message": "Did this get bumped in the implementation? If not, we\u0027ll just have to remember to bump it before queens goes out the door.",
+      "range": {
+        "startLine": 30,
+        "startChar": 22,
+        "endLine": 30,
+        "endChar": 25
+      },
+      "revId": "0579dec0b985ee42183d66b8b9265ae645f4c47d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_e40de137",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 24
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-19T21:02:23Z",
+      "side": 1,
+      "message": "Does this one need to follow the convention we established at the PTG?",
+      "range": {
+        "startLine": 303,
+        "startChar": 0,
+        "endLine": 303,
+        "endChar": 17
+      },
+      "revId": "0579dec0b985ee42183d66b8b9265ae645f4c47d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
