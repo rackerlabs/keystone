@@ -16,6 +16,24 @@
       "revId": "05456e34900cb72f84d64b2f1a3a17a6bfe7adeb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_1f678db9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 26874
+      },
+      "writtenOn": "2017-10-19T05:00:35Z",
+      "side": 1,
+      "message": "Thanks.Uploaded patch set 3 kindly review.",
+      "parentUuid": "7f515b1d_f97d06b2",
+      "revId": "05456e34900cb72f84d64b2f1a3a17a6bfe7adeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
