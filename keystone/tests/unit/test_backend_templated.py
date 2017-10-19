@@ -81,10 +81,6 @@ class TestTemplatedCatalog(unit.TestCase, catalog_tests.CatalogTests):
         catalog_ref = self.catalog_api.get_catalog('foo', 'bar')
         self.assertEqual(1, len(catalog_ref['RegionOne']))
 
-    def test_get_catalog_endpoint_disabled(self):
-        self.skip_test_overrides(
-            "Templated backend doesn't have disabled endpoints")
-
     def test_get_v3_catalog_endpoint_disabled(self):
         self.skip_test_overrides(
             "Templated backend doesn't have disabled endpoints")
