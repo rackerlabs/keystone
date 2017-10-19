@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_41626740",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-19T20:43:42Z",
+      "side": 1,
+      "message": "Doing `git review -X \u003cchange_number\u003e` from a stable branch will leave the cherry pick information in the commit message.",
+      "revId": "72307f288274f8403347c6e029bddded6d284d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
