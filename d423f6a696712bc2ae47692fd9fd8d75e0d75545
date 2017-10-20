@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f4b6375_29aaa2d1",
+        "filename": "keystone/common/sql/expand_repo/versions/031_expand_add_domain_id_fk_to_user_table.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-20T12:33:48Z",
+      "side": 1,
+      "message": "looks like no, I am getting:\n\nkeystone.tests.unit.test_sql_banned_operations.DBOperationNotAllowed: Operation Column.alter() is not allowed in expand_repo database migrations\u0027\n\nHow can I get around this? Can I add an exception or would it be more appropriate to put this in the contract phase?",
+      "parentUuid": "3f4b6375_e5062221",
+      "range": {
+        "startLine": 24,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 56
+      },
+      "revId": "d423f6a696712bc2ae47692fd9fd8d75e0d75545",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f4b6375_100f3a2f",
         "filename": "keystone/resource/core.py",
         "patchSetId": 4
