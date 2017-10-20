@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_0713465e",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 762,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-20T18:21:50Z",
+      "side": 0,
+      "message": "what\u0027s preventing us from removing this method too?",
+      "range": {
+        "startLine": 762,
+        "startChar": 48,
+        "endLine": 762,
+        "endChar": 61
+      },
+      "revId": "8e61136effa09cc736536ee272e8b24eff348b8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
