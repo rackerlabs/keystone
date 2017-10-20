@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_8dbab707",
+        "filename": "keystone/common/sql/contract_repo/versions/031_contract_add_domain_id_fk_to_user_table.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2017-10-20T20:16:44Z",
+      "side": 1,
+      "message": "Why do we need this check at all? We should know for sure whether it exist or not based on the schema version right?",
+      "range": {
+        "startLine": 20,
+        "startChar": 28,
+        "endLine": 20,
+        "endChar": 34
+      },
+      "revId": "acf45fb4b0a450631fca4f11d441e85c6d64609d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
