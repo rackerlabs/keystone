@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_9931d20e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-21T13:34:15Z",
+      "side": 1,
+      "message": "Why? \n\nI like https://review.openstack.org/#/c/513488/ because it says \"With the removal of the v2.0 APIs in Queens\" so that we know why it\u0027s being removed",
+      "revId": "e1dd06e454935b27289f170faf1e3c39c9ad1763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
