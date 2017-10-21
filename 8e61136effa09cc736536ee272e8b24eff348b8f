@@ -22,6 +22,30 @@
       "revId": "8e61136effa09cc736536ee272e8b24eff348b8f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_fb39de3e",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 762,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-10-21T04:46:37Z",
+      "side": 0,
+      "message": "still used here?\nhttps://github.com/openstack/keystone/blob/master/keystone/token/controllers.py#L334\n\nmight need some code refactoring before cleaning those up.",
+      "parentUuid": "3f4b6375_0713465e",
+      "range": {
+        "startLine": 762,
+        "startChar": 48,
+        "endLine": 762,
+        "endChar": 61
+      },
+      "revId": "8e61136effa09cc736536ee272e8b24eff348b8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
