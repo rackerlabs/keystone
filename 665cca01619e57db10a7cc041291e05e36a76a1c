@@ -16,6 +16,24 @@
       "revId": "665cca01619e57db10a7cc041291e05e36a76a1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_703184ec",
+        "filename": "keystone/tests/unit/schema/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-21T21:09:50Z",
+      "side": 1,
+      "message": "I had removed the whole directory in this patch, not sure how gerrit shows that.",
+      "parentUuid": "3f4b6375_340c233a",
+      "revId": "665cca01619e57db10a7cc041291e05e36a76a1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
