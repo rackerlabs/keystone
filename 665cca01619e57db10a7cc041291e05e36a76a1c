@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_340c233a",
+        "filename": "keystone/tests/unit/schema/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-10-21T13:34:25Z",
+      "side": 1,
+      "message": "if we can delete the __init__, why can\u0027t we delete the whole dir? or is this patch actually removing the whole dir?",
+      "revId": "665cca01619e57db10a7cc041291e05e36a76a1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
