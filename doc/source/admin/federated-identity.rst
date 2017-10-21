@@ -79,11 +79,11 @@ Configuring federation in keystone
    .. code-block:: ini
 
       [auth]
-      methods = external,password,token,mapped,openid
+      methods = external,password,token,saml2,openid
 
    .. note::
 
-      ``mapped`` and ``openid`` are the federation specific drivers.
+      ``saml2`` and ``openid`` are the federation specific drivers.
       The other names in the example are not related to federation.
 
 #. Create local keystone groups and assign roles.
