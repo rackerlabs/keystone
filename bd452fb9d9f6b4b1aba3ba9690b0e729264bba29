@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f4b6375_5061e8a8",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-21T22:19:47Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "3f4b6375_345ae329",
+      "range": {
+        "startLine": 43,
+        "startChar": 51,
+        "endLine": 45,
+        "endChar": 59
+      },
+      "revId": "bd452fb9d9f6b4b1aba3ba9690b0e729264bba29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f4b6375_39177e54",
         "filename": "keystone/tests/unit/test_backend_templated.py",
         "patchSetId": 1
@@ -36,6 +60,24 @@
       "writtenOn": "2017-10-21T13:34:15Z",
       "side": 0,
       "message": "why are we removing this?",
+      "revId": "bd452fb9d9f6b4b1aba3ba9690b0e729264bba29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_f05a1428",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-21T22:19:47Z",
+      "side": 0,
+      "message": "This test class inherits the class with the test we are removing and specifying to skip it here.",
+      "parentUuid": "3f4b6375_39177e54",
       "revId": "bd452fb9d9f6b4b1aba3ba9690b0e729264bba29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
