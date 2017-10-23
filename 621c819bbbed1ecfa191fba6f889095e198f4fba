@@ -39,6 +39,24 @@
       "revId": "621c819bbbed1ecfa191fba6f889095e198f4fba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_97950043",
+        "filename": "doc/source/advanced-topics/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-10-23T13:46:00Z",
+      "side": 1,
+      "message": "You would need the config section to define the remote_id_attribute but the plugin is already defined as a setuptools entrypoint http://git.openstack.org/cgit/openstack/keystone/tree/setup.cfg#n104",
+      "parentUuid": "3f4b6375_9c7e4717",
+      "revId": "621c819bbbed1ecfa191fba6f889095e198f4fba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
