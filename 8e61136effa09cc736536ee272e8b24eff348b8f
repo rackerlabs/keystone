@@ -46,6 +46,30 @@
       "revId": "8e61136effa09cc736536ee272e8b24eff348b8f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_8c0e1639",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 762,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-23T15:07:03Z",
+      "side": 0,
+      "message": "Yeah - I think we can remove that, too.",
+      "parentUuid": "3f4b6375_fb39de3e",
+      "range": {
+        "startLine": 762,
+        "startChar": 48,
+        "endLine": 762,
+        "endChar": 61
+      },
+      "revId": "8e61136effa09cc736536ee272e8b24eff348b8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
