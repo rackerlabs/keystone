@@ -22,6 +22,30 @@
       "revId": "de9546b4ef2c7a8baab539cc7ae0e205601b23dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_82137d5c",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1772,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-10-23T15:39:17Z",
+      "side": 1,
+      "message": "It\u0027s also inherited here:\n\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_backend_ldap_pool.py#L211",
+      "parentUuid": "3f4b6375_b65fe270",
+      "range": {
+        "startLine": 1772,
+        "startChar": 35,
+        "endLine": 1772,
+        "endChar": 47
+      },
+      "revId": "de9546b4ef2c7a8baab539cc7ae0e205601b23dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
