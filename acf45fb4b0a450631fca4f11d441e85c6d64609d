@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3f4b6375_a2b559cf",
+        "filename": "keystone/common/sql/contract_repo/versions/031_contract_add_domain_id_fk_to_user_table.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2017-10-23T15:54:34Z",
+      "side": 1,
+      "message": "Ouch! Hey, at least this time its \"idempotent\". :-)",
+      "parentUuid": "3f4b6375_85172ba4",
+      "range": {
+        "startLine": 20,
+        "startChar": 28,
+        "endLine": 20,
+        "endChar": 34
+      },
+      "revId": "acf45fb4b0a450631fca4f11d441e85c6d64609d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f4b6375_c571a30e",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 5
