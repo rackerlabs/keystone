@@ -1124,9 +1124,14 @@ class Manager(manager.Manager):
         """
         target_id = self._SYSTEM_SCOPE_TOKEN
         assignment_type = self._USER_SYSTEM
-        return self.driver.list_system_grants(
+        grants = self.driver.list_system_grants(
             user_id, target_id, assignment_type
         )
+        grant_ids = []
+        for grant in grants:
+            grant_ids.append(grant['role_id'])
+
+        return self.role_api.list_roles_from_ids(grant_ids)
 
     def create_system_grant_for_user(self, user_id, role_id):
         """Grant a user a role on the system.
