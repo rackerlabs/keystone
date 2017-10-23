@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_3cecf3f1",
+        "filename": "doc/source/admin/federated-identity.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-10-23T13:25:09Z",
+      "side": 1,
+      "message": "This should really be updated to say that these are instances of the mapped driver and that they must match the protocol name.",
+      "range": {
+        "startLine": 86,
+        "startChar": 5,
+        "endLine": 87,
+        "endChar": 67
+      },
+      "revId": "621c819bbbed1ecfa191fba6f889095e198f4fba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_9c7e4717",
+        "filename": "doc/source/advanced-topics/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-10-23T13:25:09Z",
+      "side": 1,
+      "message": "You then also need a config section named [saml2] which defines plugin \u003d mapped right?",
+      "revId": "621c819bbbed1ecfa191fba6f889095e198f4fba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
