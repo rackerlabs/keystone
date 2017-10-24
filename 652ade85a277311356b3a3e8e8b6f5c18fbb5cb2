@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_b828c596",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-24T17:52:01Z",
+      "side": 1,
+      "message": "This gets invoked the same way it did when we had the definition in project-config, right?",
+      "revId": "652ade85a277311356b3a3e8e8b6f5c18fbb5cb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
