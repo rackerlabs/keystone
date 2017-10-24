@@ -131,16 +131,6 @@ class Manager(manager.Manager):
             except exception.TokenNotFound:
                 six.reraise(*exc_info)
 
-    def check_revocation_v2(self, token):
-        try:
-            token_data = token['access']
-        except KeyError:
-            raise exception.TokenNotFound(_('Failed to validate token'))
-
-        token_values = self.revoke_api.model.build_token_values_v2(
-            token_data, CONF.identity.default_domain_id)
-        self.revoke_api.check_token(token_values)
-
     def check_revocation_v3(self, token):
         try:
             token_data = token['token']
@@ -150,11 +140,7 @@ class Manager(manager.Manager):
         self.revoke_api.check_token(token_values)
 
     def check_revocation(self, token):
-        version = self.get_token_version(token)
-        if version == V2:
-            return self.check_revocation_v2(token)
-        else:
-            return self.check_revocation_v3(token)
+        return self.check_revocation_v3(token)
 
     def validate_token(self, token_id, window_seconds=0):
         if not token_id:
