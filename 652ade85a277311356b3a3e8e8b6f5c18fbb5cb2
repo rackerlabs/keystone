@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f4b6375_f98bcd64",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6816
+      },
+      "writtenOn": "2017-10-25T09:48:52Z",
+      "side": 1,
+      "message": "Yes, exactly the same way as previously.",
+      "parentUuid": "3f4b6375_b828c596",
+      "revId": "652ade85a277311356b3a3e8e8b6f5c18fbb5cb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f4b6375_1bfa33bc",
         "filename": ".zuul.yaml",
         "patchSetId": 1
@@ -30,6 +48,30 @@
       "writtenOn": "2017-10-24T18:04:48Z",
       "side": 1,
       "message": "Could we also add:\n\nirrelevant-files:\n  - ^.*\\.rst$\n  - ^api-ref/.*$\n  - ^doc/.*$\n  - ^etc/.*$\n  - ^keystone/tests/unit/.*$\n  - ^releasenotes/.*$\n\nto skip this whenever we just make docs/non-impacting changes?",
+      "range": {
+        "startLine": 30,
+        "startChar": 10,
+        "endLine": 30,
+        "endChar": 52
+      },
+      "revId": "652ade85a277311356b3a3e8e8b6f5c18fbb5cb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_b9ef951c",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6816
+      },
+      "writtenOn": "2017-10-25T09:48:52Z",
+      "side": 1,
+      "message": "Sure, will do.",
+      "parentUuid": "3f4b6375_1bfa33bc",
       "range": {
         "startLine": 30,
         "startChar": 10,
