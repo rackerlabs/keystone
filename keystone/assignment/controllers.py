@@ -441,7 +441,7 @@ class GrantAssignmentV3(controller.V3Controller):
 
         if domain_id:
             ref['domain'] = PROVIDERS.resource_api.get_domain(domain_id)
-        else:
+        elif project_id:
             ref['project'] = PROVIDERS.resource_api.get_project(project_id)
 
         self.check_protection(request, protection, ref)
@@ -502,6 +502,52 @@ class GrantAssignmentV3(controller.V3Controller):
             role_id, user_id=user_id, group_id=group_id, domain_id=domain_id,
             project_id=project_id, inherited_to_projects=inherited_to_projects,
             context=request.context_dict)
+
+    @controller.protected(callback=_check_grant_protection)
+    def list_system_grants_for_user(self, request, user_id):
+        """List all system grants for a specific user.
+
+        :param request: the request object
+        :param user_id: ID of the user
+        :returns: a list of grants the user has on the system
+
+        """
+        refs = PROVIDERS.assignment_api.list_system_grants_for_user(user_id)
+        return GrantAssignmentV3.wrap_collection(request.context_dict, refs)
+
+    @controller.protected(callback=_check_grant_protection)
+    def check_system_grant_for_user(self, request, role_id, user_id):
+        """Check if a user has a specific role on the system.
+
+        :param request: the request object
+        :param role_id: the ID of the role to check
+        :param user_id: the ID of the user to check
+
+        """
+        PROVIDERS.assignment_api.check_system_grant_for_user(user_id, role_id)
+
+    @controller.protected(callback=_check_grant_protection)
+    def create_system_grant_for_user(self, request, role_id, user_id):
+        """Grant a role to a user on the system.
+
+        :param request: the request object
+        :param role_id: the ID of the role to grant to the user
+        :param user_id: the ID of the user
+
+        """
+        PROVIDERS.assignment_api.create_system_grant_for_user(user_id, role_id)
+
+    @controller.protected(callback=functools.partial(
+        _check_grant_protection, allow_no_user=True))
+    def revoke_system_grant_for_user(self, request, role_id, user_id):
+        """Revoke a role from user on the system.
+
+        :param request: the request object
+        :param role_id: the ID of the role to remove
+        :param user_id: the ID of the user
+
+        """
+        PROVIDERS.assignment_api.delete_system_grant_for_user(user_id, role_id)
 
 
 class RoleAssignmentV3(controller.V3Controller):
@@ -579,6 +625,7 @@ class RoleAssignmentV3(controller.V3Controller):
         }
 
         """
+        formatted_link = ''
         formatted_entity = {'links': {}}
         inherited_assignment = entity.get('inherited_to_projects')
 
@@ -612,6 +659,9 @@ class RoleAssignmentV3(controller.V3Controller):
                 formatted_entity['scope'] = {
                     'domain': {'id': entity['domain_id']}}
             formatted_link = '/domains/%s' % entity['domain_id']
+        elif 'system' in entity:
+            formatted_link = '/system'
+            formatted_entity['scope'] = {'system': entity['system']}
 
         if 'user_id' in entity:
             if 'user_name' in entity:
@@ -733,6 +783,10 @@ class RoleAssignmentV3(controller.V3Controller):
             self.query_filter_is_true(params['effective']))
         include_names = ('include_names' in params and
                          self.query_filter_is_true(params['include_names']))
+        system = (
+            'scope.system' in params and
+            self.query_filter_is_true(params['scope.system'])
+        )
 
         if 'scope.OS-INHERIT:inherited_to' in params:
             inherited = (
@@ -756,6 +810,7 @@ class RoleAssignmentV3(controller.V3Controller):
             role_id=params.get('role.id'),
             user_id=params.get('user.id'),
             group_id=params.get('group.id'),
+            system=system,
             domain_id=params.get('scope.domain.id'),
             project_id=params.get('scope.project.id'),
             include_subtree=include_subtree,
@@ -767,7 +822,7 @@ class RoleAssignmentV3(controller.V3Controller):
 
         return self.wrap_collection(request.context_dict, formatted_refs)
 
-    @controller.filterprotected('group.id', 'role.id',
+    @controller.filterprotected('group.id', 'role.id', 'scope.system',
                                 'scope.domain.id', 'scope.project.id',
                                 'scope.OS-INHERIT:inherited_to', 'user.id')
     def list_role_assignments(self, request, filters):
