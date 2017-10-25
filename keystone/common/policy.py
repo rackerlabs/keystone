@@ -60,7 +60,17 @@ def enforce(credentials, action, target, do_raise=True):
         extra.update(exc=exception.ForbiddenAction, action=action,
                      do_raise=do_raise)
 
-    return _ENFORCER.enforce(action, target, credentials, **extra)
+    # FIXME(lbragstad): We should remove ``enforce_scope=False`` when tests
+    # pass and we have proper test plumbing in place to make certain calls with
+    # system-scoped tokens instead of project-scoped ones. We will also need to
+    # wait to flip this bit so that we give operators a chance to grant their
+    # system users a role on the system before we start enforcing scope. If
+    # they don't setup at least one administrator on the system, they will be
+    # locked out of making system-level API calls, since it's not possible to
+    # grant system role assignment with a project-scoped token.
+    return _ENFORCER.enforce(
+        action, target, credentials, enforce_scope=False, **extra
+    )
 
 
 def register_rules(enforcer):
