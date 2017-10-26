@@ -1403,7 +1403,8 @@ class BaseLdap(object):
                              ' "%(attr_name)s"' % {'attr': attr,
                                                    'attr_name': attr_name})
         return [obj for obj in ldap_result
-                if obj[1].get(attr) and obj[1].get(attr)[0]]
+                if (obj[1].get(attr) and obj[1].get(attr)[0] and
+                    obj[1].get(attr)[0].strip())]
 
     def _ldap_get(self, object_id, ldap_filter=None):
         query = (u'(&(%(id_attr)s=%(id)s)'
