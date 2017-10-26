@@ -1,0 +1,5 @@
+---
+deprecations:
+  - |
+    The ``OS-SIMPLE-CERT `` API is deprecated. This is only used in support of
+    PKI/PKIZ, which had been removed in keystone.
