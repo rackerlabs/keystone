@@ -132,8 +132,6 @@ def v3_app_factory(global_conf, **local_conf):
                        federation_routers,
                        oauth1_routers,
                        endpoint_policy_routers,
-                       # TODO(morganfainberg): Remove the simple_cert router
-                       # when PKI and PKIZ tokens are removed.
                        simple_cert_ext]
 
     if CONF.trust.enabled:
