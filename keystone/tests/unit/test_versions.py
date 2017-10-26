@@ -103,10 +103,6 @@ _build_ec2tokens_relation = functools.partial(
 REVOCATIONS_RELATION = json_home.build_v3_extension_resource_relation(
     'OS-PKI', '1.0', 'revocations')
 
-_build_simple_cert_relation = functools.partial(
-    json_home.build_v3_extension_resource_relation,
-    extension_name='OS-SIMPLE-CERT', extension_version='1.0')
-
 _build_trust_relation = functools.partial(
     json_home.build_v3_extension_resource_relation, extension_name='OS-TRUST',
     extension_version='1.0')
