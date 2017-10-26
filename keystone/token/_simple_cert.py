@@ -10,10 +10,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-# TODO(morganfainberg): Remove this file and extension in the "O" release as
-# it is only used in support of the PKI/PKIz token providers.
 import functools
 
+from oslo_log import versionutils
+import six
 import webob
 
 from keystone.common import controller
@@ -69,9 +69,20 @@ class Routers(wsgi.RoutersBase):
             rel=build_resource_relation(resource_name='certificates'))
 
 
+def simple_cert_deprecated(f):
+    @six.wraps(f)
+    def wrapper(*args, **kwargs):
+        deprecated = versionutils.deprecated(
+            what=f.__name__ + ' of OS-SIMPLE-CERT APIs',
+            as_of=versionutils.deprecated.QUEENS)
+        return deprecated(f)
+    return wrapper()
+
+
 @dependency.requires('token_provider_api')
 class SimpleCert(controller.V3Controller):
 
+    @simple_cert_deprecated
     def _get_certificate(self, name):
         try:
             with open(name, 'r') as f:
@@ -85,8 +96,10 @@ class SimpleCert(controller.V3Controller):
         return webob.Response(body=body, headerlist=headers,
                               status="200 OK", charset='utf-8')
 
+    @simple_cert_deprecated
     def get_ca_certificate(self, context):
         return self._get_certificate(CONF.signing.ca_certs)
 
+    @simple_cert_deprecated
     def list_certificates(self, context):
         return self._get_certificate(CONF.signing.certfile)
