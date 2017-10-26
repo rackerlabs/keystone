@@ -4,6 +4,11 @@
  OS-SIMPLE-CERT API
 ====================
 
+.. warning::
+
+    The ``OS-SIMPLE-CERT `` API is deprecated. This is only used in support of
+    PKI/PKIZ, which had been removed in keystone.
+
 Allows the retrieval of information for Certificate Authorities and certificates.
 Requires v3.0+ of the Identity API.
 
