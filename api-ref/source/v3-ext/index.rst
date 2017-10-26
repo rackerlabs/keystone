@@ -26,7 +26,6 @@ This page describes these Identity API v3 extensions:
 * `OS-REVOKE API`_
 * `OS-EP-FILTER API`_
 * `OS-FEDERATION API`_
-* `OS-SIMPLE-CERT API`_
 
 .. rest_expand_all::
 
