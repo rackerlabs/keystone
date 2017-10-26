@@ -72,20 +72,6 @@
                 "description": "OpenStack extensions to Keystone v2.0 API enabling Administrative Operations."
             },
             {
-                "updated": "2014-01-20T12:00:0-00:00",
-                "name": "OpenStack Simple Certificate API",
-                "links": [
-                    {
-                        "href": "https://github.com/openstack/identity-api",
-                        "type": "text/html",
-                        "rel": "describedby"
-                    }
-                ],
-                "namespace": "https://docs.openstack.org/identity/api/ext/OS-SIMPLE-CERT/v1.0",
-                "alias": "OS-SIMPLE-CERT",
-                "description": "OpenStack simple certificate retrieval extension"
-            },
-            {
                 "updated": "2013-07-07T12:00:0-00:00",
                 "name": "OpenStack OAUTH1 API",
                 "links": [
