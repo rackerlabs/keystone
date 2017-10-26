@@ -1198,6 +1198,56 @@ class LDAPIdentity(BaseLDAPIdentity):
         # from the resource default.
         self.assertIs(True, user_ref['enabled'])
 
+    @mock.patch.object(common_ldap.KeystoneLDAPHandler, 'connect')
+    @mock.patch.object(common_ldap.KeystoneLDAPHandler, 'search_s')
+    @mock.patch.object(common_ldap.KeystoneLDAPHandler, 'simple_bind_s')
+    def test_filter_ldap_result_by_attr(self, mock_simple_bind_s,
+                                        mock_search_s, mock_connect):
+
+        # Mock the ldap search results to return user entries with
+        # user_name_attribute('sn') value has emptyspaces, emptystring
+        # and attibute itself is not set.
+        mock_search_s.return_value = [
+        (
+            'sn=junk1,dc=example,dc=com',
+            {
+                'cn': [uuid.uuid4().hex],
+                'email': [uuid.uuid4().hex],
+                'sn': ['junk1']
+            }
+        ),
+        (
+            '',
+            {
+                'cn': [uuid.uuid4().hex],
+                'email': [uuid.uuid4().hex],
+            }
+        ),
+        (
+            'sn=,dc=example,dc=com',
+            {
+                'cn': [uuid.uuid4().hex],
+                'email': [uuid.uuid4().hex],
+                'sn': ['']
+            }
+        ),
+        (
+            'sn=   ,dc=example,dc=com',
+            {
+                'cn': [uuid.uuid4().hex],
+                'email': [uuid.uuid4().hex],
+                'sn': ['   ']
+            }
+        )]
+
+        user_api = identity.backends.ldap.UserApi(CONF)
+        user_refs = user_api.get_all()
+        # validate that keystone.identity.backends.ldap.common.BaseLdap.
+        # _filter_ldap_result_by_attr() method fitlered the ldap query results
+        # whose name attribute values has emptyspaces, emptystring
+        # and attibute itself is not set.
+        self.assertEquals(1, len(user_refs))
+
     @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
     def test_user_enabled_attribute_handles_expired(self, mock_ldap_get):
         # If using 'passwordisexpired' as enabled attribute, and inverting it,
