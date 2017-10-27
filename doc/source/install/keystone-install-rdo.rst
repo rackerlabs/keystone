@@ -37,6 +37,8 @@ create a database.
       IDENTIFIED BY 'KEYSTONE_DBPASS';
       MariaDB [(none)]> GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'%' \
       IDENTIFIED BY 'KEYSTONE_DBPASS';
+      MariaDB [(none)]> GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'controller' \
+      IDENTIFIED BY 'KEYSTONE_DBPASS';
 
    .. end
 
