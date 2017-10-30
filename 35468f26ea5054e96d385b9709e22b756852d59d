@@ -34,6 +34,24 @@
       "revId": "35468f26ea5054e96d385b9709e22b756852d59d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_2faac618",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 629,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-10-30T13:42:01Z",
+      "side": 1,
+      "message": "This note already exists for this API on line 662. This change is about making all the descriptions consistent, so while adding a general statement would be worthwhile too, I\u0027m not sure it\u0027s a reason not to accept this change as-is.",
+      "parentUuid": "7f515b1d_52b73e3b",
+      "revId": "35468f26ea5054e96d385b9709e22b756852d59d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
