@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_92179d52",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1407,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-10-30T14:17:40Z",
+      "side": 1,
+      "message": "Since this is now a compound if statement, it could benefit from a comment that describes what it does.",
+      "range": {
+        "startLine": 1406,
+        "startChar": 16,
+        "endLine": 1407,
+        "endChar": 49
+      },
+      "revId": "b037ed8c8af1f5b121f829c5b0eb5911b0fd94ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
