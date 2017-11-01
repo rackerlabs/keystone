@@ -55,7 +55,7 @@ To enable federation, you'll need to:
 2. `Configure Apache to use a federation capable authentication method`_.
 3. `Configure Federation in Keystone`_.
 
-.. _`Run keystone under Apache`: ../apache-httpd.html
+.. _`Run keystone under Apache`: ../../install/keystone-install-obs.html#configure-the-apache-http-server
 
 Configure Apache to use a federation capable authentication method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
