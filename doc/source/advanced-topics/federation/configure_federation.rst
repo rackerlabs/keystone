@@ -51,11 +51,10 @@ Ubuntu 14.04 and Apache 2.4.7.
 
 To enable federation, you'll need to:
 
-1. `Run keystone under Apache`_, rather than using uwsgi command.
+1. Run keystone under Apache, rather than using uwsgi command.
 2. `Configure Apache to use a federation capable authentication method`_.
 3. `Configure Federation in Keystone`_.
 
-.. _`Run keystone under Apache`: ../apache-httpd.html
 
 Configure Apache to use a federation capable authentication method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

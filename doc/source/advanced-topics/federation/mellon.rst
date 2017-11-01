@@ -20,9 +20,7 @@ Setup Mellon
 Configure Apache HTTPD for mod_auth_mellon
 ------------------------------------------
 
-Follow the steps outlined at: `Running Keystone in HTTPD`_.
-
-.. _`Running Keystone in HTTPD`: ../apache-httpd.html
+Follow the steps outlined at Keystone install guide.
 
 You'll also need to install the Apache module `mod_auth_mellon
 <https://github.com/UNINETT/mod_auth_mellon>`_.  For example:
