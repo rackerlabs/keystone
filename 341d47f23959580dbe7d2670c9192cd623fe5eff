@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f4b6375_e177afd3",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1407,
+      "author": {
+        "id": 24005
+      },
+      "writtenOn": "2017-11-02T19:52:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f4b6375_ec71f1a9",
+      "range": {
+        "startLine": 1406,
+        "startChar": 16,
+        "endLine": 1407,
+        "endChar": 49
+      },
+      "revId": "341d47f23959580dbe7d2670c9192cd623fe5eff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f4b6375_0cce8d2c",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 3
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "3f4b6375_01bacb6c",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1243,
+      "author": {
+        "id": 24005
+      },
+      "writtenOn": "2017-11-02T19:52:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f4b6375_0cce8d2c",
+      "range": {
+        "startLine": 1243,
+        "startChar": 8,
+        "endLine": 1243,
+        "endChar": 17
+      },
+      "revId": "341d47f23959580dbe7d2670c9192cd623fe5eff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f4b6375_0ca20dfd",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 3
@@ -59,6 +107,30 @@
       "writtenOn": "2017-11-02T15:00:53Z",
       "side": 1,
       "message": "filtered*",
+      "range": {
+        "startLine": 1245,
+        "startChar": 47,
+        "endLine": 1245,
+        "endChar": 55
+      },
+      "revId": "341d47f23959580dbe7d2670c9192cd623fe5eff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_a1a8971f",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1245,
+      "author": {
+        "id": 24005
+      },
+      "writtenOn": "2017-11-02T19:52:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f4b6375_0ca20dfd",
       "range": {
         "startLine": 1245,
         "startChar": 47,
