@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_ec71f1a9",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1407,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-02T15:00:53Z",
+      "side": 1,
+      "message": "This is a bit complicated, since we\u0027re adding a whole other condition to the statement. It might be more readable to break these into multiple if statements or add a comment.",
+      "range": {
+        "startLine": 1406,
+        "startChar": 16,
+        "endLine": 1407,
+        "endChar": 49
+      },
+      "revId": "341d47f23959580dbe7d2670c9192cd623fe5eff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_0cce8d2c",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1243,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-02T15:00:53Z",
+      "side": 1,
+      "message": "So which user is returned? If we know only a specific user is going to be returned in this list, we can add an assertion for it, too. Just to make sure it\u0027s actually returning what we expect.",
+      "range": {
+        "startLine": 1243,
+        "startChar": 8,
+        "endLine": 1243,
+        "endChar": 17
+      },
+      "revId": "341d47f23959580dbe7d2670c9192cd623fe5eff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_0ca20dfd",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1245,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-02T15:00:53Z",
+      "side": 1,
+      "message": "filtered*",
+      "range": {
+        "startLine": 1245,
+        "startChar": 47,
+        "endLine": 1245,
+        "endChar": 55
+      },
+      "revId": "341d47f23959580dbe7d2670c9192cd623fe5eff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
