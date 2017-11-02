@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_263efd8a",
+        "filename": "releasenotes/notes/deprecate-policies-api-b104fbd1d2367b1b.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-02T19:03:49Z",
+      "side": 1,
+      "message": "This could also say it won\u0027t be removed, but I\u0027m OK with it as is.",
+      "revId": "621ea65b96636430ec5afdbd859af3a14636c831",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
