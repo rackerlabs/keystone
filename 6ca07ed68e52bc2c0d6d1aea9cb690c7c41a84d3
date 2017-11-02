@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3f4b6375_63d3c761",
+        "filename": "api-ref/source/v3/policies.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-11-02T18:30:41Z",
+      "side": 1,
+      "message": "This is what we agreed to at the PTG, and I think it\u0027s the most correct statement... It\u0027s not a question of this not being implemented, it\u0027s a question of it not being right for the reason stated.",
+      "parentUuid": "7f515b1d_351d3e73",
+      "range": {
+        "startLine": 9,
+        "startChar": 40,
+        "endLine": 10,
+        "endChar": 11
+      },
+      "revId": "6ca07ed68e52bc2c0d6d1aea9cb690c7c41a84d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f515b1d_85f1a304",
         "filename": "keystone/policy/controllers.py",
         "patchSetId": 2
