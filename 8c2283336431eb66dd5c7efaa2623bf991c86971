@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_b0532a16",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-03T14:41:46Z",
+      "side": 1,
+      "message": "We can add a release note for this, too. \n\nhttps://docs.openstack.org/keystone/latest/contributor/release-notes.html#release-notes-for-bugs",
+      "revId": "8c2283336431eb66dd5c7efaa2623bf991c86971",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_d0890675",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1251,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-03T14:41:46Z",
+      "side": 1,
+      "message": "Nice - thanks for adding this.",
+      "range": {
+        "startLine": 1250,
+        "startChar": 8,
+        "endLine": 1251,
+        "endChar": 74
+      },
+      "revId": "8c2283336431eb66dd5c7efaa2623bf991c86971",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
