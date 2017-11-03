@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_ea976a44",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-03T20:39:38Z",
+      "side": 1,
+      "message": "The only reason this class can\u0027t be removed now is because we\u0027re still going to use it for ec2 APIs, right?",
+      "range": {
+        "startLine": 162,
+        "startChar": 6,
+        "endLine": 162,
+        "endChar": 18
+      },
+      "revId": "350f09d5ff2247e002aded2bce67dd6b7fdfd577",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
