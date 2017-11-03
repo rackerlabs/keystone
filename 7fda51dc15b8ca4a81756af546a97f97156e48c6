@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_8a959634",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-03T20:41:44Z",
+      "side": 1,
+      "message": "I wonder if this was originally trying to relay that the user becomes a member of the identity provider\u0027s domain which is stored in the service provider keystone.",
+      "range": {
+        "startLine": 176,
+        "startChar": 3,
+        "endLine": 176,
+        "endChar": 34
+      },
+      "revId": "7fda51dc15b8ca4a81756af546a97f97156e48c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
