@@ -1,0 +1,11 @@
+Code-Review+2: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+1: wangxiyuan <wangxiyuan@huawei.com>
+Code-Review+1: Gage Hugo <gagehugo@gmail.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Workflow+1: Lance Bragstad <lbragstad@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Sat, 04 Nov 2017 12:51:50 +0000
+Reviewed-on: https://review.openstack.org/514554
+Project: openstack/keystone
+Branch: refs/heads/master
