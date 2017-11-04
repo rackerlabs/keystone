@@ -1,0 +1,12 @@
+Code-Review+1: Gage Hugo <gagehugo@gmail.com>
+Code-Review+1: Shan Guo <guoshan@awcloud.com>
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: Jean-Philippe Evrard <jean-philippe.evrard@rackspace.co.uk>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Workflow+1: Lance Bragstad <lbragstad@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Sat, 04 Nov 2017 00:05:10 +0000
+Reviewed-on: https://review.openstack.org/514765
+Project: openstack/keystone
+Branch: refs/heads/master
