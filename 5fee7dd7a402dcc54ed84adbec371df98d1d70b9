@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_c33dadbb",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-11-05T22:07:49Z",
+      "side": 1,
+      "message": "I think you may need to add \"include_extra_dict\u003dTrue\" here like [0].\n\n[0]https://github.com/openstack/keystone/blob/master/keystone/resource/backends/sql.py#L261",
+      "range": {
+        "startLine": 180,
+        "startChar": 19,
+        "endLine": 180,
+        "endChar": 32
+      },
+      "revId": "5fee7dd7a402dcc54ed84adbec371df98d1d70b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
