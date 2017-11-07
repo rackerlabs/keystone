@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_d450a834",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-11-07T03:09:12Z",
+      "side": 1,
+      "message": "In other places, we tend to favor catching the key error and keeping the different calls separate.  I\u0027d suggest you do that here.  It will be slightly longer code, but clearer, and you can tell the user which of the values is missing.  Ideally, you would catch all of the missing values and tell them explicitly, but I don\u0027t think our exception mechanism handles that well.\n\nraise exception.ValidationError(\n            attribute\u003d\u0027identity_provider or protocol\u0027, target\u003d\u0027mapped\u0027)  is invalid as you have an embedded \"or\" in there which will mess up the translation.  So the best you can get is:\n\ntry:\n   identity_provider \u003d auth_payload[\u0027identity_provider\u0027]\n\nexcept KeyError:\n           raise exception.ValidationError(\n            attribute\u003d\u0027identity_provider\u0027, target\u003d\u0027mapped\u0027)\n\n\nAnd the same for protocol.  I think there are other attributes that Federation requires, and you should make sure they are all handled consistently.",
+      "revId": "bcef602b6c72d0992408e5de7756a52fd7de0af6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
