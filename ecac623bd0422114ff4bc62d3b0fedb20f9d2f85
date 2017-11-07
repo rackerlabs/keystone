@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3f4b6375_6605ce45",
+        "filename": "doc/source/install/keystone-install-rdo.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-11-07T01:04:50Z",
+      "side": 1,
+      "message": "I\u0027m not sure why this is needed, since this should allow connections from all locations. This feels like an issue with the hosts file to me.",
+      "range": {
+        "startLine": 38,
+        "startChar": 74,
+        "endLine": 38,
+        "endChar": 75
+      },
+      "revId": "ecac623bd0422114ff4bc62d3b0fedb20f9d2f85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f4b6375_ea8aca61",
         "filename": "doc/source/install/keystone-install-rdo.rst",
         "patchSetId": 1
