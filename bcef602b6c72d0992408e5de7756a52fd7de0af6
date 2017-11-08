@@ -16,6 +16,24 @@
       "revId": "bcef602b6c72d0992408e5de7756a52fd7de0af6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_837adfed",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-11-08T07:23:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f4b6375_d450a834",
+      "revId": "bcef602b6c72d0992408e5de7756a52fd7de0af6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
