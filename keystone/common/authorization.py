@@ -80,11 +80,15 @@ def token_to_auth_context(token):
     except KeyError:
         LOG.warning('RBAC: Invalid user data in token')
         raise exception.Unauthorized(_('No user_id in token'))
+    auth_context['user_name'] = token.user_name
     auth_context['user_domain_id'] = token.user_domain_id
+    auth_context['user_domain_name'] = token.user_domain_name
 
     if token.project_scoped:
         auth_context['project_id'] = token.project_id
+        auth_context['project_name'] = token.project_name
         auth_context['project_domain_id'] = token.project_domain_id
+        auth_context['project_domain_name'] = token.project_domain_name
         auth_context['is_domain'] = token.is_domain
     elif token.domain_scoped:
         auth_context['domain_id'] = token.domain_id
