@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f485f77_22af9b95",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2017-11-09T16:11:28Z",
+      "side": 1,
+      "message": "Shouldn\u0027t we have that parameters described here as well?",
+      "revId": "7052ee9ed7198a311d50cb262d899c83a3214560",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
