@@ -1,0 +1,13 @@
+Verified+1: Jenkins
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: Tuan Luong-Anh <tuanla@vn.fujitsu.com>
+Code-Review+1: Shan Guo <guoshan@awcloud.com>
+Code-Review+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 13 Nov 2017 15:58:49 +0000
+Reviewed-on: https://review.openstack.org/501975
+Project: openstack/keystone
+Branch: refs/heads/master
