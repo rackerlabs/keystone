@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f485f77_2b950141",
+        "filename": "doc/source/admin/identity-caching-layer.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-11-13T14:34:12Z",
+      "side": 1,
+      "message": "Please add a note this is not recommended for use this is effectively the same as dogpile.cache.memory. You can mirror some of the verbiage - it has the same issues (and more)",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 43
+      },
+      "revId": "0454a020f7f5d4b17db46cd6fc2da0f44f83976b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f485f77_cb99cd79",
+        "filename": "doc/source/admin/identity-caching-layer.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-11-13T14:34:12Z",
+      "side": 1,
+      "message": "See above comment, same here.",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 60
+      },
+      "revId": "0454a020f7f5d4b17db46cd6fc2da0f44f83976b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
