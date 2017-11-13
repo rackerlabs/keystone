@@ -50,6 +50,9 @@ So to enable only the token back end caching, set the values as follows:
 
 Current functional back ends are:
 
+``dogpile.cache.null``
+    A "null" backend that effectively disables all cache operations.(Default)
+
 ``dogpile.cache.memcached``
    Memcached back end using the standard ``python-memcached`` library.
 
@@ -71,8 +74,20 @@ Current functional back ends are:
    between processes. This means that caching and cache invalidation will not
    be consistent or reliable.
 
-``dogpile.cache.mongo``
+``oslo_cache.mongo``
     MongoDB as caching back end.
+
+``oslo_cache.memcache_pool``
+    Memcached backend that does connection pooling.
+
+``oslo_cache.dict``
+    A DictCacheBackend based on dictionary.
+
+``oslo_cache.etcd3gw``
+    Uses etcd 3.x for storage.
+
+``dogpile.cache.memory_pickle``
+    In-memory cache, but serializes objects with pickle lib.
 
 Caching for tokens and tokens validation
 ----------------------------------------
