@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f485f77_f0c69749",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-14T13:20:12Z",
+      "side": 1,
+      "message": "It looks like we have a test class for this method [0]. It should be pretty straight-forward, but we can add a test that ensures \u0027user_name\u0027 and \u0027user_domain_name\u0027 are always in the context. We can also amend the project-scoped token tests to ensure \u0027project_name\u0027 and \u0027project_domain_name\u0027 are also populated.\n\nThis should give us some protection against regression.\n\n[0] https://github.com/openstack/keystone/blob/a6c4b75e1b2878f1966b481936bc68067ab63243/keystone/tests/unit/common/test_authorization.py",
+      "revId": "04f361b7a28112abf024d3a1788406f2f268448a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
