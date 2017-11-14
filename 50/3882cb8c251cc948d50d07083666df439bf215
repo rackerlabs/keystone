@@ -1,0 +1,9 @@
+Code-Review+2: ayoung <ayoung@redhat.com>
+Code-Review+2: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Workflow+1: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 14 Nov 2017 23:40:03 +0000
+Reviewed-on: https://review.openstack.org/517854
+Project: openstack/keystone
+Branch: refs/heads/master
