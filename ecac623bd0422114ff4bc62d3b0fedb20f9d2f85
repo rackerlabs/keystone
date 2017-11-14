@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1f485f77_5f99fc6b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-11-14T10:53:01Z",
+      "side": 1,
+      "message": "The title is too long. It\u0027s not good for git log. Can you please make it short and say more in the commit message. Thanks.",
+      "revId": "ecac623bd0422114ff4bc62d3b0fedb20f9d2f85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f4b6375_6605ce45",
         "filename": "doc/source/install/keystone-install-rdo.rst",
         "patchSetId": 1
