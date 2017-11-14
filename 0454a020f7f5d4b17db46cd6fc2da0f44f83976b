@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1f485f77_292852e0",
+        "filename": "doc/source/admin/identity-caching-layer.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-11-14T09:35:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f485f77_2b950141",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 43
+      },
+      "revId": "0454a020f7f5d4b17db46cd6fc2da0f44f83976b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f485f77_cb99cd79",
         "filename": "doc/source/admin/identity-caching-layer.rst",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2017-11-13T14:34:12Z",
       "side": 1,
       "message": "See above comment, same here.",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 60
+      },
+      "revId": "0454a020f7f5d4b17db46cd6fc2da0f44f83976b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f485f77_09235607",
+        "filename": "doc/source/admin/identity-caching-layer.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-11-14T09:35:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f485f77_cb99cd79",
       "range": {
         "startLine": 90,
         "startChar": 0,
