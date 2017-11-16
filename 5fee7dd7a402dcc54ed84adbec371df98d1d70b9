@@ -46,6 +46,30 @@
       "revId": "5fee7dd7a402dcc54ed84adbec371df98d1d70b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f485f77_b89b0f16",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-11-16T22:37:09Z",
+      "side": 1,
+      "message": "This might not need it, from the previous comment it looks like only User and Project take advantage of \"include_extra_dict\u003dTrue\".  I\u0027m not sure of the history behind it other than it looks like it\u0027s a backwards compatibility fix.",
+      "parentUuid": "1f485f77_38cf1f57",
+      "range": {
+        "startLine": 180,
+        "startChar": 19,
+        "endLine": 180,
+        "endChar": 32
+      },
+      "revId": "5fee7dd7a402dcc54ed84adbec371df98d1d70b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
