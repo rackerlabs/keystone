@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f485f77_b0b9cc79",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-11-17T21:39:11Z",
+      "side": 1,
+      "message": "I think it has to be token.is_admin_project:True",
+      "revId": "ec443e247d299123a6ae8ed9e30423b0c3683bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
