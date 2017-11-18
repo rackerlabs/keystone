@@ -824,14 +824,19 @@ class Manager(manager.Manager):
     @manager.response_truncated
     def list_projects(self, hints=None):
         if hints:
-            tag_filters = {}
+            tag_hints = driver_hints.Hints()
             # Handle project tag filters separately
             for f in list(hints.filters):
                 if f['name'] in TAG_SEARCH_FILTERS:
-                    tag_filters[f['name']] = f['value']
+                    # hints.filters object does not have a method
+                    # tag filters looks for method and name = u'name'
+                    # must switch values to fit properly
                     hints.filters.remove(f)
-            if tag_filters:
-                tag_refs = self.driver.list_projects_by_tags(tag_filters)
+                    f['method'] = f['name']
+                    f['name'] = u'name'
+                    tag_hints.filters.append(f)
+            if tag_hints.filters:
+                tag_refs = self.driver.list_projects_by_tags(tag_hints)
                 project_refs = self.driver.list_projects(hints)
                 ref_ids = [ref['id'] for ref in tag_refs]
                 return [ref for ref in project_refs if ref['id'] in ref_ids]
