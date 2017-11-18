@@ -185,18 +185,14 @@ class ProjectV3(controller.V3Controller):
     @controller.filterprotected('domain_id', 'enabled', 'name',
                                 'parent_id', 'is_domain')
     def list_projects(self, request, filters):
+        tag_params = ('tags', 'tags-any', 'not-tags', 'not-tags-any')
+        filters = filters + tag_params
         hints = ProjectV3.build_driver_hints(request, filters)
         # If 'is_domain' has not been included as a query, we default it to
         # False (which in query terms means '0')
         if 'is_domain' not in request.params:
             hints.add_filter('is_domain', '0')
-        # If any tags filters are passed in when listing projects, add them
-        # to the hint filters
-        tag_params = ['tags', 'tags-any', 'not-tags', 'not-tags-any']
-        for t in tag_params:
-            if t in request.params:
-                hints.add_filter(t, request.params[t])
-        refs = PROVIDERS.resource_api.list_projects(hints=hints)
+        refs = self.resource_api.list_projects(hints=hints)
         return ProjectV3.wrap_collection(request.context_dict,
                                          refs, hints=hints)
 

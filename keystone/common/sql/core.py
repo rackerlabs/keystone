@@ -350,7 +350,7 @@ class _WontMatch(Exception):
         # Otherwise the value could match a value in the column.
 
 
-def _filter(model, query, hints):
+def _filter(model, query, hints, query_params):
     """Apply filtering to a query.
 
     :param model: the table model in question
@@ -358,6 +358,7 @@ def _filter(model, query, hints):
     :param hints: contains the list of filters yet to be satisfied.
                   Any filters satisfied here will be removed so that
                   the caller will know if any filters remain.
+    :param query_params: query parameter string used for project tags
 
     :returns: query updated with any filters satisfied
 
@@ -382,7 +383,7 @@ def _filter(model, query, hints):
         # the filters below.  For now, these case sensitive versions will
         # be handled at the controller level.
 
-        if filter_['case_sensitive']:
+        if filter_['case_sensitive'] and 'method' not in filter_:
             return query
 
         if filter_['comparator'] == 'contains':
@@ -410,6 +411,7 @@ def _filter(model, query, hints):
         :param dict filter_: describes this filter
         :param list satisfied_filters: filter_ will be added if it is
                                        satisfied.
+
         :returns: query updated to add any exact filters satisfied
         """
         key = filter_['name']
@@ -419,8 +421,16 @@ def _filter(model, query, hints):
             filter_val = utils.attr_as_boolean(filter_['value'])
         else:
             _WontMatch.check(filter_['value'], col)
-            filter_val = filter_['value']
-
+            if 'method' in filter_:
+                if filter_['method'] == query_params:
+                    filter_val = filter_['value'].split(',')
+                    subq = query.filter(col.in_(filter_val))
+                    satisfied_filters.append(filter_)
+                    return subq
+                else:
+                    return query
+            else:
+                filter_val = filter_['value']
         satisfied_filters.append(filter_)
         return query.filter(col == filter_val)
 
@@ -468,7 +478,7 @@ def _limit(query, hints):
     return query
 
 
-def filter_limit_query(model, query, hints):
+def filter_limit_query(model, query, hints, query_params=None):
     """Apply filtering and limit to a query.
 
     :param model: table model
@@ -478,6 +488,7 @@ def filter_limit_query(model, query, hints):
                   to be applied. If it's not None, then any filters
                   satisfied here will be removed so that the caller will
                   know if any filters remain.
+    :param query_params: query parameter string used for project tags
 
     :returns: query updated with any filters and limits satisfied
 
@@ -486,7 +497,7 @@ def filter_limit_query(model, query, hints):
         return query
 
     # First try and satisfy any filters
-    query = _filter(model, query, hints)
+    query = _filter(model, query, hints, query_params)
 
     if hints.cannot_match:
         # Nothing's going to match, so don't bother with the query.
