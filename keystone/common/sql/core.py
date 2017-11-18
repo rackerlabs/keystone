@@ -382,7 +382,7 @@ def _filter(model, query, hints):
         # the filters below.  For now, these case sensitive versions will
         # be handled at the controller level.
 
-        if filter_['case_sensitive']:
+        if filter_['case_sensitive'] and 'method' not in filter_:
             return query
 
         if filter_['comparator'] == 'contains':
