@@ -172,28 +172,45 @@ class Resource(base.ResourceDriverBase):
             project_refs = self._get_children(session, [project_id])
             return not project_refs
 
-    def list_projects_by_tags(self, filters):
+    def list_projects_by_tags(self, hints):
+        filter_method = []
         filtered_ids = []
+        for f in hints.filters:
+            if f['method']:
+                filter_method.append(f['method'])
+
+        # TODO(aselius): List Project query params listed below work
+        # sequentially in the order listed in the if statements below.
+        # So, if you want to filter with tags, and not-tags, you would
+        # have to list them in the correct order otherwise the projects
+        # won't be listed correctly. (For example if you do
+        # not-tags=sample_tag&tags=sample_tag, it will only fetch results
+        # of not-tags filter). We should make it order agnostic if possible.
+
         with sql.session_for_read() as session:
             query = session.query(ProjectTag)
-            if 'tags' in filters.keys():
+            if 'tags' in filter_method:
+                tag_refs = sql.filter_limit_query(ProjectTag, query, hints,
+                                                  'tags')
                 filtered_ids += self._filter_ids_by_sorted_tags(
-                    query, filters['tags'].split(','))
-            if 'tags-any' in filters.keys():
-                any_tags = filters['tags-any'].split(',')
-                subq = query.filter(ProjectTag.name.in_(any_tags))
-                filtered_ids += [ptag['project_id'] for ptag in subq]
-            if 'not-tags' in filters.keys():
+                    query, tag_refs)
+            if 'tags-any' in filter_method:
+                tag_refs = sql.filter_limit_query(ProjectTag, query, hints,
+                                                  'tags-any')
+                filtered_ids += [ptag['project_id'] for ptag in tag_refs]
+            if 'not-tags' in filter_method:
+                tag_refs = sql.filter_limit_query(ProjectTag, query, hints,
+                                                  'not-tags')
                 blacklist_ids = self._filter_ids_by_sorted_tags(
-                    query, filters['not-tags'].split(','))
+                    query, tag_refs)
                 filtered_ids = self._filter_not_tags(session,
                                                      filtered_ids,
                                                      blacklist_ids)
-            if 'not-tags-any' in filters.keys():
-                any_tags = filters['not-tags-any'].split(',')
-                subq = query.filter(ProjectTag.name.in_(any_tags))
-                blacklist_ids = [ptag['project_id'] for ptag in subq]
-                if 'not-tags' in filters.keys():
+            if 'not-tags-any' in filter_method:
+                tag_refs = sql.filter_limit_query(ProjectTag, query, hints,
+                                                  'not-tags-any')
+                blacklist_ids = [ptag['project_id'] for ptag in tag_refs]
+                if 'not-tags' in filter_method:
                     filtered_ids += blacklist_ids
                 else:
                     filtered_ids = self._filter_not_tags(session,
@@ -206,16 +223,26 @@ class Resource(base.ResourceDriverBase):
             return [project_ref.to_dict() for project_ref in query.all()
                     if not self._is_hidden_ref(project_ref)]
 
-    def _filter_ids_by_sorted_tags(self, query, tags):
+    def _filter_ids_by_sorted_tags(self, query, filtered_query):
+        pid_list = []
+        comparator_results = {}
+        for tag in filtered_query.all():
+            pid = tag.project_id
+            if pid not in pid_list:
+                pid_list.append(pid)
+                subq = filtered_query.filter(ProjectTag.project_id == pid)
+                comparator_results[pid] = [tag.name for tag in subq.all()]
+
+        subq_results = {}
+        for pid in pid_list:
+            subq = query.filter(ProjectTag.project_id == pid)
+            subq_results[pid] = [tag.name for tag in subq.all()]
+
         filtered_ids = []
-        sorted_tags = sorted(tags)
-        subq = query.filter(ProjectTag.name.in_(sorted_tags))
-        for ptag in subq:
-            subq_tags = query.filter(ProjectTag.project_id ==
-                                     ptag['project_id'])
-            result = map(lambda x: x['name'], subq_tags.all())
-            if sorted(result) == sorted_tags:
-                filtered_ids.append(ptag['project_id'])
+        for pid in pid_list:
+            if subq_results[pid] == comparator_results[pid]:
+                filtered_ids.append(pid)
+
         return filtered_ids
 
     def _filter_not_tags(self, session, filtered_ids, blacklist_ids):
