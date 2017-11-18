@@ -25,24 +25,14 @@ CONF = keystone.conf.CONF
 
 class ConfigTestCase(unit.TestCase):
 
-    def config_files(self):
-        config_files = super(ConfigTestCase, self).config_files()
-        # Insert the keystone sample as the first config file to be loaded
-        # since it is used in one of the code paths to determine the paste-ini
-        # location.
-        config_files.insert(0, unit.dirs.etc('keystone.conf.sample'))
-        return config_files
-
     def test_paste_config(self):
-        self.assertEqual(unit.dirs.etc('keystone-paste.ini'),
+        self.assertEqual('/etc/keystone/' + CONF.paste_deploy.config_file,
                          wsgi.find_paste_config())
         self.config_fixture.config(group='paste_deploy',
                                    config_file=uuid.uuid4().hex)
         self.assertRaises(exception.ConfigFileNotFound,
                           wsgi.find_paste_config)
         self.config_fixture.config(group='paste_deploy', config_file='')
-        self.assertEqual(unit.dirs.etc('keystone.conf.sample'),
-                         wsgi.find_paste_config())
 
     def test_config_default(self):
         self.assertIsNone(CONF.auth.password)
