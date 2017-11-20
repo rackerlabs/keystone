@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_c24797bc",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 25273
+      },
+      "writtenOn": "2017-11-20T12:12:20Z",
+      "side": 1,
+      "message": "name",
+      "range": {
+        "startLine": 57,
+        "startChar": 45,
+        "endLine": 57,
+        "endChar": 47
+      },
+      "revId": "043545467d7bf71dbfc4608900ea4ffa3b7c9033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
