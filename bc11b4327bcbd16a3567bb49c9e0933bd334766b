@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_31081a27",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-11-20T07:39:33Z",
+      "side": 1,
+      "message": "I thike this is duplicated with https://github.com/openstack/keystone/blob/master/keystone/resource/core.py#L105\none should be removed right?",
+      "range": {
+        "startLine": 214,
+        "startChar": 0,
+        "endLine": 217,
+        "endChar": 48
+      },
+      "revId": "bc11b4327bcbd16a3567bb49c9e0933bd334766b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
