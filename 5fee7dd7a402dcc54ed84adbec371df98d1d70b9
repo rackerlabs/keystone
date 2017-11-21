@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "ff82abbf_36f0db67",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-21T20:42:01Z",
+      "side": 1,
+      "message": "I don\u0027t think we want to do this. This would mean operators can update enabled (or any value in extras) without it having any other impact in the API. For example, I could update enabled to False by the region would still be usable. I feel like that would be confusing for operators. I also don\u0027t think we do this for any other entity that supports extras.",
+      "range": {
+        "startLine": 179,
+        "startChar": 12,
+        "endLine": 179,
+        "endChar": 40
+      },
+      "revId": "5fee7dd7a402dcc54ed84adbec371df98d1d70b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f4b6375_c33dadbb",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 1
