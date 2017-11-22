@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ff82abbf_1d8a921a",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-11-22T00:45:07Z",
+      "side": 1,
+      "message": "It looks like this adds the extra values to the project response object after updating, which we do for projects[0]. I\u0027m not sure if there was a specific reason for omitting extra from catalog objects?\n\n[0] https://github.com/openstack/keystone/blob/master/keystone/resource/backends/sql.py#L260",
+      "parentUuid": "ff82abbf_36f0db67",
+      "range": {
+        "startLine": 179,
+        "startChar": 12,
+        "endLine": 179,
+        "endChar": 40
+      },
+      "revId": "5fee7dd7a402dcc54ed84adbec371df98d1d70b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f4b6375_c33dadbb",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 1
