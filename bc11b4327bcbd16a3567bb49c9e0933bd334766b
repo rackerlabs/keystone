@@ -22,6 +22,30 @@
       "revId": "bc11b4327bcbd16a3567bb49c9e0933bd334766b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_63f3f80b",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-11-22T04:16:06Z",
+      "side": 1,
+      "message": "We could reuse the core resource check, but that method is private so this simple check was added here.",
+      "parentUuid": "ff82abbf_31081a27",
+      "range": {
+        "startLine": 214,
+        "startChar": 0,
+        "endLine": 217,
+        "endChar": 48
+      },
+      "revId": "bc11b4327bcbd16a3567bb49c9e0933bd334766b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
