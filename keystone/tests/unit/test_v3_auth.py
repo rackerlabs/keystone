@@ -3966,8 +3966,6 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
         r = self.v3_create_token(auth_data)
         return trust
 
-    @test_utils.wip('Waiting on validation to be added from fixing bug '
-                    '1733754')
     def test_authenticate_without_trust_dict_returns_bad_request(self):
         # Authenticate for a token to use in the request
         token = self.v3_create_token(
