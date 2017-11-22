@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_928af318",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-22T18:09:11Z",
+      "side": 1,
+      "message": "We should update the exception to be clearer since that was the original issue in the bug report.\n\nhttps://github.com/openstack/keystone/blob/master/keystone/exception.py#L107-L110",
+      "revId": "a76b4e96e58f81a8ecc1647af73dbd6b23aca277",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
