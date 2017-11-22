@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_f28d7fd3",
+        "filename": "keystone/auth/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-22T18:22:24Z",
+      "side": 1,
+      "message": "We should be able to add an API test for this in keystone/tests/unit/test_v3_auth.py, which should have a test module dedicated to authenticating with trusts.\n\nWe should ensure it raises a 500 and after this fix it raises a 400.",
+      "range": {
+        "startLine": 85,
+        "startChar": 16,
+        "endLine": 90,
+        "endChar": 18
+      },
+      "revId": "a674afe19e360e3698f1e5a7c039a3c02777435f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
