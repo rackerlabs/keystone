@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_f9032241",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-22T21:57:46Z",
+      "side": 1,
+      "message": "This seems like the only case. Otherwise you\u0027d just use the API as an administrator, right?",
+      "revId": "a2291aae0fa087bb17b5f7400a773317db550c75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_79f07268",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-22T21:57:46Z",
+      "side": 1,
+      "message": "I would agree that this needs a release note.",
+      "revId": "a2291aae0fa087bb17b5f7400a773317db550c75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
