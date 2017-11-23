@@ -123,6 +123,11 @@ class BootStrap(BaseApp):
                             help=('The initial region_id endpoints will be '
                                   'placed in during the keystone bootstrap '
                                   'process.'))
+        parser.add_argument('--no-add-member-role', action='store_true',
+                            help=('Do not create the default member role.'
+                                  'This parameter will be removed in the'
+                                  'future and then Keystone will force stop'
+                                  'creating member role by bootstrap'))
         return parser
 
     def load_backends(self):
@@ -372,7 +377,16 @@ class BootStrap(BaseApp):
 
                 self.endpoints[interface] = endpoint_ref['id']
 
-        self.assignment_manager.ensure_default_role()
+        # TODO(wxy): Remove ensure_default_role in R or S release.
+        if not CONF.command.no_add_member_role:
+            LOG.warning("The default member role is only needed for Keystone "
+                        "V2 which has been removed. In the future, the "
+                        "bootstrap command will not automatically create this "
+                        "default role. Please set --no-add-member-role to opt "
+                        "into this behavior. You can create additional roles "
+                        "after keystone is bootstrapped using the `openstack "
+                        "role create` command.")
+            self.assignment_manager.ensure_default_role()
 
     @classmethod
     def main(cls):
