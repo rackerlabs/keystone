@@ -200,6 +200,12 @@ class RoleV3(controller.V3Controller):
             # Use the configured member role ID when creating the configured
             # member role name. This avoids the potential of creating a
             # "member" role with an unexpected ID.
+            Log.warning("member_role_name: %(member_role_name)s and"
+                        "member_role_id: %(member_role_id)s are only used for"
+                        "Keystone V2 and will be removed. Please avoid using"
+                        "them any more.",
+                        {'member_role_name': CONF.member_role_name,
+                         'member_role_id': CONF.member_role_id})
             role['id'] = CONF.member_role_id
         else:
             role = self._assign_unique_id(role)
