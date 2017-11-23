@@ -123,6 +123,14 @@ class BootStrap(BaseApp):
                             help=('The initial region_id endpoints will be '
                                   'placed in during the keystone bootstrap '
                                   'process.'))
+        parser.add_argument('--add-member-role',
+                            metavar='OS_ADD_MEMBER_ROLE', default=True,
+                            help=('Whether to create the default member role.'
+                                  'To keep the backwards compatibility, the'
+                                  'default value is True in Queens, False'
+                                  'in Rock and will be removed together with'
+                                  'member_role_id, member_role_name config'
+                                  'options in R release.'))
         return parser
 
     def load_backends(self):
@@ -372,7 +380,9 @@ class BootStrap(BaseApp):
 
                 self.endpoints[interface] = endpoint_ref['id']
 
-        self.assignment_manager.ensure_default_role()
+        if (os.environ.get('OS_ADD_MEMBER_ROLE') or
+                CONF.command.add_member_role):
+            self.assignment_manager.ensure_default_role()
 
     @classmethod
     def main(cls):
