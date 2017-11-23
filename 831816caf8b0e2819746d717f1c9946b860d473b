@@ -22,6 +22,30 @@
       "revId": "831816caf8b0e2819746d717f1c9946b860d473b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_85814092",
+        "filename": "doc/source/advanced-topics/federation/shibboleth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-11-23T05:02:28Z",
+      "side": 1,
+      "message": "my fault here. Thanks. Dave.",
+      "parentUuid": "1f485f77_40b2bd4a",
+      "range": {
+        "startLine": 23,
+        "startChar": 31,
+        "endLine": 23,
+        "endChar": 55
+      },
+      "revId": "831816caf8b0e2819746d717f1c9946b860d473b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
