@@ -150,6 +150,10 @@ class Manager(manager.Manager):
         try:
             self.role_api.get_role(CONF.member_role_id)
         except exception.RoleNotFound:
+            LOG.warning("The default _Member_ role is only used for Keystone"
+                        "V2 which has been removed already. The creation step"
+                        "in 'Keystone-manage bootstrp' will be removed in the"
+                        "future. Please avoid using it any more.")
             LOG.info("Creating the default role %s "
                      "because it does not exist.",
                      CONF.member_role_id)
