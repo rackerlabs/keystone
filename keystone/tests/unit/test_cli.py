@@ -260,6 +260,22 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
         self.assertEqual(role['name'], CONF.member_role_name)
         self.assertEqual(role['id'], CONF.member_role_id)
 
+    def test_bootstrap_no_add_default_role(self):
+        CONF(args=['bootstrap', '--bootstrap-password', uuid.uuid4().hex,
+                   '--no-add-member-role'],
+             project='keystone')
+        bootstrap = cli.BootStrap()
+        try:
+            bootstrap.role_manager.get_role(CONF.member_role_id)
+            self.fail('Member Role is created and should not be.')
+        except exception.RoleNotFound:
+            pass
+
+        self._do_test_bootstrap(bootstrap)
+        self.assertRaises(exception.RoleNotFound,
+                          bootstrap.role_manager.get_role,
+                          CONF.member_role_id)
+
 
 class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
 
