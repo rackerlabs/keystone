@@ -1,0 +1,4 @@
+---
+other:
+  - >
+    The member role creation step in ``keystone-manage bootstrap`` is removed.
