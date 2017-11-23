@@ -1,0 +1,5 @@
+---
+other:
+  - >
+    [`bug 1728690 <https://bugs.launchpad.net/keystone/+bug/1728690>`_]
+    The member role creation step in ``keystone-manage bootstrap`` is removed.
