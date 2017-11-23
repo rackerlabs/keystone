@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_ea700ddf",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-23T14:30:58Z",
+      "side": 1,
+      "message": "not be*",
+      "range": {
+        "startLine": 74,
+        "startChar": 46,
+        "endLine": 74,
+        "endChar": 49
+      },
+      "revId": "936f2923898fef626223ab0e345c0a7a43527567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_8ab2a193",
+        "filename": "releasenotes/notes/bug-1727099-1af277b35db34372.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-23T14:30:58Z",
+      "side": 1,
+      "message": "not be*",
+      "range": {
+        "startLine": 6,
+        "startChar": 37,
+        "endLine": 6,
+        "endChar": 40
+      },
+      "revId": "936f2923898fef626223ab0e345c0a7a43527567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_0a645121",
+        "filename": "releasenotes/notes/bug-1727099-1af277b35db34372.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-23T14:30:58Z",
+      "side": 1,
+      "message": "to the*",
+      "range": {
+        "startLine": 6,
+        "startChar": 58,
+        "endLine": 6,
+        "endChar": 60
+      },
+      "revId": "936f2923898fef626223ab0e345c0a7a43527567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
