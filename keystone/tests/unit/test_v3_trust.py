@@ -19,6 +19,7 @@ import keystone.conf
 from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
+from keystone.tests.unit import utils as test_utils
 
 CONF = keystone.conf.CONF
 
@@ -295,6 +296,18 @@ class TestTrustOperations(test_v3.RestfulTestCase):
             role_ids=[uuid.uuid4().hex])
         self.post('/OS-TRUST/trusts', body={'trust': ref},
                   expected_status=http_client.NOT_FOUND)
+
+    @test_utils.wip('Waiting on validation to be added from fixing bug1734244')
+    def test_create_trust_with_non_existant_role_id_or_name_returns_forbidden(
+            self):
+        ref = unit.new_trust_ref(trustor_user_id=self.user_id,
+                                 trustee_user_id=self.trustee_user_id,
+                                 project_id=self.project_id)
+        ref.update({'roles': {'fake_key': 'fake_value'}})
+        # Keystone should return 403 Forbidden, because there is project but no
+        # valid role in the request body.
+        self.post('/OS-TRUST/trusts', body={'trust': ref},
+                  expected_status=http_client.FORBIDDEN)
 
     def test_create_trust_with_non_existant_role_name_returns_not_found(self):
         ref = unit.new_trust_ref(
