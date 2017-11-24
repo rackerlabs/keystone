@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_e0fd706e",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-24T20:20:16Z",
+      "side": 1,
+      "message": "We could explicitly call out that this is a self-service API from an end-user perspective. Where as the update user API above can be used to reset passwords from an administrative level.\n\nWe can do this in a follow up.",
+      "revId": "06cefd94918fbdecaae0899dabbb9243d5c2f077",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
