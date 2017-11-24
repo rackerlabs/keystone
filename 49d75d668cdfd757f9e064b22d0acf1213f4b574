@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_55a42ea6",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-11-24T06:15:44Z",
+      "side": 1,
+      "message": "The other config settings here seem to describe the setting in the first sentence. I think this example[0] could work, or be tweaked to work. But I would be ok with this as well, as long as it\u0027s clear that this value is equal to new password + (n-1) previous passwords.\n\n[0]\n\"The number of unique passwords a user must have before reuse, this total includes the users new password when changed. This controls the number of previous user password iterations to keep in history, in order to enforce that newly created passwords are unique. Setting the value...\"",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 6
+      },
+      "revId": "49d75d668cdfd757f9e064b22d0acf1213f4b574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_d5b91ecc",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-11-24T06:15:44Z",
+      "side": 1,
+      "message": "I like this.",
+      "range": {
+        "startLine": 108,
+        "startChar": 43,
+        "endLine": 109,
+        "endChar": 69
+      },
+      "revId": "49d75d668cdfd757f9e064b22d0acf1213f4b574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
