@@ -93,11 +93,31 @@ class V3TokenDataHelper(object):
         super(V3TokenDataHelper, self).__init__()
 
     def _get_filtered_domain(self, domain_id):
+        """Ensure the domain is enabled and return domain id and name.
+
+        :param domain_id: The ID of the domain to validate
+        :returns: A dictionary containing two keys, the `id` of the domain and
+                  the `name` of the domain.
+        """
         domain_ref = self.resource_api.get_domain(domain_id)
+        if not domain_ref.get('enabled'):
+            msg = _(
+                'Unabled to validate token because domain %(id)s is '
+                'disabled' % {'id': domain_ref['id']}
+            )
+            LOG.warning(msg)
+            raise exception.TokenNotFound(msg)
         return {'id': domain_ref['id'], 'name': domain_ref['name']}
 
     def _get_filtered_project(self, project_id):
         project_ref = self.resource_api.get_project(project_id)
+        if not project_ref.get('enabled'):
+            msg = _(
+                'Unabled to validate token because project %(id)s is '
+                'disabled' % {'id': project_ref['id']}
+            )
+            LOG.warning(msg)
+            raise exception.TokenNotFound(msg)
         filtered_project = {
             'id': project_ref['id'],
             'name': project_ref['name']}
