@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_a0576858",
+        "filename": "api-ref/source/v3-ext/federation/auth/auth.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-24T20:37:10Z",
+      "side": 1,
+      "message": "Is this accurate? I don\u0027t think the authentication response returns the token in the actual response body. That was something we use to do with v2.0, but federation has never worked with v2.0, so I\u0027m wondering if this is a mistake.",
+      "range": {
+        "startLine": 98,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 24
+      },
+      "revId": "d0adf7d1d357f3b7851d8a69e3d8cc98600f5b33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
