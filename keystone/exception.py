@@ -165,6 +165,13 @@ class ValidationSizeError(Error):
     title = http_client.responses[http_client.BAD_REQUEST]
 
 
+class ValidationRoleError(Error):
+    message_format = _("Only 'id' or 'name' should be in the request"
+                       "attribute roles.")
+    code = int(http_client.BAD_REQUEST)
+    title = http_client.responses[http_client.BAD_REQUEST]
+
+
 class AmbiguityError(ValidationError):
     message_format = _("There are multiple %(resource)s entities named"
                        " '%(name)s'. Please use ID instead of names to"
