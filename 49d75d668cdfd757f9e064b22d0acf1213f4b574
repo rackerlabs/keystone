@@ -45,6 +45,30 @@
       "revId": "49d75d668cdfd757f9e064b22d0acf1213f4b574",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_92b0818c",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-24T14:48:00Z",
+      "side": 1,
+      "message": "I think this covers that case in your previous comment?",
+      "parentUuid": "ff82abbf_d5b91ecc",
+      "range": {
+        "startLine": 108,
+        "startChar": 43,
+        "endLine": 109,
+        "endChar": 69
+      },
+      "revId": "49d75d668cdfd757f9e064b22d0acf1213f4b574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
