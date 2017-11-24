@@ -71,6 +71,40 @@
     },
     {
       "key": {
+        "uuid": "ff82abbf_6005e013",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-24T21:09:48Z",
+      "side": 1,
+      "message": "It looks like this is already done here: \n\nhttps://github.com/openstack/keystone/blob/25b688e51de6bbdbb8d40eaabaf38cdd54a607ba/keystone/token/providers/common.py#L121",
+      "revId": "37d576409d95f332c6e893ef4f03a68f74342763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_4306a61f",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-24T21:09:48Z",
+      "side": 1,
+      "message": "It looks like domains are also validated - https://github.com/openstack/keystone/blob/25b688e51de6bbdbb8d40eaabaf38cdd54a607ba/keystone/token/providers/common.py#L96",
+      "revId": "37d576409d95f332c6e893ef4f03a68f74342763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f515b1d_01bacb6c",
         "filename": "releasenotes/notes/bug-1524030-ccff6b0ec9d1cbf2.yaml",
         "patchSetId": 40
