@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_a0d1a825",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-24T19:56:08Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be a 400 Bad Request?",
+      "range": {
+        "startLine": 102,
+        "startChar": 28,
+        "endLine": 102,
+        "endChar": 43
+      },
+      "revId": "55105a47f9f9e34515ccc907e1768bce999cfb79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_80c4a460",
+        "filename": "releasenotes/notes/bug-1734244-1b4ea83baa72566d.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-24T19:56:08Z",
+      "side": 1,
+      "message": "nit: Return a 40X status code instead of a 500 when creating a trust with extra attributes.",
+      "revId": "55105a47f9f9e34515ccc907e1768bce999cfb79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
