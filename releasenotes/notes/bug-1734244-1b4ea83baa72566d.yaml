@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    [`bug 1734244 <https://bugs.launchpad.net/keystone/+bug/1734244>`_]
+    When create trust with invalid role key(neither 'id' nor 'name'), Keystone
+    should raise 403 Forbidden, instead of 500 Internal Error.

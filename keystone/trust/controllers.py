@@ -80,7 +80,8 @@ class TrustV3(controller.V3Controller):
 
     def _normalize_role_list(self, trust_roles):
         roles = [{'id': role['id']} for role in trust_roles if 'id' in role]
-        names = [role['name'] for role in trust_roles if 'id' not in role]
+        names = [role['name'] for role in trust_roles if 'id' not in role and
+                 'name' in role]
         if len(names):
             # Long way
             for name in names:
@@ -96,6 +97,9 @@ class TrustV3(controller.V3Controller):
                 else:
                     raise exception.AmbiguityError(resource='role',
                                                    name=name)
+        if not roles:
+            action = _('At least one valid role should be specified')
+            raise exception.ForbiddenAction(action=action)
         return roles
 
     def _find_redelegated_trust(self, request):
