@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "ff82abbf_1c6a4aed",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-11-24T13:05:48Z",
+      "side": 1,
+      "message": "I think this can just be removed, it was used in the v2 API but now there\u0027s nothing that calls this method.",
+      "range": {
+        "startLine": 169,
+        "startChar": 4,
+        "endLine": 185,
+        "endChar": 47
+      },
+      "revId": "933072a0dd553c61f2631d7d2a4e10373ec3bf0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff82abbf_bbb80be5",
         "filename": "keystone/conf/default.py",
         "patchSetId": 6
