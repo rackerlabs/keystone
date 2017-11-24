@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_bbb80be5",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 19853
+      },
+      "writtenOn": "2017-11-24T08:05:13Z",
+      "side": 1,
+      "message": "again, :)",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 1
+      },
+      "revId": "933072a0dd553c61f2631d7d2a4e10373ec3bf0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
