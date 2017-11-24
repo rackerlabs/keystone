@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_2365a21e",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-24T23:19:26Z",
+      "side": 1,
+      "message": "This is tested here: \n\nhttps://github.com/openstack/keystone/blob/25b688e51de6bbdbb8d40eaabaf38cdd54a607ba/keystone/tests/unit/test_v3_auth.py#L840-L856",
+      "revId": "e87029c4449a04b45b1bed2306dc6e9556d1cf72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_436a26ee",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-24T23:19:26Z",
+      "side": 1,
+      "message": "This is tested here:\n\nhttps://github.com/openstack/keystone/blob/25b688e51de6bbdbb8d40eaabaf38cdd54a607ba/keystone/tests/unit/test_v3_auth.py#L1212-L1224\n\nand here: \n\nhttps://github.com/openstack/keystone/blob/25b688e51de6bbdbb8d40eaabaf38cdd54a607ba/keystone/tests/unit/test_v3_auth.py#L2846-L2872",
+      "revId": "e87029c4449a04b45b1bed2306dc6e9556d1cf72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
