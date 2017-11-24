@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_527bd9bc",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3986,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-24T14:50:09Z",
+      "side": 1,
+      "message": "This could probably be removed now, or in a subsequent patch.",
+      "range": {
+        "startLine": 3983,
+        "startChar": 16,
+        "endLine": 3986,
+        "endChar": 46
+      },
+      "revId": "4c824c8088e359d4fd9434e01d1652a26b905335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
