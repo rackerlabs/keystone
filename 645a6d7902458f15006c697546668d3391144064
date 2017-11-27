@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ff82abbf_3f57d95a",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-27T20:27:46Z",
+      "side": 1,
+      "message": "++ \n\nI contemplated adding that in here, but opted to keep the scope focused on the original issue. We should totally do that in a follow up. We could also propose a patch to remove that functionality from the revoke API.",
+      "parentUuid": "ff82abbf_98c64668",
+      "range": {
+        "startLine": 106,
+        "startChar": 16,
+        "endLine": 106,
+        "endChar": 51
+      },
+      "revId": "645a6d7902458f15006c697546668d3391144064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff82abbf_18b5567e",
         "filename": "releasenotes/notes/bug-1524030-0814724d5c2b7c8d.yaml",
         "patchSetId": 43
@@ -36,6 +60,30 @@
       "writtenOn": "2017-11-27T15:32:30Z",
       "side": 1,
       "message": "/validate/validated/",
+      "range": {
+        "startLine": 8,
+        "startChar": 65,
+        "endLine": 8,
+        "endChar": 73
+      },
+      "revId": "645a6d7902458f15006c697546668d3391144064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_5f541d53",
+        "filename": "releasenotes/notes/bug-1524030-0814724d5c2b7c8d.yaml",
+        "patchSetId": 43
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-27T20:27:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff82abbf_18b5567e",
       "range": {
         "startLine": 8,
         "startChar": 65,
