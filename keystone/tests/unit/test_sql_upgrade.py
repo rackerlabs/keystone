@@ -2531,6 +2531,92 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         }
         system_assignment_table.insert().values(system_group).execute()
 
+    def test_migration_032_adds_limits_table(self):
+        self.expand(31)
+        self.migrate(31)
+        self.contract(31)
+
+        registered_limit_table_name = 'registered_limit'
+        limit_table_name = 'limit'
+        self.assertTableDoesNotExist(registered_limit_table_name)
+        self.assertTableDoesNotExist(limit_table_name)
+
+        self.expand(32)
+        self.migrate(32)
+        self.contract(32)
+
+        self.assertTableExists(registered_limit_table_name)
+        self.assertTableColumns(
+            registered_limit_table_name,
+            ['id', 'service_id', 'resource_name', 'region_id', 'default_limit']
+        )
+        self.assertTableExists(limit_table_name)
+        self.assertTableColumns(
+            limit_table_name,
+            ['id', 'project_id', 'service_id', 'resource_name', 'region_id',
+             'resource_limit']
+        )
+
+        session = self.sessionmaker()
+        service_id = uuid.uuid4().hex
+        service = {'id': service_id,
+                   'type': 'compute',
+                   'enabled': True
+                   }
+        region = {'id': 'RegionOne',
+                  'description': 'test'
+                  }
+        project_id = uuid.uuid4().hex
+        project = {'id': project_id,
+                   'name': 'nova',
+                   'enabled': True,
+                   'domain_id': resource_base.NULL_DOMAIN_ID,
+                   'is_domain': False}
+        self.insert_dict(session, 'service', service)
+        self.insert_dict(session, 'region', region)
+        self.insert_dict(session, 'project', project)
+
+        registered_limit_table = sqlalchemy.Table(
+            registered_limit_table_name, self.metadata, autoload=True)
+        registered_limit = {
+            'id': uuid.uuid4().hex,
+            'service_id': service_id,
+            'region_id': 'RegionOne',
+            'resource_name': 'cores',
+            'default_limit': 10
+        }
+        registered_limit_table.insert().values(registered_limit).execute()
+
+        registered_limit_without_region = {
+            'id': uuid.uuid4().hex,
+            'service_id': service_id,
+            'resource_name': 'cores',
+            'default_limit': 10
+        }
+        registered_limit_table.insert().values(
+            registered_limit_without_region).execute()
+
+        limit_table = sqlalchemy.Table(
+            limit_table_name, self.metadata, autoload=True)
+        limit = {
+            'id': uuid.uuid4().hex,
+            'project_id': project_id,
+            'service_id': service_id,
+            'region_id': 'RegionOne',
+            'resource_name': 'cores',
+            'resource_limit': 5
+        }
+        limit_table.insert().values(limit).execute()
+
+        limit_without_region = {
+            'id': uuid.uuid4().hex,
+            'project_id': project_id,
+            'service_id': service_id,
+            'resource_name': 'cores',
+            'resource_limit': 5
+        }
+        limit_table.insert().values(limit_without_region).execute()
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
