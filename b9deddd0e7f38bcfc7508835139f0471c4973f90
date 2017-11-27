@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ff82abbf_4b877bb6",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-27T23:06:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff82abbf_6b6d9fca",
+      "range": {
+        "startLine": 107,
+        "startChar": 12,
+        "endLine": 107,
+        "endChar": 46
+      },
+      "revId": "b9deddd0e7f38bcfc7508835139f0471c4973f90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff82abbf_8b7263ac",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 44
@@ -36,6 +60,30 @@
       "writtenOn": "2017-11-27T22:35:44Z",
       "side": 1,
       "message": "See above comment, but ProjectNotFound",
+      "range": {
+        "startLine": 122,
+        "startChar": 12,
+        "endLine": 122,
+        "endChar": 46
+      },
+      "revId": "b9deddd0e7f38bcfc7508835139f0471c4973f90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_eb8f6fca",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-27T23:06:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff82abbf_8b7263ac",
       "range": {
         "startLine": 122,
         "startChar": 12,
