@@ -34,6 +34,29 @@
       "revId": "a0f1bacfc743fff0a6efe492f4bbb29f74e35df4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_9cb873e5",
+        "filename": "keystone/token/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-11-27T19:38:01Z",
+      "side": 1,
+      "message": "Need to look into what library to use.\n\nhttps://jwt.io/",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 12
+      },
+      "revId": "a0f1bacfc743fff0a6efe492f4bbb29f74e35df4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
