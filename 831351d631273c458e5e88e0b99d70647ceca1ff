@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_fc97e78d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-11-27T14:52:54Z",
+      "side": 1,
+      "message": "You need to check this for trustor as well, and for redelegated trusts.",
+      "revId": "831351d631273c458e5e88e0b99d70647ceca1ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
