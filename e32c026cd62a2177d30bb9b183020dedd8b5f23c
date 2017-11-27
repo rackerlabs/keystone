@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_b5ed53b8",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-27T14:54:46Z",
+      "side": 0,
+      "message": "Thanks :)",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 57
+      },
+      "revId": "e32c026cd62a2177d30bb9b183020dedd8b5f23c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
