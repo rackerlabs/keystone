@@ -29,6 +29,7 @@ import keystone.conf
 from keystone import exception
 from keystone.i18n import _
 
+# import jwt
 
 CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
@@ -76,6 +77,8 @@ class TokenFormatter(object):
 
         """
         # base64 padding (if any) is not URL-safe
+        # if('jwt'):
+        #    return jwt.encode(payload, algorithm='')
         return self.crypto.encrypt(payload).rstrip(b'=').decode('utf-8')
 
     def unpack(self, token):

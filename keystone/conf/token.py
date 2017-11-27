@@ -65,12 +65,12 @@ provider = cfg.StrOpt(
     help=utils.fmt("""
 Entry point for the token provider in the `keystone.token.provider` namespace.
 The token provider controls the token construction, validation, and revocation
-operations. Keystone includes `fernet` and `uuid` token
+operations. Keystone includes `jwt`, `fernet` and `uuid` token
 providers. `uuid` tokens must be persisted (using the backend specified in the
 `[token] driver` option), but do not require any extra configuration or setup.
-`fernet` tokens do not need to be persisted at all, but require that you run
-`keystone-manage fernet_setup` (also see the `keystone-manage fernet_rotate`
-command).
+`jwt` and `fernet` tokens do not need to be persisted at all, but require that
+you run their respective setup and rotation commands
+`keystone-manage jwt_setup` or `keystone-manage fernet_setup`.
 """))
 
 driver = cfg.StrOpt(
@@ -82,8 +82,8 @@ driver = cfg.StrOpt(
 Entry point for the token persistence backend driver in the
 `keystone.token.persistence` namespace. Keystone provides the `sql`
 driver.  The `sql` option (default) depends on the options in your
-`[database]` section. If you're using the `fernet` `[token] provider`, this
-backend will not be utilized to persist tokens at all.
+`[database]` section. If you're using the `jwt` or `fernet`
+`[token] provider`, this backend will not be utilized to persist tokens at all.
 """))
 
 caching = cfg.BoolOpt(
