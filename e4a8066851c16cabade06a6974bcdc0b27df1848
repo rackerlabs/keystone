@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ff82abbf_76527fe0",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-11-27T06:42:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff82abbf_6033a0f7",
+      "revId": "e4a8066851c16cabade06a6974bcdc0b27df1848",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff82abbf_803024ea",
         "filename": "keystone/tests/unit/test_v3_trust.py",
         "patchSetId": 1
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "ff82abbf_b6756766",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-11-27T06:42:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff82abbf_803024ea",
+      "range": {
+        "startLine": 301,
+        "startChar": 31,
+        "endLine": 301,
+        "endChar": 59
+      },
+      "revId": "e4a8066851c16cabade06a6974bcdc0b27df1848",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff82abbf_c03f0cb2",
         "filename": "keystone/tests/unit/test_v3_trust.py",
         "patchSetId": 1
@@ -53,6 +95,30 @@
       "writtenOn": "2017-11-24T19:53:43Z",
       "side": 1,
       "message": "Another acceptable return value might be 400 Bad Request, since it\u0027s a validation thing.\n\nI guess the following is how I think about it.\n\n  ref \u003d {\n      trustor_user_id: $TRUSTOR_USER_ID,\n      trustee_user_id: $TRUSTEE_USER_ID,\n      project_id: $PROJECT_ID,\n      roles: $MY_ROLE,\n      random: \u0027garbage\u0027\n  }\n\nShould return a 400 Bad Request because `random` isn\u0027t an attribute we accept to for trusts. Today this should return a 500.\n\n  ref \u003d {\n      trustor_user_id: $TRUSTOR_USER_ID,\n      trustee_user_id: $TRUSTEE_USER_ID,\n      project_id: $PROJECT_ID,\n      random: \u0027garbage\u0027\n  }\n\nShould return a 403 since `roles` are a required attribute of the request but they aren\u0027t included. Which should be the same outcome as:\n\n  ref \u003d {\n      trustor_user_id: $TRUSTOR_USER_ID,\n      trustee_user_id: $TRUSTEE_USER_ID,\n      project_id: $PROJECT_ID,\n  }\n\nWe could showcase this with a couple different test cases, one of which will likely be wip\u0027d.\n\n  def test_create_trust_with_extra_attributes_fails(self):\n      ref \u003d unit.new_trust_ref(trustor_user_id\u003dself.user_id,\n                               trustee_user_id\u003dself.trustee_user_id,\n                               project_id\u003dself.project_id,\n                               roles\u003dself.role_id)\n      ref.update({\u0027roles\u0027: {\u0027fake_key\u0027: \u0027fake_value\u0027}})\n\n      # Should return 400 Bad Request because `fake_key` is an extra\n      # attribute that keystone doesn\u0027t associate with trusts\n      self.post(\u0027/OS-TRUST/trusts\u0027, body\u003d{\u0027trust\u0027: ref},\n                expected_status\u003dhttp_client.BAD_REQUEST)\n\n  def test_create_trust_with_missing_attributes_and_extra_attributes_fails(self):\n      ref \u003d unit.new_trust_ref(trustor_user_id\u003dself.user_id,\n                               trustee_user_id\u003dself.trustee_user_id,\n                               project_id\u003dself.project_id)\n      ref.update({\u0027roles\u0027: {\u0027fake_key\u0027: \u0027fake_value\u0027}})\n\n      # Should return 403 Forbidden because `roles` is a required\n      # attribute\n      self.post(\u0027/OS-TRUST/trusts\u0027, body\u003d{\u0027trust\u0027: ref},\n                expected_status\u003dhttp_client.BAD_REQUEST)\n\n\nI would argue that both cases should return a 400 but apparently that\u0027s not the case the current trust API:\n\n  \u0027{\"error\": {\"title\": \"Forbidden\", \"message\": \"You are not authorized to perform the requested action: At least one valid role should be specified.\", \"code\": 403}}\u0027",
+      "range": {
+        "startLine": 310,
+        "startChar": 18,
+        "endLine": 310,
+        "endChar": 55
+      },
+      "revId": "e4a8066851c16cabade06a6974bcdc0b27df1848",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_8cfdb2b2",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-11-27T06:42:33Z",
+      "side": 1,
+      "message": "Thought again. I think we should raise 400 if a invalid key is sent.\nPlease review the new PS. Thanks.",
+      "parentUuid": "ff82abbf_c03f0cb2",
       "range": {
         "startLine": 310,
         "startChar": 18,
