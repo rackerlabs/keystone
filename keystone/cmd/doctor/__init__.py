@@ -18,7 +18,6 @@ from keystone.cmd.doctor import federation
 from keystone.cmd.doctor import ldap
 from keystone.cmd.doctor import security_compliance
 from keystone.cmd.doctor import tokens
-from keystone.cmd.doctor import tokens_fernet
 import keystone.conf
 from keystone.i18n import _
 
@@ -34,8 +33,7 @@ SYMPTOM_MODULES = [
     federation,
     ldap,
     security_compliance,
-    tokens,
-    tokens_fernet]
+    tokens]
 
 
 def diagnose():

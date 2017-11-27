@@ -12,6 +12,8 @@
 
 import keystone.conf
 
+from keystone.common import token_utils as utils
+
 
 CONF = keystone.conf.CONF
 
@@ -34,7 +36,67 @@ def symptom_unreasonable_max_token_size():
       Fernet tokens may not be built using an efficient packing method,
       depending on the IDs returned from LDAP, resulting in longer Fernet
       tokens (adjust your `max_token_size` accordingly).
+
+    - For JWT, set [Add Info Here].
     """
     return (
         'uuid' in CONF.token.provider and CONF.max_token_size != 32
         or 'fernet' in CONF.token.provider and CONF.max_token_size > 255)
+
+
+def symptom_usability_of_token_key_repository():
+    """Token key repository is not setup correctly.
+
+    The token key repository is expected to be readable by the user running
+    keystone, but not world-readable, because it contains security-sensitive
+    secrets.
+    """
+    key_repo = CONF.token.key_repository
+    max_keys = CONF.token.max_active_keys
+    conf_group = 'token'
+
+    # TODO(gagehugo): Once the fernet_tokens conf section is removed,
+    # this can be removed.
+    if 'fernet' in CONF.token.provider:
+        key_repo = CONF.fernet_tokens.key_repository
+        max_keys = CONF.fernet_tokens.max_active_keys
+        conf_group = 'fernet_tokens'
+
+    token_utils = utils.TokenUtils(
+        key_repo,
+        max_keys,
+        conf_group
+    )
+    return (
+        'fernet' in CONF.token.provider
+        and not token_utils.validate_key_repository())
+
+
+def symptom_keys_in_token_key_repository():
+    """Token key repository is empty.
+
+    After configuring keystone to use a token provider, you should use
+    `keystone-manage token_setup` to initially populate your key repository
+    with keys, and periodically rotate your keys with `keystone-manage
+    token_rotate`.
+    """
+    key_repo = CONF.token.key_repository
+    max_keys = CONF.token.max_active_keys
+    conf_group = 'token'
+
+    # TODO(gagehugo): Once the fernet_tokens conf section is removed,
+    # this can be removed.
+    if 'fernet' in CONF.token.provider:
+        key_repo = CONF.fernet_tokens.key_repository
+        max_keys = CONF.fernet_tokens.max_active_keys
+        conf_group = 'fernet_tokens'
+
+    token_utils = utils.TokenUtils(
+        key_repo,
+        max_keys,
+        conf_group
+    )
+
+    return (
+        'fernet' in CONF.token.provider
+        and not token_utils.load_keys())

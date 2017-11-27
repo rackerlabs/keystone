@@ -54,8 +54,8 @@ class TestMFARules(test_v3.RestfulTestCase):
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
-                'fernet_tokens',
-                CONF.fernet_tokens.max_active_keys
+                'token',
+                CONF.token.max_active_keys
             )
         )
 
@@ -2312,8 +2312,8 @@ class TestFernetTokenAPIs(test_v3.RestfulTestCase, TokenAPITests,
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
-                'fernet_tokens',
-                CONF.fernet_tokens.max_active_keys
+                'token',
+                CONF.token.max_active_keys
             )
         )
 
@@ -2539,8 +2539,8 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
-                'fernet_tokens',
-                CONF.fernet_tokens.max_active_keys
+                'token',
+                CONF.token.max_active_keys
             )
         )
 
@@ -3239,8 +3239,8 @@ class TestTokenRevokeApi(TestTokenRevokeById):
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
-                'fernet_tokens',
-                CONF.fernet_tokens.max_active_keys
+                'token',
+                CONF.token.max_active_keys
             )
         )
 
@@ -4718,8 +4718,8 @@ class TestTrustAuthFernetTokenProvider(TrustAPIBehavior, TestTrustChain):
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
-                'fernet_tokens',
-                CONF.fernet_tokens.max_active_keys
+                'token',
+                CONF.token.max_active_keys
             )
         )
 
