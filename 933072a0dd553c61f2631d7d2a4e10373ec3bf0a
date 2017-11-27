@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ff82abbf_1b5d5ee8",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-11-27T08:58:04Z",
+      "side": 1,
+      "message": "I did it here for concise review: https://review.openstack.org/#/c/523005/",
+      "parentUuid": "ff82abbf_1c6a4aed",
+      "range": {
+        "startLine": 169,
+        "startChar": 4,
+        "endLine": 185,
+        "endChar": 47
+      },
+      "revId": "933072a0dd553c61f2631d7d2a4e10373ec3bf0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff82abbf_bbb80be5",
         "filename": "keystone/conf/default.py",
         "patchSetId": 6
