@@ -34,6 +34,24 @@
       "revId": "e4a44a278c7ec739e0dc3d196f16ba2ee6624354",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_f8019239",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-27T15:30:20Z",
+      "side": 1,
+      "message": "This will likely require microversions in order to make this change.\n\nWe should add this to the list of things we can do with microversion support, if we add it.",
+      "parentUuid": "7a77a97e_32af247e",
+      "revId": "e4a44a278c7ec739e0dc3d196f16ba2ee6624354",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
