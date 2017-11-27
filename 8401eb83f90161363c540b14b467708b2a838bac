@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_d5db37ea",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-27T14:59:16Z",
+      "side": 0,
+      "message": "We should be able to deprecate these now, too: \n\nhttps://github.com/openstack/keystone/blob/8401eb83f90161363c540b14b467708b2a838bac/keystone/conf/default.py#L92-L112",
+      "revId": "8401eb83f90161363c540b14b467708b2a838bac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
