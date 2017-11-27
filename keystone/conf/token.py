@@ -69,7 +69,7 @@ operations. Keystone includes `fernet` and `uuid` token
 providers. `uuid` tokens must be persisted (using the backend specified in the
 `[token] driver` option), but do not require any extra configuration or setup.
 `fernet` tokens do not need to be persisted at all, but require that you run
-`keystone-manage fernet_setup` (also see the `keystone-manage fernet_rotate`
+`keystone-manage token_setup` (also see the `keystone-manage token_rotate`
 command).
 """))
 

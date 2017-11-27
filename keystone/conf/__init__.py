@@ -29,7 +29,6 @@ from keystone.conf import endpoint_filter
 from keystone.conf import endpoint_policy
 from keystone.conf import eventlet_server
 from keystone.conf import federation
-from keystone.conf import fernet_tokens
 from keystone.conf import identity
 from keystone.conf import identity_mapping
 from keystone.conf import ldap
@@ -45,6 +44,7 @@ from keystone.conf import security_compliance
 from keystone.conf import shadow_users
 from keystone.conf import signing
 from keystone.conf import token
+from keystone.conf import token_provider
 from keystone.conf import tokenless_auth
 from keystone.conf import trust
 
@@ -63,7 +63,6 @@ conf_modules = [
     endpoint_policy,
     eventlet_server,
     federation,
-    fernet_tokens,
     identity,
     identity_mapping,
     ldap,
@@ -79,6 +78,7 @@ conf_modules = [
     shadow_users,
     signing,
     token,
+    token_provider,
     tokenless_auth,
     trust,
 ]
