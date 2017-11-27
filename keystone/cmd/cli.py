@@ -28,9 +28,9 @@ import pbr.version
 
 from keystone.cmd import doctor
 from keystone.common import driver_hints
-from keystone.common import fernet_utils
 from keystone.common import sql
 from keystone.common.sql import upgrades
+from keystone.common import token_utils
 from keystone.common import utils
 import keystone.conf
 from keystone.credential.providers import fernet as credential_fernet
@@ -586,23 +586,23 @@ class BasePermissionsSetup(BaseApp):
         return keystone_user_id, keystone_group_id
 
 
-class FernetSetup(BasePermissionsSetup):
-    """Setup a key repository for Fernet tokens.
+class TokenSetup(BasePermissionsSetup):
+    """Setup a key repository for tokens.
 
     This also creates a primary key used for both creating and validating
-    Fernet tokens. To improve security, you should rotate your keys (using
-    keystone-manage fernet_rotate, for example).
+    tokens. To improve security, you should rotate your keys (using
+    keystone-manage token_rotate, for example).
 
     """
 
-    name = 'fernet_setup'
+    name = 'token_setup'
 
     @classmethod
     def main(cls):
-        futils = fernet_utils.FernetUtils(
-            CONF.fernet_tokens.key_repository,
-            CONF.fernet_tokens.max_active_keys,
-            'fernet_tokens'
+        futils = token_utils.TokenUtils(
+            CONF.token.key_repository,
+            CONF.token.max_active_keys,
+            'token'
         )
 
         keystone_user_id, keystone_group_id = cls.get_user_group()
@@ -612,32 +612,32 @@ class FernetSetup(BasePermissionsSetup):
                 keystone_user_id, keystone_group_id)
 
 
-class FernetRotate(BasePermissionsSetup):
-    """Rotate Fernet encryption keys.
+class TokenRotate(BasePermissionsSetup):
+    """Rotate token encryption keys.
 
-    This assumes you have already run keystone-manage fernet_setup.
+    This assumes you have already run keystone-manage token_setup.
 
     A new primary key is placed into rotation, which is used for new tokens.
     The old primary key is demoted to secondary, which can then still be used
-    for validating tokens. Excess secondary keys (beyond [fernet_tokens]
+    for validating tokens. Excess secondary keys (beyond [token_provider]
     max_active_keys) are revoked. Revoked keys are permanently deleted. A new
     staged key will be created and used to validate tokens. The next time key
     rotation takes place, the staged key will be put into rotation as the
     primary key.
 
-    Rotating keys too frequently, or with [fernet_tokens] max_active_keys set
+    Rotating keys too frequently, or with [token_provider] max_active_keys set
     too low, will cause tokens to become invalid prior to their expiration.
 
     """
 
-    name = 'fernet_rotate'
+    name = 'token_rotate'
 
     @classmethod
     def main(cls):
-        futils = fernet_utils.FernetUtils(
-            CONF.fernet_tokens.key_repository,
-            CONF.fernet_tokens.max_active_keys,
-            'fernet_tokens'
+        futils = token_utils.TokenUtils(
+            CONF.token.key_repository,
+            CONF.token.max_active_keys,
+            'token'
         )
 
         keystone_user_id, keystone_group_id = cls.get_user_group()
@@ -646,10 +646,10 @@ class FernetRotate(BasePermissionsSetup):
 
 
 class CredentialSetup(BasePermissionsSetup):
-    """Setup a Fernet key repository for credential encryption.
+    """Setup a Token key repository for credential encryption.
 
     The purpose of this command is very similar to `keystone-manage
-    fernet_setup` only the keys included in this repository are for encrypting
+    token_setup` only the keys included in this repository are for encrypting
     and decrypting credential secrets instead of token payloads. Keys can be
     rotated using `keystone-manage credential_rotate`.
     """
@@ -658,7 +658,7 @@ class CredentialSetup(BasePermissionsSetup):
 
     @classmethod
     def main(cls):
-        futils = fernet_utils.FernetUtils(
+        futils = token_utils.TokenUtils(
             CONF.credential.key_repository,
             credential_fernet.MAX_ACTIVE_KEYS,
             'credential'
@@ -730,7 +730,7 @@ class CredentialRotate(BasePermissionsSetup):
 
     @classmethod
     def main(cls):
-        futils = fernet_utils.FernetUtils(
+        futils = token_utils.TokenUtils(
             CONF.credential.key_repository,
             credential_fernet.MAX_ACTIVE_KEYS,
             'credential'
@@ -790,7 +790,7 @@ class CredentialMigrate(BasePermissionsSetup):
     @classmethod
     def main(cls):
         # Check to make sure we have a repository that works...
-        futils = fernet_utils.FernetUtils(
+        futils = token_utils.TokenUtils(
             CONF.credential.key_repository,
             credential_fernet.MAX_ACTIVE_KEYS,
             'credential'
@@ -1292,8 +1292,8 @@ CMDS = [
     DbVersion,
     Doctor,
     DomainConfigUpload,
-    FernetRotate,
-    FernetSetup,
+    TokenRotate,
+    TokenSetup,
     MappingPopulate,
     MappingPurge,
     MappingEngineTester,
