@@ -16,6 +16,24 @@
       "revId": "c288666b65cb76e960eaa0ce31559d6b711ee5e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_c2e13e9d",
+        "filename": "releasenotes/notes/bug-1734244-1b4ea83baa72566d.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-11-27T11:31:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff82abbf_1193fa5c",
+      "revId": "c288666b65cb76e960eaa0ce31559d6b711ee5e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
