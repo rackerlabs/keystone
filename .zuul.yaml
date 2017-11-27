@@ -30,8 +30,26 @@
       tox_env: upgrade
       osa_test_repo: "openstack/openstack-ansible-os_keystone"
 
+- job:
+    name: tempest-dsvm-py35
+    parent: dsvm-base
+    run: playbooks/legacy/tempest-dsvm-py35/run.yaml
+    post-run: playbooks/legacy/tempest-dsvm-py35/post.yaml
+    timeout: 10800
+    required-projects:
+      - openstack-infra/devstack-gate
+      - openstack/tempest
+    irrelevant-files:
+      - ^.*\.rst$
+      - ^api-ref/.*$
+      - ^doc/.*$
+      - ^etc/.*$
+      - ^keystone/tests/unit/.*$
+      - ^releasenotes/.*$
+
 - project:
     name: openstack/keystone
     check:
       jobs:
         - openstack-ansible-keystone-rolling-upgrade
+        - tempest-dsvm-py35
