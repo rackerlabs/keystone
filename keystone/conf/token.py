@@ -65,12 +65,54 @@ provider = cfg.StrOpt(
     help=utils.fmt("""
 Entry point for the token provider in the `keystone.token.provider` namespace.
 The token provider controls the token construction, validation, and revocation
-operations. Keystone includes `fernet` and `uuid` token
-providers. `uuid` tokens must be persisted (using the backend specified in the
+operations. Keystone includes `fernet`, `jwt`, and `uuid` token providers.
+`uuid` tokens must be persisted (using the backend specified in the
 `[token] driver` option), but do not require any extra configuration or setup.
-`fernet` tokens do not need to be persisted at all, but require that you run
-`keystone-manage fernet_setup` (also see the `keystone-manage fernet_rotate`
-command).
+`fernet` and `jwt` tokens do not need to be persisted at all, but require that
+you run `keystone-manage token_setup` (also see the
+`keystone-manage token_rotate` command).
+"""))
+
+key_repository = cfg.StrOpt(
+    'key_repository',
+    default='/etc/keystone/token-keys/',
+    deprecated_opts=[cfg.DeprecatedOpt('key_repository',
+                                       group='fernet_tokens')],
+    help=utils.fmt("""
+Directory containing token keys. This directory must exist before using
+`keystone-manage token_setup` for the first time, must be writable by the user
+running `keystone-manage token_setup` or `keystone-manage token_rotate`, and
+of course must be readable by keystone's server process. The repository may
+contain keys in one of three states: a single staged key (always index 0) used
+for token validation, a single primary key (always the highest index) used for
+token creation and validation, and any number of secondary keys (all other
+index values) used for token validation. With multiple keystone nodes, each
+node must share the same key repository contents, with the exception of the
+staged key (index 0). It is safe to run `keystone-manage token_rotate` once on
+any one node to promote a staged key (index 0) to be the new primary
+(incremented from the previous highest index), and produce a new staged key (a
+new key with index 0); the resulting repository can then be atomically
+replicated to other nodes without any risk of race conditions (for example, it
+is safe to run `keystone-manage token_rotate` on host A, wait any amount of
+time, create a tarball of the directory on host A, unpack it on host B to a
+temporary location, and atomically move (`mv`) the directory into place on host
+B). Running `keystone-manage token_rotate` *twice* on a key repository without
+syncing other nodes will result in tokens that can not be validated by all
+nodes.
+"""))
+
+max_active_keys = cfg.IntOpt(
+    'max_active_keys',
+    default=3,
+    deprecated_opts=[cfg.DeprecatedOpt('max_active_keys',
+                                       group='fernet_tokens')],
+    min=1,
+    help=utils.fmt("""
+This controls how many keys are held in rotation by `keystone-manage
+token_rotate` before they are discarded. The default value of 3 means that
+keystone will maintain one staged key (always index 0), one primary key (the
+highest numerical index), and one secondary key (every other index). Increasing
+this value means that additional secondary keys will be kept in the rotation.
 """))
 
 driver = cfg.StrOpt(
@@ -82,8 +124,9 @@ driver = cfg.StrOpt(
 Entry point for the token persistence backend driver in the
 `keystone.token.persistence` namespace. Keystone provides the `sql`
 driver.  The `sql` option (default) depends on the options in your
-`[database]` section. If you're using the `fernet` `[token] provider`, this
-backend will not be utilized to persist tokens at all.
+`[database]` section. If you're using the `fernet` or `JWT`
+`[token] provider`, this backend will not be utilized to persist
+tokens at all.
 """))
 
 caching = cfg.BoolOpt(
@@ -160,6 +203,8 @@ ALL_OPTS = [
     enforce_token_bind,
     expiration,
     provider,
+    key_repository,
+    max_active_keys,
     driver,
     caching,
     cache_time,

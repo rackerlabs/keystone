@@ -20,7 +20,7 @@ from oslo_config import fixture as config_fixture
 from oslo_log import log
 import six
 
-from keystone.common import fernet_utils
+from keystone.common import token_utils
 from keystone.common import utils as common_utils
 import keystone.conf
 from keystone.credential.providers import fernet as credential_fernet
@@ -272,33 +272,33 @@ class ServiceHelperTests(unit.BaseTestCase):
         self.assertRaises(unit.UnexpectedExit, self._do_test)
 
 
-class FernetUtilsTestCase(unit.BaseTestCase):
+class TokenUtilsTestCase(unit.BaseTestCase):
 
     def setUp(self):
-        super(FernetUtilsTestCase, self).setUp()
+        super(TokenUtilsTestCase, self).setUp()
         self.config_fixture = self.useFixture(config_fixture.Config(CONF))
 
     def test_debug_message_logged_when_loading_fernet_token_keys(self):
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
-                'fernet_tokens',
-                CONF.fernet_tokens.max_active_keys
+                'token',
+                CONF.token.max_active_keys
             )
         )
         logging_fixture = self.useFixture(fixtures.FakeLogger(level=log.DEBUG))
-        fernet_utilities = fernet_utils.FernetUtils(
-            CONF.fernet_tokens.key_repository,
-            CONF.fernet_tokens.max_active_keys,
-            'fernet_tokens'
+        fernet_utilities = token_utils.TokenUtils(
+            CONF.token.key_repository,
+            CONF.token.max_active_keys,
+            'token'
         )
         fernet_utilities.load_keys()
         expected_debug_message = (
-            'Loaded 2 Fernet keys from %(dir)s, but `[fernet_tokens] '
+            'Loaded 2 token keys from %(dir)s, but `[token] '
             'max_active_keys = %(max)d`; perhaps there have not been enough '
             'key rotations to reach `max_active_keys` yet?') % {
-                'dir': CONF.fernet_tokens.key_repository,
-                'max': CONF.fernet_tokens.max_active_keys}
+                'dir': CONF.token.key_repository,
+                'max': CONF.token.max_active_keys}
         self.assertIn(expected_debug_message, logging_fixture.output)
 
     def test_debug_message_not_logged_when_loading_fernet_credential_key(self):
@@ -306,11 +306,11 @@ class FernetUtilsTestCase(unit.BaseTestCase):
             ksfixtures.KeyRepository(
                 self.config_fixture,
                 'credential',
-                CONF.fernet_tokens.max_active_keys
+                CONF.token.max_active_keys
             )
         )
         logging_fixture = self.useFixture(fixtures.FakeLogger(level=log.DEBUG))
-        fernet_utilities = fernet_utils.FernetUtils(
+        fernet_utilities = token_utils.TokenUtils(
             CONF.credential.key_repository,
             credential_fernet.MAX_ACTIVE_KEYS,
             'credential'

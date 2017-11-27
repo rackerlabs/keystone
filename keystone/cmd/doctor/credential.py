@@ -12,7 +12,7 @@
 
 import keystone.conf
 
-from keystone.common import fernet_utils as utils
+from keystone.common import token_utils as utils
 from keystone.credential.providers import fernet as credential_fernet
 
 
@@ -33,10 +33,15 @@ def symptom_unique_key_repositories():
     encrypt the entity has been deleted.
 
     Ensure `keystone.conf [credential] key_repository` and `keystone.conf
-    [fernet_tokens] key_repository` are not pointing to the same location.
+    [token] key_repository` are not pointing to the same location.
     """
+    if CONF.token.provider == 'fernet':
+        key_repo = CONF.fernet_tokens.key_repository
+    else:
+        key_repo = CONF.token.key_repository
+
     return (
-        CONF.credential.key_repository == CONF.fernet_tokens.key_repository
+        CONF.credential.key_repository == key_repo
     )
 
 
@@ -47,14 +52,14 @@ def symptom_usability_of_credential_fernet_key_repository():
     running keystone, but not world-readable, because it contains
     security sensitive secrets.
     """
-    fernet_utils = utils.FernetUtils(
+    token_utils = utils.TokenUtils(
         CONF.credential.key_repository,
         credential_fernet.MAX_ACTIVE_KEYS,
         'credential'
     )
     return (
         'fernet' in CONF.credential.provider
-        and not fernet_utils.validate_key_repository())
+        and not token_utils.validate_key_repository())
 
 
 def symptom_keys_in_credential_fernet_key_repository():
@@ -65,11 +70,11 @@ def symptom_keys_in_credential_fernet_key_repository():
     key repository with keys, and periodically rotate your keys with
     `keystone-manage credential_rotate`.
     """
-    fernet_utils = utils.FernetUtils(
+    token_utils = utils.TokenUtils(
         CONF.credential.key_repository,
         credential_fernet.MAX_ACTIVE_KEYS,
         'credential'
     )
     return (
         'fernet' in CONF.credential.provider
-        and not fernet_utils.load_keys())
+        and not token_utils.load_keys())
