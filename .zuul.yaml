@@ -11,6 +11,153 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+- job:
+    name: tempest-dsvm-py35
+    parent: legacy-dsvm-base
+    run: playbooks/legacy/tempest-dsvm-py35/run.yaml
+    post-run: playbooks/legacy/tempest-dsvm-py35/post.yaml
+    timeout: 10800
+    required-projects:
+      - openstack-infra/devstack-gate
+      - openstack/tempest
+    irrelevant-files:
+      - ^.*\.rst$
+      - ^api-ref/.*$
+      - ^doc/.*$
+      - ^etc/.*$
+      - ^keystone/tests/unit/.*$
+      - ^releasenotes/.*$
+
+- job:
+    name: legacy-keystoneclient-dsvm-functional
+    parent: legacy-dsvm-base
+    run: playbooks/legacy/keystoneclient-dsvm-functional/run.yaml
+    post-run: playbooks/legacy/keystoneclient-dsvm-functional/post.yaml
+    timeout: 4200
+    voting: false
+    required-projects:
+      - openstack-infra/devstack-gate
+      - openstack/keystone
+      - openstack/python-keystoneclient
+    irrelevant-files:
+      - ^.*\.rst$
+      - ^api-ref/.*$
+      - ^doc/.*$
+      - ^etc/.*$
+      - ^keystone/tests/unit/.*$
+      - ^releasenotes/.*$
+
+- job:
+    name: legacy-keystone-dsvm-functional
+    parent: legacy-dsvm-base
+    run: playbooks/legacy/keystone-dsvm-functional/run.yaml
+    post-run: playbooks/legacy/keystone-dsvm-functional/post.yaml
+    timeout: 4200
+    required-projects:
+      - openstack-infra/devstack-gate
+      - openstack/keystone
+      - openstack/keystone-tempest-plugin
+    irrelevant-files:
+      - ^.*\.rst$
+      - ^api-ref/.*$
+      - ^doc/.*$
+      - ^etc/.*$
+      - ^keystone/tests/unit/.*$
+      - ^releasenotes/.*$
+
+- job:
+    name: legacy-keystone-dsvm-functional-v3-only
+    parent: legacy-dsvm-base
+    run: playbooks/legacy/keystone-dsvm-functional-v3-only/run.yaml
+    post-run: playbooks/legacy/keystone-dsvm-functional-v3-only/post.yaml
+    timeout: 4200
+    voting: false
+    required-projects:
+      - openstack-infra/devstack-gate
+      - openstack/keystone
+      - openstack/keystone-tempest-plugin
+    irrelevant-files:
+      - ^.*\.rst$
+      - ^api-ref/.*$
+      - ^doc/.*$
+      - ^etc/.*$
+      - ^keystone/tests/unit/.*$
+      - ^releasenotes/.*$
+
+- job:
+    name: legacy-keystone-dsvm-py35-functional-v3-only
+    parent: legacy-dsvm-base
+    run: playbooks/legacy/keystone-dsvm-py35-functional-v3-only/run.yaml
+    post-run: playbooks/legacy/keystone-dsvm-py35-functional-v3-only/post.yaml
+    timeout: 4200
+    voting: false
+    required-projects:
+      - openstack-infra/devstack-gate
+      - openstack/keystone
+      - openstack/keystone-tempest-plugin
+    irrelevant-files:
+      - ^.*\.rst$
+      - ^api-ref/.*$
+      - ^doc/.*$
+      - ^etc/.*$
+      - ^keystone/tests/unit/.*$
+      - ^releasenotes/.*$
+
+- job:
+    name: legacy-tempest-dsvm-ldap-domain-specific-driver
+    parent: legacy-dsvm-base
+    run: playbooks/legacy/tempest-dsvm-ldap-domain-specific-driver/run.yaml
+    post-run: playbooks/legacy/tempest-dsvm-ldap-domain-specific-driver/post.yaml
+    timeout: 10800
+    voting: false
+    required-projects:
+      - openstack-infra/devstack-gate
+      - openstack/tempest
+    irrelevant-files:
+      - ^.*\.rst$
+      - ^api-ref/.*$
+      - ^doc/.*$
+      - ^etc/.*$
+      - ^keystone/tests/unit/.*$
+      - ^releasenotes/.*$
+
+- job:
+    name: legacy-tempest-dsvm-neutron-full
+    parent: legacy-dsvm-base
+    run: playbooks/legacy/tempest-dsvm-neutron-full/run.yaml
+    post-run: playbooks/legacy/tempest-dsvm-neutron-full/post.yaml
+    timeout: 10800
+    required-projects:
+      - openstack-infra/devstack-gate
+      - openstack/neutron
+      - openstack/tempest
+    irrelevant-files:
+      - ^.*\.rst$
+      - ^api-ref/.*$
+      - ^doc/.*$
+      - ^etc/.*$
+      - ^keystone/tests/unit/.*$
+      - ^releasenotes/.*$
+
+- job:
+    name: legacy-grenade-dsvm-neutron
+    parent: legacy-dsvm-base
+    run: playbooks/legacy/grenade-dsvm-neutron/run.yaml
+    post-run: playbooks/legacy/grenade-dsvm-neutron/post.yaml
+    timeout: 10800
+    required-projects:
+      - openstack-dev/grenade
+      - openstack-infra/devstack-gate
+      - openstack/neutron
+    branches: ^(?!stable/(newton|ocata)).*$
+    irrelevant-files:
+      - ^.*\.rst$
+      - ^api-ref/.*$
+      - ^doc/.*$
+      - ^etc/.*$
+      - ^keystone/tests/unit/.*$
+      - ^releasenotes/.*$
+
 # This job will execute 'tox -e upgrade' from the OSA
 # repo specified in 'osa_test_repo'.
 - job:
@@ -34,4 +181,18 @@
     name: openstack/keystone
     check:
       jobs:
+        - tempest-dsvm-py35
+        - keystoneclient-dsvm-functional
+        - keystone-dsvm-functional
+        - keystone-dsvm-functional-v3-only
+        - keystone-dsvm-py35-functional-v3-only
+        - tempest-dsvm-ldap-domain-specific-driver
+        - tempest-dsvm-neutron-full
+        - grenade-dsvm-neutron
         - openstack-ansible-keystone-rolling-upgrade
+    gate:
+      jobs:
+        - tempest-dsvm-py35
+        - keystone-dsvm-functional
+        - tempest-dsvm-neutron-full
+        - grenade-dsvm-neutron
