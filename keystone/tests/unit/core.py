@@ -632,8 +632,8 @@ class TestCase(BaseTestCase):
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
-                'fernet_tokens',
-                CONF.fernet_tokens.max_active_keys
+                'token',
+                CONF.token.max_active_keys
             )
         )
 
