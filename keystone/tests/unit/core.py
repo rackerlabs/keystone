@@ -48,6 +48,7 @@ import keystone.conf
 from keystone import exception
 from keystone.identity.backends.ldap import common as ks_ldap
 from keystone import notifications
+from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
 from keystone.version import controllers
 from keystone.version import service
@@ -728,6 +729,8 @@ class TestCase(BaseTestCase):
                 setattr(self, attrname, rv)
                 fixtures_to_cleanup.append(attrname)
 
+            role_member = unit.new_role_ref()
+            self.role_api.create_role(role_member['id'], role_member)
             for user in fixtures.USERS:
                 user_copy = user.copy()
                 tenants = user_copy.pop('tenants')
@@ -740,8 +743,8 @@ class TestCase(BaseTestCase):
                 user_copy['password'] = user['password']
 
                 for tenant_id in tenants:
-                    self.assignment_api.add_user_to_project(
-                        tenant_id, user_copy['id'])
+                    self.assignment_api.add_role_to_user_and_project(
+                        user_copy['id'], tenant_id, role_member['id'])
                 # Use the ID from the fixture as the attribute name, so
                 # that our tests can easily reference each user dict, while
                 # the ID in the dict will be the real public ID.
