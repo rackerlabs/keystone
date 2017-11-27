@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_dc34bb95",
+        "filename": "keystone/conf/jwt_tokens.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-27T19:35:01Z",
+      "side": 1,
+      "message": "We could probably make these configuration options general enough to work for both fernet and jwt. That\u0027d make the maintenance bits a little easier.",
+      "revId": "a0f1bacfc743fff0a6efe492f4bbb29f74e35df4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
