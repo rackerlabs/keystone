@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "ff82abbf_3bbfcdaa",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-11-28T20:26:10Z",
+      "side": 1,
+      "message": "With https://review.openstack.org/#/c/523005/ and the changes in cli.py and the oslo.config deprecations I think nothing else uses this method so I don\u0027t think this warning is really needed.\n\nIf you think the warning here is important, it should identify the action that is causing the warning to be emitted (calling the method?) so that the user knows what to stop doing.",
+      "revId": "8be94ffc4d68e614d386d70f28acf3e39bafaf14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_7bac75ec",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-11-28T20:26:10Z",
+      "side": 1,
+      "message": "I think there is no need to add an environment variable equivalent here. The other OS_ variables are properties of the cloud, this is just a flag to turn on or off behavior.\n\nAlso, I don\u0027t think this is correct syntax for an argument that is just a boolean flag, you will need something like action\u003d\u0027store_true\u0027 or action\u003d\u0027store_false\u0027: https://docs.python.org/3/library/argparse.html#action\n\nProbably the default behavior should be to add the member role, so adding the flag should cause a store_false. In that case the flag should be be in the negative, so something like --no-add-member-role",
+      "revId": "8be94ffc4d68e614d386d70f28acf3e39bafaf14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff82abbf_7b7b1527",
         "filename": "releasenotes/notes/deprecated-as-of-queens-8ad7f826e4f08f57.yaml",
         "patchSetId": 7
