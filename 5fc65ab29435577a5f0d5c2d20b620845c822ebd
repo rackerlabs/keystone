@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ff82abbf_7e7463cf",
+        "filename": "doc/source/contributor/testing-keystone.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-28T21:51:38Z",
+      "side": 1,
+      "message": "Yeah - that or make it a general example so we don\u0027t have to keep updating it to something current?",
+      "parentUuid": "ff82abbf_dbc90126",
+      "revId": "5fc65ab29435577a5f0d5c2d20b620845c822ebd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff82abbf_bbb99d79",
         "filename": "doc/source/contributor/testing-keystone.rst",
         "patchSetId": 1
@@ -47,6 +65,24 @@
       "writtenOn": "2017-11-28T20:41:02Z",
       "side": 1,
       "message": "How does this actually work? I\u0027m not seeing a difference when running tests with OS_STDOUT_CAPTURE\u003d1 or 0. Does this come from ostestr automatically or is this something we are supposed to have in our tox.ini/.testr.conf?",
+      "revId": "5fc65ab29435577a5f0d5c2d20b620845c822ebd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_61e922e4",
+        "filename": "doc/source/contributor/testing-keystone.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-28T21:51:38Z",
+      "side": 1,
+      "message": "Removed per IRC discussion: \n\nhttp://eavesdrop.openstack.org/irclogs/%23openstack-qa/%23openstack-qa.2017-11-28.log.html#t2017-11-28T21:34:23",
+      "parentUuid": "ff82abbf_bbb99d79",
       "revId": "5fc65ab29435577a5f0d5c2d20b620845c822ebd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -76,6 +112,30 @@
     },
     {
       "key": {
+        "uuid": "ff82abbf_e1ebf20f",
+        "filename": "doc/source/contributor/testing-keystone.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-28T21:51:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff82abbf_fb364503",
+      "range": {
+        "startLine": 205,
+        "startChar": 19,
+        "endLine": 205,
+        "endChar": 44
+      },
+      "revId": "5fc65ab29435577a5f0d5c2d20b620845c822ebd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff82abbf_3b010d07",
         "filename": "doc/source/contributor/testing-keystone.rst",
         "patchSetId": 1
@@ -87,6 +147,30 @@
       "writtenOn": "2017-11-28T20:41:02Z",
       "side": 1,
       "message": "separate",
+      "range": {
+        "startLine": 244,
+        "startChar": 13,
+        "endLine": 244,
+        "endChar": 21
+      },
+      "revId": "5fc65ab29435577a5f0d5c2d20b620845c822ebd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_21e55a38",
+        "filename": "doc/source/contributor/testing-keystone.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-28T21:51:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff82abbf_3b010d07",
       "range": {
         "startLine": 244,
         "startChar": 13,
