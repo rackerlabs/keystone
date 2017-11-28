@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_7b7b1527",
+        "filename": "releasenotes/notes/deprecated-as-of-queens-8ad7f826e4f08f57.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-28T20:25:30Z",
+      "side": 1,
+      "message": "default*",
+      "range": {
+        "startLine": 14,
+        "startChar": 18,
+        "endLine": 14,
+        "endChar": 25
+      },
+      "revId": "8be94ffc4d68e614d386d70f28acf3e39bafaf14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_9b97f93a",
+        "filename": "releasenotes/notes/deprecated-as-of-queens-8ad7f826e4f08f57.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-28T20:25:30Z",
+      "side": 1,
+      "message": "`keystone-manage bootstrap`",
+      "range": {
+        "startLine": 13,
+        "startChar": 62,
+        "endLine": 14,
+        "endChar": 14
+      },
+      "revId": "8be94ffc4d68e614d386d70f28acf3e39bafaf14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_bb9afd5e",
+        "filename": "releasenotes/notes/deprecated-as-of-queens-8ad7f826e4f08f57.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-28T20:25:30Z",
+      "side": 1,
+      "message": "release*",
+      "range": {
+        "startLine": 16,
+        "startChar": 4,
+        "endLine": 16,
+        "endChar": 11
+      },
+      "revId": "8be94ffc4d68e614d386d70f28acf3e39bafaf14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_3ba6edac",
+        "filename": "releasenotes/notes/deprecated-as-of-queens-8ad7f826e4f08f57.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-28T20:25:30Z",
+      "side": 1,
+      "message": "nit: use literals\n\n  `keystone-manage bootstrap --add-member-role`",
+      "range": {
+        "startLine": 17,
+        "startChar": 2,
+        "endLine": 17,
+        "endChar": 31
+      },
+      "revId": "8be94ffc4d68e614d386d70f28acf3e39bafaf14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_fbbde5b6",
+        "filename": "releasenotes/notes/deprecated-as-of-queens-8ad7f826e4f08f57.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-28T20:25:30Z",
+      "side": 1,
+      "message": "`True`",
+      "range": {
+        "startLine": 18,
+        "startChar": 25,
+        "endLine": 18,
+        "endChar": 29
+      },
+      "revId": "8be94ffc4d68e614d386d70f28acf3e39bafaf14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_bbb3dde8",
+        "filename": "releasenotes/notes/deprecated-as-of-queens-8ad7f826e4f08f57.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-28T20:25:30Z",
+      "side": 1,
+      "message": "`False` in Rocky*",
+      "range": {
+        "startLine": 19,
+        "startChar": 23,
+        "endLine": 19,
+        "endChar": 28
+      },
+      "revId": "8be94ffc4d68e614d386d70f28acf3e39bafaf14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_dbdfc10a",
+        "filename": "releasenotes/notes/deprecated-as-of-queens-8ad7f826e4f08f57.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-28T20:25:30Z",
+      "side": 1,
+      "message": "nit: use literals\n\nRocky*",
+      "range": {
+        "startLine": 20,
+        "startChar": 4,
+        "endLine": 20,
+        "endChar": 43
+      },
+      "revId": "8be94ffc4d68e614d386d70f28acf3e39bafaf14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
