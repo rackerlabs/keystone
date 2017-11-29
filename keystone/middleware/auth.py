@@ -156,6 +156,8 @@ class AuthContextMiddleware(auth_token.BaseAuthProtocol):
 
             if resp:
                 return resp
+            if request.token_auth.user is not None:
+                request.set_user_headers(request.token_auth.user)
 
         # NOTE(jamielennox): function is split so testing can check errors from
         # fill_context. There is no actual reason for fill_context to raise
@@ -166,11 +168,6 @@ class AuthContextMiddleware(auth_token.BaseAuthProtocol):
 
     def fill_context(self, request):
         # The request context stores itself in thread-local memory for logging.
-        request_context = context.RequestContext(
-            request_id=request.environ.get('openstack.request_id'),
-            authenticated=False,
-            overwrite=True)
-        request.environ[context.REQUEST_CONTEXT_ENV] = request_context
 
         if authorization.AUTH_CONTEXT_ENV in request.environ:
             msg = ('Auth context already exists in the request '
@@ -179,6 +176,10 @@ class AuthContextMiddleware(auth_token.BaseAuthProtocol):
             LOG.warning(msg)
             return
 
+        kwargs = {
+            'authenticated': False,
+            'overwrite': True}
+
         # NOTE(gyee): token takes precedence over SSL client certificates.
         # This will preserve backward compatibility with the existing
         # behavior. Tokenless authorization with X.509 SSL client
@@ -186,19 +187,52 @@ class AuthContextMiddleware(auth_token.BaseAuthProtocol):
         # provided.
 
         if request.environ.get(wsgi.CONTEXT_ENV, {}).get('is_admin', False):
+            request_context = context.RequestContext.from_environ(
+                request.environ, **kwargs)
+            request.environ[context.REQUEST_CONTEXT_ENV] = request_context
             request_context.is_admin = True
             auth_context = {}
 
         elif request.token_auth.has_user_token:
+            # Keystone enforces policy on some values that other services
+            # do not, and should not, use.  This adds them in to the context.
+            token = token_model.KeystoneToken(token_id=request.user_token,
+                                              token_data=request.token_info)
+            if token.domain_scoped:
+                # Domain scoped tokens should never have is_admin_project set
+                # Even if KSA defaults it otherwise.  The two mechanisms are
+                # parallel; only ione or the other should be used for access.
+                kwargs['is_admin_project'] = False
+                kwargs['domain_id'] = token.domain_id
+                kwargs['domain_name'] = token.domain_name
+            if token.oauth_scoped:
+                kwargs['is_delegated_auth'] = True
+                kwargs['oauth_consumer_id'] = token.oauth_consumer_id
+                kwargs['oauth_access_token_id'] = token.oauth_access_token_id
+            if token.trust_scoped:
+                kwargs['is_delegated_auth'] = True
+                kwargs['trust_id'] = token.trust_id
+            if token.is_federated_user:
+                kwargs['group_ids'] = token.federation_group_ids
+
+            request_context = context.RequestContext.from_environ(
+                request.environ, **kwargs)
+            request.environ[context.REQUEST_CONTEXT_ENV] = request_context
             request_context.auth_token = request.user_token
-            ref = token_model.KeystoneToken(token_id=request.user_token,
-                                            token_data=request.token_info)
-            auth_context = authorization.token_to_auth_context(ref)
+            auth_context = request_context.to_policy_values()
+            auth_context['token'] = token
 
         elif self._validate_trusted_issuer(request):
+            request_context = context.RequestContext.from_environ(
+                request.environ, **kwargs)
+            request.environ[context.REQUEST_CONTEXT_ENV] = request_context
             auth_context = self._build_tokenless_auth_context(request)
 
         else:
+            request_context = context.RequestContext.from_environ(
+                request.environ, **kwargs)
+            request.environ[context.REQUEST_CONTEXT_ENV] = request_context
+
             # There is either no auth token in the request or the certificate
             # issuer is not trusted. No auth context will be set. This
             # typically happens on an initial token request.
@@ -211,29 +245,6 @@ class AuthContextMiddleware(auth_token.BaseAuthProtocol):
         # common pattern for all the OpenStack services. In all the other
         # projects these are IDs, so set the attributes to IDs here rather than
         # the name.
-        request_context.user_id = auth_context.get('user_id')
-        request_context.project_id = auth_context.get('project_id')
-        request_context.domain_id = auth_context.get('domain_id')
-        request_context.domain_name = auth_context.get('domain_name')
-        request_context.user_domain_id = auth_context.get('user_domain_id')
-        request_context.roles = auth_context.get('roles')
-
-        is_admin_project = auth_context.get('is_admin_project', True)
-        request_context.is_admin_project = is_admin_project
-
-        project_domain_id = auth_context.get('project_domain_id')
-        request_context.project_domain_id = project_domain_id
-
-        is_delegated_auth = auth_context.get('is_delegated_auth', False)
-        request_context.is_delegated_auth = is_delegated_auth
-
-        request_context.trust_id = auth_context.get('trust_id')
-        request_context.trustor_id = auth_context.get('trustor_id')
-        request_context.trustee_id = auth_context.get('trustee_id')
-
-        access_token_id = auth_context.get('access_token_id')
-        request_context.oauth_consumer_id = auth_context.get('consumer_id')
-        request_context.oauth_acess_token_id = access_token_id
 
         LOG.debug('RBAC: auth_context: %s', auth_context)
         request.environ[authorization.AUTH_CONTEXT_ENV] = auth_context
