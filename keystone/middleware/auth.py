@@ -166,8 +166,8 @@ class AuthContextMiddleware(auth_token.BaseAuthProtocol):
 
     def fill_context(self, request):
         # The request context stores itself in thread-local memory for logging.
-        request_context = context.RequestContext(
-            request_id=request.environ.get('openstack.request_id'),
+        request_context = context.RequestContext.from_environ(
+            request.environ,
             authenticated=False,
             overwrite=True)
         request.environ[context.REQUEST_CONTEXT_ENV] = request_context
@@ -190,7 +190,6 @@ class AuthContextMiddleware(auth_token.BaseAuthProtocol):
             auth_context = {}
 
         elif request.token_auth.has_user_token:
-            request_context.auth_token = request.user_token
             ref = token_model.KeystoneToken(token_id=request.user_token,
                                             token_data=request.token_info)
             auth_context = authorization.token_to_auth_context(ref)
@@ -206,23 +205,6 @@ class AuthContextMiddleware(auth_token.BaseAuthProtocol):
 
         # set authenticated to flag to keystone that a token has been validated
         request_context.authenticated = True
-
-        # The attributes of request_context are put into the logs. This is a
-        # common pattern for all the OpenStack services. In all the other
-        # projects these are IDs, so set the attributes to IDs here rather than
-        # the name.
-        request_context.user_id = auth_context.get('user_id')
-        request_context.project_id = auth_context.get('project_id')
-        request_context.domain_id = auth_context.get('domain_id')
-        request_context.domain_name = auth_context.get('domain_name')
-        request_context.user_domain_id = auth_context.get('user_domain_id')
-        request_context.roles = auth_context.get('roles')
-
-        is_admin_project = auth_context.get('is_admin_project', True)
-        request_context.is_admin_project = is_admin_project
-
-        project_domain_id = auth_context.get('project_domain_id')
-        request_context.project_domain_id = project_domain_id
 
         is_delegated_auth = auth_context.get('is_delegated_auth', False)
         request_context.is_delegated_auth = is_delegated_auth
