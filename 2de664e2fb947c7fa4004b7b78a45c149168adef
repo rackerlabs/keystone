@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_4cc3e789",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-11-29T09:35:22Z",
+      "side": 1,
+      "message": "Oops, I think I asked you to remove the warning from the ensure_default_role method because I thought there was a warning here. Could you add a warning here that users should set --no-add-member-role?",
+      "revId": "2de664e2fb947c7fa4004b7b78a45c149168adef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
