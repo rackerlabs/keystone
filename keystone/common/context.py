@@ -26,12 +26,10 @@ class RequestContext(oslo_context.RequestContext):
     def __init__(self, **kwargs):
         self.user_id = kwargs.pop('user_id ', None)
         self.project_id = kwargs.pop('project_id ', None)
-        self.domain_id = kwargs.pop('domain_id ', None)
         self.user_domain_id = kwargs.pop('user_domain_id ', None)
         self.project_domain_id = kwargs.pop('project_domain_id ', None)
 
         self.project_name = kwargs.pop('project_name', None)
-        self.domain_name = kwargs.pop('domain_name', None)
         self.username = kwargs.pop('username', None)
         self.user_domain_name = kwargs.pop('user_domain_name', None)
         self.project_domain_name = kwargs.pop('project_domain_name', None)
@@ -53,3 +51,27 @@ class RequestContext(oslo_context.RequestContext):
     def from_environ(cls, environ, **kwargs):
         kwargs.setdefault('request_id', environ.get('openstack.request_id'))
         return super(RequestContext, cls).from_environ(environ, **kwargs)
+
+    def to_policy_values(self):
+        """A dictionary of context attributes to enforce policy with.
+
+        oslo.policy enforcement requires a dictionary of attributes
+        representing the current logged in user on which it applies policy
+        enforcement. This dictionary defines a standard list of attributes that
+        should be available for enforcement across services.
+
+        As  expected, Keystone has to override this method
+        with additional attributes used by that are not enforced
+        in other services
+        """
+        additional = {
+            'trust_id': self.trust_id,
+            'trustor_id': self.trustor_id,
+            'trustee_id': self.trustee_id,
+            'domain_id': self._domain_id,
+            'domain_name': self.domain_name,
+            'group_ids': self.group_ids,
+        }
+        values = super(RequestContext, self).to_policy_values()
+        values.update(additional)
+        return values
