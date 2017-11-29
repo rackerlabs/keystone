@@ -548,6 +548,46 @@ class GrantAssignmentV3(controller.V3Controller):
         """
         self.assignment_api.delete_system_grant_for_user(user_id, role_id)
 
+    def list_system_grants_for_group(self, request, group_id):
+        """List all system grants for a specific group.
+
+        :param request: the request object
+        :param group_id: ID of the group
+        :returns: a list of grants the group has on the system
+
+        """
+        pass
+
+    def check_system_grant_for_group(self, request, role_id, group_id):
+        """Check if a group has a specific role on the system.
+
+        :param request: the request object
+        :param role_id: the ID of the role to check
+        :param group_id: the ID of the group to check
+
+        """
+        pass
+
+    def create_system_grant_for_group(self, request, role_id, group_id):
+        """Grant a role to a group on the system.
+
+        :param request: the request object
+        :param role_id: the ID of the role to grant to the group
+        :param group_id: the ID of the group
+
+        """
+        pass
+
+    def revoke_system_grant_for_group(self, request, role_id, group_id):
+        """Revoke a role from the group on the system.
+
+        :param request: the request object
+        :param role_id: the ID of the role to remove
+        :param user_id: the ID of the user
+
+        """
+        pass
+
 
 @dependency.requires('assignment_api', 'identity_api', 'resource_api')
 class RoleAssignmentV3(controller.V3Controller):
