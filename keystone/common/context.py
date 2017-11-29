@@ -38,6 +38,7 @@ class RequestContext(oslo_context.RequestContext):
         self.project_tag_name = kwargs.pop('project_tag_name', None)
 
         self.is_delegated_auth = kwargs.pop('is_delegated_auth', False)
+        self.is_domain_scoped = kwargs.pop('is_domain_scoped', False)
 
         self.trust_id = kwargs.pop('trust_id', None)
         self.trustor_id = kwargs.pop('trustor_id', None)
