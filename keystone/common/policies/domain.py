@@ -17,31 +17,31 @@ from keystone.common.policies import base
 domain_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_domain',
-        check_str=base.RULE_ADMIN_OR_TARGET_DOMAIN,
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED,
         description='Show domain details.',
         operations=[{'path': '/v3/domains/{domain_id}',
                      'method': 'GET'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_domains',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED,
         description='List domains.',
         operations=[{'path': '/v3/domains',
                      'method': 'GET'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_domain',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED,
         description='Create domain.',
         operations=[{'path': '/v3/domains',
                      'method': 'POST'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_domain',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED,
         description='Update domain.',
         operations=[{'path': '/v3/domains/{domain_id}',
                      'method': 'PATCH'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_domain',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.RULE_ADMIN_PROJECT_REQUIRED,
         description='Delete domain.',
         operations=[{'path': '/v3/domains/{domain_id}',
                      'method': 'DELETE'}])

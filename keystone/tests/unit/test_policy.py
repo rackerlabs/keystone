@@ -146,7 +146,7 @@ class PolicyJsonTestCase(unit.TestCase):
 
         policy_extra_keys = ['admin_or_token_subject',
                              'service_admin_or_token_subject',
-                             'token_subject', ]
+                             'token_subject', 'system_admin_required']
         expected_policy_keys = list(cloud_policy_keys) + policy_extra_keys
         diffs = set(policy_keys).difference(set(expected_policy_keys))
 
@@ -185,7 +185,7 @@ class PolicyJsonTestCase(unit.TestCase):
         policy_rule_keys = [
             'admin_or_owner', 'admin_or_token_subject', 'admin_required',
             'owner', 'service_admin_or_token_subject', 'service_or_admin',
-            'service_role', 'token_subject', ]
+            'service_role', 'token_subject', 'system_admin_required']
 
         def read_doc_targets():
             # Parse the doc/source/policy_mapping.rst file and return the

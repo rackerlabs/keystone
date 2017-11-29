@@ -171,6 +171,7 @@ class AuthContextMiddleware(provider_api.ProviderAPIMixin,
             # Domain scoped tokens should never have is_admin_project set
             # Even if KSA defaults it otherwise.  The two mechanisms are
             # parallel; only ione or the other should be used for access.
+            request_context.is_domain_scoped = True
             request_context.is_admin_project = False
             request_context.domain_id = token.domain_id
             request_context.domain_name = token.domain_name
@@ -197,6 +198,7 @@ class AuthContextMiddleware(provider_api.ProviderAPIMixin,
             return
 
         kwargs = {
+            'is_domain_scoped': False,
             'authenticated': False,
             'overwrite': True}
         request_context = context.RequestContext.from_environ(
@@ -210,6 +212,9 @@ class AuthContextMiddleware(provider_api.ProviderAPIMixin,
         # provided.
 
         if request.environ.get(wsgi.CONTEXT_ENV, {}).get('is_admin', False):
+            request_context = context.RequestContext.from_environ(
+                request.environ, **kwargs)
+            request.environ[context.REQUEST_CONTEXT_ENV] = request_context
             request_context.is_admin = True
             auth_context = {}
 
@@ -227,15 +232,23 @@ class AuthContextMiddleware(provider_api.ProviderAPIMixin,
                 'trustee_id': request_context.trustee_id,
                 'domain_id': request_context._domain_id,
                 'domain_name': request_context.domain_name,
+                'is_domain_scoped': request_context.is_domain_scoped,
                 'group_ids': request_context.group_ids,
                 'token': token
             }
             auth_context.update(additional)
 
         elif self._validate_trusted_issuer(request):
+            request_context = context.RequestContext.from_environ(
+                request.environ, **kwargs)
+            request.environ[context.REQUEST_CONTEXT_ENV] = request_context
             auth_context = self._build_tokenless_auth_context(request)
 
         else:
+            request_context = context.RequestContext.from_environ(
+                request.environ, **kwargs)
+            request.environ[context.REQUEST_CONTEXT_ENV] = request_context
+
             # There is either no auth token in the request or the certificate
             # issuer is not trusted. No auth context will be set. This
             # typically happens on an initial token request.
