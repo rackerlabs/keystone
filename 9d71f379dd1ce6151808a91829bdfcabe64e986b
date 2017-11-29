@@ -16,6 +16,23 @@
       "revId": "9d71f379dd1ce6151808a91829bdfcabe64e986b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_92657d20",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-11-29T18:51:57Z",
+      "side": 1,
+      "message": "The base class does not add the headers; that is done by the AuthTOekn subclass.  In order to get the headers, you need code like this:\n\n  request.set_user_headers(request.token_auth.user)\n\nBut request.token_auth.user_auth is not always set.\n\nThe unit tests also seem to be giving a differently formatted value for the request ID:  mine is failing with:\n\n   testtools.matchers._impl.MismatchError: !\u003d:\n    reference \u003d \u00279779bb0f54654361a7b4ec0e05412d0b\u0027\n    actual    \u003d \u0027req-3fbeb1f1-fd56-4434-97f3-010ee67878bc\u0027",
+      "revId": "9d71f379dd1ce6151808a91829bdfcabe64e986b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
