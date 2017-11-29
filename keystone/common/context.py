@@ -47,6 +47,7 @@ class RequestContext(oslo_context.RequestContext):
         self.oauth_access_token_id = kwargs.pop('oauth_access_token_id', None)
 
         self.authenticated = kwargs.pop('authenticated', False)
+
         super(RequestContext, self).__init__(**kwargs)
 
     @classmethod

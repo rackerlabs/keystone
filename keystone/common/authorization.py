@@ -15,10 +15,12 @@
 #    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 #    License for the specific language governing permissions and limitations
 #    under the License.
+
 from oslo_log import log
 from oslo_utils import strutils
 
 from keystone.common.policies import base as pol_base
+from keystone.common import context
 from keystone.common import utils
 from keystone import conf
 from keystone import exception
@@ -76,6 +78,7 @@ LOG = log.getLogger(__name__)
 
 
 def token_to_auth_context(token):
+
     if not isinstance(token, token_model.KeystoneToken):
         raise exception.UnexpectedError(_('token reference must be a '
                                           'KeystoneToken type, got: %s') %
