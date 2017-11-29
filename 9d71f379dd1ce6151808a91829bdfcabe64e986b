@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_d5ac65a0",
+        "filename": "keystone/common/context.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 19853
+      },
+      "writtenOn": "2017-11-29T02:35:37Z",
+      "side": 1,
+      "message": "should be \"# TODO\"",
+      "revId": "9d71f379dd1ce6151808a91829bdfcabe64e986b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
