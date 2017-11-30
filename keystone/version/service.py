@@ -19,6 +19,7 @@ from oslo_log import log
 from paste import deploy
 import routes
 
+from keystone.application_credential import routers as app_cred_routers
 from keystone.assignment import routers as assignment_routers
 from keystone.auth import routers as auth_routers
 from keystone.catalog import routers as catalog_routers
@@ -132,6 +133,7 @@ def v3_app_factory(global_conf, **local_conf):
                        federation_routers,
                        oauth1_routers,
                        endpoint_policy_routers,
+                       app_cred_routers,
                        # TODO(morganfainberg): Remove the simple_cert router
                        # when PKI and PKIZ tokens are removed.
                        simple_cert_ext]
