@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_53b4bbf2",
+        "filename": "api-ref/source/v3/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-11-30T18:24:29Z",
+      "side": 1,
+      "message": "I kept this separate from the Roles section because Roles is already huge... I think we could improve readability of our documentation by breaking that section into smaller, more focused sections (e.g. Project Role Assignments, Domain Role Assignments, Inherited Role Assignments, et cetera).\n\nThen we can have the Roles section be the CRUD for *just* roles. Parse a super dense document gets exhausting when there are tons of APIs in there.",
+      "range": {
+        "startLine": 190,
+        "startChar": 0,
+        "endLine": 190,
+        "endChar": 28
+      },
+      "revId": "77be61d97eb43a1d81bbae1435235e3c279bc906",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
