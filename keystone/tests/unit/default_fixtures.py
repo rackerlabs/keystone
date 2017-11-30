@@ -171,3 +171,12 @@ DOMAINS = [{'description':
             'enabled': True,
             'id': DEFAULT_DOMAIN_ID,
             'name': u'Default'}]
+
+SERVICES = [{'id': uuid.uuid4().hex,
+             'type': 'type_one',
+             'enabled': True,
+             'extra': {'description': 'This is a service for test.',
+                       'name': 'ServiceOne'}
+             }]
+
+REGIONS = [{'id': 'RegionOne'}, {'id': 'RegionTwo'}]
