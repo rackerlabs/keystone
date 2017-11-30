@@ -39,6 +39,7 @@ from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.identity import test_backends as identity_tests
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit.ksfixtures import database
+from keystone.tests.unit.limit import test_backends as limit_tests
 from keystone.tests.unit.policy import test_backends as policy_tests
 from keystone.tests.unit.resource import test_backends as resource_tests
 from keystone.tests.unit.token import test_backends as token_tests
@@ -52,13 +53,15 @@ CONF = keystone.conf.CONF
 
 class SqlTests(unit.SQLDriverOverrides, unit.TestCase):
 
-    def setUp(self):
+    def setUp(self, enable_sqlite_foreign_key=False):
         super(SqlTests, self).setUp()
-        self.useFixture(database.Database())
+        self.useFixture(database.Database(
+            enable_sqlite_foreign_key=enable_sqlite_foreign_key))
         self.load_backends()
 
         # populate the engine with tables & fixtures
-        self.load_fixtures(default_fixtures)
+        self.load_fixtures(default_fixtures,
+                           enable_sqlite_foreign_key=enable_sqlite_foreign_key)
         # defaulted by the data load
         self.user_foo['enabled'] = True
 
@@ -1260,3 +1263,20 @@ class SqlCredential(SqlTests):
         # Make sure the `blob` values listed from the API are not encrypted.
         listed_credentials = self.credential_api.list_credentials()
         self.assertIn(created_credential, listed_credentials)
+
+
+class SqlLimit(SqlTests, limit_tests.LimitTests):
+
+    def setUp(self):
+        super(SqlLimit, self).setUp(enable_sqlite_foreign_key=True)
+
+        for service in default_fixtures.SERVICES:
+            service_id = service['id']
+            rv = self.catalog_api.create_service(service_id, service)
+            attrname = 'service_%s' % service['extra']['name']
+            setattr(self, attrname, rv)
+
+        for region in default_fixtures.REGIONS:
+            rv = self.catalog_api.create_region(region)
+            attrname = 'region_%s' % region['id']
+            setattr(self, attrname, rv)
