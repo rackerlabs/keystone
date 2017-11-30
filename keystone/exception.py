@@ -461,6 +461,11 @@ class DomainConfigNotFound(NotFound):
                        'configuration for domain %(domain_id)s.')
 
 
+class ApplicationCredentialNotFound(NotFound):
+    message_format = _("Could not find Application Credential: "
+                       "%(application_credential_id)s.")
+
+
 class ConfigRegistrationNotFound(Exception):
     # This is used internally between the domain config backend and the
     # manager, so should not escape to the client.  If it did, it is a coding
