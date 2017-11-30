@@ -461,6 +461,29 @@ def new_trust_ref(trustor_user_id, trustee_user_id, project_id=None,
     return ref
 
 
+def new_registered_limit_ref(**kwargs):
+    ref = {
+        'service_id': uuid.uuid4().hex,
+        'resource_name': 'test_resource',
+        'default_limit': 10
+    }
+
+    ref.update(kwargs)
+    return ref
+
+
+def new_limit_ref(**kwargs):
+    ref = {
+        'project_id': uuid.uuid4().hex,
+        'service_id': uuid.uuid4().hex,
+        'resource_name': 'test_resource',
+        'resource_limit': 10
+    }
+
+    ref.update(kwargs)
+    return ref
+
+
 def create_user(api, domain_id, **kwargs):
     """Create a user via the API. Keep the created password.
 
@@ -763,6 +786,15 @@ class TestCase(BaseTestCase):
                 self.assignment_api.add_role_to_user_and_project(
                     user_id, tenant_id, role_id)
 
+            for service in fixtures.SERVICES:
+                service_id = service['id']
+                rv = self.catalog_api.create_service(service_id, service)
+                attrname = 'service_%s' % service['type']
+                setattr(self, attrname, rv)
+            for region in fixtures.REGIONS:
+                rv = self.catalog_api.create_region(region)
+                attrname = 'region_%s' % region['id']
+                setattr(self, attrname, rv)
             self.addCleanup(self.cleanup_instance(*fixtures_to_cleanup))
 
     def _paste_config(self, config):
