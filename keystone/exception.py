@@ -456,6 +456,18 @@ class PublicIDNotFound(NotFound):
     message_format = "%(id)s"
 
 
+class RegisteredLimitNotFound(NotFound):
+    message_format = _("Could not find registered limit for "
+                       "service type %(service_id)s in region %(region)s "
+                       "with name %(resource_name)s.")
+
+
+class LimitNotFound(NotFound):
+    message_format = _("Could not find limit in %(project_id) for "
+                       "service type %(service_id)s in region %(region)s "
+                       "with name %(resource_name)s.")
+
+
 class DomainConfigNotFound(NotFound):
     message_format = _('Could not find %(group_or_option)s in domain '
                        'configuration for domain %(domain_id)s.')
