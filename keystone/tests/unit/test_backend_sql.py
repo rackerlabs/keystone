@@ -39,6 +39,7 @@ from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.identity import test_backends as identity_tests
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit.ksfixtures import database
+from keystone.tests.unit.limit import test_backends as limit_tests
 from keystone.tests.unit.policy import test_backends as policy_tests
 from keystone.tests.unit.resource import test_backends as resource_tests
 from keystone.tests.unit.token import test_backends as token_tests
@@ -1260,3 +1261,37 @@ class SqlCredential(SqlTests):
         # Make sure the `blob` values listed from the API are not encrypted.
         listed_credentials = self.credential_api.list_credentials()
         self.assertIn(created_credential, listed_credentials)
+
+
+# TODO(wxy): Now only SqlLimit test enables sqlite FKs, so it doesn't inherit
+# the base class SqlTests. Inherit SqlTests once all tests support sqlite FKs.
+class SqlLimit(unit.SQLDriverOverrides, unit.TestCase, limit_tests.LimitTests):
+
+    def setUp(self):
+        super(SqlLimit, self).setUp()
+        self.useFixture(database.Database(enable_sqlite_foreign_key=True))
+        self.load_backends()
+
+        # populate the engine with tables & fixtures
+        self.load_fixtures(default_fixtures, enable_sqlite_foreign_key=True)
+        # defaulted by the data load
+        self.user_foo['enabled'] = True
+
+        fixtures_to_cleanup = []
+        for service in default_fixtures.SERVICES:
+            service_id = service['id']
+            rv = self.catalog_api.create_service(service_id, service)
+            attrname = service['extra']['name']
+            setattr(self, attrname, rv)
+            fixtures_to_cleanup.append(attrname)
+        for region in default_fixtures.REGIONS:
+            rv = self.catalog_api.create_region(region)
+            attrname = region['id']
+            setattr(self, attrname, rv)
+            fixtures_to_cleanup.append(attrname)
+        self.addCleanup(self.cleanup_instance(*fixtures_to_cleanup))
+
+    def config_files(self):
+        config_files = super(SqlLimit, self).config_files()
+        config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
+        return config_files
