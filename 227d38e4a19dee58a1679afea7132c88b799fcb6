@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_de61c806",
+        "filename": "doc/source/contributor/testing-keystone.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-11-30T03:07:25Z",
+      "side": 1,
+      "message": "Not sure if we want to keep the specific of where the documents are being built ie ``doc/build/html/`` like it was before?",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 25
+      },
+      "revId": "227d38e4a19dee58a1679afea7132c88b799fcb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
