@@ -39,6 +39,7 @@ from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.identity import test_backends as identity_tests
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit.ksfixtures import database
+from keystone.tests.unit.limit import test_backends as limit_tests
 from keystone.tests.unit.policy import test_backends as policy_tests
 from keystone.tests.unit.resource import test_backends as resource_tests
 from keystone.tests.unit.token import test_backends as token_tests
@@ -1250,3 +1251,7 @@ class SqlCredential(SqlTests):
         # Make sure the `blob` values listed from the API are not encrypted.
         listed_credentials = self.credential_api.list_credentials()
         self.assertIn(created_credential, listed_credentials)
+
+
+class SqlLimit(SqlTests, limit_tests.LimitTests):
+    pass
