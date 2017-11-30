@@ -1450,6 +1450,13 @@ signed:
   in: body
   required: true
   type: string
+system_roles_response_body:
+  description: |
+    A list of ``role`` objects containing ``domain_id``, ``id``, ``links``,
+    and ``name`` attributes.
+  in: body
+  required: true
+  type: array
 token:
   description: |
     A ``token`` object.
