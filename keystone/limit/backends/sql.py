@@ -1,0 +1,227 @@
+# Copyright 2017 SUSE Linux Gmbh
+# Copyright 2017 Huawei
+#
+# Licensed under the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+
+from oslo_db import exception as db_exception
+import sqlalchemy
+
+from keystone.common import driver_hints
+from keystone.common import sql
+from keystone import exception
+from keystone.i18n import _
+from keystone.limit.backends import base
+
+
+class RegisteredLimitModel(sql.ModelBase, sql.ModelDictMixin):
+    __tablename__ = 'registered_limit'
+    attributes = [
+        'id',
+        'service_id',
+        'region_id',
+        'resource_name',
+        'default_limit'
+    ]
+
+    id = sql.Column(sql.String(length=64), primary_key=True)
+    service_id = sql.Column(sql.String(255),
+                            sql.ForeignKey('service.id'))
+    region_id = sql.Column(sql.String(64),
+                           sql.ForeignKey('region.id'), nullable=True)
+    resource_name = sql.Column(sql.String(255))
+    default_limit = sql.Column(sql.Integer, nullable=False)
+
+    __table_args__ = (
+        sqlalchemy.UniqueConstraint('service_id',
+                                    'region_id',
+                                    'resource_name'),)
+
+
+class LimitModel(sql.ModelBase, sql.ModelDictMixin):
+    __tablename__ = 'limit'
+    attributes = [
+        'id',
+        'project_id',
+        'service_id',
+        'region_id',
+        'resource_name',
+        'resource_limit'
+    ]
+
+    id = sql.Column(sql.String(length=64), primary_key=True)
+    project_id = sql.Column(sql.String(64),
+                            sql.ForeignKey('project.id'))
+    service_id = sql.Column(sql.String(255))
+    region_id = sql.Column(sql.String(64), nullable=True)
+    resource_name = sql.Column(sql.String(255))
+    resource_limit = sql.Column(sql.Integer, nullable=False)
+
+    __table_args__ = (
+        sqlalchemy.ForeignKeyConstraint(['service_id',
+                                         'region_id',
+                                         'resource_name'],
+                                        ['registered_limit.service_id',
+                                         'registered_limit.region_id',
+                                         'registered_limit.resource_name']),
+        sqlalchemy.UniqueConstraint('project_id',
+                                    'service_id',
+                                    'region_id',
+                                    'resource_name'),)
+
+
+class RegisteredLimit(base.RegisteredLimitDriverBase):
+
+    @sql.handle_conflicts(conflict_type='registered_limit')
+    def create_registered_limits(self, registered_limits):
+        with sql.session_for_write() as session:
+            return_ref = []
+            for registered_limit in registered_limits:
+                ref = RegisteredLimitModel.from_dict(registered_limit)
+                session.add(ref)
+                return_ref.append(ref.to_dict())
+            return return_ref
+
+    @sql.handle_conflicts(conflict_type='registered_limit')
+    def update_registered_limits(self, registered_limits):
+        with sql.session_for_write() as session:
+            for registered_limit in registered_limits:
+                ref = self._get_registered_limit(session,
+                                                 registered_limit['id'])
+                old_dict = ref.to_dict()
+                old_dict.update(registered_limit)
+                new_registered_limit = RegisteredLimitModel.from_dict(old_dict)
+                for attr in RegisteredLimitModel.attributes:
+                    if attr != 'id':
+                        setattr(ref, attr, getattr(new_registered_limit, attr))
+
+    @driver_hints.truncated
+    def list_registered_limits(self, hints):
+        with sql.session_for_read() as session:
+            registered_limits = session.query(RegisteredLimitModel)
+            registered_limits = sql.filter_limit_query(RegisteredLimitModel,
+                                                       registered_limits,
+                                                       hints)
+            return [s.to_dict() for s in registered_limits]
+
+    def _get_registered_limit(self, session, registered_limit_id):
+        ref = session.query(RegisteredLimitModel).get(registered_limit_id)
+        if ref is None:
+            raise exception.RegisteredLimitNotFound(id=registered_limit_id)
+        return ref
+
+    def get_registered_limit(self, registered_limit_id):
+        with sql.session_for_read() as session:
+            return self._get_registered_limit(
+                session, registered_limit_id).to_dict()
+
+    def delete_registered_limit(self, registered_limit_id):
+        with sql.session_for_write() as session:
+            ref = self._get_registered_limit(session,
+                                             registered_limit_id)
+            session.delete(ref)
+
+    def check_registered_limit_duplicated(self, registered_limit):
+        hints = driver_hints.Hints()
+        hints.add_filter('service_id', registered_limit['service_id'])
+        hints.add_filter('resource_name', registered_limit['resource_name'])
+        hints.add_filter('region_id', None)
+
+        with sql.session_for_read() as session:
+            registered_limits = session.query(RegisteredLimitModel)
+            registered_limits = sql.filter_limit_query(RegisteredLimitModel,
+                                                       registered_limits,
+                                                       hints)
+        if registered_limits.all():
+            msg = _('Duplicate entry')
+            raise exception.Conflict(type='registered_limit', details=msg)
+
+    def check_reference_exist(self, limit):
+        hints = driver_hints.Hints()
+        hints.add_filter('service_id', limit['service_id'])
+        hints.add_filter('resource_name', limit['resource_name'])
+        hints.add_filter('region_id', None)
+
+        with sql.session_for_read() as session:
+            registered_limits = session.query(RegisteredLimitModel)
+            registered_limits = sql.filter_limit_query(RegisteredLimitModel,
+                                                       registered_limits,
+                                                       hints)
+        if not registered_limits.all():
+            raise exception.NoLimitReference
+
+
+class Limit(base.LimitDriverBase):
+
+    @sql.handle_conflicts(conflict_type='limit')
+    def create_limits(self, limits):
+        try:
+            with sql.session_for_write() as session:
+                return_ref = []
+                for limit in limits:
+                    ref = LimitModel.from_dict(limit)
+                    session.add(ref)
+                    return_ref.append(ref.to_dict())
+                return return_ref
+        except db_exception.DBReferenceError:
+            raise exception.NoLimitReference()
+
+    @sql.handle_conflicts(conflict_type='limit')
+    def update_limits(self, limits):
+        with sql.session_for_write() as session:
+            for limit in limits:
+                ref = self._get_limit(session, limit['id'])
+                old_dict = ref.to_dict()
+                old_dict['resource_limit'] = limit['resource_limit']
+                new_limit = LimitModel.from_dict(old_dict)
+                ref.resource_limit = new_limit.resource_limit
+
+    @driver_hints.truncated
+    def list_limits(self, hints, project_id):
+        with sql.session_for_read() as session:
+            limits = session.query(LimitModel)
+            limits = limits.filter_by(project_id=project_id)
+            limits = sql.filter_limit_query(LimitModel,
+                                            limits,
+                                            hints)
+            return [s.to_dict() for s in limits]
+
+    def _get_limit(self, session, limit_id):
+        ref = session.query(LimitModel).get(limit_id)
+        if ref is None:
+            raise exception.LimitNotFound(id=limit_id)
+        return ref
+
+    def get_limit(self, limit_id):
+        with sql.session_for_read() as session:
+            return self._get_limit(session,
+                                   limit_id).to_dict()
+
+    def delete_limit(self, limit_id):
+        with sql.session_for_write() as session:
+            ref = self._get_limit(session,
+                                  limit_id)
+            session.delete(ref)
+
+    def check_limit_duplicated(self, limit):
+        hints = driver_hints.Hints()
+        hints.add_filter('project_id', limit['project_id'])
+        hints.add_filter('service_id', limit['service_id'])
+        hints.add_filter('resource_name', limit['resource_name'])
+        hints.add_filter('region_id', None)
+
+        with sql.session_for_read() as session:
+            limits = session.query(LimitModel)
+            limits = sql.filter_limit_query(LimitModel, limits, hints)
+        if limits.all():
+            msg = _('Duplicate entry')
+            raise exception.Conflict(type='limit', details=msg)
