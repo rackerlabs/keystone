@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ff82abbf_7879d0c5",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-11-30T01:36:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff82abbf_7bac75ec",
+      "revId": "8be94ffc4d68e614d386d70f28acf3e39bafaf14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff82abbf_7b7b1527",
         "filename": "releasenotes/notes/deprecated-as-of-queens-8ad7f826e4f08f57.yaml",
         "patchSetId": 7
