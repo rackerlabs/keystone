@@ -164,3 +164,12 @@ DOMAINS = [{'description':
             'enabled': True,
             'id': DEFAULT_DOMAIN_ID,
             'name': u'Default'}]
+
+SERVICES = [{'id': uuid.uuid4().hex,
+             'type': 'volumev3',
+             'enabled': True,
+             'extra': {'description': 'Cinder Volume Service V3',
+                       'name': 'cinderv3'}
+             }]
+
+REGIONS = [{'id': 'RegionOne'}, {'id': 'RegionTwo'}]
