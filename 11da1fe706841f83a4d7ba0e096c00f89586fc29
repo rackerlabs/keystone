@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_91d6c627",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-11-30T13:43:40Z",
+      "side": 1,
+      "message": "I don\u0027t think this is necessary. Bootstrapping is something you only do when you\u0027re first setting things up, so there shouldn\u0027t be a backward compatability concern here. Just document that bootstrap no longer does this and be done. Even in the worst case any operator impact is in a non-production environment (still being setup, so can\u0027t be prod) and easily resolved.",
+      "revId": "11da1fe706841f83a4d7ba0e096c00f89586fc29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_d1c44e62",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-11-30T13:43:40Z",
+      "side": 1,
+      "message": "per comment above, I think we can just remove this. And the method that it calls, which is only called by one other place (add_user_to_project) which also appears to need removing (only called by test code).",
+      "revId": "11da1fe706841f83a4d7ba0e096c00f89586fc29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_11d636c5",
+        "filename": "releasenotes/notes/deprecated-as-of-queens-8ad7f826e4f08f57.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-11-30T13:43:40Z",
+      "side": 1,
+      "message": "no, the reason they\u0027re not removed is because of https://github.com/openstack/keystone/blob/cc294b7ccdb202ef6e2f80207c037078e3080038/keystone/assignment/controllers.py#L199-L203",
+      "range": {
+        "startLine": 13,
+        "startChar": 44,
+        "endLine": 19,
+        "endChar": 33
+      },
+      "revId": "11da1fe706841f83a4d7ba0e096c00f89586fc29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
