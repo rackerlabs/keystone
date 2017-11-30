@@ -119,6 +119,19 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
             limit_type = 'registered_limit' if is_registered_limit else 'limit'
             raise exception.Conflict(type=limit_type, details=msg)
 
+    def _check_referenced_limit_without_region(self, registered_limit):
+        hints = driver_hints.Hints()
+        hints.add_filter('service_id', registered_limit.service_id)
+        hints.add_filter('resource_name', registered_limit.resource_name)
+        hints.add_filter('region_id', None)
+        with sql.session_for_read() as session:
+            limits = session.query(LimitModel)
+            limits = sql.filter_limit_query(LimitModel,
+                                            limits,
+                                            hints)
+        if limits.all():
+            raise exception.RegisteredLimitError(id=registered_limit.id)
+
     @sql.handle_conflicts(conflict_type='registered_limit')
     def create_registered_limits(self, registered_limits):
         with sql.session_for_write() as session:
@@ -138,6 +151,8 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
                 for registered_limit in registered_limits:
                     ref = self._get_registered_limit(session,
                                                      registered_limit['id'])
+                    if not ref.region_id:
+                        self._check_referenced_limit_without_region(ref)
                     old_dict = ref.to_dict()
                     old_dict.update(registered_limit)
                     new_registered_limit = RegisteredLimitModel.from_dict(
@@ -146,8 +161,10 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
                         if attr != 'id':
                             setattr(ref, attr, getattr(new_registered_limit,
                                                        attr))
-        except db_exception.DBReferenceError:
-            raise exception.RegisteredLimitError()
+        except db_exception.DBReferenceError as e:
+            registered_limit_id = e.inner_exception.params[
+                'registered_limit_id']
+            raise exception.RegisteredLimitError(id=registered_limit_id)
 
     @driver_hints.truncated
     def list_registered_limits(self, hints):
@@ -174,9 +191,11 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
             with sql.session_for_write() as session:
                 ref = self._get_registered_limit(session,
                                                  registered_limit_id)
+                if not ref.region_id:
+                    self._check_referenced_limit_without_region(ref)
                 session.delete(ref)
         except db_exception.DBReferenceError:
-            raise exception.RegisteredLimitError()
+            raise exception.RegisteredLimitError(id=registered_limit_id)
 
     @sql.handle_conflicts(conflict_type='limit')
     def create_limits(self, limits):
