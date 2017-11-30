@@ -18,6 +18,7 @@ from keystone import credential
 from keystone import endpoint_policy
 from keystone import federation
 from keystone import identity
+from keystone import limit
 from keystone import oauth1
 from keystone import policy
 from keystone import resource
@@ -50,9 +51,11 @@ def load_backends():
         id_generator_api=identity.generator.Manager(),
         id_mapping_api=identity.MappingManager(),
         identity_api=identity.Manager(),
+        limit_api=limit.LimitManager(),
         shadow_users_api=identity.ShadowUsersManager(),
         oauth_api=oauth1.Manager(),
         policy_api=policy.Manager(),
+        registered_limit_api=limit.RegisteredLimitManager(),
         resource_api=resource.Manager(),
         revoke_api=revoke.Manager(),
         role_api=assignment.RoleManager(),
