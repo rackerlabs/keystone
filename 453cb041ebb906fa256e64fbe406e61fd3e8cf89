@@ -1,0 +1,129 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_d20d10e9",
+        "filename": "playbooks/legacy/grenade-dsvm-neutron/run.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-12-01T12:16:30Z",
+      "side": 1,
+      "message": "Are you sure we should be redefining this job? This seems like an integrated gate job that should be maintained by not us. Won\u0027t the name conflict with someone else defining the grenade-dsvm-neutron job?",
+      "revId": "453cb041ebb906fa256e64fbe406e61fd3e8cf89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_527580f9",
+        "filename": "playbooks/legacy/keystone-dsvm-functional-v3-only/run.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-12-01T12:16:30Z",
+      "side": 1,
+      "message": "Do you plan to convert this to a native job? Not sure we should leave these as \"autoconverted\" if we can manage them ourselves https://docs.openstack.org/infra/manual/zuulv3.html#reworking-legacy-jobs-to-be-v3-native",
+      "revId": "453cb041ebb906fa256e64fbe406e61fd3e8cf89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_32679c28",
+        "filename": "playbooks/legacy/tempest-dsvm-ldap-domain-specific-driver/run.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-12-01T12:16:30Z",
+      "side": 1,
+      "message": "The doc recommends prefixing the job with the project name when removing legacy, maybe this should be keystone-? Not that other projects are likely to do a lot of ldap testing but consistency would be good",
+      "range": {
+        "startLine": 2,
+        "startChar": 26,
+        "endLine": 2,
+        "endChar": 32
+      },
+      "revId": "453cb041ebb906fa256e64fbe406e61fd3e8cf89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_1805d97a",
+        "filename": "playbooks/legacy/tempest-dsvm-neutron-full-opensuse-423/run.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-12-01T12:16:30Z",
+      "side": 1,
+      "message": "Same as the grenade job, is it really our job to maintain this ourselves?",
+      "revId": "453cb041ebb906fa256e64fbe406e61fd3e8cf89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_f8035572",
+        "filename": "playbooks/legacy/tempest-dsvm-neutron-full/run.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-12-01T12:16:30Z",
+      "side": 1,
+      "message": "Same as the grenade job, is it really our job to maintain this ourselves?",
+      "revId": "453cb041ebb906fa256e64fbe406e61fd3e8cf89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_b8f5cd85",
+        "filename": "playbooks/legacy/tempest-dsvm-neutron-pg-full/run.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-12-01T12:16:30Z",
+      "side": 1,
+      "message": "Same as the grenade job, is it really our job to maintain this ourselves?",
+      "revId": "453cb041ebb906fa256e64fbe406e61fd3e8cf89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_f838353e",
+        "filename": "playbooks/legacy/tempest-dsvm-py35/run.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-12-01T12:16:30Z",
+      "side": 1,
+      "message": "Same as the grenade job, is it really our job to maintain this ourselves?",
+      "revId": "453cb041ebb906fa256e64fbe406e61fd3e8cf89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
