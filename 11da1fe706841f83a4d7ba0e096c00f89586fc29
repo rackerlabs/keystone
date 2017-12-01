@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ff82abbf_1a1b9c73",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-01T01:51:20Z",
+      "side": 1,
+      "message": "yeah, you are right. Bootstrap is not related to upgrade. As Colleen said, if there is a CI use the newest Keystone and has a private test about the member role, then it will be broken.\n\nMaybe we don\u0027t need to consider this small probability event IMO.",
+      "parentUuid": "ff82abbf_91d6c627",
+      "revId": "11da1fe706841f83a4d7ba0e096c00f89586fc29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff82abbf_d1c44e62",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2017-11-30T13:43:40Z",
       "side": 1,
       "message": "per comment above, I think we can just remove this. And the method that it calls, which is only called by one other place (add_user_to_project) which also appears to need removing (only called by test code).",
+      "revId": "11da1fe706841f83a4d7ba0e096c00f89586fc29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_97e545df",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-01T01:51:20Z",
+      "side": 1,
+      "message": "add_user_to_project is removed here: https://review.openstack.org/#/c/523005/",
+      "parentUuid": "ff82abbf_d1c44e62",
       "revId": "11da1fe706841f83a4d7ba0e096c00f89586fc29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
