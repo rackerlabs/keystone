@@ -2589,6 +2589,59 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
                 e = e.total_seconds()
                 self.assertEqual(t.expires_at_int, int(e * 1000000))
 
+    def test_migration_033_adds_application_credential_table(self):
+        self.expand(32)
+        self.migrate(32)
+        self.contract(32)
+
+        application_credential_table_name = 'application_credential'
+        self.assertTableDoesNotExist(application_credential_table_name)
+        application_credential_role_table_name = 'application_credential_role'
+        self.assertTableDoesNotExist(application_credential_role_table_name)
+
+        self.expand(33)
+        self.migrate(33)
+        self.contract(33)
+
+        self.assertTableExists(application_credential_table_name)
+        self.assertTableColumns(
+            application_credential_table_name,
+            ['id', 'name', 'secret_hash', 'description', 'user_id',
+             'project_id', 'expires_at']
+        )
+        self.assertTableExists(application_credential_role_table_name)
+        self.assertTableColumns(
+            application_credential_role_table_name,
+            ['application_credential_id','role_id']
+        )
+
+        app_cred_table = sqlalchemy.Table(
+            application_credential_table_name, self.metadata, autoload=True
+        )
+        app_cred_role_table = sqlalchemy.Table(
+            application_credential_role_table_name, self.metadata, autoload=True
+        )
+
+        expires_at = datetime.datetime.utcnow().replace(tzinfo=pytz.UTC)
+        epoch = datetime.datetime.fromtimestamp(0, tz=pytz.UTC)
+        expires_at_int = (expires_at - epoch).total_seconds()
+        app_cred = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'secret_hash': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'user_id': uuid.uuid4().hex,
+            'project_id': uuid.uuid4().hex,
+            'expires_at': expires_at_int,
+        }
+        app_cred_table.insert().values(app_cred).execute()
+
+        role_rel = {
+            'application_credential_id': uuid.uuid4().hex,
+            'role_id': uuid.uuid4().hex
+        }
+        app_cred_role_table.insert().values(role_rel).execute()
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
