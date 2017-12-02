@@ -2531,6 +2531,41 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         }
         system_assignment_table.insert().values(system_group).execute()
 
+    def test_migration_032_adds_application_credential_table(self):
+        self.expand(31)
+        self.migrate(31)
+        self.contract(31)
+
+        application_credential_table_name = 'application_credential'
+        self.assertTableDoesNotExist(application_credential_table_name)
+
+        self.expand(32)
+        self.migrate(32)
+        self.contract(32)
+
+        self.assertTableExists(application_credential_table_name)
+        self.assertTableColumns(
+            application_credential_table_name,
+            ['id', 'name', 'secret_hash', 'description', 'user_id',
+             'project_id', 'trust_id', 'expires_at']
+        )
+
+        app_cred_table = sqlalchemy.Table(
+            application_credential_table_name, self.metadata, autoload=True
+        )
+
+        app_cred = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'secret_hash': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'user_id': uuid.uuid4().hex,
+            'project_id': uuid.uuid4().hex,
+            'trust_id': uuid.uuid4().hex,
+            'expires_at': datetime.datetime.utcnow(),
+        }
+        app_cred_table.insert().values(app_cred).execute()
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
