@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_bd1384b8",
+        "filename": "keystone/common/context.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2017-12-03T23:44:16Z",
+      "side": 1,
+      "message": "pretty much everything above here will be handled in super.__init__. Check username though, i think it\u0027s user_name in oslo.context.",
+      "revId": "9decc1a8212cb47394a14eb8e5305e02698c91e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_7d0dfc8e",
+        "filename": "keystone/common/context.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2017-12-03T23:44:16Z",
+      "side": 1,
+      "message": "whoa - what? chain up to super. I\u0027m guessing you\u0027re trying to avoid the deprecation warnings. We can discuss how to do this but the whole point here is to standardize as much as possible and most things here are correct.",
+      "revId": "9decc1a8212cb47394a14eb8e5305e02698c91e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_7d82dcca",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2017-12-03T23:44:16Z",
+      "side": 1,
+      "message": "nit: something about this logic feels wrong? why test all this and set kwargs before creating the context? \n\nCan\u0027t we create the context first and then just add the stuff we need after. It doesn\u0027t feel like there should be logic before the from_environ that influences what gets created.",
+      "revId": "9decc1a8212cb47394a14eb8e5305e02698c91e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
