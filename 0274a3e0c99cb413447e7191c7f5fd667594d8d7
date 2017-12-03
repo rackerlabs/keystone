@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_ae26f0b6",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-12-03T03:03:20Z",
+      "side": 1,
+      "message": "I think that maybe this is not right.  The trustee should be the new \"user\" which should be the abstraction behind the application_credential.",
+      "revId": "0274a3e0c99cb413447e7191c7f5fd667594d8d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
