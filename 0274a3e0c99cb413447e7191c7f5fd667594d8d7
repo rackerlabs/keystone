@@ -16,6 +16,23 @@
       "revId": "0274a3e0c99cb413447e7191c7f5fd667594d8d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_2e32e0f2",
+        "filename": "keystone/conf/application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-12-03T03:12:32Z",
+      "side": 1,
+      "message": "I think this needs to contain 2 foreign keys:\n1: The Trust\n2: The service_user for the credential.",
+      "revId": "0274a3e0c99cb413447e7191c7f5fd667594d8d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
