@@ -17,6 +17,7 @@ import sys
 from oslo_log import log
 import six
 
+from keystone.common import driver_hints
 from keystone.common import provider_api
 import keystone.conf
 from keystone import exception
@@ -24,6 +25,7 @@ from keystone import exception
 
 CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
+PROVIDERS = provider_api.ProviderAPIs
 
 
 def construct_method_map_from_config():
@@ -203,3 +205,24 @@ class TOTPUserInfo(BaseUserInfo):
             auth_payload)
         user_info = auth_payload['user']
         self.passcode = user_info.get('passcode')
+
+
+class AppCredInfo(BaseUserInfo):
+    def __init__(self):
+        super(AppCredInfo, self).__init__()
+        self.id = None
+        self.secret = None
+
+    def _validate_and_normalize_auth_data(self, auth_payload):
+        super(AppCredInfo, self)._validate_and_normalize_auth_data(
+            auth_payload)
+        if not auth_payload.get('id'):
+            hints = driver_hints.Hints()
+            hints.add_filter('name', auth_payload.get('name'))
+            user_id = auth_payload['user']['id']
+            app_cred_mgmr = PROVIDERS.application_credential_api
+            app_cred = app_cred_mgmr.list_application_credentials(
+                user_id, hints)[0]
+            auth_payload['id'] = app_cred['id']
+        self.id = auth_payload['id']
+        self.secret = auth_payload.get('secret')

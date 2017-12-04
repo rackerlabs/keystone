@@ -36,6 +36,7 @@ from keystone.token.providers import base
 
 LOG = log.getLogger(__name__)
 CONF = keystone.conf.CONF
+PROVIDERS = provider_api.ProviderAPIs
 
 
 def default_expire_time():
@@ -168,6 +169,20 @@ class V3TokenDataHelper(provider_api.ProviderAPIMixin, object):
                 user_id, project_id)
         return [self.role_api.get_role(role_id) for role_id in roles]
 
+    def _get_app_cred_roles(self, app_cred, user_id, domain_id, project_id):
+        roles = app_cred['roles']
+        token_roles = []
+        for role in roles:
+            try:
+                role_ref = PROVIDERS.assignment_api.get_grant(
+                    role['id'], user_id=user_id, domain_id=domain_id,
+                    project_id=project_id)
+                token_roles.append(role_ref)
+            except exception.RoleAssignmentNotFound:
+                pass
+        return [
+            PROVIDERS.role_api.get_role(role['id']) for role in token_roles]
+
     def populate_roles_for_federated_user(self, token_data, group_ids,
                                           project_id=None, domain_id=None,
                                           user_id=None):
@@ -281,7 +296,7 @@ class V3TokenDataHelper(provider_api.ProviderAPIMixin, object):
                                         'consumer_id': consumer_id})
 
     def _populate_roles(self, token_data, user_id, domain_id, project_id,
-                        trust, access_token):
+                        trust, app_cred_id, access_token):
         if 'roles' in token_data:
             # no need to repopulate roles
             return
@@ -350,6 +365,16 @@ class V3TokenDataHelper(provider_api.ProviderAPIMixin, object):
                     else:
                         raise exception.Forbidden(
                             _('Trustee has no delegated roles.'))
+            elif app_cred_id:
+                app_cred_mgmr = PROVIDERS.application_credential_api
+                app_cred_ref = app_cred_mgmr.get_application_credential(
+                    app_cred_id)
+                for role in self._get_app_cred_roles(app_cred_ref,
+                                                     token_user_id,
+                                                     token_domain_id,
+                                                     token_project_id):
+                    filtered_roles.append({'id': role['id'],
+                                           'name': role['name']})
             else:
                 for role in self._get_roles_for_user(token_user_id,
                                                      token_domain_id,
@@ -416,9 +441,10 @@ class V3TokenDataHelper(provider_api.ProviderAPIMixin, object):
             raise exception.UnexpectedError(msg)
 
     def get_token_data(self, user_id, method_names, domain_id=None,
-                       project_id=None, expires=None, trust=None, token=None,
-                       include_catalog=True, bind=None, access_token=None,
-                       issued_at=None, audit_info=None):
+                       project_id=None, expires=None, trust=None,
+                       app_cred_id=None, token=None, include_catalog=True,
+                       bind=None, access_token=None, issued_at=None,
+                       audit_info=None):
         token_data = {'methods': method_names}
 
         # We've probably already written these to the token
@@ -435,7 +461,7 @@ class V3TokenDataHelper(provider_api.ProviderAPIMixin, object):
             self._populate_is_admin_project(token_data)
         self._populate_user(token_data, user_id, trust)
         self._populate_roles(token_data, user_id, domain_id, project_id, trust,
-                             access_token)
+                             app_cred_id, access_token)
         self._populate_audit_info(token_data, audit_info)
 
         if include_catalog:
@@ -474,7 +500,7 @@ class BaseProvider(provider_api.ProviderAPIMixin, base.Provider):
 
     def issue_token(self, user_id, method_names, expires_at=None,
                     project_id=None, domain_id=None, auth_context=None,
-                    trust=None, include_catalog=True,
+                    trust=None, app_cred_id=None, include_catalog=True,
                     parent_audit_id=None):
         if auth_context and auth_context.get('bind'):
             # NOTE(lbragstad): Check if the token provider being used actually
@@ -505,6 +531,7 @@ class BaseProvider(provider_api.ProviderAPIMixin, base.Provider):
             project_id=project_id,
             expires=expires_at,
             trust=trust,
+            app_cred_id=app_cred_id,
             bind=auth_context.get('bind') if auth_context else None,
             token=token_ref,
             include_catalog=include_catalog,

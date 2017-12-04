@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from functools import partial
 import sys
 
 from oslo_log import log
@@ -18,6 +19,7 @@ from oslo_utils import importutils
 import six
 import stevedore
 
+from keystone.common import driver_hints
 from keystone.common import provider_api
 from keystone.common import utils
 import keystone.conf
@@ -29,6 +31,7 @@ from keystone.identity.backends import resource_options as ro
 LOG = log.getLogger(__name__)
 
 CONF = keystone.conf.CONF
+PROVIDERS = provider_api.ProviderAPIs
 
 # registry of authentication methods
 AUTH_METHODS = {}
@@ -227,9 +230,37 @@ class AuthInfo(provider_api.ProviderAPIMixin, object):
         trust = self.trust_api.get_trust(trust_id)
         return trust
 
+    def _lookup_app_cred(self, app_cred_info):
+        app_cred_id = app_cred_info.get('id')
+        if app_cred_id:
+            get_app_cred = partial(
+                self.application_credential_api.get_application_credential
+            )
+            return get_app_cred(app_cred_id)
+        user = app_cred_info['user']
+        user_id = user.get('id')
+        if not user_id:
+            domain_ref = self._lookup_domain(user['domain'])
+            user_id = PROVIDERS.identity_api.get_user_by_name(
+                user['name'], domain_ref['id'])['id']
+        hints = driver_hints.Hints()
+        hints.add_filter('name', app_cred_info.get('name'))
+        app_cred_mgmr = PROVIDERS.application_credential_api
+        app_cred = app_cred_mgmr.list_application_credentials(
+            user_id, hints)[0]
+        return app_cred
+
+    def _set_scope_from_app_cred(self, app_cred_info):
+        app_cred_ref = self._lookup_app_cred(app_cred_info)
+        self._scope_data = (None, app_cred_ref['project_id'], None, None)
+        return
+
     def _validate_and_normalize_scope_data(self):
         """Validate and normalize scope data."""
         if 'scope' not in self.auth:
+            if 'application_credential' in self.auth['identity']['methods']:
+                self._set_scope_from_app_cred(
+                    self.auth['identity']['application_credential'])
             return
         if sum(['project' in self.auth['scope'],
                 'domain' in self.auth['scope'],
