@@ -203,3 +203,20 @@ class TOTPUserInfo(BaseUserInfo):
             auth_payload)
         user_info = auth_payload['user']
         self.passcode = user_info.get('passcode')
+
+
+class AppCredInfo(BaseUserInfo):
+    def __init__(self):
+        super(AppCredInfo, self).__init__()
+        self.id = None
+        self.secret = None
+
+    def _validate_and_normalize_auth_data(self, auth_payload):
+        # TODO(me): can specify user + cred name in request
+        app_cred = self.application_credential_api.get_application_credential(
+            auth_payload['id'])
+        auth_payload['user'] = {'id': app_cred['user_id']}
+        super(AppCredInfo, self)._validate_and_normalize_auth_data(
+            auth_payload)
+        self.id = auth_payload.get('id')
+        self.secret = auth_payload.get('secret')
