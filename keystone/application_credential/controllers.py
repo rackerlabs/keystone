@@ -90,7 +90,15 @@ class ApplicationCredentialV3(controller.V3Controller):
                                  application_credential)
 
         token = request.auth_context['token']
-
+        auth_methods = token['methods']
+        # TODO(cmurphy) Currently, we unconditionally prohibit application
+        # credentials from creating other application credentials. Fix this to
+        # check whether the application credential is explicitly allowed to
+        # create and delete application credentials.
+        if 'application_credential' in auth_methods:
+            action = _("Using method 'application_credential' is not allowed "
+                       "for creating additional application credentials.")
+            raise exception.ForbiddenAction(action=action)
         if request.context.user_id != user_id:
             action = _("Cannot create an application credential for another "
                        "user")
@@ -137,6 +145,16 @@ class ApplicationCredentialV3(controller.V3Controller):
     @controller.protected()
     def delete_application_credential(self, request, user_id,
                                       application_credential_id):
+        token = request.auth_context['token']
+        auth_methods = token['methods']
+        # TODO(cmurphy) Currently, we unconditionally prohibit application
+        # credentials from creating other application credentials. Fix this to
+        # check whether the application credential is explicitly allowed to
+        # create and delete application credentials.
+        if 'application_credential' in auth_methods:
+            action = _("Using method 'application_credential' is not allowed "
+                       "for deleting additional application credentials.")
+            raise exception.ForbiddenAction(action=action)
         PROVIDERS.application_credential_api.delete_application_credential(
             application_credential_id, initiator=request.audit_initiator
         )
