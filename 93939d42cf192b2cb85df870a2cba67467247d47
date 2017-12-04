@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1f485f77_f2bf63a7",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-12-04T21:13:33Z",
+      "side": 1,
+      "message": "Yep.  That will be a follow on change.",
+      "parentUuid": "7f515b1d_839a3811",
+      "range": {
+        "startLine": 140,
+        "startChar": 64,
+        "endLine": 140,
+        "endChar": 76
+      },
+      "revId": "93939d42cf192b2cb85df870a2cba67467247d47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f515b1d_c3ddd0dd",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 9
