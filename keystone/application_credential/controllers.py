@@ -84,6 +84,16 @@ class ApplicationCredentialV3(controller.V3Controller):
                                       application_credential):
         validation.lazy_validate(schema.application_credential_create,
                                  application_credential)
+        token = request.context_dict['environment']['keystone.token_info']
+        auth_methods = token['token']['methods']
+        # TODO(cmurphy) Currently, we unconditionally prohibit application
+        # credentials from creating other application credentials. Fix this to
+        # check whether the application credential is explicitly allowed to
+        # create application credentials.
+        if 'application_credential' in auth_methods:
+            action = _("Using method 'application_credential' is not allowed "
+                       "for creating additional application credentials.")
+            raise exception.ForbiddenAction(action=action)
         if request.context.user_id != user_id:
             action = _("Cannot create an application credential for another "
                        "user")
