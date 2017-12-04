@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_ddf767f5",
+        "filename": "keystone/common/context.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-12-04T15:01:27Z",
+      "side": 1,
+      "message": "missed this one.  This can be externalized",
+      "revId": "1384a07b49918e7266ccd47f34979e249d8c8152",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_9dd9df84",
         "filename": "keystone/middleware/auth.py",
         "patchSetId": 7
