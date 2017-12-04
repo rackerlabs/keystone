@@ -13,7 +13,7 @@
 #    under the License.
 
 from keystone.common import controller
-from keystone.common import dependency
+from keystone.common import provider_api
 from keystone.common import utils
 from keystone.common import wsgi
 import keystone.conf
@@ -58,8 +58,7 @@ class ExternalAuthNotApplicable(Exception):
     pass
 
 
-@dependency.requires('resource_api', 'identity_api')
-class BaseAuthenticationMethod(object):
+class BaseAuthenticationMethod(provider_api.ProviderAPIMixin, object):
     """Common utilities/dependencies for all authentication method classes."""
 
     def _get_project_id_from_auth(self, auth):
@@ -99,7 +98,6 @@ class BaseAuthenticationMethod(object):
         return project_id
 
 
-@dependency.requires('token_provider_api', 'trust_api')
 class TokenAuthenticationMethod(BaseAuthenticationMethod):
     """Authenticate using an existing token."""
 
@@ -280,8 +278,6 @@ class ExternalAuthenticationMethod(BaseAuthenticationMethod):
         return (user_ref, tenant_id, expiry, bind, audit_id)
 
 
-@dependency.requires('catalog_api', 'resource_api',
-                     'trust_api', 'identity_api')
 class V2TokenDataHelper(object):
     """Create V2 token data."""
 

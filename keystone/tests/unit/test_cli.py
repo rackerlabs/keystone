@@ -37,7 +37,7 @@ from keystone.cmd.doctor import ldap
 from keystone.cmd.doctor import security_compliance
 from keystone.cmd.doctor import tokens
 from keystone.cmd.doctor import tokens_fernet
-from keystone.common import dependency
+from keystone.common import provider_api
 from keystone.common.sql import upgrades
 import keystone.conf
 from keystone import exception
@@ -463,7 +463,7 @@ class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
         }
 
         # Clear backend dependencies, since cli loads these manually
-        dependency.reset()
+        provider_api.ProviderAPIs._clear_registry_instances()
         cli.DomainConfigUpload.main()
 
         res = self.domain_config_api.get_config_with_sensitive_info(
@@ -495,7 +495,7 @@ class CliDomainConfigSingleDomainTestCase(CliDomainConfigAllTestCase):
         }
 
         # Clear backend dependencies, since cli loads these manually
-        dependency.reset()
+        provider_api.ProviderAPIs._clear_registry_instances()
         cli.DomainConfigUpload.main()
 
         res = self.domain_config_api.get_config_with_sensitive_info(
@@ -519,7 +519,7 @@ class CliDomainConfigSingleDomainTestCase(CliDomainConfigAllTestCase):
 
         # Now try and upload the settings in the configuration file for the
         # default domain
-        dependency.reset()
+        provider_api.ProviderAPIs._clear_registry_instances()
         with mock.patch('six.moves.builtins.print') as mock_print:
             self.assertRaises(unit.UnexpectedExit, cli.DomainConfigUpload.main)
             file_name = ('keystone.%s.conf' % self.default_domain['name'])
@@ -544,7 +544,7 @@ class CliDomainConfigNoOptionsTestCase(CliDomainConfigAllTestCase):
              project='keystone', default_config_files=config_files)
 
     def test_config_upload(self):
-        dependency.reset()
+        provider_api.ProviderAPIs._clear_registry_instances()
         with mock.patch('six.moves.builtins.print') as mock_print:
             self.assertRaises(unit.UnexpectedExit, cli.DomainConfigUpload.main)
             mock_print.assert_has_calls(
@@ -561,7 +561,7 @@ class CliDomainConfigTooManyOptionsTestCase(CliDomainConfigAllTestCase):
              project='keystone', default_config_files=config_files)
 
     def test_config_upload(self):
-        dependency.reset()
+        provider_api.ProviderAPIs._clear_registry_instances()
         with mock.patch('six.moves.builtins.print') as mock_print:
             self.assertRaises(unit.UnexpectedExit, cli.DomainConfigUpload.main)
             mock_print.assert_has_calls(
@@ -578,7 +578,7 @@ class CliDomainConfigInvalidDomainTestCase(CliDomainConfigAllTestCase):
              project='keystone', default_config_files=config_files)
 
     def test_config_upload(self):
-        dependency.reset()
+        provider_api.ProviderAPIs._clear_registry_instances()
         with mock.patch('six.moves.builtins.print') as mock_print:
             self.assertRaises(unit.UnexpectedExit, cli.DomainConfigUpload.main)
             file_name = 'keystone.%s.conf' % self.invalid_domain_name
@@ -742,7 +742,8 @@ class TestMappingPopulate(unit.SQLDriverOverrides, unit.TestCase):
                 'entity_type': identity_mapping.EntityType.USER}
             self.assertIsNone(self.id_mapping_api.get_public_id(local_entity))
 
-        dependency.reset()  # backends are loaded again in the command handler
+        # backends are loaded again in the command handler
+        provider_api.ProviderAPIs._clear_registry_instances()
         cli.MappingPopulate.main()
 
         for user in users:
@@ -756,7 +757,8 @@ class TestMappingPopulate(unit.SQLDriverOverrides, unit.TestCase):
     def test_bad_domain_name(self):
         CONF(args=['mapping_populate', '--domain-name', uuid.uuid4().hex],
              project='keystone')
-        dependency.reset()  # backends are loaded again in the command handler
+        # backends are loaded again in the command handler
+        provider_api.ProviderAPIs._clear_registry_instances()
         # NOTE: assertEqual is used on purpose. assertFalse passes with None.
         self.assertEqual(False, cli.MappingPopulate.main())
 
