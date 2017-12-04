@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_b56cef08",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-12-04T13:15:54Z",
+      "side": 1,
+      "message": "This is confusing. We were using oslo.context before. Could you add more detail about what is changing and why? This is part of keystone that some of us have the least understanding about.",
+      "revId": "ae914e4c4f5a2988a2bbca7f8cdd2c01e8f3cbe5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_f5efd784",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-12-04T13:15:54Z",
+      "side": 1,
+      "message": "It looks like you removed everything this comment applied to",
+      "revId": "ae914e4c4f5a2988a2bbca7f8cdd2c01e8f3cbe5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
