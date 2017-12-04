@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_90cc598a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-12-04T13:43:53Z",
+      "side": 1,
+      "message": "Would be good to link to a specific commit, since this line on the master branch points to something different now :/",
+      "revId": "8d14f0ce582c84baf47cb53cda24400170d73c3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
