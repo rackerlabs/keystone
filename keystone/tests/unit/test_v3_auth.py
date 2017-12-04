@@ -34,6 +34,7 @@ from testtools import testcase
 from keystone import auth
 from keystone.auth.plugins import totp
 from keystone.common import policy
+from keystone.common import provider_api
 from keystone.common import utils
 import keystone.conf
 from keystone.credential.providers import fernet as credential_fernet
@@ -46,6 +47,7 @@ from keystone.tests.unit import test_v3
 
 
 CONF = keystone.conf.CONF
+PROVIDERS = provider_api.ProviderAPIs
 
 
 class TestMFARules(test_v3.RestfulTestCase):
@@ -5001,3 +5003,39 @@ class UUIDFetchRevocationList(TestFetchRevocationList,
 
 # NOTE(lbragstad): The Fernet token provider doesn't use Revocation lists so
 # don't inherit TestFetchRevocationList here to test it.
+
+
+class ApplicationCredentialAuth(test_v3.RestfulTestCase):
+
+    def setUp(self):
+        super(ApplicationCredentialAuth, self).setUp()
+        self.app_cred_api = PROVIDERS.application_credential_api
+
+    def config_overrides(self):
+        super(ApplicationCredentialAuth, self).config_overrides()
+        self.config_fixture.config(group='auth', methods='application_credential')
+
+    def _make_app_cred(self, expires=None):
+        user_id = self.default_domain_user['id']
+        project_id = self.default_domain_project['id']
+        roles = [{'id': self.role_id}]
+        data = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'secret': uuid.uuid4().hex,
+            'user_id': user_id,
+            'project_id': project_id,
+            'description': uuid.uuid4().hex,
+            'roles': roles
+        }
+        if expires:
+            data['expires'] = expires
+        return data
+
+    def test_valid_application_credential_succeeds(self):
+        app_cred = self._make_app_cred()
+        app_cred_ref = self.app_cred_api.create_application_credential(
+            app_cred)
+        auth_data = self.build_authentication_request(
+            app_cred_id=app_cred_ref['id'], secret=app_cred_ref['secret'])
+        self.v3_create_token(auth_data, expected_status=http_client.CREATED)

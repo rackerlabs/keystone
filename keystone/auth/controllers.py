@@ -125,12 +125,17 @@ class Auth(controller.V3Controller):
             method_names_set = set(auth_context.get('method_names', []))
             method_names = list(method_names_set)
 
-            # Do MFA Rule Validation for the user
-            if not self._mfa_rules_validator.check_auth_methods_against_rules(
-                    auth_context['user_id'], method_names_set):
-                raise exception.InsufficientAuthMethods(
-                    user_id=auth_context['user_id'],
-                    methods='[%s]' % ','.join(auth_info.get_method_names()))
+            app_cred_id = None
+            if 'application_credential' in method_names:
+                token_auth = auth_info.auth['identity']
+                app_cred_id = token_auth['application_credential']['id']
+            else:
+                # Do MFA Rule Validation for the user
+                if not self._mfa_rules_validator.check_auth_methods_against_rules(
+                        auth_context['user_id'], method_names_set):
+                    raise exception.InsufficientAuthMethods(
+                        user_id=auth_context['user_id'],
+                        methods='[%s]' % ','.join(auth_info.get_method_names()))
 
             expires_at = auth_context.get('expires_at')
             token_audit_id = auth_context.get('audit_id')
@@ -138,8 +143,8 @@ class Auth(controller.V3Controller):
             is_domain = auth_context.get('is_domain')
             (token_id, token_data) = self.token_provider_api.issue_token(
                 auth_context['user_id'], method_names, expires_at, project_id,
-                is_domain, domain_id, auth_context, trust, include_catalog,
-                parent_audit_id=token_audit_id)
+                is_domain, domain_id, auth_context, trust, app_cred_id,
+                include_catalog, parent_audit_id=token_audit_id)
 
             # NOTE(wanghong): We consume a trust use only when we are using
             # trusts and have successfully issued a token.
