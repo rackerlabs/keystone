@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_97a9a57c",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-12-04T20:23:29Z",
+      "side": 1,
+      "message": "these should be cloud_admin",
+      "revId": "573cc46b2a3bab817c14983bba3d189927de5961",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
