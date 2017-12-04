@@ -16,6 +16,24 @@
       "revId": "ffdede636685e8b2577e2b1cea90a0f3abdd2d2f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_27efd11e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-12-04T21:13:33Z",
+      "side": 1,
+      "message": "Look at the blueprint linked below.  This is a necessary step in order to let a user request a token with an explicit role.",
+      "parentUuid": "bff0334d_16e97ee4",
+      "revId": "ffdede636685e8b2577e2b1cea90a0f3abdd2d2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
