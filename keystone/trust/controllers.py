@@ -108,6 +108,18 @@ class TrustV3(controller.V3Controller):
 
         """
         validation.lazy_validate(schema.trust_create, trust)
+
+        token = request.auth_context['token']
+        auth_methods = token['methods']
+        # TODO(cmurphy) Currently, we unconditionally prohibit application
+        # credentials from creating trusts. Fix this to check whether the
+        # application credential is explicitly allowed to create and delete
+        # trusts.
+        if 'application_credential' in auth_methods:
+            action = _("Using method 'application_credential' is not allowed "
+                       "for creating trusts.")
+            raise exception.ForbiddenAction(action=action)
+
         redelegated_trust = self._find_redelegated_trust(request)
 
         if trust.get('project_id') and not trust.get('roles'):
@@ -211,6 +223,17 @@ class TrustV3(controller.V3Controller):
 
     @controller.protected()
     def delete_trust(self, request, trust_id):
+        token = request.auth_context['token']
+        auth_methods = token['methods']
+        # TODO(cmurphy) Currently, we unconditionally prohibit application
+        # credentials from creating trusts. Fix this to check whether the
+        # application credential is explicitly allowed to create and delete
+        # trusts.
+        if 'application_credential' in auth_methods:
+            action = _("Using method 'application_credential' is not allowed "
+                       "for creating trusts.")
+            raise exception.ForbiddenAction(action=action)
+
         trust = PROVIDERS.trust_api.get_trust(trust_id)
 
         if (request.context.user_id != trust.get('trustor_user_id') and
