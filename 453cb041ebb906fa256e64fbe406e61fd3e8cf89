@@ -105,6 +105,24 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_40627640",
+        "filename": "playbooks/legacy/keystone-dsvm-functional-v3-only/run.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-12-04T18:58:55Z",
+      "side": 1,
+      "message": "Yes, I was planning on converting after moving it to the local repo.",
+      "parentUuid": "ff82abbf_527580f9",
+      "revId": "453cb041ebb906fa256e64fbe406e61fd3e8cf89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff82abbf_32679c28",
         "filename": "playbooks/legacy/tempest-dsvm-ldap-domain-specific-driver/run.yaml",
         "patchSetId": 6
