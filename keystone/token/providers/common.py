@@ -257,15 +257,21 @@ class V3TokenDataHelper(provider_api.ProviderAPIMixin, object):
                 self.identity_api.assert_user_enabled(trust['trustor_user_id'])
             except AssertionError:
                 raise exception.Forbidden(_('Trustor is disabled.'))
-            if trust['impersonation']:
-                user_ref = trustor_user_ref
-            token_data['OS-TRUST:trust'] = (
-                {
-                    'id': trust['id'],
-                    'trustor_user': {'id': trust['trustor_user_id']},
-                    'trustee_user': {'id': trust['trustee_user_id']},
-                    'impersonation': trust['impersonation']
-                })
+            # Application credentials use trusts under the hood to enforce
+            # scope, but this should not be exposed to the user. If it was
+            # exposed, users could use token authentication with a trust scope
+            # to work around restrictions with using the
+            # application_credential auth method.
+            if 'application_credential' not in token_data['methods']:
+                if trust['impersonation']:
+                    user_ref = trustor_user_ref
+                token_data['OS-TRUST:trust'] = (
+                    {
+                        'id': trust['id'],
+                        'trustor_user': {'id': trust['trustor_user_id']},
+                        'trustee_user': {'id': trust['trustee_user_id']},
+                        'impersonation': trust['impersonation']
+                    })
         filtered_user = {
             'id': user_ref['id'],
             'name': user_ref['name'],
