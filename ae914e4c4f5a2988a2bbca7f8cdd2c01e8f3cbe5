@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_ab132c66",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-12-04T15:01:27Z",
+      "side": 1,
+      "message": "While we included it, we were not using it to enforce policy;  the custom one overwrote the oslo-context created by middleware.  I\u0027ll make this clearer.",
+      "parentUuid": "df87a7cf_b56cef08",
+      "revId": "ae914e4c4f5a2988a2bbca7f8cdd2c01e8f3cbe5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_f5efd784",
         "filename": "keystone/middleware/auth.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2017-12-04T13:15:54Z",
       "side": 1,
       "message": "It looks like you removed everything this comment applied to",
+      "revId": "ae914e4c4f5a2988a2bbca7f8cdd2c01e8f3cbe5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_cb71d0e2",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-12-04T15:01:27Z",
+      "side": 1,
+      "message": "Ah, good point.  The context.py constructor does all this work now, and has for a long time.  But now this was overwriting values.\n\nRemoved the comment in the next revision",
+      "parentUuid": "df87a7cf_f5efd784",
       "revId": "ae914e4c4f5a2988a2bbca7f8cdd2c01e8f3cbe5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

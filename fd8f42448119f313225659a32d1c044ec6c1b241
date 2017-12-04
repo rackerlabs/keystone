@@ -16,6 +16,24 @@
       "revId": "fd8f42448119f313225659a32d1c044ec6c1b241",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_0b36d804",
+        "filename": "keystone/common/context.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-12-04T15:01:27Z",
+      "side": 0,
+      "message": "It has to do with how the Request was expected to be used versus how it is actually used.  Most, if not all, of the values in here can be removed, since they are not typically passed in via the kwargs.  I had stuck a few of my own values in here, and then removed them, and looks like I removed a couple too many.  Jamie and I agreed that we should clean this up, but in a follow on commit.  I\u0027ll put them back here to keep this patch simpler.",
+      "parentUuid": "df87a7cf_d54ad37e",
+      "revId": "fd8f42448119f313225659a32d1c044ec6c1b241",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
