@@ -22,6 +22,30 @@
       "revId": "227d38e4a19dee58a1679afea7132c88b799fcb6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_c61c3d6c",
+        "filename": "doc/source/contributor/testing-keystone.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-05T19:43:25Z",
+      "side": 1,
+      "message": "Yeah - I thought about doing that but opted to keep it as general as possible. I can update if we really want that level of detail.",
+      "parentUuid": "ff82abbf_de61c806",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 25
+      },
+      "revId": "227d38e4a19dee58a1679afea7132c88b799fcb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
