@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_5e6332dd",
+        "filename": "keystone/tests/unit/common/test_injection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-12-05T00:06:15Z",
+      "side": 1,
+      "message": "NOTE to reviewers: This needs to be 100% refactored to test the new style of injection -- If we\u0027re happy with the direction of this patch, refactoring this should be quick.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 4
+      },
+      "revId": "a45845dfa45e7b148c97b05071bad39b206b1351",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
