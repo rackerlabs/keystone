@@ -18,6 +18,7 @@ role_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_role',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system'],
         description='Show role details.',
         operations=[{'path': '/v3/roles/{role_id}',
                      'method': 'GET'},
@@ -26,6 +27,7 @@ role_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_roles',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system'],
         description='List roles.',
         operations=[{'path': '/v3/roles',
                      'method': 'GET'},
@@ -34,24 +36,28 @@ role_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_role',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system'],
         description='Create role.',
         operations=[{'path': '/v3/roles',
                      'method': 'POST'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_role',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system'],
         description='Update role.',
         operations=[{'path': '/v3/roles/{role_id}',
                      'method': 'PATCH'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_role',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system'],
         description='Delete role.',
         operations=[{'path': '/v3/roles/{role_id}',
                      'method': 'DELETE'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_domain_role',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='Show domain role.',
         operations=[{'path': '/v3/roles/{role_id}',
                      'method': 'GET'},
@@ -60,6 +66,7 @@ role_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_domain_roles',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='List domain roles.',
         operations=[{'path': '/v3/roles?domain_id={domain_id}',
                      'method': 'GET'},
@@ -68,18 +75,21 @@ role_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_domain_role',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='Create domain role.',
         operations=[{'path': '/v3/roles',
                      'method': 'POST'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_domain_role',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='Update domain role.',
         operations=[{'path': '/v3/roles/{role_id}',
                      'method': 'PATCH'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_domain_role',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='Delete domain role.',
         operations=[{'path': '/v3/roles/{role_id}',
                      'method': 'DELETE'}])
