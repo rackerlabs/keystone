@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "df87a7cf_c6e67d45",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-12-05T19:49:13Z",
+      "side": 1,
+      "message": "no, it\u0027s because role creation may use it. Should make it clear that role creation will no longer use these in a future release.",
+      "range": {
+        "startLine": 27,
+        "startChar": 57,
+        "endLine": 28,
+        "endChar": 18
+      },
+      "revId": "77c582f5eb5a74b7ae1d5e9f231d70076086cf4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_931af97a",
         "filename": "keystone/conf/default.py",
         "patchSetId": 12
@@ -30,6 +53,30 @@
       "writtenOn": "2017-12-05T19:42:07Z",
       "side": 1,
       "message": "``keystone-manage bootstrap`` to be consistent with the literal usage above.",
+      "range": {
+        "startLine": 14,
+        "startChar": 4,
+        "endLine": 14,
+        "endChar": 31
+      },
+      "revId": "77c582f5eb5a74b7ae1d5e9f231d70076086cf4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_46a58d03",
+        "filename": "releasenotes/notes/deprecated-as-of-queens-8ad7f826e4f08f57.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-12-05T19:49:13Z",
+      "side": 1,
+      "message": "Actually this should be removed now, since the patch has been updated to remove the call that was formerly made in the keystone-manage bootstrap flow.",
+      "parentUuid": "df87a7cf_73497589",
       "range": {
         "startLine": 14,
         "startChar": 4,
