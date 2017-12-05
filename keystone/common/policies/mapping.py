@@ -18,6 +18,7 @@ mapping_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_mapping',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description=('Create a new federated mapping containing one or '
                      'more sets of rules.'),
         operations=[{'path': '/v3/OS-FEDERATION/mappings/{mapping_id}',
@@ -25,6 +26,7 @@ mapping_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_mapping',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='Get a federated mapping.',
         operations=[
             {
@@ -40,6 +42,7 @@ mapping_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_mappings',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='List federated mappings.',
         operations=[
             {
@@ -55,12 +58,14 @@ mapping_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_mapping',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='Delete a federated mapping.',
         operations=[{'path': '/v3/OS-FEDERATION/mappings/{mapping_id}',
                      'method': 'DELETE'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_mapping',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='Update a federated mapping.',
         operations=[{'path': '/v3/OS-FEDERATION/mappings/{mapping_id}',
                      'method': 'PATCH'}])
