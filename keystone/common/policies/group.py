@@ -18,6 +18,7 @@ group_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_group',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='Show group details.',
         operations=[{'path': '/v3/groups/{group_id}',
                      'method': 'GET'},
@@ -26,6 +27,7 @@ group_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_groups',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='List groups.',
         operations=[{'path': '/v3/groups',
                      'method': 'GET'},
@@ -34,6 +36,7 @@ group_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_groups_for_user',
         check_str=base.RULE_ADMIN_OR_OWNER,
+        scope_types=['system', 'project'],
         description='List groups to which a user belongs.',
         operations=[{'path': '/v3/users/{user_id}/groups',
                      'method': 'GET'},
@@ -42,24 +45,28 @@ group_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_group',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='Create group.',
         operations=[{'path': '/v3/groups',
                      'method': 'POST'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_group',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='Update group.',
         operations=[{'path': '/v3/groups/{group_id}',
                      'method': 'PATCH'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_group',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='Delete group.',
         operations=[{'path': '/v3/groups/{group_id}',
                      'method': 'DELETE'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_users_in_group',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='List members of a specific group.',
         operations=[{'path': '/v3/groups/{group_id}/users',
                      'method': 'GET'},
@@ -68,12 +75,14 @@ group_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'remove_user_from_group',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='Remove user from group.',
         operations=[{'path': '/v3/groups/{group_id}/users/{user_id}',
                      'method': 'DELETE'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'check_user_in_group',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='Check whether a user is a member of a group.',
         operations=[{'path': '/v3/groups/{group_id}/users/{user_id}',
                      'method': 'HEAD'},
@@ -82,6 +91,7 @@ group_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'add_user_to_group',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system', 'project'],
         description='Add user to group.',
         operations=[{'path': '/v3/groups/{group_id}/users/{user_id}',
                      'method': 'PUT'}])
