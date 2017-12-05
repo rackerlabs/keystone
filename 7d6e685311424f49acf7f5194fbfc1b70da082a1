@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_feb6c6d9",
+        "filename": "keystone/tests/unit/common/test_injection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-12-05T00:33:07Z",
+      "side": 1,
+      "message": "NOTE this is pending the ok from reviewers, refactoring here will be done once this is accepted as the path forward.",
+      "revId": "7d6e685311424f49acf7f5194fbfc1b70da082a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
