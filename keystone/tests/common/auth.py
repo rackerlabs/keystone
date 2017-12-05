@@ -14,12 +14,14 @@
 class AuthTestMixin(object):
     """To hold auth building helper functions."""
 
-    def _build_auth_scope(self, project_id=None, project_name=None,
-                          project_domain_id=None, project_domain_name=None,
-                          domain_id=None, domain_name=None, trust_id=None,
-                          unscoped=None):
+    def _build_auth_scope(self, system=False, project_id=None,
+                          project_name=None, project_domain_id=None,
+                          project_domain_name=None, domain_id=None,
+                          domain_name=None, trust_id=None, unscoped=None):
         scope_data = {}
-        if unscoped:
+        if system:
+            scope_data['system'] = {'all': True}
+        elif unscoped:
             scope_data['unscoped'] = {}
         elif project_id or project_name:
             scope_data['project'] = {}

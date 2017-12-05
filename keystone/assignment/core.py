@@ -1089,7 +1089,7 @@ class Manager(manager.Manager):
                 if 'project_id' in assignment:
                     user_and_project_ids.append(
                         (assignment['user_id'], assignment['project_id']))
-                elif 'domain_id' in assignment:
+                elif 'domain_id' or 'system' in assignment:
                     self._emit_invalidate_user_token_persistence(
                         assignment['user_id'])
             elif 'group_id' in assignment:
