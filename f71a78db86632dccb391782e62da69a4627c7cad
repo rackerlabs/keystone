@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_bfb81c2a",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-05T22:10:21Z",
+      "side": 1,
+      "message": "one*",
+      "range": {
+        "startLine": 173,
+        "startChar": 29,
+        "endLine": 173,
+        "endChar": 33
+      },
+      "revId": "f71a78db86632dccb391782e62da69a4627c7cad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_bf91fc9b",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-05T22:10:21Z",
+      "side": 1,
+      "message": "s/,//",
+      "range": {
+        "startLine": 218,
+        "startChar": 36,
+        "endLine": 218,
+        "endChar": 37
+      },
+      "revId": "f71a78db86632dccb391782e62da69a4627c7cad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
