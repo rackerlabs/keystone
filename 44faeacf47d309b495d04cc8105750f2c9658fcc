@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_5c3b39ea",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-12-05T03:35:47Z",
+      "side": 1,
+      "message": "Same as the other review:  lets get a better default defined for these+",
+      "revId": "44faeacf47d309b495d04cc8105750f2c9658fcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
