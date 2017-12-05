@@ -164,8 +164,12 @@ class V3TokenDataHelper(object):
             project['name'] == admin_project_name and
             project['domain']['name'] == admin_project_domain_name)
 
-    def _get_roles_for_user(self, user_id, domain_id, project_id):
+    def _get_roles_for_user(self, user_id, system_scoped, domain_id,
+                            project_id):
         roles = []
+        if system_scoped:
+            roles = self.assignment_api.list_system_grants_for_user(user_id)
+            return roles
         if domain_id:
             roles = self.assignment_api.get_roles_for_user_and_domain(
                 user_id, domain_id)
@@ -359,6 +363,7 @@ class V3TokenDataHelper(object):
                             _('Trustee has no delegated roles.'))
             else:
                 for role in self._get_roles_for_user(token_user_id,
+                                                     system_scoped,
                                                      token_domain_id,
                                                      token_project_id):
                     filtered_roles.append({'id': role['id'],
