@@ -41,7 +41,8 @@ TIME_FORMAT = unit.TIME_FORMAT
 class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
                       common_auth.AuthTestMixin):
 
-    def generate_token_schema(self, domain_scoped=False, project_scoped=False):
+    def generate_token_schema(self, system_scoped=False, domain_scoped=False,
+                              project_scoped=False):
         """Return a dictionary of token properties to validate against."""
         properties = {
             'audit_ids': {
@@ -100,7 +101,28 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             }
         }
 
-        if domain_scoped:
+        if system_scoped:
+            properties['catalog'] = {'type': 'array'}
+            properties['system'] = {
+                'type': 'object',
+                'properties': {
+                    'all': {'type': 'boolean'}
+                }
+            }
+            properties['roles'] = {
+                'type': 'array',
+                'items': {
+                    'type': 'object',
+                    'properties': {
+                        'id': {'type': 'string', },
+                        'name': {'type': 'string', },
+                    },
+                    'required': ['id', 'name', ],
+                    'additionalProperties': False,
+                },
+                'minItems': 1,
+            }
+        elif domain_scoped:
             properties['catalog'] = {'type': 'array'}
             properties['roles'] = {
                 'type': 'array',
@@ -157,7 +179,10 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             'additionalProperties': False
         }
 
-        if domain_scoped:
+        if system_scoped:
+            schema['required'].extend(['system', 'roles'])
+            schema['optional'].append('catalog')
+        elif domain_scoped:
             schema['required'].extend(['domain', 'roles'])
             schema['optional'].append('catalog')
         elif project_scoped:
@@ -682,6 +707,18 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         validator_object.validate(token)
 
         return token
+
+    def assertValidSystemScopedTokenResponse(self, r, *args, **kwargs):
+        token = self.assertValidTokenResponse(r)
+        self.assertTrue(token['system']['all'])
+
+        system_scoped_token_schema = self.generate_token_schema(
+            system_scoped=True
+        )
+        validator_object = validators.SchemaValidator(
+            system_scoped_token_schema
+        )
+        validator_object.validate(token)
 
     def assertEqualTokens(self, a, b):
         """Assert that two tokens are equal.
