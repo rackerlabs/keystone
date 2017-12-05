@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_9fbbd8c2",
+        "filename": "api-ref/source/v3-ext/federation/projects-domains/projects-domains.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-05T22:29:50Z",
+      "side": 1,
+      "message": "Can we get this to render in the table format, like in this change?\n\nhttps://review.openstack.org/#/c/506994/2/api-ref/source/v3/users.inc",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 26
+      },
+      "revId": "64f5fe605789292b642981104b4bc1b1c8f49f73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_3fb2cce7",
+        "filename": "api-ref/source/v3-ext/federation/projects-domains/projects-domains.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-05T22:29:50Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 26
+      },
+      "revId": "64f5fe605789292b642981104b4bc1b1c8f49f73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
