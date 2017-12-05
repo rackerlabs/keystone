@@ -16,6 +16,7 @@ from __future__ import absolute_import
 
 import base64
 import datetime
+import itertools
 import uuid
 
 from oslo_log import log
@@ -162,8 +163,26 @@ class V3TokenDataHelper(provider_api.ProviderAPIMixin, object):
             project['name'] == admin_project_name and
             project['domain']['name'] == admin_project_domain_name)
 
-    def _get_roles_for_user(self, user_id, domain_id, project_id):
+    def _get_roles_for_user(self, user_id, system_scoped, domain_id,
+                            project_id):
         roles = []
+        if system_scoped:
+            group_ids = [
+                group['id'] for
+                group in PROVIDERS.identity_api.list_groups_for_user(user_id)
+            ]
+            group_roles = []
+            for group_id in group_ids:
+                roles = PROVIDERS.assignment_api.list_system_grants_for_group(
+                    group_id
+                )
+                for role in roles:
+                    group_roles.append(role)
+
+            user_roles = PROVIDERS.assignment_api.list_system_grants_for_user(
+                user_id
+            )
+            return itertools.chain(group_roles, user_roles)
         if domain_id:
             roles = PROVIDERS.assignment_api.get_roles_for_user_and_domain(
                 user_id, domain_id)
@@ -174,7 +193,7 @@ class V3TokenDataHelper(provider_api.ProviderAPIMixin, object):
 
     def populate_roles_for_federated_user(self, token_data, group_ids,
                                           project_id=None, domain_id=None,
-                                          user_id=None):
+                                          user_id=None, system_scoped=False):
         """Populate roles basing on provided groups and project/domain.
 
         Used for federated users with dynamically assigned groups.
@@ -186,6 +205,7 @@ class V3TokenDataHelper(provider_api.ProviderAPIMixin, object):
         :param project_id: project ID to scope to
         :param domain_id: domain ID to scope to
         :param user_id: user ID
+        :param system_scoped: system scope if applicable
 
         :raises keystone.exception.Unauthorized: when no roles were found
 
@@ -212,8 +232,9 @@ class V3TokenDataHelper(provider_api.ProviderAPIMixin, object):
         roles = PROVIDERS.assignment_api.get_roles_for_groups(
             group_ids, project_id, domain_id
         )
-        roles = roles + self._get_roles_for_user(user_id, domain_id,
-                                                 project_id)
+        roles = roles + self._get_roles_for_user(
+            user_id, system_scoped, domain_id, project_id
+        )
 
         # NOTE(lbragstad): Remove duplicate role references from a list of
         # roles. It is often suggested that this be done with:
@@ -361,6 +382,7 @@ class V3TokenDataHelper(provider_api.ProviderAPIMixin, object):
                             _('Trustee has no delegated roles.'))
             else:
                 for role in self._get_roles_for_user(token_user_id,
+                                                     system_scoped,
                                                      token_domain_id,
                                                      token_project_id):
                     filtered_roles.append({'id': role['id'],
@@ -564,6 +586,7 @@ class BaseProvider(provider_api.ProviderAPIMixin, base.Provider):
             }
         }
 
+        # FIXME(lbragstad): This will have to account for system-scoping, too.
         if project_id or domain_id:
             self.v3_token_data_helper.populate_roles_for_federated_user(
                 token_data, group_ids, project_id, domain_id, user_id)
