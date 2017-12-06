@@ -19,6 +19,10 @@ domain_config_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_domain_config',
         check_str=base.RULE_ADMIN_REQUIRED,
+        # It makes sense to have this be both system-scoped and project-scoped
+        # because that will allow domain administrators the ability to update
+        # domain configuration for their own domains.
+        scope_types=['system', 'project'],
         description='Create domain configuration.',
         operations=[
             {
@@ -30,6 +34,10 @@ domain_config_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_domain_config',
         check_str=base.RULE_ADMIN_REQUIRED,
+        # It makes sense to have this be both system-scoped and project-scoped
+        # because that will allow domain administrators the ability to update
+        # domain configuration for their own domains.
+        scope_types=['system', 'project'],
         description=('Get the entire domain configuration for a domain, an '
                      'option group within a domain, or a specific '
                      'configuration option within a group for a domain.'),
@@ -63,6 +71,9 @@ domain_config_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_security_compliance_domain_config',
         check_str='',
+        # This should be accessible to anyone with a valid token, regardless of
+        # system-scope or project-scope.
+        scope_types=['system', 'project'],
         description=('Get security compliance domain configuration for '
                      'either a domain or a specific option in a domain.'),
         operations=[
@@ -89,6 +100,10 @@ domain_config_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_domain_config',
         check_str=base.RULE_ADMIN_REQUIRED,
+        # It makes sense to have this be both system-scoped and project-scoped
+        # because that will allow domain administrators the ability to update
+        # domain configuration for their own domains.
+        scope_types=['system', 'project'],
         description=('Update domain configuration for either a domain, '
                      'specific group or a specific option in a group.'),
         operations=[
@@ -109,6 +124,10 @@ domain_config_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_domain_config',
         check_str=base.RULE_ADMIN_REQUIRED,
+        # It makes sense to have this be both system-scoped and project-scoped
+        # because that will allow domain administrators the ability to manage
+        # domain configuration for their own domains.
+        scope_types=['system', 'project'],
         description=('Delete domain configuration for either a domain, '
                      'specific group or a specific option in a group.'),
         operations=[
@@ -129,6 +148,10 @@ domain_config_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_domain_config_default',
         check_str=base.RULE_ADMIN_REQUIRED,
+        # It makes sense to have this be both system-scoped and project-scoped
+        # because that will allow domain administrators the ability to manage
+        # domain configuration for their own domains.
+        scope_types=['system', 'project'],
         description=('Get domain configuration default for either a domain, '
                      'specific group or a specific option in a group.'),
         operations=[
