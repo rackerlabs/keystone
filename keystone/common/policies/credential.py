@@ -18,30 +18,46 @@ credential_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_credential',
         check_str=base.RULE_ADMIN_REQUIRED,
+        # Credentials aren't really project-scoped or system-scoped. Instead,
+        # they are tied to a user. So does a user need a project-scoped or
+        # system-scoped token to interact with them? Not sure what the right
+        # answer is here. It seems like management of this resource is best
+        # handled in code. If this API is called with a system-scoped token,
+        # it's a system-administrator and they should be able to get any
+        # credential for management reasons. If this API is called with a
+        # project-scoped token, then extra enforcement needs to happen based on
+        # who created the credential, what projects they are members of, and
+        # the project the token is scoped to. When we fully support the second
+        # case, we can add `project` to the list of scope_types.
+        scope_types=['system'],
         description='Show credentials details.',
         operations=[{'path': '/v3/credentials/{credential_id}',
                      'method': 'GET'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_credentials',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system'],
         description='List credentials.',
         operations=[{'path': '/v3/credentials',
                      'method': 'GET'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_credential',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system'],
         description='Create credential.',
         operations=[{'path': '/v3/credentials',
                      'method': 'POST'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_credential',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system'],
         description='Update credential.',
         operations=[{'path': '/v3/credentials/{credential_id}',
                      'method': 'PATCH'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_credential',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system'],
         description='Delete credential.',
         operations=[{'path': '/v3/credentials/{credential_id}',
                      'method': 'DELETE'}])
