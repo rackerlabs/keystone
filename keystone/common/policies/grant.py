@@ -59,6 +59,7 @@ grant_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'check_grant',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['project', 'system'],
         description=('Check a role grant between a target and an actor. A '
                      'target can be either a domain or a project. An actor '
                      'can be either a user or a group. These terms also apply '
@@ -69,6 +70,7 @@ grant_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_grants',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['project', 'system'],
         description=('List roles granted to an actor on a target. A target '
                      'can be either a domain or a project. An actor can be '
                      'either a user or a group. For the OS-INHERIT APIs, it '
@@ -79,6 +81,7 @@ grant_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_grant',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['project', 'system'],
         description=('Create a role grant between a target and an actor. A '
                      'target can be either a domain or a project. An actor '
                      'can be either a user or a group. These terms also apply '
@@ -89,6 +92,7 @@ grant_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'revoke_grant',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['project', 'system'],
         description=('Revoke a role grant between a target and an actor. A '
                      'target can be either a domain or a project. An actor '
                      'can be either a user or a group. These terms also apply '
