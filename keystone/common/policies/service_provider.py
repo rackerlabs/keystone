@@ -18,6 +18,13 @@ service_provider_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_service_provider',
         check_str=base.RULE_ADMIN_REQUIRED,
+        # FIXME(lbragstad): Once keystone supports a way to add federated
+        # identity providers without having to touch system configuration
+        # files, like Apache, scope_types should include 'project'. This will
+        # expose the ability for project/domain administrators to add their own
+        # federated identity providers for their domain or project. Until then,
+        # it is probably best to consider this a system-level operation.
+        scope_types=['system'],
         description='Create federated service provider.',
         operations=[{'path': ('/v3/OS-FEDERATION/service_providers/'
                               '{service_provider_id}'),
@@ -25,6 +32,7 @@ service_provider_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_service_providers',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system'],
         description='List federated service providers.',
         operations=[
             {
@@ -40,6 +48,7 @@ service_provider_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_service_provider',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system'],
         description='Get federated service provider.',
         operations=[
             {
@@ -57,6 +66,7 @@ service_provider_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_service_provider',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system'],
         description='Update federated service provider.',
         operations=[{'path': ('/v3/OS-FEDERATION/service_providers/'
                               '{service_provider_id}'),
@@ -64,6 +74,7 @@ service_provider_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_service_provider',
         check_str=base.RULE_ADMIN_REQUIRED,
+        scope_types=['system'],
         description='Delete federated service provider.',
         operations=[{'path': ('/v3/OS-FEDERATION/service_providers/'
                               '{service_provider_id}'),
