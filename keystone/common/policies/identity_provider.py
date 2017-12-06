@@ -18,12 +18,20 @@ identity_provider_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_identity_provider',
         check_str=base.RULE_ADMIN_REQUIRED,
+        # NOTE(lbragstad): This should be updated to include 'project' scope
+        # if/when it becomes possible to add federated identity providers
+        # without modifying configurations outside of keystone (Apache).
+        scope_types=['system'],
         description='Create identity provider.',
         operations=[{'path': '/v3/OS-FEDERATION/identity_providers/{idp_id}',
                      'method': 'PUT'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_identity_providers',
         check_str=base.RULE_ADMIN_REQUIRED,
+        # NOTE(lbragstad): This should be updated to include 'project' scope
+        # if/when it becomes possible to add federated identity providers
+        # without modifying configurations outside of keystone (Apache).
+        scope_types=['system'],
         description='List identity providers.',
         operations=[
             {
@@ -39,6 +47,10 @@ identity_provider_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_identity_provider',
         check_str=base.RULE_ADMIN_REQUIRED,
+        # NOTE(lbragstad): This should be updated to include 'project' scope
+        # if/when it becomes possible to add federated identity providers
+        # without modifying configurations outside of keystone (Apache).
+        scope_types=['system'],
         description='Get identity provider.',
         operations=[
             {
@@ -54,12 +66,20 @@ identity_provider_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_identity_provider',
         check_str=base.RULE_ADMIN_REQUIRED,
+        # NOTE(lbragstad): This should be updated to include 'project' scope
+        # if/when it becomes possible to add federated identity providers
+        # without modifying configurations outside of keystone (Apache).
+        scope_types=['system'],
         description='Update identity provider.',
         operations=[{'path': '/v3/OS-FEDERATION/identity_providers/{idp_id}',
                      'method': 'PATCH'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_identity_provider',
         check_str=base.RULE_ADMIN_REQUIRED,
+        # NOTE(lbragstad): This should be updated to include 'project' scope
+        # if/when it becomes possible to add federated identity providers
+        # without modifying configurations outside of keystone (Apache).
+        scope_types=['system'],
         description='Delete identity provider.',
         operations=[{'path': '/v3/OS-FEDERATION/identity_providers/{idp_id}',
                      'method': 'DELETE'}])
