@@ -18,6 +18,12 @@ ec2_credential_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'ec2_get_credential',
         check_str=base.RULE_ADMIN_OR_CREDENTIAL_OWNER,
+        # System administrators should be able to manage all ec2 credentials.
+        # Users without a system role assignment should be able to manage only
+        # ec2 credentials keystone can assert belongs to them. This is going to
+        # require keystone to have "scope" checks in code to ensure this is
+        # enforced properly.
+        scope_types=['system', 'project'],
         description='Show ec2 credential details.',
         operations=[{'path': ('/v3/users/{user_id}/credentials/OS-EC2/'
                               '{credential_id}'),
@@ -25,18 +31,21 @@ ec2_credential_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'ec2_list_credentials',
         check_str=base.RULE_ADMIN_OR_OWNER,
+        scope_types=['system', 'project'],
         description='List ec2 credentials.',
         operations=[{'path': '/v3/users/{user_id}/credentials/OS-EC2',
                      'method': 'GET'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'ec2_create_credential',
         check_str=base.RULE_ADMIN_OR_OWNER,
+        scope_types=['system', 'project'],
         description='Create ec2 credential.',
         operations=[{'path': '/v3/users/{user_id}/credentials/OS-EC2',
                      'method': 'POST'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'ec2_delete_credential',
         check_str=base.RULE_ADMIN_OR_CREDENTIAL_OWNER,
+        scope_types=['system', 'project'],
         description='Delete ec2 credential.',
         operations=[{'path': ('/v3/users/{user_id}/credentials/OS-EC2/'
                               '{credential_id}'),
