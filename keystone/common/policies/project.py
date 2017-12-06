@@ -18,42 +18,82 @@ project_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_project',
         check_str=base.RULE_ADMIN_OR_TARGET_PROJECT,
+        # FIXME(lbragstad): The default check_str here should change to be just
+        # a role. The OR_TARGET_PROJECT bit of this check_str should actually
+        # be moved into keystone. A system administrator should be able to get
+        # any project in the deployement. A domain administrator should be
+        # able to get any project within their domain. A project administrator
+        # should be able to get their project or children of their project
+        # (maybe). This is going to require policy checks in code that make
+        # keystone smarter about handling these cases. Until we have those in
+        # place, we should keep scope_type commented out. Otherwise, we risk
+        # exposing information to people who don't have the correct
+        # authorization.
+        # scope_types=['system', 'project'],
         description='Show project details.',
         operations=[{'path': '/v3/projects/{project_id}',
                      'method': 'GET'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_projects',
         check_str=base.RULE_ADMIN_REQUIRED,
+        # FIXME(lbragstad): See the above comment as to why this is commented
+        # out.
+        # scope_types=['system', 'project'],
         description='List projects.',
         operations=[{'path': '/v3/projects',
                      'method': 'GET'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_user_projects',
         check_str=base.RULE_ADMIN_OR_OWNER,
+        # FIXME(lbragstad): This is going to require keystone to be smarter
+        # about how it authorizes this API. A system administrator should be
+        # able to list all projects for a user. A domain administrator should
+        # be able to list all projects to users within their domain. A user
+        # should be able to list projects for themselves, including the
+        # hierarchy in place. Until we have those cases covered in code and
+        # tested, we should keep scope_types commented out.
+        # scope_types=['system', 'project'],
         description='List projects for user.',
         operations=[{'path': '/v3/users/{user_id}/projects',
                      'method': 'GET'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_project',
         check_str=base.RULE_ADMIN_REQUIRED,
+        # FIXME(lbragstad): See the above comments as to why this is commented
+        # out.
+        # scope_types=['system', 'project'],
         description='Create project.',
         operations=[{'path': '/v3/projects',
                      'method': 'POST'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_project',
         check_str=base.RULE_ADMIN_REQUIRED,
+        # FIXME(lbragstad): See the above comments as to why this is commented
+        # out.
+        # scope_types=['system', 'project'],
         description='Update project.',
         operations=[{'path': '/v3/projects/{project_id}',
                      'method': 'PATCH'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_project',
         check_str=base.RULE_ADMIN_REQUIRED,
+        # FIXME(lbragstad): See the above comments as to why this is commented
+        # out.
+        # scope_types=['system', 'project'],
         description='Delete project.',
         operations=[{'path': '/v3/projects/{project_id}',
                      'method': 'DELETE'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_project_tags',
         check_str=base.RULE_ADMIN_OR_TARGET_PROJECT,
+        # FIXME(lbragstad): We need to make sure we check the project in the
+        # token scope when authorizing APIs for project tags. System
+        # administrators should be able to tag any project with anything.
+        # Domain administrators should only be able to tag projects within
+        # their domain. Project administrators should only be able to tag their
+        # project. Until we have support for these cases in code and tested, we
+        # should keep scope_types commented out.
+        # scope_types=['system', 'project'],
         description='List tags for a project.',
         operations=[{'path': '/v3/projects/{project_id}/tags',
                      'method': 'GET'},
@@ -62,6 +102,9 @@ project_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_project_tag',
         check_str=base.RULE_ADMIN_OR_TARGET_PROJECT,
+        # FIXME(lbragstad): See the above comments as to why this is commented
+        # out.
+        # scope_types=['system', 'project'],
         description='Check if project contains a tag.',
         operations=[{'path': '/v3/projects/{project_id}/tags/{value}',
                      'method': 'GET'},
@@ -70,24 +113,36 @@ project_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_project_tags',
         check_str=base.RULE_ADMIN_REQUIRED,
+        # FIXME(lbragstad): See the above comments as to why this is commented
+        # out.
+        # scope_types=['system', 'project'],
         description='Replace all tags on a project with the new set of tags.',
         operations=[{'path': '/v3/projects/{project_id}/tags',
                      'method': 'PUT'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_project_tag',
         check_str=base.RULE_ADMIN_REQUIRED,
+        # FIXME(lbragstad): See the above comments as to why this is commented
+        # out.
+        # scope_types=['system', 'project'],
         description='Add a single tag to a project.',
         operations=[{'path': '/v3/projects/{project_id}/tags/{value}',
                      'method': 'PUT'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_project_tags',
         check_str=base.RULE_ADMIN_REQUIRED,
+        # FIXME(lbragstad): See the above comments as to why this is commented
+        # out.
+        # scope_types=['system', 'project'],
         description='Remove all tags from a project.',
         operations=[{'path': '/v3/projects/{project_id}/tags',
                      'method': 'DELETE'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_project_tag',
         check_str=base.RULE_ADMIN_REQUIRED,
+        # FIXME(lbragstad): See the above comments as to why this is commented
+        # out.
+        # scope_types=['system', 'project'],
         description='Delete a specified tag from project.',
         operations=[{'path': '/v3/projects/{project_id}/tags/{value}',
                      'method': 'DELETE'}])
