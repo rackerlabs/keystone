@@ -18,12 +18,18 @@ trust_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_trust',
         check_str=base.RULE_TRUST_OWNER,
+        # I'm curious if someone can fact-check me here. Trusts don't *require*
+        # a project when they are created, but are they useful without them? If
+        # trusts have a hard dependency on a project being present, then trusts
+        # make sense as a project-level resource.
+        scope_types=['system', 'project'],
         description='Create trust.',
         operations=[{'path': '/v3/OS-TRUST/trusts',
                      'method': 'POST'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_trusts',
         check_str='',
+        scope_types=['system', 'project'],
         description='List trusts.',
         operations=[{'path': '/v3/OS-TRUST/trusts',
                      'method': 'GET'},
@@ -32,6 +38,7 @@ trust_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_roles_for_trust',
         check_str='',
+        scope_types=['system', 'project'],
         description='List roles delegated by a trust.',
         operations=[{'path': '/v3/OS-TRUST/trusts/{trust_id}/roles',
                      'method': 'GET'},
@@ -40,6 +47,7 @@ trust_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_role_for_trust',
         check_str='',
+        scope_types=['system', 'project'],
         description='Check if trust delegates a particular role.',
         operations=[{'path': '/v3/OS-TRUST/trusts/{trust_id}/roles/{role_id}',
                      'method': 'GET'},
@@ -48,12 +56,14 @@ trust_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_trust',
         check_str='',
+        scope_types=['system', 'project'],
         description='Revoke trust.',
         operations=[{'path': '/v3/OS-TRUST/trusts/{trust_id}',
                      'method': 'DELETE'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_trust',
         check_str='',
+        scope_types=['system', 'project'],
         description='Get trust.',
         operations=[{'path': '/v3/OS-TRUST/trusts/{trust_id}',
                      'method': 'GET'},
