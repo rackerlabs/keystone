@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_0c06adcf",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-12-06T15:44:51Z",
+      "side": 0,
+      "message": "This comment may need updating but it applies to the AUTH_CONTEXT_ENV constant which is still used, so I don\u0027t think it should be removed entirely.",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 49
+      },
+      "revId": "b5faf63511b188c19548ca01e6d87d0d2047ece3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
