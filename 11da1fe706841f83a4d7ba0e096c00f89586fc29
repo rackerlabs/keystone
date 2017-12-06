@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ff82abbf_ba5dd0ea",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-06T07:05:09Z",
+      "side": 1,
+      "message": "You are right. Bootstrap is not related to upgrade. But as \t\nColleen said, what if",
+      "parentUuid": "ff82abbf_91d6c627",
+      "revId": "11da1fe706841f83a4d7ba0e096c00f89586fc29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff82abbf_d1c44e62",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 11
