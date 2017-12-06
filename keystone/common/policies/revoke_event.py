@@ -18,6 +18,7 @@ revoke_event_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_revoke_events',
         check_str=base.RULE_SERVICE_OR_ADMIN,
+        scope_types=['system'],
         description='List revocation events.',
         operations=[{'path': '/v3/OS-REVOKE/events',
                      'method': 'GET'}])
