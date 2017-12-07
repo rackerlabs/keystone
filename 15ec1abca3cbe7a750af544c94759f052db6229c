@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_eb022a3d",
+        "filename": "keystone/token/providers/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-07T19:49:45Z",
+      "side": 0,
+      "message": "This is changing an interface that other people might be implementing. We should include a release note for changes like this.",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 44
+      },
+      "revId": "15ec1abca3cbe7a750af544c94759f052db6229c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
