@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_013f2f87",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-07T20:44:16Z",
+      "side": 1,
+      "message": "avoid*",
+      "range": {
+        "startLine": 10,
+        "startChar": 25,
+        "endLine": 10,
+        "endChar": 32
+      },
+      "revId": "4eac1b850c3ac619bf3b63f282a38ffd05767983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_e1724b7b",
+        "filename": "keystone/oauth1/schema.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-07T20:44:16Z",
+      "side": 1,
+      "message": "At the moment, this is actually a required parameter according to keystone business logic.\n\nhttps://github.com/openstack/keystone/blob/master/keystone/oauth1/controllers.py#L402-L404\n\nWe could tell the schema to always expect this, at least until we add support for role names.",
+      "range": {
+        "startLine": 41,
+        "startChar": 13,
+        "endLine": 41,
+        "endChar": 15
+      },
+      "revId": "4eac1b850c3ac619bf3b63f282a38ffd05767983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
