@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_9e4abea9",
+        "filename": "releasenotes/notes/deprecated-as-of-queens-8ad7f826e4f08f57.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-07T20:20:49Z",
+      "side": 1,
+      "message": "This could actually reference the bug number. Either in this specific note or in a separate note.\n\nhttps://docs.openstack.org/keystone/latest/contributor/release-notes.html",
+      "range": {
+        "startLine": 11,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 76
+      },
+      "revId": "e63c484dac0d013ec245d7de651856f6c0d0b9c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
