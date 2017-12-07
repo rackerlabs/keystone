@@ -3,3 +3,6 @@ other:
   - >
     [`bug 1728690 <https://bugs.launchpad.net/keystone/+bug/1728690>`_]
     The member role creation step in ``keystone-manage bootstrap`` is removed.
+  - >
+    The uesless interface ``get_token_version`` in token provider has been
+    removed due to the removal of V2 API.
