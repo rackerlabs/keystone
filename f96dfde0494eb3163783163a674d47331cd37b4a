@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_fe43ca6a",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-07T20:29:57Z",
+      "side": 1,
+      "message": "Was this possible before without a 4XX http status code being returned? If so, we might be breaking API compatibility (similar to Colleen\u0027s concern).",
+      "range": {
+        "startLine": 188,
+        "startChar": 67,
+        "endLine": 190,
+        "endChar": 57
+      },
+      "revId": "f96dfde0494eb3163783163a674d47331cd37b4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_9e295e9c",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 680,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-07T20:29:57Z",
+      "side": 1,
+      "message": "What happens if I use a domain-scoped token?",
+      "range": {
+        "startLine": 678,
+        "startChar": 8,
+        "endLine": 680,
+        "endChar": 39
+      },
+      "revId": "f96dfde0494eb3163783163a674d47331cd37b4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
