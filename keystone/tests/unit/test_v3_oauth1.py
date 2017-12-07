@@ -35,7 +35,6 @@ from keystone.tests.unit.common import test_notifications
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit.ksfixtures import temporaryfile
 from keystone.tests.unit import test_v3
-from keystone.tests.unit import utils as test_utils
 
 
 CONF = keystone.conf.CONF
@@ -718,8 +717,6 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         body = {'roles': [{'id': self.role_id}]}
         self.put(url, body=body, expected_status=http_client.NOT_FOUND)
 
-    @test_utils.wip('Waiting on validation to be added from fixing bug '
-                    '1736875')
     def test_bad_request_body_when_authorize(self):
         consumer = self._create_single_consumer()
         consumer_id = consumer['id']
