@@ -458,21 +458,6 @@ class BaseProvider(base.Provider):
         super(BaseProvider, self).__init__(*args, **kwargs)
         self.v3_token_data_helper = V3TokenDataHelper()
 
-    def get_token_version(self, token_data):
-        if token_data and isinstance(token_data, dict):
-            if 'token_version' in token_data:
-                if token_data['token_version'] in token_model.VERSIONS:
-                    return token_data['token_version']
-            # FIXME(morganfainberg): deprecate the following logic in future
-            # revisions. It is better to just specify the token_version in
-            # the token_data itself. This way we can support future versions
-            # that might have the same fields.
-            if 'access' in token_data:
-                return token_model.V2
-            if 'token' in token_data and 'methods' in token_data['token']:
-                return token_model.V3
-        raise exception.UnsupportedTokenVersionException()
-
     def _is_mapped_token(self, auth_context):
         return (federation_constants.IDENTITY_PROVIDER in auth_context and
                 federation_constants.PROTOCOL in auth_context)

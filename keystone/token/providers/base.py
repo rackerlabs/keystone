@@ -33,20 +33,6 @@ class Provider(object):
         """
         raise exception.NotImplemented()  # pragma: no cover
 
-    @abc.abstractmethod
-    def get_token_version(self, token_data):
-        """Return the version of the given token data.
-
-        If the given token data is unrecognizable,
-        UnsupportedTokenVersionException is raised.
-
-        :param token_data: token_data
-        :type token_data: dict
-        :returns: token version string
-        :raises keystone.exception.UnsupportedTokenVersionException:
-            If the token version is not expected.
-        """
-        raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
     def issue_token(self, user_id, method_names, expires_at=None,
