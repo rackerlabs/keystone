@@ -377,6 +377,7 @@ class OAuthControllerV3(controller.V3Controller):
         there is not another easy way to make sure the user knows which roles
         are being requested before authorizing.
         """
+        validation.lazy_validate(schema.request_token_authorize, roles)
         if request.context.is_delegated_auth:
             raise exception.Forbidden(
                 _('Cannot authorize a request token'
