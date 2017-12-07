@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "df87a7cf_6b385aee",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-07T20:12:42Z",
+      "side": 1,
+      "message": "This is the only thing needed moving forward then? Each manager no longer needs to keep track of what dependencies it needs in order to operate?",
+      "range": {
+        "startLine": 57,
+        "startChar": 4,
+        "endLine": 57,
+        "endChar": 36
+      },
+      "revId": "7d6e685311424f49acf7f5194fbfc1b70da082a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_3e78528e",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-07T20:12:42Z",
+      "side": 1,
+      "message": "So this is the magic, right? Because all managers should be inheriting from this, they should be getting dependencies resolved automatically when the managers are init\u0027d, yeah?",
+      "range": {
+        "startLine": 220,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 68
+      },
+      "revId": "7d6e685311424f49acf7f5194fbfc1b70da082a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_feb6c6d9",
         "filename": "keystone/tests/unit/common/test_injection.py",
         "patchSetId": 4
@@ -13,6 +59,24 @@
       "writtenOn": "2017-12-05T00:33:07Z",
       "side": 1,
       "message": "NOTE this is pending the ok from reviewers, refactoring here will be done once this is accepted as the path forward.",
+      "revId": "7d6e685311424f49acf7f5194fbfc1b70da082a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_9eeb9eda",
+        "filename": "keystone/tests/unit/common/test_injection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-07T20:12:42Z",
+      "side": 1,
+      "message": "The approach seems ok. This just exposes all managers to each other as attributes via the _provides attribute and the common.Manager?\n\nLast time we tried working through this we were trying to do something with registration and Meta classes - https://review.openstack.org/#/c/492621/",
+      "parentUuid": "df87a7cf_feb6c6d9",
       "revId": "7d6e685311424f49acf7f5194fbfc1b70da082a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

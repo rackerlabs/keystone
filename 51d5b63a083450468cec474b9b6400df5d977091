@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_be96a24b",
+        "filename": "keystone/token/persistence/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-07T20:12:42Z",
+      "side": 0,
+      "message": "Weird... This must have been an old manager that pre-dated the token_provider_api manager?",
+      "range": {
+        "startLine": 169,
+        "startChar": 0,
+        "endLine": 198,
+        "endChar": 16
+      },
+      "revId": "51d5b63a083450468cec474b9b6400df5d977091",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
