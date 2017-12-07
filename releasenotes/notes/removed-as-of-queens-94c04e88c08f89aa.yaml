@@ -6,3 +6,6 @@ other:
     and will no longer create a default member role. Please create any
     additional roles you need after running ``bootstrap`` by using the
     ``openstack role create`` command.
+  - >
+    The interface ``get_token_version`` from the token provider has been
+    removed due to the removal of V2 API.

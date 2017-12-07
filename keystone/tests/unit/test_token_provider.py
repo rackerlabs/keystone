@@ -449,18 +449,6 @@ class TestTokenProvider(unit.TestCase):
         )
         self.load_backends()
 
-    def test_get_token_version(self):
-        self.assertEqual(
-            token.provider.V3,
-            self.token_provider_api.get_token_version(SAMPLE_V3_TOKEN))
-        self.assertEqual(
-            token.provider.V3,
-            self.token_provider_api.get_token_version(
-                SAMPLE_V3_TOKEN_WITH_EMBEDED_VERSION))
-        self.assertRaises(exception.UnsupportedTokenVersionException,
-                          self.token_provider_api.get_token_version,
-                          'bogus')
-
     def test_unsupported_token_provider(self):
         self.config_fixture.config(group='token',
                                    provider='MyProvider')
