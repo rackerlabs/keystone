@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_e111eb53",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-07T20:34:21Z",
+      "side": 1,
+      "message": "wouldn\u0027t we want to default to packing the original value, even if it isn\u0027t bytes?",
+      "range": {
+        "startLine": 415,
+        "startChar": 12,
+        "endLine": 415,
+        "endChar": 28
+      },
+      "revId": "fbf586f4919babf950d9ec59686392f12e2cdc00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_811a5f6c",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-07T20:34:21Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "range": {
+        "startLine": 442,
+        "startChar": 12,
+        "endLine": 442,
+        "endChar": 26
+      },
+      "revId": "fbf586f4919babf950d9ec59686392f12e2cdc00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_212593ab",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-07T20:34:21Z",
+      "side": 1,
+      "message": "Same comment here, what if the role_id is something not UUID formatted. This might seem unlikely, but until we started working with this type of logic, we\u0027ve had folks come out of the woodwork about conversions.",
+      "range": {
+        "startLine": 471,
+        "startChar": 11,
+        "endLine": 471,
+        "endChar": 28
+      },
+      "revId": "fbf586f4919babf950d9ec59686392f12e2cdc00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
