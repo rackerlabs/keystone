@@ -32,3 +32,17 @@ consumer_update = {
     'minProperties': 1,
     'additionalProperties': True
 }
+
+request_token_authorize = {
+    'type': 'array',
+    'items': {
+        'type': 'object',
+        'properties': {
+            'id': parameter_types.id_string,
+        },
+        'required': ['id', ],
+        'minProperties': 1,
+        'additionalProperties': False
+    },
+    'additionalProperties': False
+}
