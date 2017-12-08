@@ -22,6 +22,30 @@
       "revId": "51d5b63a083450468cec474b9b6400df5d977091",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_fbf7468a",
+        "filename": "keystone/token/persistence/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-12-08T15:22:53Z",
+      "side": 0,
+      "message": "This was a compat thing for when we moved to ._persistence ;) It just wasnt cleaned up.",
+      "parentUuid": "df87a7cf_be96a24b",
+      "range": {
+        "startLine": 169,
+        "startChar": 0,
+        "endLine": 198,
+        "endChar": 16
+      },
+      "revId": "51d5b63a083450468cec474b9b6400df5d977091",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

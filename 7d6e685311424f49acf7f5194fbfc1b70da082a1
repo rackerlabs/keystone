@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_5b7af2f0",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-12-08T15:22:53Z",
+      "side": 1,
+      "message": "Correct. We also lock the PRoviderAPIs registry once we configure, so no one instantiates a new manager along the way at runtime.",
+      "parentUuid": "df87a7cf_6b385aee",
+      "range": {
+        "startLine": 57,
+        "startChar": 4,
+        "endLine": 57,
+        "endChar": 36
+      },
+      "revId": "7d6e685311424f49acf7f5194fbfc1b70da082a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_3e78528e",
         "filename": "keystone/common/controller.py",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2017-12-07T20:12:42Z",
       "side": 1,
       "message": "So this is the magic, right? Because all managers should be inheriting from this, they should be getting dependencies resolved automatically when the managers are init\u0027d, yeah?",
+      "range": {
+        "startLine": 220,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 68
+      },
+      "revId": "7d6e685311424f49acf7f5194fbfc1b70da082a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_3b37ee4f",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-12-08T15:22:53Z",
+      "side": 1,
+      "message": "This is part of the magic. This is the magic for the controller(s). The Manager base class has a separate bit of magic, because it is also providing the api(s).",
+      "parentUuid": "df87a7cf_3e78528e",
       "range": {
         "startLine": 220,
         "startChar": 0,
@@ -77,6 +125,24 @@
       "side": 1,
       "message": "The approach seems ok. This just exposes all managers to each other as attributes via the _provides attribute and the common.Manager?\n\nLast time we tried working through this we were trying to do something with registration and Meta classes - https://review.openstack.org/#/c/492621/",
       "parentUuid": "df87a7cf_feb6c6d9",
+      "revId": "7d6e685311424f49acf7f5194fbfc1b70da082a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_fbc98658",
+        "filename": "keystone/tests/unit/common/test_injection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-12-08T15:22:53Z",
+      "side": 1,
+      "message": "The registration with metaclasses is very hard to get right. IT also totally conflicts with other metaclasses (if we use them, like TraceMeta).\n\nThis is all exposed via _provides_api.\n\nThe next step after this is to stop relying on self.XXX_api and just reference ProviderAPIs.XXX_api, since that is the centralized form.",
+      "parentUuid": "df87a7cf_9eeb9eda",
       "revId": "7d6e685311424f49acf7f5194fbfc1b70da082a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
