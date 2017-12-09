@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_dda82c21",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-12-09T02:10:55Z",
+      "side": 1,
+      "message": "would that even work with Fernet?  We\u0027re limited to space in the token, right?",
+      "parentUuid": "df87a7cf_e111eb53",
+      "range": {
+        "startLine": 415,
+        "startChar": 12,
+        "endLine": 415,
+        "endChar": 28
+      },
+      "revId": "fbf586f4919babf950d9ec59686392f12e2cdc00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_811a5f6c",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 11
@@ -59,6 +83,30 @@
       "writtenOn": "2017-12-07T20:34:21Z",
       "side": 1,
       "message": "Same comment here, what if the role_id is something not UUID formatted. This might seem unlikely, but until we started working with this type of logic, we\u0027ve had folks come out of the woodwork about conversions.",
+      "range": {
+        "startLine": 471,
+        "startChar": 11,
+        "endLine": 471,
+        "endChar": 28
+      },
+      "revId": "fbf586f4919babf950d9ec59686392f12e2cdc00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_1db3f499",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-12-09T02:10:55Z",
+      "side": 1,
+      "message": "If that is true of role_ids, then it is true of audit and domain ids as well. Role_ids are managed by Keystone and, until we have reason to delegate to somewhere else, I think we should be pretty stringent about keeping them as uuids; a free form ID here is not possible, as they are used in URLs, and thus must at least be URL safe.",
+      "parentUuid": "df87a7cf_212593ab",
       "range": {
         "startLine": 471,
         "startChar": 11,
