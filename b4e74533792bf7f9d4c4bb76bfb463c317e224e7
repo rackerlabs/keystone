@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_8f2a61d8",
+        "filename": "releasenotes/notes/removed-as-of-queens-94c04e88c08f89aa.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-12-09T19:08:55Z",
+      "side": 1,
+      "message": "I would suggest removing \"useless\" here, this was useful prior to the V2.0 API removal:\n\n\"The interface ``get_token_version`` from the token provider has been removed due to the removal of the V2 API.",
+      "range": {
+        "startLine": 7,
+        "startChar": 8,
+        "endLine": 7,
+        "endChar": 15
+      },
+      "revId": "b4e74533792bf7f9d4c4bb76bfb463c317e224e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
