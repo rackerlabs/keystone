@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_7e5d4d13",
+        "filename": "keystone/oauth1/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-12-10T11:07:13Z",
+      "side": 1,
+      "message": "If you just want to return \"400\" here, why not add some protection around those code to return \"400\"?\nThe code here does need to be improved since it is making sense to be \"name\" instead of \"id\".",
+      "range": {
+        "startLine": 404,
+        "startChar": 0,
+        "endLine": 405,
+        "endChar": 40
+      },
+      "revId": "43352a64ab38571b334321766ed4ad5491a144a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_7eb22d4b",
+        "filename": "keystone/oauth1/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-12-10T11:07:13Z",
+      "side": 1,
+      "message": "maybe \"name\" as well? I think the hard-coded \"id\" is not the reason of the definition of schema as this.",
+      "range": {
+        "startLine": 41,
+        "startChar": 12,
+        "endLine": 41,
+        "endChar": 44
+      },
+      "revId": "43352a64ab38571b334321766ed4ad5491a144a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_1e876164",
+        "filename": "keystone/oauth1/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-12-10T11:07:13Z",
+      "side": 1,
+      "message": "why?",
+      "range": {
+        "startLine": 43,
+        "startChar": 8,
+        "endLine": 43,
+        "endChar": 29
+      },
+      "revId": "43352a64ab38571b334321766ed4ad5491a144a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_de7c9973",
+        "filename": "keystone/oauth1/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-12-10T11:07:13Z",
+      "side": 1,
+      "message": "I nearly forgot the format, but why you duplicated the \"additionalProperties\" here?",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 33
+      },
+      "revId": "43352a64ab38571b334321766ed4ad5491a144a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
