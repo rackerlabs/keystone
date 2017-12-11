@@ -46,6 +46,30 @@
       "revId": "b4e74533792bf7f9d4c4bb76bfb463c317e224e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_e6f78f8a",
+        "filename": "releasenotes/notes/removed-as-of-queens-94c04e88c08f89aa.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-11T03:14:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df87a7cf_5dfc133d",
+      "range": {
+        "startLine": 7,
+        "startChar": 8,
+        "endLine": 7,
+        "endChar": 15
+      },
+      "revId": "b4e74533792bf7f9d4c4bb76bfb463c317e224e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
