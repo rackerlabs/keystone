@@ -1,0 +1,4 @@
+---
+other:
+  - >
+    Now Keystone supports to authorize request token with role name.
