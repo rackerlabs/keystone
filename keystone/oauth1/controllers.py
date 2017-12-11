@@ -23,6 +23,7 @@ from six.moves.urllib import parse as urlparse
 from keystone.common import authorization
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.common import driver_hints
 from keystone.common import validation
 from keystone.common import wsgi
 import keystone.conf
@@ -212,7 +213,7 @@ class AccessTokenRolesV3(controller.V3Controller):
         return formatted_entity
 
 
-@dependency.requires('assignment_api', 'oauth_api',
+@dependency.requires('assignment_api', 'oauth_api', 'role_api',
                      'resource_api', 'token_provider_api')
 class OAuthControllerV3(controller.V3Controller):
     collection_name = 'not_used'
@@ -374,6 +375,26 @@ class OAuthControllerV3(controller.V3Controller):
 
         return response
 
+    def _normalize_role_list(self, authorize_roles):
+        roles = set()
+        for role in authorize_roles:
+            if role.get('id'):
+                roles.add(role['id'])
+            else:
+                hints = driver_hints.Hints()
+                hints.add_filter("name", role['name'], case_sensitive=True)
+                found_roles = self.role_api.list_roles(hints)
+                if not found_roles:
+                    raise exception.RoleNotFound(
+                        _("Role %s is not defined") % role['name']
+                    )
+                elif len(found_roles) == 1:
+                    roles.add(found_roles[0]['id'])
+                else:
+                    raise exception.AmbiguityError(resource='role',
+                                                   name=role['name'])
+        return roles
+
     @controller.protected()
     def authorize_request_token(self, request, request_token_id, roles):
         """An authenticated user is going to authorize a request token.
@@ -399,10 +420,7 @@ class OAuthControllerV3(controller.V3Controller):
             if now > expires:
                 raise exception.Unauthorized(_('Request token is expired'))
 
-        # put the roles in a set for easy comparison
-        authed_roles = set()
-        for role in roles:
-            authed_roles.add(role['id'])
+        authed_roles = self._normalize_role_list(roles)
 
         # verify the authorizing user has the roles
         user_token = authorization.get_token_ref(request.context_dict)
