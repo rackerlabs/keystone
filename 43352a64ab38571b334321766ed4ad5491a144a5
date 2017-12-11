@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_abb4f080",
+        "filename": "keystone/oauth1/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-11T01:34:58Z",
+      "side": 1,
+      "message": "Yes, it\u0027s easy and simple to just add a check here. But I think schema check is stronger for input check.",
+      "parentUuid": "df87a7cf_7e5d4d13",
+      "range": {
+        "startLine": 404,
+        "startChar": 0,
+        "endLine": 405,
+        "endChar": 40
+      },
+      "revId": "43352a64ab38571b334321766ed4ad5491a144a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_7eb22d4b",
         "filename": "keystone/oauth1/schema.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2017-12-10T11:07:13Z",
       "side": 1,
       "message": "maybe \"name\" as well? I think the hard-coded \"id\" is not the reason of the definition of schema as this.",
+      "range": {
+        "startLine": 41,
+        "startChar": 12,
+        "endLine": 41,
+        "endChar": 44
+      },
+      "revId": "43352a64ab38571b334321766ed4ad5491a144a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_ab8b90c0",
+        "filename": "keystone/oauth1/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-11T01:34:58Z",
+      "side": 1,
+      "message": "yeah. Name could be added as well. But It\u0027s not related to this bug. Mind I upload a new patch to make it more clear to review?",
+      "parentUuid": "df87a7cf_7eb22d4b",
       "range": {
         "startLine": 41,
         "startChar": 12,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_0b6f1cfc",
+        "filename": "keystone/oauth1/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-11T01:34:58Z",
+      "side": 1,
+      "message": "It\u0027s actually duplicated with L44. If we want to add \"name\" as well. This could be removed.",
+      "parentUuid": "df87a7cf_1e876164",
+      "range": {
+        "startLine": 43,
+        "startChar": 8,
+        "endLine": 43,
+        "endChar": 29
+      },
+      "revId": "43352a64ab38571b334321766ed4ad5491a144a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_de7c9973",
         "filename": "keystone/oauth1/schema.py",
         "patchSetId": 2
@@ -82,6 +154,30 @@
       "writtenOn": "2017-12-10T11:07:13Z",
       "side": 1,
       "message": "I nearly forgot the format, but why you duplicated the \"additionalProperties\" here?",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 33
+      },
+      "revId": "43352a64ab38571b334321766ed4ad5491a144a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_eb12f861",
+        "filename": "keystone/oauth1/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-11T01:34:58Z",
+      "side": 1,
+      "message": "Oh, My mistake here. additionalProperties doesn\u0027t work for \"array\".",
+      "parentUuid": "df87a7cf_de7c9973",
       "range": {
         "startLine": 45,
         "startChar": 0,
