@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_e6222fb9",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-11T03:14:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df87a7cf_de9b4f15",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 41
+      },
+      "revId": "ca794155f1751d8a1c3acbca9ff87e874b0d58e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_de37cffe",
         "filename": "releasenotes/notes/deprecated-as-of-queens-8ad7f826e4f08f57.yaml",
         "patchSetId": 14
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_c6b4cb82",
+        "filename": "releasenotes/notes/deprecated-as-of-queens-8ad7f826e4f08f57.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-11T03:14:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df87a7cf_de37cffe",
+      "revId": "ca794155f1751d8a1c3acbca9ff87e874b0d58e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_7e43236d",
         "filename": "releasenotes/notes/removed-as-of-queens-94c04e88c08f89aa.yaml",
         "patchSetId": 14
@@ -53,6 +95,24 @@
       "writtenOn": "2017-12-08T16:48:07Z",
       "side": 1,
       "message": "Be more explicit about what action the admin needs to take, like:\n\nThe ``bootstrap`` command will only create the admin role and will no longer create a default member role. Please create any additional roles you need after running ``bootstrap`` by using the ``openstack role create`` command.",
+      "revId": "ca794155f1751d8a1c3acbca9ff87e874b0d58e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_c6792bc8",
+        "filename": "releasenotes/notes/removed-as-of-queens-94c04e88c08f89aa.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-11T03:14:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df87a7cf_7e43236d",
       "revId": "ca794155f1751d8a1c3acbca9ff87e874b0d58e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
