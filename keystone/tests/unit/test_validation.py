@@ -2370,6 +2370,9 @@ class OAuth1ValidationTestCase(unit.BaseTestCase):
         request_to_validate = [
             {
                 "id": "711aa6371a6343a9a43e8a310fbe4a6f"
+            },
+            {
+                "name": "test_role"
             }
         ]
 
@@ -2387,10 +2390,13 @@ class OAuth1ValidationTestCase(unit.BaseTestCase):
                           self.authorize_request_token_validator.validate,
                           request_to_validate)
 
-    def test_validate_authorize_request_token_with_non_id(self):
+    def test_validate_authorize_request_token_with_non_id_or_name(self):
         request_to_validate = [
             {
                 "id": "711aa6371a6343a9a43e8a310fbe4a6f"
+            },
+            {
+                "name": "test_role"
             },
             {
                 "fake_key": "fake_value"
