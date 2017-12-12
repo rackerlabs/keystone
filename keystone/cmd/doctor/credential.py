@@ -33,10 +33,10 @@ def symptom_unique_key_repositories():
     encrypt the entity has been deleted.
 
     Ensure `keystone.conf [credential] key_repository` and `keystone.conf
-    [fernet_tokens] key_repository` are not pointing to the same location.
+    [token] key_repository` are not pointing to the same location.
     """
     return (
-        CONF.credential.key_repository == CONF.fernet_tokens.key_repository
+        CONF.credential.key_repository == CONF.token.key_repository
     )
 
 
