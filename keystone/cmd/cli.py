@@ -656,16 +656,16 @@ class TokenSetup(BasePermissionsSetup):
 
     @classmethod
     def main(cls):
-        futils = fernet_utils.FernetUtils(
+        tutils = token_utils.FernetUtils(
             CONF.token.key_repository,
             CONF.token.max_active_keys,
             'token'
         )
 
         keystone_user_id, keystone_group_id = cls.get_user_group()
-        futils.create_key_directory(keystone_user_id, keystone_group_id)
-        if futils.validate_key_repository(requires_write=True):
-            futils.initialize_key_repository(
+        tutils.create_key_directory(keystone_user_id, keystone_group_id)
+        if tutils.validate_key_repository(requires_write=True):
+            tutils.initialize_key_repository(
                 keystone_user_id, keystone_group_id)
 
 
@@ -691,15 +691,15 @@ class TokenRotate(BasePermissionsSetup):
 
     @classmethod
     def main(cls):
-        futils = fernet_utils.FernetUtils(
+        tutils = token_utils.FernetUtils(
             CONF.token.key_repository,
             CONF.token.max_active_keys,
             'token'
         )
 
         keystone_user_id, keystone_group_id = cls.get_user_group()
-        if futils.validate_key_repository(requires_write=True):
-            futils.rotate_keys(keystone_user_id, keystone_group_id)
+        if tutils.validate_key_repository(requires_write=True):
+            tutils.rotate_keys(keystone_user_id, keystone_group_id)
 
 
 class CredentialSetup(BasePermissionsSetup):
