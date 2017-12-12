@@ -9,3 +9,6 @@ other:
   - >
     The interface ``get_token_version`` from the token provider has been
     removed due to the removal of V2 API.
+  - >
+    The config option ``rolling_upgrade_password_hash_compat`` is removed. It
+    is only used for rolling-upgrade from Ocata release to Pike release.
