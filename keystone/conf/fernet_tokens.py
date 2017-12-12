@@ -11,6 +11,7 @@
 # under the License.
 
 from oslo_config import cfg
+from oslo_log import versionutils
 
 from keystone.conf import utils
 
@@ -18,6 +19,12 @@ from keystone.conf import utils
 key_repository = cfg.StrOpt(
     'key_repository',
     default='/etc/keystone/fernet-keys/',
+    deprecated_since=versionutils.deprecated.QUEENS,
+    deprecated_reason=utils.fmt("""
+This setting was exclusively used for fernet tokens. With the addition of other
+non-persistent token providers, this setting has been moved under the `tokens`
+section of the configuration.
+"""),
     help=utils.fmt("""
 Directory containing Fernet token keys. This directory must exist before using
 `keystone-manage fernet_setup` for the first time, must be writable by the user
@@ -45,6 +52,12 @@ max_active_keys = cfg.IntOpt(
     'max_active_keys',
     default=3,
     min=1,
+    deprecated_since=versionutils.deprecated.QUEENS,
+    deprecated_reason=utils.fmt("""
+This setting was exclusively used for fernet tokens. With the addition of other
+non-persistent token providers, this setting has been moved under the `tokens`
+section of the configuration.
+"""),
     help=utils.fmt("""
 This controls how many keys are held in rotation by `keystone-manage
 fernet_rotate` before they are discarded. The default value of 3 means that
