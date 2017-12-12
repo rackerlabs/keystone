@@ -1,0 +1,8 @@
+---
+deprecations:
+  - |
+    The configuration settings ``key_repository`` and ``max_active_keys``
+    located in the [fernet_tokens] category have been deprecated in favor
+    of the settings of the same names located under the [token] category.
+    The settings underneath [fernet_tokens] may be silently ignored in
+    the future.
