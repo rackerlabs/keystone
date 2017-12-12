@@ -836,7 +836,7 @@ class CredentialDoctorTests(unit.TestCase):
         directory = self.useFixture(fixtures.TempDir()).path
         self.config_fixture.config(group='credential',
                                    key_repository=directory)
-        self.config_fixture.config(group='fernet_tokens',
+        self.config_fixture.config(group='token',
                                    key_repository=directory)
         self.assertTrue(credential.symptom_unique_key_repositories())
 
@@ -844,7 +844,7 @@ class CredentialDoctorTests(unit.TestCase):
         # No Symptom Detected: Key repository paths are unique
         self.config_fixture.config(group='credential',
                                    key_repository='/etc/keystone/cred-repo')
-        self.config_fixture.config(group='fernet_tokens',
+        self.config_fixture.config(group='token',
                                    key_repository='/etc/keystone/fernet-repo')
         self.assertFalse(credential.symptom_unique_key_repositories())
 
