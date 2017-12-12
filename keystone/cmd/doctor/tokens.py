@@ -12,6 +12,7 @@
 
 import keystone.conf
 
+from keystone.common import token_utils as utils
 
 CONF = keystone.conf.CONF
 
@@ -38,3 +39,38 @@ def symptom_unreasonable_max_token_size():
     return (
         'uuid' in CONF.token.provider and CONF.max_token_size != 32
         or 'fernet' in CONF.token.provider and CONF.max_token_size > 255)
+
+
+def symptom_keys_in_token_key_repository():
+    """Token key repository is empty.
+
+    After configuring keystone to use a token provider, you should use
+    `keystone-manage token_setup` to initially populate your key repository
+    with keys, and periodically rotate your keys with
+    `keystone-manage token_rotate`.
+    """
+    token_utils = utils.TokenUtils(
+        CONF.fernet_tokens.key_repository,
+        CONF.fernet_tokens.max_active_keys,
+        'fernet_tokens'
+    )
+    return (
+        'fernet' in CONF.token.provider
+        and not token_utils.load_keys())
+
+
+def symptom_usability_of_token_key_repository():
+    """Token key repository is not setup correctly.
+
+    The Token key repository is expected to be readable by the user running
+    keystone, but not world-readable, because it contains security-sensitive
+    secrets.
+    """
+    token_utils = utils.TokenUtils(
+        CONF.fernet_tokens.key_repository,
+        CONF.fernet_tokens.max_active_keys,
+        'fernet_tokens'
+    )
+    return (
+        'fernet' in CONF.token.provider
+        and not token_utils.validate_key_repository())
