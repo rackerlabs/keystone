@@ -43,8 +43,8 @@ class TestFernetTokenProvider(unit.TestCase):
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
-                'fernet_tokens',
-                CONF.fernet_tokens.max_active_keys
+                'token',
+                CONF.token.max_active_keys
             )
         )
         self.provider = fernet.Provider()
@@ -78,8 +78,8 @@ class TestValidate(unit.TestCase):
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
-                'fernet_tokens',
-                CONF.fernet_tokens.max_active_keys
+                'token',
+                CONF.token.max_active_keys
             )
         )
         self.useFixture(database.Database())
@@ -231,8 +231,8 @@ class TestTokenFormatter(unit.TestCase):
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
-                'fernet_tokens',
-                CONF.fernet_tokens.max_active_keys
+                'token',
+                CONF.token.max_active_keys
             )
         )
 
@@ -476,7 +476,7 @@ class TestFernetKeyRotation(unit.TestCase):
     def keys(self):
         """Key files converted to numbers."""
         return sorted(
-            int(x) for x in os.listdir(CONF.fernet_tokens.key_repository))
+            int(x) for x in os.listdir(CONF.token.key_repository))
 
     @property
     def key_repository_size(self):
@@ -497,9 +497,9 @@ class TestFernetKeyRotation(unit.TestCase):
         """
         # Load the keys into a list, keys is list of six.text_type.
         key_utils = token_utils.TokenUtils(
-            CONF.fernet_tokens.key_repository,
-            CONF.fernet_tokens.max_active_keys,
-            'fernet_tokens'
+            CONF.token.key_repository,
+            CONF.token.max_active_keys,
+            'token'
         )
         keys = key_utils.load_keys()
 
@@ -540,7 +540,7 @@ class TestFernetKeyRotation(unit.TestCase):
         # Simulate every rotation strategy up to "rotating once a week while
         # maintaining a year's worth of keys."
         for max_active_keys in range(min_active_keys, 52 + 1):
-            self.config_fixture.config(group='fernet_tokens',
+            self.config_fixture.config(group='token',
                                        max_active_keys=max_active_keys)
 
             # Ensure that resetting the key repository always results in 2
@@ -548,8 +548,8 @@ class TestFernetKeyRotation(unit.TestCase):
             self.useFixture(
                 ksfixtures.KeyRepository(
                     self.config_fixture,
-                    'fernet_tokens',
-                    CONF.fernet_tokens.max_active_keys
+                    'token',
+                    CONF.token.max_active_keys
                 )
             )
 
@@ -565,9 +565,9 @@ class TestFernetKeyRotation(unit.TestCase):
             # Rotate the keys just enough times to fully populate the key
             # repository.
             key_utils = token_utils.TokenUtils(
-                CONF.fernet_tokens.key_repository,
-                CONF.fernet_tokens.max_active_keys,
-                'fernet_tokens'
+                CONF.token.key_repository,
+                CONF.token.max_active_keys,
+                'token'
             )
             for rotation in range(max_active_keys - min_active_keys):
                 key_utils.rotate_keys()
@@ -583,9 +583,9 @@ class TestFernetKeyRotation(unit.TestCase):
             # Rotate an additional number of times to ensure that we maintain
             # the desired number of active keys.
             key_utils = token_utils.TokenUtils(
-                CONF.fernet_tokens.key_repository,
-                CONF.fernet_tokens.max_active_keys,
-                'fernet_tokens'
+                CONF.token.key_repository,
+                CONF.token.max_active_keys,
+                'token'
             )
             for rotation in range(10):
                 key_utils.rotate_keys()
@@ -601,8 +601,8 @@ class TestFernetKeyRotation(unit.TestCase):
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
-                'fernet_tokens',
-                CONF.fernet_tokens.max_active_keys
+                'token',
+                CONF.token.max_active_keys
             )
         )
 
@@ -610,9 +610,9 @@ class TestFernetKeyRotation(unit.TestCase):
         self.assertRepositoryState(expected_size=2)
 
         key_utils = token_utils.TokenUtils(
-            CONF.fernet_tokens.key_repository,
-            CONF.fernet_tokens.max_active_keys,
-            'fernet_tokens'
+            CONF.token.key_repository,
+            CONF.token.max_active_keys,
+            'token'
         )
 
         # Simulate the disk full situation
@@ -644,22 +644,22 @@ class TestFernetKeyRotation(unit.TestCase):
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
-                'fernet_tokens',
-                CONF.fernet_tokens.max_active_keys
+                'token',
+                CONF.token.max_active_keys
             )
         )
-        evil_file = os.path.join(CONF.fernet_tokens.key_repository, '99.bak')
+        evil_file = os.path.join(CONF.token.key_repository, '99.bak')
         with open(evil_file, 'w'):
             pass
         key_utils = token_utils.TokenUtils(
-            CONF.fernet_tokens.key_repository,
-            CONF.fernet_tokens.max_active_keys,
-            'fernet_tokens'
+            CONF.token.key_repository,
+            CONF.token.max_active_keys,
+            'token'
         )
         key_utils.rotate_keys()
         self.assertTrue(os.path.isfile(evil_file))
         keys = 0
-        for x in os.listdir(CONF.fernet_tokens.key_repository):
+        for x in os.listdir(CONF.token.key_repository):
             if x == '99.bak':
                 continue
             keys += 1
@@ -676,17 +676,17 @@ class TestLoadKeys(unit.TestCase):
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
-                'fernet_tokens',
-                CONF.fernet_tokens.max_active_keys
+                'token',
+                CONF.token.max_active_keys
             )
         )
-        evil_file = os.path.join(CONF.fernet_tokens.key_repository, '~1')
+        evil_file = os.path.join(CONF.token.key_repository, '~1')
         with open(evil_file, 'w'):
             pass
         key_utils = token_utils.TokenUtils(
-            CONF.fernet_tokens.key_repository,
-            CONF.fernet_tokens.max_active_keys,
-            'fernet_tokens'
+            CONF.token.key_repository,
+            CONF.token.max_active_keys,
+            'token'
         )
         keys = key_utils.load_keys()
         self.assertEqual(2, len(keys))
