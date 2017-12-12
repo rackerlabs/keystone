@@ -16,6 +16,24 @@
       "revId": "8d14f0ce582c84baf47cb53cda24400170d73c3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_2786b5ba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-12T02:36:17Z",
+      "side": 1,
+      "message": "++. The code is always changed. And you didn\u0027t talk about the reason for the change.",
+      "parentUuid": "df87a7cf_90cc598a",
+      "revId": "8d14f0ce582c84baf47cb53cda24400170d73c3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
