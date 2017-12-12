@@ -675,11 +675,10 @@ class TokenSetup(BasePermissionsSetup):
 
     @classmethod
     def main(cls):
-        tutils = token_utils.TokenUtils(
-            # TODO(gagehugo) Change this to CONF.token
-            CONF.fernet_tokens.key_repository,
-            CONF.fernet_tokens.max_active_keys,
-            'fernet_tokens'
+        tutils = token_utils.FernetUtils(
+            CONF.token.key_repository,
+            CONF.token.max_active_keys,
+            'token'
         )
 
         keystone_user_id, keystone_group_id = cls.get_user_group()
@@ -711,11 +710,10 @@ class TokenRotate(BasePermissionsSetup):
 
     @classmethod
     def main(cls):
-        tutils = token_utils.TokenUtils(
-            # TODO(gagehugo) Change this to CONF.token
-            CONF.fernet_tokens.key_repository,
-            CONF.fernet_tokens.max_active_keys,
-            'fernet_tokens'
+        tutils = token_utils.FernetUtils(
+            CONF.token.key_repository,
+            CONF.token.max_active_keys,
+            'token'
         )
 
         keystone_user_id, keystone_group_id = cls.get_user_group()
