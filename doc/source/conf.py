@@ -53,7 +53,7 @@ extensions = ['sphinx.ext.autodoc',
               'oslo_policy.sphinxpolicygen',
               'openstackdocstheme',
               'oslo_policy.sphinxext',
-              'ext.support_matrix',
+              'sphinx_feature_classification.support_matrix',
               ]
 
 config_generator_config_file = '../../config-generator/keystone.conf'
