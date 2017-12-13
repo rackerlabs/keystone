@@ -22,6 +22,30 @@
       "revId": "cfbc2aa30b7406b4bc77e40a55561d1f46174b5c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_6f49d089",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 857,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-13T08:53:59Z",
+      "side": 0,
+      "message": "yeah, I check all the resources who contain extra in db. It includes: consumer, credential, endpoint, group, policy, project, region ,role, service, token ,trust and user.\n\nNo one return \"extras\" key, except **project**\n\nWhen update a project with some extra data, the response will contain \"extra\" key. For example:\nPATCH /v3/project/{project_id}\n{\n    \"project\":{\n        \"test_key\": \"test_value\"\n    }\n}\n\nthe response is like:\n{\n    \"project\":{\n        \"id\": {project_id},\n        ...\n        \"name\": \"admin\",\n        \"test_key\": \"test_value\"\n        \"extra\" :{\n            \"test_key\": \"test_value\"\n        }\n    }\n}\n\nI think it\u0027s a bug for project update API. The \"extra\" in response body is redundant. But We can\u0027t fix it until we support micro version in Keystone since it will change API behavior.",
+      "parentUuid": "df87a7cf_b6909eef",
+      "range": {
+        "startLine": 852,
+        "startChar": 0,
+        "endLine": 857,
+        "endChar": 14
+      },
+      "revId": "cfbc2aa30b7406b4bc77e40a55561d1f46174b5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
