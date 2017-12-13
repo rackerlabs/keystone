@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_b6909eef",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 857,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-13T02:15:42Z",
+      "side": 0,
+      "message": "This was only used in token responses?",
+      "range": {
+        "startLine": 852,
+        "startChar": 0,
+        "endLine": 857,
+        "endChar": 14
+      },
+      "revId": "cfbc2aa30b7406b4bc77e40a55561d1f46174b5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
