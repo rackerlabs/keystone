@@ -54,6 +54,7 @@ extensions = ['sphinx.ext.coverage',
               'oslo_policy.sphinxext',
               'ext.support_matrix',
               'sphinxcontrib.apidoc',
+              'sphinx_feature_classification.support_matrix',
               ]
 
 # sphinxcontrib.apidoc options
