@@ -1,0 +1,11 @@
+---
+other:
+  - >
+    [`blueprint removed-as-of-queens <https://blueprints.launchpad.net/keystone/+spec/removed-as-of-queens>`_]
+    As "admin_token_auth" is removed from ``keystone-paste.ini`` already. "admin_token_auth" related contents including
+    documentation, unit test, config and class are useless and shoud be removed also.
+    specifically, in ``identity-keystone-usage-and-features.rst`` and ``external-auth.rst``,"admin_token_auth"
+    is removed from section [pipeline:public_api].
+    in ``core.py``, class ``AdminTokenAuthMiddleware`` was removed.
+    in ``test_entry_points.py``,``test_v3.py``,``test_v3_identity.py``, remove "admin_token_auth" related test case.
+    in ``setup.cfg``, we remove "admin_token_auth" related config.
