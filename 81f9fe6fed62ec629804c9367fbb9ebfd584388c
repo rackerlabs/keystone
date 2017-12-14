@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_b7262916",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T16:15:02Z",
+      "side": 1,
+      "message": "This is going to change in the future not be an attribute of the manager, right?",
+      "range": {
+        "startLine": 476,
+        "startChar": 8,
+        "endLine": 476,
+        "endChar": 37
+      },
+      "revId": "81f9fe6fed62ec629804c9367fbb9ebfd584388c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_6a62f4da",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T16:15:02Z",
+      "side": 1,
+      "message": "This seems odd to have in the driver layer... but that\u0027s another issue.",
+      "range": {
+        "startLine": 394,
+        "startChar": 19,
+        "endLine": 394,
+        "endChar": 76
+      },
+      "revId": "81f9fe6fed62ec629804c9367fbb9ebfd584388c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_2a270cb9",
+        "filename": "keystone/common/provider_api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T16:15:02Z",
+      "side": 1,
+      "message": "This will eventually go away when we move from:\n\n  user_ref \u003d self.identity_api.get_user(user_id)\n\nto \n\n  from keystone.common import provider_api\n  ...\n  user_ref \u003d provider_api.ProviderAPIs.identity_api.get_user(user_id)\n\nRight?",
+      "range": {
+        "startLine": 26,
+        "startChar": 8,
+        "endLine": 32,
+        "endChar": 64
+      },
+      "revId": "81f9fe6fed62ec629804c9367fbb9ebfd584388c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
