@@ -1,0 +1,250 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_28fe3405",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1087,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T17:40:02Z",
+      "side": 1,
+      "message": "Update this comment to reflect logic for system-scoped tokens.",
+      "range": {
+        "startLine": 1082,
+        "startChar": 12,
+        "endLine": 1087,
+        "endChar": 69
+      },
+      "revId": "b5178760f71c001c67b42c3dcd24b30f29239c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_6d068e23",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1094,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T17:40:02Z",
+      "side": 1,
+      "message": "When a role is deleted, this is the bit that makes sure the entire token cache region is dropped.\n\nFor project-scoped tokens we\u0027re more methodical about removing tokens from the cache. For domains, we just drop the entire cache for the user in question. This bit makes it so that when roles are removed, all a users tokens are invalidated from the cache.",
+      "range": {
+        "startLine": 1092,
+        "startChar": 16,
+        "endLine": 1094,
+        "endChar": 46
+      },
+      "revId": "b5178760f71c001c67b42c3dcd24b30f29239c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_282714b9",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T17:40:02Z",
+      "side": 1,
+      "message": "The get_scope() method here is called twice, back-to-back. There is a lot we can do to optimize and simplify this code. The tough part is not doing it here to prevent scope creep.",
+      "range": {
+        "startLine": 121,
+        "startChar": 12,
+        "endLine": 124,
+        "endChar": 13
+      },
+      "revId": "b5178760f71c001c67b42c3dcd24b30f29239c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_284cf474",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T17:40:02Z",
+      "side": 1,
+      "message": "Right now - this comes back as a string from the AuthInfo object. Do we want to keep it as a string, or make it a boolean value?\n\nAll logic in the token provider API and underlying providers evaluate `system_scoped` as a boolean, even though it is a string.\n\nThoughts?",
+      "range": {
+        "startLine": 146,
+        "startChar": 30,
+        "endLine": 146,
+        "endChar": 43
+      },
+      "revId": "b5178760f71c001c67b42c3dcd24b30f29239c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_e86e0cc8",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T17:40:02Z",
+      "side": 1,
+      "message": "This isn\u0027t pythonic, we should refactor it.",
+      "revId": "b5178760f71c001c67b42c3dcd24b30f29239c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_289ab4c4",
+        "filename": "keystone/tests/common/auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T17:40:02Z",
+      "side": 1,
+      "message": "Changes in this file could probably be pulled out into their own change since it\u0027s testing plumbing that can land before it\u0027s used.",
+      "revId": "b5178760f71c001c67b42c3dcd24b30f29239c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_e8a36cff",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T17:40:02Z",
+      "side": 1,
+      "message": "Same comment here as in the previous module.",
+      "revId": "b5178760f71c001c67b42c3dcd24b30f29239c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_a8548455",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 721,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T17:40:02Z",
+      "side": 1,
+      "message": "This assertion should return the token from the response to be consistent with the other token assertion methods here.",
+      "revId": "b5178760f71c001c67b42c3dcd24b30f29239c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_28839458",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 719,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T17:40:02Z",
+      "side": 1,
+      "message": "Let\u0027s use POST /groups here instead of mixing backend calls with APIs.",
+      "range": {
+        "startLine": 716,
+        "startChar": 8,
+        "endLine": 719,
+        "endChar": 53
+      },
+      "revId": "b5178760f71c001c67b42c3dcd24b30f29239c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_a896c493",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 788,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T17:40:02Z",
+      "side": 1,
+      "message": "s/global/system/",
+      "range": {
+        "startLine": 788,
+        "startChar": 28,
+        "endLine": 788,
+        "endChar": 34
+      },
+      "revId": "b5178760f71c001c67b42c3dcd24b30f29239c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_48f4d85b",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 789,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T17:40:02Z",
+      "side": 1,
+      "message": "This should actually be something more along the lines of:\n\n    def test_rescoping_a_system_token_for_a_project_token_fails(self):         \n        ref \u003d {\u0027role\u0027: unit.new_role_ref()}                                    \n        system_role \u003d self.post(\u0027/roles\u0027, body\u003dref).json_body[\u0027role\u0027]          \n                                                                               \n        path \u003d \u0027/system/users/%(user_id)s/roles/%(role_id)s\u0027 % {               \n            \u0027user_id\u0027: self.user[\u0027id\u0027],                                        \n            \u0027role_id\u0027: system_role[\u0027id\u0027]                                       \n        }                                                                      \n        self.put(path\u003dpath)                                                    \n                                                                               \n        auth_request_body \u003d self.build_authentication_request(                 \n            username\u003dself.user[\u0027name\u0027],                                                                                                                                                                                                      \n            password\u003dself.user[\u0027password\u0027],                                    \n            user_domain_id\u003dself.domain[\u0027id\u0027],                                  \n            system\u003dTrue                                                        \n        )                                                                      \n        response \u003d self.v3_create_token(auth_request_body)                     \n        system_token \u003d self.assertValidSystemScopedTokenResponse(response)     \n                                                                               \n        auth_request_body \u003d self.build_authentication_request(                 \n            token\u003dsystem_token, project_id\u003dself.project_id                     \n        )                                                                      \n        response \u003d self.v3_create_token(auth_request_body)",
+      "revId": "b5178760f71c001c67b42c3dcd24b30f29239c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_6890bc96",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 791,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T17:40:02Z",
+      "side": 1,
+      "message": "s/global/system/",
+      "range": {
+        "startLine": 791,
+        "startChar": 28,
+        "endLine": 791,
+        "endChar": 34
+      },
+      "revId": "b5178760f71c001c67b42c3dcd24b30f29239c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
