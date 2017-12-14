@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_1e27eab8",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1087,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T19:18:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df87a7cf_28fe3405",
+      "range": {
+        "startLine": 1082,
+        "startChar": 12,
+        "endLine": 1087,
+        "endChar": 69
+      },
+      "revId": "b5178760f71c001c67b42c3dcd24b30f29239c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_6d068e23",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 5
@@ -36,6 +60,30 @@
       "writtenOn": "2017-12-14T17:40:02Z",
       "side": 1,
       "message": "When a role is deleted, this is the bit that makes sure the entire token cache region is dropped.\n\nFor project-scoped tokens we\u0027re more methodical about removing tokens from the cache. For domains, we just drop the entire cache for the user in question. This bit makes it so that when roles are removed, all a users tokens are invalidated from the cache.",
+      "range": {
+        "startLine": 1092,
+        "startChar": 16,
+        "endLine": 1094,
+        "endChar": 46
+      },
+      "revId": "b5178760f71c001c67b42c3dcd24b30f29239c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_3e2c2e98",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1094,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T19:18:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df87a7cf_6d068e23",
       "range": {
         "startLine": 1092,
         "startChar": 16,
@@ -239,6 +287,30 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_b9c7f845",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 719,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T19:18:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df87a7cf_28839458",
+      "range": {
+        "startLine": 716,
+        "startChar": 8,
+        "endLine": 719,
+        "endChar": 53
+      },
+      "revId": "b5178760f71c001c67b42c3dcd24b30f29239c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_a896c493",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 5
@@ -262,6 +334,30 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_79c1702e",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 788,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T19:18:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df87a7cf_a896c493",
+      "range": {
+        "startLine": 788,
+        "startChar": 28,
+        "endLine": 788,
+        "endChar": 34
+      },
+      "revId": "b5178760f71c001c67b42c3dcd24b30f29239c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_48f4d85b",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 5
@@ -273,6 +369,24 @@
       "writtenOn": "2017-12-14T17:40:02Z",
       "side": 1,
       "message": "This should actually be something more along the lines of:\n\n    def test_rescoping_a_system_token_for_a_project_token_fails(self):         \n        ref \u003d {\u0027role\u0027: unit.new_role_ref()}                                    \n        system_role \u003d self.post(\u0027/roles\u0027, body\u003dref).json_body[\u0027role\u0027]          \n                                                                               \n        path \u003d \u0027/system/users/%(user_id)s/roles/%(role_id)s\u0027 % {               \n            \u0027user_id\u0027: self.user[\u0027id\u0027],                                        \n            \u0027role_id\u0027: system_role[\u0027id\u0027]                                       \n        }                                                                      \n        self.put(path\u003dpath)                                                    \n                                                                               \n        auth_request_body \u003d self.build_authentication_request(                 \n            username\u003dself.user[\u0027name\u0027],                                                                                                                                                                                                      \n            password\u003dself.user[\u0027password\u0027],                                    \n            user_domain_id\u003dself.domain[\u0027id\u0027],                                  \n            system\u003dTrue                                                        \n        )                                                                      \n        response \u003d self.v3_create_token(auth_request_body)                     \n        system_token \u003d self.assertValidSystemScopedTokenResponse(response)     \n                                                                               \n        auth_request_body \u003d self.build_authentication_request(                 \n            token\u003dsystem_token, project_id\u003dself.project_id                     \n        )                                                                      \n        response \u003d self.v3_create_token(auth_request_body)",
+      "revId": "b5178760f71c001c67b42c3dcd24b30f29239c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_3ed74e26",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 789,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T19:18:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df87a7cf_48f4d85b",
       "revId": "b5178760f71c001c67b42c3dcd24b30f29239c72",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
