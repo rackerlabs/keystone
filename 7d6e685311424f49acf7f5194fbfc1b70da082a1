@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_b77ce920",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T15:54:13Z",
+      "side": 1,
+      "message": "Aha - yeah..",
+      "parentUuid": "df87a7cf_3b37ee4f",
+      "range": {
+        "startLine": 220,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 68
+      },
+      "revId": "7d6e685311424f49acf7f5194fbfc1b70da082a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_feb6c6d9",
         "filename": "keystone/tests/unit/common/test_injection.py",
         "patchSetId": 4
@@ -143,6 +167,24 @@
       "side": 1,
       "message": "The registration with metaclasses is very hard to get right. IT also totally conflicts with other metaclasses (if we use them, like TraceMeta).\n\nThis is all exposed via _provides_api.\n\nThe next step after this is to stop relying on self.XXX_api and just reference ProviderAPIs.XXX_api, since that is the centralized form.",
       "parentUuid": "df87a7cf_9eeb9eda",
+      "revId": "7d6e685311424f49acf7f5194fbfc1b70da082a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_97c1a531",
+        "filename": "keystone/tests/unit/common/test_injection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T15:54:13Z",
+      "side": 1,
+      "message": "So - this really just gets rid of managers having to specify which other managers they depend on in order to do their business logic.\n\nI suppose this doesn\u0027t prevent us from doing registration with meta classes in the future, but it\u0027s better than what we have today.",
+      "parentUuid": "df87a7cf_fbc98658",
       "revId": "7d6e685311424f49acf7f5194fbfc1b70da082a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

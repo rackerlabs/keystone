@@ -46,6 +46,30 @@
       "revId": "51d5b63a083450468cec474b9b6400df5d977091",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_570a3d8a",
+        "filename": "keystone/token/persistence/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T15:54:13Z",
+      "side": 0,
+      "message": "Cool - this could technically be pulled out into its own patch then? Either way, thanks for catching this.",
+      "parentUuid": "df87a7cf_fbf7468a",
+      "range": {
+        "startLine": 169,
+        "startChar": 0,
+        "endLine": 198,
+        "endChar": 16
+      },
+      "revId": "51d5b63a083450468cec474b9b6400df5d977091",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
