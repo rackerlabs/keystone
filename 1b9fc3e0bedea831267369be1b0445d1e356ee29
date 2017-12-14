@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_e834c3e0",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T22:48:47Z",
+      "side": 1,
+      "message": "We could also introduce a new configuration option that allows deployers to toggle this when they are ready... Thoughts?",
+      "revId": "1b9fc3e0bedea831267369be1b0445d1e356ee29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
