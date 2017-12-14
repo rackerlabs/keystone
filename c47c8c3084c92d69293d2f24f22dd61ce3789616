@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_ab9d6c0b",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-14T09:35:18Z",
+      "side": 1,
+      "message": "nit: stestr run \u0027{posargs}\u0027 is better.\n\n-1:  the slowest is missing. We may add a new line:\nstestr slowest",
+      "revId": "c47c8c3084c92d69293d2f24f22dd61ce3789616",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
