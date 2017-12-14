@@ -128,6 +128,24 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_c3f52b85",
+        "filename": "keystone/tests/common/auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T18:11:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df87a7cf_289ab4c4",
+      "revId": "b5178760f71c001c67b42c3dcd24b30f29239c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_e8a36cff",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 5
@@ -145,6 +163,24 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_4366fb53",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T18:11:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df87a7cf_e8a36cff",
+      "revId": "b5178760f71c001c67b42c3dcd24b30f29239c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_a8548455",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 5
@@ -156,6 +192,24 @@
       "writtenOn": "2017-12-14T17:40:02Z",
       "side": 1,
       "message": "This assertion should return the token from the response to be consistent with the other token assertion methods here.",
+      "revId": "b5178760f71c001c67b42c3dcd24b30f29239c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_e3cf0f27",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 721,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-14T18:11:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df87a7cf_a8548455",
       "revId": "b5178760f71c001c67b42c3dcd24b30f29239c72",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
