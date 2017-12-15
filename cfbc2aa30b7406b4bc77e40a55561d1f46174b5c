@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_e565c91e",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-12-15T04:43:21Z",
+      "side": 0,
+      "message": "Any reason to remove those comments? I\u0027d like to keep this.",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 72
+      },
+      "revId": "cfbc2aa30b7406b4bc77e40a55561d1f46174b5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
