@@ -178,7 +178,7 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
                 for limit in limits:
                     if limit.get('region_id') is None:
                         self._check_unified_limit_without_region(
-                            limits, is_registered_limit=False)
+                            limit, is_registered_limit=False)
                     ref = LimitModel.from_dict(limit)
                     session.add(ref)
                     return_ref.append(ref.to_dict())
