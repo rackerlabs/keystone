@@ -1,0 +1,9 @@
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+2: ayoung <ayoung@redhat.com>
+Workflow+1: ayoung <ayoung@redhat.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 15 Dec 2017 02:33:16 +0000
+Reviewed-on: https://review.openstack.org/499703
+Project: openstack/keystone
+Branch: refs/heads/master
