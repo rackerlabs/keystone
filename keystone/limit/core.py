@@ -66,5 +66,5 @@ class LimitManager(manager.Manager):
     def get_limit(self, limit_id):
         return self.driver.get_limit(limit_id)
 
-    def delete_limits(self, limit_id):
+    def delete_limit(self, limit_id):
         return self.driver.delete_limit(limit_id)
