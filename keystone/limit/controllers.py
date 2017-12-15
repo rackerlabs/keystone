@@ -1,0 +1,119 @@
+# Copyright 2017 SUSE Linux Gmbh
+# Copyright 2017 Huawei
+# Licensed under the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+
+from oslo_serialization import jsonutils
+
+from keystone.common import controller
+from keystone.common import dependency
+from keystone.common import validation
+from keystone.limit import schema
+from keystone import exception
+from keystone.i18n import _
+
+
+@dependency.requires('registered_limit_api')
+class RegisteredLimitV3(controller.V3Controller):
+    collection_name = 'registered_limits'
+
+    def __init__(self):
+        super(RegisteredLimitV3, self).__init__()
+        self.get_member_from_driver = \
+            self.registered_limit_api.get_registered_limit
+
+    @controller.protected()
+    def create_registered_limits(self, request, registered_limits):
+        assert(isinstance(registered_limits, list))
+        for registered_limit in registered_limits:
+            validation.lazy_validate(schema.registered_limit_create,
+                                     registered_limit)
+        refs = self.registered_limit_api.create_registered_limits(
+            [self._normalize_dict(registered_limit) for registered_limit in
+             registered_limits])
+        return RegisteredLimitV3.wrap_member(request.context_dict, refs)
+
+    @controller.protected()
+    def update_registered_limits(self, request, registered_limits):
+        assert(isinstance(registered_limits, list))
+        for registered_limit in registered_limits:
+            validation.lazy_validate(schema.registered_limit_update,
+                                     registered_limit)
+        refs = self.registered_limit_api.update_registered_limits(
+            [self._normalize_dict(registered_limit) for registered_limit in
+             registered_limits])
+        return RegisteredLimitV3.wrap_member(request.context_dict, refs)
+
+    @controller.filterprotected('service_id', 'region_id', 'resource_name')
+    def list_registered_limits(self, request, filters):
+        hints = RegisteredLimitV3.build_driver_hints(request, filters)
+        refs = self.registered_limit_api.list_registered_limits(hints)
+        return RegisteredLimitV3.wrap_collection(request.context_dict, refs,
+                                                 hints=hints)
+
+    @controller.protected()
+    def get_registered_limit(self, request, registered_limit_id):
+        ref = self.registered_limit_api.get_registered_limit(
+            request, registered_limit_id)
+        return RegisteredLimitV3.wrap_member(request.context_dict, ref)
+
+    @controller.protected()
+    def delete_registered_limit(self, request, service_id, region,
+                                resource_type):
+        return self.registered_limit_api.delete_registered_limit(
+            service_id, region, resource_type)
+
+
+@dependency.requires('limit_api')
+class LimitV3(controller.V3Controller):
+    collection_name = 'limits'
+
+    def __init__(self):
+        super(LimitV3, self).__init__()
+        self.get_member_from_driver = self.limit_api.get_limit
+
+    @controller.protected()
+    def create_limits(self, request, project_id, limits):
+        assert(isinstance(limits, list))
+        for limit in limits:
+            validation.lazy_validate(schema.limit_create_or_update, limit)
+        refs = self.limit_api.create_limits(
+            project_id, [self._normalize_dict(limit) for limit in limits])
+        return LimitV3.wrap_member(request.context_dict, refs)
+
+    @controller.protected()
+    def update_limits(self, request, project_id, limits):
+        assert(isinstance(limits, list))
+        for limit in limits:
+            validation.lazy_validate(schema.limit_create_or_update, limit)
+        refs = self.limit_api.update_limits(
+            project_id, [self._normalize_dict(limit) for limit in limits])
+        return LimitV3.wrap_member(request.context_dict, refs)
+
+    @controller.filterprotected('service_id', 'region', 'resource_name')
+    def list_limits(self, request, filters, project_id):
+        hints = LimitV3.build_driver_hints(request, filters)
+        refs = self.limit_api.list_limits(project_id, hints)
+        return LimitV3.wrap_collection(request.context_dict, refs, hints=hints)
+
+    @controller.protected()
+    def show_a_limit(self, request, project_id, service_id, region,
+                     resource_type):
+        ref = self.limit_api.show_a_limit(request, project_id, service_id,
+                                          region, resource_type)
+        return RegisteredLimitV3.wrap_member(request.context_dict, ref)
+
+    @controller.protected()
+    def delete_a_limit(self, request, project_id, service_id, region,
+                       resource_type):
+        return self.limit_api.delete_limits(request, project_id, service_id,
+                                            region, resource_type)
