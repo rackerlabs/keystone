@@ -213,6 +213,16 @@ identity:delete_domain_config                              - DELETE /v3/domains/
 identity:get_domain_config_default                         - GET /v3/domains/config/default
                                                            - GET /v3/domains/config/{group}/default
                                                            - GET /v3/domains/config/{group}/{option}/default
+identity:create_registered_limits                          - POST /v3/registered_limits
+identity:update_registered_limits                          - PUT /v3/registered_limits
+identity:list_registered_limits                            - GET /v3/registered_limits
+identity:get_registered_limit                              - GET /v3/registered_limits/{registered_limit_id}
+identity:delete_registered_limit                           - DELETE /v3/registered_limits/{registered_limit_id}
+identity:create_limits                                     - POST /v3/limits
+identity:update_limits                                     - PUT /v3/limits
+identity:list_limits                                       - GET /v3/limits
+identity:get_limit                                         - GET /v3/limits/{limit_id}
+identity:delete_limit                                      - DELETE /v3/limits/{limit_id}
 =========================================================  ===
 
 .. _grant_resources:
