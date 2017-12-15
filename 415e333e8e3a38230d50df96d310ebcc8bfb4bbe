@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_7813a067",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-15T06:29:19Z",
+      "side": 1,
+      "message": "better to add \"bp: removed-as-of-queens\"",
+      "revId": "415e333e8e3a38230d50df96d310ebcc8bfb4bbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
