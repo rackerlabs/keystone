@@ -228,5 +228,16 @@
     "identity:get_security_compliance_domain_config": "",
     "identity:update_domain_config": "rule:cloud_admin",
     "identity:delete_domain_config": "rule:cloud_admin",
-    "identity:get_domain_config_default": "rule:cloud_admin"
+    "identity:get_domain_config_default": "rule:cloud_admin",
+
+    "identity:create_registered_limits":"rule:cloud_admin",
+    "identity:update_registered_limits":"rule:cloud_admin",
+    "identity:list_registered_limits":"rule:cloud_admin",
+    "identity:get_registered_limit":"rule:cloud_admin",
+    "identity:delete_registered_limit":"rule:cloud_admin",
+    "identity:create_limits":"rule:cloud_admin",
+    "identity:update_limits":"rule:cloud_admin",
+    "identity:list_limits":"rule:cloud_admin",
+    "identity:get_limit":"rule:cloud_admin",
+    "identity:delete_limit":"rule:cloud_admin"
 }
