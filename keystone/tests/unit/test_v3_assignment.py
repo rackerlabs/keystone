@@ -961,7 +961,7 @@ class RoleAssignmentBaseTestCase(test_v3.RestfulTestCase,
     MAX_HIERARCHY_BREADTH = 3
     MAX_HIERARCHY_DEPTH = CONF.max_project_tree_depth - 1
 
-    def load_sample_data(self):
+    def load_sample_data(self, enable_sqlite_foreign_key=False):
         """Create sample data to be used on tests.
 
         Created data are i) a role and ii) a domain containing: a project
@@ -2992,7 +2992,7 @@ class DomainSpecificRoleTests(test_v3.RestfulTestCase, unit.TestCase):
 class ListUserProjectsTestCase(test_v3.RestfulTestCase):
     """Test for /users/<user>/projects."""
 
-    def load_sample_data(self):
+    def load_sample_data(self, enable_sqlite_foreign_key=False):
         # do not load base class's data, keep it focused on the tests
 
         self.auths = []

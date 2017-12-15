@@ -174,9 +174,11 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
         return config_files
 
-    def setUp(self, app_conf='keystone'):
+    def setUp(self, app_conf='keystone', enable_sqlite_foreign_key=False):
         """Setup for v3 Restful Test Cases."""
-        super(RestfulTestCase, self).setUp(app_conf=app_conf)
+        super(RestfulTestCase, self).setUp(
+            app_conf=app_conf,
+            enable_sqlite_foreign_key=enable_sqlite_foreign_key)
 
         self.empty_context = {'environment': {}}
 
@@ -186,8 +188,9 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
 
         super(RestfulTestCase, self).load_backends()
 
-    def load_fixtures(self, fixtures):
-        self.load_sample_data()
+    def load_fixtures(self, fixtures, enable_sqlite_foreign_key=False):
+        self.load_sample_data(
+            enable_sqlite_foreign_key=enable_sqlite_foreign_key)
 
     def _populate_default_domain(self, enable_sqlite_foreign_key=False):
         try:
