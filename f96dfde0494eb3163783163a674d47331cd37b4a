@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_fbd0f3cb",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-12-16T03:05:05Z",
+      "side": 1,
+      "message": "Previous logic was:\n\nif not ref.get(\u0027domain_id\u0027):\n            ref[\u0027domain_id\u0027] \u003d self._get_domain_id_from_token(request)\n\nhttp://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/controller.py#n551\n\nI think the logic here looks right.  This is a case where the token data would have won out, which is right, but we ignored suspect data.  The error is the more correct response.",
+      "parentUuid": "df87a7cf_fe43ca6a",
+      "range": {
+        "startLine": 188,
+        "startChar": 67,
+        "endLine": 190,
+        "endChar": 57
+      },
+      "revId": "f96dfde0494eb3163783163a674d47331cd37b4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_9e295e9c",
         "filename": "keystone/tests/unit/test_v3_resource.py",
         "patchSetId": 8
@@ -36,6 +60,30 @@
       "writtenOn": "2017-12-07T20:29:57Z",
       "side": 1,
       "message": "What happens if I use a domain-scoped token?",
+      "range": {
+        "startLine": 678,
+        "startChar": 8,
+        "endLine": 680,
+        "endChar": 39
+      },
+      "revId": "f96dfde0494eb3163783163a674d47331cd37b4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_9b4a07aa",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 680,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-12-16T03:05:05Z",
+      "side": 1,
+      "message": "I think that is explicitly outside the \"scope\" of this test.  Wow we use that word a lot.",
+      "parentUuid": "df87a7cf_9e295e9c",
       "range": {
         "startLine": 678,
         "startChar": 8,
