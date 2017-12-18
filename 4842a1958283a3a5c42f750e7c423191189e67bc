@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_17046c17",
+        "filename": "releasenotes/notes/removed-as-of-queens-5d2b655756603beb.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-18T08:50:57Z",
+      "side": 1,
+      "message": "Release note is mainly for end users. So you don\u0027t need to write the detail. You should just write something like: the ``admin_token_auth`` middleware is removed now. The related doc is removed as well. (Users are not interested in what the doc file name is)",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 66
+      },
+      "revId": "4842a1958283a3a5c42f750e7c423191189e67bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
