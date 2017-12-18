@@ -110,6 +110,29 @@
       "revId": "29f89cb64285ee8b1396da07404bec4c1509a784",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_257db6b1",
+        "filename": "api-ref/source/v3/credentials.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 27372
+      },
+      "writtenOn": "2017-12-18T10:06:46Z",
+      "side": 1,
+      "message": "why not show codes in ordered list? just like ``projects.inc``\n..rest_status_code success status.yaml\n - 400\n - 401\n - 403\n - 404",
+      "range": {
+        "startLine": 73,
+        "startChar": 22,
+        "endLine": 73,
+        "endChar": 57
+      },
+      "revId": "29f89cb64285ee8b1396da07404bec4c1509a784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
