@@ -60,7 +60,25 @@ def enforce(credentials, action, target, do_raise=True):
         extra.update(exc=exception.ForbiddenAction, action=action,
                      do_raise=do_raise)
 
-    return _ENFORCER.enforce(action, target, credentials, **extra)
+    # NOTE(lbragstad): The configuration option here is what makes the behavior
+    # backwards compatible. Once a deployment starts issues system role
+    # assignments, they should be able to start enforcing system scope by
+    # setting the configuration option to ``True``. At some point in the
+    # future, we should considered changing the default from ``False`` to
+    # ``True``, but for now this let's people fix RBAC in their deployment and
+    # migrate to it while allowing for backwards compatibility.
+    try:
+        return _ENFORCER.enforce(
+            action, target, credentials,
+            enforce_scope=CONF.authorization.enforce_system_scope, **extra
+        )
+    except common_policy.InvalidScope as e:
+        # NOTE(lbragstad): This means that the token used to make the request
+        # wasn't scoped properly (e.g. using a project-scoped token to make a
+        # system-level API call). We should handle this case and make sure
+        # we're returning a 403 with details about why the request failed,
+        # which the InvalidScope exception provides for us.
+        raise exception.ForbiddenAction(e.message, action=action)
 
 
 def register_rules(enforcer):

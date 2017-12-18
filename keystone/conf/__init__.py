@@ -21,6 +21,7 @@ from osprofiler import opts as profiler
 
 from keystone.conf import assignment
 from keystone.conf import auth
+from keystone.conf import authorization
 from keystone.conf import catalog
 from keystone.conf import credential
 from keystone.conf import default
@@ -55,6 +56,7 @@ CONF = cfg.CONF
 conf_modules = [
     assignment,
     auth,
+    authorization,
     catalog,
     credential,
     default,
