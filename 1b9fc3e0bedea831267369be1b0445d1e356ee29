@@ -34,6 +34,24 @@
       "revId": "1b9fc3e0bedea831267369be1b0445d1e356ee29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_1396aef1",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-18T22:19:38Z",
+      "side": 1,
+      "message": "Actually - a 403 is more appropriate.",
+      "parentUuid": "df87a7cf_08680785",
+      "revId": "1b9fc3e0bedea831267369be1b0445d1e356ee29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
