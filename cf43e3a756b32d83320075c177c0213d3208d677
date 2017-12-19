@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_c015af3e",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3970,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-12-19T19:25:58Z",
+      "side": 1,
+      "message": "We need to fix @WIP to also accept an optional \"how this is expected to fail\"",
+      "range": {
+        "startLine": 3969,
+        "startChar": 0,
+        "endLine": 3970,
+        "endChar": 30
+      },
+      "revId": "cf43e3a756b32d83320075c177c0213d3208d677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
