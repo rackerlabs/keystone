@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_a1bd1ab8",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-12-19T12:29:39Z",
+      "side": 1,
+      "message": "I think this shouldn\u0027t be changed yet, you can see on https://review.openstack.org/#/c/528796/4/roles/sphinx/tasks/main.yaml@35 that they actually reverted it to what we were using before because the autodoc feature doesn\u0027t work with this",
+      "revId": "3669063f0c6eaa5a3be2b5c59e291f53d61833dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_01cc0668",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-12-19T12:29:39Z",
+      "side": 1,
+      "message": "Not sure this is needed, tox -ereleasenotes works for me without it.",
+      "revId": "3669063f0c6eaa5a3be2b5c59e291f53d61833dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
