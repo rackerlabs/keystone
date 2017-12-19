@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_006ab718",
+        "filename": "keystone/common/sql/expand_repo/versions/031_expand_add_limits_tables.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-19T20:01:51Z",
+      "side": 1,
+      "message": "Does the default_limit also have to be in the unique constraint? Is it possible to use a NULL region_id in a unique constraint?",
+      "range": {
+        "startLine": 40,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 73
+      },
+      "revId": "9052590c57be94a986803c15bd1bd91b73d61aaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_a072eb10",
+        "filename": "keystone/common/sql/expand_repo/versions/031_expand_add_limits_tables.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-19T20:01:51Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "range": {
+        "startLine": 56,
+        "startChar": 8,
+        "endLine": 56,
+        "endChar": 73
+      },
+      "revId": "9052590c57be94a986803c15bd1bd91b73d61aaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_60c70314",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2547,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-19T20:01:51Z",
+      "side": 1,
+      "message": "What happens if you try and insert a registered limit reference with a NULL region_id?",
+      "range": {
+        "startLine": 2541,
+        "startChar": 8,
+        "endLine": 2547,
+        "endChar": 9
+      },
+      "revId": "9052590c57be94a986803c15bd1bd91b73d61aaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_20cd7b2f",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2560,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-19T20:01:51Z",
+      "side": 1,
+      "message": "Same comment here as above. We should add those cases into this test or a separate test.",
+      "range": {
+        "startLine": 2551,
+        "startChar": 8,
+        "endLine": 2560,
+        "endChar": 52
+      },
+      "revId": "9052590c57be94a986803c15bd1bd91b73d61aaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
