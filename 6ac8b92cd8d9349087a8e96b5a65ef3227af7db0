@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_80f56759",
+        "filename": "keystone/exception.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-19T20:30:26Z",
+      "side": 1,
+      "message": "We\u0027ll need a space after registered so that it renders properly.\n\n  message_format \u003d _(\"Unable to create limits without a proper registered \"\n                     \"limit.\")",
+      "range": {
+        "startLine": 468,
+        "startChar": 64,
+        "endLine": 468,
+        "endChar": 74
+      },
+      "revId": "6ac8b92cd8d9349087a8e96b5a65ef3227af7db0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_e088f3c6",
+        "filename": "keystone/limit/backends/base.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-19T20:30:26Z",
+      "side": 1,
+      "message": "According to the specification, this is supposed to create a single limit:\n\nhttp://specs.openstack.org/openstack/keystone-specs/specs/keystone/queens/limits-api.html#create-registered-limits",
+      "range": {
+        "startLine": 31,
+        "startChar": 8,
+        "endLine": 31,
+        "endChar": 32
+      },
+      "revId": "6ac8b92cd8d9349087a8e96b5a65ef3227af7db0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_a08e6bce",
+        "filename": "keystone/limit/backends/base.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-19T20:30:26Z",
+      "side": 1,
+      "message": "This can be done with multiple limits thought, too.",
+      "range": {
+        "startLine": 41,
+        "startChar": 11,
+        "endLine": 41,
+        "endChar": 47
+      },
+      "revId": "6ac8b92cd8d9349087a8e96b5a65ef3227af7db0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_40b99f76",
+        "filename": "keystone/limit/backends/base.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-19T20:30:26Z",
+      "side": 1,
+      "message": "The types here would specifically be a list of dictionaries.",
+      "range": {
+        "startLine": 58,
+        "startChar": 8,
+        "endLine": 58,
+        "endChar": 56
+      },
+      "revId": "6ac8b92cd8d9349087a8e96b5a65ef3227af7db0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_e0b1d390",
+        "filename": "keystone/limit/backends/base.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-19T20:30:26Z",
+      "side": 1,
+      "message": "Create multiple limits or a single limit?",
+      "range": {
+        "startLine": 89,
+        "startChar": 8,
+        "endLine": 89,
+        "endChar": 21
+      },
+      "revId": "6ac8b92cd8d9349087a8e96b5a65ef3227af7db0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_bb4d3e3c",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-19T20:30:26Z",
+      "side": 1,
+      "message": "Same concern here as in a previous patch set.",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 54
+      },
+      "revId": "6ac8b92cd8d9349087a8e96b5a65ef3227af7db0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
