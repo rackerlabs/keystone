@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_3b104e00",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-19T20:34:59Z",
+      "side": 1,
+      "message": "This looks duplicated from above, we could pull this into a common utility class somewhere and make it available to both Managers.\n\nOr, we could have a single manager that is responsible for all limits.",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 60
+      },
+      "revId": "b6d916a841c2d0a64f0aaaab8258d9fe753c3898",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_3bde0e3e",
+        "filename": "setup.cfg",
+        "patchSetId": 7
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-19T20:34:59Z",
+      "side": 1,
+      "message": "In another patch we should make it so that people can write their own limit backends and make it pluggable with configuration.",
+      "range": {
+        "startLine": 142,
+        "startChar": 0,
+        "endLine": 146,
+        "endChar": 43
+      },
+      "revId": "b6d916a841c2d0a64f0aaaab8258d9fe753c3898",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
