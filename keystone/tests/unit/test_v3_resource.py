@@ -14,6 +14,7 @@ import uuid
 
 from six.moves import http_client
 from six.moves import range
+from six import text_type
 from testtools import matchers
 
 import keystone.conf
@@ -1431,6 +1432,17 @@ class ResourceTestCase(test_v3.RestfulTestCase,
 
     def test_create_project_with_tags(self):
         project, tags = self._create_project_and_tags(num_of_tags=10)
+        ref = self.get(
+            '/projects/%(project_id)s' % {
+                'project_id': project['id']},
+            expected_status=http_client.OK)
+        self.assertIn('tags', ref.result['project'])
+        for tag in tags:
+            self.assertIn(tag, ref.result['project']['tags'])
+
+    def test_create_project_with_unicode_tags(self):
+        project, tags = self._create_project_and_tags(num_of_tags=10)
+        tags = [text_type(t) for t in tags]
         ref = self.get(
             '/projects/%(project_id)s' % {
                 'project_id': project['id']},
