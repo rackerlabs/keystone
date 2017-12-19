@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_579bb916",
+        "filename": "doc/requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-19T07:59:47Z",
+      "side": 1,
+      "message": "please add ldap\u0027s related lib as well.",
+      "revId": "fbeff12dd11331a1fd614ba50dd00c19602a871e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
