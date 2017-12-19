@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_01af26e3",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-12-19T12:14:10Z",
+      "side": 1,
+      "message": "I think these two changes aren\u0027t needed, at least this patch still seems to work for me without them.",
+      "revId": "ef9308cc04f8a7698a033ac82357b4664a0adfd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
