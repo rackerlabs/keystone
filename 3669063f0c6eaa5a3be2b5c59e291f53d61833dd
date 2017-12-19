@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_d6e6e116",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2017-12-19T15:17:16Z",
+      "side": 1,
+      "message": "Agreed, this should be changed back",
+      "parentUuid": "df87a7cf_a1bd1ab8",
+      "revId": "3669063f0c6eaa5a3be2b5c59e291f53d61833dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_01cc0668",
         "filename": "tox.ini",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2017-12-19T12:29:39Z",
       "side": 1,
       "message": "Not sure this is needed, tox -ereleasenotes works for me without it.",
+      "revId": "3669063f0c6eaa5a3be2b5c59e291f53d61833dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_76c11554",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2017-12-19T15:17:16Z",
+      "side": 1,
+      "message": "Colleen, where do you get sphinx from in that case?\n\nThe above is what we do in the job, so let\u0027s go with it...",
+      "parentUuid": "df87a7cf_01cc0668",
       "revId": "3669063f0c6eaa5a3be2b5c59e291f53d61833dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
