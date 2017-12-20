@@ -1,0 +1,12 @@
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: wangxiyuan <wangxiyuan@huawei.com>
+Code-Review+1: Gage Hugo <gagehugo@gmail.com>
+Code-Review+1: Yandy Sun <sunyd@inspur.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 20 Dec 2017 01:20:53 +0000
+Reviewed-on: https://review.openstack.org/523524
+Project: openstack/keystone
+Branch: refs/heads/master
