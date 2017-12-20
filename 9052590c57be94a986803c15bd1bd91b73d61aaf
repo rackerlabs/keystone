@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_f5bbce0b",
+        "filename": "keystone/common/sql/expand_repo/versions/031_expand_add_limits_tables.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-20T03:47:28Z",
+      "side": 1,
+      "message": "Well. The region_id has the foreignKey in region table. So it can\u0027t be \u0027\u0027, I think the only way now is to control it in code logic.",
+      "parentUuid": "df87a7cf_cfc15756",
+      "range": {
+        "startLine": 40,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 73
+      },
+      "revId": "9052590c57be94a986803c15bd1bd91b73d61aaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_a072eb10",
         "filename": "keystone/common/sql/expand_repo/versions/031_expand_add_limits_tables.py",
         "patchSetId": 11
