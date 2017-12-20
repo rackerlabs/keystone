@@ -46,6 +46,30 @@
       "revId": "fad77169a7853e7b9b9cc85c3906fd425ac92c95",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_54710ce0",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1164,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-20T15:59:42Z",
+      "side": 1,
+      "message": "Added a test for this in a subsequent patch: \n\nhttps://review.openstack.org/#/c/524017/7/keystone/tests/unit/test_v3_assignment.py@3349",
+      "parentUuid": "bf8cb3f7_2659c2fd",
+      "range": {
+        "startLine": 1164,
+        "startChar": 15,
+        "endLine": 1164,
+        "endChar": 16
+      },
+      "revId": "fad77169a7853e7b9b9cc85c3906fd425ac92c95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
