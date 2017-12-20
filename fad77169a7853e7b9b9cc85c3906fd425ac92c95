@@ -22,6 +22,30 @@
       "revId": "fad77169a7853e7b9b9cc85c3906fd425ac92c95",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_2659c2fd",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1164,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-20T14:31:02Z",
+      "side": 1,
+      "message": "Good question - I\u0027ll add a test for this case and see what happens.",
+      "parentUuid": "df87a7cf_fdc2d052",
+      "range": {
+        "startLine": 1164,
+        "startChar": 15,
+        "endLine": 1164,
+        "endChar": 16
+      },
+      "revId": "fad77169a7853e7b9b9cc85c3906fd425ac92c95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
