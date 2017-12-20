@@ -24,8 +24,6 @@ List users
 
 Lists users.
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/users``
-
 Request
 -------
 
@@ -87,8 +85,6 @@ Create user
 
 Creates a user.
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/users``
-
 Request
 -------
 
@@ -149,8 +145,6 @@ Show user details
 
 Shows details for a user.
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/user``
-
 Request
 -------
 
@@ -208,8 +202,6 @@ Updates a user's password, or whether they are enabled or disabled.
 
 If the back-end driver does not support this functionality, this
 call might return the HTTP ``Not Implemented (501)`` response code.
-
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/user``
 
 Request
 -------
@@ -280,8 +272,6 @@ Delete user
 
 Deletes a user.
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/user``
-
 Request
 -------
 
@@ -316,8 +306,6 @@ List groups to which a user belongs
 .. rest_method::  GET /v3/users/{user_id}/groups
 
 Lists groups to which a user belongs.
-
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/user_groups``
 
 Request
 -------
@@ -359,8 +347,6 @@ List projects for user
 .. rest_method::  GET /v3/users/{user_id}/projects
 
 List projects to which the user has authorization to access.
-
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/user_projects``
 
 Request
 -------
@@ -405,8 +391,6 @@ Changes the password for a user.
 
 .. note::
     This API call does not require a token for authentication.
-
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/user_change_password``
 
 Request
 -------
