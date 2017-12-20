@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_cfc15756",
+        "filename": "keystone/common/sql/expand_repo/versions/031_expand_add_limits_tables.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-20T01:42:00Z",
+      "side": 1,
+      "message": "1. ``default_limit`` should not be in the unique constraint. If so, there will be a case like:\nNova RegionOne instance 5\nNova RegionOne instance 10\n\nThis is incorrect.\n\n2. NULL could be in a unique constraint, but it has a problem here like:\nSuppose there are two line in tale already.\n\nNova RegionOne instance 5\nNova NULL      instance 10\n\nThen insert a new line \"Nova RegionOne instance 5\", DB will raise duplicated error.\nIf the new line is \"Nova NULL  instance 10\", everything goes well. But it will break our design goal.\n\nSo now I think we should give region_id a default value, such as \u0027\u0027, then the UniqueConstraint( \u0027service_id\u0027, \u0027region_id\u0027, \u0027resource_name\u0027) will be OK enough.",
+      "parentUuid": "df87a7cf_006ab718",
+      "range": {
+        "startLine": 40,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 73
+      },
+      "revId": "9052590c57be94a986803c15bd1bd91b73d61aaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_a072eb10",
         "filename": "keystone/common/sql/expand_repo/versions/031_expand_add_limits_tables.py",
         "patchSetId": 11
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_4fcd4783",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2547,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-20T01:42:00Z",
+      "side": 1,
+      "message": "I\u0027ll update it later.",
+      "parentUuid": "df87a7cf_60c70314",
+      "range": {
+        "startLine": 2541,
+        "startChar": 8,
+        "endLine": 2547,
+        "endChar": 9
+      },
+      "revId": "9052590c57be94a986803c15bd1bd91b73d61aaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_20cd7b2f",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 11
@@ -82,6 +130,30 @@
       "writtenOn": "2017-12-19T20:01:51Z",
       "side": 1,
       "message": "Same comment here as above. We should add those cases into this test or a separate test.",
+      "range": {
+        "startLine": 2551,
+        "startChar": 8,
+        "endLine": 2560,
+        "endChar": 52
+      },
+      "revId": "9052590c57be94a986803c15bd1bd91b73d61aaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_8fb7cff5",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2560,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-20T01:42:00Z",
+      "side": 1,
+      "message": "sure",
+      "parentUuid": "df87a7cf_20cd7b2f",
       "range": {
         "startLine": 2551,
         "startChar": 8,
