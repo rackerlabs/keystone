@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_9d286486",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 27385
+      },
+      "writtenOn": "2017-12-20T08:40:44Z",
+      "side": 1,
+      "message": "Is there a possibility of empty results here",
+      "range": {
+        "startLine": 208,
+        "startChar": 25,
+        "endLine": 208,
+        "endChar": 43
+      },
+      "revId": "73fcfadabdb5e4f0aca04726ddff274bf2d56533",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
