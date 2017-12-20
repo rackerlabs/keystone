@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_fdc2d052",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1164,
+      "author": {
+        "id": 27385
+      },
+      "writtenOn": "2017-12-20T09:01:36Z",
+      "side": 1,
+      "message": "Does it also need to check the presence of the group?",
+      "range": {
+        "startLine": 1164,
+        "startChar": 15,
+        "endLine": 1164,
+        "endChar": 16
+      },
+      "revId": "fad77169a7853e7b9b9cc85c3906fd425ac92c95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
