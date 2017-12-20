@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_b50172b2",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1364,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-20T17:26:04Z",
+      "side": 1,
+      "message": "This is duplicated from the test on line 1335",
+      "range": {
+        "startLine": 1362,
+        "startChar": 0,
+        "endLine": 1364,
+        "endChar": 76
+      },
+      "revId": "d51720d2d8cdae304dea5d0a84e940a3b58a0814",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_3527a267",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1368,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-20T17:26:04Z",
+      "side": 1,
+      "message": "This is duplicated from the test on line 1346",
+      "range": {
+        "startLine": 1366,
+        "startChar": 0,
+        "endLine": 1368,
+        "endChar": 76
+      },
+      "revId": "d51720d2d8cdae304dea5d0a84e940a3b58a0814",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_75044ac7",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1372,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-20T17:26:04Z",
+      "side": 1,
+      "message": "This is duplicated from the test on line 1357",
+      "range": {
+        "startLine": 1370,
+        "startChar": 4,
+        "endLine": 1372,
+        "endChar": 36
+      },
+      "revId": "d51720d2d8cdae304dea5d0a84e940a3b58a0814",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
