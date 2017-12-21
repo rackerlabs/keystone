@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_b5bba8e3",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1095,
+      "author": {
+        "id": 27385
+      },
+      "writtenOn": "2017-12-21T01:34:22Z",
+      "side": 1,
+      "message": "Determine whether or not role is empty",
+      "range": {
+        "startLine": 1095,
+        "startChar": 8,
+        "endLine": 1095,
+        "endChar": 46
+      },
+      "revId": "05e3ddb954114f41801cfce14d104cc60b3aaf84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
