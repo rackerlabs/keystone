@@ -22,6 +22,30 @@
       "revId": "616542a05167e98bfa6a9088436baa2ee8d73d3a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_71043e18",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-21T20:51:12Z",
+      "side": 1,
+      "message": "We\u0027re associating scope_types to each of these in this patch too, which hard-codes the scope to the \u0027system\u0027 level. This is pretty much the equivalent of the cloud_admin role, but not defining it as a rule.",
+      "parentUuid": "bf8cb3f7_3119d6d6",
+      "range": {
+        "startLine": 112,
+        "startChar": 4,
+        "endLine": 115,
+        "endChar": 67
+      },
+      "revId": "616542a05167e98bfa6a9088436baa2ee8d73d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
