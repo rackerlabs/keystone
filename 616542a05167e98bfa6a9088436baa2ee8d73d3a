@@ -94,6 +94,30 @@
       "revId": "616542a05167e98bfa6a9088436baa2ee8d73d3a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_e313a5b7",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-12-21T21:28:58Z",
+      "side": 1,
+      "message": "Since policy in code doesn\u0027t define cloud_admin at all, admin should be fine.",
+      "parentUuid": "bf8cb3f7_e3d16559",
+      "range": {
+        "startLine": 112,
+        "startChar": 4,
+        "endLine": 115,
+        "endChar": 67
+      },
+      "revId": "616542a05167e98bfa6a9088436baa2ee8d73d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
