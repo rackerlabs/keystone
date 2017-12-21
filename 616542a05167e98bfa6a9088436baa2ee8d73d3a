@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_3119d6d6",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-12-21T20:41:54Z",
+      "side": 1,
+      "message": "cloud_admin vs just admin?",
+      "range": {
+        "startLine": 112,
+        "startChar": 4,
+        "endLine": 115,
+        "endChar": 67
+      },
+      "revId": "616542a05167e98bfa6a9088436baa2ee8d73d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
