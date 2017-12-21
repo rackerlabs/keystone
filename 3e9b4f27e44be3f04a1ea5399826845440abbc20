@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_f1712ee2",
+        "filename": "keystone/conf/authorization.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-12-21T20:55:02Z",
+      "side": 1,
+      "message": "to",
+      "range": {
+        "startLine": 24,
+        "startChar": 41,
+        "endLine": 24,
+        "endChar": 42
+      },
+      "revId": "3e9b4f27e44be3f04a1ea5399826845440abbc20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_6340f536",
+        "filename": "keystone/conf/authorization.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-12-21T20:55:02Z",
+      "side": 1,
+      "message": "this entire part can be replaced with \u0027or\u0027 making it easier to read and removing the repetition.",
+      "range": {
+        "startLine": 30,
+        "startChar": 71,
+        "endLine": 31,
+        "endChar": 74
+      },
+      "revId": "3e9b4f27e44be3f04a1ea5399826845440abbc20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
