@@ -30,8 +30,30 @@
       tox_env: upgrade
       osa_test_repo: "openstack/openstack-ansible-os_keystone"
 
+- job:
+    timeout: 7200
+    name: openstack-keystone-functional
+    voting: false
+    pre-run:
+      - ../openstack-helm-infra/tools/gate/playbooks/osh-infra-deploy-docker.yaml
+      - ../openstack-helm-infra/tools/gate/playbooks/osh-infra-build.yaml
+      - ../openstack-helm-infra/tools/gate/playbooks/osh-infra-deploy-k8s.yaml
+    run:
+      - ./playbooks/openstack-keystone-functional.yaml
+    required-projects:
+      - openstack/openstack-helm
+      - openstack/openstack-helm-infra
+    irrelevant-files:
+      - ^.*\.rst$
+      - ^api-ref/.*$
+      - ^doc/.*$
+      - ^etc/.*$
+      - ^keystone/tests/unit/.*$
+      - ^releasenotes/.*$
+
 - project:
     name: openstack/keystone
     check:
       jobs:
+        - openstack-keystone-functional
         - openstack-ansible-keystone-rolling-upgrade
