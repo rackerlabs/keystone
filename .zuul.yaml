@@ -66,6 +66,28 @@
       - ^keystone/tests/unit/.*$
       - ^releasenotes/.*$
 
+- job:
+    timeout: 7200
+    name: keystone-osh-functional
+    description: |
+      This job builds a docker image of the current patchset for keystone
+      with loci, and deploys it using openstack-helm, along with the required
+      services for running keystone. Once the image is running, it runs
+      keystones own functional tests against it.
+      Note that these are not tempest tests.
+    voting: false
+    run: playbooks/keystone-osh-functional/run.yaml
+    required-projects:
+      - openstack/openstack-helm
+      - openstack/openstack-helm-infra
+    irrelevant-files:
+      - ^.*\.rst$
+      - ^api-ref/.*$
+      - ^doc/.*$
+      - ^etc/.*$
+      - ^keystone/tests/unit/.*$
+      - ^releasenotes/.*$
+
 # This job will execute 'tox -e upgrade' from the OSA
 # repo specified in 'osa_test_repo'.
 - job:
@@ -129,6 +151,7 @@
         - keystone-dsvm-functional
         - keystone-dsvm-functional-v3-only
         - keystone-dsvm-py35-functional-v3-only
+        - keystone-osh-functional
         - openstack-ansible-keystone-rolling-upgrade
     gate:
       jobs:
