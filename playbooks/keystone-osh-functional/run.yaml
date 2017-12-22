@@ -1,0 +1,114 @@
+- hosts: all
+  tasks:
+    - name: Set zuul_site_mirror_fqdn from env var if not defined
+      when: zuul_site_mirror_fqdn is not defined
+      set_fact:
+        zuul_site_mirror_fqdn: "{{ lookup('env','zuul_site_mirror_fqdn') }}"
+
+    - name: Install Required Packages/Docker and Setup Host
+      shell: |
+        set -xe;
+        sudo apt-get update
+        sudo apt-get install --no-install-recommends -y \
+          ca-certificates git make jq nmap curl uuid-runtime ipcalc docker.ce
+        # curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+        # sudo add-apt-repository \
+        #  "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+        # sudo apt-get update
+        # sudo apt-get install docker.ce=17.12.0~ce-0~ubuntu -y
+        make dev-deploy setup-host
+        make dev-deploy k8s
+      environment:
+        zuul_site_mirror_fqdn: "{{ zuul_site_mirror_fqdn }}"
+      args:
+        chdir: "{{ zuul.projects['git.openstack.org/openstack/openstack-helm-infra'].src_dir }}"
+
+    - name: Build Charts
+      shell: |
+        set -xe
+        make all
+      args:
+        chdir: "{{ zuul.projects['git.openstack.org/openstack/openstack-helm'].src_dir }}"
+
+    - name: Deploy Ingress
+      shell: |
+        set -xe;
+        ./tools/deployment/developer/nfs/030-ingress.sh
+      args:
+        chdir: "{{ zuul.projects['git.openstack.org/openstack/openstack-helm'].src_dir }}"
+
+    - name: Deploy NFS
+      shell: |
+        set -xe;
+        ./tools/deployment/developer/nfs/040-nfs-provisioner.sh
+      args:
+        chdir: "{{ zuul.projects['git.openstack.org/openstack/openstack-helm'].src_dir }}"
+
+    - name: Deploy mariadb
+      shell: |
+        set -xe;
+        ./tools/deployment/developer/nfs/050-mariadb.sh
+      args:
+        chdir: "{{ zuul.projects['git.openstack.org/openstack/openstack-helm'].src_dir }}"
+
+    - name: Deploy rabbitmq
+      shell: |
+        set -xe;
+        ./tools/deployment/developer/nfs/060-rabbitmq.sh
+      args:
+        chdir: "{{ zuul.projects['git.openstack.org/openstack/openstack-helm'].src_dir }}"
+
+    - name: Deploy memcached
+      shell: |
+        set -xe;
+        ./tools/deployment/developer/nfs/070-memcached.sh
+      args:
+        chdir: "{{ zuul.projects['git.openstack.org/openstack/openstack-helm'].src_dir }}"
+
+    - name: Build Local Image
+      shell: |
+        set -xe;
+        sudo docker build https://git.openstack.org/openstack/loci.git \
+            --build-arg PROJECT=keystone --tag gerrit-keystone \
+            --build-arg PROJECT_REF={{ REF_PATH }} \
+            --build-arg PROFILES="apache libapache2-mod-wsgi"
+      vars:
+        REF_PATH: "{{ zuul.ref }}"
+      args:
+        chdir: "{{ zuul.project.src_dir }}"
+
+    - name: Deploy Keystone
+      shell: |
+        set -xe;
+        make keystone
+        helm install ./keystone \
+            --namespace=openstack --name=keystone \
+            --set images.tags.keystone_db_sync=gerrit-keystone \
+            --set images.tags.keystone_fernet_setup=gerrit-keystone \
+            --set images.tags.keystone_fernet_rotate=gerrit-keystone \
+            --set images.tags.keystone_credential_setup=gerrit-keystone \
+            --set images.tags.keystone_credential_rotate=gerrit-keystone \
+            --set images.tags.keystone_api=gerrit-keystone \
+            --set bootstrap.script={{ BOOTSTRAP }}
+         ./tools/deployment/common/wait-for-pods.sh openstack
+      args:
+        chdir: "{{ zuul.projects['git.openstack.org/openstack/openstack-helm'].src_dir }}"
+      vars:
+        BOOTSTRAP: "\"openstack user create --domain default --password password demo; openstack role add --project admin --user demo member\""
+
+    - name: Run keystone functional tests
+      shell: |
+        set -xe;
+        export KSTEST_ADMIN_URL='http://keystone.openstack:80'
+        export KSTEST_PUBLIC_URL='http://keystone.openstack:80'
+        export KSTEST_ADMIN_USERNAME='admin'
+        export KSTEST_ADMIN_PASSWORD='password'
+        export KSTEST_ADMIN_DOMAIN_ID='default'
+        export KSTEST_USER_USERNAME='demo'
+        export KSTEST_USER_PASSWORD='password'
+        export KSTEST_USER_DOMAIN_ID='default'
+        export KSTEST_PROJECT_NAME='admin'
+        export KSTEST_PROJECT_DOMAIN_ID='default'
+        tox -e functional
+      args:
+        chdir: "{{ zuul.project.src_dir }}"
