@@ -1,0 +1,6 @@
+FROM localhost:5000/keystone
+
+RUN set -x \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends apache2 libapache2-mod-wsgi \
+    && rm -rf /var/lib/apt/lists/*
