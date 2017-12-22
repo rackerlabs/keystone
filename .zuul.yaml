@@ -64,6 +64,28 @@
       devstack_localrc:
         IDP_ID: k2k
 
+- job:
+    timeout: 3600
+    name: keystone-osh-functional
+    nodeset: ubuntu-bionic
+    description: |
+      This job builds a docker image of the current patchset for keystone
+      with loci, and deploys it using openstack-helm, along with the required
+      services for running keystone. Once the image is running, it runs the
+      in-repo keystone functional tests against it.
+    voting: true
+    run: playbooks/keystone-osh-functional/run.yaml
+    required-projects:
+      - openstack/openstack-helm
+      - openstack/openstack-helm-infra
+    irrelevant-files:
+      - ^.*\.rst$
+      - ^api-ref/.*$
+      - ^doc/.*$
+      - ^etc/.*$
+      - ^keystone/tests/unit/.*$
+      - ^releasenotes/.*$
+
 # This job will execute 'tox -e upgrade' from the OSA
 # repo specified in 'osa_test_repo'.
 - job:
@@ -174,82 +196,16 @@
     parent: keystone-dsvm-py35-functional-federation-ubuntu-xenial
 
 - project:
-    templates:
-      - openstack-cover-jobs
-      - openstack-lower-constraints-jobs
-      - openstack-python3-ussuri-jobs
-      - publish-openstack-docs-pti
-      - periodic-stable-jobs
-      - check-requirements
-      - integrated-gate-py3
-      - release-notes-jobs-python3
     check:
       jobs:
-        - keystone-dsvm-py3-functional:
-            irrelevant-files: &irrelevant-files
-              - ^.*\.rst$
-              - ^api-ref/.*$
-              - ^doc/.*$
-              - ^etc/.*$
-              - ^keystone/tests/unit/.*$
-              - ^releasenotes/.*$
-        - keystone-dsvm-py3-functional-federation-opensuse15:
-            voting: false
-            irrelevant-files: *irrelevant-files
-        - keystone-dsvm-py3-functional-federation-opensuse15-k2k:
-            irrelevant-files: *irrelevant-files
-        - keystoneclient-devstack-functional:
-            voting: false
-            irrelevant-files: *irrelevant-files
-        - keystone-dsvm-ldap-domain-specific-driver:
-            voting: false
-            irrelevant-files: &tempest-irrelevant-files
-              - ^(test-|)requirements.txt$
-              - ^.*\.rst$
-              - ^api-ref/.*$
-              - ^doc/.*$
-              - ^etc/.*$
-              - ^keystone/tests/unit/.*$
-              - ^releasenotes/.*$
-              - ^setup.cfg$
-        - tempest-full-py3:
-            irrelevant-files: *tempest-irrelevant-files
-        - grenade-py3:
-            irrelevant-files: *tempest-irrelevant-files
-        - tempest-ipv6-only:
-            irrelevant-files: *tempest-irrelevant-files
-        - keystone-tox-protection
+        - keystone-osh-functional
     gate:
       jobs:
-        - keystone-dsvm-functional:
-            irrelevant-files: *irrelevant-files
-        - keystone-dsvm-py3-functional:
-            irrelevant-files: *irrelevant-files
-        - keystone-dsvm-py3-functional-federation-opensuse15-k2k:
-            irrelevant-files: *irrelevant-files
-        - tempest-full:
-            irrelevant-files: *tempest-irrelevant-files
-        - tempest-full-py3:
-            irrelevant-files: *tempest-irrelevant-files
-        - grenade-py3:
-            irrelevant-files: *tempest-irrelevant-files
-        - tempest-ipv6-only:
-            irrelevant-files: *tempest-irrelevant-files
+        - keystone-dsvm-functional
+        - keystone-dsvm-py3-functional
+        - keystone-dsvm-py3-functional-federation-opensuse15-k2k
+        - tempest-full
+        - tempest-full-py3
+        - grenade-py3
+        - tempest-ipv6-only
         - keystone-tox-protection
-    experimental:
-      jobs:
-        - keystone-tox-patch_cover
-        - keystone-dsvm-grenade-multinode:
-            irrelevant-files: *irrelevant-files
-        - openstack-ansible-keystone-rolling-upgrade:
-            irrelevant-files: *irrelevant-files
-        - tempest-pg-full:
-            irrelevant-files: *tempest-irrelevant-files
-        - tempest-full-py3-opensuse15:
-            irrelevant-files: *tempest-irrelevant-files
-        - keystone-dsvm-functional-federation-centos7:
-            irrelevant-files: *irrelevant-files
-        - keystone-dsvm-functional-federation-ubuntu-xenial:
-            irrelevant-files: *irrelevant-files
-        - keystone-dsvm-py35-functional-federation-ubuntu-xenial:
-            irrelevant-files: *irrelevant-files
