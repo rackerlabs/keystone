@@ -1,0 +1,102 @@
+- hosts: all
+  tasks:
+    - name: Deploy Required Packages
+      shell: |
+        set -xe;
+        ./tools/deployment/developer/00-install-packages.sh
+      args:
+        chdir: "{{ zuul.project.src_dir }}/../openstack-helm"
+    - name: Download Docker
+      shell: |
+        set -xe;
+        sudo apt-get remove docker docker-engine docker.io -y
+        sudo apt-get install apt-transport-https ca-certificates curl software-properties-common -y
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+        sudo add-apt-repository \
+          "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+        sudo apt-get update
+        sudo apt-get install docker.ce=17.12.0~ce-0~ubuntu -y
+      args:
+        chdir: "{{ zuul.project.src_dir }}"
+    - name: Build Local Keystone Image
+      shell: |
+        set -xe;
+        REF=$(git ls-remote | grep $(git rev-parse HEAD) | awk '{print $2}')
+        sudo docker build https://git.openstack.org/openstack/loci.git \
+            --build-arg PROJECT=keystone --tag localhost:5000/keystone \
+            --build-arg PROJECT_REF=$REF
+      args:
+        "{{ zuul.project.src_dir }}"
+    - name: Deploy Required K8S Packages
+      shell: |
+        set -xe;
+        ./tools/deployment/developer/01-deploy-k8s.sh
+      vars:
+        OSH_INFRA_PATH: "{{ zuul_osh_infra_relative_path | default('') }}"
+      args:
+        chdir: "{{ zuul.project.src_dir }}/../openstack-helm"
+    - name: Setup OS and K8S Clients
+      shell: |
+        set -xe;
+        ./tools/deployment/developer/02-setup-client.sh
+      args:
+        chdir: "{{ zuul.project.src_dir }}/../openstack-helm"
+    - name: Deploy Ingress
+      shell: |
+        set -xe;
+        ./tools/deployment/developer/03-ingress.sh
+      args:
+        chdir: "{{ zuul.project.src_dir }}/../openstack-helm"
+    - name: Deploy Mariadb
+      shell: |
+        set -xe;
+        make pull-images mariadb
+        helm install ./mariadb --namespace=openstack \
+            --name=mariadb --set pod.replicas.server=1 \
+            --set volume.enabled=False
+        ./tools/deployment/developer/wait-for-pods.sh openstack 600
+        helm status mariadb
+      args:
+        chdir: "{{ zuul.project.src_dir }}/../openstack-helm"
+    - name: Deploy RabbitMQ
+      shell: |
+        set -xe;
+        ./tools/deployment/developer/07-rabbitmq.sh
+      args:
+        chdir: "{{ zuul.project.src_dir }}/../openstack-helm"
+    - name: Deploy Memcached
+      shell: |
+        set -xe;
+        ./tools/deployment/developer/08-memcached.sh
+      args:
+        chdir: "{{ zuul.project.src_dir }}/../openstack-helm"
+    - name: Deploy Keystone Image
+      shell: |
+        set -xe;
+        make keystone
+        helm install ./keystone \
+            --namespace=openstack --name=keystone \
+            --set images.tags.bootstrap=localhost:5000/keystone \
+            --set images.tags.test=localhost:5000/keystone \
+            --set images.tags.db_init=localhost:5000/keystone \
+            --set images.tags.keystone_db_sync=localhost:5000/keystone \
+            --set images.tags.db_drop=localhost:5000/keystone \
+            --set images.tags.keystone_fernet_setup=localhost:5000/keystone \
+            --set images.tags.keystone_fernet_rotate=localhost:5000/keystone \
+            --set images.tags.keystone_credential_setup=localhost:5000/keystone \
+            --set images.tags.keystone_credential_rotate=localhost:5000/keystone \
+            --set images.tags.keystone_api=localhost:5000/keystone \
+            --set images.tags.dep_check=localhost:5000/keystone
+
+         ./tools/deployment/developer/wait-for-pods.sh openstack
+         helm status keystone
+         export OS_CLOUD=openstack_helm
+         openstack endpoint list
+      args:
+        chdir: "{{ zuul.project.src_dir }}/../openstack-helm"
+    - name: Run keystone functional tests
+      shell: |
+        set -xe;
+        ./tools/run-functional.sh
+      args:
+        chdir: "{{ zuul.project.src_dir }}"

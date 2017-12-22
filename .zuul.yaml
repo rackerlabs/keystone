@@ -67,6 +67,22 @@
       - ^keystone/tests/unit/.*$
       - ^releasenotes/.*$
 
+- job:
+    timeout: 7200
+    name: openstack-keystone-functional
+    voting: false
+    run: playbooks/openstack-keystone-functional.yaml
+    required-projects:
+      - openstack/openstack-helm
+      - openstack/openstack-helm-infra
+    irrelevant-files:
+      - ^.*\.rst$
+      - ^api-ref/.*$
+      - ^doc/.*$
+      - ^etc/.*$
+      - ^keystone/tests/unit/.*$
+      - ^releasenotes/.*$
+
 # This job will execute 'tox -e upgrade' from the OSA
 # repo specified in 'osa_test_repo'.
 - job:
@@ -110,13 +126,6 @@
     run: playbooks/legacy/keystone-dsvm-grenade-multinode/run.yaml
     post-run: playbooks/legacy/keystone-dsvm-grenade-multinode/post.yaml
     timeout: 10800
-    irrelevant-files:
-      - ^.*\.rst$
-      - ^api-ref/.*$
-      - ^doc/.*$
-      - ^etc/.*$
-      - ^keystone/tests/unit/.*$
-      - ^releasenotes/.*$
     required-projects:
       - openstack-dev/grenade
       - openstack-infra/devstack-gate
@@ -130,6 +139,7 @@
         - keystone-dsvm-functional
         - keystone-dsvm-functional-v3-only
         - keystone-dsvm-py35-functional-v3-only
+        - openstack-keystone-functional
         - openstack-ansible-keystone-rolling-upgrade
     gate:
       jobs:
