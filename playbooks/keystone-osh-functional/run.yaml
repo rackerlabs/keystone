@@ -1,0 +1,121 @@
+- hosts: all
+  tasks:
+    - name: Install Required Packages/Docker and Setup Host
+      shell: |
+        set -xe;
+        sudo apt-get update
+        sudo apt-get install --no-install-recommends -y \
+          ca-certificates git make jq nmap curl uuid-runtime ipcalc
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+        sudo add-apt-repository \
+          "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+        sudo apt-get update
+        sudo apt-get install docker.ce=17.12.0~ce-0~ubuntu -y
+        make dev-deploy setup-host
+        make dev-deploy k8s
+      args:
+        chdir: "{{ zuul.projects['git.openstack.org/openstack/openstack-helm-infra'].src_dir }}"
+
+    - name: Build Charts
+      shell: |
+        set -xe
+        make all
+      args:
+        chdir: "{{ zuul.projects['git.openstack.org/openstack/openstack-helm'].src_dir }}"
+
+    - name: Place-in the ingress-kube-system
+      template:
+        src: templates/ingress-kube-system.yaml.j2
+        dest: /tmp/ingress-kube-system.yaml
+      become: false
+
+    - name: Deploy ingress
+      shell: |
+        set -xe
+        make pull-images ingress
+        helm upgrade --install ingress-kube-system ./ingress \
+          --namespace=kube-system \
+          --values=/tmp/ingress-kube-system.yaml
+        helm upgrade --install ingress-openstack ./ingress \
+          --namespace=openstack
+      args:
+        chdir: "{{ zuul.projects['git.openstack.org/openstack/openstack-helm'].src_dir }}"
+
+    - name: Deploy mariadb
+      shell: |
+        set -xe
+        make pull-images mariadb
+        helm install ./mariadb --namespace=openstack \
+          --set pod.replicas.server=1 \
+          --set volume.enabled=False
+      args:
+        chdir: "{{ zuul.projects['git.openstack.org/openstack/openstack-helm'].src_dir }}"
+
+    - name: Deploy rabbitmq
+      shell: |
+        set -xe
+        make pull-images rabbitmq
+        helm upgrade --install rabbitmq ./rabbitmq \
+          --namespace=openstack \
+          --set pod.replicas.server=1 \
+          --set volume.enabled=False
+      args:
+        chdir: "{{ zuul.projects['git.openstack.org/openstack/openstack-helm'].src_dir }}"
+
+    - name: Deploy memcached
+      shell: |
+        set -xe
+        make pull-images memcached
+        helm upgrade --install memcached ./memcached \
+          --namespace=openstack
+        ./tools/deployment/common/wait-for-pods.sh openstack
+      args:
+        chdir: "{{ zuul.projects['git.openstack.org/openstack/openstack-helm'].src_dir }}"
+
+    - name: Build Local Image
+      shell: |
+        set -xe;
+        sudo docker build https://git.openstack.org/openstack/loci.git \
+            --build-arg PROJECT=keystone --tag gerrit-keystone \
+            --build-arg PROJECT_REF={{ REF_PATH }} \
+            --build-arg PROFILES="apache libapache2-mod-wsgi"
+      vars:
+        REF_PATH: "{{ zuul.ref }}"
+      args:
+        chdir: "{{ zuul.project.src_dir }}"
+
+    - name: Deploy Keystone
+      shell: |
+        set -xe;
+        make keystone
+        helm install ./keystone \
+            --namespace=openstack --name=keystone \
+            --set images.tags.keystone_db_sync=gerrit-keystone \
+            --set images.tags.keystone_fernet_setup=gerrit-keystone \
+            --set images.tags.keystone_fernet_rotate=gerrit-keystone \
+            --set images.tags.keystone_credential_setup=gerrit-keystone \
+            --set images.tags.keystone_credential_rotate=gerrit-keystone \
+            --set images.tags.keystone_api=gerrit-keystone \
+            --set bootstrap.script={{ BOOTSTRAP }}
+         ./tools/deployment/common/wait-for-pods.sh openstack
+      args:
+        chdir: "{{ zuul.projects['git.openstack.org/openstack/openstack-helm'].src_dir }}"
+      vars:
+        BOOTSTRAP: "\"openstack user create --domain default --password password demo; openstack role add --project admin --user demo admin\""
+
+    - name: Run keystone functional tests
+      shell: |
+        set -xe;
+        export KSTEST_ADMIN_URL='http://keystone.openstack:80'
+        export KSTEST_PUBLIC_URL='http://keystone.openstack:80'
+        export KSTEST_ADMIN_USERNAME='admin'
+        export KSTEST_ADMIN_PASSWORD='password'
+        export KSTEST_ADMIN_DOMAIN_ID='default'
+        export KSTEST_USER_USERNAME='demo'
+        export KSTEST_USER_PASSWORD='password'
+        export KSTEST_USER_DOMAIN_ID='default'
+        export KSTEST_PROJECT_NAME='admin'
+        export KSTEST_PROJECT_DOMAIN_ID='default'
+        tox -e functional
+      args:
+        chdir: "{{ zuul.project.src_dir }}"
