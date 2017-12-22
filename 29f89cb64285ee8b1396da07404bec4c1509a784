@@ -133,6 +133,30 @@
       "revId": "29f89cb64285ee8b1396da07404bec4c1509a784",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_0e282932",
+        "filename": "api-ref/source/v3/credentials.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-12-22T08:35:06Z",
+      "side": 1,
+      "message": "This format is consistent with how we document errors in other sections. We\u0027ll need to audit and rework all of our error response documentation soon. Feel free to propose a patch to do this if you like, but be aware it\u0027s a bigger undertaking than just reorganizing the sections :)",
+      "parentUuid": "df87a7cf_257db6b1",
+      "range": {
+        "startLine": 73,
+        "startChar": 22,
+        "endLine": 73,
+        "endChar": 57
+      },
+      "revId": "29f89cb64285ee8b1396da07404bec4c1509a784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
