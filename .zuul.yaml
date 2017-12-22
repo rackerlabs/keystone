@@ -67,6 +67,22 @@
       - ^keystone/tests/unit/.*$
       - ^releasenotes/.*$
 
+- job:
+    timeout: 7200
+    name: keystone-functional-openstack-helm
+    voting: false
+    run: playbooks/keystone-functional-openstack-helm.yaml
+    required-projects:
+      - openstack/openstack-helm
+      - openstack/openstack-helm-infra
+    irrelevant-files:
+      - ^.*\.rst$
+      - ^api-ref/.*$
+      - ^doc/.*$
+      - ^etc/.*$
+      - ^keystone/tests/unit/.*$
+      - ^releasenotes/.*$
+
 # This job will execute 'tox -e upgrade' from the OSA
 # repo specified in 'osa_test_repo'.
 - job:
@@ -130,6 +146,7 @@
         - keystone-dsvm-functional
         - keystone-dsvm-functional-v3-only
         - keystone-dsvm-py35-functional-v3-only
+        - openstack-keystone-functional
         - openstack-ansible-keystone-rolling-upgrade
     gate:
       jobs:
