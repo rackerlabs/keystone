@@ -1,0 +1,74 @@
+- hosts: all
+  tasks:
+    - name: Deploy Required Packages
+      shell: |
+        set -xe;
+        ../openstack-helm/tools/deployment/developer/00-install-packages.sh
+      args:
+        chdir: "{{ zuul.project.src_dir }}"
+    - name: Deploy Required K8S Packages
+      shell: |
+        set -xe;
+        ../openstack-helm/tools/deployment/developer/01-deploy-k8s.sh
+      vars:
+        OSH_INFRA_PATH: "{{ zuul_osh_infra_relative_path | default('') }}"
+    - name: Setup OS and K8S Clients
+      shell: |
+        set -xe;
+        ../openstack-helm/tools/deployment/developer/02-setup-client.sh
+      args:
+        chdir: "{{ zuul.project.src_dir }}"
+    - name: Deploy Ingress
+      shell: |
+        set -xe;
+        ../openstack-helm/tools/deployment/developer/03-ingress.sh
+      args:
+        chdir: "{{ zuul.project.src_dir }}"
+    - name: Deploy Mariadb
+      shell: |
+        set -xe;
+        ../openstack-helm/tools/deployment/developer/06-mariadb.sh
+      args:
+        chdir: "{{ zuul.project.src_dir }}"
+    - name: Deploy RabbitMQ
+      shell: |
+        set -xe;
+        ../openstack-helm/tools/deployment/developer/07-rabbitmq.sh
+      args:
+        chdir: "{{ zuul.project.src_dir }}"
+    - name: Deploy Memcached
+      shell: |
+        set -xe;
+        ../openstack-helm/tools/deployment/developer/08-memcached.sh
+      args:
+        chdir: "{{ zuul.project.src_dir }}"
+    - name: Build Keystone Image and Deploy
+      shell: |
+        set -xe;
+        docker build https://git.openstack.org/openstack/loci.git --build-arg PROJECT=keystone --tag localhost:5000/keystone --build-arg PROJECT_REPO={{ zuul.project.src_dir }}
+        make -C ../openstack-helm keystone
+        helm install ../openstack-helm/keystone \
+            --namespace=openstack --name=keystone \
+            --set images.tags.bootstrap=localhost:5000/keystone \
+            --set images.tags.test=localhost:5000/keystone \
+            --set images.tags.db_init=localhost:5000/keystone \
+            --set images.tags.keystone_db_sync=localhost:5000/keystone \
+            --set images.tags.db_drop=localhost:5000/keystone \
+            --set images.tags.keystone_fernet_setup=localhost:5000/keystone \
+            --set images.tags.keystone_fernet_rotate=localhost:5000/keystone \
+            --set images.tags.keystone_credential_setup=localhost:5000/keystone \
+            --set images.tags.keystone_credential_rotate=localhost:5000/keystone \
+            --set images.tags.keystone_api=localhost:5000/keystone \
+            --set images.tags.dep_check=localhost:5000/keystone
+
+         ../openstack-helm/tools/deployment/developer/wait-for-pods.sh openstack
+         helm status keystone
+         export OS_CLOUD=openstack_helm
+         openstack endpoint list
+      args:
+        chdir: "{{ zuul.project.src_dir }}"
+    - name: Run keystone functional tests
+      shell: |
+        ./tools/run-functional.sh
+      args:
+        chdir: "{{ zuul.project.src_dir }}"
