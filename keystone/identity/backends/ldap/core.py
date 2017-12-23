@@ -40,6 +40,9 @@ LDAP_MATCHING_RULE_IN_CHAIN = "1.2.840.113556.1.4.1941"
 
 
 class Identity(base.IdentityDriverBase):
+
+    driver_type = 'ldap'
+
     def __init__(self, conf=None):
         super(Identity, self).__init__()
         if conf is None:

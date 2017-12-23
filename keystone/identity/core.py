@@ -1023,10 +1023,26 @@ class Manager(manager.Manager):
 
     def _handle_federated_attributes_in_hints(self, driver, hints):
         federated_attributes = ['idp_id', 'protocol_id', 'unique_id']
+        is_federated_filter = False
+        is_name_filter = False
         for filter_ in hints.filters:
             if filter_['name'] in federated_attributes:
-                return self.shadow_users_api.get_federated_users(hints)
-        return driver.list_users(hints)
+                is_federated_filter = True
+            if filter_['name'] == 'name':
+                is_name_filter = True
+                name = filter_['value']
+
+        if is_federated_filter:
+            return self.shadow_users_api.get_federated_users(hints)
+
+        res = driver.list_users(hints)
+        # Note: If the backend is ldap and the filters contain 'name', we
+        # should get the user from both ldap and shadow user backend.
+        if driver.driver_type == 'ldap' and is_name_filter:
+            fed_res = self.shadow_users_api.get_federated_users_by_name(name)
+            for fed_re in fed_res:
+                res.append(fed_re)
+        return res
 
     @domains_configured
     @exception_translated('user')
