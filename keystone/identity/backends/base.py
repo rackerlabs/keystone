@@ -137,6 +137,8 @@ class IdentityDriverBase(object):
 
     """
 
+    driver_type = None
+
     def _get_conf(self):
         try:
             return self.conf or CONF
