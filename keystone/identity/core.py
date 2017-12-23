@@ -1022,7 +1022,7 @@ class Manager(manager.Manager):
         return hints
 
     def _handle_federated_attributes_in_hints(self, driver, hints):
-        federated_attributes = ['idp_id', 'protocol_id', 'unique_id']
+        federated_attributes = ['idp_id', 'protocol_id', 'unique_id', 'name']
         for filter_ in hints.filters:
             if filter_['name'] in federated_attributes:
                 return self.shadow_users_api.get_federated_users(hints)

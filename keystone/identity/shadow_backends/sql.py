@@ -45,6 +45,7 @@ class ShadowUsers(base.ShadowUsersDriverBase):
 
     def _update_query_with_federated_statements(self, hints, query):
         statements = []
+        name_statements = []
         for filter_ in hints.filters:
             if filter_['name'] == 'idp_id':
                 statements.append(
@@ -55,20 +56,26 @@ class ShadowUsers(base.ShadowUsersDriverBase):
             if filter_['name'] == 'unique_id':
                 statements.append(
                     model.FederatedUser.unique_id == filter_['value'])
+            if filter_['name'] == 'name':
+                name_statements.append(model.User.name == filter_['value'])
+                name_statements.append(
+                    model.FederatedUser.display_name == filter_['value'])
 
         # Remove federated attributes to prevent redundancies from
         # sql.filter_limit_query which filters remaining hints
         hints.filters = [
             x for x in hints.filters if x['name'] not in ('idp_id',
                                                           'protocol_id',
-                                                          'unique_id')]
+                                                          'unique_id',
+                                                          'name')]
         query = query.filter(sqlalchemy.and_(*statements))
+        query = query.filter(sqlalchemy.or_(*name_statements))
         return query
 
     def get_federated_users(self, hints):
         with sql.session_for_read() as session:
-            query = session.query(model.User).outerjoin(model.LocalUser)
-            query = query.filter(model.User.id == model.FederatedUser.user_id)
+            query = session.query(model.User).outerjoin(
+                model.LocalUser).outerjoin(model.FederatedUser)
             query = self._update_query_with_federated_statements(hints, query)
             user_refs = sql.filter_limit_query(model.User, query, hints)
             return [identity_base.filter_user(x.to_dict()) for x in user_refs]
