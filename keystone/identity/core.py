@@ -35,6 +35,7 @@ from keystone.common.validation import validators
 import keystone.conf
 from keystone import exception
 from keystone.i18n import _
+from keystone.identity.backends.ldap import core as ldap_core
 from keystone.identity.mapping_backends import mapping
 from keystone import notifications
 from oslo_utils import timeutils
@@ -1026,7 +1027,15 @@ class Manager(manager.Manager):
         for filter_ in hints.filters:
             if filter_['name'] in federated_attributes:
                 return self.shadow_users_api.get_federated_users(hints)
-        return driver.list_users(hints)
+        res = driver.list_users(hints)
+        # Note: If the backend is ldap and the filters contain 'name', we
+        # should get the user from both ldap and shadow user backend.
+        if (isinstance(driver, ldap_core.Identity) and
+                'name' in [filter_['value'] for filter_ in hints.filters]):
+            fed_res = self.shadow_users_api.get_federated_users_by_name(hints)
+            for fed_re in fed_res:
+                res.append(fed_re)
+        return res
 
     @domains_configured
     @exception_translated('user')
