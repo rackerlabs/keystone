@@ -14,6 +14,7 @@
 
 """Main entry point into the Identity service."""
 
+import copy
 import functools
 import itertools
 import operator
