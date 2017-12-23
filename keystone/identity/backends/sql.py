@@ -163,11 +163,24 @@ class Identity(base.IdentityDriverBase):
     @driver_hints.truncated
     def list_users(self, hints):
         with sql.session_for_read() as session:
-            query = session.query(model.User).outerjoin(model.LocalUser)
+            query = session.query(model.User).outerjoin(
+                model.LocalUser).outerjoin(model.FederatedUser)
             query, hints = self._create_password_expires_query(session, query,
                                                                hints)
+            res = []
+            for filter_ in hints.filters:
+                if filter_['name'] == 'name':
+                    fed_hints = driver_hints.Hints()
+                    fed_hints.add_filter('display_name', filter_['value'])
+                    fed_user_refs = sql.filter_limit_query(model.FederatedUser,
+                                                           query, fed_hints)
+                    for x in fed_user_refs:
+                        res.append(base.filter_user(x.to_dict()))
+                    break
             user_refs = sql.filter_limit_query(model.User, query, hints)
-            return [base.filter_user(x.to_dict()) for x in user_refs]
+            for x in user_refs:
+                res.append(base.filter_user(x.to_dict()))
+            return res
 
     def unset_default_project_id(self, project_id):
         with sql.session_for_write() as session:
