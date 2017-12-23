@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    [`bug 1738895 <https://bugs.launchpad.net/keystone/+bug/1738895>`_]
+    Fixed the bug that federated users can't be listed by `name` filter. Added
+    a new property called `driver_type` for User drivers as well. The defalut
+    value is `None`. The customer user backends should override it to indicate
+    their driver type. For example, `ldap` for LDAP backend or `sql` for SQL
+    backend.
