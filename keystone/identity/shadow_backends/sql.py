@@ -73,6 +73,16 @@ class ShadowUsers(base.ShadowUsersDriverBase):
             user_refs = sql.filter_limit_query(model.User, query, hints)
             return [identity_base.filter_user(x.to_dict()) for x in user_refs]
 
+    def get_federated_users_by_name(self, hints):
+        with sql.session_for_read() as session:
+            query = session.query(model.User).outerjoin(
+                model.LocalUser).outerjoin(model.FederatedUser)
+            for filter_ in hints.filters:
+                if filter_['name'] == 'name':
+                    query = query.filter(
+                        model.FederatedUser.display_name == filter_['value'])
+            return [identity_base.filter_user(x.to_dict()) for x in query]
+
     def get_federated_user(self, idp_id, protocol_id, unique_id):
         # NOTE(notmorgan): Open a session here to ensure .to_dict is called
         # within an active session context. This will prevent lazy-load
