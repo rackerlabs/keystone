@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_4ccb8771",
+        "filename": "keystone/oauth1/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-12-24T12:57:28Z",
+      "side": 1,
+      "message": "The schema here only allow one Property, any reason why role \"id\" and \"name\" cannot be presented together?",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 27
+      },
+      "revId": "c0124a9299ab079b3541dd7aef9f7a7f3a87f446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_8c874f10",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2403,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-12-24T12:57:28Z",
+      "side": 1,
+      "message": "Properly, provide two properties together is not necessary but should be an exception except the case \"id\" and \"name\" are not consistent with each other.",
+      "range": {
+        "startLine": 2401,
+        "startChar": 0,
+        "endLine": 2403,
+        "endChar": 46
+      },
+      "revId": "c0124a9299ab079b3541dd7aef9f7a7f3a87f446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_2ca3a3a0",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2412,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-12-24T12:57:28Z",
+      "side": 1,
+      "message": "Those test can be removed, I cannot see they have anything to do here.",
+      "range": {
+        "startLine": 2407,
+        "startChar": 0,
+        "endLine": 2412,
+        "endChar": 14
+      },
+      "revId": "c0124a9299ab079b3541dd7aef9f7a7f3a87f446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_acb813c8",
+        "filename": "releasenotes/notes/bug-1736875-c790f568c5f4d671.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-12-24T12:57:28Z",
+      "side": 1,
+      "message": "To be more clear, extra attributes here mean a non-id/none-name property.",
+      "range": {
+        "startLine": 6,
+        "startChar": 35,
+        "endLine": 6,
+        "endChar": 51
+      },
+      "revId": "c0124a9299ab079b3541dd7aef9f7a7f3a87f446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_ccbb17c2",
+        "filename": "releasenotes/notes/bug-1736875-c790f568c5f4d671.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-12-24T12:57:28Z",
+      "side": 1,
+      "message": "`roles`",
+      "range": {
+        "startLine": 6,
+        "startChar": 59,
+        "endLine": 6,
+        "endChar": 64
+      },
+      "revId": "c0124a9299ab079b3541dd7aef9f7a7f3a87f446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
