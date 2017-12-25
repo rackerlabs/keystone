@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "bf8cb3f7_2d95dd40",
+        "filename": "keystone/oauth1/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-12-25T01:52:03Z",
+      "side": 1,
+      "message": "Agreed, it\u0027s redundant here, but if user gives \"id\" as well as \"name\", should it be an exception? we can see many examples in this project.",
+      "parentUuid": "bf8cb3f7_4daaa1d2",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 27
+      },
+      "revId": "c0124a9299ab079b3541dd7aef9f7a7f3a87f446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8cb3f7_8c874f10",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 6
