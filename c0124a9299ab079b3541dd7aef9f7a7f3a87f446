@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "bf8cb3f7_cdca3119",
+        "filename": "keystone/oauth1/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-25T02:45:56Z",
+      "side": 1,
+      "message": "I can find other two APIs whose input can contain id and name:\n\n1. issue a token with password:\nin this API, user\u0027s, project\u0027s domain\u0027s id and name can be put together, but Keystone doesn\u0027t raise error, it just use name and ignore id. https://github.com/openstack/keystone/blob/master/keystone/auth/plugins/core.py#L150-L179\n\n2. create trust with role id and name, it\u0027s rejected by schema:\nhttps://github.com/openstack/keystone/blob/master/keystone/trust/schema.py#L16-L28\n\nNow if we raise an other error here if id and name are specified together, it\u0027ll be an other new behavior.",
+      "parentUuid": "bf8cb3f7_2d95dd40",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 27
+      },
+      "revId": "c0124a9299ab079b3541dd7aef9f7a7f3a87f446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8cb3f7_8c874f10",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 6
