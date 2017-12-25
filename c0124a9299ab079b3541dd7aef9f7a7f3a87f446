@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bf8cb3f7_4daaa1d2",
+        "filename": "keystone/oauth1/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-25T01:30:36Z",
+      "side": 1,
+      "message": "a valid input is like:\n\n{\n   \"roles\": [\n        {\"id\": xxx},\n        {\"name\": admin}\n   ] \n}\n\nyou mean it could be like this?\n\n{\n   \"roles\": [\n        {\"id\": admin\u0027s id,\n         \"name\": admin}\n   ] \n}\n\nI think it\u0027s a little redundant.",
+      "parentUuid": "bf8cb3f7_4ccb8771",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 27
+      },
+      "revId": "c0124a9299ab079b3541dd7aef9f7a7f3a87f446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8cb3f7_8c874f10",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 6
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "bf8cb3f7_add24d5b",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2403,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-25T01:30:36Z",
+      "side": 1,
+      "message": "We could do this if we support id and name together here. But I can\u0027t see some case for it. Is there any usage. IMHO, either id or name is enough.",
+      "parentUuid": "bf8cb3f7_8c874f10",
+      "range": {
+        "startLine": 2401,
+        "startChar": 0,
+        "endLine": 2403,
+        "endChar": 46
+      },
+      "revId": "c0124a9299ab079b3541dd7aef9f7a7f3a87f446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8cb3f7_2ca3a3a0",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 6
@@ -59,6 +107,30 @@
       "writtenOn": "2017-12-24T12:57:28Z",
       "side": 1,
       "message": "Those test can be removed, I cannot see they have anything to do here.",
+      "range": {
+        "startLine": 2407,
+        "startChar": 0,
+        "endLine": 2412,
+        "endChar": 14
+      },
+      "revId": "c0124a9299ab079b3541dd7aef9f7a7f3a87f446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_8df669f9",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2412,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-25T01:30:36Z",
+      "side": 1,
+      "message": "I\u0027ll remove it in the next ps.",
+      "parentUuid": "bf8cb3f7_2ca3a3a0",
       "range": {
         "startLine": 2407,
         "startChar": 0,
@@ -105,6 +177,30 @@
       "writtenOn": "2017-12-24T12:57:28Z",
       "side": 1,
       "message": "`roles`",
+      "range": {
+        "startLine": 6,
+        "startChar": 59,
+        "endLine": 6,
+        "endChar": 64
+      },
+      "revId": "c0124a9299ab079b3541dd7aef9f7a7f3a87f446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_2ddddd6f",
+        "filename": "releasenotes/notes/bug-1736875-c790f568c5f4d671.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-25T01:30:36Z",
+      "side": 1,
+      "message": "I\u0027ll update it in the next PS",
+      "parentUuid": "bf8cb3f7_ccbb17c2",
       "range": {
         "startLine": 6,
         "startChar": 59,
