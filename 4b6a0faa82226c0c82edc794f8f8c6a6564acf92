@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_d1e4f9ae",
+        "filename": "keystone/common/sql/expand_repo/versions/032_expand_add_limits_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T20:38:08Z",
+      "side": 1,
+      "message": "This would mean that we could have the following:\n\n  Nova RegionOne cores 10\n  Nova RegionOne cores 20\n\nas two separate limits. Which one is correct?",
+      "range": {
+        "startLine": 40,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 73
+      },
+      "revId": "4b6a0faa82226c0c82edc794f8f8c6a6564acf92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_d1fdd93a",
+        "filename": "keystone/common/sql/expand_repo/versions/032_expand_add_limits_tables.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T20:38:08Z",
+      "side": 1,
+      "message": "Similar comment here, but just with the addition of a project_id\n\n  e3b7a9e42c5648ddbc33c80df325195c Nova us-west cores 10\n  e3b7a9e42c5648ddbc33c80df325195c Nova us-west cores 20\n\nWhich one is correct if the resource limit isn\u0027t a part of the unique constraint?",
+      "range": {
+        "startLine": 56,
+        "startChar": 9,
+        "endLine": 57,
+        "endChar": 46
+      },
+      "revId": "4b6a0faa82226c0c82edc794f8f8c6a6564acf92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_b1c135e7",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2595,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T20:38:08Z",
+      "side": 1,
+      "message": "Thanks for adding this.",
+      "range": {
+        "startLine": 2590,
+        "startChar": 8,
+        "endLine": 2595,
+        "endChar": 9
+      },
+      "revId": "4b6a0faa82226c0c82edc794f8f8c6a6564acf92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
