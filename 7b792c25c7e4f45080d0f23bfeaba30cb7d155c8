@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_7444fb1b",
+        "filename": "keystone/common/policies/limit.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T22:38:42Z",
+      "side": 1,
+      "message": "nit: these could probably be pulled out into their own patch prior to the patch that exposes this API.",
+      "revId": "7b792c25c7e4f45080d0f23bfeaba30cb7d155c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_f44fab31",
+        "filename": "keystone/common/policies/limit.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T22:38:42Z",
+      "side": 1,
+      "message": "We should add scope_types to these operations:\n\n  scope_types\u003d[\u0027system\u0027]\n\nDo we expect to open this functionality up to administrators of their own projects? I\u0027d think that this type of functionality, even though it is specific to a project, would be something that only system administrators should be able to do.",
+      "revId": "7b792c25c7e4f45080d0f23bfeaba30cb7d155c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_b46363b1",
+        "filename": "keystone/common/policies/registered_limit.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T22:38:42Z",
+      "side": 1,
+      "message": "Same comment here as in the previous module. We can pull this out into it\u0027s own change prior to the change that exposes the limits API. That should make this patch a bit smaller and easier to review.\n\nSame comment here as in the previous module. We should add scope types to these definitions:\n\n  scope_types\u003d[\u0027system\u0027]\n\nfor all of these except get_registered_limit and list_registered_limit, which should be:\n\n  scope_types\u003d[\u0027project\u0027, \u0027system\u0027]\n\nsince they are only protected by valid tokens and scope shouldn\u0027t matter.",
+      "revId": "7b792c25c7e4f45080d0f23bfeaba30cb7d155c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
