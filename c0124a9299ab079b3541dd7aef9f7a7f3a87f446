@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "bf8cb3f7_b1d61527",
+        "filename": "keystone/oauth1/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-12-26T19:21:14Z",
+      "side": 1,
+      "message": "I don\u0027t really think it makes sense to allow both id and name, I don\u0027t know why someone would want to use that. Currently the trust schema only allows one property for role so I think following that makes sense.",
+      "parentUuid": "bf8cb3f7_cdca3119",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 27
+      },
+      "revId": "c0124a9299ab079b3541dd7aef9f7a7f3a87f446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8cb3f7_8c874f10",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 6
@@ -131,6 +155,30 @@
       "writtenOn": "2017-12-25T01:30:36Z",
       "side": 1,
       "message": "We could do this if we support id and name together here. But I can\u0027t see some case for it. Is there any usage. IMHO, either id or name is enough.",
+      "parentUuid": "bf8cb3f7_8c874f10",
+      "range": {
+        "startLine": 2401,
+        "startChar": 0,
+        "endLine": 2403,
+        "endChar": 46
+      },
+      "revId": "c0124a9299ab079b3541dd7aef9f7a7f3a87f446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_51b6a9fc",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2403,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-12-26T19:21:14Z",
+      "side": 1,
+      "message": "Validating that would require two lookups, one to get by ID and one to find by name, in order to compare. I think that adds unnecessary complexity when it could be just validated at the schema layer by rejecting multiple properties.",
       "parentUuid": "bf8cb3f7_8c874f10",
       "range": {
         "startLine": 2401,
