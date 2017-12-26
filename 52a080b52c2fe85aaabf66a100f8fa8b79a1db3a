@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_54a53703",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T21:31:22Z",
+      "side": 1,
+      "message": "I\u0027m wondering if we need two different managers here, or if a single UnifiedLimitManager would suffice.\n\nI\u0027m not sure it makes sense to have two pluggable implementations for something that\u0027s tightly coupled like registered limits and limits (e.g. is there ever a case where a registered limit and a project limit come from two different sources)?",
+      "range": {
+        "startLine": 24,
+        "startChar": 6,
+        "endLine": 24,
+        "endChar": 28
+      },
+      "revId": "52a080b52c2fe85aaabf66a100f8fa8b79a1db3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_b487e361",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T21:31:22Z",
+      "side": 1,
+      "message": "nit: this could just be a uuid as well, mainly for consistency with the rest of the ref methods:\n\n  \u0027resource_name\u0027: uuid.uuid4().hex,",
+      "range": {
+        "startLine": 467,
+        "startChar": 25,
+        "endLine": 467,
+        "endChar": 40
+      },
+      "revId": "52a080b52c2fe85aaabf66a100f8fa8b79a1db3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_54f3f70a",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T21:31:22Z",
+      "side": 1,
+      "message": "nit: Same comment here as above.",
+      "range": {
+        "startLine": 479,
+        "startChar": 26,
+        "endLine": 479,
+        "endChar": 39
+      },
+      "revId": "52a080b52c2fe85aaabf66a100f8fa8b79a1db3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_74f63bfc",
+        "filename": "keystone/tests/unit/default_fixtures.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T21:31:22Z",
+      "side": 1,
+      "message": "Does this have to be specific to volumev3? We should be able to make it as general as possible, right?",
+      "range": {
+        "startLine": 169,
+        "startChar": 22,
+        "endLine": 169,
+        "endChar": 30
+      },
+      "revId": "52a080b52c2fe85aaabf66a100f8fa8b79a1db3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_54cc57bb",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T21:31:22Z",
+      "side": 1,
+      "message": "We could break this out into separate tests to highlight each case.\n\nOne for an invalid region and one for an invalid service.",
+      "range": {
+        "startLine": 91,
+        "startChar": 4,
+        "endLine": 91,
+        "endChar": 77
+      },
+      "revId": "52a080b52c2fe85aaabf66a100f8fa8b79a1db3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_34c19381",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T21:31:22Z",
+      "side": 1,
+      "message": "nit: For easier readability these could just be:\n\n  limit_1 \u003d unit.new_registered_limit_ref(...",
+      "range": {
+        "startLine": 129,
+        "startChar": 8,
+        "endLine": 129,
+        "endChar": 29
+      },
+      "revId": "52a080b52c2fe85aaabf66a100f8fa8b79a1db3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_d4bf07f9",
+        "filename": "setup.cfg",
+        "patchSetId": 15
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T21:31:22Z",
+      "side": 1,
+      "message": "I\u0027m wondering if splitting these makes sense. Would there ever be a case where registered limits and limit come from different sources?",
+      "revId": "52a080b52c2fe85aaabf66a100f8fa8b79a1db3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
