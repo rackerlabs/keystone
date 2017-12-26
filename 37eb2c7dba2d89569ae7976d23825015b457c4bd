@@ -1,0 +1,228 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_b1661529",
+        "filename": "keystone/exception.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T21:12:09Z",
+      "side": 1,
+      "message": "nit: Unable to create a limit that doesn\u0027t have a corresponding registered limit.",
+      "range": {
+        "startLine": 468,
+        "startChar": 24,
+        "endLine": 468,
+        "endChar": 30
+      },
+      "revId": "37eb2c7dba2d89569ae7976d23825015b457c4bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_1177c1d6",
+        "filename": "keystone/limit/backends/base.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T21:12:09Z",
+      "side": 1,
+      "message": "We can document this as a parameter below.\n\n  :param registered_limits: a list of dictionaries representing limits to create.",
+      "range": {
+        "startLine": 31,
+        "startChar": 39,
+        "endLine": 31,
+        "endChar": 56
+      },
+      "revId": "37eb2c7dba2d89569ae7976d23825015b457c4bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_d180798e",
+        "filename": "keystone/limit/backends/base.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T21:12:09Z",
+      "side": 1,
+      "message": "nit: same comment here as above.",
+      "range": {
+        "startLine": 40,
+        "startChar": 39,
+        "endLine": 40,
+        "endChar": 56
+      },
+      "revId": "37eb2c7dba2d89569ae7976d23825015b457c4bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_f17b3dbb",
+        "filename": "keystone/limit/backends/base.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T21:12:09Z",
+      "side": 1,
+      "message": "Same comment here as above, which should be applied to the rest of the module.",
+      "range": {
+        "startLine": 63,
+        "startChar": 35,
+        "endLine": 63,
+        "endChar": 54
+      },
+      "revId": "37eb2c7dba2d89569ae7976d23825015b457c4bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_143c8fc6",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T21:12:09Z",
+      "side": 1,
+      "message": "We could make this method simpler and just have it check the limits based on the attributes passed in. If there is a match, return it. Then the manager can handle the duplicate error logic on line 144.",
+      "range": {
+        "startLine": 133,
+        "startChar": 30,
+        "endLine": 133,
+        "endChar": 41
+      },
+      "revId": "37eb2c7dba2d89569ae7976d23825015b457c4bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_5409b729",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T21:12:09Z",
+      "side": 1,
+      "message": "This is hardcoding the hints to always check for a region_id of None. We might want something like:\n\n  hints.add_filter(\u0027region_id\u0027, registered_limit.get(\u0027region_id\u0027))\n\nWhich should default to None if the registered limit passed in doesn\u0027t have a region_id attribute.",
+      "range": {
+        "startLine": 137,
+        "startChar": 38,
+        "endLine": 137,
+        "endChar": 42
+      },
+      "revId": "37eb2c7dba2d89569ae7976d23825015b457c4bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_d435c7db",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T21:12:09Z",
+      "side": 1,
+      "message": "If we simplify the method above, then we might not need this method anymore. The manager layer could handle the cases where there is a duplicate and raise and error. It could also handle the case where nothing is returned from the backend and raise the NoLimitReference error.",
+      "revId": "37eb2c7dba2d89569ae7976d23825015b457c4bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_b450430c",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T21:12:09Z",
+      "side": 1,
+      "message": "Do we handle this because writing the limit fails because of FK constraints? If so - it might be tough for end users to know exactly why the request failed if we don\u0027t give them information about what is missing.",
+      "range": {
+        "startLine": 175,
+        "startChar": 15,
+        "endLine": 175,
+        "endChar": 45
+      },
+      "revId": "37eb2c7dba2d89569ae7976d23825015b457c4bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_745abb2a",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T21:12:09Z",
+      "side": 1,
+      "message": "Same comment here about pulling some of the duplication checking into the manager. We should strive to make the backends as simple as possible and push business logic into the managers.",
+      "range": {
+        "startLine": 215,
+        "startChar": 20,
+        "endLine": 215,
+        "endChar": 30
+      },
+      "revId": "37eb2c7dba2d89569ae7976d23825015b457c4bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_f4456b44",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T21:12:09Z",
+      "side": 1,
+      "message": "Same comment here as above. We might have to check the limit passed in and default to None if we don\u0027t find a region_id key:\n\n  hints.add_filter(\u0027region_id\u0027, limit.get(\u0027region_id\u0027))",
+      "range": {
+        "startLine": 220,
+        "startChar": 8,
+        "endLine": 220,
+        "endChar": 43
+      },
+      "revId": "37eb2c7dba2d89569ae7976d23825015b457c4bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
