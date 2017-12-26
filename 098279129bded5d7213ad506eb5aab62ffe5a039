@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_d14879cd",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-26T20:11:43Z",
+      "side": 1,
+      "message": "It\u0027d be nice to have a single volume service regardless of the API version, but that\u0027s probably a larger problem.",
+      "range": {
+        "startLine": 173,
+        "startChar": 32,
+        "endLine": 173,
+        "endChar": 40
+      },
+      "revId": "098279129bded5d7213ad506eb5aab62ffe5a039",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
