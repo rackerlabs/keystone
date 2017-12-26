@@ -1,0 +1,10 @@
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: wangxiyuan <wangxiyuan@huawei.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Workflow+1: Lance Bragstad <lbragstad@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 26 Dec 2017 21:48:29 +0000
+Reviewed-on: https://review.openstack.org/529667
+Project: openstack/keystone
+Branch: refs/heads/master
