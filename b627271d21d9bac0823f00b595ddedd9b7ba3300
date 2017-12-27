@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_09b78df8",
+        "filename": "keystone/common/sql/expand_repo/versions/032_expand_add_application_credential_table.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T23:10:41Z",
+      "side": 1,
+      "message": "We might want this to be a keystone.common.sql.core.DateTimeInt to avoid the issues with datetime we\u0027ve had in the past.",
+      "range": {
+        "startLine": 30,
+        "startChar": 37,
+        "endLine": 30,
+        "endChar": 45
+      },
+      "revId": "b627271d21d9bac0823f00b595ddedd9b7ba3300",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
