@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_2aaa8ed1",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 2597,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-27T02:03:32Z",
+      "side": 1,
+      "message": "Here is the case for the same service_id,region_id and resource name.",
+      "range": {
+        "startLine": 2595,
+        "startChar": 0,
+        "endLine": 2597,
+        "endChar": 56
+      },
+      "revId": "08af006437a6f94cddadf506893afc0ec3d4f2b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
