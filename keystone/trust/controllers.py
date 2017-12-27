@@ -18,7 +18,6 @@ from oslo_utils import timeutils
 
 from keystone import assignment
 from keystone.common import controller
-from keystone.common import driver_hints
 from keystone.common import utils
 from keystone.common import validation
 from keystone import exception
@@ -81,18 +80,7 @@ class TrustV3(controller.V3Controller):
             if role.get('id'):
                 roles.append({'id': role['id']})
             else:
-                hints = driver_hints.Hints()
-                hints.add_filter("name", role['name'], case_sensitive=True)
-                found_roles = self.role_api.list_roles(hints)
-                if not found_roles:
-                    raise exception.RoleNotFound(
-                        _("Role %s is not defined") % role['name']
-                    )
-                elif len(found_roles) == 1:
-                    roles.append({'id': found_roles[0]['id']})
-                else:
-                    raise exception.AmbiguityError(resource='role',
-                                                   name=role['name'])
+                roles.append(self.role_api.get_role_by_name(role['name']))
         return roles
 
     def _find_redelegated_trust(self, request):
