@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "bf8cb3f7_1d882b1d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T15:45:14Z",
+      "side": 1,
+      "message": "nit: s/now//",
+      "range": {
+        "startLine": 11,
+        "startChar": 57,
+        "endLine": 11,
+        "endChar": 60
+      },
+      "revId": "d6eea9e74a53c0b0830b9643f0197f7d6ef7e0bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8cb3f7_7d6e1796",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
