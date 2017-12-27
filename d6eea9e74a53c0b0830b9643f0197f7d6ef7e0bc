@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_7d6e1796",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T15:27:17Z",
+      "side": 1,
+      "message": "Does this mean we can remove all the dependency bits that make it so managers are attributes of other managers (i.e. the self.\u003cprovider_api\u003e logic)?",
+      "revId": "d6eea9e74a53c0b0830b9643f0197f7d6ef7e0bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
