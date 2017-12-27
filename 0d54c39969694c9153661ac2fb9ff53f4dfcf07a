@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_a3724010",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 4
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T19:00:48Z",
+      "side": 1,
+      "message": "The template [0] shows the request information as listed before the response information (codes).\n\n[0] https://etherpad.openstack.org/p/queens-ptg-keystone-doc-cleanup",
+      "range": {
+        "startLine": 433,
+        "startChar": 0,
+        "endLine": 436,
+        "endChar": 10
+      },
+      "revId": "0d54c39969694c9153661ac2fb9ff53f4dfcf07a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
