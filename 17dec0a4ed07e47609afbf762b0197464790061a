@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_0e29d336",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T20:21:18Z",
+      "side": 1,
+      "message": "Nice - thanks for consolidating this.",
+      "range": {
+        "startLine": 24,
+        "startChar": 6,
+        "endLine": 24,
+        "endChar": 25
+      },
+      "revId": "17dec0a4ed07e47609afbf762b0197464790061a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_ae69c78b",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T20:21:18Z",
+      "side": 1,
+      "message": "We should update this to the new way of referencing other managers:\n\n  from keystone.common import provider_api\n  PROVIDERS \u003d provider_api.ProviderAPIs\n  ...\n  PROVIDERS.catalog_api.get_service(service_id)",
+      "range": {
+        "startLine": 36,
+        "startChar": 16,
+        "endLine": 36,
+        "endChar": 20
+      },
+      "revId": "17dec0a4ed07e47609afbf762b0197464790061a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_ae1787ed",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T20:21:18Z",
+      "side": 1,
+      "message": "nit: since we always require a project ID here, maybe we should change the method name to be more descriptive.\n\n  def list_limits_for_project(self, hints, project_id)",
+      "range": {
+        "startLine": 96,
+        "startChar": 8,
+        "endLine": 96,
+        "endChar": 19
+      },
+      "revId": "17dec0a4ed07e47609afbf762b0197464790061a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_aeec67f3",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T20:21:18Z",
+      "side": 1,
+      "message": "Same comment here about using keystone.common.provider_api module.",
+      "range": {
+        "startLine": 28,
+        "startChar": 15,
+        "endLine": 28,
+        "endChar": 19
+      },
+      "revId": "17dec0a4ed07e47609afbf762b0197464790061a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
