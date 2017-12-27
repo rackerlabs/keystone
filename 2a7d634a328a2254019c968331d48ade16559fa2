@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_a9fea1ab",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1274,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T22:58:19Z",
+      "side": 1,
+      "message": "Unrelated change?",
+      "revId": "2a7d634a328a2254019c968331d48ade16559fa2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_0929cd36",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T22:58:19Z",
+      "side": 1,
+      "message": "I think the stuff Morgan is working on changes these to use keystone.common.provider_api, we should be able to convert this, too.\n\n  from keystone.common import provider_api\n  PROVIDERS \u003d provider_api.ProviderAPIs\n  ...\n  roles.append(PROVIDERS.role_api.get_role_by_name(...))",
+      "range": {
+        "startLine": 84,
+        "startChar": 29,
+        "endLine": 84,
+        "endChar": 33
+      },
+      "revId": "2a7d634a328a2254019c968331d48ade16559fa2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
