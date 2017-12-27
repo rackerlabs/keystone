@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_0e2313aa",
+        "filename": "keystone/common/sql/expand_repo/versions/032_expand_add_limits_tables.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T19:51:09Z",
+      "side": 1,
+      "message": "Ok - I think this make sense now. Thanks for adding the test case for this.",
+      "range": {
+        "startLine": 40,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 73
+      },
+      "revId": "0aa71a0e8c7ad3be89a88302d85b1816ab96771a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_ce3c4bca",
+        "filename": "keystone/common/sql/expand_repo/versions/032_expand_add_limits_tables.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T19:51:09Z",
+      "side": 1,
+      "message": "We sometimes forego using FK is there is a change that the referenced table might not be used (e.g. cases where LDAP is used). But since all this information is part of the catalog API and we only supply one upstream driver for it, then I think we\u0027re OK using FKs here.",
+      "range": {
+        "startLine": 62,
+        "startChar": 3,
+        "endLine": 68,
+        "endChar": 69
+      },
+      "revId": "0aa71a0e8c7ad3be89a88302d85b1816ab96771a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_ae31c7ee",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 2565,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T19:51:09Z",
+      "side": 1,
+      "message": "nit: this could be pulled up to the next line to be consistent with the indentation/format on line 2574.",
+      "range": {
+        "startLine": 2565,
+        "startChar": 19,
+        "endLine": 2565,
+        "endChar": 20
+      },
+      "revId": "0aa71a0e8c7ad3be89a88302d85b1816ab96771a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_4e4efb6f",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 2568,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T19:51:09Z",
+      "side": 1,
+      "message": "Same nit here.",
+      "range": {
+        "startLine": 2568,
+        "startChar": 18,
+        "endLine": 2568,
+        "endChar": 19
+      },
+      "revId": "0aa71a0e8c7ad3be89a88302d85b1816ab96771a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_6e517f0e",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 2611,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T19:51:09Z",
+      "side": 1,
+      "message": "How come this doesn\u0027t fail the uniqueness constraint?",
+      "range": {
+        "startLine": 2610,
+        "startChar": 55,
+        "endLine": 2611,
+        "endChar": 66
+      },
+      "revId": "0aa71a0e8c7ad3be89a88302d85b1816ab96771a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
