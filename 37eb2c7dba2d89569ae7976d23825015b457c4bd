@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bf8cb3f7_aa653e47",
+        "filename": "keystone/exception.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-27T08:10:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf8cb3f7_b1661529",
+      "range": {
+        "startLine": 468,
+        "startChar": 24,
+        "endLine": 468,
+        "endChar": 30
+      },
+      "revId": "37eb2c7dba2d89569ae7976d23825015b457c4bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8cb3f7_1177c1d6",
         "filename": "keystone/limit/backends/base.py",
         "patchSetId": 14
@@ -36,6 +60,30 @@
       "writtenOn": "2017-12-26T21:12:09Z",
       "side": 1,
       "message": "We can document this as a parameter below.\n\n  :param registered_limits: a list of dictionaries representing limits to create.",
+      "range": {
+        "startLine": 31,
+        "startChar": 39,
+        "endLine": 31,
+        "endChar": 56
+      },
+      "revId": "37eb2c7dba2d89569ae7976d23825015b457c4bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_ca4f62bb",
+        "filename": "keystone/limit/backends/base.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-27T08:10:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf8cb3f7_1177c1d6",
       "range": {
         "startLine": 31,
         "startChar": 39,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "bf8cb3f7_4ad112cd",
+        "filename": "keystone/limit/backends/base.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-27T08:10:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf8cb3f7_d180798e",
+      "range": {
+        "startLine": 40,
+        "startChar": 39,
+        "endLine": 40,
+        "endChar": 56
+      },
+      "revId": "37eb2c7dba2d89569ae7976d23825015b457c4bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8cb3f7_f17b3dbb",
         "filename": "keystone/limit/backends/base.py",
         "patchSetId": 14
@@ -82,6 +154,30 @@
       "writtenOn": "2017-12-26T21:12:09Z",
       "side": 1,
       "message": "Same comment here as above, which should be applied to the rest of the module.",
+      "range": {
+        "startLine": 63,
+        "startChar": 35,
+        "endLine": 63,
+        "endChar": 54
+      },
+      "revId": "37eb2c7dba2d89569ae7976d23825015b457c4bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_6ad416be",
+        "filename": "keystone/limit/backends/base.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-27T08:10:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf8cb3f7_f17b3dbb",
       "range": {
         "startLine": 63,
         "startChar": 35,
