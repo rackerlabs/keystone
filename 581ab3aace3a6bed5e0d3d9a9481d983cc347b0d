@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_ae46a74e",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T20:04:55Z",
+      "side": 1,
+      "message": "Is this to make it so we can have region_id be None?",
+      "range": {
+        "startLine": 331,
+        "startChar": 8,
+        "endLine": 332,
+        "endChar": 18
+      },
+      "revId": "581ab3aace3a6bed5e0d3d9a9481d983cc347b0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_6e7adf88",
+        "filename": "keystone/exception.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T20:04:55Z",
+      "side": 1,
+      "message": "nit: We will need to put a space after \"a\" here so that the error renders properly.",
+      "range": {
+        "startLine": 468,
+        "startChar": 67,
+        "endLine": 468,
+        "endChar": 68
+      },
+      "revId": "581ab3aace3a6bed5e0d3d9a9481d983cc347b0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_4e859b59",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T20:04:55Z",
+      "side": 1,
+      "message": "What happens if only one limit in the list of limits is a duplicate? Does the entire write fall for all limits, or does it fail halfway through processing the list?",
+      "range": {
+        "startLine": 90,
+        "startChar": 11,
+        "endLine": 90,
+        "endChar": 54
+      },
+      "revId": "581ab3aace3a6bed5e0d3d9a9481d983cc347b0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_0e7f9367",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T20:04:55Z",
+      "side": 1,
+      "message": "Are all the references written when the session is closed?",
+      "range": {
+        "startLine": 92,
+        "startChar": 16,
+        "endLine": 92,
+        "endChar": 32
+      },
+      "revId": "581ab3aace3a6bed5e0d3d9a9481d983cc347b0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_2e829750",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T20:04:55Z",
+      "side": 1,
+      "message": "Would we ever want to just list all limits, without filtering by project id?",
+      "range": {
+        "startLine": 159,
+        "startChar": 8,
+        "endLine": 159,
+        "endChar": 19
+      },
+      "revId": "581ab3aace3a6bed5e0d3d9a9481d983cc347b0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_6e3bbf9b",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T20:04:55Z",
+      "side": 1,
+      "message": "This seems like a manager method. Looking into the usage in a subsequent patch to see if we can simplify the backend by pulling this up to the manager somehow.",
+      "revId": "581ab3aace3a6bed5e0d3d9a9481d983cc347b0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
