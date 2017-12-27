@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_565a172a",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 767,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-12-27T08:49:26Z",
+      "side": 1,
+      "message": "This is using the wrong header type, I think you want \"-\" instead of \"~\" for it to render as the right header level.",
+      "revId": "9c99c3e756388aaf173a716dc2e4700aacd32485",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_163c8fbd",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 1341,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-12-27T08:49:26Z",
+      "side": 1,
+      "message": "The sphinx build fails for me here, I think because you\u0027re missing the Response header is supposed to come before this since it envelopes the Status Codes section.",
+      "revId": "9c99c3e756388aaf173a716dc2e4700aacd32485",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
