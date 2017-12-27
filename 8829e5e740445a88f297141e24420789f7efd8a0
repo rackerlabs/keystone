@@ -22,6 +22,30 @@
       "revId": "8829e5e740445a88f297141e24420789f7efd8a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_9ac1a131",
+        "filename": "doc/source/admin/identity-keystone-usage-and-features.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-12-27T13:54:28Z",
+      "side": 0,
+      "message": "It may or may not have been a typo or copypasted from another typo. The point made in the commit message is valid, it\u0027s confusing to see it since the word means something completely unrelated to secrecy.",
+      "parentUuid": "1f485f77_ab93df5a",
+      "range": {
+        "startLine": 21,
+        "startChar": 30,
+        "endLine": 21,
+        "endChar": 31
+      },
+      "revId": "8829e5e740445a88f297141e24420789f7efd8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
