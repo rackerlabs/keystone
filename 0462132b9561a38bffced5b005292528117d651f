@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_c360a404",
+        "filename": "api-ref/source/v3/inherit.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T19:25:54Z",
+      "side": 1,
+      "message": "We could use a\n\n  Response\n  --------\n\nHere so that we keep the status codes separate from the request information.",
+      "revId": "0462132b9561a38bffced5b005292528117d651f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_03476c7a",
+        "filename": "api-ref/source/v3/inherit.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T19:25:54Z",
+      "side": 1,
+      "message": "We should stick to the table format we used in the other patches if possible.\n\n  .. rest_status_code:: success status.yaml\n\n   - 204",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 26
+      },
+      "revId": "0462132b9561a38bffced5b005292528117d651f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_e35b6851",
+        "filename": "api-ref/source/v3/inherit.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T19:25:54Z",
+      "side": 1,
+      "message": "We could use a \n\n  Response\n  --------\n\nhere to keep the status codes separate from the request information. This is applicable to all occurrences in this document.",
+      "revId": "0462132b9561a38bffced5b005292528117d651f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_6350b833",
+        "filename": "api-ref/source/v3/inherit.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-27T19:25:54Z",
+      "side": 1,
+      "message": "This is failing to build locally for me at this line. I think it is because we jump from a title header at line 419-420:\n\n  List role assignments\n  \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n\nto\n\n  Parameters\n  ~~~~~~~~~~\n\nwithout a \n\n  Request\n  -------\n\nin between, which the parser picks up as inconsistent.",
+      "range": {
+        "startLine": 510,
+        "startChar": 0,
+        "endLine": 511,
+        "endChar": 10
+      },
+      "revId": "0462132b9561a38bffced5b005292528117d651f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
