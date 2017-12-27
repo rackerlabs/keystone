@@ -1245,6 +1245,21 @@ class RoleManager(manager.Manager):
     def get_role(self, role_id):
         return self.driver.get_role(role_id)
 
+    def get_role_by_name(self, role_name, hints=None):
+        if not hints:
+            hints = driver_hints.Hints()
+        hints.add_filter("name", role_name, case_sensitive=True)
+        found_roles = self.role_api.list_roles(hints)
+        if not found_roles:
+            raise exception.RoleNotFound(
+                _("Role %s is not defined") % role_name
+            )
+        elif len(found_roles) == 1:
+            return {'id': found_roles[0]['id']}
+        else:
+            raise exception.AmbiguityError(resource='role',
+                                           name=role_name)
+
     def create_role(self, role_id, role, initiator=None):
         ret = self.driver.create_role(role_id, role)
         notifications.Audit.created(self._ROLE, role_id, initiator)
@@ -1255,6 +1270,7 @@ class RoleManager(manager.Manager):
     @manager.response_truncated
     def list_roles(self, hints=None):
         return self.driver.list_roles(hints or driver_hints.Hints())
+
 
     def update_role(self, role_id, role, initiator=None):
         original_role = self.driver.get_role(role_id)
