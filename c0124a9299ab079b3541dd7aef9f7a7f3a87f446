@@ -121,6 +121,30 @@
     },
     {
       "key": {
+        "uuid": "bf8cb3f7_74771404",
+        "filename": "keystone/oauth1/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-12-27T10:43:05Z",
+      "side": 1,
+      "message": "Agree, redundant and not make sense, but it\u0027s possible. It depends on how we see the severity of the behavior, raise exception here means user\u0027s request will be rejected even both role id and name are correct.\n\nEnd user won\u0027t know the hard requirement for the schema here unless this is documented anywhere or overwrite \"SchemaValidationError\" in order to let us know what exactly wrong in the body.",
+      "parentUuid": "bf8cb3f7_b1d61527",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 27
+      },
+      "revId": "c0124a9299ab079b3541dd7aef9f7a7f3a87f446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8cb3f7_8c874f10",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 6
@@ -180,6 +204,30 @@
       "side": 1,
       "message": "Validating that would require two lookups, one to get by ID and one to find by name, in order to compare. I think that adds unnecessary complexity when it could be just validated at the schema layer by rejecting multiple properties.",
       "parentUuid": "bf8cb3f7_8c874f10",
+      "range": {
+        "startLine": 2401,
+        "startChar": 0,
+        "endLine": 2403,
+        "endChar": 46
+      },
+      "revId": "c0124a9299ab079b3541dd7aef9f7a7f3a87f446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_d4f5c084",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2403,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-12-27T10:43:05Z",
+      "side": 1,
+      "message": "yes, that kind of comparison is somehow complex, but even ignore either of them is better than raise an exception IMO.",
+      "parentUuid": "bf8cb3f7_51b6a9fc",
       "range": {
         "startLine": 2401,
         "startChar": 0,
