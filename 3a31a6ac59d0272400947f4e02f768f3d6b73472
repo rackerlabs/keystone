@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_d672a749",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1041,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-12-27T09:26:55Z",
+      "side": 1,
+      "message": "Listing users by name in the ldap backend already worked, so I\u0027m unclear why this needed to be changed?",
+      "revId": "3a31a6ac59d0272400947f4e02f768f3d6b73472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_d6d5c7e6",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-12-27T09:26:55Z",
+      "side": 1,
+      "message": "I think hints usually allows a name as a filter so I think it would make sense to fix this method to do the right thing instead of adding a new method, can you explain why a new method was necessary?",
+      "range": {
+        "startLine": 68,
+        "startChar": 34,
+        "endLine": 68,
+        "endChar": 39
+      },
+      "revId": "3a31a6ac59d0272400947f4e02f768f3d6b73472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
