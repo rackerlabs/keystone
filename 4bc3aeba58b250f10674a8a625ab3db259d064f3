@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_ab7d94e8",
+        "filename": "api-ref/source/v3/inherit.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-28T15:47:39Z",
+      "side": 1,
+      "message": "We will have to make sure we modify the name in index.rst in order for this to be discoverable.",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 11
+      },
+      "revId": "4bc3aeba58b250f10674a8a625ab3db259d064f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_6b878cd9",
+        "filename": "api-ref/source/v3/inherit.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-28T15:47:39Z",
+      "side": 1,
+      "message": "This will need a new line and indentation between the rest_status_code:: line and the actual status code. This worked for me locally: http://paste.openstack.org/raw/632650/",
+      "revId": "4bc3aeba58b250f10674a8a625ab3db259d064f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
