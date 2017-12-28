@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_7e5f48e5",
+        "filename": "keystone/conf/fernet_tokens.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-28T16:43:52Z",
+      "side": 1,
+      "message": "nit: This could be pulled out into a common message and used in both places.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 29
+      },
+      "revId": "625dac9cbcc682e6b7cbc4be00f9869ff3829af1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_9e09ecde",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-28T16:43:52Z",
+      "side": 1,
+      "message": "We\u0027ll need a release note here for sure. Especially for deployments who override the default values. They will need to make sure they are specifying the things the need with the new options since the options in the [fernet_tokens] section could be silently ignored in the future.",
+      "revId": "625dac9cbcc682e6b7cbc4be00f9869ff3829af1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
