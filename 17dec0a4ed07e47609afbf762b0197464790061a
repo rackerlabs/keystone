@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_622d7845",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-28T03:04:07Z",
+      "side": 1,
+      "message": "Sure. I\u0027ll.\nBTW, I\u0027d lie to know why we\u0027d better do this since that we have this: https://github.com/openstack/keystone/blob/master/keystone/common/provider_api.py#L79-L84\nIs it will be removed in the future?",
+      "parentUuid": "bf8cb3f7_ae69c78b",
+      "range": {
+        "startLine": 36,
+        "startChar": 16,
+        "endLine": 36,
+        "endChar": 20
+      },
+      "revId": "17dec0a4ed07e47609afbf762b0197464790061a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8cb3f7_ae1787ed",
         "filename": "keystone/limit/core.py",
         "patchSetId": 19
