@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_42eb94af",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1041,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-28T03:20:44Z",
+      "side": 1,
+      "message": "ldap backend doesn\u0027t store shadow users, shadow users\u0027 backend is sql. So when filter users with federated user name (which is \"display_name\" exactly), we should query it from sql, not ldap.",
+      "parentUuid": "bf8cb3f7_d672a749",
+      "revId": "3a31a6ac59d0272400947f4e02f768f3d6b73472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8cb3f7_d6d5c7e6",
         "filename": "keystone/identity/shadow_backends/sql.py",
         "patchSetId": 7
@@ -30,6 +48,30 @@
       "writtenOn": "2017-12-27T09:26:55Z",
       "side": 1,
       "message": "I think hints usually allows a name as a filter so I think it would make sense to fix this method to do the right thing instead of adding a new method, can you explain why a new method was necessary?",
+      "range": {
+        "startLine": 68,
+        "startChar": 34,
+        "endLine": 68,
+        "endChar": 39
+      },
+      "revId": "3a31a6ac59d0272400947f4e02f768f3d6b73472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_22ff7068",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-28T03:20:44Z",
+      "side": 1,
+      "message": "Yeah, we can fix it in this function of cause.\n\nBut It will be a little big work to distinguish sql+sql and ldap+sql.\n\nIf guys dont\u0027 like adding the new function. I\u0027d like to refactor this function instead.",
+      "parentUuid": "bf8cb3f7_d6d5c7e6",
       "range": {
         "startLine": 68,
         "startChar": 34,
