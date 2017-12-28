@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_3ef22008",
+        "filename": "releasenotes/notes/removed-as-of-queens-94c04e88c08f89aa.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-28T16:35:29Z",
+      "side": 1,
+      "message": "We could supplement this with a note saying that operators need to ensure their passwords are hashed with a new standard before upgrading to Queens. We can follow up with Morgan to be sure we\u0027re not missing something here, too.",
+      "revId": "4783d1f19423544e1d43cd7b4a1cd8ab7c955b6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
