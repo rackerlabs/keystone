@@ -4,7 +4,9 @@ features:
     [`blueprint system-scope <https://blueprints.launchpad.net/keystone/+spec/system-scope>`_]
     Keystone now supports the ability to assign roles to users and groups on
     the system. As a result, users and groups with system role assignment will
-    be able to request system-scoped tokens.
+    be able to request system-scoped tokens. Additional logic has been added to
+    ``keystone-manage bootstrap`` to ensure the administrator has a role on the
+    project and system.
 fixes:
   - |
     [`bug 968696 <https://bugs.launchpad.net/keystone/+bug/968696>`_]
