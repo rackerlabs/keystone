@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_cb7578fc",
+        "filename": "api-ref/source/v3/domains-config-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-28T15:51:21Z",
+      "side": 1,
+      "message": "Extra newline?",
+      "revId": "1e16ee1259378cc4b10b7d3f3e492aa9965c4652",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_8b61b03c",
+        "filename": "api-ref/source/v3/domains-config-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-28T15:51:21Z",
+      "side": 1,
+      "message": "Extra newline?",
+      "revId": "1e16ee1259378cc4b10b7d3f3e492aa9965c4652",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_4b5ba886",
+        "filename": "api-ref/source/v3/domains-config-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-28T15:51:21Z",
+      "side": 1,
+      "message": "I checked this out locally to see if the newline here made a difference with the tests. I can remove it and the tests still pass.\n\nDo we add the new line consistently in other places, too?",
+      "revId": "1e16ee1259378cc4b10b7d3f3e492aa9965c4652",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
