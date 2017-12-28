@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_7fa50fb5",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-28T02:55:33Z",
+      "side": 1,
+      "message": "Yes!",
+      "parentUuid": "bf8cb3f7_ae46a74e",
+      "range": {
+        "startLine": 331,
+        "startChar": 8,
+        "endLine": 332,
+        "endChar": 18
+      },
+      "revId": "581ab3aace3a6bed5e0d3d9a9481d983cc347b0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8cb3f7_6e7adf88",
         "filename": "keystone/exception.py",
         "patchSetId": 16
@@ -36,6 +60,30 @@
       "writtenOn": "2017-12-27T20:04:55Z",
       "side": 1,
       "message": "nit: We will need to put a space after \"a\" here so that the error renders properly.",
+      "range": {
+        "startLine": 468,
+        "startChar": 67,
+        "endLine": 468,
+        "endChar": 68
+      },
+      "revId": "581ab3aace3a6bed5e0d3d9a9481d983cc347b0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_1faac384",
+        "filename": "keystone/exception.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-28T02:55:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf8cb3f7_6e7adf88",
       "range": {
         "startLine": 468,
         "startChar": 67,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_9f9d7368",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-28T02:55:33Z",
+      "side": 1,
+      "message": "I tested it before, it will fall for all limits. I think it\u0027s because that we use \"with session..\" here.\nI\u0027ll write a test in the \"Limit provider\" patch.",
+      "parentUuid": "bf8cb3f7_4e859b59",
+      "range": {
+        "startLine": 90,
+        "startChar": 11,
+        "endLine": 90,
+        "endChar": 54
+      },
+      "revId": "581ab3aace3a6bed5e0d3d9a9481d983cc347b0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8cb3f7_0e7f9367",
         "filename": "keystone/limit/backends/sql.py",
         "patchSetId": 16
@@ -82,6 +154,30 @@
       "writtenOn": "2017-12-27T20:04:55Z",
       "side": 1,
       "message": "Are all the references written when the session is closed?",
+      "range": {
+        "startLine": 92,
+        "startChar": 16,
+        "endLine": 92,
+        "endChar": 32
+      },
+      "revId": "581ab3aace3a6bed5e0d3d9a9481d983cc347b0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_e272e87c",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-28T02:55:33Z",
+      "side": 1,
+      "message": "yeah.",
+      "parentUuid": "bf8cb3f7_0e7f9367",
       "range": {
         "startLine": 92,
         "startChar": 16,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_ff791f2f",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-28T02:55:33Z",
+      "side": 1,
+      "message": "Yeah, it should be. I added a TODO in the \"expose API\" patch. I\u0027ll try to support it later.",
+      "parentUuid": "bf8cb3f7_2e829750",
+      "range": {
+        "startLine": 159,
+        "startChar": 8,
+        "endLine": 159,
+        "endChar": 19
+      },
+      "revId": "581ab3aace3a6bed5e0d3d9a9481d983cc347b0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8cb3f7_6e3bbf9b",
         "filename": "keystone/limit/backends/sql.py",
         "patchSetId": 16
@@ -128,6 +248,24 @@
       "writtenOn": "2017-12-27T20:04:55Z",
       "side": 1,
       "message": "This seems like a manager method. Looking into the usage in a subsequent patch to see if we can simplify the backend by pulling this up to the manager somehow.",
+      "revId": "581ab3aace3a6bed5e0d3d9a9481d983cc347b0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_a26ce09c",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-28T02:55:33Z",
+      "side": 1,
+      "message": "hmm. Thinking.",
+      "parentUuid": "bf8cb3f7_6e3bbf9b",
       "revId": "581ab3aace3a6bed5e0d3d9a9481d983cc347b0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
