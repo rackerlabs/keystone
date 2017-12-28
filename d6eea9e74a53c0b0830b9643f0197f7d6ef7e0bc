@@ -39,6 +39,24 @@
       "revId": "d6eea9e74a53c0b0830b9643f0197f7d6ef7e0bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_9fb7b33b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-12-28T00:38:11Z",
+      "side": 1,
+      "message": "Yes. This was not changed because of the way we do things, we just can\u0027t do it until all are converted. It\u0027s a lot of shuffling code, so this was the first stab as a template so we can move forward, regardless of who does the code shuffle.",
+      "parentUuid": "bf8cb3f7_7d6e1796",
+      "revId": "d6eea9e74a53c0b0830b9643f0197f7d6ef7e0bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
