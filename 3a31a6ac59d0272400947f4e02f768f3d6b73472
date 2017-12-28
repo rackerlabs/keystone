@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9f91af0f_3e08e026",
+        "filename": "keystone/identity/backends/base.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-28T16:21:26Z",
+      "side": 1,
+      "message": "This will certainly need a release note, especially is people are maintaining their own identity backends and we\u0027re relying on this property in the manager layer.",
+      "range": {
+        "startLine": 140,
+        "startChar": 4,
+        "endLine": 140,
+        "endChar": 15
+      },
+      "revId": "3a31a6ac59d0272400947f4e02f768f3d6b73472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8cb3f7_d672a749",
         "filename": "keystone/identity/core.py",
         "patchSetId": 7
