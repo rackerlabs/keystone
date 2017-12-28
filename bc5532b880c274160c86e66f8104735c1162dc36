@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_4bdc0846",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-28T15:22:30Z",
+      "side": 1,
+      "message": "Nevermind - it doesn\u0027t look like we\u0027re doing this for other patches.",
+      "parentUuid": "9f91af0f_8b83f056",
+      "revId": "bc5532b880c274160c86e66f8104735c1162dc36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_abd6f44e",
         "filename": "api-ref/source/v3/authenticate-v3.inc",
         "patchSetId": 1
