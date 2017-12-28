@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_8b83f056",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-28T15:13:09Z",
+      "side": 1,
+      "message": "I wonder if we should list these in order... I thought we were in other patches but maybe not.",
+      "revId": "bc5532b880c274160c86e66f8104735c1162dc36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_abd6f44e",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-28T15:13:09Z",
+      "side": 1,
+      "message": "This line fails for me locally because there isn\u0027t a new line between the sections.\n\n    - X-Subject-Token: X-Subject-Token\n  \u003cnewline\u003e\n  Response\n  --------\n\n^ that passes for me locally though.",
+      "revId": "bc5532b880c274160c86e66f8104735c1162dc36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
