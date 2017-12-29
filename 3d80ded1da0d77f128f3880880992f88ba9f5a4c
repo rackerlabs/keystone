@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_3a88e3c4",
+        "filename": "api-ref/source/v3/os-pki.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-29T14:58:19Z",
+      "side": 0,
+      "message": "We\u0027ll need to update index.rst in order for this to build properly:\n\nhttp://paste.openstack.org/raw/633587/",
+      "range": {
+        "startLine": 4,
+        "startChar": 6,
+        "endLine": 4,
+        "endChar": 7
+      },
+      "revId": "3d80ded1da0d77f128f3880880992f88ba9f5a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
