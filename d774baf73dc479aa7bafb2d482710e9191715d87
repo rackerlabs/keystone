@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_e01ace15",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1263,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-12-29T19:09:16Z",
+      "side": 1,
+      "message": "I would recommend always returning a list of the roles with that name rather than a 3xx error if there are multiples.",
+      "range": {
+        "startLine": 1250,
+        "startChar": 0,
+        "endLine": 1263,
+        "endChar": 58
+      },
+      "revId": "d774baf73dc479aa7bafb2d482710e9191715d87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
