@@ -50,6 +50,24 @@
       "revId": "1e16ee1259378cc4b10b7d3f3e492aa9965c4652",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_ed8dec7b",
+        "filename": "api-ref/source/v3/domains-config-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-29T03:42:44Z",
+      "side": 1,
+      "message": "it\u0027s a nit to keep code neat. But it\u0027ll not break the html build. From end user side, you can add blank lines as many as you want. Lol",
+      "parentUuid": "9f91af0f_4b5ba886",
+      "revId": "1e16ee1259378cc4b10b7d3f3e492aa9965c4652",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
