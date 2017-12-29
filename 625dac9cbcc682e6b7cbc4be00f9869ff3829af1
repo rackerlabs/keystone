@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9f91af0f_cd6ca89e",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 720,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-29T03:56:17Z",
+      "side": 1,
+      "message": "I know you have a patch for this change already. So it\u0027s better to use rebase tree for jwt feature. Then it\u0027s easy for review and you don\u0027t need to rebase again and again.",
+      "range": {
+        "startLine": 720,
+        "startChar": 8,
+        "endLine": 720,
+        "endChar": 42
+      },
+      "revId": "625dac9cbcc682e6b7cbc4be00f9869ff3829af1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_7e5f48e5",
         "filename": "keystone/conf/fernet_tokens.py",
         "patchSetId": 3

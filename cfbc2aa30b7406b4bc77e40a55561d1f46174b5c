@@ -22,6 +22,30 @@
       "revId": "cfbc2aa30b7406b4bc77e40a55561d1f46174b5c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_2d475420",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 649,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-29T03:56:17Z",
+      "side": 0,
+      "message": "It has been remove at L708",
+      "parentUuid": "9f91af0f_de50d4d7",
+      "range": {
+        "startLine": 649,
+        "startChar": 4,
+        "endLine": 649,
+        "endChar": 7
+      },
+      "revId": "cfbc2aa30b7406b4bc77e40a55561d1f46174b5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
