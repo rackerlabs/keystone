@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_4b915b52",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 720,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-12-29T23:19:28Z",
+      "side": 1,
+      "message": "yeah this was a bit messy to break up, the new classes above will need to be changed as well so some rebasing might need to happen.",
+      "parentUuid": "9f91af0f_cd6ca89e",
+      "range": {
+        "startLine": 720,
+        "startChar": 8,
+        "endLine": 720,
+        "endChar": 42
+      },
+      "revId": "625dac9cbcc682e6b7cbc4be00f9869ff3829af1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_7e5f48e5",
         "filename": "keystone/conf/fernet_tokens.py",
         "patchSetId": 3
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_6baa1f86",
+        "filename": "keystone/conf/fernet_tokens.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-12-29T23:19:28Z",
+      "side": 1,
+      "message": "sure",
+      "parentUuid": "9f91af0f_7e5f48e5",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 29
+      },
+      "revId": "625dac9cbcc682e6b7cbc4be00f9869ff3829af1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_9e09ecde",
         "filename": "keystone/conf/token.py",
         "patchSetId": 3
@@ -59,6 +107,24 @@
       "writtenOn": "2017-12-28T16:43:52Z",
       "side": 1,
       "message": "We\u0027ll need a release note here for sure. Especially for deployments who override the default values. They will need to make sure they are specifying the things the need with the new options since the options in the [fernet_tokens] section could be silently ignored in the future.",
+      "revId": "625dac9cbcc682e6b7cbc4be00f9869ff3829af1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_8baf6393",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-12-29T23:19:28Z",
+      "side": 1,
+      "message": "will do!",
+      "parentUuid": "9f91af0f_9e09ecde",
       "revId": "625dac9cbcc682e6b7cbc4be00f9869ff3829af1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
