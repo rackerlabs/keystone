@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_52ffd566",
+        "filename": "releasenotes/notes/bug-1738895-342864cd0285bc42.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-29T02:12:42Z",
+      "side": 1,
+      "message": "default*",
+      "range": {
+        "startLine": 6,
+        "startChar": 70,
+        "endLine": 6,
+        "endChar": 77
+      },
+      "revId": "b7c861630daa704798adc7999f63701afad89680",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_922a3de5",
+        "filename": "releasenotes/notes/bug-1738895-342864cd0285bc42.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-29T02:12:42Z",
+      "side": 1,
+      "message": "We could add another statement here saying \"If you maintain out-of-tree identity drivers, you may need to introduce this property accordingly to ensure this behavior is consistent with your deployment\".",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 9,
+        "endChar": 11
+      },
+      "revId": "b7c861630daa704798adc7999f63701afad89680",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
