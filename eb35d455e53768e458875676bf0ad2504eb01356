@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_4dcbb8a4",
+        "filename": "api-ref/source/v3/credentials.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2017-12-29T03:47:36Z",
+      "side": 1,
+      "message": "It\u0027ll be better if we can sort them by number to keep the same with other resources",
+      "revId": "eb35d455e53768e458875676bf0ad2504eb01356",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
