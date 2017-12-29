@@ -406,6 +406,50 @@ class Auth(controller.V3Controller):
             request.context_dict, refs)
 
     @controller.protected()
+    def get_auth_system(self, request):
+        user_id = request.auth_context.get('user_id')
+        group_ids = request.auth_context.get('group_ids')
+
+        user_assignments = []
+        if user_id:
+            try:
+                user_assignments = (
+                    self.assignment_api.list_system_grants_for_user(user_id)
+                )
+            except exception.UserNotFound:  # nosec
+                # federated users have an id but they don't link to anything
+                pass
+
+        group_assignments = []
+        if group_ids:
+            group_assignments = (
+                self.assignment_api.list_system_grants_for_group(group_ids)
+            )
+
+        assignments = self._combine_lists_uniquely(
+            user_assignments, group_assignments
+        )
+        if assignments:
+            response = {
+                'system': [{'all': True}],
+                'links': {
+                    'self': self.base_url(
+                        request.context_dict, path='auth/system'
+                    )
+                }
+            }
+        else:
+            response = {
+                'system': [],
+                'links': {
+                    'self': self.base_url(
+                        request.context_dict, path='auth/system'
+                    )
+                }
+            }
+        return response
+
+    @controller.protected()
     def get_auth_catalog(self, request):
         user_id = request.auth_context.get('user_id')
         project_id = request.auth_context.get('project_id')
