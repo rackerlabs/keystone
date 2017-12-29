@@ -1297,6 +1297,12 @@ response_body_project_tags_required:
   in: body
   required: true
   type: array
+response_body_system_required:
+  description: |
+    A list of systems to access based on role assignments.
+  in: body
+  required: true
+  type: array
 role:
   description: |
     A ``role`` object, containing:
@@ -1456,6 +1462,13 @@ system:
   in: body
   required: false
   type: object
+system_roles_response_body:
+  description: |
+    A list of ``role`` objects containing ``domain_id``, ``id``, ``links``,
+    and ``name`` attributes.
+  in: body
+  required: true
+  type: array
 system_scope_string:
   description: |
     Authorization scope specific to the deployment system (Since v3.10).
@@ -1464,13 +1477,6 @@ system_scope_string:
   in: body
   required: false
   type: string
-system_roles_response_body:
-  description: |
-    A list of ``role`` objects containing ``domain_id``, ``id``, ``links``,
-    and ``name`` attributes.
-  in: body
-  required: true
-  type: array
 token:
   description: |
     A ``token`` object.
