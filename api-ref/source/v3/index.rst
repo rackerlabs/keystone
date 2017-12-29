@@ -190,7 +190,7 @@ This page lists the Identity API operations in the following order:
 * `Service catalog and endpoints`_
 * `Users`_
 * `OS-INHERIT API`_
-* `OS-PKI API`_
+* `OS-PKI`_
 
 .. rest_expand_all::
 
