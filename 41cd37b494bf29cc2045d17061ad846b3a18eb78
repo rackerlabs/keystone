@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_1a8f1fcd",
+        "filename": "api-ref/source/v3/inherit.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-29T14:59:31Z",
+      "side": 0,
+      "message": "We will need to update the index.rst file to not reference the API bit if we remove it here.",
+      "range": {
+        "startLine": 4,
+        "startChar": 11,
+        "endLine": 4,
+        "endChar": 12
+      },
+      "revId": "41cd37b494bf29cc2045d17061ad846b3a18eb78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
