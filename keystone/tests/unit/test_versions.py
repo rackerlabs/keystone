@@ -184,6 +184,8 @@ V3_JSON_HOME_RESOURCES = {
         'href': '/auth/projects'},
     json_home.build_v3_resource_relation('auth_domains'): {
         'href': '/auth/domains'},
+    json_home.build_v3_resource_relation('auth_system'): {
+        'href': '/auth/system'},
     json_home.build_v3_resource_relation('credential'): {
         'href-template': '/credentials/{credential_id}',
         'href-vars': {
