@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_526cb507",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-12-29T02:48:16Z",
+      "side": 1,
+      "message": "These should really just be broken up into more granular policies so that we can have one specifically for granting roles on the system and one for granting roles on projects. Because each requires different scope types.",
+      "range": {
+        "startLine": 82,
+        "startChar": 30,
+        "endLine": 82,
+        "endChar": 42
+      },
+      "revId": "5e0974a0ee3dd3f2fe893d182daba230ceca3757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
