@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_d08e7326",
+        "filename": "api-ref/source/v3/os-pki.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 27372
+      },
+      "writtenOn": "2017-12-31T07:16:49Z",
+      "side": 1,
+      "message": "my suggestion is to put these numbers in order.\n-400\n-401\n-403",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 8
+      },
+      "revId": "e907b2fcae678ad9c93093282240df46bd6f72c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
