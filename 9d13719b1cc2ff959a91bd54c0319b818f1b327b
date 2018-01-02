@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_a9401809",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2381,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-02T19:23:03Z",
+      "side": 1,
+      "message": "_extra_properties? \n\nI assume the space was omitted between \u0027additional\u0027 and \u0027properties\u0027 because of the 80 character line limit?",
+      "range": {
+        "startLine": 2381,
+        "startChar": 51,
+        "endLine": 2381,
+        "endChar": 61
+      },
+      "revId": "9d13719b1cc2ff959a91bd54c0319b818f1b327b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
