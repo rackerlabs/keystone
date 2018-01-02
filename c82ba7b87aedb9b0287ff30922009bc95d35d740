@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_a9f25805",
+        "filename": "releasenotes/notes/bug-1738895-342864cd0285bc42.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-02T19:13:39Z",
+      "side": 1,
+      "message": "\"accordingly\" or we could just remove the word \"according\".",
+      "range": {
+        "startLine": 10,
+        "startChar": 28,
+        "endLine": 10,
+        "endChar": 37
+      },
+      "revId": "c82ba7b87aedb9b0287ff30922009bc95d35d740",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
