@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_6de21bd8",
+        "filename": "api-ref/source/v3/policies.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-02T20:46:52Z",
+      "side": 1,
+      "message": "This was mentioned in other reviews, but it would be good to revisit these status codes in a later change and clarify which ones we actually need and provide some ordering scheme.",
+      "range": {
+        "startLine": 80,
+        "startChar": 1,
+        "endLine": 88,
+        "endChar": 8
+      },
+      "revId": "6d2b2c5e31a8c63f41290563ffd8c5c88979407b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
