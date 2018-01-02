@@ -70,6 +70,30 @@
       "revId": "e907b2fcae678ad9c93093282240df46bd6f72c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_e9bb80e2",
+        "filename": "api-ref/source/v3/os-pki.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-02T19:29:37Z",
+      "side": 1,
+      "message": "++, this would be something good to do in a follow up patch. It seems like a lot of the pages are definitely inconsistent in what status codes are included.\n\nI would be up for making these into a nice rst table if possible, we could add descriptions for them as well then.",
+      "parentUuid": "9f91af0f_69ae90e8",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 8
+      },
+      "revId": "e907b2fcae678ad9c93093282240df46bd6f72c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
