@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_2977283d",
+        "filename": "api-ref/source/v3/regions-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-02T19:41:11Z",
+      "side": 1,
+      "message": "As mentioned in other reviews, it would be good to do a follow-up change to organize these codes better.",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 8
+      },
+      "revId": "f80b8dd2ec74652cf19e44774010428dd78a27d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
