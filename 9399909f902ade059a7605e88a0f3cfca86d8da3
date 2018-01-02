@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_900214b4",
+        "filename": "keystone/limit/backends/base.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-02T21:55:22Z",
+      "side": 1,
+      "message": "nit: we could describe this in terms of types (e.g. a dictionary representing a limit reference.)",
+      "range": {
+        "startLine": 79,
+        "startChar": 18,
+        "endLine": 79,
+        "endChar": 27
+      },
+      "revId": "9399909f902ade059a7605e88a0f3cfca86d8da3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_b0ff18a9",
+        "filename": "keystone/limit/backends/base.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-02T21:55:22Z",
+      "side": 1,
+      "message": "Similar comment here as above. We could describe this as a list of dictionaries, where each dictionary is a limit reference.",
+      "range": {
+        "startLine": 122,
+        "startChar": 8,
+        "endLine": 122,
+        "endChar": 33
+      },
+      "revId": "9399909f902ade059a7605e88a0f3cfca86d8da3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_50d32c39",
+        "filename": "keystone/limit/backends/base.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-02T21:55:22Z",
+      "side": 1,
+      "message": "I\u0027m not sure if I left this comment on this patch or another one. But this feels like we either need to modify the name or add another list_limits method.\n\n  def list_limits_for_project(self, hints, project_id):\n      ...\n  \n  def list_limits(self, hints):\n      ...",
+      "range": {
+        "startLine": 131,
+        "startChar": 4,
+        "endLine": 131,
+        "endChar": 45
+      },
+      "revId": "9399909f902ade059a7605e88a0f3cfca86d8da3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_70943038",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-02T21:55:22Z",
+      "side": 1,
+      "message": "Since this isn\u0027t called anywhere in this module, this must only be here to be called by a manager. In that case, why not just have the manager implement this as a method and keep limit business logic out of the driver?",
+      "revId": "9399909f902ade059a7605e88a0f3cfca86d8da3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
