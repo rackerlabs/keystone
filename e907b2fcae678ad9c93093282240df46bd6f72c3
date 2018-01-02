@@ -22,6 +22,30 @@
       "revId": "e907b2fcae678ad9c93093282240df46bd6f72c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_8fdc4175",
+        "filename": "api-ref/source/v3/os-pki.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-02T07:24:21Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9f91af0f_d08e7326",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 8
+      },
+      "revId": "e907b2fcae678ad9c93093282240df46bd6f72c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
