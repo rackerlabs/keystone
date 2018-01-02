@@ -22,6 +22,30 @@
       "revId": "6e11242125d6aee4c40e2f4da81160c54fe2159c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_4d3717b2",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-02T20:23:53Z",
+      "side": 1,
+      "message": "If we are going to redo how we list the status codes in a later patch like the other pages, we could just leave these like this for now and address this in that later change.",
+      "parentUuid": "df87a7cf_9f8d1833",
+      "range": {
+        "startLine": 157,
+        "startChar": 0,
+        "endLine": 159,
+        "endChar": 57
+      },
+      "revId": "6e11242125d6aee4c40e2f4da81160c54fe2159c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
