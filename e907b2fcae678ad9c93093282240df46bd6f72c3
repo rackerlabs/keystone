@@ -46,6 +46,30 @@
       "revId": "e907b2fcae678ad9c93093282240df46bd6f72c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_69ae90e8",
+        "filename": "api-ref/source/v3/os-pki.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-02T19:10:22Z",
+      "side": 1,
+      "message": "I had that same comment on other patches, but it\u0027s not something we\u0027re doing anywhere else. I think we could do that in another patch set because many of these responses are not specific to keystone (e.g. 503), and could be updated to be more accurate.",
+      "parentUuid": "9f91af0f_8fdc4175",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 8
+      },
+      "revId": "e907b2fcae678ad9c93093282240df46bd6f72c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
