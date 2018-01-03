@@ -16,6 +16,24 @@
       "revId": "0cd15dd0a6514436d07a28fb908169daff7c7a17",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_60c1ab80",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-03T20:40:29Z",
+      "side": 1,
+      "message": "Good call - I\u0027ll fix this. I\u0027m also proposing a patch to nova so that it does the same thing and it should simplify the processing there too.",
+      "parentUuid": "9f91af0f_06731c4f",
+      "revId": "0cd15dd0a6514436d07a28fb908169daff7c7a17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
