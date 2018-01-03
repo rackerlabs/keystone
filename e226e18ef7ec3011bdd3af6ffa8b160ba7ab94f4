@@ -70,6 +70,24 @@
       "revId": "e226e18ef7ec3011bdd3af6ffa8b160ba7ab94f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_a00578c4",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-03T16:30:55Z",
+      "side": 1,
+      "message": "That makes sense and I think it justifies just passing an empty list to avoid this logic. I\u0027ll push up a new patch.",
+      "parentUuid": "9f91af0f_4046ec23",
+      "revId": "e226e18ef7ec3011bdd3af6ffa8b160ba7ab94f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
