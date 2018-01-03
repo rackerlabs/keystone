@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_2056485e",
+        "filename": "keystone/common/sql/contract_repo/versions/032_contract_add_expired_at_int_to_trust.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-03T16:47:06Z",
+      "side": 1,
+      "message": "This is all copypasta from Morgan\u0027s password table migration, so he\u0027d be the authority on why both columns are needed. I suspect we can\u0027t rely on having a specific version of mysql installed. It\u0027s also possible this was only needed for the non-nullable created_at column and not necessary for expires_at column.\n\nFirst off I need to figure out why the update query is failing the migration tests.",
+      "parentUuid": "9f91af0f_9d8f7b22",
+      "revId": "a37c73697607bc73d4cab2e0ca03708eb09f0f06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_fd680788",
         "filename": "keystone/common/sql/data_migration_repo/versions/032_migrate_add_expired_at_int_to_trust.py",
         "patchSetId": 2
@@ -76,6 +94,30 @@
       "writtenOn": "2018-01-03T15:54:18Z",
       "side": 1,
       "message": "This is the compatibility bit between when Queens is deployed and the contract phase happens, right? We should be able to remove this once Queens is out the door?",
+      "range": {
+        "startLine": 53,
+        "startChar": 35,
+        "endLine": 53,
+        "endChar": 54
+      },
+      "revId": "a37c73697607bc73d4cab2e0ca03708eb09f0f06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_9d621b3e",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-03T16:47:06Z",
+      "side": 1,
+      "message": "Yes I think so",
+      "parentUuid": "9f91af0f_ddf3c39d",
       "range": {
         "startLine": 53,
         "startChar": 35,
