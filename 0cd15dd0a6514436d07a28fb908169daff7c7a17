@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_06731c4f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6928
+      },
+      "writtenOn": "2018-01-03T18:03:36Z",
+      "side": 1,
+      "message": "This description is a little misleading now.  The end result is the same, but there isn\u0027t actually any processing of the incoming arguments anymore.",
+      "revId": "0cd15dd0a6514436d07a28fb908169daff7c7a17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
