@@ -34,6 +34,24 @@
       "revId": "e226e18ef7ec3011bdd3af6ffa8b160ba7ab94f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_fd29e79a",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-01-03T16:12:43Z",
+      "side": 1,
+      "message": "No, lets keep the ability to handle CLI arguments explicitly.  We may well end up with them in the long run.",
+      "parentUuid": "9f91af0f_dd2183fd",
+      "revId": "e226e18ef7ec3011bdd3af6ffa8b160ba7ab94f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
