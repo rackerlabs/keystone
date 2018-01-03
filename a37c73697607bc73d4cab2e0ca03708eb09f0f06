@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_9d8f7b22",
+        "filename": "keystone/common/sql/contract_repo/versions/032_contract_add_expired_at_int_to_trust.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-03T15:54:18Z",
+      "side": 1,
+      "message": "If everything is on Queens code and the old expires_at column isn\u0027t used, we could technically drop it. The only question is if it locks the entire table to do so. It doesn\u0027t look like it from the 5.6 support matrix. \n\nhttps://dev.mysql.com/doc/refman/5.6/en/innodb-create-index-overview.html#innodb-online-ddl-summary-grid",
+      "revId": "a37c73697607bc73d4cab2e0ca03708eb09f0f06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_fd680788",
+        "filename": "keystone/common/sql/data_migration_repo/versions/032_migrate_add_expired_at_int_to_trust.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-03T15:54:18Z",
+      "side": 1,
+      "message": "Queens*",
+      "range": {
+        "startLine": 19,
+        "startChar": 32,
+        "endLine": 19,
+        "endChar": 36
+      },
+      "revId": "a37c73697607bc73d4cab2e0ca03708eb09f0f06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_7d12b70b",
+        "filename": "keystone/common/sql/data_migration_repo/versions/032_migrate_add_expired_at_int_to_trust.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-03T15:54:18Z",
+      "side": 1,
+      "message": "Queens*",
+      "range": {
+        "startLine": 21,
+        "startChar": 22,
+        "endLine": 21,
+        "endChar": 26
+      },
+      "revId": "a37c73697607bc73d4cab2e0ca03708eb09f0f06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_ddf3c39d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-03T15:54:18Z",
+      "side": 1,
+      "message": "This is the compatibility bit between when Queens is deployed and the contract phase happens, right? We should be able to remove this once Queens is out the door?",
+      "range": {
+        "startLine": 53,
+        "startChar": 35,
+        "endLine": 53,
+        "endChar": 54
+      },
+      "revId": "a37c73697607bc73d4cab2e0ca03708eb09f0f06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
