@@ -10,6 +10,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import sys
+
 from oslo_policy import policy as common_policy
 
 from keystone.common import policies
@@ -33,6 +35,26 @@ def init():
     if not _ENFORCER:
         _ENFORCER = common_policy.Enforcer(CONF)
         register_rules(_ENFORCER)
+
+
+def get_enforcer():
+    # This method is for use by oslopolicy CLI scripts. Those scripts need the
+    # 'output-file' and 'namespace' options, but having those in sys.argv means
+    # loading keystone config options will fail as those are not expected to
+    # be present. So we pass in an arg list with those stripped out.
+    conf_args = []
+    # Start at 1 because CONF expects the equivalent of sys.argv[1:]
+    i = 1
+    while i < len(sys.argv):
+        if sys.argv[i].strip('-') in ['namespace', 'output-file']:
+            i += 2
+            continue
+        conf_args.append(sys.argv[i])
+        i += 1
+
+    CONF(conf_args, project='keystone')
+    init()
+    return _ENFORCER
 
 
 def enforce(credentials, action, target, do_raise=True):
