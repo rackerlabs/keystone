@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_a3381d3d",
+        "filename": "keystone/common/sql/data_migration_repo/versions/032_migrate_add_expired_at_int_to_trust.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-03T22:05:45Z",
+      "side": 1,
+      "message": "nit: Queens*",
+      "range": {
+        "startLine": 19,
+        "startChar": 32,
+        "endLine": 19,
+        "endChar": 36
+      },
+      "revId": "f9984ed676aa2c748eb7441763c889ed5affa068",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_433fd124",
+        "filename": "keystone/common/sql/data_migration_repo/versions/032_migrate_add_expired_at_int_to_trust.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-03T22:05:45Z",
+      "side": 1,
+      "message": "nit: Queens*",
+      "range": {
+        "startLine": 21,
+        "startChar": 22,
+        "endLine": 21,
+        "endChar": 26
+      },
+      "revId": "f9984ed676aa2c748eb7441763c889ed5affa068",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
