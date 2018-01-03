@@ -52,6 +52,24 @@
       "revId": "e226e18ef7ec3011bdd3af6ffa8b160ba7ab94f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_4046ec23",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2018-01-03T16:27:27Z",
+      "side": 1,
+      "message": "Because of the way this function is invoked the only command line options that will ever be supported will also need to be supported by the program in oslo.policy that is calling this function. Said another way, it is not possible to have command line arguments understood by this function that are not understood by oslopolicy-sample-generator as well. All of the entry points in the other oslo libraries are designed to be invoked without command line argument processing for that reason.",
+      "parentUuid": "9f91af0f_fd29e79a",
+      "revId": "e226e18ef7ec3011bdd3af6ffa8b160ba7ab94f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
