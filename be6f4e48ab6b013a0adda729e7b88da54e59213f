@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_37f450cf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 11589
+      },
+      "writtenOn": "2018-01-03T14:30:09Z",
+      "side": 1,
+      "message": "s/wasn\u0027t removed/is not removing/",
+      "range": {
+        "startLine": 12,
+        "startChar": 26,
+        "endLine": 12,
+        "endChar": 40
+      },
+      "revId": "be6f4e48ab6b013a0adda729e7b88da54e59213f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_cacd405e",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
