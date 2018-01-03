@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_ece61745",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-03T19:31:44Z",
+      "side": 1,
+      "message": "Yeah - we are going to be removing that eventually. That way everything uses PROVIDERS instead of making managers attributes of each other.",
+      "parentUuid": "9f91af0f_622d7845",
+      "range": {
+        "startLine": 36,
+        "startChar": 16,
+        "endLine": 36,
+        "endChar": 20
+      },
+      "revId": "17dec0a4ed07e47609afbf762b0197464790061a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8cb3f7_ae1787ed",
         "filename": "keystone/limit/core.py",
         "patchSetId": 19
