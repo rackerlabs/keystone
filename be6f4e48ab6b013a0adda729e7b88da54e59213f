@@ -82,6 +82,24 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_77873811",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-03T14:44:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f91af0f_fbeb34ad",
+      "revId": "be6f4e48ab6b013a0adda729e7b88da54e59213f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_4ac370ee",
         "filename": "keystone/common/policy.py",
         "patchSetId": 2
@@ -117,6 +135,30 @@
       "side": 1,
       "message": "It\u0027s skipping the option name (--namespace) and the parameter to the option, isn\u0027t it?",
       "parentUuid": "9f91af0f_4ac370ee",
+      "range": {
+        "startLine": 50,
+        "startChar": 17,
+        "endLine": 50,
+        "endChar": 18
+      },
+      "revId": "be6f4e48ab6b013a0adda729e7b88da54e59213f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_37f53084",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-03T14:44:05Z",
+      "side": 1,
+      "message": "yeah - sys.argv is a list so it is skipping the name and the value:\n\n  [\u0027/usr/local/bin/oslopolicy-policy-generator\u0027, \u0027--namespace\u0027, \u0027keystone\u0027]\n\nHere we\u0027d be removing \u0027namespace\u0027 and \u0027keystone\u0027. I attempted to rewrite this to be more pythonic because I thought this was either a list or a dictionary, but then I realized why the original author wrote it this way.\n\nI\u0027m open to suggestions for making this more clear though.",
+      "parentUuid": "9f91af0f_7bc2c435",
       "range": {
         "startLine": 50,
         "startChar": 17,
