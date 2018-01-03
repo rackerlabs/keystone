@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_2172dce6",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-03T02:34:05Z",
+      "side": 1,
+      "message": "Keystone",
+      "range": {
+        "startLine": 43,
+        "startChar": 18,
+        "endLine": 43,
+        "endChar": 22
+      },
+      "revId": "735dcd0825769b9de9c25a609587169d9eb725e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
