@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_0aec88c5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 17068
+      },
+      "writtenOn": "2018-01-03T11:20:13Z",
+      "side": 1,
+      "message": "nit: I am not english native speaker, so I don\u0027t think that sentence sounds right.",
+      "range": {
+        "startLine": 12,
+        "startChar": 26,
+        "endLine": 12,
+        "endChar": 52
+      },
+      "revId": "be6f4e48ab6b013a0adda729e7b88da54e59213f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_cacd405e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 17068
+      },
+      "writtenOn": "2018-01-03T11:20:13Z",
+      "side": 1,
+      "message": "nit: exposes",
+      "revId": "be6f4e48ab6b013a0adda729e7b88da54e59213f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_4ac370ee",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 17068
+      },
+      "writtenOn": "2018-01-03T11:20:13Z",
+      "side": 1,
+      "message": "Maybe I don\u0027t have a fresh mind, but why skip 2, if we need to filter namespace and outputfile? Are namespace and output-file always provided together with the same order?",
+      "range": {
+        "startLine": 50,
+        "startChar": 17,
+        "endLine": 50,
+        "endChar": 18
+      },
+      "revId": "be6f4e48ab6b013a0adda729e7b88da54e59213f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
