@@ -16,6 +16,24 @@
       "revId": "e226e18ef7ec3011bdd3af6ffa8b160ba7ab94f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_dd2183fd",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-03T15:57:31Z",
+      "side": 1,
+      "message": "That was my thought after I realized why the logic looked the way it did. The only other options that would be passed through from oslopolicy-policy-generator would be --config-dir and --config-file, but keystone shouldn\u0027t choke on those since it should expect them anyway...\n\nThat said, should we just pass an empty list and not allow option via the command line?",
+      "parentUuid": "9f91af0f_5d5a53f3",
+      "revId": "e226e18ef7ec3011bdd3af6ffa8b160ba7ab94f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
