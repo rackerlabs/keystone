@@ -42,6 +42,23 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_fbeb34ad",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2018-01-03T13:53:59Z",
+      "side": 1,
+      "message": "Why does something in keystone load nova configuration options?",
+      "revId": "be6f4e48ab6b013a0adda729e7b88da54e59213f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_4ac370ee",
         "filename": "keystone/common/policy.py",
         "patchSetId": 2
@@ -53,6 +70,30 @@
       "writtenOn": "2018-01-03T11:20:13Z",
       "side": 1,
       "message": "Maybe I don\u0027t have a fresh mind, but why skip 2, if we need to filter namespace and outputfile? Are namespace and output-file always provided together with the same order?",
+      "range": {
+        "startLine": 50,
+        "startChar": 17,
+        "endLine": 50,
+        "endChar": 18
+      },
+      "revId": "be6f4e48ab6b013a0adda729e7b88da54e59213f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_7bc2c435",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2018-01-03T13:53:59Z",
+      "side": 1,
+      "message": "It\u0027s skipping the option name (--namespace) and the parameter to the option, isn\u0027t it?",
+      "parentUuid": "9f91af0f_4ac370ee",
       "range": {
         "startLine": 50,
         "startChar": 17,
