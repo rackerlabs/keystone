@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_5190fc4e",
+        "filename": "keystone/common/sql/contract_repo/versions/032_contract_add_expired_at_int_to_trust.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-03T18:50:46Z",
+      "side": 1,
+      "message": "Yeah - dropping the column is kind of a nit. We don\u0027t have to drop it if it causes too many problems, we just won\u0027t use it and that should be good enough.\n\nMore of less a housekeeping thing.",
+      "parentUuid": "9f91af0f_2056485e",
+      "revId": "a37c73697607bc73d4cab2e0ca03708eb09f0f06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_fd680788",
         "filename": "keystone/common/sql/data_migration_repo/versions/032_migrate_add_expired_at_int_to_trust.py",
         "patchSetId": 2
