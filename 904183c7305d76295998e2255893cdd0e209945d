@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_c7a3d29d",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-04T23:21:11Z",
+      "side": 1,
+      "message": "When we remove the sql token storage layer we\u0027re going to have to make sure we repurpose this to be specific to application credentials.",
+      "range": {
+        "startLine": 58,
+        "startChar": 12,
+        "endLine": 60,
+        "endChar": 68
+      },
+      "revId": "904183c7305d76295998e2255893cdd0e209945d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
