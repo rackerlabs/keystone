@@ -849,6 +849,16 @@ explicit_unscoped_string:
   in: body
   required: false
   type: string
+extra_request_body:
+  description: |
+    The extra info for the user.
+    In fact ``extra`` is not the real key name in request body.
+    It can be any word different from that above.
+    For example, ``email`` represents user's email info
+    and ``description`` shows descriptive info of the user.
+  in: body
+  required: false
+  type: string
 group:
   description: |
     A ``group`` object, containing:
