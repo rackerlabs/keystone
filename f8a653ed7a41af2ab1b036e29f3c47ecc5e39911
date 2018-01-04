@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_afa23c4a",
+        "filename": "keystone/limit/backends/base.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-04T02:33:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f91af0f_51f55c82",
+      "range": {
+        "startLine": 128,
+        "startChar": 26,
+        "endLine": 128,
+        "endChar": 41
+      },
+      "revId": "f8a653ed7a41af2ab1b036e29f3c47ecc5e39911",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_710e608e",
         "filename": "keystone/limit/backends/sql.py",
         "patchSetId": 18
@@ -36,6 +60,30 @@
       "writtenOn": "2018-01-03T19:01:02Z",
       "side": 1,
       "message": "This is a public method of the driver but it isn\u0027t part of the interface, which means it\u0027s possible to have code in the manager the relies on this but it might not be in the actual driver. We should either pull this logic into the manager or make this an official part of the driver.\n\nIf someone implements their own backend based on the abstract base class they won\u0027t know about this method until they run the code and something breaks because the manager calls check_unified_limit_without_region and the implementation doesn\u0027t support it.",
+      "range": {
+        "startLine": 184,
+        "startChar": 8,
+        "endLine": 184,
+        "endChar": 42
+      },
+      "revId": "f8a653ed7a41af2ab1b036e29f3c47ecc5e39911",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_6fad1430",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-04T02:33:01Z",
+      "side": 1,
+      "message": "This function is only used for sql driver to fix the UK issue. So I make it private in the new patch set, and move the check logic from manager to sql driver. I think it\u0027s reasonable now. Please check again. Thanks.",
+      "parentUuid": "9f91af0f_710e608e",
       "range": {
         "startLine": 184,
         "startChar": 8,
