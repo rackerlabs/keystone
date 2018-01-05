@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_9a20abb2",
+        "filename": "keystone/application_credential/__init__.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T18:38:49Z",
+      "side": 0,
+      "message": "Aha, I was going to comment on this in the previous patch :)",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 4
+      },
+      "revId": "44ad208eae321a07a55d3b18dd3ac26f520e0d91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
