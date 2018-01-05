@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_e206ed86",
+        "filename": "keystone/common/sql/expand_repo/versions/033_expand_add_application_credential_table.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-05T21:49:44Z",
+      "side": 1,
+      "message": "I\u0027m copying how it\u0027s done with trusts, yes I think that\u0027s the reason. If there\u0027s a preferred way to handle it I\u0027m all ears.",
+      "parentUuid": "9f91af0f_62af3de3",
+      "range": {
+        "startLine": 38,
+        "startChar": 4,
+        "endLine": 44,
+        "endChar": 52
+      },
+      "revId": "6ff950d5173f7caed193cd8fc9d2f40fa56e861c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_62989dbf",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 11
