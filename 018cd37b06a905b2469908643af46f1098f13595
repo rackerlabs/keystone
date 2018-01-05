@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_6ea89176",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T15:46:22Z",
+      "side": 1,
+      "message": "This needs to use PROVIDERS",
+      "range": {
+        "startLine": 515,
+        "startChar": 15,
+        "endLine": 515,
+        "endChar": 19
+      },
+      "revId": "018cd37b06a905b2469908643af46f1098f13595",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_2ebcc9b9",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T15:46:22Z",
+      "side": 1,
+      "message": "This needs to use PROVIDERS",
+      "range": {
+        "startLine": 527,
+        "startChar": 8,
+        "endLine": 527,
+        "endChar": 12
+      },
+      "revId": "018cd37b06a905b2469908643af46f1098f13595",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_ceb2fde6",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 538,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T15:46:22Z",
+      "side": 1,
+      "message": "This needs to use PROVIDERS",
+      "range": {
+        "startLine": 538,
+        "startChar": 8,
+        "endLine": 538,
+        "endChar": 12
+      },
+      "revId": "018cd37b06a905b2469908643af46f1098f13595",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_eeb581ce",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T15:46:22Z",
+      "side": 1,
+      "message": "This needs to use PROVIDERS",
+      "range": {
+        "startLine": 550,
+        "startChar": 8,
+        "endLine": 550,
+        "endChar": 12
+      },
+      "revId": "018cd37b06a905b2469908643af46f1098f13595",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_8eccf56a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1118,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T15:46:22Z",
+      "side": 1,
+      "message": "This needs to use PROVIDERS",
+      "range": {
+        "startLine": 1118,
+        "startChar": 15,
+        "endLine": 1118,
+        "endChar": 19
+      },
+      "revId": "018cd37b06a905b2469908643af46f1098f13595",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
