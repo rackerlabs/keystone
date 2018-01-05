@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_64774dd6",
+        "filename": "releasenotes/notes/bp-system-scope-7d236ee5992d4e20.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-05T20:38:47Z",
+      "side": 1,
+      "message": "yay",
+      "range": {
+        "startLine": 13,
+        "startChar": 39,
+        "endLine": 14,
+        "endChar": 75
+      },
+      "revId": "a5697eab20674e6bdc92b91c375feb10ee684bfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
