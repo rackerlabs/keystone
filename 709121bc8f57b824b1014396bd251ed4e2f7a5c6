@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_08cd47b7",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T02:39:53Z",
+      "side": 1,
+      "message": "This still seems like it should belong in the manager, but the worst case is that we refactor it up a little later.",
+      "range": {
+        "startLine": 86,
+        "startChar": 8,
+        "endLine": 86,
+        "endChar": 43
+      },
+      "revId": "709121bc8f57b824b1014396bd251ed4e2f7a5c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
