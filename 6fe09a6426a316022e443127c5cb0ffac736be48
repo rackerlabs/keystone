@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_fa9537e5",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2570,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T18:26:37Z",
+      "side": 1,
+      "message": "I suppose we could exercise the unique constraint in this test too",
+      "revId": "6fe09a6426a316022e443127c5cb0ffac736be48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
