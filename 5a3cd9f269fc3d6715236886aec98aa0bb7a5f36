@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_e7ffdffe",
+        "filename": "releasenotes/notes/bug-1736875-c790f568c5f4d671.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-05T20:54:30Z",
+      "side": 1,
+      "message": "I wonder if we could change this to something like\n\n\"Keystone now supports authorizing a request token by providing a role name. A `role` in the `roles` parameter can include either a role name or role id, but not both.\"\n\nto provide better clarity on what role parameter should be passed in.",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 9,
+        "endChar": 68
+      },
+      "revId": "5a3cd9f269fc3d6715236886aec98aa0bb7a5f36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
