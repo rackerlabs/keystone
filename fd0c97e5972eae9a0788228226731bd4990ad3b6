@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_4e6eed95",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 3131,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T15:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf8cb3f7_d49e2053",
+      "range": {
+        "startLine": 3131,
+        "startChar": 15,
+        "endLine": 3131,
+        "endChar": 21
+      },
+      "revId": "fd0c97e5972eae9a0788228226731bd4990ad3b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8cb3f7_149d6858",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 9
@@ -36,6 +60,30 @@
       "writtenOn": "2017-12-27T10:24:22Z",
       "side": 1,
       "message": "Is this a fixme-before-this-merges or fixme-later? I think this test is more valuable if it\u0027s checking this response now.",
+      "range": {
+        "startLine": 3133,
+        "startChar": 8,
+        "endLine": 3134,
+        "endChar": 32
+      },
+      "revId": "fd0c97e5972eae9a0788228226731bd4990ad3b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_6e697189",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 3134,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T15:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf8cb3f7_149d6858",
       "range": {
         "startLine": 3133,
         "startChar": 8,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_2e0929dc",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 3147,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T15:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf8cb3f7_94a89877",
+      "range": {
+        "startLine": 3147,
+        "startChar": 38,
+        "endLine": 3147,
+        "endChar": 46
+      },
+      "revId": "fd0c97e5972eae9a0788228226731bd4990ad3b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8cb3f7_f4b244e6",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 9
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_ce0f5ddf",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 3153,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T15:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf8cb3f7_f4b244e6",
+      "range": {
+        "startLine": 3153,
+        "startChar": 66,
+        "endLine": 3153,
+        "endChar": 72
+      },
+      "revId": "fd0c97e5972eae9a0788228226731bd4990ad3b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8cb3f7_14b6c8da",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 9
@@ -105,6 +201,30 @@
       "writtenOn": "2017-12-27T10:24:22Z",
       "side": 1,
       "message": "system",
+      "range": {
+        "startLine": 3159,
+        "startChar": 15,
+        "endLine": 3159,
+        "endChar": 21
+      },
+      "revId": "fd0c97e5972eae9a0788228226731bd4990ad3b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_ee126109",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 3159,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T15:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf8cb3f7_14b6c8da",
       "range": {
         "startLine": 3159,
         "startChar": 15,
