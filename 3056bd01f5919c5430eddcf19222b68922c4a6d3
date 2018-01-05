@@ -1,0 +1,147 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_08ac679e",
+        "filename": "keystone/tests/unit/default_fixtures.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T03:03:25Z",
+      "side": 1,
+      "message": "If I recall correctly, these might get created on every test run... Something that might be more optimal from a test execution perspective would be to leverage setUpClass to bootstrap these resources specifically for unified limit tests and then tear them down accordingly.",
+      "range": {
+        "startLine": 168,
+        "startChar": 0,
+        "endLine": 175,
+        "endChar": 52
+      },
+      "revId": "3056bd01f5919c5430eddcf19222b68922c4a6d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_88f157d0",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T03:03:25Z",
+      "side": 1,
+      "message": "nit: we might be able to make these assertions a little more robust by asserting the entire reference is in the response, instead of just the id.",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 69
+      },
+      "revId": "3056bd01f5919c5430eddcf19222b68922c4a6d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_68c09351",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T03:03:25Z",
+      "side": 1,
+      "message": "nit: we could break these into their own test cases",
+      "revId": "3056bd01f5919c5430eddcf19222b68922c4a6d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_28afeb94",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T03:03:25Z",
+      "side": 1,
+      "message": "For the common resources here, like service and region, we should be able to use a setUpClass to create those things if they don\u0027t need to be recreated between test cases.",
+      "revId": "3056bd01f5919c5430eddcf19222b68922c4a6d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_e879032f",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T03:03:25Z",
+      "side": 1,
+      "message": "why doesn\u0027t this one get created?",
+      "range": {
+        "startLine": 110,
+        "startChar": 0,
+        "endLine": 113,
+        "endChar": 76
+      },
+      "revId": "3056bd01f5919c5430eddcf19222b68922c4a6d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_688e532f",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T03:03:25Z",
+      "side": 1,
+      "message": "It might be easier to tell that both of them fail creation by pulling them out into their own statements:\n\n  self.assertRaises(exception.Conflict, ..., [registered_limit_2])\n  self.assertRaises(exception.Conflict, ..., [registered_limit_3])",
+      "range": {
+        "startLine": 114,
+        "startChar": 0,
+        "endLine": 116,
+        "endChar": 67
+      },
+      "revId": "3056bd01f5919c5430eddcf19222b68922c4a6d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_c8a3df9d",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T03:03:25Z",
+      "side": 1,
+      "message": "nit: same comment here about pulling these out into their own test cases",
+      "revId": "3056bd01f5919c5430eddcf19222b68922c4a6d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
