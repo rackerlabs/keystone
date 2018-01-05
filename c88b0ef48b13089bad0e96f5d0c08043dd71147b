@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_b9dd8143",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1040,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-05T16:32:30Z",
+      "side": 1,
+      "message": "This breaks if the user filters by both name and e.g. idp_id",
+      "revId": "c88b0ef48b13089bad0e96f5d0c08043dd71147b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_b90ee18a",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1045,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-05T16:32:30Z",
+      "side": 1,
+      "message": "There shouldn\u0027t be any reason the ldap driver needs to be special",
+      "revId": "c88b0ef48b13089bad0e96f5d0c08043dd71147b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_59e0f596",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1050,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-05T16:32:30Z",
+      "side": 1,
+      "message": "I don\u0027t think any of the changes in this file are needed, I am able to get this to work just fine for sql, ldap, and federated users without this manager change.",
+      "revId": "c88b0ef48b13089bad0e96f5d0c08043dd71147b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_198eed2d",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-05T16:32:30Z",
+      "side": 1,
+      "message": "You don\u0027t need a new method, you can fix get_federated_users like this:\n\ndiff --git a/keystone/identity/shadow_backends/sql.py b/keystone/identity/shadow_backends/sql.py\nindex ccf420c..839736c 100644\n--- a/keystone/identity/shadow_backends/sql.py\n+++ b/keystone/identity/shadow_backends/sql.py\n@@ -67,9 +67,17 @@ class ShadowUsers(base.ShadowUsersDriverBase):\n \n     def get_federated_users(self, hints):\n         with sql.session_for_read() as session:\n-            query \u003d session.query(model.User).outerjoin(model.LocalUser)\n+            query \u003d session.query(model.User).outerjoin(model.LocalUser).outerjoin(model.FederatedUser)\n             query \u003d query.filter(model.User.id \u003d\u003d model.FederatedUser.user_id)\n             query \u003d self._update_query_with_federated_statements(hints, query)\n+            name_filter \u003d None\n+            for filter_ in hints.filters:\n+                if filter_[\u0027name\u0027] \u003d\u003d \u0027name\u0027:\n+                    name_filter \u003d filter_\n+                    query \u003d query.filter(model.FederatedUser.display_name \u003d\u003d name_filter[\u0027value\u0027])\n+                    break\n+            if name_filter:\n+                hints.filters.remove(name_filter)\n             user_refs \u003d sql.filter_limit_query(model.User, query, hints)\n             return [identity_base.filter_user(x.to_dict()) for x in user_refs]",
+      "revId": "c88b0ef48b13089bad0e96f5d0c08043dd71147b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
