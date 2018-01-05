@@ -82,6 +82,28 @@ That documentation will help you configure your development environment and run
 keystone tests using `tox`, which uses virtualenv_ to isolate the Python
 environment. After running it, notice the existence of a `.tox` directory.
 
+In addition to running `bindep`, you may need to install some essential build
+libraries if your environment does not have them already. The command to
+install these libraries differs based on the distribution being used:
+
+Ubuntu
+
+.. code-block:: bash
+
+    $ apt install build-essential
+
+RDO
+
+.. code-block:: bash
+
+    $ yum/dnf install make automake gcc gcc-c++ kernel-devel
+
+SUSE
+
+.. code-block:: bash
+
+    $ zypper install -t pattern devel_basis
+
 .. _`Project Team Guide: Python Project Guide`: https://docs.openstack.org/project-team-guide/project-setup/python.html
 .. _virtualenv: http://www.virtualenv.org/
 
