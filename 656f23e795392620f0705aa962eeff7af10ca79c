@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_7d235c06",
+        "filename": "doc/source/contributor/set-up-keystone.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-05T22:50:27Z",
+      "side": 1,
+      "message": "I have not used openSUSE so this may not be 100% correct.",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 43
+      },
+      "revId": "656f23e795392620f0705aa962eeff7af10ca79c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
