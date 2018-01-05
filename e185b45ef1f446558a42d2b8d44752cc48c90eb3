@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_d18619dc",
+        "filename": "doc/source/admin/identity-tokens.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-05T19:48:35Z",
+      "side": 1,
+      "message": "nit: the \"should\" here is a bit weird, \"These operations require...\" looks better imo.",
+      "range": {
+        "startLine": 74,
+        "startChar": 31,
+        "endLine": 74,
+        "endChar": 37
+      },
+      "revId": "e185b45ef1f446558a42d2b8d44752cc48c90eb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
