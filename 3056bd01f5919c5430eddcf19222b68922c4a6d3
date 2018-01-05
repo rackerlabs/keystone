@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_e83a6332",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-05T03:34:20Z",
+      "side": 1,
+      "message": "Sure",
+      "parentUuid": "9f91af0f_88f157d0",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 69
+      },
+      "revId": "3056bd01f5919c5430eddcf19222b68922c4a6d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_68c09351",
         "filename": "keystone/tests/unit/limit/test_backends.py",
         "patchSetId": 23
@@ -59,6 +83,24 @@
       "writtenOn": "2018-01-05T03:03:25Z",
       "side": 1,
       "message": "nit: we could break these into their own test cases",
+      "revId": "3056bd01f5919c5430eddcf19222b68922c4a6d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_88fe3735",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-05T03:34:20Z",
+      "side": 1,
+      "message": "sure",
+      "parentUuid": "9f91af0f_68c09351",
       "revId": "3056bd01f5919c5430eddcf19222b68922c4a6d3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -93,6 +135,30 @@
       "writtenOn": "2018-01-05T03:03:25Z",
       "side": 1,
       "message": "why doesn\u0027t this one get created?",
+      "range": {
+        "startLine": 110,
+        "startChar": 0,
+        "endLine": 113,
+        "endChar": 76
+      },
+      "revId": "3056bd01f5919c5430eddcf19222b68922c4a6d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_e8ffc331",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-05T03:34:20Z",
+      "side": 1,
+      "message": "Here I want to test a case that when create more than one registered limit in one request, if one of the registered limits is wrong, all of them will not be created.",
+      "parentUuid": "9f91af0f_e879032f",
       "range": {
         "startLine": 110,
         "startChar": 0,
