@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_ae70d4a6",
+        "filename": "keystone/application_credential/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T21:32:24Z",
+      "side": 1,
+      "message": "exposed*?",
+      "range": {
+        "startLine": 42,
+        "startChar": 25,
+        "endLine": 42,
+        "endChar": 31
+      },
+      "revId": "9ea86466c4e39a20bc1bb82880fae8344b176265",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_6e988cbf",
+        "filename": "keystone/application_credential/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T21:32:24Z",
+      "side": 1,
+      "message": "Not to confuse things more... but what happens if I want to create a system scope application credential?",
+      "range": {
+        "startLine": 84,
+        "startChar": 8,
+        "endLine": 87,
+        "endChar": 58
+      },
+      "revId": "9ea86466c4e39a20bc1bb82880fae8344b176265",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
