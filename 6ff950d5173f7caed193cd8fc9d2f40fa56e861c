@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_62af3de3",
+        "filename": "keystone/common/sql/expand_repo/versions/033_expand_add_application_credential_table.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T21:34:36Z",
+      "side": 1,
+      "message": "Any reason to have this as a separate table? Is it to make the association of multiple roles to a single application credential simpler?",
+      "range": {
+        "startLine": 38,
+        "startChar": 4,
+        "endLine": 44,
+        "endChar": 52
+      },
+      "revId": "6ff950d5173f7caed193cd8fc9d2f40fa56e861c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_62989dbf",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2540,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-05T21:34:36Z",
+      "side": 1,
+      "message": "We\u0027ll need another assertion for the application_credential_role table if we decide to keep that separate.",
+      "range": {
+        "startLine": 2539,
+        "startChar": 8,
+        "endLine": 2540,
+        "endChar": 71
+      },
+      "revId": "6ff950d5173f7caed193cd8fc9d2f40fa56e861c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
