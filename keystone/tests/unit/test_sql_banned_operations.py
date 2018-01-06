@@ -18,8 +18,10 @@ import os
 import fixtures
 from migrate.versioning import api as versioning_api
 from migrate.versioning import repository
-from oslo_db.sqlalchemy import test_base
+from oslo_db.sqlalchemy import enginefacade
+from oslo_db.sqlalchemy import test_fixtures as db_fixtures
 from oslo_db.sqlalchemy import test_migrations
+from oslotest import base as test_base
 import sqlalchemy
 import testtools
 
@@ -199,18 +201,38 @@ class KeystoneMigrationsCheckers(test_migrations.WalkVersionsMixin):
 
 
 class TestKeystoneMigrationsMySQL(
-        KeystoneMigrationsCheckers, test_base.MySQLOpportunisticTestCase):
-    pass
+        KeystoneMigrationsCheckers,
+        db_fixtures.OpportunisticDBTestMixin,
+        test_base.BaseTestCase):
+    FIXTURE = db_fixtures.MySQLOpportunisticFixture
+
+    def setUp(self):
+        super(TestKeystoneMigrationsMySQL, self).setUp()
+        self.engine = enginefacade.writer.get_engine()
+        self.sessionmaker = enginefacade.writer.get_sessionmaker()
 
 
 class TestKeystoneMigrationsPostgreSQL(
-        KeystoneMigrationsCheckers, test_base.PostgreSQLOpportunisticTestCase):
-    pass
+        KeystoneMigrationsCheckers,
+        db_fixtures.OpportunisticDBTestMixin,
+        test_base.BaseTestCase):
+    FIXTURE = db_fixtures.PostgresqlOpportunisticFixture
+
+    def setUp(self):
+        super(TestKeystoneMigrationsPostgreSQL, self).setUp()
+        self.engine = enginefacade.writer.get_engine()
+        self.sessionmaker = enginefacade.writer.get_sessionmaker()
 
 
 class TestKeystoneMigrationsSQLite(
-        KeystoneMigrationsCheckers, test_base.DbTestCase):
-    pass
+        KeystoneMigrationsCheckers,
+        db_fixtures.OpportunisticDBTestMixin,
+        test_base.BaseTestCase):
+
+    def setUp(self):
+        super(TestKeystoneMigrationsSQLite, self).setUp()
+        self.engine = enginefacade.writer.get_engine()
+        self.sessionmaker = enginefacade.writer.get_sessionmaker()
 
 
 class TestKeystoneExpandSchemaMigrations(
@@ -251,14 +273,26 @@ class TestKeystoneExpandSchemaMigrations(
 
 class TestKeystoneExpandSchemaMigrationsMySQL(
         TestKeystoneExpandSchemaMigrations,
-        test_base.MySQLOpportunisticTestCase):
-    pass
+        db_fixtures.OpportunisticDBTestMixin,
+        test_base.BaseTestCase):
+    FIXTURE = db_fixtures.MySQLOpportunisticFixture
+
+    def setUp(self):
+        super(TestKeystoneExpandSchemaMigrationsMySQL, self).setUp()
+        self.engine = enginefacade.writer.get_engine()
+        self.sessionmaker = enginefacade.writer.get_sessionmaker()
 
 
 class TestKeystoneExpandSchemaMigrationsPostgreSQL(
         TestKeystoneExpandSchemaMigrations,
-        test_base.PostgreSQLOpportunisticTestCase):
-    pass
+        db_fixtures.OpportunisticDBTestMixin,
+        test_base.BaseTestCase):
+    FIXTURE = db_fixtures.PostgresqlOpportunisticFixture
+
+    def setUp(self):
+        super(TestKeystoneExpandSchemaMigrationsPostgreSQL, self).setUp()
+        self.engine = enginefacade.writer.get_engine()
+        self.sessionmaker = enginefacade.writer.get_sessionmaker()
 
 
 class TestKeystoneDataMigrations(
@@ -292,18 +326,19 @@ class TestKeystoneDataMigrations(
 
 class TestKeystoneDataMigrationsMySQL(
         TestKeystoneDataMigrations,
-        test_base.MySQLOpportunisticTestCase):
-    pass
+        db_fixtures.OpportunisticDBTestMixin):
+    FIXTURE = db_fixtures.MySQLOpportunisticFixture
 
 
 class TestKeystoneDataMigrationsPostgreSQL(
         TestKeystoneDataMigrations,
-        test_base.PostgreSQLOpportunisticTestCase):
-    pass
+        db_fixtures.OpportunisticDBTestMixin):
+    FIXTURE = db_fixtures.PostgresqlOpportunisticFixture
 
 
 class TestKeystoneDataMigrationsSQLite(
-        TestKeystoneDataMigrations, test_base.DbTestCase):
+        TestKeystoneDataMigrations,
+        db_fixtures.OpportunisticDBTestMixin):
     pass
 
 
@@ -353,18 +388,19 @@ class TestKeystoneContractSchemaMigrations(
 
 class TestKeystoneContractSchemaMigrationsMySQL(
         TestKeystoneContractSchemaMigrations,
-        test_base.MySQLOpportunisticTestCase):
-    pass
+        db_fixtures.OpportunisticDBTestMixin):
+    FIXTURE = db_fixtures.MySQLOpportunisticFixture
 
 
 class TestKeystoneContractSchemaMigrationsPostgreSQL(
         TestKeystoneContractSchemaMigrations,
-        test_base.PostgreSQLOpportunisticTestCase):
-    pass
+        db_fixtures.OpportunisticDBTestMixin):
+    FIXTURE = db_fixtures.PostgresqlOpportunisticFixture
 
 
 class TestKeystoneContractSchemaMigrationsSQLite(
-        TestKeystoneContractSchemaMigrations, test_base.DbTestCase):
+        TestKeystoneContractSchemaMigrations,
+        db_fixtures.OpportunisticDBTestMixin):
     # In Sqlite an alter will appear as a create, so if we check for creates
     # we will get false positives.
     def setUp(self):
