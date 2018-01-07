@@ -69,6 +69,30 @@
       "revId": "904183c7305d76295998e2255893cdd0e209945d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_2e6112d4",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-07T21:08:04Z",
+      "side": 1,
+      "message": "Yeah, the controller uses _assign_unique_id to insert an ID into the dict, which is consistent with how other modules work. What\u0027s inconsistent here is most managers/drivers include a separate argument for the ID but then never use it. Not sure if there\u0027s a real reason for that or if I should add that just for consistency.",
+      "parentUuid": "9f91af0f_ee4d7c72",
+      "range": {
+        "startLine": 98,
+        "startChar": 44,
+        "endLine": 98,
+        "endChar": 66
+      },
+      "revId": "904183c7305d76295998e2255893cdd0e209945d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
