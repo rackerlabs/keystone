@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_bee9d5b7",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 852,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-07T00:03:32Z",
+      "side": 1,
+      "message": "Not sure if this directly conflicts with how we decided to name these parameters, but it seems like we could either use this with a generic description linked below and reuse this parameter for the other resources within keystone that allow extra attributes, or rename this to something like \"users_extra_request_body\" and make the description something specific regarding users.",
+      "range": {
+        "startLine": 852,
+        "startChar": 0,
+        "endLine": 852,
+        "endChar": 18
+      },
+      "revId": "17a36297cfcec32e61f551321ebf147df1756e68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_1ed8011c",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 858,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-07T00:03:32Z",
+      "side": 1,
+      "message": "Below is a more generic description to describe extra, which could be reused for other resources in keystone, like projects.\n\n\"The extra attributes of a resource.\nThe actual name ``extra`` is not the key name in the request body, but rather a collection of any attributes that a resource may contain that are not part of the resource\u0027s default attributes. Generally these are custom fields that are added to a resource in keystone by operators for their own specific uses, such as ``email`` and ``description`` for users.\"",
+      "range": {
+        "startLine": 854,
+        "startChar": 4,
+        "endLine": 858,
+        "endChar": 59
+      },
+      "revId": "17a36297cfcec32e61f551321ebf147df1756e68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
