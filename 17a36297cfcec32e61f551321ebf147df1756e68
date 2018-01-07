@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_44b31c4e",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 852,
+      "author": {
+        "id": 27372
+      },
+      "writtenOn": "2018-01-07T09:19:24Z",
+      "side": 1,
+      "message": "Hugo, Thanks for your good advice. To reuse this parameter I decide to use \u0027extra_request_body\u0027 within a generic description. I\u0027am not a native, and my description is not so accurate.\nyour description linkd below looks good to me. thanks again.",
+      "parentUuid": "9f91af0f_bee9d5b7",
+      "range": {
+        "startLine": 852,
+        "startChar": 0,
+        "endLine": 852,
+        "endChar": 18
+      },
+      "revId": "17a36297cfcec32e61f551321ebf147df1756e68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_1ed8011c",
         "filename": "api-ref/source/v3/parameters.yaml",
         "patchSetId": 2
