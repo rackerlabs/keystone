@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_5ff507ec",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-08T22:20:15Z",
+      "side": 1,
+      "message": "We take a similar approach in the resource manager, but doing this in the federation manager creates a circular dependency [0]. To prove that this worked I pulled this up the controller layer (which might not be the right place for this). \n\nOne alternative we can do is to create a called back to revoke the token cache instead.\n\n[0] https://github.com/openstack/keystone/blob/2c2cc6ce2e12fc4758cf5e45cb20269a15fcb834/keystone/resource/core.py#L382-L392",
+      "revId": "1316f7b0dfabc9d20cdfca74786809bd1d209189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
