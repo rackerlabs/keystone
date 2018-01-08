@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_df2fd785",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1825,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-08T22:20:15Z",
+      "side": 1,
+      "message": "Not sure if this is the best way to do this... or if this should just be pulled into the test itself.",
+      "revId": "b386ba9b1344118ca1b4b122eaab60c0d57531ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
