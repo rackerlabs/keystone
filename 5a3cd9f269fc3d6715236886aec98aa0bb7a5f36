@@ -22,6 +22,30 @@
       "revId": "5a3cd9f269fc3d6715236886aec98aa0bb7a5f36",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_d1f5a7ee",
+        "filename": "releasenotes/notes/bug-1736875-c790f568c5f4d671.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-08T01:37:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f91af0f_e7ffdffe",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 9,
+        "endChar": 68
+      },
+      "revId": "5a3cd9f269fc3d6715236886aec98aa0bb7a5f36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
