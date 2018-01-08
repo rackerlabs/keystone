@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_2a44901a",
+        "filename": "api-ref/source/v3-ext/trust.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-08T14:40:12Z",
+      "side": 1,
+      "message": "We should format this into a Response section and make the following list a query parameter list so that we consistent with other sections.",
+      "revId": "65ef4ce5a9201e8f86b7687d7b8e42b01efa5a04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
