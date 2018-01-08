@@ -93,6 +93,30 @@
       "revId": "904183c7305d76295998e2255893cdd0e209945d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_ff6dfb31",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-08T22:46:22Z",
+      "side": 1,
+      "message": "That\u0027s a good question and I\u0027m not sure I know why that is... I think I\u0027d be fine if we just keep everything in the dict and not include an argument we don\u0027t use. That feels more DRY to me. But whatever you decide will be OK with me.\n\nSide note: but we should probably fix that in other places, too, but obviously not a pressing thing.",
+      "parentUuid": "9f91af0f_2e6112d4",
+      "range": {
+        "startLine": 98,
+        "startChar": 44,
+        "endLine": 98,
+        "endChar": 66
+      },
+      "revId": "904183c7305d76295998e2255893cdd0e209945d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
