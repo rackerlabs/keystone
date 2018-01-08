@@ -91,6 +91,8 @@ class Manager(manager.Manager):
                     self._delete_user_project_tokens_callback],
                 [notifications.INVALIDATE_USER_OAUTH_CONSUMER_TOKENS,
                     self._delete_user_oauth_consumer_tokens_callback],
+                [notifications.INVALIDATE_TOKEN_CACHE,
+                    self._invalidate_token_cache_callback],
             ]
         }
 
@@ -325,3 +327,23 @@ class Manager(manager.Manager):
         if CONF.token.cache_on_issue:
             # NOTE(amakarov): preserving behavior
             TOKENS_REGION.invalidate()
+
+    def _invalidate_token_cache_callback(self, service, resource_type,
+                                         operation, payload):
+        """Callback specifically to invalidate the token cache.
+
+        This callback can be invoked by sending an internal notification where
+        the `resource_id` is some information about the resource. It isn't
+        important since it's not used when invalidating the cache:
+
+          from keystone import notifications
+          from keystone.token import provider as token_provider
+
+          resource_id = uuid.uuid4().hex
+          notifications.Audit.internal(
+              token_provider.INVALIDATE_TOKEN_CACHE,
+              resource_id
+          )
+
+        """
+        TOKENS_REGION.invalidate()
