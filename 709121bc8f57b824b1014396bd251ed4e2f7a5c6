@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_9ff62f63",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-01-08T22:47:55Z",
+      "side": 1,
+      "message": "It\u0027s almost worth passing hint data down to the driver so it can be optimised (aka in SQL itself) but acted upon if it isn\u0027t acted upon by the driver.\n\nMore specifically, the current implementation is going to probably be a more efficient (SQL-based) than in code at the manager level.\n\nIf we implement filtering based upon hints in the manager, it should be bypassed if the driver is \"Hints Aware\".\n\nTL;DR, I disagree with exclusively moving this to the manager.",
+      "parentUuid": "9f91af0f_d4e5830a",
+      "range": {
+        "startLine": 86,
+        "startChar": 8,
+        "endLine": 86,
+        "endChar": 43
+      },
+      "revId": "709121bc8f57b824b1014396bd251ed4e2f7a5c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_b941010e",
         "filename": "keystone/limit/backends/sql.py",
         "patchSetId": 19
