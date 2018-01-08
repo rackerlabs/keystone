@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_9f9b8f16",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-01-08T22:52:34Z",
+      "side": 1,
+      "message": "This potentially could change behaviors, but it looks benign.",
+      "range": {
+        "startLine": 331,
+        "startChar": 0,
+        "endLine": 332,
+        "endChar": 18
+      },
+      "revId": "7229381c38e071d7709d1cdc970ae7f954b061a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_bf8f73cb",
+        "filename": "keystone/exception.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-01-08T22:52:34Z",
+      "side": 1,
+      "message": "NIT: \"that has no corresponding registered limit\".\n\nCleaner language.",
+      "range": {
+        "startLine": 468,
+        "startChar": 54,
+        "endLine": 468,
+        "endChar": 68
+      },
+      "revId": "7229381c38e071d7709d1cdc970ae7f954b061a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_3f6a83ec",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-01-08T22:52:34Z",
+      "side": 1,
+      "message": "This would likely be more clear as explicit FKs on the column definitions. This doesn\u0027t need to be changed at this point.",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 76
+      },
+      "revId": "7229381c38e071d7709d1cdc970ae7f954b061a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
