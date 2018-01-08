@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_7a29f987",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-01-08T22:59:57Z",
+      "side": 1,
+      "message": "Unfortunately, you cannot change this default behavior. It needs to remain defaulted to \"fernet-keys\" so that you do not break previous deployments that didn\u0027t change it.\n\nThis is somewhat difficult, but is a requirement, you can make the fernet driver override this default if it is the default, but that is required before this can be changed.\n\nThe note of the changed default must be in the help and release note.\n\nAnother option could be to have a \"fall-back\" behavior built into the driver and issue a warning.",
+      "range": {
+        "startLine": 78,
+        "startChar": 4,
+        "endLine": 78,
+        "endChar": 40
+      },
+      "revId": "eb498f9905e935be3f85a54a4d9a1c232e4d1bc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
