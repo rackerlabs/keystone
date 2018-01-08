@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_11354f8f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1040,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-08T02:02:27Z",
+      "side": 1,
+      "message": "If use your code in shadow_backends/sql, it\u0027ll be solved.",
+      "parentUuid": "9f91af0f_b9dd8143",
+      "revId": "c88b0ef48b13089bad0e96f5d0c08043dd71147b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_b90ee18a",
         "filename": "keystone/identity/core.py",
         "patchSetId": 11
