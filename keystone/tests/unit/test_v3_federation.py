@@ -1820,7 +1820,10 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
 class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
 
     def auth_plugin_config_override(self):
-        methods = ['saml2', 'token']
+        # NOTE(lbragstad): Even though these are federation tests, we pass
+        # 'password' in as an auth plugin so that we can use the self.<method>
+        # testing infrastructure with an administrator account.
+        methods = ['saml2', 'token', 'password']
         super(FederatedTokenTests, self).auth_plugin_config_override(methods)
 
     def setUp(self):
@@ -2061,26 +2064,26 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
             self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_CUSTOMER,
             expected_status=http_client.FORBIDDEN)
 
-    @utils.wip('This will fail because of bug #1291157. The token should be '
-               'invalid after deleting the identity provider.')
-    def test_validate_token_after_deleting_idp_fails(self):
+    def test_validate_token_after_deleting_idp_raises_not_found(self):
         token = self.v3_create_token(
             self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_ADMIN
         )
         token_id = token.headers.get('X-Subject-Token')
         federated_info = token.json_body['token']['user']['OS-FEDERATION']
         idp_id = federated_info['identity_provider']['id']
-        self.federation_api.delete_idp(idp_id)
+        url = '/OS-FEDERATION/identity_providers/%s' % idp_id
+        self.delete(url)
         headers = {
             'X-Subject-Token': token_id
         }
-        # FIXME(lbragstad): This should raise a 401 Unauthorized exception
-        # since the identity provider is gone.
+        # NOTE(lbragstad): This raises a 404 NOT FOUND because the identity
+        # provider is no longer present. We raise 404 NOT FOUND when we
+        # validate a token and a project or domain no longer exists.
         self.get(
             '/auth/tokens/',
             token=token_id,
             headers=headers,
-            expected_status=http_client.UNAUTHORIZED
+            expected_status=http_client.NOT_FOUND
         )
 
     def test_scope_to_bad_project(self):
