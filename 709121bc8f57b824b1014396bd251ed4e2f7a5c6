@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_d4e5830a",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-08T17:41:28Z",
+      "side": 1,
+      "message": "Yeah - then people implementing their own backends wouldn\u0027t have to duplicate logic.",
+      "parentUuid": "9f91af0f_b9e7c1e4",
+      "range": {
+        "startLine": 86,
+        "startChar": 8,
+        "endLine": 86,
+        "endChar": 43
+      },
+      "revId": "709121bc8f57b824b1014396bd251ed4e2f7a5c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_b941010e",
         "filename": "keystone/limit/backends/sql.py",
         "patchSetId": 19
