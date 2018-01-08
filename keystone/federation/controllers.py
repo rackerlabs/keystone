@@ -33,6 +33,7 @@ from keystone.federation import schema
 from keystone.federation import utils
 from keystone.i18n import _
 from keystone.models import token_model
+from keystone.token import provider as token_provider
 
 
 CONF = keystone.conf.CONF
@@ -120,6 +121,11 @@ class IdentityProvider(_ControllerBase):
     @controller.protected()
     def delete_identity_provider(self, request, idp_id):
         PROVIDERS.federation_api.delete_idp(idp_id)
+        # NOTE(lbragstad): If an identity provider is removed from the system,
+        # then we need to invalidate the token cache. Otherwise it will be
+        # possible for federated tokens to be considered valid after a service
+        # provider removes a federated identity provider resource.
+        token_provider.TOKENS_REGION.invalidate()
 
     @controller.protected()
     def update_identity_provider(self, request, idp_id, identity_provider):
