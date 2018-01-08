@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_3f960340",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 2651,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-08T22:36:26Z",
+      "side": 1,
+      "message": "Exercise* (unless we\u0027re shooting for the exotic pronunciation, in which case +2)",
+      "range": {
+        "startLine": 2651,
+        "startChar": 10,
+        "endLine": 2651,
+        "endChar": 19
+      },
+      "revId": "49f9142711ae59455983296f8878f72a559831a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
