@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_1f5e9f43",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-01-08T22:56:00Z",
+      "side": 1,
+      "message": "Add in caching either in this patch or a followup. My -1 will be re-scored after we have caching implemented.",
+      "revId": "72f98d2cb309120b014477fca4ad8504934b896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_df283798",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-01-08T22:56:00Z",
+      "side": 1,
+      "message": "Technically, if caching is not implemented, these are not needed the manager automatically forwards to the methods on the driver.\n\nImplement caching.",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 55
+      },
+      "revId": "72f98d2cb309120b014477fca4ad8504934b896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_3f11235e",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-01-08T22:56:00Z",
+      "side": 1,
+      "message": "Same as above comment.",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 49
+      },
+      "revId": "72f98d2cb309120b014477fca4ad8504934b896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
