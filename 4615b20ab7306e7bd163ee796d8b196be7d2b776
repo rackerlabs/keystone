@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_10f3d275",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-09T22:02:09Z",
+      "side": 1,
+      "message": "All the other callbacks here also invalidate the token cache, but they\u0027re named descriptively. The event shows up in the logs (and I guess in whatever CADF listener someone has set up?), so it\u0027s nice if it\u0027s descriptive. For example when a role assignment is removed it looks like this:\n\n Invoking callback _delete_user_project_tokens_callback for event identity invalidate_user_project_tokens internal for {\u0027resource_info\u0027: {\u0027project_id\u0027: u\u00278fce84e45fe8484f9bac5c6b74260e9b\u0027, \u0027user_id\u0027: u\u0027a6dce24c34914450b092dc08a6f2e23b\u0027}}\n\nWith your change, when an identity provider is removed, the log looks like this:\n\n Invoking callback _invalidate_token_cache_callback for event identity invalidate_token_cache internal for {\u0027resource_info\u0027: u\u0027myidp\u0027}\n\nNo way to know that was related to the removal of a federated identity provider.\n\nDo you think that information is important?",
+      "revId": "4615b20ab7306e7bd163ee796d8b196be7d2b776",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
