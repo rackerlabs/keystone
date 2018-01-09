@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_29147e43",
+        "filename": "api-ref/source/v3-ext/endpoint-policy.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-09T15:05:04Z",
+      "side": 1,
+      "message": "Same comment here as in revoke API review. We should be able to reference the same status.yaml file if we change the path a bit:\n\n  .. rest_status_code:: success ../v3/status.yaml",
+      "range": {
+        "startLine": 92,
+        "startChar": 30,
+        "endLine": 92,
+        "endChar": 36
+      },
+      "revId": "a758329ecd108cc68a1435bb6df921e50b1c9619",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
