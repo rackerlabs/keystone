@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_669cf50d",
+        "filename": "api-ref/source/v3-ext/revoke.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-09T14:58:42Z",
+      "side": 1,
+      "message": "Given the location of this file, this will have to change:\n\n  .. rest_status_code:: success ../v3/status.yaml\n\nThat should get things passing the api-ref build.",
+      "range": {
+        "startLine": 84,
+        "startChar": 30,
+        "endLine": 84,
+        "endChar": 36
+      },
+      "revId": "f4863566785721ed0f961a963eb83c63b945e40b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
