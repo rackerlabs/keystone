@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "9f91af0f_83d9f557",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-09T07:26:22Z",
+      "side": 1,
+      "message": "I add this function for the reason that UKs don\u0027t work for None db columns. I\u0027m not sure a third part driver will face this problem as well. I assume it\u0027s only a problem for sql so that I leave it here. We can move it to manager if others want it as well in the future.\n\nDo you agree?",
+      "parentUuid": "9f91af0f_9ff62f63",
+      "range": {
+        "startLine": 86,
+        "startChar": 8,
+        "endLine": 86,
+        "endChar": 43
+      },
+      "revId": "709121bc8f57b824b1014396bd251ed4e2f7a5c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_b941010e",
         "filename": "keystone/limit/backends/sql.py",
         "patchSetId": 19
