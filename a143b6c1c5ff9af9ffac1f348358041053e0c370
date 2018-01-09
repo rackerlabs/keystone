@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_c9a152fa",
+        "filename": "api-ref/source/v3-ext/oauth.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-09T15:10:44Z",
+      "side": 1,
+      "message": "We should update these to:\n\n  .. rest_status_code:: success ../v3/status.yaml\n\nOnce I changed all these locally, the api-ref job passed for me.",
+      "range": {
+        "startLine": 90,
+        "startChar": 30,
+        "endLine": 90,
+        "endChar": 36
+      },
+      "revId": "a143b6c1c5ff9af9ffac1f348358041053e0c370",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
