@@ -16,6 +16,24 @@
       "revId": "4615b20ab7306e7bd163ee796d8b196be7d2b776",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_f0b98e78",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-09T22:06:03Z",
+      "side": 1,
+      "message": "I would consider that to be important information. Maybe we need to elaborate on the notification implementation. It\u0027d be nice to not have to pass information that is not relevant but get more descriptive logging, I agree.\n\nI\u0027ll keep tinkering with this and see what I can come up with.",
+      "parentUuid": "9f91af0f_10f3d275",
+      "revId": "4615b20ab7306e7bd163ee796d8b196be7d2b776",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
