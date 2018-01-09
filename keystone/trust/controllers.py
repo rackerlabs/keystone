@@ -14,8 +14,6 @@
 
 import uuid
 
-from oslo_utils import timeutils
-
 from keystone import assignment
 from keystone.common import controller
 from keystone.common import provider_api
@@ -167,17 +165,10 @@ class TrustV3(controller.V3Controller):
                 raise exception.RoleNotFound(role_id=trust_role['id'])
 
     def _parse_expiration_date(self, expiration_date):
-        if expiration_date is None:
+        if expiration_date:
+            return utils.parse_and_validate_date(expiration_date)
+        else:
             return None
-        if not expiration_date.endswith('Z'):
-            expiration_date += 'Z'
-        try:
-            expiration_time = timeutils.parse_isotime(expiration_date)
-        except ValueError:
-            raise exception.ValidationTimeStampError()
-        if timeutils.is_older_than(expiration_time, 0):
-            raise exception.ValidationExpirationError()
-        return expiration_time
 
     @controller.protected()
     def list_trusts(self, request):
