@@ -277,3 +277,4 @@ locale_dirs = ['locale/']
 repository_name = 'openstack/keystone'
 bug_project = 'keystone'
 bug_tag = 'doc'
+giturl = u'https://git.openstack.org/cgit/openstack/keystone/tree/releasenotes/source'  # noqa
