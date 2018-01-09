@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_5b6c1b9b",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 788,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-09T22:32:37Z",
+      "side": 1,
+      "message": "I\u0027m wondering if this shouldn\u0027t be a boolean anymore...\n\nWhat if it were:\n\n  scope.system\u003dall\n\nInstead of \n\n  scope.system\u003dTrue\n\nWhich might make it easier if we ever implement a system hierarchy in the future.",
+      "revId": "e6582332d5df2c0638a2023fd4bd931f03dabf9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
