@@ -68,6 +68,30 @@
       "revId": "7229381c38e071d7709d1cdc970ae7f954b061a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_c9a712bd",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-09T15:14:52Z",
+      "side": 1,
+      "message": "Does this impact anything if it is defined or is it just redundant as this point?",
+      "parentUuid": "9f91af0f_3f6a83ec",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 76
+      },
+      "revId": "7229381c38e071d7709d1cdc970ae7f954b061a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
