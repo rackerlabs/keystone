@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_4d7545f9",
+        "filename": "keystone/oauth1/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-09T21:05:33Z",
+      "side": 1,
+      "message": "This got changed to get_unique_role_by_name http://git.openstack.org/cgit/openstack/keystone/tree/keystone/assignment/core.py#n1254",
+      "revId": "6c1320a44ff30103940f470a9873fc76ec3b070c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
