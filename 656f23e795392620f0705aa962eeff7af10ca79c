@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9f91af0f_ce37464d",
+        "filename": "doc/source/contributor/set-up-keystone.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-09T01:42:00Z",
+      "side": 1,
+      "message": "Also needs \"redhat-rpm-config\"",
+      "range": {
+        "startLine": 99,
+        "startChar": 6,
+        "endLine": 99,
+        "endChar": 60
+      },
+      "revId": "656f23e795392620f0705aa962eeff7af10ca79c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_7d235c06",
         "filename": "doc/source/contributor/set-up-keystone.rst",
         "patchSetId": 1
