@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_c8c82076",
+        "filename": "doc/source/getting-started/policy_mapping.rst",
+        "patchSetId": 26
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-10T22:30:49Z",
+      "side": 1,
+      "message": "nit: put dashes on these to match the above",
+      "range": {
+        "startLine": 226,
+        "startChar": 0,
+        "endLine": 229,
+        "endChar": 136
+      },
+      "revId": "470538c1c5e79038bd07ec33b2a39b4a6e22eebf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_db4b0cae",
+        "filename": "keystone/application_credential/controllers.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-10T22:30:49Z",
+      "side": 1,
+      "message": "I left a comment in another PS but are we allowing users to create already expired application credentials?",
+      "range": {
+        "startLine": 102,
+        "startChar": 8,
+        "endLine": 104,
+        "endChar": 39
+      },
+      "revId": "470538c1c5e79038bd07ec33b2a39b4a6e22eebf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
