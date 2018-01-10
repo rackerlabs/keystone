@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_e7967095",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-01-10T17:19:27Z",
+      "side": 1,
+      "message": "Simply because it is now explicitly returning on a None which would never match before and raise. Like i said, looks mostly benign.",
+      "parentUuid": "9f91af0f_69afe67c",
+      "range": {
+        "startLine": 331,
+        "startChar": 0,
+        "endLine": 332,
+        "endChar": 18
+      },
+      "revId": "7229381c38e071d7709d1cdc970ae7f954b061a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_bf8f73cb",
         "filename": "keystone/exception.py",
         "patchSetId": 20
