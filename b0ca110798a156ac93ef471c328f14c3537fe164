@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_fbf8487d",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-10T22:29:28Z",
+      "side": 1,
+      "message": "So it\u0027s possible to create an application credential that is already expired?",
+      "range": {
+        "startLine": 198,
+        "startChar": 0,
+        "endLine": 208,
+        "endChar": 41
+      },
+      "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
