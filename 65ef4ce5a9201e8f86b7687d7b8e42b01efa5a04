@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9f91af0f_21e00acd",
+        "filename": "api-ref/source/v3-ext/trust.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 27372
+      },
+      "writtenOn": "2018-01-10T01:17:52Z",
+      "side": 1,
+      "message": "We should use the table format we used in the other patches if possible. as below:\n.. rest_status_code:: error status.yaml\n\n   - 400\n   - 401\n   - 403",
+      "range": {
+        "startLine": 158,
+        "startChar": 0,
+        "endLine": 161,
+        "endChar": 65
+      },
+      "revId": "65ef4ce5a9201e8f86b7687d7b8e42b01efa5a04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_2a44901a",
         "filename": "api-ref/source/v3-ext/trust.inc",
         "patchSetId": 1
@@ -13,6 +36,24 @@
       "writtenOn": "2018-01-08T14:40:12Z",
       "side": 1,
       "message": "We should format this into a Response section and make the following list a query parameter list so that we consistent with other sections.",
+      "revId": "65ef4ce5a9201e8f86b7687d7b8e42b01efa5a04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_21bfaad1",
+        "filename": "api-ref/source/v3-ext/trust.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 27372
+      },
+      "writtenOn": "2018-01-10T01:17:52Z",
+      "side": 1,
+      "message": "\u003e We should format this into a Response section and make the\n \u003e following list a query parameter list so that we consistent with\n \u003e other sections.\n\n++, but Request section I think.",
+      "parentUuid": "9f91af0f_2a44901a",
       "revId": "65ef4ce5a9201e8f86b7687d7b8e42b01efa5a04",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
