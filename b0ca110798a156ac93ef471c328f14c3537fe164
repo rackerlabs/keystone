@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_f7ba7edc",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-11T21:26:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_36c30cf0",
+      "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_965f8040",
         "filename": "keystone/application_credential/core.py",
         "patchSetId": 27
@@ -59,6 +77,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_57c9f275",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-11T21:26:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_965f8040",
+      "range": {
+        "startLine": 125,
+        "startChar": 20,
+        "endLine": 125,
+        "endChar": 25
+      },
+      "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_f63fe4d3",
         "filename": "keystone/conf/application_credential.py",
         "patchSetId": 27
@@ -70,6 +112,24 @@
       "writtenOn": "2018-01-11T20:14:16Z",
       "side": 1,
       "message": "We could expose caching options here, too. Or we can do that in a subsequent patch to keep patch sizes sane.",
+      "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_579ed263",
+        "filename": "keystone/conf/application_credential.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-11T21:26:42Z",
+      "side": 1,
+      "message": "I\u0027ll opt for doing it later",
+      "parentUuid": "7f96bb07_f63fe4d3",
       "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -146,6 +206,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_977d3a1e",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-11T21:26:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_1cbcf1da",
+      "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_fbf8487d",
         "filename": "keystone/tests/unit/application_credential/test_backends.py",
         "patchSetId": 27
@@ -169,6 +247,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_f79d9e59",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-11T21:26:42Z",
+      "side": 1,
+      "message": "Answered in the controller patch - the validation there should catch that",
+      "parentUuid": "7f96bb07_fbf8487d",
+      "range": {
+        "startLine": 198,
+        "startChar": 0,
+        "endLine": 208,
+        "endChar": 41
+      },
+      "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_91cb0a52",
         "filename": "keystone/tests/unit/application_credential/test_backends.py",
         "patchSetId": 27
@@ -180,6 +282,24 @@
       "writtenOn": "2018-01-11T20:14:16Z",
       "side": 1,
       "message": "Since we have logic in the manager to prune duplicate roles, we could add a test that ensures you can create an application credential with a list of roles containing duplicates.",
+      "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_77742e36",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-11T21:26:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_91cb0a52",
       "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
