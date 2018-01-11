@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_d44759bc",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 811,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-11T02:08:05Z",
+      "side": 1,
+      "message": "How about merge them into one?",
+      "range": {
+        "startLine": 804,
+        "startChar": 0,
+        "endLine": 811,
+        "endChar": 9
+      },
+      "revId": "410a8f691f09e0c6e950ca098c82f7ebbbd990ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
