@@ -171,6 +171,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_4c9ba471",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-11T22:50:12Z",
+      "side": 1,
+      "message": "ack - thanks for digging that up",
+      "parentUuid": "7f96bb07_7cbc1505",
+      "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_31eeb622",
         "filename": "keystone/tests/unit/application_credential/test_backends.py",
         "patchSetId": 27
@@ -218,6 +236,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "7f96bb07_1cbcf1da",
+      "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_0c8fdc2a",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-11T22:50:12Z",
+      "side": 1,
+      "message": "Ah - I totally spaced the self.create_application_credential bit for being a manager method /facepalm\n\nThanks for clarifying.",
+      "parentUuid": "7f96bb07_977d3a1e",
       "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
