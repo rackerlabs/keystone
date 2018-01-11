@@ -7,18 +7,19 @@ Create a mapping
 
 Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/mapping``
 
-Normal response codes: 201
-
 Request
 -------
+
+Parameters
+~~~~~~~~~~
 
 .. rest_parameters:: federation/mapping/parameters.yaml
 
    - id: id_path
    - rules: rules
 
-Request Example
----------------
+Example
+~~~~~~~
 
 .. literalinclude:: federation/mapping/samples/create-request.json
    :language: javascript
@@ -26,14 +27,24 @@ Request Example
 Response
 --------
 
+Parameters
+~~~~~~~~~~
+
 .. rest_parameters:: federation/mapping/parameters.yaml
 
    - id: id_body
    - links: links
    - rules: rules
 
-Response Example
-----------------
+Status Codes
+~~~~~~~~~~~~
+
+.. rest_status_code:: success status.yaml
+
+   - 201
+
+Example
+~~~~~~~
 
 .. literalinclude:: federation/mapping/samples/create-response.json
    :language: javascript
@@ -46,10 +57,11 @@ Get a mapping
 
 Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/mapping``
 
-Normal response codes: 200
-
 Request
 -------
+
+Parameters
+~~~~~~~~~~
 
 .. rest_parameters:: federation/mapping/parameters.yaml
 
@@ -58,14 +70,24 @@ Request
 Response
 --------
 
+Parameters
+~~~~~~~~~~
+
 .. rest_parameters:: federation/mapping/parameters.yaml
 
    - id: id_body
    - links: links
    - rules: rules
 
-Response Example
-----------------
+Status Codes
+~~~~~~~~~~~~
+
+.. rest_status_code:: success status.yaml
+
+   - 200
+
+Example
+~~~~~~~
 
 .. literalinclude:: federation/mapping/samples/get-response.json
    :language: javascript
@@ -78,18 +100,19 @@ Update a mapping
 
 Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/mapping``
 
-Normal response codes: 200
-
 Request
 -------
+
+Parameters
+~~~~~~~~~~
 
 .. rest_parameters:: federation/mapping/parameters.yaml
 
    - id: id_path
    - rules: rules
 
-Request Example
----------------
+Example
+~~~~~~~
 
 .. literalinclude:: federation/mapping/samples/update-request.json
    :language: javascript
@@ -97,14 +120,24 @@ Request Example
 Response
 --------
 
+Parameters
+~~~~~~~~~~
+
 .. rest_parameters:: federation/mapping/parameters.yaml
 
    - id: id_body
    - links: links
    - rules: rules
 
-Response Example
-----------------
+Status Codes
+~~~~~~~~~~~~
+
+.. rest_status_code:: success status.yaml
+
+   - 200
+
+Example
+~~~~~~~
 
 .. literalinclude:: federation/mapping/samples/update-response.json
    :language: javascript
@@ -117,18 +150,26 @@ List mappings
 
 Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/mappings``
 
-Normal response codes: 200
-
 Response
 --------
+
+Parameters
+~~~~~~~~~~
 
 .. rest_parameters:: federation/mapping/parameters.yaml
 
    - links: links_collection
    - mappings: mappings
 
-Response Example
-----------------
+Status Codes
+~~~~~~~~~~~~
+
+.. rest_status_code:: success status.yaml
+
+   - 200
+
+Example
+~~~~~~~
 
 .. literalinclude:: federation/mapping/samples/list-response.json
    :language: javascript
@@ -141,11 +182,19 @@ Delete a mapping
 
 Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/mapping``
 
-Normal response codes: 204
-
 Request
 -------
+
+Parameters
+~~~~~~~~~~
 
 .. rest_parameters:: federation/mapping/parameters.yaml
 
    - id: id_path
+
+Status Codes
+~~~~~~~~~~~~
+
+.. rest_status_code:: success status.yaml
+
+   - 204
