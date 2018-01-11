@@ -46,6 +46,47 @@
       "revId": "34af457dfb1480d29854e88fc105b5c7b4735bf6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_8bdaf9e6",
+        "filename": "keystone/common/sql/expand_repo/versions/034_expand_add_application_credential_table.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-11T19:15:04Z",
+      "side": 1,
+      "message": "I just double checked the schema for the trust and trust role table, but I don\u0027t see any FKs there, so I don\u0027t think they were added later.\n\nI know we\u0027ve moved away from foreign keys in the past to make it easier to decouple backends, but I\u0027m not sure how realistic it is in this case.\n\nI think keeping things consistent is fine, unless it simplifies the implementation to use a FK instead.",
+      "parentUuid": "7f96bb07_6251d2d8",
+      "range": {
+        "startLine": 41,
+        "startChar": 8,
+        "endLine": 42,
+        "endChar": 52
+      },
+      "revId": "34af457dfb1480d29854e88fc105b5c7b4735bf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_6ba8cd1e",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 2768,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-11T19:15:04Z",
+      "side": 1,
+      "message": "We could exercise this primary constraint as well.",
+      "revId": "34af457dfb1480d29854e88fc105b5c7b4735bf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
