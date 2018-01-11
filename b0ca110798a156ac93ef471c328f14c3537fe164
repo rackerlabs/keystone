@@ -93,6 +93,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_7cbc1505",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-11T20:45:44Z",
+      "side": 1,
+      "message": "Nope. An app cred needs to be uniquely identifiable, either by ID alone, or by user + name. Since app creds belong to users, not projects, it only makes sense for them to be unique by name for a user. We agreed to this in the spec: \"name must be unique among a User’s application credentials, but name is only guaranteed to be unique under that User. name may be useful for Consumers who want human readable config files.\" http://specs.openstack.org/openstack/keystone-specs/specs/keystone/queens/application-credentials.html#application-credential-management",
+      "parentUuid": "7f96bb07_f1260eb8",
+      "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_31eeb622",
         "filename": "keystone/tests/unit/application_credential/test_backends.py",
         "patchSetId": 27
@@ -104,6 +122,24 @@
       "writtenOn": "2018-01-11T20:14:16Z",
       "side": 1,
       "message": "I though application credentials were immutable [0].\n\n[0] http://specs.openstack.org/openstack/keystone-specs/specs/keystone/queens/application-credentials.html#proposed-change",
+      "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_1cbcf1da",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-11T20:45:44Z",
+      "side": 1,
+      "message": "The `self.create_application_credential` method just creates a dict, so this isn\u0027t changing an already-created app cred. I\u0027ll make the helper method private so that\u0027s more clear.\n\nSort of worth noting that it\u0027s currently only immutable by virtue of there not being an update method, so there\u0027s not a good way to test that here in the manager. There\u0027s a test in the controller showing that a PATCH doesn\u0027t work.",
+      "parentUuid": "7f96bb07_31eeb622",
       "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
