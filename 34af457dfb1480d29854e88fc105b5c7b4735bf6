@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_1614d09f",
+        "filename": "keystone/common/sql/expand_repo/versions/034_expand_add_application_credential_table.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-11T19:37:37Z",
+      "side": 1,
+      "message": "\u003e I know we\u0027ve moved away from foreign keys in the past to make it\n \u003e easier to decouple backends, but I\u0027m not sure how realistic it is\n \u003e in this case.\n\nIn this case it\u0027s part of the same backend so I think it would be fine. We wouldn\u0027t have a foreign key with the role table.",
+      "parentUuid": "7f96bb07_8bdaf9e6",
+      "range": {
+        "startLine": 41,
+        "startChar": 8,
+        "endLine": 42,
+        "endChar": 52
+      },
+      "revId": "34af457dfb1480d29854e88fc105b5c7b4735bf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_6ba8cd1e",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 18
