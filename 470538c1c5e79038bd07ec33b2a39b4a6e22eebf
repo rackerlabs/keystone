@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_9d1246b1",
+        "filename": "doc/source/getting-started/policy_mapping.rst",
+        "patchSetId": 26
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-11T15:48:17Z",
+      "side": 1,
+      "message": "Oh, I didn\u0027t expand the above, never mind then!",
+      "parentUuid": "7f96bb07_e64e60c0",
+      "range": {
+        "startLine": 226,
+        "startChar": 0,
+        "endLine": 229,
+        "endChar": 136
+      },
+      "revId": "470538c1c5e79038bd07ec33b2a39b4a6e22eebf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_db4b0cae",
         "filename": "keystone/application_credential/controllers.py",
         "patchSetId": 26
