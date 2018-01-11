@@ -2,6 +2,114 @@
   "comments": [
     {
       "key": {
+        "uuid": "7f96bb07_369a2c14",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-11T20:14:16Z",
+      "side": 1,
+      "message": "Ah - so this answers my question in the previous patch. If I provide a list of roles that contain duplicates when I create an app cred, this should prune my list down to a set of unique roles. Got it.",
+      "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_36c30cf0",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-11T20:14:16Z",
+      "side": 1,
+      "message": "We can implement caching on these methods.",
+      "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_965f8040",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-11T20:14:16Z",
+      "side": 1,
+      "message": "nit: list*",
+      "range": {
+        "startLine": 125,
+        "startChar": 20,
+        "endLine": 125,
+        "endChar": 25
+      },
+      "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_f63fe4d3",
+        "filename": "keystone/conf/application_credential.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-11T20:14:16Z",
+      "side": 1,
+      "message": "We could expose caching options here, too. Or we can do that in a subsequent patch to keep patch sizes sane.",
+      "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_f1260eb8",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-11T20:14:16Z",
+      "side": 1,
+      "message": "What if they are for different projects?",
+      "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_31eeb622",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-11T20:14:16Z",
+      "side": 1,
+      "message": "I though application credentials were immutable [0].\n\n[0] http://specs.openstack.org/openstack/keystone-specs/specs/keystone/queens/application-credentials.html#proposed-change",
+      "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_fbf8487d",
         "filename": "keystone/tests/unit/application_credential/test_backends.py",
         "patchSetId": 27
@@ -19,6 +127,23 @@
         "endLine": 208,
         "endChar": 41
       },
+      "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_91cb0a52",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-11T20:14:16Z",
+      "side": 1,
+      "message": "Since we have logic in the manager to prune duplicate roles, we could add a test that ensures you can create an application credential with a list of roles containing duplicates.",
       "revId": "b0ca110798a156ac93ef471c328f14c3537fe164",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
