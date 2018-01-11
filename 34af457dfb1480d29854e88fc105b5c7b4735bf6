@@ -22,6 +22,30 @@
       "revId": "34af457dfb1480d29854e88fc105b5c7b4735bf6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_6251d2d8",
+        "filename": "keystone/common/sql/expand_repo/versions/034_expand_add_application_credential_table.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-11T16:46:07Z",
+      "side": 1,
+      "message": "I don\u0027t disagree but I was following what we have for trusts http://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/sql/migrate_repo/versions/067_kilo.py#n147\n\nDo you think trusts is wrong or did I miss where it used a foreign key?",
+      "parentUuid": "7f96bb07_98a9f4e0",
+      "range": {
+        "startLine": 41,
+        "startChar": 8,
+        "endLine": 42,
+        "endChar": 52
+      },
+      "revId": "34af457dfb1480d29854e88fc105b5c7b4735bf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
