@@ -5,12 +5,15 @@ Register an identity provider
 
 .. rest_method::  PUT /v3/OS-FEDERATION/identity_providers/{id}
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/identity_provider``
+Create an identity provider.
 
-Normal response code: 201
+Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/identity_provider``
 
 Request
 -------
+
+Parameters
+~~~~~~~~~~
 
 .. rest_parameters:: federation/identity-provider/parameters.yaml
 
@@ -23,14 +26,17 @@ Request
 As a domain may only be associated to a single identity provider, a 409 response code will be
 returned if the specified ``domain_id`` already maps an existing identity provider.
 
-Request Example
----------------
+Example
+~~~~~~~
 
 .. literalinclude:: federation/identity-provider/samples/register-request.json
    :language: javascript
 
 Response
 --------
+
+Parameters
+~~~~~~~~~~
 
 .. rest_parameters:: federation/identity-provider/parameters.yaml
 
@@ -41,12 +47,18 @@ Response
     - links: links
     - remote_ids: remote_ids
 
-Response Example
-----------------
+Status Codes
+~~~~~~~~~~~~
+
+.. rest_status_code:: success ../v3/status.yaml
+
+- 201
+
+Example
+~~~~~~~
 
 .. literalinclude:: federation/identity-provider/samples/register-response.json
    :language: javascript
-
 
 List identity providers
 =======================
