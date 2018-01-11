@@ -73,6 +73,46 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_fca905df",
+        "filename": "keystone/application_credential/controllers.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-11T22:40:29Z",
+      "side": 1,
+      "message": "With length of 64, padding is always going to be 2, right?",
+      "range": {
+        "startLine": 65,
+        "startChar": 49,
+        "endLine": 65,
+        "endChar": 54
+      },
+      "revId": "470538c1c5e79038bd07ec33b2a39b4a6e22eebf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_1cd2b15d",
+        "filename": "keystone/application_credential/controllers.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-11T22:40:29Z",
+      "side": 1,
+      "message": "If a secret isn\u0027t provided and keystone generates it, it is url-safe. It makes sense to validate user-provided secrets the same way, right?",
+      "revId": "470538c1c5e79038bd07ec33b2a39b4a6e22eebf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_db4b0cae",
         "filename": "keystone/application_credential/controllers.py",
         "patchSetId": 26
@@ -114,6 +154,46 @@
         "endLine": 104,
         "endChar": 39
       },
+      "revId": "470538c1c5e79038bd07ec33b2a39b4a6e22eebf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_31c316f0",
+        "filename": "keystone/application_credential/routers.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-11T22:40:29Z",
+      "side": 1,
+      "message": "Copy/paste from https://github.com/openstack/keystone/blob/master/keystone/identity/routers.py#L14 ?",
+      "range": {
+        "startLine": 14,
+        "startChar": 24,
+        "endLine": 14,
+        "endChar": 32
+      },
+      "revId": "470538c1c5e79038bd07ec33b2a39b4a6e22eebf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_11637a1c",
+        "filename": "keystone/common/policies/application_credential.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-11T22:40:29Z",
+      "side": 1,
+      "message": "We could add scope_types for these since oslo.policy supports it.",
       "revId": "470538c1c5e79038bd07ec33b2a39b4a6e22eebf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
