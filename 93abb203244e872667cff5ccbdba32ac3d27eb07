@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_712bde93",
+        "filename": "keystone/application_credential/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-11T20:35:42Z",
+      "side": 1,
+      "message": "What do you mean by conflicting roles - like duplicate roles? I hadn\u0027t considered how to validate that.",
+      "parentUuid": "7f96bb07_16061088",
+      "revId": "93abb203244e872667cff5ccbdba32ac3d27eb07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_164cd09c",
         "filename": "keystone/application_credential/backends/sql.py",
         "patchSetId": 21
@@ -64,6 +82,24 @@
       "writtenOn": "2018-01-11T19:44:22Z",
       "side": 1,
       "message": "Is there any reason to not use _filter_app_cred here instead of popping the secret_hash off in the manager? For listing we seem to handle the hash in the driver, but for getting a single app credential, we handle it in the manager. Just wondering if there is a reason for the difference?",
+      "revId": "93abb203244e872667cff5ccbdba32ac3d27eb07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_3c7bed8c",
+        "filename": "keystone/application_credential/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-11T20:35:42Z",
+      "side": 1,
+      "message": "The reason I don\u0027t filter it here is that the authenticate method here in the driver reuses it and needs the secret_hash from it. You\u0027re right, that looks kind of mixed up. Maybe the filtering for the list should also happen in the manager? Or maybe there should be a private method in the driver that doesn\u0027t pop the secret_hash so the authenticate method can use it?",
+      "parentUuid": "7f96bb07_164cd09c",
       "revId": "93abb203244e872667cff5ccbdba32ac3d27eb07",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
