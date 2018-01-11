@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_98a9f4e0",
+        "filename": "keystone/common/sql/expand_repo/versions/034_expand_add_application_credential_table.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-01-11T16:03:04Z",
+      "side": 1,
+      "message": "This should be a foreign key to application_credential.id",
+      "range": {
+        "startLine": 41,
+        "startChar": 8,
+        "endLine": 42,
+        "endChar": 52
+      },
+      "revId": "34af457dfb1480d29854e88fc105b5c7b4735bf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
