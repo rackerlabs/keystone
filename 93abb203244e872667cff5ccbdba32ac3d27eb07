@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_b7e39605",
+        "filename": "keystone/application_credential/backends/base.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-11T21:25:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_96cf807e",
+      "revId": "93abb203244e872667cff5ccbdba32ac3d27eb07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_b6ccfc89",
         "filename": "keystone/application_credential/backends/base.py",
         "patchSetId": 21
@@ -30,6 +48,24 @@
       "writtenOn": "2018-01-11T19:37:24Z",
       "side": 1,
       "message": "nit: same comment here",
+      "revId": "93abb203244e872667cff5ccbdba32ac3d27eb07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_57f012ca",
+        "filename": "keystone/application_credential/backends/base.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-11T21:25:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_b6ccfc89",
       "revId": "93abb203244e872667cff5ccbdba32ac3d27eb07",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -100,6 +136,24 @@
       "side": 1,
       "message": "The reason I don\u0027t filter it here is that the authenticate method here in the driver reuses it and needs the secret_hash from it. You\u0027re right, that looks kind of mixed up. Maybe the filtering for the list should also happen in the manager? Or maybe there should be a private method in the driver that doesn\u0027t pop the secret_hash so the authenticate method can use it?",
       "parentUuid": "7f96bb07_164cd09c",
+      "revId": "93abb203244e872667cff5ccbdba32ac3d27eb07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_f7e11e00",
+        "filename": "keystone/application_credential/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-11T21:25:03Z",
+      "side": 1,
+      "message": "I pushed it to the manager",
+      "parentUuid": "7f96bb07_3c7bed8c",
       "revId": "93abb203244e872667cff5ccbdba32ac3d27eb07",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
