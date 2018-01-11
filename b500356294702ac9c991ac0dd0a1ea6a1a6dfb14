@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_a9833a04",
+        "filename": "doc/requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 11904
+      },
+      "writtenOn": "2018-01-11T22:11:05Z",
+      "side": 1,
+      "message": "This should be:\n\nreno\u003e\u003d1.8.0,!\u003d2.3.1  # Apache-2.0",
+      "revId": "b500356294702ac9c991ac0dd0a1ea6a1a6dfb14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_c9880621",
+        "filename": "doc/requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11904
+      },
+      "writtenOn": "2018-01-11T22:11:05Z",
+      "side": 1,
+      "message": "This should be:\n\nos-api-ref\u003e\u003d1.0.0  # Apache-2.0",
+      "revId": "b500356294702ac9c991ac0dd0a1ea6a1a6dfb14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_897afe21",
+        "filename": "doc/requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 11904
+      },
+      "writtenOn": "2018-01-11T22:11:05Z",
+      "side": 1,
+      "message": "testtools\u003e\u003d1.4.0  # MIT",
+      "revId": "b500356294702ac9c991ac0dd0a1ea6a1a6dfb14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_4974f635",
+        "filename": "doc/requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 11904
+      },
+      "writtenOn": "2018-01-11T22:11:05Z",
+      "side": 1,
+      "message": "mock\u003e\u003d2.0  # BSD",
+      "revId": "b500356294702ac9c991ac0dd0a1ea6a1a6dfb14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_a9981a6a",
+        "filename": "doc/requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 11904
+      },
+      "writtenOn": "2018-01-11T22:11:05Z",
+      "side": 1,
+      "message": "I don\u0027t see this in stable/pike requirements.",
+      "revId": "b500356294702ac9c991ac0dd0a1ea6a1a6dfb14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_49a95679",
+        "filename": "doc/requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 11904
+      },
+      "writtenOn": "2018-01-11T22:11:05Z",
+      "side": 1,
+      "message": "I think:\n\noslo.db\u003e\u003d4.24.0  # Apache-2.0",
+      "revId": "b500356294702ac9c991ac0dd0a1ea6a1a6dfb14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_09bd8eb6",
+        "filename": "doc/requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 11904
+      },
+      "writtenOn": "2018-01-11T22:11:05Z",
+      "side": 1,
+      "message": "lxml\u003e\u003d2.3,!\u003d3.7.0  # BSD",
+      "revId": "b500356294702ac9c991ac0dd0a1ea6a1a6dfb14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_09e26ed6",
+        "filename": "test-requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 11904
+      },
+      "writtenOn": "2018-01-11T22:11:05Z",
+      "side": 1,
+      "message": "os-api-ref\u003e\u003d1.0.0  # Apache-2.0",
+      "revId": "b500356294702ac9c991ac0dd0a1ea6a1a6dfb14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
