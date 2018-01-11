@@ -14,12 +14,23 @@ Show CA Certificate
 
 Show the availbable CA certificate.
 
-Normal response codes: 200
+Response
+--------
 
-Error response codes: 401, 500
+Status Codes
+~~~~~~~~~~~~
 
-Response Example
-----------------
+.. rest_status_code:: success status.yaml
+
+   - 200
+
+.. rest_status_code:: error status.yaml
+
+   - 401
+   - 500
+
+Example
+~~~~~~~
 
 .. literalinclude:: ./samples/OS-SIMPLE-CERT/show-ca-certificate-response.txt
    :language: text
@@ -35,8 +46,23 @@ Normal response codes: 200
 
 Error response codes: 401, 500
 
-Response Example
-----------------
+Response
+--------
+
+Status Codes
+~~~~~~~~~~~~
+
+.. rest_status_code:: success status.yaml
+
+   - 200
+
+.. rest_status_code:: error status.yaml
+
+   - 401
+   - 500
+
+Example
+~~~~~~~
 
 .. literalinclude:: ./samples/OS-SIMPLE-CERT/show-signing-certificate-response.txt
    :language: text
