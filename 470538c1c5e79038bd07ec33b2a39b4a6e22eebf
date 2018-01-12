@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_b03b8bcf",
+        "filename": "keystone/application_credential/controllers.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-12T11:09:28Z",
+      "side": 1,
+      "message": "Yes - will add a comment. Also open to suggestions on what the right length should really be. I guess I could make it 66 bytes and then not chop the padding.",
+      "parentUuid": "7f96bb07_fca905df",
+      "range": {
+        "startLine": 65,
+        "startChar": 49,
+        "endLine": 65,
+        "endChar": 54
+      },
+      "revId": "470538c1c5e79038bd07ec33b2a39b4a6e22eebf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_1cd2b15d",
         "filename": "keystone/application_credential/controllers.py",
         "patchSetId": 26
@@ -107,6 +131,24 @@
       "writtenOn": "2018-01-11T22:40:29Z",
       "side": 1,
       "message": "If a secret isn\u0027t provided and keystone generates it, it is url-safe. It makes sense to validate user-provided secrets the same way, right?",
+      "revId": "470538c1c5e79038bd07ec33b2a39b4a6e22eebf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_90320ff1",
+        "filename": "keystone/application_credential/controllers.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-12T11:09:28Z",
+      "side": 1,
+      "message": "Good point",
+      "parentUuid": "7f96bb07_1cd2b15d",
       "revId": "470538c1c5e79038bd07ec33b2a39b4a6e22eebf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -183,6 +225,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_50524715",
+        "filename": "keystone/application_credential/routers.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-12T11:09:28Z",
+      "side": 1,
+      "message": "yup",
+      "parentUuid": "7f96bb07_31c316f0",
+      "range": {
+        "startLine": 14,
+        "startChar": 24,
+        "endLine": 14,
+        "endChar": 32
+      },
+      "revId": "470538c1c5e79038bd07ec33b2a39b4a6e22eebf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_11637a1c",
         "filename": "keystone/common/policies/application_credential.py",
         "patchSetId": 26
@@ -194,6 +260,24 @@
       "writtenOn": "2018-01-11T22:40:29Z",
       "side": 1,
       "message": "We could add scope_types for these since oslo.policy supports it.",
+      "revId": "470538c1c5e79038bd07ec33b2a39b4a6e22eebf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_90476f4c",
+        "filename": "keystone/common/policies/application_credential.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-12T11:09:28Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7f96bb07_11637a1c",
       "revId": "470538c1c5e79038bd07ec33b2a39b4a6e22eebf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
