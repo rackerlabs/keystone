@@ -16,6 +16,24 @@
       "revId": "6c037ed3c7ca3b71d9ddeedb9e5712289f9f3816",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_4af4cbcf",
+        "filename": "playbooks/openstack-keystone-functional.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-12T17:21:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_36bbfee2",
+      "revId": "6c037ed3c7ca3b71d9ddeedb9e5712289f9f3816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
