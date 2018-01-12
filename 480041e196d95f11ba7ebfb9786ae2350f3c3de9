@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_a1f9fb80",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 11
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-12T13:43:00Z",
+      "side": 1,
+      "message": "This sort of sounds like there could be multiple systems. Maybe \"You can also list roles assigned to the system, or to a specified domain, project, or user...\"",
+      "range": {
+        "startLine": 27,
+        "startChar": 36,
+        "endLine": 27,
+        "endChar": 54
+      },
+      "revId": "480041e196d95f11ba7ebfb9786ae2350f3c3de9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_c13be735",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 11
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-12T13:43:00Z",
+      "side": 1,
+      "message": "You could just list all system scopes for all users, right?",
+      "range": {
+        "startLine": 42,
+        "startChar": 42,
+        "endLine": 42,
+        "endChar": 60
+      },
+      "revId": "480041e196d95f11ba7ebfb9786ae2350f3c3de9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_811e3fb8",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 11
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-12T13:43:00Z",
+      "side": 1,
+      "message": "Following this example, you could precede the system role example with \"Since Identity API v3.10 [or whatever] you can list system role assignments...\"",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 23
+      },
+      "revId": "480041e196d95f11ba7ebfb9786ae2350f3c3de9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_e182a3c8",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 11
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-12T13:43:00Z",
+      "side": 1,
+      "message": "again sounds like there could be multiple - right now that\u0027s not possible",
+      "range": {
+        "startLine": 58,
+        "startChar": 31,
+        "endLine": 58,
+        "endChar": 37
+      },
+      "revId": "480041e196d95f11ba7ebfb9786ae2350f3c3de9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_01d6afc6",
+        "filename": "api-ref/source/v3/system-roles.inc",
+        "patchSetId": 11
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-12T13:43:00Z",
+      "side": 1,
+      "message": "I would sort of expect users to come before groups",
+      "revId": "480041e196d95f11ba7ebfb9786ae2350f3c3de9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
