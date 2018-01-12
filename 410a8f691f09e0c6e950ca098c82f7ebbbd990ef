@@ -22,6 +22,30 @@
       "revId": "410a8f691f09e0c6e950ca098c82f7ebbbd990ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_41a037f5",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 811,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-12T13:26:19Z",
+      "side": 1,
+      "message": "I think it\u0027s clearer the way it is",
+      "parentUuid": "7f96bb07_d44759bc",
+      "range": {
+        "startLine": 804,
+        "startChar": 0,
+        "endLine": 811,
+        "endChar": 9
+      },
+      "revId": "410a8f691f09e0c6e950ca098c82f7ebbbd990ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
