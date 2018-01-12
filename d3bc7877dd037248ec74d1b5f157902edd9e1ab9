@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_bf3113a5",
+        "filename": "doc/requirements.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2018-01-12T16:41:36Z",
+      "side": 1,
+      "message": "flake8-docstrings\u003d\u003d0.2.1.post1 # MIT is in the master branch patch - should it also be in here?",
+      "revId": "d3bc7877dd037248ec74d1b5f157902edd9e1ab9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
