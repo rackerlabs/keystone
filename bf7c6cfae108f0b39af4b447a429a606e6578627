@@ -22,6 +22,23 @@
       "revId": "bf7c6cfae108f0b39af4b447a429a606e6578627",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_1c25b5c2",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2018-01-12T16:20:17Z",
+      "side": 1,
+      "message": "By the way, I realized yesterday in the novaclient repo that due to this same type of docs/requirements change, since it moved reno to docs/requirements, you can\u0027t do:\n\ntox -e venv -- reno new \u003cslug\u003e\n\nanymore - you have to add the deps in here like you have for the docs target. Something you\u0027ll need to fix on master.",
+      "revId": "bf7c6cfae108f0b39af4b447a429a606e6578627",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
