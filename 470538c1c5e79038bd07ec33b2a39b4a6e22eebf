@@ -144,6 +144,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_563b1cea",
+        "filename": "keystone/application_credential/controllers.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-12T15:10:21Z",
+      "side": 1,
+      "message": "I took this from http://git.openstack.org/cgit/openstack/keystone/tree/keystone/token/providers/common.py#n62 but rstrip works just as well, will change it.\n\nI think the padding isn\u0027t url-safe because \u003d is used for query parameters, e.g. GET /v3/users?name\u003dcmurphy\n\nWe\u0027re not actually using this in a url ourselves and probably no one should send an application secret as part of a url. I\u0027m not really totally sure we need to strip the padding for tokens since as of v3 they\u0027re only sent as headers, not part of a url. But in any case it looks kind of weird to me to keep the padding and we don\u0027t need it for anything since we\u0027re not going to decode it.",
+      "parentUuid": "7f96bb07_761178ac",
+      "range": {
+        "startLine": 65,
+        "startChar": 49,
+        "endLine": 65,
+        "endChar": 54
+      },
+      "revId": "470538c1c5e79038bd07ec33b2a39b4a6e22eebf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_1cd2b15d",
         "filename": "keystone/application_credential/controllers.py",
         "patchSetId": 26
