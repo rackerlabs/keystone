@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_9324670f",
+        "filename": "keystone/application_credential/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-12T02:50:23Z",
+      "side": 1,
+      "message": "I got DB reference error when I test this feature.\nIt seems that we can\u0027t do this in one routine.\nI changed to something like: http://paste.openstack.org/show/643383/ , then it works fine.",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 92,
+        "endChar": 46
+      },
+      "revId": "cfc49003bbbba41827481c79fdbb4eddaec364a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_736c3b36",
+        "filename": "keystone/application_credential/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-12T02:50:23Z",
+      "side": 1,
+      "message": "A similar problem. We should delete the data in application_credential_role table first, otherwise a DB reference error will raise as well.",
+      "revId": "cfc49003bbbba41827481c79fdbb4eddaec364a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_3376b308",
+        "filename": "keystone/application_credential/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-12T02:50:23Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "cfc49003bbbba41827481c79fdbb4eddaec364a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_53733f16",
+        "filename": "keystone/application_credential/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-12T02:50:23Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "cfc49003bbbba41827481c79fdbb4eddaec364a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
