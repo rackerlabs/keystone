@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_1a894022",
+        "filename": "keystone/application_credential/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-12T10:17:56Z",
+      "side": 1,
+      "message": "Hmm, I\u0027m not seeing this error. Can you show what you did to get this error? This is what I tried: http://paste.openstack.org/show/643694/ I made sure I was using the version after I added the foreign key.",
+      "parentUuid": "7f96bb07_9324670f",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 92,
+        "endChar": 46
+      },
+      "revId": "cfc49003bbbba41827481c79fdbb4eddaec364a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_736c3b36",
         "filename": "keystone/application_credential/backends/sql.py",
         "patchSetId": 22
