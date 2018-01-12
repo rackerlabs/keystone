@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_5fea4f75",
+        "filename": "keystone/application_credential/backends/sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-01-12T17:24:15Z",
+      "side": 1,
+      "message": "Time flies.",
+      "range": {
+        "startLine": 1,
+        "startChar": 2,
+        "endLine": 1,
+        "endChar": 37
+      },
+      "revId": "d470a9409714cd12a33e66dce2cf25f653deab7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_df92dff6",
+        "filename": "keystone/application_credential/backends/sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-01-12T17:24:15Z",
+      "side": 1,
+      "message": "This has been defined as nullable in the migration. Should be nullable here also.",
+      "range": {
+        "startLine": 36,
+        "startChar": 28,
+        "endLine": 36,
+        "endChar": 42
+      },
+      "revId": "d470a9409714cd12a33e66dce2cf25f653deab7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_4ad84b7e",
+        "filename": "keystone/application_credential/backends/sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-01-12T17:24:15Z",
+      "side": 1,
+      "message": "I\u0027m a little rusty and unfamiliar with some workings of sqlalchemy, but wouldn\u0027t this be automatically done with the \u0027backref\u0027 relationship?",
+      "range": {
+        "startLine": 109,
+        "startChar": 12,
+        "endLine": 113,
+        "endChar": 67
+      },
+      "revId": "d470a9409714cd12a33e66dce2cf25f653deab7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_aa378fb0",
+        "filename": "keystone/application_credential/backends/sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-01-12T17:24:15Z",
+      "side": 1,
+      "message": "This can be replaced by a cascade delete for the foreign key.",
+      "range": {
+        "startLine": 132,
+        "startChar": 12,
+        "endLine": 135,
+        "endChar": 30
+      },
+      "revId": "d470a9409714cd12a33e66dce2cf25f653deab7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_4a1dab0d",
+        "filename": "keystone/application_credential/backends/sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-01-12T17:24:15Z",
+      "side": 1,
+      "message": "This would miss deleting the roles, unless the foreign key is set to cascade delete.",
+      "range": {
+        "startLine": 142,
+        "startChar": 12,
+        "endLine": 142,
+        "endChar": 26
+      },
+      "revId": "d470a9409714cd12a33e66dce2cf25f653deab7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_0ac5635b",
+        "filename": "keystone/application_credential/backends/sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-01-12T17:24:15Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "range": {
+        "startLine": 150,
+        "startChar": 12,
+        "endLine": 150,
+        "endChar": 26
+      },
+      "revId": "d470a9409714cd12a33e66dce2cf25f653deab7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
