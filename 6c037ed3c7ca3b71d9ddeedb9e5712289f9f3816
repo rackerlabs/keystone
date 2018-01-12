@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_36bbfee2",
+        "filename": "playbooks/openstack-keystone-functional.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 23928
+      },
+      "writtenOn": "2018-01-12T05:50:25Z",
+      "side": 1,
+      "message": "we should also run `helm test keystone` which will run the rally scenarios here: https://github.com/openstack/openstack-helm/blob/master/keystone/templates/etc/_rally_tests.yaml.tpl",
+      "revId": "6c037ed3c7ca3b71d9ddeedb9e5712289f9f3816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
