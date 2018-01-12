@@ -120,6 +120,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_761178ac",
+        "filename": "keystone/application_credential/controllers.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-12T15:00:23Z",
+      "side": 1,
+      "message": "Something like this might be safer: \n\nhttps://github.com/openstack/keystone/blob/master/keystone/token/providers/fernet/token_formatters.py#L78-L79\n\nBecause tokens are variable length, the padding can also fluctuate. Since we\u0027re dealing with a fixed length we probably don\u0027t have to worry about it as much, but from the comment it doesn\u0027t look like padding is url-safe (I\u0027d need to dig up real references).",
+      "parentUuid": "7f96bb07_b03b8bcf",
+      "range": {
+        "startLine": 65,
+        "startChar": 49,
+        "endLine": 65,
+        "endChar": 54
+      },
+      "revId": "470538c1c5e79038bd07ec33b2a39b4a6e22eebf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_1cd2b15d",
         "filename": "keystone/application_credential/controllers.py",
         "patchSetId": 26
