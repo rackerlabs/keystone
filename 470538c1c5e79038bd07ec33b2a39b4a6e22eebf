@@ -227,6 +227,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_366a05b3",
+        "filename": "keystone/application_credential/controllers.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-12T22:31:03Z",
+      "side": 1,
+      "message": "Actually no, it\u0027s probably not a good idea to change the secret behind the user\u0027s back, for the same reason we can\u0027t manipulate their passwords.",
+      "parentUuid": "7f96bb07_90320ff1",
+      "revId": "470538c1c5e79038bd07ec33b2a39b4a6e22eebf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_db4b0cae",
         "filename": "keystone/application_credential/controllers.py",
         "patchSetId": 26
