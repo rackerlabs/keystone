@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_f0f028cc",
+        "filename": "doc/requirements.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 11904
+      },
+      "writtenOn": "2018-01-12T18:52:08Z",
+      "side": 1,
+      "message": "Looks like you also need:\n\ntestresources\u003e\u003d0.2.4  # Apache-2.0/BSD",
+      "revId": "1cb004c0d2e109db1ff065a7b88e9c52ed8fd322",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
