@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_01b0eff3",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-12T13:29:12Z",
+      "side": 1,
+      "message": "handle",
+      "range": {
+        "startLine": 443,
+        "startChar": 20,
+        "endLine": 443,
+        "endChar": 24
+      },
+      "revId": "9e949fee5d1f6848f7afff14ff26a770c05c64d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
