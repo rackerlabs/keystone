@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_183cf691",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 2788,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-12T01:50:23Z",
+      "side": 1,
+      "message": "and a test for FK error is better.",
+      "revId": "a9b0c85ad303d6a518ba83ae600298d841feb8e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
