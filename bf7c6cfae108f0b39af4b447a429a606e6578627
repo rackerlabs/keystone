@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_3c72f1e4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2018-01-12T16:17:35Z",
+      "side": 1,
+      "message": "This isn\u0027t a commit silly pants - did you do this manually? The commit is 07bba320ae3d0e7fb9d2fb2a1c5df51735761bac.\n\ngit cherry-pick -x",
+      "range": {
+        "startLine": 17,
+        "startChar": 27,
+        "endLine": 17,
+        "endChar": 68
+      },
+      "revId": "bf7c6cfae108f0b39af4b447a429a606e6578627",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
