@@ -1,0 +1,8 @@
+Code-Review+2: Sean McGinnis <sean.mcginnis@gmail.com>
+Workflow+1: Sean McGinnis <sean.mcginnis@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Sat, 13 Jan 2018 11:12:09 +0000
+Reviewed-on: https://review.openstack.org/532984
+Project: openstack/keystone
+Branch: refs/heads/stable/pike
