@@ -446,6 +446,13 @@ class V3TokenDataHelper(provider_api.ProviderAPIMixin, object):
             LOG.error(msg)
             raise exception.UnexpectedError(msg)
 
+    def _populate_app_cred_restrictions(self, token_data, app_cred_id):
+        if app_cred_id:
+            app_cred_api = PROVIDERS.application_credential_api
+            app_cred = app_cred_api.get_application_credential(app_cred_id)
+            restricted = not app_cred['allow_application_credential_creation']
+            token_data['application_credential_restricted'] = restricted
+
     def get_token_data(self, user_id, method_names, domain_id=None,
                        project_id=None, expires=None, trust=None,
                        app_cred_id=None, token=None, include_catalog=True,
@@ -477,6 +484,7 @@ class V3TokenDataHelper(provider_api.ProviderAPIMixin, object):
         self._populate_token_dates(token_data, expires=expires,
                                    issued_at=issued_at)
         self._populate_oauth_section(token_data, access_token)
+        self._populate_app_cred_restrictions(token_data, app_cred_id)
         return {'token': token_data}
 
 

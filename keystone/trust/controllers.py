@@ -100,6 +100,15 @@ class TrustV3(controller.V3Controller):
             redelegated_trust = None
         return redelegated_trust
 
+    def _check_unrestricted(self, token):
+        auth_methods = token['methods']
+        if 'application_credential' in auth_methods:
+            if token.token_data['token']['application_credential_restricted']:
+                action = _("Using method 'application_credential' is not "
+                           "allowed for managing additional application "
+                           "credentials.")
+                raise exception.ForbiddenAction(action=action)
+
     @controller.protected()
     def create_trust(self, request, trust):
         """Create a new trust.
@@ -110,15 +119,7 @@ class TrustV3(controller.V3Controller):
         validation.lazy_validate(schema.trust_create, trust)
 
         token = request.auth_context['token']
-        auth_methods = token['methods']
-        # TODO(cmurphy) Currently, we unconditionally prohibit application
-        # credentials from creating trusts. Fix this to check whether the
-        # application credential is explicitly allowed to create and delete
-        # trusts.
-        if 'application_credential' in auth_methods:
-            action = _("Using method 'application_credential' is not allowed "
-                       "for creating trusts.")
-            raise exception.ForbiddenAction(action=action)
+        self._check_unrestricted(token)
 
         redelegated_trust = self._find_redelegated_trust(request)
 
@@ -224,15 +225,7 @@ class TrustV3(controller.V3Controller):
     @controller.protected()
     def delete_trust(self, request, trust_id):
         token = request.auth_context['token']
-        auth_methods = token['methods']
-        # TODO(cmurphy) Currently, we unconditionally prohibit application
-        # credentials from creating trusts. Fix this to check whether the
-        # application credential is explicitly allowed to create and delete
-        # trusts.
-        if 'application_credential' in auth_methods:
-            action = _("Using method 'application_credential' is not allowed "
-                       "for creating trusts.")
-            raise exception.ForbiddenAction(action=action)
+        self._check_unrestricted(token)
 
         trust = PROVIDERS.trust_api.get_trust(trust_id)
 
