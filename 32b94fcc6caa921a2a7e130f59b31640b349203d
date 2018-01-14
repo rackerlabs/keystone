@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_4146db7e",
+        "filename": "api-ref/source/v3-ext/federation/service-provider/sp.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-14T21:42:46Z",
+      "side": 1,
+      "message": "Mentioned in another review, but setting this to ../v3/status.yaml should fix the api-ref job failure.",
+      "range": {
+        "startLine": 48,
+        "startChar": 29,
+        "endLine": 48,
+        "endChar": 41
+      },
+      "revId": "32b94fcc6caa921a2a7e130f59b31640b349203d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
