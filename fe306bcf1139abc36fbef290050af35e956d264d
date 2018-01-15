@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_c80e798c",
+        "filename": "api-ref/source/v3-ext/simple-cert.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-15T16:26:30Z",
+      "side": 1,
+      "message": "Probably needs ../v3/status.yaml",
+      "range": {
+        "startLine": 23,
+        "startChar": 30,
+        "endLine": 23,
+        "endChar": 41
+      },
+      "revId": "fe306bcf1139abc36fbef290050af35e956d264d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
