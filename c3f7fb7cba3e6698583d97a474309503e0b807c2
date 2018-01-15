@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_288efd2d",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 587,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-15T16:20:21Z",
+      "side": 1,
+      "message": "Hmm we don\u0027t really have a way of deprecating these do we?\n\nYou might be able to have this subclass the new class just to DRY this up",
+      "revId": "c3f7fb7cba3e6698583d97a474309503e0b807c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_68fe45af",
+        "filename": "keystone/conf/fernet_tokens.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-15T16:20:21Z",
+      "side": 1,
+      "message": "*token",
+      "range": {
+        "startLine": 22,
+        "startChar": 33,
+        "endLine": 22,
+        "endChar": 39
+      },
+      "revId": "c3f7fb7cba3e6698583d97a474309503e0b807c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
