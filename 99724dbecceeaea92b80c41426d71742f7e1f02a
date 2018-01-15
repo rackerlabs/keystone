@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_1039ed3f",
+        "filename": "doc/source/configuration/config-options.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-15T15:01:58Z",
+      "side": 1,
+      "message": "I think you could get away without the line break here. It renders the same but would be more readable in unrendered form. Not really an issue though.",
+      "revId": "99724dbecceeaea92b80c41426d71742f7e1f02a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
