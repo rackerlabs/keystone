@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_8bfaab72",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-15T16:41:18Z",
+      "side": 1,
+      "message": "What about other things that use fernet utils, like the credential API?\n\nDo we need doctor checks for credential API configuration? If so, does moving this in to the token checks still make sense?",
+      "range": {
+        "startLine": 10,
+        "startChar": 35,
+        "endLine": 12,
+        "endChar": 27
+      },
+      "revId": "4701f3102a2da22ccbb676a3b5959bd41084303e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
