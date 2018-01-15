@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_8895d142",
+        "filename": "doc/source/contributor/set-up-keystone.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-15T16:22:06Z",
+      "side": 1,
+      "message": "Not sure, we could probably move this over to the python project guide. These are just issue\u0027s I\u0027ve been hitting when setting up fresh dev environments, usually end up needing something else installed that isn\u0027t included in bindep.",
+      "parentUuid": "7f96bb07_2615cf9c",
+      "revId": "656f23e795392620f0705aa962eeff7af10ca79c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_ce37464d",
         "filename": "doc/source/contributor/set-up-keystone.rst",
         "patchSetId": 1
@@ -77,6 +95,30 @@
       "side": 1,
       "message": "As a suse user I don\u0027t have this installed, the only thing I have from this pattern that\u0027s relevant to python environments is gcc.",
       "parentUuid": "9f91af0f_7d235c06",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 43
+      },
+      "revId": "656f23e795392620f0705aa962eeff7af10ca79c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_88a3919e",
+        "filename": "doc/source/contributor/set-up-keystone.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-15T16:22:06Z",
+      "side": 1,
+      "message": "Ah ok, if I move this over to the python project guide we can change it to just gcc if that is the only thing needed.",
+      "parentUuid": "7f96bb07_66dbd71a",
       "range": {
         "startLine": 101,
         "startChar": 0,
