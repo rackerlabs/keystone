@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_ab79a72f",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-15T16:38:27Z",
+      "side": 1,
+      "message": "I\u0027m not sure where keystone emits these, but I\u0027m sure it also depends on the web server. Either way, updating these for accuracy is a separate work item.",
+      "range": {
+        "startLine": 168,
+        "startChar": 0,
+        "endLine": 169,
+        "endChar": 8
+      },
+      "revId": "b9adc77b44f9b9ef27d26ea6a24d775781c537b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
