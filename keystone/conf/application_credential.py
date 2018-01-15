@@ -25,10 +25,27 @@ driver, so there is no reason to change this unless you are providing a custom
 entry point.
 """))
 
+caching = cfg.BoolOpt(
+    'caching',
+    default=True,
+    help=utils.fmt("""
+Toggle for application credential caching. This has no effect unless global
+caching is enabled.
+"""))
+
+cache_time = cfg.IntOpt(
+    'cache_time',
+    help=utils.fmt("""
+Time to cache application credential data in seconds. This has no effect
+unless global caching is enabled.
+"""))
+
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
     driver,
+    caching,
+    cache_time,
 ]
 
 
