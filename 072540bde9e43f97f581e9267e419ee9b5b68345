@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_28e7d242",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 23140
+      },
+      "writtenOn": "2018-01-15T23:38:42Z",
+      "side": 1,
+      "message": "I\u0027m a little confused by this sentence. Would what\u0027s below be clearer?\n\nExpired tokens are considered invalid by the Identity API. Token expiration is determined by the deployment\u0027s configuration.",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 29
+      },
+      "revId": "072540bde9e43f97f581e9267e419ee9b5b68345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
