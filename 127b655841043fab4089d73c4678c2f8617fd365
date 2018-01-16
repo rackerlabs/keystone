@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_d6b5967f",
+        "filename": "keystone/conf/unified_limit.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T14:44:02Z",
+      "side": 1,
+      "message": "limits*",
+      "range": {
+        "startLine": 46,
+        "startChar": 56,
+        "endLine": 46,
+        "endChar": 61
+      },
+      "revId": "127b655841043fab4089d73c4678c2f8617fd365",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
