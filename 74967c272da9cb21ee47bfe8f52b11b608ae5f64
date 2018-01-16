@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_59a3129f",
+        "filename": "keystone/conf/unified_limit.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-16T03:07:59Z",
+      "side": 1,
+      "message": "yeah. To keep the same with other resources. I\u0027ll write a test for it.",
+      "parentUuid": "7f96bb07_63cc1b6a",
+      "range": {
+        "startLine": 42,
+        "startChar": 5,
+        "endLine": 42,
+        "endChar": 15
+      },
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_c3b5efce",
         "filename": "keystone/conf/unified_limit.py",
         "patchSetId": 26
@@ -36,6 +60,30 @@
       "writtenOn": "2018-01-16T01:05:42Z",
       "side": 1,
       "message": "discrete unified limits*?",
+      "range": {
+        "startLine": 45,
+        "startChar": 48,
+        "endLine": 45,
+        "endChar": 70
+      },
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_b9ed768c",
+        "filename": "keystone/conf/unified_limit.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-16T03:07:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_c3b5efce",
       "range": {
         "startLine": 45,
         "startChar": 48,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_19feea36",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-16T03:07:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_23c6134a",
+      "range": {
+        "startLine": 29,
+        "startChar": 6,
+        "endLine": 29,
+        "endChar": 18
+      },
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_e3c7cb11",
         "filename": "keystone/limit/core.py",
         "patchSetId": 26
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_7984ceb1",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-16T03:07:59Z",
+      "side": 1,
+      "message": "yeah. If the input resource doesn\u0027t exist, we should return 400.",
+      "parentUuid": "7f96bb07_e3c7cb11",
+      "range": {
+        "startLine": 48,
+        "startChar": 8,
+        "endLine": 50,
+        "endChar": 58
+      },
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_c3a2cf4b",
         "filename": "keystone/limit/core.py",
         "patchSetId": 26
@@ -105,6 +201,30 @@
       "writtenOn": "2018-01-16T01:05:42Z",
       "side": 1,
       "message": "Can\u0027t this be cached, too?",
+      "range": {
+        "startLine": 70,
+        "startChar": 20,
+        "endLine": 70,
+        "endChar": 42
+      },
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_2e459743",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-16T03:07:59Z",
+      "side": 1,
+      "message": "Actually I think we should, but I\u0027m not sure because I find that other resources doesn\u0027t cache for list APIs. Do you know why?",
+      "parentUuid": "7f96bb07_c3a2cf4b",
       "range": {
         "startLine": 70,
         "startChar": 20,
@@ -157,6 +277,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_94ab9f87",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-16T03:07:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_e31a6b7b",
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_fe020409",
         "filename": "keystone/tests/unit/limit/test_backends.py",
         "patchSetId": 26
@@ -185,6 +323,24 @@
       "writtenOn": "2018-01-16T01:05:42Z",
       "side": 1,
       "message": "We could add another assertion here just to make sure we did get back the only limit we should be getting back:\n\n  self.assertEqual(registered_limit_1[\u0027id\u0027], reg_limit[0][\u0027id\u0027])",
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_d48a8719",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-16T03:07:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_9e22e0a3",
       "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -225,6 +381,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_54cc3769",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-16T03:07:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_feec442a",
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_7ec11480",
         "filename": "keystone/tests/unit/limit/test_backends.py",
         "patchSetId": 26
@@ -236,6 +410,30 @@
       "writtenOn": "2018-01-16T01:05:42Z",
       "side": 1,
       "message": "Since this isn\u0027t testing all aspects of CRUD, we should rename the test to be more specific to the test:\n\n  def test_create_and_list_limits(self)\n\nOr we could even break them up a bit into:\n\n  def test_create_limit(self):\n      self._create_default_registered_limits()\n      limit \u003d unit.new_limit_ref(\n          project_id\u003dself.tenant_bar[\u0027id\u0027],\n          service_id\u003dself.service_ServiceOne[\u0027id\u0027],\n          region_id\u003dself.region_RegionOne[\u0027id\u0027],\n          resource_name\u003d\u0027volume\u0027, resource_limit\u003d10,\n          id\u003duuid.uuid4().hex)\n      result \u003d PROVIDERS.unified_limit_api.create_limits([limit])\n      self.assertDictEqual(limit, result[0])\n\nand\n\n  def test_list_limit(self):\n      self._create_default_registered_limits()\n      # create one or multiple\n      limit \u003d unit.new_limit_ref(\n          project_id\u003dself.tenant_bar[\u0027id\u0027],\n          service_id\u003dself.service_ServiceOne[\u0027id\u0027],\n          region_id\u003dself.region_RegionOne[\u0027id\u0027],\n          resource_name\u003d\u0027volume\u0027, resource_limit\u003d10,\n          id\u003duuid.uuid4().hex)\n      create_result \u003d PROVIDERS.unified_limit_api.create_limits([limit])\n      list_result \u003d PROVIDERS.unified_limit_api.list_limits()\n      # make sure they are equal",
+      "range": {
+        "startLine": 282,
+        "startChar": 18,
+        "endLine": 282,
+        "endChar": 23
+      },
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_74ccd360",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-16T03:07:59Z",
+      "side": 1,
+      "message": "Done, It tests for limit creation. I separated CRUD into some single tests but forget to change this test name.",
+      "parentUuid": "7f96bb07_7ec11480",
       "range": {
         "startLine": 282,
         "startChar": 18,
@@ -276,6 +474,30 @@
       "writtenOn": "2018-01-16T01:05:42Z",
       "side": 1,
       "message": "We could break these into more specific tests:\n\n  def test_create_limit_with_invalid_region_raises_validation_error(self):\n\nand the same thing for the service case.",
+      "range": {
+        "startLine": 325,
+        "startChar": 8,
+        "endLine": 325,
+        "endChar": 60
+      },
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_543f5724",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-16T03:07:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_1e1c9010",
       "range": {
         "startLine": 325,
         "startChar": 8,
