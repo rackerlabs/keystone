@@ -1,0 +1,8 @@
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Workflow+1: Colleen Murphy <colleen@gazlene.net>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 16 Jan 2018 06:35:34 +0000
+Reviewed-on: https://review.openstack.org/533093
+Project: openstack/keystone
+Branch: refs/heads/master
