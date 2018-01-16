@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_9e0e608b",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 11
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T01:21:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_a1f9fb80",
+      "range": {
+        "startLine": 27,
+        "startChar": 36,
+        "endLine": 27,
+        "endChar": 54
+      },
+      "revId": "480041e196d95f11ba7ebfb9786ae2350f3c3de9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_c13be735",
         "filename": "api-ref/source/v3/roles.inc",
         "patchSetId": 11
@@ -72,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_1e81f08f",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 11
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T01:21:20Z",
+      "side": 1,
+      "message": "I can update 524407.",
+      "parentUuid": "7f96bb07_c15c474d",
+      "range": {
+        "startLine": 42,
+        "startChar": 42,
+        "endLine": 42,
+        "endChar": 60
+      },
+      "revId": "480041e196d95f11ba7ebfb9786ae2350f3c3de9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_811e3fb8",
         "filename": "api-ref/source/v3/roles.inc",
         "patchSetId": 11
@@ -83,6 +131,30 @@
       "writtenOn": "2018-01-12T13:43:00Z",
       "side": 1,
       "message": "Following this example, you could precede the system role example with \"Since Identity API v3.10 [or whatever] you can list system role assignments...\"",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 23
+      },
+      "revId": "480041e196d95f11ba7ebfb9786ae2350f3c3de9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_3e4b8cb0",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 11
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T01:21:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_811e3fb8",
       "range": {
         "startLine": 44,
         "startChar": 0,
@@ -118,6 +190,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_feca0418",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 11
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T01:21:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_e182a3c8",
+      "range": {
+        "startLine": 58,
+        "startChar": 31,
+        "endLine": 58,
+        "endChar": 37
+      },
+      "revId": "480041e196d95f11ba7ebfb9786ae2350f3c3de9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_01d6afc6",
         "filename": "api-ref/source/v3/system-roles.inc",
         "patchSetId": 11
@@ -129,6 +225,24 @@
       "writtenOn": "2018-01-12T13:43:00Z",
       "side": 1,
       "message": "I would sort of expect users to come before groups",
+      "revId": "480041e196d95f11ba7ebfb9786ae2350f3c3de9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_fe668429",
+        "filename": "api-ref/source/v3/system-roles.inc",
+        "patchSetId": 11
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T01:21:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_01d6afc6",
       "revId": "480041e196d95f11ba7ebfb9786ae2350f3c3de9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
