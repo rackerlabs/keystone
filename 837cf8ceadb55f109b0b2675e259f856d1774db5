@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_38c93dab",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-16T21:17:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_dc9cdf0f",
+      "revId": "837cf8ceadb55f109b0b2675e259f856d1774db5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_5ce20fa2",
         "filename": "keystone/conf/application_credential.py",
         "patchSetId": 32
@@ -30,6 +48,24 @@
       "writtenOn": "2018-01-16T12:02:32Z",
       "side": 1,
       "message": "it\u0027s better to add the related \u0027caching\u0027 and \u0027cache_time\u0027 configs as well",
+      "revId": "837cf8ceadb55f109b0b2675e259f856d1774db5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_f8c6759a",
+        "filename": "keystone/conf/application_credential.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-16T21:17:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_5ce20fa2",
       "revId": "837cf8ceadb55f109b0b2675e259f856d1774db5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
