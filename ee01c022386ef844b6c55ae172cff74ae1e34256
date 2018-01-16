@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_d5ed82b7",
+        "filename": "keystone/application_credential/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T20:47:03Z",
+      "side": 1,
+      "message": "Where do we want to pop this off the reference before returning to the user?",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 6
+      },
+      "revId": "ee01c022386ef844b6c55ae172cff74ae1e34256",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
