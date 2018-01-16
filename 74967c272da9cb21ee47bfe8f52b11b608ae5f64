@@ -364,6 +364,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_289ca768",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-16T07:35:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_de84e860",
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_feec442a",
         "filename": "keystone/tests/unit/limit/test_backends.py",
         "patchSetId": 26
@@ -475,6 +493,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "7f96bb07_5ed0d81f",
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_d5435b12",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-16T07:35:52Z",
+      "side": 1,
+      "message": "It\u0027s strange that the FK doesn\u0027t work for the test code:\nI wrote a test like:\n\ndef test_create_limit_without_reference_registered_limit(self):\n\tlimit_1 \u003d unit.new_limit_ref(\n\t\tproject_id\u003dself.tenant_bar[\u0027id\u0027],\n\t\tservice_id\u003dself.service_ServiceOne[\u0027id\u0027],\n\t\tregion_id\u003dself.region_RegionOne[\u0027id\u0027],\n\t\tresource_name\u003d\u0027volume\u0027, resource_limit\u003d10, id\u003duuid.uuid4().hex)\n\tself.assertRaises(exception.NoLimitReference,\n\t\t\t\t\t  PROVIDERS.unified_limit_api.create_limits,\n\t\t\t\t\t  [limit_1])\n\nBut I\u0027m sure the FK works since I test those APIs in my env many times. Have no idea here now.",
+      "parentUuid": "7f96bb07_0e8f7b75",
       "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
