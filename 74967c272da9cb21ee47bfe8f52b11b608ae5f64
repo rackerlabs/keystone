@@ -1,0 +1,336 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_63cc1b6a",
+        "filename": "keystone/conf/unified_limit.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T01:05:42Z",
+      "side": 1,
+      "message": "Is this for pagination support?",
+      "range": {
+        "startLine": 42,
+        "startChar": 5,
+        "endLine": 42,
+        "endChar": 15
+      },
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_c3b5efce",
+        "filename": "keystone/conf/unified_limit.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T01:05:42Z",
+      "side": 1,
+      "message": "discrete unified limits*?",
+      "range": {
+        "startLine": 45,
+        "startChar": 48,
+        "endLine": 45,
+        "endChar": 70
+      },
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_23c6134a",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T01:05:42Z",
+      "side": 1,
+      "message": "We typically just do:\n\n  class Manager\n\nsince the unified limit bit is usually implied by the name of the module.",
+      "range": {
+        "startLine": 29,
+        "startChar": 6,
+        "endLine": 29,
+        "endChar": 18
+      },
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_e3c7cb11",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T01:05:42Z",
+      "side": 1,
+      "message": "I just spent way too much time looking for the API WG guideline document that describes what to do here, but for this we\u0027re supposed to return a 400 instead of a 404, right?",
+      "range": {
+        "startLine": 48,
+        "startChar": 8,
+        "endLine": 50,
+        "endChar": 58
+      },
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_c3a2cf4b",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T01:05:42Z",
+      "side": 1,
+      "message": "Can\u0027t this be cached, too?",
+      "range": {
+        "startLine": 70,
+        "startChar": 20,
+        "endLine": 70,
+        "endChar": 42
+      },
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_43a79f50",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T01:05:42Z",
+      "side": 1,
+      "message": "If we ever cache list responses for unified limits we\u0027ll have to incorporate that into this invalidation.",
+      "range": {
+        "startLine": 83,
+        "startChar": 13,
+        "endLine": 83,
+        "endChar": 33
+      },
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_e31a6b7b",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T01:05:42Z",
+      "side": 1,
+      "message": "We could add another assertion here to make sure we only get two limits back in the response.",
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_fe020409",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T01:05:42Z",
+      "side": 1,
+      "message": "Nice - thanks for adding this case.",
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_9e22e0a3",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T01:05:42Z",
+      "side": 1,
+      "message": "We could add another assertion here just to make sure we did get back the only limit we should be getting back:\n\n  self.assertEqual(registered_limit_1[\u0027id\u0027], reg_limit[0][\u0027id\u0027])",
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_de84e860",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T01:05:42Z",
+      "side": 1,
+      "message": "We could save the response from this call and use it in the assertion later to, comparing it to the result from list_registered_limits().",
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_feec442a",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T01:05:42Z",
+      "side": 1,
+      "message": "We can list the remaining limit to make sure it was removed from the system.",
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_7ec11480",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T01:05:42Z",
+      "side": 1,
+      "message": "Since this isn\u0027t testing all aspects of CRUD, we should rename the test to be more specific to the test:\n\n  def test_create_and_list_limits(self)\n\nOr we could even break them up a bit into:\n\n  def test_create_limit(self):\n      self._create_default_registered_limits()\n      limit \u003d unit.new_limit_ref(\n          project_id\u003dself.tenant_bar[\u0027id\u0027],\n          service_id\u003dself.service_ServiceOne[\u0027id\u0027],\n          region_id\u003dself.region_RegionOne[\u0027id\u0027],\n          resource_name\u003d\u0027volume\u0027, resource_limit\u003d10,\n          id\u003duuid.uuid4().hex)\n      result \u003d PROVIDERS.unified_limit_api.create_limits([limit])\n      self.assertDictEqual(limit, result[0])\n\nand\n\n  def test_list_limit(self):\n      self._create_default_registered_limits()\n      # create one or multiple\n      limit \u003d unit.new_limit_ref(\n          project_id\u003dself.tenant_bar[\u0027id\u0027],\n          service_id\u003dself.service_ServiceOne[\u0027id\u0027],\n          region_id\u003dself.region_RegionOne[\u0027id\u0027],\n          resource_name\u003d\u0027volume\u0027, resource_limit\u003d10,\n          id\u003duuid.uuid4().hex)\n      create_result \u003d PROVIDERS.unified_limit_api.create_limits([limit])\n      list_result \u003d PROVIDERS.unified_limit_api.list_limits()\n      # make sure they are equal",
+      "range": {
+        "startLine": 282,
+        "startChar": 18,
+        "endLine": 282,
+        "endChar": 23
+      },
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_5ed0d81f",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T01:05:42Z",
+      "side": 1,
+      "message": "Do we test creating a limit that doesn\u0027t correspond to a registered limit?",
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_1e1c9010",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T01:05:42Z",
+      "side": 1,
+      "message": "We could break these into more specific tests:\n\n  def test_create_limit_with_invalid_region_raises_validation_error(self):\n\nand the same thing for the service case.",
+      "range": {
+        "startLine": 325,
+        "startChar": 8,
+        "endLine": 325,
+        "endChar": 60
+      },
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_3ec5cc5b",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 1274,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T01:05:42Z",
+      "side": 1,
+      "message": "any reason to do this versus just expecting to use self.serviceOne?",
+      "range": {
+        "startLine": 1274,
+        "startChar": 24,
+        "endLine": 1274,
+        "endChar": 34
+      },
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_9eabc087",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 1279,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-16T01:05:42Z",
+      "side": 1,
+      "message": "Same comment here... as I was writing a couple tests I noticed the names are a bit redundant.",
+      "range": {
+        "startLine": 1279,
+        "startChar": 24,
+        "endLine": 1279,
+        "endChar": 31
+      },
+      "revId": "74967c272da9cb21ee47bfe8f52b11b608ae5f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
