@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_322ddffd",
+        "filename": "keystone/common/sql/expand_repo/versions/034_expand_add_application_credential_table.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-01-16T18:08:39Z",
+      "side": 1,
+      "message": "Please make the PK internal SQL Int. This is for optimizations within the RDBMS system. This should still be a unique key and use for external work however, the INT allows for better FK and other such handling (and limits some of the internal storage/efficency issues that come up with large STR PKs)\n\nThis means we also should reference the INT pk where possible. IT should always be stripped before sending to the user.",
+      "revId": "a7ceb358f7adc7823a2e1c33836bdad09f5f11c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
