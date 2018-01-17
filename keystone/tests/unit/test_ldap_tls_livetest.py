@@ -50,11 +50,10 @@ class LiveTLSLDAPIdentity(test_ldap_livetest.LiveLDAPIdentity):
                                    tls_req_cert='demand')
         self.identity_api = identity.backends.ldap.Identity()
 
-        # TODO(shaleh): use new_user_ref()
-        user = {'name': 'fake1',
-                'password': 'fakepass1',
-                'tenants': ['bar']}
-        user = self.identity_api.create_user('user')
+        user = unit.new_user_ref('default',
+                                 name='fake1',
+                                 password='fakepass1')
+        user = self.identity_api.create_user(user)
         user_ref = self.identity_api.get_user(user['id'])
         self.assertEqual(user['id'], user_ref['id'])
 
