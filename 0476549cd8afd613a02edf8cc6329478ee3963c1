@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_6dbefeff",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T20:04:49Z",
+      "side": 1,
+      "message": "nit: bar, sorry about that..",
+      "range": {
+        "startLine": 185,
+        "startChar": 45,
+        "endLine": 185,
+        "endChar": 48
+      },
+      "revId": "0476549cd8afd613a02edf8cc6329478ee3963c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
