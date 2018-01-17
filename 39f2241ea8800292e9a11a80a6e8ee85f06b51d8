@@ -1,0 +1,302 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_5a209df7",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T18:12:32Z",
+      "side": 1,
+      "message": "Based on this, it looks like assignment list is a list of dictionaries, which are the role references. We have a utility method in common that removes duplicate dictionaries from a list. We had a bug this release or last release with code very similar to this that wasn\u0027t removing duplicates because of dictionary ordering (which set doesn\u0027t seem to account for).\n\nhttps://github.com/openstack/keystone/blob/28abf3e44b0319c7a2f7f86392e1362bac10bf93/keystone/common/utils.py#L123\n\nWe might be able to do something like:\n\n  def _get_user_roles(self, user_id, project_id):\n      assignment_list \u003d PROVIDERS.assignment_api.list_role_assignments(\n          user_id\u003duser_id, project_id\u003dproject_id, effective\u003dTrue\n      )\n      return utils.remove_duplicate_dicts_by_id(assignment_list)",
+      "range": {
+        "startLine": 82,
+        "startChar": 20,
+        "endLine": 82,
+        "endChar": 23
+      },
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_1aca151a",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T18:12:32Z",
+      "side": 1,
+      "message": "If it\u0027s possible to create an application credential without roles, we might need to check that there is at least one thing in user_roles.",
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_9a062552",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T18:12:32Z",
+      "side": 1,
+      "message": "This is only used when creating an application credential. Would this be considered invalid data if a user supplied roles in the application credential reference that they didn\u0027t have? If so, should we return a 400 instead of a 404?",
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_fa5de978",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T18:12:32Z",
+      "side": 1,
+      "message": "We can move this to the sql implementation of the backend.",
+      "range": {
+        "startLine": 108,
+        "startChar": 8,
+        "endLine": 109,
+        "endChar": 31
+      },
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_9a970549",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T18:12:32Z",
+      "side": 1,
+      "message": "nit: We could document the application_credential parameter, too.",
+      "range": {
+        "startLine": 116,
+        "startChar": 9,
+        "endLine": 116,
+        "endChar": 16
+      },
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_5a765d40",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T18:12:32Z",
+      "side": 1,
+      "message": "If we\u0027re using the same name to store the copy, can\u0027t we just use the original?",
+      "range": {
+        "startLine": 118,
+        "startChar": 8,
+        "endLine": 118,
+        "endChar": 30
+      },
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_7a49d9b4",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T18:12:32Z",
+      "side": 1,
+      "message": "Roles are required when creating an application credential, right?",
+      "range": {
+        "startLine": 121,
+        "startChar": 38,
+        "endLine": 121,
+        "endChar": 51
+      },
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_1a66952b",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T18:12:32Z",
+      "side": 1,
+      "message": "Same comment here as on line 173. I\u0027m just wondering if we should keep these public if they are only used in callbacks.\n\nIt would totally make sense to keep them if we expose an API for users to delete all their application credentials. Or a privileged API for administrators to delete all application credentials for a user, without actually deleting or disabling the user.",
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_1aa455b9",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T18:12:32Z",
+      "side": 1,
+      "message": "This is only used for the callback. Do we plan to expose this via a public API? If not, do we want to consider not making it a public method, or just roll it into the logic of the callback method?",
+      "range": {
+        "startLine": 173,
+        "startChar": 8,
+        "endLine": 173,
+        "endChar": 58
+      },
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_b539b2d7",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T18:12:32Z",
+      "side": 1,
+      "message": "nit: credential_fails",
+      "range": {
+        "startLine": 58,
+        "startChar": 42,
+        "endLine": 58,
+        "endChar": 52
+      },
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_75b24a4b",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T18:12:32Z",
+      "side": 1,
+      "message": "I think there is an api guideline somewhere about returning 404/400 in cases like this. If this is a validation thing, do we return a 400 or a 404?",
+      "range": {
+        "startLine": 77,
+        "startChar": 36,
+        "endLine": 77,
+        "endChar": 58
+      },
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_b56772e9",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T18:12:32Z",
+      "side": 1,
+      "message": "What happens if a user attempts to create an application credential without roles?",
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_d50d5ee8",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T18:12:32Z",
+      "side": 1,
+      "message": "We might want to add this same test but instead of invoking the method directly we could delete or disable the user and ensure the wiring for the callback is correct.",
+      "range": {
+        "startLine": 157,
+        "startChar": 26,
+        "endLine": 157,
+        "endChar": 65
+      },
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_f5109a02",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T18:12:32Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "range": {
+        "startLine": 181,
+        "startChar": 26,
+        "endLine": 181,
+        "endChar": 76
+      },
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
