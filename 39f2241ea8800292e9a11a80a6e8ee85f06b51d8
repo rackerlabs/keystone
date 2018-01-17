@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_3bd91356",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T19:34:03Z",
+      "side": 1,
+      "message": "Oh - good call... nevermind",
+      "parentUuid": "7f96bb07_207c7eea",
+      "range": {
+        "startLine": 82,
+        "startChar": 20,
+        "endLine": 82,
+        "endChar": 23
+      },
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_1aca151a",
         "filename": "keystone/application_credential/core.py",
         "patchSetId": 34
@@ -84,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_9bd2a727",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T19:34:03Z",
+      "side": 1,
+      "message": "Ok - so roles is ultimately optional, but pull from the token in that case. Which is consistent with what we have in the spec:\n\nhttp://specs.openstack.org/openstack/keystone-specs/specs/keystone/queens/application-credentials.html#application-credential-management\n\nPerfect, thanks.",
+      "parentUuid": "7f96bb07_4068aa1b",
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_9a062552",
         "filename": "keystone/application_credential/core.py",
         "patchSetId": 34
@@ -113,6 +155,24 @@
       "side": 1,
       "message": "Agreed, I transformed it here: https://review.openstack.org/#/c/524423/33/keystone/application_credential/controllers.py@115\n\nI suppose I could bring that down here? Sort of felt like a layer violation to me",
       "parentUuid": "7f96bb07_9a062552",
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_1ba457b9",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T19:34:03Z",
+      "side": 1,
+      "message": "Yeah - I think that\u0027s fine. I just wanted to make sure we weren\u0027t bubbling this up to the user if we should be returning a 400 instead.",
+      "parentUuid": "7f96bb07_00a14246",
       "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -283,6 +343,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_bb920356",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T19:34:03Z",
+      "side": 1,
+      "message": "Got it, your response to my other comments cleared this up. The controller seems like an appropriate place to do this. And we can certainly move it later if we decide to.",
+      "parentUuid": "7f96bb07_3b7cb381",
+      "range": {
+        "startLine": 121,
+        "startChar": 38,
+        "endLine": 121,
+        "endChar": 51
+      },
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_1a66952b",
         "filename": "keystone/application_credential/core.py",
         "patchSetId": 34
@@ -312,6 +396,24 @@
       "side": 1,
       "message": "Yeah, both of those could be potentially useful. It wasn\u0027t part of the spec so I didn\u0027t make them part of the public API. I could make these private for now and then make them unprivate if we decide to expose them.",
       "parentUuid": "7f96bb07_1a66952b",
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_7b98fb73",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T19:34:03Z",
+      "side": 1,
+      "message": "++ that\u0027s a good idea.",
+      "parentUuid": "7f96bb07_1bec5728",
       "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
