@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_8316b948",
+        "filename": "keystone/application_credential/schema.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-17T21:05:26Z",
+      "side": 1,
+      "message": "I think this is for the properties of a \"role\" object, you can only either specify name or id. This should allow for multiple \"role\" objects.",
+      "parentUuid": "7f96bb07_8df7ca59",
+      "range": {
+        "startLine": 27,
+        "startChar": 9,
+        "endLine": 27,
+        "endChar": 22
+      },
+      "revId": "d823c402758635f967aa1025e43e90c281221a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_8d282a97",
         "filename": "keystone/common/policies/application_credential.py",
         "patchSetId": 33
