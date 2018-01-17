@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_207c7eea",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-17T19:25:29Z",
+      "side": 1,
+      "message": "The thing is that the end result here is a list of ids, but the output of that method is a list of dictionaries. In order to use that it would have to look something like this:\n\n return [r[\u0027id\u0027] for r in utils.remove_duplicate_dicts_by_id(\n            [{\u0027id\u0027: a[\u0027role_id\u0027]} for a in assignment_list])]\n\nwhich is a bit verbose but not the worst",
+      "parentUuid": "7f96bb07_5a209df7",
+      "range": {
+        "startLine": 82,
+        "startChar": 20,
+        "endLine": 82,
+        "endChar": 23
+      },
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_1aca151a",
         "filename": "keystone/application_credential/core.py",
         "patchSetId": 34
@@ -36,6 +60,24 @@
       "writtenOn": "2018-01-17T18:12:32Z",
       "side": 1,
       "message": "If it\u0027s possible to create an application credential without roles, we might need to check that there is at least one thing in user_roles.",
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_4068aa1b",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-17T19:25:29Z",
+      "side": 1,
+      "message": "It should not be possible if they go through the REST API. If the user doesn\u0027t specify a role in their request then the roles are taken from the token. They can\u0027t do this with an unscoped token so there will always be a role.\n\nHowever, if someone is trying to write some kind of plugin and not going through the REST API then I guess they could hit this, can add a guard.",
+      "parentUuid": "7f96bb07_1aca151a",
       "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_00a14246",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-17T19:25:29Z",
+      "side": 1,
+      "message": "Agreed, I transformed it here: https://review.openstack.org/#/c/524423/33/keystone/application_credential/controllers.py@115\n\nI suppose I could bring that down here? Sort of felt like a layer violation to me",
+      "parentUuid": "7f96bb07_9a062552",
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_fa5de978",
         "filename": "keystone/application_credential/core.py",
         "patchSetId": 34
@@ -70,6 +130,30 @@
       "writtenOn": "2018-01-17T18:12:32Z",
       "side": 1,
       "message": "We can move this to the sql implementation of the backend.",
+      "range": {
+        "startLine": 108,
+        "startChar": 8,
+        "endLine": 109,
+        "endChar": 31
+      },
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_609126f1",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-17T19:25:29Z",
+      "side": 1,
+      "message": "Fixed in next patchset",
+      "parentUuid": "7f96bb07_fa5de978",
       "range": {
         "startLine": 108,
         "startChar": 8,
@@ -128,6 +212,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_bb3e83b5",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-17T19:25:29Z",
+      "side": 1,
+      "message": "I was having problems with the unit tests where I wanted to compare the output of the create/get with the reference dict, but the create modifies the object since it\u0027s passed by reference. That made me think it\u0027s probably better form to make a copy rather than operate on the original.",
+      "parentUuid": "7f96bb07_5a765d40",
+      "range": {
+        "startLine": 118,
+        "startChar": 8,
+        "endLine": 118,
+        "endChar": 30
+      },
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_7a49d9b4",
         "filename": "keystone/application_credential/core.py",
         "patchSetId": 34
@@ -151,6 +259,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_3b7cb381",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-17T19:25:29Z",
+      "side": 1,
+      "message": "Yes this should always come in from the controller with roles.",
+      "parentUuid": "7f96bb07_7a49d9b4",
+      "range": {
+        "startLine": 121,
+        "startChar": 38,
+        "endLine": 121,
+        "endChar": 51
+      },
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_1a66952b",
         "filename": "keystone/application_credential/core.py",
         "patchSetId": 34
@@ -162,6 +294,24 @@
       "writtenOn": "2018-01-17T18:12:32Z",
       "side": 1,
       "message": "Same comment here as on line 173. I\u0027m just wondering if we should keep these public if they are only used in callbacks.\n\nIt would totally make sense to keep them if we expose an API for users to delete all their application credentials. Or a privileged API for administrators to delete all application credentials for a user, without actually deleting or disabling the user.",
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_1bec5728",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-17T19:25:29Z",
+      "side": 1,
+      "message": "Yeah, both of those could be potentially useful. It wasn\u0027t part of the spec so I didn\u0027t make them part of the public API. I could make these private for now and then make them unprivate if we decide to expose them.",
+      "parentUuid": "7f96bb07_1a66952b",
       "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -237,6 +387,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_3bd83379",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-17T19:25:29Z",
+      "side": 1,
+      "message": "Responded in core.py",
+      "parentUuid": "7f96bb07_75b24a4b",
+      "range": {
+        "startLine": 77,
+        "startChar": 36,
+        "endLine": 77,
+        "endChar": 58
+      },
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_b56772e9",
         "filename": "keystone/tests/unit/application_credential/test_backends.py",
         "patchSetId": 34
@@ -254,6 +428,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_9bc867a6",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-17T19:25:29Z",
+      "side": 1,
+      "message": "Responded in core.py",
+      "parentUuid": "7f96bb07_b56772e9",
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_d50d5ee8",
         "filename": "keystone/tests/unit/application_credential/test_backends.py",
         "patchSetId": 34
@@ -265,6 +457,30 @@
       "writtenOn": "2018-01-17T18:12:32Z",
       "side": 1,
       "message": "We might want to add this same test but instead of invoking the method directly we could delete or disable the user and ensure the wiring for the callback is correct.",
+      "range": {
+        "startLine": 157,
+        "startChar": 26,
+        "endLine": 157,
+        "endChar": 65
+      },
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_1b3a1798",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-17T19:25:29Z",
+      "side": 1,
+      "message": "Sure...will have to figure out how to trigger notifications from the unit tests",
+      "parentUuid": "7f96bb07_d50d5ee8",
       "range": {
         "startLine": 157,
         "startChar": 26,
