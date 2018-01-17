@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_c13ef9bf",
+        "filename": "keystone/application_credential/controllers.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T22:41:48Z",
+      "side": 1,
+      "message": "Nevermind - I just looked at the next patch set in the series...",
+      "parentUuid": "7f96bb07_63584d55",
+      "revId": "3b343cadd460edf6a06e52f0cdc752dd3a35fc78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_86448748",
         "filename": "keystone/auth/core.py",
         "patchSetId": 23
