@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_fb15eb49",
+        "filename": "keystone/application_credential/controllers.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T20:55:45Z",
+      "side": 1,
+      "message": "I spent way too much time trying to find this the other day... bookmarking!",
+      "revId": "d823c402758635f967aa1025e43e90c281221a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_8df7ca59",
+        "filename": "keystone/application_credential/schema.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T20:55:45Z",
+      "side": 1,
+      "message": "We\u0027re only going to allow a single role for an application credential? What about if I have multiple roles in the token I use to create an application credential?",
+      "range": {
+        "startLine": 27,
+        "startChar": 9,
+        "endLine": 27,
+        "endChar": 22
+      },
+      "revId": "d823c402758635f967aa1025e43e90c281221a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_8d282a97",
+        "filename": "keystone/common/policies/application_credential.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T20:55:45Z",
+      "side": 1,
+      "message": "For system administrators - they should be able to get any application credential? But for project administrators, they should only be able to get application credentials for the project they are an administrator on.\n\nJust making a note about that here so that we can follow this up with a FIXME for later.",
+      "range": {
+        "startLine": 24,
+        "startChar": 8,
+        "endLine": 24,
+        "endChar": 19
+      },
+      "revId": "d823c402758635f967aa1025e43e90c281221a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_ad108658",
+        "filename": "keystone/common/policies/application_credential.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T20:55:45Z",
+      "side": 1,
+      "message": "The same comment here.",
+      "range": {
+        "startLine": 33,
+        "startChar": 8,
+        "endLine": 33,
+        "endChar": 19
+      },
+      "revId": "d823c402758635f967aa1025e43e90c281221a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_1072f1ad",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T20:55:45Z",
+      "side": 1,
+      "message": "Smart... this is a good idea. I always type this url out over and over when working with functional tests.",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 15
+      },
+      "revId": "d823c402758635f967aa1025e43e90c281221a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_90c36157",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T20:55:45Z",
+      "side": 1,
+      "message": "By implicit here we actually mean the roles from the token are used when creating the application credential. This doesn\u0027t rely on the implied roles feature, does it?",
+      "range": {
+        "startLine": 68,
+        "startChar": 43,
+        "endLine": 68,
+        "endChar": 51
+      },
+      "revId": "d823c402758635f967aa1025e43e90c281221a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_d086c9b9",
+        "filename": "keystone/version/service.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T20:55:45Z",
+      "side": 1,
+      "message": "Based on dstanek\u0027s comment on line 122, should this be bumped up the stack? Surely this will be used more than the policy API?",
+      "range": {
+        "startLine": 136,
+        "startChar": 23,
+        "endLine": 136,
+        "endChar": 39
+      },
+      "revId": "d823c402758635f967aa1025e43e90c281221a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
