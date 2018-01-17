@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_1a3a1598",
+        "filename": "keystone/application_credential/backends/sql.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T17:36:01Z",
+      "side": 1,
+      "message": "We should make sure we keep this property internal to this specific driver.",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 6
+      },
+      "revId": "8107a5fd10f4f626552cd5816c8a2760a9ce6534",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_3a66f1c2",
+        "filename": "keystone/application_credential/backends/sql.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T17:36:01Z",
+      "side": 1,
+      "message": "We should make sure the internal id property is removed here and the application_credential[\u0027id\u0027] \u003d app_cred_dict[\u0027application_credential_id\u0027]",
+      "range": {
+        "startLine": 121,
+        "startChar": 12,
+        "endLine": 121,
+        "endChar": 25
+      },
+      "revId": "8107a5fd10f4f626552cd5816c8a2760a9ce6534",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
