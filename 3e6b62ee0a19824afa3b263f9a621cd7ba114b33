@@ -22,6 +22,30 @@
       "revId": "3e6b62ee0a19824afa3b263f9a621cd7ba114b33",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_c1435941",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1044,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T22:46:04Z",
+      "side": 1,
+      "message": "I could go through and assert the role in the list match the roles created at the beginning of the test.",
+      "parentUuid": "7f96bb07_e626ab68",
+      "range": {
+        "startLine": 1044,
+        "startChar": 14,
+        "endLine": 1044,
+        "endChar": 58
+      },
+      "revId": "3e6b62ee0a19824afa3b263f9a621cd7ba114b33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
