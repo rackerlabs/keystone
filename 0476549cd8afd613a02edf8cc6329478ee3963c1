@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_63efede8",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T21:20:13Z",
+      "side": 1,
+      "message": "This behavior is also noted on line 37 and 38.",
+      "parentUuid": "7f96bb07_2379e592",
+      "range": {
+        "startLine": 74,
+        "startChar": 13,
+        "endLine": 74,
+        "endChar": 63
+      },
+      "revId": "0476549cd8afd613a02edf8cc6329478ee3963c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_6dbefeff",
         "filename": "keystone/tests/unit/application_credential/test_backends.py",
         "patchSetId": 37
