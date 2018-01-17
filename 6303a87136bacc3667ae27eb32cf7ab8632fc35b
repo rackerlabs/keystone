@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_266333b4",
+        "filename": "api-ref/source/v3/system-roles.inc",
+        "patchSetId": 12
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-17T22:01:19Z",
+      "side": 1,
+      "message": "er 400",
+      "parentUuid": "7f96bb07_0672b7ad",
+      "revId": "6303a87136bacc3667ae27eb32cf7ab8632fc35b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_269ed3b8",
         "filename": "api-ref/source/v3/system-roles.inc",
         "patchSetId": 12
@@ -48,6 +66,24 @@
       "side": 1,
       "message": "I assume either if the user or role didn\u0027t exist that it would return 404.",
       "parentUuid": "7f96bb07_269ed3b8",
+      "revId": "6303a87136bacc3667ae27eb32cf7ab8632fc35b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_864ec735",
+        "filename": "api-ref/source/v3/system-roles.inc",
+        "patchSetId": 12
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-17T22:01:19Z",
+      "side": 1,
+      "message": "Shoot I was confusing it with 400\n\nSame question though",
+      "parentUuid": "7f96bb07_e6f1cb02",
       "revId": "6303a87136bacc3667ae27eb32cf7ab8632fc35b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
