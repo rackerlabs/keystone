@@ -493,6 +493,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_fb296b36",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T19:29:11Z",
+      "side": 1,
+      "message": "I think it\u0027s picked up in the notification framework when you invoke the API via the controller... so maybe we can add that in the next patch if that\u0027s the case.",
+      "parentUuid": "7f96bb07_1b3a1798",
+      "range": {
+        "startLine": 157,
+        "startChar": 26,
+        "endLine": 157,
+        "endChar": 65
+      },
+      "revId": "39f2241ea8800292e9a11a80a6e8ee85f06b51d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_f5109a02",
         "filename": "keystone/tests/unit/application_credential/test_backends.py",
         "patchSetId": 34
