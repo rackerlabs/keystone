@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_c1d35903",
+        "filename": "keystone/application_credential/controllers.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T23:11:19Z",
+      "side": 1,
+      "message": "Whatever works for you! I just need to be better about looking ahead in the series and I\u0027d answer most of my questions :)",
+      "parentUuid": "7f96bb07_811a3114",
+      "revId": "3b343cadd460edf6a06e52f0cdc752dd3a35fc78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_86448748",
         "filename": "keystone/auth/core.py",
         "patchSetId": 23
