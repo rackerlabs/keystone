@@ -66,6 +66,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_636ccd9b",
+        "filename": "keystone/application_credential/schema.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-17T21:32:00Z",
+      "side": 1,
+      "message": "Gage is correct. If we allowed specifying both id and name then we\u0027d have to either pick one to use or validate that they matched.",
+      "parentUuid": "7f96bb07_8316b948",
+      "range": {
+        "startLine": 27,
+        "startChar": 9,
+        "endLine": 27,
+        "endChar": 22
+      },
+      "revId": "d823c402758635f967aa1025e43e90c281221a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_8d282a97",
         "filename": "keystone/common/policies/application_credential.py",
         "patchSetId": 33
@@ -77,6 +101,30 @@
       "writtenOn": "2018-01-17T20:55:45Z",
       "side": 1,
       "message": "For system administrators - they should be able to get any application credential? But for project administrators, they should only be able to get application credentials for the project they are an administrator on.\n\nJust making a note about that here so that we can follow this up with a FIXME for later.",
+      "range": {
+        "startLine": 24,
+        "startChar": 8,
+        "endLine": 24,
+        "endChar": 19
+      },
+      "revId": "d823c402758635f967aa1025e43e90c281221a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_43e3d1d9",
+        "filename": "keystone/common/policies/application_credential.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-17T21:32:00Z",
+      "side": 1,
+      "message": "Well - a system administrator should be able to look up any credential, same as they could look up any user.\n\nI\u0027m not totally sure a project admin should be able to look these up. Would they be allowed to look up users in their project? But it needs to have a project scope because a user looking up their own credential needs to be scoped on a project.",
+      "parentUuid": "7f96bb07_8d282a97",
       "range": {
         "startLine": 24,
         "startChar": 8,
@@ -158,6 +206,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_e3fe9d69",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-17T21:32:00Z",
+      "side": 1,
+      "message": "Yeah that\u0027s what I meant, I originally had _implied_roles and realized that was overloaded, but you\u0027re right this isn\u0027t much clearer. Maybe _roles_from_token?",
+      "parentUuid": "7f96bb07_90c36157",
+      "range": {
+        "startLine": 68,
+        "startChar": 43,
+        "endLine": 68,
+        "endChar": 51
+      },
+      "revId": "d823c402758635f967aa1025e43e90c281221a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_d086c9b9",
         "filename": "keystone/version/service.py",
         "patchSetId": 33
@@ -169,6 +241,30 @@
       "writtenOn": "2018-01-17T20:55:45Z",
       "side": 1,
       "message": "Based on dstanek\u0027s comment on line 122, should this be bumped up the stack? Surely this will be used more than the policy API?",
+      "range": {
+        "startLine": 136,
+        "startChar": 23,
+        "endLine": 136,
+        "endChar": 39
+      },
+      "revId": "d823c402758635f967aa1025e43e90c281221a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_63f28d9c",
+        "filename": "keystone/version/service.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-17T21:32:00Z",
+      "side": 1,
+      "message": "Good call. But I\u0027m surprised resource_routers is below policy_routers?",
+      "parentUuid": "7f96bb07_d086c9b9",
       "range": {
         "startLine": 136,
         "startChar": 23,
