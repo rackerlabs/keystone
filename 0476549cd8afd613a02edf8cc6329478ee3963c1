@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_2379e592",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-17T21:09:05Z",
+      "side": 1,
+      "message": "That\u0027s...weird\n\n (Pdb) self                                                                                                                                                                                                                                                                               \n\n \u003ckeystone.application_credential.core.Manager object at 0x7f76c3b61c50\u003e                                                                                                                                                                                                                  \n\n (Pdb) self.delete_application_credentials_for_user                                                                                                                                                                                                                                       \n\n \u003cbound method ApplicationCredential.delete_application_credentials_for_user of \u003ckeystone.application_credential.backends.sql.ApplicationCredential object at 0x7f76c3d97f60\u003e\u003e",
+      "parentUuid": "7f96bb07_ad24065f",
+      "range": {
+        "startLine": 74,
+        "startChar": 13,
+        "endLine": 74,
+        "endChar": 63
+      },
+      "revId": "0476549cd8afd613a02edf8cc6329478ee3963c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_6dbefeff",
         "filename": "keystone/tests/unit/application_credential/test_backends.py",
         "patchSetId": 37
