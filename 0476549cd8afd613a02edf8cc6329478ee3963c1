@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "7f96bb07_4dd9c254",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T20:09:27Z",
+      "side": 1,
+      "message": "This is using the driver implementation directly instead of using the private methods.",
+      "range": {
+        "startLine": 68,
+        "startChar": 13,
+        "endLine": 68,
+        "endChar": 52
+      },
+      "revId": "0476549cd8afd613a02edf8cc6329478ee3963c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_ad24065f",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T20:09:27Z",
+      "side": 1,
+      "message": "hah - I was wondering why this was still passing since we made this a private method. This is using the manager directly.",
+      "range": {
+        "startLine": 74,
+        "startChar": 13,
+        "endLine": 74,
+        "endChar": 63
+      },
+      "revId": "0476549cd8afd613a02edf8cc6329478ee3963c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_6dbefeff",
         "filename": "keystone/tests/unit/application_credential/test_backends.py",
         "patchSetId": 37
