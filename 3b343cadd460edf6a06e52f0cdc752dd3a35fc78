@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_63584d55",
+        "filename": "keystone/application_credential/controllers.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T22:41:10Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this include a check to see if the application credential being used to make the call has \u0027allow_application_credential_creation\u0027 set? Or are you planning on doing that in a separate patch?",
+      "revId": "3b343cadd460edf6a06e52f0cdc752dd3a35fc78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_86448748",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T22:41:10Z",
+      "side": 1,
+      "message": "If the user provides a bogus name, this will fail with a KeyError won\u0027t it?\n\nI should be able to test that locally.",
+      "range": {
+        "startLine": 248,
+        "startChar": 19,
+        "endLine": 249,
+        "endChar": 30
+      },
+      "revId": "3b343cadd460edf6a06e52f0cdc752dd3a35fc78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_868b2766",
+        "filename": "keystone/tests/common/auth.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T22:41:10Z",
+      "side": 1,
+      "message": "nit: I know this isn\u0027t a convention in this module, but we could pass these as kwargs since they are defined as kwargs in the method signature. That way if things ever change in the method signature of _build_app_cred_auth, the callee won\u0027t have to change how they call the method.",
+      "revId": "3b343cadd460edf6a06e52f0cdc752dd3a35fc78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_46c2ff5a",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T22:41:10Z",
+      "side": 1,
+      "message": "You might be able to actually use self.post() here and pass the token in as a kwargs and that might work without having to call public_request...\n\nThe testing utilities that put together requests are kind of messy, but I think they do allow tokens to be passed in from self.\u003cmethod\u003e.",
+      "range": {
+        "startLine": 145,
+        "startChar": 13,
+        "endLine": 145,
+        "endChar": 27
+      },
+      "revId": "3b343cadd460edf6a06e52f0cdc752dd3a35fc78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_c6d84ff0",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T22:41:10Z",
+      "side": 1,
+      "message": "nit: Same comment here as in the other module. You should be able to do this without reaching in to public_request stuff:\n\nhttp://paste.openstack.org/show/646595/",
+      "range": {
+        "startLine": 545,
+        "startChar": 13,
+        "endLine": 545,
+        "endChar": 27
+      },
+      "revId": "3b343cadd460edf6a06e52f0cdc752dd3a35fc78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
