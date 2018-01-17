@@ -90,6 +90,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_43f67165",
+        "filename": "keystone/application_credential/schema.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T21:42:43Z",
+      "side": 1,
+      "message": "Aha - nevermind. Thanks!",
+      "parentUuid": "7f96bb07_636ccd9b",
+      "range": {
+        "startLine": 27,
+        "startChar": 9,
+        "endLine": 27,
+        "endChar": 22
+      },
+      "revId": "d823c402758635f967aa1025e43e90c281221a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_8d282a97",
         "filename": "keystone/common/policies/application_credential.py",
         "patchSetId": 33
@@ -230,6 +254,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_a38bb5c0",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T21:42:43Z",
+      "side": 1,
+      "message": "++ that works for me. Thanks for clarifying!",
+      "parentUuid": "7f96bb07_e3fe9d69",
+      "range": {
+        "startLine": 68,
+        "startChar": 43,
+        "endLine": 68,
+        "endChar": 51
+      },
+      "revId": "d823c402758635f967aa1025e43e90c281221a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_d086c9b9",
         "filename": "keystone/version/service.py",
         "patchSetId": 33
@@ -265,6 +313,30 @@
       "side": 1,
       "message": "Good call. But I\u0027m surprised resource_routers is below policy_routers?",
       "parentUuid": "7f96bb07_d086c9b9",
+      "range": {
+        "startLine": 136,
+        "startChar": 23,
+        "endLine": 136,
+        "endChar": 39
+      },
+      "revId": "d823c402758635f967aa1025e43e90c281221a61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_439bd116",
+        "filename": "keystone/version/service.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-17T21:42:43Z",
+      "side": 1,
+      "message": "Right, maybe this who list needs a bit of reordering..",
+      "parentUuid": "7f96bb07_63f28d9c",
       "range": {
         "startLine": 136,
         "startChar": 23,
