@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_4d019369",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-18T23:25:56Z",
+      "side": 1,
+      "message": "Yeah, I guess we should do that before the controller gets merged",
+      "parentUuid": "7f96bb07_32b026dd",
+      "revId": "bdd1cba4a8c73c4c2c24828c4831c95466c02e59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_3b6ec9c8",
         "filename": "keystone/tests/common/auth.py",
         "patchSetId": 24
