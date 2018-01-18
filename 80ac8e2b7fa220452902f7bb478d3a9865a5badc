@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_f2fb9e75",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T22:47:04Z",
+      "side": 1,
+      "message": "This will need a quick adjustment for pep8.",
+      "revId": "80ac8e2b7fa220452902f7bb478d3a9865a5badc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
