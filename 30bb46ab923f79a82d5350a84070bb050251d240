@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_4120829b",
+        "filename": "api-ref/source/v3/index.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-18T20:42:44Z",
+      "side": 1,
+      "message": "Could we add a link to the application credentials section here too?",
+      "revId": "30bb46ab923f79a82d5350a84070bb050251d240",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
