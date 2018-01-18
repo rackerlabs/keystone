@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_81868a65",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-18T20:46:25Z",
+      "side": 1,
+      "message": "yeah I was thinking that too",
+      "parentUuid": "7f96bb07_180bd329",
+      "revId": "bdd1cba4a8c73c4c2c24828c4831c95466c02e59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_d8524b35",
         "filename": "keystone/auth/core.py",
         "patchSetId": 24
@@ -30,6 +48,24 @@
       "writtenOn": "2018-01-18T19:49:47Z",
       "side": 1,
       "message": "I don\u0027t really know how this just occurred to me, but what about system-scoped things? It looks like the driver and the database migration require project IDs for application credentials. Is that being too specific for us to enable application credential usage for system level tooling later?",
+      "revId": "bdd1cba4a8c73c4c2c24828c4831c95466c02e59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_41a3a200",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-18T20:46:25Z",
+      "side": 1,
+      "message": "Yeah, the whole thing is definitely project-centric right now. Part of that is because it was born out of the desire for project-lived credentials. Before this was going to be user-lived, having a system-scoped application credential would have made no sense.\n\nIf we want to make this work for system-scope I think we\u0027d need a new column \u0027system\u0027 and this method would have to check properties \u0027project_id\u0027 and \u0027system\u0027 to figure out which scope was intended. I don\u0027t think it would be that hard.\n\nThat said, the primary use case here is for end-users, especially ldap and federated users, not cloud administrators. So I think we should go forward with this as-is and add follow-on work next cycle to make it work with system scope.",
+      "parentUuid": "7f96bb07_d8524b35",
       "revId": "bdd1cba4a8c73c4c2c24828c4831c95466c02e59",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +123,30 @@
       "writtenOn": "2018-01-18T19:49:47Z",
       "side": 1,
       "message": "Additional application credentials or trusts?",
+      "range": {
+        "startLine": 108,
+        "startChar": 49,
+        "endLine": 109,
+        "endChar": 38
+      },
+      "revId": "bdd1cba4a8c73c4c2c24828c4831c95466c02e59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_019a7ab7",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-18T20:46:25Z",
+      "side": 1,
+      "message": "woops",
+      "parentUuid": "7f96bb07_7b1691aa",
       "range": {
         "startLine": 108,
         "startChar": 49,
