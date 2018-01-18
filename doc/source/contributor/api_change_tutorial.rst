@@ -39,7 +39,7 @@ Create
 ~~~~~~
 
 #. `Create a blueprint`_ in launchpad;
-#. git clone https://git.openstack.org/openstack/keystone-specs;
+#. git clone https://git.openstack.org/openstack/keystone-specs/;
 #. cp `specs/template.rst` `specs/backlog/<feature>.rst`;
 #. Write the spec based on the template. Ensure the BP link points to the one
    created in step 1;
