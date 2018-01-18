@@ -34,6 +34,24 @@
       "revId": "375e80c471e2fdd1ced5517bf2bc43bc92477670",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_feb04f45",
+        "filename": "keystone/application_credential/controllers.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T20:03:56Z",
+      "side": 1,
+      "message": "Ok - that\u0027s fair. I was thinking about it from the perspective of consistency of how we handle secrets regardless of where they come from, but maybe that\u0027s not important here. If a secret is generated from keystone, it\u0027ll be url-encoded.",
+      "parentUuid": "7f96bb07_9beefd1f",
+      "revId": "375e80c471e2fdd1ced5517bf2bc43bc92477670",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
