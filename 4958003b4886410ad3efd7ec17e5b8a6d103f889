@@ -1,0 +1,245 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_ac905dee",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T22:41:37Z",
+      "side": 1,
+      "message": "We typically use () in favor of \\, might be able to do something like:\n\n  self.get_member_from_driver \u003d (\n      self.unified_limits_api.get_registered_limit\n  )",
+      "range": {
+        "startLine": 29,
+        "startChar": 38,
+        "endLine": 29,
+        "endChar": 39
+      },
+      "revId": "4958003b4886410ad3efd7ec17e5b8a6d103f889",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_aca93d24",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T22:41:37Z",
+      "side": 1,
+      "message": "This could be broken up a bit for readability",
+      "range": {
+        "startLine": 37,
+        "startChar": 12,
+        "endLine": 38,
+        "endChar": 56
+      },
+      "revId": "4958003b4886410ad3efd7ec17e5b8a6d103f889",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_4c6e7900",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T22:41:37Z",
+      "side": 1,
+      "message": "We include these for the rest of the resources in keystone. Any reason to not include them for registered limits?",
+      "range": {
+        "startLine": 40,
+        "startChar": 18,
+        "endLine": 40,
+        "endChar": 23
+      },
+      "revId": "4958003b4886410ad3efd7ec17e5b8a6d103f889",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_ac57fd25",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T22:41:37Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 86,
+        "endChar": 34
+      },
+      "revId": "4958003b4886410ad3efd7ec17e5b8a6d103f889",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_4c475978",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T22:41:37Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "range": {
+        "startLine": 88,
+        "startChar": 18,
+        "endLine": 88,
+        "endChar": 23
+      },
+      "revId": "4958003b4886410ad3efd7ec17e5b8a6d103f889",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_87045a16",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T22:41:37Z",
+      "side": 1,
+      "message": "nit: use \u0027 to be consistent with the next line or use \" on the next line so they are consistent.",
+      "range": {
+        "startLine": 106,
+        "startChar": 44,
+        "endLine": 106,
+        "endChar": 46
+      },
+      "revId": "4958003b4886410ad3efd7ec17e5b8a6d103f889",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_276ea6c8",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T22:41:37Z",
+      "side": 1,
+      "message": "This is already passed to RestfulTestCase\u0027s setUp method by default. I don\u0027t think we need to define it here, too.",
+      "range": {
+        "startLine": 25,
+        "startChar": 20,
+        "endLine": 25,
+        "endChar": 39
+      },
+      "revId": "4958003b4886410ad3efd7ec17e5b8a6d103f889",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_277c6670",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T22:41:37Z",
+      "side": 1,
+      "message": "If we\u0027re going to reach into the backend to do these operations, we should use the PROVIDERS construct.\n\nAn alternative would be to create these things over the API, since we\u0027re testing everything else over the API anyway (which is typical in the v3 restful test cases).",
+      "range": {
+        "startLine": 30,
+        "startChar": 8,
+        "endLine": 30,
+        "endChar": 12
+      },
+      "revId": "4958003b4886410ad3efd7ec17e5b8a6d103f889",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_72eb0e12",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T22:41:37Z",
+      "side": 1,
+      "message": "I took a shot at simplifying some of the setUp method: \n\nhttp://paste.openstack.org/show/646959/",
+      "revId": "4958003b4886410ad3efd7ec17e5b8a6d103f889",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_e74c3e43",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T22:41:37Z",
+      "side": 1,
+      "message": "None of these test doc strings are really specific to the actual test. We can either elaborate on them or remove them.",
+      "revId": "4958003b4886410ad3efd7ec17e5b8a6d103f889",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_320d86e7",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T22:41:37Z",
+      "side": 1,
+      "message": "Same comments here as in previous setUp method.",
+      "range": {
+        "startLine": 305,
+        "startChar": 2,
+        "endLine": 315,
+        "endChar": 61
+      },
+      "revId": "4958003b4886410ad3efd7ec17e5b8a6d103f889",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
