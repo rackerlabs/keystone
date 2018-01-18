@@ -1,0 +1,12 @@
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+2: Ron De Rose <ronald.de.rose@intel.com>
+Code-Review+1: Shuo Liu <liushuobj@inspur.com>
+Code-Review+2: Kristi Nikolla <knikolla@bu.edu>
+Workflow+1: Kristi Nikolla <knikolla@bu.edu>
+Code-Review+1: wangxiyuan <wangxiyuan@huawei.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 18 Jan 2018 12:57:23 +0000
+Reviewed-on: https://review.openstack.org/532248
+Project: openstack/keystone
+Branch: refs/heads/master
