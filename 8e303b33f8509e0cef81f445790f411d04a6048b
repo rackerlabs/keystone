@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_a52dd9fe",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T17:03:45Z",
+      "side": 1,
+      "message": "This might violate string freeze for translations.",
+      "revId": "8e303b33f8509e0cef81f445790f411d04a6048b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_c5302559",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T17:03:45Z",
+      "side": 1,
+      "message": "This might violate string freeze for translations.",
+      "revId": "8e303b33f8509e0cef81f445790f411d04a6048b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_e54681c0",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T17:03:45Z",
+      "side": 1,
+      "message": "This might violate string freeze for translations.",
+      "revId": "8e303b33f8509e0cef81f445790f411d04a6048b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
