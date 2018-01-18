@@ -1,0 +1,262 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_a12dc695",
+        "filename": "keystone/conf/unified_limit.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T21:31:20Z",
+      "side": 1,
+      "message": "limits*?",
+      "range": {
+        "startLine": 46,
+        "startChar": 56,
+        "endLine": 46,
+        "endChar": 61
+      },
+      "revId": "e2fc0848b2f40dd1ebcb80017ff20b6f8d212a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_014d9a3c",
+        "filename": "keystone/exception.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T21:31:20Z",
+      "side": 1,
+      "message": "Need a space after corresponding",
+      "range": {
+        "startLine": 468,
+        "startChar": 61,
+        "endLine": 468,
+        "endChar": 74
+      },
+      "revId": "e2fc0848b2f40dd1ebcb80017ff20b6f8d212a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_6129fe34",
+        "filename": "keystone/exception.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T21:31:20Z",
+      "side": 1,
+      "message": "The convention in most exception include punctuation in the message. We can end this with a period.\n\n  \"registered limit.\"",
+      "range": {
+        "startLine": 469,
+        "startChar": 35,
+        "endLine": 469,
+        "endChar": 40
+      },
+      "revId": "e2fc0848b2f40dd1ebcb80017ff20b6f8d212a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_e14d0e3b",
+        "filename": "keystone/exception.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T21:31:20Z",
+      "side": 1,
+      "message": "Need a space after that",
+      "range": {
+        "startLine": 473,
+        "startChar": 72,
+        "endLine": 473,
+        "endChar": 76
+      },
+      "revId": "e2fc0848b2f40dd1ebcb80017ff20b6f8d212a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_211f7608",
+        "filename": "keystone/exception.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T21:31:20Z",
+      "side": 1,
+      "message": "Same comment here about punctuation.",
+      "range": {
+        "startLine": 474,
+        "startChar": 43,
+        "endLine": 474,
+        "endChar": 49
+      },
+      "revId": "e2fc0848b2f40dd1ebcb80017ff20b6f8d212a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_61ac9e9e",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T21:31:20Z",
+      "side": 1,
+      "message": "I think the changes in this file could probably be pulled out into their own change before we land the manager logic, which should help make patches smaller and easier to review.",
+      "revId": "e2fc0848b2f40dd1ebcb80017ff20b6f8d212a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_c146d2c0",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T21:31:20Z",
+      "side": 1,
+      "message": "nit: the naming here is a bit redundant.",
+      "range": {
+        "startLine": 29,
+        "startChar": 28,
+        "endLine": 29,
+        "endChar": 46
+      },
+      "revId": "e2fc0848b2f40dd1ebcb80017ff20b6f8d212a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_e1418ea7",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T21:31:20Z",
+      "side": 1,
+      "message": "nit: same comment here.",
+      "range": {
+        "startLine": 30,
+        "startChar": 27,
+        "endLine": 30,
+        "endChar": 43
+      },
+      "revId": "e2fc0848b2f40dd1ebcb80017ff20b6f8d212a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_6c78158f",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T21:31:20Z",
+      "side": 1,
+      "message": "We could add another assertion here to make sure it\u0027s actually limit_1.",
+      "revId": "e2fc0848b2f40dd1ebcb80017ff20b6f8d212a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_8cd80153",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T21:31:20Z",
+      "side": 1,
+      "message": "Just to clarify, this means all limits associated to a registered limit must be removed before removing the registered limit.",
+      "revId": "e2fc0848b2f40dd1ebcb80017ff20b6f8d212a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_2ce8cd79",
+        "filename": "keystone/tests/unit/test_backend_endpoint_policy_sql.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T21:31:20Z",
+      "side": 1,
+      "message": "When I test with this locally and set this to True, I can\u0027t seem to get things to fail. Am I supposed to?",
+      "range": {
+        "startLine": 36,
+        "startChar": 64,
+        "endLine": 36,
+        "endChar": 69
+      },
+      "revId": "e2fc0848b2f40dd1ebcb80017ff20b6f8d212a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_8cbd61b8",
+        "filename": "keystone/tests/unit/test_backend_endpoint_policy_sql.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T21:31:20Z",
+      "side": 1,
+      "message": "Don\u0027t we have to pass the enable_sqlite_foreign_key logic through to this method?",
+      "range": {
+        "startLine": 38,
+        "startChar": 29,
+        "endLine": 38,
+        "endChar": 31
+      },
+      "revId": "e2fc0848b2f40dd1ebcb80017ff20b6f8d212a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
