@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_d1d8ef1e",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-18T15:07:05Z",
+      "side": 1,
+      "message": "I set this to True and ran the tests, but nothing failed.\n\nhttp://paste.openstack.org/show/646910/\n\nIs there something else I need to do to get the FK to fail?",
+      "range": {
+        "startLine": 216,
+        "startChar": 44,
+        "endLine": 216,
+        "endChar": 49
+      },
+      "revId": "ee5ffe8d4ab37a736e0f94c66328d6a0ddc8baba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
