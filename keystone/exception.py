@@ -465,8 +465,13 @@ class LimitNotFound(NotFound):
 
 
 class NoLimitReference(Forbidden):
-    message_format = _("Unable to create a limit that doesn't have a "
-                       "corresponding registered limit")
+    message_format = _("Unable to create a limit that has no corresponding "
+                       "registered limit.")
+
+
+class ReferencedLimitExist(Forbidden):
+    message_format = _("Unable to update or delete the registered limit that "
+                       "have corresponding limits.")
 
 
 class DomainConfigNotFound(NotFound):
