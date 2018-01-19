@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_25cbed72",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-19T13:04:30Z",
+      "side": 1,
+      "message": "This is actually an explicitly unscoped operation. You only perform this operation with an unscoped token. Same for /v3/auth/domains below.\n\nHow do we want to handle that? I\u0027m kind of surprised we have a policy for it at all.",
+      "revId": "849e21959c9372baeb62b23216e681ef6333c388",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_c5aa4970",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-19T13:04:30Z",
+      "side": 1,
+      "message": "Right now, users are always owned by domains. So I\u0027m confused about what \"owned by the system\" will mean here.",
+      "range": {
+        "startLine": 81,
+        "startChar": 31,
+        "endLine": 83,
+        "endChar": 70
+      },
+      "revId": "849e21959c9372baeb62b23216e681ef6333c388",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
