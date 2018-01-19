@@ -16,6 +16,24 @@
       "revId": "9c1a76fa44b25867ceb5245937815ee20d67476d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_818666db",
+        "filename": "keystone/common/policies/trust.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-19T22:25:16Z",
+      "side": 1,
+      "message": "So should we just keep these scope_types as [\u0027project\u0027, \u0027system\u0027] and rely on the existing policy enforcement in the trust/controllers.py? \n\nDo we need a FIXME to refactor that logic now that this is landing?",
+      "parentUuid": "7f96bb07_e8687c88",
+      "revId": "9c1a76fa44b25867ceb5245937815ee20d67476d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
