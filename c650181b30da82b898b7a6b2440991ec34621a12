@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_583e25db",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-19T12:10:26Z",
+      "side": 1,
+      "message": "If it\u0027s hierarchical, would it list all the projects under the hierarchy?\n\nEven if it\u0027s not, I think it should be possible for a user to use a project-scoped token to list their own, single, project. For example, I\u0027ve been frustrated trying to use osc with the trusts API because if you provide a username and project name rather than IDs, osc uses the list_projects and list_users commands to try to find the IDs of these resources. If you\u0027re not the admin user, it fails because regular users aren\u0027t allowed to list_projects or list_users, so you\u0027re forced to use IDs. If regular users could use a project-scoped token to list projects relevant to that project, even if it\u0027s just one project, that would help a lot.",
+      "revId": "c650181b30da82b898b7a6b2440991ec34621a12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_133cfebd",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-19T12:10:26Z",
+      "side": 1,
+      "message": "This breaks my brain a little. If I have a token scoped to project A and I want to use create_project to create project B, does this enforcement mean that project B will automatically have a parent of project A?\n\nOr maybe this makes a little more sense when we talk about domain admins, who should be able to use a project-(i.e. domain-)scoped token to create projects within their domain?",
+      "range": {
+        "startLine": 55,
+        "startChar": 26,
+        "endLine": 55,
+        "endChar": 54
+      },
+      "revId": "c650181b30da82b898b7a6b2440991ec34621a12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_7399c2ce",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-19T12:10:26Z",
+      "side": 1,
+      "message": "Confused here again about how the hierarchy fits into this. But I agree that allowing project-scope for update_project makes sense so that someone can update their own project at least. Same for delete.",
+      "range": {
+        "startLine": 66,
+        "startChar": 26,
+        "endLine": 66,
+        "endChar": 53
+      },
+      "revId": "c650181b30da82b898b7a6b2440991ec34621a12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
