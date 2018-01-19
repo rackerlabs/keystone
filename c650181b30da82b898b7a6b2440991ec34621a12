@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_33d6c9f3",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-19T23:20:09Z",
+      "side": 1,
+      "message": "Good point, working that into this comment with a FIXME.",
+      "parentUuid": "7f96bb07_583e25db",
+      "revId": "c650181b30da82b898b7a6b2440991ec34621a12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_133cfebd",
         "filename": "keystone/common/policies/project.py",
         "patchSetId": 3
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_7368d120",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-19T23:20:09Z",
+      "side": 1,
+      "message": "Yeah - I updated to try and make that a little more clear. Let me know if it helps.",
+      "parentUuid": "7f96bb07_133cfebd",
+      "range": {
+        "startLine": 55,
+        "startChar": 26,
+        "endLine": 55,
+        "endChar": 54
+      },
+      "revId": "c650181b30da82b898b7a6b2440991ec34621a12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_7399c2ce",
         "filename": "keystone/common/policies/project.py",
         "patchSetId": 3
@@ -53,6 +95,30 @@
       "writtenOn": "2018-01-19T12:10:26Z",
       "side": 1,
       "message": "Confused here again about how the hierarchy fits into this. But I agree that allowing project-scope for update_project makes sense so that someone can update their own project at least. Same for delete.",
+      "range": {
+        "startLine": 66,
+        "startChar": 26,
+        "endLine": 66,
+        "endChar": 53
+      },
+      "revId": "c650181b30da82b898b7a6b2440991ec34621a12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_33724913",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-19T23:20:09Z",
+      "side": 1,
+      "message": "Ditto.",
+      "parentUuid": "7f96bb07_7399c2ce",
       "range": {
         "startLine": 66,
         "startChar": 26,
