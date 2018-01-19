@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_0d905d4e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-19T10:57:25Z",
+      "side": 1,
+      "message": "Why only create? It looks like the whole idp section could use this",
+      "range": {
+        "startLine": 7,
+        "startChar": 11,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "70ae8de711dfc0496c2b730a99a0e7920c1bd68c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
