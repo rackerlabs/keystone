@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_d3d0c556",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-19T22:55:54Z",
+      "side": 1,
+      "message": "Right - maybe I\u0027ll just leave the scope_types off for this since it doesn\u0027t really make sense. I will leave a comment explaining the justification.",
+      "parentUuid": "7f96bb07_25cbed72",
+      "revId": "849e21959c9372baeb62b23216e681ef6333c388",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_c5aa4970",
         "filename": "keystone/common/policies/user.py",
         "patchSetId": 3
@@ -30,6 +48,30 @@
       "writtenOn": "2018-01-19T13:04:30Z",
       "side": 1,
       "message": "Right now, users are always owned by domains. So I\u0027m confused about what \"owned by the system\" will mean here.",
+      "range": {
+        "startLine": 81,
+        "startChar": 31,
+        "endLine": 83,
+        "endChar": 70
+      },
+      "revId": "849e21959c9372baeb62b23216e681ef6333c388",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_136ced9a",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-19T22:55:54Z",
+      "side": 1,
+      "message": "Yeah, that\u0027s true.. but it\u0027s also confusing since a user can belong to domain-A but they can have assignments in other domains. How should we describe this? Should we add \u0027domain\u0027 as a scope and teach that to oslo.policy?\n\nThoughts?",
+      "parentUuid": "7f96bb07_c5aa4970",
       "range": {
         "startLine": 81,
         "startChar": 31,
