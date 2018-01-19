@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_12ccfc5f",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-19T10:26:14Z",
+      "side": 1,
+      "message": "This is incorrect. The /cgit/ prefix is used for viewing the repository from the browser but these instructions are for git-cloning the repository, which will not work with the /cgit/ prefix.",
+      "revId": "554706961618e4aa439af943227a2a8882de8f0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
