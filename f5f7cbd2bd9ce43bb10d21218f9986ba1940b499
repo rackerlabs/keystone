@@ -1,0 +1,124 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_b52964f3",
+        "filename": "keystone/common/policies/domain_config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-19T19:35:03Z",
+      "side": 1,
+      "message": "I don\u0027t think the domain configuration API actually does any checks that support this. For the time being, maybe it makes sense to lock this down to only system administrator until we develop scope checks in code that support project administrators or domain administrator.",
+      "range": {
+        "startLine": 25,
+        "startChar": 32,
+        "endLine": 25,
+        "endChar": 39
+      },
+      "revId": "f5f7cbd2bd9ce43bb10d21218f9986ba1940b499",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_9538e83d",
+        "filename": "keystone/common/policies/domain_config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-19T19:35:03Z",
+      "side": 1,
+      "message": "Same comment here. Otherwise we might be giving someone with an admin role on a project the ability to get domain configurations for domains that they are not a part of, which would be a security concern.",
+      "range": {
+        "startLine": 40,
+        "startChar": 32,
+        "endLine": 40,
+        "endChar": 39
+      },
+      "revId": "f5f7cbd2bd9ce43bb10d21218f9986ba1940b499",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_d51750a3",
+        "filename": "keystone/common/policies/domain_config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-19T19:35:03Z",
+      "side": 1,
+      "message": "This should be fine, since we don\u0027t want to restrict this API and we want it to be accessible to anyone with a valid token.",
+      "range": {
+        "startLine": 76,
+        "startChar": 8,
+        "endLine": 76,
+        "endChar": 42
+      },
+      "revId": "f5f7cbd2bd9ce43bb10d21218f9986ba1940b499",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_9511c8af",
+        "filename": "keystone/common/policies/domain_config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-19T19:35:03Z",
+      "side": 1,
+      "message": "For sure the same comment here.",
+      "revId": "f5f7cbd2bd9ce43bb10d21218f9986ba1940b499",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_3526b418",
+        "filename": "keystone/common/policies/domain_config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-19T19:35:03Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "f5f7cbd2bd9ce43bb10d21218f9986ba1940b499",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_75819cc3",
+        "filename": "keystone/common/policies/domain_config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-19T19:35:03Z",
+      "side": 1,
+      "message": "Same comment here, we should restrict this to system only for the time being until we develop in code checks to handle project-scoped tokens or domain scoped tokens.",
+      "revId": "f5f7cbd2bd9ce43bb10d21218f9986ba1940b499",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
