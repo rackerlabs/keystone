@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7f96bb07_358794b9",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-19T19:39:42Z",
+      "side": 1,
+      "message": "These should all be system-level APIs for now. At least until we can ensure that a project-scoped token used to make this call actually came from a project admin and we format the response according to the project they are scoped to. Otherwise we are giving project administrators the ability to view *all* grants in the deployment.",
+      "range": {
+        "startLine": 62,
+        "startChar": 22,
+        "endLine": 62,
+        "endChar": 29
+      },
+      "revId": "5e0974a0ee3dd3f2fe893d182daba230ceca3757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_526cb507",
         "filename": "keystone/common/policies/grant.py",
         "patchSetId": 1
