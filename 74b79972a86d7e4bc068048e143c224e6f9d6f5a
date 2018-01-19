@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7f96bb07_35cf9458",
+        "filename": "keystone/common/policies/role_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-19T19:30:59Z",
+      "side": 1,
+      "message": "In hindsight, I\u0027m thinking this needs to be removed and the TODO should actually be a FIXME. That would keep things safe for now, and once we have code in place to return role assignments based on a project a token is scoped to for project administrators, we can add this back in. Otherwise, we might be giving project administrators the ability to view *all* role assignments across the entire deployment.",
+      "range": {
+        "startLine": 28,
+        "startChar": 32,
+        "endLine": 28,
+        "endChar": 39
+      },
+      "revId": "74b79972a86d7e4bc068048e143c224e6f9d6f5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_c8058016",
         "filename": "keystone/common/policies/role_assignment.py",
         "patchSetId": 2
@@ -13,6 +36,24 @@
       "writtenOn": "2018-01-19T13:51:13Z",
       "side": 1,
       "message": "So a system administrator shouldn\u0027t be allowed to check the role assignments under a specific project?",
+      "revId": "74b79972a86d7e4bc068048e143c224e6f9d6f5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_d5bbd0c1",
+        "filename": "keystone/common/policies/role_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-19T19:30:59Z",
+      "side": 1,
+      "message": "I *think* so? The tricky part is that I believe the project to evaluate in the request is pulled from the scope of the token used to make the call... In that case, if a system administrator calls this API with a system-scoped token, what project do you use to evaluate the tree or subtree?",
+      "parentUuid": "7f96bb07_c8058016",
       "revId": "74b79972a86d7e4bc068048e143c224e6f9d6f5a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
