@@ -357,6 +357,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_b8709441",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-19T02:49:41Z",
+      "side": 1,
+      "message": "Yeah - I\u0027m not opposed to that. We do have other things in keystone that require flows like this. For example, when deleting a domain you have to disable it and then delete it. This kinda feels like that. I think there was also logic to prevent you from deleting a project if there were projects underneath it.\n\nI guess this functionality could come later, if needed. For now, I don\u0027t think it\u0027s a terrible idea for operators to do limit cleanup manually before deleting the registered limit.",
+      "parentUuid": "7f96bb07_356ecdff",
+      "revId": "e2fc0848b2f40dd1ebcb80017ff20b6f8d212a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_2ce8cd79",
         "filename": "keystone/tests/unit/test_backend_endpoint_policy_sql.py",
         "patchSetId": 35
