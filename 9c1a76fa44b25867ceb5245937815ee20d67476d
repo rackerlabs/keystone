@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_e8687c88",
+        "filename": "keystone/common/policies/trust.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-19T13:34:42Z",
+      "side": 1,
+      "message": "It looks like there is a bug that makes this completely break, since None gets passed in here: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/token/providers/fernet/token_formatters.py#n447\n\nIn theory this could have worked, and the user would have gotten a sort of un-scoped-trust-scoped token but that is really not very useful. project_id really should have not been made optional.\n\nIn any case I think it still kind of makes sense for these to allow system scope, same as you pointed out that an application credential might make sense as a system-scoped thing.",
+      "revId": "9c1a76fa44b25867ceb5245937815ee20d67476d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
