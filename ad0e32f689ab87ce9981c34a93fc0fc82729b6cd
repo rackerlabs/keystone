@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_a5ca9d17",
+        "filename": "keystone/common/policies/credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-19T13:13:41Z",
+      "side": 1,
+      "message": "The thing is that most users won\u0027t have a role on the system, so setting enforce_scope will break end-users using this API.\n\nIt\u0027s almost like we need a \"user\" scope, or a kind of implicit individual project for each user.",
+      "revId": "ad0e32f689ab87ce9981c34a93fc0fc82729b6cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
