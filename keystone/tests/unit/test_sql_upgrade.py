@@ -2788,6 +2788,31 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         insert = app_cred_role_table.insert().values(role_rel)
         self.assertRaises(db_exception.DBDuplicateEntry, insert.execute)
 
+    def test_migration_035_add_system_column_to_credential_table(self):
+        self.expand(34)
+        self.migrate(34)
+        self.contract(34)
+
+        application_credential_table_name = 'application_credential'
+        self.assertTableExists(application_credential_table_name)
+        self.assertTableColumns(
+            application_credential_table_name,
+            ['internal_id', 'id', 'name', 'secret_hash',
+             'description', 'user_id', 'project_id', 'expires_at',
+             'allow_application_credential_creation']
+        )
+
+        self.expand(35)
+        self.migrate(35)
+        self.contract(35)
+
+        self.assertTableColumns(
+            application_credential_table_name,
+            ['internal_id', 'id', 'name', 'secret_hash',
+             'description', 'user_id', 'project_id', 'system', 'expires_at',
+             'allow_application_credential_creation']
+        )
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture

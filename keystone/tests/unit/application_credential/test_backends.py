@@ -26,17 +26,20 @@ PROVIDERS = provider_api.ProviderAPIs
 class ApplicationCredentialTests(object):
 
     def _new_app_cred_data(self, user_id, project_id, name=None,
-                           expires=None):
+                           expires=None, system=None):
         if not name:
             name = uuid.uuid4().hex
         if not expires:
             expires = datetime.datetime.utcnow() + datetime.timedelta(days=365)
+        if not system:
+            system = uuid.uuid4().hex
         app_cred_data = {
             'id': uuid.uuid4().hex,
             'name': name,
             'description': uuid.uuid4().hex,
             'user_id': user_id,
             'project_id': project_id,
+            'system': system,
             'expires_at': expires,
             'roles': [
                 {'id': self.role__member_['id']},
