@@ -16,6 +16,24 @@
       "revId": "ad0e32f689ab87ce9981c34a93fc0fc82729b6cd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_5590204f",
+        "filename": "keystone/common/policies/credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-19T19:26:09Z",
+      "side": 1,
+      "message": "Yeah - this is something that we need to have an in-code check for. When a user calls this API with a project-scoped token we need to make sure the credential they are asking for is one that they own, otherwise throw a 403.\n\nThe reason why I defaults to system here is because this was an \"admin-only\" API prior to the system scope work. So only cloud administrators were meant to access it. If we set it to \u0027project\u0027 without write code to check the user\u0027s authorization in keystone, then we might be letting project administrators get credentials they shouldn\u0027t be able to.\n\nMaybe this needs to be a FIXME instead?",
+      "parentUuid": "7f96bb07_a5ca9d17",
+      "revId": "ad0e32f689ab87ce9981c34a93fc0fc82729b6cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
