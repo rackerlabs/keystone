@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_55a359b2",
+        "filename": "keystone/conf/unified_limit.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-19T02:14:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_a12dc695",
+      "range": {
+        "startLine": 46,
+        "startChar": 56,
+        "endLine": 46,
+        "endChar": 61
+      },
+      "revId": "e2fc0848b2f40dd1ebcb80017ff20b6f8d212a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_014d9a3c",
         "filename": "keystone/exception.py",
         "patchSetId": 35
@@ -117,6 +141,23 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_f51e250a",
+        "filename": "keystone/exception.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-19T02:14:46Z",
+      "side": 1,
+      "message": "I\u0027ll move the change in this file to the new patch as well.",
+      "revId": "e2fc0848b2f40dd1ebcb80017ff20b6f8d212a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_61ac9e9e",
         "filename": "keystone/limit/backends/sql.py",
         "patchSetId": 35
@@ -134,6 +175,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_b5fbbdbb",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-19T02:14:46Z",
+      "side": 1,
+      "message": "sure",
+      "parentUuid": "7f96bb07_61ac9e9e",
+      "revId": "e2fc0848b2f40dd1ebcb80017ff20b6f8d212a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_c146d2c0",
         "filename": "keystone/tests/unit/limit/test_backends.py",
         "patchSetId": 35
@@ -145,6 +204,30 @@
       "writtenOn": "2018-01-18T21:31:20Z",
       "side": 1,
       "message": "nit: the naming here is a bit redundant.",
+      "range": {
+        "startLine": 29,
+        "startChar": 28,
+        "endLine": 29,
+        "endChar": 46
+      },
+      "revId": "e2fc0848b2f40dd1ebcb80017ff20b6f8d212a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_d5052947",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-19T02:14:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_c146d2c0",
       "range": {
         "startLine": 29,
         "startChar": 28,
@@ -180,6 +263,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_35eb2d78",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-19T02:14:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_e1418ea7",
+      "range": {
+        "startLine": 30,
+        "startChar": 27,
+        "endLine": 30,
+        "endChar": 43
+      },
+      "revId": "e2fc0848b2f40dd1ebcb80017ff20b6f8d212a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_6c78158f",
         "filename": "keystone/tests/unit/limit/test_backends.py",
         "patchSetId": 35
@@ -197,6 +304,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_d58a09bd",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-19T02:14:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_6c78158f",
+      "revId": "e2fc0848b2f40dd1ebcb80017ff20b6f8d212a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_8cd80153",
         "filename": "keystone/tests/unit/limit/test_backends.py",
         "patchSetId": 35
@@ -208,6 +333,24 @@
       "writtenOn": "2018-01-18T21:31:20Z",
       "side": 1,
       "message": "Just to clarify, this means all limits associated to a registered limit must be removed before removing the registered limit.",
+      "revId": "e2fc0848b2f40dd1ebcb80017ff20b6f8d212a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_356ecdff",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-19T02:14:46Z",
+      "side": 1,
+      "message": "yes. So I came up with an idea that we can support deleting the registered limit and related limits together in one request. Such as: ``delete {registered_limit} --cascade``",
+      "parentUuid": "7f96bb07_8cd80153",
       "revId": "e2fc0848b2f40dd1ebcb80017ff20b6f8d212a99",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
