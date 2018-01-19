@@ -78,6 +78,12 @@ project_id_path:
   in: path
   required: true
   type: string
+registered_limit_id_path:
+  description: |
+    The registered limit ID.
+  in: path
+  required: true
+  type: string
 region_id_path:
   description: |
     The region ID.
@@ -313,6 +319,18 @@ protocol_id_query:
   in: query
   required: false
   type: string
+region_id_query:
+  description: |
+    Filters the response by a region ID.
+  in: query
+  required: false
+  type: string
+resource_name_query:
+  description: |
+    Filters the response by a specified resource name.
+  in: query
+  required: false
+  type: string
 role_id_query:
   description: |
     Filters the response by a role ID.
@@ -544,6 +562,12 @@ credentials_links:
   in: body
   required: true
   type: object
+default_limit:
+  description: |
+    The defalut limit for the registered limit.
+  in: body
+  required: true
+  type: integer
 default_project_id_request_body:
   description: |
     The ID of the default project for the user.
@@ -1290,6 +1314,19 @@ region_id_not_required:
   in: body
   required: false
   type: string
+region_id_registered_limit_response_body:
+  description: |
+    The ID of the region that contains the service endpoint.
+    The value can be None.
+  in: body
+  required: true
+  type: string
+region_id_registered_limit_request_body:
+  description: |
+    The ID of the region that contains the service endpoint.
+  in: body
+  required: false
+  type: string
 region_id_required:
   description: |
     (Since v3.2) The ID of the region that contains
@@ -1309,12 +1346,35 @@ regions_object:
   in: body
   required: true
   type: array
+registered_limit:
+  description: |
+    A ``registered_limit`` objects, containing the following:
+  in: body
+  required: true
+  type: array
+registered_limit_id:
+    The registered limit ID.
+  in: body
+  required: true
+  type: string
+registered_limits:
+  description: |
+    A list of ``registered_limits`` objects, each containing:
+  in: body
+  required: true
+  type: array
 response_body_project_tags_required:
   description: |
     A list of simple strings assigned to a project.
   in: body
   required: true
   type: array
+resouce_name:
+  description: |
+    The resource name.
+  in: body
+  required: true
+  type: string
 role:
   description: |
     A ``role`` object, containing:
@@ -1431,6 +1491,13 @@ service_enabled_not_required:
 service_id:
   description: |
     The UUID of the service to which the endpoint
+    belongs.
+  in: body
+  required: true
+  type: string
+service_id_registered_limit:
+  description: |
+    The UUID of the service to which the registered limit
     belongs.
   in: body
   required: true
