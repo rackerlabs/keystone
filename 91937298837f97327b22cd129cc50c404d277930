@@ -46,6 +46,30 @@
       "revId": "91937298837f97327b22cd129cc50c404d277930",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_32ca4a4f",
+        "filename": "keystone/common/policies/group.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-19T18:53:56Z",
+      "side": 1,
+      "message": "Ok - I can respin this with a FIXME to add \u0027project\u0027 later on and we can track that with a bug. But for now, this will be a system-level API until we get that working.",
+      "parentUuid": "7f96bb07_b4d64d27",
+      "range": {
+        "startLine": 21,
+        "startChar": 8,
+        "endLine": 21,
+        "endChar": 42
+      },
+      "revId": "91937298837f97327b22cd129cc50c404d277930",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
