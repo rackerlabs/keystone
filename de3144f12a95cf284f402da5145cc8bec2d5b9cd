@@ -34,6 +34,24 @@
       "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_53cef583",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-19T23:01:58Z",
+      "side": 1,
+      "message": "Yeah - We\u0027ll have to focus on getting these straightened out early next week or over the weekend.",
+      "parentUuid": "7f96bb07_53bb6671",
+      "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
