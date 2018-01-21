@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7f96bb07_b6939ca3",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-21T13:37:38Z",
+      "side": 1,
+      "message": "This shouldn\u0027t be a boolean. It should be \u0027all\u0027 for a token scoped to the entire system, which is what we should support initially. In the future, maybe it can me a region ID or service ID. A boolean may support what we want initially but I don\u0027t think it will be flexible enough to do what we want in the future if we elaborate on this.",
+      "range": {
+        "startLine": 363,
+        "startChar": 45,
+        "endLine": 363,
+        "endChar": 49
+      },
+      "revId": "e9c8eff980cc13c52fbb9910f130ce58c87d9445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_33125a64",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 13
