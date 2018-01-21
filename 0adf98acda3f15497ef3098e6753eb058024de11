@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_d7a98290",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T20:57:00Z",
+      "side": 1,
+      "message": "What is the reason this would occur? Missing service or region? Can you explain more what this means to a user and how they should fix it?",
+      "revId": "0adf98acda3f15497ef3098e6753eb058024de11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_9793fa5c",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T20:57:00Z",
+      "side": 1,
+      "message": "Why would this occur? Why does it only occur in update and delete and not create?",
+      "revId": "0adf98acda3f15497ef3098e6753eb058024de11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_579d7264",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T20:57:00Z",
+      "side": 1,
+      "message": "Seems like this should have been caught by a test, is it possible to add one?",
+      "revId": "0adf98acda3f15497ef3098e6753eb058024de11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_779aee6e",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T20:57:00Z",
+      "side": 1,
+      "message": "Why does this raise a different error?",
+      "revId": "0adf98acda3f15497ef3098e6753eb058024de11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
