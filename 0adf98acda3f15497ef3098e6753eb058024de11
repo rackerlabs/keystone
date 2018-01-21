@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_d70c2296",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T21:43:42Z",
+      "side": 1,
+      "message": "Oh, I think I understand this better. The idea is that if a project limit already exists, the registered one shouldn\u0027t be changed?\n\nCould you change the name of the exception class to `RegisteredLimitError` and the message to \"Unable to update or delete registered limit %(id)s because there are project limits associated with it.\" ? I think you could also change this to inherit from ForbiddenNotSecurity instead of Forbidden",
+      "parentUuid": "7f96bb07_d7a98290",
+      "revId": "0adf98acda3f15497ef3098e6753eb058024de11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_9793fa5c",
         "filename": "keystone/limit/backends/sql.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2018-01-21T20:57:00Z",
       "side": 1,
       "message": "Why would this occur? Why does it only occur in update and delete and not create?",
+      "revId": "0adf98acda3f15497ef3098e6753eb058024de11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_b7239605",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T21:43:42Z",
+      "side": 1,
+      "message": "I think I understand the intention now but I\u0027m worried that this will catch foreign key problems with the region and service and not just between the registered limit and project limit.",
+      "parentUuid": "7f96bb07_9793fa5c",
       "revId": "0adf98acda3f15497ef3098e6753eb058024de11",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
