@@ -1,0 +1,328 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_77e0ae97",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 42
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T22:09:38Z",
+      "side": 1,
+      "message": "This is not necessary",
+      "revId": "af285b802f4075c1c4f8f4961197351d065d7d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_17efea87",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T22:09:38Z",
+      "side": 1,
+      "message": "This should be deleted",
+      "revId": "af285b802f4075c1c4f8f4961197351d065d7d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_37f4665b",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T22:09:38Z",
+      "side": 1,
+      "message": "This should be updated",
+      "range": {
+        "startLine": 2,
+        "startChar": 12,
+        "endLine": 2,
+        "endChar": 16
+      },
+      "revId": "af285b802f4075c1c4f8f4961197351d065d7d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_57fc923d",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T22:09:38Z",
+      "side": 1,
+      "message": "The point of wrap_collection is largely to add links, why remove them here? If they\u0027re not necessary then wrap_collection could either be omitted or overridden",
+      "revId": "af285b802f4075c1c4f8f4961197351d065d7d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_1794cae7",
+        "filename": "keystone/limit/routers.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T22:09:38Z",
+      "side": 1,
+      "message": "Delete this",
+      "revId": "af285b802f4075c1c4f8f4961197351d065d7d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_3799c61e",
+        "filename": "keystone/limit/routers.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T22:09:38Z",
+      "side": 1,
+      "message": "Update this",
+      "range": {
+        "startLine": 2,
+        "startChar": 12,
+        "endLine": 2,
+        "endChar": 16
+      },
+      "revId": "af285b802f4075c1c4f8f4961197351d065d7d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_d79d020b",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T22:09:38Z",
+      "side": 1,
+      "message": "Delete this",
+      "revId": "af285b802f4075c1c4f8f4961197351d065d7d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_f7a27e4b",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T22:09:38Z",
+      "side": 1,
+      "message": "Update this",
+      "range": {
+        "startLine": 2,
+        "startChar": 12,
+        "endLine": 2,
+        "endChar": 16
+      },
+      "revId": "af285b802f4075c1c4f8f4961197351d065d7d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_5791f2f0",
+        "filename": "keystone/tests/unit/rest.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T22:09:38Z",
+      "side": 1,
+      "message": "These changes seem unrelated, they should be pulled into a different commit",
+      "revId": "af285b802f4075c1c4f8f4961197351d065d7d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_37c226eb",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 1832,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T22:09:38Z",
+      "side": 1,
+      "message": "These changes are definitely unrelated, split them into a different commit",
+      "revId": "af285b802f4075c1c4f8f4961197351d065d7d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_f7bb5e6f",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T22:09:38Z",
+      "side": 1,
+      "message": "You can update this",
+      "revId": "af285b802f4075c1c4f8f4961197351d065d7d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_97b0da8d",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T22:09:38Z",
+      "side": 1,
+      "message": "These seem unrelated, split them into a different commit",
+      "revId": "af285b802f4075c1c4f8f4961197351d065d7d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_b7add632",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 2995,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T22:09:38Z",
+      "side": 1,
+      "message": "Unrelated",
+      "revId": "af285b802f4075c1c4f8f4961197351d065d7d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_57aa5219",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 2395,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T22:09:38Z",
+      "side": 1,
+      "message": "Unrelated",
+      "revId": "af285b802f4075c1c4f8f4961197351d065d7d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_77a74e51",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 998,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T22:09:38Z",
+      "side": 1,
+      "message": "Unrelated",
+      "revId": "af285b802f4075c1c4f8f4961197351d065d7d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_17628a17",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 1856,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T22:09:38Z",
+      "side": 1,
+      "message": "Unrelated",
+      "revId": "af285b802f4075c1c4f8f4961197351d065d7d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_37678628",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T22:09:38Z",
+      "side": 1,
+      "message": "Unrelated",
+      "revId": "af285b802f4075c1c4f8f4961197351d065d7d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_d76bc2ee",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T22:09:38Z",
+      "side": 1,
+      "message": "Unrelated",
+      "revId": "af285b802f4075c1c4f8f4961197351d065d7d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
