@@ -34,6 +34,24 @@
       "revId": "9c1a76fa44b25867ceb5245937815ee20d67476d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_cbcfa127",
+        "filename": "keystone/common/policies/trust.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T12:49:41Z",
+      "side": 1,
+      "message": "Since the rule is TRUST_OWNER and not ADMIN_REQUIRED, and effectively trusts can\u0027t be created or used without a project, then making this project-only for now is the way to go. Currently, even an admin can\u0027t create a project for another user, so even with the admin-ness bug this isn\u0027t really a system-scoped thing.",
+      "parentUuid": "7f96bb07_818666db",
+      "revId": "9c1a76fa44b25867ceb5245937815ee20d67476d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
