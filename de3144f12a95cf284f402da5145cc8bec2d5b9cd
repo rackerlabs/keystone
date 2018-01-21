@@ -2,6 +2,190 @@
   "comments": [
     {
       "key": {
+        "uuid": "7f96bb07_769af46e",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-21T14:25:10Z",
+      "side": 1,
+      "message": "Change this to not be boolean-ish.",
+      "range": {
+        "startLine": 199,
+        "startChar": 20,
+        "endLine": 199,
+        "endChar": 33
+      },
+      "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_368eac2e",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-21T14:25:10Z",
+      "side": 1,
+      "message": "Change this to not be boolean-ish.",
+      "range": {
+        "startLine": 204,
+        "startChar": 12,
+        "endLine": 204,
+        "endChar": 25
+      },
+      "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_f687e40e",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-21T14:25:10Z",
+      "side": 1,
+      "message": "Change this to not be boolean-ish.",
+      "range": {
+        "startLine": 132,
+        "startChar": 42,
+        "endLine": 132,
+        "endChar": 55
+      },
+      "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_967c6021",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-21T14:25:10Z",
+      "side": 1,
+      "message": "Change this to not be boolean-ish.",
+      "range": {
+        "startLine": 144,
+        "startChar": 13,
+        "endLine": 144,
+        "endChar": 26
+      },
+      "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_5676d840",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-21T14:25:10Z",
+      "side": 1,
+      "message": "Change this to not be boolean-ish.",
+      "range": {
+        "startLine": 289,
+        "startChar": 51,
+        "endLine": 289,
+        "endChar": 64
+      },
+      "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_168e1027",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-21T14:25:10Z",
+      "side": 1,
+      "message": "Change this to not be boolean-ish.",
+      "range": {
+        "startLine": 331,
+        "startChar": 11,
+        "endLine": 331,
+        "endChar": 24
+      },
+      "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_36930c52",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-21T14:25:10Z",
+      "side": 1,
+      "message": "Change this to not be boolean-ish.",
+      "range": {
+        "startLine": 343,
+        "startChar": 27,
+        "endLine": 343,
+        "endChar": 40
+      },
+      "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_f69cc45e",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-21T14:25:10Z",
+      "side": 1,
+      "message": "Change this to not be boolean-ish.",
+      "range": {
+        "startLine": 381,
+        "startChar": 21,
+        "endLine": 381,
+        "endChar": 34
+      },
+      "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_25d30906",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 13
@@ -49,6 +233,282 @@
       "side": 1,
       "message": "Yeah - We\u0027ll have to focus on getting these straightened out early next week or over the weekend.",
       "parentUuid": "7f96bb07_53bb6671",
+      "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_96a1c098",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-21T14:25:10Z",
+      "side": 1,
+      "message": "Change this to not be boolean-ish.",
+      "range": {
+        "startLine": 389,
+        "startChar": 61,
+        "endLine": 389,
+        "endChar": 74
+      },
+      "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_b69e3c52",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-21T14:25:10Z",
+      "side": 1,
+      "message": "Change this to not be boolean-ish.",
+      "range": {
+        "startLine": 403,
+        "startChar": 38,
+        "endLine": 403,
+        "endChar": 51
+      },
+      "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_56ab3874",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-21T14:25:10Z",
+      "side": 1,
+      "message": "Change this to not be boolean-ish.",
+      "range": {
+        "startLine": 438,
+        "startChar": 52,
+        "endLine": 438,
+        "endChar": 65
+      },
+      "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_76a8b476",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-21T14:25:10Z",
+      "side": 1,
+      "message": "Change this to not be boolean-ish.",
+      "range": {
+        "startLine": 453,
+        "startChar": 41,
+        "endLine": 453,
+        "endChar": 54
+      },
+      "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_16b7f0da",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-21T14:25:10Z",
+      "side": 1,
+      "message": "Change this to not be boolean-ish.",
+      "range": {
+        "startLine": 457,
+        "startChar": 50,
+        "endLine": 457,
+        "endChar": 63
+      },
+      "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_36bc6cba",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-21T14:25:10Z",
+      "side": 1,
+      "message": "Change this to not be boolean-ish.",
+      "range": {
+        "startLine": 463,
+        "startChar": 37,
+        "endLine": 463,
+        "endChar": 50
+      },
+      "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_d6b0a8e0",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-21T14:25:10Z",
+      "side": 1,
+      "message": "Change this to not be boolean-ish.",
+      "range": {
+        "startLine": 498,
+        "startChar": 20,
+        "endLine": 498,
+        "endChar": 33
+      },
+      "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_f6b5a4ce",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 528,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-21T14:25:10Z",
+      "side": 1,
+      "message": "Change this to not be boolean-ish.",
+      "range": {
+        "startLine": 528,
+        "startChar": 26,
+        "endLine": 528,
+        "endChar": 39
+      },
+      "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_96ca204d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 589,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-21T14:25:10Z",
+      "side": 1,
+      "message": "Change this to not be boolean-ish.",
+      "range": {
+        "startLine": 589,
+        "startChar": 12,
+        "endLine": 589,
+        "endChar": 25
+      },
+      "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_56c49840",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 612,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-21T14:25:10Z",
+      "side": 1,
+      "message": "Change this to not be boolean-ish.",
+      "range": {
+        "startLine": 612,
+        "startChar": 46,
+        "endLine": 612,
+        "endChar": 59
+      },
+      "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_76c1942e",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 654,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-21T14:25:10Z",
+      "side": 1,
+      "message": "Change this to not be boolean-ish.",
+      "range": {
+        "startLine": 654,
+        "startChar": 12,
+        "endLine": 654,
+        "endChar": 25
+      },
+      "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_16dcd016",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-21T14:25:10Z",
+      "side": 1,
+      "message": "Change this to not be boolean-ish.",
+      "range": {
+        "startLine": 202,
+        "startChar": 45,
+        "endLine": 202,
+        "endChar": 58
+      },
       "revId": "de3144f12a95cf284f402da5145cc8bec2d5b9cd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
