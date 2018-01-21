@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_b7d636c3",
+        "filename": "keystone/common/policies/limit.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T21:59:01Z",
+      "side": 1,
+      "message": "Limits apply only to projects. Is it true that I should be able to get a limit for a project I have no role assignment on?",
+      "range": {
+        "startLine": 21,
+        "startChar": 10,
+        "endLine": 22,
+        "endChar": 33
+      },
+      "revId": "1744891122f8bd1c2cdadf0517903c8c770cc61c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
