@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_d6cae89f",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/parameters.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T13:40:43Z",
+      "side": 1,
+      "message": "So you would like to see, for example, a `domain_id_response` parameter that sets required to true?",
+      "parentUuid": "7f515b1d_9be66344",
+      "range": {
+        "startLine": 45,
+        "startChar": 70,
+        "endLine": 47,
+        "endChar": 54
+      },
+      "revId": "e8302029a1376ec4138f83eca4940bd99236d40f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f515b1d_5bd22b5e",
         "filename": "api-ref/source/v3-ext/federation/identity-provider/parameters.yaml",
         "patchSetId": 3
