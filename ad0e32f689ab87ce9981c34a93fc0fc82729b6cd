@@ -34,6 +34,24 @@
       "revId": "ad0e32f689ab87ce9981c34a93fc0fc82729b6cd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_8b3f59b4",
+        "filename": "keystone/common/policies/credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-21T11:31:21Z",
+      "side": 1,
+      "message": "Oh, good call. If this is \"admin-only\" before then I think \"system\" is appropriate.",
+      "parentUuid": "7f96bb07_5590204f",
+      "revId": "ad0e32f689ab87ce9981c34a93fc0fc82729b6cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
