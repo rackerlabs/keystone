@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_20a63b55",
+        "filename": "keystone/application_credential/controllers.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-22T23:30:20Z",
+      "side": 1,
+      "message": "This is being addressed here - https://review.openstack.org/#/c/536543/3",
+      "parentUuid": "7f96bb07_0d18287f",
+      "range": {
+        "startLine": 87,
+        "startChar": 8,
+        "endLine": 87,
+        "endChar": 37
+      },
+      "revId": "f29a5a8d12eb6e048d2966b31ec8635a6165cbd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_6d58cc55",
         "filename": "keystone/common/policies/application_credential.py",
         "patchSetId": 37
