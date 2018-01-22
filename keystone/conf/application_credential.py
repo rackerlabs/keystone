@@ -40,12 +40,21 @@ Time to cache application credential data in seconds. This has no effect
 unless global caching is enabled.
 """))
 
+user_limit = cfg.IntOpt(
+    'user_limit',
+    default=-1,
+    help=utils.fmt("""
+Maximum number of application credentials a user is permitted to create. A
+value of -1 means unlimited.
+"""))
+
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
     driver,
     caching,
     cache_time,
+    user_limit,
 ]
 
 
