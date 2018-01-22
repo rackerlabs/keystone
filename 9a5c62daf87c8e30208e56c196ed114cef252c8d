@@ -16,6 +16,24 @@
       "revId": "9a5c62daf87c8e30208e56c196ed114cef252c8d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_05456270",
+        "filename": "api-ref/source/v3/samples/admin/application-credential-create-request.json",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-22T13:24:30Z",
+      "side": 1,
+      "message": "It\u0027s a badly named parameter that\u0027s meant to be a protection against a compromised application credential from spawning more application credentials: http://specs.openstack.org/openstack/keystone-specs/specs/keystone/queens/application-credentials.html#limitations-imposed\n\n(I forgot to add this in my osc patch)",
+      "parentUuid": "7f96bb07_1ff2a09b",
+      "revId": "9a5c62daf87c8e30208e56c196ed114cef252c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
