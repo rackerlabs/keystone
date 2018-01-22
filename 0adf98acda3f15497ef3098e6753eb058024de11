@@ -126,6 +126,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_f3ccc862",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-22T09:21:12Z",
+      "side": 1,
+      "message": "oh. I just realize that you mean we can\u0027t delete the service or region if there are some registered limit or limit rely on it. Right? emm, it\u0027s an interesting question. \nObvioursly, we have problem here: Now if we create a limit for a service and region. Then when we try to delete this service or region, we\u0027ll meet DBReferenceError. So should we remove the FK? If it\u0027s removed, what should we do when the related service or region is deleted but the limit still exists?\nThere a similar problem that \"user\" has a FK to domain_id, once we try to delete the domain with some users in it, keystone will raise DBReferenceError as well( Now keystone doesn\u0027t catch this error and will return 500), there is a patch to solve it now: https://review.openstack.org/#/c/506340/ , it try to delete the user automatically when deleting the domain. So can we do the same thing for service or region? i.e. delete the related limit automatically  when deleting the related service or region.\n\nSo the main problem here IMO is can we treat server/region separately with limit? My idea is to keep the FK and do some change in deleting service/region flow.(like the domain does)",
+      "parentUuid": "7f96bb07_e9b622dd",
+      "revId": "0adf98acda3f15497ef3098e6753eb058024de11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_579d7264",
         "filename": "keystone/limit/backends/sql.py",
         "patchSetId": 2
