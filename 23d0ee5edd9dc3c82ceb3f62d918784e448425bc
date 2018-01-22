@@ -16,6 +16,24 @@
       "revId": "23d0ee5edd9dc3c82ceb3f62d918784e448425bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_4b2ff8f5",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-22T15:55:18Z",
+      "side": 1,
+      "message": "Good question, but I don\u0027t think we can be the current check is RULE_ADMIN_OR_OWNER.. which compares the user making the request to the resource in the request. I think this is the bit that makes it so users who aren\u0027t cloud administrator can get references for their own user.\n\nIdeally, we\u0027ll have to break that enforcement out of a policy check string and into code. If we set scope_types to \u0027system\u0027 before handling that case in code, we might break people who aren\u0027t system administrators from getting references to themselves.",
+      "parentUuid": "7f96bb07_6b18cd74",
+      "revId": "23d0ee5edd9dc3c82ceb3f62d918784e448425bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
