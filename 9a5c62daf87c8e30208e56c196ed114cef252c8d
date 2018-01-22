@@ -34,6 +34,24 @@
       "revId": "9a5c62daf87c8e30208e56c196ed114cef252c8d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_8b8d007d",
+        "filename": "api-ref/source/v3/samples/admin/application-credential-create-request.json",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2018-01-22T15:44:09Z",
+      "side": 1,
+      "message": "OK, I still hate heat.",
+      "parentUuid": "7f96bb07_05456270",
+      "revId": "9a5c62daf87c8e30208e56c196ed114cef252c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
