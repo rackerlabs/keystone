@@ -94,6 +94,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_1f6ce09a",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-22T03:01:19Z",
+      "side": 1,
+      "message": "It\u0027s the response to Lance: My reason is that it\u0027s a API for creating resources, so to keep the same with others, we should remove the link.\nSo i think we should not include links. If you agree, I can get rid of using wrap_collection here.",
+      "parentUuid": "7f96bb07_57fc923d",
+      "revId": "af285b802f4075c1c4f8f4961197351d065d7d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_1794cae7",
         "filename": "keystone/limit/routers.py",
         "patchSetId": 42
@@ -237,6 +255,24 @@
       "writtenOn": "2018-01-21T22:09:38Z",
       "side": 1,
       "message": "You can update this",
+      "revId": "af285b802f4075c1c4f8f4961197351d065d7d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_6c72207f",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-22T03:01:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_f7bb5e6f",
       "revId": "af285b802f4075c1c4f8f4961197351d065d7d58",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
