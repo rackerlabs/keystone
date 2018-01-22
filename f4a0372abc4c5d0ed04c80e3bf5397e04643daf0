@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_c16527e3",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2797,
+      "author": {
+        "id": 27668
+      },
+      "writtenOn": "2018-01-22T16:42:55Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "7f96bb07_ea84c5b3",
+      "revId": "f4a0372abc4c5d0ed04c80e3bf5397e04643daf0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_6af4355c",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2018-01-22T12:47:32Z",
       "side": 1,
       "message": "You need to update these to version 35",
+      "revId": "f4a0372abc4c5d0ed04c80e3bf5397e04643daf0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_015b0f2e",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2821,
+      "author": {
+        "id": 27668
+      },
+      "writtenOn": "2018-01-22T16:42:55Z",
+      "side": 1,
+      "message": "I followed previous pattern, e.g. test_migration_015_xxx has self.expand(14) \u0026 self.migrate(14), same for all other tests. So I think here we point to 34 which is prior to 35 should be correct.",
+      "parentUuid": "7f96bb07_6af4355c",
       "revId": "f4a0372abc4c5d0ed04c80e3bf5397e04643daf0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
