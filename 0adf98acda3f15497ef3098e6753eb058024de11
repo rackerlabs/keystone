@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_491dd6bb",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-22T01:32:30Z",
+      "side": 1,
+      "message": "sure, a nit that there can be a lot of limits to override one registered limit. So we can not use \"limit %(id)s\" here.",
+      "parentUuid": "7f96bb07_d70c2296",
+      "revId": "0adf98acda3f15497ef3098e6753eb058024de11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_9793fa5c",
         "filename": "keystone/limit/backends/sql.py",
         "patchSetId": 2
