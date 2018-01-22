@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_0b2c9045",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/idp.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-22T15:49:51Z",
+      "side": 1,
+      "message": "We could add a description here.",
+      "revId": "5dde0603c8128c8fa73889f24658e8a55fa7d6a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_abcebc80",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/idp.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-22T15:49:51Z",
+      "side": 1,
+      "message": "This will need to be referenced with the path in order to pass doc tests.",
+      "range": {
+        "startLine": 52,
+        "startChar": 30,
+        "endLine": 52,
+        "endChar": 36
+      },
+      "revId": "5dde0603c8128c8fa73889f24658e8a55fa7d6a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_cb1d4810",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/idp.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-22T15:49:51Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "5dde0603c8128c8fa73889f24658e8a55fa7d6a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
