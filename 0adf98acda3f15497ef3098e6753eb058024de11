@@ -144,6 +144,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_a5bb4e0c",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-22T13:02:21Z",
+      "side": 1,
+      "message": "The problem is there should never be foreign keys referencing different backends. If someone wanted to use a non-sql backend for the catalog driver, for example, then they wouldn\u0027t be able to use the limits backend because it is referencing a table that is not there in that deployment. A lot of the time this is just a theoretical problem but in the case of the catalog driver we actually have a non-sql driver in-tree (I think it doesn\u0027t really work right now but that\u0027s a different problem). In the case of the user table referencing the project table, that was a mistake that went undetected for a couple of cycles and now we just don\u0027t allow different drivers for the resource backend. It\u0027s not a pattern we should follow.\n\nI would like to see the service and region foreign keys removed from both the limits tables. We can manage deletion of resources through notifications at the manager layer. The foreign key between the limit and registered_limit table is fine since it\u0027s part of the same backend.",
+      "parentUuid": "7f96bb07_f3ccc862",
+      "revId": "0adf98acda3f15497ef3098e6753eb058024de11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_579d7264",
         "filename": "keystone/limit/backends/sql.py",
         "patchSetId": 2
