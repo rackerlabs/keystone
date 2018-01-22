@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_e9b622dd",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-22T01:27:44Z",
+      "side": 1,
+      "message": "I add this function: https://review.openstack.org/#/c/524109/37/keystone/limit/core.py@38 to ensure the referenced region and service exist. So DBReferenceError here will be only caused by related limits.",
+      "parentUuid": "7f96bb07_b7239605",
+      "revId": "0adf98acda3f15497ef3098e6753eb058024de11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_579d7264",
         "filename": "keystone/limit/backends/sql.py",
         "patchSetId": 2
