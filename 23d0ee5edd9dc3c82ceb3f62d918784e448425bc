@@ -34,6 +34,24 @@
       "revId": "23d0ee5edd9dc3c82ceb3f62d918784e448425bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_1d160cf3",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-22T22:28:27Z",
+      "side": 1,
+      "message": "Oh, right, but what about the ones below this that are just RULE_ADMIN_REQUIRED ?",
+      "parentUuid": "7f96bb07_4b2ff8f5",
+      "revId": "23d0ee5edd9dc3c82ceb3f62d918784e448425bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
