@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_0d18287f",
+        "filename": "keystone/application_credential/controllers.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-22T15:07:16Z",
+      "side": 1,
+      "message": "When we talked about application credentials back in Denver, we mentioned giving them a limit (e.g. I can only create 5 application credentials).\n\nWhere do we want to do that kind of enforcement?",
+      "range": {
+        "startLine": 87,
+        "startChar": 8,
+        "endLine": 87,
+        "endChar": 37
+      },
+      "revId": "f29a5a8d12eb6e048d2966b31ec8635a6165cbd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_6d58cc55",
+        "filename": "keystone/common/policies/application_credential.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-22T15:07:16Z",
+      "side": 1,
+      "message": "I think this will need a FIXME like some of the other scope_types patches.\n\nA system administrator should be able to get any application credential. A user with a role on a project should only be able to get application credentials they\u0027ve created. What about project administrators? Should they have the ability to control application credentials for the project they own?\n\nIn that case, is it best to leave this commented out with a FIXME?",
+      "revId": "f29a5a8d12eb6e048d2966b31ec8635a6165cbd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
