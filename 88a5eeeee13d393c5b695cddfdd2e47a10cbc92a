@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_cb2a1d7d",
+        "filename": "keystone/tests/common/auth.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-22T21:45:47Z",
+      "side": 1,
+      "message": "nit: if another patch set comes around, we can pass these as kwargs to make this a bit more robust in the event the method signature changes. We can always fix this later though, too.",
+      "range": {
+        "startLine": 101,
+        "startChar": 44,
+        "endLine": 102,
+        "endChar": 60
+      },
+      "revId": "88a5eeeee13d393c5b695cddfdd2e47a10cbc92a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
