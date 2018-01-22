@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_1ff2a09b",
+        "filename": "api-ref/source/v3/samples/admin/application-credential-create-request.json",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2018-01-22T03:17:46Z",
+      "side": 1,
+      "message": "what\u0027s \"allow_application_credential_creation\" do?",
+      "revId": "9a5c62daf87c8e30208e56c196ed114cef252c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
