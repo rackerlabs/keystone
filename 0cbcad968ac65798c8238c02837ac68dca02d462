@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_29fc0a3d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 37
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-22T01:42:21Z",
+      "side": 1,
+      "message": "Oh, because I copied your original patch to start coding. I\u0027ll remove it if you still think so.",
+      "parentUuid": "7f96bb07_7773ce4e",
+      "revId": "0cbcad968ac65798c8238c02837ac68dca02d462",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_17b7eada",
         "filename": "keystone/limit/__init__.py",
         "patchSetId": 37
