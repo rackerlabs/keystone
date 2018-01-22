@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_eb2d99a8",
+        "filename": "releasenotes/notes/bp-application-credentials-c699f1f17c7d4e2f.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-22T22:12:31Z",
+      "side": 1,
+      "message": "Let\u0027s link to the blueprint so that readers can find the specifications. Otherwise, looks great.\n\nhttps://docs.openstack.org/keystone/latest/contributor/release-notes.html#release-notes-for-features",
+      "revId": "1b7cde5c2a81fe0c0ba553d95030dd473136b5a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
