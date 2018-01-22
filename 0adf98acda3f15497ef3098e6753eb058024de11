@@ -162,6 +162,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_1a0dc036",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-22T14:06:28Z",
+      "side": 1,
+      "message": "Yeah. I missed the different driver part. It\u0027s reasonable now. I\u0027ll add a migration script and remove it in the next ps.",
+      "parentUuid": "7f96bb07_a5bb4e0c",
+      "revId": "0adf98acda3f15497ef3098e6753eb058024de11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_579d7264",
         "filename": "keystone/limit/backends/sql.py",
         "patchSetId": 2
