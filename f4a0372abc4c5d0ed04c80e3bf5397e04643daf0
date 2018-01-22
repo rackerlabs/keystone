@@ -69,6 +69,24 @@
       "revId": "f4a0372abc4c5d0ed04c80e3bf5397e04643daf0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_f61b48c7",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2821,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-22T17:42:48Z",
+      "side": 1,
+      "message": "No, check the test above, named \"test_migration_034_adds_application_credential_table\" as an example. The test must first do a migration to the last version, here version 34. That brings it up to the current version. Then it does one more upgrade, up to version 35. 35 is the version you are adding, that\u0027s the number in the names of the new migration files. The test is to make sure your new version works. You cannot upgrade from version 34 to version 34, you need to upgrade from version 34 to version 35.\n\nAlso we just merged some other database migrations today so you will need to rebase this and renumber your migrations, sorry :(",
+      "parentUuid": "7f96bb07_015b0f2e",
+      "revId": "f4a0372abc4c5d0ed04c80e3bf5397e04643daf0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
