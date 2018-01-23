@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_baf49a88",
+        "filename": "keystone/application_credential/controllers.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 11589
+      },
+      "writtenOn": "2018-01-23T20:27:28Z",
+      "side": 1,
+      "message": "nit: exposed",
+      "range": {
+        "startLine": 47,
+        "startChar": 25,
+        "endLine": 47,
+        "endChar": 31
+      },
+      "revId": "31de309683e71ad1a98cc09ea7afe877e7ef8a28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
