@@ -34,6 +34,40 @@
       "revId": "e8ba3ddb97d0c42c4d97c36f5d4901ec769b9200",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_2b4fd792",
+        "filename": "keystone/common/policies/limit.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-23T23:30:18Z",
+      "side": 1,
+      "message": "This might need to be adjusted a little bit. These limits are specific to projects, so if a project scoped token is used to access this API, we should make sure the project associated with the limit matches the scope of the project in the token.\n\nOtherwise it will be possible for people to query limit information for projects they don\u0027t have access to.\n\nIf we keep the same check_str, then that means anyone with a role on the system (reader, writer, admin, etc..) will be able to get any project limit. Do we think that\u0027s OK?",
+      "revId": "e8ba3ddb97d0c42c4d97c36f5d4901ec769b9200",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_cb451372",
+        "filename": "keystone/common/policies/limit.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-23T23:30:18Z",
+      "side": 1,
+      "message": "Same concerns here as above.",
+      "revId": "e8ba3ddb97d0c42c4d97c36f5d4901ec769b9200",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
