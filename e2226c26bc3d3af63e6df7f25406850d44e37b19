@@ -189,6 +189,30 @@
       "revId": "e2226c26bc3d3af63e6df7f25406850d44e37b19",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_aef3f5e6",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 606,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-23T23:52:05Z",
+      "side": 1,
+      "message": "The clarification on the previous patch makes sense. The test would be good though.",
+      "parentUuid": "7f96bb07_eef57dee",
+      "range": {
+        "startLine": 605,
+        "startChar": 0,
+        "endLine": 606,
+        "endChar": 61
+      },
+      "revId": "e2226c26bc3d3af63e6df7f25406850d44e37b19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
