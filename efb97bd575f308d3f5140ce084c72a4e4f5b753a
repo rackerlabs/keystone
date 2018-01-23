@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_4e1b511a",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 11
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2018-01-23T23:59:21Z",
+      "side": 1,
+      "message": "nit: should this be \"deployment\u0027s\"",
+      "range": {
+        "startLine": 51,
+        "startChar": 4,
+        "endLine": 51,
+        "endChar": 15
+      },
+      "revId": "efb97bd575f308d3f5140ce084c72a4e4f5b753a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
