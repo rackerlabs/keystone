@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_9a620cad",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-23T11:53:52Z",
+      "side": 1,
+      "message": "missed \"bp application-credentials\"\nif need a new ps.",
+      "revId": "396131de8acc73eace651561412ae9c25cf6c363",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
