@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7f96bb07_eb432f12",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 40
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-23T23:20:59Z",
+      "side": 1,
+      "message": "registered*",
+      "range": {
+        "startLine": 9,
+        "startChar": 20,
+        "endLine": 9,
+        "endChar": 28
+      },
+      "revId": "e2226c26bc3d3af63e6df7f25406850d44e37b19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_6be64247",
         "filename": "/COMMIT_MSG",
         "patchSetId": 40
@@ -59,6 +82,23 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_8b270b13",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-23T23:20:59Z",
+      "side": 1,
+      "message": "In the future, once keystone starts supporting other models of enforcement, this module will likely contain some sort of model processing. That could based on flat project structures, hierarchies, and so on. We should be sure to include the model in configuration so that people know what they\u0027re using even if we only support the flat model initially.",
+      "revId": "e2226c26bc3d3af63e6df7f25406850d44e37b19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_4bca661a",
         "filename": "keystone/tests/unit/limit/test_backends.py",
         "patchSetId": 40
@@ -98,6 +138,29 @@
         "startChar": 4,
         "endLine": 306,
         "endChar": 53
+      },
+      "revId": "e2226c26bc3d3af63e6df7f25406850d44e37b19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_ab39a73f",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 606,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-23T23:20:59Z",
+      "side": 1,
+      "message": "What happens if all you want to update is the default_limit? In that case are we going to require administrator to remove all project limits to update the registered limit, then recreate the project limits?\n\nI\u0027m wondering what options operators have if they realize they want to change a registered limit after they\u0027ve started using it.",
+      "range": {
+        "startLine": 605,
+        "startChar": 0,
+        "endLine": 606,
+        "endChar": 61
       },
       "revId": "e2226c26bc3d3af63e6df7f25406850d44e37b19",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
