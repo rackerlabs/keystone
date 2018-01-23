@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_4fb839c7",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-23T17:11:34Z",
+      "side": 1,
+      "message": "What about project tags?",
+      "parentUuid": "7f96bb07_1d1dd6bc",
+      "revId": "b4ba7909e5b532494cf2649b4446d10f83dbea42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_9d86c6db",
         "filename": "keystone/common/policies/project.py",
         "patchSetId": 4
