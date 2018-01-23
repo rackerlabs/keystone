@@ -42,6 +42,29 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_66e437ad",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-23T22:00:20Z",
+      "side": 1,
+      "message": "This is a little weird to me, an admin can (and must) set a project limit but if they query /v3/limits they see an empty list. I think anyone who is able to set the limit should also be able to read it.",
+      "range": {
+        "startLine": 105,
+        "startChar": 8,
+        "endLine": 108,
+        "endChar": 54
+      },
+      "revId": "cab88b132dcc4ceb50138f9fc8a42d0ce7ba0d39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_bac58590",
         "filename": "keystone/limit/routers.py",
         "patchSetId": 46
