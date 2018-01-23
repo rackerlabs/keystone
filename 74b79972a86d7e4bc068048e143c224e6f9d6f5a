@@ -57,6 +57,24 @@
       "revId": "74b79972a86d7e4bc068048e143c224e6f9d6f5a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_c973e97f",
+        "filename": "keystone/common/policies/role_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-23T15:54:47Z",
+      "side": 1,
+      "message": "Yeah - I did some digging and found the code:\n\nhttps://github.com/openstack/keystone/blob/master/keystone/assignment/controllers.py#L916-L919",
+      "parentUuid": "7f96bb07_d5bbd0c1",
+      "revId": "74b79972a86d7e4bc068048e143c224e6f9d6f5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
