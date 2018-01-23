@@ -112,6 +112,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_ba8825c6",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-23T13:46:33Z",
+      "side": 1,
+      "message": "Hmm, this API is different from the others because it is creating limits in batches and therefore the response is a list. The other create APIs don\u0027t have collection links because they\u0027re not collections. They do still have singular links.\n\nI think the collection links should stay, but I might be missing context for what you and Lance talked about.",
+      "parentUuid": "7f96bb07_1f6ce09a",
+      "revId": "af285b802f4075c1c4f8f4961197351d065d7d58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_1794cae7",
         "filename": "keystone/limit/routers.py",
         "patchSetId": 42
