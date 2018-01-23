@@ -46,6 +46,30 @@
       "revId": "1744891122f8bd1c2cdadf0517903c8c770cc61c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_9853ffe2",
+        "filename": "keystone/common/policies/limit.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-23T07:37:39Z",
+      "side": 1,
+      "message": "Yes, the project limit api only open to the one who has role in the related project. So I added a check in the controller:\nhttps://review.openstack.org/#/c/524110/46/keystone/limit/controllers.py@117\nIf the request is project scoped, the project must match the limit\u0027s.",
+      "parentUuid": "7f96bb07_509fa7b3",
+      "range": {
+        "startLine": 21,
+        "startChar": 10,
+        "endLine": 22,
+        "endChar": 33
+      },
+      "revId": "1744891122f8bd1c2cdadf0517903c8c770cc61c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
