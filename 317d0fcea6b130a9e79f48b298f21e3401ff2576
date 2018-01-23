@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_500b0323",
+        "filename": "api-ref/source/v3/application-credentials.inc",
+        "patchSetId": 12
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-23T12:49:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_ffd9c2f3",
+      "range": {
+        "startLine": 49,
+        "startChar": 11,
+        "endLine": 49,
+        "endChar": 15
+      },
+      "revId": "317d0fcea6b130a9e79f48b298f21e3401ff2576",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_df8c06d9",
         "filename": "api-ref/source/v3/application-credentials.inc",
         "patchSetId": 12
@@ -36,6 +60,24 @@
       "writtenOn": "2018-01-23T11:52:16Z",
       "side": 1,
       "message": "any response parameters? At least \"application_credential_restricted\" should be mentioned.",
+      "revId": "317d0fcea6b130a9e79f48b298f21e3401ff2576",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_3008b726",
+        "filename": "api-ref/source/v3/application-credentials.inc",
+        "patchSetId": 12
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-23T12:49:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_df8c06d9",
       "revId": "317d0fcea6b130a9e79f48b298f21e3401ff2576",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_f50c8143",
+        "filename": "api-ref/source/v3/application-credentials.inc",
+        "patchSetId": 12
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-23T12:49:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_1f5a6e4f",
+      "revId": "317d0fcea6b130a9e79f48b298f21e3401ff2576",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_3aa41808",
         "filename": "api-ref/source/v3/application-credentials.inc",
         "patchSetId": 12
@@ -70,6 +130,24 @@
       "writtenOn": "2018-01-23T11:52:16Z",
       "side": 1,
       "message": "There are two kind  of links. One for collection. one for each app credential",
+      "revId": "317d0fcea6b130a9e79f48b298f21e3401ff2576",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_151fad70",
+        "filename": "api-ref/source/v3/application-credentials.inc",
+        "patchSetId": 12
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-23T12:49:57Z",
+      "side": 1,
+      "message": "That\u0027s true. I\u0027ve added the link_collection parameter to the list response and the link_response_body to the singular responses. We don\u0027t really have a good way to describe two different types of parameters named \"links\" the way we have for the list response so I\u0027ve only included the collection one there.",
+      "parentUuid": "7f96bb07_3aa41808",
       "revId": "317d0fcea6b130a9e79f48b298f21e3401ff2576",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
