@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_4ebfd1fa",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 4958,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2018-01-23T23:52:54Z",
+      "side": 1,
+      "message": "This test used an unscoped token. Perhaps we add a scoped token test (to a regular project/domain for a user that doesn\u0027t have a system role, to ensure the list is still empty?",
+      "range": {
+        "startLine": 4946,
+        "startChar": 0,
+        "endLine": 4958,
+        "endChar": 9
+      },
+      "revId": "4917668d57564d2c7e989a264fc0bb0b01a074aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
