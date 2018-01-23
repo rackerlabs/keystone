@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_6be64247",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 40
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-23T21:24:25Z",
+      "side": 1,
+      "message": "You can remove this :)",
+      "revId": "e2226c26bc3d3af63e6df7f25406850d44e37b19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_4b3a6698",
+        "filename": "keystone/limit/__init__.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-23T21:24:25Z",
+      "side": 1,
+      "message": "Wrong copyright",
+      "revId": "e2226c26bc3d3af63e6df7f25406850d44e37b19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_cb451617",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-23T21:24:25Z",
+      "side": 1,
+      "message": "You can delete this",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 32
+      },
+      "revId": "e2226c26bc3d3af63e6df7f25406850d44e37b19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_4bca661a",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-23T21:24:25Z",
+      "side": 1,
+      "message": "It worries me a little that this is possible with our use of list_limit and no pagination links, but that is probably a discussion for later since we already have this pattern in keystone",
+      "range": {
+        "startLine": 213,
+        "startChar": 8,
+        "endLine": 216,
+        "endChar": 67
+      },
+      "revId": "e2226c26bc3d3af63e6df7f25406850d44e37b19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_cbfe7637",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-23T21:24:25Z",
+      "side": 1,
+      "message": "Might be useful to split registered limits and limits into two test classes and put this in the setUp() of the limits test class. Definitely not required though.",
+      "range": {
+        "startLine": 296,
+        "startChar": 4,
+        "endLine": 306,
+        "endChar": 53
+      },
+      "revId": "e2226c26bc3d3af63e6df7f25406850d44e37b19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
