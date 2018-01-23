@@ -22,6 +22,23 @@
       "revId": "2389175410bd55a4a34397d425b4d1f359090629",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_2b1a7a7c",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-23T21:28:29Z",
+      "side": 1,
+      "message": "What if this try/except was pulled inside the for loop? Then you\u0027d be able to pull the ID from the `registered_limit` variable that\u0027s currently failing. Or would that cause a problem with the sql transaction?",
+      "revId": "2389175410bd55a4a34397d425b4d1f359090629",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
