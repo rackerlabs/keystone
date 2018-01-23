@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_a4979f90",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-23T17:36:00Z",
+      "side": 1,
+      "message": "RULE_ADMIN_OR_TARGET_PROJECT ... looking at https://github.com/openstack/oslo.policy/blob/master/oslo_policy/policy.py#L844 it seems like having scope_types\u003dsystem,project would allow it to pass the scope check and then make it to the rule check at https://github.com/openstack/oslo.policy/blob/master/oslo_policy/policy.py#L867 which might do the right thing?",
+      "parentUuid": "7f96bb07_4fb839c7",
+      "revId": "b4ba7909e5b532494cf2649b4446d10f83dbea42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_9d86c6db",
         "filename": "keystone/common/policies/project.py",
         "patchSetId": 4
