@@ -16,6 +16,24 @@
       "revId": "d9f8397a46279cd1765429f5ed9b1dd9c2cf8c02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_43f01868",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-23T15:10:04Z",
+      "side": 1,
+      "message": "I wanted to clean this up since adding a new parameter, \u0027system\u0027, to the method signature caused issues with the caller. Since the caller was calling the method\u0027s argument based on position when it should be called with kwargs to avoid problems when method signatures change.\n\nI open this up in a subsequent patch: https://review.openstack.org/#/c/525687/19/keystone/auth/controllers.py@143",
+      "parentUuid": "7f96bb07_e01cd378",
+      "revId": "d9f8397a46279cd1765429f5ed9b1dd9c2cf8c02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
