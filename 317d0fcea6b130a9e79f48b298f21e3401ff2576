@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_ffd9c2f3",
+        "filename": "api-ref/source/v3/application-credentials.inc",
+        "patchSetId": 12
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-23T11:52:16Z",
+      "side": 1,
+      "message": "this user is optional. It works with application_credential\u0027s name, so I think we can create a new one for it.",
+      "range": {
+        "startLine": 49,
+        "startChar": 11,
+        "endLine": 49,
+        "endChar": 15
+      },
+      "revId": "317d0fcea6b130a9e79f48b298f21e3401ff2576",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_df8c06d9",
+        "filename": "api-ref/source/v3/application-credentials.inc",
+        "patchSetId": 12
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-23T11:52:16Z",
+      "side": 1,
+      "message": "any response parameters? At least \"application_credential_restricted\" should be mentioned.",
+      "revId": "317d0fcea6b130a9e79f48b298f21e3401ff2576",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_1f5a6e4f",
+        "filename": "api-ref/source/v3/application-credentials.inc",
+        "patchSetId": 12
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-23T11:52:16Z",
+      "side": 1,
+      "message": "and 409 for duplicate app credential",
+      "revId": "317d0fcea6b130a9e79f48b298f21e3401ff2576",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_3aa41808",
+        "filename": "api-ref/source/v3/application-credentials.inc",
+        "patchSetId": 12
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-23T11:52:16Z",
+      "side": 1,
+      "message": "There are two kind  of links. One for collection. one for each app credential",
+      "revId": "317d0fcea6b130a9e79f48b298f21e3401ff2576",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
