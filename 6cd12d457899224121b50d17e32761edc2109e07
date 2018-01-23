@@ -33,6 +33,24 @@
       "revId": "6cd12d457899224121b50d17e32761edc2109e07",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_f06fa1c2",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-01-23T20:10:30Z",
+      "side": 1,
+      "message": "Yeah, that should be denied as well.  Only go from larger scope to smaller.    I would prefer a check that the source and target scopes are the same.",
+      "parentUuid": "7f96bb07_5592074d",
+      "revId": "6cd12d457899224121b50d17e32761edc2109e07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
