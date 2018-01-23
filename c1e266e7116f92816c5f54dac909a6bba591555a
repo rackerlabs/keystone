@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_7db85729",
+        "filename": "keystone/common/sql/contract_repo/versions/037_contract_remove_service_and_region_fk_for_registered_limit.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-23T13:57:39Z",
+      "side": 1,
+      "message": "Since this is the end of the if/else statement, are these needed? I was able to remove both of them and all the tests pass.",
+      "range": {
+        "startLine": 32,
+        "startChar": 12,
+        "endLine": 32,
+        "endChar": 20
+      },
+      "revId": "c1e266e7116f92816c5f54dac909a6bba591555a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_3d840f5e",
+        "filename": "keystone/common/sql/contract_repo/versions/037_contract_remove_service_and_region_fk_for_registered_limit.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-23T13:57:39Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "range": {
+        "startLine": 38,
+        "startChar": 12,
+        "endLine": 38,
+        "endChar": 20
+      },
+      "revId": "c1e266e7116f92816c5f54dac909a6bba591555a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
