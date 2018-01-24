@@ -278,7 +278,8 @@ class Manager(manager.Manager):
                                      payload):
         if CONF.token.revoke_by_id:
             user_id = payload['resource_info']
-            self._persistence.delete_tokens_for_user(user_id)
+            if 'fernet' not in CONF.token.provider:
+                self._persistence.delete_tokens_for_user(user_id)
         if CONF.token.cache_on_issue:
             # NOTE(amakarov): preserving behavior
             TOKENS_REGION.invalidate()
