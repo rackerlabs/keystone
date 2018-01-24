@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_3c08e826",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-24T20:57:41Z",
+      "side": 1,
+      "message": "I\u0027m working on some of the client changes for this and noticed this is inconsistent with the specification:\n\nhttp://specs.openstack.org/openstack/keystone-specs/specs/keystone/queens/limits-api.html#create-registered-limits\n\nWe either need to update the specification or updated the implementation.",
+      "revId": "611d254be3406adc2a87400420eada9d9236243f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
