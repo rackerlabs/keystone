@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "5f93b717_dabea4fe",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-24T22:05:59Z",
+      "side": 1,
+      "message": "Well - this is used to assert resources exist for both registered limits and project limits. Registered limits don\u0027t require this attribute.",
+      "parentUuid": "5f93b717_a6886771",
+      "range": {
+        "startLine": 46,
+        "startChar": 12,
+        "endLine": 48,
+        "endChar": 62
+      },
+      "revId": "16b6db40a21d7967358916e13fa2efc3bdb03bd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_86e8cb16",
         "filename": "keystone/limit/core.py",
         "patchSetId": 44
@@ -59,6 +83,30 @@
       "writtenOn": "2018-01-24T20:02:20Z",
       "side": 1,
       "message": "This create operation returns a list. Would be better to capture that in a variable than to make another list call.",
+      "range": {
+        "startLine": 62,
+        "startChar": 8,
+        "endLine": 62,
+        "endChar": 63
+      },
+      "revId": "16b6db40a21d7967358916e13fa2efc3bdb03bd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_9a049cc8",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-24T22:05:59Z",
+      "side": 1,
+      "message": "++ I thought I looked into that earlier. That\u0027d be a nice improvement.",
+      "parentUuid": "5f93b717_86e8cb16",
       "range": {
         "startLine": 62,
         "startChar": 8,
