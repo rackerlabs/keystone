@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_75e7e713",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-24T13:22:35Z",
+      "side": 1,
+      "message": "The bug is solved for me if I only include this part. How about we drop all of the foreign key fixes and just keep this part?",
+      "range": {
+        "startLine": 827,
+        "startChar": 0,
+        "endLine": 837,
+        "endChar": 72
+      },
+      "revId": "d2e311d16a5937895cd514e370b5504346d87f15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
