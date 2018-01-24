@@ -22,6 +22,30 @@
       "revId": "a50fafd24661b66754f263e6decf2ff56252b7e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_3fe9ba7f",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-24T21:50:21Z",
+      "side": 1,
+      "message": "Yep - I figured we could work through that when we get to that point.",
+      "parentUuid": "5f93b717_9f324ea7",
+      "range": {
+        "startLine": 433,
+        "startChar": 16,
+        "endLine": 433,
+        "endChar": 42
+      },
+      "revId": "a50fafd24661b66754f263e6decf2ff56252b7e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
