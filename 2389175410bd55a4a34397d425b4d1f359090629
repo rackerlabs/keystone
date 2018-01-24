@@ -147,6 +147,24 @@
       "revId": "2389175410bd55a4a34397d425b4d1f359090629",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_11e31e36",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-24T09:10:21Z",
+      "side": 1,
+      "message": "still have no perfect solution. ;(\nPlease review the new ps.\nActually only sqlite has problem. Maybe we can deal with it later.",
+      "parentUuid": "7f96bb07_923bb7c6",
+      "revId": "2389175410bd55a4a34397d425b4d1f359090629",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
