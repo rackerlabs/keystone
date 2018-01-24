@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "5f93b717_fa17e0ec",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-24T22:11:15Z",
+      "side": 1,
+      "message": "You\u0027re right, and I guess for updates there won\u0027t always be a service id or project id, so this makes sense and is reusable everywhere.",
+      "parentUuid": "5f93b717_dabea4fe",
+      "range": {
+        "startLine": 46,
+        "startChar": 12,
+        "endLine": 48,
+        "endChar": 62
+      },
+      "revId": "16b6db40a21d7967358916e13fa2efc3bdb03bd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_86e8cb16",
         "filename": "keystone/limit/core.py",
         "patchSetId": 44
