@@ -129,6 +129,24 @@
       "revId": "2389175410bd55a4a34397d425b4d1f359090629",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_923bb7c6",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-24T03:48:31Z",
+      "side": 1,
+      "message": "It sounds like what you\u0027re saying is that the exception is raised when the context manager handles the interaction with the database. If that\u0027s the case, maybe we can remove the context manager and handle the session exiting manually with session.close() and wrap that in a try/except?\n\nI believe we resort to using session.close() in other areas of keystone.",
+      "parentUuid": "7f96bb07_1d633db3",
+      "revId": "2389175410bd55a4a34397d425b4d1f359090629",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
