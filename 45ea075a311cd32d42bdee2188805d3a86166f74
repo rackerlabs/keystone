@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_8ef620d7",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-24T15:11:30Z",
+      "side": 1,
+      "message": "This is really generic, even though we\u0027re in a specific case at this point. Looking at the line above, this feels like it should be a KeyError.\n\nExcepting `Exception`s like this worries me because it usually makes debugging problems harder if an unexpected exception slips through it.",
+      "range": {
+        "startLine": 167,
+        "startChar": 19,
+        "endLine": 167,
+        "endChar": 28
+      },
+      "revId": "45ea075a311cd32d42bdee2188805d3a86166f74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_6ee71414",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-24T15:11:30Z",
+      "side": 1,
+      "message": "The exception raised from oslo.db doesn\u0027t include the parameters when running on SQlite? But it does for Postgres and MySQL?",
+      "revId": "45ea075a311cd32d42bdee2188805d3a86166f74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
