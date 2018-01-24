@@ -111,6 +111,24 @@
       "revId": "2389175410bd55a4a34397d425b4d1f359090629",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_1d633db3",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-24T02:44:07Z",
+      "side": 1,
+      "message": "The DBReferenceError error is only raised after the \"with....as session\". So we can\u0027t move try/except inside.\n\nHere is solution like:\nfor registered_limit in registered_limits:\n    try:    \n        with sql.session_for_write() as session:\n            ....\n    except:\n         raise ...registered_limi[\u0027id\u0027]\n\nBut if use this way, it means that when users try to create more than one registered limits in one request, the correct one which before the wrong one will be created. others will fail.\n\nBut my purpose here is that when users try to create more than one registered limits in one request, if one of them is wrong, all of them should not be created.\n\nAny idea?",
+      "parentUuid": "7f96bb07_2eecc527",
+      "revId": "2389175410bd55a4a34397d425b4d1f359090629",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
