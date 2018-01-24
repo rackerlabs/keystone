@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_e6b42f38",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-24T20:02:20Z",
+      "side": 1,
+      "message": "The schema validation makes this a required property, is there any reason this would be empty?",
+      "range": {
+        "startLine": 40,
+        "startChar": 12,
+        "endLine": 42,
+        "endChar": 61
+      },
+      "revId": "16b6db40a21d7967358916e13fa2efc3bdb03bd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_a6886771",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-24T20:02:20Z",
+      "side": 1,
+      "message": "Same here",
+      "range": {
+        "startLine": 46,
+        "startChar": 12,
+        "endLine": 48,
+        "endChar": 62
+      },
+      "revId": "16b6db40a21d7967358916e13fa2efc3bdb03bd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_86e8cb16",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-24T20:02:20Z",
+      "side": 1,
+      "message": "This create operation returns a list. Would be better to capture that in a variable than to make another list call.",
+      "range": {
+        "startLine": 62,
+        "startChar": 8,
+        "endLine": 62,
+        "endChar": 63
+      },
+      "revId": "16b6db40a21d7967358916e13fa2efc3bdb03bd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_a6d6274f",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-24T20:02:20Z",
+      "side": 1,
+      "message": "Would be good if this driver method could return a list",
+      "range": {
+        "startLine": 68,
+        "startChar": 8,
+        "endLine": 68,
+        "endChar": 63
+      },
+      "revId": "16b6db40a21d7967358916e13fa2efc3bdb03bd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_06211b4e",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-24T20:02:20Z",
+      "side": 1,
+      "message": "I feel like there might be some inefficiencies with how we\u0027re looping over limits once or twice per manager call and then also looping again in the driver. We can try to optimize later.",
+      "revId": "16b6db40a21d7967358916e13fa2efc3bdb03bd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
