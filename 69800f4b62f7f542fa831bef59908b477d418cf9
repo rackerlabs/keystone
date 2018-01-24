@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_b59b2f15",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2018-01-24T13:36:46Z",
+      "side": 1,
+      "message": "you should provide complete commit msg, please check more info here - https://wiki.openstack.org/wiki/GitCommitMessages",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 20
+      },
+      "revId": "69800f4b62f7f542fa831bef59908b477d418cf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
