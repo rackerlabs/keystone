@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_9f324ea7",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-24T21:40:51Z",
+      "side": 1,
+      "message": "I guess in the future we might have an assignment_api.list_systems_for_user() that would be used here instead of hardcoding \u0027all\u0027?",
+      "range": {
+        "startLine": 433,
+        "startChar": 16,
+        "endLine": 433,
+        "endChar": 42
+      },
+      "revId": "a50fafd24661b66754f263e6decf2ff56252b7e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
