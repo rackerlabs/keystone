@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f93b717_3acd485d",
+        "filename": "keystone/conf/unified_limit.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-24T22:21:38Z",
+      "side": 1,
+      "message": "Some things in keystone have this set to a default and others don\u0027t. Do we want to include one here? We can follow this up with another patch to do this, too.",
+      "range": {
+        "startLine": 36,
+        "startChar": 5,
+        "endLine": 36,
+        "endChar": 15
+      },
+      "revId": "16b6db40a21d7967358916e13fa2efc3bdb03bd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_e6b42f38",
         "filename": "keystone/limit/core.py",
         "patchSetId": 44
