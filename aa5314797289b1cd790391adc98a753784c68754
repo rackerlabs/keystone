@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_8e694bf9",
+        "filename": "api-ref/source/v3/samples/admin/limits-update-request.json",
+        "patchSetId": 10
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-24T09:05:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_6573c381",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 6
+      },
+      "revId": "aa5314797289b1cd790391adc98a753784c68754",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_e504b3c8",
         "filename": "api-ref/source/v3/unified_limits.inc",
         "patchSetId": 10
@@ -36,6 +60,30 @@
       "writtenOn": "2018-01-24T04:44:38Z",
       "side": 1,
       "message": "extra space",
+      "range": {
+        "startLine": 7,
+        "startChar": 12,
+        "endLine": 7,
+        "endChar": 13
+      },
+      "revId": "aa5314797289b1cd790391adc98a753784c68754",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_ce4c33a0",
+        "filename": "api-ref/source/v3/unified_limits.inc",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-24T09:05:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_e504b3c8",
       "range": {
         "startLine": 7,
         "startChar": 12,
