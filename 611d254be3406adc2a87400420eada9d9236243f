@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f93b717_50cb55a4",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-24T23:28:46Z",
+      "side": 1,
+      "message": "I still would like this to work for the \"admin\" user, for both the \"admin on system scope\" case and \"admin on admin project that\u0027s different than this project\" case.",
+      "range": {
+        "startLine": 105,
+        "startChar": 8,
+        "endLine": 107,
+        "endChar": 54
+      },
+      "revId": "611d254be3406adc2a87400420eada9d9236243f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_f05f010c",
         "filename": "keystone/limit/routers.py",
         "patchSetId": 50
