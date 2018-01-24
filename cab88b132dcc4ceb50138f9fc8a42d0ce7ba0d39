@@ -179,6 +179,30 @@
     },
     {
       "key": {
+        "uuid": "5f93b717_d203f20e",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-24T19:47:57Z",
+      "side": 1,
+      "message": "This has to work independently the system scope feature. When I say \"system administrator\" I also mean the way it is now, where I `source openrc admin admin` on devstack to become superuser.",
+      "parentUuid": "7f96bb07_8f22b000",
+      "range": {
+        "startLine": 105,
+        "startChar": 8,
+        "endLine": 108,
+        "endChar": 54
+      },
+      "revId": "cab88b132dcc4ceb50138f9fc8a42d0ce7ba0d39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f96bb07_bac58590",
         "filename": "keystone/limit/routers.py",
         "patchSetId": 46
