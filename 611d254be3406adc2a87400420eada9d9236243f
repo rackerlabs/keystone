@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f93b717_f05f010c",
+        "filename": "keystone/limit/routers.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-24T23:23:58Z",
+      "side": 1,
+      "message": "We can mark these as being EXPERIMENTAL for now:\n\nhttp://eavesdrop.openstack.org/irclogs/%23openstack-keystone/%23openstack-keystone.2018-01-24.log.html#t2018-01-24T20:29:27\n\nI think it will give us the ability to really play with the APIs will actually merging something for Queens. We take a similar approach with other APIs: \n\nhttps://github.com/openstack/keystone/blob/master/keystone/assignment/routers.py#L65",
+      "revId": "611d254be3406adc2a87400420eada9d9236243f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_3c08e826",
         "filename": "keystone/tests/unit/test_limits.py",
         "patchSetId": 50
