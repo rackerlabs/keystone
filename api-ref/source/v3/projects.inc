@@ -119,12 +119,13 @@ Parameters
 .. rest_parameters:: parameters.yaml
 
    - project: project
+   - name: project_name_request_body
    - is_domain: is_domain_request_body
    - description: project_description_request_body
    - domain_id: project_domain_id_request_body
    - enabled: project_enabled_request_body
-   - name: project_name_request_body
    - parent_id: project_parent_id_request_body
+   - extra: extra_request_body
 
 Examples
 ~~~~~~~~
