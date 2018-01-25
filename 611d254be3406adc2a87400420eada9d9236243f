@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f93b717_11e14e9b",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-25T03:24:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f93b717_50cb55a4",
+      "range": {
+        "startLine": 105,
+        "startChar": 8,
+        "endLine": 107,
+        "endChar": 54
+      },
+      "revId": "611d254be3406adc2a87400420eada9d9236243f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_f05f010c",
         "filename": "keystone/limit/routers.py",
         "patchSetId": 50
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "5f93b717_11d70ef0",
+        "filename": "keystone/limit/routers.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-25T03:24:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f93b717_f05f010c",
+      "revId": "611d254be3406adc2a87400420eada9d9236243f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_3c08e826",
         "filename": "keystone/tests/unit/test_limits.py",
         "patchSetId": 50
@@ -53,6 +95,24 @@
       "writtenOn": "2018-01-24T20:57:41Z",
       "side": 1,
       "message": "I\u0027m working on some of the client changes for this and noticed this is inconsistent with the specification:\n\nhttp://specs.openstack.org/openstack/keystone-specs/specs/keystone/queens/limits-api.html#create-registered-limits\n\nWe either need to update the specification or updated the implementation.",
+      "revId": "611d254be3406adc2a87400420eada9d9236243f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_8bebebae",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-25T03:24:24Z",
+      "side": 1,
+      "message": "nice catch. we should update the spec IMO. \"registered limit\" and \"limit\" are different. we\u0027d better not use the same value.",
+      "parentUuid": "5f93b717_3c08e826",
       "revId": "611d254be3406adc2a87400420eada9d9236243f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
