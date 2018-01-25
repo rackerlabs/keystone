@@ -238,6 +238,30 @@
     },
     {
       "key": {
+        "uuid": "5f93b717_00b57231",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-25T06:20:49Z",
+      "side": 1,
+      "message": "Oh, since we\u0027ll get all limits, not only the created ones. So I think call it here is better.",
+      "parentUuid": "5f93b717_0b74bb34",
+      "range": {
+        "startLine": 62,
+        "startChar": 8,
+        "endLine": 62,
+        "endChar": 63
+      },
+      "revId": "16b6db40a21d7967358916e13fa2efc3bdb03bd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_a6d6274f",
         "filename": "keystone/limit/core.py",
         "patchSetId": 44
@@ -273,6 +297,30 @@
       "side": 1,
       "message": "sure",
       "parentUuid": "5f93b717_a6d6274f",
+      "range": {
+        "startLine": 68,
+        "startChar": 8,
+        "endLine": 68,
+        "endChar": 63
+      },
+      "revId": "16b6db40a21d7967358916e13fa2efc3bdb03bd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_a0835e56",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-25T06:20:49Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "5f93b717_ab8ee724",
       "range": {
         "startLine": 68,
         "startChar": 8,
