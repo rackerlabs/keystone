@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_95d0d8f9",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-25T14:28:20Z",
+      "side": 1,
+      "message": "I thought we were going to keep returning things from the driver? But I suppose that is only going to return the ones being created, not all of them.",
+      "revId": "0cde8da14e90afc60fc3423b8bd7ccb1e338eafc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
