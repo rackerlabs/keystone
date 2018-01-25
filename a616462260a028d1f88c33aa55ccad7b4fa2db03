@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_d534204d",
+        "filename": "releasenotes/notes/add-unified-limit-apis-c9ebc5116bc2cf93.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-25T14:30:35Z",
+      "side": 1,
+      "message": "Thanks!",
+      "revId": "a616462260a028d1f88c33aa55ccad7b4fa2db03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
