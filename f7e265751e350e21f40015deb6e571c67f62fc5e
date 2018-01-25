@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_80ebc2ae",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-25T06:39:44Z",
+      "side": 1,
+      "message": "I find a bug here, if the request is project scoped, he should not get all the limits, but only the limit for the specified project. I\u0027ll fix it in the next ps.",
+      "revId": "f7e265751e350e21f40015deb6e571c67f62fc5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
