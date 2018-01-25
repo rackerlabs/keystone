@@ -16,6 +16,24 @@
       "revId": "0cde8da14e90afc60fc3423b8bd7ccb1e338eafc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_30a6b2c3",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-25T14:59:00Z",
+      "side": 1,
+      "message": "Yeah. limits is quite different. It returns all of the record. I think we should leave this logic to manager so that if others add a new backend, he doesn\u0027t need to deal with this action. So I return nothing here and call list_registered_limit at manager layer.",
+      "parentUuid": "5f93b717_95d0d8f9",
+      "revId": "0cde8da14e90afc60fc3423b8bd7ccb1e338eafc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
