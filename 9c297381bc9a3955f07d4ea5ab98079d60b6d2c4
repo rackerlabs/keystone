@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_071a5e7c",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-25T16:31:24Z",
+      "side": 1,
+      "message": "Going to have to fix this assuming https://review.openstack.org/#/c/525687 makes it in first",
+      "revId": "9c297381bc9a3955f07d4ea5ab98079d60b6d2c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
