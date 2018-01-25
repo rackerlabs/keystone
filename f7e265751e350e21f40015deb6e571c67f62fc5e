@@ -16,6 +16,24 @@
       "revId": "f7e265751e350e21f40015deb6e571c67f62fc5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_f7d60d50",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-25T07:54:39Z",
+      "side": 1,
+      "message": "well, create/update limits are system level APIs. They don\u0027t have this problem. My brain is in a mess now. ;(",
+      "parentUuid": "5f93b717_80ebc2ae",
+      "revId": "f7e265751e350e21f40015deb6e571c67f62fc5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
