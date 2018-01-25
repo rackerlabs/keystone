@@ -16,6 +16,24 @@
       "revId": "f8f9f0a00154ee73892d702644f3f78d1d0b89a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_c0c0ea53",
+        "filename": "releasenotes/notes/add-unified-limit-apis-c9ebc5116bc2cf93.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-25T06:59:23Z",
+      "side": 1,
+      "message": "sure.",
+      "parentUuid": "5f93b717_5f9efd07",
+      "revId": "f8f9f0a00154ee73892d702644f3f78d1d0b89a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
