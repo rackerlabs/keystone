@@ -39,6 +39,24 @@
       "revId": "45ea075a311cd32d42bdee2188805d3a86166f74",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_ebc86f75",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-25T03:24:54Z",
+      "side": 1,
+      "message": "it includes parameters, but for SQLite, \"registered_limit_id\" doesn\u0027t in the parameters.",
+      "parentUuid": "7f96bb07_6ee71414",
+      "revId": "45ea075a311cd32d42bdee2188805d3a86166f74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
