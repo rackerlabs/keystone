@@ -5,6 +5,7 @@
 # required to build documentation
 openstackdocstheme>=1.17.0 # Apache-2.0
 sphinx!=1.6.6,>=1.6.2 # BSD
+sphinxcontrib-blockdiag
 reno>=2.5.0 # Apache-2.0
 fixtures>=3.0.0 # Apache-2.0/BSD
 os-api-ref>=1.4.0 # Apache-2.0
