@@ -48,6 +48,7 @@ sys.path.insert(0, os.path.abspath('./'))
 extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.coverage',
               'sphinx.ext.viewcode',
+              'sphinxcontrib.blockdiag',
               'oslo_config.sphinxconfiggen',
               'oslo_config.sphinxext',
               'oslo_policy.sphinxpolicygen',
@@ -55,6 +56,10 @@ extensions = ['sphinx.ext.autodoc',
               'oslo_policy.sphinxext',
               'ext.support_matrix',
               ]
+
+blockdiag_html_image_format = 'SVG'
+
+blockdiag_fontpath = 'DejaVuSans.ttf'
 
 config_generator_config_file = '../../config-generator/keystone.conf'
 sample_config_basename = '_static/keystone'
