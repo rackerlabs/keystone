@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f93b717_c8053ac4",
+        "filename": "doc/source/admin/identity-unified-limits.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-26T22:12:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f93b717_f217c9a2",
+      "range": {
+        "startLine": 58,
+        "startChar": 47,
+        "endLine": 58,
+        "endChar": 52
+      },
+      "revId": "6d1d2c73546bc72b6614505e45c17d46ac33023c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_12227501",
         "filename": "doc/source/admin/identity-unified-limits.rst",
         "patchSetId": 2
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "5f93b717_68f426d0",
+        "filename": "doc/source/admin/identity-unified-limits.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-26T22:12:39Z",
+      "side": 1,
+      "message": "without*?",
+      "parentUuid": "5f93b717_12227501",
+      "revId": "6d1d2c73546bc72b6614505e45c17d46ac33023c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_324bf1b0",
         "filename": "doc/source/admin/identity-unified-limits.rst",
         "patchSetId": 2
@@ -53,6 +95,30 @@
       "writtenOn": "2018-01-26T20:42:14Z",
       "side": 1,
       "message": "This seems a slightly odd example - and one that seems the outlier to the normal case when Jane tries to locate the 21st cpu and is denied. Use Kelly might then raise the limit to 25, or advice Jane to delete some cpus that are already in use.\n\nWas there a reason to show this particular corner case?",
+      "range": {
+        "startLine": 88,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 11
+      },
+      "revId": "6d1d2c73546bc72b6614505e45c17d46ac33023c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_4874ca68",
+        "filename": "doc/source/admin/identity-unified-limits.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-26T22:12:39Z",
+      "side": 1,
+      "message": "I think the main purpose of this case is that it highlights the different between limits and usage. At least that\u0027s how it seemed to be relaying in the specification:\n\nhttp://specs.openstack.org/openstack/keystone-specs/specs/keystone/ongoing/unified-limits.html#limits-vs-usage-enforcement\n\nI think that it does a good job of showcasing that changing the limit doesn\u0027t result in the reaping of resources instantaneously. Which was an interesting ah-ha moment for me at least. I can add another example.",
+      "parentUuid": "5f93b717_324bf1b0",
       "range": {
         "startLine": 88,
         "startChar": 0,
