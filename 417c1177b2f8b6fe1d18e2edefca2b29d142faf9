@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_b2b5c1cf",
+        "filename": "doc/source/admin/identity-certificates-for-pki.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2018-01-26T20:32:02Z",
+      "side": 1,
+      "message": "maybe this should read: \"Keystone utilities  do not support the ability to generate....\"?",
+      "revId": "417c1177b2f8b6fe1d18e2edefca2b29d142faf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_52cc7d69",
+        "filename": "doc/source/admin/identity-certificates-for-pki.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2018-01-26T20:32:02Z",
+      "side": 1,
+      "message": "are",
+      "range": {
+        "startLine": 58,
+        "startChar": 43,
+        "endLine": 58,
+        "endChar": 45
+      },
+      "revId": "417c1177b2f8b6fe1d18e2edefca2b29d142faf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_32d691f3",
+        "filename": "doc/source/admin/identity-certificates-for-pki.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2018-01-26T20:32:02Z",
+      "side": 1,
+      "message": "Keystone server (?)",
+      "range": {
+        "startLine": 59,
+        "startChar": 42,
+        "endLine": 59,
+        "endChar": 50
+      },
+      "revId": "417c1177b2f8b6fe1d18e2edefca2b29d142faf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_72c73947",
+        "filename": "doc/source/admin/identity-certificates-for-pki.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2018-01-26T20:32:02Z",
+      "side": 1,
+      "message": "supported",
+      "range": {
+        "startLine": 59,
+        "startChar": 33,
+        "endLine": 59,
+        "endChar": 38
+      },
+      "revId": "417c1177b2f8b6fe1d18e2edefca2b29d142faf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
