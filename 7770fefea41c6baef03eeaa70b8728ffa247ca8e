@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_29407b56",
+        "filename": "api-ref/source/v3/projects.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-26T03:19:01Z",
+      "side": 1,
+      "message": "\"tag\" is missing as well.",
+      "revId": "7770fefea41c6baef03eeaa70b8728ffa247ca8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_a956cb28",
+        "filename": "api-ref/source/v3/projects.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-26T03:19:01Z",
+      "side": 1,
+      "message": "ditto for updating project",
+      "revId": "7770fefea41c6baef03eeaa70b8728ffa247ca8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
