@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_ec7dbc6e",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-26T08:09:23Z",
+      "side": 1,
+      "message": "since we\u0027ll add JWT token which is also non-persistence to keystone in the future, i think the code can be more generic:\n\nif CONF.token.provider not in [\u0027fernet\u0027, ]:",
+      "revId": "9b3ab229df2901421d3feb1f12bc86d209b2df91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
