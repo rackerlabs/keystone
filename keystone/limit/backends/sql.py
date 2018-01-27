@@ -250,3 +250,13 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
             ref = self._get_limit(session,
                                   limit_id)
             session.delete(ref)
+
+    def delete_limits_for_project(self, project_id):
+        limits_id = []
+        with sql.session_for_write() as session:
+            query = session.query(LimitModel)
+            query = query.filter_by(project_id=project_id)
+            for limit in query.all():
+                limits_id.append(limit['id'])
+            query.delete()
+        return limits_id
