@@ -428,6 +428,7 @@ class Manager(manager.Manager):
         return ret
 
     def _pre_delete_cleanup_project(self, project_id):
+        PROVIDERS.unified_limit_api.delete_limits_for_project(project_id)
         project_user_ids = (
             PROVIDERS.assignment_api.list_user_ids_for_project(project_id))
         for user_id in project_user_ids:
