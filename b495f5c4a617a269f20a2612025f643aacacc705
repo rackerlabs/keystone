@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f93b717_c699aa79",
+        "filename": "doc/source/admin/identity-bootstrap.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-27T02:06:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f93b717_527ebd19",
+      "revId": "b495f5c4a617a269f20a2612025f643aacacc705",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_92b685fa",
         "filename": "doc/source/admin/identity-bootstrap.rst",
         "patchSetId": 1
@@ -30,6 +48,30 @@
       "writtenOn": "2018-01-26T20:26:53Z",
       "side": 1,
       "message": "maybe precede this with, \"After bootstrapping\"...? Otherwise it seems a bit terse",
+      "range": {
+        "startLine": 123,
+        "startChar": 6,
+        "endLine": 123,
+        "endChar": 13
+      },
+      "revId": "b495f5c4a617a269f20a2612025f643aacacc705",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_06cb1272",
+        "filename": "doc/source/admin/identity-bootstrap.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-27T02:06:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f93b717_92b685fa",
       "range": {
         "startLine": 123,
         "startChar": 6,
