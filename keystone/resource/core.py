@@ -491,10 +491,18 @@ class Manager(manager.Manager):
             project_list = subtree_list + [project]
             projects_ids = [x['id'] for x in project_list]
 
+            for prj in project_id:
+                PROVIDERS.unified_limit_api.delete_limits_for_project(
+                    prj['id'])
             ret = self.driver.delete_projects_from_ids(projects_ids)
             for prj in project_list:
                 self._post_delete_cleanup_project(prj['id'], prj, initiator)
         else:
+            # FixMe(wxy): If the delete project fail after the pre limits
+            # delete, it'll result in the limits being removed but the project
+            # remaining. It's not easy to solve it with a small change. Should
+            # find a way in the future.
+            PROVIDERS.unified_limit_api.delete_limits_for_project(project_id)
             ret = self.driver.delete_project(project_id)
             self._post_delete_cleanup_project(project_id, project, initiator)
 
