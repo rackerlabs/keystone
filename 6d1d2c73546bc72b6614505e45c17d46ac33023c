@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f93b717_2314004e",
+        "filename": "doc/source/admin/identity-unified-limits.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-27T01:33:50Z",
+      "side": 1,
+      "message": "We don\u0027t support this one now. I think in the original spec, we said that the user level limit is not suggested. Right? Or we should support it as well?",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 20
+      },
+      "revId": "6d1d2c73546bc72b6614505e45c17d46ac33023c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_f217c9a2",
         "filename": "doc/source/admin/identity-unified-limits.rst",
         "patchSetId": 2
