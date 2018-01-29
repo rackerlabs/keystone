@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_3b7ace87",
+        "filename": "playbooks/keystone-functional-openstack-helm.yaml",
+        "patchSetId": 30
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-29T07:45:47Z",
+      "side": 1,
+      "message": "The job failed at this step.\nI think you missed a \"\\\" at the end of this line.",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 65
+      },
+      "revId": "b73831bb1c49fe3f864bcb4e7c0d4564cae0d230",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
