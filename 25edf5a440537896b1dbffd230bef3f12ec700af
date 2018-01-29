@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_5003eb0f",
+        "filename": "api-ref/source/v3/projects.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2018-01-29T18:51:59Z",
+      "side": 1,
+      "message": "Do we include \"extra\" in any other API docs? I thought we were trying to dissuade people from using it. I think we need to discuss this separately, since it should either be in none or all of the resource in which it is supported. Maybe move this to  separate patch?",
+      "range": {
+        "startLine": 128,
+        "startChar": 0,
+        "endLine": 128,
+        "endChar": 30
+      },
+      "revId": "25edf5a440537896b1dbffd230bef3f12ec700af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
