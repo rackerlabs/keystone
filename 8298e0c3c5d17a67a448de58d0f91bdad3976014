@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_10cb231e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2018-01-29T18:42:58Z",
+      "side": 1,
+      "message": "should this be in the pre or post cleanup? Can the delete project fail after the pre, resulting in the limits being removed but the project remaining?",
+      "revId": "8298e0c3c5d17a67a448de58d0f91bdad3976014",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
