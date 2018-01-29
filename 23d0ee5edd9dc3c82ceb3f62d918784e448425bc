@@ -70,6 +70,24 @@
       "revId": "23d0ee5edd9dc3c82ceb3f62d918784e448425bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_8177e8d4",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-29T17:23:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f96bb07_43bed865",
+      "revId": "23d0ee5edd9dc3c82ceb3f62d918784e448425bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
