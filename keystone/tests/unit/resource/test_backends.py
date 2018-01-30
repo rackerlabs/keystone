@@ -480,6 +480,38 @@ class ResourceTests(object):
                           self.resource_api.get_domain,
                           project['id'])
 
+    def test_project_marked_deleted_is_not_retrievable(self):
+        project = unit.new_project_ref(domain_id=None,
+                                       is_domain=True)
+        project = PROVIDERS.resource_api.create_project(project['id'], project)
+
+        # Normal project can be retrieved
+        PROVIDERS.resource_api.get_project(project['id'])
+
+        # Mark it deleted
+        project['deleted'] = True
+        PROVIDERS.resource_api.update_project(project['id'], project)
+
+        # Now it is gone
+        self.assertRaises(exception.ProjectNotFound,
+                          PROVIDERS.resource_api.get_project,
+                          project['id'])
+
+    def test_project_cannot_be_unmarked_deleted(self):
+        project = unit.new_project_ref(domain_id=None,
+                                       is_domain=True)
+        project = PROVIDERS.resource_api.create_project(project['id'], project)
+
+        # Mark it deleted
+        project['deleted'] = True
+        PROVIDERS.resource_api.update_project(project['id'], project)
+
+        # Undeleting is forbidden
+        project['deleted'] = False
+        self.assertRaise(exception.ForbiddenNotSecurity,
+                         PROVIDERS.resource_api.update_project(project['id'],
+                                                               project)
+
     @unit.skip_if_no_multiple_domains_support
     def test_create_subproject_acting_as_domain_fails(self):
         root_project = unit.new_project_ref(is_domain=True)
