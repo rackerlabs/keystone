@@ -34,6 +34,24 @@
       "revId": "4615b20ab7306e7bd163ee796d8b196be7d2b776",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_61572028",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-30T15:39:05Z",
+      "side": 1,
+      "message": "The only change I made was to make the method name more specific:\n\n  Invoking callback _invalidate_token_cache_from_deleted_idp_callback for event identity invalidate_token_cache internal for {\u0027resource_info\u0027: u\u0027my_idp\u0027}\n\nWhich makes things a bit easier to put together when you read the message. I suppose this won\u0027t make the invalidate token cache callback as reusable as I was hoping, but maybe that\u0027s OK since the method name is used in debug logging with data in the payload that can be different.",
+      "parentUuid": "9f91af0f_f0b98e78",
+      "revId": "4615b20ab7306e7bd163ee796d8b196be7d2b776",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
