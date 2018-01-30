@@ -69,6 +69,30 @@
       "revId": "25edf5a440537896b1dbffd230bef3f12ec700af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_24f28671",
+        "filename": "api-ref/source/v3/projects.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-30T16:08:52Z",
+      "side": 1,
+      "message": "I don\u0027t think we should put \"extra\" here if this is the case, since it could confuse users whenever an actual \"extra\" field never shows up. Rather instead leave a note saying what extras is and how that would result in more additional fields.",
+      "parentUuid": "5f93b717_641f2eb7",
+      "range": {
+        "startLine": 128,
+        "startChar": 0,
+        "endLine": 128,
+        "endChar": 30
+      },
+      "revId": "25edf5a440537896b1dbffd230bef3f12ec700af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
