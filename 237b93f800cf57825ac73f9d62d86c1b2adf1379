@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_38baa2c0",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-01-30T21:44:34Z",
+      "side": 1,
+      "message": "This has to handle the case that the backend (aka LDAP) doesn\u0027t allow deletion of the users.",
+      "range": {
+        "startLine": 827,
+        "startChar": 0,
+        "endLine": 837,
+        "endChar": 72
+      },
+      "revId": "237b93f800cf57825ac73f9d62d86c1b2adf1379",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
