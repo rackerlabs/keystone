@@ -32,6 +32,9 @@ mysql -u $DB_USER -p$DB_PW -h 127.0.0.1 -e "
     DROP DATABASE IF EXISTS openstack_citest;
     CREATE DATABASE openstack_citest CHARACTER SET utf8;"
 
+mysql -u $DB_USER -p$DB_PW -h 127.0.0.1 -e "
+    SHOW VARIABLES; SHOW PROCESSLIST; SHOW STATUS;"
+
 # Same for PostgreSQL
 # The root password for the PostgreSQL database; pass it in via
 # POSTGRES_ROOT_PW.
