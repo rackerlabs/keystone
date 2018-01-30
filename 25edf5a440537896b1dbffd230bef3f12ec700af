@@ -93,6 +93,30 @@
       "revId": "25edf5a440537896b1dbffd230bef3f12ec700af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_35c3925f",
+        "filename": "api-ref/source/v3/projects.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2018-01-30T17:37:42Z",
+      "side": 1,
+      "message": "So I think I agree with you, we do need to document this somehow but, as you say, perhaps in a different way. Maybe remove this from this specific patch, and then lets discuss (IRC or at the PTG) how we document extra consistently across all our resources that support them?",
+      "parentUuid": "5f93b717_24f28671",
+      "range": {
+        "startLine": 128,
+        "startChar": 0,
+        "endLine": 128,
+        "endChar": 30
+      },
+      "revId": "25edf5a440537896b1dbffd230bef3f12ec700af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
