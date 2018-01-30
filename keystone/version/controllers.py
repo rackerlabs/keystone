@@ -116,29 +116,6 @@ class Version(wsgi.Application):
     def _get_versions_list(self, context):
         """The list of versions is dependent on the context."""
         versions = {}
-        if 'v2.0' in _VERSIONS:
-            versions['v2.0'] = {
-                'id': 'v2.0',
-                'status': 'deprecated',
-                'updated': '2016-08-04T00:00:00Z',
-                'links': [
-                    {
-                        'rel': 'self',
-                        'href': self._get_identity_url(context, 'v2.0'),
-                    }, {
-                        'rel': 'describedby',
-                        'type': 'text/html',
-                        'href': 'https://docs.openstack.org/'
-                    }
-                ],
-                'media-types': [
-                    {
-                        'base': 'application/json',
-                        'type': MEDIA_TYPE_JSON % 'v2.0'
-                    }
-                ]
-            }
-
         if 'v3' in _VERSIONS:
             versions['v3'] = {
                 'id': 'v3.10',
@@ -178,15 +155,6 @@ class Version(wsgi.Application):
                     'values': list(versions.values())
                 }
             })
-
-    def get_version_v2(self, request):
-        versions = self._get_versions_list(request.context_dict)
-        if 'v2.0' in _VERSIONS:
-            return wsgi.render_response(body={
-                'version': versions['v2.0']
-            })
-        else:
-            raise exception.VersionNotFound(version='v2.0')
 
     def _get_json_home_v3(self):
 

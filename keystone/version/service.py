@@ -36,7 +36,6 @@ from keystone.resource import routers as resource_routers
 from keystone.revoke import routers as revoke_routers
 from keystone.token import _simple_cert as simple_cert_ext
 from keystone.trust import routers as trust_routers
-from keystone.v2_crud import admin_crud
 from keystone.version import controllers
 from keystone.version import routers
 
@@ -81,21 +80,19 @@ def warn_local_conf(f):
 @fail_gracefully
 @warn_local_conf
 def public_app_factory(global_conf, **local_conf):
-    controllers.register_version('v2.0')
-    return wsgi.ComposingRouter(routes.Mapper(),
-                                [assignment_routers.Public(),
-                                 routers.VersionV2('public'),
-                                 routers.Extension(False)])
+    # NOTE(lbragstad): This is where we used to wire up the v2.0 public API,
+    # but since it was removed, we no longer do that. Keeping this here for now
+    # until we can remove the entry point from setup.cfg and paste files.
+    pass
 
 
 @fail_gracefully
 @warn_local_conf
 def admin_app_factory(global_conf, **local_conf):
-    controllers.register_version('v2.0')
-    return wsgi.ComposingRouter(routes.Mapper(),
-                                [admin_crud.Router(),
-                                 routers.VersionV2('admin'),
-                                 routers.Extension()])
+    # NOTE(lbragstad): This is where we used to wire up the v2.0 admin API,
+    # but since it was removed, we no longer do that. Keeping this here for now
+    # until we can remove the entry point from setup.cfg and paste files.
+    pass
 
 
 @fail_gracefully
