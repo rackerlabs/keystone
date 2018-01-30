@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_ad852dd1",
+        "filename": "playbooks/keystone-functional-openstack-helm.yaml",
+        "patchSetId": 31
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-30T01:27:48Z",
+      "side": 1,
+      "message": "KSTEST_USER_USERNAME is used to test non-admin. So I think we should create a new user first and use that one. It seems that openstack-helm doesn\u0027t have this kind of k8s-job, how about add one to openstack-helm or add a new ansible task before \"Run keystone functional tests\". I suppose we will add more functional tests in the future, then more assignments related tests will be included, so even we can do it in the test\u0027s setUp function? Not sure which one is better.",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 42
+      },
+      "revId": "eccbf755e03dd59d75126f54eab6dc8c7a94d214",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
