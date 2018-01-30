@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_214da6c3",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 659,
+      "author": {
+        "id": 19853
+      },
+      "writtenOn": "2018-01-30T05:56:45Z",
+      "side": 1,
+      "message": "undefined name \u0027fernet_utils\u0027",
+      "range": {
+        "startLine": 659,
+        "startChar": 17,
+        "endLine": 659,
+        "endChar": 29
+      },
+      "revId": "f4c228bcced5fdc61de0914bdd3d262548a3ebea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_01ce6a2d",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 694,
+      "author": {
+        "id": 19853
+      },
+      "writtenOn": "2018-01-30T05:56:45Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 694,
+        "startChar": 17,
+        "endLine": 694,
+        "endChar": 29
+      },
+      "revId": "f4c228bcced5fdc61de0914bdd3d262548a3ebea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
