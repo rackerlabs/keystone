@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_0e0c3c39",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-30T23:04:09Z",
+      "side": 1,
+      "message": "Think we can get rid of these too, looks like they\u0027re only used in the ones that are removed here.",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 1
+      },
+      "revId": "a313bb06a7e87b88d7e83396fa5cf2969213f4a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
