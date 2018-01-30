@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f93b717_c46ba21b",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1280,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-30T16:07:47Z",
+      "side": 1,
+      "message": "thanks for catching this",
+      "range": {
+        "startLine": 1280,
+        "startChar": 0,
+        "endLine": 1280,
+        "endChar": 25
+      },
+      "revId": "25edf5a440537896b1dbffd230bef3f12ec700af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_5003eb0f",
         "filename": "api-ref/source/v3/projects.inc",
         "patchSetId": 2
@@ -13,6 +36,30 @@
       "writtenOn": "2018-01-29T18:51:59Z",
       "side": 1,
       "message": "Do we include \"extra\" in any other API docs? I thought we were trying to dissuade people from using it. I think we need to discuss this separately, since it should either be in none or all of the resource in which it is supported. Maybe move this to  separate patch?",
+      "range": {
+        "startLine": 128,
+        "startChar": 0,
+        "endLine": 128,
+        "endChar": 30
+      },
+      "revId": "25edf5a440537896b1dbffd230bef3f12ec700af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_641f2eb7",
+        "filename": "api-ref/source/v3/projects.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-01-30T16:07:47Z",
+      "side": 1,
+      "message": "imo extras \"should\" be documented since it exists (even if we may not want to encourage users to actually use it), but perhaps we could reference it differently to state that we do not encourage its use, but that it currently exists and as a result a response may contain extra parameters.",
+      "parentUuid": "5f93b717_5003eb0f",
       "range": {
         "startLine": 128,
         "startChar": 0,
