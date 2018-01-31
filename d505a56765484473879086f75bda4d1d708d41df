@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_ad316e5c",
+        "filename": "releasenotes/notes/bug-1718747-50d39fa87bdbb12b.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-31T22:15:33Z",
+      "side": 1,
+      "message": "unless they implement the is_sql boolean",
+      "range": {
+        "startLine": 16,
+        "startChar": 14,
+        "endLine": 16,
+        "endChar": 65
+      },
+      "revId": "d505a56765484473879086f75bda4d1d708d41df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
