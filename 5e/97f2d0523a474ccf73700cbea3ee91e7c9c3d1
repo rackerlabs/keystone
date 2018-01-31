@@ -1,0 +1,13 @@
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Code-Review+1: lijing <lijing@awcloud.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+1: wanglei <wanglei@awcloud.com>
+Code-Review+1: wangxiyuan <wangxiyuan@huawei.com>
+Code-Review+1: Harry Rybacki <hrybacki@redhat.com>
+Workflow+1: Lance Bragstad <lbragstad@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 31 Jan 2018 21:24:36 +0000
+Reviewed-on: https://review.openstack.org/535469
+Project: openstack/keystone
+Branch: refs/heads/master
