@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_b2d9cf57",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-31T21:19:12Z",
+      "side": 1,
+      "message": "This is a pretty straight forward change, but is there a way we can add a test? Also, a release note would be good, especially if people are writing their own identity backends that would need to deal with the is_sql bit...",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 20
+      },
+      "revId": "8898776f3aff3d7e628cfe5ce8760d10d1ae695a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_12fa03bc",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-01-31T21:19:12Z",
+      "side": 1,
+      "message": "I wish this was something like:\n\n  driver.writable\n\nInstead of implementation specific. But that\u0027s another story that we\u0027ll have to fix in another patch set if we ever decide to change it. It would make this logic easier to understand for people writing their own backends that are writable but aren\u0027t SQL.",
+      "range": {
+        "startLine": 504,
+        "startChar": 22,
+        "endLine": 504,
+        "endChar": 28
+      },
+      "revId": "8898776f3aff3d7e628cfe5ce8760d10d1ae695a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
