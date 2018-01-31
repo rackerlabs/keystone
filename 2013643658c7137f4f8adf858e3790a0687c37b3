@@ -16,6 +16,24 @@
       "revId": "2013643658c7137f4f8adf858e3790a0687c37b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_9deddaf1",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-31T08:56:43Z",
+      "side": 1,
+      "message": "Hrm, yes there is probably a lot that could go wrong during _delete_project that would cause a bad state like that. I think the only way it could be fixed is if the foreign key relationship was reversed, and the foreign key from domain.id to user.domain_id had a cascading delete. I don\u0027t really want to try to change or insert more foreign keys here though, so I\u0027m not sure how to fix this.",
+      "parentUuid": "5f93b717_fa22e4b8",
+      "revId": "2013643658c7137f4f8adf858e3790a0687c37b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
