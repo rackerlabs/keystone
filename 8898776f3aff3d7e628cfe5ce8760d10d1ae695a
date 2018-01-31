@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f93b717_b269cff9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-31T21:39:05Z",
+      "side": 1,
+      "message": "\u003e This is a pretty straight forward change, but is there a way we can\n \u003e add a test? \n\nWith how our unit tests behave on sqlite there\u0027s not a good way to expose it in our unit tests, but Sam wrote a tempest test for it already. I\u0027ll update the commit message to reference it.\n\nAlso, a release note would be good, especially if\n \u003e people are writing their own identity backends that would need to\n \u003e deal with the is_sql bit...\n\nGood call, will do.",
+      "parentUuid": "5f93b717_b2d9cf57",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 20
+      },
+      "revId": "8898776f3aff3d7e628cfe5ce8760d10d1ae695a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_12fa03bc",
         "filename": "keystone/identity/core.py",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2018-01-31T21:19:12Z",
       "side": 1,
       "message": "I wish this was something like:\n\n  driver.writable\n\nInstead of implementation specific. But that\u0027s another story that we\u0027ll have to fix in another patch set if we ever decide to change it. It would make this logic easier to understand for people writing their own backends that are writable but aren\u0027t SQL.",
+      "range": {
+        "startLine": 504,
+        "startChar": 22,
+        "endLine": 504,
+        "endChar": 28
+      },
+      "revId": "8898776f3aff3d7e628cfe5ce8760d10d1ae695a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_92bff35f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-01-31T21:39:05Z",
+      "side": 1,
+      "message": "Yeah ditto, I looked for that first, but we don\u0027t have that and adding it the base driver seemed like a big-ish change that was out of the scope of this bug. In any case, I think my comment here stands - the problem reported in the bug only really applies when the identity backend is SQL because of the foreign key we have there.",
+      "parentUuid": "5f93b717_12fa03bc",
       "range": {
         "startLine": 504,
         "startChar": 22,
