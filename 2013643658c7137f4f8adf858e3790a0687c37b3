@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_fa22e4b8",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-01-31T08:39:59Z",
+      "side": 1,
+      "message": "Here is a similar question that henry point out in my patch[1] I think:\nCan the _delete_project at L779 fail after the delete the user, resulting in the users being removed but the project remaining?\n\n[1]: https://review.openstack.org/#/c/538371/2/keystone/resource/core.py",
+      "revId": "2013643658c7137f4f8adf858e3790a0687c37b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
