@@ -22,6 +22,30 @@
       "revId": "d620acec98260c8d8146ccd57d05c65410c21940",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_7f3e94c1",
+        "filename": "doc/source/contributor/http-api.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-01T17:23:03Z",
+      "side": 1,
+      "message": "Oh, good call. I can rework this, too.",
+      "parentUuid": "5f93b717_bccf4a27",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 68
+      },
+      "revId": "d620acec98260c8d8146ccd57d05c65410c21940",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
