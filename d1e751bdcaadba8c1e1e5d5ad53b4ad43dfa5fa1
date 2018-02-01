@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "5f93b717_2b476abe",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-02-01T20:29:25Z",
+      "side": 1,
+      "message": "I don\u0027t have strong feelings on it either way right now, I\u0027d have to think on it. Might be a good PTG topic.",
+      "parentUuid": "5f93b717_50014705",
+      "range": {
+        "startLine": 23,
+        "startChar": 57,
+        "endLine": 24,
+        "endChar": 58
+      },
+      "revId": "d1e751bdcaadba8c1e1e5d5ad53b4ad43dfa5fa1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_5f4e3838",
         "filename": "keystone/common/policies/user.py",
         "patchSetId": 5
