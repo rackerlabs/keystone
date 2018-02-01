@@ -46,6 +46,30 @@
       "revId": "025d691a97b15727ec393bfb9a950a346dfac077",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_10d89f78",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2077,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-01T19:30:08Z",
+      "side": 1,
+      "message": "You\u0027re probably right, but I think that\u0027s how the API has always behaved. Digging into the code we do something that makes sense in the validate_token method, which is wrap the call to validate the token with a try/except. If we catch an Unauthorized, we raise a Not Found [0]. But in other parts of token validation, when we go to validate the project information, we raise a 404 Project Not Found if the project doesn\u0027t exist [1]. Since they are both 404s, I wonder if we can raise a 401 in the cases where the project or identity provider doesn\u0027t exist and trade that for a 404 Token Not Found instead.\n\nThought?\n\n[0] https://github.com/openstack/keystone/blob/d3818f05e31729ac86415d6f114f658d98a704ab/keystone/token/provider.py#L146-L161\n[1] https://github.com/openstack/keystone/blob/d3818f05e31729ac86415d6f114f658d98a704ab/keystone/token/providers/common.py#L138-L143",
+      "parentUuid": "5f93b717_7f41b4a8",
+      "range": {
+        "startLine": 2076,
+        "startChar": 41,
+        "endLine": 2077,
+        "endChar": 67
+      },
+      "revId": "025d691a97b15727ec393bfb9a950a346dfac077",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
