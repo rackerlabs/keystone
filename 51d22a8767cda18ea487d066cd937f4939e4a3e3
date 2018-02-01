@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_8e4d873f",
+        "filename": "doc/source/admin/identity-unified-limits.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-02-01T02:02:27Z",
+      "side": 1,
+      "message": "Since switch the enforcement models may result in backwards incompatible changes, I suppose the limits model will be controlled by a new config option rather than setting dynamicly? So I wonder what information will be returned by this API. Only the name of the model? or something like we talked before: https://review.openstack.org/#/c/455709/17/specs/keystone/queens/limits-api.rst@694, a hierarchical limit tree?\n\nMaybe we still have to think more. but As you write at L141, I think it\u0027s ok for this doc. We can update it in the future if needed IMO",
+      "range": {
+        "startLine": 136,
+        "startChar": 19,
+        "endLine": 136,
+        "endChar": 41
+      },
+      "revId": "51d22a8767cda18ea487d066cd937f4939e4a3e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
