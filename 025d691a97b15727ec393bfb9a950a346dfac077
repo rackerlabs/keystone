@@ -94,6 +94,30 @@
       "revId": "025d691a97b15727ec393bfb9a950a346dfac077",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_e6be99d3",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2077,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-01T21:14:29Z",
+      "side": 1,
+      "message": "Right, I agree. I meant we should trade raising a 404 Project Not Found from the resource API to raising a 401 Unauthorized, which gets excepted later and traded for a 404 Token Not Found. We\u0027d be invoking a 404 by way of raising a 401, which does seem kind of funny but apparently that seems like the intended way to do things based on how the business logic of the token provider API is setup - shrug... idk, i just work here :) \n\nI can pull this down and work on another revision to see what that would look like if that helps.",
+      "parentUuid": "5f93b717_304efbc0",
+      "range": {
+        "startLine": 2076,
+        "startChar": 41,
+        "endLine": 2077,
+        "endChar": 67
+      },
+      "revId": "025d691a97b15727ec393bfb9a950a346dfac077",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
