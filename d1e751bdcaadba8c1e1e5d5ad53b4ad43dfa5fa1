@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "5f93b717_50014705",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-01T19:57:55Z",
+      "side": 1,
+      "message": "So - just to make sure we\u0027re on the same page, you don\u0027t think we should expand the if/else in oslo.policy to be smart enough to handle domain scope, correct?\n\nhttps://github.com/openstack/oslo.policy/blob/master/oslo_policy/policy.py#L834-L842",
+      "parentUuid": "5f93b717_50de27da",
+      "range": {
+        "startLine": 23,
+        "startChar": 57,
+        "endLine": 24,
+        "endChar": 58
+      },
+      "revId": "d1e751bdcaadba8c1e1e5d5ad53b4ad43dfa5fa1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_5f4e3838",
         "filename": "keystone/common/policies/user.py",
         "patchSetId": 5
