@@ -1,0 +1,11 @@
+Code-Review+2: henry-nash <henry.nash@uk.ibm.com>
+Code-Review+1: wangxiyuan <wangxiyuan@huawei.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Workflow+1: Gage Hugo <gagehugo@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 01 Feb 2018 10:02:49 +0000
+Reviewed-on: https://review.openstack.org/537762
+Project: openstack/keystone
+Branch: refs/heads/master
