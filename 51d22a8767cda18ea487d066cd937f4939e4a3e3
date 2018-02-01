@@ -22,6 +22,30 @@
       "revId": "51d22a8767cda18ea487d066cd937f4939e4a3e3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_3c06da21",
+        "filename": "doc/source/admin/identity-unified-limits.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-01T17:22:20Z",
+      "side": 1,
+      "message": "Yeah - I agree. We going to have to talk about this and see what makes sense from a usability perspective. Since the only supported model is \u0027flat\u0027, I think we have some time to figure out what this API should look like.\n\nThis will be a prerequisite to introducing another model though.",
+      "parentUuid": "5f93b717_8e4d873f",
+      "range": {
+        "startLine": 136,
+        "startChar": 19,
+        "endLine": 136,
+        "endChar": 41
+      },
+      "revId": "51d22a8767cda18ea487d066cd937f4939e4a3e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
