@@ -70,6 +70,24 @@
       "revId": "2013643658c7137f4f8adf858e3790a0687c37b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_5f8b9866",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2018-02-01T17:26:42Z",
+      "side": 1,
+      "message": "So in cases when you can\u0027t us FK cascading (and even in the all-SQL case, are we sure that the cascade support across all flavours of DB we might support is sufficient?), then perhaps an approach is something like:\n1) Check permission to delete\n2) If OK, mark the entity as deleted in some atomic way (e.g. a \"permenantly-diabled\" flag\". This flag would have to be checked wherever we might use this entity (e.g. looking up a user would fail if the domain/project was \"permanently disabled\")\n3) Then the actual delete becomes a cleanup task, we try and do it at the point of request, but if it screws up, we have some background cleanup process that keeps trying, alerts operator to manual intervention if required etc.",
+      "parentUuid": "5f93b717_add88e7a",
+      "revId": "2013643658c7137f4f8adf858e3790a0687c37b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
