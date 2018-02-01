@@ -13,27 +13,7 @@
 # under the License.
 
 from keystone import assignment
-from keystone.common import extension
 from keystone.common import wsgi
-
-
-extension.register_admin_extension(
-    'OS-KSADM', {
-        'name': 'OpenStack Keystone Admin',
-        'namespace': 'https://docs.openstack.org/identity/api/ext/'
-                     'OS-KSADM/v1.0',
-        'alias': 'OS-KSADM',
-        'updated': '2013-07-11T17:14:00-00:00',
-        'description': 'OpenStack extensions to Keystone v2.0 API '
-                       'enabling Administrative Operations.',
-        'links': [
-            {
-                'rel': 'describedby',
-                'type': 'text/html',
-                'href': 'https://developer.openstack.org/'
-                        'api-ref-identity-v2-ext.html',
-            }
-        ]})
 
 
 class Router(wsgi.ComposableRouter):

@@ -993,6 +993,45 @@ class VersionTestCase(unit.TestCase):
         extensions_property = extension_obj.extensions
         self.assertIsNone(extensions_property)
 
+    def test_v2_extension_data(self):
+        admin_client = TestClient(self.admin_app)
+        public_client = TestClient(self.public_app)
+
+        path = '/v2.0/extensions'
+        admin_extension_response = admin_client.get(path)
+        self.assertEqual(http_client.OK, admin_extension_response.status_int)
+        public_extension_response = public_client.get(path)
+        self.assertEqual(http_client.OK, public_extension_response.status_int)
+        href = 'https://developer.openstack.org/api-ref-identity-v2-ext.html'
+        namespace = 'https://docs.openstack.org/identity/api/ext/OS-EC2/v1.0'
+        expected_extension_response = {
+            'extensions': {
+                'values': [
+                    {
+                        'alias': 'OS-EC2',
+                        'description': 'OpenStack EC2 Credentials backend.',
+                        'links': [
+                            {'href': href,
+                             'rel': 'describedby',
+                             'type': 'text/html'}
+                        ],
+                        'name': 'OpenStack EC2 API',
+                        'namespace': namespace,
+                        'updated': '2013-07-07T12:00:0-00:00'
+                    }
+                ]
+            }
+        }
+
+        self.assertThat(
+            jsonutils.loads(admin_extension_response.body),
+            tt_matchers.Equals(expected_extension_response)
+        )
+        self.assertThat(
+            jsonutils.loads(public_extension_response.body),
+            tt_matchers.Equals(expected_extension_response)
+        )
+
 
 class VersionSingleAppTestCase(unit.TestCase):
     """Test running with a single application loaded.
