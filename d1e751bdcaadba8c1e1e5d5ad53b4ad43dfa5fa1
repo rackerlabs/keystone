@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f93b717_903eefb5",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-01T19:18:37Z",
+      "side": 1,
+      "message": "Good point - should this just be a domain and we forget project? That might require reteaching oslo.policy about domain-scoped tokens, since we very will could be doing:\n\n  scope_types\u003d[\u0027system\u0027, \u0027domain\u0027]\n\nOr we overload the \u0027project\u0027 meaning here and make sure the token is scoped to a project acting as a domain \u003d/",
+      "parentUuid": "5f93b717_dff488f3",
+      "range": {
+        "startLine": 23,
+        "startChar": 57,
+        "endLine": 24,
+        "endChar": 58
+      },
+      "revId": "d1e751bdcaadba8c1e1e5d5ad53b4ad43dfa5fa1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_5f4e3838",
         "filename": "keystone/common/policies/user.py",
         "patchSetId": 5
