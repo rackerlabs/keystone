@@ -22,6 +22,30 @@
       "revId": "fa6052b530b7d182a3e52a116bb7178fb055b45d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_3c625ad9",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-01T16:53:29Z",
+      "side": 1,
+      "message": "Colleen had a comment about this in a previous patch set, which is why i decided to make it specific to the deletion of the idp.",
+      "parentUuid": "5f93b717_fc015206",
+      "range": {
+        "startLine": 94,
+        "startChar": 17,
+        "endLine": 95,
+        "endChar": 74
+      },
+      "revId": "fa6052b530b7d182a3e52a116bb7178fb055b45d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
