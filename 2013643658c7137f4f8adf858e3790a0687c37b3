@@ -106,6 +106,24 @@
       "revId": "2013643658c7137f4f8adf858e3790a0687c37b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_12d8a778",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2018-02-01T17:55:43Z",
+      "side": 1,
+      "message": "...and in fact, in the area of authentication, we would kind of get this for free. Since a domain must be disabled before we can mark it as permanently_disabled, and since we would never allow you to re-enable and permanently-disabled domain, we already reject an auth for a user who\u0027s domain is disabled - and that would be sufficient. However, we would have to change all user/group/domain/project management calls to return NotFound if the domain was permanently disabled.",
+      "parentUuid": "5f93b717_9f0b6028",
+      "revId": "2013643658c7137f4f8adf858e3790a0687c37b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
