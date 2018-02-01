@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_fc015206",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-02-01T16:50:57Z",
+      "side": 1,
+      "message": "You\u0027re mapping from a generic `invalidate token cache` notification, to a more specific one about `deleted idp`. This doesn\u0027t seem right. One thought, could you use one of the `ACTIONS.deleted` notifications like in a few lines above instead of creating a new one?",
+      "range": {
+        "startLine": 94,
+        "startChar": 17,
+        "endLine": 95,
+        "endChar": 74
+      },
+      "revId": "fa6052b530b7d182a3e52a116bb7178fb055b45d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
