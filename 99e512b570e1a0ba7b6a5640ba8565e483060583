@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_32f2839b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-02-01T18:10:02Z",
+      "side": 1,
+      "message": "The current problem seems to be that keystone crashes entirely if the token driver is set to something unexpected: https://bugs.launchpad.net/keystone/+bug/1714937/comments/3 \n\nSo I don\u0027t think we can say that this patch closes the bug completely. It\u0027s also hard to verify the fix since the new issue is causing a different behavior.",
+      "revId": "99e512b570e1a0ba7b6a5640ba8565e483060583",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
