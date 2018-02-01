@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_dff488f3",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-02-01T17:32:10Z",
+      "side": 1,
+      "message": "Sort of a nit but I think there are two separate meanings to this and they should be treated differently. A domain admin should be able to get (and create and delete and update) users who are contained (as in, namespaced) in that domain. Should a project admin have the same rights to do that for users with *role assignments* on the project? I don\u0027t think so, but whatever we decide we should be careful to make the distinction.",
+      "range": {
+        "startLine": 23,
+        "startChar": 57,
+        "endLine": 24,
+        "endChar": 58
+      },
+      "revId": "d1e751bdcaadba8c1e1e5d5ad53b4ad43dfa5fa1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_5f4e3838",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-02-01T17:32:10Z",
+      "side": 1,
+      "message": "Again, this could mean two things and that\u0027s not clear here.",
+      "range": {
+        "startLine": 43,
+        "startChar": 10,
+        "endLine": 43,
+        "endChar": 16
+      },
+      "revId": "d1e751bdcaadba8c1e1e5d5ad53b4ad43dfa5fa1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_3f01ecaf",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-02-01T17:32:10Z",
+      "side": 1,
+      "message": "I think we only really want to support domain administrators doing this (I know projects are domains but you know what I mean)",
+      "range": {
+        "startLine": 82,
+        "startChar": 56,
+        "endLine": 82,
+        "endChar": 68
+      },
+      "revId": "d1e751bdcaadba8c1e1e5d5ad53b4ad43dfa5fa1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
