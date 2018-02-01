@@ -22,6 +22,30 @@
       "revId": "025d691a97b15727ec393bfb9a950a346dfac077",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_7f41b4a8",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2077,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-02-01T17:40:11Z",
+      "side": 1,
+      "message": "https://specs.openstack.org/openstack/api-wg/guidelines/http.html#failure-code-clarifications\n\n\"RFC 7231 (section 6.5.4) mentions the origin server did not find a current representation for the target resource for 404 and representation for the target resource means a URI.\"\n\nIf we\u0027ve been using resource_api.get_project() and just raising the 404 from that I think that\u0027s from laziness not correctness.",
+      "parentUuid": "5f93b717_1fbe70b3",
+      "range": {
+        "startLine": 2076,
+        "startChar": 41,
+        "endLine": 2077,
+        "endChar": 67
+      },
+      "revId": "025d691a97b15727ec393bfb9a950a346dfac077",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
