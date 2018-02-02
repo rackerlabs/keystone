@@ -1,0 +1,9 @@
+fixes:
+  - |
+    [`bug 1718747 <https://bugs.launchpad.net/keystone/+bug/1718747>`_]
+    Fixes a regression where deleting a domain with users in it causes a
+    server error. This bugfix restores the previous behavior of deleting the
+    users namespaced in the domain. This change dropped the foreign key
+    constraint between the ``domain_id`` column of the ``user`` table and the
+    ``id`` column of the ``project`` table since this relationship is enforced
+    at the application level.

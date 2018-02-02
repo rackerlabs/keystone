@@ -2923,6 +2923,18 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
                                                   self.metadata, autoload=True)
         self.assertEqual(set([]), registered_limit_table.foreign_keys)
 
+    def test_migration_038_drop_domain_id_fk(self):
+        self.expand(37)
+        self.migrate(37)
+        self.contract(37)
+        if self.engine.name != 'sqlite':
+            self.assertTrue(self.does_fk_exist('user', 'domain_id'))
+        self.expand(38)
+        self.migrate(38)
+        self.contract(38)
+        if self.engine.name != 'sqlite':
+            self.assertFalse(self.does_fk_exist('user', 'domain_id'))
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
