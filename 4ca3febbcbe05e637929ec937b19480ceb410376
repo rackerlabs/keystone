@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_f9c2a084",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-02T22:58:49Z",
+      "side": 1,
+      "message": "I wonder if this may cause confusion over which port users are supposed to use.\n\n5000 and 35357 both work the same for v3 correct?",
+      "range": {
+        "startLine": 278,
+        "startChar": 60,
+        "endLine": 278,
+        "endChar": 74
+      },
+      "revId": "4ca3febbcbe05e637929ec937b19480ceb410376",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
