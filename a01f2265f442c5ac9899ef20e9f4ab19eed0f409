@@ -22,6 +22,30 @@
       "revId": "a01f2265f442c5ac9899ef20e9f4ab19eed0f409",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_ab8fe372",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 801,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-02-02T16:42:51Z",
+      "side": 1,
+      "message": "I think I\u0027d rather not spread this to the contained projects for now - we haven\u0027t been having a problem deleting those so far. Could always be implemented later.",
+      "parentUuid": "5f93b717_a3e87ab2",
+      "range": {
+        "startLine": 801,
+        "startChar": 8,
+        "endLine": 801,
+        "endChar": 47
+      },
+      "revId": "a01f2265f442c5ac9899ef20e9f4ab19eed0f409",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
