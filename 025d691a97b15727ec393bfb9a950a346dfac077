@@ -142,6 +142,30 @@
       "revId": "025d691a97b15727ec393bfb9a950a346dfac077",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_004116a9",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2077,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-02T16:23:04Z",
+      "side": 1,
+      "message": "Ok - I did some more digging here because I wanted to try and prove that catching an IdentityProviderNotFound and raising an Unauthorized would result in a 404 TokenNotFound... but that actually doesn\u0027t happen because of *another* try/except in keystonemiddleware.\n\nHere\u0027s the diff I applied locally to see what was getting raise and where [0]. Here is the output from the test [1].\n\nSo even given the way things operate in keystone, we\u0027d have to patch middleware to get the behavior we expect (which would be raise 404, except it, reraise 401, except it, raise a 404 TokenNotFound).\n\n\n[0] http://paste.openstack.org/show/658836/\n[1] http://paste.openstack.org/show/658839/",
+      "parentUuid": "5f93b717_467aedb9",
+      "range": {
+        "startLine": 2076,
+        "startChar": 41,
+        "endLine": 2077,
+        "endChar": 67
+      },
+      "revId": "025d691a97b15727ec393bfb9a950a346dfac077",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
