@@ -154,9 +154,18 @@ class ApplicationCredentialTests(object):
         app_cred = self._new_app_cred_data(self.user_foo['id'],
                                            project_id=self.tenant_bar['id'])
         self.app_cred_api.create_application_credential(app_cred)
+
+        # cache the information
+        self.app_cred_api.get_application_credential(app_cred['id'])
+
         self.assertIn(app_cred['id'], self._list_ids(self.user_foo))
         self.app_cred_api.delete_application_credential(app_cred['id'])
         self.assertNotIn(app_cred['id'], self._list_ids(self.user_foo))
+
+        # the cache information has been invalidated.
+        self.assertRaises(exception.ApplicationCredentialNotFound,
+                          self.app_cred_api.get_application_credential,
+                          app_cred['id'])
 
     def test_delete_application_credential_not_found(self):
         self.assertRaises(exception.ApplicationCredentialNotFound,
