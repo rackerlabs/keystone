@@ -145,7 +145,9 @@ class ApplicationCredential(base.ApplicationCredentialDriverBase):
         with sql.session_for_write() as session:
             query = session.query(ApplicationCredentialModel)
             query = query.filter_by(user_id=user_id)
+            app_cred_ids = [app_cred.id for app_cred in query.all()]
             query.delete()
+            return app_cred_ids
 
     def delete_application_credentials_for_user_on_project(self, user_id,
                                                            project_id):
@@ -153,4 +155,6 @@ class ApplicationCredential(base.ApplicationCredentialDriverBase):
             query = session.query(ApplicationCredentialModel)
             query = query.filter_by(user_id=user_id)
             query = query.filter_by(project_id=project_id)
+            app_cred_ids = [app_cred.id for app_cred in query.all()]
             query.delete()
+            return app_cred_ids
