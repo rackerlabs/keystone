@@ -13,10 +13,10 @@
 # under the License.
 
 import hashlib
-import json
 import uuid
 
 from keystoneclient.contrib.ec2 import utils as ec2_utils
+from oslo_serialization import jsonutils as json
 from six.moves import http_client
 from testtools import matchers
 

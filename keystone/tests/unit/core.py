@@ -18,7 +18,6 @@ import base64
 import datetime
 import functools
 import hashlib
-import json
 import ldap
 import os
 import shutil
@@ -33,6 +32,7 @@ from oslo_context import context as oslo_context
 from oslo_context import fixture as oslo_ctx_fixture
 from oslo_log import fixture as log_fixture
 from oslo_log import log
+from oslo_serialization import jsonutils as json
 from oslo_utils import timeutils
 from paste.deploy import loadwsgi
 import six

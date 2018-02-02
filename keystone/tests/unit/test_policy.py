@@ -13,13 +13,13 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import json
 import os
 import subprocess
 import uuid
 
 import mock
 from oslo_policy import policy as common_policy
+from oslo_serialization import jsonutils as json
 import six
 from testtools import matchers
 

@@ -14,7 +14,7 @@
 
 """Main entry point into the Credential service."""
 
-import json
+from oslo_serialization import jsonutils as json
 
 from keystone.common import driver_hints
 from keystone.common import manager

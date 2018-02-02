@@ -12,9 +12,10 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import json
+
 import uuid
 
+from oslo_serialization import jsonutils as json
 from six.moves import http_client
 
 from keystone.tests import unit

@@ -39,7 +39,6 @@ WARNING::
 """
 
 import datetime
-import json
 import os
 import uuid
 
@@ -51,6 +50,7 @@ import mock
 from oslo_db import exception as db_exception
 from oslo_db.sqlalchemy import test_base
 from oslo_log import log
+from oslo_serialization import jsonutils as json
 import pytz
 from sqlalchemy.engine import reflection
 import sqlalchemy.exc
