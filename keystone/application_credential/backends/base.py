@@ -79,6 +79,8 @@ class ApplicationCredentialDriverBase(object):
 
         :param user_id: ID of a user to whose application credentials should
             be deleted.
+        :returns: a list of the deleted application credential's ids , used for
+            cache invalidation.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -92,6 +94,8 @@ class ApplicationCredentialDriverBase(object):
             should be deleted.
         :param str project_id: ID of a project on which to filter application
             credentials.
+        :returns: a list of the deleted application credential's ids , used for
+            cache invalidation.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
