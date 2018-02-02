@@ -44,9 +44,9 @@ from six.moves import http_client
 from keystone.common import authorization
 from keystone.common import controller
 from keystone.common import provider_api
-import keystone.conf
 from keystone.common import utils
 from keystone.common import wsgi
+import keystone.conf
 from keystone import exception
 from keystone.i18n import _
 
