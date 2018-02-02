@@ -18,6 +18,7 @@ from six.moves import range
 from testtools import matchers
 
 from keystone.common import driver_hints
+from keystone.common import provider_api
 import keystone.conf
 from keystone import exception
 from keystone.tests import unit
@@ -26,6 +27,7 @@ from keystone.tests.unit import utils as test_utils
 
 
 CONF = keystone.conf.CONF
+PROVIDERS = provider_api.ProviderAPIs
 
 
 class ResourceTests(object):
@@ -479,6 +481,38 @@ class ResourceTests(object):
         self.assertRaises(exception.DomainNotFound,
                           self.resource_api.get_domain,
                           project['id'])
+
+    def test_project_marked_deleted_is_not_retrievable(self):
+        project = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id, is_domain=False)
+        project = PROVIDERS.resource_api.create_project(project['id'], project)
+
+        # Normal project can be retrieved
+        PROVIDERS.resource_api.get_project(project['id'])
+
+        # Mark it deleted
+        project['deleted'] = True
+        PROVIDERS.resource_api.update_project(project['id'], project)
+
+        # Now it is gone
+        self.assertRaises(exception.ProjectNotFound,
+                          PROVIDERS.resource_api.get_project,
+                          project['id'])
+
+    def test_project_cannot_be_unmarked_deleted(self):
+        project = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id, is_domain=False)
+        project = PROVIDERS.resource_api.create_project(project['id'], project)
+
+        # Mark it deleted
+        project['deleted'] = True
+        PROVIDERS.resource_api.update_project(project['id'], project)
+
+        # Undeleting is forbidden
+        project['deleted'] = False
+        self.assertRaises(exception.ValidationError,
+                          PROVIDERS.resource_api.update_project,
+                          project['id'], project)
 
     @unit.skip_if_no_multiple_domains_support
     def test_create_subproject_acting_as_domain_fails(self):

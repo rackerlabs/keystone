@@ -141,6 +141,12 @@ class Manager(manager.Manager):
                     % {'domain_id': domain['id'],
                        'parent_domain_id': parent_domain_id})
 
+    def _assert_not_undeleting(self, project_ref):
+        # Unlike disabling, deleting is permanent. Do not allow reversing it.
+        if project_ref.get('deleted') is False:
+            raise exception.ValidationError(
+                _('Cannot unmark a project or domain for deletion.'))
+
     def _enforce_project_constraints(self, project_ref):
         if project_ref.get('is_domain'):
             self._assert_is_domain_project_constraints(project_ref)
@@ -232,7 +238,7 @@ class Manager(manager.Manager):
         """
         if domain is None:
             domain = self.get_domain(domain_id)
-        if not domain.get('enabled', True):
+        if not domain.get('enabled', True) or domain.get('deleted'):
             raise AssertionError(_('Domain is disabled: %s') % domain_id)
 
     def assert_domain_not_federated(self, domain_id, domain):
@@ -286,6 +292,7 @@ class Manager(manager.Manager):
 
     def _update_project(self, project_id, project, initiator=None,
                         cascade=False):
+        self._assert_not_undeleting(project)
         # Use the driver directly to prevent using old cached value.
         original_project = self.driver.get_project(project_id)
         project = project.copy()
@@ -427,6 +434,10 @@ class Manager(manager.Manager):
 
         return ret
 
+    def _mark_project_deleted(self, project):
+        project['deleted'] = True
+        self.driver.update_project(project['id'], project)
+
     def _pre_delete_cleanup_project(self, project_id):
         project_user_ids = (
             PROVIDERS.assignment_api.list_user_ids_for_project(project_id))
@@ -470,7 +481,8 @@ class Manager(manager.Manager):
         else:
             self._delete_project(project_id, initiator, cascade)
 
-    def _delete_project(self, project_id, initiator=None, cascade=False):
+    def _delete_project(self, project_id, initiator=None, cascade=False,
+                        mark_only=False):
         # Use the driver directly to prevent using old cached value.
         project = self.driver.get_project(project_id)
         if project['is_domain'] and project['enabled']:
@@ -503,15 +515,26 @@ class Manager(manager.Manager):
 
             for prj in project_list:
                 self._pre_delete_cleanup_project(prj['id'])
-            ret = self.driver.delete_projects_from_ids(projects_ids)
+            if mark_only:
+                for prj in project_list:
+                    self._mark_project_deleted(prj)
+                ret = None
+            else:
+                ret = self.driver.delete_projects_from_ids(projects_ids)
             for prj in project_list:
                 self._post_delete_cleanup_project(prj['id'], prj, initiator)
         else:
             self._pre_delete_cleanup_project(project_id)
-            ret = self.driver.delete_project(project_id)
+            if mark_only:
+                ret = self._mark_project_deleted(project)
+            else:
+                ret = self.driver.delete_project(project_id)
             self._post_delete_cleanup_project(project_id, project, initiator)
 
         return ret
+
+    def cleanup_deleted_projects(self):
+        self.driver.cleanup_deleted_projects()
 
     def _filter_projects_list(self, projects_list, user_id):
         user_projects = PROVIDERS.assignment_api.list_projects_for_user(
@@ -755,6 +778,13 @@ class Manager(manager.Manager):
 
         return domain_from_project
 
+    def _cleanup_deleted_projects(self):
+        hints = driver_hints.Hints()
+        hints.add_filter('deleted', True)
+        deleted_projects = self.driver.list_projects(hints)
+        project_ids = [p['id'] for p in deleted_projects]
+        self.driver.delete_projects_from_ids(project_ids)
+
     def delete_domain(self, domain_id, initiator=None):
         # Use the driver directly to get the project that acts as a domain and
         # prevent using old cached value.
@@ -773,7 +803,8 @@ class Manager(manager.Manager):
                   'first.'))
 
         self._delete_domain_contents(domain_id)
-        self._delete_project(domain_id, initiator)
+        # Mark the domain as permanently deleted without actually removing it
+        self._delete_project(domain_id, initiator, mark_only=True)
         try:
             self.get_domain.invalidate(self, domain_id)
             self.get_domain_by_name.invalidate(self, domain['name'])
@@ -783,6 +814,11 @@ class Manager(manager.Manager):
         finally:
             # attempt to send audit event even if the cache invalidation raises
             notifications.Audit.deleted(self._DOMAIN, domain_id, initiator)
+            # Now that the notification has caused the domain's users to be
+            # deleted, it is safe to actually delete the domain from the
+            # database. However, since it has been marked as deleted, it is
+            # effectively already gone. This is just cleanup.
+            self._cleanup_deleted_projects()
 
     def _delete_domain_contents(self, domain_id):
         """Delete the contents of a domain.
