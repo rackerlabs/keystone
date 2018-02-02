@@ -196,7 +196,10 @@ class Manager(manager.Manager):
 
         This is triggered when a user is deleted.
         """
-        self.driver.delete_application_credentials_for_user(user_id)
+        app_cred_ids = self.driver.delete_application_credentials_for_user(
+            user_id)
+        for app_cred_id in app_cred_ids:
+            self.get_application_credential.invalidate(self, app_cred_id)
 
     def _delete_application_credentials_for_user_on_project(self, user_id,
                                                             project_id):
@@ -207,5 +210,8 @@ class Manager(manager.Manager):
 
         This is triggered when a user loses a role assignment on a project.
         """
-        self.driver.delete_application_credentials_for_user_on_project(
-            user_id, project_id)
+        app_cred_ids = (self.driver.
+                        delete_application_credentials_for_user_on_project(
+                            user_id, project_id))
+        for app_cred_id in app_cred_ids:
+            self.get_application_credential.invalidate(self, app_cred_id)
