@@ -1281,8 +1281,37 @@ class MappingPopulate(BaseApp):
         cls.identity_api.list_users(domain_scope=domain_id)
 
 
+class CleanupResources(BaseApp):
+    """Clean up projects and domains marked 'deleted'.
+
+    Clean up any resources that may have failed to clean up on their own after
+    they were permanently disabled. You may want to run this command if you
+    find that creating a domain with a given name is failing due to uniqueness
+    constraints but the conflicting domain does not seem to exist.
+    """
+
+    name = "cleanup_resources"
+
+    def __init__(self):
+        self.load_backends()
+
+    def load_backends(self):
+        drivers = backends.load_backends()
+        self.resource_manager = drivers['resource_api']
+
+    def do_cleanup(self):
+        self.resource_manager.cleanup_deleted_projects()
+
+    @classmethod
+    def main(cls):
+        """Remove resources marked deleted."""
+        klass = cls()
+        klass.do_cleanup()
+
+
 CMDS = [
     BootStrap,
+    CleanupResources,
     CredentialMigrate,
     CredentialRotate,
     CredentialSetup,

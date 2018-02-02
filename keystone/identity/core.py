@@ -956,6 +956,12 @@ class Manager(manager.Manager):
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
+    def _assert_user_not_in_deleted_domain(self, user_ref):
+        try:
+            PROVIDERS.resource_api.get_domain(user_ref['domain_id'])
+        except exception.DomainNotFound:
+            raise exception.UserNotFound(user_id=user_ref['id'])
+
     @domains_configured
     @exception_translated('user')
     @MEMOIZE
@@ -963,8 +969,10 @@ class Manager(manager.Manager):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(user_id))
         ref = driver.get_user(entity_id)
-        return self._set_domain_id_and_mapping(
+        ref = self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
+        self._assert_user_not_in_deleted_domain(ref)
+        return ref
 
     def assert_user_enabled(self, user_id, user=None):
         """Assert the user and the user's domain are enabled.
@@ -1153,6 +1161,12 @@ class Manager(manager.Manager):
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.GROUP)
 
+    def _assert_group_not_in_deleted_domain(self, group_ref):
+        try:
+            PROVIDERS.resource_api.get_domain(group_ref['domain_id'])
+        except exception.DomainNotFound:
+            raise exception.GroupNotFound(group_id=group_ref['id'])
+
     @domains_configured
     @exception_translated('group')
     @MEMOIZE
@@ -1160,16 +1174,21 @@ class Manager(manager.Manager):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(group_id))
         ref = driver.get_group(entity_id)
-        return self._set_domain_id_and_mapping(
+        import pdb; pdb.set_trace()
+        ref = self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.GROUP)
+        self._assert_group_not_in_deleted_domain(ref)
+        return ref
 
     @domains_configured
     @exception_translated('group')
     def get_group_by_name(self, group_name, domain_id):
         driver = self._select_identity_driver(domain_id)
         ref = driver.get_group_by_name(group_name, domain_id)
-        return self._set_domain_id_and_mapping(
+        ref = self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.GROUP)
+        self._assert_group_not_in_deleted_domain(ref)
+        return ref
 
     @domains_configured
     @exception_translated('group')

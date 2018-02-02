@@ -18,6 +18,7 @@ from six.moves import range
 from testtools import matchers
 
 from keystone.common import driver_hints
+from keystone.common import provider_api
 import keystone.conf
 from keystone import exception
 from keystone.tests import unit
@@ -26,6 +27,7 @@ from keystone.tests.unit import filtering
 
 
 CONF = keystone.conf.CONF
+PROVIDERS = provider_api.ProviderAPIs
 
 
 class IdentityTests(object):
@@ -1037,6 +1039,48 @@ class IdentityTests(object):
                         matchers.StartsWith('domaingroup1'))
         self.assertThat(entities[1]['name'],
                         matchers.StartsWith('domaingroup1'))
+
+    @unit.skip_if_no_multiple_domains_support
+    def test_get_user_in_deleted_domain_fails(self):
+        domain = self._get_domain_fixture()
+        user = unit.new_user_ref(domain_id=domain['id'])
+        PROVIDERS.identity_api.create_user(user)
+        domain['deleted'] = True
+        PROVIDERS.resource_api.update_domain(domain['id'], domain)
+        self.assertRaises(exception.UserNotFound,
+                          PROVIDERS.identity_api.get_user,
+                          user['id'])
+
+    @unit.skip_if_no_multiple_domains_support
+    def test_create_user_in_deleted_domain_fails(self):
+        domain = unit.new_domain_ref()
+        domain['deleted'] = True
+        PROVIDERS.resource_api.create_domain(domain['id'], domain)
+        user = unit.new_user_ref(domain_id=domain['id'])
+        self.assertRaises(exception.DomainNotFound,
+                          PROVIDERS.identity_api.create_user,
+                          user)
+
+    @unit.skip_if_no_multiple_domains_support
+    def test_get_troup_in_deleted_domain_fails(self):
+        domain = self._get_domain_fixture()
+        group = unit.new_group_ref(domain_id=domain['id'])
+        PROVIDERS.identity_api.create_group(group)
+        domain['deleted'] = True
+        PROVIDERS.resource_api.update_domain(domain['id'], domain)
+        self.assertRaises(exception.GroupNotFound,
+                          PROVIDERS.identity_api.get_group,
+                          group['id'])
+
+    @unit.skip_if_no_multiple_domains_support
+    def test_create_group_in_deleted_domain_fails(self):
+        domain = unit.new_domain_ref()
+        domain['deleted'] = True
+        PROVIDERS.resource_api.create_domain(domain['id'], domain)
+        group = unit.new_group_ref(domain_id=domain['id'])
+        self.assertRaises(exception.DomainNotFound,
+                          PROVIDERS.identity_api.create_group,
+                          group)
 
 
 class FilterTests(filtering.FilterTests):

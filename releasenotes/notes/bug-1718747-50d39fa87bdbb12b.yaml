@@ -1,0 +1,20 @@
+---
+fixes:
+  - |
+    [`bug 1718747 <https://bugs.launchpad.net/keystone/+bug/1718747>`_]
+    Fixes a regression where deleting a domain with users in it causes a
+    server error. This bugfix restores the previous behavior of deleting the
+    users namespaced in the domain.
+other:
+  - |
+    [`bug 1718747 <https://bugs.launchpad.net/keystone/+bug/1718747>`_]
+    As part of solving a regression in the identity SQL backend that prevented
+    domains containing users from being deleted, keystone now invokes a
+    two-step process where domains are internally marked as deleted and then
+    later cleaned up after all objects contained within the domain are purged.
+    Since this occurs in two phases, it is occasionally possible that
+    unforeseen circumstances could cause an interruption between the two
+    steps, leaving unusable, empty domains still in the database and still
+    potentially causing name collisions with new domains. To manually clean
+    things up, a new command `keystone-manage cleanup_resources` is introduced
+    to flush such cruft from the database.

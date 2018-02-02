@@ -2923,6 +2923,25 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
                                                   self.metadata, autoload=True)
         self.assertEqual(set([]), registered_limit_table.foreign_keys)
 
+    def test_migration_038_add_deleted_column(self):
+        self.expand(37)
+        self.migrate(37)
+        self.contract(37)
+
+        self.assertTableColumns(
+            'project',
+            ['id', 'name', 'extra', 'description', 'enabled', 'domain_id',
+             'parent_id', 'is_domain'])
+
+        self.expand(38)
+        self.migrate(38)
+        self.contract(38)
+
+        self.assertTableColumns(
+            'project',
+            ['id', 'name', 'extra', 'description', 'enabled', 'domain_id',
+             'parent_id', 'is_domain', 'deleted'])
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
