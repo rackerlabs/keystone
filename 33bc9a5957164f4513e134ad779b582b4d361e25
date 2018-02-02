@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_6b331b15",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1034,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-02T18:04:59Z",
+      "side": 1,
+      "message": "Is there a reason this is being deep copied? I don\u0027t see the copy being acted on other than get()?",
+      "range": {
+        "startLine": 1034,
+        "startChar": 8,
+        "endLine": 1034,
+        "endChar": 40
+      },
+      "revId": "33bc9a5957164f4513e134ad779b582b4d361e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_11108a4d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1042,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-02T18:04:59Z",
+      "side": 1,
+      "message": "We could change this to be:\n\nres +\u003d\n\nthen get rid of the for loop below that is copying the users to res since it can be done here.",
+      "range": {
+        "startLine": 1042,
+        "startChar": 16,
+        "endLine": 1042,
+        "endChar": 25
+      },
+      "revId": "33bc9a5957164f4513e134ad779b582b4d361e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_861f7e6a",
+        "filename": "releasenotes/notes/bug-1738895-342864cd0285bc42.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-02T18:04:59Z",
+      "side": 1,
+      "message": "Probably should add more detail here about how it worked for local users, but not federated.",
+      "range": {
+        "startLine": 5,
+        "startChar": 4,
+        "endLine": 5,
+        "endChar": 72
+      },
+      "revId": "33bc9a5957164f4513e134ad779b582b4d361e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
