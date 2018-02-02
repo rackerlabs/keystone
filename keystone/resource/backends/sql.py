@@ -43,7 +43,8 @@ class Resource(base.ResourceDriverBase):
 
     def _get_project(self, session, project_id):
         project_ref = session.query(Project).get(project_id)
-        if project_ref is None or self._is_hidden_ref(project_ref):
+        if (project_ref is None or self._is_hidden_ref(project_ref) or
+                project_ref.deleted):
             raise exception.ProjectNotFound(project_id=project_id)
         return project_ref
 
@@ -274,6 +275,11 @@ class Resource(base.ResourceDriverBase):
                                 'deleted.', project_id)
             query.delete(synchronize_session=False)
 
+    def cleanup_deleted_projects(self):
+        with sql.session_for_write() as session:
+            query = session.query(Project).filter(Project.deleted.is_(True))
+            query.delete(synchronize_session=False)
+
 
 class Project(sql.ModelBase, sql.ModelDictMixinWithExtras):
     # NOTE(henry-nash): From the manager and above perspective, the domain_id
@@ -292,7 +298,7 @@ class Project(sql.ModelBase, sql.ModelDictMixinWithExtras):
 
     __tablename__ = 'project'
     attributes = ['id', 'name', 'domain_id', 'description', 'enabled',
-                  'parent_id', 'is_domain', 'tags']
+                  'parent_id', 'is_domain', 'tags', 'deleted']
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(64), nullable=False)
     domain_id = sql.Column(sql.String(64), sql.ForeignKey('project.id'),
@@ -303,6 +309,7 @@ class Project(sql.ModelBase, sql.ModelDictMixinWithExtras):
     parent_id = sql.Column(sql.String(64), sql.ForeignKey('project.id'))
     is_domain = sql.Column(sql.Boolean, default=False, nullable=False,
                            server_default='0')
+    deleted = sql.Column(sql.Boolean)
     _tags = orm.relationship(
         'ProjectTag',
         single_parent=True,
