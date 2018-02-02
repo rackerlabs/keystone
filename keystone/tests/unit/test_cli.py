@@ -1390,3 +1390,46 @@ class TestMappingPurge(unit.SQLDriverOverrides, unit.BaseTestCase):
         args.append('--public-id')
         args.append(uuid.uuid4().hex)
         self.parser.parse_args(args)
+
+
+class CleanupResourcesTestCase(unit.SQLDriverOverrides, unit.TestCase):
+
+    def setUp(self):
+        self.useFixture(database.Database())
+        super(CleanupResourcesTestCase, self).setUp()
+
+    def test_cleanup_resources_none(self):
+        # If there are no resources to clean up the command should still be
+        # successful
+        cleanup = cli.CleanupResources()
+        provider_api.ProviderAPIs._clear_registry_instances()
+        cleanup.main()
+
+    def test_cleanup_resources_some(self):
+        # If there are resources yet to clean up, make sure that works
+        cleanup = cli.CleanupResources()
+        # Setup default domain for testing
+        default_domain = {
+            'id': CONF.identity.default_domain_id,
+            'name': 'Default',
+        }
+        cleanup.resource_manager.create_domain(default_domain['id'],
+                                               default_domain)
+        # Create some deleted resources
+        ref1 = unit.new_project_ref(CONF.identity.default_domain_id)
+        ref1['deleted'] = True
+        cleanup.resource_manager.create_project(ref1['id'], ref1)
+        ref2 = unit.new_project_ref(CONF.identity.default_domain_id)
+        ref2['deleted'] = True
+        cleanup.resource_manager.create_project(ref2['id'], ref2)
+
+        for ref in ref1, ref2:
+            self.assertIn(ref['id'], [
+                p['id'] for p in cleanup.resource_manager.list_projects()])
+
+        provider_api.ProviderAPIs._clear_registry_instances()
+        cleanup.main()
+
+        for ref in ref1, ref2:
+            self.assertNotIn(ref['id'], [
+                p['id'] for p in cleanup.resource_manager.list_projects()])
