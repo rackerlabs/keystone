@@ -126,10 +126,12 @@
 - project:
     check:
       jobs:
-        - keystone-dsvm-functional
-        - keystone-dsvm-functional-v3-only
-        - keystone-dsvm-py35-functional-v3-only
-        - openstack-ansible-keystone-rolling-upgrade
+        - openstack-tox-py27-with-oslo-master
+        # not needed for testing
+        # - keystone-dsvm-functional
+        # - keystone-dsvm-functional-v3-only
+        # - keystone-dsvm-py35-functional-v3-only
+        # - openstack-ansible-keystone-rolling-upgrade
     gate:
       jobs:
         - keystone-dsvm-functional
