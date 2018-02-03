@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_63fd7607",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-02-03T22:52:49Z",
+      "side": 1,
+      "message": "looks strange to me a delete method return what it has just deleted. Why not first fetch the list of app creds that will be deleted, delete them and later invalidate the cache?",
+      "revId": "382358d7934e7b3b6ad66bd1f8c6caaa39fb33d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_a31a9e6c",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-02-03T22:52:49Z",
+      "side": 1,
+      "message": "can you follow the same pattern as suggested at [1]?\n\n[1] https://review.openstack.org/#/c/540270",
+      "revId": "382358d7934e7b3b6ad66bd1f8c6caaa39fb33d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
