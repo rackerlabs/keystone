@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f93b717_23076e1b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-02-03T22:52:00Z",
+      "side": 1,
+      "message": "typo: credential",
+      "revId": "cc87abf22a0c5b83a50832ec9c83d71a4b8f8ead",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_e310a652",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-02-03T22:52:00Z",
+      "side": 1,
+      "message": "typo: credential",
+      "revId": "cc87abf22a0c5b83a50832ec9c83d71a4b8f8ead",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_e00bbc28",
         "filename": "keystone/tests/unit/application_credential/test_backends.py",
         "patchSetId": 3
