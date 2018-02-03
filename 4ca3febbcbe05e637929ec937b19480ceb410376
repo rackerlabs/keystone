@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f93b717_a3337ef6",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 717,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-02-03T22:56:08Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "5f93b717_aff6065c",
+      "range": {
+        "startLine": 717,
+        "startChar": 59,
+        "endLine": 717,
+        "endChar": 68
+      },
+      "revId": "4ca3febbcbe05e637929ec937b19480ceb410376",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_f9c2a084",
         "filename": "doc/source/getting-started/architecture.rst",
         "patchSetId": 2
