@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f93b717_aff6065c",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 717,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-02-03T06:25:45Z",
+      "side": 1,
+      "message": "++ to what Gage said, how about use http://127.0.0.1/identity/v3 ?",
+      "range": {
+        "startLine": 717,
+        "startChar": 59,
+        "endLine": 717,
+        "endChar": 68
+      },
+      "revId": "4ca3febbcbe05e637929ec937b19480ceb410376",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_f9c2a084",
         "filename": "doc/source/getting-started/architecture.rst",
         "patchSetId": 2
