@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_ea915c53",
+        "filename": "playbooks/keystone-functional-openstack-helm.yaml",
+        "patchSetId": 34
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-02-03T08:51:34Z",
+      "side": 1,
+      "message": "A question here: does it mean that this job can only ran on ubuntu system? how about others?",
+      "revId": "196e20a6223849c86d05fbdd77ae3a1a0a42d520",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
