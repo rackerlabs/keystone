@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f93b717_6ad78c4c",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1034,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-02-03T07:43:20Z",
+      "side": 1,
+      "message": "because L1035 \"driver.list_users(hints)\" will remove the filters in the hints. So I deepcopy hints here to reuse at L1042",
+      "parentUuid": "5f93b717_6b331b15",
+      "range": {
+        "startLine": 1034,
+        "startChar": 8,
+        "endLine": 1034,
+        "endChar": 40
+      },
+      "revId": "33bc9a5957164f4513e134ad779b582b4d361e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_11108a4d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 14
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "5f93b717_4a3970a1",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1042,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-02-03T07:43:20Z",
+      "side": 1,
+      "message": "sure. It\u0027s better.",
+      "parentUuid": "5f93b717_11108a4d",
+      "range": {
+        "startLine": 1042,
+        "startChar": 16,
+        "endLine": 1042,
+        "endChar": 25
+      },
+      "revId": "33bc9a5957164f4513e134ad779b582b4d361e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_861f7e6a",
         "filename": "releasenotes/notes/bug-1738895-342864cd0285bc42.yaml",
         "patchSetId": 14
@@ -59,6 +107,30 @@
       "writtenOn": "2018-02-02T18:04:59Z",
       "side": 1,
       "message": "Probably should add more detail here about how it worked for local users, but not federated.",
+      "range": {
+        "startLine": 5,
+        "startChar": 4,
+        "endLine": 5,
+        "endChar": 72
+      },
+      "revId": "33bc9a5957164f4513e134ad779b582b4d361e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_6a3c6c92",
+        "filename": "releasenotes/notes/bug-1738895-342864cd0285bc42.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-02-03T07:43:20Z",
+      "side": 1,
+      "message": "sure.",
+      "parentUuid": "5f93b717_861f7e6a",
       "range": {
         "startLine": 5,
         "startChar": 4,
