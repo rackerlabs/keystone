@@ -16,6 +16,24 @@
       "revId": "196e20a6223849c86d05fbdd77ae3a1a0a42d520",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_a3f13e98",
+        "filename": "playbooks/keystone-functional-openstack-helm.yaml",
+        "patchSetId": 34
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-04T01:27:39Z",
+      "side": 1,
+      "message": "You should be able to substitute the docker package for whatever distro you are using.  This is done here due to loci needing a feature from docker 17",
+      "parentUuid": "5f93b717_ea915c53",
+      "revId": "196e20a6223849c86d05fbdd77ae3a1a0a42d520",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
