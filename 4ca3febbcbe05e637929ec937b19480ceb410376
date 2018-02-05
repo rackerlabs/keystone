@@ -69,6 +69,30 @@
       "revId": "4ca3febbcbe05e637929ec937b19480ceb410376",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_028edc77",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-05T14:56:12Z",
+      "side": 1,
+      "message": "Yep - v3 doesn\u0027t care about where it\u0027s run. This document make some assumption about how keystone was setup though. Maybe we should change this to mirror whatever is in the install guide?",
+      "parentUuid": "5f93b717_f9c2a084",
+      "range": {
+        "startLine": 278,
+        "startChar": 60,
+        "endLine": 278,
+        "endChar": 74
+      },
+      "revId": "4ca3febbcbe05e637929ec937b19480ceb410376",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
