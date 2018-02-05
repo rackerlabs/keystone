@@ -77,6 +77,29 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_bd506934",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/idp.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-05T15:38:55Z",
+      "side": 1,
+      "message": "Lower case this to be consistent with other APIs:\n\n  Get identity provider",
+      "range": {
+        "startLine": 109,
+        "startChar": 4,
+        "endLine": 109,
+        "endChar": 5
+      },
+      "revId": "fd9ba1cc2ff3bed8e0427ce760303ed9f19898e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_c8201cfb",
         "filename": "api-ref/source/v3-ext/federation/identity-provider/idp.inc",
         "patchSetId": 2
