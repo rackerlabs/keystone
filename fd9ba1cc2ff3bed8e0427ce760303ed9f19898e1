@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_9d89ed27",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/idp.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-05T15:28:01Z",
+      "side": 1,
+      "message": "True - there are a lot of places like this where the list isn\u0027t exactly accurate with what the API does. I know a few APIs advertise 413 for example, which keystone doesn\u0027t raise. A lot of those cases are mostly dependent on the web server used to run keystone.\n\nI agree we should fix that, but I think we can also do it in another patch dedicated to correcting all inaccurate responses for the API. Where-as this patch is only applying consistent conventions.",
+      "parentUuid": "3fa0c359_a81830d3",
+      "revId": "fd9ba1cc2ff3bed8e0427ce760303ed9f19898e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_08d044f7",
         "filename": "api-ref/source/v3-ext/federation/identity-provider/idp.inc",
         "patchSetId": 2
