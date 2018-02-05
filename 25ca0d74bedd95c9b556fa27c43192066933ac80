@@ -1,0 +1,135 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_5d8285ca",
+        "filename": "api-ref/source/v3-ext/federation/service-provider/sp.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-05T15:37:57Z",
+      "side": 1,
+      "message": "Just like in the patch for mappings, we could include short descriptions of these APIs so we\u0027re consistent with other APIs.\n\n  Create a service provider entity.",
+      "revId": "25ca0d74bedd95c9b556fa27c43192066933ac80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_7dd501b9",
+        "filename": "api-ref/source/v3-ext/federation/service-provider/sp.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-05T15:37:57Z",
+      "side": 1,
+      "message": "Same comment:\n\n  List all service providers.",
+      "revId": "25ca0d74bedd95c9b556fa27c43192066933ac80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_7dee6189",
+        "filename": "api-ref/source/v3-ext/federation/service-provider/sp.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-05T15:37:57Z",
+      "side": 1,
+      "message": "Lower case to be consistent with the other sections in this file and other APIs:\n\n  Get service provider",
+      "range": {
+        "startLine": 91,
+        "startChar": 4,
+        "endLine": 91,
+        "endChar": 20
+      },
+      "revId": "25ca0d74bedd95c9b556fa27c43192066933ac80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_7da3c150",
+        "filename": "api-ref/source/v3-ext/federation/service-provider/sp.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-05T15:37:57Z",
+      "side": 1,
+      "message": "Possible description:\n\n  Get a specific service provider reference.",
+      "revId": "25ca0d74bedd95c9b556fa27c43192066933ac80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_fd8ef1ce",
+        "filename": "api-ref/source/v3-ext/federation/service-provider/sp.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-05T15:37:57Z",
+      "side": 1,
+      "message": "Same comment here as above:\n\n Delete service provider",
+      "range": {
+        "startLine": 138,
+        "startChar": 7,
+        "endLine": 138,
+        "endChar": 23
+      },
+      "revId": "25ca0d74bedd95c9b556fa27c43192066933ac80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_7dbc2169",
+        "filename": "api-ref/source/v3-ext/federation/service-provider/sp.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-05T15:37:57Z",
+      "side": 1,
+      "message": "Possible description:\n\n  Delete a service provider.",
+      "revId": "25ca0d74bedd95c9b556fa27c43192066933ac80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_9d624d16",
+        "filename": "api-ref/source/v3-ext/federation/service-provider/sp.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-05T15:37:57Z",
+      "side": 1,
+      "message": "Possible description:\n\n  Update a service provider\u0027s attributes.",
+      "revId": "25ca0d74bedd95c9b556fa27c43192066933ac80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
