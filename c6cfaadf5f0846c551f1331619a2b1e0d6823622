@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_0b9ef462",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-02-05T18:02:36Z",
+      "side": 1,
+      "message": "nice",
+      "revId": "c6cfaadf5f0846c551f1331619a2b1e0d6823622",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
