@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_ddd9b522",
+        "filename": "api-ref/source/v3-ext/federation/mapping/mapping.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-05T15:32:56Z",
+      "side": 1,
+      "message": "We can provide descriptions here like we do for other keystone APIs:\n\n  Create a federated mapping.",
+      "revId": "060cdad5736edf7bea5a07b9c09cb8f659f94f37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_bd0aa987",
+        "filename": "api-ref/source/v3-ext/federation/mapping/mapping.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-05T15:32:56Z",
+      "side": 1,
+      "message": "Same comment here:\n\n  Get a specific federated mapping.",
+      "revId": "060cdad5736edf7bea5a07b9c09cb8f659f94f37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_7d39813f",
+        "filename": "api-ref/source/v3-ext/federation/mapping/mapping.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-05T15:32:56Z",
+      "side": 1,
+      "message": "Same comment:\n\n  Update a federated mapping.",
+      "revId": "060cdad5736edf7bea5a07b9c09cb8f659f94f37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_dd4775bc",
+        "filename": "api-ref/source/v3-ext/federation/mapping/mapping.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-05T15:32:56Z",
+      "side": 1,
+      "message": "Same comment here:\n\n  List all federated mappings.",
+      "revId": "060cdad5736edf7bea5a07b9c09cb8f659f94f37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_fd44b1b9",
+        "filename": "api-ref/source/v3-ext/federation/mapping/mapping.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-05T15:32:56Z",
+      "side": 1,
+      "message": "And here:\n\n  Remove a specific federated mapping.",
+      "revId": "060cdad5736edf7bea5a07b9c09cb8f659f94f37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
