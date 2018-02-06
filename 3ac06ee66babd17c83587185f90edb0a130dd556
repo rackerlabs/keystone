@@ -16,6 +16,41 @@
       "revId": "3ac06ee66babd17c83587185f90edb0a130dd556",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_8135eadc",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-06T15:45:10Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3fa0c359_26198c84",
+      "revId": "3ac06ee66babd17c83587185f90edb0a130dd556",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_a147c64b",
+        "filename": "api-ref/source/v3-ext/trust.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-06T15:45:10Z",
+      "side": 1,
+      "message": "Looks like we\u0027re missing the status codes for this API from line 235.",
+      "revId": "3ac06ee66babd17c83587185f90edb0a130dd556",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
