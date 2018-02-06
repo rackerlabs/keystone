@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_0fbb40e2",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 717,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-06T20:13:45Z",
+      "side": 1,
+      "message": "The current installation guide uses 35357/v3\n\nhttps://docs.openstack.org/keystone/latest/install/keystone-install-ubuntu.html#install-and-configure-components",
+      "parentUuid": "5f93b717_a3337ef6",
+      "range": {
+        "startLine": 717,
+        "startChar": 59,
+        "endLine": 717,
+        "endChar": 68
+      },
+      "revId": "4ca3febbcbe05e637929ec937b19480ceb410376",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_f9c2a084",
         "filename": "doc/source/getting-started/architecture.rst",
         "patchSetId": 2
