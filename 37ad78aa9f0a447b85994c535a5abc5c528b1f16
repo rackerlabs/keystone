@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_c6278812",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-02-06T15:25:09Z",
+      "side": 1,
+      "message": "I\u0027m looking at the code and this isn\u0027t implemented at all, it must have been cargocult-copied from somewhere else. Let\u0027s just remove it.",
+      "range": {
+        "startLine": 96,
+        "startChar": 0,
+        "endLine": 108,
+        "endChar": 14
+      },
+      "revId": "37ad78aa9f0a447b85994c535a5abc5c528b1f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
