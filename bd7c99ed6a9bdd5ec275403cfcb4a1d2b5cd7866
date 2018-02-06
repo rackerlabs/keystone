@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_816dea99",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-06T15:56:33Z",
+      "side": 1,
+      "message": "We could add a release note here since this bug is somewhat user facing.",
+      "revId": "bd7c99ed6a9bdd5ec275403cfcb4a1d2b5cd7866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
