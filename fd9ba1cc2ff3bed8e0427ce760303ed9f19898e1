@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_157038a5",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/idp.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-02-06T12:28:39Z",
+      "side": 1,
+      "message": "How about \"Register an identity provider to be used to authenticate federated users.\" ?",
+      "parentUuid": "3fa0c359_e8c5d85c",
+      "range": {
+        "startLine": 10,
+        "startChar": 29,
+        "endLine": 10,
+        "endChar": 39
+      },
+      "revId": "fd9ba1cc2ff3bed8e0427ce760303ed9f19898e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_a81830d3",
         "filename": "api-ref/source/v3-ext/federation/identity-provider/idp.inc",
         "patchSetId": 2
@@ -71,6 +95,24 @@
       "writtenOn": "2018-02-05T11:39:36Z",
       "side": 1,
       "message": "ditto",
+      "revId": "fd9ba1cc2ff3bed8e0427ce760303ed9f19898e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_b56064d0",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/idp.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-02-06T12:28:39Z",
+      "side": 1,
+      "message": "How about just \"List registered identity providers.\" ?",
+      "parentUuid": "3fa0c359_08d044f7",
       "revId": "fd9ba1cc2ff3bed8e0427ce760303ed9f19898e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
