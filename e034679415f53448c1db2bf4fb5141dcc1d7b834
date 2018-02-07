@@ -16,6 +16,24 @@
       "revId": "e034679415f53448c1db2bf4fb5141dcc1d7b834",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_bedd7571",
+        "filename": "keystone/common/sql/contract_repo/versions/038_contract_drop_domain_fk.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-02-07T22:02:32Z",
+      "side": 1,
+      "message": "I should add a comment here. The constraint wasn\u0027t given a name when it was added, and sqlalchemy does this funny thing where it tries to guess the name and guesses wrongly. As far as I can tell this isn\u0027t a problem on postgres, so we don\u0027t have to figure out the name, we can just go ahead and drop the key found by ForeignKeyConstraint.",
+      "parentUuid": "3fa0c359_384dfd99",
+      "revId": "e034679415f53448c1db2bf4fb5141dcc1d7b834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
