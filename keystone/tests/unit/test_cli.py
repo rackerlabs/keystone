@@ -1395,3 +1395,32 @@ class TestMappingPurge(unit.SQLDriverOverrides, unit.BaseTestCase):
         args.append('--public-id')
         args.append(uuid.uuid4().hex)
         self.parser.parse_args(args)
+
+    def test_mapping_purge_type_user(self):
+        # Make sure the logic in main() actually catches no argument error
+        self.command_type = 'user'
+        self.command_all = False
+        self.command_domain_name = None
+        self.command_local_id = uuid.uuid4().hex
+        self.command_public_id = uuid.uuid4().hex
+        self.useFixture(fixtures.MockPatchObject(
+            CONF, 'command', self.FakeConfCommand(self)))
+
+        def fake_load_backends():
+            class Fake_MappingManager(object):
+                def purge_mappings(self, purge_filter):
+                    # CLI passes 'entity_type' to API instead of 'type'
+                    if 'entity_type' not in purge_filter:
+                        raise KeyError
+                    if purge_filter['entity_type'] != 'user':
+                        raise AttributeError
+
+            return dict(
+                id_mapping_api=Fake_MappingManager(),
+                resource_api=None)
+
+        self.useFixture(fixtures.MockPatch(
+            'keystone.server.backends.load_backends',
+            side_effect=fake_load_backends))
+
+        cli.MappingPurge.main()
