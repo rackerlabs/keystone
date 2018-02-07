@@ -1,0 +1,9 @@
+Code-Review+2: henry-nash <henry.nash@uk.ibm.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 07 Feb 2018 03:46:53 +0000
+Reviewed-on: https://review.openstack.org/541074
+Project: openstack/keystone
+Branch: refs/heads/master
