@@ -1386,6 +1386,31 @@ class TestMappingPurge(unit.SQLDriverOverrides, unit.BaseTestCase):
         args.append(uuid.uuid4().hex)
         self.parser.parse_args(args)
 
+    @mock.patch.object(keystone.identity.MappingManager, 'purge_mappings')
+    def test_mapping_purge_type_user(self, purge_mock):
+        # Make sure the logic in main() actually catches no argument error
+        self.command_type = 'user'
+        self.command_all = False
+        self.command_domain_name = None
+        self.command_local_id = uuid.uuid4().hex
+        self.command_public_id = uuid.uuid4().hex
+        self.useFixture(fixtures.MockPatchObject(
+            CONF, 'command', self.FakeConfCommand(self)))
+
+        def fake_load_backends():
+            return dict(
+                id_mapping_api=keystone.identity.core.MappingManager,
+                resource_api=None)
+
+        self.useFixture(fixtures.MockPatch(
+            'keystone.server.backends.load_backends',
+            side_effect=fake_load_backends))
+
+        cli.MappingPurge.main()
+        purge_mock.assert_called_with({'entity_type': 'user',
+                                       'local_id': self.command_local_id,
+                                       'public_id': self.command_public_id})
+
 
 class TestTokenFlush(unit.TestCase):
 
