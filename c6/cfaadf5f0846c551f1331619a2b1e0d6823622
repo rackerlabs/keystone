@@ -1,0 +1,9 @@
+Code-Review+2: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Workflow+1: Colleen Murphy <colleen@gazlene.net>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 07 Feb 2018 04:00:54 +0000
+Reviewed-on: https://review.openstack.org/540324
+Project: openstack/keystone
+Branch: refs/heads/master
