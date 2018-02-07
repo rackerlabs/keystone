@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_384dfd99",
+        "filename": "keystone/common/sql/contract_repo/versions/038_contract_drop_domain_fk.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-07T21:30:07Z",
+      "side": 1,
+      "message": "Does this work for postgres, too?",
+      "revId": "e034679415f53448c1db2bf4fb5141dcc1d7b834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
