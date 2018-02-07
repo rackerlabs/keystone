@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_54cc6960",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1038,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-02-07T09:39:26Z",
+      "side": 1,
+      "message": "Because only \"name\" is stored in both local user backend and shadow user backend.\nFor example, if the filter is \"enabled\", there is no need to search shadow_user backend, because \"enabled\" is saved in \"user\" table so that L1035 is enough.",
+      "parentUuid": "3fa0c359_f25917fe",
+      "revId": "e7a4d43ece44ee0187bb7ab02e0604b5ae2a592b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_f2b597ef",
         "filename": "keystone/identity/core.py",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2018-02-06T20:53:49Z",
       "side": 1,
       "message": "This still doesn\u0027t work if domain_specific_drivers_enabled is set in keystone.conf because then this automatically adds domain_id\u003ddefault into the hints and of course federated users aren\u0027t in that domain http://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/controller.py#n487\n\nI\u0027m okay with merging this as-is anyways since this is still an improvement for the majority of users.",
+      "revId": "e7a4d43ece44ee0187bb7ab02e0604b5ae2a592b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_ef2b627f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1045,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-02-07T09:39:26Z",
+      "side": 1,
+      "message": "Indeed! If domain_specific_drivers_enabled is set, not only \"name\", but aslo \"idp_id\", \"protocol_id\" and \"unique_id\" filters will not work, I think. The problem is here: https://github.com/openstack/keystone/blob/master/keystone/identity/shadow_backends/sql.py#L73 \nit always filters the domain_id. I can fix it in the following patch.",
+      "parentUuid": "3fa0c359_f2b597ef",
       "revId": "e7a4d43ece44ee0187bb7ab02e0604b5ae2a592b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
