@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_04644821",
+        "filename": "doc/source/install/keystone-install-obs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-02-08T15:13:18Z",
+      "side": 0,
+      "message": "I don\u0027t know what ubuntu does but on suse there is no default service running, and in fact I don\u0027t think it\u0027s possible for any distro to do that any more because we don\u0027t provide an eventlet service. It\u0027s also an incorrect note because no where in this guide does the \"keystone service\" get manually disabled. We should probably reevaluate for the ubuntu guide.",
+      "parentUuid": "3fa0c359_64d66cf4",
+      "revId": "4fdb3630511a9d984b25c7dcd20c857e2602120e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_84fa9872",
         "filename": "doc/source/install/keystone-install-obs.rst",
         "patchSetId": 1
@@ -30,6 +48,30 @@
       "writtenOn": "2018-02-08T14:55:55Z",
       "side": 0,
       "message": "Won\u0027t this still be needed if we\u0027re using apache?",
+      "range": {
+        "startLine": 80,
+        "startChar": 42,
+        "endLine": 80,
+        "endChar": 58
+      },
+      "revId": "4fdb3630511a9d984b25c7dcd20c857e2602120e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_e4703cdf",
+        "filename": "doc/source/install/keystone-install-obs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-02-08T15:13:18Z",
+      "side": 0,
+      "message": "It\u0027s installed as a dependency. Sorry, should have mentioned that in the commit message.",
+      "parentUuid": "3fa0c359_84fa9872",
       "range": {
         "startLine": 80,
         "startChar": 42,
