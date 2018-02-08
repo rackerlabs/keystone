@@ -34,6 +34,24 @@
       "revId": "196e20a6223849c86d05fbdd77ae3a1a0a42d520",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_f3f32b09",
+        "filename": "playbooks/keystone-functional-openstack-helm.yaml",
+        "patchSetId": 34
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-02-08T07:22:52Z",
+      "side": 1,
+      "message": "Oh my point here is \"apt-get\". I suppose that if others create their own CI systems locally but don\u0027t use Ubuntu, they should change it to something like \"yum\". Right?",
+      "parentUuid": "5f93b717_a3f13e98",
+      "revId": "196e20a6223849c86d05fbdd77ae3a1a0a42d520",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
