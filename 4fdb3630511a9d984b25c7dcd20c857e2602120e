@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_64d66cf4",
+        "filename": "doc/source/install/keystone-install-obs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-08T14:55:55Z",
+      "side": 0,
+      "message": "I think I kept this statement in the ubuntu guide but I removed the mention of 35357.",
+      "revId": "4fdb3630511a9d984b25c7dcd20c857e2602120e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_84fa9872",
+        "filename": "doc/source/install/keystone-install-obs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-08T14:55:55Z",
+      "side": 0,
+      "message": "Won\u0027t this still be needed if we\u0027re using apache?",
+      "range": {
+        "startLine": 80,
+        "startChar": 42,
+        "endLine": 80,
+        "endChar": 58
+      },
+      "revId": "4fdb3630511a9d984b25c7dcd20c857e2602120e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
