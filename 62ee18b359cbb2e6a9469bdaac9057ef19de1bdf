@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_eff6cd63",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-02-08T21:06:26Z",
+      "side": 1,
+      "message": "Make a \"read-only\" attribute for the driver, don\u0027t just check if it is SQL.\n\nThis is fine as is, we prob. should fix it in the next release to check write-capability instead of \"is sql\".",
+      "range": {
+        "startLine": 505,
+        "startChar": 0,
+        "endLine": 511,
+        "endChar": 18
+      },
+      "revId": "62ee18b359cbb2e6a9469bdaac9057ef19de1bdf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
