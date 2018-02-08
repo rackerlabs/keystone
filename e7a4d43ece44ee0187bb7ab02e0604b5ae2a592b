@@ -69,6 +69,24 @@
       "revId": "e7a4d43ece44ee0187bb7ab02e0604b5ae2a592b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_edc7d144",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1045,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-02-08T02:37:21Z",
+      "side": 1,
+      "message": "Colleen, I created a bug https://bugs.launchpad.net/keystone/+bug/1748062 , but after thinking more, I think maybe it\u0027s not a bug. Need your idea there.",
+      "parentUuid": "3fa0c359_ef2b627f",
+      "revId": "e7a4d43ece44ee0187bb7ab02e0604b5ae2a592b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
