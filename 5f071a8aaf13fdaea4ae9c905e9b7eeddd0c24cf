@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_e0ea5a0d",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-08T22:58:56Z",
+      "side": 1,
+      "message": "This needs to be refactored since we should be using PROVIDERS. We also should try and work this type of logic into the manager since calling a manager from the backend isn\u0027t really something we should be doing at this layer.",
+      "range": {
+        "startLine": 112,
+        "startChar": 28,
+        "endLine": 112,
+        "endChar": 33
+      },
+      "revId": "5f071a8aaf13fdaea4ae9c905e9b7eeddd0c24cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_00f0a6fd",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-08T22:58:56Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "5f071a8aaf13fdaea4ae9c905e9b7eeddd0c24cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
