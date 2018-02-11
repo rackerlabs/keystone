@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_6b9606f3",
+        "filename": "playbooks/keystone-functional-openstack-helm.yaml",
+        "patchSetId": 35
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-02-11T02:46:08Z",
+      "side": 1,
+      "message": "Any reason for not using 050-mariadb.sh?",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 40
+      },
+      "revId": "65189e67ad7f9e128ee6df77ba21ce1a11e446fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_0b8742b7",
+        "filename": "playbooks/keystone-functional-openstack-helm.yaml",
+        "patchSetId": 35
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-02-11T02:46:08Z",
+      "side": 1,
+      "message": "this will be done in a following patch?",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 69
+      },
+      "revId": "65189e67ad7f9e128ee6df77ba21ce1a11e446fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
