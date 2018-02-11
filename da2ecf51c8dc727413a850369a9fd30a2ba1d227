@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_26c913ab",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-02-11T03:45:34Z",
+      "side": 1,
+      "message": "And remove this property as well?",
+      "range": {
+        "startLine": 212,
+        "startChar": 16,
+        "endLine": 212,
+        "endChar": 34
+      },
+      "revId": "da2ecf51c8dc727413a850369a9fd30a2ba1d227",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_6685db59",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-02-11T03:45:34Z",
+      "side": 1,
+      "message": "Here should be refactored as well. After this patch. revocation list API \"GET /auth/tokens/OS-PKI/revoked\" will return 500 error due to \"Provider object has no attribute _persistence\".\n\nI wonder that if we can remove this API as well.",
+      "range": {
+        "startLine": 270,
+        "startChar": 20,
+        "endLine": 270,
+        "endChar": 32
+      },
+      "revId": "da2ecf51c8dc727413a850369a9fd30a2ba1d227",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
