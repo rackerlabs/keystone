@@ -1107,6 +1107,12 @@ class Manager(manager.Manager):
                 payload
             )
 
+    def delete_user_assignments(self, user_id):
+        self.driver.delete_user_assignments(user_id)
+        system_assignments = self.list_system_grants_for_user(user_id)
+        for assignment in system_assignments:
+            self.delete_system_grant_for_user(user_id, assignment['id'])
+
     def check_system_grant_for_user(self, user_id, role_id):
         """Check if a user has a specific role on the system.
 
