@@ -93,6 +93,30 @@
       "revId": "da2ecf51c8dc727413a850369a9fd30a2ba1d227",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_337cda81",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-12T16:29:54Z",
+      "side": 1,
+      "message": "I just confirmed the diff above [2]. When an empty list is returned, I can generate a valid response. Then I used python-keysotneclient/common/cms.py to verify it [0].\n\n[0] http://paste.openstack.org/raw/670196/",
+      "parentUuid": "3fa0c359_4ae52f37",
+      "range": {
+        "startLine": 270,
+        "startChar": 20,
+        "endLine": 270,
+        "endChar": 32
+      },
+      "revId": "da2ecf51c8dc727413a850369a9fd30a2ba1d227",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
