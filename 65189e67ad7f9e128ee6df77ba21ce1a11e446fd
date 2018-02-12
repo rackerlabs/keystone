@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_f7c66c68",
+        "filename": "playbooks/keystone-functional-openstack-helm.yaml",
+        "patchSetId": 35
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-02-12T07:10:30Z",
+      "side": 1,
+      "message": "Got it. It seems because that we don\u0027t deploy ceph.",
+      "parentUuid": "3fa0c359_969b6e64",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 40
+      },
+      "revId": "65189e67ad7f9e128ee6df77ba21ce1a11e446fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_0b8742b7",
         "filename": "playbooks/keystone-functional-openstack-helm.yaml",
         "patchSetId": 35
