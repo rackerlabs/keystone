@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_ed71b5a9",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-12T15:30:24Z",
+      "side": 1,
+      "message": "We might be able to remove that in a separate patch, since it\u0027s just an interface that gets set by each provider. I do think that in a subsequent patch, we will want to remove this logic in favor of having custom providers handle the storage bits if they need it. That way the manager doesn\u0027t need a hook to check persistence properties of the provider being used.\n\nAll in all, yes I think we can remove this hook. All take a shot at refactoring those interfaces in a subsequent patch.",
+      "parentUuid": "3fa0c359_26c913ab",
+      "range": {
+        "startLine": 212,
+        "startChar": 16,
+        "endLine": 212,
+        "endChar": 34
+      },
+      "revId": "da2ecf51c8dc727413a850369a9fd30a2ba1d227",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_6685db59",
         "filename": "keystone/token/provider.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2018-02-11T03:45:34Z",
       "side": 1,
       "message": "Here should be refactored as well. After this patch. revocation list API \"GET /auth/tokens/OS-PKI/revoked\" will return 500 error due to \"Provider object has no attribute _persistence\".\n\nI wonder that if we can remove this API as well.",
+      "range": {
+        "startLine": 270,
+        "startChar": 20,
+        "endLine": 270,
+        "endChar": 32
+      },
+      "revId": "da2ecf51c8dc727413a850369a9fd30a2ba1d227",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_4ae52f37",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-12T15:30:24Z",
+      "side": 1,
+      "message": "Yeah - that\u0027s a good question. I tested this out manually and it does throw a 500 with this patch. I retested with master and it still throws a 500 because I didn\u0027t have any certificates setup for PKI. I checked out the change before that refactor happened and ran `keystone-manage pki_setup` [0]. Once I had the certificates installed, I got the intended response from the API [1]. I think what we can do instead is to return an empty list instead of calling to get a list of revoked tokens from the backend. Or, we could make the logic conditional. If the provider supports fetching revoked tokens, then we can call it and expect a list. If not, then we return an empty list.\n\nWhen I removed this logic and replaced it with an empty list [2], the API response was the same as when it called the _persistence backend for a list of revoked tokens.\n\n[0] https://github.com/openstack/keystone/commit/928d23db022157ae24d49eb9b7772cc0e07345a4#diff-41c8207a4e9c66c80ef1576614634992\n[1] http://paste.openstack.org/raw/670054/\n[2] http://paste.openstack.org/raw/670097/",
+      "parentUuid": "3fa0c359_6685db59",
       "range": {
         "startLine": 270,
         "startChar": 20,
