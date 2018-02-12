@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_fecdd9b6",
+        "filename": "doc/source/admin/token-provider.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-02-12T17:06:32Z",
+      "side": 1,
+      "message": "NIT: remove \"both\"",
+      "range": {
+        "startLine": 32,
+        "startChar": 22,
+        "endLine": 32,
+        "endChar": 26
+      },
+      "revId": "b9ab960b0ef11b65f843e0eefba9668611cc4aad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
