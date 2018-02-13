@@ -23,7 +23,6 @@ from keystone.common import provider_api
 import keystone.conf
 from keystone import exception
 from keystone.tests import unit
-from keystone.tests.unit import utils as test_utils
 from keystone.tests.unit import test_v3
 
 
@@ -3569,7 +3568,6 @@ class UserSystemRoleAssignmentTestCase(test_v3.RestfulTestCase,
         ) % {'project_id': self.project_id}
         self.get(path, expected_status=http_client.BAD_REQUEST)
 
-    @test_utils.wip("Waiting on fix for bug #1748970")
     def test_query_for_role_id_does_not_return_system_user_roles(self):
         system_role_id = self._create_new_role()
 
@@ -3862,7 +3860,6 @@ class GroupSystemRoleAssignmentTestCase(test_v3.RestfulTestCase,
         )
         self.assertValidRoleAssignmentListResponse(response, expected_length=0)
 
-    @test_utils.wip("Waiting on fix for bug #1748970")
     def test_query_for_role_id_does_not_return_system_group_roles(self):
         system_role_id = self._create_new_role()
         group = self._create_group()
