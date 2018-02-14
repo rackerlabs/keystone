@@ -1,0 +1,18 @@
+Code-Review+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+1: Gage Hugo <gagehugo@gmail.com>
+Code-Review+1: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: Shan Guo <guoshan@awcloud.com>
+Code-Review+1: chenaidong1 <chen.aidong@zte.com.cn>
+Code-Review+1: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+1: wangqiang-bj <wangqiangbj@inspur.com>
+Code-Review+1: chenxiangui <chenxiangui@inspur.com>
+Code-Review+1: Yandy Sun <sunyd@inspur.com>
+Code-Review+1: Shuo Liu <liushuobj@inspur.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 14 Feb 2018 19:14:17 +0000
+Reviewed-on: https://review.openstack.org/511096
+Project: openstack/keystone
+Branch: refs/heads/stable/pike
