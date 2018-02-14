@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_0bcff028",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-14T15:16:56Z",
+      "side": 1,
+      "message": "++ nice note. I wonder if we need to flag these as warnings?",
+      "revId": "ee952d16acfd85e1e2d8bf1dcfee6ffcc441f049",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_8b90e0ee",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-14T15:16:56Z",
+      "side": 1,
+      "message": "nit: See the Identity API reference for more information on authenticating and managing application credentials.",
+      "revId": "ee952d16acfd85e1e2d8bf1dcfee6ffcc441f049",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_cb7828c5",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-14T15:16:56Z",
+      "side": 1,
+      "message": "Is this suppose to invoke syntax highlighting? If so, nothing is really highlighted in the rendered format [0].\n\n[0] http://logs.openstack.org/43/543643/1/check/build-openstack-sphinx-docs/e495d0c/html/user/application_credentials.html",
+      "range": {
+        "startLine": 41,
+        "startChar": 16,
+        "endLine": 41,
+        "endChar": 22
+      },
+      "revId": "ee952d16acfd85e1e2d8bf1dcfee6ffcc441f049",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_66a029f5",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-14T15:16:56Z",
+      "side": 1,
+      "message": "We can call out removing a user from a project will invalidate the users application credentials. Incase people are expecting to set these things up and just let them run forever.\n\nMaybe we can add another bit about team management? I know we used those cases a lot during the design phase, so I wonder if they would be valuable here.",
+      "revId": "ee952d16acfd85e1e2d8bf1dcfee6ffcc441f049",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_cb26e8ce",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-14T15:16:56Z",
+      "side": 1,
+      "message": "Thoughts on adding a foot-gun warning here?",
+      "revId": "ee952d16acfd85e1e2d8bf1dcfee6ffcc441f049",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_46016d04",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-14T15:16:56Z",
+      "side": 1,
+      "message": "++ I can\u0027t wait to get this incorporated into devstack and our install guide.",
+      "revId": "ee952d16acfd85e1e2d8bf1dcfee6ffcc441f049",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
