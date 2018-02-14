@@ -252,16 +252,13 @@ class Manager(manager.Manager):
             role_id, user_id=user_id, project_id=tenant_id)
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
-    def _emit_invalidate_user_token_persistence(self, user_id):
-        PROVIDERS.identity_api.emit_invalidate_user_token_persistence(user_id)
-
-        # NOTE(lbragstad): The previous notification decorator behavior didn't
-        # send the notification unless the operation was successful. We
-        # maintain that behavior here by calling to the notification module
-        # after the call to emit invalid user tokens.
-        notifications.Audit.internal(
-            notifications.INVALIDATE_USER_TOKEN_PERSISTENCE, user_id
+    def _invalidate_token_cache(self):
+        reason = (
+            'Invalidating the token cache due to changes in role assignments. '
+            'Role assignments for users will be recalculated during next '
+            'authentication or token validation.'
         )
+        notifications.invalidate_token_cache_notification(reason)
 
     def _emit_invalidate_grant_token_persistence(self, user_id, project_id):
         PROVIDERS.identity_api.emit_invalidate_grant_token_persistence(
@@ -1060,6 +1057,7 @@ class Manager(manager.Manager):
         # user or user+project IDs for the tokens we need to delete
         user_ids = set()
         user_and_project_ids = list()
+        cache_dropped = False
         for assignment in assignments:
             # If we have a project assignment, then record both the user and
             # project IDs so we can target the right token to delete. If it is
@@ -1075,8 +1073,8 @@ class Manager(manager.Manager):
                     user_and_project_ids.append(
                         (assignment['user_id'], assignment['project_id']))
                 elif 'domain_id' or 'system' in assignment:
-                    self._emit_invalidate_user_token_persistence(
-                        assignment['user_id'])
+                    if not cache_dropped:
+                        self._invalidate_token_cache()
             elif 'group_id' in assignment:
                 # Add in any users for this group, being tolerant of any
                 # cross-driver database integrity errors.
@@ -1102,9 +1100,8 @@ class Manager(manager.Manager):
                         user_and_project_ids.append(
                             (user['id'], assignment['project_id']))
                 elif 'domain_id' or 'system' in assignment:
-                    for user in users:
-                        self._emit_invalidate_user_token_persistence(
-                            user['id'])
+                    if users and not cache_dropped:
+                        self._invalidate_token_cache()
 
         # Now process the built up lists.  Before issuing calls to delete any
         # tokens, let's try and minimize the number of calls by pruning out
