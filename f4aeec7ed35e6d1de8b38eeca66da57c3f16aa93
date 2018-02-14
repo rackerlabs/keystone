@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_c3a9e524",
+        "filename": "playbooks/keystone-functional-openstack-helm.yaml",
+        "patchSetId": 37
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-14T19:28:15Z",
+      "side": 1,
+      "message": "will do",
+      "parentUuid": "3fa0c359_e3f8a14a",
+      "revId": "f4aeec7ed35e6d1de8b38eeca66da57c3f16aa93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_e34ae1aa",
         "filename": "playbooks/keystone-functional-openstack-helm.yaml",
         "patchSetId": 37
@@ -30,6 +48,30 @@
       "writtenOn": "2018-02-14T19:25:44Z",
       "side": 1,
       "message": "better would be:\n\nchdir: \"{{ zuul.projects[\u0027git.openstack.org/openstack/openstack-helm\u0027].src_dir }}\"\n\nalso in other lines",
+      "range": {
+        "startLine": 37,
+        "startChar": 16,
+        "endLine": 37,
+        "endChar": 60
+      },
+      "revId": "f4aeec7ed35e6d1de8b38eeca66da57c3f16aa93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_83619d14",
+        "filename": "playbooks/keystone-functional-openstack-helm.yaml",
+        "patchSetId": 37
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-14T19:28:15Z",
+      "side": 1,
+      "message": "thanks! that looks cleaner",
+      "parentUuid": "3fa0c359_e34ae1aa",
       "range": {
         "startLine": 37,
         "startChar": 16,
