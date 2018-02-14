@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_8bc1b9e7",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-14T17:37:06Z",
+      "side": 1,
+      "message": "Here is an example of how the logs look with this change when the notification is kicked off:\n\nhttp://paste.openstack.org/raw/672464/",
+      "revId": "0e0cedd0d519d52314a0c6850807b3cafcea18ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
