@@ -22,6 +22,30 @@
       "revId": "4bdf063c6a42efac19578861aa92cce5c2edf9f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_72b535cd",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1060,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-14T22:38:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa0c359_59494489",
+      "range": {
+        "startLine": 1060,
+        "startChar": 8,
+        "endLine": 1060,
+        "endChar": 29
+      },
+      "revId": "4bdf063c6a42efac19578861aa92cce5c2edf9f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
