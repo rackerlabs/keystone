@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_6694a937",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-02-14T15:38:19Z",
+      "side": 1,
+      "message": "I had actually just moved this note over from index.rst since this change causes that landing page to grow in scope. Could upgrade it to a warning I guess but that\u0027s not really the purpose of this change.",
+      "parentUuid": "3fa0c359_0bcff028",
+      "revId": "ee952d16acfd85e1e2d8bf1dcfee6ffcc441f049",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_8b90e0ee",
         "filename": "doc/source/user/application_credentials.rst",
         "patchSetId": 1
@@ -47,6 +65,30 @@
       "writtenOn": "2018-02-14T15:16:56Z",
       "side": 1,
       "message": "Is this suppose to invoke syntax highlighting? If so, nothing is really highlighted in the rendered format [0].\n\n[0] http://logs.openstack.org/43/543643/1/check/build-openstack-sphinx-docs/e495d0c/html/user/application_credentials.html",
+      "range": {
+        "startLine": 41,
+        "startChar": 16,
+        "endLine": 41,
+        "endChar": 22
+      },
+      "revId": "ee952d16acfd85e1e2d8bf1dcfee6ffcc441f049",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_266ea1ff",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-02-14T15:38:19Z",
+      "side": 1,
+      "message": "hmm yes it should look like this https://docs.openstack.org/keystoneauth/latest/using-sessions.html#sessions-for-users\n\nI wonder if my python isn\u0027t actually valid, or if we\u0027re missing a plugin or config option in our sphinx theme setup?",
+      "parentUuid": "3fa0c359_cb7828c5",
       "range": {
         "startLine": 41,
         "startChar": 16,
