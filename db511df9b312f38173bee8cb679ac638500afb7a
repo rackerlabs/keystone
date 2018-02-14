@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_9277a109",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-14T22:46:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa0c359_7203f574",
+      "range": {
+        "startLine": 96,
+        "startChar": 8,
+        "endLine": 96,
+        "endChar": 33
+      },
+      "revId": "db511df9b312f38173bee8cb679ac638500afb7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_92048180",
         "filename": "keystone/identity/core.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2018-02-14T22:42:39Z",
       "side": 1,
       "message": "the*",
+      "range": {
+        "startLine": 1135,
+        "startChar": 38,
+        "endLine": 1135,
+        "endChar": 42
+      },
+      "revId": "db511df9b312f38173bee8cb679ac638500afb7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_32680d20",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1135,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-14T22:46:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa0c359_92048180",
       "range": {
         "startLine": 1135,
         "startChar": 38,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_b265fd47",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-14T22:46:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa0c359_9229e1f3",
+      "revId": "db511df9b312f38173bee8cb679ac638500afb7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_d24689c1",
         "filename": "keystone/resource/core.py",
         "patchSetId": 2
@@ -76,6 +142,24 @@
       "writtenOn": "2018-02-14T22:42:39Z",
       "side": 1,
       "message": "This isn\u0027t used anywhere else... just put it in the calling method. We can always break it out later if other places in this module need to use it.",
+      "revId": "db511df9b312f38173bee8cb679ac638500afb7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_525a7983",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-14T22:46:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa0c359_d24689c1",
       "revId": "db511df9b312f38173bee8cb679ac638500afb7a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
