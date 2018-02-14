@@ -143,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_dc3c6d32",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-14T15:51:52Z",
+      "side": 1,
+      "message": "On second glance it seems to be highlighting ok, there\u0027s only one parameter being passed in, so that\u0027s highlighted. The other lines seem to match.",
+      "parentUuid": "3fa0c359_dc10ed52",
+      "range": {
+        "startLine": 41,
+        "startChar": 16,
+        "endLine": 41,
+        "endChar": 22
+      },
+      "revId": "ee952d16acfd85e1e2d8bf1dcfee6ffcc441f049",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_66a029f5",
         "filename": "doc/source/user/application_credentials.rst",
         "patchSetId": 1
@@ -160,6 +184,24 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_bcb3a14d",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-14T15:51:52Z",
+      "side": 1,
+      "message": "++, to both",
+      "parentUuid": "3fa0c359_66a029f5",
+      "revId": "ee952d16acfd85e1e2d8bf1dcfee6ffcc441f049",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_cb26e8ce",
         "filename": "doc/source/user/application_credentials.rst",
         "patchSetId": 1
@@ -171,6 +213,24 @@
       "writtenOn": "2018-02-14T15:16:56Z",
       "side": 1,
       "message": "Thoughts on adding a foot-gun warning here?",
+      "revId": "ee952d16acfd85e1e2d8bf1dcfee6ffcc441f049",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_5c35bda7",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-14T15:51:52Z",
+      "side": 1,
+      "message": "Could incorporate the \"compromised app cred\" message into a note/warning",
+      "parentUuid": "3fa0c359_cb26e8ce",
       "revId": "ee952d16acfd85e1e2d8bf1dcfee6ffcc441f049",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
