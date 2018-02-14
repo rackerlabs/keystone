@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_260e9732",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-02-14T19:34:52Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "3fa0c359_8b90e0ee",
+      "revId": "ee952d16acfd85e1e2d8bf1dcfee6ffcc441f049",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_cb7828c5",
         "filename": "doc/source/user/application_credentials.rst",
         "patchSetId": 1
@@ -202,6 +220,24 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_660c9f3b",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-02-14T19:34:52Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "3fa0c359_bcb3a14d",
+      "revId": "ee952d16acfd85e1e2d8bf1dcfee6ffcc441f049",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_cb26e8ce",
         "filename": "doc/source/user/application_credentials.rst",
         "patchSetId": 1
@@ -231,6 +267,24 @@
       "side": 1,
       "message": "Could incorporate the \"compromised app cred\" message into a note/warning",
       "parentUuid": "3fa0c359_cb26e8ce",
+      "revId": "ee952d16acfd85e1e2d8bf1dcfee6ffcc441f049",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_06111b54",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-02-14T19:34:52Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "3fa0c359_5c35bda7",
       "revId": "ee952d16acfd85e1e2d8bf1dcfee6ffcc441f049",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
