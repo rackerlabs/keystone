@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_c661fd06",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-14T15:41:24Z",
+      "side": 1,
+      "message": "nah, a note seems appropriate imo",
+      "parentUuid": "3fa0c359_6694a937",
+      "revId": "ee952d16acfd85e1e2d8bf1dcfee6ffcc441f049",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_8b90e0ee",
         "filename": "doc/source/user/application_credentials.rst",
         "patchSetId": 1
@@ -89,6 +107,30 @@
       "side": 1,
       "message": "hmm yes it should look like this https://docs.openstack.org/keystoneauth/latest/using-sessions.html#sessions-for-users\n\nI wonder if my python isn\u0027t actually valid, or if we\u0027re missing a plugin or config option in our sphinx theme setup?",
       "parentUuid": "3fa0c359_cb7828c5",
+      "range": {
+        "startLine": 41,
+        "startChar": 16,
+        "endLine": 41,
+        "endChar": 22
+      },
+      "revId": "ee952d16acfd85e1e2d8bf1dcfee6ffcc441f049",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_dc10ed52",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-14T15:41:24Z",
+      "side": 1,
+      "message": "It highlights one line.  I think the \"...\" may be messing it up.",
+      "parentUuid": "3fa0c359_266ea1ff",
       "range": {
         "startLine": 41,
         "startChar": 16,
