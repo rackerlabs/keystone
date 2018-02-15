@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_da7c4974",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-02-15T17:38:15Z",
+      "side": 0,
+      "message": "I feel like this comment got ignored, don\u0027t we still want to extract the user ids so they can be part of the notification?",
+      "revId": "0e0cedd0d519d52314a0c6850807b3cafcea18ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_3a3bed9c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1358,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-02-15T17:38:15Z",
+      "side": 0,
+      "message": "We really don\u0027t need this at all? Could use a little more explanation in the commit message, since at a glance it doesn\u0027t look like it\u0027s persistence-only.",
+      "revId": "0e0cedd0d519d52314a0c6850807b3cafcea18ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_1a75d198",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-02-15T17:38:15Z",
+      "side": 0,
+      "message": "We\u0027re losing the ability to give details of what caused the invalidation, why not recreate this payload information within the reason string?",
+      "revId": "0e0cedd0d519d52314a0c6850807b3cafcea18ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
