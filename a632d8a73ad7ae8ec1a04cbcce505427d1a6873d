@@ -22,6 +22,30 @@
       "revId": "a632d8a73ad7ae8ec1a04cbcce505427d1a6873d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_c0f697fa",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-02-15T21:21:27Z",
+      "side": 1,
+      "message": "It requires signing certs. Without certs, we end up 500 for each request. The most correct in this case is to make this 403 - equivalent of changing policy.json to kill the access.\n\nThe signed response is the fundamental issue here. It\u0027s better to indicate this is no longer allowed than to return (depending on config) a signed empty list or a 500 error.",
+      "parentUuid": "3fa0c359_3a1e8d70",
+      "range": {
+        "startLine": 341,
+        "startChar": 9,
+        "endLine": 342,
+        "endChar": 15
+      },
+      "revId": "a632d8a73ad7ae8ec1a04cbcce505427d1a6873d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
