@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_4a038810",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-15T20:36:24Z",
+      "side": 0,
+      "message": "Similar comment here as for projects. If we have a bunch of users with Member assigned, and then we delete Member, do we want to emit a log message for each permutation?\n\nDoes emitting a single log warning specifically for Member work?\n\nI think the reason why user_id was important for notifications before we took the non-persistent approach was that we could use the user\u0027s ID and query the database for all tokens for a specific user.",
+      "parentUuid": "3fa0c359_da7c4974",
+      "revId": "0e0cedd0d519d52314a0c6850807b3cafcea18ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_3a3bed9c",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_9d58f8fa",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1358,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-15T20:36:24Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "3fa0c359_3a3bed9c",
+      "revId": "0e0cedd0d519d52314a0c6850807b3cafcea18ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_1a75d198",
         "filename": "keystone/resource/core.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2018-02-15T17:38:15Z",
       "side": 0,
       "message": "We\u0027re losing the ability to give details of what caused the invalidation, why not recreate this payload information within the reason string?",
+      "revId": "0e0cedd0d519d52314a0c6850807b3cafcea18ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_2a587c54",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-15T20:36:24Z",
+      "side": 0,
+      "message": "If we delete a project that had tons of users assigned to it, should we emit a notification for each combination? What if we emit a log message saying the cache is going to be invalidate because Project Alpha was deleted?",
+      "parentUuid": "3fa0c359_1a75d198",
       "revId": "0e0cedd0d519d52314a0c6850807b3cafcea18ff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
