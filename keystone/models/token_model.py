@@ -32,6 +32,9 @@ PROVIDERS = provider_api.ProviderAPIs
 # supported token versions
 V3 = 'v3.0'
 VERSIONS = frozenset([V3])
+CONF = keystone.conf.CONF
+LOG = log.getLogger(__name__)
+PROVIDERS = provider_api.ProviderAPIs
 
 
 def _parse_and_normalize_time(time_data):

@@ -466,6 +466,13 @@ class V3TokenDataHelper(provider_api.ProviderAPIMixin, object):
         federated_info = token_data['user'].get('OS-FEDERATION')
         if federated_info:
             idp_id = federated_info['identity_provider']['id']
+            # FIXME(lbragstad): This isn't working properly because somewhere
+            # along the line we *were* encoding and decoding properly. This
+            # is needed to get some tests to pass in python 3. This will likely
+            # be fixed when the validate token path is moved over to using the
+            # token model, just like authenticate.
+            if isinstance(idp_id, bytes):
+                idp_id = idp_id.decode('utf-8')
             PROVIDERS.federation_api.get_idp(idp_id)
 
     def _populate_token_dates(self, token_data, expires=None, issued_at=None):
@@ -558,52 +565,6 @@ class BaseProvider(provider_api.ProviderAPIMixin, base.Provider):
     def _is_mapped_token(self, auth_context):
         return (federation_constants.IDENTITY_PROVIDER in auth_context and
                 federation_constants.PROTOCOL in auth_context)
-
-    def issue_token(self, user_id, method_names, expires_at=None,
-                    system=None, project_id=None, domain_id=None,
-                    auth_context=None, trust=None, app_cred_id=None,
-                    include_catalog=True, parent_audit_id=None):
-        if auth_context and auth_context.get('bind'):
-            # NOTE(lbragstad): Check if the token provider being used actually
-            # supports bind authentication methods before proceeding.
-            if not self._supports_bind_authentication:
-                raise exception.NotImplemented(_(
-                    'The configured token provider does not support bind '
-                    'authentication.'))
-
-        if CONF.trust.enabled and trust:
-            if user_id != trust['trustee_user_id']:
-                raise exception.Forbidden(_('User is not a trustee.'))
-
-        token_ref = None
-        if auth_context and self._is_mapped_token(auth_context):
-            token_ref = self._handle_mapped_tokens(
-                auth_context, project_id, domain_id)
-
-        access_token = None
-        if 'oauth1' in method_names:
-            access_token_id = auth_context['access_token_id']
-            access_token = PROVIDERS.oauth_api.get_access_token(
-                access_token_id
-            )
-
-        token_data = self.v3_token_data_helper.get_token_data(
-            user_id,
-            method_names,
-            system=system,
-            domain_id=domain_id,
-            project_id=project_id,
-            expires=expires_at,
-            trust=trust,
-            app_cred_id=app_cred_id,
-            bind=auth_context.get('bind') if auth_context else None,
-            token=token_ref,
-            include_catalog=include_catalog,
-            access_token=access_token,
-            audit_info=parent_audit_id)
-
-        token_id = self._get_token_id(token_data)
-        return token_id, token_data
 
     def _handle_mapped_tokens(self, auth_context, project_id, domain_id):
         user_id = auth_context['user_id']
