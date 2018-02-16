@@ -14,7 +14,9 @@
 
 """Token provider interface."""
 
+import base64
 import datetime
+import uuid
 
 from oslo_log import log
 from oslo_utils import timeutils
@@ -22,6 +24,7 @@ from oslo_utils import timeutils
 from keystone.common import cache
 from keystone.common import manager
 from keystone.common import provider_api
+from keystone.common import utils
 import keystone.conf
 from keystone import exception
 from keystone.i18n import _
@@ -45,6 +48,29 @@ UnsupportedTokenVersionException = exception.UnsupportedTokenVersionException
 # supported token versions
 V3 = token_model.V3
 VERSIONS = token_model.VERSIONS
+
+
+def default_expire_time():
+    """Determine when a fresh token should expire.
+
+    Expiration time varies based on configuration (see ``[token] expiration``).
+
+    :returns: a naive UTC datetime.datetime object
+
+    """
+    expire_delta = datetime.timedelta(seconds=CONF.token.expiration)
+    expires_at = timeutils.utcnow() + expire_delta
+    return expires_at.replace(microsecond=0)
+
+
+def random_urlsafe_str():
+    """Generate a random URL-safe string.
+
+    :rtype: six.text_type
+
+    """
+    # chop the padding (==) off the end of the encoding to save space
+    return base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2].decode('utf-8')
 
 
 class Manager(manager.Manager):
@@ -160,23 +186,67 @@ class Manager(manager.Manager):
 
     def issue_token(self, user_id, method_names, expires_at=None,
                     system=None, project_id=None, is_domain=False,
-                    domain_id=None, auth_context=None, trust=None,
+                    domain_id=None, auth_context=None, trust_id=None,
                     app_cred_id=None, include_catalog=True,
                     parent_audit_id=None):
-        token_id, token_data = self.driver.issue_token(
-            user_id, method_names, expires_at=expires_at,
-            system=system, project_id=project_id,
-            domain_id=domain_id, auth_context=auth_context, trust=trust,
-            app_cred_id=app_cred_id, include_catalog=include_catalog,
-            parent_audit_id=parent_audit_id)
 
+        # NOTE(lbragstad): Check if the token provider being used actually
+        # supports bind authentication methods before proceeding.
+        if auth_context and auth_context.get('bind'):
+            if not self.driver._supports_bind_authentication:
+                raise exception.NotImplemented(_(
+                    'The configured token provider does not support bind '
+                    'authentication.'))
+
+        # NOTE(lbragstad): Grab a blank token object and use composition to
+        # build the token according to the authentication and authorization
+        # context. This cuts down on the amount of logic we have to stuff into
+        # the TokenModel's __init__() method.
+        token = token_model.TokenModel()
+        token.methods = method_names
+        token.auth_context = auth_context
+        token.system = system
+        token.domain_id = domain_id
+        token.project_id = project_id
+        token.trust_id = trust_id
+        token.application_credential_id = app_cred_id
+        token.audit_id = random_urlsafe_str()
+        token.parent_audit_id = parent_audit_id
+
+        if token.auth_context:
+            token.access_token_id = token.auth_context.get('access_token_id')
+        else:
+            token.access_token_id = None
+
+        if token.is_federated:
+            token.user_id = token.auth_context.get('user_id')
+        else:
+            token.user_id = user_id
+
+        token.user_domain_id = token.user['domain_id']
+
+        if isinstance(expires_at, datetime.datetime):
+            token.expires_at = utils.isotime(expires_at, subsecond=True)
+        elif not expires_at:
+            token.expires_at = utils.isotime(
+                default_expire_time(), subsecond=True
+            )
+
+        # NOTE(lbragstad): Pass the token model to the token provider and
+        # expect back a ID and an issued at time. Then "mint" the token, which
+        # sets the ID and issued_at time on the token model.
+        token_id, issued_at = self.driver.mint(token)
+        token.mint(token_id, issued_at)
+
+        # cache the token object and with ID
         if CONF.token.cache_on_issue:
+            pass
             # NOTE(amakarov): here and above TOKENS_REGION is to be passed
             # to serve as required positional "self" argument. It's ignored,
             # so I've put it here for convenience - any placeholder is fine.
-            self._validate_token.set(token_data, TOKENS_REGION, token_id)
+            # self._validate_token.set(token, TOKENS_REGION, token.id)
 
-        return token_id, token_data
+        return token
 
     def invalidate_individual_token_cache(self, token_id):
         # NOTE(morganfainberg): invalidate takes the exact same arguments as
