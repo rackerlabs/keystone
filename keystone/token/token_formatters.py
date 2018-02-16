@@ -195,6 +195,13 @@ class TokenFormatter(object):
                 'This is not a recognized Fernet payload version: %s') %
                 version)
 
+        # FIXME(lbragstad): Without this, certain token validation tests fail
+        # when running with python 3. Once we get further along in this
+        # refactor, we should be better about handling string encoding/types at
+        # the edges of the application.
+        if isinstance(system, bytes):
+            system = system.decode('utf-8')
+
         # rather than appearing in the payload, the creation time is encoded
         # into the token format itself
         issued_at = TokenFormatter.creation_time(token)
