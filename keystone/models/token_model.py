@@ -15,10 +15,12 @@
 import itertools
 
 from oslo_log import log
+from oslo_serialization import msgpackutils
 from oslo_utils import reflection
 from oslo_utils import timeutils
 import six
 
+from keystone.common import cache
 from keystone.common import provider_api
 import keystone.conf
 from keystone import exception
@@ -32,6 +34,9 @@ PROVIDERS = provider_api.ProviderAPIs
 # supported token versions
 V3 = 'v3.0'
 VERSIONS = frozenset([V3])
+CONF = keystone.conf.CONF
+LOG = log.getLogger(__name__)
+PROVIDERS = provider_api.ProviderAPIs
 
 
 def _parse_and_normalize_time(time_data):
@@ -779,3 +784,31 @@ class TokenModel(object):
 
         self.id = token_id
         self.issued_at = issued_at
+
+
+class _TokenModelHandler(object):
+    identity = 126
+    handles = (TokenModel,)
+
+    def __init__(self, registry):
+        self._registry = registry
+
+    def serialize(self, obj):
+        serialized = msgpackutils.dumps(obj.__dict__, registry=self._registry)
+        return serialized
+
+    def deserialize(self, data):
+        token_data = msgpackutils.loads(data, registry=self._registry)
+        try:
+            token_model = TokenModel()
+            for k, v in token_data.iteritems():
+                setattr(token_model, k, v)
+        except Exception:
+            LOG.debug(
+                "Failed to deserialize TokenModel. Data is %s", token_data
+            )
+            raise
+        return token_model
+
+
+cache.register_model_handler(_TokenModelHandler)

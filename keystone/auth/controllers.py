@@ -121,6 +121,7 @@ class Auth(controller.V3Controller):
             (domain_id, project_id, trust, unscoped, system) = (
                 auth_info.get_scope()
             )
+            trust_id = trust.get('id') if trust else None
 
             # NOTE(notmorgan): only methods that actually run and succeed will
             # be in the auth_context['method_names'] list. Do not blindly take
@@ -144,21 +145,21 @@ class Auth(controller.V3Controller):
             expires_at = auth_context.get('expires_at')
             token_audit_id = auth_context.get('audit_id')
 
-            is_domain = auth_context.get('is_domain')
-            (token_id, token_data) = PROVIDERS.token_provider_api.issue_token(
+            token = PROVIDERS.token_provider_api.issue_token(
                 auth_context['user_id'], method_names, expires_at=expires_at,
-                system=system, project_id=project_id,
-                is_domain=is_domain, domain_id=domain_id,
-                auth_context=auth_context, trust=trust,
-                app_cred_id=app_cred_id, include_catalog=include_catalog,
-                parent_audit_id=token_audit_id)
+                system=system, project_id=project_id, domain_id=domain_id,
+                auth_context=auth_context, trust_id=trust_id,
+                app_cred_id=app_cred_id, parent_audit_id=token_audit_id)
+            token_reference = controller.render_token_response_from_model(
+                token, include_catalog=include_catalog
+            )
 
             # NOTE(wanghong): We consume a trust use only when we are using
             # trusts and have successfully issued a token.
             if trust:
-                PROVIDERS.trust_api.consume_use(trust['id'])
+                PROVIDERS.trust_api.consume_use(token.trust_id)
 
-            return render_token_data_response(token_id, token_data,
+            return render_token_data_response(token.id, token_reference,
                                               created=True)
         except exception.TrustNotFound as e:
             LOG.warning(six.text_type(e))
