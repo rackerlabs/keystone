@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_8872dfac",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-16T21:41:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa0c359_7975f2f9",
+      "range": {
+        "startLine": 20,
+        "startChar": 36,
+        "endLine": 20,
+        "endChar": 43
+      },
+      "revId": "d49b24e469726c0934c39d400590cc9f146883d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_8f5f500d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2018-02-16T15:16:38Z",
       "side": 1,
       "message": "nit - removed",
+      "range": {
+        "startLine": 292,
+        "startChar": 71,
+        "endLine": 292,
+        "endChar": 77
+      },
+      "revId": "d49b24e469726c0934c39d400590cc9f146883d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_4864d7e5",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-16T21:41:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa0c359_8f5f500d",
       "range": {
         "startLine": 292,
         "startChar": 71,
