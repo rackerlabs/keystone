@@ -85,8 +85,12 @@ def convert_integer_to_method_list(method_int):
         # confirmed and the method_int and continue the process. In the end, we
         # should have a list of integers that correspond to indexes in our
         # method_map and we can reinflate the methods that the original
-        # method_int represents.
-        if (method_int / m_int) == 1:
+        # method_int represents. Python 3 doesn't round like python 2 does.
+        # Taking 5 / 4 = 1 in python 2, but it equals 1.25 in python 3. Since
+        # this logic expects to deal with integers, make sure we cast the
+        # result to an int.
+        result = int(method_int / m_int)
+        if result == 1:
             confirmed_methods.append(m_int)
             method_int = method_int - m_int
 
