@@ -113,8 +113,10 @@ function configure_federation {
         restart_service "devstack@keystone"
     fi
 
-    # Register the service provider
-    upload_sp_metadata
+    # Only upload the metadata to testshib.org if we're using testshib as idp
+    if [[ "$IDP_ID" == "testshib" ]]; then
+        upload_sp_metadata
+    fi
 }
 
 function register_federation {
