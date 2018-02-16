@@ -15,10 +15,12 @@
 import itertools
 
 from oslo_log import log
+from oslo_serialization import msgpackutils
 from oslo_utils import reflection
 from oslo_utils import timeutils
 import six
 
+from keystone.common import cache
 from keystone.common import provider_api
 import keystone.conf
 from keystone import exception
@@ -317,8 +319,8 @@ class TokenModel(object):
         self.audit_id = None
         self.parent_audit_id = None
 
-        self.expires_at = None
-        self.issued_at = None
+        self.__expires_at = None
+        self.__issued_at = None
 
         self.system = None
 
@@ -351,7 +353,8 @@ class TokenModel(object):
         """Return string representation of TokenModel."""
         desc = ('<%(type)s (audit_id=%(audit_id)s, '
                 'audit_chain_id=%(audit_ids)s) at %(loc)s>')
-        return desc % {'type': self.__class.__name__,
+        self_cls_name = reflection.get_class_name(self, fully_qualified=False)
+        return desc % {'type': self_cls_name,
                        'audit_id': self.audit_id,
                        'audit_ids': self.audit_ids,
                        'loc': hex(id(self))}
@@ -361,6 +364,26 @@ class TokenModel(object):
         if self.parent_audit_id:
             return [self.audit_id, self.parent_audit_id]
         return [self.audit_id]
+
+    @property
+    def expires_at(self):
+        return self.__expires_at
+
+    @expires_at.setter
+    def expires_at(self, value):
+        if not isinstance(value, six.string_types):
+            raise ValueError('expires_at must be a string.')
+        self.__expires_at = value
+
+    @property
+    def issued_at(self):
+        return self.__issued_at
+
+    @issued_at.setter
+    def issued_at(self, value):
+        if not isinstance(value, six.string_types):
+            raise ValueError('issued_at must be a string.')
+        self.__issued_at = value
 
     @property
     def unscoped(self):
@@ -435,6 +458,10 @@ class TokenModel(object):
                     )
                 )
         return self.__application_credential
+
+    @property
+    def oauth_scoped(self):
+        return self.access_token_id is not None
 
     @property
     def access_token(self):
@@ -660,7 +687,7 @@ class TokenModel(object):
             roles = self._get_system_roles()
         elif self.trust_scoped:
             roles = self._get_trust_roles()
-        elif self.is_federated:
+        elif self.is_federated and not self.unscoped:
             roles = self._get_federated_roles()
         elif self.domain_scoped:
             roles = self._get_domain_roles()
@@ -707,6 +734,12 @@ class TokenModel(object):
                 )
             except AssertionError:
                 raise exception.Forbidden(_('Trustor is disabled.'))
+
+        if not self.user_domain.get('enabled'):
+            msg = _('Unable to validate token because domain %(id)s is '
+                    'disabled') % {'id': self.user_domain['id']}
+            LOG.warning(msg)
+            raise exception.DomainNotFound(msg)
 
     def _validate_system_scope(self):
         if self.system_scoped and not self.roles:
@@ -779,3 +812,31 @@ class TokenModel(object):
 
         self.id = token_id
         self.issued_at = issued_at
+
+
+class _TokenModelHandler(object):
+    identity = 126
+    handles = (TokenModel,)
+
+    def __init__(self, registry):
+        self._registry = registry
+
+    def serialize(self, obj):
+        serialized = msgpackutils.dumps(obj.__dict__, registry=self._registry)
+        return serialized
+
+    def deserialize(self, data):
+        token_data = msgpackutils.loads(data, registry=self._registry)
+        try:
+            token_model = TokenModel()
+            for k, v in iter(token_data.items()):
+                setattr(token_model, k, v)
+        except Exception:
+            LOG.debug(
+                "Failed to deserialize TokenModel. Data is %s", token_data
+            )
+            raise
+        return token_model
+
+
+cache.register_model_handler(_TokenModelHandler)

@@ -57,17 +57,17 @@ JSON_ENCODE_CONTENT_TYPES = set(['application/json',
                                  'application/json-home'])
 
 
-def validate_token_bind(context, token_ref):
+def validate_token_bind(context, token):
     bind_mode = CONF.token.enforce_token_bind
 
     if bind_mode == 'disabled':
         return
 
-    if not isinstance(token_ref, token_model.KeystoneToken):
+    if not isinstance(token, token_model.TokenModel):
         raise exception.UnexpectedError(_('token reference must be a '
-                                          'KeystoneToken type, got: %s') %
-                                        type(token_ref))
-    bind = token_ref.bind
+                                          'TokenModel type, got: %s') %
+                                        type(token))
+    bind = token.bind
 
     # permissive and strict modes don't require there to be a bind
     permissive = bind_mode in ('permissive', 'strict')
