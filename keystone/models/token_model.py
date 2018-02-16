@@ -22,12 +22,10 @@ import six
 
 from keystone.common import cache
 from keystone.common import provider_api
-import keystone.conf
 from keystone import exception
 from keystone.federation import constants
 from keystone.i18n import _
 
-CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
 PROVIDERS = provider_api.ProviderAPIs
 
@@ -713,7 +711,7 @@ class TokenModel(object):
             raise exception.DomainNotFound(msg)
 
     def _validate_token_user(self):
-        if CONF.trust.enabled and self.trust_scoped:
+        if self.trust_scoped:
             if self.user_id != self.trustee['id']:
                 raise exception.Forbidden(_('User is not a trustee.'))
             try:
@@ -768,7 +766,7 @@ class TokenModel(object):
 
     def _validate_trust_scope(self):
         trust_roles = []
-        if CONF.trust.enabled and self.trust_id:
+        if self.trust_id:
             refs = [{'role_id': role['id']} for role in self.trust['roles']]
             effective_trust_roles = PROVIDERS.assignment_api.add_implied_roles(
                 refs
