@@ -158,25 +158,138 @@ class Manager(manager.Manager):
         else:
             raise exception.TokenNotFound(_('Failed to validate token'))
 
+    def _validate_token_resources(self, token):
+        if token.project and not token.project.get('enabled'):
+            msg = _('Unable to validate token because project %(id)s is '
+                    'disabled') % {'id': token.project_id}
+            LOG.warning(msg)
+            raise exception.ProjectNotFound(msg)
+        if token.project and not token.project_domain.get('enabled'):
+            msg = _('Unable to validate token because domain %(id)s is '
+                    'disabled') % {'id': token.project_domain['id']}
+            LOG.warning(msg)
+            raise exception.DomainNotFound(msg)
+
+    def _validate_token_user(self, token):
+        if CONF.trust.enabled and token.trust_scoped:
+            if token.user_id != token.trustee['id']:
+                raise exception.Forbidden(_('User is not a trustee.'))
+            try:
+                PROVIDERS.resource_api.assert_domain_enabled(
+                    token.trustor['domain_id']
+                )
+            except AssertionError:
+                raise exception.TokenNotFound(_('Trustor domain is disabled.'))
+            try:
+                PROVIDERS.resource_api.assert_domain_enabled(
+                    token.trustee['domain_id']
+                )
+            except AssertionError:
+                raise exception.TokenNotFound(_('Trustee domain is disabled.'))
+
+            try:
+                PROVIDERS.identity_api.assert_user_enabled(
+                    token.trustor['id']
+                )
+            except AssertionError:
+                raise exception.Forbidden(_('Trustor is disabled.'))
+
+    def _validate_system_scope(self, token):
+        if token.system_scoped and not token.roles:
+            msg = _(
+                'User %(user_id)s has no access to the system'
+            ) % {'user_id': token.user_id}
+            LOG.debug(msg)
+            raise exception.Unauthorized(msg)
+
+    def _validate_domain_scope(self, token):
+        if token.domain_scoped and not token.roles:
+            msg = _(
+                'User %(user_id)s has no access to domain %(domain_id)s'
+            ) % {'user_id': token.user_id, 'domain_id': token.domain_id}
+            LOG.debug(msg)
+            raise exception.Unauthorized(msg)
+
+    def _validate_project_scope(self, token):
+        if token.project_scoped and not token.roles:
+            msg = _(
+                'User %(user_id)s has no access to project %(project_id)s'
+            ) % {'user_id': token.user_id, 'project_id': token.project_id}
+            LOG.debug(msg)
+            raise exception.Unauthorized(msg)
+
+    def _validate_trust_scope(self, token):
+        trust_roles = []
+        if CONF.trust.enabled and token.trust_id:
+            refs = [{'role_id': role['id']} for role in token.trust['roles']]
+            effective_trust_roles = PROVIDERS.assignment_api.add_implied_roles(
+                refs
+            )
+            assignments = PROVIDERS.assignment_api.list_role_assignments(
+                user_id=token.trustor['id'], system=token.system,
+                project_id=token.project_id, effective=True,
+                strip_domain_roles=False
+            )
+            current_effective_trustor_roles = (
+                list(set([x['role_id'] for x in assignments])))
+            # Go through each of the effective trust roles, making sure the
+            # trustor still has them, if any have been removed, then we
+            # will treat the trust as invalid
+            for trust_role in effective_trust_roles:
+                match_roles = [x for x in current_effective_trustor_roles
+                               if x == trust_role['role_id']]
+                if match_roles:
+                    role = PROVIDERS.role_api.get_role(match_roles[0])
+                    if role['domain_id'] is None:
+                        trust_roles.append(role)
+                else:
+                    raise exception.Forbidden(
+                        _('Trustee has no delegated roles.'))
+
     def issue_token(self, user_id, method_names, expires_at=None,
                     system=None, project_id=None, is_domain=False,
-                    domain_id=None, auth_context=None, trust=None,
+                    domain_id=None, auth_context=None, trust_id=None,
                     app_cred_id=None, include_catalog=True,
                     parent_audit_id=None):
-        token_id, token_data = self.driver.issue_token(
-            user_id, method_names, expires_at=expires_at,
-            system=system, project_id=project_id,
-            domain_id=domain_id, auth_context=auth_context, trust=trust,
-            app_cred_id=app_cred_id, include_catalog=include_catalog,
-            parent_audit_id=parent_audit_id)
 
+        # NOTE(lbragstad): Check if the token provider being used actually
+        # supports bind authentication methods before proceeding.
+        if auth_context and auth_context.get('bind'):
+            if not self.driver._supports_bind_authentication:
+                raise exception.NotImplemented(_(
+                    'The configured token provider does not support bind '
+                    'authentication.'))
+
+        # take the arguments passed in and generate a token object
+        token = token_model.TokenModel(
+            user_id, method_names, expires_at=expires_at, system=system,
+            project_id=project_id, domain_id=domain_id,
+            auth_context=auth_context, trust_id=trust_id,
+            app_cred_id=app_cred_id, parent_audit_id=parent_audit_id
+        )
+
+        # perform validation of token attributes
+        self._validate_token_resources(token)
+        self._validate_token_user(token)
+        self._validate_system_scope(token)
+        self._validate_domain_scope(token)
+        self._validate_project_scope(token)
+        self._validate_trust_scope(token)
+
+        # pass the object to the token provider, generate an ID, and set the
+        # ID on the token model
+        self.driver.generate_token_id(token)
+
+        # cache the token object and with ID
         if CONF.token.cache_on_issue:
+            pass
             # NOTE(amakarov): here and above TOKENS_REGION is to be passed
             # to serve as required positional "self" argument. It's ignored,
             # so I've put it here for convenience - any placeholder is fine.
-            self._validate_token.set(token_data, TOKENS_REGION, token_id)
+            # self._validate_token.set(token, TOKENS_REGION, token.id)
 
-        return token_id, token_data
+        # pass token model back to controller
+        return token
 
     def invalidate_individual_token_cache(self, token_id):
         # NOTE(morganfainberg): invalidate takes the exact same arguments as

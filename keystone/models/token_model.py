@@ -12,10 +12,18 @@
 
 """Unified in-memory token model."""
 
+import base64
+import datetime
+import itertools
+import uuid
+
 from oslo_utils import reflection
 from oslo_utils import timeutils
 import six
 
+from keystone.common import provider_api
+from keystone.common import utils
+import keystone.conf
 from keystone import exception
 from keystone.federation import constants
 from keystone.i18n import _
@@ -23,6 +31,31 @@ from keystone.i18n import _
 # supported token versions
 V3 = 'v3.0'
 VERSIONS = frozenset([V3])
+CONF = keystone.conf.CONF
+PROVIDERS = provider_api.ProviderAPIs
+
+
+def default_expire_time():
+    """Determine when a fresh token should expire.
+
+    Expiration time varies based on configuration (see ``[token] expiration``).
+
+    :returns: a naive UTC datetime.datetime object
+
+    """
+    expire_delta = datetime.timedelta(seconds=CONF.token.expiration)
+    expires_at = timeutils.utcnow() + expire_delta
+    return expires_at.replace(microsecond=0)
+
+
+def random_urlsafe_str():
+    """Generate a random URL-safe string.
+
+    :rtype: six.text_type
+
+    """
+    # chop the padding (==) off the end of the encoding to save space
+    return base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2].decode('utf-8')
 
 
 def _parse_and_normalize_time(time_data):
@@ -289,3 +322,388 @@ class KeystoneToken(dict):
     @property
     def methods(self):
         return self.get('methods', [])
+
+
+class TokenModel(object):
+
+    def __init__(self, user_id, methods, expires_at=None, system=None,
+                 domain_id=None, project_id=None, auth_context=None,
+                 trust_id=None, app_cred_id=None, parent_audit_id=None):
+        self.methods = methods
+        self.auth_context = auth_context
+        self.issued_at = None
+        self.system = system
+
+        self.domain_id = domain_id
+        self.domain = self.domain_id
+
+        self.project_id = project_id
+        self.project = self.project_id
+
+        self.trust_id = trust_id
+        self.trust = self.trust_id
+
+        if self.trust_id:
+            self.trustor = self.trust['trustor_user_id']
+            self.trustee = self.trust['trustee_user_id']
+            self.trust_project = self.trust['project_id']
+            self.trust_project_domain = self.trust_project['domain_id']
+
+        self.application_credential_id = app_cred_id
+        self.application_credential = self.application_credential_id
+        self.audit_id = random_urlsafe_str()
+        self.parent_audit_id = parent_audit_id
+
+        self.access_token_id = None
+        self.access_token = None
+        if self.auth_context:
+            self.access_token_id = self.auth_context.get('access_token_id')
+            self.access_token = self.access_token_id
+
+        if self.is_federated:
+            self.user_id = self.auth_context['user_id']
+        else:
+            self.user_id = user_id
+        self.user = self.user_id
+        if self.user.get('domain_id'):
+            self.user_domain = self.user['domain_id']
+
+        if isinstance(expires_at, datetime.datetime):
+            self.expires_at = utils.isotime(expires_at, subsecond=True)
+        elif not expires_at:
+            self.expires_at = utils.isotime(
+                default_expire_time(), subsecond=True
+            )
+
+    def __repr__(self):
+        """Return string representation of KeystoneToken."""
+        desc = ('<%(type)s (audit_id=%(audit_id)s, '
+                'audit_chain_id=%(audit_ids)s) at %(loc)s>')
+        self_cls_name = reflection.get_class_name(self, fully_qualified=False)
+        return desc % {'type': self_cls_name,
+                       'audit_id': self.audit_id,
+                       'audit_ids': self.audit_ids,
+                       'loc': hex(id(self))}
+
+    @property
+    def audit_ids(self):
+        if self.parent_audit_id:
+            return [self.audit_id, self.parent_audit_id]
+        return [self.audit_id]
+
+    @property
+    def unscoped(self):
+        return not any(
+            [self.system_scoped, self.domain_scoped, self.project_scoped,
+             self.trust_scoped]
+        )
+
+    @property
+    def system_scoped(self):
+        return self.system is not None
+
+    @property
+    def domain(self):
+        return self.__domain
+
+    @domain.setter
+    def domain(self, value):
+        if value:
+            self.__domain = PROVIDERS.resource_api.get_domain(value)
+        else:
+            self.__domain = None
+
+    @property
+    def domain_scoped(self):
+        return self.domain_id is not None
+
+    @property
+    def project(self):
+        return self.__project
+
+    @project.setter
+    def project(self, value):
+        if value:
+            self.__project = PROVIDERS.resource_api.get_project(value)
+        else:
+            self.__project = None
+
+    @property
+    def project_scoped(self):
+        return self.project_id is not None
+
+    @property
+    def project_domain(self):
+        if self.project and self.project.get('domain_id'):
+            return PROVIDERS.resource_api.get_domain(self.project['domain_id'])
+
+    @property
+    def application_credential(self):
+        return self.__application_credential
+
+    @application_credential.setter
+    def application_credential(self, value):
+        if value:
+            app_cred_api = PROVIDERS.application_credential_api
+            self.__application_credential = (
+                app_cred_api.get_application_credential(value)
+            )
+        else:
+            self.__application_credential = None
+
+    @property
+    def access_token(self):
+        return self.__access_token
+
+    @access_token.setter
+    def access_token(self, value):
+        if value:
+            self.__access_token = PROVIDERS.oauth_api.get_access_token(value)
+        else:
+            self.__access_token = None
+
+    @property
+    def trust(self):
+        return self.__trust
+
+    @trust.setter
+    def trust(self, value):
+        if value:
+            self.__trust = PROVIDERS.trust_api.get_trust(value)
+        else:
+            self.__trust = None
+
+    @property
+    def trust_scoped(self):
+        return self.trust_id is not None
+
+    @property
+    def trustor(self):
+        return self.__trustor
+
+    @trustor.setter
+    def trustor(self, value):
+        if value:
+            self.__trustor = PROVIDERS.identity_api.get_user(value)
+        else:
+            self.trustor = None
+
+    @property
+    def trustee(self):
+        return self.__trustee
+
+    @trustee.setter
+    def trustee(self, value):
+        if value:
+            self.__trustee = PROVIDERS.identity_api.get_user(value)
+        else:
+            self.__trustee = None
+
+    @property
+    def trust_project(self):
+        return self.__trust_project
+
+    @trust_project.setter
+    def trust_project(self, value):
+        if value:
+            self.__trust_project = PROVIDERS.resource_api.get_project(value)
+        else:
+            self.__trust_project = None
+
+    @property
+    def trust_project_domain(self):
+        return self.__trust_project_domain
+
+    @trust_project_domain.setter
+    def trust_project_domain(self, value):
+        if value:
+            self.__trust_project_domain = PROVIDERS.resource_api.get_domain(
+                value
+            )
+        else:
+            self.__trust_project_domain = None
+
+    @property
+    def user(self):
+        return self.__user
+
+    @user.setter
+    def user(self, value):
+        if value:
+            self.__user = PROVIDERS.identity_api.get_user(value)
+        else:
+            self.__user = None
+
+    @property
+    def user_domain(self):
+        return self.__user_domain
+
+    @user_domain.setter
+    def user_domain(self, value):
+        if value:
+            self.__user_domain = PROVIDERS.resource_api.get_domain(value)
+        else:
+            self.__user_domain = None
+
+    @property
+    def groups(self):
+        if self.is_federated:
+            return [{'id': group} for group in self.auth_context['group_ids']]
+        else:
+            return PROVIDERS.identity_api.list_groups_for_user(self.user_id)
+
+    @property
+    def identity_provider_id(self):
+        if self.is_federated:
+            return self.auth_context[constants.IDENTITY_PROVIDER]
+
+    @property
+    def protocol_id(self):
+        if self.is_federated:
+            return self.auth_context[constants.PROTOCOL]
+
+    @property
+    def is_federated(self):
+        if self.auth_context:
+            return (constants.IDENTITY_PROVIDER in self.auth_context and
+                    constants.PROTOCOL in self.auth_context)
+
+    @property
+    def roles(self):
+        roles = []
+        if self.system_scoped:
+            groups = PROVIDERS.identity_api.list_groups_for_user(self.user_id)
+            all_group_roles = []
+            for group in groups:
+                group_roles = (
+                    PROVIDERS.assignment_api.list_system_grants_for_group(
+                        group['id']
+                    )
+                )
+                for role in group_roles:
+                    all_group_roles.append(role)
+            user_roles = PROVIDERS.assignment_api.list_system_grants_for_user(
+                self.user_id
+            )
+            for role in itertools.chain(all_group_roles, user_roles):
+                roles.append({'id': role['id'], 'name': role['name']})
+        elif self.trust_scoped:
+            # If redelegated_trust_id is set, then we must traverse the
+            # trust_chain in order to determine who the original trustor is. We
+            # need to do this because the user ID of the original trustor helps
+            # us determine scope in the redelegated context.
+            if self.trust.get('redelegated_trust_id'):
+                trust_chain = PROVIDERS.trust_api.get_trust_pedigree(
+                    self.trust_id
+                )
+                original_trustor_id = trust_chain[-1]['trustor_user_id']
+            else:
+                original_trustor_id = self.trustor['id']
+
+            trust_roles = [
+                {'role_id': role['id']} for role in self.trust['roles']
+            ]
+            effective_trust_roles = (
+                PROVIDERS.assignment_api.add_implied_roles(trust_roles)
+            )
+
+            trustor_assignments = (
+                PROVIDERS.assignment_api.list_role_assignments(
+                    user_id=original_trustor_id,
+                    project_id=self.trust.get('project_id'),
+                    effective=True, strip_domain_roles=False
+                )
+            )
+            current_effective_trustor_roles = (
+                list(set([x['role_id'] for x in trustor_assignments]))
+            )
+
+            for role in effective_trust_roles:
+                match_roles = [x for x in current_effective_trustor_roles
+                               if x == role['role_id']]
+                if match_roles:
+                    role = PROVIDERS.role_api.get_role(match_roles[0])
+                    if role['domain_id'] is None:
+                        roles.append(role)
+                else:
+                    raise exception.Forbidden(
+                        _('Trustee has no delegated roles.'))
+        elif self.is_federated:
+            federated_roles = PROVIDERS.assignment_api.get_roles_for_groups(
+                self.auth_context['group_ids'], self.project_id, self.domain_id
+            )
+            for group_id in self.auth_context['group_ids']:
+                group_roles = (
+                    PROVIDERS.assignment_api.list_system_grants_for_group(
+                        group_id
+                    )
+                )
+                for role in group_roles:
+                    federated_roles.append(role)
+            user_roles = PROVIDERS.assignment_api.list_system_grants_for_user(
+                self.user_id
+            )
+            for role in user_roles:
+                federated_roles.append(role)
+            if self.domain_id:
+                domain_roles = (
+                    PROVIDERS.assignment_api.get_roles_for_user_and_domain(
+                        self.user_id, self.domain_id
+                    )
+                )
+                for role in domain_roles:
+                    federated_roles.append(role)
+            if self.project_id:
+                project_roles = (
+                    PROVIDERS.assignment_api.get_roles_for_user_and_project(
+                        self.user_id, self.project_id
+                    )
+                )
+                for role in project_roles:
+                    federated_roles.append(role)
+            # NOTE(lbragstad): Remove duplicate role references from a list of
+            # roles. It is often suggested that this be done with:
+            #
+            # roles = [dict(t) for t in set([tuple(d.items()) for d in roles])]
+            #
+            # But that doesn't actually remove duplicates in all cases and
+            # causes transient failures because dictionaries are unordered
+            # objects. This means {'id': 1, 'foo': 'bar'} and {'foo': 'bar',
+            # 'id': 1} won't actually resolve to a single entity in the above
+            # logic since they are both considered unique. By using `in` we're
+            # performing a containment check, which also does a deep comparison
+            # of the objects, which is what we want.
+            for role in federated_roles:
+                if not isinstance(role, dict):
+                    role = PROVIDERS.role_api.get_role(role)
+                if role not in roles:
+                    roles.append(role)
+        elif self.domain_scoped:
+            domain_roles = (
+                PROVIDERS.assignment_api.get_roles_for_user_and_domain(
+                    self.user_id, self.domain_id
+                )
+            )
+            for role_id in domain_roles:
+                role = PROVIDERS.role_api.get_role(role_id)
+                roles.append({'id': role['id'], 'name': role['name']})
+        elif self.project_scoped:
+            project_roles = (
+                PROVIDERS.assignment_api.get_roles_for_user_and_project(
+                    self.user_id, self.project_id
+                )
+            )
+            for role_id in project_roles:
+                r = PROVIDERS.role_api.get_role(role_id)
+                roles.append({'id': r['id'], 'name': r['name']})
+        elif self.application_credential_id:
+            app_cred_roles = self.application_credential['roles']
+            for role in app_cred_roles:
+                try:
+                    r = PROVIDERS.assignment_api.get_grant(
+                        role['id'], user_id=self.user_id,
+                        domain_id=self.domain_id, project_id=self.project_id)
+                    roles.append({'id': r['id'], 'name': r['name']})
+                except exception.RoleAssignmentNotFound:
+                    pass
+        return roles
