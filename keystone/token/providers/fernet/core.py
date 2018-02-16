@@ -69,30 +69,6 @@ class Provider(common.BaseProvider):
             token_data['token']['issued_at'] = ks_utils.isotime(
                 at=fernet_creation_datetime_obj, subsecond=True)
 
-    def _build_federated_info(self, token_data):
-        """Extract everything needed for federated tokens.
-
-        This dictionary is passed to federated token formatters, which unpack
-        the values and build federated Fernet tokens.
-
-        """
-        token_data = token_data['token']
-        try:
-            user = token_data['user']
-            federation = user[federation_constants.FEDERATION]
-            idp_id = federation['identity_provider']['id']
-            protocol_id = federation['protocol']['id']
-        except KeyError:
-            # The token data doesn't have federated info, so we aren't dealing
-            # with a federated token and no federated info to build.
-            return
-
-        group_ids = federation.get('groups')
-
-        return {'group_ids': group_ids,
-                'idp_id': idp_id,
-                'protocol_id': protocol_id}
-
     def _rebuild_federated_info(self, federated_dict, user_id):
         """Format federated information into the token reference.
 
@@ -147,37 +123,36 @@ class Provider(common.BaseProvider):
         self.v3_token_data_helper.populate_roles_for_federated_user(
             token_dict, group_ids, project_id, domain_id, user_id)
 
-    def _get_token_id(self, token_data):
-        """Generate the token_id based upon the data in token_data.
-
-        :param token_data: token information
-        :type token_data: dict
-        :rtype: six.text_type
-
-        """
-        user_id = token_data['token']['user']['id']
-        expires_at = token_data['token']['expires_at']
-        audit_ids = token_data['token']['audit_ids']
-        methods = token_data['token'].get('methods')
-        system = token_data['token'].get('system', {}).get('all', None)
-        domain_id = token_data['token'].get('domain', {}).get('id')
-        project_id = token_data['token'].get('project', {}).get('id')
-        trust_id = token_data['token'].get('OS-TRUST:trust', {}).get('id')
-        access_token_id = token_data['token'].get('OS-OAUTH1', {}).get(
-            'access_token_id')
-        federated_info = self._build_federated_info(token_data)
-
-        return self.token_formatter.create_token(
-            user_id,
-            expires_at,
-            audit_ids,
-            methods=methods,
-            system=system,
-            domain_id=domain_id,
-            project_id=project_id,
-            trust_id=trust_id,
+    def generate_token_id(self, token):
+        # FIXME(lbragstad): The only reason why we pass a dictionary here is
+        # becuase token creation was dependent on using attributes from the
+        # token reference. Now that we have a token model, we can ask the
+        # object about it's properties and whatnot instead of different parts
+        # of keystone expecting a specific data structure like this one. The
+        # end result should be more readable and understandable because it
+        # reads like business logic.
+        federated_info = None
+        if token.is_federated:
+            federated_info = {
+                'group_ids': token.groups,
+                'idp_id': token.identity_provider['id'],
+                'protocol_id': token.protocol['id']
+            }
+        token.id = self.token_formatter.create_token(
+            token.user_id,
+            token.expires_at,
+            token.audit_ids,
+            methods=token.methods,
+            system=token.system,
+            domain_id=token.domain_id,
+            project_id=token.project_id,
+            trust_id=token.trust_id,
             federated_info=federated_info,
-            access_token_id=access_token_id
+            access_token_id=token.access_token_id
+        )
+        creation_datetime_obj = self.token_formatter.creation_time(token.id)
+        token.issued_at = ks_utils.isotime(
+            at=creation_datetime_obj, subsecond=True
         )
 
     @property
