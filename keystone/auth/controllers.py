@@ -121,6 +121,7 @@ class Auth(controller.V3Controller):
             (domain_id, project_id, trust, unscoped, system) = (
                 auth_info.get_scope()
             )
+            trust_id = trust.get('id') if trust else None
 
             # NOTE(notmorgan): only methods that actually run and succeed will
             # be in the auth_context['method_names'] list. Do not blindly take
@@ -145,20 +146,125 @@ class Auth(controller.V3Controller):
             token_audit_id = auth_context.get('audit_id')
 
             is_domain = auth_context.get('is_domain')
-            (token_id, token_data) = PROVIDERS.token_provider_api.issue_token(
+            token = PROVIDERS.token_provider_api.issue_token(
                 auth_context['user_id'], method_names, expires_at=expires_at,
                 system=system, project_id=project_id,
                 is_domain=is_domain, domain_id=domain_id,
-                auth_context=auth_context, trust=trust,
-                app_cred_id=app_cred_id, include_catalog=include_catalog,
-                parent_audit_id=token_audit_id)
+                auth_context=auth_context, trust_id=trust_id,
+                app_cred_id=app_cred_id, parent_audit_id=token_audit_id)
 
+            token_reference = {
+                'token': {
+                    'methods': token.methods,
+                    'user': {
+                        'domain': {
+                            'id': token.user_domain['id'],
+                            'name': token.user_domain['name']
+                        },
+                        'id': token.user_id,
+                        'name': token.user['name'],
+                        'password_expires_at': token.user[
+                            'password_expires_at'
+                        ]
+                    },
+                    'audit_ids': token.audit_ids,
+                    'expires_at': token.expires_at,
+                    'issued_at': token.issued_at,
+                }
+            }
+            if token.system_scoped:
+                token_reference['token']['roles'] = token.roles
+                token_reference['token']['system'] = {'all': True}
+            elif token.domain_scoped:
+                token_reference['token']['domain'] = {
+                    'id': token.domain['id'],
+                    'name': token.domain['name']
+                }
+                token_reference['token']['roles'] = token.roles
+            elif token.trust_scoped:
+                token_reference['token']['OS-TRUST:trust'] = {
+                    'id': token.trust_id,
+                    'trustor_user': {'id': token.trustor['id']},
+                    'trustee_user': {'id': token.trustee['id']},
+                    'impersonation': token.trust['impersonation']
+                }
+                token_reference['token']['project'] = {
+                    'domain': {
+                        'id': token.project_domain['id'],
+                        'name': token.project_domain['name']
+                    },
+                    'id': token.trust_project['id'],
+                    'name': token.trust_project['name']
+                }
+                if token.trust.get('impersonation'):
+                    trustor_domain = PROVIDERS.resource_api.get_domain(
+                        token.trustor['domain_id']
+                    )
+                    token_reference['token']['user'] = {
+                        'domain': {
+                            'id': trustor_domain['id'],
+                            'name': trustor_domain['name']
+                        },
+                        'id': token.trustor['id'],
+                        'name': token.trustor['name'],
+                        'password_expires_at': token.trustor[
+                            'password_expires_at'
+                        ]
+                    }
+                token_reference['token']['roles'] = token.roles
+            elif token.project_scoped:
+                token_reference['token']['project'] = {
+                    'domain': {
+                        'id': token.project_domain['id'],
+                        'name': token.project_domain['name']
+                    },
+                    'id': token.project['id'],
+                    'name': token.project['name']
+                }
+                token_reference['token']['is_domain'] = token.project.get(
+                    'is_domain', False
+                )
+                token_reference['token']['roles'] = token.roles
+                ap_name = CONF.resource.admin_project_name
+                ap_domain_name = CONF.resource.admin_project_domain_name
+                if ap_name and ap_domain_name:
+                    is_ap = (
+                        token.project['name'] == ap_name and
+                        ap_domain_name == token.project_domain['name']
+                    )
+                    token_reference['token']['is_admin_project'] = is_ap
+            if include_catalog and not token.unscoped:
+                user_id = token.user_id
+                if CONF.trust.enabled and token.trust_id:
+                    user_id = token.trust['trustor_user_id']
+                catalog = PROVIDERS.catalog_api.get_v3_catalog(
+                    user_id, token.project_id
+                )
+                token_reference['token']['catalog'] = catalog
+            sps = PROVIDERS.federation_api.get_enabled_service_providers()
+            if sps:
+                token_reference['token']['service_providers'] = sps
+            if token.is_federated:
+                PROVIDERS.federation_api.get_idp(token.identity_provider['id'])
+            if token.access_token_id:
+                token_reference['OS-OAUTH1'] = {
+                    'access_token_id': token.access_token_id,
+                    'consume_id': token.access_token['consume_id']
+                }
+            if token.application_credential_id:
+                key = 'application_credential_restricted'
+                restricted = not token.application_credential['unrestricted']
+                token_reference['token'][key] = restricted
+            if 'application_credential' in token.methods:
+                key = 'application_credential_restricted'
+                restricted = not token.application_credential['unrestricted']
+                token_reference['token'][key] = restricted
             # NOTE(wanghong): We consume a trust use only when we are using
             # trusts and have successfully issued a token.
             if trust:
-                PROVIDERS.trust_api.consume_use(trust['id'])
+                PROVIDERS.trust_api.consume_use(token.trust_id)
 
-            return render_token_data_response(token_id, token_data,
+            return render_token_data_response(token.id, token_reference,
                                               created=True)
         except exception.TrustNotFound as e:
             LOG.warning(six.text_type(e))

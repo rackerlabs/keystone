@@ -78,12 +78,6 @@ class Provider(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def _get_token_id(self, token_data):
-        """Generate the token_id based upon the data in token_data.
-
-        :param token_data: token information
-        :type token_data: dict
-        :returns: token identifier
-        :rtype: six.text_type
-        """
+    def generate_token_id(self, token):
+        """Generate a token based on the information provided."""
         raise exception.NotImplemented()  # pragma: no cover
