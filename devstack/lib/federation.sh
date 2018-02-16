@@ -74,7 +74,7 @@ function install_federation {
     fi
 }
 
-function upload_sp_metadata {
+function upload_sp_metadata_to_testshib {
     local metadata_fname=${HOST_IP//./}_"$RANDOM"_sp
     local metadata_url=http://$HOST_IP/Shibboleth.sso/Metadata
 
@@ -113,8 +113,10 @@ function configure_federation {
         restart_service "devstack@keystone"
     fi
 
-    # Register the service provider
-    upload_sp_metadata
+    # Only upload the metadata to testshib.org if we're using testshib as idp
+    if [[ "$IDP_ID" == "testshib" ]]; then
+        upload_sp_metadata_to_testshib
+    fi
 }
 
 function register_federation {
