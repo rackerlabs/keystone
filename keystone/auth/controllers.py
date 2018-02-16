@@ -121,6 +121,7 @@ class Auth(controller.V3Controller):
             (domain_id, project_id, trust, unscoped, system) = (
                 auth_info.get_scope()
             )
+            trust_id = trust.get('id') if trust else None
 
             # NOTE(notmorgan): only methods that actually run and succeed will
             # be in the auth_context['method_names'] list. Do not blindly take
@@ -128,11 +129,6 @@ class Auth(controller.V3Controller):
             # sure the set is unique.
             method_names_set = set(auth_context.get('method_names', []))
             method_names = list(method_names_set)
-
-            app_cred_id = None
-            if 'application_credential' in method_names:
-                token_auth = auth_info.auth['identity']
-                app_cred_id = token_auth['application_credential']['id']
 
             # Do MFA Rule Validation for the user
             if not self._mfa_rules_validator.check_auth_methods_against_rules(
@@ -145,20 +141,81 @@ class Auth(controller.V3Controller):
             token_audit_id = auth_context.get('audit_id')
 
             is_domain = auth_context.get('is_domain')
-            (token_id, token_data) = PROVIDERS.token_provider_api.issue_token(
+            token = PROVIDERS.token_provider_api.issue_token(
                 auth_context['user_id'], method_names, expires_at=expires_at,
                 system=system, project_id=project_id,
                 is_domain=is_domain, domain_id=domain_id,
-                auth_context=auth_context, trust=trust,
-                app_cred_id=app_cred_id, include_catalog=include_catalog,
+                auth_context=auth_context, trust_id=trust_id,
                 parent_audit_id=token_audit_id)
 
+            token_reference = {
+                'token': {
+                    'methods': token.methods,
+                    'roles': token.roles,
+                    'user': {
+                        'domain': {
+                            'id': token.user_domain['id'],
+                            'name': token.user_domain['name']
+                        },
+                        'id': token.user_id,
+                        'name': token.username,
+                        'password_expires_at': token.user[
+                            'password_expires_at'
+                        ]
+                    },
+                    'audit_ids': token.audit_ids,
+                    'expires_at': token.expires_at,
+                    'issued_at': token.issued_at,
+                    'is_domain': False
+                }
+            }
+            if token.domain_scoped:
+                token_reference['token']['domain'] = token.domain
+                token_reference['token']['is_domain'] = True
+            elif token.project_scoped:
+                token_reference['token']['project'] = {
+                    'domain': {
+                        'id': token.project_domain['id'],
+                        'name': token.project_domain['name']
+                    },
+                    'id': token.project['id'],
+                    'name': token.project['name']
+                }
+            elif token.trust_scoped:
+                token_reference['token']['OS-TRUST'] = {
+                    'id': token.trust_id,
+                    'trustor_user': {'id': token.trustor['id']},
+                    'trustee_user': {'id': token.trustee['id']},
+                    'impersonation': token.trust['impersonation']
+                }
+            if include_catalog:
+                user_id = token.user_id
+                if CONF.trust.enabled and token.trust_id:
+                    user_id = token.trust['trustor_user_id']
+                catalog = PROVIDERS.catalog_api.get_v3_catalog(
+                    user_id, token.project_id
+                )
+                token_reference['token']['catalog'] = catalog
+            sps = PROVIDERS.federation_api.get_enabled_service_providers()
+            if sps:
+                token_reference['token']['service_providers'] = sps
+            if token.is_federated:
+                PROVIDERS.federation_api.get_idp(token.identity_provider['id'])
+            if token.access_token_id:
+                token_reference['OS-OAUTH1'] = {
+                    'access_token_id': token.access_token_id,
+                    'consume_id': token.access_token['consume_id']
+                }
+            if token.application_credential_id:
+                key = 'application_credential_restricted'
+                restricted = not token.application_credential['unrestricted']
+                token_reference[key] = restricted
             # NOTE(wanghong): We consume a trust use only when we are using
             # trusts and have successfully issued a token.
             if trust:
-                PROVIDERS.trust_api.consume_use(trust['id'])
+                PROVIDERS.trust_api.consume_use(token.trust_id)
 
-            return render_token_data_response(token_id, token_data,
+            return render_token_data_response(token.id, token_reference,
                                               created=True)
         except exception.TrustNotFound as e:
             LOG.warning(six.text_type(e))
