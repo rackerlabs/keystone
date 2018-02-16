@@ -44,55 +44,6 @@ class Provider(common.BaseProvider):
 
         self.token_formatter = tf.TokenFormatter()
 
-    def issue_token(self, *args, **kwargs):
-        token_id, token_data = super(Provider, self).issue_token(
-            *args, **kwargs)
-        self._build_issued_at_info(token_id, token_data)
-        return token_id, token_data
-
-    def _build_issued_at_info(self, token_id, token_data):
-        # NOTE(roxanaghe, lbragstad): We must use the creation time that
-        # Fernet builds into it's token. The Fernet spec details that the
-        # token creation time is built into the token, outside of the payload
-        # provided by Keystone. This is the reason why we don't pass the
-        # issued_at time in the payload. This also means that we shouldn't
-        # return a token reference with a creation time that we created
-        # when Fernet uses a different creation time. We should use the
-        # creation time provided by Fernet because it's the creation time
-        # that we have to rely on when we validate the token.
-        fernet_creation_datetime_obj = self.token_formatter.creation_time(
-            token_id)
-        if token_data.get('access'):
-            token_data['access']['token']['issued_at'] = ks_utils.isotime(
-                at=fernet_creation_datetime_obj, subsecond=True)
-        else:
-            token_data['token']['issued_at'] = ks_utils.isotime(
-                at=fernet_creation_datetime_obj, subsecond=True)
-
-    def _build_federated_info(self, token_data):
-        """Extract everything needed for federated tokens.
-
-        This dictionary is passed to federated token formatters, which unpack
-        the values and build federated Fernet tokens.
-
-        """
-        token_data = token_data['token']
-        try:
-            user = token_data['user']
-            federation = user[federation_constants.FEDERATION]
-            idp_id = federation['identity_provider']['id']
-            protocol_id = federation['protocol']['id']
-        except KeyError:
-            # The token data doesn't have federated info, so we aren't dealing
-            # with a federated token and no federated info to build.
-            return
-
-        group_ids = federation.get('groups')
-
-        return {'group_ids': group_ids,
-                'idp_id': idp_id,
-                'protocol_id': protocol_id}
-
     def _rebuild_federated_info(self, federated_dict, user_id):
         """Format federated information into the token reference.
 
@@ -147,41 +98,32 @@ class Provider(common.BaseProvider):
         self.v3_token_data_helper.populate_roles_for_federated_user(
             token_dict, group_ids, project_id, domain_id, user_id)
 
-    def _get_token_id(self, token_data):
-        """Generate the token_id based upon the data in token_data.
-
-        :param token_data: token information
-        :type token_data: dict
-        :rtype: six.text_type
-
-        """
-        user_id = token_data['token']['user']['id']
-        expires_at = token_data['token']['expires_at']
-        audit_ids = token_data['token']['audit_ids']
-        methods = token_data['token'].get('methods')
-        system = token_data['token'].get('system', {}).get('all', None)
-        domain_id = token_data['token'].get('domain', {}).get('id')
-        project_id = token_data['token'].get('project', {}).get('id')
-        trust_id = token_data['token'].get('OS-TRUST:trust', {}).get('id')
-        access_token_id = token_data['token'].get('OS-OAUTH1', {}).get(
-            'access_token_id')
-        federated_info = self._build_federated_info(token_data)
-        app_cred_id = token_data['token'].get('application_credential',
-                                              {}).get('id')
-
-        return self.token_formatter.create_token(
-            user_id,
-            expires_at,
-            audit_ids,
-            methods=methods,
-            system=system,
-            domain_id=domain_id,
-            project_id=project_id,
-            trust_id=trust_id,
+    def generate_id_and_issued_at(self, token):
+        federated_info = None
+        if token.is_federated:
+            federated_info = {
+                'group_ids': token.groups,
+                'idp_id': token.identity_provider_id,
+                'protocol_id': token.protocol_id
+            }
+        token_id = self.token_formatter.create_token(
+            token.user_id,
+            token.expires_at,
+            token.audit_ids,
+            methods=token.methods,
+            system=token.system,
+            domain_id=token.domain_id,
+            project_id=token.project_id,
+            trust_id=token.trust_id,
             federated_info=federated_info,
-            access_token_id=access_token_id,
-            app_cred_id=app_cred_id
+            access_token_id=token.access_token_id,
+            app_cred_id=token.application_credential_id
         )
+        creation_datetime_obj = self.token_formatter.creation_time(token_id)
+        issued_at = ks_utils.isotime(
+            at=creation_datetime_obj, subsecond=True
+        )
+        return token_id, issued_at
 
     @property
     def _supports_bind_authentication(self):
