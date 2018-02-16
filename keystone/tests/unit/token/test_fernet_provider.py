@@ -79,10 +79,10 @@ class TestValidate(unit.TestCase):
         user_ref = PROVIDERS.identity_api.create_user(user_ref)
 
         method_names = ['password']
-        token_id, token_data_ = PROVIDERS.token_provider_api.issue_token(
+        token = PROVIDERS.token_provider_api.issue_token(
             user_ref['id'], method_names)
 
-        token_data = PROVIDERS.token_provider_api.validate_token(token_id)
+        token_data = PROVIDERS.token_provider_api.validate_token(token.id)
         token = token_data['token']
         self.assertIsInstance(token['audit_ids'], list)
         self.assertIsInstance(token['expires_at'], str)
@@ -130,10 +130,10 @@ class TestValidate(unit.TestCase):
             federation_constants.PROTOCOL: protocol,
         }
         auth_context = auth.core.AuthContext(**auth_context_params)
-        token_id, token_data_ = PROVIDERS.token_provider_api.issue_token(
+        token = PROVIDERS.token_provider_api.issue_token(
             user_ref['id'], method_names, auth_context=auth_context)
 
-        token_data = PROVIDERS.token_provider_api.validate_token(token_id)
+        token_data = PROVIDERS.token_provider_api.validate_token(token.id)
         token = token_data['token']
         exp_user_info = {
             'id': user_ref['id'],
@@ -190,11 +190,11 @@ class TestValidate(unit.TestCase):
 
         method_names = ['password']
 
-        token_id, token_data_ = PROVIDERS.token_provider_api.issue_token(
+        token = PROVIDERS.token_provider_api.issue_token(
             user_ref['id'], method_names, project_id=project_ref['id'],
-            trust=trust_ref)
+            trust_id=trust_ref['id'])
 
-        token_data = PROVIDERS.token_provider_api.validate_token(token_id)
+        token_data = PROVIDERS.token_provider_api.validate_token(token.id)
         token = token_data['token']
         exp_trust_info = {
             'id': trust_ref['id'],
