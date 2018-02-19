@@ -16,6 +16,24 @@
       "revId": "8646f40a4080eddb5f9cc58df2ce478ccfd38a77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_1bea7bab",
+        "filename": "releasenotes/notes/bug-1749267-96153d2fa6868f67.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-19T14:29:48Z",
+      "side": 1,
+      "message": "Yeah - I wasn\u0027t sure the best way to handle that and was shooting for the CI/CD case. Removing this makes sense though. Should it be removed in master, too then?",
+      "parentUuid": "3fa0c359_1b7da56d",
+      "revId": "8646f40a4080eddb5f9cc58df2ce478ccfd38a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
