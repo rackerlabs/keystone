@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_532bff80",
+        "filename": "keystone/token/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 773,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-19T21:48:49Z",
+      "side": 1,
+      "message": "This has a hard requirement on being present too with the current implementation. I suppose we can either add this tot he create_arguments_apply method or have a check to make sure it is always passed into the token formatter if building an application credential.",
+      "range": {
+        "startLine": 773,
+        "startChar": 61,
+        "endLine": 773,
+        "endChar": 71
+      },
+      "revId": "483184a43eefd42727a236b7b9a5a6dba7ca3cfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
