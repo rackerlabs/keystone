@@ -593,13 +593,11 @@ class TrustsWithApplicationCredentialsWithoutCaching(
             self).config_overrides()
         self.config_fixture.config(group='token', cache_on_issue=False)
 
-    @test_utils.wip('Waiting on fix for bug #1750415.')
     def test_create_trust_with_application_credential(self):
         super(
             TrustsWithApplicationCredentialsWithoutCaching,
             self).test_create_trust_with_application_credential()
 
-    @test_utils.wip('Waiting on fix for bug #1750415.')
     def test_delete_trust_with_application_credential(self):
         super(
             TrustsWithApplicationCredentialsWithoutCaching,
