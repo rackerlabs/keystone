@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_135a5729",
+        "filename": "keystone/token/token_formatters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 773,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-19T21:50:29Z",
+      "side": 1,
+      "message": "One comment here from patch set 4.",
+      "range": {
+        "startLine": 773,
+        "startChar": 61,
+        "endLine": 773,
+        "endChar": 71
+      },
+      "revId": "796198f19670e3eb899ca3b1db5d2a21a4127a30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
