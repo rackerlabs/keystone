@@ -19,6 +19,7 @@ from keystone.common import provider_api
 import keystone.conf
 from keystone import exception
 from keystone.tests import unit
+from keystone.tests.unit import utils as test_utils
 from keystone.tests.unit import test_v3
 
 CONF = keystone.conf.CONF
@@ -578,3 +579,28 @@ class TrustsWithApplicationCredentials(test_v3.RestfulTestCase):
             'trust_id': trust['id']},
             token=token_data.headers['x-subject-token'],
             expected_status=http_client.FORBIDDEN)
+
+
+class TrustsWithApplicationCredentialsWithoutCaching(
+        TrustsWithApplicationCredentials):
+
+    def setUp(self):
+        super(TrustsWithApplicationCredentialsWithoutCaching, self).setUp()
+
+    def config_overrides(self):
+        super(
+            TrustsWithApplicationCredentialsWithoutCaching,
+            self).config_overrides()
+        self.config_fixture.config(group='token', cache_on_issue=False)
+
+    @test_utils.wip('Waiting on fix for bug #1750415.')
+    def test_create_trust_with_application_credential(self):
+        super(
+            TrustsWithApplicationCredentialsWithoutCaching,
+            self).test_create_trust_with_application_credential()
+
+    @test_utils.wip('Waiting on fix for bug #1750415.')
+    def test_delete_trust_with_application_credential(self):
+        super(
+            TrustsWithApplicationCredentialsWithoutCaching,
+            self).test_delete_trust_with_application_credential()
