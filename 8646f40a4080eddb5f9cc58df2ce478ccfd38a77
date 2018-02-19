@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_1b7da56d",
+        "filename": "releasenotes/notes/bug-1749267-96153d2fa6868f67.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2018-02-19T00:28:49Z",
+      "side": 1,
+      "message": "It seems kind of weird to include this in the queens backport, unless someone is doing CD and already picked up the change, i.e. if it was introduced in queens as a regression then it\u0027s kind of weird to see it in the release notes when upgrading *to* queens, right?",
+      "revId": "8646f40a4080eddb5f9cc58df2ce478ccfd38a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
