@@ -44,6 +44,7 @@ from keystone.tests.common import auth as common_auth
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import test_v3
+from keystone.tests.unit import utils as test_utils
 
 
 CONF = keystone.conf.CONF
@@ -5299,6 +5300,30 @@ class ApplicationCredentialAuth(test_v3.RestfulTestCase):
         auth_data = self.build_authentication_request(
             app_cred_id=app_cred_ref['id'], secret=app_cred_ref['secret'])
         self.v3_create_token(auth_data, expected_status=http_client.CREATED)
+
+    @test_utils.wip('This fails because validation of app cred tokens does '
+    'not rebuild app creds after the cache is dropped',
+    expected_exception=KeyError, bug='#1750415')
+    def test_validate_application_credential_token_populates_restricted(self):
+        self.config_fixture.config(group='token', cache_on_issue=False)
+        app_cred = self._make_app_cred()
+        app_cred_ref = self.app_cred_api.create_application_credential(
+            app_cred)
+        auth_data = self.build_authentication_request(
+            app_cred_id=app_cred_ref['id'], secret=app_cred_ref['secret'])
+        auth_response = self.v3_create_token(
+            auth_data, expected_status=http_client.CREATED)
+        self.assertTrue(
+            auth_response.json['token']['application_credential_restricted']
+        )
+        token_id = auth_response.headers.get('X-Subject-Token')
+        headers = {'X-Auth-Token': token_id, 'X-Subject-Token': token_id}
+        validate_response = self.get(
+            '/auth/tokens', headers=headers
+        ).json_body
+        self.assertTrue(
+            validate_response['token']['application_credential_restricted']
+        )
 
     def test_valid_application_credential_with_name_succeeds(self):
         app_cred = self._make_app_cred()
