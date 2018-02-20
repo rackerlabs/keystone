@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_b6533516",
+        "filename": ".zuul.yaml",
+        "patchSetId": 38
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-20T22:37:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa0c359_15b54632",
+      "revId": "784f58890f2676ced29949ddc94ecd87b84e1d12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_55af4ee2",
         "filename": ".zuul.yaml",
         "patchSetId": 38
@@ -30,6 +48,30 @@
       "writtenOn": "2018-02-20T18:38:22Z",
       "side": 1,
       "message": "while this works, we usually have the structure - see openstack-zuul-jobs and project-config of:\nplaybooks/\u003cjob-name\u003e/run.yaml\n\nThat way you can have also playbooks/keystone-functional../post.yaml to upload logs and artifacts.",
+      "range": {
+        "startLine": 73,
+        "startChar": 9,
+        "endLine": 73,
+        "endChar": 58
+      },
+      "revId": "784f58890f2676ced29949ddc94ecd87b84e1d12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_d6584132",
+        "filename": ".zuul.yaml",
+        "patchSetId": 38
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-20T22:37:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa0c359_55af4ee2",
       "range": {
         "startLine": 73,
         "startChar": 9,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_963e39b6",
+        "filename": "playbooks/keystone-functional-openstack-helm.yaml",
+        "patchSetId": 38
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-20T22:37:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa0c359_b57fb264",
+      "range": {
+        "startLine": 19,
+        "startChar": 44,
+        "endLine": 19,
+        "endChar": 45
+      },
+      "revId": "784f58890f2676ced29949ddc94ecd87b84e1d12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_358ba268",
         "filename": "playbooks/keystone-functional-openstack-helm.yaml",
         "patchSetId": 38
@@ -76,6 +142,30 @@
       "writtenOn": "2018-02-20T18:38:22Z",
       "side": 1,
       "message": "better remove those \u0027\u0027 as well",
+      "range": {
+        "startLine": 45,
+        "startChar": 70,
+        "endLine": 45,
+        "endChar": 82
+      },
+      "revId": "784f58890f2676ced29949ddc94ecd87b84e1d12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_3647254f",
+        "filename": "playbooks/keystone-functional-openstack-helm.yaml",
+        "patchSetId": 38
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-20T22:37:04Z",
+      "side": 1,
+      "message": "Done, I\u0027ll move this info into a doc for running this locally.",
+      "parentUuid": "3fa0c359_358ba268",
       "range": {
         "startLine": 45,
         "startChar": 70,
