@@ -16,6 +16,24 @@
       "revId": "d8747b5981e67e64175ce1f747e05dcda97c09fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_5b12265a",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-02-20T15:33:24Z",
+      "side": 1,
+      "message": "I will rename the method since it will only work for testshib. Other IdPs will be treated on a case by case basis as if add them to the gate.",
+      "parentUuid": "3fa0c359_f8b79585",
+      "revId": "d8747b5981e67e64175ce1f747e05dcda97c09fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
