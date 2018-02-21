@@ -217,7 +217,8 @@ class TokenUtils(object):
                 except ValueError:  # nosec : name isn't a number
                     pass
                 else:
-                    key_files[key_id] = path
+                    if os.path.getsize(path) > 0:  # Handle empty files
+                        key_files[key_id] = path
 
         LOG.info('Starting key rotation with %(count)s key files: '
                  '%(list)s', {
@@ -288,7 +289,9 @@ class TokenUtils(object):
                         # ignore this file since it's not a key.
                         pass
                     else:
-                        keys[key_id] = key_file.read()
+                        key = key_file.read()
+                        if len(key) > 0:  # Handle empty files
+                            keys[key_id] = key
 
         if len(keys) != self.max_active_keys:
             # Once the number of keys matches max_active_keys, this log entry
