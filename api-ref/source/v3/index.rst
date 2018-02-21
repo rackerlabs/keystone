@@ -31,6 +31,7 @@ What's New in Version 3.10
 ==========================
 
 - Introduction of the Application Credentials API.
+- Introduction of system role assignment and system-scoped tokens.
 
 =========================
 What's New in Version 3.9
