@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_1f86a3ba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-21T22:58:54Z",
+      "side": 1,
+      "message": "Getting into a state like this is what worries me, but I\u0027m not sure how keystone would initiate this since there aren\u0027t any disk issues according to the bug report.",
+      "revId": "09c925c658960a00fe807dabc2f015f0de095fbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_5f0f4b87",
+        "filename": "keystone/common/token_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-21T22:58:54Z",
+      "side": 1,
+      "message": "Key repositories are pretty important, especially in real deployments. Chances are operators would want to know if something like this happens so that they can go investigate why that have empty keys in their key repository.\n\nWe can help them by adding some logging here INFO or WARNING feels appropriate, but I\u0027ll let others weigh in.",
+      "revId": "09c925c658960a00fe807dabc2f015f0de095fbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_bfe0cf98",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 688,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-21T22:58:54Z",
+      "side": 1,
+      "message": "This is what would have failed before because 2 was empty, right?",
+      "revId": "09c925c658960a00fe807dabc2f015f0de095fbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_9f9ab311",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 693,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-21T22:58:54Z",
+      "side": 1,
+      "message": "We could add another assertion that the file the was empty isn\u0027t empty anymore.",
+      "revId": "09c925c658960a00fe807dabc2f015f0de095fbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
