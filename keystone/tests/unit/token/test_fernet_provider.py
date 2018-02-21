@@ -667,6 +667,34 @@ class TestFernetKeyRotation(unit.TestCase):
         # Assert that the key repository is now expanded.
         self.assertEqual(self.key_repository_size, 3)
 
+    def test_rotation_empty_file(self):
+        active_keys = 2
+        self.useFixture(
+            ksfixtures.KeyRepository(
+                self.config_fixture,
+                'fernet_tokens',
+                CONF.fernet_tokens.max_active_keys
+            )
+        )
+        self.assertRepositoryState(expected_size=active_keys)
+        empty_file = os.path.join(CONF.fernet_tokens.key_repository, '2')
+        with open(empty_file, 'w'):
+            pass
+        key_utils = token_utils.TokenUtils(
+            CONF.fernet_tokens.key_repository,
+            CONF.fernet_tokens.max_active_keys,
+            'fernet_tokens'
+        )
+        # We can load the keys without getting a ValueError
+        keys = key_utils.load_keys()
+        self.assertEqual(2, len(keys))
+        # Rotate the keys to overwrite the empty file
+        key_utils.rotate_keys()
+        self.assertTrue(os.path.isfile(empty_file))
+        keys = key_utils.load_keys()
+        self.assertEqual(3, len(keys))
+        self.assertTrue(os.path.getsize(empty_file) > 0)
+
     def test_non_numeric_files(self):
         self.useFixture(
             ksfixtures.KeyRepository(
@@ -709,6 +737,26 @@ class TestLoadKeys(unit.TestCase):
         )
         evil_file = os.path.join(CONF.fernet_tokens.key_repository, '~1')
         with open(evil_file, 'w'):
+            pass
+        key_utils = token_utils.TokenUtils(
+            CONF.fernet_tokens.key_repository,
+            CONF.fernet_tokens.max_active_keys,
+            'fernet_tokens'
+        )
+        keys = key_utils.load_keys()
+        self.assertEqual(2, len(keys))
+        self.assertValidFernetKey(keys)
+
+    def test_empty_files(self):
+        self.useFixture(
+            ksfixtures.KeyRepository(
+                self.config_fixture,
+                'fernet_tokens',
+                CONF.fernet_tokens.max_active_keys
+            )
+        )
+        empty_file = os.path.join(CONF.fernet_tokens.key_repository, '2')
+        with open(empty_file, 'w'):
             pass
         key_utils = token_utils.TokenUtils(
             CONF.fernet_tokens.key_repository,
