@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_8a76f3a3",
+        "filename": "keystone/common/token_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-21T23:07:25Z",
+      "side": 1,
+      "message": "Good point, I\u0027d want to know when I was getting empty files written into the key repo",
+      "parentUuid": "3fa0c359_5f0f4b87",
+      "revId": "09c925c658960a00fe807dabc2f015f0de095fbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_bfe0cf98",
         "filename": "keystone/tests/unit/token/test_fernet_provider.py",
         "patchSetId": 1
@@ -47,6 +65,24 @@
       "writtenOn": "2018-02-21T22:58:54Z",
       "side": 1,
       "message": "This is what would have failed before because 2 was empty, right?",
+      "revId": "09c925c658960a00fe807dabc2f015f0de095fbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_0a3c23c6",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 688,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-21T23:07:25Z",
+      "side": 1,
+      "message": "Yeah, I should add comments here stating this is where we would hit the ValueError",
+      "parentUuid": "3fa0c359_bfe0cf98",
       "revId": "09c925c658960a00fe807dabc2f015f0de095fbe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
