@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_aa52b365",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-22T21:46:23Z",
+      "side": 1,
+      "message": "Title is a bit long here",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 19
+      },
+      "revId": "d31fba44f661da455a8fe203e1bf09d1147a93e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_8a57b758",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-22T21:46:23Z",
+      "side": 1,
+      "message": "This is redundant, if it gets the group successfully, then we are good, if it fails with GroupNotFound and allow_non_existing is true, then we will raise the GroupNotFound exception regardless.\n\nCould maybe add a unit test for this.",
+      "range": {
+        "startLine": 419,
+        "startChar": 12,
+        "endLine": 419,
+        "endChar": 69
+      },
+      "revId": "d31fba44f661da455a8fe203e1bf09d1147a93e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
