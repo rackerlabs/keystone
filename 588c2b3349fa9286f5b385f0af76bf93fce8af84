@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_028e4078",
+        "filename": "keystone/common/token_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-02-22T09:45:54Z",
+      "side": 1,
+      "message": "the code works well. But the Log maybe not.\n\nFor example, now there four key: 0 1 2 3 and the 3 is empty.\nThen when rotate the key, Log says that  \"Current primary key is: 2, Next primary key will be 3\". Maybe it is  a little misleading for admin.\n\nHow about something like \"the primary key is 3, but it\u0027s empty, renew it instead of create a new one.\"",
+      "revId": "588c2b3349fa9286f5b385f0af76bf93fce8af84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_7c89ea72",
+        "filename": "releasenotes/notes/bug-1728907-bab6769ab46bd8aa.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-02-22T09:45:54Z",
+      "side": 1,
+      "message": "better to add the bug link as well\n[`bug 1728907 \u003chttp.....\u003e`_]",
+      "revId": "588c2b3349fa9286f5b385f0af76bf93fce8af84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
