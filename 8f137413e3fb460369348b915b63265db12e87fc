@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_2a522314",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-22T21:43:52Z",
+      "side": 1,
+      "message": "For readability, we typically try and wrap commit messages at 70 characters.",
+      "revId": "8f137413e3fb460369348b915b63265db12e87fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_6a8a6b64",
+        "filename": "doc/source/admin/federated-identity.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-22T21:43:52Z",
+      "side": 1,
+      "message": "This bit here has a little overlap with the next few lines. We can try and combine them for the sake of simplicity. It looks like both Fedeated Identity documents used different definitions. We\u0027ll need to make sure whatever set we ultimately go with, is used consistently throughout the document (since copy/pasting from the old doc might have references to the old definition).",
+      "revId": "8f137413e3fb460369348b915b63265db12e87fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_0a8c0734",
+        "filename": "doc/source/admin/federated-identity.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-22T21:43:52Z",
+      "side": 1,
+      "message": "This should be consolidated with the following section:\n\n  Configure Identity as a Service Provider",
+      "revId": "8f137413e3fb460369348b915b63265db12e87fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_ca813ffd",
+        "filename": "doc/source/admin/federated-identity.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-22T21:43:52Z",
+      "side": 1,
+      "message": "Same comment here as above:\n\n Configure Identity as an Identity Provider",
+      "revId": "8f137413e3fb460369348b915b63265db12e87fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_6a410ba6",
+        "filename": "doc/source/admin/federated-identity.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-22T21:43:52Z",
+      "side": 1,
+      "message": "This could be more descriptive. What are we testing? As a reader, this title doesn\u0027t really tell me what the section is about. Instead I have to read it anyway to figure out that this section is meant to showcase federated authentication from the CLI. Maybe something like:\n\n  Federated Authentication",
+      "revId": "8f137413e3fb460369348b915b63265db12e87fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_ca7b7f78",
+        "filename": "doc/source/admin/federated-identity.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-22T21:43:52Z",
+      "side": 1,
+      "message": "This should probably be a child section of the Mapping rules section, since auto-provisioning is a feature built into the mapping engine and used with mappings.",
+      "revId": "8f137413e3fb460369348b915b63265db12e87fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
