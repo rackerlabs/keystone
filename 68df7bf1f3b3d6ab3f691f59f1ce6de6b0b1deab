@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_2a2d4394",
+        "filename": "doc/source/advanced-topics/external-auth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-22T21:00:07Z",
+      "side": 0,
+      "message": "++ to Gage\u0027s suggestion. We\u0027ll need to remove this from the index.rst file in order to build correctly. Otherwise we\u0027re referencing a non-existent file.",
+      "revId": "68df7bf1f3b3d6ab3f691f59f1ce6de6b0b1deab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
