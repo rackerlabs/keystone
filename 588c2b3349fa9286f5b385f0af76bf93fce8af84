@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_1841c439",
+        "filename": "keystone/common/token_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-22T17:44:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa0c359_3f5d8a46",
+      "revId": "588c2b3349fa9286f5b385f0af76bf93fce8af84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_028e4078",
         "filename": "keystone/common/token_utils.py",
         "patchSetId": 3
@@ -47,6 +65,24 @@
       "writtenOn": "2018-02-22T09:45:54Z",
       "side": 1,
       "message": "better to add the bug link as well\n[`bug 1728907 \u003chttp.....\u003e`_]",
+      "revId": "588c2b3349fa9286f5b385f0af76bf93fce8af84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_f843b83d",
+        "filename": "releasenotes/notes/bug-1728907-bab6769ab46bd8aa.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-22T17:44:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa0c359_7c89ea72",
       "revId": "588c2b3349fa9286f5b385f0af76bf93fce8af84",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
