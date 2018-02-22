@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_8a61f707",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 757,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-22T22:20:07Z",
+      "side": 1,
+      "message": "I ran this locally and removed this and the test still passes, since the CONF.fernet_tokens.max_active_keys is the default anyway. This might have been required when we first implemented this but I don\u0027t think it is anymore.",
+      "range": {
+        "startLine": 751,
+        "startChar": 0,
+        "endLine": 757,
+        "endChar": 9
+      },
+      "revId": "1c73a7545fcf18cd11dce3cc41b2a94c5d583b7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_6d15a53c",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 768,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-22T22:20:07Z",
+      "side": 1,
+      "message": "This assertion is a little confusing, but I wonder if it was meant to be called with an individual key. It only appears to be validating the first key in the list of keys.\n\nhttp://paste.openstack.org/raw/682571/ validates each key in the repository.",
+      "revId": "1c73a7545fcf18cd11dce3cc41b2a94c5d583b7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
