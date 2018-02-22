@@ -45,8 +45,4 @@ command-line client.
    endpoint-policy.rst
    event_notifications.rst
    auth-totp.rst
-
-.. toctree::
-   :maxdepth: 2
-
-   federation/federated_identity.rst
+   identity-external-authentication.rst
