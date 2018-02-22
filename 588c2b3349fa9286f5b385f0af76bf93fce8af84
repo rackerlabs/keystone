@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3fa0c359_3f5d8a46",
+        "filename": "keystone/common/token_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-22T16:32:39Z",
+      "side": 1,
+      "message": "Or just even something like:\n\n  LOG.warning(\"Ignoring empty key found in key repository: %s\", path)\n\nIf I were an operator, I think it\u0027d be useful to know what keystone is doing with it (ignoring it) and which file is empty.",
+      "revId": "588c2b3349fa9286f5b385f0af76bf93fce8af84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_028e4078",
         "filename": "keystone/common/token_utils.py",
         "patchSetId": 3
