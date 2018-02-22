@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_8d6ef12c",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1503,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-02-22T22:32:17Z",
+      "side": 1,
+      "message": "Is this suppose to test MySQL or Postgresql?",
+      "range": {
+        "startLine": 1503,
+        "startChar": 26,
+        "endLine": 1503,
+        "endChar": 36
+      },
+      "revId": "42a0c91e6de1f9b60061f563aac4322050e8536e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
