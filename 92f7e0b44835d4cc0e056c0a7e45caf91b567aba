@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_ee48d2b3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-22T19:26:40Z",
+      "side": 1,
+      "message": "reduce this to \u003c 50 chars",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 68
+      },
+      "revId": "92f7e0b44835d4cc0e056c0a7e45caf91b567aba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_2ed8faec",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-22T19:26:40Z",
+      "side": 1,
+      "message": "Wrap this text to \u003c 80 chars.\n\nAlso would be good to add a link to [0] which shows that this text is word for word duplicated in another location.\n\n[0] https://github.com/openstack/keystone/blob/master/doc/source/admin/identity-service-api-protection.rst",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 136
+      },
+      "revId": "92f7e0b44835d4cc0e056c0a7e45caf91b567aba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
