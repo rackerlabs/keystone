@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_45618e04",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-23T17:06:20Z",
+      "side": 1,
+      "message": "Will need to add a link to [0] here.\n\n[0] doc/source/admin/identity-domain-specific-config.rst\n\nSee http://www.sphinx-doc.org/en/master/rest.html#hyperlinks",
+      "range": {
+        "startLine": 105,
+        "startChar": 60,
+        "endLine": 106,
+        "endChar": 9
+      },
+      "revId": "0cb2c3706303526aa5a9032a7cfb04e09bf5c547",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_650a8a26",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-23T17:06:20Z",
+      "side": 1,
+      "message": "Remove \"below\"",
+      "range": {
+        "startLine": 106,
+        "startChar": 10,
+        "endLine": 106,
+        "endChar": 15
+      },
+      "revId": "0cb2c3706303526aa5a9032a7cfb04e09bf5c547",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
