@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_0a4635c1",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-23T16:23:25Z",
+      "side": 0,
+      "message": "This info is not included in [0], is this something we want to make sure we move over, or is this unneeded?\n\n[0] https://github.com/openstack/keystone/blob/master/doc/source/admin/identity-token-binding.rst",
+      "range": {
+        "startLine": 499,
+        "startChar": 0,
+        "endLine": 500,
+        "endChar": 27
+      },
+      "revId": "1175a356fc71036b38c41025f5a90e16f91bbc98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
