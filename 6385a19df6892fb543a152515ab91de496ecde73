@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_f0c2d6e8",
+        "filename": "doc/source/admin/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-02-23T17:44:36Z",
+      "side": 1,
+      "message": "Not sure if the actual page was meant to be moved to:\n\ndoc/source/admin\n\nbut you will need to put this entry in:\n\ndoc/source/index.rst\n\nif you are intending to keep it where the page is currently at.",
+      "range": {
+        "startLine": 42,
+        "startChar": 3,
+        "endLine": 42,
+        "endChar": 22
+      },
+      "revId": "6385a19df6892fb543a152515ab91de496ecde73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
