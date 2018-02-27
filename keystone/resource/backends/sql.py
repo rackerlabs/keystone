@@ -316,7 +316,7 @@ class Project(sql.ModelBase, sql.ModelDictMixinWithExtras):
     # rather than just only 'name' being unique
     __table_args__ = (sql.UniqueConstraint('domain_id', 'name'),)
 
-    @hybrid_property
+    @property
     def tags(self):
         if self._tags:
             return [tag.name for tag in self._tags]
@@ -331,10 +331,6 @@ class Project(sql.ModelBase, sql.ModelDictMixinWithExtras):
             tag_ref.name = text_type(tag)
             new_tags.append(tag_ref)
         self._tags = new_tags
-
-    @tags.expression
-    def tags(cls):
-        return ProjectTag.name
 
 
 class ProjectTag(sql.ModelBase, sql.ModelDictMixin):
