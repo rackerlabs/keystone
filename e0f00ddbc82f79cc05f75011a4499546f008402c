@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f9dbf25_1e82c9c9",
+        "filename": "playbooks/keystone-osh-functional-local/run.yaml",
+        "patchSetId": 43
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2018-02-27T11:41:34Z",
+      "side": 1,
+      "message": "perhaps we can move this out to a different task that always get executed to ensure the tooling always gets build/loaded before we run the deploys.",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 16
+      },
+      "revId": "e0f00ddbc82f79cc05f75011a4499546f008402c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_9e7579fd",
+        "filename": "playbooks/keystone-osh-functional-local/run.yaml",
+        "patchSetId": 43
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2018-02-27T11:41:34Z",
+      "side": 1,
+      "message": "for consistency, we should have ``set -xe`` here as well.",
+      "range": {
+        "startLine": 41,
+        "startChar": 7,
+        "endLine": 41,
+        "endChar": 9
+      },
+      "revId": "e0f00ddbc82f79cc05f75011a4499546f008402c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
