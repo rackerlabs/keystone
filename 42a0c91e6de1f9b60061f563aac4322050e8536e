@@ -22,6 +22,30 @@
       "revId": "42a0c91e6de1f9b60061f563aac4322050e8536e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_6f61d939",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1503,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-02-27T13:46:04Z",
+      "side": 1,
+      "message": "heh it\u0027s supposed to by mysql, thanks for catching this",
+      "parentUuid": "3fa0c359_8d6ef12c",
+      "range": {
+        "startLine": 1503,
+        "startChar": 26,
+        "endLine": 1503,
+        "endChar": 36
+      },
+      "revId": "42a0c91e6de1f9b60061f563aac4322050e8536e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
