@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f9dbf25_b6040cc8",
+        "filename": "playbooks/keystone-osh-functional-local/run.yaml",
+        "patchSetId": 46
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2018-02-28T09:21:00Z",
+      "side": 1,
+      "message": "extra \\ that links two commands together.",
+      "range": {
+        "startLine": 40,
+        "startChar": 48,
+        "endLine": 40,
+        "endChar": 50
+      },
+      "revId": "f32f3af6c6d8684bb2a67653e4b545c9c5a380ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
