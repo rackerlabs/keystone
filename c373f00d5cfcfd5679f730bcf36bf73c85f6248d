@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f9dbf25_f9512010",
+        "filename": "playbooks/keystone-osh-functional-local/run.yaml",
+        "patchSetId": 54
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2018-02-28T14:23:01Z",
+      "side": 1,
+      "message": "we might need to move this as a template, else the indentation and that EOF will cause you to have an invalid clouds.yaml.",
+      "range": {
+        "startLine": 110,
+        "startChar": 0,
+        "endLine": 122,
+        "endChar": 11
+      },
+      "revId": "c373f00d5cfcfd5679f730bcf36bf73c85f6248d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_59405436",
+        "filename": "playbooks/keystone-osh-functional-local/run.yaml",
+        "patchSetId": 54
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2018-02-28T14:23:01Z",
+      "side": 1,
+      "message": "curious if we can load this using the keystone chart\u0027s bootstrap snippet.",
+      "range": {
+        "startLine": 129,
+        "startChar": 12,
+        "endLine": 129,
+        "endChar": 28
+      },
+      "revId": "c373f00d5cfcfd5679f730bcf36bf73c85f6248d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
