@@ -23,17 +23,9 @@
       args:
         chdir: "{{ zuul.projects['git.openstack.org/openstack/openstack-helm'].src_dir }}"
 
-    - name: Generate Ingress Kube System Config
-      cmd: |
-        cat /tmp/ingress-kube-system.yaml << EOF
-          deployment:
-            mode: cluster
-            type: DaemonSet
-            network:
-            host_namespace: true
-        EOF
-      args:
-        chdir: "{{ zuul.projects['git.openstack.org/openstack/openstack-helm'].src_dir }}"
+    - name: Place-in the ingress-kube-system
+      template: src=templates/ingress-kube-system.yaml.j2 dest=/tmp/ingress-kube-system.yaml
+      become: false
 
     - name: Deploy ingress
       shell: |
