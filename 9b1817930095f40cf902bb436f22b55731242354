@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f9dbf25_9492e8f5",
+        "filename": "bindep.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-03-04T22:39:29Z",
+      "side": 1,
+      "message": "deploy*",
+      "range": {
+        "startLine": 42,
+        "startChar": 30,
+        "endLine": 42,
+        "endChar": 35
+      },
+      "revId": "9b1817930095f40cf902bb436f22b55731242354",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
