@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff6b8bd7_067d971b",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-05T21:26:16Z",
+      "side": 1,
+      "message": "Nice - I\u0027m surprised this wasn\u0027t caught sooner. We should test that providing an unsupported option actually logs what we expect.",
+      "revId": "873a321d9597034f75121c4daa66dce4f515e4ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff6b8bd7_c676bf3f",
+        "filename": "releasenotes/notes/fix-uuid-driver-namespace-error-2548fa5cb398699d.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-05T21:26:16Z",
+      "side": 1,
+      "message": "Thanks for including a release note. We typically follow a set of conventions that make release notes easier to manage. Mainly including the bug in the release note filename and including a link to the bug in the release note so that operators can get more context if they need to.\n\nhttps://docs.openstack.org/keystone/latest/contributor/release-notes.html#release-notes-for-bugs",
+      "revId": "873a321d9597034f75121c4daa66dce4f515e4ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
