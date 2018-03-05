@@ -13,6 +13,7 @@
 from six.moves import urllib
 
 from keystone.tests import unit
+from keystone.token import provider
 from keystone.token.providers import common
 
 
@@ -20,3 +21,13 @@ class TestTokenProvidersCommon(unit.TestCase):
     def test_strings_are_url_safe(self):
         s = common.random_urlsafe_str()
         self.assertEqual(s, urllib.parse.quote_plus(s))
+
+    def test_import_error_for_uuid_provider(self):
+        namespace = "keystone.token.provider"
+        driver = "uuid"
+        self.config_fixture.config(group='token', provider=driver)
+        msg = "Unable to find '%(driver)s' driver in '%(namespace)s'." % {
+            'namespace': namespace, 'driver': driver
+        }
+
+        self.assertRaisesRegex(ImportError, msg, provider.Manager)
