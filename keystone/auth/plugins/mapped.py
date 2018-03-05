@@ -237,9 +237,11 @@ def handle_unscoped_token(request, auth_payload, resource_api, federation_api,
             unique_id, display_name = (
                 get_user_unique_id_and_display_name(request, mapped_properties)
             )
+            email = get_email_info(request, mapped_properties)
             user = identity_api.shadow_federated_user(identity_provider,
                                                       protocol, unique_id,
-                                                      display_name)
+                                                      display_name,
+                                                      email)
 
             if 'projects' in mapped_properties:
                 idp_domain_id = federation_api.get_idp(
@@ -373,3 +375,18 @@ def get_user_unique_id_and_display_name(request, mapped_properties):
 
     user['id'] = parse.quote(user_id)
     return (user['id'], user['name'])
+
+
+def get_email_info(request, mapped_properties):
+    """Setup federated user email.
+
+    Set email info for federated user if it exists.
+
+    :param request: current request object
+    :param mapped_properties: Properties issued by a RuleProcessor.
+ 
+    """
+    user = mapped_properties['user']
+    email = user.get('email')
+
+    return email
