@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Fix formatting of ImportError when using a driver not found in the list
+    of token providers.
