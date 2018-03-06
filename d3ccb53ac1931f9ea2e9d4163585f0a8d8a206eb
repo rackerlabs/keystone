@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_19342b4a",
+        "filename": "keystone/tests/unit/token/test_common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-06T23:19:21Z",
+      "side": 1,
+      "message": "Some people might still use a uuid provider out-of-tree. We could be more specific here by clarifying the provider that causes the exception is one that isn\u0027t installed.\n\n  def test_unsupported_provider_raises_import_error(self):\n      driver \u003d uuid.uuid4().hex\n      ...",
+      "range": {
+        "startLine": 25,
+        "startChar": 30,
+        "endLine": 25,
+        "endChar": 43
+      },
+      "revId": "d3ccb53ac1931f9ea2e9d4163585f0a8d8a206eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_d9cf9355",
+        "filename": "keystone/tests/unit/token/test_common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-06T23:19:21Z",
+      "side": 1,
+      "message": "nit: We could hardcode this string for a more clear assertion.",
+      "range": {
+        "startLine": 29,
+        "startChar": 33,
+        "endLine": 29,
+        "endChar": 39
+      },
+      "revId": "d3ccb53ac1931f9ea2e9d4163585f0a8d8a206eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_d9f8f37d",
+        "filename": "releasenotes/notes/fix-uuid-driver-namespace-error-2548fa5cb398699d.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-06T23:19:21Z",
+      "side": 1,
+      "message": "We should change the name of this file to match the conventions documented here: https://docs.openstack.org/keystone/latest/contributor/release-notes.html#release-notes-for-bugs",
+      "revId": "d3ccb53ac1931f9ea2e9d4163585f0a8d8a206eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
