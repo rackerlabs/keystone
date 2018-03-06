@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ff6b8bd7_d383c755",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-06T23:19:21Z",
+      "side": 1,
+      "message": "I was able to test this with - http://paste.openstack.org/show/693465/\n\nBut we should probably put it in a more generic place instead of in the token provider tests since it\u0027s no longer token specific.",
+      "parentUuid": "ff6b8bd7_067d971b",
+      "revId": "873a321d9597034f75121c4daa66dce4f515e4ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff6b8bd7_c676bf3f",
         "filename": "releasenotes/notes/fix-uuid-driver-namespace-error-2548fa5cb398699d.yaml",
         "patchSetId": 1
