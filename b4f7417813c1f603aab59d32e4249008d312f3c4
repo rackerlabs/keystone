@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff6b8bd7_a2dcd018",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-06T08:40:14Z",
+      "side": 1,
+      "message": "not sure it\u0027s worth to create a new function. How about just:\nemail \u003d mapped_properties[\u0027user\u0027].get(\u0027email\u0027)",
+      "range": {
+        "startLine": 380,
+        "startChar": 0,
+        "endLine": 392,
+        "endChar": 16
+      },
+      "revId": "b4f7417813c1f603aab59d32e4249008d312f3c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
