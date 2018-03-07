@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_89820ec8",
+        "filename": "doc/source/admin/identity-token-binding.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-07T21:13:48Z",
+      "side": 1,
+      "message": "None of the upstream token providers actually support token binding. This kind of went away when we removed the UUID token provider. But I suppose someone could still leverage it if they write their own token provider and setup configuration for token binding.\n\nWe should probably clarify that in a subsequent patch.",
+      "revId": "c7ef44803501b0204f71ab81d577a1c0e7b760fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
