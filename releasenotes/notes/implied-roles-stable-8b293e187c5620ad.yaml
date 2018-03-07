@@ -1,0 +1,5 @@
+---
+upgrade:
+  - |
+    The `implied roles API <https://developer.openstack.org/api-ref/identity/v3/index.html#roles>`_
+    has been marked as stable.
