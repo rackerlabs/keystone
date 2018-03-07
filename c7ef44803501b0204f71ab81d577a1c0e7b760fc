@@ -16,6 +16,29 @@
       "revId": "c7ef44803501b0204f71ab81d577a1c0e7b760fc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_44885dc5",
+        "filename": "doc/source/admin/identity-token-binding.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-03-07T22:08:04Z",
+      "side": 1,
+      "message": "I see that we had this in the other file, but what does this mean? Was `named` a thing in the past?",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 27
+      },
+      "revId": "c7ef44803501b0204f71ab81d577a1c0e7b760fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
