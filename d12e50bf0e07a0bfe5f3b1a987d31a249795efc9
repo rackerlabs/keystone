@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_8434354c",
+        "filename": "releasenotes/notes/implied-roles-stable-8b293e187c5620ad.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-03-07T21:59:34Z",
+      "side": 1,
+      "message": "maybe give some more details on why this is being done right now",
+      "revId": "d12e50bf0e07a0bfe5f3b1a987d31a249795efc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
