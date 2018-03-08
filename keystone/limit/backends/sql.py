@@ -135,16 +135,20 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
     @sql.handle_conflicts(conflict_type='registered_limit')
     def create_registered_limits(self, registered_limits):
         with sql.session_for_write() as session:
+            return_ref = []
             for registered_limit in registered_limits:
                 if registered_limit.get('region_id') is None:
                     self._check_unified_limit_without_region(registered_limit)
                 ref = RegisteredLimitModel.from_dict(registered_limit)
                 session.add(ref)
+                return_ref.append(ref.to_dict())
+            return return_ref
 
     @sql.handle_conflicts(conflict_type='registered_limit')
     def update_registered_limits(self, registered_limits):
         try:
             with sql.session_for_write() as session:
+                return_ref = []
                 for registered_limit in registered_limits:
                     ref = self._get_registered_limit(session,
                                                      registered_limit['id'])
@@ -158,6 +162,8 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
                         if attr != 'id':
                             setattr(ref, attr, getattr(new_registered_limit,
                                                        attr))
+                    return_ref.append(ref.to_dict())
+                return return_ref
         except db_exception.DBReferenceError as e:
             try:
                 reg_id = e.inner_exception.params['registered_limit_id']
@@ -206,24 +212,30 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
     def create_limits(self, limits):
         try:
             with sql.session_for_write() as session:
+                return_ref = []
                 for limit in limits:
                     if limit.get('region_id') is None:
                         self._check_unified_limit_without_region(
                             limit, is_registered_limit=False)
                     ref = LimitModel.from_dict(limit)
                     session.add(ref)
+                    return_ref.append(ref.to_dict())
+                return return_ref
         except db_exception.DBReferenceError:
             raise exception.NoLimitReference()
 
     @sql.handle_conflicts(conflict_type='limit')
     def update_limits(self, limits):
         with sql.session_for_write() as session:
+            return_ref = []
             for limit in limits:
                 ref = self._get_limit(session, limit['id'])
                 old_dict = ref.to_dict()
                 old_dict['resource_limit'] = limit['resource_limit']
                 new_limit = LimitModel.from_dict(old_dict)
                 ref.resource_limit = new_limit.resource_limit
+                return_ref.append(ref.to_dict())
+            return return_ref
 
     @driver_hints.truncated
     def list_limits(self, hints):
