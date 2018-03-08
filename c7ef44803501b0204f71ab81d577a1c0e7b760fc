@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "df7087c5_f504bcc8",
+        "filename": "doc/source/admin/identity-token-binding.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-08T02:01:15Z",
+      "side": 1,
+      "message": "good point.  https://github.com/openstack/keystone/blob/master/doc/source/admin/token-support-matrix.ini#L111",
+      "parentUuid": "df7087c5_89820ec8",
+      "revId": "c7ef44803501b0204f71ab81d577a1c0e7b760fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_44885dc5",
         "filename": "doc/source/admin/identity-token-binding.rst",
         "patchSetId": 2
