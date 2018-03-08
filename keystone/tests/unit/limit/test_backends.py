@@ -24,7 +24,7 @@ PROVIDERS = provider_api.ProviderAPIs
 class RegisteredLimitTests(object):
 
     def test_create_registered_limit_crud(self):
-        # create one, return all registered_limits
+        # create one, return it.
         registered_limit_1 = unit.new_registered_limit_ref(
             service_id=self.service_one['id'],
             region_id=self.region_one['id'],
@@ -33,19 +33,23 @@ class RegisteredLimitTests(object):
             [registered_limit_1])
         self.assertDictEqual(registered_limit_1, res1[0])
 
-        # create another, return all registered_limits
+        # create another two, return them.
         registered_limit_2 = unit.new_registered_limit_ref(
             service_id=self.service_one['id'],
             region_id=self.region_one['id'],
             resource_name='snapshot', default_limit=5, id=uuid.uuid4().hex)
+        registered_limit_3 = unit.new_registered_limit_ref(
+            service_id=self.service_one['id'],
+            region_id=self.region_one['id'],
+            resource_name='backup', default_limit=5, id=uuid.uuid4().hex)
         res2 = PROVIDERS.unified_limit_api.create_registered_limits(
-            [registered_limit_2])
+            [registered_limit_2, registered_limit_3])
         self.assertEqual(2, len(res2))
         for re in res2:
-            if re['id'] == registered_limit_1['id']:
-                self.assertDictEqual(registered_limit_1, re)
             if re['id'] == registered_limit_2['id']:
                 self.assertDictEqual(registered_limit_2, re)
+            if re['id'] == registered_limit_3['id']:
+                self.assertDictEqual(registered_limit_3, re)
 
     def test_create_registered_limit_duplicate(self):
         registered_limit_1 = unit.new_registered_limit_ref(
@@ -120,16 +124,13 @@ class RegisteredLimitTests(object):
         PROVIDERS.unified_limit_api.create_registered_limits(
             [registered_limit_1, registered_limit_2])
 
-        # update one, return all registered_limits
+        # update one, return it.
         registered_limit_update = {'id': registered_limit_1['id'],
                                    'region_id': 'region_two'}
         res = PROVIDERS.unified_limit_api.update_registered_limits(
             [registered_limit_update])
-        for re in res:
-            if re['id'] == registered_limit_1['id']:
-                self.assertEqual('region_two', re['region_id'])
-            if re['id'] == registered_limit_2['id']:
-                self.assertDictEqual(registered_limit_2, re)
+        self.assertEqual(1, len(res))
+        self.assertEqual(registered_limit_1['id'], res[0]['id'])
 
     def test_update_registered_limit_invalid_input_return_bad_request(self):
         registered_limit_1 = unit.new_registered_limit_ref(
@@ -371,7 +372,7 @@ class RegisteredLimitTests(object):
 class LimitTests(object):
 
     def test_create_limit(self):
-        # create one, return all limits
+        # create one, return it.
         limit_1 = unit.new_limit_ref(
             project_id=self.tenant_bar['id'],
             service_id=self.service_one['id'],
@@ -380,18 +381,24 @@ class LimitTests(object):
         res1 = PROVIDERS.unified_limit_api.create_limits([limit_1])
         self.assertDictEqual(limit_1, res1[0])
 
-        # create another, return all limits
+        # create another two, return them.
         limit_2 = unit.new_limit_ref(
             project_id=self.tenant_bar['id'],
             service_id=self.service_one['id'],
             region_id=self.region_two['id'],
             resource_name='snapshot', resource_limit=5, id=uuid.uuid4().hex)
-        res2 = PROVIDERS.unified_limit_api.create_limits([limit_2])
+        limit_3 = unit.new_limit_ref(
+            project_id=self.tenant_bar['id'],
+            service_id=self.service_one['id'],
+            region_id=self.region_two['id'],
+            resource_name='backup', resource_limit=5, id=uuid.uuid4().hex)
+
+        res2 = PROVIDERS.unified_limit_api.create_limits([limit_2, limit_3])
         for re in res2:
-            if re['id'] == limit_1['id']:
-                self.assertDictEqual(limit_1, re)
             if re['id'] == limit_2['id']:
                 self.assertDictEqual(limit_2, re)
+            if re['id'] == limit_3['id']:
+                self.assertDictEqual(limit_3, re)
 
     def test_create_limit_duplicate(self):
         limit_1 = unit.new_limit_ref(
@@ -456,15 +463,12 @@ class LimitTests(object):
             resource_name='snapshot', resource_limit=5, id=uuid.uuid4().hex)
         PROVIDERS.unified_limit_api.create_limits([limit_1, limit_2])
 
-        # update one, return all limits
+        # update one, return it.
         limit_update = {'id': limit_1['id'],
                         'resource_limit': 8}
         res = PROVIDERS.unified_limit_api.update_limits([limit_update])
-        for re in res:
-            if re['id'] == limit_1['id']:
-                self.assertEqual(8, re['resource_limit'])
-            if re['id'] == limit_2['id']:
-                self.assertDictEqual(limit_2, re)
+        self.assertEqual(1, len(res))
+        self.assertEqual(limit_1['id'], res[0]['id'])
 
     def test_list_limits(self):
         # create two limits
