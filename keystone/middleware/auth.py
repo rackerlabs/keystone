@@ -167,6 +167,8 @@ class AuthContextMiddleware(provider_api.ProviderAPIMixin,
         self.fill_context(request)
 
     def _keystone_specific_values(self, token, request_context):
+        if token.system_scoped:
+            request_context.system = token.system
         if token.domain_scoped:
             # Domain scoped tokens should never have is_admin_project set
             # Even if KSA defaults it otherwise.  The two mechanisms are

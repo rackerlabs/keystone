@@ -181,6 +181,11 @@ class KeystoneToken(dict):
         return 'system' in self
 
     @property
+    def system(self):
+        if 'system' in self:
+            return self['system']
+
+    @property
     def project_scoped(self):
         return 'project' in self
 
