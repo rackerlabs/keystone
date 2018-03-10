@@ -333,3 +333,141 @@ class SystemScopeProjectProtectionTests(ProjectProtectionTests,
             password=system_reader['password'],
             system=True
         )
+
+
+class DomainAdministratorTests(object):
+
+    @test_utils.wip(
+        'This test fails because the scope_types for identity:list_projects '
+        'do not include \'project\' or \'domain\' yet, so a 403 FORBIDDEN '
+        'be raised until that is addressed.',
+        expected_exception=webtest.app.AppError, bug="#1750660")
+    def test_domain_admin_can_list_all_projects_in_domain(self):
+        response = self.get('/projects', auth=self.domain_admin_auth)
+        project_list = response.json_body['projects']
+        # There should only be two projects in the self.domain_id domain
+        self.assertEqual(2, len(project_list))
+        domain_projects = [self.project_id, self.child_project_id]
+        for project in project_list:
+            self.assertIn(project['id'], domain_projects)
+
+    def test_domain_admin_can_get_project_in_domain(self):
+        path = '/projects/%(project_id)s' % {'project_id': self.project_id}
+        self.get(path, auth=self.domain_admin_auth)
+
+    def test_domain_admin_can_get_child_project_in_domain(self):
+        path = '/projects/%(project_id)s' % {
+            'project_id': self.child_project_id
+        }
+        self.get(path, auth=self.domain_admin_auth)
+
+    def test_domain_admin_cannot_get_project_outside_domain(self):
+        path = '/projects/%(project_id)s' % {
+            'project_id': self.default_project_id
+        }
+        self.get(path, auth=self.domain_admin_auth)
+
+    @test_utils.wip(
+        'This test fails because the scope_types for identity:create_project '
+        'do not include \'project\' or \'domain\' yet, so a 403 FORBIDDEN '
+        'be raised until that is addressed.',
+        expected_exception=webtest.app.AppError, bug="#1750660")
+    def test_domain_admin_can_create_project_in_domain(self):
+        project = unit.new_project_ref(domain_id=self.domain_id)
+        self.post(
+            '/projects', auth=self.domain_admin_auth, body={'project': project}
+        )
+
+    def test_domain_admin_cannot_create_project_in_other_domain(self):
+        project = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id
+        )
+        self.post(
+            '/projects', auth=self.domain_admin_auth,
+            body={'project': project}, expected_status=http_client.FORBIDDEN
+        )
+
+    @test_utils.wip(
+        'This test fails because the scope_types for identity:delete_project '
+        'do not include \'project\' or \'domain\' yet, so a 403 FORBIDDEN '
+        'be raised until that is addressed.',
+        expected_exception=webtest.app.AppError, bug="#1750660")
+    def test_domain_admin_can_delete_project_in_domain(self):
+        path = '/projects/%(project_id)s' % {'project_id': self.project_id}
+        self.delete(path, auth=self.domain_admin_auth)
+
+    def test_domain_admin_cannot_delete_project_in_other_domain(self):
+        # FIXME(lbragstad): Right now this fails because `project` or `domain`
+        # isn't in the scope_types attribute for the identity:delete_project
+        # policy, but this should actually fail because the domain in the token
+        # used to make this call doesn't match the domain of the project being
+        # deleted.
+        path = '/projects/%(project_id)s' % {
+            'project_id': self.default_project_id
+        }
+        self.delete(
+            path, auth=self.domain_admin_auth,
+            expected_status=http_client.FORBIDDEN
+        )
+
+
+class DomainWriterTests(object):
+    pass
+
+
+class DomainReaderTests(object):
+    pass
+
+
+class DomainScopeProjectProtectionTests(ProjectProtectionTests,
+                                        DomainAdministratorTests,
+                                        DomainWriterTests,
+                                        DomainReaderTests):
+
+    def setUp(self):
+        super(DomainScopeProjectProtectionTests, self).setUp()
+        self._create_domain_users_and_role_assignments()
+
+    def _create_domain_users_and_role_assignments(self):
+        # Create two users and give one the 'writer' role on the system and the
+        # other the 'reader' role on the system.
+        domain_admin = unit.new_user_ref(domain_id=self.domain_id)
+        domain_writer = unit.new_user_ref(domain_id=self.domain_id)
+        domain_reader = unit.new_user_ref(domain_id=self.domain_id)
+        domain_admin_id = PROVIDERS.identity_api.create_user(
+            domain_admin
+        )['id']
+        domain_writer_id = PROVIDERS.identity_api.create_user(
+            domain_writer
+        )['id']
+        domain_reader_id = PROVIDERS.identity_api.create_user(
+            domain_reader
+        )['id']
+
+        PROVIDERS.assignment_api.create_grant(
+            user_id=domain_admin_id, role_id=self.admin_role_id,
+            domain_id=self.domain_id
+        )
+        PROVIDERS.assignment_api.create_grant(
+            user_id=domain_writer_id, role_id=self.writer_role_id,
+            domain_id=self.domain_id
+        )
+        PROVIDERS.assignment_api.create_grant(
+            user_id=domain_reader_id, role_id=self.reader_role_id,
+            domain_id=self.domain_id
+        )
+        self.domain_admin_auth = self.build_authentication_request(
+            user_id=domain_admin_id,
+            password=domain_admin['password'],
+            domain_id=self.domain_id
+        )
+        self.domain_writer_auth = self.build_authentication_request(
+            user_id=domain_writer_id,
+            password=domain_writer['password'],
+            domain_id=self.domain_id
+        )
+        self.domain_reader_auth = self.build_authentication_request(
+            user_id=domain_reader_id,
+            password=domain_reader['password'],
+            domain_id=self.domain_id
+        )
