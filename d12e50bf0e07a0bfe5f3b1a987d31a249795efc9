@@ -16,6 +16,24 @@
       "revId": "d12e50bf0e07a0bfe5f3b1a987d31a249795efc9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_ac4fa090",
+        "filename": "releasenotes/notes/implied-roles-stable-8b293e187c5620ad.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-03-11T01:15:56Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "df7087c5_8434354c",
+      "revId": "d12e50bf0e07a0bfe5f3b1a987d31a249795efc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
