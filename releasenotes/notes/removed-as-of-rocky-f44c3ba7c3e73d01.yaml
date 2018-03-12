@@ -4,3 +4,7 @@ other:
     [`blueprint removed-as-of-rocky <https://blueprints.launchpad.net/keystone/+spec/removed-as-of-rocky>`_]
     The ``sql`` token driver and ``uuid`` token providers have been removed
     in favor of the ``fernet`` token provider.
+  - |
+    The password column which contains unhased user passwords has been removed
+    from db now. Please ensure the Keystone users' password have been hashed in
+    DB before upgrade to Rocky.

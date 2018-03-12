@@ -240,8 +240,7 @@ class Identity(base.IdentityDriverBase):
         if unique_cnt > 1:
             for password_ref in user_ref.local_user.passwords:
                 if password_hashing.check_password(
-                        password,
-                        password_ref.password_hash or password_ref.password):
+                        password, password_ref.password_hash):
                     raise exception.PasswordHistoryValidationError(
                         unique_count=unique_cnt)
 
