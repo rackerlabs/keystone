@@ -2930,6 +2930,27 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
                                                   self.metadata, autoload=True)
         self.assertEqual(set([]), registered_limit_table.foreign_keys)
 
+    def test_migration_045_drop_password_column(self):
+
+        password_table_name = 'password'
+        self.expand(44)
+        self.migrate(44)
+        self.contract(44)
+        self.assertTableColumns(
+            password_table_name,
+            ['id', 'local_user_id', 'password', 'password_hash', 'created_at',
+             'expires_at', 'self_service', 'created_at_int', 'expires_at_int']
+        )
+
+        self.expand(45)
+        self.migrate(45)
+        self.contract(45)
+        self.assertTableColumns(
+            password_table_name,
+            ['id', 'local_user_id', 'password_hash', 'created_at',
+             'expires_at', 'self_service', 'created_at_int', 'expires_at_int']
+        )
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = db_fixtures.MySQLOpportunisticFixture
