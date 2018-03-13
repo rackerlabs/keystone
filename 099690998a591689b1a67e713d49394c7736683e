@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_1c06cc1e",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-13T09:26:29Z",
+      "side": 1,
+      "message": "the CI will be happy once the oslo.log bump a new version to support ROCKY.",
+      "revId": "099690998a591689b1a67e713d49394c7736683e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
