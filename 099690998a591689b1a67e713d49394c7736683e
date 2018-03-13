@@ -16,6 +16,23 @@
       "revId": "099690998a591689b1a67e713d49394c7736683e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_74bd9300",
+        "filename": "releasenotes/notes/deprecated-as-of-pike-506f9aca91674550.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-03-13T17:22:09Z",
+      "side": 1,
+      "message": "Remove this file.",
+      "revId": "099690998a591689b1a67e713d49394c7736683e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
