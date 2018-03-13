@@ -6,6 +6,13 @@ Identity service, code-named keystone, on the controller node. For
 scalability purposes, this configuration deploys Fernet tokens and
 the Apache HTTP server to handle requests.
 
+.. note::
+
+   Ensure that the ``python-openstackclient`` and ``openstack-selinux``
+   packages under `Finalize the Installation
+   <https://docs.openstack.org/install-guide/environment-packages-rdo.html#finalize-the-installation>`_
+   are installed before proceeding.
+
 Prerequisites
 -------------
 
