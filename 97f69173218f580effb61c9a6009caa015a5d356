@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_abed01f1",
+        "filename": "doc/source/install/keystone-install-rdo.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-03-13T21:43:09Z",
+      "side": 1,
+      "message": "remove these whitespaces",
+      "range": {
+        "startLine": 11,
+        "startChar": 71,
+        "endLine": 11,
+        "endChar": 72
+      },
+      "revId": "97f69173218f580effb61c9a6009caa015a5d356",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_6bbda9d6",
+        "filename": "doc/source/install/keystone-install-rdo.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-03-13T21:43:09Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 12,
+        "startChar": 44,
+        "endLine": 12,
+        "endChar": 45
+      },
+      "revId": "97f69173218f580effb61c9a6009caa015a5d356",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
