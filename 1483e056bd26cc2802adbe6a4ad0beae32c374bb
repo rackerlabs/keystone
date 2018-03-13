@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_e56a4beb",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-13T19:50:27Z",
+      "side": 1,
+      "message": "Technically the v2 API doesn\u0027t exist anymore, so there is likely stuff to continue cleaning up here. But that might be better suited in another patch.",
+      "range": {
+        "startLine": 247,
+        "startChar": 59,
+        "endLine": 247,
+        "endChar": 69
+      },
+      "revId": "1483e056bd26cc2802adbe6a4ad0beae32c374bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
