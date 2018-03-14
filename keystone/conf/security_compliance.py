@@ -124,6 +124,12 @@ update user API. This feature is disabled by default. This feature is only
 applicable with the `sql` backend for the `[identity] driver`.
 """))
 
+allow_self_password_change = cfg.BoolOpt(
+    'allow_self_password_change',
+    default=True,
+    help=utils.fmt("""
+FILL ME UP!
+"""))
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
@@ -135,7 +141,8 @@ ALL_OPTS = [
     minimum_password_age,
     password_regex,
     password_regex_description,
-    change_password_upon_first_use
+    change_password_upon_first_use,
+    allow_self_password_change
 ]
 
 

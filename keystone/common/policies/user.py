@@ -105,7 +105,19 @@ user_policies = [
         scope_types=['system'],
         description='Delete a user.',
         operations=[{'path': '/v3/users/{user_id}',
-                     'method': 'DELETE'}])
+                     'method': 'DELETE'}]),
+    policy.DocumentedRuleDefault(
+        name=base.IDENTITY % 'change_password',
+        check_str=base.RULE_ADMIN_REQUIRED,
+        # FIXME(lbragstad): See the above comment about adding support for
+        # project scope_types in the future.
+        scope_types=['system'],
+        description=('Change password for the user. '
+                     'NOTE: this policy is ignored by default, unless '
+                     '[security_compliance]allow_self_change_password '
+                     'option is set to False'),
+        operations=[{'path': '/v3/users/{user_id}/password',
+                     'method': 'POST'}]),
 ]
 
 

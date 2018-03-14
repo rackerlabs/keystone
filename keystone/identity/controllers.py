@@ -30,6 +30,10 @@ LOG = log.getLogger(__name__)
 PROVIDERS = provider_api.ProviderAPIs
 
 
+def protect_change_password():
+    return not CONF.security_compliance.allow_self_password_change
+
+
 class UserV3(controller.V3Controller):
     collection_name = 'users'
     member_name = 'user'
@@ -124,6 +128,9 @@ class UserV3(controller.V3Controller):
     # NOTE(gagehugo): We do not need this to be @protected.
     # A user is already expected to know their password in order
     # to change it, and can be authenticated as such.
+    # NOTE(pas-ha) the above can be toggled back to protected status
+    # by setting allow_self_password_change to False
+    @controller.protected(enabled=protect_change_password)
     def change_password(self, request, user_id, user):
         original_password = user.get('original_password')
         if original_password is None:

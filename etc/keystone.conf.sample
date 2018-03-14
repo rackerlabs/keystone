@@ -2644,6 +2644,9 @@
 # value)
 #change_password_upon_first_use = false
 
+# FILL ME UP! (boolean value)
+#allow_self_password_change = true
+
 
 [shadow_users]
 
