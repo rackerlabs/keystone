@@ -182,7 +182,10 @@ class Resource(base.ResourceDriverBase):
             if 'tags-any' in filters.keys():
                 any_tags = filters['tags-any'].split(',')
                 subq = query.filter(ProjectTag.name.in_(any_tags))
-                filtered_ids += [ptag['project_id'] for ptag in subq]
+                any_tags = [ptag['project_id'] for ptag in subq]
+                if 'tags' in filters.keys():
+                    any_tags = set(any_tags) & set(filtered_ids)
+                filtered_ids = any_tags
             if 'not-tags' in filters.keys():
                 blacklist_ids = self._filter_ids_by_sorted_tags(
                     query, filters['not-tags'].split(','))
