@@ -39,6 +39,24 @@
       "revId": "aee8032c5178c2994bd4df37cfdcab13e1945ae4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_27b03443",
+        "filename": "keystone/tests/unit/protection/v3/test_projects.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-14T13:30:11Z",
+      "side": 1,
+      "message": "Right - that\u0027s a good question. I\u0027m hoping we can reach consensus on that in https://review.openstack.org/#/c/523973/",
+      "parentUuid": "df7087c5_b9e31b34",
+      "revId": "aee8032c5178c2994bd4df37cfdcab13e1945ae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
