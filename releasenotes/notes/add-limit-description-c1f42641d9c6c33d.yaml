@@ -1,0 +1,8 @@
+---
+features:
+  - >
+    [`blueprint unified-limit <https://blueprints.launchpad.net/keystone/+spec/unified-limit>`_]
+    [`bug 1754185 <https://bugs.launchpad.net/keystone/+bug/1754185>`_]
+    A new optional property `description` which is nullable is added to
+    registred limit and limit rescources. Users can create/update a registred
+    limit or project limit with `description` now.
