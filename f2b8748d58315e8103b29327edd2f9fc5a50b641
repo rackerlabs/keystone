@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_5a4e51c1",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-03-15T00:06:34Z",
+      "side": 1,
+      "message": "Change this back to PROVIDERS.resource_api",
+      "range": {
+        "startLine": 195,
+        "startChar": 15,
+        "endLine": 195,
+        "endChar": 32
+      },
+      "revId": "f2b8748d58315e8103b29327edd2f9fc5a50b641",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_bad8cdee",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 833,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-03-15T00:06:34Z",
+      "side": 1,
+      "message": "Not sure if this is really needed",
+      "range": {
+        "startLine": 833,
+        "startChar": 32,
+        "endLine": 833,
+        "endChar": 33
+      },
+      "revId": "f2b8748d58315e8103b29327edd2f9fc5a50b641",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_7aa55546",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 741,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-03-15T00:06:34Z",
+      "side": 1,
+      "message": "This is asserting that GET is not returning any projects due to being self-contradictory, rather than filtering on the project by tag and returning the one we are searching for.",
+      "range": {
+        "startLine": 734,
+        "startChar": 0,
+        "endLine": 741,
+        "endChar": 46
+      },
+      "revId": "f2b8748d58315e8103b29327edd2f9fc5a50b641",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
