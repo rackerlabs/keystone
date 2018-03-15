@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_e17f6363",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 572,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-15T15:33:40Z",
+      "side": 1,
+      "message": "This method is ridiculously complex and ugly. It pretty much contains all the different permutations we were doing in the V3TokenDataHelper to populate roles in different cases.\n\nNow that we have it all in one place, let\u0027s review it and see what makes sense and what doesn\u0027t. We\u0027re likely doing a bunch of duplicate stuff, not to mention order of operations needs to be enforced. The goal of this property method should be to return a list of role references given a scope. How can we make that as simple as possible to understand?",
+      "revId": "9dfa341357db2c0face5e691f8fa3b4df5176a25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
