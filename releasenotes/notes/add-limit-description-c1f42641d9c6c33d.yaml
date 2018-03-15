@@ -1,0 +1,7 @@
+---
+features:
+  - >
+    [`blueprint unified-limit <https://blueprints.launchpad.net/keystone/+spec/unified-limit>`_]
+    A new optional property `description` is added to registred limit and limit
+    rescource. The default value is ''. Users can create/update registred
+    limit or project limit with `description` now.

@@ -24,6 +24,9 @@ _registered_limit_create_properties = {
     },
     'default_limit': {
         'type': 'integer'
+    },
+    'description': {
+        'type': 'string'
     }
 }
 
@@ -51,6 +54,9 @@ _registered_limit_update_properties = {
     },
     'default_limit': {
         'type': 'integer'
+    },
+    'description': {
+        'type': 'string'
     }
 }
 
@@ -78,6 +84,9 @@ _limit_create_properties = {
     },
     'resource_limit': {
         'type': 'integer'
+    },
+    'description': {
+        'type': 'string'
     }
 }
 
@@ -99,6 +108,9 @@ _limit_update_properties = {
     'id': parameter_types.id_string,
     'resource_limit': {
         'type': 'integer'
+    },
+    'description': {
+        'type': 'string'
     }
 }
 
