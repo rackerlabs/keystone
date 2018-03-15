@@ -1,0 +1,17 @@
+---
+features:
+  - |
+    The protection for the ``v3/users/{user_id}/password`` API is restored,
+    and ``identity:change_password`` policy is reintroduced.
+
+    However enforcing this policy is skipped when either:
+
+    - password expiry is disabled
+      (``[security_compliance]/password_expires_days`` option is set)
+    - password change upon first use is required
+      (``[security_compliance]change_password_upon_first_use``
+      is set to ``True``).
+
+    In those two cases access to the ``v3/users/{user_id}/password``
+    API endpoint does not require a token in compliance with current behavior
+    (see bug https://bugs.launchpad.net/keystone/+bug/1641645).

@@ -411,7 +411,8 @@ Change password for user
 Changes the password for a user.
 
 .. note::
-    This API call does not require a token for authentication.
+    This API call does not require a token for authentication if either
+    password expiry or change of password on first use is configured.
 
 Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/user_change_password``
 

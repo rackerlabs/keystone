@@ -30,6 +30,13 @@ LOG = log.getLogger(__name__)
 PROVIDERS = provider_api.ProviderAPIs
 
 
+def protect_change_password():
+    # NOTE(pas-ha) see https://bugs.launchpad.net/keystone/+bug/1641645
+    # for reasons to unprotect change_password for these cases
+    return not (CONF.security_compliance.password_expires_days or
+                CONF.security_compliance.change_password_upon_first_use)
+
+
 class UserV3(controller.V3Controller):
     collection_name = 'users'
     member_name = 'user'
@@ -124,6 +131,9 @@ class UserV3(controller.V3Controller):
     # NOTE(gagehugo): We do not need this to be @protected.
     # A user is already expected to know their password in order
     # to change it, and can be authenticated as such.
+    # NOTE(pas-ha) the above is applied only when password expiry
+    # is configured, or if password change on first use is required
+    @controller.protected(enabled=protect_change_password)
     def change_password(self, request, user_id, user):
         original_password = user.get('original_password')
         if original_password is None:
