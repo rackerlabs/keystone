@@ -382,6 +382,35 @@ class SAMLGenerator(object):
         return signature
 
 
+def _verify_assertion_binary_is_installed():
+    """Make sure the specified xmlsec binary is installed.
+
+    If the binary specified in configuration isn't installed, make sure we
+    leave some sort of useful error message for operators since the absense of
+    it is going to throw an HTTP 500.
+
+    """
+    msg = (
+        'Unable to locate binary %(binary)s on the system. Check to make sure '
+        'it is installed.' % {'binary': CONF.saml.xmlsec1}
+    )
+    # If the specified binary is an absolute path (e.g. `/path/to/xmlsec1`,
+    # then it was supplied by the operator to tell us exactly where to find it.
+    # We should verify that file exists on the system. If the binary isn't an
+    # absolute file path, then we should assume it's an executable (e.g.
+    # `xmlsec1`) and verify it resolves to a path.
+    if os.path.isabs(CONF.saml.xmlsec_binary):
+        if not os.path.isfile(CONF.saml.xmlsec_binary):
+            LOG.error(msg)
+    else:
+        process = subprocess.Popen(['/usr/bin/which', CONF.saml.xmlsec_binary])
+        process.communicate()
+        # If `which xmlsec1` resolved the binary to a path, the return code
+        # will be 0. If it's anything else, the path doesn't exist.
+        if process.returncode:
+            LOG.error(msg)
+
+
 def _sign_assertion(assertion):
     """Sign a SAML assertion.
 
@@ -415,6 +444,13 @@ def _sign_assertion(assertion):
         'idp_public_key': CONF.saml.certfile,
         'idp_private_key': CONF.saml.keyfile,
     }
+
+    # Verify that the binary used to create the assertion actually exists on
+    # the system. If it doesn't, log a warning for operators to go and install
+    # it. Requests for assertions will fail with HTTP 500s until the package is
+    # installed, so providing something useful in the logs is about the best we
+    # can do.
+    _verify_assertion_binary_is_installed()
 
     command_list = [
         CONF.saml.xmlsec1_binary, '--sign', '--privkey-pem', certificates,
