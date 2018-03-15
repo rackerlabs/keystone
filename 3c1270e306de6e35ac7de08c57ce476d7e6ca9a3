@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_c1db3f4c",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-15T15:43:23Z",
+      "side": 0,
+      "message": "This bit is interesting, because we were caching a dictionary and token ID. Now that we\u0027re dealing with objects, we need to find a way to cache that. Or move the caching to a different layer.",
+      "revId": "3c1270e306de6e35ac7de08c57ce476d7e6ca9a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
