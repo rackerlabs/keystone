@@ -57,7 +57,7 @@ def v2_auth_deprecated(f):
     return wrapper()
 
 
-def protected(callback=None):
+def protected(callback=None, enabled=None):
     """Wrap API calls with role based access controls (RBAC).
 
     This handles both the protection of the API parameters as well as any
@@ -69,16 +69,23 @@ def protected(callback=None):
     function should gather the appropriate entities needed and then call
     check_protection() in the V3Controller class.
 
+    If specified, 'enabled' is a function without arguments, returning
+    boolean or anything that can be cast to boolean, and if returning
+    False, protection is skipped (default is not to skip protection).
+    This can be used to disable protection of specific API parts based
+    on config options (currently used on users/{id}/password endpoint).
+
     """
     def wrapper(f):
         @functools.wraps(f)
         def inner(self, request, *args, **kwargs):
-            check_function = authorization.check_protection
-            if callback is not None:
-                check_function = callback
+            if enabled is None or enabled():
+                check_function = authorization.check_protection
+                if callback is not None:
+                    check_function = callback
 
-            protected_wrapper(
-                self, f, check_function, request, None, *args, **kwargs)
+                protected_wrapper(
+                    self, f, check_function, request, None, *args, **kwargs)
             return f(self, request, *args, **kwargs)
         return inner
     return wrapper
