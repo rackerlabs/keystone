@@ -586,8 +586,6 @@ class Manager(manager.Manager):
           multi-domain configs), then we don't bother with the mapping at all.
 
         """
-        conf = CONF.identity
-
         if not self._needs_post_processing(driver):
             # a classic case would be when running with a single SQL driver
             return ref
@@ -604,10 +602,10 @@ class Manager(manager.Manager):
 
         if isinstance(ref, dict):
             return self._set_domain_id_and_mapping_for_single_ref(
-                ref, domain_id, driver, entity_type, conf)
+                ref, domain_id, driver, entity_type)
         elif isinstance(ref, list):
             return self._set_domain_id_and_mapping_for_list(
-                ref, domain_id, driver, entity_type, conf)
+                ref, domain_id, driver, entity_type)
         else:
             raise ValueError(_('Expected dict or list: %s') % type(ref))
 
@@ -627,11 +625,16 @@ class Manager(manager.Manager):
         LOG.debug('Created new mapping to public ID: %s', ref['id'])
 
     def _set_domain_id_and_mapping_for_single_ref(self, ref, domain_id,
-                                                  driver, entity_type, conf):
+                                                  driver, entity_type):
         LOG.debug('Local ID: %s', ref['id'])
         ref = ref.copy()
 
-        self._insert_domain_id_if_needed(ref, driver, domain_id, conf)
+        if not domain_id:
+            domain_id = CONF.identity.default_domain_id
+
+        # If the driver can't handle domains, add the domain_id to the entity
+        if not driver.is_domain_aware():
+            ref['domain_id'] = domain_id
 
         if self._is_mapping_needed(driver):
             local_entity = {'domain_id': ref['domain_id'],
@@ -647,7 +650,7 @@ class Manager(manager.Manager):
         return ref
 
     def _set_domain_id_and_mapping_for_list(self, ref_list, domain_id, driver,
-                                            entity_type, conf):
+                                            entity_type):
         """Set domain id and mapping for a list of refs.
 
         The method modifies refs in-place.
@@ -655,23 +658,24 @@ class Manager(manager.Manager):
         if not ref_list:
             return []
 
-        for r in ref_list:
-            self._insert_domain_id_if_needed(r, driver, domain_id, conf)
+        # If the domain_id is None that means we are running in a single
+        # backend mode, so to remain backwards compatible we will use the
+        # default domain ID.
+        if not domain_id:
+            domain_id = CONF.identity.default_domain_id
 
         if not self._is_mapping_needed(driver):
+            if not driver.is_domain_aware():
+                for ref in ref_list:
+                    ref['domain_id'] = domain_id
             return ref_list
 
-        # build a map of refs for fast look-up
+        # Insert domain id if needed and build a map of refs for fast look-up
         refs_map = {}
         for r in ref_list:
+            if not driver.is_domain_aware():
+                r['domain_id'] = domain_id
             refs_map[(r['id'], entity_type, r['domain_id'])] = r
-
-        # NOTE(breton): there are cases when the driver is not domain aware and
-        # no domain_id was explicitely provided for list operation. domain_id
-        # gets inserted into refs, but not passed into this method. Lets use
-        # domain_id from one of the refs.
-        if not domain_id:
-            domain_id = ref_list[0]['domain_id']
 
         # fetch all mappings for the domain, lookup the user at the map built
         # at previous step and replace his id.
@@ -696,19 +700,6 @@ class Manager(manager.Manager):
                             'entity_type': entity_type}
             self._insert_new_public_id(local_entity, ref, driver)
         return ref_list
-
-    def _insert_domain_id_if_needed(self, ref, driver, domain_id, conf):
-        """Insert the domain ID into the ref, if required.
-
-        If the driver can't handle domains, then we need to insert the
-        domain_id into the entity being returned.  If the domain_id is
-        None that means we are running in a single backend mode, so to
-        remain backwardly compatible, we put in the default domain ID.
-        """
-        if not driver.is_domain_aware():
-            if domain_id is None:
-                domain_id = conf.default_domain_id
-            ref['domain_id'] = domain_id
 
     def _is_mapping_needed(self, driver):
         """Return whether mapping is needed.
@@ -812,7 +803,7 @@ class Manager(manager.Manager):
             else:
                 # Although we don't have any drivers of this type, i.e. that
                 # understand UUIDs but not domains, conceptually you could.
-                return (conf.default_domain_id, driver, public_id)
+                return (CONF.identity.default_domain_id, driver, public_id)
 
         # So the only place left to find the ID is in the default driver which
         # we now know doesn't generate UUIDs
@@ -836,7 +827,7 @@ class Manager(manager.Manager):
         #
         # It is still possible that the public ID is just invalid in
         # which case we leave this to the caller to check.
-        return (conf.default_domain_id, driver, public_id)
+        return (CONF.identity.default_domain_id, driver, public_id)
 
     def _assert_user_and_group_in_same_backend(
             self, user_entity_id, user_driver, group_entity_id, group_driver):
@@ -1040,21 +1031,17 @@ class Manager(manager.Manager):
 
     def _handle_shadow_and_local_users(self, driver, hints):
         federated_attributes = ['idp_id', 'protocol_id', 'unique_id']
+        fed_res = []
         for filter_ in hints.filters:
             if filter_['name'] in federated_attributes:
                 return PROVIDERS.shadow_users_api.get_federated_users(hints)
-        fed_hints = copy.deepcopy(hints)
-        res = driver.list_users(hints)
-
-        # Note: If the filters contain 'name', we should get the user from both
-        # local user and shadow user backend.
-        for filter_ in fed_hints.filters:
+            # Note: If the filters contain 'name', we should get the user from
+            # both local user and shadow user backend.
             if filter_['name'] == 'name':
+                fed_hints = copy.deepcopy(hints)
                 fed_res = PROVIDERS.shadow_users_api.get_federated_users(
                     fed_hints)
-                res += fed_res
-                break
-        return res
+        return driver.list_users(hints) + fed_res
 
     @domains_configured
     @exception_translated('user')
