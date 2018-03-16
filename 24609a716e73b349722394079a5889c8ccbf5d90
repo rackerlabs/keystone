@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_b9d7564b",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-16T02:48:53Z",
+      "side": 1,
+      "message": "this can be removed.",
+      "range": {
+        "startLine": 211,
+        "startChar": 0,
+        "endLine": 211,
+        "endChar": 77
+      },
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
