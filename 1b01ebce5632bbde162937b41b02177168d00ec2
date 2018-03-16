@@ -34,6 +34,24 @@
       "revId": "1b01ebce5632bbde162937b41b02177168d00ec2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_9ab6f23d",
+        "filename": "doc/source/install/keystone-install-obs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-16T15:07:52Z",
+      "side": 1,
+      "message": "wfm",
+      "parentUuid": "df7087c5_a4907dee",
+      "revId": "1b01ebce5632bbde162937b41b02177168d00ec2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
