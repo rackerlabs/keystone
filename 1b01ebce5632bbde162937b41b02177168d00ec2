@@ -16,6 +16,24 @@
       "revId": "1b01ebce5632bbde162937b41b02177168d00ec2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_a4907dee",
+        "filename": "doc/source/install/keystone-install-obs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-16T14:32:11Z",
+      "side": 1,
+      "message": "I purposefully glossed over it, they can run ec2 things on 5000 (and they can also just run ec2 things on v3 ;))",
+      "parentUuid": "df7087c5_84f53959",
+      "revId": "1b01ebce5632bbde162937b41b02177168d00ec2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
