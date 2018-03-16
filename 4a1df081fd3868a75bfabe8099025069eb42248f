@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_81a3f0b1",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4047,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-16T10:21:32Z",
+      "side": 1,
+      "message": "If there\u0027s a note in a changelog somewhere it might be nice to reference it here or in the commit message",
+      "revId": "4a1df081fd3868a75bfabe8099025069eb42248f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
