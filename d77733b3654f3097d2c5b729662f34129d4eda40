@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_d6d8d91e",
+        "filename": "keystone/federation/idp.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2018-03-16T02:07:01Z",
+      "side": 1,
+      "message": "May be checking to see if the file is also an executable?\n\n  os.path.isfile(CONF.saml.xmlsec_binary) and os.access(CONF.saml.xmlsec, os.X_OK)",
+      "range": {
+        "startLine": 403,
+        "startChar": 8,
+        "endLine": 403,
+        "endChar": 55
+      },
+      "revId": "d77733b3654f3097d2c5b729662f34129d4eda40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_7601cd69",
+        "filename": "keystone/federation/idp.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2018-03-16T02:07:01Z",
+      "side": 1,
+      "message": "Nice! Maybe this check is good enough, and we don\u0027t need to above? Operational-wise, I can\u0027t imagine xmlsec1 is not on the path if its there.",
+      "revId": "d77733b3654f3097d2c5b729662f34129d4eda40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_b630c557",
+        "filename": "keystone/federation/idp.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2018-03-16T02:07:01Z",
+      "side": 1,
+      "message": "Maybe we should raise SMALSigningError here. There\u0027s no point in continuing if the binary is not there.",
+      "revId": "d77733b3654f3097d2c5b729662f34129d4eda40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
