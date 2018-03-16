@@ -1,0 +1,11 @@
+Code-Review+1: wangxiyuan <wangxiyuan@huawei.com>
+Code-Review+1: wangqi <wang.qi@99cloud.net>
+Code-Review+1: Prateek Goel <prateek.goel2@tatacommunications.com>
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Workflow+1: Colleen Murphy <colleen@gazlene.net>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 16 Mar 2018 09:32:34 +0000
+Reviewed-on: https://review.openstack.org/551685
+Project: openstack/keystone
+Branch: refs/heads/master
