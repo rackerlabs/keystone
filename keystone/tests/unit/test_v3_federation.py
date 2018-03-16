@@ -4042,11 +4042,17 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
         self.assertRaises(exception.SAMLSigningError,
                           keystone_idp._sign_assertion,
                           self.signed_assertion)
-        expected_log = (
-            "Error when signing assertion, reason: Command '%s' returned "
-            "non-zero exit status %s %s\n" %
-            (CONF.saml.xmlsec1_binary, sample_returncode, sample_output))
-        self.assertEqual(expected_log, logger_fixture.output)
+        # The message of subprocess.CalledProcessError is different between
+        # py3.6 and lower python version.
+        expected_log = [("Error when signing assertion, reason: Command '%s' "
+                         "returned non-zero exit status %s %s\n" %
+                         (CONF.saml.xmlsec1_binary, sample_returncode,
+                          sample_output)),  # < py3.6
+                        ("Error when signing assertion, reason: Command '%s' "
+                         "returned non-zero exit status %s. %s\n" %
+                         (CONF.saml.xmlsec1_binary, sample_returncode,
+                          sample_output))]  # == py3.6
+        self.assertIn(logger_fixture.output, expected_log)
 
     @mock.patch('oslo_utils.fileutils.write_to_tempfile')
     def test_sign_assertion_fileutils_exc(self, write_to_tempfile_mock):
