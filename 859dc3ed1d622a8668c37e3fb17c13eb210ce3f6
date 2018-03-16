@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_5b394aef",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4055,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-16T08:46:36Z",
+      "side": 1,
+      "message": "Could we use a regex match to allow for \\.? instead of copying the whole line?",
+      "revId": "859dc3ed1d622a8668c37e3fb17c13eb210ce3f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
