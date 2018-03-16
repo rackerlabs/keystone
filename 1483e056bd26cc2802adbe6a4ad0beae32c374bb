@@ -22,6 +22,30 @@
       "revId": "1483e056bd26cc2802adbe6a4ad0beae32c374bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_563929ef",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-16T02:29:40Z",
+      "side": 1,
+      "message": "L259 still get v2 catalog first. We may get rid of it once v2 support is removed totally in the future.",
+      "parentUuid": "df7087c5_e56a4beb",
+      "range": {
+        "startLine": 247,
+        "startChar": 59,
+        "endLine": 247,
+        "endChar": 69
+      },
+      "revId": "1483e056bd26cc2802adbe6a4ad0beae32c374bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
