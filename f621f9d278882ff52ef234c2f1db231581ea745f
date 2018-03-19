@@ -1,0 +1,204 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_7bc41b93",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T14:52:43Z",
+      "side": 1,
+      "message": "Closes-Bug: 1754185",
+      "revId": "f621f9d278882ff52ef234c2f1db231581ea745f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_98d6d5c3",
+        "filename": "api-ref/source/v3/samples/admin/limits-create-request.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T14:52:43Z",
+      "side": 1,
+      "message": "We could update this to be more realistic with respect to the other values in the example:\n\n  \"description\": \"Number of volumes for project 3a705b9f56bb439381b43c4fe59dccce\"",
+      "range": {
+        "startLine": 15,
+        "startChar": 28,
+        "endLine": 15,
+        "endChar": 45
+      },
+      "revId": "f621f9d278882ff52ef234c2f1db231581ea745f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_b8e8797c",
+        "filename": "api-ref/source/v3/samples/admin/limits-create-response.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T14:52:43Z",
+      "side": 1,
+      "message": "Same comment here as the previous doc. Applies to other occurrences throughout the document.",
+      "revId": "f621f9d278882ff52ef234c2f1db231581ea745f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_5b3117ec",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T14:52:43Z",
+      "side": 1,
+      "message": "We should add a test to make sure we can override a description we\u0027ve provided (e.g. setting it back to \u0027\u0027 from \u0027test description\u0027).",
+      "revId": "f621f9d278882ff52ef234c2f1db231581ea745f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_7b689bb9",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T14:52:43Z",
+      "side": 1,
+      "message": "This should be a good candidate for the json_schema testing in keystone/tests/unit/test_validation.py (along with description\u003dTrue, description\u003d123, etc..)",
+      "range": {
+        "startLine": 214,
+        "startChar": 52,
+        "endLine": 214,
+        "endChar": 68
+      },
+      "revId": "f621f9d278882ff52ef234c2f1db231581ea745f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_9baa4fd0",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2518,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T14:52:43Z",
+      "side": 1,
+      "message": "We could also add booleans to this:\n\n  ...,\n  {\u0027description\u0027: 123},\n  {\u0027description\u0027: True}]",
+      "revId": "f621f9d278882ff52ef234c2f1db231581ea745f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_7bdbbb7c",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2600,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T14:52:43Z",
+      "side": 1,
+      "message": "Good call on renaming this.",
+      "range": {
+        "startLine": 2600,
+        "startChar": 51,
+        "endLine": 2600,
+        "endChar": 59
+      },
+      "revId": "f621f9d278882ff52ef234c2f1db231581ea745f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_78266119",
+        "filename": "releasenotes/notes/add-limit-description-c1f42641d9c6c33d.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T14:52:43Z",
+      "side": 1,
+      "message": "We could also add a link to the bug report [0], which will help people understand exactly why we needed to add support for this.\n\n[0] https://bugs.launchpad.net/keystone/+bug/1754185",
+      "revId": "f621f9d278882ff52ef234c2f1db231581ea745f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_187de5e6",
+        "filename": "releasenotes/notes/add-limit-description-c1f42641d9c6c33d.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T14:52:43Z",
+      "side": 1,
+      "message": "nit: resources*",
+      "range": {
+        "startLine": 6,
+        "startChar": 4,
+        "endLine": 6,
+        "endChar": 13
+      },
+      "revId": "f621f9d278882ff52ef234c2f1db231581ea745f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_387549fb",
+        "filename": "releasenotes/notes/add-limit-description-c1f42641d9c6c33d.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T14:52:43Z",
+      "side": 1,
+      "message": "nit: a registered limit or a project limit",
+      "range": {
+        "startLine": 6,
+        "startChar": 64,
+        "endLine": 6,
+        "endChar": 73
+      },
+      "revId": "f621f9d278882ff52ef234c2f1db231581ea745f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
