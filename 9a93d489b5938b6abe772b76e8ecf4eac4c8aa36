@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_b9fdffb2",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 741,
+      "author": {
+        "id": 23625
+      },
+      "writtenOn": "2018-03-19T17:31:23Z",
+      "side": 1,
+      "message": "I did this to differentiate between tags and tags_any tests. The tags are randomly generated so returning more than one project with tags is impossible. Meanwhile, a single parameter search has the same results using tags or tags_any. This test serves to highlight that a tags search must contain each tag rather than at least one tag (as is the case in tags_any)",
+      "range": {
+        "startLine": 740,
+        "startChar": 8,
+        "endLine": 741,
+        "endChar": 46
+      },
+      "revId": "9a93d489b5938b6abe772b76e8ecf4eac4c8aa36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
