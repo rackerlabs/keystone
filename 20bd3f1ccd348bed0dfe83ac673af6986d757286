@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_e32cf54b",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-03-19T23:18:24Z",
+      "side": 1,
+      "message": "It would be good to add another test for \"tags\u003d{values}\u0026tags-any\u003d{values}\" to show that the bug is fixed.\n\nSee: https://review.openstack.org/#/c/553108/3/keystone/tests/unit/test_v3_resource.py",
+      "revId": "20bd3f1ccd348bed0dfe83ac673af6986d757286",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_c35d31ea",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 741,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-03-19T23:18:24Z",
+      "side": 1,
+      "message": "This still seems like it\u0027s not testing if we can actually search for a project by tags, rather than just searching if we don\u0027t find a project when we give it values that would return none, which would also happen if the functionality didn\u0027t work.",
+      "range": {
+        "startLine": 731,
+        "startChar": 0,
+        "endLine": 741,
+        "endChar": 46
+      },
+      "revId": "20bd3f1ccd348bed0dfe83ac673af6986d757286",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_6372257f",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 753,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-03-19T23:18:24Z",
+      "side": 1,
+      "message": "This change is good",
+      "range": {
+        "startLine": 746,
+        "startChar": 0,
+        "endLine": 753,
+        "endChar": 43
+      },
+      "revId": "20bd3f1ccd348bed0dfe83ac673af6986d757286",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_0309e9db",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 765,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-03-19T23:18:24Z",
+      "side": 1,
+      "message": "This is the same as the first comment, it\u0027s testing the opposite of what this filter is actually supposed to do.",
+      "range": {
+        "startLine": 755,
+        "startChar": 0,
+        "endLine": 765,
+        "endChar": 43
+      },
+      "revId": "20bd3f1ccd348bed0dfe83ac673af6986d757286",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_c312110a",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 777,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-03-19T23:18:24Z",
+      "side": 1,
+      "message": "ditto, but I like the list comprehension change",
+      "range": {
+        "startLine": 769,
+        "startChar": 0,
+        "endLine": 777,
+        "endChar": 46
+      },
+      "revId": "20bd3f1ccd348bed0dfe83ac673af6986d757286",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_23018db0",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 780,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-03-19T23:18:24Z",
+      "side": 1,
+      "message": "change to \u0027not-tags\u0027",
+      "range": {
+        "startLine": 780,
+        "startChar": 44,
+        "endLine": 780,
+        "endChar": 52
+      },
+      "revId": "20bd3f1ccd348bed0dfe83ac673af6986d757286",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
