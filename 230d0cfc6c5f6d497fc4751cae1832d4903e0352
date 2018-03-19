@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_f03378f5",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4050,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-19T03:07:58Z",
+      "side": 0,
+      "message": "this should not be removed, otherwise the test will fail again under py3.6\nhttps://review.openstack.org/#/c/553712/",
+      "revId": "230d0cfc6c5f6d497fc4751cae1832d4903e0352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

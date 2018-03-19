@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_10314ced",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4060,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-19T03:07:58Z",
+      "side": 1,
+      "message": "L4061 has covered L4060, this line can be removed.",
+      "revId": "45ea384728ff3ca8114a28ab2394d9ab815dda09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
