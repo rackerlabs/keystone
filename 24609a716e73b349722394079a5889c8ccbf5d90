@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "df7087c5_0367a927",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-03-19T23:45:16Z",
+      "side": 1,
+      "message": "Correct, we could have a file watcher looking for an update, but this was a simple version. I would 100% support using this as a cache and loading from disk only if the file has changed.",
+      "parentUuid": "df7087c5_ad0d8ce9",
+      "range": {
+        "startLine": 91,
+        "startChar": 8,
+        "endLine": 91,
+        "endChar": 32
+      },
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_f2612513",
         "filename": "keystone/catalog/backends/filesystem.py",
         "patchSetId": 11
@@ -36,6 +60,30 @@
       "writtenOn": "2018-03-19T20:57:56Z",
       "side": 1,
       "message": "This could be a relative path or an absolute path. If it\u0027s an absolute path and it doesn\u0027t exist on the system, will calling .find_file(yaml_file) help?",
+      "range": {
+        "startLine": 92,
+        "startChar": 8,
+        "endLine": 92,
+        "endChar": 17
+      },
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_03c249ea",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-03-19T23:45:16Z",
+      "side": 1,
+      "message": "See 2 lines below, we call find_file :)",
+      "parentUuid": "df7087c5_f2612513",
       "range": {
         "startLine": 92,
         "startChar": 8,
@@ -158,6 +206,24 @@
     },
     {
       "key": {
+        "uuid": "df7087c5_a344bd75",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-03-19T23:45:16Z",
+      "side": 1,
+      "message": "The endpoint for project is part of the filtering bits in catalog. We do not support that at all with the file-based catalogs, therefore this is not implemented. I guess it could return an empty list instead?",
+      "parentUuid": "df7087c5_ad202c9d",
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_8d3768e4",
         "filename": "keystone/catalog/backends/filesystem.py",
         "patchSetId": 11
@@ -175,6 +241,24 @@
     },
     {
       "key": {
+        "uuid": "df7087c5_2358ad54",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-03-19T23:45:16Z",
+      "side": 1,
+      "message": "Same as above.",
+      "parentUuid": "df7087c5_8d3768e4",
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_ed4b845c",
         "filename": "keystone/catalog/backends/filesystem.py",
         "patchSetId": 11
@@ -186,6 +270,24 @@
       "writtenOn": "2018-03-19T20:57:56Z",
       "side": 1,
       "message": "This contains writes?",
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_a3391df3",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-03-19T23:45:16Z",
+      "side": 1,
+      "message": "See above (applies to all the project-filtering in catalog)",
+      "parentUuid": "df7087c5_ed4b845c",
       "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
