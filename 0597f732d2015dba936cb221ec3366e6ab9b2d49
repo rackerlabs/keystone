@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_357f94ac",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T14:11:19Z",
+      "side": 1,
+      "message": "We usually try and backport things in a way that denotes the cherry pick in the commit message. For example, doing the following after working off head of stable/queens.\n\n  $ git review -X 553712",
+      "revId": "0597f732d2015dba936cb221ec3366e6ab9b2d49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
