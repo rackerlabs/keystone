@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "df7087c5_f2612513",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T20:57:56Z",
+      "side": 1,
+      "message": "This could be a relative path or an absolute path. If it\u0027s an absolute path and it doesn\u0027t exist on the system, will calling .find_file(yaml_file) help?",
+      "range": {
+        "startLine": 92,
+        "startChar": 8,
+        "endLine": 92,
+        "endChar": 17
+      },
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_b2440d76",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T20:57:56Z",
+      "side": 1,
+      "message": "We could provide more information here that is indicative of why this failed.\n\n  msg \u003d (\u0027Failed to load catalog data from %(file)s. \u0027\n         \u0027Please make sure the file exists and keystone \u0027\n         \u0027has access to read it.\u0027 , yaml_file)",
+      "range": {
+        "startLine": 99,
+        "startChar": 26,
+        "endLine": 99,
+        "endChar": 65
+      },
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_12cb791e",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T20:57:56Z",
+      "side": 1,
+      "message": "We could actually simplify this interface now and have the controller layer do the building of the response instead of the driver (which leads to API contracts being built in the driver instead of the actual API layer).",
+      "range": {
+        "startLine": 208,
+        "startChar": 8,
+        "endLine": 208,
+        "endChar": 22
+      },
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_b9d7564b",
         "filename": "keystone/catalog/backends/filesystem.py",
         "patchSetId": 11
@@ -18,6 +87,367 @@
         "startChar": 0,
         "endLine": 211,
         "endChar": 77
+      },
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_d238a13e",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T20:57:56Z",
+      "side": 1,
+      "message": "++, we should remove any v2.0 -\u003e v3 cruft laying around",
+      "parentUuid": "df7087c5_b9d7564b",
+      "range": {
+        "startLine": 211,
+        "startChar": 0,
+        "endLine": 211,
+        "endChar": 77
+      },
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_ad202c9d",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T20:57:56Z",
+      "side": 1,
+      "message": "This contains writes?",
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_8d3768e4",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T20:57:56Z",
+      "side": 1,
+      "message": "This contains writes?",
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_ed4b845c",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T20:57:56Z",
+      "side": 1,
+      "message": "This contains writes?",
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_cd5a4029",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T20:57:56Z",
+      "side": 1,
+      "message": "This is writable?",
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_8d3c48c0",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T20:57:56Z",
+      "side": 1,
+      "message": "This is writable?",
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_2d497c5f",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T20:57:56Z",
+      "side": 1,
+      "message": "This is writable?",
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_4d463052",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T20:57:56Z",
+      "side": 1,
+      "message": "This is writable?",
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_f717d7a2",
+        "filename": "keystone/conf/catalog.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T20:57:56Z",
+      "side": 1,
+      "message": "nit: if we consolidate the approach below - we can deprecate this option in favor of simpler configuration.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 13
+      },
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_f4ca7518",
+        "filename": "keystone/conf/catalog.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T20:57:56Z",
+      "side": 1,
+      "message": "This seems generic because we\u0027re using \"filesystem\" in the name, but it\u0027s also specific to the yaml implementation of the catalog backend. It feels like we should make this more generic, so that it can be used when configured with the yaml backend or the templated backend.",
+      "range": {
+        "startLine": 27,
+        "startChar": 5,
+        "endLine": 27,
+        "endChar": 25
+      },
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_f4659546",
+        "filename": "keystone/conf/catalog.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T20:57:56Z",
+      "side": 1,
+      "message": "Do we want to be generic here? `filesystem` could mean ``templated`` or ``yaml``, right?\n\nFor example - we could achieve the following with only two configuration options that would allow us to deprecate `template_file\u0027.\n\n  [catalog]\n  driver \u003d sql\n  catalog_file \u003d None  # because it\u0027s not used with sql\n\nor \n\n  [catalog]\n  driver \u003d templated\n  catalog_file \u003d default_catalog.templates\n\nand finally:\n\n  [catalog]\n  driver \u003d yaml\n  catalog_file \u003d catalog.yaml",
+      "range": {
+        "startLine": 31,
+        "startChar": 37,
+        "endLine": 31,
+        "endChar": 47
+      },
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_5726c318",
+        "filename": "keystone/conf/catalog.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T20:57:56Z",
+      "side": 1,
+      "message": "We\u0027ll need to update this help text to advertise the yaml catalog.",
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_72ce7584",
+        "filename": "keystone/tests/unit/default_filesystem_catalog.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T20:57:56Z",
+      "side": 1,
+      "message": "With YAML, we have the ability to reduce some of the duplication here with nesting... what about something like this?\n\nhttp://paste.openstack.org/show/705082/",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 23
+      },
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_f29fe562",
+        "filename": "keystone/tests/unit/test_backend_filesystem.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T20:57:56Z",
+      "side": 1,
+      "message": "Completely agree with this, but I\u0027m not sure we should advertise this as \"broken\", since we never really wanted to develop this feature with write support from the beginning. Broken implies that something needs to be fixed, but there isn\u0027t really anything to fix about the current behavior. Instead, we might just say something like \"The %(driver)s doesn\u0027t support write operations.\"",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 6
+      },
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_72caf54f",
+        "filename": "keystone/tests/unit/test_backend_filesystem.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T20:57:56Z",
+      "side": 1,
+      "message": "nit: get* since we seem to use that consistently over \"show\".",
+      "range": {
+        "startLine": 147,
+        "startChar": 13,
+        "endLine": 147,
+        "endChar": 17
+      },
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_72f8b57b",
+        "filename": "releasenotes/notes/filesystem-catalog-backend-a25bfc25262313b1.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T20:57:56Z",
+      "side": 1,
+      "message": "nit: Keystone now supports a read-only YAML catalog backend.",
+      "range": {
+        "startLine": 5,
+        "startChar": 46,
+        "endLine": 6,
+        "endChar": 70
+      },
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_122ff9f6",
+        "filename": "releasenotes/notes/filesystem-catalog-backend-a25bfc25262313b1.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T20:57:56Z",
+      "side": 1,
+      "message": "We could link to some documentation that actually describes maintenance and operator workflows (e.g. how to define a catalog in YAML).",
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_52d6d1f3",
+        "filename": "releasenotes/notes/filesystem-catalog-backend-a25bfc25262313b1.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T20:57:56Z",
+      "side": 1,
+      "message": "This might not make much sense to explicitly say since we already removed v2.0 support in Queens.",
+      "range": {
+        "startLine": 8,
+        "startChar": 37,
+        "endLine": 9,
+        "endChar": 15
       },
       "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
