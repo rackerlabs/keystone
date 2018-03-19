@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_f82911f2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T14:33:41Z",
+      "side": 1,
+      "message": "Partial-Bug: 1754185",
+      "revId": "255a4b43286b670a9bca99fc2e60ae01cc5aa1b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_187ac587",
+        "filename": "keystone/common/sql/expand_repo/versions/045_expand_add_description_to_limit.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T14:33:41Z",
+      "side": 1,
+      "message": "Is there a difference here between setting this as nullable and having the default be None?\n\nWe sometimes only make columns non-nullable if they *must* be populated (IDs or unique constraints of a resource).",
+      "range": {
+        "startLine": 24,
+        "startChar": 61,
+        "endLine": 24,
+        "endChar": 75
+      },
+      "revId": "255a4b43286b670a9bca99fc2e60ae01cc5aa1b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_750c2c42",
+        "filename": "keystone/common/sql/expand_repo/versions/045_expand_add_description_to_limit.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T14:33:41Z",
+      "side": 1,
+      "message": "Does this need to be defined again? We should be able to use it for both tables:\n\n  registered_limit_table.create_column(description)\n  limit_table.create_column(description)",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 59
+      },
+      "revId": "255a4b43286b670a9bca99fc2e60ae01cc5aa1b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_b85879fa",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2933,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T14:33:41Z",
+      "side": 1,
+      "message": "We can assert that the description column doesn\u0027t exist prior to running migration 45:\n\n \n  self.assertTableColumns(application_credential_table_name,\n      [\u0027id\u0027, \u0027service_id\u0027, \u0027region_id\u0027, \u0027resource_name\u0027,\n       \u0027default_limit\u0027]",
+      "revId": "255a4b43286b670a9bca99fc2e60ae01cc5aa1b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_18d64551",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2945,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T14:33:41Z",
+      "side": 1,
+      "message": "We can also perform this check by using a built in assertion, which can be handy:\n\n  self.assertTableColumns(application_credential_table_name,\n      [\u0027id\u0027, \u0027service_id\u0027, \u0027region_id\u0027, \u0027resource_name\u0027,\n       \u0027default_limit\u0027, \u0027description\u0027]\n      \n\nThat checks that each column passed in is included in the schema.",
+      "revId": "255a4b43286b670a9bca99fc2e60ae01cc5aa1b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_180ac589",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2990,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-19T14:33:41Z",
+      "side": 1,
+      "message": "Because the schema always expects this to be defined, the application will always have to populate this before handing things off.\n\nI don\u0027t think there is much of a difference between setting description.nullable \u003d False and always passing it in like this, or allowing it to be nullable.\n\nI just know we don\u0027t typically set nullable\u003dFalse unless the property always has to be present. On the other side of the coin, being super explicit about what gets inserted or updated can\u0027t hurt either.",
+      "revId": "255a4b43286b670a9bca99fc2e60ae01cc5aa1b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
