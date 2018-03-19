@@ -13,6 +13,7 @@
 from oslo_log import log
 from six import text_type
 from sqlalchemy import orm
+from sqlalchemy.orm import aliased
 
 from keystone.common import driver_hints
 from keystone.common import sql
@@ -172,60 +173,56 @@ class Resource(base.ResourceDriverBase):
             project_refs = self._get_children(session, [project_id])
             return not project_refs
 
-    def list_projects_by_tags(self, filters):
-        filtered_ids = []
+    def list_projects_by_tags(self, hints):
+        pid_list = []
         with sql.session_for_read() as session:
             query = session.query(ProjectTag)
-            if 'tags' in filters.keys():
-                filtered_ids += self._filter_ids_by_tags(
-                    query, filters['tags'].split(','))
-            if 'tags-any' in filters.keys():
-                any_tags = filters['tags-any'].split(',')
-                subq = query.filter(ProjectTag.name.in_(any_tags))
-                any_tags = [ptag['project_id'] for ptag in subq]
-                if 'tags' in filters.keys():
-                    any_tags = set(any_tags) & set(filtered_ids)
-                filtered_ids = any_tags
-            if 'not-tags' in filters.keys():
-                blacklist_ids = self._filter_ids_by_tags(
-                    query, filters['not-tags'].split(','))
-                filtered_ids = self._filter_not_tags(session,
-                                                     filtered_ids,
-                                                     blacklist_ids)
-            if 'not-tags-any' in filters.keys():
-                any_tags = filters['not-tags-any'].split(',')
-                subq = query.filter(ProjectTag.name.in_(any_tags))
-                blacklist_ids = [ptag['project_id'] for ptag in subq]
-                if 'not-tags' in filters.keys():
-                    filtered_ids += blacklist_ids
+            for tag_filter in hints.filters:
+                if 'equals' not in tag_filter['comparator']:
+                    pass
                 else:
-                    filtered_ids = self._filter_not_tags(session,
-                                                         filtered_ids,
-                                                         blacklist_ids)
-            if not filtered_ids:
+                    query = self._exact_filter(query, tag_filter)
+
+            for pid in query:
+                if pid.project_id not in pid_list:
+                    pid_list.append(pid.project_id)
+
+            if pid_list == []:
                 return []
-            query = session.query(Project)
-            query = query.filter(Project.id.in_(filtered_ids))
-            return [project_ref.to_dict() for project_ref in query.all()
+
+            pquery = session.query(Project)
+            pquery = pquery.filter(Project.id.in_(pid_list))
+
+            return [project_ref.to_dict() for project_ref in pquery.all()
                     if not self._is_hidden_ref(project_ref)]
 
-    def _filter_ids_by_tags(self, query, tags):
-        filtered_ids = []
-        subq = query.filter(ProjectTag.name.in_(tags))
-        for ptag in subq:
-            subq_tags = query.filter(ProjectTag.project_id ==
-                                     ptag['project_id'])
-            result = map(lambda x: x['name'], subq_tags.all())
-            if set(tags) <= set(result):
-                filtered_ids.append(ptag['project_id'])
-        return filtered_ids
+    def _exact_filter(self, query, filters):
+        tags = filters['value'].split(',')
+        tag_alias = aliased(ProjectTag)
+        subq = query.join(tag_alias,
+                          ProjectTag.project_id == tag_alias.project_id)
+        if 'any' in filters['method']:
+            subq = subq.filter(ProjectTag.name.in_(tags))
+        else:
+            # We build a JOIN ladder expression for each tag, JOIN'ing
+            # the first tag to the instances table, and each subsequent
+            # tag to the last JOIN'd tags table
+            for tag in tags:
+                tag_alias = aliased(ProjectTag)
+                subq = subq.join(tag_alias,
+                                 ProjectTag.project_id == tag_alias.project_id)
+                subq = subq.filter(tag_alias.name == tag)
+        if 'not' in filters['method']:
+            not_list = []
+            for pid in subq:
+                if pid['project_id'] not in not_list:
+                    not_list.append(pid['project_id'])
+            if not_list == []:
+                subq = query
+            else:
+                subq = query.filter(~ProjectTag.project_id.in_(not_list))
 
-    def _filter_not_tags(self, session, filtered_ids, blacklist_ids):
-        subq = session.query(Project)
-        valid_ids = [q['id'] for q in subq if q['id'] not in blacklist_ids]
-        if filtered_ids:
-            valid_ids = list(set(valid_ids) & set(filtered_ids))
-        return valid_ids
+        return subq
 
     # CRUD
     @sql.handle_conflicts(conflict_type='project')
