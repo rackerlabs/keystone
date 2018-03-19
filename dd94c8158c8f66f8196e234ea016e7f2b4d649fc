@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_6d0c6f94",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1051,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-19T02:29:58Z",
+      "side": 1,
+      "message": "deepcopy should be done before L1049, because \"driver.list_users(hints)\" will clean the filter in hints, then fed_hints here actually contains no fitlers.\nThe test \"tests.unit.identity.test_backends.IdentityTests.test_list_users_with_name\"[1] doesn\u0027t raise error due to there is only one federated user in the test, if rewrite it to[2], you can find the  test will fail with this patch.\n\n[1]: https://github.com/openstack/keystone/blob/master/keystone/tests/unit/identity/test_backends.py#L558-L579\n[2]: http://paste.openstack.org/show/703968/",
+      "range": {
+        "startLine": 1051,
+        "startChar": 0,
+        "endLine": 1051,
+        "endChar": 44
+      },
+      "revId": "dd94c8158c8f66f8196e234ea016e7f2b4d649fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
