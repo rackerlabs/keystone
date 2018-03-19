@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_f787d760",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 741,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2018-03-19T19:35:20Z",
+      "side": 1,
+      "message": "should we not have some test with a tag_string that returns positive results as well?",
+      "range": {
+        "startLine": 740,
+        "startChar": 0,
+        "endLine": 741,
+        "endChar": 46
+      },
+      "revId": "08a6a12b4d30c16d5a774a80d14171e95a94651a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
