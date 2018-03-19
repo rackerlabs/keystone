@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "df7087c5_c387710f",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 23140
+      },
+      "writtenOn": "2018-03-19T23:47:05Z",
+      "side": 1,
+      "message": "I don\u0027t think you need to use alias here. I think you could just use subq \u003d query.filter(ProjectTag.name.in_(any_tags))",
+      "revId": "20bd3f1ccd348bed0dfe83ac673af6986d757286",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_e32cf54b",
         "filename": "keystone/tests/unit/test_v3_resource.py",
         "patchSetId": 3
