@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_cfa9dd90",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-03-19T16:57:04Z",
+      "side": 1,
+      "message": "This is a bad filter for MySQL based systems, it is very expensive (and a full table scan, you cannot index) because it is a leading wild-card.\n\nI am not sure we should have contains or endswith based upon the potential cost if a lot of tags in the db. It can get expensive to have the full table scan as the table increases in size.",
+      "range": {
+        "startLine": 223,
+        "startChar": 8,
+        "endLine": 224,
+        "endChar": 69
+      },
+      "revId": "2a2a895b8f19ade9d09ba3bedffcd12c0ebde90d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_efae2197",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-03-19T16:57:04Z",
+      "side": 1,
+      "message": "See above.",
+      "range": {
+        "startLine": 227,
+        "startChar": 8,
+        "endLine": 228,
+        "endChar": 67
+      },
+      "revId": "2a2a895b8f19ade9d09ba3bedffcd12c0ebde90d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
