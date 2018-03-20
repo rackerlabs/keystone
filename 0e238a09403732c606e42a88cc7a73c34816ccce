@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_d1b08de0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-20T12:55:57Z",
+      "side": 1,
+      "message": "You can add Closes-Bug: 1754417 too",
+      "revId": "0e238a09403732c606e42a88cc7a73c34816ccce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_91a1b598",
+        "filename": "doc/source/install/keystone-install-rdo.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-20T12:55:57Z",
+      "side": 1,
+      "message": "Can you generalize this for keystone-install-obs.rst and keystone-install-ubuntu.rst? Maybe instead of calling out these two packages just say \"Ensure you have completed the prerequisite installation steps in the OpenStack install guide\" with a link to https://docs.openstack.org/install-guide/environment.html\n\nThis way we\u0027re covered for the database and memcached installation too.",
+      "revId": "0e238a09403732c606e42a88cc7a73c34816ccce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
