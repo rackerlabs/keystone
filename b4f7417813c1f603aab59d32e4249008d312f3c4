@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "df7087c5_b93db2de",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-03-20T21:19:44Z",
+      "side": 1,
+      "message": "We should be adding any extra mapped_properties, not just email if we want to include extras.",
+      "range": {
+        "startLine": 240,
+        "startChar": 12,
+        "endLine": 240,
+        "endChar": 62
+      },
+      "revId": "b4f7417813c1f603aab59d32e4249008d312f3c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff6b8bd7_a2dcd018",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 5
