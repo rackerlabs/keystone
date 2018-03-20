@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_dd79892f",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1414,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-20T07:09:36Z",
+      "side": 1,
+      "message": "It works well, but a easier way is to mock \"purge_mappings\" in id_mapping_api, then just need to test mock_obj.assert_called_with()",
+      "range": {
+        "startLine": 1399,
+        "startChar": 0,
+        "endLine": 1414,
+        "endChar": 44
+      },
+      "revId": "1a41363dfc69cd3bfdfb90e3d9af882ae4833548",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
