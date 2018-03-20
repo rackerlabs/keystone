@@ -29,14 +29,45 @@ of v3 features they need to know about how it works.
 Glossary
 ========
 
+Authentication
+    The process of determining if a user is who they claim to be (authN).
+
+Authorization
+    The process of determining if a user can do what they are requesting
+    (authZ).
+
+Scope
+    A specific operating context. This is commonly used when describing the
+    authorization a user may have by way of obtaining tokens.
+
+System
+    An assignment target that refers to a collection of API services as a
+    whole. Users and groups can be granted authorization on the *deployment
+    system*.
+
 Service
-    OpenStack services like identity, compute, image, etc.
+    OpenStack services like identity, compute, image, et cetera.
+
+Domain
+    A container for users, projects, and groups. A domain is also an assignment
+    target for users and groups. It's possible for users and groups to have
+    authorization on domains outside of their domain.
 
 Project
-    A project provides namespace and resource isolation for groups of OpenStack
-    entities. Users must be assigned a role on a project in order to interact
-    with it. Prior to the introduction of the v3 API, projects were referred to
-    as tenants in the v2.0 API.
+    A container and a namespace for resources isolation within OpenStack. A
+    user, or group of users, must have a role on a project in order to interact
+    with it.
+
+Token
+    A self-service resource that carries a user's authorization, allowing them
+    to interact with OpenStack services.
+
+User
+    A entity modeling an end-user of the system.
+
+Group
+    A container for users. Users indirectly inherit any authorization the group
+    has on projects, domains, or the system.
 
 
 Domains
@@ -82,18 +113,89 @@ experiment with domains, while isolating them from the v2.0 API.
 As far as the v3 API is concerned, the *default* domain is simply a domain and
 doesn't carry any special connotation like it did with v2.0.
 
-Token differences
-=================
+Authorization Scopes
+====================
 
-Domain-scoped tokens
---------------------
+The Identity API uses tokens to relay a user's authorization, which is
+sometimes referred to as a token's *scope*. This happens when a user presents
+credentials, in some form or fashion, to keystone in addition to a desired
+scope. If keystone can prove the user is who they say they are (authN), it will
+then validate the user has access to the scope they are requesting (authZ). If
+successful, the token response will contain a token ID and data about the
+transaction, like the scope target and role assignments. Users can use this
+token ID in requests to other OpenStack services, which consume the
+authorization information associated to that token.
 
-Domain-scoped tokens are scoped to a domain rather than a project. These are
-useful for operating against keystone but are generally useless in other
-services that don't have use cases for domain-level operations. Unless a
-service has a real case for handling such authorization, they don't need to
-concern themselves with domain-scoped tokens.
+This section describes the various scopes availabe, and what they mean for
+services consuming tokens.
 
+System Scope
+------------
+
+A *system-scoped* token implies the user has authorization to act on the
+*deployment system*. These tokens are useful for interacting with resources
+that affect the deployment as a whole, or exposes resources that might
+otherwise violate project or domain isolation.
+
+Good examples of system-scoped resources include:
+
+* Services: Service entities within keystone that describe the services
+  deployed in a cloud.
+* Endpoints: Endpoints that tell users where to find services deployed in a
+  cloud.
+* Hypervisors: Hosts for servers that belong to various projects.
+
+Domain Scope
+------------
+
+A *domain-scoped* token carries a user's authorization on a specific domain.
+Ideally, these tokens would be useful for listing resources aggregated across
+all projects with that domain. They can also be useful for creating entities
+that must belong to a domain. Users and groups are good examples of this. The
+following is an example of how a domain-scoped token could be used against a
+service.
+
+Assume a domain exists called `Foo`. and it contains projects call `bar` and
+`baz`. Let's also assume both projects contain compute servers running a
+workload. If Alice is a domain administrator for `Foo`, she should be able to
+pass her domain-scoped token to nova and ask for a list of instances. If nova
+supports domain-scoped token, the response would contain all instances in
+projects `bar` and `baz`.
+
+Another example of using a domain-scoped token would be if Alice wanted to
+create a new project in domain `Foo`. When Alice sends a request for keystone
+to create a project, keystone should ensure the new project is created within
+the `Foo` domain, since that's the authorization associated to Alice's token.
+
+.. WARNING::
+
+    This behavior isn't completely implemented, and is still in progress. This
+    example describe the ideal behavior, specifically for developers looking to
+    implement scope into their APIs.
+
+Project Scope
+-------------
+
+A *project-scoped* token carries the role assignments a user has on a project.
+This type of scope is great for managing resources that fit nicely within
+project boundaries. Good examples of project-level resources that can be
+managed with project-scoped tokens are:
+
+* Instances: Virtual compute servers that require a project association in
+  order to be created.
+* Volumes: Storage devices that can be attached to instances.
+
+Unscoped
+--------
+
+An *unscoped* token is a token that proves authentication, but doesn't carry
+any authorization. Users can obtain unscoped tokens by simply proving their
+identity with credentials. Unscoped tokens can be exchanged for any of the
+various scoped tokens if a user has authorization on the requested scope.
+
+Unscoped tokens might be useful for controlling access to things that are very
+user-specific. SSH key pairs are a good example of a resource that shouldn't
+require any project, domain, or system authorization in order to manage.
 
 Auth Token middleware
 =====================
