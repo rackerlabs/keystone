@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "df7087c5_e672c2e3",
+        "filename": "keystone/common/sql/expand_repo/versions/045_expand_add_description_to_limit.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-20T02:03:54Z",
+      "side": 1,
+      "message": "Just keep the same with the \"description\" in \"regions\" or \"projects\"(both of them are nullable\u003dFalse), then it can  ensure that  \"description\" is always be returned.",
+      "parentUuid": "df7087c5_187ac587",
+      "range": {
+        "startLine": 24,
+        "startChar": 61,
+        "endLine": 24,
+        "endChar": 75
+      },
+      "revId": "255a4b43286b670a9bca99fc2e60ae01cc5aa1b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_750c2c42",
         "filename": "keystone/common/sql/expand_repo/versions/045_expand_add_description_to_limit.py",
         "patchSetId": 4
@@ -53,6 +77,30 @@
       "writtenOn": "2018-03-19T14:33:41Z",
       "side": 1,
       "message": "Does this need to be defined again? We should be able to use it for both tables:\n\n  registered_limit_table.create_column(description)\n  limit_table.create_column(description)",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 59
+      },
+      "revId": "255a4b43286b670a9bca99fc2e60ae01cc5aa1b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_a6a7ea4f",
+        "filename": "keystone/common/sql/expand_repo/versions/045_expand_add_description_to_limit.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-20T02:03:54Z",
+      "side": 1,
+      "message": "yeah, it should be redefined, otherwise it will raise error, patch set 1 is the example:\nhttp://logs.openstack.org/31/553131/1/check/openstack-tox-py27/29853d2/testr_results.html.gz",
+      "parentUuid": "df7087c5_750c2c42",
       "range": {
         "startLine": 29,
         "startChar": 0,
@@ -82,6 +130,24 @@
     },
     {
       "key": {
+        "uuid": "df7087c5_464b6e86",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2933,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-20T02:03:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df7087c5_b85879fa",
+      "revId": "255a4b43286b670a9bca99fc2e60ae01cc5aa1b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_18d64551",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 4
@@ -99,6 +165,24 @@
     },
     {
       "key": {
+        "uuid": "df7087c5_6650f233",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2945,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-20T02:03:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df7087c5_18d64551",
+      "revId": "255a4b43286b670a9bca99fc2e60ae01cc5aa1b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_180ac589",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 4
@@ -110,6 +194,24 @@
       "writtenOn": "2018-03-19T14:33:41Z",
       "side": 1,
       "message": "Because the schema always expects this to be defined, the application will always have to populate this before handing things off.\n\nI don\u0027t think there is much of a difference between setting description.nullable \u003d False and always passing it in like this, or allowing it to be nullable.\n\nI just know we don\u0027t typically set nullable\u003dFalse unless the property always has to be present. On the other side of the coin, being super explicit about what gets inserted or updated can\u0027t hurt either.",
+      "revId": "255a4b43286b670a9bca99fc2e60ae01cc5aa1b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_264afa7f",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2990,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-20T02:03:54Z",
+      "side": 1,
+      "message": "ditto, see my comment in the migration script",
+      "parentUuid": "df7087c5_180ac589",
       "revId": "255a4b43286b670a9bca99fc2e60ae01cc5aa1b8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
