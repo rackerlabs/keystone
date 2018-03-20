@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "df7087c5_4605ae79",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-20T01:48:59Z",
+      "side": 1,
+      "message": "yeah, this could be done via a decorator",
+      "parentUuid": "df7087c5_0367a927",
+      "range": {
+        "startLine": 91,
+        "startChar": 8,
+        "endLine": 91,
+        "endChar": 32
+      },
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_f2612513",
         "filename": "keystone/catalog/backends/filesystem.py",
         "patchSetId": 11
@@ -107,6 +131,30 @@
       "writtenOn": "2018-03-19T20:57:56Z",
       "side": 1,
       "message": "We could provide more information here that is indicative of why this failed.\n\n  msg \u003d (\u0027Failed to load catalog data from %(file)s. \u0027\n         \u0027Please make sure the file exists and keystone \u0027\n         \u0027has access to read it.\u0027 , yaml_file)",
+      "range": {
+        "startLine": 99,
+        "startChar": 26,
+        "endLine": 99,
+        "endChar": 65
+      },
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_26043a7b",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-20T01:48:59Z",
+      "side": 1,
+      "message": "sure",
+      "parentUuid": "df7087c5_b2440d76",
       "range": {
         "startLine": 99,
         "startChar": 26,
