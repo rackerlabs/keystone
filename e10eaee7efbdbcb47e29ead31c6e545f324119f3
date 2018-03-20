@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_9572fcac",
+        "filename": "doc/source/admin/identity-tokens.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-03-20T15:22:26Z",
+      "side": 1,
+      "message": "Would we want to change this as well? Or perhaps add a note like below that currently there is only one supported provider?",
+      "range": {
+        "startLine": 7,
+        "startChar": 46,
+        "endLine": 9,
+        "endChar": 27
+      },
+      "revId": "e10eaee7efbdbcb47e29ead31c6e545f324119f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_559224a1",
+        "filename": "doc/source/admin/identity-tokens.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-03-20T15:22:26Z",
+      "side": 1,
+      "message": "nit: \"only supported\"",
+      "range": {
+        "startLine": 82,
+        "startChar": 53,
+        "endLine": 82,
+        "endChar": 58
+      },
+      "revId": "e10eaee7efbdbcb47e29ead31c6e545f324119f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
