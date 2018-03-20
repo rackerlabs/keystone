@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_635a0951",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-20T19:51:07Z",
+      "side": 1,
+      "message": "I think something might be wrong here, but I\u0027m not exactly sure what. I tested this locally using the same example in the bug report, but when I do tags-any\u003dblue,yellow nothing is returned and p1 and p2 should both be returned since both are tagged blue.\n\nThis same situation is true for not-tags-any. A test case modeling the bug report might help.\n\nhttp://paste.openstack.org/raw/706550/",
+      "revId": "811033265b3bbee1e5d38a5b188dbafade74f7b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
