@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "df7087c5_cb450772",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-03-21T23:05:59Z",
+      "side": 1,
+      "message": "\"identify\", \"validate\", \"prove\", \"represent\"\n\nmaybe one of those?",
+      "parentUuid": "df7087c5_75271ab8",
+      "range": {
+        "startLine": 119,
+        "startChar": 32,
+        "endLine": 119,
+        "endChar": 37
+      },
+      "revId": "acdfa8b7807baa82e8869cc2315e6463a30504ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_ff6f6ef9",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 1
@@ -65,6 +89,92 @@
         "endLine": 123,
         "endChar": 22
       },
+      "revId": "acdfa8b7807baa82e8869cc2315e6463a30504ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_ae0d4136",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-03-21T23:05:59Z",
+      "side": 1,
+      "message": "s/like/such as/",
+      "range": {
+        "startLine": 125,
+        "startChar": 13,
+        "endLine": 125,
+        "endChar": 17
+      },
+      "revId": "acdfa8b7807baa82e8869cc2315e6463a30504ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_4e1ca569",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-03-21T23:05:59Z",
+      "side": 1,
+      "message": "available*",
+      "range": {
+        "startLine": 129,
+        "startChar": 42,
+        "endLine": 129,
+        "endChar": 50
+      },
+      "revId": "acdfa8b7807baa82e8869cc2315e6463a30504ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_8e3b9dcf",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-03-21T23:05:59Z",
+      "side": 1,
+      "message": "s/might/may",
+      "range": {
+        "startLine": 137,
+        "startChar": 65,
+        "endLine": 137,
+        "endChar": 70
+      },
+      "revId": "acdfa8b7807baa82e8869cc2315e6463a30504ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_0e76ada5",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-03-21T23:05:59Z",
+      "side": 1,
+      "message": "Could add a \u0027:\u0027 here for clarity",
       "revId": "acdfa8b7807baa82e8869cc2315e6463a30504ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
