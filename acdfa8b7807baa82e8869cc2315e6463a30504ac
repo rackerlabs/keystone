@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "df7087c5_9f88b2c6",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 27006
+      },
+      "writtenOn": "2018-03-21T19:34:07Z",
+      "side": 1,
+      "message": "isolated",
+      "range": {
+        "startLine": 57,
+        "startChar": 46,
+        "endLine": 57,
+        "endChar": 55
+      },
+      "revId": "acdfa8b7807baa82e8869cc2315e6463a30504ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_75271ab8",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 1
@@ -18,6 +41,52 @@
         "startChar": 32,
         "endLine": 119,
         "endChar": 37
+      },
+      "revId": "acdfa8b7807baa82e8869cc2315e6463a30504ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_ff6f6ef9",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 27006
+      },
+      "writtenOn": "2018-03-21T19:34:07Z",
+      "side": 1,
+      "message": "seem to be missing a word here. try: \"that the user has...\"",
+      "range": {
+        "startLine": 123,
+        "startChar": 13,
+        "endLine": 123,
+        "endChar": 22
+      },
+      "revId": "acdfa8b7807baa82e8869cc2315e6463a30504ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_3f1de672",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 27006
+      },
+      "writtenOn": "2018-03-21T19:34:07Z",
+      "side": 1,
+      "message": "Is the warning just for the second example?  If so change \"describe\" to \"describes\". Otherwise change \"this example\" to \"these examples\".",
+      "range": {
+        "startLine": 173,
+        "startChar": 12,
+        "endLine": 173,
+        "endChar": 20
       },
       "revId": "acdfa8b7807baa82e8869cc2315e6463a30504ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
