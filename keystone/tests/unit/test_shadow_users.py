@@ -45,7 +45,8 @@ class ShadowUsersTests(unit.TestCase,
             'idp_id': self.idp['id'],
             'protocol_id': self.protocol['id'],
             'unique_id': uuid.uuid4().hex,
-            'display_name': uuid.uuid4().hex
+            'display_name': uuid.uuid4().hex,
+            'email': uuid.uuid4().hex
         }
         PROVIDERS.federation_api.create_idp(self.idp['id'], self.idp)
         PROVIDERS.federation_api.create_mapping(
