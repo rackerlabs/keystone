@@ -69,6 +69,23 @@
       "revId": "b4f7417813c1f603aab59d32e4249008d312f3c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_8e897427",
+        "filename": "keystone/tests/unit/test_shadow_users.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-21T09:17:06Z",
+      "side": 1,
+      "message": "You could add this as a property of self.federated_user instead of its own variable",
+      "revId": "b4f7417813c1f603aab59d32e4249008d312f3c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
