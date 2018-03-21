@@ -86,6 +86,24 @@
       "revId": "b4f7417813c1f603aab59d32e4249008d312f3c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_2e50685e",
+        "filename": "keystone/tests/unit/test_shadow_users.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 17430
+      },
+      "writtenOn": "2018-03-21T09:22:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df7087c5_8e897427",
+      "revId": "b4f7417813c1f603aab59d32e4249008d312f3c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
