@@ -226,6 +226,7 @@ class TestMFARules(test_v3.RestfulTestCase):
                     project_id=self.project_id))
 
     def test_MFA_rules_rescope_works_without_token_method_in_rules(self):
+        self.config_fixture.config(group='token', cache_on_issue=False)
         rule_list = [['password', 'totp']]
         totp_cred = self._create_totp_cred()
         self._update_user_with_MFA_rules(rule_list=rule_list)
