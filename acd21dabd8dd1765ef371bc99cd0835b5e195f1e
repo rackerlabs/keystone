@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_a321cfa1",
+        "filename": "doc/source/code_documentation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15334
+      },
+      "writtenOn": "2018-03-22T10:01:04Z",
+      "side": 1,
+      "message": "This isn\u0027t code documentation - it\u0027s API (REST/HTTP) documentation. You should probably remove this doc in its entirety",
+      "revId": "acd21dabd8dd1765ef371bc99cd0835b5e195f1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
