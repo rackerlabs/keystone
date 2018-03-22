@@ -78,7 +78,7 @@ class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
             'test': 'test'}
         auth_data = {'identity': auth_data}
         auth_info = auth.core.AuthInfo.create(auth_data)
-        auth_context = auth.core.AuthContext(extras={}, method_names=[])
+        auth_context = auth.core.AuthContext(method_names=[])
         try:
             self.api.authenticate(self.make_request(), auth_info, auth_context)
         except exception.AdditionalAuthRequired as e:
@@ -93,7 +93,7 @@ class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
             'response': EXPECTED_RESPONSE}
         auth_data = {'identity': auth_data}
         auth_info = auth.core.AuthInfo.create(auth_data)
-        auth_context = auth.core.AuthContext(extras={}, method_names=[])
+        auth_context = auth.core.AuthContext(method_names=[])
         self.api.authenticate(self.make_request(), auth_info, auth_context)
         self.assertEqual(DEMO_USER_ID, auth_context['user_id'])
 
@@ -103,7 +103,7 @@ class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
             'response': uuid.uuid4().hex}
         auth_data = {'identity': auth_data}
         auth_info = auth.core.AuthInfo.create(auth_data)
-        auth_context = auth.core.AuthContext(extras={}, method_names=[])
+        auth_context = auth.core.AuthContext(method_names=[])
         self.assertRaises(exception.Unauthorized,
                           self.api.authenticate,
                           self.make_request(),
@@ -155,7 +155,6 @@ class TestMapped(unit.TestCase):
             }
             auth_info = auth.core.AuthInfo.create(auth_data)
             auth_context = auth.core.AuthContext(
-                extras={},
                 method_names=[],
                 user_id=uuid.uuid4().hex)
             self.api.authenticate(request, auth_info, auth_context)
@@ -173,7 +172,6 @@ class TestMapped(unit.TestCase):
         auth_data = {'identity': auth_data}
 
         auth_context = auth.core.AuthContext(
-            extras={},
             method_names=[],
             user_id=uuid.uuid4().hex)
 
