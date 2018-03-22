@@ -174,7 +174,6 @@ Example response:
         "id": "bd73972c0e14fb69bae8ff76e112a90",
         "name": "keystone"
       }],
-      "extras": {},
       "user": {
         "domain": {
           "id": "default",
@@ -269,7 +268,6 @@ Example response:
         "id": "bd7397d2c0e14fb69bae8ff76e112a90",
         "name": "keystone"
       }],
-      "extras": {},
       "user": {
         "domain": {
           "id": "default",
@@ -358,7 +356,6 @@ Example response:
         "id": "bd7397d2c0e14fb69bae8ff76e112a90",
         "name": "keystone"
       }],
-      "extras": {},
       "user": {
         "domain": {
           "id": "default",
@@ -410,7 +407,6 @@ Example response:
     "token": {
       "methods": ["token", "password"],
       "expires_at": "2015-05-28T07:43:44.808209Z",
-      "extras": {},
       "user": {
         "domain": {
           "id": "default",
