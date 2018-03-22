@@ -1,6 +1,4 @@
 Code Documentation
 ==================
-.. toctree::
-   :maxdepth: 1
 
-   api/modules
+**Reference:** https://developer.openstack.org/api-ref/identity/
