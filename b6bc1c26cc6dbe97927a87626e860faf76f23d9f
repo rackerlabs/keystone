@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_ec0c1344",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-23T18:45:35Z",
+      "side": 1,
+      "message": "This is not accurate. The password column didn\u0027t contain unhashed passwords, it contained passwords hashed with a less-than-ideal hashing algorithm. The reason there are two columns is for compatibility across rolling upgrades.\n\nThis is the change that introduced the new column: https://review.openstack.org/#/c/438701/\n\nThat change did not migrate existing passwords to the new column, so if we simply drop the column we lose user\u0027s passwords.\n\nIf we\u0027re ready to drop this column then we should also address the other transitional changes in that patch, like the rolling_upgrade_password_hash_compat option and the deprecated crypt_strength option.",
+      "revId": "b6bc1c26cc6dbe97927a87626e860faf76f23d9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
