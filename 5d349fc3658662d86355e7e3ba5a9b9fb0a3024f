@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_3b3fa3d7",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-23T16:57:37Z",
+      "side": 1,
+      "message": "This check actually needs to be run before refs_map is created. Changing this actually decreases performance since now the map is created even if it\u0027s not needed.",
+      "range": {
+        "startLine": 672,
+        "startChar": 8,
+        "endLine": 673,
+        "endChar": 27
+      },
+      "revId": "5d349fc3658662d86355e7e3ba5a9b9fb0a3024f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
