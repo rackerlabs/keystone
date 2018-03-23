@@ -1,0 +1,199 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_cecb9e50",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-23T15:48:48Z",
+      "side": 1,
+      "message": "registered",
+      "range": {
+        "startLine": 653,
+        "startChar": 12,
+        "endLine": 653,
+        "endChar": 21
+      },
+      "revId": "a85987aca60dad54d8580ef3b6c6621d6b8d4354",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_ced07efa",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-23T15:48:48Z",
+      "side": 1,
+      "message": "registered",
+      "range": {
+        "startLine": 655,
+        "startChar": 8,
+        "endLine": 655,
+        "endChar": 17
+      },
+      "revId": "a85987aca60dad54d8580ef3b6c6621d6b8d4354",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_aebe6aab",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 659,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-23T15:48:48Z",
+      "side": 1,
+      "message": "registered",
+      "range": {
+        "startLine": 659,
+        "startChar": 12,
+        "endLine": 659,
+        "endChar": 21
+      },
+      "revId": "a85987aca60dad54d8580ef3b6c6621d6b8d4354",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_8ed606f2",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 661,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-23T15:48:48Z",
+      "side": 1,
+      "message": "registered",
+      "range": {
+        "startLine": 661,
+        "startChar": 8,
+        "endLine": 661,
+        "endChar": 17
+      },
+      "revId": "a85987aca60dad54d8580ef3b6c6621d6b8d4354",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_31587f2f",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-23T15:48:48Z",
+      "side": 1,
+      "message": "Commented on the migration, not sure if this is best. Commenting again here to make sure this is followed up on to ensure it\u0027s consistent with the migration.",
+      "range": {
+        "startLine": 46,
+        "startChar": 46,
+        "endLine": 46,
+        "endChar": 60
+      },
+      "revId": "a85987aca60dad54d8580ef3b6c6621d6b8d4354",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_eee30204",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-23T15:48:48Z",
+      "side": 1,
+      "message": "should use sql.Text()",
+      "range": {
+        "startLine": 46,
+        "startChar": 29,
+        "endLine": 46,
+        "endChar": 44
+      },
+      "revId": "a85987aca60dad54d8580ef3b6c6621d6b8d4354",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_0eb2f606",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-23T15:48:48Z",
+      "side": 1,
+      "message": "sql.Text()",
+      "range": {
+        "startLine": 73,
+        "startChar": 29,
+        "endLine": 73,
+        "endChar": 44
+      },
+      "revId": "a85987aca60dad54d8580ef3b6c6621d6b8d4354",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_6ebdb2b5",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-23T15:48:48Z",
+      "side": 1,
+      "message": "You could use parameter_types.description",
+      "revId": "a85987aca60dad54d8580ef3b6c6621d6b8d4354",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_ee24620f",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-23T15:48:48Z",
+      "side": 1,
+      "message": "I would set a uuid value or omit completely",
+      "revId": "a85987aca60dad54d8580ef3b6c6621d6b8d4354",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
