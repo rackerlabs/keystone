@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_ba69c98c",
+        "filename": "doc/requirements.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-23T14:57:35Z",
+      "side": 0,
+      "message": "These are all here so that the module documentation builds.",
+      "revId": "d4f3160334838c592cc8616bba85c13f308468f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_da4d9d3b",
+        "filename": "doc/source/code_documentation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-23T14:57:35Z",
+      "side": 0,
+      "message": "No, we want this API documentation. Do not remove it.",
+      "revId": "d4f3160334838c592cc8616bba85c13f308468f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_1ac3158b",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-23T14:57:35Z",
+      "side": 0,
+      "message": "No, you cannot just remove this. This is valuable.",
+      "revId": "d4f3160334838c592cc8616bba85c13f308468f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_1ada3577",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-23T14:57:35Z",
+      "side": 0,
+      "message": "Without this, we lose the ability to build the API docs with tox.",
+      "revId": "d4f3160334838c592cc8616bba85c13f308468f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_faf8a1c4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-23T14:57:35Z",
+      "side": 1,
+      "message": "Please follow the rest of the thread. There are unresolved issues with this.",
+      "revId": "5e440434f0bc9dc002472ec2c5c230d5c739c7d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
