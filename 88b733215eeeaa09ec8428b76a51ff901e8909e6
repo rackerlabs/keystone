@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_ce0dde3e",
+        "filename": "keystone/common/sql/expand_repo/versions/045_expand_add_description_to_limit.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-23T15:41:59Z",
+      "side": 1,
+      "message": "I guess we\u0027re inconsistent about this, the project and group tables allows a null description. I have a slight preference for allowing it to be null but you have a good point about consistency in the object returned to the user.",
+      "range": {
+        "startLine": 24,
+        "startChar": 61,
+        "endLine": 24,
+        "endChar": 75
+      },
+      "revId": "88b733215eeeaa09ec8428b76a51ff901e8909e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_6e9a9214",
+        "filename": "keystone/common/sql/expand_repo/versions/045_expand_add_description_to_limit.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-23T15:41:59Z",
+      "side": 1,
+      "message": "use sql.Text",
+      "range": {
+        "startLine": 24,
+        "startChar": 44,
+        "endLine": 24,
+        "endChar": 59
+      },
+      "revId": "88b733215eeeaa09ec8428b76a51ff901e8909e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_0e6996f6",
+        "filename": "keystone/common/sql/expand_repo/versions/045_expand_add_description_to_limit.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-23T15:41:59Z",
+      "side": 1,
+      "message": "use sql.Text",
+      "range": {
+        "startLine": 29,
+        "startChar": 44,
+        "endLine": 29,
+        "endChar": 59
+      },
+      "revId": "88b733215eeeaa09ec8428b76a51ff901e8909e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
