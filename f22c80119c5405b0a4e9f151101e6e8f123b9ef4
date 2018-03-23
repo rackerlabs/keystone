@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "df7087c5_59475f78",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-23T13:57:18Z",
+      "side": 1,
+      "message": "Yeah - I just did it this way since these don\u0027t have their own @property wrapped getter and setter methods. Technically, I don\u0027t think we\u0027re required to do it this way, because you could create them on the fly.\n\nIt might be considered better to have the attributes be consistent:\n\n  \u003e\u003e\u003e token \u003d token_model.TokenModel()\n  \u003e\u003e\u003e print token.is_federated  \n  None\n\nWhere as if we don\u0027t include it, and we don\u0027t decide to specify a property method for it:\n\n  \u003e\u003e\u003e token \u003d token_model.TokenModel()\n  \u003e\u003e\u003e token.is_federated\n  Traceback (most recent call last):\n    File \"\u003cstdin\u003e\", line 1, in \u003cmodule\u003e\n  AttributeError: \u0027TokenModel\u0027 object has no attribute \u0027is_federated\u0027",
+      "parentUuid": "df7087c5_160bff23",
+      "revId": "f22c80119c5405b0a4e9f151101e6e8f123b9ef4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_cc6979f8",
         "filename": "keystone/token/provider.py",
         "patchSetId": 7
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "df7087c5_f92433c8",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-23T13:57:18Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "df7087c5_cc6979f8",
+      "revId": "f22c80119c5405b0a4e9f151101e6e8f123b9ef4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_ecb9dd78",
         "filename": "keystone/token/provider.py",
         "patchSetId": 7
@@ -47,6 +83,24 @@
       "writtenOn": "2018-03-23T06:49:55Z",
       "side": 1,
       "message": "A way is to add \u0027from_dict\u0027 and \u0027to_dict\u0027 for TokenModel obj",
+      "revId": "f22c80119c5405b0a4e9f151101e6e8f123b9ef4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_341e325f",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-23T13:57:18Z",
+      "side": 1,
+      "message": "Yeah - I was hoping to leave that to the controllers to build the response from the model. I can try giving that a shot thought.\n\nUnless there is a way to cache python objects?",
+      "parentUuid": "df7087c5_ecb9dd78",
       "revId": "f22c80119c5405b0a4e9f151101e6e8f123b9ef4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
