@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_345632d0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-23T14:10:49Z",
+      "side": 1,
+      "message": "Could you go a little deeper into how you determined this wasn\u0027t needed? Removing things from the token provider is a little scary. Also keep in mind that some auth plugins might be out of tree.",
+      "revId": "1740055f09884a7342069207470c0d4ed970f201",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

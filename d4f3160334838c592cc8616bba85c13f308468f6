@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_b4e2422f",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2456,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-03-23T14:10:49Z",
+      "side": 0,
+      "message": "This test is about a garbage property of \u0027extra\u0027 but your change is about a property called \u0027extras\u0027, I think this test should probably stay? Same with below.",
+      "revId": "d4f3160334838c592cc8616bba85c13f308468f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
