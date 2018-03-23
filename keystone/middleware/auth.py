@@ -24,10 +24,10 @@ from keystone.federation import constants as federation_constants
 from keystone.federation import utils
 from keystone.i18n import _
 from keystone.models import token_model
-from keystone.token.providers import common
 
 CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
+PROVIDERS = provider_api.ProviderAPIs
 
 __all__ = ('AuthContextMiddleware',)
 
@@ -83,13 +83,16 @@ class AuthContextMiddleware(provider_api.ProviderAPIMixin,
                 auth_context['project_id'] = project_id
             auth_context['roles'] = user_ref['roles']
         else:
+            token_data = PROVIDERS.token_provider_api.validate_token(
+                request.user_token
+            )
             # it's the local user, so token data is needed.
-            token_helper = common.V3TokenDataHelper()
-            token_data = token_helper.get_token_data(
-                user_id=user_ref['id'],
-                method_names=[CONF.tokenless_auth.protocol],
-                domain_id=domain_id,
-                project_id=project_id)
+            # token_helper = common.V3TokenDataHelper()
+            # token_data = token_helper.get_token_data(
+            #     user_id=user_ref['id'],
+            #     method_names=[CONF.tokenless_auth.protocol],
+            #     domain_id=domain_id,
+            #     project_id=project_id)
 
             auth_context = {'user_id': user_ref['id']}
             auth_context['is_delegated_auth'] = False

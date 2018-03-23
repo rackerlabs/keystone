@@ -150,9 +150,9 @@ class Auth(controller.V3Controller):
                 system=system, project_id=project_id, domain_id=domain_id,
                 auth_context=auth_context, trust_id=trust_id,
                 app_cred_id=app_cred_id, parent_audit_id=token_audit_id)
-            token_reference = controller.render_token_response_from_model(
-                token, include_catalog=include_catalog
-            )
+            token_reference = token.to_dict()
+            if not include_catalog:
+                del token_reference['token']['catalog']
 
             # NOTE(wanghong): We consume a trust use only when we are using
             # trusts and have successfully issued a token.

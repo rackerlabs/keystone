@@ -13,8 +13,10 @@
 # under the License.
 
 import datetime
+import uuid
 
 from oslo_utils import timeutils
+from six.moves import urllib
 
 from keystone.common import provider_api
 from keystone.common import utils
@@ -23,6 +25,7 @@ from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit.ksfixtures import database
+from keystone.token import provider
 from keystone import token
 
 
@@ -484,3 +487,18 @@ class TestTokenProvider(unit.TestCase):
             exception.TokenNotFound,
             PROVIDERS.token_provider_api.validate_token,
             None)
+
+    def test_strings_are_url_safe(self):
+        s = provider.random_urlsafe_str()
+        self.assertEqual(s, urllib.parse.quote_plus(s))
+
+    def test_unsupported_provider_raises_import_error(self):
+        namespace = "keystone.token.provider"
+        # Generate a random name
+        driver = uuid.uuid4().hex
+        self.config_fixture.config(group='token', provider=driver)
+        msg = "Unable to find '%(driver)s' driver in '%(namespace)s'." % {
+            'namespace': namespace, 'driver': driver
+        }
+
+        self.assertRaisesRegex(ImportError, msg, provider.Manager)

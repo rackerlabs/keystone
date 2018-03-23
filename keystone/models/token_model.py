@@ -308,6 +308,10 @@ class TokenModel(object):
         self.protocol_id = None
         self.federated_groups = None
         self.access_token_id = None
+        self.expires_at = None
+        self.issued_at = None
+        self.parent_audit_id = None
+        self.audit_id = None
 
     def __repr__(self):
         """Return string representation of KeystoneToken."""
@@ -550,8 +554,10 @@ class TokenModel(object):
     def user(self, value):
         if value:
             self.__user = PROVIDERS.identity_api.get_user(value)
+            self.user_domain_id = self.__user['domain_id']
         else:
             self.__user = None
+            self.user_domain_id = None
 
     @property
     def user_domain_id(self):
@@ -791,6 +797,12 @@ class TokenModel(object):
             except AssertionError:
                 raise exception.Forbidden(_('Trustor is disabled.'))
 
+        if not self.user_domain.get('enabled'):
+            msg = _('Unable to validate token because domain %(id)s is '
+                    'disabled') % {'id': self.user_domain_id}
+            LOG.warning(msg)
+            raise exception.DomainNotFound(msg)
+
     def _validate_system_scope(self):
         if self.system_scoped and not self.roles:
             msg = _(
@@ -853,3 +865,130 @@ class TokenModel(object):
 
         self.id = token_id
         self.issued_at = issued_at
+
+    def to_dict(self):
+        reference = {
+            'token': {
+                'methods': self.methods,
+                'user': {
+                    'domain': {
+                        'id': self.user_domain['id'],
+                        'name': self.user_domain['name']
+                    },
+                    'id': self.user_id,
+                    'name': self.user['name'],
+                    'password_expires_at': self.user[
+                        'password_expires_at'
+                    ]
+                },
+                'audit_ids': self.audit_ids,
+                'expires_at': self.expires_at,
+                'issued_at': self.issued_at,
+            }
+        }
+
+        if self.system_scoped:
+            reference['token']['roles'] = self.roles
+            reference['token']['system'] = {'all': True}
+        elif self.domain_scoped:
+            reference['token']['domain'] = {
+                'id': self.domain['id'],
+                'name': self.domain['name']
+            }
+            reference['token']['roles'] = self.roles
+        elif self.trust_scoped:
+            reference['token']['OS-TRUST:trust'] = {
+                'id': self.trust_id,
+                'trustor_user': {'id': self.trustor['id']},
+                'trustee_user': {'id': self.trustee['id']},
+                'impersonation': self.trust['impersonation']
+            }
+            reference['token']['project'] = {
+                'domain': {
+                    'id': self.project_domain['id'],
+                    'name': self.project_domain['name']
+                },
+                'id': self.trust_project['id'],
+                'name': self.trust_project['name']
+            }
+            if self.trust.get('impersonation'):
+                trustor_domain = PROVIDERS.resource_api.get_domain(
+                    self.trustor['domain_id']
+                )
+                reference['token']['user'] = {
+                    'domain': {
+                        'id': trustor_domain['id'],
+                        'name': trustor_domain['name']
+                    },
+                    'id': self.trustor['id'],
+                    'name': self.trustor['name'],
+                    'password_expires_at': self.trustor[
+                        'password_expires_at'
+                    ]
+                }
+            reference['token']['roles'] = self.roles
+        elif self.project_scoped:
+            reference['token']['project'] = {
+                'domain': {
+                    'id': self.project_domain['id'],
+                    'name': self.project_domain['name']
+                },
+                'id': self.project['id'],
+                'name': self.project['name']
+            }
+            reference['token']['is_domain'] = self.project.get(
+                'is_domain', False
+            )
+            reference['token']['roles'] = self.roles
+            ap_name = CONF.resource.admin_project_name
+            ap_domain_name = CONF.resource.admin_project_domain_name
+            if ap_name and ap_domain_name:
+                is_ap = (
+                    self.project['name'] == ap_name and
+                    ap_domain_name == self.project_domain['name']
+                )
+                reference['token']['is_admin_project'] = is_ap
+        if not self.unscoped:
+            user_id = self.user_id
+            if CONF.trust.enabled and self.trust_id:
+                user_id = self.trust['trustor_user_id']
+            catalog = PROVIDERS.catalog_api.get_v3_catalog(
+                user_id, self.project_id
+            )
+            reference['token']['catalog'] = catalog
+        sps = PROVIDERS.federation_api.get_enabled_service_providers()
+        if sps:
+            reference['token']['service_providers'] = sps
+        if self.is_federated:
+            PROVIDERS.federation_api.get_idp(self.identity_provider_id)
+            federated_dict = {}
+            federated_dict['groups'] = self.federated_groups
+            federated_dict['identity_provider'] = {
+                'id': self.identity_provider_id
+            }
+            federated_dict['protocol'] = {'id': self.protocol_id}
+            reference['token']['user']['OS-FEDERATION'] = (
+                federated_dict
+            )
+            reference['token']['user']['domain'] = {
+                'id': 'Federated', 'name': 'Federated'
+            }
+            del reference['token']['user']['password_expires_at']
+        if self.access_token_id:
+            reference['token']['OS-OAUTH1'] = {
+                'access_token_id': self.access_token_id,
+                'consumer_id': self.access_token['consumer_id']
+            }
+        if self.application_credential_id:
+            key = 'application_credential'
+            reference['token'][key] = {}
+            reference['token'][key]['id'] = (
+                self.application_credential['id']
+            )
+            reference['token'][key]['name'] = (
+                self.application_credential['name']
+            )
+            restricted = not self.application_credential['unrestricted']
+            reference['token'][key]['restricted'] = restricted
+
+        return reference

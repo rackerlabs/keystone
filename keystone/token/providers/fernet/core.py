@@ -15,16 +15,16 @@ import os
 
 from keystone.common import utils as ks_utils
 import keystone.conf
-from keystone.federation import constants as federation_constants
+from keystone import exception
 from keystone.i18n import _
-from keystone.token.providers import common
+from keystone.token.providers import base
 from keystone.token import token_formatters as tf
 
 
 CONF = keystone.conf.CONF
 
 
-class Provider(common.BaseProvider):
+class Provider(base.Provider):
     def __init__(self, *args, **kwargs):
         super(Provider, self).__init__(*args, **kwargs)
 
@@ -44,68 +44,7 @@ class Provider(common.BaseProvider):
 
         self.token_formatter = tf.TokenFormatter()
 
-    def _rebuild_federated_info(self, federated_dict, user_id):
-        """Format federated information into the token reference.
-
-        The federated_dict is passed back from the federated token formatters.
-        The responsibility of this method is to format the information passed
-        back from the token formatter into the token reference before
-        constructing the token data from the V3TokenDataHelper.
-
-        """
-        g_ids = federated_dict['group_ids']
-        idp_id = federated_dict['idp_id']
-        protocol_id = federated_dict['protocol_id']
-
-        federated_info = {
-            'groups': g_ids,
-            'identity_provider': {'id': idp_id},
-            'protocol': {'id': protocol_id}
-        }
-
-        user_dict = self.identity_api.get_user(user_id)
-        user_name = user_dict['name']
-
-        token_dict = {
-            'user': {
-                federation_constants.FEDERATION: federated_info,
-                'id': user_id,
-                'name': user_name,
-                'domain': {'id': CONF.federation.federated_domain_name,
-                           'name': CONF.federation.federated_domain_name, },
-            }
-        }
-
-        return token_dict
-
-    def _rebuild_federated_token_roles(self, token_dict, federated_dict,
-                                       user_id, project_id, domain_id):
-        """Populate roles based on (groups, project/domain) pair.
-
-        We must populate roles from (groups, project/domain) as ephemeral users
-        don't exist in the backend. Upon success, a ``roles`` key will be added
-        to ``token_dict``.
-
-        :param token_dict: dictionary with data used for building token
-        :param federated_dict: federated information such as identity provider
-            protocol and set of group IDs
-        :param user_id: user ID
-        :param project_id: project ID the token is being scoped to
-        :param domain_id: domain ID the token is being scoped to
-
-        """
-        group_ids = [x['id'] for x in federated_dict['group_ids']]
-        self.v3_token_data_helper.populate_roles_for_federated_user(
-            token_dict, group_ids, project_id, domain_id, user_id)
-
     def generate_id_and_issued_at(self, token):
-        federated_info = None
-        if token.is_federated:
-            federated_info = {
-                'group_ids': token.federated_groups,
-                'idp_id': token.identity_provider_id,
-                'protocol_id': token.protocol_id
-            }
         token_id = self.token_formatter.create_token(
             token.user_id,
             token.expires_at,
@@ -115,7 +54,9 @@ class Provider(common.BaseProvider):
             domain_id=token.domain_id,
             project_id=token.project_id,
             trust_id=token.trust_id,
-            federated_info=federated_info,
+            federated_group_ids=token.federated_groups,
+            identity_provider_id=token.identity_provider_id,
+            protocol_id=token.protocol_id,
             access_token_id=token.access_token_id,
             app_cred_id=token.application_credential_id
         )
@@ -124,6 +65,12 @@ class Provider(common.BaseProvider):
             at=creation_datetime_obj, subsecond=True
         )
         return token_id, issued_at
+
+    def validate_token(self, token_id):
+        try:
+            return self.token_formatter.validate_token(token_id)
+        except exception.ValidationError as e:
+            raise exception.TokenNotFound(e)
 
     @property
     def _supports_bind_authentication(self):

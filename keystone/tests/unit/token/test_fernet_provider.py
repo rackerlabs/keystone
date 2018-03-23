@@ -30,7 +30,7 @@ from keystone.federation import constants as federation_constants
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit.ksfixtures import database
-from keystone.token.providers import common
+from keystone.token import provider
 from keystone.token.providers import fernet
 from keystone.token import token_formatters
 
@@ -261,7 +261,7 @@ class TestPayloads(unit.TestCase):
                                                        delta=1e-05)
 
     def test_strings_can_be_converted_to_bytes(self):
-        s = common.random_urlsafe_str()
+        s = provider.random_urlsafe_str()
         self.assertIsInstance(s, six.text_type)
 
         b = token_formatters.BasePayload.random_urlsafe_str_to_bytes(s)
@@ -311,23 +311,25 @@ class TestPayloads(unit.TestCase):
         self.assertEqual(expected_time_str, actual_time_str)
 
     def _test_payload(self, payload_class, exp_user_id=None, exp_methods=None,
-                      exp_system=None, exp_project_id=None,
-                      exp_domain_id=None, exp_trust_id=None,
+                      exp_system=None, exp_project_id=None, exp_domain_id=None,
+                      exp_trust_id=None, exp_federated_group_ids=None,
+                      exp_identity_provider_id=None, exp_protocol_id=None,
                       exp_federated_info=None, exp_access_token_id=None,
                       exp_app_cred_id=None):
         exp_user_id = exp_user_id or uuid.uuid4().hex
         exp_methods = exp_methods or ['password']
         exp_expires_at = utils.isotime(timeutils.utcnow(), subsecond=True)
-        exp_audit_ids = [common.random_urlsafe_str()]
+        exp_audit_ids = [provider.random_urlsafe_str()]
 
         payload = payload_class.assemble(
             exp_user_id, exp_methods, exp_system, exp_project_id,
             exp_domain_id, exp_expires_at, exp_audit_ids, exp_trust_id,
-            exp_federated_info, exp_access_token_id, exp_app_cred_id)
+            exp_federated_group_ids, exp_identity_provider_id, exp_protocol_id,
+            exp_access_token_id, exp_app_cred_id)
 
         (user_id, methods, system, project_id,
          domain_id, expires_at, audit_ids,
-         trust_id, federated_info,
+         trust_id, federated_group_ids, identity_provider_id, protocol_id,
          access_token_id, app_cred_id) = payload_class.disassemble(payload)
 
         self.assertEqual(exp_user_id, user_id)
@@ -337,14 +339,12 @@ class TestPayloads(unit.TestCase):
         self.assertEqual(exp_system, system)
         self.assertEqual(exp_project_id, project_id)
         self.assertEqual(exp_domain_id, domain_id)
+        self.assertEqual(exp_federated_group_ids, federated_group_ids)
+        self.assertEqual(exp_identity_provider_id, identity_provider_id)
+        self.assertEqual(exp_protocol_id, protocol_id)
         self.assertEqual(exp_trust_id, trust_id)
         self.assertEqual(exp_access_token_id, access_token_id)
         self.assertEqual(exp_app_cred_id, app_cred_id)
-
-        if exp_federated_info:
-            self.assertDictEqual(exp_federated_info, federated_info)
-        else:
-            self.assertIsNone(federated_info)
 
     def test_unscoped_payload(self):
         self._test_payload(token_formatters.UnscopedPayload)
@@ -411,13 +411,15 @@ class TestPayloads(unit.TestCase):
                            exp_trust_id=uuid.uuid4().hex)
 
     def _test_federated_payload_with_ids(self, exp_user_id, exp_group_id):
-        exp_federated_info = {'group_ids': [{'id': exp_group_id}],
-                              'idp_id': uuid.uuid4().hex,
-                              'protocol_id': uuid.uuid4().hex}
+        exp_federated_group_ids = [{'id': exp_group_id}]
+        exp_identity_provider_id = uuid.uuid4().hex
+        exp_protocol_id = uuid.uuid4().hex
 
         self._test_payload(token_formatters.FederatedUnscopedPayload,
                            exp_user_id=exp_user_id,
-                           exp_federated_info=exp_federated_info)
+                           exp_federated_group_ids=exp_federated_group_ids,
+                           exp_identity_provider_id=exp_identity_provider_id,
+                           exp_protocol_id=exp_protocol_id)
 
     def test_federated_payload_with_non_uuid_ids(self):
         self._test_federated_payload_with_ids('someNonUuidUserId',
@@ -428,26 +430,30 @@ class TestPayloads(unit.TestCase):
                                               '0123456789abcdef')
 
     def test_federated_project_scoped_payload(self):
-        exp_federated_info = {'group_ids': [{'id': 'someNonUuidGroupId'}],
-                              'idp_id': uuid.uuid4().hex,
-                              'protocol_id': uuid.uuid4().hex}
+        exp_federated_group_ids = [{'id': 'someNonUuidGroupId'}]
+        exp_identity_provider_id = uuid.uuid4().hex
+        exp_protocol_id = uuid.uuid4().hex
 
         self._test_payload(token_formatters.FederatedProjectScopedPayload,
                            exp_user_id='someNonUuidUserId',
                            exp_methods=['token'],
                            exp_project_id=uuid.uuid4().hex,
-                           exp_federated_info=exp_federated_info)
+                           exp_federated_group_ids=exp_federated_group_ids,
+                           exp_identity_provider_id=exp_identity_provider_id,
+                           exp_protocol_id=exp_protocol_id)
 
     def test_federated_domain_scoped_payload(self):
-        exp_federated_info = {'group_ids': [{'id': 'someNonUuidGroupId'}],
-                              'idp_id': uuid.uuid4().hex,
-                              'protocol_id': uuid.uuid4().hex}
+        exp_federated_group_ids = [{'id': 'someNonUuidGroupId'}]
+        exp_identity_provider_id = uuid.uuid4().hex
+        exp_protocol_id = uuid.uuid4().hex
 
         self._test_payload(token_formatters.FederatedDomainScopedPayload,
                            exp_user_id='someNonUuidUserId',
                            exp_methods=['token'],
                            exp_domain_id=uuid.uuid4().hex,
-                           exp_federated_info=exp_federated_info)
+                           exp_federated_group_ids=exp_federated_group_ids,
+                           exp_identity_provider_id=exp_identity_provider_id,
+                           exp_protocol_id=exp_protocol_id)
 
     def test_oauth_scoped_payload(self):
         self._test_payload(token_formatters.OauthScopedPayload,

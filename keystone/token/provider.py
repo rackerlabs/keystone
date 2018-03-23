@@ -152,7 +152,32 @@ class Manager(manager.Manager):
 
     @MEMOIZE_TOKENS
     def _validate_token(self, token_id):
-        return self.driver.validate_token(token_id)
+        (user_id, methods, audit_ids, system, domain_id,
+            project_id, trust_id, federated_group_ids, identity_provider_id,
+            protocol_id, access_token_id, app_cred_id, issued_at,
+            expires_at) = self.driver.validate_token(token_id)
+
+        token = token_model.TokenModel()
+        token.user_id = user_id
+        token.methods = methods
+        if len(audit_ids) > 1:
+            token.parent_audit_id = audit_ids.pop()
+        token.audit_id = audit_ids.pop()
+        token.system = system
+        token.domain_id = domain_id
+        token.project_id = project_id
+        token.trust_id = trust_id
+        token.access_token_id = access_token_id
+        token.application_credential_id = app_cred_id
+        token.expires_at = expires_at
+        if federated_group_ids:
+            token.is_federated = True
+            token.identity_provider_id = identity_provider_id
+            token.protocol_id = protocol_id
+            token.federated_groups = federated_group_ids
+
+        token.mint(token_id, issued_at)
+        return token.to_dict()
 
     def _is_valid_token(self, token, window_seconds=0):
         """Verify the token is valid format and has not expired."""
@@ -245,11 +270,12 @@ class Manager(manager.Manager):
 
         # cache the token object and with ID
         if CONF.token.cache_on_issue:
-            pass
             # NOTE(amakarov): here and above TOKENS_REGION is to be passed
             # to serve as required positional "self" argument. It's ignored,
             # so I've put it here for convenience - any placeholder is fine.
-            # self._validate_token.set(token, TOKENS_REGION, token.id)
+            reference = token.to_dict()
+            token_id = token.id
+            self._validate_token.set(reference, TOKENS_REGION, token_id)
 
         return token
 
