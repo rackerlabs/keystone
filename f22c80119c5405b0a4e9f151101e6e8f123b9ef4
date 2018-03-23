@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_160bff23",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-23T06:49:55Z",
+      "side": 1,
+      "message": "some properties such as \"methods\" and \"system\" and so on don\u0027t exist here. Is it done intentionally?",
+      "revId": "f22c80119c5405b0a4e9f151101e6e8f123b9ef4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_cc6979f8",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-23T06:49:55Z",
+      "side": 1,
+      "message": "\"is_domain\" and \"include_catalog\" is useless. We can remove it now I guess.",
+      "revId": "f22c80119c5405b0a4e9f151101e6e8f123b9ef4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_ecb9dd78",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-23T06:49:55Z",
+      "side": 1,
+      "message": "A way is to add \u0027from_dict\u0027 and \u0027to_dict\u0027 for TokenModel obj",
+      "revId": "f22c80119c5405b0a4e9f151101e6e8f123b9ef4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
