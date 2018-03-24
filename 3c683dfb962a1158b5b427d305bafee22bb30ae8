@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "bf659307_4accf588",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2018-03-24T14:34:14Z",
+      "side": 1,
+      "message": "remove_in\u003d+2, or it will be removed in the Rocky?",
+      "range": {
+        "startLine": 31,
+        "startChar": 8,
+        "endLine": 31,
+        "endChar": 20
+      },
+      "revId": "3c683dfb962a1158b5b427d305bafee22bb30ae8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_6a83f905",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2018-03-24T14:34:14Z",
+      "side": 1,
+      "message": "admin_token_auth has been removed from the paste ini by default, should we mentioned this in token auth middleware?",
+      "range": {
+        "startLine": 38,
+        "startChar": 21,
+        "endLine": 41,
+        "endChar": 26
+      },
+      "revId": "3c683dfb962a1158b5b427d305bafee22bb30ae8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_ac6765e9",
         "filename": "releasenotes/notes/remove-token-auth-middleware-5ea3b3734ce1d9e6.yaml",
         "patchSetId": 8
