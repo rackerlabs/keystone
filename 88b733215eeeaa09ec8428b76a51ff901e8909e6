@@ -22,6 +22,30 @@
       "revId": "88b733215eeeaa09ec8428b76a51ff901e8909e6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_f7fefe03",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-26T04:17:13Z",
+      "side": 0,
+      "message": "resource_limit is the only property can be updated previous. So it was required. But once we add \"description\". User can update either \"resource_limit\" or \"description\", so I removed it here.",
+      "parentUuid": "df7087c5_ce4abe25",
+      "range": {
+        "startLine": 109,
+        "startChar": 23,
+        "endLine": 109,
+        "endChar": 39
+      },
+      "revId": "88b733215eeeaa09ec8428b76a51ff901e8909e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
