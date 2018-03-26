@@ -16,6 +16,24 @@
       "revId": "d4f3160334838c592cc8616bba85c13f308468f6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_56ab2fd5",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2456,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-26T01:33:31Z",
+      "side": 0,
+      "message": "These three tests don\u0027t relate to the code change indeed. But IMO these three tests are useless now, because they test a case which will never happen. Anyway, I\u0027ll add them back since this is another problem.",
+      "parentUuid": "df7087c5_b4e2422f",
+      "revId": "d4f3160334838c592cc8616bba85c13f308468f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

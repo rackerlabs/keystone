@@ -16,6 +16,24 @@
       "revId": "1740055f09884a7342069207470c0d4ed970f201",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_f6b7e339",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-26T01:33:31Z",
+      "side": 1,
+      "message": "Sure, I\u0027ll write more.",
+      "parentUuid": "df7087c5_345632d0",
+      "revId": "1740055f09884a7342069207470c0d4ed970f201",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
