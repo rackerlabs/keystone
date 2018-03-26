@@ -15,6 +15,7 @@
 import uuid
 
 import mock
+import stevedore
 
 from keystone import auth
 from keystone.auth.plugins import base
@@ -66,7 +67,16 @@ class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
                           auth.core.AuthInfo.create,
                           auth_data)
 
-    def test_addition_auth_steps(self):
+    @mock.patch.object(auth.core, '_get_auth_driver_manager')
+    def test_addition_auth_steps(self, stevedore_mock):
+        simple_challenge_plugin = SimpleChallengeResponse()
+        extension = stevedore.extension.Extension(
+            name='simple_challenge', entry_point=None, plugin=None,
+            obj=simple_challenge_plugin
+        )
+        test_manager = stevedore.DriverManager.make_test_instance(extension)
+        stevedore_mock.return_value = test_manager
+
         self.useFixture(
             auth_plugins.ConfigAuthPlugins(self.config_fixture,
                                            methods=[METHOD_NAME],
