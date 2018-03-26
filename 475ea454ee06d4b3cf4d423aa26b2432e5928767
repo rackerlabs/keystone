@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_3bc76d15",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1446,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-26T18:16:30Z",
+      "side": 1,
+      "message": "Why can\u0027t this be included in federated_dict?",
+      "range": {
+        "startLine": 1446,
+        "startChar": 54,
+        "endLine": 1446,
+        "endChar": 65
+      },
+      "revId": "475ea454ee06d4b3cf4d423aa26b2432e5928767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_1bd629c7",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-26T18:16:30Z",
+      "side": 1,
+      "message": "We already have a dictionary for federated attributes. Email could probably be handled in that dictionary instead of having a specific kwarg for email.",
+      "range": {
+        "startLine": 31,
+        "startChar": 20,
+        "endLine": 31,
+        "endChar": 34
+      },
+      "revId": "475ea454ee06d4b3cf4d423aa26b2432e5928767",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
