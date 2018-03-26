@@ -16,6 +16,23 @@
       "revId": "985479fe58ca68583d936afabae4c1a53cb48dbd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_9a56b729",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-26T17:21:34Z",
+      "side": 1,
+      "message": "Since this is end-user facing, we need to include a release note.",
+      "revId": "985479fe58ca68583d936afabae4c1a53cb48dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
