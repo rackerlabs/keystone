@@ -22,6 +22,30 @@
       "revId": "0f62018978f4b278533ad936f60aeb8b50731bda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_8d05fcc4",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 892,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-27T18:48:38Z",
+      "side": 1,
+      "message": "Sure there is. If someone is maintain a UUID token provider out-of-tree they\u0027ll still need this.\n\nI can propose another update saying this will be removed in a future release (Solar?).",
+      "parentUuid": "bf659307_9228b786",
+      "range": {
+        "startLine": 890,
+        "startChar": 43,
+        "endLine": 892,
+        "endChar": 27
+      },
+      "revId": "0f62018978f4b278533ad936f60aeb8b50731bda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
