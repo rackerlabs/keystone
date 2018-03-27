@@ -122,6 +122,24 @@
       "revId": "f22c80119c5405b0a4e9f151101e6e8f123b9ef4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_a02577ad",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-27T09:33:00Z",
+      "side": 1,
+      "message": "example: http://paste.openstack.org/show/715371/\n\nThe code will let the cache work but it doesn\u0027t work correctly. The \"serialize\" and \"deserialize\" should be updated. It\u0027s just a structure example.",
+      "parentUuid": "bf659307_3d22f053",
+      "revId": "f22c80119c5405b0a4e9f151101e6e8f123b9ef4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
