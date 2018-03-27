@@ -104,6 +104,24 @@
       "revId": "f22c80119c5405b0a4e9f151101e6e8f123b9ef4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_3d22f053",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-27T09:16:05Z",
+      "side": 1,
+      "message": "Another way is to register TokenModel into cache serialization like RevokeEvent does:\nhttps://github.com/openstack/keystone/blob/master/keystone/models/revoke_model.py#L299\nThe backend still cache dict, but The obj-\u003estr step will be handled by serialization. Then we can call L253 directly here IMO.",
+      "parentUuid": "df7087c5_341e325f",
+      "revId": "f22c80119c5405b0a4e9f151101e6e8f123b9ef4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
