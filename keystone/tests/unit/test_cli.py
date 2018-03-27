@@ -1385,3 +1385,18 @@ class TestMappingPurge(unit.SQLDriverOverrides, unit.BaseTestCase):
         args.append('--public-id')
         args.append(uuid.uuid4().hex)
         self.parser.parse_args(args)
+
+
+class TestTokenFlush(unit.TestCase):
+
+    def test_token_flush_emits_warning(self):
+        expected_msg = (
+            'This command is no longer needed with the development of '
+            'non-persistent token formats. It is recommended that you remove '
+            'usage of this command or integrate it\'s functionality into a '
+            'separate tool.\n'
+        )
+        logging = self.useFixture(fixtures.FakeLogger())
+        tf = cli.TokenFlush()
+        tf.main()
+        self.assertThat(logging.output, matchers.Contains(expected_msg))
