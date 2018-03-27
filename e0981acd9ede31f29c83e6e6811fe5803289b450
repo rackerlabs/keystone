@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_3bb43835",
+        "filename": "keystone/token/persistence/__init__.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 13861
+      },
+      "writtenOn": "2018-03-27T10:11:21Z",
+      "side": 0,
+      "message": "This is used here:-https://github.com/openstack/keystone/blob/master/keystone/cmd/cli.py#L889, any plan to clean up it?",
+      "revId": "e0981acd9ede31f29c83e6e6811fe5803289b450",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
