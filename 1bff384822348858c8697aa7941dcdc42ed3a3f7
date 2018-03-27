@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_b5ab701b",
+        "filename": "keystone/tests/unit/test_auth_plugin.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-27T13:49:17Z",
+      "side": 1,
+      "message": "Some of this can probably be removed now, too..",
+      "revId": "1bff384822348858c8697aa7941dcdc42ed3a3f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
