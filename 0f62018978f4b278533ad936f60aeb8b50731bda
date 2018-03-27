@@ -70,6 +70,30 @@
       "revId": "0f62018978f4b278533ad936f60aeb8b50731bda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_6d1188ac",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 892,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-27T19:01:42Z",
+      "side": 1,
+      "message": "I took a shot at clarifying this. A new patch set is on the way.",
+      "parentUuid": "bf659307_8dddfc15",
+      "range": {
+        "startLine": 890,
+        "startChar": 43,
+        "endLine": 892,
+        "endChar": 27
+      },
+      "revId": "0f62018978f4b278533ad936f60aeb8b50731bda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
