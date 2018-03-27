@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_9228b786",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 892,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-03-27T18:04:56Z",
+      "side": 1,
+      "message": "\"It is recommended you cease usage of this command, it will be removed in a future release.\"\n\nThere is no \"functionality\" to merge into a separate tool at this point.",
+      "range": {
+        "startLine": 890,
+        "startChar": 43,
+        "endLine": 892,
+        "endChar": 27
+      },
+      "revId": "0f62018978f4b278533ad936f60aeb8b50731bda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
