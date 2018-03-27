@@ -46,6 +46,30 @@
       "revId": "0f62018978f4b278533ad936f60aeb8b50731bda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_8dddfc15",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 892,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-03-27T18:57:44Z",
+      "side": 1,
+      "message": "We don\u0027t support out-of-tree maintenance. If someone is relying on in-tree tools for out-of-tree (Effectively) code, they\u0027re doing it outside of what we can support.",
+      "parentUuid": "bf659307_8d05fcc4",
+      "range": {
+        "startLine": 890,
+        "startChar": 43,
+        "endLine": 892,
+        "endChar": 27
+      },
+      "revId": "0f62018978f4b278533ad936f60aeb8b50731bda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
