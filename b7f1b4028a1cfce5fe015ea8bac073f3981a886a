@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_1ed8307d",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 891,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-27T20:35:54Z",
+      "side": 1,
+      "message": "Solar isn\u0027t the official name of the S release yet, but I made an assumption here. I can either respin this to be more generic and just say \"S\", or I can WIP this review until the official name comes out.",
+      "range": {
+        "startLine": 891,
+        "startChar": 16,
+        "endLine": 891,
+        "endChar": 21
+      },
+      "revId": "b7f1b4028a1cfce5fe015ea8bac073f3981a886a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
