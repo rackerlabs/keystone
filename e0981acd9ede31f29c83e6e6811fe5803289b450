@@ -16,6 +16,24 @@
       "revId": "e0981acd9ede31f29c83e6e6811fe5803289b450",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_dcdac815",
+        "filename": "keystone/token/persistence/__init__.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-27T17:20:08Z",
+      "side": 0,
+      "message": "Sure - I proposed a patch [0].\n\n[0] https://review.openstack.org/#/c/556889/",
+      "parentUuid": "bf659307_3bb43835",
+      "revId": "e0981acd9ede31f29c83e6e6811fe5803289b450",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
