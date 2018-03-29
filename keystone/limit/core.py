@@ -18,6 +18,7 @@ from keystone.common import manager
 from keystone.common import provider_api
 import keystone.conf
 from keystone import exception
+from keystone.limit.model import base
 
 
 CONF = keystone.conf.CONF
@@ -34,18 +35,22 @@ class Manager(manager.Manager):
     def __init__(self):
         unified_limit_driver = CONF.unified_limit.driver
         super(Manager, self).__init__(unified_limit_driver)
+        self.model_driver = base.load_driver(CONF.unified_limit.model_driver)
 
     def _assert_resource_exist(self, unified_limit, target):
+        service = None
+        region = None
+        project = None
         try:
             service_id = unified_limit.get('service_id')
             if service_id is not None:
-                PROVIDERS.catalog_api.get_service(service_id)
+                service = PROVIDERS.catalog_api.get_service(service_id)
             region_id = unified_limit.get('region_id')
             if region_id is not None:
-                PROVIDERS.catalog_api.get_region(region_id)
+                region = PROVIDERS.catalog_api.get_region(region_id)
             project_id = unified_limit.get('project_id')
             if project_id is not None:
-                PROVIDERS.resource_api.get_project(project_id)
+                project = PROVIDERS.resource_api.get_project(project_id)
         except exception.ServiceNotFound:
             raise exception.ValidationError(attribute='service_id',
                                             target=target)
@@ -55,6 +60,7 @@ class Manager(manager.Manager):
         except exception.ProjectNotFound:
             raise exception.ValidationError(attribute='project_id',
                                             target=target)
+        return service, region, project
 
     def create_registered_limits(self, registered_limits):
         for registered_limit in registered_limits:
@@ -83,9 +89,13 @@ class Manager(manager.Manager):
         self.driver.delete_registered_limit(registered_limit_id)
         self.get_registered_limit.invalidate(self, registered_limit_id)
 
+    def _check_hierarchical(self, limit, project):
+        self.model_driver.check_limit(limit, project)
+
     def create_limits(self, limits):
         for limit in limits:
-            self._assert_resource_exist(limit, 'limit')
+            _, _, project = self._assert_resource_exist(limit, 'limit')
+            self._check_hierarchical(limit, project)
         self.driver.create_limits(limits)
         return self.list_limits()
 
@@ -104,6 +114,10 @@ class Manager(manager.Manager):
     @MEMOIZE
     def get_limit(self, limit_id):
         return self.driver.get_limit(limit_id)
+
+    def get_project_limit(self, project):
+        # TODO(wxy)
+        pass
 
     def delete_limit(self, limit_id):
         self.driver.delete_limit(limit_id)

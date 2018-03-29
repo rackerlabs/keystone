@@ -532,6 +532,11 @@ class Manager(manager.Manager):
             parents = self._filter_projects_list(parents, user_id)
         return parents
 
+    # TODO(wxy): Make this function generic enough to satisfy all kinds of
+    # limit model.
+    def get_project_parent(self, project_id):
+        parents = self.driver.get_project_parent(project_id)
+
     def _build_parents_as_ids_dict(self, project, parents_by_id):
         # NOTE(rodrigods): we don't rely in the order of the projects returned
         # by the list_project_parents() method. Thus, we create a project cache

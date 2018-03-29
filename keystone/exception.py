@@ -349,6 +349,14 @@ class InvalidDomainConfig(Forbidden):
     message_format = _("Invalid domain specific configuration: %(reason)s.")
 
 
+class LimitCheckError(Error):
+    message_format = _("Limit Check hit the error: %(error)s")
+
+class InvalidLimit(Forbidden):
+    message_format = _("Invalid resource limit: %(reason)s."
+                       )
+
+
 class NotFound(Error):
     message_format = _("Could not find: %(target)s.")
     code = int(http_client.NOT_FOUND)
