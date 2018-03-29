@@ -22,6 +22,30 @@
       "revId": "b7f1b4028a1cfce5fe015ea8bac073f3981a886a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_644e3e70",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 891,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-03-29T20:02:24Z",
+      "side": 1,
+      "message": "http://lists.openstack.org/pipermail/openstack-dev/2018-March/128899.html",
+      "parentUuid": "bf659307_1ed8307d",
+      "range": {
+        "startLine": 891,
+        "startChar": 16,
+        "endLine": 891,
+        "endChar": 21
+      },
+      "revId": "b7f1b4028a1cfce5fe015ea8bac073f3981a886a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
