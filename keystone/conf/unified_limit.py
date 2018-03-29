@@ -47,6 +47,13 @@ be useful to tune if you have a large number of unified limits in your
 deployment.
 """))
 
+hierarchical_driver = cfg.StrOpt(
+    'model_driver',
+    default='flatland',
+    help=utils.fmt("""
+Entry point for the unified limit hierarchical model backend driver in the
+`keystone.unified_limit.model` namespace.
+"""))
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
@@ -54,6 +61,7 @@ ALL_OPTS = [
     caching,
     cache_time,
     list_limit,
+    hierarchical_driver,
 ]
 
 
