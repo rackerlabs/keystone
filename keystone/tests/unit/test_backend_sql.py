@@ -52,11 +52,11 @@ class SqlTests(unit.SQLDriverOverrides, unit.TestCase):
 
     def setUp(self):
         super(SqlTests, self).setUp()
-        self.useFixture(database.Database())
+        self.useFixture(database.Database(enable_sqlite_foreign_key=True))
         self.load_backends()
 
         # populate the engine with tables & fixtures
-        self.load_fixtures(default_fixtures)
+        self.load_fixtures(default_fixtures, enable_sqlite_foreign_key=True)
         # defaulted by the data load
         self.user_foo['enabled'] = True
 
