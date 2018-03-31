@@ -52,11 +52,11 @@ class SqlTests(unit.SQLDriverOverrides, unit.TestCase):
 
     def setUp(self):
         super(SqlTests, self).setUp()
-        self.useFixture(database.Database())
+        self.useFixture(database.Database(enable_sqlite_foreign_key=True))
         self.load_backends()
 
         # populate the engine with tables & fixtures
-        self.load_fixtures(default_fixtures)
+        self.load_fixtures(default_fixtures, enable_sqlite_foreign_key=True)
         # defaulted by the data load
         self.user_foo['enabled'] = True
 
@@ -235,6 +235,27 @@ class SqlIdentity(SqlTests,
                   assignment_tests.AssignmentTests,
                   assignment_tests.SystemAssignmentTests,
                   resource_tests.ResourceTests):
+    def setUp(self):
+        super(SqlIdentity, self).setUp()
+        # create one test mapping, two idps and two protocols for federation
+        # test.
+        new_mapping = unit.new_mapping_ref()
+        PROVIDERS.federation_api.create_mapping(new_mapping['id'], new_mapping)
+        for idp_id, protocol_id in [('ORG_IDP', 'saml2'),
+                                    ('myidp', 'mapped')]:
+            new_idp = unit.new_identity_provider_ref(idp_id=idp_id)
+            new_protocol = unit.new_protocol_ref(protocol_id=protocol_id,
+                                                 idp_id=idp_id,
+                                                 mapping_id=new_mapping['id'])
+
+            PROVIDERS.federation_api.create_idp(new_idp['id'], new_idp)
+            PROVIDERS.federation_api.create_protocol(new_idp['id'],
+                                                     new_protocol['id'],
+                                                     new_protocol)
+
+        # the new two domain are came from idp auto generator.
+        self.domain_count = len(default_fixtures.DOMAINS) + 2
+
     def test_password_hashed(self):
         with sql.session_for_read() as session:
             user_ref = PROVIDERS.identity_api._get_user(
@@ -684,8 +705,10 @@ class SqlIdentity(SqlTests,
                               ref_id)
 
             # Deleting list of projects that includes a non-existing project
-            # should be silent
-            driver.delete_projects_from_ids([ref_id])
+            # should be silent. The root domain <<keystone.domain.root>> can't
+            # be deleted.
+            if ref_id != resource.NULL_DOMAIN_ID:
+                driver.delete_projects_from_ids([ref_id])
 
         _exercise_project_api(uuid.uuid4().hex)
         _exercise_project_api(resource.NULL_DOMAIN_ID)
@@ -1193,5 +1216,9 @@ class SqlLimit(SqlTests, limit_tests.LimitTests):
             service_id=self.service_one['id'],
             region_id=self.region_two['id'],
             resource_name='snapshot', default_limit=10, id=uuid.uuid4().hex)
+        registered_limit_3 = unit.new_registered_limit_ref(
+            service_id=self.service_one['id'],
+            region_id=self.region_two['id'],
+            resource_name='backup', default_limit=10, id=uuid.uuid4().hex)
         PROVIDERS.unified_limit_api.create_registered_limits(
-            [registered_limit_1, registered_limit_2])
+            [registered_limit_1, registered_limit_2, registered_limit_3])
