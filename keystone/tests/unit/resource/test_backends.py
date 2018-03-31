@@ -254,7 +254,14 @@ class ResourceTests(object):
         PROVIDERS.resource_api.create_domain(domain1['id'], domain1)
         PROVIDERS.resource_api.create_domain(domain2['id'], domain2)
         domains = PROVIDERS.resource_api.list_domains()
-        self.assertEqual(3, len(domains))
+
+        test_created_domain_number = 2
+        idp_auto_generated_domain_number = 2
+        default_domain_number = 1
+        total_domain_number = (test_created_domain_number +
+                               idp_auto_generated_domain_number +
+                               default_domain_number)
+        self.assertEqual(total_domain_number, len(domains))
         domain_ids = []
         for domain in domains:
             domain_ids.append(domain.get('id'))
