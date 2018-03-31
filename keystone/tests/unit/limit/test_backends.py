@@ -16,7 +16,6 @@ from keystone.common import driver_hints
 from keystone.common import provider_api
 from keystone import exception
 from keystone.tests import unit
-from keystone.tests.unit import utils as test_utils
 
 PROVIDERS = provider_api.ProviderAPIs
 
@@ -196,7 +195,6 @@ class RegisteredLimitTests(object):
                           PROVIDERS.unified_limit_api.update_registered_limits,
                           [update_ref])
 
-    @test_utils.wip("Skipped until Bug 1744195 is resolved")
     def test_update_registered_limit_when_reference_limit_exist(self):
         registered_limit_1 = unit.new_registered_limit_ref(
             service_id=self.service_one['id'],
@@ -358,7 +356,6 @@ class RegisteredLimitTests(object):
                           PROVIDERS.unified_limit_api.delete_registered_limit,
                           uuid.uuid4().hex)
 
-    @test_utils.wip("Skipped until Bug 1744195 is resolved")
     def test_delete_registered_limit_when_reference_limit_exist(self):
         registered_limit_1 = unit.new_registered_limit_ref(
             service_id=self.service_one['id'],
@@ -463,13 +460,13 @@ class LimitTests(object):
                           PROVIDERS.unified_limit_api.create_limits,
                           [limit])
 
-    @test_utils.wip("Skipped until Bug 1744195 is resolved")
     def test_create_limit_without_reference_registered_limit(self):
         limit_1 = unit.new_limit_ref(
             project_id=self.tenant_bar['id'],
             service_id=self.service_one['id'],
             region_id=self.region_one['id'],
-            resource_name='volume', resource_limit=10, id=uuid.uuid4().hex)
+            resource_name='fake-resource', resource_limit=10,
+            id=uuid.uuid4().hex)
         self.assertRaises(exception.NoLimitReference,
                           PROVIDERS.unified_limit_api.create_limits,
                           [limit_1])
