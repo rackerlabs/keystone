@@ -52,11 +52,11 @@ class SqlTests(unit.SQLDriverOverrides, unit.TestCase):
 
     def setUp(self):
         super(SqlTests, self).setUp()
-        self.useFixture(database.Database())
+        self.useFixture(database.Database(enable_sqlite_foreign_key=True))
         self.load_backends()
 
         # populate the engine with tables & fixtures
-        self.load_fixtures(default_fixtures)
+        self.load_fixtures(default_fixtures, enable_sqlite_foreign_key=True)
         # defaulted by the data load
         self.user_foo['enabled'] = True
 
@@ -235,6 +235,7 @@ class SqlIdentity(SqlTests,
                   assignment_tests.AssignmentTests,
                   assignment_tests.SystemAssignmentTests,
                   resource_tests.ResourceTests):
+
     def test_password_hashed(self):
         with sql.session_for_read() as session:
             user_ref = PROVIDERS.identity_api._get_user(
@@ -684,8 +685,10 @@ class SqlIdentity(SqlTests,
                               ref_id)
 
             # Deleting list of projects that includes a non-existing project
-            # should be silent
-            driver.delete_projects_from_ids([ref_id])
+            # should be silent. The root domain <<keystone.domain.root>> can't
+            # be deleted.
+            if ref_id != resource.NULL_DOMAIN_ID:
+                driver.delete_projects_from_ids([ref_id])
 
         _exercise_project_api(uuid.uuid4().hex)
         _exercise_project_api(resource.NULL_DOMAIN_ID)
