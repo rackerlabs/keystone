@@ -43,13 +43,13 @@ services.
 
       This command uses the password for the ``admin`` user.
 
-#. As the ``demo`` user, request an authentication token:
+#. As the ``myuser`` user created in the last section, request an authentication token:
 
    .. code-block:: console
 
       $ openstack --os-auth-url http://controller:5000/v3 \
         --os-project-domain-name Default --os-user-domain-name Default \
-        --os-project-name demo --os-username demo token issue
+        --os-project-name myproject --os-username myuser token issue
 
       Password:
       +------------+-----------------------------------------------------------------+
@@ -67,6 +67,6 @@ services.
 
    .. note::
 
-      This command uses the password for the ``demo``
+      This command uses the password for the ``myuser``
       user and API port 5000 which only allows regular (non-admin)
       access to the Identity service API.
