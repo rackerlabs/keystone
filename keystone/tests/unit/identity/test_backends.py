@@ -1392,6 +1392,7 @@ class LimitTests(filtering.FilterTests):
         self.config_fixture.config(list_limit=10)
         # Should get back just 10 entities
         hints = driver_hints.Hints()
+        hints.add_filter('is_domain', '0')
         entities = self._list_entities(entity)(hints=hints)
         self.assertEqual(hints.limit['limit'], len(entities))
         self.assertTrue(hints.limit['truncated'])
