@@ -16,6 +16,24 @@
       "revId": "9831730db96180644ef7cdc5643921818e610f95",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_fd164a49",
+        "filename": "playbooks/keystone-osh-functional/run.yaml",
+        "patchSetId": 59
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-31T03:09:54Z",
+      "side": 1,
+      "message": "emm. seems the image \"docker.io/openstackhelm/heat:newton\" which bootstrap uses contains openstackclient already. Not sure what happened in CI.",
+      "parentUuid": "bf659307_6be7d7ad",
+      "revId": "9831730db96180644ef7cdc5643921818e610f95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
