@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_6be7d7ad",
+        "filename": "playbooks/keystone-osh-functional/run.yaml",
+        "patchSetId": 59
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-03-31T02:22:33Z",
+      "side": 1,
+      "message": "seems that the keystone_bootstrap image doesn\u0027t contain openstackclient.",
+      "revId": "9831730db96180644ef7cdc5643921818e610f95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
