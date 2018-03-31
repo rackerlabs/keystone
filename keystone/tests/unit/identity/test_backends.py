@@ -1075,9 +1075,6 @@ class IdentityTests(object):
                 PROVIDERS.resource_api.delete_domain(domain['id'])
 
         self.domain_list = {}
-
-        PROVIDERS.resource_api.create_domain(
-            default_fixtures.ROOT_DOMAIN['id'], default_fixtures.ROOT_DOMAIN)
         create_domains(2, 'domaingroup1')
         create_domains(3, 'domaingroup2')
 
