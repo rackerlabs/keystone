@@ -22,6 +22,7 @@ from testtools import matchers
 from keystone.common import provider_api
 import keystone.conf
 from keystone import exception
+from keystone.resource.backends import base as resource_base
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
 
@@ -1154,6 +1155,10 @@ class RoleAssignmentBaseTestCase(test_v3.RestfulTestCase,
     MAX_HIERARCHY_BREADTH = 3
     MAX_HIERARCHY_DEPTH = CONF.max_project_tree_depth - 1
 
+    def setUp(self, enable_sqlite_foreign_key=True):
+        super(RoleAssignmentBaseTestCase, self).setUp(
+            enable_sqlite_foreign_key=enable_sqlite_foreign_key)
+
     def load_sample_data(self, enable_sqlite_foreign_key=False):
         """Create sample data to be used on tests.
 
@@ -1179,7 +1184,8 @@ class RoleAssignmentBaseTestCase(test_v3.RestfulTestCase,
             new_parent = subprojects[random.randint(0, breadth - 1)]
             create_project_hierarchy(new_parent['id'], depth - 1)
 
-        super(RoleAssignmentBaseTestCase, self).load_sample_data()
+        super(RoleAssignmentBaseTestCase, self).load_sample_data(
+            enable_sqlite_foreign_key=enable_sqlite_foreign_key)
 
         # Create a domain
         self.domain = unit.new_domain_ref()
@@ -3218,6 +3224,10 @@ class DomainSpecificRoleTests(test_v3.RestfulTestCase, unit.TestCase):
 class ListUserProjectsTestCase(test_v3.RestfulTestCase):
     """Test for /users/<user>/projects."""
 
+    def setUp(self, enable_sqlite_foreign_key=True):
+        super(ListUserProjectsTestCase, self).setUp(
+            enable_sqlite_foreign_key=enable_sqlite_foreign_key)
+
     def load_sample_data(self, enable_sqlite_foreign_key=False):
         # do not load base class's data, keep it focused on the tests
 
@@ -3226,6 +3236,14 @@ class ListUserProjectsTestCase(test_v3.RestfulTestCase):
         self.projects = []
         self.roles = []
         self.users = []
+
+        if enable_sqlite_foreign_key:
+            root_domain = unit.new_domain_ref(
+                id=resource_base.NULL_DOMAIN_ID,
+                name=resource_base.NULL_DOMAIN_ID
+            )
+            self.resource_api.create_domain(resource_base.NULL_DOMAIN_ID,
+                                            root_domain)
 
         # Create 3 sets of domain, roles, projects, and users to demonstrate
         # the right user's data is loaded and only projects they can access
