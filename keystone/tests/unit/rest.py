@@ -58,10 +58,10 @@ class RestfulTestCase(unit.TestCase):
         self.auth_plugin_config_override()
 
         self.useFixture(database.Database(
-            enable_sqlite_foreign_key=enable_sqlite_foreign_key))
+            enable_sqlite_foreign_key=True))
         self.load_backends()
         self.load_fixtures(default_fixtures,
-                           enable_sqlite_foreign_key=enable_sqlite_foreign_key)
+                           enable_sqlite_foreign_key=True)
 
         self.public_app = webtest.TestApp(
             self.loadapp(app_conf, name='main'))
