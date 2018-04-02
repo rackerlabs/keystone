@@ -15,7 +15,9 @@ from oslo_config import fixture as config_fixture
 from keystone.cmd import bootstrap
 from keystone.common import provider_api
 import keystone.conf
+from keystone import exception
 from keystone.tests.unit import core
+from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit.ksfixtures import database
 
@@ -46,6 +48,13 @@ class TestCaseWithBootstrap(core.BaseTestCase):
                 CONF.fernet_tokens.max_active_keys
             )
         )
+
+        try:
+            PROVIDERS.resource_api.create_domain(
+                default_fixtures.ROOT_DOMAIN['id'],
+                default_fixtures.ROOT_DOMAIN)
+        except exception.Conflict:
+            pass
 
         self.bootstrapper = bootstrap.Bootstrapper()
         self.addCleanup(provider_api.ProviderAPIs._clear_registry_instances)
