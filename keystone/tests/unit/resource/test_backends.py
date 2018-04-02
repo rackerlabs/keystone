@@ -1738,7 +1738,7 @@ class ResourceDriverTests(object):
         project = {
             'name': uuid.uuid4().hex,
             'id': project_id,
-            'domain_id': uuid.uuid4().hex,
+            'domain_id': default_fixtures.ROOT_DOMAIN['id'],
         }
         self.driver.create_project(project_id, project)
 
@@ -1747,10 +1747,9 @@ class ResourceDriverTests(object):
         project = {
             'name': uuid.uuid4().hex,
             'id': project_id,
-            'domain_id': uuid.uuid4().hex,
+            'domain_id': default_fixtures.ROOT_DOMAIN['id'],
             'description': uuid.uuid4().hex,
             'enabled': True,
-            'parent_id': uuid.uuid4().hex,
             'is_domain': True,
         }
         self.driver.create_project(project_id, project)
@@ -1766,7 +1765,7 @@ class ResourceDriverTests(object):
 
     def test_create_project_same_name_same_domain_conflict(self):
         name = uuid.uuid4().hex
-        domain_id = uuid.uuid4().hex
+        domain_id = default_fixtures.ROOT_DOMAIN['id']
 
         project_id = uuid.uuid4().hex
         project = {
@@ -1791,14 +1790,14 @@ class ResourceDriverTests(object):
         project = {
             'name': uuid.uuid4().hex,
             'id': project_id,
-            'domain_id': uuid.uuid4().hex,
+            'domain_id': default_fixtures.ROOT_DOMAIN['id'],
         }
         self.driver.create_project(project_id, project)
 
         project = {
             'name': uuid.uuid4().hex,
             'id': project_id,
-            'domain_id': uuid.uuid4().hex,
+            'domain_id': default_fixtures.ROOT_DOMAIN['id'],
         }
         self.assertRaises(exception.Conflict, self.driver.create_project,
                           project_id, project)
