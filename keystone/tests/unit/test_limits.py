@@ -18,7 +18,6 @@ import uuid
 from keystone.common import provider_api
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
-from keystone.tests.unit import utils as test_utils
 
 PROVIDERS = provider_api.ProviderAPIs
 
@@ -268,7 +267,6 @@ class RegisteredLimitsTestCase(test_v3.RestfulTestCase):
                 body={'registered_limits': [input_limit]},
                 expected_status=http_client.BAD_REQUEST)
 
-    @test_utils.wip("Skipped until Bug 1744195 is resolved")
     def test_update_registered_limit_with_referenced_limit(self):
         ref = unit.new_registered_limit_ref(service_id=self.service_id,
                                             region_id=self.region_id,
@@ -396,7 +394,6 @@ class RegisteredLimitsTestCase(test_v3.RestfulTestCase):
         registered_limits = r.result['registered_limits']
         self.assertEqual(len(registered_limits), 1)
 
-    @test_utils.wip("Skipped until Bug 1744195 is resolved")
     def test_delete_registered_limit_with_referenced_limit(self):
         ref = unit.new_registered_limit_ref(service_id=self.service_id,
                                             region_id=self.region_id,
@@ -447,12 +444,15 @@ class LimitsTestCase(test_v3.RestfulTestCase):
                                              resource_name='volume')
         ref2 = unit.new_registered_limit_ref(service_id=self.service_id2,
                                              resource_name='snapshot')
+        ref3 = unit.new_registered_limit_ref(service_id=self.service_id2,
+                                             resource_name='backup')
         r = self.post(
             '/registered_limits',
-            body={'registered_limits': [ref1, ref2]},
+            body={'registered_limits': [ref1, ref2, ref3]},
             expected_status=http_client.CREATED)
         self.registered_limit1 = r.result['registered_limits'][0]
         self.registered_limit2 = r.result['registered_limits'][1]
+        self.registered_limit3 = r.result['registered_limits'][2]
 
     def test_create_limit(self):
         ref = unit.new_limit_ref(project_id=self.project_id,
@@ -538,12 +538,10 @@ class LimitsTestCase(test_v3.RestfulTestCase):
         self.assertEqual(1, len(limits))
 
         ref2 = unit.new_limit_ref(project_id=self.project_id,
-                                  service_id=self.service_id,
-                                  region_id=self.region_id,
+                                  service_id=self.service_id2,
                                   resource_name='snapshot')
         ref3 = unit.new_limit_ref(project_id=self.project_id,
-                                  service_id=self.service_id,
-                                  region_id=self.region_id,
+                                  service_id=self.service_id2,
                                   resource_name='backup')
         r = self.post(
             '/limits',
@@ -579,7 +577,6 @@ class LimitsTestCase(test_v3.RestfulTestCase):
             body={'limits': [ref]},
             expected_status=http_client.CONFLICT)
 
-    @test_utils.wip("Skipped until Bug 1744195 is resolved")
     def test_create_limit_without_reference_registered_limit(self):
         ref = unit.new_limit_ref(project_id=self.project_id,
                                  service_id=self.service_id,
