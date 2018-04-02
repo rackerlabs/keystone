@@ -21,7 +21,6 @@ import keystone.conf
 from keystone.credential.providers import fernet as credential_fernet
 from keystone import exception
 from keystone.tests import unit
-from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import test_v3
 from keystone.tests.unit import utils as test_utils
@@ -152,10 +151,6 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.head(resource_url, expected_status=http_client.OK)
 
     def test_list_limit_for_domains(self):
-        PROVIDERS.resource_api.create_domain(
-            default_fixtures.ROOT_DOMAIN['id'], default_fixtures.ROOT_DOMAIN
-        )
-
         for x in range(6):
             domain = {'domain': unit.new_domain_ref()}
             self.post('/domains', body=domain)
