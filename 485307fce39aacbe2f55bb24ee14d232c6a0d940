@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_f9b97378",
+        "filename": "doc/source/install/keystone-verify-rdo.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-02T07:01:48Z",
+      "side": 1,
+      "message": "keystone-verify-obs.rst and keystone-verify-ubuntu.rst can be updated as well, since they are all use common/keystone-users.inc",
+      "revId": "485307fce39aacbe2f55bb24ee14d232c6a0d940",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
