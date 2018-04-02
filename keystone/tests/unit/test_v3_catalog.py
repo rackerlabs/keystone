@@ -994,12 +994,18 @@ class TestCatalogAPITemplatedProject(test_v3.RestfulTestCase):
 
     """
 
+    def setUp(self, enable_sqlite_foreign_key=True):
+        super(TestCatalogAPITemplatedProject, self).setUp(
+            enable_sqlite_foreign_key=enable_sqlite_foreign_key)
+
     def config_overrides(self):
         super(TestCatalogAPITemplatedProject, self).config_overrides()
         self.config_fixture.config(group='catalog', driver='templated')
 
     def load_fixtures(self, fixtures, enable_sqlite_foreign_key=False):
-        self.load_sample_data(create_region_and_endpoints=False)
+        self.load_sample_data(
+            create_region_and_endpoints=False,
+            enable_sqlite_foreign_key=enable_sqlite_foreign_key)
 
     def test_project_delete(self):
         """Deleting a project should not result in an 500 ISE.
