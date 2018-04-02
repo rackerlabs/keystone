@@ -16,6 +16,24 @@
       "revId": "e8d9c84ee4c9aa053d826bf1d964e2c9b4012ca6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_6605b710",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1063,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-02T18:29:08Z",
+      "side": 1,
+      "message": "Nevermind - I was able to recreate this when I setup the root domain explicitly in each test [0].\n\n[0] http://paste.openstack.org/show/718201/",
+      "parentUuid": "bf659307_cb24ce60",
+      "revId": "e8d9c84ee4c9aa053d826bf1d964e2c9b4012ca6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
