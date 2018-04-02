@@ -83,6 +83,9 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
     def setUp(self):
         self.useFixture(database.Database())
         super(CliBootStrapTestCase, self).setUp()
+        self.load_backends()
+        PROVIDERS.resource_api.create_domain(
+            default_fixtures.ROOT_DOMAIN['id'], default_fixtures.ROOT_DOMAIN)
 
     def config_files(self):
         self.config_fixture.register_cli_opt(cli.command_opt)
@@ -406,6 +409,9 @@ class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
 
         def create_domain(domain):
             return PROVIDERS.resource_api.create_domain(domain['id'], domain)
+
+        PROVIDERS.resource_api.create_domain(
+            default_fixtures.ROOT_DOMAIN['id'], default_fixtures.ROOT_DOMAIN)
 
         self.domains = {}
         self.addCleanup(self.cleanup_domains)

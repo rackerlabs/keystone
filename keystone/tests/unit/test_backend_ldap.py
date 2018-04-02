@@ -1891,7 +1891,7 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity, unit.TestCase):
         super(LDAPIdentityEnabledEmulation, self).setUp()
         _assert_backends(self, identity='ldap')
 
-    def load_fixtures(self, fixtures, enable_sqlite_foreign_key=False):
+    def load_fixtures(self, fixtures):
         # Override super impl since need to create group container.
         super(LDAPIdentity, self).load_fixtures(fixtures)
         for obj in [self.tenant_bar, self.tenant_baz, self.user_foo,
@@ -2310,16 +2310,18 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, unit.SQLDriverOverrides,
 
     """
 
-    def load_fixtures(self, fixtures, enable_sqlite_foreign_key=False):
+    def load_fixtures(self, fixtures):
         self.domain_count = 5
         self.domain_specific_count = 3
-        self.setup_initial_domains()
 
         # All initial test data setup complete, time to switch on support
         # for separate backends per domain.
         self.enable_multi_domain()
 
         super(MultiLDAPandSQLIdentity, self).load_fixtures(fixtures)
+        self.setup_initial_domains()
+        PROVIDERS.identity_api.domain_configs.setup_domain_drivers(
+            PROVIDERS.identity_api.driver, PROVIDERS.resource_api)
 
     def assert_backends(self):
         _assert_backends(self,
@@ -2644,6 +2646,12 @@ class MultiLDAPandSQLIdentityDomainConfigsInSQL(MultiLDAPandSQLIdentity):
 
     """
 
+    def setUp(self):
+        super(MultiLDAPandSQLIdentityDomainConfigsInSQL, self).setUp()
+        self.create_domain_config()
+        PROVIDERS.identity_api.domain_configs.setup_domain_drivers(
+            PROVIDERS.identity_api.driver, PROVIDERS.resource_api)
+
     def assert_backends(self):
         _assert_backends(self,
                          assignment='sql',
@@ -2655,6 +2663,14 @@ class MultiLDAPandSQLIdentityDomainConfigsInSQL(MultiLDAPandSQLIdentity):
                          })
 
     def enable_multi_domain(self):
+        self.config_fixture.config(
+            group='identity', domain_specific_drivers_enabled=True,
+            domain_configurations_from_database=True,
+            list_limit=1000)
+        self.config_fixture.config(group='identity_mapping',
+                                   backward_compatible_ids=False)
+
+    def create_domain_config(self):
         # The values below are the same as in the domain_configs_multi_ldap
         # directory of test config_files.
         default_config = {
@@ -2691,13 +2707,6 @@ class MultiLDAPandSQLIdentityDomainConfigsInSQL(MultiLDAPandSQLIdentity):
         PROVIDERS.domain_config_api.create_config(
             self.domains['domain2']['id'], domain2_config
         )
-
-        self.config_fixture.config(
-            group='identity', domain_specific_drivers_enabled=True,
-            domain_configurations_from_database=True,
-            list_limit=1000)
-        self.config_fixture.config(group='identity_mapping',
-                                   backward_compatible_ids=False)
 
     def test_domain_config_has_no_impact_if_database_support_disabled(self):
         """Ensure database domain configs have no effect if disabled.
@@ -2884,9 +2893,28 @@ class DomainSpecificLDAPandSQLIdentity(
 
         super(DomainSpecificLDAPandSQLIdentity, self).setUp()
 
-    def load_fixtures(self, fixtures, enable_sqlite_foreign_key=False):
-        self.setup_initial_domains()
+    def load_fixtures(self, fixtures):
         super(DomainSpecificLDAPandSQLIdentity, self).load_fixtures(fixtures)
+        self.setup_initial_domains()
+        PROVIDERS.identity_api.domain_configs.setup_domain_drivers(
+            PROVIDERS.identity_api.driver, PROVIDERS.resource_api)
+        # create one test mapping, two idps and two protocols for federation
+        # test.
+        new_mapping = unit.new_mapping_ref()
+        PROVIDERS.federation_api.create_mapping(new_mapping['id'], new_mapping)
+        for idp_id, protocol_id in [('ORG_IDP', 'saml2'),
+                                    ('myidp', 'mapped')]:
+            new_idp = unit.new_identity_provider_ref(idp_id=idp_id)
+            new_protocol = unit.new_protocol_ref(protocol_id=protocol_id,
+                                                 idp_id=idp_id,
+                                                 mapping_id=new_mapping['id'])
+
+            PROVIDERS.federation_api.create_idp(new_idp['id'], new_idp)
+            PROVIDERS.federation_api.create_protocol(new_idp['id'],
+                                                     new_protocol['id'],
+                                                     new_protocol)
+        # the new two domains are came from idp auto generator.
+        self.domain_count += 2
 
     def assert_backends(self):
         _assert_backends(
