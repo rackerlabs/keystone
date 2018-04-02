@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_f0e5fddc",
+        "filename": "doc/source/install/keystone-verify-obs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-02T16:48:21Z",
+      "side": 1,
+      "message": "This is a v2-ism. Even though we\u0027re just making the guides consistent, we should probably remove this.",
+      "range": {
+        "startLine": 71,
+        "startChar": 24,
+        "endLine": 72,
+        "endChar": 41
+      },
+      "revId": "c2cd8afaf45123965824cd22c40e8449c25946b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_1002f16f",
+        "filename": "doc/source/install/keystone-verify-rdo.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-02T16:48:21Z",
+      "side": 1,
+      "message": "This should probably be refactored out (either in this patch or a follow on) since we don\u0027t support v2 anymore.",
+      "range": {
+        "startLine": 71,
+        "startChar": 14,
+        "endLine": 72,
+        "endChar": 41
+      },
+      "revId": "c2cd8afaf45123965824cd22c40e8449c25946b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_b0fc6570",
+        "filename": "doc/source/install/keystone-verify-ubuntu.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-02T16:48:21Z",
+      "side": 1,
+      "message": "Same comment here as in the previous modules.",
+      "range": {
+        "startLine": 71,
+        "startChar": 24,
+        "endLine": 71,
+        "endChar": 28
+      },
+      "revId": "c2cd8afaf45123965824cd22c40e8449c25946b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
