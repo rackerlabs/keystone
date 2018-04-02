@@ -152,10 +152,6 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.head(resource_url, expected_status=http_client.OK)
 
     def test_list_limit_for_domains(self):
-        PROVIDERS.resource_api.create_domain(
-            default_fixtures.ROOT_DOMAIN['id'], default_fixtures.ROOT_DOMAIN
-        )
-
         for x in range(6):
             domain = {'domain': unit.new_domain_ref()}
             self.post('/domains', body=domain)
