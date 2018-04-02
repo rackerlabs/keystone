@@ -42,6 +42,7 @@ from keystone.cmd.doctor import tokens_fernet
 from keystone.common import provider_api
 from keystone.common.sql import upgrades
 import keystone.conf
+from keystone import exception
 from keystone.i18n import _
 from keystone.identity.mapping_backends import mapping as identity_mapping
 from keystone.tests import unit
@@ -95,6 +96,7 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
     def setUp(self):
         self.useFixture(database.Database())
         super(CliBootStrapTestCase, self).setUp()
+        self.bootstrap = cli.BootStrap()
 
     def config_files(self):
         self.config_fixture.register_cli_opt(cli.command_opt)
@@ -108,10 +110,16 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
              default_config_files=config_files)
 
     def test_bootstrap(self):
-        bootstrap = cli.BootStrap()
-        self._do_test_bootstrap(bootstrap)
+        self._do_test_bootstrap(self.bootstrap)
 
     def _do_test_bootstrap(self, bootstrap):
+        try:
+            PROVIDERS.resource_api.create_domain(
+                default_fixtures.ROOT_DOMAIN['id'],
+                default_fixtures.ROOT_DOMAIN)
+        except exception.Conflict:
+            pass
+
         bootstrap.do_bootstrap()
         project = PROVIDERS.resource_api.get_project_by_name(
             bootstrap.project_name,
@@ -171,8 +179,7 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
     def test_bootstrap_is_idempotent_when_password_does_not_change(self):
         # NOTE(morganfainberg): Ensure we can run bootstrap with the same
         # configuration multiple times without erroring.
-        bootstrap = cli.BootStrap()
-        self._do_test_bootstrap(bootstrap)
+        self._do_test_bootstrap(self.bootstrap)
         app = self.loadapp()
         v3_password_data = {
             'auth': {
@@ -180,8 +187,8 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
                     "methods": ["password"],
                     "password": {
                         "user": {
-                            "name": bootstrap.username,
-                            "password": bootstrap.password,
+                            "name": self.bootstrap.username,
+                            "password": self.bootstrap.password,
                             "domain": {
                                 "id": CONF.identity.default_domain_id
                             }
@@ -194,7 +201,7 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
             auth_response = c.post('/v3/auth/tokens',
                                    json=v3_password_data)
             token = auth_response.headers['X-Subject-Token']
-        self._do_test_bootstrap(bootstrap)
+        self._do_test_bootstrap(self.bootstrap)
         # build validation request
         with app.test_client() as c:
             # Get a new X-Auth-Token
@@ -210,8 +217,7 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
     def test_bootstrap_is_not_idempotent_when_password_does_change(self):
         # NOTE(lbragstad): Ensure bootstrap isn't idempotent when run with
         # different arguments or configuration values.
-        bootstrap = cli.BootStrap()
-        self._do_test_bootstrap(bootstrap)
+        self._do_test_bootstrap(self.bootstrap)
         app = self.loadapp()
         v3_password_data = {
             'auth': {
@@ -219,8 +225,8 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
                     "methods": ["password"],
                     "password": {
                         "user": {
-                            "name": bootstrap.username,
-                            "password": bootstrap.password,
+                            "name": self.bootstrap.username,
+                            "password": self.bootstrap.password,
                             "domain": {
                                 "id": CONF.identity.default_domain_id
                             }
@@ -237,7 +243,7 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
                 token = auth_response.headers['X-Subject-Token']
             new_passwd = uuid.uuid4().hex
             os.environ['OS_BOOTSTRAP_PASSWORD'] = new_passwd
-            self._do_test_bootstrap(bootstrap)
+            self._do_test_bootstrap(self.bootstrap)
             v3_password_data['auth']['identity']['password']['user'][
                 'password'] = new_passwd
             # Move time forward a second to avoid rev. event capturing the new
@@ -260,12 +266,11 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
                       expected_status_code=http_client.NOT_FOUND)
 
     def test_bootstrap_recovers_user(self):
-        bootstrap = cli.BootStrap()
-        self._do_test_bootstrap(bootstrap)
+        self._do_test_bootstrap(self.bootstrap)
 
         # Completely lock the user out.
         user_id = PROVIDERS.identity_api.get_user_by_name(
-            bootstrap.username,
+            self.bootstrap.username,
             'default')['id']
         PROVIDERS.identity_api.update_user(
             user_id,
@@ -273,13 +278,13 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
              'password': uuid.uuid4().hex})
 
         # The second bootstrap run will recover the account.
-        self._do_test_bootstrap(bootstrap)
+        self._do_test_bootstrap(self.bootstrap)
 
         # Sanity check that the original password works again.
         PROVIDERS.identity_api.authenticate(
             self.make_request(),
             user_id,
-            bootstrap.password)
+            self.bootstrap.password)
 
 
 class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
@@ -331,9 +336,11 @@ class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
             fixtures.EnvironmentVariable('OS_BOOTSTRAP_REGION_ID',
                                          newvalue=self.region_id))
 
+        PROVIDERS.resource_api.create_domain(
+            default_fixtures.ROOT_DOMAIN['id'], default_fixtures.ROOT_DOMAIN)
+
     def test_assignment_created_with_user_exists(self):
         # test assignment can be created if user already exists.
-        bootstrap = cli.BootStrap()
         PROVIDERS.resource_api.create_domain(self.default_domain['id'],
                                              self.default_domain)
         user_ref = unit.new_user_ref(self.default_domain['id'],
@@ -341,47 +348,42 @@ class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
                                      password=self.password)
         PROVIDERS.identity_api.create_user(user_ref)
 
-        self._do_test_bootstrap(bootstrap)
+        self._do_test_bootstrap(self.bootstrap)
 
     def test_assignment_created_with_project_exists(self):
         # test assignment can be created if project already exists.
-        bootstrap = cli.BootStrap()
         PROVIDERS.resource_api.create_domain(self.default_domain['id'],
                                              self.default_domain)
         project_ref = unit.new_project_ref(self.default_domain['id'],
                                            name=self.project_name)
         PROVIDERS.resource_api.create_project(project_ref['id'], project_ref)
-        self._do_test_bootstrap(bootstrap)
+        self._do_test_bootstrap(self.bootstrap)
 
     def test_assignment_created_with_role_exists(self):
         # test assignment can be created if role already exists.
-        bootstrap = cli.BootStrap()
         PROVIDERS.resource_api.create_domain(self.default_domain['id'],
                                              self.default_domain)
         role = unit.new_role_ref(name=self.role_name)
         PROVIDERS.role_api.create_role(role['id'], role)
-        self._do_test_bootstrap(bootstrap)
+        self._do_test_bootstrap(self.bootstrap)
 
     def test_assignment_created_with_region_exists(self):
         # test assignment can be created if region already exists.
-        bootstrap = cli.BootStrap()
         PROVIDERS.resource_api.create_domain(self.default_domain['id'],
                                              self.default_domain)
         region = unit.new_region_ref(id=self.region_id)
         PROVIDERS.catalog_api.create_region(region)
-        self._do_test_bootstrap(bootstrap)
+        self._do_test_bootstrap(self.bootstrap)
 
     def test_endpoints_created_with_service_exists(self):
         # test assignment can be created if service already exists.
-        bootstrap = cli.BootStrap()
         PROVIDERS.resource_api.create_domain(self.default_domain['id'],
                                              self.default_domain)
         service = unit.new_service_ref(name=self.service_name)
         PROVIDERS.catalog_api.create_service(service['id'], service)
-        self._do_test_bootstrap(bootstrap)
+        self._do_test_bootstrap(self.bootstrap)
 
     def test_endpoints_created_with_endpoint_exists(self):
-        bootstrap = cli.BootStrap()
         # test assignment can be created if endpoint already exists.
         PROVIDERS.resource_api.create_domain(self.default_domain['id'],
                                              self.default_domain)
@@ -397,7 +399,7 @@ class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
                                          region_id=self.region_id)
         PROVIDERS.catalog_api.create_endpoint(endpoint['id'], endpoint)
 
-        self._do_test_bootstrap(bootstrap)
+        self._do_test_bootstrap(self.bootstrap)
 
 
 class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
@@ -444,6 +446,9 @@ class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
 
         def create_domain(domain):
             return PROVIDERS.resource_api.create_domain(domain['id'], domain)
+
+        PROVIDERS.resource_api.create_domain(
+            default_fixtures.ROOT_DOMAIN['id'], default_fixtures.ROOT_DOMAIN)
 
         self.domains = {}
         self.addCleanup(self.cleanup_domains)
