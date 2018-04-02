@@ -42,6 +42,7 @@ from keystone.cmd.doctor import tokens_fernet
 from keystone.common import provider_api
 from keystone.common.sql import upgrades
 import keystone.conf
+from keystone import exception
 from keystone.i18n import _
 from keystone.identity.mapping_backends import mapping as identity_mapping
 from keystone.tests import unit
@@ -101,6 +102,13 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
         self._do_test_bootstrap(bootstrap)
 
     def _do_test_bootstrap(self, bootstrap):
+        try:
+            PROVIDERS.resource_api.create_domain(
+                default_fixtures.ROOT_DOMAIN['id'],
+                default_fixtures.ROOT_DOMAIN)
+        except exception.Conflict:
+            pass
+
         bootstrap.do_bootstrap()
         project = PROVIDERS.resource_api.get_project_by_name(
             bootstrap.project_name,
@@ -323,6 +331,8 @@ class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
     def test_assignment_created_with_user_exists(self):
         # test assignment can be created if user already exists.
         bootstrap = cli.BootStrap()
+        PROVIDERS.resource_api.create_domain(
+            default_fixtures.ROOT_DOMAIN['id'], default_fixtures.ROOT_DOMAIN)
         PROVIDERS.resource_api.create_domain(self.default_domain['id'],
                                              self.default_domain)
         user_ref = unit.new_user_ref(self.default_domain['id'],
@@ -335,6 +345,8 @@ class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
     def test_assignment_created_with_project_exists(self):
         # test assignment can be created if project already exists.
         bootstrap = cli.BootStrap()
+        PROVIDERS.resource_api.create_domain(
+            default_fixtures.ROOT_DOMAIN['id'], default_fixtures.ROOT_DOMAIN)
         PROVIDERS.resource_api.create_domain(self.default_domain['id'],
                                              self.default_domain)
         project_ref = unit.new_project_ref(self.default_domain['id'],
@@ -345,6 +357,8 @@ class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
     def test_assignment_created_with_role_exists(self):
         # test assignment can be created if role already exists.
         bootstrap = cli.BootStrap()
+        PROVIDERS.resource_api.create_domain(
+            default_fixtures.ROOT_DOMAIN['id'], default_fixtures.ROOT_DOMAIN)
         PROVIDERS.resource_api.create_domain(self.default_domain['id'],
                                              self.default_domain)
         role = unit.new_role_ref(name=self.role_name)
@@ -354,6 +368,8 @@ class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
     def test_assignment_created_with_region_exists(self):
         # test assignment can be created if region already exists.
         bootstrap = cli.BootStrap()
+        PROVIDERS.resource_api.create_domain(
+            default_fixtures.ROOT_DOMAIN['id'], default_fixtures.ROOT_DOMAIN)
         PROVIDERS.resource_api.create_domain(self.default_domain['id'],
                                              self.default_domain)
         region = unit.new_region_ref(id=self.region_id)
@@ -363,6 +379,8 @@ class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
     def test_endpoints_created_with_service_exists(self):
         # test assignment can be created if service already exists.
         bootstrap = cli.BootStrap()
+        PROVIDERS.resource_api.create_domain(
+            default_fixtures.ROOT_DOMAIN['id'], default_fixtures.ROOT_DOMAIN)
         PROVIDERS.resource_api.create_domain(self.default_domain['id'],
                                              self.default_domain)
         service = unit.new_service_ref(name=self.service_name)
@@ -371,6 +389,8 @@ class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
 
     def test_endpoints_created_with_endpoint_exists(self):
         bootstrap = cli.BootStrap()
+        PROVIDERS.resource_api.create_domain(
+            default_fixtures.ROOT_DOMAIN['id'], default_fixtures.ROOT_DOMAIN)
         # test assignment can be created if endpoint already exists.
         PROVIDERS.resource_api.create_domain(self.default_domain['id'],
                                              self.default_domain)
@@ -433,6 +453,9 @@ class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
 
         def create_domain(domain):
             return PROVIDERS.resource_api.create_domain(domain['id'], domain)
+
+        PROVIDERS.resource_api.create_domain(
+            default_fixtures.ROOT_DOMAIN['id'], default_fixtures.ROOT_DOMAIN)
 
         self.domains = {}
         self.addCleanup(self.cleanup_domains)
