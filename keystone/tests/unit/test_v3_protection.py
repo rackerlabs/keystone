@@ -57,7 +57,8 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         """
         self.tempfile = self.useFixture(temporaryfile.SecureTempFile())
         self.tmpfilename = self.tempfile.file_name
-        super(IdentityTestProtectedCase, self).setUp()
+        super(IdentityTestProtectedCase, self).setUp(
+            enable_sqlite_foreign_key=True)
 
         # A default auth request we can use - un-scoped user token
         self.auth = self.build_authentication_request(
@@ -395,6 +396,10 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
 class IdentityTestPolicySample(test_v3.RestfulTestCase):
     """Test policy enforcement of the policy.json file."""
 
+    def setUp(self):
+        super(IdentityTestPolicySample, self).setUp(
+            enable_sqlite_foreign_key=True)
+
     def load_sample_data(self, enable_sqlite_foreign_key=False):
         self._populate_default_domain()
 
@@ -671,7 +676,8 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         # Ensure that test_v3.RestfulTestCase doesn't load its own
         # sample data, which would make checking the results of our
         # tests harder
-        super(IdentityTestv3CloudPolicySample, self).setUp()
+        super(IdentityTestv3CloudPolicySample, self).setUp(
+            enable_sqlite_foreign_key=True)
 
         self.config_fixture.config(
             group='resource',

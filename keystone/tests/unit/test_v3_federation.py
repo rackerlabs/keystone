@@ -1859,7 +1859,7 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         super(FederatedTokenTests, self).auth_plugin_config_override(methods)
 
     def setUp(self):
-        super(FederatedTokenTests, self).setUp()
+        super(FederatedTokenTests, self).setUp(enable_sqlite_foreign_key=True)
         self._notifications = []
 
         def fake_saml_notify(action, request, user_id, group_ids,
@@ -2849,6 +2849,10 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
 class FernetFederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
     AUTH_METHOD = 'token'
 
+    def setUp(self):
+        super(FernetFederatedTokenTests, self).setUp(
+            enable_sqlite_foreign_key=True)
+
     def load_fixtures(self, fixtures, enable_sqlite_foreign_key=False):
         super(FernetFederatedTokenTests, self).load_fixtures(fixtures)
         self.load_federation_sample_data()
@@ -2960,6 +2964,8 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
     Tests new shadow users functionality
 
     """
+    def setUp(self):
+        super(FederatedUserTests, self).setUp(enable_sqlite_foreign_key=True)
 
     def auth_plugin_config_override(self):
         methods = ['saml2', 'token']
@@ -3293,7 +3299,7 @@ class ShadowMappingTests(test_v3.RestfulTestCase, FederatedSetupMixin):
     """
 
     def setUp(self):
-        super(ShadowMappingTests, self).setUp()
+        super(ShadowMappingTests, self).setUp(enable_sqlite_foreign_key==True)
         # update the mapping we have already setup to have specific projects
         # and roles.
         PROVIDERS.federation_api.update_mapping(

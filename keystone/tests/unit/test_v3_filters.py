@@ -45,7 +45,8 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         """Setup for Identity Filter Test Cases."""
         self.tempfile = self.useFixture(temporaryfile.SecureTempFile())
         self.tmpfilename = self.tempfile.file_name
-        super(IdentityTestFilteredCase, self).setUp()
+        super(IdentityTestFilteredCase, self).setUp(
+            enable_sqlite_foreign_key=True)
 
     def load_sample_data(self, enable_sqlite_foreign_key=False):
         """Create sample data for these tests.
@@ -339,7 +340,8 @@ class IdentityPasswordExpiryFilteredTestCase(filtering.FilterTests,
     def setUp(self):
         """Setup for Identity Filter Test Cases."""
         self.config_fixture = self.useFixture(config_fixture.Config(CONF))
-        super(IdentityPasswordExpiryFilteredTestCase, self).setUp()
+        super(IdentityPasswordExpiryFilteredTestCase, self).setUp(
+            enable_sqlite_foreign_key=True)
 
     def load_sample_data(self, enable_sqlite_foreign_key=False):
         """Create sample data for password expiry tests.
