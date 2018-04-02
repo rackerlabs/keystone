@@ -200,7 +200,7 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         """Setup for v3 Restful Test Cases."""
         super(RestfulTestCase, self).setUp(
             app_conf=app_conf,
-            enable_sqlite_foreign_key=enable_sqlite_foreign_key)
+            enable_sqlite_foreign_key=True)
 
         self.empty_context = {'environment': {}}
 
