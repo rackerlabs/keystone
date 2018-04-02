@@ -560,8 +560,7 @@ class LimitsTestCase(test_v3.RestfulTestCase):
                                   service_id=self.service_id2,
                                   resource_name='snapshot')
         ref3 = unit.new_limit_ref(project_id=self.project_id,
-                                  service_id=self.service_id,
-                                  region_id=self.region_id,
+                                  service_id=self.service_id2,
                                   resource_name='backup')
         r = self.post(
             '/limits',
