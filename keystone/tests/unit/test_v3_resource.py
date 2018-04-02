@@ -151,9 +151,6 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                                            resource_url=resource_url)
         self.head(resource_url, expected_status=http_client.OK)
 
-    @test_utils.wip('The root domain throws off the limit count by one',
-                    expected_exception=matchers._impl.MismatchError,
-                    bug='#1760521')
     def test_list_limit_for_domains(self):
         PROVIDERS.resource_api.create_domain(
             default_fixtures.ROOT_DOMAIN['id'], default_fixtures.ROOT_DOMAIN
