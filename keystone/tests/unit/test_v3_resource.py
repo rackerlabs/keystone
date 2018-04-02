@@ -20,6 +20,7 @@ from keystone.common import provider_api
 import keystone.conf
 from keystone.credential.providers import fernet as credential_fernet
 from keystone import exception
+from keystone.tests.unit import default_fixtures
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import test_v3
@@ -149,6 +150,26 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.assertValidDomainListResponse(r, ref=self.domain,
                                            resource_url=resource_url)
         self.head(resource_url, expected_status=http_client.OK)
+
+    @test_utils.wip('The root domain throws off the limit count by one',
+                    expected_exception=matchers._impl.MismatchError,
+                    bug='#1760521')
+    def test_list_limit_for_domains(self):
+        PROVIDERS.resource_api.create_domain(
+            default_fixtures.ROOT_DOMAIN['id'], default_fixtures.ROOT_DOMAIN
+        )
+
+        for x in range(6):
+            domain = {'domain': unit.new_domain_ref()}
+            self.post('/domains', body=domain)
+
+        for expected_length in range(1, 6):
+            self.config_fixture.config(
+                group='resource', list_limit=expected_length
+            )
+            response = self.get('/domains')
+            domain_list = response.json_body['domains']
+            self.assertEqual(expected_length, len(domain_list))
 
     def test_get_head_domain(self):
         """Call ``GET /domains/{domain_id}``."""
