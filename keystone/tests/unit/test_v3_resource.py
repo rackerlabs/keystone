@@ -825,6 +825,141 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.assertValidProjectListResponse(resp)
         self.assertEqual(len(resp.result['projects']), 0)
 
+    def test_list_projects_filtering_by_tags_with_startswith(self):
+        """Call ``GET /projects?tags__startswith={tags}``."""
+        project, tags = self._create_project_and_tags(num_of_tags=1)
+        project1, tags1 = self._create_project_and_tags(num_of_tags=2)
+        resp = self.get('/projects?tags__startswith=%(values)s' % {
+            'values': tags[0][:4]})
+        pids = [p['id'] for p in resp.result['projects']]
+        self.assertValidProjectListResponse(resp)
+        self.assertIn(project['id'], pids)
+        self.assertNotIn(project1['id'], pids)
+
+    def test_list_projects_filtering_by_tags_with_endswith(self):
+        """Call ``GET /projects?tags__endswith={tags}``."""
+        project, tags = self._create_project_and_tags(num_of_tags=1)
+        project1, tags1 = self._create_project_and_tags(num_of_tags=2)
+        resp = self.get('/projects?tags__endswith=%(values)s' % {
+            'values': tags[0][28:]})
+        pids = [p['id'] for p in resp.result['projects']]
+        self.assertValidProjectListResponse(resp)
+        self.assertIn(project['id'], pids)
+        self.assertNotIn(project1['id'], pids)
+
+    def test_list_projects_filtering_by_tags_with_contains(self):
+        """Call ``GET /projects?tags__contains={tags}``."""
+        project, tags = self._create_project_and_tags(num_of_tags=1)
+        project1, tags1 = self._create_project_and_tags(num_of_tags=2)
+        resp = self.get('/projects?tags__contains=%(values)s' % {
+            'values': tags[0][6:12]})
+        pids = [p['id'] for p in resp.result['projects']]
+        self.assertValidProjectListResponse(resp)
+        self.assertIn(project['id'], pids)
+        self.assertNotIn(project1['id'], pids)
+
+    def test_list_projects_filtering_by_tags_any_with_startswith(self):
+        """Call ``GET /projects?tags-any__startswith={tag}``."""
+        project, tags = self._create_project_and_tags(num_of_tags=2)
+        project1, tags1 = self._create_project_and_tags(num_of_tags=2)
+        resp = self.get('/projects?tags-any__startswith=%(values)s' % {
+            'values': tags[0][:4]})
+        pids = [p['id'] for p in resp.result['projects']]
+        self.assertValidProjectListResponse(resp)
+        self.assertIn(project['id'], pids)
+        self.assertNotIn(project1['id'], pids)
+
+    def test_list_projects_filtering_by_tags_any_with_endswith(self):
+        """Call ``GET /projects?tags-any__endswith={tag}``."""
+        project, tags = self._create_project_and_tags(num_of_tags=2)
+        project1, tags1 = self._create_project_and_tags(num_of_tags=2)
+        resp = self.get('/projects?tags-any__endswith=%(values)s' % {
+            'values': tags[0][26:]})
+        pids = [p['id'] for p in resp.result['projects']]
+        self.assertValidProjectListResponse(resp)
+        self.assertIn(project['id'], pids)
+        self.assertNotIn(project1['id'], pids)
+
+    def test_list_projects_filtering_by_tags_any_with_contains(self):
+        """Call ``GET /projects?tags-any__contains={tag}``."""
+        project, tags = self._create_project_and_tags(num_of_tags=2)
+        project1, tags1 = self._create_project_and_tags(num_of_tags=2)
+        resp = self.get('/projects?tags-any__contains=%(values)s' % {
+            'values': tags[0][13:17]})
+        pids = [p['id'] for p in resp.result['projects']]
+        self.assertValidProjectListResponse(resp)
+        self.assertIn(project['id'], pids)
+        self.assertNotIn(project1['id'], pids)
+
+    def test_list_projects_filtering_by_not_tags_with_startswith(self):
+        """Call ``GET /projects?not-tags__startswith={tag}``."""
+        project, tags = self._create_project_and_tags(num_of_tags=1)
+        project1, tags1 = self._create_project_and_tags(num_of_tags=2)
+        resp = self.get('/projects?not-tags__startswith=%(values)s' % {
+            'values': tags[0][:4]})
+        self.assertValidProjectListResponse(resp)
+        pids = [p['id'] for p in resp.result['projects']]
+        self.assertNotIn(project['id'], pids)
+        self.assertIn(project1['id'], pids)
+
+    def test_list_projects_filtering_by_not_tags_with_endswith(self):
+        """Call ``GET /projects?not-tags__endswith={tag}``."""
+        project, tags = self._create_project_and_tags(num_of_tags=1)
+        project1, tags1 = self._create_project_and_tags(num_of_tags=2)
+        resp = self.get('/projects?not-tags__endswith=%(values)s' % {
+            'values': tags[0][28:]})
+        self.assertValidProjectListResponse(resp)
+        pids = [p['id'] for p in resp.result['projects']]
+        self.assertNotIn(project['id'], pids)
+        self.assertIn(project1['id'], pids)
+
+    def test_list_projects_filtering_by_not_tags_with_contains(self):
+        """Call ``GET /projects?not-tags__contains={tag}``."""
+        project, tags = self._create_project_and_tags(num_of_tags=1)
+        project1, tags1 = self._create_project_and_tags(num_of_tags=2)
+        resp = self.get('/projects?not-tags__contains=%(values)s' % {
+            'values': tags[0][4:8]})
+        self.assertValidProjectListResponse(resp)
+        pids = [p['id'] for p in resp.result['projects']]
+        self.assertNotIn(project['id'], pids)
+        self.assertIn(project1['id'], pids)
+
+    def test_list_projects_filtering_by_not_tags_any_with_startswith(self):
+        """Call ``GET /projects?not-tags-any__startswith={tags}``."""
+        project, tags = self._create_project_and_tags(num_of_tags=2)
+        project1, tags1 = self._create_project_and_tags(num_of_tags=2)
+        tag_string = tags[0][:4]
+        resp = self.get('/projects?not-tags-any__startswith=%(values)s' % {
+            'values': tag_string})
+        self.assertValidProjectListResponse(resp)
+        pids = [p['id'] for p in resp.result['projects']]
+        self.assertNotIn(project['id'], pids)
+        self.assertIn(project1['id'], pids)
+
+    def test_list_projects_filtering_by_not_tags_any_with_endswith(self):
+        """Call ``GET /projects?not-tags-any__endswith={tags}``."""
+        project, tags = self._create_project_and_tags(num_of_tags=2)
+        project1, tags1 = self._create_project_and_tags(num_of_tags=2)
+        tag_string = tags[0][25:]
+        resp = self.get('/projects?not-tags-any__endswith=%(values)s' % {
+            'values': tag_string})
+        self.assertValidProjectListResponse(resp)
+        pids = [p['id'] for p in resp.result['projects']]
+        self.assertNotIn(project['id'], pids)
+        self.assertIn(project1['id'], pids)
+
+    def test_list_projects_filtering_by_not_tags_any_with_contains(self):
+        """Call ``GET /projects?not-tags-any__contains={tags}``."""
+        project, tags = self._create_project_and_tags(num_of_tags=2)
+        project1, tags1 = self._create_project_and_tags(num_of_tags=2)
+        tag_string = tags[0][4:8]
+        resp = self.get('/projects?not-tags-any__contains=%(values)s' % {
+            'values': tag_string})
+        self.assertValidProjectListResponse(resp)
+        pids = [p['id'] for p in resp.result['projects']]
+        self.assertNotIn(project['id'], pids)
+        self.assertIn(project1['id'], pids)
+
     def test_list_projects_by_tags_and_name(self):
         """Call ``GET /projects?tags-any={tags}&name={name}``."""
         project, tags = self._create_project_and_tags(num_of_tags=2)

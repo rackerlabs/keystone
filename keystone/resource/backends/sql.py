@@ -179,7 +179,7 @@ class Resource(base.ResourceDriverBase):
             query = session.query(ProjectTag)
             for tag_filter in hints.filters:
                 if 'equals' not in tag_filter['comparator']:
-                    pass
+                    query = self._inexact_filter(query, tag_filter)
                 else:
                     query = self._exact_filter(query, tag_filter)
 
@@ -212,6 +212,33 @@ class Resource(base.ResourceDriverBase):
                 subq = subq.join(tag_alias,
                                  ProjectTag.project_id == tag_alias.project_id)
                 subq = subq.filter(tag_alias.name == tag)
+        if 'not' in filters['method']:
+            not_list = []
+            for pid in subq:
+                if pid['project_id'] not in not_list:
+                    not_list.append(pid['project_id'])
+            if not_list == []:
+                subq = query
+            else:
+                subq = query.filter(~ProjectTag.project_id.in_(not_list))
+
+        return subq
+
+    def _inexact_filter(self, query, filters):
+
+        if filters['comparator'] == 'contains':
+            term = ProjectTag.name.ilike('%%%s%%' % filters['value'])
+        elif filters['comparator'] == 'startswith':
+            term = ProjectTag.name.ilike('%s%%' % filters['value'])
+        elif filters['comparator'] == 'endswith':
+            term = ProjectTag.name.ilike('%%%s' % filters['value'])
+        else:
+            # It's a filter we don't understand, so let the caller
+            # work out if they need to do something with it.
+            return query
+
+        subq = query.filter(term)
+
         if 'not' in filters['method']:
             not_list = []
             for pid in subq:
