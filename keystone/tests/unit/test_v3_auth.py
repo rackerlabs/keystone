@@ -2626,6 +2626,11 @@ class TestFernetTokenAPIs(test_v3.RestfulTestCase, TokenAPITests,
 class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
     """Test token revoke using v3 Identity API by token owner and admin."""
 
+    def setUp(self, enable_sqlite_foreign_key=True):
+        """Setup for v3 Restful Test Cases."""
+        super(TestTokenRevokeSelfAndAdmin, self).setUp(
+            enable_sqlite_foreign_key=enable_sqlite_foreign_key)
+
     def load_sample_data(self, enable_sqlite_foreign_key=False):
         """Load Sample Data for Test Cases.
 
@@ -2634,7 +2639,8 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
         One user in domainB, userAdminB
 
         """
-        super(TestTokenRevokeSelfAndAdmin, self).load_sample_data()
+        super(TestTokenRevokeSelfAndAdmin, self).load_sample_data(
+            enable_sqlite_foreign_key=enable_sqlite_foreign_key)
         # DomainA setup
         self.domainA = unit.new_domain_ref()
         PROVIDERS.resource_api.create_domain(self.domainA['id'], self.domainA)
