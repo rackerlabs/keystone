@@ -227,6 +227,25 @@ class LDAPIdentity(LdapPoolCommonTestMixin,
         # as its not that obvious though its not needed here
         PROVIDERS.identity_api.get_user(self.user_foo['id'])
 
+    def load_fixtures(self, fixtures):
+        super(LDAPIdentity, self).load_fixtures(fixtures)
+        # create one test mapping, two idps and two protocols for federation
+        # test.
+        new_mapping = unit.new_mapping_ref()
+        PROVIDERS.federation_api.create_mapping(new_mapping['id'], new_mapping)
+        for idp_id, protocol_id in [('ORG_IDP', 'saml2'),
+                                    ('myidp', 'mapped')]:
+            new_idp = unit.new_identity_provider_ref(idp_id=idp_id,
+                                                     domain_id='default')
+            new_protocol = unit.new_protocol_ref(protocol_id=protocol_id,
+                                                 idp_id=idp_id,
+                                                 mapping_id=new_mapping['id'])
+
+            PROVIDERS.federation_api.create_idp(new_idp['id'], new_idp)
+            PROVIDERS.federation_api.create_protocol(new_idp['id'],
+                                                     new_protocol['id'],
+                                                     new_protocol)
+
     def config_files(self):
         config_files = super(LDAPIdentity, self).config_files()
         config_files.append(unit.dirs.tests_conf('backend_ldap_pool.conf'))
