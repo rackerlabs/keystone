@@ -370,8 +370,6 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         r = PROVIDERS.credential_api.get_credential(credential['id'])
         self.assertDictEqual(credential, r)
 
-    @test_utils.wip("The domain can not be deleted if there are idps in it",
-                    bug='1760809')
     def test_delete_domain_with_idp(self):
         # Create a new domain
         domain_ref = unit.new_domain_ref()
