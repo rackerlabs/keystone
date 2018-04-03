@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    [`bug 1760809 <https://bugs.launchpad.net/keystone/+bug/1760809>`_]
+    Fixed the bug a domain can't be deleted if there are any related identity
+    providers in it. Now the the identity providers will be deleted once the
+    domain is deleted.

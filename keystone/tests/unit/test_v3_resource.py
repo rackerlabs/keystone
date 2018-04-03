@@ -36,7 +36,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
     """Test domains and projects."""
 
     def setUp(self):
-        super(ResourceTestCase, self).setUp()
+        super(ResourceTestCase, self).setUp(enable_sqlite_foreign_key=True)
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
@@ -387,6 +387,26 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.assertDictEqual(self.user, r)
         r = PROVIDERS.credential_api.get_credential(credential['id'])
         self.assertDictEqual(credential, r)
+
+    def test_delete_domain_with_idp(self):
+        # Create a new domain
+        domain_ref = unit.new_domain_ref()
+        r = self.post('/domains', body={'domain': domain_ref})
+        self.assertValidDomainResponse(r, domain_ref)
+        domain_id = r.result['domain']['id']
+        # Create a Idp in the domain
+        self.put('/OS-FEDERATION/identity_providers/test_idp',
+                 body={"identity_provider": {
+                     "domain_id": domain_id}},
+                 expected_status=http_client.CREATED)
+        # Disable and delete the domain with no error.
+        self.patch('/domains/%(domain_id)s' % {
+            'domain_id': domain_id},
+            body={'domain': {'enabled': False}})
+        self.delete('/domains/%s' % domain_id)
+        # The Idp is deleted as well
+        self.get('/OS-FEDERATION/identity_providers/test_idp',
+                 expected_status=http_client.NOT_FOUND)
 
     def test_delete_domain_deletes_is_domain_project(self):
         """Check the project that acts as a domain is deleted.
