@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_0ceacbd6",
+        "filename": "requirements.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2018-04-03T14:01:01Z",
+      "side": 0,
+      "message": "This comment is missing in the new version of the line. I have proposed https://review.openstack.org/558517 to skip checking comments when considering matches.",
+      "range": {
+        "startLine": 37,
+        "startChar": 22,
+        "endLine": 37,
+        "endChar": 34
+      },
+      "revId": "a6adc72e3e7ff4ff0bff0702e69ebd8f697d6261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
