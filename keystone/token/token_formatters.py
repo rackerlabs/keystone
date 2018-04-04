@@ -56,9 +56,9 @@ class TokenFormatter(object):
 
         """
         token_utils = utils.TokenUtils(
-            CONF.fernet_tokens.key_repository,
-            CONF.fernet_tokens.max_active_keys,
-            'fernet_tokens'
+            CONF.token.key_repository,
+            CONF.token.max_active_keys,
+            'token'
         )
         keys = token_utils.load_keys()
 
