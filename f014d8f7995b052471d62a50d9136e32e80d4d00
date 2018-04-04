@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_b9e982e3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-04-04T12:22:09Z",
+      "side": 1,
+      "message": "We already merged https://review.openstack.org/553108 which also claims to close this bug, is this patch still needed? Or should this be changed to Related-Bug?",
+      "revId": "f014d8f7995b052471d62a50d9136e32e80d4d00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
