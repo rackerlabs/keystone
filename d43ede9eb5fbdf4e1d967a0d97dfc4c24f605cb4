@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_59df060c",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2634,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-04-04T12:29:27Z",
+      "side": 1,
+      "message": "Can this be set to true? If not, could you mention why not in the commit message? It seems inaccurate to say it\u0027s being enabled for test_v3_auth when this is still set to False.",
+      "range": {
+        "startLine": 2634,
+        "startChar": 57,
+        "endLine": 2634,
+        "endChar": 62
+      },
+      "revId": "d43ede9eb5fbdf4e1d967a0d97dfc4c24f605cb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
