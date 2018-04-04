@@ -34,6 +34,24 @@
       "revId": "9831730db96180644ef7cdc5643921818e610f95",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_e7f74c8c",
+        "filename": "playbooks/keystone-osh-functional/run.yaml",
+        "patchSetId": 59
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-04-04T18:52:45Z",
+      "side": 1,
+      "message": "Yeah, think it was the weird nested script acting up.",
+      "parentUuid": "bf659307_fd164a49",
+      "revId": "9831730db96180644ef7cdc5643921818e610f95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
