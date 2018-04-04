@@ -54,6 +54,10 @@ def _create_provider_api_instance():
             self.__registry.clear()
             self.__locked = False
 
+        @property
+        def _is_registry_locked(self):
+            return self.__locked
+
         def lock_provider_registry(self):
             self.__locked = True
 
