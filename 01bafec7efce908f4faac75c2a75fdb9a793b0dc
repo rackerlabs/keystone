@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_22f44fcf",
+        "filename": "keystone/common/provider_api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-04T21:50:11Z",
+      "side": 1,
+      "message": "bah - this isn\u0027t required anymore...",
+      "range": {
+        "startLine": 57,
+        "startChar": 8,
+        "endLine": 59,
+        "endChar": 32
+      },
+      "revId": "01bafec7efce908f4faac75c2a75fdb9a793b0dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
