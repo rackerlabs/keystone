@@ -16,11 +16,18 @@ import uuid
 from oslo_utils import timeutils
 from six.moves import range
 
+from keystone.common import provider_api
+import keystone.conf
 from keystone import exception
 from keystone.federation import constants as federation_constants
 from keystone.models import token_model
+from keystone.tests.unit import base_classes
 from keystone.tests.unit import core
 from keystone.tests.unit import test_token_provider
+from keystone.token.providers import common as provider_common
+
+CONF = keystone.conf.CONF
+PROVIDERS = provider_api.ProviderAPIs
 
 
 class TestKeystoneTokenModel(core.TestCase):
@@ -168,3 +175,126 @@ class TestKeystoneTokenModel(core.TestCase):
 
         token_data['is_admin_project'] = False
         self.assertFalse(token_data.is_admin_project)
+
+
+class TokenModelTests(base_classes.TestCaseWithBootstrap):
+
+    def setUp(self):
+        super(TokenModelTests, self).setUp()
+        self.admin_user_id = self.bootstrapper.admin_user_id
+        self.admin_username = self.bootstrapper.admin_username
+        self.admin_password = self.bootstrapper.admin_password
+        self.project_id = self.bootstrapper.project_id
+        self.project_name = self.bootstrapper.project_name
+        self.admin_role_id = self.bootstrapper.admin_role_id
+
+    def test_audit_id_attributes(self):
+        model = token_model.TokenModel()
+        audit_id = provider_common.random_urlsafe_str()
+        model.audit_id = audit_id
+
+        self.assertTrue(len(model.audit_ids) == 1)
+
+        parent_audit_id = provider_common.random_urlsafe_str()
+        model.parent_audit_id = parent_audit_id
+
+        self.assertTrue(len(model.audit_ids) == 2)
+
+        self.assertEqual(audit_id, model.audit_ids[0])
+        self.assertEqual(parent_audit_id, model.audit_ids[-1])
+
+    def test_token_model_user_attributes(self):
+        model = token_model.TokenModel()
+        model.user_id = self.admin_user_id
+        model.user_domain_id = CONF.identity.default_domain_id
+        self.assertEqual(self.admin_user_id, model.user_id)
+        self.assertIsNotNone(model.user)
+        self.assertIsNotNone(model.user_domain)
+        self.assertEqual(self.admin_username, model.user['name'])
+        self.assertEqual(
+            CONF.identity.default_domain_id, model.user_domain['id']
+        )
+
+    def test_system_scoped_token_model(self):
+        model = token_model.TokenModel()
+        model.user_id = self.admin_user_id
+        model.system = {'all': True}
+
+        self.assertTrue(model.system_scoped)
+        self.assertFalse(model.domain_scoped)
+        self.assertFalse(model.project_scoped)
+        self.assertFalse(model.trust_scoped)
+        self.assertFalse(model.unscoped)
+
+        self.assertIsNotNone(model.system)
+        self.assertTrue(len(model.roles) == 1)
+        self.assertEqual(self.admin_role_id, model.roles[0]['id'])
+        self.assertEqual('admin', model.roles[0]['name'])
+
+    def test_system_scoped_token_model_with_multiple_roles(self):
+        model = token_model.TokenModel()
+        model.user_id = self.admin_user_id
+        model.system = {'all': True}
+
+        self.assertTrue(model.system_scoped)
+        self.assertFalse(model.domain_scoped)
+        self.assertFalse(model.project_scoped)
+        self.assertFalse(model.trust_scoped)
+        self.assertFalse(model.unscoped)
+
+        member_role = core.new_role_ref()
+        PROVIDERS.role_api.create_role(member_role['id'], member_role)
+        member_role.pop('domain_id')
+        PROVIDERS.assignment_api.create_system_grant_for_user(
+            self.admin_user_id, member_role['id']
+        )
+
+        self.assertIsNotNone(model.system)
+        self.assertTrue(len(model.roles) == 2)
+        admin_role = {'id': self.admin_role_id, 'name': 'admin'}
+        self.assertIn(member_role, model.roles)
+        self.assertIn(admin_role, model.roles)
+
+    def test_domain_scoped_token_model(self):
+        PROVIDERS.assignment_api.create_grant(
+            self.admin_role_id, user_id=self.admin_user_id,
+            domain_id=CONF.identity.default_domain_id
+        )
+        model = token_model.TokenModel()
+        model.user_id = self.admin_user_id
+        model.domain_id = CONF.identity.default_domain_id
+
+        self.assertTrue(model.domain_scoped)
+        self.assertFalse(model.system_scoped)
+        self.assertFalse(model.project_scoped)
+        self.assertFalse(model.trust_scoped)
+        self.assertFalse(model.unscoped)
+
+        self.assertIsNotNone(model.domain)
+        domain = PROVIDERS.resource_api.get_domain(
+            CONF.identity.default_domain_id
+        )
+        self.assertEqual(domain['id'], model.domain_id)
+        self.assertEqual(domain['name'], model.domain['name'])
+
+        self.assertTrue(len(model.roles) == 1)
+        self.assertEqual(self.admin_role_id, model.roles[0]['id'])
+        self.assertEqual('admin', model.roles[0]['name'])
+
+    def test_project_scoped_token_model(self):
+        model = token_model.TokenModel()
+        model.user_id = self.admin_user_id
+        model.project_id = self.project_id
+
+        self.assertTrue(model.project_scoped)
+        self.assertFalse(model.system_scoped)
+        self.assertFalse(model.domain_scoped)
+        self.assertFalse(model.trust_scoped)
+        self.assertFalse(model.unscoped)
+
+        self.assertIsNotNone(model.project)
+        self.assertEqual(self.project_name, model.project['name'])
+
+        self.assertTrue(len(model.roles) == 1)
+        self.assertEqual(self.admin_role_id, model.roles[0]['id'])
+        self.assertEqual('admin', model.roles[0]['name'])
