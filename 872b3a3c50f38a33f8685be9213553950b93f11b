@@ -16,6 +16,23 @@
       "revId": "872b3a3c50f38a33f8685be9213553950b93f11b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_4c4cf175",
+        "filename": "lower-constraints.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 14288
+      },
+      "writtenOn": "2018-04-06T15:58:50Z",
+      "side": 1,
+      "message": "probably, I think doug\u0027s instructions didn\u0027t catch these optional deps, we\u0027ll see if the patch passes first though",
+      "revId": "872b3a3c50f38a33f8685be9213553950b93f11b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
