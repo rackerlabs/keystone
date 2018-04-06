@@ -215,7 +215,32 @@ the user can change it by setting the ``minimum_password_age``:
 In the above example, once a user changes their password, they would not be
 able to change it again for one day. This prevents users from changing their
 passwords immediately in order to wipe out their password history and reuse an
-old password.
+old password. If this value is ``-1``, users may not change passwords via the
+self-service password change API. The ``-1`` value indicates a password must
+be used "forever"; this is typically used where passwords are managed via an
+external system.
+
+If there exists a user whose min password age should be longer than the
+default, keystone supports setting that user's option ``min_password_age`` to
+and integer via user update API (``PATCH /v3/users/{user_id}``):
+
+.. code-block:: json
+
+   {
+       "user": {
+           "options": {
+               "min_password_age": 1
+           }
+       }
+   }
+
+The ``min_password_age`` user-option is only used if it is greater than the
+config-file configured ``minimum_password_age`` option. If the user option is
+set to ``-1``, the user is prevented from changing passwords via the
+self-service password change API. The ``-1`` case where the
+``min_password_age`` user-option will be honored if the value is "less" than
+the config-file value in ``minimum_password_age`` due to ``-1`` indicating
+passwords must be used "forever".
 
 .. note::
 
