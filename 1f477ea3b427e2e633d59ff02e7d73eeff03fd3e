@@ -16,6 +16,24 @@
       "revId": "1f477ea3b427e2e633d59ff02e7d73eeff03fd3e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_69d68752",
+        "filename": "doc/requirements.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 27153
+      },
+      "writtenOn": "2018-04-06T15:31:36Z",
+      "side": 0,
+      "message": "These packages didn\u0027t need for building docs. In fact, the person making this doesn\u0027t follow new PTI build.",
+      "parentUuid": "bf659307_29264fb9",
+      "revId": "1f477ea3b427e2e633d59ff02e7d73eeff03fd3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
