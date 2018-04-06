@@ -16,6 +16,10 @@ boolean = {
     'enum': [True, False]
 }
 
+integer = {
+    'type': 'integer'
+}
+
 # NOTE(lbragstad): Be mindful of this pattern as it might require changes
 # once this is used on user names, LDAP-based user names specifically since
 # commas aren't allowed in the following pattern. Here we are only going to
