@@ -1,0 +1,10 @@
+---
+fixes:
+  - |
+    [`bug 1755874 <https://bugs.launchpad.net/keystone/+bug/1755874>`_]
+    Users now can have the resource option ``min_password_age`` set which
+    overrides the global security compliance ``minimum_password_age`` setting
+    if the override is greater than the global option setting.
+
+    If the user-option ``min_password_age`` value is set to ``-1`` the user
+    may not change their password.

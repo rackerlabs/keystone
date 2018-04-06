@@ -255,7 +255,23 @@ class Identity(base.IdentityDriverBase):
             user_ref.password_ref.self_service = True
 
     def _validate_minimum_password_age(self, user_ref):
-        min_age_days = CONF.security_compliance.minimum_password_age
+        # Get the minimum password age override from the user options
+        min_password_age_override = 0
+        override_opt = user_ref.get_resource_option(
+            options.MIN_PASSWORD_AGE_OPT.option_id)
+        if override_opt is not None:
+            min_password_age_override = override_opt.option_value
+        # NOTE(notmorgan): If the override *or* the min password age is
+        # configured as -1, password changes are disallowed. This indicates
+        # the password must be used forever. This is intended to be used in
+        # cases where the user's password is managed via external systems or
+        # if the user is a short-lived user with no need for password changes.
+        if min_password_age_override == -1:
+            raise exception.PasswordAgeValidationErrorForever()
+
+        min_age_days = max(CONF.security_compliance.minimum_password_age,
+                           min_password_age_override)
+
         min_age = (user_ref.password_created_at +
                    datetime.timedelta(days=min_age_days))
         if datetime.datetime.utcnow() < min_age:
