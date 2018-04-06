@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_86aae816",
+        "filename": "lower-constraints.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-06T15:17:51Z",
+      "side": 1,
+      "message": "Do these changes need to be worked into the previous patch? Or do they somehow relate to pysaml2 (transitive dependencies)?",
+      "revId": "872b3a3c50f38a33f8685be9213553950b93f11b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
