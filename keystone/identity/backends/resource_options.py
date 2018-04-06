@@ -76,6 +76,12 @@ IGNORE_LOCKOUT_ATTEMPT_OPT = (
         option_name='ignore_lockout_failure_attempts',
         validator=resource_options.boolean_validator,
         json_schema_validation=parameter_types.boolean))
+MIN_PASSWORD_AGE_OPT = (
+    resource_options.ResourceOption(
+        option_id='1003',
+        option_name='min_password_age',
+        validator=resource_options.integer_validator,
+        json_schema_validation=parameter_types.integer))
 MFA_RULES_OPT = (
     resource_options.ResourceOption(
         option_id='MFAR',
@@ -112,6 +118,7 @@ def register_user_options():
         IGNORE_CHANGE_PASSWORD_OPT,
         IGNORE_PASSWORD_EXPIRY_OPT,
         IGNORE_LOCKOUT_ATTEMPT_OPT,
+        MIN_PASSWORD_AGE_OPT,
         MFA_RULES_OPT,
         MFA_ENABLED_OPT,
     ]:

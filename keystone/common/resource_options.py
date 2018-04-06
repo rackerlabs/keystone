@@ -27,6 +27,11 @@ def boolean_validator(value):
         raise TypeError(_('Expected boolean value, got %r') % type(value))
 
 
+def integer_validator(value):
+    if not isinstance(value, int):
+        raise TypeError(_('Expected integer value, got %r') % type(value))
+
+
 def ref_mapper_to_dict_options(ref):
     """Convert the values in _resource_option_mapper to options dict.
 
