@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_06133868",
+        "filename": "doc/requirements.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-06T15:24:42Z",
+      "side": 0,
+      "message": "I parsed the threads linked in the commit message (specifically [0]), but it\u0027s not clear to my why we\u0027re removing these. The impression from Stephen\u0027s note is that we move stuff *to* this file?\n\nIf that\u0027s not the case, then we should at least clarify why in the commit message.\n\n[0] http://lists.openstack.org/pipermail/openstack-dev/2018-March/128594.html",
+      "revId": "9a92147726f233ed153ba5b8aaed57849f27a79b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
