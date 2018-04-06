@@ -248,6 +248,10 @@ class Identity(base.IdentityDriverBase):
     def change_password(self, user_id, new_password):
         with sql.session_for_write() as session:
             user_ref = session.query(model.User).get(user_id)
+            lock_pw_opt = user_ref.get_resource_option(
+                options.LOCK_PASSWORD_OPT.option_id)
+            if lock_pw_opt is not None and lock_pw_opt.option_value is True:
+                raise exception.PasswordSelfServiceDisabled()
             if user_ref.password_ref and user_ref.password_ref.self_service:
                 self._validate_minimum_password_age(user_ref)
             self._validate_password_history(new_password, user_ref)
@@ -256,6 +260,7 @@ class Identity(base.IdentityDriverBase):
 
     def _validate_minimum_password_age(self, user_ref):
         min_age_days = CONF.security_compliance.minimum_password_age
+
         min_age = (user_ref.password_created_at +
                    datetime.timedelta(days=min_age_days))
         if datetime.datetime.utcnow() < min_age:
