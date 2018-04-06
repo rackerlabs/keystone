@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "bf659307_a05833fa",
+        "filename": "lower-constraints.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-06T14:02:09Z",
+      "side": 1,
+      "message": "This one doesn\u0027t show up for me when I run Doug\u0027s script locally.",
+      "revId": "26e22b3a6e5f0ba46c55329750ffcb80d4753102",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_0a88206f",
         "filename": "lower-constraints.txt",
         "patchSetId": 5
@@ -13,6 +30,24 @@
       "writtenOn": "2018-04-06T12:01:10Z",
       "side": 1,
       "message": "Are all of these related to pysaml2?",
+      "revId": "26e22b3a6e5f0ba46c55329750ffcb80d4753102",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_e0262bbb",
+        "filename": "lower-constraints.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-06T14:02:09Z",
+      "side": 1,
+      "message": "I think this is because the our lower constraints were out of sync. Someone else proposed a similar patch: \n\nhttps://review.openstack.org/#/c/559334/2\n\nDoug sent a note to the mailing list describing a fix: \n\nhttp://lists.openstack.org/pipermail/openstack-dev/2018-April/129056.html\n\nThis is what I generated locally following Doug\u0027s steps: \n\nhttp://paste.openstack.org/show/718601/",
+      "parentUuid": "bf659307_0a88206f",
       "revId": "26e22b3a6e5f0ba46c55329750ffcb80d4753102",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
