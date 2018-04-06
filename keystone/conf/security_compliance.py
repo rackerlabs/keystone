@@ -87,9 +87,12 @@ This prevents users from changing their passwords immediately in order to wipe
 out their password history and reuse an old password. This feature does not
 prevent administrators from manually resetting passwords. It is disabled by
 default and allows for immediate password changes. This feature depends on the
-`sql` backend for the `[identity] driver`. Note: If `[security_compliance]
-password_expires_days` is set, then the value for this option should be less
-than the `password_expires_days`.
+`sql` backend for the `[identity] driver`. The user option `min_password_age`
+will override this value for that individual user if the override is greater
+than the configured value. A `-1` value for the user option `min_password_age`
+will prevent the specific user from using the self-service password change
+API. Note: If `[security_compliance] password_expires_days` is set, then the
+value for this option should be less than the `password_expires_days`.
 """))
 
 password_regex = cfg.StrOpt(
