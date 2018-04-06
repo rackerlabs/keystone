@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bf659307_294acf7f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-06T15:53:15Z",
+      "side": 1,
+      "message": "We have a write up that describes our approach to commit messages [0].\n\n[0] https://wiki.openstack.org/wiki/GitCommitMessages",
+      "parentUuid": "1f485f77_5f99fc6b",
+      "revId": "ecac623bd0422114ff4bc62d3b0fedb20f9d2f85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f4b6375_6605ce45",
         "filename": "doc/source/install/keystone-install-rdo.rst",
         "patchSetId": 1
