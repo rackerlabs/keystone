@@ -22,6 +22,30 @@
       "revId": "d43ede9eb5fbdf4e1d967a0d97dfc4c24f605cb4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_467a8588",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2634,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-07T02:48:31Z",
+      "side": 1,
+      "message": "\"enable_sqlite_foreign_key\" here will be true when \"load_sample_data\" is called.\nit\u0027s here:  https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_v3.py#L218-L220\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/unit/rest.py#L63-L64",
+      "parentUuid": "bf659307_59df060c",
+      "range": {
+        "startLine": 2634,
+        "startChar": 57,
+        "endLine": 2634,
+        "endChar": 62
+      },
+      "revId": "d43ede9eb5fbdf4e1d967a0d97dfc4c24f605cb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
