@@ -19,6 +19,47 @@
     },
     {
       "key": {
+        "uuid": "bf659307_a1b02b8d",
+        "filename": "keystone/common/token_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2018-04-07T11:05:25Z",
+      "side": 1,
+      "message": "+1 same logic different methods.",
+      "parentUuid": "bf659307_cf3a33cc",
+      "revId": "90c04f39a051255815cc0c021626d6350abc4d2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_e1b6238b",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 650,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2018-04-07T11:05:25Z",
+      "side": 1,
+      "message": "The assert here looks like being covered in another testcase added. Good as it is.",
+      "range": {
+        "startLine": 649,
+        "startChar": 0,
+        "endLine": 650,
+        "endChar": 38
+      },
+      "revId": "90c04f39a051255815cc0c021626d6350abc4d2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_cfad53eb",
         "filename": "releasenotes/notes/bug-1728907-bab6769ab46bd8aa.yaml",
         "patchSetId": 7
