@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_c172ffe3",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2018-04-07T11:16:24Z",
+      "side": 1,
+      "message": "group of user?",
+      "range": {
+        "startLine": 374,
+        "startChar": 21,
+        "endLine": 374,
+        "endChar": 25
+      },
+      "revId": "ea1e9ab195c6813b9e108c2a3dc9b941f4b17fc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_214bbb87",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2018-04-07T11:16:24Z",
+      "side": 1,
+      "message": "group?",
+      "range": {
+        "startLine": 384,
+        "startChar": 20,
+        "endLine": 384,
+        "endChar": 24
+      },
+      "revId": "ea1e9ab195c6813b9e108c2a3dc9b941f4b17fc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_014a377f",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2018-04-07T11:16:24Z",
+      "side": 1,
+      "message": "role assignment should be deleted automatically when the group is deleted even it is deleted manually from the backend. But the testcase added here do have its value.",
+      "range": {
+        "startLine": 391,
+        "startChar": 0,
+        "endLine": 393,
+        "endChar": 31
+      },
+      "revId": "ea1e9ab195c6813b9e108c2a3dc9b941f4b17fc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
