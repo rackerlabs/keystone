@@ -41,15 +41,14 @@ class RegisteredLimitV3(controller.V3Controller):
         return refs
 
     @controller.protected()
-    def update_registered_limits(self, request, registered_limits):
+    def update_registered_limit(self, request, registered_limit_id,
+                                registered_limit):
         validation.lazy_validate(schema.registered_limit_update,
-                                 registered_limits)
-        refs = self.unified_limit_api.update_registered_limits(
-            [self._normalize_dict(registered_limit) for registered_limit in
-             registered_limits])
-        refs = RegisteredLimitV3.wrap_collection(request.context_dict, refs)
-        refs.pop("links")
-        return refs
+                                 registered_limit)
+        self._require_matching_id(registered_limit_id, registered_limit)
+        refs = self.unified_limit_api.update_registered_limit(
+            registered_limit_id, registered_limit)
+        return RegisteredLimitV3.wrap_member(request.context_dict, refs)
 
     @controller.filterprotected('service_id', 'region_id', 'resource_name')
     def list_registered_limits(self, request, filters):
@@ -89,13 +88,12 @@ class LimitV3(controller.V3Controller):
         return refs
 
     @controller.protected()
-    def update_limits(self, request, limits):
-        validation.lazy_validate(schema.limit_update, limits)
-        refs = self.unified_limit_api.update_limits(
-            [self._normalize_dict(limit) for limit in limits])
-        refs = LimitV3.wrap_collection(request.context_dict, refs)
-        refs.pop("links")
-        return refs
+    def update_limit(self, request, limit_id, limit):
+        validation.lazy_validate(schema.limit_update, limit_id)
+        self._require_matching_id(limit_id, limit)
+        refs = self.unified_limit_api.update_limit(
+            limit_id, limit)
+        return RegisteredLimitV3.wrap_member(request.context_dict, refs)
 
     @controller.filterprotected('service_id', 'region_id', 'resource_name')
     def list_limits(self, request, filters):
