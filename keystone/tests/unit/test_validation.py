@@ -2529,10 +2529,10 @@ class LimitValidationTestCase(unit.BaseTestCase):
         self.create_registered_limits_validator.validate(request_to_validate)
 
     def test_validate_registered_limit_update_request_without_region(self):
-        request_to_validate = [{'id': uuid.uuid4().hex,
-                                'service_id': uuid.uuid4().hex,
-                                'resource_name': 'volume',
-                                'default_limit': 10}]
+        request_to_validate = {'id': uuid.uuid4().hex,
+                               'service_id': uuid.uuid4().hex,
+                               'resource_name': 'volume',
+                               'default_limit': 10}
         self.update_registered_limits_validator.validate(request_to_validate)
 
     def test_validate_registered_limit_request_with_no_parameters(self):
@@ -2540,9 +2540,6 @@ class LimitValidationTestCase(unit.BaseTestCase):
         # At least one property should be given.
         self.assertRaises(exception.SchemaValidationError,
                           self.create_registered_limits_validator.validate,
-                          request_to_validate)
-        self.assertRaises(exception.SchemaValidationError,
-                          self.update_registered_limits_validator.validate,
                           request_to_validate)
 
     def test_validate_registered_limit_create_request_with_invalid_input(self):
@@ -2567,12 +2564,12 @@ class LimitValidationTestCase(unit.BaseTestCase):
                             {'resource_name': 123},
                             {'default_limit': 'not_int'}]
         for invalid_desc in _INVALID_FORMATS:
-            request_to_validate = [{'id': uuid.uuid4().hex,
-                                    'service_id': uuid.uuid4().hex,
-                                    'region_id': 'RegionOne',
-                                    'resource_name': 'volume',
-                                    'default_limit': 10}]
-            request_to_validate[0].update(invalid_desc)
+            request_to_validate = {'id': uuid.uuid4().hex,
+                                   'service_id': uuid.uuid4().hex,
+                                   'region_id': 'RegionOne',
+                                   'resource_name': 'volume',
+                                   'default_limit': 10}
+            request_to_validate.update(invalid_desc)
 
             self.assertRaises(exception.SchemaValidationError,
                               self.update_registered_limits_validator.validate,
@@ -2589,12 +2586,12 @@ class LimitValidationTestCase(unit.BaseTestCase):
                           request_to_validate)
 
     def test_validate_registered_limit_update_request_with_addition(self):
-        request_to_validate = [{'id': uuid.uuid4().hex,
-                                'service_id': uuid.uuid4().hex,
-                                'region_id': 'RegionOne',
-                                'resource_name': 'volume',
-                                'default_limit': 10,
-                                'more_key': 'more_value'}]
+        request_to_validate = {'id': uuid.uuid4().hex,
+                               'service_id': uuid.uuid4().hex,
+                               'region_id': 'RegionOne',
+                               'resource_name': 'volume',
+                               'default_limit': 10,
+                               'more_key': 'more_value'}
         self.assertRaises(exception.SchemaValidationError,
                           self.update_registered_limits_validator.validate,
                           request_to_validate)
@@ -2609,15 +2606,6 @@ class LimitValidationTestCase(unit.BaseTestCase):
             self.assertRaises(exception.SchemaValidationError,
                               self.create_registered_limits_validator.validate,
                               request_to_validate)
-
-    def test_validate_registered_limit_update_request_without_id(self):
-        request_to_validate = [{'service_id': uuid.uuid4().hex,
-                                'region_id': 'RegionOne',
-                                'resource_name': 'volume',
-                                'default_limit': 10}]
-        self.assertRaises(exception.SchemaValidationError,
-                          self.update_registered_limits_validator.validate,
-                          request_to_validate)
 
     def test_validate_limit_create_request_succeeds(self):
         request_to_validate = [{'project_id': uuid.uuid4().hex,
@@ -2635,8 +2623,8 @@ class LimitValidationTestCase(unit.BaseTestCase):
         self.create_limits_validator.validate(request_to_validate)
 
     def test_validate_limit_update_request_succeeds(self):
-        request_to_validate = [{'id': uuid.uuid4().hex,
-                                'resource_limit': 10}]
+        request_to_validate = {'id': uuid.uuid4().hex,
+                               'resource_limit': 10}
         self.update_limits_validator.validate(request_to_validate)
 
     def test_validate_limit_request_with_no_parameters(self):
@@ -2644,9 +2632,6 @@ class LimitValidationTestCase(unit.BaseTestCase):
         # At least one property should be given.
         self.assertRaises(exception.SchemaValidationError,
                           self.create_limits_validator.validate,
-                          request_to_validate)
-        self.assertRaises(exception.SchemaValidationError,
-                          self.update_limits_validator.validate,
                           request_to_validate)
 
     def test_validate_limit_create_request_with_invalid_input(self):
@@ -2668,8 +2653,8 @@ class LimitValidationTestCase(unit.BaseTestCase):
                               request_to_validate)
 
     def test_validate_limit_update_request_with_invalid_input(self):
-        request_to_validate = [{'id': uuid.uuid4().hex,
-                                'resource_limit': 'not_int'}]
+        request_to_validate = {'id': uuid.uuid4().hex,
+                               'resource_limit': 'not_int'}
 
         self.assertRaises(exception.SchemaValidationError,
                           self.update_limits_validator.validate,
@@ -2686,9 +2671,9 @@ class LimitValidationTestCase(unit.BaseTestCase):
                           request_to_validate)
 
     def test_validate_limit_update_request_with_addition_input_fails(self):
-        request_to_validate = [{'id': uuid.uuid4().hex,
-                                'resource_limit': 10,
-                                'more_key': 'more_value'}]
+        request_to_validate = {'id': uuid.uuid4().hex,
+                               'resource_limit': 10,
+                               'more_key': 'more_value'}
         self.assertRaises(exception.SchemaValidationError,
                           self.update_limits_validator.validate,
                           request_to_validate)
@@ -2703,12 +2688,6 @@ class LimitValidationTestCase(unit.BaseTestCase):
             self.assertRaises(exception.SchemaValidationError,
                               self.create_limits_validator.validate,
                               request_to_validate)
-
-    def test_validate_limit_update_request_without_id_fails(self):
-        request_to_validate = [{'resource_limit': 10}]
-        self.assertRaises(exception.SchemaValidationError,
-                          self.update_limits_validator.validate,
-                          request_to_validate)
 
 
 class ApplicationCredentialValidatorTestCase(unit.TestCase):
