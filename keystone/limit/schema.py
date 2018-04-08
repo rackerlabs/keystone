@@ -57,17 +57,10 @@ _registered_limit_update_properties = {
     'description': validation.nullable(parameter_types.description)
 }
 
-_registered_limit_update = {
+registered_limit_update = {
     'type': 'object',
     'properties': _registered_limit_update_properties,
     'additionalProperties': False,
-    'required': ['id', ]
-}
-
-registered_limit_update = {
-    'type': 'array',
-    'items': _registered_limit_update,
-    'minItems': 1
 }
 
 _limit_create_properties = {
@@ -84,7 +77,6 @@ _limit_create_properties = {
     },
     'description': validation.nullable(parameter_types.description)
 }
-
 
 _limit_create = {
     'type': 'object',
@@ -107,15 +99,8 @@ _limit_update_properties = {
     'description': validation.nullable(parameter_types.description)
 }
 
-_limit_update = {
+limit_update = {
     'type': 'object',
     'properties': _limit_update_properties,
-    'additionalProperties': False,
-    'required': ['id', ]
-}
-
-limit_update = {
-    'type': 'array',
-    'items': _limit_update,
-    'minItems': 1
+    'additionalProperties': False
 }
