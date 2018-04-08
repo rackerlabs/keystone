@@ -22,6 +22,30 @@
       "revId": "0c5242b6184aa37968266a2fbb1d490208d6a580",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_b461403c",
+        "filename": "tox.ini",
+        "patchSetId": 6
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 27153
+      },
+      "writtenOn": "2018-04-08T16:12:34Z",
+      "side": 0,
+      "message": "Actually, this doesn\u0027t matter for Zull gate. It is useful for the local build. Anyway, I will add it.",
+      "parentUuid": "bf659307_a3758c9a",
+      "range": {
+        "startLine": 126,
+        "startChar": 0,
+        "endLine": 126,
+        "endChar": 35
+      },
+      "revId": "0c5242b6184aa37968266a2fbb1d490208d6a580",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
