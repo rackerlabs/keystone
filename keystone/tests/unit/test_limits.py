@@ -158,11 +158,11 @@ class RegisteredLimitsTestCase(test_v3.RestfulTestCase):
             'default_limit': 5,
             'description': 'test description'
         }
-        r = self.put(
-            '/registered_limits',
-            body={'registered_limits': [update_ref]},
+        r = self.patch(
+            '/registered_limits/%s' % update_ref['id'],
+            body={'registered_limit': update_ref},
             expected_status=http_client.OK)
-        new_registered_limits = r.result['registered_limits'][0]
+        new_registered_limits = r.result['registered_limit']
 
         self.assertEqual(new_registered_limits['service_id'], self.service_id2)
         self.assertEqual(new_registered_limits['region_id'], self.region_id2)
@@ -185,8 +185,8 @@ class RegisteredLimitsTestCase(test_v3.RestfulTestCase):
             'description': 'test description'
         }
         r = self.put(
-            '/registered_limits',
-            body={'registered_limits': [update_ref]},
+            '/registered_limits/%s' % update_ref['id'],
+            body={'registered_limits': update_ref},
             expected_status=http_client.OK)
         new_registered_limits = r.result['registered_limits'][0]
         self.assertEqual(new_registered_limits['description'],
@@ -194,48 +194,11 @@ class RegisteredLimitsTestCase(test_v3.RestfulTestCase):
 
         update_ref['description'] = ''
         r = self.put(
-            '/registered_limits',
-            body={'registered_limits': [update_ref]},
+            '/registered_limits/%s' % update_ref['id'],
+            body={'registered_limits': update_ref},
             expected_status=http_client.OK)
         new_registered_limits = r.result['registered_limits'][0]
         self.assertEqual(new_registered_limits['description'], '')
-
-    def test_update_multi_registered_limit(self):
-        ref = unit.new_registered_limit_ref(service_id=self.service_id,
-                                            region_id=self.region_id,
-                                            resource_name='volume',
-                                            default_limit=10)
-        ref2 = unit.new_registered_limit_ref(service_id=self.service_id,
-                                             region_id=self.region_id,
-                                             resource_name='snapshot',
-                                             default_limit=10)
-        r = self.post(
-            '/registered_limits',
-            body={'registered_limits': [ref, ref2]},
-            expected_status=http_client.CREATED)
-        update_ref = {
-            'id': r.result['registered_limits'][0]['id'],
-            'service_id': self.service_id2,
-            'region_id': self.region_id2,
-            'resource_name': 'snapshot',
-            'default_limit': 5
-        }
-        update_ref2 = {
-            'id': r.result['registered_limits'][1]['id'],
-            'service_id': self.service_id2,
-            'region_id': self.region_id2,
-            'resource_name': 'volume',
-            'default_limit': 5
-        }
-        r = self.put(
-            '/registered_limits',
-            body={'registered_limits': [update_ref, update_ref2]},
-            expected_status=http_client.OK)
-        new_registered_limits = r.result['registered_limits']
-        for key in ['id', 'service_id', 'region_id', 'resource_name',
-                    'default_limit']:
-            self.assertEqual(new_registered_limits[0][key], update_ref[key])
-            self.assertEqual(new_registered_limits[1][key], update_ref2[key])
 
     def test_update_registered_limit_not_found(self):
         update_ref = {
@@ -245,9 +208,9 @@ class RegisteredLimitsTestCase(test_v3.RestfulTestCase):
             'resource_name': 'snapshot',
             'default_limit': 5
         }
-        self.put(
-            '/registered_limits',
-            body={'registered_limits': [update_ref]},
+        self.patch(
+            '/registered_limits/%s' % update_ref['id'],
+            body={'registered_limit': update_ref},
             expected_status=http_client.NOT_FOUND)
 
     def test_update_registered_limit_with_invalid_input(self):
@@ -264,8 +227,8 @@ class RegisteredLimitsTestCase(test_v3.RestfulTestCase):
         for input_limit in [update_ref1, update_ref2, update_ref3,
                             update_ref4, update_ref5]:
             self.put(
-                '/registered_limits',
-                body={'registered_limits': [input_limit]},
+                '/registered_limits/%s' % input_limit['id'],
+                body={'registered_limits': input_limit},
                 expected_status=http_client.BAD_REQUEST)
 
     @test_utils.wip("Skipped until Bug 1744195 is resolved")
@@ -295,9 +258,9 @@ class RegisteredLimitsTestCase(test_v3.RestfulTestCase):
             'resource_name': 'snapshot',
             'default_limit': 5
         }
-        self.put(
-            '/registered_limits',
-            body={'registered_limits': [update_ref]},
+        self.patch(
+            '/registered_limits/%s' % update_ref['id'],
+            body={'registered_limit': update_ref},
             expected_status=http_client.FORBIDDEN)
 
     def test_list_registered_limit(self):
@@ -605,74 +568,55 @@ class LimitsTestCase(test_v3.RestfulTestCase):
             'resource_limit': 5,
             'description': 'test description'
         }
-        r = self.put(
-            '/limits',
-            body={'limits': [update_ref]},
+        r = self.patch(
+            '/limits/%s' % update_ref['id'],
+            body={'limit': update_ref},
             expected_status=http_client.OK)
-        new_limits = r.result['limits'][0]
+        new_limits = r.result['limit']
 
         self.assertEqual(new_limits['resource_limit'], 5)
         self.assertEqual(new_limits['description'], 'test description')
-
-    def test_update_multi_limit(self):
-        ref = unit.new_limit_ref(project_id=self.project_id,
-                                 service_id=self.service_id,
-                                 region_id=self.region_id,
-                                 resource_name='volume',
-                                 resource_limit=10)
-        ref2 = unit.new_limit_ref(project_id=self.project_id,
-                                  service_id=self.service_id2,
-                                  resource_name='snapshot',
-                                  resource_limit=10)
-        r = self.post(
-            '/limits',
-            body={'limits': [ref, ref2]},
-            expected_status=http_client.CREATED)
-        id1 = r.result['limits'][0]['id']
-        update_ref = {
-            'id': id1,
-            'resource_limit': 5
-        }
-        update_ref2 = {
-            'id': r.result['limits'][1]['id'],
-            'resource_limit': 6
-        }
-        r = self.put(
-            '/limits',
-            body={'limits': [update_ref, update_ref2]},
-            expected_status=http_client.OK)
-        new_limits = r.result['limits']
-        for limit in new_limits:
-            if limit['id'] == id1:
-                self.assertEqual(limit['resource_limit'],
-                                 update_ref['resource_limit'])
-            else:
-                self.assertEqual(limit['resource_limit'],
-                                 update_ref2['resource_limit'])
 
     def test_update_limit_not_found(self):
         update_ref = {
             'id': uuid.uuid4().hex,
             'resource_limit': 5
         }
-        self.put(
-            '/limits',
-            body={'limits': [update_ref]},
+        self.patch(
+            '/limits/%s' % update_ref['id'],
+            body={'limit': update_ref},
             expected_status=http_client.NOT_FOUND)
 
     def test_update_limit_with_invalid_input(self):
-        update_ref1 = {
+        ref = unit.new_limit_ref(project_id=self.project_id,
+                                 service_id=self.service_id,
+                                 region_id=self.region_id,
+                                 resource_name='volume',
+                                 resource_limit=10)
+        r = self.post(
+            '/limits',
+            body={'limits': [ref]},
+            expected_status=http_client.CREATED)
+        limit_id = r.result['limits'][0]['id']
+
+        invalid_id_format_update = {
             'id': 'fake_id',
             'resource_limit': 5
         }
-        update_ref2 = {
+        invalid_id_update = {
             'id': uuid.uuid4().hex,
+            'resource_limit': 5
+        }
+        invalid_resource_limit_update = {
+            'id': limit_id,
             'resource_limit': 'not_int'
         }
-        for input_limit in [update_ref1, update_ref2]:
-            self.put(
-                '/limits',
-                body={'limits': [input_limit]},
+
+        for input_limit in [invalid_id_format_update, invalid_id_update,
+                            invalid_resource_limit_update]:
+            self.patch(
+                '/limits/%s' % limit_id,
+                body={'limit': input_limit},
                 expected_status=http_client.BAD_REQUEST)
 
     def test_list_limit(self):
