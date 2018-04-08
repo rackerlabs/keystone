@@ -1,0 +1,11 @@
+---
+fixes:
+  - |
+    [`bug 1754184 <https://bugs.launchpad.net/keystone/+bug/1754184>`_]
+    The unified limit APIs are refactor as below to align with API-WG guide:
+    * GET unified limits now doesn't return all the existent limits. It now
+      only the newly created ones.
+    * The update unified limits action is changed from PUT to PATCH. The multi
+      updating support is removed as well.
+    Please note that the unified limits APIs is still experimental, so that
+    they may be changed beofre it's marked as stable.
