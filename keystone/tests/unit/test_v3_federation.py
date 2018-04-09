@@ -993,7 +993,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         # since it wasn't auto-generated
         self.assertIsNotNone(PROVIDERS.resource_api.get_domain(domain['id']))
 
-    def test_create_idp_domain_id_unique_constraint(self):
+    def test_create_multi_idp_in_one_domain(self):
         # create domain and add domain_id to keys to check
         domain = unit.new_domain_ref()
         PROVIDERS.resource_api.create_domain(domain['id'], domain)
@@ -1013,10 +1013,10 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         body['description'] = uuid.uuid4().hex
         body['domain_id'] = domain['id']
         resp = self.put(url, body={'identity_provider': body},
-                        expected_status=http_client.CONFLICT)
-        resp_data = jsonutils.loads(resp.body)
-        self.assertIn('Duplicate entry',
-                      resp_data.get('error', {}).get('message'))
+                        expected_status=http_client.CREATED)
+        self.assertValidResponse(resp, 'identity_provider', dummy_validator,
+                                 keys_to_check=keys_to_check,
+                                 ref=body)
 
     def test_cannot_update_idp_domain(self):
         # create new idp
