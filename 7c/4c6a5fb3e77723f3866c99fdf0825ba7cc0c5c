@@ -1,0 +1,11 @@
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+1: Nguyen Hai <nguyentrihai93@gmail.com>
+Code-Review+1: sonu <sonu.kumar@nectechnologies.in>
+Code-Review+2: Kristi Nikolla <knikolla@bu.edu>
+Workflow+1: Kristi Nikolla <knikolla@bu.edu>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 09 Apr 2018 18:24:01 +0000
+Reviewed-on: https://review.openstack.org/558217
+Project: openstack/keystone
+Branch: refs/heads/master
