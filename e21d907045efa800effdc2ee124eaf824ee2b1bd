@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_9c8c4980",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-09T20:58:00Z",
+      "side": 1,
+      "message": "That\u0027s fair.",
+      "parentUuid": "bf659307_7eb7ecd9",
+      "range": {
+        "startLine": 125,
+        "startChar": 57,
+        "endLine": 126,
+        "endChar": 32
+      },
+      "revId": "e21d907045efa800effdc2ee124eaf824ee2b1bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_52f21f08",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 4
@@ -107,6 +131,30 @@
       "side": 1,
       "message": "I strongly believe we should support overrides for individual users, however, as the global config is set by the operator of the cloud [users may be adjusted by a domain admin], the operator should set global policy and we should not allow overrides that are less strict than the global.\n\nThe workflow is mostly #2, however, I was aiming to allow for individual users to also have a longer min-password requirement. Long term, we should also allow User-ROs to be defaulted at the domain level (all users in domain X have options set [e.g. MFA, etc]).\n\nI could drop the global -1 effect, but it felt like the best way to allow an entire installation to lean on external password management.\n\nThe design was a mix of concerns I was trying to address and avoid a ton of extra options [config/user]. I\u0027m happy to split to an explicit user option fi that is the direction you\u0027d rather go.",
       "parentUuid": "bf659307_52f21f08",
+      "range": {
+        "startLine": 264,
+        "startChar": 27,
+        "endLine": 265,
+        "endChar": 60
+      },
+      "revId": "e21d907045efa800effdc2ee124eaf824ee2b1bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_dce161fe",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-09T20:58:00Z",
+      "side": 1,
+      "message": "What do you think about splitting the global toggle from the user options toggle? It might make the change simpler and still fill the requirement that users have for external systems. If the request comes back in the future, we can evaluate extending the logic to support more complicated override cases\n\n\u003cshrug/\u003e",
+      "parentUuid": "bf659307_3ed094c9",
       "range": {
         "startLine": 264,
         "startChar": 27,
