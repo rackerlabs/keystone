@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_c3f2e39a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-09T19:53:16Z",
+      "side": 1,
+      "message": "One option would be to create a FK relationship between the limit and the project, but that\u0027s always been problematic with pluggable backends. Is there any reason why this can\u0027t be done after the project is successfully deleted on line 506?",
+      "revId": "326acda8782594bddc59e031a7fd5da0790dc83d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
