@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_0f2484c5",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-09T17:56:59Z",
+      "side": 1,
+      "message": "nit: minimum",
+      "range": {
+        "startLine": 223,
+        "startChar": 29,
+        "endLine": 223,
+        "endChar": 32
+      },
+      "revId": "e21d907045efa800effdc2ee124eaf824ee2b1bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_924c3777",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-09T17:56:59Z",
+      "side": 1,
+      "message": "nit: I wonder if we should leave this bit off. Only because it\u0027ll be hard for us to assume that even an administrator will change a password. If an external system is managing this stuff, then they can enforce whatever policy they want.",
+      "range": {
+        "startLine": 125,
+        "startChar": 57,
+        "endLine": 126,
+        "endChar": 32
+      },
+      "revId": "e21d907045efa800effdc2ee124eaf824ee2b1bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_52f21f08",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-09T17:56:59Z",
+      "side": 1,
+      "message": "Doesn\u0027t this kind of defeat the purpose of an override? I wonder if we should be more prescriptive of how this should be used. Without diving in to the implementation details, I could see this playing out a few different ways;\n\n1.) An operator sets CONF.security_compliance.minimum_password_age \u003d -1, meaning no one can change their password. Should they be able to override the global configuration option for specific users (e.g. service users?). I don\u0027t think this would allow that.\n\n2.) An operator sets CONF.security_compliance.minimum_password_age to some value, and then going through and updates each applicable user to have a value of -1 is they shouldn\u0027t be able to update their password. This would work with the above logic.\n\nIs #2 what we\u0027re shooting for and I just misinterpreted it? If #2 is the design or flow we want, we could implement this without overloading the minimum_password_age option and just have a user specific option for ``allow_password_update`` and make it a boolean.\n\nJust thinking about the usability of this and wondering if we actually need to supply multiple ways to do this, or if we can be more prescriptive.",
+      "range": {
+        "startLine": 264,
+        "startChar": 27,
+        "endLine": 265,
+        "endChar": 60
+      },
+      "revId": "e21d907045efa800effdc2ee124eaf824ee2b1bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_920437c8",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-09T17:56:59Z",
+      "side": 1,
+      "message": "super-nit: this could be done through the API to be consistent with the rest of the calls in the test.",
+      "range": {
+        "startLine": 472,
+        "startChar": 8,
+        "endLine": 472,
+        "endChar": 68
+      },
+      "revId": "e21d907045efa800effdc2ee124eaf824ee2b1bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_92d2f733",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 848,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-09T17:56:59Z",
+      "side": 1,
+      "message": "So users are allowed to reset their password at least once? Is this because changing a password after first use is allowed [0]?\n\nhttps://github.com/openstack/keystone/blob/0c5242b6184aa37968266a2fbb1d490208d6a580/keystone/conf/security_compliance.py#L114-L125",
+      "revId": "e21d907045efa800effdc2ee124eaf824ee2b1bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_52aa1f85",
+        "filename": "releasenotes/notes/bug-1755874-9951f77c6d18431c.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-09T17:56:59Z",
+      "side": 1,
+      "message": "setting*",
+      "range": {
+        "startLine": 10,
+        "startChar": 28,
+        "endLine": 10,
+        "endChar": 34
+      },
+      "revId": "e21d907045efa800effdc2ee124eaf824ee2b1bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
