@@ -1,0 +1,12 @@
+---
+fixes:
+  - |
+    [`bug 1760843 <https://bugs.launchpad.net/keystone/+bug/1760843>`_]
+    An Identity Provider (IdP) should be related (1:1) to a domain so that
+    federated users properly belong to a domain and can be uniquely
+    identified by their domain + unique_id. Now a domain can only contain one
+    IdP.
+upgrade:
+  - |
+    Now the Identity Provider's (IdP) domain id is unique. Please ensure the
+    IdP and the related domain is 1:1 before upgrade the database.

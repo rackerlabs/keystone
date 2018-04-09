@@ -2930,6 +2930,53 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
                                                   self.metadata, autoload=True)
         self.assertEqual(set([]), registered_limit_table.foreign_keys)
 
+    def test_migration_045_mark_idp_domain_id_unique(self):
+        def _create_domain():
+            domain_id = uuid.uuid4().hex
+            domain = {
+                'id': domain_id,
+                'name': domain_id,
+                'enabled': True,
+                'description': uuid.uuid4().hex,
+                'domain_id': resource_base.NULL_DOMAIN_ID,
+                'is_domain': True,
+                'parent_id': None,
+                'extra': '{}'
+            }
+            self.insert_dict(session, 'project', domain)
+            return domain_id
+
+        def _get_new_idp(domain_id):
+            new_idp = {'id': uuid.uuid4().hex,
+                       'domain_id': domain_id,
+                       'enabled': True,
+                       'description': uuid.uuid4().hex}
+            return new_idp
+
+        session = self.sessionmaker()
+        idp_table_name = 'identity_provider'
+
+        self.expand(44)
+        self.migrate(44)
+        self.contract(44)
+        self.assertFalse(self.does_unique_constraint_exist(idp_table_name,
+                                                           'domain_id'))
+        self.expand(45)
+        self.migrate(45)
+        self.contract(45)
+        self.assertTrue(self.does_unique_constraint_exist(idp_table_name,
+                                                          'domain_id'))
+
+        domain_id = _create_domain()
+        new_idp = _get_new_idp(domain_id)
+        # insert a idp record
+        self.insert_dict(session, idp_table_name, new_idp)
+        # insert another idp record with the same domain_id, raise error.
+        new_idp = _get_new_idp(domain_id)
+        self.assertRaises(db_exception.DBDuplicateEntry,
+                          self.insert_dict,
+                          session, idp_table_name, new_idp)
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = db_fixtures.MySQLOpportunisticFixture
