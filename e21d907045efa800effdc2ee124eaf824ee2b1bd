@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_7eb7ecd9",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-04-09T20:35:18Z",
+      "side": 1,
+      "message": "Nah, I think this is valid. If someone wants a password changed, ask the admin. They can say \"use system X\" or otherwise.",
+      "parentUuid": "bf659307_924c3777",
+      "range": {
+        "startLine": 125,
+        "startChar": 57,
+        "endLine": 126,
+        "endChar": 32
+      },
+      "revId": "e21d907045efa800effdc2ee124eaf824ee2b1bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_52f21f08",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 4
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_3ed094c9",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-04-09T20:35:18Z",
+      "side": 1,
+      "message": "I strongly believe we should support overrides for individual users, however, as the global config is set by the operator of the cloud [users may be adjusted by a domain admin], the operator should set global policy and we should not allow overrides that are less strict than the global.\n\nThe workflow is mostly #2, however, I was aiming to allow for individual users to also have a longer min-password requirement. Long term, we should also allow User-ROs to be defaulted at the domain level (all users in domain X have options set [e.g. MFA, etc]).\n\nI could drop the global -1 effect, but it felt like the best way to allow an entire installation to lean on external password management.\n\nThe design was a mix of concerns I was trying to address and avoid a ton of extra options [config/user]. I\u0027m happy to split to an explicit user option fi that is the direction you\u0027d rather go.",
+      "parentUuid": "bf659307_52f21f08",
+      "range": {
+        "startLine": 264,
+        "startChar": 27,
+        "endLine": 265,
+        "endChar": 60
+      },
+      "revId": "e21d907045efa800effdc2ee124eaf824ee2b1bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_920437c8",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 4
@@ -82,6 +130,30 @@
       "writtenOn": "2018-04-09T17:56:59Z",
       "side": 1,
       "message": "super-nit: this could be done through the API to be consistent with the rest of the calls in the test.",
+      "range": {
+        "startLine": 472,
+        "startChar": 8,
+        "endLine": 472,
+        "endChar": 68
+      },
+      "revId": "e21d907045efa800effdc2ee124eaf824ee2b1bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_befca43e",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-04-09T20:35:18Z",
+      "side": 1,
+      "message": "I was originally running into some side issues with update_user and simplified by calling the provider directly.\n\nI\u0027m happy to swap this back if that is really desired.",
+      "parentUuid": "bf659307_920437c8",
       "range": {
         "startLine": 472,
         "startChar": 8,
