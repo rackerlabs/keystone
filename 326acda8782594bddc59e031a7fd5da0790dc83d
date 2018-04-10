@@ -16,6 +16,24 @@
       "revId": "326acda8782594bddc59e031a7fd5da0790dc83d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_3070bcdc",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-10T02:12:50Z",
+      "side": 1,
+      "message": "There is a FK already:\nhttps://github.com/openstack/keystone/blob/master/keystone/limit/backends/sql.py#L65\nSo it\u0027s the reason why we should delete the limit first.\n\nAnother two ways to solve the problem are:\n1. remove the FK, then we can delete the limit after L506\n2. add cascade delete support in db.\n\nthe first one can be considers as well. Adding a FIXME here so that we can think more about the FK in Keystone next.",
+      "parentUuid": "bf659307_c3f2e39a",
+      "revId": "326acda8782594bddc59e031a7fd5da0790dc83d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
