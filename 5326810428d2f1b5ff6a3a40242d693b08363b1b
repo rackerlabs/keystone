@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_88dab1e6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-10T15:42:58Z",
+      "side": 1,
+      "message": "Until we get the details of this specification worked out, we might just be able to track everything in the bug you linked.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 25
+      },
+      "revId": "5326810428d2f1b5ff6a3a40242d693b08363b1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_08f0e166",
+        "filename": "keystone/limit/backends/base.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-10T15:42:58Z",
+      "side": 1,
+      "message": "nit: newly*",
+      "range": {
+        "startLine": 42,
+        "startChar": 26,
+        "endLine": 42,
+        "endChar": 29
+      },
+      "revId": "5326810428d2f1b5ff6a3a40242d693b08363b1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_28f36575",
+        "filename": "keystone/limit/backends/base.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-10T15:42:58Z",
+      "side": 1,
+      "message": "nit: newly*",
+      "range": {
+        "startLine": 109,
+        "startChar": 26,
+        "endLine": 109,
+        "endChar": 29
+      },
+      "revId": "5326810428d2f1b5ff6a3a40242d693b08363b1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_e8ec8d90",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-10T15:42:58Z",
+      "side": 1,
+      "message": "nit: \n\n  limits \u003d []\n\nis a bit more descriptive of what is contained within the list.",
+      "range": {
+        "startLine": 138,
+        "startChar": 12,
+        "endLine": 138,
+        "endChar": 22
+      },
+      "revId": "5326810428d2f1b5ff6a3a40242d693b08363b1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_a8fe9535",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-10T15:42:58Z",
+      "side": 1,
+      "message": "nit: same comment here.",
+      "range": {
+        "startLine": 212,
+        "startChar": 16,
+        "endLine": 212,
+        "endChar": 26
+      },
+      "revId": "5326810428d2f1b5ff6a3a40242d693b08363b1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_68295d99",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-10T15:42:58Z",
+      "side": 1,
+      "message": "Since we\u0027re not too worried about a naming conflict here, we can probably just name this:\n\n  limits \u003d PROVIDERS.unified_limit_api.create_registered_limits()\n\nand then adjust the loop below to read like:\n\n  for limit in limits:\n\nwhich reads a bit easier instead of having to keep a mental mapping of re -\u003e limits returned from create_registered_limits.",
+      "range": {
+        "startLine": 45,
+        "startChar": 8,
+        "endLine": 45,
+        "endChar": 12
+      },
+      "revId": "5326810428d2f1b5ff6a3a40242d693b08363b1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_880dd13f",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-10T15:42:58Z",
+      "side": 1,
+      "message": "Same comments here as above.",
+      "range": {
+        "startLine": 399,
+        "startChar": 8,
+        "endLine": 399,
+        "endChar": 12
+      },
+      "revId": "5326810428d2f1b5ff6a3a40242d693b08363b1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
