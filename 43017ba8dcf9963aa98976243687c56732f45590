@@ -88,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "bf659307_35c5f93c",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-10T16:37:44Z",
+      "side": 1,
+      "message": "It\u0027s an interesting problem. Your test is OK, but the problem is related to https://review.openstack.org/#/c/559676/\n\nThe 500 error is raised due to FK error in the real env. But in our unit test, keystone doesn\u0027t  do the db migration, it initializes the db schema by reading the sql model. Unfortunately, it missed FK here:  https://github.com/openstack/keystone/blob/master/keystone/federation/backends/sql.py#L58\nSo that you can\u0027t reproduce the 500 error by the unit test. It can be solved by add FK back to the sql model:  https://review.openstack.org/#/c/559676/1/keystone/federation/backends/sql.py",
+      "parentUuid": "bf659307_1dc101e5",
+      "revId": "43017ba8dcf9963aa98976243687c56732f45590",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_3d596559",
         "filename": "releasenotes/notes/bug-1760809-711df870a9d67c0d.yaml",
         "patchSetId": 4
