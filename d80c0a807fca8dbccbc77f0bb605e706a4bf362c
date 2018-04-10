@@ -19,6 +19,47 @@
     },
     {
       "key": {
+        "uuid": "bf659307_0e2ea6f9",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-04-10T18:44:39Z",
+      "side": 1,
+      "message": "It looks like the test code call this indirectly through cli still.",
+      "parentUuid": "bf659307_7cba8a0a",
+      "revId": "d80c0a807fca8dbccbc77f0bb605e706a4bf362c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_8e395640",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-04-10T18:44:39Z",
+      "side": 1,
+      "message": "Wonder if this could be consolidated with below according to wxy\u0027s comment. Password would still need to be checked though, so maybe it\u0027s not worth it.",
+      "range": {
+        "startLine": 123,
+        "startChar": 8,
+        "endLine": 149,
+        "endChar": 45
+      },
+      "revId": "d80c0a807fca8dbccbc77f0bb605e706a4bf362c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_3c873264",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 2
@@ -30,6 +71,47 @@
       "writtenOn": "2018-04-10T08:14:33Z",
       "side": 1,
       "message": "why not set bootstrapper\u0027s properties from input or env directly? The properties like self.password, self.username, etc, seems useless now or I missed something?",
+      "revId": "d80c0a807fca8dbccbc77f0bb605e706a4bf362c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_8ecb9648",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-04-10T18:44:39Z",
+      "side": 1,
+      "message": "I think the main reason is needing to check if self.password is None and throw an error if so, rather than directly checking. Not sure if that could be moved into the bootstrap class instead? Otherwise here is fine.",
+      "parentUuid": "bf659307_3c873264",
+      "revId": "d80c0a807fca8dbccbc77f0bb605e706a4bf362c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_ee61f23a",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-04-10T18:44:39Z",
+      "side": 1,
+      "message": "I assume the next steps would involve calling the bootstrap class directly?",
+      "range": {
+        "startLine": 99,
+        "startChar": 8,
+        "endLine": 99,
+        "endChar": 35
+      },
       "revId": "d80c0a807fca8dbccbc77f0bb605e706a4bf362c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
