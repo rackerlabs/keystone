@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_0bf3f874",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1258,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-10T18:13:43Z",
+      "side": 1,
+      "message": "These can be consolidated into the class above.",
+      "range": {
+        "startLine": 1258,
+        "startChar": 6,
+        "endLine": 1258,
+        "endChar": 22
+      },
+      "revId": "7647db35052afbc4628db771fa9586b0096ebd07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
