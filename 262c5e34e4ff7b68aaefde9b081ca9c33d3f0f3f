@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "bf659307_30c88320",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1389,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T18:42:28Z",
+      "side": 1,
+      "message": "This change looks ok by tracing the code, but it would be nice to have a functional test of some sort to ensure purge_mappings is doing what it should for both `user` and `group` types.\n\nThis test case wouldn\u0027t necessarily catch the bug if it were reintroduced, because the issue was the \u0027type\u0027 was getting set in the purge_filter instead of \u0027entity_type\u0027. This resulted in all of the mappings getting purged since the query wasn\u0027t being built properly. Maybe was we can do is:\n\n - create an id mapping for a group\n - create an id mapping for a user\n - perform a mapping purge using the cli.py module with --type user\n - ensure the public id of the user is gone\n - ensure the public id for the group still exists\n\nWe could reverse that test case for group logic, too.",
+      "revId": "262c5e34e4ff7b68aaefde9b081ca9c33d3f0f3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_de85aa08",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 4
@@ -41,6 +58,29 @@
         "startChar": 12,
         "endLine": 6,
         "endChar": 36
+      },
+      "revId": "262c5e34e4ff7b68aaefde9b081ca9c33d3f0f3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_dac92859",
+        "filename": "releasenotes/notes/bug-1757022-664d0b0db1242bf8.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T18:42:28Z",
+      "side": 1,
+      "message": "This bit is somewhat implied since it will be published with the Rocky release notes.",
+      "range": {
+        "startLine": 7,
+        "startChar": 14,
+        "endLine": 7,
+        "endChar": 33
       },
       "revId": "262c5e34e4ff7b68aaefde9b081ca9c33d3f0f3f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
