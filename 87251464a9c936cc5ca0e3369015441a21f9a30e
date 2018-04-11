@@ -22,6 +22,29 @@
       "revId": "87251464a9c936cc5ca0e3369015441a21f9a30e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_0b6f54fc",
+        "filename": "releasenotes/notes/bug-1760843-e0340ee5305d71de.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:31:25Z",
+      "side": 1,
+      "message": "This should be the inverse, shouldn\u0027t it? An identity provider can belong to only one domain, right?",
+      "range": {
+        "startLine": 7,
+        "startChar": 50,
+        "endLine": 7,
+        "endChar": 56
+      },
+      "revId": "87251464a9c936cc5ca0e3369015441a21f9a30e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
