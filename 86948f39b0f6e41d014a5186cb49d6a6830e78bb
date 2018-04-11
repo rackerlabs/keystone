@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_ca4153a8",
+        "filename": "keystone/auth/plugins/base.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-04-11T22:12:30Z",
+      "side": 1,
+      "message": "nit: needs a space here",
+      "revId": "86948f39b0f6e41d014a5186cb49d6a6830e78bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
