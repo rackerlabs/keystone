@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_cbf63cd8",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:08:58Z",
+      "side": 1,
+      "message": "If we are not planning on keeping this long term, maybe we should include a note to remove this once we have official k2k support via the plugin (per Morgan\u0027s comment).",
+      "range": {
+        "startLine": 77,
+        "startChar": 9,
+        "endLine": 77,
+        "endChar": 39
+      },
+      "revId": "52c46b3410582426d1b0c911c848ac1402ed87d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
