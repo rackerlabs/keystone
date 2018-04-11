@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_2bd33862",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:05:19Z",
+      "side": 0,
+      "message": "Wow - these must be stale! We could generate some new examples and compare them just to make sure we\u0027re not missing anything else or advertising inconsistencies.",
+      "revId": "6d0223367666f17bd864a8e3c0d02f4b76ab1e79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
