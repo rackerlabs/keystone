@@ -1,0 +1,153 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_64b87ec7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T20:54:12Z",
+      "side": 1,
+      "message": "change",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 5
+      },
+      "revId": "0e7378225b94adb32d6b27234ad002fba27e8e91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_e4556e51",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T20:54:12Z",
+      "side": 1,
+      "message": "We\u0027re not going to support the blanket case are we? If an operator wants a user to use a specific password, they have to specify it in the user\u0027s options?",
+      "range": {
+        "startLine": 485,
+        "startChar": 8,
+        "endLine": 485,
+        "endChar": 63
+      },
+      "revId": "0e7378225b94adb32d6b27234ad002fba27e8e91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_44845ad3",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T20:54:12Z",
+      "side": 1,
+      "message": "Technically - this shouldn\u0027t be possible if min\u003d0 in keystone/conf/security_compliance.py, right?",
+      "range": {
+        "startLine": 488,
+        "startChar": 8,
+        "endLine": 489,
+        "endChar": 59
+      },
+      "revId": "0e7378225b94adb32d6b27234ad002fba27e8e91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_84f59259",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 844,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T20:54:12Z",
+      "side": 1,
+      "message": "Same comment here as above. Technically this value should fail if it is set below 0 according to the definition in keystone/conf/security_compliance.py",
+      "range": {
+        "startLine": 843,
+        "startChar": 12,
+        "endLine": 844,
+        "endChar": 63
+      },
+      "revId": "0e7378225b94adb32d6b27234ad002fba27e8e91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_c4f62a5e",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 882,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T20:54:12Z",
+      "side": 1,
+      "message": "This bit confuses me still. Technically we already set the user option to lock the user\u0027s password, but we can still change it?",
+      "revId": "0e7378225b94adb32d6b27234ad002fba27e8e91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_048662ba",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 901,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T20:54:12Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "range": {
+        "startLine": 900,
+        "startChar": 12,
+        "endLine": 901,
+        "endChar": 62
+      },
+      "revId": "0e7378225b94adb32d6b27234ad002fba27e8e91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_c48b8abd",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T20:54:12Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "revId": "0e7378225b94adb32d6b27234ad002fba27e8e91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
