@@ -1,0 +1,481 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_ebd9c055",
+        "filename": "keystone/common/policies/limit.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:27:02Z",
+      "side": 1,
+      "message": "oops - i think this was wrong before?",
+      "range": {
+        "startLine": 54,
+        "startChar": 40,
+        "endLine": 54,
+        "endChar": 50
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_0b867414",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:27:02Z",
+      "side": 1,
+      "message": "Aha - so we are just returning a single entity.",
+      "range": {
+        "startLine": 162,
+        "startChar": 16,
+        "endLine": 162,
+        "endChar": 36
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_4bc22c5b",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:27:02Z",
+      "side": 1,
+      "message": "This should use the PROVIDERS dictionary:\n\n  refs \u003d PROVIDERS.unified_limit_api.",
+      "range": {
+        "startLine": 49,
+        "startChar": 15,
+        "endLine": 49,
+        "endChar": 19
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_cbcddc85",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:27:02Z",
+      "side": 1,
+      "message": "Is this returning more than the limit that was updated? Looking at the code in sql.py, this appears to be a single entity. The names `refs` is slightly inaccurate here since it\u0027s no longer plural with the new implementation.",
+      "range": {
+        "startLine": 49,
+        "startChar": 8,
+        "endLine": 49,
+        "endChar": 12
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_8b984475",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:27:02Z",
+      "side": 1,
+      "message": "Judging by this, it looks like we\u0027re dealing with a single entry.",
+      "range": {
+        "startLine": 51,
+        "startChar": 33,
+        "endLine": 51,
+        "endChar": 44
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_4ba78cbe",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:27:02Z",
+      "side": 1,
+      "message": "Same question here as above.",
+      "range": {
+        "startLine": 94,
+        "startChar": 8,
+        "endLine": 94,
+        "endChar": 12
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_8bc36457",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:27:02Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "range": {
+        "startLine": 94,
+        "startChar": 15,
+        "endLine": 94,
+        "endChar": 19
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_8ba604ab",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:27:02Z",
+      "side": 1,
+      "message": "nit: since this is no long a list of entities, I would suggest renaming this variable to something else that is more descriptive:\n\n  limit \u003d self.driver.update_registered_limits(...)",
+      "range": {
+        "startLine": 66,
+        "startChar": 8,
+        "endLine": 66,
+        "endChar": 12
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_ebaea07f",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:27:02Z",
+      "side": 1,
+      "message": "limit",
+      "range": {
+        "startLine": 69,
+        "startChar": 15,
+        "endLine": 69,
+        "endChar": 19
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_0bb434d0",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:27:02Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "range": {
+        "startLine": 91,
+        "startChar": 8,
+        "endLine": 91,
+        "endChar": 12
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_0be994b5",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:27:02Z",
+      "side": 1,
+      "message": "Without the odd behavior we originally implemented, some of these comments are a bit redundant. It\u0027s pretty easy to see what happening in the code now that we\u0027ve adjusted the API to make more sense.\n\nI wouldn\u0027t be opposed to removing these comments.",
+      "range": {
+        "startLine": 127,
+        "startChar": 8,
+        "endLine": 127,
+        "endChar": 32
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_cbce3c59",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:27:02Z",
+      "side": 1,
+      "message": "Same minor comment here as above.",
+      "range": {
+        "startLine": 465,
+        "startChar": 8,
+        "endLine": 465,
+        "endChar": 32
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_4b0c6ca4",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:27:02Z",
+      "side": 1,
+      "message": "nit: we could update the names of these variables to be more descriptive:\n\n  invalid_service_update \u003d ...",
+      "range": {
+        "startLine": 160,
+        "startChar": 8,
+        "endLine": 160,
+        "endChar": 19
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_2b2c9800",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:27:02Z",
+      "side": 1,
+      "message": "Do we have a test that makes sure we can\u0027t update the limit ID in an update?",
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_eb0a2077",
+        "filename": "releasenotes/notes/limits-api-refactor-05abf9e6c2e75852.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:27:02Z",
+      "side": 1,
+      "message": "the following API-WG guidelines:",
+      "range": {
+        "startLine": 5,
+        "startChar": 63,
+        "endLine": 5,
+        "endChar": 76
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_cb3cfc30",
+        "filename": "releasenotes/notes/limits-api-refactor-05abf9e6c2e75852.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:27:02Z",
+      "side": 1,
+      "message": "has been*",
+      "range": {
+        "startLine": 5,
+        "startChar": 27,
+        "endLine": 5,
+        "endChar": 30
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_8b4284aa",
+        "filename": "releasenotes/notes/limits-api-refactor-05abf9e6c2e75852.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:27:02Z",
+      "side": 1,
+      "message": "s/as below//",
+      "range": {
+        "startLine": 5,
+        "startChar": 40,
+        "endLine": 5,
+        "endChar": 48
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_2b7a58f0",
+        "filename": "releasenotes/notes/limits-api-refactor-05abf9e6c2e75852.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:27:02Z",
+      "side": 1,
+      "message": "no longer returns all limits during update operations.",
+      "range": {
+        "startLine": 6,
+        "startChar": 26,
+        "endLine": 6,
+        "endChar": 69
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_4b7f8cdf",
+        "filename": "releasenotes/notes/limits-api-refactor-05abf9e6c2e75852.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:27:02Z",
+      "side": 1,
+      "message": "limits*",
+      "range": {
+        "startLine": 7,
+        "startChar": 27,
+        "endLine": 7,
+        "endChar": 31
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_4b68ec1b",
+        "filename": "releasenotes/notes/limits-api-refactor-05abf9e6c2e75852.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:27:02Z",
+      "side": 1,
+      "message": "nit: Support for updating multiple limits in a single request has been removed by implementing PATCH instead of PUT.",
+      "range": {
+        "startLine": 8,
+        "startChar": 7,
+        "endLine": 9,
+        "endChar": 40
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_cb539c6a",
+        "filename": "releasenotes/notes/limits-api-refactor-05abf9e6c2e75852.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-11T19:27:02Z",
+      "side": 1,
+      "message": "making it possible to include these improvements.",
+      "range": {
+        "startLine": 10,
+        "startChar": 68,
+        "endLine": 11,
+        "endChar": 53
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
