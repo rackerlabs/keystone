@@ -34,6 +34,24 @@
       "revId": "d4f3160334838c592cc8616bba85c13f308468f6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_caecf3bc",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2456,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-04-11T22:08:59Z",
+      "side": 0,
+      "message": "Maybe rename \"extra\" here to something else.",
+      "parentUuid": "bf659307_56ab2fd5",
+      "revId": "d4f3160334838c592cc8616bba85c13f308468f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
