@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_de85aa08",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1407,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-11T09:02:38Z",
+      "side": 1,
+      "message": "-1: these code can be removed totally.",
+      "range": {
+        "startLine": 1400,
+        "startChar": 0,
+        "endLine": 1407,
+        "endChar": 44
+      },
+      "revId": "262c5e34e4ff7b68aaefde9b081ca9c33d3f0f3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_fe2bcee7",
+        "filename": "releasenotes/notes/bug-1757022-664d0b0db1242bf8.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-11T09:02:38Z",
+      "side": 1,
+      "message": "....would purge all mapping incorrectly....",
+      "range": {
+        "startLine": 6,
+        "startChar": 12,
+        "endLine": 6,
+        "endChar": 36
+      },
+      "revId": "262c5e34e4ff7b68aaefde9b081ca9c33d3f0f3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
