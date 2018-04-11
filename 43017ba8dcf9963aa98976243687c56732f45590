@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_37bf32ab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-11T02:37:46Z",
+      "side": 1,
+      "message": "yes, the sqlite db that unit test uses missed the FK.",
+      "parentUuid": "bf659307_fd19ad87",
+      "range": {
+        "startLine": 10,
+        "startChar": 8,
+        "endLine": 10,
+        "endChar": 37
+      },
+      "revId": "43017ba8dcf9963aa98976243687c56732f45590",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_7d3efd29",
         "filename": "keystone/federation/core.py",
         "patchSetId": 4
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_97807ef9",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-11T02:37:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_7d3efd29",
+      "range": {
+        "startLine": 56,
+        "startChar": 8,
+        "endLine": 56,
+        "endChar": 23
+      },
+      "revId": "43017ba8dcf9963aa98976243687c56732f45590",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_3d764508",
         "filename": "keystone/tests/unit/test_v3_resource.py",
         "patchSetId": 4
@@ -59,6 +107,30 @@
       "writtenOn": "2018-04-10T15:12:11Z",
       "side": 1,
       "message": "So this should enable FK with sqlite for this entire testcase, right?",
+      "range": {
+        "startLine": 38,
+        "startChar": 44,
+        "endLine": 38,
+        "endChar": 74
+      },
+      "revId": "43017ba8dcf9963aa98976243687c56732f45590",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_b7b342e9",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-11T02:37:46Z",
+      "side": 1,
+      "message": "yeah, 500 error is rasied by db FK error",
+      "parentUuid": "bf659307_3d764508",
       "range": {
         "startLine": 38,
         "startChar": 44,
@@ -117,6 +189,24 @@
       "writtenOn": "2018-04-10T15:12:11Z",
       "side": 1,
       "message": "++ This message could be simplified further with:\n\n  Identity providers registered to domains will now be\n  cleaned up when the domain is deleted.",
+      "revId": "43017ba8dcf9963aa98976243687c56732f45590",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_37a652ad",
+        "filename": "releasenotes/notes/bug-1760809-711df870a9d67c0d.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-11T02:37:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_3d596559",
       "revId": "43017ba8dcf9963aa98976243687c56732f45590",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
