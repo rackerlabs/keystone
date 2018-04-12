@@ -1,0 +1,13 @@
+---
+fixes:
+  - |
+    [`bug 1763510 <https://bugs.launchpad.net/keystone/+bug/1763510>`_]
+    Trust-scoped token reference now contain the same role information as all
+    other token response bodies. This change is technically backwards
+    incompatible, but actually consuming ``domain_id`` out of the role entity
+    within a token isn't useful because it is always ``None`` when used within
+    the context of trust-scoped token. If you have custom code that checks the
+    presence of ``domain_id`` within the ``role`` object of a token reference,
+    you should update it to not expect that parameter or key. Keystone's
+    internal token model and authentication code has been updated to prevent
+    unnecessary data leakage in the future.
