@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_70c6fb6a",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-04-12T19:32:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_0f2484c5",
+      "range": {
+        "startLine": 223,
+        "startChar": 29,
+        "endLine": 223,
+        "endChar": 32
+      },
+      "revId": "e21d907045efa800effdc2ee124eaf824ee2b1bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_924c3777",
         "filename": "keystone/exception.py",
         "patchSetId": 4
@@ -179,6 +203,30 @@
       "side": 1,
       "message": "Yeah I can drop the global toggle bit. That easily works for me.",
       "parentUuid": "bf659307_dce161fe",
+      "range": {
+        "startLine": 264,
+        "startChar": 27,
+        "endLine": 265,
+        "endChar": 60
+      },
+      "revId": "e21d907045efa800effdc2ee124eaf824ee2b1bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_90986f75",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-04-12T19:32:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_43779a3b",
       "range": {
         "startLine": 264,
         "startChar": 27,
