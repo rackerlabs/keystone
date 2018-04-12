@@ -22,6 +22,30 @@
       "revId": "8f2e5143b592d275505e7ecbe7a424316e33ae6b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_ae2e6c89",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 14119
+      },
+      "writtenOn": "2018-04-12T03:45:33Z",
+      "side": 1,
+      "message": "Its passing, and the LOCI depends-on is passing. Ive been waiting for Jesse to see if its something OSA also wants to adopt.\n\nI can remove the WIP, but i just want to establish multiple projects consuming the work here first (and prove that it really *is* something useful for multiple groups)",
+      "parentUuid": "bf659307_cb715c78",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 6
+      },
+      "revId": "8f2e5143b592d275505e7ecbe7a424316e33ae6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
