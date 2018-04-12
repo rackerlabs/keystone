@@ -207,6 +207,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_104206ac",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-12T13:55:14Z",
+      "side": 1,
+      "message": "Oh that\u0027s right. The context manager should handle that.",
+      "parentUuid": "bf659307_5fddf811",
+      "range": {
+        "startLine": 160,
+        "startChar": 24,
+        "endLine": 160,
+        "endChar": 31
+      },
+      "revId": "27ead2e892df2347162f776c6ec97ba847ebaf5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_ce21604f",
         "filename": "keystone/limit/backends/sql.py",
         "patchSetId": 5
