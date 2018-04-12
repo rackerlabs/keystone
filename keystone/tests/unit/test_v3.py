@@ -131,11 +131,6 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         elif project_scoped:
             properties['is_admin_project'] = {'type': 'boolean'}
             properties['catalog'] = {'type': 'array'}
-            # FIXME(lbragstad): Remove this in favor of the predefined
-            # ROLES_SCHEMA dictionary once bug 1763510 is fixed.
-            ROLES_SCHEMA['items']['properties']['domain_id'] = {
-                'type': ['null', 'string', ],
-            }
             properties['roles'] = ROLES_SCHEMA
             properties['is_domain'] = {'type': 'boolean'}
             properties['project'] = {

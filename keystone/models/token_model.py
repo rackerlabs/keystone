@@ -318,7 +318,7 @@ class TokenModel(object):
             if trust_role_id in current_effective_trustor_roles:
                 role = PROVIDERS.role_api.get_role(trust_role_id)
                 if role['domain_id'] is None:
-                    roles.append(role)
+                    roles.append({'id': role['id'], 'name': role['name']})
             else:
                 raise exception.Forbidden(
                     _('Trustee has no delegated roles.'))

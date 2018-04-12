@@ -2921,7 +2921,7 @@ class ImpliedRolesTests(test_v3.RestfulTestCase, test_v3.AssignmentTestMixin,
         for _ in range(3):
             role = unit.new_role_ref()
             PROVIDERS.role_api.create_role(role['id'], role)
-            self.role_list.append(role)
+            self.role_list.append({'id': role['id'], 'name': role['name']})
 
     def _create_test_domain_user_project(self):
         domain = unit.new_domain_ref()
