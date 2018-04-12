@@ -630,8 +630,12 @@ def use_conn_pool(func):
     def wrapper(self, *args, **kwargs):
         # assert isinstance(self, PooledLDAPHandler)
         with self._get_pool_connection() as conn:
-            self._apply_options(conn)
-            return func(self, conn, *args, **kwargs)
+            try:
+                self._apply_options(conn)
+                return func(self, conn, *args, **kwargs)
+            except ldap.SERVER_DOWN:
+                self._remove_conn_from_pool(conn, 'SERVER_DOWN')
+                raise
     return wrapper
 
 
@@ -738,6 +742,10 @@ class PooledLDAPHandler(LDAPHandler):
     def _get_pool_connection(self):
         return self.conn_pool.connection(self.who, self.cred)
 
+    def _remove_conn_from_pool(self, conn, reason=None):
+        LOG.warning('Removing connection from ldap pool. Reason: %s', reason)
+        self.conn_pool._pool_remove(conn)
+
     def simple_bind_s(self, who='', cred='',
                       serverctrls=None, clientctrls=None):
         # Not using use_conn_pool decorator here as this API takes cred as
@@ -785,7 +793,9 @@ class PooledLDAPHandler(LDAPHandler):
                                     filterstr, attrlist, attrsonly,
                                     serverctrls, clientctrls,
                                     timeout, sizelimit)
-        except Exception:
+        except Exception as ex:
+            if isinstance(ex, ldap.SERVER_DOWN):
+                self.remove_conn_from_pool(conn, 'SERVER_DOWN')
             conn_ctxt.__exit__(*sys.exc_info())
             raise
         res = MsgId((conn, msgid))
@@ -811,7 +821,11 @@ class PooledLDAPHandler(LDAPHandler):
 
         """
         conn, msg_id = msgid
-        return conn.result3(msg_id, all, timeout)
+        try:
+            return conn.result3(msg_id, all, timeout)
+        except ldap.SERVER_DOWN:
+            self._remove_conn_from_pool(conn, 'SERVER_DOWN')
+            raise
 
     @use_conn_pool
     def modify_s(self, conn, dn, modlist):
