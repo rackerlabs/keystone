@@ -391,7 +391,9 @@ class V3TokenDataHelper(provider_api.ProviderAPIMixin, object):
                     if match_roles:
                         role = PROVIDERS.role_api.get_role(match_roles[0])
                         if role['domain_id'] is None:
-                            filtered_roles.append(role)
+                            filtered_roles.append(
+                                {'id': role['id'], 'name': role['name']}
+                            )
                     else:
                         raise exception.Forbidden(
                             _('Trustee has no delegated roles.'))
