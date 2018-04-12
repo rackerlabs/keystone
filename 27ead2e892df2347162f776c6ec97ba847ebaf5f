@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_eeab04d3",
+        "filename": "keystone/limit/backends/base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-12T04:02:32Z",
+      "side": 1,
+      "message": "nit: \n\n  a dict containing the registered limit attributes to update",
+      "range": {
+        "startLine": 54,
+        "startChar": 48,
+        "endLine": 54,
+        "endChar": 53
+      },
+      "revId": "27ead2e892df2347162f776c6ec97ba847ebaf5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_6e893473",
+        "filename": "keystone/limit/backends/base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-12T04:02:32Z",
+      "side": 1,
+      "message": "same nit here as above.",
+      "range": {
+        "startLine": 122,
+        "startChar": 26,
+        "endLine": 122,
+        "endChar": 31
+      },
+      "revId": "27ead2e892df2347162f776c6ec97ba847ebaf5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_2ef49cf0",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-12T04:02:32Z",
+      "side": 1,
+      "message": "Removing the batch processing from this API really made this implementation easier to understand.",
+      "revId": "27ead2e892df2347162f776c6ec97ba847ebaf5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_ce4ac025",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-12T04:02:32Z",
+      "side": 1,
+      "message": "Instead of traversing every possible attribute of the limit, wouldn\u0027t we be able to just traverse the attributes passed into the method in the registered_limit?\n\n  for attr in registered_limit:\n\nIn fact, can\u0027t we just use the old_dict after we updated it on line 155? I feel like I\u0027ve seen a way to pass a dictionary to sqlalchemy to have it update the record in the database. I can dig around or try it locally. I could be wrong.",
+      "range": {
+        "startLine": 158,
+        "startChar": 28,
+        "endLine": 158,
+        "endChar": 59
+      },
+      "revId": "27ead2e892df2347162f776c6ec97ba847ebaf5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_eec22485",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-12T04:02:32Z",
+      "side": 1,
+      "message": "This is what updates the value in SQL, right?",
+      "range": {
+        "startLine": 160,
+        "startChar": 24,
+        "endLine": 160,
+        "endChar": 31
+      },
+      "revId": "27ead2e892df2347162f776c6ec97ba847ebaf5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_ce21604f",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-12T04:02:32Z",
+      "side": 1,
+      "message": "Is this the only attribute that can be updated in this request? Are all the other attributes of a project limit immutable?",
+      "range": {
+        "startLine": 218,
+        "startChar": 48,
+        "endLine": 218,
+        "endChar": 62
+      },
+      "revId": "27ead2e892df2347162f776c6ec97ba847ebaf5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_2e857c07",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-12T04:02:32Z",
+      "side": 1,
+      "message": "nit: We could pull the id out here and assign it to a variable, that we we don\u0027t have to access r.response.. a bunch of times throughout the test.\n\n  limit_id \u003d r.result[\u0027limits\u0027][0][\u0027id\u0027]",
+      "range": {
+        "startLine": 491,
+        "startChar": 8,
+        "endLine": 491,
+        "endChar": 9
+      },
+      "revId": "27ead2e892df2347162f776c6ec97ba847ebaf5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_0e53d817",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-12T04:02:32Z",
+      "side": 1,
+      "message": "extra underscore?",
+      "range": {
+        "startLine": 500,
+        "startChar": 19,
+        "endLine": 500,
+        "endChar": 20
+      },
+      "revId": "27ead2e892df2347162f776c6ec97ba847ebaf5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
