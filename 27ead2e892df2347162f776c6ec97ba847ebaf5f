@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_df97c88f",
+        "filename": "keystone/limit/backends/base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-12T06:54:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_eeab04d3",
+      "range": {
+        "startLine": 54,
+        "startChar": 48,
+        "endLine": 54,
+        "endChar": 53
+      },
+      "revId": "27ead2e892df2347162f776c6ec97ba847ebaf5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_6e893473",
         "filename": "keystone/limit/backends/base.py",
         "patchSetId": 5
@@ -36,6 +60,30 @@
       "writtenOn": "2018-04-12T04:02:32Z",
       "side": 1,
       "message": "same nit here as above.",
+      "range": {
+        "startLine": 122,
+        "startChar": 26,
+        "endLine": 122,
+        "endChar": 31
+      },
+      "revId": "27ead2e892df2347162f776c6ec97ba847ebaf5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_3fcda4b6",
+        "filename": "keystone/limit/backends/base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-12T06:54:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_6e893473",
       "range": {
         "startLine": 122,
         "startChar": 26,
@@ -88,6 +136,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_7fc31cee",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-12T06:54:31Z",
+      "side": 1,
+      "message": "yeah, here is something like obj-\u003e dict -\u003e obj,\nif changed to obj.update(dict), it\u0027ll be cool. It can be done in a new refactor patch.",
+      "parentUuid": "bf659307_ce4ac025",
+      "range": {
+        "startLine": 158,
+        "startChar": 28,
+        "endLine": 158,
+        "endChar": 59
+      },
+      "revId": "27ead2e892df2347162f776c6ec97ba847ebaf5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_eec22485",
         "filename": "keystone/limit/backends/sql.py",
         "patchSetId": 5
@@ -99,6 +171,30 @@
       "writtenOn": "2018-04-12T04:02:32Z",
       "side": 1,
       "message": "This is what updates the value in SQL, right?",
+      "range": {
+        "startLine": 160,
+        "startChar": 24,
+        "endLine": 160,
+        "endChar": 31
+      },
+      "revId": "27ead2e892df2347162f776c6ec97ba847ebaf5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_5fddf811",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-12T06:54:31Z",
+      "side": 1,
+      "message": "yeah, then the new data will be  wrote db after \"with...session\"",
+      "parentUuid": "bf659307_eec22485",
       "range": {
         "startLine": 160,
         "startChar": 24,
@@ -134,6 +230,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_1f56a0cf",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-12T06:54:31Z",
+      "side": 1,
+      "message": "yes, other properties are service_id, project_id, region_id, resource_name, they are all related to registered limits.",
+      "parentUuid": "bf659307_ce21604f",
+      "range": {
+        "startLine": 218,
+        "startChar": 48,
+        "endLine": 218,
+        "endChar": 62
+      },
+      "revId": "27ead2e892df2347162f776c6ec97ba847ebaf5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_2e857c07",
         "filename": "keystone/tests/unit/test_limits.py",
         "patchSetId": 5
@@ -157,6 +277,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_7ff55c56",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-12T06:54:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_2e857c07",
+      "range": {
+        "startLine": 491,
+        "startChar": 8,
+        "endLine": 491,
+        "endChar": 9
+      },
+      "revId": "27ead2e892df2347162f776c6ec97ba847ebaf5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_0e53d817",
         "filename": "keystone/tests/unit/test_limits.py",
         "patchSetId": 5
@@ -168,6 +312,30 @@
       "writtenOn": "2018-04-12T04:02:32Z",
       "side": 1,
       "message": "extra underscore?",
+      "range": {
+        "startLine": 500,
+        "startChar": 19,
+        "endLine": 500,
+        "endChar": 20
+      },
+      "revId": "27ead2e892df2347162f776c6ec97ba847ebaf5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_7fcc7c34",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-12T06:54:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_0e53d817",
       "range": {
         "startLine": 500,
         "startChar": 19,
