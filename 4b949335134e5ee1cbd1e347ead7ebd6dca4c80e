@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_cef96080",
+        "filename": "doc/source/install/index-ubuntu.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-12T04:08:11Z",
+      "side": 1,
+      "message": "I think this will need to be addressed in the OBS and Red Hat guides, too: \n\nhttps://github.com/openstack/keystone/blob/master/doc/source/install/index-obs.rst\nhttps://github.com/openstack/keystone/blob/master/doc/source/install/index-rdo.rst",
+      "revId": "4b949335134e5ee1cbd1e347ead7ebd6dca4c80e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
