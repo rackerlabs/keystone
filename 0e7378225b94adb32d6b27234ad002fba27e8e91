@@ -118,6 +118,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_d306ce1c",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 844,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-04-12T19:43:09Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "bf659307_84f59259",
+      "range": {
+        "startLine": 843,
+        "startChar": 12,
+        "endLine": 844,
+        "endChar": 63
+      },
+      "revId": "0e7378225b94adb32d6b27234ad002fba27e8e91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_c4f62a5e",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 5
@@ -129,6 +153,24 @@
       "writtenOn": "2018-04-11T20:54:12Z",
       "side": 1,
       "message": "This bit confuses me still. Technically we already set the user option to lock the user\u0027s password, but we can still change it?",
+      "revId": "0e7378225b94adb32d6b27234ad002fba27e8e91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_b30f9a2c",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 882,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-04-12T19:43:09Z",
+      "side": 1,
+      "message": "See below comment.",
+      "parentUuid": "bf659307_c4f62a5e",
       "revId": "0e7378225b94adb32d6b27234ad002fba27e8e91",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -158,6 +200,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_f37e7268",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 901,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-04-12T19:43:09Z",
+      "side": 1,
+      "message": "This one is testing that the override should not be allowed to be less than the security_compliance.\n\nThere is a racy-thing here we need to fix. If you change the password in the same second, it is not considered less than ... it\u0027s a bug in i think our password change logic.\n\nSee def test_changing_password_with_min_password_age(self):\n\nThis is broken in general, but we are consistent in how we\u0027re broken.\n\nI\u0027ll work on a followup that will fix this.",
+      "parentUuid": "bf659307_048662ba",
+      "range": {
+        "startLine": 900,
+        "startChar": 12,
+        "endLine": 901,
+        "endChar": 62
+      },
+      "revId": "0e7378225b94adb32d6b27234ad002fba27e8e91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_c48b8abd",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 5
@@ -169,6 +235,24 @@
       "writtenOn": "2018-04-11T20:54:12Z",
       "side": 1,
       "message": "Same comment as above.",
+      "revId": "0e7378225b94adb32d6b27234ad002fba27e8e91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_b3947a8c",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-04-12T19:43:09Z",
+      "side": 1,
+      "message": "See above.",
+      "parentUuid": "bf659307_c48b8abd",
       "revId": "0e7378225b94adb32d6b27234ad002fba27e8e91",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
