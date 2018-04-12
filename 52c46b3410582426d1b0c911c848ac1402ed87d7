@@ -22,6 +22,30 @@
       "revId": "52c46b3410582426d1b0c911c848ac1402ed87d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_73bcbedb",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-04-12T00:44:49Z",
+      "side": 1,
+      "message": "this is already *very* old. The plan was to never rely into an external service, however, this was a first towards having this kind of setup for devstack.\n\nI totally agree we need at at least a NOTE somewhere.",
+      "parentUuid": "bf659307_cbf63cd8",
+      "range": {
+        "startLine": 77,
+        "startChar": 9,
+        "endLine": 77,
+        "endChar": 39
+      },
+      "revId": "52c46b3410582426d1b0c911c848ac1402ed87d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
