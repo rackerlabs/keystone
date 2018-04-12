@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_50fb9445",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-04-12T19:32:27Z",
+      "side": 1,
+      "message": "Ah yeah. missed these.",
+      "parentUuid": "bf659307_e4556e51",
+      "range": {
+        "startLine": 485,
+        "startChar": 8,
+        "endLine": 485,
+        "endChar": 63
+      },
+      "revId": "0e7378225b94adb32d6b27234ad002fba27e8e91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_44845ad3",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 5
