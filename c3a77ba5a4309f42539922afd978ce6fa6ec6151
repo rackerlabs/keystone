@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_cbb15291",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-12T03:40:33Z",
+      "side": 1,
+      "message": "This feels like it should live in the manager, since it\u0027s seems more like business logic.",
+      "revId": "c3a77ba5a4309f42539922afd978ce6fa6ec6151",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
