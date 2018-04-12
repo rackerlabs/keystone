@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_99cc1336",
+        "filename": "keystone/common/policies/limit.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-12T03:40:18Z",
+      "side": 1,
+      "message": "yep",
+      "parentUuid": "bf659307_ebd9c055",
+      "range": {
+        "startLine": 54,
+        "startChar": 40,
+        "endLine": 54,
+        "endChar": 50
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_0b867414",
         "filename": "keystone/limit/backends/sql.py",
         "patchSetId": 4
@@ -94,6 +118,54 @@
     },
     {
       "key": {
+        "uuid": "bf659307_ab665eba",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-12T03:40:18Z",
+      "side": 1,
+      "message": "I\u0027ll change to a suitable name.",
+      "parentUuid": "bf659307_cbcddc85",
+      "range": {
+        "startLine": 49,
+        "startChar": 8,
+        "endLine": 49,
+        "endChar": 12
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_6bd7e64c",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-12T03:40:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_4bc22c5b",
+      "range": {
+        "startLine": 49,
+        "startChar": 15,
+        "endLine": 49,
+        "endChar": 19
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_8b984475",
         "filename": "keystone/limit/controllers.py",
         "patchSetId": 4
@@ -105,6 +177,30 @@
       "writtenOn": "2018-04-11T19:27:02Z",
       "side": 1,
       "message": "Judging by this, it looks like we\u0027re dealing with a single entry.",
+      "range": {
+        "startLine": 51,
+        "startChar": 33,
+        "endLine": 51,
+        "endChar": 44
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_0b566acf",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-12T03:40:18Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "bf659307_8b984475",
       "range": {
         "startLine": 51,
         "startChar": 33,
@@ -186,6 +282,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_abfbbebb",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-12T03:40:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_8ba604ab",
+      "range": {
+        "startLine": 66,
+        "startChar": 8,
+        "endLine": 66,
+        "endChar": 12
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_ebaea07f",
         "filename": "keystone/limit/core.py",
         "patchSetId": 4
@@ -197,6 +317,30 @@
       "writtenOn": "2018-04-11T19:27:02Z",
       "side": 1,
       "message": "limit",
+      "range": {
+        "startLine": 69,
+        "startChar": 15,
+        "endLine": 69,
+        "endChar": 19
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_0b242a5f",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-12T03:40:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_ebaea07f",
       "range": {
         "startLine": 69,
         "startChar": 15,
@@ -255,6 +399,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_4bbc62db",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-12T03:40:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_0be994b5",
+      "range": {
+        "startLine": 127,
+        "startChar": 8,
+        "endLine": 127,
+        "endChar": 32
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_cbce3c59",
         "filename": "keystone/tests/unit/limit/test_backends.py",
         "patchSetId": 4
@@ -301,6 +469,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_8b9a7a6c",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-12T03:40:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_4b0c6ca4",
+      "range": {
+        "startLine": 160,
+        "startChar": 8,
+        "endLine": 160,
+        "endChar": 19
+      },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_2b2c9800",
         "filename": "keystone/tests/unit/test_limits.py",
         "patchSetId": 4
@@ -312,6 +504,24 @@
       "writtenOn": "2018-04-11T19:27:02Z",
       "side": 1,
       "message": "Do we have a test that makes sure we can\u0027t update the limit ID in an update?",
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_6bccc634",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-12T03:40:18Z",
+      "side": 1,
+      "message": "I\u0027ll add one.",
+      "parentUuid": "bf659307_2b2c9800",
       "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -473,6 +683,23 @@
         "endLine": 11,
         "endChar": 53
       },
+      "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_eb00d636",
+        "filename": "releasenotes/notes/limits-api-refactor-05abf9e6c2e75852.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-12T03:40:18Z",
+      "side": 1,
+      "message": "I doubt how to improve my English to make the doc things better.\n\nBig thanks for the review!",
       "revId": "c9c4e53c9ee397d8b92dc9959d6f8c0813800ae7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
