@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_d35caa1a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-04-12T00:34:42Z",
+      "side": 1,
+      "message": "this is a huge blocker. Without this properly discussed and handled, this review can\u0027t proceed.",
+      "parentUuid": "bf659307_abb2e892",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 32
+      },
+      "revId": "87251464a9c936cc5ca0e3369015441a21f9a30e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_0b6f54fc",
         "filename": "releasenotes/notes/bug-1760843-e0340ee5305d71de.yaml",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2018-04-11T19:31:25Z",
       "side": 1,
       "message": "This should be the inverse, shouldn\u0027t it? An identity provider can belong to only one domain, right?",
+      "range": {
+        "startLine": 7,
+        "startChar": 50,
+        "endLine": 7,
+        "endChar": 56
+      },
+      "revId": "87251464a9c936cc5ca0e3369015441a21f9a30e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_f340ce37",
+        "filename": "releasenotes/notes/bug-1760843-e0340ee5305d71de.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-04-12T00:34:42Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "bf659307_0b6f54fc",
       "range": {
         "startLine": 7,
         "startChar": 50,
