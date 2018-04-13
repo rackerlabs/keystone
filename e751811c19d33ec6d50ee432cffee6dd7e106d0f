@@ -34,6 +34,29 @@
       "revId": "e751811c19d33ec6d50ee432cffee6dd7e106d0f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_d738f3d3",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 834,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-04-13T00:54:02Z",
+      "side": 1,
+      "message": "AHA! Ok, so min_password_age only ever applies to non-admin set passwords. I will need to rework the logic a little for the -1 case.",
+      "range": {
+        "startLine": 832,
+        "startChar": 0,
+        "endLine": 834,
+        "endChar": 72
+      },
+      "revId": "e751811c19d33ec6d50ee432cffee6dd7e106d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
