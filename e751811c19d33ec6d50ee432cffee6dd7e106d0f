@@ -16,6 +16,24 @@
       "revId": "e751811c19d33ec6d50ee432cffee6dd7e106d0f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_d70f932b",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-04-13T00:52:19Z",
+      "side": 1,
+      "message": "Or something else wonky is going on with the test(s)",
+      "parentUuid": "bf659307_e59c640f",
+      "revId": "e751811c19d33ec6d50ee432cffee6dd7e106d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
