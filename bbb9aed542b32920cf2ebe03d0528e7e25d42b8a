@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_2861c9d3",
+        "filename": "keystone/cmd/doctor/tokens.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-13T09:26:19Z",
+      "side": 1,
+      "message": "it\u0027s good to add a TODO that the code will be refactored once JWT landed.",
+      "revId": "bbb9aed542b32920cf2ebe03d0528e7e25d42b8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
