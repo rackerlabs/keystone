@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "bf659307_1758ab2e",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-04-13T00:55:16Z",
+      "side": 1,
+      "message": "The -1 logic needs to go here.",
+      "range": {
+        "startLine": 251,
+        "startChar": 12,
+        "endLine": 252,
+        "endChar": 61
+      },
+      "revId": "e751811c19d33ec6d50ee432cffee6dd7e106d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_e59c640f",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 6
