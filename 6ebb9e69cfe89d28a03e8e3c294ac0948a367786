@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "bf659307_463993a1",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 747,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2018-04-13T05:16:49Z",
+      "side": 1,
+      "message": "where is this method _pool_remove() defined?  I cannot find this in the class definition at [0].\n\n[0] https://github.com/openstack/ldappool/blob/5454ce5922560d3acf7033de97ce22a8ce4399f6/ldappool/__init__.py#L141",
+      "range": {
+        "startLine": 747,
+        "startChar": 23,
+        "endLine": 747,
+        "endChar": 35
+      },
+      "revId": "6ebb9e69cfe89d28a03e8e3c294ac0948a367786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_cb784ec5",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 2
