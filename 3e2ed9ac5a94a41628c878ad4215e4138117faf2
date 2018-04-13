@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_78146444",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-04-13T16:15:42Z",
+      "side": 1,
+      "message": "Superfluous Line Change",
+      "revId": "3e2ed9ac5a94a41628c878ad4215e4138117faf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
