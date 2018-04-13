@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "bf659307_381a6c6e",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-04-13T16:16:08Z",
+      "side": 1,
+      "message": "Need to revert this text.",
+      "range": {
+        "startLine": 90,
+        "startChar": 43,
+        "endLine": 95,
+        "endChar": 37
+      },
+      "revId": "3e2ed9ac5a94a41628c878ad4215e4138117faf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_78146444",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 7
