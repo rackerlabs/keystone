@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_4f70b572",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-04-13T19:28:57Z",
+      "side": 1,
+      "message": "None should be explicitly allowed for any/all resource options. If not, there is a bug in resource options code.",
+      "parentUuid": "bf659307_ac963fef",
+      "range": {
+        "startLine": 247,
+        "startChar": 26,
+        "endLine": 247,
+        "endChar": 30
+      },
+      "revId": "551eaa13bf08e8559657c9655e6bbc32ed741972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_4c8523ac",
         "filename": "keystone/identity/backends/resource_options.py",
         "patchSetId": 8
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_af0631cd",
+        "filename": "keystone/identity/backends/resource_options.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-04-13T19:28:57Z",
+      "side": 1,
+      "message": "None should always be allowed in resource-options, see other comment. This is for loading from DB, the json_schema validator down below is for the API validation)",
+      "parentUuid": "bf659307_4c8523ac",
+      "range": {
+        "startLine": 83,
+        "startChar": 18,
+        "endLine": 83,
+        "endChar": 53
+      },
+      "revId": "551eaa13bf08e8559657c9655e6bbc32ed741972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_6cb5877d",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 8
@@ -59,6 +107,30 @@
       "writtenOn": "2018-04-13T19:08:07Z",
       "side": 1,
       "message": "Is this left over from the previous patchset?",
+      "range": {
+        "startLine": 465,
+        "startChar": 0,
+        "endLine": 466,
+        "endChar": 58
+      },
+      "revId": "551eaa13bf08e8559657c9655e6bbc32ed741972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_cf0925dd",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-04-13T19:28:57Z",
+      "side": 1,
+      "message": "Maybe.",
+      "parentUuid": "bf659307_6cb5877d",
       "range": {
         "startLine": 465,
         "startChar": 0,
@@ -99,6 +171,30 @@
       "writtenOn": "2018-04-13T19:08:07Z",
       "side": 1,
       "message": "We should have a test to make sure we can remove the option from the user.",
+      "range": {
+        "startLine": 795,
+        "startChar": 8,
+        "endLine": 795,
+        "endChar": 49
+      },
+      "revId": "551eaa13bf08e8559657c9655e6bbc32ed741972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_8f0fadde",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 795,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-04-13T19:28:57Z",
+      "side": 1,
+      "message": "That should be the base resource-options tests. If that doesn\u0027t exist, it\u0027s a separate bug/issue.",
+      "parentUuid": "bf659307_0ca40b4a",
       "range": {
         "startLine": 795,
         "startChar": 8,
