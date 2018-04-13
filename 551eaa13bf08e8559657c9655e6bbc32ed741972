@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_e051960f",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-13T21:33:03Z",
+      "side": 1,
+      "message": "++ your other patch fixed it for me.",
+      "parentUuid": "bf659307_4f70b572",
+      "range": {
+        "startLine": 247,
+        "startChar": 26,
+        "endLine": 247,
+        "endChar": 30
+      },
+      "revId": "551eaa13bf08e8559657c9655e6bbc32ed741972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_4c8523ac",
         "filename": "keystone/identity/backends/resource_options.py",
         "patchSetId": 8
