@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_ac963fef",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-13T19:08:07Z",
+      "side": 1,
+      "message": "Testing this locally and it\u0027s not possible to pass this in from the API because it appears to fail our jsonschema validation [0]. Otherwise True and False operate as expected.\n\n[0] http://paste.openstack.org/show/719185/",
+      "range": {
+        "startLine": 247,
+        "startChar": 26,
+        "endLine": 247,
+        "endChar": 30
+      },
+      "revId": "551eaa13bf08e8559657c9655e6bbc32ed741972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_4c8523ac",
+        "filename": "keystone/identity/backends/resource_options.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-13T19:08:07Z",
+      "side": 1,
+      "message": "I think this is causing issues with None or null in order to remove the option from the user reference.",
+      "range": {
+        "startLine": 83,
+        "startChar": 18,
+        "endLine": 83,
+        "endChar": 53
+      },
+      "revId": "551eaa13bf08e8559657c9655e6bbc32ed741972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_6cb5877d",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-13T19:08:07Z",
+      "side": 1,
+      "message": "Is this left over from the previous patchset?",
+      "range": {
+        "startLine": 465,
+        "startChar": 0,
+        "endLine": 466,
+        "endChar": 58
+      },
+      "revId": "551eaa13bf08e8559657c9655e6bbc32ed741972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_8c6d7b04",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-13T19:08:07Z",
+      "side": 1,
+      "message": "Very nice",
+      "revId": "551eaa13bf08e8559657c9655e6bbc32ed741972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_0ca40b4a",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 795,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-13T19:08:07Z",
+      "side": 1,
+      "message": "We should have a test to make sure we can remove the option from the user.",
+      "range": {
+        "startLine": 795,
+        "startChar": 8,
+        "endLine": 795,
+        "endChar": 49
+      },
+      "revId": "551eaa13bf08e8559657c9655e6bbc32ed741972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
