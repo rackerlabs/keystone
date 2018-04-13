@@ -460,10 +460,6 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.v3_create_token(new_password_auth)
 
     def test_admin_password_reset_with_password_lock(self):
-        # enable minimum_password_age via override, this should have no effect
-        # on admin password reset
-        self.config_fixture.config(group='security_compliance',
-                                   minimum_password_age=0)
         # create user
         user_ref = unit.create_user(PROVIDERS.identity_api,
                                     domain_id=self.domain['id'])
@@ -793,32 +789,57 @@ class UserSelfServiceChangingPasswordsTestCase(ChangePasswordTestCase):
                                  expected_status=http_client.NO_CONTENT)
 
     def test_changing_password_with_password_lock(self):
-        # enable minimum_password_age override to "forever" and attempt to
-        # change password
+        password = uuid.uuid4().hex
+        ref = unit.new_user_ref(domain_id=self.domain_id, password=password)
+        response = self.post('/users', body={'user': ref})
+        user_id = response.json_body['user']['id']
+
         time = datetime.datetime.utcnow()
         with freezegun.freeze_time(time) as frozen_datetime:
-            new_password = uuid.uuid4().hex
+            # Lock the user's password
             lock_pw_opt = options.LOCK_PASSWORD_OPT.option_name
-            self.user_ref['options'][lock_pw_opt] = True
-            PROVIDERS.identity_api.update_user(self.user_ref['id'],
-                                               self.user_ref)
+            user_patch = {'user': {'options': {lock_pw_opt: True}}}
+            self.patch('/users/%s' % user_id, body=user_patch)
 
             # Fail, password is locked
-            self.change_password(password=new_password,
-                                 original_password=self.user_ref['password'],
-                                 expected_status=http_client.BAD_REQUEST)
+            new_password = uuid.uuid4().hex
+            body = {
+                'user': {
+                    'original_password': password,
+                    'password': new_password
+                }
+            }
+            path = '/users/%s/password' % user_id
+            self.post(path, body=body, expected_status=http_client.BAD_REQUEST)
+
             # Unlock the password, and change should work
-            self.user_ref['options'][lock_pw_opt] = False
-            PROVIDERS.identity_api.update_user(self.user_ref['id'],
-                                               self.user_ref)
+            user_patch['user']['options'][lock_pw_opt] = False
+            self.patch('/users/%s' % user_id, body=user_patch)
+
+            path = '/users/%s/password' % user_id
+            self.post(path, body=body, expected_status=http_client.NO_CONTENT)
+
             frozen_datetime.tick(delta=datetime.timedelta(seconds=1))
-            self.change_password(password=new_password,
-                                 original_password=self.user_ref['password'],
-                                 expected_status=http_client.NO_CONTENT)
-            self.token = self.get_request_token(
-                new_password,
-                http_client.CREATED
+
+            auth_data = self.build_authentication_request(
+                user_id=user_id,
+                password=new_password
             )
+            self.v3_create_token(
+                auth_data, expected_status=http_client.CREATED
+            )
+
+            path = '/users/%s' % user_id
+            user = self.get(path).json_body['user']
+            self.assertIn(lock_pw_opt, user['options'])
+            self.assertFalse(user['options'][lock_pw_opt])
+
+            # Completely unset the option from the user's reference
+            user_patch['user']['options'][lock_pw_opt] = None
+            self.patch('/users/%s' % user_id, body=user_patch)
+            path = '/users/%s' % user_id
+            user = self.get(path).json_body['user']
+            self.assertNotIn(lock_pw_opt, user['options'])
 
     def test_changing_password_with_missing_original_password_fails(self):
         r = self.change_password(password=uuid.uuid4().hex,

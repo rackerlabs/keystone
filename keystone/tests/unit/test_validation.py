@@ -1983,9 +1983,7 @@ class UserValidationTestCase(unit.BaseTestCase):
                 ro.IGNORE_CHANGE_PASSWORD_OPT.option_name: None
             }
         }
-        self.assertRaises(exception.SchemaValidationError,
-                          self.create_user_validator.validate,
-                          request_to_validate)
+        self.create_user_validator.validate(request_to_validate)
 
     def test_user_update_with_options_change_password_required(self):
         request_to_validate = {
