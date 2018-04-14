@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_6ccc9cba",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1988,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-04-14T16:40:38Z",
+      "side": 1,
+      "message": "Needs to be fixed.",
+      "range": {
+        "startLine": 1986,
+        "startChar": 0,
+        "endLine": 1988,
+        "endChar": 46
+      },
+      "revId": "f65e9d309a7ae74618242eb88160c1a7870be134",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
