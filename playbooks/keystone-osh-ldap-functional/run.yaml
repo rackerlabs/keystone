@@ -90,27 +90,45 @@
         sudo docker build https://git.openstack.org/openstack/loci.git \
             --build-arg PROJECT=keystone --tag gerrit-keystone \
             --build-arg PROJECT_REF={{ REF_PATH }} \
-            --build-arg PROFILES="apache libapache2-mod-wsgi"
+            --build-arg PROFILES="apache libapache2-mod-wsgi ldap" \
+            --build-arg PIP_PACKAGES="cryptography python-openstackclient"
       vars:
         REF_PATH: "{{ zuul.ref }}"
       args:
         chdir: "{{ zuul.project.src_dir }}"
 
-    - name: Deploy Keystone
+    - name: Debug deploy Keystone
       shell: |
         set -xe;
         make keystone
-        helm install ./keystone \
+        helm install --debug --dry-run ./keystone \
             --namespace=openstack --name=keystone \
-            # --values=./tools/overrides/keystone/ldap_domain_config.yaml \
+            --values=./tools/overrides/keystone/ldap_domain_config.yaml \
             --set images.tags.keystone_db_sync=gerrit-keystone \
             --set images.tags.keystone_fernet_setup=gerrit-keystone \
             --set images.tags.keystone_fernet_rotate=gerrit-keystone \
             --set images.tags.keystone_credential_setup=gerrit-keystone \
             --set images.tags.keystone_credential_rotate=gerrit-keystone \
-            --set images.tags.keystone_api=gerrit-keystone \
-            --set bootstrap.script={{ BOOTSTRAP }}
-         ./tools/deployment/common/wait-for-pods.sh openstack
+            --set images.tags.keystone_api=gerrit-keystone
+      args:
+        chdir: "{{ zuul.projects['git.openstack.org/openstack/openstack-helm'].src_dir }}"
+
+    - name: Deploy Keystone
+      shell: |
+        set -x;
+        make keystone
+        helm install ./keystone \
+            --namespace=openstack --name=keystone \
+            --values=./tools/overrides/keystone/ldap_domain_config.yaml \
+            --set images.tags.keystone_db_sync=gerrit-keystone \
+            --set images.tags.keystone_fernet_setup=gerrit-keystone \
+            --set images.tags.keystone_fernet_rotate=gerrit-keystone \
+            --set images.tags.keystone_credential_setup=gerrit-keystone \
+            --set images.tags.keystone_credential_rotate=gerrit-keystone \
+            --set images.tags.keystone_api=gerrit-keystone;
+        ./tools/deployment/common/wait-for-pods.sh openstack;
+        POD=$(kubectl get pods -n openstack | grep keystone-api | awk '{print $1}');
+        kubectl logs -n openstack ${POD};
       args:
         chdir: "{{ zuul.projects['git.openstack.org/openstack/openstack-helm'].src_dir }}"
       vars:
