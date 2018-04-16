@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f6a8fd7_a69dc15a",
+        "filename": "playbooks/keystone-osh-ldap-functional/run.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2018-04-16T18:40:27Z",
+      "side": 1,
+      "message": "You will need to do something similar to what you did with mariaDB since I don\u0027t think there is a pv/pvc there to support the storage of the ldap DB.\n\n         --set volume.enabled\u003dFalse",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 81,
+        "endChar": 38
+      },
+      "revId": "7b017b5b9a946c2fe83072ba99dc24f4a3a0e1a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
