@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f6a8fd7_733be4d0",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1019,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-16T21:14:28Z",
+      "side": 1,
+      "message": "nit: We could bolster this test with another assertion that just performs a self.get() on each idp and just checks to make sure they have the same domain id.",
+      "revId": "85dde3a84fc1e018f679d43b60f75d9ea904c268",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
