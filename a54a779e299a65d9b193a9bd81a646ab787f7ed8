@@ -22,6 +22,30 @@
       "revId": "a54a779e299a65d9b193a9bd81a646ab787f7ed8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_9ca9eae0",
+        "filename": "playbooks/keystone-osh-ldap-functional/run.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-04-16T19:33:31Z",
+      "side": 1,
+      "message": "Thanks Tin",
+      "parentUuid": "9f6a8fd7_c14bff84",
+      "range": {
+        "startLine": 82,
+        "startChar": 16,
+        "endLine": 82,
+        "endChar": 30
+      },
+      "revId": "a54a779e299a65d9b193a9bd81a646ab787f7ed8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
