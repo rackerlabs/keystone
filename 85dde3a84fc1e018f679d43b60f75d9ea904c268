@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "9f6a8fd7_b3565c06",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-16T21:17:13Z",
+      "side": 1,
+      "message": "column*",
+      "range": {
+        "startLine": 9,
+        "startChar": 43,
+        "endLine": 9,
+        "endChar": 49
+      },
+      "revId": "85dde3a84fc1e018f679d43b60f75d9ea904c268",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_d374309c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-16T21:17:13Z",
+      "side": 1,
+      "message": "We could summarize the final bit of this commit message clarifying the end result:\n\n  This patch removes the unique restriction and adds the\n  FK back, ultimately making the relationship between\n  domains and identity provider 1:many.",
+      "revId": "85dde3a84fc1e018f679d43b60f75d9ea904c268",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f6a8fd7_733be4d0",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 4
