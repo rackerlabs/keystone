@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f6a8fd7_d7e17dd2",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-16T20:59:59Z",
+      "side": 1,
+      "message": "nit: who*",
+      "range": {
+        "startLine": 230,
+        "startChar": 23,
+        "endLine": 230,
+        "endChar": 28
+      },
+      "revId": "5864145b71e707b5e61b48235d93411c4fb91279",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_f7e361a3",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-16T20:59:59Z",
+      "side": 1,
+      "message": "nit: \n\nhttp://paste.openstack.org/show/719325/\n\nJust to keep all the requests in the tests going through the API instead of calling into the backends directly.",
+      "revId": "5864145b71e707b5e61b48235d93411c4fb91279",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
