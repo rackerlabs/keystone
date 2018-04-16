@@ -96,13 +96,29 @@
       args:
         chdir: "{{ zuul.project.src_dir }}"
 
+    - name: Debug deploy Keystone
+      shell: |
+        set -xe;
+        make keystone
+        helm install --debug --dry-run ./keystone \
+            --namespace=openstack --name=keystone \
+            --values=./tools/overrides/keystone/ldap_domain_config.yaml \
+            --set images.tags.keystone_db_sync=gerrit-keystone \
+            --set images.tags.keystone_fernet_setup=gerrit-keystone \
+            --set images.tags.keystone_fernet_rotate=gerrit-keystone \
+            --set images.tags.keystone_credential_setup=gerrit-keystone \
+            --set images.tags.keystone_credential_rotate=gerrit-keystone \
+            --set images.tags.keystone_api=gerrit-keystone
+      args:
+        chdir: "{{ zuul.projects['git.openstack.org/openstack/openstack-helm'].src_dir }}"
+
     - name: Deploy Keystone
       shell: |
         set -xe;
         make keystone
         helm install ./keystone \
             --namespace=openstack --name=keystone \
-            # --values=./tools/overrides/keystone/ldap_domain_config.yaml \
+            --values=./tools/overrides/keystone/ldap_domain_config.yaml \
             --set images.tags.keystone_db_sync=gerrit-keystone \
             --set images.tags.keystone_fernet_setup=gerrit-keystone \
             --set images.tags.keystone_fernet_rotate=gerrit-keystone \
