@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f6a8fd7_9394788d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-16T21:28:28Z",
+      "side": 1,
+      "message": "Are we opposed to just calling oslo.policy\u0027s Enforcer.enforce() method here?\n\nI wouldn\u0027t mind seeing what that would look like in favor of call that looks suspiciously like a decorator (because it was previously a decorator).",
+      "revId": "4624bc84d24e2a08ff7598a77a9b0f6a88969e19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_73c5248e",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-16T21:28:28Z",
+      "side": 1,
+      "message": "Same comment here. I\u0027m all for removing the decorator, but I think this is only marginally better because we\u0027re passing the same information to the policy method in a more verbose way. The decorator handled this under the hood.\n\nIf we get rid of a decorator we should try and get rid of it\u0027s semantics in call the oslo.policy API.",
+      "revId": "4624bc84d24e2a08ff7598a77a9b0f6a88969e19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
