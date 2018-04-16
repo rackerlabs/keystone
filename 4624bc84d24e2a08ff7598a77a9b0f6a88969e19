@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9f6a8fd7_764af227",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-04-16T22:13:41Z",
+      "side": 1,
+      "message": "I\u0027d like to, but I thin it is too far.  This is the method that it has to go through before we can call enforce:  http://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/authorization.py#n134\n\nEssentially, we have to build the dictionary that goes to check policy.",
+      "parentUuid": "9f6a8fd7_9394788d",
+      "revId": "4624bc84d24e2a08ff7598a77a9b0f6a88969e19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f6a8fd7_73c5248e",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 22
@@ -30,6 +48,24 @@
       "writtenOn": "2018-04-16T21:28:28Z",
       "side": 1,
       "message": "Same comment here. I\u0027m all for removing the decorator, but I think this is only marginally better because we\u0027re passing the same information to the policy method in a more verbose way. The decorator handled this under the hood.\n\nIf we get rid of a decorator we should try and get rid of it\u0027s semantics in call the oslo.policy API.",
+      "revId": "4624bc84d24e2a08ff7598a77a9b0f6a88969e19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_566a4e80",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-04-16T22:13:41Z",
+      "side": 1,
+      "message": "What the decorator had access to was the name of the function that was called.  While this was concise, it was hard to map that to policy.  We might be able to generate the same information from inside a function, but certainly not from the up the call stack.  So, while we could probably deduce the \"project\" parameter from this call, we could not deduce \"create_project\"",
+      "parentUuid": "9f6a8fd7_73c5248e",
       "revId": "4624bc84d24e2a08ff7598a77a9b0f6a88969e19",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
