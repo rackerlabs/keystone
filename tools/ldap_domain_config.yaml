@@ -1,0 +1,29 @@
+conf:
+  keystone:
+    identity:
+      driver: sql
+      default_domain_id: default
+      domain_specific_drivers_enabled: True
+      domain_configurations_from_database: True
+      domain_config_dir: /etc/keystonedomains
+  ks_domains:
+    ldapdomain:
+      identity:
+        driver: ldap
+      ldap:
+        url: "ldap://ldap.openstack.svc.cluster.local:389"
+        user: "cn=admin,dc=cluster,dc=local"
+        password: password
+        suffix: "dc=cluster,dc=local"
+        user_attribute_ignore: "enabled,email,tenants,default_project_id"
+        query_scope: sub
+        user_enabled_emulation: True
+        user_enabled_emulation_dn: "cn=overwatch,ou=Groups,dc=cluster,dc=local"
+        user_tree_dn: "ou=People,dc=cluster,dc=local"
+        user_enabled_mask: 2
+        user_enabled_default: 512
+        user_name_attribute: cn
+        user_id_attribute: sn
+        user_mail_attribute: mail
+        user_pass_attribute: userPassword
+        group_tree_dn: "ou=Groups,dc=cluster,dc=local"
