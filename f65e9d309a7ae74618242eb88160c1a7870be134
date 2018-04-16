@@ -22,6 +22,30 @@
       "revId": "f65e9d309a7ae74618242eb88160c1a7870be134",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_7740b108",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1988,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-16T20:30:41Z",
+      "side": 1,
+      "message": "++ yeah - I hit this one locally, too.",
+      "parentUuid": "bf659307_6ccc9cba",
+      "range": {
+        "startLine": 1986,
+        "startChar": 0,
+        "endLine": 1988,
+        "endChar": 46
+      },
+      "revId": "f65e9d309a7ae74618242eb88160c1a7870be134",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
