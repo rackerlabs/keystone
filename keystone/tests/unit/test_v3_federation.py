@@ -1901,6 +1901,19 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         self.assertIsNotNone(r.headers.get('X-Subject-Token'))
         self.assertValidMappedUser(r.json['token'])
 
+    def test_issue_the_same_unscoped_token_with_user_deleted(self):
+        r = self._issue_unscoped_token()
+        user_id1 = r.json['token']['user']['id']
+
+        # delete the referenced user, and authenticate again. Keystone should
+        # create another new shadow user.
+        PROVIDERS.identity_api.delete_user(user_id1)
+
+        r = self._issue_unscoped_token()
+        user_id2 = r.json['token']['user']['id']
+
+        self.assertIsNot(user_id2, user_id1)
+
     def test_issue_unscoped_token_disabled_idp(self):
         """Check if authentication works with disabled identity providers.
 
