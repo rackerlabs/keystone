@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f6a8fd7_df3bbd35",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1164,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-17T15:30:31Z",
+      "side": 1,
+      "message": "Since these two new additions are specific to invalidating the shadow user cache, I would be opposed to just putting them into their own private method and then just calling that with `user_id` at line 1160.\n\n  def _remove_user_from_shadow_user_cache(self, user_id):\n\nor \n\n  def _invalidate_cache_for_shadow_user(self, user_id):",
+      "revId": "dd0fb07d23d765632664e1b2ab8a4ccf7a7770c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_5f67ad4e",
+        "filename": "releasenotes/notes/bug-1760205-87dedd6d8812db3f.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-17T15:30:31Z",
+      "side": 1,
+      "message": "This might be better put in the \u0027other\u0027 section of the release notes.",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 12,
+        "endChar": 9
+      },
+      "revId": "dd0fb07d23d765632664e1b2ab8a4ccf7a7770c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
