@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f6a8fd7_884aff24",
+        "filename": "requirements.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2018-04-17T05:46:51Z",
+      "side": 1,
+      "message": "this change is due to a rebase issue. It is already merged in master [0]\n\n[0] https://github.com/openstack/keystone/commit/7c4c6a5fb3e77723f3866c99fdf0825ba7cc0c5c",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 81
+      },
+      "revId": "77d4b60924d2f301def3582d91967b9f46728dee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_08602fa5",
+        "filename": "tools/ldap_domain_config.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2018-04-17T05:46:51Z",
+      "side": 1,
+      "message": "This file is added here for testing while the actual fix awaits review and merge [0]\n\n[0] https://review.openstack.org/#/c/561788/",
+      "revId": "77d4b60924d2f301def3582d91967b9f46728dee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
