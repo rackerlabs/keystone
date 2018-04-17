@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f6a8fd7_339a2d14",
+        "filename": "doc/source/install/keystone-install-obs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-04-17T21:33:05Z",
+      "side": 1,
+      "message": "This should be:\n\n\"https://docs.openstack.org/install-guide/environment-packages-obs.html#finalize-the-installation\"\n\nshouldn\u0027t it?",
+      "range": {
+        "startLine": 13,
+        "startChar": 4,
+        "endLine": 13,
+        "endChar": 100
+      },
+      "revId": "08b58f85a2bfd0c4739fcdfabba26d4955e5b6f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_539241f8",
+        "filename": "doc/source/install/keystone-install-ubuntu.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-04-17T21:33:05Z",
+      "side": 1,
+      "message": "\"https://docs.openstack.org/install-guide/environment-packages-ubuntu.html#finalize-the-installation\"",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 103
+      },
+      "revId": "08b58f85a2bfd0c4739fcdfabba26d4955e5b6f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
