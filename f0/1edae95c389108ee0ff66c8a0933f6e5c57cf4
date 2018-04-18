@@ -1,0 +1,9 @@
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Code-Review+2: Kristi Nikolla <knikolla@bu.edu>
+Workflow+1: Kristi Nikolla <knikolla@bu.edu>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 18 Apr 2018 17:18:25 +0000
+Reviewed-on: https://review.openstack.org/552568
+Project: openstack/keystone
+Branch: refs/heads/master
