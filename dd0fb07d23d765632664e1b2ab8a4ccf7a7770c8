@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9f6a8fd7_543a2234",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1164,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-18T06:29:20Z",
+      "side": 1,
+      "message": "it\u0027s a little hard. L1150-L1153(get fed users) should be done before L1155(delete user), but L1160-L1164(invalidate the fed user cache) should be done after L1155. Any suggestion to do it?",
+      "parentUuid": "9f6a8fd7_df3bbd35",
+      "revId": "dd0fb07d23d765632664e1b2ab8a4ccf7a7770c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f6a8fd7_5f67ad4e",
         "filename": "releasenotes/notes/bug-1760205-87dedd6d8812db3f.yaml",
         "patchSetId": 1
@@ -30,6 +48,30 @@
       "writtenOn": "2018-04-17T15:30:31Z",
       "side": 1,
       "message": "This might be better put in the \u0027other\u0027 section of the release notes.",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 12,
+        "endChar": 9
+      },
+      "revId": "dd0fb07d23d765632664e1b2ab8a4ccf7a7770c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_f44fb6ba",
+        "filename": "releasenotes/notes/bug-1760205-87dedd6d8812db3f.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-18T06:29:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_5f67ad4e",
       "range": {
         "startLine": 9,
         "startChar": 4,
