@@ -16,11 +16,41 @@ from six.moves import http_client
 import uuid
 
 from keystone.common import provider_api
+from keystone.common.validation import validators
+import keystone.conf
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
 from keystone.tests.unit import utils as test_utils
 
+CONF = keystone.conf.CONF
 PROVIDERS = provider_api.ProviderAPIs
+
+
+class LimitModelTestCase(test_v3.RestfulTestCase):
+
+    def test_get_limit_model_response_schema(self):
+        schema = {
+            'type': 'object',
+            'properties': {
+                'model': {'type': 'string'},
+            },
+            'required': ['model'],
+            'additionalProperties': False,
+        }
+        validator = validators.SchemaValidator(schema)
+        response = self.get('/limit_model')
+        validator.validate(response.json_body)
+
+    def test_get_limit_model_returns_default_model(self):
+        response = self.get('/limit_model')
+        model_name = response.json_body['model']
+        self.assertEqual(CONF.unified_limit.enforcement_model, model_name)
+
+    def test_get_limit_model_without_token_fails(self):
+        self.get(
+            '/limit_model', noauth=True,
+            expected_status=http_client.UNAUTHORIZED
+        )
 
 
 class RegisteredLimitsTestCase(test_v3.RestfulTestCase):

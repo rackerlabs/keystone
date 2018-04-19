@@ -64,3 +64,11 @@ class Routers(wsgi.RoutersBase):
                 'limit_id':
                     json_home.Parameters.LIMIT_ID}
         )
+
+        self._add_resource(
+            mapper, controllers.LimitV3(),
+            path='/limit_model',
+            get_head_action='get_limit_model',
+            status=json_home.Status.EXPERIMENTAL,
+            rel=json_home.build_v3_resource_relation('limit_model')
+        )
