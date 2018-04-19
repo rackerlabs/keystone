@@ -56,6 +56,10 @@ class Manager(manager.Manager):
             raise exception.ValidationError(attribute='project_id',
                                             target=target)
 
+    def get_model(self):
+        """Return the name of the enforcement model from configuration."""
+        return CONF.unified_limit.enforcement_model
+
     def create_registered_limits(self, registered_limits):
         for registered_limit in registered_limits:
             self._assert_resource_exist(registered_limit, 'registered_limit')

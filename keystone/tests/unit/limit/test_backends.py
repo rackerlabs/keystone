@@ -370,6 +370,9 @@ class RegisteredLimitTests(object):
 
 class LimitTests(object):
 
+    def test_default_enforcement_model_is_flat(self):
+        self.assertEqual('flat', PROVIDERS.unified_limit_api.get_model())
+
     def test_create_limit(self):
         # create one, return all limits
         limit_1 = unit.new_limit_ref(
