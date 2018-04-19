@@ -16,11 +16,73 @@ from six.moves import http_client
 import uuid
 
 from keystone.common import provider_api
+from keystone.common.validation import validators
+import keystone.conf
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
 from keystone.tests.unit import utils as test_utils
 
+CONF = keystone.conf.CONF
 PROVIDERS = provider_api.ProviderAPIs
+
+
+class LimitModelTestCase(test_v3.RestfulTestCase):
+
+    def test_get_limit_model_response_schema(self):
+        schema = {
+            'type': 'object',
+            'properties': {
+                'model': {
+                    'type': 'object',
+                    'properties': {
+                        'flat': {
+                            'type': 'object',
+                            'properties': {
+                                'description': {'type': 'string'},
+                                'link': {'type': 'string'}
+                            },
+                            'required': ['description', 'link'],
+                            'additionalProperties': False
+                        },
+                        'required': ['flat'],
+                        'additionalProperties': False
+                    },
+                },
+            },
+            'required': ['model'],
+            'additionalProperties': False,
+        }
+        validator = validators.SchemaValidator(schema)
+        response = self.get('/limits/model')
+        validator.validate(response.json_body)
+
+    def test_head_limit_model(self):
+        self.head('/limits/model', expected_status=http_client.OK)
+
+    def test_get_limit_model_returns_default_model(self):
+        response = self.get('/limits/model')
+        model = response.json_body['model']
+        expected = {
+            'flat': {
+                'link': ('https://docs.openstack.org/keystone/latest/admin/'
+                         'identity-unified-limits.html#flat'),
+                'description': ('Limit enforcement and validation does not '
+                                'take project hierarchy into consideration.')
+            }
+        }
+        self.assertEqual(expected, model)
+
+    def test_get_limit_model_without_token_fails(self):
+        self.get(
+            '/limits/model', noauth=True,
+            expected_status=http_client.UNAUTHORIZED
+        )
+
+    def test_head_limit_model_without_token_fails(self):
+        self.head(
+            '/limits/model', noauth=True,
+            expected_status=http_client.UNAUTHORIZED
+        )
 
 
 class RegisteredLimitsTestCase(test_v3.RestfulTestCase):
