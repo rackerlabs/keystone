@@ -37,6 +37,9 @@ identity:create_limits                                     POST /v3/limits
 identity:update_limits                                     PUT /v3/limits
 identity:delete_limit                                      DELETE /v3/limits/{limit_id}
 
+identity:get_limit_model                                   GET /v3/limit_model
+                                                           HEAD /v3/limit_model
+
 identity:get_domain                                        GET /v3/domains/{domain_id}
 identity:list_domains                                      GET /v3/domains
 identity:create_domain                                     POST /v3/domains
