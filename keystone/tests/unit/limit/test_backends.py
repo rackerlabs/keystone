@@ -370,6 +370,21 @@ class RegisteredLimitTests(object):
 
 class LimitTests(object):
 
+    def test_default_enforcement_model_is_flat(self):
+        expected = {
+            'flat': {
+                'description': ('Limit enforcement and validation does not '
+                                'take project hierarchy into consideration.')
+            }
+        }
+        self.assertEqual(expected, PROVIDERS.unified_limit_api.get_model())
+
+    def test_registering_unsupported_enforcement_model_fails(self):
+        self.assertRaises(
+            ValueError, self.config_fixture.config, group='unified_limit',
+            enforcement_model=uuid.uuid4().hex
+        )
+
     def test_create_limit(self):
         # create one, return all limits
         limit_1 = unit.new_limit_ref(
