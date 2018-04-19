@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f6a8fd7_bb74b369",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 996,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-04-19T00:36:18Z",
+      "side": 0,
+      "message": "maybe you could split this patch into two? First one, you add the changes in the SQL model and add a wip decorator to this test (so it is expected it will fail). Second one you would rewrite the test (like you did here) and remove the wip decorator.",
+      "range": {
+        "startLine": 996,
+        "startChar": 8,
+        "endLine": 996,
+        "endChar": 51
+      },
+      "revId": "780f9710fa0945a4d5e23aaae1c2505e94441c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
