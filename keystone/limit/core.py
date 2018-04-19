@@ -35,6 +35,15 @@ class Manager(manager.Manager):
         unified_limit_driver = CONF.unified_limit.driver
         super(Manager, self).__init__(unified_limit_driver)
 
+        self.model_map = {
+            'flat': {
+                'link': ('https://docs.openstack.org/keystone/latest/admin/'
+                         'identity-unified-limits.html#flat'),
+                'description': ('Limit enforcement and validation does not '
+                                'take project hierarchy into consideration.')
+            }
+        }
+
     def _assert_resource_exist(self, unified_limit, target):
         try:
             service_id = unified_limit.get('service_id')
@@ -55,6 +64,14 @@ class Manager(manager.Manager):
         except exception.ProjectNotFound:
             raise exception.ValidationError(attribute='project_id',
                                             target=target)
+
+    def get_model(self):
+        """Returns information of the configured enforcement model."""
+        return {
+            CONF.unified_limit.enforcement_model: self.model_map[
+                CONF.unified_limit.enforcement_model
+            ]
+        }
 
     def create_registered_limits(self, registered_limits):
         for registered_limit in registered_limits:
