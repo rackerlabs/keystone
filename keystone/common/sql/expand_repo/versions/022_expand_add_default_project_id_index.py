@@ -17,5 +17,12 @@ def upgrade(migrate_engine):
     meta = sql.MetaData()
     meta.bind = migrate_engine
 
-    user = sql.Table('user', meta, autoload=True)
-    sql.Index('ix_default_project_id', user.c.default_project_id).create()
+    index_found = False
+    indexes = sql.inspect(migrate_engine).get_indexes('user')
+    for index in indexes:
+        if index['name'] == 'ix_default_project_id':
+            index_found = True
+
+    if not index_found:
+        user = sql.Table('user', meta, autoload=True)
+        sql.Index('ix_default_project_id', user.c.default_project_id).create()

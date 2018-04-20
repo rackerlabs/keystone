@@ -1,0 +1,5 @@
+---
+fixes:
+  - Fixed migration 22 to be idempotent.  When this migration is backported,
+    and keystone is upgraded, it attempts to create a default project index
+    again, resulting in migration failures.
