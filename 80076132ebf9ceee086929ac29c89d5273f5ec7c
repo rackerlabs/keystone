@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f6a8fd7_c56e2f2e",
+        "filename": "keystone/common/sql/expand_repo/versions/022_expand_add_default_project_id_index.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-20T20:32:13Z",
+      "side": 1,
+      "message": "I\u0027ll have to double check with Morgan, but I\u0027m not sure we can make a change like this.\n\nOnce a migration is landed, it\u0027s really hard to make modifications to it. Mainly because once a deployment moves past version 22, they\u0027ll never rerun the script short of recreating the database (even though that might not matter in this particular case).",
+      "revId": "80076132ebf9ceee086929ac29c89d5273f5ec7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
