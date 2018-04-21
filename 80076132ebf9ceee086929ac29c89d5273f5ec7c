@@ -16,6 +16,24 @@
       "revId": "80076132ebf9ceee086929ac29c89d5273f5ec7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_b1149945",
+        "filename": "keystone/common/sql/expand_repo/versions/022_expand_add_default_project_id_index.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-04-21T00:15:40Z",
+      "side": 1,
+      "message": "How did this get broken with Triple O. It sounds like somehow this index was already created in Triple O (undercloud). I\u0027m not sure how that occurred, as this is the first I\u0027ve heard of this issue. I am simply curious what is so different about Triple O deployments that has run into this issue (compared with... everyone else)\n\n\n\u003d\u003d If this is something that actually needs new functionality in the migration \u003d\u003d\n\nThe correct mechanism is to create a new migration (new top number) that does this work and it needs to be idempotent -- IF there is a case where clouds may not have the index when past migration 22.\n\nWe need to also add the same migration (duplicate) in one of the place-holder slots.\n\nWhen backporting happens (Queens), just the placeholder is backported. *IF* it is backported further back, then the placeholder for the previous release must also be created (Queens) and just the earliest placeholder is backported to Pike. \n\nIs this simply because in some cases this index already exists -- so deployements all have this index -- but some error on this upgrade.",
+      "parentUuid": "9f6a8fd7_c56e2f2e",
+      "revId": "80076132ebf9ceee086929ac29c89d5273f5ec7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
