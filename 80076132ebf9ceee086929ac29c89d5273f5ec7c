@@ -34,6 +34,24 @@
       "revId": "80076132ebf9ceee086929ac29c89d5273f5ec7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_0f30a7e7",
+        "filename": "keystone/common/sql/expand_repo/versions/022_expand_add_default_project_id_index.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 9914
+      },
+      "writtenOn": "2018-04-23T15:20:22Z",
+      "side": 1,
+      "message": "The reason the problem happens here is because in the rhos downstream build (OSP 10 and 11) , we backported the fix for\nhttps://bugzilla.redhat.com/show_bug.cgi?id\u003d1541142, which includes migration 22.  In the backport, the migration was placed in the placeholder spots (5 and 17 iirc).\n\nAfter that happened and the system was migrated from OSP 10-\u003e11-\u003e12 in migration testing, and the script was rerun.  Not being idempotent, the upgrade broke.\n\nWe have not seen this elsewhere yet because the backport was only done downstream in RHOS.  This admittedly was an oversight.  The backport should have been submitted upstream first.  If we choose to do that -- and we\u0027re deciding if it makes sense to do so -- then the fact that the migration is not idempotent will be an issue everywhere (not just in downstream RHOS tripleo)\n\nAs for changing the migration after the fact, this should not be an issue for instances where the script has already run, this should not be an issue because we\u0027re not changing what happens.  It really should be enforced that all migration scripts be idempotent in case they are backported later.",
+      "parentUuid": "9f6a8fd7_b1149945",
+      "revId": "80076132ebf9ceee086929ac29c89d5273f5ec7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
