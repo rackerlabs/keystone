@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f6a8fd7_2a6b19b7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-23T15:41:27Z",
+      "side": 1,
+      "message": "After thinking about this, is there ever a case where we want to have both of these bits defined for each provider? Hypothetically speaking, if we had a JWT token provider and Ferent token provider, and someone wanted to switch from one to the other, would it make it easier to supply both at the same time?\n\nThis is probably building on a lot of assumptions, but if someone wanted to provide a smooth migration [0] from one to the other, they might need to know the location of both.\n\n[0] https://www.lbragstad.com/blog/migrating-token-formats-without-downtime",
+      "revId": "1909555e727b1d82e770ac5a6c402adb632529dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
