@@ -46,6 +46,30 @@
       "revId": "2ea55afb18195eba9b76680359bdc0f32ed34755",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_e41ebab9",
+        "filename": "keystone/common/policies/limit.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-23T14:50:43Z",
+      "side": 1,
+      "message": "So you wouldn\u0027t be opposed to just having it be:\n\n  GET /v3/limit/model\n\nInstead of what I have?",
+      "parentUuid": "9f6a8fd7_e36a46b1",
+      "range": {
+        "startLine": 23,
+        "startChar": 29,
+        "endLine": 23,
+        "endChar": 46
+      },
+      "revId": "2ea55afb18195eba9b76680359bdc0f32ed34755",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
