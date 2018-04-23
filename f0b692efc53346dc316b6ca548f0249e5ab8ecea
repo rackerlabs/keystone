@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f6a8fd7_cff62f64",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-23T15:35:30Z",
+      "side": 1,
+      "message": "Was this discovered by some sort of LDAP functional testing? If so, this sounds like a bug in keystone that we should fix.",
+      "revId": "f0b692efc53346dc316b6ca548f0249e5ab8ecea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_4fb0df8a",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-23T15:35:30Z",
+      "side": 1,
+      "message": "It\u0027s not apparent that this needs to be in the try/except. I would expect that we only get SERVER_DOWN exceptions when we call the func we\u0027re wrapping, right?",
+      "range": {
+        "startLine": 634,
+        "startChar": 16,
+        "endLine": 634,
+        "endChar": 41
+      },
+      "revId": "f0b692efc53346dc316b6ca548f0249e5ab8ecea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_2f61eb05",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 637,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-23T15:35:30Z",
+      "side": 1,
+      "message": "We should pass this as a kwargs since the method signature defines it at a kwarg. That way if another kwargs is added to the clean up method, it is less likely to break existing callers.",
+      "range": {
+        "startLine": 637,
+        "startChar": 51,
+        "endLine": 637,
+        "endChar": 62
+      },
+      "revId": "f0b692efc53346dc316b6ca548f0249e5ab8ecea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_4f753fca",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 637,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-23T15:35:30Z",
+      "side": 1,
+      "message": "nit:\n\n  def _cleanup_connection(\n\nOnly because it makes the name more descriptive of why we\u0027re executing the code instead of just what we\u0027re doing.",
+      "range": {
+        "startLine": 637,
+        "startChar": 22,
+        "endLine": 637,
+        "endChar": 43
+      },
+      "revId": "f0b692efc53346dc316b6ca548f0249e5ab8ecea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_8f3d97de",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 747,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-23T15:35:30Z",
+      "side": 1,
+      "message": "Is it possible for this to throw an exception? Maybe we should only log the warning once it\u0027s successfully cleaned things up.",
+      "range": {
+        "startLine": 747,
+        "startChar": 8,
+        "endLine": 747,
+        "endChar": 48
+      },
+      "revId": "f0b692efc53346dc316b6ca548f0249e5ab8ecea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_ef2bf391",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 798,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-23T15:35:30Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "range": {
+        "startLine": 798,
+        "startChar": 51,
+        "endLine": 798,
+        "endChar": 62
+      },
+      "revId": "f0b692efc53346dc316b6ca548f0249e5ab8ecea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_af1bbb7e",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 827,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-23T15:35:30Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "range": {
+        "startLine": 827,
+        "startChar": 47,
+        "endLine": 827,
+        "endChar": 58
+      },
+      "revId": "f0b692efc53346dc316b6ca548f0249e5ab8ecea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
