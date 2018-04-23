@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f6a8fd7_44dbe67a",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1409,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-23T14:36:37Z",
+      "side": 1,
+      "message": "There aren\u0027t any assertions in this test that verify this is doing what it should outside of the the mock. I think need to amend this test or add other test cases that assert:\n\n  - a user and group exist in the mapping backend\n  - call MappingPurge.main() with --type user\n  - assert the user is gone\n  - assert the group still exists\n\nAnother possible permutation would be the same as above but calling MappingPurge.main() with --type group, assert the group is gone and the user exists.",
+      "range": {
+        "startLine": 1409,
+        "startChar": 8,
+        "endLine": 1409,
+        "endChar": 31
+      },
+      "revId": "920ec7af2b5feb5cc1fb5f805fd7f3713a578fba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
