@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9f6a8fd7_0f317da3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-04-23T22:38:50Z",
+      "side": 1,
+      "message": "Our cloud was seeing issues with this, opening a bug is probably the correct route for this.",
+      "parentUuid": "9f6a8fd7_cff62f64",
+      "revId": "f0b692efc53346dc316b6ca548f0249e5ab8ecea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f6a8fd7_4fb0df8a",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 4
@@ -99,6 +117,30 @@
       "writtenOn": "2018-04-23T15:35:30Z",
       "side": 1,
       "message": "Is it possible for this to throw an exception? Maybe we should only log the warning once it\u0027s successfully cleaned things up.",
+      "range": {
+        "startLine": 747,
+        "startChar": 8,
+        "endLine": 747,
+        "endChar": 48
+      },
+      "revId": "f0b692efc53346dc316b6ca548f0249e5ab8ecea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_4f1a1517",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 747,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-04-23T22:38:50Z",
+      "side": 1,
+      "message": "I would be fine with throwing an exception as long as keystone can fetch a new connection from the pool and continue on its merry way.",
+      "parentUuid": "9f6a8fd7_8f3d97de",
       "range": {
         "startLine": 747,
         "startChar": 8,
