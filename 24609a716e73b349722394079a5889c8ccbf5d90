@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "9f6a8fd7_8cc29233",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 22623
+      },
+      "writtenOn": "2018-04-23T03:22:05Z",
+      "side": 1,
+      "message": "There is currently no functionality in the templated format to reload the catalog on-change. Could we hold back on implementing that after this commit merges?\n\nFeels like it\u0027s a neat feature, but maybe not required to get the new filesystem format implemented.",
+      "parentUuid": "df7087c5_ad0d8ce9",
+      "range": {
+        "startLine": 91,
+        "startChar": 8,
+        "endLine": 91,
+        "endChar": 32
+      },
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_f2612513",
         "filename": "keystone/catalog/backends/filesystem.py",
         "patchSetId": 11
@@ -467,6 +491,30 @@
       "writtenOn": "2018-03-19T20:57:56Z",
       "side": 1,
       "message": "Do we want to be generic here? `filesystem` could mean ``templated`` or ``yaml``, right?\n\nFor example - we could achieve the following with only two configuration options that would allow us to deprecate `template_file\u0027.\n\n  [catalog]\n  driver \u003d sql\n  catalog_file \u003d None  # because it\u0027s not used with sql\n\nor \n\n  [catalog]\n  driver \u003d templated\n  catalog_file \u003d default_catalog.templates\n\nand finally:\n\n  [catalog]\n  driver \u003d yaml\n  catalog_file \u003d catalog.yaml",
+      "range": {
+        "startLine": 31,
+        "startChar": 37,
+        "endLine": 31,
+        "endChar": 47
+      },
+      "revId": "24609a716e73b349722394079a5889c8ccbf5d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_acbf56a8",
+        "filename": "keystone/conf/catalog.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 22623
+      },
+      "writtenOn": "2018-04-23T03:22:05Z",
+      "side": 1,
+      "message": "Yea - I think this is the preferred approach.",
+      "parentUuid": "df7087c5_f4659546",
       "range": {
         "startLine": 31,
         "startChar": 37,
