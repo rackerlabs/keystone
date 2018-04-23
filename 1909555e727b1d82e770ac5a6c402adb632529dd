@@ -16,6 +16,24 @@
       "revId": "1909555e727b1d82e770ac5a6c402adb632529dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_2f66c1c2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-04-23T22:32:34Z",
+      "side": 1,
+      "message": "From your \u0027hybrid_provider\u0027 I can see that use case. They would indeed need to have both locations defined so this wouldn\u0027t work then.\n\nI\u0027m wondering if we don\u0027t use this, then we may need to duplicate some of the fernet implementation then if we support that route.",
+      "parentUuid": "9f6a8fd7_2a6b19b7",
+      "revId": "1909555e727b1d82e770ac5a6c402adb632529dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
