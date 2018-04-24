@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f6a8fd7_1b7529fa",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-04-24T18:41:07Z",
+      "side": 1,
+      "message": "could we make these literals or similar to stand out like dolph\u0027s blog does?",
+      "range": {
+        "startLine": 37,
+        "startChar": 26,
+        "endLine": 37,
+        "endChar": 29
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_7b53056c",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-04-24T18:41:07Z",
+      "side": 1,
+      "message": "This heading renders a bit weird, do we need it?",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 5
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_1b4e89c0",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-04-24T18:41:07Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 5
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_7b01c537",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-04-24T18:41:07Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 112,
+        "startChar": 0,
+        "endLine": 113,
+        "endChar": 10
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_9bb6198a",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-04-24T18:41:07Z",
+      "side": 1,
+      "message": "Could we break this up with literals/something like dolphs?",
+      "range": {
+        "startLine": 130,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 17
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_fb9ab511",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-04-24T18:41:07Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 142,
+        "startChar": 0,
+        "endLine": 143,
+        "endChar": 4
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_1b20c9f6",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-04-24T18:41:07Z",
+      "side": 1,
+      "message": "reasonable*",
+      "range": {
+        "startLine": 159,
+        "startChar": 13,
+        "endLine": 159,
+        "endChar": 22
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
