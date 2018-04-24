@@ -52,6 +52,24 @@
       "revId": "326acda8782594bddc59e031a7fd5da0790dc83d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_58317459",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-24T08:47:20Z",
+      "side": 1,
+      "message": "If use CASCADE, we\u0027ll add a new db migration script for it. I\u0027m not sure whether it\u0027s worth to do that base on the case that limit and project are in different resource backend.",
+      "parentUuid": "bf659307_2991249a",
+      "revId": "326acda8782594bddc59e031a7fd5da0790dc83d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
