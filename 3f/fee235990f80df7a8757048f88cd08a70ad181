@@ -1,0 +1,13 @@
+Code-Review+1: Jean-Philippe Evrard <jean-philippe@evrard.me>
+Code-Review+1: David Wilde <david.wilde@rackspace.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+1: wangxiyuan <wangxiyuan@huawei.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Workflow+1: Colleen Murphy <colleen@gazlene.net>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 24 Apr 2018 08:50:28 +0000
+Reviewed-on: https://review.openstack.org/521249
+Project: openstack/keystone
+Branch: refs/heads/master
