@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f6a8fd7_010ce4a2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T14:23:17Z",
+      "side": 1,
+      "message": "We can clarify this relationship further in our documentation: \n\nhttps://developer.openstack.org/api-ref/identity/v3-ext/index.html#id260",
+      "revId": "436d59ffe541fdb9da71a5678b727907ff65b525",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_81a0f491",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 996,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T14:23:17Z",
+      "side": 1,
+      "message": "nit: to",
+      "range": {
+        "startLine": 996,
+        "startChar": 30,
+        "endLine": 996,
+        "endChar": 32
+      },
+      "revId": "436d59ffe541fdb9da71a5678b727907ff65b525",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
