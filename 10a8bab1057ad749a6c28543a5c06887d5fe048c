@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9f6a8fd7_0aa4f4b8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "How I set Dolph as the author?",
+      "parentUuid": "9f6a8fd7_f665ecb5",
+      "range": {
+        "startLine": 2,
+        "startChar": 12,
+        "endLine": 2,
+        "endChar": 51
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f6a8fd7_1b2d29a7",
         "filename": "doc/source/contributor/service-catalog.rst",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-04-24T19:02:37Z",
       "side": 1,
       "message": "Tenant in the keystone v2 sense? Or tenant in the nova sense? Either way we can\u0027t really use the word tenant any more.",
+      "range": {
+        "startLine": 20,
+        "startChar": 44,
+        "endLine": 20,
+        "endChar": 61
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_ca827c00",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_1b2d29a7",
       "range": {
         "startLine": 20,
         "startChar": 44,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "9f6a8fd7_aaa06891",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_1b7529fa",
+      "range": {
+        "startLine": 37,
+        "startChar": 26,
+        "endLine": 37,
+        "endChar": 29
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f6a8fd7_b60a141d",
         "filename": "doc/source/contributor/service-catalog.rst",
         "patchSetId": 1
@@ -82,6 +154,30 @@
       "writtenOn": "2018-04-24T19:02:37Z",
       "side": 1,
       "message": "Using this word gives the impression that this is personal commentary. These are official docs, not a blog post, so leave it out.",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 9
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_0abb94c4",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_b60a141d",
       "range": {
         "startLine": 39,
         "startChar": 0,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "9f6a8fd7_6aa6d0ad",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_d62a287d",
+      "range": {
+        "startLine": 54,
+        "startChar": 60,
+        "endLine": 54,
+        "endChar": 65
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f6a8fd7_7b53056c",
         "filename": "doc/source/contributor/service-catalog.rst",
         "patchSetId": 1
@@ -128,6 +248,30 @@
       "writtenOn": "2018-04-24T18:41:07Z",
       "side": 1,
       "message": "This heading renders a bit weird, do we need it?",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 5
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_aad868ee",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_7b53056c",
       "range": {
         "startLine": 76,
         "startChar": 0,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "9f6a8fd7_0af39475",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_1b4e89c0",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 5
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f6a8fd7_56437842",
         "filename": "doc/source/contributor/service-catalog.rst",
         "patchSetId": 1
@@ -174,6 +342,30 @@
       "writtenOn": "2018-04-24T19:02:37Z",
       "side": 1,
       "message": "This is incredibly outdated",
+      "range": {
+        "startLine": 90,
+        "startChar": 67,
+        "endLine": 92,
+        "endChar": 61
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_8acec460",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_56437842",
       "range": {
         "startLine": 90,
         "startChar": 67,
@@ -203,6 +395,24 @@
     },
     {
       "key": {
+        "uuid": "9f6a8fd7_aaf7088b",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_f67bac88",
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f6a8fd7_b671b4aa",
         "filename": "doc/source/contributor/service-catalog.rst",
         "patchSetId": 1
@@ -214,6 +424,30 @@
       "writtenOn": "2018-04-24T19:02:37Z",
       "side": 1,
       "message": "This reads funny, should it be \u0027represents\u0027?",
+      "range": {
+        "startLine": 110,
+        "startChar": 11,
+        "endLine": 110,
+        "endChar": 20
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_4af2ec9b",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_b671b4aa",
       "range": {
         "startLine": 110,
         "startChar": 11,
@@ -249,6 +483,30 @@
     },
     {
       "key": {
+        "uuid": "9f6a8fd7_4ae3cca4",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_7b01c537",
+      "range": {
+        "startLine": 112,
+        "startChar": 0,
+        "endLine": 113,
+        "endChar": 10
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f6a8fd7_96a35000",
         "filename": "doc/source/contributor/service-catalog.rst",
         "patchSetId": 1
@@ -260,6 +518,30 @@
       "writtenOn": "2018-04-24T19:02:37Z",
       "side": 1,
       "message": "Or service users?",
+      "range": {
+        "startLine": 121,
+        "startChar": 55,
+        "endLine": 121,
+        "endChar": 64
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_0a2e34fa",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_96a35000",
       "range": {
         "startLine": 121,
         "startChar": 55,
@@ -295,6 +577,30 @@
     },
     {
       "key": {
+        "uuid": "9f6a8fd7_ca335c61",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "That\u0027s true, I can omit this detail.",
+      "parentUuid": "9f6a8fd7_36b2844a",
+      "range": {
+        "startLine": 127,
+        "startChar": 0,
+        "endLine": 127,
+        "endChar": 65
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f6a8fd7_9bb6198a",
         "filename": "doc/source/contributor/service-catalog.rst",
         "patchSetId": 1
@@ -306,6 +612,30 @@
       "writtenOn": "2018-04-24T18:41:07Z",
       "side": 1,
       "message": "Could we break this up with literals/something like dolphs?",
+      "range": {
+        "startLine": 130,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 17
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_aa25c80a",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_9bb6198a",
       "range": {
         "startLine": 130,
         "startChar": 0,
@@ -341,6 +671,30 @@
     },
     {
       "key": {
+        "uuid": "9f6a8fd7_6aded0da",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_fb9ab511",
+      "range": {
+        "startLine": 142,
+        "startChar": 0,
+        "endLine": 143,
+        "endChar": 4
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f6a8fd7_1690a094",
         "filename": "doc/source/contributor/service-catalog.rst",
         "patchSetId": 1
@@ -352,6 +706,30 @@
       "writtenOn": "2018-04-24T19:02:37Z",
       "side": 1,
       "message": "5000",
+      "range": {
+        "startLine": 148,
+        "startChar": 31,
+        "endLine": 148,
+        "endChar": 36
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_aa6aa816",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_1690a094",
       "range": {
         "startLine": 148,
         "startChar": 31,
@@ -410,6 +788,54 @@
     },
     {
       "key": {
+        "uuid": "9f6a8fd7_ea8420d5",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_f6ee4c20",
+      "range": {
+        "startLine": 150,
+        "startChar": 49,
+        "endLine": 150,
+        "endChar": 53
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_8a6fa429",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_368b6468",
+      "range": {
+        "startLine": 150,
+        "startChar": 43,
+        "endLine": 150,
+        "endChar": 48
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f6a8fd7_1b20c9f6",
         "filename": "doc/source/contributor/service-catalog.rst",
         "patchSetId": 1
@@ -421,6 +847,30 @@
       "writtenOn": "2018-04-24T18:41:07Z",
       "side": 1,
       "message": "reasonable*",
+      "range": {
+        "startLine": 159,
+        "startChar": 13,
+        "endLine": 159,
+        "endChar": 22
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_4a750cf9",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_1b20c9f6",
       "range": {
         "startLine": 159,
         "startChar": 13,
@@ -456,6 +906,30 @@
     },
     {
       "key": {
+        "uuid": "9f6a8fd7_6a701009",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_b6f454f2",
+      "range": {
+        "startLine": 166,
+        "startChar": 45,
+        "endLine": 166,
+        "endChar": 51
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f6a8fd7_76da3c78",
         "filename": "doc/source/contributor/service-catalog.rst",
         "patchSetId": 1
@@ -467,6 +941,30 @@
       "writtenOn": "2018-04-24T19:02:37Z",
       "side": 1,
       "message": "project ID?",
+      "range": {
+        "startLine": 169,
+        "startChar": 55,
+        "endLine": 169,
+        "endChar": 62
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_0a65d445",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_76da3c78",
       "range": {
         "startLine": 169,
         "startChar": 55,
@@ -502,6 +1000,30 @@
     },
     {
       "key": {
+        "uuid": "9f6a8fd7_2acd3830",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_76c31c8a",
+      "range": {
+        "startLine": 170,
+        "startChar": 8,
+        "endLine": 170,
+        "endChar": 50
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f6a8fd7_963fd085",
         "filename": "doc/source/contributor/service-catalog.rst",
         "patchSetId": 1
@@ -513,6 +1035,30 @@
       "writtenOn": "2018-04-24T19:02:37Z",
       "side": 1,
       "message": "project",
+      "range": {
+        "startLine": 173,
+        "startChar": 8,
+        "endLine": 173,
+        "endChar": 14
+      },
+      "revId": "10a8bab1057ad749a6c28543a5c06887d5fe048c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_0acab419",
+        "filename": "doc/source/contributor/service-catalog.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T20:28:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_963fd085",
       "range": {
         "startLine": 173,
         "startChar": 8,
