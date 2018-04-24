@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9f6a8fd7_a1e8987b",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1164,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-24T14:27:44Z",
+      "side": 1,
+      "message": "Oh - sure. I see what you mean. This is probably fine for now then. I was trying to think of a way to group that code such that it was clearer to see what the code at line 1150 - 1153 was doing/used for and associate it closer to where it was used (for cache invalidation).",
+      "parentUuid": "9f6a8fd7_543a2234",
+      "revId": "dd0fb07d23d765632664e1b2ab8a4ccf7a7770c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f6a8fd7_5f67ad4e",
         "filename": "releasenotes/notes/bug-1760205-87dedd6d8812db3f.yaml",
         "patchSetId": 1
