@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9f6a8fd7_34efd7e9",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-25T03:39:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_41a5fc45",
+      "range": {
+        "startLine": 99,
+        "startChar": 17,
+        "endLine": 99,
+        "endChar": 21
+      },
+      "revId": "1b38cc42663cbdec0c82083839854e3ac5914a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f6a8fd7_e401be06",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 2
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "9f6a8fd7_74978f49",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1913,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-25T03:39:44Z",
+      "side": 1,
+      "message": "sure.",
+      "parentUuid": "9f6a8fd7_e401be06",
+      "revId": "1b38cc42663cbdec0c82083839854e3ac5914a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f6a8fd7_01c4e4f3",
         "filename": "releasenotes/notes/bug-1760205-87dedd6d8812db3f.yaml",
         "patchSetId": 2
@@ -53,6 +95,30 @@
       "writtenOn": "2018-04-24T14:34:13Z",
       "side": 1,
       "message": "implement*",
+      "range": {
+        "startLine": 13,
+        "startChar": 58,
+        "endLine": 13,
+        "endChar": 65
+      },
+      "revId": "1b38cc42663cbdec0c82083839854e3ac5914a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_f4a39fb0",
+        "filename": "releasenotes/notes/bug-1760205-87dedd6d8812db3f.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-04-25T03:39:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f6a8fd7_01c4e4f3",
       "range": {
         "startLine": 13,
         "startChar": 58,
