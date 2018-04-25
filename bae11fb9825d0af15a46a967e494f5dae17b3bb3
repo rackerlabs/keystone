@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f6a8fd7_48718275",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-25T15:02:45Z",
+      "side": 1,
+      "message": "++ We could even elaborate on this a bit and say:\n\n- the policy service was never finished\n- it\u0027s overall design doesn\u0027t contribute to the architecture of the keystone\n- it\u0027s mostly boilerplate code\n- it\u0027s marked as deprecated in the API reference\n- people trying to understand the architecture document don\u0027t need to fill a register with this information when there are other more meaningful things to parse",
+      "revId": "bae11fb9825d0af15a46a967e494f5dae17b3bb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
