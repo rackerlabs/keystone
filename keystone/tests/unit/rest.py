@@ -59,7 +59,7 @@ class RestfulTestCase(unit.TestCase):
 
         self.useFixture(database.Database(
             enable_sqlite_foreign_key=enable_sqlite_foreign_key))
-        self.load_backends()
+        # self.load_backends()
         self.load_fixtures(default_fixtures,
                            enable_sqlite_foreign_key=enable_sqlite_foreign_key)
 

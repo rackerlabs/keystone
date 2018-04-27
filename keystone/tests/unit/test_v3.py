@@ -22,6 +22,7 @@ from testtools import matchers
 import webtest
 
 from keystone import auth
+from keystone.cmd import bootstrap
 from keystone.common import authorization
 from keystone.common import cache
 from keystone.common import provider_api
@@ -211,8 +212,40 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         super(RestfulTestCase, self).load_backends()
 
     def load_fixtures(self, fixtures, enable_sqlite_foreign_key=False):
-        self.load_sample_data(
-            enable_sqlite_foreign_key=enable_sqlite_foreign_key)
+        self._bootstrap()
+        # self.load_sample_data(
+        #     enable_sqlite_foreign_key=enable_sqlite_foreign_key)
+
+    def _bootstrap(self):
+        self.bootstrapper = bootstrap.Bootstrapper()
+        self.bootstrapper.admin_password = 'password'
+        self.bootstrapper.admin_username = 'admin'
+        self.bootstrapper.project_name = 'admin'
+        self.bootstrapper.admin_role_name = 'admin'
+        self.bootstrapper.service_name = 'keystone'
+        self.bootstrapper.public_url = 'http://localhost/identity/'
+        self.bootstrapper.bootstrap()
+
+        self.domain = PROVIDERS.resource_api.get_domain(
+            self.bootstrapper.default_domain_id
+        )
+        self.domain_id = self.domain['id']
+
+        self.user = PROVIDERS.identity_api.get_user(
+            self.bootstrapper.admin_user_id
+        )
+        self.user['password'] = self.bootstrapper.admin_password
+        self.user_id = self.user['id']
+
+        self.project = PROVIDERS.resource_api.get_project(
+            self.bootstrapper.project_id
+        )
+        self.project_id = self.project['id']
+
+        self.role = PROVIDERS.role_api.get_role(
+            self.bootstrapper.admin_role_id
+        )
+        self.role_id = self.role['id']
 
     def _populate_default_domain(self, enable_sqlite_foreign_key=False):
         try:

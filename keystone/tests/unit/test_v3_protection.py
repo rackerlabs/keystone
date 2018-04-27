@@ -59,14 +59,6 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         self.tmpfilename = self.tempfile.file_name
         super(IdentityTestProtectedCase, self).setUp()
 
-        # A default auth request we can use - un-scoped user token
-        self.auth = self.build_authentication_request(
-            user_id=self.user1['id'],
-            password=self.user1['password'])
-
-    def load_sample_data(self, enable_sqlite_foreign_key=False):
-        self._populate_default_domain()
-
         # Start by creating a couple of domains
         self.domainA = unit.new_domain_ref()
         PROVIDERS.resource_api.create_domain(self.domainA['id'], self.domainA)
@@ -127,6 +119,11 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
             self.role['id'], user_id=self.user2['id'],
             project_id=self.projectB['id']
         )
+
+        # A default auth request we can use - un-scoped user token
+        self.auth = self.build_authentication_request(
+            user_id=self.user1['id'],
+            password=self.user1['password'])
 
     def _get_id_list_from_ref_list(self, ref_list):
         result_list = []
@@ -395,8 +392,8 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
 class IdentityTestPolicySample(test_v3.RestfulTestCase):
     """Test policy enforcement of the policy.json file."""
 
-    def load_sample_data(self, enable_sqlite_foreign_key=False):
-        self._populate_default_domain()
+    def setUp(self):
+        super(IdentityTestPolicySample, self).setUp()
 
         self.just_a_user = unit.create_user(
             PROVIDERS.identity_api,
@@ -408,10 +405,10 @@ class IdentityTestPolicySample(test_v3.RestfulTestCase):
             PROVIDERS.identity_api,
             domain_id=CONF.identity.default_domain_id)
 
+        self.admin_role = self.role
+
         self.role = unit.new_role_ref()
         PROVIDERS.role_api.create_role(self.role['id'], self.role)
-        self.admin_role = unit.new_role_ref(name='admin')
-        PROVIDERS.role_api.create_role(self.admin_role['id'], self.admin_role)
 
         # Create and assign roles to the project
         self.project = unit.new_project_ref(
@@ -673,6 +670,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         # tests harder
         super(IdentityTestv3CloudPolicySample, self).setUp()
 
+        self._load_sample_data()
         self.config_fixture.config(
             group='resource',
             admin_project_name=self.admin_project['name'])
@@ -687,9 +685,8 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
             )
         )
 
-    def load_sample_data(self, enable_sqlite_foreign_key=False):
+    def _load_sample_data(self, enable_sqlite_foreign_key=False):
         # Start by creating a couple of domains
-        self._populate_default_domain()
         self.domainA = unit.new_domain_ref()
         PROVIDERS.resource_api.create_domain(self.domainA['id'], self.domainA)
         self.domainB = unit.new_domain_ref()
@@ -726,8 +723,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
             domain_id=self.domainB['id'])
 
         # The admin role, a domain specific role and another plain role
-        self.admin_role = unit.new_role_ref(name='admin')
-        PROVIDERS.role_api.create_role(self.admin_role['id'], self.admin_role)
+        self.admin_role = self.role
         self.roleA = unit.new_role_ref(domain_id=self.domainA['id'])
         PROVIDERS.role_api.create_role(self.roleA['id'], self.roleA)
         self.role = unit.new_role_ref()
