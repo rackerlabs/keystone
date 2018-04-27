@@ -1359,7 +1359,10 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         A projects's `domain_id` is immutable. Ensure that any attempts to
         update the `domain_id` of a project fails.
         """
-        project = unit.new_project_ref(domain_id=self.domain['id'])
+        domain = unit.new_domain_ref()
+        domain = PROVIDERS.resource_api.create_domain(domain['id'], domain)
+
+        project = unit.new_project_ref(domain_id=domain['id'])
         project = PROVIDERS.resource_api.create_project(project['id'], project)
         project['domain_id'] = CONF.identity.default_domain_id
         self.patch('/projects/%(project_id)s' % {
