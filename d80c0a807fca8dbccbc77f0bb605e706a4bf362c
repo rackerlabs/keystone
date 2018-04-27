@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9f6a8fd7_7923c3bf",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-27T16:37:52Z",
+      "side": 1,
+      "message": "Yeah - I guess I\u0027m trying to make it so that it\u0027s easy for a test class to grab an instance of this object and run bootstrap. Then the cli module should do the same thing.",
+      "parentUuid": "bf659307_0e2ea6f9",
+      "revId": "d80c0a807fca8dbccbc77f0bb605e706a4bf362c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_8e395640",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 2
@@ -95,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "9f6a8fd7_dc251dad",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-27T16:37:52Z",
+      "side": 1,
+      "message": "We could do it that way. I\u0027m not sure which is best or if I have an opinion yet.\n\nI think the current way I\u0027m doing it results in a bit of duplication, so maybe I can try it with the new class directly.",
+      "parentUuid": "bf659307_8ecb9648",
+      "revId": "d80c0a807fca8dbccbc77f0bb605e706a4bf362c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_ee61f23a",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 2
@@ -106,6 +142,30 @@
       "writtenOn": "2018-04-10T18:44:39Z",
       "side": 1,
       "message": "I assume the next steps would involve calling the bootstrap class directly?",
+      "range": {
+        "startLine": 99,
+        "startChar": 8,
+        "endLine": 99,
+        "endChar": 35
+      },
+      "revId": "d80c0a807fca8dbccbc77f0bb605e706a4bf362c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_fc74a19e",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-04-27T16:37:52Z",
+      "side": 1,
+      "message": "Yeah - and then after that we should be able to start redoing all the logic in the test setup methods to reuse this.",
+      "parentUuid": "bf659307_ee61f23a",
       "range": {
         "startLine": 99,
         "startChar": 8,
