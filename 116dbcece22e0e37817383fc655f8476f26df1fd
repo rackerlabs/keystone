@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f6a8fd7_613d412b",
+        "filename": "releasenotes/notes/bug-1765193-b40318b9fb5d1c7b.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-04-28T15:13:43Z",
+      "side": 1,
+      "message": "should be just \"deployment\"?",
+      "range": {
+        "startLine": 5,
+        "startChar": 40,
+        "endLine": 5,
+        "endChar": 51
+      },
+      "revId": "116dbcece22e0e37817383fc655f8476f26df1fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
