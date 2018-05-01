@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f6a8fd7_816f19c4",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 998,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2018-05-01T02:49:56Z",
+      "side": 0,
+      "message": "I am wondering how this bug got fixed without one line of changing in the source but just modify this testcase, and it passed?\n\nCould you pls add the link somewhere in order to let us know how the bug fixed?",
+      "range": {
+        "startLine": 997,
+        "startChar": 62,
+        "endLine": 998,
+        "endChar": 77
+      },
+      "revId": "cee989c9686398536b35c1fb674efe573cc03b95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
