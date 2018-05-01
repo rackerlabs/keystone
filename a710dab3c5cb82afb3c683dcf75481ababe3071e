@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f6a8fd7_d4a5c848",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-05-01T13:28:45Z",
+      "side": 1,
+      "message": "during every release, doc may changed.  So I\u0027m afraid it\u0027s not suitable that the link is alway \"latest\". But I have no idea about how to make it changeable in every release.",
+      "revId": "a710dab3c5cb82afb3c683dcf75481ababe3071e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
