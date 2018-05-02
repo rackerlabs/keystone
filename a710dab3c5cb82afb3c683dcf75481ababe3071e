@@ -52,6 +52,24 @@
       "revId": "a710dab3c5cb82afb3c683dcf75481ababe3071e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_ddd072cc",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-05-02T13:50:33Z",
+      "side": 1,
+      "message": "Done, I\u0027ve removed the link. But, I wonder if the data structure should be a dict only containing a single key for a description?\n\nI suppose this is convenient if we decide to add more data about the limit model in the future.",
+      "parentUuid": "9f6a8fd7_7e1b691a",
+      "revId": "a710dab3c5cb82afb3c683dcf75481ababe3071e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
