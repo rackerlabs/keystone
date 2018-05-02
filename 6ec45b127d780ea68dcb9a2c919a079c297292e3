@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f6a8fd7_16280484",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-05-02T18:16:19Z",
+      "side": 1,
+      "message": "Could we append this to new_registered_limits instead of rebuilding a dict from ref?",
+      "range": {
+        "startLine": 142,
+        "startChar": 53,
+        "endLine": 142,
+        "endChar": 69
+      },
+      "revId": "6ec45b127d780ea68dcb9a2c919a079c297292e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_963bb4cf",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-05-02T18:16:19Z",
+      "side": 1,
+      "message": "registered_limit instead of ref.to_dict()",
+      "range": {
+        "startLine": 144,
+        "startChar": 45,
+        "endLine": 144,
+        "endChar": 58
+      },
+      "revId": "6ec45b127d780ea68dcb9a2c919a079c297292e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_b636f8e6",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-05-02T18:16:19Z",
+      "side": 1,
+      "message": "same question here",
+      "range": {
+        "startLine": 217,
+        "startChar": 47,
+        "endLine": 217,
+        "endChar": 52
+      },
+      "revId": "6ec45b127d780ea68dcb9a2c919a079c297292e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
