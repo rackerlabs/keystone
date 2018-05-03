@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_6a19bb86",
+        "filename": "doc/source/getting-started/policy_mapping.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-05-03T09:00:00Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "88d2ef96ff44ab7e45001d9c60082fb9793ff97c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_ea238bbd",
+        "filename": "keystone/common/policies/limit.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-05-03T09:00:00Z",
+      "side": 1,
+      "message": "should change to \"v3/limits/model\" to keep the same with the API patch: https://review.openstack.org/#/c/562716",
+      "revId": "88d2ef96ff44ab7e45001d9c60082fb9793ff97c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
