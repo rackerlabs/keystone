@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_7e4c2076",
+        "filename": "keystone/limit/models/flat.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-05-03T09:02:53Z",
+      "side": 1,
+      "message": "++",
+      "revId": "2e6ba8970764ae455280c218349c797757f7d979",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
