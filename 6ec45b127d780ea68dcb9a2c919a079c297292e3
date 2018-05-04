@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_806f45c4",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-05-04T09:09:26Z",
+      "side": 1,
+      "message": "it\u0027s a little different.\nif registered_limit doesn\u0027t contain \"region_id\", ref.to_dict() will contain a pair like \"region_id: null\". So ref.to_dict() can ensure all the properties are returned.\n\nIf we don\u0027t want \"region_id\": null. I can remove ref.to_dict()",
+      "parentUuid": "9f6a8fd7_16280484",
+      "range": {
+        "startLine": 142,
+        "startChar": 53,
+        "endLine": 142,
+        "endChar": 69
+      },
+      "revId": "6ec45b127d780ea68dcb9a2c919a079c297292e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f6a8fd7_963bb4cf",
         "filename": "keystone/limit/backends/sql.py",
         "patchSetId": 7
