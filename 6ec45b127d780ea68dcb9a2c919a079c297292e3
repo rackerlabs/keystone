@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_0c182773",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-05-07T21:32:33Z",
+      "side": 1,
+      "message": "It looks like the api-ref shows it returning null if region_id is not specified, so leaving this here is likely alright.",
+      "parentUuid": "5f7c97a3_806f45c4",
+      "range": {
+        "startLine": 142,
+        "startChar": 53,
+        "endLine": 142,
+        "endChar": 69
+      },
+      "revId": "6ec45b127d780ea68dcb9a2c919a079c297292e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f6a8fd7_963bb4cf",
         "filename": "keystone/limit/backends/sql.py",
         "patchSetId": 7
