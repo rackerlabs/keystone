@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_fe88dac6",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-05-08T22:03:32Z",
+      "side": 1,
+      "message": "s/create/link",
+      "range": {
+        "startLine": 81,
+        "startChar": 20,
+        "endLine": 81,
+        "endChar": 26
+      },
+      "revId": "962b06e22abe28a0200554764f421db102b03c60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
