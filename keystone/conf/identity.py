@@ -110,7 +110,7 @@ Maximum number of entities that will be returned in an identity collection.
 
 password_hash_algorithm = cfg.StrOpt(
     'password_hash_algorithm',
-    choices=['bcrypt', 'scrypt', 'pbkdf2_sha512'],
+    choices=['bcrypt', 'scrypt', 'pbkdf2_sha512', 'sha512_crypt'],
     default='bcrypt',
     help=utils.fmt("""
 The password hashing algorithm to use for passwords stored within keystone.
