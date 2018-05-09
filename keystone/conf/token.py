@@ -73,19 +73,6 @@ providers. `uuid` tokens must be persisted (using the backend specified in the
 command).
 """))
 
-driver = cfg.StrOpt(
-    'driver',
-    default='sql',
-    deprecated_since=versionutils.deprecated.PIKE,
-    deprecated_for_removal=True,
-    help=utils.fmt("""
-Entry point for the token persistence backend driver in the
-`keystone.token.persistence` namespace. Keystone provides the `sql`
-driver.  The `sql` option (default) depends on the options in your
-`[database]` section. If you're using the `fernet` `[token] provider`, this
-backend will not be utilized to persist tokens at all.
-"""))
-
 caching = cfg.BoolOpt(
     'caching',
     default=True,
@@ -160,7 +147,6 @@ ALL_OPTS = [
     enforce_token_bind,
     expiration,
     provider,
-    driver,
     caching,
     cache_time,
     revoke_by_id,
