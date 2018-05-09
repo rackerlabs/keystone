@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_713f0125",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-05-09T22:35:52Z",
+      "side": 1,
+      "message": "Is this something we want to keep as debug? Would an operator want to know there are stale IdPs hanging around?",
+      "range": {
+        "startLine": 66,
+        "startChar": 20,
+        "endLine": 66,
+        "endChar": 25
+      },
+      "revId": "42cf675c40311f5a483df19ff0aa258643d356e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
