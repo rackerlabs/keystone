@@ -22,6 +22,30 @@
       "revId": "42cf675c40311f5a483df19ff0aa258643d356e3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_5de77413",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-05-10T02:10:24Z",
+      "side": 1,
+      "message": "It\u0027s to keep the same with group and user: https://github.com/openstack/keystone/blob/master/keystone/identity/core.py#L516-L534\nI think it\u0027s good to let admin know that the the resource is deleted by other operations.",
+      "parentUuid": "5f7c97a3_713f0125",
+      "range": {
+        "startLine": 66,
+        "startChar": 20,
+        "endLine": 66,
+        "endChar": 25
+      },
+      "revId": "42cf675c40311f5a483df19ff0aa258643d356e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
