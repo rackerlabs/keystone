@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_3da87875",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-05-10T02:20:46Z",
+      "side": 1,
+      "message": "We can remove these references to the config option as well:\n\n\"Drastically increasing this value will increase the number of tokens that will be simultaneously valid.\"",
+      "range": {
+        "startLine": 56,
+        "startChar": 26,
+        "endLine": 57,
+        "endChar": 69
+      },
+      "revId": "1b33d4f3af5f8063142a015071f0f20e736a87b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_bdb568cf",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-05-10T02:20:46Z",
+      "side": 1,
+      "message": "\"Keystone includes the `fernet` token provider. `fernet` tokens do not need to be persisted at all, but require that you run `keystone-manage fernet_setup` (also see the `keystone-manage fernet_rotate` command)\"",
+      "range": {
+        "startLine": 68,
+        "startChar": 12,
+        "endLine": 73,
+        "endChar": 9
+      },
+      "revId": "1b33d4f3af5f8063142a015071f0f20e736a87b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
