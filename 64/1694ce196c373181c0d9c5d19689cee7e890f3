@@ -1,0 +1,11 @@
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Code-Review+1: Cuong Nguyen <cuongnv@vn.fujitsu.com>
+Code-Review+1: wangxiyuan <wangxiyuan@huawei.com>
+Code-Review+2: Kristi Nikolla <knikolla@bu.edu>
+Workflow+1: Kristi Nikolla <knikolla@bu.edu>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 11 May 2018 18:39:19 +0000
+Reviewed-on: https://review.openstack.org/547308
+Project: openstack/keystone
+Branch: refs/heads/master
