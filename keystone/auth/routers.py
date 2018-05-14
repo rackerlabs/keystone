@@ -21,6 +21,7 @@ class Routers(wsgi.RoutersBase):
 
     def append_v3_routers(self, mapper, routers):
         auth_controller = controllers.Auth()
+        _path_prefixs = ('/auth',)
 
         self._add_resource(
             mapper, auth_controller,
