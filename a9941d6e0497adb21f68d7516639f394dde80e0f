@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_807553fc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-05-14T21:41:38Z",
+      "side": 1,
+      "message": "Even if it\u0027s against a dev box, is it possible to document the performance improvements of this patch?",
+      "revId": "a9941d6e0497adb21f68d7516639f394dde80e0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
