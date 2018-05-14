@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_4152ea3c",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-05-14T14:44:03Z",
+      "side": 1,
+      "message": "This seems like the happiest path possible. I wonder if we should chose something that we know is invalid, but ensures the mock is working, too.",
+      "range": {
+        "startLine": 523,
+        "startChar": 20,
+        "endLine": 523,
+        "endChar": 22
+      },
+      "revId": "9b8abb65ce3246189833ce6bfcb126980f81d316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
