@@ -57,7 +57,9 @@ class Ec2Extension(wsgi.ExtensionRouter):
             conditions=dict(method=['DELETE']))
 
 
-class Ec2ExtensionV3(wsgi.V3ExtensionRouter):
+class Routers(wsgi.RoutersBase):
+
+    _path_prefixes = ('ec2tokens', 'users')
 
     def add_routes(self, mapper):
         ec2_controller = controllers.Ec2ControllerV3()
@@ -89,3 +91,6 @@ class Ec2ExtensionV3(wsgi.V3ExtensionRouter):
                 json_home.build_v3_parameter_relation('credential_id'),
                 'user_id': json_home.Parameters.USER_ID,
             })
+
+
+Ec2ExtensionV3 = Routers
