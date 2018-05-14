@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_c0fcab71",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-05-14T21:38:05Z",
+      "side": 0,
+      "message": "We don\u0027t want to update this example with the catalog?",
+      "range": {
+        "startLine": 156,
+        "startChar": 7,
+        "endLine": 156,
+        "endChar": 14
+      },
+      "revId": "d0fc578305bb7e4d6a81708b3690d9546ec6fe22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
