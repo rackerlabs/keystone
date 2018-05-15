@@ -22,6 +22,30 @@
       "revId": "403917cef96655546c247c86adb26d10984cfb67",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_1ec4433f",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-05-15T00:52:46Z",
+      "side": 0,
+      "message": "because now either \"resource_limit\" or \"description\" can be updated, so \"resource_limit\" is not required.",
+      "parentUuid": "5f7c97a3_a0c3af56",
+      "range": {
+        "startLine": 109,
+        "startChar": 24,
+        "endLine": 109,
+        "endChar": 38
+      },
+      "revId": "403917cef96655546c247c86adb26d10984cfb67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
