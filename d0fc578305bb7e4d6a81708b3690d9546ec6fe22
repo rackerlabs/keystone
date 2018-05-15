@@ -22,6 +22,30 @@
       "revId": "d0fc578305bb7e4d6a81708b3690d9546ec6fe22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_3eed7fb6",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-05-15T00:57:03Z",
+      "side": 0,
+      "message": "Actually it\u0027s an unscoped token, so there is no catalog in the token data.\n\nI changed the title at L101, because I don\u0027t think Keystone support the \"default scope\" if the input is like L108-L124",
+      "parentUuid": "5f7c97a3_c0fcab71",
+      "range": {
+        "startLine": 156,
+        "startChar": 7,
+        "endLine": 156,
+        "endChar": 14
+      },
+      "revId": "d0fc578305bb7e4d6a81708b3690d9546ec6fe22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
