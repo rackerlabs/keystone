@@ -1300,6 +1300,12 @@ project_id:
   in: body
   required: true
   type: string
+project_id_limit:
+  description: |
+    The ID of the project to which the limit belongs.
+  in: body
+  required: true
+  type: string
 project_name_request_body:
   description: |
     The name of the project, which must be unique within the

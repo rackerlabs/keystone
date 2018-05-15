@@ -380,6 +380,7 @@ Parameters
 
    - limits: limits
    - service_id: service_id_limit
+   - project_id: project_id_limit
    - region_id: region_id_request_body
    - resource_name: resource_name
    - resource_limit: resource_limit
@@ -403,6 +404,7 @@ Parameters
    - limits: limits
    - id: limit_id
    - service_id: service_id_limit
+   - project_id: project_id_limit
    - region_id: region_id_response_body
    - resource_name: resource_name
    - resource_limit: resource_limit
