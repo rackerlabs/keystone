@@ -120,16 +120,6 @@ def configure(conf=None):
     if conf is None:
         conf = CONF
 
-    conf.register_cli_opt(
-        cfg.BoolOpt('standard-threads', default=False,
-                    help='Do not monkey-patch threading system modules.'))
-    conf.register_cli_opt(
-        cfg.StrOpt('pydev-debug-host',
-                   help='Host to connect to for remote debugger.'))
-    conf.register_cli_opt(
-        cfg.PortOpt('pydev-debug-port',
-                    help='Port to connect to for remote debugger.'))
-
     for module in conf_modules:
         module.register_opts(conf)
 

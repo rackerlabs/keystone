@@ -70,15 +70,9 @@ OPTIONS
                         defined by use_stderr. This option is ignored if
                         log_config_append is set.
   --nodebug             The inverse of --debug
-  --nostandard-threads  The inverse of --standard-threads
   --nouse-syslog        The inverse of --use-syslog
   --noverbose           The inverse of --verbose
   --nowatch-log-file    The inverse of --watch-log-file
-  --pydev-debug-host PYDEV_DEBUG_HOST
-                        Host to connect to for remote debugger.
-  --pydev-debug-port PYDEV_DEBUG_PORT
-                        Port to connect to for remote debugger.
-  --standard-threads    Do not monkey-patch threading system modules.
   --syslog-log-facility SYSLOG_LOG_FACILITY
                         Syslog facility to receive log lines. This option is
                         ignored if log_config_append is set.

@@ -33,12 +33,10 @@ import six
 from six import moves
 
 from keystone.common import password_hashing
-import keystone.conf
 from keystone import exception
 from keystone.i18n import _
 
 
-CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
 WHITELISTED_PROPERTIES = [
     'tenant_id', 'project_id', 'user_id',
@@ -158,27 +156,6 @@ def auth_str_equal(provided, known):
         b = ord(known[i]) if i < k_len else 0
         result |= a ^ b
     return (p_len == k_len) & (result == 0)
-
-
-def setup_remote_pydev_debug():
-    if CONF.pydev_debug_host and CONF.pydev_debug_port:
-        try:
-            try:
-                from pydev import pydevd
-            except ImportError:
-                import pydevd
-
-            pydevd.settrace(CONF.pydev_debug_host,
-                            port=CONF.pydev_debug_port,
-                            stdoutToServer=True,
-                            stderrToServer=True)
-            return True
-        except Exception:
-            LOG.exception(
-                'Error setting up the debug environment. Verify that the '
-                'option --debug-url has the format <host>:<port> and that a '
-                'debugger processes is listening on that port.')
-            raise
 
 
 def get_unix_user(user=None):
