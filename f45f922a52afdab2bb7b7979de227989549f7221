@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_dc3d4ac4",
+        "filename": "keystone/conf/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-05-16T15:11:33Z",
+      "side": 0,
+      "message": "Did we ever formally deprecate this stuff? I wonder if developers are using it anywhere?",
+      "revId": "f45f922a52afdab2bb7b7979de227989549f7221",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
