@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_5b129bb6",
+        "filename": "keystone/common/token_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-05-16T20:06:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_a1b02b8d",
+      "revId": "90c04f39a051255815cc0c021626d6350abc4d2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_e1b6238b",
         "filename": "keystone/tests/unit/token/test_fernet_provider.py",
         "patchSetId": 7
@@ -60,6 +78,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_1b0c2393",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 650,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-05-16T20:06:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_e1b6238b",
+      "range": {
+        "startLine": 649,
+        "startChar": 0,
+        "endLine": 650,
+        "endChar": 38
+      },
+      "revId": "90c04f39a051255815cc0c021626d6350abc4d2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_cfad53eb",
         "filename": "releasenotes/notes/bug-1728907-bab6769ab46bd8aa.yaml",
         "patchSetId": 7
@@ -71,6 +113,30 @@
       "writtenOn": "2018-04-06T16:38:09Z",
       "side": 1,
       "message": "This doesn\u0027t make a whole lot of sense in the context of a release note. After linking to the bug report, we could just say something along the lines of:\n\n  Keystone handles empty key files when loading and rotating\n  fernet keys.",
+      "range": {
+        "startLine": 7,
+        "startChar": 48,
+        "endLine": 9,
+        "endChar": 34
+      },
+      "revId": "90c04f39a051255815cc0c021626d6350abc4d2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_3b11dfad",
+        "filename": "releasenotes/notes/bug-1728907-bab6769ab46bd8aa.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-05-16T20:06:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_cfad53eb",
       "range": {
         "startLine": 7,
         "startChar": 48,
