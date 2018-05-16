@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_649d8b08",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-05-16T06:13:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_3ae9f9e4",
+      "range": {
+        "startLine": 139,
+        "startChar": 0,
+        "endLine": 148,
+        "endChar": 15
+      },
+      "revId": "979a95b0aa356372fc5c27378769594a11c49d82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_7ae531db",
         "filename": "keystone/common/utils.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2018-05-15T15:25:54Z",
       "side": 1,
       "message": "Same here, doesn\u0027t seem like anything else is using this.",
+      "range": {
+        "startLine": 184,
+        "startChar": 0,
+        "endLine": 202,
+        "endChar": 17
+      },
+      "revId": "979a95b0aa356372fc5c27378769594a11c49d82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_84a0e743",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-05-16T06:13:20Z",
+      "side": 1,
+      "message": "I\u0027d like to remove this in another patch since it\u0027s related to eventlet and keystone-manage",
+      "parentUuid": "5f7c97a3_7ae531db",
       "range": {
         "startLine": 184,
         "startChar": 0,
