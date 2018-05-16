@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_7cee7622",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-05-16T15:16:36Z",
+      "side": 1,
+      "message": "This doesn\u0027t have an impact on the actual value of the list, so we could remove it.\n\nWe can do that in a follow up though.",
+      "range": {
+        "startLine": 114,
+        "startChar": 21,
+        "endLine": 114,
+        "endChar": 23
+      },
+      "revId": "9d7ffbc89e54bae1e9c3cdafec4c23edd77fc542",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
