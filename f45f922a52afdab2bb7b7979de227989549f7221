@@ -16,6 +16,24 @@
       "revId": "f45f922a52afdab2bb7b7979de227989549f7221",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_c89c926c",
+        "filename": "keystone/conf/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-05-17T09:37:12Z",
+      "side": 0,
+      "message": "They were used for eventlet which was deprecated and removed a few release ago:\nhttps://github.com/openstack/keystone/blob/mitaka-eol/keystone/server/eventlet.py#L110-L112\n\nBut TBH, these three configuration didn\u0027t be deprecated by the config options way. So for eventlet sight, it\u0027s safe enough to remove them. For config options sight, we should deprecated them first.\n\nBoth of them works for me. Any idea?",
+      "parentUuid": "5f7c97a3_dc3d4ac4",
+      "revId": "f45f922a52afdab2bb7b7979de227989549f7221",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
