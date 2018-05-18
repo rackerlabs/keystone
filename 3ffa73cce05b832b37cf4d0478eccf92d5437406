@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_1b12b1b2",
+        "filename": "keystone/tests/unit/token/test_token_model.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-05-18T20:31:44Z",
+      "side": 1,
+      "message": "Yep - I did that for vertical separation between variable groups.",
+      "parentUuid": "5f7c97a3_8d969594",
+      "revId": "3ffa73cce05b832b37cf4d0478eccf92d5437406",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_8d3f75b4",
         "filename": "keystone/tests/unit/token/test_token_model.py",
         "patchSetId": 7
@@ -30,6 +48,30 @@
       "writtenOn": "2018-05-18T05:19:17Z",
       "side": 1,
       "message": "seems trustor\u0027s domain is not enabled.",
+      "range": {
+        "startLine": 425,
+        "startChar": 8,
+        "endLine": 425,
+        "endChar": 36
+      },
+      "revId": "3ffa73cce05b832b37cf4d0478eccf92d5437406",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_9b1d61bf",
+        "filename": "keystone/tests/unit/token/test_token_model.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-05-18T20:31:44Z",
+      "side": 1,
+      "message": "I think this happens when the default domain is used and possibly disabled in other tests.\n\nI\u0027ll update this to use a different domain instead of the default one.",
+      "parentUuid": "5f7c97a3_8d3f75b4",
       "range": {
         "startLine": 425,
         "startChar": 8,
