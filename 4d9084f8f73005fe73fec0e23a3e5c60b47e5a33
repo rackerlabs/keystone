@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_86489887",
+        "filename": "keystone/tests/unit/base_classes.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-05-20T23:31:15Z",
+      "side": 1,
+      "message": "Apparently this is needed to get the new token model tests passing with py35? Otherwise I get failures about the default domain being disabled for a test that it shouldn\u0027t be.",
+      "revId": "4d9084f8f73005fe73fec0e23a3e5c60b47e5a33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
