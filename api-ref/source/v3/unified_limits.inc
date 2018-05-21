@@ -146,12 +146,11 @@ Examples
 Update Registered Limits
 ========================
 
-.. rest_method::  PUT /v3/registered_limits
+.. rest_method::  PATCH /v3/registered_limits/{registered_limit_id}
 
-Updates registered limits. It supports to update more than one registered limit
-in one request.
+Updates the specified registered limit.
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/registered_limits``
+Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/registered_limit``
 
 Request
 -------
@@ -161,7 +160,7 @@ Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - registered_limits: registered_limits
+   - registered_limit: registered_limit
    - id: registered_limit_id
    - service_id: service_id_registered_limit
    - region_id: region_id_request_body
@@ -442,13 +441,12 @@ Examples
 Update Limits
 =============
 
-.. rest_method::  PUT /v3/limits
+.. rest_method::  PATCH /v3/limits/{limit_id}
 
-Updates limits. It supports to update more than one limit in one request. It
-only supports to update ``resource_limit`` for limits. It will return all the
-limits for the project.
+Updates the specifeid limit. It only supports to update ``resource_limit`` or
+``description`` for the limit.
 
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/limits``
+Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/limit``
 
 Request
 -------
@@ -458,7 +456,7 @@ Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - limits: limits
+   - limit: limit
    - resource_limit: resource_limit
    - description: description_limit_request_body
 
