@@ -1106,11 +1106,24 @@ issued_at:
   in: body
   required: true
   type: string
+limit:
+  description: |
+    A ``limit`` object, containing the following:
+  in: body
+  required: true
+  type: array
 limit_id:
   description: |
     The limit ID.
   in: body
   required: true
+  type: string
+limit_id_optional:
+  description: |
+    The limit ID. If provided, it should be the same as the ID in the request
+    URL.
+  in: body
+  required: false
   type: string
 limits:
   description: |
@@ -1432,6 +1445,13 @@ registered_limit_id:
     The registered limit ID.
   in: body
   required: true
+  type: string
+registered_limit_id_optional:
+  description: |
+    The registered limit ID. If provided, it should be the same as the ID in
+    the request URL.
+  in: body
+  required: false
   type: string
 registered_limits:
   description: |
