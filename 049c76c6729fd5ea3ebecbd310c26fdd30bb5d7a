@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_72989669",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 15699
+      },
+      "writtenOn": "2018-05-21T07:28:30Z",
+      "side": 1,
+      "message": "Instead of \u0027error url\u0027 you can mention something like \u0027rally docs url\u0027 .",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 13
+      },
+      "revId": "049c76c6729fd5ea3ebecbd310c26fdd30bb5d7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f2c82675",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 15699
+      },
+      "writtenOn": "2018-05-21T07:28:30Z",
+      "side": 1,
+      "message": "You can mention something like \"Fix docs url of rally and rally-gates in README.rst\"",
+      "revId": "049c76c6729fd5ea3ebecbd310c26fdd30bb5d7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
