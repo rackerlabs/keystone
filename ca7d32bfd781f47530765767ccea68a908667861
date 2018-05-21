@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_17ba7409",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 15699
+      },
+      "writtenOn": "2018-05-21T04:56:21Z",
+      "side": 1,
+      "message": "The commit message should be a bit descriptive.\nref: https://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "ca7d32bfd781f47530765767ccea68a908667861",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
