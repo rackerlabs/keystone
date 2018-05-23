@@ -26,5 +26,6 @@ def upgrade(migrate_engine):
     password_table.create_column(expires_at)
 
     now = datetime.datetime.utcnow()
-    stmt = password_table.update().values(created_at=now)
-    stmt.execute()
+    row_ids = [r.id for r in password_table.select().execute()]
+    for ids in (row_ids[i:i+131072] for i in xrange(0, len(row_ids), 131072)):
+        password_table.update().where(password_table.c.id.in_(ids)).values(created_at=now).execute()

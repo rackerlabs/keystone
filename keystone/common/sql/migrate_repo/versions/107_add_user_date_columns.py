@@ -26,5 +26,6 @@ def upgrade(migrate_engine):
     user_table.create_column(last_active_at)
 
     now = datetime.datetime.utcnow()
-    stmt = user_table.update().values(created_at=now)
-    stmt.execute()
+    row_ids = [r.id for r in user_table.select().execute()]
+    for ids in (row_ids[i:i+131072] for i in xrange(0, len(row_ids), 131072)):
+        user_table.update().where(user_table.c.id.in_(ids)).values(created_at=now).execute()

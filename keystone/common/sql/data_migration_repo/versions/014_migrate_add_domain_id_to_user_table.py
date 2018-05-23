@@ -30,16 +30,12 @@ def upgrade(migrate_engine):
 
 
 def _update_user_domain_id(migrate_engine, user_table, child_user_table):
+    # Get all domain_id
     join = sql.join(user_table, child_user_table,
                     user_table.c.id == child_user_table.c.user_id)
-    where = user_table.c.domain_id == expression.null()
-    sel = (
-        sql.select([user_table.c.id, child_user_table.c.domain_id])
-           .select_from(join).where(where)
-    )
-    with migrate_engine.begin() as conn:
-        for user in conn.execute(sel):
-            values = {'domain_id': user['domain_id']}
-            stmt = user_table.update().where(
-                user_table.c.id == user['id']).values(values)
-            conn.execute(stmt)
+    domain_ids = [r.domain_id for r in child_user_table.select().group_by(child_user_table.c.domain_id).execute()]
+    for domain_id in domain_ids:
+        where = [user_table.c.domain_id == expression.null(), child_user_table.c.domain_id == domain_id]
+        row_ids = [r.id for r in sql.select([user_table.c.id]).select_from(join).where(sql.and_(*where)).execute()]
+        for ids in (row_ids[i:i+131072] for i in xrange(0, len(row_ids), 131072)):
+            user_table.update().where(user_table.c.id.in_(ids)).values({'domain_id': domain_id}).execute()

@@ -36,4 +36,10 @@ def upgrade(migrate_engine):
         created_at = sql.Column('created_at', sql.TIMESTAMP, nullable=False,
                                 default=datetime.datetime.utcnow,
                                 server_default=sql.func.now())
-    password.create_column(created_at)
+    password.create_column(created_at, populate_default=False)
+    # update created_at value
+    now = datetime.datetime.utcnow()
+    values = {'created_at': now}
+    row_ids = [r.id for r in password.select().execute()]
+    for ids in (row_ids[i:i+131072] for i in xrange(0, len(row_ids), 131072)):
+        password.update().where(password.c.id.in_(ids)).values(values).execute()

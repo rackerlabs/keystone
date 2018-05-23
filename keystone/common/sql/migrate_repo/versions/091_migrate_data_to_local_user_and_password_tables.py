@@ -24,22 +24,27 @@ def upgrade(migrate_engine):
     password_table = sql.Table('password', meta, autoload=True)
 
     # migrate data to local_user table
+    row_ids = [r.id for r in local_user_table.select().execute()]
+    for ids in (row_ids[i:i+10000] for i in xrange(0, len(row_ids), 10000)):
+        local_user_table.delete().where(local_user_table.c.id.in_(ids)).execute()
     local_user_values = []
     for row in user_table.select().execute():
         # skip the row that already exists in `local_user`, this could
         # happen if run into a partially-migrated table due to the
         # bug #1549705.
-        filter_by = local_user_table.c.user_id == row['id']
-        user_count = sql.select([func.count()]).select_from(
-            local_user_table).where(filter_by).execute().fetchone()[0]
-        if user_count == 0:
-            local_user_values.append({'user_id': row['id'],
-                                      'domain_id': row['domain_id'],
-                                      'name': row['name']})
+        local_user_values.append({'user_id': row['id'],
+                                  'domain_id': row['domain_id'],
+                                  'name': row['name']})
+        if len(local_user_values) >= 10000:
+            local_user_table.insert().values(local_user_values).execute()
+            local_user_values = []
     if local_user_values:
         local_user_table.insert().values(local_user_values).execute()
 
     # migrate data to password table
+    row_ids = [r.id for r in password_table.select().execute()]
+    for ids in (row_ids[i:i+10000] for i in xrange(0, len(row_ids), 10000)):
+        password_table.delete().where(password_table.c.id.in_(ids)).execute()
     sel = (
         sql.select([user_table, local_user_table], use_labels=True)
            .select_from(user_table.join(local_user_table, user_table.c.id ==
@@ -51,6 +56,9 @@ def upgrade(migrate_engine):
         if row['user_password']:
             password_values.append({'local_user_id': row['local_user_id'],
                                     'password': row['user_password']})
+        if len(password_values) >= 10000:
+            password_table.insert().values(password_values).execute()
+            password_values = []
     if password_values:
         password_table.insert().values(password_values).execute()
 

@@ -13,6 +13,7 @@
 import json
 
 import sqlalchemy as sql
+import sqlalchemy.sql.expression as expression
 
 from keystone.common.sql import upgrades
 
@@ -108,16 +109,13 @@ def upgrade(migrate_engine):
     # For each project, that has no parent (i.e. a top level project), update
     # it's parent_id to point at the project acting as its domain. We ignore
     # the "root of all domains" row, since its parent_id must always be None.
-    projects = list(project_table.select().execute())
-    for project in projects:
-        if (project.parent_id is not None or project.is_domain or
-                project.id == NULL_DOMAIN_ID):
-            continue
-        values = {'parent_id': project.domain_id}
-        update = project_table.update().where(
-            project_table.c.id == project.id).values(values)
-        session.execute(update)
-        session.commit()
+    # Get all domain_id
+    domain_ids = [p.domain_id for p in project_table.select().where(project_table.c.id != NULL_DOMAIN_ID).group_by(project_table.c.domain_id).execute()]
+    for domain_id in domain_ids:
+        row_ids = [r.id for r in project_table.select().where(sql.and_(project_table.c.parent_id == expression.null(), project_table.c.is_domain == False, project_table.c.domain_id == domain_id)).execute()]
+        for ids in (row_ids[i:i+131072] for i in xrange(0, len(row_ids), 131072)):
+            project_table.update().where(project_table.c.id.in_(ids)).values(parent_id=domain_id).execute()
+
 
     upgrades.add_constraints(
         list_new_project_constraints(project_table))
