@@ -179,19 +179,6 @@ def handle_unscoped_token(request, auth_payload, resource_api, federation_api,
                     project_id=project['id']
                 )
 
-    def is_ephemeral_user(mapped_properties):
-        return mapped_properties['user']['type'] == utils.UserType.EPHEMERAL
-
-    def build_ephemeral_user_context(user, mapped_properties,
-                                     identity_provider, protocol):
-        resp = {}
-        resp['user_id'] = user['id']
-        resp['group_ids'] = mapped_properties['group_ids']
-        resp[federation_constants.IDENTITY_PROVIDER] = identity_provider
-        resp[federation_constants.PROTOCOL] = protocol
-
-        return resp
-
     def build_local_user_context(mapped_properties):
         resp = {}
         user_info = auth_plugins.UserAuthInfo.create(mapped_properties,
@@ -233,49 +220,45 @@ def handle_unscoped_token(request, auth_payload, resource_api, federation_api,
             # it is considered a failed authentication
             raise exception.Unauthorized(e)
 
-        if is_ephemeral_user(mapped_properties):
-            unique_id, display_name = (
-                get_user_unique_id_and_display_name(request, mapped_properties)
+        unique_id, display_name = (
+            get_user_unique_id_and_display_name(request, mapped_properties)
+        )
+        email = mapped_properties['user'].get('email')
+        user = identity_api.shadow_federated_user(identity_provider,
+                                                  protocol, unique_id,
+                                                  display_name,
+                                                  email)
+
+        if 'projects' in mapped_properties:
+            idp_domain_id = federation_api.get_idp(
+                identity_provider
+            )['domain_id']
+            existing_roles = {
+                role['name']: role for role in role_api.list_roles()
+            }
+            # NOTE(lbragstad): If we are dealing with a shadow mapping,
+            # then we need to make sure we validate all pieces of the
+            # mapping and what it's saying to create. If there is something
+            # wrong with how the mapping is, we should bail early before we
+            # create anything.
+            validate_shadow_mapping(
+                mapped_properties['projects'],
+                existing_roles,
+                idp_domain_id,
+                identity_provider
             )
-            email = mapped_properties['user'].get('email')
-            user = identity_api.shadow_federated_user(identity_provider,
-                                                      protocol, unique_id,
-                                                      display_name,
-                                                      email)
+            create_projects_from_mapping(
+                mapped_properties['projects'],
+                idp_domain_id,
+                existing_roles,
+                user,
+                assignment_api,
+                resource_api
+            )
 
-            if 'projects' in mapped_properties:
-                idp_domain_id = federation_api.get_idp(
-                    identity_provider
-                )['domain_id']
-                existing_roles = {
-                    role['name']: role for role in role_api.list_roles()
-                }
-                # NOTE(lbragstad): If we are dealing with a shadow mapping,
-                # then we need to make sure we validate all pieces of the
-                # mapping and what it's saying to create. If there is something
-                # wrong with how the mapping is, we should bail early before we
-                # create anything.
-                validate_shadow_mapping(
-                    mapped_properties['projects'],
-                    existing_roles,
-                    idp_domain_id,
-                    identity_provider
-                )
-                create_projects_from_mapping(
-                    mapped_properties['projects'],
-                    idp_domain_id,
-                    existing_roles,
-                    user,
-                    assignment_api,
-                    resource_api
-                )
-
-            user_id = user['id']
-            group_ids = mapped_properties['group_ids']
-            response_data = build_ephemeral_user_context(
-                user, mapped_properties, identity_provider, protocol)
-        else:
-            response_data = build_local_user_context(mapped_properties)
+        user_id = user['id']
+        group_ids = mapped_properties['group_ids']
+        response_data = build_local_user_context(mapped_properties)
 
     except Exception:
         # NOTE(topol): Diaper defense to catch any exception, so we can

@@ -21,7 +21,6 @@ from keystone.auth import core
 from keystone.common import provider_api
 import keystone.conf
 from keystone import exception
-from keystone.federation import constants as federation_constants
 from keystone.federation import utils
 from keystone.i18n import _
 
@@ -96,10 +95,6 @@ class TokenlessAuthHelper(provider_api.ProviderAPIMixin, object):
     def get_mapped_user(self, project_id=None, domain_id=None):
         """Map client certificate to an existing user.
 
-        If user is ephemeral, there is no validation on the user himself;
-        however it will be mapped to a corresponding group(s) and the scope
-        of this ephemeral user is the same as what is assigned to the group.
-
         :param project_id:  Project scope of the mapped user.
         :param domain_id: Domain scope of the mapped user.
         :returns: A dictionary that contains the keys, such as
@@ -116,37 +111,12 @@ class TokenlessAuthHelper(provider_api.ProviderAPIMixin, object):
         user = mapped_properties.get('user', {})
         user_id = user.get('id')
         user_name = user.get('name')
-        user_type = user.get('type')
         if user.get('domain') is not None:
             user_domain_id = user.get('domain').get('id')
             user_domain_name = user.get('domain').get('name')
         else:
             user_domain_id = None
             user_domain_name = None
-
-        # if user is ephemeral type, we don't care if the user exists
-        # or not, but just care if the mapped group(s) is valid.
-        if user_type == utils.UserType.EPHEMERAL:
-            user_ref = {'type': utils.UserType.EPHEMERAL}
-            group_ids = mapped_properties['group_ids']
-            utils.validate_mapped_group_ids(group_ids,
-                                            mapping_id,
-                                            self.identity_api)
-            group_ids.extend(
-                utils.transform_to_group_ids(
-                    mapped_properties['group_names'], mapping_id,
-                    self.identity_api, self.assignment_api))
-            roles = self.assignment_api.get_roles_for_groups(group_ids,
-                                                             project_id,
-                                                             domain_id)
-            if roles is not None:
-                role_names = [role['name'] for role in roles]
-                user_ref['roles'] = role_names
-            user_ref['group_ids'] = list(group_ids)
-            user_ref[federation_constants.IDENTITY_PROVIDER] = idp_id
-            user_ref[federation_constants.PROTOCOL] = (
-                CONF.tokenless_auth.protocol)
-            return user_ref
 
         if user_id:
             user_ref = self.identity_api.get_user(user_id)

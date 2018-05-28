@@ -1057,7 +1057,7 @@ class UserFederatedAttributesTests(test_v3.RestfulTestCase):
         }
         PROVIDERS.federation_api.create_idp(idp['id'], idp)
         # Create the mapping
-        mapping = mapping_fixtures.MAPPING_EPHEMERAL_USER
+        mapping = mapping_fixtures.MAPPING_FEDERATED_USER
         mapping['id'] = uuid.uuid4().hex
         PROVIDERS.federation_api.create_mapping(mapping['id'], mapping)
         # Create the protocol

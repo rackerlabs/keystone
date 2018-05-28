@@ -33,8 +33,6 @@ LOG = log.getLogger(__name__)
 class UserType(object):
     """User mapping type."""
 
-    EPHEMERAL = 'ephemeral'
-    LOCAL = 'local'
 
 ROLE_PROPERTIES = {
     "type": "array",
@@ -77,11 +75,6 @@ MAPPING_SCHEMA = {
                                         "email": {"type": "string"},
                                         "domain": {
                                             "$ref": "#/definitions/domain"
-                                        },
-                                        "type": {
-                                            "type": "string",
-                                            "enum": [UserType.EPHEMERAL,
-                                                     UserType.LOCAL]
                                         }
                                     },
                                     "additionalProperties": False
@@ -579,23 +572,6 @@ class RuleProcessor(object):
                 for group in list({g['name']: g for g in groups}.values()):
                     yield group
 
-        def normalize_user(user):
-            """Parse and validate user mapping."""
-            user_type = user.get('type')
-
-            if user_type and user_type not in (UserType.EPHEMERAL,
-                                               UserType.LOCAL):
-                msg = _("User type %s not supported") % user_type
-                raise exception.ValidationError(msg)
-
-            if user_type is None:
-                user_type = user['type'] = UserType.EPHEMERAL
-
-            if user_type == UserType.EPHEMERAL:
-                user['domain'] = {
-                    'id': CONF.federation.federated_domain_name
-                }
-
         # initialize the group_ids as a set to eliminate duplicates
         user = {}
         group_ids = set()
@@ -661,8 +637,6 @@ class RuleProcessor(object):
                     group_ids.update([identity_value['group_ids']])
             if 'projects' in identity_value:
                 projects = identity_value['projects']
-
-        normalize_user(user)
 
         return {'user': user,
                 'group_ids': list(group_ids),

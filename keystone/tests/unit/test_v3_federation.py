@@ -893,7 +893,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         return r
 
     def _create_mapping(self, mapping_id):
-        mapping = mapping_fixtures.MAPPING_EPHEMERAL_USER
+        mapping = mapping_fixtures.MAPPING_FEDERATED_USER
         mapping['id'] = mapping_id
         url = '/OS-FEDERATION/mappings/%s' % mapping_id
         self.put(url,
@@ -1784,19 +1784,10 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
         self.assertValidMappingResponse(
             resp, mapping_fixtures.MAPPING_LOCAL_USER_LOCAL_DOMAIN)
 
-    def test_create_mapping_with_ephemeral(self):
-        url = self.MAPPING_URL + uuid.uuid4().hex
-        resp = self.put(
-            url,
-            body={'mapping': mapping_fixtures.MAPPING_EPHEMERAL_USER},
-            expected_status=http_client.CREATED)
-        self.assertValidMappingResponse(
-            resp, mapping_fixtures.MAPPING_EPHEMERAL_USER)
-
     def test_create_mapping_with_bad_user_type(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
         # get a copy of a known good map
-        bad_mapping = copy.deepcopy(mapping_fixtures.MAPPING_EPHEMERAL_USER)
+        bad_mapping = copy.deepcopy(mapping_fixtures.MAPPING_FEDERATED_USER)
         # now sabotage the user type
         bad_mapping['rules'][0]['local'][0]['user']['type'] = uuid.uuid4().hex
         self.put(url, expected_status=http_client.BAD_REQUEST,

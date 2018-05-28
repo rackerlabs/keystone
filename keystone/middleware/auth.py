@@ -20,8 +20,6 @@ from keystone.common import tokenless_auth
 from keystone.common import wsgi
 import keystone.conf
 from keystone import exception
-from keystone.federation import constants as federation_constants
-from keystone.federation import utils
 from keystone.i18n import _
 from keystone.models import token_model
 from keystone.token.providers import common
@@ -64,41 +62,21 @@ class AuthContextMiddleware(provider_api.ProviderAPIMixin,
             project_id,
             domain_id)
 
-        # NOTE(gyee): if it is an ephemeral user, the
-        # given X.509 SSL client cert does not need to map to
-        # an existing user.
-        if user_ref['type'] == utils.UserType.EPHEMERAL:
-            auth_context = {}
-            auth_context['group_ids'] = user_ref['group_ids']
-            auth_context[federation_constants.IDENTITY_PROVIDER] = (
-                user_ref[federation_constants.IDENTITY_PROVIDER])
-            auth_context[federation_constants.PROTOCOL] = (
-                user_ref[federation_constants.PROTOCOL])
-            if domain_id and project_id:
-                msg = _('Scoping to both domain and project is not allowed')
-                raise ValueError(msg)
-            if domain_id:
-                auth_context['domain_id'] = domain_id
-            if project_id:
-                auth_context['project_id'] = project_id
-            auth_context['roles'] = user_ref['roles']
-        else:
-            # it's the local user, so token data is needed.
-            token_helper = common.V3TokenDataHelper()
-            token_data = token_helper.get_token_data(
-                user_id=user_ref['id'],
-                method_names=[CONF.tokenless_auth.protocol],
-                domain_id=domain_id,
-                project_id=project_id)
+        token_helper = common.V3TokenDataHelper()
+        token_data = token_helper.get_token_data(
+            user_id=user_ref['id'],
+            method_names=[CONF.tokenless_auth.protocol],
+            domain_id=domain_id,
+            project_id=project_id)
 
-            auth_context = {'user_id': user_ref['id']}
-            auth_context['is_delegated_auth'] = False
-            if domain_id:
-                auth_context['domain_id'] = domain_id
-            if project_id:
-                auth_context['project_id'] = project_id
-            auth_context['roles'] = [role['name'] for role
-                                     in token_data['token']['roles']]
+        auth_context = {'user_id': user_ref['id']}
+        auth_context['is_delegated_auth'] = False
+        if domain_id:
+            auth_context['domain_id'] = domain_id
+        if project_id:
+            auth_context['project_id'] = project_id
+        auth_context['roles'] = [role['name'] for role
+                                 in token_data['token']['roles']]
         return auth_context
 
     def _validate_trusted_issuer(self, request):
