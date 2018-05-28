@@ -432,11 +432,6 @@ identity backend. The local user and domain are not generated dynamically, so
 if they do not exist in the local identity backend, authentication attempts
 will result in a 401 Unauthorized error.
 
-If you omit the ``type`` attribute or set it to ``ephemeral`` or do not provide a
-domain, the user is deemed ephemeral and becomes a member of the identity
-provider's domain. It will not be looked up in the local keystone backend, so
-all of its attributes must come from the IdP and the mapping rules.
-
 .. NOTE::
     Domain ``Federated`` is a service domain - it cannot be listed, displayed,
     added or deleted.  There is no need to perform any operation on it prior to
@@ -457,7 +452,6 @@ If a mapping is valid you will receive the following output:
                     {
                         "id": "Federated" or "<local-domain-id>"
                     },
-                "type": "ephemeral" or "local",
                 "name": "<local-user-name>",
                 "id": "<local-user-id>"
             },

@@ -32,7 +32,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
     """A class for testing the mapping rule engine."""
 
     def assertValidMappedUserObject(self, mapped_properties,
-                                    user_type='ephemeral',
+                                    user_type='federated',
                                     domain_id=None):
         """Check whether mapped properties object has 'user' within.
 
@@ -44,7 +44,6 @@ class MappingRuleEngineTests(unit.BaseTestCase):
                       message='Missing user object in mapped properties')
         user = mapped_properties['user']
         self.assertIn('type', user)
-        self.assertEqual(user_type, user['type'])
         self.assertIn('domain', user)
         domain = user['domain']
         domain_name_or_id = domain.get('id') or domain.get('name')

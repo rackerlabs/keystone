@@ -588,13 +588,13 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
         self.config_fixture.config(group='tokenless_auth',
                                    protocol='ephemeral')
         self.protocol_id = 'ephemeral'
-        mapping = copy.deepcopy(mapping_fixtures.MAPPING_FOR_EPHEMERAL_USER)
+        mapping = copy.deepcopy(mapping_fixtures.MAPPING_FOR_FEDERATED_USER)
         mapping['rules'][0]['local'][0]['group']['id'] = self.group['id']
         self._load_mapping_rules(mapping)
 
         req = self._do_middleware_request(extra_environ=env)
         context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
-        self._assert_tokenless_auth_context(context, ephemeral_user=True)
+        self._assert_tokenless_auth_context(context)
 
     def test_ephemeral_with_default_user_type_success(self):
         env = {}
@@ -609,13 +609,13 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
         # and it should defaults to 'ephemeral' which is
         # the expected type for the test case.
         mapping = copy.deepcopy(
-            mapping_fixtures.MAPPING_FOR_DEFAULT_EPHEMERAL_USER)
+            mapping_fixtures.MAPPING_FOR_DEFAULT_FEDERATED_USER)
         mapping['rules'][0]['local'][0]['group']['id'] = self.group['id']
         self._load_mapping_rules(mapping)
 
         req = self._do_middleware_request(extra_environ=env)
         context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
-        self._assert_tokenless_auth_context(context, ephemeral_user=True)
+        self._assert_tokenless_auth_context(context)
 
     def test_ephemeral_any_user_success(self):
         """Verify ephemeral user does not need a specified user.
@@ -630,13 +630,13 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
         self.config_fixture.config(group='tokenless_auth',
                                    protocol='ephemeral')
         self.protocol_id = 'ephemeral'
-        mapping = copy.deepcopy(mapping_fixtures.MAPPING_FOR_EPHEMERAL_USER)
+        mapping = copy.deepcopy(mapping_fixtures.MAPPING_FOR_FEDERATED_USER)
         mapping['rules'][0]['local'][0]['group']['id'] = self.group['id']
         self._load_mapping_rules(mapping)
 
         req = self._do_middleware_request(extra_environ=env)
         context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
-        self._assert_tokenless_auth_context(context, ephemeral_user=True)
+        self._assert_tokenless_auth_context(context)
 
     def test_ephemeral_invalid_scope_fail(self):
         env = {}
@@ -647,7 +647,7 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
         self.config_fixture.config(group='tokenless_auth',
                                    protocol='ephemeral')
         self.protocol_id = 'ephemeral'
-        mapping = copy.deepcopy(mapping_fixtures.MAPPING_FOR_EPHEMERAL_USER)
+        mapping = copy.deepcopy(mapping_fixtures.MAPPING_FOR_FEDERATED_USER)
         mapping['rules'][0]['local'][0]['group']['id'] = self.group['id']
         self._load_mapping_rules(mapping)
 
@@ -664,7 +664,7 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
         self.config_fixture.config(group='tokenless_auth',
                                    protocol='ephemeral')
         self.protocol_id = 'ephemeral'
-        mapping = copy.deepcopy(mapping_fixtures.MAPPING_FOR_EPHEMERAL_USER)
+        mapping = copy.deepcopy(mapping_fixtures.MAPPING_FOR_FEDERATED_USER)
         mapping['rules'][0]['local'][0]['group']['id'] = uuid.uuid4().hex
         self._load_mapping_rules(mapping)
 
@@ -686,7 +686,7 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
         self.config_fixture.config(group='tokenless_auth',
                                    protocol='x509')
         self.protocol_id = 'x509'
-        mapping = copy.deepcopy(mapping_fixtures.MAPPING_FOR_EPHEMERAL_USER)
+        mapping = copy.deepcopy(mapping_fixtures.MAPPING_FOR_FEDERATED_USER)
         mapping['rules'][0]['local'][0]['group']['id'] = uuid.uuid4().hex
         self._load_mapping_rules(mapping)
 

@@ -21,8 +21,6 @@ from keystone.common import tokenless_auth
 from keystone.common import wsgi
 import keystone.conf
 from keystone import exception
-from keystone.federation import constants as federation_constants
-from keystone.federation import utils
 from keystone.i18n import _
 from keystone.models import token_model
 
