@@ -1,0 +1,108 @@
+# header section, sorted alphabetically
+x_subject_token_response_header_required:
+  description: |
+    The authentication token.  An authentication
+    response returns the token ID in this header rather than in the
+    response body.
+  in: header
+  required: true
+  type: string
+
+# body section, sorted alphabetically
+audit_ids_response_body_required:
+  description: |
+    A list of one or two audit IDs. An audit ID is a
+    unique, randomly generated, URL-safe string that you can use to
+    track a token.  The first audit ID is the current audit ID for the
+    token.  The second audit ID is present for only re-scoped tokens
+    and is the audit ID from the token before it was re-scoped. A re-
+    scoped token is one that was exchanged for another token of the
+    same or different scope.  You can use these audit IDs to track the
+    use of a token or chain of tokens across multiple requests and
+    endpoints without exposing the token ID to non-privileged users.
+  in: body
+  required: true
+  type: array
+catalog_response_body_required:
+  description: |
+    A ``catalog`` object detailing the services available in the deployment
+    and their endpoints.
+  in: body
+  required: true
+  type: array
+domain_scope_response_body_required:
+  description: |
+    A ``domain`` object representing the domain the token is scoped to.
+  in: body
+  required: true
+  type: object
+expires_at_response_body_required:
+  description: |
+    The date and time when the token expires.
+
+    The date and time stamp format is `ISO 8601
+    <https://en.wikipedia.org/wiki/ISO_8601>`_:
+
+    ::
+
+       CCYY-MM-DDThh:mm:ss.sssZ
+
+    For example, ``2015-08-27T09:49:58.000000Z``.
+
+    A ``null`` value indicates that the token never expires.
+  in: body
+  required: true
+  type: string
+issued_at_response_body_required:
+  description: |
+    The date and time when the token was issued.
+
+    The date and time stamp format is `ISO 8601
+    <https://en.wikipedia.org/wiki/ISO_8601>`_:
+
+    ::
+
+       CCYY-MM-DDThh:mm:ss.sssZ
+
+    For example, ``2015-08-27T09:49:58.000000Z``.
+  in: body
+  required: true
+  type: string
+password_authentication_method_response_body_required:
+  description: |
+    The authentication method. For password
+    authentication, specify ``password``.
+  in: body
+  required: true
+  type: array
+project_scope_response_body_required:
+  description: |
+    A ``project`` object representing the project the token is scoped to.
+  in: body
+  required: true
+  type: object
+roles_response_body_required:
+  description: |
+    A list of ``role`` objects.
+  in: body
+  required: true
+  type: array
+system_scope_response_body_required:
+  description: |
+    A list of systems to access based on role assignments.
+  in: body
+  required: true
+  type: array
+token_response_body_required:
+  description: |
+    A ``token`` object contain information about the token, authorization
+    scope, user, and role assignments.
+  in: body
+  required: true
+  type: object
+user_response_body_required:
+  description: |
+    A ``user`` object describing the authenticated user.
+  in: body
+  required: true
+  type: object
