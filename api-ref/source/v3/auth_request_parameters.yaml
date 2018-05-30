@@ -1,0 +1,98 @@
+# query section, sorted alphabetically
+nocatalog_query_string_optional:
+  description: |
+    (Since v3.1) The authentication response excludes
+    the service catalog. By default, the response includes the service
+    catalog.
+  in: query
+  required: false
+  type: string
+
+# body section, sorted alphabetically
+auth_request_body_required:
+  description: |
+    An ``auth`` object.
+  in: body
+  required: true
+  type: object
+domain_scope_request_body_required:
+  description: |
+    The ``id`` or ``name`` of the domain to scope to.
+  in: body
+  required: true
+  type: object
+explicit_unscoped_string_required:
+  description: |
+    The authorization scope (Since v3.4). Specify
+    ``unscoped`` to make an explicit unscoped token request, which
+    returns an unscoped response without any authorization. This
+    request behaves the same as a token request with no scope where
+    the user has no default project defined. If an explicit,
+    ``unscoped`` token request is not made and the user has
+    authorization to their default project, then the response will
+    return a project-scoped token. If a default project is not defined,
+    a token is issued without an explicit scope of authorization,
+    which is the same as asking for an explicit unscoped token.
+  in: body
+  required: false
+  type: string
+identity_request_body_required:
+  description: |
+    An ``identity`` object.
+  in: body
+  required: true
+  type: object
+password_methods_request_body_required:
+  description: |
+    The authentication method. For password authentication, specify
+    ``password``.
+  in: body
+  required: true
+  type: array
+password_request_body_required:
+  description: |
+    The ``password`` object, contains the authentication information.
+  in: body
+  required: true
+  type: object
+project_scope_request_body_required:
+  description: |
+    The ``id`` or ``name`` and domain ``id`` of the project to scope to.
+  in: body
+  required: true
+  type: object
+system_scope_request_body_required:
+  description: |
+    Authorization scope specific to the deployment system (Since v3.10).
+    Specifying a project or domain scope in addition to system scope results
+    in an HTTP ``400 Bad Request``.
+  in: body
+  required: true
+  type: string
+user_domain_request_body_required:
+  description: |
+    A ``domain`` object containing either an ``id`` or ``name`` to uniquely
+    identify the user.
+  in: body
+  required: true
+  type: object
+user_id_request_body_required:
+  description: |
+    The ID of the user. A domain object is not required since users can be
+    identified uniquely across the deployment by their ID.
+  in: body
+  required: true
+  type: string
+user_name_request_body_required:
+  description: |
+    The user name. A domain object is required if specifying a user by name.
+  in: body
+  required: true
+  type: string
+user_request_body_required:
+  description: |
+    A ``user`` object containing an ``id`` or ``name``, ``password``, and
+    optionally a ``domain`` if ``name`` is specified.
+  in: body
+  required: true
+  type: object

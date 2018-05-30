@@ -93,18 +93,12 @@ These authentication errors can occur:
 +------------------------+----------------------------------------------------------------------+
 
 
-Password authentication with unscoped authorization
-===================================================
+Create explicit unscoped token with password and username
+=========================================================
 
 .. rest_method::  POST /v3/auth/tokens
 
-Authenticates an identity and generates a token. Uses the password authentication method. Authorization is unscoped.
-
-The request body must include a payload that specifies the
-authentication method, which is ``password``, and the user, by ID
-or name, and password credentials.
-
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
+Explicitly authenticate for an unscoped token using a password and a username.
 
 Request
 -------
@@ -112,22 +106,22 @@ Request
 Parameters
 ~~~~~~~~~~
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: auth_request_parameters.yaml
 
-   - nocatalog: nocatalog
-   - domain: domain
-   - name: user_name
-   - auth: auth
-   - user: user
-   - password: password
-   - id: user_id
-   - identity: identity
-   - methods: auth_methods_passwd
+   - auth: auth_request_body_required
+   - identity: identity_request_body_required
+   - methods: password_methods_request_body_required
+   - password: password_request_body_required
+   - user: user_request_body_required
+   - name: user_name_request_body_required
+   - domain: user_domain_request_body_required
+   - scope: explicit_unscoped_string_required
+   - nocatalog: nocatalog_query_string_optional
 
 Example
 ~~~~~~~
 
-.. literalinclude:: ./samples/admin/auth-password-unscoped-request-with-domain.json
+.. literalinclude:: ./samples/auth/explicit-unscoped-password-username-request.json
    :language: javascript
 
 Response
@@ -136,18 +130,15 @@ Response
 Parameters
 ~~~~~~~~~~
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: auth_response_parameters.yaml
 
-   - X-Subject-Token: X-Subject-Token
-   - domain: domain
-   - methods: auth_methods_passwd
-   - expires_at: expires_at
-   - token: token
-   - user: user
-   - audit_ids: audit_ids
-   - issued_at: issued_at
-   - id: user_id
-   - name: user_name
+   - X-Subject-Token: x_subject_token_response_header_required
+   - methods: password_authentication_method_response_body_required
+   - expires_at: expires_at_response_body_required
+   - token: token_response_body_required
+   - user: user_response_body_required
+   - audit_ids: audit_ids_response_body_required
+   - issued_at: issued_at_response_body_required
 
 Status Codes
 ~~~~~~~~~~~~
@@ -160,13 +151,141 @@ Status Codes
 
    - 400
    - 401
-   - 403
-   - 404
-   - 405
-   - 409
-   - 413
-   - 415
-   - 503
+
+Example
+~~~~~~~
+
+.. literalinclude:: ./samples/admin/auth-password-unscoped-response.json
+   :language: javascript
+
+Create explicit unscoped token with password and user ID
+========================================================
+
+.. rest_method::  POST /v3/auth/tokens
+
+Explicitly authenticate for an unscoped token using a password and a user ID.
+
+Request
+-------
+
+Parameters
+~~~~~~~~~~
+
+.. rest_parameters:: auth_request_parameters.yaml
+
+   - auth: auth_request_body_required
+   - identity: identity_request_body_required
+   - methods: password_methods_request_body_required
+   - password: password_request_body_required
+   - user: user_request_body_required
+   - id: user_id_request_body_required
+   - scope: explicit_unscoped_string_required
+   - nocatalog: nocatalog_query_string_optional
+
+Example
+~~~~~~~
+
+.. literalinclude:: ./samples/auth/explicit-unscoped-password-user-id-request.json
+   :language: javascript
+
+Response
+--------
+
+Parameters
+~~~~~~~~~~
+
+.. rest_parameters:: auth_response_parameters.yaml
+
+   - X-Subject-Token: x_subject_token_response_header_required
+   - methods: password_authentication_method_response_body_required
+   - expires_at: expires_at_response_body_required
+   - token: token_response_body_required
+   - user: user_response_body_required
+   - audit_ids: audit_ids_response_body_required
+   - issued_at: issued_at_response_body_required
+
+Status Codes
+~~~~~~~~~~~~
+
+.. rest_status_code:: success status.yaml
+
+   - 201
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+
+Example
+~~~~~~~
+
+.. literalinclude:: ./samples/admin/auth-password-unscoped-response.json
+   :language: javascript
+
+Create unscoped token with password and username
+================================================
+
+.. rest_method::  POST /v3/auth/tokens
+
+Authenticate without specifying an authorization scope with a password and
+username.
+
+If the authenticating user has a ``default_project_id`` set on their user
+reference and if they have a role assignment on that project, a project-scoped
+token will be returned. If the user does not have a ``default_project_id``, or
+does not have authorization on the project ID specified by the
+``default_project_id`` attribute, an unscoped token will be returned.
+
+Request
+-------
+
+Parameters
+~~~~~~~~~~
+
+.. rest_parameters:: auth_request_parameters.yaml
+
+   - auth: auth_request_body_required
+   - identity: identity_request_body_required
+   - methods: password_methods_request_body_required
+   - password: password_request_body_required
+   - user: user_request_body_required
+   - name: user_name_request_body_required
+   - domain: user_domain_request_body_required
+   - nocatalog: nocatalog_query_string_optional
+
+Example
+~~~~~~~
+
+.. literalinclude:: ./samples/auth/unscoped-password-username-request.json
+   :language: javascript
+
+Response
+--------
+
+Parameters
+~~~~~~~~~~
+
+.. rest_parameters:: auth_response_parameters.yaml
+
+   - X-Subject-Token: x_subject_token_response_header_required
+   - token: token_response_body_required
+   - audit_ids: audit_ids_response_body_required
+   - expires_at: expires_at_response_body_required
+   - issued_at: issued_at_response_body_required
+   - methods: password_authentication_method_response_body_required
+   - user: user_response_body_required
+
+Status Codes
+~~~~~~~~~~~~
+
+.. rest_status_code:: success status.yaml
+
+   - 201
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
 
 Example
 ~~~~~~~
@@ -175,41 +294,37 @@ Example
    :language: javascript
 
 
-Password authentication with scoped authorization
-=================================================
+Create unscoped token with password and user ID
+===============================================
 
 .. rest_method::  POST /v3/auth/tokens
 
-Authenticates an identity and generates a token. Uses the password authentication method and scopes authorization to a project or domain.
+Authenticate without specifying an authorization scope with a password and user
+ID.
 
-The request body must include a payload that specifies the
-``password`` authentication method, the credentials, and the
-``project`` or ``domain`` authorization scope.
-
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
+If the authenticating user has a ``default_project_id`` set on their user
+reference and if they have a role assignment on that project, a project-scoped
+token will be returned. If the user does not have a ``default_project_id``, or
+does not have authorization on the project ID specified by the
+``default_project_id`` attribute, an unscoped token will be returned.
 
 Request
 -------
 
-Parameters
-~~~~~~~~~~
+.. rest_parameters:: auth_request_parameters.yaml
 
-.. rest_parameters:: parameters.yaml
-
-   - nocatalog: nocatalog
-   - name: user_name
-   - auth: auth
-   - user: user
-   - scope: scope_string
-   - password: password
-   - id: user_id
-   - identity: identity
-   - methods: auth_methods_passwd
+   - auth: auth_request_body_required
+   - identity: identity_request_body_required
+   - methods: password_methods_request_body_required
+   - password: password_request_body_required
+   - user: user_request_body_required
+   - id: user_id_request_body_required
+   - nocatalog: nocatalog_query_string_optional
 
 Example
 ~~~~~~~
 
-.. literalinclude:: ./samples/admin/auth-password-project-scoped-request.json
+.. literalinclude:: ./samples/auth/unscoped-password-user-id-request.json
    :language: javascript
 
 Response
@@ -218,28 +333,15 @@ Response
 Parameters
 ~~~~~~~~~~
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: auth_response_parameters.yaml
 
-   - X-Subject-Token: X-Subject-Token
-   - domain: domain
-   - region_id: region_id_required
-   - methods: auth_methods_passwd
-   - roles: roles
-   - url: endpoint_url
-   - region: endpoint_region
-   - token: token
-   - expires_at: expires_at
-   - project: project
-   - system: system
-   - issued_at: issued_at
-   - catalog: catalog
-   - user: user
-   - audit_ids: audit_ids
-   - interface: endpoint_interface
-   - endpoints: endpoints
-   - type: endpoint_type
-   - id: user_id
-   - name: user_name
+   - X-Subject-Token: x_subject_token_response_header_required
+   - token: token_response_body_required
+   - audit_ids: audit_ids_response_body_required
+   - expires_at: expires_at_response_body_required
+   - issued_at: issued_at_response_body_required
+   - methods: password_authentication_method_response_body_required
+   - user: user_response_body_required
 
 Status Codes
 ~~~~~~~~~~~~
@@ -252,33 +354,24 @@ Status Codes
 
    - 400
    - 401
-   - 403
-   - 404
-   - 405
-   - 409
-   - 413
-   - 415
-   - 503
 
 Example
 ~~~~~~~
 
-.. literalinclude:: ./samples/admin/auth-password-project-scoped-response.json
+.. literalinclude:: ./samples/admin/auth-password-unscoped-response.json
    :language: javascript
 
-
-Password authentication with explicit unscoped authorization
-============================================================
+Create system-scoped token with password and username
+=====================================================
 
 .. rest_method::  POST /v3/auth/tokens
 
-Authenticates an identity and generates a token. Uses the password authentication method with explicit unscoped authorization.
+Authenticate for a token scoped to the deployment system using a password and
+username.
 
-The request body must include a payload that specifies the
-``password`` authentication method, the credentials, and the
-``unscoped`` authorization scope.
-
-Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
+The authentication request body must contain a ``system`` object within
+``scope`` and the authenticating user must have a role assignment on the
+deployment system.
 
 Request
 -------
@@ -286,22 +379,22 @@ Request
 Parameters
 ~~~~~~~~~~
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: auth_request_parameters.yaml
 
-   - nocatalog: nocatalog
-   - name: user_name
-   - auth: auth
-   - user: user
-   - scope: explicit_unscoped_string
-   - password: password
-   - id: user_id
-   - identity: identity
-   - methods: auth_methods_passwd
+   - auth: auth_request_body_required
+   - identity: identity_request_body_required
+   - methods: password_methods_request_body_required
+   - password: password_request_body_required
+   - user: user_request_body_required
+   - name: user_name_request_body_required
+   - domain: user_domain_request_body_required
+   - scope: system_scope_request_body_required
+   - nocatalog: nocatalog_query_string_optional
 
 Example
 ~~~~~~~
 
-.. literalinclude:: ./samples/admin/auth-password-explicit-unscoped-request.json
+.. literalinclude:: ./samples/auth/system-scoped-password-username-request.json
    :language: javascript
 
 Response
@@ -310,19 +403,18 @@ Response
 Parameters
 ~~~~~~~~~~
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: auth_response_parameters.yaml
 
-   - X-Subject-Token: X-Subject-Token
-   - domain: domain
-   - methods: auth_methods_passwd
-   - roles: roles
-   - expires_at: expires_at
-   - token: token
-   - user: user
-   - audit_ids: audit_ids
-   - issued_at: issued_at
-   - id: user_id
-   - name: user_name
+   - X-Subject-Token: x_subject_token_response_header_required
+   - token: token_response_body_required
+   - audit_ids: audit_ids_response_body_required
+   - catalog: catalog_response_body_required
+   - expires_at: expires_at_response_body_required
+   - issued_at: issued_at_response_body_required
+   - methods: password_authentication_method_response_body_required
+   - roles: roles_response_body_required
+   - system: system_scope_response_body_required
+   - user: user_response_body_required
 
 Status Codes
 ~~~~~~~~~~~~
@@ -335,20 +427,370 @@ Status Codes
 
    - 400
    - 401
-   - 403
-   - 404
-   - 405
-   - 409
-   - 413
-   - 415
-   - 503
 
 Example
 ~~~~~~~
 
-.. literalinclude:: ./samples/admin/auth-password-explicit-unscoped-response.json
+.. literalinclude:: ./samples/auth/system-scoped-password-token-response.json
    :language: javascript
 
+Create system-scoped token with password and user ID
+====================================================
+
+.. rest_method::  POST /v3/auth/tokens
+
+Authenticate for a token scoped to the deployment system using a password and
+user ID.
+
+The authentication request body must contain a ``system`` object within
+``scope`` and the authenticating user must have a role assignment on the
+deployment system.
+
+Request
+-------
+
+Parameters
+~~~~~~~~~~
+
+.. rest_parameters:: auth_request_parameters.yaml
+
+   - auth: auth_request_body_required
+   - identity: identity_request_body_required
+   - methods: password_methods_request_body_required
+   - password: password_request_body_required
+   - user: user_request_body_required
+   - id: user_id_request_body_required
+   - scope: system_scope_request_body_required
+   - nocatalog: nocatalog_query_string_optional
+
+Example
+~~~~~~~
+
+.. literalinclude:: ./samples/auth/system-scoped-password-user-id-request.json
+   :language: javascript
+
+Response
+--------
+
+Parameters
+~~~~~~~~~~
+
+.. rest_parameters:: auth_response_parameters.yaml
+
+   - X-Subject-Token: x_subject_token_response_header_required
+   - token: token_response_body_required
+   - audit_ids: audit_ids_response_body_required
+   - catalog: catalog_response_body_required
+   - expires_at: expires_at_response_body_required
+   - issued_at: issued_at_response_body_required
+   - methods: password_authentication_method_response_body_required
+   - roles: roles_response_body_required
+   - system: system_scope_response_body_required
+   - user: user_response_body_required
+
+Status Codes
+~~~~~~~~~~~~
+
+.. rest_status_code:: success status.yaml
+
+   - 201
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+
+Example
+~~~~~~~
+
+.. literalinclude:: ./samples/auth/system-scoped-password-token-response.json
+   :language: javascript
+
+Create domain-scoped token with password and username
+=====================================================
+
+.. rest_method::  POST /v3/auth/tokens
+
+Authenticate for a token scoped to a domain using a password and username.
+
+The authentication request body must contain a ``domain`` object within
+``scope`` and the authenticating user must have a role assignment on the domain
+in the request.
+
+Request
+-------
+
+Parameters
+~~~~~~~~~~
+
+.. rest_parameters:: auth_request_parameters.yaml
+
+   - auth: auth_request_body_required
+   - identity: identity_request_body_required
+   - methods: password_methods_request_body_required
+   - password: password_request_body_required
+   - user: user_request_body_required
+   - name: user_name_request_body_required
+   - domain: user_domain_request_body_required
+   - scope: domain_scope_request_body_required
+   - nocatalog: nocatalog_query_string_optional
+
+Example
+~~~~~~~
+
+.. literalinclude:: ./samples/auth/domain-scoped-password-username-request.json
+   :language: javascript
+
+Response
+--------
+
+Parameters
+~~~~~~~~~~
+
+.. rest_parameters:: auth_response_parameters.yaml
+
+   - X-Subject-Token: x_subject_token_response_header_required
+   - token: token_response_body_required
+   - audit_ids: audit_ids_response_body_required
+   - catalog: catalog_response_body_required
+   - expires_at: expires_at_response_body_required
+   - issued_at: issued_at_response_body_required
+   - methods: password_authentication_method_response_body_required
+   - roles: roles_response_body_required
+   - domain: domain_scope_response_body_required
+   - user: user_response_body_required
+
+Status Codes
+~~~~~~~~~~~~
+
+.. rest_status_code:: success status.yaml
+
+   - 201
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+
+Example
+~~~~~~~
+
+.. literalinclude:: ./samples/auth/domain-scoped-password-token-response.json
+   :language: javascript
+
+Create domain-scoped token with password and user ID
+====================================================
+
+.. rest_method::  POST /v3/auth/tokens
+
+Authenticate for a token scoped to a domain using a password and a user ID.
+
+The authentication request body must contain a ``domain`` object within
+``scope`` and the authenticating user must have a role assignment on the domain
+in the request.
+
+Request
+-------
+
+Parameters
+~~~~~~~~~~
+
+.. rest_parameters:: auth_request_parameters.yaml
+
+   - auth: auth_request_body_required
+   - identity: identity_request_body_required
+   - methods: password_methods_request_body_required
+   - password: password_request_body_required
+   - user: user_request_body_required
+   - id: user_id_request_body_required
+   - scope: domain_scope_request_body_required
+   - nocatalog: nocatalog_query_string_optional
+
+Example
+~~~~~~~
+
+.. literalinclude:: ./samples/auth/domain-scoped-password-username-request.json
+   :language: javascript
+
+Response
+--------
+
+Parameters
+~~~~~~~~~~
+
+.. rest_parameters:: auth_response_parameters.yaml
+
+   - X-Subject-Token: x_subject_token_response_header_required
+   - token: token_response_body_required
+   - audit_ids: audit_ids_response_body_required
+   - catalog: catalog_response_body_required
+   - expires_at: expires_at_response_body_required
+   - issued_at: issued_at_response_body_required
+   - methods: password_authentication_method_response_body_required
+   - roles: roles_response_body_required
+   - domain: domain_scope_response_body_required
+   - user: user_response_body_required
+
+Status Codes
+~~~~~~~~~~~~
+
+.. rest_status_code:: success status.yaml
+
+   - 201
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+
+Example
+~~~~~~~
+
+.. literalinclude:: ./samples/auth/domain-scoped-password-token-response.json
+   :language: javascript
+
+Create project-scope token with password and username
+=====================================================
+
+.. rest_method::  POST /v3/auth/tokens
+
+Authenticate for a token scoped to a project using a password and username.
+
+The authentication request body must contain a ``project`` object within
+``scope`` and the authenticating user must have a role assignment on the
+project in the request.
+
+Request
+-------
+
+Parameters
+~~~~~~~~~~
+
+.. rest_parameters:: auth_request_parameters.yaml
+
+   - auth: auth_request_body_required
+   - identity: identity_request_body_required
+   - methods: password_methods_request_body_required
+   - password: password_request_body_required
+   - user: user_request_body_required
+   - name: user_name_request_body_required
+   - domain: user_domain_request_body_required
+   - scope: project_scope_request_body_required
+   - nocatalog: nocatalog_query_string_optional
+
+Example
+~~~~~~~
+
+.. literalinclude:: ./samples/auth/project-scoped-password-username-request.json
+   :language: javascript
+
+Response
+--------
+
+Parameters
+~~~~~~~~~~
+
+.. rest_parameters:: auth_response_parameters.yaml
+
+   - X-Subject-Token: x_subject_token_response_header_required
+   - token: token_response_body_required
+   - audit_ids: audit_ids_response_body_required
+   - catalog: catalog_response_body_required
+   - expires_at: expires_at_response_body_required
+   - issued_at: issued_at_response_body_required
+   - methods: password_authentication_method_response_body_required
+   - roles: roles_response_body_required
+   - project: project_scope_response_body_required
+   - user: user_response_body_required
+
+Status Codes
+~~~~~~~~~~~~
+
+.. rest_status_code:: success status.yaml
+
+   - 201
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+
+Example
+~~~~~~~
+
+.. literalinclude:: ./samples/auth/project-scoped-password-token-response.json
+   :language: javascript
+
+Create project-scope token with password and user ID
+====================================================
+
+.. rest_method::  POST /v3/auth/tokens
+
+Authenticate for a token scoped to a project using a password and user ID.
+
+The authentication request body must contain a ``project`` object within
+``scope`` and the authenticating user must have a role assignment on the
+project in the request.
+
+Request
+-------
+
+Parameters
+~~~~~~~~~~
+
+.. rest_parameters:: auth_request_parameters.yaml
+
+   - auth: auth_request_body_required
+   - identity: identity_request_body_required
+   - methods: password_methods_request_body_required
+   - password: password_request_body_required
+   - user: user_request_body_required
+   - id: user_id_request_body_required
+   - scope: project_scope_request_body_required
+   - nocatalog: nocatalog_query_string_optional
+
+Example
+~~~~~~~
+
+.. literalinclude:: ./samples/auth/project-scoped-password-user-id-request.json
+   :language: javascript
+
+Response
+--------
+
+Parameters
+~~~~~~~~~~
+
+.. rest_parameters:: auth_response_parameters.yaml
+
+   - X-Subject-Token: x_subject_token_response_header_required
+   - token: token_response_body_required
+   - audit_ids: audit_ids_response_body_required
+   - catalog: catalog_response_body_required
+   - expires_at: expires_at_response_body_required
+   - issued_at: issued_at_response_body_required
+   - methods: password_authentication_method_response_body_required
+   - roles: roles_response_body_required
+   - project: project_scope_response_body_required
+   - user: user_response_body_required
+
+Status Codes
+~~~~~~~~~~~~
+
+.. rest_status_code:: success status.yaml
+
+   - 201
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+
+Example
+~~~~~~~
+
+.. literalinclude:: ./samples/auth/project-scoped-password-token-response.json
+   :language: javascript
 
 Token authentication with unscoped authorization
 ================================================
@@ -603,6 +1045,7 @@ Parameters
    - token: token
    - expires_at: expires_at
    - project: project
+   - system: system
    - catalog: catalog
    - roles: roles
    - audit_ids: audit_ids
