@@ -371,3 +371,57 @@ class SqlIDMapping(test_backend_sql.SqlTests):
             domain_a_mappings = [m.to_dict() for m in domain_a_mappings]
         self.assertItemsEqual([local_entity1, local_entity2],
                               domain_a_mappings)
+
+    def test_get_domain_mapping_list_by_entity(self):
+        local_id1 = uuid.uuid4().hex
+        local_id2 = uuid.uuid4().hex
+        local_id3 = uuid.uuid4().hex
+        local_id4 = uuid.uuid4().hex
+        local_id5 = uuid.uuid4().hex
+
+        # Create five mappings,two in domainA, three in domainB
+        local_entity1 = {'domain_id': self.domainA['id'],
+                         'local_id': local_id1,
+                         'entity_type': mapping.EntityType.USER}
+        local_entity2 = {'domain_id': self.domainA['id'],
+                         'local_id': local_id2,
+                         'entity_type': mapping.EntityType.USER}
+        local_entity3 = {'domain_id': self.domainB['id'],
+                         'local_id': local_id3,
+                         'entity_type': mapping.EntityType.GROUP}
+        local_entity4 = {'domain_id': self.domainB['id'],
+                         'local_id': local_id4,
+                         'entity_type': mapping.EntityType.USER}
+        local_entity5 = {'domain_id': self.domainB['id'],
+                         'local_id': local_id5,
+                         'entity_type': mapping.EntityType.USER}
+
+        local_entity1['public_id'] = (
+            PROVIDERS.id_mapping_api.create_id_mapping(local_entity1)
+        )
+        local_entity2['public_id'] = (
+            PROVIDERS.id_mapping_api.create_id_mapping(local_entity2)
+        )
+        local_entity3['public_id'] = (
+            PROVIDERS.id_mapping_api.create_id_mapping(local_entity3)
+        )
+        local_entity4['public_id'] = (
+            PROVIDERS.id_mapping_api.create_id_mapping(local_entity4)
+        )
+        local_entity5['public_id'] = (
+            PROVIDERS.id_mapping_api.create_id_mapping(local_entity5)
+        )
+
+        # NOTE(notmorgan): Always call to_dict in an active session context to
+        # ensure that lazy-loaded relationships succeed. Edge cases could cause
+        # issues especially in attribute mappers.
+        with sql.session_for_read():
+            # list user mappings for domainB
+            domain_a_mappings = (
+                PROVIDERS.id_mapping_api.get_domain_mapping_list(
+                    self.domainB['id'], entity_type=mapping.EntityType.USER
+                )
+            )
+            domain_a_mappings = [m.to_dict() for m in domain_a_mappings]
+        self.assertItemsEqual([local_entity4, local_entity5],
+                              domain_a_mappings)
