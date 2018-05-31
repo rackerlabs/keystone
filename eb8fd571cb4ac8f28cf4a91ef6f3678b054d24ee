@@ -16,6 +16,29 @@
       "revId": "eb8fd571cb4ac8f28cf4a91ef6f3678b054d24ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f0bc10bc",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-05-31T13:22:17Z",
+      "side": 1,
+      "message": "This is unrelated to the ldappool requirement bit. I don\u0027t mind grouping it in with the same fix if we can call it out in the commit message that this patch fixes two different things.",
+      "range": {
+        "startLine": 240,
+        "startChar": 32,
+        "endLine": 240,
+        "endChar": 36
+      },
+      "revId": "eb8fd571cb4ac8f28cf4a91ef6f3678b054d24ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
