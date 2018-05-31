@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_2e6b0085",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1981,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-05-31T19:48:43Z",
+      "side": 1,
+      "message": "We can wrap this in a wip decorator, kinda like this.\n\nhttps://github.com/openstack/keystone/blob/37ce5417418f8acbd27f3dacb70c605b0fe48301/keystone/tests/unit/test_limits.py#L271",
+      "range": {
+        "startLine": 1981,
+        "startChar": 8,
+        "endLine": 1981,
+        "endChar": 59
+      },
+      "revId": "dc95fc881bffd272e6acd7850823346053f68716",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_ce284c34",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2020,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-05-31T19:48:43Z",
+      "side": 1,
+      "message": "nit: this probably isn\u0027t necessary since it\u0027s not really elaborating on details that can\u0027t be derived from reading the code.",
+      "range": {
+        "startLine": 2020,
+        "startChar": 8,
+        "endLine": 2020,
+        "endChar": 21
+      },
+      "revId": "dc95fc881bffd272e6acd7850823346053f68716",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_ceddac41",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2035,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-05-31T19:48:43Z",
+      "side": 1,
+      "message": "With the wip decorator, you can write the test as you would expect it to behave, then when it start passing the test will fail to let you know to remove the decorate and enforce the correct behavior.\n\nKinda like what we did here - https://review.openstack.org/#/q/topic:bug/1733754+(status:open+OR+status:merged)",
+      "range": {
+        "startLine": 2025,
+        "startChar": 8,
+        "endLine": 2035,
+        "endChar": 11
+      },
+      "revId": "dc95fc881bffd272e6acd7850823346053f68716",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
