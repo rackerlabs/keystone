@@ -21,6 +21,8 @@ from keystone.credential import controllers
 
 class Routers(wsgi.RoutersBase):
 
+    _path_prefixes = ('credentials',)
+
     def append_v3_routers(self, mapper, routers):
         routers.append(
             router.Router(controllers.CredentialV3(),
