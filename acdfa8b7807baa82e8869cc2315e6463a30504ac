@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_aeaf107b",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-05-31T20:10:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df7087c5_9f88b2c6",
+      "range": {
+        "startLine": 57,
+        "startChar": 46,
+        "endLine": 57,
+        "endChar": 55
+      },
+      "revId": "acdfa8b7807baa82e8869cc2315e6463a30504ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_75271ab8",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 1
@@ -72,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_ce836cca",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-05-31T20:10:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df7087c5_cb450772",
+      "range": {
+        "startLine": 119,
+        "startChar": 32,
+        "endLine": 119,
+        "endChar": 37
+      },
+      "revId": "acdfa8b7807baa82e8869cc2315e6463a30504ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_ff6f6ef9",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 1
@@ -83,6 +131,30 @@
       "writtenOn": "2018-03-21T19:34:07Z",
       "side": 1,
       "message": "seem to be missing a word here. try: \"that the user has...\"",
+      "range": {
+        "startLine": 123,
+        "startChar": 13,
+        "endLine": 123,
+        "endChar": 22
+      },
+      "revId": "acdfa8b7807baa82e8869cc2315e6463a30504ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_2e7460fd",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-05-31T20:10:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df7087c5_ff6f6ef9",
       "range": {
         "startLine": 123,
         "startChar": 13,
@@ -118,6 +190,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_4e6f5c27",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-05-31T20:10:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df7087c5_ae0d4136",
+      "range": {
+        "startLine": 125,
+        "startChar": 13,
+        "endLine": 125,
+        "endChar": 17
+      },
+      "revId": "acdfa8b7807baa82e8869cc2315e6463a30504ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_4e1ca569",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 1
@@ -129,6 +225,30 @@
       "writtenOn": "2018-03-21T23:05:59Z",
       "side": 1,
       "message": "available*",
+      "range": {
+        "startLine": 129,
+        "startChar": 42,
+        "endLine": 129,
+        "endChar": 50
+      },
+      "revId": "acdfa8b7807baa82e8869cc2315e6463a30504ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_ae59508e",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-05-31T20:10:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df7087c5_4e1ca569",
       "range": {
         "startLine": 129,
         "startChar": 42,
@@ -164,6 +284,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_6e57b859",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-05-31T20:10:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df7087c5_8e3b9dcf",
+      "range": {
+        "startLine": 137,
+        "startChar": 65,
+        "endLine": 137,
+        "endChar": 70
+      },
+      "revId": "acdfa8b7807baa82e8869cc2315e6463a30504ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_0e76ada5",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 1
@@ -181,6 +325,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_8ed7b4bf",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-05-31T20:10:51Z",
+      "side": 1,
+      "message": "Where?",
+      "parentUuid": "df7087c5_0e76ada5",
+      "revId": "acdfa8b7807baa82e8869cc2315e6463a30504ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_3f1de672",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 1
@@ -192,6 +354,30 @@
       "writtenOn": "2018-03-21T19:34:07Z",
       "side": 1,
       "message": "Is the warning just for the second example?  If so change \"describe\" to \"describes\". Otherwise change \"this example\" to \"these examples\".",
+      "range": {
+        "startLine": 173,
+        "startChar": 12,
+        "endLine": 173,
+        "endChar": 20
+      },
+      "revId": "acdfa8b7807baa82e8869cc2315e6463a30504ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_0ef5e456",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-05-31T20:10:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df7087c5_3f1de672",
       "range": {
         "startLine": 173,
         "startChar": 12,
