@@ -22,6 +22,30 @@
       "revId": "0b1e85329e9775e71a1db7efe06cfc19779bf2ba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_bb4c4242",
+        "filename": "doc/requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-05-31T03:37:08Z",
+      "side": 1,
+      "message": "yeah, we should add it since it\u0027s used for api autodoc.",
+      "parentUuid": "5f7c97a3_7b8f8a74",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 6
+      },
+      "revId": "0b1e85329e9775e71a1db7efe06cfc19779bf2ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
