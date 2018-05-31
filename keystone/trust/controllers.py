@@ -183,7 +183,9 @@ class TrustV3(controller.V3Controller):
         return utils.parse_expiration_date(expiration_date)
 
     @controller.protected()
-    def list_trusts(self, request):
+    def list_trusts(self, request, trust=None):
+        if not trust:
+            raise exception.TrustNotFound(trust_id='')
         trusts = []
         trustor_user_id = request.params.get('trustor_user_id')
         trustee_user_id = request.params.get('trustee_user_id')

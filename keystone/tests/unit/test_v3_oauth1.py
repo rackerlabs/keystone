@@ -443,8 +443,8 @@ class AuthTokenTests(object):
 
         # verify that the token can perform delegated tasks
         ref = unit.new_user_ref(domain_id=self.domain_id)
-        r = self.admin_request(path='/v3/users', headers=headers,
-                               method='POST', body={'user': ref})
+        r = self.post(path='/v3/users', headers=headers,
+                      body={'user': ref})
         self.assertValidUserResponse(r, ref)
 
     def test_delete_access_token_also_revokes_token(self):
@@ -500,8 +500,8 @@ class AuthTokenTests(object):
 
         headers = {'X-Subject-Token': self.keystone_token_id,
                    'X-Auth-Token': self.keystone_token_id}
-        self.admin_request(path='/auth/tokens', headers=headers,
-                           method='GET', expected_status=http_client.NOT_FOUND)
+        self.get(path='/auth/tokens', headers=headers,
+                 expected_status=http_client.NOT_FOUND)
 
     def test_deleting_project_also_invalidates_tokens(self):
         self.test_oauth_flow()
@@ -517,8 +517,8 @@ class AuthTokenTests(object):
 
         headers = {'X-Subject-Token': self.keystone_token_id,
                    'X-Auth-Token': self.keystone_token_id}
-        self.admin_request(path='/auth/tokens', headers=headers,
-                           method='GET', expected_status=http_client.NOT_FOUND)
+        self.get(path='/auth/tokens', headers=headers,
+                 expected_status=http_client.NOT_FOUND)
 
     def test_token_chaining_is_not_allowed(self):
         self.test_oauth_flow()
@@ -881,8 +881,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
             self.user_id, self.project_id, self.role_id)
         url = self._authorize_request_token(request_key)
         body = {'roles': [{'id': self.role_id}]}
-        self.admin_request(path=url, method='PUT',
-                           body=body, expected_status=http_client.NOT_FOUND)
+        self.put(path=url, body=body, expected_status=http_client.NOT_FOUND)
 
     def test_bad_authorizing_roles_name(self):
         consumer = self._create_single_consumer()
@@ -899,8 +898,8 @@ class MaliciousOAuth1Tests(OAuth1Tests):
 
         url = self._authorize_request_token(request_key)
         body = {'roles': [{'name': 'fake_name'}]}
-        self.admin_request(path=url, method='PUT',
-                           body=body, expected_status=http_client.NOT_FOUND)
+        self.put(path=url, body=body,
+                 expected_status=http_client.NOT_FOUND)
 
     def test_no_authorizing_user_id(self):
         consumer = self._create_single_consumer()

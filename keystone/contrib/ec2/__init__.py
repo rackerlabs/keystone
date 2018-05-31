@@ -15,4 +15,5 @@
 from keystone.contrib.ec2 import controllers  # noqa
 from keystone.contrib.ec2.core import *  # noqa
 from keystone.contrib.ec2.routers import Ec2Extension  # noqa
-from keystone.contrib.ec2.routers import Ec2ExtensionV3  # noqa
+from keystone.contrib.ec2.routers import Routers as Ec2ExtensionV3  # noqa
+from keystone.contrib.ec2 import routers  # noqa
