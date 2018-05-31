@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_8ecc9489",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-05-31T19:50:21Z",
+      "side": 1,
+      "message": "We could add a descriptive title here, like:\n\n  Expose ambiguity bug in role assignment API",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 28
+      },
+      "revId": "dc95fc881bffd272e6acd7850823346053f68716",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_2e6b0085",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 2
