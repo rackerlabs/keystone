@@ -23,17 +23,14 @@ class TestPasteDeploymentEntryPoints(test.TestCase):
             'build_auth_context',
             'cors',
             'debug',
-            'ec2_extension',
-            'ec2_extension_v3',
             'json_body',
             'request_id',
-            's3_extension',
             'sizelimit',
             'token_auth',
             'url_normalize',
         ]
 
-        em = stevedore.ExtensionManager('paste.filter_factory')
+        em = stevedore.ExtensionManager('keystone.server_middleware')
 
         actual_names = [extension.name for extension in em]
 

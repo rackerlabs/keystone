@@ -16,8 +16,14 @@ from keystone.auth import controllers
 from keystone.common import json_home
 from keystone.common import wsgi
 
+from oslo_log import log
+
+LOG = log.getLogger(__name__)
+
 
 class Routers(wsgi.RoutersBase):
+
+    _path_prefixes = ('auth',)
 
     def append_v3_routers(self, mapper, routers):
         auth_controller = controllers.Auth()
