@@ -443,8 +443,8 @@ class AuthTokenTests(object):
 
         # verify that the token can perform delegated tasks
         ref = unit.new_user_ref(domain_id=self.domain_id)
-        r = self.admin_request(path='/v3/users', headers=headers,
-                               method='POST', body={'user': ref})
+        r = self.post(path='/v3/users', headers=headers,
+                      body={'user': ref})
         self.assertValidUserResponse(r, ref)
 
     def test_delete_access_token_also_revokes_token(self):
@@ -497,11 +497,19 @@ class AuthTokenTests(object):
         r = self.patch('/users/%(user_id)s' % {
             'user_id': self.user['id']},
             body={'user': user})
+        # Make sure we actually update the stored password that is used to
+        # grab an auth-token for the token validate call.
+        self.user['password'] = user['password']
 
+        # NOTE(morgan): A 401 response here indicates the token was
+        # properly revoked, note that above we successfully validated this
+        # token in the same manner. Since X-AUTH-TOKEN and X-SUBJECT-TOKEN
+        # are identical, 401 due to X-Auth-Token being invalid is the same
+        # as 404 due to X-Subject-Token being removed.
         headers = {'X-Subject-Token': self.keystone_token_id,
                    'X-Auth-Token': self.keystone_token_id}
-        self.admin_request(path='/auth/tokens', headers=headers,
-                           method='GET', expected_status=http_client.NOT_FOUND)
+        self.get(path='/auth/tokens', headers=headers,
+                 expected_status=http_client.UNAUTHORIZED)
 
     def test_deleting_project_also_invalidates_tokens(self):
         self.test_oauth_flow()
@@ -516,9 +524,9 @@ class AuthTokenTests(object):
             'project_id': self.project_id})
 
         headers = {'X-Subject-Token': self.keystone_token_id,
-                   'X-Auth-Token': self.keystone_token_id}
-        self.admin_request(path='/auth/tokens', headers=headers,
-                           method='GET', expected_status=http_client.NOT_FOUND)
+                   'X-Auth-Token': self.get_admin_token()}
+        self.get(path='/auth/tokens', headers=headers,
+                 expected_status=http_client.NOT_FOUND)
 
     def test_token_chaining_is_not_allowed(self):
         self.test_oauth_flow()
@@ -870,6 +878,16 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         consumer_secret = consumer['secret']
         consumer = {'key': consumer_id, 'secret': consumer_secret}
 
+        # This new role is utilzied to ensure the user still has access to
+        # the project but is authorizing an incorrect role_id for the purposes
+        # of oauth1.
+        new_role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        PROVIDERS.role_api.create_role(new_role['id'], new_role)
+        PROVIDERS.assignment_api.add_role_to_user_and_project(
+            user_id=self.user_id,
+            tenant_id=self.project_id,
+            role_id=new_role['id'])
+
         url, headers = self._create_request_token(consumer, self.project_id)
         content = self.post(
             url, headers=headers,
@@ -878,11 +896,14 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         request_key = credentials['oauth_token'][0]
 
         PROVIDERS.assignment_api.remove_role_from_user_and_project(
-            self.user_id, self.project_id, self.role_id)
+            self.user_id, self.project_id, new_role['id'])
         url = self._authorize_request_token(request_key)
-        body = {'roles': [{'id': self.role_id}]}
-        self.admin_request(path=url, method='PUT',
-                           body=body, expected_status=http_client.NOT_FOUND)
+        body = {'roles': [{'id': new_role['id']}]}
+        # NOTE(morgan): previous versions of this test erroneously checked for
+        # 404 because an unrouted URI was being hit. It is correct to get a 401
+        # error back as the role is not in the superset of roles the user
+        # has at the time of the Authorization.
+        self.put(path=url, body=body, expected_status=http_client.UNAUTHORIZED)
 
     def test_bad_authorizing_roles_name(self):
         consumer = self._create_single_consumer()
@@ -899,8 +920,8 @@ class MaliciousOAuth1Tests(OAuth1Tests):
 
         url = self._authorize_request_token(request_key)
         body = {'roles': [{'name': 'fake_name'}]}
-        self.admin_request(path=url, method='PUT',
-                           body=body, expected_status=http_client.NOT_FOUND)
+        self.put(path=url, body=body,
+                 expected_status=http_client.NOT_FOUND)
 
     def test_no_authorizing_user_id(self):
         consumer = self._create_single_consumer()

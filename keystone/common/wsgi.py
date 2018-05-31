@@ -386,7 +386,7 @@ class Middleware(Application):
             return cls(app)
         return _factory
 
-    def __init__(self, application):
+    def __init__(self, application, conf=None):
         super(Middleware, self).__init__()
         self.application = application
 
