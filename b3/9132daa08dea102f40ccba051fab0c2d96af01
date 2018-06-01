@@ -1,0 +1,14 @@
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+1: Cuong Nguyen <cuongnv@vn.fujitsu.com>
+Code-Review+1: wu.chunyang <wu.chunyang@99cloud.net>
+Code-Review+1: sonu <sonu.bhumca11@gmail.com>
+Code-Review+1: wangxiyuan <wangxiyuan@huawei.com>
+Code-Review+1: Colleen Murphy <colleen@gazlene.net>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Workflow+1: Lance Bragstad <lbragstad@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 01 Jun 2018 15:04:55 +0000
+Reviewed-on: https://review.openstack.org/508412
+Project: openstack/keystone
+Branch: refs/heads/master
