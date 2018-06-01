@@ -1,0 +1,11 @@
+Code-Review+2: Dave Chen <dave.jungler@gmail.com>
+Code-Review+1: sonu <sonu.bhumca11@gmail.com>
+Code-Review+1: wangxiyuan <wangxiyuan@huawei.com>
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Workflow+1: Colleen Murphy <colleen@gazlene.net>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 01 Jun 2018 10:48:18 +0000
+Reviewed-on: https://review.openstack.org/546785
+Project: openstack/keystone
+Branch: refs/heads/master
