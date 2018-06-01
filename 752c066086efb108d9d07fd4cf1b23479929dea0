@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_c6bfcc5e",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-01T08:03:00Z",
+      "side": 1,
+      "message": "awkward grammar. Could be\n\nrequest an unscoped token\nauthenticate to receive an unscoped token",
+      "range": {
+        "startLine": 101,
+        "startChar": 11,
+        "endLine": 101,
+        "endChar": 27
+      },
+      "revId": "752c066086efb108d9d07fd4cf1b23479929dea0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
