@@ -38,6 +38,7 @@ _Middleware = collections.namedtuple('LoadableMiddleware',
 
 
 CONF = keystone.conf.CONF
+LOG = log.getLogger(__name__)
 # NOTE(morgan): ORDER HERE IS IMPORTANT! The middleware will process the
 # request in this list's order.
 _APP_MIDDLEWARE = (
@@ -64,9 +65,6 @@ _APP_MIDDLEWARE = (
                 conf={}),
     _Middleware(namespace='keystone.server_middleware',
                 ep='build_auth_context',
-                conf={}),
-    _Middleware(namespace='keystone.server_middleware',
-                ep='token_auth',
                 conf={}),
 )
 

@@ -16,7 +16,7 @@ from testtools import matchers
 from keystone.tests.unit import core as test
 
 
-class TestPasteDeploymentEntryPoints(test.TestCase):
+class TestServerMiddlewareEntryPoints(test.TestCase):
     def test_entry_point_middleware(self):
         """Assert that our list of expected middleware is present."""
         expected_names = [
@@ -26,7 +26,6 @@ class TestPasteDeploymentEntryPoints(test.TestCase):
             'json_body',
             'request_id',
             'sizelimit',
-            'token_auth',
             'url_normalize',
         ]
 
