@@ -13,13 +13,10 @@
 #    under the License.
 
 import os
-import uuid
 
 from oslo_config import generator
 
 import keystone.conf
-from keystone import exception
-from keystone.server import wsgi
 from keystone.tests import unit
 
 
@@ -42,18 +39,6 @@ class ConfigTestCase(unit.TestCase):
         config_files.insert(0, unit.dirs.etc(sample_file))
         self.addCleanup(os.remove, unit.dirs.etc(sample_file))
         return config_files
-
-    def test_default_paste_config_location_succeeds(self):
-        paste_file_location = unit.dirs.etc(CONF.paste_deploy.config_file)
-        self.assertEqual(paste_file_location, wsgi.find_paste_config())
-
-    def test_invalid_paste_file_location_fails(self):
-        self.config_fixture.config(
-            group='paste_deploy', config_file=uuid.uuid4().hex
-        )
-        self.assertRaises(
-            exception.ConfigFileNotFound, wsgi.find_paste_config
-        )
 
     def test_config_default(self):
         self.assertIsNone(CONF.auth.password)

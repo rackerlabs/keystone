@@ -10,4 +10,12 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+
 from keystone.server.flask.core import *  # noqa
+from keystone.server.flask import application  # noqa
+
+
+__all__ = ('core', 'fail_gracefully', 'initialize_application',
+           'setup_app_middleware')
+
+fail_gracefully = application.fail_gracefully
