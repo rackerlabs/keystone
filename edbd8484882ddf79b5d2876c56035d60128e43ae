@@ -49,6 +49,23 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_9d49f58f",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 11904
+      },
+      "writtenOn": "2018-06-04T19:58:08Z",
+      "side": 1,
+      "message": "I don\u0027t see logger usage being used anywhere here. Was this added for something that was subsequently removed?",
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_2648d62c",
         "filename": "keystone/catalog/routers.py",
         "patchSetId": 7
@@ -125,6 +142,23 @@
         "endLine": 43,
         "endChar": 25
       },
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_b8015f07",
+        "filename": "keystone/contrib/s3/routers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 11904
+      },
+      "writtenOn": "2018-06-04T19:58:08Z",
+      "side": 1,
+      "message": "Non-critical observation (treat less than pointing out a nitpick): Assuming this was maybe copy/pasted from somewhere else? Seems simple enough that you wouldn\u0027t need to carry over the copyright header like this since Foundation copyright should only be used by Foundation employees.",
       "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
