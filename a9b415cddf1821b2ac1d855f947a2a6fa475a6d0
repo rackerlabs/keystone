@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_a37b79f2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T14:29:11Z",
+      "side": 1,
+      "message": "Nice - thanks for adding this. This helped me figure out what this was such a problem for you with the flask work (before is wasn\u0027t quite apparent to me).\n\nFor API contracts, is a HTTP 404 Not Found with application/json the same as HTTP 404 Not Found with text/html?\n\nI assume if HTTP 404 Not Found with text/html is built into a framework and probably the correct way to do things and out homegrown implementation was probably wrong. But does that technically classify as a backwards incompatible change? Or is it really just the http status code?",
+      "range": {
+        "startLine": 12,
+        "startChar": 24,
+        "endLine": 13,
+        "endChar": 59
+      },
+      "revId": "a9b415cddf1821b2ac1d855f947a2a6fa475a6d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
