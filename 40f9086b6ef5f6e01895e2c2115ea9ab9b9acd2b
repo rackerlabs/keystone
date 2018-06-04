@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_a3013907",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T14:08:51Z",
+      "side": 1,
+      "message": "nit: authorize*",
+      "revId": "40f9086b6ef5f6e01895e2c2115ea9ab9b9acd2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_c3d795ee",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 898,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T14:08:51Z",
+      "side": 1,
+      "message": "This appears to have regressed the test coverage of authorize_request_token. The original test covered the entire method with one conditional that was never false [0]. The new test no longer asserts some error conditioning at the end of authorize_request_token [1]. I assume this is because we\u0027re using the correct path and expecting a 401 instead of a 404.\n\nDo we need that conditional or can we add a separate test that adds coverage for it?\n\n[0] http://logs.openstack.org/12/571912/1/check/openstack-tox-cover/85d317d/cover/keystone_oauth1_controllers_py.html#n382\n[1] http://logs.openstack.org/11/571911/1/check/openstack-tox-cover/71c443c/cover/keystone_oauth1_controllers_py.html#n382",
+      "revId": "40f9086b6ef5f6e01895e2c2115ea9ab9b9acd2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
