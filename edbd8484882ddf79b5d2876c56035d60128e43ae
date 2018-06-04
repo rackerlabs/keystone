@@ -66,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_58436b6d",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-04T20:48:53Z",
+      "side": 1,
+      "message": "Likely, i\u0027ll get it removed in the next patch.",
+      "parentUuid": "5f7c97a3_9d49f58f",
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_2648d62c",
         "filename": "keystone/catalog/routers.py",
         "patchSetId": 7
@@ -159,6 +177,24 @@
       "writtenOn": "2018-06-04T19:58:08Z",
       "side": 1,
       "message": "Non-critical observation (treat less than pointing out a nitpick): Assuming this was maybe copy/pasted from somewhere else? Seems simple enough that you wouldn\u0027t need to carry over the copyright header like this since Foundation copyright should only be used by Foundation employees.",
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_58384bed",
+        "filename": "keystone/contrib/s3/routers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-04T20:48:53Z",
+      "side": 1,
+      "message": "Aha! good catch, I try hard to not let those things sneak in. Usually I strip them, thanks, notice I don\u0027t have any copyright notice thing in any other new files? :)",
+      "parentUuid": "5f7c97a3_b8015f07",
       "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -388,6 +424,30 @@
       "side": 1,
       "message": "I\u0027ll support that if we can get the OK from others (TC?).\n\nIt was just really unfortunate that we didn\u0027t catch all the v2.0 bits in deprecation at the same time, because I think that\u0027s the only real reason why we have to keep this since they weren\u0027t \"officially\" deprecated together.",
       "parentUuid": "5f7c97a3_9728f6ee",
+      "range": {
+        "startLine": 31,
+        "startChar": 8,
+        "endLine": 31,
+        "endChar": 70
+      },
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_d8045b1b",
+        "filename": "keystone/tests/unit/test_contrib_ec2_core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-04T20:48:53Z",
+      "side": 1,
+      "message": "We have the OK from the TC, going to send an email to the lists as well.",
+      "parentUuid": "5f7c97a3_d72bce92",
       "range": {
         "startLine": 31,
         "startChar": 8,
