@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_a9fcb70c",
+        "filename": "keystone/conf/paste_deploy.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T15:47:28Z",
+      "side": 0,
+      "message": "What happens if someone has deployed a custom paste file that breaks when they convert to using flask?",
+      "range": {
+        "startLine": 20,
+        "startChar": 13,
+        "endLine": 20,
+        "endChar": 31
+      },
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_0917eb47",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T15:47:28Z",
+      "side": 0,
+      "message": "According to this, we can\u0027t remove this bit of middleware until T?",
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_493643ea",
+        "filename": "keystone/server/flask/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T15:47:28Z",
+      "side": 0,
+      "message": "We have to keep this around until T according to the deprecation message.",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 32
+      },
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_4992c3a1",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T15:47:28Z",
+      "side": 0,
+      "message": "Do we still have the slow down?",
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

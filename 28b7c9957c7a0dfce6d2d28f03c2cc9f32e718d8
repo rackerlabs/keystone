@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_a6170655",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T15:47:28Z",
+      "side": 1,
+      "message": "nit: add a ) for completeness?",
+      "revId": "28b7c9957c7a0dfce6d2d28f03c2cc9f32e718d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_8959bb36",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T15:47:28Z",
+      "side": 1,
+      "message": "_way_ cleaner!",
+      "revId": "28b7c9957c7a0dfce6d2d28f03c2cc9f32e718d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e9b5cf33",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T15:47:28Z",
+      "side": 1,
+      "message": "We could reduce duplication here, too:\n\n  def _initialize_application(app_name):\n      return keystone_flask.initialize_application(\n          name\u003dapp_name, config_files\u003dcore._get_config_files())\n\n\n  def initialize_admin_application():\n      return _initialize_application(\u0027admin\u0027)\n\n  def initialize_public_application():\n      return _initialize_application(\u0027public\u0027)",
+      "revId": "28b7c9957c7a0dfce6d2d28f03c2cc9f32e718d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
