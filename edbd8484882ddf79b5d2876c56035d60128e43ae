@@ -79,6 +79,24 @@
       "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_a99ef766",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T15:48:16Z",
+      "side": 0,
+      "message": "Apparently not? I ran keystone unit tests without this series of changes and the tests execute in ~100 seconds. With this change they\u0027re running about 7 seconds faster.",
+      "parentUuid": "5f7c97a3_4992c3a1",
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
