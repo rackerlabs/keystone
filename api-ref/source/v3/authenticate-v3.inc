@@ -180,11 +180,13 @@ Password authentication with scoped authorization
 
 .. rest_method::  POST /v3/auth/tokens
 
-Authenticates an identity and generates a token. Uses the password authentication method and scopes authorization to a project or domain.
+Authenticates an identity and generates a token. Uses the password
+authentication method and scopes authorization to a project, domain, or the
+system.
 
-The request body must include a payload that specifies the
-``password`` authentication method, the credentials, and the
-``project`` or ``domain`` authorization scope.
+The request body must include a payload that specifies the ``password``
+authentication method which includes the credentials in addition to a
+``project``, ``domain``, or ``system`` authorization scope.
 
 Relationship: ``https://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
 
@@ -221,7 +223,7 @@ Parameters
 .. rest_parameters:: parameters.yaml
 
    - X-Subject-Token: X-Subject-Token
-   - domain: domain
+   - domain: domain_scope_response_body_optional
    - region_id: region_id_required
    - methods: auth_methods_passwd
    - roles: roles
@@ -229,8 +231,8 @@ Parameters
    - region: endpoint_region
    - token: token
    - expires_at: expires_at
-   - project: project
-   - system: system
+   - project: project_scope_response_body_optional
+   - system: system_scope_response_body_optional
    - issued_at: issued_at
    - catalog: catalog
    - user: user
@@ -596,13 +598,14 @@ Parameters
 .. rest_parameters:: parameters.yaml
 
    - X-Subject-Token: X-Subject-Token
-   - domain: domain
+   - domain: domain_scope_response_body_optional
    - methods: auth_methods
    - links: domain_link_response_body
    - user: user
    - token: token
    - expires_at: expires_at
-   - project: project
+   - project: project_scope_response_body_optional
+   - system: system_scope_response_body_optional
    - catalog: catalog
    - roles: roles
    - audit_ids: audit_ids
