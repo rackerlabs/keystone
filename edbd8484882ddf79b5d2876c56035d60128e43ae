@@ -342,6 +342,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_4ff71e8e",
+        "filename": "keystone/server/flask/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-04T23:12:14Z",
+      "side": 1,
+      "message": "I\u0027ll make this private, it\u0027s used in two cases and it wont be really useful in one of those down the line.",
+      "parentUuid": "5f7c97a3_f7bfeaa7",
+      "range": {
+        "startLine": 91,
+        "startChar": 4,
+        "endLine": 91,
+        "endChar": 24
+      },
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_86020a6f",
         "filename": "keystone/server/flask/core.py",
         "patchSetId": 7
