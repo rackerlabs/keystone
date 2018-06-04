@@ -1,0 +1,262 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_46c0727d",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T15:20:13Z",
+      "side": 1,
+      "message": "Other modules seem to include , here.",
+      "range": {
+        "startLine": 43,
+        "startChar": 74,
+        "endLine": 43,
+        "endChar": 75
+      },
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_2648d62c",
+        "filename": "keystone/catalog/routers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T15:20:13Z",
+      "side": 1,
+      "message": "Same comment here as in the previous module. Not sure if it matters, just wondering what we want the convention to be.",
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_06fd9ab0",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T15:20:13Z",
+      "side": 1,
+      "message": "Intersting, looks like this was copy/paste cruft?",
+      "range": {
+        "startLine": 43,
+        "startChar": 8,
+        "endLine": 43,
+        "endChar": 25
+      },
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_66da4e4c",
+        "filename": "keystone/server/flask/application.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T15:20:13Z",
+      "side": 1,
+      "message": "works",
+      "range": {
+        "startLine": 100,
+        "startChar": 59,
+        "endLine": 100,
+        "endChar": 65
+      },
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_469dd255",
+        "filename": "keystone/server/flask/application.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T15:20:13Z",
+      "side": 1,
+      "message": "So - this will eventually go away and be replaced with:\n\n  dispatch_map[\u0027/v3/users\u0027] \u003d identity_dispatcher\n\nor something similar where the actual dispatch_map handles the mapping of the individual subsystems?",
+      "range": {
+        "startLine": 226,
+        "startChar": 8,
+        "endLine": 226,
+        "endChar": 56
+      },
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_26c9b659",
+        "filename": "keystone/server/flask/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T15:20:13Z",
+      "side": 1,
+      "message": "nit: Is this called from anywhere outside of this method? If not, we should make it private if possible.",
+      "range": {
+        "startLine": 91,
+        "startChar": 4,
+        "endLine": 91,
+        "endChar": 24
+      },
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_86020a6f",
+        "filename": "keystone/server/flask/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T15:20:13Z",
+      "side": 1,
+      "message": "always empty* ?",
+      "range": {
+        "startLine": 108,
+        "startChar": 70,
+        "endLine": 108,
+        "endChar": 76
+      },
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_4639523d",
+        "filename": "keystone/tests/unit/test_contrib_ec2_core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T15:20:13Z",
+      "side": 1,
+      "message": "This is the path we have to keep around until T I think. Unfortunately, because it wasn\u0027t deprecated at the same time as the rest of v2.0",
+      "range": {
+        "startLine": 31,
+        "startChar": 8,
+        "endLine": 31,
+        "endChar": 70
+      },
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_4622b203",
+        "filename": "keystone/tests/unit/test_credential.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T15:20:13Z",
+      "side": 1,
+      "message": "We should try and include a date or release here so that it\u0027s easier for others to know when they can delete this code.",
+      "range": {
+        "startLine": 52,
+        "startChar": 8,
+        "endLine": 52,
+        "endChar": 76
+      },
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_66800ec1",
+        "filename": "keystone/tests/unit/test_entry_points.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T15:20:13Z",
+      "side": 1,
+      "message": "s/Paste// ?",
+      "range": {
+        "startLine": 19,
+        "startChar": 10,
+        "endLine": 19,
+        "endChar": 15
+      },
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_064a7aab",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3746,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T15:20:13Z",
+      "side": 1,
+      "message": "This should actually be an easy follow on patch to propose, since I think we can do this in Rocky.\n\nhttps://github.com/openstack/keystone/commit/c973c8fe70bd6e190d9dab3dcc4021617fd5cd5c",
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_46fe3239",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 750,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T15:20:13Z",
+      "side": 1,
+      "message": "Same nit as before. It\u0027d be nice to include a release date here if possible, just so that other developers know when this is actionable.",
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
