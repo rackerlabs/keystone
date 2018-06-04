@@ -22,6 +22,30 @@
       "revId": "a9b415cddf1821b2ac1d855f947a2a6fa475a6d0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_43d70451",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-04T14:32:54Z",
+      "side": 1,
+      "message": "It\u0027s the same Status code, it probably is more correct this way. We\u0027re changing the response but... not in a meaningful way. It makes it so folks know if they hit an API or not.\n\nI don\u0027t see it as a breaking change, unless someone was hitting a non-routed api and assuming it was routed (and liked that)",
+      "parentUuid": "5f7c97a3_a37b79f2",
+      "range": {
+        "startLine": 12,
+        "startChar": 24,
+        "endLine": 13,
+        "endChar": 59
+      },
+      "revId": "a9b415cddf1821b2ac1d855f947a2a6fa475a6d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
