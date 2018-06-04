@@ -46,6 +46,30 @@
       "revId": "a9b415cddf1821b2ac1d855f947a2a6fa475a6d0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_667b2e7b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-04T14:55:50Z",
+      "side": 1,
+      "message": "Sounds like a useful distinction to me, but I\u0027ll let other weigh in.",
+      "parentUuid": "5f7c97a3_43d70451",
+      "range": {
+        "startLine": 12,
+        "startChar": 24,
+        "endLine": 13,
+        "endChar": 59
+      },
+      "revId": "a9b415cddf1821b2ac1d855f947a2a6fa475a6d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
