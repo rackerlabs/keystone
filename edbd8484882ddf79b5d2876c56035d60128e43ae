@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_ecedddf0",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-04T16:31:00Z",
+      "side": 0,
+      "message": "With flask, we aren\u0027t loading the middleware and someone can\u0027t be using it by accidnet, we don\u0027t break anyone. This is only kept around for that specific case.",
+      "parentUuid": "5f7c97a3_0917eb47",
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_493643ea",
         "filename": "keystone/server/flask/core.py",
         "patchSetId": 4
