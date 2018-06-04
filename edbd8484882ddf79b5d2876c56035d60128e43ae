@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_1792a659",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-04T17:36:35Z",
+      "side": 1,
+      "message": "This is mostly hold over for compat reasons, we can add the , in the next patchset, but some of those modules is to force it into being a tuple: (\u0027auth\u0027) \u003d\u003d \u0027auth\u0027; (\u0027auth\u0027,) \u003d\u003d tuple(\u0027auth\u0027)",
+      "parentUuid": "5f7c97a3_46c0727d",
+      "range": {
+        "startLine": 43,
+        "startChar": 74,
+        "endLine": 43,
+        "endChar": 75
+      },
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_2648d62c",
         "filename": "keystone/catalog/routers.py",
         "patchSetId": 7
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_378fa22f",
+        "filename": "keystone/catalog/routers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-04T17:36:35Z",
+      "side": 1,
+      "message": "same response. This will all go away as each item is converted to flask native.",
+      "parentUuid": "5f7c97a3_2648d62c",
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_06fd9ab0",
         "filename": "keystone/contrib/s3/core.py",
         "patchSetId": 7
@@ -53,6 +95,30 @@
       "writtenOn": "2018-06-04T15:20:13Z",
       "side": 1,
       "message": "Intersting, looks like this was copy/paste cruft?",
+      "range": {
+        "startLine": 43,
+        "startChar": 8,
+        "endLine": 43,
+        "endChar": 25
+      },
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_77867a16",
+        "filename": "keystone/contrib/s3/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-04T17:36:35Z",
+      "side": 1,
+      "message": "Converting to the \"v3\" non-extension form. Extensions are dead, this is no longer part of a paste pipeline, Note the change in the class.",
+      "parentUuid": "5f7c97a3_06fd9ab0",
       "range": {
         "startLine": 43,
         "startChar": 8,
@@ -111,6 +177,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_b7bad2bd",
+        "filename": "keystone/server/flask/application.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-04T17:36:35Z",
+      "side": 1,
+      "message": "The whole middleware will go away, it\u0027s only used to dispatch based upon URI path, this is all compat to avoid having to change every file in keystone massively at once and stage moving a subsystem -\u003e flask from webob/mapper.",
+      "parentUuid": "5f7c97a3_469dd255",
+      "range": {
+        "startLine": 226,
+        "startChar": 8,
+        "endLine": 226,
+        "endChar": 56
+      },
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_26c9b659",
         "filename": "keystone/server/flask/core.py",
         "patchSetId": 7
@@ -122,6 +212,30 @@
       "writtenOn": "2018-06-04T15:20:13Z",
       "side": 1,
       "message": "nit: Is this called from anywhere outside of this method? If not, we should make it private if possible.",
+      "range": {
+        "startLine": 91,
+        "startChar": 4,
+        "endLine": 91,
+        "endChar": 24
+      },
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f7bfeaa7",
+        "filename": "keystone/server/flask/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-04T17:36:35Z",
+      "side": 1,
+      "message": "It is called for testing and it is called externally, but not externally from server.flask\n\nWe could make it private.",
+      "parentUuid": "5f7c97a3_26c9b659",
       "range": {
         "startLine": 91,
         "startChar": 4,
@@ -157,6 +271,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_b7df320b",
+        "filename": "keystone/server/flask/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-04T17:36:35Z",
+      "side": 1,
+      "message": "Sure, will fix in next.",
+      "parentUuid": "5f7c97a3_86020a6f",
+      "range": {
+        "startLine": 108,
+        "startChar": 70,
+        "endLine": 108,
+        "endChar": 76
+      },
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_4639523d",
         "filename": "keystone/tests/unit/test_contrib_ec2_core.py",
         "patchSetId": 7
@@ -168,6 +306,30 @@
       "writtenOn": "2018-06-04T15:20:13Z",
       "side": 1,
       "message": "This is the path we have to keep around until T I think. Unfortunately, because it wasn\u0027t deprecated at the same time as the rest of v2.0",
+      "range": {
+        "startLine": 31,
+        "startChar": 8,
+        "endLine": 31,
+        "endChar": 70
+      },
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_9728f6ee",
+        "filename": "keystone/tests/unit/test_contrib_ec2_core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-04T17:36:35Z",
+      "side": 1,
+      "message": "I can wire up the v2.0 stuff, it\u0027s not that ugly to do if needed. (T?, I thought S).\n\nI do want to point out I think, and I know I was supportive of the long hold over, this is excessive \"deprecation policy\" since V2 is so very dead [including auth].\n\nI would prefer to get the \"ok\" to just drop this in Rocky with the rest of V2 hold overs.",
+      "parentUuid": "5f7c97a3_4639523d",
       "range": {
         "startLine": 31,
         "startChar": 8,
@@ -203,6 +365,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_570b3e7c",
+        "filename": "keystone/tests/unit/test_credential.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-04T17:36:35Z",
+      "side": 1,
+      "message": "I was figuring this would be dropped in R and was just a todo for a followup patchset.",
+      "parentUuid": "5f7c97a3_4622b203",
+      "range": {
+        "startLine": 52,
+        "startChar": 8,
+        "endLine": 52,
+        "endChar": 76
+      },
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_66800ec1",
         "filename": "keystone/tests/unit/test_entry_points.py",
         "patchSetId": 7
@@ -214,6 +400,30 @@
       "writtenOn": "2018-06-04T15:20:13Z",
       "side": 1,
       "message": "s/Paste// ?",
+      "range": {
+        "startLine": 19,
+        "startChar": 10,
+        "endLine": 19,
+        "endChar": 15
+      },
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f71b6ac7",
+        "filename": "keystone/tests/unit/test_entry_points.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-04T17:36:35Z",
+      "side": 1,
+      "message": "Fixed in \"remove paste deploy\" patch.",
+      "parentUuid": "5f7c97a3_66800ec1",
       "range": {
         "startLine": 19,
         "startChar": 10,
@@ -243,6 +453,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_77851acf",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3746,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-04T17:36:35Z",
+      "side": 1,
+      "message": "Yep, that is the plan, all the TODOs added here to be followed up on in the chain, just avoiding massive changes outright in one patchset.",
+      "parentUuid": "5f7c97a3_064a7aab",
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_46fe3239",
         "filename": "keystone/tests/unit/test_versions.py",
         "patchSetId": 7
@@ -254,6 +482,24 @@
       "writtenOn": "2018-06-04T15:20:13Z",
       "side": 1,
       "message": "Same nit as before. It\u0027d be nice to include a release date here if possible, just so that other developers know when this is actionable.",
+      "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_775e7a77",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 750,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-04T17:36:35Z",
+      "side": 1,
+      "message": "See earlier comment, This is going to be removed in a couple patches :) not even \"a \"release date\".",
+      "parentUuid": "5f7c97a3_46fe3239",
       "revId": "edbd8484882ddf79b5d2876c56035d60128e43ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
