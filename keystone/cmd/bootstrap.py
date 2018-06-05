@@ -36,6 +36,14 @@ class Bootstrapper(object):
         self.project_id = None
         self.project_name = None
 
+        self.reader_role_id = None
+        # TODO(hrybacki): port this to config
+        self.reader_role_name = 'reader'
+
+        self.member_role_id = None
+        # TODO(hrybacki): port this to config
+        self.member_role_name = 'member'
+
         self.admin_role_id = None
         self.admin_role_name = None
 
@@ -55,6 +63,8 @@ class Bootstrapper(object):
         self._bootstrap_default_domain()
         self._bootstrap_project()
         self._bootstrap_admin_user()
+        self._bootstrap_reader_role()
+        self._bootstrap_member_role()
         self._bootstrap_admin_role()
         self._bootstrap_project_role_assignment()
         self._bootstrap_system_role_assignment()
@@ -100,6 +110,51 @@ class Bootstrapper(object):
             )
 
         self.project_id = project['id']
+
+    def _bootstrap_reader_role(self):
+        # NOTE(morganfainberg): Do not create the role if it already exists.
+        try:
+            role_id = uuid.uuid4().hex
+            role = {'name': self.reader_role_name, 'id': role_id}
+            role = PROVIDERS.role_api.create_role(role_id, role)
+            LOG.info('Created role %s', self.reader_role_name)
+        except exception.Conflict:
+            LOG.info(
+                'Role %s exists, skipping creation.', self.reader_role_name
+            )
+            # NOTE(davechen): There is no backend method to get the role
+            # by name, so build the hints to list the roles and filter by
+            # name instead.
+            hints = driver_hints.Hints()
+            hints.add_filter('name', self.reader_role_name)
+            role = PROVIDERS.role_api.list_roles(hints)[0]
+
+        self.reader_role_id = role['id']
+
+    def _bootstrap_member_role(self):
+        # NOTE(morganfainberg): Do not create the role if it already exists.
+        try:
+            role_id = uuid.uuid4().hex
+            role = {'name': self.member_role_name, 'id': role_id}
+            role = PROVIDERS.role_api.create_role(role_id, role)
+            LOG.info('Created role %s', self.member_role_name)
+
+            # TODO(hrybacki): locate provider api to create implied role & update
+
+        except exception.Conflict:
+            LOG.info(
+                'Role %s exists, skipping creation.', self.member_role_name
+            )
+            # NOTE(davechen): There is no backend method to get the role
+            # by name, so build the hints to list the roles and filter by
+            # name instead.
+            hints = driver_hints.Hints()
+            hints.add_filter('name', self.member_role_name)
+            role = PROVIDERS.role_api.list_roles(hints)[0]
+
+            # TODO(hrybacki): check for role implication, add, & update
+
+        self.member_role_id = role['id']
 
     def _bootstrap_admin_user(self):
         # NOTE(morganfainberg): Do not create the user if it already exists.
@@ -163,6 +218,9 @@ class Bootstrapper(object):
             role = {'name': self.admin_role_name, 'id': role_id}
             role = PROVIDERS.role_api.create_role(role_id, role)
             LOG.info('Created role %s', self.admin_role_name)
+
+            # TODO(hrybacki): locate provider api to create implied role & updat
+
         except exception.Conflict:
             LOG.info(
                 'Role %s exists, skipping creation.', self.admin_role_name
@@ -173,6 +231,8 @@ class Bootstrapper(object):
             hints = driver_hints.Hints()
             hints.add_filter('name', self.admin_role_name)
             role = PROVIDERS.role_api.list_roles(hints)[0]
+
+            # TODO(hrybacki): check for role implication, add, & update enabled
 
         self.admin_role_id = role['id']
 
