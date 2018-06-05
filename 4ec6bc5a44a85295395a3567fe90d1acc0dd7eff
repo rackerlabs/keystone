@@ -16,6 +16,24 @@
       "revId": "4ec6bc5a44a85295395a3567fe90d1acc0dd7eff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_388c5c7e",
+        "filename": "setup.cfg",
+        "patchSetId": 9
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-05T14:14:24Z",
+      "side": 1,
+      "message": "Yes, this can be removed. Thanks for catching it.",
+      "parentUuid": "5f7c97a3_5108212c",
+      "revId": "4ec6bc5a44a85295395a3567fe90d1acc0dd7eff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
