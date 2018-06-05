@@ -128,6 +128,10 @@ class Request(webob.Request):
         return self.headers.get(authorization.AUTH_TOKEN_HEADER, None)
 
     @property
+    def auth_receipt(self):
+        return self.headers.get(authorization.AUTH_RECEIPT_HEADER, None)
+
+    @property
     def subject_token(self):
         return self.headers.get(authorization.SUBJECT_TOKEN_HEADER, None)
 
