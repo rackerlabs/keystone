@@ -1,0 +1,11 @@
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+1: kaka <huang.zhiping@99cloud.net>
+Code-Review+1: sonu <sonu.bhumca11@gmail.com>
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Workflow+1: Gage Hugo <gagehugo@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 05 Jun 2018 02:02:44 +0000
+Reviewed-on: https://review.openstack.org/571912
+Project: openstack/keystone
+Branch: refs/heads/master
