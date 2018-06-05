@@ -23,6 +23,7 @@ from keystone import identity
 from keystone import limit
 from keystone import oauth1
 from keystone import policy
+from keystone import receipt
 from keystone import resource
 from keystone import revoke
 from keystone import token
@@ -48,7 +49,8 @@ def load_backends():
                 identity.Manager, identity.ShadowUsersManager,
                 limit.Manager, oauth1.Manager, policy.Manager,
                 resource.Manager, revoke.Manager, assignment.RoleManager,
-                trust.Manager, token.provider.Manager]
+                trust.Manager, token.provider.Manager,
+                receipt.provider.Manager]
 
     drivers = {d._provides_api: d() for d in managers}
 

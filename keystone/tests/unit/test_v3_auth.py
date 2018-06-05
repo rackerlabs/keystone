@@ -33,6 +33,7 @@ from testtools import testcase
 
 from keystone import auth
 from keystone.auth.plugins import totp
+from keystone.common import cache
 from keystone.common import policy
 from keystone.common import provider_api
 from keystone.common import utils
@@ -40,6 +41,7 @@ import keystone.conf
 from keystone.credential.providers import fernet as credential_fernet
 from keystone import exception
 from keystone.identity.backends import resource_options as ro
+from keystone.receipt import provider
 from keystone.tests.common import auth as common_auth
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
@@ -53,6 +55,11 @@ PROVIDERS = provider_api.ProviderAPIs
 class TestMFARules(test_v3.RestfulTestCase):
     def config_overrides(self):
         super(TestMFARules, self).config_overrides()
+        self.config_fixture.config(group='receipt', cache_on_issue=True)
+
+        # NOTE(adriant): Why do I have to do this here?
+        cache.configure_cache(provider.RECEIPTS_REGION)
+
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
@@ -64,10 +71,30 @@ class TestMFARules(test_v3.RestfulTestCase):
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
+                'fernet_receipts',
+                CONF.fernet_receipts.max_active_keys
+            )
+        )
+
+        self.useFixture(
+            ksfixtures.KeyRepository(
+                self.config_fixture,
                 'credential',
                 credential_fernet.MAX_ACTIVE_KEYS
             )
         )
+
+    def assertValidErrorResponse(self, r):
+        resp = r.result
+        if r.headers.get('Openstack-Auth-Receipt'):
+            self.assertIsNotNone(resp.get('receipt'))
+            self.assertIsNotNone(resp.get('receipt').get('methods'))
+        else:
+            self.assertIsNotNone(resp.get('error'))
+            self.assertIsNotNone(resp['error'].get('code'))
+            self.assertIsNotNone(resp['error'].get('title'))
+            self.assertIsNotNone(resp['error'].get('message'))
+            self.assertEqual(int(resp['error']['code']), r.status_code)
 
     def _create_totp_cred(self):
         totp_cred = unit.new_totp_credential(self.user_id, self.project_id)
