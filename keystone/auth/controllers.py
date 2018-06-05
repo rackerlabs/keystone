@@ -29,6 +29,7 @@ import keystone.conf
 from keystone import exception
 from keystone.federation import constants
 from keystone.i18n import _
+from keystone.models import receipt_model
 from keystone.resource import controllers as resource_controllers
 
 
@@ -122,11 +123,29 @@ class Auth(controller.V3Controller):
                 auth_info.get_scope()
             )
 
+            receipt_id = request.auth_receipt
+            if receipt_id:
+                response = PROVIDERS.receipt_provider_api.validate_receipt(
+                    receipt_id)
+                receipt_ref = receipt_model.KeystoneReceipt(
+                    receipt_id=receipt_id, receipt_data=response)
+
+                if auth_context['user_id'] != receipt_ref.user_id:
+                    raise exception.AuthReceiptUserMismatch(
+                        user_id=auth_context['user_id'],
+                        receipt_user_id=receipt_ref.user_id)
+            else:
+                receipt_ref = None
+
             # NOTE(notmorgan): only methods that actually run and succeed will
             # be in the auth_context['method_names'] list. Do not blindly take
             # the values from auth_info, look at the authoritative values. Make
             # sure the set is unique.
-            method_names_set = set(auth_context.get('method_names', []))
+            if receipt_ref:
+                method_names_set = set(
+                    auth_context.get('method_names', []) + receipt_ref.methods)
+            else:
+                method_names_set = set(auth_context.get('method_names', []))
             method_names = list(method_names_set)
 
             app_cred_id = None
@@ -137,9 +156,10 @@ class Auth(controller.V3Controller):
             # Do MFA Rule Validation for the user
             if not self._mfa_rules_validator.check_auth_methods_against_rules(
                     auth_context['user_id'], method_names_set):
-                raise exception.InsufficientAuthMethods(
-                    user_id=auth_context['user_id'],
-                    methods='[%s]' % ','.join(auth_info.get_method_names()))
+                receipt_id, receipt_data = PROVIDERS.receipt_provider_api. \
+                    issue_receipt(auth_context['user_id'], method_names)
+
+                return render_receipt_data_response(receipt_id, receipt_data)
 
             expires_at = auth_context.get('expires_at')
             token_audit_id = auth_context.get('audit_id')
@@ -509,3 +529,16 @@ def render_token_data_response(token_id, token_data, created=False):
 
     return wsgi.render_response(body=token_data,
                                 status=status, headers=headers)
+
+
+def render_receipt_data_response(receipt_id, receipt_data):
+    """Render receipt data HTTP response.
+
+    Stash receipt ID into the auth receipt header.
+
+    """
+    headers = [(authorization.AUTH_RECEIPT_HEADER, receipt_id)]
+    status = (401, 'Unauthorized')
+
+    return wsgi.render_response(
+        body=receipt_data, status=status, headers=headers)
