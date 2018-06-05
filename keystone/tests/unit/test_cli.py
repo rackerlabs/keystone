@@ -108,6 +108,7 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
             bootstrap.username,
             'default')
         role = PROVIDERS.role_api.get_role(bootstrap.role_id)
+        # TODO(hrybacki): This should list all three, new roles.
         role_list = (
             PROVIDERS.assignment_api.get_roles_for_user_and_project(
                 user['id'],
