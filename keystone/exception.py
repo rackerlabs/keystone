@@ -266,13 +266,10 @@ class Unauthorized(SecurityError):
     title = http_client.responses[http_client.UNAUTHORIZED]
 
 
-class InsufficientAuthMethods(Error):
-    # NOTE(notmorgan): This is not a security error, this is meant to
-    # communicate real information back to the user.
-    message_format = _("Insufficient auth methods received for %(user_id)s. "
-                       "Auth Methods Provided: %(methods)s.")
-    code = 401
-    title = 'Unauthorized'
+class AuthReceiptUserMismatch(Unauthorized):
+    message_format = _("AuthContext user_id: %(user_id)s does not match "
+                       "user_id for supplied auth receipt: "
+                       "%(receipt_user_id)s")
 
 
 class PasswordExpired(Unauthorized):
@@ -414,6 +411,10 @@ class ProjectTagNotFound(NotFound):
 
 class TokenNotFound(NotFound):
     message_format = _("Could not find token: %(token_id)s.")
+
+
+class ReceiptNotFound(NotFound):
+    message_format = _("Could not find receipt: %(receipt_id)s.")
 
 
 class UserNotFound(NotFound):
