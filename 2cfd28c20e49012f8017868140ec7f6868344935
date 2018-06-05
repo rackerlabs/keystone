@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_9b99e17a",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-05T21:05:09Z",
+      "side": 1,
+      "message": "As in an example for each?",
+      "parentUuid": "5f7c97a3_651f9b70",
+      "revId": "2cfd28c20e49012f8017868140ec7f6868344935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_052ca7aa",
         "filename": "api-ref/source/v3/authenticate-v3.inc",
         "patchSetId": 3
