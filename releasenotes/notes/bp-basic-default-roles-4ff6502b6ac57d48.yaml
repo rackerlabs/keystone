@@ -1,0 +1,6 @@
+---
+features:
+  - |
+      [`blueprint basic-default-roles  <https://blueprints.launchpad.net/keystone/+spec/basic-default-roles>`_]
+      Support has been added for deploying two new roles during the bootstrap
+      process, `reader` and `member`, in addition to the `admin` role.
