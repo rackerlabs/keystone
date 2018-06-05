@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_45dff1d5",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-06-05T14:01:40Z",
+      "side": 1,
+      "message": "PLease keep this file but with a comment explaining that it is no longer used and any changes to it will be ignored.  That way the package maintainers can remove it in a future release without breaking things, and customizations that no longer work have a reason easy to find.",
+      "revId": "28b7c9957c7a0dfce6d2d28f03c2cc9f32e718d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_a6170655",
         "filename": "keystone/catalog/backends/templated.py",
         "patchSetId": 4
