@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_651f9b70",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-06-05T02:24:21Z",
+      "side": 1,
+      "message": "I think the example should be updated as well for project-scoped,domain-scoped and systme-scoped.",
+      "revId": "2cfd28c20e49012f8017868140ec7f6868344935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_052ca7aa",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-06-05T02:24:21Z",
+      "side": 1,
+      "message": "ditto, for response",
+      "revId": "2cfd28c20e49012f8017868140ec7f6868344935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
