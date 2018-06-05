@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_5108212c",
+        "filename": "setup.cfg",
+        "patchSetId": 9
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-06-05T07:31:00Z",
+      "side": 1,
+      "message": "seem the healthcheck now is a route in keystone, not a middleware:\nhttps://review.openstack.org/#/c/568377/9/keystone/server/flask/application.py@205\n\nSo this line can be removed?",
+      "revId": "4ec6bc5a44a85295395a3567fe90d1acc0dd7eff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
