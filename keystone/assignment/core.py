@@ -165,6 +165,7 @@ class Manager(manager.Manager):
         role_ids = list(set([x['role_id'] for x in assignment_list]))
         return PROVIDERS.role_api.list_roles_from_ids(role_ids)
 
+    # TDOO(hrybacki): Review this module
     def ensure_default_role(self):
         try:
             PROVIDERS.role_api.get_role(CONF.member_role_id)
