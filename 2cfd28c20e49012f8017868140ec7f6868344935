@@ -37,6 +37,41 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_1a74e29b",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-06T07:31:29Z",
+      "side": 1,
+      "message": "You mean more like it was in patchset 1? I\u0027d be okay with that too, my main problem with patchset 1 was duplicating the examples for user_id vs username.",
+      "parentUuid": "5f7c97a3_9b99e17a",
+      "revId": "2cfd28c20e49012f8017868140ec7f6868344935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_da066a1d",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-06T07:31:29Z",
+      "side": 1,
+      "message": "If this domain is referring to the scope then let\u0027s group it with the project and system parameters on line 234. In the current documentation it\u0027s really unclear what domain this is referring to and whether it is even related to the token scope or if it\u0027s the user\u0027s namespace.",
+      "revId": "2cfd28c20e49012f8017868140ec7f6868344935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_052ca7aa",
         "filename": "api-ref/source/v3/authenticate-v3.inc",
         "patchSetId": 3
