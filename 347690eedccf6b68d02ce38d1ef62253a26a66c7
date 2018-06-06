@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_f0bfb95d",
+        "filename": "releasenotes/notes/convert-keystone-to-flask-80d980e239b662b0.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-06T18:51:34Z",
+      "side": 1,
+      "message": "No idea.",
+      "parentUuid": "5f7c97a3_3070d108",
+      "range": {
+        "startLine": 6,
+        "startChar": 65,
+        "endLine": 6,
+        "endChar": 74
+      },
+      "revId": "347690eedccf6b68d02ce38d1ef62253a26a66c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_109115f2",
         "filename": "releasenotes/notes/convert-keystone-to-flask-80d980e239b662b0.yaml",
         "patchSetId": 2
