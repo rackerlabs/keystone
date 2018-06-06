@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_dfbdeed7",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 5
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-06T16:23:53Z",
+      "side": 0,
+      "message": "I tried breaking this up to be descriptive while keeping the bloat to a minimum. Instead of every possible authentication permutation, I just included an example of authenticating with different scope types (which is more applicable to the bug) and using IDs/names.\n\nI used the same pattern with the responses, instead of using a one-size-fits-all approach for token responses.",
+      "revId": "90fa2757caa227ce4b292d676fdb1af10a78008e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
