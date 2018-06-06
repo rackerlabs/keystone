@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_a6d26fd0",
+        "filename": "keystone/common/sql/expand_repo/versions/046_expand_add_capability_tables.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-06T15:04:57Z",
+      "side": 1,
+      "message": "The JsonBlob implementation is provided by keystone in keystone.common.sql.core [0], in case you were looking to use that anywhere for your data (as opposed to Text or something else).\n\n[0] https://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/sql/core.py#n119",
+      "revId": "c9626e53db05e4c6ec671649a2f83a3d228b7056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_c6bc4b6e",
+        "filename": "keystone/common/sql/expand_repo/versions/046_expand_add_capability_tables.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-06T15:04:57Z",
+      "side": 1,
+      "message": "I might not be understanding something completely, but these last two tables seem to have a lot in common. Is there an advantage to keeping them separated?",
+      "revId": "c9626e53db05e4c6ec671649a2f83a3d228b7056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
