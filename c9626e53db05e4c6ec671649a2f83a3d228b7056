@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_ff48ea5c",
+        "filename": "keystone/common/sql/expand_repo/versions/046_expand_add_capability_tables.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 12542
+      },
+      "writtenOn": "2018-06-06T16:21:05Z",
+      "side": 1,
+      "message": "Thanks! Maybe for url_path_template_key and url_path_template_value. See next comment for a bit of a discussion.",
+      "parentUuid": "5f7c97a3_a6d26fd0",
+      "revId": "c9626e53db05e4c6ec671649a2f83a3d228b7056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_c6bc4b6e",
         "filename": "keystone/common/sql/expand_repo/versions/046_expand_add_capability_tables.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2018-06-06T15:04:57Z",
       "side": 1,
       "message": "I might not be understanding something completely, but these last two tables seem to have a lot in common. Is there an advantage to keeping them separated?",
+      "revId": "c9626e53db05e4c6ec671649a2f83a3d228b7056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_5f447e19",
+        "filename": "keystone/common/sql/expand_repo/versions/046_expand_add_capability_tables.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 12542
+      },
+      "writtenOn": "2018-06-06T16:21:05Z",
+      "side": 1,
+      "message": "They are, yes. I\u0027m keeping them separated to avoid the awkwardness of having two foreign key constraints, one of which always needs to be null if the other is not null.\n\nFor one of these tables forms the list of allowable keys for url path templates (and thus references that table). While the other one holds templates to interpolate for interpolation into a capability (and thus references the capability table). It would be technically possible to complain them, but I\u0027d prefer this clean separation.\n\nAlternatively, one could turn both or either of these into JsonBlob columns, but I\u0027m not really fond of that idea since,  being a blob, it is opaque. I\u0027d prefer defining these lists\u0027 structure through the database schema rather than having it hidden away in the code somewhere.",
+      "parentUuid": "5f7c97a3_c6bc4b6e",
       "revId": "c9626e53db05e4c6ec671649a2f83a3d228b7056",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
