@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_4b291b35",
+        "filename": "releasenotes/notes/convert-keystone-to-flask-80d980e239b662b0.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-06T19:52:02Z",
+      "side": 1,
+      "message": "Removing this space should fix the releasenotes job.",
+      "range": {
+        "startLine": 4,
+        "startChar": 16,
+        "endLine": 4,
+        "endChar": 17
+      },
+      "revId": "46edb327250b58834038bc6813baec87d0630418",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
