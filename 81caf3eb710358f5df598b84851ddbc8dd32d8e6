@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_51b9ce76",
+        "filename": "keystone/server/flask/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-06T21:39:33Z",
+      "side": 1,
+      "message": "Please NOTE the list of additional MW configured via config will expand. Notably audit middleware will be one of the firsts to be added. For the most part the list is pretty restrictive but allows for some deployment-specific needs.",
+      "revId": "81caf3eb710358f5df598b84851ddbc8dd32d8e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
