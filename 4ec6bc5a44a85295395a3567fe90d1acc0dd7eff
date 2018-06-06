@@ -52,6 +52,24 @@
       "revId": "4ec6bc5a44a85295395a3567fe90d1acc0dd7eff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_d1dddedd",
+        "filename": "setup.cfg",
+        "patchSetId": 9
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-06T21:33:46Z",
+      "side": 1,
+      "message": "https://review.openstack.org/#/c/572848/",
+      "parentUuid": "5f7c97a3_ac810afe",
+      "revId": "4ec6bc5a44a85295395a3567fe90d1acc0dd7eff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
