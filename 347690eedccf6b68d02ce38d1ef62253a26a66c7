@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_506b0d1e",
+        "filename": "releasenotes/notes/convert-keystone-to-flask-80d980e239b662b0.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-06T18:49:10Z",
+      "side": 1,
+      "message": "``WebOb`` and a link: https://github.com/Pylons/webob",
+      "range": {
+        "startLine": 4,
+        "startChar": 7,
+        "endLine": 4,
+        "endChar": 12
+      },
+      "revId": "347690eedccf6b68d02ce38d1ef62253a26a66c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_50546d54",
+        "filename": "releasenotes/notes/convert-keystone-to-flask-80d980e239b662b0.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-06T18:49:10Z",
+      "side": 1,
+      "message": "``pythonpaste`` we should also include a link for reference/completeness:\n\nhttps://paste.readthedocs.io/en/latest/",
+      "range": {
+        "startLine": 4,
+        "startChar": 45,
+        "endLine": 4,
+        "endChar": 56
+      },
+      "revId": "347690eedccf6b68d02ce38d1ef62253a26a66c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_3070d108",
+        "filename": "releasenotes/notes/convert-keystone-to-flask-80d980e239b662b0.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-06T18:49:10Z",
+      "side": 1,
+      "message": "Do we usually use literals for release names?",
+      "range": {
+        "startLine": 6,
+        "startChar": 65,
+        "endLine": 6,
+        "endChar": 74
+      },
+      "revId": "347690eedccf6b68d02ce38d1ef62253a26a66c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_109115f2",
+        "filename": "releasenotes/notes/convert-keystone-to-flask-80d980e239b662b0.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-06T18:49:10Z",
+      "side": 1,
+      "message": "nit: add a period to the end of this sentence",
+      "revId": "347690eedccf6b68d02ce38d1ef62253a26a66c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
