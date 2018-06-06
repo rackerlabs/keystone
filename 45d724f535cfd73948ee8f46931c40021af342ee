@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_e632a70f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-06T15:10:34Z",
+      "side": 1,
+      "message": "I suppose we use some of these utilities for credential encryption, too.",
+      "revId": "45d724f535cfd73948ee8f46931c40021af342ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_690c2839",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-06T15:10:34Z",
+      "side": 1,
+      "message": "IIRC, the purpose of this commit was to break apart some of the utilities for encryption and signing so that it would be easier to re-use them in a JWT/JWS/JWE token format.\n\nBut, since we haven\u0027t actually gotten around to doing any of that work yet, we can cross that bridge when we get there.",
+      "revId": "45d724f535cfd73948ee8f46931c40021af342ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
