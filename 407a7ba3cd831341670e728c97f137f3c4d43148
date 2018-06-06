@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_a636ef50",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1111,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-06T14:55:40Z",
+      "side": 1,
+      "message": "I\u0027m struggling to find out why we\u0027re using this wording. I stumbled across it when I was trying to refactor the authentication documentation.\n\nThis might be something we can try to improve in a subsequent patch since it\u0027s going to affect more than just this document. Technically, this is rendered as an entry in a table, but it\u0027s meant to say \"a limit contains these attributes:\"\n\nSomething to work on later I think, but wanted to mention it since I noticed other occurances of this in the authentication API that don\u0027t really make much sense [0] or are harder to read in a flat structure.\n\n[0] https://developer.openstack.org/api-ref/identity/v3/index.html#password-authentication-with-unscoped-authorization",
+      "range": {
+        "startLine": 1111,
+        "startChar": 23,
+        "endLine": 1111,
+        "endChar": 49
+      },
+      "revId": "407a7ba3cd831341670e728c97f137f3c4d43148",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
