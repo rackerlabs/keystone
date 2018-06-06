@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_d31c1d15",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 643,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-06-06T01:51:17Z",
+      "side": 1,
+      "message": "yeah, this patch is a little old. Will search and replace and make sure I\u0027ve not missed any more.",
+      "parentUuid": "5f7c97a3_cdcecd2c",
+      "range": {
+        "startLine": 643,
+        "startChar": 20,
+        "endLine": 643,
+        "endChar": 31
+      },
+      "revId": "0a7dbe70d58e34203d777340ca51d685dab9834c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_4dfb9d46",
         "filename": "keystone/tests/unit/token/test_fernet_provider.py",
         "patchSetId": 2
