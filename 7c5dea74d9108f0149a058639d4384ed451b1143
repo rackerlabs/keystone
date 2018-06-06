@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_9febf676",
+        "filename": "releasenotes/notes/convert-keystone-to-flask-80d980e239b662b0.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-06T16:37:29Z",
+      "side": 1,
+      "message": "instead*",
+      "range": {
+        "startLine": 10,
+        "startChar": 58,
+        "endLine": 10,
+        "endChar": 66
+      },
+      "revId": "7c5dea74d9108f0149a058639d4384ed451b1143",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
