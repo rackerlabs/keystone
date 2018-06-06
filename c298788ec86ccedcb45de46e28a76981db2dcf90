@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_500c6d41",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-06T19:48:18Z",
+      "side": 1,
+      "message": "Do we need this conditional anymore?",
+      "range": {
+        "startLine": 712,
+        "startChar": 12,
+        "endLine": 712,
+        "endChar": 46
+      },
+      "revId": "c298788ec86ccedcb45de46e28a76981db2dcf90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f01b397d",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 724,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-06T19:48:18Z",
+      "side": 1,
+      "message": "Do we need this conditional anymore?",
+      "range": {
+        "startLine": 724,
+        "startChar": 12,
+        "endLine": 724,
+        "endChar": 46
+      },
+      "revId": "c298788ec86ccedcb45de46e28a76981db2dcf90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_7007291f",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 740,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-06T19:48:18Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "revId": "c298788ec86ccedcb45de46e28a76981db2dcf90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_cbfd2c09",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 935,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-06T19:48:18Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "revId": "c298788ec86ccedcb45de46e28a76981db2dcf90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
