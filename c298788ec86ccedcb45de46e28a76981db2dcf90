@@ -79,6 +79,29 @@
       "revId": "c298788ec86ccedcb45de46e28a76981db2dcf90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_4b5b5bf5",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-06T19:50:19Z",
+      "side": 1,
+      "message": "Maybe updating the test name to not reference v2 would be good and remove the need for a comment.",
+      "range": {
+        "startLine": 58,
+        "startChar": 21,
+        "endLine": 58,
+        "endChar": 29
+      },
+      "revId": "c298788ec86ccedcb45de46e28a76981db2dcf90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
