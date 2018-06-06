@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_86cad39e",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-06T14:49:11Z",
+      "side": 1,
+      "message": "We pull these out explicitly because they are the only attributes to update with a project limit?",
+      "range": {
+        "startLine": 224,
+        "startChar": 12,
+        "endLine": 225,
+        "endChar": 51
+      },
+      "revId": "6db852add7647d029afb8faa475451c499aab1db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_06efa3e9",
+        "filename": "keystone/tests/unit/limit/test_backends.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-06T14:49:11Z",
+      "side": 1,
+      "message": "I\u0027m being super nit picky here and we can totally do this in a follow up, but we can pull this out into a variable and give it a name to make it\u0027s purpose more clear (expected_resource_limit?)",
+      "range": {
+        "startLine": 510,
+        "startChar": 25,
+        "endLine": 510,
+        "endChar": 26
+      },
+      "revId": "6db852add7647d029afb8faa475451c499aab1db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
