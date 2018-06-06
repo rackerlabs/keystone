@@ -70,6 +70,24 @@
       "revId": "326acda8782594bddc59e031a7fd5da0790dc83d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_c999bcd0",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-06T15:13:41Z",
+      "side": 1,
+      "message": "So would you be inclined to do option #1 then?",
+      "parentUuid": "9f6a8fd7_58317459",
+      "revId": "326acda8782594bddc59e031a7fd5da0790dc83d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
