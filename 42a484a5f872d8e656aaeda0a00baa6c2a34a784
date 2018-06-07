@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_aad46020",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-07T07:04:52Z",
+      "side": 1,
+      "message": "This needs the same language adjustment and should probably have the same examples",
+      "range": {
+        "startLine": 462,
+        "startChar": 115,
+        "endLine": 462,
+        "endChar": 133
+      },
+      "revId": "42a484a5f872d8e656aaeda0a00baa6c2a34a784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
