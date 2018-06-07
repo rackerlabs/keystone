@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_0f830f58",
+        "filename": "keystone/conf/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-07T20:53:46Z",
+      "side": 1,
+      "message": "How does this differ from DEFAULT debug and do we want to highlight the difference between debug middleware here and the debug options in DEFAULT?\n\nI could see where someone not familiar with keystone would ask \"what\u0027s the difference between the two?\"",
+      "range": {
+        "startLine": 19,
+        "startChar": 5,
+        "endLine": 19,
+        "endChar": 21
+      },
+      "revId": "81caf3eb710358f5df598b84851ddbc8dd32d8e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_51b9ce76",
         "filename": "keystone/server/flask/core.py",
         "patchSetId": 1
