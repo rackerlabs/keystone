@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_cf58b7fb",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-07T21:01:08Z",
+      "side": 0,
+      "message": "Did a previous change make this loadable via configuration?",
+      "range": {
+        "startLine": 187,
+        "startChar": 4,
+        "endLine": 187,
+        "endChar": 45
+      },
+      "revId": "0211cdd05fd54cf69ecb3e1c34f96d8cf6fb06e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
