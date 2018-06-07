@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_d72ce9ad",
+        "filename": "keystone/tests/unit/test_backend_id_mapping_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-06-07T06:37:39Z",
+      "side": 1,
+      "message": "how about merge it into \"test_get_domain_mapping_list\" to avoid duplicate code",
+      "revId": "0aeffff3afb0efd0b89553941bcbee4b282f44e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
