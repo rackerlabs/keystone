@@ -22,6 +22,30 @@
       "revId": "42a484a5f872d8e656aaeda0a00baa6c2a34a784",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_0080c745",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-07T16:38:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_aad46020",
+      "range": {
+        "startLine": 462,
+        "startChar": 115,
+        "endLine": 462,
+        "endChar": 133
+      },
+      "revId": "42a484a5f872d8e656aaeda0a00baa6c2a34a784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
