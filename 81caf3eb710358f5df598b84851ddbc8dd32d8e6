@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_d5392af2",
+        "filename": "keystone/conf/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-07T23:24:12Z",
+      "side": 1,
+      "message": "Adding to the description below in a followup patch.",
+      "parentUuid": "5f7c97a3_0f830f58",
+      "range": {
+        "startLine": 19,
+        "startChar": 5,
+        "endLine": 19,
+        "endChar": 21
+      },
+      "revId": "81caf3eb710358f5df598b84851ddbc8dd32d8e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_51b9ce76",
         "filename": "keystone/server/flask/core.py",
         "patchSetId": 1
