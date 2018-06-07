@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_4f1b4772",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-07T20:43:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_19d362d7",
+      "range": {
+        "startLine": 398,
+        "startChar": 3,
+        "endLine": 403,
+        "endChar": 33
+      },
+      "revId": "4d9084f8f73005fe73fec0e23a3e5c60b47e5a33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_d9d40abe",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 9
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_af0c5b39",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-07T20:43:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_d9d40abe",
+      "range": {
+        "startLine": 485,
+        "startChar": 12,
+        "endLine": 485,
+        "endChar": 63
+      },
+      "revId": "4d9084f8f73005fe73fec0e23a3e5c60b47e5a33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_99de92d8",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 9
@@ -59,6 +107,30 @@
       "writtenOn": "2018-06-07T19:10:21Z",
       "side": 1,
       "message": "See above.\n\nPretty much repeat throughout anything that is typically a dict, don\u0027t assign an ID into a dict returning property.",
+      "range": {
+        "startLine": 567,
+        "startChar": 26,
+        "endLine": 567,
+        "endChar": 64
+      },
+      "revId": "4d9084f8f73005fe73fec0e23a3e5c60b47e5a33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_8f115f56",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-07T20:43:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_99de92d8",
       "range": {
         "startLine": 567,
         "startChar": 26,
