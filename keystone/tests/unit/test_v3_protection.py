@@ -1559,6 +1559,23 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         entity_url = '/domains/%s' % self.domainA['id']
         self.get(entity_url, auth=self.auth)
 
+    def test_domain_admin_list_domain(self):
+        self.auth = self.build_authentication_request(
+            user_id=self.domain_admin_user['id'],
+            password=self.domain_admin_user['password'],
+            domain_id=self.domainA['id'])
+        entity_url = '/domains?name=%s' % self.domainA['name']
+        self.get(entity_url, auth=self.auth)
+
+    def test_domain_admin_list_other_domain_fails(self):
+        self.auth = self.build_authentication_request(
+            user_id=self.domain_admin_user['id'],
+            password=self.domain_admin_user['password'],
+            domain_id=self.domainA['id'])
+        entity_url = '/domains?name=%s' % self.domainB['name']
+        self.get(entity_url, auth=self.auth,
+                 expected_status=http_client.FORBIDDEN)
+
     def test_list_user_credentials(self):
         credential_user = unit.new_credential_ref(self.just_a_user['id'])
         PROVIDERS.credential_api.create_credential(
