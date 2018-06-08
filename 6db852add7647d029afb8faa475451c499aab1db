@@ -49,6 +49,29 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_ff1e6f6e",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-08T20:10:35Z",
+      "side": 1,
+      "message": "I hit a bug with this code while working on client support for this API. When I use ksc to update a limit, the client doesn\u0027t include the id the of registered limit in the body of the request, instead it\u0027s on the URL, which makes sense correct.\n\nBut I think that means this code relies on it being in the request body. I get a 500 from the client [0]. Here are logs [1].\n\nEither way, using the updated reference since it was freshly pulled from the database and has an ID attribute fixed the issue for me.\n\n  self.get_registered_limit.invalidate(\n      self, updated_registered_limit[\u0027id\u0027]\n  ) \n\nAlso, we should add a test for that somewhere since updating without ID in the body should be something we can do with how this API behaves (as opposed to the first version of this API).\n\n[0] http://paste.openstack.org/show/722995/\n[1] http://paste.openstack.org/show/722996/",
+      "range": {
+        "startLine": 68,
+        "startChar": 51,
+        "endLine": 68,
+        "endChar": 73
+      },
+      "revId": "6db852add7647d029afb8faa475451c499aab1db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_06efa3e9",
         "filename": "keystone/tests/unit/limit/test_backends.py",
         "patchSetId": 13
