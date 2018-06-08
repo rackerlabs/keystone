@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_090467c5",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-08T04:16:07Z",
+      "side": 1,
+      "message": "We should probably validate the data that is assigned here. That can be done in a follow-up. Applies to all similar dict setters, and you need to extract the I\u0027d and populate the *_id field.\n\nSuggest just dropping these setters.",
+      "revId": "54dc7d3a6c48e18596bbd8ca60f87f9a12a46cc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
