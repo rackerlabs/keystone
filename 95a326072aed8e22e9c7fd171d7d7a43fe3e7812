@@ -22,6 +22,30 @@
       "revId": "95a326072aed8e22e9c7fd171d7d7a43fe3e7812",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_d4dcba19",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-08T18:37:55Z",
+      "side": 1,
+      "message": "It was at one point *shrug*",
+      "parentUuid": "5f7c97a3_4fbee7ff",
+      "range": {
+        "startLine": 50,
+        "startChar": 21,
+        "endLine": 50,
+        "endChar": 23
+      },
+      "revId": "95a326072aed8e22e9c7fd171d7d7a43fe3e7812",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
