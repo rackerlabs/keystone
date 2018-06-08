@@ -220,7 +220,7 @@ class BasePayload(object):
         :rtype: bool
 
         """
-        raise NotImplementedError()
+        pass
 
     @classmethod
     def assemble(cls, user_id, methods, system, project_id, domain_id,
@@ -244,7 +244,7 @@ class BasePayload(object):
         :returns: the payload of a token
 
         """
-        raise NotImplementedError()
+        pass
 
     @classmethod
     def disassemble(cls, payload):
@@ -266,7 +266,7 @@ class BasePayload(object):
         :returns: a tuple of the payloads component data
 
         """
-        raise NotImplementedError()
+        pass
 
     @classmethod
     def convert_uuid_hex_to_bytes(cls, uuid_string):

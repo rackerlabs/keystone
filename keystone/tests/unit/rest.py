@@ -262,4 +262,4 @@ class RestfulTestCase(unit.TestCase):
         This needs to be overridden by child classes for on their content type.
 
         """
-        raise NotImplementedError()
+        pass

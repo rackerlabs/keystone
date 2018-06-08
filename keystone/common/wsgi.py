@@ -195,7 +195,7 @@ class BaseApplication(object):
         for more info.
 
         """
-        raise NotImplementedError('You must implement __call__')
+        pass
 
 
 class Application(BaseApplication):

@@ -34,8 +34,7 @@ class BaseStyleCheck(unit.BaseTestCase):
 
     def get_checker(self):
         """Return the checker to be used for tests in this class."""
-        raise NotImplementedError('subclasses must provide '
-                                  'a real implementation')
+        pass
 
     def get_fixture(self):
         return hacking_fixtures.HackingCode()
