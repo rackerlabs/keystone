@@ -19,7 +19,7 @@ from keystone.common import provider_api
 import keystone.conf
 from keystone import exception
 from keystone.limit import models
-
+from keystone.limit.models import base
 
 CONF = keystone.conf.CONF
 PROVIDERS = provider_api.ProviderAPIs
@@ -36,9 +36,8 @@ class Manager(manager.Manager):
         unified_limit_driver = CONF.unified_limit.driver
         super(Manager, self).__init__(unified_limit_driver)
 
-        self.enforcement_model = models.get_enforcement_model_from_config(
-            CONF.unified_limit.enforcement_model
-        )
+        self.enforcement_model = base.load_driver(
+            CONF.unified_limit.enforcement_model)
 
     def _assert_resource_exist(self, unified_limit, target):
         try:
@@ -64,8 +63,8 @@ class Manager(manager.Manager):
     def get_model(self):
         """Return information of the configured enforcement model."""
         return {
-            'name': self.enforcement_model.name,
-            'description': self.enforcement_model.description
+            'name': self.enforcement_model.NAME,
+            'description': self.enforcement_model.DESCRIPTION
         }
 
     def create_registered_limits(self, registered_limits):
@@ -94,9 +93,13 @@ class Manager(manager.Manager):
         self.driver.delete_registered_limit(registered_limit_id)
         self.get_registered_limit.invalidate(self, registered_limit_id)
 
+    def _check_hierarchical(self, limits):
+        self.enforcement_model.check_limit(limits)
+
     def create_limits(self, limits):
         for limit in limits:
             self._assert_resource_exist(limit, 'limit')
+        self._check_hierarchical(limits)
         return self.driver.create_limits(limits)
 
     def update_limits(self, limits):
