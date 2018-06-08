@@ -16,6 +16,24 @@
       "revId": "54dc7d3a6c48e18596bbd8ca60f87f9a12a46cc1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_08469751",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-08T14:19:28Z",
+      "side": 1,
+      "message": "I get a bunch of errors like this if I have property methods without setters [0]. This is what I removed [1]. Thoughts?\n\n[0] http://paste.openstack.org/show/722981/\n[1] http://paste.openstack.org/show/722982/",
+      "parentUuid": "5f7c97a3_090467c5",
+      "revId": "54dc7d3a6c48e18596bbd8ca60f87f9a12a46cc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
