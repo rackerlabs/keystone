@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_579f224f",
+        "filename": "keystone/tests/unit/test_backend_filesystem.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 22623
+      },
+      "writtenOn": "2018-06-11T20:58:44Z",
+      "side": 1,
+      "message": "This could probably be something simpler like,\n\u003e Filesystem backend does not implement write operations",
+      "revId": "0928badb3f851065f2abd7b58e8593b5f38600bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
