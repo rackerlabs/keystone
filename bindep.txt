@@ -1,5 +1,7 @@
 # See openstack-infra/project-config:jenkins/data/bindep-fallback.txt
 # This is used by bindep: sudo [apt-get | yum] install $(bindep -b)
+# 20180611 sunyb
+
 
 gettext
 postgresql
