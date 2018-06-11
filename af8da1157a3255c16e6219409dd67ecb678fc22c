@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_d23837d4",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1996,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-06-11T02:58:32Z",
+      "side": 1,
+      "message": "it\u0027ll be cool that if you can test the case that removing either, another is still valid.",
+      "revId": "af8da1157a3255c16e6219409dd67ecb678fc22c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_32ff2b02",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2032,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-06-11T02:58:32Z",
+      "side": 1,
+      "message": "maybe a typo?",
+      "range": {
+        "startLine": 2032,
+        "startChar": 35,
+        "endLine": 2032,
+        "endChar": 38
+      },
+      "revId": "af8da1157a3255c16e6219409dd67ecb678fc22c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
