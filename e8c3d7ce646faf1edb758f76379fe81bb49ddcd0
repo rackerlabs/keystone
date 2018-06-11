@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_125c6649",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 27329
+      },
+      "writtenOn": "2018-06-11T12:58:27Z",
+      "side": 1,
+      "message": "Here you have to put the change ID this change depends on:\n\nDepends-On: I4827be8e62b57b1def420e66bed1a95af7bc8007",
+      "range": {
+        "startLine": 18,
+        "startChar": 12,
+        "endLine": 18,
+        "endChar": 47
+      },
+      "revId": "e8c3d7ce646faf1edb758f76379fe81bb49ddcd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_3dee1321",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 27329
+      },
+      "writtenOn": "2018-06-11T12:58:27Z",
+      "side": 1,
+      "message": "No need to break this line. You can use up to 79 characters",
+      "range": {
+        "startLine": 123,
+        "startChar": 12,
+        "endLine": 125,
+        "endChar": 12
+      },
+      "revId": "e8c3d7ce646faf1edb758f76379fe81bb49ddcd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
