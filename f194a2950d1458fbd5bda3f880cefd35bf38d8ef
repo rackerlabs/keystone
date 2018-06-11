@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_9dbc07bc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 27329
+      },
+      "writtenOn": "2018-06-11T13:04:56Z",
+      "side": 1,
+      "message": "This requires the change ID this change depends on and not an URL",
+      "range": {
+        "startLine": 18,
+        "startChar": 12,
+        "endLine": 18,
+        "endChar": 47
+      },
+      "revId": "f194a2950d1458fbd5bda3f880cefd35bf38d8ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
