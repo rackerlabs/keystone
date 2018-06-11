@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_7d780bf7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 27329
+      },
+      "writtenOn": "2018-06-11T13:07:51Z",
+      "side": 1,
+      "message": "Cool!",
+      "parentUuid": "5f7c97a3_dd135f00",
+      "range": {
+        "startLine": 18,
+        "startChar": 12,
+        "endLine": 18,
+        "endChar": 47
+      },
+      "revId": "e8c3d7ce646faf1edb758f76379fe81bb49ddcd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_3dee1321",
         "filename": "keystone/cmd/bootstrap.py",
         "patchSetId": 6
