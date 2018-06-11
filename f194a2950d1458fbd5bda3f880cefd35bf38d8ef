@@ -22,6 +22,54 @@
       "revId": "f194a2950d1458fbd5bda3f880cefd35bf38d8ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_3dfb737b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2018-06-11T13:06:24Z",
+      "side": 1,
+      "message": "did you check my comment in the previous patch? please read https://docs.openstack.org/infra/manual/developers.html#cross-repository-dependencies",
+      "parentUuid": "5f7c97a3_9dbc07bc",
+      "range": {
+        "startLine": 18,
+        "startChar": 12,
+        "endLine": 18,
+        "endChar": 47
+      },
+      "revId": "f194a2950d1458fbd5bda3f880cefd35bf38d8ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_7d056b79",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2018-06-11T13:06:24Z",
+      "side": 1,
+      "message": "Did you check my comment in the previous patch? Please read",
+      "parentUuid": "5f7c97a3_9dbc07bc",
+      "range": {
+        "startLine": 18,
+        "startChar": 12,
+        "endLine": 18,
+        "endChar": 47
+      },
+      "revId": "f194a2950d1458fbd5bda3f880cefd35bf38d8ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
