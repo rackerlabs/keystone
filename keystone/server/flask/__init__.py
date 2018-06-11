@@ -14,7 +14,7 @@ from keystone.server.flask.core import *  # noqa
 from keystone.server.flask import application  # noqa
 
 
-__all__ = ('application', 'core', 'fail_gracefully', 'initialize_application',
-           'setup_app_middleware')
+__all__ = ('application', 'common', 'core', 'fail_gracefully',
+           'initialize_application', 'setup_app_middleware')
 
 fail_gracefully = application.fail_gracefully

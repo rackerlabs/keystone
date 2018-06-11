@@ -51,7 +51,7 @@ class APIBase(object):
         # NOTE(morgan): Keystone only has a V3 API at this time, this is
         # allowed to be overridden in extraordinary circumstances such as
         # the root discovery and/or a future V4 (or other) API.
-        return '/'.join(['/v3', self.__url_prefix])
+        return '/'.join(['/v3', self._url_prefix])
 
     def __init__(self, name, url_prefix, media_type='application/json'):
         """APIBase object.
@@ -65,8 +65,8 @@ class APIBase(object):
         :type media_type: str
         """
         # NOTE(morgan): Keystone only has V3 with exception of the root
-        self.__api_name = name
-        self.__url_prefix = url_prefix
+        self._api_name = name
+        self._url_prefix = url_prefix
         self.__blueprint = blueprints.Blueprint(name, self._import_name)
         self.__api_bp = flask_restful.Api(
             self.__blueprint, default_mediatype=media_type, decorators=None,
@@ -79,7 +79,7 @@ class APIBase(object):
         if self.__registered:
             raise RuntimeError(
                 'API %(name)s (%(imp_name)s) is already registered.' %
-                    {'name': self.__api_name, 'imp_name': self._import_name})
+                    {'name': self._api_name, 'imp_name': self._import_name})
 
     def add_resources(self):
         """Adds resources and routes to the API.
@@ -164,3 +164,11 @@ class APIBase(object):
         flask_app.register_blueprint(api_instance.blueprint)
         api_instance.set_registered()
 
+
+class Resource(flask_restful.Resource):
+    _controller_cls = None
+
+    def __init__(self):
+        super(Resource, self).__init__()
+        if self._controller_cls is not None:
+            self._controller = self._controller_cls()
