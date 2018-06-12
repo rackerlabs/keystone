@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_8699066e",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1996,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-06-12T01:49:55Z",
+      "side": 1,
+      "message": "++, it\u0027ll make the test stronger. Just a suggestion anyway.",
+      "parentUuid": "5f7c97a3_92c2b6e8",
+      "revId": "af8da1157a3255c16e6219409dd67ecb678fc22c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_32ff2b02",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 5
