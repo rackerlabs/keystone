@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_6a3b369b",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-06-12T19:24:39Z",
+      "side": 1,
+      "message": "Did we ever decide on a release to remove this?",
+      "range": {
+        "startLine": 62,
+        "startChar": 4,
+        "endLine": 65,
+        "endChar": 5
+      },
+      "revId": "3c62e1c61cab0a49ebac7825be61b3138a50b3f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_4a067ad0",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 909,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-06-12T19:24:39Z",
+      "side": 1,
+      "message": "Should we keep this?",
+      "range": {
+        "startLine": 908,
+        "startChar": 4,
+        "endLine": 909,
+        "endChar": 35
+      },
+      "revId": "3c62e1c61cab0a49ebac7825be61b3138a50b3f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
