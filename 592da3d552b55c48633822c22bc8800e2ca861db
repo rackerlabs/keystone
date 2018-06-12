@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_c5a35d9d",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-12T20:20:22Z",
+      "side": 1,
+      "message": "Let\u0027s include a link a deprecated_reason here, too [0]. To that we can add why we want to remove this option and give a date for removal.\n\n[0] https://docs.openstack.org/oslo.config/latest/reference/opts.html#oslo_config.cfg.Opt",
+      "revId": "592da3d552b55c48633822c22bc8800e2ca861db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_05e4f5de",
+        "filename": "releasenotes/notes/deprecated-as-of-rocky-60b2fa05d07d3a28.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-12T20:20:22Z",
+      "side": 1,
+      "message": "nit: deprecated in favor of always expanding role implications during token validation.",
+      "range": {
+        "startLine": 4,
+        "startChar": 54,
+        "endLine": 4,
+        "endChar": 64
+      },
+      "revId": "592da3d552b55c48633822c22bc8800e2ca861db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
