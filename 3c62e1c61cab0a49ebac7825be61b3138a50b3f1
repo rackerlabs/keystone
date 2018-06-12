@@ -155,6 +155,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_050cf5e9",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-12T20:13:15Z",
+      "side": 1,
+      "message": "So - 2 years? Or is it too early to tell?",
+      "parentUuid": "5f7c97a3_ea098630",
+      "revId": "3c62e1c61cab0a49ebac7825be61b3138a50b3f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_2a6d3e02",
         "filename": "keystone/tests/unit/rest.py",
         "patchSetId": 4
@@ -190,6 +208,30 @@
       "side": 1,
       "message": "It will all go away see other comment about minimal changes per patch and isolation.",
       "parentUuid": "5f7c97a3_2a6d3e02",
+      "range": {
+        "startLine": 212,
+        "startChar": 8,
+        "endLine": 212,
+        "endChar": 21
+      },
+      "revId": "3c62e1c61cab0a49ebac7825be61b3138a50b3f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e5f459d1",
+        "filename": "keystone/tests/unit/rest.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-12T20:13:15Z",
+      "side": 1,
+      "message": "++ makes sense",
+      "parentUuid": "5f7c97a3_e50e9930",
       "range": {
         "startLine": 212,
         "startChar": 8,
