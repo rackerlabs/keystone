@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_2add3e40",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-12T19:29:15Z",
+      "side": 1,
+      "message": "Can people really pass in None here? We should make this optional so that\u0027s more apparent. Also, is it appending a prefix after the /v3 part? It\u0027s kinda confusing to have something named \"prefix\" then appended to something else.",
+      "range": {
+        "startLine": 81,
+        "startChar": 11,
+        "endLine": 81,
+        "endChar": 17
+      },
+      "revId": "18b2bc9124f5974b9efbf07c532fdfe1153ed43e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
