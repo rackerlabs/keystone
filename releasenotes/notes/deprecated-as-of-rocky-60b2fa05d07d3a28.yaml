@@ -1,0 +1,6 @@
+---
+deprecations:
+  - >
+    The option ``[token] infer_roles=False`` is being deprecated. The list
+    of roles of a user in the token validation response will include their
+    implied roles.
