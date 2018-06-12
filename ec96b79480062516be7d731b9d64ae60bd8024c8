@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_0096233f",
+        "filename": "keystone/server/flask/application.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-12T21:01:37Z",
+      "side": 1,
+      "message": "This likely should be removed. It can be removed at any point, I think I just missed it (however, the passed-in-name bit will need to remain for ease of external consumption)",
+      "parentUuid": "5f7c97a3_e5d8d97f",
+      "revId": "ec96b79480062516be7d731b9d64ae60bd8024c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_05c955aa",
         "filename": "keystone/server/flask/application.py",
         "patchSetId": 6
@@ -30,6 +48,30 @@
       "writtenOn": "2018-06-12T20:11:09Z",
       "side": 1,
       "message": "What is this going to change to?",
+      "range": {
+        "startLine": 207,
+        "startChar": 4,
+        "endLine": 208,
+        "endChar": 46
+      },
+      "revId": "ec96b79480062516be7d731b9d64ae60bd8024c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e09e8752",
+        "filename": "keystone/server/flask/application.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-12T21:01:37Z",
+      "side": 1,
+      "message": "Always existing, V3 cannot be disabled/removed, we\u0027ll stop registering API versions and just hard-code which one(s) we support... erm... \"one\" we support (for now).",
+      "parentUuid": "5f7c97a3_05c955aa",
       "range": {
         "startLine": 207,
         "startChar": 4,
