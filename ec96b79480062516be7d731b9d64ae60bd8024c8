@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_e5d8d97f",
+        "filename": "keystone/server/flask/application.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-12T20:11:09Z",
+      "side": 1,
+      "message": "Shouldn\u0027t the \u0027admin\u0027 part have been removed by a previous patch in the series?",
+      "revId": "ec96b79480062516be7d731b9d64ae60bd8024c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_05c955aa",
+        "filename": "keystone/server/flask/application.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-12T20:11:09Z",
+      "side": 1,
+      "message": "What is this going to change to?",
+      "range": {
+        "startLine": 207,
+        "startChar": 4,
+        "endLine": 208,
+        "endChar": 46
+      },
+      "revId": "ec96b79480062516be7d731b9d64ae60bd8024c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
