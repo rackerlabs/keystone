@@ -46,6 +46,30 @@
       "revId": "18b2bc9124f5974b9efbf07c532fdfe1153ed43e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_8518051e",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-12T20:15:24Z",
+      "side": 1,
+      "message": "So this is the blueprint prefix?",
+      "parentUuid": "5f7c97a3_2a469e7c",
+      "range": {
+        "startLine": 81,
+        "startChar": 11,
+        "endLine": 81,
+        "endChar": 17
+      },
+      "revId": "18b2bc9124f5974b9efbf07c532fdfe1153ed43e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
