@@ -70,6 +70,30 @@
       "revId": "18b2bc9124f5974b9efbf07c532fdfe1153ed43e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_0032a35e",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-12T21:08:45Z",
+      "side": 1,
+      "message": "Yes.\n\nWe wont really be leveraging this too much, but I exposed it because I didn\u0027t want a massive refactor in some special one-off cases.\n\nBlueprint prefix is primarily where we will be working, but the structure is designed so you can do:\n\nBlueprint owns /users\nAPI owns /users/API\nand Endpoint can own /users/API/credentials\n\nI expect we will not use this, but exposing it allows for some of the potential future things such as splitting auth and catalog to /auth /catalog instead of version-specific lead but maintaining v3/auth leaning on the same code. There will always be some restructuring to implement, but this limits it.\n\nThis also lets me lean on the bp-prefix for the /v3 addition for now behind the scenes without needing to encode it in the dispatch route definition(s)",
+      "parentUuid": "5f7c97a3_8518051e",
+      "range": {
+        "startLine": 81,
+        "startChar": 11,
+        "endLine": 81,
+        "endChar": 17
+      },
+      "revId": "18b2bc9124f5974b9efbf07c532fdfe1153ed43e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
