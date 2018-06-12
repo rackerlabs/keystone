@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_85f00593",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-12T20:34:29Z",
+      "side": 1,
+      "message": "nit: bp basic-default-roles\n\nThe currently linked specification doesn\u0027t resolve to anything in launchpad.",
+      "range": {
+        "startLine": 17,
+        "startChar": 3,
+        "endLine": 17,
+        "endChar": 23
+      },
+      "revId": "010eac0e91eef36317b51a9313ad6b025c30cc30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_c5603d04",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-12T20:34:29Z",
+      "side": 1,
+      "message": "This is also going to need a release note [0].\n\n[0] https://docs.openstack.org/keystone/latest/contributor/release-notes.html#release-notes-for-features",
+      "revId": "010eac0e91eef36317b51a9313ad6b025c30cc30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_059cf50b",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-12T20:34:29Z",
+      "side": 1,
+      "message": "nit: s/_ensure_role/_ensure_role_exists/\n\nOnly because it is a bit more clear what exactly we\u0027re ensuring. Otherwise without looking at the implementation of the method and only the calling code, it\u0027s hard to know what we mean by the method name (are we ensuring the role name contains certain characters, has a specific length, meets a different criteria, et cetera).",
+      "range": {
+        "startLine": 112,
+        "startChar": 8,
+        "endLine": 112,
+        "endChar": 20
+      },
+      "revId": "010eac0e91eef36317b51a9313ad6b025c30cc30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e5ad3931",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-12T20:34:29Z",
+      "side": 1,
+      "message": "nit: thanks for generalizing this enough for all cases. We could group this up with the other two wrapper methods for member and reader.",
+      "revId": "010eac0e91eef36317b51a9313ad6b025c30cc30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
