@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_402c1b01",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 11589
+      },
+      "writtenOn": "2018-06-12T21:23:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_85f00593",
+      "range": {
+        "startLine": 17,
+        "startChar": 3,
+        "endLine": 17,
+        "endChar": 23
+      },
+      "revId": "010eac0e91eef36317b51a9313ad6b025c30cc30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_c5603d04",
         "filename": "/COMMIT_MSG",
         "patchSetId": 8
@@ -36,6 +60,24 @@
       "writtenOn": "2018-06-12T20:34:29Z",
       "side": 1,
       "message": "This is also going to need a release note [0].\n\n[0] https://docs.openstack.org/keystone/latest/contributor/release-notes.html#release-notes-for-features",
+      "revId": "010eac0e91eef36317b51a9313ad6b025c30cc30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_3b85925a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 11589
+      },
+      "writtenOn": "2018-06-12T21:23:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_c5603d04",
       "revId": "010eac0e91eef36317b51a9313ad6b025c30cc30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_e051a763",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 11589
+      },
+      "writtenOn": "2018-06-12T21:23:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_059cf50b",
+      "range": {
+        "startLine": 112,
+        "startChar": 8,
+        "endLine": 112,
+        "endChar": 20
+      },
+      "revId": "010eac0e91eef36317b51a9313ad6b025c30cc30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_e5ad3931",
         "filename": "keystone/cmd/bootstrap.py",
         "patchSetId": 8
@@ -76,6 +142,24 @@
       "writtenOn": "2018-06-12T20:34:29Z",
       "side": 1,
       "message": "nit: thanks for generalizing this enough for all cases. We could group this up with the other two wrapper methods for member and reader.",
+      "revId": "010eac0e91eef36317b51a9313ad6b025c30cc30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_20b8ff72",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 11589
+      },
+      "writtenOn": "2018-06-12T21:23:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_e5ad3931",
       "revId": "010eac0e91eef36317b51a9313ad6b025c30cc30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
