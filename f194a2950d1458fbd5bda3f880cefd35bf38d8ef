@@ -94,6 +94,23 @@
       "revId": "f194a2950d1458fbd5bda3f880cefd35bf38d8ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_efc8b8a8",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-06-12T18:44:23Z",
+      "side": 1,
+      "message": "This might cause issues when doing a search on \"TODO\", keep in mind if that\u0027s how you track your work.",
+      "revId": "f194a2950d1458fbd5bda3f880cefd35bf38d8ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
