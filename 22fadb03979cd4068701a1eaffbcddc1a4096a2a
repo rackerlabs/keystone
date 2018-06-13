@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_9a4cc89e",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-13T18:45:11Z",
+      "side": 1,
+      "message": "This isn\u0027t in the body of the request anymore I don\u0027t think, so this probably isn\u0027t necessary",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 36
+      },
+      "revId": "22fadb03979cd4068701a1eaffbcddc1a4096a2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
