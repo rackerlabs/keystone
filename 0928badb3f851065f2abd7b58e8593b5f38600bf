@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_d766a029",
+        "filename": "keystone/catalog/backends/filesystem.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-13T14:30:14Z",
+      "side": 1,
+      "message": "We should probably convert these to raise 403s for proper API handling, a NotImplemented here is probably wrong.\n\nThe server may not implement functionality, but this is less HTTP server not implementing and more \"we don\u0027t support it, you are forbidden from performing that action\" in our case.\n\nhttps://tools.ietf.org/html/rfc7231#section-6.6.2\n\n\nI am ok with it as is though.",
+      "revId": "0928badb3f851065f2abd7b58e8593b5f38600bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_579f224f",
         "filename": "keystone/tests/unit/test_backend_filesystem.py",
         "patchSetId": 14
@@ -13,6 +30,24 @@
       "writtenOn": "2018-06-11T20:58:44Z",
       "side": 1,
       "message": "This could probably be something simpler like,\n\u003e Filesystem backend does not implement write operations",
+      "revId": "0928badb3f851065f2abd7b58e8593b5f38600bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_171978cf",
+        "filename": "keystone/tests/unit/test_backend_filesystem.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-13T14:30:14Z",
+      "side": 1,
+      "message": "\u003e Filesystem backend does not support write operations",
+      "parentUuid": "5f7c97a3_579f224f",
       "revId": "0928badb3f851065f2abd7b58e8593b5f38600bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
