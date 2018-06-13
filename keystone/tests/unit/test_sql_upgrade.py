@@ -3015,6 +3015,17 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         }
         limit_table.insert().values(limit).execute()
 
+    def test_migration_046_remove_project_fk_from_limit(self):
+        self.expand(45)
+        self.migrate(45)
+        self.contract(45)
+        self.assertTrue(self.does_fk_exist('limit', 'project_id'))
+
+        self.expand(46)
+        self.migrate(46)
+        self.contract(46)
+        self.assertFalse(self.does_fk_exist('limit', 'project_id'))
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = db_fixtures.MySQLOpportunisticFixture
