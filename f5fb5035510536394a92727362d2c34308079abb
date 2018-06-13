@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_da73204d",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-13T18:29:18Z",
+      "side": 1,
+      "message": "Can we add a test that ensures this case gets hit?",
+      "range": {
+        "startLine": 138,
+        "startChar": 8,
+        "endLine": 138,
+        "endChar": 34
+      },
+      "revId": "f5fb5035510536394a92727362d2c34308079abb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_3ac7b447",
+        "filename": "releasenotes/notes/bp-basic-default-roles-4ff6502b6ac57d48.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-13T18:29:18Z",
+      "side": 1,
+      "message": "We could elaborate on this further by saying \"if you do not want these role implications in place, please undo them after running bootstrap, or don\u0027t run bootstrap\".",
+      "revId": "f5fb5035510536394a92727362d2c34308079abb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
