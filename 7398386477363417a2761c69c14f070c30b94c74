@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_049f12b4",
+        "filename": "releasenotes/notes/bp-basic-default-roles-4ff6502b6ac57d48.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-13T01:43:41Z",
+      "side": 1,
+      "message": "This can probably be implied by the fact this will be published in the keystone release notes. Could just say \"Support had been added for...\"\n\nThese are also usually wrapped at 80 characters, but I don\u0027t think there is anything that performs a strict check on that.",
+      "range": {
+        "startLine": 5,
+        "startChar": 6,
+        "endLine": 5,
+        "endChar": 18
+      },
+      "revId": "7398386477363417a2761c69c14f070c30b94c74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
