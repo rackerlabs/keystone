@@ -69,6 +69,30 @@
       "revId": "3f2485df849b637a07d1f521a10bd61db3b31d7a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_6e225854",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-13T11:45:06Z",
+      "side": 1,
+      "message": "Totally agree, that was just a minor nitpick. My main question was on the overall review.",
+      "parentUuid": "5f7c97a3_f37975fb",
+      "range": {
+        "startLine": 127,
+        "startChar": 38,
+        "endLine": 127,
+        "endChar": 58
+      },
+      "revId": "3f2485df849b637a07d1f521a10bd61db3b31d7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
