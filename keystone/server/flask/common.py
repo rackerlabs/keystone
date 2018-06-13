@@ -18,9 +18,28 @@ import flask_restful
 from oslo_log import log
 import six
 
+from keystone.common import json_home
+
 
 LOG = log.getLogger(__name__)
-ResourceMap = collections.namedtuple('resource_map', 'resource, urls, kwargs')
+ResourceMap = collections.namedtuple(
+    'resource_map', 'resource, url, kwargs, json_home_data')
+JsonHomeData = collections.namedtuple(
+    'json_home_data', 'rel, status, path_vars'
+)
+
+
+def construct_resource_map(resource, url, resource_kwargs, rel,
+                           status=json_home.Status.STABLE, path_vars=None):
+    return ResourceMap(
+        resource=resource, url=url, kwargs=resource_kwargs,
+        json_home_data=construct_json_home_data(
+            rel=rel, status=status, path_vars=path_vars))
+
+
+def construct_json_home_data(rel, status=json_home.Status.STABLE,
+                             path_vars=None):
+    return JsonHomeData(rel=rel, status=status, path_vars=(path_vars or {}))
 
 
 @six.add_metaclass(abc.ABCMeta)
@@ -47,10 +66,9 @@ class APIBase(object):
 
             * resource: a :class:`flask_restful.Resource` class or subclass
 
-            * urls: a url route or iterable of url routes to match for the
-                    resource, standard flask routing rules apply. Any url
-                    variables will be passed to the resource method as args.
-                    (str)
+            * urls: a url route to match for the resource, standard flask
+                    routing rules apply. Any url variables will be passed to
+                    the resource method as args. (str)
 
             * kwargs: a dict of optional value(s) that can further modify the
                       handling of the routing.
@@ -70,6 +88,9 @@ class APIBase(object):
 
                       Additional keyword arguments not specified above will be
                       passed as-is to :meth:`flask.Flask.add_url_rule`.
+
+            * json_home_data: :class:`JsonHomeData` populated with relevant
+                              info for populated JSON Home Documents.
         """
         raise NotImplementedError()
 
@@ -105,10 +126,23 @@ class APIBase(object):
     def _add_resources(self):
         for r in self.resource_mapping:
             LOG.debug(
-                'Adding resource routes to API %(name)s: '
-                '[%(urls)r %(kwargs)r]',
-                {'name': self._name, 'urls': r.urls, 'kwargs': r.kwargs})
-            self._blueprint.add_resource(r.resource, *r.urls, **r.kwargs)
+                'Adding resource route to API %(name)s: '
+                '[%(url)r %(kwargs)r]',
+                {'name': self._name, 'url': r.url, 'kwargs': r.kwargs})
+            self._blueprint.add_resource(r.resource, r.url, **r.kwargs)
+
+            # Build the JSON Home data and add it to the relevant to the
+            # JSON Home Documents
+            resource_data = {}
+            if r.json_home_data.path_vars:
+                resource_data['href-template'] = r.url
+                resource_data['href-vars'] = r.path_vars
+            else:
+                resource_data['href'] = r.url
+            json_home.Status.update_resource_data(
+                resource_data, r.json_home_data.status)
+            json_home.JsonHomeResources.append_resource(
+                r.json_home_data.rel, resource_data)
 
     @classmethod
     def instantiate_and_register_to_app(cls, flask_app):
