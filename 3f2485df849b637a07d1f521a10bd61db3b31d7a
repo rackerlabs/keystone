@@ -45,6 +45,30 @@
       "revId": "3f2485df849b637a07d1f521a10bd61db3b31d7a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f37975fb",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2018-06-13T11:10:20Z",
+      "side": 1,
+      "message": "Thanks for the suggestion, I think it can be addressed in a subsequent commit. This was directly taken from the previous implementation of _bootstrap_admin_role, which you can see on the left in line 159. It was left almost as-is in order to reduce the scope of the change. But it is a nice refactoring idea :)",
+      "parentUuid": "5f7c97a3_b3e3fdd7",
+      "range": {
+        "startLine": 127,
+        "startChar": 38,
+        "endLine": 127,
+        "endChar": 58
+      },
+      "revId": "3f2485df849b637a07d1f521a10bd61db3b31d7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
