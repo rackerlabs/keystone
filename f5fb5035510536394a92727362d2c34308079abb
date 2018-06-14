@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_d25f733e",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-14T14:59:33Z",
+      "side": 1,
+      "message": "Oh good call - thanks!",
+      "parentUuid": "5f7c97a3_14f5e082",
+      "range": {
+        "startLine": 138,
+        "startChar": 8,
+        "endLine": 138,
+        "endChar": 34
+      },
+      "revId": "f5fb5035510536394a92727362d2c34308079abb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_3ac7b447",
         "filename": "releasenotes/notes/bp-basic-default-roles-4ff6502b6ac57d48.yaml",
         "patchSetId": 13
