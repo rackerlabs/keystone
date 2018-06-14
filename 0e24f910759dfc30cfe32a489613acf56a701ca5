@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_29a755bf",
+        "filename": "keystone_tempest_plugin/README.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-14T18:54:30Z",
+      "side": 0,
+      "message": "This seems like an unrelated change?",
+      "revId": "0e24f910759dfc30cfe32a489613acf56a701ca5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
