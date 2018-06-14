@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_14f5e082",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2018-06-14T09:36:34Z",
+      "side": 1,
+      "message": "From the test coverage report of this run, we can see that it gets called: http://logs.openstack.org/43/572243/13/check/openstack-tox-cover/d31954d/cover/keystone_cmd_bootstrap_py.html#n129\n\nThat one gets hit on this test (test_bootstrap_is_idempotent_when_password_does_not_change): https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_cli.py#L155\n\nwhich calls the bootstrap command twice.",
+      "parentUuid": "5f7c97a3_da73204d",
+      "range": {
+        "startLine": 138,
+        "startChar": 8,
+        "endLine": 138,
+        "endChar": 34
+      },
+      "revId": "f5fb5035510536394a92727362d2c34308079abb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_3ac7b447",
         "filename": "releasenotes/notes/bp-basic-default-roles-4ff6502b6ac57d48.yaml",
         "patchSetId": 13
