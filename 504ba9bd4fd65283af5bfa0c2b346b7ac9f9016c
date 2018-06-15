@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_7c6651f1",
+        "filename": "keystone/tests/unit/rest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-06-15T20:54:18Z",
+      "side": 1,
+      "message": "If this needs to be overridden, then I don\u0027t see the point of removing the NotImplementedError().",
+      "range": {
+        "startLine": 262,
+        "startChar": 8,
+        "endLine": 262,
+        "endChar": 79
+      },
+      "revId": "504ba9bd4fd65283af5bfa0c2b346b7ac9f9016c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
