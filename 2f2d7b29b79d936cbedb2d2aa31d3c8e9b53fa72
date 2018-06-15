@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_4307041f",
+        "filename": "requirements.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-06-15T08:09:12Z",
+      "side": 1,
+      "message": "the minimum version should be added now.\nhttps://review.openstack.org/#/c/574367",
+      "revId": "2f2d7b29b79d936cbedb2d2aa31d3c8e9b53fa72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
