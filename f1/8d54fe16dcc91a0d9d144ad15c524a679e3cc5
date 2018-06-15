@@ -1,0 +1,12 @@
+Code-Review+2: ayoung <ayoung@redhat.com>
+Code-Review+2: Kristi Nikolla <kristi@nikolla.me>
+Code-Review+1: sonu <sonu.bhumca11@gmail.com>
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Code-Review+1: yatin <ykarel@redhat.com>
+Workflow+1: Kristi Nikolla <kristi@nikolla.me>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 15 Jun 2018 05:09:08 +0000
+Reviewed-on: https://review.openstack.org/574735
+Project: openstack/keystone
+Branch: refs/heads/master
