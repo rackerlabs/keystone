@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_fd4829b4",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-15T12:55:45Z",
+      "side": 1,
+      "message": "How about:\n\n CRUD is treated as an extension or additional feature to the core feature set, in that a backend is not required to support it.",
+      "range": {
+        "startLine": 307,
+        "startChar": 0,
+        "endLine": 308,
+        "endChar": 39
+      },
+      "revId": "73a74e434cf3ad71b6fbfe5a7eb9cd187a6ed9d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
