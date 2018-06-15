@@ -16,6 +16,29 @@
       "revId": "f2beb6e6df9d751fadb34b385062535dbbba4beb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_5c16f54b",
+        "filename": "README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-06-15T20:52:00Z",
+      "side": 1,
+      "message": "nit *are\n\n(can fix in a follow up)",
+      "range": {
+        "startLine": 44,
+        "startChar": 14,
+        "endLine": 44,
+        "endChar": 16
+      },
+      "revId": "f2beb6e6df9d751fadb34b385062535dbbba4beb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
