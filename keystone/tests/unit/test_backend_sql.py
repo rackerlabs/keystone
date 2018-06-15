@@ -745,36 +745,6 @@ class SqlCatalog(SqlTests, catalog_tests.CatalogTests):
     _legacy_endpoint_id_in_endpoint = True
     _enabled_default_to_true_when_creating_endpoint = True
 
-    def test_catalog_ignored_malformed_urls(self):
-        service = unit.new_service_ref()
-        PROVIDERS.catalog_api.create_service(service['id'], service)
-
-        malformed_url = "http://192.168.1.104:8774/v2/$(tenant)s"
-        endpoint = unit.new_endpoint_ref(service_id=service['id'],
-                                         url=malformed_url,
-                                         region_id=None)
-        PROVIDERS.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
-
-        # NOTE(dstanek): there are no valid URLs, so nothing is in the catalog
-        catalog = PROVIDERS.catalog_api.get_catalog('fake-user', 'fake-tenant')
-        self.assertEqual({}, catalog)
-
-    def test_get_catalog_with_empty_public_url(self):
-        service = unit.new_service_ref()
-        PROVIDERS.catalog_api.create_service(service['id'], service)
-
-        endpoint = unit.new_endpoint_ref(url='', service_id=service['id'],
-                                         region_id=None)
-        PROVIDERS.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
-
-        catalog = PROVIDERS.catalog_api.get_catalog('user', 'tenant')
-        catalog_endpoint = catalog[endpoint['region_id']][service['type']]
-        self.assertEqual(service['name'], catalog_endpoint['name'])
-        self.assertEqual(endpoint['id'], catalog_endpoint['id'])
-        self.assertEqual('', catalog_endpoint['publicURL'])
-        self.assertIsNone(catalog_endpoint.get('adminURL'))
-        self.assertIsNone(catalog_endpoint.get('internalURL'))
-
     def test_create_endpoint_region_returns_not_found(self):
         service = unit.new_service_ref()
         PROVIDERS.catalog_api.create_service(service['id'], service)
