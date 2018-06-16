@@ -377,3 +377,57 @@ Remove a role from a user-project pair:
       $ openstack role list --user USER_NAME --project TENANT_ID
 
    If the role was removed, the command output omits the removed role.
+
+Creating implied roles
+----------------------
+
+It is possible to build role hierarchies by having roles imply other roles.
+These are called implied roles, or role inference rules.
+
+To illustrate the capability, let's have the ``admin`` role imply the
+``Member`` role. In this example, if a user was assigned the ``admin`` role,
+they would also get the ``Member`` role that it implies.
+
+.. code-block:: console
+
+    $ openstack implied role create admin --implied-role Member
+    +------------+----------------------------------+
+    | Field      | Value                            |
+    +------------+----------------------------------+
+    | implies    | 71ccc37d41c8491c975ae72676db687f |
+    | prior_role | 29c09e68e6f741afa952a837e29c700b |
+    +------------+----------------------------------+
+
+.. note::
+
+    Role implications only go one way, therefore assigning a user the ``Member``
+    would not grant them the ``admin`` role also.
+
+Listing implied roles
+---------------------
+
+To list implied roles:
+
+.. code-block:: console
+
+    $ openstack implied role list
+    +----------------------------------+-----------------+----------------------------------+-------------------+
+    | Prior Role ID                    | Prior Role Name | Implied Role ID                  | Implied Role Name |
+    +----------------------------------+-----------------+----------------------------------+-------------------+
+    | bb6abe2def6d47ada08d22d67b86571a | admin           | f0b42c563bd545398c40d66112e39f57 | Member            |
+    +----------------------------------+-----------------+----------------------------------+-------------------+
+
+Deleting implied roles
+----------------------
+
+To delete a role inference rule:
+
+.. code-block:: console
+
+    $ openstack implied role delete admin --implied-role Member
+
+.. note::
+
+    Deleting an implied role removes the role inference rule. It does not
+    delete the prior or implied role. Therefore if a user was assigned the
+    prior role, they will not have anymore the roles that it implied.
