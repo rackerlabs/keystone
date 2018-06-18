@@ -2,6 +2,63 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_ccff8ffe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-18T21:01:26Z",
+      "side": 1,
+      "message": "I think we should add a depends on for https://review.openstack.org/#/c/557359/ \n\nJust so we don\u0027t start advertising something that is currently broken.",
+      "revId": "2d768c20321c0206d3ab082c0210f5ce3a1246fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_51379c4c",
+        "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-18T21:01:26Z",
+      "side": 1,
+      "message": "A short example of why this might be useful to operators would be beneficial, too (e.g. less role assignment, easier management, etc.)",
+      "revId": "2d768c20321c0206d3ab082c0210f5ce3a1246fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_9183f4cb",
+        "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-18T21:01:26Z",
+      "side": 1,
+      "message": "The bootstrap patch we just merged uses \u0027member\u0027 instead of \u0027Member\u0027. Even though they are technically the same due to SQL storage being case-insensitive, we could use the \u0027member\u0027 version for the sake of consistency.",
+      "range": {
+        "startLine": 388,
+        "startChar": 2,
+        "endLine": 388,
+        "endChar": 3
+      },
+      "revId": "2d768c20321c0206d3ab082c0210f5ce3a1246fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_76edfcee",
         "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
         "patchSetId": 1
@@ -36,6 +93,64 @@
       "writtenOn": "2018-06-18T10:02:04Z",
       "side": 1,
       "message": "Weird, this doesn\u0027t work for me:\n\n devuser@ubuntu:~$ openstack --version\n openstack 3.15.0\n devuser@ubuntu:~$ openstack implied role list \n \u0027RoleManager\u0027 object has no attribute \u0027list_inference_roles\u0027\n\nAm I missing a keystoneclient update?",
+      "revId": "2d768c20321c0206d3ab082c0210f5ce3a1246fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f104a81a",
+        "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-18T21:01:26Z",
+      "side": 1,
+      "message": "https://review.openstack.org/#/c/557359/ fixes the issue for me when I install it locally.",
+      "parentUuid": "5f7c97a3_b61e340b",
+      "revId": "2d768c20321c0206d3ab082c0210f5ce3a1246fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_4c393fcd",
+        "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-18T21:01:26Z",
+      "side": 1,
+      "message": "Not that we can change it now, but the term Prior is kind of confusing (prior to what). +1 for adding an explicit definition for it.",
+      "range": {
+        "startLine": 415,
+        "startChar": 41,
+        "endLine": 415,
+        "endChar": 46
+      },
+      "revId": "2d768c20321c0206d3ab082c0210f5ce3a1246fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_3153006f",
+        "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-18T21:01:26Z",
+      "side": 1,
+      "message": "++",
       "revId": "2d768c20321c0206d3ab082c0210f5ce3a1246fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
