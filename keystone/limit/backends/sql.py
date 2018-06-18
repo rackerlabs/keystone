@@ -28,6 +28,7 @@ from keystone.limit.backends import base
 class RegisteredLimitModel(sql.ModelBase, sql.ModelDictMixin):
     __tablename__ = 'registered_limit'
     attributes = [
+        'internal_id',
         'id',
         'service_id',
         'region_id',
@@ -36,7 +37,8 @@ class RegisteredLimitModel(sql.ModelBase, sql.ModelDictMixin):
         'description'
     ]
 
-    id = sql.Column(sql.String(length=64), primary_key=True)
+    internal_id = sql.Column(sql.Integer, primary_key=True, nullable=False)
+    id = sql.Column(sql.String(length=64), nullable=False, unique=True)
     service_id = sql.Column(sql.String(255),
                             sql.ForeignKey('service.id'))
     region_id = sql.Column(sql.String(64),
@@ -50,10 +52,16 @@ class RegisteredLimitModel(sql.ModelBase, sql.ModelDictMixin):
                                     'region_id',
                                     'resource_name'),)
 
+    def to_dict(self):
+        ref = super(RegisteredLimitModel, self).to_dict()
+        ref.pop('internal_id')
+        return ref
+
 
 class LimitModel(sql.ModelBase, sql.ModelDictMixin):
     __tablename__ = 'limit'
     attributes = [
+        'internal_id',
         'id',
         'project_id',
         'service_id',
@@ -63,9 +71,9 @@ class LimitModel(sql.ModelBase, sql.ModelDictMixin):
         'description'
     ]
 
-    id = sql.Column(sql.String(length=64), primary_key=True)
-    project_id = sql.Column(sql.String(64),
-                            sql.ForeignKey('project.id'))
+    internal_id = sql.Column(sql.Integer, primary_key=True, nullable=False)
+    id = sql.Column(sql.String(length=64), nullable=False, unique=True)
+    project_id = sql.Column(sql.String(64))
     service_id = sql.Column(sql.String(255))
     region_id = sql.Column(sql.String(64), nullable=True)
     resource_name = sql.Column(sql.String(255))
@@ -83,6 +91,11 @@ class LimitModel(sql.ModelBase, sql.ModelDictMixin):
                                     'service_id',
                                     'region_id',
                                     'resource_name'),)
+
+    def to_dict(self):
+        ref = super(LimitModel, self).to_dict()
+        ref.pop('internal_id')
+        return ref
 
 
 class UnifiedLimit(base.UnifiedLimitDriverBase):
@@ -177,7 +190,9 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
             return [s.to_dict() for s in registered_limits]
 
     def _get_registered_limit(self, session, registered_limit_id):
-        ref = session.query(RegisteredLimitModel).get(registered_limit_id)
+        query = session.query(RegisteredLimitModel).filter_by(
+            id=registered_limit_id)
+        ref = query.first()
         if ref is None:
             raise exception.RegisteredLimitNotFound(id=registered_limit_id)
         return ref
@@ -235,7 +250,8 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
             return [s.to_dict() for s in limits]
 
     def _get_limit(self, session, limit_id):
-        ref = session.query(LimitModel).get(limit_id)
+        query = session.query(LimitModel).filter_by(id=limit_id)
+        ref = query.first()
         if ref is None:
             raise exception.LimitNotFound(id=limit_id)
         return ref

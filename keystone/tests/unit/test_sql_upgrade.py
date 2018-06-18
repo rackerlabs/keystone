@@ -3015,6 +3015,47 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         }
         limit_table.insert().values(limit).execute()
 
+    def test_migration_046_add_auto_increment_pk_column_to_unified_limit(self):
+        self.expand(45)
+        self.migrate(45)
+        self.contract(45)
+        registered_limit_table_name = 'registered_limit'
+        limit_table_name = 'limit'
+        self.assertTableColumns(
+            registered_limit_table_name,
+            ['id', 'service_id', 'region_id', 'resource_name', 'default_limit',
+             'description']
+        )
+        self.assertTableColumns(
+            limit_table_name,
+            ['id', 'project_id', 'service_id', 'region_id', 'resource_name',
+             'resource_limit', 'description']
+        )
+        self.assertTrue(self.does_pk_exist('registered_limit', 'id'))
+        self.assertTrue(self.does_pk_exist('limit', 'id'))
+        self.assertTrue(self.does_fk_exist('limit', 'project_id'))
+
+        self.expand(46)
+        self.migrate(46)
+        self.contract(46)
+        self.assertTableColumns(
+            registered_limit_table_name,
+            ['id', 'service_id', 'region_id', 'resource_name', 'default_limit',
+             'description', 'internal_id']
+        )
+        self.assertTableColumns(
+            limit_table_name,
+            ['id', 'project_id', 'service_id', 'region_id', 'resource_name',
+             'resource_limit', 'description', 'internal_id']
+        )
+        self.assertFalse(self.does_pk_exist('registered_limit', 'id'))
+        self.assertTrue(self.does_pk_exist('registered_limit', 'internal_id'))
+        self.assertFalse(self.does_pk_exist('limit', 'id'))
+        self.assertTrue(self.does_pk_exist('limit', 'internal_id'))
+        limit_table = sqlalchemy.Table(limit_table_name,
+                                       self.metadata, autoload=True)
+        self.assertEqual(set([]), limit_table.foreign_keys)
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = db_fixtures.MySQLOpportunisticFixture
