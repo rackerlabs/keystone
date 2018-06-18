@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_778168fb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-18T21:46:41Z",
+      "side": 1,
+      "message": "Since this is a performance related bug, would it be possible to include performance metrics, if any, in the commit message?",
+      "revId": "0aeffff3afb0efd0b89553941bcbee4b282f44e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_d7a15caa",
+        "filename": "keystone/identity/mapping_backends/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-18T21:46:41Z",
+      "side": 1,
+      "message": "What type is this parameter? Also, since we\u0027re changing the interface, we need a release note so that people implementing this interface know what\u0027s changing.",
+      "range": {
+        "startLine": 43,
+        "startChar": 15,
+        "endLine": 43,
+        "endChar": 26
+      },
+      "revId": "0aeffff3afb0efd0b89553941bcbee4b282f44e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_d72ce9ad",
         "filename": "keystone/tests/unit/test_backend_id_mapping_sql.py",
         "patchSetId": 1
@@ -31,6 +71,24 @@
       "side": 1,
       "message": "we could indeed move all local_* variables setup to a auxiliary method.\nI\u0027ll do it if more revisions are deemed necessary",
       "parentUuid": "5f7c97a3_d72ce9ad",
+      "revId": "0aeffff3afb0efd0b89553941bcbee4b282f44e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_17703440",
+        "filename": "keystone/tests/unit/test_backend_id_mapping_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-18T21:46:41Z",
+      "side": 1,
+      "message": "++ to reducing duplicate code if we can.",
+      "parentUuid": "5f7c97a3_6d298235",
       "revId": "0aeffff3afb0efd0b89553941bcbee4b282f44e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
