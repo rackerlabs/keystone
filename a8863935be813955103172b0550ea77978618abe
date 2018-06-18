@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_ac76d30b",
+        "filename": "keystone/api/discovery.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-18T21:29:16Z",
+      "side": 1,
+      "message": "So - this is going to be the new way of routing things, instead of using something like routers.py?",
+      "range": {
+        "startLine": 80,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 32
+      },
+      "revId": "a8863935be813955103172b0550ea77978618abe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_2cd883ee",
+        "filename": "keystone/api/discovery.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-18T21:29:16Z",
+      "side": 1,
+      "message": "Does this properly handle / characters?",
+      "range": {
+        "startLine": 93,
+        "startChar": 34,
+        "endLine": 93,
+        "endChar": 59
+      },
+      "revId": "a8863935be813955103172b0550ea77978618abe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
