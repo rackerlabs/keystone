@@ -28,7 +28,7 @@ from keystone.limit.backends import base
 class RegisteredLimitModel(sql.ModelBase, sql.ModelDictMixin):
     __tablename__ = 'registered_limit'
     attributes = [
-        'id',
+        'registered_limit_id',
         'service_id',
         'region_id',
         'resource_name',
@@ -36,7 +36,9 @@ class RegisteredLimitModel(sql.ModelBase, sql.ModelDictMixin):
         'description'
     ]
 
-    id = sql.Column(sql.String(length=64), primary_key=True)
+    id = sql.Column(sql.Integer, primary_key=True, nullable=False,
+                    autoincrement=True)
+    registered_limit_id = sql.Column(sql.String(length=64))
     service_id = sql.Column(sql.String(255),
                             sql.ForeignKey('service.id'))
     region_id = sql.Column(sql.String(64),
@@ -50,11 +52,23 @@ class RegisteredLimitModel(sql.ModelBase, sql.ModelDictMixin):
                                     'region_id',
                                     'resource_name'),)
 
+    @classmethod
+    def from_dict(cls, registered_limit_dict):
+        """Override from_dict to set enabled if missing."""
+        new_dict = registered_limit_dict.copy()
+        new_dict['registered_limit_id'] = new_dict.pop('id')
+        return super(RegisteredLimitModel, cls).from_dict(new_dict)
+
+    def to_dict(self):
+        ref = super(RegisteredLimitModel, self).to_dict()
+        ref['id'] = ref.pop('registered_limit_id')
+        return ref
+
 
 class LimitModel(sql.ModelBase, sql.ModelDictMixin):
     __tablename__ = 'limit'
     attributes = [
-        'id',
+        'limit_id',
         'project_id',
         'service_id',
         'region_id',
@@ -63,7 +77,9 @@ class LimitModel(sql.ModelBase, sql.ModelDictMixin):
         'description'
     ]
 
-    id = sql.Column(sql.String(length=64), primary_key=True)
+    id = sql.Column(sql.Integer, primary_key=True, nullable=False,
+                    autoincrement=True)
+    limit_id = sql.Column(sql.String(length=64))
     project_id = sql.Column(sql.String(64),
                             sql.ForeignKey('project.id'))
     service_id = sql.Column(sql.String(255))
@@ -83,6 +99,18 @@ class LimitModel(sql.ModelBase, sql.ModelDictMixin):
                                     'service_id',
                                     'region_id',
                                     'resource_name'),)
+
+    @classmethod
+    def from_dict(cls, limit_dict):
+        """Override from_dict to set enabled if missing."""
+        new_dict = limit_dict.copy()
+        new_dict['limit_id'] = new_dict.pop('id')
+        return super(LimitModel, cls).from_dict(new_dict)
+
+    def to_dict(self):
+        ref = super(LimitModel, self).to_dict()
+        ref['id'] = ref.pop('limit_id')
+        return ref
 
 
 class UnifiedLimit(base.UnifiedLimitDriverBase):
