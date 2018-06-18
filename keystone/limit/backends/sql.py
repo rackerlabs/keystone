@@ -36,7 +36,8 @@ class RegisteredLimitModel(sql.ModelBase, sql.ModelDictMixin):
         'description'
     ]
 
-    id = sql.Column(sql.String(length=64), primary_key=True)
+    internal_id = sql.Column(sql.Integer, primary_key=True, nullable=False)
+    id = sql.Column(sql.String(length=64), nullable=False, unique=True)
     service_id = sql.Column(sql.String(255),
                             sql.ForeignKey('service.id'))
     region_id = sql.Column(sql.String(64),
@@ -63,9 +64,10 @@ class LimitModel(sql.ModelBase, sql.ModelDictMixin):
         'description'
     ]
 
-    id = sql.Column(sql.String(length=64), primary_key=True)
-    project_id = sql.Column(sql.String(64),
-                            sql.ForeignKey('project.id'))
+    internal_id = sql.Column(sql.Integer, primary_key=True, nullable=False)
+    id = sql.Column(sql.String(length=64), nullable=False, unique=True)
+    limit_id = sql.Column(sql.String(length=64))
+    project_id = sql.Column(sql.String(64))
     service_id = sql.Column(sql.String(255))
     region_id = sql.Column(sql.String(64), nullable=True)
     resource_name = sql.Column(sql.String(255))
