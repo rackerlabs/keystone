@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_76edfcee",
+        "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-18T10:02:04Z",
+      "side": 1,
+      "message": "Might be nice to explain what the \"prior role\" is.",
+      "range": {
+        "startLine": 398,
+        "startChar": 6,
+        "endLine": 398,
+        "endChar": 16
+      },
+      "revId": "2d768c20321c0206d3ab082c0210f5ce3a1246fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_b61e340b",
+        "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-18T10:02:04Z",
+      "side": 1,
+      "message": "Weird, this doesn\u0027t work for me:\n\n devuser@ubuntu:~$ openstack --version\n openstack 3.15.0\n devuser@ubuntu:~$ openstack implied role list \n \u0027RoleManager\u0027 object has no attribute \u0027list_inference_roles\u0027\n\nAm I missing a keystoneclient update?",
+      "revId": "2d768c20321c0206d3ab082c0210f5ce3a1246fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
