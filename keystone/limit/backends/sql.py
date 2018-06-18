@@ -36,8 +36,10 @@ class RegisteredLimitModel(sql.ModelBase, sql.ModelDictMixin):
         'description'
     ]
 
-    id = sql.Column(sql.String(length=64), primary_key=True)
-    service_id = sql.Column(sql.String(255),
+    internal_id = sql.Column(sql.Integer, primary_key=True, nullable=False,
+                             autoincrement=True)
+    id = sql.Column(sql.String(64))
+    service_id = sql.Column(sql.String(64),
                             sql.ForeignKey('service.id'))
     region_id = sql.Column(sql.String(64),
                            sql.ForeignKey('region.id'), nullable=True)
@@ -45,44 +47,26 @@ class RegisteredLimitModel(sql.ModelBase, sql.ModelDictMixin):
     default_limit = sql.Column(sql.Integer, nullable=False)
     description = sql.Column(sql.Text())
 
-    __table_args__ = (
-        sqlalchemy.UniqueConstraint('service_id',
-                                    'region_id',
-                                    'resource_name'),)
-
 
 class LimitModel(sql.ModelBase, sql.ModelDictMixin):
+    # TODO(wxy): ADD orm relationship
     __tablename__ = 'limit'
     attributes = [
         'id',
+        'registered_limit'
         'project_id',
-        'service_id',
-        'region_id',
-        'resource_name',
         'resource_limit',
         'description'
     ]
 
-    id = sql.Column(sql.String(length=64), primary_key=True)
-    project_id = sql.Column(sql.String(64),
-                            sql.ForeignKey('project.id'))
-    service_id = sql.Column(sql.String(255))
-    region_id = sql.Column(sql.String(64), nullable=True)
-    resource_name = sql.Column(sql.String(255))
+    internal_id = sql.Column(sql.Integer, primary_key=True, nullable=False,
+                             autoincrement=True)
+    id = sql.Column(sql.String(64))
+    registered_limit = sql.Column(
+        sql.Integer, sql.ForeignKey('registered_limit.internal_id'))
+    project_id = sql.Column(sql.String(64))
     resource_limit = sql.Column(sql.Integer, nullable=False)
     description = sql.Column(sql.Text())
-
-    __table_args__ = (
-        sqlalchemy.ForeignKeyConstraint(['service_id',
-                                         'region_id',
-                                         'resource_name'],
-                                        ['registered_limit.service_id',
-                                         'registered_limit.region_id',
-                                         'registered_limit.resource_name']),
-        sqlalchemy.UniqueConstraint('project_id',
-                                    'service_id',
-                                    'region_id',
-                                    'resource_name'),)
 
 
 class UnifiedLimit(base.UnifiedLimitDriverBase):
