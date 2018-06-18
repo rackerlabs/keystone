@@ -22,6 +22,30 @@
       "revId": "31243ef67b3213fd4ed268a47a61582143c73834",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_172ef48b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-18T21:35:49Z",
+      "side": 1,
+      "message": "No - that\u0027s still possible and out-of-tree support shouldn\u0027t go away (at least I don\u0027t have a plan to ever remove it).\n\nWhat I meant when I wrote this is that we shouldn\u0027t support token providers that pass around dictionaries that end up being the actual token response (like what we used to do with the UUID/PKI/Fernet token providers). What I plan to do is simplify the token provider interface in a way that makes it simpler to maintain (and for external providers to implement), since external drivers shouldn\u0027t need to muck around or understand a massive token dictionary.\n\nI can reword this if you think it will make it more clear.",
+      "parentUuid": "5f7c97a3_2c3bd539",
+      "range": {
+        "startLine": 11,
+        "startChar": 5,
+        "endLine": 11,
+        "endChar": 47
+      },
+      "revId": "31243ef67b3213fd4ed268a47a61582143c73834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
