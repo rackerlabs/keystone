@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_57d54c46",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-18T21:37:17Z",
+      "side": 1,
+      "message": "We should be sure to track this with:\n\n  bp mfa-auth-receipt",
+      "revId": "112227a472e0c098c993f17120616deaa2c38aa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
