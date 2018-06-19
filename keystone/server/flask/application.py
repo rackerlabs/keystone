@@ -230,7 +230,9 @@ def application_factory(name='public'):
                                  rtr in ALL_API_ROUTERS]):
         dispatch_map['/v3/%s' % pfx] = legacy_dispatcher
 
-    application = KeystoneDispatcherMiddleware(
-        app,
+    # NOTE(morgan): only replace the wsgi-app, not the actual app, we want
+    # to still have access to all the flask-isms.
+    app.wsgi_app = KeystoneDispatcherMiddleware(
+        app.wsgi_app,
         dispatch_map)
-    return application
+    return app
