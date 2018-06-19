@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_879cf66a",
+        "filename": "keystone/api/discovery.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-19T20:01:46Z",
+      "side": 1,
+      "message": "This is a special one-off case since we aren\u0027t using flask-restful. Discovery is so very special it has to be done via the normal \"flask\" mechanism(s) and can\u0027t lean on the resource object method flask-restful gives us.",
+      "parentUuid": "5f7c97a3_ac76d30b",
+      "range": {
+        "startLine": 80,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 32
+      },
+      "revId": "a8863935be813955103172b0550ea77978618abe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_2cd883ee",
         "filename": "keystone/api/discovery.py",
         "patchSetId": 9
@@ -36,6 +60,30 @@
       "writtenOn": "2018-06-18T21:29:16Z",
       "side": 1,
       "message": "Does this properly handle / characters?",
+      "range": {
+        "startLine": 93,
+        "startChar": 34,
+        "endLine": 93,
+        "endChar": 59
+      },
+      "revId": "a8863935be813955103172b0550ea77978618abe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_a7bed2ab",
+        "filename": "keystone/api/discovery.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-19T20:01:46Z",
+      "side": 1,
+      "message": "I am fairly certain it does. base_url is smart(ish):\n\n    @classmethod\n    def base_url(cls, context, endpoint_type\u003dNone):\n        url \u003d CONF[\u0027public_endpoint\u0027]\n\n        if url:\n            substitutions \u003d dict(\n                itertools.chain(CONF.items(), CONF.eventlet_server.items()))\n\n            url \u003d url % substitutions\n        elif \u0027environment\u0027 in context:\n            url \u003d wsgiref.util.application_uri(context[\u0027environment\u0027])\n            # remove version from the URL as it may be part of SCRIPT_NAME but\n            # it should not be part of base URL\n            url \u003d re.sub(r\u0027/v(3|(2\\.0))/*$\u0027, \u0027\u0027, url)\n\n            # now remove the standard port\n            url \u003d utils.remove_standard_port(url)\n        else:\n            # if we don\u0027t have enough information to come up with a base URL,\n            # then fall back to localhost. This should never happen in\n            # production environment.\n            url \u003d \u0027http://localhost:%d\u0027 % CONF.eventlet_server.public_port\n\n        return url.rstrip(\u0027/\u0027)\n\n\nand this is used to craft the path (get_versions_list) which references self as \"\u003cURI\u003e/v3/.",
+      "parentUuid": "5f7c97a3_2cd883ee",
       "range": {
         "startLine": 93,
         "startChar": 34,
