@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_c4018c3b",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3949,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-19T20:07:48Z",
+      "side": 1,
+      "message": "This decorator can except addition argument that ensure it\u0027s expecting the right failure and also a bug number so it\u0027s easier to know where this is tracked.",
+      "revId": "e9a82dcec11b514e76769a2d106263fe35e4fa96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_24a08042",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3961,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-19T20:07:48Z",
+      "side": 1,
+      "message": "We don\u0027t need to make both of these assignments if we\u0027ve already implied the roles.",
+      "revId": "e9a82dcec11b514e76769a2d106263fe35e4fa96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
