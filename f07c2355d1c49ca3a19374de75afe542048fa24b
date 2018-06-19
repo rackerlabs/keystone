@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_e1203afb",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-19T18:25:27Z",
+      "side": 1,
+      "message": "I was able to revert this change locally and the test didn\u0027t fail when I re-ran it. The test might need some additional work to hit this case?\n\nMy changes: http://paste.openstack.org/show/723849/\nTest results: http://paste.openstack.org/show/723850/",
+      "revId": "f07c2355d1c49ca3a19374de75afe542048fa24b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
