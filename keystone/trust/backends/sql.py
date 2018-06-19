@@ -74,15 +74,17 @@ class Trust(base.TrustDriverBase):
             if ref.get('expires_at') and ref['expires_at'].tzinfo is not None:
                 ref['expires_at'] = timeutils.normalize_time(ref['expires_at'])
             session.add(ref)
-            added_roles = []
+            added_roles = set()
             for role in roles:
+                role_id = role['id']
                 trust_role = TrustRole()
                 trust_role.trust_id = trust_id
-                trust_role.role_id = role['id']
-                added_roles.append({'id': role['id']})
-                session.add(trust_role)
+                trust_role.role_id = role_id
+                if role_id not in added_roles:
+                    session.add(trust_role)
+                added_roles.add(role_id)
             trust_dict = ref.to_dict()
-            trust_dict['roles'] = added_roles
+            trust_dict['roles'] = [{'id': rid} for rid in added_roles]
             return trust_dict
 
     def _add_roles(self, trust_id, session, trust_dict):
