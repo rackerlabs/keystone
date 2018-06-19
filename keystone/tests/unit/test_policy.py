@@ -24,7 +24,7 @@ import six
 from testtools import matchers
 
 from keystone.common import policies
-from keystone.common import policy
+from keystone.common.rbac_enforcer import policy
 import keystone.conf
 from keystone import exception
 from keystone.tests import unit

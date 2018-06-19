@@ -14,7 +14,7 @@
 import fixtures
 from oslo_policy import opts
 
-from keystone.common import policy
+from keystone.common.rbac_enforcer import policy
 
 
 class Policy(fixtures.Fixture):
