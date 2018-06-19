@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_0a25540a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-19T14:33:07Z",
+      "side": 1,
+      "message": "We could update this to be a little more descriptive. Something like:\n\n  Expose ambiguity bug when querying role assignments\n\nThen we can elaborate on that a bit more in the message below if we need to.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 20
+      },
+      "revId": "af8da1157a3255c16e6219409dd67ecb678fc22c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_aa79c0fb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-19T14:33:07Z",
+      "side": 1,
+      "message": "Gerrrit\u0027s parser won\u0027t pick this up due to the current format. Doing the following should work though:\n\n  Partial-Bug: 1754677",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 25
+      },
+      "revId": "af8da1157a3255c16e6219409dd67ecb678fc22c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_6ab2c8e7",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1982,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-19T14:33:07Z",
+      "side": 1,
+      "message": "This decorator supports passing in an exception that allows you to specify the expected exception, which  allows us to be more sure of when things start failing due to the fix landing [0]. It also has a placeholder for the bug number. So we could do something like this [1].\n\n[0] https://git.openstack.org/cgit/openstack/keystone/tree/keystone/tests/unit/utils.py#n52\n[1] http://paste.openstack.org/show/723832/",
+      "range": {
+        "startLine": 1982,
+        "startChar": 4,
+        "endLine": 1982,
+        "endChar": 60
+      },
+      "revId": "af8da1157a3255c16e6219409dd67ecb678fc22c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_d23837d4",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 5
