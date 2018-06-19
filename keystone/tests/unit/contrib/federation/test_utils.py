@@ -561,6 +561,21 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         self.assertEqual('bob', unique_id)
         self.assertEqual('bob', display_name)
 
+    def test_get_user_unique_id_and_display_name(self):
+
+        mapping = mapping_fixtures.MAPPING_EPHEMERAL_USER
+        assertion = mapping_fixtures.EMPLOYEE_ASSERTION
+        FAKE_MAPPING_ID = uuid.uuid4().hex
+        request = webob.Request.blank('/')
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
+        mapped_properties = rp.process(assertion)
+        self.assertIsNotNone(mapped_properties)
+        self.assertValidMappedUserObject(mapped_properties)
+        unique_id, display_name = mapped.get_user_unique_id_and_display_name(
+            request, mapped_properties)
+        self.assertEqual('tbo', unique_id)
+        self.assertEqual('tbo', display_name)
+
     def test_user_identification_id_and_name(self):
         """Test varius mapping options and how users are identified.
 
