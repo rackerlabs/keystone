@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_65e6804d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 9542
+      },
+      "writtenOn": "2018-06-19T12:11:03Z",
+      "side": 1,
+      "message": "We\u0027ve stumbled on this in downstream (Pike), AFAIR it was SAML2+LDAP with 125+k users. the first (uncached) call to \u0027openstack token issue\u0027 takes ~12s w/o this change and ~3s with it.\n\nI\u0027ll ask to verify those numbers.",
+      "parentUuid": "5f7c97a3_778168fb",
+      "revId": "0aeffff3afb0efd0b89553941bcbee4b282f44e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_d7a15caa",
         "filename": "keystone/identity/mapping_backends/base.py",
         "patchSetId": 1
@@ -89,6 +107,24 @@
       "side": 1,
       "message": "++ to reducing duplicate code if we can.",
       "parentUuid": "5f7c97a3_6d298235",
+      "revId": "0aeffff3afb0efd0b89553941bcbee4b282f44e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e094be8e",
+        "filename": "keystone/tests/unit/test_backend_id_mapping_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 9542
+      },
+      "writtenOn": "2018-06-19T12:11:03Z",
+      "side": 1,
+      "message": "will do",
+      "parentUuid": "5f7c97a3_17703440",
       "revId": "0aeffff3afb0efd0b89553941bcbee4b282f44e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
