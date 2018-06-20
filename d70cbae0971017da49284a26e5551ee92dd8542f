@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_677bbf28",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-20T19:25:59Z",
+      "side": 1,
+      "message": "A warning would probably be appropriate",
+      "range": {
+        "startLine": 411,
+        "startChar": 10,
+        "endLine": 411,
+        "endChar": 20
+      },
+      "revId": "d70cbae0971017da49284a26e5551ee92dd8542f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_0790cb41",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-20T19:25:59Z",
+      "side": 1,
+      "message": "These seem like duplication of the Fernet{Setup,Rotate} commands?",
+      "revId": "d70cbae0971017da49284a26e5551ee92dd8542f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_274dc7c3",
+        "filename": "keystone/receipt/__init__.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-20T19:25:59Z",
+      "side": 1,
+      "message": "You\u0027ll want to fix the copyrights",
+      "revId": "d70cbae0971017da49284a26e5551ee92dd8542f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_6722dfbc",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-20T19:25:59Z",
+      "side": 1,
+      "message": "Is this relevant for receipts?",
+      "range": {
+        "startLine": 275,
+        "startChar": 0,
+        "endLine": 280,
+        "endChar": 41
+      },
+      "revId": "d70cbae0971017da49284a26e5551ee92dd8542f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e2257daf",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-20T19:25:59Z",
+      "side": 1,
+      "message": "This could probably be self.public_request right?",
+      "range": {
+        "startLine": 281,
+        "startChar": 28,
+        "endLine": 281,
+        "endChar": 41
+      },
+      "revId": "d70cbae0971017da49284a26e5551ee92dd8542f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
