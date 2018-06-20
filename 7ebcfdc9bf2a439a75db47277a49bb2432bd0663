@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_1d19fc20",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-20T21:07:05Z",
+      "side": 1,
+      "message": "Can you give a little information about scenarios in which this will be better than KeystoneToken?\n\nI\u0027m having a little trouble wrapping my mind around it, because right now we have things like this:\n\n response \u003d PROVIDERS.token_provider_api.validate_token(token_id)\n return token_model.KeystoneToken(token_id\u003dtoken_id,\n                                  token_data\u003dresponse)\n\nToken data is directly associated with the token ID because of the way it\u0027s serialized. It seems like with the new model, we\u0027d have to do something like this:\n\n response \u003d PROVIDERS.token_provider_api.validate_token(token_id)\n token \u003d token_model.TokenModel()\n token.user_id \u003d response[\u0027user\u0027][\u0027id\u0027]\n if \u0027domain\u0027 in response:\n   token.domain_id \u003d response[\u0027domain\u0027][\u0027id\u0027]\n # etc \n token.mint(token_id, response[\u0027issued_at\u0027])\n\nA little more background on what this will unlock for us would be good.",
+      "revId": "7ebcfdc9bf2a439a75db47277a49bb2432bd0663",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_8265a94b",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-20T21:07:05Z",
+      "side": 1,
+      "message": "This could use a docstring",
+      "revId": "7ebcfdc9bf2a439a75db47277a49bb2432bd0663",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_623c0d30",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-20T21:07:05Z",
+      "side": 1,
+      "message": "TokenModel",
+      "range": {
+        "startLine": 346,
+        "startChar": 43,
+        "endLine": 346,
+        "endChar": 56
+      },
+      "revId": "7ebcfdc9bf2a439a75db47277a49bb2432bd0663",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_3d971848",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-20T21:07:05Z",
+      "side": 1,
+      "message": "Does it even make sense to use this anymore?",
+      "revId": "7ebcfdc9bf2a439a75db47277a49bb2432bd0663",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_fd9520e4",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 759,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-20T21:07:05Z",
+      "side": 1,
+      "message": "This could use a docstring",
+      "revId": "7ebcfdc9bf2a439a75db47277a49bb2432bd0663",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_bd0ec889",
+        "filename": "keystone/tests/unit/token/test_token_model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-20T21:07:05Z",
+      "side": 1,
+      "message": "It\u0027s not really clear what the bootstrap attributes have to do with TokenModel. Why doesn\u0027t this just create dummy, non-admin resources like our other tests do?",
+      "revId": "7ebcfdc9bf2a439a75db47277a49bb2432bd0663",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
