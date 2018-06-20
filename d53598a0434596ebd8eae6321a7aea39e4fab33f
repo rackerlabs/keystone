@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_9b375c4c",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-20T15:49:14Z",
+      "side": 1,
+      "message": "Expand Example in docstring.",
+      "range": {
+        "startLine": 175,
+        "startChar": 0,
+        "endLine": 179,
+        "endChar": 58
+      },
+      "revId": "d53598a0434596ebd8eae6321a7aea39e4fab33f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_7b3cc02f",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-20T15:49:14Z",
+      "side": 1,
+      "message": "\"is None\"",
+      "range": {
+        "startLine": 234,
+        "startChar": 23,
+        "endLine": 234,
+        "endChar": 34
+      },
+      "revId": "d53598a0434596ebd8eae6321a7aea39e4fab33f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
