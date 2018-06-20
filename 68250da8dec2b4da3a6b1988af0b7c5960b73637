@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_49901fee",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-20T14:02:05Z",
+      "side": 1,
+      "message": "Expand on an example.",
+      "range": {
+        "startLine": 171,
+        "startChar": 9,
+        "endLine": 175,
+        "endChar": 58
+      },
+      "revId": "68250da8dec2b4da3a6b1988af0b7c5960b73637",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_89af172a",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-20T14:02:05Z",
+      "side": 1,
+      "message": "I wonder if it is possible to not directly reference \u0027g\u0027 and make this whole method \"Flask\" or \"not-flask\"\n\nReferencing \"g\" before the request lands in the flask dispatcher throws an exception.",
+      "range": {
+        "startLine": 201,
+        "startChar": 0,
+        "endLine": 201,
+        "endChar": 72
+      },
+      "revId": "68250da8dec2b4da3a6b1988af0b7c5960b73637",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e99fabff",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-20T14:02:05Z",
+      "side": 1,
+      "message": "is None\n\nRemove the \"NOT\"",
+      "range": {
+        "startLine": 230,
+        "startChar": 26,
+        "endLine": 230,
+        "endChar": 29
+      },
+      "revId": "68250da8dec2b4da3a6b1988af0b7c5960b73637",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
