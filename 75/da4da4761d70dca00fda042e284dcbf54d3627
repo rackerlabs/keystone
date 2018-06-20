@@ -1,0 +1,11 @@
+Code-Review+1: wangxiyuan <wangxiyuan@huawei.com>
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: sonu <sonu.bhumca11@gmail.com>
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Workflow+1: Gage Hugo <gagehugo@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 20 Jun 2018 23:48:25 +0000
+Reviewed-on: https://review.openstack.org/571309
+Project: openstack/keystone
+Branch: refs/heads/master
