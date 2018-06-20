@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_895dd749",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-20T14:02:05Z",
+      "side": 1,
+      "message": "This needs some \"work\" to handle the update and extract the data if policy.json updates.",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 24
+      },
+      "revId": "3b6fc94429a30db747d75d8b02318e65b20b0153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_a96f73f8",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-20T14:02:05Z",
+      "side": 1,
+      "message": "Add More comments.\n\nThis is not very clear.",
+      "range": {
+        "startLine": 128,
+        "startChar": 11,
+        "endLine": 141,
+        "endChar": 76
+      },
+      "revId": "3b6fc94429a30db747d75d8b02318e65b20b0153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_69a4fb4b",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-20T14:02:05Z",
+      "side": 1,
+      "message": "Needs to give a more concrete example.",
+      "range": {
+        "startLine": 171,
+        "startChar": 0,
+        "endLine": 175,
+        "endChar": 58
+      },
+      "revId": "3b6fc94429a30db747d75d8b02318e65b20b0153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_c96aefeb",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-20T14:02:05Z",
+      "side": 1,
+      "message": "If I can avoid referencing \"g\" I can make this work for either flask or non-flask.\n\nReferencing flask.g throws an exception if you\u0027ve not hit the flask app dispatching yet.",
+      "range": {
+        "startLine": 201,
+        "startChar": 8,
+        "endLine": 201,
+        "endChar": 72
+      },
+      "revId": "3b6fc94429a30db747d75d8b02318e65b20b0153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_0961c711",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-20T14:02:05Z",
+      "side": 1,
+      "message": "is None",
+      "range": {
+        "startLine": 230,
+        "startChar": 23,
+        "endLine": 230,
+        "endChar": 34
+      },
+      "revId": "3b6fc94429a30db747d75d8b02318e65b20b0153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
