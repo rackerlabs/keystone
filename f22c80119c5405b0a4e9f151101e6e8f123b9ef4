@@ -140,6 +140,24 @@
       "revId": "f22c80119c5405b0a4e9f151101e6e8f123b9ef4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e808fbd9",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-20T22:27:54Z",
+      "side": 1,
+      "message": "Thanks for this - incorporated it into the latest patch set and working out some of the kinks.",
+      "parentUuid": "bf659307_a02577ad",
+      "revId": "f22c80119c5405b0a4e9f151101e6e8f123b9ef4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
