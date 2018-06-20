@@ -16,6 +16,23 @@
       "revId": "f07c2355d1c49ca3a19374de75afe542048fa24b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_4f634842",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-06-20T08:47:26Z",
+      "side": 1,
+      "message": "I think it\u0027s because the mapping here uses user name, may try to use MAPPING_USER_IDS and \"bob\" remote user.",
+      "revId": "f07c2355d1c49ca3a19374de75afe542048fa24b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
