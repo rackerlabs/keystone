@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_4cdd88db",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 9542
+      },
+      "writtenOn": "2018-06-20T18:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_778168fb",
+      "revId": "0aeffff3afb0efd0b89553941bcbee4b282f44e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_d7a15caa",
         "filename": "keystone/identity/mapping_backends/base.py",
         "patchSetId": 1
@@ -48,6 +66,30 @@
       "writtenOn": "2018-06-18T21:46:41Z",
       "side": 1,
       "message": "What type is this parameter? Also, since we\u0027re changing the interface, we need a release note so that people implementing this interface know what\u0027s changing.",
+      "range": {
+        "startLine": 43,
+        "startChar": 15,
+        "endLine": 43,
+        "endChar": 26
+      },
+      "revId": "0aeffff3afb0efd0b89553941bcbee4b282f44e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_6cd884ef",
+        "filename": "keystone/identity/mapping_backends/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 9542
+      },
+      "writtenOn": "2018-06-20T18:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_d7a15caa",
       "range": {
         "startLine": 43,
         "startChar": 15,
@@ -125,6 +167,24 @@
       "side": 1,
       "message": "will do",
       "parentUuid": "5f7c97a3_17703440",
+      "revId": "0aeffff3afb0efd0b89553941bcbee4b282f44e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_8cd3a0d3",
+        "filename": "keystone/tests/unit/test_backend_id_mapping_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 9542
+      },
+      "writtenOn": "2018-06-20T18:19:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_e094be8e",
       "revId": "0aeffff3afb0efd0b89553941bcbee4b282f44e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
