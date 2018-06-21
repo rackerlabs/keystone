@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_99fafb74",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-06-21T04:02:33Z",
+      "side": 1,
+      "message": "Not quite. They are a duplicate of Token{Setup,Rotate}.\n\nFernet{Setup,Rotate} does both token and receipt, while Token{Setup,Rotate} and Receipt{Setup,Rotate} control them individually. Token{Setup,Rotate} used to be mostly identical to Fernet{Setup,Rotate}.",
+      "parentUuid": "5f7c97a3_0790cb41",
+      "revId": "d70cbae0971017da49284a26e5551ee92dd8542f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_274dc7c3",
         "filename": "keystone/receipt/__init__.py",
         "patchSetId": 8
