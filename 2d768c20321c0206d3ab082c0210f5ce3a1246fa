@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_6296364c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-06-21T17:40:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_ccff8ffe",
+      "revId": "2d768c20321c0206d3ab082c0210f5ce3a1246fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_51379c4c",
         "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2018-06-18T21:01:26Z",
       "side": 1,
       "message": "A short example of why this might be useful to operators would be beneficial, too (e.g. less role assignment, easier management, etc.)",
+      "revId": "2d768c20321c0206d3ab082c0210f5ce3a1246fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_022d0245",
+        "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-06-21T17:40:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_51379c4c",
       "revId": "2d768c20321c0206d3ab082c0210f5ce3a1246fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -59,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_a7ad4032",
+        "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-06-21T17:40:27Z",
+      "side": 1,
+      "message": "I will have a follow-up patch that changes ``Member`` to ``member`` across the docs. For consistency with the current state of the other sections in the page, I\u0027ll keep it as ``Member`` here.",
+      "parentUuid": "5f7c97a3_9183f4cb",
+      "range": {
+        "startLine": 388,
+        "startChar": 2,
+        "endLine": 388,
+        "endChar": 3
+      },
+      "revId": "2d768c20321c0206d3ab082c0210f5ce3a1246fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_76edfcee",
         "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
         "patchSetId": 1
@@ -70,6 +130,30 @@
       "writtenOn": "2018-06-18T10:02:04Z",
       "side": 1,
       "message": "Might be nice to explain what the \"prior role\" is.",
+      "range": {
+        "startLine": 398,
+        "startChar": 6,
+        "endLine": 398,
+        "endChar": 16
+      },
+      "revId": "2d768c20321c0206d3ab082c0210f5ce3a1246fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_a21d2e10",
+        "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-06-21T17:40:27Z",
+      "side": 1,
+      "message": "I expanded the note to touch up on prior vs implied.",
+      "parentUuid": "5f7c97a3_76edfcee",
       "range": {
         "startLine": 398,
         "startChar": 6,
