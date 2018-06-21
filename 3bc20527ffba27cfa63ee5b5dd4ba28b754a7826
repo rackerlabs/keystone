@@ -45,6 +45,29 @@
       "revId": "3bc20527ffba27cfa63ee5b5dd4ba28b754a7826",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_c8408962",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-21T19:30:01Z",
+      "side": 1,
+      "message": "This can\u0027t be *filters, must be turned into accepting an iterable (list/set/tuple/generator/etc)",
+      "range": {
+        "startLine": 186,
+        "startChar": 67,
+        "endLine": 186,
+        "endChar": 74
+      },
+      "revId": "3bc20527ffba27cfa63ee5b5dd4ba28b754a7826",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
