@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_8d54e355",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-21T18:43:12Z",
+      "side": 1,
+      "message": "Since this essentially impacts end users - we should have a release note\n\nhttps://docs.openstack.org/keystone/latest/contributor/release-notes.html#release-notes-for-bugs",
+      "revId": "25750a1747e4c1d91a9aafd382f251b8a5d2c09d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
