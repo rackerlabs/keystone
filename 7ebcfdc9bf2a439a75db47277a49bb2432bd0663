@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_fc274f62",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-21T15:59:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_1d19fc20",
+      "revId": "7ebcfdc9bf2a439a75db47277a49bb2432bd0663",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_8265a94b",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2018-06-20T21:07:05Z",
       "side": 1,
       "message": "This could use a docstring",
+      "revId": "7ebcfdc9bf2a439a75db47277a49bb2432bd0663",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_33673a28",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-21T15:59:39Z",
+      "side": 1,
+      "message": "Done. Kind of unrelated... but the only other place in keystone where we really use something like this is for revocation events, and that object is called RevokeEvent. The predecessor to this approach was called KeystoneToken, and this is currently TokenModel.\n\nDo we want to simplify the name to be more like the convention with RevokeEvent (e.g. Token)? We also get the model bit from the module\u0027s namespace:\n\n  from keystone.models import token_model\n  ...\n  token \u003d token_model.Token()\n\nMaybe having Model in the name is redundant.",
+      "parentUuid": "5f7c97a3_8265a94b",
       "revId": "7ebcfdc9bf2a439a75db47277a49bb2432bd0663",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -59,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_537bd6bd",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-21T15:59:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_623c0d30",
+      "range": {
+        "startLine": 346,
+        "startChar": 43,
+        "endLine": 346,
+        "endChar": 56
+      },
+      "revId": "7ebcfdc9bf2a439a75db47277a49bb2432bd0663",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_3d971848",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 12
@@ -70,6 +130,24 @@
       "writtenOn": "2018-06-20T21:07:05Z",
       "side": 1,
       "message": "Does it even make sense to use this anymore?",
+      "revId": "7ebcfdc9bf2a439a75db47277a49bb2432bd0663",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_d678347f",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-21T15:59:39Z",
+      "side": 1,
+      "message": "I don\u0027t think it does, good catch. I removed it in place of self.__class__.__name__",
+      "parentUuid": "5f7c97a3_3d971848",
       "revId": "7ebcfdc9bf2a439a75db47277a49bb2432bd0663",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -93,6 +171,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_d60914dc",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 759,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-21T15:59:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_fd9520e4",
+      "revId": "7ebcfdc9bf2a439a75db47277a49bb2432bd0663",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_bd0ec889",
         "filename": "keystone/tests/unit/token/test_token_model.py",
         "patchSetId": 12
@@ -104,6 +200,24 @@
       "writtenOn": "2018-06-20T21:07:05Z",
       "side": 1,
       "message": "It\u0027s not really clear what the bootstrap attributes have to do with TokenModel. Why doesn\u0027t this just create dummy, non-admin resources like our other tests do?",
+      "revId": "7ebcfdc9bf2a439a75db47277a49bb2432bd0663",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f9cbe1a0",
+        "filename": "keystone/tests/unit/token/test_token_model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-21T15:59:39Z",
+      "side": 1,
+      "message": "I opted to using the Bootstrap method here in favor of a couple different ways we duplicate the same process in test setup [0][1].\n\nThe token model changes don\u0027t have a hard dependency on using bootstrap, but I thought it would be a good opportunity to show an example of how we can re-use it in tests to provide us the same thing we do manually in a few places with setUp().\n\nI\u0027d like to try and make bootstrap the bedrock of our testing setUp, where applicable for tests that need it, and it should align our tests with what we tell operators to use (resulting in more rigorous testing of that tooling).\n\n[0] https://git.openstack.org/cgit/openstack/keystone/tree/keystone/tests/unit/test_v3.py?id\u003debd49159b41dbc2c97918f82aa860f87be7b5ed7#n240\n[1] https://git.openstack.org/cgit/openstack/keystone/tree/keystone/tests/unit/core.py?id\u003debd49159b41dbc2c97918f82aa860f87be7b5ed7#n710",
+      "parentUuid": "5f7c97a3_bd0ec889",
       "revId": "7ebcfdc9bf2a439a75db47277a49bb2432bd0663",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
