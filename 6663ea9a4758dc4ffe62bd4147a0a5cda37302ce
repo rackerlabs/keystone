@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_bc49d232",
+        "filename": "keystone/common/sql/data_migration_repo/versions/046_migrate_old_password_data_to_password_hash_column.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-21T19:53:38Z",
+      "side": 1,
+      "message": "So this copies whatever is in the old hash column to the new hash column, right? Keystone knows how to handle all those \"legacy\" hash types, right?",
+      "revId": "6663ea9a4758dc4ffe62bd4147a0a5cda37302ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
