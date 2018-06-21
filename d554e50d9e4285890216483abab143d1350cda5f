@@ -19,6 +19,29 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_a820adb1",
+        "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-06-21T19:41:28Z",
+      "side": 1,
+      "message": "TIL this is a valid code-block type",
+      "range": {
+        "startLine": 420,
+        "startChar": 16,
+        "endLine": 420,
+        "endChar": 23
+      },
+      "revId": "d554e50d9e4285890216483abab143d1350cda5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_0d753398",
         "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
         "patchSetId": 2
@@ -30,6 +53,30 @@
       "writtenOn": "2018-06-21T18:11:42Z",
       "side": 1,
       "message": "(nit) slightly awkward grammar, I would say \"they will no longer have the roles that it implied\"",
+      "range": {
+        "startLine": 442,
+        "startChar": 16,
+        "endLine": 442,
+        "endChar": 69
+      },
+      "revId": "d554e50d9e4285890216483abab143d1350cda5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_68a37544",
+        "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-06-21T19:41:28Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5f7c97a3_0d753398",
       "range": {
         "startLine": 442,
         "startChar": 16,
