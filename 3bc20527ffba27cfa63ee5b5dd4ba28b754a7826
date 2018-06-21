@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_79727fe5",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5280
+      },
+      "writtenOn": "2018-06-21T04:28:16Z",
+      "side": 1,
+      "message": "Using a long-form set constructor, e.g., \n\n    set([list comprehension])\n\n...is both clearer at first blush, and doesn\u0027t require a comment explaining what you\u0027re doing",
+      "range": {
+        "startLine": 33,
+        "startChar": 2,
+        "endLine": 33,
+        "endChar": 47
+      },
+      "revId": "3bc20527ffba27cfa63ee5b5dd4ba28b754a7826",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_d9615313",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5280
+      },
+      "writtenOn": "2018-06-21T04:28:16Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 94,
+        "startChar": 11,
+        "endLine": 94,
+        "endChar": 18
+      },
+      "revId": "3bc20527ffba27cfa63ee5b5dd4ba28b754a7826",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
