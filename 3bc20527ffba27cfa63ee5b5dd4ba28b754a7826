@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_a85bcd51",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-21T19:31:25Z",
+      "side": 1,
+      "message": "You\u0027re right. in next.",
+      "parentUuid": "5f7c97a3_79727fe5",
+      "range": {
+        "startLine": 33,
+        "startChar": 2,
+        "endLine": 33,
+        "endChar": 47
+      },
+      "revId": "3bc20527ffba27cfa63ee5b5dd4ba28b754a7826",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_d9615313",
         "filename": "keystone/common/rbac_enforcer/enforcer.py",
         "patchSetId": 6
@@ -36,6 +60,30 @@
       "writtenOn": "2018-06-21T04:28:16Z",
       "side": 1,
       "message": "typo",
+      "range": {
+        "startLine": 94,
+        "startChar": 11,
+        "endLine": 94,
+        "endChar": 18
+      },
+      "revId": "3bc20527ffba27cfa63ee5b5dd4ba28b754a7826",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_48547922",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-21T19:31:25Z",
+      "side": 1,
+      "message": "I think this doesn\u0027t qualify as a typo anymore... look at that second word \"fo;ter\" THE HECK... ;) \n\nFixed in next.",
+      "parentUuid": "5f7c97a3_d9615313",
       "range": {
         "startLine": 94,
         "startChar": 11,
