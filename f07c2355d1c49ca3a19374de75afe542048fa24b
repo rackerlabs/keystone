@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_692cd149",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-06-22T06:26:50Z",
+      "side": 1,
+      "message": "Thanks for the comment. Changed the test case. Kindly check",
+      "parentUuid": "5f7c97a3_e1203afb",
+      "revId": "f07c2355d1c49ca3a19374de75afe542048fa24b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_4f634842",
         "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2018-06-20T08:47:26Z",
       "side": 1,
       "message": "I think it\u0027s because the mapping here uses user name, may try to use MAPPING_USER_IDS and \"bob\" remote user.",
+      "revId": "f07c2355d1c49ca3a19374de75afe542048fa24b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_89312da5",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-06-22T06:26:50Z",
+      "side": 1,
+      "message": "Thanks for the comment. Uploaded a new set.",
+      "parentUuid": "5f7c97a3_4f634842",
       "revId": "f07c2355d1c49ca3a19374de75afe542048fa24b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
