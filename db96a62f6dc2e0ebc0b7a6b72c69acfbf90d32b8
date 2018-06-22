@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_12b0e1fc",
+        "filename": "keystone/tests/unit/token/test_token_model.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 587,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-22T14:39:46Z",
+      "side": 1,
+      "message": "We should add some unscoped and scoped federated token tests here, too.",
+      "revId": "db96a62f6dc2e0ebc0b7a6b72c69acfbf90d32b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
