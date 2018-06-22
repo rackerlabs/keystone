@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_9c15e0e8",
+        "filename": "keystone/tests/unit/test_token_bind.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-22T21:41:16Z",
+      "side": 0,
+      "message": "This was pulled into https://review.openstack.org/#/c/577524/",
+      "revId": "2e86d903f495d3077fb4cd2cbb410bbbc8e15673",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

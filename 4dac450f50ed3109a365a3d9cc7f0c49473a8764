@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_5cbae8e0",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-22T21:41:16Z",
+      "side": 1,
+      "message": "Need to figure out what to do with this.",
+      "range": {
+        "startLine": 126,
+        "startChar": 0,
+        "endLine": 127,
+        "endChar": 38
+      },
+      "revId": "4dac450f50ed3109a365a3d9cc7f0c49473a8764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_3cb5aced",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-22T21:41:16Z",
+      "side": 1,
+      "message": "This was refactored out in https://review.openstack.org/#/c/577524/",
+      "revId": "4dac450f50ed3109a365a3d9cc7f0c49473a8764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
