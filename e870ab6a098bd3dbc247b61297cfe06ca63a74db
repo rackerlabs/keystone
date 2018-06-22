@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_e1530d6b",
+        "filename": ".zuul.yaml",
+        "patchSetId": 68
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 23186
+      },
+      "writtenOn": "2018-06-22T19:15:41Z",
+      "side": 1,
+      "message": "Keystone\u0027s",
+      "range": {
+        "startLine": 76,
+        "startChar": 6,
+        "endLine": 76,
+        "endChar": 15
+      },
+      "revId": "e870ab6a098bd3dbc247b61297cfe06ca63a74db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_c14611a8",
+        "filename": ".zuul.yaml",
+        "patchSetId": 68
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 23186
+      },
+      "writtenOn": "2018-06-22T19:15:41Z",
+      "side": 1,
+      "message": "s/tempest/Tempest/g\ns/keystone/Keystone/g\ns/openstack-helm/OpenStack-Helm/g",
+      "revId": "e870ab6a098bd3dbc247b61297cfe06ca63a74db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_c1db71e7",
+        "filename": "playbooks/keystone-osh-functional/run.yaml",
+        "patchSetId": 68
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 23186
+      },
+      "writtenOn": "2018-06-22T19:15:41Z",
+      "side": 1,
+      "message": "You can add:\n\n    pre-run:\n      - tools/gate/playbooks/osh-infra-upgrade-host.yaml\n      - tools/gate/playbooks/osh-infra-deploy-docker.yaml\n\nto the .zuul.yaml job for this, so long as you also include:\n\n    required-projects:\n      - openstack/openstack-helm-infra\n\nas well.\n\nExample: https://github.com/openstack/openstack-helm/blob/e68ec9814c678fe3bcdc9e3c5f5247d441effaae/.zuul.yaml#L214",
+      "revId": "e870ab6a098bd3dbc247b61297cfe06ca63a74db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_2199051d",
+        "filename": "playbooks/keystone-osh-functional/run.yaml",
+        "patchSetId": 68
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 23186
+      },
+      "writtenOn": "2018-06-22T19:15:41Z",
+      "side": 1,
+      "message": "This stuff should be handled a little differently. Add stanza beneath shell:\n\n      environment:\n        KSTEST_ADMIN_URL: http://keystone.openstack:80\n        ...\n\nExample: https://docs.ansible.com/ansible/devel/user_guide/playbooks_environment.html",
+      "range": {
+        "startLine": 109,
+        "startChar": 0,
+        "endLine": 118,
+        "endChar": 49
+      },
+      "revId": "e870ab6a098bd3dbc247b61297cfe06ca63a74db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
