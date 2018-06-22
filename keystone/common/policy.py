@@ -10,8 +10,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import copy
+
 from oslo_policy import policy as common_policy
 
+from keystone.common import controller
 from keystone.common import policies
 import keystone.conf
 from keystone import exception
@@ -71,6 +74,13 @@ def enforce(credentials, action, target, do_raise=True):
         extra.update(exc=exception.ForbiddenAction, action=action,
                      do_raise=do_raise)
 
+    if 'token' in credentials:
+        token_ref = controller.render_token_response_from_model(
+            credentials['token']
+        )
+        credentials_copy = copy.deepcopy(credentials)
+        credentials_copy['token'] = token_ref
+        credentials = credentials_copy
     try:
         return _ENFORCER.enforce(action, target, credentials, **extra)
     except common_policy.InvalidScope:
