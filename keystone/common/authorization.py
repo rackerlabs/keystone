@@ -96,21 +96,28 @@ def _handle_subject_token_id(self, request, policy_dict):
                 request.subject_token,
                 window_seconds=window_seconds))
         policy_dict.setdefault('target', {})
-        policy_dict['target'].setdefault(self.member_name, {})
-        policy_dict['target'][self.member_name]['user_id'] = (
-            token_ref.user_id)
+
+        # NOTE(morgan): there is no reason the subject token
+        # target should ever be dynamicly different it is
+        # always part of "target.token". Do not reference
+        # self.member_name or other mechanism; it results
+        # in crazy things like target.project.user_id being valid
+        # and making people guess based upon the resource
+        # controller referenced where the subject token
+        # data lives in the policy dict.
+        #
+        # In all likelyhood, subject-token data is not interesting
+        # outside of the auth-path and should not be populated.
+        token_subject_target = {'user_id': token_ref.user_id}
         try:
             user_domain_id = token_ref.user_domain_id
         except exception.UnexpectedError:
             user_domain_id = None
         if user_domain_id:
-            policy_dict['target'][self.member_name].setdefault(
-                'user', {})
-            policy_dict['target'][self.member_name][
-                'user'].setdefault('domain', {})
-            policy_dict['target'][self.member_name]['user'][
-                'domain']['id'] = (
-                    user_domain_id)
+            token_subject_target.setdefault('user', {})
+            token_subject_target['user'].setdefault('domain', {})
+            token_subject_target['user']['domain']['id'] = user_domain_id
+        policy_dict['target']['token'] = token_subject_target
 
 
 def check_protection(controller, request, prep_info, target_attr=None,
