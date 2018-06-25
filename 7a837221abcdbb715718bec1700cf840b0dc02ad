@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_96f925c6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-25T14:37:42Z",
+      "side": 1,
+      "message": "We could add detail here explaining why this path was taken. What you\u0027ve found and written up in etherpad [0] is valuable information that we should associate to this commit.\n\n[0] https://etherpad.openstack.org/p/keystone-unified-limit-migration-notepad",
+      "revId": "7a837221abcdbb715718bec1700cf840b0dc02ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
