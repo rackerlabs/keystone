@@ -34,6 +34,24 @@
       "revId": "6663ea9a4758dc4ffe62bd4147a0a5cda37302ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_454d0d70",
+        "filename": "keystone/common/sql/data_migration_repo/versions/046_migrate_old_password_data_to_password_hash_column.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-25T17:52:25Z",
+      "side": 1,
+      "message": "The hash types are prefixed, so it looks like\n\n$\u003cident\u003e$\u003cmetadata\u003e$\u003chash\u003e\n\nand Ident is something like \"bcrypt\" or \"scrypt\". We will forever support validating a password with sha256, but as of Pike it was impossible to hash new passwords with sha256.\n\nIt\u0027s standard for the hashing lib. This simply copies the data from the old column to the new column *if* the new column is not populated.\n\nIt allows us to drop the old code in Stein, when we build the contract that drops the password column and we only have the password_hash column going forward.",
+      "parentUuid": "5f7c97a3_73a3409c",
+      "revId": "6663ea9a4758dc4ffe62bd4147a0a5cda37302ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
