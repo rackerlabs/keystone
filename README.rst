@@ -41,7 +41,7 @@ Information about our team meeting is available at:
 
     https://wiki.openstack.org/wiki/Meetings/KeystoneMeeting
 
-Release notes is available at:
+Release notes are available at:
 
     https://docs.openstack.org/releasenotes/keystone
 
