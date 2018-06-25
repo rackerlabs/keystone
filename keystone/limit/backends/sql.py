@@ -13,7 +13,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import copy
+import sqlalchemy
 
 from oslo_db import exception as db_exception
 
@@ -62,17 +62,55 @@ class LimitModel(sql.ModelBase, sql.ModelDictMixin):
         'region_id',
         'resource_name',
         'resource_limit',
-        'description'
+        'description',
+        'registered_limit_id'
     ]
 
     internal_id = sql.Column(sql.Integer, primary_key=True, nullable=False)
     id = sql.Column(sql.String(length=64), nullable=False, unique=True)
     project_id = sql.Column(sql.String(64))
-    service_id = sql.Column(sql.String(255))
-    region_id = sql.Column(sql.String(64), nullable=True)
-    resource_name = sql.Column(sql.String(255))
+    _service_id = sql.Column(sql.String(255))
+    _region_id = sql.Column(sql.String(64), nullable=True)
+    _resource_name = sql.Column(sql.String(255))
     resource_limit = sql.Column(sql.Integer, nullable=False)
     description = sql.Column(sql.Text())
+    registered_limit_id = sql.Column(sql.String(64),
+                                     sql.ForeignKey('registered_limit.id'))
+
+    registered_limit = sqlalchemy.orm.relationship(
+        'RegisteredLimitModel', backref='registered_limit')
+
+    # TODO(wxy): Drop "service_id", "region_id" and "resource_name" columns
+    # in T release.
+    @property
+    def service_id(self):
+        if self.registered_limit:
+            return self.registered_limit.service_id
+        return self._service_id
+
+    @service_id.setter
+    def service_id(self, value):
+        self._service_id = value
+
+    @property
+    def region_id(self):
+        if self.registered_limit:
+            return self.registered_limit.region_id
+        return self._region_id
+
+    @region_id.setter
+    def region_id(self, value):
+        self._region_id = value
+
+    @property
+    def resource_name(self):
+        if self.registered_limit:
+            return self.registered_limit.resource_name
+        return self._resource_name
+
+    @resource_name.setter
+    def resource_name(self, value):
+        self._resource_name = value
 
     def to_dict(self):
         ref = super(LimitModel, self).to_dict()
@@ -85,37 +123,23 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
     def _check_unified_limit_unique(self, unified_limit,
                                     is_registered_limit=True):
         # Ensure the new created or updated unified limit won't break the
-        # current reference between registered limit and limit.
+        # current reference between registered limit and limit. i.e. We should
+        # ensure that there is no duplicate entry.
         hints = driver_hints.Hints()
         hints.add_filter('service_id', unified_limit['service_id'])
         hints.add_filter('resource_name', unified_limit['resource_name'])
         hints.add_filter('region_id', unified_limit.get('region_id'))
         if is_registered_limit:
-            # For registered limit, we should ensure that there is no duplicate
-            # entry.
-            with sql.session_for_read() as session:
-                unified_limits = session.query(RegisteredLimitModel)
-                unified_limits = sql.filter_limit_query(RegisteredLimitModel,
-                                                        unified_limits,
-                                                        hints)
+            model = RegisteredLimitModel
         else:
-            # For limit, we should ensure:
-            # 1. there is a registered limit reference.
-            # 2. there is no duplicate entry.
-            reference_hints = copy.deepcopy(hints)
-            with sql.session_for_read() as session:
-                registered_limits = session.query(RegisteredLimitModel)
-                registered_limits = sql.filter_limit_query(
-                    RegisteredLimitModel, registered_limits, reference_hints)
-            if not registered_limits.all():
-                raise exception.NoLimitReference
-
+            model = LimitModel
             hints.add_filter('project_id', unified_limit['project_id'])
-            with sql.session_for_read() as session:
-                unified_limits = session.query(LimitModel)
-                unified_limits = sql.filter_limit_query(LimitModel,
-                                                        unified_limits,
-                                                        hints)
+
+        with sql.session_for_read() as session:
+            unified_limits = session.query(model)
+            unified_limits = sql.filter_limit_query(model,
+                                                    unified_limits,
+                                                    hints)
         if unified_limits.all():
             msg = _('Duplicate entry')
             limit_type = 'registered_limit' if is_registered_limit else 'limit'
@@ -201,12 +225,29 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
         except db_exception.DBReferenceError:
             raise exception.RegisteredLimitError(id=registered_limit_id)
 
+    def _fill_registered_limit_id(self, limit):
+        hints = driver_hints.Hints()
+        hints.add_filter('service_id', limit['service_id'])
+        hints.add_filter('resource_name', limit['resource_name'])
+        hints.add_filter('region_id', limit.get('region_id'))
+
+        with sql.session_for_read() as session:
+            registered_limits = session.query(RegisteredLimitModel)
+            registered_limits = sql.filter_limit_query(
+                RegisteredLimitModel, registered_limits, hints)
+        reg_limits = registered_limits.all()
+        if not reg_limits:
+            raise exception.NoLimitReference
+
+        limit['registered_limit_id'] = reg_limits[0]['id']
+
     @sql.handle_conflicts(conflict_type='limit')
     def create_limits(self, limits):
         try:
             with sql.session_for_write() as session:
                 new_limits = []
                 for limit in limits:
+                    self._fill_registered_limit_id(limit)
                     self._check_unified_limit_unique(limit,
                                                      is_registered_limit=False)
                     ref = LimitModel.from_dict(limit)
