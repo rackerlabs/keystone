@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_1bfe95ae",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-25T20:45:53Z",
+      "side": 1,
+      "message": "This should be renamed since it\u0027s not getting a \"token reference\". It\u0027s always returned a token object (e.g. KeystoneToken) but we considered it a reference since that object was of a dictionary type and we used reflection to build the object using a token reference, so it behaved like a pythonic object (as opposed to a data structure).\n\nNow that we\u0027re being explicit about the fact we\u0027re dealing with a python token model, we should make the name of the method reflect that.",
+      "range": {
+        "startLine": 164,
+        "startChar": 4,
+        "endLine": 164,
+        "endChar": 17
+      },
+      "revId": "1864b44b174a719041fa6b2db44864e9ffbc4b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_9bb14504",
+        "filename": "keystone/common/policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-25T20:45:53Z",
+      "side": 1,
+      "message": "This is a dirty hack... The reason why we have to do this is because we used to populate credentials[\u0027token\u0027] with an instance of KeystoneToken, which was a dictionary type object that represented a token reference.\n\nWhen oslo.policy processed KeystoneToken, it accessed everything like a dictionary and didn\u0027t complain about it because it was actually a representation of the v3 API contract. Since we\u0027re moving away from using KeystoneToken, this breaks because it\u0027s not a dictionary type and oslo.policy doesn\u0027t know, and shouldn\u0027t know, how to handle the TokenModel object we use internally to keystone.\n\nWhat we\u0027re doing here is providing oslo.policy with the same thing it had when getting a KeystoneToken object, which is just a dictionary of the token reference.\n\nEventually - we should really trim the fat from this and only pass oslo.policy what it needs instead of an entire token reference.",
+      "revId": "1864b44b174a719041fa6b2db44864e9ffbc4b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_9ba625c0",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-25T20:45:53Z",
+      "side": 1,
+      "message": "This should be removed, it\u0027s not used and was an experiment for troubleshooting a bug",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 33
+      },
+      "revId": "1864b44b174a719041fa6b2db44864e9ffbc4b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
