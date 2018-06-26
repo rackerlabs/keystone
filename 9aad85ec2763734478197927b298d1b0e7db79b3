@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_8a0fa937",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-26T02:32:53Z",
+      "side": 1,
+      "message": "apparently this works in python3 but not python2. I\u0027ll debug, but this is still ready for reviews for the rest of the code.",
+      "range": {
+        "startLine": 145,
+        "startChar": 16,
+        "endLine": 156,
+        "endChar": 75
+      },
+      "revId": "9aad85ec2763734478197927b298d1b0e7db79b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
