@@ -116,6 +116,52 @@
       "revId": "3bc20527ffba27cfa63ee5b5dd4ba28b754a7826",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_8854d155",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-26T21:54:27Z",
+      "side": 1,
+      "message": "?",
+      "range": {
+        "startLine": 18,
+        "startChar": 17,
+        "endLine": 18,
+        "endChar": 19
+      },
+      "revId": "3bc20527ffba27cfa63ee5b5dd4ba28b754a7826",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_280a5d89",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-26T21:54:27Z",
+      "side": 1,
+      "message": "nit: unprotected* might be a bit more clear, but that could just be my personal preference",
+      "range": {
+        "startLine": 202,
+        "startChar": 8,
+        "endLine": 202,
+        "endChar": 18
+      },
+      "revId": "3bc20527ffba27cfa63ee5b5dd4ba28b754a7826",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
