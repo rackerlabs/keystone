@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_8420e79b",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-26T21:38:16Z",
+      "side": 1,
+      "message": "was supposed to be a literal.",
+      "parentUuid": "5f7c97a3_ee689a88",
+      "range": {
+        "startLine": 488,
+        "startChar": 11,
+        "endLine": 488,
+        "endChar": 12
+      },
+      "revId": "739d2b257a10e7c1ca44cbfa1887d515d05eba8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_4ecaee6d",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 5
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_e430bbeb",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-26T21:38:16Z",
+      "side": 1,
+      "message": "well, pick another code ;) i like 418 because no one will accidentally \"take\" it for something else. However, the comment below should hopefully explain things if someone hits it.",
+      "parentUuid": "5f7c97a3_4ecaee6d",
+      "revId": "739d2b257a10e7c1ca44cbfa1887d515d05eba8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_2e21b24d",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 5
@@ -53,6 +95,24 @@
       "writtenOn": "2018-06-26T20:54:21Z",
       "side": 1,
       "message": "nit: missing a closing ] somewhere?",
+      "revId": "739d2b257a10e7c1ca44cbfa1887d515d05eba8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_c44fbf67",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 856,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-26T21:38:16Z",
+      "side": 1,
+      "message": "should have been a comma.",
+      "parentUuid": "5f7c97a3_2e21b24d",
       "revId": "739d2b257a10e7c1ca44cbfa1887d515d05eba8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
