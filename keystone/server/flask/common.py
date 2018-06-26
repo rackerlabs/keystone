@@ -20,11 +20,38 @@ import flask_restful
 from oslo_log import log
 import six
 
+from keystone.common import json_home
 from keystone.common.rbac_enforcer import enforcer
 
 
 LOG = log.getLogger(__name__)
-ResourceMap = collections.namedtuple('resource_map', 'resource, urls, kwargs')
+ResourceMap = collections.namedtuple(
+    'resource_map', 'resource, url, kwargs, json_home_data')
+JsonHomeData = collections.namedtuple(
+    'json_home_data', 'rel, status, path_vars')
+
+_v3_resource_relation = json_home.build_v3_resource_relation
+
+
+def construct_resource_map(resource, url, resource_kwargs, rel,
+                           status=json_home.Status.STABLE, path_vars=None,
+                           resource_relation_func=_v3_resource_relation):
+    if rel is not None:
+        jh_data = construct_json_home_data(
+            rel=rel, status=status, path_vars=path_vars,
+            resource_relation_func=resource_relation_func)
+    else:
+        jh_data = None
+    return ResourceMap(
+        resource=resource, url=url, kwargs=resource_kwargs,
+        json_home_data=jh_data)
+
+
+def construct_json_home_data(rel, status=json_home.Status.STABLE,
+                             path_vars=None,
+                             resource_relation_func=_v3_resource_relation):
+    rel = resource_relation_func(rel)
+    return JsonHomeData(rel=rel, status=status, path_vars=(path_vars or {}))
 
 
 def _initialize_rbac_enforcement_check():
@@ -64,10 +91,12 @@ class APIBase(object):
 
             * resource: a :class:`flask_restful.Resource` class or subclass
 
-            * urls: a url route or iterable of url routes to match for the
-                    resource, standard flask routing rules apply. Any url
-                    variables will be passed to the resource method as args.
-                    (str)
+            * url: a url route to match for the resource, standard flask
+                   routing rules apply. Any url variables will be passed
+                   to the resource method as args. (str)
+
+            * json_home_data: :class:`JsonHomeData` populated with relevant
+                              info for populated JSON Home Documents or None.
 
             * kwargs: a dict of optional value(s) that can further modify the
                       handling of the routing.
@@ -131,12 +160,28 @@ class APIBase(object):
         assert self.__after_request_functions_added, msg % 'after'  # nosec
 
     def _add_resources(self):
+        # Add additional resource mappings
         for r in self.resource_mapping:
             LOG.debug(
                 'Adding resource routes to API %(name)s: '
                 '[%(urls)r %(kwargs)r]',
-                {'name': self._name, 'urls': r.urls, 'kwargs': r.kwargs})
-            self.blueprint.add_resource(r.resource, *r.urls, **r.kwargs)
+                {'name': self._name, 'url': r.url, 'kwargs': r.kwargs})
+            self.blueprint.add_resource(r.resource, r.url, **r.kwargs)
+
+            # Build the JSON Home data and add it to the relevant JSON Home
+            # Documents for explicit JSON Home data.
+            if r.json_home_data:
+                resource_data = {}
+                if r.json_home_data.path_vars:
+                    resource_data['href-template'] = r.url
+                    resource_data['href-vars'] = r.json_home_data.path_vars
+                else:
+                    resource_data['href'] = r.url
+                json_home.Status.update_resource_data(
+                    resource_data, r.json_home_data.status)
+                json_home.JsonHomeResources.append_resource(
+                    r.json_home_data.rel,
+                    resource_data)
 
     def _register_before_request_functions(self, functions=None):
         """Register functions to be executed in the `before request` phase.
