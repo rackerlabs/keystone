@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_ce86fe65",
+        "filename": "requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-26T20:29:08Z",
+      "side": 1,
+      "message": "Does it make sense to specify this anymore?",
+      "range": {
+        "startLine": 12,
+        "startChar": 5,
+        "endLine": 12,
+        "endChar": 11
+      },
+      "revId": "217a6ff01bae599bbac7d35915311a56f7e63f0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
