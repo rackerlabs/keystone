@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_29944c43",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-26T21:54:27Z",
+      "side": 1,
+      "message": "Will this work for deprecated policies? I think in cases like that the deprecated policy name is nested within the new registered rule (just like we do when we deprecate configuration options). In that case, this list not contain the deprecated rule name. Is that going to be a problem?",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 37,
+        "endChar": 14
+      },
+      "revId": "6c36441df331c8b4a3f54b4ba1d21695ebc7006e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_c9d5981c",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-26T21:54:27Z",
+      "side": 1,
+      "message": "This isn\u0027t used here, we should be safe to remove it.",
+      "range": {
+        "startLine": 169,
+        "startChar": 42,
+        "endLine": 169,
+        "endChar": 48
+      },
+      "revId": "6c36441df331c8b4a3f54b4ba1d21695ebc7006e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_49cae86d",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-26T21:54:27Z",
+      "side": 1,
+      "message": "Is this mainly for testing purposes or do we expect various APIs across keystone to instantiate their own enforcers prior to calling this method?",
+      "range": {
+        "startLine": 239,
+        "startChar": 0,
+        "endLine": 240,
+        "endChar": 45
+      },
+      "revId": "6c36441df331c8b4a3f54b4ba1d21695ebc7006e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_69c7a499",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-26T21:54:27Z",
+      "side": 1,
+      "message": "Why do we do it that way?",
+      "revId": "6c36441df331c8b4a3f54b4ba1d21695ebc7006e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e9ebb4d9",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-26T21:54:27Z",
+      "side": 1,
+      "message": "This doesn\u0027t appear to be used in the method we\u0027re calling.",
+      "range": {
+        "startLine": 324,
+        "startChar": 54,
+        "endLine": 324,
+        "endChar": 67
+      },
+      "revId": "6c36441df331c8b4a3f54b4ba1d21695ebc7006e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_041297fd",
+        "filename": "keystone/tests/unit/common/test_rbac_enforcer.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-26T21:54:27Z",
+      "side": 1,
+      "message": "nit: is this property solely for the purpose of checking if the legacy shared secret was used?\n\nIf so, I\u0027d love to rename _is_admin() to something more specific in a later patch (is_admin_token_set()).",
+      "range": {
+        "startLine": 197,
+        "startChar": 42,
+        "endLine": 197,
+        "endChar": 51
+      },
+      "revId": "6c36441df331c8b4a3f54b4ba1d21695ebc7006e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
