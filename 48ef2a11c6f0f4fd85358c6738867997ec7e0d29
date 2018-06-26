@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_045a971c",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-26T21:41:59Z",
+      "side": 1,
+      "message": "Add param info.",
+      "range": {
+        "startLine": 79,
+        "startChar": 5,
+        "endLine": 79,
+        "endChar": 15
+      },
+      "revId": "48ef2a11c6f0f4fd85358c6738867997ec7e0d29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_c49d7fbb",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-26T21:41:59Z",
+      "side": 1,
+      "message": "Same as above.",
+      "range": {
+        "startLine": 81,
+        "startChar": 6,
+        "endLine": 81,
+        "endChar": 18
+      },
+      "revId": "48ef2a11c6f0f4fd85358c6738867997ec7e0d29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_64a02bf4",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-26T21:41:59Z",
+      "side": 1,
+      "message": "Same as above",
+      "range": {
+        "startLine": 83,
+        "startChar": 5,
+        "endLine": 83,
+        "endChar": 21
+      },
+      "revId": "48ef2a11c6f0f4fd85358c6738867997ec7e0d29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
