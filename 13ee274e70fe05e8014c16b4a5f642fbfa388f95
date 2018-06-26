@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_ae75c299",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-26T20:27:23Z",
+      "side": 1,
+      "message": "Do we have a way to stand up a dummy API to test these types of changes? Is that something that we\u0027re doing in a later patch? I assume this will be tested when it starts being consumed as we convert keystone APIs to flask.",
+      "revId": "13ee274e70fe05e8014c16b4a5f642fbfa388f95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
