@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_8e5566fb",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1450,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-06-26T20:28:06Z",
+      "side": 1,
+      "message": "Interesting.",
+      "range": {
+        "startLine": 1449,
+        "startChar": 51,
+        "endLine": 1450,
+        "endChar": 74
+      },
+      "revId": "74684cf53bffb17af1012af30daf04abfdadc253",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
