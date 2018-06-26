@@ -13,6 +13,7 @@
 import abc
 import collections
 import functools
+import re
 
 from flask import blueprints
 from flask import g
@@ -20,11 +21,87 @@ import flask_restful
 from oslo_log import log
 import six
 
+from keystone.common import json_home
 from keystone.common.rbac_enforcer import enforcer
 
 
+_URL_SUBST = re.compile(r'<[^\s:]+:([^>]+)>')
 LOG = log.getLogger(__name__)
-ResourceMap = collections.namedtuple('resource_map', 'resource, urls, kwargs')
+ResourceMap = collections.namedtuple(
+    'resource_map', 'resource, url, alternate_urls, kwargs, json_home_data')
+JsonHomeData = collections.namedtuple(
+    'json_home_data', 'rel, status, path_vars')
+
+_v3_resource_relation = json_home.build_v3_resource_relation
+
+
+def construct_resource_map(resource, url, resource_kwargs, alternate_urls=None,
+                           rel=None, status=json_home.Status.STABLE,
+                           path_vars=None,
+                           resource_relation_func=_v3_resource_relation):
+    """Construct the ResourceMap Named Tuple.
+
+    :param resource: The flask-RESTful resource class implementing the methods
+                     for the API.
+    :type resource: :class:`ResourceMap`
+    :param url: Flask-standard url route, all flask url routing rules apply.
+                url variables will be passed to the Resource methods as
+                arguments.
+    :type url: str
+    :param resource_kwargs: a dict of optional value(s) that can further modify
+                            the handling of the routing.
+
+                            * endpoint: endpoint name (defaults to
+                                        :meth:`Resource.__name__.lower`
+                                        Can be used to reference this route in
+                                        :class:`fields.Url` fields (str)
+
+                            * resource_class_args: args to be forwarded to the
+                                                   constructor of the resource.
+                                                   (tuple)
+
+                            * resource_class_kwargs: kwargs to be forwarded to
+                                                     the constructor of the
+                                                     resource. (dict)
+
+                            Additional keyword arguments not specified above
+                            will be passed as-is to
+                            :meth:`flask.Flask.add_url_rule`.
+    :param alternate_urls: An iterable (list) of urls that also map to the
+                           resource. These are used to ensure API compat when
+                           a "new" path is more correct for the API but old
+                           paths must continue to work. Example:
+                           `/auth/domains` being the new path for
+                           `/OS-FEDERATION/domains`. The `OS-FEDERATION` part
+                           would be listed as an alternate url. These are not
+                           added to the JSON Home Document.
+    :type: any iterable or None
+    :param rel:
+    :type rel: str or None
+    :param status:
+    :type status: str
+    :param path_vars:
+    :type path_vars: dict or None
+    :param resource_relation_func:
+    :type resource_relation_func: callable
+    :return:
+    """
+    if rel is not None:
+        jh_data = construct_json_home_data(
+            rel=rel, status=status, path_vars=path_vars,
+            resource_relation_func=resource_relation_func)
+    else:
+        jh_data = None
+    return ResourceMap(
+        resource=resource, url=url, alternate_urls=alternate_urls,
+        kwargs=resource_kwargs, json_home_data=jh_data)
+
+
+def construct_json_home_data(rel, status=json_home.Status.STABLE,
+                             path_vars=None,
+                             resource_relation_func=_v3_resource_relation):
+    rel = resource_relation_func(rel)
+    return JsonHomeData(rel=rel, status=status, path_vars=(path_vars or {}))
 
 
 def _initialize_rbac_enforcement_check():
@@ -64,10 +141,18 @@ class APIBase(object):
 
             * resource: a :class:`flask_restful.Resource` class or subclass
 
-            * urls: a url route or iterable of url routes to match for the
-                    resource, standard flask routing rules apply. Any url
-                    variables will be passed to the resource method as args.
-                    (str)
+            * url: a url route to match for the resource, standard flask
+                   routing rules apply. Any url variables will be passed
+                   to the resource method as args. (str)
+
+            * alternate_urls: an iterable of url routes to match for the
+                              resource, standard flask routing rules apply.
+                              These rules are in addition (for API compat) to
+                              the primary url. Any url variables will be
+                              passed to the resource method as args. (iterable)
+
+            * json_home_data: :class:`JsonHomeData` populated with relevant
+                              info for populated JSON Home Documents or None.
 
             * kwargs: a dict of optional value(s) that can further modify the
                       handling of the routing.
@@ -119,7 +204,7 @@ class APIBase(object):
             app=self.__blueprint, prefix=self._api_url_prefix,
             default_mediatype=self._default_mediatype,
             decorators=decorators, errors=errors)
-        self._add_resources()
+        self._add_mapped_resources()
 
         # Apply Before and After request functions
         self._register_before_request_functions()
@@ -131,12 +216,91 @@ class APIBase(object):
         assert self.__after_request_functions_added, msg % 'after'  # nosec
 
     def _add_resources(self):
+        # Add resources that are standardized. Each resource implements a
+        # base set of handling for a collection of entities such as
+        # `users`. Resources are sourced from self.resources. Each resource
+        # should have an attribute/property containing the `collection_key`
+        # which is typically the "plural" form of the entity, e.g. `users` and
+        # `member_key` which is typically the "singular" of the entity, e.g.
+        # `user`. Resources are sourced from self.resources, each element is
+        # simply a :class:`flask_restful.Resource`.
+        for r in self.resources:
+            c_key = getattr(r, 'collection_key', None)
+            m_key = getattr(r, 'member_key', None)
+            if not c_key or not m_key:
+                LOG.debug('Unable to add resource %(resource)s to API '
+                          '%(name)s, both `member_key` and `collection_key` '
+                          'must be implemented. [collection_key(%(col_key)s) '
+                          'member_key(%(m_key)s)]',
+                          {'resource': r.__class__.__name__,
+                           'name': self._name, 'col_key': c_key,
+                           'm_key': m_key})
+                continue
+
+            collection_path = '/%s' % c_key
+            entity_path = '/%(collection_key)s/<string:%(member_key)s_id>' % {
+                'collection_key': c_key, 'member_key': m_key}
+            # NOTE(morgan): The json-home form of the entity path is different
+            # from the flask-url routing form.
+            jh_e_path = _URL_SUBST.sub('{\\1}', entity_path)
+
+            LOG.debug(
+                'Adding standard routes to API %(name)s for `%(resource)s` '
+                '[%(collection_path)s, %(entity_path)s]', {
+                    'name': self._name, 'resource': r.__class__.__name__,
+                    'collection_path': collection_path,
+                    'entity_path': entity_path})
+            self.blueprint.add_resource(r, collection_path, entity_path)
+
+            # Add JSON Home data
+            collection_rel = json_home.build_v3_resource_relation(c_key)
+            rel_data = {'href': collection_path}
+
+            entity_rel = json_home.build_v3_resource_relation(m_key)
+            id_str = '%s_id' % m_key
+            id_param_rel = json_home.build_v3_parameter_relation(id_str)
+            entity_rel_data = {'href-template': jh_e_path,
+                               'href-vars': {id_str: id_param_rel}}
+
+            json_home.JsonHomeResources.append_resource(
+                collection_rel, rel_data)
+            json_home.JsonHomeResources.append_resource(
+                entity_rel, entity_rel_data)
+
+    def _add_mapped_resources(self):
+        # Add resource mappings, non-standard resource connections
         for r in self.resource_mapping:
             LOG.debug(
                 'Adding resource routes to API %(name)s: '
-                '[%(urls)r %(kwargs)r]',
-                {'name': self._name, 'urls': r.urls, 'kwargs': r.kwargs})
-            self.blueprint.add_resource(r.resource, *r.urls, **r.kwargs)
+                '[%(url)r %(kwargs)r]',
+                {'name': self._name, 'url': r.url, 'kwargs': r.kwargs})
+            self.blueprint.add_resource(r.resource, r.url, **r.kwargs)
+            if r.alternate_urls is not None:
+                LOG.debug(
+                    'Adding additional resource routes (alternate) to API'
+                    '%(name)s: [%(urls)r %(kwargs)r]',
+                    {'name': self._name, 'urls': r.alternate_urls,
+                     'kwargs': r.kwargs})
+                self.blueprint.add_resource(r.resource, *r.alternate_urls,
+                                            **r.kwargs)
+
+            # Build the JSON Home data and add it to the relevant JSON Home
+            # Documents for explicit JSON Home data.
+            if r.json_home_data:
+                resource_data = {}
+                # NOTE(morgan): JSON Home form of the URL is different
+                # from FLASK, do the conversion here.
+                conv_url = _URL_SUBST.sub('{\\1}', r.url)
+                if r.json_home_data.path_vars:
+                    resource_data['href-template'] = conv_url
+                    resource_data['href-vars'] = r.json_home_data.path_vars
+                else:
+                    resource_data['href'] = conv_url
+                json_home.Status.update_resource_data(
+                    resource_data, r.json_home_data.status)
+                json_home.JsonHomeResources.append_resource(
+                    r.json_home_data.rel,
+                    resource_data)
 
     def _register_before_request_functions(self, functions=None):
         """Register functions to be executed in the `before request` phase.
