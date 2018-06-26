@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_64ad8b82",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-26T22:01:53Z",
+      "side": 1,
+      "message": "Ok, we need to expand on that, lets get a test for that and expand the deprecated rule name explicitly, since it is still a valid action.",
+      "parentUuid": "5f7c97a3_29944c43",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 37,
+        "endChar": 14
+      },
+      "revId": "6c36441df331c8b4a3f54b4ba1d21695ebc7006e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_c9d5981c",
         "filename": "keystone/common/rbac_enforcer/enforcer.py",
         "patchSetId": 19
@@ -36,6 +60,30 @@
       "writtenOn": "2018-06-26T21:54:27Z",
       "side": 1,
       "message": "This isn\u0027t used here, we should be safe to remove it.",
+      "range": {
+        "startLine": 169,
+        "startChar": 42,
+        "endLine": 169,
+        "endChar": 48
+      },
+      "revId": "6c36441df331c8b4a3f54b4ba1d21695ebc7006e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_44c64f4b",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-26T22:01:53Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5f7c97a3_c9d5981c",
       "range": {
         "startLine": 169,
         "startChar": 42,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_24f9d37e",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-26T22:01:53Z",
+      "side": 1,
+      "message": "This is to support the concept of the enforcer being locally instantiated ahead of the game. It is currently for testing but it may help to save some overhead in the grand scheme of things if each API or each resource has it\u0027s own enforcer.\n\nI was envisioning the resource base having self.enforcer instantiated and implementing a .enforce_call that passes self.enforcer as the enforcer argument.\n\nI wanted to allow both to work in the case that something had to call enforce and didn\u0027t want to pre-instantiate (wasn\u0027t a resource object) an enforcer.\n\nFor now everything is on-demand.",
+      "parentUuid": "5f7c97a3_49cae86d",
+      "range": {
+        "startLine": 239,
+        "startChar": 0,
+        "endLine": 240,
+        "endChar": 45
+      },
+      "revId": "6c36441df331c8b4a3f54b4ba1d21695ebc7006e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_69c7a499",
         "filename": "keystone/common/rbac_enforcer/enforcer.py",
         "patchSetId": 19
@@ -82,6 +154,24 @@
       "writtenOn": "2018-06-26T21:54:27Z",
       "side": 1,
       "message": "Why do we do it that way?",
+      "revId": "6c36441df331c8b4a3f54b4ba1d21695ebc7006e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_64302b56",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-26T22:01:53Z",
+      "side": 1,
+      "message": "Because we did it that way previously :P\n\nThis is largely copying @protected behavior(s).",
+      "parentUuid": "5f7c97a3_69c7a499",
       "revId": "6c36441df331c8b4a3f54b4ba1d21695ebc7006e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_84330761",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-26T22:01:53Z",
+      "side": 1,
+      "message": "Yep, can be removed.",
+      "parentUuid": "5f7c97a3_e9ebb4d9",
+      "range": {
+        "startLine": 324,
+        "startChar": 54,
+        "endLine": 324,
+        "endChar": 67
+      },
+      "revId": "6c36441df331c8b4a3f54b4ba1d21695ebc7006e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_041297fd",
         "filename": "keystone/tests/unit/common/test_rbac_enforcer.py",
         "patchSetId": 19
@@ -122,6 +236,30 @@
       "writtenOn": "2018-06-26T21:54:27Z",
       "side": 1,
       "message": "nit: is this property solely for the purpose of checking if the legacy shared secret was used?\n\nIf so, I\u0027d love to rename _is_admin() to something more specific in a later patch (is_admin_token_set()).",
+      "range": {
+        "startLine": 197,
+        "startChar": 42,
+        "endLine": 197,
+        "endChar": 51
+      },
+      "revId": "6c36441df331c8b4a3f54b4ba1d21695ebc7006e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_a413a3b7",
+        "filename": "keystone/tests/unit/common/test_rbac_enforcer.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-26T22:01:53Z",
+      "side": 1,
+      "message": "Yes, that is the sole purpose. Easy enough to rename it.",
+      "parentUuid": "5f7c97a3_041297fd",
       "range": {
         "startLine": 197,
         "startChar": 42,
