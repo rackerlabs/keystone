@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_ee689a88",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-26T20:54:21Z",
+      "side": 1,
+      "message": "nit: Missing another \" or is expected status supposed to be a literal?",
+      "range": {
+        "startLine": 488,
+        "startChar": 11,
+        "endLine": 488,
+        "endChar": 12
+      },
+      "revId": "739d2b257a10e7c1ca44cbfa1887d515d05eba8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_4ecaee6d",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-26T20:54:21Z",
+      "side": 1,
+      "message": "I totally see the value in this type of utility. I just fear it will cause people to think we actually return HTTP 418 in our API somewhere.",
+      "revId": "739d2b257a10e7c1ca44cbfa1887d515d05eba8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_2e21b24d",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 856,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-26T20:54:21Z",
+      "side": 1,
+      "message": "nit: missing a closing ] somewhere?",
+      "revId": "739d2b257a10e7c1ca44cbfa1887d515d05eba8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
