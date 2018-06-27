@@ -2,6 +2,86 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_324ed9c2",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2018-06-27T22:36:52Z",
+      "side": 1,
+      "message": "I thought oslo.policy can dynamically reload the policies. Will this still work?",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 24
+      },
+      "revId": "edc2ff74fd54a14a9cd7383f099e6d190c3f6adc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_527ef5e3",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2018-06-27T22:36:52Z",
+      "side": 1,
+      "message": "nice interview question right there :-)",
+      "range": {
+        "startLine": 52,
+        "startChar": 8,
+        "endLine": 52,
+        "endChar": 45
+      },
+      "revId": "edc2ff74fd54a14a9cd7383f099e6d190c3f6adc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_32c9f950",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2018-06-27T22:36:52Z",
+      "side": 1,
+      "message": "I presume \u0027unenforced_api()\u0027 in server.flask.common doesn\u0027t go through this path as it is checking for a valid token?",
+      "revId": "edc2ff74fd54a14a9cd7383f099e6d190c3f6adc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_12f4fdcf",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2018-06-27T22:36:52Z",
+      "side": 1,
+      "message": "How is this one being used? Just curious.",
+      "revId": "edc2ff74fd54a14a9cd7383f099e6d190c3f6adc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_d75bd71f",
         "filename": "keystone/server/flask/common.py",
         "patchSetId": 22
