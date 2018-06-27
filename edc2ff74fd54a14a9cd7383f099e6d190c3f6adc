@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_d2f8c54b",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-27T22:43:38Z",
+      "side": 1,
+      "message": "This is just the referred action name. This is all in-code. The policy.json is loaded by oslo_policy lib. It will still work.",
+      "parentUuid": "5f7c97a3_324ed9c2",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 24
+      },
+      "revId": "edc2ff74fd54a14a9cd7383f099e6d190c3f6adc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_527ef5e3",
         "filename": "keystone/common/rbac_enforcer/enforcer.py",
         "patchSetId": 22
@@ -65,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_3281f9a1",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-27T22:43:38Z",
+      "side": 1,
+      "message": "An un-enforced API never calls enforcer.enforce_call. if you look at the follow-up patch you will see how that works.",
+      "parentUuid": "5f7c97a3_32c9f950",
+      "revId": "edc2ff74fd54a14a9cd7383f099e6d190c3f6adc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_12f4fdcf",
         "filename": "keystone/server/flask/common.py",
         "patchSetId": 22
@@ -76,6 +118,24 @@
       "writtenOn": "2018-06-27T22:36:52Z",
       "side": 1,
       "message": "How is this one being used? Just curious.",
+      "revId": "edc2ff74fd54a14a9cd7383f099e6d190c3f6adc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_72b8d174",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-27T22:43:38Z",
+      "side": 1,
+      "message": "See the following review to this one.",
+      "parentUuid": "5f7c97a3_12f4fdcf",
       "revId": "edc2ff74fd54a14a9cd7383f099e6d190c3f6adc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -99,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_12addd31",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-27T22:43:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_d75bd71f",
+      "revId": "edc2ff74fd54a14a9cd7383f099e6d190c3f6adc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_37a00bf4",
         "filename": "keystone/tests/unit/common/test_rbac_enforcer.py",
         "patchSetId": 22
@@ -110,6 +188,24 @@
       "writtenOn": "2018-06-27T21:21:11Z",
       "side": 1,
       "message": "dynamic",
+      "revId": "edc2ff74fd54a14a9cd7383f099e6d190c3f6adc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f2a38142",
+        "filename": "keystone/tests/unit/common/test_rbac_enforcer.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-27T22:43:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_37a00bf4",
       "revId": "edc2ff74fd54a14a9cd7383f099e6d190c3f6adc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
