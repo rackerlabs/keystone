@@ -59,6 +59,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_ed82cea4",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-27T14:13:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_9e413366",
+      "revId": "4dac450f50ed3109a365a3d9cc7f0c49473a8764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_5e5f1b40",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 13
@@ -70,6 +88,24 @@
       "writtenOn": "2018-06-25T21:47:46Z",
       "side": 1,
       "message": "This should be done in https://review.openstack.org/#/c/559129/",
+      "revId": "4dac450f50ed3109a365a3d9cc7f0c49473a8764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_4d2ae2e6",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-27T14:13:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_5e5f1b40",
       "revId": "4dac450f50ed3109a365a3d9cc7f0c49473a8764",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -93,6 +129,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_ade936ab",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-27T14:13:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_3e501f2c",
+      "revId": "4dac450f50ed3109a365a3d9cc7f0c49473a8764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_9e361302",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 13
@@ -104,6 +158,24 @@
       "writtenOn": "2018-06-25T21:47:46Z",
       "side": 1,
       "message": "These changes should be moved into https://review.openstack.org/#/c/559129/",
+      "revId": "4dac450f50ed3109a365a3d9cc7f0c49473a8764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_edf3ae9d",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-27T14:13:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_9e361302",
       "revId": "4dac450f50ed3109a365a3d9cc7f0c49473a8764",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -127,6 +199,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_2d33e662",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-27T14:13:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_be398ff1",
+      "revId": "4dac450f50ed3109a365a3d9cc7f0c49473a8764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_5e24fbc5",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 13
@@ -138,6 +228,24 @@
       "writtenOn": "2018-06-25T21:47:46Z",
       "side": 1,
       "message": "This should be moved into https://review.openstack.org/#/c/559129/",
+      "revId": "4dac450f50ed3109a365a3d9cc7f0c49473a8764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_ad3e1623",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-27T14:13:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_5e24fbc5",
       "revId": "4dac450f50ed3109a365a3d9cc7f0c49473a8764",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -161,6 +269,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_ad17f69c",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 742,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-27T14:13:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_7e1f776f",
+      "revId": "4dac450f50ed3109a365a3d9cc7f0c49473a8764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_3e257fbf",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 13
@@ -172,6 +298,24 @@
       "writtenOn": "2018-06-25T21:47:46Z",
       "side": 1,
       "message": "This should be its own change.",
+      "revId": "4dac450f50ed3109a365a3d9cc7f0c49473a8764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_6dc0fee0",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 817,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-27T14:13:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_3e257fbf",
       "revId": "4dac450f50ed3109a365a3d9cc7f0c49473a8764",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
