@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_8a2bf7e8",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-27T18:48:55Z",
+      "side": 1,
+      "message": "I guess this doesn\u0027t entirely make sense any more",
+      "range": {
+        "startLine": 27,
+        "startChar": 58,
+        "endLine": 28,
+        "endChar": 62
+      },
+      "revId": "23b0b0001fa7103cadfef80eb1101a4764cd3cf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

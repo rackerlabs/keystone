@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_4a839fcc",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-27T18:48:55Z",
+      "side": 0,
+      "message": "Since CONF.token.bind wasn\u0027t actually deprecated properly, I\u0027m failing to understand the effects of removing this. If an operator had set [token]/bind\u003dkerberos and a user has set os_auth_type\u003dnegotiate, has that just been 500ing since we removed uuid tokens?",
+      "range": {
+        "startLine": 54,
+        "startChar": 7,
+        "endLine": 55,
+        "endChar": 79
+      },
+      "revId": "057c59f16fc04e5d4e63f408ac5810ebe6d5ac99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_92a6db53",
         "filename": "keystone/conf/token.py",
         "patchSetId": 2
