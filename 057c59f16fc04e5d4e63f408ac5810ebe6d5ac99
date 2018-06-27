@@ -22,6 +22,30 @@
       "revId": "057c59f16fc04e5d4e63f408ac5810ebe6d5ac99",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_b8f5f553",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-27T15:09:09Z",
+      "side": 0,
+      "message": "Reverted this change and added a note. This is probably safe to remove in Stein if it\u0027s currently ignored.",
+      "parentUuid": "5f7c97a3_92a6db53",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 5
+      },
+      "revId": "057c59f16fc04e5d4e63f408ac5810ebe6d5ac99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
