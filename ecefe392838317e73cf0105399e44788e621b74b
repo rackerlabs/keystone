@@ -22,6 +22,30 @@
       "revId": "ecefe392838317e73cf0105399e44788e621b74b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_b3ebe6da",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-06-27T05:31:23Z",
+      "side": 1,
+      "message": "Thank for the comment wangxiyuan. Looking into ADMIN_ASSERTION it is setting user name \u003d bob. In that case also I have to set username\u003dNone.",
+      "parentUuid": "5f7c97a3_084aa525",
+      "range": {
+        "startLine": 567,
+        "startChar": 37,
+        "endLine": 567,
+        "endChar": 55
+      },
+      "revId": "ecefe392838317e73cf0105399e44788e621b74b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
