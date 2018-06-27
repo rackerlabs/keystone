@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_e99ddd58",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-27T16:39:24Z",
+      "side": 1,
+      "message": "Wild goose-chase. We never will refer to a deprecated action in code only ever the new name.",
+      "parentUuid": "5f7c97a3_7bbe7765",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 37,
+        "endChar": 14
+      },
+      "revId": "6c36441df331c8b4a3f54b4ba1d21695ebc7006e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_c9d5981c",
         "filename": "keystone/common/rbac_enforcer/enforcer.py",
         "patchSetId": 19
