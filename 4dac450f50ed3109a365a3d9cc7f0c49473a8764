@@ -319,6 +319,29 @@
       "revId": "4dac450f50ed3109a365a3d9cc7f0c49473a8764",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_d5a99cde",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-27T14:20:08Z",
+      "side": 1,
+      "message": "This should be removed.",
+      "range": {
+        "startLine": 206,
+        "startChar": 0,
+        "endLine": 213,
+        "endChar": 39
+      },
+      "revId": "4dac450f50ed3109a365a3d9cc7f0c49473a8764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
