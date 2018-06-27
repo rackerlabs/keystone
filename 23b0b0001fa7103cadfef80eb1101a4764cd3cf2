@@ -22,6 +22,30 @@
       "revId": "23b0b0001fa7103cadfef80eb1101a4764cd3cf2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_57090729",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-27T21:12:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_8a2bf7e8",
+      "range": {
+        "startLine": 27,
+        "startChar": 58,
+        "endLine": 28,
+        "endChar": 62
+      },
+      "revId": "23b0b0001fa7103cadfef80eb1101a4764cd3cf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
