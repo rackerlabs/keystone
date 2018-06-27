@@ -46,6 +46,30 @@
       "revId": "ecefe392838317e73cf0105399e44788e621b74b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_ee3ad1ca",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-06-27T06:27:54Z",
+      "side": 1,
+      "message": "No, if using ADMIN_ASSERTION, the \"mapped_properties\" will contain no user_name, because the mapping only transfter \"UserName\" to \"ID\" for bob: https://github.com/openstack/keystone/blob/master/keystone/tests/unit/mapping_fixtures.py#L941-L959\n\nThis patch want to test the case that KeyError won\u0027t happen, but in your test ,you set mapped_properties[\"user\"][\"name\"] \u003d None at L574, it means that the KeyError won\u0027t happen even without the change in this patch.\n\nThe test can be changed to:\nhttp://paste.openstack.org/show/724370/\n\nThen the test will raise KeyError before the fix in this patch, and will be passed after the fix.",
+      "parentUuid": "5f7c97a3_b3ebe6da",
+      "range": {
+        "startLine": 567,
+        "startChar": 37,
+        "endLine": 567,
+        "endChar": 55
+      },
+      "revId": "ecefe392838317e73cf0105399e44788e621b74b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
