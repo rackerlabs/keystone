@@ -260,10 +260,6 @@ class KeystoneToken(dict):
         return [r['name'] for r in self.get('roles', [])]
 
     @property
-    def bind(self):
-        return self.get('bind')
-
-    @property
     def is_federated_user(self):
         try:
             return constants.FEDERATION in self['user']
@@ -315,7 +311,6 @@ class TokenModel(object):
         self.__user_domain = None
 
         self.methods = None
-        self.bind = None
         self.audit_id = None
         self.parent_audit_id = None
 
