@@ -65,6 +65,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_15b15402",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-27T14:40:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_9ba625c0",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 33
+      },
+      "revId": "1864b44b174a719041fa6b2db44864e9ffbc4b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_5ba2cd9b",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 3
@@ -76,6 +100,24 @@
       "writtenOn": "2018-06-25T20:47:03Z",
       "side": 1,
       "message": "These changes should be pulled up into https://review.openstack.org/#/c/545450/13/keystone/common/controller.py",
+      "revId": "1864b44b174a719041fa6b2db44864e9ffbc4b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_350fb0e1",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-27T14:40:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_5ba2cd9b",
       "revId": "1864b44b174a719041fa6b2db44864e9ffbc4b80",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
