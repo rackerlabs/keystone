@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_d75bd71f",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-06-27T21:21:11Z",
+      "side": 1,
+      "message": "Not \"whitelists\" but rather \"exempts\"",
+      "revId": "edc2ff74fd54a14a9cd7383f099e6d190c3f6adc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_37a00bf4",
+        "filename": "keystone/tests/unit/common/test_rbac_enforcer.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-06-27T21:21:11Z",
+      "side": 1,
+      "message": "dynamic",
+      "revId": "edc2ff74fd54a14a9cd7383f099e6d190c3f6adc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
