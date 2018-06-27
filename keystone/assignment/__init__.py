@@ -14,3 +14,7 @@
 
 from keystone.assignment import controllers  # noqa
 from keystone.assignment.core import *  # noqa
+
+
+__all__ = ('COMPUTED_ASSIGNMENTS_REGION', 'controllers', 'Manager',
+           'RoleManager')

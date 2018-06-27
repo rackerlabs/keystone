@@ -11,3 +11,6 @@
 # under the License.
 
 from keystone.credential.providers.fernet.core import *  # noqa
+
+__all__ = ('MAX_ACTIVE_KEYS', 'Provider', 'get_multi_fernet_keys',
+           'primary_key_hash')

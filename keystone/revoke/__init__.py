@@ -11,3 +11,6 @@
 # under the License.
 
 from keystone.revoke.core import *  # noqa
+
+
+__all__ = ('Manager', 'REVOKE_REGION')

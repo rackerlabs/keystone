@@ -12,3 +12,6 @@
 
 from keystone.application_credential import controllers  # noqa
 from keystone.application_credential.core import *  # noqa
+
+
+__all__ = ('controllers', 'Manager',)

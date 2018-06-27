@@ -13,3 +13,6 @@
 # under the License.
 
 from keystone.limit.core import *  # noqa
+
+
+__all__ = ('Manager',)

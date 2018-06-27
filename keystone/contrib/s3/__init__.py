@@ -13,3 +13,6 @@
 # under the License.
 
 from keystone.contrib.s3.core import *  # noqa
+
+
+__all__ = ('S3Controller', 'S3Extension')

@@ -14,3 +14,6 @@
 
 from keystone.catalog import controllers  # noqa
 from keystone.catalog.core import *  # noqa
+
+
+__all__ = ('COMPUTED_CATALOG_REGION', 'controllers', 'Manager')

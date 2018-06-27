@@ -14,3 +14,6 @@
 
 from keystone.middleware.auth import *  # noqa
 from keystone.middleware.core import *  # noqa
+
+
+__all__ = ('AuthContextMiddleware', 'JsonBodyMiddleware', 'NormalizingFilter')

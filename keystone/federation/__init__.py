@@ -13,3 +13,6 @@
 # under the License.
 
 from keystone.federation.core import *  # noqa
+
+
+__all__ = ('Manager',)

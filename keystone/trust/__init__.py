@@ -14,3 +14,6 @@
 
 from keystone.trust import controllers  # noqa
 from keystone.trust.core import *  # noqa
+
+
+__all__ = ('Manager', 'controllers')

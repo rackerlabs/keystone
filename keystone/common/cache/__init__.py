@@ -13,3 +13,9 @@
 # under the License.
 
 from keystone.common.cache.core import *  # noqa
+
+
+__all__ = ('CACHE_REGION', 'CACHE_INVALIDATION_REGION', 'configure_cache',
+           'configure_invalidation_region', 'create_region',
+           'DistributedInvalidationStrategy', 'get_memoization_decorator',
+           'key_mangler_factory', 'RegionInvalidationManager')

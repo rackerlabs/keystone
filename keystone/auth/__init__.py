@@ -17,3 +17,6 @@
 from keystone.auth import core  # noqa
 
 from keystone.auth import controllers  # noqa
+
+
+__all__ = ('controllers',)

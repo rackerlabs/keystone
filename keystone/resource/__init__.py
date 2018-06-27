@@ -12,3 +12,7 @@
 
 from keystone.resource import controllers  # noqa
 from keystone.resource.core import *  # noqa
+
+
+__all__ = ('DomainConfigManager', 'Manager', 'TAG_SEARCH_FILTERS',
+           'controllers')

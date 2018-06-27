@@ -181,3 +181,8 @@ def set_config_defaults():
     """Override all configuration default values for keystone."""
     set_default_for_default_log_levels()
     set_external_opts_defaults()
+
+
+__all__ = ('configure', 'conf_modules', 'set_config_defaults',
+           'set_default_for_default_log_levels', 'set_external_opts_defaults',
+           'setup_logging')

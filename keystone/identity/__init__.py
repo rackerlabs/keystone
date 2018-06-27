@@ -15,3 +15,9 @@
 from keystone.identity import controllers  # noqa
 from keystone.identity.core import *  # noqa
 from keystone.identity import generator  # noqa
+
+
+_all__ = (
+    'DOMAIN_CONF_FHEAD', 'DOMAIN_CONF_FTAIL', 'DomainConfigs',
+    'ID_MAPPING_REGION', 'Manager', 'MappingManager', 'ShadowUsersManager',
+    'controllers', 'domains_configured', 'exception_translated', 'generator')

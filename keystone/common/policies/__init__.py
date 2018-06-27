@@ -83,3 +83,6 @@ def list_rules():
         trust.list_rules(),
         user.list_rules(),
     )
+
+
+__all__ = ('list_rules',)

@@ -13,3 +13,7 @@
 # under the License.
 
 from keystone.auth.plugins.core import *  # noqa
+
+
+_all__ = ('construct_method_map_from_config', 'convert_method_list_to_integer',
+          'convert_integer_to_method_list', )

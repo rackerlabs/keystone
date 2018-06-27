@@ -13,3 +13,6 @@
 # under the License.
 
 from keystone.token import provider  # noqa
+
+
+__all__ = ('provider', )

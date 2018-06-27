@@ -11,3 +11,6 @@
 # under the License.
 
 from keystone.token.providers.fernet.core import *  # noqa
+
+
+__all__ = ('Provider',)

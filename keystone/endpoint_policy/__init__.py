@@ -11,3 +11,6 @@
 # under the License.
 
 from keystone.endpoint_policy.core import *  # noqa
+
+
+__all__ = ('Manager',)

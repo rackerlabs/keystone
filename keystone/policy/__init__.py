@@ -14,3 +14,6 @@
 
 from keystone.policy import controllers  # noqa
 from keystone.policy.core import *  # noqa
+
+
+__all__ = ('controllers', 'Manager')

@@ -16,3 +16,6 @@ from keystone.contrib.ec2 import controllers  # noqa
 from keystone.contrib.ec2.core import *  # noqa
 from keystone.contrib.ec2 import routers  # noqa
 from keystone.contrib.ec2.routers import Routers as Ec2ExtensionV3  # noqa
+
+
+__all__ = ('Ec2ExtensionV3', 'controllers', 'routers')
