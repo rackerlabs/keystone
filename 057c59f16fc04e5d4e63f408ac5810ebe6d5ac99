@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_7423e1ab",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-27T20:21:10Z",
+      "side": 0,
+      "message": "Worst case we would get hitting this I think [0]. I\u0027m also realizing the lack of documentation around *any* bind stuff.\n\nIf a deployment was using UUID and then switched to Fernet, they\u0027d be getting a 501 because fernet doesn\u0027t support unbound data in token payloads. If someone was using uuid and started consuming master, they\u0027d trip trying to start keystone.\n\n[0] https://git.openstack.org/cgit/openstack/keystone/tree/keystone/token/providers/common.py#n563",
+      "parentUuid": "5f7c97a3_4a839fcc",
+      "range": {
+        "startLine": 54,
+        "startChar": 7,
+        "endLine": 55,
+        "endChar": 79
+      },
+      "revId": "057c59f16fc04e5d4e63f408ac5810ebe6d5ac99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_92a6db53",
         "filename": "keystone/conf/token.py",
         "patchSetId": 2
