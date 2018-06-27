@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_084aa525",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-06-27T03:49:31Z",
+      "side": 1,
+      "message": "I think we want to test the case that the user_name is missing, not is None.\nSo please use ADMIN_ASSERTION here, so that you don\u0027t need to set user_name\u003dNone at L574",
+      "range": {
+        "startLine": 567,
+        "startChar": 37,
+        "endLine": 567,
+        "endChar": 55
+      },
+      "revId": "ecefe392838317e73cf0105399e44788e621b74b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
