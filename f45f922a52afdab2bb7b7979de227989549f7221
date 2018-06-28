@@ -34,6 +34,24 @@
       "revId": "f45f922a52afdab2bb7b7979de227989549f7221",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_0017b5f0",
+        "filename": "keystone/conf/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-28T13:08:45Z",
+      "side": 0,
+      "message": "I think it would be good to formally deprecate them. Even if they don\u0027t do anything anymore, people have automation around the CLI that includes random flags and their automation will break if the flags are just yanked.",
+      "parentUuid": "5f7c97a3_c89c926c",
+      "revId": "f45f922a52afdab2bb7b7979de227989549f7221",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
