@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_6290f197",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-28T12:22:35Z",
+      "side": 1,
+      "message": "nit - dynamically",
+      "range": {
+        "startLine": 101,
+        "startChar": 32,
+        "endLine": 101,
+        "endChar": 41
+      },
+      "revId": "4183058468643e7a54e403b5174b0d102480d039",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_a2f36909",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-28T12:22:35Z",
+      "side": 1,
+      "message": "nit - likelihood",
+      "range": {
+        "startLine": 109,
+        "startChar": 17,
+        "endLine": 109,
+        "endChar": 27
+      },
+      "revId": "4183058468643e7a54e403b5174b0d102480d039",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
