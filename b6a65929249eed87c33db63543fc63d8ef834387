@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_cc5edc50",
+        "filename": "keystone/application_credential/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-28T10:35:43Z",
+      "side": 1,
+      "message": "Is this intended to be a noop? With or without this change I see\n\n \u003e\u003e\u003e from keystone.application_credential import *\n \u003e\u003e\u003e controllers\n\u003cmodule \u0027keystone.application_credential.controllers\u0027 from \u0027/home/colleen/dev/keystone/keystone/application_credential/controllers.py\u0027\u003e\n \u003e\u003e\u003e Manager\n\u003cclass \u0027keystone.application_credential.core.Manager\u0027\u003e",
+      "revId": "b6a65929249eed87c33db63543fc63d8ef834387",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_18adf331",
+        "filename": "keystone/common/sql/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-28T10:35:43Z",
+      "side": 1,
+      "message": "Looks like these sqlalchemy objects are breaking the sphinx builds. Also looks like this is not new for us:\n\nhttps://github.com/sphinx-doc/sphinx/issues/1530\nhttps://bugs.launchpad.net/keystone/+bug/1296333\nhttps://review.openstack.org/#/c/82594/1/keystone/openstack/common/db/sqlalchemy/utils.py",
+      "revId": "b6a65929249eed87c33db63543fc63d8ef834387",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
