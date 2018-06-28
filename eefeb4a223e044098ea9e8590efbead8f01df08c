@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_9bb81876",
+        "filename": "doc/requirements.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-28T13:57:16Z",
+      "side": 1,
+      "message": "Huh - nice.",
+      "revId": "eefeb4a223e044098ea9e8590efbead8f01df08c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
