@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_181df30f",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-06-28T09:17:31Z",
+      "side": 1,
+      "message": "It would be good if this test had a docstring explaining the test plan and what the expected inputs and results are, like the reasoning behind using ADMIN_ASSERTION that wxy explained in ps2. Unfortunately I can tell that the docstrings for the other tests have been cargoculted and are incorrect, so missing it here does not really make it worse off than those.",
+      "revId": "f4729795ecfbc53ae391204726fd441ce4b462ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
