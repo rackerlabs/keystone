@@ -22,6 +22,30 @@
       "revId": "dac4787f44fc414a99f73353d25ae1a258fb34d0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_9b357848",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-28T13:50:08Z",
+      "side": 1,
+      "message": "Yeah - unfortunately this should have been officially deprecated in https://review.openstack.org/#/c/428388/ but it wasn\u0027t. Putting PIKE on this so that it\u0027s at least accurate.",
+      "parentUuid": "5f7c97a3_63ab2188",
+      "range": {
+        "startLine": 23,
+        "startChar": 45,
+        "endLine": 23,
+        "endChar": 49
+      },
+      "revId": "dac4787f44fc414a99f73353d25ae1a258fb34d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
