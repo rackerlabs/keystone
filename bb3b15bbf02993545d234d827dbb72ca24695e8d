@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_efd38a36",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2018-06-28T10:59:04Z",
+      "side": 1,
+      "message": "nit: could you import flask.g so that\u0027s what\u0027s used in the code? or rename g to something else? such as flask_g or flask_global? It is quite hard to grep for g :/",
+      "revId": "bb3b15bbf02993545d234d827dbb72ca24695e8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
