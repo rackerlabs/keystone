@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_d7b71cd7",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-29T21:39:32Z",
+      "side": 1,
+      "message": "Do we want to grab the first thing here or do we want to validate to make sure we only get one registered limit back?",
+      "revId": "b5fd1105f55e24b0e53f1a485df6c8b7d2933cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
