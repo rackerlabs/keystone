@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_232176b6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 23
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-06-29T20:32:07Z",
+      "side": 1,
+      "message": "bah!",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 11
+      },
+      "revId": "bb3b15bbf02993545d234d827dbb72ca24695e8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_3138e0d2",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-06-29T20:32:07Z",
+      "side": 1,
+      "message": "Since this is an application error, shouldn\u0027t this be a 500?",
+      "range": {
+        "startLine": 286,
+        "startChar": 12,
+        "endLine": 289,
+        "endChar": 30
+      },
+      "revId": "bb3b15bbf02993545d234d827dbb72ca24695e8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_efd38a36",
         "filename": "keystone/server/flask/common.py",
         "patchSetId": 23
@@ -31,6 +77,52 @@
       "side": 1,
       "message": "yeah, we can change this to flask.g in a later patch.",
       "parentUuid": "5f7c97a3_efd38a36",
+      "revId": "bb3b15bbf02993545d234d827dbb72ca24695e8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_c6e8d016",
+        "filename": "keystone/tests/unit/common/test_rbac_enforcer.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-06-29T20:32:07Z",
+      "side": 1,
+      "message": "Do we also eventually want some rules with system scope?",
+      "range": {
+        "startLine": 179,
+        "startChar": 30,
+        "endLine": 179,
+        "endChar": 37
+      },
+      "revId": "bb3b15bbf02993545d234d827dbb72ca24695e8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_c6bbf0e1",
+        "filename": "keystone/tests/unit/common/test_rbac_enforcer.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-06-29T20:32:07Z",
+      "side": 1,
+      "message": "I would love a note about what\u0027s happening here.",
+      "range": {
+        "startLine": 338,
+        "startChar": 8,
+        "endLine": 340,
+        "endChar": 77
+      },
       "revId": "bb3b15bbf02993545d234d827dbb72ca24695e8d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
