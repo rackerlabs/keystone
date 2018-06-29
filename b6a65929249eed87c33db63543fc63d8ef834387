@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_ca9305a4",
+        "filename": "keystone/application_credential/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-29T06:09:04Z",
+      "side": 1,
+      "message": "This strictly impacts \u0027from XXX import *\u0027\n\nWe don\u0027t need this really at this point. Going to abandon the review.",
+      "parentUuid": "5f7c97a3_cc5edc50",
+      "revId": "b6a65929249eed87c33db63543fc63d8ef834387",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_18adf331",
         "filename": "keystone/common/sql/__init__.py",
         "patchSetId": 1
