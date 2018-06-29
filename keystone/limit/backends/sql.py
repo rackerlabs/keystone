@@ -236,6 +236,41 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
                                             hints)
             return [s.to_dict() for s in limits]
 
+    @driver_hints.truncated
+    def list_limits_hierarchy(self, hints, project_ids_tree):
+        # 1. get all the specified limit with hints and then get the top limits
+        limits = self.list_limits(hints)
+        top_limits = list(
+            filter(lambda x: x['project_id'] == project_ids_tree['project_id'],
+                   limits))
+
+        # 2. for each kind of top limit, create a limit tree.
+        return_list = []
+        for top_limit in top_limits:
+            each_top = copy.deepcopy(project_ids_tree)
+            each_top.update(top_limit)
+            return_list.append(each_top)
+
+        # 3. for each limit tree, fill up the children.
+        for tree in return_list:
+            tree_list = [tree]
+            while tree_list:
+                limit_list = []
+                for ref in tree_list:
+                    limit = list(filter(
+                        lambda x:
+                        x['project_id'] == ref['project_id'] and
+                        x['service_id'] == tree['service_id'] and
+                        x['region_id'] == tree['region_id'] and
+                        x['resource_name'] == tree['resource_name'],
+                        limits))
+                    if limit:
+                        ref.update(limit[0])
+                    limit_list += ref['limits']
+                tree_list = limit_list
+
+        return return_list
+
     def _get_limit(self, session, limit_id):
         query = session.query(LimitModel).filter_by(id=limit_id)
         ref = query.first()
