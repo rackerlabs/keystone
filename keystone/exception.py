@@ -141,6 +141,14 @@ class ValidationTimeStampError(Error):
     title = http_client.responses[http_client.BAD_REQUEST]
 
 
+class ValidationShowHierarchyError(Error):
+    message_format = _("The request project does not in a hierarchical tree "
+                       "or the enforcement model in current deployment does "
+                       "not support hierarchy.")
+    code = int(http_client.BAD_REQUEST)
+    title = http_client.responses[http_client.BAD_REQUEST]
+
+
 class InvalidOperatorError(ValidationError):
     message_format = _("The given operator %(_op)s is not valid."
                        " It must be one of the following:"
