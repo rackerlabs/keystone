@@ -17,8 +17,10 @@ from keystone.common import cache
 from keystone.common import driver_hints
 from keystone.common import manager
 from keystone.common import provider_api
+from keystone.common import utils
 import keystone.conf
 from keystone import exception
+from keystone.i18n import _
 from keystone.limit.models import base
 
 CONF = keystone.conf.CONF
@@ -116,7 +118,34 @@ class Manager(manager.Manager):
 
     @manager.response_truncated
     def list_limits(self, hints=None):
-        return self.driver.list_limits(hints or driver_hints.Hints())
+        show_hierarchy_filter = None
+        project_id_filter = None
+        for filter_ in hints.filters:
+            if filter_['name'] == 'show_hierarchy':
+                show_hierarchy_filter = filter_
+            if filter_['name'] == 'project_id':
+                project_id_filter = filter_
+
+        if (show_hierarchy_filter and
+                utils.attr_as_boolean(show_hierarchy_filter['value'])):
+            # TODO(wxy): Fetch all projects' limits in hierarchy is heavy-load.
+            # And the use case is not very clear as well. Forbid it now. This
+            # can be allow once we have a clear case for it.
+            if not project_id_filter:
+                action = _("The project_id filter must be specified when"
+                           "using show_hierarchy filter.")
+                raise exception.Forbidden(action=action)
+            project_ids_tree = self.enforcement_model.get_project_ids_tree(
+                project_id_filter['value'])
+            if not project_ids_tree:
+                raise exception.ValidationShowHierarchyError()
+
+            hints.filters.remove(show_hierarchy_filter)
+            hints.filters.remove(project_id_filter)
+
+            return self.driver.list_limits_hierarchy(hints, project_ids_tree)
+        else:
+            return self.driver.list_limits(hints or driver_hints.Hints())
 
     @MEMOIZE
     def get_limit(self, limit_id):
