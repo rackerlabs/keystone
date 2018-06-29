@@ -31,3 +31,8 @@ class FlatModel(base.ModelBase):
         # Flat limit model is not hierarchical, so don't need to check the
         # value.
         return
+
+    def get_project_ids_tree(self, project_id):
+        # Flat limit model doesn't support hierarchy. So return None here even
+        # though the specified project is in a hierarchy project tree.
+        return

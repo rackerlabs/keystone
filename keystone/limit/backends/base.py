@@ -143,6 +143,22 @@ class UnifiedLimitDriverBase(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
+    def list_limits_hierarchy(self, hints, project_ids_tree):
+        """List all limits.
+
+        :param hints: contains the list of filters yet to be satisfied.
+                      Any filters satisfied here will be removed so that
+                      the caller will know if any filters remain.
+        :param project_ids_tree: dict that contains the specified hierarchical
+                                 project tree structure.
+
+        :returns: a list of dictionaries. The dict in it contains hierarchical
+                  limit tree.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
     def get_limit(self, limit_id):
         """Get a limit.
 

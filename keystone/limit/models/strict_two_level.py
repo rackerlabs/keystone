@@ -164,3 +164,59 @@ class StrictTwoLevelModel(base.ModelBase):
                 'resource_limit': resource_limit}
             LOG.error(error)
             raise exception.InvalidLimit(reason=error)
+
+    def get_project_ids_tree(self, project_id):
+        """Get the project IDs tree which the specified project_id in.
+
+        For a tree like::
+
+                      +-A-+
+                      |   |
+                      B   C
+
+        The return dict is like::
+
+            {
+                "project_id": A['id'],
+                "limits": [
+                    {
+                        "project_id": B['id'],
+                        "limits": []
+                    },
+                    {
+                        "project_id": C['id'],
+                        "limits": []
+                    }
+                ]
+            }
+
+        """
+        ids_tree = {}
+        project = PROVIDERS.resource_api.get_project(project_id)
+        parent_id = project.get('parent_id')
+        if parent_id:
+            parent_project = PROVIDERS.resource_api.get_project(parent_id)
+            if parent_project['is_domain']:
+                # if parent is a domain, the project is the top
+                top_id = project['id']
+            else:
+                # if parent is not a domain, the parent is the top
+                top_id = parent_project['id']
+            ids_tree["project_id"] = top_id
+            ids_tree['limits'] = []
+
+            # then get the children
+            sub_projects = PROVIDERS.resource_api.list_projects_in_subtree(
+                top_id)
+            if not sub_projects:
+                # if no sub projects, the project is not in a hierarchical
+                # project tree.
+                return None
+            for sub_project in sub_projects:
+                sub_obj = {"project_id": sub_project['id'],
+                           "limits": []}
+                ids_tree['limits'].append(sub_obj)
+            return ids_tree
+        else:
+            # if no parent_id, the project here is a domain
+            return None
