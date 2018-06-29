@@ -234,6 +234,10 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
                                             hints)
             return [s.to_dict() for s in limits]
 
+    @driver_hints.truncated
+    def list_limits_hierarchy(self, hints, project_ids_tree):
+        pass
+
     def _get_limit(self, session, limit_id):
         ref = session.query(LimitModel).get(limit_id)
         if ref is None:

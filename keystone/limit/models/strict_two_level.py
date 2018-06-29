@@ -163,3 +163,45 @@ class Model(base.ModelBase):
                 'resource_limit': resource_limit}
             LOG.error(error)
             raise exception.InvalidLimit(reason=error)
+
+    def get_project_ids_tree(self, project_id):
+        """Get the project IDs tree which the specified project_id in.
+
+        For a tree like::
+
+                        B
+                       / \
+                      C   D
+
+        The return dict is like::
+
+            {
+                B['id]: {
+                    C['id]: None,
+                    D['id]: None
+                }
+            }
+
+        """
+        ids_tree = {}
+        project = PROVIDERS.resource_api.get_project(project_id)
+        parent_id = project.get('parent_id')
+        if parent_id:
+            parent_project = PROVIDERS.resource_api.get_project(parent_id)
+            if parent_project['is_domain']:
+                # if parent is a domain, the project is the top
+                top_id = project['id']
+                ids_tree[top_id] = {}
+            else:
+                # if parent is not a domain, the parent is the top
+                top_id = parent_project['id']
+                ids_tree[top_id] = {}
+            # then get the children
+            sub_projects = PROVIDERS.resource_api.list_projects_in_subtree(
+                project_id)
+            for sub_project in sub_projects:
+                ids_tree[top_id][sub_project['id']] = None
+            return ids_tree
+        else:
+            # if no parent_id, the project here is a domain
+            return None

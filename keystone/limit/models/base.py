@@ -66,3 +66,12 @@ class ModelBase(object):
 
         """
         raise exception.NotImplemented()  # pragma: no cover
+
+    def get_project_ids_tree(self, project_id):
+        """Get the project IDs tree which the specified project_id in.
+
+        :param project_id: the id of the project.
+        :type project_id: str.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
