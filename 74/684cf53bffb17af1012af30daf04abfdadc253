@@ -1,0 +1,11 @@
+Code-Review+2: Kristi Nikolla <kristi@nikolla.me>
+Code-Review+1: wangxiyuan <wangxiyuan@huawei.com>
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Workflow+1: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: sonu <sonu.bhumca11@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 29 Jun 2018 07:59:00 +0000
+Reviewed-on: https://review.openstack.org/554397
+Project: openstack/keystone
+Branch: refs/heads/master
