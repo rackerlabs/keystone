@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_c6fe9003",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-29T18:41:42Z",
+      "side": 1,
+      "message": "NIT: future patch, populate all the data if one is asked for. Limit the calls to \"providers\" where possible.\n\nThis applies to any lookups. Make the lookups and setting of values as smart as possible to limit the need to do PROVIDERS.xxxxx, it\u0027s a lot of business logic, but can be done behind the scenes in the future.",
+      "range": {
+        "startLine": 478,
+        "startChar": 0,
+        "endLine": 500,
+        "endChar": 29
+      },
+      "revId": "f35c8c100661c735c2c4a478c002697fd06fcadb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_66053c10",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-29T18:41:42Z",
+      "side": 1,
+      "message": "See above comment.",
+      "range": {
+        "startLine": 501,
+        "startChar": 0,
+        "endLine": 520,
+        "endChar": 42
+      },
+      "revId": "f35c8c100661c735c2c4a478c002697fd06fcadb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_86089827",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 815,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-29T18:41:42Z",
+      "side": 1,
+      "message": "Suggest (future patch) make the whole structure immutable once id and issued_at are set.",
+      "range": {
+        "startLine": 814,
+        "startChar": 0,
+        "endLine": 815,
+        "endChar": 34
+      },
+      "revId": "f35c8c100661c735c2c4a478c002697fd06fcadb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
