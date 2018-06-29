@@ -818,6 +818,18 @@ class LimitsTestCase(test_v3.RestfulTestCase):
         self.assertEqual(1, len(limits))
         self.assertEqual(self.project_id, limits[0]['project_id'])
 
+    def test_list_limit_with_show_hierarchy_filter_in_different_case(self):
+        # If the request is admin, the show_hierarchy filter must be specified
+        # together with project_id filter.
+        self.get(
+            '/limits?show_hierarchy=True',
+            expected_status=http_client.FORBIDDEN)
+
+        # The default flat limit model doesn't support show_hierarchy.
+        self.get(
+            '/limits?show_hierarchy=True&project_id=%s' % self.project_id,
+            expected_status=http_client.BAD_REQUEST)
+
     def test_show_limit(self):
         ref1 = unit.new_limit_ref(project_id=self.project_id,
                                   service_id=self.service_id,
@@ -1352,3 +1364,144 @@ class StrictTwoLevelLimitsTestCase(LimitsTestCase):
             '/limits/%s' % r.result['limits'][0]['id'],
             body={'limit': update_dict},
             expected_status=http_client.FORBIDDEN)
+
+    def test_list_limit_with_show_hierarchy_filter_in_different_case(self):
+        # Create two new projects, a 'service' role and a 'non-admin' role for
+        # test. The assignment is like:
+        #
+        # self.user -- admin -- self.project (default)
+        # self.user -- service -- new project two
+        # self.user -- non-admin -- new project three (parent is self.project)
+        project_2 = unit.new_project_ref(domain_id=self.domain_id)
+        project_2_id = project_2['id']
+        PROVIDERS.resource_api.create_project(project_2_id, project_2)
+        project_3 = unit.new_project_ref(domain_id=self.domain_id,
+                                         parent_id=self.project_id)
+        project_3_id = project_3['id']
+        PROVIDERS.resource_api.create_project(project_3_id, project_3)
+
+        role_2 = unit.new_role_ref(name='service')
+        role_2_id = role_2['id']
+        PROVIDERS.role_api.create_role(role_2_id, role_2)
+        role_3 = unit.new_role_ref(name='non-admin')
+        role_3_id = role_3['id']
+        PROVIDERS.role_api.create_role(role_3_id, role_3)
+
+        PROVIDERS.assignment_api.add_role_to_user_and_project(
+            self.user_id, project_2_id, role_2_id)
+        PROVIDERS.assignment_api.add_role_to_user_and_project(
+            self.user_id, project_3_id, role_3_id)
+
+        # a non-admin can't use show_hierarchy filter
+        self.get(
+            '/limits?show_hierarchy=True',
+            expected_status=http_client.FORBIDDEN,
+            auth=self._create_auth_body(project_3_id))
+
+        # If the request is admin, the show_hierarchy filter must be specified
+        # together with project_id filter.
+        self.get(
+            '/limits?show_hierarchy=True',
+            expected_status=http_client.FORBIDDEN)
+
+        # The specified project must be in a hierarchical project tree,
+        # otherwise 400 error will be raised.
+        self.get(
+            '/limits?show_hierarchy=True&project_id=%s' % project_2_id,
+            expected_status=http_client.BAD_REQUEST)
+        self.get(
+            '/limits?show_hierarchy=True&project_id=%s' % self.project_id,
+            expected_status=http_client.OK)
+
+        # If the request is service, or contains service token,  the project_id
+        # filter can be omitted.
+        service_token = self.get_requested_token(
+            self._create_auth_body(project_2_id))
+        self.get(
+            '/limits?show_hierarchy=True',
+            expected_status=http_client.OK,
+            auth=self._create_auth_body(project_3_id),
+            headers={'X-Service-Token': service_token})
+
+        # Though the user's role in project_2 is service, but project_2 is not
+        # in a hierarchical project tree. So 400 error returned.
+        self.get(
+            '/limits?show_hierarchy=True',
+            expected_status=http_client.BAD_REQUEST,
+            auth=self._create_auth_body(project_2_id))
+
+    def test_list_limit_with_show_hierarchy_filter(self):
+        # create two child projects for self.project for test.
+        #              parent,20
+        #             /         \
+        #         child_A,15    child_B,18
+        project_ref = {'project': {'name': 'parent', 'enabled': True}}
+        response = self.post('/projects', body=project_ref)
+        parent_project = response.json_body['project']
+
+        project_ref = {'project': {'name': 'child_project_A', 'enabled': True,
+                                   'parent_id': parent_project['id']}}
+        response = self.post('/projects', body=project_ref)
+        child_project_A = response.json_body['project']
+
+        project_ref = {'project': {'name': 'child_project_B', 'enabled': True,
+                                   'parent_id': parent_project['id']}}
+        response = self.post('/projects', body=project_ref)
+        child_project_B = response.json_body['project']
+
+        # for each project, create a limit.
+        parent_limit = unit.new_limit_ref(project_id=parent_project['id'],
+                                          service_id=self.service_id,
+                                          region_id=self.region_id,
+                                          resource_name='volume',
+                                          resource_limit=20)
+        child_limit_A = unit.new_limit_ref(project_id=child_project_A['id'],
+                                           service_id=self.service_id,
+                                           region_id=self.region_id,
+                                           resource_name='volume',
+                                           resource_limit=15)
+        child_limit_B = unit.new_limit_ref(project_id=child_project_B['id'],
+                                           service_id=self.service_id,
+                                           region_id=self.region_id,
+                                           resource_name='volume',
+                                           resource_limit=18)
+        self.post(
+            '/limits',
+            body={'limits': [parent_limit, child_limit_A, child_limit_B]},
+            expected_status=http_client.CREATED)
+
+        # then get the hierarchical tree.
+        ref = self.get(
+            '/limits?show_hierarchy=True&project_id=%s' % parent_project['id'],
+            expected_status=http_client.OK)
+        limit_tree = ref.result['limits']
+
+        # there is one hierarchical limit tree.
+        self.assertEqual(1, len(limit_tree))
+        # top is the parent
+        ref_parent_limit = limit_tree[0]
+        self.assertEqual(parent_project['id'], ref_parent_limit['project_id'])
+        for key in ['service_id', 'region_id', 'resource_name',
+                    'resource_limit']:
+            self.assertEqual(parent_limit[key], ref_parent_limit[key])
+        # the parent contains two children.
+        ref_child_limits = ref_parent_limit['limits']
+        self.assertEqual(2, len(ref_child_limits))
+        if ref_child_limits[0]['project_id'] == child_project_A['id']:
+            self.assertEqual(child_project_B['id'],
+                             ref_child_limits[1]['project_id'])
+            for key in ['service_id', 'region_id', 'resource_name',
+                        'resource_limit']:
+                self.assertEqual(child_limit_B[key], ref_child_limits[1][key])
+        else:
+            self.assertEqual(child_project_A['id'],
+                             ref_child_limits[1]['project_id'])
+            self.assertEqual(child_project_B['id'],
+                             ref_child_limits[0]['project_id'])
+            for key in ['service_id', 'region_id', 'resource_name',
+                        'resource_limit']:
+                self.assertEqual(child_limit_B[key], ref_child_limits[0][key])
+                self.assertEqual(child_limit_A[key], ref_child_limits[1][key])
+        # the child doesn't contain grandchild
+        self.assertEqual([], ref_child_limits[0]['limits'])
+        self.assertEqual([], ref_child_limits[1]['limits'])

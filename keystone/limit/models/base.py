@@ -69,3 +69,44 @@ class ModelBase(object):
 
         """
         raise NotImplementedError()
+
+    def get_project_ids_tree(self, project_id):
+        """Get the project IDs tree which the specified project_id in.
+
+        :param project_id: the id of the project.
+        :type project_id: str.
+
+        For a tree like::
+
+                      +-A-+
+                      |   |
+                      B +-C-+
+                        |   |
+                        D   E
+
+        The return dict is like::
+
+            {
+                "project_id": A['id'],
+                "limits": [
+                    {
+                        "project_id": B['id'],
+                        "limits": []
+                    },
+                    {
+                        "project_id": C['id'],
+                        "limits": [
+                            {
+                                "project_id": D['id'],
+                                "limits": []
+                            },
+                            {
+                                "project_id": E['id'],
+                                "limits": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        """
+        raise NotImplementedError()
