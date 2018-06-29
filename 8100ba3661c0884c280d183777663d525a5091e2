@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_174cb43d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-29T21:20:55Z",
+      "side": 1,
+      "message": "Thanks for breaking it down here.. I was about halfway through the patch making comments and then revisited this and it answered them.",
+      "revId": "8100ba3661c0884c280d183777663d525a5091e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_773de88c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-29T21:20:55Z",
+      "side": 1,
+      "message": "s/The//",
+      "range": {
+        "startLine": 17,
+        "startChar": 44,
+        "endLine": 17,
+        "endChar": 47
+      },
+      "revId": "8100ba3661c0884c280d183777663d525a5091e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_576b0c85",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-29T21:20:55Z",
+      "side": 1,
+      "message": "Just to clarify, this shouldn\u0027t really impact end users or deployers outside of just having to run a migration. That said, I don\u0027t think a release note is required in this specific case. But I\u0027m willing to be convinced otherwise if someone else things we should include one here.",
+      "revId": "8100ba3661c0884c280d183777663d525a5091e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_17b7d423",
+        "filename": "keystone/common/sql/contract_repo/versions/047_contract_expand_update_pk_for_unified_limit.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-06-29T21:20:55Z",
+      "side": 1,
+      "message": "We\u0027re doing this in the backend now, right?",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 23
+      },
+      "revId": "8100ba3661c0884c280d183777663d525a5091e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
