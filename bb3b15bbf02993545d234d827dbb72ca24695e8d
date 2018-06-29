@@ -16,6 +16,24 @@
       "revId": "bb3b15bbf02993545d234d827dbb72ca24695e8d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_a380264b",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-06-29T18:05:18Z",
+      "side": 1,
+      "message": "yeah, we can change this to flask.g in a later patch.",
+      "parentUuid": "5f7c97a3_efd38a36",
+      "revId": "bb3b15bbf02993545d234d827dbb72ca24695e8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
