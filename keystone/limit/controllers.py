@@ -102,7 +102,7 @@ class LimitV3(controller.V3Controller):
         return LimitV3.wrap_member(request.context_dict, ref)
 
     @controller.filterprotected('service_id', 'region_id', 'resource_name',
-                                'project_id')
+                                'project_id', 'show_hierarchy')
     def list_limits(self, request, filters):
         hints = LimitV3.build_driver_hints(request, filters)
         # TODO(wxy): Add system-scope check. If the request is system-scoped,
@@ -113,6 +113,11 @@ class LimitV3(controller.V3Controller):
             if project_id_filter and not context.service_token:
                 action = _("The request should be admin or service when"
                            "project_id filter is used.")
+                raise exception.Forbidden(action=action)
+            show_hierarchy = hints.get_exact_filter_by_name('show_hierarchy')
+            if show_hierarchy and not context.service_token:
+                action = _("The request should be admin or service when"
+                           "show_hierarchy filter is used.")
                 raise exception.Forbidden(action=action)
             project_id = context.project_id
             if project_id:
