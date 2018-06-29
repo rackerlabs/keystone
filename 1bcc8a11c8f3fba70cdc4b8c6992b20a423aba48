@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_df041c17",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 852,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-06-29T15:15:11Z",
+      "side": 1,
+      "message": "Cool!",
+      "range": {
+        "startLine": 851,
+        "startChar": 8,
+        "endLine": 852,
+        "endChar": 55
+      },
+      "revId": "1bcc8a11c8f3fba70cdc4b8c6992b20a423aba48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_bf6280d8",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 754,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-06-29T15:15:11Z",
+      "side": 1,
+      "message": "Let\u0027s see if I understood correctly. The KeystoneFlaskTestClient will raise an AssertionError on 418, but because here we\u0027re using the in-module TestClient who doesn\u0027t raise, therefore we actually get returned a 418 rather than an AssertionError?",
+      "range": {
+        "startLine": 754,
+        "startChar": 8,
+        "endLine": 754,
+        "endChar": 44
+      },
+      "revId": "1bcc8a11c8f3fba70cdc4b8c6992b20a423aba48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_04a00942",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 759,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-06-29T15:15:11Z",
+      "side": 1,
+      "message": "I\u0027d like to see the 418 value stored in a global var and then referenced from there, both here and in core.py, can be done in a follow up since this review stack is pretty long.",
+      "range": {
+        "startLine": 759,
+        "startChar": 25,
+        "endLine": 759,
+        "endChar": 28
+      },
+      "revId": "1bcc8a11c8f3fba70cdc4b8c6992b20a423aba48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
