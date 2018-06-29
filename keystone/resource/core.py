@@ -523,9 +523,11 @@ class Manager(manager.Manager):
         # Check if project_id exists
         self.get_project(project_id)
 
-    def list_project_parents(self, project_id, user_id=None):
+    def list_project_parents(self, project_id, user_id=None,
+                             include_limits=False):
         self._assert_valid_project_id(project_id)
-        parents = self.driver.list_project_parents(project_id)
+        parents = self.driver.list_project_parents(
+            project_id, include_limits=include_limits)
         # If a user_id was provided, the returned list should be filtered
         # against the projects this user has access to.
         if user_id:

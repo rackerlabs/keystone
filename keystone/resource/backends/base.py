@@ -131,11 +131,12 @@ class ResourceDriverBase(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def list_project_parents(self, project_id):
+    def list_project_parents(self, project_id, include_limits=False):
         """List all parents from a project by its ID.
 
         :param project_id: the driver will list the parents of this
                            project.
+        :param include_limits: whether include the project limit.
 
         :returns: a list of project_refs or an empty list.
         :raises keystone.exception.ProjectNotFound: if project_id does not
@@ -145,11 +146,12 @@ class ResourceDriverBase(object):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def list_projects_in_subtree(self, project_id):
+    def list_projects_in_subtree(self, project_id, include_limits=False):
         """List all projects in the subtree of a given project.
 
         :param project_id: the driver will get the subtree under
                            this project.
+        :param include_limits: whether include the project limit.
 
         :returns: a list of project_refs or an empty list
         :raises keystone.exception.ProjectNotFound: if project_id does not

@@ -126,7 +126,7 @@ class Resource(base.ResourceDriverBase):
         project_refs = query.all()
         return [project_ref.to_dict() for project_ref in project_refs]
 
-    def list_projects_in_subtree(self, project_id):
+    def list_projects_in_subtree(self, project_id, include_limits=False):
         with sql.session_for_read() as session:
             children = self._get_children(session, [project_id])
             subtree = []
@@ -147,7 +147,7 @@ class Resource(base.ResourceDriverBase):
                 children = self._get_children(session, children_ids)
             return subtree
 
-    def list_project_parents(self, project_id):
+    def list_project_parents(self, project_id, include_limits=False):
         with sql.session_for_read() as session:
             project = self._get_project(session, project_id).to_dict()
             parents = []
