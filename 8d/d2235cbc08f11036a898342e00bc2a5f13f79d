@@ -1,0 +1,14 @@
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Code-Review+1: wangxiyuan <wangxiyuan@huawei.com>
+Code-Review+1: sonu <sonu.bhumca11@gmail.com>
+Code-Review+1: Jean-Philippe Evrard <jean-philippe@evrard.me>
+Code-Review+1: Jesse Pretorius (odyssey4me) <jesse.pretorius@rackspace.co.uk>
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Workflow+1: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: Kevin Carter (cloudnull) <kevin@cloudnull.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 29 Jun 2018 07:59:02 +0000
+Reviewed-on: https://review.openstack.org/574414
+Project: openstack/keystone
+Branch: refs/heads/master
