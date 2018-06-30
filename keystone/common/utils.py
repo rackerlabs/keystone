@@ -160,6 +160,8 @@ def auth_str_equal(provided, known):
     return (p_len == k_len) & (result == 0)
 
 
+# NOTE(gagehugo): This is used for remote debugging and
+# the values are set within keystone's config file.
 def setup_remote_pydev_debug():
     if CONF.pydev_debug_host and CONF.pydev_debug_port:
         try:
