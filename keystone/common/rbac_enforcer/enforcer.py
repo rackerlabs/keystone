@@ -283,7 +283,12 @@ class RBACEnforcer(object):
                         'as unauthorized, this is a programming error and a '
                         'bug should be filed with as much information about '
                         'the request that caused this as possible.')
-            raise exception.Unauthorized(
+            # NOTE(morgan): While this is an internal error, a 500 is never
+            # desirable, we have handled the case and the most appropriate
+            # response here is to issue a 403 (FORBIDDEN) to any API calling
+            # enforce_call with an inappropriate action/name to look up the
+            # policy rule.
+            raise exception.ForbiddenAction(
                 message=_(
                     'Internal RBAC enforcement error, no rule/action name to '
                     'lookup'))
