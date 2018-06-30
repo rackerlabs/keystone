@@ -16,6 +16,24 @@
       "revId": "b5fd1105f55e24b0e53f1a485df6c8b7d2933cfe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_29b71024",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-06-30T02:40:45Z",
+      "side": 1,
+      "message": "the tuple (service_id, resource_name, region_id) in registered limit is unique, i.e. reg_limits only contains one obj absolutely",
+      "parentUuid": "5f7c97a3_d7b71cd7",
+      "revId": "b5fd1105f55e24b0e53f1a485df6c8b7d2933cfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
