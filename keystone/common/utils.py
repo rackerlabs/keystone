@@ -160,27 +160,6 @@ def auth_str_equal(provided, known):
     return (p_len == k_len) & (result == 0)
 
 
-def setup_remote_pydev_debug():
-    if CONF.pydev_debug_host and CONF.pydev_debug_port:
-        try:
-            try:
-                from pydev import pydevd
-            except ImportError:
-                import pydevd
-
-            pydevd.settrace(CONF.pydev_debug_host,
-                            port=CONF.pydev_debug_port,
-                            stdoutToServer=True,
-                            stderrToServer=True)
-            return True
-        except Exception:
-            LOG.exception(
-                'Error setting up the debug environment. Verify that the '
-                'option --debug-url has the format <host>:<port> and that a '
-                'debugger processes is listening on that port.')
-            raise
-
-
 def get_unix_user(user=None):
     """Get the uid and user name.
 
