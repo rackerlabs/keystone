@@ -726,6 +726,104 @@ class LimitsTestCase(test_v3.RestfulTestCase):
                     'resource_limit']:
             self.assertEqual(limits[0][key], ref1[key])
 
+    def _create_auth_body(self, project_id):
+        auth = {
+            'auth': {
+                'identity': {
+                    'methods': ['password'],
+                    'password': {
+                        'user': {
+                            'name': self.user['name'],
+                            'password': self.user['password'],
+                            'domain': {
+                                'id': self.user['domain_id']
+                            }
+                        }
+                    }
+                },
+                'scope': {
+                    'project': {
+                        'id': project_id,
+                    }
+                }
+            }
+        }
+        return auth
+
+    def test_list_limit_with_project_id_filter(self):
+
+        # Create two new projects, a 'service' role and a 'non-admin' role for
+        # test. The assignment is like:
+        #
+        # self.user -- admin -- self.project (default)
+        # self.user -- service -- new project two
+        # self.user -- non-admin -- new project three
+        project_2 = unit.new_project_ref(domain_id=self.domain_id)
+        project_2_id = project_2['id']
+        PROVIDERS.resource_api.create_project(project_2_id, project_2)
+        project_3 = unit.new_project_ref(domain_id=self.domain_id)
+        project_3_id = project_3['id']
+        PROVIDERS.resource_api.create_project(project_3_id, project_3)
+
+        role_2 = unit.new_role_ref(name='service')
+        role_2_id = role_2['id']
+        PROVIDERS.role_api.create_role(role_2_id, role_2)
+        role_3 = unit.new_role_ref(name='non-admin')
+        role_3_id = role_3['id']
+        PROVIDERS.role_api.create_role(role_3_id, role_3)
+
+        PROVIDERS.assignment_api.add_role_to_user_and_project(
+            self.user_id, project_2_id, role_2_id)
+        PROVIDERS.assignment_api.add_role_to_user_and_project(
+            self.user_id, project_3_id, role_3_id)
+
+        # create two limit in different projects for test.
+        ref1 = unit.new_limit_ref(project_id=self.project_id,
+                                  service_id=self.service_id,
+                                  region_id=self.region_id,
+                                  resource_name='volume')
+        ref2 = unit.new_limit_ref(project_id=project_2_id,
+                                  service_id=self.service_id2,
+                                  resource_name='snapshot')
+        self.post(
+            '/limits',
+            body={'limits': [ref1, ref2]},
+            expected_status=http_client.CREATED)
+
+        # admin can use project_id filter
+        r = self.get(
+            '/limits?project_id=%s' % self.project_id,
+            expected_status=http_client.OK)
+        limits = r.result['limits']
+        self.assertEqual(1, len(limits))
+        self.assertEqual(self.project_id, limits[0]['project_id'])
+
+        # a service can use project_id filter
+        r = self.get(
+            '/limits?project_id=%s' % self.project_id,
+            expected_status=http_client.OK,
+            auth=self._create_auth_body(project_2_id))
+        limits = r.result['limits']
+        self.assertEqual(1, len(limits))
+        self.assertEqual(self.project_id, limits[0]['project_id'])
+
+        # a non-admin can't use project_id filter
+        self.get(
+            '/limits?project_id=%s' % self.project_id,
+            expected_status=http_client.FORBIDDEN,
+            auth=self._create_auth_body(project_3_id))
+
+        # a non-admin but with service token can use project_id filter
+        service_token = self.get_requested_token(
+            self._create_auth_body(project_2_id))
+        self.get(
+            '/limits?project_id=%s' % self.project_id,
+            expected_status=http_client.OK,
+            auth=self._create_auth_body(project_3_id),
+            headers={'X-Service-Token': service_token})
+        self.assertEqual(1, len(limits))
+        self.assertEqual(self.project_id, limits[0]['project_id'])
+
     def test_show_limit(self):
         ref1 = unit.new_limit_ref(project_id=self.project_id,
                                   service_id=self.service_id,
