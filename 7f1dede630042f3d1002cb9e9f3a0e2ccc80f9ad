@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_031e9f0c",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-02T14:12:54Z",
+      "side": 1,
+      "message": "Technically, the admin check is happening in policy, right? A deployment *could* change that to not require and administrator. Since this check is decoupled from that one, we should make this error message specific to service accounts.\n\nAt the same time, this is only going to get this far if the client passes the policy check.",
+      "revId": "7f1dede630042f3d1002cb9e9f3a0e2ccc80f9ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
