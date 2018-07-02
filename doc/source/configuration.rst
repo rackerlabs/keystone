@@ -77,7 +77,7 @@ Keystone supports two means of defining the services, one is the catalog
 template, as described above - in which case everything is detailed in that
 template.
 
-The other is a SQL backend for the catalog service, in which case after
+The other is an SQL backend for the catalog service, in which case after
 Keystone is online, you need to add the services to the catalog:
 
 .. code-block:: bash
@@ -420,7 +420,7 @@ Preparing your deployment
 Step 1: Configure keystone.conf
 -------------------------------
 
-Ensure that your ``keystone.conf`` is configured to use a SQL driver:
+Ensure that your ``keystone.conf`` is configured to use an SQL driver:
 
 .. code-block:: ini
 
