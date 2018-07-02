@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_a126c2ca",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-07-02T16:15:49Z",
+      "side": 1,
+      "message": "initial implementation of what?  Remember, this one line is what shows in history.  Make it expressive.",
+      "revId": "f9da66865e4205dbb21be38671316fe8754fd52b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_611aea7c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-07-02T16:15:49Z",
+      "side": 1,
+      "message": "maybe make this the summary line?",
+      "revId": "f9da66865e4205dbb21be38671316fe8754fd52b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
