@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_79e5c43d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-02T15:16:52Z",
+      "side": 0,
+      "message": "Looks like these are still defined:\n\nhttps://git.openstack.org/cgit/openstack/keystone/tree/keystone/conf/__init__.py#n126\n\nI\u0027m not sure on this history here, but these might need to be deprecated if they aren\u0027t already before we can remove this.",
+      "revId": "4635144083def1b30f275802e774e06065bf1b82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
