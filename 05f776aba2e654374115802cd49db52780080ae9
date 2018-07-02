@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_ca2193b7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-07-02T18:59:07Z",
+      "side": 1,
+      "message": "why? what evidences do you have regarding this claim?",
+      "range": {
+        "startLine": 13,
+        "startChar": 51,
+        "endLine": 14,
+        "endChar": 22
+      },
+      "revId": "05f776aba2e654374115802cd49db52780080ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_8a563b2a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-07-02T18:59:07Z",
+      "side": 1,
+      "message": "foreign",
+      "range": {
+        "startLine": 15,
+        "startChar": 15,
+        "endLine": 15,
+        "endChar": 23
+      },
+      "revId": "05f776aba2e654374115802cd49db52780080ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_aa51b732",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-07-02T18:59:07Z",
+      "side": 1,
+      "message": "foreign",
+      "range": {
+        "startLine": 16,
+        "startChar": 16,
+        "endLine": 16,
+        "endChar": 24
+      },
+      "revId": "05f776aba2e654374115802cd49db52780080ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_88c3ac06",
         "filename": "/COMMIT_MSG",
         "patchSetId": 13
