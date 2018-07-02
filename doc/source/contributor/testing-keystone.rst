@@ -149,7 +149,7 @@ version control:
     --url=sqlite:///test.db \
     --repository=keystone/common/sql/migrate_repo/
 
-This command references to a SQLite database (test.db) to be used. Depending on
+This command references to an SQLite database (test.db) to be used. Depending on
 the migration, this command alone does not make assertions as to the integrity
 of your data during migration.
 

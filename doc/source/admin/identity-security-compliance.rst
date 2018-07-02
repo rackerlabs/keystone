@@ -130,7 +130,7 @@ setting the ``password_expires_days``:
 Once set, any new password changes have an expiration date based on the
 date/time of the password change plus the number of days defined here. Existing
 passwords will not be impacted. If you want existing passwords to have an
-expiration date, you would need to run a SQL script against the password table
+expiration date, you would need to run an SQL script against the password table
 in the database to update the expires_at column.
 
 If there exists a user whose password you do not want to expire, keystone
