@@ -16,6 +16,24 @@
       "revId": "4635144083def1b30f275802e774e06065bf1b82",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_39242c60",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-07-02T15:21:26Z",
+      "side": 0,
+      "message": "Ah ok, maybe a note here saying this is still used would be better then.",
+      "parentUuid": "5f7c97a3_79e5c43d",
+      "revId": "4635144083def1b30f275802e774e06065bf1b82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
