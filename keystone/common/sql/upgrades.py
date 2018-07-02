@@ -87,11 +87,11 @@ def get_constraints_names(table, column_name):
 
 #  remove_constraints and add_constraints both accept a list of dictionaries
 #  that contain:
-#  {'table': a sqlalchemy table. The constraint is added to dropped from
+#  {'table': an sqlalchemy table. The constraint is added to dropped from
 #           this table.
 #  'fk_column': the name of a column on the above table,  The constraint
 #               is added to or dropped from this column
-#  'ref_column':a sqlalchemy column object.  This is the reference column
+#  'ref_column':an sqlalchemy column object.  This is the reference column
 #               for the constraint.
 def remove_constraints(constraints):
     for constraint_def in constraints:

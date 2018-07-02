@@ -318,7 +318,7 @@ class IdentityTestFilteredCase(filtering.FilterTests,
 
         self.assertEqual(0, len(r.result.get('users')))
 
-        # See if we can add a SQL command...use the group table instead of the
+        # See if we can add an SQL command...use the group table instead of the
         # user table since 'user' is reserved word for SQLAlchemy.
         group = unit.new_group_ref(domain_id=self.domainB['id'])
         group = PROVIDERS.identity_api.create_group(group)
