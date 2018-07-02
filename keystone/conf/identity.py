@@ -50,7 +50,7 @@ By default, domain-specific configuration data is read from files in the
 directory identified by `[identity] domain_config_dir`. Enabling this
 configuration option allows you to instead manage domain-specific
 configurations through the API, which are then persisted in the backend
-(typically, a SQL database), rather than using configuration files on disk.
+(typically, an SQL database), rather than using configuration files on disk.
 """))
 
 domain_config_dir = cfg.StrOpt(

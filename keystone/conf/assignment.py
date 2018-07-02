@@ -20,7 +20,7 @@ driver = cfg.StrOpt(
     default='sql',
     help=utils.fmt("""
 Entry point for the assignment backend driver (where role assignments are
-stored) in the `keystone.assignment` namespace. Only a SQL driver is supplied
+stored) in the `keystone.assignment` namespace. Only an SQL driver is supplied
 by keystone itself. Unless you are writing proprietary drivers for keystone,
 you do not need to set this option.
 """))
