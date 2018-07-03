@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_bd980869",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-03T19:27:49Z",
+      "side": 1,
+      "message": "Doesn\u0027t this go against the blanket default an operator can define? I think they can say \"yep, allow undefined operations through\" or \"no, deny anything that you\u0027ve never seen before\".\n\nObviously the first seems like a bad idea, but this breaks this, doesn\u0027t it?",
+      "range": {
+        "startLine": 284,
+        "startChar": 25,
+        "endLine": 284,
+        "endChar": 47
+      },
+      "revId": "6d1456061defc016529b3c7c89edb7618b117267",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_fd89a024",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-03T19:27:49Z",
+      "side": 1,
+      "message": "I\u0027m being verbose here, but nothing is use enforce_call yet - so technically this hasn\u0027t leaked through our API yet, right? Thus, the change should be ok?",
+      "revId": "6d1456061defc016529b3c7c89edb7618b117267",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
