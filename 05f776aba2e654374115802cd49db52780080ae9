@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_9e143843",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-03T02:22:37Z",
+      "side": 1,
+      "message": "This is a suggestion from morgan: http://eavesdrop.openstack.org/meetings/keystone/2018/keystone.2018-06-19-16.00.log.html#l-224\n\nI\u0027m not professional at DB, after doing some research, it\u0027s seem that \"uuid vs int\" does not has a clear conclusion in some place.\nhere is one of the blog: https://tomharrisonjr.com/uuid-or-guid-as-primary-keys-be-careful-7b2aa3dcb439\n\nAnd in OpenStack, Nova, Cinder use int primary key for db as well.",
+      "parentUuid": "5f7c97a3_ca2193b7",
+      "range": {
+        "startLine": 13,
+        "startChar": 51,
+        "endLine": 14,
+        "endChar": 22
+      },
+      "revId": "05f776aba2e654374115802cd49db52780080ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_8a563b2a",
         "filename": "/COMMIT_MSG",
         "patchSetId": 13
