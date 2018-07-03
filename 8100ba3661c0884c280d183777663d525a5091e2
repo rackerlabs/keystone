@@ -94,6 +94,30 @@
       "revId": "8100ba3661c0884c280d183777663d525a5091e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_3ba9687b",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-03T14:34:21Z",
+      "side": 0,
+      "message": "How did that ever not cause an error? weird.",
+      "parentUuid": "5f7c97a3_d5a7eabb",
+      "range": {
+        "startLine": 431,
+        "startChar": 13,
+        "endLine": 431,
+        "endChar": 15
+      },
+      "revId": "8100ba3661c0884c280d183777663d525a5091e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
