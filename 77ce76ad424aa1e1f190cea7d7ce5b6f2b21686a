@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_c52e4aaa",
+        "filename": "keystone/tests/unit/server/test_keystone_flask.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-03T20:40:22Z",
+      "side": 1,
+      "message": "the goal here is totally synthetic test of the pipeline. I can change what the rule is, but the goal is to not lean a pure unit test on anything that might change (unrelated). This is why both in enforcer and here we created and registered new defaults, the only way the rule fails because the rule changed is if the test rule is changed without the test changing (or vice-versa).",
+      "parentUuid": "5f7c97a3_3da39845",
+      "range": {
+        "startLine": 65,
+        "startChar": 19,
+        "endLine": 65,
+        "endChar": 36
+      },
+      "revId": "77ce76ad424aa1e1f190cea7d7ce5b6f2b21686a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_3d2638cd",
         "filename": "keystone/tests/unit/server/test_keystone_flask.py",
         "patchSetId": 8
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_c8fc1f0e",
+        "filename": "keystone/tests/unit/server/test_keystone_flask.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-03T20:40:22Z",
+      "side": 1,
+      "message": "Responded in the previous patch.",
+      "parentUuid": "5f7c97a3_3d2638cd",
+      "range": {
+        "startLine": 138,
+        "startChar": 8,
+        "endLine": 139,
+        "endChar": 51
+      },
+      "revId": "77ce76ad424aa1e1f190cea7d7ce5b6f2b21686a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_c5fc0a0e",
         "filename": "keystone/tests/unit/server/test_keystone_flask.py",
         "patchSetId": 8
@@ -59,6 +107,24 @@
       "writtenOn": "2018-07-03T20:01:16Z",
       "side": 1,
       "message": "This is duplicated from somewhere else, yeah?\n\nIt might pay to may this generalized (to an extent) and put it somewhere that we can re-use it. I don\u0027t think it needs to be a class level model, just module containing utilities might be sufficient instead of having to incorporate all this kind of stuff in to the class inheritance.",
+      "revId": "77ce76ad424aa1e1f190cea7d7ce5b6f2b21686a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e5334612",
+        "filename": "keystone/tests/unit/server/test_keystone_flask.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-03T20:40:22Z",
+      "side": 1,
+      "message": "Some squashing down into the rest test case will happen. I expect to have some of that in future tests, trying to keep things isolated at the moment.\n\nThe duplication you saw was in the enforcer test.",
+      "parentUuid": "5f7c97a3_c5fc0a0e",
       "revId": "77ce76ad424aa1e1f190cea7d7ce5b6f2b21686a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
