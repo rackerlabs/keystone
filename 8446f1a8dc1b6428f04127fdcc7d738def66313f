@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_92f508cf",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 15699
+      },
+      "writtenOn": "2018-07-03T08:33:25Z",
+      "side": 1,
+      "message": "Seems, not an  appropriate change. As it is pronounced as \n\u0027sequel\u0027. So, \u0027a SQL\u0027 is the correct way.\n\nlink: https://en.wikipedia.org/wiki/SQL,\nhttps://docs.oracle.com/database/121/CNCPT/sqllangu.htm#CNCPT015",
+      "range": {
+        "startLine": 133,
+        "startChar": 39,
+        "endLine": 133,
+        "endChar": 41
+      },
+      "revId": "8446f1a8dc1b6428f04127fdcc7d738def66313f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
