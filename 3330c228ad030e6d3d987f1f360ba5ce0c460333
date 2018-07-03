@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_85f93283",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-03T20:20:22Z",
+      "side": 1,
+      "message": "Right, if you can divine the instance being called via something like:\n\n    func()\n\nNow, you do have full access to flask.g and flask.request at this point.",
+      "parentUuid": "5f7c97a3_a2d9c556",
+      "range": {
+        "startLine": 132,
+        "startChar": 7,
+        "endLine": 132,
+        "endChar": 54
+      },
+      "revId": "3330c228ad030e6d3d987f1f360ba5ce0c460333",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_028f5922",
         "filename": "keystone/server/flask/common.py",
         "patchSetId": 5
@@ -36,6 +60,24 @@
       "writtenOn": "2018-07-03T18:39:03Z",
       "side": 1,
       "message": "If this causes keystone to fail, should it be a Programming Error? Do we ever expect operators to see this?",
+      "revId": "3330c228ad030e6d3d987f1f360ba5ce0c460333",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_253ffe22",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-03T20:20:22Z",
+      "side": 1,
+      "message": "It should be impossible for this to pass gate/check if this is ever hit -- OR it\u0027s someone making changes directly to the code base [for local deployment].\n\nIt really is meant to be a development tool, we can change it to \"PROGRAMMING ERROR:\" in a future path easily.",
+      "parentUuid": "5f7c97a3_028f5922",
       "revId": "3330c228ad030e6d3d987f1f360ba5ce0c460333",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
