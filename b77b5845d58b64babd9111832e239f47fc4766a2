@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_a2e6a5af",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 854,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-03T18:52:28Z",
+      "side": 1,
+      "message": "oh - nice.. thanks for fixing this.",
+      "range": {
+        "startLine": 854,
+        "startChar": 43,
+        "endLine": 854,
+        "endChar": 44
+      },
+      "revId": "b77b5845d58b64babd9111832e239f47fc4766a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
