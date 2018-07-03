@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_221e15bb",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-03T18:51:54Z",
+      "side": 1,
+      "message": "I think in the existing implementation of self.get/post/put/patch/delete, we actually fit the default to the appropriate HTTP method (e.g. 200 for GET, 201 for post, 204 for delete, etc..)\n\nIt looks like this is going to default to 200 for everything, not just self.get()\n\nIt would be nice to maintain that otherwise we might have to go through and add it.",
+      "range": {
+        "startLine": 494,
+        "startChar": 66,
+        "endLine": 494,
+        "endChar": 69
+      },
+      "revId": "1bcc8a11c8f3fba70cdc4b8c6992b20a423aba48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_df041c17",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 7
@@ -18,6 +41,52 @@
         "startChar": 8,
         "endLine": 852,
         "endChar": 55
+      },
+      "revId": "1bcc8a11c8f3fba70cdc4b8c6992b20a423aba48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e2025d72",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 854,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-03T18:51:54Z",
+      "side": 1,
+      "message": "nit: missing a closing ]?",
+      "range": {
+        "startLine": 854,
+        "startChar": 44,
+        "endLine": 854,
+        "endChar": 45
+      },
+      "revId": "1bcc8a11c8f3fba70cdc4b8c6992b20a423aba48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e227bd1d",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 864,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-03T18:51:54Z",
+      "side": 1,
+      "message": "nit: we usually rely on http_client from six instead of setting these ourselves.",
+      "range": {
+        "startLine": 864,
+        "startChar": 35,
+        "endLine": 864,
+        "endChar": 38
       },
       "revId": "1bcc8a11c8f3fba70cdc4b8c6992b20a423aba48",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
