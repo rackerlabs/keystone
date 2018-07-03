@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_0828d795",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-03T21:58:38Z",
+      "side": 1,
+      "message": "Ultra short commit messages are a slight pet peeve of mine, even if all the important information is in the spec. Could you please elaborate on what parts of keystone was touched here, and any design choices you made or weirdness that needs explaining? Just having some context set up for what I\u0027m supposed to be reviewing is helpful as a reviewer, even if I\u0027m already familiar with the spec.",
+      "revId": "f5d4af18098a286cbb9b9c44586635b455dff084",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
