@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_c31f39b6",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-03T01:57:46Z",
+      "side": 1,
+      "message": "Even better - it would be good to investigate how developers can use this and add that to our contributor guide.",
+      "revId": "5064b8db2150e666f2ddb2219ff804baa24db8be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
