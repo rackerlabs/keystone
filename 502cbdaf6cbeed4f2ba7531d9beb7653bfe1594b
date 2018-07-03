@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_e5eb460f",
+        "filename": "keystone/common/rbac_enforcer/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-03T20:03:01Z",
+      "side": 1,
+      "message": "Hmm - we typically don\u0027t do this... is there anyway we can keep the module level namespacing?",
+      "range": {
+        "startLine": 13,
+        "startChar": 51,
+        "endLine": 13,
+        "endChar": 63
+      },
+      "revId": "502cbdaf6cbeed4f2ba7531d9beb7653bfe1594b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
