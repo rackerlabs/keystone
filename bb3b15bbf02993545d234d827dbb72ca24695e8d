@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_05f7625c",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-03T20:28:59Z",
+      "side": 1,
+      "message": "YEs, already fixed in a followup..",
+      "parentUuid": "5f7c97a3_6285edad",
+      "range": {
+        "startLine": 286,
+        "startChar": 12,
+        "endLine": 289,
+        "endChar": 30
+      },
+      "revId": "bb3b15bbf02993545d234d827dbb72ca24695e8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_efd38a36",
         "filename": "keystone/server/flask/common.py",
         "patchSetId": 23
@@ -149,6 +173,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_25f4de54",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-03T20:28:59Z",
+      "side": 1,
+      "message": "Will fix in a followup.",
+      "parentUuid": "5f7c97a3_6273ade9",
+      "revId": "bb3b15bbf02993545d234d827dbb72ca24695e8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_c213a164",
         "filename": "keystone/server/flask/common.py",
         "patchSetId": 23
@@ -160,6 +202,24 @@
       "writtenOn": "2018-07-03T19:17:10Z",
       "side": 1,
       "message": "As we collect more before and after functions, I wouldn\u0027t be opposed to putting them in a separate module to keep from cluttering this one. It should help keep their purpose clear based on their location and naming convention, too.\n\nSomething to do in a follow up I suppose.\n\n\nMaybe in a place like:\n\n  keystone/server/flask/before_check_functions.py\n  keystone/server/flask/after_check_functions.py",
+      "revId": "bb3b15bbf02993545d234d827dbb72ca24695e8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_8598521a",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-03T20:28:59Z",
+      "side": 1,
+      "message": "I expect there will not be a lot of \"global\" functions, but if we do, sure we can easily break them out.",
+      "parentUuid": "5f7c97a3_c213a164",
       "revId": "bb3b15bbf02993545d234d827dbb72ca24695e8d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
