@@ -69,6 +69,30 @@
       "revId": "fb0299f661f590bcaddcb3d363fbec4ea6df7548",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_a85a037f",
+        "filename": "keystone/tests/unit/common/test_rbac_enforcer.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 574,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-03T21:34:11Z",
+      "side": 1,
+      "message": "Sure - that works. Just so long as we don\u0027t have to do a huge refactor to specify expected_status_code\u003d204 for every self.delete()",
+      "parentUuid": "5f7c97a3_e5c026e3",
+      "range": {
+        "startLine": 574,
+        "startChar": 51,
+        "endLine": 574,
+        "endChar": 75
+      },
+      "revId": "fb0299f661f590bcaddcb3d363fbec4ea6df7548",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
