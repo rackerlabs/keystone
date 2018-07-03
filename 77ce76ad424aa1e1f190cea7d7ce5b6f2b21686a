@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_3da39845",
+        "filename": "keystone/tests/unit/server/test_keystone_flask.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-03T20:01:16Z",
+      "side": 1,
+      "message": "I\u0027m not sure how big of a deal this is, but I was expecting this to be something like `identity:create_arguments`, just thinking about it in terms of what we have today. Unless that\u0027s not the goal?",
+      "range": {
+        "startLine": 65,
+        "startChar": 19,
+        "endLine": 65,
+        "endChar": 36
+      },
+      "revId": "77ce76ad424aa1e1f190cea7d7ce5b6f2b21686a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_3d2638cd",
+        "filename": "keystone/tests/unit/server/test_keystone_flask.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-03T20:01:16Z",
+      "side": 1,
+      "message": "Same comment here as in a previous patch that needed specific policy values.",
+      "range": {
+        "startLine": 138,
+        "startChar": 8,
+        "endLine": 139,
+        "endChar": 51
+      },
+      "revId": "77ce76ad424aa1e1f190cea7d7ce5b6f2b21686a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_c5fc0a0e",
+        "filename": "keystone/tests/unit/server/test_keystone_flask.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-03T20:01:16Z",
+      "side": 1,
+      "message": "This is duplicated from somewhere else, yeah?\n\nIt might pay to may this generalized (to an extent) and put it somewhere that we can re-use it. I don\u0027t think it needs to be a class level model, just module containing utilities might be sufficient instead of having to incorporate all this kind of stuff in to the class inheritance.",
+      "revId": "77ce76ad424aa1e1f190cea7d7ce5b6f2b21686a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
