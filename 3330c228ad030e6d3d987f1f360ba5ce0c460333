@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_a2d9c556",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-03T18:39:03Z",
+      "side": 1,
+      "message": "So these methods must use class or instance attributes if they need anything?",
+      "range": {
+        "startLine": 132,
+        "startChar": 7,
+        "endLine": 132,
+        "endChar": 54
+      },
+      "revId": "3330c228ad030e6d3d987f1f360ba5ce0c460333",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_028f5922",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-03T18:39:03Z",
+      "side": 1,
+      "message": "If this causes keystone to fail, should it be a Programming Error? Do we ever expect operators to see this?",
+      "revId": "3330c228ad030e6d3d987f1f360ba5ce0c460333",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
