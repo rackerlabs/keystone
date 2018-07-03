@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_2577fed3",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-03T20:34:55Z",
+      "side": 1,
+      "message": "So, First of all, this indicative of a programming error, we define all default rules for all actions in code now.\n\nPrevious to policy-in-code, this feature was more relevant (and still just as dumb to allow keystone to be permissive).\n\nI\u0027ve not taken anything away here, I\u0027ve simply doubled down on the policy-defined-in-code. If it isn\u0027t defined as an action, it\u0027s a 403, you can\u0027t perform an unknown action against keystone.\n\nYep, I\u0027m willing to be more opinionated here.",
+      "parentUuid": "5f7c97a3_bd980869",
+      "range": {
+        "startLine": 284,
+        "startChar": 25,
+        "endLine": 284,
+        "endChar": 47
+      },
+      "revId": "6d1456061defc016529b3c7c89edb7618b117267",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_fd89a024",
         "filename": "keystone/common/rbac_enforcer/enforcer.py",
         "patchSetId": 5
@@ -36,6 +60,24 @@
       "writtenOn": "2018-07-03T19:27:49Z",
       "side": 1,
       "message": "I\u0027m being verbose here, but nothing is use enforce_call yet - so technically this hasn\u0027t leaked through our API yet, right? Thus, the change should be ok?",
+      "revId": "6d1456061defc016529b3c7c89edb7618b117267",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_c5496a8e",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-03T20:34:55Z",
+      "side": 1,
+      "message": "Correct. Nothing has used enforce call (except tests of enforce_call)",
+      "parentUuid": "5f7c97a3_fd89a024",
       "revId": "6d1456061defc016529b3c7c89edb7618b117267",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
