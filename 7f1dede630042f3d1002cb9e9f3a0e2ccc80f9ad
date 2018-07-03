@@ -16,6 +16,24 @@
       "revId": "7f1dede630042f3d1002cb9e9f3a0e2ccc80f9ad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f56f86c1",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-03T09:02:08Z",
+      "side": 1,
+      "message": "list_limits is open for both admin and non-admin by default. non-admin can get its project\u0027s limit, admin can get all projects\u0027 limit.\n\nHere I want to check a case that no matter how this API\u0027s policy changing, the \"project_id\" filter should be only used for admin or service. i.e. only the request is not admin or service and using project_id, the error will raise.",
+      "parentUuid": "5f7c97a3_031e9f0c",
+      "revId": "7f1dede630042f3d1002cb9e9f3a0e2ccc80f9ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
