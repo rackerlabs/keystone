@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_6285edad",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-03T19:17:10Z",
+      "side": 1,
+      "message": "This is going to get fixed before anything starts using it though, right? Otherwise we\u0027ll be going from a 401 to a 403?",
+      "parentUuid": "5f7c97a3_5f19de20",
+      "range": {
+        "startLine": 286,
+        "startChar": 12,
+        "endLine": 289,
+        "endChar": 30
+      },
+      "revId": "bb3b15bbf02993545d234d827dbb72ca24695e8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_efd38a36",
         "filename": "keystone/server/flask/common.py",
         "patchSetId": 23
@@ -101,6 +125,87 @@
       "side": 1,
       "message": "yeah, we can change this to flask.g in a later patch.",
       "parentUuid": "5f7c97a3_efd38a36",
+      "revId": "bb3b15bbf02993545d234d827dbb72ca24695e8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_6273ade9",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-03T19:17:10Z",
+      "side": 1,
+      "message": "++ I thought the same thing when I saw random \"g\u0027s\" in the code.. aliasing to flask_global would be awesome.",
+      "parentUuid": "5f7c97a3_a380264b",
+      "revId": "bb3b15bbf02993545d234d827dbb72ca24695e8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_c213a164",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-03T19:17:10Z",
+      "side": 1,
+      "message": "As we collect more before and after functions, I wouldn\u0027t be opposed to putting them in a separate module to keep from cluttering this one. It should help keep their purpose clear based on their location and naming convention, too.\n\nSomething to do in a follow up I suppose.\n\n\nMaybe in a place like:\n\n  keystone/server/flask/before_check_functions.py\n  keystone/server/flask/after_check_functions.py",
+      "revId": "bb3b15bbf02993545d234d827dbb72ca24695e8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_fd83e053",
+        "filename": "keystone/tests/unit/common/test_rbac_enforcer.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-03T19:17:10Z",
+      "side": 1,
+      "message": "Any reason to use the mock instead of just writing your custom test policies to a file? Just thinking if anything changes about how rules are registered, it could affect this (even if it is unlikely).",
+      "range": {
+        "startLine": 72,
+        "startChar": 9,
+        "endLine": 73,
+        "endChar": 65
+      },
+      "revId": "bb3b15bbf02993545d234d827dbb72ca24695e8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_ddce24b6",
+        "filename": "keystone/tests/unit/common/test_rbac_enforcer.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-03T19:17:10Z",
+      "side": 1,
+      "message": "I don\u0027t expect this to change in this patch, just making the note since I noticed it. \n\nI\u0027d love for all of this self.\u003ctest_data\u003e stuff to go away in favor of just using what we\u0027re given with bootstrap. IMHO it\u0027s just another mental mapping I have to maintain to understand tests (e.g. does user X have a specific role assignment on self.tenant_service?). I like to get to the point where we just have bootstrap and everything else needed outside of that is setup in setUpClass() methods.",
+      "range": {
+        "startLine": 143,
+        "startChar": 35,
+        "endLine": 143,
+        "endChar": 49
+      },
       "revId": "bb3b15bbf02993545d234d827dbb72ca24695e8d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
