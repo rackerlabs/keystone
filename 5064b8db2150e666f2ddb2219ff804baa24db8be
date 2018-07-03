@@ -16,6 +16,24 @@
       "revId": "5064b8db2150e666f2ddb2219ff804baa24db8be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_fe244c62",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-03T02:49:22Z",
+      "side": 1,
+      "message": "++, yeah, I aim to remove or deprecate these options. If they\u0027re useful, I don\u0027t mind to abandon my patch.",
+      "parentUuid": "5f7c97a3_c31f39b6",
+      "revId": "5064b8db2150e666f2ddb2219ff804baa24db8be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
