@@ -249,6 +249,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_450b1a2a",
+        "filename": "keystone/tests/unit/common/test_rbac_enforcer.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-03T20:39:51Z",
+      "side": 1,
+      "message": "If how rules get registered changes, I hope we know about it. Things are going to get very broken.\n\nThe reason for the mock is two-fold. 1) to generate the allowed actions (see other comment on later patch), and 2) to isolate and ensure we are never leaving our examples laying around.\n\nIf `example:allowed` is ever possible in production, we\u0027ve really messed up.",
+      "parentUuid": "5f7c97a3_fd83e053",
+      "range": {
+        "startLine": 72,
+        "startChar": 9,
+        "endLine": 73,
+        "endChar": 65
+      },
+      "revId": "bb3b15bbf02993545d234d827dbb72ca24695e8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_ddce24b6",
         "filename": "keystone/tests/unit/common/test_rbac_enforcer.py",
         "patchSetId": 23
