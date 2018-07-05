@@ -16,6 +16,24 @@
       "revId": "f5d4af18098a286cbb9b9c44586635b455dff084",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_666721ba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-07-05T07:33:07Z",
+      "side": 1,
+      "message": "Done! Should really have written a little more in here originally.\n\nAmusingly, there wasn\u0027t much weirdness or any particularly odd design choices. I started with what tokens looked like provider wise, copy and pasted a lot of code, cut most of it since it wasn\u0027t relevant, and then added a tiny amount of code to the auth controller layer. The logic for processing the auth receipts really is almost noting, it\u0027s all in the provider logic.",
+      "parentUuid": "5f7c97a3_0828d795",
+      "revId": "f5d4af18098a286cbb9b9c44586635b455dff084",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
