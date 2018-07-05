@@ -953,6 +953,12 @@ class Manager(manager.Manager):
         self.update_project(project_id, project)
         notifications.Audit.deleted(self._PROJECT_TAG, tag)
 
+    def check_project_depth(self, max_depth=None):
+        """Check project depth whether greater than input or not."""
+        if max_depth:
+            self.driver.check_project_depth(max_depth)
+
+
 MEMOIZE_CONFIG = cache.get_memoization_decorator(group='domain_config')
 
 
