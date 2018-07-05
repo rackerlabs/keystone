@@ -69,20 +69,22 @@ ALL_API_ROUTERS = [auth_routers,
                    simple_cert_ext]
 
 
-def fail_gracefully(f):
+def fail_gracefully(expect_error=Exception):
     """Log exceptions and aborts."""
-    @functools.wraps(f)
-    def wrapper(*args, **kw):
-        try:
-            return f(*args, **kw)
-        except Exception as e:
-            LOG.debug(e, exc_info=True)
+    def exception_wrapper(f):
+        @functools.wraps(f)
+        def wrapper(*args, **kw):
+            try:
+                return f(*args, **kw)
+            except expect_error as e:
+                LOG.debug(e, exc_info=True)
 
-            # exception message is printed to all logs
-            LOG.critical(e)
-            sys.exit(1)
+                # exception message is printed to all logs
+                LOG.critical(e)
+                sys.exit(1)
 
-    return wrapper
+        return wrapper
+    return exception_wrapper
 
 
 class KeystoneDispatcherMiddleware(werkzeug.wsgi.DispatcherMiddleware):
@@ -183,7 +185,7 @@ class KeystoneDispatcherMiddleware(werkzeug.wsgi.DispatcherMiddleware):
         return app(environ, start_response)
 
 
-@fail_gracefully
+@fail_gracefully()
 def application_factory(name='public'):
     if name not in ('admin', 'public'):
         raise RuntimeError('Application name (for base_url lookup) must be '

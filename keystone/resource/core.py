@@ -1497,3 +1497,8 @@ class DomainConfigManager(manager.Manager):
                     )
 
         return self._list_to_config(config_list, req_option=option)
+
+    def check_project_depth(self, max_depth=None):
+        """Check project depth whether greater than input or not"""
+        if max_depth:
+            self.driver.check_project_depth(max_depth)

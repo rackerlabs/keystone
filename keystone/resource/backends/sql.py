@@ -275,6 +275,21 @@ class Resource(base.ResourceDriverBase):
                                 'deleted.', project_id)
             query.delete(synchronize_session=False)
 
+    def check_project_depth(self, max_depth):
+        with sql.session_for_read() as session:
+            obj_list = [orm.aliased(Project)] * (max_depth + 1)
+            query = session.query(obj_list[max_depth])
+            index = 0
+            while max_depth:
+                query = query.outerjoin(
+                    obj_list[index],
+                    obj_list[index].id == obj_list[index+1].parent)
+                max_depth -= 1
+                index += 1
+            value = query.filter(obj_list[max_depth] is not None).all()
+            if value is not None:
+                raise exception.LimitTreeExceedError
+
 
 class Project(sql.ModelBase, sql.ModelDictMixinWithExtras):
     # NOTE(henry-nash): From the manager and above perspective, the domain_id

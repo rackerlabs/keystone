@@ -18,17 +18,20 @@ from keystone.common import cache
 from keystone.common import provider_api
 from keystone import credential
 from keystone import endpoint_policy
+from keystone import exception
 from keystone import federation
 from keystone import identity
 from keystone import limit
 from keystone import oauth1
 from keystone import policy
+from keystone.server import flask as service_flask
 from keystone import resource
 from keystone import revoke
 from keystone import token
 from keystone import trust
 
 
+@service_flask.fail_gracefully(expect_error=exception.LimitTreeExceedError)
 def load_backends():
 
     # Configure and build the cache
@@ -55,6 +58,9 @@ def load_backends():
     # NOTE(morgan): lock the APIs, these should only ever be instantiated
     # before running keystone.
     provider_api.ProviderAPIs.lock_provider_registry()
+    # Check project depth before start process. If fail, Keyston will not
+    # start.
+    drivers['unified_limit_api'].check_project_depth()
 
     auth.core.load_auth_methods()
 

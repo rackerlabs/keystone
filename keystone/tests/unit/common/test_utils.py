@@ -250,7 +250,7 @@ class UtilsTestCase(unit.BaseTestCase):
 
 class ServiceHelperTests(unit.BaseTestCase):
 
-    @server_flask.fail_gracefully
+    @server_flask.fail_gracefully()
     def _do_test(self):
         raise Exception("Test Exc")
 
