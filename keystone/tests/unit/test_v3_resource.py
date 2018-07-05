@@ -1702,3 +1702,13 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             '/projects/%(project_id)s/tags' % {'project_id': project['id']},
             body={'tags': tags},
             expected_status=http_client.BAD_REQUEST)
+
+
+class StrictTwoLevelLimitsResourceTestCase(ResourceTestCase):
+    def setUp(self):
+        super(StrictTwoLevelLimitsResourceTestCase, self).setUp()
+
+    def config_overrides(self):
+        super(StrictTwoLevelLimitsResourceTestCase, self).config_overrides()
+        self.config_fixture.config(group='unified_limit',
+                                   enforcement_model='strict_two_level')
