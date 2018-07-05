@@ -13,3 +13,10 @@
           - --include=*/
           - --exclude=*
           - --prune-empty-dirs
+
+    - name: Copy Shibboleth logs
+      synchronize:
+        src: '/var/log/shibboleth'
+        dest: '{{ zuul.executor.log_root }}/logs'
+        mode: pull
+        verify_host: true
