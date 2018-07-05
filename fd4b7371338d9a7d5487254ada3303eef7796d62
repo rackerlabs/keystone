@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_17dd2a6c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-05T23:22:50Z",
+      "side": 1,
+      "message": "[NIT] This should probably be a separate commit",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 65
+      },
+      "revId": "fd4b7371338d9a7d5487254ada3303eef7796d62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
