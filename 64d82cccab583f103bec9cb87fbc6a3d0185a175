@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_97b05ade",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-05T23:52:14Z",
+      "side": 1,
+      "message": "[NIT] this could have been implemented as a separate commit",
+      "revId": "64d82cccab583f103bec9cb87fbc6a3d0185a175",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
