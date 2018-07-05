@@ -60,6 +60,76 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_573642e9",
+        "filename": "keystone/common/sql/expand_repo/versions/046_expand_add_capability_tables.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-05T23:19:36Z",
+      "side": 1,
+      "message": "++, follow the general convention when naming constraints (look at past migrations/initial state migrations)",
+      "parentUuid": "5f7c97a3_38d6af55",
+      "range": {
+        "startLine": 33,
+        "startChar": 41,
+        "endLine": 33,
+        "endChar": 64
+      },
+      "revId": "c9626e53db05e4c6ec671649a2f83a3d228b7056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_977cda71",
+        "filename": "keystone/common/sql/expand_repo/versions/046_expand_add_capability_tables.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-05T23:19:36Z",
+      "side": 1,
+      "message": "Is this meant to be unique constrained and/or indexed?",
+      "range": {
+        "startLine": 45,
+        "startChar": 6,
+        "endLine": 45,
+        "endChar": 47
+      },
+      "revId": "c9626e53db05e4c6ec671649a2f83a3d228b7056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_97a37aff",
+        "filename": "keystone/common/sql/expand_repo/versions/046_expand_add_capability_tables.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-05T23:19:36Z",
+      "side": 1,
+      "message": "Do *NOT* use ENUM types. If we ever have to expand it, the only solution is to migrate to a new table and expand the dataset (no-downtime upgrades/rolling upgrades -- the old app will error on the new ENUM type).\n\nEnforce the types strictly in code/business logic and ignore rows with an invalid enum type.\n\nAlso expand on what \"context\" type vs \"user\" type is.",
+      "range": {
+        "startLine": 67,
+        "startChar": 8,
+        "endLine": 67,
+        "endChar": 72
+      },
+      "revId": "c9626e53db05e4c6ec671649a2f83a3d228b7056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_c6bc4b6e",
         "filename": "keystone/common/sql/expand_repo/versions/046_expand_add_capability_tables.py",
         "patchSetId": 1
@@ -107,6 +177,24 @@
       "side": 1,
       "message": "I\u0027m still trying to wrap my head around this schema but my gut feeling is that if it\u0027s really this complex then it would actually be better to manage it in code and not try to model it in the DB.",
       "parentUuid": "5f7c97a3_5f447e19",
+      "revId": "c9626e53db05e4c6ec671649a2f83a3d228b7056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_7769febd",
+        "filename": "keystone/common/sql/expand_repo/versions/046_expand_add_capability_tables.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-05T23:19:36Z",
+      "side": 1,
+      "message": "I\u0027m spending a large amount of time on the data model here, and I simply don\u0027t see how this is translating into code [this is a pretty dense model]. I\u0027d like to see the code that will use this so I can understand clearly the template_key and template_value.\n\n\nI get the feeling that this is over-normalizing data, but with the code this might make a lot more sense.",
+      "parentUuid": "5f7c97a3_1b2fcc3e",
       "revId": "c9626e53db05e4c6ec671649a2f83a3d228b7056",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
