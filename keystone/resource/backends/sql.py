@@ -13,6 +13,7 @@
 from oslo_log import log
 from six import text_type
 from sqlalchemy import orm
+from sqlalchemy.sql import expression
 
 from keystone.common import driver_hints
 from keystone.common import sql
@@ -274,6 +275,27 @@ class Resource(base.ResourceDriverBase):
                     LOG.warning('Project %s does not exist and was not '
                                 'deleted.', project_id)
             query.delete(synchronize_session=False)
+
+    def check_project_depth(self, max_depth):
+        with sql.session_for_read() as session:
+            obj_list = []
+            # We'll outerjoin max_depth + 2 times. One more time is for if
+            # parent is domain. Another time to ensure there is no more
+            # descendants.
+            for _ in range(max_depth + 2):
+                obj_list.append(orm.aliased(Project))
+
+            query = session.query(*obj_list)
+            index = 0
+            while index != max_depth + 1:
+                query = query.outerjoin(
+                    obj_list[index+1],
+                    obj_list[index].id == obj_list[index+1].parent_id)
+                index += 1
+            value = query.filter(obj_list[-1].id != expression.null()).all()
+
+            if value:
+                raise exception.LimitTreeExceedError
 
 
 class Project(sql.ModelBase, sql.ModelDictMixinWithExtras):

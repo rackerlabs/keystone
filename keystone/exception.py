@@ -358,6 +358,16 @@ class InvalidLimit(Forbidden):
     message_format = _("Invalid resource limit: %(reason)s.")
 
 
+class LimitTreeExceedError(Error):
+    message_format = _("The process can't start for the reason that the "
+                       "projects hierarchical depth in current deployment "
+                       "exceed the enforcement model's limit. Please turn "
+                       "the enforcement model back to the previous one and "
+                       "fix the problem")
+    code = int(http_client.SERVICE_UNAVAILABLE)
+    title = http_client.responses[http_client.SERVICE_UNAVAILABLE]
+
+
 class NotFound(Error):
     message_format = _("Could not find: %(target)s.")
     code = int(http_client.NOT_FOUND)
