@@ -22,6 +22,30 @@
       "revId": "8446f1a8dc1b6428f04127fdcc7d738def66313f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_fd8acd62",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 28427
+      },
+      "writtenOn": "2018-07-06T02:42:47Z",
+      "side": 1,
+      "message": "Thanks sonu",
+      "parentUuid": "5f7c97a3_92f508cf",
+      "range": {
+        "startLine": 133,
+        "startChar": 39,
+        "endLine": 133,
+        "endChar": 41
+      },
+      "revId": "8446f1a8dc1b6428f04127fdcc7d738def66313f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
