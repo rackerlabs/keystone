@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_b711d6b1",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T00:05:09Z",
+      "side": 1,
+      "message": "This is probably not an error we send out via HTTP, suggest basing on Exception and raising at keystone \"startup\".",
+      "range": {
+        "startLine": 361,
+        "startChar": 27,
+        "endLine": 361,
+        "endChar": 32
+      },
+      "revId": "27a45216b115c3681d9bd44b50491fee8fd4e26a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_5739623c",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T00:05:09Z",
+      "side": 1,
+      "message": "Suggest:\n\n\"Keystone cannot start due to project hierarchical depth in the current deployment `%(max_depth_found)s` (project_id: %(project_id)s) exceeds the enforcement model\u0027s maximum limit of %(max_limit_depth)s. Please use a different enforcement model to correct the issue\".\n\nWe need to provide information where the depth was too much, what the max depth found was, and what the enforcement model\u0027s max depth is.",
+      "range": {
+        "startLine": 362,
+        "startChar": 24,
+        "endLine": 366,
+        "endChar": 39
+      },
+      "revId": "27a45216b115c3681d9bd44b50491fee8fd4e26a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_7707be71",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T00:05:09Z",
+      "side": 1,
+      "message": "See above comment re Error as the baseclass.",
+      "range": {
+        "startLine": 367,
+        "startChar": 0,
+        "endLine": 368,
+        "endChar": 66
+      },
+      "revId": "27a45216b115c3681d9bd44b50491fee8fd4e26a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_97813ac5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 955,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T00:05:09Z",
+      "side": 1,
+      "message": "This is expensive. We may want to consider memoizing it (cache) in a future patch.",
+      "revId": "27a45216b115c3681d9bd44b50491fee8fd4e26a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_376aa61a",
+        "filename": "keystone/server/backends.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T00:05:09Z",
+      "side": 1,
+      "message": "Keystone",
+      "range": {
+        "startLine": 65,
+        "startChar": 61,
+        "endLine": 65,
+        "endChar": 68
+      },
+      "revId": "27a45216b115c3681d9bd44b50491fee8fd4e26a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
