@@ -236,6 +236,22 @@ in your `devstack` `local.conf`` file:
     enable_plugin keystone git://git.openstack.org/openstack/keystone
     enable_service keystone-saml2-federation
 
+Clone and install `tempest`_.
+
+.. code-block:: bash
+
+    git clone https://git.openstack.org/openstack/tempest
+    pip install tempest/
+
+Clone and install keystone-tempest-plugin.
+
+.. code-block:: bash
+
+    git clone https://git.openstack.org/openstack/keystone-tempest-plugin
+    cd keystone-tempest-plugin
+    pip install -U pip
+    sudo pip install -e .
+
 Finally, to run keystone's API and scenario tests, deploy `tempest`_ with
 `devstack`_ (using the configuration above) and then run the following command
 from the tempest directory:
