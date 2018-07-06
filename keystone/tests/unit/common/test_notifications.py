@@ -24,6 +24,7 @@ from pycadf import cadftaxonomy
 from pycadf import cadftype
 from pycadf import eventfactory
 from pycadf import resource as cadfresource
+from testtools import matchers
 
 from keystone.common import provider_api
 import keystone.conf
@@ -31,6 +32,7 @@ from keystone import exception
 from keystone import notifications
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
+from keystone.tests.unit import utils as test_utils
 
 
 CONF = keystone.conf.CONF
@@ -1130,13 +1132,21 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
         self.post('/auth/tokens', body=data)
         self._assert_last_note(self.ACTION, user_id)
 
+    @test_utils.wip(
+        'Waiting on fix for random initiator id for identity.authentication '
+        'events for CADF notifications',
+        expected_exception=matchers.MismatchError,
+        bug='#1780503'
+    )
     def test_v3_authenticate_user_id(self):
         user_id = self.user_id
         password = self.user['password']
         data = self.build_authentication_request(user_id=user_id,
                                                  password=password)
         self.post('/auth/tokens', body=data)
-        self._assert_last_note(self.ACTION, user_id)
+        while self._notifications:
+            self._assert_last_note(self.ACTION, user_id)
+            self._notifications.pop()
 
     def test_v3_authenticate_user_name_and_domain_name(self):
         user_id = self.user_id
