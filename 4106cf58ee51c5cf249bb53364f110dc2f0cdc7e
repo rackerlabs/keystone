@@ -1,0 +1,625 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_308cde33",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "If this raises a ReceiptNotFound today, it issues a 404 to the user. It should be a 401: suggest changing base class of receiptNotFound to Unauthorized. see other comments.",
+      "range": {
+        "startLine": 128,
+        "startChar": 58,
+        "endLine": 128,
+        "endChar": 74
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_50995a77",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "Be sure this is not exposed (a plain unauthorized: bad username/password/receipt, non specific as to which) outside of debug mode.",
+      "range": {
+        "startLine": 134,
+        "startChar": 36,
+        "endLine": 134,
+        "endChar": 59
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_d0932a4d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "Can we/should we render receipt data ever to the end user? I am inclined to say \"no\" and simply communicate what auth methods are possibly still neded and the receipt header.\n\nsuggest never exposing the internal receipt data to the end user. This is to avoid making the receipt data a contract, it should be opaque to the end user at all times.\n\nwe should only ever expose the data that the user should need to auth.",
+      "range": {
+        "startLine": 544,
+        "startChar": 13,
+        "endLine": 544,
+        "endChar": 25
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_d0032a0b",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "I\u0027m of the opinion we either lock the locations together *or* we split them apart and not allow them to be the same.\n\nThis comment is not reason for any negative scoring on this patch. I\u0027m fine with this as is, but wanted to express my opinion that it should not behave in this manner.",
+      "range": {
+        "startLine": 412,
+        "startChar": 28,
+        "endLine": 416,
+        "endChar": 41
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_302a9e7d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "Yay, it\u0027s not an X- prefixed header!! :)",
+      "range": {
+        "startLine": 33,
+        "startChar": 22,
+        "endLine": 33,
+        "endChar": 46
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_903a92ca",
+        "filename": "keystone/conf/fernet_receipts.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "See previous comment.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 22
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_50307ae9",
+        "filename": "keystone/conf/receipt.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "Please set a sane minimum, 60s, 30s, etc or similar. A 0 second expiry is patently invalid (I\u0027ll argue less than ~30s is too narrow to navigate an auth-path).\n\nLong term we should work out a way to do a nonce or similar.",
+      "range": {
+        "startLine": 25,
+        "startChar": 1,
+        "endLine": 25,
+        "endChar": 10
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_b0a8eed8",
+        "filename": "keystone/conf/receipt.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "If we want it to be \"short\" set the max to something like 86400, 292471208677 years as a possibility (64-bit) falls out of the category of \"short\"",
+      "range": {
+        "startLine": 26,
+        "startChar": 8,
+        "endLine": 26,
+        "endChar": 20
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_30861e67",
+        "filename": "keystone/conf/receipt.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "I would probably just drop the \"backend\" and be opinionated that this is *only* Fernet based [for now], we can add configuration down the road.\n\nBenefit is it simplifies the whole solution since you\u0027re dropping all the loading bits.",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 5
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_508cfa7e",
+        "filename": "keystone/conf/receipt.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "Please be explicit that this is affected by \"cache_on_issue\".\n\nNOTE (not a reason for a negative score, does not need ot be changed now): Caching should be implemented as a separate commit in the future.\n\nImplement base feature, then caching once the base feature is working.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 5
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_704a5624",
+        "filename": "keystone/conf/receipt.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "This may need a default",
+      "range": {
+        "startLine": 54,
+        "startChar": 4,
+        "endLine": 54,
+        "endChar": 17
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_d0ed6a24",
+        "filename": "keystone/conf/receipt.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "this may be need to be -1 minimum for \"forever\". This is a note that we should check the minimum here.",
+      "range": {
+        "startLine": 55,
+        "startChar": 4,
+        "endLine": 55,
+        "endChar": 10
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_504f1a34",
+        "filename": "keystone/conf/receipt.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "See above comment. I suggest not even adding a max, the sys.maxsize is somewhat absurd to end up in the comments.",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 20
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_b0c9ce79",
+        "filename": "keystone/exception.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "See other comment about bubbling up 404s instead of 401s. This should just be a 401, way way way easier than needing to try/except/reraise 401.",
+      "range": {
+        "startLine": 416,
+        "startChar": 22,
+        "endLine": 416,
+        "endChar": 30
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f05746c8",
+        "filename": "keystone/exception.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "\"auth receipt\" be explicit.",
+      "range": {
+        "startLine": 417,
+        "startChar": 39,
+        "endLine": 417,
+        "endChar": 46
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_50687a86",
+        "filename": "keystone/models/receipt_model.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "Don\u0027t we have this code somewhere else (or something similar) already?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 46
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_70f816c0",
+        "filename": "keystone/models/receipt_model.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "Suggest not basing this on a dict. This should be an object in it\u0027s own right, using @property/@settr/etc. See Lance\u0027s new TokenModel.\n\nThis is to prevent lazy dict referencing and can ensure we are parsing the date data a single time (stored locally). The render to JSON [if ever?] should be explicit as would be conversion to a SQL Model.\n\nThis comment is highly relevant to the -1 score.\n\nRelated: once a recepit is minted (see lance\u0027s token rework) it should be immutable.",
+      "range": {
+        "startLine": 28,
+        "startChar": 22,
+        "endLine": 28,
+        "endChar": 26
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f025065c",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "If this is not used. Do not add it. We don\u0027t need \"for potential future use\" code. if this is used, comment is inaccurate.",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 86,
+        "endChar": 53
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_10d20235",
+        "filename": "keystone/receipt/__init__.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "Unless you are doing:\n\nfrom keystone import receipt\n\nand then\n\nreceipt.provider.XXXX\n\nRemove this import. The import was largely a legacy thing where we needed to import the providers to get them to load properly (~grizzly, havana era).",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 45
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_90e5b20c",
+        "filename": "keystone/receipt/provider.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "Please see comment on the \"driver\" bit.\n\nThis comment [and other driver comment] is not related to the -1.",
+      "range": {
+        "startLine": 49,
+        "startChar": 23,
+        "endLine": 49,
+        "endChar": 50
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_90ce1281",
+        "filename": "keystone/receipt/provider.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "NOTE: If a receipt is not found, we need to make sure it turns into an Unauthorized not just a 404 (during the auth bit).\n\nRelated: Can receipts *ever* be validated independantly. I don\u0027t think they should be able to be, therefore this being an actual 404 is almost not needed. I would probably subclass ReceiptNotFound from Unauthorized and never risk bubbling up a 404 instead of a 401.",
+      "range": {
+        "startLine": 91,
+        "startChar": 28,
+        "endLine": 91,
+        "endChar": 43
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_50c4fa5f",
+        "filename": "keystone/receipt/provider.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "Be sure (see other comments) that we do not expose \"failed to validate receipt\" to the end user in a failure state (vs. bad password or bad username). \n\nIn non-debug forms, this must be opaque and simply a bad username/password/receipt error (not specific which one).",
+      "range": {
+        "startLine": 120,
+        "startChar": 28,
+        "endLine": 120,
+        "endChar": 43
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_d0e1ead0",
+        "filename": "keystone/receipt/providers/base.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "AFAIK we\u0027re doing it wrong in keystone NotImplemented is HTTP-Method specific, aka: HTTP GET/PUT/ETC not implemented. This likely should cause a 500 error [the only case where a 500 is expected] and raise NotImplementedError",
+      "range": {
+        "startLine": 37,
+        "startChar": 24,
+        "endLine": 37,
+        "endChar": 38
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_30085e8f",
+        "filename": "keystone/receipt/providers/common.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "[NIT/Not important for scoring, no change needed]: We should stop using \"common\" in general, it causes headaches with importing. absolute_import should be the default in py3 and in some cases STILL runs into issues.\n\nConsider naming the module: receipt_provider_common or similar. It is fine to leave this as-is for now.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 38
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_90f8527c",
+        "filename": "keystone/receipt/providers/common.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "I am not seeing where this is used.",
+      "range": {
+        "startLine": 54,
+        "startChar": 4,
+        "endLine": 54,
+        "endChar": 22
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f032e65c",
+        "filename": "keystone/receipt/providers/common.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "Ensure we are bubbling up 401s where appropriate. This may be 100% ok as is.",
+      "range": {
+        "startLine": 83,
+        "startChar": 28,
+        "endLine": 83,
+        "endChar": 42
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_703ed626",
+        "filename": "keystone/receipt/providers/fernet/__init__.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-06T18:09:04Z",
+      "side": 1,
+      "message": "See other comment about __init__ imports.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 60
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
