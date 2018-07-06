@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_5a9d0755",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-06T07:01:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_b711d6b1",
+      "range": {
+        "startLine": 361,
+        "startChar": 27,
+        "endLine": 361,
+        "endChar": 32
+      },
+      "revId": "27a45216b115c3681d9bd44b50491fee8fd4e26a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_5739623c",
         "filename": "keystone/exception.py",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_1aa30f9d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-06T07:01:19Z",
+      "side": 1,
+      "message": "sure, It\u0027s more clear.\n\nSince we only check the \"max_depth+1\" level in db, the max_depth_found can\u0027t be got.\nfor example, if the projects in db is like:\n\nfive level\nA - B - C - D - E\n\nthen for strict-two-level case, we only need to check if three level (A - B - C) exist. So here we can only know C exceed two level, but we don\u0027t know whether D or E is behind it. Get the max depth in db will cast more time which is unnecessary.",
+      "parentUuid": "5f7c97a3_5739623c",
+      "range": {
+        "startLine": 362,
+        "startChar": 24,
+        "endLine": 366,
+        "endChar": 39
+      },
+      "revId": "27a45216b115c3681d9bd44b50491fee8fd4e26a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_7707be71",
         "filename": "keystone/exception.py",
         "patchSetId": 2
@@ -59,6 +107,30 @@
       "writtenOn": "2018-07-06T00:05:09Z",
       "side": 1,
       "message": "See above comment re Error as the baseclass.",
+      "range": {
+        "startLine": 367,
+        "startChar": 0,
+        "endLine": 368,
+        "endChar": 66
+      },
+      "revId": "27a45216b115c3681d9bd44b50491fee8fd4e26a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_bab53bd2",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-06T07:01:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_7707be71",
       "range": {
         "startLine": 367,
         "startChar": 0,
