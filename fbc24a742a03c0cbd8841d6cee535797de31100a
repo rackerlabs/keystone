@@ -22,6 +22,30 @@
       "revId": "fbc24a742a03c0cbd8841d6cee535797de31100a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_24eeceb4",
+        "filename": "doc/source/contributor/testing-keystone.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 21723
+      },
+      "writtenOn": "2018-07-09T08:50:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_fb4e396c",
+      "range": {
+        "startLine": 253,
+        "startChar": 25,
+        "endLine": 253,
+        "endChar": 26
+      },
+      "revId": "fbc24a742a03c0cbd8841d6cee535797de31100a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
