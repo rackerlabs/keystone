@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_a57baa77",
+        "filename": "keystone/server/flask/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-09T21:31:34Z",
+      "side": 1,
+      "message": "I thought the only place we really used this format was with keystone.conf. Any particular reason not to use:\n\n  from keystone import server",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 22
+      },
+      "revId": "1caba2a44858ab4a6d405603cd357bb1c5e51a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
