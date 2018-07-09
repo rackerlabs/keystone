@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_fb4e396c",
+        "filename": "doc/source/contributor/testing-keystone.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 15699
+      },
+      "writtenOn": "2018-07-09T04:56:36Z",
+      "side": 1,
+      "message": "just a nit!",
+      "range": {
+        "startLine": 253,
+        "startChar": 25,
+        "endLine": 253,
+        "endChar": 26
+      },
+      "revId": "fbc24a742a03c0cbd8841d6cee535797de31100a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
