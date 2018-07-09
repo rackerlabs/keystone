@@ -1,0 +1,279 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_9757c8c9",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-09T20:26:47Z",
+      "side": 1,
+      "message": "This seems like something that should be it\u0027s own change? Is the required for the strict_two_level model somehow?",
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_d706a0cd",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-09T20:26:47Z",
+      "side": 1,
+      "message": "nit: Is there a reason to not call the self.enforcement_model object directly from here (just wondering if this is an extra hop that might not be needed)?",
+      "range": {
+        "startLine": 103,
+        "startChar": 8,
+        "endLine": 103,
+        "endChar": 46
+      },
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_37e5940a",
+        "filename": "keystone/limit/models/base.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-09T20:26:47Z",
+      "side": 1,
+      "message": "We should make sure this is an abstract base class [0]. That will just ensure any changes to the interface will require the implementations to update.\n\n[0] https://git.openstack.org/cgit/openstack/keystone/tree/keystone/token/providers/base.py#n22",
+      "range": {
+        "startLine": 34,
+        "startChar": 6,
+        "endLine": 34,
+        "endChar": 15
+      },
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_57c93076",
+        "filename": "keystone/limit/models/base.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-09T20:26:47Z",
+      "side": 1,
+      "message": "Morgan stumbled across a subtlety here that we could implement:\n\n  raise NotImplementedError()\n\nhttp://eavesdrop.openstack.org/irclogs/%23openstack-keystone/%23openstack-keystone.2018-07-09.log.html#t2018-07-09T14:17:19",
+      "range": {
+        "startLine": 53,
+        "startChar": 14,
+        "endLine": 53,
+        "endChar": 38
+      },
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_776a2cb5",
+        "filename": "keystone/limit/models/flat.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-09T20:26:47Z",
+      "side": 1,
+      "message": "nit: I wouldn\u0027t be opposed to a more specific name for this model (e.g. FlatEnforcementModel, FlatModel, or even just Flat).",
+      "range": {
+        "startLine": 16,
+        "startChar": 6,
+        "endLine": 16,
+        "endChar": 11
+      },
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_57913099",
+        "filename": "keystone/limit/models/flat.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-09T20:26:47Z",
+      "side": 1,
+      "message": "Do we always expect this to be something that is defined for every model? Or is this something that is better kept in just the strict_two_level model?",
+      "range": {
+        "startLine": 23,
+        "startChar": 4,
+        "endLine": 23,
+        "endChar": 33
+      },
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f75ddc15",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-09T20:26:47Z",
+      "side": 1,
+      "message": "Same comments here as in the flat model.",
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_37ad94e9",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-09T20:26:47Z",
+      "side": 1,
+      "message": "There are other constraints about this model (e.g. the limit of the child can\u0027t be greater than the limit of the parent).\n\nI\u0027m wondering how detailed we should get with it though.",
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_57d61055",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-09T20:26:47Z",
+      "side": 1,
+      "message": "Same comment here as in the previous flat model. I wonder if this should just be something we keep internally to this module. Do we expect the logic outside of this class to call or rely on this attribute?\n\nIf not, then maybe we should keep it here until we have a good reason to expose it as part of the interface or require all enforcement models to define it.",
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_b74a0480",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-09T20:26:47Z",
+      "side": 1,
+      "message": "Per the comment below, I wonder if we should just make this the interface instead of requiring enforcement models to accept data structures specific to the unified limit API (even though they are tightly coupled).",
+      "range": {
+        "startLine": 57,
+        "startChar": 8,
+        "endLine": 57,
+        "endChar": 20
+      },
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_976a68e9",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-09T20:26:47Z",
+      "side": 1,
+      "message": "This method and the next method seem to really just wrap the really model logic in _check_limit().\n\nI wonder if it wouldn\u0027t be more clear to just define a single method as the interface called check_limit() instead of two separate methods that require a private method to reduce duplication. Then the logic in limit/core.py builds standardizes whatever is passed into check_limit() regardless of create or update requests.",
+      "range": {
+        "startLine": 82,
+        "startChar": 8,
+        "endLine": 82,
+        "endChar": 38
+      },
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_d761c0a9",
+        "filename": "releasenotes/notes/bp-strict-two-level-model.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-09T20:26:47Z",
+      "side": 1,
+      "message": "We could provide a link to the specification here, too [0]. It is available via the blueprint, too.\n\n[0] http://specs.openstack.org/openstack/keystone-specs/specs/keystone/rocky/strict-two-level-enforcement-model.html",
+      "range": {
+        "startLine": 10,
+        "startChar": 3,
+        "endLine": 11,
+        "endChar": 60
+      },
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_37491431",
+        "filename": "releasenotes/notes/bp-strict-two-level-model.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-09T20:26:47Z",
+      "side": 1,
+      "message": "nit: project structure* ?",
+      "range": {
+        "startLine": 13,
+        "startChar": 35,
+        "endLine": 13,
+        "endChar": 40
+      },
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
