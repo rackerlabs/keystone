@@ -37,6 +37,29 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_71547cc6",
+        "filename": "keystone/common/sql/expand_repo/versions/046_expand_add_capability_tables.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-09T18:23:30Z",
+      "side": 1,
+      "message": "Do we plan to enforce limits on how long a template string can be? If so, I assume that is something we\u0027re going to be doing in code?\n\nI\u0027m wondering how much we\u0027ll need to safe-guard against cases that might result in extreme database bloat.",
+      "range": {
+        "startLine": 30,
+        "startChar": 38,
+        "endLine": 30,
+        "endChar": 48
+      },
+      "revId": "c9626e53db05e4c6ec671649a2f83a3d228b7056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_38d6af55",
         "filename": "keystone/common/sql/expand_repo/versions/046_expand_add_capability_tables.py",
         "patchSetId": 1
