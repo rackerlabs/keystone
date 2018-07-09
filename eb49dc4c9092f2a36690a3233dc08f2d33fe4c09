@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_5a6395dd",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 729,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-09T20:38:19Z",
+      "side": 1,
+      "message": "You should be able to reuse the utilities in common_auth since it\u0027s being inherited via test_v3.RestfulTestCase\n\nhttps://git.openstack.org/cgit/openstack/keystone/tree/keystone/tests/common/auth.py#n17",
+      "range": {
+        "startLine": 729,
+        "startChar": 8,
+        "endLine": 729,
+        "endChar": 25
+      },
+      "revId": "eb49dc4c9092f2a36690a3233dc08f2d33fe4c09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
