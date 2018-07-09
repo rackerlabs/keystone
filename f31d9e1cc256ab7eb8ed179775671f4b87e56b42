@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_5ac5d53b",
+        "filename": "releasenotes/notes/bp-strict-two-level-model.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-09T20:58:59Z",
+      "side": 1,
+      "message": "Had a couple nits here on patch set 2.",
+      "revId": "f31d9e1cc256ab7eb8ed179775671f4b87e56b42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
