@@ -22,6 +22,52 @@
       "revId": "b59ef1edf8229cbeb0b700d12b6ff0a2962a9324",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_7a7e911b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-09T20:58:18Z",
+      "side": 1,
+      "message": "Ahhh... I had a comment on this in a previous review if this was ever used anywhere besides the unified_limit_api, looks like it is.",
+      "range": {
+        "startLine": 85,
+        "startChar": 23,
+        "endLine": 85,
+        "endChar": 45
+      },
+      "revId": "b59ef1edf8229cbeb0b700d12b6ff0a2962a9324",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_faa621ac",
+        "filename": "releasenotes/notes/bp-strict-two-level-model.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-09T20:58:18Z",
+      "side": 1,
+      "message": "nit: newly created project results in a project tree depth greater than 2,",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 16,
+        "endChar": 11
+      },
+      "revId": "b59ef1edf8229cbeb0b700d12b6ff0a2962a9324",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
