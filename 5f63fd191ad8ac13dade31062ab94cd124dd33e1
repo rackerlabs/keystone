@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_74fa2a77",
+        "filename": "doc/source/admin/identity-case-insensitive.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-07-09T19:25:13Z",
+      "side": 1,
+      "message": "Nope, I\u0027ll fix it to being lowercase",
+      "parentUuid": "5f7c97a3_4379e9f8",
+      "range": {
+        "startLine": 9,
+        "startChar": 48,
+        "endLine": 9,
+        "endChar": 55
+      },
+      "revId": "5f63fd191ad8ac13dade31062ab94cd124dd33e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_836e212a",
         "filename": "doc/source/admin/identity-case-insensitive.rst",
         "patchSetId": 7
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_d47a1eee",
+        "filename": "doc/source/admin/identity-case-insensitive.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-07-09T19:25:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_836e212a",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 11
+      },
+      "revId": "5f63fd191ad8ac13dade31062ab94cd124dd33e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_a3523d67",
         "filename": "doc/source/admin/identity-case-insensitive.rst",
         "patchSetId": 7
@@ -59,6 +107,30 @@
       "writtenOn": "2018-07-03T02:00:54Z",
       "side": 1,
       "message": "nit: we could make these literals by wrapping them in ``",
+      "range": {
+        "startLine": 53,
+        "startChar": 21,
+        "endLine": 53,
+        "endChar": 33
+      },
+      "revId": "5f63fd191ad8ac13dade31062ab94cd124dd33e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_747d4ae4",
+        "filename": "doc/source/admin/identity-case-insensitive.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-07-09T19:25:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_a3523d67",
       "range": {
         "startLine": 53,
         "startChar": 21,
