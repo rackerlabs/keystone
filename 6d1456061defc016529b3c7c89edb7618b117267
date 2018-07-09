@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_85ed4e25",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-09T21:33:29Z",
+      "side": 1,
+      "message": "Ok - thanks for the response.",
+      "parentUuid": "5f7c97a3_2577fed3",
+      "range": {
+        "startLine": 284,
+        "startChar": 25,
+        "endLine": 284,
+        "endChar": 47
+      },
+      "revId": "6d1456061defc016529b3c7c89edb7618b117267",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_fd89a024",
         "filename": "keystone/common/rbac_enforcer/enforcer.py",
         "patchSetId": 5
