@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_b032185c",
+        "filename": "doc/source/contributor/testing-keystone.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-09T12:34:23Z",
+      "side": 1,
+      "message": "This is not necessary, devstack installs tempest under /opt/stack/tempest by default.",
+      "range": {
+        "startLine": 239,
+        "startChar": 0,
+        "endLine": 244,
+        "endChar": 24
+      },
+      "revId": "5590356a247ccbf09c729c81a8b5a57f8bdc9395",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_503dc429",
+        "filename": "doc/source/contributor/testing-keystone.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-09T12:34:23Z",
+      "side": 1,
+      "message": "This is irrelevant",
+      "range": {
+        "startLine": 252,
+        "startChar": 4,
+        "endLine": 252,
+        "endChar": 22
+      },
+      "revId": "5590356a247ccbf09c729c81a8b5a57f8bdc9395",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_50262418",
+        "filename": "doc/source/contributor/testing-keystone.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-09T12:34:23Z",
+      "side": 1,
+      "message": "Instead of cd\u0027ing into the directory I would just\n\n sudo pip install ./keystone-tempest-plugin/",
+      "range": {
+        "startLine": 253,
+        "startChar": 4,
+        "endLine": 253,
+        "endChar": 25
+      },
+      "revId": "5590356a247ccbf09c729c81a8b5a57f8bdc9395",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
