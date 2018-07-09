@@ -60,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_d12f903b",
+        "filename": "keystone/common/sql/expand_repo/versions/046_expand_add_capability_tables.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-09T18:24:02Z",
+      "side": 1,
+      "message": "I guess this comment also applies to other places where we\u0027re using sql.Text()",
+      "parentUuid": "5f7c97a3_71547cc6",
+      "range": {
+        "startLine": 30,
+        "startChar": 38,
+        "endLine": 30,
+        "endChar": 48
+      },
+      "revId": "c9626e53db05e4c6ec671649a2f83a3d228b7056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_38d6af55",
         "filename": "keystone/common/sql/expand_repo/versions/046_expand_add_capability_tables.py",
         "patchSetId": 1
