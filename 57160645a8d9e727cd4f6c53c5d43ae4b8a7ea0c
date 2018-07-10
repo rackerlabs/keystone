@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_170e3d3c",
+        "filename": "devstack/files/federation/shib_apache_handler.txt",
+        "patchSetId": 9
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-07-10T19:02:12Z",
+      "side": 1,
+      "message": "I should\u0027ve left this a variable, oops.",
+      "range": {
+        "startLine": 6,
+        "startChar": 56,
+        "endLine": 6,
+        "endChar": 64
+      },
+      "revId": "57160645a8d9e727cd4f6c53c5d43ae4b8a7ea0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_3c11de5c",
         "filename": "devstack/lib/federation.sh",
         "patchSetId": 9
@@ -13,6 +36,30 @@
       "writtenOn": "2018-07-10T18:15:28Z",
       "side": 1,
       "message": "This is pointing to testshib?",
+      "range": {
+        "startLine": 70,
+        "startChar": 30,
+        "endLine": 70,
+        "endChar": 46
+      },
+      "revId": "57160645a8d9e727cd4f6c53c5d43ae4b8a7ea0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_b7fc290d",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-07-10T19:02:12Z",
+      "side": 1,
+      "message": "Yes, we\u0027re doing both testshib and k2k.",
+      "parentUuid": "5f7c97a3_3c11de5c",
       "range": {
         "startLine": 70,
         "startChar": 30,

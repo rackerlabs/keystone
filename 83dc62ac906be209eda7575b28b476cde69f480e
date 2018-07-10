@@ -22,6 +22,30 @@
       "revId": "83dc62ac906be209eda7575b28b476cde69f480e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_d72205ba",
+        "filename": "devstack/files/federation/shibboleth2.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-07-10T19:02:12Z",
+      "side": 0,
+      "message": "Yes, we\u0027re currently doing both testshib and k2k.",
+      "parentUuid": "5f7c97a3_bc23aeba",
+      "range": {
+        "startLine": 24,
+        "startChar": 28,
+        "endLine": 24,
+        "endChar": 41
+      },
+      "revId": "83dc62ac906be209eda7575b28b476cde69f480e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
