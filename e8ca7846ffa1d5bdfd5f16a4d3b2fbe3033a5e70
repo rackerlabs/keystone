@@ -22,6 +22,30 @@
       "revId": "e8ca7846ffa1d5bdfd5f16a4d3b2fbe3033a5e70",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_3757b9cb",
+        "filename": "api-ref/source/v3/unified_limits.inc",
+        "patchSetId": 12
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-10T18:29:21Z",
+      "side": 1,
+      "message": "Yeah - I remember having a little bit of discussion around this early on. The original implementation actually had it\u0027s own endpoint that wasn\u0027t under /v3/limits/ [0].\n\nThe reason for moving it under /v3/limits/ was that the enforcement model only applies to project limits. Registered limits don\u0027t behave differently depending on the enforcement model used by a deployment.\n\n[0] https://review.openstack.org/#/c/562716/1/keystone/limit/routers.py",
+      "parentUuid": "5f7c97a3_096390ac",
+      "range": {
+        "startLine": 312,
+        "startChar": 18,
+        "endLine": 312,
+        "endChar": 38
+      },
+      "revId": "e8ca7846ffa1d5bdfd5f16a4d3b2fbe3033a5e70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
