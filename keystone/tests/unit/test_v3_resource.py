@@ -1702,3 +1702,36 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             '/projects/%(project_id)s/tags' % {'project_id': project['id']},
             body={'tags': tags},
             expected_status=http_client.BAD_REQUEST)
+
+    def test_list_projects_by_user_with_inherited_role(self):
+        """Ensure the cache is invalidated when creating/deleting a project."""
+        domain = unit.new_domain_ref()
+        PROVIDERS.resource_api.create_domain(domain['id'], domain)
+
+        user = unit.create_user(PROVIDERS.identity_api, domain_id=domain['id'])
+
+        inherited_role = unit.new_role_ref()
+        PROVIDERS.role_api.create_role(inherited_role['id'], inherited_role)
+
+        PROVIDERS.assignment_api.create_grant(
+            role_id=inherited_role['id'],
+            user_id=user['id'],
+            domain_id=domain['id'],
+            inherited_to_projects=True)
+
+        resp = self.get('/users/%(user)s/projects' % {'user': user['id']})
+        self.assertValidProjectListResponse(resp)
+        self.assertEqual([], resp.result['projects'])
+
+        project = unit.new_project_ref(domain_id=domain['id'])
+        PROVIDERS.resource_api.create_project(project['id'], project)
+
+        resp = self.get('/users/%(user)s/projects' % {'user': user['id']})
+        self.assertValidProjectListResponse(resp)
+        self.assertEqual(project['id'], resp.result['projects'][0]['id'])
+
+        PROVIDERS.resource_api.delete_project(project['id'])
+
+        resp = self.get('/users/%(user)s/projects' % {'user': user['id']})
+        self.assertValidProjectListResponse(resp)
+        self.assertEqual([], resp.result['projects'])

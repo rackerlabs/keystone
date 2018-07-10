@@ -223,6 +223,9 @@ class Manager(manager.Manager):
             self.get_project.set(ret, self, project_id)
             self.get_project_by_name.set(ret, self, ret['name'],
                                          ret['domain_id'])
+
+        assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
+
         return ret
 
     def assert_domain_enabled(self, domain_id, domain=None):
@@ -459,6 +462,8 @@ class Manager(manager.Manager):
             self.delete_domain(project_id, initiator)
         else:
             self._delete_project(project_id, initiator, cascade)
+
+        assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     def _delete_project(self, project_id, initiator=None, cascade=False):
         # Use the driver directly to prevent using old cached value.
