@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_096390ac",
+        "filename": "api-ref/source/v3/unified_limits.inc",
+        "patchSetId": 12
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-10T07:40:03Z",
+      "side": 1,
+      "message": "This is a little weird. /v3/limits is for project limits. I would have expected this to be under /v3/registered_limits/model or maybe it\u0027s own endpoint, like /v3/limits-model.",
+      "range": {
+        "startLine": 312,
+        "startChar": 18,
+        "endLine": 312,
+        "endChar": 38
+      },
+      "revId": "e8ca7846ffa1d5bdfd5f16a4d3b2fbe3033a5e70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
