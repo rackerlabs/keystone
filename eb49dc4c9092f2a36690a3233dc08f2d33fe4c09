@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_66f278e5",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-10T01:15:40Z",
+      "side": 1,
+      "message": "(Comment reason for -1) Do not hard-code any role names. We have battled hard-coded role names for ages. you may specify a rule where \u0027service\u0027 is in the default. However, a hard-coded role name means this cannot be merged, even if it is a \"NOT\" check.",
+      "range": {
+        "startLine": 115,
+        "startChar": 20,
+        "endLine": 115,
+        "endChar": 29
+      },
+      "revId": "eb49dc4c9092f2a36690a3233dc08f2d33fe4c09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_467c1c1f",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-10T01:15:40Z",
+      "side": 1,
+      "message": "Unfortunately, this is simply the nature of the beast regarding the filter-existing. For now, just remove the project_id filter support. We can add it back in when we have more fidelity in the RBAC enforcement. As this is going to require additional policy checks, it wont be something we can land until Stein or until we move to flask and I can open up the creds dict.\n\nThe alternative is to use the callback implementation and write your entire creds/target dict where the filter data is added in both places so that the default rule can easily check it.\n\nYou\u0027d need something like creds[\u0027filters\u0027] \u003d\u003e [\u003c...filter_name...\u003e: \u003c...filter value...\u003e and a mirror in the target dict and that would need to be built and passed directly to the oslo-policy enforcer with a sane default-rule being implemented that handled the \"OR\" case.\n\nTL;DR - I encourage dropping \"project_id\" filter or only lock on \"service-token\" (for now, so any service token can filter but non-service tokens cannot - we can expand this to proper policy-dsl later). An alternative is to make a filter-specific API service users are meant to utilize.",
+      "range": {
+        "startLine": 115,
+        "startChar": 15,
+        "endLine": 118,
+        "endChar": 60
+      },
+      "revId": "eb49dc4c9092f2a36690a3233dc08f2d33fe4c09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_5a6395dd",
         "filename": "keystone/tests/unit/test_limits.py",
         "patchSetId": 8
