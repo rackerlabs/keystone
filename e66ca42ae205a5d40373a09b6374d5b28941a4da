@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_971b2dc9",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1709,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-10T18:48:20Z",
+      "side": 1,
+      "message": "In functional API tests we try and exercise the entire API as opposed to accessing the backend/managers directly to set things up (e.g. self.post(\u0027/domains\u0027, body\u003dbody))",
+      "range": {
+        "startLine": 1708,
+        "startChar": 8,
+        "endLine": 1709,
+        "endChar": 66
+      },
+      "revId": "e66ca42ae205a5d40373a09b6374d5b28941a4da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
