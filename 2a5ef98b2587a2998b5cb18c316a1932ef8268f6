@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_3706d91c",
+        "filename": "playbooks/legacy/keystone-dsvm-functional-v3-only/post.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-10T18:16:55Z",
+      "side": 1,
+      "message": "You might be able to pull this into a handler to reduce duplicate plays.",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 25
+      },
+      "revId": "2a5ef98b2587a2998b5cb18c316a1932ef8268f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
