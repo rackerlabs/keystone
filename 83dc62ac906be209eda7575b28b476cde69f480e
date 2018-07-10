@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_77ea110e",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 974,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-10T18:24:27Z",
+      "side": 1,
+      "message": "We have tests for this, right? A simple type check should help protect against regression.",
+      "revId": "83dc62ac906be209eda7575b28b476cde69f480e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
