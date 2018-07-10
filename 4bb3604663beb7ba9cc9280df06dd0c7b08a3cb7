@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_faf7fccf",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-10T03:38:31Z",
+      "side": 1,
+      "message": "Sorry, it\u0027s a new bug when refactor the limit db schema, I can separate it into a new patch.",
+      "parentUuid": "5f7c97a3_9757c8c9",
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_d706a0cd",
         "filename": "keystone/limit/core.py",
         "patchSetId": 17
@@ -30,6 +48,30 @@
       "writtenOn": "2018-07-09T20:26:47Z",
       "side": 1,
       "message": "nit: Is there a reason to not call the self.enforcement_model object directly from here (just wondering if this is an extra hop that might not be needed)?",
+      "range": {
+        "startLine": 103,
+        "startChar": 8,
+        "endLine": 103,
+        "endChar": 46
+      },
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_ba2f443c",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-10T03:38:31Z",
+      "side": 1,
+      "message": "++, will remove it",
+      "parentUuid": "5f7c97a3_d706a0cd",
       "range": {
         "startLine": 103,
         "startChar": 8,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_7ada0c4a",
+        "filename": "keystone/limit/models/base.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-10T03:38:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_37e5940a",
+      "range": {
+        "startLine": 34,
+        "startChar": 6,
+        "endLine": 34,
+        "endChar": 15
+      },
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_57c93076",
         "filename": "keystone/limit/models/base.py",
         "patchSetId": 17
@@ -76,6 +142,30 @@
       "writtenOn": "2018-07-09T20:26:47Z",
       "side": 1,
       "message": "Morgan stumbled across a subtlety here that we could implement:\n\n  raise NotImplementedError()\n\nhttp://eavesdrop.openstack.org/irclogs/%23openstack-keystone/%23openstack-keystone.2018-07-09.log.html#t2018-07-09T14:17:19",
+      "range": {
+        "startLine": 53,
+        "startChar": 14,
+        "endLine": 53,
+        "endChar": 38
+      },
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_5ad71023",
+        "filename": "keystone/limit/models/base.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-10T03:38:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_57c93076",
       "range": {
         "startLine": 53,
         "startChar": 14,
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_9aba88de",
+        "filename": "keystone/limit/models/flat.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-10T03:38:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_776a2cb5",
+      "range": {
+        "startLine": 16,
+        "startChar": 6,
+        "endLine": 16,
+        "endChar": 11
+      },
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_57913099",
         "filename": "keystone/limit/models/flat.py",
         "patchSetId": 17
@@ -122,6 +236,30 @@
       "writtenOn": "2018-07-09T20:26:47Z",
       "side": 1,
       "message": "Do we always expect this to be something that is defined for every model? Or is this something that is better kept in just the strict_two_level model?",
+      "range": {
+        "startLine": 23,
+        "startChar": 4,
+        "endLine": 23,
+        "endChar": 33
+      },
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_3a8ed431",
+        "filename": "keystone/limit/models/flat.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-10T03:38:31Z",
+      "side": 1,
+      "message": "lol, I saw your comment here: https://review.openstack.org/#/c/580258",
+      "parentUuid": "5f7c97a3_57913099",
       "range": {
         "startLine": 23,
         "startChar": 4,
@@ -151,6 +289,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_da980077",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-10T03:38:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_f75ddc15",
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_37ad94e9",
         "filename": "keystone/limit/models/strict_two_level.py",
         "patchSetId": 17
@@ -162,6 +318,24 @@
       "writtenOn": "2018-07-09T20:26:47Z",
       "side": 1,
       "message": "There are other constraints about this model (e.g. the limit of the child can\u0027t be greater than the limit of the parent).\n\nI\u0027m wondering how detailed we should get with it though.",
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_5a7e301b",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-10T03:38:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_37ad94e9",
       "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -231,6 +405,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_ba15049d",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-10T03:38:31Z",
+      "side": 1,
+      "message": "the input parameters for create and update request is different. create request input is a list for limits, the update request input is a single limit and a specified limit_id, so I separate them and let them both use _check_limit for hierarchy check.\n\nThey can be merged into one of cause,but I\u0027m not sure how to make the common one more generic for input parameters. Any suggestion?",
+      "parentUuid": "5f7c97a3_976a68e9",
+      "range": {
+        "startLine": 82,
+        "startChar": 8,
+        "endLine": 82,
+        "endChar": 38
+      },
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_d761c0a9",
         "filename": "releasenotes/notes/bp-strict-two-level-model.yaml",
         "patchSetId": 17
@@ -242,6 +440,30 @@
       "writtenOn": "2018-07-09T20:26:47Z",
       "side": 1,
       "message": "We could provide a link to the specification here, too [0]. It is available via the blueprint, too.\n\n[0] http://specs.openstack.org/openstack/keystone-specs/specs/keystone/rocky/strict-two-level-enforcement-model.html",
+      "range": {
+        "startLine": 10,
+        "startChar": 3,
+        "endLine": 11,
+        "endChar": 60
+      },
+      "revId": "4bb3604663beb7ba9cc9280df06dd0c7b08a3cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_fa161ca1",
+        "filename": "releasenotes/notes/bp-strict-two-level-model.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-10T03:38:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_d761c0a9",
       "range": {
         "startLine": 10,
         "startChar": 3,
