@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_3559f0fc",
+        "filename": "doc/source/admin/identity-case-insensitive.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-07-10T20:48:18Z",
+      "side": 1,
+      "message": "These names may be better off as literals",
+      "range": {
+        "startLine": 10,
+        "startChar": 23,
+        "endLine": 10,
+        "endChar": 32
+      },
+      "revId": "22af20b0f641d16805e1ec37efa8262f685647d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
