@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_bc23aeba",
+        "filename": "devstack/files/federation/shibboleth2.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-10T18:15:28Z",
+      "side": 0,
+      "message": "Does this make the configuration general enough for both keystone and testshib?",
+      "range": {
+        "startLine": 24,
+        "startChar": 28,
+        "endLine": 24,
+        "endChar": 41
+      },
+      "revId": "83dc62ac906be209eda7575b28b476cde69f480e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
