@@ -46,6 +46,30 @@
       "revId": "8446f1a8dc1b6428f04127fdcc7d738def66313f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_72a21faf",
+        "filename": "doc/source/admin/identity-security-compliance.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-10T19:24:28Z",
+      "side": 1,
+      "message": "This is following the convention documented by technical writers [0]. If this bit is reverted by we still continue to change it elsewhere we are inconsistent.\n\n[0] https://docs.openstack.org/doc-contrib-guide/writing-style/word-choice.html",
+      "parentUuid": "5f7c97a3_fd8acd62",
+      "range": {
+        "startLine": 133,
+        "startChar": 39,
+        "endLine": 133,
+        "endChar": 41
+      },
+      "revId": "8446f1a8dc1b6428f04127fdcc7d738def66313f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
