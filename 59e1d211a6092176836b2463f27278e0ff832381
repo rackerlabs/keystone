@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_925d7b17",
+        "filename": "releasenotes/notes/removed-as-of-rocky-f44c3ba7c3e73d01.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-10T19:11:12Z",
+      "side": 1,
+      "message": "nit: has been removed*",
+      "range": {
+        "startLine": 19,
+        "startChar": 63,
+        "endLine": 19,
+        "endChar": 74
+      },
+      "revId": "59e1d211a6092176836b2463f27278e0ff832381",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_b258b724",
+        "filename": "releasenotes/notes/removed-as-of-rocky-f44c3ba7c3e73d01.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-10T19:11:12Z",
+      "side": 1,
+      "message": "nit: Trust can no longer be disabled via configuration.\n\nOnly saying this since they\u0027ve defaulted to enabled for quite a while.",
+      "range": {
+        "startLine": 20,
+        "startChar": 4,
+        "endLine": 20,
+        "endChar": 33
+      },
+      "revId": "59e1d211a6092176836b2463f27278e0ff832381",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
