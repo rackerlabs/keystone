@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_17407d5e",
+        "filename": "doc/source/admin/identity-case-insensitive.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-10T19:01:36Z",
+      "side": 1,
+      "message": "The triple (or double) use of \"case\" here reads a bit odd.",
+      "range": {
+        "startLine": 8,
+        "startChar": 60,
+        "endLine": 8,
+        "endChar": 65
+      },
+      "revId": "90a1a6f9fe21ec94c5a6cb1b3eab0bd9fbee230c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_77321111",
+        "filename": "doc/source/admin/identity-case-insensitive.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-10T19:01:36Z",
+      "side": 1,
+      "message": "Make this a literal to be consistent with other `409` Conflicts used in this document. Or you could wrap the whole thing `409 Conflict`.\n\nNote that the ` is using italics, literals will use ``. It doesn\u0027t look like we use a consistent convention in doc/ so I\u0027m good with however you decide to do it.",
+      "range": {
+        "startLine": 26,
+        "startChar": 66,
+        "endLine": 26,
+        "endChar": 69
+      },
+      "revId": "90a1a6f9fe21ec94c5a6cb1b3eab0bd9fbee230c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
