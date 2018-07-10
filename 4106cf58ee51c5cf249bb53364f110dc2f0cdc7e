@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_cb183585",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-07-10T03:27:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_308cde33",
+      "range": {
+        "startLine": 128,
+        "startChar": 58,
+        "endLine": 128,
+        "endChar": 74
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_50995a77",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 15
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_46117c52",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-07-10T03:27:36Z",
+      "side": 1,
+      "message": "We ideally need to expose the expiry date, and definitely the required methods.\n\nI lean on the why not expose it all side since the actual amount of data there is minimal, and unlikely to ever really need to change.\n\nRight now it looks like:\nhttp://paste.openstack.org/show/725380/",
+      "parentUuid": "5f7c97a3_d0932a4d",
+      "range": {
+        "startLine": 544,
+        "startChar": 13,
+        "endLine": 544,
+        "endChar": 25
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_d0032a0b",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 15
@@ -82,6 +130,30 @@
       "writtenOn": "2018-07-06T18:09:04Z",
       "side": 1,
       "message": "I\u0027m of the opinion we either lock the locations together *or* we split them apart and not allow them to be the same.\n\nThis comment is not reason for any negative scoring on this patch. I\u0027m fine with this as is, but wanted to express my opinion that it should not behave in this manner.",
+      "range": {
+        "startLine": 412,
+        "startChar": 28,
+        "endLine": 416,
+        "endChar": 41
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e677689e",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-07-10T03:27:36Z",
+      "side": 1,
+      "message": "I\u0027d rather we lock than split as it makes life easier for ops (less upgrade steps), but the problem is that for the VERY security conscious having them split is useful. That\u0027s why I went with both, and have locking be the default.\n\nIf we did lock them, then we\u0027d need to make a new config that isn\u0027t \u0027fernet_tokens\u0027 but rather just \u0027fernet\u0027 and deprecate the ones in \u0027fernet_tokens\u0027, with \u0027fernet_tokens\u0027 still a fallback for the next few cycles.\n\nI prefer locking as the only choice if we had to pick just one, but until told otherwise will stick with both.",
+      "parentUuid": "5f7c97a3_d0032a0b",
       "range": {
         "startLine": 412,
         "startChar": 28,
@@ -163,6 +235,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_a6c970ab",
+        "filename": "keystone/conf/receipt.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-07-10T03:27:36Z",
+      "side": 1,
+      "message": "Huh... I took this from tokens. Tokens has a min of 0 as well. Will change if needed, but leaving for now.",
+      "parentUuid": "5f7c97a3_50307ae9",
+      "range": {
+        "startLine": 25,
+        "startChar": 1,
+        "endLine": 25,
+        "endChar": 10
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_b0a8eed8",
         "filename": "keystone/conf/receipt.py",
         "patchSetId": 15
@@ -174,6 +270,30 @@
       "writtenOn": "2018-07-06T18:09:04Z",
       "side": 1,
       "message": "If we want it to be \"short\" set the max to something like 86400, 292471208677 years as a possibility (64-bit) falls out of the category of \"short\"",
+      "range": {
+        "startLine": 26,
+        "startChar": 8,
+        "endLine": 26,
+        "endChar": 20
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_46c41c92",
+        "filename": "keystone/conf/receipt.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-07-10T03:27:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_b0a8eed8",
       "range": {
         "startLine": 26,
         "startChar": 8,
@@ -256,6 +376,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_86d79422",
+        "filename": "keystone/conf/receipt.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-07-10T03:27:36Z",
+      "side": 1,
+      "message": "See below comment, will likely just drop caching entirely.",
+      "parentUuid": "5f7c97a3_508cfa7e",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 5
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_704a5624",
         "filename": "keystone/conf/receipt.py",
         "patchSetId": 15
@@ -267,6 +411,30 @@
       "writtenOn": "2018-07-06T18:09:04Z",
       "side": 1,
       "message": "This may need a default",
+      "range": {
+        "startLine": 54,
+        "startChar": 4,
+        "endLine": 54,
+        "endChar": 17
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_86b0f4fe",
+        "filename": "keystone/conf/receipt.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-07-10T03:27:36Z",
+      "side": 1,
+      "message": "done, set to 300 (the default expiry time).\n\nAlthough I\u0027m curious how our caching works. Because if a receipt has been validated just before expiry successfully by the provider, but the auth failed, then the user has until that cached validation expires to retry since it won\u0027t actually attempt to re-validate the receipt until then and see if has expired.\n\nIf that\u0027s the case, the we probably don\u0027t even want caching, or we want it to be VERY short. Which to be fair, since a specific receipt shouldn\u0027t need validation more than maybe 2-3 times (unlike a token), caching isn\u0027t that useful here.",
+      "parentUuid": "5f7c97a3_704a5624",
       "range": {
         "startLine": 54,
         "startChar": 4,
@@ -325,6 +493,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_46e5fc08",
+        "filename": "keystone/conf/receipt.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-07-10T03:27:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_504f1a34",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 20
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_b0c9ce79",
         "filename": "keystone/exception.py",
         "patchSetId": 15
@@ -336,6 +528,30 @@
       "writtenOn": "2018-07-06T18:09:04Z",
       "side": 1,
       "message": "See other comment about bubbling up 404s instead of 401s. This should just be a 401, way way way easier than needing to try/except/reraise 401.",
+      "range": {
+        "startLine": 416,
+        "startChar": 22,
+        "endLine": 416,
+        "endChar": 30
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_6b1ec174",
+        "filename": "keystone/exception.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-07-10T03:27:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_b0c9ce79",
       "range": {
         "startLine": 416,
         "startChar": 22,
@@ -371,6 +587,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_0b294d9a",
+        "filename": "keystone/exception.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-07-10T03:27:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_f05746c8",
+      "range": {
+        "startLine": 417,
+        "startChar": 39,
+        "endLine": 417,
+        "endChar": 46
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_50687a86",
         "filename": "keystone/models/receipt_model.py",
         "patchSetId": 15
@@ -382,6 +622,30 @@
       "writtenOn": "2018-07-06T18:09:04Z",
       "side": 1,
       "message": "Don\u0027t we have this code somewhere else (or something similar) already?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 46
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e6b9a8ca",
+        "filename": "keystone/models/receipt_model.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-07-10T03:27:36Z",
+      "side": 1,
+      "message": "the token model module has the same thing. I might move it to common.utils I guess.",
+      "parentUuid": "5f7c97a3_50687a86",
       "range": {
         "startLine": 22,
         "startChar": 0,
@@ -509,6 +773,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_da49e0b7",
+        "filename": "keystone/receipt/provider.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-07-10T03:27:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_90ce1281",
+      "range": {
+        "startLine": 91,
+        "startChar": 28,
+        "endLine": 91,
+        "endChar": 43
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_50c4fa5f",
         "filename": "keystone/receipt/provider.py",
         "patchSetId": 15
@@ -520,6 +808,30 @@
       "writtenOn": "2018-07-06T18:09:04Z",
       "side": 1,
       "message": "Be sure (see other comments) that we do not expose \"failed to validate receipt\" to the end user in a failure state (vs. bad password or bad username). \n\nIn non-debug forms, this must be opaque and simply a bad username/password/receipt error (not specific which one).",
+      "range": {
+        "startLine": 120,
+        "startChar": 28,
+        "endLine": 120,
+        "endChar": 43
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_fa44dca0",
+        "filename": "keystone/receipt/provider.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-07-10T03:27:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_50c4fa5f",
       "range": {
         "startLine": 120,
         "startChar": 28,
@@ -763,6 +1075,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_3d91ee9a",
+        "filename": "keystone/receipt/providers/common.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-07-10T03:27:36Z",
+      "side": 1,
+      "message": "taken directly from the token code... unsure if this does bubble up a 401 even there.",
+      "parentUuid": "5f7c97a3_f032e65c",
+      "range": {
+        "startLine": 83,
+        "startChar": 28,
+        "endLine": 83,
+        "endChar": 42
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_703ed626",
         "filename": "keystone/receipt/providers/fernet/__init__.py",
         "patchSetId": 15
@@ -820,6 +1156,30 @@
       "writtenOn": "2018-07-09T19:09:45Z",
       "side": 1,
       "message": "According to the coverage report, this appears to be untested?\n\nhttp://logs.openstack.org/86/572286/15/check/openstack-tox-cover/3df423b/cover/keystone_receipt_receipt_formatters_py.html#n159",
+      "range": {
+        "startLine": 166,
+        "startChar": 8,
+        "endLine": 177,
+        "endChar": 56
+      },
+      "revId": "4106cf58ee51c5cf249bb53364f110dc2f0cdc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_fdb4d61e",
+        "filename": "keystone/receipt/receipt_formatters.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-07-10T03:27:36Z",
+      "side": 1,
+      "message": "Looks like that\u0027s because we cache on issue, and then don\u0027t need to validate it at all. This gets hit when I turn caching on issue off in the tests.\n\nSo I need a test that turns caching off, or as mentioned elsewhere, drop caching entirely.",
+      "parentUuid": "5f7c97a3_d400de02",
       "range": {
         "startLine": 166,
         "startChar": 8,
