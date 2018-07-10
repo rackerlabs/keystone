@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_df58e925",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-10T09:25:32Z",
+      "side": 1,
+      "message": "\"service_token_roles_required\" is False by default in keystonemiddleware, it means that every token can act as \"service token\" by default, so we should not allow \"service token\" to use project_id filter now.",
+      "range": {
+        "startLine": 116,
+        "startChar": 28,
+        "endLine": 116,
+        "endChar": 49
+      },
+      "revId": "eb49dc4c9092f2a36690a3233dc08f2d33fe4c09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_467c1c1f",
         "filename": "keystone/limit/controllers.py",
         "patchSetId": 8
