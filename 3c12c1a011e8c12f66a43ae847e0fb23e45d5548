@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_ceea7e0c",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-10T07:31:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_5a4f15bd",
+      "range": {
+        "startLine": 279,
+        "startChar": 8,
+        "endLine": 279,
+        "endChar": 27
+      },
+      "revId": "3c12c1a011e8c12f66a43ae847e0fb23e45d5548",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_9a328d5c",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2018-07-09T21:09:27Z",
       "side": 1,
       "message": "I\u0027m not sure I completely understand this constant.",
+      "range": {
+        "startLine": 282,
+        "startChar": 42,
+        "endLine": 282,
+        "endChar": 43
+      },
+      "revId": "3c12c1a011e8c12f66a43ae847e0fb23e45d5548",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_6eed6a22",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-10T07:31:27Z",
+      "side": 1,
+      "message": "oh, it\u0027s wrong here, I\u0027ll update it.",
+      "parentUuid": "5f7c97a3_9a328d5c",
       "range": {
         "startLine": 282,
         "startChar": 42,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_4963c8dd",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-10T07:31:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_ba774908",
+      "range": {
+        "startLine": 298,
+        "startChar": 32,
+        "endLine": 298,
+        "endChar": 52
+      },
+      "revId": "3c12c1a011e8c12f66a43ae847e0fb23e45d5548",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_da632540",
         "filename": "keystone/server/backends.py",
         "patchSetId": 4
@@ -88,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_7a7bec78",
+        "filename": "keystone/server/backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-10T07:31:27Z",
+      "side": 1,
+      "message": "correct, but then we\u0027ll force the manager init order again. I\u0027m not sure it\u0027s the result we want.",
+      "parentUuid": "5f7c97a3_da632540",
+      "revId": "3c12c1a011e8c12f66a43ae847e0fb23e45d5548",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_3a6b391f",
         "filename": "releasenotes/notes/bp-strict-two-level-model.yaml",
         "patchSetId": 4
@@ -99,6 +189,24 @@
       "writtenOn": "2018-07-09T21:09:27Z",
       "side": 1,
       "message": "This change is also changing a backend interface. We should have a dedicated release note for people providing their own resource backends.",
+      "revId": "3c12c1a011e8c12f66a43ae847e0fb23e45d5548",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_b34d2f9a",
+        "filename": "releasenotes/notes/bp-strict-two-level-model.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-10T07:31:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_3a6b391f",
       "revId": "3c12c1a011e8c12f66a43ae847e0fb23e45d5548",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
