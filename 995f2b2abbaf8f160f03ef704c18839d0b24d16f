@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_4f83b104",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-11T02:30:03Z",
+      "side": 1,
+      "message": "No need this line, the assignment cache has been invalidated already. See \"_post_delete_cleanup_project\"",
+      "range": {
+        "startLine": 466,
+        "startChar": 0,
+        "endLine": 466,
+        "endChar": 59
+      },
+      "revId": "995f2b2abbaf8f160f03ef704c18839d0b24d16f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
