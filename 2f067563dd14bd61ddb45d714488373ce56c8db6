@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_51d4a14b",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 968,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-11T21:59:04Z",
+      "side": 1,
+      "message": "If D is 9, it fails because the project tree is already created and E is assuming a default of 10. This isn\u0027t a case we explicitly call out in the specification, but we do say that if you create a project root with a limit lower than the default, all children will assume the limit of the parent (we might need to add a test for that).\n\nBut I somehow uncovered this after combining the logic for update and create limit enforcement checks \u003cshrug\u003e",
+      "range": {
+        "startLine": 968,
+        "startChar": 28,
+        "endLine": 968,
+        "endChar": 30
+      },
+      "revId": "2f067563dd14bd61ddb45d714488373ce56c8db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
