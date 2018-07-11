@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_0c42993c",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-11T13:44:46Z",
+      "side": 1,
+      "message": "So just populate all of these when we get the trust? We\u0027d still need the property methods here wouldn\u0027t we?",
+      "parentUuid": "5f7c97a3_c6fe9003",
+      "range": {
+        "startLine": 478,
+        "startChar": 0,
+        "endLine": 500,
+        "endChar": 29
+      },
+      "revId": "f35c8c100661c735c2c4a478c002697fd06fcadb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_66053c10",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 17
