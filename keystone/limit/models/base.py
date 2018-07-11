@@ -41,31 +41,24 @@ class ModelBase(object):
     DESCRIPTION = None
     MAX_PROJECT_TREE_DEPTH = None
 
-    def check_limit_hierarchy_creating(self, limits):
-        """Check the new creating limits whether satisfy the limit model.
+    def check_limit(self, project_id, resource_name, resource_limit,
+                    service_id, region_id=None):
+        """Check if a limit adhere to the properties of the enforcement model.
 
-        :param limits: A list of the limit objects need to be check.
-        :type limits: A lisf of the limits. Each limit is a dict that contains
-            "resource_limit", "resource_name", "project_id", "service_id" and
-            optional "region_id", "description".
+        :param project_id: The project identifier of the limit.
+        :type project_id: str
+        :param resource_name: The name of the resource for the limit.
+        :type resource_name: str
+        :param resource_limit: The number of resources associated to the limit.
+        :type resource_limit: int
+        :param service_id: The service identifier associated to the limit.
+        :type service_id: str
+        :param region_id: The region identifier associated to the limit.
+        :type region_id: str
 
-        :raises keystone.exception.InvalidLimit: If any of the new limits
-            doesn't satisfy the limit model.
-
-        """
-        raise NotImplementedError()
-
-    def check_limit_hierarchy_updating(self, limit_id, limit):
-        """Check the new updating limit whether satisfy the limit model.
-
-        :param limit_id: the id of the limit.
-        :type limit_id: str.
-        :param limit: The limit object need to be check.
-        :type limit: A limits dict that contains "resource_limit" and optional
-            "description".
-
-        :raises keystone.exception.InvalidLimit: If the limit doesn't satisfy
-            the limit model.
+        :raises keystone.exception.InvalidLimit: If the properties of the limit
+                                                 violate the characteristics of
+                                                 the enforcement model.
 
         """
         raise NotImplementedError()

@@ -11,7 +11,8 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
-import copy
+
+from oslo_log import log
 
 from keystone.common import cache
 from keystone.common import driver_hints
@@ -22,6 +23,7 @@ from keystone import exception
 from keystone.limit.models import base
 
 CONF = keystone.conf.CONF
+LOG = log.getLogger(__name__)
 PROVIDERS = provider_api.ProviderAPIs
 
 MEMOIZE = cache.get_memoization_decorator(group='unified_limit')
@@ -96,14 +98,32 @@ class Manager(manager.Manager):
     def create_limits(self, limits):
         for limit in limits:
             self._assert_resource_exist(limit, 'limit')
-        self.enforcement_model.check_limit_hierarchy_creating(
-            copy.deepcopy(limits))
+            self.enforcement_model.check_limit(
+                limit['project_id'], limit['resource_name'],
+                limit['resource_limit'], limit['service_id'],
+                region_id=limit.get('region_id')
+            )
         return self.driver.create_limits(limits)
 
     def update_limit(self, limit_id, limit):
         self._assert_resource_exist(limit, 'limit')
-        self.enforcement_model.check_limit_hierarchy_updating(
-            limit_id, copy.deepcopy(limit))
+
+        existing_limit = self.get_limit(limit_id)
+        existing_limit.update(limit)
+
+        try:
+            self.enforcement_model.check_limit(
+                existing_limit['project_id'], existing_limit['resource_name'],
+                existing_limit['resource_limit'], existing_limit['service_id'],
+                region_id=existing_limit['region_id']
+            )
+        except exception.InvalidLimit:
+            error = ("The updating value resource_limit: %(resource_limit)s "
+                     "doesn't satisfy current hierarchy model") % {
+                'resource_limit': existing_limit['resource_limit']}
+            LOG.error(error)
+            raise exception.InvalidLimit(reason=error)
+
         updated_limit = self.driver.update_limit(limit_id, limit)
         self.get_limit.invalidate(self, updated_limit['id'])
         return updated_limit

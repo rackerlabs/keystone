@@ -31,3 +31,7 @@ class FlatModel(base.ModelBase):
         # Flat limit model is not hierarchical, so don't need to check the
         # value.
         return
+
+    def check_limit(self, project_id, resource_name, resource_limit,
+                    service_id, region_id=None):
+        return

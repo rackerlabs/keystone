@@ -965,7 +965,7 @@ class StrictTwoLevelLimitsTestCase(LimitsTestCase):
 
     def test_create_multi_limits(self):
         # success to create a tree in one request like:
-        #    A,12         D,9
+        #    A,12         D,10
         #    / \          / \
         #  B,9  C,5    E,5   F,4
         ref_A = unit.new_limit_ref(project_id=self.project_A['id'],
@@ -987,7 +987,7 @@ class StrictTwoLevelLimitsTestCase(LimitsTestCase):
                                    service_id=self.service_id,
                                    region_id=self.region_id,
                                    resource_name='volume',
-                                   resource_limit=9)
+                                   resource_limit=10)
         ref_E = unit.new_limit_ref(project_id=self.project_E['id'],
                                    service_id=self.service_id,
                                    region_id=self.region_id,
