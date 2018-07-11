@@ -46,6 +46,30 @@
       "revId": "e8ca7846ffa1d5bdfd5f16a4d3b2fbe3033a5e70",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_2a7d03e6",
+        "filename": "api-ref/source/v3/unified_limits.inc",
+        "patchSetId": 12
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-11T03:49:59Z",
+      "side": 1,
+      "message": "yes, because enforcement model only applies to project limits. @Collen, is that make sense?",
+      "parentUuid": "5f7c97a3_3757b9cb",
+      "range": {
+        "startLine": 312,
+        "startChar": 18,
+        "endLine": 312,
+        "endChar": 38
+      },
+      "revId": "e8ca7846ffa1d5bdfd5f16a4d3b2fbe3033a5e70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
