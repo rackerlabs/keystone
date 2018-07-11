@@ -22,12 +22,8 @@ class FlatModel(base.ModelBase):
     )
     MAX_PROJECT_TREE_DEPTH = None
 
-    def check_limit_hierarchy_creating(self, limits):
-        # Flat limit model is not hierarchical, so don't need to check the
-        # value.
-        return
-
-    def check_limit_hierarchy_updating(self, limit_id, limit):
+    def check_limit(self, project_id, resource_name, resource_limit,
+                    service_id, region_id=None):
         # Flat limit model is not hierarchical, so don't need to check the
         # value.
         return
