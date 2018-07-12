@@ -22,6 +22,30 @@
       "revId": "24e6833b75703947b88a129dc7d39d4519f65179",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_36d54de7",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-12T11:06:51Z",
+      "side": 1,
+      "message": "yeah, the same as L78, henry has a detail NOTE.",
+      "parentUuid": "5f7c97a3_5b5a7251",
+      "range": {
+        "startLine": 87,
+        "startChar": 73,
+        "endLine": 87,
+        "endChar": 77
+      },
+      "revId": "24e6833b75703947b88a129dc7d39d4519f65179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
