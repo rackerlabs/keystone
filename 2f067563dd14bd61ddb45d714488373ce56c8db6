@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_7650a560",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-12T11:17:20Z",
+      "side": 1,
+      "message": "In this way, the input limit only compare with the limits in db. it ignored the other input limits, so a case is missed:\n\nsuppose the registered limit is 10 by default, then if I create three limits like the tree below in one request:\n       A,13\n     /    \\\n  B,12   C,11\nit should pass, but actually it raise 403.\n\nThis is the reason why i pass the whole input limits into the check function. See L100-L108 at left part.",
+      "revId": "2f067563dd14bd61ddb45d714488373ce56c8db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_9f19df24",
         "filename": "keystone/limit/models/strict_two_level.py",
         "patchSetId": 2
