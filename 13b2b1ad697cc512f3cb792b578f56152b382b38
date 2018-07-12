@@ -66,6 +66,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_6731cc0a",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-12T14:01:57Z",
+      "side": 1,
+      "message": "Would not registering the limit solve the case for the infinite limit?",
+      "parentUuid": "5f7c97a3_91bd4b05",
+      "range": {
+        "startLine": 68,
+        "startChar": 38,
+        "endLine": 68,
+        "endChar": 73
+      },
+      "revId": "13b2b1ad697cc512f3cb792b578f56152b382b38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_18f88048",
         "filename": "keystone/limit/models/strict_two_level.py",
         "patchSetId": 21
@@ -148,6 +172,30 @@
       "side": 1,
       "message": "_check_limit is using for compare the input limit with the backend\u0027s limit, here is using for compare the limits in the input limit list, since we support creating limits in batch. \n\nWe should make sure the input limit tree is legal as well.\nfor example: suppose the registered limit is 10,\nwe now create three limits in one request like:\n    A,13\n   /   \\\nB,12    C,11\n\nif we just _check_limit, B will find that A has no limit in the backend and the registered limit is 10, then it\u0027ll raise error because 13 \u003e 10, so as C. But actually A will be set to 13 in this request, this request should be passed.",
       "parentUuid": "5f7c97a3_786e54ff",
+      "range": {
+        "startLine": 102,
+        "startChar": 20,
+        "endLine": 103,
+        "endChar": 78
+      },
+      "revId": "13b2b1ad697cc512f3cb792b578f56152b382b38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_6aff5100",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-12T14:01:57Z",
+      "side": 1,
+      "message": "Yeah - I missed this detail when I was playing with this locally yesterday [0].\n\nThe ability to create limits in batches kinda throw a wrench into this since another project in the request could be the parent of the project we\u0027re currently processing.\n\n[0] https://review.openstack.org/#/c/581894/",
+      "parentUuid": "5f7c97a3_51b01341",
       "range": {
         "startLine": 102,
         "startChar": 20,
