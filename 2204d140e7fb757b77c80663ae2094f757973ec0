@@ -16,6 +16,24 @@
       "revId": "2204d140e7fb757b77c80663ae2094f757973ec0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_30ea2c74",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-07-12T15:20:02Z",
+      "side": 1,
+      "message": "++, \"Remove uuid token size check from doctor\" would be more accurate.",
+      "parentUuid": "5f7c97a3_8a5e6d11",
+      "revId": "2204d140e7fb757b77c80663ae2094f757973ec0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
