@@ -1,0 +1,153 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_db28c237",
+        "filename": "keystone/exception.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-12T10:24:20Z",
+      "side": 1,
+      "message": "Have we talked about whether this should be throwing a 400 or a 403?\n\nFrom the API guidelines (https://specs.openstack.org/openstack/api-wg/guidelines/http/response-codes.html#failure-code-clarifications):\n\n* If the request results in the OpenStack user exceeding his or her quota, the return code should be 403 Forbidden. Do not use 413 Request Entity Too Large.\n* For badly formatted requests, the return code should be 400 Bad Request. Do not use 422 Unprocessable Entity.\n-   If the API limits the length of a property that is a collection, the return code should be 400 Bad Request when the request exceeds the length limit. The client should adjust requests to achieve success, and shouldn’t expect to repeat the request and have it work. Do not use 403 Forbidden for this case, because this is different than exceeding quota – for a subsequent request to succeed when quotas are exceeded the server environment must change.\n\nSince this is about setting the limit, not a request that would increase usage of quota, the first point doesn\u0027t apply, even though it\u0027s tempting to think it should.\n\nI could see this falling under the scope of a badly formatted request. The user needs to adjust their request (make the number smaller) in order for it to succeed. On the other hand, you could look at it from the other side and say that the server environment (the parent quota) needs to change in order for the request to succeed. I think I lean toward using the 403 which is what you have here, I just want to check that this has been thought out and discussed.",
+      "revId": "13b2b1ad697cc512f3cb792b578f56152b382b38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f8a024a7",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-12T10:24:20Z",
+      "side": 1,
+      "message": "If the parent\u0027s limit is unset, and _get_specified_limit_value returns the registered limit, does that mean the child\u0027s limit can never exceed the registered limit unless the parent\u0027s limit is raised?\n\nI guess that makes sense, and if you didn\u0027t want that you would use the flat model, just trying to make sure I follow.\n\nIs it possible to say the registered limit is infinite, and allow child project limits to be unrestricted by their parents? We\u0027d usually indicate that with a -1 but that wouldn\u0027t work with this arithmetic logic.",
+      "range": {
+        "startLine": 68,
+        "startChar": 38,
+        "endLine": 68,
+        "endChar": 73
+      },
+      "revId": "13b2b1ad697cc512f3cb792b578f56152b382b38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_18f88048",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-12T10:24:20Z",
+      "side": 1,
+      "message": "Why does it matter if it\u0027s a domain?",
+      "range": {
+        "startLine": 98,
+        "startChar": 16,
+        "endLine": 98,
+        "endChar": 51
+      },
+      "revId": "13b2b1ad697cc512f3cb792b578f56152b382b38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_786e54ff",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-12T10:24:20Z",
+      "side": 1,
+      "message": "Isn\u0027t this what _check_limit is supposed to be doing?",
+      "range": {
+        "startLine": 102,
+        "startChar": 20,
+        "endLine": 103,
+        "endChar": 78
+      },
+      "revId": "13b2b1ad697cc512f3cb792b578f56152b382b38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_78a97423",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-12T10:24:20Z",
+      "side": 1,
+      "message": "If this is going to be immediately caught on line 114 and the reason is not used there then I guess we don\u0027t really need the reason string to be set here.",
+      "range": {
+        "startLine": 105,
+        "startChar": 40,
+        "endLine": 105,
+        "endChar": 53
+      },
+      "revId": "13b2b1ad697cc512f3cb792b578f56152b382b38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_7bc72e67",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-12T10:24:20Z",
+      "side": 1,
+      "message": "What is the default registered limit in this case?",
+      "revId": "13b2b1ad697cc512f3cb792b578f56152b382b38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_1b45da44",
+        "filename": "releasenotes/notes/bp-strict-two-level-model.yaml",
+        "patchSetId": 21
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-12T10:24:20Z",
+      "side": 1,
+      "message": "I would use `[unified_limit]/enforcement_model` to indicate what group this configuration option is in.",
+      "range": {
+        "startLine": 6,
+        "startChar": 24,
+        "endLine": 6,
+        "endChar": 41
+      },
+      "revId": "13b2b1ad697cc512f3cb792b578f56152b382b38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
