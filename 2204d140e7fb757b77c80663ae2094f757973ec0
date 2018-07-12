@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_8a5e6d11",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-12T14:06:51Z",
+      "side": 1,
+      "message": "nit: I was a little confused reading this just because we\u0027ve already removed this code. Either the commit message title or the description could mention that this is only cleaning up a ``keystone-manage doctor`` that wasn\u0027t included in the original removal.",
+      "revId": "2204d140e7fb757b77c80663ae2094f757973ec0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
