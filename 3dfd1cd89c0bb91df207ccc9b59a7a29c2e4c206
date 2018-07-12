@@ -16,6 +16,24 @@
       "revId": "3dfd1cd89c0bb91df207ccc9b59a7a29c2e4c206",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_b17de7e7",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-12T12:03:32Z",
+      "side": 1,
+      "message": "that method is only used for one project tree. i.e. if there are there trees in db:\n   A       E      G\n  / \\      |    \n B   C     F\nwe\u0027ll first get each tree, then check tree times(max), the performance is very low. It only works well when create a new project.\n\nIn this case, we\u0027ll scan the whole backend, so that the SQL action is more effective IMO.",
+      "parentUuid": "5f7c97a3_36b30d51",
+      "revId": "3dfd1cd89c0bb91df207ccc9b59a7a29c2e4c206",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
