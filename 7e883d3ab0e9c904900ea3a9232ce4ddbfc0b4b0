@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_bc8373aa",
+        "filename": "keystone/tests/unit/server/test_keystone_flask.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-07-12T17:49:48Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be in test_unenforced_api_decorator rather than here?",
+      "range": {
+        "startLine": 488,
+        "startChar": 12,
+        "endLine": 489,
+        "endChar": 58
+      },
+      "revId": "7e883d3ab0e9c904900ea3a9232ce4ddbfc0b4b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
