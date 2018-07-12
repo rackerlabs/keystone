@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_3c5be3f9",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-12T17:24:38Z",
+      "side": 1,
+      "message": "# NOTE(morgan): Mandatory Cartoon Character Swearing.\n\n^_^",
+      "parentUuid": "5f7c97a3_67630c1b",
+      "revId": "0b579900e0c1b844c7d35236342bf7922792bda2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_aa4009a4",
         "filename": "keystone/tests/unit/server/test_keystone_flask.py",
         "patchSetId": 10
@@ -30,6 +48,30 @@
       "writtenOn": "2018-07-12T14:42:05Z",
       "side": 1,
       "message": "/s/get/put/",
+      "range": {
+        "startLine": 208,
+        "startChar": 14,
+        "endLine": 208,
+        "endChar": 17
+      },
+      "revId": "0b579900e0c1b844c7d35236342bf7922792bda2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_1c0f07e1",
+        "filename": "keystone/tests/unit/server/test_keystone_flask.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-12T17:24:38Z",
+      "side": 1,
+      "message": "fixed in next.",
+      "parentUuid": "5f7c97a3_aa4009a4",
       "range": {
         "startLine": 208,
         "startChar": 14,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_bcf373e8",
+        "filename": "keystone/tests/unit/server/test_keystone_flask.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-12T17:24:38Z",
+      "side": 1,
+      "message": "Fixed in next.",
+      "parentUuid": "5f7c97a3_0a09fd82",
+      "range": {
+        "startLine": 212,
+        "startChar": 14,
+        "endLine": 212,
+        "endChar": 17
+      },
+      "revId": "0b579900e0c1b844c7d35236342bf7922792bda2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_aadc89e1",
         "filename": "keystone/tests/unit/server/test_keystone_flask.py",
         "patchSetId": 10
@@ -76,6 +142,30 @@
       "writtenOn": "2018-07-12T14:42:05Z",
       "side": 1,
       "message": "worth checking that this either isn\u0027t in the list anymore or that get returns 404 after this.",
+      "range": {
+        "startLine": 289,
+        "startChar": 12,
+        "endLine": 291,
+        "endChar": 32
+      },
+      "revId": "0b579900e0c1b844c7d35236342bf7922792bda2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_7cfddbb0",
+        "filename": "keystone/tests/unit/server/test_keystone_flask.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-12T17:24:38Z",
+      "side": 1,
+      "message": "Sure.",
+      "parentUuid": "5f7c97a3_aadc89e1",
       "range": {
         "startLine": 289,
         "startChar": 12,
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_3c29a339",
+        "filename": "keystone/tests/unit/server/test_keystone_flask.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-12T17:24:38Z",
+      "side": 1,
+      "message": "In next.",
+      "parentUuid": "5f7c97a3_2a9f1903",
+      "range": {
+        "startLine": 323,
+        "startChar": 31,
+        "endLine": 323,
+        "endChar": 37
+      },
+      "revId": "0b579900e0c1b844c7d35236342bf7922792bda2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_cd36bfe9",
         "filename": "keystone/tests/unit/server/test_keystone_flask.py",
         "patchSetId": 10
@@ -122,6 +236,30 @@
       "writtenOn": "2018-07-12T14:42:05Z",
       "side": 1,
       "message": "shouldn\u0027t unenforced not require a token?",
+      "range": {
+        "startLine": 450,
+        "startChar": 26,
+        "endLine": 450,
+        "endChar": 57
+      },
+      "revId": "0b579900e0c1b844c7d35236342bf7922792bda2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_1c286731",
+        "filename": "keystone/tests/unit/server/test_keystone_flask.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-12T17:24:38Z",
+      "side": 1,
+      "message": "Ah, copy/paste error. Thanks.",
+      "parentUuid": "5f7c97a3_cd36bfe9",
       "range": {
         "startLine": 450,
         "startChar": 26,
