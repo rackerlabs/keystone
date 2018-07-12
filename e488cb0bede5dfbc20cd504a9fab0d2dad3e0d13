@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_f1891f1e",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-12T11:50:20Z",
+      "side": 1,
+      "message": "we can\u0027t set a limit on a project if the limit isn\u0027t registered, but this check is after the enforcement check. So the case that both project limit and registered limit are not exist in the backend can happen\n\nSee my comment below, so if we move the reference check before registered limit, then we don\u0027t need the None here.\n\nI agree to move change the check order. :)",
+      "parentUuid": "5f7c97a3_3bf46488",
+      "range": {
+        "startLine": 54,
+        "startChar": 68,
+        "endLine": 54,
+        "endChar": 72
+      },
+      "revId": "e488cb0bede5dfbc20cd504a9fab0d2dad3e0d13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_1bd2c8fe",
         "filename": "keystone/limit/models/strict_two_level.py",
         "patchSetId": 20
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_51133302",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-12T11:50:20Z",
+      "side": 1,
+      "message": "If we move the unique and reference check before check_limit, yes. But now if there is no both project limit and  referenced limit, the parent_limit_value here can be None",
+      "parentUuid": "5f7c97a3_1bd2c8fe",
+      "range": {
+        "startLine": 68,
+        "startChar": 15,
+        "endLine": 68,
+        "endChar": 33
+      },
+      "revId": "e488cb0bede5dfbc20cd504a9fab0d2dad3e0d13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_cf732e1c",
         "filename": "keystone/tests/unit/test_limits.py",
         "patchSetId": 20
@@ -59,6 +107,30 @@
       "writtenOn": "2018-07-11T21:52:45Z",
       "side": 1,
       "message": "nit: we could shorten these up to just be \"A\", \"B\", \"C\", etc.. to match the diagram above (since project is pretty much implied).",
+      "range": {
+        "startLine": 783,
+        "startChar": 44,
+        "endLine": 783,
+        "endChar": 52
+      },
+      "revId": "e488cb0bede5dfbc20cd504a9fab0d2dad3e0d13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_51a493a3",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 783,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-12T11:50:20Z",
+      "side": 1,
+      "message": "sure",
+      "parentUuid": "5f7c97a3_cf732e1c",
       "range": {
         "startLine": 783,
         "startChar": 44,
