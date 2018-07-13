@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_83caca9d",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-13T03:07:22Z",
+      "side": 1,
+      "message": "Ahh - now I see why you did that. It ultimately boils down to having a POST API that supports batch creation... (which isn\u0027t necessarily normal by keystone standards).\n\nI guess there isn\u0027t anything stopping us from having two separate methods in this interface. Something just tells me that there should only be one since they essentially boil down to checking the same thing (the validity of the limit). I see now that it\u0027s not really the fault of _this_ interface, but perhaps the oddity in the POST /v3/limits API that forces this interface to deal with it in a specific way.\n\nMaybe two methods is how we\u0027re going to have to deal with it for now.",
+      "parentUuid": "5f7c97a3_96578128",
+      "revId": "2f067563dd14bd61ddb45d714488373ce56c8db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_9f19df24",
         "filename": "keystone/limit/models/strict_two_level.py",
         "patchSetId": 2
@@ -60,6 +78,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_43bcb206",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-13T03:07:22Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5f7c97a3_9f19df24",
+      "range": {
+        "startLine": 37,
+        "startChar": 30,
+        "endLine": 37,
+        "endChar": 37
+      },
+      "revId": "2f067563dd14bd61ddb45d714488373ce56c8db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_5fe827de",
         "filename": "keystone/limit/models/strict_two_level.py",
         "patchSetId": 2
@@ -71,6 +113,30 @@
       "writtenOn": "2018-07-12T02:39:37Z",
       "side": 1,
       "message": "this parent can be reused for L81",
+      "range": {
+        "startLine": 75,
+        "startChar": 8,
+        "endLine": 75,
+        "endChar": 14
+      },
+      "revId": "2f067563dd14bd61ddb45d714488373ce56c8db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_23c17682",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-13T03:07:22Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5f7c97a3_5fe827de",
       "range": {
         "startLine": 75,
         "startChar": 8,
