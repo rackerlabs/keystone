@@ -23,7 +23,9 @@ from flask import blueprints
 import flask_restful
 from oslo_log import log
 import six
+from six.moves import http_client
 
+from keystone.common import context
 from keystone.common import driver_hints
 from keystone.common import json_home
 from keystone.common.rbac_enforcer import enforcer
@@ -133,6 +135,13 @@ def _assert_rbac_enforcement_called(resp):
            'is unenforced.')
     g = flask.g
     assert getattr(g, enforcer._ENFORCEMENT_CHECK_ATTR, False), msg  # nosec
+    return resp
+
+
+def _remove_content_type_on_204(resp):
+    # Remove content-type if the resp is 204.
+    if resp.status_code == http_client.NO_CONTENT:
+        resp.headers.pop('content-type', None)
     return resp
 
 
@@ -401,6 +410,7 @@ class APIBase(object):
         # register global after request functions
         # e.g. self.__blueprint.after_request(function)
         self.__blueprint.after_request(_assert_rbac_enforcement_called)
+        self.__blueprint.after_request(_remove_content_type_on_204)
 
         # Add Passed-In Functions
         for f in functions:
@@ -518,7 +528,7 @@ class ResourceBase(flask_restful.Resource):
 
     @classmethod
     def _add_self_referential_link(cls, ref):
-        self_link = '/'.join([base_url(), 'v3', cls.collection_key])
+        self_link = '/'.join([base_url(), 'v3', cls.collection_key, ref['id']])
         ref.setdefault('links', {})['self'] = self_link
 
     @classmethod
@@ -581,6 +591,10 @@ class ResourceBase(flask_restful.Resource):
                 refs = [r for r in refs if _inexact_attr_match(f, r)]
 
         return refs
+
+    @property
+    def oslo_context(self):
+        return flask.request.environ.get(context.REQUEST_CONTEXT_ENV, None)
 
     @staticmethod
     def build_driver_hints(supported_filters):
@@ -668,6 +682,14 @@ class ResourceBase(flask_restful.Resource):
             return LIMITED, refs[:hints.limit['limit']]
 
         return NOT_LIMITED, refs
+
+    @classmethod
+    def _normalize_dict(cls, d):
+        return {cls._normalize_arg(k): v for (k, v) in d.items()}
+
+    @staticmethod
+    def _normalize_arg(arg):
+        return arg.replace(':', '_').replace('-', '_')
 
 
 def base_url():
