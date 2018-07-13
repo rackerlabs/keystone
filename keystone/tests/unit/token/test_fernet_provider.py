@@ -76,8 +76,9 @@ class TestValidate(unit.TestCase):
         user_ref = PROVIDERS.identity_api.create_user(user_ref)
 
         method_names = ['password']
+        auth_context = {'user_id': user_ref['id']}
         token = PROVIDERS.token_provider_api.issue_token(
-            user_ref['id'], method_names)
+            method_names, auth_context=auth_context)
 
         token = PROVIDERS.token_provider_api.validate_token(token.id)
         self.assertIsInstance(token.audit_ids, list)
@@ -123,7 +124,7 @@ class TestValidate(unit.TestCase):
         }
         auth_context = auth.core.AuthContext(**auth_context_params)
         token = PROVIDERS.token_provider_api.issue_token(
-            user_ref['id'], method_names, auth_context=auth_context)
+            method_names, auth_context=auth_context)
 
         token = PROVIDERS.token_provider_api.validate_token(token.id)
 
@@ -177,9 +178,10 @@ class TestValidate(unit.TestCase):
 
         method_names = ['password']
 
+        auth_context = {'user_id': user_ref['id']}
         token = PROVIDERS.token_provider_api.issue_token(
-            user_ref['id'], method_names, project_id=project_ref['id'],
-            trust_id=trust_ref['id'])
+            method_names, project_id=project_ref['id'],
+            trust_id=trust_ref['id'], auth_context=auth_context)
 
         token = PROVIDERS.token_provider_api.validate_token(token.id)
         self.assertEqual(trust_ref['id'], token.trust_id)

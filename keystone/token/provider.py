@@ -199,10 +199,9 @@ class Manager(manager.Manager):
         else:
             raise exception.TokenNotFound(_('Failed to validate token'))
 
-    def issue_token(self, user_id, method_names, expires_at=None,
-                    system=None, project_id=None, domain_id=None,
-                    auth_context=None, trust_id=None, app_cred_id=None,
-                    parent_audit_id=None):
+    def issue_token(self, method_names, expires_at=None, system=None,
+                    project_id=None, domain_id=None, auth_context=None,
+                    trust_id=None, app_cred_id=None, parent_audit_id=None):
 
         # NOTE(lbragstad): Grab a blank token object and use composition to
         # build the token according to the authentication and authorization
@@ -219,6 +218,7 @@ class Manager(manager.Manager):
         token.parent_audit_id = parent_audit_id
 
         if auth_context:
+            token.user_id = auth_context['user_id']
             if constants.IDENTITY_PROVIDER in auth_context:
                 token.is_federated = True
                 token.protocol_id = auth_context[constants.PROTOCOL]
@@ -233,9 +233,6 @@ class Manager(manager.Manager):
 
             if 'access_token_id' in auth_context:
                 token.access_token_id = auth_context['access_token_id']
-
-        if not token.user_id:
-            token.user_id = user_id
 
         token.user_domain_id = token.user['domain_id']
 

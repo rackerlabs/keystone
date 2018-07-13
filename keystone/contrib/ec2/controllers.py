@@ -293,8 +293,10 @@ class Ec2ControllerV3(Ec2ControllerCommon, controller.V3Controller):
 
         method_names = ['ec2credential']
 
+        auth_context = {'user_id': user_ref['id']}
         token = self.token_provider_api.issue_token(
-            user_ref['id'], method_names, project_id=project_ref['id']
+            method_names, project_id=project_ref['id'],
+            auth_context=auth_context
         )
         token_reference = controller.render_token_response_from_model(token)
         return self.render_token_data_response(token.id, token_reference)
