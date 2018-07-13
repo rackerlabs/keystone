@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_f75ed811",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-13T07:31:52Z",
+      "side": 1,
+      "message": "sorry that the option was removed.",
+      "range": {
+        "startLine": 714,
+        "startChar": 11,
+        "endLine": 714,
+        "endChar": 29
+      },
+      "revId": "59627875e5e02a5f241bd72d66ccb67ee7199613",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
