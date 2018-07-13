@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_0b5004d5",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-13T15:25:21Z",
+      "side": 1,
+      "message": "This makes me think maybe the TokenModel\u0027s __init__ should be setting these?",
+      "range": {
+        "startLine": 157,
+        "startChar": 0,
+        "endLine": 174,
+        "endChar": 56
+      },
+      "revId": "b47e84dac185adcc3e068237fb4cd285c1ae5583",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
