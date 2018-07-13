@@ -22,6 +22,30 @@
       "revId": "940735bbb80386b4c7fba148a6ceb9b7b1286f07",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_72309656",
+        "filename": "keystone/exception.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-13T08:58:44Z",
+      "side": 1,
+      "message": "oh, it was used in previous patch set. I forget to remove it.",
+      "parentUuid": "5f7c97a3_577f8cbb",
+      "range": {
+        "startLine": 144,
+        "startChar": 6,
+        "endLine": 144,
+        "endChar": 34
+      },
+      "revId": "940735bbb80386b4c7fba148a6ceb9b7b1286f07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
