@@ -119,7 +119,8 @@ class ResourceBase(ks_flask.ResourceBase):
 
         method_names = ['ec2credential']
 
+        auth_context = {'user_id': user_ref['id']}
         token = PROVIDERS.token_provider_api.issue_token(
-            user_id=user_ref['id'], method_names=method_names,
-            project_id=project_ref['id'])
+            method_names, auth_context, project_id=project_ref['id']
+        )
         return token
