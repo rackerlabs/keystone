@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_2b95c03d",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-13T15:31:59Z",
+      "side": 1,
+      "message": "We should make sure we get a patch that makes the model immutable once this method is called (e.g. you can\u0027t change anything about the token after it has been minted).\n\nThis just takes a more defensive stance.",
+      "revId": "04a54966578c1fa17bb1b962769a87c1213ff21f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
