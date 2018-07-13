@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_dc03bcbc",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-13T11:44:59Z",
+      "side": 1,
+      "message": "(nit) it would be more pythonic to use a foreach loop over a range here",
+      "revId": "cd7f2f15441448492dfea143ce9f30aa98885ead",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_3cf430d0",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-13T11:44:59Z",
+      "side": 1,
+      "message": "I don\u0027t think it really makes sense to return one ID. There could be multiple leaf projects that bring the hierarchy over the limit.",
+      "revId": "cd7f2f15441448492dfea143ce9f30aa98885ead",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_1c64d4b2",
+        "filename": "keystone/server/backends.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-13T11:44:59Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be the resource_api?",
+      "range": {
+        "startLine": 67,
+        "startChar": 17,
+        "endLine": 67,
+        "endChar": 34
+      },
+      "revId": "cd7f2f15441448492dfea143ce9f30aa98885ead",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
