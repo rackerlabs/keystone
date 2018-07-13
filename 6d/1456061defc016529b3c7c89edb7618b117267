@@ -1,0 +1,10 @@
+Code-Review+2: ayoung <ayoung@redhat.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Workflow+1: Kristi Nikolla <kristi@nikolla.me>
+Code-Review+1: sonu <sonu.bhumca11@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 13 Jul 2018 09:03:31 +0000
+Reviewed-on: https://review.openstack.org/579342
+Project: openstack/keystone
+Branch: refs/heads/master
