@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_054c6cc7",
+        "filename": "keystone/tests/unit/test_backend_id_mapping_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-13T21:34:40Z",
+      "side": 1,
+      "message": "nit: we could make sure we\u0027re handling the group case by performing the same query with entity_type\u003dmapping.EntityType.GROUP just to ensure that works by returning the 3rd element in the list.\n\nThat would be pretty easy to add in a follow on though.\n\nhttps://review.openstack.org/#/c/582692/",
+      "revId": "4abd9926ab7fb79bbe86a22657a2474790a8fcb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_6547607c",
+        "filename": "releasenotes/notes/filter-mappings-by-entity-77162a146d375385.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-13T21:34:40Z",
+      "side": 1,
+      "message": "Very nice.. Thanks for adding this.",
+      "revId": "4abd9926ab7fb79bbe86a22657a2474790a8fcb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
