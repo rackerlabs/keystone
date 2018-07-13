@@ -22,6 +22,30 @@
       "revId": "b47e84dac185adcc3e068237fb4cd285c1ae5583",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_4bccbc61",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-13T15:35:31Z",
+      "side": 1,
+      "message": "Good point.. Traditionally that\u0027s how we\u0027ve always implemented the issue_token methods.\n\nMy goal in using composition here was to try and keep the logic for mapping properties from authorization to a token in the token provider API, versus having the __init__ accept a bunch of kwargs and reasoning about it during initialization.\n\nFor example, seeing that we clearly start with a blank token and we\u0027re building it how we see fit in here.",
+      "parentUuid": "5f7c97a3_0b5004d5",
+      "range": {
+        "startLine": 157,
+        "startChar": 0,
+        "endLine": 174,
+        "endChar": 56
+      },
+      "revId": "b47e84dac185adcc3e068237fb4cd285c1ae5583",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
