@@ -223,10 +223,10 @@ def authenticate_for_token(auth=None):
         token_audit_id = auth_context.get('audit_id')
 
         token = PROVIDERS.token_provider_api.issue_token(
-            auth_context['user_id'], method_names, expires_at=expires_at,
+            method_names, auth_context, expires_at=expires_at,
             system=system, project_id=project_id, domain_id=domain_id,
-            auth_context=auth_context, trust_id=trust_id,
-            app_cred_id=app_cred_id, parent_audit_id=token_audit_id)
+            trust_id=trust_id, app_cred_id=app_cred_id,
+            parent_audit_id=token_audit_id)
 
         # NOTE(wanghong): We consume a trust use only when we are using
         # trusts and have successfully issued a token.
