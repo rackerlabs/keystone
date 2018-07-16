@@ -95,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_5b50e42c",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-16T17:46:07Z",
+      "side": 1,
+      "message": "Correct.",
+      "parentUuid": "5f7c97a3_7e903350",
+      "range": {
+        "startLine": 508,
+        "startChar": 20,
+        "endLine": 508,
+        "endChar": 53
+      },
+      "revId": "16be22b428fd0c7c34dd48417878f7d37ad1e2ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_8db65025",
         "filename": "keystone/tests/unit/server/test_keystone_flask.py",
         "patchSetId": 13
@@ -154,6 +178,30 @@
       "side": 1,
       "message": "I think David Stanek pulled the common auth stuff into that place to be shared across unit tests and functional tests. It would be nice to have a single set of utilities for auth specific builder methods.",
       "parentUuid": "5f7c97a3_23306406",
+      "range": {
+        "startLine": 150,
+        "startChar": 0,
+        "endLine": 170,
+        "endChar": 9
+      },
+      "revId": "16be22b428fd0c7c34dd48417878f7d37ad1e2ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_db12b461",
+        "filename": "keystone/tests/unit/server/test_keystone_flask.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-16T17:46:07Z",
+      "side": 1,
+      "message": "That is fine, the idea here is I do not ever want to cross flask-specific testing with old-style testing. if this is rolled into something new that is common, it will be flask-specific to avoid any odd interactions. We want to be sure the old tests work exactly as they are, all flask-specific and refactored tests should not lean on the old-style restful bits.",
+      "parentUuid": "5f7c97a3_9e998f6c",
       "range": {
         "startLine": 150,
         "startChar": 0,
