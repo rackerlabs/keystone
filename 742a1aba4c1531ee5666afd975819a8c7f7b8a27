@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_83ccd862",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-16T14:42:34Z",
+      "side": 1,
+      "message": "It seems like now the only difference between create and update is the different error message, so maybe it would be simpler to have something generic enough for both cases instead of having a flag to disambiguate them. In fact I think the error message below would work just fine.",
+      "revId": "742a1aba4c1531ee5666afd975819a8c7f7b8a27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_43efa0b0",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-16T14:42:34Z",
+      "side": 1,
+      "message": "Maybe say \"The resource limit ...\" instead of \"The input ...\" to be clear what kind of input is invalid.",
+      "range": {
+        "startLine": 121,
+        "startChar": 34,
+        "endLine": 121,
+        "endChar": 39
+      },
+      "revId": "742a1aba4c1531ee5666afd975819a8c7f7b8a27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_c3fbb078",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-16T14:42:34Z",
+      "side": 1,
+      "message": "I think it\u0027s fine to say region_id: None instead of having a whole other string for an error message with no region.",
+      "range": {
+        "startLine": 133,
+        "startChar": 16,
+        "endLine": 133,
+        "endChar": 20
+      },
+      "revId": "742a1aba4c1531ee5666afd975819a8c7f7b8a27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
