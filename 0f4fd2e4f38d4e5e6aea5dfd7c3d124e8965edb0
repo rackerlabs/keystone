@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_cce518dd",
+        "filename": "keystone/common/rbac_enforcer/__init__.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-16T19:29:45Z",
+      "side": 1,
+      "message": "I\u0027d like to keep the convention we have to module-level name-spacing but I don\u0027t think that\u0027s enough to hold this up. We can address that in a follow up if we really want to.",
+      "range": {
+        "startLine": 13,
+        "startChar": 51,
+        "endLine": 13,
+        "endChar": 63
+      },
+      "revId": "0f4fd2e4f38d4e5e6aea5dfd7c3d124e8965edb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
