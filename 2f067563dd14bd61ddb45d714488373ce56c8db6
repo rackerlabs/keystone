@@ -149,6 +149,23 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_68214bfc",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-07-16T23:52:23Z",
+      "side": 1,
+      "message": "just return directly:\n \n  return not parent.get(\u0027is_domain\u0027)",
+      "revId": "2f067563dd14bd61ddb45d714488373ce56c8db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_51d4a14b",
         "filename": "keystone/tests/unit/test_limits.py",
         "patchSetId": 2
