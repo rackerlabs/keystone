@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_ad378ce4",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-16T07:40:52Z",
+      "side": 1,
+      "message": "it\u0027s out of date, we can update it in a following patch.",
+      "range": {
+        "startLine": 685,
+        "startChar": 28,
+        "endLine": 685,
+        "endChar": 34
+      },
+      "revId": "16be22b428fd0c7c34dd48417878f7d37ad1e2ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_8db65025",
+        "filename": "keystone/tests/unit/server/test_keystone_flask.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-16T07:40:52Z",
+      "side": 1,
+      "message": "can be replaced by tests.common.auth.AuthTestMixin.build_authentication_request",
+      "range": {
+        "startLine": 150,
+        "startChar": 0,
+        "endLine": 170,
+        "endChar": 9
+      },
+      "revId": "16be22b428fd0c7c34dd48417878f7d37ad1e2ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
