@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_fbc7833c",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-16T02:08:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_dc03bcbc",
+      "revId": "cd7f2f15441448492dfea143ce9f30aa98885ead",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_3cf430d0",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 9
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_5b023774",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-16T02:08:10Z",
+      "side": 1,
+      "message": "yeah, then we can return a list.",
+      "parentUuid": "5f7c97a3_3cf430d0",
+      "revId": "cd7f2f15441448492dfea143ce9f30aa98885ead",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_1c64d4b2",
         "filename": "keystone/server/backends.py",
         "patchSetId": 9
@@ -47,6 +83,30 @@
       "writtenOn": "2018-07-13T11:44:59Z",
       "side": 1,
       "message": "Shouldn\u0027t this be the resource_api?",
+      "range": {
+        "startLine": 67,
+        "startChar": 17,
+        "endLine": 67,
+        "endChar": 34
+      },
+      "revId": "cd7f2f15441448492dfea143ce9f30aa98885ead",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_dbcc0764",
+        "filename": "keystone/server/backends.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-16T02:08:10Z",
+      "side": 1,
+      "message": "because we should get the max depth first form unified_limit_api[1]\n[1]:https://review.openstack.org/#/c/580331/9/keystone/limit/core.py\n\nwe can use \"resource_api\" here and then get the max depth from resource manager, but I think it\u0027ll be a little ugly, like: max_depth \u003d self.unified_limit_api.enforcement_model.MAX_PROJECT_TREE_DEPTH\n\nI hope the enforcement_model is only open for unified_limit_api manager it self.",
+      "parentUuid": "5f7c97a3_1c64d4b2",
       "range": {
         "startLine": 67,
         "startChar": 17,
