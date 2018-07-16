@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_de7ce772",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-16T16:27:26Z",
+      "side": 1,
+      "message": "super nit: this doesn\u0027t need to be passed as a kwarg, but only a style thing..",
+      "range": {
+        "startLine": 107,
+        "startChar": 12,
+        "endLine": 107,
+        "endChar": 16
+      },
+      "revId": "16be22b428fd0c7c34dd48417878f7d37ad1e2ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_ad378ce4",
         "filename": "keystone/server/flask/common.py",
         "patchSetId": 13
@@ -18,6 +41,53 @@
         "startChar": 28,
         "endLine": 685,
         "endChar": 34
+      },
+      "revId": "16be22b428fd0c7c34dd48417878f7d37ad1e2ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_1ebb3fe4",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-16T16:27:26Z",
+      "side": 1,
+      "message": "++ good catch, we should also add a set of tests for this specific regex.",
+      "parentUuid": "5f7c97a3_ad378ce4",
+      "range": {
+        "startLine": 685,
+        "startChar": 28,
+        "endLine": 685,
+        "endChar": 34
+      },
+      "revId": "16be22b428fd0c7c34dd48417878f7d37ad1e2ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_7e903350",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-16T16:27:26Z",
+      "side": 1,
+      "message": "This would blow up with a 405 in flask before reaching this point, yeah?\n\nAlso, thanks for adding the compatibility for reasonable default expected status comparisons.",
+      "range": {
+        "startLine": 508,
+        "startChar": 20,
+        "endLine": 508,
+        "endChar": 53
       },
       "revId": "16be22b428fd0c7c34dd48417878f7d37ad1e2ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -60,6 +130,30 @@
       "side": 1,
       "message": "Probably not, this will be rolled into an isolated flask-way of doing things as we break down the tests to be more flask friendly.",
       "parentUuid": "5f7c97a3_8db65025",
+      "range": {
+        "startLine": 150,
+        "startChar": 0,
+        "endLine": 170,
+        "endChar": 9
+      },
+      "revId": "16be22b428fd0c7c34dd48417878f7d37ad1e2ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_9e998f6c",
+        "filename": "keystone/tests/unit/server/test_keystone_flask.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-16T16:27:26Z",
+      "side": 1,
+      "message": "I think David Stanek pulled the common auth stuff into that place to be shared across unit tests and functional tests. It would be nice to have a single set of utilities for auth specific builder methods.",
+      "parentUuid": "5f7c97a3_23306406",
       "range": {
         "startLine": 150,
         "startChar": 0,
