@@ -16,6 +16,24 @@
       "revId": "dbc6899c38f972193fc16feb9d6543f27678cbe0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e7fa6f0f",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-16T19:48:40Z",
+      "side": 1,
+      "message": "Some do, our tests are very particular and we should \"do the right thing\".",
+      "parentUuid": "5f7c97a3_2c728c13",
+      "revId": "dbc6899c38f972193fc16feb9d6543f27678cbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
