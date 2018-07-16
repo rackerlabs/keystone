@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_ec26d422",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-16T19:32:29Z",
+      "side": 1,
+      "message": "nit: to\n\nonly if you have to rebase/respin for whatever reason though..",
+      "range": {
+        "startLine": 12,
+        "startChar": 57,
+        "endLine": 12,
+        "endChar": 59
+      },
+      "revId": "0d6b427fcc7f6b9b2a06bdd9a7af37064e7ddd51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_ac09bc84",
+        "filename": "keystone/server/flask/application.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-16T19:32:29Z",
+      "side": 1,
+      "message": "When we get everything moved over to flask native, can we still keep this as a frozenset?",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 19
+      },
+      "revId": "0d6b427fcc7f6b9b2a06bdd9a7af37064e7ddd51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_2c44ccb7",
+        "filename": "keystone/server/flask/application.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-16T19:32:29Z",
+      "side": 1,
+      "message": "This will technically only happen if a developer made an error, right? Should this be a ProgrammingError?",
+      "range": {
+        "startLine": 217,
+        "startChar": 18,
+        "endLine": 217,
+        "endChar": 30
+      },
+      "revId": "0d6b427fcc7f6b9b2a06bdd9a7af37064e7ddd51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
