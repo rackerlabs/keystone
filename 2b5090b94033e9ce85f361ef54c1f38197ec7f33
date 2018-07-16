@@ -16,6 +16,24 @@
       "revId": "2b5090b94033e9ce85f361ef54c1f38197ec7f33",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_5b95443c",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-16T17:31:20Z",
+      "side": 1,
+      "message": "This should not pass unit tests if there is a circular import. There is something else going on.",
+      "parentUuid": "5f7c97a3_635f450f",
+      "revId": "2b5090b94033e9ce85f361ef54c1f38197ec7f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
