@@ -34,6 +34,24 @@
       "revId": "2b5090b94033e9ce85f361ef54c1f38197ec7f33",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_3b72c813",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-16T17:40:48Z",
+      "side": 1,
+      "message": "I\u0027ll remove \"application\" from this import-list. it isn\u0027t important for here. The idea is to avoid needing to import \"common\" just importing keystone.server.flask should get you the important bits.",
+      "parentUuid": "5f7c97a3_5b95443c",
+      "revId": "2b5090b94033e9ce85f361ef54c1f38197ec7f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
