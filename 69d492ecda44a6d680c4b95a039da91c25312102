@@ -16,6 +16,24 @@
       "revId": "69d492ecda44a6d680c4b95a039da91c25312102",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_7d7fd0bb",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-16T21:52:39Z",
+      "side": 1,
+      "message": "We can already pass in via constructor. This is for the classmethod that instnatiates and applies to the app.\n\nA lot of the stuff in the constructor is futureproofing.",
+      "parentUuid": "5f7c97a3_c2e8817c",
+      "revId": "69d492ecda44a6d680c4b95a039da91c25312102",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
