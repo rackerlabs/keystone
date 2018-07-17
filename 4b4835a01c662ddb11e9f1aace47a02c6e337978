@@ -56,6 +56,30 @@
       "revId": "4b4835a01c662ddb11e9f1aace47a02c6e337978",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_6b5cca19",
+        "filename": "releasenotes/notes/bp-strict-two-level-model.yaml",
+        "patchSetId": 25
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-17T20:28:33Z",
+      "side": 1,
+      "message": "We can fix this in a followup as long as we do it before the branch is cut",
+      "parentUuid": "5f7c97a3_90bb97bc",
+      "range": {
+        "startLine": 12,
+        "startChar": 47,
+        "endLine": 12,
+        "endChar": 50
+      },
+      "revId": "4b4835a01c662ddb11e9f1aace47a02c6e337978",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
