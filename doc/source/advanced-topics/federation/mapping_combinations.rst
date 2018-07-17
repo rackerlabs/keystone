@@ -43,7 +43,7 @@ Definitions
 
 A mapping looks as follows:
 
-.. code-block:: none
+  ::
 
     {
         "rules": [
@@ -114,7 +114,7 @@ After the rule is found using the rule's conditions and a list of direct mapping
 stored, keystone begins processing the rule's `local` property. Each object in
 the `local` property is collapsed into a single JSON object. For example:
 
-.. code-block:: none
+  ::
 
     {
         "local": [
@@ -129,7 +129,7 @@ the `local` property is collapsed into a single JSON object. For example:
 
 becomes:
 
-.. code-block:: none
+  ::
 
     {
         "local": {
@@ -140,7 +140,7 @@ becomes:
 
 when the same property exists in the local multiple times the first occurrence wins:
 
-.. code-block:: none
+  ::
 
     {
         "local": [
@@ -158,7 +158,7 @@ when the same property exists in the local multiple times the first occurrence w
 
 becomes:
 
-.. code-block:: none
+  ::
 
     {
         "local": {
@@ -447,7 +447,7 @@ Output
 
 If a mapping is valid you will receive the following output:
 
-.. code-block:: none
+  ::
 
     {
         "group_ids": "[<group-ids>]",
