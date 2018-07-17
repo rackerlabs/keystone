@@ -1,0 +1,11 @@
+Code-Review+2: wangxiyuan <wangxiyuan@huawei.com>
+Code-Review+1: sonu <sonu.bhumca11@gmail.com>
+Code-Review+1: Maksym Iarmak <miarmak@mirantis.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Workflow+1: Lance Bragstad <lbragstad@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 17 Jul 2018 02:38:18 +0000
+Reviewed-on: https://review.openstack.org/572446
+Project: openstack/keystone
+Branch: refs/heads/master
