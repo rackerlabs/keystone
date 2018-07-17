@@ -21,10 +21,16 @@ import wsgiref.util
 import flask
 from flask import blueprints
 import flask_restful
+import flask_restful.utils
 from oslo_log import log
+from oslo_serialization import jsonutils
+from pycadf import cadftaxonomy as taxonomy
+from pycadf import host
+from pycadf import resource
 import six
 from six.moves import http_client
 
+from keystone.common import authorization
 from keystone.common import context
 from keystone.common import driver_hints
 from keystone.common import json_home
@@ -119,7 +125,7 @@ def construct_resource_map(resource, url, resource_kwargs, alternate_urls=None,
 def construct_json_home_data(rel, status=json_home.Status.STABLE,
                              path_vars=None,
                              resource_relation_func=_v3_resource_relation):
-    rel = resource_relation_func(rel)
+    rel = resource_relation_func(resource_name=rel)
     return JsonHomeData(rel=rel, status=status, path_vars=(path_vars or {}))
 
 
@@ -258,6 +264,14 @@ class APIBase(object):
             app=self.__blueprint, prefix=self._api_url_prefix,
             default_mediatype=self._default_mediatype,
             decorators=decorators, errors=errors)
+
+        # NOTE(morgan): Make sure we're using oslo_serialization.jsonutils
+        # instead of the default json serializer. Keystone has data types that
+        # the default serializer cannot handle, representation is a decorator
+        # but since we instantiate the API in-line we need to do some magic
+        # and call it as a normal method.
+        self.__api.representation('application/json')(self._output_json)
+
         self._add_resources()
         self._add_mapped_resources()
 
@@ -292,9 +306,11 @@ class APIBase(object):
                            'm_key': m_key})
                 continue
 
-            collection_path = '/%s' % c_key
-            entity_path = '/%(collection_key)s/<string:%(member_key)s_id>' % {
-                'collection_key': c_key, 'member_key': m_key}
+            collection_path = '%(pfx)s/%(c_key)s' % {
+                'pfx': self._api_url_prefix, 'c_key': c_key}
+            entity_path = '%(pfx)s/%(collection)s/<string:%(member)s_id>' % {
+                'collection': c_key, 'member': m_key,
+                'pfx': self._api_url_prefix}
             # NOTE(morgan): The json-home form of the entity path is different
             # from the flask-url routing form.
             jh_e_path = _URL_SUBST.sub('{\\1}', entity_path)
@@ -308,12 +324,19 @@ class APIBase(object):
             self.api.add_resource(r, collection_path, entity_path)
 
             # Add JSON Home data
-            collection_rel = json_home.build_v3_resource_relation(c_key)
+            resource_rel_func = getattr(
+                r, 'json_home_resource_rel_func',
+                json_home.build_v3_resource_relation)
+            collection_rel = resource_rel_func(resource_name=c_key)
             rel_data = {'href': collection_path}
 
-            entity_rel = json_home.build_v3_resource_relation(m_key)
+            entity_rel = resource_rel_func(resource_name=m_key)
             id_str = '%s_id' % m_key
-            id_param_rel = json_home.build_v3_parameter_relation(id_str)
+
+            parameter_rel_func = getattr(
+                r, 'json_home_parameter_rel_func',
+                json_home.build_v3_parameter_relation)
+            id_param_rel = parameter_rel_func(parameter_name=id_str)
             entity_rel_data = {'href-template': jh_e_path,
                                'href-vars': {id_str: id_param_rel}}
 
@@ -345,7 +368,10 @@ class APIBase(object):
                 resource_data = {}
                 # NOTE(morgan): JSON Home form of the URL is different
                 # from FLASK, do the conversion here.
-                conv_url = _URL_SUBST.sub('{\\1}', r.url)
+                conv_url = '%(pfx)s/%(url)s' % {
+                    'url': _URL_SUBST.sub('{\\1}', r.url).lstrip('/'),
+                    'pfx': self._api_url_prefix}
+
                 if r.json_home_data.path_vars:
                     resource_data['href-template'] = conv_url
                     resource_data['href-vars'] = r.json_home_data.path_vars
@@ -419,6 +445,31 @@ class APIBase(object):
         for f in functions:
             self.__blueprint.after_request(f)
         self.__after_request_functions_added = True
+
+    @staticmethod
+    def _output_json(data, code, headers=None):
+        """Make a Flask response with a JSON encoded body.
+
+        This is a replacement of the default that is shipped with flask-RESTful
+        as we need oslo_serialization for the wider datatypes in our objects
+        that are serialized to json.
+        """
+        settings = flask.current_app.config.get('RESTFUL_JSON', {})
+
+        # If we're in debug mode, and the indent is not set, we set it to
+        # a reasonable value here. Note that this won't override any existing
+        # value that was set. We also set the "sort_keys" value.
+        if flask.current_app.debug:
+            settings.setdefault('indent', 4)
+            settings.setdefault('sort_keys', not flask_restful.utils.PY3)
+
+        # always end the json dumps with a new line
+        # see https://github.com/mitsuhiko/flask/pull/1262
+        dumped = jsonutils.dumps(data, **settings) + "\n"
+
+        resp = flask.make_response(dumped, code)
+        resp.headers.extend(headers or {})
+        return resp
 
     @staticmethod
     def unenforced_api(f):
@@ -596,8 +647,31 @@ class ResourceBase(flask_restful.Resource):
         return refs
 
     @property
+    def auth_context(self):
+        return flask.request.environ.get(authorization.AUTH_CONTEXT_ENV, None)
+
+    @property
     def oslo_context(self):
         return flask.request.environ.get(context.REQUEST_CONTEXT_ENV, None)
+
+    @property
+    def audit_initiator(self):
+        """A pyCADF initiator describing the current authenticated context."""
+        pycadf_host = host.Host(address=flask.request.remote_addr,
+                                agent=str(flask.request.user_agent))
+        initiator = resource.Resource(typeURI=taxonomy.ACCOUNT_USER,
+                                      host=pycadf_host)
+        if self.oslo_context.user_id:
+            initiator.id = utils.resource_uuid(self.oslo_context.user_id)
+            initiator.user_id = self.oslo_context.user_id
+
+        if self.oslo_context.project_id:
+            initiator.project_id = self.oslo_context.project_id
+
+        if self.oslo_context.domain_id:
+            initiator.domain_id = self.oslo_context.domain_id
+
+        return initiator
 
     @staticmethod
     def build_driver_hints(supported_filters):
