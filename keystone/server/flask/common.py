@@ -30,6 +30,7 @@ from pycadf import resource
 import six
 from six.moves import http_client
 
+from keystone.common import authorization
 from keystone.common import context
 from keystone.common import driver_hints
 from keystone.common import json_home
@@ -644,6 +645,10 @@ class ResourceBase(flask_restful.Resource):
                 refs = [r for r in refs if _inexact_attr_match(f, r)]
 
         return refs
+
+    @property
+    def auth_context(self):
+        return flask.request.environ.get(authorization.AUTH_CONTEXT_ENV, None)
 
     @property
     def oslo_context(self):
