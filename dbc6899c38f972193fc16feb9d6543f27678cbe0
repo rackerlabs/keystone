@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_c254ea58",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-17T15:23:21Z",
+      "side": 1,
+      "message": "Do we need another method like this to take care of the response body?",
+      "revId": "dbc6899c38f972193fc16feb9d6543f27678cbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_2c728c13",
         "filename": "keystone/server/flask/common.py",
         "patchSetId": 1
@@ -49,6 +66,46 @@
       "side": 1,
       "message": "++ completely agree, the after_request utility worked out nicely here",
       "parentUuid": "5f7c97a3_e7fa6f0f",
+      "revId": "dbc6899c38f972193fc16feb9d6543f27678cbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_421a1ac7",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 596,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-17T15:23:21Z",
+      "side": 1,
+      "message": "Does this have to be oslo specific? This an instance of the keystone.common.context.RequestContext, yeah?",
+      "range": {
+        "startLine": 596,
+        "startChar": 8,
+        "endLine": 596,
+        "endChar": 12
+      },
+      "revId": "dbc6899c38f972193fc16feb9d6543f27678cbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_4248dab2",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-17T15:23:21Z",
+      "side": 1,
+      "message": "Are these methods used in a subsequent patch?",
       "revId": "dbc6899c38f972193fc16feb9d6543f27678cbe0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
