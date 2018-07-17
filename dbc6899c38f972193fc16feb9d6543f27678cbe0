@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_c8c96924",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-17T16:33:10Z",
+      "side": 1,
+      "message": "We can add one. We might want to add an assert one that ensures no content has no body rather than stripping the body. The content-type is a mismatch between flask-restful and our tests. my goal is for all conversions we do not change any tests.",
+      "parentUuid": "5f7c97a3_c254ea58",
+      "revId": "dbc6899c38f972193fc16feb9d6543f27678cbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_2c728c13",
         "filename": "keystone/server/flask/common.py",
         "patchSetId": 1
