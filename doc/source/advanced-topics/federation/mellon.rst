@@ -43,7 +43,7 @@ Add this *WSGIScriptAlias* directive to your public vhost configuration::
 Make sure the *wsgi-keystone.conf* contains a *<Location>* directive for the Mellon module and
 a *<Location>* directive for each identity provider
 
-.. code-block:: none
+  ::
 
     <Location /v3>
         MellonEnable "info"
