@@ -62,6 +62,23 @@
       "revId": "a90868409aa9942a87627c342b50a67e6c8e1818",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e032220f",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1134,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-18T15:10:13Z",
+      "side": 1,
+      "message": "I did notice that the response here includes a tree structure 3 levels deep [0]. The follow on patch the includes the constraint for two-level hierarchies doesn\u0027t fail either though.\n\nIn my example c2f7a38524744dcbb62688d47760dbd1 is the grandchild, e2e8a793333047169b271bc5f8293da4 is the parent, and 1c0d856ecd7441cf9ee04a9a4957a9df is the grandparent.\n\nIs that intended?\n\n[0] http://paste.openstack.org/show/726203/",
+      "revId": "a90868409aa9942a87627c342b50a67e6c8e1818",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
