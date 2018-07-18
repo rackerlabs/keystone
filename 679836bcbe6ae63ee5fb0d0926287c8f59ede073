@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_6b20334c",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-18T15:44:54Z",
+      "side": 1,
+      "message": "nit: Check*",
+      "range": {
+        "startLine": 266,
+        "startChar": 11,
+        "endLine": 266,
+        "endChar": 16
+      },
+      "revId": "679836bcbe6ae63ee5fb0d0926287c8f59ede073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_4b1bf71a",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-18T15:44:54Z",
+      "side": 1,
+      "message": "nit: \n\n  :type max_depth: integer",
+      "revId": "679836bcbe6ae63ee5fb0d0926287c8f59ede073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_ebbd23b2",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-18T15:44:54Z",
+      "side": 1,
+      "message": "This feels like a lot to process for a backend. Would it be easier to process this in the manager with a list of all projects instead? That also might prevent us from having to change the interface, or overload the return type since the resource manager could raise the exception directly.",
+      "revId": "679836bcbe6ae63ee5fb0d0926287c8f59ede073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_ebc1a350",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-18T15:44:54Z",
+      "side": 1,
+      "message": "We should try and associate this constant to a variable name, otherwise it can be confusing to figure out what it really means.",
+      "range": {
+        "startLine": 322,
+        "startChar": 39,
+        "endLine": 322,
+        "endChar": 40
+      },
+      "revId": "679836bcbe6ae63ee5fb0d0926287c8f59ede073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
