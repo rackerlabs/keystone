@@ -79,6 +79,24 @@
       "revId": "a90868409aa9942a87627c342b50a67e6c8e1818",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_4b445719",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1134,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-18T15:23:00Z",
+      "side": 1,
+      "message": "Nevermind - I had to dig into the subsequent patch to figure out how this all works while maintaining the constraint [0].\n\n[0] https://review.openstack.org/#/c/580258/10/keystone/tests/unit/test_v3_resource.py",
+      "parentUuid": "5f7c97a3_e032220f",
+      "revId": "a90868409aa9942a87627c342b50a67e6c8e1818",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
