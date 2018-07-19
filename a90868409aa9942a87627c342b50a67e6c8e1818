@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_d066ca28",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 542,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-19T03:19:59Z",
+      "side": 1,
+      "message": "sure",
+      "parentUuid": "5f7c97a3_c05cc6f1",
+      "revId": "a90868409aa9942a87627c342b50a67e6c8e1818",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_c0ecc693",
         "filename": "keystone/resource/core.py",
         "patchSetId": 17
@@ -53,6 +71,30 @@
       "writtenOn": "2018-07-18T15:05:13Z",
       "side": 1,
       "message": "Same comment here as above. We\u0027ll need to decide if the data structure currently implemented is enough for what we need. Or if we want to rework it to represent things in an actual hierarchy.\n\nThis might be relatively transparent to the user, but it will determine if we push more logic into oslo.limit to deal with sorting the response and determining parents/children.",
+      "range": {
+        "startLine": 591,
+        "startChar": 8,
+        "endLine": 591,
+        "endChar": 15
+      },
+      "revId": "a90868409aa9942a87627c342b50a67e6c8e1818",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f36c30d0",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-19T03:19:59Z",
+      "side": 1,
+      "message": "++, yeah, now we\u0027ll return a linear list which is not hierarchical structure by default, so if oslo.limit want the hierarchical info, it should add the logic by itself. \n\nSo here is some questions:\n1. who should deal with the hierarchy, keystone or oslo.limit?\n2. how the oslo.limit using hierarchy?\n\nIMO, oslo.limit only need hierarchical limit info when the related project\u0027s limit is missing, then oslo.limit need to get the project\u0027s parents limit (or registered limit). So we can see that the hierarchical info is used not very often in oslo.limit. So I prefer leave the logic to oslo.limit itself.\n\nOn the other side, if oslo.limit handles the hierarchical logic, then we do not need change Keystone API so much.(we don\u0027t need create a new API or do a big refactor to response body.)\n\nCorrect me if I missed other usages about hierarchy in oslo.limit.",
+      "parentUuid": "5f7c97a3_c0ecc693",
       "range": {
         "startLine": 591,
         "startChar": 8,
