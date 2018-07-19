@@ -63,6 +63,30 @@
       "revId": "53915d3b0d01502586f4d0a1ee7b7bca72ed80a8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_d307b46f",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1812,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-19T03:23:01Z",
+      "side": 1,
+      "message": "of cause we can, but it\u0027s not a small change since a lot of test will be affected. I\u0027d like to add it to my todo-list and update them next few days.",
+      "parentUuid": "5f7c97a3_2b70fb72",
+      "range": {
+        "startLine": 1812,
+        "startChar": 8,
+        "endLine": 1812,
+        "endChar": 34
+      },
+      "revId": "53915d3b0d01502586f4d0a1ee7b7bca72ed80a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
