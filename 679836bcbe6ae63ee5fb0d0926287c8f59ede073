@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_13776c0a",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-19T03:45:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_6b20334c",
+      "range": {
+        "startLine": 266,
+        "startChar": 11,
+        "endLine": 266,
+        "endChar": 16
+      },
+      "revId": "679836bcbe6ae63ee5fb0d0926287c8f59ede073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_4b1bf71a",
         "filename": "keystone/resource/backends/base.py",
         "patchSetId": 11
@@ -36,6 +60,24 @@
       "writtenOn": "2018-07-18T15:44:54Z",
       "side": 1,
       "message": "nit: \n\n  :type max_depth: integer",
+      "revId": "679836bcbe6ae63ee5fb0d0926287c8f59ede073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_7316e0a3",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-19T03:45:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_4b1bf71a",
       "revId": "679836bcbe6ae63ee5fb0d0926287c8f59ede073",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_1361ac11",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-19T03:45:48Z",
+      "side": 1,
+      "message": "you mean fetch all project from db first, then do the check by a code logic? if so, I don\u0027t suggest do that, because that way will cost lots memory and the performance is not better than the SQL way. Or I misunderstand your proposal?",
+      "parentUuid": "5f7c97a3_ebbd23b2",
+      "revId": "679836bcbe6ae63ee5fb0d0926287c8f59ede073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_ebc1a350",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 11
@@ -70,6 +130,30 @@
       "writtenOn": "2018-07-18T15:44:54Z",
       "side": 1,
       "message": "We should try and associate this constant to a variable name, otherwise it can be confusing to figure out what it really means.",
+      "range": {
+        "startLine": 322,
+        "startChar": 39,
+        "endLine": 322,
+        "endChar": 40
+      },
+      "revId": "679836bcbe6ae63ee5fb0d0926287c8f59ede073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f358b089",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-19T03:45:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_ebc1a350",
       "range": {
         "startLine": 322,
         "startChar": 39,
