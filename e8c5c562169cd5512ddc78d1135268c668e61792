@@ -16,6 +16,24 @@
       "revId": "e8c5c562169cd5512ddc78d1135268c668e61792",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_17865860",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-07-20T03:39:09Z",
+      "side": 1,
+      "message": "I am unsure what leaving this file provides. The side-by-side comparison can be done in gerrit and/or with external tools. If the file was sufficiently comparable you\u0027d see it as a moved file in git. Sadly, the flask implementation is different enough that just \"not deleting the file\" doesn\u0027t provide a lot more than what is here.\n\nThis is part of why no tests are changed in any flask conversion (as per design). Any/all tests that require changes will be done outside of the flask conversion patch (where possible) to ensure we maintain at least the same level of assurance of compatibility of behavior.",
+      "parentUuid": "5f7c97a3_b49202fb",
+      "revId": "e8c5c562169cd5512ddc78d1135268c668e61792",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
