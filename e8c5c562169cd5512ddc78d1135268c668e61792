@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_b49202fb",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-07-20T03:19:57Z",
+      "side": 1,
+      "message": "Would it be possible to leave this file in place so we can see a side by side diff?  It contains much of the logic for trusts, and that was hard to get right.  I\u0027d be OK moving it in a separate review.  That review can even be first (move all logic from trust/controllers.py to api/controllers pre-flask.",
+      "revId": "e8c5c562169cd5512ddc78d1135268c668e61792",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
