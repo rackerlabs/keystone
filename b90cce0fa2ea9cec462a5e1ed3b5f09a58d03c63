@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_e028b085",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-20T07:05:35Z",
+      "side": 1,
+      "message": "the note should be updated as well.",
+      "range": {
+        "startLine": 331,
+        "startChar": 33,
+        "endLine": 331,
+        "endChar": 43
+      },
+      "revId": "b90cce0fa2ea9cec462a5e1ed3b5f09a58d03c63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
