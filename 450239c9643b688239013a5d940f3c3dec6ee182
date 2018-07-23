@@ -1,0 +1,293 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_58f92b80",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-07-23T15:57:28Z",
+      "side": 1,
+      "message": "I have confirmed this logic is the same as in the old file.",
+      "revId": "450239c9643b688239013a5d940f3c3dec6ee182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_d81a1bc6",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-07-23T15:57:28Z",
+      "side": 1,
+      "message": "This is OK.  It was extracted from \"fill_in_roles\" which is a good clean up.",
+      "revId": "450239c9643b688239013a5d940f3c3dec6ee182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_d848dbb5",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-07-23T15:57:28Z",
+      "side": 1,
+      "message": "This is OK.  Used to check for a dictionary, which this does not do.  Should fail unit tests if it is ever not a dictionary.  Worst case this would trigger a 500 error, which is acceptable (its not going to happen)",
+      "revId": "450239c9643b688239013a5d940f3c3dec6ee182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_18fdf33b",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-07-23T15:57:28Z",
+      "side": 1,
+      "message": "Confirmed matches.",
+      "revId": "450239c9643b688239013a5d940f3c3dec6ee182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_b84abf7f",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-07-23T15:57:28Z",
+      "side": 1,
+      "message": "OK.  This matches.",
+      "revId": "450239c9643b688239013a5d940f3c3dec6ee182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_b8615f13",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-07-23T15:57:28Z",
+      "side": 1,
+      "message": "OK.  This matches",
+      "revId": "450239c9643b688239013a5d940f3c3dec6ee182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_ec2638ba",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-07-23T15:57:28Z",
+      "side": 1,
+      "message": "OK",
+      "revId": "450239c9643b688239013a5d940f3c3dec6ee182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_2c13d05b",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-07-23T15:57:28Z",
+      "side": 1,
+      "message": "OK",
+      "revId": "450239c9643b688239013a5d940f3c3dec6ee182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_6c09c827",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-07-23T15:57:28Z",
+      "side": 1,
+      "message": "OK.  This matches",
+      "revId": "450239c9643b688239013a5d940f3c3dec6ee182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_387f8fbd",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-07-23T15:57:28Z",
+      "side": 1,
+      "message": "OK. This matches",
+      "revId": "450239c9643b688239013a5d940f3c3dec6ee182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_4cc5ec3d",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-07-23T15:57:28Z",
+      "side": 1,
+      "message": "OK",
+      "revId": "450239c9643b688239013a5d940f3c3dec6ee182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_2c2c3092",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-07-23T15:57:28Z",
+      "side": 1,
+      "message": "OK",
+      "revId": "450239c9643b688239013a5d940f3c3dec6ee182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_6c60e8d1",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-07-23T15:57:28Z",
+      "side": 1,
+      "message": "OK.  Extracted out of if block precondition check",
+      "revId": "450239c9643b688239013a5d940f3c3dec6ee182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_ac260067",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-07-23T15:57:28Z",
+      "side": 1,
+      "message": "OK",
+      "revId": "450239c9643b688239013a5d940f3c3dec6ee182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_ac8280fe",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-07-23T15:57:28Z",
+      "side": 1,
+      "message": "OK.  THis moved down to where it is used",
+      "revId": "450239c9643b688239013a5d940f3c3dec6ee182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_ac97e039",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-07-23T15:57:28Z",
+      "side": 1,
+      "message": "OK.  A little wonky now, but matches",
+      "revId": "450239c9643b688239013a5d940f3c3dec6ee182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_2caf50e1",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-07-23T15:57:28Z",
+      "side": 1,
+      "message": "OK.  Matches",
+      "revId": "450239c9643b688239013a5d940f3c3dec6ee182",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
