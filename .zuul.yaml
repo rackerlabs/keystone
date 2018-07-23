@@ -89,6 +89,7 @@
 - job:
     name: keystone-tox-patch_cover
     parent: openstack-tox
+    voting: false
     description: |
       Run test for keystone project.
 
