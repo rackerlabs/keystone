@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_1ba63aae",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-24T08:41:56Z",
+      "side": 1,
+      "message": "the only difference is this Line. LGTM",
+      "revId": "ed5e88c5b6d3b4af9215b11b66198ae5b0afdf03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
