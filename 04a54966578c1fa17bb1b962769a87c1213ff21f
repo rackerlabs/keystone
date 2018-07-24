@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_7fddc86b",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-07-24T21:45:44Z",
+      "side": 1,
+      "message": "I wonder if this could use the util function[0] for this, but here checks if a role is not a dict, so perhaps not.\n\n[0] https://github.com/openstack/keystone/blob/master/keystone/common/utils.py#L122-L136\n\nIf so, it can always be changed in a later ps.",
+      "range": {
+        "startLine": 623,
+        "startChar": 0,
+        "endLine": 639,
+        "endChar": 34
+      },
+      "revId": "04a54966578c1fa17bb1b962769a87c1213ff21f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_2b95c03d",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 19
@@ -31,6 +54,24 @@
       "side": 1,
       "message": "++",
       "parentUuid": "5f7c97a3_2b95c03d",
+      "revId": "04a54966578c1fa17bb1b962769a87c1213ff21f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_bf41200b",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-07-24T21:45:44Z",
+      "side": 1,
+      "message": "agreed, minting in terms of something like a coin, means the item is made, stamped, and final.",
+      "parentUuid": "5f7c97a3_834b8126",
       "revId": "04a54966578c1fa17bb1b962769a87c1213ff21f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
