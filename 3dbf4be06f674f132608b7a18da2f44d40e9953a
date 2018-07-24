@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_846df930",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-07-24T20:00:13Z",
+      "side": 1,
+      "message": "yay more coverage",
+      "range": {
+        "startLine": 457,
+        "startChar": 0,
+        "endLine": 459,
+        "endChar": 55
+      },
+      "revId": "3dbf4be06f674f132608b7a18da2f44d40e9953a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
