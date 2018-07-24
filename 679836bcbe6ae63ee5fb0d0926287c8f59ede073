@@ -119,6 +119,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_5bb7c9d8",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-24T14:25:10Z",
+      "side": 1,
+      "message": "Yeah - that\u0027s what I was getting at, but I agree that it wouldn\u0027t be as efficient offloading the processing to SQL. The main thing I was concerned about (and maybe I shouldn\u0027t) be is complicated methods in the driver, but it\u0027s a requirement for this use case.",
+      "parentUuid": "5f7c97a3_1361ac11",
+      "revId": "679836bcbe6ae63ee5fb0d0926287c8f59ede073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_ebc1a350",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 11
