@@ -1,0 +1,6 @@
+---
+features:
+  - >
+    Implemented support for mutable config. This enables reloading of
+    supported configuration options without restarting the service.
+    Currently only `[DEFAULT] debug` is supported.

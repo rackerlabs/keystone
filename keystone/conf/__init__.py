@@ -10,7 +10,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
 import logging
+import os
 
 from oslo_cache import core as cache
 from oslo_config import cfg
@@ -52,7 +54,6 @@ from keystone.conf import wsgi
 
 CONF = cfg.CONF
 
-
 conf_modules = [
     application_credential,
     assignment,
@@ -85,6 +86,8 @@ conf_modules = [
     unified_limit,
     wsgi
 ]
+
+LAST_LOADED = None
 
 
 oslo_messaging.set_transport_defaults(control_exchange='keystone')
@@ -139,6 +142,9 @@ def configure(conf=None):
     # add oslo.cache related config options
     cache.configure(conf)
 
+    global LAST_LOADED
+    LAST_LOADED = datetime.datetime.utcnow()
+
 
 def set_external_opts_defaults():
     """Update default configuration options for oslo.middleware."""
@@ -181,3 +187,14 @@ def set_config_defaults():
     """Override all configuration default values for keystone."""
     set_default_for_default_log_levels()
     set_external_opts_defaults()
+
+
+def mutate_config():
+    global LAST_LOADED
+    for file in CONF.default_config_files:
+        float_mtime = os.path.getmtime(file)
+        dtime_mtime = datetime.datetime.utcfromtimestamp(float_mtime)
+        if LAST_LOADED < dtime_mtime:
+            CONF.mutate_config_files()
+            LAST_LOADED = datetime.datetime.utcnow()
+            break

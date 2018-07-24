@@ -12,7 +12,9 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import mock
 import os
+import uuid
 
 from oslo_config import generator
 
@@ -75,3 +77,46 @@ class DeprecatedOverrideTestCase(unit.TestCase):
 
         self.assertEqual('sqlite://new', CONF.database.connection)
         self.assertEqual(65432, CONF.database.idle_timeout)
+
+
+class MutableConfigTest(unit.TestCase):
+
+    def config_files(self):
+        config_files = super(MutableConfigTest, self).config_files()
+
+        self.config_file = 'keystone.conf.%s' % uuid.uuid4().hex
+        self._generate_config()
+        config_files.insert(0, unit.dirs.etc(self.config_file))
+        self.addCleanup(os.remove, unit.dirs.etc(self.config_file))
+
+        keystone.conf.configure()
+        self.assertIsNotNone(keystone.conf.LAST_LOADED)
+
+        return config_files
+
+    def _generate_config(self):
+        args = ['--namespace', 'keystone', '--output-file',
+                unit.dirs.etc(self.config_file)]
+        generator.main(args=args)
+
+    def test_no_update(self):
+        # Since file has not been updated since loading config,
+        # mutate_config_files doesn't get called on CONF.
+        last_loaded = keystone.conf.LAST_LOADED
+        with mock.patch(
+                'oslo_config.cfg.ConfigOpts.mutate_config_files') as m:
+            keystone.conf.mutate_config()
+            m.assert_not_called()
+        self.assertEqual(last_loaded, keystone.conf.LAST_LOADED)
+
+    def test_update(self):
+        # We regenerate the config file, changing the modified time.
+        self._generate_config()
+        last_loaded = keystone.conf.LAST_LOADED
+        # Verify that mutate_config_files on CONF is called and that
+        # keystone.conf.LAST_LOADED is updated.
+        with mock.patch(
+                'oslo_config.cfg.ConfigOpts.mutate_config_files') as m:
+            keystone.conf.mutate_config()
+            m.assert_called()
+        self.assertIsNot(last_loaded, keystone.conf.LAST_LOADED)
