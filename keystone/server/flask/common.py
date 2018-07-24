@@ -394,6 +394,7 @@ class APIBase(object):
         assert not self.__before_request_functions_added, msg  # nosec
         # register global before request functions
         # e.g. self.__blueprint.before_request(function)
+        self.__blueprint.before_request(keystone.conf.mutate_config)
         self.__blueprint.before_request(_initialize_rbac_enforcement_check)
 
         # Add passed-in functions
