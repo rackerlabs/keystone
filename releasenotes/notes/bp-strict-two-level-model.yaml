@@ -18,7 +18,7 @@ features:
    `403 Forbidden` error will be raised.
 
    When try to use this model but the project depth exceed 2 already, Keystone
-   process will fail to start. Operators should chose another available model
+   process will fail to start. Operators should choose another available model
    to fix the issue first.
 
  - >
