@@ -85,7 +85,8 @@ class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
         auth_info = auth.core.AuthInfo.create(auth_data)
         auth_context = auth.core.AuthContext(extras={}, method_names=[])
         try:
-            self.api.authenticate(self.make_request(), auth_info, auth_context)
+            auth.core.AuthHelper.authenticate(
+                self.make_request(), auth_info, auth_context)
         except exception.AdditionalAuthRequired as e:
             self.assertIn('methods', e.authentication)
             self.assertIn(METHOD_NAME, e.authentication['methods'])
@@ -99,7 +100,8 @@ class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
         auth_data = {'identity': auth_data}
         auth_info = auth.core.AuthInfo.create(auth_data)
         auth_context = auth.core.AuthContext(extras={}, method_names=[])
-        self.api.authenticate(self.make_request(), auth_info, auth_context)
+        auth.core.AuthHelper.authenticate(
+            self.make_request(), auth_info, auth_context)
         self.assertEqual(DEMO_USER_ID, auth_context['user_id'])
 
         # test incorrect response
@@ -110,7 +112,7 @@ class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
         auth_info = auth.core.AuthInfo.create(auth_data)
         auth_context = auth.core.AuthContext(extras={}, method_names=[])
         self.assertRaises(exception.Unauthorized,
-                          self.api.authenticate,
+                          auth.core.AuthHelper.authenticate,
                           self.make_request(),
                           auth_info,
                           auth_context)
@@ -163,7 +165,7 @@ class TestMapped(unit.TestCase):
                 extras={},
                 method_names=[],
                 user_id=uuid.uuid4().hex)
-            self.api.authenticate(request, auth_info, auth_context)
+            auth.core.AuthHelper.authenticate(request, auth_info, auth_context)
             # make sure Mapped plugin got invoked with the correct payload
             ((context, auth_payload),
              kwargs) = authenticate.call_args
@@ -189,7 +191,7 @@ class TestMapped(unit.TestCase):
                                return_value=None) as authenticate:
             auth_info = auth.core.AuthInfo.create(auth_data)
             request = self.make_request(environ={'REMOTE_USER': 'foo@idp.com'})
-            self.api.authenticate(request, auth_info, auth_context)
+            auth.core.AuthHelper.authenticate(request, auth_info, auth_context)
             # make sure Mapped plugin got invoked with the correct payload
             ((context, auth_payload),
              kwargs) = authenticate.call_args
