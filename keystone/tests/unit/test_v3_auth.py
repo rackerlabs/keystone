@@ -3559,13 +3559,12 @@ class AuthExternalDomainBehavior(object):
     content_type = 'json'
 
     def test_remote_user_with_realm(self):
-        api = auth.controllers.Auth()
         remote_user = self.user['name']
         remote_domain = self.domain['name']
         request, auth_info, auth_context = self.build_external_auth_request(
             remote_user, remote_domain=remote_domain, kerberos=self.kerberos)
 
-        api.authenticate(request, auth_info, auth_context)
+        auth.core.AuthHelper.authenticate(request, auth_info, auth_context)
         self.assertEqual(self.user['id'], auth_context['user_id'])
 
         # Now test to make sure the user name can, itself, contain the
@@ -3576,7 +3575,7 @@ class AuthExternalDomainBehavior(object):
         request, auth_info, auth_context = self.build_external_auth_request(
             remote_user, remote_domain=remote_domain, kerberos=self.kerberos)
 
-        api.authenticate(request, auth_info, auth_context)
+        auth.core.AuthHelper.authenticate(request, auth_info, auth_context)
         self.assertEqual(self.user['id'], auth_context['user_id'])
 
 
@@ -3591,12 +3590,11 @@ class TestAuthExternalDefaultDomain(object):
         self.auth_plugin_config_override(external='DefaultDomain')
 
     def test_remote_user_with_default_domain(self):
-        api = auth.controllers.Auth()
         remote_user = self.default_domain_user['name']
         request, auth_info, auth_context = self.build_external_auth_request(
             remote_user, kerberos=self.kerberos)
 
-        api.authenticate(request, auth_info, auth_context)
+        auth.core.AuthHelper.authenticate(request, auth_info, auth_context)
         self.assertEqual(self.default_domain_user['id'],
                          auth_context['user_id'])
 
@@ -3610,7 +3608,7 @@ class TestAuthExternalDefaultDomain(object):
         request, auth_info, auth_context = self.build_external_auth_request(
             remote_user, kerberos=self.kerberos)
 
-        api.authenticate(request, auth_info, auth_context)
+        auth.core.AuthHelper.authenticate(request, auth_info, auth_context)
         self.assertEqual(self.default_domain_user['id'],
                          auth_context['user_id'])
 

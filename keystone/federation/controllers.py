@@ -20,7 +20,7 @@ from six.moves import http_client
 from six.moves import urllib
 import webob
 
-from keystone.auth import controllers as auth_controllers
+from keystone import auth
 from keystone.common import controller
 from keystone.common import provider_api
 from keystone.common import utils as k_utils
@@ -261,7 +261,7 @@ class MappingController(_ControllerBase):
         return MappingController.wrap_member(request.context_dict, mapping_ref)
 
 
-class Auth(auth_controllers.Auth):
+class Auth(controller.V3Controller):
 
     def _get_sso_origin_host(self, request):
         """Validate and return originating dashboard URL.
@@ -305,7 +305,7 @@ class Auth(auth_controllers.Auth):
         it into the ``authenticate_for_token`` function.
 
         """
-        auth = {
+        auth_data = {
             'identity': {
                 'methods': [protocol_id],
                 protocol_id: {
@@ -315,7 +315,13 @@ class Auth(auth_controllers.Auth):
             }
         }
 
-        return self.authenticate_for_token(request, auth=auth)
+        token_id, token_data = auth.core.AuthHelper.auth_for_token_webob(
+            request, auth=auth_data)
+        return wsgi.render_response(
+            body=token_data,
+            status=(http_client.CREATED,
+                    http_client.responses[http_client.CREATED]),
+            headers=[('X-Subject-Token', token_id)])
 
     def federated_sso_auth(self, request, protocol_id):
         try:
