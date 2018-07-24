@@ -107,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_9b6481b5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-24T14:15:49Z",
+      "side": 1,
+      "message": "That makes sense. I this for the existing use cases - this might be fine (but we\u0027ll need an update to correct the specification).\n\nThe only other negative side-effect of tacking this type of query parameter onto an existing API is that we can\u0027t mark it as experimental, since it\u0027s already stable. But that\u0027s the trade off of having to develop a new API I suppose.",
+      "parentUuid": "5f7c97a3_f36c30d0",
+      "range": {
+        "startLine": 591,
+        "startChar": 8,
+        "endLine": 591,
+        "endChar": 15
+      },
+      "revId": "a90868409aa9942a87627c342b50a67e6c8e1818",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_e032220f",
         "filename": "keystone/tests/unit/test_v3_resource.py",
         "patchSetId": 17
