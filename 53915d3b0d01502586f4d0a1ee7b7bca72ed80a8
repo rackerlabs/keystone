@@ -87,6 +87,30 @@
       "revId": "53915d3b0d01502586f4d0a1ee7b7bca72ed80a8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_db8bd91f",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1812,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-24T14:21:13Z",
+      "side": 1,
+      "message": "Yeah - that should be fine. Thanks for confirming!",
+      "parentUuid": "5f7c97a3_d307b46f",
+      "range": {
+        "startLine": 1812,
+        "startChar": 8,
+        "endLine": 1812,
+        "endChar": 34
+      },
+      "revId": "53915d3b0d01502586f4d0a1ee7b7bca72ed80a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
