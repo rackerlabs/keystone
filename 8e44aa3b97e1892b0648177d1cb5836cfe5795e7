@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_fbf9f581",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-24T14:30:41Z",
+      "side": 1,
+      "message": "Nit:\n\n  Check if project depth satisfies the current enforcement model.\n\nbut we can fix that in a follow up if we want.",
+      "range": {
+        "startLine": 43,
+        "startChar": 11,
+        "endLine": 43,
+        "endChar": 41
+      },
+      "revId": "8e44aa3b97e1892b0648177d1cb5836cfe5795e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_5bc6e917",
+        "filename": "releasenotes/notes/bp-strict-two-level-model.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-24T14:30:41Z",
+      "side": 1,
+      "message": "choose*",
+      "range": {
+        "startLine": 21,
+        "startChar": 48,
+        "endLine": 21,
+        "endChar": 53
+      },
+      "revId": "8e44aa3b97e1892b0648177d1cb5836cfe5795e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
