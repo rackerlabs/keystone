@@ -22,6 +22,30 @@
       "revId": "2a5ef98b2587a2998b5cb18c316a1932ef8268f6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_b0ce212a",
+        "filename": "playbooks/legacy/keystone-dsvm-functional-v3-only/post.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-25T11:51:35Z",
+      "side": 1,
+      "message": "I don\u0027t see any usage of handlers in openstack-zuul-jobs or any mention of them in the zuul docs, I wouldn\u0027t bet on being able to use them the same way you would in normal ansible",
+      "parentUuid": "5f7c97a3_3706d91c",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 25
+      },
+      "revId": "2a5ef98b2587a2998b5cb18c316a1932ef8268f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
