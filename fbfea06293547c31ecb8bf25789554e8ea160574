@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_7a25bfac",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5094,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-25T15:54:01Z",
+      "side": 1,
+      "message": "This should be removed",
+      "range": {
+        "startLine": 5093,
+        "startChar": 0,
+        "endLine": 5094,
+        "endChar": 67
+      },
+      "revId": "fbfea06293547c31ecb8bf25789554e8ea160574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
