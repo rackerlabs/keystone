@@ -22,6 +22,30 @@
       "revId": "5b1640f160cfc8166999c87d93441fe35a8405ec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_6e9bc578",
+        "filename": "releasenotes/notes/bp-strict-two-level-model.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-25T13:57:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_dc02dcb9",
+      "range": {
+        "startLine": 12,
+        "startChar": 47,
+        "endLine": 12,
+        "endChar": 50
+      },
+      "revId": "5b1640f160cfc8166999c87d93441fe35a8405ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
