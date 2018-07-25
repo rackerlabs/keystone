@@ -34,6 +34,47 @@
       "revId": "2528fa78fb1bbb18fc38af5af11415b9fe32792b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_df5deeeb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-25T09:03:10Z",
+      "side": 1,
+      "message": "Sorry, you\u0027re correct, there\u0027s no more v2 API.\n\nIt looks like the usage of the catalog_ref from the _authenticate method was removed in this commit https://review.openstack.org/#/c/465530",
+      "parentUuid": "5f7c97a3_d0189320",
+      "revId": "2528fa78fb1bbb18fc38af5af11415b9fe32792b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_1f2b667c",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-07-25T09:03:10Z",
+      "side": 1,
+      "message": "Could you fix this too?",
+      "range": {
+        "startLine": 116,
+        "startChar": 51,
+        "endLine": 116,
+        "endChar": 62
+      },
+      "revId": "2528fa78fb1bbb18fc38af5af11415b9fe32792b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
