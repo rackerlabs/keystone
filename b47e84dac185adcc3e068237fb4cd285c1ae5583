@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_bea9f4de",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-26T12:19:46Z",
+      "side": 1,
+      "message": "they are totally the same with the code:\nhttps://github.com/openstack/keystone/blob/master/keystone/token/providers/common.py#L43-L63\n\nwhy add them here?",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 76
+      },
+      "revId": "b47e84dac185adcc3e068237fb4cd285c1ae5583",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_0b5004d5",
         "filename": "keystone/token/provider.py",
         "patchSetId": 20
