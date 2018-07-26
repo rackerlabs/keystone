@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_f8e77baa",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-26T16:31:41Z",
+      "side": 1,
+      "message": "Good question. I added them here because I didn\u0027t want the token/provider.py module to have a dependency on common.py, which we\u0027ll be removing in a subsequent patch.\n\nI also thought it made sense to pull these functions out of common.py and into a higher level module, making it more apparent that it\u0027s business logic.",
+      "parentUuid": "5f7c97a3_bea9f4de",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 76
+      },
+      "revId": "b47e84dac185adcc3e068237fb4cd285c1ae5583",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_0b5004d5",
         "filename": "keystone/token/provider.py",
         "patchSetId": 20
