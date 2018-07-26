@@ -50,9 +50,6 @@ class SimpleChallengeResponse(base.AuthMethodHandler):
 
 
 class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
-    def setUp(self):
-        super(TestAuthPlugin, self).setUp()
-        self.api = auth.controllers.Auth()
 
     def test_unsupported_auth_method(self):
         method_name = uuid.uuid4().hex
@@ -140,9 +137,6 @@ class TestAuthPluginDynamicOptions(TestAuthPlugin):
 
 
 class TestMapped(unit.TestCase):
-    def setUp(self):
-        super(TestMapped, self).setUp()
-        self.api = auth.controllers.Auth()
 
     def config_files(self):
         config_files = super(TestMapped, self).config_files()
