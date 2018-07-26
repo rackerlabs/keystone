@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_98f9a250",
+        "filename": "playbooks/legacy/keystone-dsvm-functional-v3-only/post.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-07-26T20:17:19Z",
+      "side": 1,
+      "message": "Would we want to put these into a \u0027shibboleth\u0027 folder here? Otherwise it\u0027s dumping them into the default logs file with the rest of everything being ran.",
+      "range": {
+        "startLine": 20,
+        "startChar": 44,
+        "endLine": 20,
+        "endChar": 49
+      },
+      "revId": "2a5ef98b2587a2998b5cb18c316a1932ef8268f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_3706d91c",
         "filename": "playbooks/legacy/keystone-dsvm-functional-v3-only/post.yaml",
         "patchSetId": 2
@@ -42,6 +65,29 @@
         "startChar": 4,
         "endLine": 22,
         "endChar": 25
+      },
+      "revId": "2a5ef98b2587a2998b5cb18c316a1932ef8268f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f88f76d0",
+        "filename": "playbooks/legacy/keystone-dsvm-py35-functional-v3-only/post.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-07-26T20:17:19Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 20,
+        "startChar": 44,
+        "endLine": 20,
+        "endChar": 48
       },
       "revId": "2a5ef98b2587a2998b5cb18c316a1932ef8268f6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
