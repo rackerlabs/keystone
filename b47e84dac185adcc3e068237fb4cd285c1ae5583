@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_189037f3",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-26T16:32:07Z",
+      "side": 1,
+      "message": "Removal is here - https://review.openstack.org/#/c/577507/8",
+      "parentUuid": "5f7c97a3_f8e77baa",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 76
+      },
+      "revId": "b47e84dac185adcc3e068237fb4cd285c1ae5583",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_0b5004d5",
         "filename": "keystone/token/provider.py",
         "patchSetId": 20
