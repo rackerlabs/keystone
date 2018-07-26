@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_04b1c401",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-26T03:11:29Z",
+      "side": 1,
+      "message": "So every request to Keystone will change the config file changes. Will it impact performance?\n\nHow about skip this check for token issue/validate request?",
+      "revId": "168dc144741ec3635a8d117a7355789ca2ac3a79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
