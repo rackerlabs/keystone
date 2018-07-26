@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_38617311",
+        "filename": "keystone/limit/models/base.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-26T16:35:45Z",
+      "side": 1,
+      "message": "Done in https://review.openstack.org/#/c/585379/",
+      "parentUuid": "5f7c97a3_50badfbf",
+      "revId": "4b4835a01c662ddb11e9f1aace47a02c6e337978",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_b091f355",
         "filename": "keystone/limit/models/strict_two_level.py",
         "patchSetId": 25
