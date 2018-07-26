@@ -32,7 +32,7 @@ xmldsig = importutils.try_import("saml2.xmldsig")
 if not xmldsig:
     xmldsig = importutils.try_import("xmldsig")
 
-from keystone.auth import controllers as auth_controllers
+from keystone.auth import core as auth_core
 from keystone.common import provider_api
 import keystone.conf
 from keystone import exception
@@ -764,11 +764,12 @@ class FederatedSetupMixin(object):
         self.tokens = {}
         VARIANTS = ('EMPLOYEE_ASSERTION', 'CUSTOMER_ASSERTION',
                     'ADMIN_ASSERTION')
-        api = auth_controllers.Auth()
+        api = auth_core.AuthHelper
         for variant in VARIANTS:
             self._inject_assertion(request, variant)
-            r = api.authenticate_for_token(request, self.UNSCOPED_V3_SAML2_REQ)
-            self.tokens[variant] = r.headers.get('X-Subject-Token')
+            token_id, token_data = api.auth_for_token_webob(
+                request, self.UNSCOPED_V3_SAML2_REQ)
+            self.tokens[variant] = token_id
 
         self.TOKEN_SCOPE_PROJECT_FROM_NONEXISTENT_TOKEN = self._scope_request(
             uuid.uuid4().hex, 'project', self.proj_customers['id'])
@@ -2068,7 +2069,7 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         non string objects and return token id in the HTTP header.
 
         """
-        api = auth_controllers.Auth()
+        api = auth_core.AuthHelper
         environ = {
             'malformed_object': object(),
             'another_bad_idea': tuple(range(10)),
@@ -2076,8 +2077,9 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         }
         environ.update(mapping_fixtures.EMPLOYEE_ASSERTION)
         request = self.make_request(environ=environ)
-        r = api.authenticate_for_token(request, self.UNSCOPED_V3_SAML2_REQ)
-        self.assertIsNotNone(r.headers.get('X-Subject-Token'))
+        token_id, token_data = api.auth_for_token_webob(
+            request, self.UNSCOPED_V3_SAML2_REQ)
+        self.assertIsNotNone(token_id)
 
     def test_scope_to_project_once_notify(self):
         r = self.v3_create_token(
@@ -2208,11 +2210,11 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
             expected_status=http_client.NOT_FOUND)
 
     def test_issue_token_from_rules_without_user(self):
-        api = auth_controllers.Auth()
+        api = auth_core.AuthHelper
         environ = copy.deepcopy(mapping_fixtures.BAD_TESTER_ASSERTION)
         request = self.make_request(environ=environ)
         self.assertRaises(exception.Unauthorized,
-                          api.authenticate_for_token,
+                          api.auth_for_token_webob,
                           request, self.UNSCOPED_V3_SAML2_REQ)
 
     def test_issue_token_with_nonexistent_group(self):
