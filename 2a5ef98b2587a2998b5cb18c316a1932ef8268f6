@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_423eb126",
+        "filename": "playbooks/legacy/keystone-dsvm-functional-v3-only/post.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-07-27T03:25:03Z",
+      "side": 1,
+      "message": "Looking at a run of this, it\u0027s doing that already. Logs are in logs/shibboleth\n\nhttp://logs.openstack.org/01/580401/2/check/keystone-dsvm-functional-v3-only/94ec7ab/logs/shibboleth/",
+      "parentUuid": "5f7c97a3_98f9a250",
+      "range": {
+        "startLine": 20,
+        "startChar": 44,
+        "endLine": 20,
+        "endChar": 49
+      },
+      "revId": "2a5ef98b2587a2998b5cb18c316a1932ef8268f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_3706d91c",
         "filename": "playbooks/legacy/keystone-dsvm-functional-v3-only/post.yaml",
         "patchSetId": 2
