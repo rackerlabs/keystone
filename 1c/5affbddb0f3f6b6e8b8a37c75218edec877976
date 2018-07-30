@@ -1,0 +1,11 @@
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: Brin Zhang <zhangbailin@inspur.com>
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Workflow+1: Gage Hugo <gagehugo@gmail.com>
+Code-Review+1: Leopard Ma <mabao@inspur.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 30 Jul 2018 03:36:12 +0000
+Reviewed-on: https://review.openstack.org/584466
+Project: openstack/keystone
+Branch: refs/heads/master
