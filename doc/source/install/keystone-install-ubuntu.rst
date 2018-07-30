@@ -147,13 +147,25 @@ Install and configure components
 Configure the Apache HTTP server
 --------------------------------
 
-#. Edit the ``/etc/apache2/apache2.conf`` file and configure the
+#. Edit the ``/etc/apache2/sites-available/keystone.conf`` file and configure the
    ``ServerName`` option to reference the controller node:
 
-   .. path /etc/apache2/apache2.conf
+   .. path /etc/apache2/sites-enabled/keystone.conf
    .. code-block:: apache
 
-      ServerName controller
+      <VirtualHost *:5000>
+          ServerName controller
+          ...
+      </VirtualHost>
+
+   .. end
+
+#. Enable the keystone site:
+
+   .. code-block:: console
+
+      # cd /etc/apache2/sites-available
+      # a2ensite keystone.conf
 
    .. end
 
