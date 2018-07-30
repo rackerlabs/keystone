@@ -1,0 +1,10 @@
+Code-Review+2: ayoung <ayoung@redhat.com>
+Code-Review+2: wangxiyuan <wangxiyuan@huawei.com>
+Workflow+1: wangxiyuan <wangxiyuan@huawei.com>
+Code-Review+1: Leopard Ma <mabao@inspur.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 30 Jul 2018 03:36:08 +0000
+Reviewed-on: https://review.openstack.org/583278
+Project: openstack/keystone
+Branch: refs/heads/master
