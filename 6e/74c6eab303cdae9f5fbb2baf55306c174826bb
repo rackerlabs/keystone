@@ -1,0 +1,11 @@
+Code-Review+2: ayoung <ayoung@redhat.com>
+Code-Review+2: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Workflow+1: Gage Hugo <gagehugo@gmail.com>
+Code-Review+1: Leopard Ma <mabao@inspur.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 30 Jul 2018 03:36:10 +0000
+Reviewed-on: https://review.openstack.org/584211
+Project: openstack/keystone
+Branch: refs/heads/master
