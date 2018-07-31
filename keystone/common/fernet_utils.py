@@ -231,6 +231,10 @@ class FernetUtils(object):
         # read the list of key files
         key_files, _ = self._get_key_files(self.key_repository)
 
+        if not key_files.get(0) or len(key_files) > self.max_active_keys:
+            LOG.info('Maybe another process is rotating keys in a cluster.')
+            return
+
         LOG.info('Starting key rotation with %(count)s key files: '
                  '%(list)s', {
                      'count': len(key_files),

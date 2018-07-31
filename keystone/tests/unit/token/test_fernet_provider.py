@@ -607,13 +607,13 @@ class TestFernetKeyRotation(unit.TestCase):
         file_handle.flush.side_effect = IOError('disk full')
 
         with mock.patch('keystone.common.fernet_utils.open', mock_open):
-            self.assertRaises(IOError, key_utils.rotate_keys)
+            key_utils.rotate_keys()
 
         # Assert that the key repository is unchanged
         self.assertEqual(self.key_repository_size, 2)
 
         with mock.patch('keystone.common.fernet_utils.open', mock_open):
-            self.assertRaises(IOError, key_utils.rotate_keys)
+            key_utils.rotate_keys()
 
         # Assert that the key repository is still unchanged, even after
         # repeated rotation attempts.
@@ -661,6 +661,23 @@ class TestFernetKeyRotation(unit.TestCase):
                 continue
             keys += 1
         self.assertEqual(3, keys)
+
+    def test_rotation_another_process_rotating(self):
+        active_keys = 2
+        self.assertRepositoryState(expected_size=active_keys)
+        os.rename(
+            os.path.join(CONF.fernet_tokens.key_repository, '0'),
+            os.path.join(CONF.fernet_tokens.key_repository, '2')
+        )
+
+        key_utils = fernet_utils.FernetUtils(
+            CONF.fernet_tokens.key_repository,
+            CONF.fernet_tokens.max_active_keys,
+            'fernet_tokens'
+        )
+        key_utils.rotate_keys()
+        keys = key_utils.load_keys()
+        self.assertEqual(2, len(keys))
 
 
 class TestLoadKeys(unit.TestCase):
