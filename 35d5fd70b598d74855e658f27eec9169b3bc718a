@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_7624975f",
+        "filename": "doc/source/install/keystone-install-ubuntu.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-31T01:47:30Z",
+      "side": 1,
+      "message": "this file should be wrote to \"sites-available\" folder, then using \"a2ensite\" command to enable it.",
+      "range": {
+        "startLine": 150,
+        "startChar": 27,
+        "endLine": 150,
+        "endChar": 40
+      },
+      "revId": "35d5fd70b598d74855e658f27eec9169b3bc718a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
