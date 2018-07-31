@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_b67a2122",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-07-31T14:04:55Z",
+      "side": 1,
+      "message": "This should include the project that wasn\u0027t found to be more descriptive to the user.",
+      "range": {
+        "startLine": 206,
+        "startChar": 16,
+        "endLine": 206,
+        "endChar": 49
+      },
+      "revId": "f99897a24a3a18ee7af6516e4355232829fc9e4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
