@@ -196,12 +196,14 @@ class AuthInfo(provider_api.ProviderAPIMixin, object):
                 domain_ref = self._lookup_domain(project_info['domain'])
                 project_ref = PROVIDERS.resource_api.get_project_by_name(
                     project_name, domain_ref['id'])
-            else:
+            elif project_id:
                 project_ref = PROVIDERS.resource_api.get_project(project_id)
                 # NOTE(morganfainberg): The _lookup_domain method will raise
                 # exception.Unauthorized if the domain isn't found or is
                 # disabled.
                 self._lookup_domain({'id': project_ref['domain_id']})
+            else:
+                raise exception.ProjectNotFound()
         except exception.ProjectNotFound as e:
             LOG.warning(six.text_type(e))
             raise exception.Unauthorized(e)
