@@ -1413,6 +1413,17 @@ class TokenAPITests(object):
         self.v3_create_token(auth_data,
                              expected_status=http_client.UNAUTHORIZED)
 
+    @test_utils.wip('issue token with project-scope get "NoneType has no len()" error',
+                    bug='#1784536')
+    def test_create_project_token_with_default_domain_as_project(self):
+        # Authenticate to a project with the default domain as project
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            project_id=test_v3.DEFAULT_DOMAIN_ID)
+        self.v3_create_token(auth_data,
+                             expected_status=http_client.UNAUTHORIZED)
+
     def test_project_scoped_token_is_invalid_after_disabling_user(self):
         project_scoped_token = self._get_project_scoped_token()
         # Make sure the token is valid
