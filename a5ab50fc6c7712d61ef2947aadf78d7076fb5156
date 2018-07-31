@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_16c76348",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-07-31T01:59:59Z",
+      "side": 1,
+      "message": "The commit message should be something like:\n\n\nApi-ref: Correct response code\n\nThe response code for PUT /groups/{groups_id}/users/{user_id} should be 204, not 200.\n\nCloses-bug: #1784375\nChange-Id:xxxx",
+      "revId": "a5ab50fc6c7712d61ef2947aadf78d7076fb5156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
