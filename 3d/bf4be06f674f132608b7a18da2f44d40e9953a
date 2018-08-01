@@ -1,0 +1,9 @@
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 01 Aug 2018 16:57:13 +0000
+Reviewed-on: https://review.openstack.org/577507
+Project: openstack/keystone
+Branch: refs/heads/master
