@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_24d793c2",
+        "filename": "keystone/api/os_revoke.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-01T20:08:20Z",
+      "side": 1,
+      "message": "I was able to do this http://paste.openstack.org/show/727088/ even though head isn\u0027t called out explicitly?",
+      "range": {
+        "startLine": 39,
+        "startChar": 8,
+        "endLine": 39,
+        "endChar": 11
+      },
+      "revId": "a4d9a4f13b21fbdd8feacd07085c77602b4123d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
