@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_9f2a71e3",
+        "filename": "keystone/api/os_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-01T21:31:10Z",
+      "side": 1,
+      "message": "Not all, but most. I may consider changing it down the road to an isolated resource or baked into ResourceBase",
+      "parentUuid": "5f7c97a3_9f36f1b2",
+      "range": {
+        "startLine": 106,
+        "startChar": 12,
+        "endLine": 107,
+        "endChar": 46
+      },
+      "revId": "a91adc8916372c683db880e136c1d1ab3d5797b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_5f913a44",
         "filename": "keystone/api/os_oauth1.py",
         "patchSetId": 1
