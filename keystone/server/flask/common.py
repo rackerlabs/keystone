@@ -358,6 +358,8 @@ class APIBase(object):
             resource_rel_func = getattr(
                 r, 'json_home_resource_rel_func',
                 json_home.build_v3_resource_relation)
+            resource_rel_status = getattr(
+                r, 'json_home_resource_status', None)
             collection_rel = resource_rel_func(resource_name=c_key)
             # NOTE(morgan): Add the prefix explicitly for JSON Home documents
             # to the collection path.
@@ -365,6 +367,10 @@ class APIBase(object):
                 'pfx': self._api_url_prefix,
                 'collection_path': collection_path}
             }
+
+            if resource_rel_status is not None:
+                json_home.Status.update_resource_data(
+                    rel_data, resource_rel_status)
 
             entity_rel = resource_rel_func(resource_name=m_key)
             id_str = '%s_id' % m_key
