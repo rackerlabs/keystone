@@ -22,6 +22,30 @@
       "revId": "d42e95520302f3203706993304e024e82f947728",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_24c8f353",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-01T20:01:00Z",
+      "side": 1,
+      "message": "Yeah, somehow it disappeared in a rebase.",
+      "parentUuid": "5f7c97a3_e4c19b50",
+      "range": {
+        "startLine": 16,
+        "startChar": 7,
+        "endLine": 16,
+        "endChar": 10
+      },
+      "revId": "d42e95520302f3203706993304e024e82f947728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
