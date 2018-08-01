@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_e4c19b50",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-01T19:58:28Z",
+      "side": 1,
+      "message": "I just hit 4 failures locally because this wasn\u0027t imported :)",
+      "range": {
+        "startLine": 16,
+        "startChar": 7,
+        "endLine": 16,
+        "endChar": 10
+      },
+      "revId": "d42e95520302f3203706993304e024e82f947728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
