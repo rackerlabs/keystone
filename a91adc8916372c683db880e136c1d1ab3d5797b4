@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_bf13aeb6",
+        "filename": "keystone/api/os_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-01T21:06:44Z",
+      "side": 1,
+      "message": "Is it possible to have two separate implementations of get() but one that has a wrapper that specifies the url?",
+      "range": {
+        "startLine": 106,
+        "startChar": 12,
+        "endLine": 107,
+        "endChar": 46
+      },
+      "revId": "a91adc8916372c683db880e136c1d1ab3d5797b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_5f913a44",
         "filename": "keystone/api/os_oauth1.py",
         "patchSetId": 1
@@ -18,6 +41,29 @@
         "startChar": 37,
         "endLine": 151,
         "endChar": 44
+      },
+      "revId": "a91adc8916372c683db880e136c1d1ab3d5797b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_ff37e5e2",
+        "filename": "keystone/api/os_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-01T21:06:44Z",
+      "side": 1,
+      "message": "These are some of the changes I made to get the tests passing locally (not sure how what you have here didn\u0027t work though?) \n\nhttp://paste.openstack.org/show/727090/",
+      "range": {
+        "startLine": 287,
+        "startChar": 21,
+        "endLine": 287,
+        "endChar": 27
       },
       "revId": "a91adc8916372c683db880e136c1d1ab3d5797b4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
