@@ -22,6 +22,30 @@
       "revId": "a4d9a4f13b21fbdd8feacd07085c77602b4123d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_44572f28",
+        "filename": "keystone/api/os_revoke.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-01T20:16:10Z",
+      "side": 1,
+      "message": "Morgan answered this in IRC. Flask automatically calls GET for HEAD requests unless we explicitly implement HEAD for an API.\n\nThis will be nice because it will enforce the same pattern for HEAD regardless of the web server being used.",
+      "parentUuid": "5f7c97a3_24d793c2",
+      "range": {
+        "startLine": 39,
+        "startChar": 8,
+        "endLine": 39,
+        "endChar": 11
+      },
+      "revId": "a4d9a4f13b21fbdd8feacd07085c77602b4123d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
