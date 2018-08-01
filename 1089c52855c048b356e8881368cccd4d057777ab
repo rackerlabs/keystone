@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_3ff8fd7b",
+        "filename": "keystone/api/registered_limits.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-01T21:30:18Z",
+      "side": 1,
+      "message": "Some other parts of keystone.api use flask.request.json.get(). Is there is significant difference?",
+      "range": {
+        "startLine": 56,
+        "startChar": 36,
+        "endLine": 56,
+        "endChar": 44
+      },
+      "revId": "1089c52855c048b356e8881368cccd4d057777ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

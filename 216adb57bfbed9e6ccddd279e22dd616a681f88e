@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_dfbc69d6",
+        "filename": "keystone/limit/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-01T21:30:18Z",
+      "side": 0,
+      "message": "nit: we should try and maintain this TODO.",
+      "range": {
+        "startLine": 125,
+        "startChar": 8,
+        "endLine": 126,
+        "endChar": 32
+      },
+      "revId": "216adb57bfbed9e6ccddd279e22dd616a681f88e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
