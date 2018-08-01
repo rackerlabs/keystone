@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_8be23d9b",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-01T15:01:09Z",
+      "side": 1,
+      "message": "We should eliminate reference of dict as well, can be done later, but token.user_domain_id would be better.",
+      "range": {
+        "startLine": 99,
+        "startChar": 28,
+        "endLine": 99,
+        "endChar": 52
+      },
+      "revId": "b47e84dac185adcc3e068237fb4cd285c1ae5583",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_6ba9e122",
+        "filename": "keystone/tests/unit/common/test_rbac_enforcer.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-01T15:01:09Z",
+      "side": 1,
+      "message": "see previous comment.",
+      "range": {
+        "startLine": 245,
+        "startChar": 29,
+        "endLine": 245,
+        "endChar": 53
+      },
+      "revId": "b47e84dac185adcc3e068237fb4cd285c1ae5583",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_bea9f4de",
         "filename": "keystone/token/provider.py",
         "patchSetId": 20

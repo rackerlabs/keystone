@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_2bf1a964",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-01T15:01:09Z",
+      "side": 0,
+      "message": "Unrelated changes. next time skip them. Same for the change below.",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 20
+      },
+      "revId": "693a86f2a17c0d7871e5700257942badd8090533",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
