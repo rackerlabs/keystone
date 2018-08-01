@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_9f36f1b2",
+        "filename": "keystone/api/os_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-01T21:14:40Z",
+      "side": 1,
+      "message": "Ack - thanks for the clarification. So this if statement will have to be present for all cases like this across our API?",
+      "parentUuid": "5f7c97a3_dfab09d1",
+      "range": {
+        "startLine": 106,
+        "startChar": 12,
+        "endLine": 107,
+        "endChar": 46
+      },
+      "revId": "a91adc8916372c683db880e136c1d1ab3d5797b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_5f913a44",
         "filename": "keystone/api/os_oauth1.py",
         "patchSetId": 1
