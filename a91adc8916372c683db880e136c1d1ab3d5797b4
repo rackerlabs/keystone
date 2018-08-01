@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_dfab09d1",
+        "filename": "keystone/api/os_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-01T21:11:57Z",
+      "side": 1,
+      "message": "No, The answer would be to have a separate resource just for listing.",
+      "parentUuid": "5f7c97a3_bf13aeb6",
+      "range": {
+        "startLine": 106,
+        "startChar": 12,
+        "endLine": 107,
+        "endChar": 46
+      },
+      "revId": "a91adc8916372c683db880e136c1d1ab3d5797b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_5f913a44",
         "filename": "keystone/api/os_oauth1.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-08-01T20:47:22Z",
       "side": 1,
       "message": "This bit is failing for me locally. I think we need http://flask.pocoo.org/docs/1.0/api/#flask.Request.headers\n\n  requested_project_id \u003d flask.request.headers.get()",
+      "range": {
+        "startLine": 151,
+        "startChar": 37,
+        "endLine": 151,
+        "endChar": 44
+      },
+      "revId": "a91adc8916372c683db880e136c1d1ab3d5797b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_bf5bad20",
+        "filename": "keystone/api/os_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-01T21:11:57Z",
+      "side": 1,
+      "message": "Yep.",
+      "parentUuid": "5f7c97a3_5f913a44",
       "range": {
         "startLine": 151,
         "startChar": 37,
