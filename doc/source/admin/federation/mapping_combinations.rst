@@ -892,7 +892,7 @@ look as follows:
 
 .. code-block:: xml
 
-    <!-- example from a K2k Shibboleth implementation -->
+    <!-- example 1 from a K2k Shibboleth implementation -->
     <Attribute name="openstack_user" id="openstack_user"/>
     <Attribute name="openstack_user_domain" id="openstack_user_domain"/>
 
@@ -933,6 +933,53 @@ names we have in the Identity Provider. It will map any user with the name
        ]
    }
 
+.. code-block:: xml
+
+    <!-- example 2 from a K2k Shibboleth implementation -->
+    <Attribute name="openstack_user" id="openstack_user"/>
+    <Attribute name="openstack_groups" id="openstack_groups"/>
+
+``openstack_user``, and ``openstack_groups`` will be matched by service
+provider to the attribute names we have in the Identity Provider. It will
+map any user with the name matching to the ``openstack_user``. The identity
+provider will set the value of ``openstack_groups`` attribute in the form
+e.g "JSON:{'name':'group1','domain':{'name':'Default'}}" which will be handled by
+service provider . This string will contain information about the user's groups and
+domain. SP will map group name to "group1" and its domain name to "Default" in
+``openstack_groups`` attribute.
+
+
+
+.. code-block:: json
+
+    {
+        "rules": [
+            {
+                "local":
+                [
+                    {
+                        "user":
+                            {
+                                "name": "{0}"
+                            }
+                    },
+                    {
+                        "groups": "{1}"
+                    }
+                ],
+                "remote":
+                [
+                    {
+                        "type": "openstack_user"
+                    },
+                    {
+                        "type": "openstack_groups"
+                    }
+                ]
+            }
+        ]
+    }
+
 The possible attributes that can be used in a mapping are `openstack_user`,
-`openstack_user_domain`, `openstack_roles`, `openstack_project`, and
-`openstack_project_domain`.
+`openstack_user_domain`, `openstack_roles`, `openstack_project`,
+`openstack_project_domain` and `openstack_groups`.
