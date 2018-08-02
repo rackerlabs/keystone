@@ -43,6 +43,7 @@ class TokenModel(object):
         self.user_id = None
         self.__user = None
         self.__user_domain = None
+        self.__user_group_ids = None
 
         self.methods = None
         self.audit_id = None
@@ -249,6 +250,17 @@ class TokenModel(object):
                     )
                 )
         return self.__trust_project_domain
+
+    @property
+    def user_group_ids(self):
+        # list groups for user
+        if not self.__user_group_ids:
+            if self.user_id is not None:
+                groups = PROVIDERS.identity_api.list_groups_for_user(
+                    self.user_id)
+                for user_group_id in groups:
+                    self.__user_group_ids.append(user_group_id['id'])
+        return self.__user_group_ids
 
     def _get_system_roles(self):
         roles = []
