@@ -3600,6 +3600,8 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
     ROLES = ['admin', 'member']
     PROJECT = 'development'
     PROJECT_DOMAIN = 'project_domain'
+    USER_GROUPS = ['12855c2f281d4474962db4d0fb930c0e',
+                   '153c4873464d48a488efbb6628fdba94']
     SAML_GENERATION_ROUTE = '/auth/OS-FEDERATION/saml2'
     ECP_GENERATION_ROUTE = '/auth/OS-FEDERATION/saml2/ecp'
     ASSERTION_VERSION = "2.0"
@@ -3640,7 +3642,8 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
                                                self.SUBJECT,
                                                self.SUBJECT_DOMAIN,
                                                self.ROLES, self.PROJECT,
-                                               self.PROJECT_DOMAIN)
+                                               self.PROJECT_DOMAIN,
+                                               self.USER_GROUPS)
 
         assertion = response.assertion
         self.assertIsNotNone(assertion)
@@ -3670,6 +3673,10 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
         self.assertEqual(self.PROJECT_DOMAIN,
                          project_domain_attribute.attribute_value[0].text)
 
+        user_group_attribute = assertion.attribute_statement[0].attribute[5]
+        for attribute_value in user_group_attribute.attribute_value:
+            self.assertIn(attribute_value.text, self.USER_GROUPS)
+
     def test_comma_in_certfile_path(self):
         self.config_fixture.config(
             group='saml',
@@ -3684,7 +3691,8 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
             self.SUBJECT_DOMAIN,
             self.ROLES,
             self.PROJECT,
-            self.PROJECT_DOMAIN)
+            self.PROJECT_DOMAIN,
+            self.USER_GROUPS)
 
     def test_comma_in_keyfile_path(self):
         self.config_fixture.config(
@@ -3700,7 +3708,8 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
             self.SUBJECT_DOMAIN,
             self.ROLES,
             self.PROJECT,
-            self.PROJECT_DOMAIN)
+            self.PROJECT_DOMAIN,
+            self.USER_GROUPS)
 
     def test_verify_assertion_object(self):
         """Test that the Assertion object is built properly.
@@ -3716,7 +3725,8 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
                                                self.SUBJECT,
                                                self.SUBJECT_DOMAIN,
                                                self.ROLES, self.PROJECT,
-                                               self.PROJECT_DOMAIN)
+                                               self.PROJECT_DOMAIN,
+                                               self.USER_GROUPS)
         assertion = response.assertion
         self.assertEqual(self.ASSERTION_VERSION, assertion.version)
 
@@ -3735,7 +3745,8 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
                                                self.SUBJECT,
                                                self.SUBJECT_DOMAIN,
                                                self.ROLES, self.PROJECT,
-                                               self.PROJECT_DOMAIN)
+                                               self.PROJECT_DOMAIN,
+                                               self.USER_GROUPS)
 
         saml_str = response.to_string()
         response = etree.fromstring(saml_str)
@@ -3761,6 +3772,10 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
         project_domain_attribute = assertion[4][4]
         self.assertEqual(self.PROJECT_DOMAIN, project_domain_attribute[0].text)
 
+        user_group_attribute = assertion[4][5]
+        for attribute_value in user_group_attribute:
+            self.assertIn(attribute_value.text, self.USER_GROUPS)
+
     def test_assertion_using_explicit_namespace_prefixes(self):
         def mocked_subprocess_check_output(*popenargs, **kwargs):
             # the last option is the assertion file to be signed
@@ -3779,7 +3794,8 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
                                                self.SUBJECT,
                                                self.SUBJECT_DOMAIN,
                                                self.ROLES, self.PROJECT,
-                                               self.PROJECT_DOMAIN)
+                                               self.PROJECT_DOMAIN,
+                                               self.USER_GROUPS)
             assertion_xml = response.assertion.to_string()
             # The expected values in the assertions bellow need to be 'str' in
             # Python 2 and 'bytes' in Python 3
@@ -3808,7 +3824,8 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
         response = generator.samlize_token(self.ISSUER, self.RECIPIENT,
                                            self.SUBJECT, self.SUBJECT_DOMAIN,
                                            self.ROLES, self.PROJECT,
-                                           self.PROJECT_DOMAIN)
+                                           self.PROJECT_DOMAIN,
+                                           self.USER_GROUPS)
 
         signature = response.assertion.signature
         self.assertIsNotNone(signature)
@@ -3922,6 +3939,9 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
 
         project_domain_attribute = assertion[4][4]
         self.assertIsInstance(project_domain_attribute[0].text, str)
+
+        user_group_attribute = assertion[4][5]
+        self.assertIsInstance(user_group_attribute[0].text, str)
 
     def test_invalid_scope_body(self):
         """Test that missing the scope in request body raises an exception.
@@ -4037,6 +4057,9 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
 
         project_domain_attribute = assertion[4][4]
         self.assertIsInstance(project_domain_attribute[0].text, str)
+
+        user_group_attribute = assertion[4][5]
+        self.assertIsInstance(user_group_attribute[0].text, str)
 
     @mock.patch('saml2.create_class_from_xml_string')
     @mock.patch('oslo_utils.fileutils.write_to_tempfile')
