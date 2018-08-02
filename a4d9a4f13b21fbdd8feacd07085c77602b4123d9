@@ -46,6 +46,30 @@
       "revId": "a4d9a4f13b21fbdd8feacd07085c77602b4123d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_4ed8a54f",
+        "filename": "keystone/api/os_revoke.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-02T04:01:13Z",
+      "side": 1,
+      "message": "Learning Flask from Morgan. :)",
+      "parentUuid": "5f7c97a3_44572f28",
+      "range": {
+        "startLine": 39,
+        "startChar": 8,
+        "endLine": 39,
+        "endChar": 11
+      },
+      "revId": "a4d9a4f13b21fbdd8feacd07085c77602b4123d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
