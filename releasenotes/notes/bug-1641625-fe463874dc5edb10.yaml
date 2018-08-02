@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    [`bug 1641625 <https://bugs.launchpad.net/keystone/+bug/1641625>`_]
+    The keystone Idp now includes an additional attribute called "openstack_user_groups" 
+    in the assertion when generating SAML assertions. 
