@@ -19,6 +19,7 @@ import flask
 import jsonschema
 from oslo_config import cfg
 from oslo_log import log
+from oslo_serialization import jsonutils
 from oslo_utils import timeutils
 import six
 
@@ -629,11 +630,6 @@ class RuleProcessor(object):
                     groups_by_domain.setdefault(domain, list()).append(group)
                 group_names.extend(extract_groups(groups_by_domain))
             if 'groups' in identity_value:
-                if 'domain' not in identity_value:
-                    msg = _("Invalid rule: %(identity_value)s. Both 'groups' "
-                            "and 'domain' keywords must be specified.")
-                    msg = msg % {'identity_value': identity_value}
-                    raise exception.ValidationError(msg)
                 # In this case, identity_value['groups'] is a string
                 # representation of a list, and we want a real list.  This is
                 # due to the way we do direct mapping substitutions today (see
@@ -643,10 +639,19 @@ class RuleProcessor(object):
                         identity_value['groups'])
                 except (ValueError, SyntaxError):
                     group_names_list = [identity_value['groups']]
-                domain = identity_value['domain']
-                group_dicts = [{'name': name, 'domain': domain} for name in
-                               group_names_list]
 
+                def convert_json(group):
+                    if group.startswith('JSON:'):
+                        return jsonutils.loads(group.lstrip('JSON:'))
+                    return group
+
+                group_dicts = [convert_json(g) for g in group_names_list]
+                for g in group_dicts:
+                    if 'domain' not in g:
+                        msg = _("Invalid rule: %(identity_value)s. Both 'groups' "
+                                "and 'domain' keywords must be specified.")
+                        msg = msg % {'identity_value': identity_value}
+                        raise exception.ValidationError(msg)
                 group_names.extend(group_dicts)
             if 'group_ids' in identity_value:
                 # If identity_values['group_ids'] is a string representation
