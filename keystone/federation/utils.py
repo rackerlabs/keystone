@@ -19,6 +19,7 @@ import flask
 import jsonschema
 from oslo_config import cfg
 from oslo_log import log
+from oslo_serialization import jsonutils
 from oslo_utils import timeutils
 import six
 
