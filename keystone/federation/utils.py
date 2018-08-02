@@ -13,6 +13,7 @@
 """Utilities for Federation Extension."""
 
 import ast
+import json
 import re
 
 import flask
@@ -512,6 +513,9 @@ class RuleProcessor(object):
         # This will create a new dictionary where the values are arrays, and
         # any multiple values are stored in the arrays.
         LOG.debug('assertion data: %s', assertion_data)
+        for key, value in assertion_data.items():
+            if isinstance(value, six.string_types) and 'JSON' in value:
+                assertion_data[key] = json.loads(''.join(value.split("JSON:")))
         assertion = {n: v.split(';') for n, v in assertion_data.items()
                      if isinstance(v, six.string_types)}
         LOG.debug('assertion: %s', assertion)
