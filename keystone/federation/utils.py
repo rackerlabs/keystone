@@ -512,6 +512,9 @@ class RuleProcessor(object):
         # This will create a new dictionary where the values are arrays, and
         # any multiple values are stored in the arrays.
         LOG.debug('assertion data: %s', assertion_data)
+        if "JSON" in assertion_data:
+            # Handles the assertion_data containing JSON tag for groups.
+            ''.join(assertion_data.split("JSON:"))
         assertion = {n: v.split(';') for n, v in assertion_data.items()
                      if isinstance(v, six.string_types)}
         LOG.debug('assertion: %s', assertion)
