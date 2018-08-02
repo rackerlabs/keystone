@@ -161,6 +161,35 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         self.assertEqual(user_name, name)
         self.assertEqual([], group_ids,)
 
+    def test_rule_engine_for_groups_and_domain(self):
+        """Should return user's groups and group domain.
+
+        The GROUP_DOMAIN_ASSERTION should successfully have a match in
+        MAPPING_GROUPS_DOMAIN_OF_USER. This will test the case where a groups
+        with its domain will exist`, and return user's groups and group domain.
+
+        """
+        mapping = mapping_fixtures.MAPPING_GROUPS_DOMAIN_OF_USER
+        assertion = mapping_fixtures.GROUPS_DOMAIN_ASSERTION
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
+        values = rp.process(assertion)
+
+        self.assertValidMappedUserObject(values)
+        user_name = assertion.get('openstack_user')
+        user_groups = jsonutils.loads(assertion.get('openstack_groups'))
+        user_group = user_groups[0]['group_name']
+        user_domain = user_groups[0]['domain_name']
+        groups = jsonutils.loads(values.get('user', {}).get('groups'))
+        group_name = groups[0]['group_name']
+        domain_name = groups[0]['domain_name']
+        group_ids = values.get('group_ids')
+        name = values.get('user', {}).get('name')
+
+        self.assertEqual(user_name, name)
+        self.assertEqual(user_group, group_name)
+        self.assertEqual(user_domain, domain_name)
+        self.assertEqual([], group_ids, )
+
     def test_rule_engine_not_any_of_many_rules(self):
         """Should return group EMPLOYEE_GROUP_ID.
 
@@ -664,12 +693,6 @@ class MappingRuleEngineTests(unit.BaseTestCase):
                           mapping_utils.validate_mapping_structure,
                           mapping)
 
-    def test_mapping_validation_with_group_name_without_domain(self):
-        mapping = mapping_fixtures.MAPPING_GROUP_NAME_WITHOUT_DOMAIN
-        self.assertRaises(exception.ValidationError,
-                          mapping_utils.validate_mapping_structure,
-                          mapping)
-
     def test_mapping_validation_with_group_id_and_domain(self):
         mapping = mapping_fixtures.MAPPING_GROUP_ID_WITH_DOMAIN
         self.assertRaises(exception.ValidationError,
@@ -690,6 +713,12 @@ class MappingRuleEngineTests(unit.BaseTestCase):
 
     def test_mapping_validation_no_type(self):
         mapping = mapping_fixtures.MAPPING_MISSING_TYPE
+        self.assertRaises(exception.ValidationError,
+                          mapping_utils.validate_mapping_structure,
+                          mapping)
+
+    def test_mapping_validation_with_groups_domain_of_user(self):
+        mapping = mapping_fixtures.MAPPING_GROUPS_DOMAIN_OF_USER
         self.assertRaises(exception.ValidationError,
                           mapping_utils.validate_mapping_structure,
                           mapping)
