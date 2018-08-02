@@ -934,5 +934,5 @@ names we have in the Identity Provider. It will map any user with the name
    }
 
 The possible attributes that can be used in a mapping are `openstack_user`,
-`openstack_user_domain`, `openstack_roles`, `openstack_project`, and
-`openstack_project_domain`.
+`openstack_user_domain`, `openstack_roles`, `openstack_project`,
+`openstack_project_domain` and `openstack_groups`.

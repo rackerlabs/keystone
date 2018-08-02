@@ -14,6 +14,7 @@
 
 """Fixtures for Federation Mapping."""
 
+from oslo_serialization import jsonutils
 from six.moves import range, zip
 
 
@@ -1438,6 +1439,41 @@ MAPPING_GROUPS_WITH_EMAIL = {
     ]
 }
 
+
+MAPPING_GROUPS_DOMAIN_OF_USER = {
+    "rules": [
+        {
+            "local": [
+                {
+                    "user": {
+                        "name": "{0}",
+                        "email": "{1}",
+                        "groups": "{2}"
+                    }
+                }
+            ],
+            "remote": [
+                {
+                    "type": "UserName"
+                },
+                {
+                    "type": "Email"
+                },
+                {
+                    "type": "Groups"
+
+                },
+                {
+                    "type": "orgPersonType",
+                    "any_one_of": [
+                        "Customer"
+                    ]
+                }
+            ]
+        },
+    ]
+}
+
 EMPLOYEE_ASSERTION = {
     'Email': 'tim@example.com',
     'UserName': 'tbo',
@@ -1594,6 +1630,16 @@ GROUPS_ASSERTION_ONLY_ONE_GROUP = {
     'userEmail': 'jill@example.com',
     'UserName': 'jsmith',
     'groups': 'ALL USERS'
+}
+
+GROUPS_DOMAIN_ASSERTION = {
+    'Email': 'beth@example.com',
+    'UserName': 'bwilliams',
+    'FirstName': 'Beth',
+    'LastName': 'Williams',
+    'orgPersonType': 'Customer',
+    'Groups': jsonutils.dumps('[JSON:{"group_name":"group_1", "domain_name": "default"}, '
+                              'JSON:{"group_name": "group_2", "domain_name": "default"}]')
 }
 
 MAPPING_UNICODE = {

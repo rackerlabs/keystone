@@ -10,6 +10,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+from oslo_serialization import jsonutils
+
 from keystone.common import provider_api
 import keystone.conf
 from keystone import exception
@@ -47,8 +49,28 @@ def create_base_saml_assertion(auth):
     project_domain_name = token.project_domain['name']
     subject_domain_name = token.user_domain['name']
 
+    def group_membership():
+        """Return a list of dictionaries serialized as strings.
+
+        The expected return structure is::
+
+        [JSON:{"group_name":"group_1","domain_name": "Default",
+        JSON:{"group_name":"group_2","domain_name": "Default"}]
+        """
+        group_names = []
+        groups = PROVIDERS.identity_api.list_groups_for_user(
+            token.user_id)
+        for group in groups:
+            user_groups = {}
+            group_domain_name = PROVIDERS.resource_api.get_domain(
+                group['domain_id'])['name']
+            user_groups["group_name"] = group['name']
+            user_groups["domain_name"] = group_domain_name
+            group_names.append('JSON:' + jsonutils.dumps(user_groups))
+        return jsonutils.dumps(group_names)
+    groups = group_membership()
     generator = keystone_idp.SAMLGenerator()
     response = generator.samlize_token(
         issuer, sp_url, subject, subject_domain_name,
-        role_names, project, project_domain_name)
+        role_names, project, project_domain_name, groups)
     return response, service_provider
