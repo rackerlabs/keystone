@@ -14,7 +14,7 @@ import flask
 import uuid
 
 from oslo_config import fixture as config_fixture
-from oslo_serialization import jsonutils
+``
 
 from keystone.auth.plugins import mapped
 import keystone.conf
