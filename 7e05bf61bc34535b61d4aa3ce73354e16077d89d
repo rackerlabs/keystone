@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_4e79857e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-02T03:40:21Z",
+      "side": 1,
+      "message": "this line can be removed.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 84
+      },
+      "revId": "7e05bf61bc34535b61d4aa3ce73354e16077d89d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_0e8f0d76",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-02T03:40:21Z",
+      "side": 1,
+      "message": "not only \"default\" domain.",
+      "range": {
+        "startLine": 10,
+        "startChar": 73,
+        "endLine": 10,
+        "endChar": 84
+      },
+      "revId": "7e05bf61bc34535b61d4aa3ce73354e16077d89d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_6ee5613d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-02T03:40:21Z",
+      "side": 1,
+      "message": "it returns 400 BadRequest: \"object of type \u0027NoneType\u0027 has no len()\"",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 68
+      },
+      "revId": "7e05bf61bc34535b61d4aa3ce73354e16077d89d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
