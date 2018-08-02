@@ -46,9 +46,10 @@ def create_base_saml_assertion(auth):
     # between projects and users with the same name in different domains.
     project_domain_name = token.project_domain['name']
     subject_domain_name = token.user_domain['name']
+    groups = token.user_group_ids
 
     generator = keystone_idp.SAMLGenerator()
     response = generator.samlize_token(
         issuer, sp_url, subject, subject_domain_name,
-        role_names, project, project_domain_name)
+        role_names, project, project_domain_name, groups)
     return response, service_provider
