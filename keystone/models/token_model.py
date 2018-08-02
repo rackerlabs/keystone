@@ -41,6 +41,7 @@ class TokenModel(object):
         self.user_id = None
         self.__user = None
         self.__user_domain = None
+        self.__user_group_ids = []
 
         self.methods = None
         self.audit_id = None
@@ -247,6 +248,23 @@ class TokenModel(object):
                     )
                 )
         return self.__trust_project_domain
+
+    @property
+    def user_group_ids(self):
+        # list groups for user
+        if not self.__user_group_ids:
+            if self.user_id is not None:
+                groups = PROVIDERS.identity_api.list_groups_for_user(
+                    self.user_id)
+                for group in groups:
+                    user_group_id = {}
+                    user_group = PROVIDERS.identity_api.get_group(group)
+                    group_domain_name = PROVIDERS.resource_api.get_domain(
+                        user_group['domain_id'])['name']
+                    user_group_id['group_name'] = user_group['name']
+                    user_group_id['domain_name'] = group_domain_name
+                    self.__user_group_ids.append('JSON:' + str(user_group_id))
+        return self.__user_group_ids
 
     def _get_system_roles(self):
         roles = []
