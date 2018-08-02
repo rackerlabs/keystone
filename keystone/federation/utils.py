@@ -19,6 +19,7 @@ import flask
 import jsonschema
 from oslo_config import cfg
 from oslo_log import log
+from oslo_serialization import jsonutils
 from oslo_utils import timeutils
 import six
 
@@ -512,6 +513,10 @@ class RuleProcessor(object):
         # This will create a new dictionary where the values are arrays, and
         # any multiple values are stored in the arrays.
         LOG.debug('assertion data: %s', assertion_data)
+        for key, value in assertion_data.items():
+            if isinstance(value, six.string_types) and value[2:].startswith('JSON'):
+                assertion_data[key] = jsonutils.dumps(jsonutils.loads(value).get('JSON', None))
+
         assertion = {n: v.split(';') for n, v in assertion_data.items()
                      if isinstance(v, six.string_types)}
         LOG.debug('assertion: %s', assertion)
