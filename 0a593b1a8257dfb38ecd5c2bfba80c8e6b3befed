@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_93bb4ae2",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-02T02:15:33Z",
+      "side": 1,
+      "message": "should add \"initiator.user_id \u003d user_id\" as well to keep the same with the common usage.\n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/request.py#L116",
+      "revId": "0a593b1a8257dfb38ecd5c2bfba80c8e6b3befed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_53b132ff",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1131,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-02T02:15:33Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "0a593b1a8257dfb38ecd5c2bfba80c8e6b3befed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
