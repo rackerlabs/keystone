@@ -257,11 +257,12 @@ If keystone is your IdP, you will need to examine your attributes map file
 
 .. code-block:: xml
 
-   <Attribute name="openstack_user" id="openstack_user"/>
-   <Attribute name="openstack_roles" id="openstack_roles"/>
-   <Attribute name="openstack_project" id="openstack_project"/>
-   <Attribute name="openstack_user_domain" id="openstack_user_domain"/>
-   <Attribute name="openstack_project_domain" id="openstack_project_domain"/>
+    <Attribute name="openstack_user" id="openstack_user"/>
+    <Attribute name="openstack_roles" id="openstack_roles"/>
+    <Attribute name="openstack_project" id="openstack_project"/>
+    <Attribute name="openstack_user_domain" id="openstack_user_domain"/>
+    <Attribute name="openstack_project_domain" id="openstack_project_domain"/>
+    <Attribute name="openstack_groups" id="openstack_groups"/>
 
 For more information see the
 `attributes documentation <https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPAddAttribute>`_
