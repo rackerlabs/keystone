@@ -384,11 +384,12 @@ class Auth(auth_controllers.Auth):
         # between projects and users with the same name in different domains.
         project_domain_name = token.project_domain['name']
         subject_domain_name = token.user_domain['name']
-
+        user_group_ids = token.get_user_group_ids
         generator = keystone_idp.SAMLGenerator()
         response = generator.samlize_token(
             issuer, sp_url, subject, subject_domain_name,
-            role_names, project, project_domain_name)
+            role_names, project, project_domain_name,
+            user_group_ids)
         return (response, service_provider)
 
     def _build_response_headers(self, service_provider):
