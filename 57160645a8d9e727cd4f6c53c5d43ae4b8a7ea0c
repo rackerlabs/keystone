@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_6357a1cb",
+        "filename": "devstack/files/federation/shib_apache_handler.txt",
+        "patchSetId": 9
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-08-02T22:33:20Z",
+      "side": 1,
+      "message": "yeah, can you change back to the variable?",
+      "parentUuid": "5f7c97a3_170e3d3c",
+      "range": {
+        "startLine": 6,
+        "startChar": 56,
+        "endLine": 6,
+        "endChar": 64
+      },
+      "revId": "57160645a8d9e727cd4f6c53c5d43ae4b8a7ea0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_3c11de5c",
         "filename": "devstack/lib/federation.sh",
         "patchSetId": 9
@@ -106,6 +130,30 @@
       "writtenOn": "2018-07-25T12:09:24Z",
       "side": 1,
       "message": "nit 1 - You could make this a oneliner\n\n openssl req -x509 -newkey rsa:4096 -keyout /etc/keystone/ca.key -out /etc/keystone/ca.crt -days 1826\n\nnit 2 - I would probably put them in /etc/keystone/certs and /etc/keystone/private",
+      "range": {
+        "startLine": 120,
+        "startChar": 8,
+        "endLine": 122,
+        "endChar": 74
+      },
+      "revId": "57160645a8d9e727cd4f6c53c5d43ae4b8a7ea0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_4352a5dc",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-08-02T22:33:20Z",
+      "side": 1,
+      "message": "+1 for both nits",
+      "parentUuid": "5f7c97a3_70988966",
       "range": {
         "startLine": 120,
         "startChar": 8,
