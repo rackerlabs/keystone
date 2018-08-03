@@ -425,6 +425,7 @@ Parameters
 .. rest_parameters:: parameters.yaml
 
    - limits: limits
+   - project_id: project_id
    - service_id: service_id_limit
    - region_id: region_id_request_body
    - resource_name: resource_name
@@ -449,6 +450,7 @@ Parameters
 
    - limits: limits
    - id: limit_id
+   - project_id: project_id
    - service_id: service_id_limit
    - region_id: region_id_response_body
    - resource_name: resource_name
@@ -517,6 +519,7 @@ Parameters
 
    - limit: limit
    - id: limit_id
+   - project_id: project_id
    - service_id: service_id_limit
    - region_id: region_id_response_body
    - resource_name: resource_name
