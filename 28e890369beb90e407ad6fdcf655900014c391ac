@@ -22,6 +22,30 @@
       "revId": "28e890369beb90e407ad6fdcf655900014c391ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_2cdc3070",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-08-03T09:31:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_1d3965cf",
+      "range": {
+        "startLine": 253,
+        "startChar": 0,
+        "endLine": 259,
+        "endChar": 29
+      },
+      "revId": "28e890369beb90e407ad6fdcf655900014c391ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
