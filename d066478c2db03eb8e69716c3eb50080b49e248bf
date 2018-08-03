@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_38730f52",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-03T08:45:28Z",
+      "side": 1,
+      "message": "TBH, I don\u0027t think the problem can be solved 100% with this change.\n\nSuppose there are two request to rotate keys, they can both passed the check here if they have not call L244 yet.\n\nHow about doing some change in \"_create_tmp_new_key\", such as adding a lock?",
+      "revId": "d066478c2db03eb8e69716c3eb50080b49e248bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
