@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_1d3965cf",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-03T07:22:29Z",
+      "side": 1,
+      "message": "this property should be rewrite like other properties do, such as:\nthe name should be \"def user_group_ids\".\nyou should make sure self.user_id is not null before get its groups and so on.",
+      "range": {
+        "startLine": 253,
+        "startChar": 0,
+        "endLine": 259,
+        "endChar": 29
+      },
+      "revId": "28e890369beb90e407ad6fdcf655900014c391ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
