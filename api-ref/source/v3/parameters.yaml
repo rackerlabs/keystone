@@ -132,6 +132,13 @@ user_id_path:
   in: path
   required: true
   type: string
+project_tag_path:
+  description: |
+    A simple string associated with a project. Can be used for assigning
+    values to projects and filtering based on those values.
+  in: path
+  required: true
+  type: string
 
 # variables in query
 allow_expired:
@@ -323,13 +330,6 @@ project_name_query:
     Filters the response by a project name.
   in: query
   required: false
-  type: string
-project_tag_path:
-  description: |
-    A simple string associated with a project. Can be used for assigning
-    values to projects and filtering based on those values.
-  in: query
-  required: true
   type: string
 protocol_id_query:
   description: |
