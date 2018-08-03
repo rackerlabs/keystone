@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_0c405932",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-08-03T02:43:16Z",
+      "side": 1,
+      "message": "None of the examples here[0] show a \"user_id\" in the initiator, wonder if it could be removed instead. Might be redundant since the id is also the user\u0027s id.\n\n[0] https://docs.openstack.org/keystone/latest/advanced-topics/event_notifications.html#auditing-with-cadf",
+      "range": {
+        "startLine": 521,
+        "startChar": 12,
+        "endLine": 521,
+        "endChar": 39
+      },
+      "revId": "64e4e41cfd657b78fd800962ac52ca2012bcc86c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
