@@ -328,7 +328,7 @@ project_tag_path:
   description: |
     A simple string associated with a project. Can be used for assigning
     values to projects and filtering based on those values.
-  in: query
+  in: path
   required: true
   type: string
 protocol_id_query:
