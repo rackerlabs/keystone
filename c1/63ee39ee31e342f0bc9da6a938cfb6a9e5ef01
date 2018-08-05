@@ -1,0 +1,9 @@
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Code-Review+2: Dave Chen <dave.jungler@gmail.com>
+Workflow+1: Dave Chen <dave.jungler@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Sun, 05 Aug 2018 13:52:08 +0000
+Reviewed-on: https://review.openstack.org/588452
+Project: openstack/keystone
+Branch: refs/heads/master
