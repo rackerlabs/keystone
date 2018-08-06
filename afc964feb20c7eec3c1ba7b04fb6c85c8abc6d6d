@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_8c746d9b",
+        "filename": "keystone/api/limits.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-06T02:38:35Z",
+      "side": 1,
+      "message": "we support batch create, so it\u0027s create_limits",
+      "range": {
+        "startLine": 73,
+        "startChar": 47,
+        "endLine": 73,
+        "endChar": 59
+      },
+      "revId": "afc964feb20c7eec3c1ba7b04fb6c85c8abc6d6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_ec62c1d8",
+        "filename": "keystone/api/registered_limits.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-06T02:38:35Z",
+      "side": 1,
+      "message": "delete",
+      "range": {
+        "startLine": 78,
+        "startChar": 8,
+        "endLine": 78,
+        "endChar": 31
+      },
+      "revId": "afc964feb20c7eec3c1ba7b04fb6c85c8abc6d6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_cc3b459a",
+        "filename": "keystone/limit/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-06T02:38:35Z",
+      "side": 0,
+      "message": "it should be \"registered_limit\". It\u0027s a bug for json home in unified limit.",
+      "range": {
+        "startLine": 41,
+        "startChar": 54,
+        "endLine": 41,
+        "endChar": 71
+      },
+      "revId": "6f07b4c1ff69c49d8b0f8411896d12aa893b3abb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_6c40f108",
+        "filename": "keystone/limit/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-06T02:38:35Z",
+      "side": 0,
+      "message": "ditto",
+      "range": {
+        "startLine": 71,
+        "startChar": 54,
+        "endLine": 71,
+        "endChar": 60
+      },
+      "revId": "6f07b4c1ff69c49d8b0f8411896d12aa893b3abb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
