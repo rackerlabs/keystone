@@ -35,11 +35,5 @@ if os.path.exists(os.path.join(possible_topdir,
 
 # entry point.
 def main():
-    dev_conf = os.path.join(possible_topdir,
-                            'etc',
-                            'keystone.conf')
-    config_files = None
-    if os.path.exists(dev_conf):
-        config_files = [dev_conf]
-
-    cli.main(argv=sys.argv, config_files=config_files)
+    dev_conf = os.path.join(possible_topdir, 'etc', 'keystone.conf')
+    cli.main(argv=sys.argv, developer_config_file=dev_conf)
