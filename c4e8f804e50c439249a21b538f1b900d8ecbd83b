@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_ed32b8a7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-08-06T10:31:26Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "3f79a3b5_bbc2b9e8",
+      "range": {
+        "startLine": 12,
+        "startChar": 8,
+        "endLine": 12,
+        "endChar": 29
+      },
+      "revId": "c4e8f804e50c439249a21b538f1b900d8ecbd83b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_9befbd86",
         "filename": "releasenotes/notes/bug-1641625-fe463874dc5edb10.yaml",
         "patchSetId": 7
@@ -36,6 +60,24 @@
       "writtenOn": "2018-08-06T10:21:20Z",
       "side": 1,
       "message": "remove the extra space",
+      "revId": "c4e8f804e50c439249a21b538f1b900d8ecbd83b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_ad2cc047",
+        "filename": "releasenotes/notes/bug-1641625-fe463874dc5edb10.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-08-06T10:31:26Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "3f79a3b5_9befbd86",
       "revId": "c4e8f804e50c439249a21b538f1b900d8ecbd83b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
