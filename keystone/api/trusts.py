@@ -21,7 +21,6 @@ import flask
 import flask_restful
 from six.moves import http_client
 
-from keystone import assignment
 from keystone.common import context
 from keystone.common import json_home
 from keystone.common import provider_api
@@ -70,11 +69,10 @@ def _normalize_trust_roles(trust):
         trust_role = trust_role['id']
         try:
             matching_role = PROVIDERS.role_api.get_role(trust_role)
-            # TODO(morgan): Correct the cross-subsystem call here to allow
-            # for local handling of the role wrapping
-            full_role = assignment.controllers.RoleV3.wrap_member(
-                {'environment': flask.request.environ},
-                matching_role)['role']
+            full_role = ks_flask.ResourceBase.wrap_member(
+                matching_role,
+                member_name='role',
+                collection_name='roles')['role']
             trust_full_roles.append(full_role)
         except exception.RoleNotFound:
             pass
@@ -298,10 +296,8 @@ class RoleForTrustResource(flask_restful.Resource):
             raise exception.RoleNotFound(role_id=role_id)
 
         role = PROVIDERS.role_api.get_role(role_id)
-        # TODO(morgan): Correct this to allow for local member wrapping of
-        # RoleV3.
-        return assignment.controllers.RoleV3.wrap_member(
-            {'environment': flask.request.environ}, role)
+        return ks_flask.ResourceBase.wrap_member(
+            role, collection_name='roles', member_name='role')
 
 
 class TrustAPI(ks_flask.APIBase):

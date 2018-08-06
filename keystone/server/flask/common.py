@@ -566,7 +566,8 @@ class ResourceBase(flask_restful.Resource):
             raise exception.ValidationError('Cannot change ID')
 
     @classmethod
-    def wrap_collection(cls, refs, hints=None):
+    def wrap_collection(cls, refs, collection_name=None, prefix=None,
+                        hints=None):
         """Wrap a collection, checking for filtering and pagination.
 
         Returns the wrapped collection, which includes:
@@ -576,6 +577,11 @@ class ResourceBase(flask_restful.Resource):
         - Adds 'next', 'self' and 'prev' links for the whole collection.
 
         :param refs: the list of members of the collection
+        :param collection_name: optional override of the collection key to
+                                allow for direct wrapping of a collection with
+                                no need to import/call across API modules
+        :param prefix: optional override of the api prefix, e.g.
+                       `OS-TRUST`.
         :param hints: list hints, containing any relevant filters and limit.
                       Any filters already satisfied by managers will have been
                       removed
@@ -590,10 +596,13 @@ class ResourceBase(flask_restful.Resource):
         list_limited, refs = cls.limit(refs, hints)
 
         for ref in refs:
-            cls._add_self_referential_link(ref)
+            cls._add_self_referential_link(ref, collection_name, prefix)
 
-        container = {cls.collection_key: refs}
+        collection_name = collection_name or cls.collection_key
+        container = {collection_name: refs}
         pfx = getattr(cls, 'api_prefix', '').lstrip('/')
+        if prefix is not None:
+            pfx = prefix
         parts = [p for p in (full_url(), 'v3', pfx, cls.collection_key) if p]
         self_url = '/'.join(parts)
         container['links'] = {
@@ -607,16 +616,20 @@ class ResourceBase(flask_restful.Resource):
         return container
 
     @classmethod
-    def wrap_member(cls, ref):
-        cls._add_self_referential_link(ref)
-        return {cls.member_key: ref}
+    def wrap_member(cls, ref, member_name=None, collection_name=None,
+                    prefix=None):
+        member_name = member_name or cls.member_key
+        cls._add_self_referential_link(ref, collection_name, prefix)
+        return {member_name: ref}
 
     @classmethod
-    def _add_self_referential_link(cls, ref):
-        collection_element = cls.collection_key
-        if cls.api_prefix:
-            api_prefix = cls.api_prefix.lstrip('/').rstrip('/')
-            collection_element = '/'.join([api_prefix, cls.collection_key])
+    def _add_self_referential_link(cls, ref, collection_name=None,
+                                   prefix=None):
+        collection_element = collection_name or cls.collection_key
+        prefix = prefix or cls.api_prefix
+        if prefix:
+            api_prefix = prefix.lstrip('/').rstrip('/')
+            collection_element = '/'.join([api_prefix, collection_name])
         self_link = '/'.join([base_url(), 'v3', collection_element, ref['id']])
         ref.setdefault('links', {})['self'] = self_link
 
