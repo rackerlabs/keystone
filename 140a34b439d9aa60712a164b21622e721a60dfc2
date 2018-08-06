@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_f25b642b",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-08-06T21:50:07Z",
+      "side": 0,
+      "message": "I wonder if we will ever hit an issue where auth_context is None and the token won\u0027t get a user_id set.",
+      "range": {
+        "startLine": 237,
+        "startChar": 8,
+        "endLine": 238,
+        "endChar": 35
+      },
+      "revId": "140a34b439d9aa60712a164b21622e721a60dfc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
