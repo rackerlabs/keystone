@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_cc0905de",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-06T02:42:47Z",
+      "side": 1,
+      "message": "add a self.__user_group_ids property so that we only need to call \"list_groups_for_user\" once.",
+      "revId": "0ca72eb9877c4869f317de6e609368a2dba40bea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
