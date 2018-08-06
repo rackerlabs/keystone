@@ -457,25 +457,32 @@ class Manager(manager.Manager):
             # attempt to send audit event even if the cache invalidation raises
             notifications.Audit.deleted(self._PROJECT, project_id, initiator)
 
-    def delete_project(self, project_id, initiator=None, cascade=False):
+    def delete_project(self, project_id, initiator=None, cascade=False,
+                       is_domain=False):
         """Delete one project or a subtree.
 
         :param cascade: If true, the specified project and all its
                         sub-projects are deleted. Otherwise, only the specified
                         project is deleted.
         :type cascade: boolean
+        :param is_domain: If true, it's a domain deleting action.
+        :type is_domain: boolean
         :raises keystone.exception.ValidationError: if project is a domain
         :raises keystone.exception.Forbidden: if project is not a leaf
         """
-        project = self.driver.get_project(project_id)
+        try:
+            project = self.driver.get_project(project_id)
+        except exception.ProjectNotFound:
+            if is_domain:
+                raise exception.DomainNotFound(domain_id=project_id)
+            raise exception.ProjectNotFound(project_id=project_id)
         if project.get('is_domain'):
-            self.delete_domain(project_id, initiator)
+            self._delete_domain(project, initiator)
         else:
-            self._delete_project(project_id, initiator, cascade)
+            self._delete_project(project, initiator, cascade)
 
-    def _delete_project(self, project_id, initiator=None, cascade=False):
-        # Use the driver directly to prevent using old cached value.
-        project = self.driver.get_project(project_id)
+    def _delete_project(self, project, initiator=None, cascade=False):
+        project_id = project['id']
         if project['is_domain'] and project['enabled']:
             raise exception.ValidationError(
                 message=_('cannot delete an enabled project acting as a '
@@ -780,14 +787,7 @@ class Manager(manager.Manager):
 
         return domain_from_project
 
-    def delete_domain(self, domain_id, initiator=None):
-        # Use the driver directly to get the project that acts as a domain and
-        # prevent using old cached value.
-        try:
-            domain = self.driver.get_project(domain_id)
-        except exception.ProjectNotFound:
-            raise exception.DomainNotFound(domain_id=domain_id)
-
+    def _delete_domain(self, domain, initiator=None):
         # To help avoid inadvertent deletes, we insist that the domain
         # has been previously disabled.  This also prevents a user deleting
         # their own domain since, once it is disabled, they won't be able
@@ -797,11 +797,12 @@ class Manager(manager.Manager):
                 _('Cannot delete a domain that is enabled, please disable it '
                   'first.'))
 
+        domain_id = domain['id']
         self._delete_domain_contents(domain_id)
         notifications.Audit.internal(
             notifications.DOMAIN_DELETED, domain_id
         )
-        self._delete_project(domain_id, initiator)
+        self._delete_project(domain, initiator)
         try:
             self.get_domain.invalidate(self, domain_id)
             self.get_domain_by_name.invalidate(self, domain['name'])
@@ -836,7 +837,7 @@ class Manager(manager.Manager):
                 _delete_projects(proj, projects, examined)
 
             try:
-                self.delete_project(project['id'], initiator=None)
+                self._delete_project(project, initiator=None)
             except exception.ProjectNotFound:
                 LOG.debug(('Project %(projectid)s not found when '
                            'deleting domain contents for %(domainid)s, '

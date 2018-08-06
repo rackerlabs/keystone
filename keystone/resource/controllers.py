@@ -71,8 +71,8 @@ class DomainV3(controller.V3Controller):
 
     @controller.protected()
     def delete_domain(self, request, domain_id):
-        return PROVIDERS.resource_api.delete_domain(
-            domain_id, initiator=request.audit_initiator
+        return PROVIDERS.resource_api.delete_project(
+            domain_id, initiator=request.audit_initiator, is_domain=True
         )
 
 
