@@ -22,6 +22,30 @@
       "revId": "140a34b439d9aa60712a164b21622e721a60dfc2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_321f9c6d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-08-06T23:33:17Z",
+      "side": 0,
+      "message": "that\u0027s totally possible given the way the parameters are passed and the code should check for this case.\n\nI believe we need a test to cover this case as well.",
+      "parentUuid": "3f79a3b5_f25b642b",
+      "range": {
+        "startLine": 237,
+        "startChar": 8,
+        "endLine": 238,
+        "endChar": 35
+      },
+      "revId": "140a34b439d9aa60712a164b21622e721a60dfc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
