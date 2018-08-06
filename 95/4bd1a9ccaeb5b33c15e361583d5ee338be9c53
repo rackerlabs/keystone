@@ -1,0 +1,11 @@
+Code-Review+2: Dave Chen <dave.jungler@gmail.com>
+Code-Review+1: daixianmeng <daixianmeng@yovole.com>
+Code-Review+2: wangxiyuan <wangxiyuan@huawei.com>
+Workflow+1: wangxiyuan <wangxiyuan@huawei.com>
+Code-Review+1: wangqi <wang.qi@99cloud.net>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 06 Aug 2018 03:48:46 +0000
+Reviewed-on: https://review.openstack.org/588471
+Project: openstack/keystone
+Branch: refs/heads/master
