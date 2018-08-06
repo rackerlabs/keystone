@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_12e38735",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-06T15:35:04Z",
+      "side": 1,
+      "message": "Note to reviewer(s), Changes to this file are due to fixes needed to JSON Home for limits (a known bug). See wxy\u0027s comment on the previous patchset.",
+      "revId": "6a79c30debb78de54f52bb8016bd0a6ff8200fcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
