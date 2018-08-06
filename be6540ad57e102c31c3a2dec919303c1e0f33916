@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_fce344a3",
+        "filename": "api-ref/source/v3/application-credentials.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-08-06T14:28:48Z",
+      "side": 1,
+      "message": "I\u0027m not sure this is better. The original was supposed to connote that the user is scoped to the project and the user is a human hence the use of the singular \"they\". Maybe more accurate is to say that the token is scoped to the project, but then \"it\" is ambiguous here, instead we should say \"...on the project to which their token is currently scoped\" or \"...on the project to which the current token is scoped\"",
+      "range": {
+        "startLine": 101,
+        "startChar": 69,
+        "endLine": 101,
+        "endChar": 74
+      },
+      "revId": "be6540ad57e102c31c3a2dec919303c1e0f33916",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_7cb73488",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1535,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-08-06T14:28:48Z",
+      "side": 1,
+      "message": "Maybe instead of extending the qualifier, add a new sentence:\n\n The list may only contain roles that the user has assigned on the project.\n\nthough I sort of think that almost goes without saying?",
+      "revId": "be6540ad57e102c31c3a2dec919303c1e0f33916",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_dcf4485e",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1537,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-08-06T14:28:48Z",
+      "side": 1,
+      "message": "Please fix the whitespace",
+      "range": {
+        "startLine": 1537,
+        "startChar": 50,
+        "endLine": 1537,
+        "endChar": 52
+      },
+      "revId": "be6540ad57e102c31c3a2dec919303c1e0f33916",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
