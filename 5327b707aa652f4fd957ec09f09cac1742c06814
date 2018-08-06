@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_c75b0c85",
+        "filename": "keystone/api/os_ep_filter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-08-06T21:26:53Z",
+      "side": 1,
+      "message": "think this was missed",
+      "range": {
+        "startLine": 149,
+        "startChar": 7,
+        "endLine": 149,
+        "endChar": 77
+      },
+      "revId": "5327b707aa652f4fd957ec09f09cac1742c06814",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_e7d5e8ba",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-08-06T21:26:53Z",
+      "side": 1,
+      "message": "Is there a reason for having the prefix? Doesn\u0027t seem like anything is using it in this.\n\nOr is it for future-proofing?",
+      "range": {
+        "startLine": 569,
+        "startChar": 57,
+        "endLine": 569,
+        "endChar": 68
+      },
+      "revId": "5327b707aa652f4fd957ec09f09cac1742c06814",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
