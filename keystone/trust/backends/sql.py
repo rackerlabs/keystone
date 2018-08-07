@@ -188,3 +188,46 @@ class Trust(base.TrustDriverBase):
             trusts = query.filter_by(project_id=project_id)
             for trust_ref in trusts:
                 trust_ref.deleted_at = timeutils.utcnow()
+
+    def flush_expired_trusts(self):
+        with sql.session_for_write() as session:
+            query = session.query(TrustModel)
+            query = query.filter_by(deleted_at=None)
+            query = query.filter_by(TrustModel.expires_at < timeutils.utcnow())
+            query.delete(synchronize_session=False)
+
+    def flush_expired_trusts_for_id(self, project_id=None,
+                                    trustor_user_id=None,
+                                    trustee_user_id=None):
+        with sql.session_for_write() as session:
+            if project_id and trustor_user_id and trustee_user_id:
+                trusts = (session.query(TrustModel).
+                          filter_by(project_id=project_id).
+                          filter_by(trustor_user_id=trustor_user_id).
+                          filter_by(trustee_user_id=trustee_user_id))
+            elif project_id and trustor_user_id:
+                trusts = (session.query(TrustModel).
+                          filter_by(project_id=project_id).
+                          filter_by(trustor_user_id=trustor_user_id))
+            elif project_id and trustee_user_id:
+                trusts = (session.query(TrustModel).
+                          filter_by(project_id=project_id).
+                          filter_by(trustee_user_id=trustee_user_id))
+            elif trustor_user_id and trustee_user_id:
+                trusts = (session.query(TrustModel).
+                          filter_by(trustor_user_id=trustor_user_id).
+                          filter_by(trustee_user_id=trustee_user_id))
+            elif project_id:
+                trusts = (session.query(TrustModel).
+                          filter_by(project_id=project_id))
+            elif trustee_user_id:
+                trusts = (session.query(TrustModel).
+                          filter_by(trustee_user_id=trustee_user_id))
+            else:
+                trusts = (session.query(TrustModel).
+                          filter_by(trustor_user_id=trustor_user_id))
+
+            for ref in trusts:
+                if ref.expires_at is not None:
+                    if ref.expires_at < timeutils.utcnow():
+                        ref.delete(synchronize_session=False)
