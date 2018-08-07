@@ -212,3 +212,7 @@ class Manager(manager.Manager):
         self.driver.delete_trust(trust_id)
 
         notifications.Audit.deleted(self._TRUST, trust_id, initiator)
+
+    def flush_expired_trusts(self):
+        """Archive or delete trusts that have expired."""
+        raise exception.NotImplemented()

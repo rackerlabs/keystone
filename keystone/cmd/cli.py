@@ -40,7 +40,7 @@ from keystone.federation import idp
 from keystone.federation import utils as mapping_engine
 from keystone.i18n import _
 from keystone.server import backends
-
+from keystone import trust
 
 CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
@@ -674,6 +674,17 @@ class TokenFlush(BaseApp):
             'you are using an out-of-tree provider that relies on persistent '
             'token storage.'
         )
+
+
+class TrustFlush(BaseApp):
+    """Flush expired trusts from the backend."""
+
+    name = 'trust_flush'
+
+    @classmethod
+    def main(cls):
+        trust_manager = trust.Manager()
+        trust_manager.driver.flush_expired_trusts()
 
 
 class MappingPurge(BaseApp):

@@ -520,3 +520,15 @@ can be invoked as follows:
     # Using password authentication, with flags
     $ openstack --os-username=admin --os-password=secret --os-project-name=admin --os-auth-url=http://localhost:35357/v3 user list
     $ openstack --os-username=admin --os-password=secret --os-project-name=admin --os-auth-url=http://localhost:35357/v3 project create demo
+
+
+Removing Expired Trusts
+===========================================================
+
+In the SQL trust stores expired trusts are not automatically
+removed. These trusts can be removed with::
+
+    $ keystone-manage trust_flush
+
+The memcache backend automatically discards expired trusts and so flushing
+is unnecessary and if attempted will fail with a NotImplemented error.
