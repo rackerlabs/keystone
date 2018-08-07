@@ -41,7 +41,6 @@ from keystone.federation import utils as mapping_engine
 from keystone.i18n import _
 from keystone.server import backends
 
-
 CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
 
@@ -676,6 +675,40 @@ class TokenFlush(BaseApp):
         )
 
 
+class TrustFlush(BaseApp):
+    """Flush expired trusts from the backend."""
+
+    name = 'trust_flush'
+
+    @classmethod
+    def add_argument_parser(cls, subparsers):
+        parser = super(TrustFlush, cls).add_argument_parser(subparsers)
+
+        parser.add_argument('--project-id', default=None, required=True,
+                            help=('The id of the project of which the expired '
+                                  'trusts is to be purged'))
+        parser.add_argument('--trustor-user-id', default=None, required=True,
+                            help=('The id of the trustor of which the expired '
+                                  'trusts is to be purged'))
+        parser.add_argument('--trustee-user-id', default=None, required=True,
+                            help=('The id of the trustee of which the expired '
+                                  'trusts is to be purged'))
+        return parser
+
+    @classmethod
+    def main(cls):
+        drivers = backends.load_backends()
+        trust_manager = drivers['trust.Manager']
+        if CONF.command.project_id or CONF.command.trustor_user_id or \
+                CONF.command.trustee_user_id:
+            trust_manager.flush_expired_trusts_for_id(
+                project_id=CONF.command.project_id,
+                trustor_user_id=CONF.command.trustor_user_id,
+                trustee_user_id=CONF.command.trustee_user_id)
+        else:
+            trust_manager.flush_expired_trusts()
+
+
 class MappingPurge(BaseApp):
     """Purge the mapping table."""
 
@@ -1158,7 +1191,8 @@ CMDS = [
     SamlIdentityProviderMetadata,
     TokenFlush,
     TokenRotate,
-    TokenSetup
+    TokenSetup,
+    TrustFlush
 ]
 
 
