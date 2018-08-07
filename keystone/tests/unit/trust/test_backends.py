@@ -182,3 +182,44 @@ class TrustTests(object):
                           uuid.uuid4().hex,
                           trust_data,
                           roles)
+
+    def test_flush_expired_trusts(self):
+        self.trustor = self.user_foo
+        self.trustee = self.user_two
+        remaining_uses = None
+        new_id = uuid.uuid4().hex
+        trust_data = (PROVIDERS.trust_api.create_trust
+                      (new_id,
+                       {'trustor_user_id': self.trustor['id'],
+                        'trustee_user_id': self.user_two['id'],
+                        'project_id': self.tenant_bar['id'],
+                        'expires_at':
+                            timeutils.utcnow() - datetime.timedelta(minutes=1),
+                        'impersonation': True,
+                        'remaining_uses': remaining_uses},
+                       roles=[{"id": "member"},
+                              {"id": "other"},
+                              {"id": "browser"}]))
+        self.assertIsNotNone(trust_data)
+
+        self.trustor = self.user_foo
+        self.trustee = self.user_two
+        remaining_uses = None
+        new_id = uuid.uuid4().hex
+        trust_data = (PROVIDERS.trust_api.create_trust
+                      (new_id,
+                       {'trustor_user_id': self.trustor['id'],
+                        'trustee_user_id': self.user_two['id'],
+                        'project_id': self.tenant_bar['id'],
+                        'expires_at':
+                            timeutils.utcnow() + datetime.timedelta(minutes=1),
+                        'impersonation': True,
+                        'remaining_uses': remaining_uses},
+                       roles=[{"id": "member"},
+                              {"id": "other"},
+                              {"id": "browser"}]))
+        self.assertIsNotNone(trust_data)
+
+        PROVIDERS.trust_api.flush_expired_trusts()
+        trusts = self.trust_api.list_trusts()
+        self.assertEqual(len(trusts), 1)
