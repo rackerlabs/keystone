@@ -46,6 +46,30 @@
       "revId": "140a34b439d9aa60712a164b21622e721a60dfc2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_7312f35a",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-07T07:27:42Z",
+      "side": 0,
+      "message": "It won\u0027t happen, since before calling \"issue_token\" the code has made sure the \"auth_context\" contains \"user_id\". see https://review.openstack.org/#/c/582635/3/keystone/contrib/ec2/controllers.py\n\nHowever I won\u0027t oppose to add a check to make the code stronger.",
+      "parentUuid": "3f79a3b5_321f9c6d",
+      "range": {
+        "startLine": 237,
+        "startChar": 8,
+        "endLine": 238,
+        "endChar": 35
+      },
+      "revId": "140a34b439d9aa60712a164b21622e721a60dfc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
