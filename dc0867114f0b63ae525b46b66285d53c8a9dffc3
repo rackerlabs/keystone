@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_89ae822c",
+        "filename": "doc/source/advanced-topics/federation/mapping_combinations.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 940,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-08-07T09:46:04Z",
+      "side": 1,
+      "message": "As the groups are specific to user. So isn\u0027t it good to have openstack_user_groups like openstack_user_domain? Pl suggest",
+      "parentUuid": "3f79a3b5_f8bca2bc",
+      "range": {
+        "startLine": 940,
+        "startChar": 32,
+        "endLine": 940,
+        "endChar": 53
+      },
+      "revId": "dc0867114f0b63ae525b46b66285d53c8a9dffc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_b36f2bc4",
         "filename": "keystone/federation/idp.py",
         "patchSetId": 8
