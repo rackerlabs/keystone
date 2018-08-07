@@ -70,6 +70,30 @@
       "revId": "140a34b439d9aa60712a164b21622e721a60dfc2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_d473a3e6",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-08-07T17:30:39Z",
+      "side": 0,
+      "message": "right, it won\u0027t happen for the current usages - we never know how this method is going to be used in the future :)",
+      "parentUuid": "3f79a3b5_7312f35a",
+      "range": {
+        "startLine": 237,
+        "startChar": 8,
+        "endLine": 238,
+        "endChar": 35
+      },
+      "revId": "140a34b439d9aa60712a164b21622e721a60dfc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
