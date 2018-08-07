@@ -188,3 +188,9 @@ class Trust(base.TrustDriverBase):
             trusts = query.filter_by(project_id=project_id)
             for trust_ref in trusts:
                 trust_ref.deleted_at = timeutils.utcnow()
+
+    def flush_expired_trusts(self):
+        with sql.session_for_write() as session:
+            query = session.query(TrustModel)
+            query = query.filter_by(TrustModel.expires_at < timeutils.utcnow())
+            query.delete(synchronize_session=False)
