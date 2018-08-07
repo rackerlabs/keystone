@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_fe6fa3c2",
+        "filename": "keystone/cmd/manage.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-07T13:42:49Z",
+      "side": 0,
+      "message": "Ah - I need to keep this, otherwise developer_config_file is always True, which assumes the file actually exists on disk.",
+      "range": {
+        "startLine": 42,
+        "startChar": 4,
+        "endLine": 42,
+        "endChar": 32
+      },
+      "revId": "09975532c00a9448e6b3aadb1404880c0ddcdd7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
