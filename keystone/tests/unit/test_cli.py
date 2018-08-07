@@ -1627,3 +1627,16 @@ class TestTokenFlush(unit.TestCase):
         tf = cli.TokenFlush()
         tf.main()
         self.assertThat(logging.output, matchers.Contains(expected_msg))
+
+
+class TestTrustFlush(unit.SQLDriverOverrides, unit.TestCase):
+
+    def config_files(self):
+        config_files = super(TestTrustFlush, self).config_files()
+        config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
+        return config_files
+
+    def test_trust_flush(self):
+        self.useFixture(database.Database())
+        self.load_backends()
+        cli.TrustFlush.main()
