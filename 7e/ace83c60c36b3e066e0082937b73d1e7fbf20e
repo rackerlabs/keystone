@@ -1,0 +1,10 @@
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Code-Review+2: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Workflow+1: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Code-Review+1: daixianmeng <daixianmeng@yovole.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 07 Aug 2018 01:11:46 +0000
+Reviewed-on: https://review.openstack.org/589241
+Project: openstack/keystone
+Branch: refs/heads/master
