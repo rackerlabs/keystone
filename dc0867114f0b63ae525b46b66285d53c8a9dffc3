@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_f8bca2bc",
+        "filename": "doc/source/advanced-topics/federation/mapping_combinations.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 940,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-08-07T07:30:53Z",
+      "side": 1,
+      "message": "I\u0027d prefer we call this just openstack_groups to be consistent with openstack_roles and openstack_project.",
+      "range": {
+        "startLine": 940,
+        "startChar": 32,
+        "endLine": 940,
+        "endChar": 53
+      },
+      "revId": "dc0867114f0b63ae525b46b66285d53c8a9dffc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_b36f2bc4",
+        "filename": "keystone/federation/idp.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-08-07T07:30:53Z",
+      "side": 1,
+      "message": "All of the other attributes here use human readable names rather than IDs, so it would be nice if this was consistent with that. However I see why you chose IDs here, since there\u0027s not a good way to have a list of group names and also identify them by their domains...will have to think on it",
+      "revId": "dc0867114f0b63ae525b46b66285d53c8a9dffc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_132dbf94",
+        "filename": "releasenotes/notes/bug-1641625-fe463874dc5edb10.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-08-07T07:30:53Z",
+      "side": 1,
+      "message": "Since this is adding a new required parameter to a public method I would add an upgrade note about it as well. https://docs.openstack.org/keystone/latest/api/keystone.federation.idp.html#keystone.federation.idp.SAMLGenerator.samlize_token",
+      "revId": "dc0867114f0b63ae525b46b66285d53c8a9dffc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
