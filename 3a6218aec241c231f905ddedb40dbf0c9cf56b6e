@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_23008267",
+        "filename": "keystone/api/policy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-08T18:51:23Z",
+      "side": 1,
+      "message": "The decorator is going to emit the wrong information now, this will say \"get\", \"post\", \"deletE\", \"patch\" instead of \"create_policy\", \"list_policies\".\n\nyou\u0027ll need to rework the @policy_deprecated decorator. You probably want to eliminate it as a decorator and just call it in-line of the methods with the name(s)/text you want.",
+      "revId": "3a6218aec241c231f905ddedb40dbf0c9cf56b6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_632bdaea",
+        "filename": "keystone/api/policy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-08T18:51:23Z",
+      "side": 1,
+      "message": "NIT: \"OK\" is the default, this is not needed.",
+      "range": {
+        "startLine": 53,
+        "startChar": 38,
+        "endLine": 53,
+        "endChar": 52
+      },
+      "revId": "3a6218aec241c231f905ddedb40dbf0c9cf56b6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_832e36f8",
+        "filename": "keystone/api/policy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-08T18:51:23Z",
+      "side": 1,
+      "message": "Same as above.",
+      "range": {
+        "startLine": 61,
+        "startChar": 56,
+        "endLine": 61,
+        "endChar": 70
+      },
+      "revId": "3a6218aec241c231f905ddedb40dbf0c9cf56b6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_230e428d",
+        "filename": "keystone/api/policy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-08T18:51:23Z",
+      "side": 1,
+      "message": "You can now use self.request_json_body and it does the silent/force and or {}. so\n\nrequest_body \u003d self.request_body_json.get(\u0027policy\u0027, {})",
+      "range": {
+        "startLine": 81,
+        "startChar": 22,
+        "endLine": 81,
+        "endChar": 45
+      },
+      "revId": "3a6218aec241c231f905ddedb40dbf0c9cf56b6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_4311feab",
+        "filename": "keystone/api/policy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-08T18:51:23Z",
+      "side": 1,
+      "message": "Same as above.",
+      "range": {
+        "startLine": 88,
+        "startChar": 40,
+        "endLine": 88,
+        "endChar": 51
+      },
+      "revId": "3a6218aec241c231f905ddedb40dbf0c9cf56b6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_e327ea11",
+        "filename": "keystone/api/policy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-08T18:51:23Z",
+      "side": 1,
+      "message": "Technically this can be explicitly None",
+      "range": {
+        "startLine": 96,
+        "startChar": 16,
+        "endLine": 96,
+        "endChar": 19
+      },
+      "revId": "3a6218aec241c231f905ddedb40dbf0c9cf56b6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
