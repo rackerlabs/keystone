@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_0517a0ef",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 683,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-08T02:13:39Z",
+      "side": 1,
+      "message": "I\u0027d like to see more input parameters for this command. Such as \"keystone trus_flush --project xxxx\" to purge the specified project\u0027s trust.",
+      "revId": "db02412dc9a254b2c18b302411586fcbad9140fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_50bc86db",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 687,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-08T02:13:39Z",
+      "side": 1,
+      "message": "usually we use load_backends() to init the Manager.",
+      "range": {
+        "startLine": 686,
+        "startChar": 0,
+        "endLine": 687,
+        "endChar": 51
+      },
+      "revId": "db02412dc9a254b2c18b302411586fcbad9140fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_d0cf367d",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-08T02:13:39Z",
+      "side": 1,
+      "message": "remove this. Manager.flush_expired_trusts() can link to driver directly.",
+      "range": {
+        "startLine": 216,
+        "startChar": 0,
+        "endLine": 218,
+        "endChar": 40
+      },
+      "revId": "db02412dc9a254b2c18b302411586fcbad9140fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
