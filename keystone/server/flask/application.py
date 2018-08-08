@@ -35,7 +35,6 @@ from keystone.endpoint_policy import routers as endpoint_policy_routers
 from keystone.federation import routers as federation_routers
 from keystone.identity import routers as identity_routers
 from keystone.oauth1 import routers as oauth1_routers
-from keystone.policy import routers as policy_routers
 from keystone.resource import routers as resource_routers
 
 # TODO(morgan): _MOVED_API_PREFIXES to be removed when the legacy dispatch
@@ -43,11 +42,13 @@ from keystone.resource import routers as resource_routers
 _MOVED_API_PREFIXES = frozenset(
     ['credentials',
      'OS-OAUTH1',
+     'OS-ENDPOINT-POLICY',
      'OS-EP-FILTER',
      'OS-REVOKE',
      'OS-SIMPLE-CERT',
      'OS-TRUST',
      'limits',
+     'policy',
      'registered_limits',
      ]
 )
@@ -60,7 +61,6 @@ ALL_API_ROUTERS = [auth_routers,
                    catalog_routers,
                    identity_routers,
                    app_cred_routers,
-                   policy_routers,
                    resource_routers,
                    federation_routers,
                    oauth1_routers,
