@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_82e086fc",
+        "filename": "keystone/api/regions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-08T00:38:17Z",
+      "side": 1,
+      "message": "if not region.get(\u0027id\u0027):",
+      "range": {
+        "startLine": 55,
+        "startChar": 7,
+        "endLine": 55,
+        "endChar": 29
+      },
+      "revId": "85c8a47f2a559a906b33af1f3a3fd671e2e0fff6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
