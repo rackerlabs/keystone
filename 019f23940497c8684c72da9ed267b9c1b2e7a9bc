@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_43a25e4d",
+        "filename": "keystone/api/endpoints.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-08T18:57:29Z",
+      "side": 1,
+      "message": "endpoint_policy",
+      "range": {
+        "startLine": 143,
+        "startChar": 17,
+        "endLine": 143,
+        "endChar": 33
+      },
+      "revId": "019f23940497c8684c72da9ed267b9c1b2e7a9bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
