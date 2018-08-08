@@ -1,0 +1,160 @@
+#    Licensed under the Apache License, Version 2.0 (the "License"); you may
+#    not use this file except in compliance with the License. You may obtain
+#    a copy of the License at
+#
+#         http://www.apache.org/licenses/LICENSE-2.0
+#
+#    Unless required by applicable law or agreed to in writing, software
+#    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+#    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+#    License for the specific language governing permissions and limitations
+#    under the License.
+
+# This file handles all flask-restful resources for /v3/roles
+
+import flask
+from six.moves import http_client
+
+from keystone.assignment import schema
+from keystone.common import provider_api
+from keystone.common import rbac_enforcer
+from keystone.common import validation
+import keystone.conf
+from keystone.server import flask as ks_flask
+
+
+CONF = keystone.conf.CONF
+ENFORCER = rbac_enforcer.RBACEnforcer
+PROVIDERS = provider_api.ProviderAPIs
+
+
+class RoleResource(ks_flask.ResourceBase):
+    collection_key = 'roles'
+    member_key = 'role'
+
+    def _is_domain_role(self, role):
+        return bool(role.get('domain_id'))
+
+    def get(self, role_id=None):
+        if role_id is not None:
+            return self._get_role(role_id)
+        return self._list_roles()
+
+    def _get_role(self, role_id):
+        err = None
+        role = {}
+        try:
+            role = PROVIDERS.role_api.get_role(role_id)
+        except Exception as err:  # nosec
+            # We don't raise out here, we raise out after enforcement, this
+            # ensures we do not leak role existence. Do nothing yet, process
+            # enforcement before raising out an error.
+            pass
+        finally:
+            # NOTE(morgan): There are a couple of cases to be aware of here
+            # if there is an exception (e is not None), then we are enforcing
+            # on "get_role" to be safe. If the role is not a "domain_role",
+            # we are enforcing on "get_role". If the role is "domain_role" we
+            # are inforcing on "get_domain_role"
+            if err is not None or not self._is_domain_role(role):
+                ENFORCER.enforce_call(action='identity:get_role')
+                if err:
+                    # reraise the error after enforcement if needed.
+                    raise err
+            else:
+                ENFORCER.enforce_call(action='identity:get_domain_role')
+        return self.wrap_member(role)
+
+    def _list_roles(self):
+        filters = ['name', 'domain_id']
+        domain_filter = flask.request.args.get('domain_id')
+        if domain_filter:
+            ENFORCER.enforce_call(action='identity:list_domain_roles',
+                                  filters=filters)
+        else:
+            ENFORCER.enforce_call(action='identity:list_roles',
+                                  filters=filters)
+
+        hints = self.build_driver_hints(filters)
+        if not domain_filter:
+            # NOTE(jamielennox): To handle the default case of not domain_id
+            # defined the role_assignment backend does some hackery to
+            # distinguish between global and domain scoped roles. This backend
+            # behaviour relies upon a value of domain_id being set (not just
+            # defaulting to None). Manually set the filter if its not
+            # provided.
+            hints.add_filter('domain_id', None)
+        refs = PROVIDERS.role_api.list_roles(hints=hints)
+        return self.wrap_collection(refs)
+
+    def post(self):
+        role = self.request_body_json.get('role', {})
+        if self._is_domain_role(role):
+            ENFORCER.enforce_call(action='identity:create_domain_role')
+        else:
+            ENFORCER.enforce_call(action='identity:create_role')
+        validation.lazy_validate(schema.role_create, role)
+        if role['name'] == CONF.member_name:
+            # Use the configured member role ID when creating the configured
+            # member role name. This avoids the potential of creating
+            # a "member" role with an unexpected ID.
+            role['id'] = CONF.member_role_id
+        else:
+            role = self._assign_unique_id(role)
+        role = self._normalize_dict(role)
+        ref = PROVIDERS.role_api.create_role(
+            role['id'], role, initiator=self.audit_initiator)
+        return self.wrap_member(ref), http_client.CREATED
+
+    def patch(self, role_id):
+        err = None
+        role = {}
+        try:
+            role = PROVIDERS.role_api.get_role(role_id)
+        except Exception as err:  # nosec
+            # We don't raise out here, we raise out after enforcement, this
+            # ensures we do not leak role existence. Do nothing yet, process
+            # enforcement before raising out an error.
+            pass
+        finally:
+            if err is not None or not self._is_domain_role(role):
+                ENFORCER.enforce_call(action='identity:update_role')
+                if err:
+                    raise err
+            else:
+                ENFORCER.enforce_call(action='identity:update_domain_role')
+        validation.lazy_validate(schema.role_update, role)
+        self._require_matching_id(role)
+        ref = PROVIDERS.role_api.update_role(
+            role_id, role, initiator=self.audit_initiator)
+        return self.wrap_member(ref)
+
+    def delete(self, role_id):
+        err = None
+        role = {}
+        try:
+            role = PROVIDERS.role_api.get(role_id)
+        except Exception as err:  # nosec
+            # We don't raise out here, we raise out after enforcement, this
+            # ensures we do not leak role existence. Do nothing yet, process
+            # enforcement before raising out an error.
+            pass
+        finally:
+            if err is not None or not self._is_domain_role(role):
+                ENFORCER.enforce_call(action='identity:delete_role')
+                if err:
+                    raise err
+            else:
+                ENFORCER.enforce_call(action='identity:delete_domain_role')
+        PROVIDERS.role_api.delete_role(role_id, initiator=self.audit_initiator)
+        return None, http_client.NO_CONTENT
+
+
+class RoleAPI(ks_flask.APIBase):
+    _name = 'roles'
+    _import_name = __name__
+    resources = [RoleResource]
+    resource_mapping = []
+
+
+APIs = (RoleAPI,)

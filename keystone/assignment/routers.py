@@ -19,7 +19,6 @@ import functools
 
 from keystone.assignment import controllers
 from keystone.common import json_home
-from keystone.common import router
 from keystone.common import wsgi
 
 
@@ -39,7 +38,7 @@ class Public(wsgi.ComposableRouter):
 
 class Routers(wsgi.RoutersBase):
 
-    _path_prefixes = ('users', 'roles', 'role_inferences', 'projects',
+    _path_prefixes = ('users', 'role_inferences', 'projects',
                       'domains', 'system', 'role_assignments', 'OS-INHERIT')
 
     def append_v3_routers(self, mapper, routers):
@@ -53,11 +52,6 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'user_id': json_home.Parameters.USER_ID,
             })
-
-        routers.append(
-            router.Router(controllers.RoleV3(), 'roles', 'role',
-                          resource_descriptions=self.v3_resources,
-                          method_template='%s_wrapper'))
 
         implied_roles_controller = controllers.ImpliedRolesV3()
         self._add_resource(
