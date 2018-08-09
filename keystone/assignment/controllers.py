@@ -21,7 +21,6 @@ from oslo_log import log
 
 from keystone.common import controller
 from keystone.common import provider_api
-from keystone.common import wsgi
 import keystone.conf
 from keystone import exception
 from keystone.i18n import _
@@ -82,83 +81,6 @@ class ImpliedRolesV3(controller.V3Controller):
             "name": implied_role['name']
         }
         return implied_response
-
-    def _populate_prior_role_response(self, endpoint, prior_id):
-        prior_role = PROVIDERS.role_api.get_role(prior_id)
-        response = {
-            "role_inference": {
-                "prior_role": self._prior_role_stanza(
-                    endpoint, prior_id, prior_role['name'])
-            }
-        }
-        return response
-
-    def _populate_implied_roles_response(self, endpoint,
-                                         prior_id, implied_ids):
-        response = self._populate_prior_role_response(endpoint, prior_id)
-        response["role_inference"]['implies'] = []
-        for implied_id in implied_ids:
-            implied_role = PROVIDERS.role_api.get_role(implied_id)
-            implied_response = self._implied_role_stanza(
-                endpoint, implied_role)
-            response["role_inference"]['implies'].append(implied_response)
-        response["links"] = {
-            "self": endpoint + "/v3/roles/" + prior_id + "/implies"
-        }
-        return response
-
-    def _populate_implied_role_response(self, endpoint, prior_id, implied_id):
-        response = self._populate_prior_role_response(endpoint, prior_id)
-        implied_role = PROVIDERS.role_api.get_role(implied_id)
-        stanza = self._implied_role_stanza(endpoint, implied_role)
-        response["role_inference"]['implies'] = stanza
-        response["links"] = {
-            "self": (endpoint + "/v3/roles/" + prior_id
-                     + "/implies/" + implied_id)
-        }
-        return response
-
-    @controller.protected(callback=_check_implies_role)
-    def get_implied_role(self, request, prior_role_id, implied_role_id):
-        ref = PROVIDERS.role_api.get_implied_role(prior_role_id,
-                                                  implied_role_id)
-
-        prior_id = ref['prior_role_id']
-        implied_id = ref['implied_role_id']
-        endpoint = super(controller.V3Controller, ImpliedRolesV3).base_url(
-            request.context_dict, 'public')
-        response = self._populate_implied_role_response(
-            endpoint, prior_id, implied_id)
-        return response
-
-    @controller.protected(callback=_check_implies_role)
-    def check_implied_role(self, request, prior_role_id, implied_role_id):
-        PROVIDERS.role_api.get_implied_role(prior_role_id, implied_role_id)
-
-    @controller.protected(callback=_check_implies_role)
-    def create_implied_role(self, request, prior_role_id, implied_role_id):
-        PROVIDERS.role_api.create_implied_role(prior_role_id, implied_role_id)
-        return wsgi.render_response(
-            self.get_implied_role(request,
-                                  prior_role_id,
-                                  implied_role_id),
-            status=(201, 'Created'))
-
-    @controller.protected(callback=_check_implies_role)
-    def delete_implied_role(self, request, prior_role_id, implied_role_id):
-        PROVIDERS.role_api.delete_implied_role(prior_role_id, implied_role_id)
-
-    @controller.protected(callback=_check_implies_role)
-    def list_implied_roles(self, request, prior_role_id):
-        ref = PROVIDERS.role_api.list_implied_roles(prior_role_id)
-        implied_ids = [r['implied_role_id'] for r in ref]
-        endpoint = super(controller.V3Controller, ImpliedRolesV3).base_url(
-            request.context_dict, 'public')
-
-        results = self._populate_implied_roles_response(
-            endpoint, prior_role_id, implied_ids)
-
-        return results
 
     @controller.protected()
     def list_role_inference_rules(self, request):
