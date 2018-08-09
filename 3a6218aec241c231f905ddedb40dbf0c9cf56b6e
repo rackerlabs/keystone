@@ -269,6 +269,30 @@
       "revId": "3a6218aec241c231f905ddedb40dbf0c9cf56b6e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_d6fff531",
+        "filename": "keystone/api/policy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-09T14:23:07Z",
+      "side": 1,
+      "message": "If I am not returning from the call, I explicitly make it None. It\u0027s a NIT more than anything else, both work.",
+      "parentUuid": "3f79a3b5_3579952e",
+      "range": {
+        "startLine": 96,
+        "startChar": 16,
+        "endLine": 96,
+        "endChar": 19
+      },
+      "revId": "3a6218aec241c231f905ddedb40dbf0c9cf56b6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
