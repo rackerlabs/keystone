@@ -47,6 +47,12 @@ roles, it creates "admin", "member", and "reader". If another role, "Member"
 since it considers the name "Member" equivalent to "member". Note that case
 is preserved in this event.
 
+As of the Rocky release, keystone will create three default roles when
+`keystone-manage bootstrap` is run: (``admin``, ``member``, ``reader``). For
+existing deployments, this can cause issues if an existing role matches one of
+these roles, even if the casing is not an exact match since roles are
+considered case-insensitive.
+
 Backends
 ========
 
