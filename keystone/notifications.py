@@ -528,13 +528,13 @@ class CadfNotificationWrapper(object):
                                          taxonomy.OUTCOME_FAILURE,
                                          target, self.event_type,
                                          reason=audit_reason)
-                raise
-            except Exception:
+                raise ex
+            except Exception ae e:
                 # For authentication failure send a CADF event as well
                 _send_audit_notification(self.action, request.audit_initiator,
                                          taxonomy.OUTCOME_FAILURE,
                                          target, self.event_type)
-                raise
+                raise e
             else:
                 _send_audit_notification(self.action, request.audit_initiator,
                                          taxonomy.OUTCOME_SUCCESS,
@@ -630,12 +630,12 @@ class CadfRoleAssignmentNotificationWrapper(object):
 
             try:
                 result = f(wrapped_self, role_id, *args, **kwargs)
-            except Exception:
+            except Exception as e:
                 _send_audit_notification(self.action, initiator,
                                          taxonomy.OUTCOME_FAILURE,
                                          target, self.event_type,
                                          **audit_kwargs)
-                raise
+                raise e
             else:
                 _send_audit_notification(self.action, initiator,
                                          taxonomy.OUTCOME_SUCCESS,
