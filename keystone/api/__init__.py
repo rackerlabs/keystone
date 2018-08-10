@@ -15,6 +15,7 @@ from keystone.api import discovery
 from keystone.api import endpoints
 from keystone.api import limits
 from keystone.api import os_ep_filter
+from keystone.api import os_federation
 from keystone.api import os_oauth1
 from keystone.api import os_revoke
 from keystone.api import os_simple_cert
@@ -33,6 +34,7 @@ __all__ = (
     'endpoints',
     'limits',
     'os_ep_filter',
+    'os_federation',
     'os_oauth1',
     'os_revoke',
     'os_simple_cert',
@@ -52,6 +54,7 @@ __apis__ = (
     endpoints,
     limits,
     os_ep_filter,
+    os_federation,
     os_oauth1,
     os_revoke,
     os_simple_cert,
