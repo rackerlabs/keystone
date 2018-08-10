@@ -1193,6 +1193,14 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
         PROVIDERS.assignment_api.add_role_to_user_and_project(
             self.user_id, tenant_id, self.role_id)
 
+        # Make sure the right exception raised
+        self.assertRaises(
+            exception.Conflict,
+            PROVIDERS.assignment_api.add_role_to_user_and_project,
+            self.user_id,
+            tenant_id,
+            self.role_id)
+
         self.assertTrue(self._notifications)
         note = self._notifications[-1]
         self.assertEqual('created.role_assignment', note['action'])
