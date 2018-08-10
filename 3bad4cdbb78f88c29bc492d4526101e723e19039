@@ -22,6 +22,30 @@
       "revId": "3bad4cdbb78f88c29bc492d4526101e723e19039",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_c32ba72d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-10T00:22:55Z",
+      "side": 0,
+      "message": "Let\u0027s add it back in as a followup patch on this one. Rebasing the whole stack is fairly disruptive (especially with all the timeouts/transients at the moment)",
+      "parentUuid": "3f79a3b5_5fa22a4d",
+      "range": {
+        "startLine": 413,
+        "startChar": 0,
+        "endLine": 415,
+        "endChar": 36
+      },
+      "revId": "3bad4cdbb78f88c29bc492d4526101e723e19039",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
