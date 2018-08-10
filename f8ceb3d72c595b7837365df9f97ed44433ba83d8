@@ -16,6 +16,24 @@
       "revId": "f8ceb3d72c595b7837365df9f97ed44433ba83d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_cab977cc",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 4428
+      },
+      "writtenOn": "2018-08-10T05:52:18Z",
+      "side": 1,
+      "message": "Ah, stupid typo",
+      "parentUuid": "3f79a3b5_4ab00744",
+      "revId": "f8ceb3d72c595b7837365df9f97ed44433ba83d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
