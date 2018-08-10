@@ -1,0 +1,9 @@
+Code-Review+2: wangxiyuan <wangxiyuan@huawei.com>
+Code-Review+2: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Workflow+1: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 10 Aug 2018 02:52:29 +0000
+Reviewed-on: https://review.openstack.org/588086
+Project: openstack/keystone
+Branch: refs/heads/master
