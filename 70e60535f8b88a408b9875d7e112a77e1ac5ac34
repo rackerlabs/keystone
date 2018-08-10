@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_99543700",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-08-10T10:36:24Z",
+      "side": 1,
+      "message": "(nit) \u0027etc.\u0027 is the standard contraction, no need to expand it IMO",
+      "range": {
+        "startLine": 49,
+        "startChar": 54,
+        "endLine": 49,
+        "endChar": 63
+      },
+      "revId": "70e60535f8b88a408b9875d7e112a77e1ac5ac34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_196107d4",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-08-10T10:36:24Z",
+      "side": 1,
+      "message": "(nit) \"users\u0027\" (possessive plural apostrophe)",
+      "range": {
+        "startLine": 121,
+        "startChar": 36,
+        "endLine": 121,
+        "endChar": 41
+      },
+      "revId": "70e60535f8b88a408b9875d7e112a77e1ac5ac34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_f98a0b68",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-08-10T10:36:24Z",
+      "side": 1,
+      "message": "Do we have any examples of how a domain-scoped token is useful *today*?",
+      "revId": "70e60535f8b88a408b9875d7e112a77e1ac5ac34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_f93d2b8f",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-08-10T10:36:24Z",
+      "side": 1,
+      "message": "Is this true today? I don\u0027t think so - and I don\u0027t think it should be. I think an unscoped token should only ever be used to be exchanged for a scoped token. We should create something else, like a user scope or a my-own-project scope to describe things like this.\n\nIs there any use case where operators would want to use policy to restrict a user\u0027s ability to create SSH keypairs for themselves? I don\u0027t think we have any mechanism today to create rules for unscoped tokens.",
+      "range": {
+        "startLine": 200,
+        "startChar": 15,
+        "endLine": 201,
+        "endChar": 72
+      },
+      "revId": "70e60535f8b88a408b9875d7e112a77e1ac5ac34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_d9614fab",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-08-10T10:36:24Z",
+      "side": 1,
+      "message": "I think the best example use case for unscoped tokens is the federated auth use case.",
+      "revId": "70e60535f8b88a408b9875d7e112a77e1ac5ac34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
