@@ -17,6 +17,7 @@ from keystone.api import groups
 from keystone.api import limits
 from keystone.api import os_ep_filter
 from keystone.api import os_federation
+from keystone.api import os_inherit
 from keystone.api import os_oauth1
 from keystone.api import os_revoke
 from keystone.api import os_simple_cert
@@ -37,6 +38,7 @@ __all__ = (
     'limits',
     'os_ep_filter',
     'os_federation',
+    'os_inherit',
     'os_oauth1',
     'os_revoke',
     'os_simple_cert',
@@ -58,6 +60,7 @@ __apis__ = (
     limits,
     os_ep_filter,
     os_federation,
+    os_inherit,
     os_oauth1,
     os_revoke,
     os_simple_cert,
