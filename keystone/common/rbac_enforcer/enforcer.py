@@ -146,7 +146,7 @@ class RBACEnforcer(object):
                 # here.
                 resource = flask.current_app.view_functions[
                     flask.request.endpoint].view_class
-                member_name = getattr(resource, 'member_name', None)
+                member_name = getattr(resource, 'member_key', None)
                 func = getattr(
                     resource, 'get_member_from_driver', None)
                 if member_name is not None and callable(func):
@@ -162,9 +162,8 @@ class RBACEnforcer(object):
                         # TODO(morgan): add (future) support for passing class
                         # instantiation args.
                         ret_dict['target'] = {
-                            member_name: func(
-                                resource(),
-                                flask.request.view_args[key])[member_name]}
+                            member_name: func(flask.request.view_args[key])
+                        }
         return ret_dict
 
     @staticmethod
