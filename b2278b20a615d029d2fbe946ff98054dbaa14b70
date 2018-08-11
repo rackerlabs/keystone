@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_f1c9adab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-11T02:05:20Z",
+      "side": 1,
+      "message": "I deliberated extensively before choosing this path. It comes down to intention of the JSON Home document.\n\nIt is possible to flip to the \"alternative\" but it will require a one-off special case to not add the json_home\nfor the \"identity_providers\" plural (list) endpoint, and it felt more incorrect to represent websso as \"identity_providers\".",
+      "range": {
+        "startLine": 15,
+        "startChar": 8,
+        "endLine": 29,
+        "endChar": 43
+      },
+      "revId": "b2278b20a615d029d2fbe946ff98054dbaa14b70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_11cf89b0",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-11T02:05:20Z",
+      "side": 1,
+      "message": "See note in commit message about this test change.",
+      "revId": "b2278b20a615d029d2fbe946ff98054dbaa14b70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_b1c7b596",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 809,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-11T02:05:20Z",
+      "side": 1,
+      "message": "See note in commit message about this change.",
+      "range": {
+        "startLine": 802,
+        "startChar": 0,
+        "endLine": 809,
+        "endChar": 30
+      },
+      "revId": "b2278b20a615d029d2fbe946ff98054dbaa14b70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
