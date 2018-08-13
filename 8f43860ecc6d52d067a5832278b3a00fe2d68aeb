@@ -22,6 +22,30 @@
       "revId": "8f43860ecc6d52d067a5832278b3a00fe2d68aeb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_242909e5",
+        "filename": "keystone/api/regions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-13T20:05:33Z",
+      "side": 1,
+      "message": "Yeah, this looks like a typo, let me fix.",
+      "parentUuid": "3f79a3b5_e92bef91",
+      "range": {
+        "startLine": 35,
+        "startChar": 47,
+        "endLine": 35,
+        "endChar": 60
+      },
+      "revId": "8f43860ecc6d52d067a5832278b3a00fe2d68aeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
