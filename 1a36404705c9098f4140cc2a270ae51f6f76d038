@@ -51,6 +51,24 @@
       "revId": "1a36404705c9098f4140cc2a270ae51f6f76d038",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_145765cc",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-13T12:27:09Z",
+      "side": 1,
+      "message": "when enable FK in unit test, this test will fail: http://paste.openstack.org/show/727922/",
+      "parentUuid": "3f79a3b5_d24b4528",
+      "revId": "1a36404705c9098f4140cc2a270ae51f6f76d038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
