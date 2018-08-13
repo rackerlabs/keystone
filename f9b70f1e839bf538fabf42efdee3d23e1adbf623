@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_6f95ae32",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-13T06:15:56Z",
+      "side": 1,
+      "message": "I think there is a document somewhere describing why we shouldn\u0027t translate log messages. I thought Doug referenced it the last time we were talking about this.\n\nIt would be good to include it here for context so others are familiar with the reasoning.",
+      "revId": "f9b70f1e839bf538fabf42efdee3d23e1adbf623",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
