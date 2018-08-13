@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_c59861c1",
+        "filename": "keystone/api/roles.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-13T07:53:42Z",
+      "side": 1,
+      "message": "nit: we don\u0027t really document these publicly in other APIs. I don\u0027t really care if we do:\n\n  def get(self, role_id\u003dNone):\n\nand just get right into the implementation, or if we just do:\n\n  def get(self, role_id\u003dNone):\n      # create a role\n\nI\u0027m just in favor of consistency. Something we can cleanup later I suppose, just something I noticed specifically on this review.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 11
+      },
+      "revId": "7ac58ea62aedf3730ac9632df5fb470bc5955518",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_a5b9a515",
+        "filename": "keystone/api/roles.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-13T07:53:42Z",
+      "side": 1,
+      "message": "I\u0027m just rambling here - but I\u0027d like to see this go away in favor of the role API just being smart enough to handle scope properly. For example, calling GET /roles with a domain-scoped token is equivalent in my eyes. Or calling POST /roles with a domain scoped token would be the equivalent to creating a domain-role.\n\nAgain, just rambling but the try/except/finally here seems like it could be simplified at the expense of removing the domain-roles API. Looking at this API now that we\u0027re implementing flask support feels like domain-roles were implemented in a way the works around the admin-ness bug :(\n\nMaybe we can make a not to revisit this. Maybe a hallway track at the PTG.",
+      "range": {
+        "startLine": 76,
+        "startChar": 55,
+        "endLine": 76,
+        "endChar": 70
+      },
+      "revId": "7ac58ea62aedf3730ac9632df5fb470bc5955518",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
