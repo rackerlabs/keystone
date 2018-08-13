@@ -16,6 +16,24 @@
       "revId": "1d3e29ac1f90ea77b5cce8bbb0ca6930006afb53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_0e71910c",
+        "filename": "doc/source/install/keystone-install-ubuntu.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 19779
+      },
+      "writtenOn": "2018-08-13T16:02:35Z",
+      "side": 0,
+      "message": "Not really, this configuration file only contains one ServerName.",
+      "parentUuid": "3f79a3b5_7e26e117",
+      "revId": "1d3e29ac1f90ea77b5cce8bbb0ca6930006afb53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
