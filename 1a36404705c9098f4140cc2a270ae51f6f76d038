@@ -33,6 +33,24 @@
       "revId": "1a36404705c9098f4140cc2a270ae51f6f76d038",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_d24b4528",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-13T06:53:30Z",
+      "side": 1,
+      "message": "Digging through the code and [0] seems to pop out as something that would fail if we implemented FKs in SQLite, but I\u0027m unable to tell for sure without testing the patches manually. \n\nI think it would be a good idea to explicitly test this, if not here in a follow on patch.\n\n[0] https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_v3_federation.py#L1359",
+      "parentUuid": "3f79a3b5_0faf5a7d",
+      "revId": "1a36404705c9098f4140cc2a270ae51f6f76d038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
