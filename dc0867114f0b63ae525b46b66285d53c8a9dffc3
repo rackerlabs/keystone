@@ -66,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_3365bf46",
+        "filename": "keystone/federation/idp.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-08-14T14:14:23Z",
+      "side": 1,
+      "message": "I realized why it\u0027s not just inconsistent but actually invalid to use uuids instead of names here. Two keystones are not going to have groups with identical IDs, and it makes no sense to try to map a random uuid from one keystone to a sensible group in the second keystone.",
+      "parentUuid": "3f79a3b5_b36f2bc4",
+      "revId": "dc0867114f0b63ae525b46b66285d53c8a9dffc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_132dbf94",
         "filename": "releasenotes/notes/bug-1641625-fe463874dc5edb10.yaml",
         "patchSetId": 8
