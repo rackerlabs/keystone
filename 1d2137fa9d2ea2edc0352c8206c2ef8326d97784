@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_4bc9b0a9",
+        "filename": "keystone/api/system.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-14T01:08:44Z",
+      "side": 1,
+      "message": "When we perform GET /v3/system/users/{user_id}/roles/{role_id} this should return the role reference, I think?\n\nI thought this was more explicit in tests but maybe that\u0027s just with the /system/users/{user_id}/roles",
+      "range": {
+        "startLine": 75,
+        "startChar": 15,
+        "endLine": 75,
+        "endChar": 19
+      },
+      "revId": "1d2137fa9d2ea2edc0352c8206c2ef8326d97784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
