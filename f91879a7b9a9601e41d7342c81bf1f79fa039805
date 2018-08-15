@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_9ceb5e11",
+        "filename": "keystone/api/os_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-15T22:14:15Z",
+      "side": 1,
+      "message": "Bug is here.",
+      "revId": "f91879a7b9a9601e41d7342c81bf1f79fa039805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
