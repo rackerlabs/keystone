@@ -53,12 +53,12 @@ Example
 
 An application credential can be identified by an ID:
 
-.. literalinclude:: samples/admin/auth-application-credential-id-request.json
+.. literalinclude:: ./samples/admin/auth-application-credential-id-request.json
    :language: javascript
 
 It can also be identified by its name and a user object:
 
-.. literalinclude:: samples/admin/auth-application-credential-name-request.json
+.. literalinclude:: ./samples/admin/auth-application-credential-name-request.json
    :language: javascript
 
 Response
@@ -87,7 +87,7 @@ Parameters
 Example
 ~~~~~~~
 
-.. literalinclude:: samples/admin/auth-application-credential-response.json
+.. literalinclude:: ./samples/admin/auth-application-credential-response.json
    :language: javascript
 
 A token created with an application credential will have the scope and roles
@@ -123,7 +123,7 @@ Parameters
 Example
 ~~~~~~~
 
-.. literalinclude:: samples/admin/application-credential-create-request.json
+.. literalinclude:: ./samples/admin/application-credential-create-request.json
    :language: javascript
 
 Response
@@ -160,7 +160,7 @@ Parameters
 Example
 ~~~~~~~
 
-.. literalinclude:: samples/admin/application-credential-create-response.json
+.. literalinclude:: ./samples/admin/application-credential-create-response.json
    :language: javascript
 
 List application credentials
@@ -213,7 +213,7 @@ Parameters
 Example
 ~~~~~~~
 
-.. literalinclude:: samples/admin/application-credential-list-response.json
+.. literalinclude:: ./samples/admin/application-credential-list-response.json
    :language: javascript
 
 Show application credential details
@@ -267,7 +267,7 @@ Parameters
 Example
 ~~~~~~~
 
-.. literalinclude:: samples/admin/application-credential-get-response.json
+.. literalinclude:: ./samples/admin/application-credential-get-response.json
    :language: javascript
 
 Delete application credential
