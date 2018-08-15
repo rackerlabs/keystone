@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_e80f4685",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 715,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-15T06:18:24Z",
+      "side": 1,
+      "message": "Really? Is this what we\u0027ve done in the past, too?",
+      "range": {
+        "startLine": 715,
+        "startChar": 14,
+        "endLine": 715,
+        "endChar": 46
+      },
+      "revId": "8c12be8a21bed812257c824a3d4964f1c687cbfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
