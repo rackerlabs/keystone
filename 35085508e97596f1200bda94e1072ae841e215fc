@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_5be08226",
+        "filename": "keystone/api/groups.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-15T06:59:16Z",
+      "side": 1,
+      "message": "Interesting. What the purpose of enforcing target data on a group here? This seems circular in a way...",
+      "revId": "35085508e97596f1200bda94e1072ae841e215fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_bb7c3672",
+        "filename": "keystone/api/groups.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-15T06:59:16Z",
+      "side": 1,
+      "message": "nit: leave*",
+      "range": {
+        "startLine": 113,
+        "startChar": 20,
+        "endLine": 113,
+        "endChar": 25
+      },
+      "revId": "35085508e97596f1200bda94e1072ae841e215fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_7b4d3e3c",
+        "filename": "keystone/api/groups.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-15T06:59:16Z",
+      "side": 1,
+      "message": "nit: the naming here is a little confusing since we\u0027re dealing with a dict and the name implies a singular string or attribute.",
+      "range": {
+        "startLine": 150,
+        "startChar": 19,
+        "endLine": 150,
+        "endChar": 23
+      },
+      "revId": "35085508e97596f1200bda94e1072ae841e215fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_db29f236",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 799,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-15T06:59:16Z",
+      "side": 1,
+      "message": "Is this because it\u0027s possible to pass multiple request args?",
+      "range": {
+        "startLine": 799,
+        "startChar": 57,
+        "endLine": 799,
+        "endChar": 61
+      },
+      "revId": "35085508e97596f1200bda94e1072ae841e215fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_5b15e2e3",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 910,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-15T06:59:16Z",
+      "side": 1,
+      "message": "This is a TokenModel object. I don\u0027t think KeystoneToken exists anymore.",
+      "range": {
+        "startLine": 910,
+        "startChar": 20,
+        "endLine": 910,
+        "endChar": 33
+      },
+      "revId": "35085508e97596f1200bda94e1072ae841e215fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
