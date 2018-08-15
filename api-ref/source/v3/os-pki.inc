@@ -46,5 +46,5 @@ Status Codes
 Example
 ~~~~~~~
 
-.. literalinclude:: samples/admin/get-pki-revoked-response.json
+.. literalinclude:: ./samples/admin/get-pki-revoked-response.json
    :language: javascript
