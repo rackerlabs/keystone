@@ -22,6 +22,30 @@
       "revId": "8dc6c1af521f0482558a12ce10c93569717d2100",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_2a53e73a",
+        "filename": "keystone/api/roles.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-15T16:16:10Z",
+      "side": 1,
+      "message": "the RBACEnforcer, .enforce_call\n\nBasically it is used to populate \"role\" in the target dict if the method exists. It\u0027s a mirror of what we have in the old @protected.\n\nI needed a deferred lookup as the lookup only happens on the class not the instance, and instantiating the object proved to be wonky since it gets remapped to a MethodViewtype from a ResourceType (internal flask/flask-restful-isms).\n\nIt isn\u0027t super important here, but a following (groups) patch relies on this functionality for populating the target dict (for now). We can be more explicit, but I\u0027ll need to dig into when/why/where we are expecting this vs. when we aren\u0027t.\n\nRight now, the goal is mirror functionality of @protected as cleanly as possible.",
+      "parentUuid": "3f79a3b5_3b6266d9",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 37,
+        "endChar": 26
+      },
+      "revId": "8dc6c1af521f0482558a12ce10c93569717d2100",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
