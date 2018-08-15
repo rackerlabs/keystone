@@ -115,7 +115,7 @@ Status Codes
 Example
 ~~~~~~~
 
-.. literalinclude:: samples/admin/user-roles-domain-list-response.json
+.. literalinclude:: ./samples/admin/user-roles-domain-list-response.json
    :language: javascript
 
 
@@ -154,7 +154,7 @@ Status Codes
 Example
 -------
 
-.. literalinclude:: samples/admin/group-roles-domain-list-response.json
+.. literalinclude:: ./samples/admin/group-roles-domain-list-response.json
    :language: javascript
 
 
@@ -497,7 +497,7 @@ Get a list of role assignments.
 If no query parameters are specified, then this API will return a list of all
 role assignments.
 
-.. literalinclude:: samples/admin/role-assignments-list-response.json
+.. literalinclude:: ./samples/admin/role-assignments-list-response.json
    :language: javascript
 
 Since this list is likely to be very long, this API would typically always be
@@ -523,7 +523,7 @@ that gave rise to this entity.
 The scope section in the list response is extended to allow the representation
 of role assignments that are inherited to projects.
 
-.. literalinclude:: samples/admin/role-assignments-list-include-subtree-response.json
+.. literalinclude:: ./samples/admin/role-assignments-list-include-subtree-response.json
    :language: javascript
 
 The query filter ``scope.OS-INHERIT:inherited_to`` can be used to filter based
@@ -558,7 +558,7 @@ the token response of a project scoped token.
 An example response for an API call with the query parameter ``effective``
 specified is given below:
 
-.. literalinclude:: samples/admin/role-assignments-effective-list-response.json
+.. literalinclude:: ./samples/admin/role-assignments-effective-list-response.json
    :language: javascript
 
 The entity ``links`` section of a response using the ``effective`` query
@@ -572,7 +572,7 @@ additionally include the names of the entities. For example:
 ``GET /v3/role_assignments?user.id={user_id}&effective&include_names=true``
 would return:
 
-.. literalinclude:: samples/admin/role-assignments-effective-list-include-names-response.json
+.. literalinclude:: ./samples/admin/role-assignments-effective-list-include-names-response.json
    :language: javascript
 
 Relationship:
