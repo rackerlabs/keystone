@@ -69,6 +69,24 @@
       "revId": "1a36404705c9098f4140cc2a270ae51f6f76d038",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_9eda8875",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-15T07:53:19Z",
+      "side": 1,
+      "message": "Added a test here https://review.openstack.org/#/c/591946/ after enabling fk for unit test.",
+      "parentUuid": "3f79a3b5_145765cc",
+      "revId": "1a36404705c9098f4140cc2a270ae51f6f76d038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
