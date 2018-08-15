@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_0b162a4a",
+        "filename": "keystone/api/groups.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-15T19:51:28Z",
+      "side": 1,
+      "message": "Somewhere one of the check strings leans on it. I didn\u0027t dig into things, but this is mirroring current behaviors.",
+      "parentUuid": "3f79a3b5_5be08226",
+      "revId": "35085508e97596f1200bda94e1072ae841e215fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_bb7c3672",
         "filename": "keystone/api/groups.py",
         "patchSetId": 7
@@ -53,6 +71,30 @@
       "writtenOn": "2018-08-15T06:59:16Z",
       "side": 1,
       "message": "nit: the naming here is a little confusing since we\u0027re dealing with a dict and the name implies a singular string or attribute.",
+      "range": {
+        "startLine": 150,
+        "startChar": 19,
+        "endLine": 150,
+        "endChar": 23
+      },
+      "revId": "35085508e97596f1200bda94e1072ae841e215fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_6b20fe9b",
+        "filename": "keystone/api/groups.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-15T19:51:28Z",
+      "side": 1,
+      "message": "Changing this is a change to RBACEnforcer. Similar, this is mirrored in the underlying structures used from @policy. I have no problem changing it, but would prefer to do so after flask is done.",
+      "parentUuid": "3f79a3b5_7b4d3e3c",
       "range": {
         "startLine": 150,
         "startChar": 19,
