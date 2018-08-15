@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_f07959c4",
+        "filename": "keystone/common/provider_api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-15T19:49:29Z",
+      "side": 1,
+      "message": "That should be caught by pep8 imo :P",
+      "parentUuid": "3f79a3b5_6801f605",
+      "range": {
+        "startLine": 22,
+        "startChar": 22,
+        "endLine": 22,
+        "endChar": 23
+      },
+      "revId": "c0d0c7eae8a98f7498a260b10013ec4eb4d14701",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_db2332a6",
         "filename": "keystone/common/provider_api.py",
         "patchSetId": 6
@@ -36,6 +60,24 @@
       "writtenOn": "2018-08-15T06:37:57Z",
       "side": 1,
       "message": "I\u0027m not sure off the top of my head how you\u0027d test this, but that might help people understand what\u0027s going on here on a deeper level, myself included :)",
+      "revId": "c0d0c7eae8a98f7498a260b10013ec4eb4d14701",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_f0007904",
+        "filename": "keystone/common/provider_api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-15T19:49:29Z",
+      "side": 1,
+      "message": "the test is straight forward: instantiate two of them, make sure that changes to one affect the other.\n\nThat said, this sortof gets down into \"does python work\".\n\n\u003cobj\u003e.__dict__  is where all instance-level changes occur, and are referenced, e.g. when you do setattr(\u003cinstance\u003e, \"attr_name\", \"attr_value\") it is stored in \u003cinstance\u003e.__dict__\n\nIn this case we are rebinding the instance\u0027s __dict__ to the classes\u0027s __dict__. This has to be done first, but since we\u0027re not diving into a super class __init__ we can simply assign it here directly as the sole element in init.\n\nthe only reason we use super() is because of the __setattr__ defined to prevent accidental setting on the object itself (it should be relatively immutable without working really hard to change something).\n\nCan we test this? Absolutely. Does it need a test? maybe. I\u0027ll consider adding one as a followup.",
+      "parentUuid": "3f79a3b5_db2332a6",
       "revId": "c0d0c7eae8a98f7498a260b10013ec4eb4d14701",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
