@@ -16,6 +16,23 @@
       "revId": "adf323ae37edd9817e2bf963db6d3ce4939970a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_9ae26da0",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-08-16T16:12:32Z",
+      "side": 1,
+      "message": "Currently we exit out in an exception.  Now we will continue on.  Is that safe?",
+      "revId": "adf323ae37edd9817e2bf963db6d3ce4939970a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
