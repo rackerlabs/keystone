@@ -50,7 +50,6 @@ class TestFernetTokenProvider(unit.TestCase):
             exception.TokenNotFound,
             self.provider.validate_token,
             token_id)
-        self.assertIn(token_id, u'%s' % e)
 
 
 class TestValidate(unit.TestCase):
