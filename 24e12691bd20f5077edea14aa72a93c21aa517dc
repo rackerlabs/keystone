@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_a2363402",
+        "filename": "keystone/endpoint_policy/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-16T00:47:33Z",
+      "side": 0,
+      "message": "Actually - these aren\u0027t deprecated, but I they are in the flask representation of this API. I think only the /policies API is deprecated but the /policies/{policy_id}/OS-ENDPOINT-POLICY/ API isn\u0027t?\n\nWe should revisit this and discuss if we want to formally deprecate everything under /policies or remove the deprecations of OS-ENDPOINT-POLICY.",
+      "revId": "24e12691bd20f5077edea14aa72a93c21aa517dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
