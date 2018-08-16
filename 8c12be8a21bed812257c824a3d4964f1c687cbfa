@@ -46,6 +46,30 @@
       "revId": "8c12be8a21bed812257c824a3d4964f1c687cbfa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_9a902df0",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 715,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-08-16T16:14:48Z",
+      "side": 1,
+      "message": "Yes, this is OK.  Read it this way https://host/url?param\u0026otherparam  you would expect param to be the same as param\u003dTrue.",
+      "parentUuid": "3f79a3b5_506b6def",
+      "range": {
+        "startLine": 715,
+        "startChar": 14,
+        "endLine": 715,
+        "endChar": 46
+      },
+      "revId": "8c12be8a21bed812257c824a3d4964f1c687cbfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
