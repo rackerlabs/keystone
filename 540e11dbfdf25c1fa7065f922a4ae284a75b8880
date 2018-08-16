@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_eece435a",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 717,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-16T18:57:50Z",
+      "side": 1,
+      "message": "Oops!",
+      "revId": "540e11dbfdf25c1fa7065f922a4ae284a75b8880",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
