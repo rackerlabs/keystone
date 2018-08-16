@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_5a8db528",
+        "filename": "keystone/token/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-08-16T16:02:09Z",
+      "side": 1,
+      "message": "nit: recognize*",
+      "range": {
+        "startLine": 94,
+        "startChar": 29,
+        "endLine": 94,
+        "endChar": 39
+      },
+      "revId": "c1392aedf8fe0bd588565b28153c26ce425c41c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
