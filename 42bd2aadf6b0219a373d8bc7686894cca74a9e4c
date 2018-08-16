@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_625d7c77",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-08-16T00:28:31Z",
+      "side": 1,
+      "message": "nit: I would call this and others of `..._count` instead of `..._number`.",
+      "range": {
+        "startLine": 258,
+        "startChar": 8,
+        "endLine": 258,
+        "endChar": 34
+      },
+      "revId": "42bd2aadf6b0219a373d8bc7686894cca74a9e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
