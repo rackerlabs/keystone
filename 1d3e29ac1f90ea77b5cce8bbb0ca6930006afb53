@@ -34,6 +34,24 @@
       "revId": "1d3e29ac1f90ea77b5cce8bbb0ca6930006afb53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_50ad7fe8",
+        "filename": "doc/source/install/keystone-install-ubuntu.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-08-17T09:48:53Z",
+      "side": 0,
+      "message": "It is possible to set the ServerName globally. The ServerName parameter might not already exist in the file, but it can be added, which is what the instruction is for. This way the log warning \"Could not reliably determine the server\u0027s fully qualified domain name, using 127.0.0.1. Set the \u0027ServerName\u0027 directive globally to suppress this message\" goes away.\n\nIf someone has a need for name-based virtualhosts, they are free to configure it that way, but the instructions as written are also correct for simple deployments and do not need to be changed.",
+      "parentUuid": "3f79a3b5_0e71910c",
+      "revId": "1d3e29ac1f90ea77b5cce8bbb0ca6930006afb53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
