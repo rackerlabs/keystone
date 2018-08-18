@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_e90376bd",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-08-18T12:25:41Z",
+      "side": 1,
+      "message": "is there a more specific exception we can catch here?",
+      "revId": "e1381fe3f59965dd61ba843d3e26666516462c30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
