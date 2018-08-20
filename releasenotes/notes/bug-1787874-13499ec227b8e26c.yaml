@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    [`bug 1787874 <https://bugs.launchpad.net/keystone/+bug/1787874>`_]
+    Now when changing user password, the new one must be different with the
+    orginal one. Otherwise a `400 BadRequest` error will be raised.
