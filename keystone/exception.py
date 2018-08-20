@@ -110,6 +110,10 @@ class PasswordHistoryValidationError(PasswordValidationError):
                        "%(unique_count)s.")
 
 
+class PasswordChangingValidationError(PasswordValidationError):
+    message_format = _("The old password and new password must be different.")
+
+
 class PasswordAgeValidationError(PasswordValidationError):
     message_format = _("You cannot change your password at this time due "
                        "to the minimum password age. Once you change your "

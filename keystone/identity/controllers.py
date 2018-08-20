@@ -134,6 +134,8 @@ class UserV3(controller.V3Controller):
         if password is None:
             raise exception.ValidationError(target='user',
                                             attribute='password')
+        if original_password == password:
+            raise exception.PasswordChangingValidationError()
         try:
             PROVIDERS.identity_api.change_password(
                 request, user_id, original_password,
