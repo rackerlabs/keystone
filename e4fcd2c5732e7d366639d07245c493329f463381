@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_9fbb090d",
+        "filename": "doc/source/advanced-topics/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-20T01:36:21Z",
+      "side": 0,
+      "message": "The new added guide looks good. But I wonder if we can still leave session code here for the users who don\u0027t use command cli?",
+      "revId": "e4fcd2c5732e7d366639d07245c493329f463381",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
