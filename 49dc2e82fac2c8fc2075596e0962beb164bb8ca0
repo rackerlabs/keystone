@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_803165ef",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 25695
+      },
+      "writtenOn": "2018-08-20T10:11:14Z",
+      "side": 1,
+      "message": "different.",
+      "range": {
+        "startLine": 9,
+        "startChar": 56,
+        "endLine": 9,
+        "endChar": 64
+      },
+      "revId": "49dc2e82fac2c8fc2075596e0962beb164bb8ca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_a03a61ca",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 25695
+      },
+      "writtenOn": "2018-08-20T10:11:14Z",
+      "side": 1,
+      "message": "s/cloese/closes",
+      "revId": "49dc2e82fac2c8fc2075596e0962beb164bb8ca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
