@@ -1046,6 +1046,11 @@ class PasswordValidationTestCase(ChangePasswordTestCase):
                              original_password=self.user_ref['password'],
                              expected_status=http_client.BAD_REQUEST)
 
+    def test_changing_password_without_changing_fails(self):
+        self.change_password(password=self.user_ref['password'],
+                             original_password=self.user_ref['password'],
+                             expected_status=http_client.BAD_REQUEST)
+
 
 class UserFederatedAttributesTests(test_v3.RestfulTestCase):
     def _create_federated_attributes(self):
