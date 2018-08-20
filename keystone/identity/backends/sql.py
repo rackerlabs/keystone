@@ -237,7 +237,7 @@ class Identity(base.IdentityDriverBase):
         user_ref.local_user.passwords = (
             user_ref.local_user.passwords[-unique_cnt:])
         # Validate the new password against the remaining passwords.
-        if unique_cnt > 1:
+        if unique_cnt > 0:
             for password_ref in user_ref.local_user.passwords:
                 if password_hashing.check_password(
                         password,
