@@ -1,0 +1,9 @@
+Code-Review+2: Kristi Nikolla <kristi@nikolla.me>
+Code-Review+2: wangxiyuan <wangxiyuan@huawei.com>
+Workflow+1: wangxiyuan <wangxiyuan@huawei.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 20 Aug 2018 14:03:55 +0000
+Reviewed-on: https://review.openstack.org/591587
+Project: openstack/keystone
+Branch: refs/heads/master
