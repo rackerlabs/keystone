@@ -16,6 +16,24 @@
       "revId": "e4fcd2c5732e7d366639d07245c493329f463381",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_343697b6",
+        "filename": "doc/source/advanced-topics/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-08-20T06:11:47Z",
+      "side": 0,
+      "message": "Maybe we could add an example to the keystoneauth docs instead? I think the keystone docs should try to always show the most general-case method which will always be using the command line client.",
+      "parentUuid": "3f79a3b5_9fbb090d",
+      "revId": "e4fcd2c5732e7d366639d07245c493329f463381",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
