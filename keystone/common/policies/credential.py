@@ -17,7 +17,7 @@ from keystone.common.policies import base
 credential_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_credential',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str='',
         # FIXME(lbragstad): Credentials aren't really project-scoped or
         # system-scoped. Instead, they are tied to a user. If this API is
         # called with a system-scoped token, it's a system-administrator and
@@ -28,35 +28,35 @@ credential_policies = [
         # When we fully support the second case, we can add `project` to the
         # list of scope_types. This comment applies to the rest of the policies
         # in this module.
-        # scope_types=['system', 'project'],
+        scope_types=['system', 'project'],
         description='Show credentials details.',
         operations=[{'path': '/v3/credentials/{credential_id}',
                      'method': 'GET'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_credentials',
-        check_str=base.RULE_ADMIN_REQUIRED,
-        # scope_types=['system', 'project'],
+        check_str='',
+        scope_types=['system', 'project'],
         description='List credentials.',
         operations=[{'path': '/v3/credentials',
                      'method': 'GET'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_credential',
-        check_str=base.RULE_ADMIN_REQUIRED,
-        # scope_types=['system', 'project'],
+        check_str='',
+        scope_types=['system', 'project'],
         description='Create credential.',
         operations=[{'path': '/v3/credentials',
                      'method': 'POST'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_credential',
-        check_str=base.RULE_ADMIN_REQUIRED,
-        # scope_types=['system', 'project'],
+        check_str='',
+        scope_types=['system', 'project'],
         description='Update credential.',
         operations=[{'path': '/v3/credentials/{credential_id}',
                      'method': 'PATCH'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_credential',
-        check_str=base.RULE_ADMIN_REQUIRED,
-        # scope_types=['system', 'project'],
+        check_str='',
+        scope_types=['system', 'project'],
         description='Delete credential.',
         operations=[{'path': '/v3/credentials/{credential_id}',
                      'method': 'DELETE'}])

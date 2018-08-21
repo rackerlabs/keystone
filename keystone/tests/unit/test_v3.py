@@ -246,6 +246,8 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             self.bootstrapper.admin_role_id
         )
         self.role_id = self.role['id']
+        self.member_role_id = self.bootstrapper.member_role_id
+        self.reader_role_id = self.bootstrapper.reader_role_id
 
     def _populate_default_domain(self, enable_sqlite_foreign_key=False):
         try:
