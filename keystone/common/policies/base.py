@@ -29,6 +29,15 @@ RULE_REVOKE_EVENT_OR_ADMIN = 'rule:revoke_event_or_admin'
 RULE_SERVICE_ADMIN_OR_TOKEN_SUBJECT = 'rule:service_admin_or_token_subject'
 RULE_SERVICE_OR_ADMIN = 'rule:service_or_admin'
 RULE_TRUST_OWNER = 'user_id:%(trust.trustor_user_id)s'
+SYSTEM_READER_OR_OWNER = (
+    '(role:reader and system_scope:all) or user_id:%(target.user_id)s'
+)
+SYSTEM_MEMBER_OR_OWNER = (
+    '(role:member and system_scope:all) or user_id:%(target.user_id)s'
+)
+SYSTEM_ADMIN_OR_OWNER = (
+    '(role:admin and system_scope:all) or user_id:%(target.user_id)s'
+)
 
 
 rules = [
