@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_f8d474eb",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-08-21T10:17:09Z",
+      "side": 1,
+      "message": "I think this won\u0027t work properly anymore:\n\n \u003e\u003e\u003e [\u0027x\u0027, \u0027y\u0027][-0:]\n [\u0027x\u0027, \u0027y\u0027]\n\nThe list will continue to expand without ever being truncated. Same here: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/identity/backends/sql_model.py#n140",
+      "revId": "4b6828185891ceb3d17908b79be1a2d5a864f3d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_78df043a",
+        "filename": "releasenotes/notes/bug-1787874-13499ec227b8e26c.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-08-21T10:17:09Z",
+      "side": 1,
+      "message": "I think this belongs in an upgrade: section since we\u0027re not giving a deprecation period and this is an action that deployers must take in order to keep compatibility.\n\nAnother possibility to avoid breaking deployers like this might be to add a new option like require_unique_new_password or something. Though I agree that fixing the default value here would probably be ideal.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 11
+      },
+      "revId": "4b6828185891ceb3d17908b79be1a2d5a864f3d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
