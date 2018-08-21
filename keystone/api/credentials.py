@@ -15,6 +15,7 @@
 import hashlib
 
 import flask
+from oslo_log import log
 from oslo_serialization import jsonutils
 from six.moves import http_client
 
@@ -26,6 +27,7 @@ from keystone import exception
 from keystone.i18n import _
 from keystone.server import flask as ks_flask
 
+LOG = log.getLogger(__name__)
 
 PROVIDERS = provider_api.ProviderAPIs
 ENFORCER = rbac_enforcer.RBACEnforcer
@@ -75,17 +77,49 @@ class CredentialResource(ks_flask.ResourceBase):
 
     def _list_credentials(self):
         filters = ['user_id', 'type']
+        if not self.oslo_context.system_scope:
+            target = {'credential': {'user_id': self.oslo_context.user_id}}
+        else:
+            target = None
         ENFORCER.enforce_call(action='identity:list_credentials',
-                              filters=filters)
+                              filters=filters, target_attr=target)
         hints = self.build_driver_hints(filters)
         refs = PROVIDERS.credential_api.list_credentials(hints)
+        # If the request was filtered, make sure to return only the
+        # credentials specific to that user. This makes it so that users with
+        # roles on projects can't see credentials that aren't theirs.
+        if not self.oslo_context.system_scope:
+            filtered_refs = []
+            for ref in refs:
+                if ref['user_id'] == target['credential']['user_id']:
+                    filtered_refs.append(ref)
+            refs = filtered_refs
         refs = [self._blob_to_json(r) for r in refs]
         return self.wrap_collection(refs, hints=hints)
 
     def _get_credential(self, credential_id):
-        ENFORCER.enforce_call(action='identity:get_credential')
-        ref = PROVIDERS.credential_api.get_credential(credential_id)
-        return self.wrap_member(self._blob_to_json(ref))
+        try:
+            credential = PROVIDERS.credential_api.get_credential(credential_id)
+            target = {'credential': credential}
+        except exception.NotFound:
+            try:
+                # Since the target doesn't actually exist we don't need to
+                # populate it for policy enforcement
+                ENFORCER.enforce_call(action='identity:get_credential')
+            except exception.ForbiddenAction:
+                # NOTE(lbragstad): If the user is actually unauthorized to
+                # access this API, then we need to raise 403 to prevent them
+                # from discovering valid credential UUIDs
+                raise
+            # NOTE(lbragstad): If the user is authorized to access the API,
+            # then we should return a 404 since they should know that the
+            # resource doesn't exist.
+            raise
+
+        ENFORCER.enforce_call(
+            action='identity:get_credential', target_attr=target
+        )
+        return self.wrap_member(self._blob_to_json(credential))
 
     def get(self, credential_id=None):
         # Get Credential or List of credentials.
@@ -97,8 +131,12 @@ class CredentialResource(ks_flask.ResourceBase):
 
     def post(self):
         # Create a new credential
-        ENFORCER.enforce_call(action='identity:create_credential')
         credential = flask.request.json.get('credential', {})
+        try:
+            ENFORCER.enforce_call(action='identity:create_credential')
+        except exception.ForbiddenAction:
+            if not credential['user_id'] == self.oslo_context.user_id:
+                raise
         validation.lazy_validate(schema.credential_create, credential)
         trust_id = getattr(self.oslo_context, 'trust_id', None)
         ref = self._assign_unique_id(
@@ -108,7 +146,27 @@ class CredentialResource(ks_flask.ResourceBase):
 
     def patch(self, credential_id):
         # Update Credential
-        ENFORCER.enforce_call(action='identity:update_credential')
+        try:
+            credential = PROVIDERS.credential_api.get_credential(credential_id)
+            target = {'credential': credential}
+        except exception.NotFound:
+            try:
+                # Since the target doesn't actually exist we don't need to
+                # populate it for policy enforcement
+                ENFORCER.enforce_call(action='identity:update_credential')
+            except exception.ForbiddenAction:
+                # NOTE(lbragstad): If the user is actually unauthorized to
+                # access this API, then we need to raise 403 to prevent them
+                # from discovering valid credential UUIDs
+                raise
+            # NOTE(lbragstad): If the user is authorized to access the API,
+            # then we should return a 404 since they should know that the
+            # resource doesn't exist.
+            raise
+
+        ENFORCER.enforce_call(
+            action='identity:update_credential', target_attr=target
+        )
         credential = flask.request.json.get('credential', {})
         validation.lazy_validate(schema.credential_update, credential)
         self._require_matching_id(credential)
@@ -118,7 +176,28 @@ class CredentialResource(ks_flask.ResourceBase):
 
     def delete(self, credential_id):
         # Delete credentials
-        ENFORCER.enforce_call(action='identity:delete_credential')
+        try:
+            credential = PROVIDERS.credential_api.get_credential(credential_id)
+            target = {'credential': credential}
+        except exception.NotFound:
+            try:
+                # Since the target doesn't actually exist we don't need to
+                # populate it for policy enforcement
+                ENFORCER.enforce_call(action='identity:delete_credential')
+            except exception.ForbiddenAction:
+                # NOTE(lbragstad): If the user is actually unauthorized to
+                # access this API, then we need to raise 403 to prevent them
+                # from discovering valid credential UUIDs
+                raise
+            # NOTE(lbragstad): If the user is authorized to access the API,
+            # then we should return a 404 since they should know that the
+            # resource doesn't exist.
+            raise
+
+        ENFORCER.enforce_call(
+            action='identity:delete_credential', target_attr=target
+        )
+
         return (PROVIDERS.credential_api.delete_credential(credential_id),
                 http_client.NO_CONTENT)
 
