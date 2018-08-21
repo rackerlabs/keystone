@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_0e248ac5",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-21T12:08:36Z",
+      "side": 0,
+      "message": "This is missing in the flask implementation?",
+      "range": {
+        "startLine": 558,
+        "startChar": 55,
+        "endLine": 558,
+        "endChar": 69
+      },
+      "revId": "e1381fe3f59965dd61ba843d3e26666516462c30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

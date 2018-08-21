@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_ee010e08",
+        "filename": "keystone/api/role_assignments.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-21T12:08:36Z",
+      "side": 1,
+      "message": "I think this needs to include scope.system in order to be compatible with the previous implementation. But, we also apparently need a test.",
+      "revId": "665d5beda7e52916f4c97f26f63bce698dabdc28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
