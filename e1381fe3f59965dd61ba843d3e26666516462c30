@@ -34,6 +34,24 @@
       "revId": "e1381fe3f59965dd61ba843d3e26666516462c30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_2e8386ab",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-21T12:02:11Z",
+      "side": 1,
+      "message": "Can we test this to make sure raised exceptions don\u0027t derail requests?",
+      "parentUuid": "3f79a3b5_43ec9e8e",
+      "revId": "e1381fe3f59965dd61ba843d3e26666516462c30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
