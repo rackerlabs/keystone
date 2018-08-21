@@ -16,6 +16,24 @@
       "revId": "e1381fe3f59965dd61ba843d3e26666516462c30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_43ec9e8e",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-21T08:43:56Z",
+      "side": 1,
+      "message": "emm, the generic Exception here seems OK due the NOTE and warning message below.",
+      "parentUuid": "3f79a3b5_e90376bd",
+      "revId": "e1381fe3f59965dd61ba843d3e26666516462c30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
