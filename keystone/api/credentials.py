@@ -75,8 +75,11 @@ class CredentialResource(ks_flask.ResourceBase):
 
     def _list_credentials(self):
         filters = ['user_id', 'type']
-        ENFORCER.enforce_call(action='identity:list_credentials',
-                              filters=filters)
+        try:
+            ENFORCER.enforce_call(action='identity:list_credentials',
+                                  filters=filters)
+        except exception.ForbiddenAction:
+            pass
         hints = self.build_driver_hints(filters)
         refs = PROVIDERS.credential_api.list_credentials(hints)
         refs = [self._blob_to_json(r) for r in refs]
@@ -97,8 +100,14 @@ class CredentialResource(ks_flask.ResourceBase):
 
     def post(self):
         # Create a new credential
-        ENFORCER.enforce_call(action='identity:create_credential')
         credential = flask.request.json.get('credential', {})
+        try:
+            ENFORCER.enforce_call(action='identity:create_credential')
+        except exception.ForbiddenAction:
+            if credential['user_id'] == self.oslo_context.user_id:
+                pass
+            else:
+                raise
         validation.lazy_validate(schema.credential_create, credential)
         trust_id = getattr(self.oslo_context, 'trust_id', None)
         ref = self._assign_unique_id(
@@ -108,7 +117,15 @@ class CredentialResource(ks_flask.ResourceBase):
 
     def patch(self, credential_id):
         # Update Credential
-        ENFORCER.enforce_call(action='identity:update_credential')
+        credential = PROVIDERS.credential_api.get_credential(credential_id)
+        try:
+            ENFORCER.enforce_call(action='identity:update_credential')
+        except exception.ForbiddenAction:
+            if credential['user_id'] == self.oslo_context.user_id:
+                pass
+            else:
+                raise
+
         credential = flask.request.json.get('credential', {})
         validation.lazy_validate(schema.credential_update, credential)
         self._require_matching_id(credential)
@@ -118,7 +135,15 @@ class CredentialResource(ks_flask.ResourceBase):
 
     def delete(self, credential_id):
         # Delete credentials
-        ENFORCER.enforce_call(action='identity:delete_credential')
+        credential = PROVIDERS.credential_api.get_credential(credential_id)
+        try:
+            ENFORCER.enforce_call(action='identity:delete_credential')
+        except exception.ForbiddenAction:
+            if credential['user_id'] == self.oslo_context.user_id:
+                pass
+            else:
+                raise
+
         return (PROVIDERS.credential_api.delete_credential(credential_id),
                 http_client.NO_CONTENT)
 
