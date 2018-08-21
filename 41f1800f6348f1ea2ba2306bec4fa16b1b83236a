@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_2b6e1896",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-08-21T10:54:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_f80c49a6",
+      "range": {
+        "startLine": 10,
+        "startChar": 12,
+        "endLine": 10,
+        "endChar": 18
+      },
+      "revId": "41f1800f6348f1ea2ba2306bec4fa16b1b83236a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_786b591d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 5
@@ -36,6 +60,30 @@
       "writtenOn": "2018-08-10T09:20:01Z",
       "side": 1,
       "message": "I don\u0027t understand this comment - we don\u0027t support a memcache backend for trusts",
+      "range": {
+        "startLine": 533,
+        "startChar": 0,
+        "endLine": 534,
+        "endChar": 70
+      },
+      "revId": "41f1800f6348f1ea2ba2306bec4fa16b1b83236a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_cb6c449e",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 534,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-08-21T10:54:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_786b591d",
       "range": {
         "startLine": 533,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_eb67c0b6",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 687,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-08-21T10:54:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_58b3fd98",
+      "range": {
+        "startLine": 687,
+        "startChar": 58,
+        "endLine": 687,
+        "endChar": 71
+      },
+      "revId": "41f1800f6348f1ea2ba2306bec4fa16b1b83236a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_f8c449f7",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 5
@@ -82,6 +154,30 @@
       "writtenOn": "2018-08-10T09:20:01Z",
       "side": 1,
       "message": "See my comment on the manager change, I think you could skip the if/else and just call one method.",
+      "range": {
+        "startLine": 704,
+        "startChar": 12,
+        "endLine": 707,
+        "endChar": 61
+      },
+      "revId": "41f1800f6348f1ea2ba2306bec4fa16b1b83236a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_ab0788c9",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 707,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-08-21T10:54:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_f8c449f7",
       "range": {
         "startLine": 704,
         "startChar": 12,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_4b0ef4e5",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-08-21T10:54:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_53dc3ee3",
+      "range": {
+        "startLine": 195,
+        "startChar": 36,
+        "endLine": 195,
+        "endChar": 46
+      },
+      "revId": "41f1800f6348f1ea2ba2306bec4fa16b1b83236a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_d3c84e23",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 5
@@ -140,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_6b117004",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-08-21T10:54:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_d3c84e23",
+      "range": {
+        "startLine": 196,
+        "startChar": 47,
+        "endLine": 196,
+        "endChar": 57
+      },
+      "revId": "41f1800f6348f1ea2ba2306bec4fa16b1b83236a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_d3636e41",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 5
@@ -151,6 +295,24 @@
       "writtenOn": "2018-08-10T09:20:01Z",
       "side": 1,
       "message": "Instead of having two different methods and having this complicated conditional, you could just add the filter to the query one at a time.",
+      "revId": "41f1800f6348f1ea2ba2306bec4fa16b1b83236a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_0bf8fcc1",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-08-21T10:54:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_d3636e41",
       "revId": "41f1800f6348f1ea2ba2306bec4fa16b1b83236a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
