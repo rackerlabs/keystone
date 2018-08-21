@@ -100,6 +100,8 @@ class CredentialResource(ks_flask.ResourceBase):
         ENFORCER.enforce_call(action='identity:create_credential')
         credential = flask.request.json.get('credential', {})
         validation.lazy_validate(schema.credential_create, credential)
+        if credential['user_id'] != self.auth_context['user_id']:
+            raise exception.Forbidden()
         trust_id = getattr(self.oslo_context, 'trust_id', None)
         ref = self._assign_unique_id(
             self._normalize_dict(credential), trust_id=trust_id)
