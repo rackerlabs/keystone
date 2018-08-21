@@ -134,6 +134,8 @@
       - integrated-gate
       - integrated-gate-py35
       - release-notes-jobs-python3
+      - publish-openstack-sphinx-docs
+      - release-notes-jobs
     check:
       jobs:
         - keystone-dsvm-functional
