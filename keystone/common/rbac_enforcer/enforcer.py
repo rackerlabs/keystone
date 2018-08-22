@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import collections
 import copy
 import functools
 
@@ -164,7 +165,8 @@ class RBACEnforcer(object):
                 member_name = getattr(resource, 'member_name', None)
                 func = getattr(
                     resource, 'get_member_from_driver', None)
-                if member_name is not None and callable(func):
+                if member_name is not None and \
+                        isinstance(func, collections.Callable):
                     key = '%s_id' % member_name
                     if key in (flask.request.view_args or {}):
                         # NOTE(morgan): For most correct setup, instantiate the

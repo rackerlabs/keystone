@@ -246,7 +246,7 @@ def register_event_callback(event, resource_type, callbacks):
         callbacks = [callbacks]
 
     for callback in callbacks:
-        if not callable(callback):
+        if not isinstance(callback, collections.Callable):
             msg = _('Method not callable: %s') % callback
             LOG.error(msg)
             raise TypeError(msg)

@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import collections
 import functools
 import inspect
 import time
@@ -198,7 +199,7 @@ class Manager(object):
             pass
 
         f = getattr(self.driver, name)
-        if callable(f):
+        if isinstance(f, collections.Callable):
             # NOTE(dstanek): only if this is callable (class or function)
             # cache this
             setattr(self, name, f)

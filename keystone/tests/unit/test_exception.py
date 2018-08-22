@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import collections
 import uuid
 
 import fixtures
@@ -54,7 +55,8 @@ class ExceptionTestCase(unit.BaseTestCase):
         should be tested separately.
 
         """
-        for cls in [x for x in exception.__dict__.values() if callable(x)]:
+        for cls in [x for x in exception.__dict__.values()
+                    if isinstance(x, collections.Callable)]:
             if cls is not exception.Error and isinstance(cls, exception.Error):
                 self.assertValidJsonRendering(cls(message='Overridden.'))
 
