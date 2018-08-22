@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_b9ac939f",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2159,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-22T16:10:28Z",
+      "side": 1,
+      "message": "Can we check to make sure this returns users prior to deleting the identity provider?",
+      "range": {
+        "startLine": 2156,
+        "startChar": 8,
+        "endLine": 2159,
+        "endChar": 39
+      },
+      "revId": "d33a7348b4ff0a2ad825bbfe81872463d0b9d9e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
