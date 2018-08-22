@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_3e8ce9d5",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1735,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-22T16:09:20Z",
+      "side": 0,
+      "message": "I think we can keep this but just add a call to create the parent project before we create this project, which should make this work with FKs enabled.",
+      "revId": "42bd2aadf6b0219a373d8bc7686894cca74a9e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

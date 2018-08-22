@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_99051713",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 744,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-22T16:09:20Z",
+      "side": 1,
+      "message": "nit: I would be great to use a constant here.\n\n  expected_domain_count \u003d 9",
+      "range": {
+        "startLine": 744,
+        "startChar": 25,
+        "endLine": 744,
+        "endChar": 26
+      },
+      "revId": "610cc45dae5504268ce24984919c5f219a440e2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_59af7fe2",
+        "filename": "keystone/tests/unit/test_backend_ldap_pool.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-22T16:09:20Z",
+      "side": 1,
+      "message": "This is a bit confusing since the test case appears to be testing LDAP, but we\u0027re adding a federated IDP. Is this used in a lot of tests? If not, can we just include it directly in the test that it\u0027s used in?",
+      "revId": "610cc45dae5504268ce24984919c5f219a440e2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_19e34736",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-22T16:09:20Z",
+      "side": 1,
+      "message": "Both of these could be pulled up into the test class setUp method which would reduce duplication across tests.",
+      "range": {
+        "startLine": 344,
+        "startChar": 8,
+        "endLine": 346,
+        "endChar": 77
+      },
+      "revId": "610cc45dae5504268ce24984919c5f219a440e2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
