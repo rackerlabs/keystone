@@ -1,0 +1,9 @@
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Workflow+1: wangxiyuan <wangxiyuan@huawei.com>
+Code-Review+2: wangxiyuan <wangxiyuan@huawei.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 22 Aug 2018 08:29:02 +0000
+Reviewed-on: https://review.openstack.org/590604
+Project: openstack/keystone
+Branch: refs/heads/master
