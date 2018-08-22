@@ -652,7 +652,7 @@ class TestCase(BaseTestCase):
         return []
 
     def _policy_fixture(self):
-        return ksfixtures.Policy(dirs.etc('policy.json'), self.config_fixture)
+        return ksfixtures.Policy(self.config_fixture)
 
     def make_request(self, path='/', **kwargs):
         is_admin = kwargs.pop('is_admin', False)
