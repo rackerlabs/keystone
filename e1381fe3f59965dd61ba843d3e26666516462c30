@@ -52,6 +52,24 @@
       "revId": "e1381fe3f59965dd61ba843d3e26666516462c30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_68d7e44c",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-23T17:10:04Z",
+      "side": 1,
+      "message": "I\u0027ll get a test spun up in a separate patch. Should ultimately be easy with the current RBACEnforcer framework.",
+      "parentUuid": "3f79a3b5_2e8386ab",
+      "revId": "e1381fe3f59965dd61ba843d3e26666516462c30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
