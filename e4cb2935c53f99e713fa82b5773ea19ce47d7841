@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_112469ae",
+        "filename": "keystone/common/sql/contract_repo/versions/034_contract_add_role_description_to_role_table.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-23T06:42:09Z",
+      "side": 1,
+      "message": "034 is already used for other migration. So please change the number to a newest one.",
+      "revId": "e4cb2935c53f99e713fa82b5773ea19ce47d7841",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_b13c95c8",
+        "filename": "keystone/common/sql/data_migration_repo/versions/034_migrate_add_role_description_to_role_table.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-23T06:42:09Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "e4cb2935c53f99e713fa82b5773ea19ce47d7841",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_d13911d7",
+        "filename": "keystone/common/sql/expand_repo/versions/034_expand_add_role_description_to_role_table.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-23T06:42:09Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "e4cb2935c53f99e713fa82b5773ea19ce47d7841",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_317725a3",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 2729,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-23T06:42:09Z",
+      "side": 1,
+      "message": "the test should be updated as well once using a new version",
+      "range": {
+        "startLine": 2716,
+        "startChar": 0,
+        "endLine": 2729,
+        "endChar": 25
+      },
+      "revId": "e4cb2935c53f99e713fa82b5773ea19ce47d7841",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
