@@ -1,0 +1,9 @@
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+2: Kristi Nikolla <kristi@nikolla.me>
+Workflow+1: Kristi Nikolla <kristi@nikolla.me>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 23 Aug 2018 15:02:07 +0000
+Reviewed-on: https://review.openstack.org/595556
+Project: openstack/keystone
+Branch: refs/heads/master
