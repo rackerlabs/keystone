@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_683364ac",
+        "filename": "keystone/server/flask/application.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-23T17:16:17Z",
+      "side": 1,
+      "message": "All the APIs are prefixed with /policy. This line shouldn\u0027t be here, this is for the API_PREFIX only, e.g. /v3/OS-ENDPOINT-POLICY.",
+      "revId": "8fe2d7f532aeabc3ca5b4db83452b82c37374a25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
