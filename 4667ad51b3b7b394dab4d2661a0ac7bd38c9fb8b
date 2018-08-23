@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_e3dc7575",
+        "filename": "keystone/common/provider_api.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-23T18:02:33Z",
+      "side": 1,
+      "message": "We need to fix hacking to catch this. We shouldn\u0027t need humans to say \"this doesn\u0027t conform\" ;)",
+      "parentUuid": "3f79a3b5_c9c44c43",
+      "range": {
+        "startLine": 22,
+        "startChar": 22,
+        "endLine": 22,
+        "endChar": 23
+      },
+      "revId": "4667ad51b3b7b394dab4d2661a0ac7bd38c9fb8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_a9beb0d1",
         "filename": "keystone/common/provider_api.py",
         "patchSetId": 11
@@ -36,6 +60,30 @@
       "writtenOn": "2018-08-21T12:20:06Z",
       "side": 1,
       "message": "derived*",
+      "range": {
+        "startLine": 27,
+        "startChar": 10,
+        "endLine": 27,
+        "endChar": 16
+      },
+      "revId": "4667ad51b3b7b394dab4d2661a0ac7bd38c9fb8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_63d2a55e",
+        "filename": "keystone/common/provider_api.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-23T18:02:33Z",
+      "side": 1,
+      "message": "Fixed if we need a new patch.",
+      "parentUuid": "3f79a3b5_a9beb0d1",
       "range": {
         "startLine": 27,
         "startChar": 10,
