@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_3f6939f8",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-23T01:39:02Z",
+      "side": 1,
+      "message": "yes, they are used for federation identity. For example:\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/unit/identity/test_backends.py#L485\nit\u0027ll create a federated user",
+      "parentUuid": "3f79a3b5_041e86ba",
+      "revId": "42bd2aadf6b0219a373d8bc7686894cca74a9e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_625d7c77",
         "filename": "keystone/tests/unit/resource/test_backends.py",
         "patchSetId": 17
