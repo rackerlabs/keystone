@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_47d9c354",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 3146,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-23T08:41:11Z",
+      "side": 1,
+      "message": "048 here",
+      "range": {
+        "startLine": 3144,
+        "startChar": 0,
+        "endLine": 3146,
+        "endChar": 25
+      },
+      "revId": "523febc66fbd35f2c3004e279da5d7e2aae67a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_c7e4f30f",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 3156,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-23T08:41:11Z",
+      "side": 1,
+      "message": "then upgrade to 049",
+      "range": {
+        "startLine": 3154,
+        "startChar": 0,
+        "endLine": 3156,
+        "endChar": 25
+      },
+      "revId": "523febc66fbd35f2c3004e279da5d7e2aae67a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
