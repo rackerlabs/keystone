@@ -84,6 +84,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_11c9c257",
+        "filename": "keystone/tests/unit/test_backend_ldap_pool.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-23T12:27:06Z",
+      "side": 1,
+      "message": "So does a test use this?",
+      "parentUuid": "3f79a3b5_eb36a351",
+      "revId": "610cc45dae5504268ce24984919c5f219a440e2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_19e34736",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 17
