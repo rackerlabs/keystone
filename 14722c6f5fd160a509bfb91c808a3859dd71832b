@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_51365a53",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2156,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-23T12:30:09Z",
+      "side": 1,
+      "message": "We could assert that this has a specific length, otherwise if it is an empty list we won\u0027t hit the assertion at line 2159.",
+      "revId": "14722c6f5fd160a509bfb91c808a3859dd71832b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
