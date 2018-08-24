@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_3664cd49",
+        "filename": "releasenotes/notes/bug-1787874-13499ec227b8e26c.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-08-24T19:25:25Z",
+      "side": 1,
+      "message": "sets*",
+      "range": {
+        "startLine": 14,
+        "startChar": 41,
+        "endLine": 14,
+        "endChar": 44
+      },
+      "revId": "34609d557e68020c6a054282c4d206aaa26a0d67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_966fe126",
+        "filename": "releasenotes/notes/bug-1787874-13499ec227b8e26c.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-08-24T19:25:25Z",
+      "side": 1,
+      "message": "note*",
+      "range": {
+        "startLine": 14,
+        "startChar": 11,
+        "endLine": 14,
+        "endChar": 14
+      },
+      "revId": "34609d557e68020c6a054282c4d206aaa26a0d67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
