@@ -69,6 +69,30 @@
       "revId": "41f23eed512f3629dc38246adbbfc7bae3a912d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_06d2c6d1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-24T17:31:28Z",
+      "side": 1,
+      "message": "As Lance pointed out, but mostly because we have some weirdness in the cross-subsystem JSON HOME we are unwinding related to how \"extensions\" work. Since we still have \"extension\"-like details, the solution was to centralize the builder functions.",
+      "parentUuid": "3f79a3b5_09f804c2",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 49
+      },
+      "revId": "41f23eed512f3629dc38246adbbfc7bae3a912d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
