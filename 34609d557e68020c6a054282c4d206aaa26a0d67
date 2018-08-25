@@ -45,6 +45,30 @@
       "revId": "34609d557e68020c6a054282c4d206aaa26a0d67",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_fed70722",
+        "filename": "releasenotes/notes/bug-1787874-13499ec227b8e26c.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-25T01:12:50Z",
+      "side": 1,
+      "message": "oh, this should be updated. Thanks. https://review.openstack.org/#/c/596506/",
+      "parentUuid": "3f79a3b5_966fe126",
+      "range": {
+        "startLine": 14,
+        "startChar": 11,
+        "endLine": 14,
+        "endChar": 14
+      },
+      "revId": "34609d557e68020c6a054282c4d206aaa26a0d67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
