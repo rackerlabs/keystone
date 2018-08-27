@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3f79a3b5_edfae6b7",
+        "filename": "keystone/conf/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-27T16:38:27Z",
+      "side": 1,
+      "message": "nit: I wouldn\u0027t mind have the name here be more indicative of the fact that it is used for reloading configuration files.",
+      "range": {
+        "startLine": 145,
+        "startChar": 11,
+        "endLine": 145,
+        "endChar": 22
+      },
+      "revId": "168dc144741ec3635a8d117a7355789ca2ac3a79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_04b1c401",
         "filename": "keystone/server/flask/common.py",
         "patchSetId": 2
@@ -13,6 +36,40 @@
       "writtenOn": "2018-07-26T03:11:29Z",
       "side": 1,
       "message": "So every request to Keystone will change the config file changes. Will it impact performance?\n\nHow about skip this check for token issue/validate request?",
+      "revId": "168dc144741ec3635a8d117a7355789ca2ac3a79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_4da8ba8a",
+        "filename": "keystone/tests/unit/test_config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-27T16:38:27Z",
+      "side": 1,
+      "message": "I wonder if we could add more of a functional test that ensures behavior is actually changed after reloading the files. Making sure the global is updates is important, but it would be nice to test:\n\n  - deploy config with warning level X\n  - call some keystone API\n  - deploy config with warning level Y\n  - call some keystone API\n  - ensure the logging change worked without restarting keystone",
+      "revId": "168dc144741ec3635a8d117a7355789ca2ac3a79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_4d819afa",
+        "filename": "releasenotes/notes/bp-mutable-config-5d3b25908957dcdd.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-27T16:38:27Z",
+      "side": 1,
+      "message": "I think we should add a link to the community goal somewhere in here so that folks can get more context if needed.",
       "revId": "168dc144741ec3635a8d117a7355789ca2ac3a79",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
