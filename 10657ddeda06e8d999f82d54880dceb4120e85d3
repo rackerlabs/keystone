@@ -46,6 +46,30 @@
       "revId": "10657ddeda06e8d999f82d54880dceb4120e85d3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_3c380ad1",
+        "filename": "doc/source/admin/identity-case-insensitive.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-08-27T20:26:57Z",
+      "side": 1,
+      "message": "Shouldn\u0027t you split into two code blocks than? One with `POST /v3/users\" and other with the JSON?",
+      "parentUuid": "3f79a3b5_a61bab7e",
+      "range": {
+        "startLine": 26,
+        "startChar": 16,
+        "endLine": 26,
+        "endChar": 23
+      },
+      "revId": "10657ddeda06e8d999f82d54880dceb4120e85d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
