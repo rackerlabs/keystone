@@ -473,7 +473,7 @@ class TokenModel(object):
 
     def _validate_system_scope(self):
         if self.system_scoped and not self.roles:
-            msg = _(
+            msg = (
                 'User %(user_id)s has no access to the system'
             ) % {'user_id': self.user_id}
             LOG.debug(msg)
@@ -481,7 +481,7 @@ class TokenModel(object):
 
     def _validate_domain_scope(self):
         if self.domain_scoped and not self.roles:
-            msg = _(
+            msg = (
                 'User %(user_id)s has no access to domain %(domain_id)s'
             ) % {'user_id': self.user_id, 'domain_id': self.domain_id}
             LOG.debug(msg)
@@ -489,7 +489,7 @@ class TokenModel(object):
 
     def _validate_project_scope(self):
         if self.project_scoped and not self.roles:
-            msg = _(
+            msg = (
                 'User %(user_id)s has no access to project %(project_id)s'
             ) % {'user_id': self.user_id, 'project_id': self.project_id}
             LOG.debug(msg)

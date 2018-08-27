@@ -482,7 +482,7 @@ def _sign_assertion(assertion):
                                          # parsing.
                                          stderr=subprocess.STDOUT)
     except Exception as e:
-        msg = ('Error when signing assertion, reason: %(reason)s%(output)s')
+        msg = 'Error when signing assertion, reason: %(reason)s%(output)s'
         LOG.error(msg,
                   {'reason': e,
                    'output': ' ' + e.output if hasattr(e, 'output') else ''})
@@ -528,8 +528,8 @@ class MetadataGenerator(object):
             try:
                 return sigver.read_cert_from_file(CONF.saml.certfile, 'pem')
             except (IOError, sigver.CertificateError) as e:
-                msg = _('Cannot open certificate %(cert_file)s. '
-                        'Reason: %(reason)s')
+                msg = ('Cannot open certificate %(cert_file)s.'
+                       'Reason: %(reason)s')
                 msg = msg % {'cert_file': CONF.saml.certfile, 'reason': e}
                 LOG.error(msg)
                 raise IOError(msg)
