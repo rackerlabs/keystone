@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_b3ea160c",
+        "filename": "keystone/credential/providers/fernet/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-27T11:17:39Z",
+      "side": 0,
+      "message": "_ should not be removed for exception. example: https://github.com/openstack/keystone/blob/master/keystone/api/os_oauth1.py#L254-L257",
+      "range": {
+        "startLine": 90,
+        "startChar": 54,
+        "endLine": 90,
+        "endChar": 57
+      },
+      "revId": "177c0e610180d8709f90046f5d0e6563c95742f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
