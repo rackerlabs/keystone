@@ -95,11 +95,12 @@ def validate_oauth_params(query_string):
                     'error': params_fitered['error'],
                     'desc': params_fitered['error_description']}
         else:
-            msg = _(
-                'Unknown parameters found, '
-                'please provide only oauth parameters.')
+            msg = ('Unknown parameters found,'
+                   'please provide only oauth parameters.')
+            tr_msg = _('Unknown parameters found,'
+                       'please provide only oauth parameters.')
         LOG.warning(msg)
-        raise exception.ValidationError(message=msg)
+        raise exception.ValidationError(message=tr_msg)
 
 
 class Manager(manager.Manager):
