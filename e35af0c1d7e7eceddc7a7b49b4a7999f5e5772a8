@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_3e43066f",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 771,
+      "author": {
+        "id": 15699
+      },
+      "writtenOn": "2018-08-28T19:33:37Z",
+      "side": 1,
+      "message": "Seems you left whitespace here. please remove it.",
+      "revId": "e35af0c1d7e7eceddc7a7b49b4a7999f5e5772a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_3e11c65e",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 914,
+      "author": {
+        "id": 15699
+      },
+      "writtenOn": "2018-08-28T19:33:37Z",
+      "side": 1,
+      "message": "why \u0027msg\u0027 variable not being passed here instead of writing the same string multiple times.",
+      "range": {
+        "startLine": 913,
+        "startChar": 24,
+        "endLine": 914,
+        "endChar": 31
+      },
+      "revId": "e35af0c1d7e7eceddc7a7b49b4a7999f5e5772a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
