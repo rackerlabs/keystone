@@ -116,6 +116,30 @@
       "revId": "4667ad51b3b7b394dab4d2661a0ac7bd38c9fb8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_54590133",
+        "filename": "keystone/common/provider_api.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-28T20:23:19Z",
+      "side": 1,
+      "message": "ok, this is in how python works. All changes to instances get stored in the self.__dict__, so what we have done is created a dictionary on the class, called __shared_object_state, we then rebind the instances __dict__ to the class attribute __shared_object_state.\n\nthis means that any change we do to the instance is applied to the class __dict__ [and since all instances share the __dict__ change to one instance impacts all instances in memory]\n\nThe __setattr__ is strictly used (in super form) so no one accidentally sets values we don\u0027t expect.\n\nLong term this allows us to instantiate on demand instead of needing to maintain a global ProvidersAPIs, long term.\n\nSo basically what happens here:\n\nObjectX (with rebound __dict__) is instantiated\n\nobjectX.NewAttr \u003d True\n\nObjectY instantiated (same class as ObjectX), and if you set NewAttr \u003d False, both instances reflect the change.",
+      "parentUuid": "3f79a3b5_5b3db4db",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 51
+      },
+      "revId": "4667ad51b3b7b394dab4d2661a0ac7bd38c9fb8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
