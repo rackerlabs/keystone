@@ -33,6 +33,24 @@
       "revId": "f9b70f1e839bf538fabf42efdee3d23e1adbf623",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_d45d1116",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 906,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-28T20:25:21Z",
+      "side": 1,
+      "message": "It does not work like that. Passing a variable causes an error. It must be an explicit string.",
+      "parentUuid": "3f79a3b5_e0530416",
+      "revId": "f9b70f1e839bf538fabf42efdee3d23e1adbf623",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
