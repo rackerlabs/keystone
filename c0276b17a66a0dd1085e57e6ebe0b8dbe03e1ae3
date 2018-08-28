@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_de1532e7",
+        "filename": "keystone/api/os_inherit.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-28T19:04:31Z",
+      "side": 1,
+      "message": "I left a similar comment on a previous patch set. We\u0027ll need to think about how we want to handle this because whatever we choose could impact how people maintain custom policy.\n\nIf we do something like:\n\n  target[\u0027role\u0027] \u003d PROVIDERS.role_api.get_role(role_id)\n\nThen operators will need to do:\n\n  role_id:%(target.role.id)s\n\nIf we do:\n\n  target \u003d PROVIDERS.role_api.get_role(role_id)\n\nThen they\u0027ll have to do:\n\n  role_id:%(target.id)s\n\nI\u0027m not sure there is a right or a wrong here so long as we are consistent so that people don\u0027t have to dig in code to figure out which one they need to use.",
+      "revId": "c0276b17a66a0dd1085e57e6ebe0b8dbe03e1ae3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
