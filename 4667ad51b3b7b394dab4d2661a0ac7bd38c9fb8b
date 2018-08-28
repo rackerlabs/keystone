@@ -93,6 +93,29 @@
       "revId": "4667ad51b3b7b394dab4d2661a0ac7bd38c9fb8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_5b3db4db",
+        "filename": "keystone/common/provider_api.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-28T18:42:44Z",
+      "side": 1,
+      "message": "It\u0027s still unclear to my how this allows for shared state. I\u0027m assuming shared state means that callers of PROVIDERS.\u003capi\u003e will receive the same objects regardless, but the drivers are kept in self.__registry? self__shared_object_state isn\u0027t actually used anywhere else except here?",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 51
+      },
+      "revId": "4667ad51b3b7b394dab4d2661a0ac7bd38c9fb8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
