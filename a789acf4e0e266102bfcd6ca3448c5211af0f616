@@ -1,0 +1,234 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_c916e14a",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 15699
+      },
+      "writtenOn": "2018-08-28T17:57:04Z",
+      "side": 1,
+      "message": "why writing the same string multiple time? can we pass the \u0027msg\u0027 variable here?",
+      "range": {
+        "startLine": 258,
+        "startChar": 23,
+        "endLine": 258,
+        "endChar": 77
+      },
+      "revId": "a789acf4e0e266102bfcd6ca3448c5211af0f616",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_492411b0",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 15699
+      },
+      "writtenOn": "2018-08-28T17:57:04Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 171,
+        "startChar": 31,
+        "endLine": 172,
+        "endChar": 43
+      },
+      "revId": "a789acf4e0e266102bfcd6ca3448c5211af0f616",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_694a2d5c",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 15699
+      },
+      "writtenOn": "2018-08-28T17:57:04Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 193,
+        "startChar": 32,
+        "endLine": 194,
+        "endChar": 42
+      },
+      "revId": "a789acf4e0e266102bfcd6ca3448c5211af0f616",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_894f8969",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 15699
+      },
+      "writtenOn": "2018-08-28T17:57:04Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 256,
+        "startChar": 27,
+        "endLine": 256,
+        "endChar": 78
+      },
+      "revId": "a789acf4e0e266102bfcd6ca3448c5211af0f616",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_69730db6",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 15699
+      },
+      "writtenOn": "2018-08-28T17:57:04Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 549,
+        "startChar": 23,
+        "endLine": 550,
+        "endChar": 32
+      },
+      "revId": "a789acf4e0e266102bfcd6ca3448c5211af0f616",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_0964d9e4",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 15699
+      },
+      "writtenOn": "2018-08-28T17:57:04Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 98,
+        "startChar": 23,
+        "endLine": 102,
+        "endChar": 55
+      },
+      "revId": "a789acf4e0e266102bfcd6ca3448c5211af0f616",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_c9b2614a",
+        "filename": "keystone/credential/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 15699
+      },
+      "writtenOn": "2018-08-28T17:57:04Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 112,
+        "startChar": 23,
+        "endLine": 113,
+        "endChar": 38
+      },
+      "revId": "a789acf4e0e266102bfcd6ca3448c5211af0f616",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_8986a965",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 15699
+      },
+      "writtenOn": "2018-08-28T17:57:04Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 283,
+        "startChar": 23,
+        "endLine": 283,
+        "endChar": 67
+      },
+      "revId": "a789acf4e0e266102bfcd6ca3448c5211af0f616",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_a9e36534",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 15699
+      },
+      "writtenOn": "2018-08-28T17:57:04Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 327,
+        "startChar": 23,
+        "endLine": 327,
+        "endChar": 59
+      },
+      "revId": "a789acf4e0e266102bfcd6ca3448c5211af0f616",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_89d46949",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 617,
+      "author": {
+        "id": 15699
+      },
+      "writtenOn": "2018-08-28T17:57:04Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 615,
+        "startChar": 23,
+        "endLine": 617,
+        "endChar": 47
+      },
+      "revId": "a789acf4e0e266102bfcd6ca3448c5211af0f616",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
