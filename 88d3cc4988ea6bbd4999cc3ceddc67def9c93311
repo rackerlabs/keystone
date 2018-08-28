@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_db01c408",
+        "filename": "keystone/api/groups.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-28T18:50:25Z",
+      "side": 1,
+      "message": "I think this can just be:\n\n  target \u003d PROVIDERS.identity_api.get_group(group_id)\n\nI don\u0027t think you have to populate a key in target specifically. I think target is meant to be a reference of the target of the operation.\n\nI\u0027d need to double check, but this might require us to write enhanced policy checks like:\n\n  target.group.domain_id\n\nas opposed to:\n\n  target.domain_id",
+      "range": {
+        "startLine": 110,
+        "startChar": 12,
+        "endLine": 110,
+        "endChar": 27
+      },
+      "revId": "88d3cc4988ea6bbd4999cc3ceddc67def9c93311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_9e4fba69",
+        "filename": "keystone/api/groups.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-28T18:50:25Z",
+      "side": 1,
+      "message": "leave",
+      "range": {
+        "startLine": 113,
+        "startChar": 20,
+        "endLine": 113,
+        "endChar": 25
+      },
+      "revId": "88d3cc4988ea6bbd4999cc3ceddc67def9c93311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
