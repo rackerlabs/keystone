@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_c9f7c159",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2018-08-28T17:50:58Z",
+      "side": 1,
+      "message": "remove, integrated queue should stay in project-config",
+      "revId": "08be992b7a8fcdff6adff0c03842fbffb25d022b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
