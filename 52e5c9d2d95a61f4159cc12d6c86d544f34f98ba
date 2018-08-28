@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_bbbc0807",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-28T18:29:35Z",
+      "side": 1,
+      "message": "Makes sense - but we should include this in a release note since it could theoretically impact end users consuming our json home document.",
+      "parentUuid": "3f79a3b5_ee7a6eb8",
+      "revId": "52e5c9d2d95a61f4159cc12d6c86d544f34f98ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_0b031c44",
         "filename": "keystone/api/os_federation.py",
         "patchSetId": 13
@@ -171,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_3bda384b",
+        "filename": "keystone/api/os_federation.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-28T18:29:35Z",
+      "side": 1,
+      "message": "Is it possible to do something like [0] and reuse as much of the existing auth controller logic as possible?\n\nJust checking to make sure we avoid https://bugs.launchpad.net/keystone/+bug/1779205 as much as possible. I suppose passing a flask request object to the auth controllers is going to be a problem?\n\n[0] https://review.openstack.org/#/c/585782/1",
+      "parentUuid": "3f79a3b5_2584b5d2",
+      "range": {
+        "startLine": 393,
+        "startChar": 8,
+        "endLine": 394,
+        "endChar": 57
+      },
+      "revId": "52e5c9d2d95a61f4159cc12d6c86d544f34f98ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_aed5561d",
         "filename": "keystone/api/os_federation.py",
         "patchSetId": 13
@@ -188,6 +230,69 @@
         "endLine": 406,
         "endChar": 45
       },
+      "revId": "52e5c9d2d95a61f4159cc12d6c86d544f34f98ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_5b861416",
+        "filename": "keystone/api/os_federation.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-28T18:29:35Z",
+      "side": 1,
+      "message": "Oh - interesting. I guess this is what I was asking about above.",
+      "range": {
+        "startLine": 472,
+        "startChar": 0,
+        "endLine": 474,
+        "endChar": 35
+      },
+      "revId": "52e5c9d2d95a61f4159cc12d6c86d544f34f98ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_5b9b7465",
+        "filename": "keystone/api/os_federation.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-28T18:29:35Z",
+      "side": 1,
+      "message": "projects*",
+      "range": {
+        "startLine": 530,
+        "startChar": 47,
+        "endLine": 530,
+        "endChar": 54
+      },
+      "revId": "52e5c9d2d95a61f4159cc12d6c86d544f34f98ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_bbf08893",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-28T18:29:35Z",
+      "side": 1,
+      "message": "Weird...",
       "revId": "52e5c9d2d95a61f4159cc12d6c86d544f34f98ba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
