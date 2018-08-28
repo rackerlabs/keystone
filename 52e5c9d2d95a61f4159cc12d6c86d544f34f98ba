@@ -213,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_51ba736e",
+        "filename": "keystone/api/os_federation.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-28T20:17:04Z",
+      "side": 1,
+      "message": "You can create a webob request, but ideally we should avoid passing stuff through to the auth controllers. The exception is for actual auth in this patch. It really is not great to craft a webob request too many places.\n\nI would rather pivot to duplicated code and then work to re-consolidate the code once auth is ported.",
+      "parentUuid": "3f79a3b5_3bda384b",
+      "range": {
+        "startLine": 393,
+        "startChar": 8,
+        "endLine": 394,
+        "endChar": 57
+      },
+      "revId": "52e5c9d2d95a61f4159cc12d6c86d544f34f98ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_aed5561d",
         "filename": "keystone/api/os_federation.py",
         "patchSetId": 13
@@ -259,6 +283,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_f1737fe7",
+        "filename": "keystone/api/os_federation.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-28T20:17:04Z",
+      "side": 1,
+      "message": "See my comment above. Avoiding this wherever we can. re-consolidation shouldn\u0027t be too far out.",
+      "parentUuid": "3f79a3b5_5b861416",
+      "range": {
+        "startLine": 472,
+        "startChar": 0,
+        "endLine": 474,
+        "endChar": 35
+      },
+      "revId": "52e5c9d2d95a61f4159cc12d6c86d544f34f98ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_5b9b7465",
         "filename": "keystone/api/os_federation.py",
         "patchSetId": 13
@@ -293,6 +341,24 @@
       "writtenOn": "2018-08-28T18:29:35Z",
       "side": 1,
       "message": "Weird...",
+      "revId": "52e5c9d2d95a61f4159cc12d6c86d544f34f98ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_b156672a",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-28T20:17:04Z",
+      "side": 1,
+      "message": "Welcome to the ick that is our json-home setup :(",
+      "parentUuid": "3f79a3b5_bbf08893",
       "revId": "52e5c9d2d95a61f4159cc12d6c86d544f34f98ba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
