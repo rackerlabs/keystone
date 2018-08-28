@@ -39,6 +39,30 @@
       "revId": "e35af0c1d7e7eceddc7a7b49b4a7999f5e5772a8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_d444314a",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 914,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-28T20:24:24Z",
+      "side": 1,
+      "message": "Does not work like that. You cannot pass a variable into a TR function.",
+      "parentUuid": "3f79a3b5_3e11c65e",
+      "range": {
+        "startLine": 913,
+        "startChar": 24,
+        "endLine": 914,
+        "endChar": 31
+      },
+      "revId": "e35af0c1d7e7eceddc7a7b49b4a7999f5e5772a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
