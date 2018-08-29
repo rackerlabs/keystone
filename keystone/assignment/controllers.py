@@ -60,11 +60,8 @@ class GrantAssignmentV3(controller.V3Controller):
         super(GrantAssignmentV3, self).__init__()
         self.get_member_from_driver = PROVIDERS.role_api.get_role
 
-    def _require_domain_xor_project(self, domain_id, project_id):
-        if domain_id and project_id:
-            msg = _('Specify a domain or project, not both')
-            raise exception.ValidationError(msg)
-        if not domain_id and not project_id:
+    def _require_project(self, project_id):
+        if not project_id:
             msg = _('Specify one of domain or project')
             raise exception.ValidationError(msg)
 
@@ -82,7 +79,7 @@ class GrantAssignmentV3(controller.V3Controller):
 
     def _check_grant_protection(self, request, protection, role_id=None,
                                 user_id=None, group_id=None,
-                                domain_id=None, project_id=None,
+                                project_id=None,
                                 allow_non_existing=False):
         """Check protection for role grant APIs.
 
@@ -109,51 +106,49 @@ class GrantAssignmentV3(controller.V3Controller):
 
         # NOTE(lbragstad): This if/else check will need to be expanded in the
         # future to handle system hierarchies if that is implemented.
-        if domain_id:
-            ref['domain'] = PROVIDERS.resource_api.get_domain(domain_id)
-        elif project_id:
+        if project_id:
             ref['project'] = PROVIDERS.resource_api.get_project(project_id)
 
         self.check_protection(request, protection, ref)
 
     @controller.protected(callback=_check_grant_protection)
     def create_grant(self, request, role_id, user_id=None,
-                     group_id=None, domain_id=None, project_id=None):
+                     group_id=None, project_id=None):
         """Grant a role to a user or group on either a domain or project."""
-        self._require_domain_xor_project(domain_id, project_id)
+        self._require_project(project_id)
         self._require_user_xor_group(user_id, group_id)
 
         inherited_to_projects = self._check_if_inherited(request.context_dict)
         PROVIDERS.assignment_api.create_grant(
-            role_id, user_id=user_id, group_id=group_id, domain_id=domain_id,
-            project_id=project_id, inherited_to_projects=inherited_to_projects,
+            role_id, user_id=user_id, group_id=group_id, project_id=project_id,
+            inherited_to_projects=inherited_to_projects,
             context=request.context_dict)
 
     @controller.protected(callback=_check_grant_protection)
     def list_grants(self, request, user_id=None,
-                    group_id=None, domain_id=None, project_id=None):
+                    group_id=None, project_id=None):
         """List roles granted to user/group on either a domain or project."""
-        self._require_domain_xor_project(domain_id, project_id)
+        self._require_project(project_id)
         self._require_user_xor_group(user_id, group_id)
 
         inherited_to_projects = self._check_if_inherited(request.context_dict)
         refs = PROVIDERS.assignment_api.list_grants(
-            user_id=user_id, group_id=group_id, domain_id=domain_id,
-            project_id=project_id, inherited_to_projects=inherited_to_projects
+            user_id=user_id, group_id=group_id, project_id=project_id,
+            inherited_to_projects=inherited_to_projects
         )
         return GrantAssignmentV3.wrap_collection(request.context_dict, refs)
 
     @controller.protected(callback=_check_grant_protection)
     def check_grant(self, request, role_id, user_id=None,
-                    group_id=None, domain_id=None, project_id=None):
+                    group_id=None, project_id=None):
         """Check if a role has been granted on either a domain or project."""
-        self._require_domain_xor_project(domain_id, project_id)
+        self._require_project(project_id)
         self._require_user_xor_group(user_id, group_id)
 
         inherited_to_projects = self._check_if_inherited(request.context_dict)
         PROVIDERS.assignment_api.get_grant(
-            role_id, user_id=user_id, group_id=group_id, domain_id=domain_id,
-            project_id=project_id, inherited_to_projects=inherited_to_projects
+            role_id, user_id=user_id, group_id=group_id, project_id=project_id,
+            inherited_to_projects=inherited_to_projects
         )
 
     # NOTE(lbragstad): This will allow users to clean up role assignments
@@ -162,13 +157,13 @@ class GrantAssignmentV3(controller.V3Controller):
     @controller.protected(callback=functools.partial(
         _check_grant_protection, allow_non_existing=True))
     def revoke_grant(self, request, role_id, user_id=None,
-                     group_id=None, domain_id=None, project_id=None):
+                     group_id=None, project_id=None):
         """Revoke a role from user/group on either a domain or project."""
-        self._require_domain_xor_project(domain_id, project_id)
+        self._require_project(project_id)
         self._require_user_xor_group(user_id, group_id)
 
         inherited_to_projects = self._check_if_inherited(request.context_dict)
         PROVIDERS.assignment_api.delete_grant(
-            role_id, user_id=user_id, group_id=group_id, domain_id=domain_id,
-            project_id=project_id, inherited_to_projects=inherited_to_projects,
+            role_id, user_id=user_id, group_id=group_id, project_id=project_id,
+            inherited_to_projects=inherited_to_projects,
             context=request.context_dict)
