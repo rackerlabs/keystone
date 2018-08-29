@@ -46,6 +46,30 @@
       "revId": "3003c1a6ce0b07a3458d07fad5b0d4784c1f2d39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_6006b01f",
+        "filename": "releasenotes/notes/bug-1787874-13499ec227b8e26c.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 15699
+      },
+      "writtenOn": "2018-08-29T08:15:27Z",
+      "side": 1,
+      "message": "yeah seems correct . It\u0027s just the difference in the  type of english, we are using.",
+      "parentUuid": "3f79a3b5_95022cba",
+      "range": {
+        "startLine": 15,
+        "startChar": 69,
+        "endLine": 15,
+        "endChar": 77
+      },
+      "revId": "3003c1a6ce0b07a3458d07fad5b0d4784c1f2d39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
