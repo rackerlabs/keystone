@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_8c48ed87",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-08-29T04:17:30Z",
+      "side": 1,
+      "message": "Here in exception we have to pass a translated string whereas normal in logging. Thus, duplication of string is done to pass different strings in logging and exception.",
+      "parentUuid": "3f79a3b5_c916e14a",
+      "range": {
+        "startLine": 258,
+        "startChar": 23,
+        "endLine": 258,
+        "endChar": 77
+      },
+      "revId": "a789acf4e0e266102bfcd6ca3448c5211af0f616",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_492411b0",
         "filename": "keystone/auth/core.py",
         "patchSetId": 4
@@ -60,6 +84,30 @@
       "writtenOn": "2018-08-28T17:57:04Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 171,
+        "startChar": 31,
+        "endLine": 172,
+        "endChar": 43
+      },
+      "revId": "a789acf4e0e266102bfcd6ca3448c5211af0f616",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_0c54dd20",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-08-29T04:17:30Z",
+      "side": 1,
+      "message": "Same reason as above",
+      "parentUuid": "3f79a3b5_492411b0",
       "range": {
         "startLine": 171,
         "startChar": 31,
