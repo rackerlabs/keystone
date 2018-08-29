@@ -12,6 +12,7 @@
 
 from keystone.api import credentials
 from keystone.api import discovery
+from keystone.api import domains
 from keystone.api import endpoints
 from keystone.api import limits
 from keystone.api import os_ep_filter
@@ -31,6 +32,7 @@ from keystone.api import trusts
 __all__ = (
     'discovery',
     'credentials',
+    'domains',
     'endpoints',
     'limits',
     'os_ep_filter',
@@ -51,6 +53,7 @@ __all__ = (
 __apis__ = (
     discovery,
     credentials,
+    domains,
     endpoints,
     limits,
     os_ep_filter,
