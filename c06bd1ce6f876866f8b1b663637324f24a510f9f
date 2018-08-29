@@ -16,6 +16,24 @@
       "revId": "c06bd1ce6f876866f8b1b663637324f24a510f9f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_5f3900d6",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-08-29T21:50:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_1bf3a375",
+      "revId": "c06bd1ce6f876866f8b1b663637324f24a510f9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
