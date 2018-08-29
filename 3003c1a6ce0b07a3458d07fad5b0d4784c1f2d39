@@ -22,6 +22,30 @@
       "revId": "3003c1a6ce0b07a3458d07fad5b0d4784c1f2d39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_95022cba",
+        "filename": "releasenotes/notes/bug-1787874-13499ec227b8e26c.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-29T07:34:42Z",
+      "side": 1,
+      "message": "they are both correct. Right?",
+      "parentUuid": "3f79a3b5_71e68f4d",
+      "range": {
+        "startLine": 15,
+        "startChar": 69,
+        "endLine": 15,
+        "endChar": 77
+      },
+      "revId": "3003c1a6ce0b07a3458d07fad5b0d4784c1f2d39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
