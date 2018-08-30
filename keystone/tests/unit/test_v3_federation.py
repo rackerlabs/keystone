@@ -2498,6 +2498,10 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
             ]
         }
         PROVIDERS.federation_api.update_mapping(self.mapping['id'], rules)
+        r = self._issue_unscoped_token(assertion='UNMATCHED_GROUP_ASSERTION')
+        assigned_group_ids = r.json['token']['user']['OS-FEDERATION']['groups']
+        self.assertEqual(1, len(assigned_group_ids))
+        self.assertEqual(group['id'], assigned_group_ids[0]['id'])
 
     def test_empty_blacklist_passess_all_values(self):
         """Test a mapping with empty blacklist specified.
