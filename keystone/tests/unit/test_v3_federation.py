@@ -1948,9 +1948,8 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         self.assertEqual(ref_groups, token_groups)
 
     def test_issue_unscoped_tokens_nonexisting_group(self):
-        self.assertRaises(exception.MappedGroupNotFound,
-                          self._issue_unscoped_token,
-                          assertion='ANOTHER_TESTER_ASSERTION')
+        r = self._issue_unscoped_token(assertion='ANOTHER_TESTER_ASSERTION')
+        self.assertIsNotNone(r.headers.get('X-Subject-Token'))
 
     def test_issue_unscoped_token_with_remote_no_attribute(self):
         r = self._issue_unscoped_token(idp=self.IDP_WITH_REMOTE,
