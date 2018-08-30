@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_aa99ed79",
+        "filename": "keystone/federation/idp.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 534,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-30T06:18:17Z",
+      "side": 1,
+      "message": "nit: the blank is missed",
+      "range": {
+        "startLine": 534,
+        "startChar": 61,
+        "endLine": 534,
+        "endChar": 62
+      },
+      "revId": "4c8e228c5e792c1e7f38ee481c7e01e255643cfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_4a885921",
+        "filename": "keystone/federation/idp.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-30T06:18:17Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 537,
+        "startChar": 65,
+        "endLine": 537,
+        "endChar": 66
+      },
+      "revId": "4c8e228c5e792c1e7f38ee481c7e01e255643cfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
