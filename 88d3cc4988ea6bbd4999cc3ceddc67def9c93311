@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_a3ed68b8",
+        "filename": "keystone/api/groups.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-08-31T19:45:15Z",
+      "side": 1,
+      "message": "That isn\u0027t how this works in the current (previous design), the target may have multiple elements added to it, therefore it is important to always make it target.XXXX-Entity.\u003cwhatever\u003e\n\nIn this case it\u0027s fine, but consistency is important.\n\nSee: https://review.openstack.org/#/c/591147/9/keystone/identity/controllers.py@a50\n\nIt is ref[\u0027group\u0027] which translates to the current target[\u0027group\u0027] that is implemented here.",
+      "parentUuid": "3f79a3b5_db01c408",
+      "range": {
+        "startLine": 110,
+        "startChar": 12,
+        "endLine": 110,
+        "endChar": 27
+      },
+      "revId": "88d3cc4988ea6bbd4999cc3ceddc67def9c93311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_9e4fba69",
         "filename": "keystone/api/groups.py",
         "patchSetId": 9
