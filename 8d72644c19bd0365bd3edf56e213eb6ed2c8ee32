@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_321535e6",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-31T07:32:19Z",
+      "side": 1,
+      "message": "seems this Encoder is useless now.",
+      "range": {
+        "startLine": 93,
+        "startChar": 6,
+        "endLine": 93,
+        "endChar": 20
+      },
+      "revId": "8d72644c19bd0365bd3edf56e213eb6ed2c8ee32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
