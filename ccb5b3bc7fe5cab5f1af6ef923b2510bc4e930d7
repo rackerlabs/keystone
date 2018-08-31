@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_f27a5dee",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-31T08:13:05Z",
+      "side": 1,
+      "message": "how about move them to admin/identity-performance.rst?",
+      "revId": "ccb5b3bc7fe5cab5f1af6ef923b2510bc4e930d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_0defbee9",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-31T08:13:05Z",
+      "side": 1,
+      "message": "this should be drivers[\u0027trust_api\u0027],otherwise it\u0027ll riase KeyError",
+      "range": {
+        "startLine": 701,
+        "startChar": 32,
+        "endLine": 701,
+        "endChar": 47
+      },
+      "revId": "ccb5b3bc7fe5cab5f1af6ef923b2510bc4e930d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_2dc39a59",
+        "filename": "keystone/tests/unit/trust/test_backends.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-31T08:13:05Z",
+      "side": 1,
+      "message": "so what\u0027s the result? it should be empty.",
+      "range": {
+        "startLine": 224,
+        "startChar": 8,
+        "endLine": 224,
+        "endChar": 36
+      },
+      "revId": "ccb5b3bc7fe5cab5f1af6ef923b2510bc4e930d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_ad856a09",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-08-31T08:13:05Z",
+      "side": 1,
+      "message": "this is not correct. if project_id\u003dNone, we should not filter_by it, otherwise you\u0027ll always get empty response.\nit should be something like:\n\nif project_id:\n    query \u003d query \u003d query.filter_by(project_id\u003dproject_id)\n\nthe same as trustor_user_id and trustee_user_id",
+      "range": {
+        "startLine": 196,
+        "startChar": 0,
+        "endLine": 198,
+        "endChar": 68
+      },
+      "revId": "ccb5b3bc7fe5cab5f1af6ef923b2510bc4e930d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
