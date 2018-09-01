@@ -1,0 +1,9 @@
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+2: Kristi Nikolla <kristi@nikolla.me>
+Workflow+1: wangxiyuan <wangxiyuan@huawei.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Sat, 01 Sep 2018 06:35:00 +0000
+Reviewed-on: https://review.openstack.org/589950
+Project: openstack/keystone
+Branch: refs/heads/master
