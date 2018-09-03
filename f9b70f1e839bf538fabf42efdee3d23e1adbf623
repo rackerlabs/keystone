@@ -51,6 +51,24 @@
       "revId": "f9b70f1e839bf538fabf42efdee3d23e1adbf623",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_c1b40af5",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 906,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-09-03T08:48:01Z",
+      "side": 1,
+      "message": "Okay. For the benefit of anyone else to whom that\u0027s not obvious, this is documented here: https://docs.openstack.org/oslo.i18n/latest/user/guidelines.html#using-a-marker-function",
+      "parentUuid": "3f79a3b5_d45d1116",
+      "revId": "f9b70f1e839bf538fabf42efdee3d23e1adbf623",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
