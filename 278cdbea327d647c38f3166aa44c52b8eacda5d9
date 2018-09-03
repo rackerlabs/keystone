@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_deb61cdd",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-09-03T19:36:54Z",
+      "side": 1,
+      "message": "This seems out of place to me. Not all of the tests in this class are about federation. The fact that the number of domains is changing in the sql resource tests shows that this is leaking. Could we change this set up to only happen for the tests it\u0027s relevant for?",
+      "revId": "278cdbea327d647c38f3166aa44c52b8eacda5d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
