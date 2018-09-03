@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_41c47a40",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 771,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-09-03T08:48:01Z",
+      "side": 1,
+      "message": "This wasn\u0027t introduced in this patch, it will have to be fixed earlier in the stack.",
+      "parentUuid": "3f79a3b5_3e43066f",
+      "revId": "e35af0c1d7e7eceddc7a7b49b4a7999f5e5772a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_3e11c65e",
         "filename": "keystone/server/flask/common.py",
         "patchSetId": 7
