@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_907ac121",
+        "filename": "releasenotes/notes/add-description-to-role-88ab5bb8a96cc002.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-09-04T15:25:57Z",
+      "side": 1,
+      "message": "If you happen to need to respin this for some other reason, I would link the keystone bug instead of the openstackclient bug: https://bugs.launchpad.net/keystone/+bug/1669080",
+      "revId": "97d06d0ffa00dd8d6372154ece0c18b9a6f83c75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
