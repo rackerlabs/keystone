@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_7e94a18b",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-04T08:49:03Z",
+      "side": 1,
+      "message": "I still think this should be moved to admin doc folder.",
+      "revId": "74dff3974e38db30dd8a1b08369cd2ce73aaf87a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_fe88b171",
+        "filename": "keystone/tests/unit/trust/test_backends.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-04T08:49:03Z",
+      "side": 1,
+      "message": "This test looks good. Please add more abort project_id, trustor_user_id and trustee_user_id filters to make sure they work well too.\n\nAnd a test in test_cli.py as well to make sure the cli command works. Thanks.",
+      "revId": "74dff3974e38db30dd8a1b08369cd2ce73aaf87a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
