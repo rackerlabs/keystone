@@ -16,6 +16,24 @@
       "revId": "97d06d0ffa00dd8d6372154ece0c18b9a6f83c75",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_b03b0f9a",
+        "filename": "releasenotes/notes/add-description-to-role-88ab5bb8a96cc002.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 25695
+      },
+      "writtenOn": "2018-09-06T05:10:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_907ac121",
+      "revId": "97d06d0ffa00dd8d6372154ece0c18b9a6f83c75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
