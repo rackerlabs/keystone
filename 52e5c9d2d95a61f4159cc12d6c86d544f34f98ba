@@ -142,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_86133601",
+        "filename": "keystone/api/os_federation.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-09-06T13:15:41Z",
+      "side": 1,
+      "message": "Were you able to double check this?",
+      "parentUuid": "3f79a3b5_85726911",
+      "range": {
+        "startLine": 95,
+        "startChar": 25,
+        "endLine": 95,
+        "endChar": 31
+      },
+      "revId": "52e5c9d2d95a61f4159cc12d6c86d544f34f98ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_2b50585e",
         "filename": "keystone/api/os_federation.py",
         "patchSetId": 13
