@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_f33178a3",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-09-07T06:47:30Z",
+      "side": 1,
+      "message": "I still have a doubt for which folder you are talking about to move this in to ??",
+      "parentUuid": "3f79a3b5_7e94a18b",
+      "revId": "74dff3974e38db30dd8a1b08369cd2ce73aaf87a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_fe88b171",
         "filename": "keystone/tests/unit/trust/test_backends.py",
         "patchSetId": 8
