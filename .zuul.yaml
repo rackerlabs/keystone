@@ -125,6 +125,8 @@
 
 - project:
     templates:
+      - openstack-cover-jobs
+      - openstack-lower-constraints-jobs
       - openstack-python-jobs
       - openstack-python35-jobs
       - openstack-python36-jobs
@@ -140,7 +142,6 @@
         - keystone-dsvm-functional-v3-only
         - keystone-dsvm-py35-functional-v3-only
         - openstack-ansible-keystone-rolling-upgrade
-        - openstack-tox-lower-constraints
         - legacy-keystoneclient-dsvm-functional:
             voting: false
             irrelevant-files:
@@ -150,7 +151,6 @@
               - ^etc/.*$
               - ^keystone/tests/unit/.*$
               - ^releasenotes/.*$
-        - openstack-tox-cover
         - legacy-tempest-dsvm-ldap-domain-specific-driver:
             voting: false
             irrelevant-files:
@@ -185,7 +185,6 @@
     gate:
       jobs:
         - keystone-dsvm-functional
-        - openstack-tox-lower-constraints
         - tempest-full:
             irrelevant-files:
               - ^(test-|)requirements.txt$
