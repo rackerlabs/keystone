@@ -22,6 +22,30 @@
       "revId": "ab5afbf8ea487fd9a9949f11495a8849497a44f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_375b4b54",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-09-07T21:48:05Z",
+      "side": 1,
+      "message": "Yeah - I agree. I realized the add_implied_roles() method didn\u0027t really do what I expected it too about halfway through the fix. I was thinking it would return a list of refs, but it actually communicates in \"assignments\", which don\u0027t contain full references of the entities involved :(\n\nIt gives you an id of the things in the assignment (group id, user id, role id, project, id, etc..) but not the reference, which isn\u0027t ideal here since we need the role \u0027id\u0027 and the \u0027role\u0027 name.\n\nHere\u0027s what it does when you ask for the data and run a test:\n\ndiff: http://paste.openstack.org/show/729713/\noutput: http://paste.openstack.org/show/729712/\n\nI was about to refactor the add_implied_roles method, but figured it would be out-of-scope for this patch.\n\nFWIW - after doing the system-scope assignment work, I think most of the assignment API needs to be rewritten to avoid cases like this.\n\nThoughts?",
+      "parentUuid": "3f79a3b5_3222b9a4",
+      "range": {
+        "startLine": 282,
+        "startChar": 12,
+        "endLine": 282,
+        "endChar": 69
+      },
+      "revId": "ab5afbf8ea487fd9a9949f11495a8849497a44f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
