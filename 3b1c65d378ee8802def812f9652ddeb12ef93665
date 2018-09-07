@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_37790b2e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-09-07T21:27:32Z",
+      "side": 1,
+      "message": "I usually don\u0027t push for release notes for developer specific bugs, but this is something that\u0027s been on our radar for a while and might mean something to downstream teams from a testing perspective.",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 20
+      },
+      "revId": "3b1c65d378ee8802def812f9652ddeb12ef93665",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
