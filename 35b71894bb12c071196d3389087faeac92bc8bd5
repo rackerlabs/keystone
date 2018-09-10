@@ -1,0 +1,130 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_a81da3bf",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-10T11:22:11Z",
+      "side": 1,
+      "message": "let\u0027s move it to docs/source/admin/identity-use-trusts.rst",
+      "revId": "35b71894bb12c071196d3389087faeac92bc8bd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_c841ffa8",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1645,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-10T11:22:11Z",
+      "side": 1,
+      "message": "http://logs.openstack.org/78/589378/10/check/openstack-tox-py27/bb72e4c/testr_results.html.gz",
+      "range": {
+        "startLine": 1645,
+        "startChar": 0,
+        "endLine": 1645,
+        "endChar": 61
+      },
+      "revId": "35b71894bb12c071196d3389087faeac92bc8bd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_a8efe3af",
+        "filename": "keystone/tests/unit/trust/test_backends.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-10T11:22:11Z",
+      "side": 1,
+      "message": "use \"tests.unit.core.new_trust_ref\" to generate trust dict so that the trust property can be defined easily.",
+      "range": {
+        "startLine": 193,
+        "startChar": 23,
+        "endLine": 202,
+        "endChar": 48
+      },
+      "revId": "35b71894bb12c071196d3389087faeac92bc8bd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_c8ec9fbd",
+        "filename": "keystone/tests/unit/trust/test_backends.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-10T11:22:11Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 211,
+        "startChar": 1,
+        "endLine": 220,
+        "endChar": 49
+      },
+      "revId": "35b71894bb12c071196d3389087faeac92bc8bd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_68278b20",
+        "filename": "keystone/tests/unit/trust/test_backends.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-10T11:22:11Z",
+      "side": 1,
+      "message": "see above, all these ref should be updated.",
+      "range": {
+        "startLine": 382,
+        "startChar": 0,
+        "endLine": 391,
+        "endChar": 48
+      },
+      "revId": "35b71894bb12c071196d3389087faeac92bc8bd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_489acf62",
+        "filename": "keystone/tests/unit/trust/test_backends.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-10T11:22:11Z",
+      "side": 1,
+      "message": "all these trust objs in these tests have the same trustor, trustee and project_id, and only one is expired  so it\u0027s hard to distinguish the filter works or not. I\u0027d like to see some tests like:\n\ndef test_flush_expired_trusts_with_project_id:\n    expired_trust1(project_id\u003dxxx)\n    expired_trust2(project_id\u003dyyy)\n\n    flush_expired_trusts(project_id\u003dxxx)\n\nThen in this test expired_trust1 will be deleted but expired_trust2 still exist.",
+      "revId": "35b71894bb12c071196d3389087faeac92bc8bd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
