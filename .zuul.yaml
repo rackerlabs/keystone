@@ -66,25 +66,6 @@
       - ^keystone/tests/unit/.*$
       - ^releasenotes/.*$
 
-# This job will execute 'tox -e upgrade' from the OSA
-# repo specified in 'osa_test_repo'.
-- job:
-    name: openstack-ansible-keystone-rolling-upgrade
-    parent: openstack-ansible-cross-repo-functional
-    voting: false
-    required-projects:
-      - name: openstack/openstack-ansible-os_keystone
-    irrelevant-files:
-      - ^.*\.rst$
-      - ^api-ref/.*$
-      - ^doc/.*$
-      - ^etc/.*$
-      - ^keystone/tests/unit/.*$
-      - ^releasenotes/.*$
-    vars:
-      tox_env: upgrade
-      osa_test_repo: openstack/openstack-ansible-os_keystone
-
 # Experimental
 - job:
     name: keystone-tox-patch_cover
@@ -139,7 +120,6 @@
         - keystone-dsvm-functional
         - keystone-dsvm-functional-v3-only
         - keystone-dsvm-py35-functional-v3-only
-        - openstack-ansible-keystone-rolling-upgrade
         - openstack-tox-lower-constraints
         - legacy-keystoneclient-dsvm-functional:
             voting: false
