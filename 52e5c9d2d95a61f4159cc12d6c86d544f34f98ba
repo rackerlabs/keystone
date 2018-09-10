@@ -166,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_3ec8e6a6",
+        "filename": "keystone/api/os_federation.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-09-10T15:51:07Z",
+      "side": 1,
+      "message": "Yep, it is [name] not [\u0027name\u0027]. I\u0027ll fix in the next revision of this patchset.\n\nhttps://review.openstack.org/#/c/591082/13/keystone/federation/controllers.py@a75",
+      "parentUuid": "3f79a3b5_86133601",
+      "range": {
+        "startLine": 95,
+        "startChar": 25,
+        "endLine": 95,
+        "endChar": 31
+      },
+      "revId": "52e5c9d2d95a61f4159cc12d6c86d544f34f98ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_2b50585e",
         "filename": "keystone/api/os_federation.py",
         "patchSetId": 13
