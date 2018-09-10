@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_40105b5a",
+        "filename": "playbooks/legacy/keystone-dsvm-functional-v3-only/run.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-09-10T20:25:59Z",
+      "side": 0,
+      "message": "Only the v3 only jobs has this at the moment. Which is what enables the federation tests.",
+      "revId": "294ca38554bb229f66a772e7dba35a5b08a36b20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
