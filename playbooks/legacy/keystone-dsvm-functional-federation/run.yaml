@@ -1,5 +1,5 @@
 - hosts: all
-  name: Autoconverted job legacy-keystone-dsvm-functional-v3-only from old job gate-keystone-dsvm-functional-v3-only-ubuntu-xenial-nv
+  name: Autoconverted job legacy-keystone-dsvm-functional-v3-only modified to run federation
   tasks:
 
     - name: Ensure legacy workspace directory
