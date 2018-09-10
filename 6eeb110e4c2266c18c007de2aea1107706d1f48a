@@ -16,6 +16,24 @@
       "revId": "6eeb110e4c2266c18c007de2aea1107706d1f48a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_260f7830",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-09-10T20:28:01Z",
+      "side": 1,
+      "message": "It doesn\u0027t look like we have a \"keystone-dsvm-py35-functional\" so yes, but we should make sure we are running a py3 check. We may need to either modify this and remove the \"v3-only\" bit, or add a new one that doesn\u0027t do \"v3-only\"",
+      "parentUuid": "3f79a3b5_002103b6",
+      "revId": "6eeb110e4c2266c18c007de2aea1107706d1f48a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
