@@ -266,7 +266,7 @@ class RBACEnforcer(object):
                             data from the X-Subject-Token. The `target` dict
                             should contain a series of key-value pairs such
                             as `{'user': user_ref_dict}`.
-        :type target_attr: dict
+        :type target_attr: function
         :param member_target_type: the type of the target, e.g. 'user'. Both
                                    this and `member_target` must be passed if
                                    either is passed.
@@ -348,7 +348,7 @@ class RBACEnforcer(object):
                 policy_dict.setdefault('target', {}).update(
                     subj_token_target_data)
         else:
-            policy_dict['target'] = target_attr
+            policy_dict['target'] = target_attr()
 
         # Pull the data from the submitted json body to generate
         # appropriate input/target attributes, we take an explicit copy here

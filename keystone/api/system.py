@@ -57,7 +57,7 @@ class SystemUsersListResource(flask_restful.Resource):
         GET/HEAD /system/users/{user_id}/roles
         """
         ENFORCER.enforce_call(action='identity:list_system_grants_for_user',
-                              target_attr=_build_enforcement_target())
+                              target_attr=_build_enforcement_target)
         refs = PROVIDERS.assignment_api.list_system_grants_for_user(user_id)
         return ks_flask.ResourceBase.wrap_collection(
             refs, collection_name='roles')
@@ -70,7 +70,7 @@ class SystemUsersResource(flask_restful.Resource):
         GET/HEAD /system/users/{user_id}/roles/{role_id}
         """
         ENFORCER.enforce_call(action='identity:check_system_grant_for_user',
-                              target_attr=_build_enforcement_target())
+                              target_attr=_build_enforcement_target)
         PROVIDERS.assignment_api.check_system_grant_for_user(user_id, role_id)
         return None, http_client.NO_CONTENT
 
@@ -80,7 +80,7 @@ class SystemUsersResource(flask_restful.Resource):
         PUT /system/users/{user_id}/roles/{role_id}
         """
         ENFORCER.enforce_call(action='identity:create_system_grant_for_user',
-                              target_attr=_build_enforcement_target())
+                              target_attr=_build_enforcement_target)
         PROVIDERS.assignment_api.create_system_grant_for_user(user_id, role_id)
         return None, http_client.NO_CONTENT
 
