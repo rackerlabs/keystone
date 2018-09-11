@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_61f22fe6",
+        "filename": "keystone/tests/unit/trust/test_backends.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-11T10:49:13Z",
+      "side": 1,
+      "message": "I wrote an example for this test:\nhttp://paste.openstack.org/show/729871/\n\nSo here I just want to show that the trust_dict can be move to an common func to avoid code duplication. And the key-value can be changed easily as well.",
+      "range": {
+        "startLine": 186,
+        "startChar": 0,
+        "endLine": 225,
+        "endChar": 40
+      },
+      "revId": "11a7268aaf2f375f2b1b9ed05d66a316cd42e0b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
