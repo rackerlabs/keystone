@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_691e860e",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-09-11T23:44:55Z",
+      "side": 1,
+      "message": "This needs to be a new argument, in addition to the current mechanism (pass in a dict *or* with a new argument, a function). Don\u0027t change the current one.",
+      "revId": "4b39564e388f9519daecdea770a9c4173a01b411",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
