@@ -246,7 +246,7 @@ class RBACEnforcer(object):
     @classmethod
     def enforce_call(cls, enforcer=None, action=None, target_attr=None,
                      member_target_type=None, member_target=None,
-                     filters=None):
+                     filters=None, build_target=None):
         """Enforce RBAC on the current request.
 
         This will do some legwork and then instantiate the Enforcer if an
@@ -266,7 +266,7 @@ class RBACEnforcer(object):
                             data from the X-Subject-Token. The `target` dict
                             should contain a series of key-value pairs such
                             as `{'user': user_ref_dict}`.
-        :type target_attr: dict
+        :type target_attr: function
         :param member_target_type: the type of the target, e.g. 'user'. Both
                                    this and `member_target` must be passed if
                                    either is passed.
@@ -327,6 +327,9 @@ class RBACEnforcer(object):
         # NOTE(morgan): !!! ORDER OF THESE OPERATIONS IS IMPORTANT !!!
         # The lowest priority values are set first and the highest priority
         # values are set last.
+
+        if build_target is not None:
+            target_attr = build_target()
 
         # Get the Target Data Set.
         if target_attr is None:
