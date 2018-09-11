@@ -246,7 +246,7 @@ class RBACEnforcer(object):
     @classmethod
     def enforce_call(cls, enforcer=None, action=None, target_attr=None,
                      member_target_type=None, member_target=None,
-                     filters=None):
+                     filters=None, build_target=None):
         """Enforce RBAC on the current request.
 
         This will do some legwork and then instantiate the Enforcer if an
@@ -283,6 +283,11 @@ class RBACEnforcer(object):
                         various "list" APIs and are un-used in the default
                         supplied policies.
         :type filters: iterable
+        :param build_target: A function to build the target for enforcement.
+                             This is explicitly done after authentication
+                             in order to not leak existance data before
+                             auth.
+        :type build_target: function
         """
         # NOTE(morgan) everything in the policy_dict may be used by the policy
         # DSL to action on RBAC and request information/response data.
@@ -328,8 +333,11 @@ class RBACEnforcer(object):
         # The lowest priority values are set first and the highest priority
         # values are set last.
 
+        if build_target is not None:
+            target_attr = build_target()
+
         # Get the Target Data Set.
-        if target_attr is None:
+        if target_attr is None and build_target is None:
             try:
                 policy_dict.update(cls._extract_member_target_data(
                     member_target_type, member_target))
@@ -348,7 +356,11 @@ class RBACEnforcer(object):
                 policy_dict.setdefault('target', {}).update(
                     subj_token_target_data)
         else:
-            policy_dict['target'] = target_attr
+            if target_attr and build_target:
+                raise ValueError('Programming Error: A target_attr or '
+                                 'build_target must be provided, but not both')
+
+            policy_dict['target'] = target_attr or build_target()
 
         # Pull the data from the submitted json body to generate
         # appropriate input/target attributes, we take an explicit copy here
