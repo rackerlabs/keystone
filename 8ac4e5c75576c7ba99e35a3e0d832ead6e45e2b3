@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_8444271b",
+        "filename": "lower-constraints.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-12T01:51:04Z",
+      "side": 1,
+      "message": "should be 5.1.0 which support system scope",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 26
+      },
+      "revId": "8ac4e5c75576c7ba99e35a3e0d832ead6e45e2b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_44c36f58",
+        "filename": "lower-constraints.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-12T01:51:04Z",
+      "side": 1,
+      "message": "should be 1.0.13.\n\nOur test hit the bug I guess:\nhttp://docs.sqlalchemy.org/en/latest/changelog/changelog_10.html#change-a14dd2e73d889d065acc07a77b1ee7cb",
+      "range": {
+        "startLine": 123,
+        "startChar": 0,
+        "endLine": 123,
+        "endChar": 18
+      },
+      "revId": "8ac4e5c75576c7ba99e35a3e0d832ead6e45e2b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
