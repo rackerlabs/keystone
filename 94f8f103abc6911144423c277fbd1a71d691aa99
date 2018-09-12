@@ -16,6 +16,24 @@
       "revId": "94f8f103abc6911144423c277fbd1a71d691aa99",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_f0bca007",
+        "filename": "keystone/api/os_federation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-09-12T20:36:27Z",
+      "side": 1,
+      "message": "https://review.openstack.org/#/c/602137/1\n\naddressed here.",
+      "parentUuid": "3f79a3b5_7c46317e",
+      "revId": "94f8f103abc6911144423c277fbd1a71d691aa99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
