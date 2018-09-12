@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_6a0755cb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-12T03:31:08Z",
+      "side": 1,
+      "message": "because the \"identity_provider_id\" in token payload is byte in python3 which lead a sqlalchemy bug[1]. The bug has been fixed in 1.0.13\n\n[1]: http://docs.sqlalchemy.org/en/latest/changelog/changelog_10.html#change-a14dd2e73d889d065acc07a77b1ee7cb",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 23
+      },
+      "revId": "27ac725ba1a567026e1b0b9010708c165ca70153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_2a115d05",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-12T03:31:08Z",
+      "side": 1,
+      "message": "because unified limit feature uses system scope feature which is supported in keystonemiddleware after 5.1.0",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 30
+      },
+      "revId": "27ac725ba1a567026e1b0b9010708c165ca70153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
