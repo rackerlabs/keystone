@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_10384eec",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-09-12T07:15:42Z",
+      "side": 1,
+      "message": "Can we get rid of pass and do it like-\n\nif not (credential[\u0027user_id\u0027] \u003d\u003d self.oslo_context.user_id):\n       raise",
+      "range": {
+        "startLine": 120,
+        "startChar": 12,
+        "endLine": 123,
+        "endChar": 21
+      },
+      "revId": "784169cca37d6fa26b2aa9e49d1a1bd6e9bd054d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
