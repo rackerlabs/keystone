@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_0e71ea77",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-09-13T20:07:35Z",
+      "side": 1,
+      "message": "go with: if target_attr is None and build_target is None:\n\nand in the else block (line 353) use build_target or target_attr (I would raise an exception if both are passed)",
+      "range": {
+        "startLine": 335,
+        "startChar": 0,
+        "endLine": 335,
+        "endChar": 31
+      },
+      "revId": "0a9c58bf2e29553f0eb7ccbcc1dce7ac53925040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
