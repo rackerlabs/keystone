@@ -12,7 +12,7 @@
 
 - job:
     name: keystone-dsvm-functional
-    parent: legacy-dsvm-base
+    parent: devstack-tempest
     run: playbooks/legacy/keystone-dsvm-functional/run.yaml
     post-run: playbooks/legacy/keystone-dsvm-functional/post.yaml
     timeout: 4200
@@ -27,6 +27,10 @@
       - ^etc/.*$
       - ^keystone/tests/unit/.*$
       - ^releasenotes/.*$
+    vars:
+      tempest_test_regex: 'keystone_tempest_plugin'
+      devstack_localrc:
+        TEMPEST_PLUGINS: '/opt/stack/new/keystone-tempest-plugin'
 
 - job:
     name: keystone-dsvm-functional-v3-only
