@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_e2ae082e",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-09-13T15:23:50Z",
+      "side": 1,
+      "message": "This should be a log warning/info. This should also raise a 401 (might need to change the MappedGroupNotFound exception or need a new one). The concept is that the user is trying to be mapped into a group that doesn\u0027t exist, therefore cannot be authorized.\n\nThe operator should take action to a) create the group, b) work with keycloak install to not emit bogus groups to keystone, c) build a map that takes into account these bogus groups.\n\nI am likewise open to other behaviors, but at first glance, a bogus group should not work. I think the behavior in the mapping should be \"anyoneof\".",
+      "revId": "30247c9c9ceef5ceeda4bc4f77ce6ee942da19e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
