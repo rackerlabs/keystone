@@ -1,0 +1,169 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_174d8bc3",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1664,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-13T07:07:16Z",
+      "side": 1,
+      "message": "mock load_backends like other does:\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_cli.py#L1433-L1440\nto just init trust_api Manager.",
+      "revId": "d4f3c9921f0845a2e753dccd53637cc0b92dbca4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_37a4474b",
+        "filename": "keystone/tests/unit/trust/test_backends.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-13T07:07:16Z",
+      "side": 1,
+      "message": "both trusts should be expired to test filter.",
+      "range": {
+        "startLine": 226,
+        "startChar": 0,
+        "endLine": 226,
+        "endChar": 62
+      },
+      "revId": "d4f3c9921f0845a2e753dccd53637cc0b92dbca4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_f7f00f69",
+        "filename": "keystone/tests/unit/trust/test_backends.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-13T07:07:16Z",
+      "side": 1,
+      "message": "should assert the trust is the expect one.\nlike:\nassertEqual(trust_ref2[\u0027id\u0027], trusts[0][\u0027id\u0027])",
+      "range": {
+        "startLine": 240,
+        "startChar": 0,
+        "endLine": 240,
+        "endChar": 40
+      },
+      "revId": "d4f3c9921f0845a2e753dccd53637cc0b92dbca4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_5701c338",
+        "filename": "keystone/tests/unit/trust/test_backends.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-13T07:07:16Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "d4f3c9921f0845a2e753dccd53637cc0b92dbca4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_77fcff3e",
+        "filename": "keystone/tests/unit/trust/test_backends.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-13T07:07:16Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "d4f3c9921f0845a2e753dccd53637cc0b92dbca4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_f7956fe4",
+        "filename": "keystone/tests/unit/trust/test_backends.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-13T07:07:16Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "d4f3c9921f0845a2e753dccd53637cc0b92dbca4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_d792b3fc",
+        "filename": "keystone/tests/unit/trust/test_backends.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-13T07:07:16Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "d4f3c9921f0845a2e753dccd53637cc0b92dbca4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_17fb4b47",
+        "filename": "keystone/tests/unit/trust/test_backends.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-13T07:07:16Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "d4f3c9921f0845a2e753dccd53637cc0b92dbca4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_37f6875f",
+        "filename": "keystone/tests/unit/trust/test_backends.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-13T07:07:16Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "d4f3c9921f0845a2e753dccd53637cc0b92dbca4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
