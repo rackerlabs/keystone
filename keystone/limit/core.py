@@ -53,12 +53,11 @@ class Manager(manager.Manager):
             if region_id is not None:
                 PROVIDERS.catalog_api.get_region(region_id)
             project_id = unified_limit.get('project_id')
-            if project_id is not None:
-                project = PROVIDERS.resource_api.get_project(project_id)
-                # Keystone now does not support domain-level limits. This
-                # check can be removed if it'll be supported in the future.
-                if project['is_domain']:
-                    raise exception.ProjectNotFound(project_id=project_id)
+            if project_id:
+                PROVIDERS.resource_api.get_project(project_id)
+            domain_id = unified_limit.get('domain_id')
+            if domain_id:
+                PROVIDERS.resource_api.get_domain(domain_id)
         except exception.ServiceNotFound:
             raise exception.ValidationError(attribute='service_id',
                                             target=target)
@@ -67,6 +66,9 @@ class Manager(manager.Manager):
                                             target=target)
         except exception.ProjectNotFound:
             raise exception.ValidationError(attribute='project_id',
+                                            target=target)
+        except exception.DomainNotFound:
+            raise exception.ValidationError(attribute='domain_id',
                                             target=target)
 
     def get_model(self):
@@ -117,13 +119,21 @@ class Manager(manager.Manager):
         self.get_limit.invalidate(self, updated_limit['id'])
         return updated_limit
 
+    def _update_content(self, limit):
+        project = PROVIDERS.resource_api.get_project(limit['project_id'])
+        if project['is_domain']:
+            limit['domain_id'] = limit.pop('project_id')
+        return limit
+
     @manager.response_truncated
     def list_limits(self, hints=None):
-        return self.driver.list_limits(hints or driver_hints.Hints())
+        limits = self.driver.list_limits(hints or driver_hints.Hints())
+        return [self._update_content(limit) for limit in limits]
 
     @MEMOIZE
     def get_limit(self, limit_id):
-        return self.driver.get_limit(limit_id)
+        limit = self.driver.get_limit(limit_id)
+        return self._update_content(limit)
 
     def delete_limit(self, limit_id):
         self.driver.delete_limit(limit_id)

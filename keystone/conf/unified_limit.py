@@ -58,6 +58,14 @@ which may result in backwards incompatible changes if a model is switched in a
 running deployment.
 """))
 
+enable_domain_level_check = cfg.BoolOpt(
+    'enable_domain_level_check',
+    default=False,
+    help=utils.fmt("""
+Enable domain level unified limit check or not. Disabled by default to keep
+backward compatibility. The default value will be changed to True in T, and the
+option will be removed in U
+"""))
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [

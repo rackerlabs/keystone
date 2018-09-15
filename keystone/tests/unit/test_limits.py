@@ -530,10 +530,17 @@ class LimitsTestCase(test_v3.RestfulTestCase):
                                  service_id=self.service_id,
                                  region_id=self.region_id,
                                  resource_name='volume')
-        self.post(
+        r = self.post(
             '/limits',
             body={'limits': [ref]},
-            expected_status=http_client.BAD_REQUEST)
+            expected_status=http_client.CREATED)
+        limits = r.result['limits']
+
+        self.assertIsNotNone(limits[0]['id'])
+        self.assertIsNotNone(limits[0]['project_id'])
+        for key in ['service_id', 'region_id', 'resource_name',
+                    'resource_limit', 'description']:
+            self.assertEqual(limits[0][key], ref[key])
 
     def test_create_multi_limit(self):
         ref1 = unit.new_limit_ref(project_id=self.project_id,
