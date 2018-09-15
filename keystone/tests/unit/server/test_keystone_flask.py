@@ -15,15 +15,19 @@ import uuid
 import fixtures
 import flask
 import flask_restful
+import mock
 from oslo_policy import policy
 from oslo_serialization import jsonutils
 from testtools import matchers
 
 from keystone.common import json_home
 from keystone.common import rbac_enforcer
+import keystone.conf
 from keystone import exception
 from keystone.server.flask import common as flask_common
 from keystone.tests.unit import rest
+
+CONF = keystone.conf.CONF
 
 
 class _TestResourceWithCollectionInfo(flask_common.ResourceBase):
@@ -544,3 +548,34 @@ class TestKeystoneFlaskCommon(rest.RestfulTestCase):
             for rel in json_home_data:
                 self.assertThat(resp_data['resources'][rel],
                                 matchers.Equals(json_home_data[rel]))
+
+    def test_normalize_domain_id_non_admin_without_domain_id(self):
+        """Expect the default_domain_id to be used without token domain_id."""
+        with self.test_client() as c:
+            with c.application.test_request_context():
+                result = flask_common.ResourceBase._normalize_domain_id(
+                    ref={})
+        self.assertIn('domain_id', result)
+        self.assertEqual(CONF.identity.default_domain_id,
+                         result['domain_id'])
+
+    def test_normalize_domain_id_non_admin_with_domain_id(self):
+        """Expect the domain_id in the token to be used."""
+        fake_domain_id = mock.sentinel.domain_id
+        with self.test_client() as c:
+            qs = {'domain_id': fake_domain_id}
+            with c.application.test_request_context(query_string=qs):
+                result = flask_common.ResourceBase._normalize_domain_id(
+                    ref={})
+        self.assertIn('domain_id', result)
+        self.assertEqual(str(fake_domain_id), result['domain_id'])
+
+    def test_normalize_domain_id_admin_without_domain_id_raises_error(self):
+        """Expect a ValidationError as admin token requires domain_id."""
+        with self.test_client() as c:
+            qs = {'is_admin': True}
+            with c.application.test_request_context(query_string=qs):
+                self.assertRaises(
+                    exception.ValidationError,
+                    flask_common.ResourceBase._normalize_domain_id,
+                    ref={})
