@@ -74,6 +74,14 @@ class LimitsResource(ks_flask.ResourceBase):
         limits_b = (flask.request.get_json(silent=True, force=True) or {}).get(
             'limits', {})
         validation.lazy_validate(schema.limit_create, limits_b)
+        for limit in limits_b:
+            if limit.get('domain_id') and limit.get("project_id"):
+                raise exception.SchemaValidationError(
+                    detail="domain_id and project_id can't be specified"
+                           "together.")
+            if not limit.get('domain_id') or not limit.get("project_id"):
+                raise exception.SchemaValidationError(
+                    detail='domain_id or project_id must be present.')
         limits = [self._assign_unique_id(self._normalize_dict(limit))
                   for limit in limits_b]
         refs = PROVIDERS.unified_limit_api.create_limits(limits)

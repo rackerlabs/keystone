@@ -88,50 +88,54 @@ class StrictTwoLevelModel(base.ModelBase):
 
         """
         for limit in limits:
-            project_id = limit['project_id']
+            project_id = limit.get('project_id')
+            domain_id = limit.get('domain_id')
             resource_name = limit['resource_name']
             resource_limit = limit['resource_limit']
             service_id = limit['service_id']
             region_id = limit.get('region_id')
             try:
-                parent_project = PROVIDERS.resource_api.list_project_parents(
-                    project_id)[0]
-                if not parent_project['is_domain']:
-                    parent_id = parent_project['id']
-                    parent_limit = list(filter(
-                        lambda x: x['project_id'] == parent_id, limits))
-                    if parent_limit:
-                        if resource_limit > parent_limit[0]['resource_limit']:
-                            raise exception.InvalidLimit(
-                                reason="The input hierarchy tree is invalid.")
-                        # The limit's parent is in request body, no need to
-                        # check the backend any more.
-                        continue
+                parent = PROVIDERS.resource_api.list_project_parents(
+                    project_id or domain_id)[0]
+                parent_id = parent['id']
+                parent_limit = list(filter(
+                    lambda x: x.get('project_id', x['domain_id']) == parent_id,
+                    limits))
+                if parent_limit:
+                    if resource_limit > parent_limit[0]['resource_limit']:
+                        raise exception.InvalidLimit(
+                            reason="The input hierarchy tree is invalid.")
+                    # The limit's parent is in request body, no need to
+                    # check the backend any more.
+                    continue
                 else:
                     parent_id = None
 
-                self._check_limit(project_id, resource_name, resource_limit,
-                                  service_id, region_id, parent_id)
+                self._check_limit(project_id or domain_id, resource_name,
+                                  resource_limit, service_id, region_id,
+                                  parent_id)
             except exception.InvalidLimit:
-                error = ("The resource limit (project_id: %(project_id)s, "
+                error = ("The resource limit (%(level)s: %(id)s, "
                          "resource_name: %(resource_name)s, "
                          "resource_limit: %(resource_limit)s, "
                          "service_id: %(service_id)s, "
                          "region_id: %(region_id)s) doesn't satisfy "
                          "current hierarchy model.") % {
-                    'project_id': project_id,
+                    'level': 'project_id' if project_id else 'domain_id',
+                    'id': project_id or domain_id,
                     'resource_name': resource_name,
                     'resource_limit': resource_limit,
                     'service_id': service_id,
                     'region_id': region_id
                 }
-                tr_error = _("The resource limit (project_id: %(project_id)s, "
+                tr_error = _("The resource limit (%(level)s: %(id)s, "
                              "resource_name: %(resource_name)s, "
                              "resource_limit: %(resource_limit)s, "
                              "service_id: %(service_id)s, "
                              "region_id: %(region_id)s) doesn't satisfy "
                              "current hierarchy model.") % {
-                    'project_id': project_id,
+                    'level': 'project_id' if project_id else 'domain_id',
+                    'id': project_id or domain_id,
                     'resource_name': resource_name,
                     'resource_limit': resource_limit,
                     'service_id': service_id,

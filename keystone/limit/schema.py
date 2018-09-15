@@ -48,6 +48,7 @@ registered_limit_update = {
 }
 
 _limit_create_properties = {
+    'domain_id': parameter_types.id_string,
     'project_id': parameter_types.id_string,
     'service_id': parameter_types.id_string,
     'region_id': {
@@ -66,7 +67,7 @@ _limit_create = {
     'type': 'object',
     'properties': _limit_create_properties,
     'additionalProperties': False,
-    'required': ['project_id', 'service_id', 'resource_name', 'resource_limit']
+    'required': ['service_id', 'resource_name', 'resource_limit']
 }
 
 limit_create = {

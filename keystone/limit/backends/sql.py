@@ -159,7 +159,9 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
                                                         query,
                                                         hints).all()
         else:
-            hints.add_filter('project_id', unified_limit['project_id'])
+            project_id = unified_limit.get('project_id',
+                                           unified_limit['domain_id'])
+            hints.add_filter('project_id', project_id)
             with sql.session_for_read() as session:
                 query = session.query(LimitModel)
                 old_unified_limits = sql.filter_limit_query(LimitModel,
@@ -169,7 +171,7 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
                     LimitModel).outerjoin(RegisteredLimitModel)
                 new_unified_limits = query.filter(
                     LimitModel.project_id ==
-                    unified_limit['project_id'],
+                    project_id,
                     RegisteredLimitModel.service_id ==
                     unified_limit['service_id'],
                     RegisteredLimitModel.region_id ==
@@ -257,7 +259,7 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
         except db_exception.DBReferenceError:
             raise exception.RegisteredLimitError(id=registered_limit_id)
 
-    def _check_and_fill_registered_limit_id(self, limit):
+    def _check_and_fill_content(self, limit):
         # Make sure there is a referenced registered limit first. Then add
         # the registered limit id to the new created limit.
         hints = driver_hints.Hints()
@@ -275,6 +277,11 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
             raise exception.NoLimitReference
 
         limit_copy['registered_limit_id'] = reg_limits[0]['id']
+
+        # treat domain_id as project_id in db schema.
+        if not limit_copy.get('project_id'):
+            limit_copy['project_id'] = limit.pop('domain_id')
+
         return limit_copy
 
     @sql.handle_conflicts(conflict_type='limit')
@@ -285,10 +292,13 @@ class UnifiedLimit(base.UnifiedLimitDriverBase):
                 for limit in limits:
                     self._check_unified_limit_unique(limit,
                                                      is_registered_limit=False)
-                    target = self._check_and_fill_registered_limit_id(limit)
+                    target = self._check_and_fill_content(limit)
                     ref = LimitModel.from_dict(target)
                     session.add(ref)
-                    new_limits.append(ref.to_dict())
+                    limit_dict = ref.to_dict()
+                    if limit.get('domain_id'):
+                        limit_dict['domain_id'] = limit_dict.pop('project_id')
+                    new_limits.append(limit_dict)
                 return new_limits
         except db_exception.DBReferenceError:
             raise exception.NoLimitReference()
