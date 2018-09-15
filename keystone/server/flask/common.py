@@ -23,6 +23,7 @@ from flask import blueprints
 import flask_restful
 import flask_restful.utils
 from oslo_log import log
+from oslo_log import versionutils
 from oslo_serialization import jsonutils
 from pycadf import cadftaxonomy as taxonomy
 from pycadf import host
@@ -38,6 +39,7 @@ from keystone.common.rbac_enforcer import enforcer
 from keystone.common import utils
 import keystone.conf
 from keystone import exception
+from keystone.i18n import _
 
 
 # NOTE(morgan): Capture the relevant part of the flask url route rule for
@@ -932,6 +934,46 @@ class ResourceBase(flask_restful.Resource):
         except KeyError:
             LOG.warning("Couldn't find the auth context.")
             raise exception.Unauthorized()
+
+    @classmethod
+    def _get_domain_id_from_token(cls):
+        """Get the domain_id for a v3 create call.
+
+        In the case of a v3 create entity call that does not specify a domain
+        ID, the spec says that we should use the domain scoping from the token
+        being used.
+
+        """
+        domain_id = flask.request.args.get('domain_id')
+        # return if domain scoped
+        if domain_id:
+            return domain_id
+
+        if flask.request.args.get('is_admin'):
+            raise exception.ValidationError(
+                _('You have tried to create a resource using the admin '
+                  'token. As this token is not within a domain you must '
+                  'explicitly include a domain for this resource to '
+                  'belong to.'))
+
+        # TODO(henry-nash): We should issue an exception here since if
+        # a v3 call does not explicitly specify the domain_id in the
+        # entity, it should be using a domain scoped token.  However,
+        # the current tempest heat tests issue a v3 call without this.
+        # This is raised as bug #1283539.  Once this is fixed, we
+        # should remove the line below and replace it with an error.
+        #
+        # Ahead of actually changing the code to raise an exception, we
+        # issue a deprecation warning.
+        versionutils.report_deprecated_feature(
+            LOG,
+            'Not specifying a domain during a create user, group or '
+            'project call, and relying on falling back to the '
+            'default domain, is deprecated as of Liberty. There is no '
+            'plan to remove this compatibility, however, future API '
+            'versions may remove this, so please specify the domain '
+            'explicitly or use a domain-scoped token.')
+        return CONF.identity.default_domain_id
 
     @classmethod
     def _normalize_domain_id(cls, ref):
