@@ -140,7 +140,7 @@ class DomainConfigResource(ks_flask.ResourceBase):
     def put(self, domain_id):
         """Create domain config.
 
-        POST /v3/domains/{domain_id}/config
+        PUT /v3/domains/{domain_id}/config
         """
         ENFORCER.enforce_call(action='identity:create_domain_config')
         PROVIDERS.resource_api.get_domain(domain_id)
