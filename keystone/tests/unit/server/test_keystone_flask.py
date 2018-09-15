@@ -21,9 +21,12 @@ from testtools import matchers
 
 from keystone.common import json_home
 from keystone.common import rbac_enforcer
+import keystone.conf
 from keystone import exception
 from keystone.server.flask import common as flask_common
 from keystone.tests.unit import rest
+
+CONF = keystone.conf.CONF
 
 
 class _TestResourceWithCollectionInfo(flask_common.ResourceBase):
@@ -544,3 +547,91 @@ class TestKeystoneFlaskCommon(rest.RestfulTestCase):
             for rel in json_home_data:
                 self.assertThat(resp_data['resources'][rel],
                                 matchers.Equals(json_home_data[rel]))
+
+    def _mock_group_policy_rules_and_authentication(self, policy_rules):
+        enf = rbac_enforcer.enforcer.RBACEnforcer()
+
+        def register_rules(enf_obj):
+            enf_obj.register_defaults(policy_rules)
+
+        self.useFixture(fixtures.MockPatchObject(
+            enf.__class__, '_assert_is_authenticated', lambda: None))
+        self.useFixture(fixtures.MockPatchObject(
+            enf, 'register_rules', register_rules))
+        self.useFixture(fixtures.MockPatchObject(
+            rbac_enforcer.enforcer, '_POSSIBLE_TARGET_ACTIONS',
+            {r.name for r in policy_rules}))
+        self.useFixture(fixtures.MonkeyPatch(
+            'keystone.api.groups.ENFORCER', enf))
+
+    def test_normalize_domain_id_non_admin_without_domain_id(self):
+        """Expect the default_domain_id to be used without token domain_id."""
+        _policy_rules = [
+            policy.RuleDefault(
+                name='identity:create_group',
+                check_str='@'
+            )
+        ]
+        self._mock_group_policy_rules_and_authentication(_policy_rules)
+
+        domain_json = {
+            "group": {
+                "description": "Test group description",
+                "name": "Test group name"
+            }
+        }
+        with self.test_client() as c:
+            resp = c.post(
+                '/v3/groups',
+                json=domain_json,
+                expected_status_code=201)
+        self.assertEqual(CONF.identity.default_domain_id,
+                         resp.json['group']['domain_id'])
+
+    def test_normalize_domain_id_non_admin_with_domain_id(self):
+        """Expect the domain_id in the token to be used."""
+        _policy_rules = [
+            policy.RuleDefault(
+                name='identity:create_group',
+                check_str='@'
+            )
+        ]
+        self._mock_group_policy_rules_and_authentication(_policy_rules)
+
+        domain_json = {
+            "group": {
+                "description": "Test group description",
+                "name": "Test group name"
+            }
+        }
+        with self.test_client() as c:
+            resp = c.post(
+                '/v3/groups',
+                json=domain_json,
+                expected_status_code=201,
+                query_string={'domain_id': self.user_req_admin['domain_id']})
+        self.assertEqual(self.user_req_admin['domain_id'],
+                         resp.json['group']['domain_id'])
+
+    def test_normalize_domain_id_admin_without_domain_id(self):
+        """Expect a ValidationError as admin token requires domain_id."""
+        _policy_rules = [
+            policy.RuleDefault(
+                name='identity:create_group',
+                check_str='@'
+            )
+        ]
+        self._mock_group_policy_rules_and_authentication(_policy_rules)
+
+        domain_json = {
+            "group": {
+                "description": "Test group description",
+                "name": "Test group name"
+            }
+        }
+        with self.test_client() as c:
+            c.post(
+                '/v3/groups',
+                json=domain_json,
+                expected_status_code=400,
+                query_string={'is_admin': True})
