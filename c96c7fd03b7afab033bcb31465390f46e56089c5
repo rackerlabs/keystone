@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_40c69118",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 942,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-09-17T22:13:04Z",
+      "side": 1,
+      "message": "NOTE to reviewers: this is an @classmethod and therefore cannot lean on self.oslo_context (@property), slight duplication of code here for that reason.",
+      "revId": "c96c7fd03b7afab033bcb31465390f46e56089c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
