@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_3e514931",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-17T07:28:47Z",
+      "side": 1,
+      "message": "Partial-Bug: #1776504",
+      "revId": "cd593ebb33762381248b654c74e1bfd660925741",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_7e2021b1",
+        "filename": "keystone/tests/unit/server/test_keystone_flask.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 551,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-17T07:28:47Z",
+      "side": 1,
+      "message": "Instead of add a new group related test class here. I think you\u0027d better add them to test_v3_identity.py.\n\nHere you can just add a test for _get_domain_id_from_token in TestKeystoneFlaskCommon",
+      "revId": "cd593ebb33762381248b654c74e1bfd660925741",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
