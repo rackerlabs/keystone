@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_734a85ad",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 23186
+      },
+      "writtenOn": "2018-09-17T23:27:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_3e514931",
+      "revId": "cd593ebb33762381248b654c74e1bfd660925741",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_7e2021b1",
         "filename": "keystone/tests/unit/server/test_keystone_flask.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2018-09-17T07:28:47Z",
       "side": 1,
       "message": "Instead of add a new group related test class here. I think you\u0027d better add them to test_v3_identity.py.\n\nHere you can just add a test for _get_domain_id_from_token in TestKeystoneFlaskCommon",
+      "revId": "cd593ebb33762381248b654c74e1bfd660925741",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_13d1d1cc",
+        "filename": "keystone/tests/unit/server/test_keystone_flask.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 551,
+      "author": {
+        "id": 23186
+      },
+      "writtenOn": "2018-09-17T23:27:07Z",
+      "side": 1,
+      "message": "I removed these tests as test_v3_identity.py already has good coverage and when I tried to call POST /groups without a domain_id in the body (i.e. to test some different branches in the _normalize_domain_id method) I got schema validation errors. While I could\u0027ve mocked that out, frankly the testing would\u0027ve been redundant anyway with the new tests I added to directly test _normalize_domain_id.",
+      "parentUuid": "3f79a3b5_7e2021b1",
       "revId": "cd593ebb33762381248b654c74e1bfd660925741",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
