@@ -35,6 +35,7 @@ from keystone.common import utils
 import keystone.conf
 from keystone import exception
 from keystone.i18n import _
+from keystone.server import flask
 
 
 _CATALOG_HELPER_OBJ = None
@@ -515,14 +516,14 @@ class CadfNotificationWrapper(object):
 
     def __call__(self, f):
         @functools.wraps(f)
-        def wrapper(wrapped_self, request, user_id, *args, **kwargs):
+        def wrapper(wrapped_self, user_id, *args, **kwargs):
             """Will always send a notification."""
             target = resource.Resource(typeURI=taxonomy.ACCOUNT_USER)
-            initiator = request.audit_initiator
+            initiator = flask.build_audit_initiator()
             initiator.user_id = user_id
             initiator.id = utils.resource_uuid(user_id)
             try:
-                result = f(wrapped_self, request, user_id, *args, **kwargs)
+                result = f(wrapped_self, user_id, *args, **kwargs)
             except (exception.AccountLocked,
                     exception.PasswordExpired) as ex:
                 # Send a CADF event with a reason for PCI-DSS related
@@ -657,15 +658,13 @@ class CadfRoleAssignmentNotificationWrapper(object):
         return wrapper
 
 
-def send_saml_audit_notification(action, request, user_id, group_ids,
+def send_saml_audit_notification(action, user_id, group_ids,
                                  identity_provider, protocol, token_id,
                                  outcome):
     """Send notification to inform observers about SAML events.
 
     :param action: Action being audited
     :type action: str
-    :param request: Current request to collect request info from
-    :type request: keystone.common.request.Request
     :param user_id: User ID from Keystone token
     :type user_id: str
     :param group_ids: List of Group IDs from Keystone token
@@ -679,7 +678,7 @@ def send_saml_audit_notification(action, request, user_id, group_ids,
     :param outcome: One of :class:`pycadf.cadftaxonomy`
     :type outcome: str
     """
-    initiator = request.audit_initiator
+    initiator = flask.build_audit_initiator()
     target = resource.Resource(typeURI=taxonomy.ACCOUNT_USER)
     audit_type = SAML_AUDIT_TYPE
     user_id = user_id or taxonomy.UNKNOWN
