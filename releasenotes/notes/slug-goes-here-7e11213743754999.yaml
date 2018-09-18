@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    ['bug 1753585 <https://bugs.launchpad.net/keystone/+bug/1753585>'_]
+    Keystone was not able to find any users while the LDAP user name attribute
+    was configured to "samaccountname", but could find users when reconfigured
+    to use "sAMAccountName". LDAP is not supposed to be case-sensitive, so
+    either.
