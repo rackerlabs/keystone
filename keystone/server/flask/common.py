@@ -92,15 +92,21 @@ def construct_resource_map(resource, url, resource_kwargs, alternate_urls=None,
                             Additional keyword arguments not specified above
                             will be passed as-is to
                             :meth:`flask.Flask.add_url_rule`.
-    :param alternate_urls: An iterable (list) of urls that also map to the
-                           resource. These are used to ensure API compat when
-                           a "new" path is more correct for the API but old
-                           paths must continue to work. Example:
+    :param alternate_urls: An iterable (list) of dictionaries containing urls
+                           and associated json home REL data. Each element is
+                           expected to be a dictionary with a 'url' key and an
+                           optional 'json_home' key for a 'JsonHomeData' named
+                           tuple  These urls will also map to the resource.
+                           These are used to ensure API compatibility when a
+                           "new" path is more correct for the API but old paths
+                           must continue to work. Example:
                            `/auth/domains` being the new path for
                            `/OS-FEDERATION/domains`. The `OS-FEDERATION` part
-                           would be listed as an alternate url. These are not
-                           added to the JSON Home Document.
-    :type: any iterable or None
+                           would be listed as an alternate url. If a
+                           'json_home' key is provided, the original path
+                           with the new json_home data will be added to the
+                           JSON Home Document.
+    :type: iterable or None
     :param rel:
     :type rel: str or None
     :param status: JSON Home API Status, e.g. "STABLE"
@@ -427,19 +433,33 @@ class APIBase(object):
     def _add_mapped_resources(self):
         # Add resource mappings, non-standard resource connections
         for r in self.resource_mapping:
+            alt_url_json_home_data = []
             LOG.debug(
                 'Adding resource routes to API %(name)s: '
                 '[%(url)r %(kwargs)r]',
                 {'name': self._name, 'url': r.url, 'kwargs': r.kwargs})
-            self.api.add_resource(r.resource, r.url, **r.kwargs)
+            urls = [r.url]
             if r.alternate_urls is not None:
-                LOG.debug(
-                    'Adding additional resource routes (alternate) to API'
-                    '%(name)s: [%(urls)r %(kwargs)r]',
-                    {'name': self._name, 'urls': r.alternate_urls,
-                     'kwargs': r.kwargs})
-                self.api.add_resource(r.resource, *r.alternate_urls,
-                                      **r.kwargs)
+                for element in r.alternate_urls:
+                    if self._api_url_prefix:
+                        LOG.debug(
+                            'Unable to add additional resource route '
+                            '`%(route)s` to API %(name)s because API has a '
+                            'URL prefix. Only APIs without explicit prefixes '
+                            'can have alternate URL routes added.',
+                            {'route': element['url'], 'name': self._name}
+                        )
+                        continue
+                    LOG.debug(
+                        'Adding additional resource route (alternate) to API'
+                        '%(name)s: [%(url)r %(kwargs)r]',
+                        {'name': self._name, 'url': element['url'],
+                         'kwargs': r.kwargs})
+                    urls.append(element['url'])
+                    if element.get('json_home'):
+                        alt_url_json_home_data.append(element['json_home'])
+            # Add all URL routes at once.
+            self.api.add_resource(r.resource, *urls, **r.kwargs)
 
             # Build the JSON Home data and add it to the relevant JSON Home
             # Documents for explicit JSON Home data.
@@ -461,6 +481,12 @@ class APIBase(object):
                 json_home.JsonHomeResources.append_resource(
                     r.json_home_data.rel,
                     resource_data)
+
+                for element in alt_url_json_home_data:
+                    # Append the "new" path (resource) data with the old rel
+                    # reference.
+                    json_home.JsonHomeResources.append_resource(
+                        element.rel, resource_data)
 
     def _register_before_request_functions(self, functions=None):
         """Register functions to be executed in the `before request` phase.
