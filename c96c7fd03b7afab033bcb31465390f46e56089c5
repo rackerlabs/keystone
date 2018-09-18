@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_c825e3c0",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 942,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-09-18T07:48:14Z",
+      "side": 1,
+      "message": "Seems like we could have reduced the duplication by just passing a request object to cls._get_domain_id_from_token()? Not entirely sure how the method call worked without doing so before.",
+      "parentUuid": "3f79a3b5_40c69118",
+      "revId": "c96c7fd03b7afab033bcb31465390f46e56089c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_eca556b5",
         "filename": "keystone/tests/unit/server/test_keystone_flask.py",
         "patchSetId": 1
