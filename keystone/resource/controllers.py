@@ -40,125 +40,125 @@ class DomainV3(controller.V3Controller):
         self.get_member_from_driver = PROVIDERS.resource_api.get_domain
 
 
-class ProjectV3(controller.V3Controller):
-    collection_name = 'projects'
-    member_name = 'project'
-
-    def __init__(self):
-        super(ProjectV3, self).__init__()
-        self.get_member_from_driver = PROVIDERS.resource_api.get_project
-
-    @controller.protected()
-    def create_project(self, request, project):
-        validation.lazy_validate(schema.project_create, project)
-        ref = self._assign_unique_id(self._normalize_dict(project))
-
-        if not ref.get('is_domain'):
-            ref = self._normalize_domain_id(request, ref)
-        # Our API requires that you specify the location in the hierarchy
-        # unambiguously. This could be by parent_id or, if it is a top level
-        # project, just by providing a domain_id.
-        if not ref.get('parent_id'):
-            ref['parent_id'] = ref.get('domain_id')
-
-        try:
-            ref = PROVIDERS.resource_api.create_project(
-                ref['id'],
-                ref,
-                initiator=request.audit_initiator)
-        except (exception.DomainNotFound, exception.ProjectNotFound) as e:
-            raise exception.ValidationError(e)
-        return ProjectV3.wrap_member(request.context_dict, ref)
-
-    @controller.filterprotected('domain_id', 'enabled', 'name',
-                                'parent_id', 'is_domain')
-    def list_projects(self, request, filters):
-        hints = ProjectV3.build_driver_hints(request, filters)
-        # If 'is_domain' has not been included as a query, we default it to
-        # False (which in query terms means '0')
-        if 'is_domain' not in request.params:
-            hints.add_filter('is_domain', '0')
-        # If any tags filters are passed in when listing projects, add them
-        # to the hint filters
-        tag_params = ['tags', 'tags-any', 'not-tags', 'not-tags-any']
-        for t in tag_params:
-            if t in request.params:
-                hints.add_filter(t, request.params[t])
-        refs = PROVIDERS.resource_api.list_projects(hints=hints)
-        return ProjectV3.wrap_collection(request.context_dict,
-                                         refs, hints=hints)
-
-    def _expand_project_ref(self, request, ref):
-        params = request.params
-        context = request.context_dict
-
-        parents_as_list = 'parents_as_list' in params and (
-            self.query_filter_is_true(params['parents_as_list']))
-        parents_as_ids = 'parents_as_ids' in params and (
-            self.query_filter_is_true(params['parents_as_ids']))
-
-        subtree_as_list = 'subtree_as_list' in params and (
-            self.query_filter_is_true(params['subtree_as_list']))
-        subtree_as_ids = 'subtree_as_ids' in params and (
-            self.query_filter_is_true(params['subtree_as_ids']))
-        include_limits = 'include_limits' in params and (
-            self.query_filter_is_true(params['include_limits']))
-
-        # parents_as_list and parents_as_ids are mutually exclusive
-        if parents_as_list and parents_as_ids:
-            msg = _('Cannot use parents_as_list and parents_as_ids query '
-                    'params at the same time.')
-            raise exception.ValidationError(msg)
-
-        # subtree_as_list and subtree_as_ids are mutually exclusive
-        if subtree_as_list and subtree_as_ids:
-            msg = _('Cannot use subtree_as_list and subtree_as_ids query '
-                    'params at the same time.')
-            raise exception.ValidationError(msg)
-
-        if parents_as_list:
-            parents = PROVIDERS.resource_api.list_project_parents(
-                ref['id'], request.context.user_id, include_limits)
-            ref['parents'] = [ProjectV3.wrap_member(context, p)
-                              for p in parents]
-        elif parents_as_ids:
-            ref['parents'] = PROVIDERS.resource_api.get_project_parents_as_ids(
-                ref
-            )
-
-        if subtree_as_list:
-            subtree = PROVIDERS.resource_api.list_projects_in_subtree(
-                ref['id'], request.context.user_id, include_limits)
-            ref['subtree'] = [ProjectV3.wrap_member(context, p)
-                              for p in subtree]
-        elif subtree_as_ids:
-            ref['subtree'] = (
-                PROVIDERS.resource_api.get_projects_in_subtree_as_ids(
-                    ref['id']
-                )
-            )
-
-    @controller.protected()
-    def get_project(self, request, project_id):
-        ref = PROVIDERS.resource_api.get_project(project_id)
-        self._expand_project_ref(request, ref)
-        return ProjectV3.wrap_member(request.context_dict, ref)
-
-    @controller.protected()
-    def update_project(self, request, project_id, project):
-        validation.lazy_validate(schema.project_update, project)
-        self._require_matching_id(project_id, project)
-        ref = PROVIDERS.resource_api.update_project(
-            project_id,
-            project,
-            initiator=request.audit_initiator)
-        return ProjectV3.wrap_member(request.context_dict, ref)
-
-    @controller.protected()
-    def delete_project(self, request, project_id):
-        return PROVIDERS.resource_api.delete_project(
-            project_id,
-            initiator=request.audit_initiator)
+# class ProjectV3(controller.V3Controller):
+    # collection_name = 'projects'
+    # member_name = 'project'
+    #
+    # def __init__(self):
+    #     super(ProjectV3, self).__init__()
+    #     self.get_member_from_driver = PROVIDERS.resource_api.get_project
+    #
+    # @controller.protected()
+    # def create_project(self, request, project):
+    #     validation.lazy_validate(schema.project_create, project)
+    #     ref = self._assign_unique_id(self._normalize_dict(project))
+    #
+    #     if not ref.get('is_domain'):
+    #         ref = self._normalize_domain_id(request, ref)
+    #     # Our API requires that you specify the location in the hierarchy
+    #     # unambiguously. This could be by parent_id or, if it is a top level
+    #     # project, just by providing a domain_id.
+    #     if not ref.get('parent_id'):
+    #         ref['parent_id'] = ref.get('domain_id')
+    #
+    #     try:
+    #         ref = PROVIDERS.resource_api.create_project(
+    #             ref['id'],
+    #             ref,
+    #             initiator=request.audit_initiator)
+    #     except (exception.DomainNotFound, exception.ProjectNotFound) as e:
+    #         raise exception.ValidationError(e)
+    #     return ProjectV3.wrap_member(request.context_dict, ref)
+    #
+    # @controller.filterprotected('domain_id', 'enabled', 'name',
+    #                             'parent_id', 'is_domain')
+    # def list_projects(self, request, filters):
+    #     hints = ProjectV3.build_driver_hints(request, filters)
+    #     # If 'is_domain' has not been included as a query, we default it to
+    #     # False (which in query terms means '0')
+    #     if 'is_domain' not in request.params:
+    #         hints.add_filter('is_domain', '0')
+    #     # If any tags filters are passed in when listing projects, add them
+    #     # to the hint filters
+    #     tag_params = ['tags', 'tags-any', 'not-tags', 'not-tags-any']
+    #     for t in tag_params:
+    #         if t in request.params:
+    #             hints.add_filter(t, request.params[t])
+    #     refs = PROVIDERS.resource_api.list_projects(hints=hints)
+    #     return ProjectV3.wrap_collection(request.context_dict,
+    #                                      refs, hints=hints)
+    #
+    # def _expand_project_ref(self, request, ref):
+    #     params = request.params
+    #     context = request.context_dict
+    #
+    #     parents_as_list = 'parents_as_list' in params and (
+    #         self.query_filter_is_true(params['parents_as_list']))
+    #     parents_as_ids = 'parents_as_ids' in params and (
+    #         self.query_filter_is_true(params['parents_as_ids']))
+    #
+    #     subtree_as_list = 'subtree_as_list' in params and (
+    #         self.query_filter_is_true(params['subtree_as_list']))
+    #     subtree_as_ids = 'subtree_as_ids' in params and (
+    #         self.query_filter_is_true(params['subtree_as_ids']))
+    #     include_limits = 'include_limits' in params and (
+    #         self.query_filter_is_true(params['include_limits']))
+    #
+    #     # parents_as_list and parents_as_ids are mutually exclusive
+    #     if parents_as_list and parents_as_ids:
+    #         msg = _('Cannot use parents_as_list and parents_as_ids query '
+    #                 'params at the same time.')
+    #         raise exception.ValidationError(msg)
+    #
+    #     # subtree_as_list and subtree_as_ids are mutually exclusive
+    #     if subtree_as_list and subtree_as_ids:
+    #         msg = _('Cannot use subtree_as_list and subtree_as_ids query '
+    #                 'params at the same time.')
+    #         raise exception.ValidationError(msg)
+    #
+    #     if parents_as_list:
+    #         parents = PROVIDERS.resource_api.list_project_parents(
+    #             ref['id'], request.context.user_id, include_limits)
+    #         ref['parents'] = [ProjectV3.wrap_member(context, p)
+    #                           for p in parents]
+    #     elif parents_as_ids:
+    #         ref['parents'] = PROVIDERS.resource_api.get_project_parents_as_ids(
+    #             ref
+    #         )
+    #
+    #     if subtree_as_list:
+    #         subtree = PROVIDERS.resource_api.list_projects_in_subtree(
+    #             ref['id'], request.context.user_id, include_limits)
+    #         ref['subtree'] = [ProjectV3.wrap_member(context, p)
+    #                           for p in subtree]
+    #     elif subtree_as_ids:
+    #         ref['subtree'] = (
+    #             PROVIDERS.resource_api.get_projects_in_subtree_as_ids(
+    #                 ref['id']
+    #             )
+    #         )
+    #
+    # @controller.protected()
+    # def get_project(self, request, project_id):
+    #     ref = PROVIDERS.resource_api.get_project(project_id)
+    #     self._expand_project_ref(request, ref)
+    #     return ProjectV3.wrap_member(request.context_dict, ref)
+    #
+    # @controller.protected()
+    # def update_project(self, request, project_id, project):
+    #     validation.lazy_validate(schema.project_update, project)
+    #     self._require_matching_id(project_id, project)
+    #     ref = PROVIDERS.resource_api.update_project(
+    #         project_id,
+    #         project,
+    #         initiator=request.audit_initiator)
+    #     return ProjectV3.wrap_member(request.context_dict, ref)
+    #
+    # @controller.protected()
+    # def delete_project(self, request, project_id):
+    #     return PROVIDERS.resource_api.delete_project(
+    #         project_id,
+    #         initiator=request.audit_initiator)
 
 
 class ProjectTagV3(controller.V3Controller):

@@ -28,10 +28,10 @@ class Routers(wsgi.RoutersBase):
     def append_v3_routers(self, mapper, routers):
         tag_controller = controllers.ProjectTagV3()
 
-        routers.append(
-            router.Router(controllers.ProjectV3(),
-                          'projects', 'project',
-                          resource_descriptions=self.v3_resources))
+        # routers.append(
+        #     router.Router(controllers.ProjectV3(),
+        #                   'projects', 'project',
+        #                   resource_descriptions=self.v3_resources))
 
         self._add_resource(
             mapper, tag_controller,

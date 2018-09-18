@@ -31,19 +31,19 @@ class Public(wsgi.ComposableRouter):
 
 class Routers(wsgi.RoutersBase):
 
-    _path_prefixes = ('users', 'projects')
+    _path_prefixes = ('users')
 
     def append_v3_routers(self, mapper, routers):
 
-        project_controller = controllers.ProjectAssignmentV3()
-        self._add_resource(
-            mapper, project_controller,
-            path='/users/{user_id}/projects',
-            get_head_action='list_user_projects',
-            rel=json_home.build_v3_resource_relation('user_projects'),
-            path_vars={
-                'user_id': json_home.Parameters.USER_ID,
-            })
+        # project_controller = controllers.ProjectAssignmentV3()
+        # self._add_resource(
+        #     mapper, project_controller,
+        #     path='/users/{user_id}/projects',
+        #     get_head_action='list_user_projects',
+        #     rel=json_home.build_v3_resource_relation('user_projects'),
+        #     path_vars={
+        #         'user_id': json_home.Parameters.USER_ID,
+        #     })
 
         grant_controller = controllers.GrantAssignmentV3()
         self._add_resource(
