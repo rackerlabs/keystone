@@ -38,7 +38,8 @@ from keystone.resource import routers as resource_routers
 # TODO(morgan): _MOVED_API_PREFIXES to be removed when the legacy dispatch
 # support is removed.
 _MOVED_API_PREFIXES = frozenset(
-    ['credentials',
+    ['auth',
+     'credentials',
      'domains',
      'endpoints',
      'groups',

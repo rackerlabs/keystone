@@ -380,74 +380,6 @@ class ServiceProvidersResource(_ResourceBase):
         return None, http_client.NO_CONTENT
 
 
-class OSFederationProjectResource(flask_restful.Resource):
-    @versionutils.deprecated(as_of=versionutils.deprecated.JUNO,
-                             what='GET /v3/OS-FEDERATION/projects',
-                             in_favor_of='GET /v3/auth/projects')
-    def get(self):
-        """Get projects for user.
-
-        GET/HEAD /OS-FEDERATION/projects
-        """
-        ENFORCER.enforce_call(action='identity:get_auth_projects')
-        # TODO(morgan): Make this method simply call the endpoint for
-        # /v3/auth/projects once auth is ported to flask.
-        auth_context = flask.request.environ.get(
-            authorization.AUTH_CONTEXT_ENV)
-        user_id = auth_context.get('user_id')
-        group_ids = auth_context.get('group_ids')
-
-        user_refs = []
-        if user_id:
-            try:
-                user_refs = PROVIDERS.assignment_api.list_projects_for_user(
-                    user_id)
-            except exception.UserNotFound:  # nosec
-                # federated users have an id but they don't link to anything
-                pass
-        group_refs = []
-        if group_ids:
-            group_refs = PROVIDERS.assignment_api.list_projects_for_groups(
-                group_ids)
-        refs = _combine_lists_uniquely(user_refs, group_refs)
-        return ks_flask.ResourceBase.wrap_collection(
-            refs, collection_name='projects')
-
-
-class OSFederationDomainResource(flask_restful.Resource):
-    @versionutils.deprecated(as_of=versionutils.deprecated.JUNO,
-                             what='GET /v3/OS-FEDERATION/domains',
-                             in_favor_of='GET /v3/auth/domains')
-    def get(self):
-        """Get domains for user.
-
-        GET/HEAD /OS-FEDERATION/domains
-        """
-        ENFORCER.enforce_call(action='identity:get_auth_domains')
-        # TODO(morgan): Make this method simply call the endpoint for
-        # /v3/auth/domains once auth is ported to flask.
-        auth_context = flask.request.environ.get(
-            authorization.AUTH_CONTEXT_ENV)
-        user_id = auth_context.get('user_id')
-        group_ids = auth_context.get('group_ids')
-
-        user_refs = []
-        if user_id:
-            try:
-                user_refs = PROVIDERS.assignment_api.list_domains_for_user(
-                    user_id)
-            except exception.UserNotFound:  # nosec
-                # federated users have an ide bu they don't link to anything
-                pass
-        group_refs = []
-        if group_ids:
-            group_refs = PROVIDERS.assignment_api.list_domains_for_groups(
-                group_ids)
-        refs = _combine_lists_uniquely(user_refs, group_refs)
-        return ks_flask.ResourceBase.wrap_collection(
-            refs, collection_name='domains')
-
-
 class SAML2MetadataResource(flask_restful.Resource):
     @ks_flask.unenforced_api
     def get(self):
@@ -525,18 +457,6 @@ class OSFederationAPI(ks_flask.APIBase):
     _api_url_prefix = '/OS-FEDERATION'
     resources = []
     resource_mapping = [
-        ks_flask.construct_resource_map(
-            # NOTE(morgan): No resource relation here, the resource relation is
-            # to /v3/auth/domains and /v3/auth/projects
-            resource=OSFederationDomainResource,
-            url='/domains',
-            resource_kwargs={}),
-        ks_flask.construct_resource_map(
-            # NOTE(morgan): No resource relation here, the resource relation is
-            # to /v3/auth/domains and /v3/auth/projects
-            resource=OSFederationProjectResource,
-            url='/projects',
-            resource_kwargs={}),
         ks_flask.construct_resource_map(
             resource=SAML2MetadataResource,
             url='/saml2/metadata',

@@ -44,9 +44,6 @@ class Routers(wsgi.RoutersBase):
             ?origin=https%3A//horizon.example.com
 
 
-        POST /auth/OS-FEDERATION/saml2
-        POST /auth/OS-FEDERATION/saml2/ecp
-
         GET /auth/OS-FEDERATION/websso/{protocol_id}
             ?origin=https%3A//horizon.example.com
 
@@ -64,16 +61,6 @@ class Routers(wsgi.RoutersBase):
         auth_controller = controllers.Auth()
 
         # Auth operations
-        self._add_resource(
-            mapper, auth_controller,
-            path='/auth' + self._construct_url('saml2'),
-            post_action='create_saml_assertion',
-            rel=build_resource_relation(resource_name='saml2'))
-        self._add_resource(
-            mapper, auth_controller,
-            path='/auth' + self._construct_url('saml2/ecp'),
-            post_action='create_ecp_assertion',
-            rel=build_resource_relation(resource_name='ecp'))
         self._add_resource(
             mapper, auth_controller,
             path='/auth' + self._construct_url('websso/{protocol_id}'),
