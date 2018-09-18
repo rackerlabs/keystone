@@ -1,0 +1,130 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_2e09ffda",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1949,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-18T08:48:01Z",
+      "side": 1,
+      "message": "not only update",
+      "range": {
+        "startLine": 1949,
+        "startChar": 0,
+        "endLine": 1949,
+        "endChar": 24
+      },
+      "revId": "b1daf586954e4da599f92a05141ad440dad0379a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_0e6f6392",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1951,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-18T08:48:01Z",
+      "side": 1,
+      "message": "add more details about the options items.",
+      "revId": "b1daf586954e4da599f92a05141ad440dad0379a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_eef6a7d8",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1954,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-18T08:48:01Z",
+      "side": 1,
+      "message": "it\u0027s object I assume.",
+      "range": {
+        "startLine": 1954,
+        "startChar": 8,
+        "endLine": 1954,
+        "endChar": 13
+      },
+      "revId": "b1daf586954e4da599f92a05141ad440dad0379a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_6e2cd749",
+        "filename": "api-ref/source/v3/samples/admin/user-options-update-request.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-18T08:48:01Z",
+      "side": 1,
+      "message": "add more items",
+      "revId": "b1daf586954e4da599f92a05141ad440dad0379a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_ae4e6f36",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-18T08:48:01Z",
+      "side": 1,
+      "message": "creating users support options as well.",
+      "range": {
+        "startLine": 86,
+        "startChar": 18,
+        "endLine": 86,
+        "endChar": 32
+      },
+      "revId": "b1daf586954e4da599f92a05141ad440dad0379a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_6ee7f747",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-18T08:48:01Z",
+      "side": 1,
+      "message": "Keystone support some PCI-DSS features, not only lock out. Such as \"ignore_change_password_upon_first_use\" and so on. It\u0027s good to add them all[1]. Thanks.\n\n[1]: https://github.com/openstack/keystone/blob/master/keystone/identity/backends/resource_options.py#L116",
+      "range": {
+        "startLine": 247,
+        "startChar": 9,
+        "endLine": 247,
+        "endChar": 42
+      },
+      "revId": "b1daf586954e4da599f92a05141ad440dad0379a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
