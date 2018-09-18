@@ -26,6 +26,7 @@ from keystone import exception
 from keystone.federation import constants
 from keystone.i18n import _
 from keystone.resource import controllers as resource_controllers
+from keystone.api.projects import ProjectResource
 
 
 LOG = log.getLogger(__name__)
@@ -334,7 +335,7 @@ class Auth(controller.V3Controller):
             )
 
         refs = self._combine_lists_uniquely(user_refs, grp_refs)
-        return resource_controllers.ProjectV3.wrap_collection(
+        return ProjectResource.wrap_collection(
             request.context_dict, refs)
 
     @controller.protected()
