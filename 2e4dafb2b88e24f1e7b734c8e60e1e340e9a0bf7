@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_4b6f8dc3",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1632,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-18T07:56:39Z",
+      "side": 1,
+      "message": "no need",
+      "range": {
+        "startLine": 1632,
+        "startChar": 0,
+        "endLine": 1632,
+        "endChar": 54
+      },
+      "revId": "2e4dafb2b88e24f1e7b734c8e60e1e340e9a0bf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_ccff3a32",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1669,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-18T07:56:39Z",
+      "side": 1,
+      "message": "def fake_load_backends():\n    return dict(\n        trust_api\u003dkeystone.trust.core.Manager())",
+      "range": {
+        "startLine": 1668,
+        "startChar": 16,
+        "endLine": 1669,
+        "endChar": 33
+      },
+      "revId": "2e4dafb2b88e24f1e7b734c8e60e1e340e9a0bf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_0b93d5a4",
+        "filename": "keystone/tests/unit/trust/test_backends.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-18T07:56:39Z",
+      "side": 1,
+      "message": "looks good. But please add assertEqual back before this line.\nself.assertEqual(len(trusts), 1)\n\nOthers tests should be updated as well.",
+      "range": {
+        "startLine": 211,
+        "startChar": 0,
+        "endLine": 211,
+        "endChar": 59
+      },
+      "revId": "2e4dafb2b88e24f1e7b734c8e60e1e340e9a0bf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
