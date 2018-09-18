@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_a250be0b",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 940,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-09-18T11:44:32Z",
+      "side": 0,
+      "message": "This must have been duplicated somehow? The implementation of this method in keystone/common/controller.py requires a request object.",
+      "range": {
+        "startLine": 940,
+        "startChar": 35,
+        "endLine": 940,
+        "endChar": 60
+      },
+      "revId": "4532b97b0329a59fe5d51eb7cb09c66b2700191a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
