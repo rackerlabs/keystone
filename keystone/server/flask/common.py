@@ -427,19 +427,22 @@ class APIBase(object):
     def _add_mapped_resources(self):
         # Add resource mappings, non-standard resource connections
         for r in self.resource_mapping:
-            LOG.debug(
-                'Adding resource routes to API %(name)s: '
-                '[%(url)r %(kwargs)r]',
-                {'name': self._name, 'url': r.url, 'kwargs': r.kwargs})
-            self.api.add_resource(r.resource, r.url, **r.kwargs)
+            urls = []
+            if r.url:
+                LOG.debug(
+                    'Adding resource routes to API %(name)s: '
+                    '[%(url)r %(kwargs)r]',
+                    {'name': self._name, 'url': r.url, 'kwargs': r.kwargs})
+                urls.append(r.url)
             if r.alternate_urls is not None:
                 LOG.debug(
                     'Adding additional resource routes (alternate) to API'
                     '%(name)s: [%(urls)r %(kwargs)r]',
                     {'name': self._name, 'urls': r.alternate_urls,
                      'kwargs': r.kwargs})
-                self.api.add_resource(r.resource, *r.alternate_urls,
-                                      **r.kwargs)
+                urls.extend(r.alternate_urls)
+
+            self.api.add_resource(r.resource, *urls, **r.kwargs)
 
             # Build the JSON Home data and add it to the relevant JSON Home
             # Documents for explicit JSON Home data.
