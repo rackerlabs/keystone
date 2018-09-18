@@ -1402,6 +1402,12 @@ class BaseLdap(object):
             raise ValueError('"%(attr)s" is not a valid value for'
                              ' "%(attr_name)s"' % {'attr': attr,
                                                    'attr_name': attr_name})
+
+        # consider attr = "AccountName" and
+        # ldap_result = [{'uid': ['fake_id1']}, , 'accountname': ["name"]}]
+        # doing lower case on both user_name_attribute and ldap users
+        # attribute
+        attr.lower()
         result = []
         # consider attr = "cn" and
         # ldap_result = [{'uid': ['fake_id1']},
@@ -1412,10 +1418,14 @@ class BaseLdap(object):
         for obj in ldap_result:
             # ignore ldap object(user/group entry) which has no attr set
             # in it or whose value is empty list.
-            if obj[1].get(attr):
+            for key in obj[1].keys():
+                key.lower()
+            ldap_result_attribute = obj[1].get(attr)
+            if ldap_result_attribute:
                 # ignore ldap object whose attr value has empty strings or
                 # contains only whitespaces.
-                if obj[1].get(attr)[0] and obj[1].get(attr)[0].strip():
+                if ldap_result_attribute[0] and \
+                        ldap_result_attribute[0].strip():
                     result.append(obj)
         # except {'uid': ['fake_id5'], 'cn': ["name"]}, all entries
         # will be ignored in ldap_result
