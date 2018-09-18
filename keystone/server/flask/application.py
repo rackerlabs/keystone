@@ -51,6 +51,7 @@ _MOVED_API_PREFIXES = frozenset(
      'OS-TRUST',
      'limits',
      'policy',
+     'projects',
      'regions',
      'registered_limits',
      'role_assignments',
