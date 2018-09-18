@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_ee2f7586",
+        "filename": ".zuul.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-09-18T21:50:21Z",
+      "side": 1,
+      "message": "Will need to remove these lines",
+      "range": {
+        "startLine": 46,
+        "startChar": 4,
+        "endLine": 47,
+        "endChar": 81
+      },
+      "revId": "fce329a9896cd6218dc52207947d6ca9a41d9f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
