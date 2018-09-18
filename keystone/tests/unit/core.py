@@ -15,6 +15,7 @@
 from __future__ import absolute_import
 import atexit
 import base64
+import contextlib
 import datetime
 import functools
 import hashlib
@@ -684,7 +685,11 @@ class TestCase(BaseTestCase):
     def _policy_fixture(self):
         return ksfixtures.Policy(dirs.etc('policy.json'), self.config_fixture)
 
+    @contextlib.contextmanager
     def make_request(self, path='/', **kwargs):
+        # standup a fake app and request context with a passed in/known
+        # environment.
+
         is_admin = kwargs.pop('is_admin', False)
         environ = kwargs.setdefault('environ', {})
 
@@ -693,10 +698,10 @@ class TestCase(BaseTestCase):
                 is_admin=is_admin,
                 authenticated=kwargs.pop('authenticated', True))
 
-        req = request.Request.blank(path=path, **kwargs)
-        req.context_dict['is_admin'] = is_admin
-
-        return req
+        # Create a dummy flask app to work with
+        app = flask.Flask(__name__)
+        with app.test_request_context(path=path, environ_base=environ):
+            yield
 
     def config_overrides(self):
         # NOTE(morganfainberg): enforce config_overrides can only ever be

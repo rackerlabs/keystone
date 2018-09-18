@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import flask
 import uuid
 
 from oslo_config import fixture as config_fixture
@@ -821,10 +822,12 @@ class TestUnicodeAssertionData(unit.BaseTestCase):
         # pulled from the HTTP headers. These bytes may be decodable as
         # ISO-8859-1 according to Section 3.2.4 of RFC 7230. Let's assume
         # that our web server plugins are correctly encoding the data.
-        request = webob.Request.blank(
-            '/path',
-            environ=mapping_fixtures.UNICODE_NAME_ASSERTION)
-        data = mapping_utils.get_assertion_params_from_env(request)
+        # Create a dummy application
+        app = flask.Flask(__name__)
+        with app.test_request_context(
+                path='/path',
+                environ_base=mapping_fixtures.UNICODE_NAME_ASSERTION):
+            data = mapping_utils.get_assertion_params_from_env()
         # NOTE(dstanek): keystone.auth.plugins.mapped
         return dict(data)
 

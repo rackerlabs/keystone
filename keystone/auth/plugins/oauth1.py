@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import flask
 from oslo_utils import timeutils
 
 from keystone.auth.plugins import base
@@ -27,10 +28,10 @@ PROVIDERS = provider_api.ProviderAPIs
 
 
 class OAuth(base.AuthMethodHandler):
-    def authenticate(self, request, auth_payload):
+    def authenticate(self, auth_payload):
         """Turn a signed request with an access key into a keystone token."""
         response_data = {}
-        oauth_headers = oauth.get_oauth_headers(request.headers)
+        oauth_headers = oauth.get_oauth_headers(flask.request.headers)
         access_token_id = oauth_headers.get('oauth_token')
 
         if not access_token_id:
@@ -48,15 +49,15 @@ class OAuth(base.AuthMethodHandler):
                 raise exception.Unauthorized(_('Access token is expired'))
 
         url = controller.V3Controller.base_url(request.context_dict,
-                                               request.path_info)
+                                               flask.request.path_info)
         access_verifier = oauth.ResourceEndpoint(
             request_validator=validator.OAuthValidator(),
             token_generator=oauth.token_generator)
         result, request = access_verifier.validate_protected_resource_request(
             url,
             http_method='POST',
-            body=request.params,
-            headers=request.headers,
+            body=flask.request.args,
+            headers=flask.request.headers,
             realms=None
         )
         if not result:

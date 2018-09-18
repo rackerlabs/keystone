@@ -15,7 +15,6 @@
 import string
 
 from oslo_log import log
-from six.moves import http_client
 from six.moves import urllib
 import webob
 
@@ -23,12 +22,8 @@ from keystone.auth import controllers as auth_controllers
 from keystone.common import controller
 from keystone.common import provider_api
 from keystone.common import utils as k_utils
-from keystone.common import validation
-from keystone.common import wsgi
 import keystone.conf
 from keystone import exception
-from keystone.federation import idp as keystone_idp
-from keystone.federation import schema
 from keystone.federation import utils
 from keystone.i18n import _
 
@@ -150,77 +145,3 @@ class Auth(auth_controllers.Auth):
         body = src.substitute(subs)
         return webob.Response(body=body, status='200', charset='utf-8',
                               headerlist=headers)
-
-    def _create_base_saml_assertion(self, context, auth):
-        issuer = CONF.saml.idp_entity_id
-        sp_id = auth['scope']['service_provider']['id']
-        service_provider = PROVIDERS.federation_api.get_sp(sp_id)
-        utils.assert_enabled_service_provider_object(service_provider)
-        sp_url = service_provider['sp_url']
-
-        token_id = auth['identity']['token']['id']
-        token = PROVIDERS.token_provider_api.validate_token(token_id)
-
-        if not token.project_scoped:
-            action = _('Use a project scoped token when attempting to create '
-                       'a SAML assertion')
-            raise exception.ForbiddenAction(action=action)
-
-        subject = token.user['name']
-        role_names = []
-        for role in token.roles:
-            role_names.append(role['name'])
-        project = token.project['name']
-        # NOTE(rodrigods): the domain name is necessary in order to distinguish
-        # between projects and users with the same name in different domains.
-        project_domain_name = token.project_domain['name']
-        subject_domain_name = token.user_domain['name']
-
-        generator = keystone_idp.SAMLGenerator()
-        response = generator.samlize_token(
-            issuer, sp_url, subject, subject_domain_name,
-            role_names, project, project_domain_name)
-        return (response, service_provider)
-
-    def _build_response_headers(self, service_provider):
-        # URLs in header are encoded into bytes
-        return [('Content-Type', 'text/xml'),
-                ('X-sp-url', service_provider['sp_url'].encode('utf-8')),
-                ('X-auth-url', service_provider['auth_url'].encode('utf-8'))]
-
-    def create_saml_assertion(self, request, auth):
-        """Exchange a scoped token for a SAML assertion.
-
-        :param auth: Dictionary that contains a token and service provider ID
-        :returns: SAML Assertion based on properties from the token
-        """
-        validation.lazy_validate(schema.saml_create, auth)
-        t = self._create_base_saml_assertion(request.context_dict, auth)
-        (response, service_provider) = t
-
-        headers = self._build_response_headers(service_provider)
-        return wsgi.render_response(
-            body=response.to_string(),
-            status=(http_client.OK, http_client.responses[http_client.OK]),
-            headers=headers)
-
-    def create_ecp_assertion(self, request, auth):
-        """Exchange a scoped token for an ECP assertion.
-
-        :param auth: Dictionary that contains a token and service provider ID
-        :returns: ECP Assertion based on properties from the token
-        """
-        validation.lazy_validate(schema.saml_create, auth)
-        t = self._create_base_saml_assertion(request.context_dict, auth)
-        (saml_assertion, service_provider) = t
-        relay_state_prefix = service_provider['relay_state_prefix']
-
-        generator = keystone_idp.ECPGenerator()
-        ecp_assertion = generator.generate_ecp(saml_assertion,
-                                               relay_state_prefix)
-
-        headers = self._build_response_headers(service_provider)
-        return wsgi.render_response(
-            body=ecp_assertion.to_string(),
-            status=(http_client.OK, http_client.responses[http_client.OK]),
-            headers=headers)

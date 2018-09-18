@@ -32,9 +32,10 @@ xmldsig = importutils.try_import("saml2.xmldsig")
 if not xmldsig:
     xmldsig = importutils.try_import("xmldsig")
 
+from keystone.api._shared import authentication
 from keystone.auth import controllers as auth_controllers
-from keystone.common import controller
 from keystone.common import provider_api
+from keystone.common import render_token
 import keystone.conf
 from keystone import exception
 from keystone.federation import controllers as federation_controllers
@@ -4779,7 +4780,7 @@ class K2KServiceCatalogTests(test_v3.RestfulTestCase):
         model = token_model.TokenModel()
         model.user_id = self.user_id
         model.methods = ['password']
-        token = controller.render_token_response_from_model(model)
+        token = render_token.render_token_response_from_model(model)
         ref = {}
         for r in (self.sp_alpha, self.sp_beta, self.sp_gamma):
             ref.update(r)
@@ -4799,7 +4800,7 @@ class K2KServiceCatalogTests(test_v3.RestfulTestCase):
         model = token_model.TokenModel()
         model.user_id = self.user_id
         model.methods = ['password']
-        token = controller.render_token_response_from_model(model)
+        token = render_token.render_token_response_from_model(model)
         ref = {}
         for r in (self.sp_beta, self.sp_gamma):
             ref.update(r)
@@ -4819,7 +4820,7 @@ class K2KServiceCatalogTests(test_v3.RestfulTestCase):
         model = token_model.TokenModel()
         model.user_id = self.user_id
         model.methods = ['password']
-        token = controller.render_token_response_from_model(model)
+        token = render_token.render_token_response_from_model(model)
         self.assertNotIn('service_providers', token['token'],
                          message=('Expected Service Catalog not to have '
                                   'service_providers'))

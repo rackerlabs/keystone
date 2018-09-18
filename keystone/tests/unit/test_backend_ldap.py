@@ -1941,10 +1941,10 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity, unit.TestCase):
         driver = PROVIDERS.identity_api._select_identity_driver(
             CONF.identity.default_domain_id)
         driver.user.enabled_emulation_dn = 'cn=test,dc=test'
-        PROVIDERS.identity_api.authenticate(
-            self.make_request(),
-            user_id=self.user_foo['id'],
-            password=self.user_foo['password'])
+        with self.make_request():
+            PROVIDERS.identity_api.authenticate(
+                user_id=self.user_foo['id'],
+                password=self.user_foo['password'])
 
     def test_user_enable_attribute_mask(self):
         self.skip_test_overrides(

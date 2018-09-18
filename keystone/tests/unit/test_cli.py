@@ -143,10 +143,10 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
         self.assertEqual(system_roles[0]['id'], admin_role['id'])
         # NOTE(morganfainberg): Pass an empty context, it isn't used by
         # `authenticate` method.
-        PROVIDERS.identity_api.authenticate(
-            self.make_request(),
-            user['id'],
-            bootstrap.password)
+        with self.make_request():
+            PROVIDERS.identity_api.authenticate(
+                user['id'],
+                bootstrap.password)
 
         if bootstrap.region_id:
             region = PROVIDERS.catalog_api.get_region(bootstrap.region_id)
@@ -280,10 +280,10 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
         self._do_test_bootstrap(bootstrap)
 
         # Sanity check that the original password works again.
-        PROVIDERS.identity_api.authenticate(
-            self.make_request(),
-            user_id,
-            bootstrap.password)
+        with self.make_request():
+            PROVIDERS.identity_api.authenticate(
+                user_id,
+                bootstrap.password)
 
 
 class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
