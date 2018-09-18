@@ -1,0 +1,7 @@
+{
+    "user": {
+        "options": {
+            "ignore_lockout_failure_attempts": true
+        }
+    }
+}

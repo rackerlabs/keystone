@@ -233,11 +233,21 @@ Parameters
    - enabled: enabled_user_update_body
    - name: user_name_update_body
    - password: user_update_password_body
+   - options: user_update_options_body
 
 Example
 ~~~~~~~
 
 .. literalinclude:: ./samples/admin/user-update-request.json
+   :language: javascript
+
+Example for setting users never locked out
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Updating specific users never locked out can be useful such as service accounts
+or administrative users.
+
+.. literalinclude:: ./samples/admin/user-options-update-request.json
    :language: javascript
 
 Response

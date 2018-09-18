@@ -1946,6 +1946,12 @@ user_password_update_body:
   in: body
   required: true
   type: string
+user_update_options_body:
+  description: |
+    The options for the user.
+  in: body
+  required: false
+  type: array
 user_update_password_body:
   description: |
     The new password for the user.
