@@ -12,8 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
-
+from oslo_utils import uuidutils
 from six.moves import range
 from testtools import matchers
 
@@ -161,7 +160,7 @@ class PolicyAssociationTests(object):
         self.assertRaises(
             exception.NotFound,
             PROVIDERS.endpoint_policy_api.get_policy_for_endpoint,
-            uuid.uuid4().hex
+            uuidutils.generate_uuid(dashed=False)
         )
 
     def test_policy_to_service_association(self):

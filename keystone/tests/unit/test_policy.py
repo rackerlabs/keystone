@@ -16,10 +16,10 @@
 import json
 import os
 import subprocess
-import uuid
 
 import mock
 from oslo_policy import policy as common_policy
+from oslo_utils import uuidutils
 import six
 from testtools import matchers
 
@@ -190,17 +190,19 @@ class PolicyJsonTestCase(unit.TestCase):
 
     def test_policies_loads(self):
         action = 'identity:list_projects'
-        target = {'user_id': uuid.uuid4().hex,
-                  'user.domain_id': uuid.uuid4().hex,
-                  'group.domain_id': uuid.uuid4().hex,
-                  'project.domain_id': uuid.uuid4().hex,
-                  'project_id': uuid.uuid4().hex,
-                  'domain_id': uuid.uuid4().hex}
-        credentials = {'username': uuid.uuid4().hex, 'token': uuid.uuid4().hex,
-                       'project_name': None, 'user_id': uuid.uuid4().hex,
+        target = {'user_id': uuidutils.generate_uuid(dashed=False),
+                  'user.domain_id': uuidutils.generate_uuid(dashed=False),
+                  'group.domain_id': uuidutils.generate_uuid(dashed=False),
+                  'project.domain_id': uuidutils.generate_uuid(dashed=False),
+                  'project_id': uuidutils.generate_uuid(dashed=False),
+                  'domain_id': uuidutils.generate_uuid(dashed=False)}
+        credentials = {'username': uuidutils.generate_uuid(dashed=False),
+                       'token': uuidutils.generate_uuid(dashed=False),
+                       'project_name': None,
+                       'user_id': uuidutils.generate_uuid(dashed=False),
                        'roles': [u'admin'], 'is_admin': True,
                        'is_admin_project': True, 'project_id': None,
-                       'domain_id': uuid.uuid4().hex}
+                       'domain_id': uuidutils.generate_uuid(dashed=False)}
 
         # The enforcer is setup behind the scenes and registers the in code
         # default policies.

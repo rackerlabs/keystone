@@ -12,8 +12,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+from oslo_utils import uuidutils
 from six.moves import http_client
-import uuid
 
 from keystone.common import provider_api
 from keystone.common.validation import validators
@@ -92,7 +92,7 @@ class RegisteredLimitsTestCase(test_v3.RestfulTestCase):
         self.region_id2 = self.region2['id']
 
         service_ref = {'service': {
-            'name': uuid.uuid4().hex,
+            'name': uuidutils.generate_uuid(dashed=False),
             'enabled': True,
             'type': 'type2'}}
         response = self.post('/services', body=service_ref)
@@ -262,7 +262,7 @@ class RegisteredLimitsTestCase(test_v3.RestfulTestCase):
             'default_limit': 5
         }
         self.patch(
-            '/registered_limits/%s' % uuid.uuid4().hex,
+            '/registered_limits/%s' % uuidutils.generate_uuid(dashed=False),
             body={'registered_limit': update_ref},
             expected_status=http_client.NOT_FOUND)
 
@@ -453,7 +453,7 @@ class LimitsTestCase(test_v3.RestfulTestCase):
         self.region_id2 = self.region2['id']
 
         service_ref = {'service': {
-            'name': uuid.uuid4().hex,
+            'name': uuidutils.generate_uuid(dashed=False),
             'enabled': True,
             'type': 'type2'}}
         response = self.post('/services', body=service_ref)
@@ -645,7 +645,7 @@ class LimitsTestCase(test_v3.RestfulTestCase):
             'resource_limit': 5
         }
         self.patch(
-            '/limits/%s' % uuid.uuid4().hex,
+            '/limits/%s' % uuidutils.generate_uuid(dashed=False),
             body={'limit': update_ref},
             expected_status=http_client.NOT_FOUND)
 

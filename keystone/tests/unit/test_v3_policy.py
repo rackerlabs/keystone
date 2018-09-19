@@ -13,8 +13,8 @@
 #    under the License.
 
 import json
-import uuid
 
+from oslo_utils import uuidutils
 from six.moves import http_client
 
 from keystone.common import provider_api
@@ -60,7 +60,8 @@ class PolicyTestCase(test_v3.RestfulTestCase):
 
     def test_update_policy(self):
         """Call ``PATCH /policies/{policy_id}``."""
-        self.policy['blob'] = json.dumps({'data': uuid.uuid4().hex, })
+        self.policy['blob'] = json.dumps({
+            'data': uuidutils.generate_uuid(dashed=False), })
         r = self.patch(
             '/policies/%(policy_id)s' % {'policy_id': self.policy_id},
             body={'policy': self.policy})

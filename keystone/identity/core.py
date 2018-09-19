@@ -20,10 +20,10 @@ import itertools
 import operator
 import os
 import threading
-import uuid
 
 from oslo_config import cfg
 from oslo_log import log
+from oslo_utils import uuidutils
 from pycadf import reason
 
 from keystone import assignment  # TODO(lbragstad): Decouple this dependency
@@ -952,7 +952,7 @@ class Manager(manager.Manager):
         # Generate a local ID - in the future this might become a function of
         # the underlying driver so that it could conform to rules set down by
         # that particular driver type.
-        user['id'] = uuid.uuid4().hex
+        user['id'] = uuidutils.generate_uuid(dashed=False)
         ref = driver.create_user(user['id'], user)
         notifications.Audit.created(self._USER, user['id'], initiator)
         return self._set_domain_id_and_mapping(
@@ -1172,7 +1172,7 @@ class Manager(manager.Manager):
         # Generate a local ID - in the future this might become a function of
         # the underlying driver so that it could conform to rules set down by
         # that particular driver type.
-        group['id'] = uuid.uuid4().hex
+        group['id'] = uuidutils.generate_uuid(dashed=False)
         group['name'] = clean.group_name(group['name'])
         ref = driver.create_group(group['id'], group)
 
