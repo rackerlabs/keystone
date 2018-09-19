@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_87f9ed4e",
+        "filename": ".zuul.yaml",
+        "patchSetId": 84
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 22348
+      },
+      "writtenOn": "2018-09-19T20:33:43Z",
+      "side": 1,
+      "message": "expected a list for dictionary value @ data[\u0027templates\u0027]",
+      "range": {
+        "startLine": 148,
+        "startChar": 2,
+        "endLine": 257,
+        "endChar": 0
+      },
+      "revId": "64d7f4556c2ed634a7fb4739520503d8b8325d9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
