@@ -14,16 +14,16 @@
 
 # NOTE(dolph): please try to avoid additional fixtures if possible; test suite
 #              performance may be negatively affected.
-import uuid
+from oslo_utils import uuidutils
 
-BAR_TENANT_ID = uuid.uuid4().hex
-BAZ_TENANT_ID = uuid.uuid4().hex
-MTU_TENANT_ID = uuid.uuid4().hex
-SERVICE_TENANT_ID = uuid.uuid4().hex
+BAR_TENANT_ID = uuidutils.generate_uuid(dashed=False)
+BAZ_TENANT_ID = uuidutils.generate_uuid(dashed=False)
+MTU_TENANT_ID = uuidutils.generate_uuid(dashed=False)
+SERVICE_TENANT_ID = uuidutils.generate_uuid(dashed=False)
 DEFAULT_DOMAIN_ID = 'default'
-ADMIN_ROLE_ID = uuid.uuid4().hex
-MEMBER_ROLE_ID = uuid.uuid4().hex
-OTHER_ROLE_ID = uuid.uuid4().hex
+ADMIN_ROLE_ID = uuidutils.generate_uuid(dashed=False)
+MEMBER_ROLE_ID = uuidutils.generate_uuid(dashed=False)
+OTHER_ROLE_ID = uuidutils.generate_uuid(dashed=False)
 
 TENANTS = [
     {
@@ -69,7 +69,7 @@ TENANTS = [
 USERS = [
     # NOTE(morganfainberg): Admin user for replacing admin_token_auth
     {
-        'id': uuid.uuid4().hex,
+        'id': uuidutils.generate_uuid(dashed=False),
         'name': 'req_admin',
         'domain_id': DEFAULT_DOMAIN_ID,
         'password': 'password',
@@ -78,7 +78,7 @@ USERS = [
         'options': {},
     },
     {
-        'id': uuid.uuid4().hex,
+        'id': uuidutils.generate_uuid(dashed=False),
         'name': 'foo',
         'domain_id': DEFAULT_DOMAIN_ID,
         'password': 'foo2',
@@ -87,7 +87,7 @@ USERS = [
         'email': 'foo@bar.com',
         'options': {},
     }, {
-        'id': uuid.uuid4().hex,
+        'id': uuidutils.generate_uuid(dashed=False),
         'name': 'two',
         'domain_id': DEFAULT_DOMAIN_ID,
         'password': 'two2',
@@ -97,7 +97,7 @@ USERS = [
         'email': 'two@three.com',
         'options': {},
     }, {
-        'id': uuid.uuid4().hex,
+        'id': uuidutils.generate_uuid(dashed=False),
         'name': 'badguy',
         'domain_id': DEFAULT_DOMAIN_ID,
         'password': 'bad',
@@ -107,7 +107,7 @@ USERS = [
         'email': 'bad@guy.com',
         'options': {},
     }, {
-        'id': uuid.uuid4().hex,
+        'id': uuidutils.generate_uuid(dashed=False),
         'name': 'sna',
         'domain_id': DEFAULT_DOMAIN_ID,
         'password': 'snafu',
@@ -136,15 +136,15 @@ ROLES = [
         'name': 'other',
         'domain_id': None,
     }, {
-        'id': uuid.uuid4().hex,
+        'id': uuidutils.generate_uuid(dashed=False),
         'name': 'browser',
         'domain_id': None,
     }, {
-        'id': uuid.uuid4().hex,
+        'id': uuidutils.generate_uuid(dashed=False),
         'name': 'writer',
         'domain_id': None,
     }, {
-        'id': uuid.uuid4().hex,
+        'id': uuidutils.generate_uuid(dashed=False),
         'name': 'service',
         'domain_id': None,
     }
@@ -172,7 +172,7 @@ DOMAINS = [{'description':
             'id': DEFAULT_DOMAIN_ID,
             'name': u'Default'}]
 
-SERVICES = [{'id': uuid.uuid4().hex,
+SERVICES = [{'id': uuidutils.generate_uuid(dashed=False),
              'type': 'type_one',
              'enabled': True,
              'extra': {'description': 'This is a service for test.',

@@ -14,8 +14,8 @@
 
 import functools
 import os
+from oslo_utils import uuidutils
 import time
-import uuid
 
 import six
 from testtools import testcase
@@ -46,7 +46,7 @@ def timezone(func):
 
 def new_uuid():
     """Return a string UUID."""
-    return uuid.uuid4().hex
+    return uuidutils.generate_uuid(dashed=False)
 
 
 def wip(message, expected_exception=Exception, bug=None):
