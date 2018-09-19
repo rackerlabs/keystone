@@ -11,8 +11,8 @@
 # under the License.
 
 import datetime
+from oslo_utils import uuidutils
 from testtools import matchers
-import uuid
 
 from six.moves import http_client
 
@@ -36,7 +36,7 @@ class ApplicationCredentialTestCase(test_v3.RestfulTestCase):
                                    methods='password,application_credential')
 
     def _app_cred_body(self, roles=None, name=None, expires=None, secret=None):
-        name = name or uuid.uuid4().hex
+        name = name or uuidutils.generate_uuid(dashed=False)
         description = 'Credential for backups'
         app_cred_data = {
             'name': name,
@@ -90,7 +90,7 @@ class ApplicationCredentialTestCase(test_v3.RestfulTestCase):
                   expected_status=http_client.FORBIDDEN)
 
     def test_create_application_credential_bad_role(self):
-        roles = [{'id': uuid.uuid4().hex}]
+        roles = [{'id': uuidutils.generate_uuid(dashed=False)}]
         app_cred_body = self._app_cred_body(roles=roles)
         self.post('/users/%s/application_credentials' % self.user_id,
                   body=app_cred_body,
@@ -229,11 +229,13 @@ class ApplicationCredentialTestCase(test_v3.RestfulTestCase):
         self.assertDictEqual(resp.json, expected_response)
 
     def test_get_head_application_credential_not_found(self):
-        self.head(MEMBER_PATH_FMT % {'user_id': self.user_id,
-                                     'app_cred_id': uuid.uuid4().hex},
+        self.head(MEMBER_PATH_FMT %
+                  {'user_id': self.user_id,
+                   'app_cred_id': uuidutils.generate_uuid(dashed=False)},
                   expected_status=http_client.NOT_FOUND)
-        self.get(MEMBER_PATH_FMT % {'user_id': self.user_id,
-                                    'app_cred_id': uuid.uuid4().hex},
+        self.get(MEMBER_PATH_FMT %
+                 {'user_id': self.user_id,
+                  'app_cred_id': uuidutils.generate_uuid(dashed=False)},
                  expected_status=http_client.NOT_FOUND)
 
     def test_delete_application_credential(self):
@@ -248,8 +250,9 @@ class ApplicationCredentialTestCase(test_v3.RestfulTestCase):
                     expected_status=http_client.NO_CONTENT)
 
     def test_delete_application_credential_not_found(self):
-        self.delete(MEMBER_PATH_FMT % {'user_id': self.user_id,
-                                       'app_cred_id': uuid.uuid4().hex},
+        self.delete(MEMBER_PATH_FMT %
+                    {'user_id': self.user_id,
+                     'app_cred_id': uuidutils.generate_uuid(dashed=False)},
                     expected_status=http_client.NOT_FOUND)
 
     def test_delete_application_credential_with_application_credential(self):

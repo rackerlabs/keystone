@@ -12,11 +12,11 @@
 
 import datetime
 import mock
-import uuid
 
 import freezegun
 from oslo_db import exception as oslo_db_exception
 from oslo_utils import timeutils
+from oslo_utils import uuidutils
 import six
 from six.moves import http_client
 from testtools import matchers
@@ -78,7 +78,7 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         self.assertThat(links['self'], matchers.EndsWith(revoked_list_url))
 
     def test_revoked_token_in_list(self):
-        audit_id = uuid.uuid4().hex
+        audit_id = uuidutils.generate_uuid(dashed=False)
         sample = self._blank_event()
         sample['audit_id'] = six.text_type(audit_id)
         before_time = timeutils.utcnow().replace(microsecond=0)
@@ -89,7 +89,7 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         self.assertReportedEventMatchesRecorded(events[0], sample, before_time)
 
     def test_disabled_project_in_list(self):
-        project_id = uuid.uuid4().hex
+        project_id = uuidutils.generate_uuid(dashed=False)
         sample = dict()
         sample['project_id'] = six.text_type(project_id)
         before_time = timeutils.utcnow().replace(microsecond=0)
@@ -102,7 +102,7 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         self.assertReportedEventMatchesRecorded(events[0], sample, before_time)
 
     def test_disabled_domain_in_list(self):
-        domain_id = uuid.uuid4().hex
+        domain_id = uuidutils.generate_uuid(dashed=False)
         sample = dict()
         sample['domain_id'] = six.text_type(domain_id)
         before_time = timeutils.utcnow().replace(microsecond=0)
@@ -124,7 +124,7 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         self.assertEqual(0, len(events))
 
     def test_since_future_time_no_events(self):
-        domain_id = uuid.uuid4().hex
+        domain_id = uuidutils.generate_uuid(dashed=False)
         sample = dict()
         sample['domain_id'] = six.text_type(domain_id)
 
@@ -157,7 +157,7 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
                                       events[0]['revoked_at'])
 
     def test_access_token_id_not_in_event(self):
-        ref = {'description': uuid.uuid4().hex}
+        ref = {'description': uuidutils.generate_uuid(dashed=False)}
         resp = self.post('/OS-OAUTH1/consumers', body={'consumer': ref})
         consumer_id = resp.result['consumer']['id']
         PROVIDERS.oauth_api.delete_consumer(consumer_id)
@@ -198,7 +198,7 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
 
         try:
             PROVIDERS.revoke_api.revoke(revoke_model.RevokeEvent(
-                user_id=uuid.uuid4().hex))
+                user_id=uuidutils.generate_uuid(dashed=False)))
         finally:
             if side_effect.patched:
                 patcher.stop()

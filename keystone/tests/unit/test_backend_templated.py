@@ -12,9 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
-
 import mock
+from oslo_utils import uuidutils
 from six.moves import zip
 
 from keystone.catalog.backends import base as catalog_base
@@ -97,8 +96,8 @@ class TestTemplatedCatalog(unit.TestCase, catalog_tests.CatalogTests):
             self.assertItemsEqual(expected_endpoints, observed_endpoints)
 
     def test_get_v3_catalog(self):
-        user_id = uuid.uuid4().hex
-        project_id = uuid.uuid4().hex
+        user_id = uuidutils.generate_uuid(dashed=False)
+        project_id = uuidutils.generate_uuid(dashed=False)
         catalog_ref = PROVIDERS.catalog_api.get_v3_catalog(user_id, project_id)
         exp_catalog = [
             {'endpoints': [
@@ -130,8 +129,8 @@ class TestTemplatedCatalog(unit.TestCase, catalog_tests.CatalogTests):
         self.assert_catalogs_equal(exp_catalog, catalog_ref)
 
     def test_get_multi_region_v3_catalog(self):
-        user_id = uuid.uuid4().hex
-        project_id = uuid.uuid4().hex
+        user_id = uuidutils.generate_uuid(dashed=False)
+        project_id = uuidutils.generate_uuid(dashed=False)
 
         catalog_api = PROVIDERS.catalog_api
 
@@ -188,7 +187,7 @@ class TestTemplatedCatalog(unit.TestCase, catalog_tests.CatalogTests):
         self.assert_catalogs_equal(exp_catalog, catalog_ref)
 
     def test_get_catalog_ignores_endpoints_with_invalid_urls(self):
-        user_id = uuid.uuid4().hex
+        user_id = uuidutils.generate_uuid(dashed=False)
         project_id = None
         # If the URL has no 'project_id' to substitute, we will skip the
         # endpoint which contains this kind of URL.
@@ -323,16 +322,16 @@ class TestTemplatedCatalog(unit.TestCase, catalog_tests.CatalogTests):
         # Deleting endpoint group association is not supported by the templated
         # driver, but it should be silent about it and not raise an error.
         PROVIDERS.catalog_api.delete_endpoint_group_association_by_project(
-            uuid.uuid4().hex)
+            uuidutils.generate_uuid(dashed=False))
 
     def test_delete_association_by_endpoint(self):
         # Deleting endpoint association is not supported by the templated
         # driver, but it should be silent about it and not raise an error.
         PROVIDERS.catalog_api.delete_association_by_endpoint(
-            uuid.uuid4().hex)
+            uuidutils.generate_uuid(dashed=False))
 
     def test_delete_association_by_project(self):
         # Deleting endpoint association is not supported by the templated
         # driver, but it should be silent about it and not raise an error.
         PROVIDERS.catalog_api.delete_association_by_project(
-            uuid.uuid4().hex)
+            uuidutils.generate_uuid(dashed=False))

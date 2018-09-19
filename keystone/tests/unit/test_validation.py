@@ -14,6 +14,8 @@
 import copy
 import uuid
 
+from oslo_utils import uuidutils
+
 from keystone.application_credential import schema as app_cred_schema
 from keystone.assignment import schema as assignment_schema
 from keystone.catalog import schema as catalog_schema
@@ -268,7 +270,8 @@ class EntityValidationTestCase(unit.BaseTestCase):
 
     def test_create_entity_with_valid_id_strings(self):
         """Validate acceptable id strings."""
-        valid_id_strings = [str(uuid.uuid4()), uuid.uuid4().hex, 'default']
+        valid_id_strings = [uuidutils.generate_uuid(),
+                            uuidutils.generate_uuid(dashed=False), 'default']
         for valid_id in valid_id_strings:
             request_to_validate = {'name': self.resource_name,
                                    'id_string': valid_id}
@@ -422,31 +425,32 @@ class ProjectValidationTestCase(unit.BaseTestCase):
                               request_to_validate)
 
     def test_validate_project_create_with_tags(self):
-        request_to_validate = {'name': uuid.uuid4().hex,
+        request_to_validate = {'name': uuidutils.generate_uuid(dashed=False),
                                'tags': ['foo', 'bar']}
         self.create_project_validator.validate(request_to_validate)
 
     def test_validate_project_create_with_tags_invalid_char(self):
         invalid_chars = [',', '/', ',foo', 'foo/bar']
         for char in invalid_chars:
-            tag = uuid.uuid4().hex + char
-            request_to_validate = {'name': uuid.uuid4().hex,
-                                   'tags': ['foo', tag]}
+            tag = uuidutils.generate_uuid(dashed=False) + char
+            request_to_validate = {
+                'name': uuidutils.generate_uuid(dashed=False),
+                'tags': ['foo', tag]}
             self.assertRaises(exception.SchemaValidationError,
                               self.create_project_validator.validate,
                               request_to_validate)
 
     def test_validate_project_create_with_tag_name_too_long(self):
         invalid_name = 'a' * 256
-        request_to_validate = {'name': uuid.uuid4().hex,
+        request_to_validate = {'name': uuidutils.generate_uuid(dashed=False),
                                'tags': ['foo', invalid_name]}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_project_validator.validate,
                           request_to_validate)
 
     def test_validate_project_create_with_too_many_tags(self):
-        tags = [uuid.uuid4().hex for _ in range(81)]
-        request_to_validate = {'name': uuid.uuid4().hex,
+        tags = [uuidutils.generate_uuid(dashed=False) for _ in range(81)]
+        request_to_validate = {'name': uuidutils.generate_uuid(dashed=False),
                                'tags': tags}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_project_validator.validate,
@@ -458,8 +462,9 @@ class ProjectValidationTestCase(unit.BaseTestCase):
         request_to_validate = {'name': self.project_name,
                                'parent_id': None}
         self.create_project_validator.validate(request_to_validate)
-        request_to_validate = {'name': self.project_name,
-                               'parent_id': uuid.uuid4().hex}
+        request_to_validate = {
+            'name': self.project_name,
+            'parent_id': uuidutils.generate_uuid(dashed=False)}
         self.create_project_validator.validate(request_to_validate)
 
     def test_validate_project_request_with_invalid_parent_id_fails(self):
@@ -477,7 +482,8 @@ class ProjectValidationTestCase(unit.BaseTestCase):
 
     def test_validate_project_update_request(self):
         """Test that we validate a project update request."""
-        request_to_validate = {'domain_id': uuid.uuid4().hex}
+        request_to_validate = {
+            'domain_id': uuidutils.generate_uuid(dashed=False)}
         self.update_project_validator.validate(request_to_validate)
 
     def test_validate_project_update_request_with_no_parameters_fails(self):
@@ -504,31 +510,32 @@ class ProjectValidationTestCase(unit.BaseTestCase):
                               request_to_validate)
 
     def test_validate_project_update_with_tags(self):
-        request_to_validate = {'name': uuid.uuid4().hex,
+        request_to_validate = {'name': uuidutils.generate_uuid(dashed=False),
                                'tags': ['foo', 'bar']}
         self.update_project_validator.validate(request_to_validate)
 
     def test_validate_project_update_with_tags_invalid_char(self):
         invalid_chars = [',', '/']
         for char in invalid_chars:
-            tag = uuid.uuid4().hex + char
-            request_to_validate = {'name': uuid.uuid4().hex,
-                                   'tags': ['foo', tag]}
+            tag = uuidutils.generate_uuid(dashed=False) + char
+            request_to_validate = {
+                'name': uuidutils.generate_uuid(dashed=False),
+                'tags': ['foo', tag]}
             self.assertRaises(exception.SchemaValidationError,
                               self.update_project_validator.validate,
                               request_to_validate)
 
     def test_validate_project_update_with_tag_name_too_long(self):
         invalid_name = 'a' * 256
-        request_to_validate = {'name': uuid.uuid4().hex,
+        request_to_validate = {'name': uuidutils.generate_uuid(dashed=False),
                                'tags': ['foo', invalid_name]}
         self.assertRaises(exception.SchemaValidationError,
                           self.update_project_validator.validate,
                           request_to_validate)
 
     def test_validate_project_update_with_too_many_tags(self):
-        tags = [uuid.uuid4().hex for _ in range(81)]
-        request_to_validate = {'name': uuid.uuid4().hex,
+        tags = [uuidutils.generate_uuid(dashed=False) for _ in range(81)]
+        request_to_validate = {'name': uuidutils.generate_uuid(dashed=False),
                                'tags': tags}
         self.assertRaises(exception.SchemaValidationError,
                           self.update_project_validator.validate,
@@ -537,7 +544,7 @@ class ProjectValidationTestCase(unit.BaseTestCase):
     def test_validate_project_create_request_with_valid_domain_id(self):
         """Test that we validate `domain_id` in create project requests."""
         # domain_id is nullable
-        for domain_id in [None, uuid.uuid4().hex]:
+        for domain_id in [None, uuidutils.generate_uuid(dashed=False)]:
             request_to_validate = {'name': self.project_name,
                                    'domain_id': domain_id}
             self.create_project_validator.validate(request_to_validate)
@@ -624,31 +631,32 @@ class DomainValidationTestCase(unit.BaseTestCase):
                               request_to_validate)
 
     def test_validate_domain_create_with_tags(self):
-        request_to_validate = {'name': uuid.uuid4().hex,
+        request_to_validate = {'name': uuidutils.generate_uuid(dashed=False),
                                'tags': ['foo', 'bar']}
         self.create_domain_validator.validate(request_to_validate)
 
     def test_validate_domain_create_with_tags_invalid_char(self):
         invalid_chars = [',', '/']
         for char in invalid_chars:
-            tag = uuid.uuid4().hex + char
-            request_to_validate = {'name': uuid.uuid4().hex,
-                                   'tags': ['foo', tag]}
+            tag = uuidutils.generate_uuid(dashed=False) + char
+            request_to_validate = {
+                'name': uuidutils.generate_uuid(dashed=False),
+                'tags': ['foo', tag]}
             self.assertRaises(exception.SchemaValidationError,
                               self.create_domain_validator.validate,
                               request_to_validate)
 
     def test_validate_domain_create_with_tag_name_too_long(self):
         invalid_name = 'a' * 256
-        request_to_validate = {'name': uuid.uuid4().hex,
+        request_to_validate = {'name': uuidutils.generate_uuid(dashed=False),
                                'tags': ['foo', invalid_name]}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_domain_validator.validate,
                           request_to_validate)
 
     def test_validate_domain_create_with_too_many_tags(self):
-        tags = [uuid.uuid4().hex for _ in range(81)]
-        request_to_validate = {'name': uuid.uuid4().hex,
+        tags = [uuidutils.generate_uuid(dashed=False) for _ in range(81)]
+        request_to_validate = {'name': uuidutils.generate_uuid(dashed=False),
                                'tags': tags}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_domain_validator.validate,
@@ -656,7 +664,8 @@ class DomainValidationTestCase(unit.BaseTestCase):
 
     def test_validate_domain_update_request(self):
         """Test that we validate a domain update request."""
-        request_to_validate = {'domain_id': uuid.uuid4().hex}
+        request_to_validate = {
+            'domain_id': uuidutils.generate_uuid(dashed=False)}
         self.update_domain_validator.validate(request_to_validate)
 
     def test_validate_domain_update_request_with_no_parameters_fails(self):
@@ -683,31 +692,32 @@ class DomainValidationTestCase(unit.BaseTestCase):
                               request_to_validate)
 
     def test_validate_domain_update_with_tags(self):
-        request_to_validate = {'name': uuid.uuid4().hex,
+        request_to_validate = {'name': uuidutils.generate_uuid(dashed=False),
                                'tags': ['foo', 'bar']}
         self.update_domain_validator.validate(request_to_validate)
 
     def test_validate_domain_update_with_tags_invalid_char(self):
         invalid_chars = [',', '/']
         for char in invalid_chars:
-            tag = uuid.uuid4().hex + char
-            request_to_validate = {'name': uuid.uuid4().hex,
-                                   'tags': ['foo', tag]}
+            tag = uuidutils.generate_uuid(dashed=False) + char
+            request_to_validate = {
+                'name': uuidutils.generate_uuid(dashed=False),
+                'tags': ['foo', tag]}
             self.assertRaises(exception.SchemaValidationError,
                               self.update_domain_validator.validate,
                               request_to_validate)
 
     def test_validate_domain_update_with_tag_name_too_long(self):
         invalid_name = 'a' * 256
-        request_to_validate = {'name': uuid.uuid4().hex,
+        request_to_validate = {'name': uuidutils.generate_uuid(dashed=False),
                                'tags': ['foo', invalid_name]}
         self.assertRaises(exception.SchemaValidationError,
                           self.update_domain_validator.validate,
                           request_to_validate)
 
     def test_validate_domain_update_with_too_many_tags(self):
-        tags = [uuid.uuid4().hex for _ in range(81)]
-        request_to_validate = {'name': uuid.uuid4().hex,
+        tags = [uuidutils.generate_uuid(dashed=False) for _ in range(81)]
+        request_to_validate = {'name': uuidutils.generate_uuid(dashed=False),
                                'tags': tags}
         self.assertRaises(exception.SchemaValidationError,
                           self.update_domain_validator.validate,
@@ -879,16 +889,18 @@ class CredentialValidationTestCase(unit.BaseTestCase):
 
     def test_validate_credential_succeeds(self):
         """Test that we validate a credential request."""
-        request_to_validate = {'blob': 'some string',
-                               'project_id': uuid.uuid4().hex,
-                               'type': 'ec2',
-                               'user_id': uuid.uuid4().hex}
+        request_to_validate = {
+            'blob': 'some string',
+            'project_id': uuidutils.generate_uuid(dashed=False),
+            'type': 'ec2',
+            'user_id': uuidutils.generate_uuid(dashed=False)}
         self.create_credential_validator.validate(request_to_validate)
 
     def test_validate_credential_without_blob_fails(self):
         """Exception raised without `blob` in create request."""
-        request_to_validate = {'type': 'ec2',
-                               'user_id': uuid.uuid4().hex}
+        request_to_validate = {
+            'type': 'ec2',
+            'user_id': uuidutils.generate_uuid(dashed=False)}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_credential_validator.validate,
                           request_to_validate)
@@ -903,8 +915,9 @@ class CredentialValidationTestCase(unit.BaseTestCase):
 
     def test_validate_credential_without_type_fails(self):
         """Exception raised without `type` in create request."""
-        request_to_validate = {'blob': 'some credential blob',
-                               'user_id': uuid.uuid4().hex}
+        request_to_validate = {
+            'blob': 'some credential blob',
+            'user_id': uuidutils.generate_uuid(dashed=False)}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_credential_validator.validate,
                           request_to_validate)
@@ -915,22 +928,24 @@ class CredentialValidationTestCase(unit.BaseTestCase):
         Test that a SchemaValidationError is raised when type is ec2
         and no `project_id` is provided in create request.
         """
-        request_to_validate = {'blob': 'some credential blob',
-                               'type': 'ec2',
-                               'user_id': uuid.uuid4().hex}
+        request_to_validate = {
+            'blob': 'some credential blob',
+            'type': 'ec2',
+            'user_id': uuidutils.generate_uuid(dashed=False)}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_credential_validator.validate,
                           request_to_validate)
 
     def test_validate_credential_with_project_id_succeeds(self):
         """Test that credential request works for all types."""
-        cred_types = ['ec2', 'cert', uuid.uuid4().hex]
+        cred_types = ['ec2', 'cert', uuidutils.generate_uuid(dashed=False)]
 
         for c_type in cred_types:
-            request_to_validate = {'blob': 'some blob',
-                                   'project_id': uuid.uuid4().hex,
-                                   'type': c_type,
-                                   'user_id': uuid.uuid4().hex}
+            request_to_validate = {
+                'blob': 'some blob',
+                'project_id': uuidutils.generate_uuid(dashed=False),
+                'type': c_type,
+                'user_id': uuidutils.generate_uuid(dashed=False)}
             # Make sure an exception isn't raised
             self.create_credential_validator.validate(request_to_validate)
 
@@ -940,30 +955,33 @@ class CredentialValidationTestCase(unit.BaseTestCase):
         Test that create request without `project_id` succeeds for any
         non-ec2 credential.
         """
-        cred_types = ['cert', uuid.uuid4().hex]
+        cred_types = ['cert', uuidutils.generate_uuid(dashed=False)]
 
         for c_type in cred_types:
-            request_to_validate = {'blob': 'some blob',
-                                   'type': c_type,
-                                   'user_id': uuid.uuid4().hex}
+            request_to_validate = {
+                'blob': 'some blob',
+                'type': c_type,
+                'user_id': uuidutils.generate_uuid(dashed=False)}
             # Make sure an exception isn't raised
             self.create_credential_validator.validate(request_to_validate)
 
     def test_validate_credential_with_extra_parameters_succeeds(self):
         """Validate create request with extra parameters."""
-        request_to_validate = {'blob': 'some string',
-                               'extra': False,
-                               'project_id': uuid.uuid4().hex,
-                               'type': 'ec2',
-                               'user_id': uuid.uuid4().hex}
+        request_to_validate = {
+            'blob': 'some string',
+            'extra': False,
+            'project_id': uuidutils.generate_uuid(dashed=False),
+            'type': 'ec2',
+            'user_id': uuidutils.generate_uuid(dashed=False)}
         self.create_credential_validator.validate(request_to_validate)
 
     def test_validate_credential_update_succeeds(self):
         """Test that a credential request is properly validated."""
-        request_to_validate = {'blob': 'some string',
-                               'project_id': uuid.uuid4().hex,
-                               'type': 'ec2',
-                               'user_id': uuid.uuid4().hex}
+        request_to_validate = {
+            'blob': 'some string',
+            'project_id': uuidutils.generate_uuid(dashed=False),
+            'type': 'ec2',
+            'user_id': uuidutils.generate_uuid(dashed=False)}
         self.update_credential_validator.validate(request_to_validate)
 
     def test_validate_credential_update_without_parameters_fails(self):
@@ -975,11 +993,12 @@ class CredentialValidationTestCase(unit.BaseTestCase):
 
     def test_validate_credential_update_with_extra_parameters_succeeds(self):
         """Validate credential update with extra parameters."""
-        request_to_validate = {'blob': 'some string',
-                               'extra': False,
-                               'project_id': uuid.uuid4().hex,
-                               'type': 'ec2',
-                               'user_id': uuid.uuid4().hex}
+        request_to_validate = {
+            'blob': 'some string',
+            'extra': False,
+            'project_id': uuidutils.generate_uuid(dashed=False),
+            'type': 'ec2',
+            'user_id': uuidutils.generate_uuid(dashed=False)}
         self.update_credential_validator.validate(request_to_validate)
 
 
@@ -1012,9 +1031,10 @@ class RegionValidationTestCase(unit.BaseTestCase):
 
     def test_validate_region_create_with_uuid(self):
         """Test that we validate a region request with a UUID as the id."""
-        request_to_validate = {'id': uuid.uuid4().hex,
-                               'description': 'US East Region',
-                               'parent_region_id': uuid.uuid4().hex}
+        request_to_validate = {
+            'id': uuidutils.generate_uuid(dashed=False),
+            'description': 'US East Region',
+            'parent_region_id': uuidutils.generate_uuid(dashed=False)}
         self.create_region_validator.validate(request_to_validate)
 
     def test_validate_region_create_fails_with_invalid_region_id(self):
@@ -1027,7 +1047,8 @@ class RegionValidationTestCase(unit.BaseTestCase):
 
     def test_validate_region_create_succeeds_with_extra_parameters(self):
         """Validate create region request with extra values."""
-        request_to_validate = {'other_attr': uuid.uuid4().hex}
+        request_to_validate = {
+            'other_attr': uuidutils.generate_uuid(dashed=False)}
         self.create_region_validator.validate(request_to_validate)
 
     def test_validate_region_create_succeeds_with_no_parameters(self):
@@ -1044,7 +1065,8 @@ class RegionValidationTestCase(unit.BaseTestCase):
 
     def test_validate_region_update_succeeds_with_extra_parameters(self):
         """Validate extra attributes in the region update request."""
-        request_to_validate = {'other_attr': uuid.uuid4().hex}
+        request_to_validate = {
+            'other_attr': uuidutils.generate_uuid(dashed=False)}
         self.update_region_validator.validate(request_to_validate)
 
     def test_validate_region_update_fails_with_no_parameters(self):
@@ -1090,15 +1112,17 @@ class ServiceValidationTestCase(unit.BaseTestCase):
 
     def test_validate_service_create_succeeds_with_extra_parameters(self):
         """Test that extra parameters pass validation on create service."""
-        request_to_validate = {'other_attr': uuid.uuid4().hex,
-                               'type': uuid.uuid4().hex}
+        request_to_validate = {
+            'other_attr': uuidutils.generate_uuid(dashed=False),
+            'type': uuidutils.generate_uuid(dashed=False)}
         self.create_service_validator.validate(request_to_validate)
 
     def test_validate_service_create_succeeds_with_valid_enabled(self):
         """Validate boolean values as enabled values on service create."""
         for valid_enabled in _VALID_ENABLED_FORMATS:
-            request_to_validate = {'enabled': valid_enabled,
-                                   'type': uuid.uuid4().hex}
+            request_to_validate = {
+                'enabled': valid_enabled,
+                'type': uuidutils.generate_uuid(dashed=False)}
             self.create_service_validator.validate(request_to_validate)
 
     def test_validate_service_create_fails_with_invalid_enabled(self):
@@ -1108,8 +1132,9 @@ class ServiceValidationTestCase(unit.BaseTestCase):
         not a boolean value.
         """
         for invalid_enabled in _INVALID_ENABLED_FORMATS:
-            request_to_validate = {'enabled': invalid_enabled,
-                                   'type': uuid.uuid4().hex}
+            request_to_validate = {
+                'enabled': invalid_enabled,
+                'type': uuidutils.generate_uuid(dashed=False)}
             self.assertRaises(exception.SchemaValidationError,
                               self.create_service_validator.validate,
                               request_to_validate)
@@ -1163,7 +1188,8 @@ class ServiceValidationTestCase(unit.BaseTestCase):
 
     def test_validate_service_update_succeeds_with_extra_parameters(self):
         """Validate updating a service with extra parameters."""
-        request_to_validate = {'other_attr': uuid.uuid4().hex}
+        request_to_validate = {
+            'other_attr': uuidutils.generate_uuid(dashed=False)}
         self.update_service_validator.validate(request_to_validate)
 
     def test_validate_service_update_succeeds_with_valid_enabled(self):
@@ -1224,20 +1250,22 @@ class EndpointValidationTestCase(unit.BaseTestCase):
 
     def test_validate_endpoint_request_succeeds(self):
         """Test that we validate an endpoint request."""
-        request_to_validate = {'enabled': True,
-                               'interface': 'admin',
-                               'region_id': uuid.uuid4().hex,
-                               'service_id': uuid.uuid4().hex,
-                               'url': 'https://service.example.com:5000/'}
+        request_to_validate = {
+            'enabled': True,
+            'interface': 'admin',
+            'region_id': uuidutils.generate_uuid(dashed=False),
+            'service_id': uuidutils.generate_uuid(dashed=False),
+            'url': 'https://service.example.com:5000/'}
         self.create_endpoint_validator.validate(request_to_validate)
 
     def test_validate_endpoint_create_succeeds_with_required_parameters(self):
         """Validate an endpoint request with only the required parameters."""
         # According to the Identity V3 API endpoint creation requires
         # 'service_id', 'interface', and 'url'
-        request_to_validate = {'service_id': uuid.uuid4().hex,
-                               'interface': 'public',
-                               'url': 'https://service.example.com:5000/'}
+        request_to_validate = {
+            'service_id': uuidutils.generate_uuid(dashed=False),
+            'interface': 'public',
+            'url': 'https://service.example.com:5000/'}
         self.create_endpoint_validator.validate(request_to_validate)
 
     def test_validate_endpoint_create_succeeds_with_valid_enabled(self):
@@ -1246,29 +1274,32 @@ class EndpointValidationTestCase(unit.BaseTestCase):
         Validate boolean values as `enabled` in endpoint create requests.
         """
         for valid_enabled in _VALID_ENABLED_FORMATS:
-            request_to_validate = {'enabled': valid_enabled,
-                                   'service_id': uuid.uuid4().hex,
-                                   'interface': 'public',
-                                   'url': 'https://service.example.com:5000/'}
+            request_to_validate = {
+                'enabled': valid_enabled,
+                'service_id': uuidutils.generate_uuid(dashed=False),
+                'interface': 'public',
+                'url': 'https://service.example.com:5000/'}
             self.create_endpoint_validator.validate(request_to_validate)
 
     def test_validate_create_endpoint_fails_with_invalid_enabled(self):
         """Exception raised when boolean-like values as `enabled`."""
         for invalid_enabled in _INVALID_ENABLED_FORMATS:
-            request_to_validate = {'enabled': invalid_enabled,
-                                   'service_id': uuid.uuid4().hex,
-                                   'interface': 'public',
-                                   'url': 'https://service.example.com:5000/'}
+            request_to_validate = {
+                'enabled': invalid_enabled,
+                'service_id': uuidutils.generate_uuid(dashed=False),
+                'interface': 'public',
+                'url': 'https://service.example.com:5000/'}
             self.assertRaises(exception.SchemaValidationError,
                               self.create_endpoint_validator.validate,
                               request_to_validate)
 
     def test_validate_endpoint_create_succeeds_with_extra_parameters(self):
         """Test that extra parameters pass validation on create endpoint."""
-        request_to_validate = {'other_attr': uuid.uuid4().hex,
-                               'service_id': uuid.uuid4().hex,
-                               'interface': 'public',
-                               'url': 'https://service.example.com:5000/'}
+        request_to_validate = {
+            'other_attr': uuidutils.generate_uuid(dashed=False),
+            'service_id': uuidutils.generate_uuid(dashed=False),
+            'interface': 'public',
+            'url': 'https://service.example.com:5000/'}
         self.create_endpoint_validator.validate(request_to_validate)
 
     def test_validate_endpoint_create_fails_without_service_id(self):
@@ -1281,32 +1312,36 @@ class EndpointValidationTestCase(unit.BaseTestCase):
 
     def test_validate_endpoint_create_fails_without_interface(self):
         """Exception raised when `interface` isn't in endpoint request."""
-        request_to_validate = {'service_id': uuid.uuid4().hex,
-                               'url': 'https://service.example.com:5000/'}
+        request_to_validate = {
+            'service_id': uuidutils.generate_uuid(dashed=False),
+            'url': 'https://service.example.com:5000/'}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_endpoint_validator.validate,
                           request_to_validate)
 
     def test_validate_endpoint_create_fails_without_url(self):
         """Exception raised when `url` isn't in endpoint request."""
-        request_to_validate = {'service_id': uuid.uuid4().hex,
-                               'interface': 'public'}
+        request_to_validate = {
+            'service_id': uuidutils.generate_uuid(dashed=False),
+            'interface': 'public'}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_endpoint_validator.validate,
                           request_to_validate)
 
     def test_validate_endpoint_create_succeeds_with_url(self):
         """Validate `url` attribute in endpoint create request."""
-        request_to_validate = {'service_id': uuid.uuid4().hex,
-                               'interface': 'public'}
+        request_to_validate = {
+            'service_id': uuidutils.generate_uuid(dashed=False),
+            'interface': 'public'}
         for url in _VALID_URLS:
             request_to_validate['url'] = url
             self.create_endpoint_validator.validate(request_to_validate)
 
     def test_validate_endpoint_create_fails_with_invalid_url(self):
         """Exception raised when passing invalid `url` in request."""
-        request_to_validate = {'service_id': uuid.uuid4().hex,
-                               'interface': 'public'}
+        request_to_validate = {
+            'service_id': uuidutils.generate_uuid(dashed=False),
+            'interface': 'public'}
         for url in _INVALID_URLS:
             request_to_validate['url'] = url
             self.assertRaises(exception.SchemaValidationError,
@@ -1315,28 +1350,31 @@ class EndpointValidationTestCase(unit.BaseTestCase):
 
     def test_validate_endpoint_create_fails_with_invalid_interface(self):
         """Exception raised with invalid `interface`."""
-        request_to_validate = {'interface': uuid.uuid4().hex,
-                               'service_id': uuid.uuid4().hex,
-                               'url': 'https://service.example.com:5000/'}
+        request_to_validate = {
+            'interface': uuidutils.generate_uuid(dashed=False),
+            'service_id': uuidutils.generate_uuid(dashed=False),
+            'url': 'https://service.example.com:5000/'}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_endpoint_validator.validate,
                           request_to_validate)
 
     def test_validate_endpoint_create_fails_with_invalid_region_id(self):
         """Exception raised when passing invalid `region(_id)` in request."""
-        request_to_validate = {'interface': 'admin',
-                               'region_id': 1234,
-                               'service_id': uuid.uuid4().hex,
-                               'url': 'https://service.example.com:5000/'}
+        request_to_validate = {
+            'interface': 'admin',
+            'region_id': 1234,
+            'service_id': uuidutils.generate_uuid(dashed=False),
+            'url': 'https://service.example.com:5000/'}
 
         self.assertRaises(exception.SchemaValidationError,
                           self.create_endpoint_validator.validate,
                           request_to_validate)
 
-        request_to_validate = {'interface': 'admin',
-                               'region': 1234,
-                               'service_id': uuid.uuid4().hex,
-                               'url': 'https://service.example.com:5000/'}
+        request_to_validate = {
+            'interface': 'admin',
+            'region': 1234,
+            'service_id': uuidutils.generate_uuid(dashed=False),
+            'url': 'https://service.example.com:5000/'}
 
         self.assertRaises(exception.SchemaValidationError,
                           self.create_endpoint_validator.validate,
@@ -1358,20 +1396,22 @@ class EndpointValidationTestCase(unit.BaseTestCase):
 
     def test_validate_endpoint_update_fails_with_invalid_interface(self):
         """Exception raised when invalid `interface` on endpoint update."""
-        request_to_validate = {'interface': uuid.uuid4().hex,
-                               'service_id': uuid.uuid4().hex,
-                               'url': 'https://service.example.com:5000/'}
+        request_to_validate = {
+            'interface': uuidutils.generate_uuid(dashed=False),
+            'service_id': uuidutils.generate_uuid(dashed=False),
+            'url': 'https://service.example.com:5000/'}
         self.assertRaises(exception.SchemaValidationError,
                           self.update_endpoint_validator.validate,
                           request_to_validate)
 
     def test_validate_endpoint_update_request_succeeds(self):
         """Test that we validate an endpoint update request."""
-        request_to_validate = {'enabled': True,
-                               'interface': 'admin',
-                               'region_id': uuid.uuid4().hex,
-                               'service_id': uuid.uuid4().hex,
-                               'url': 'https://service.example.com:5000/'}
+        request_to_validate = {
+            'enabled': True,
+            'interface': 'admin',
+            'region_id': uuidutils.generate_uuid(dashed=False),
+            'service_id': uuidutils.generate_uuid(dashed=False),
+            'url': 'https://service.example.com:5000/'}
         self.update_endpoint_validator.validate(request_to_validate)
 
     def test_validate_endpoint_update_fails_with_no_parameters(self):
@@ -1383,26 +1423,29 @@ class EndpointValidationTestCase(unit.BaseTestCase):
 
     def test_validate_endpoint_update_succeeds_with_extra_parameters(self):
         """Test that extra parameters pass validation on update endpoint."""
-        request_to_validate = {'enabled': True,
-                               'interface': 'admin',
-                               'region_id': uuid.uuid4().hex,
-                               'service_id': uuid.uuid4().hex,
-                               'url': 'https://service.example.com:5000/',
-                               'other_attr': uuid.uuid4().hex}
+        request_to_validate = {
+            'enabled': True,
+            'interface': 'admin',
+            'region_id': uuidutils.generate_uuid(dashed=False),
+            'service_id': uuidutils.generate_uuid(dashed=False),
+            'url': 'https://service.example.com:5000/',
+            'other_attr': uuidutils.generate_uuid(dashed=False)}
         self.update_endpoint_validator.validate(request_to_validate)
 
     def test_validate_endpoint_update_succeeds_with_url(self):
         """Validate `url` attribute in endpoint update request."""
-        request_to_validate = {'service_id': uuid.uuid4().hex,
-                               'interface': 'public'}
+        request_to_validate = {
+            'service_id': uuidutils.generate_uuid(dashed=False),
+            'interface': 'public'}
         for url in _VALID_URLS:
             request_to_validate['url'] = url
             self.update_endpoint_validator.validate(request_to_validate)
 
     def test_validate_endpoint_update_fails_with_invalid_url(self):
         """Exception raised when passing invalid `url` in request."""
-        request_to_validate = {'service_id': uuid.uuid4().hex,
-                               'interface': 'public'}
+        request_to_validate = {
+            'service_id': uuidutils.generate_uuid(dashed=False),
+            'interface': 'public'}
         for url in _INVALID_URLS:
             request_to_validate['url'] = url
             self.assertRaises(exception.SchemaValidationError,
@@ -1411,19 +1454,21 @@ class EndpointValidationTestCase(unit.BaseTestCase):
 
     def test_validate_endpoint_update_fails_with_invalid_region_id(self):
         """Exception raised when passing invalid `region(_id)` in request."""
-        request_to_validate = {'interface': 'admin',
-                               'region_id': 1234,
-                               'service_id': uuid.uuid4().hex,
-                               'url': 'https://service.example.com:5000/'}
+        request_to_validate = {
+            'interface': 'admin',
+            'region_id': 1234,
+            'service_id': uuidutils.generate_uuid(dashed=False),
+            'url': 'https://service.example.com:5000/'}
 
         self.assertRaises(exception.SchemaValidationError,
                           self.update_endpoint_validator.validate,
                           request_to_validate)
 
-        request_to_validate = {'interface': 'admin',
-                               'region': 1234,
-                               'service_id': uuid.uuid4().hex,
-                               'url': 'https://service.example.com:5000/'}
+        request_to_validate = {
+            'interface': 'admin',
+            'region': 1234,
+            'service_id': uuidutils.generate_uuid(dashed=False),
+            'url': 'https://service.example.com:5000/'}
 
         self.assertRaises(exception.SchemaValidationError,
                           self.update_endpoint_validator.validate,
@@ -1538,7 +1583,7 @@ class TrustValidationTestCase(unit.BaseTestCase):
     """Test for V3 Trust API validation."""
 
     _valid_roles = [{'name': 'member'},
-                    {'id': uuid.uuid4().hex},
+                    {'id': uuidutils.generate_uuid(dashed=False)},
                     {'id': str(uuid.uuid4())},
                     {'name': '_member_'}]
     _invalid_roles = [False, True, 123, None]
@@ -1551,98 +1596,109 @@ class TrustValidationTestCase(unit.BaseTestCase):
 
     def test_validate_trust_succeeds(self):
         """Test that we can validate a trust request."""
-        request_to_validate = {'trustor_user_id': uuid.uuid4().hex,
-                               'trustee_user_id': uuid.uuid4().hex,
-                               'impersonation': False}
+        request_to_validate = {
+            'trustor_user_id': uuidutils.generate_uuid(dashed=False),
+            'trustee_user_id': uuidutils.generate_uuid(dashed=False),
+            'impersonation': False}
         self.create_trust_validator.validate(request_to_validate)
 
     def test_validate_trust_with_all_parameters_succeeds(self):
         """Test that we can validate a trust request with all parameters."""
-        request_to_validate = {'trustor_user_id': uuid.uuid4().hex,
-                               'trustee_user_id': uuid.uuid4().hex,
-                               'impersonation': False,
-                               'project_id': uuid.uuid4().hex,
-                               'roles': [{'id': uuid.uuid4().hex},
-                                         {'id': uuid.uuid4().hex}],
-                               'expires_at': 'some timestamp',
-                               'remaining_uses': 2}
+        request_to_validate = {
+            'trustor_user_id': uuidutils.generate_uuid(dashed=False),
+            'trustee_user_id': uuidutils.generate_uuid(dashed=False),
+            'impersonation': False,
+            'project_id': uuidutils.generate_uuid(dashed=False),
+            'roles': [{'id': uuidutils.generate_uuid(dashed=False)},
+                      {'id': uuidutils.generate_uuid(dashed=False)}],
+            'expires_at': 'some timestamp',
+            'remaining_uses': 2}
         self.create_trust_validator.validate(request_to_validate)
 
     def test_validate_trust_without_trustor_id_fails(self):
         """Validate trust request fails without `trustor_id`."""
-        request_to_validate = {'trustee_user_id': uuid.uuid4().hex,
-                               'impersonation': False}
+        request_to_validate = {
+            'trustee_user_id': uuidutils.generate_uuid(dashed=False),
+            'impersonation': False}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_trust_validator.validate,
                           request_to_validate)
 
     def test_validate_trust_without_trustee_id_fails(self):
         """Validate trust request fails without `trustee_id`."""
-        request_to_validate = {'trusor_user_id': uuid.uuid4().hex,
-                               'impersonation': False}
+        request_to_validate = {
+            'trusor_user_id': uuidutils.generate_uuid(dashed=False),
+            'impersonation': False}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_trust_validator.validate,
                           request_to_validate)
 
     def test_validate_trust_without_impersonation_fails(self):
         """Validate trust request fails without `impersonation`."""
-        request_to_validate = {'trustee_user_id': uuid.uuid4().hex,
-                               'trustor_user_id': uuid.uuid4().hex}
+        request_to_validate = {
+            'trustee_user_id': uuidutils.generate_uuid(dashed=False),
+            'trustor_user_id': uuidutils.generate_uuid(dashed=False)}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_trust_validator.validate,
                           request_to_validate)
 
     def test_validate_trust_with_extra_parameters_succeeds(self):
         """Test that we can validate a trust request with extra parameters."""
-        request_to_validate = {'trustor_user_id': uuid.uuid4().hex,
-                               'trustee_user_id': uuid.uuid4().hex,
-                               'impersonation': False,
-                               'project_id': uuid.uuid4().hex,
-                               'roles': [{'id': uuid.uuid4().hex},
-                                         {'id': uuid.uuid4().hex}],
-                               'expires_at': 'some timestamp',
-                               'remaining_uses': 2,
-                               'extra': 'something extra!'}
+        request_to_validate = {
+            'trustor_user_id': uuidutils.generate_uuid(dashed=False),
+            'trustee_user_id': uuidutils.generate_uuid(dashed=False),
+            'impersonation': False,
+            'project_id': uuidutils.generate_uuid(dashed=False),
+            'roles': [{'id': uuidutils.generate_uuid(dashed=False)},
+                      {'id': uuidutils.generate_uuid(dashed=False)}],
+            'expires_at': 'some timestamp',
+            'remaining_uses': 2,
+            'extra': 'something extra!'}
         self.create_trust_validator.validate(request_to_validate)
 
     def test_validate_trust_with_invalid_impersonation_fails(self):
         """Validate trust request with invalid `impersonation` fails."""
-        request_to_validate = {'trustor_user_id': uuid.uuid4().hex,
-                               'trustee_user_id': uuid.uuid4().hex,
-                               'impersonation': 2}
+        request_to_validate = {
+            'trustor_user_id': uuidutils.generate_uuid(dashed=False),
+            'trustee_user_id': uuidutils.generate_uuid(dashed=False),
+            'impersonation': 2}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_trust_validator.validate,
                           request_to_validate)
 
     def test_validate_trust_with_null_remaining_uses_succeeds(self):
         """Validate trust request with null `remaining_uses`."""
-        request_to_validate = {'trustor_user_id': uuid.uuid4().hex,
-                               'trustee_user_id': uuid.uuid4().hex,
-                               'impersonation': False,
-                               'remaining_uses': None}
+        request_to_validate = {
+            'trustor_user_id': uuidutils.generate_uuid(dashed=False),
+            'trustee_user_id': uuidutils.generate_uuid(dashed=False),
+            'impersonation': False,
+            'remaining_uses': None}
         self.create_trust_validator.validate(request_to_validate)
 
     def test_validate_trust_with_remaining_uses_succeeds(self):
         """Validate trust request with `remaining_uses` succeeds."""
-        request_to_validate = {'trustor_user_id': uuid.uuid4().hex,
-                               'trustee_user_id': uuid.uuid4().hex,
-                               'impersonation': False,
-                               'remaining_uses': 2}
+        request_to_validate = {
+            'trustor_user_id': uuidutils.generate_uuid(dashed=False),
+            'trustee_user_id': uuidutils.generate_uuid(dashed=False),
+            'impersonation': False,
+            'remaining_uses': 2}
         self.create_trust_validator.validate(request_to_validate)
 
     def test_validate_trust_with_period_in_user_id_string(self):
         """Validate trust request with a period in the user id string."""
-        request_to_validate = {'trustor_user_id': 'john.smith',
-                               'trustee_user_id': 'joe.developer',
-                               'impersonation': False}
+        request_to_validate = {
+            'trustor_user_id': 'john.smith',
+            'trustee_user_id': 'joe.developer',
+            'impersonation': False}
         self.create_trust_validator.validate(request_to_validate)
 
     def test_validate_trust_with_invalid_expires_at_fails(self):
         """Validate trust request with invalid `expires_at` fails."""
-        request_to_validate = {'trustor_user_id': uuid.uuid4().hex,
-                               'trustee_user_id': uuid.uuid4().hex,
-                               'impersonation': False,
-                               'expires_at': 3}
+        request_to_validate = {
+            'trustor_user_id': uuidutils.generate_uuid(dashed=False),
+            'trustee_user_id': uuidutils.generate_uuid(dashed=False),
+            'impersonation': False,
+            'expires_at': 3}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_trust_validator.validate,
                           request_to_validate)
@@ -1650,29 +1706,32 @@ class TrustValidationTestCase(unit.BaseTestCase):
     def test_validate_trust_with_role_types_succeeds(self):
         """Validate trust request with `roles` succeeds."""
         for role in self._valid_roles:
-            request_to_validate = {'trustor_user_id': uuid.uuid4().hex,
-                                   'trustee_user_id': uuid.uuid4().hex,
-                                   'impersonation': False,
-                                   'roles': [role]}
+            request_to_validate = {
+                'trustor_user_id': uuidutils.generate_uuid(dashed=False),
+                'trustee_user_id': uuidutils.generate_uuid(dashed=False),
+                'impersonation': False,
+                'roles': [role]}
             self.create_trust_validator.validate(request_to_validate)
 
     def test_validate_trust_with_invalid_role_type_fails(self):
         """Validate trust request with invalid `roles` fails."""
         for role in self._invalid_roles:
-            request_to_validate = {'trustor_user_id': uuid.uuid4().hex,
-                                   'trustee_user_id': uuid.uuid4().hex,
-                                   'impersonation': False,
-                                   'roles': role}
+            request_to_validate = {
+                'trustor_user_id': uuidutils.generate_uuid(dashed=False),
+                'trustee_user_id': uuidutils.generate_uuid(dashed=False),
+                'impersonation': False,
+                'roles': role}
             self.assertRaises(exception.SchemaValidationError,
                               self.create_trust_validator.validate,
                               request_to_validate)
 
     def test_validate_trust_with_list_of_valid_roles_succeeds(self):
         """Validate trust request with a list of valid `roles`."""
-        request_to_validate = {'trustor_user_id': uuid.uuid4().hex,
-                               'trustee_user_id': uuid.uuid4().hex,
-                               'impersonation': False,
-                               'roles': self._valid_roles}
+        request_to_validate = {
+            'trustor_user_id': uuidutils.generate_uuid(dashed=False),
+            'trustee_user_id': uuidutils.generate_uuid(dashed=False),
+            'impersonation': False,
+            'roles': self._valid_roles}
         self.create_trust_validator.validate(request_to_validate)
 
 
@@ -1682,8 +1741,10 @@ class ServiceProviderValidationTestCase(unit.BaseTestCase):
     def setUp(self):
         super(ServiceProviderValidationTestCase, self).setUp()
 
-        self.valid_auth_url = 'https://' + uuid.uuid4().hex + '.com'
-        self.valid_sp_url = 'https://' + uuid.uuid4().hex + '.com'
+        self.valid_auth_url = \
+            'https://' + uuidutils.generate_uuid(dashed=False) + '.com'
+        self.valid_sp_url = \
+            'https://' + uuidutils.generate_uuid(dashed=False) + '.com'
 
         create = federation_schema.service_provider_create
         update = federation_schema.service_provider_update
@@ -1701,7 +1762,7 @@ class ServiceProviderValidationTestCase(unit.BaseTestCase):
     def test_validate_sp_request_with_invalid_auth_url_fails(self):
         """Validate request fails with invalid `auth_url`."""
         request_to_validate = {
-            'auth_url': uuid.uuid4().hex,
+            'auth_url': uuidutils.generate_uuid(dashed=False),
             'sp_url': self.valid_sp_url
         }
         self.assertRaises(exception.SchemaValidationError,
@@ -1712,7 +1773,7 @@ class ServiceProviderValidationTestCase(unit.BaseTestCase):
         """Validate request fails with invalid `sp_url`."""
         request_to_validate = {
             'auth_url': self.valid_auth_url,
-            'sp_url': uuid.uuid4().hex,
+            'sp_url': uuidutils.generate_uuid(dashed=False),
         }
         self.assertRaises(exception.SchemaValidationError,
                           self.create_sp_validator.validate,
@@ -1807,7 +1868,8 @@ class ServiceProviderValidationTestCase(unit.BaseTestCase):
 
     def test_validate_sp_update_request(self):
         """Test that we validate a update request."""
-        request_to_validate = {'description': uuid.uuid4().hex}
+        request_to_validate = {
+            'description': uuidutils.generate_uuid(dashed=False)}
         self.update_sp_validator.validate(request_to_validate)
 
     def test_validate_sp_update_request_with_no_parameters_fails(self):
@@ -1819,7 +1881,8 @@ class ServiceProviderValidationTestCase(unit.BaseTestCase):
 
     def test_validate_sp_update_request_with_invalid_auth_url_fails(self):
         """Exception raised when updating with invalid `auth_url`."""
-        request_to_validate = {'auth_url': uuid.uuid4().hex}
+        request_to_validate = {
+            'auth_url': uuidutils.generate_uuid(dashed=False)}
         self.assertRaises(exception.SchemaValidationError,
                           self.update_sp_validator.validate,
                           request_to_validate)
@@ -1830,7 +1893,7 @@ class ServiceProviderValidationTestCase(unit.BaseTestCase):
 
     def test_validate_sp_update_request_with_invalid_sp_url_fails(self):
         """Exception raised when updating with invalid `sp_url`."""
-        request_to_validate = {'sp_url': uuid.uuid4().hex}
+        request_to_validate = {'sp_url': uuidutils.generate_uuid(dashed=False)}
         self.assertRaises(exception.SchemaValidationError,
                           self.update_sp_validator.validate,
                           request_to_validate)
@@ -1846,7 +1909,7 @@ class UserValidationTestCase(unit.BaseTestCase):
     def setUp(self):
         super(UserValidationTestCase, self).setUp()
 
-        self.user_name = uuid.uuid4().hex
+        self.user_name = uuidutils.generate_uuid(dashed=False)
 
         create = identity_schema.user_create
         update = identity_schema.user_update
@@ -1860,13 +1923,14 @@ class UserValidationTestCase(unit.BaseTestCase):
 
     def test_validate_user_create_with_all_valid_parameters_succeeds(self):
         """Test that validating a user create request succeeds."""
-        request_to_validate = unit.new_user_ref(domain_id=uuid.uuid4().hex,
-                                                name=self.user_name)
+        request_to_validate = unit.new_user_ref(
+            domain_id=uuidutils.generate_uuid(dashed=False),
+            name=self.user_name)
         self.create_user_validator.validate(request_to_validate)
 
     def test_validate_user_create_fails_without_name(self):
         """Exception raised when validating a user without name."""
-        request_to_validate = {'email': uuid.uuid4().hex}
+        request_to_validate = {'email': uuidutils.generate_uuid(dashed=False)}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_user_validator.validate,
                           request_to_validate)
@@ -1889,8 +1953,9 @@ class UserValidationTestCase(unit.BaseTestCase):
 
     def test_validate_user_create_succeeds_with_extra_attributes(self):
         """Validate extra parameters on user create requests."""
-        request_to_validate = {'name': self.user_name,
-                               'other_attr': uuid.uuid4().hex}
+        request_to_validate = {
+            'name': self.user_name,
+            'other_attr': uuidutils.generate_uuid(dashed=False)}
         self.create_user_validator.validate(request_to_validate)
 
     def test_validate_user_create_succeeds_with_password_of_zero_length(self):
@@ -1929,7 +1994,7 @@ class UserValidationTestCase(unit.BaseTestCase):
 
     def test_validate_user_update_succeeds(self):
         """Validate an update user request."""
-        request_to_validate = {'email': uuid.uuid4().hex}
+        request_to_validate = {'email': uuidutils.generate_uuid(dashed=False)}
         self.update_user_validator.validate(request_to_validate)
 
     def test_validate_user_update_fails_with_no_parameters(self):
@@ -1941,7 +2006,8 @@ class UserValidationTestCase(unit.BaseTestCase):
 
     def test_validate_user_update_succeeds_with_extra_parameters(self):
         """Validate user update requests with extra parameters."""
-        request_to_validate = {'other_attr': uuid.uuid4().hex}
+        request_to_validate = {
+            'other_attr': uuidutils.generate_uuid(dashed=False)}
         self.update_user_validator.validate(request_to_validate)
 
     def test_validate_user_update_fails_with_invalid_name(self):
@@ -2048,8 +2114,9 @@ class UserValidationTestCase(unit.BaseTestCase):
             'name': self.user_name,
             'options': {
                 ro.MFA_RULES_OPT.option_name: [
-                    [uuid.uuid4().hex, uuid.uuid4().hex],
-                    [uuid.uuid4().hex],
+                    [uuidutils.generate_uuid(dashed=False),
+                     uuidutils.generate_uuid(dashed=False)],
+                    [uuidutils.generate_uuid(dashed=False)],
                 ]
             }
         }
@@ -2059,8 +2126,9 @@ class UserValidationTestCase(unit.BaseTestCase):
         request_to_validate = {
             'options': {
                 ro.MFA_RULES_OPT.option_name: [
-                    [uuid.uuid4().hex, uuid.uuid4().hex],
-                    [uuid.uuid4().hex],
+                    [uuidutils.generate_uuid(dashed=False),
+                     uuidutils.generate_uuid(dashed=False)],
+                    [uuidutils.generate_uuid(dashed=False)],
                 ]
             }
         }
@@ -2092,7 +2160,7 @@ class UserValidationTestCase(unit.BaseTestCase):
             # Duplicate sub-array
             ([['duplicate_array'] for x in range(0, 2)], ValueError),
             # Empty Sub element
-            ([[uuid.uuid4().hex], []], ValueError),
+            ([[uuidutils.generate_uuid(dashed=False)], []], ValueError),
             # Duplicate strings in sub-element
             ([['duplicate' for x in range(0, 2)]], ValueError),
         ]
@@ -2119,7 +2187,7 @@ class GroupValidationTestCase(unit.BaseTestCase):
     def setUp(self):
         super(GroupValidationTestCase, self).setUp()
 
-        self.group_name = uuid.uuid4().hex
+        self.group_name = uuidutils.generate_uuid(dashed=False)
 
         create = identity_schema.group_create
         update = identity_schema.group_update
@@ -2133,22 +2201,25 @@ class GroupValidationTestCase(unit.BaseTestCase):
 
     def test_validate_group_create_succeeds_with_all_parameters(self):
         """Validate create group requests with all parameters."""
-        request_to_validate = {'name': self.group_name,
-                               'description': uuid.uuid4().hex,
-                               'domain_id': uuid.uuid4().hex}
+        request_to_validate = {
+            'name': self.group_name,
+            'description': uuidutils.generate_uuid(dashed=False),
+            'domain_id': uuidutils.generate_uuid(dashed=False)}
         self.create_group_validator.validate(request_to_validate)
 
     def test_validate_group_create_fails_without_group_name(self):
         """Exception raised when group name is not provided in request."""
-        request_to_validate = {'description': uuid.uuid4().hex}
+        request_to_validate = {
+            'description': uuidutils.generate_uuid(dashed=False)}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_group_validator.validate,
                           request_to_validate)
 
     def test_validate_group_create_succeeds_with_extra_parameters(self):
         """Validate extra attributes on group create requests."""
-        request_to_validate = {'name': self.group_name,
-                               'other_attr': uuid.uuid4().hex}
+        request_to_validate = {
+            'name': self.group_name,
+            'other_attr': uuidutils.generate_uuid(dashed=False)}
         self.create_group_validator.validate(request_to_validate)
 
     def test_validate_group_create_fails_with_invalid_name(self):
@@ -2161,7 +2232,8 @@ class GroupValidationTestCase(unit.BaseTestCase):
 
     def test_validate_group_update_succeeds(self):
         """Validate group update requests."""
-        request_to_validate = {'description': uuid.uuid4().hex}
+        request_to_validate = {
+            'description': uuidutils.generate_uuid(dashed=False)}
         self.update_group_validator.validate(request_to_validate)
 
     def test_validate_group_update_fails_with_no_parameters(self):
@@ -2173,7 +2245,8 @@ class GroupValidationTestCase(unit.BaseTestCase):
 
     def test_validate_group_update_succeeds_with_extra_parameters(self):
         """Validate group update requests with extra parameters."""
-        request_to_validate = {'other_attr': uuid.uuid4().hex}
+        request_to_validate = {
+            'other_attr': uuidutils.generate_uuid(dashed=False)}
         self.update_group_validator.validate(request_to_validate)
 
     def test_validate_group_update_fails_with_invalid_name(self):
@@ -2198,16 +2271,17 @@ class IdentityProviderValidationTestCase(unit.BaseTestCase):
 
     def test_validate_idp_request_succeeds(self):
         """Test that we validate an identity provider request."""
-        request_to_validate = {'description': 'identity provider description',
-                               'enabled': True,
-                               'remote_ids': [uuid.uuid4().hex,
-                                              uuid.uuid4().hex]}
+        request_to_validate = {
+            'description': 'identity provider description',
+            'enabled': True,
+            'remote_ids': [uuidutils.generate_uuid(dashed=False),
+                           uuidutils.generate_uuid(dashed=False)]}
         self.create_idp_validator.validate(request_to_validate)
         self.update_idp_validator.validate(request_to_validate)
 
     def test_validate_idp_request_fails_with_invalid_params(self):
         """Exception raised when unknown parameter is found."""
-        request_to_validate = {'bogus': uuid.uuid4().hex}
+        request_to_validate = {'bogus': uuidutils.generate_uuid(dashed=False)}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_idp_validator.validate,
                           request_to_validate)
@@ -2258,7 +2332,8 @@ class IdentityProviderValidationTestCase(unit.BaseTestCase):
 
     def test_validate_idp_request_with_invalid_remote_id_fails(self):
         """Exception is raised when `remote_ids` is not a array."""
-        request_to_validate = {"remote_ids": uuid.uuid4().hex}
+        request_to_validate = {
+            "remote_ids": uuidutils.generate_uuid(dashed=False)}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_idp_validator.validate,
                           request_to_validate)
@@ -2269,7 +2344,7 @@ class IdentityProviderValidationTestCase(unit.BaseTestCase):
 
     def test_validate_idp_request_with_duplicated_remote_id(self):
         """Exception is raised when the duplicated `remote_ids` is found."""
-        idp_id = uuid.uuid4().hex
+        idp_id = uuidutils.generate_uuid(dashed=False)
         request_to_validate = {"remote_ids": [idp_id, idp_id]}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_idp_validator.validate,
@@ -2299,7 +2374,8 @@ class FederationProtocolValidationTestCase(unit.BaseTestCase):
 
     def test_validate_protocol_request_succeeds(self):
         """Test that we validate a protocol request successfully."""
-        request_to_validate = {'mapping_id': uuid.uuid4().hex}
+        request_to_validate = {
+            'mapping_id': uuidutils.generate_uuid(dashed=False)}
         self.create_protocol_validator.validate(request_to_validate)
 
     def test_validate_protocol_request_succeeds_with_nonuuid_mapping_id(self):
@@ -2309,7 +2385,7 @@ class FederationProtocolValidationTestCase(unit.BaseTestCase):
 
     def test_validate_protocol_request_fails_with_invalid_params(self):
         """Exception raised when unknown parameter is found."""
-        request_to_validate = {'bogus': uuid.uuid4().hex}
+        request_to_validate = {'bogus': uuidutils.generate_uuid(dashed=False)}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_protocol_validator.validate,
                           request_to_validate)
@@ -2331,7 +2407,8 @@ class FederationProtocolValidationTestCase(unit.BaseTestCase):
 
     def test_validate_protocol_request_succeeds_on_update(self):
         """Test that we validate a protocol update request successfully."""
-        request_to_validate = {'mapping_id': uuid.uuid4().hex}
+        request_to_validate = {
+            'mapping_id': uuidutils.generate_uuid(dashed=False)}
         self.update_protocol_validator.validate(request_to_validate)
 
     def test_validate_update_protocol_request_succeeds_with_nonuuid_id(self):
@@ -2341,7 +2418,7 @@ class FederationProtocolValidationTestCase(unit.BaseTestCase):
 
     def test_validate_update_protocol_request_fails_with_invalid_params(self):
         """Exception raised when unknown parameter in protocol update."""
-        request_to_validate = {'bogus': uuid.uuid4().hex}
+        request_to_validate = {'bogus': uuidutils.generate_uuid(dashed=False)}
         self.assertRaises(exception.SchemaValidationError,
                           self.update_protocol_validator.validate,
                           request_to_validate)
@@ -2379,8 +2456,9 @@ class OAuth1ValidationTestCase(unit.BaseTestCase):
 
     def test_validate_consumer_request_succeeds(self):
         """Test that we validate a consumer request successfully."""
-        request_to_validate = {'description': uuid.uuid4().hex,
-                               'name': uuid.uuid4().hex}
+        request_to_validate = {
+            'description': uuidutils.generate_uuid(dashed=False),
+            'name': uuidutils.generate_uuid(dashed=False)}
         self.create_consumer_validator.validate(request_to_validate)
         self.update_consumer_validator.validate(request_to_validate)
 
@@ -2407,7 +2485,7 @@ class OAuth1ValidationTestCase(unit.BaseTestCase):
 
     def test_validate_update_consumer_request_fails_with_secret(self):
         """Exception raised when secret is given."""
-        request_to_validate = {'secret': uuid.uuid4().hex}
+        request_to_validate = {'secret': uuidutils.generate_uuid(dashed=False)}
         self.assertRaises(exception.SchemaValidationError,
                           self.update_consumer_validator.validate,
                           request_to_validate)
@@ -2530,23 +2608,26 @@ class LimitValidationTestCase(unit.BaseTestCase):
             update_limits)
 
     def test_validate_registered_limit_create_request_succeeds(self):
-        request_to_validate = [{'service_id': uuid.uuid4().hex,
-                                'region_id': 'RegionOne',
-                                'resource_name': 'volume',
-                                'default_limit': 10,
-                                'description': 'test description'}]
+        request_to_validate = [
+            {'service_id': uuidutils.generate_uuid(dashed=False),
+             'region_id': 'RegionOne',
+             'resource_name': 'volume',
+             'default_limit': 10,
+             'description': 'test description'}]
         self.create_registered_limits_validator.validate(request_to_validate)
 
     def test_validate_registered_limit_create_request_without_optional(self):
-        request_to_validate = [{'service_id': uuid.uuid4().hex,
-                                'resource_name': 'volume',
-                                'default_limit': 10}]
+        request_to_validate = [
+            {'service_id': uuidutils.generate_uuid(dashed=False),
+             'resource_name': 'volume',
+             'default_limit': 10}]
         self.create_registered_limits_validator.validate(request_to_validate)
 
     def test_validate_registered_limit_update_request_without_region(self):
-        request_to_validate = {'service_id': uuid.uuid4().hex,
-                               'resource_name': 'volume',
-                               'default_limit': 10}
+        request_to_validate = {
+            'service_id': uuidutils.generate_uuid(dashed=False),
+            'resource_name': 'volume',
+            'default_limit': 10}
         self.update_registered_limits_validator.validate(request_to_validate)
 
     def test_validate_registered_limit_request_with_no_parameters(self):
@@ -2564,11 +2645,12 @@ class LimitValidationTestCase(unit.BaseTestCase):
                             {'description': 123},
                             {'description': True}]
         for invalid_desc in _INVALID_FORMATS:
-            request_to_validate = [{'service_id': uuid.uuid4().hex,
-                                    'region_id': 'RegionOne',
-                                    'resource_name': 'volume',
-                                    'default_limit': 10,
-                                    'description': 'test description'}]
+            request_to_validate = [
+                {'service_id': uuidutils.generate_uuid(dashed=False),
+                 'region_id': 'RegionOne',
+                 'resource_name': 'volume',
+                 'default_limit': 10,
+                 'description': 'test description'}]
             request_to_validate[0].update(invalid_desc)
 
             self.assertRaises(exception.SchemaValidationError,
@@ -2582,11 +2664,12 @@ class LimitValidationTestCase(unit.BaseTestCase):
                             {'default_limit': 'not_int'},
                             {'description': 123}]
         for invalid_desc in _INVALID_FORMATS:
-            request_to_validate = {'service_id': uuid.uuid4().hex,
-                                   'region_id': 'RegionOne',
-                                   'resource_name': 'volume',
-                                   'default_limit': 10,
-                                   'description': 'test description'}
+            request_to_validate = {
+                'service_id': uuidutils.generate_uuid(dashed=False),
+                'region_id': 'RegionOne',
+                'resource_name': 'volume',
+                'default_limit': 10,
+                'description': 'test description'}
             request_to_validate.update(invalid_desc)
 
             self.assertRaises(exception.SchemaValidationError,
@@ -2594,50 +2677,55 @@ class LimitValidationTestCase(unit.BaseTestCase):
                               request_to_validate)
 
     def test_validate_registered_limit_create_request_with_addition(self):
-        request_to_validate = [{'service_id': uuid.uuid4().hex,
-                                'region_id': 'RegionOne',
-                                'resource_name': 'volume',
-                                'default_limit': 10,
-                                'more_key': 'more_value'}]
+        request_to_validate = [
+            {'service_id': uuidutils.generate_uuid(dashed=False),
+             'region_id': 'RegionOne',
+             'resource_name': 'volume',
+             'default_limit': 10,
+             'more_key': 'more_value'}]
         self.assertRaises(exception.SchemaValidationError,
                           self.create_registered_limits_validator.validate,
                           request_to_validate)
 
     def test_validate_registered_limit_update_request_with_addition(self):
-        request_to_validate = {'service_id': uuid.uuid4().hex,
-                               'region_id': 'RegionOne',
-                               'resource_name': 'volume',
-                               'default_limit': 10,
-                               'more_key': 'more_value'}
+        request_to_validate = {
+            'service_id': uuidutils.generate_uuid(dashed=False),
+            'region_id': 'RegionOne',
+            'resource_name': 'volume',
+            'default_limit': 10,
+            'more_key': 'more_value'}
         self.assertRaises(exception.SchemaValidationError,
                           self.update_registered_limits_validator.validate,
                           request_to_validate)
 
     def test_validate_registered_limit_create_request_without_required(self):
         for key in ['service_id', 'resource_name', 'default_limit']:
-            request_to_validate = [{'service_id': uuid.uuid4().hex,
-                                    'region_id': 'RegionOne',
-                                    'resource_name': 'volume',
-                                    'default_limit': 10}]
+            request_to_validate = [
+                {'service_id': uuidutils.generate_uuid(dashed=False),
+                 'region_id': 'RegionOne',
+                 'resource_name': 'volume',
+                 'default_limit': 10}]
             request_to_validate[0].pop(key)
             self.assertRaises(exception.SchemaValidationError,
                               self.create_registered_limits_validator.validate,
                               request_to_validate)
 
     def test_validate_limit_create_request_succeeds(self):
-        request_to_validate = [{'project_id': uuid.uuid4().hex,
-                                'service_id': uuid.uuid4().hex,
-                                'region_id': 'RegionOne',
-                                'resource_name': 'volume',
-                                'resource_limit': 10,
-                                'description': 'test description'}]
+        request_to_validate = [
+            {'project_id': uuidutils.generate_uuid(dashed=False),
+             'service_id': uuidutils.generate_uuid(dashed=False),
+             'region_id': 'RegionOne',
+             'resource_name': 'volume',
+             'resource_limit': 10,
+             'description': 'test description'}]
         self.create_limits_validator.validate(request_to_validate)
 
     def test_validate_limit_create_request_without_optional(self):
-        request_to_validate = [{'project_id': uuid.uuid4().hex,
-                                'service_id': uuid.uuid4().hex,
-                                'resource_name': 'volume',
-                                'resource_limit': 10}]
+        request_to_validate = [
+            {'project_id': uuidutils.generate_uuid(dashed=False),
+             'service_id': uuidutils.generate_uuid(dashed=False),
+             'resource_name': 'volume',
+             'resource_limit': 10}]
         self.create_limits_validator.validate(request_to_validate)
 
     def test_validate_limit_update_request_succeeds(self):
@@ -2664,12 +2752,13 @@ class LimitValidationTestCase(unit.BaseTestCase):
                             {'resource_limit': 'not_int'},
                             {'description': 123}]
         for invalid_desc in _INVALID_FORMATS:
-            request_to_validate = [{'project_id': uuid.uuid4().hex,
-                                    'service_id': uuid.uuid4().hex,
-                                    'region_id': 'RegionOne',
-                                    'resource_name': 'volume',
-                                    'resource_limit': 10,
-                                    'description': 'test description'}]
+            request_to_validate = [
+                {'project_id': uuidutils.generate_uuid(dashed=False),
+                 'service_id': uuidutils.generate_uuid(dashed=False),
+                 'region_id': 'RegionOne',
+                 'resource_name': 'volume',
+                 'resource_limit': 10,
+                 'description': 'test description'}]
             request_to_validate[0].update(invalid_desc)
 
             self.assertRaises(exception.SchemaValidationError,
@@ -2684,17 +2773,18 @@ class LimitValidationTestCase(unit.BaseTestCase):
                           request_to_validate)
 
     def test_validate_limit_create_request_with_addition_input_fails(self):
-        request_to_validate = [{'service_id': uuid.uuid4().hex,
-                                'region_id': 'RegionOne',
-                                'resource_name': 'volume',
-                                'resource_limit': 10,
-                                'more_key': 'more_value'}]
+        request_to_validate = [
+            {'service_id': uuidutils.generate_uuid(dashed=False),
+             'region_id': 'RegionOne',
+             'resource_name': 'volume',
+             'resource_limit': 10,
+             'more_key': 'more_value'}]
         self.assertRaises(exception.SchemaValidationError,
                           self.create_limits_validator.validate,
                           request_to_validate)
 
     def test_validate_limit_update_request_with_addition_input_fails(self):
-        request_to_validate = {'id': uuid.uuid4().hex,
+        request_to_validate = {'id': uuidutils.generate_uuid(dashed=False),
                                'resource_limit': 10,
                                'more_key': 'more_value'}
         self.assertRaises(exception.SchemaValidationError,
@@ -2703,10 +2793,11 @@ class LimitValidationTestCase(unit.BaseTestCase):
 
     def test_validate_limit_create_request_without_required_fails(self):
         for key in ['service_id', 'resource_name', 'resource_limit']:
-            request_to_validate = [{'service_id': uuid.uuid4().hex,
-                                    'region_id': 'RegionOne',
-                                    'resource_name': 'volume',
-                                    'resource_limit': 10}]
+            request_to_validate = [
+                {'service_id': uuidutils.generate_uuid(dashed=False),
+                 'region_id': 'RegionOne',
+                 'resource_name': 'volume',
+                 'resource_limit': 10}]
             request_to_validate[0].pop(key)
             self.assertRaises(exception.SchemaValidationError,
                               self.create_limits_validator.validate,
@@ -2715,7 +2806,7 @@ class LimitValidationTestCase(unit.BaseTestCase):
 
 class ApplicationCredentialValidatorTestCase(unit.TestCase):
     _valid_roles = [{'name': 'member'},
-                    {'id': uuid.uuid4().hex},
+                    {'id': uuidutils.generate_uuid(dashed=False)},
                     {'id': str(uuid.uuid4())},
                     {'name': '_member_'}]
     _invalid_roles = [True, 123, None, {'badkey': 'badval'}]

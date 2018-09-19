@@ -24,7 +24,6 @@ import os
 import shutil
 import socket
 import sys
-import uuid
 import warnings
 
 import fixtures
@@ -36,6 +35,7 @@ from oslo_context import fixture as oslo_ctx_fixture
 from oslo_log import fixture as log_fixture
 from oslo_log import log
 from oslo_utils import timeutils
+from oslo_utils import uuidutils
 import six
 from six.moves import http_client
 from sqlalchemy import exc
@@ -196,8 +196,8 @@ class UnexpectedExit(Exception):
 
 def new_region_ref(parent_region_id=None, **kwargs):
     ref = {
-        'id': uuid.uuid4().hex,
-        'description': uuid.uuid4().hex,
+        'id': uuidutils.generate_uuid(dashed=False),
+        'description': uuidutils.generate_uuid(dashed=False),
         'parent_region_id': parent_region_id}
 
     ref.update(kwargs)
@@ -206,11 +206,11 @@ def new_region_ref(parent_region_id=None, **kwargs):
 
 def new_service_ref(**kwargs):
     ref = {
-        'id': uuid.uuid4().hex,
-        'name': uuid.uuid4().hex,
-        'description': uuid.uuid4().hex,
+        'id': uuidutils.generate_uuid(dashed=False),
+        'name': uuidutils.generate_uuid(dashed=False),
+        'description': uuidutils.generate_uuid(dashed=False),
         'enabled': True,
-        'type': uuid.uuid4().hex,
+        'type': uuidutils.generate_uuid(dashed=False),
     }
     ref.update(kwargs)
     return ref
@@ -223,16 +223,16 @@ def new_endpoint_ref(service_id, interface='public',
                      region_id=NEEDS_REGION_ID, **kwargs):
 
     ref = {
-        'id': uuid.uuid4().hex,
-        'name': uuid.uuid4().hex,
-        'description': uuid.uuid4().hex,
+        'id': uuidutils.generate_uuid(dashed=False),
+        'name': uuidutils.generate_uuid(dashed=False),
+        'description': uuidutils.generate_uuid(dashed=False),
         'interface': interface,
         'service_id': service_id,
-        'url': 'https://' + uuid.uuid4().hex + '.com',
+        'url': 'https://' + uuidutils.generate_uuid(dashed=False) + '.com',
     }
 
     if region_id is NEEDS_REGION_ID:
-        ref['region_id'] = uuid.uuid4().hex
+        ref['region_id'] = uuidutils.generate_uuid(dashed=False)
     elif region_id is None and kwargs.get('region') is not None:
         # pre-3.2 form endpoints are not supported by this function
         raise NotImplementedError("use new_endpoint_ref_with_region")
@@ -256,9 +256,9 @@ def new_endpoint_ref_with_region(service_id, region, interface='public',
 
 def new_domain_ref(**kwargs):
     ref = {
-        'id': uuid.uuid4().hex,
-        'name': uuid.uuid4().hex,
-        'description': uuid.uuid4().hex,
+        'id': uuidutils.generate_uuid(dashed=False),
+        'name': uuidutils.generate_uuid(dashed=False),
+        'description': uuidutils.generate_uuid(dashed=False),
         'enabled': True,
         'tags': []
     }
@@ -268,9 +268,9 @@ def new_domain_ref(**kwargs):
 
 def new_project_ref(domain_id=None, is_domain=False, **kwargs):
     ref = {
-        'id': uuid.uuid4().hex,
-        'name': uuid.uuid4().hex,
-        'description': uuid.uuid4().hex,
+        'id': uuidutils.generate_uuid(dashed=False),
+        'name': uuidutils.generate_uuid(dashed=False),
+        'description': uuidutils.generate_uuid(dashed=False),
         'enabled': True,
         'domain_id': domain_id,
         'is_domain': is_domain,
@@ -286,12 +286,12 @@ def new_project_ref(domain_id=None, is_domain=False, **kwargs):
 
 def new_user_ref(domain_id, project_id=None, **kwargs):
     ref = {
-        'id': uuid.uuid4().hex,
-        'name': uuid.uuid4().hex,
+        'id': uuidutils.generate_uuid(dashed=False),
+        'name': uuidutils.generate_uuid(dashed=False),
         'enabled': True,
         'domain_id': domain_id,
-        'email': uuid.uuid4().hex,
-        'password': uuid.uuid4().hex,
+        'email': uuidutils.generate_uuid(dashed=False),
+        'password': uuidutils.generate_uuid(dashed=False),
     }
     if project_id:
         ref['default_project_id'] = project_id
@@ -303,8 +303,8 @@ def new_federated_user_ref(idp_id=None, protocol_id=None, **kwargs):
     ref = {
         'idp_id': idp_id or 'ORG_IDP',
         'protocol_id': protocol_id or 'saml2',
-        'unique_id': uuid.uuid4().hex,
-        'display_name': uuid.uuid4().hex,
+        'unique_id': uuidutils.generate_uuid(dashed=False),
+        'display_name': uuidutils.generate_uuid(dashed=False),
     }
     ref.update(kwargs)
     return ref
@@ -312,9 +312,9 @@ def new_federated_user_ref(idp_id=None, protocol_id=None, **kwargs):
 
 def new_group_ref(domain_id, **kwargs):
     ref = {
-        'id': uuid.uuid4().hex,
-        'name': uuid.uuid4().hex,
-        'description': uuid.uuid4().hex,
+        'id': uuidutils.generate_uuid(dashed=False),
+        'name': uuidutils.generate_uuid(dashed=False),
+        'description': uuidutils.generate_uuid(dashed=False),
         'domain_id': domain_id
     }
     ref.update(kwargs)
@@ -323,7 +323,7 @@ def new_group_ref(domain_id, **kwargs):
 
 def new_credential_ref(user_id, project_id=None, type='cert', **kwargs):
     ref = {
-        'id': uuid.uuid4().hex,
+        'id': uuidutils.generate_uuid(dashed=False),
         'user_id': user_id,
         'type': type,
     }
@@ -331,7 +331,7 @@ def new_credential_ref(user_id, project_id=None, type='cert', **kwargs):
     if project_id:
         ref['project_id'] = project_id
     if 'blob' not in kwargs:
-        ref['blob'] = uuid.uuid4().hex
+        ref['blob'] = uuidutils.generate_uuid(dashed=False)
 
     ref.update(kwargs)
     return ref
@@ -339,7 +339,8 @@ def new_credential_ref(user_id, project_id=None, type='cert', **kwargs):
 
 def new_cert_credential(user_id, project_id=None, blob=None, **kwargs):
     if blob is None:
-        blob = {'access': uuid.uuid4().hex, 'secret': uuid.uuid4().hex}
+        blob = {'access': uuidutils.generate_uuid(dashed=False),
+                'secret': uuidutils.generate_uuid(dashed=False)}
 
     credential = new_credential_ref(user_id=user_id,
                                     project_id=project_id,
@@ -352,8 +353,8 @@ def new_cert_credential(user_id, project_id=None, blob=None, **kwargs):
 def new_ec2_credential(user_id, project_id=None, blob=None, **kwargs):
     if blob is None:
         blob = {
-            'access': uuid.uuid4().hex,
-            'secret': uuid.uuid4().hex,
+            'access': uuidutils.generate_uuid(dashed=False),
+            'secret': uuidutils.generate_uuid(dashed=False),
             'trust_id': None
         }
 
@@ -383,9 +384,9 @@ def new_totp_credential(user_id, project_id=None, blob=None):
 
 def new_role_ref(**kwargs):
     ref = {
-        'id': uuid.uuid4().hex,
-        'name': uuid.uuid4().hex,
-        'description': uuid.uuid4().hex,
+        'id': uuidutils.generate_uuid(dashed=False),
+        'name': uuidutils.generate_uuid(dashed=False),
+        'description': uuidutils.generate_uuid(dashed=False),
         'domain_id': None
     }
     ref.update(kwargs)
@@ -394,13 +395,13 @@ def new_role_ref(**kwargs):
 
 def new_policy_ref(**kwargs):
     ref = {
-        'id': uuid.uuid4().hex,
-        'name': uuid.uuid4().hex,
-        'description': uuid.uuid4().hex,
+        'id': uuidutils.generate_uuid(dashed=False),
+        'name': uuidutils.generate_uuid(dashed=False),
+        'description': uuidutils.generate_uuid(dashed=False),
         'enabled': True,
         # Store serialized JSON data as the blob to mimic real world usage.
-        'blob': json.dumps({'data': uuid.uuid4().hex, }),
-        'type': uuid.uuid4().hex,
+        'blob': json.dumps({'data': uuidutils.generate_uuid(dashed=False), }),
+        'type': uuidutils.generate_uuid(dashed=False),
     }
 
     ref.update(kwargs)
@@ -412,7 +413,7 @@ def new_trust_ref(trustor_user_id, trustee_user_id, project_id=None,
                   role_names=None, remaining_uses=None,
                   allow_redelegation=False, redelegation_count=None, **kwargs):
     ref = {
-        'id': uuid.uuid4().hex,
+        'id': uuidutils.generate_uuid(dashed=False),
         'trustor_user_id': trustor_user_id,
         'trustee_user_id': trustee_user_id,
         'impersonation': impersonation or False,
@@ -450,10 +451,10 @@ def new_trust_ref(trustor_user_id, trustee_user_id, project_id=None,
 
 def new_registered_limit_ref(**kwargs):
     ref = {
-        'service_id': uuid.uuid4().hex,
-        'resource_name': uuid.uuid4().hex,
+        'service_id': uuidutils.generate_uuid(dashed=False),
+        'resource_name': uuidutils.generate_uuid(dashed=False),
         'default_limit': 10,
-        'description': uuid.uuid4().hex
+        'description': uuidutils.generate_uuid(dashed=False)
     }
 
     ref.update(kwargs)
@@ -462,11 +463,11 @@ def new_registered_limit_ref(**kwargs):
 
 def new_limit_ref(**kwargs):
     ref = {
-        'project_id': uuid.uuid4().hex,
-        'service_id': uuid.uuid4().hex,
-        'resource_name': uuid.uuid4().hex,
+        'project_id': uuidutils.generate_uuid(dashed=False),
+        'service_id': uuidutils.generate_uuid(dashed=False),
+        'resource_name': uuidutils.generate_uuid(dashed=False),
         'resource_limit': 10,
-        'description': uuid.uuid4().hex
+        'description': uuidutils.generate_uuid(dashed=False)
     }
 
     ref.update(kwargs)
