@@ -16,11 +16,11 @@
 
 import gettext
 import os
-import uuid
 
 import mock
 import oslo_i18n
 from oslo_serialization import jsonutils
+from oslo_utils import uuidutils
 import six
 from six.moves import http_client
 from testtools import matchers
@@ -58,14 +58,14 @@ class RouterTest(unit.TestCase):
         super(RouterTest, self).setUp()
 
     def test_invalid_status(self):
-        fake_mapper = uuid.uuid4().hex
-        fake_controller = uuid.uuid4().hex
-        fake_path = uuid.uuid4().hex
-        fake_rel = uuid.uuid4().hex
+        fake_mapper = uuidutils.generate_uuid(dashed=False)
+        fake_controller = uuidutils.generate_uuid(dashed=False)
+        fake_path = uuidutils.generate_uuid(dashed=False)
+        fake_rel = uuidutils.generate_uuid(dashed=False)
         self.assertRaises(exception.Error,
                           self.router._add_resource,
                           fake_mapper, fake_controller, fake_path, fake_rel,
-                          status=uuid.uuid4().hex)
+                          status=uuidutils.generate_uuid(dashed=False))
 
 
 class BaseWSGITest(unit.TestCase):
@@ -178,7 +178,8 @@ class ApplicationTest(BaseWSGITest):
         self.assertIsNone(resp.headers.get('Content-Type'))
 
     def test_render_response_head_with_body(self):
-        resp = wsgi.render_response({'id': uuid.uuid4().hex}, method='HEAD')
+        resp = wsgi.render_response({'id': uuidutils.generate_uuid(dashed=False)},
+                                    method='HEAD')
         self.assertEqual(http_client.OK, resp.status_int)
         self.assertEqual(b'', resp.body)
         self.assertNotEqual('0', resp.headers.get('Content-Length'))
@@ -201,8 +202,9 @@ class ApplicationTest(BaseWSGITest):
     def test_render_exception_host(self):
         e = exception.Unauthorized(message=u'\u7f51\u7edc')
         req = self._make_request(url='/')
-        context = {'host_url': 'http://%s:5000' % uuid.uuid4().hex,
-                   'environment': req.environ}
+        context = {
+            'host_url': 'http://%s:5000' % uuidutils.generate_uuid(dashed=False),
+            'environment': req.environ}
         resp = wsgi.render_exception(e, context=context)
 
         self.assertEqual(http_client.UNAUTHORIZED, resp.status_int)
@@ -523,10 +525,10 @@ class LocalizedResponseTest(unit.TestCase):
         # If Accept-Language is a language we do not support,
         # best_match_language() returns None.
 
-        supported_language = uuid.uuid4().hex
+        supported_language = uuidutils.generate_uuid(dashed=False)
         mock_gal.return_value = [supported_language]
 
-        request_language = uuid.uuid4().hex
+        request_language = uuidutils.generate_uuid(dashed=False)
         req = webob.Request.blank(
             '/', headers={'Accept-Language': request_language})
         self.assertIsNone(wsgi.best_match_language(req))
@@ -574,7 +576,7 @@ class LocalizedResponseTest(unit.TestCase):
 
         with mock.patch.object(gettext, 'translation',
                                side_effect=fake_translation) as xlation_mock:
-            target = uuid.uuid4().hex
+            target = uuidutils.generate_uuid(dashed=False)
 
             # Fake app raises NotFound exception to simulate Keystone raising.
 

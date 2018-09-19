@@ -13,10 +13,10 @@
 # under the License.
 
 import datetime
-import uuid
 
 import oslo_context.context
 from oslo_serialization import jsonutils
+from oslo_utils import uuidutils
 from six.moves import http_client
 from testtools import matchers
 import webtest
@@ -255,7 +255,7 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
                                      domain_id=self.domain_id)
         self.user_id = self.user['id']
 
-        self.default_domain_project_id = uuid.uuid4().hex
+        self.default_domain_project_id = uuidutils.generate_uuid(dashed=False)
         self.default_domain_project = unit.new_project_ref(
             domain_id=DEFAULT_DOMAIN_ID)
         self.default_domain_project['id'] = self.default_domain_project_id
@@ -1281,7 +1281,7 @@ class AuthContextMiddlewareTestCase(RestfulTestCase):
     def test_auth_context_override(self):
         overridden_context = 'OVERRIDDEN_CONTEXT'
         # this token should not be used
-        token = uuid.uuid4().hex
+        token = uuidutils.generate_uuid(dashed=False)
 
         extra_environ = {authorization.AUTH_CONTEXT_ENV: overridden_context}
         req = self._middleware_request(token, extra_environ=extra_environ)
@@ -1333,7 +1333,7 @@ class AuthContextMiddlewareTestCase(RestfulTestCase):
         token = self.get_scoped_token()
 
         # oslo_middleware RequestId middleware sets openstack.request_id.
-        request_id = uuid.uuid4().hex
+        request_id = uuidutils.generate_uuid(dashed=False)
         environ = {'openstack.request_id': request_id}
         self._middleware_request(token, extra_environ=environ)
 

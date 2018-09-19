@@ -13,12 +13,12 @@
 import datetime
 import os
 import subprocess  # nosec : see comments in the code below
-import uuid
 
 from oslo_log import log
 from oslo_utils import fileutils
 from oslo_utils import importutils
 from oslo_utils import timeutils
+from oslo_utils import uuidutils
 import saml2
 from saml2 import client_base
 from saml2 import md
@@ -45,7 +45,7 @@ class SAMLGenerator(object):
     """A class to generate SAML assertions."""
 
     def __init__(self):
-        self.assertion_id = uuid.uuid4().hex
+        self.assertion_id = uuidutils.generate_uuid(dashed=False)
 
     def samlize_token(self, issuer, recipient, user, user_domain_name, roles,
                       project, project_domain_name, expires_in=None):
@@ -241,7 +241,7 @@ class SAMLGenerator(object):
         """
         authn_statement = saml.AuthnStatement()
         authn_statement.authn_instant = utils.isotime()
-        authn_statement.session_index = uuid.uuid4().hex
+        authn_statement.session_index = uuidutils.generate_uuid(dashed=False)
         authn_statement.session_not_on_or_after = expiration_time
 
         authn_context = saml.AuthnContext()
@@ -303,7 +303,7 @@ class SAMLGenerator(object):
 
         """
         response = samlp.Response()
-        response.id = uuid.uuid4().hex
+        response.id = uuidutils.generate_uuid(dashed=False)
         response.destination = recipient
         response.issue_instant = utils.isotime()
         response.version = '2.0'
@@ -644,7 +644,8 @@ class ECPGenerator(object):
         return envelope
 
     def _create_header(self, relay_state_prefix):
-        relay_state_text = relay_state_prefix + uuid.uuid4().hex
+        relay_state_text = relay_state_prefix + \
+                           uuidutils.generate_uuid(dashed=False)
         relay_state = ecp.RelayState(actor=client_base.ACTOR,
                                      must_understand='1',
                                      text=relay_state_text)

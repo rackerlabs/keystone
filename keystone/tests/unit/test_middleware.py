@@ -14,9 +14,9 @@
 
 import copy
 import hashlib
-import uuid
 
 import fixtures
+from oslo_utils import uuidutils
 from six.moves import http_client
 import webtest
 
@@ -45,7 +45,7 @@ class MiddlewareRequestTestBase(unit.TestCase):
         """A base wsgi application that returns a simple response."""
         def app(environ, start_response):
             # WSGI requires the body of the response to be six.binary_type
-            body = uuid.uuid4().hex.encode('utf-8')
+            body = uuidutils.generate_uuid(dashed=False).encode('utf-8')
             resp_headers = [('Content-Type', 'text/html; charset=utf8'),
                             ('Content-Length', str(len(body)))]
             start_response('200 OK', resp_headers)
@@ -161,8 +161,8 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
 
     def setUp(self):
         super(AuthContextMiddlewareTest, self).setUp()
-        self.client_issuer = uuid.uuid4().hex
-        self.untrusted_client_issuer = uuid.uuid4().hex
+        self.client_issuer = uuidutils.generate_uuid(dashed=False)
+        self.untrusted_client_issuer = uuidutils.generate_uuid(dashed=False)
         self.trusted_issuer = self.client_issuer
         self.config_fixture.config(group='tokenless_auth',
                                    trusted_issuer=[self.trusted_issuer])
@@ -239,16 +239,16 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
 
     def _idp_ref(self, id=None):
         idp = {
-            'id': id or uuid.uuid4().hex,
+            'id': id or uuidutils.generate_uuid(dashed=False),
             'enabled': True,
-            'description': uuid.uuid4().hex
+            'description': uuidutils.generate_uuid(dashed=False)
         }
         return idp
 
     def _proto_ref(self, mapping_id=None):
         proto = {
-            'id': uuid.uuid4().hex,
-            'mapping_id': mapping_id or uuid.uuid4().hex
+            'id': uuidutils.generate_uuid(dashed=False),
+            'mapping_id': mapping_id or uuidutils.generate_uuid(dashed=False)
         }
         return proto
 
@@ -258,7 +258,7 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
         else:
             mapped_rules = rules.get('rules', {})
         return {
-            'id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(dashed=False),
             'rules': mapped_rules
         }
 
@@ -276,7 +276,7 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
             self.assertEqual(self.user['id'], context['user_id'])
 
     def test_context_already_exists(self):
-        stub_value = uuid.uuid4().hex
+        stub_value = uuidutils.generate_uuid(dashed=False)
         env = {authorization.AUTH_CONTEXT_ENV: stub_value}
         req = self._do_middleware_request(extra_environ=env)
         self.assertEqual(stub_value,
@@ -294,7 +294,7 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
 
     def test_no_issuer_attribute_request(self):
         env = {}
-        env['HTTP_X_PROJECT_ID'] = uuid.uuid4().hex
+        env['HTTP_X_PROJECT_ID'] = uuidutils.generate_uuid(dashed=False)
         req = self._do_middleware_request(extra_environ=env)
         context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
         self.assertIsNone(context)
@@ -304,7 +304,7 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
         # SSL_CLIENT_I_DN is the attribute name that wsgi env
         # references to issuer of the client certificate.
         env['SSL_CLIENT_I_DN'] = self.client_issuer
-        env['HTTP_X_PROJECT_NAME'] = uuid.uuid4().hex
+        env['HTTP_X_PROJECT_NAME'] = uuidutils.generate_uuid(dashed=False)
         self._middleware_failure(exception.ValidationError,
                                  extra_environ=env,
                                  status=400)
@@ -312,7 +312,7 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
     def test_has_only_issuer_and_project_domain_name_request(self):
         env = {}
         env['SSL_CLIENT_I_DN'] = self.client_issuer
-        env['HTTP_X_PROJECT_DOMAIN_NAME'] = uuid.uuid4().hex
+        env['HTTP_X_PROJECT_DOMAIN_NAME'] = uuidutils.generate_uuid(dashed=False)
         self._middleware_failure(exception.ValidationError,
                                  extra_environ=env,
                                  status=400)
@@ -320,7 +320,7 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
     def test_has_only_issuer_and_project_domain_id_request(self):
         env = {}
         env['SSL_CLIENT_I_DN'] = self.client_issuer
-        env['HTTP_X_PROJECT_DOMAIN_ID'] = uuid.uuid4().hex
+        env['HTTP_X_PROJECT_DOMAIN_ID'] = uuidutils.generate_uuid(dashed=False)
         self._middleware_failure(exception.ValidationError,
                                  extra_environ=env,
                                  status=400)
@@ -335,7 +335,7 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
     def test_empty_trusted_issuer_list(self):
         env = {}
         env['SSL_CLIENT_I_DN'] = self.client_issuer
-        env['HTTP_X_PROJECT_ID'] = uuid.uuid4().hex
+        env['HTTP_X_PROJECT_ID'] = uuidutils.generate_uuid(dashed=False)
 
         self.config_fixture.config(group='tokenless_auth',
                                    trusted_issuer=[])
@@ -347,7 +347,7 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
     def test_client_issuer_not_trusted(self):
         env = {}
         env['SSL_CLIENT_I_DN'] = self.untrusted_client_issuer
-        env['HTTP_X_PROJECT_ID'] = uuid.uuid4().hex
+        env['HTTP_X_PROJECT_ID'] = uuidutils.generate_uuid(dashed=False)
         req = self._do_middleware_request(extra_environ=env)
         context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
         self.assertIsNone(context)
@@ -569,7 +569,7 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
         env['SSL_CLIENT_I_DN'] = self.client_issuer
         env['HTTP_X_PROJECT_ID'] = self.project_id
         env['HTTP_X_PROJECT_DOMAIN_ID'] = self.domain_id
-        env['SSL_CLIENT_USER_NAME'] = uuid.uuid4().hex
+        env['SSL_CLIENT_USER_NAME'] = uuidutils.generate_uuid(dashed=False)
         env['SSL_CLIENT_DOMAIN_NAME'] = self.domain_name
 
         self._load_mapping_rules(
@@ -626,7 +626,7 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
         env['SSL_CLIENT_I_DN'] = self.client_issuer
         env['HTTP_X_PROJECT_NAME'] = self.project_name
         env['HTTP_X_PROJECT_DOMAIN_NAME'] = self.domain_name
-        env['SSL_CLIENT_USER_NAME'] = uuid.uuid4().hex
+        env['SSL_CLIENT_USER_NAME'] = uuidutils.generate_uuid(dashed=False)
         self.config_fixture.config(group='tokenless_auth',
                                    protocol='ephemeral')
         self.protocol_id = 'ephemeral'
@@ -641,8 +641,8 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
     def test_ephemeral_invalid_scope_fail(self):
         env = {}
         env['SSL_CLIENT_I_DN'] = self.client_issuer
-        env['HTTP_X_PROJECT_NAME'] = uuid.uuid4().hex
-        env['HTTP_X_PROJECT_DOMAIN_NAME'] = uuid.uuid4().hex
+        env['HTTP_X_PROJECT_NAME'] = uuidutils.generate_uuid(dashed=False)
+        env['HTTP_X_PROJECT_DOMAIN_NAME'] = uuidutils.generate_uuid(dashed=False)
         env['SSL_CLIENT_USER_NAME'] = self.user['name']
         self.config_fixture.config(group='tokenless_auth',
                                    protocol='ephemeral')
@@ -665,7 +665,8 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
                                    protocol='ephemeral')
         self.protocol_id = 'ephemeral'
         mapping = copy.deepcopy(mapping_fixtures.MAPPING_FOR_EPHEMERAL_USER)
-        mapping['rules'][0]['local'][0]['group']['id'] = uuid.uuid4().hex
+        mapping['rules'][0]['local'][0]['group']['id'] = \
+            uuidutils.generate_uuid(dashed=False)
         self._load_mapping_rules(mapping)
 
         self._middleware_failure(exception.MappedGroupNotFound,
@@ -687,7 +688,8 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
                                    protocol='x509')
         self.protocol_id = 'x509'
         mapping = copy.deepcopy(mapping_fixtures.MAPPING_FOR_EPHEMERAL_USER)
-        mapping['rules'][0]['local'][0]['group']['id'] = uuid.uuid4().hex
+        mapping['rules'][0]['local'][0]['group']['id'] = \
+            uuidutils.generate_uuid(dashed=False)
         self._load_mapping_rules(mapping)
 
         self._middleware_failure(exception.MappedGroupNotFound,
@@ -702,7 +704,7 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
 
     def test_create_idp_id_attri_not_found_fail(self):
         env = {}
-        env[uuid.uuid4().hex] = self.client_issuer
+        env[uuidutils.generate_uuid(dashed=False)] = self.client_issuer
         auth = tokenless_auth.TokenlessAuthHelper(env)
         expected_msg = ('Could not determine Identity Provider ID. The '
                         'configuration option %s was not found in the '

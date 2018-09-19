@@ -10,8 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
-
+from oslo_utils import uuidutils
 from six.moves import http_client
 from six.moves import range
 from testtools import matchers
@@ -596,7 +595,8 @@ class ResourceTestCase(test_v3.RestfulTestCase,
 
     def test_create_project_invalid_domain_id(self):
         """Call ``POST /projects``."""
-        ref = unit.new_project_ref(domain_id=uuid.uuid4().hex)
+        ref = unit.new_project_ref(
+            domain_id=uuidutils.generate_uuid(dashed=False))
         self.post('/projects', body={'project': ref},
                   expected_status=http_client.BAD_REQUEST)
 
@@ -738,7 +738,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         :returns: A tuple containing a new project and a list of
                   random tags
         """
-        tags = [uuid.uuid4().hex for i in range(num_of_tags)]
+        tags = [uuidutils.generate_uuid(dashed=False) for i in range(num_of_tags)]
         ref = unit.new_project_ref(
             domain_id=self.domain_id,
             tags=tags)
@@ -947,7 +947,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                  'project_id': None}, expected_status=http_client.NOT_FOUND)
 
         self.get('/projects/%(project_id)s?parents_as_list' % {
-                 'project_id': uuid.uuid4().hex},
+                 'project_id': uuidutils.generate_uuid(dashed=False)},
                  expected_status=http_client.NOT_FOUND)
 
     def test_get_project_with_subtree_as_list_with_invalid_id(self):
@@ -956,7 +956,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                  'project_id': None}, expected_status=http_client.NOT_FOUND)
 
         self.get('/projects/%(project_id)s?subtree_as_list' % {
-                 'project_id': uuid.uuid4().hex},
+                 'project_id': uuidutils.generate_uuid(dashed=False)},
                  expected_status=http_client.NOT_FOUND)
 
     def test_get_project_with_parents_as_ids(self):
@@ -1557,7 +1557,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
 
     def test_update_project_with_tags(self):
         project, tags = self._create_project_and_tags(num_of_tags=9)
-        tag = uuid.uuid4().hex
+        tag = uuidutils.generate_uuid(dashed=False)
         project['tags'].append(tag)
         ref = self.patch(
             '/projects/%(project_id)s' % {
@@ -1566,7 +1566,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.assertIn(tag, ref.result['project']['tags'])
 
     def test_create_project_tag(self):
-        tag = uuid.uuid4().hex
+        tag = uuidutils.generate_uuid(dashed=False)
         url = '/projects/%(project_id)s/tags/%(value)s'
         self.put(url % {'project_id': self.project_id, 'value': tag},
                  expected_status=http_client.CREATED)
@@ -1605,7 +1605,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.get(
             '/projects/%(project_id)s/tags/%(value)s' % {
                 'project_id': project['id'],
-                'value': uuid.uuid4().hex},
+                'value': uuidutils.generate_uuid(dashed=False)},
             expected_status=http_client.NOT_FOUND)
 
     def test_delete_project_tag(self):
@@ -1641,12 +1641,12 @@ class ResourceTestCase(test_v3.RestfulTestCase,
     def test_create_project_tag_invalid_project_id(self):
         self.put(
             '/projects/%(project_id)s/tags/%(value)s' % {
-                'project_id': uuid.uuid4().hex,
-                'value': uuid.uuid4().hex},
+                'project_id': uuidutils.generate_uuid(dashed=False),
+                'value': uuidutils.generate_uuid(dashed=False)},
             expected_status=http_client.NOT_FOUND)
 
     def test_create_project_tag_unsafe_name(self):
-        tag = uuid.uuid4().hex + ','
+        tag = uuidutils.generate_uuid(dashed=False) + ','
         self.put(
             '/projects/%(project_id)s/tags/%(value)s' % {
                 'project_id': self.project_id,
@@ -1666,7 +1666,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.put(
             '/projects/%(project_id)s/tags/%(value)s' % {
                 'project_id': project['id'],
-                'value': uuid.uuid4().hex},
+                'value': uuidutils.generate_uuid(dashed=False)},
             expected_status=http_client.BAD_REQUEST)
 
     def test_create_project_tag_name_over_character_limit(self):
@@ -1680,15 +1680,15 @@ class ResourceTestCase(test_v3.RestfulTestCase,
     def test_delete_tag_invalid_project_id(self):
         self.delete(
             '/projects/%(project_id)s/tags/%(value)s' % {
-                'project_id': uuid.uuid4().hex,
-                'value': uuid.uuid4().hex},
+                'project_id': uuidutils.generate_uuid(dashed=False),
+                'value': uuidutils.generate_uuid(dashed=False)},
             expected_status=http_client.NOT_FOUND)
 
     def test_delete_project_tag_not_found(self):
         self.delete(
             '/projects/%(project_id)s/tags/%(value)s' % {
                 'project_id': self.project_id,
-                'value': uuid.uuid4().hex},
+                'value': uuidutils.generate_uuid(dashed=False)},
             expected_status=http_client.NOT_FOUND)
 
     def test_list_project_tags(self):
@@ -1719,7 +1719,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.head(
             '/projects/%(project_id)s/tags/%(value)s' % {
                 'project_id': self.project_id,
-                'value': uuid.uuid4().hex},
+                'value': uuidutils.generate_uuid(dashed=False)},
             expected_status=http_client.NOT_FOUND)
 
     def test_update_project_tags(self):
@@ -1732,7 +1732,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.assertIn(tags[1], resp.result['tags'])
 
     def test_update_project_tags_removes_previous_tags(self):
-        tag = uuid.uuid4().hex
+        tag = uuidutils.generate_uuid(dashed=False)
         project, tags = self._create_project_and_tags(num_of_tags=5)
         self.put(
             '/projects/%(project_id)s/tags/%(value)s' % {
@@ -1751,7 +1751,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         project, tags = self._create_project_and_tags(num_of_tags=5)
         invalid_chars = [',', '/']
         for char in invalid_chars:
-            tags[0] = uuid.uuid4().hex + char
+            tags[0] = uuidutils.generate_uuid(dashed=False) + char
             self.put(
                 '/projects/%(project_id)s/tags' % {
                     'project_id': project['id']},
@@ -1760,8 +1760,8 @@ class ResourceTestCase(test_v3.RestfulTestCase,
 
     def test_update_project_tags_with_too_many_tags(self):
         project, _ = self._create_project_and_tags()
-        tags = [uuid.uuid4().hex for i in range(81)]
-        tags.append(uuid.uuid4().hex)
+        tags = [uuidutils.generate_uuid(dashed=False) for i in range(81)]
+        tags.append(uuidutils.generate_uuid(dashed=False))
         self.put(
             '/projects/%(project_id)s/tags' % {'project_id': project['id']},
             body={'tags': tags},
