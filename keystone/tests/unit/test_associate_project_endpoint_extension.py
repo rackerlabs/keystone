@@ -13,8 +13,8 @@
 # under the License.
 
 import copy
-import uuid
 
+from oslo_utils import uuidutils
 from six.moves import http_client
 from testtools import matchers
 
@@ -54,7 +54,7 @@ class EndpointFilterCRUDTestCase(EndpointFilterTestCase):
         """
         self.put('/OS-EP-FILTER/projects/%(project_id)s'
                  '/endpoints/%(endpoint_id)s' % {
-                     'project_id': uuid.uuid4().hex,
+                     'project_id': uuidutils.generate_uuid(dashed=False),
                      'endpoint_id': self.endpoint_id},
                  expected_status=http_client.NOT_FOUND)
 
@@ -67,7 +67,7 @@ class EndpointFilterCRUDTestCase(EndpointFilterTestCase):
         self.put('/OS-EP-FILTER/projects/%(project_id)s'
                  '/endpoints/%(endpoint_id)s' % {
                      'project_id': self.default_domain_project_id,
-                     'endpoint_id': uuid.uuid4().hex},
+                     'endpoint_id': uuidutils.generate_uuid(dashed=False)},
                  expected_status=http_client.NOT_FOUND)
 
     def test_create_endpoint_project_association_with_unexpected_body(self):
@@ -101,7 +101,7 @@ class EndpointFilterCRUDTestCase(EndpointFilterTestCase):
         self.put(self.default_request_url)
         self.head('/OS-EP-FILTER/projects/%(project_id)s'
                   '/endpoints/%(endpoint_id)s' % {
-                      'project_id': uuid.uuid4().hex,
+                      'project_id': uuidutils.generate_uuid(dashed=False),
                       'endpoint_id': self.endpoint_id},
                   expected_status=http_client.NOT_FOUND)
 
@@ -115,7 +115,7 @@ class EndpointFilterCRUDTestCase(EndpointFilterTestCase):
         self.head('/OS-EP-FILTER/projects/%(project_id)s'
                   '/endpoints/%(endpoint_id)s' % {
                       'project_id': self.default_domain_project_id,
-                      'endpoint_id': uuid.uuid4().hex},
+                      'endpoint_id': uuidutils.generate_uuid(dashed=False)},
                   expected_status=http_client.NOT_FOUND)
 
     def test_get_endpoint_project_association(self):
@@ -140,7 +140,7 @@ class EndpointFilterCRUDTestCase(EndpointFilterTestCase):
         self.put(self.default_request_url)
         self.get('/OS-EP-FILTER/projects/%(project_id)s'
                  '/endpoints/%(endpoint_id)s' % {
-                     'project_id': uuid.uuid4().hex,
+                     'project_id': uuidutils.generate_uuid(dashed=False),
                      'endpoint_id': self.endpoint_id},
                  expected_status=http_client.NOT_FOUND)
 
@@ -154,7 +154,7 @@ class EndpointFilterCRUDTestCase(EndpointFilterTestCase):
         self.get('/OS-EP-FILTER/projects/%(project_id)s'
                  '/endpoints/%(endpoint_id)s' % {
                      'project_id': self.default_domain_project_id,
-                     'endpoint_id': uuid.uuid4().hex},
+                     'endpoint_id': uuidutils.generate_uuid(dashed=False)},
                  expected_status=http_client.NOT_FOUND)
 
     def test_list_endpoints_associated_with_valid_project(self):
@@ -179,7 +179,7 @@ class EndpointFilterCRUDTestCase(EndpointFilterTestCase):
         """
         self.put(self.default_request_url)
         url = ('/OS-EP-FILTER/projects/%(project_id)s/endpoints' % {
-            'project_id': uuid.uuid4().hex}
+            'project_id': uuidutils.generate_uuid(dashed=False)}
         )
         self.get(url, expected_status=http_client.NOT_FOUND)
         self.head(url, expected_status=http_client.NOT_FOUND)
@@ -220,7 +220,7 @@ class EndpointFilterCRUDTestCase(EndpointFilterTestCase):
         """
         url = (
             '/OS-EP-FILTER/endpoints/%(endpoint_id)s/projects' %
-            {'endpoint_id': uuid.uuid4().hex}
+            {'endpoint_id': uuidutils.generate_uuid(dashed=False)}
         )
         self.get(url, expected_status=http_client.NOT_FOUND)
         self.head(url, expected_status=http_client.NOT_FOUND)
@@ -246,7 +246,7 @@ class EndpointFilterCRUDTestCase(EndpointFilterTestCase):
         self.put(self.default_request_url)
         self.delete('/OS-EP-FILTER/projects/%(project_id)s'
                     '/endpoints/%(endpoint_id)s' % {
-                        'project_id': uuid.uuid4().hex,
+                        'project_id': uuidutils.generate_uuid(dashed=False),
                         'endpoint_id': self.endpoint_id},
                     expected_status=http_client.NOT_FOUND)
 
@@ -260,7 +260,7 @@ class EndpointFilterCRUDTestCase(EndpointFilterTestCase):
         self.delete('/OS-EP-FILTER/projects/%(project_id)s'
                     '/endpoints/%(endpoint_id)s' % {
                         'project_id': self.default_domain_project_id,
-                        'endpoint_id': uuid.uuid4().hex},
+                        'endpoint_id': uuidutils.generate_uuid(dashed=False)},
                     expected_status=http_client.NOT_FOUND)
 
     def test_endpoint_project_association_cleanup_when_project_deleted(self):
@@ -294,7 +294,7 @@ class EndpointFilterCRUDTestCase(EndpointFilterTestCase):
         # NOTE(davechen): create another endpoint which will be added to
         # default project, this should be done at first since
         # `create_endpoint` will also invalidate cache.
-        endpoint_id2 = uuid.uuid4().hex
+        endpoint_id2 = uuidutils.generate_uuid(dashed=False)
         endpoint2 = unit.new_endpoint_ref(service_id=self.service_id,
                                           region_id=self.region_id,
                                           interface='public',
@@ -305,7 +305,7 @@ class EndpointFilterCRUDTestCase(EndpointFilterTestCase):
         self.put(self.default_request_url)
 
         # should get back only one endpoint that was just created.
-        user_id = uuid.uuid4().hex
+        user_id = uuidutils.generate_uuid(dashed=False)
         catalog = PROVIDERS.catalog_api.get_v3_catalog(
             user_id,
             self.default_domain_project_id)
@@ -356,7 +356,7 @@ class EndpointFilterCRUDTestCase(EndpointFilterTestCase):
 
     @unit.skip_if_cache_disabled('catalog')
     def test_remove_endpoint_from_project_invalidates_cache(self):
-        endpoint_id2 = uuid.uuid4().hex
+        endpoint_id2 = uuidutils.generate_uuid(dashed=False)
         endpoint2 = unit.new_endpoint_ref(service_id=self.service_id,
                                           region_id=self.region_id,
                                           interface='public',
@@ -372,7 +372,7 @@ class EndpointFilterCRUDTestCase(EndpointFilterTestCase):
                      'endpoint_id': endpoint_id2})
 
         # should get back only one endpoint that was just created.
-        user_id = uuid.uuid4().hex
+        user_id = uuidutils.generate_uuid(dashed=False)
         catalog = PROVIDERS.catalog_api.get_v3_catalog(
             user_id,
             self.default_domain_project_id)
@@ -520,7 +520,7 @@ class EndpointFilterTokenRequestTestCase(EndpointFilterTestCase):
                      'endpoint_id': self.endpoint_id})
 
         # create a second temporary endpoint
-        endpoint_id2 = uuid.uuid4().hex
+        endpoint_id2 = uuidutils.generate_uuid(dashed=False)
         endpoint2 = unit.new_endpoint_ref(service_id=self.service_id,
                                           region_id=self.region_id,
                                           interface='public',
@@ -563,7 +563,7 @@ class EndpointFilterTokenRequestTestCase(EndpointFilterTestCase):
 
         # Create a disabled endpoint that's like the enabled one.
         disabled_endpoint_ref = copy.copy(self.endpoint)
-        disabled_endpoint_id = uuid.uuid4().hex
+        disabled_endpoint_id = uuidutils.generate_uuid(dashed=False)
         disabled_endpoint_ref.update({
             'id': disabled_endpoint_id,
             'enabled': False,
@@ -934,7 +934,7 @@ class EndpointGroupCRUDTestCase(EndpointFilterTestCase):
             self.DEFAULT_ENDPOINT_GROUP_URL, self.DEFAULT_ENDPOINT_GROUP_BODY)
 
         # associate endpoint group with project
-        project_id = uuid.uuid4().hex
+        project_id = uuidutils.generate_uuid(dashed=False)
         url = self._get_project_endpoint_group_url(
             endpoint_group_id, project_id)
         self.put(url, expected_status=http_client.NOT_FOUND)
@@ -959,8 +959,8 @@ class EndpointGroupCRUDTestCase(EndpointFilterTestCase):
 
     def test_get_invalid_endpoint_group_in_project(self):
         """Test retrieving project endpoint group association."""
-        endpoint_group_id = uuid.uuid4().hex
-        project_id = uuid.uuid4().hex
+        endpoint_group_id = uuidutils.generate_uuid(dashed=False)
+        project_id = uuidutils.generate_uuid(dashed=False)
         url = self._get_project_endpoint_group_url(
             endpoint_group_id, project_id)
         self.get(url, expected_status=http_client.NOT_FOUND)
@@ -988,7 +988,7 @@ class EndpointGroupCRUDTestCase(EndpointFilterTestCase):
 
     def test_list_endpoint_groups_in_invalid_project(self):
         """Test retrieving from invalid project."""
-        project_id = uuid.uuid4().hex
+        project_id = uuidutils.generate_uuid(dashed=False)
         url = ('/OS-EP-FILTER/projects/%(project_id)s/endpoint_groups' %
                {'project_id': project_id})
         self.get(url, expected_status=http_client.NOT_FOUND)
@@ -1026,7 +1026,7 @@ class EndpointGroupCRUDTestCase(EndpointFilterTestCase):
         self.put(url)
 
         # send a head request with an invalid project id
-        project_id = uuid.uuid4().hex
+        project_id = uuidutils.generate_uuid(dashed=False)
         url = self._get_project_endpoint_group_url(
             endpoint_group_id, project_id)
         self.head(url, expected_status=http_client.NOT_FOUND)
@@ -1147,7 +1147,7 @@ class EndpointGroupCRUDTestCase(EndpointFilterTestCase):
         # Ensure catalog includes the endpoints from endpoint_group project
         # association, this is needed when a project scoped token is issued
         # and "endpoint_filter.sql" backend driver is in place.
-        user_id = uuid.uuid4().hex
+        user_id = uuidutils.generate_uuid(dashed=False)
         catalog_list = PROVIDERS.catalog_api.get_v3_catalog(
             user_id,
             self.default_domain_project_id)
@@ -1258,7 +1258,7 @@ class EndpointGroupCRUDTestCase(EndpointFilterTestCase):
         # expected.
         # this should be done at first since `create_endpoint` will also
         # invalidate cache.
-        endpoint_id2 = uuid.uuid4().hex
+        endpoint_id2 = uuidutils.generate_uuid(dashed=False)
         endpoint2 = unit.new_endpoint_ref(service_id=self.service_id,
                                           region_id=self.region_id,
                                           interface='admin',
@@ -1269,7 +1269,7 @@ class EndpointGroupCRUDTestCase(EndpointFilterTestCase):
         self.put(self.default_request_url)
 
         # there is only one endpoint associated with the default project.
-        user_id = uuid.uuid4().hex
+        user_id = uuidutils.generate_uuid(dashed=False)
         catalog = PROVIDERS.catalog_api.get_v3_catalog(
             user_id,
             self.default_domain_project_id)
@@ -1328,7 +1328,7 @@ class EndpointGroupCRUDTestCase(EndpointFilterTestCase):
         # works as expected.
         # this should be done at first since `create_endpoint` will also
         # invalidate cache.
-        endpoint_id2 = uuid.uuid4().hex
+        endpoint_id2 = uuidutils.generate_uuid(dashed=False)
         endpoint2 = unit.new_endpoint_ref(service_id=self.service_id,
                                           region_id=self.region_id,
                                           interface='admin',
@@ -1350,7 +1350,7 @@ class EndpointGroupCRUDTestCase(EndpointFilterTestCase):
         # should get back two endpoints, one from endpoint project
         # association, the other one is from endpoint_group project
         # association.
-        user_id = uuid.uuid4().hex
+        user_id = uuidutils.generate_uuid(dashed=False)
         catalog = PROVIDERS.catalog_api.get_v3_catalog(
             user_id,
             self.default_domain_project_id)

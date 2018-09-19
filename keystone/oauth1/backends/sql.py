@@ -14,10 +14,10 @@
 
 import datetime
 import random as _random
-import uuid
 
 from oslo_serialization import jsonutils
 from oslo_utils import timeutils
+from oslo_utils import uuidutils
 
 from keystone.common import sql
 from keystone.common import utils
@@ -149,8 +149,8 @@ class OAuth1(base.Oauth1DriverBase):
 
     def create_request_token(self, consumer_id, requested_project,
                              request_token_duration):
-        request_token_id = uuid.uuid4().hex
-        request_token_secret = uuid.uuid4().hex
+        request_token_id = uuidutils.generate_uuid(dashed=False)
+        request_token_secret = uuidutils.generate_uuid(dashed=False)
         expiry_date = None
         if request_token_duration > 0:
             now = timeutils.utcnow()
@@ -200,8 +200,8 @@ class OAuth1(base.Oauth1DriverBase):
             return token_ref.to_dict()
 
     def create_access_token(self, request_id, access_token_duration):
-        access_token_id = uuid.uuid4().hex
-        access_token_secret = uuid.uuid4().hex
+        access_token_id = uuidutils.generate_uuid(dashed=False)
+        access_token_secret = uuidutils.generate_uuid(dashed=False)
         with sql.session_for_write() as session:
             req_token_ref = self._get_request_token(session, request_id)
             token_dict = req_token_ref.to_dict()

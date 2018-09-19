@@ -11,8 +11,8 @@
 # under the License.
 
 import datetime
-import uuid
 
+from oslo_utils import uuidutils
 from six.moves import http_client
 
 from keystone.common import provider_api
@@ -281,7 +281,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
     def test_create_trust_with_non_existant_trustee_returns_not_found(self):
         ref = unit.new_trust_ref(
             trustor_user_id=self.user_id,
-            trustee_user_id=uuid.uuid4().hex,
+            trustee_user_id=uuidutils.generate_uuid(dashed=False),
             project_id=self.project_id,
             role_ids=[self.role_id])
         self.post('/OS-TRUST/trusts', body={'trust': ref},
@@ -302,7 +302,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
         ref = unit.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
-            project_id=uuid.uuid4().hex,
+            project_id=uuidutils.generate_uuid(dashed=False),
             role_ids=[self.role_id])
         self.post('/OS-TRUST/trusts', body={'trust': ref},
                   expected_status=http_client.NOT_FOUND)
@@ -312,7 +312,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
             project_id=self.project_id,
-            role_ids=[uuid.uuid4().hex])
+            role_ids=[uuidutils.generate_uuid(dashed=False)])
         self.post('/OS-TRUST/trusts', body={'trust': ref},
                   expected_status=http_client.NOT_FOUND)
 
@@ -331,14 +331,15 @@ class TestTrustOperations(test_v3.RestfulTestCase):
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
             project_id=self.project_id,
-            role_names=[uuid.uuid4().hex])
+            role_names=[uuidutils.generate_uuid(dashed=False)])
         self.post('/OS-TRUST/trusts', body={'trust': ref},
                   expected_status=http_client.NOT_FOUND)
 
     def test_create_trust_with_role_name_ambiguous_returns_bad_request(self):
         # Create second role with the same name
-        role_ref = unit.new_role_ref(name=self.role['name'],
-                                     domain_id=uuid.uuid4().hex)
+        role_ref = unit.new_role_ref(
+            name=self.role['name'],
+            domain_id=uuidutils.generate_uuid(dashed=False))
         self.post('/roles', body={'role': role_ref})
 
         ref = unit.new_trust_ref(
@@ -543,12 +544,12 @@ class TrustsWithApplicationCredentials(test_v3.RestfulTestCase):
 
     def test_create_trust_with_application_credential(self):
         app_cred = {
-            'id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(dashed=False),
             'user_id': self.user_id,
             'project_id': self.project_id,
-            'name': uuid.uuid4().hex,
+            'name': uuidutils.generate_uuid(dashed=False),
             'roles': [{'id': self.role_id}],
-            'secret': uuid.uuid4().hex
+            'secret': uuidutils.generate_uuid(dashed=False)
         }
         app_cred_api = PROVIDERS.application_credential_api
         app_cred_api.create_application_credential(app_cred)
@@ -578,12 +579,12 @@ class TrustsWithApplicationCredentials(test_v3.RestfulTestCase):
         trust = self.assertValidTrustResponse(r, ref)
 
         app_cred = {
-            'id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(dashed=False),
             'user_id': self.user_id,
             'project_id': self.project_id,
-            'name': uuid.uuid4().hex,
+            'name': uuidutils.generate_uuid(dashed=False),
             'roles': [{'id': self.role_id}],
-            'secret': uuid.uuid4().hex
+            'secret': uuidutils.generate_uuid(dashed=False)
         }
         app_cred_api = PROVIDERS.application_credential_api
         app_cred_api.create_application_credential(app_cred)

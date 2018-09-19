@@ -18,7 +18,6 @@ import fixtures
 import itertools
 import operator
 import re
-import uuid
 
 import freezegun
 from keystoneclient.common import cms
@@ -26,6 +25,7 @@ import mock
 from oslo_serialization import jsonutils as json
 from oslo_utils import fixture
 from oslo_utils import timeutils
+from oslo_utils import uuidutils
 import six
 from six.moves import http_client
 from six.moves import range
@@ -72,7 +72,8 @@ class TestMFARules(test_v3.RestfulTestCase):
 
     def _create_totp_cred(self):
         totp_cred = unit.new_totp_credential(self.user_id, self.project_id)
-        PROVIDERS.credential_api.create_credential(uuid.uuid4().hex, totp_cred)
+        PROVIDERS.credential_api.create_credential(
+            uuidutils.generate_uuid(dashed=False), totp_cred)
 
         def cleanup(testcase):
             totp_creds = testcase.credential_api.list_credentials_for_user(
@@ -209,7 +210,8 @@ class TestMFARules(test_v3.RestfulTestCase):
     def test_MFA_rules_all_bogus_rules_results_in_default_behavior(self):
         # if all the rules are bogus, the result is the same as the default
         # behavior, any single password method is sufficient
-        rule_list = [[uuid.uuid4().hex, uuid.uuid4().hex],
+        rule_list = [[uuidutils.generate_uuid(dashed=False),
+                      uuidutils.generate_uuid(dashed=False)],
                      ['BoGus'],
                      ['NonExistantMethod']]
         self._update_user_with_MFA_rules(rule_list=rule_list)
@@ -304,7 +306,7 @@ class TestAuthInfo(common_auth.AuthTestMixin, testcase.TestCase):
             password='test')['auth']
         auth_info = auth.core.AuthInfo.create(auth_data)
 
-        method_name = uuid.uuid4().hex
+        method_name = uuidutils.generate_uuid(dashed=False)
         self.assertRaises(exception.ValidationError,
                           auth_info.get_method_data,
                           method_name)
@@ -1189,7 +1191,7 @@ class TokenAPITests(object):
     def test_project_scoped_token_catalog_excludes_disabled_endpoint(self):
         # Create a disabled endpoint
         disabled_endpoint_ref = copy.copy(self.endpoint)
-        disabled_endpoint_id = uuid.uuid4().hex
+        disabled_endpoint_id = uuidutils.generate_uuid(dashed=False)
         disabled_endpoint_ref.update({
             'id': disabled_endpoint_id,
             'enabled': False,
@@ -1761,7 +1763,7 @@ class TokenAPITests(object):
         self.config_fixture.config(
             group='resource',
             admin_project_domain_name=self.domain['name'],
-            admin_project_name=uuid.uuid4().hex)
+            admin_project_name=uuidutils.generate_uuid(dashed=False))
         r = self.v3_create_token(self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'],
@@ -1774,7 +1776,7 @@ class TokenAPITests(object):
     def test_token_for_non_admin_domain_same_project_name_is_not_admin(self):
         self.config_fixture.config(
             group='resource',
-            admin_project_domain_name=uuid.uuid4().hex,
+            admin_project_domain_name=uuidutils.generate_uuid(dashed=False),
             admin_project_name=self.project['name'])
         r = self.v3_create_token(self.build_authentication_request(
             user_id=self.user['id'],
@@ -2039,14 +2041,14 @@ class TokenAPITests(object):
 
     def test_create_token_with_nonexistant_user_id_fails(self):
         auth_data = self.build_authentication_request(
-            user_id=uuid.uuid4().hex,
+            user_id=uuidutils.generate_uuid(dashed=False),
             password=self.user['password'])
         self.v3_create_token(auth_data,
                              expected_status=http_client.UNAUTHORIZED)
 
     def test_create_token_with_nonexistant_username_fails(self):
         auth_data = self.build_authentication_request(
-            username=uuid.uuid4().hex,
+            username=uuidutils.generate_uuid(dashed=False),
             user_domain_id=self.domain['id'],
             password=self.user['password'])
         self.v3_create_token(auth_data,
@@ -2055,7 +2057,7 @@ class TokenAPITests(object):
     def test_create_token_with_nonexistant_domain_id_fails(self):
         auth_data = self.build_authentication_request(
             username=self.user['name'],
-            user_domain_id=uuid.uuid4().hex,
+            user_domain_id=uuidutils.generate_uuid(dashed=False),
             password=self.user['password'])
         self.v3_create_token(auth_data,
                              expected_status=http_client.UNAUTHORIZED)
@@ -2063,7 +2065,7 @@ class TokenAPITests(object):
     def test_create_token_with_nonexistant_domain_name_fails(self):
         auth_data = self.build_authentication_request(
             username=self.user['name'],
-            user_domain_name=uuid.uuid4().hex,
+            user_domain_name=uuidutils.generate_uuid(dashed=False),
             password=self.user['password'])
         self.v3_create_token(auth_data,
                              expected_status=http_client.UNAUTHORIZED)
@@ -2071,7 +2073,7 @@ class TokenAPITests(object):
     def test_create_token_with_wrong_password_fails(self):
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
-            password=uuid.uuid4().hex)
+            password=uuidutils.generate_uuid(dashed=False))
         self.v3_create_token(auth_data,
                              expected_status=http_client.UNAUTHORIZED)
 
@@ -2424,7 +2426,8 @@ class TokenDataTests(object):
         r = self.get('/auth/tokens', headers=self.headers)
 
         # populate the response result with some extra data
-        r.result['token'][u'extra'] = six.text_type(uuid.uuid4().hex)
+        r.result['token'][u'extra'] = six.text_type(
+            uuidutils.generate_uuid(dashed=False))
         self.assertRaises(exception.SchemaValidationError,
                           self.assertValidUnscopedTokenResponse,
                           r)
@@ -2446,7 +2449,8 @@ class TokenDataTests(object):
         r = self.get('/auth/tokens', headers=self.headers)
 
         # populate the response result with some extra data
-        r.result['token'][u'extra'] = six.text_type(uuid.uuid4().hex)
+        r.result['token'][u'extra'] = six.text_type(
+            uuidutils.generate_uuid(dashed=False))
         self.assertRaises(exception.SchemaValidationError,
                           self.assertValidDomainScopedTokenResponse,
                           r)
@@ -2463,7 +2467,8 @@ class TokenDataTests(object):
         resp = self.get('/auth/tokens', headers=self.headers)
 
         # populate the response result with some extra data
-        resp.result['token'][u'extra'] = six.text_type(uuid.uuid4().hex)
+        resp.result['token'][u'extra'] = six.text_type(
+            uuidutils.generate_uuid(dashed=False))
         self.assertRaises(exception.SchemaValidationError,
                           self.assertValidProjectScopedTokenResponse,
                           resp)
@@ -2532,14 +2537,16 @@ class TestFernetTokenAPIs(test_v3.RestfulTestCase, TokenAPITests,
 
     def test_validate_tampered_unscoped_token_fails(self):
         unscoped_token = self._get_unscoped_token()
-        tampered_token = (unscoped_token[:50] + uuid.uuid4().hex +
+        tampered_token = (unscoped_token[:50] +
+                          uuidutils.generate_uuid(dashed=False) +
                           unscoped_token[50 + 32:])
         self._validate_token(tampered_token,
                              expected_status=http_client.NOT_FOUND)
 
     def test_validate_tampered_project_scoped_token_fails(self):
         project_scoped_token = self._get_project_scoped_token()
-        tampered_token = (project_scoped_token[:50] + uuid.uuid4().hex +
+        tampered_token = (project_scoped_token[:50] +
+                          uuidutils.generate_uuid(dashed=False) +
                           project_scoped_token[50 + 32:])
         self._validate_token(tampered_token,
                              expected_status=http_client.NOT_FOUND)
@@ -2548,7 +2555,8 @@ class TestFernetTokenAPIs(test_v3.RestfulTestCase, TokenAPITests,
         trustee_user, trust = self._create_trust()
         trust_scoped_token = self._get_trust_scoped_token(trustee_user, trust)
         # Get a trust scoped token
-        tampered_token = (trust_scoped_token[:50] + uuid.uuid4().hex +
+        tampered_token = (trust_scoped_token[:50] +
+                          uuidutils.generate_uuid(dashed=False) +
                           trust_scoped_token[50 + 32:])
         self._validate_token(tampered_token,
                              expected_status=http_client.NOT_FOUND)
@@ -4411,7 +4419,10 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
 
         self.assertValidUserResponse(
             self.patch('/users/%s' % self.trustee_user['id'],
-                       body={'user': {'password': uuid.uuid4().hex}}))
+                       body={
+                           'user': {
+                               'password':
+                                   uuidutils.generate_uuid(dashed=False)}}))
 
         self.get('/OS-TRUST/trusts?trustor_user_id=%s' %
                  self.user_id, expected_status=http_client.UNAUTHORIZED,
@@ -4682,7 +4693,8 @@ class TestAuthContext(unit.TestCase):
 
     def test_identity_attribute_conflict(self):
         for identity_attr in auth.core.AuthContext.IDENTITY_ATTRIBUTES:
-            self.auth_context[identity_attr] = uuid.uuid4().hex
+            self.auth_context[identity_attr] = \
+                uuidutils.generate_uuid(dashed=False)
             if identity_attr == 'expires_at':
                 # 'expires_at' is a special case. Will test it in a separate
                 # test case.
@@ -4691,7 +4703,7 @@ class TestAuthContext(unit.TestCase):
                               operator.setitem,
                               self.auth_context,
                               identity_attr,
-                              uuid.uuid4().hex)
+                              uuidutils.generate_uuid(dashed=False))
 
     def test_identity_attribute_conflict_with_none_value(self):
         for identity_attr in auth.core.AuthContext.IDENTITY_ATTRIBUTES:
@@ -4699,21 +4711,22 @@ class TestAuthContext(unit.TestCase):
 
             if identity_attr == 'expires_at':
                 # 'expires_at' is a special case and is tested above.
-                self.auth_context['expires_at'] = uuid.uuid4().hex
+                self.auth_context['expires_at'] = \
+                    uuidutils.generate_uuid(dashed=False)
                 continue
 
             self.assertRaises(exception.Unauthorized,
                               operator.setitem,
                               self.auth_context,
                               identity_attr,
-                              uuid.uuid4().hex)
+                              uuidutils.generate_uuid(dashed=False))
 
     def test_non_identity_attribute_conflict_override(self):
         # for attributes Keystone doesn't know about, make sure they can be
         # freely manipulated
-        attr_name = uuid.uuid4().hex
-        attr_val_1 = uuid.uuid4().hex
-        attr_val_2 = uuid.uuid4().hex
+        attr_name = uuidutils.generate_uuid(dashed=False)
+        attr_val_1 = uuidutils.generate_uuid(dashed=False)
+        attr_val_2 = uuidutils.generate_uuid(dashed=False)
         self.auth_context[attr_name] = attr_val_1
         self.auth_context[attr_name] = attr_val_2
         self.assertEqual(attr_val_2, self.auth_context[attr_name])
@@ -5267,12 +5280,12 @@ class ApplicationCredentialAuth(test_v3.RestfulTestCase):
     def _make_app_cred(self, expires=None):
         roles = [{'id': self.role_id}]
         data = {
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'secret': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(dashed=False),
+            'name': uuidutils.generate_uuid(dashed=False),
+            'secret': uuidutils.generate_uuid(dashed=False),
             'user_id': self.user['id'],
             'project_id': self.project['id'],
-            'description': uuid.uuid4().hex,
+            'description': uuidutils.generate_uuid(dashed=False),
             'roles': roles
         }
         if expires:
