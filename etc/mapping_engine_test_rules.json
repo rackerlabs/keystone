@@ -1,0 +1,29 @@
+{
+  "rules": [
+    {
+      "local": [
+        {
+          "group": {
+            "id": "0cd5e9"
+          }
+        } ,
+        {
+          "user": {
+            "name": "{0}"
+          }
+        }
+      ] ,
+      "remote": [
+        {
+          "type": "UserName"
+        } ,
+        {
+          "type": "Email" ,
+          "any_one_of": [
+            "me@example.com"
+          ]
+        }
+      ]
+    }
+  ]
+}
