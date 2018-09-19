@@ -12,12 +12,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
-
 import fixtures
 from oslo_config import fixture as config_fixture
 from oslo_log import log
 from oslo_serialization import jsonutils
+from oslo_utils import uuidutils
 import six
 
 from keystone.common import wsgi
@@ -59,15 +58,15 @@ class ExceptionTestCase(unit.BaseTestCase):
                 self.assertValidJsonRendering(cls(message='Overridden.'))
 
     def test_validation_error(self):
-        target = uuid.uuid4().hex
-        attribute = uuid.uuid4().hex
+        target = uuidutils.generate_uuid(dashed=False)
+        attribute = uuidutils.generate_uuid(dashed=False)
         e = exception.ValidationError(target=target, attribute=attribute)
         self.assertValidJsonRendering(e)
         self.assertIn(target, six.text_type(e))
         self.assertIn(attribute, six.text_type(e))
 
     def test_not_found(self):
-        target = uuid.uuid4().hex
+        target = uuidutils.generate_uuid(dashed=False)
         e = exception.NotFound(target=target)
         self.assertValidJsonRendering(e)
         self.assertIn(target, six.text_type(e))
@@ -119,7 +118,7 @@ class UnexpectedExceptionTestCase(ExceptionTestCase):
 
     def setUp(self):
         super(UnexpectedExceptionTestCase, self).setUp()
-        self.exc_str = uuid.uuid4().hex
+        self.exc_str = uuidutils.generate_uuid(dashed=False)
         self.config_fixture = self.useFixture(config_fixture.Config(CONF))
 
     def test_unexpected_error_no_debug(self):
@@ -164,7 +163,8 @@ class UnexpectedExceptionTestCase(ExceptionTestCase):
 
     def test_unexpected_error_custom_message_exception_debug(self):
         self.config_fixture.config(debug=True, insecure_debug=True)
-        orig_e = exception.NotFound(target=uuid.uuid4().hex)
+        orig_e = exception.NotFound(
+            target=uuidutils.generate_uuid(dashed=False))
         e = exception.UnexpectedError(orig_e)
         self.assertEqual(
             '%s %s' % (six.text_type(orig_e),
@@ -191,7 +191,7 @@ class SecurityErrorTestCase(ExceptionTestCase):
     def test_unauthorized_exposure(self):
         self.config_fixture.config(debug=False)
 
-        risky_info = uuid.uuid4().hex
+        risky_info = uuidutils.generate_uuid(dashed=False)
         e = exception.Unauthorized(message=risky_info)
         self.assertValidJsonRendering(e)
         self.assertNotIn(risky_info, six.text_type(e))
@@ -199,7 +199,7 @@ class SecurityErrorTestCase(ExceptionTestCase):
     def test_unauthorized_exposure_in_debug(self):
         self.config_fixture.config(debug=True, insecure_debug=True)
 
-        risky_info = uuid.uuid4().hex
+        risky_info = uuidutils.generate_uuid(dashed=False)
         e = exception.Unauthorized(message=risky_info)
         self.assertValidJsonRendering(e)
         self.assertIn(risky_info, six.text_type(e))
@@ -207,7 +207,7 @@ class SecurityErrorTestCase(ExceptionTestCase):
     def test_forbidden_exposure(self):
         self.config_fixture.config(debug=False)
 
-        risky_info = uuid.uuid4().hex
+        risky_info = uuidutils.generate_uuid(dashed=False)
         e = exception.Forbidden(message=risky_info)
         self.assertValidJsonRendering(e)
         self.assertNotIn(risky_info, six.text_type(e))
@@ -215,7 +215,7 @@ class SecurityErrorTestCase(ExceptionTestCase):
     def test_forbidden_exposure_in_debug(self):
         self.config_fixture.config(debug=True, insecure_debug=True)
 
-        risky_info = uuid.uuid4().hex
+        risky_info = uuidutils.generate_uuid(dashed=False)
         e = exception.Forbidden(message=risky_info)
         self.assertValidJsonRendering(e)
         self.assertIn(risky_info, six.text_type(e))
@@ -223,8 +223,8 @@ class SecurityErrorTestCase(ExceptionTestCase):
     def test_forbidden_action_exposure(self):
         self.config_fixture.config(debug=False)
 
-        risky_info = uuid.uuid4().hex
-        action = uuid.uuid4().hex
+        risky_info = uuidutils.generate_uuid(dashed=False)
+        action = uuidutils.generate_uuid(dashed=False)
         e = exception.ForbiddenAction(message=risky_info, action=action)
         self.assertValidJsonRendering(e)
         self.assertNotIn(risky_info, six.text_type(e))
@@ -239,8 +239,8 @@ class SecurityErrorTestCase(ExceptionTestCase):
     def test_forbidden_action_exposure_in_debug(self):
         self.config_fixture.config(debug=True, insecure_debug=True)
 
-        risky_info = uuid.uuid4().hex
-        action = uuid.uuid4().hex
+        risky_info = uuidutils.generate_uuid(dashed=False)
+        action = uuidutils.generate_uuid(dashed=False)
 
         e = exception.ForbiddenAction(message=risky_info, action=action)
         self.assertValidJsonRendering(e)
@@ -257,7 +257,7 @@ class SecurityErrorTestCase(ExceptionTestCase):
         # SecurityError subclass) is created the exposed message is the same
         # whether debug is enabled or not.
 
-        action = uuid.uuid4().hex
+        action = uuidutils.generate_uuid(dashed=False)
 
         self.config_fixture.config(debug=False)
         e = exception.ForbiddenAction(action=action)

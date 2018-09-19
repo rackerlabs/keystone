@@ -13,13 +13,13 @@
 # under the License.
 
 import datetime
-import uuid
 
 import fixtures
 import freezegun
 import mock
 from oslo_db import exception as oslo_db_exception
 from oslo_log import log
+from oslo_utils import uuidutils
 from six.moves import http_client
 from testtools import matchers
 
@@ -422,7 +422,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.v3_create_token(old_token_auth)
 
         # administrative password reset
-        new_password = uuid.uuid4().hex
+        new_password = uuidutils.generate_uuid(dashed=False)
         self.patch('/users/%s' % user_ref['id'],
                    body={'user': {'password': new_password}})
 
@@ -449,7 +449,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         user_ref = unit.create_user(PROVIDERS.identity_api,
                                     domain_id=self.domain['id'])
         # administrative password reset
-        new_password = uuid.uuid4().hex
+        new_password = uuidutils.generate_uuid(dashed=False)
         r = self.patch('/users/%s' % user_ref['id'],
                        body={'user': {'password': new_password}})
         self.assertValidUserResponse(r, user_ref)
@@ -468,7 +468,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.patch('/users/%s' % user_ref['id'], body=update_user_body)
 
         # administrative password reset
-        new_password = uuid.uuid4().hex
+        new_password = uuidutils.generate_uuid(dashed=False)
         r = self.patch('/users/%s' % user_ref['id'],
                        body={'user': {'password': new_password}})
         self.assertValidUserResponse(r, user_ref)
@@ -660,7 +660,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertNotIn(user_ref['password'], log_fix.output)
 
         # administrative password reset
-        new_password = uuid.uuid4().hex
+        new_password = uuidutils.generate_uuid(dashed=False)
         self.patch('/users/%s' % user_ref['id'],
                    body={'user': {'password': new_password}})
 
@@ -726,7 +726,7 @@ class UserSelfServiceChangingPasswordsTestCase(ChangePasswordTestCase):
             datetime.datetime.utcnow() -
             datetime.timedelta(expire_days)
         )
-        password = uuid.uuid4().hex
+        password = uuidutils.generate_uuid(dashed=False)
         user_ref = unit.new_user_ref(domain_id=self.domain_id,
                                      password=password)
         with freezegun.freeze_time(time):
@@ -743,7 +743,7 @@ class UserSelfServiceChangingPasswordsTestCase(ChangePasswordTestCase):
         self.v3_create_token(old_token_auth)
 
         # change password
-        new_password = uuid.uuid4().hex
+        new_password = uuidutils.generate_uuid(dashed=False)
         self.change_password(password=new_password,
                              original_password=self.user_ref['password'],
                              expected_status=http_client.NO_CONTENT)
@@ -764,7 +764,7 @@ class UserSelfServiceChangingPasswordsTestCase(ChangePasswordTestCase):
         time = datetime.datetime.utcnow()
         with freezegun.freeze_time(time) as frozen_datetime:
             # enable minimum_password_age and attempt to change password
-            new_password = uuid.uuid4().hex
+            new_password = uuidutils.generate_uuid(dashed=False)
             self.config_fixture.config(group='security_compliance',
                                        minimum_password_age=1)
             # able to change password after create user
@@ -778,18 +778,20 @@ class UserSelfServiceChangingPasswordsTestCase(ChangePasswordTestCase):
                 new_password,
                 http_client.CREATED
             )
-            self.change_password(password=uuid.uuid4().hex,
-                                 original_password=new_password,
-                                 expected_status=http_client.BAD_REQUEST)
+            self.change_password(
+                password=uuidutils.generate_uuid(dashed=False),
+                original_password=new_password,
+                expected_status=http_client.BAD_REQUEST)
             # disable minimum_password_age and attempt to change password
             self.config_fixture.config(group='security_compliance',
                                        minimum_password_age=0)
-            self.change_password(password=uuid.uuid4().hex,
-                                 original_password=new_password,
-                                 expected_status=http_client.NO_CONTENT)
+            self.change_password(
+                password=uuidutils.generate_uuid(dashed=False),
+                original_password=new_password,
+                expected_status=http_client.NO_CONTENT)
 
     def test_changing_password_with_password_lock(self):
-        password = uuid.uuid4().hex
+        password = uuidutils.generate_uuid(dashed=False)
         ref = unit.new_user_ref(domain_id=self.domain_id, password=password)
         response = self.post('/users', body={'user': ref})
         user_id = response.json_body['user']['id']
@@ -802,7 +804,7 @@ class UserSelfServiceChangingPasswordsTestCase(ChangePasswordTestCase):
             self.patch('/users/%s' % user_id, body=user_patch)
 
             # Fail, password is locked
-            new_password = uuid.uuid4().hex
+            new_password = uuidutils.generate_uuid(dashed=False)
             body = {
                 'user': {
                     'original_password': password,
@@ -842,20 +844,22 @@ class UserSelfServiceChangingPasswordsTestCase(ChangePasswordTestCase):
             self.assertNotIn(lock_pw_opt, user['options'])
 
     def test_changing_password_with_missing_original_password_fails(self):
-        r = self.change_password(password=uuid.uuid4().hex,
-                                 expected_status=http_client.BAD_REQUEST)
+        r = self.change_password(
+            password=uuidutils.generate_uuid(dashed=False),
+            expected_status=http_client.BAD_REQUEST)
         self.assertThat(r.result['error']['message'],
                         matchers.Contains('original_password'))
 
     def test_changing_password_with_missing_password_fails(self):
-        r = self.change_password(original_password=self.user_ref['password'],
-                                 expected_status=http_client.BAD_REQUEST)
+        r = self.change_password(
+            original_password=self.user_ref['password'],
+            expected_status=http_client.BAD_REQUEST)
         self.assertThat(r.result['error']['message'],
                         matchers.Contains('password'))
 
     def test_changing_password_with_incorrect_password_fails(self):
-        self.change_password(password=uuid.uuid4().hex,
-                             original_password=uuid.uuid4().hex,
+        self.change_password(password=uuidutils.generate_uuid(dashed=False),
+                             original_password=uuidutils.generate_uuid(dashed=False),
                              expected_status=http_client.UNAUTHORIZED)
 
     def test_changing_password_with_disabled_user_fails(self):
@@ -864,7 +868,7 @@ class UserSelfServiceChangingPasswordsTestCase(ChangePasswordTestCase):
         self.patch('/users/%s' % self.user_ref['id'],
                    body={'user': self.user_ref})
 
-        self.change_password(password=uuid.uuid4().hex,
+        self.change_password(password=uuidutils.generate_uuid(dashed=False),
                              original_password=self.user_ref['password'],
                              expected_status=http_client.UNAUTHORIZED)
 
@@ -875,7 +879,7 @@ class UserSelfServiceChangingPasswordsTestCase(ChangePasswordTestCase):
         log_fix = self.useFixture(fixtures.FakeLogger(level=log.DEBUG))
 
         # change password
-        new_password = uuid.uuid4().hex
+        new_password = uuidutils.generate_uuid(dashed=False)
         self.change_password(password=new_password,
                              original_password=self.user_ref['password'],
                              expected_status=http_client.NO_CONTENT)
@@ -888,7 +892,7 @@ class UserSelfServiceChangingPasswordsTestCase(ChangePasswordTestCase):
                                    password_expires_days=2)
         password = self._create_user_with_expired_password()
 
-        new_password = uuid.uuid4().hex
+        new_password = uuidutils.generate_uuid(dashed=False)
         self.change_password(password=new_password,
                              original_password=password,
                              expected_status=http_client.NO_CONTENT)
@@ -906,7 +910,7 @@ class UserSelfServiceChangingPasswordsTestCase(ChangePasswordTestCase):
         self.patch('/users/%s' % self.user_ref['id'],
                    body={'user': self.user_ref})
 
-        new_password = uuid.uuid4().hex
+        new_password = uuidutils.generate_uuid(dashed=False)
         self.change_password(password=new_password,
                              original_password=password,
                              expected_status=http_client.UNAUTHORIZED)
@@ -924,7 +928,7 @@ class UserSelfServiceChangingPasswordsTestCase(ChangePasswordTestCase):
                                expected_status=http_client.UNAUTHORIZED)
 
         # self-service change password
-        new_password = uuid.uuid4().hex
+        new_password = uuidutils.generate_uuid(dashed=False)
         self.change_password(password=new_password,
                              original_password=self.user_ref['password'],
                              expected_status=http_client.NO_CONTENT)
@@ -937,7 +941,7 @@ class UserSelfServiceChangingPasswordsTestCase(ChangePasswordTestCase):
                                    change_password_upon_first_use=True)
 
         # admin reset
-        reset_password = uuid.uuid4().hex
+        reset_password = uuidutils.generate_uuid(dashed=False)
         user_password = {'password': reset_password}
         PROVIDERS.identity_api.update_user(self.user_ref['id'], user_password)
 
@@ -946,7 +950,7 @@ class UserSelfServiceChangingPasswordsTestCase(ChangePasswordTestCase):
                                expected_status=http_client.UNAUTHORIZED)
 
         # self-service change password
-        new_password = uuid.uuid4().hex
+        new_password = uuidutils.generate_uuid(dashed=False)
         self.change_password(password=new_password,
                              original_password=reset_password,
                              expected_status=http_client.NO_CONTENT)
@@ -959,7 +963,7 @@ class UserSelfServiceChangingPasswordsTestCase(ChangePasswordTestCase):
                                    change_password_upon_first_use=True)
 
         # ignore user and reset password
-        reset_password = uuid.uuid4().hex
+        reset_password = uuidutils.generate_uuid(dashed=False)
         self.user_ref['password'] = reset_password
         ignore_opt_name = options.IGNORE_CHANGE_PASSWORD_OPT.option_name
         self.user_ref['options'][ignore_opt_name] = True
@@ -984,7 +988,7 @@ class UserSelfServiceChangingPasswordsTestCase(ChangePasswordTestCase):
 
         # fail to auth, this should lockout the user, since we're allowed
         # one failure, but we're exempt from lockout!
-        bad_password = uuid.uuid4().hex
+        bad_password = uuidutils.generate_uuid(dashed=False)
         self.token = self.get_request_token(bad_password,
                                             http_client.UNAUTHORIZED)
 
@@ -1051,18 +1055,18 @@ class UserFederatedAttributesTests(test_v3.RestfulTestCase):
     def _create_federated_attributes(self):
         # Create the idp
         idp = {
-            'id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(dashed=False),
             'enabled': True,
-            'description': uuid.uuid4().hex
+            'description': uuidutils.generate_uuid(dashed=False)
         }
         PROVIDERS.federation_api.create_idp(idp['id'], idp)
         # Create the mapping
         mapping = mapping_fixtures.MAPPING_EPHEMERAL_USER
-        mapping['id'] = uuid.uuid4().hex
+        mapping['id'] = uuidutils.generate_uuid(dashed=False)
         PROVIDERS.federation_api.create_mapping(mapping['id'], mapping)
         # Create the protocol
         protocol = {
-            'id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(dashed=False),
             'mapping_id': mapping['id']
         }
         PROVIDERS.federation_api.create_protocol(

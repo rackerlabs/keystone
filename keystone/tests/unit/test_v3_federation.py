@@ -16,13 +16,13 @@ import random
 import re
 import subprocess
 from testtools import matchers
-import uuid
 
 import fixtures
 from lxml import etree
 import mock
 from oslo_serialization import jsonutils
 from oslo_utils import importutils
+from oslo_utils import uuidutils
 import saml2
 from saml2 import saml
 from saml2 import sigver
@@ -69,7 +69,7 @@ class FederatedSetupMixin(object):
     ASSERTION_PREFIX = 'PREFIX_'
     IDP_WITH_REMOTE = 'ORG_IDP_REMOTE'
     REMOTE_IDS = ['entityID_IDP1', 'entityID_IDP2']
-    REMOTE_ID_ATTR = uuid.uuid4().hex
+    REMOTE_ID_ATTR = uuidutils.generate_uuid(dashed=False)
 
     UNSCOPED_V3_SAML2_REQ = {
         "identity": {
@@ -160,22 +160,22 @@ class FederatedSetupMixin(object):
 
     def idp_ref(self, id=None):
         idp = {
-            'id': id or uuid.uuid4().hex,
+            'id': id or uuidutils.generate_uuid(dashed=False),
             'enabled': True,
-            'description': uuid.uuid4().hex
+            'description': uuidutils.generate_uuid(dashed=False)
         }
         return idp
 
     def proto_ref(self, mapping_id=None):
         proto = {
-            'id': uuid.uuid4().hex,
-            'mapping_id': mapping_id or uuid.uuid4().hex
+            'id': uuidutils.generate_uuid(dashed=False),
+            'mapping_id': mapping_id or uuidutils.generate_uuid(dashed=False)
         }
         return proto
 
     def mapping_ref(self, rules=None):
         return {
-            'id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(dashed=False),
             'rules': rules or self.rules['rules']
         }
 
@@ -489,7 +489,7 @@ class FederatedSetupMixin(object):
                     'local': [
                         {
                             'group': {
-                                'id': uuid.uuid4().hex
+                                'id': uuidutils.generate_uuid(dashed=False)
                             }
                         },
                         {
@@ -691,7 +691,7 @@ class FederatedSetupMixin(object):
                                 "type": "local",
                                 "name": self.user['name'],
                                 "domain": {
-                                    "id": uuid.uuid4().hex
+                                    "id": uuidutils.generate_uuid(dashed=False)
                                 }
                             }
                         }
@@ -772,7 +772,8 @@ class FederatedSetupMixin(object):
             self.tokens[variant] = r.headers.get('X-Subject-Token')
 
         self.TOKEN_SCOPE_PROJECT_FROM_NONEXISTENT_TOKEN = self._scope_request(
-            uuid.uuid4().hex, 'project', self.proj_customers['id'])
+            uuidutils.generate_uuid(dashed=False), 'project',
+            self.proj_customers['id'])
 
         self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_EMPLOYEE = self._scope_request(
             self.tokens['EMPLOYEE_ASSERTION'], 'project',
@@ -853,7 +854,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
     def _create_default_idp(self, body=None,
                             expected_status=http_client.CREATED):
         """Create default IdP."""
-        url = self.base_url(suffix=uuid.uuid4().hex)
+        url = self.base_url(suffix=uuidutils.generate_uuid(dashed=False))
         if body is None:
             body = self._http_idp_input()
         resp = self.put(url, body={'identity_provider': body},
@@ -863,7 +864,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
     def _http_idp_input(self):
         """Create default input dictionary for IdP data."""
         body = self.default_body.copy()
-        body['description'] = uuid.uuid4().hex
+        body['description'] = uuidutils.generate_uuid(dashed=False)
         return body
 
     def _assign_protocol_to_idp(self, idp_id=None, proto=None, url=None,
@@ -873,9 +874,9 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         if idp_id is None:
             idp_id, _ = self._create_and_decapsulate_response()
         if proto is None:
-            proto = uuid.uuid4().hex
+            proto = uuidutils.generate_uuid(dashed=False)
         if mapping_id is None:
-            mapping_id = uuid.uuid4().hex
+            mapping_id = uuidutils.generate_uuid(dashed=False)
         self._create_mapping(mapping_id)
         body = {'mapping_id': mapping_id}
         url = url % {'idp_id': idp_id, 'protocol_id': proto}
@@ -910,7 +911,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         """Create the IdentityProvider entity associated to remote_ids."""
         keys_to_check = list(self.idp_keys)
         body = self.default_body.copy()
-        body['description'] = uuid.uuid4().hex
+        body['description'] = uuidutils.generate_uuid(dashed=False)
         resp = self._create_default_idp(body=body)
         self.assertValidResponse(resp, 'identity_provider', dummy_validator,
                                  keys_to_check=keys_to_check,
@@ -922,7 +923,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         keys_to_check = list(self.idp_keys)
         keys_to_check.append('domain_id')
         body = self.default_body.copy()
-        body['description'] = uuid.uuid4().hex
+        body['description'] = uuidutils.generate_uuid(dashed=False)
         domain = unit.new_domain_ref()
         PROVIDERS.resource_api.create_domain(domain['id'], domain)
         body['domain_id'] = domain['id']
@@ -934,7 +935,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
     def test_create_idp_domain_id_none(self):
         keys_to_check = list(self.idp_keys)
         body = self.default_body.copy()
-        body['description'] = uuid.uuid4().hex
+        body['description'] = uuidutils.generate_uuid(dashed=False)
         body['domain_id'] = None
         resp = self._create_default_idp(body=body)
         self.assertValidResponse(resp, 'identity_provider', dummy_validator,
@@ -972,7 +973,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
 
         # Create an identity provider and specify the domain
         body = self.default_body.copy()
-        body['description'] = uuid.uuid4().hex
+        body['description'] = uuidutils.generate_uuid(dashed=False)
         body['domain_id'] = domain['id']
         resp = self._create_default_idp(body=body)
         idp = resp.json_body['identity_provider']
@@ -1002,16 +1003,16 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         keys_to_check.append('domain_id')
         # create idp with the domain_id
         body = self.default_body.copy()
-        body['description'] = uuid.uuid4().hex
+        body['description'] = uuidutils.generate_uuid(dashed=False)
         body['domain_id'] = domain['id']
         idp1 = self._create_default_idp(body=body)
         self.assertValidResponse(idp1, 'identity_provider', dummy_validator,
                                  keys_to_check=keys_to_check,
                                  ref=body)
         # create a 2nd idp with the same domain_id
-        url = self.base_url(suffix=uuid.uuid4().hex)
+        url = self.base_url(suffix=uuidutils.generate_uuid(dashed=False))
         body = self.default_body.copy()
-        body['description'] = uuid.uuid4().hex
+        body['description'] = uuidutils.generate_uuid(dashed=False)
         body['domain_id'] = domain['id']
         idp2 = self.put(url, body={'identity_provider': body},
                         expected_status=http_client.CREATED)
@@ -1040,8 +1041,8 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
 
     def test_create_idp_with_nonexistent_domain_id_fails(self):
         body = self.default_body.copy()
-        body['description'] = uuid.uuid4().hex
-        body['domain_id'] = uuid.uuid4().hex
+        body['description'] = uuidutils.generate_uuid(dashed=False)
+        body['domain_id'] = uuidutils.generate_uuid(dashed=False)
         self._create_default_idp(body=body,
                                  expected_status=http_client.NOT_FOUND)
 
@@ -1050,10 +1051,10 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         keys_to_check = list(self.idp_keys)
         keys_to_check.append('remote_ids')
         body = self.default_body.copy()
-        body['description'] = uuid.uuid4().hex
-        body['remote_ids'] = [uuid.uuid4().hex,
-                              uuid.uuid4().hex,
-                              uuid.uuid4().hex]
+        body['description'] = uuidutils.generate_uuid(dashed=False)
+        body['remote_ids'] = [uuidutils.generate_uuid(dashed=False),
+                              uuidutils.generate_uuid(dashed=False),
+                              uuidutils.generate_uuid(dashed=False)]
         resp = self._create_default_idp(body=body)
         self.assertValidResponse(resp, 'identity_provider', dummy_validator,
                                  keys_to_check=keys_to_check,
@@ -1071,15 +1072,15 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
 
         """
         body = self.default_body.copy()
-        repeated_remote_id = uuid.uuid4().hex
-        body['remote_ids'] = [uuid.uuid4().hex,
-                              uuid.uuid4().hex,
-                              uuid.uuid4().hex,
+        repeated_remote_id = uuidutils.generate_uuid(dashed=False)
+        body['remote_ids'] = [uuidutils.generate_uuid(dashed=False),
+                              uuidutils.generate_uuid(dashed=False),
+                              uuidutils.generate_uuid(dashed=False),
                               repeated_remote_id]
         self._create_default_idp(body=body)
 
-        url = self.base_url(suffix=uuid.uuid4().hex)
-        body['remote_ids'] = [uuid.uuid4().hex,
+        url = self.base_url(suffix=uuidutils.generate_uuid(dashed=False))
+        body['remote_ids'] = [uuidutils.generate_uuid(dashed=False),
                               repeated_remote_id]
         resp = self.put(url, body={'identity_provider': body},
                         expected_status=http_client.CONFLICT)
@@ -1093,7 +1094,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         keys_to_check = list(self.idp_keys)
         keys_to_check.append('remote_ids')
         body = self.default_body.copy()
-        body['description'] = uuid.uuid4().hex
+        body['description'] = uuidutils.generate_uuid(dashed=False)
         body['remote_ids'] = []
         resp = self._create_default_idp(body=body)
         self.assertValidResponse(resp, 'identity_provider', dummy_validator,
@@ -1105,7 +1106,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         keys_to_check = list(self.idp_keys)
         keys_to_check.append('remote_ids')
         body = self.default_body.copy()
-        body['description'] = uuid.uuid4().hex
+        body['description'] = uuidutils.generate_uuid(dashed=False)
         body['remote_ids'] = None
         resp = self._create_default_idp(body=body)
         expected = body.copy()
@@ -1117,7 +1118,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
     def test_update_idp_remote_ids(self):
         """Update IdP's remote_ids parameter."""
         body = self.default_body.copy()
-        body['remote_ids'] = [uuid.uuid4().hex]
+        body['remote_ids'] = [uuidutils.generate_uuid(dashed=False)]
         default_resp = self._create_default_idp(body=body)
         default_idp = self._fetch_attribute_from_response(default_resp,
                                                           'identity_provider')
@@ -1125,7 +1126,8 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         url = self.base_url(suffix=idp_id)
         self.assertIsNotNone(idp_id)
 
-        body['remote_ids'] = [uuid.uuid4().hex, uuid.uuid4().hex]
+        body['remote_ids'] = [uuidutils.generate_uuid(dashed=False),
+                              uuidutils.generate_uuid(dashed=False)]
 
         body = {'identity_provider': body}
         resp = self.patch(url, body=body)
@@ -1144,7 +1146,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
     def test_update_idp_clean_remote_ids(self):
         """Update IdP's remote_ids parameter with an empty list."""
         body = self.default_body.copy()
-        body['remote_ids'] = [uuid.uuid4().hex]
+        body['remote_ids'] = [uuidutils.generate_uuid(dashed=False)]
         default_resp = self._create_default_idp(body=body)
         default_idp = self._fetch_attribute_from_response(default_resp,
                                                           'identity_provider')
@@ -1179,8 +1181,8 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         """
         # Create first identity provider
         body = self.default_body.copy()
-        repeated_remote_id = uuid.uuid4().hex
-        body['remote_ids'] = [uuid.uuid4().hex,
+        repeated_remote_id = uuidutils.generate_uuid(dashed=False)
+        body['remote_ids'] = [uuidutils.generate_uuid(dashed=False),
                               repeated_remote_id]
         self._create_default_idp(body=body)
 
@@ -1295,7 +1297,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         Expect HTTP 409 Conflict code for the latter call.
 
         """
-        url = self.base_url(suffix=uuid.uuid4().hex)
+        url = self.base_url(suffix=uuidutils.generate_uuid(dashed=False))
         body = self._http_idp_input()
         domain = unit.new_domain_ref()
         PROVIDERS.resource_api.create_domain(domain['id'], domain)
@@ -1336,7 +1338,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         Expected HTTP 404 Not Found status code.
 
         """
-        idp_id = uuid.uuid4().hex
+        idp_id = uuidutils.generate_uuid(dashed=False)
         self.assertIsNotNone(idp_id)
 
         url = self.base_url(suffix=idp_id)
@@ -1363,7 +1365,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         default_idp = self._fetch_attribute_from_response(default_resp,
                                                           'identity_provider')
         idp_id = default_idp['id']
-        protocol_id = uuid.uuid4().hex
+        protocol_id = uuidutils.generate_uuid(dashed=False)
 
         url = self.base_url(suffix='%(idp_id)s/protocols/%(protocol_id)s')
         idp_url = self.base_url(suffix=idp_id)
@@ -1391,7 +1393,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
 
         Expect HTTP 404 Not Found for the GET IdP call.
         """
-        idp_id = uuid.uuid4().hex
+        idp_id = uuidutils.generate_uuid(dashed=False)
         url = self.base_url(suffix=idp_id)
         self.delete(url, expected_status=http_client.NOT_FOUND)
 
@@ -1405,8 +1407,9 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         self.assertIsNotNone(idp_id)
 
         _enabled = not default_idp.get('enabled')
-        body = {'remote_ids': [uuid.uuid4().hex, uuid.uuid4().hex],
-                'description': uuid.uuid4().hex,
+        body = {'remote_ids': [uuidutils.generate_uuid(dashed=False),
+                               uuidutils.generate_uuid(dashed=False)],
+                'description': uuidutils.generate_uuid(dashed=False),
                 'enabled': _enabled}
 
         body = {'identity_provider': body}
@@ -1444,8 +1447,9 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         self.assertIsNotNone(idp_id)
 
         body = self._http_idp_input()
-        body['id'] = uuid.uuid4().hex
-        body['protocols'] = [uuid.uuid4().hex, uuid.uuid4().hex]
+        body['id'] = uuidutils.generate_uuid(dashed=False)
+        body['protocols'] = [uuidutils.generate_uuid(dashed=False),
+                             uuidutils.generate_uuid(dashed=False)]
 
         url = self.base_url(suffix=idp_id)
         self.patch(url, body={'identity_provider': body},
@@ -1457,7 +1461,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         Expect HTTP 404 Not Found code.
 
         """
-        idp_id = uuid.uuid4().hex
+        idp_id = uuidutils.generate_uuid(dashed=False)
         url = self.base_url(suffix=idp_id)
         body = self._http_idp_input()
         body['enabled'] = False
@@ -1513,7 +1517,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         Expect HTTP 404 Not Found code.
 
         """
-        idp_id = uuid.uuid4().hex
+        idp_id = uuidutils.generate_uuid(dashed=False)
         kwargs = {'expected_status': http_client.NOT_FOUND}
         self._assign_protocol_to_idp(proto='saml2',
                                      idp_id=idp_id,
@@ -1576,7 +1580,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         """Update protocol's attribute."""
         resp, idp_id, proto = self._assign_protocol_to_idp(
             expected_status=http_client.CREATED)
-        new_mapping_id = uuid.uuid4().hex
+        new_mapping_id = uuidutils.generate_uuid(dashed=False)
         self._create_mapping(mapping_id=new_mapping_id)
 
         url = "%s/protocols/%s" % (idp_id, proto)
@@ -1637,7 +1641,7 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
         return entity
 
     def _create_default_mapping_entry(self):
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         resp = self.put(url,
                         body={'mapping': mapping_fixtures.MAPPING_LARGE},
                         expected_status=http_client.CREATED)
@@ -1692,73 +1696,73 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
         self.assertValidMappingResponse(resp, mapping_fixtures.MAPPING_SMALL)
 
     def test_delete_mapping_dne(self):
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         self.delete(url, expected_status=http_client.NOT_FOUND)
 
     def test_get_mapping_dne(self):
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         self.get(url, expected_status=http_client.NOT_FOUND)
 
     def test_create_mapping_bad_requirements(self):
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': mapping_fixtures.MAPPING_BAD_REQ})
 
     def test_create_mapping_no_rules(self):
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': mapping_fixtures.MAPPING_NO_RULES})
 
     def test_create_mapping_no_remote_objects(self):
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': mapping_fixtures.MAPPING_NO_REMOTE})
 
     def test_create_mapping_bad_value(self):
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': mapping_fixtures.MAPPING_BAD_VALUE})
 
     def test_create_mapping_missing_local(self):
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': mapping_fixtures.MAPPING_MISSING_LOCAL})
 
     def test_create_mapping_missing_type(self):
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': mapping_fixtures.MAPPING_MISSING_TYPE})
 
     def test_create_mapping_wrong_type(self):
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': mapping_fixtures.MAPPING_WRONG_TYPE})
 
     def test_create_mapping_extra_remote_properties_not_any_of(self):
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         mapping = mapping_fixtures.MAPPING_EXTRA_REMOTE_PROPS_NOT_ANY_OF
         self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': mapping})
 
     def test_create_mapping_extra_remote_properties_any_one_of(self):
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         mapping = mapping_fixtures.MAPPING_EXTRA_REMOTE_PROPS_ANY_ONE_OF
         self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': mapping})
 
     def test_create_mapping_extra_remote_properties_just_type(self):
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         mapping = mapping_fixtures.MAPPING_EXTRA_REMOTE_PROPS_JUST_TYPE
         self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': mapping})
 
     def test_create_mapping_empty_map(self):
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': {}})
 
     def test_create_mapping_extra_rules_properties(self):
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': mapping_fixtures.MAPPING_EXTRA_RULES_PROPS})
 
@@ -1769,13 +1773,13 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
         both ``whitelist`` and ``blacklist`` keywords in the same rule.
 
         """
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         mapping = mapping_fixtures.MAPPING_GROUPS_WHITELIST_AND_BLACKLIST
         self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': mapping})
 
     def test_create_mapping_with_local_user_and_local_domain(self):
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         resp = self.put(
             url,
             body={
@@ -1786,7 +1790,7 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
             resp, mapping_fixtures.MAPPING_LOCAL_USER_LOCAL_DOMAIN)
 
     def test_create_mapping_with_ephemeral(self):
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         resp = self.put(
             url,
             body={'mapping': mapping_fixtures.MAPPING_EPHEMERAL_USER},
@@ -1795,17 +1799,18 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
             resp, mapping_fixtures.MAPPING_EPHEMERAL_USER)
 
     def test_create_mapping_with_bad_user_type(self):
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         # get a copy of a known good map
         bad_mapping = copy.deepcopy(mapping_fixtures.MAPPING_EPHEMERAL_USER)
         # now sabotage the user type
-        bad_mapping['rules'][0]['local'][0]['user']['type'] = uuid.uuid4().hex
+        bad_mapping['rules'][0]['local'][0]['user']['type'] = \
+            uuidutils.generate_uuid(dashed=False)
         self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': bad_mapping})
 
     def test_create_shadow_mapping_without_roles_fails(self):
         """Validate that mappings with projects contain roles when created."""
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         self.put(
             url,
             body={'mapping': mapping_fixtures.MAPPING_PROJECTS_WITHOUT_ROLES},
@@ -1814,7 +1819,7 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
 
     def test_update_shadow_mapping_without_roles_fails(self):
         """Validate that mappings with projects contain roles when updated."""
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         resp = self.put(
             url,
             body={'mapping': mapping_fixtures.MAPPING_PROJECTS},
@@ -1831,7 +1836,7 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
 
     def test_create_shadow_mapping_without_name_fails(self):
         """Validate project mappings contain the project name when created."""
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         self.put(
             url,
             body={'mapping': mapping_fixtures.MAPPING_PROJECTS_WITHOUT_NAME},
@@ -1840,7 +1845,7 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
 
     def test_update_shadow_mapping_without_name_fails(self):
         """Validate project mappings contain the project name when updated."""
-        url = self.MAPPING_URL + uuid.uuid4().hex
+        url = self.MAPPING_URL + uuidutils.generate_uuid(dashed=False)
         resp = self.put(
             url,
             body={'mapping': mapping_fixtures.MAPPING_PROJECTS},
@@ -1987,7 +1992,8 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
                           self._issue_unscoped_token,
                           idp=self.IDP_WITH_REMOTE,
                           environment={
-                              self.REMOTE_ID_ATTR: uuid.uuid4().hex
+                              self.REMOTE_ID_ATTR:
+                                  uuidutils.generate_uuid(dashed=False)
                           })
 
     def test_issue_unscoped_token_with_remote_default_overwritten(self):
@@ -2000,8 +2006,9 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         """
         self.config_fixture.config(group='saml2',
                                    remote_id_attribute=self.REMOTE_ID_ATTR)
-        self.config_fixture.config(group='federation',
-                                   remote_id_attribute=uuid.uuid4().hex)
+        self.config_fixture.config(
+            group='federation',
+            remote_id_attribute=uuidutils.generate_uuid(dashed=False))
         r = self._issue_unscoped_token(idp=self.IDP_WITH_REMOTE,
                                        environment={
                                            self.REMOTE_ID_ATTR:
@@ -2016,7 +2023,8 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
                           self._issue_unscoped_token,
                           idp=self.IDP_WITH_REMOTE,
                           environment={
-                              uuid.uuid4().hex: uuid.uuid4().hex
+                              uuidutils.generate_uuid(dashed=False):
+                                  uuidutils.generate_uuid(dashed=False)
                           })
 
     def test_issue_unscoped_token_with_remote_user_as_empty_string(self):
@@ -2073,7 +2081,8 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         environ = {
             'malformed_object': object(),
             'another_bad_idea': tuple(range(10)),
-            'yet_another_bad_param': dict(zip(uuid.uuid4().hex, range(32)))
+            'yet_another_bad_param': dict(zip(
+                uuidutils.generate_uuid(dashed=False), range(32)))
         }
         environ.update(mapping_fixtures.EMPLOYEE_ASSERTION)
         request = self.make_request(environ=environ)
@@ -3609,7 +3618,7 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
         ref = {
             'auth_url': self.SP_AUTH_URL,
             'enabled': True,
-            'description': uuid.uuid4().hex,
+            'description': uuidutils.generate_uuid(dashed=False),
             'sp_url': self.RECIPIENT,
             'relay_state_prefix': CONF.saml.relay_state_prefix,
 
@@ -3929,7 +3938,7 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
         Raises exception.SchemaValidationError() - error 400 Bad Request
 
         """
-        token_id = uuid.uuid4().hex
+        token_id = uuidutils.generate_uuid(dashed=False)
         body = self._create_generate_saml_request(token_id,
                                                   self.SERVICE_PROVDIER_ID)
         del body['auth']['scope']
@@ -3943,7 +3952,7 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
         Raises exception.SchemaValidationError() - error 400 Bad Request
 
         """
-        token_id = uuid.uuid4().hex
+        token_id = uuidutils.generate_uuid(dashed=False)
         body = self._create_generate_saml_request(token_id,
                                                   self.SERVICE_PROVDIER_ID)
         del body['auth']['identity']['token']
@@ -3957,7 +3966,7 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
         Raises exception.ServiceProviderNotFound() - error Not Found 404
 
         """
-        sp_id = uuid.uuid4().hex
+        sp_id = uuidutils.generate_uuid(dashed=False)
         token_id = self._fetch_valid_token()
         body = self._create_generate_saml_request(token_id, sp_id)
         self.post(self.SAML_GENERATION_ROUTE, body=body,
@@ -3981,7 +3990,7 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
         Raises exception.TokenNotFound() - error Not Found 404
 
         """
-        token_id = uuid.uuid4().hex
+        token_id = uuidutils.generate_uuid(dashed=False)
         body = self._create_generate_saml_request(token_id,
                                                   self.SERVICE_PROVDIER_ID)
         self.post(self.SAML_GENERATION_ROUTE, body=body,
@@ -4265,10 +4274,12 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
 
     def sp_ref(self):
         ref = {
-            'auth_url': 'https://' + uuid.uuid4().hex + '.com',
+            'auth_url': 'https://' +
+                        uuidutils.generate_uuid(dashed=False) + '.com',
             'enabled': True,
-            'description': uuid.uuid4().hex,
-            'sp_url': 'https://' + uuid.uuid4().hex + '.com',
+            'description': uuidutils.generate_uuid(dashed=False),
+            'sp_url': 'https://' +
+                      uuidutils.generate_uuid(dashed=False) + '.com',
             'relay_state_prefix': CONF.saml.relay_state_prefix
         }
         return ref
@@ -4280,7 +4291,7 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
 
     def _create_default_sp(self, body=None):
         """Create default Service Provider."""
-        url = self.base_url(suffix=uuid.uuid4().hex)
+        url = self.base_url(suffix=uuidutils.generate_uuid(dashed=False))
         if body is None:
             body = self.sp_ref()
         resp = self.put(url, body={'service_provider': body},
@@ -4295,11 +4306,11 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
         resp = self.head(url, expected_status=http_client.OK)
 
     def test_get_service_provider_fail(self):
-        url = self.base_url(suffix=uuid.uuid4().hex)
+        url = self.base_url(suffix=uuidutils.generate_uuid(dashed=False))
         self.get(url, expected_status=http_client.NOT_FOUND)
 
     def test_create_service_provider(self):
-        url = self.base_url(suffix=uuid.uuid4().hex)
+        url = self.base_url(suffix=uuidutils.generate_uuid(dashed=False))
         sp = self.sp_ref()
         resp = self.put(url, body={'service_provider': sp},
                         expected_status=http_client.CREATED)
@@ -4317,7 +4328,7 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
         )
 
         # Create a new service provider.
-        url = self.base_url(suffix=uuid.uuid4().hex)
+        url = self.base_url(suffix=uuidutils.generate_uuid(dashed=False))
         sp = self.sp_ref()
         self.put(url, body={'service_provider': sp},
                  expected_status=http_client.CREATED)
@@ -4341,7 +4352,7 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
         )
 
         # Create a new service provider.
-        url = self.base_url(suffix=uuid.uuid4().hex)
+        url = self.base_url(suffix=uuidutils.generate_uuid(dashed=False))
         sp = self.sp_ref()
         self.put(url, body={'service_provider': sp},
                  expected_status=http_client.CREATED)
@@ -4376,7 +4387,7 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
         )
 
         # Create a new service provider.
-        service_provider_id = uuid.uuid4().hex
+        service_provider_id = uuidutils.generate_uuid(dashed=False)
         url = self.base_url(suffix=service_provider_id)
         sp = self.sp_ref()
         self.put(url, body={'service_provider': sp},
@@ -4393,7 +4404,7 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
         # Update the service provider we created, which should invalidate the
         # service provider cache. Get the list of service providers again and
         # if the cache invalidated properly then we see the value we updated.
-        updated_description = uuid.uuid4().hex
+        updated_description = uuidutils.generate_uuid(dashed=False)
         body = {'service_provider': {'description': updated_description}}
         self.patch(url, body=body, expected_status=http_client.OK)
         resp = self.get(self.base_url(), expected_status=http_client.OK)
@@ -4407,7 +4418,7 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
 
     def test_create_sp_relay_state_default(self):
         """Create an SP without relay state, should default to `ss:mem`."""
-        url = self.base_url(suffix=uuid.uuid4().hex)
+        url = self.base_url(suffix=uuidutils.generate_uuid(dashed=False))
         sp = self.sp_ref()
         del sp['relay_state_prefix']
         resp = self.put(url, body={'service_provider': sp},
@@ -4418,9 +4429,9 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
 
     def test_create_sp_relay_state_non_default(self):
         """Create an SP with custom relay state."""
-        url = self.base_url(suffix=uuid.uuid4().hex)
+        url = self.base_url(suffix=uuidutils.generate_uuid(dashed=False))
         sp = self.sp_ref()
-        non_default_prefix = uuid.uuid4().hex
+        non_default_prefix = uuidutils.generate_uuid(dashed=False)
         sp['relay_state_prefix'] = non_default_prefix
         resp = self.put(url, body={'service_provider': sp},
                         expected_status=http_client.CREATED)
@@ -4430,9 +4441,10 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
 
     def test_create_service_provider_fail(self):
         """Try adding SP object with unallowed attribute."""
-        url = self.base_url(suffix=uuid.uuid4().hex)
+        url = self.base_url(suffix=uuidutils.generate_uuid(dashed=False))
         sp = self.sp_ref()
-        sp[uuid.uuid4().hex] = uuid.uuid4().hex
+        sp[uuidutils.generate_uuid(dashed=False)] = \
+            uuidutils.generate_uuid(dashed=False)
         self.put(url, body={'service_provider': sp},
                  expected_status=http_client.BAD_REQUEST)
 
@@ -4445,8 +4457,8 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
 
         """
         ref_service_providers = {
-            uuid.uuid4().hex: self.sp_ref(),
-            uuid.uuid4().hex: self.sp_ref(),
+            uuidutils.generate_uuid(dashed=False): self.sp_ref(),
+            uuidutils.generate_uuid(dashed=False): self.sp_ref(),
         }
         for id, sp in ref_service_providers.items():
             url = self.base_url(suffix=id)
@@ -4500,29 +4512,30 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
         The server should return an HTTP 403 Forbidden error code.
 
         """
-        new_sp_ref = {'id': uuid.uuid4().hex}
+        new_sp_ref = {'id': uuidutils.generate_uuid(dashed=False)}
         url = self.base_url(suffix=self.SERVICE_PROVIDER_ID)
         self.patch(url, body={'service_provider': new_sp_ref},
                    expected_status=http_client.BAD_REQUEST)
 
     def test_update_service_provider_unknown_parameter(self):
         new_sp_ref = self.sp_ref()
-        new_sp_ref[uuid.uuid4().hex] = uuid.uuid4().hex
+        new_sp_ref[uuidutils.generate_uuid(dashed=False)] = \
+            uuidutils.generate_uuid(dashed=False)
         url = self.base_url(suffix=self.SERVICE_PROVIDER_ID)
         self.patch(url, body={'service_provider': new_sp_ref},
                    expected_status=http_client.BAD_REQUEST)
 
     def test_update_service_provider_returns_not_found(self):
         new_sp_ref = self.sp_ref()
-        new_sp_ref['description'] = uuid.uuid4().hex
-        url = self.base_url(suffix=uuid.uuid4().hex)
+        new_sp_ref['description'] = uuidutils.generate_uuid(dashed=False)
+        url = self.base_url(suffix=uuidutils.generate_uuid(dashed=False))
         self.patch(url, body={'service_provider': new_sp_ref},
                    expected_status=http_client.NOT_FOUND)
 
     def test_update_sp_relay_state(self):
         """Update an SP with custom relay state."""
         new_sp_ref = self.sp_ref()
-        non_default_prefix = uuid.uuid4().hex
+        non_default_prefix = uuidutils.generate_uuid(dashed=False)
         new_sp_ref['relay_state_prefix'] = non_default_prefix
         url = self.base_url(suffix=self.SERVICE_PROVIDER_ID)
         resp = self.patch(url, body={'service_provider': new_sp_ref})
@@ -4535,7 +4548,7 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
         self.delete(url)
 
     def test_delete_service_provider_returns_not_found(self):
-        url = self.base_url(suffix=uuid.uuid4().hex)
+        url = self.base_url(suffix=uuidutils.generate_uuid(dashed=False))
         self.delete(url, expected_status=http_client.NOT_FOUND)
 
     def test_filter_list_sp_by_id(self):
@@ -4597,7 +4610,7 @@ class WebSSOTests(FederatedTokenTests):
     SSO_TEMPLATE_PATH = os.path.join(core.dirs.etc(), SSO_TEMPLATE_NAME)
     TRUSTED_DASHBOARD = 'http://horizon.com'
     ORIGIN = urllib.parse.quote_plus(TRUSTED_DASHBOARD)
-    PROTOCOL_REMOTE_ID_ATTR = uuid.uuid4().hex
+    PROTOCOL_REMOTE_ID_ATTR = uuidutils.generate_uuid(dashed=False)
 
     def setUp(self):
         super(WebSSOTests, self).setUp()
@@ -4612,7 +4625,7 @@ class WebSSOTests(FederatedTokenTests):
             remote_id_attribute=self.REMOTE_ID_ATTR)
 
     def test_render_callback_template(self):
-        token_id = uuid.uuid4().hex
+        token_id = uuidutils.generate_uuid(dashed=False)
         resp = self.api.render_html_response(self.TRUSTED_DASHBOARD, token_id)
         # The expected value in the assertions bellow need to be 'str' in
         # Python 2 and 'bytes' in Python 3
@@ -4683,8 +4696,10 @@ class WebSSOTests(FederatedTokenTests):
                           request, self.PROTOCOL)
 
     def test_federated_sso_untrusted_dashboard(self):
-        environment = {self.REMOTE_ID_ATTR: self.REMOTE_IDS[0],
-                       'QUERY_STRING': 'origin=%s' % uuid.uuid4().hex}
+        environment = {
+            self.REMOTE_ID_ATTR: self.REMOTE_IDS[0],
+            'QUERY_STRING': 'origin=%s' %
+                            uuidutils.generate_uuid(dashed=False)}
         environment.update(mapping_fixtures.EMPLOYEE_ASSERTION)
         request = self.make_request(environ=environment)
         self.assertRaises(exception.Unauthorized,
@@ -4692,8 +4707,10 @@ class WebSSOTests(FederatedTokenTests):
                           request, self.PROTOCOL)
 
     def test_federated_sso_untrusted_dashboard_bad_remote_id(self):
-        environment = {self.REMOTE_ID_ATTR: self.IDP,
-                       'QUERY_STRING': 'origin=%s' % uuid.uuid4().hex}
+        environment = {
+            self.REMOTE_ID_ATTR: self.IDP,
+            'QUERY_STRING': 'origin=%s' %
+                            uuidutils.generate_uuid(dashed=False)}
         environment.update(mapping_fixtures.EMPLOYEE_ASSERTION)
         request = self.make_request(environ=environment)
         self.assertRaises(exception.Unauthorized,
@@ -4751,10 +4768,10 @@ class K2KServiceCatalogTests(test_v3.RestfulTestCase):
 
     def sp_ref(self):
         ref = {
-            'auth_url': uuid.uuid4().hex,
+            'auth_url': uuidutils.generate_uuid(dashed=False),
             'enabled': True,
-            'description': uuid.uuid4().hex,
-            'sp_url': uuid.uuid4().hex,
+            'description': uuidutils.generate_uuid(dashed=False),
+            'sp_url': uuidutils.generate_uuid(dashed=False),
             'relay_state_prefix': CONF.saml.relay_state_prefix,
         }
         return ref

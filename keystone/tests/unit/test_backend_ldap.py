@@ -15,12 +15,12 @@
 # under the License.
 
 import copy
-import uuid
 
 import fixtures
 import ldap
 import mock
 from oslo_log import versionutils
+from oslo_utils import uuidutils
 import pkg_resources
 from six.moves import http_client
 from six.moves import range
@@ -786,7 +786,7 @@ class BaseLDAPIdentity(LDAPTestSetup, IdentityTests, AssignmentTests,
         user_ref_dict = {x: user_ref[x] for x in user_ref}
         self.assertDictContainsSubset(user_dict, user_ref_dict)
 
-        user_dict['password'] = uuid.uuid4().hex
+        user_dict['password'] = uuidutils.generate_uuid(dashed=False)
         PROVIDERS.identity_api.update_user(user['id'], user_dict)
         args, _kwargs = mock_deprecator.call_args
         self.assertIn("update_user for the LDAP identity backend", args[1])
@@ -812,7 +812,7 @@ class BaseLDAPIdentity(LDAPTestSetup, IdentityTests, AssignmentTests,
 
         group_ref = PROVIDERS.identity_api.get_group(group['id'])
         self.assertDictEqual(group, group_ref)
-        group['description'] = uuid.uuid4().hex
+        group['description'] = uuidutils.generate_uuid(dashed=False)
         PROVIDERS.identity_api.update_group(group['id'], group)
         args, _kwargs = mock_deprecator.call_args
         self.assertIn("update_group for the LDAP identity backend", args[1])
@@ -838,7 +838,7 @@ class BaseLDAPIdentity(LDAPTestSetup, IdentityTests, AssignmentTests,
         group = PROVIDERS.identity_api.create_group(group)
         # cache the result
         PROVIDERS.identity_api.get_group(group['id'])
-        group['description'] = uuid.uuid4().hex
+        group['description'] = uuidutils.generate_uuid(dashed=False)
         group_ref = PROVIDERS.identity_api.update_group(group['id'], group)
         self.assertDictContainsSubset(
             PROVIDERS.identity_api.get_group(group['id']), group_ref
@@ -853,7 +853,7 @@ class BaseLDAPIdentity(LDAPTestSetup, IdentityTests, AssignmentTests,
         ref = PROVIDERS.identity_api.get_user_by_name(
             user['name'], user['domain_id']
         )
-        user['description'] = uuid.uuid4().hex
+        user['description'] = uuidutils.generate_uuid(dashed=False)
         # cache the result.
         PROVIDERS.identity_api.get_user(ref['id'])
         # update using identity api and get back updated user.
@@ -877,7 +877,7 @@ class BaseLDAPIdentity(LDAPTestSetup, IdentityTests, AssignmentTests,
         ref = PROVIDERS.identity_api.get_user_by_name(
             user['name'], user['domain_id']
         )
-        user['description'] = uuid.uuid4().hex
+        user['description'] = uuidutils.generate_uuid(dashed=False)
         user_updated = PROVIDERS.identity_api.update_user(ref['id'], user)
         self.assertDictContainsSubset(
             PROVIDERS.identity_api.get_user(ref['id']), user_updated
@@ -1244,8 +1244,8 @@ class LDAPIdentity(BaseLDAPIdentity):
         mock_ldap_get.return_value = (
             'cn=junk,dc=example,dc=com',
             {
-                'sn': [uuid.uuid4().hex],
-                'email': [uuid.uuid4().hex],
+                'sn': [uuidutils.generate_uuid(dashed=False)],
+                'email': [uuidutils.generate_uuid(dashed=False)],
                 'cn': ['junk']
             }
         )
@@ -1268,31 +1268,31 @@ class LDAPIdentity(BaseLDAPIdentity):
         mock_search_s.return_value = [(
             'sn=junk1,dc=example,dc=com',
             {
-                'cn': [uuid.uuid4().hex],
-                'email': [uuid.uuid4().hex],
+                'cn': [uuidutils.generate_uuid(dashed=False)],
+                'email': [uuidutils.generate_uuid(dashed=False)],
                 'sn': ['junk1']
             }
         ),
             (
             '',
             {
-                'cn': [uuid.uuid4().hex],
-                'email': [uuid.uuid4().hex],
+                'cn': [uuidutils.generate_uuid(dashed=False)],
+                'email': [uuidutils.generate_uuid(dashed=False)],
             }
         ),
             (
             'sn=,dc=example,dc=com',
             {
-                'cn': [uuid.uuid4().hex],
-                'email': [uuid.uuid4().hex],
+                'cn': [uuidutils.generate_uuid(dashed=False)],
+                'email': [uuidutils.generate_uuid(dashed=False)],
                 'sn': ['']
             }
         ),
             (
             'sn=   ,dc=example,dc=com',
             {
-                'cn': [uuid.uuid4().hex],
-                'email': [uuid.uuid4().hex],
+                'cn': [uuidutils.generate_uuid(dashed=False)],
+                'email': [uuidutils.generate_uuid(dashed=False)],
                 'sn': ['   ']
             }
         )]
@@ -1419,8 +1419,9 @@ class LDAPIdentity(BaseLDAPIdentity):
             user_description_attribute='displayName')
         self.load_backends()
 
-        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id,
-                                 displayName=uuid.uuid4().hex)
+        user = self.new_user_ref(
+            domain_id=CONF.identity.default_domain_id,
+            displayName=uuidutils.generate_uuid(dashed=False))
         description = user['displayName']
         user = PROVIDERS.identity_api.create_user(user)
         res = PROVIDERS.identity_api.driver.user.get_all()
@@ -1437,8 +1438,9 @@ class LDAPIdentity(BaseLDAPIdentity):
             user_additional_attribute_mapping=['description:description'])
         self.load_backends()
 
-        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id,
-                                 description=uuid.uuid4().hex)
+        user = self.new_user_ref(
+            domain_id=CONF.identity.default_domain_id,
+            description=uuidutils.generate_uuid(dashed=False))
         description = user['description']
         user = PROVIDERS.identity_api.create_user(user)
         res = PROVIDERS.identity_api.driver.user.get_all()
@@ -1453,13 +1455,13 @@ class LDAPIdentity(BaseLDAPIdentity):
         # the entry's objectclasses so that this test could conceivably run in
         # the live tests.
         ldap_id_field = 'sn'
-        ldap_id_value = uuid.uuid4().hex
+        ldap_id_value = uuidutils.generate_uuid(dashed=False)
         dn = '%s=%s,ou=Users,cn=example,cn=com' % (ldap_id_field,
                                                    ldap_id_value)
         modlist = [('objectClass', ['person', 'inetOrgPerson']),
                    (ldap_id_field, [ldap_id_value]),
                    ('mail', ['email@example.com']),
-                   ('userPassword', [uuid.uuid4().hex])]
+                   ('userPassword', [uuidutils.generate_uuid(dashed=False)])]
         ldap_.add_s(dn, modlist)
 
         # make sure the user doesn't break other users
@@ -1473,8 +1475,8 @@ class LDAPIdentity(BaseLDAPIdentity):
         mock_ldap_get.return_value = (
             'cn=junk,dc=example,dc=com',
             {
-                'sN': [uuid.uuid4().hex],
-                'MaIl': [uuid.uuid4().hex],
+                'sN': [uuidutils.generate_uuid(dashed=False)],
+                'MaIl': [uuidutils.generate_uuid(dashed=False)],
                 'cn': ['junk']
             }
         )
@@ -1535,7 +1537,7 @@ class LDAPIdentity(BaseLDAPIdentity):
 
         self.assertDictEqual(project, project_ref)
 
-        project['description'] = uuid.uuid4().hex
+        project['description'] = uuidutils.generate_uuid(dashed=False)
         PROVIDERS.resource_api.update_project(project['id'], project)
         project_ref = PROVIDERS.resource_api.get_project(project['id'])
         self.assertDictEqual(project, project_ref)
@@ -1557,7 +1559,7 @@ class LDAPIdentity(BaseLDAPIdentity):
         project = PROVIDERS.resource_api.create_project(project_id, project)
         PROVIDERS.resource_api.get_project(project_id)
         updated_project = copy.deepcopy(project)
-        updated_project['description'] = uuid.uuid4().hex
+        updated_project['description'] = uuidutils.generate_uuid(dashed=False)
         # Update project, bypassing resource manager
         PROVIDERS.resource_api.driver.update_project(
             project_id, updated_project
@@ -1775,12 +1777,12 @@ class LDAPIdentity(BaseLDAPIdentity):
         driver.user.id_attr = 'mail'
 
         # make 'email' multivalued so we can test the error condition
-        email1 = uuid.uuid4().hex
-        email2 = uuid.uuid4().hex
+        email1 = uuidutils.generate_uuid(dashed=False)
+        email2 = uuidutils.generate_uuid(dashed=False)
         mock_ldap_get.return_value = (
             'cn=nobodycares,dc=example,dc=com',
             {
-                'sn': [uuid.uuid4().hex],
+                'sn': [uuidutils.generate_uuid(dashed=False)],
                 'mail': [email1, email2],
                 'cn': 'nobodycares'
             }
@@ -1796,7 +1798,7 @@ class LDAPIdentity(BaseLDAPIdentity):
         mock_ldap_get.return_value = (
             'cn=nobodycares,dc=example,dc=com',
             {
-                'sn': [uuid.uuid4().hex],
+                'sn': [uuidutils.generate_uuid(dashed=False)],
             }
         )
 
@@ -1815,7 +1817,7 @@ class LDAPIdentity(BaseLDAPIdentity):
         mock_ldap_get.return_value = (
             'foo=bar,dc=example,dc=com',
             {
-                'sn': [uuid.uuid4().hex],
+                'sn': [uuidutils.generate_uuid(dashed=False)],
                 'foo': ['bar'],
                 'cn': ['junk'],
                 'uid': ['crap']
@@ -1835,7 +1837,7 @@ class LDAPIdentity(BaseLDAPIdentity):
         mock_ldap_get.return_value = (
             'cn=Foo Bar,dc=example,dc=com',
             {
-                'sn': [uuid.uuid4().hex],
+                'sn': [uuidutils.generate_uuid(dashed=False)],
                 'cn': ['Foo Bar'],
                 'SAMAccountName': ['crap']
             }
@@ -1927,7 +1929,7 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity, unit.TestCase):
         project['enabled'] = True
         self.assertDictEqual(project, project_ref)
 
-        project['description'] = uuid.uuid4().hex
+        project['description'] = uuidutils.generate_uuid(dashed=False)
         PROVIDERS.resource_api.update_project(project['id'], project)
         project_ref = PROVIDERS.resource_api.get_project(project['id'])
         self.assertDictEqual(project, project_ref)
@@ -2047,7 +2049,7 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity, unit.TestCase):
         # The enabled member DN is properly escaped when querying for enabled
         # user.
 
-        object_id = uuid.uuid4().hex
+        object_id = uuidutils.generate_uuid(dashed=False)
         driver = PROVIDERS.identity_api._select_identity_driver(
             CONF.identity.default_domain_id)
 
@@ -2279,7 +2281,7 @@ class BaseMultiLDAPandSQLIdentity(object):
         for x in range(1, self.domain_count):
             domain = 'domain%s' % x
             self.domains[domain] = create_domain(
-                {'id': uuid.uuid4().hex, 'name': domain})
+                {'id': uuidutils.generate_uuid(dashed=False), 'name': domain})
 
     def test_authenticate_to_each_domain(self):
         """Test that a user in each domain can authenticate."""
@@ -2712,7 +2714,7 @@ class MultiLDAPandSQLIdentityDomainConfigsInSQL(MultiLDAPandSQLIdentity):
         self.config_fixture.config(
             group='identity', domain_configurations_from_database=False)
         self.load_backends()
-        new_config = {'ldap': {'url': uuid.uuid4().hex}}
+        new_config = {'ldap': {'url': uuidutils.generate_uuid(dashed=False)}}
         PROVIDERS.domain_config_api.create_config(
             CONF.identity.default_domain_id, new_config)
         # Trigger the identity backend to initialise any domain specific
@@ -2732,7 +2734,7 @@ class MultiLDAPandSQLIdentityDomainConfigsInSQL(MultiLDAPandSQLIdentity):
         # Create a new config for the default domain, hence overwriting the
         # current settings.
         new_config = {
-            'ldap': {'url': uuid.uuid4().hex},
+            'ldap': {'url': uuidutils.generate_uuid(dashed=False)},
             'identity': {'driver': 'ldap'}}
         PROVIDERS.domain_config_api.create_config(
             CONF.identity.default_domain_id, new_config)
@@ -2741,7 +2743,7 @@ class MultiLDAPandSQLIdentityDomainConfigsInSQL(MultiLDAPandSQLIdentity):
         self.assertEqual(new_config['ldap']['url'], default_config.ldap.url)
 
         # Ensure updating is also honored
-        updated_config = {'url': uuid.uuid4().hex}
+        updated_config = {'url': uuidutils.generate_uuid(dashed=False)}
         PROVIDERS.domain_config_api.update_config(
             CONF.identity.default_domain_id, updated_config,
             group='ldap', option='url')

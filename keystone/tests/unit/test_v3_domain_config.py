@@ -11,8 +11,8 @@
 # under the License.
 
 import copy
-import uuid
 
+from oslo_utils import uuidutils
 from six.moves import http_client
 
 from keystone.common import provider_api
@@ -34,9 +34,11 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
 
         self.domain = unit.new_domain_ref()
         PROVIDERS.resource_api.create_domain(self.domain['id'], self.domain)
-        self.config = {'ldap': {'url': uuid.uuid4().hex,
-                                'user_tree_dn': uuid.uuid4().hex},
-                       'identity': {'driver': uuid.uuid4().hex}}
+        self.config = {'ldap': {'url': uuidutils.generate_uuid(dashed=False),
+                                'user_tree_dn':
+                                    uuidutils.generate_uuid(dashed=False)},
+                       'identity': {
+                           'driver': uuidutils.generate_uuid(dashed=False)}}
 
     def test_create_config(self):
         """Call ``PUT /domains/{domain_id}/config``."""
@@ -55,7 +57,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         id provided, the request shall be rejected with a response, 404 domain
         not found.
         """
-        invalid_domain_id = uuid.uuid4().hex
+        invalid_domain_id = uuidutils.generate_uuid(dashed=False)
         url = '/domains/%(domain_id)s/config' % {
             'domain_id': invalid_domain_id}
         self.put(url, body={'config': self.config},
@@ -93,7 +95,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         PROVIDERS.domain_config_api.create_config(
             self.domain['id'], self.config
         )
-        invalid_domain_id = uuid.uuid4().hex
+        invalid_domain_id = uuidutils.generate_uuid(dashed=False)
         self.delete('/domains/%(domain_id)s/config' % {
             'domain_id': invalid_domain_id},
             expected_status=exception.DomainNotFound.code)
@@ -118,7 +120,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         PROVIDERS.domain_config_api.create_config(
             self.domain['id'], self.config
         )
-        invalid_domain_id = uuid.uuid4().hex
+        invalid_domain_id = uuidutils.generate_uuid(dashed=False)
         self.delete('/domains/%(domain_id)s/config/ldap' % {
             'domain_id': invalid_domain_id},
             expected_status=exception.DomainNotFound.code)
@@ -155,7 +157,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         PROVIDERS.domain_config_api.create_config(
             self.domain['id'], self.config
         )
-        invalid_domain_id = uuid.uuid4().hex
+        invalid_domain_id = uuidutils.generate_uuid(dashed=False)
         url = ('/domains/%(domain_id)s/config/ldap' % {
             'domain_id': invalid_domain_id}
         )
@@ -184,7 +186,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         PROVIDERS.domain_config_api.create_config(
             self.domain['id'], self.config
         )
-        invalid_domain_id = uuid.uuid4().hex
+        invalid_domain_id = uuidutils.generate_uuid(dashed=False)
         url = ('/domains/%(domain_id)s/config/ldap/url' % {
             'domain_id': invalid_domain_id}
         )
@@ -206,7 +208,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         invalid domain id provided, the request shall be rejected with a
         response 404 domain not found.
         """
-        invalid_domain_id = uuid.uuid4().hex
+        invalid_domain_id = uuidutils.generate_uuid(dashed=False)
         url = ('/domains/%(domain_id)s/config' % {
             'domain_id': invalid_domain_id}
         )
@@ -215,7 +217,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
 
     def test_get_head_non_existant_config_group(self):
         """Call ``GET /domains/{domain_id}/config/{group_not_exist}``."""
-        config = {'ldap': {'url': uuid.uuid4().hex}}
+        config = {'ldap': {'url': uuidutils.generate_uuid(dashed=False)}}
         PROVIDERS.domain_config_api.create_config(self.domain['id'], config)
         url = ('/domains/%(domain_id)s/config/identity' % {
             'domain_id': self.domain['id']}
@@ -230,9 +232,9 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         with an invalid domain id provided, the request shall be rejected with
         a response, 404 domain not found.
         """
-        config = {'ldap': {'url': uuid.uuid4().hex}}
+        config = {'ldap': {'url': uuidutils.generate_uuid(dashed=False)}}
         PROVIDERS.domain_config_api.create_config(self.domain['id'], config)
-        invalid_domain_id = uuid.uuid4().hex
+        invalid_domain_id = uuidutils.generate_uuid(dashed=False)
         url = ('/domains/%(domain_id)s/config/identity' % {
             'domain_id': invalid_domain_id}
         )
@@ -246,7 +248,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         and ensure a Not Found is returned because the option isn't defined
         within the group.
         """
-        config = {'ldap': {'url': uuid.uuid4().hex}}
+        config = {'ldap': {'url': uuidutils.generate_uuid(dashed=False)}}
         PROVIDERS.domain_config_api.create_config(self.domain['id'], config)
         url = ('/domains/%(domain_id)s/config/ldap/user_tree_dn' % {
             'domain_id': self.domain['id']}
@@ -263,9 +265,9 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         with an invalid domain id provided, the request shall be rejected with
         a response, 404 domain not found.
         """
-        config = {'ldap': {'url': uuid.uuid4().hex}}
+        config = {'ldap': {'url': uuidutils.generate_uuid(dashed=False)}}
         PROVIDERS.domain_config_api.create_config(self.domain['id'], config)
-        invalid_domain_id = uuid.uuid4().hex
+        invalid_domain_id = uuidutils.generate_uuid(dashed=False)
         url = ('/domains/%(domain_id)s/config/ldap/user_tree_dn' % {
             'domain_id': invalid_domain_id}
         )
@@ -277,8 +279,9 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         PROVIDERS.domain_config_api.create_config(
             self.domain['id'], self.config
         )
-        new_config = {'ldap': {'url': uuid.uuid4().hex},
-                      'identity': {'driver': uuid.uuid4().hex}}
+        new_config = {'ldap': {'url': uuidutils.generate_uuid(dashed=False)},
+                      'identity': {
+                          'driver': uuidutils.generate_uuid(dashed=False)}}
         r = self.patch('/domains/%(domain_id)s/config' % {
             'domain_id': self.domain['id']},
             body={'config': new_config})
@@ -300,9 +303,10 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         PROVIDERS.domain_config_api.create_config(
             self.domain['id'], self.config
         )
-        new_config = {'ldap': {'url': uuid.uuid4().hex},
-                      'identity': {'driver': uuid.uuid4().hex}}
-        invalid_domain_id = uuid.uuid4().hex
+        new_config = {'ldap': {'url': uuidutils.generate_uuid(dashed=False)},
+                      'identity': {
+                          'driver': uuidutils.generate_uuid(dashed=False)}}
+        invalid_domain_id = uuidutils.generate_uuid(dashed=False)
         self.patch('/domains/%(domain_id)s/config' % {
             'domain_id': invalid_domain_id},
             body={'config': new_config},
@@ -313,8 +317,9 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         PROVIDERS.domain_config_api.create_config(
             self.domain['id'], self.config
         )
-        new_config = {'ldap': {'url': uuid.uuid4().hex,
-                               'user_filter': uuid.uuid4().hex}}
+        new_config = {'ldap': {
+            'url': uuidutils.generate_uuid(dashed=False),
+            'user_filter': uuidutils.generate_uuid(dashed=False)}}
         r = self.patch('/domains/%(domain_id)s/config/ldap' % {
             'domain_id': self.domain['id']},
             body={'config': new_config})
@@ -336,9 +341,10 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         PROVIDERS.domain_config_api.create_config(
             self.domain['id'], self.config
         )
-        new_config = {'ldap': {'url': uuid.uuid4().hex,
-                               'user_filter': uuid.uuid4().hex}}
-        invalid_domain_id = uuid.uuid4().hex
+        new_config = {'ldap': {
+            'url': uuidutils.generate_uuid(dashed=False),
+            'user_filter': uuidutils.generate_uuid(dashed=False)}}
+        invalid_domain_id = uuidutils.generate_uuid(dashed=False)
         self.patch('/domains/%(domain_id)s/config/ldap' % {
             'domain_id': invalid_domain_id},
             body={'config': new_config},
@@ -352,18 +358,20 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
 
         # Trying to update a group that is neither whitelisted or sensitive
         # should result in Forbidden.
-        invalid_group = uuid.uuid4().hex
-        new_config = {invalid_group: {'url': uuid.uuid4().hex,
-                                      'user_filter': uuid.uuid4().hex}}
+        invalid_group = uuidutils.generate_uuid(dashed=False)
+        new_config = {invalid_group: {
+            'url': uuidutils.generate_uuid(dashed=False),
+            'user_filter': uuidutils.generate_uuid(dashed=False)}}
         self.patch('/domains/%(domain_id)s/config/%(invalid_group)s' % {
             'domain_id': self.domain['id'], 'invalid_group': invalid_group},
             body={'config': new_config},
             expected_status=http_client.FORBIDDEN)
         # Trying to update a valid group, but one that is not in the current
         # config should result in NotFound
-        config = {'ldap': {'suffix': uuid.uuid4().hex}}
+        config = {'ldap': {'suffix': uuidutils.generate_uuid(dashed=False)}}
         PROVIDERS.domain_config_api.create_config(self.domain['id'], config)
-        new_config = {'identity': {'driver': uuid.uuid4().hex}}
+        new_config = {'identity': {
+            'driver': uuidutils.generate_uuid(dashed=False)}}
         self.patch('/domains/%(domain_id)s/config/identity' % {
             'domain_id': self.domain['id']},
             body={'config': new_config},
@@ -379,10 +387,11 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         PROVIDERS.domain_config_api.create_config(
             self.domain['id'], self.config
         )
-        invalid_group = uuid.uuid4().hex
-        new_config = {invalid_group: {'url': uuid.uuid4().hex,
-                                      'user_filter': uuid.uuid4().hex}}
-        invalid_domain_id = uuid.uuid4().hex
+        invalid_group = uuidutils.generate_uuid(dashed=False)
+        new_config = {invalid_group: {
+            'url': uuidutils.generate_uuid(dashed=False),
+            'user_filter': uuidutils.generate_uuid(dashed=False)}}
+        invalid_domain_id = uuidutils.generate_uuid(dashed=False)
         self.patch('/domains/%(domain_id)s/config/%(invalid_group)s' % {
             'domain_id': invalid_domain_id,
             'invalid_group': invalid_group},
@@ -394,7 +403,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         PROVIDERS.domain_config_api.create_config(
             self.domain['id'], self.config
         )
-        new_config = {'url': uuid.uuid4().hex}
+        new_config = {'url': uuidutils.generate_uuid(dashed=False)}
         r = self.patch('/domains/%(domain_id)s/config/ldap/url' % {
             'domain_id': self.domain['id']},
             body={'config': new_config})
@@ -414,8 +423,8 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         PROVIDERS.domain_config_api.create_config(
             self.domain['id'], self.config
         )
-        new_config = {'url': uuid.uuid4().hex}
-        invalid_domain_id = uuid.uuid4().hex
+        new_config = {'url': uuidutils.generate_uuid(dashed=False)}
+        invalid_domain_id = uuidutils.generate_uuid(dashed=False)
         self.patch('/domains/%(domain_id)s/config/ldap/url' % {
             'domain_id': invalid_domain_id},
             body={'config': new_config},
@@ -426,8 +435,9 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         PROVIDERS.domain_config_api.create_config(
             self.domain['id'], self.config
         )
-        invalid_option = uuid.uuid4().hex
-        new_config = {'ldap': {invalid_option: uuid.uuid4().hex}}
+        invalid_option = uuidutils.generate_uuid(dashed=False)
+        new_config = {'ldap': {
+            invalid_option: uuidutils.generate_uuid(dashed=False)}}
         # Trying to update an option that is neither whitelisted or sensitive
         # should result in Forbidden.
         self.patch(
@@ -438,7 +448,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
             expected_status=http_client.FORBIDDEN)
         # Trying to update a valid option, but one that is not in the current
         # config should result in NotFound
-        new_config = {'suffix': uuid.uuid4().hex}
+        new_config = {'suffix': uuidutils.generate_uuid(dashed=False)}
         self.patch(
             '/domains/%(domain_id)s/config/ldap/suffix' % {
                 'domain_id': self.domain['id']},
@@ -455,9 +465,10 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         PROVIDERS.domain_config_api.create_config(
             self.domain['id'], self.config
         )
-        invalid_option = uuid.uuid4().hex
-        new_config = {'ldap': {invalid_option: uuid.uuid4().hex}}
-        invalid_domain_id = uuid.uuid4().hex
+        invalid_option = uuidutils.generate_uuid(dashed=False)
+        new_config = {'ldap': {
+            invalid_option: uuidutils.generate_uuid(dashed=False)}}
+        invalid_domain_id = uuidutils.generate_uuid(dashed=False)
         self.patch(
             '/domains/%(domain_id)s/config/ldap/%(invalid_option)s' % {
                 'domain_id': invalid_domain_id,
@@ -518,7 +529,8 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
                   expected_status=http_client.FORBIDDEN)
 
         # Now try a totally invalid group
-        url = '/domains/config/%s/default' % uuid.uuid4().hex
+        url = '/domains/config/%s/default' % \
+              uuidutils.generate_uuid(dashed=False)
         self.get(url, expected_status=http_client.FORBIDDEN)
         self.head(url, expected_status=http_client.FORBIDDEN)
 
@@ -534,7 +546,8 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
 
     def test_get_head_config_default_for_invalid_option(self):
         """Returning invalid configuration options is invalid."""
-        url = '/domains/config/ldap/%s/default' % uuid.uuid4().hex
+        url = '/domains/config/ldap/%s/default' % \
+              uuidutils.generate_uuid(dashed=False)
         self.get(url, expected_status=http_client.FORBIDDEN)
         self.head(url, expected_status=http_client.FORBIDDEN)
 
@@ -606,8 +619,8 @@ class SecurityRequirementsTestCase(test_v3.RestfulTestCase):
         only for the default domain and that it only returns whitelisted
         options.
         """
-        password_regex = uuid.uuid4().hex
-        password_regex_description = uuid.uuid4().hex
+        password_regex = uuidutils.generate_uuid(dashed=False)
+        password_regex_description = uuidutils.generate_uuid(dashed=False)
         self.config_fixture.config(
             group='security_compliance',
             password_regex=password_regex
@@ -661,8 +674,8 @@ class SecurityRequirementsTestCase(test_v3.RestfulTestCase):
         PROVIDERS.resource_api.create_domain(domain['id'], domain)
 
         # Set the security compliance configuration options
-        password_regex = uuid.uuid4().hex
-        password_regex_description = uuid.uuid4().hex
+        password_regex = uuidutils.generate_uuid(dashed=False)
+        password_regex_description = uuidutils.generate_uuid(dashed=False)
         self.config_fixture.config(
             group='security_compliance',
             password_regex=password_regex
@@ -752,7 +765,7 @@ class SecurityRequirementsTestCase(test_v3.RestfulTestCase):
 
     def test_get_security_compliance_password_regex(self):
         """Ask for the security compliance password regular expression."""
-        password_regex = uuid.uuid4().hex
+        password_regex = uuidutils.generate_uuid(dashed=False)
         self.config_fixture.config(
             group='security_compliance',
             password_regex=password_regex
@@ -795,7 +808,7 @@ class SecurityRequirementsTestCase(test_v3.RestfulTestCase):
 
     def test_get_security_compliance_password_regex_description(self):
         """Ask for the security compliance password regex description."""
-        password_regex_description = uuid.uuid4().hex
+        password_regex_description = uuidutils.generate_uuid(dashed=False)
         self.config_fixture.config(
             group='security_compliance',
             password_regex_description=password_regex_description
@@ -933,8 +946,8 @@ class SecurityRequirementsTestCase(test_v3.RestfulTestCase):
         # Set our security compliance config values, we do this after we've
         # created our test user otherwise password validation will fail with a
         # uuid type regex.
-        password_regex = uuid.uuid4().hex
-        password_regex_description = uuid.uuid4().hex
+        password_regex = uuidutils.generate_uuid(dashed=False)
+        password_regex_description = uuidutils.generate_uuid(dashed=False)
         group = 'security_compliance'
         self.config_fixture.config(
             group=group,
@@ -987,8 +1000,9 @@ class SecurityRequirementsTestCase(test_v3.RestfulTestCase):
         """
         new_config = {
             'security_compliance': {
-                'password_regex': uuid.uuid4().hex,
-                'password_regex_description': uuid.uuid4().hex
+                'password_regex': uuidutils.generate_uuid(dashed=False),
+                'password_regex_description':
+                    uuidutils.generate_uuid(dashed=False)
             }
         }
         url = (
@@ -1028,7 +1042,7 @@ class SecurityRequirementsTestCase(test_v3.RestfulTestCase):
         )
         new_config = {
             group: {
-                option: uuid.uuid4().hex
+                option: uuidutils.generate_uuid(dashed=False)
             }
         }
 
@@ -1061,7 +1075,7 @@ class SecurityRequirementsTestCase(test_v3.RestfulTestCase):
         )
         new_config = {
             group: {
-                option: uuid.uuid4().hex
+                option: uuidutils.generate_uuid(dashed=False)
             }
         }
 

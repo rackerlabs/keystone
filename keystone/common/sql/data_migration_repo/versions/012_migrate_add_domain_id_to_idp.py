@@ -10,8 +10,7 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import uuid
-
+from oslo_utils import uuidutils
 import sqlalchemy as sql
 from sqlalchemy.orm import sessionmaker
 
@@ -36,7 +35,7 @@ def upgrade(migrate_engine):
 
 
 def _create_federated_domain(meta, session, idp_id):
-    domain_id = uuid.uuid4().hex
+    domain_id = uuidutils.generate_uuid(dashed=False)
     desc = 'Auto generated federated domain for Identity Provider: ' + idp_id
     federated_domain = {
         'id': domain_id,
