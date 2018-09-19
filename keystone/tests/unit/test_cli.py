@@ -1638,3 +1638,49 @@ class TestTokenFlush(unit.TestCase):
         tf = cli.TokenFlush()
         tf.main()
         self.assertThat(logging.output, matchers.Contains(expected_msg))
+
+
+class TestMappingEngineTester(unit.BaseTestCase):
+
+    class FakeConfCommand(object):
+        def __init__(self, parent):
+            self.extension = False
+            self.rules = parent.command_rules
+            self.input = parent.command_input
+            self.prefix = parent.command_prefix
+            self.engine_debug = parent.command_engine_debug
+
+    def setUp(self):
+        # Set up preset cli options and a parser
+        super(TestMappingEngineTester, self).setUp()
+        self.mapping_id = uuid.uuid4().hex
+        self.rules_pathname = None
+        self.rules = None
+        self.assertion_pathname = None
+        self.assertion = None
+        self.logging = self.useFixture(fixtures.LoggerFixture())
+        self.useFixture(database.Database())
+        self.config_fixture = self.useFixture(oslo_config.fixture.Config(CONF))
+        self.config_fixture.register_cli_opt(cli.command_opt)
+        # For unit tests that should not throw any erorrs,
+        # Use the argument parser to test that the combinations work
+        parser_test = argparse.ArgumentParser()
+        subparsers = parser_test.add_subparsers()
+        self.parser = cli.MappingEngineTester.add_argument_parser(subparsers)
+
+    def config_files(self):
+        config_files = super(TestMappingEngineTester, self).config_files()
+        config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
+        return config_files
+
+    def test_mapping_engine_tester(self):
+        fd = self.useFixture(temporaryfile.SecureTempFile())
+        self.fake_config_file = fd.file_name
+        self.command_rules = fd.file_name
+        self.command_input = None
+        self.command_prefix = None
+        self.command_engine_debug = None
+        self.useFixture(fixtures.MockPatchObject(
+            CONF, 'command', self.FakeConfCommand(self)))
+        mapping_engine = cli.MappingEngineTester()
+        mapping_engine.main()
