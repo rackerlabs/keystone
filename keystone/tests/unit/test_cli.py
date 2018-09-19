@@ -24,6 +24,7 @@ import mock
 import oslo_config.fixture
 from oslo_db.sqlalchemy import migration
 from oslo_log import log
+from oslo_serialization import jsonutils
 from six.moves import configparser
 from six.moves import http_client
 from six.moves import range
@@ -1638,3 +1639,90 @@ class TestTokenFlush(unit.TestCase):
         tf = cli.TokenFlush()
         tf.main()
         self.assertThat(logging.output, matchers.Contains(expected_msg))
+
+
+class TestMappingEngineTester(unit.BaseTestCase):
+
+    class FakeConfCommand(object):
+        def __init__(self, parent):
+            self.extension = False
+            self.rules = parent.command_rules
+            self.input = parent.command_input
+            self.prefix = parent.command_prefix
+            self.engine_debug = parent.command_engine_debug
+
+    def setUp(self):
+        # Set up preset cli options and a parser
+        super(TestMappingEngineTester, self).setUp()
+        self.mapping_id = uuid.uuid4().hex
+        self.rules_pathname = None
+        self.rules = None
+        self.assertion_pathname = None
+        self.assertion = None
+        self.logging = self.useFixture(fixtures.LoggerFixture())
+        self.useFixture(database.Database())
+        self.config_fixture = self.useFixture(oslo_config.fixture.Config(CONF))
+        self.config_fixture.register_cli_opt(cli.command_opt)
+        # For unit tests that should not throw any erorrs,
+        # Use the argument parser to test that the combinations work
+        parser_test = argparse.ArgumentParser()
+        subparsers = parser_test.add_subparsers()
+        self.parser = cli.MappingEngineTester.add_argument_parser(subparsers)
+
+    def config_files(self):
+        config_files = super(TestMappingEngineTester, self).config_files()
+        config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
+        return config_files
+
+    def test_mapping_engine_tester(self):
+        fd_dir = self.useFixture(fixtures.TempDir())
+        fd_file = os.path.join(fd_dir.path, 'sample.json')
+        with open(fd_file, 'w') as f:
+            f.write(jsonutils.dumps(
+                {
+                    "rules": [
+                        {
+                            'local': [
+                                {
+                                    'group': {
+                                        'id': "0cd5e9"
+                                    }
+                                },
+                                {
+                                    'user': {
+                                        'name': '{0}'
+                                    }
+                                }
+                            ],
+                            'remote': [
+
+                                {
+                                    'type': 'UserName',
+                                },
+                                {
+                                    'type': 'Email',
+                                    "any_one_of": ['me@example.com']
+                                }
+                            ]
+                        }
+                    ]
+                }
+
+            )
+            )
+
+        self.command_rules = fd_file
+        temp_dir = self.useFixture(fixtures.TempDir())
+        file = os.path.join(temp_dir.path, 'sample1.txt')
+        with open(file, 'w') as f:
+            f.write("\n")
+            f.write("UserName: me\n")
+            f.write("Email: me@example.com;you@example.com\n")
+
+        self.command_input = file
+        self.command_prefix = None
+        self.command_engine_debug = True
+        self.useFixture(fixtures.MockPatchObject(
+            CONF, 'command', self.FakeConfCommand(self)))
+        mapping_engine = cli.MappingEngineTester()
+        mapping_engine.main()
