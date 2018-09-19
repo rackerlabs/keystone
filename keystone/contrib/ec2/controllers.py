@@ -34,10 +34,10 @@ Glance to list images needed to perform the requested task.
 
 import abc
 import sys
-import uuid
 
 from keystoneclient.contrib.ec2 import utils as ec2_utils
 from oslo_serialization import jsonutils
+from oslo_utils import uuidutils
 import six
 from six.moves import http_client
 
@@ -168,8 +168,8 @@ class Ec2ControllerCommon(provider_api.ProviderAPIMixin, object):
         """
         self.identity_api.get_user(user_id)
         self.resource_api.get_project(tenant_id)
-        blob = {'access': uuid.uuid4().hex,
-                'secret': uuid.uuid4().hex,
+        blob = {'access': uuidutils.generate_uuid(False),
+                'secret': uuidutils.generate_uuid(False),
                 'trust_id': request.context.trust_id}
         credential_id = utils.hash_access_key(blob['access'])
         cred_ref = {'user_id': user_id,

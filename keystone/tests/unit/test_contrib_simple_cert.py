@@ -10,8 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
-
+from oslo_utils import uuidutils
 from six.moves import http_client
 
 from keystone.tests.unit import test_v3
@@ -53,8 +52,8 @@ class TestSimpleCert(BaseTestCase):
     def test_missing_file(self):
         # these files do not exist
         self.config_fixture.config(group='signing',
-                                   ca_certs=uuid.uuid4().hex,
-                                   certfile=uuid.uuid4().hex)
+                                   ca_certs=uuidutils.generate_uuid(False),
+                                   certfile=uuidutils.generate_uuid(False))
 
         for path in [self.CA_PATH, self.CERT_PATH]:
             self.request(app=self.public_app,

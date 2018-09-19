@@ -12,10 +12,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
 
 import mock
 import stevedore
+
+from oslo_utils import uuidutils
 
 from keystone import auth
 from keystone.auth.plugins import base
@@ -27,8 +28,8 @@ from keystone.tests.unit.ksfixtures import auth_plugins
 
 # for testing purposes only
 METHOD_NAME = 'simple_challenge_response'
-EXPECTED_RESPONSE = uuid.uuid4().hex
-DEMO_USER_ID = uuid.uuid4().hex
+EXPECTED_RESPONSE = uuidutils.generate_uuid(False)
+DEMO_USER_ID = uuidutils.generate_uuid(False)
 
 
 class SimpleChallengeResponse(base.AuthMethodHandler):
@@ -55,7 +56,7 @@ class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
         self.api = auth.controllers.Auth()
 
     def test_unsupported_auth_method(self):
-        method_name = uuid.uuid4().hex
+        method_name = uuidutils.generate_uuid(False)
         auth_data = {'methods': [method_name]}
         auth_data[method_name] = {'test': 'test'}
         auth_data = {'identity': auth_data}
@@ -105,7 +106,7 @@ class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
         # test incorrect response
         auth_data = {'methods': [METHOD_NAME]}
         auth_data[METHOD_NAME] = {
-            'response': uuid.uuid4().hex}
+            'response': uuidutils.generate_uuid(False)}
         auth_data = {'identity': auth_data}
         auth_info = auth.core.AuthInfo.create(auth_data)
         auth_context = auth.core.AuthContext(method_names=[])
@@ -161,7 +162,7 @@ class TestMapped(unit.TestCase):
             auth_info = auth.core.AuthInfo.create(auth_data)
             auth_context = auth.core.AuthContext(
                 method_names=[],
-                user_id=uuid.uuid4().hex)
+                user_id=uuidutils.generate_uuid(False))
             self.api.authenticate(request, auth_info, auth_context)
             # make sure Mapped plugin got invoked with the correct payload
             ((context, auth_payload),
@@ -178,7 +179,7 @@ class TestMapped(unit.TestCase):
 
         auth_context = auth.core.AuthContext(
             method_names=[],
-            user_id=uuid.uuid4().hex)
+            user_id=uuidutils.generate_uuid(False))
 
         self.useFixture(auth_plugins.LoadAuthPlugins(method_name))
 

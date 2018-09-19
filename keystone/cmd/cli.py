@@ -17,13 +17,13 @@ from __future__ import print_function
 
 import os
 import sys
-import uuid
 
 import migrate
 from oslo_config import cfg
 from oslo_db.sqlalchemy import migration
 from oslo_log import log
 from oslo_serialization import jsonutils
+from oslo_utils import uuidutils
 import pbr.version
 
 from keystone.cmd import bootstrap
@@ -981,7 +981,7 @@ class MappingEngineTester(BaseApp):
 
     def __init__(self):
         super(MappingEngineTester, self).__init__()
-        self.mapping_id = uuid.uuid4().hex
+        self.mapping_id = uuidutils.generate_uuid(False)
         self.rules_pathname = None
         self.rules = None
         self.assertion_pathname = None

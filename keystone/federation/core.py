@@ -12,9 +12,8 @@
 
 """Main entry point into the Federation service."""
 
-import uuid
-
 from oslo_log import log
+from oslo_utils import uuidutils
 
 from keystone.common import cache
 from keystone.common import driver_hints
@@ -106,7 +105,7 @@ class Manager(manager.Manager):
         PROVIDERS.resource_api.delete_domain(domain_id)
 
     def _create_idp_domain(self, idp_id):
-        domain_id = uuid.uuid4().hex
+        domain_id = uuidutils.generate_uuid(False)
         desc = 'Auto generated federated domain for Identity Provider: '
         desc += idp_id
         domain = {

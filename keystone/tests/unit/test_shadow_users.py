@@ -10,7 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
+from oslo_utils import uuidutils
 
 from keystone.common import provider_api
 from keystone.tests import unit
@@ -29,25 +29,25 @@ class ShadowUsersTests(unit.TestCase,
         self.useFixture(database.Database())
         self.load_backends()
         self.idp = {
-            'id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(False),
             'enabled': True,
-            'description': uuid.uuid4().hex
+            'description': uuidutils.generate_uuid(False)
         }
         self.mapping = {
-            'id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(False),
         }
         self.protocol = {
-            'id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(False),
             'idp_id': self.idp['id'],
             'mapping_id': self.mapping['id']
         }
         self.federated_user = {
             'idp_id': self.idp['id'],
             'protocol_id': self.protocol['id'],
-            'unique_id': uuid.uuid4().hex,
-            'display_name': uuid.uuid4().hex
+            'unique_id': uuidutils.generate_uuid(False),
+            'display_name': uuidutils.generate_uuid(False)
         }
-        self.email = uuid.uuid4().hex
+        self.email = uuidutils.generate_uuid(False)
         PROVIDERS.federation_api.create_idp(self.idp['id'], self.idp)
         PROVIDERS.federation_api.create_mapping(
             self.mapping['id'], self.mapping

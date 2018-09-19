@@ -15,7 +15,6 @@
 import datetime
 import logging
 import os
-import uuid
 
 import argparse
 import fixtures
@@ -24,6 +23,7 @@ import mock
 import oslo_config.fixture
 from oslo_db.sqlalchemy import migration
 from oslo_log import log
+from oslo_utils import uuidutils
 from six.moves import configparser
 from six.moves import http_client
 from six.moves import range
@@ -103,7 +103,7 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
         return config_files
 
     def config(self, config_files):
-        CONF(args=['bootstrap', '--bootstrap-password', uuid.uuid4().hex],
+        CONF(args=['bootstrap', '--bootstrap-password', uuidutils.generate_uuid(False)],
              project='keystone',
              default_config_files=config_files)
 
@@ -235,7 +235,7 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
                 auth_response = c.post('/v3/auth/tokens',
                                        json=v3_password_data)
                 token = auth_response.headers['X-Subject-Token']
-            new_passwd = uuid.uuid4().hex
+            new_passwd = uuidutils.generate_uuid(False)
             os.environ['OS_BOOTSTRAP_PASSWORD'] = new_passwd
             self._do_test_bootstrap(bootstrap)
             v3_password_data['auth']['identity']['password']['user'][
@@ -270,7 +270,7 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
         PROVIDERS.identity_api.update_user(
             user_id,
             {'enabled': False,
-             'password': uuid.uuid4().hex})
+             'password': uuidutils.generate_uuid(False)})
 
         # The second bootstrap run will recover the account.
         self._do_test_bootstrap(bootstrap)
@@ -290,15 +290,15 @@ class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
 
     def setUp(self):
         super(CliBootStrapTestCaseWithEnvironment, self).setUp()
-        self.password = uuid.uuid4().hex
-        self.username = uuid.uuid4().hex
-        self.project_name = uuid.uuid4().hex
-        self.role_name = uuid.uuid4().hex
-        self.service_name = uuid.uuid4().hex
-        self.public_url = uuid.uuid4().hex
-        self.internal_url = uuid.uuid4().hex
-        self.admin_url = uuid.uuid4().hex
-        self.region_id = uuid.uuid4().hex
+        self.password = uuidutils.generate_uuid(False)
+        self.username = uuidutils.generate_uuid(False)
+        self.project_name = uuidutils.generate_uuid(False)
+        self.role_name = uuidutils.generate_uuid(False)
+        self.service_name = uuidutils.generate_uuid(False)
+        self.public_url = uuidutils.generate_uuid(False)
+        self.internal_url = uuidutils.generate_uuid(False)
+        self.admin_url = uuidutils.generate_uuid(False)
+        self.region_id = uuidutils.generate_uuid(False)
         self.default_domain = {
             'id': CONF.identity.default_domain_id,
             'name': 'Default',
@@ -450,7 +450,7 @@ class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
         for x in range(1, self.domain_count):
             domain = 'domain%s' % x
             self.domains[domain] = create_domain(
-                {'id': uuid.uuid4().hex, 'name': domain})
+                {'id': uuidutils.generate_uuid(False), 'name': domain})
         self.default_domain = unit.new_domain_ref(
             description=u'The default domain',
             id=CONF.identity.default_domain_id,
@@ -534,7 +534,7 @@ class CliDomainConfigSingleDomainTestCase(CliDomainConfigAllTestCase):
     def test_no_overwrite_config(self):
         # Create a config for the default domain
         default_config = {
-            'ldap': {'url': uuid.uuid4().hex},
+            'ldap': {'url': uuidutils.generate_uuid(False)},
             'identity': {'driver': 'ldap'}
         }
         PROVIDERS.domain_config_api.create_config(
@@ -595,7 +595,7 @@ class CliDomainConfigTooManyOptionsTestCase(CliDomainConfigAllTestCase):
 class CliDomainConfigInvalidDomainTestCase(CliDomainConfigAllTestCase):
 
     def config(self, config_files):
-        self.invalid_domain_name = uuid.uuid4().hex
+        self.invalid_domain_name = uuidutils.generate_uuid(False)
         CONF(args=['domain_config_upload', '--domain-name',
                    self.invalid_domain_name],
              project='keystone', default_config_files=config_files)
@@ -780,7 +780,7 @@ class TestMappingPopulate(unit.SQLDriverOverrides, unit.TestCase):
                 PROVIDERS.id_mapping_api.get_public_id(local_entity))
 
     def test_bad_domain_name(self):
-        CONF(args=['mapping_populate', '--domain-name', uuid.uuid4().hex],
+        CONF(args=['mapping_populate', '--domain-name', uuidutils.generate_uuid(False)],
              project='keystone')
         # backends are loaded again in the command handler
         provider_api.ProviderAPIs._clear_registry_instances()
@@ -1388,15 +1388,15 @@ class TestMappingPurge(unit.SQLDriverOverrides, unit.BaseTestCase):
         self.assertTrue(vars(res)['all'])
 
     def test_mapping_purge_with_domain_name_argument_succeeds(self):
-        args = (['--domain-name', uuid.uuid4().hex])
+        args = (['--domain-name', uuidutils.generate_uuid(False)])
         self.parser.parse_args(args)
 
     def test_mapping_purge_with_public_id_argument_succeeds(self):
-        args = (['--public-id', uuid.uuid4().hex])
+        args = (['--public-id', uuidutils.generate_uuid(False)])
         self.parser.parse_args(args)
 
     def test_mapping_purge_with_local_id_argument_succeeds(self):
-        args = (['--local-id', uuid.uuid4().hex])
+        args = (['--local-id', uuidutils.generate_uuid(False)])
         self.parser.parse_args(args)
 
     def test_mapping_purge_with_type_argument_succeeds(self):
@@ -1410,13 +1410,13 @@ class TestMappingPurge(unit.SQLDriverOverrides, unit.BaseTestCase):
         self.assertRaises(unit.UnexpectedExit, self.parser.parse_args, args)
 
     def test_mapping_purge_with_all_other_combinations_passes(self):
-        args = (['--type', 'user', '--local-id', uuid.uuid4().hex])
+        args = (['--type', 'user', '--local-id', uuidutils.generate_uuid(False)])
         self.parser.parse_args(args)
         args.append('--domain-name')
         args.append('test')
         self.parser.parse_args(args)
         args.append('--public-id')
-        args.append(uuid.uuid4().hex)
+        args.append(uuidutils.generate_uuid(False))
         self.parser.parse_args(args)
 
     @mock.patch.object(keystone.identity.MappingManager, 'purge_mappings')
@@ -1425,8 +1425,8 @@ class TestMappingPurge(unit.SQLDriverOverrides, unit.BaseTestCase):
         self.command_type = 'user'
         self.command_all = False
         self.command_domain_name = None
-        self.command_local_id = uuid.uuid4().hex
-        self.command_public_id = uuid.uuid4().hex
+        self.command_local_id = uuidutils.generate_uuid(False)
+        self.command_public_id = uuidutils.generate_uuid(False)
         self.useFixture(fixtures.MockPatchObject(
             CONF, 'command', self.FakeConfCommand(self)))
 
@@ -1489,8 +1489,8 @@ class TestUserMappingPurgeFunctional(unit.SQLDriverOverrides, unit.TestCase):
         # the group, let's list them so the id_mapping_api creates the public
         # id appropriately.
         group_ref = {
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(False),
+            'name': uuidutils.generate_uuid(False),
             'domain_id': CONF.identity.default_domain_id
         }
         PROVIDERS.identity_api.driver.create_group(group_ref['id'], group_ref)
@@ -1578,8 +1578,8 @@ class TestGroupMappingPurgeFunctional(unit.SQLDriverOverrides, unit.TestCase):
         # the group, let's list them so the id_mapping_api creates the public
         # id appropriately.
         group_ref = {
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(False),
+            'name': uuidutils.generate_uuid(False),
             'domain_id': CONF.identity.default_domain_id
         }
         PROVIDERS.identity_api.driver.create_group(group_ref['id'], group_ref)

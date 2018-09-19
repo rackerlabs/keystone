@@ -16,11 +16,10 @@
 
 from __future__ import absolute_import
 
-import uuid
-
 import oauthlib.common
 from oauthlib import oauth1
 from oslo_log import log
+from oslo_utils import uuidutils
 
 from keystone.common import manager
 import keystone.conf
@@ -54,7 +53,7 @@ LOG = log.getLogger(__name__)
 
 
 def token_generator(*args, **kwargs):
-    return uuid.uuid4().hex
+    return uuidutils.generate_uuid(False)
 
 
 def get_oauth_headers(headers):
@@ -127,7 +126,7 @@ class Manager(manager.Manager):
 
     def create_consumer(self, consumer_ref, initiator=None):
         consumer_ref = consumer_ref.copy()
-        consumer_ref['secret'] = uuid.uuid4().hex
+        consumer_ref['secret'] = uuidutils.generate_uuid(False)
         ret = self.driver.create_consumer(consumer_ref)
         notifications.Audit.created(self._CONSUMER, ret['id'], initiator)
         return ret

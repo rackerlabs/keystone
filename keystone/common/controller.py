@@ -13,10 +13,10 @@
 #    under the License.
 
 import functools
-import uuid
 
 from oslo_log import log
 from oslo_log import versionutils
+from oslo_utils import uuidutils
 import six
 
 from keystone.common import authorization
@@ -520,7 +520,7 @@ class V3Controller(provider_api.ProviderAPIMixin, wsgi.Application):
     def _assign_unique_id(self, ref):
         """Generate and assigns a unique identifier to a reference."""
         ref = ref.copy()
-        ref['id'] = uuid.uuid4().hex
+        ref['id'] = uuidutils.generate_uuid(False)
         return ref
 
     def _get_domain_id_for_list_request(self, request):

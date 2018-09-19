@@ -13,9 +13,9 @@
 import copy
 import datetime
 import sqlalchemy
-import uuid
 
 from oslo_config import cfg
+from oslo_utils import uuidutils
 
 from keystone.common import sql
 from keystone import exception
@@ -31,7 +31,7 @@ class ShadowUsers(base.ShadowUsersDriverBase):
     @sql.handle_conflicts(conflict_type='federated_user')
     def create_federated_user(self, domain_id, federated_dict, email=None):
         user = {
-            'id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(False),
             'domain_id': domain_id,
             'enabled': True
         }

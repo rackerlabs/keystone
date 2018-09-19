@@ -12,9 +12,9 @@
 
 import datetime
 import random
-import uuid
 
 import freezegun
+from oslo_utils import uuidutils
 from six.moves import http_client
 from six.moves import range
 from testtools import matchers
@@ -45,7 +45,7 @@ class SystemRoleAssignmentMixin(object):
         body = {
             'group': {
                 'domain_id': self.domain_id,
-                'name': uuid.uuid4().hex
+                'name': uuidutils.generate_uuid(False)
             }
         }
         response = self.post('/groups/', body=body)
@@ -55,7 +55,7 @@ class SystemRoleAssignmentMixin(object):
         body = {
             'user': {
                 'domain_id': self.domain_id,
-                'name': uuid.uuid4().hex
+                'name': uuidutils.generate_uuid(False)
             }
         }
         response = self.post('/users/', body=body)
@@ -160,7 +160,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         returns Not Found for the user.
 
         """
-        user_id = uuid.uuid4().hex
+        user_id = uuidutils.generate_uuid(False)
 
         collection_url = (
             '/projects/%(project_id)s/users/%(user_id)s/roles' % {
@@ -210,7 +210,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         returns 404 Not Found for the user.
 
         """
-        user_id = uuid.uuid4().hex
+        user_id = uuidutils.generate_uuid(False)
 
         collection_url = (
             '/domains/%(domain_id)s/users/%(user_id)s/roles' % {
@@ -260,7 +260,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         server returns 404 Not Found for the group.
 
         """
-        group_id = uuid.uuid4().hex
+        group_id = uuidutils.generate_uuid(False)
 
         collection_url = (
             '/projects/%(project_id)s/groups/%(group_id)s/roles' % {
@@ -311,7 +311,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         returns 404 Not Found for the group.
 
         """
-        group_id = uuid.uuid4().hex
+        group_id = uuidutils.generate_uuid(False)
 
         collection_url = (
             '/domains/%(domain_id)s/groups/%(group_id)s/roles' % {
@@ -3194,7 +3194,7 @@ class DomainSpecificRoleTests(test_v3.RestfulTestCase, unit.TestCase):
         self.assertRoleInListResponse(r, self.domainA_role2)
 
     def test_update_domain_specific_roles(self):
-        self.domainA_role1['name'] = uuid.uuid4().hex
+        self.domainA_role1['name'] = uuidutils.generate_uuid(False)
         self.patch('/roles/%(role_id)s' % {
             'role_id': self.domainA_role1['id']},
             body={'role': self.domainA_role1})
@@ -3391,7 +3391,7 @@ class ListUserProjectsTestCase(test_v3.RestfulTestCase):
 
             # Try looking for projects with a non-existent domain_id
             url = '/users/%s/projects?domain_id=%s' % (user['id'],
-                                                       uuid.uuid4().hex)
+                                                       uuidutils.generate_uuid(False))
             result = self.get(url, auth=auth)
             self.assertEqual(0, len(result.json['projects']))
 
@@ -3753,7 +3753,7 @@ class GroupSystemRoleAssignmentTestCase(test_v3.RestfulTestCase,
 
     def test_assign_system_role_to_non_existant_group_fails(self):
         system_role_id = self._create_new_role()
-        group_id = uuid.uuid4().hex
+        group_id = uuidutils.generate_uuid(False)
 
         # assign the role to the group globally
         member_url = '/system/groups/%(group_id)s/roles/%(role_id)s' % {

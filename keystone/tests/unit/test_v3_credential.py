@@ -14,9 +14,9 @@
 
 import hashlib
 import json
-import uuid
 
 from keystoneclient.contrib.ec2 import utils as ec2_utils
+from oslo_utils import uuidutils
 from six.moves import http_client
 from testtools import matchers
 
@@ -101,7 +101,7 @@ class CredentialTestCase(CredentialBaseTestCase):
 
     def test_list_credentials_filtered_by_user_id(self):
         """Call ``GET  /credentials?user_id={user_id}``."""
-        credential = unit.new_credential_ref(user_id=uuid.uuid4().hex)
+        credential = unit.new_credential_ref(user_id=uuidutils.generate_uuid(False))
         PROVIDERS.credential_api.create_credential(
             credential['id'], credential
         )
@@ -115,7 +115,7 @@ class CredentialTestCase(CredentialBaseTestCase):
         """Call ``GET  /credentials?type={type}``."""
         # The type ec2 was chosen, instead of a random string,
         # because the type must be in the list of supported types
-        ec2_credential = unit.new_credential_ref(user_id=uuid.uuid4().hex,
+        ec2_credential = unit.new_credential_ref(user_id=uuidutils.generate_uuid(False),
                                                  project_id=self.project_id,
                                                  type=CRED_TYPE_EC2)
 
@@ -140,8 +140,8 @@ class CredentialTestCase(CredentialBaseTestCase):
 
     def test_list_credentials_filtered_by_type_and_user_id(self):
         """Call ``GET  /credentials?user_id={user_id}&type={type}``."""
-        user1_id = uuid.uuid4().hex
-        user2_id = uuid.uuid4().hex
+        user1_id = uuidutils.generate_uuid(False)
+        user2_id = uuidutils.generate_uuid(False)
 
         # Creating credentials for two different users
         credential_user1_ec2 = unit.new_credential_ref(user_id=user1_id,
@@ -507,7 +507,7 @@ class TestCredentialEc2(CredentialBaseTestCase):
                         matchers.EndsWith(uri))
 
     def test_ec2_cannot_get_non_ec2_credential(self):
-        access_key = uuid.uuid4().hex
+        access_key = uuidutils.generate_uuid(False)
         cred_id = utils.hash_access_key(access_key)
         non_ec2_cred = unit.new_credential_ref(
             user_id=self.user_id,
@@ -533,7 +533,7 @@ class TestCredentialEc2(CredentialBaseTestCase):
         non_ec2_cred = unit.new_credential_ref(
             user_id=self.user_id,
             project_id=self.project_id)
-        non_ec2_cred['type'] = uuid.uuid4().hex
+        non_ec2_cred['type'] = uuidutils.generate_uuid(False)
         PROVIDERS.credential_api.create_credential(
             non_ec2_cred['id'], non_ec2_cred
         )

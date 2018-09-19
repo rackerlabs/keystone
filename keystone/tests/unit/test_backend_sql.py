@@ -12,11 +12,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
-
 import mock
 from oslo_db import exception as db_exception
 from oslo_db import options
+from oslo_utils import uuidutils
 from six.moves import range
 import sqlalchemy
 from sqlalchemy import exc
@@ -299,7 +298,7 @@ class SqlIdentity(SqlTests,
         # LDAP.
 
         # create a ref with a lowercase name
-        ref = unit.new_user_ref(name=uuid.uuid4().hex.lower(),
+        ref = unit.new_user_ref(name=uuidutils.generate_uuid(False).lower(),
                                 domain_id=CONF.identity.default_domain_id)
         ref = PROVIDERS.identity_api.create_user(ref)
 
@@ -317,7 +316,7 @@ class SqlIdentity(SqlTests,
         PROVIDERS.resource_api.create_project(ref['id'], ref)
 
         # assign a new ID with the same name, but this time in uppercase
-        ref['id'] = uuid.uuid4().hex
+        ref['id'] = uuidutils.generate_uuid(False)
         ref['name'] = ref['name'].upper()
         PROVIDERS.resource_api.create_project(ref['id'], ref)
 
@@ -343,8 +342,8 @@ class SqlIdentity(SqlTests,
         This behavior is specific to the SQL driver.
 
         """
-        arbitrary_key = uuid.uuid4().hex
-        arbitrary_value = uuid.uuid4().hex
+        arbitrary_key = uuidutils.generate_uuid(False)
+        arbitrary_value = uuidutils.generate_uuid(False)
         project = unit.new_project_ref(
             domain_id=CONF.identity.default_domain_id)
         project[arbitrary_key] = arbitrary_value
@@ -352,7 +351,7 @@ class SqlIdentity(SqlTests,
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
         self.assertIsNone(ref.get('extra'))
 
-        ref['name'] = uuid.uuid4().hex
+        ref['name'] = uuidutils.generate_uuid(False)
         ref = PROVIDERS.resource_api.update_project(ref['id'], ref)
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
         self.assertEqual(arbitrary_value, ref['extra'][arbitrary_key])
@@ -367,8 +366,8 @@ class SqlIdentity(SqlTests,
         This behavior is specific to the SQL driver.
 
         """
-        arbitrary_key = uuid.uuid4().hex
-        arbitrary_value = uuid.uuid4().hex
+        arbitrary_key = uuidutils.generate_uuid(False)
+        arbitrary_value = uuidutils.generate_uuid(False)
         user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
         user[arbitrary_key] = arbitrary_value
         del user["id"]
@@ -377,8 +376,8 @@ class SqlIdentity(SqlTests,
         self.assertIsNone(ref.get('password'))
         self.assertIsNone(ref.get('extra'))
 
-        user['name'] = uuid.uuid4().hex
-        user['password'] = uuid.uuid4().hex
+        user['name'] = uuidutils.generate_uuid(False)
+        user['password'] = uuidutils.generate_uuid(False)
         ref = PROVIDERS.identity_api.update_user(ref['id'], user)
         self.assertIsNone(ref.get('password'))
         self.assertIsNone(ref['extra'].get('password'))
@@ -611,7 +610,7 @@ class SqlIdentity(SqlTests,
         self.assertIn(project2, refs)
 
         # Can we update it?
-        project['name'] = uuid.uuid4().hex
+        project['name'] = uuidutils.generate_uuid(False)
         PROVIDERS.resource_api.update_project(project['id'], project)
         ref = PROVIDERS.resource_api.get_project(project['id'])
         self.assertDictEqual(project, ref)
@@ -687,7 +686,7 @@ class SqlIdentity(SqlTests,
             # should be silent
             driver.delete_projects_from_ids([ref_id])
 
-        _exercise_project_api(uuid.uuid4().hex)
+        _exercise_project_api(uuidutils.generate_uuid(False))
         _exercise_project_api(resource.NULL_DOMAIN_ID)
 
     def test_list_users_call_count(self):
@@ -755,7 +754,7 @@ class SqlTrust(SqlTests, trust_tests.TrustTests):
 
     def test_trust_expires_at_int_matches_expires_at(self):
         with sql.session_for_write() as session:
-            new_id = uuid.uuid4().hex
+            new_id = uuidutils.generate_uuid(False)
             self.create_sample_trust(new_id)
             trust_ref = session.query(trust_sql.TrustModel).get(new_id)
             self.assertIsNotNone(trust_ref._expires_at)
@@ -801,7 +800,7 @@ class SqlCatalog(SqlTests, catalog_tests.CatalogTests):
         service = unit.new_service_ref()
         PROVIDERS.catalog_api.create_service(service['id'], service)
 
-        endpoint = unit.new_endpoint_ref(region_id=uuid.uuid4().hex,
+        endpoint = unit.new_endpoint_ref(region_id=uuidutils.generate_uuid(False),
                                          service_id=service['id'])
 
         self.assertRaises(exception.ValidationError,
@@ -872,13 +871,13 @@ class SqlCatalog(SqlTests, catalog_tests.CatalogTests):
         self.config_fixture.config(group='endpoint_filter',
                                    return_all_endpoints_if_no_filter=True)
         catalog_ref = PROVIDERS.catalog_api.get_v3_catalog(
-            uuid.uuid4().hex, None
+            uuidutils.generate_uuid(False), None
         )
         self.assertThat(catalog_ref, matchers.HasLength(2))
         self.config_fixture.config(group='endpoint_filter',
                                    return_all_endpoints_if_no_filter=False)
         catalog_ref = PROVIDERS.catalog_api.get_v3_catalog(
-            uuid.uuid4().hex, None
+            uuidutils.generate_uuid(False), None
         )
         self.assertThat(catalog_ref, matchers.HasLength(0))
 
@@ -897,7 +896,7 @@ class SqlCatalog(SqlTests, catalog_tests.CatalogTests):
             self.tenant_bar['id'])
 
         catalog_ref = PROVIDERS.catalog_api.get_v3_catalog(
-            uuid.uuid4().hex, self.tenant_bar['id']
+            uuidutils.generate_uuid(False), self.tenant_bar['id']
         )
         self.assertThat(catalog_ref, matchers.HasLength(1))
         self.assertThat(catalog_ref[0]['endpoints'], matchers.HasLength(1))
@@ -919,7 +918,7 @@ class SqlCatalog(SqlTests, catalog_tests.CatalogTests):
         PROVIDERS.catalog_api.create_service(srv_2['id'], srv_2)
 
         catalog_ref = PROVIDERS.catalog_api.get_v3_catalog(
-            uuid.uuid4().hex, self.tenant_bar['id']
+            uuidutils.generate_uuid(False), self.tenant_bar['id']
         )
         self.assertThat(catalog_ref, matchers.HasLength(2))
         srv_id_list = [catalog_ref[0]['id'], catalog_ref[1]['id']]
@@ -1064,10 +1063,10 @@ class SqlModuleInitialization(unit.TestCase):
 
 class SqlCredential(SqlTests):
 
-    def _create_credential_with_user_id(self, user_id=uuid.uuid4().hex):
+    def _create_credential_with_user_id(self, user_id=uuidutils.generate_uuid(False)):
         credential = unit.new_credential_ref(user_id=user_id,
-                                             extra=uuid.uuid4().hex,
-                                             type=uuid.uuid4().hex)
+                                             extra=uuidutils.generate_uuid(False),
+                                             type=uuidutils.generate_uuid(False))
         PROVIDERS.credential_api.create_credential(
             credential['id'], credential
         )
@@ -1122,7 +1121,7 @@ class SqlCredential(SqlTests):
         self._validateCredentialList(credentials, [cred])
 
     def test_create_credential_is_encrypted_when_stored(self):
-        credential = unit.new_credential_ref(user_id=uuid.uuid4().hex)
+        credential = unit.new_credential_ref(user_id=uuidutils.generate_uuid(False))
         credential_id = credential['id']
         returned_credential = PROVIDERS.credential_api.create_credential(
             credential_id,
@@ -1145,7 +1144,7 @@ class SqlCredential(SqlTests):
         )
 
     def test_list_credentials_is_decrypted(self):
-        credential = unit.new_credential_ref(user_id=uuid.uuid4().hex)
+        credential = unit.new_credential_ref(user_id=uuidutils.generate_uuid(False))
         credential_id = credential['id']
 
         created_credential = PROVIDERS.credential_api.create_credential(
@@ -1210,14 +1209,14 @@ class SqlLimit(SqlTests, limit_tests.LimitTests):
         registered_limit_1 = unit.new_registered_limit_ref(
             service_id=self.service_one['id'],
             region_id=self.region_one['id'],
-            resource_name='volume', default_limit=10, id=uuid.uuid4().hex)
+            resource_name='volume', default_limit=10, id=uuidutils.generate_uuid(False))
         registered_limit_2 = unit.new_registered_limit_ref(
             service_id=self.service_one['id'],
             region_id=self.region_two['id'],
-            resource_name='snapshot', default_limit=10, id=uuid.uuid4().hex)
+            resource_name='snapshot', default_limit=10, id=uuidutils.generate_uuid(False))
         registered_limit_3 = unit.new_registered_limit_ref(
             service_id=self.service_one['id'],
             region_id=self.region_two['id'],
-            resource_name='backup', default_limit=10, id=uuid.uuid4().hex)
+            resource_name='backup', default_limit=10, id=uuidutils.generate_uuid(False))
         PROVIDERS.unified_limit_api.create_registered_limits(
             [registered_limit_1, registered_limit_2, registered_limit_3])

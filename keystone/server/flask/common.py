@@ -15,7 +15,6 @@ import collections
 import functools
 import itertools
 import re
-import uuid
 import wsgiref.util
 
 import flask
@@ -24,6 +23,7 @@ import flask_restful
 import flask_restful.utils
 from oslo_log import log
 from oslo_serialization import jsonutils
+from oslo_utils import uuidutils
 from pycadf import cadftaxonomy as taxonomy
 from pycadf import host
 from pycadf import resource
@@ -588,7 +588,7 @@ class ResourceBase(flask_restful.Resource):
     @staticmethod
     def _assign_unique_id(ref):
         ref = ref.copy()
-        ref['id'] = uuid.uuid4().hex
+        ref['id'] = uuidutils.generate_uuid(False)
         return ref
 
     @classmethod

@@ -10,9 +10,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
-
 from oslo_log import log
+from oslo_utils import uuidutils
 
 from keystone.common import driver_hints
 from keystone.common import provider_api
@@ -90,7 +89,7 @@ class Bootstrapper(object):
 
     def _bootstrap_project(self):
         try:
-            project_id = uuid.uuid4().hex
+            project_id = uuidutils.generate_uuid(False)
             project = {
                 'enabled': True,
                 'id': project_id,
@@ -112,7 +111,7 @@ class Bootstrapper(object):
     def _ensure_role_exists(self, role_name):
         # NOTE(morganfainberg): Do not create the role if it already exists.
         try:
-            role_id = uuid.uuid4().hex
+            role_id = uuidutils.generate_uuid(False)
             role = {'name': role_name, 'id': role_id}
             role = PROVIDERS.role_api.create_role(role_id, role)
             LOG.info('Created role %s', role_name)
@@ -278,7 +277,7 @@ class Bootstrapper(object):
 
                 endpoints = PROVIDERS.catalog_api.list_endpoints(hints)
             else:
-                service_id = uuid.uuid4().hex
+                service_id = uuidutils.generate_uuid(False)
                 service = {
                     'id': service_id, 'name': self.service_name,
                     'type': 'identity', 'enabled': True
@@ -301,7 +300,7 @@ class Bootstrapper(object):
                 try:
                     endpoint_ref = available_interfaces[interface]
                 except KeyError:
-                    endpoint_ref = {'id': uuid.uuid4().hex,
+                    endpoint_ref = {'id': uuidutils.generate_uuid(False),
                                     'interface': interface,
                                     'url': url,
                                     'service_id': self.service_id,

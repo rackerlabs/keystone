@@ -15,8 +15,8 @@
 import base64
 import hashlib
 import hmac
-import uuid
 
+from oslo_utils import uuidutils
 from six.moves import http_client
 
 from keystone.common import provider_api
@@ -102,7 +102,7 @@ class S3ContribCore(test_v3.RestfulTestCase):
                        'saWNhdGlvbi9vY3RldC1zdHJlYW0KVHVlLCAxMSBEZWMgMjAxM'
                        'iAyMTo0MTo0MSBHTVQKL2NvbnRfczMvdXBsb2FkZWRfZnJ'
                        'vbV9zMy50eHQ=',
-                       'signature': uuid.uuid4().hex}
+                       'signature': uuidutils.generate_uuid(False)}
 
         self.assertRaises(exception.Unauthorized,
                           self.controller.check_signature,
@@ -131,7 +131,7 @@ class S3ContribCore(test_v3.RestfulTestCase):
                        'MTUwODI0L1JlZ2lvbk9uZS9zMy9hd3M0X3JlcXVlc3QKZjIy'
                        'MTU1ODBlZWI5YTE2NzM1MWJkOTNlODZjM2I2ZjA0YTkyOGY1'
                        'YzU1MjBhMzkzNWE0NTM1NDBhMDk1NjRiNQ==',
-                       'signature': uuid.uuid4().hex}
+                       'signature': uuidutils.generate_uuid(False)}
 
         self.assertRaises(exception.Unauthorized,
                           self.controller.check_signature,

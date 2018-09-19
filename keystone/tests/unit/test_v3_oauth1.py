@@ -15,11 +15,11 @@
 import copy
 import datetime
 import random
-import uuid
 
 import freezegun
 import mock
 from oslo_serialization import jsonutils
+from oslo_utils import uuidutils
 from pycadf import cadftaxonomy
 from six.moves import http_client
 from six.moves import urllib
@@ -56,7 +56,7 @@ class OAuth1Tests(test_v3.RestfulTestCase):
         self.base_url = 'http://localhost/v3'
 
     def _create_single_consumer(self):
-        ref = {'description': uuid.uuid4().hex}
+        ref = {'description': uuidutils.generate_uuid(False)}
         resp = self.post(
             self.CONSUMER_URL,
             body={'consumer': ref})
@@ -131,7 +131,7 @@ class ConsumerCRUDTests(OAuth1Tests):
         return consumer
 
     def test_consumer_create(self):
-        description = uuid.uuid4().hex
+        description = uuidutils.generate_uuid(False)
         self._consumer_create(description=description)
 
     def test_consumer_create_none_desc_1(self):
@@ -144,7 +144,7 @@ class ConsumerCRUDTests(OAuth1Tests):
         # If create a consumer with a field with : or - in the name,
         # the name is normalized by converting those chars to _.
         field_name = 'some:weird-field'
-        field_value = uuid.uuid4().hex
+        field_value = uuidutils.generate_uuid(False)
         extra_fields = {field_name: field_value}
         consumer = self._consumer_create(**extra_fields)
         normalized_field_name = 'some_weird_field'
@@ -198,8 +198,8 @@ class ConsumerCRUDTests(OAuth1Tests):
         consumer = self._create_single_consumer()
         original_id = consumer['id']
         update_ref = copy.deepcopy(consumer)
-        update_ref['description'] = uuid.uuid4().hex
-        update_ref['secret'] = uuid.uuid4().hex
+        update_ref['description'] = uuidutils.generate_uuid(False)
+        update_ref['secret'] = uuidutils.generate_uuid(False)
         self.patch(self.CONSUMER_URL + '/%s' % original_id,
                    body={'consumer': update_ref},
                    expected_status=http_client.BAD_REQUEST)
@@ -221,16 +221,16 @@ class ConsumerCRUDTests(OAuth1Tests):
         # If update a consumer with a field with : or - in the name,
         # the name is normalized by converting those chars to _.
         field1_name = 'some:weird-field'
-        field1_orig_value = uuid.uuid4().hex
+        field1_orig_value = uuidutils.generate_uuid(False)
 
         extra_fields = {field1_name: field1_orig_value}
         consumer = self._consumer_create(**extra_fields)
         consumer_id = consumer['id']
 
-        field1_new_value = uuid.uuid4().hex
+        field1_new_value = uuidutils.generate_uuid(False)
 
         field2_name = 'weird:some-field'
-        field2_value = uuid.uuid4().hex
+        field2_value = uuidutils.generate_uuid(False)
 
         update_ref = {field1_name: field1_new_value,
                       field2_name: field2_value}
@@ -256,7 +256,7 @@ class ConsumerCRUDTests(OAuth1Tests):
     def test_consumer_get_bad_id(self):
         url = (
             self.CONSUMER_URL + '/%(consumer_id)s' %
-            {'consumer_id': uuid.uuid4().hex}
+            {'consumer_id': uuidutils.generate_uuid(False)}
         )
         self.get(url, expected_status=http_client.NOT_FOUND)
         self.head(url, expected_status=http_client.NOT_FOUND)
@@ -313,7 +313,7 @@ class AccessTokenCRUDTests(OAuthFlowTests):
     def test_delete_access_token_dne(self):
         self.delete('/users/%(user)s/OS-OAUTH1/access_tokens/%(auth)s'
                     % {'user': self.user_id,
-                       'auth': uuid.uuid4().hex},
+                       'auth': uuidutils.generate_uuid(False)},
                     expected_status=http_client.NOT_FOUND)
 
     def test_list_no_access_tokens(self):
@@ -348,7 +348,7 @@ class AccessTokenCRUDTests(OAuthFlowTests):
         url = (
             '/users/%(user_id)s/OS-OAUTH1/access_tokens/%(key)s'
             % {'user_id': self.user_id,
-               'key': uuid.uuid4().hex}
+               'key': uuidutils.generate_uuid(False)}
         )
         self.get(url, expected_status=http_client.NOT_FOUND)
         self.head(url, expected_status=http_client.NOT_FOUND)
@@ -386,7 +386,7 @@ class AccessTokenCRUDTests(OAuthFlowTests):
         access_token_key = self.access_token.key.decode()
         url = ('/users/%(id)s/OS-OAUTH1/access_tokens/%(key)s/roles/%(role)s'
                % {'id': self.user_id, 'key': access_token_key,
-                  'role': uuid.uuid4().hex})
+                  'role': uuidutils.generate_uuid(False)})
         self.get(url, expected_status=http_client.NOT_FOUND)
         self.head(url, expected_status=http_client.NOT_FOUND)
 
@@ -490,7 +490,7 @@ class AuthTokenTests(object):
         r = self.get('/auth/tokens', headers=headers)
         self.assertValidTokenResponse(r, self.user)
 
-        user = {'password': uuid.uuid4().hex}
+        user = {'password': uuidutils.generate_uuid(False)}
         r = self.patch('/users/%(user_id)s' % {
             'user_id': self.user['id']},
             body={'user': user})
@@ -668,7 +668,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
     def test_bad_consumer_secret(self):
         consumer = self._create_single_consumer()
         consumer_id = consumer['id']
-        consumer = {'key': consumer_id, 'secret': uuid.uuid4().hex}
+        consumer = {'key': consumer_id, 'secret': uuidutils.generate_uuid(False)}
         url, headers = self._create_request_token(consumer, self.project_id)
         self.post(url, headers=headers,
                   expected_status=http_client.UNAUTHORIZED)
@@ -704,7 +704,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         self.post(
             url, headers=headers,
             response_content_type='application/x-www-form-urlencoded')
-        url = self._authorize_request_token(uuid.uuid4().hex)
+        url = self._authorize_request_token(uuidutils.generate_uuid(False))
         body = {'roles': [{'id': self.role_id}]}
         self.put(url, body=body, expected_status=http_client.NOT_FOUND)
 
@@ -725,7 +725,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
 
     def test_bad_consumer_id(self):
         consumer = self._create_single_consumer()
-        consumer_id = uuid.uuid4().hex
+        consumer_id = uuidutils.generate_uuid(False)
         consumer_secret = consumer['secret']
         consumer = {'key': consumer_id, 'secret': consumer_secret}
         url, headers = self._create_request_token(consumer, self.project_id)
@@ -736,7 +736,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         consumer_id = consumer['id']
         consumer_secret = consumer['secret']
         consumer = {'key': consumer_id, 'secret': consumer_secret}
-        project_id = uuid.uuid4().hex
+        project_id = uuidutils.generate_uuid(False)
         url, headers = self._create_request_token(consumer, project_id)
         self.post(url, headers=headers, expected_status=http_client.NOT_FOUND)
 
@@ -762,7 +762,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         verifier = resp.result['token']['oauth_verifier']
         self.assertIsNotNone(verifier)
 
-        request_token.set_verifier(uuid.uuid4().hex)
+        request_token.set_verifier(uuidutils.generate_uuid(False))
         url, headers = self._create_access_token(consumer, request_token)
         resp = self.post(url, headers=headers,
                          expected_status=http_client.BAD_REQUEST)
@@ -816,7 +816,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
 
         # 3. Invalid signature.
         # Update the secret, so it will fail to validate the signature.
-        consumer.update({'secret': uuid.uuid4().hex})
+        consumer.update({'secret': uuidutils.generate_uuid(False)})
         url, headers = self._create_access_token(consumer, request_token)
         resp = self.post(url, headers=headers,
                          expected_status=http_client.UNAUTHORIZED)
@@ -840,7 +840,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
                       resp_data.get('error', {}).get('message'))
 
         # 5. The provided consumer does not exist.
-        consumer.update({'key': uuid.uuid4().hex})
+        consumer.update({'key': uuidutils.generate_uuid(False)})
         url, headers = self._create_access_token(consumer, request_token)
         resp = self.post(url, headers=headers,
                          expected_status=http_client.UNAUTHORIZED)
@@ -867,7 +867,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         # This new role is utilzied to ensure the user still has access to
         # the project but is authorizing an incorrect role_id for the purposes
         # of oauth1.
-        new_role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        new_role = {'id': uuidutils.generate_uuid(False), 'name': uuidutils.generate_uuid(False)}
         PROVIDERS.role_api.create_role(new_role['id'], new_role)
         PROVIDERS.assignment_api.add_role_to_user_and_project(
             user_id=self.user_id,
@@ -1038,11 +1038,11 @@ class MaliciousOAuth1Tests(OAuth1Tests):
 
     def test_missing_oauth_headers(self):
         endpoint = '/OS-OAUTH1/request_token'
-        client = oauth1.Client(uuid.uuid4().hex,
-                               client_secret=uuid.uuid4().hex,
+        client = oauth1.Client(uuidutils.generate_uuid(False),
+                               client_secret=uuidutils.generate_uuid(False),
                                signature_method=oauth1.SIG_HMAC,
                                callback_uri="oob")
-        headers = {'requested_project_id': uuid.uuid4().hex}
+        headers = {'requested_project_id': uuidutils.generate_uuid(False)}
         _url, headers, _body = client.sign(self.base_url + endpoint,
                                            http_method='POST',
                                            headers=headers)
@@ -1069,7 +1069,7 @@ class OAuthNotificationTests(OAuth1Tests,
 
     def test_update_consumer(self):
         consumer_ref = self._create_single_consumer()
-        update_ref = {'consumer': {'description': uuid.uuid4().hex}}
+        update_ref = {'consumer': {'description': uuidutils.generate_uuid(False)}}
         PROVIDERS.oauth_api.update_consumer(consumer_ref['id'], update_ref)
         self._assert_notify_sent(consumer_ref['id'],
                                  test_notifications.UPDATED_OPERATION,

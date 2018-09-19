@@ -13,8 +13,8 @@
 #    under the License.
 
 import copy
-import uuid
 
+from oslo_utils import uuidutils
 from six.moves import http_client
 from testtools import matchers
 
@@ -160,7 +160,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
 
         # but instead of using that ID, make up a new, conflicting one
         self.put(
-            '/regions/%s' % uuid.uuid4().hex,
+            '/regions/%s' % uuidutils.generate_uuid(False),
             body={'region': ref},
             expected_status=http_client.BAD_REQUEST)
 
@@ -519,13 +519,13 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         """
         self._create_random_endpoint(interface='internal')
 
-        response = self.get('/endpoints?interface=%s' % uuid.uuid4().hex)
+        response = self.get('/endpoints?interface=%s' % uuidutils.generate_uuid(False))
         self.assertEqual(0, len(response.json['endpoints']))
 
-        response = self.get('/endpoints?region_id=%s' % uuid.uuid4().hex)
+        response = self.get('/endpoints?region_id=%s' % uuidutils.generate_uuid(False))
         self.assertEqual(0, len(response.json['endpoints']))
 
-        response = self.get('/endpoints?service_id=%s' % uuid.uuid4().hex)
+        response = self.get('/endpoints?service_id=%s' % uuidutils.generate_uuid(False))
         self.assertEqual(0, len(response.json['endpoints']))
 
     def test_create_endpoint_no_enabled(self):
@@ -594,7 +594,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         This occurs when endpoint is provided with 'region' and no 'region_id'.
         """
         ref = unit.new_endpoint_ref_with_region(service_id=self.service_id,
-                                                region=uuid.uuid4().hex)
+                                                region=uuidutils.generate_uuid(False))
         self.post('/endpoints', body={'endpoint': ref})
         # Make sure the region is created
         self.get('/regions/%(region_id)s' % {'region_id': ref["region"]})
@@ -844,7 +844,7 @@ class TestCatalogAPISQL(unit.TestCase):
         self.config_fixture.config(group='catalog', driver='sql')
 
     def test_get_catalog_ignores_endpoints_with_invalid_urls(self):
-        user_id = uuid.uuid4().hex
+        user_id = uuidutils.generate_uuid(False)
 
         # create a project since the project should exist if we want to
         # filter the catalog by the project or replace the url with a
@@ -889,7 +889,7 @@ class TestCatalogAPISQL(unit.TestCase):
         self.assertThat(catalog[0]['endpoints'], matchers.HasLength(1))
 
     def test_get_catalog_always_returns_service_name(self):
-        user_id = uuid.uuid4().hex
+        user_id = uuidutils.generate_uuid(False)
         # create a project since the project should exist if we want to
         # filter the catalog by the project or replace the url with a
         # valid project id.
@@ -951,7 +951,7 @@ class TestCatalogAPISQLRegions(unit.TestCase):
         PROVIDERS.resource_api.create_domain(domain['id'], domain)
         project = unit.new_project_ref(domain_id=domain['id'])
         PROVIDERS.resource_api.create_project(project['id'], project)
-        user_id = uuid.uuid4().hex
+        user_id = uuidutils.generate_uuid(False)
         catalog = PROVIDERS.catalog_api.get_v3_catalog(user_id, project['id'])
         self.assertValidCatalogEndpoint(
             catalog[0]['endpoints'][0], ref=endpoint)
@@ -967,7 +967,7 @@ class TestCatalogAPISQLRegions(unit.TestCase):
         PROVIDERS.catalog_api.create_endpoint(endpoint['id'], endpoint)
 
         endpoint = PROVIDERS.catalog_api.get_endpoint(endpoint['id'])
-        user_id = uuid.uuid4().hex
+        user_id = uuidutils.generate_uuid(False)
         # create a project since the project should exist if we want to
         # filter the catalog by the project or replace the url with a
         # valid project id.

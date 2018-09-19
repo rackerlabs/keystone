@@ -12,9 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
-
 import sqlalchemy
+from oslo_utils import uuidutils
 
 from keystone.common import sql
 from keystone.endpoint_policy.backends import base
@@ -63,7 +62,7 @@ class EndpointPolicy(base.EndpointPolicyDriverBase):
                 association = query.one()
                 association.policy_id = policy_id
             except sql.NotFound:
-                association = PolicyAssociation(id=uuid.uuid4().hex,
+                association = PolicyAssociation(id=uuidutils.generate_uuid(False),
                                                 policy_id=policy_id,
                                                 endpoint_id=endpoint_id,
                                                 service_id=service_id,

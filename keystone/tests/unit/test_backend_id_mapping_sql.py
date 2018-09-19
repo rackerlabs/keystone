@@ -13,8 +13,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
-
+from oslo_utils import uuidutils
 from testtools import matchers
 
 from keystone.common import provider_api
@@ -71,13 +70,13 @@ class SqlIDMapping(test_backend_sql.SqlTests):
 
     def test_invalid_public_key(self):
         self.assertIsNone(
-            PROVIDERS.id_mapping_api.get_id_mapping(uuid.uuid4().hex)
+            PROVIDERS.id_mapping_api.get_id_mapping(uuidutils.generate_uuid(False))
         )
 
     def test_id_mapping_crud(self):
         initial_mappings = len(mapping_sql.list_id_mappings())
-        local_id1 = uuid.uuid4().hex
-        local_id2 = uuid.uuid4().hex
+        local_id1 = uuidutils.generate_uuid(False)
+        local_id2 = uuidutils.generate_uuid(False)
         local_entity1 = {'domain_id': self.domainA['id'],
                          'local_id': local_id1,
                          'entity_type': mapping.EntityType.USER}
@@ -118,7 +117,7 @@ class SqlIDMapping(test_backend_sql.SqlTests):
         self.assertNotEqual(local_id2, public_id2)
 
         # Create another mappings, this time specifying a public ID to use
-        new_public_id = uuid.uuid4().hex
+        new_public_id = uuidutils.generate_uuid(False)
         public_id3 = PROVIDERS.id_mapping_api.create_id_mapping(
             {'domain_id': self.domainB['id'], 'local_id': local_id2,
              'entity_type': mapping.EntityType.USER},
@@ -154,15 +153,15 @@ class SqlIDMapping(test_backend_sql.SqlTests):
 
     def test_delete_public_id_is_silent(self):
         # Test that deleting an invalid public key is silent
-        PROVIDERS.id_mapping_api.delete_id_mapping(uuid.uuid4().hex)
+        PROVIDERS.id_mapping_api.delete_id_mapping(uuidutils.generate_uuid(False))
 
     def test_purge_mappings(self):
         initial_mappings = len(mapping_sql.list_id_mappings())
-        local_id1 = uuid.uuid4().hex
-        local_id2 = uuid.uuid4().hex
-        local_id3 = uuid.uuid4().hex
-        local_id4 = uuid.uuid4().hex
-        local_id5 = uuid.uuid4().hex
+        local_id1 = uuidutils.generate_uuid(False)
+        local_id2 = uuidutils.generate_uuid(False)
+        local_id3 = uuidutils.generate_uuid(False)
+        local_id4 = uuidutils.generate_uuid(False)
+        local_id5 = uuidutils.generate_uuid(False)
 
         # Create five mappings,two in domainA, three in domainB
         PROVIDERS.id_mapping_api.create_id_mapping(
@@ -217,7 +216,7 @@ class SqlIDMapping(test_backend_sql.SqlTests):
     def test_create_duplicate_mapping(self):
         local_entity = {
             'domain_id': self.domainA['id'],
-            'local_id': uuid.uuid4().hex,
+            'local_id': uuidutils.generate_uuid(False),
             'entity_type': mapping.EntityType.USER}
         public_id1 = PROVIDERS.id_mapping_api.create_id_mapping(local_entity)
 
@@ -229,12 +228,12 @@ class SqlIDMapping(test_backend_sql.SqlTests):
         # even if public_id was specified, it should not be used,
         # and still the same public_id should be returned
         public_id3 = PROVIDERS.id_mapping_api.create_id_mapping(
-            local_entity, public_id=uuid.uuid4().hex)
+            local_entity, public_id=uuidutils.generate_uuid(False))
         self.assertEqual(public_id1, public_id3)
 
     @unit.skip_if_cache_disabled('identity')
     def test_cache_when_id_mapping_crud(self):
-        local_id = uuid.uuid4().hex
+        local_id = uuidutils.generate_uuid(False)
         local_entity = {'domain_id': self.domainA['id'],
                         'local_id': local_id,
                         'entity_type': mapping.EntityType.USER}
@@ -258,11 +257,11 @@ class SqlIDMapping(test_backend_sql.SqlTests):
 
     @unit.skip_if_cache_disabled('identity')
     def test_invalidate_cache_when_purge_mappings(self):
-        local_id1 = uuid.uuid4().hex
-        local_id2 = uuid.uuid4().hex
-        local_id3 = uuid.uuid4().hex
-        local_id4 = uuid.uuid4().hex
-        local_id5 = uuid.uuid4().hex
+        local_id1 = uuidutils.generate_uuid(False)
+        local_id2 = uuidutils.generate_uuid(False)
+        local_id3 = uuidutils.generate_uuid(False)
+        local_id4 = uuidutils.generate_uuid(False)
+        local_id5 = uuidutils.generate_uuid(False)
 
         # Create five mappings,two in domainA, three in domainB
         local_entity1 = {'domain_id': self.domainA['id'],
@@ -334,7 +333,7 @@ class SqlIDMapping(test_backend_sql.SqlTests):
              'entity_type': mapping.EntityType.USER}
         ]
         for e in local_entities:
-            e['local_id'] = uuid.uuid4().hex
+            e['local_id'] = uuidutils.generate_uuid(False)
             e['public_id'] = PROVIDERS.id_mapping_api.create_id_mapping(e)
         return local_entities
 

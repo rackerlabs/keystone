@@ -41,7 +41,6 @@ WARNING::
 import datetime
 import json
 import os
-import uuid
 
 import fixtures
 import migrate
@@ -53,6 +52,7 @@ from oslo_db.sqlalchemy import enginefacade
 from oslo_db.sqlalchemy import test_fixtures as db_fixtures
 from oslo_log import log
 from oslotest import base as test_base
+from oslo_utils import uuidutils
 import pytz
 from sqlalchemy.engine import reflection
 import sqlalchemy.exc
@@ -412,14 +412,14 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
 
         session = self.sessionmaker()
 
-        role = {'id': uuid.uuid4().hex,
-                'name': uuid.uuid4().hex}
+        role = {'id': uuidutils.generate_uuid(False),
+                'name': uuidutils.generate_uuid(False)}
         self.insert_dict(session, ROLE_TABLE_NAME, role)
 
         # Create both inherited and noninherited role assignments
         inherited = {'type': 'UserProject',
-                     'actor_id': uuid.uuid4().hex,
-                     'target_id': uuid.uuid4().hex,
+                     'actor_id': uuidutils.generate_uuid(False),
+                     'target_id': uuidutils.generate_uuid(False),
                      'role_id': role['id'],
                      'inherited': True}
 
@@ -428,7 +428,7 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
 
         # Create another inherited role assignment as a spoiler
         spoiler = inherited.copy()
-        spoiler['actor_id'] = uuid.uuid4().hex
+        spoiler['actor_id'] = uuidutils.generate_uuid(False)
 
         self.insert_dict(session, ASSIGNMENT_TABLE_NAME, inherited)
         self.insert_dict(session, ASSIGNMENT_TABLE_NAME, spoiler)
@@ -688,9 +688,9 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
         role_table = sqlalchemy.Table('role', self.metadata, autoload=True)
         # Add a role before we upgrade, so we can check that its new domain_id
         # attribute is handled correctly
-        role_id = uuid.uuid4().hex
+        role_id = uuidutils.generate_uuid(False)
         self.insert_dict(session, 'role',
-                         {'id': role_id, 'name': uuid.uuid4().hex})
+                         {'id': role_id, 'name': uuidutils.generate_uuid(False)})
         session.close()
 
         self.upgrade(88)
@@ -754,13 +754,13 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
             expected_users = []
             for test_user in default_fixtures.USERS:
                 user = {}
-                user['id'] = uuid.uuid4().hex
+                user['id'] = uuidutils.generate_uuid(False)
                 user['name'] = test_user['name']
                 user['domain_id'] = test_user['domain_id']
                 user['password'] = test_user['password']
                 user['enabled'] = True
-                user['extra'] = json.dumps(uuid.uuid4().hex)
-                user['default_project_id'] = uuid.uuid4().hex
+                user['extra'] = json.dumps(uuidutils.generate_uuid(False))
+                user['default_project_id'] = uuidutils.generate_uuid(False)
                 expected_users.append(user)
             return expected_users
 
@@ -835,7 +835,7 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
         LOCAL_USER_TABLE_NAME = 'local_user'
         PASSWORD_TABLE_NAME = 'password'
         self.upgrade(90)
-        user_ref = unit.new_user_ref(uuid.uuid4().hex)
+        user_ref = unit.new_user_ref(uuidutils.generate_uuid(False))
         user_ref.pop('password')
         # pop extra attribute which doesn't recognized by SQL expression
         # layer.
@@ -854,11 +854,11 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
         USER_TABLE_NAME = 'user'
         LOCAL_USER_TABLE_NAME = 'local_user'
         self.upgrade(90)
-        user1_ref = unit.new_user_ref(uuid.uuid4().hex)
+        user1_ref = unit.new_user_ref(uuidutils.generate_uuid(False))
         # pop extra attribute which doesn't recognized by SQL expression
         # layer.
         user1_ref.pop('email')
-        user2_ref = unit.new_user_ref(uuid.uuid4().hex)
+        user2_ref = unit.new_user_ref(uuidutils.generate_uuid(False))
         user2_ref.pop('email')
         session = self.sessionmaker()
         self.insert_dict(session, USER_TABLE_NAME, user1_ref)
@@ -893,8 +893,8 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
             id_list = []
             for _ in range(3):
                 new_role_fields = {
-                    'id': uuid.uuid4().hex,
-                    'name': uuid.uuid4().hex,
+                    'id': uuidutils.generate_uuid(False),
+                    'name': uuidutils.generate_uuid(False),
                 }
                 self.insert_dict(session, ROLE_TABLE_NAME, new_role_fields,
                                  table=role_table)
@@ -932,17 +932,17 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
 
         def _populate_domain_and_project_tables(session):
             # Three domains, with various different attributes
-            self.domains = [{'id': uuid.uuid4().hex,
-                             'name': uuid.uuid4().hex,
+            self.domains = [{'id': uuidutils.generate_uuid(False),
+                             'name': uuidutils.generate_uuid(False),
                              'enabled': True,
-                             'extra': {'description': uuid.uuid4().hex,
+                             'extra': {'description': uuidutils.generate_uuid(False),
                                        'another_attribute': True}},
-                            {'id': uuid.uuid4().hex,
-                             'name': uuid.uuid4().hex,
+                            {'id': uuidutils.generate_uuid(False),
+                             'name': uuidutils.generate_uuid(False),
                              'enabled': True,
-                             'extra': {'description': uuid.uuid4().hex}},
-                            {'id': uuid.uuid4().hex,
-                             'name': uuid.uuid4().hex,
+                             'extra': {'description': uuidutils.generate_uuid(False)}},
+                            {'id': uuidutils.generate_uuid(False),
+                             'name': uuidutils.generate_uuid(False),
                              'enabled': False}]
             # Four projects, two top level, two children
             self.projects = []
@@ -1100,7 +1100,7 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
         self.upgrade(87)
         self._drop_unique_constraint_to_role_name()
 
-        constraint_name = uuid.uuid4().hex
+        constraint_name = uuidutils.generate_uuid(False)
         self._add_unique_constraint_to_role_name(
             constraint_name=constraint_name)
 
@@ -1146,7 +1146,7 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
         self.upgrade(90)
         self._drop_unique_constraint_to_user_name_domainid()
 
-        constraint_name = uuid.uuid4().hex
+        constraint_name = uuidutils.generate_uuid(False)
         self._add_unique_constraint_to_user_name_domainid(
             constraint_name=constraint_name)
 
@@ -1255,7 +1255,7 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
 
     def test_migration_97_inconsistent_constraint_exists(self):
         self.upgrade(96)
-        constraint_name = uuid.uuid4().hex
+        constraint_name = uuidutils.generate_uuid(False)
         self._add_name_domain_id_columns_to_user()
         self._add_unique_constraint_to_user_name_domainid(
             constraint_name=constraint_name)
@@ -1367,7 +1367,7 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
 
     def test_migration_104_inconsistent_constraint_exists(self):
         self.upgrade(103)
-        constraint_name = uuid.uuid4().hex
+        constraint_name = uuidutils.generate_uuid(False)
         self._add_name_domain_id_columns_to_user()
         self._add_unique_constraint_to_user_name_domainid(
             constraint_name=constraint_name)
@@ -1388,20 +1388,20 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
     def test_migration_105_add_password_date_columns(self):
         def add_user_model_record(session):
             # add a user
-            user = {'id': uuid.uuid4().hex}
+            user = {'id': uuidutils.generate_uuid(False)}
             self.insert_dict(session, 'user', user)
             # add a local user
             local_user = {
                 'id': 1,
                 'user_id': user['id'],
                 'domain_id': 'default',
-                'name': uuid.uuid4().hex
+                'name': uuidutils.generate_uuid(False)
             }
             self.insert_dict(session, 'local_user', local_user)
             # add a password
             password = {
                 'local_user_id': local_user['id'],
-                'password': uuid.uuid4().hex
+                'password': uuidutils.generate_uuid(False)
             }
             self.insert_dict(session, 'password', password)
         self.upgrade(104)
@@ -1830,9 +1830,9 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         # populate the credential table with some sample credentials
         credentials = list()
         for i in range(5):
-            credential = {'id': uuid.uuid4().hex,
-                          'blob': uuid.uuid4().hex,
-                          'user_id': uuid.uuid4().hex,
+            credential = {'id': uuidutils.generate_uuid(False),
+                          'blob': uuidutils.generate_uuid(False),
+                          'user_id': uuidutils.generate_uuid(False),
                           'type': 'cert'}
             credentials.append(credential)
             self.insert_dict(session, credential_table_name, credential)
@@ -1855,9 +1855,9 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         )
 
         # verify triggers by making sure we can't write to the credential table
-        credential = {'id': uuid.uuid4().hex,
-                      'blob': uuid.uuid4().hex,
-                      'user_id': uuid.uuid4().hex,
+        credential = {'id': uuidutils.generate_uuid(False),
+                      'blob': uuidutils.generate_uuid(False),
+                      'user_id': uuidutils.generate_uuid(False),
                       'type': 'cert'}
         self.assertRaises(db_exception.DBError,
                           self.insert_dict,
@@ -1888,10 +1888,10 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
             self.assertEqual(result.blob, credential['blob'])
 
         # verify we can't make any writes to the credential table
-        credential = {'id': uuid.uuid4().hex,
-                      'blob': uuid.uuid4().hex,
-                      'user_id': uuid.uuid4().hex,
-                      'key_hash': uuid.uuid4().hex,
+        credential = {'id': uuidutils.generate_uuid(False),
+                      'blob': uuidutils.generate_uuid(False),
+                      'user_id': uuidutils.generate_uuid(False),
+                      'key_hash': uuidutils.generate_uuid(False),
                       'type': 'cert'}
         self.assertRaises(db_exception.DBError,
                           self.insert_dict,
@@ -1910,10 +1910,10 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         )
 
         # verify that the triggers are gone by writing to the database
-        credential = {'id': uuid.uuid4().hex,
-                      'encrypted_blob': uuid.uuid4().hex,
-                      'key_hash': uuid.uuid4().hex,
-                      'user_id': uuid.uuid4().hex,
+        credential = {'id': uuidutils.generate_uuid(False),
+                      'encrypted_blob': uuidutils.generate_uuid(False),
+                      'key_hash': uuidutils.generate_uuid(False),
+                      'user_id': uuidutils.generate_uuid(False),
                       'type': 'cert'}
         self.insert_dict(session, credential_table_name, credential)
 
@@ -1985,12 +1985,12 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
 
     def test_migration_012_add_domain_id_to_idp(self):
         def _create_domain():
-            domain_id = uuid.uuid4().hex
+            domain_id = uuidutils.generate_uuid(False)
             domain = {
                 'id': domain_id,
                 'name': domain_id,
                 'enabled': True,
-                'description': uuid.uuid4().hex,
+                'description': uuidutils.generate_uuid(False),
                 'domain_id': resource_base.NULL_DOMAIN_ID,
                 'is_domain': True,
                 'parent_id': None,
@@ -2000,10 +2000,10 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
             return domain_id
 
         def _get_new_idp(domain_id):
-            new_idp = {'id': uuid.uuid4().hex,
+            new_idp = {'id': uuidutils.generate_uuid(False),
                        'domain_id': domain_id,
                        'enabled': True,
-                       'description': uuid.uuid4().hex}
+                       'description': uuidutils.generate_uuid(False)}
             return new_idp
 
         session = self.sessionmaker()
@@ -2017,9 +2017,9 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
                                  'description'])
         # add some data
         for i in range(5):
-            idp = {'id': uuid.uuid4().hex,
+            idp = {'id': uuidutils.generate_uuid(False),
                    'enabled': True,
-                   'description': uuid.uuid4().hex}
+                   'description': uuidutils.generate_uuid(False)}
             self.insert_dict(session, idp_name, idp)
 
         # upgrade
@@ -2066,22 +2066,22 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
 
         def _create_protocol():
             domain = {
-                'id': uuid.uuid4().hex,
-                'name': uuid.uuid4().hex,
+                'id': uuidutils.generate_uuid(False),
+                'name': uuidutils.generate_uuid(False),
                 'domain_id': resource_base.NULL_DOMAIN_ID,
                 'is_domain': True,
                 'parent_id': None
             }
             self.insert_dict(session, 'project', domain)
 
-            idp = {'id': uuid.uuid4().hex, 'enabled': True,
+            idp = {'id': uuidutils.generate_uuid(False), 'enabled': True,
                    'domain_id': domain['id']}
             self.insert_dict(session, 'identity_provider', idp)
 
-            mapping = {'id': uuid.uuid4().hex, 'rules': json.dumps([])}
+            mapping = {'id': uuidutils.generate_uuid(False), 'rules': json.dumps([])}
             self.insert_dict(session, 'mapping', mapping)
 
-            protocol = {'id': uuid.uuid4().hex, 'idp_id': idp['id'],
+            protocol = {'id': uuidutils.generate_uuid(False), 'idp_id': idp['id'],
                         'mapping_id': mapping['id']}
             protocol_table = sqlalchemy.Table(
                 'federation_protocol', self.metadata, autoload=True)
@@ -2091,14 +2091,14 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
             return protocol, protocol_table
 
         def _create_federated_user(idp_id, protocol_id):
-            user = {'id': uuid.uuid4().hex}
+            user = {'id': uuidutils.generate_uuid(False)}
             self.insert_dict(session, 'user', user)
 
             # NOTE(rodrigods): do not set the ID, the engine will do that
             # for us and we won't need it later.
             federated_user = {
                 'user_id': user['id'], 'idp_id': idp_id,
-                'protocol_id': protocol_id, 'unique_id': uuid.uuid4().hex}
+                'protocol_id': protocol_id, 'unique_id': uuidutils.generate_uuid(False)}
             federated_table = sqlalchemy.Table(
                 'federated_user', self.metadata, autoload=True)
             self.insert_dict(session, 'federated_user', federated_user,
@@ -2134,12 +2134,12 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
     def test_migration_014_add_domain_id_to_user_table(self):
         def create_domain():
             table = sqlalchemy.Table('project', self.metadata, autoload=True)
-            domain_id = uuid.uuid4().hex
+            domain_id = uuidutils.generate_uuid(False)
             domain = {
                 'id': domain_id,
                 'name': domain_id,
                 'enabled': True,
-                'description': uuid.uuid4().hex,
+                'description': uuidutils.generate_uuid(False),
                 'domain_id': resource_base.NULL_DOMAIN_ID,
                 'is_domain': True,
                 'parent_id': None,
@@ -2149,7 +2149,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
             return domain_id
 
         def create_user(table):
-            user_id = uuid.uuid4().hex
+            user_id = uuidutils.generate_uuid(False)
             user = {'id': user_id, 'enabled': True}
             table.insert().values(user).execute()
             return user_id
@@ -2159,7 +2159,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
             child_user = {
                 'user_id': user_id,
                 'domain_id': domain_id,
-                'name': uuid.uuid4().hex
+                'name': uuidutils.generate_uuid(False)
             }
             table.insert().values(child_user).execute()
 
@@ -2246,12 +2246,12 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
     def test_migration_015_update_federated_user_domain(self):
         def create_domain():
             table = sqlalchemy.Table('project', self.metadata, autoload=True)
-            domain_id = uuid.uuid4().hex
+            domain_id = uuidutils.generate_uuid(False)
             domain = {
                 'id': domain_id,
                 'name': domain_id,
                 'enabled': True,
-                'description': uuid.uuid4().hex,
+                'description': uuidutils.generate_uuid(False),
                 'domain_id': resource_base.NULL_DOMAIN_ID,
                 'is_domain': True,
                 'parent_id': None,
@@ -2263,12 +2263,12 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         def create_idp(domain_id):
             table = sqlalchemy.Table('identity_provider', self.metadata,
                                      autoload=True)
-            idp_id = uuid.uuid4().hex
+            idp_id = uuidutils.generate_uuid(False)
             idp = {
                 'id': idp_id,
                 'domain_id': domain_id,
                 'enabled': True,
-                'description': uuid.uuid4().hex
+                'description': uuidutils.generate_uuid(False)
             }
             table.insert().values(idp).execute()
             return idp_id
@@ -2276,18 +2276,18 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         def create_protocol(idp_id):
             table = sqlalchemy.Table('federation_protocol', self.metadata,
                                      autoload=True)
-            protocol_id = uuid.uuid4().hex
+            protocol_id = uuidutils.generate_uuid(False)
             protocol = {
                 'id': protocol_id,
                 'idp_id': idp_id,
-                'mapping_id': uuid.uuid4().hex
+                'mapping_id': uuidutils.generate_uuid(False)
             }
             table.insert().values(protocol).execute()
             return protocol_id
 
         def create_user():
             table = sqlalchemy.Table('user', self.metadata, autoload=True)
-            user_id = uuid.uuid4().hex
+            user_id = uuidutils.generate_uuid(False)
             user = {'id': user_id, 'enabled': True}
             table.insert().values(user).execute()
             return user_id
@@ -2299,8 +2299,8 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
                 'user_id': user_id,
                 'idp_id': idp_id,
                 'protocol_id': protocol_id,
-                'unique_id': uuid.uuid4().hex,
-                'display_name': uuid.uuid4().hex
+                'unique_id': uuidutils.generate_uuid(False),
+                'display_name': uuidutils.generate_uuid(False)
             }
             table.insert().values(federated_user).execute()
 
@@ -2393,7 +2393,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
                        'enabled': True, 'name': '_domain', 'is_domain': True}
         project_table.insert().values(domain_data).execute()
         user_table = sqlalchemy.Table('user', self.metadata, autoload=True)
-        user_id = uuid.uuid4().hex
+        user_id = uuidutils.generate_uuid(False)
         user = {'id': user_id, 'enabled': True, 'domain_id': domain_data['id']}
         user_table.insert().values(user).execute()
         local_user_table = sqlalchemy.Table('local_user', self.metadata,
@@ -2461,11 +2461,11 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
             'project_tag', self.metadata, autoload=True)
 
         session = self.sessionmaker()
-        project_id = uuid.uuid4().hex
+        project_id = uuidutils.generate_uuid(False)
 
         project = {
             'id': project_id,
-            'name': uuid.uuid4().hex,
+            'name': uuidutils.generate_uuid(False),
             'enabled': True,
             'domain_id': resource_base.NULL_DOMAIN_ID,
             'is_domain': False
@@ -2473,7 +2473,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
 
         tag = {
             'project_id': project_id,
-            'name': uuid.uuid4().hex
+            'name': uuidutils.generate_uuid(False)
         }
 
         self.insert_dict(session, 'project', project)
@@ -2522,18 +2522,18 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
 
         system_user = {
             'type': 'UserSystem',
-            'target_id': uuid.uuid4().hex,
-            'actor_id': uuid.uuid4().hex,
-            'role_id': uuid.uuid4().hex,
+            'target_id': uuidutils.generate_uuid(False),
+            'actor_id': uuidutils.generate_uuid(False),
+            'role_id': uuidutils.generate_uuid(False),
             'inherited': False
         }
         system_assignment_table.insert().values(system_user).execute()
 
         system_group = {
             'type': 'GroupSystem',
-            'target_id': uuid.uuid4().hex,
-            'actor_id': uuid.uuid4().hex,
-            'role_id': uuid.uuid4().hex,
+            'target_id': uuidutils.generate_uuid(False),
+            'actor_id': uuidutils.generate_uuid(False),
+            'role_id': uuidutils.generate_uuid(False),
             'inherited': False
         }
         system_assignment_table.insert().values(system_group).execute()
@@ -2566,18 +2566,18 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         trust_table = sqlalchemy.Table('trust', self.metadata,
                                        autoload=True)
         trust_1_data = {
-            'id': uuid.uuid4().hex,
-            'trustor_user_id': uuid.uuid4().hex,
-            'trustee_user_id': uuid.uuid4().hex,
-            'project_id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(False),
+            'trustor_user_id': uuidutils.generate_uuid(False),
+            'trustee_user_id': uuidutils.generate_uuid(False),
+            'project_id': uuidutils.generate_uuid(False),
             'impersonation': False,
             'expires_at': datetime.datetime.utcnow()
         }
         trust_2_data = {
-            'id': uuid.uuid4().hex,
-            'trustor_user_id': uuid.uuid4().hex,
-            'trustee_user_id': uuid.uuid4().hex,
-            'project_id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(False),
+            'trustor_user_id': uuidutils.generate_uuid(False),
+            'trustee_user_id': uuidutils.generate_uuid(False),
+            'project_id': uuidutils.generate_uuid(False),
             'impersonation': False,
             'expires_at': None
         }
@@ -2623,7 +2623,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         )
 
         session = self.sessionmaker()
-        service_id = uuid.uuid4().hex
+        service_id = uuidutils.generate_uuid(False)
         service = {
             'id': service_id,
             'type': 'compute',
@@ -2633,7 +2633,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
             'id': 'RegionOne',
             'description': 'test'
         }
-        project_id = uuid.uuid4().hex
+        project_id = uuidutils.generate_uuid(False)
         project = {
             'id': project_id,
             'name': 'nova',
@@ -2649,7 +2649,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         registered_limit_table = sqlalchemy.Table(
             registered_limit_table_name, self.metadata, autoload=True)
         registered_limit = {
-            'id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(False),
             'service_id': service_id,
             'region_id': 'RegionOne',
             'resource_name': 'cores',
@@ -2659,7 +2659,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
 
         # It will raise error if insert another one with same service_id,
         # region_id and resource name.
-        registered_limit['id'] = uuid.uuid4().hex
+        registered_limit['id'] = uuidutils.generate_uuid(False)
         registered_limit['default_limit'] = 20
         self.assertRaises(db_exception.DBDuplicateEntry,
                           registered_limit_table.insert().values(
@@ -2667,7 +2667,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
 
         # Insert one without region_id
         registered_limit_without_region = {
-            'id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(False),
             'service_id': service_id,
             'resource_name': 'cores',
             'default_limit': 10
@@ -2679,7 +2679,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         # and resource_name but the region_id is None. Because that
         # UniqueConstraint doesn't work if one of the columns is None. This
         # should be controlled at the Manager layer to forbid this behavior.
-        registered_limit_without_region['id'] = uuid.uuid4().hex
+        registered_limit_without_region['id'] = uuidutils.generate_uuid(False)
         registered_limit_table.insert().values(
             registered_limit_without_region).execute()
 
@@ -2687,7 +2687,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         limit_table = sqlalchemy.Table(
             limit_table_name, self.metadata, autoload=True)
         limit = {
-            'id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(False),
             'project_id': project_id,
             'service_id': service_id,
             'region_id': 'RegionOne',
@@ -2698,14 +2698,14 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
 
         # Insert another one with the same project_id, service_id, region_id
         # and resource_name, then raise error.
-        limit['id'] = uuid.uuid4().hex
+        limit['id'] = uuidutils.generate_uuid(False)
         limit['resource_limit'] = 10
         self.assertRaises(db_exception.DBDuplicateEntry,
                           limit_table.insert().values(limit).execute)
 
         # Insert one without region_id
         limit_without_region = {
-            'id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(False),
             'project_id': project_id,
             'service_id': service_id,
             'resource_name': 'cores',
@@ -2761,12 +2761,12 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         expires_at_int = (expires_at - epoch).total_seconds()
         app_cred = {
             'internal_id': 1,
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'secret_hash': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
-            'user_id': uuid.uuid4().hex,
-            'project_id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(False),
+            'name': uuidutils.generate_uuid(False),
+            'secret_hash': uuidutils.generate_uuid(False),
+            'description': uuidutils.generate_uuid(False),
+            'user_id': uuidutils.generate_uuid(False),
+            'project_id': uuidutils.generate_uuid(False),
             'expires_at': expires_at_int,
             'allow_application_credential_creation': False
         }
@@ -2775,11 +2775,11 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         # Exercise unique constraint
         dup_app_cred = {
             'internal_id': 2,
-            'id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(False),
             'name': app_cred['name'],
-            'secret_hash': uuid.uuid4().hex,
+            'secret_hash': uuidutils.generate_uuid(False),
             'user_id': app_cred['user_id'],
-            'project_id': uuid.uuid4().hex
+            'project_id': uuidutils.generate_uuid(False)
         }
         insert = app_cred_table.insert().values(dup_app_cred)
         self.assertRaises(db_exception.DBDuplicateEntry,
@@ -2787,7 +2787,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
 
         role_rel = {
             'application_credential_id': app_cred['internal_id'],
-            'role_id': uuid.uuid4().hex
+            'role_id': uuidutils.generate_uuid(False)
         }
         app_cred_role_table.insert().values(role_rel).execute()
 
@@ -2831,12 +2831,12 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         expires_at_int = (expires_at - epoch).total_seconds()
         app_cred = {
             'internal_id': 1,
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'secret_hash': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
-            'user_id': uuid.uuid4().hex,
-            'system': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(False),
+            'name': uuidutils.generate_uuid(False),
+            'secret_hash': uuidutils.generate_uuid(False),
+            'description': uuidutils.generate_uuid(False),
+            'user_id': uuidutils.generate_uuid(False),
+            'system': uuidutils.generate_uuid(False),
             'expires_at': expires_at_int,
             'allow_application_credential_creation': False
         }
@@ -2846,12 +2846,12 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         # and without system defined.
         app_cred = {
             'internal_id': 2,
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'secret_hash': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
-            'user_id': uuid.uuid4().hex,
-            'project_id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(False),
+            'name': uuidutils.generate_uuid(False),
+            'secret_hash': uuidutils.generate_uuid(False),
+            'description': uuidutils.generate_uuid(False),
+            'user_id': uuidutils.generate_uuid(False),
+            'project_id': uuidutils.generate_uuid(False),
             'expires_at': expires_at_int,
             'allow_application_credential_creation': False
         }
@@ -2863,11 +2863,11 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         # the data layer.
         app_cred = {
             'internal_id': 3,
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'secret_hash': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
-            'user_id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(False),
+            'name': uuidutils.generate_uuid(False),
+            'secret_hash': uuidutils.generate_uuid(False),
+            'description': uuidutils.generate_uuid(False),
+            'user_id': uuidutils.generate_uuid(False),
             'expires_at': expires_at_int,
             'allow_application_credential_creation': False
         }
@@ -2903,19 +2903,19 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         # Test that the new column works
         app_cred = {
             'internal_id': 1,
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'secret_hash': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
-            'user_id': uuid.uuid4().hex,
-            'system': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(False),
+            'name': uuidutils.generate_uuid(False),
+            'secret_hash': uuidutils.generate_uuid(False),
+            'description': uuidutils.generate_uuid(False),
+            'user_id': uuidutils.generate_uuid(False),
+            'system': uuidutils.generate_uuid(False),
             'expires_at': None,
             'unrestricted': False
         }
         application_credential_table.insert().values(app_cred).execute()
         role_rel = {
             'application_credential_id': app_cred['internal_id'],
-            'role_id': uuid.uuid4().hex
+            'role_id': uuidutils.generate_uuid(False)
         }
         app_cred_role_table.insert().values(role_rel).execute()
 
@@ -2971,7 +2971,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         )
 
         session = self.sessionmaker()
-        service_id = uuid.uuid4().hex
+        service_id = uuidutils.generate_uuid(False)
         service = {
             'id': service_id,
             'type': 'compute',
@@ -2981,7 +2981,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
             'id': 'RegionOne',
             'description': 'test'
         }
-        project_id = uuid.uuid4().hex
+        project_id = uuidutils.generate_uuid(False)
         project = {
             'id': project_id,
             'name': 'nova',
@@ -2995,7 +2995,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
 
         # with description
         registered_limit = {
-            'id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(False),
             'service_id': service_id,
             'region_id': 'RegionOne',
             'resource_name': 'cores',
@@ -3006,7 +3006,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
 
         # without description
         limit = {
-            'id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(False),
             'project_id': project_id,
             'service_id': service_id,
             'region_id': 'RegionOne',
@@ -3026,7 +3026,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
                        'enabled': True, 'name': '_domain', 'is_domain': True}
         project_table.insert().values(domain_data).execute()
         user_table = sqlalchemy.Table('user', self.metadata, autoload=True)
-        user_id = uuid.uuid4().hex
+        user_id = uuidutils.generate_uuid(False)
         user = {'id': user_id, 'enabled': True, 'domain_id': domain_data['id']}
         user_table.insert().values(user).execute()
         local_user_table = sqlalchemy.Table('local_user', self.metadata,
@@ -3043,18 +3043,18 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
             'local_user_id': local_user['id'],
             'created_at': datetime.datetime.utcnow(),
             'expires_at': datetime.datetime.utcnow(),
-            'password': uuid.uuid4().hex}
+            'password': uuidutils.generate_uuid(False)}
         password_data1 = {
             'local_user_id': local_user['id'],
             'created_at': datetime.datetime.utcnow(),
             'expires_at': datetime.datetime.utcnow(),
-            'password_hash': uuid.uuid4().hex}
+            'password_hash': uuidutils.generate_uuid(False)}
         password_data2 = {
             'local_user_id': local_user['id'],
             'created_at': datetime.datetime.utcnow(),
             'expires_at': datetime.datetime.utcnow(),
-            'password': uuid.uuid4().hex,
-            'password_hash': uuid.uuid4().hex}
+            'password': uuidutils.generate_uuid(False),
+            'password_hash': uuidutils.generate_uuid(False)}
         password_table.insert().values(password_data).execute()
         password_table.insert().values(password_data1).execute()
         password_table.insert().values(password_data2).execute()
@@ -3165,7 +3165,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         )
 
         role = {
-            'id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(False),
             'name': "test",
             'domain_id': resource_base.NULL_DOMAIN_ID,
             'description': "This is a string"
@@ -3173,7 +3173,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         role_table.insert().values(role).execute()
 
         role_without_description = {
-            'id': uuid.uuid4().hex,
+            'id': uuidutils.generate_uuid(False),
             'name': "test1",
             'domain_id': resource_base.NULL_DOMAIN_ID
         }

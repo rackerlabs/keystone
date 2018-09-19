@@ -12,8 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
-
+from oslo_utils import uuidutils
 from six.moves import range
 
 from keystone.common import provider_api
@@ -101,7 +100,7 @@ class FilterTests(object):
             # The manager layer creates the ID for users and groups
             new_entity = self._create_entity(entity_type)(new_entity)
         else:
-            new_entity['id'] = uuid.uuid4().hex
+            new_entity['id'] = uuidutils.generate_uuid(False)
             self._create_entity(entity_type)(new_entity['id'], new_entity)
         return new_entity
 
@@ -122,7 +121,7 @@ class FilterTests(object):
         name_dict = name_dict or {}
         for x in range(number):
             # If this index has a name defined in the name_dict, then use it
-            name = name_dict.get(x, uuid.uuid4().hex)
+            name = name_dict.get(x, uuidutils.generate_uuid(False))
             new_entity = self._create_one_entity(entity_type, domain_id, name)
             entity_list.append(new_entity)
         return entity_list

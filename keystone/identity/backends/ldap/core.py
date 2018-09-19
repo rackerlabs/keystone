@@ -12,11 +12,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 from __future__ import absolute_import
-import uuid
 
 import ldap.filter
 from oslo_log import log
 from oslo_log import versionutils
+from oslo_utils import uuidutils
 import six
 
 import keystone.conf
@@ -378,7 +378,7 @@ class GroupApi(common_ldap.BaseLdap):
     def create(self, values):
         data = values.copy()
         if data.get('id') is None:
-            data['id'] = uuid.uuid4().hex
+            data['id'] = uuidutils.generate_uuid(False)
         if 'description' in data and data['description'] in ['', None]:
             data.pop('description')
         return super(GroupApi, self).create(data)

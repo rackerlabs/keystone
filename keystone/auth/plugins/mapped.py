@@ -11,9 +11,9 @@
 # under the License.
 
 import functools
-import uuid
 
 from oslo_log import log
+from oslo_utils import uuidutils
 from pycadf import cadftaxonomy as taxonomy
 from six.moves.urllib import parse
 
@@ -161,7 +161,7 @@ def handle_unscoped_token(request, auth_payload, resource_api, federation_api,
                      'user_id': user['id']}
                 )
                 project_ref = {
-                    'id': uuid.uuid4().hex,
+                    'id': uuidutils.generate_uuid(False),
                     'name': shadow_project['name'],
                     'domain_id': idp_domain_id
                 }

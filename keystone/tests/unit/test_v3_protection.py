@@ -13,9 +13,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import uuid
-
 from oslo_serialization import jsonutils
+from oslo_utils import uuidutils
 from six.moves import http_client
 
 from keystone.common import provider_api
@@ -259,7 +258,7 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         r = self.get(url_by_name, auth=self.auth)
         self.assertEqual(self.user1['id'], r.result['user']['id'])
 
-        url_by_name = '/users/%s' % uuid.uuid4().hex
+        url_by_name = '/users/%s' % uuidutils.generate_uuid(False)
         r = self.get(url_by_name, auth=self.auth,
                      expected_status=exception.UserNotFound.code)
 
@@ -2060,7 +2059,7 @@ class IdentityTestImpliedDomainSpecificRoles(IdentityTestv3CloudPolicySample):
                     token=self.admin_token)
 
     def test_forbidden_role_implication_from_different_domain(self):
-        domain2 = unit.new_domain_ref(domain_id=uuid.uuid4().hex)
+        domain2 = unit.new_domain_ref(domain_id=uuidutils.generate_uuid(False))
         PROVIDERS.resource_api.create_domain(domain2['id'], domain2)
 
         role2 = unit.new_role_ref(domain_id=domain2['id'])
@@ -2077,7 +2076,7 @@ class IdentityTestImpliedDomainSpecificRoles(IdentityTestv3CloudPolicySample):
             password=self.cloud_admin_user['password'],
             project_id=self.admin_project['id'])
 
-        domain2 = unit.new_domain_ref(domain_id=uuid.uuid4().hex)
+        domain2 = unit.new_domain_ref(domain_id=uuidutils.generate_uuid(False))
         PROVIDERS.resource_api.create_domain(domain2['id'], domain2)
 
         role2 = unit.new_role_ref(domain_id=domain2['id'])
