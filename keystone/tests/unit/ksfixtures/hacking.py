@@ -160,7 +160,7 @@ class HackingTranslations(fixtures.Fixture):
             'code': """
                 # stdlib logging
                 LOG = logging.getLogger()
-                LOG.info(_('text'))
+                LOG.info('text')
                 class C:
                     def __init__(self):
                         LOG.warning(oslo_i18n('text', {}))
@@ -178,7 +178,7 @@ class HackingTranslations(fixtures.Fixture):
                         self.L = logging.getLogger(__name__)
                     def m(self):
                         self.L.warning(
-                            _('text'), {}
+                            ('text'), {}
                         )
             """,
             'expected_errors': [
@@ -201,7 +201,7 @@ class HackingTranslations(fixtures.Fixture):
                 class C:
                     def __init__(self):
                         self.LOG = oslo_logging.getLogger()
-                        self.LOG.critical(_('text'))
+                        self.LOG.critical('text')
             """,
             'expected_errors': [
                 (5, 26, 'K005'),
@@ -211,7 +211,7 @@ class HackingTranslations(fixtures.Fixture):
             'code': """
                 LOG = log.getLogger(__name__)
                 # translation on a separate line
-                msg = _('text')
+                msg = ('text')
                 LOG.exception(msg)
             """,
             'expected_errors': [
@@ -222,7 +222,7 @@ class HackingTranslations(fixtures.Fixture):
             'code': """
                 # this should not be an error
                 L = log.getLogger(__name__)
-                msg = _('text')
+                msg = ('text')
                 L.warning(msg)
                 raise Exception(msg)
             """,
@@ -243,7 +243,7 @@ class HackingTranslations(fixtures.Fixture):
             'code': """
                 LOG = log.getLogger(__name__)
                 def func():
-                    msg = _('text')
+                    msg = ('text')
                     LOG.warning(msg)
                     raise Exception('some other message')
             """,
@@ -255,9 +255,9 @@ class HackingTranslations(fixtures.Fixture):
             'code': """
                 LOG = log.getLogger(__name__)
                 if True:
-                    msg = _('text')
+                    msg = ('text')
                 else:
-                    msg = _('text')
+                    msg = ('text')
                 LOG.warning(msg)
                 raise Exception(msg)
             """,
@@ -268,9 +268,9 @@ class HackingTranslations(fixtures.Fixture):
             'code': """
                 LOG = log.getLogger(__name__)
                 if True:
-                    msg = _('text')
+                    msg = ('text')
                 else:
-                    msg = _('text')
+                    msg = ('text')
                 LOG.warning(msg)
             """,
             'expected_errors': [
@@ -280,9 +280,9 @@ class HackingTranslations(fixtures.Fixture):
         {
             'code': """
                 LOG = log.getLogger(__name__)
-                msg = _LW('text')
+                msg = ('text')
                 LOG.warning(msg)
-                msg = _('something else')
+                msg = ('something else')
                 raise Exception(msg)
             """,
             'expected_errors': [],
@@ -290,7 +290,7 @@ class HackingTranslations(fixtures.Fixture):
         {
             'code': """
                 LOG = log.getLogger(__name__)
-                msg = _('hello %s') % 'world'
+                msg = ('hello %s') % 'world'
                 LOG.warning(msg)
             """,
             'expected_errors': [
@@ -316,7 +316,7 @@ class HackingTranslations(fixtures.Fixture):
                 try:
                     pass
                 except AssertionError as e:
-                    msg = _('some message')
+                    msg = ('some message')
                     LOG.warning(msg)
                     raise exception.Unauthorized(message=msg)
             """,
