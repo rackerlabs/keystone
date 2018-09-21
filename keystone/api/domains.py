@@ -58,6 +58,15 @@ def _build_enforcement_target(allow_non_existing=False):
     return target
 
 
+def _build_domain_target(domain_id):
+    target = {}
+    try:
+        target['domain'] = PROVIDERS.resource_api.get_domain(domain_id)
+    except exception.DomainNotFound:
+        return None
+    return target
+
+
 class DomainResource(ks_flask.ResourceBase):
     collection_key = 'domains'
     member_key = 'domain'
@@ -75,7 +84,8 @@ class DomainResource(ks_flask.ResourceBase):
         return self._list_domains()
 
     def _get_domain(self, domain_id):
-        ENFORCER.enforce_call(action='identity:get_domain')
+        ENFORCER.enforce_call(action='identity:get_domain',
+                              target_attr=_build_domain_target(domain_id))
         return self.wrap_member(PROVIDERS.resource_api.get_domain(domain_id))
 
     def _list_domains(self):
