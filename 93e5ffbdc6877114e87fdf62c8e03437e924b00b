@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_2b643fe4",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1413,
+      "author": {
+        "id": 24005
+      },
+      "writtenOn": "2018-09-21T11:17:08Z",
+      "side": 1,
+      "message": "For readability, it will be very helpful, if you could provide some visual indentation around brackets as we do in pep8/pycodestyle.",
+      "revId": "93e5ffbdc6877114e87fdf62c8e03437e924b00b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_285a054f",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1428,
+      "author": {
+        "id": 24005
+      },
+      "writtenOn": "2018-09-21T11:17:08Z",
+      "side": 1,
+      "message": "Remove this duplicate code comment i.e. ldap_result, it already exits in the above code comment. In order to help you in understanding the need for change, I have put it in my previous review comments.",
+      "revId": "93e5ffbdc6877114e87fdf62c8e03437e924b00b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
