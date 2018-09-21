@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_e56d1667",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1410,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-09-21T09:57:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_bcbadabc",
+      "revId": "b6ff1e96e606d021d6088eb377b557a5405a87ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_1c3e6e28",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2018-09-21T09:34:17Z",
       "side": 1,
       "message": "Again, it doesn\u0027t have any impact on the existing functionality. Lets keep the ldap_result intact, create temp dict something like ldap_res_low_keys_dict \u003d  {k.lower(): v for k, v in obj[1].items()} and get the attribute values \u003e\u003e ldap_result_attr_vals \u003d ldap_res_low_keys.get(attr) as commented at line 1423.",
+      "revId": "b6ff1e96e606d021d6088eb377b557a5405a87ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_6597c63a",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1421,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-09-21T09:57:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_1c3e6e28",
       "revId": "b6ff1e96e606d021d6088eb377b557a5405a87ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_c5a7baa7",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1423,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-09-21T09:57:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_7c6be2ee",
+      "revId": "b6ff1e96e606d021d6088eb377b557a5405a87ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_4255e0c0",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 2
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_65b026dd",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1424,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-09-21T09:57:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_4255e0c0",
+      "revId": "b6ff1e96e606d021d6088eb377b557a5405a87ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_e2450c9c",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 2
@@ -81,6 +153,24 @@
       "writtenOn": "2018-09-21T09:34:17Z",
       "side": 1,
       "message": "same as above \u003e\u003e update \"ldap_result_attribute\" to \"ldap_result_attr_vals\" if it is changed at line 1423.",
+      "revId": "b6ff1e96e606d021d6088eb377b557a5405a87ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_e5bbd6ba",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1427,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-09-21T09:57:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_e2450c9c",
       "revId": "b6ff1e96e606d021d6088eb377b557a5405a87ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
