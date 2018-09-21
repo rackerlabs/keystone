@@ -16,6 +16,24 @@
       "revId": "daee283320ab7df4cfcca6d5654d03200e8a4f34",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_5c3fff84",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3583,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-09-21T13:31:55Z",
+      "side": 1,
+      "message": "Good idea.  \n\nhttps://bugs.launchpad.net/keystone/+bug/1793756",
+      "parentUuid": "3f79a3b5_66b3539b",
+      "revId": "daee283320ab7df4cfcca6d5654d03200e8a4f34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
