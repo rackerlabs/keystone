@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_8be8fa7a",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1068,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-09-21T05:07:43Z",
+      "side": 1,
+      "message": "assign it with some default value like user_id\u003dNone. Then your test cases will pass",
+      "revId": "32f82d3859b2d310bbeb11fcd268e9e988c8b1d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
