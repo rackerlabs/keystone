@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_66b3539b",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3583,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-21T06:52:17Z",
+      "side": 1,
+      "message": "how about create a bug for tracing it, then use @wip here to ensure we won\u0027t forget to fix it.",
+      "revId": "daee283320ab7df4cfcca6d5654d03200e8a4f34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
