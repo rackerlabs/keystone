@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_05b1328f",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1412,
+      "author": {
+        "id": 24005
+      },
+      "writtenOn": "2018-09-21T10:17:11Z",
+      "side": 1,
+      "message": "My bad, please update it\n\nldap_result \u003d [(u\u0027cn\u003dfake1,o\u003dex_domain\u0027, {\u0027uid\u0027: [\u0027fake_id1\u0027]}), \n\t\t\t   (u\u0027cn\u003dfake2,o\u003dex_domain\u0027, {\u0027uid\u0027: [\u0027fake_id2\u0027], \u0027cn\u0027: [\u0027     \u0027]},\n\t\t\t   (u\u0027cn\u003dfake3,o\u003dex_domain\u0027, {\u0027uid\u0027: [\u0027fake_id3\u0027], \u0027cn\u0027: [\u0027\u0027]}), \n\t\t\t   (u\u0027cn\u003dfake4,o\u003dex_domain\u0027, {\u0027uid\u0027: [\u0027fake_id4\u0027], \u0027cn\u0027: []}),\n\t\t\t   (u\u0027cn\u003dfake5,o\u003dex_domain\u0027, {\u0027uid\u0027: [\u0027fake_id5\u0027], \u0027cn\u0027: [\"name\"]})]",
+      "revId": "e481f6575414d8241fd4c476eb1e01225880cc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_e54f5689",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1425,
+      "author": {
+        "id": 24005
+      },
+      "writtenOn": "2018-09-21T10:17:11Z",
+      "side": 1,
+      "message": "ldap_result \u003d [(u\u0027cn\u003dfake1,o\u003dex_domain\u0027, {\u0027uid\u0027: [\u0027fake_id1\u0027]}), \n\t\t\t   (u\u0027cn\u003dfake2,o\u003dex_domain\u0027, {\u0027uid\u0027: [\u0027fake_id2\u0027], \u0027cn\u0027: [\u0027     \u0027]},\n\t\t\t   (u\u0027cn\u003dfake3,o\u003dex_domain\u0027, {\u0027uid\u0027: [\u0027fake_id3\u0027], \u0027cn\u0027: [\u0027\u0027]}), \n\t\t\t   (u\u0027cn\u003dfake4,o\u003dex_domain\u0027, {\u0027uid\u0027: [\u0027fake_id4\u0027], \u0027cn\u0027: []}),\n\t\t\t   (u\u0027cn\u003dfake5,o\u003dex_domain\u0027, {\u0027uid\u0027: [\u0027fake_id5\u0027], \u0027cn\u0027: [\"name\"]})]\n\n\nTo account for cases of ldap_result[1], ldap_result[2], you need to update it as\n\nif ldap_result_attr_vals[0] and \\\n                        ldap_result_attr_vals[0].strip():",
+      "revId": "e481f6575414d8241fd4c476eb1e01225880cc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
