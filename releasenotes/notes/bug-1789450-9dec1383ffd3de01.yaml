@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    [`bug 1789450 <https://bugs.launchpad.net/keystone/+bug/1789450>`_]
+    When a user has a group that does not map to a project in OpenStack,
+    instead of throwing a 500 exception, keystone will now log that the
+    mapped group was not found instead.
