@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_57326ec2",
+        "filename": "releasenotes/notes/bug-1789450-9dec1383ffd3de01.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2018-09-21T21:10:27Z",
+      "side": 1,
+      "message": "group",
+      "range": {
+        "startLine": 5,
+        "startChar": 51,
+        "endLine": 5,
+        "endChar": 61
+      },
+      "revId": "2aaade381cdac8588a30dae20ecd24c47230130d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
