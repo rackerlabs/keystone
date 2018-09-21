@@ -295,8 +295,7 @@ class CheckForTranslationIssues(BaseASTChecker):
 
         # if the first arg is a reference to a i18n call
         elif (isinstance(msg, ast.Name)
-                and msg.id in self.assignments
-                and not self._is_raised_later(node, msg.id)):
+                and msg.id in self.assignments):
             self.add_error(msg, message=self.LOGGING_CHECK_DESC)
 
     def _is_raised_later(self, node, name):
