@@ -237,6 +237,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_7a465f7e",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-09-24T12:28:45Z",
+      "side": 1,
+      "message": "I think I didn\u0027t completely get my point across, I meant to say that I think running `keystone-manage trust_flush` should purge both expired trusts as well as non-expired soft-deleted trusts, since those soft-deleted trusts are as likely to bloat the database as expired trusts. So that would be the union of two filters, one getting everything where deleted_at !\u003d None and another that checks the expires_at column (and then of course the project_id and trust{or,ee}_user_id filters).",
+      "parentUuid": "3f79a3b5_4b0ef4e5",
+      "range": {
+        "startLine": 195,
+        "startChar": 36,
+        "endLine": 195,
+        "endChar": 46
+      },
+      "revId": "41f1800f6348f1ea2ba2306bec4fa16b1b83236a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_d3c84e23",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 5
