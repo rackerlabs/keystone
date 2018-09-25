@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_a09ee152",
+        "filename": "keystone/api/groups.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-09-25T23:28:47Z",
+      "side": 1,
+      "message": "typo",
+      "revId": "5a46dbe54019e58b442903e990b916d4a195b3a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
