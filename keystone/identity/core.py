@@ -1433,8 +1433,15 @@ class Manager(manager.Manager):
                 'unique_id': unique_id,
                 'display_name': display_name
             }
+            local_entity = {'domain_id': idp['domain_id'],
+                            'local_id': unique_id,
+                            'entity_type': 'user'}
+            public_user_id = PROVIDERS.id_generator_api.generate_public_ID(
+                local_entity)
+
             user_dict = (
                 PROVIDERS.shadow_users_api.create_federated_user(
+                    public_user_id,
                     idp['domain_id'], federated_dict, email=email
                 )
             )
