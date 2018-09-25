@@ -13,7 +13,6 @@
 import copy
 import datetime
 import sqlalchemy
-import uuid
 
 from oslo_config import cfg
 
@@ -21,6 +20,7 @@ from keystone.common import sql
 from keystone import exception
 from keystone.identity.backends import base as identity_base
 from keystone.identity.backends import sql_model as model
+from keystone.identity.id_generators import sha256
 from keystone.identity.shadow_backends import base
 
 
@@ -30,8 +30,16 @@ CONF = cfg.CONF
 class ShadowUsers(base.ShadowUsersDriverBase):
     @sql.handle_conflicts(conflict_type='federated_user')
     def create_federated_user(self, domain_id, federated_dict, email=None):
+
+        local_entity = {'domain_id': domain_id,
+                        'local_id': federated_dict['unique_id'],
+                        'entity_type': 'user'}
+
+        generator = sha256.Generator()
+        user_id = generator.generate_public_ID(local_entity)
+
         user = {
-            'id': uuid.uuid4().hex,
+            'id': user_id,
             'domain_id': domain_id,
             'enabled': True
         }
