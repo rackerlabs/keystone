@@ -14,7 +14,10 @@
 
 from oslo_utils import timeutils
 from six.moves import range
+
 from sqlalchemy.ext.hybrid import hybrid_property
+from sqlalchemy import or_
+from sqlalchemy.sql import null
 
 from keystone.common import sql
 from keystone import exception
@@ -189,17 +192,19 @@ class Trust(base.TrustDriverBase):
             for trust_ref in trusts:
                 trust_ref.deleted_at = timeutils.utcnow()
 
-    def flush_expired_trusts(self, project_id=None, trustor_user_id=None,
-                             trustee_user_id=None):
+    def flush_expired_and_soft_deleted_trusts(self, project_id=None,
+                                              trustor_user_id=None,
+                                              trustee_user_id=None):
         with sql.session_for_write() as session:
             query = session.query(TrustModel)
+            query = query.\
+                filter(or_(TrustModel.deleted_at != null(),
+                           TrustModel.expires_at < timeutils.utcnow()))
             if project_id:
                 query = query.filter_by(project_id=project_id)
             if trustor_user_id:
                 query = query.filter_by(trustor_user_id=trustor_user_id)
             if trustee_user_id:
                 query = query.filter_by(trustee_user_id=trustee_user_id)
-            for ref in query:
-                if ref.expires_at is not None:
-                    if ref.expires_at < timeutils.utcnow():
-                        session.delete(ref)
+            query.delete(synchronize_session=False)
+            session.flush()
