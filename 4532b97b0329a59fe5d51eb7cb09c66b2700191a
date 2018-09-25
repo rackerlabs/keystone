@@ -34,6 +34,24 @@
       "revId": "4532b97b0329a59fe5d51eb7cb09c66b2700191a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_623c63c0",
+        "filename": "playbooks/legacy/keystone-dsvm-functional-federation/post.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-09-25T07:32:02Z",
+      "side": 0,
+      "message": "The log copying is a freebie with the devstack job that this now inherits from http://git.openstack.org/cgit/openstack-dev/devstack/tree/playbooks/post.yaml#n25",
+      "parentUuid": "3f79a3b5_ac1d9778",
+      "revId": "4532b97b0329a59fe5d51eb7cb09c66b2700191a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
