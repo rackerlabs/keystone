@@ -16,6 +16,24 @@
       "revId": "4532b97b0329a59fe5d51eb7cb09c66b2700191a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_ac1d9778",
+        "filename": "playbooks/legacy/keystone-dsvm-functional-federation/post.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-09-25T01:33:26Z",
+      "side": 0,
+      "message": "Looks like it\u0027s now under \"controller/logs\" in the gate, instead of just \"logs\" as with this.",
+      "parentUuid": "3f79a3b5_1b9643f1",
+      "revId": "4532b97b0329a59fe5d51eb7cb09c66b2700191a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
