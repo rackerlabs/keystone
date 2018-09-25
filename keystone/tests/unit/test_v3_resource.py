@@ -142,6 +142,31 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.assertValidDomainResponse(r)
         self.assertIsNotNone(r.result['domain'])
 
+    def test_create_domain_valid_explicit_id(self):
+        """Call ``POST /domains``."""
+        ref = unit.new_domain_ref()
+        explicit_domain_id = 'f3537e7a-6cfa-4df5-a7e9-9ca52fcae3b5'
+
+        ref['explicit_domain_id'] = explicit_domain_id
+        r = self.post(
+            '/domains',
+            body={'domain': ref})
+        self.assertValidDomainResponse(r, ref)
+
+        r = self.get('/domains/%(domain_id)s' % {
+            'domain_id': explicit_domain_id})
+        self.assertValidDomainResponse(r)
+        self.assertIsNotNone(r.result['domain'])
+
+    def test_create_domain_invalid_explicit_id(self):
+        """Call ``POST /domains``."""
+        ref = unit.new_domain_ref()
+        explicit_domain_id = 'bad!'
+
+        ref['explicit_domain_id'] = explicit_domain_id
+        self.post('/domains', body={'domain': {}},
+                  expected_status=http_client.BAD_REQUEST)
+
     def test_list_head_domains(self):
         """Call ``GET & HEAD /domains``."""
         resource_url = '/domains'
