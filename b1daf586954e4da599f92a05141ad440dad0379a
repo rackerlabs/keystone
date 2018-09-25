@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3f79a3b5_6c8a1f65",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-09-25T00:17:31Z",
+      "side": 1,
+      "message": "It will be good to understand this patch, if you can provide a little summary too.",
+      "revId": "b1daf586954e4da599f92a05141ad440dad0379a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_2e09ffda",
         "filename": "api-ref/source/v3/parameters.yaml",
         "patchSetId": 1
