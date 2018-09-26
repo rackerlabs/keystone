@@ -84,7 +84,7 @@ class RBACEnforcer(object):
         # it to the a token response or dictionary before passing it to
         # oslo.policy for enforcement. This is because oslo.policy shouldn't
         # know how to deal with an internal object only used within keystone.
-        if 'token' in credentials:
+        if isinstance(credentials, dict) and 'token' in credentials:
             token_ref = controller.render_token_response_from_model(
                 credentials['token']
             )
@@ -374,7 +374,7 @@ class RBACEnforcer(object):
         policy_dict.update(cls._extract_filter_values(filters))
 
         # Extract the cred data
-        creds = cls._extract_policy_check_credentials()
+        creds = flask.request.environ.get(context.REQUEST_CONTEXT_ENV, {})
         flattened = utils.flatten_dict(policy_dict)
         if LOG.logger.getEffectiveLevel() <= log.DEBUG:
             # LOG the Args
