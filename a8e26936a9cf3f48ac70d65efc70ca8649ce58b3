@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_c2b66c26",
+        "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-09-26T19:08:18Z",
+      "side": 1,
+      "message": "not necessarily specific to verifying role removal, but certainly more human-parsable.",
+      "range": {
+        "startLine": 377,
+        "startChar": 75,
+        "endLine": 377,
+        "endChar": 83
+      },
+      "revId": "a8e26936a9cf3f48ac70d65efc70ca8649ce58b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
