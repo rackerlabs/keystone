@@ -22,6 +22,40 @@
       "revId": "0ffa4fdf4929d325e3f98ca65778dfb84395f12d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_62fc4a72",
+        "filename": "doc/source/admin/identity-token-binding.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-09-26T05:40:50Z",
+      "side": 1,
+      "message": "I dont see any changes in these file. Can you pl makes it as the old one.",
+      "revId": "0ffa4fdf4929d325e3f98ca65778dfb84395f12d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_82ff2665",
+        "filename": "doc/source/admin/oauth1.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-09-26T05:40:50Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "0ffa4fdf4929d325e3f98ca65778dfb84395f12d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
