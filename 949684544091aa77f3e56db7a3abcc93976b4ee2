@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_f7948fe9",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1721,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-09-26T13:49:07Z",
+      "side": 1,
+      "message": "You should have at least 2 sets pof tests:  positive tests and negative tests.  THe positive test should run through valid inputs and make sure they are accepted.  The Negative tests ensure invalid inputs are rejected.  Assert on the return codes.",
+      "revId": "949684544091aa77f3e56db7a3abcc93976b4ee2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_97ae7b7f",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1726,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-09-26T13:49:07Z",
+      "side": 1,
+      "message": "See if you can add the file to the fixtures instead of generating the file here. Look at how the other tests (like policy) get their data files.",
+      "revId": "949684544091aa77f3e56db7a3abcc93976b4ee2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
