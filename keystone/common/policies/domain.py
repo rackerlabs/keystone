@@ -10,9 +10,22 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_log import versionutils
 from oslo_policy import policy
 
 from keystone.common.policies import base
+
+DEPRECATED_REASON = (
+    'As of the Stein release, the domain API now understands how to '
+    'handle system-scoped tokens in addition to project-scoped tokens, making '
+    'the API more accessible to users without compromising security or '
+    'manageability for administrators. The new default policies for this API '
+    'account for these changes automatically.'
+)
+deprecated_list_domains = policy.DeprecatedRule(
+    name=base.IDENTITY % 'list_domains',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
 
 domain_policies = [
     policy.DocumentedRuleDefault(
@@ -24,11 +37,14 @@ domain_policies = [
                      'method': 'GET'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_domains',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.SYSTEM_READER,
         scope_types=['system'],
         description='List domains.',
         operations=[{'path': '/v3/domains',
-                     'method': 'GET'}]),
+                     'method': 'GET'}],
+        deprecated_rule=deprecated_list_domains,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_domain',
         check_str=base.RULE_ADMIN_REQUIRED,
