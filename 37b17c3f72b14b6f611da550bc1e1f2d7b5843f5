@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_f5ff8463",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-09-27T20:07:04Z",
+      "side": 1,
+      "message": "Your other patch closed the bug, you could use Related-Bug here instead",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 10
+      },
+      "revId": "37b17c3f72b14b6f611da550bc1e1f2d7b5843f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_95cdf05f",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-09-27T20:07:04Z",
+      "side": 1,
+      "message": "Since this is now also purging unexpired deleted trusts the name of this method should change, and the doc strings should be updated to make it clear what is happening.",
+      "range": {
+        "startLine": 195,
+        "startChar": 14,
+        "endLine": 195,
+        "endChar": 21
+      },
+      "revId": "37b17c3f72b14b6f611da550bc1e1f2d7b5843f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
