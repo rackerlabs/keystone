@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_35a17ca9",
+        "filename": "keystone/common/policies/domain.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-09-27T20:03:08Z",
+      "side": 1,
+      "message": "I don\u0027t think it is right that a domain member could update the domain. THis should be a Domain admin.",
+      "revId": "3e07e849c3f6040971a06ecc7388e7b600f013c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_55743836",
+        "filename": "keystone/tests/unit/protection/v3/test_domains.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-09-27T20:03:08Z",
+      "side": 1,
+      "message": "This would allow nay domain member to modify the name or description of the domain.  I think those are admin operations.",
+      "revId": "3e07e849c3f6040971a06ecc7388e7b600f013c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
