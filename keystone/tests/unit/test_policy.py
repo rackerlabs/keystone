@@ -200,7 +200,12 @@ class PolicyJsonTestCase(unit.TestCase):
             'identity:get_region',
             'identity:list_regions',
             'identity:update_region',
-            'identity:delete_region'
+            'identity:delete_region',
+            'identity:create_domain',
+            'identity:get_domain',
+            'identity:list_domains',
+            'identity:update_domain',
+            'identity:delete_domain'
         ]
         policy_keys = self._get_default_policy_rules()
         for p in removed_policies:
