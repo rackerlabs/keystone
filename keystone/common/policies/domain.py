@@ -42,6 +42,12 @@ deprecated_delete_domain = policy.DeprecatedRule(
     name=base.IDENTITY % 'delete_domain',
     check_str=base.RULE_ADMIN_REQUIRED
 )
+SYSTEM_USER_OR_DOMAIN_USER_OR_PROJECT_USER = (
+     '(role:reader and system_scope:all) or '
+     'token.domain.id:%(target.domain.id)s or '
+     'token.project.domain.id:%(target.domain.id)s'
+)
+
 
 domain_policies = [
     policy.DocumentedRuleDefault(
@@ -52,11 +58,7 @@ domain_policies = [
         # also allows users with a role on a domain to get that specific
         # domain. Finally, it accounts for system scope so that users tending
         # to the deployment can list all domains.
-        check_str=(
-            '(role:reader and system_scope:all) or '
-            'token.domain.id:%(target.domain.id)s or '
-            'token.project.domain.id:%(target.domain.id)s'
-        ),
+        check_str=SYSTEM_USER_OR_DOMAIN_USER_OR_PROJECT_USER,
         scope_types=['system', 'project'],
         description='Show domain details.',
         operations=[{'path': '/v3/domains/{domain_id}',
