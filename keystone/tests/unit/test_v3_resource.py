@@ -286,6 +286,40 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.v3_create_token(auth_data,
                              expected_status=http_client.UNAUTHORIZED)
 
+    def test_member_role_on_domain(self):
+        """User X has a role on Project Y, which is under Domain Z.
+
+        However User X cannot view Domain Z.
+        """
+        project2 = unit.new_project_ref(domain_id=self.domain_id)
+        PROVIDERS.resource_api.create_project(project2['id'], project2)
+
+        user2 = unit.create_user(PROVIDERS.identity_api,
+                                 domain_id=self.domain_id,
+                                 project_id=project2['id'])
+
+        role_member = unit.new_role_ref()
+        PROVIDERS.role_api.create_role(role_member['id'], role_member)
+
+        PROVIDERS.assignment_api.add_role_to_user_and_project(
+            user2['id'], project2['id'], role_member['id']
+        )
+
+        # user2 should be scoped to project2
+        auth_data = self.build_authentication_request(
+            user_id=user2['id'],
+            password=user2['password'],
+            project_id=project2['id'])
+        token_data = self.v3_create_token(auth_data)
+
+        # User has a role on project2, which is under domain, but cannot
+        # view domain
+        # TODO(gagehugo): When resolved, remove expected status
+        self.get('/domains/%(domain_id)s' % {
+            'domain_id': self.domain['id']},
+            token=token_data.headers['x-subject-token'],
+            expected_status=exception.ForbiddenAction.code)
+
     def test_delete_enabled_domain_fails(self):
         """Call ``DELETE /domains/{domain_id}`` (when domain enabled)."""
         # Try deleting an enabled domain, which should fail
