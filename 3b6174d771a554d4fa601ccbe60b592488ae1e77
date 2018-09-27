@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_982a202d",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-27T01:23:27Z",
+      "side": 1,
+      "message": "this is for \"git clone\". the url is correct.",
+      "range": {
+        "startLine": 42,
+        "startChar": 3,
+        "endLine": 42,
+        "endChar": 12
+      },
+      "revId": "3b6174d771a554d4fa601ccbe60b592488ae1e77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
