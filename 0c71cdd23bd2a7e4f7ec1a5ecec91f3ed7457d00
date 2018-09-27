@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_3831730b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-09-27T21:26:06Z",
+      "side": 1,
+      "message": "This conflict looks specific to how we moved tests around and doesn\u0027t seem to have any impact on actual behavior as far as I can tell?",
+      "revId": "0c71cdd23bd2a7e4f7ec1a5ecec91f3ed7457d00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
