@@ -12,14 +12,17 @@
 
 import uuid
 
+from oslo_serialization import jsonutils
 from six.moves import http_client
 
+from keystone.common.policies import domain as dp
 from keystone.common import provider_api
 import keystone.conf
 from keystone.tests.common import auth as common_auth
 from keystone.tests import unit
 from keystone.tests.unit import base_classes
 from keystone.tests.unit import ksfixtures
+from keystone.tests.unit.ksfixtures import temporaryfile
 
 CONF = keystone.conf.CONF
 PROVIDERS = provider_api.ProviderAPIs
@@ -523,3 +526,250 @@ class DomainUserTests(base_classes.TestCaseWithBootstrap,
                 path, headers=self.headers,
                 expected_status_code=http_client.FORBIDDEN
             )
+
+
+class ProjectUserTests(object):
+    # NOTE(lbragstad): All project users should have the same experience with
+    # domains, regardless of their role.
+
+    def test_user_can_get_a_domain_via_project_authorization(self):
+        with self.test_client() as c:
+            r = c.get('/v3/domains/%s' % self.domain_id, headers=self.headers)
+            self.assertEqual(self.domain_id, r.json['domain']['id'])
+
+    def test_user_cannot_get_a_domain_they_are_not_authorized_to_access(self):
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+
+        with self.test_client() as c:
+            c.get(
+                '/v3/domains/%s' % domain['id'], headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_cannot_list_domains(self):
+        with self.test_client() as c:
+            c.get(
+                '/v3/domains', headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_cannot_filter_domains_by_name(self):
+        domain_name = uuid.uuid4().hex
+        domain = unit.new_domain_ref(name=domain_name)
+        domain = PROVIDERS.resource_api.create_domain(domain['id'], domain)
+
+        PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+
+        with self.test_client() as c:
+            c.get(
+                '/v3/domains?name=%s' % domain_name,
+                headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_cannot_filter_domains_by_enabled(self):
+        with self.test_client() as c:
+            c.get(
+                '/v3/domains?enabled=true', headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+            c.get(
+                '/v3/domains?enabled=false', headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_cannot_update_a_domain(self):
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+
+        update = {'domain': {'description': uuid.uuid4().hex}}
+        with self.test_client() as c:
+            c.patch(
+                '/v3/domains/%s' % domain['id'], json=update,
+                headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_cannot_create_a_domain(self):
+        create = {'domain': {'name': uuid.uuid4().hex}}
+
+        with self.test_client() as c:
+            c.post(
+                '/v3/domains', json=create, headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_cannot_delete_a_domain(self):
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+
+        with self.test_client() as c:
+            update = {'domain': {'enabled': False}}
+            path = '/v3/domains/%s' % domain['id']
+            c.patch(
+                path, json=update, headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+            c.delete(
+                path, headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+
+class ProjectReaderTests(base_classes.TestCaseWithBootstrap,
+                         common_auth.AuthTestMixin,
+                         ProjectUserTests):
+
+    def setUp(self):
+        super(ProjectReaderTests, self).setUp()
+        self.loadapp()
+        self.useFixture(ksfixtures.Policy(self.config_fixture))
+        self.config_fixture.config(group='oslo_policy', enforce_scope=True)
+
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+        self.domain_id = domain['id']
+
+        project_reader = unit.new_user_ref(domain_id=self.domain_id)
+        project_reader_id = PROVIDERS.identity_api.create_user(
+            project_reader
+        )['id']
+        project = unit.new_project_ref(domain_id=self.domain_id)
+        project_id = PROVIDERS.resource_api.create_project(
+            project['id'], project
+        )['id']
+
+        PROVIDERS.assignment_api.create_grant(
+            self.bootstrapper.reader_role_id, user_id=project_reader_id,
+            project_id=project_id
+        )
+
+        auth = self.build_authentication_request(
+            user_id=project_reader_id,
+            password=project_reader['password'],
+            project_id=project_id
+        )
+
+        # Grab a token using the persona we're testing and prepare headers
+        # for requests we'll be making in the tests.
+        with self.test_client() as c:
+            r = c.post('/v3/auth/tokens', json=auth)
+            self.token_id = r.headers['X-Subject-Token']
+            self.headers = {'X-Auth-Token': self.token_id}
+
+
+class ProjectMemberTests(base_classes.TestCaseWithBootstrap,
+                         common_auth.AuthTestMixin,
+                         ProjectUserTests):
+
+    def setUp(self):
+        super(ProjectMemberTests, self).setUp()
+        self.loadapp()
+        self.useFixture(ksfixtures.Policy(self.config_fixture))
+        self.config_fixture.config(group='oslo_policy', enforce_scope=True)
+
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+        self.domain_id = domain['id']
+
+        project_member = unit.new_user_ref(domain_id=self.domain_id)
+        project_member_id = PROVIDERS.identity_api.create_user(
+            project_member
+        )['id']
+        project = unit.new_project_ref(domain_id=self.domain_id)
+        project_id = PROVIDERS.resource_api.create_project(
+            project['id'], project
+        )['id']
+
+        PROVIDERS.assignment_api.create_grant(
+            self.bootstrapper.member_role_id, user_id=project_member_id,
+            project_id=project_id
+        )
+
+        auth = self.build_authentication_request(
+            user_id=project_member_id,
+            password=project_member['password'],
+            project_id=project_id
+        )
+
+        # Grab a token using the persona we're testing and prepare headers
+        # for requests we'll be making in the tests.
+        with self.test_client() as c:
+            r = c.post('/v3/auth/tokens', json=auth)
+            self.token_id = r.headers['X-Subject-Token']
+            self.headers = {'X-Auth-Token': self.token_id}
+
+
+class ProjectAdminTests(base_classes.TestCaseWithBootstrap,
+                        common_auth.AuthTestMixin,
+                        ProjectUserTests):
+
+    def setUp(self):
+        super(ProjectAdminTests, self).setUp()
+        self.loadapp()
+        self.policy_file = self.useFixture(temporaryfile.SecureTempFile())
+        self.policy_file_name = self.policy_file.file_name
+        self.useFixture(
+            ksfixtures.Policy(
+                self.config_fixture, policy_file=self.policy_file_name
+            )
+        )
+        self._override_policy()
+        self.config_fixture.config(group='oslo_policy', enforce_scope=True)
+
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+        self.domain_id = domain['id']
+
+        project_admin = unit.new_user_ref(domain_id=self.domain_id)
+        project_admin_id = PROVIDERS.identity_api.create_user(
+            project_admin
+        )['id']
+        project = unit.new_project_ref(domain_id=self.domain_id)
+        project_id = PROVIDERS.resource_api.create_project(
+            project['id'], project
+        )['id']
+
+        PROVIDERS.assignment_api.create_grant(
+            self.bootstrapper.admin_role_id, user_id=project_admin_id,
+            project_id=project_id
+        )
+
+        auth = self.build_authentication_request(
+            user_id=project_admin_id,
+            password=project_admin['password'],
+            project_id=project_id
+        )
+
+        # Grab a token using the persona we're testing and prepare headers
+        # for requests we'll be making in the tests.
+        with self.test_client() as c:
+            r = c.post('/v3/auth/tokens', json=auth)
+            self.token_id = r.headers['X-Subject-Token']
+            self.headers = {'X-Auth-Token': self.token_id}
+
+    def _override_policy(self):
+        # TODO(lbragstad): Remove this once the deprecated policies in
+        # keystone.common.policies.domains have been removed. This is only
+        # here to make sure we test the new policies instead of the deprecated
+        # ones. Oslo.policy will OR deprecated policies with new policies to
+        # maintain compatibility and give operators a chance to update
+        # permissions or update policies without breaking users. This will
+        # cause these specific tests to fail since we're trying to correct this
+        # broken behavior with better scope checking.
+        with open(self.policy_file_name, 'w') as f:
+            overridden_policies = {
+                'identity:get_domain': (
+                    dp.SYSTEM_USER_OR_DOMAIN_USER_OR_PROJECT_USER
+                )
+            }
+            f.write(jsonutils.dumps(overridden_policies))
