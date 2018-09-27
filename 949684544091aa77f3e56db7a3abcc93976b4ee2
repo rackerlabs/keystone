@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3f79a3b5_d89ad86d",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1053,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-27T01:33:13Z",
+      "side": 1,
+      "message": "why this? I assume \"line\" here is string already?",
+      "range": {
+        "startLine": 1053,
+        "startChar": 19,
+        "endLine": 1053,
+        "endChar": 22
+      },
+      "revId": "949684544091aa77f3e56db7a3abcc93976b4ee2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_f7948fe9",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 6
@@ -13,6 +36,24 @@
       "writtenOn": "2018-09-26T13:49:07Z",
       "side": 1,
       "message": "You should have at least 2 sets pof tests:  positive tests and negative tests.  THe positive test should run through valid inputs and make sure they are accepted.  The Negative tests ensure invalid inputs are rejected.  Assert on the return codes.",
+      "revId": "949684544091aa77f3e56db7a3abcc93976b4ee2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_58d9e853",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1721,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-27T01:33:13Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3f79a3b5_f7948fe9",
       "revId": "949684544091aa77f3e56db7a3abcc93976b4ee2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
