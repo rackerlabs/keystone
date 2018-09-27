@@ -75,8 +75,13 @@ class DomainResource(ks_flask.ResourceBase):
         return self._list_domains()
 
     def _get_domain(self, domain_id):
-        ENFORCER.enforce_call(action='identity:get_domain')
-        return self.wrap_member(PROVIDERS.resource_api.get_domain(domain_id))
+        try:
+            domain = PROVIDERS.resource_api.get_domain(domain_id)
+            target = {'domain': domain}
+        except exception.NotFound:
+            raise exception.ForbiddenAction
+        ENFORCER.enforce_call(action='identity:get_domain', target_attr=target)
+        return self.wrap_member(domain)
 
     def _list_domains(self):
         filters = ['name', 'enabled']
