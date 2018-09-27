@@ -34,6 +34,14 @@ deprecated_update_domain = policy.DeprecatedRule(
     name=base.IDENTITY % 'update_domain',
     check_str=base.RULE_ADMIN_REQUIRED
 )
+deprecated_create_domain = policy.DeprecatedRule(
+    name=base.IDENTITY % 'create_domain',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
+deprecated_delete_domain = policy.DeprecatedRule(
+    name=base.IDENTITY % 'delete_domain',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
 
 domain_policies = [
     policy.DocumentedRuleDefault(
@@ -65,11 +73,14 @@ domain_policies = [
         deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_domain',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.ADMIN_ROLE,
         scope_types=['system'],
         description='Create domain.',
         operations=[{'path': '/v3/domains',
-                     'method': 'POST'}]),
+                     'method': 'POST'}],
+        deprecated_rule=deprecated_create_domain,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_domain',
         check_str=base.MEMBER_ROLE,
@@ -82,11 +93,14 @@ domain_policies = [
         deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_domain',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.ADMIN_ROLE,
         scope_types=['system'],
         description='Delete domain.',
         operations=[{'path': '/v3/domains/{domain_id}',
-                     'method': 'DELETE'}])
+                     'method': 'DELETE'}],
+        deprecated_rule=deprecated_delete_domain,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN),
 ]
 
 
