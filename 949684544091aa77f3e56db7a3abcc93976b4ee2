@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_a3148842",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1053,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-09-27T08:38:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_d89ad86d",
+      "range": {
+        "startLine": 1053,
+        "startChar": 19,
+        "endLine": 1053,
+        "endChar": 22
+      },
+      "revId": "949684544091aa77f3e56db7a3abcc93976b4ee2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_f7948fe9",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 6
@@ -60,6 +84,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_e0059616",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1721,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-09-27T08:38:12Z",
+      "side": 1,
+      "message": "Added the negative test too. As the engine raises validation error on wrong input, I am a little confused about return codes.",
+      "parentUuid": "3f79a3b5_f7948fe9",
+      "revId": "949684544091aa77f3e56db7a3abcc93976b4ee2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_97ae7b7f",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 6
@@ -71,6 +113,24 @@
       "writtenOn": "2018-09-26T13:49:07Z",
       "side": 1,
       "message": "See if you can add the file to the fixtures instead of generating the file here. Look at how the other tests (like policy) get their data files.",
+      "revId": "949684544091aa77f3e56db7a3abcc93976b4ee2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_03069c1d",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1726,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-09-27T08:38:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_97ae7b7f",
       "revId": "949684544091aa77f3e56db7a3abcc93976b4ee2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
