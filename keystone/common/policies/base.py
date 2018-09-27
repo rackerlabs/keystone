@@ -31,6 +31,7 @@ RULE_SERVICE_OR_ADMIN = 'rule:service_or_admin'
 RULE_TRUST_OWNER = 'user_id:%(trust.trustor_user_id)s'
 READER_ROLE = 'role:reader'
 MEMBER_ROLE = 'role:member'
+ADMIN_ROLE = 'role:admin'
 
 rules = [
     policy.RuleDefault(
