@@ -178,7 +178,16 @@ class PolicyJsonTestCase(unit.TestCase):
         return rules
 
     def test_json_examples_have_matching_entries(self):
+        removed_policies = [
+            'identity:create_domain',
+            'identity:get_domain',
+            'identity:list_domains',
+            'identity:update_domain',
+            'identity:delete_domain'
+        ]
         policy_keys = self._get_default_policy_rules()
+        for p in removed_policies:
+            del policy_keys[p]
         cloud_policy_keys = set(
             json.load(open(unit.dirs.etc('policy.v3cloudsample.json'))))
 
