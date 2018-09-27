@@ -46,14 +46,17 @@ deprecated_delete_domain = policy.DeprecatedRule(
 domain_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_domain',
-        check_str=(
-            '(role:reader and system_scope:all) or '
-            'token.project.domain.id:%(target.domain.id)s'
-        ),
         # NOTE(lbragstad): This policy allows system-scope and project-scoped
         # tokens because it should be possible for users who have a token
-        # scoped to a project within a domain to list the domain itself, at
-        # least according to the legacy policy.
+        # scoped to a project within a domain to list the domain itself. It
+        # also allows users with a role on a domain to get that specific
+        # domain. Finally, it accounts for system scope so that users tending
+        # to the deployment can list all domains.
+        check_str=(
+            '(role:reader and system_scope:all) or '
+            'token.domain.id:%(target.domain.id)s or '
+            'token.project.domain.id:%(target.domain.id)s'
+        ),
         scope_types=['system', 'project'],
         description='Show domain details.',
         operations=[{'path': '/v3/domains/{domain_id}',
