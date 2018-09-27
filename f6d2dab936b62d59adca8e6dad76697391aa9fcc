@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_fd5bf482",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-09-27T15:01:47Z",
+      "side": 1,
+      "message": "nit: I\u0027d map these to the actual terms or variables you\u0027re using, only because it doesn\u0027t require the reader to maintain a mental map of Project Y -\u003e project2, etc...",
+      "revId": "f6d2dab936b62d59adca8e6dad76697391aa9fcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_fd8214c7",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-09-27T15:01:47Z",
+      "side": 1,
+      "message": "This can be done with the @wip decorator in utils, instead.",
+      "range": {
+        "startLine": 317,
+        "startChar": 8,
+        "endLine": 317,
+        "endChar": 63
+      },
+      "revId": "f6d2dab936b62d59adca8e6dad76697391aa9fcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
