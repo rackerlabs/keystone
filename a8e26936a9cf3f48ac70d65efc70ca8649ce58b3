@@ -22,6 +22,30 @@
       "revId": "a8e26936a9cf3f48ac70d65efc70ca8649ce58b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_153b3939",
+        "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 10343
+      },
+      "writtenOn": "2018-09-27T00:22:45Z",
+      "side": 1,
+      "message": "Agree :)",
+      "parentUuid": "3f79a3b5_c2b66c26",
+      "range": {
+        "startLine": 377,
+        "startChar": 75,
+        "endLine": 377,
+        "endChar": 83
+      },
+      "revId": "a8e26936a9cf3f48ac70d65efc70ca8649ce58b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
