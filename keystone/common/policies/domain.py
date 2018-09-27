@@ -30,6 +30,10 @@ deprecated_get_domain = policy.DeprecatedRule(
     name=base.IDENTITY % 'get_domain',
     check_str=base.RULE_ADMIN_OR_TARGET_DOMAIN
 )
+deprecated_update_domain = policy.DeprecatedRule(
+    name=base.IDENTITY % 'update_domain',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
 
 domain_policies = [
     policy.DocumentedRuleDefault(
@@ -68,11 +72,14 @@ domain_policies = [
                      'method': 'POST'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_domain',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.MEMBER_ROLE,
         scope_types=['system'],
         description='Update domain.',
         operations=[{'path': '/v3/domains/{domain_id}',
-                     'method': 'PATCH'}]),
+                     'method': 'PATCH'}],
+        deprecated_rule=deprecated_update_domain,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_domain',
         check_str=base.RULE_ADMIN_REQUIRED,
