@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_e3192023",
+        "filename": "etc/mapping_engine_test_rules.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-27T08:51:48Z",
+      "side": 1,
+      "message": "no, do not add file here. See keystone.tests.unit.mapping_fixtures.py for example.",
+      "revId": "492711d9ad54239fe18226dca4ae13bd37845c9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
