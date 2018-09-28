@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_b237d7fe",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1745,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-09-28T08:02:56Z",
+      "side": 1,
+      "message": "Would be nice to check not just that it doesn\u0027t explode but also that it produces the right value, for example checking that the right group ID is in the output.",
+      "revId": "94e6b284110d1263da6d9c7ff9eb1ea4b1c835eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
