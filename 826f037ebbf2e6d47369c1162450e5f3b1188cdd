@@ -22,6 +22,30 @@
       "revId": "826f037ebbf2e6d47369c1162450e5f3b1188cdd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_ed5fb44a",
+        "filename": ".zuul.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-09-28T08:54:16Z",
+      "side": 1,
+      "message": "I wasn\u0027t sure about that, it\u0027s unclear to me whether the devstack_localrc dict would get merged with its parent or overwrite its parent, safer to be explicit.",
+      "parentUuid": "3f79a3b5_a7331ef7",
+      "range": {
+        "startLine": 32,
+        "startChar": 8,
+        "endLine": 32,
+        "endChar": 61
+      },
+      "revId": "826f037ebbf2e6d47369c1162450e5f3b1188cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
