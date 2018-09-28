@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_75e4b70e",
+        "filename": "keystone/common/policies/domain.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-09-28T23:04:28Z",
+      "side": 1,
+      "message": "In the past we had an exception thrown when we checked for a non-existent value like this.  If we sent a project scoped token, the token.domain key would not exists, and the whole check would fail.  Did we fix this somehow?",
+      "revId": "d7b6dcedde717ff6ef74aaf7b4318e7958a800d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
