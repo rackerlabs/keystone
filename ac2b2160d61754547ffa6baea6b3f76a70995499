@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_e4033f75",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-09-28T19:55:08Z",
+      "side": 1,
+      "message": "I had to do some digging to figure out why you were changing this. It\u0027s always helpful to include details about the motivation behind changes in the commit message.\n\nFor other reviewers. Changing from \"doc\" -\u003e \"documentation\" is to be consistent with how we tag documentation bugs in our bug tracker [0]. Specifics can be found in the documentation for the openstackdocs theme documentation [1].\n\n\n[0] https://bugs.launchpad.net/keystone/+bugs?field.tag\u003ddocumentation\n[1] https://docs.openstack.org/openstackdocstheme/latest/",
+      "revId": "ac2b2160d61754547ffa6baea6b3f76a70995499",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
