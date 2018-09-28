@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_a81e8a5c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-09-28T09:04:58Z",
+      "side": 1,
+      "message": "This change is concerning, changing the tests should not require changing the functionality.",
+      "revId": "35f0097cdd384c5c7c8dbd66e088040d91b5e289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_28327af3",
+        "filename": "keystone/tests/unit/base_classes.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-09-28T09:04:58Z",
+      "side": 1,
+      "message": "Is this not already automatically created?",
+      "revId": "35f0097cdd384c5c7c8dbd66e088040d91b5e289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
