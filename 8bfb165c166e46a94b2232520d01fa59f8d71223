@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_2dedacef",
+        "filename": "keystone/tests/unit/trust/test_backends.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-09-28T08:51:51Z",
+      "side": 1,
+      "message": "(nit) you might go through PROVIDERS.trust_api.delete_trust rather than setting the deletion time directly",
+      "range": {
+        "startLine": 429,
+        "startChar": 35,
+        "endLine": 429,
+        "endChar": 53
+      },
+      "revId": "8bfb165c166e46a94b2232520d01fa59f8d71223",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_2dfa8c42",
+        "filename": "keystone/tests/unit/trust/test_backends.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-09-28T08:51:51Z",
+      "side": 1,
+      "message": "I had a doubt about whether unexpired undeleted trusts were safe and wrote a test to make sure: http://paste.openstack.org/show/731069/ could you include a test like that as well?",
+      "revId": "8bfb165c166e46a94b2232520d01fa59f8d71223",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_ad53fc15",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-09-28T08:51:51Z",
+      "side": 1,
+      "message": "It seems to not be hard requirement of the hacking check, but for consistency it would be a little better to just import sqlalchemy and then use sqlalchemy.or_ later, like we have for instance here: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/identity/backends/sql.py#n151",
+      "revId": "8bfb165c166e46a94b2232520d01fa59f8d71223",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_cd567806",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-09-28T08:51:51Z",
+      "side": 1,
+      "message": "Is this really needed, or could we just use None?",
+      "revId": "8bfb165c166e46a94b2232520d01fa59f8d71223",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

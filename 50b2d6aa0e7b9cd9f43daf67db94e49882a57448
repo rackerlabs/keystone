@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_0d84705c",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-09-28T08:51:51Z",
+      "side": 0,
+      "message": "It seems like this case is missing now - does the sqlalchemy \u003c filter handle this properly?",
+      "range": {
+        "startLine": 203,
+        "startChar": 16,
+        "endLine": 203,
+        "endChar": 46
+      },
+      "revId": "50b2d6aa0e7b9cd9f43daf67db94e49882a57448",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
