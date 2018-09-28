@@ -2,6 +2,63 @@
   "comments": [
     {
       "key": {
+        "uuid": "3f79a3b5_441233ff",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1024,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-09-28T19:47:13Z",
+      "side": 1,
+      "message": "It doesn\u0027t look like this is tested, but we should be able to with some invalid input, which is something we can do in a follow on.",
+      "revId": "94e6b284110d1263da6d9c7ff9eb1ea4b1c835eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_84e12bff",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1033,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-09-28T19:47:13Z",
+      "side": 1,
+      "message": "We should be able to test this with a mock to simulate a system issue opening the file. Or we could try and trigger this exception using a file that doesn\u0027t exist.",
+      "revId": "94e6b284110d1263da6d9c7ff9eb1ea4b1c835eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_8e6e2c94",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1713,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-09-28T19:47:13Z",
+      "side": 1,
+      "message": "For a followup: errors*",
+      "range": {
+        "startLine": 1713,
+        "startChar": 51,
+        "endLine": 1713,
+        "endChar": 57
+      },
+      "revId": "94e6b284110d1263da6d9c7ff9eb1ea4b1c835eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_b237d7fe",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 10
@@ -13,6 +70,24 @@
       "writtenOn": "2018-09-28T08:02:56Z",
       "side": 1,
       "message": "Would be nice to check not just that it doesn\u0027t explode but also that it produces the right value, for example checking that the right group ID is in the output.",
+      "revId": "94e6b284110d1263da6d9c7ff9eb1ea4b1c835eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_64396fd6",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1745,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-09-28T19:47:13Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3f79a3b5_b237d7fe",
       "revId": "94e6b284110d1263da6d9c7ff9eb1ea4b1c835eb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
