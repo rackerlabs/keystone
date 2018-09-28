@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_4f26e0cd",
+        "filename": "keystone/tests/unit/trust/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-09-28T07:06:47Z",
+      "side": 1,
+      "message": "don\u0027t need to pass any parameter so that this can sure the function works as design.",
+      "range": {
+        "startLine": 439,
+        "startChar": 12,
+        "endLine": 439,
+        "endChar": 47
+      },
+      "revId": "0745999b81ff88f4d105bc52606a6a49f60a2228",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
