@@ -1091,6 +1091,7 @@ class MappingEngineTester(BaseApp):
                                           tester.rules['rules'])
         mapped = rp.process(tester.assertion)
         print(jsonutils.dumps(mapped, indent=2))
+        return mapped
 
     @classmethod
     def add_argument_parser(cls, subparsers):

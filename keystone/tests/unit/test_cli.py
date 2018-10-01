@@ -1659,7 +1659,7 @@ class TestTrustFlush(unit.SQLDriverOverrides, unit.BaseTestCase):
         self.useFixture(database.Database())
         self.config_fixture = self.useFixture(oslo_config.fixture.Config(CONF))
         self.config_fixture.register_cli_opt(cli.command_opt)
-        # For unit tests that should not throw any erorrs,
+        # For unit tests that should not throw any errors,
         # Use the argument parser to test that the combinations work
         parser_test = argparse.ArgumentParser()
         subparsers = parser_test.add_subparsers()
@@ -1721,6 +1721,38 @@ class TestMappingEngineTester(unit.BaseTestCase):
         config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
         return config_files
 
+    def test_mapping_engine_tester_with_invalid_rules_file(self):
+        tempfilejson = self.useFixture(temporaryfile.SecureTempFile())
+        tmpinvalidfile = tempfilejson.file_name
+        # Here the data required for rules should be in JSON format
+        # whereas the file contains text.
+        with open(tmpinvalidfile, 'w') as f:
+            f.write("This is an invalid data")
+        self.command_rules = tmpinvalidfile
+        self.command_input = tmpinvalidfile
+        self.command_prefix = None
+        self.command_engine_debug = True
+        self.useFixture(fixtures.MockPatchObject(
+            CONF, 'command', self.FakeConfCommand(self)))
+        mapping_engine = cli.MappingEngineTester()
+        self.assertRaises(SystemExit, mapping_engine.main)
+
+    def test_mapping_engine_tester_with_invalid_input_file(self):
+        tempfilejson = self.useFixture(temporaryfile.SecureTempFile())
+        tmpfilejsonname = tempfilejson.file_name
+        updated_mapping = copy.deepcopy(mapping_fixtures.MAPPING_SMALL)
+        with open(tmpfilejsonname, 'w') as f:
+            f.write(jsonutils.dumps(updated_mapping))
+        self.command_rules = tmpfilejsonname
+        # Here invalid.csv does not exist
+        self.command_input = "invalid.csv"
+        self.command_prefix = None
+        self.command_engine_debug = True
+        self.useFixture(fixtures.MockPatchObject(
+            CONF, 'command', self.FakeConfCommand(self)))
+        mapping_engine = cli.MappingEngineTester()
+        self.assertRaises(SystemExit, mapping_engine.main)
+
     def test_mapping_engine_tester(self):
         tempfilejson = self.useFixture(temporaryfile.SecureTempFile())
         tmpfilejsonname = tempfilejson.file_name
@@ -1742,7 +1774,10 @@ class TestMappingEngineTester(unit.BaseTestCase):
         self.useFixture(fixtures.MockPatchObject(
             CONF, 'command', self.FakeConfCommand(self)))
         mapping_engine = cli.MappingEngineTester()
-        mapping_engine.main()
+        mapped = mapping_engine.main()
+        self.assertEqual(mapped['group_ids'][0],
+                         updated_mapping['rules'][0]['local'][0]['group']
+                         ['id'])
 
     def test_mapping_engine_tester_with_invalid_data(self):
         tempfilejson = self.useFixture(temporaryfile.SecureTempFile())
