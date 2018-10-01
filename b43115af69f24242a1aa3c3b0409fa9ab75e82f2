@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_e3523568",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1429,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-01T13:32:17Z",
+      "side": 1,
+      "message": "NIT: don\u0027t line wrap with \\ use parens instead",
+      "revId": "b43115af69f24242a1aa3c3b0409fa9ab75e82f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
