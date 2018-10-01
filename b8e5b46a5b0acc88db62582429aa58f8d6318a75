@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_fc009d37",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-01T02:10:09Z",
+      "side": 1,
+      "message": "Here we don\u0027t require \u0027role:reader\u0027 and \u0027system_scope:all\u0027 for system role??",
+      "revId": "b8e5b46a5b0acc88db62582429aa58f8d6318a75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_9cf2c96e",
+        "filename": "keystone/common/policies/domain.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-01T02:10:09Z",
+      "side": 1,
+      "message": "Can we declare this whole string in base file same as before?",
+      "revId": "b8e5b46a5b0acc88db62582429aa58f8d6318a75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_bcf6a55d",
+        "filename": "keystone/tests/unit/protection/v3/test_domains.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-01T02:10:09Z",
+      "side": 1,
+      "message": "Can we also add a test case for user when trying to get a wrong domain to which he is not authorized??",
+      "revId": "b8e5b46a5b0acc88db62582429aa58f8d6318a75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
