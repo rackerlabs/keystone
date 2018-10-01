@@ -151,6 +151,24 @@
       "revId": "8bfb165c166e46a94b2232520d01fa59f8d71223",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_5d20ab9a",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-01T08:11:27Z",
+      "side": 1,
+      "message": "How about using .isnot(None) as suggested here: https://stackoverflow.com/a/37196866",
+      "parentUuid": "3f79a3b5_771106af",
+      "revId": "8bfb165c166e46a94b2232520d01fa59f8d71223",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
