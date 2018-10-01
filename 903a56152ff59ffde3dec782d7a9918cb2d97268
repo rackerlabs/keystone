@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_fc5c1d4d",
+        "filename": "keystone/tests/unit/protection/v3/test_domains.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-01T02:42:32Z",
+      "side": 1,
+      "message": "what if in case when user tries to update a domain he is not authorized to? Can we add a test case for this?",
+      "revId": "903a56152ff59ffde3dec782d7a9918cb2d97268",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
