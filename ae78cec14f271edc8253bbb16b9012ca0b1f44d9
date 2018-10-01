@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_0345f114",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-10-01T13:10:47Z",
+      "side": 1,
+      "message": "Please fix this typo",
+      "revId": "ae78cec14f271edc8253bbb16b9012ca0b1f44d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_23534de0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-10-01T13:10:47Z",
+      "side": 1,
+      "message": "2 d\u0027s in address",
+      "revId": "ae78cec14f271edc8253bbb16b9012ca0b1f44d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
