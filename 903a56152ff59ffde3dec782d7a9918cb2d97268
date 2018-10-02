@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3f79a3b5_5734f5f9",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-02T02:05:02Z",
+      "side": 1,
+      "message": "Here we don\u0027t need \u0027role:member and system_scope\u003dall\u0027 ?",
+      "revId": "903a56152ff59ffde3dec782d7a9918cb2d97268",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_fc5c1d4d",
         "filename": "keystone/tests/unit/protection/v3/test_domains.py",
         "patchSetId": 2
