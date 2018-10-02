@@ -22,6 +22,99 @@
       "revId": "661f0b8a3f410c3cbac7ee90786f08944a47df1d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_6ceef8b5",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-02T17:27:11Z",
+      "side": 1,
+      "message": "This isn\u0027t how that works. Please supply real validation here, it should conform to the rules (the only exceptional domains are the root, a known id, and default also a known id, and should not be allowed here).\n\nConforming to rules would be uuid (afaict). Please supply validation here or in the schema (json_schema) do not assume the validation is done by pyCADF or something external unless we specifically test for it.",
+      "parentUuid": "3f79a3b5_414e6896",
+      "range": {
+        "startLine": 103,
+        "startChar": 12,
+        "endLine": 103,
+        "endChar": 53
+      },
+      "revId": "661f0b8a3f410c3cbac7ee90786f08944a47df1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_8c3ef423",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-02T17:27:11Z",
+      "side": 1,
+      "message": "This is not a valid domain id (according to what keystone does internally at this point), uuid4().hex, validation is not properly being handled.",
+      "range": {
+        "startLine": 148,
+        "startChar": 29,
+        "endLine": 148,
+        "endChar": 67
+      },
+      "revId": "661f0b8a3f410c3cbac7ee90786f08944a47df1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_ec08c880",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-02T17:27:11Z",
+      "side": 1,
+      "message": "[NIT, if you can make it work, do that, but don\u0027t stress too much if you can\u0027t] Suggest using the \"with self.test_client() as c:\" mechanism instead of adding more layers into the tests that need to be re-worked.",
+      "range": {
+        "startLine": 151,
+        "startChar": 8,
+        "endLine": 151,
+        "endChar": 22
+      },
+      "revId": "661f0b8a3f410c3cbac7ee90786f08944a47df1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_2c7800f6",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-02T17:27:11Z",
+      "side": 1,
+      "message": "I would like to see a series of examples that are sort-of fuzz testing this rather than a single example. Does \"bad\" work? it\u0027s all hex characters, what about \u00271234567890123456789012345678901234567890\u0027, etc. \n\nThe id length should be strictly conforming to the result if keystone generated the id and we need expanded testing to ensure edge cases are somewhat covered.",
+      "range": {
+        "startLine": 164,
+        "startChar": 28,
+        "endLine": 164,
+        "endChar": 35
+      },
+      "revId": "661f0b8a3f410c3cbac7ee90786f08944a47df1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
