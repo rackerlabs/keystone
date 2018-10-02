@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_414e6896",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 11589
+      },
+      "writtenOn": "2018-10-02T14:57:48Z",
+      "side": 1,
+      "message": "Where is that validation being handled? What happens if it throws an exception? I see your test, I\u0027m just not sure how that gets bubbled back up here when something goes awry.",
+      "range": {
+        "startLine": 103,
+        "startChar": 12,
+        "endLine": 103,
+        "endChar": 53
+      },
+      "revId": "661f0b8a3f410c3cbac7ee90786f08944a47df1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
