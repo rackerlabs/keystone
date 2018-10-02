@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_3ad7e051",
+        "filename": "keystone/tests/unit/protection/v3/test_credentials.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1214,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-02T02:44:48Z",
+      "side": 1,
+      "message": "Here not mentioned filter_by_type or filter_by_user?and also missing the other test case.",
+      "revId": "4001fc6c2a858223d10213f4c87009ac7a66bc1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_dab82c13",
+        "filename": "keystone/tests/unit/protection/v3/test_credentials.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1617,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-02T02:44:48Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "4001fc6c2a858223d10213f4c87009ac7a66bc1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_7adb184d",
+        "filename": "keystone/tests/unit/protection/v3/test_credentials.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1834,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-02T02:44:48Z",
+      "side": 1,
+      "message": "I think here it will be test_user_can_update_credentials_for_others. If not so then there is no difference left between ProjectReaders and ProjectMembers.",
+      "revId": "4001fc6c2a858223d10213f4c87009ac7a66bc1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_1acd4485",
+        "filename": "keystone/tests/unit/protection/v3/test_credentials.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 2033,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-02T02:44:48Z",
+      "side": 1,
+      "message": "filter_by_type and user missing test case.",
+      "revId": "4001fc6c2a858223d10213f4c87009ac7a66bc1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
