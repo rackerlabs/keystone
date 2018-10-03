@@ -45,6 +45,30 @@
       "revId": "6aba78a7a213335bf38ddfb4c0e1ef329653305e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_f37ad8ed",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-03T06:00:57Z",
+      "side": 1,
+      "message": "Hi Dave. Thanks for your concern. For consistency with the existing implementation marked it as False. Any suggestions to improve?",
+      "parentUuid": "3f79a3b5_d399dccf",
+      "range": {
+        "startLine": 211,
+        "startChar": 25,
+        "endLine": 211,
+        "endChar": 50
+      },
+      "revId": "6aba78a7a213335bf38ddfb4c0e1ef329653305e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
