@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_46665757",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2881,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-03T22:19:38Z",
+      "side": 1,
+      "message": "Realistically we need to pick a value that can be consistent here. I\u0027m ok with this change as is, but lets stake a line in the ground and say \"we limit fernets to X size\" and set that value somewhere in test.core -- we can still change it but I don\u0027t like the explicit \"X Size\" checks.",
+      "revId": "afd05e7919ce802c8aceaafadee7d1fa31face98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
