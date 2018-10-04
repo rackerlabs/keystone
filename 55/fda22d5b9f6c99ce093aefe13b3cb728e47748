@@ -1,0 +1,9 @@
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+1: Vishakha Agarwal <agarwalvishakha18@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 04 Oct 2018 08:36:56 +0000
+Reviewed-on: https://review.openstack.org/607198
+Project: openstack/keystone
+Branch: refs/heads/stable/pike
