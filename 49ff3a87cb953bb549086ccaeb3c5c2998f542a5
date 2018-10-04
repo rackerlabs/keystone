@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_d886b4ba",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1094,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-04T13:43:40Z",
+      "side": 1,
+      "message": "I would prefer if the functionality of the main() function wasn\u0027t changed with the enhancements to this test. If we are checking the value of mapped rather than the content of stdout, we\u0027re really testing the RuleProcessor.process method, which is already tested elsewhere, rather than testing the CLI.\n\nTo check the stdout, you can follow examples like this: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/tests/unit/test_cli.py#n575",
+      "revId": "49ff3a87cb953bb549086ccaeb3c5c2998f542a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
