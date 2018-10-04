@@ -59,7 +59,15 @@ The delegation parameters are:
 Removing Expired Trusts
 ===========================================================
 
-In the SQL trust stores expired trusts are not automatically
-removed. These trusts can be removed with::
+In the SQL trust stores expired and soft deleted trusts, that are not
+automatically removed. These trusts can be removed with::
 
-    $ keystone-manage trust_flush
+    $ keystone-manage trust_flush [Options]
+
+Options (optional):
+
+        --project-id <string>: To purge trusts of given project-id.
+        --trustor-user-id <string>: To purge trusts of given trustor-id.
+        --trustee-user-id <string>: To purge trusts of given trustee-id.
+        --date <string>: To purge trusts older than date.It will purge
+        trusts older than current if date not given.
