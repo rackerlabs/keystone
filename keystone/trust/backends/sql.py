@@ -193,15 +193,19 @@ class Trust(base.TrustDriverBase):
 
     def flush_expired_and_soft_deleted_trusts(self, project_id=None,
                                               trustor_user_id=None,
-                                              trustee_user_id=None):
+                                              trustee_user_id=None,
+                                              date=None):
         with sql.session_for_write() as session:
             query = session.query(TrustModel)
-            query = query.\
+            if not date:
+                cmp_date = timeutils.utcnow()
+            else:
+                cmp_date = date
+            query = query. \
                 filter(sqlalchemy.or_(TrustModel.deleted_at.isnot(None),
                                       sqlalchemy.and_(
                                           TrustModel.expires_at.isnot(None),
-                                          TrustModel.expires_at <
-                                          timeutils.utcnow())))
+                                          TrustModel.expires_at < cmp_date)))
             if project_id:
                 query = query.filter_by(project_id=project_id)
             if trustor_user_id:
