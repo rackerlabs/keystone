@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_7afe7105",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-04T16:02:30Z",
+      "side": 1,
+      "message": "This has a bug for it, could you add the closes-bug tag? https://bugs.launchpad.net/keystone/+bug/1793421",
+      "revId": "9e9fe62dc64d2208bd1185e6862279235c8b3a45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
