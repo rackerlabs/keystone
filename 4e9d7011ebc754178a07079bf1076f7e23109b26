@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_7bff50b1",
+        "filename": "keystone/api/auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-04T20:55:56Z",
+      "side": 1,
+      "message": "We can. There is no reason it wouldn\u0027t be appropriate to do so, however I\u0027d rather spin that as a followup at this point.",
+      "parentUuid": "3f79a3b5_c377a0d1",
+      "revId": "4e9d7011ebc754178a07079bf1076f7e23109b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_c32560c1",
         "filename": "keystone/api/auth.py",
         "patchSetId": 10
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_9b2d8c47",
+        "filename": "keystone/api/auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-04T20:55:56Z",
+      "side": 1,
+      "message": "Head must do all the same work because content length, etc must remain the same. The only thing different between GET and HEAD is that there is a body (per the spec).\n\nHere we are just letting flask do the head work by calling GET and modifying the response internally. I\u0027d rather not implement HEAD code separately from GET unless it\u0027s explicitly needed (we have one API like that, where the behavior between GET and HEAD was remarkably different)",
+      "parentUuid": "3f79a3b5_c32560c1",
+      "revId": "4e9d7011ebc754178a07079bf1076f7e23109b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_8e4c6f76",
         "filename": "keystone/common/render_token.py",
         "patchSetId": 10
@@ -47,6 +83,24 @@
       "writtenOn": "2018-10-04T19:19:38Z",
       "side": 1,
       "message": "This should not be in common.  If it is flask specific, put it under api/.  Otherwise, put it under token/.",
+      "revId": "4e9d7011ebc754178a07079bf1076f7e23109b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_bb15e8e8",
+        "filename": "keystone/common/render_token.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-04T20:55:56Z",
+      "side": 1,
+      "message": "This is the contract for the JSON output of a v3 token. It is not flask specific.\n\nI will happily relocate it (same as with SAML) in a followup if this is a requirement to land the code.",
+      "parentUuid": "3f79a3b5_8e4c6f76",
       "revId": "4e9d7011ebc754178a07079bf1076f7e23109b26",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
