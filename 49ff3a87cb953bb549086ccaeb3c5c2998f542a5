@@ -16,6 +16,24 @@
       "revId": "49ff3a87cb953bb549086ccaeb3c5c2998f542a5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_c69484ea",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1094,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-05T08:07:15Z",
+      "side": 1,
+      "message": "I did not get the clear meaning of stdout. Can you pl give a little brief?",
+      "parentUuid": "3f79a3b5_d886b4ba",
+      "revId": "49ff3a87cb953bb549086ccaeb3c5c2998f542a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
