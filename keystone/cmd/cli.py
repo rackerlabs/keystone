@@ -1236,7 +1236,7 @@ def main(argv=None, developer_config_file=None):
     # provided arguments, if present.
     CONF(args=argv[1:],
          project='keystone',
-         version=pbr.version.VersionInfo('keystone').version_string(),
+         version=pbr.version.VersionInfo('openstack-keystone').version_string(),
          usage='%(prog)s [' + '|'.join([cmd.name for cmd in CMDS]) + ']',
          default_config_files=developer_config_file)
 
