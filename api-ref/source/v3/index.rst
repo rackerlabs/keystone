@@ -27,6 +27,14 @@ For information about Identity API protection, see
 in the OpenStack Cloud Administrator Guide.
 
 ===================================
+What's New in Version 3.11 (Rocky)
+===================================
+
+- New endpoint /v3/limits-model for discovering the limit model in effect
+- New fields and filters in registered and project limits: description,
+  project_id, and include_limits
+
+===================================
 What's New in Version 3.10 (Queens)
 ===================================
 
