@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3f79a3b5_c97d5a6e",
+        "filename": "keystone/api/_shared/authentication.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-07T17:39:36Z",
+      "side": 1,
+      "message": "Why is this function not just a copyandpaste of http://git.openstack.org/cgit/openstack/keystone/tree/keystone/auth/controllers.py#n57 ?",
+      "revId": "4e9d7011ebc754178a07079bf1076f7e23109b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_c377a0d1",
         "filename": "keystone/api/auth.py",
         "patchSetId": 10
@@ -72,6 +89,23 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_8e0a081c",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-07T17:39:36Z",
+      "side": 1,
+      "message": "This looks like a slight change in behavior. Before this would throw an exception if there was not a valid unicode-encoded JSON body: https://github.com/Pylons/webob/blob/v1.8.2/src/webob/response.py#L587 Now it seems like silent\u003dTrue,force\u003dTrue will let that slide?",
+      "revId": "4e9d7011ebc754178a07079bf1076f7e23109b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_8e4c6f76",
         "filename": "keystone/common/render_token.py",
         "patchSetId": 10
@@ -101,6 +135,64 @@
       "side": 1,
       "message": "This is the contract for the JSON output of a v3 token. It is not flask specific.\n\nI will happily relocate it (same as with SAML) in a followup if this is a requirement to land the code.",
       "parentUuid": "3f79a3b5_8e4c6f76",
+      "revId": "4e9d7011ebc754178a07079bf1076f7e23109b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_2e173449",
+        "filename": "keystone/common/render_token.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-07T17:39:36Z",
+      "side": 1,
+      "message": "Agreed it doesn\u0027t belong here. From lbragstad\u0027s comment http://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/controller.py#n126 maybe api/ is the right place? (followup is fine with me)",
+      "parentUuid": "3f79a3b5_bb15e8e8",
+      "revId": "4e9d7011ebc754178a07079bf1076f7e23109b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_ee229ca6",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 908,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-07T17:39:36Z",
+      "side": 1,
+      "message": "uh in that case let\u0027s make sure there is a patch up for the user API before we merge this one? Or why not add the decorator to _authenticate?",
+      "range": {
+        "startLine": 906,
+        "startChar": 15,
+        "endLine": 908,
+        "endChar": 60
+      },
+      "revId": "4e9d7011ebc754178a07079bf1076f7e23109b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_898f6275",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-07T17:39:36Z",
+      "side": 1,
+      "message": "Why did this change need to happen in this patch?",
       "revId": "4e9d7011ebc754178a07079bf1076f7e23109b26",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
