@@ -317,6 +317,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_d9a9a125",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-08T08:48:32Z",
+      "side": 1,
+      "message": "This was moved due to circular dependencies when it was in flask. Flask-\u003enotifications-\u003eflask.\n\nIn py3 this wasn\u0027t an issue. It fails spectacularly in py2.7",
+      "parentUuid": "3f79a3b5_8a29919d",
+      "revId": "4e9d7011ebc754178a07079bf1076f7e23109b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_73b8acc6",
         "filename": "keystone/server/flask/core.py",
         "patchSetId": 10
@@ -328,6 +346,24 @@
       "writtenOn": "2018-10-08T07:26:09Z",
       "side": 1,
       "message": "this seems unnecessary since it\u0027s just called at L148?",
+      "revId": "4e9d7011ebc754178a07079bf1076f7e23109b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_3947757d",
+        "filename": "keystone/server/flask/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-08T08:48:32Z",
+      "side": 1,
+      "message": "There was a bug at one point that forced this. I\u0027ll remove this line in a followup patch.",
+      "parentUuid": "3f79a3b5_73b8acc6",
       "revId": "4e9d7011ebc754178a07079bf1076f7e23109b26",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
