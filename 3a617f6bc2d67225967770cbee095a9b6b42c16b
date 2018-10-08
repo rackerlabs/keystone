@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_3e299b39",
+        "filename": "doc/source/admin/identity-use-trusts.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-10-08T07:42:15Z",
+      "side": 1,
+      "message": "--project-id",
+      "range": {
+        "startLine": 69,
+        "startChar": 8,
+        "endLine": 69,
+        "endChar": 18
+      },
+      "revId": "3a617f6bc2d67225967770cbee095a9b6b42c16b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_1e993f6c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 700,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-10-08T07:42:15Z",
+      "side": 1,
+      "message": "we should add more that if \"--date\" is not provided, it will purge the trust older than current.",
+      "range": {
+        "startLine": 698,
+        "startChar": 34,
+        "endLine": 700,
+        "endChar": 53
+      },
+      "revId": "3a617f6bc2d67225967770cbee095a9b6b42c16b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_fed7a321",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-10-08T07:42:15Z",
+      "side": 1,
+      "message": "no need a new variable, just:\n\nif not date:\n    date \u003d timeutils.utcnow()",
+      "range": {
+        "startLine": 200,
+        "startChar": 0,
+        "endLine": 203,
+        "endChar": 31
+      },
+      "revId": "3a617f6bc2d67225967770cbee095a9b6b42c16b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_7e995378",
+        "filename": "releasenotes/notes/bug-1473292-c21481e6aec29ec2.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-10-08T07:42:15Z",
+      "side": 1,
+      "message": "I\u0027d like to see \"--project-id\" instead.",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 16,
+        "endChar": 18
+      },
+      "revId": "3a617f6bc2d67225967770cbee095a9b6b42c16b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
