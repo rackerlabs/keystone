@@ -34,9 +34,9 @@ if not xmldsig:
     xmldsig = importutils.try_import("xmldsig")
 
 from keystone.api._shared import authentication
+from keystone.api._shared import render_token
 from keystone.api import auth as auth_api
 from keystone.common import provider_api
-from keystone.common import render_token
 import keystone.conf
 from keystone import exception
 from keystone.federation import idp as keystone_idp

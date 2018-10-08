@@ -18,11 +18,11 @@ from oslo_log import log
 from oslo_policy import policy as common_policy
 from oslo_utils import strutils
 
+from keystone.api._shared import render_token
 from keystone.common import authorization
 from keystone.common import context
 from keystone.common import policies
 from keystone.common import provider_api
-from keystone.common import render_token
 from keystone.common import utils
 import keystone.conf
 from keystone import exception
@@ -84,6 +84,11 @@ class RBACEnforcer(object):
         # it to the a token response or dictionary before passing it to
         # oslo.policy for enforcement. This is because oslo.policy shouldn't
         # know how to deal with an internal object only used within keystone.
+        #
+        # TODO(morgan): Rework this to not need an explicit token render as
+        # this is a generally poorly designed behavior. The enforcer should not
+        # rely on a contract of the token's rendered JSON form. This likely
+        # needs reworking of how we handle the context in oslo.policy.
         if 'token' in credentials:
             token_ref = render_token.render_token_response_from_model(
                 credentials['token']

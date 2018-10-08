@@ -41,9 +41,9 @@ from oslo_serialization import jsonutils
 import six
 from six.moves import http_client
 
+from keystone.api._shared import render_token
 from keystone.common import controller
 from keystone.common import provider_api
-from keystone.common import render_token
 from keystone.common import utils
 from keystone.common import wsgi
 import keystone.conf
