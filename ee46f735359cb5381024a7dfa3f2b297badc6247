@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_45283f84",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-08T13:57:07Z",
+      "side": 1,
+      "message": "We should update this since it is no longer accurate.",
+      "range": {
+        "startLine": 389,
+        "startChar": 4,
+        "endLine": 390,
+        "endChar": 29
+      },
+      "revId": "ee46f735359cb5381024a7dfa3f2b297badc6247",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
