@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_0be7b111",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 25
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-08T20:59:58Z",
+      "side": 1,
+      "message": "Technically, we\u0027ve used SQLite for testing for a long time.",
+      "range": {
+        "startLine": 9,
+        "startChar": 14,
+        "endLine": 9,
+        "endChar": 17
+      },
+      "revId": "a5ee33559fb11ebbc87529f967b19f9892aab1f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_2b238d08",
+        "filename": "keystone/tests/unit/resource/backends/test_sql.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-08T20:59:58Z",
+      "side": 1,
+      "message": "This isn\u0027t used anywhere in the additive changes here. I checked this out locally, removed this line and line 13, and everything still passed.",
+      "revId": "a5ee33559fb11ebbc87529f967b19f9892aab1f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
