@@ -19,9 +19,9 @@ from six.moves import http_client
 
 from keystone.api._shared import authentication
 from keystone.api._shared import json_home_relations
+from keystone.api._shared import render_token
 from keystone.common import provider_api
 from keystone.common import rbac_enforcer
-from keystone.common import render_token
 from keystone.common import validation
 import keystone.conf
 from keystone import exception

@@ -13,10 +13,10 @@
 from keystonemiddleware import auth_token
 from oslo_log import log
 
+from keystone.api._shared import render_token
 from keystone.common import authorization
 from keystone.common import context
 from keystone.common import provider_api
-from keystone.common import render_token
 from keystone.common import tokenless_auth
 from keystone.common import wsgi
 import keystone.conf
