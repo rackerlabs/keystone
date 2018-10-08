@@ -113,6 +113,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_5931110a",
+        "filename": "keystone/api/auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-08T08:56:16Z",
+      "side": 1,
+      "message": "Not without a ton of extra introspection. Instead of having separate methods called we now directly wire up routes to ensure we have the same code called in all cases. This means we would need to pull apart the request URI and know what request is deprecated and what is not.\n\nMostly the previous deprecation warning(s) were superfluous. It lets the operator know someone is using the old path. If the code is 100% identical, does it matter? The end user sees no information.\n\nWith v3 we are no longer removing APIs..",
+      "parentUuid": "3f79a3b5_be3b6bc7",
+      "range": {
+        "startLine": 158,
+        "startChar": 0,
+        "endLine": 158,
+        "endChar": 43
+      },
+      "revId": "4e9d7011ebc754178a07079bf1076f7e23109b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_de6187d6",
         "filename": "keystone/api/auth.py",
         "patchSetId": 10
@@ -124,6 +148,30 @@
       "writtenOn": "2018-10-08T07:26:09Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 190,
+        "startChar": 0,
+        "endLine": 190,
+        "endChar": 42
+      },
+      "revId": "4e9d7011ebc754178a07079bf1076f7e23109b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_193b99ea",
+        "filename": "keystone/api/auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-08T08:56:16Z",
+      "side": 1,
+      "message": "See above",
+      "parentUuid": "3f79a3b5_de6187d6",
       "range": {
         "startLine": 190,
         "startChar": 0,
@@ -259,6 +307,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_f90edd3b",
+        "filename": "keystone/common/render_token.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-08T08:56:16Z",
+      "side": 1,
+      "message": "common/controller (entire file) will be removed in a future patch (when the webob deps are stripped out). This will happen once projects and users are converted over. Until then common controller can remain as is.",
+      "parentUuid": "3f79a3b5_ad96e748",
+      "revId": "4e9d7011ebc754178a07079bf1076f7e23109b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_ee229ca6",
         "filename": "keystone/identity/core.py",
         "patchSetId": 10
@@ -270,6 +336,30 @@
       "writtenOn": "2018-10-07T17:39:36Z",
       "side": 1,
       "message": "uh in that case let\u0027s make sure there is a patch up for the user API before we merge this one? Or why not add the decorator to _authenticate?",
+      "range": {
+        "startLine": 906,
+        "startChar": 15,
+        "endLine": 908,
+        "endChar": 60
+      },
+      "revId": "4e9d7011ebc754178a07079bf1076f7e23109b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_041d7061",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 908,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-08T08:56:16Z",
+      "side": 1,
+      "message": "Either _authenticate or authenticate needs the decorator, the self-service password change calls \"identity_api.authenticate\" and is not a flask-enabled request (doesn\u0027t hit the flask app and therefore does not populate the flask.request or flask.g references). This results in a flask error.\n\nThis is transitional same as the os-federation(flask)-\u003eauth(webob)-\u003eflask(response) was transitional.",
+      "parentUuid": "3f79a3b5_ee229ca6",
       "range": {
         "startLine": 906,
         "startChar": 15,
