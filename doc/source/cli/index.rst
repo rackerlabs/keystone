@@ -19,3 +19,4 @@ CLI Documentation
 =================
 
 .. include:: keystone-manage.rst
+.. include:: keystone-status.rst
