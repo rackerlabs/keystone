@@ -236,6 +236,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_24e74ce6",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-08T09:17:31Z",
+      "side": 1,
+      "message": "This looks to be a minor behavior change\n\nI can add an explicit utf-8 decode (check) here or override the werkzeug request object and use \"as_text\" for the .get_data call.\n\nhttps://github.com/pallets/werkzeug/blob/d129d17066768238139b8f8a5d667d9a4f4d68db/werkzeug/wrappers.py#L517-L518\n\nThe body is less picky this deep into keystone with flask. Ultimately, we do a lot of processing to ensure the body is in-fact JSON higher up in the json_body middleware:\n\nhttps://github.com/openstack/keystone/blob/master/keystone/middleware/core.py\n\nI think this is a very minor change (at worst). I can propose the cleanup followups here shortly.",
+      "parentUuid": "3f79a3b5_8e0a081c",
+      "revId": "4e9d7011ebc754178a07079bf1076f7e23109b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_8e4c6f76",
         "filename": "keystone/common/render_token.py",
         "patchSetId": 10
