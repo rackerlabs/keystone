@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_ebdfd5d4",
+        "filename": "keystone/tests/unit/ksfixtures/hacking.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-08T21:06:59Z",
+      "side": 1,
+      "message": "even if* ?\n\nWondering if this is the intended wording.",
+      "range": {
+        "startLine": 223,
+        "startChar": 46,
+        "endLine": 223,
+        "endChar": 52
+      },
+      "revId": "6fe8dbe73b3bbf5314a500d08d756cfcdb0996e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
