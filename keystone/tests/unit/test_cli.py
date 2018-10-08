@@ -1767,3 +1767,7 @@ class TestMappingEngineTester(unit.BaseTestCase):
         mapping_engine = cli.MappingEngineTester()
         self.assertRaises(exception.ValidationError,
                           mapping_engine.main)
+
+
+class TestUpgradeChecks(unit.BaseTestCase):
+    pass
