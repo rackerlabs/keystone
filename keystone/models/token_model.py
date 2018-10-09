@@ -294,15 +294,10 @@ class TokenModel(object):
             set([r['role_id'] for r in effective_trust_roles])
         )
 
-        trustor_assignments = (
-            PROVIDERS.assignment_api.list_role_assignments(
-                user_id=original_trustor_id,
-                project_id=self.trust.get('project_id'),
-                effective=True, strip_domain_roles=False
-            )
-        )
         current_effective_trustor_roles = (
-            set([x['role_id'] for x in trustor_assignments])
+            PROVIDERS.assignment_api.get_roles_for_user_and_project(
+                original_trustor_id, self.trust.get('project_id'), False
+            )
         )
 
         for trust_role_id in effective_trust_role_ids:
@@ -346,7 +341,7 @@ class TokenModel(object):
         if self.project_id:
             project_roles = (
                 PROVIDERS.assignment_api.get_roles_for_user_and_project(
-                    self.user_id, self.project_id
+                    self.user_id, self.project_id, True
                 )
             )
             for role in project_roles:
@@ -388,7 +383,7 @@ class TokenModel(object):
         roles = []
         project_roles = (
             PROVIDERS.assignment_api.get_roles_for_user_and_project(
-                self.user_id, self.project_id
+                self.user_id, self.project_id, True
             )
         )
         for role_id in project_roles:
@@ -518,13 +513,10 @@ class TokenModel(object):
             effective_trust_role_ids = (
                 set([r['role_id'] for r in effective_trust_roles])
             )
-            assignments = PROVIDERS.assignment_api.list_role_assignments(
-                user_id=self.trustor['id'], system=self.system,
-                project_id=self.project_id, effective=True,
-                strip_domain_roles=False
-            )
             current_effective_trustor_roles = (
-                set([x['role_id'] for x in assignments])
+                PROVIDERS.assignment_api.get_roles_for_user_and_project(
+                    self.trustor['id'], self.trust.get('project_id'), False
+                )
             )
             # Go through each of the effective trust roles, making sure the
             # trustor still has them, if any have been removed, then we

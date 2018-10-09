@@ -94,7 +94,7 @@ class IdentityTests(object):
         user.pop('password')
         self.assertDictContainsSubset(user, user_ref)
         role_list = PROVIDERS.assignment_api.get_roles_for_user_and_project(
-            new_user['id'], self.tenant_baz['id'])
+            new_user['id'], self.tenant_baz['id'], True)
         self.assertEqual(1, len(role_list))
         self.assertIn(role_member['id'], role_list)
 

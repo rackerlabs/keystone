@@ -147,7 +147,7 @@ class Ec2ControllerCommon(provider_api.ProviderAPIMixin, object):
                         sys.exc_info()[2])
 
         roles = self.assignment_api.get_roles_for_user_and_project(
-            user_ref['id'], tenant_ref['id']
+            user_ref['id'], tenant_ref['id'], True
         )
         if not roles:
             raise exception.Unauthorized(

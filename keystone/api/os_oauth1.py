@@ -317,7 +317,7 @@ class AuthorizeResource(_OAuth1ResourceBase):
         user_id = user_token_ref.user_id
         project_id = req_token['requested_project_id']
         user_roles = PROVIDERS.assignment_api.get_roles_for_user_and_project(
-            user_id, project_id)
+            user_id, project_id, True)
         cred_set = set(user_roles)
 
         if not cred_set.issuperset(authed_roles):

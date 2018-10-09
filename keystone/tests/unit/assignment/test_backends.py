@@ -686,7 +686,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
 
     def test_add_duplicate_role_grant(self):
         roles_ref = PROVIDERS.assignment_api.get_roles_for_user_and_project(
-            self.user_foo['id'], self.tenant_bar['id'])
+            self.user_foo['id'], self.tenant_bar['id'], True)
         self.assertNotIn(self.role_admin['id'], roles_ref)
         PROVIDERS.assignment_api.add_role_to_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'], self.role_admin['id'])
@@ -732,19 +732,20 @@ class AssignmentTests(AssignmentTestHelperMixin):
 
         role_list = PROVIDERS.assignment_api.get_roles_for_user_and_project(
             user_ref['id'],
-            project_ref['id'])
+            project_ref['id'],
+            True)
 
         self.assertEqual(set([r['id'] for r in role_ref_list]),
                          set(role_list))
 
     def test_get_role_by_user_and_project(self):
         roles_ref = PROVIDERS.assignment_api.get_roles_for_user_and_project(
-            self.user_foo['id'], self.tenant_bar['id'])
+            self.user_foo['id'], self.tenant_bar['id'], True)
         self.assertNotIn(self.role_admin['id'], roles_ref)
         PROVIDERS.assignment_api.add_role_to_user_and_project(
             self.user_foo['id'], self.tenant_bar['id'], self.role_admin['id'])
         roles_ref = PROVIDERS.assignment_api.get_roles_for_user_and_project(
-            self.user_foo['id'], self.tenant_bar['id'])
+            self.user_foo['id'], self.tenant_bar['id'], True)
         self.assertIn(self.role_admin['id'], roles_ref)
         self.assertNotIn(default_fixtures.MEMBER_ROLE_ID, roles_ref)
 
@@ -753,9 +754,41 @@ class AssignmentTests(AssignmentTestHelperMixin):
             self.tenant_bar['id'],
             default_fixtures.MEMBER_ROLE_ID)
         roles_ref = PROVIDERS.assignment_api.get_roles_for_user_and_project(
-            self.user_foo['id'], self.tenant_bar['id'])
+            self.user_foo['id'], self.tenant_bar['id'], True)
         self.assertIn(self.role_admin['id'], roles_ref)
         self.assertIn(default_fixtures.MEMBER_ROLE_ID, roles_ref)
+
+    def test_get_role_by_user_and_project_strip_domain_roles(self):
+        new_domain = unit.new_domain_ref()
+        PROVIDERS.resource_api.create_domain(new_domain['id'], new_domain)
+        new_user = unit.new_user_ref(domain_id=new_domain['id'])
+        new_user = PROVIDERS.identity_api.create_user(new_user)
+        new_project = unit.new_project_ref(domain_id=new_domain['id'])
+        PROVIDERS.resource_api.create_project(new_project['id'], new_project)
+        role = self._create_role(domain_id=new_domain['id'])
+
+        # Now create the grants (roles are defined in default_fixtures)
+        PROVIDERS.assignment_api.create_grant(
+            user_id=new_user['id'],
+            project_id=new_project['id'],
+            role_id=default_fixtures.MEMBER_ROLE_ID)
+        PROVIDERS.assignment_api.create_grant(
+            user_id=new_user['id'],
+            domain_id=new_domain['id'],
+            role_id=role['id'],
+            inherited_to_projects=True)
+
+        roles_ids = PROVIDERS.assignment_api.get_roles_for_user_and_project(
+            new_user['id'], new_project['id'], True)
+        self.assertEqual(1, len(roles_ids))
+        self.assertIn(self.role_member['id'], roles_ids)
+        self.assertNotIn(role['id'], roles_ids)
+
+        roles_ids = PROVIDERS.assignment_api.get_roles_for_user_and_project(
+            new_user['id'], new_project['id'], False)
+        self.assertEqual(2, len(roles_ids))
+        self.assertIn(self.role_member['id'], roles_ids)
+        self.assertIn(role['id'], roles_ids)
 
     def test_get_roles_for_user_and_domain(self):
         """Test for getting roles for user on a domain.
@@ -847,14 +880,16 @@ class AssignmentTests(AssignmentTestHelperMixin):
             exception.UserNotFound,
             PROVIDERS.assignment_api.get_roles_for_user_and_project,
             uuid.uuid4().hex,
-            self.tenant_bar['id']
+            self.tenant_bar['id'],
+            True
         )
 
         self.assertRaises(
             exception.ProjectNotFound,
             PROVIDERS.assignment_api.get_roles_for_user_and_project,
             self.user_foo['id'],
-            uuid.uuid4().hex
+            uuid.uuid4().hex,
+            True
         )
 
     def test_add_role_to_user_and_project_returns_not_found(self):
@@ -891,7 +926,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
             self.tenant_bar['id'],
             default_fixtures.MEMBER_ROLE_ID)
         roles_ref = PROVIDERS.assignment_api.get_roles_for_user_and_project(
-            self.user_foo['id'], self.tenant_bar['id'])
+            self.user_foo['id'], self.tenant_bar['id'], True)
         self.assertNotIn(default_fixtures.MEMBER_ROLE_ID, roles_ref)
         self.assertRaises(exception.NotFound,
                           PROVIDERS.assignment_api.
@@ -1539,7 +1574,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
         # the above results.
         combined_list = (
             PROVIDERS.assignment_api.get_roles_for_user_and_project(
-                user1['id'], project1['id']
+                user1['id'], project1['id'], True
             )
         )
         self.assertEqual(4, len(combined_list))
@@ -1631,7 +1666,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
         # both project and domain
         combined_list = (
             PROVIDERS.assignment_api.get_roles_for_user_and_project(
-                user1['id'], project1['id']
+                user1['id'], project1['id'], True
             )
         )
         self.assertEqual(3, len(combined_list))
@@ -1925,7 +1960,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
             self.user_foo['id'], self.tenant_bar['id'], alt_role['id'])
         PROVIDERS.role_api.delete_role(role['id'])
         roles_ref = PROVIDERS.assignment_api.get_roles_for_user_and_project(
-            self.user_foo['id'], self.tenant_bar['id'])
+            self.user_foo['id'], self.tenant_bar['id'], True)
         self.assertNotIn(role['id'], roles_ref)
         self.assertIn(alt_role['id'], roles_ref)
 
@@ -2819,7 +2854,7 @@ class InheritanceTests(AssignmentTestHelperMixin):
         # should only include the direct role assignment on the project
         combined_list = (
             PROVIDERS.assignment_api.get_roles_for_user_and_project(
-                user1['id'], project1['id']
+                user1['id'], project1['id'], True
             )
         )
         self.assertEqual(1, len(combined_list))
@@ -2835,7 +2870,7 @@ class InheritanceTests(AssignmentTestHelperMixin):
         # should now include the inherited role on the domain
         combined_list = (
             PROVIDERS.assignment_api.get_roles_for_user_and_project(
-                user1['id'], project1['id']
+                user1['id'], project1['id'], True
             )
         )
         self.assertEqual(2, len(combined_list))
@@ -2948,7 +2983,7 @@ class InheritanceTests(AssignmentTestHelperMixin):
         # should only include the direct role assignment on the project
         combined_list = (
             PROVIDERS.assignment_api.get_roles_for_user_and_project(
-                user1['id'], project1['id']
+                user1['id'], project1['id'], True
             )
         )
         self.assertEqual(1, len(combined_list))
@@ -2968,7 +3003,7 @@ class InheritanceTests(AssignmentTestHelperMixin):
         # should now include the inherited roles on the domain
         combined_list = (
             PROVIDERS.assignment_api.get_roles_for_user_and_project(
-                user1['id'], project1['id']
+                user1['id'], project1['id'], True
             )
         )
         self.assertEqual(3, len(combined_list))
@@ -3783,7 +3818,7 @@ class ImpliedRoleTests(AssignmentTestHelperMixin):
         # the above by calling get_roles_for_user_and_project(), which should
         # list the role_ids, yet remove any duplicates
         role_ids = PROVIDERS.assignment_api.get_roles_for_user_and_project(
-            test_data['users'][0]['id'], test_data['projects'][0]['id'])
+            test_data['users'][0]['id'], test_data['projects'][0]['id'], True)
         # We should see 6 entries, not 7, since role index 5 appeared twice in
         # the answer from list_role_assignments
         self.assertThat(role_ids, matchers.HasLength(6))

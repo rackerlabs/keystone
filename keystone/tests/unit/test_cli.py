@@ -136,7 +136,8 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
         role_list = (
             PROVIDERS.assignment_api.get_roles_for_user_and_project(
                 user['id'],
-                project['id']))
+                project['id'],
+                True))
         self.assertIs(3, len(role_list))
         self.assertIn(admin_role['id'], role_list)
         self.assertIn(reader_role['id'], role_list)

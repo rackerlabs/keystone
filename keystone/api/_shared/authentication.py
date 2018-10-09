@@ -71,7 +71,7 @@ def _check_and_set_default_scoping(auth_info, auth_context):
         if (default_project_ref.get('enabled', True) and
                 default_project_domain_ref.get('enabled', True)):
             if PROVIDERS.assignment_api.get_roles_for_user_and_project(
-                    user_ref['id'], default_project_id):
+                    user_ref['id'], default_project_id, True):
                 auth_info.set_scope(project_id=default_project_id)
             else:
                 msg = ("User %(user_id)s doesn't have access to"
