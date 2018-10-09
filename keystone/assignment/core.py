@@ -111,7 +111,8 @@ class Manager(manager.Manager):
                 )
 
     @MEMOIZE_COMPUTED_ASSIGNMENTS
-    def get_roles_for_user_and_project(self, user_id, tenant_id):
+    def get_roles_for_user_and_project(self, user_id, tenant_id,
+                                       strip_domain_roles=True):
         """Get the roles associated with a user within given project.
 
         This includes roles directly assigned to the user on the
@@ -125,7 +126,8 @@ class Manager(manager.Manager):
         """
         PROVIDERS.resource_api.get_project(tenant_id)
         assignment_list = self.list_role_assignments(
-            user_id=user_id, project_id=tenant_id, effective=True)
+            user_id=user_id, project_id=tenant_id, effective=True,
+            strip_domain_roles=strip_domain_roles)
         # Use set() to process the list to remove any duplicates
         return list(set([x['role_id'] for x in assignment_list]))
 
