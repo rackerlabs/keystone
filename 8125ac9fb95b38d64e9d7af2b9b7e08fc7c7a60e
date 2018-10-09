@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_8655f3c4",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-09T01:23:39Z",
+      "side": 1,
+      "message": "I think this change requires a release note too. Pl Update.",
+      "revId": "8125ac9fb95b38d64e9d7af2b9b7e08fc7c7a60e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
