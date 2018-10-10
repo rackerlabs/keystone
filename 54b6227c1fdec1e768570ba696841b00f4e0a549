@@ -16,6 +16,24 @@
       "revId": "54b6227c1fdec1e768570ba696841b00f4e0a549",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_be81e0c4",
+        "filename": "keystone/api/_shared/saml.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-10T20:40:20Z",
+      "side": 1,
+      "message": "I agree, but I don\u0027t mind it being here. It can easily be moved back into keystone.api.auth",
+      "parentUuid": "3f79a3b5_88a5ce03",
+      "revId": "54b6227c1fdec1e768570ba696841b00f4e0a549",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
