@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_1ee01497",
+        "filename": "keystone/api/users.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-10T20:44:12Z",
+      "side": 1,
+      "message": "We could split it into a module, but the design was to isolate the prefixes so you can always figure out where things are supposed to be (and not be surprised that changing keystone.api.users affected keystone.api.application_credentials for example because they hooked into the same paths with different routers).\n\nI think this also highlights short comings in our design and will help us move in the furture to less \"oh we can just make this part of \u0027users\u0027\" mentalitly).\n\nIt is possible to split this up, however, I\u0027d like to (at the very least) keep everything in keystone.api.users if it is prefixed /v3/users (even if that becomes something like keystone.api.users.application_credentials, etc)",
+      "parentUuid": "3f79a3b5_28559a1e",
+      "revId": "eda68fe8418413e8a24bffaaa13513c0edad2884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_4889f6c4",
         "filename": "keystone/server/flask/common.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_1ef9f44c",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 924,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-10T20:44:12Z",
+      "side": 1,
+      "message": "Was an unused reference and project_domain_id doesn\u0027t exist on the token model.",
+      "parentUuid": "3f79a3b5_4889f6c4",
+      "revId": "eda68fe8418413e8a24bffaaa13513c0edad2884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_08bd3e66",
         "filename": "keystone/server/flask/common.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2018-10-10T19:38:17Z",
       "side": 1,
       "message": "Why did this change?",
+      "revId": "eda68fe8418413e8a24bffaaa13513c0edad2884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_1e8ed4d0",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 945,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-10T20:44:12Z",
+      "side": 1,
+      "message": "because @property doesn\u0027t work as expected in classmethods, this was never used until users and thus didn\u0027t trigger a traceback until now.",
+      "parentUuid": "3f79a3b5_08bd3e66",
       "revId": "eda68fe8418413e8a24bffaaa13513c0edad2884",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
