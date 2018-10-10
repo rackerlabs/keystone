@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_cae5f73f",
+        "filename": "keystone/tests/unit/test_healthcheck.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-10T22:41:30Z",
+      "side": 1,
+      "message": "This is also done as part of setup, you can simply drop the setUp() method in it\u0027s entirety.",
+      "revId": "48310fa529fd10da53a62adfa39c4988634abd72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_6a91439a",
+        "filename": "keystone/tests/unit/test_healthcheck.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-10T22:41:30Z",
+      "side": 1,
+      "message": "This isn\u0027t needed, it\u0027s done as part of setup for you: \nhttps://github.com/openstack/keystone/blob/8e33c782320ae1014f9b69b484b5b6c3cf0593f6/keystone/tests/unit/rest.py#L64",
+      "revId": "48310fa529fd10da53a62adfa39c4988634abd72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_6aa863d8",
+        "filename": "keystone/tests/unit/test_healthcheck.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-10T22:41:30Z",
+      "side": 1,
+      "message": "This isn\u0027t needed. test_client automatically sends data through to the application itself.",
+      "revId": "48310fa529fd10da53a62adfa39c4988634abd72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_ca80974c",
+        "filename": "keystone/tests/unit/test_healthcheck.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-10T22:41:30Z",
+      "side": 1,
+      "message": "this can also be dropped. let it just be \"localhost\"",
+      "revId": "48310fa529fd10da53a62adfa39c4988634abd72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_eaea330c",
+        "filename": "keystone/tests/unit/test_healthcheck.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-10T22:41:30Z",
+      "side": 1,
+      "message": "You may want to look at the response make sure it is what you expect. Otherwise, as you can see, the test is super super lightweight.",
+      "revId": "48310fa529fd10da53a62adfa39c4988634abd72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
