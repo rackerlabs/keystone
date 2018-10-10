@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_f4747439",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-10T00:42:24Z",
+      "side": 1,
+      "message": "typo within",
+      "revId": "cb9b6529e74c06955460130279a94ac60aa2a8a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_b4bcbcb5",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-10T00:42:24Z",
+      "side": 1,
+      "message": "the func get_roles_for_trustor_and project is returning a list with no duplicate values. Why using set on that list again?",
+      "revId": "cb9b6529e74c06955460130279a94ac60aa2a8a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_74dce416",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-10T00:42:24Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "cb9b6529e74c06955460130279a94ac60aa2a8a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
