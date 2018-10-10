@@ -1731,7 +1731,7 @@ class ResourceDriverTests(object):
         project = {
             'name': uuid.uuid4().hex,
             'id': project_id,
-            'domain_id': default_fixtures.ROOT_DOMAIN['id'],
+            'domain_id': uuid.uuid4().hex,
         }
         self.driver.create_project(project_id, project)
 
@@ -1740,18 +1740,10 @@ class ResourceDriverTests(object):
         project = {
             'name': uuid.uuid4().hex,
             'id': project_id,
-            'domain_id': default_fixtures.ROOT_DOMAIN['id'],
-        }
-        parent_project = self.driver.create_project(project_id, project)
-
-        project_id = uuid.uuid4().hex
-        project = {
-            'name': uuid.uuid4().hex,
-            'id': project_id,
-            'domain_id': default_fixtures.ROOT_DOMAIN['id'],
+            'domain_id': uuid.uuid4().hex,
             'description': uuid.uuid4().hex,
             'enabled': True,
-            'parent_id': parent_project['id'],
+            'parent_id': uuid.uuid4().hex,
             'is_domain': True,
         }
         self.driver.create_project(project_id, project)
@@ -1767,7 +1759,7 @@ class ResourceDriverTests(object):
 
     def test_create_project_same_name_same_domain_conflict(self):
         name = uuid.uuid4().hex
-        domain_id = default_fixtures.ROOT_DOMAIN['id']
+        domain_id = uuid.uuid4().hex
 
         project_id = uuid.uuid4().hex
         project = {
@@ -1792,14 +1784,14 @@ class ResourceDriverTests(object):
         project = {
             'name': uuid.uuid4().hex,
             'id': project_id,
-            'domain_id': default_fixtures.ROOT_DOMAIN['id'],
+            'domain_id': uuid.uuid4().hex,
         }
         self.driver.create_project(project_id, project)
 
         project = {
             'name': uuid.uuid4().hex,
             'id': project_id,
-            'domain_id': default_fixtures.ROOT_DOMAIN['id'],
+            'domain_id': uuid.uuid4().hex,
         }
         self.assertRaises(exception.Conflict, self.driver.create_project,
                           project_id, project)

@@ -197,9 +197,10 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
         return config_files
 
-    def setUp(self):
+    def setUp(self, enable_sqlite_foreign_key=False):
         """Setup for v3 Restful Test Cases."""
-        super(RestfulTestCase, self).setUp()
+        super(RestfulTestCase, self).setUp(
+            enable_sqlite_foreign_key=enable_sqlite_foreign_key)
 
         self.empty_context = {'environment': {}}
 
@@ -209,27 +210,37 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
 
         super(RestfulTestCase, self).load_backends()
 
-    def load_fixtures(self, fixtures):
-        self.load_sample_data()
+    def load_fixtures(self, fixtures, enable_sqlite_foreign_key=False):
+        self.load_sample_data(
+            enable_sqlite_foreign_key=enable_sqlite_foreign_key)
 
-    def _populate_default_domain(self):
+    def _populate_default_domain(self, enable_sqlite_foreign_key=False):
         try:
             PROVIDERS.resource_api.get_domain(DEFAULT_DOMAIN_ID)
         except exception.DomainNotFound:
-            root_domain = unit.new_domain_ref(
-                id=resource_base.NULL_DOMAIN_ID,
-                name=resource_base.NULL_DOMAIN_ID
-            )
-            PROVIDERS.resource_api.create_domain(resource_base.NULL_DOMAIN_ID,
-                                                 root_domain)
+            # TODO(wxy): when FK is enabled in sqlite, a lot of tests will fail
+            # due to the root domain is missing. So we should open FKs for the
+            # tests one by one. If the FKs is enabled for one test,
+            # `enable_sqlite_foreign_key` should be `true` here to ensure the
+            # root domain is created. Once all tests enable FKs, the
+            # ``enable_sqlite_foreign_key`` can be removed.
+            if enable_sqlite_foreign_key:
+                root_domain = unit.new_domain_ref(
+                    id=resource_base.NULL_DOMAIN_ID,
+                    name=resource_base.NULL_DOMAIN_ID
+                )
+                self.resource_api.create_domain(resource_base.NULL_DOMAIN_ID,
+                                                root_domain)
             domain = unit.new_domain_ref(
                 description=(u'The default domain'),
                 id=DEFAULT_DOMAIN_ID,
                 name=u'Default')
             PROVIDERS.resource_api.create_domain(DEFAULT_DOMAIN_ID, domain)
 
-    def load_sample_data(self, create_region_and_endpoints=True):
-        self._populate_default_domain()
+    def load_sample_data(self, create_region_and_endpoints=True,
+                         enable_sqlite_foreign_key=False):
+        self._populate_default_domain(
+            enable_sqlite_foreign_key=enable_sqlite_foreign_key)
         self.domain = unit.new_domain_ref()
         self.domain_id = self.domain['id']
         PROVIDERS.resource_api.create_domain(self.domain_id, self.domain)

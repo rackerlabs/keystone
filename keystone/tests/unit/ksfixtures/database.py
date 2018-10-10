@@ -103,11 +103,12 @@ def _load_sqlalchemy_models():
 class Database(fixtures.Fixture):
     """A fixture for setting up and tearing down a database."""
 
-    def __init__(self):
+    def __init__(self, enable_sqlite_foreign_key=False):
         super(Database, self).__init__()
         initialize_sql_session()
         _load_sqlalchemy_models()
-        sql.enable_sqlite_foreign_key()
+        if enable_sqlite_foreign_key:
+            sql.enable_sqlite_foreign_key()
 
     def setUp(self):
         super(Database, self).setUp()
