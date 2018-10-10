@@ -10,28 +10,37 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_log import versionutils
 from oslo_policy import policy
 
 from keystone.common.policies import base
 
+deprecated_list_role_assignments = policy.DeprecatedRule(
+    name=base.IDENTITY % 'list_role_assignments',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
+
+DEPRECATED_REASON = (
+    'As of the Stein release, the role assignment API now understands how to '
+    'handle system-scoped tokens in addition to project-scoped tokens, making '
+    'the API more accessible to users without compromising security or '
+    'manageability for administrators. The new default policies for this API '
+    'account for these changes automatically.'
+)
+
 role_assignment_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_role_assignments',
-        check_str=base.RULE_ADMIN_REQUIRED,
-        # FIXME(lbragstad): This API will behave differently depending on the
-        # token scope used to call the API. A system administrator should be
-        # able to list all role assignment across the entire deployment. A
-        # project or domain administrator should be able to list role
-        # assignments within the domain or project they administer. Once we
-        # make keystone smart enough to handle those cases in code, we can add
-        # 'project' to the scope_types below. For now, this should be a system
-        # administrator only operation to maintain backwards compatibility.
+        check_str=base.SYSTEM_READER,
         scope_types=['system'],
         description='List role assignments.',
         operations=[{'path': '/v3/role_assignments',
                      'method': 'GET'},
                     {'path': '/v3/role_assignments',
-                     'method': 'HEAD'}]),
+                     'method': 'HEAD'}],
+        deprecated_rule=deprecated_list_role_assignments,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_role_assignments_for_tree',
         check_str=base.RULE_ADMIN_REQUIRED,
