@@ -1,0 +1,24 @@
+---
+upgrade:
+  - |
+    [`bug 1750673 <https://bugs.launchpad.net/keystone/+bug/1750673>`_]
+    [`bug 968696 <https://bugs.launchpad.net/keystone/+bug/968696>`_]
+    Policies protecting the ``/v3/role_assignments`` API have changed
+    defaults in order to make the role_assignments API more accessible for all
+    users and not just operators or system administrator. Please consider these
+    updates when using this version of keystone since it could affect API
+    behavior in your deployment, especially if you're using a customized policy
+    file.
+security:
+  - |
+    [`bug 1750673 <https://bugs.launchpad.net/keystone/+bug/1750673>`_]
+    [`bug 968696 <https://bugs.launchpad.net/keystone/+bug/968696>`_]
+    More granular policy checks have been applied to the role assignments API in
+    order to make it more self-service for users.
+fixes:
+  - |
+    [`bug 1750673 <https://bugs.launchpad.net/keystone/+bug/1750673>`_]
+    [`bug 968696 <https://bugs.launchpad.net/keystone/+bug/968696>`_]
+    Improved self-service support has been implemented in the role_assignments API.
+    This means that end users have the ability to list role_assignments based on
+    the validations they contain.
