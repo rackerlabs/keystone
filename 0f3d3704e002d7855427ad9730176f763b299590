@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_4ff4a055",
+        "filename": "keystone/api/_shared/EC2_S3_Resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-10T17:18:39Z",
+      "side": 1,
+      "message": "This needs to be .get(..., {})",
+      "revId": "0f3d3704e002d7855427ad9730176f763b299590",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
