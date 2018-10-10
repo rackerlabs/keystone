@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_7bb4cc36",
+        "filename": "keystone/tests/unit/trust/test_backends.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 501,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-10T07:55:48Z",
+      "side": 1,
+      "message": "Sorry. That was by mistake. Removed in new patch.",
+      "parentUuid": "3f79a3b5_4a190085",
+      "range": {
+        "startLine": 501,
+        "startChar": 0,
+        "endLine": 501,
+        "endChar": 58
+      },
+      "revId": "072cecafcb49822625a373ded30960f1b45c051f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_4d461625",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 2
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_1b7d986c",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-10T07:55:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_4d461625",
+      "revId": "072cecafcb49822625a373ded30960f1b45c051f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_1dfb5015",
         "filename": "releasenotes/notes/bug-1473292-c21481e6aec29ec2.yaml",
         "patchSetId": 2
@@ -53,6 +95,30 @@
       "writtenOn": "2018-10-10T06:30:26Z",
       "side": 1,
       "message": "here should be updated as well.",
+      "range": {
+        "startLine": 19,
+        "startChar": 24,
+        "endLine": 19,
+        "endChar": 57
+      },
+      "revId": "072cecafcb49822625a373ded30960f1b45c051f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_7b8dac7a",
+        "filename": "releasenotes/notes/bug-1473292-c21481e6aec29ec2.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-10T07:55:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_1dfb5015",
       "range": {
         "startLine": 19,
         "startChar": 24,
