@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_44731ee9",
+        "filename": "keystone/tests/unit/test_healthcheck.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-10T21:37:48Z",
+      "side": 1,
+      "message": "Don\u0027t assign copyright to an org that you don\u0027t belong to (omit this line)",
+      "revId": "a3f9baba5bce72ab8bfe7fb11ccd52aab61d0af3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_c4488e8b",
+        "filename": "keystone/tests/unit/test_healthcheck.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-10T21:37:48Z",
+      "side": 1,
+      "message": "Use a restful testcase.",
+      "revId": "a3f9baba5bce72ab8bfe7fb11ccd52aab61d0af3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_a438f2ec",
+        "filename": "keystone/tests/unit/test_healthcheck.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-10T21:37:48Z",
+      "side": 1,
+      "message": "This is done for you in the restful testcase.",
+      "revId": "a3f9baba5bce72ab8bfe7fb11ccd52aab61d0af3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_c42deeae",
+        "filename": "keystone/tests/unit/test_healthcheck.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-10T21:37:48Z",
+      "side": 1,
+      "message": "do not use webob, use test client (flask) see example:\n\n   with self.test_client() as c:\n       resp \u003d c.get(\u0027/healthcheck\u0027)\n       ... confirm things work ...",
+      "revId": "a3f9baba5bce72ab8bfe7fb11ccd52aab61d0af3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_84337612",
+        "filename": "keystone/tests/unit/test_healthcheck.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-10T21:37:48Z",
+      "side": 1,
+      "message": "remove these aliases and just use test_get_healthcheck.",
+      "revId": "a3f9baba5bce72ab8bfe7fb11ccd52aab61d0af3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
