@@ -1,0 +1,136 @@
+#    Licensed under the Apache License, Version 2.0 (the "License"); you may
+#    not use this file except in compliance with the License. You may obtain
+#    a copy of the License at
+#
+#         http://www.apache.org/licenses/LICENSE-2.0
+#
+#    Unless required by applicable law or agreed to in writing, software
+#    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+#    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+#    License for the specific language governing permissions and limitations
+#    under the License.
+
+from keystone.common import provider_api
+import keystone.conf
+from keystone.tests.common import auth as common_auth
+from keystone.tests import unit
+from keystone.tests.unit import base_classes
+from keystone.tests.unit import ksfixtures
+
+CONF = keystone.conf.CONF
+PROVIDERS = provider_api.ProviderAPIs
+
+
+class SystemReaderTests(base_classes.TestCaseWithBootstrap,
+                        common_auth.AuthTestMixin):
+
+    def setUp(self):
+        super(SystemReaderTests, self).setUp()
+        self.loadapp()
+        self.useFixture(ksfixtures.Policy(self.config_fixture))
+        self.config_fixture.config(group='oslo_policy', enforce_scope=True)
+
+        system_reader = unit.new_user_ref(
+            domain_id=CONF.identity.default_domain_id
+        )
+        self.system_reader_id = PROVIDERS.identity_api.create_user(
+            system_reader
+        )['id']
+        PROVIDERS.assignment_api.create_system_grant_for_user(
+            self.system_reader_id, self.bootstrapper.reader_role_id
+        )
+
+        project_ref = unit.new_project_ref(CONF.identity.default_domain_id)
+        self.system_project_id = PROVIDERS.resource_api.create_project(
+            project_ref['id'], project_ref)['id']
+
+        PROVIDERS.assignment_api.add_role_to_user_and_project(
+            user_id=self.system_reader_id,
+            tenant_id=CONF.identity.default_project_id,
+            role_id=self.bootstrapper.reader_role_id)
+
+        auth = self.build_authentication_request(
+            user_id=self.system_reader_id, password=system_reader['password'],
+            system=True
+        )
+
+        # Grab a token using the persona we're testing and prepare headers
+        # for requests we'll be making in the tests.
+        with self.test_client() as c:
+            r = c.post('/v3/auth/tokens', json=auth)
+            self.token_id = r.headers['X-Subject-Token']
+            self.headers = {'X-Auth-Token': self.token_id}
+
+    def test_user_can_list_role_assignments(self):
+        assignment_list = PROVIDERS.assignment_api.list_role_assignments()
+
+        with self.test_client() as c:
+            r = c.get('/v3/role_assignments', headers=self.headers)
+            assignment_ids = []
+            for assignment in r.json['role_assignments']:
+                assignment_ids.append(assignment['id'])
+            self.assertIn(assignment_list['id'], assignment_ids)
+
+    def test_user_can_list_role_assignments_with_filter(self):
+        assignment_list = PROVIDERS.assignment_api.list_role_assignments(
+            role_id=self.bootstrapper.reader_role_id
+        )
+
+        with self.test_client() as c:
+            r = c.get('/v3/role_assignments?role.id=%s' %
+                      self.bootstrapper.reader_role_id, headers=self.headers)
+            assignment_ids = []
+            for assignment in r.json['role_assignments']:
+                assignment_ids.append(assignment['id'])
+
+            self.assertEqual(1, len(r.json['role_assignments']))
+            self.assertIn(assignment_list['id'], assignment_ids)
+
+    def test_user_can_list_role_assignments_with_multiple_filter(self):
+        assignment_list = PROVIDERS.assignment_api.list_role_assignments(
+            role_id=self.bootstrapper.reader_role_id,
+            user_id=self.system_reader_id
+        )
+
+        with self.test_client() as c:
+            r = c.get('/v3/role_assignments?role.id=%s&user.id=%s' %
+                      self.bootstrapper.reader_role_id,
+                      self.system_reader_id,
+                      headers=self.headers)
+            assignment_ids = []
+            for assignment in r.json['role_assignments']:
+                assignment_ids.append(assignment['id'])
+
+            self.assertEqual(1, len(r.json['role_assignments']))
+            self.assertIn(assignment_list['id'], assignment_ids)
+
+    def test_user_can_list_role_assignments_with_include_names(self):
+        assignment_list = PROVIDERS.assignment_api.list_role_assignments(
+            include_names=True
+        )
+
+        with self.test_client() as c:
+            r = c.get('/v3/role_assignments?include_names=True',
+                      headers=self.headers)
+            assignment_names = []
+            for assignment in r.json['role_assignments']:
+                assignment_names.append(assignment['name'])
+
+            self.assertEqual(1, len(r.json['role_assignments']))
+            self.assertIn(assignment_list['name'], assignment_names)
+
+    def test_user_can_list_role_assignments_for_tree(self):
+        assignment_list = PROVIDERS.assignment_api.list_role_assignments(
+            project_id=self.system_project_id,
+            include_subtree=True
+        )
+
+        with self.test_client() as c:
+            r = c.get('/v3/role_assignments?scope.project.id=%(project)s'
+                      '&include_subtree=True', headers=self.headers)
+            assignment_ids = []
+            for assignment in r.json['role_assignments']:
+                assignment_ids.append(assignment['id'])
+
+            self.assertEqual(1, len(r.json['role_assignments']))
+            self.assertIn(assignment_list['id'], assignment_ids)
