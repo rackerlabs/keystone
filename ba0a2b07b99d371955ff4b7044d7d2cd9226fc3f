@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_4c1d91bc",
+        "filename": "keystone/tests/unit/test_upgrade_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-10T14:38:03Z",
+      "side": 1,
+      "message": "These tests aren\u0027t really super useful, but I added them to give reviewers a feel for how we can test our checks. Since the code to do the CLI bits is in oslo.upgradecheck, we can make our testing simpler by just testing the boundaries of that interface.\n\nI didn\u0027t want to propose this patch without tests and these checks aren\u0027t doing anything useful for operators, but I can remove them if we have an actual upgrade check to implement.",
+      "revId": "ba0a2b07b99d371955ff4b7044d7d2cd9226fc3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
