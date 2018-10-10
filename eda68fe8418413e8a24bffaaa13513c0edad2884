@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_28559a1e",
+        "filename": "keystone/api/users.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-10T19:38:17Z",
+      "side": 1,
+      "message": "Do we *have* to stick all of these endpoints in here? It\u0027s kind of an unfortunate shortsightedness that we glombed a bunch of stuff under /v3/users, but they\u0027re really separate APIs and creating a massive module to hold all of them is :(",
+      "revId": "eda68fe8418413e8a24bffaaa13513c0edad2884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_4889f6c4",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 924,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-10T19:38:17Z",
+      "side": 1,
+      "message": "Why did this change?",
+      "revId": "eda68fe8418413e8a24bffaaa13513c0edad2884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_08bd3e66",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 945,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-10T19:38:17Z",
+      "side": 1,
+      "message": "Why did this change?",
+      "revId": "eda68fe8418413e8a24bffaaa13513c0edad2884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
