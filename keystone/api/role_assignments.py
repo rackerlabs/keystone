@@ -102,13 +102,11 @@ class RoleAssignmentsResource(ks_flask.ResourceBase):
         self._assert_system_nand_project()
         self._assert_user_nand_group()
         self._assert_effective_filters_if_needed()
-
         refs = PROVIDERS.assignment_api.list_role_assignments(
             role_id=params.get('role.id'),
             user_id=params.get('user.id'),
             group_id=params.get('group.id'),
             system=params.get('scope.system'),
-            domain_id=params.get('scope.domain.id'),
             project_id=params.get('scope.project.id'),
             include_subtree=include_subtree,
             inherited=self._inherited,
