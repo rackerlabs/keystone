@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_88a5ce03",
+        "filename": "keystone/api/_shared/saml.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-10T19:20:03Z",
+      "side": 1,
+      "message": "I see the comment on https://review.openstack.org/#/c/603461/10/keystone/api/auth.py@58 but it kind of seems weird to have a _shared.saml just for one method.",
+      "revId": "54b6227c1fdec1e768570ba696841b00f4e0a549",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
