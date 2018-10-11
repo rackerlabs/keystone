@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_0d1469e9",
+        "filename": "keystone/tests/unit/test_healthcheck.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-11T00:28:01Z",
+      "side": 1,
+      "message": "I am a little curious, do we really require a new file for this test case?? Can this class be written in its base class?",
+      "revId": "11ba4bdcbed23949addc29ef5e8aa795bebca70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
