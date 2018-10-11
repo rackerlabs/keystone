@@ -16,6 +16,24 @@
       "revId": "b475d291d6fa0ac84a5066c0e1dc00df3d83aa8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_d62107fe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-11T21:02:01Z",
+      "side": 1,
+      "message": "We looked through codesearch.o.o and only saw it in our codebase. Pretty much means no one is using it.",
+      "parentUuid": "3f79a3b5_591a15c7",
+      "revId": "b475d291d6fa0ac84a5066c0e1dc00df3d83aa8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
