@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_591a15c7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-11T13:57:49Z",
+      "side": 1,
+      "message": "Since this is queued up anyway, I wouldn\u0027t be opposed to sending a note to the mailing list to see if anyone is using this somehow.",
+      "revId": "b475d291d6fa0ac84a5066c0e1dc00df3d83aa8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
