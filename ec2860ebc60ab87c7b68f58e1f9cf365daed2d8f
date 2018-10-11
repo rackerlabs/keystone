@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_d39cb95c",
+        "filename": "keystone/server/flask/request_processing/json_body.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-11T19:58:40Z",
+      "side": 1,
+      "message": "Why do we need to set enforcement here?",
+      "revId": "ec2860ebc60ab87c7b68f58e1f9cf365daed2d8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
