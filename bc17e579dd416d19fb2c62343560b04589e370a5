@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_7397e547",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-11T19:54:30Z",
+      "side": 1,
+      "message": "Can this be removed now, too?\n\nhttps://review.openstack.org/#/c/609500/3/keystone/tests/unit/test_wsgi.py",
+      "revId": "bc17e579dd416d19fb2c62343560b04589e370a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
