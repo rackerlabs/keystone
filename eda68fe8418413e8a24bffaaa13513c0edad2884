@@ -60,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_368cfb2c",
+        "filename": "keystone/api/users.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-11T20:54:23Z",
+      "side": 1,
+      "message": "We can add an extra check to raise if it\u0027s set to __UNUSED__. or similar other object. I\u0027ll add it down the chain.\n\nI wont leak unless someone uses .wrap_member or .wrap_collection.",
+      "parentUuid": "3f79a3b5_405f7174",
+      "range": {
+        "startLine": 196,
+        "startChar": 4,
+        "endLine": 197,
+        "endChar": 29
+      },
+      "revId": "eda68fe8418413e8a24bffaaa13513c0edad2884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_e0fd5d3b",
         "filename": "keystone/api/users.py",
         "patchSetId": 2
@@ -71,6 +95,30 @@
       "writtenOn": "2018-10-11T19:43:49Z",
       "side": 1,
       "message": "-*",
+      "range": {
+        "startLine": 400,
+        "startChar": 34,
+        "endLine": 400,
+        "endChar": 35
+      },
+      "revId": "eda68fe8418413e8a24bffaaa13513c0edad2884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_16977f3b",
+        "filename": "keystone/api/users.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-11T20:54:23Z",
+      "side": 1,
+      "message": "Fixed in followup. Damn, missed this one :P",
+      "parentUuid": "3f79a3b5_e0fd5d3b",
       "range": {
         "startLine": 400,
         "startChar": 34,
