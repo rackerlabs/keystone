@@ -34,6 +34,23 @@
       "revId": "11ba4bdcbed23949addc29ef5e8aa795bebca70d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_6d071d1f",
+        "filename": "keystone/tests/unit/test_healthcheck.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-11T01:26:41Z",
+      "side": 1,
+      "message": "You should be able to make the expected b\u0027\u0027 and work in both py27 and py3x",
+      "revId": "11ba4bdcbed23949addc29ef5e8aa795bebca70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
