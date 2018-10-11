@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_99c8ad56",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 767,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-11T13:55:09Z",
+      "side": 0,
+      "message": "I looked in d97832e8e8 but I could find the reason why this change was made and the commit message here doesn\u0027t really explain it either.",
+      "revId": "b98089e5b04bff5a735c306d3d13b896925feeed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
