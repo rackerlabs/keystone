@@ -52,6 +52,24 @@
       "revId": "49ff3a87cb953bb549086ccaeb3c5c2998f542a5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_212e098d",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1094,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-11T08:42:56Z",
+      "side": 1,
+      "message": "Hi Colleen,I used the approach of mocking prints to check stdout. As there are 3 prints in the mock_call containing Json object. It is difficult to match the expected with the actual as you can see in [1].Due to the different key positions the matching is failed.\n\nSo I asserted a mock_count in code to confirm that all 3 prints are there but not able to validate stdout. Suggestions Pl?\nThanks\n\n[1] http://paste.openstack.org/show/731879/",
+      "parentUuid": "3f79a3b5_a9227ba5",
+      "revId": "49ff3a87cb953bb549086ccaeb3c5c2998f542a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
