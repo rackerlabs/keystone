@@ -16,6 +16,24 @@
       "revId": "b98089e5b04bff5a735c306d3d13b896925feeed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_808a6962",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 767,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-11T18:54:04Z",
+      "side": 0,
+      "message": "It was a change because we couldn\u0027t emit notifications in the transitional place with users on webob and auth on flask. The notifications were emitted from identity_api.authenticate via a decorator and at the time of auth conversion, all notifications were flask-only on \"auth\" code flows.",
+      "parentUuid": "3f79a3b5_99c8ad56",
+      "revId": "b98089e5b04bff5a735c306d3d13b896925feeed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
