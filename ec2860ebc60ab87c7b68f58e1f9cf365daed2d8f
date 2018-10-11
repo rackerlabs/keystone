@@ -16,6 +16,24 @@
       "revId": "ec2860ebc60ab87c7b68f58e1f9cf365daed2d8f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_d6f267e3",
+        "filename": "keystone/server/flask/request_processing/json_body.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-11T20:45:14Z",
+      "side": 1,
+      "message": "Because we don\u0027t ever even touch the underlying resource methods. With a handled exception, we would trigger the \"assert enforcement called\" because we never called enforcement. This circumvents this. I can expand the comment.\n\n(Commit message communicates this better than the comment does)",
+      "parentUuid": "3f79a3b5_d39cb95c",
+      "revId": "ec2860ebc60ab87c7b68f58e1f9cf365daed2d8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
