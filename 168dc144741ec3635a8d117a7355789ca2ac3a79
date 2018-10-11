@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3f79a3b5_bfa310b0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-11T10:48:55Z",
+      "side": 1,
+      "message": "I think this thought is incomplete?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 57
+      },
+      "revId": "168dc144741ec3635a8d117a7355789ca2ac3a79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_edfae6b7",
         "filename": "keystone/conf/__init__.py",
         "patchSetId": 2
@@ -25,6 +48,70 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_bfaa306a",
+        "filename": "keystone/conf/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-11T10:48:55Z",
+      "side": 1,
+      "message": "Does this work when there are multiple threads and processes?",
+      "parentUuid": "3f79a3b5_edfae6b7",
+      "range": {
+        "startLine": 145,
+        "startChar": 11,
+        "endLine": 145,
+        "endChar": 22
+      },
+      "revId": "168dc144741ec3635a8d117a7355789ca2ac3a79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_5f6d1c65",
+        "filename": "keystone/conf/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-11T10:48:55Z",
+      "side": 1,
+      "message": "Does this work if they are using a non default path? What about multiple config files? Our product uses /etc/keystone/keystone.conf.d/100-keystone.conf etc",
+      "range": {
+        "startLine": 194,
+        "startChar": 21,
+        "endLine": 194,
+        "endChar": 41
+      },
+      "revId": "168dc144741ec3635a8d117a7355789ca2ac3a79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_bfdf9009",
+        "filename": "keystone/conf/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-11T10:48:55Z",
+      "side": 1,
+      "message": "I wonder if this has different performance on different filesystems, or if we should consider the possibility that it could be a network mounted filesystem?",
+      "revId": "168dc144741ec3635a8d117a7355789ca2ac3a79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_04b1c401",
         "filename": "keystone/server/flask/common.py",
         "patchSetId": 2
@@ -36,6 +123,24 @@
       "writtenOn": "2018-07-26T03:11:29Z",
       "side": 1,
       "message": "So every request to Keystone will change the config file changes. Will it impact performance?\n\nHow about skip this check for token issue/validate request?",
+      "revId": "168dc144741ec3635a8d117a7355789ca2ac3a79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_9fcad443",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-11T10:48:55Z",
+      "side": 1,
+      "message": "I share the same concerns about performance. Maybe we need a parameter to turn it off?",
+      "parentUuid": "5f7c97a3_04b1c401",
       "revId": "168dc144741ec3635a8d117a7355789ca2ac3a79",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
