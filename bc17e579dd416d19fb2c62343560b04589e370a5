@@ -16,6 +16,24 @@
       "revId": "bc17e579dd416d19fb2c62343560b04589e370a5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_ac943e8d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-11T22:08:34Z",
+      "side": 1,
+      "message": "Future patch.",
+      "parentUuid": "3f79a3b5_7397e547",
+      "revId": "bc17e579dd416d19fb2c62343560b04589e370a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
