@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_21b12946",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 697,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-10-11T08:46:34Z",
+      "side": 1,
+      "message": "I wonder if add_argument support date format by default? If so, we can make the code cleaner.",
+      "range": {
+        "startLine": 697,
+        "startChar": 15,
+        "endLine": 697,
+        "endChar": 27
+      },
+      "revId": "edbff5fd6efc19f544d757d1379f08cef2c6add3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
