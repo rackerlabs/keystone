@@ -613,6 +613,12 @@ default_limit:
   in: body
   required: true
   type: integer
+request_default_limit_body_not_required:
+  description: |
+    The default limit for the registered limit.
+  in: body
+  required: false
+  type: integer
 default_project_id_request_body:
   description: |
     The ID of the default project for the user.
@@ -1573,11 +1579,24 @@ resource_limit:
   in: body
   required: true
   type: integer
+request_resource_limit_body_not_required:
+  description: |
+    The override limit.
+  in: body
+  required: false
+  type: integer
 resource_name:
   description: |
     The resource name.
   in: body
   required: true
+  type: string
+request_resource_name_body_not_required:
+  description: |
+    The resource name.Either service_id or resource_name must be
+    different than existing value otherwise it will raise 409.
+  in: body
+  required: false
   type: string
 response_application_credential_body:
   description: |
@@ -1802,6 +1821,14 @@ service_id_registered_limit:
     belongs.
   in: body
   required: true
+  type: string
+service_id_registered_limit_optional:
+  description: |
+    The UUID of the service to update to which the registered
+    limit belongs. Either service_id or resource_name must be
+    different than existing value otherwise it will raise 409.
+  in: body
+  required: false
   type: string
 service_links:
   description: |
