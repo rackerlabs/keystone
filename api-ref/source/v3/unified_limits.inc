@@ -162,10 +162,10 @@ Parameters
 
    - registered_limit_id: registered_limit_id_path
    - registered_limit: registered_limit
-   - service_id: service_id_registered_limit
+   - service_id: service_id_registered_limit_optional
    - region_id: region_id_request_body
-   - resource_name: resource_name
-   - default_limit: default_limit
+   - resource_name: resource_name_optional
+   - default_limit: default_limit_optional
    - description: description_registered_limit_request_body
 
 Example
