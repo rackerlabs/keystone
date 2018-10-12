@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_4324420e",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-12T18:23:32Z",
+      "side": 1,
+      "message": "We should make a constants.py to hold all these fun things. but for now, this is where they are referenced from.",
+      "revId": "500ef231ef171e6b0e6a60426e52c4843e717fcf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
