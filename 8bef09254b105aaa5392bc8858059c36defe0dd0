@@ -22,6 +22,30 @@
       "revId": "8bef09254b105aaa5392bc8858059c36defe0dd0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_e978cfc2",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-12T20:16:28Z",
+      "side": 1,
+      "message": "Good catch, done.",
+      "parentUuid": "3f79a3b5_a9c3b705",
+      "range": {
+        "startLine": 228,
+        "startChar": 12,
+        "endLine": 228,
+        "endChar": 51
+      },
+      "revId": "8bef09254b105aaa5392bc8858059c36defe0dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
