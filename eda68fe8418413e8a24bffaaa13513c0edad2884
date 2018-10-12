@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3f79a3b5_7aaa436d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-10-12T17:45:12Z",
+      "side": 0,
+      "message": "nice!",
+      "revId": "eda68fe8418413e8a24bffaaa13513c0edad2884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_b944891a",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 7
@@ -49,6 +66,24 @@
       "side": 0,
       "message": "Ah - ok. Thanks",
       "parentUuid": "3f79a3b5_1987bd14",
+      "revId": "eda68fe8418413e8a24bffaaa13513c0edad2884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_1abb0fbe",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-10-12T17:45:12Z",
+      "side": 0,
+      "message": "Yeah auth was using this class still, so I left this when we did the domain move.\n\nProbably should have left a comment explaining this :(",
+      "parentUuid": "3f79a3b5_dc3e13e2",
       "revId": "eda68fe8418413e8a24bffaaa13513c0edad2884",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
