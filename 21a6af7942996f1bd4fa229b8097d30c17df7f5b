@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_b93f8cb0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-12T14:23:52Z",
+      "side": 1,
+      "message": "https://review.openstack.org/#/c/568764/1",
+      "parentUuid": "3f79a3b5_f90bc41e",
+      "revId": "21a6af7942996f1bd4fa229b8097d30c17df7f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_a270c574",
         "filename": "keystone/server/flask/request_processing/middleware/auth_context.py",
         "patchSetId": 1
