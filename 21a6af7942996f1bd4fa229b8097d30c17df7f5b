@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3f79a3b5_dec10e83",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-12T13:56:21Z",
+      "side": 1,
+      "message": "I thought we tried removing the pydev stuff in Rocky or Queens but we kept it around in case anyone was using it.\n\nI thought I remember Colleen reviewing that change, too. She might have more context here, too.\n\nIf we do decide to remove it, we should have a release note communicating it to people who might be using it.",
+      "revId": "21a6af7942996f1bd4fa229b8097d30c17df7f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_a270c574",
         "filename": "keystone/server/flask/request_processing/middleware/auth_context.py",
         "patchSetId": 1
