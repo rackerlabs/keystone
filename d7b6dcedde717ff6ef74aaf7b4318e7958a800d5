@@ -16,6 +16,24 @@
       "revId": "d7b6dcedde717ff6ef74aaf7b4318e7958a800d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_ce071981",
+        "filename": "keystone/common/policies/domain.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-12T19:12:52Z",
+      "side": 1,
+      "message": "Technically - this same check is being used in the tests here, which would fail. I don\u0027t think this is failing because it\u0027s OR logic.\n\nhttps://review.openstack.org/#/c/605851/2/keystone/tests/unit/protection/v3/test_domains.py@438",
+      "parentUuid": "3f79a3b5_75e4b70e",
+      "revId": "d7b6dcedde717ff6ef74aaf7b4318e7958a800d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
