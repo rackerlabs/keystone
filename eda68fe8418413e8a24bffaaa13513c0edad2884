@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_94a4d5a5",
+        "filename": "keystone/api/users.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-10-12T15:32:32Z",
+      "side": 1,
+      "message": "The \"keystone.api.users.*\" idea sounds good for breaking this up if we do in the future.",
+      "parentUuid": "3f79a3b5_1ee01497",
+      "revId": "eda68fe8418413e8a24bffaaa13513c0edad2884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_405f7174",
         "filename": "keystone/api/users.py",
         "patchSetId": 2
