@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_87aa4617",
+        "filename": "keystone/cmd/status.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-15T14:57:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_a79e62b4",
+      "revId": "9618832979670a1746a230a87db0d695528eec61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_a7d66225",
         "filename": "releasenotes/notes/bp-upgrade-checks-0dc692a392a96879.yaml",
         "patchSetId": 5
