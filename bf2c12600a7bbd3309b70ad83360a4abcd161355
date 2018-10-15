@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_416188a7",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-15T01:46:14Z",
+      "side": 1,
+      "message": "The value for effective\u003dTrue will be constant?",
+      "revId": "bf2c12600a7bbd3309b70ad83360a4abcd161355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_6167e4b9",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-15T01:46:14Z",
+      "side": 1,
+      "message": "I think the variable \"effective\" should also be passed in this function definition. Is there any case of effective being false?",
+      "revId": "bf2c12600a7bbd3309b70ad83360a4abcd161355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
