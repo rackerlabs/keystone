@@ -16,6 +16,24 @@
       "revId": "ee9b035cf17f0070dfb392505e44ea2961e2cf4b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_b853df14",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-15T16:14:20Z",
+      "side": 1,
+      "message": "I disagree. This was used exclusively internal to Keystone by this point. Unless someone had hacked code into keystone directly, it was not consumable outside.\n\nYou had to be below the JSON Body middleware to use it. This is not something emitted out on the wire.",
+      "parentUuid": "3f79a3b5_6ddfcb37",
+      "revId": "ee9b035cf17f0070dfb392505e44ea2961e2cf4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
