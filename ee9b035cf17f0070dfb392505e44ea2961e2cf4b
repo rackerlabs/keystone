@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_6ddfcb37",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-15T15:43:55Z",
+      "side": 1,
+      "message": "Even though it\u0027s not likely anyone was using this, I think we\u0027ll need to add a release note for this.\n\nDeployers don\u0027t need to do anything to consume this since we\u0027ve already removed the paste pipeline.",
+      "revId": "ee9b035cf17f0070dfb392505e44ea2961e2cf4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
