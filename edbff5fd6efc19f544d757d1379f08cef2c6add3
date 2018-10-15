@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3f79a3b5_1e00b8ff",
+        "filename": "doc/source/admin/identity-use-trusts.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-15T20:09:28Z",
+      "side": 1,
+      "message": "options* just to be consistent with the documentation in /cli \n\nhttps://docs.openstack.org/keystone/latest/cli/index.html#keystone-manage",
+      "range": {
+        "startLine": 65,
+        "startChar": 35,
+        "endLine": 65,
+        "endChar": 36
+      },
+      "revId": "edbff5fd6efc19f544d757d1379f08cef2c6add3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_21b12946",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 4
@@ -18,6 +41,98 @@
         "startChar": 15,
         "endLine": 697,
         "endChar": 27
+      },
+      "revId": "edbff5fd6efc19f544d757d1379f08cef2c6add3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_3ba58648",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 697,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-15T20:09:28Z",
+      "side": 1,
+      "message": "This could be datetime.datetime.utcnow() couldn\u0027t it?",
+      "range": {
+        "startLine": 697,
+        "startChar": 46,
+        "endLine": 697,
+        "endChar": 50
+      },
+      "revId": "edbff5fd6efc19f544d757d1379f08cef2c6add3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_fbbb8e71",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 699,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-15T20:09:28Z",
+      "side": 1,
+      "message": "nit: missing a space here",
+      "range": {
+        "startLine": 699,
+        "startChar": 74,
+        "endLine": 699,
+        "endChar": 78
+      },
+      "revId": "edbff5fd6efc19f544d757d1379f08cef2c6add3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_fb494e8d",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 702,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-15T20:09:28Z",
+      "side": 1,
+      "message": "minor wording nit:\n\nIf no date is supplied, keystone-manage will use the system clock time at runtime.",
+      "range": {
+        "startLine": 700,
+        "startChar": 55,
+        "endLine": 702,
+        "endChar": 49
+      },
+      "revId": "edbff5fd6efc19f544d757d1379f08cef2c6add3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_3bf7c65c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-15T20:09:28Z",
+      "side": 1,
+      "message": "nit: missing a space here",
+      "range": {
+        "startLine": 714,
+        "startChar": 61,
+        "endLine": 714,
+        "endChar": 67
       },
       "revId": "edbff5fd6efc19f544d757d1379f08cef2c6add3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
