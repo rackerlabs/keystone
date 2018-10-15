@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_4d920f5a",
+        "filename": "keystone/api/_shared/EC2_S3_Resource.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-15T15:45:21Z",
+      "side": 1,
+      "message": "++ thanks, I appreciate the followup.",
+      "parentUuid": "3f79a3b5_c2c13a51",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 29
+      },
+      "revId": "ad771eda154823bd2963f0d05fbf44ae5a74fab7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_93b5e11b",
         "filename": "keystone/api/_shared/EC2_S3_Resource.py",
         "patchSetId": 3
