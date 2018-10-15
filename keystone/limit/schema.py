@@ -24,7 +24,8 @@ _registered_limit_properties = {
         'type': 'string'
     },
     'default_limit': {
-        'type': 'integer'
+        'type': 'integer',
+        'minimum': 0
     },
     'description': validation.nullable(parameter_types.description)
 }
@@ -57,7 +58,8 @@ _limit_create_properties = {
         'type': 'string'
     },
     'resource_limit': {
-        'type': 'integer'
+        'type': 'integer',
+        'minimum': 0
     },
     'description': validation.nullable(parameter_types.description)
 }

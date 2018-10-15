@@ -2556,6 +2556,16 @@ class LimitValidationTestCase(unit.BaseTestCase):
                           self.create_registered_limits_validator.validate,
                           request_to_validate)
 
+    def test_validate_registered_limit_create_with_invalid_default_limit(self):
+        request_to_validate = [{'service_id': uuid.uuid4().hex,
+                                'region_id': 'RegionOne',
+                                'resource_name': 'volume',
+                                'default_limit': -10,
+                                'description': 'test description'}]
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_registered_limits_validator.validate,
+                          request_to_validate)
+
     def test_validate_registered_limit_create_request_with_invalid_input(self):
         _INVALID_FORMATS = [{'service_id': 'fake_id'},
                             {'region_id': 123},
@@ -2640,6 +2650,15 @@ class LimitValidationTestCase(unit.BaseTestCase):
                                 'resource_limit': 10}]
         self.create_limits_validator.validate(request_to_validate)
 
+    def test_validate_limit_create_with_invalid_resource_limit(self):
+        request_to_validate = [{'project_id': uuid.uuid4().hex,
+                                'service_id': uuid.uuid4().hex,
+                                'resource_name': 'volume',
+                                'resource_limit': -10}]
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_limits_validator.validate,
+                          request_to_validate)
+
     def test_validate_limit_update_request_succeeds(self):
         request_to_validate = {'resource_limit': 10,
                                'description': 'test description'}
@@ -2648,6 +2667,12 @@ class LimitValidationTestCase(unit.BaseTestCase):
     def test_validate_limit_update_request_without_optional(self):
         request_to_validate = {'resource_limit': 10}
         self.update_limits_validator.validate(request_to_validate)
+
+    def test_validate_limit_update_request_with_invalid_default_limit(self):
+        request_to_validate = {'resource_limit': -10}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_registered_limits_validator.validate,
+                          request_to_validate)
 
     def test_validate_limit_request_with_no_parameters(self):
         request_to_validate = []
@@ -2697,6 +2722,13 @@ class LimitValidationTestCase(unit.BaseTestCase):
         request_to_validate = {'id': uuid.uuid4().hex,
                                'resource_limit': 10,
                                'more_key': 'more_value'}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_limits_validator.validate,
+                          request_to_validate)
+
+    def test_validate_limit_update_request_with_invalid_resource_limit(self):
+        request_to_validate = {'id': uuid.uuid4().hex,
+                               'resource_limit': -10}
         self.assertRaises(exception.SchemaValidationError,
                           self.update_limits_validator.validate,
                           request_to_validate)
