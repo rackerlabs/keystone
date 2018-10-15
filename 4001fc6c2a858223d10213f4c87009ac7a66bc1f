@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_61a604af",
+        "filename": "keystone/tests/unit/protection/v3/test_credentials.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1834,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-15T02:21:23Z",
+      "side": 1,
+      "message": "I understood the above point and Yeah right, lot of code duplication due to repetitive tests.",
+      "parentUuid": "3f79a3b5_805250d9",
+      "revId": "4001fc6c2a858223d10213f4c87009ac7a66bc1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_1acd4485",
         "filename": "keystone/tests/unit/protection/v3/test_credentials.py",
         "patchSetId": 14
