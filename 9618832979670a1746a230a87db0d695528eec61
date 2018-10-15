@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_6d390bcd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-15T15:32:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_e7e69a4a",
+      "revId": "9618832979670a1746a230a87db0d695528eec61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_a79e62b4",
         "filename": "keystone/cmd/status.py",
         "patchSetId": 5
@@ -65,6 +83,24 @@
       "writtenOn": "2018-10-15T14:42:17Z",
       "side": 1,
       "message": "You should also have CLI docs:\n\nhttps://docs.openstack.org/keystone/latest/cli/",
+      "revId": "9618832979670a1746a230a87db0d695528eec61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_4d3e8fb9",
+        "filename": "releasenotes/notes/bp-upgrade-checks-0dc692a392a96879.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-15T15:32:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_a7d66225",
       "revId": "9618832979670a1746a230a87db0d695528eec61",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
