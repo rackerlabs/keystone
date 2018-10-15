@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_9e060821",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-15T20:52:34Z",
+      "side": 1,
+      "message": "token_flush*",
+      "range": {
+        "startLine": 7,
+        "startChar": 18,
+        "endLine": 7,
+        "endChar": 29
+      },
+      "revId": "69f529c88748017b8f26f2b53734f5bdefbc9892",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_3916ee4b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-15T20:52:34Z",
+      "side": 1,
+      "message": "We should add:\n\n  bp removed-as-of-stein\n\nWhich is a placeholder blueprint so that we can track everything we removed in in a single release. We do the same thing with everything we deprecate with bp deprecated-as-of-stein.",
+      "revId": "69f529c88748017b8f26f2b53734f5bdefbc9892",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
