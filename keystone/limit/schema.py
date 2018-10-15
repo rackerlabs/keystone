@@ -24,7 +24,9 @@ _registered_limit_properties = {
         'type': 'string'
     },
     'default_limit': {
-        'type': 'integer'
+        'type': 'integer',
+        'minimum': -1,
+        'maximum': 0x7FFFFFFF  # The maximum value a signed INT may have
     },
     'description': validation.nullable(parameter_types.description)
 }
@@ -57,7 +59,9 @@ _limit_create_properties = {
         'type': 'string'
     },
     'resource_limit': {
-        'type': 'integer'
+        'type': 'integer',
+        'minimum': -1,
+        'maximum': 0x7FFFFFFF  # The maximum value a signed INT may have
     },
     'description': validation.nullable(parameter_types.description)
 }
@@ -77,7 +81,9 @@ limit_create = {
 
 _limit_update_properties = {
     'resource_limit': {
-        'type': 'integer'
+        'type': 'integer',
+        'minimum': -1,
+        'maximum': 0x7FFFFFFF  # The maximum value a signed INT may have
     },
     'description': validation.nullable(parameter_types.description)
 }
