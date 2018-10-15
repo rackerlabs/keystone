@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_3375b0c9",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-15T17:38:02Z",
+      "side": 1,
+      "message": "Managers can do cross-manager calls. This should probably do the expansion in the for loop below. Also, IIRC role_api is something we want to collapse back down into core assignment so we don\u0027t need a role_api as well.",
+      "revId": "9051d403a336e082f8e699d2b826f1db55ddbd18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
