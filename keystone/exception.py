@@ -342,6 +342,10 @@ class InvalidPolicyAssociation(Forbidden):
                        "Service: %(service_id)s, Region: %(region_id)s.")
 
 
+class InvalidInput(Forbidden):
+    msg_fmt = _("Invalid input received: %(reason)s")
+
+
 class InvalidDomainConfig(Forbidden):
     message_format = _("Invalid domain specific configuration: %(reason)s.")
 

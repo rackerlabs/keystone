@@ -11,6 +11,7 @@
 # under the License.
 
 import uuid
+import webob
 
 from keystone.common import driver_hints
 from keystone.common import provider_api
@@ -102,6 +103,15 @@ class RegisteredLimitTests(object):
                           PROVIDERS.unified_limit_api.create_registered_limits,
                           [registered_limit_1])
 
+    def test_create_registered_limit_invalid_default_limit(self):
+        registered_limit_1 = unit.new_registered_limit_ref(
+            service_id=self.service_one['id'],
+            region_id=self.region_one['id'],
+            resource_name='volume', default_limit=-2, id=uuid.uuid4().hex)
+        self.assertRaises(webob.exc.HTTPBadRequest,
+                          PROVIDERS.unified_limit_api.create_registered_limits,
+                          [registered_limit_1])
+
     def test_create_registered_limit_invalid_region(self):
         registered_limit_1 = unit.new_registered_limit_ref(
             service_id=self.service_one['id'],
@@ -174,6 +184,20 @@ class RegisteredLimitTests(object):
         update_ref = {'id': registered_limit_1['id'],
                       'region_id': 'fake_id'}
         self.assertRaises(exception.ValidationError,
+                          PROVIDERS.unified_limit_api.update_registered_limit,
+                          registered_limit_1['id'], update_ref)
+
+    def test_update_registered_limit_invalid_default_limit(self):
+        registered_limit_1 = unit.new_registered_limit_ref(
+            service_id=self.service_one['id'],
+            region_id=self.region_one['id'],
+            resource_name='volume', default_limit=10, id=uuid.uuid4().hex)
+        PROVIDERS.unified_limit_api.create_registered_limits(
+            [registered_limit_1])
+
+        update_ref = {'id': registered_limit_1['id'],
+                      'default_limit': -2}
+        self.assertRaises(webob.exc.HTTPBadRequest,
                           PROVIDERS.unified_limit_api.update_registered_limit,
                           registered_limit_1['id'], update_ref)
 
@@ -466,6 +490,17 @@ class LimitTests(object):
                           PROVIDERS.unified_limit_api.create_limits,
                           [limit])
 
+    def test_create_limit_with_invalid_resource_limit_raises_bad_request(self):
+        limit = unit.new_limit_ref(
+            project_id=self.tenant_bar['id'],
+            service_id=self.service_one['id'],
+            region_id=self.region_one['id'],
+            resource_name='volume', resource_limit=-10, id=uuid.uuid4().hex,
+            description='test description')
+        self.assertRaises(webob.exc.HTTPBadRequest,
+                          PROVIDERS.unified_limit_api.create_limits,
+                          [limit])
+
     def test_create_limit_with_invalid_region_raises_validation_error(self):
         limit = unit.new_limit_ref(
             project_id=self.tenant_bar['id'],
@@ -532,6 +567,22 @@ class LimitTests(object):
         res = PROVIDERS.unified_limit_api.update_limit(limit_2['id'],
                                                        limit_update)
         self.assertEqual(expect_limit, res['resource_limit'])
+
+    def test_update_limit_with_invalid_resource_limit_raises_bad_request(self):
+        limit = unit.new_limit_ref(
+            project_id=self.tenant_bar['id'],
+            service_id=self.service_one['id'],
+            region_id=self.region_one['id'],
+            resource_name='volume', resource_limit=-10, id=uuid.uuid4().hex,
+            description='test description')
+        PROVIDERS.unified_limit_api.create_limits([limit])
+
+        expect_limit = -8
+        limit_update = {'id': limit['id'],
+                        'resource_limit': expect_limit}
+        self.assertRaises(webob.exc.HTTPBadRequest,
+                          PROVIDERS.unified_limit_api.update_limit,
+                          limit['id'], limit_update)
 
     def test_list_limits(self):
         # create two limits

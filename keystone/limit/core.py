@@ -12,6 +12,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 import copy
+import six
+
+from oslo_utils import strutils
+import webob.exc
 
 from keystone.common import cache
 from keystone.common import driver_hints
@@ -25,6 +29,22 @@ CONF = keystone.conf.CONF
 PROVIDERS = provider_api.ProviderAPIs
 
 MEMOIZE = cache.get_memoization_decorator(group='unified_limit')
+
+
+def validate_integer(value, name, min_value=None, max_value=None):
+    """Make sure that value is a valid integer, potentially within range.
+
+    :param value: value of the integer
+    :param name: name of the integer
+    :param min_value: min_value of the integer
+    :param max_value: max_value of the integer
+    :returns: integer
+    :raise: InvalidInput If value is not a valid integer
+    """
+    try:
+        return strutils.validate_integer(value, name, min_value, max_value)
+    except ValueError as e:
+        raise exception.InvalidInput(reason=six.text_type(e))
 
 
 class Manager(manager.Manager):
@@ -59,6 +79,13 @@ class Manager(manager.Manager):
                 # check can be removed if it'll be supported in the future.
                 if project['is_domain']:
                     raise exception.ProjectNotFound(project_id=project_id)
+            default_limit = unified_limit.get('default_limit')
+            resource_limit = unified_limit.get("resource_limit")
+            limit = default_limit if default_limit else resource_limit
+            if limit:
+                # value should not be negative value
+                validate_integer(limit, 'limit', 0)
+
         except exception.ServiceNotFound:
             raise exception.ValidationError(attribute='service_id',
                                             target=target)
@@ -68,6 +95,9 @@ class Manager(manager.Manager):
         except exception.ProjectNotFound:
             raise exception.ValidationError(attribute='project_id',
                                             target=target)
+        except exception.InvalidInput:
+            msg = "The input value for limit cannot be negative"
+            raise webob.exc.HTTPBadRequest(explanation=msg)
 
     def get_model(self):
         """Return information of the configured enforcement model."""
