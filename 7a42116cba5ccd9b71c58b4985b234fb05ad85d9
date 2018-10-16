@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_13e50a07",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1823,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-10-16T02:42:13Z",
+      "side": 1,
+      "message": "it\u0027ll raise 409 error",
+      "range": {
+        "startLine": 1823,
+        "startChar": 44,
+        "endLine": 1823,
+        "endChar": 58
+      },
+      "revId": "7a42116cba5ccd9b71c58b4985b234fb05ad85d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
