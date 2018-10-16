@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_3086fcbb",
+        "filename": "keystone/api/_shared/EC2_S3_Resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-10-16T02:29:21Z",
+      "side": 1,
+      "message": "generally, it should be 2018, right? or redhat instead.",
+      "range": {
+        "startLine": 1,
+        "startChar": 12,
+        "endLine": 1,
+        "endChar": 16
+      },
+      "revId": "35c9bb7eff51ebd6101b4a1d233b984cbf68fca8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
