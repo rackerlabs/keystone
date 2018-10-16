@@ -115,6 +115,20 @@ def _format_role_entity(role_id):
     return formatted_entity
 
 
+def _build_user_target_enforcement():
+    target = {}
+    try:
+        target['user'] = PROVIDERS.identity_api.get_user(
+            flask.request.view_args.get('user_id')
+        )
+    except ks_exception.NotFound:  # nosec
+        # Defer existance in the event the user doesn't exist, we'll
+        # check this later anyway.
+        pass
+
+    return target
+
+
 class UserResource(ks_flask.ResourceBase):
     collection_key = 'users'
     member_key = 'user'
@@ -136,9 +150,12 @@ class UserResource(ks_flask.ResourceBase):
 
         GET/HEAD /v3/users/{user_id}
         """
-        ENFORCER.enforce_call(action='identity:get_user')
-        ref = PROVIDERS.identity_api.get_user(user_id)
-        return self.wrap_member(ref)
+        ENFORCER.enforce_call(
+            action='identity:get_user',
+            build_target=_build_user_target_enforcement
+        )
+        user = PROVIDERS.identity_api.get_user(user_id)
+        return self.wrap_member(user)
 
     def _list_users(self):
         """List users.
@@ -150,6 +167,8 @@ class UserResource(ks_flask.ResourceBase):
         hints = self.build_driver_hints(filters)
         ENFORCER.enforce_call(action='identity:list_users', filters=filters)
         domain = self._get_domain_id_for_list_request()
+        if not domain and self.get_token_ref().domain_scoped:
+            domain = self.get_token_ref().domain_id
         refs = PROVIDERS.identity_api.list_users(
             domain_scope=domain, hints=hints)
         return self.wrap_collection(refs, hints=hints)
@@ -159,11 +178,14 @@ class UserResource(ks_flask.ResourceBase):
 
         POST /v3/users
         """
-        ENFORCER.enforce_call(action='identity:create_user')
         user_data = self.request_body_json.get('user', {})
         validation.lazy_validate(schema.user_create, user_data)
         user_data = self._normalize_dict(user_data)
         user_data = self._normalize_domain_id(user_data)
+        target = {'user': user_data}
+        ENFORCER.enforce_call(
+            action='identity:create_user', target_attr=target
+        )
         ref = PROVIDERS.identity_api.create_user(
             user_data,
             initiator=self.audit_initiator)
@@ -174,7 +196,12 @@ class UserResource(ks_flask.ResourceBase):
 
         PATCH /v3/users/{user_id}
         """
-        ENFORCER.enforce_call(action='identity:update_user')
+        ENFORCER.enforce_call(
+            action='identity:update_user',
+            build_target=_build_user_target_enforcement
+        )
+        PROVIDERS.identity_api.get_user(user_id)
+
         user_data = self.request_body_json.get('user', {})
         validation.lazy_validate(schema.user_update, user_data)
         self._require_matching_id(user_data)
@@ -187,7 +214,10 @@ class UserResource(ks_flask.ResourceBase):
 
         DELETE /v3/users/{user_id}
         """
-        ENFORCER.enforce_call(action='identity:delete_user')
+        ENFORCER.enforce_call(
+            action='identity:delete_user',
+            build_target=_build_user_target_enforcement
+        )
         PROVIDERS.identity_api.delete_user(user_id)
         return None, http_client.NO_CONTENT
 

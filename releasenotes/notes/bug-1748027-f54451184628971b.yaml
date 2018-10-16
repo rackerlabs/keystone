@@ -1,0 +1,23 @@
+---
+upgrade:
+  - |
+    [`bug 1748027 <https://bugs.launchpad.net/keystone/+bug/1748027>`_]
+    [`bug 968696 <https://bugs.launchpad.net/keystone/+bug/968696>`_]
+    Policies protecting the ``/v3/users`` API have changed defaults in order to
+    make the users API more accessible to end users and not just system
+    administrators. This is done by implementing system, domain, and project
+    scope with the ``admin``, ``member``, and ``reader`` default roles. Please
+    take this into consideration when upgrading keystone, especially if you're
+    using a customized policy file in your deployment.
+security:
+  - |
+    [`bug 1748027 <https://bugs.launchpad.net/keystone/+bug/1748027>`_]
+    [`bug 968696 <https://bugs.launchpad.net/keystone/+bug/968696>`_]
+    More granular policy checks have been implemented for the user API in order
+    to make it more self-serviceable for users.
+fixes:
+  - |
+    [`bug 1748027 <https://bugs.launchpad.net/keystone/+bug/1748027>`_]
+    [`bug 968696 <https://bugs.launchpad.net/keystone/+bug/968696>`_]
+    The user API has been improved and is more self-serviceable by offering
+    better support for system, domain, and project users out-of-the-box.
