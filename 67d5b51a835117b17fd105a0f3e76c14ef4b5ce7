@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_53d382d3",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-10-16T03:07:49Z",
+      "side": 1,
+      "message": "Shouldn\u0027t need this anymore",
+      "revId": "67d5b51a835117b17fd105a0f3e76c14ef4b5ce7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_b3ed368f",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-10-16T03:07:49Z",
+      "side": 1,
+      "message": "Need to add a \"minimum\" here as well",
+      "range": {
+        "startLine": 82,
+        "startChar": 8,
+        "endLine": 82,
+        "endChar": 25
+      },
+      "revId": "67d5b51a835117b17fd105a0f3e76c14ef4b5ce7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_3301263a",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2564,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-10-16T03:07:49Z",
+      "side": 1,
+      "message": "There is an existing test for invalid input below, we can add this \"request\" to _INVALID_FORMATS and it should test this one as well.\n\nSame for registered_limit_update below that one",
+      "range": {
+        "startLine": 2560,
+        "startChar": 8,
+        "endLine": 2564,
+        "endChar": 67
+      },
+      "revId": "67d5b51a835117b17fd105a0f3e76c14ef4b5ce7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_b39216fb",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2684,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-10-16T03:07:49Z",
+      "side": 1,
+      "message": "Same as above, we can add another invalid request here with a negative limit value to test here, rather than adding 2 additional tests.",
+      "revId": "67d5b51a835117b17fd105a0f3e76c14ef4b5ce7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
