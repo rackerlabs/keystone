@@ -16,6 +16,7 @@
 import fixtures
 import ldappool
 import mock
+from six import PY2
 
 from keystone.common import provider_api
 import keystone.conf
@@ -241,5 +242,6 @@ class LDAPIdentity(LdapPoolCommonTestMixin,
         PROVIDERS.identity_api.get_user.invalidate(PROVIDERS.identity_api,
                                                    self.user_foo['id'])
         PROVIDERS.identity_api.get_user(self.user_foo['id'])
-        mocked_method.assert_any_call(CONF.ldap.user)
-        mocked_method.assert_any_call(CONF.ldap.password)
+        if PY2:
+            mocked_method.assert_any_call(CONF.ldap.user)
+            mocked_method.assert_any_call(CONF.ldap.password)
