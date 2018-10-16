@@ -46,6 +46,184 @@
       "revId": "255c6da65eab12c4ada1d32e35d9d6fad2da42fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_81fc5971",
+        "filename": "doc/source/cli/index.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2018-10-16T14:28:33Z",
+      "side": 1,
+      "message": "Now that you have two commands, you might consider making this a toc tree otherwise the include makes the cli index page pretty gorpy:\n\nhttp://logs.openstack.org/85/608785/6/check/openstack-tox-docs/2113d95/html/cli/\n\nMost other projects have cli/index.rst using a toc tree:\n\nhttps://docs.openstack.org/nova/latest/cli/\nhttps://docs.openstack.org/cinder/latest/cli/\nhttps://docs.openstack.org/neutron/latest/cli/\nhttps://docs.openstack.org/glance/latest/cli/",
+      "range": {
+        "startLine": 21,
+        "startChar": 3,
+        "endLine": 21,
+        "endChar": 10
+      },
+      "revId": "255c6da65eab12c4ada1d32e35d9d6fad2da42fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_e1be6dad",
+        "filename": "doc/source/cli/keystone-status.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2018-10-16T14:28:33Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be 15 for stein?",
+      "range": {
+        "startLine": 11,
+        "startChar": 10,
+        "endLine": 11,
+        "endChar": 12
+      },
+      "revId": "255c6da65eab12c4ada1d32e35d9d6fad2da42fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_c106d185",
+        "filename": "doc/source/cli/keystone-status.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2018-10-16T14:28:33Z",
+      "side": 1,
+      "message": "You don\u0027t need the indent on this, it formats weirdly:\n\nhttp://logs.openstack.org/85/608785/6/check/openstack-tox-docs/2113d95/html/cli/#id1\n\nAlternatively, do something like this:\n\n.. code-block:: console\n\n   $ keystone-status [options]",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 2
+      },
+      "revId": "255c6da65eab12c4ada1d32e35d9d6fad2da42fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_4137214c",
+        "filename": "doc/source/cli/keystone-status.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2018-10-16T14:28:33Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 4
+      },
+      "revId": "255c6da65eab12c4ada1d32e35d9d6fad2da42fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_a11155b1",
+        "filename": "doc/source/cli/keystone-status.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2018-10-16T14:28:33Z",
+      "side": 1,
+      "message": "same here and below",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 2
+      },
+      "revId": "255c6da65eab12c4ada1d32e35d9d6fad2da42fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_6107bd71",
+        "filename": "doc/source/cli/keystone-status.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2018-10-16T14:28:33Z",
+      "side": 1,
+      "message": "The link here isn\u0027t really to gerrit...",
+      "range": {
+        "startLine": 60,
+        "startChar": 25,
+        "endLine": 60,
+        "endChar": 31
+      },
+      "revId": "255c6da65eab12c4ada1d32e35d9d6fad2da42fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_61ca5d19",
+        "filename": "doc/source/cli/upgrade.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2018-10-16T14:28:33Z",
+      "side": 1,
+      "message": "I\u0027d recommend having the same return codes table and history of checks section as the other docs for $project-status upgrade check, e.g.:\n\nhttps://review.openstack.org/#/c/610581/4/doc/source/cli/cinder-status.rst\n\nhttps://review.openstack.org/#/c/608444/4/doc/source/cli/neutron-status.rst\n\nhttps://review.openstack.org/#/c/604430/5/doc/source/cli/designate-status.rst",
+      "revId": "255c6da65eab12c4ada1d32e35d9d6fad2da42fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_c19571e4",
+        "filename": "keystone/cmd/status.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2018-10-16T14:28:33Z",
+      "side": 1,
+      "message": "I\u0027m not sure you can just pass here...will the library handle that if _upgrade_checks is not set?\n\nCinder and Neutron are just providing a simple noop placeholder success check in their initial patch:\n\nhttps://review.openstack.org/#/c/610581/4/cinder/cmd/status.py\n\nhttps://review.openstack.org/#/c/608444/4/neutron/cmd/status.py",
+      "range": {
+        "startLine": 29,
+        "startChar": 4,
+        "endLine": 29,
+        "endChar": 8
+      },
+      "revId": "255c6da65eab12c4ada1d32e35d9d6fad2da42fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
