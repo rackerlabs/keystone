@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_793f7fde",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2701,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-10-16T05:42:54Z",
+      "side": 0,
+      "message": "This was rolled into the other test right?",
+      "range": {
+        "startLine": 2694,
+        "startChar": 0,
+        "endLine": 2701,
+        "endChar": 64
+      },
+      "revId": "46c2fdd683185114870aa483b8bb2fd8150ea3c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
