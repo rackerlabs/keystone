@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_fc660bee",
+        "filename": "doc/source/cli/index.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-16T19:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_81fc5971",
+      "range": {
+        "startLine": 21,
+        "startChar": 3,
+        "endLine": 21,
+        "endChar": 10
+      },
+      "revId": "255c6da65eab12c4ada1d32e35d9d6fad2da42fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_e1be6dad",
         "filename": "doc/source/cli/keystone-status.rst",
         "patchSetId": 6
@@ -83,6 +107,30 @@
       "writtenOn": "2018-10-16T14:28:33Z",
       "side": 1,
       "message": "Shouldn\u0027t this be 15 for stein?",
+      "range": {
+        "startLine": 11,
+        "startChar": 10,
+        "endLine": 11,
+        "endChar": 12
+      },
+      "revId": "255c6da65eab12c4ada1d32e35d9d6fad2da42fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_1c62e7d9",
+        "filename": "doc/source/cli/keystone-status.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-16T19:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_e1be6dad",
       "range": {
         "startLine": 11,
         "startChar": 10,
@@ -118,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_3c77a390",
+        "filename": "doc/source/cli/keystone-status.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-16T19:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_c106d185",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 2
+      },
+      "revId": "255c6da65eab12c4ada1d32e35d9d6fad2da42fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_4137214c",
         "filename": "doc/source/cli/keystone-status.rst",
         "patchSetId": 6
@@ -129,6 +201,30 @@
       "writtenOn": "2018-10-16T14:28:33Z",
       "side": 1,
       "message": "same",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 4
+      },
+      "revId": "255c6da65eab12c4ada1d32e35d9d6fad2da42fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_fcd92b83",
+        "filename": "doc/source/cli/keystone-status.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-16T19:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_4137214c",
       "range": {
         "startLine": 29,
         "startChar": 0,
@@ -164,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_1cd50747",
+        "filename": "doc/source/cli/keystone-status.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-16T19:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_a11155b1",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 2
+      },
+      "revId": "255c6da65eab12c4ada1d32e35d9d6fad2da42fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_6107bd71",
         "filename": "doc/source/cli/keystone-status.rst",
         "patchSetId": 6
@@ -187,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_fcc28b85",
+        "filename": "doc/source/cli/keystone-status.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-16T19:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_6107bd71",
+      "range": {
+        "startLine": 60,
+        "startChar": 25,
+        "endLine": 60,
+        "endChar": 31
+      },
+      "revId": "255c6da65eab12c4ada1d32e35d9d6fad2da42fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_61ca5d19",
         "filename": "doc/source/cli/upgrade.rst",
         "patchSetId": 6
@@ -198,6 +342,24 @@
       "writtenOn": "2018-10-16T14:28:33Z",
       "side": 1,
       "message": "I\u0027d recommend having the same return codes table and history of checks section as the other docs for $project-status upgrade check, e.g.:\n\nhttps://review.openstack.org/#/c/610581/4/doc/source/cli/cinder-status.rst\n\nhttps://review.openstack.org/#/c/608444/4/doc/source/cli/neutron-status.rst\n\nhttps://review.openstack.org/#/c/604430/5/doc/source/cli/designate-status.rst",
+      "revId": "255c6da65eab12c4ada1d32e35d9d6fad2da42fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_9c8a7717",
+        "filename": "doc/source/cli/upgrade.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-16T19:10:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_61ca5d19",
       "revId": "255c6da65eab12c4ada1d32e35d9d6fad2da42fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -239,6 +401,30 @@
       "side": 1,
       "message": "I guess the library will default to an empty tuple:\n\nhttps://github.com/openstack/oslo.upgradecheck/blob/master/oslo_upgradecheck/upgradecheck.py#L77",
       "parentUuid": "3f79a3b5_c19571e4",
+      "range": {
+        "startLine": 29,
+        "startChar": 4,
+        "endLine": 29,
+        "endChar": 8
+      },
+      "revId": "255c6da65eab12c4ada1d32e35d9d6fad2da42fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_7c8c3b2d",
+        "filename": "keystone/cmd/status.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-16T19:10:52Z",
+      "side": 1,
+      "message": "Sweet - so this should be fine until we get a real check.",
+      "parentUuid": "3f79a3b5_41aac119",
       "range": {
         "startLine": 29,
         "startChar": 4,
