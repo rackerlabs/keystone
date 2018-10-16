@@ -224,6 +224,30 @@
       "revId": "255c6da65eab12c4ada1d32e35d9d6fad2da42fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_41aac119",
+        "filename": "keystone/cmd/status.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2018-10-16T14:30:39Z",
+      "side": 1,
+      "message": "I guess the library will default to an empty tuple:\n\nhttps://github.com/openstack/oslo.upgradecheck/blob/master/oslo_upgradecheck/upgradecheck.py#L77",
+      "parentUuid": "3f79a3b5_c19571e4",
+      "range": {
+        "startLine": 29,
+        "startChar": 4,
+        "endLine": 29,
+        "endChar": 8
+      },
+      "revId": "255c6da65eab12c4ada1d32e35d9d6fad2da42fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
