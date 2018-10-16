@@ -99,13 +99,18 @@ def render_token_response_from_model(token, include_catalog=True):
                 ap_domain_name == token.project_domain['name']
             )
             token_reference['token']['is_admin_project'] = is_ap
-    if include_catalog and not token.unscoped:
+    if include_catalog:
         user_id = token.user_id
-        if token.trust_id:
-            user_id = token.trust['trustor_user_id']
-        catalog = PROVIDERS.catalog_api.get_v3_catalog(
-            user_id, token.project_id
-        )
+        if token.unscoped:
+            catalog = PROVIDERS.catalog_api.get_v3_catalog(user_id, None)
+            import rpdb; rpdb.set_trace()
+            #TODO: remove all but the identity service and its endpoints
+        else:
+            if token.trust_id:
+                user_id = token.trust['trustor_user_id']
+            catalog = PROVIDERS.catalog_api.get_v3_catalog(
+                user_id, token.project_id
+            )
         token_reference['token']['catalog'] = catalog
     sps = PROVIDERS.federation_api.get_enabled_service_providers()
     if sps:
@@ -141,5 +146,4 @@ def render_token_response_from_model(token, include_catalog=True):
         )
         restricted = not token.application_credential['unrestricted']
         token_reference['token'][key]['restricted'] = restricted
-
     return token_reference

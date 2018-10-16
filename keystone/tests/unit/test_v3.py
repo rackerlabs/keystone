@@ -114,11 +114,11 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
                     }
                 },
                 'additionalProperties': False,
-            }
+            },
+            'catalog':  {'type': 'array'}
         }
 
         if system_scoped:
-            properties['catalog'] = {'type': 'array'}
             properties['system'] = {
                 'type': 'object',
                 'properties': {
@@ -127,7 +127,6 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             }
             properties['roles'] = ROLES_SCHEMA
         elif domain_scoped:
-            properties['catalog'] = {'type': 'array'}
             properties['roles'] = ROLES_SCHEMA
             properties['domain'] = {
                 'type': 'object',
@@ -140,7 +139,6 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             }
         elif project_scoped:
             properties['is_admin_project'] = {'type': 'boolean'}
-            properties['catalog'] = {'type': 'array'}
             # FIXME(lbragstad): Remove this in favor of the predefined
             # ROLES_SCHEMA dictionary once bug 1763510 is fixed.
             ROLES_SCHEMA['items']['properties']['domain_id'] = {
