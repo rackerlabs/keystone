@@ -95,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_c58b3abe",
+        "filename": "keystone/conf/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-16T16:07:48Z",
+      "side": 1,
+      "message": "We need to hook into the load_config_files mechanisms... see our tests.",
+      "parentUuid": "3f79a3b5_5f6d1c65",
+      "range": {
+        "startLine": 194,
+        "startChar": 21,
+        "endLine": 194,
+        "endChar": 41
+      },
+      "revId": "168dc144741ec3635a8d117a7355789ca2ac3a79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_bfdf9009",
         "filename": "keystone/conf/__init__.py",
         "patchSetId": 2
@@ -106,6 +130,24 @@
       "writtenOn": "2018-10-11T10:48:55Z",
       "side": 1,
       "message": "I wonder if this has different performance on different filesystems, or if we should consider the possibility that it could be a network mounted filesystem?",
+      "revId": "168dc144741ec3635a8d117a7355789ca2ac3a79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_45988a18",
+        "filename": "keystone/conf/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-16T16:07:48Z",
+      "side": 1,
+      "message": "mtime check has very minimal performance differences... now the hard part is that mtime check isn\u0027t guaranteed to work. We could just do like policy and load every time.",
+      "parentUuid": "3f79a3b5_bfdf9009",
       "revId": "168dc144741ec3635a8d117a7355789ca2ac3a79",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -147,6 +189,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_25aa2e19",
+        "filename": "keystone/server/flask/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-16T16:07:48Z",
+      "side": 1,
+      "message": "We already load the policy file on every single request.",
+      "parentUuid": "3f79a3b5_9fcad443",
+      "revId": "168dc144741ec3635a8d117a7355789ca2ac3a79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_4da8ba8a",
         "filename": "keystone/tests/unit/test_config.py",
         "patchSetId": 2
@@ -164,6 +224,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_256f8efa",
+        "filename": "keystone/tests/unit/test_config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-16T16:07:48Z",
+      "side": 1,
+      "message": "++ we do that in some cases (policy).",
+      "parentUuid": "3f79a3b5_4da8ba8a",
+      "revId": "168dc144741ec3635a8d117a7355789ca2ac3a79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_4d819afa",
         "filename": "releasenotes/notes/bp-mutable-config-5d3b25908957dcdd.yaml",
         "patchSetId": 2
@@ -175,6 +253,24 @@
       "writtenOn": "2018-08-27T16:38:27Z",
       "side": 1,
       "message": "I think we should add a link to the community goal somewhere in here so that folks can get more context if needed.",
+      "revId": "168dc144741ec3635a8d117a7355789ca2ac3a79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_8549c28e",
+        "filename": "releasenotes/notes/bp-mutable-config-5d3b25908957dcdd.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-16T16:07:48Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3f79a3b5_4d819afa",
       "revId": "168dc144741ec3635a8d117a7355789ca2ac3a79",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
