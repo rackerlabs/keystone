@@ -22,6 +22,30 @@
       "revId": "255c6da65eab12c4ada1d32e35d9d6fad2da42fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_a1b5d5d1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2018-10-16T14:20:11Z",
+      "side": 1,
+      "message": "I think because tasks aren\u0027t a top level resource in the UI?",
+      "parentUuid": "3f79a3b5_6d626bdb",
+      "range": {
+        "startLine": 17,
+        "startChar": 6,
+        "endLine": 17,
+        "endChar": 11
+      },
+      "revId": "255c6da65eab12c4ada1d32e35d9d6fad2da42fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
