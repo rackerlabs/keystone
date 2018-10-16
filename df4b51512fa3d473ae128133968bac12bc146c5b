@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_9a1126b2",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-16T10:57:39Z",
+      "side": 1,
+      "message": "The team was working on a convention to make these easier to understand since this file gets a bit cluttered and it\u0027s hard to figure out what all these are for without chasing them down [0]:\n\n  {request|response}_{attribute}_{location}_{required|not required}\n\nAn example of a more consistent convention can be found on line 1499.\n\n request_default_limit_body_not_required:\n\n[0] https://etherpad.openstack.org/p/queens-ptg-keystone-doc-cleanup",
+      "range": {
+        "startLine": 616,
+        "startChar": 0,
+        "endLine": 616,
+        "endChar": 22
+      },
+      "revId": "df4b51512fa3d473ae128133968bac12bc146c5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_ba1422a0",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1582,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-16T10:57:39Z",
+      "side": 1,
+      "message": "Same comment here",
+      "range": {
+        "startLine": 1582,
+        "startChar": 0,
+        "endLine": 1582,
+        "endChar": 23
+      },
+      "revId": "df4b51512fa3d473ae128133968bac12bc146c5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_7a0a0a78",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1594,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-16T10:57:39Z",
+      "side": 1,
+      "message": "And here.",
+      "range": {
+        "startLine": 1594,
+        "startChar": 0,
+        "endLine": 1594,
+        "endChar": 22
+      },
+      "revId": "df4b51512fa3d473ae128133968bac12bc146c5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
