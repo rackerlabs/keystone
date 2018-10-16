@@ -46,6 +46,23 @@
       "revId": "35c9bb7eff51ebd6101b4a1d233b984cbf68fca8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_f0d987f0",
+        "filename": "keystone/server/flask/application.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-10-16T16:57:21Z",
+      "side": 1,
+      "message": "this goes away in a future patch, I assume?",
+      "revId": "35c9bb7eff51ebd6101b4a1d233b984cbf68fca8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
