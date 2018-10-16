@@ -147,6 +147,9 @@ class Manager(manager.Manager):
             LOG.debug('Unable to validate token: %s', e)
             raise exception.TokenNotFound(token_id=token_id)
 
+    # NOTE(morgan): The _validate_token method must be separate from
+    # validate_token() since time checks are encoded. Even though kwargs
+    # are now supported in oslo_cache, this must remain separate.
     @MEMOIZE_TOKENS
     def _validate_token(self, token_id):
         (user_id, methods, audit_ids, system, domain_id,
