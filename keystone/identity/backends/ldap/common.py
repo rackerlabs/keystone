@@ -27,6 +27,7 @@ from oslo_log import log
 from oslo_utils import reflection
 import six
 from six.moves import map, zip
+from six import PY2
 
 from keystone.common import driver_hints
 from keystone import exception
@@ -298,10 +299,16 @@ def is_dn_equal(dn1, dn2):
     :param dn2: Either a string DN or a DN parsed by ldap.dn.str2dn.
 
     """
-    if not isinstance(dn1, list):
-        dn1 = ldap.dn.str2dn(utf8_encode(dn1))
-    if not isinstance(dn2, list):
-        dn2 = ldap.dn.str2dn(utf8_encode(dn2))
+    if PY2:
+        if not isinstance(dn1, list):
+            dn1 = ldap.dn.str2dn(utf8_encode(dn1))
+        if not isinstance(dn2, list):
+            dn2 = ldap.dn.str2dn(utf8_encode(dn2))
+    else:
+        if not isinstance(dn1, list):
+            dn1 = ldap.dn.str2dn(dn1)
+        if not isinstance(dn2, list):
+            dn2 = ldap.dn.str2dn(dn2)
 
     if len(dn1) != len(dn2):
         return False
@@ -319,10 +326,16 @@ def dn_startswith(descendant_dn, dn):
     :param dn: Either a string DN or a DN parsed by ldap.dn.str2dn.
 
     """
-    if not isinstance(descendant_dn, list):
-        descendant_dn = ldap.dn.str2dn(utf8_encode(descendant_dn))
-    if not isinstance(dn, list):
-        dn = ldap.dn.str2dn(utf8_encode(dn))
+    if PY2:
+        if not isinstance(descendant_dn, list):
+            descendant_dn = ldap.dn.str2dn(utf8_encode(descendant_dn))
+        if not isinstance(dn, list):
+            dn = ldap.dn.str2dn(utf8_encode(dn))
+    else:
+        if not isinstance(descendant_dn, list):
+            descendant_dn = ldap.dn.str2dn(descendant_dn)
+        if not isinstance(dn, list):
+            dn = ldap.dn.str2dn(dn)
 
     if len(descendant_dn) <= len(dn):
         return False
@@ -885,8 +898,12 @@ class KeystoneLDAPHandler(LDAPHandler):
     def simple_bind_s(self, who='', cred='',
                       serverctrls=None, clientctrls=None):
         LOG.debug('LDAP bind: who=%s', who)
-        who_utf8 = utf8_encode(who)
-        cred_utf8 = utf8_encode(cred)
+        if PY2:
+            who_utf8 = utf8_encode(who)
+            cred_utf8 = utf8_encode(cred)
+        else:
+            who_utf8 = who
+            cred_utf8 = cred
         return self.conn.simple_bind_s(who_utf8, cred_utf8,
                                        serverctrls=serverctrls,
                                        clientctrls=clientctrls)
@@ -904,9 +921,15 @@ class KeystoneLDAPHandler(LDAPHandler):
                          for kind, values in ldap_attrs]
         LOG.debug('LDAP add: dn=%s attrs=%s',
                   dn, logging_attrs)
-        dn_utf8 = utf8_encode(dn)
-        ldap_attrs_utf8 = [(kind, [utf8_encode(x) for x in safe_iter(values)])
-                           for kind, values in ldap_attrs]
+        if PY2:
+            dn_utf8 = utf8_encode(dn)
+            ldap_attrs_utf8 = [(kind,
+                               [utf8_encode(x) for x in safe_iter(values)])
+                               for kind, values in ldap_attrs]
+        else:
+            dn_utf8 = dn
+            ldap_attrs_utf8 = [(kind, [x for x in safe_iter(values)])
+                               for kind, values in ldap_attrs]
         return self.conn.add_s(dn_utf8, ldap_attrs_utf8)
 
     def search_s(self, base, scope,
@@ -924,12 +947,20 @@ class KeystoneLDAPHandler(LDAPHandler):
             ldap_result = self._paged_search_s(base, scope,
                                                filterstr, attrlist)
         else:
-            base_utf8 = utf8_encode(base)
-            filterstr_utf8 = utf8_encode(filterstr)
-            if attrlist is None:
-                attrlist_utf8 = None
+            if PY2:
+                base_utf8 = utf8_encode(base)
+                filterstr_utf8 = utf8_encode(filterstr)
+                if attrlist is None:
+                    attrlist_utf8 = None
+                else:
+                    attrlist_utf8 = list(map(utf8_encode, attrlist))
             else:
-                attrlist_utf8 = list(map(utf8_encode, attrlist))
+                base_utf8 = base
+                filterstr_utf8 = filterstr
+                if attrlist is None:
+                    attrlist_utf8 = None
+                else:
+                    attrlist_utf8 = list(map(str, attrlist))
             try:
                 ldap_result = self.conn.search_s(base_utf8, scope,
                                                  filterstr_utf8,
@@ -977,13 +1008,22 @@ class KeystoneLDAPHandler(LDAPHandler):
                 cookie='')
             page_ctrl_oid = ldap.controls.SimplePagedResultsControl.controlType
 
-        base_utf8 = utf8_encode(base)
-        filterstr_utf8 = utf8_encode(filterstr)
-        if attrlist is None:
-            attrlist_utf8 = None
+        if PY2:
+            base_utf8 = utf8_encode(base)
+            filterstr_utf8 = utf8_encode(filterstr)
+            if attrlist is None:
+                attrlist_utf8 = None
+            else:
+                attrlist = [attr for attr in attrlist if attr is not None]
+                attrlist_utf8 = list(map(utf8_encode, attrlist))
         else:
-            attrlist = [attr for attr in attrlist if attr is not None]
-            attrlist_utf8 = list(map(utf8_encode, attrlist))
+            base_utf8 = base
+            filterstr_utf8 = filterstr
+            if attrlist is None:
+                attrlist_utf8 = None
+            else:
+                attrlist = [attr for attr in attrlist if attr is not None]
+                attrlist_utf8 = list(map(str, attrlist))
         msgid = self.conn.search_ext(base_utf8,
                                      scope,
                                      filterstr_utf8,
@@ -1051,11 +1091,18 @@ class KeystoneLDAPHandler(LDAPHandler):
         LOG.debug('LDAP modify: dn=%s modlist=%s',
                   dn, logging_modlist)
 
-        dn_utf8 = utf8_encode(dn)
-        ldap_modlist_utf8 = [
-            (op, kind, (None if values is None
-                        else [utf8_encode(x) for x in safe_iter(values)]))
-            for op, kind, values in ldap_modlist]
+        if PY2:
+            dn_utf8 = utf8_encode(dn)
+            ldap_modlist_utf8 = [
+                (op, kind, (None if values is None
+                            else [utf8_encode(x) for x in safe_iter(values)]))
+                for op, kind, values in ldap_modlist]
+        else:
+            dn_utf8 = dn
+            ldap_modlist_utf8 = [
+                (op, kind, (None if values is None
+                            else [x for x in safe_iter(values)]))
+                for op, kind, values in ldap_modlist]
         return self.conn.modify_s(dn_utf8, ldap_modlist_utf8)
 
     def __exit__(self, exc_type, exc_val, exc_tb):
@@ -1283,7 +1330,10 @@ class BaseLdap(object):
 
     @staticmethod
     def _dn_to_id(dn):
-        return utf8_decode(ldap.dn.str2dn(utf8_encode(dn))[0][0][1])
+        if PY2:
+            return utf8_decode(ldap.dn.str2dn(utf8_encode(dn))[0][0][1])
+        else:
+            return ldap.dn.str2dn(dn)[0][0][1]
 
     def _ldap_res_to_model(self, res):
         # LDAP attribute names may be returned in a different case than
@@ -1769,10 +1819,17 @@ class EnabledEmuMixIn(BaseLdap):
             naming_attr = (naming_attr_name, [naming_attr_value])
         else:
             # Extract the attribute name and value from the configured DN.
-            naming_dn = ldap.dn.str2dn(utf8_encode(self.enabled_emulation_dn))
-            naming_rdn = naming_dn[0][0]
-            naming_attr = (utf8_decode(naming_rdn[0]),
-                           utf8_decode(naming_rdn[1]))
+            if PY2:
+                naming_dn = ldap.dn.str2dn(utf8_encode(
+                                           self.enabled_emulation_dn))
+                naming_rdn = naming_dn[0][0]
+                naming_attr = (utf8_decode(naming_rdn[0]),
+                               utf8_decode(naming_rdn[1]))
+            else:
+                naming_dn = ldap.dn.str2dn(self.enabled_emulation_dn)
+                naming_rdn = naming_dn[0][0]
+                naming_attr = (naming_rdn[0],
+                               naming_rdn[1])
         self.enabled_emulation_naming_attr = naming_attr
 
     def _get_enabled(self, object_id, conn):

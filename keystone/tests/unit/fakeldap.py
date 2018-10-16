@@ -30,6 +30,7 @@ import ldap
 from oslo_log import log
 import six
 from six import moves
+from six import PY2
 
 import keystone.conf
 from keystone import exception
@@ -47,7 +48,10 @@ CONF = keystone.conf.CONF
 
 def _internal_attr(attr_name, value_or_values):
     def normalize_value(value):
-        return common.utf8_decode(value)
+        if PY2:
+            return common.utf8_decode(value)
+        else:
+            return value
 
     def normalize_dn(dn):
         # Capitalize the attribute names as an LDAP server might.
@@ -65,7 +69,10 @@ def _internal_attr(attr_name, value_or_values):
             return 'CN=Doe\\2C John,OU=Users,CN=example,CN=com'
 
         try:
-            dn = ldap.dn.str2dn(common.utf8_encode(dn))
+            if PY2:
+                dn = ldap.dn.str2dn(common.utf8_encode(dn))
+            else:
+                dn = ldap.dn.str2dn(dn)
         except ldap.DECODING_ERROR:
             # NOTE(amakarov): In case of IDs instead of DNs in group members
             # they must be handled as regular values.
@@ -74,10 +81,14 @@ def _internal_attr(attr_name, value_or_values):
         norm = []
         for part in dn:
             name, val, i = part[0]
-            name = common.utf8_decode(name)
+            if PY2:
+                name = common.utf8_decode(name)
             name = name.upper()
             norm.append([(name, val, i)])
-        return common.utf8_decode(ldap.dn.dn2str(norm))
+        if PY2:
+            return common.utf8_decode(ldap.dn.dn2str(norm))
+        else:
+            return ldap.dn.dn2str(norm)
 
     if attr_name in ('member', 'roleOccupant'):
         attr_fn = normalize_dn
@@ -279,15 +290,24 @@ class FakeLdap(common.LDAPHandler):
         self.conn_timeout = conn_timeout
 
     def dn(self, dn):
-        return common.utf8_decode(dn)
+        if PY2:
+            return common.utf8_decode(dn)
+        else:
+            return dn
 
     def _dn_to_id_attr(self, dn):
-        return common.utf8_decode(
-            ldap.dn.str2dn(common.utf8_encode(dn))[0][0][0])
+        if PY2:
+            return common.utf8_decode(
+                ldap.dn.str2dn(common.utf8_encode(dn))[0][0][0])
+        else:
+            return ldap.dn.str2dn(dn)[0][0][0]
 
     def _dn_to_id_value(self, dn):
-        return common.utf8_decode(
-            ldap.dn.str2dn(common.utf8_encode(dn))[0][0][1])
+        if PY2:
+            return common.utf8_decode(
+                ldap.dn.str2dn(common.utf8_encode(dn))[0][0][1])
+        else:
+            return ldap.dn.str2dn(dn)[0][0][1]
 
     def key(self, dn):
         return '%s%s' % (self.__prefix, self.dn(dn))
@@ -298,27 +318,28 @@ class FakeLdap(common.LDAPHandler):
         if server_fail:
             raise ldap.SERVER_DOWN
         whos = ['cn=Admin', CONF.ldap.user]
-        if (common.utf8_decode(who) in whos and
-                common.utf8_decode(cred) in ['password', CONF.ldap.password]):
+        if PY2:
+            who = common.utf8_decode(who)
+            cred = common.utf8_decode(cred)
+        if (who in whos and cred in ['password', CONF.ldap.password]):
             return
 
         attrs = self.db.get(self.key(who))
         if not attrs:
-            LOG.debug('who=%s not found, binding anonymously',
-                      common.utf8_decode(who))
+            LOG.debug('who=%s not found, binding anonymously', who)
 
         db_password = ''
         if attrs:
             try:
                 db_password = attrs['userPassword'][0]
             except (KeyError, IndexError):
-                LOG.debug('bind fail: password for who=%s not found',
-                          common.utf8_decode(who))
+                LOG.debug('bind fail: password for who=%s not found', who)
                 raise ldap.INAPPROPRIATE_AUTH
 
-        if cred != common.utf8_encode(db_password):
-            LOG.debug('bind fail: password for who=%s does not match',
-                      common.utf8_decode(who))
+        if PY2:
+            db_password = common.utf8_encode(db_password)
+        if cred != db_password:
+            LOG.debug('bind fail: password for who=%s does not match', who)
             raise ldap.INVALID_CREDENTIALS
 
     def unbind_s(self):
@@ -343,7 +364,9 @@ class FakeLdap(common.LDAPHandler):
 
             if k == id_attr:
                 for val in dummy_v:
-                    if common.utf8_decode(val) == id_value:
+                    if PY2:
+                        val = common.utf8_decode(val)
+                    if val == id_value:
                         id_attr_in_modlist = True
 
         if not id_attr_in_modlist:
@@ -351,11 +374,19 @@ class FakeLdap(common.LDAPHandler):
                       {'attr': id_attr, 'attrs': modlist})
             raise ldap.NAMING_VIOLATION
         key = self.key(dn)
-        LOG.debug('add item: dn=%(dn)s, attrs=%(attrs)s', {
-            'dn': common.utf8_decode(dn), 'attrs': modlist})
+        if PY2:
+            LOG.debug('add item: dn=%(dn)s, attrs=%(attrs)s', {
+                'dn': common.utf8_decode(dn), 'attrs': modlist})
+        else:
+            LOG.debug('add item: dn=%(dn)s, attrs=%(attrs)s', {
+                'dn': dn, 'attrs': modlist})
         if key in self.db:
-            LOG.debug('add item failed: dn=%s is already in store.',
-                      common.utf8_decode(dn))
+            if PY2:
+                LOG.debug('add item failed: dn=%s is already in store.',
+                          common.utf8_decode(dn))
+            else:
+                LOG.debug('add item failed: dn=%s is already in store.',
+                          dn)
             raise ldap.ALREADY_EXISTS(dn)
 
         self.db[key] = {k: _internal_attr(k, v) for k, v in modlist}
@@ -378,11 +409,18 @@ class FakeLdap(common.LDAPHandler):
 
         try:
             key = self.key(dn)
-            LOG.debug('FakeLdap delete item: dn=%s', common.utf8_decode(dn))
+            if PY2:
+                LOG.debug('FakeLdap delete item: dn=%s', common.utf8_decode(dn))
+            else:
+                LOG.debug('FakeLdap delete item: dn=%s', dn)
             del self.db[key]
         except KeyError:
-            LOG.debug('delete item failed: dn=%s not found.',
-                      common.utf8_decode(dn))
+            if PY2:
+                LOG.debug('delete item failed: dn=%s not found.',
+                          common.utf8_decode(dn))
+            else:
+                LOG.debug('delete item failed: dn=%s not found.',
+                          dn)
             raise ldap.NO_SUCH_OBJECT
         self.db.sync()
 
@@ -397,13 +435,21 @@ class FakeLdap(common.LDAPHandler):
             raise ldap.SERVER_DOWN
 
         key = self.key(dn)
-        LOG.debug('modify item: dn=%(dn)s attrs=%(attrs)s', {
-            'dn': common.utf8_decode(dn), 'attrs': modlist})
+        if PY2:
+            LOG.debug('modify item: dn=%(dn)s attrs=%(attrs)s', {
+                'dn': common.utf8_decode(dn), 'attrs': modlist})
+        else:
+            LOG.debug('modify item: dn=%(dn)s attrs=%(attrs)s', {
+                'dn': dn, 'attrs': modlist})
         try:
             entry = self.db[key]
         except KeyError:
-            LOG.debug('modify item failed: dn=%s not found.',
-                      common.utf8_decode(dn))
+            if PY2:
+                LOG.debug('modify item failed: dn=%s not found.',
+                          common.utf8_decode(dn))
+            else:
+                LOG.debug('modify item failed: dn=%s not found.',
+                          dn)
             raise ldap.NO_SUCH_OBJECT
 
         for cmd, k, v in modlist:
@@ -488,14 +534,20 @@ class FakeLdap(common.LDAPHandler):
         elif scope == ldap.SCOPE_ONELEVEL:
 
             def get_entries():
-                base_dn = ldap.dn.str2dn(common.utf8_encode(base))
+                if PY2:
+                    base_dn = ldap.dn.str2dn(common.utf8_encode(base))
+                else:
+                    base_dn = ldap.dn.str2dn(base)
                 base_len = len(base_dn)
 
                 for k, v in self.db.items():
                     if not k.startswith(self.__prefix):
                         continue
                     k_dn_str = k[len(self.__prefix):]
-                    k_dn = ldap.dn.str2dn(common.utf8_encode(k_dn_str))
+                    if PY2:
+                        k_dn = ldap.dn.str2dn(common.utf8_encode(k_dn_str))
+                    else:
+                        k_dn = ldap.dn.str2dn(k_dn_str)
                     if len(k_dn) != base_len + 1:
                         continue
                     if k_dn[-base_len:] != base_dn:
@@ -511,13 +563,20 @@ class FakeLdap(common.LDAPHandler):
         objects = []
         for dn, attrs in results:
             # filter the objects by filterstr
-            id_attr, id_val, _ = ldap.dn.str2dn(common.utf8_encode(dn))[0][0]
-            id_attr = common.utf8_decode(id_attr)
-            id_val = common.utf8_decode(id_val)
+            if PY2:
+                id_attr, id_val, _ = ldap.dn.str2dn(common.utf8_encode(dn))[0][0]
+                id_attr = common.utf8_decode(id_attr)
+                id_val = common.utf8_decode(id_val)
+            else:
+                id_attr, id_val, _ = ldap.dn.str2dn(dn)[0][0]
             match_attrs = attrs.copy()
             match_attrs[id_attr] = [id_val]
             attrs_checked = set()
-            if not filterstr or _match_query(common.utf8_decode(filterstr),
+            if PY2:
+                filterstr_decode = common.utf8_decode(filterstr)
+            else:
+                filterstr_decode = filterstr
+            if not filterstr or _match_query(filterstr_decode,
                                              match_attrs,
                                              attrs_checked):
                 if (filterstr and
@@ -525,8 +584,12 @@ class FakeLdap(common.LDAPHandler):
                         ('objectclass' not in attrs_checked)):
                     raise AssertionError('No objectClass in search filter')
                 # filter the attributes by attrlist
-                attrs = {k: v for k, v in attrs.items()
-                         if not attrlist or k in common.utf8_decode(attrlist)}
+                if PY2:
+                    attrs = {k: v for k, v in attrs.items()
+                             if not attrlist or k in common.utf8_decode(attrlist)}
+                else:
+                    attrs = {k: v for k, v in attrs.items()
+                             if not attrlist or k in attrlist}
                 objects.append((dn, attrs))
 
         return objects
@@ -650,8 +713,12 @@ class FakeLdapNoSubtreeDelete(FakeLdap):
                 raise ldap.NOT_ALLOWED_ON_NONLEAF
 
         except KeyError:
-            LOG.debug('delete item failed: dn=%s not found.',
-                      common.utf8_decode(dn))
+            if PY2:
+                LOG.debug('delete item failed: dn=%s not found.',
+                          common.utf8_decode(dn))
+            else:
+                LOG.debug('delete item failed: dn=%s not found.',
+                          dn)
             raise ldap.NO_SUCH_OBJECT
         super(FakeLdapNoSubtreeDelete, self).delete_ext_s(dn,
                                                           serverctrls,
