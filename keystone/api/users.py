@@ -136,9 +136,13 @@ class UserResource(ks_flask.ResourceBase):
 
         GET/HEAD /v3/users/{user_id}
         """
-        ENFORCER.enforce_call(action='identity:get_user')
-        ref = PROVIDERS.identity_api.get_user(user_id)
-        return self.wrap_member(ref)
+        try:
+            user = PROVIDERS.identity_api.get_user(user_id)
+            target = {'user': user}
+        except ks_exception.NotFound:
+            raise ks_exception.ForbiddenAction(action='identity:get_user')
+        ENFORCER.enforce_call(action='identity:get_user', target_attr=target)
+        return self.wrap_member(user)
 
     def _list_users(self):
         """List users.
