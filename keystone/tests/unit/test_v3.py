@@ -104,11 +104,11 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
                     }
                 },
                 'additionalProperties': False,
-            }
+            },
+            'catalog': {'type': 'array'}
         }
 
         if system_scoped:
-            properties['catalog'] = {'type': 'array'}
             properties['system'] = {
                 'type': 'object',
                 'properties': {
@@ -117,7 +117,6 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             }
             properties['roles'] = ROLES_SCHEMA
         elif domain_scoped:
-            properties['catalog'] = {'type': 'array'}
             properties['roles'] = ROLES_SCHEMA
             properties['domain'] = {
                 'type': 'object',
@@ -130,7 +129,6 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             }
         elif project_scoped:
             properties['is_admin_project'] = {'type': 'boolean'}
-            properties['catalog'] = {'type': 'array'}
             # FIXME(lbragstad): Remove this in favor of the predefined
             # ROLES_SCHEMA dictionary once bug 1763510 is fixed.
             ROLES_SCHEMA['items']['properties']['domain_id'] = {
@@ -225,6 +223,8 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
 
         self.project = unit.new_project_ref(domain_id=self.domain_id)
         self.project_id = self.project['id']
+        self.project['name'] = 'identity'
+        self.project_name = 'identity'
         self.project = PROVIDERS.resource_api.create_project(
             self.project_id, self.project
         )
@@ -274,7 +274,10 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             PROVIDERS.catalog_api.create_region(self.region)
 
             self.service = unit.new_service_ref()
+            self.service['name'] = 'identity'
             self.service_id = self.service['id']
+            self.service_name = self.service['name']
+
             PROVIDERS.catalog_api.create_service(
                 self.service_id, self.service.copy()
             )
@@ -631,11 +634,20 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         return token
 
     def assertValidUnscopedTokenResponse(self, r, *args, **kwargs):
+        require_catalog = kwargs.pop('require_catalog', True)
+
         token = self.assertValidTokenResponse(r, *args, **kwargs)
         validator_object = validators.SchemaValidator(
             self.generate_token_schema()
         )
         validator_object.validate(token)
+
+        if require_catalog:
+            endpoint_num = 0
+            self.assertIn('catalog', token)
+            self.assertTrue(isinstance(token['catalog'], list))
+            self.assertEqual(1, len(token['catalog']))
+            self.assertEqual('identity', token['catalog'][0]['name'])
 
         return token
 
@@ -647,7 +659,6 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         token = self.assertValidTokenResponse(r, *args, **kwargs)
 
         if require_catalog:
-            endpoint_num = 0
             self.assertIn('catalog', token)
 
             if isinstance(token['catalog'], list):
