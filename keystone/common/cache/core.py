@@ -103,7 +103,7 @@ def create_region(name):
     :rtype: :class:`dogpile.cache.region.CacheRegion`
 
     """
-    region = cache.create_region()
+    region = cache.create_region(function=cache.kwarg_function_key_generator)
     region.name = name  # oslo.cache doesn't allow this yet
     return region
 

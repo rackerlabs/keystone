@@ -1451,20 +1451,19 @@ class MappingManager(manager.Manager):
 
     driver_namespace = 'keystone.identity.id_mapping'
     _provides_api = 'id_mapping_api'
+    def get_public_id(self, domain_id, local_id, entity_type):
+        return self.driver.get_public_id({'domain_id': domain_id,
+                                          'local_id': local_id,
+                                          'entity_type': entity_type})
 
     def __init__(self):
         super(MappingManager, self).__init__(CONF.identity_mapping.driver)
 
     @MEMOIZE_ID_MAPPING
-    def _get_public_id(self, domain_id, local_id, entity_type):
-        return self.driver.get_public_id({'domain_id': domain_id,
-                                          'local_id': local_id,
-                                          'entity_type': entity_type})
-
     def get_public_id(self, local_entity):
-        return self._get_public_id(local_entity['domain_id'],
-                                   local_entity['local_id'],
-                                   local_entity['entity_type'])
+        return self.driver.get_public_id(local_entity['domain_id'],
+                                         local_entity['local_id'],
+                                         local_entity['entity_type'])
 
     @MEMOIZE_ID_MAPPING
     def get_id_mapping(self, public_id):

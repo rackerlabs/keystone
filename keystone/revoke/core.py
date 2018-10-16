@@ -51,11 +51,8 @@ class Manager(manager.Manager):
         self.model = revoke_model
 
     @MEMOIZE
-    def _list_events(self, last_fetch):
-        return self.driver.list_events(last_fetch)
-
     def list_events(self, last_fetch=None):
-        return self._list_events(last_fetch)
+        return self.driver.list_events(last_fetch)
 
     def _user_callback(self, service, resource_type, operation,
                        payload):
