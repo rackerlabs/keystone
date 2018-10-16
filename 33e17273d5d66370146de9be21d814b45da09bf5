@@ -34,6 +34,24 @@
       "revId": "33e17273d5d66370146de9be21d814b45da09bf5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_9d66eebb",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-10-16T23:47:09Z",
+      "side": 1,
+      "message": "lets make two explicit functions, one with domain roles, one without, and cache them both separately.",
+      "parentUuid": "3f79a3b5_050b722a",
+      "revId": "33e17273d5d66370146de9be21d814b45da09bf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
