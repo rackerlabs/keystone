@@ -10,46 +10,57 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_log import versionutils
 from oslo_policy import policy
 
 from keystone.common.policies import base
 
+DEPRECATED_REASON = (
+    'As of the Stein release, the user API understands how to handle '
+    'system-scoped tokens in addition to project and domain tokens, making '
+    'the API more accessible to users without compromising security or '
+    'manageability for administrators. The new default policies for this API '
+    'account for these changes automatically.'
+)
+
+deprecated_get_user = policy.DeprecatedRule(
+    name=base.IDENTITY % 'get_user',
+    check_str=base.RULE_ADMIN_OR_OWNER
+)
+deprecated_list_users = policy.DeprecatedRule(
+    name=base.IDENTITY % 'list_users',
+    check_str=base.RULE_ADMIN_OR_OWNER
+)
+
 user_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_user',
-        check_str=base.RULE_ADMIN_OR_OWNER,
-        # FIXME(lbragstad): First, a system administrator should be able to get
-        # a user reference for anyone in the system. Second, a project
-        # administrator should be able to get references for users within the
-        # project their token is scoped to or their domain. Third, a user
-        # should be able to get a reference for themselves. This is going to
-        # require keystone to be smarter about enforcing policy checks in code,
-        # specifically for the last two cases. Once that is fixed, we can
-        # uncomment the following line.
-        # scope_types=['system', 'project'],
+        check_str=(
+            '(role:reader and system_scope:all) or '
+            '(role:reader and token.domain.id:%(target.user.domain_id)s) or '
+            'user_id:%(target.user.id)s'
+        ),
+        scope_types=['system', 'domain', 'project'],
         description='Show user details.',
         operations=[{'path': '/v3/users/{user_id}',
                      'method': 'GET'},
                     {'path': '/v3/users/{user_id}',
-                     'method': 'HEAD'}]),
+                     'method': 'HEAD'}],
+        deprecated_rule=deprecated_get_user,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_users',
-        check_str=base.RULE_ADMIN_REQUIRED,
-        # FIXME(lbragstad): Since listing users has traditionally always been a
-        # system-level API call, let's maintain that pattern here. A system
-        # administrator should be able to list all users in the deployment,
-        # which is what's supported today. Project and domain administrators
-        # should also be able to list users, but they should only see users
-        # within their project or domain. Otherwise it would be possible for
-        # project and domain administrators to see users unrelated to their
-        # project or domain, which would be a security issue. Once we have that
-        # support in place, we should update scope_types to include 'project'.
-        scope_types=['system'],
+        check_str='(role:reader and system_scope:all) or role:reader',
+        scope_types=['system', 'domain'],
         description='List users.',
         operations=[{'path': '/v3/users',
                      'method': 'GET'},
                     {'path': '/v3/users',
-                     'method': 'HEAD'}]),
+                     'method': 'HEAD'}],
+        deprecated_rule=deprecated_list_users,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_projects_for_user',
         check_str='',
@@ -84,7 +95,7 @@ user_policies = [
         # they administer. The second case is going to require a policy check
         # in code. Until that happens, we will leave this as a system-level
         # policy.
-        scope_types=['system'],
+        scope_types=['system', 'domain'],
         description='Create a user.',
         operations=[{'path': '/v3/users',
                      'method': 'POST'}]),
@@ -93,7 +104,7 @@ user_policies = [
         check_str=base.RULE_ADMIN_REQUIRED,
         # FIXME(lbragstad): See the above comment about adding support for
         # project scope_types in the future.
-        scope_types=['system'],
+        scope_types=['system', 'domain'],
         description='Update a user, including administrative password resets.',
         operations=[{'path': '/v3/users/{user_id}',
                      'method': 'PATCH'}]),
@@ -102,7 +113,7 @@ user_policies = [
         check_str=base.RULE_ADMIN_REQUIRED,
         # FIXME(lbragstad): See the above comment about adding support for
         # project scope_types in the future.
-        scope_types=['system'],
+        scope_types=['system', 'domain'],
         description='Delete a user.',
         operations=[{'path': '/v3/users/{user_id}',
                      'method': 'DELETE'}])

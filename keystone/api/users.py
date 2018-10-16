@@ -136,9 +136,18 @@ class UserResource(ks_flask.ResourceBase):
 
         GET/HEAD /v3/users/{user_id}
         """
-        ENFORCER.enforce_call(action='identity:get_user')
-        ref = PROVIDERS.identity_api.get_user(user_id)
-        return self.wrap_member(ref)
+        try:
+            user = PROVIDERS.identity_api.get_user(user_id)
+            target = {'user': user}
+        except ks_exception.NotFound:
+            target = {'user': {}}
+            ENFORCER.enforce_call(
+                action='identity:get_user', target_attr=target
+            )
+            raise
+
+        ENFORCER.enforce_call(action='identity:get_user', target_attr=target)
+        return self.wrap_member(user)
 
     def _list_users(self):
         """List users.
@@ -150,6 +159,8 @@ class UserResource(ks_flask.ResourceBase):
         hints = self.build_driver_hints(filters)
         ENFORCER.enforce_call(action='identity:list_users', filters=filters)
         domain = self._get_domain_id_for_list_request()
+        if not domain and self.get_token_ref().domain_scoped:
+            domain = self.get_token_ref().domain_id
         refs = PROVIDERS.identity_api.list_users(
             domain_scope=domain, hints=hints)
         return self.wrap_collection(refs, hints=hints)
@@ -174,7 +185,19 @@ class UserResource(ks_flask.ResourceBase):
 
         PATCH /v3/users/{user_id}
         """
-        ENFORCER.enforce_call(action='identity:update_user')
+        try:
+            user = PROVIDERS.identity_api.get_user(user_id)
+            target = {'user': user}
+        except ks_exception.NotFound:
+            target = {'user': {}}
+            ENFORCER.enforce_call(
+                action='identity:update_user', target_attr=target
+            )
+            raise
+
+        ENFORCER.enforce_call(
+            action='identity:update_user', target_attr=target
+        )
         user_data = self.request_body_json.get('user', {})
         validation.lazy_validate(schema.user_update, user_data)
         self._require_matching_id(user_data)
@@ -187,7 +210,19 @@ class UserResource(ks_flask.ResourceBase):
 
         DELETE /v3/users/{user_id}
         """
-        ENFORCER.enforce_call(action='identity:delete_user')
+        try:
+            user = PROVIDERS.identity_api.get_user(user_id)
+            target = {'user': user}
+        except ks_exception.NotFound:
+            target = {'user': {}}
+            ENFORCER.enforce_call(
+                action='identity:delete_user', target_attr=target
+            )
+            raise
+
+        ENFORCER.enforce_call(
+            action='identity:delete_user', target_attr=target
+        )
         PROVIDERS.identity_api.delete_user(user_id)
         return None, http_client.NO_CONTENT
 
