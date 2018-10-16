@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3f79a3b5_7a10ca58",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-16T11:08:32Z",
+      "side": 1,
+      "message": "We might need to figure out how to approach this with existing limits works across OpenStack [0]. Some projects treat -1 as \"unlimited\". This will break that if we decide to use the same semantics in keystone.\n\nIf we decide to keep the minimum as 0, we should document that minimum value somewhere and explain how to \"unlimit\" a resource for services migrating to our implementation of limits.\n\n[0] http://git.openstack.org/cgit/openstack/nova/tree/nova/conf/quota.py#n29",
+      "range": {
+        "startLine": 28,
+        "startChar": 19,
+        "endLine": 28,
+        "endChar": 20
+      },
+      "revId": "8c710b61a9d39637f60338301a0067d82934ca41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_194e8b8f",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 3
