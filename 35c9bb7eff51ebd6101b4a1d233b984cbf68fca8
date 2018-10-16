@@ -22,6 +22,30 @@
       "revId": "35c9bb7eff51ebd6101b4a1d233b984cbf68fca8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_599ba362",
+        "filename": "keystone/api/_shared/EC2_S3_Resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-16T05:13:55Z",
+      "side": 1,
+      "message": "This was a copy/paste error. The copyright notice shouldn\u0027t be here. Removed in a followup.",
+      "parentUuid": "3f79a3b5_3086fcbb",
+      "range": {
+        "startLine": 1,
+        "startChar": 12,
+        "endLine": 1,
+        "endChar": 16
+      },
+      "revId": "35c9bb7eff51ebd6101b4a1d233b984cbf68fca8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
