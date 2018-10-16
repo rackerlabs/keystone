@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_420de03d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-16T15:45:08Z",
+      "side": 1,
+      "message": "Usually, there are issues caching methods that accept kwargs since they can change the return value making them hard to cache. Where-as, caching a method with know parameters is definitive.\n\nDo we have to include a new argument here? Or can we just assume domain roles to be stripped?",
+      "revId": "33e17273d5d66370146de9be21d814b45da09bf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
