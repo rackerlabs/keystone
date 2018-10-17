@@ -70,6 +70,24 @@
       "revId": "49ff3a87cb953bb549086ccaeb3c5c2998f542a5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_34afa59e",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1094,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2018-10-17T14:12:22Z",
+      "side": 1,
+      "message": "I\u0027m with Colleen here.\n\nDon\u0027t return from this function.  Check the output.  You can check for existence of each of the values using a substring search. Or You can use JSON to parse the output, which is what an end user would probably do anyway.",
+      "parentUuid": "3f79a3b5_212e098d",
+      "revId": "49ff3a87cb953bb549086ccaeb3c5c2998f542a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
