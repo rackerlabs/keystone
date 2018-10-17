@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_35355844",
+        "filename": "doc/source/cli/index.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2018-10-17T20:45:43Z",
+      "side": 1,
+      "message": "You should update the home page since it\u0027s more than just keystone-manage now:\n\nhttp://logs.openstack.org/85/608785/7/check/openstack-tox-docs/ef5098e/html/#cli-documentation",
+      "revId": "31da6ec7c030b18b75e01668ddb920bb271df917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_351eb8bc",
+        "filename": "doc/source/cli/keystone-status.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2018-10-17T20:45:43Z",
+      "side": 1,
+      "message": "nit: either drop this or be consistent in using it in other console blocks below.",
+      "range": {
+        "startLine": 20,
+        "startChar": 3,
+        "endLine": 20,
+        "endChar": 4
+      },
+      "revId": "31da6ec7c030b18b75e01668ddb920bb271df917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_755af082",
+        "filename": "doc/source/cli/keystone-status.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2018-10-17T20:45:43Z",
+      "side": 1,
+      "message": "I\u0027d add the history of checks section here like other projects are doing:\n\nhttps://review.openstack.org/#/c/610581/5/doc/source/cli/cinder-status.rst@84\n\nIt\u0027s pretty boring now but it will be useful when real checks are added.",
+      "revId": "31da6ec7c030b18b75e01668ddb920bb271df917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
