@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_a08e08d5",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-17T21:36:53Z",
+      "side": 1,
+      "message": "This can actually be simplified to the following:\n\n  except exception.NotFound:\n      ENFORCER.enforce_call(\n          action\u003d\u0027identity:get_credential\u0027\n      )\n      raise",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 117,
+        "endChar": 17
+      },
+      "revId": "636abc6fa6478dab97734fc55e384bafa958c360",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
