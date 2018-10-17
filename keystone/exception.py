@@ -274,6 +274,23 @@ class InsufficientAuthMethods(Error):
     code = 401
     title = 'Unauthorized'
 
+    def __init__(self, message=None, user_id=None, methods=None):
+        super(InsufficientAuthMethods, self).__init__(
+            message, user_id=user_id, methods='[%s]' % ','.join(methods))
+
+        self.user_id = user_id
+        self.methods = methods
+
+
+class AuthReceiptUserMismatch(Unauthorized):
+    message_format = _("AuthContext user_id: %(user_id)s does not match "
+                       "user_id for supplied auth receipt: "
+                       "%(receipt_user_id)s")
+
+
+class ReceiptNotFound(Unauthorized):
+    message_format = _("Could not find auth receipt.")
+
 
 class PasswordExpired(Unauthorized):
     message_format = _("The password is expired and needs to be changed for "
