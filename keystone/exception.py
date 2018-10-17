@@ -284,12 +284,30 @@ class Unauthorized(SecurityError):
 
 
 class InsufficientAuthMethods(Error):
-    # NOTE(notmorgan): This is not a security error, this is meant to
-    # communicate real information back to the user.
+    # NOTE(adrian): This is an internal only error that is built into
+    # an auth receipt response.
     message_format = _("Insufficient auth methods received for %(user_id)s. "
                        "Auth Methods Provided: %(methods)s.")
     code = 401
     title = 'Unauthorized'
+
+    def __init__(self, message=None, user_id=None, methods=None):
+        methods_str = '[%s]' % ','.join(methods)
+        super(InsufficientAuthMethods, self).__init__(
+            message, user_id=user_id, methods=methods_str)
+
+        self.user_id = user_id
+        self.methods = methods
+
+
+class AuthReceiptUserMismatch(Unauthorized):
+    message_format = _("AuthContext user_id: %(user_id)s does not match "
+                       "user_id for supplied auth receipt: "
+                       "%(receipt_user_id)s")
+
+
+class ReceiptNotFound(Unauthorized):
+    message_format = _("Could not find auth receipt.")
 
 
 class PasswordExpired(Unauthorized):
