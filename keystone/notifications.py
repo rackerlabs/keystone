@@ -84,6 +84,10 @@ PERSIST_REVOCATION_EVENT_FOR_USER = 'persist_revocation_event_for_user'
 REMOVE_APP_CREDS_FOR_USER = 'remove_application_credentials_for_user'
 DOMAIN_DELETED = 'domain_deleted'
 
+# NOTE(adriant): For potential use later if we need the ability to clear the
+# receipt cache.
+INVALIDATE_RECEIPT_CACHE = 'invalidate_receipt_cache'
+
 
 def build_audit_initiator():
     """A pyCADF initiator describing the current authenticated context."""
