@@ -29,6 +29,7 @@ from keystone.auth import schema as auth_schema
 from keystone.common import authorization
 from keystone.common import provider_api
 from keystone.common import rbac_enforcer
+from keystone.common import render_receipt
 from keystone.common import render_token
 from keystone.common import utils as k_utils
 from keystone.common import validation
@@ -312,15 +313,26 @@ class AuthTokenResource(_AuthFederationWebSSOBase):
         include_catalog = 'nocatalog' not in flask.request.args
         auth_data = self.request_body_json.get('auth')
         auth_schema.validate_issue_token_auth(auth_data)
-        token = authentication.authenticate_for_token(auth_data)
-        resp_data = render_token.render_token_response_from_model(
-            token, include_catalog=include_catalog
-        )
-        resp_body = jsonutils.dumps(resp_data)
-        response = flask.make_response(resp_body, http_client.CREATED)
-        response.headers['X-Subject-Token'] = token.id
-        response.headers['Content-Type'] = 'application/json'
-        return response
+        try:
+            token = authentication.authenticate_for_token(auth_data)
+            resp_data = render_token.render_token_response_from_model(
+                token, include_catalog=include_catalog
+            )
+            resp_body = jsonutils.dumps(resp_data)
+            response = flask.make_response(resp_body, http_client.CREATED)
+            response.headers[authorization.SUBJECT_TOKEN_HEADER] = token.id
+            response.headers['Content-Type'] = 'application/json'
+            return response
+        except exception.InsufficientAuthMethods as mfa_error:
+            receipt = PROVIDERS.receipt_provider_api. \
+                issue_receipt(mfa_error.user_id, mfa_error.methods)
+            resp_data = render_receipt.render_receipt_response_from_model(
+                receipt)
+            resp_body = jsonutils.dumps(resp_data)
+            response = flask.make_response(resp_body, http_client.UNAUTHORIZED)
+            response.headers[authorization.AUTH_RECEIPT_HEADER] = receipt.id
+            response.headers['Content-Type'] = 'application/json'
+            return response
 
     def delete(self):
         """Revoke a token.
