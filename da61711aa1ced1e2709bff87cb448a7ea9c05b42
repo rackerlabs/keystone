@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_77776a09",
+        "filename": "keystone/tests/unit/protection/v3/test_credentials.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-17T05:58:11Z",
+      "side": 1,
+      "message": "I noticed that this test is also common between system reader, member and admin. I think we can put this test in _UserCredentialTests class ? As This will help in reducing code duplication.",
+      "revId": "da61711aa1ced1e2709bff87cb448a7ea9c05b42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_3781f2c3",
+        "filename": "keystone/tests/unit/protection/v3/test_credentials.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-17T05:58:11Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "da61711aa1ced1e2709bff87cb448a7ea9c05b42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_177cf6e8",
+        "filename": "keystone/tests/unit/protection/v3/test_credentials.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-17T05:58:11Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "da61711aa1ced1e2709bff87cb448a7ea9c05b42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
