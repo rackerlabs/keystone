@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_2e9e7bb7",
+        "filename": "doc/source/admin/identity-use-trusts.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-17T10:07:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_1e00b8ff",
+      "range": {
+        "startLine": 65,
+        "startChar": 35,
+        "endLine": 65,
+        "endChar": 36
+      },
+      "revId": "edbff5fd6efc19f544d757d1379f08cef2c6add3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_21b12946",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 4
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_8e822f51",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 697,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-17T10:07:14Z",
+      "side": 1,
+      "message": "Thanks for this suggestion. Done",
+      "parentUuid": "3f79a3b5_3ba58648",
+      "range": {
+        "startLine": 697,
+        "startChar": 46,
+        "endLine": 697,
+        "endChar": 50
+      },
+      "revId": "edbff5fd6efc19f544d757d1379f08cef2c6add3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_fbbb8e71",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 4
@@ -82,6 +130,30 @@
       "writtenOn": "2018-10-15T20:09:28Z",
       "side": 1,
       "message": "nit: missing a space here",
+      "range": {
+        "startLine": 699,
+        "startChar": 74,
+        "endLine": 699,
+        "endChar": 78
+      },
+      "revId": "edbff5fd6efc19f544d757d1379f08cef2c6add3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_2e775b91",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 699,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-17T10:07:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_fbbb8e71",
       "range": {
         "startLine": 699,
         "startChar": 74,
@@ -117,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_4e7c1771",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 702,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-17T10:07:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_fb494e8d",
+      "range": {
+        "startLine": 700,
+        "startChar": 55,
+        "endLine": 702,
+        "endChar": 49
+      },
+      "revId": "edbff5fd6efc19f544d757d1379f08cef2c6add3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_3bf7c65c",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 4
@@ -128,6 +224,30 @@
       "writtenOn": "2018-10-15T20:09:28Z",
       "side": 1,
       "message": "nit: missing a space here",
+      "range": {
+        "startLine": 714,
+        "startChar": 61,
+        "endLine": 714,
+        "endChar": 67
+      },
+      "revId": "edbff5fd6efc19f544d757d1379f08cef2c6add3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_ee90839a",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-17T10:07:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_3bf7c65c",
       "range": {
         "startLine": 714,
         "startChar": 61,
