@@ -318,7 +318,7 @@ class AuthTokenResource(_AuthFederationWebSSOBase):
         )
         resp_body = jsonutils.dumps(resp_data)
         response = flask.make_response(resp_body, http_client.CREATED)
-        response.headers['X-Subject-Token'] = token.id
+        response.headers[authorization.SUBJECT_TOKEN_HEADER] = token.id
         response.headers['Content-Type'] = 'application/json'
         return response
 
