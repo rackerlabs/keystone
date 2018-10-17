@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_896bffee",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-17T17:38:27Z",
+      "side": 0,
+      "message": "Could we find a way to protect this with a test? I\u0027d hate to have this security issue crop up again if this is reshuffled in a refactor.",
+      "revId": "99a0f08de73389fb74eede01a81af6509efbbc8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
