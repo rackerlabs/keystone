@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_ef94fa43",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2018-10-17T17:23:05Z",
+      "side": 1,
+      "message": "The six module already defines the PY2 and PY3 symbols, use the \"standard\" symbols instead rolling your own.",
+      "revId": "c99cd3027e8856f9847ca7a4a8cee5abec57a844",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
