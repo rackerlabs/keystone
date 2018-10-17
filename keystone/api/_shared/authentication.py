@@ -22,6 +22,7 @@ from oslo_log import log
 import six
 
 from keystone.auth import core
+from keystone.common import authorization
 from keystone.common import provider_api
 from keystone import exception
 from keystone.federation import constants
@@ -191,11 +192,28 @@ def authenticate_for_token(auth=None):
         )
         trust_id = trust.get('id') if trust else None
 
+        receipt_id = flask.request.headers.get(
+            authorization.AUTH_RECEIPT_HEADER, None)
+        if receipt_id:
+            receipt = PROVIDERS.receipt_provider_api.validate_receipt(
+                receipt_id)
+
+            if auth_context['user_id'] != receipt.user_id:
+                raise exception.AuthReceiptUserMismatch(
+                    user_id=auth_context['user_id'],
+                    receipt_user_id=receipt.user_id)
+        else:
+            receipt = None
+
         # NOTE(notmorgan): only methods that actually run and succeed will
         # be in the auth_context['method_names'] list. Do not blindly take
         # the values from auth_info, look at the authoritative values. Make
         # sure the set is unique.
-        method_names_set = set(auth_context.get('method_names', []))
+        if receipt:
+            method_names_set = set(
+                auth_context.get('method_names', []) + receipt.methods)
+        else:
+            method_names_set = set(auth_context.get('method_names', []))
         method_names = list(method_names_set)
 
         app_cred_id = None
@@ -208,7 +226,7 @@ def authenticate_for_token(auth=None):
                 auth_context['user_id'], method_names_set):
             raise exception.InsufficientAuthMethods(
                 user_id=auth_context['user_id'],
-                methods='[%s]' % ','.join(auth_info.get_method_names()))
+                methods=method_names)
 
         expires_at = auth_context.get('expires_at')
         token_audit_id = auth_context.get('audit_id')

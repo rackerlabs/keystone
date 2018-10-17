@@ -83,6 +83,7 @@ INVALIDATE_TOKEN_CACHE = 'invalidate_token_cache'
 PERSIST_REVOCATION_EVENT_FOR_USER = 'persist_revocation_event_for_user'
 REMOVE_APP_CREDS_FOR_USER = 'remove_application_credentials_for_user'
 DOMAIN_DELETED = 'domain_deleted'
+INVALIDATE_RECEIPT_CACHE = 'invalidate_receipt_cache'
 
 
 def build_audit_initiator():
