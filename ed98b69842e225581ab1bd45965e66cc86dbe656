@@ -1,0 +1,135 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_f3c7dc3c",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-18T23:31:09Z",
+      "side": 1,
+      "message": "See below comment re build_target",
+      "revId": "ed98b69842e225581ab1bd45965e66cc86dbe656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_f3c27c35",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-18T23:31:09Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this go in the policy, so you\u0027d create a target dict with the credential in it and then do a check like:\n\nuser_id:%(target.credential.user_id) \n\nThis applies to all the other try/excepts I am not a fan of the try/except in the view if we can avoid it.",
+      "range": {
+        "startLine": 126,
+        "startChar": 0,
+        "endLine": 128,
+        "endChar": 21
+      },
+      "revId": "ed98b69842e225581ab1bd45965e66cc86dbe656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_13e138d0",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-18T23:31:09Z",
+      "side": 1,
+      "message": "Suggest using the build_target argument for enforce_call(), see https://github.com/openstack/keystone/blob/9c91aa74daba42145c07d5dcc75592812a631701/keystone/api/system.py#L60",
+      "range": {
+        "startLine": 138,
+        "startChar": 0,
+        "endLine": 143,
+        "endChar": 17
+      },
+      "revId": "ed98b69842e225581ab1bd45965e66cc86dbe656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_33e6b4e9",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-18T23:31:09Z",
+      "side": 1,
+      "message": "See above",
+      "revId": "ed98b69842e225581ab1bd45965e66cc86dbe656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_b3d164fb",
+        "filename": "keystone/tests/unit/base_classes.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-18T23:31:09Z",
+      "side": 1,
+      "message": "I\u0027m not sure i\u0027m clear why this was needed.",
+      "revId": "ed98b69842e225581ab1bd45965e66cc86dbe656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_73050c79",
+        "filename": "keystone/tests/unit/protection/v3/test_credentials.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-18T23:31:09Z",
+      "side": 1,
+      "message": "THIS IS SO MUCH NICER THAN THE OLD WAY!",
+      "revId": "ed98b69842e225581ab1bd45965e66cc86dbe656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_33ff9467",
+        "filename": "keystone/tests/unit/protection/v3/test_credentials.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-18T23:31:09Z",
+      "side": 1,
+      "message": "As a note, unless you\u0027re explicitly wanting to clear the local context, you don\u0027t need to re-create the client you can just keep using it.\n\nWith that said, i think this is a nice way to show isolation between requests in a single test. Don\u0027t change this.",
+      "revId": "ed98b69842e225581ab1bd45965e66cc86dbe656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
