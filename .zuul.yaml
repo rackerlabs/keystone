@@ -42,6 +42,7 @@
 - job:
     name: keystone-dsvm-functional-federation
     parent: keystone-dsvm-functional
+    nodeset: openstack-single-node
     voting: false
     vars:
       devstack_localrc:
