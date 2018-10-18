@@ -60,6 +60,10 @@ function configure_apache {
 
 function install_federation {
     if is_ubuntu; then
+        # Todo(frickler): This is a workaround for LP: #1802901
+        # remove once that bug is fixed
+        sudo apt -y remove curl libcurl4 ubuntu-server
+
         install_package libapache2-mod-shib2
 
         # Create a new keypair for Shibboleth
