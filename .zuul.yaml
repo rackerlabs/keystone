@@ -13,6 +13,7 @@
 - job:
     name: keystone-dsvm-functional
     parent: devstack-tempest
+    nodeset: openstack-single-node-bionic
     timeout: 4200
     required-projects:
       - openstack-infra/devstack-gate
@@ -66,6 +67,7 @@
 - job:
     name: openstack-ansible-keystone-rolling-upgrade
     parent: openstack-ansible-cross-repo-functional
+    nodeset: openstack-single-node-bionic
     voting: false
     required-projects:
       - name: openstack/openstack-ansible-os_keystone
@@ -102,6 +104,7 @@
 - job:
     name: keystone-dsvm-grenade-multinode
     parent: legacy-dsvm-base-multinode
+    nodeset: openstack-single-node-bionic
     run: playbooks/legacy/keystone-dsvm-grenade-multinode/run.yaml
     post-run: playbooks/legacy/keystone-dsvm-grenade-multinode/post.yaml
     timeout: 10800
