@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_f3728318",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-18T17:19:12Z",
+      "side": 1,
+      "message": "I\u0027d opt for project_id here",
+      "range": {
+        "startLine": 133,
+        "startChar": 60,
+        "endLine": 133,
+        "endChar": 69
+      },
+      "revId": "9783b0a483b4176b9584039e58cd9673ff43a87c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
