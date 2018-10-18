@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_b06e3a62",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1458,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-18T22:20:38Z",
+      "side": 1,
+      "message": "Well that wasn\u0027t a good refactor.",
+      "revId": "90466bbff4e419f69b08c56c338b207f207b26c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
