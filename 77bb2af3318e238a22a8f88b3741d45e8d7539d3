@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_fe3a4395",
+        "filename": "doc/source/admin/identity-use-trusts.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-19T00:29:12Z",
+      "side": 1,
+      "message": "NIT: need a space after the period.",
+      "range": {
+        "startLine": 76,
+        "startChar": 52,
+        "endLine": 76,
+        "endChar": 53
+      },
+      "revId": "77bb2af3318e238a22a8f88b3741d45e8d7539d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_be44cb1b",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-19T00:29:12Z",
+      "side": 1,
+      "message": "Please add back in \"expired\" and/or qualify that only expired/soft-deleted trusts will be purged.",
+      "range": {
+        "startLine": 689,
+        "startChar": 28,
+        "endLine": 689,
+        "endChar": 78
+      },
+      "revId": "77bb2af3318e238a22a8f88b3741d45e8d7539d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_7e4e333a",
+        "filename": "keystone/tests/unit/trust/test_backends.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-19T00:29:12Z",
+      "side": 1,
+      "message": "I don\u0027t like that we changed the value(s) here for these tests. it feels like we should put a guard in on the manager/driver method to ensure we always have utcnow() even if it isn\u0027t passed in -- OR raise an exception.",
+      "revId": "77bb2af3318e238a22a8f88b3741d45e8d7539d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_de6ae780",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-19T00:29:12Z",
+      "side": 1,
+      "message": "Suggest adding in a guard to make sure if date isn\u0027t specified we raise an exception. I don\u0027t like that we had to change tests without an explicit guard to prevent bad data from reaching our backend.",
+      "revId": "77bb2af3318e238a22a8f88b3741d45e8d7539d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
