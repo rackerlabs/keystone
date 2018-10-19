@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_be636bde",
+        "filename": "keystone/tests/unit/protection/v3/test_domains.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-19T00:11:17Z",
+      "side": 1,
+      "message": "This should be doable all at once, not needing a separate call.",
+      "range": {
+        "startLine": 92,
+        "startChar": 8,
+        "endLine": 97,
+        "endChar": 75
+      },
+      "revId": "05d3da65de8ac0902e4180019cca7a9dd966ff4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
