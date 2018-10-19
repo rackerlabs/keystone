@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_9977a9d2",
+        "filename": "keystone/server/flask/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-10-19T02:28:39Z",
+      "side": 1,
+      "message": "IIUC, the request flow will be changed from\n\"...-\u003e url_normalize -\u003e request_id -\u003e build_auth_context\"\nto\n\"...-\u003e request_id -\u003e url_normalize -\u003e build_auth_context\"\n\n\"request_id\" and \"url_normalize\" don\u0027t rely on each other. I think it\u0027s fine here.",
+      "revId": "18d597f8e87a7ebee6aba920e11d64bab6dc0295",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
