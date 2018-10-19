@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_3e7e7b6d",
+        "filename": "keystone/tests/unit/protection/v3/test_domains.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-19T00:14:06Z",
+      "side": 1,
+      "message": "Common tests can be extracted to a base class (_not_ a mixin). But it\u0027s def. ok as is.",
+      "revId": "4e568eddc9620a2d17bbd007b6e35bb5e1e1a871",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
