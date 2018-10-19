@@ -16,6 +16,24 @@
       "revId": "18d597f8e87a7ebee6aba920e11d64bab6dc0295",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_439d8d56",
+        "filename": "keystone/server/flask/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-19T19:54:43Z",
+      "side": 1,
+      "message": "Yep, it\u0027s a minor change. The url normalize impacted nothing but keystone (once your request hit the app). And furthermore the JSON Body function should disappear in the future.",
+      "parentUuid": "3f79a3b5_9977a9d2",
+      "revId": "18d597f8e87a7ebee6aba920e11d64bab6dc0295",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
