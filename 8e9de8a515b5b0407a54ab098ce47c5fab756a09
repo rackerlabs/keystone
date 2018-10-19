@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_ab46bd7d",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-19T17:35:55Z",
+      "side": 1,
+      "message": "I\u0027d like to see a note as to why we\u0027re using \"in\" here. I get it, but I know it\u0027s not super intuitive at first glance. Good catch.",
+      "revId": "8e9de8a515b5b0407a54ab098ce47c5fab756a09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
