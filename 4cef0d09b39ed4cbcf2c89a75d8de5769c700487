@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_de8e6779",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-19T00:18:48Z",
+      "side": 1,
+      "message": "I\u0027d like to see a test to see what happens if the region_id is not none and it is attempted to update it to none but a conflicting limit with a region_id of None already exists.\n\nJust for completeness of the tests / coverage with the new behavior.",
+      "revId": "4cef0d09b39ed4cbcf2c89a75d8de5769c700487",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
