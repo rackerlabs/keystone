@@ -70,6 +70,30 @@
       "revId": "6f46002d1edccbaae2a1de7abfacfb28ae3f616e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_12f83948",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-20T06:45:24Z",
+      "side": 1,
+      "message": "Yes it is sql limit. The column is set with sql.integer that takes the max int value.\n\nI also saw that nova also sets the same value for defining max int.\nhttps://github.com/openstack/nova/blob/c6218428e9b29a2c52808ec7d27b4b21aadc0299/nova/db/constants.py#L16",
+      "parentUuid": "3f79a3b5_c459b85c",
+      "range": {
+        "startLine": 29,
+        "startChar": 19,
+        "endLine": 29,
+        "endChar": 29
+      },
+      "revId": "6f46002d1edccbaae2a1de7abfacfb28ae3f616e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
