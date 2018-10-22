@@ -65,6 +65,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_ba24a5c4",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-22T16:55:42Z",
+      "side": 1,
+      "message": "The implementation here needs to have the credential ID in order to build the target. The callback doesn\u0027t support passing an argument. Should the callback method just dig the credential ID out of the request even though it\u0027s already done that?",
+      "parentUuid": "3f79a3b5_13e138d0",
+      "range": {
+        "startLine": 138,
+        "startChar": 0,
+        "endLine": 143,
+        "endChar": 17
+      },
+      "revId": "ed98b69842e225581ab1bd45965e66cc86dbe656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_33e6b4e9",
         "filename": "keystone/api/credentials.py",
         "patchSetId": 21
