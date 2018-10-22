@@ -98,7 +98,7 @@ class CredentialResource(ks_flask.ResourceBase):
     def post(self):
         # Create a new credential
         ENFORCER.enforce_call(action='identity:create_credential')
-        credential = flask.request.json.get('credential', {})
+        credential = self.request_body_json.get('credential', {})
         validation.lazy_validate(schema.credential_create, credential)
         trust_id = getattr(self.oslo_context, 'trust_id', None)
         ref = self._assign_unique_id(
