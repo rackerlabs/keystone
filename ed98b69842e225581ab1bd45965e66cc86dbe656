@@ -123,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_f508ee25",
+        "filename": "keystone/tests/unit/base_classes.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-22T16:57:54Z",
+      "side": 1,
+      "message": "This is to initialize the CONF object so that we can use the default policy settings for the policy file path.",
+      "parentUuid": "3f79a3b5_b3d164fb",
+      "revId": "ed98b69842e225581ab1bd45965e66cc86dbe656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_73050c79",
         "filename": "keystone/tests/unit/protection/v3/test_credentials.py",
         "patchSetId": 21
@@ -140,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_151d6a61",
+        "filename": "keystone/tests/unit/protection/v3/test_credentials.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-22T16:57:54Z",
+      "side": 1,
+      "message": "++ I agree",
+      "parentUuid": "3f79a3b5_73050c79",
+      "revId": "ed98b69842e225581ab1bd45965e66cc86dbe656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_33ff9467",
         "filename": "keystone/tests/unit/protection/v3/test_credentials.py",
         "patchSetId": 21
@@ -151,6 +187,24 @@
       "writtenOn": "2018-10-18T23:31:09Z",
       "side": 1,
       "message": "As a note, unless you\u0027re explicitly wanting to clear the local context, you don\u0027t need to re-create the client you can just keep using it.\n\nWith that said, i think this is a nice way to show isolation between requests in a single test. Don\u0027t change this.",
+      "revId": "ed98b69842e225581ab1bd45965e66cc86dbe656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_d53612e9",
+        "filename": "keystone/tests/unit/protection/v3/test_credentials.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-22T16:57:54Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3f79a3b5_33ff9467",
       "revId": "ed98b69842e225581ab1bd45965e66cc86dbe656",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
