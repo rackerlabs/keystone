@@ -14,7 +14,6 @@
 
 import hashlib
 
-import flask
 from oslo_serialization import jsonutils
 from six.moves import http_client
 
@@ -98,7 +97,7 @@ class CredentialResource(ks_flask.ResourceBase):
     def post(self):
         # Create a new credential
         ENFORCER.enforce_call(action='identity:create_credential')
-        credential = flask.request.json.get('credential', {})
+        credential = self.request_body_json.get('credential', {})
         validation.lazy_validate(schema.credential_create, credential)
         trust_id = getattr(self.oslo_context, 'trust_id', None)
         ref = self._assign_unique_id(
@@ -109,7 +108,7 @@ class CredentialResource(ks_flask.ResourceBase):
     def patch(self, credential_id):
         # Update Credential
         ENFORCER.enforce_call(action='identity:update_credential')
-        credential = flask.request.json.get('credential', {})
+        credential = self.request_body_json.get('credential', {})
         validation.lazy_validate(schema.credential_update, credential)
         self._require_matching_id(credential)
         ref = PROVIDERS.credential_api.update_credential(
