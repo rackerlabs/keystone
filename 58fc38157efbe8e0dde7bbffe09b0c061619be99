@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_9b45289e",
+        "filename": "keystone/conf/receipt.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-22T20:56:20Z",
+      "side": 1,
+      "message": "Related to the below comment. Do we expect to offer support for people to override recept implementation initially? If not, then I think we should remove this.",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 5
+      },
+      "revId": "58fc38157efbe8e0dde7bbffe09b0c061619be99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_1b5a7881",
+        "filename": "keystone/conf/receipt.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-22T20:56:20Z",
+      "side": 1,
+      "message": "If we don\u0027t expect to use these we should remove them.",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 19
+      },
+      "revId": "58fc38157efbe8e0dde7bbffe09b0c061619be99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_1bcfd828",
+        "filename": "keystone/receipt/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-22T20:56:20Z",
+      "side": 1,
+      "message": "This will need to be reworked to be specific to receipts.",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 54
+      },
+      "revId": "58fc38157efbe8e0dde7bbffe09b0c061619be99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_7bdfecd6",
+        "filename": "setup.cfg",
+        "patchSetId": 4
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-22T20:56:20Z",
+      "side": 1,
+      "message": "Related to my other comment about pluggability, but do we think it\u0027s worth exposing this initially?",
+      "revId": "58fc38157efbe8e0dde7bbffe09b0c061619be99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
