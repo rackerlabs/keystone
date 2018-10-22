@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_f5bb0e0d",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-22T17:27:43Z",
+      "side": 1,
+      "message": "Aha - yeah, you\u0027re right. This must have been leftover cruft before I came up with the current policy check strings.",
+      "parentUuid": "3f79a3b5_f3c27c35",
+      "range": {
+        "startLine": 126,
+        "startChar": 0,
+        "endLine": 128,
+        "endChar": 21
+      },
+      "revId": "ed98b69842e225581ab1bd45965e66cc86dbe656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_13e138d0",
         "filename": "keystone/api/credentials.py",
         "patchSetId": 21
