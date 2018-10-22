@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_ef73414e",
+        "filename": "doc/source/admin/identity-use-trusts.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-22T16:03:21Z",
+      "side": 1,
+      "message": "Look at my other comment.",
+      "range": {
+        "startLine": 77,
+        "startChar": 36,
+        "endLine": 77,
+        "endChar": 78
+      },
+      "revId": "9f256d33e5f62d3fbf107c39347ef20ad1ab436d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_6f889120",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-22T16:03:21Z",
+      "side": 1,
+      "message": "This is now not matching the documentation. the documentation says that if no date is supplied it will use utcnow().",
+      "revId": "9f256d33e5f62d3fbf107c39347ef20ad1ab436d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
