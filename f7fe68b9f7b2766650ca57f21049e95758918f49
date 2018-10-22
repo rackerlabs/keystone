@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_bbaca436",
+        "filename": "releasenotes/notes/federated-attr-a887677dbe0917cc.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-22T21:02:13Z",
+      "side": 1,
+      "message": "This needs to link to the specification.\n\nhttps://docs.openstack.org/keystone/latest/contributor/release-notes.html#release-notes-for-features",
+      "revId": "f7fe68b9f7b2766650ca57f21049e95758918f49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
