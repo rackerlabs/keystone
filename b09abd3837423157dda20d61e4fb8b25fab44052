@@ -16,6 +16,24 @@
       "revId": "b09abd3837423157dda20d61e4fb8b25fab44052",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_ad7d3ce7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-23T13:26:35Z",
+      "side": 1,
+      "message": "Good point, that\u0027s a good question.\n\nThe docs say FFUs are offline [0] and since cache regions are built on start-up, I would assume that means this wouldn\u0027t affect FFU scenarios, but I\u0027d need to manually verify to be sure.\n\n[0] https://wiki.openstack.org/wiki/Fast_forward_upgrades#What_is_a_Fast_Forward_Upgrade.3F",
+      "parentUuid": "3f79a3b5_4d126857",
+      "revId": "b09abd3837423157dda20d61e4fb8b25fab44052",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
