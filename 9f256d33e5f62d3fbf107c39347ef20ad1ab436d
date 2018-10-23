@@ -57,6 +57,24 @@
       "revId": "9f256d33e5f62d3fbf107c39347ef20ad1ab436d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_3b2f2da7",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-23T06:13:30Z",
+      "side": 1,
+      "message": "Yep, perfect just report using date XXX (utcnow())",
+      "parentUuid": "3f79a3b5_1596c0a1",
+      "revId": "9f256d33e5f62d3fbf107c39347ef20ad1ab436d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
