@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_52c0ce2b",
+        "filename": "keystone/api/_shared/authentication.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-23T02:01:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_d07096de",
+      "range": {
+        "startLine": 195,
+        "startChar": 0,
+        "endLine": 206,
+        "endChar": 26
+      },
+      "revId": "1514eaf699bfdd468229a80cbb89bda75ba20b30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_907a1eb9",
         "filename": "keystone/api/_shared/authentication.py",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2018-10-18T23:17:51Z",
       "side": 1,
       "message": "Please add to the above NOTE indicating receipt methods are included.",
+      "range": {
+        "startLine": 212,
+        "startChar": 0,
+        "endLine": 215,
+        "endChar": 13
+      },
+      "revId": "1514eaf699bfdd468229a80cbb89bda75ba20b30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_72bb8abd",
+        "filename": "keystone/api/_shared/authentication.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-23T02:01:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_907a1eb9",
       "range": {
         "startLine": 212,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_f2e47ae1",
+        "filename": "keystone/api/_shared/authentication.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-23T02:01:17Z",
+      "side": 1,
+      "message": "This needs to happen so I can pass the actual valid auth methods up to an error handler which will build a receipt from them.\n\nThis error is now effectively internal only and will never be seen by a user.",
+      "parentUuid": "3f79a3b5_10404e5f",
+      "range": {
+        "startLine": 229,
+        "startChar": 16,
+        "endLine": 229,
+        "endChar": 37
+      },
+      "revId": "1514eaf699bfdd468229a80cbb89bda75ba20b30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_732d0c44",
         "filename": "keystone/api/auth.py",
         "patchSetId": 3
@@ -82,6 +154,30 @@
       "writtenOn": "2018-10-18T23:17:51Z",
       "side": 1,
       "message": "Embed this additional information for the response in the flask error handler like we do for Unauthorized (once https://review.openstack.org/#/c/609796/ merges)",
+      "range": {
+        "startLine": 316,
+        "startChar": 8,
+        "endLine": 335,
+        "endChar": 27
+      },
+      "revId": "1514eaf699bfdd468229a80cbb89bda75ba20b30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_92cbc649",
+        "filename": "keystone/api/auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-23T02:01:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_732d0c44",
       "range": {
         "startLine": 316,
         "startChar": 8,
@@ -134,6 +230,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_52d52ee5",
+        "filename": "keystone/common/render_receipt.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-23T02:01:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_30130a68",
+      "revId": "1514eaf699bfdd468229a80cbb89bda75ba20b30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_3308f425",
         "filename": "keystone/conf/fernet_receipts.py",
         "patchSetId": 3
@@ -145,6 +259,24 @@
       "writtenOn": "2018-10-18T23:17:51Z",
       "side": 1,
       "message": "Do we really want to call this \"fernet receipts\" maybe auth receipts instead? or combine into main receipts section? Not sure if this is worth isolating.",
+      "revId": "1514eaf699bfdd468229a80cbb89bda75ba20b30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_b2d042c8",
+        "filename": "keystone/conf/fernet_receipts.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-23T02:01:17Z",
+      "side": 1,
+      "message": "I\u0027m calling it fernet_receipts to match fernet_tokens.\n\nIf/when we introduce JWT tokens, we\u0027ll probably want to also introduce JWT receipts because it likely doesn\u0027t make sense to have a keystone with JWT tokens and Fernet Receipts, and a question that will crop up then is do we lock token and receipt provider types together.\n\nI also don\u0027t know if JWT will be using the same key directories (as in, will we rename it all to \u0027/etc/keystone/auth-keys/\u0027). In theory a key for fernet should also be compatible for JWT, but that discussion shouldn\u0027t happen here. We already have plenty of deployments using \u0027fernet-keys\u0027 and will need to transition, so that\u0027s a bigger discussion.",
+      "parentUuid": "3f79a3b5_3308f425",
       "revId": "1514eaf699bfdd468229a80cbb89bda75ba20b30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -197,6 +329,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_93a6a8ac",
+        "filename": "keystone/models/receipt_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-23T02:01:17Z",
+      "side": 1,
+      "message": "UGH! I knew I\u0027d probably missed some.\n\ndone",
+      "parentUuid": "3f79a3b5_131cd864",
+      "range": {
+        "startLine": 136,
+        "startChar": 8,
+        "endLine": 148,
+        "endChar": 26
+      },
+      "revId": "1514eaf699bfdd468229a80cbb89bda75ba20b30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_7383cc56",
         "filename": "keystone/notifications.py",
         "patchSetId": 3
@@ -214,6 +370,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_12eb367b",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-23T02:01:17Z",
+      "side": 1,
+      "message": "have removed it",
+      "parentUuid": "3f79a3b5_7383cc56",
+      "revId": "1514eaf699bfdd468229a80cbb89bda75ba20b30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_d31bc01a",
         "filename": "keystone/receipt/provider.py",
         "patchSetId": 3
@@ -225,6 +399,24 @@
       "writtenOn": "2018-10-18T23:17:51Z",
       "side": 1,
       "message": "In what cases are we going to invalidate the cache? It seems like you might want to ride in on the same as the token validation cache events.",
+      "revId": "1514eaf699bfdd468229a80cbb89bda75ba20b30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_f2e79aaa",
+        "filename": "keystone/receipt/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-23T02:01:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_d31bc01a",
       "revId": "1514eaf699bfdd468229a80cbb89bda75ba20b30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -259,6 +451,30 @@
       "writtenOn": "2018-10-18T23:17:51Z",
       "side": 1,
       "message": "\u003cNIT\u003e I\u0027d prefer to see us stop doing this all together, it\u0027s a bit sloppy. explicitly assign the values from core you want to expose and use __all__ if you\u0027re going to do this.\n\nE.g.\n\nblah \u003d core.blah\nblah2 \u003d core.blah2\n\n__all__ \u003d [\u0027blah\u0027, \u0027blah2\u0027]",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 60
+      },
+      "revId": "1514eaf699bfdd468229a80cbb89bda75ba20b30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_92fe6637",
+        "filename": "keystone/receipt/providers/fernet/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-23T02:01:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_53cc90bd",
       "range": {
         "startLine": 15,
         "startChar": 0,
@@ -512,6 +728,24 @@
       "writtenOn": "2018-10-18T23:17:51Z",
       "side": 1,
       "message": "Why are you disabling cache on issue here? the default behavior should be cache on issue. create a new test that explicitly tests with cache disabled (or a subclass with cache disabled as the only change)",
+      "revId": "1514eaf699bfdd468229a80cbb89bda75ba20b30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_f29c7a0e",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-23T02:01:17Z",
+      "side": 1,
+      "message": "I think this is an old leftover from some testing issues...",
+      "parentUuid": "3f79a3b5_53ffb0b0",
       "revId": "1514eaf699bfdd468229a80cbb89bda75ba20b30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
