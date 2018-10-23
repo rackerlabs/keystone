@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_4d126857",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-23T13:06:03Z",
+      "side": 1,
+      "message": "Would be good to call out explicitly that this is only being proposed to stable/ocata and not pike+.\n\nSo then what I\u0027m still not sure about is whether this has the potential to affect people who upgrade directly from Newton to Pike - operators expect to have to restart the keystone service but if they leave the memcached service running during the FFU would they still have this problem?",
+      "revId": "b09abd3837423157dda20d61e4fb8b25fab44052",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
