@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_64c16f81",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-23T23:35:02Z",
+      "side": 0,
+      "message": "Removing this might break some deployer\u0027s custom policy files because they can rely on token.x in the first part of the policy string (e.g. token.user.id) even if they should not. As long as we are reasonably sure this is not going to be a problem, we can remove this. \n\nIf this is removed keystone.common.render_token should be moved under keystone.api",
+      "range": {
+        "startLine": 94,
+        "startChar": 8,
+        "endLine": 100,
+        "endChar": 42
+      },
+      "revId": "5d2ee12f119eca54cf4487b1040062feb01c68a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
