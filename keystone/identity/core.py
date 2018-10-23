@@ -49,6 +49,10 @@ ID_MAPPING_REGION = cache.create_region(name='id mapping')
 MEMOIZE_ID_MAPPING = cache.get_memoization_decorator(group='identity',
                                                      region=ID_MAPPING_REGION)
 
+USERS_REGION = cache.create_region(name='user')
+MEMOIZE_USER = cache.get_memoization_decorator(group='identity',
+                                               region=USERS_REGION)
+
 DOMAIN_CONF_FHEAD = 'keystone.'
 DOMAIN_CONF_FTAIL = '.conf'
 
@@ -943,7 +947,7 @@ class Manager(manager.Manager):
 
     @domains_configured
     @exception_translated('user')
-    @MEMOIZE
+    @MEMOIZE_USER
     def get_user(self, user_id):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(user_id))

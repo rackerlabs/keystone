@@ -23,6 +23,7 @@ from keystone.common import utils
 import keystone.conf
 from keystone import exception
 from keystone.i18n import _, _LI, _LE
+from keystone.identity import core as identity_core
 from keystone.identity.backends import resource_options as ro
 
 
@@ -374,7 +375,22 @@ class UserMFARulesValidator(object):
                   ``False`` means rules do not match.
         """
         user_ref = self.identity_api.get_user(user_id)
-        mfa_rules = user_ref['options'].get(ro.MFA_RULES_OPT.option_name, [])
+        try:
+            mfa_rules = user_ref['options'].get(
+                ro.MFA_RULES_OPT.option_name, [])
+        except KeyError:
+            # Drop the user cache because if we get a KeyError that means we're
+            # dealing with a cached user reference but we're using code that
+            # expects 'options' to be in the user reference (e.g., Newton ->
+            # Ocata upgrades). We can handle this safely by dropping the user
+            # cache region and asking for the user again, which should result
+            # in a cache miss and fetching the actual reference from the
+            # backend, populating user 'options'.
+            identity_core.USERS_REGION.invalidate()
+            user_ref = self.identity_api.get_user(user_id)
+            mfa_rules = user_ref['options'].get(
+                ro.MFA_RULES_OPT.option_name, []
+            )
         mfa_rules_enabled = user_ref['options'].get(
             ro.MFA_ENABLED_OPT.option_name, True)
         rules = self._parse_rule_structure(mfa_rules, user_ref['id'])
