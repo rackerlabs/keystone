@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_d599281e",
+        "filename": "keystone/api/users.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-23T03:32:04Z",
+      "side": 1,
+      "message": "Just wanted to clarify, if the target returns empty dictionary, then in that case we do not need to handle it here.? Enforce will handle??",
+      "revId": "ac505d910786becea43e138ce67188c15374cb24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
