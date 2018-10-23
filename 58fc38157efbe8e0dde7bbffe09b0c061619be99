@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_b26cc205",
+        "filename": "keystone/conf/receipt.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-23T02:01:17Z",
+      "side": 1,
+      "message": "I don\u0027t think there is any particular harm in leaving this, since otherwise we have to hardcode \u0027fernet\u0027 in place of this config in super(Manager, self).__init__(CONF.receipt.provider)\n\nWhen JWT tokens are a thing we will end up doing JWT receipts so this will end up here anyway.\n\nRight now we don\u0027t even have alternative options for tokens, but the config option still exists simply because we know it will be used later.",
+      "parentUuid": "3f79a3b5_9b45289e",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 5
+      },
+      "revId": "58fc38157efbe8e0dde7bbffe09b0c061619be99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_1b5a7881",
         "filename": "keystone/conf/receipt.py",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2018-10-22T20:56:20Z",
       "side": 1,
       "message": "If we don\u0027t expect to use these we should remove them.",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 19
+      },
+      "revId": "58fc38157efbe8e0dde7bbffe09b0c061619be99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_d2405e62",
+        "filename": "keystone/conf/receipt.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-23T02:01:17Z",
+      "side": 1,
+      "message": "caching values are used so I don\u0027t see why we\u0027d remove them.",
+      "parentUuid": "3f79a3b5_1b5a7881",
       "range": {
         "startLine": 74,
         "startChar": 0,
