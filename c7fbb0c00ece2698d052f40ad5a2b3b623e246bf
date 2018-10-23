@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_1215764c",
+        "filename": "keystone/api/auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-23T02:11:56Z",
+      "side": 1,
+      "message": "sort of unrelated change, but one that should be done somewhere anyway.",
+      "range": {
+        "startLine": 321,
+        "startChar": 25,
+        "endLine": 321,
+        "endChar": 59
+      },
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_52020e0e",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-23T02:11:56Z",
+      "side": 1,
+      "message": "make this log \u0027info\u0027 if the directories match.",
+      "range": {
+        "startLine": 411,
+        "startChar": 8,
+        "endLine": 415,
+        "endChar": 41
+      },
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_f51f8457",
+        "filename": "keystone/exception.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-23T02:11:56Z",
+      "side": 1,
+      "message": "adriant",
+      "range": {
+        "startLine": 287,
+        "startChar": 11,
+        "endLine": 287,
+        "endChar": 17
+      },
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
