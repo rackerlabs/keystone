@@ -22,6 +22,30 @@
       "revId": "f39868a968459e72513f344299f14aff6bedfc9b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_e78036c1",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-23T09:36:06Z",
+      "side": 1,
+      "message": "Nice catch.",
+      "parentUuid": "3f79a3b5_9578902c",
+      "range": {
+        "startLine": 112,
+        "startChar": 0,
+        "endLine": 112,
+        "endChar": 61
+      },
+      "revId": "f39868a968459e72513f344299f14aff6bedfc9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
