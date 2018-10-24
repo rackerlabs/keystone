@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_33808d49",
+        "filename": "keystone/server/flask/request_processing/middleware/auth_context.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-24T14:25:59Z",
+      "side": 1,
+      "message": "This might not be needed anymore.",
+      "range": {
+        "startLine": 236,
+        "startChar": 16,
+        "endLine": 236,
+        "endChar": 30
+      },
+      "revId": "c716ded0f5a11049e08db86ce1c5297efee76d8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
