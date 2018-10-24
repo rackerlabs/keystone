@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3f79a3b5_96d94ff2",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-24T15:25:46Z",
+      "side": 1,
+      "message": "If federated users already exist in a deployment, new federated users will have a hashed ID and older federated users will have a uuid4().hex, right?",
+      "range": {
+        "startLine": 97,
+        "startChar": 54,
+        "endLine": 97,
+        "endChar": 63
+      },
+      "revId": "89d37dad9b71fe69cc3c0107127b3fa20b1643e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_c7c65a9d",
         "filename": "releasenotes/notes/bug-1641639-b9accc163e61ca15.yaml",
         "patchSetId": 7
@@ -13,6 +36,70 @@
       "writtenOn": "2018-10-24T08:16:40Z",
       "side": 1,
       "message": "should add the bug link here",
+      "revId": "89d37dad9b71fe69cc3c0107127b3fa20b1643e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_76f59351",
+        "filename": "releasenotes/notes/bug-1641639-b9accc163e61ca15.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-24T15:25:46Z",
+      "side": 1,
+      "message": "Yep - per the documented convention here: \n\nhttps://docs.openstack.org/keystone/latest/contributor/release-notes.html",
+      "parentUuid": "3f79a3b5_c7c65a9d",
+      "revId": "89d37dad9b71fe69cc3c0107127b3fa20b1643e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_f632030e",
+        "filename": "releasenotes/notes/bug-1641639-b9accc163e61ca15.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-24T15:25:46Z",
+      "side": 1,
+      "message": "We can give the specific location here, too:\n\n  ``keystone.conf [identity_mapping] generator``",
+      "range": {
+        "startLine": 8,
+        "startChar": 41,
+        "endLine": 9,
+        "endChar": 29
+      },
+      "revId": "89d37dad9b71fe69cc3c0107127b3fa20b1643e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_f6644322",
+        "filename": "releasenotes/notes/bug-1641639-b9accc163e61ca15.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-24T15:25:46Z",
+      "side": 1,
+      "message": "independent*",
+      "range": {
+        "startLine": 11,
+        "startChar": 29,
+        "endLine": 11,
+        "endChar": 41
+      },
       "revId": "89d37dad9b71fe69cc3c0107127b3fa20b1643e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
