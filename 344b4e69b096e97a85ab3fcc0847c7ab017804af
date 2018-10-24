@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_7da33645",
+        "filename": "doc/source/admin/identity-unified-limits.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-24T13:42:22Z",
+      "side": 1,
+      "message": "Just remove the SQL parts. We don\u0027t care about the implementation details here. This is part of the specification, regardless of backed d",
+      "range": {
+        "startLine": 36,
+        "startChar": 76,
+        "endLine": 36,
+        "endChar": 79
+      },
+      "revId": "344b4e69b096e97a85ab3fcc0847c7ab017804af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
