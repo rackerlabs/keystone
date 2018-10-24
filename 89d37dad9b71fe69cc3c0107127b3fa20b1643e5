@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_c7c65a9d",
+        "filename": "releasenotes/notes/bug-1641639-b9accc163e61ca15.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-10-24T08:16:40Z",
+      "side": 1,
+      "message": "should add the bug link here",
+      "revId": "89d37dad9b71fe69cc3c0107127b3fa20b1643e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
