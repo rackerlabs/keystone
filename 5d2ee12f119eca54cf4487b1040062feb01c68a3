@@ -22,6 +22,30 @@
       "revId": "5d2ee12f119eca54cf4487b1040062feb01c68a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_53298986",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-24T14:24:21Z",
+      "side": 0,
+      "message": "I don\u0027t think we\u0027re necessarily removing it, we\u0027re just setting this using context instead. The token is validated in middleware and put on the request_context as a variable. Then in keystone/common/context.py, we\u0027re overriding the to_policy_values() to specifically pull the token reference off the context object and put it in the policy dict.",
+      "parentUuid": "3f79a3b5_64c16f81",
+      "range": {
+        "startLine": 94,
+        "startChar": 8,
+        "endLine": 100,
+        "endChar": 42
+      },
+      "revId": "5d2ee12f119eca54cf4487b1040062feb01c68a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
