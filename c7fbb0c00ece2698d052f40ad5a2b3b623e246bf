@@ -68,6 +68,190 @@
       "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_4486b361",
+        "filename": "keystone/receipt/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-24T00:41:06Z",
+      "side": 1,
+      "message": "duplicate code",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 44
+      },
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_04eafb0c",
+        "filename": "keystone/receipt/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-24T00:41:06Z",
+      "side": 1,
+      "message": "almost duplicate other than the  callback function",
+      "range": {
+        "startLine": 73,
+        "startChar": 4,
+        "endLine": 94,
+        "endChar": 67
+      },
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_a4ea270a",
+        "filename": "keystone/receipt/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-24T00:41:06Z",
+      "side": 1,
+      "message": "duplicate other than cache name",
+      "range": {
+        "startLine": 96,
+        "startChar": 4,
+        "endLine": 104,
+        "endChar": 40
+      },
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_04d3db60",
+        "filename": "keystone/receipt/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-24T00:41:06Z",
+      "side": 1,
+      "message": "Almost duplicate, but not sure how to make generic...",
+      "range": {
+        "startLine": 106,
+        "startChar": 4,
+        "endLine": 116,
+        "endChar": 45
+      },
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_44b4731d",
+        "filename": "keystone/receipt/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-24T00:41:06Z",
+      "side": 1,
+      "message": "pretty much duplicate code",
+      "range": {
+        "startLine": 130,
+        "startChar": 4,
+        "endLine": 149,
+        "endChar": 76
+      },
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_e45b3ff6",
+        "filename": "keystone/receipt/providers/base.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-24T00:41:06Z",
+      "side": 1,
+      "message": "other than the doc strings... these are almost exactly the same as token",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 60
+      },
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_a451c7d7",
+        "filename": "keystone/receipt/providers/fernet/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-24T00:41:06Z",
+      "side": 1,
+      "message": "pretty much duplicate code",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 46
+      },
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_84904b98",
+        "filename": "keystone/receipt/receipt_formatters.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-24T00:41:06Z",
+      "side": 1,
+      "message": "Mostly duplicate code we can make generic and extract.",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 137,
+        "endChar": 24
+      },
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
