@@ -46,6 +46,30 @@
       "revId": "5d2ee12f119eca54cf4487b1040062feb01c68a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_c7763340",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-24T16:55:21Z",
+      "side": 0,
+      "message": "This is very deliberate. Right now we do explicitly have a fully rendered JSON blob (then normalized to the dot-notation) token in the credentials dict. This change means the credentials dict is no longer holding an explicitly expanded token. This really can break custom policy files if someone is using token.x.x in the first part of the policy check string, it will break.\n\nI am fine with this change, just make sure we\u0027re being VERY explicit in the release note for the alternative.",
+      "parentUuid": "3f79a3b5_53298986",
+      "range": {
+        "startLine": 94,
+        "startChar": 8,
+        "endLine": 100,
+        "endChar": 42
+      },
+      "revId": "5d2ee12f119eca54cf4487b1040062feb01c68a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
