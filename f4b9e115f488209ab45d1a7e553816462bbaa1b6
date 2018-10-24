@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_519bba14",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-24T21:04:04Z",
+      "side": 1,
+      "message": "Could you please make the subject line no more than 50 characters, in accordance with our guidelines: https://wiki.openstack.org/wiki/GitCommitMessages#Summary_of_Git_commit_message_structure\n\nCould you also add a bit more information in the body of the commit message (wrapped at 72 characters), below the subject line with an empty line in between? The context is:\n\n With the removal of the v2 API, it is no longer necessary to create the admin endpoint on a separate port. This patch updates the keystone-manage bootstrap instructions to use port 5000 to be consistent with other documentation.",
+      "revId": "f4b9e115f488209ab45d1a7e553816462bbaa1b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
