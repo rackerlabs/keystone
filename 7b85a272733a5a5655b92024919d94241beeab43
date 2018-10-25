@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_2fefb61c",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-25T02:30:51Z",
+      "side": 1,
+      "message": "This method is not needed. Remove.",
+      "revId": "7b85a272733a5a5655b92024919d94241beeab43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_0f38ba9b",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-25T02:30:51Z",
+      "side": 1,
+      "message": "This one and DomainConfigOptionResource can actually be even more clever if you want... you could just use the \"alternate_urls\"  (would need to look into additional json home entries) mechanism since it\u0027s all the same code. Obviously DomainConfigResource is *not* the same and could not use the same mechanism.",
+      "revId": "7b85a272733a5a5655b92024919d94241beeab43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_cfd72250",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-25T02:30:51Z",
+      "side": 1,
+      "message": "Same as above, use a docstring if you need  to conform to python-isms.",
+      "revId": "7b85a272733a5a5655b92024919d94241beeab43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_8fddaa6f",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-25T02:30:51Z",
+      "side": 1,
+      "message": "See above.",
+      "revId": "7b85a272733a5a5655b92024919d94241beeab43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
