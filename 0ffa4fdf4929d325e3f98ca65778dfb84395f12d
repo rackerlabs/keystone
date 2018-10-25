@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_885a801c",
+        "filename": "doc/source/admin/identity-concepts.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 18320
+      },
+      "writtenOn": "2018-10-25T06:39:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_6778ecf6",
+      "range": {
+        "startLine": 163,
+        "startChar": 0,
+        "endLine": 163,
+        "endChar": 2
+      },
+      "revId": "0ffa4fdf4929d325e3f98ca65778dfb84395f12d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_62fc4a72",
         "filename": "doc/source/admin/identity-token-binding.rst",
         "patchSetId": 2
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_4896a8a2",
+        "filename": "doc/source/admin/identity-token-binding.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 18320
+      },
+      "writtenOn": "2018-10-25T06:39:38Z",
+      "side": 1,
+      "message": "The change is the newline at end of file. D005 check requires this change.",
+      "parentUuid": "3f79a3b5_62fc4a72",
+      "revId": "0ffa4fdf4929d325e3f98ca65778dfb84395f12d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_82ff2665",
         "filename": "doc/source/admin/oauth1.rst",
         "patchSetId": 2
@@ -53,6 +95,24 @@
       "writtenOn": "2018-09-26T05:40:50Z",
       "side": 1,
       "message": "ditto",
+      "revId": "0ffa4fdf4929d325e3f98ca65778dfb84395f12d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_089c30bc",
+        "filename": "doc/source/admin/oauth1.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 18320
+      },
+      "writtenOn": "2018-10-25T06:39:38Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "3f79a3b5_82ff2665",
       "revId": "0ffa4fdf4929d325e3f98ca65778dfb84395f12d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
