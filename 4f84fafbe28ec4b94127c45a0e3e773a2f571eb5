@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_0e8751b5",
+        "filename": "doc/source/admin/identity-unified-limits.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-25T13:41:47Z",
+      "side": 1,
+      "message": "nit: project limit*",
+      "range": {
+        "startLine": 35,
+        "startChar": 10,
+        "endLine": 35,
+        "endChar": 15
+      },
+      "revId": "4f84fafbe28ec4b94127c45a0e3e773a2f571eb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
