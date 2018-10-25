@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_e6155196",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-25T21:18:32Z",
+      "side": 1,
+      "message": "use a docstring here to make this work.\n\nI am being super nit-picky but this should be something like:\n\nclass DomainConfigGroupResource(DomainConfigBase):\n    \"\"\"Provides XXX functionality.\"\"\"\n\nThis means that if member_key needs to be changed on the base class, we\u0027re not accidently keeping this as is.\n\nalternatively, remove the definition of member_key from the base-class",
+      "range": {
+        "startLine": 213,
+        "startChar": 2,
+        "endLine": 213,
+        "endChar": 24
+      },
+      "revId": "965af3e786fc41fa6384aa649cfb4d53743a010c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_86749d05",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-25T21:18:32Z",
+      "side": 1,
+      "message": "See above",
+      "revId": "965af3e786fc41fa6384aa649cfb4d53743a010c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
