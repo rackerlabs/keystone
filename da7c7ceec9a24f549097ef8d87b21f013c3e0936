@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_2e09ed30",
+        "filename": "releasenotes/notes/removed-as-of-stein-5eb23253b72ab54e.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-25T13:45:46Z",
+      "side": 1,
+      "message": "which has been superseded by more secure hashing implementations.",
+      "range": {
+        "startLine": 13,
+        "startChar": 45,
+        "endLine": 13,
+        "endChar": 70
+      },
+      "revId": "da7c7ceec9a24f549097ef8d87b21f013c3e0936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
