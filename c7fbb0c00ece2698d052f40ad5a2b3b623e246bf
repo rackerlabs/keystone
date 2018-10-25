@@ -48,6 +48,93 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_c09048f6",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-25T13:09:36Z",
+      "side": 1,
+      "message": "Maybe it could compare both key_repository and max_active_keys of both sections and exit 1 if the combination doesn\u0027t make sense?",
+      "parentUuid": "3f79a3b5_52020e0e",
+      "range": {
+        "startLine": 411,
+        "startChar": 8,
+        "endLine": 415,
+        "endChar": 41
+      },
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_408438b2",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-25T13:09:36Z",
+      "side": 1,
+      "message": "setup",
+      "range": {
+        "startLine": 544,
+        "startChar": 12,
+        "endLine": 544,
+        "endChar": 26
+      },
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_60aa941a",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-25T13:09:36Z",
+      "side": 1,
+      "message": "So you\u0027ve added this functionality directly to fernet_setup/rotate but you\u0027re also adding a new command for it? I think I would prefer to choose one or the other.",
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_e04c649e",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-25T13:09:36Z",
+      "side": 1,
+      "message": "I sort of forget why we went with Openstack-* instead of X-* but I guess I like it better.",
+      "range": {
+        "startLine": 32,
+        "startChar": 23,
+        "endLine": 32,
+        "endChar": 32
+      },
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_f51f8457",
         "filename": "keystone/exception.py",
         "patchSetId": 6
@@ -64,6 +151,86 @@
         "startChar": 11,
         "endLine": 287,
         "endChar": 17
+      },
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_03e88add",
+        "filename": "keystone/models/receipt_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-25T13:09:36Z",
+      "side": 1,
+      "message": "Could we please make a generic keystone.models.BaseAuthObject (or something) class that TokenModel and ReceiptModel can inherit from? It doesn\u0027t make sense for there to be so much duplication.",
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_03b72a24",
+        "filename": "keystone/models/receipt_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-25T13:09:36Z",
+      "side": 1,
+      "message": "ReceiptModel",
+      "range": {
+        "startLine": 49,
+        "startChar": 43,
+        "endLine": 49,
+        "endChar": 58
+      },
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_e32eae40",
+        "filename": "keystone/models/receipt_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-25T13:09:36Z",
+      "side": 1,
+      "message": "There\u0027s no validation step here, shouldn\u0027t there be? If there\u0027s no validation then it feels like there\u0027s not much point in calling this method.",
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_e3a1cea9",
+        "filename": "keystone/receipt/__init__.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-10-25T13:09:36Z",
+      "side": 1,
+      "message": "Not sure this is needed, at least keystone/token/__init__.py doesn\u0027t have it",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 1
       },
       "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
