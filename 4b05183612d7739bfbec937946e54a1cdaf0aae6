@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_800b302b",
+        "filename": "keystone/conf/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-25T12:32:29Z",
+      "side": 1,
+      "message": "little confusing \"For a few release\", We can mention which has been removed from N release of keystone.\n\nJust for the reference [1]\n[1] https://review.openstack.org/#/c/249486/",
+      "revId": "4b05183612d7739bfbec937946e54a1cdaf0aae6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_00ff2003",
+        "filename": "releasenotes/notes/deprecated-as-of-stein-0166965502cb3be2.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-25T12:32:29Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "4b05183612d7739bfbec937946e54a1cdaf0aae6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
