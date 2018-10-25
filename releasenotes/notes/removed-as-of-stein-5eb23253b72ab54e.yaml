@@ -7,3 +7,7 @@ other:
   - >
     [`blueprint removed-as-of-stein <https://blueprints.launchpad.net/keystone/+spec/removed-as-of-stein>`_]
     The deprecated token_flush is removed now.
+  - >
+    [`blueprint removed-as-of-stein <https://blueprints.launchpad.net/keystone/+spec/removed-as-of-stein>`_]
+    The deprecated option `crypt_strength` is removed now. It was only useful
+    for `sha512_crypt` password hashes which has been removed already.
