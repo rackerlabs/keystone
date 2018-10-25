@@ -125,123 +125,8 @@ class DomainResource(ks_flask.ResourceBase):
         return None, http_client.NO_CONTENT
 
 
-class DomainConfigResource(ks_flask.ResourceBase):
+class DomainConfigBase(ks_flask.ResourceBase):
     member_key = 'config'
-    collection_key = 'config'
-
-    def get(self, domain_id=None):
-        """Get domain config.
-
-        GET/HEAD /v3/domains/{domain_id}/config
-        """
-        ENFORCER.enforce_call(action='identity:get_domain_config')
-        config = PROVIDERS.domain_config_api.get_config(domain_id)
-        return {self.member_key: config}
-
-    def put(self, domain_id):
-        """Create domain config.
-
-        POST /v3/domains/{domain_id}/config
-        """
-        ENFORCER.enforce_call(action='identity:create_domain_config')
-        PROVIDERS.resource_api.get_domain(domain_id)
-        config = self.request_body_json.get('config', {})
-        original_config = (
-            PROVIDERS.domain_config_api.get_config_with_sensitive_info(
-                domain_id
-            )
-        )
-        ref = PROVIDERS.domain_config_api.create_config(domain_id, config)
-        if original_config:
-            return {self.member_key: ref}
-        else:
-            return {self.member_key: ref}, http_client.CREATED
-
-    def patch(self, domain_id=None):
-        """Update domain config.
-
-        PATCH /v3/domains/{domain_id}/config
-        """
-        ENFORCER.enforce_call(action='identity:update_domain_config')
-        PROVIDERS.resource_api.get_domain(domain_id)
-        config = self.request_body_json.get('config', {})
-        ref = PROVIDERS.domain_config_api.update_config(domain_id, config)
-        return {self.member_key: ref}
-
-    def delete(self, domain_id=None):
-        """Delete domain config.
-
-        DELETE /v3/domains/{domain_id}/config
-        """
-        ENFORCER.enforce_call(action='identity:delete_domain_config')
-        PROVIDERS.resource_api.get_domain(domain_id)
-        PROVIDERS.domain_config_api.delete_config(domain_id)
-        return None, http_client.NO_CONTENT
-
-
-class DomainConfigGroupResource(ks_flask.ResourceBase):
-    member_key = 'config'
-    collection_key = 'config'
-
-    def get(self, domain_id=None, group=None):
-        """Get domain config.
-
-        GET/HEAD /v3/domains/{domain_id}/config/{group}
-        """
-        err = None
-        config = {}
-        try:
-            PROVIDERS.resource_api.get_domain(domain_id)
-        except Exception as e:   # nosec
-            # We don't raise out here, we raise out after enforcement, this
-            # ensures we do not leak domain existance.
-            err = e
-        finally:
-            if group and group == 'security_compliance':
-                config = self._get_security_compliance_config(
-                    domain_id, group)
-            else:
-                config = self._get_config(domain_id, group)
-        if err is not None:
-            raise err
-        return {self.member_key: config}
-
-    def _get_config(self, domain_id, group):
-        ENFORCER.enforce_call(action='identity:get_domain_config')
-        return PROVIDERS.domain_config_api.get_config(domain_id, group)
-
-    def _get_security_compliance_config(self, domain_id, group):
-        ENFORCER.enforce_call(
-            action='identity:get_security_compliance_domain_config')
-        return PROVIDERS.domain_config_api.get_security_compliance_config(
-            domain_id, group)
-
-    def patch(self, domain_id=None, group=None):
-        """Update domain config.
-
-        PATCH /v3/domains/{domain_id}/config/{group}
-        """
-        ENFORCER.enforce_call(action='identity:update_domain_config')
-        PROVIDERS.resource_api.get_domain(domain_id)
-        config = self.request_body_json.get('config', {})
-        ref = PROVIDERS.domain_config_api.update_config(
-            domain_id, config, group)
-        return {self.member_key: ref}
-
-    def delete(self, domain_id=None, group=None):
-        """Delete domain config.
-
-        DELETE /v3/domains/{domain_id}/config/{group}
-        """
-        ENFORCER.enforce_call(action='identity:delete_domain_config')
-        PROVIDERS.resource_api.get_domain(domain_id)
-        PROVIDERS.domain_config_api.delete_config(domain_id, group)
-        return None, http_client.NO_CONTENT
-
-
-class DomainConfigOptionResource(ks_flask.ResourceBase):
-    member_key = 'config'
-    collection_key = 'config'
 
     def get(self, domain_id=None, group=None, option=None):
         """Check if config option exists.
@@ -299,6 +184,37 @@ class DomainConfigOptionResource(ks_flask.ResourceBase):
         PROVIDERS.domain_config_api.delete_config(
             domain_id, group, option=option)
         return None, http_client.NO_CONTENT
+
+
+class DomainConfigResource(DomainConfigBase):
+    def put(self, domain_id):
+        """Create domain config.
+
+        POST /v3/domains/{domain_id}/config
+        """
+        ENFORCER.enforce_call(action='identity:create_domain_config')
+        PROVIDERS.resource_api.get_domain(domain_id)
+        config = self.request_body_json.get('config', {})
+        original_config = (
+            PROVIDERS.domain_config_api.get_config_with_sensitive_info(
+                domain_id
+            )
+        )
+        ref = PROVIDERS.domain_config_api.create_config(domain_id, config)
+        if original_config:
+            return {self.member_key: ref}
+        else:
+            return {self.member_key: ref}, http_client.CREATED
+
+
+# NOTE(gagehugo): These two classes inherit DomainConfigBase to allow
+# registering the same underlying functionality with flask
+class DomainConfigGroupResource(DomainConfigBase):
+    member_key = 'config'
+
+
+class DomainConfigOptionResource(DomainConfigBase):
+    member_key = 'config'
 
 
 class DefaultConfigResource(flask_restful.Resource):
