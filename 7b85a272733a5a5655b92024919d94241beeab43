@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_d5c0fd4d",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-10-25T18:44:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_2fefb61c",
+      "revId": "7b85a272733a5a5655b92024919d94241beeab43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_0f38ba9b",
         "filename": "keystone/api/domains.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2018-10-25T02:30:51Z",
       "side": 1,
       "message": "This one and DomainConfigOptionResource can actually be even more clever if you want... you could just use the \"alternate_urls\"  (would need to look into additional json home entries) mechanism since it\u0027s all the same code. Obviously DomainConfigResource is *not* the same and could not use the same mechanism.",
+      "revId": "7b85a272733a5a5655b92024919d94241beeab43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_75a7a9bc",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-10-25T18:44:34Z",
+      "side": 1,
+      "message": "I\u0027ll check out the \"alternate_urls\" and see if this could be cleaned up more",
+      "parentUuid": "3f79a3b5_0f38ba9b",
       "revId": "7b85a272733a5a5655b92024919d94241beeab43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_358db134",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-10-25T18:44:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_cfd72250",
+      "revId": "7b85a272733a5a5655b92024919d94241beeab43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_8fddaa6f",
         "filename": "keystone/api/domains.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2018-10-25T02:30:51Z",
       "side": 1,
       "message": "See above.",
+      "revId": "7b85a272733a5a5655b92024919d94241beeab43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_f592d954",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-10-25T18:44:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_8fddaa6f",
       "revId": "7b85a272733a5a5655b92024919d94241beeab43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
