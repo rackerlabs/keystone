@@ -1,0 +1,9 @@
+Code-Review+1: Vishakha Agarwal <agarwalvishakha18@gmail.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 25 Oct 2018 02:30:25 +0000
+Reviewed-on: https://review.openstack.org/612212
+Project: openstack/keystone
+Branch: refs/heads/stable/queens
