@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_be853255",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-25T08:27:24Z",
+      "side": 1,
+      "message": "The subject line is ok.",
+      "revId": "d823b19bfa76ee372067837ca949d2be6c958a19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_1e38e69b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-10-25T08:27:24Z",
+      "side": 1,
+      "message": "Could you correct the format of body of the commit message wrapped at 72 characters in one line and then the next line(a short paragraph). You can have a look on the below link for commit message structure.\n\nhttps://wiki.openstack.org/wiki/GitCommitMessages#Summary_of_Git_commit_message_structure",
+      "revId": "d823b19bfa76ee372067837ca949d2be6c958a19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
