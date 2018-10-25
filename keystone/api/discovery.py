@@ -60,15 +60,6 @@ class MimeTypes(object):
     JSON_HOME = 'application/json-home'
 
 
-def _v3_json_home_content():
-    # TODO(morgan): Eliminate this, we should never be disabling an API version
-    # now, JSON Home should never be empty.
-    if 'v3' not in _VERSIONS:
-        # No V3 Support, so return an empty JSON Home document.
-        return {'resources': {}}
-    return json_home.JsonHomeResources.resources()
-
-
 def v3_mime_type_best_match():
     if not request.accept_mimetypes:
         return MimeTypes.JSON
@@ -82,7 +73,7 @@ def get_versions():
     if v3_mime_type_best_match() == MimeTypes.JSON_HOME:
         # RENDER JSON-Home form, we have a clever client who will
         # understand the JSON-Home document.
-        v3_json_home = _v3_json_home_content()
+        v3_json_home = json_home.JsonHomeResources.resources()
         json_home.translate_urls(v3_json_home, '/v3')
         return flask.Response(response=jsonutils.dumps(v3_json_home),
                               mimetype=MimeTypes.JSON_HOME)
@@ -105,7 +96,7 @@ def get_version_v3():
     if v3_mime_type_best_match() == MimeTypes.JSON_HOME:
         # RENDER JSON-Home form, we have a clever client who will
         # understand the JSON-Home document.
-        content = _v3_json_home_content()
+        content = json_home.JsonHomeResources.resources()
         return flask.Response(response=jsonutils.dumps(content),
                               mimetype=MimeTypes.JSON_HOME)
     else:
