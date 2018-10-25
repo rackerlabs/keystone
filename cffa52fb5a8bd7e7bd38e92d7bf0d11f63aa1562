@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_4920e3f8",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2699,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-25T14:11:25Z",
+      "side": 1,
+      "message": "Is there a particular reason to add this to this test case?\n\nI think both test cases were originally kept separate because they were exercising two different situations using jsonschema. This test was making sure parameters types failed when they weren\u0027t what keystone expected. The test below that is being removed is making sure validation fails when we supply keystone parameters it doesn\u0027t understand.\n\nFor example, if I remove this line and run the test, it will still pass.",
+      "range": {
+        "startLine": 2699,
+        "startChar": 28,
+        "endLine": 2699,
+        "endChar": 54
+      },
+      "revId": "cffa52fb5a8bd7e7bd38e92d7bf0d11f63aa1562",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
