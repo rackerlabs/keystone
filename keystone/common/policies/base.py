@@ -12,6 +12,7 @@
 
 from oslo_policy import policy
 
+POLICY_FORMAT = 'identity:%(resource)s:%(action)s'
 IDENTITY = 'identity:%s'
 RULE_ADMIN_REQUIRED = 'rule:admin_required'
 RULE_ADMIN_OR_OWNER = 'rule:admin_or_owner'

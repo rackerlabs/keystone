@@ -94,7 +94,7 @@ class CredentialResource(ks_flask.ResourceBase):
             target = {'credential': {'user_id': self.oslo_context.user_id}}
         else:
             target = None
-        ENFORCER.enforce_call(action='identity:list_credentials',
+        ENFORCER.enforce_call(action='identity:credential:list',
                               filters=filters, target_attr=target)
         hints = self.build_driver_hints(filters)
         refs = PROVIDERS.credential_api.list_credentials(hints)
@@ -113,7 +113,7 @@ class CredentialResource(ks_flask.ResourceBase):
 
     def _get_credential(self, credential_id):
         ENFORCER.enforce_call(
-            action='identity:get_credential',
+            action='identity:credential:get',
             build_target=_build_target_enforcement
         )
         credential = PROVIDERS.credential_api.get_credential(credential_id)
@@ -133,7 +133,7 @@ class CredentialResource(ks_flask.ResourceBase):
         target = {}
         target['credential'] = credential
         ENFORCER.enforce_call(
-            action='identity:create_credential', target_attr=target
+            action='identity:credential:create', target_attr=target
         )
         validation.lazy_validate(schema.credential_create, credential)
         trust_id = getattr(self.oslo_context, 'trust_id', None)
@@ -145,7 +145,7 @@ class CredentialResource(ks_flask.ResourceBase):
     def patch(self, credential_id):
         # Update Credential
         ENFORCER.enforce_call(
-            action='identity:update_credential',
+            action='identity:credential:update',
             build_target=_build_target_enforcement
         )
         PROVIDERS.credential_api.get_credential(credential_id)
@@ -160,7 +160,7 @@ class CredentialResource(ks_flask.ResourceBase):
     def delete(self, credential_id):
         # Delete credentials
         ENFORCER.enforce_call(
-            action='identity:delete_credential',
+            action='identity:credential:delete',
             build_target=_build_target_enforcement
         )
 

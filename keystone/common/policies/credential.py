@@ -59,7 +59,9 @@ deprecated_delete_credential = policy.DeprecatedRule(
 
 credential_policies = [
     policy.DocumentedRuleDefault(
-        name=base.IDENTITY % 'get_credential',
+        name=base.POLICY_FORMAT % {
+            'resource': 'credential', 'action': 'get'
+        },
         check_str=SYSTEM_READER_OR_CRED_OWNER,
         scope_types=['system', 'project'],
         description='Show credentials details.',
@@ -70,7 +72,9 @@ credential_policies = [
         deprecated_since=versionutils.deprecated.STEIN
     ),
     policy.DocumentedRuleDefault(
-        name=base.IDENTITY % 'list_credentials',
+        name=base.POLICY_FORMAT % {
+            'resource': 'credential', 'action': 'list'
+        },
         check_str=SYSTEM_READER_OR_CRED_OWNER,
         scope_types=['system', 'project'],
         description='List credentials.',
@@ -81,7 +85,9 @@ credential_policies = [
         deprecated_since=versionutils.deprecated.STEIN
     ),
     policy.DocumentedRuleDefault(
-        name=base.IDENTITY % 'create_credential',
+        name=base.POLICY_FORMAT % {
+            'resource': 'credential', 'action': 'create'
+        },
         check_str=SYSTEM_ADMIN_OR_CRED_OWNER,
         scope_types=['system', 'project'],
         description='Create credential.',
@@ -92,7 +98,9 @@ credential_policies = [
         deprecated_since=versionutils.deprecated.STEIN
     ),
     policy.DocumentedRuleDefault(
-        name=base.IDENTITY % 'update_credential',
+        name=base.POLICY_FORMAT % {
+            'resource': 'credential', 'action': 'update'
+        },
         check_str=SYSTEM_MEMBER_OR_CRED_OWNER,
         scope_types=['system', 'project'],
         description='Update credential.',
@@ -103,7 +111,9 @@ credential_policies = [
         deprecated_since=versionutils.deprecated.STEIN
     ),
     policy.DocumentedRuleDefault(
-        name=base.IDENTITY % 'delete_credential',
+        name=base.POLICY_FORMAT % {
+            'resource': 'credential', 'action': 'delete'
+        },
         check_str=SYSTEM_ADMIN_OR_CRED_OWNER,
         scope_types=['system', 'project'],
         description='Delete credential.',

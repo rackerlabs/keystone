@@ -181,11 +181,11 @@ class PolicyJsonTestCase(unit.TestCase):
         # TODO(lbragstad): Once all policies have been removed from
         # policy.v3cloudsample.json, remove this test.
         removed_policies = [
-            'identity:create_credential',
-            'identity:get_credential',
-            'identity:list_credentials',
-            'identity:update_credential',
-            'identity:delete_credential'
+            'identity:credential:create',
+            'identity:credential:get',
+            'identity:credential:list',
+            'identity:credential:update',
+            'identity:credential:delete'
         ]
         policy_keys = self._get_default_policy_rules()
         for p in removed_policies:

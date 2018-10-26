@@ -78,11 +78,11 @@ identity:remove_user_from_group                            DELETE /v3/groups/{gr
 identity:check_user_in_group                               GET /v3/groups/{group_id}/users/{user_id}
 identity:add_user_to_group                                 PUT /v3/groups/{group_id}/users/{user_id}
 
-identity:get_credential                                    GET /v3/credentials/{credential_id}
-identity:list_credentials                                  GET /v3/credentials
-identity:create_credential                                 POST /v3/credentials
-identity:update_credential                                 PATCH /v3/credentials/{credential_id}
-identity:delete_credential                                 DELETE /v3/credentials/{credential_id}
+identity:credential:get                                    GET /v3/credentials/{credential_id}
+identity:credential:list                                   GET /v3/credentials
+identity:credential:create                                 POST /v3/credentials
+identity:credential:update                                 PATCH /v3/credentials/{credential_id}
+identity:credential:delete                                 DELETE /v3/credentials/{credential_id}
 
 identity:ec2_get_credential                                GET /v3/users/{user_id}/credentials/OS-EC2/{credential_id}
 identity:ec2_list_credentials                              GET /v3/users/{user_id}/credentials/OS-EC2
