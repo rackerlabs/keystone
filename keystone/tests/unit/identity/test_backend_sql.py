@@ -66,7 +66,6 @@ class UserPasswordHashingTestsNoCompat(test_backend_sql.SqlTests):
             user_ref = PROVIDERS.identity_api._get_user(
                 session, self.user_foo['id']
             )
-        self.assertIsNone(user_ref.password_ref.password)
         self.assertIsNotNone(user_ref.password_ref.password_hash)
         self.assertEqual(user_ref.password,
                          user_ref.password_ref.password_hash)
