@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_3bbcbbd9",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-10-26T04:01:32Z",
+      "side": 1,
+      "message": "Sure! I just put member_key here to get pep8 to stop complaining, but a docstring instead would be better.",
+      "parentUuid": "3f79a3b5_e6155196",
+      "range": {
+        "startLine": 213,
+        "startChar": 2,
+        "endLine": 213,
+        "endChar": 24
+      },
+      "revId": "965af3e786fc41fa6384aa649cfb4d53743a010c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_86749d05",
         "filename": "keystone/api/domains.py",
         "patchSetId": 2

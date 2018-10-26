@@ -16,6 +16,24 @@
       "revId": "9f2b84608e7297cc7ed41497ddf45841325a8fd7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_9b1e2f0b",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-10-26T04:01:32Z",
+      "side": 0,
+      "message": "Yes, it wasn\u0027t used anywhere any only there to avoid the exception raised if it wasn\u0027t there.",
+      "parentUuid": "3f79a3b5_865d7d7d",
+      "revId": "9f2b84608e7297cc7ed41497ddf45841325a8fd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
