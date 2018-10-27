@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_9ebda804",
+        "filename": "keystone/common/policies/credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-10-27T01:44:52Z",
+      "side": 1,
+      "message": "I think the deprecated reason should be updated as well?",
+      "range": {
+        "startLine": 71,
+        "startChar": 26,
+        "endLine": 71,
+        "endChar": 43
+      },
+      "revId": "6e19f2ca6023eea1cfd2c8d843d6ac877cd945e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
