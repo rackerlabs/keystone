@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_7639cc9f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-28T11:13:47Z",
+      "side": 1,
+      "message": "this is not dropping unhashed column, it is dropping the compatiblility (less secure) hash column for the passwords. The commit message should not indicate that unhashed passwords are/were stored in keystone.",
+      "range": {
+        "startLine": 7,
+        "startChar": 5,
+        "endLine": 7,
+        "endChar": 11
+      },
+      "revId": "e6d4a32332d7769e0cdecc652d09476ffc3a36cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_16b3b836",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-28T11:13:47Z",
+      "side": 1,
+      "message": "This check is not needed. It was added as part of the migration to the new hashing algorithms, see https://github.com/openstack/keystone/blob/5f31868c0bae584f999036bdeb0123f70e5d85d9/keystone/identity/backends/sql_model.py#L103-L108 which is the previous version prior to the hashing algorithm update.",
+      "range": {
+        "startLine": 107,
+        "startChar": 33,
+        "endLine": 107,
+        "endChar": 76
+      },
+      "revId": "e6d4a32332d7769e0cdecc652d09476ffc3a36cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_56bdb000",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-28T11:13:47Z",
+      "side": 1,
+      "message": "There is a potential bug here we should chase down, I believe this is an incorrect use of .expression. This does\u0027t impact this change explicitly, but may be worth looking at since we\u0027re deep into this code already.\n\nhttps://bugs.launchpad.net/keystone/+bug/1735250",
+      "revId": "e6d4a32332d7769e0cdecc652d09476ffc3a36cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_76c46c94",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-28T11:13:47Z",
+      "side": 0,
+      "message": "Remove just this part, the rest of the comment should remain the same. The old password column was not an unhashed password column, it was a column using a less-secure hashing mechanism.",
+      "range": {
+        "startLine": 155,
+        "startChar": 59,
+        "endLine": 155,
+        "endChar": 76
+      },
+      "revId": "da7c7ceec9a24f549097ef8d87b21f013c3e0936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_3647d420",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-28T11:13:47Z",
+      "side": 0,
+      "message": "This whole test case can be removed. It was only ever used when we were doing the compat \"testing\" where we would hash both new and old forms. This case ensured that when compat testing was disabled we didn\u0027t populate the old column.",
+      "revId": "da7c7ceec9a24f549097ef8d87b21f013c3e0936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
