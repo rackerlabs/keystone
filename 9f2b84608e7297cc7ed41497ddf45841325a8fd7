@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_b697649c",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-28T10:52:01Z",
+      "side": 0,
+      "message": "There was some concern with pydev stuff being removed previously.",
+      "revId": "9f2b84608e7297cc7ed41497ddf45841325a8fd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
