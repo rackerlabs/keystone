@@ -34,6 +34,7 @@ What's New in Version 3.11 (Rocky)
 - New description field in registered and project limits
 - New project_id filters for project limits
 - New parameter include_limits for project detail query
+- Removal of ``bind`` in token configuration.
 
 ===================================
 What's New in Version 3.10 (Queens)
