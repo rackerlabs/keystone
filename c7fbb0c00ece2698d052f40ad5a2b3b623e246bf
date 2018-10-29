@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_35e92a18",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-29T01:14:08Z",
+      "side": 1,
+      "message": "We probably still want it to print/log something.\n\nIf triggered directly from the cli by a human won\u0027t an exit 1 still look like a silent success?",
+      "parentUuid": "3f79a3b5_c09048f6",
+      "range": {
+        "startLine": 411,
+        "startChar": 8,
+        "endLine": 415,
+        "endChar": 41
+      },
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_408438b2",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 6
@@ -135,6 +159,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_75da4276",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-29T01:14:08Z",
+      "side": 1,
+      "message": "Morgan wanted this because the X-* headers were overused and I believe based on an old http spec everyone took too literally.",
+      "parentUuid": "3f79a3b5_e04c649e",
+      "range": {
+        "startLine": 32,
+        "startChar": 23,
+        "endLine": 32,
+        "endChar": 32
+      },
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_f51f8457",
         "filename": "keystone/exception.py",
         "patchSetId": 6
@@ -169,6 +217,24 @@
       "writtenOn": "2018-10-25T13:09:36Z",
       "side": 1,
       "message": "Could we please make a generic keystone.models.BaseAuthObject (or something) class that TokenModel and ReceiptModel can inherit from? It doesn\u0027t make sense for there to be so much duplication.",
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_20024abb",
+        "filename": "keystone/models/receipt_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-29T01:14:08Z",
+      "side": 1,
+      "message": "I\u0027m more than happy to do that, just not sure if we\u0027d be happy with doing it in the scope of this patch.",
+      "parentUuid": "3f79a3b5_03e88add",
       "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -215,6 +281,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_8061dea4",
+        "filename": "keystone/models/receipt_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-29T01:14:08Z",
+      "side": 1,
+      "message": "I\u0027m not sure what there is to validate here that isn\u0027t already validated by the provider in the creation process, or in validation functions.\n\nWe could just set these fields directly I guess.",
+      "parentUuid": "3f79a3b5_e32eae40",
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_e3a1cea9",
         "filename": "keystone/receipt/__init__.py",
         "patchSetId": 6
@@ -226,6 +310,30 @@
       "writtenOn": "2018-10-25T13:09:36Z",
       "side": 1,
       "message": "Not sure this is needed, at least keystone/token/__init__.py doesn\u0027t have it",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 1
+      },
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_526f1c28",
+        "filename": "keystone/receipt/__init__.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-29T01:14:08Z",
+      "side": 1,
+      "message": "Not having it here threw an error for me at some stage while testing. Will revisit and try and see why.",
+      "parentUuid": "3f79a3b5_e3a1cea9",
       "range": {
         "startLine": 18,
         "startChar": 0,
