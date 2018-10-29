@@ -346,6 +346,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_044862b1",
+        "filename": "keystone/receipt/__init__.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-29T01:22:59Z",
+      "side": 1,
+      "message": "Not having: \"from keystone.receipt import provider\" threw an error in server.backends:\nAttributeError: \u0027module\u0027 object has no attribute \u0027provider\u0027\n\nWhich is a problem in server.backends as to how we\u0027re doing the imports and then using them.\n\n\n\nnot having the __all__ meant having to do \"# noqa\" on the import line for pep8. __all__ just makes it so we\u0027re explicit about what the import is for technically. Either works really.",
+      "parentUuid": "3f79a3b5_526f1c28",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 1
+      },
+      "revId": "c7fbb0c00ece2698d052f40ad5a2b3b623e246bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_4486b361",
         "filename": "keystone/receipt/provider.py",
         "patchSetId": 6
