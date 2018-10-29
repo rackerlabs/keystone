@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_9fccbb33",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-29T04:02:52Z",
+      "side": 1,
+      "message": "oh crap...",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 36
+      },
+      "revId": "b5c9fa12ccbd2d092c468d5153b7d9836db2dc45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
