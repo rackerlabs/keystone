@@ -77,3 +77,19 @@ group_update = {
     'minProperties': 1,
     'additionalProperties': True
 }
+
+_password_change_properties = {
+    'original_password': {
+        'type': 'string'
+    },
+    'password': {
+        'type': 'string'
+    }
+}
+
+password_change = {
+    'type': 'object',
+    'properties': _password_change_properties,
+    'required': ['original_password', 'password'],
+    'additionalProperties': False
+}
