@@ -34,6 +34,29 @@
       "revId": "9f2b84608e7297cc7ed41497ddf45841325a8fd7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_915fab73",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-10-30T18:12:03Z",
+      "side": 0,
+      "message": "s/post/put, fixed below",
+      "range": {
+        "startLine": 144,
+        "startChar": 8,
+        "endLine": 144,
+        "endChar": 12
+      },
+      "revId": "9f2b84608e7297cc7ed41497ddf45841325a8fd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
