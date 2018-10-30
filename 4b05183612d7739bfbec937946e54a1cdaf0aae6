@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_5a6e15cc",
+        "filename": "keystone/conf/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-30T12:47:22Z",
+      "side": 1,
+      "message": "Looks like that patch merged when Newton was under development.",
+      "parentUuid": "3f79a3b5_800b302b",
+      "revId": "4b05183612d7739bfbec937946e54a1cdaf0aae6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_00ff2003",
         "filename": "releasenotes/notes/deprecated-as-of-stein-0166965502cb3be2.yaml",
         "patchSetId": 2
