@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_1da3b7b2",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2699,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-30T13:41:38Z",
+      "side": 1,
+      "message": "nit: invalid_attribute",
+      "range": {
+        "startLine": 2699,
+        "startChar": 12,
+        "endLine": 2699,
+        "endChar": 24
+      },
+      "revId": "230ae86a62d2be1666c080b5395a12695734451f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
