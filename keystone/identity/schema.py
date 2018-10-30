@@ -10,9 +10,14 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_config import cfg
+
 from keystone.common import validation
 from keystone.common.validation import parameter_types
 from keystone.identity.backends import resource_options as ro
+
+
+CONF = cfg.CONF
 
 
 _identity_name = {
@@ -76,4 +81,28 @@ group_update = {
     'properties': _group_properties,
     'minProperties': 1,
     'additionalProperties': True
+}
+
+_password_change_properties = {
+    'original_password': {
+        'type': 'string'
+    },
+    'password': {
+        'type': 'string'
+    }
+}
+if getattr(CONF, 'strict_password_check', None):
+    _password_change_properties['password']['maxLength'] = \
+        CONF.identity.max_password_length
+
+if getattr(CONF, 'security_compliance', None):
+    if getattr(CONF.security_compliance, 'password_regex', None):
+        _password_change_properties['password']['pattern'] = \
+            CONF.security_compliance.password_regex
+
+password_change = {
+    'type': 'object',
+    'properties': _password_change_properties,
+    'required': ['original_password', 'password'],
+    'additionalProperties': False
 }
