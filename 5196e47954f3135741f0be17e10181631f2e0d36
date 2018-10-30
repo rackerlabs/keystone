@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_a087ef11",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-30T22:35:17Z",
+      "side": 1,
+      "message": "bah, yep, will fix.",
+      "parentUuid": "3f79a3b5_857c4575",
+      "range": {
+        "startLine": 553,
+        "startChar": 12,
+        "endLine": 553,
+        "endChar": 26
+      },
+      "revId": "5196e47954f3135741f0be17e10181631f2e0d36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_45394da0",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 10
@@ -36,6 +60,24 @@
       "writtenOn": "2018-10-30T21:31:41Z",
       "side": 1,
       "message": "It still seems clumsy to me to have both the fernet_* and receipt_* commands do the same thing. The fernet_* commands already handle this, I don\u0027t think we need another command.",
+      "revId": "5196e47954f3135741f0be17e10181631f2e0d36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_8082f301",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 602,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-30T22:35:17Z",
+      "side": 1,
+      "message": "The reason I\u0027ve left them is that if we keep the option to split receipt and token fernet key directories, then we should retain the option to setup/rotate them independently of each other.\n\nNot to mention, fernet_* does the same as token_* yet we still keep token_* around.",
+      "parentUuid": "3f79a3b5_45394da0",
       "revId": "5196e47954f3135741f0be17e10181631f2e0d36",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
