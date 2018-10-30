@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_dd80dfa0",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-30T13:50:11Z",
+      "side": 1,
+      "message": "This is backporting a method that it outside of the interface [0].\n\nPeople writing their own trust backends will be broken by this. We\u0027ll need to figure out if this is something we should really backport.\n\n[0] https://git.openstack.org/cgit/openstack/keystone/tree/keystone/trust/backends/base.py#n23",
+      "range": {
+        "startLine": 192,
+        "startChar": 8,
+        "endLine": 192,
+        "endChar": 28
+      },
+      "revId": "04bcb1078a7c9304dd06a9b6b5109788af444979",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
