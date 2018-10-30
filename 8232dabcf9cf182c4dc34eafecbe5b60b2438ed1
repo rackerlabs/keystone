@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_5db60f8f",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-30T13:51:27Z",
+      "side": 1,
+      "message": "This should have an abstractmethod defined in the TrustDriverBase interface. Otherwise people supplying their own backends will be broken by this.",
+      "range": {
+        "startLine": 192,
+        "startChar": 8,
+        "endLine": 192,
+        "endChar": 28
+      },
+      "revId": "8232dabcf9cf182c4dc34eafecbe5b60b2438ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
