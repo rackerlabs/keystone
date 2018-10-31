@@ -49,6 +49,7 @@ impact of a compromised token.
 provider = cfg.StrOpt(
     'provider',
     default='fernet',
+    choices=['fernet', 'jwt'],
     help=utils.fmt("""
 Entry point for the token provider in the `keystone.token.provider` namespace.
 The token provider controls the token construction, validation, and revocation
