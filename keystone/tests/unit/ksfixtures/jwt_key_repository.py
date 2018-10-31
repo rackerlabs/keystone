@@ -10,7 +10,12 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import os
+
 import fixtures
+
+from keystone.common import file_utils
+from keystone.common import jwt_utils
 
 
 class JWTKeyRepository(fixtures.Fixture):
@@ -24,3 +29,8 @@ class JWTKeyRepository(fixtures.Fixture):
         directory = self.useFixture(fixtures.TempDir()).path
         self.config_fixture.config(group=self.key_group,
                                    key_repository=directory)
+
+        file_utils.create_directory(directory)
+        private_key_path = os.path.join(directory, 'private.pem')
+        public_key_path = os.path.join(directory, 'public.pem')
+        jwt_utils.create_key_pair(private_key_path, public_key_path)
