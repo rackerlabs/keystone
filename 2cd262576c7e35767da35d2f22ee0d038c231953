@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_6ceb1111",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1477,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2018-10-31T00:59:24Z",
+      "side": 1,
+      "message": "receipt",
+      "range": {
+        "startLine": 1477,
+        "startChar": 40,
+        "endLine": 1477,
+        "endChar": 45
+      },
+      "revId": "2cd262576c7e35767da35d2f22ee0d038c231953",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
