@@ -22,6 +22,30 @@
       "revId": "fed4441f893c88bfaa88d6fee98bf07ab22129bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_5b127b57",
+        "filename": "keystone/server/flask/application.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-10-31T15:29:45Z",
+      "side": 1,
+      "message": "Type errors are always 400 (bad request) validation errors. Not \"NotFound\"",
+      "parentUuid": "3f79a3b5_5076df42",
+      "range": {
+        "startLine": 137,
+        "startChar": 50,
+        "endLine": 137,
+        "endChar": 53
+      },
+      "revId": "fed4441f893c88bfaa88d6fee98bf07ab22129bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
