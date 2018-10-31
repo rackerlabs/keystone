@@ -134,7 +134,7 @@ the sample Python code used to create the IdP ID.
 .. code-block:: python
 
     import hashlib
-    issuer_dn = 'emailAddress=john@openstack.com,CN=john,OU=keystone,
+    issuer_dn = 'emailAddress=john@openstack.com,CN=john,OU=keystone,\
         O=openstack,L=Sunnyvale,ST=California,C=US'
     hashed_idp = hashlib.sha256(issuer_dn)
     idp_id = hashed_idp.hexdigest()
