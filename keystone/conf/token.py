@@ -52,10 +52,14 @@ provider = cfg.StrOpt(
     help=utils.fmt("""
 Entry point for the token provider in the `keystone.token.provider` namespace.
 The token provider controls the token construction, validation, and revocation
-operations. Keystone includes `fernet` token provider.
-`fernet` tokens do not need to be persisted at all, but require that you run
-`keystone-manage fernet_setup` (also see the `keystone-manage fernet_rotate`
-command).
+operations. Supported upstream providers are `fernet` and `jwt`. Neither
+`fernet` or `jwt` tokens require persistence and both require additional setup.
+If using `fernet`, you're required to run `keystone-manage fernet_setup`, which
+creates symmetric keys used to encrypt tokens. If using `jwt`, you're required
+to run `keystone-manage jwt_setup`, which creates an ECDSA key pair for signing
+tokens. Note that `fernet` tokens are encrypted and `jwt` tokens are signed.
+Please be sure to consider this if your deployment has security requirements
+regarding token payload contents.
 """))
 
 caching = cfg.BoolOpt(
