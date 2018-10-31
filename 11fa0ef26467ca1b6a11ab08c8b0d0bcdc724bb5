@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_a61ffd58",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-10-31T12:16:44Z",
+      "side": 1,
+      "message": "We\u0027ll need to make corresponding updates here [0].\n\n[0] https://git.openstack.org/cgit/openstack/keystone/tree/keystone/tests/unit/test_cli.py?h\u003dstable/rocky#n1628",
+      "revId": "11fa0ef26467ca1b6a11ab08c8b0d0bcdc724bb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
