@@ -18,6 +18,8 @@ feature:
         --trustee-user-id <string>: To purge trusts of given trustee-id.
         --date <string>: To purge trusts older than date. It will purge trusts older than
            current if date not given.
-
-
-
+other:
+  - >
+    [`Bug 1473292 <https://bugs.launchpad.net/keystone/+bug/1473292>`_]
+    Abstract method ``flush_expired_and_soft_deleted_trusts`` implemented in base trust
+    driver.
