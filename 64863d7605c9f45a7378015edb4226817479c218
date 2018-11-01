@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_8473c74f",
+        "filename": "doc/source/advanced-topics/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-11-01T09:39:46Z",
+      "side": 1,
+      "message": "Could you please elaborate what is the need to append \u0027\\\u0027 at the end of the text? What are you trying to fix here?",
+      "revId": "64863d7605c9f45a7378015edb4226817479c218",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
