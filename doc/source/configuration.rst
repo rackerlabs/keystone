@@ -28,7 +28,7 @@ To configure the OpenStack services with service users, we need to create
 a project for all the services, and then users for each of the services. We
 then assign those service users an ``admin`` role on the service project. This
 allows them to validate tokens - and to authenticate and authorize other user
-requests.
+requests.  Since 4.12.0 release, fetching expired tokens when using a valid service token is allowed.
 
 Create a project for the services, typically named ``service`` (however, the
 name can be whatever you choose):
