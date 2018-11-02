@@ -31,6 +31,7 @@ from keystone.cmd import bootstrap
 from keystone.cmd import doctor
 from keystone.common import driver_hints
 from keystone.common import fernet_utils
+from keystone.common import jwt_utils
 from keystone.common import sql
 from keystone.common.sql import upgrades
 from keystone.common import utils
@@ -476,6 +477,39 @@ class FernetRotate(BasePermissionsSetup):
                 os.path.abspath(CONF.fernet_receipts.key_repository)):
             cls.rotate_fernet_repository(
                 keystone_user_id, keystone_group_id, 'fernet_receipts')
+
+
+class JWSSetup(BasePermissionsSetup):
+    """Setup a key pair for signing and validating JWS tokens.
+
+    This command creates a public and private key pair to use for signing and
+    validating JWS token signatures.
+
+    """
+
+    name = 'jws_setup'
+
+    @classmethod
+    def main(cls):
+        keystone_user_id, keystone_group_id = cls.get_user_group()
+        utils.create_directory(
+            CONF.jws_tokens.public_key_repository,
+            keystone_user_id=keystone_user_id,
+            keystone_group_id=keystone_group_id
+        )
+        utils.create_directory(
+            CONF.jws_tokens.private_key_repository,
+            keystone_user_id=keystone_user_id,
+            keystone_group_id=keystone_group_id
+        )
+
+        private_key_path = os.path.join(
+            CONF.jws_tokens.private_key_repository, 'private.pem'
+        )
+        public_key_path = os.path.join(
+            CONF.jws_tokens.public_key_repository, 'public.pem'
+        )
+        jwt_utils.create_key_pair(private_key_path, public_key_path)
 
 
 class TokenSetup(BasePermissionsSetup):
@@ -1253,6 +1287,7 @@ CMDS = [
     DomainConfigUpload,
     FernetRotate,
     FernetSetup,
+    JWSSetup,
     MappingPopulate,
     MappingPurge,
     MappingEngineTester,
