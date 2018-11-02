@@ -31,6 +31,8 @@ from keystone.cmd import bootstrap
 from keystone.cmd import doctor
 from keystone.common import driver_hints
 from keystone.common import fernet_utils
+from keystone.common import file_utils
+from keystone.common import jwt_utils
 from keystone.common import sql
 from keystone.common.sql import upgrades
 from keystone.common import utils
@@ -478,6 +480,33 @@ class FernetRotate(BasePermissionsSetup):
 
             if futils.validate_key_repository(requires_write=True):
                 futils.rotate_keys(keystone_user_id, keystone_group_id)
+
+
+class JWTSetup(BasePermissionsSetup):
+    """Setup a key repository for JSON Web Tokens.
+
+    This command creates a public and private key pair to use for issuing and
+    validating tokens.
+
+    """
+
+    name = 'jwt_setup'
+
+    @classmethod
+    def main(cls):
+        keystone_user_id, keystone_group_id = cls.get_user_group()
+        file_utils.create_directory(
+            CONF.jwt_tokens.key_repository, keystone_user_id=keystone_user_id,
+            keystone_group_id=keystone_group_id
+        )
+
+        private_key_path = os.path.join(
+            CONF.jwt_tokens.key_repository, 'private.pem'
+        )
+        public_key_path = os.path.join(
+            CONF.jwt_tokens.key_repository, 'public.pem'
+        )
+        jwt_utils.create_key_pair(private_key_path, public_key_path)
 
 
 class TokenSetup(BasePermissionsSetup):
@@ -1285,6 +1314,7 @@ CMDS = [
     DomainConfigUpload,
     FernetRotate,
     FernetSetup,
+    JWTSetup,
     MappingPopulate,
     MappingPurge,
     MappingEngineTester,
