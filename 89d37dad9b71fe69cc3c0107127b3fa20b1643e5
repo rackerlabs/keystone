@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_0fc4d641",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-11-02T16:55:07Z",
+      "side": 1,
+      "message": "I tend to agree. However, I think this is a much bigger change that should come as a followup. Ideally we should have the ID generation moved upwards. Either it can be done before or after.",
+      "parentUuid": "3f79a3b5_3711f25d",
+      "range": {
+        "startLine": 39,
+        "startChar": 20,
+        "endLine": 39,
+        "endChar": 79
+      },
+      "revId": "89d37dad9b71fe69cc3c0107127b3fa20b1643e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_96d94ff2",
         "filename": "keystone/identity/shadow_backends/sql.py",
         "patchSetId": 7
