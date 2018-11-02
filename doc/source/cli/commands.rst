@@ -17,6 +17,7 @@ Available commands:
 * ``domain_config_upload``: Upload domain configuration file.
 * ``fernet_rotate``: Rotate keys in the Fernet key repository.
 * ``fernet_setup``: Setup a Fernet key repository for token encryption.
+* ``jwt_setup``: Setup an ECDSA key pair for token signing.
 * ``mapping_populate``: Prepare domain-specific LDAP backend.
 * ``mapping_purge``: Purge the identity mapping table.
 * ``mapping_engine``: Test your federation mapping rules.
