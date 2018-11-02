@@ -1,0 +1,101 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_e2dfe836",
+        "filename": "keystone/exception.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-11-02T16:44:53Z",
+      "side": 1,
+      "message": "This should probably be an \"Invalid\" Can be fixed later. We don\u0027t really have concrete auth receipts as a resource so a NotFound doesn\u0027t make sense.",
+      "range": {
+        "startLine": 303,
+        "startChar": 6,
+        "endLine": 303,
+        "endChar": 21
+      },
+      "revId": "d9e6c1d4dd693143bae3bf9eed6e63ff469586f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_42b25c07",
+        "filename": "keystone/models/receipt_model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-11-02T16:44:53Z",
+      "side": 1,
+      "message": "This is really superfluous at the moment. You\u0027re not meaningfully adding data to the repr. Remove or expand to contain the other information.\n\n(FIX IN FOLLOWUP)",
+      "revId": "d9e6c1d4dd693143bae3bf9eed6e63ff469586f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_e28da836",
+        "filename": "keystone/models/receipt_model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-11-02T16:44:53Z",
+      "side": 1,
+      "message": "The Setters should also not accept changes after mint is called (basically if ID is set). I have had the same complaint about the token model",
+      "revId": "d9e6c1d4dd693143bae3bf9eed6e63ff469586f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_62d678fb",
+        "filename": "keystone/receipt/provider.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-11-02T16:44:53Z",
+      "side": 1,
+      "message": "Remove the \"window\" bit from receipts. They do not get a window of expired but valid for validation (fix in followup). There is no external validation of a receipt.",
+      "revId": "d9e6c1d4dd693143bae3bf9eed6e63ff469586f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_222e40f9",
+        "filename": "keystone/server/flask/application.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-11-02T16:44:53Z",
+      "side": 1,
+      "message": "++ Yep, lets make sure we do that in a followup.",
+      "range": {
+        "startLine": 72,
+        "startChar": 3,
+        "endLine": 72,
+        "endChar": 65
+      },
+      "revId": "d9e6c1d4dd693143bae3bf9eed6e63ff469586f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
