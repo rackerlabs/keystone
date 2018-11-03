@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_a6d9f6f1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-11-03T12:17:32Z",
+      "side": 1,
+      "message": "Please see our guidelines on commit message format:\n\nhttps://wiki.openstack.org/wiki/GitCommitMessages#Summary_of_Git_commit_message_structure\n\nThe subject line should have at most 50 characters, then there needs to be a blank line, then the description can be a paragraph with lines wrapped at 72 characters.",
+      "revId": "b1e31a5f00c60f6670fa1cddc9aae2d1125ff326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
