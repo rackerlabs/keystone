@@ -22,6 +22,30 @@
       "revId": "7fa62c823af2fd5765bf7f68e4b0b3e0390881df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_61589624",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-11-05T14:43:48Z",
+      "side": 1,
+      "message": "Is it a problem if they\u0027re different? The logic still applies: if I\u0027m running keystone from my homedir with [fernet_tokens]/key_repository\u003dfernet-keys and I\u0027ve left [fernet_receipts]/key_repository set to the default of /etc/keystone/fernet-keys then the result is\n\n/home/colleen/fernet-keys !\u003d /etc/keystone/fernet-keys\n\nwhich are indeed different so this should apply.",
+      "parentUuid": "3f79a3b5_e6e6fcaf",
+      "range": {
+        "startLine": 413,
+        "startChar": 24,
+        "endLine": 413,
+        "endChar": 31
+      },
+      "revId": "7fa62c823af2fd5765bf7f68e4b0b3e0390881df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
