@@ -215,6 +215,11 @@ def authenticate_for_token(auth=None):
         # Do MFA Rule Validation for the user
         if not core.UserMFARulesValidator.check_auth_methods_against_rules(
                 auth_context['user_id'], method_names_set):
+
+            LOG.debug(
+                "ADRIANT_LOOK_HERE: We made a receipt!"
+            )
+
             raise exception.InsufficientAuthMethods(
                 user_id=auth_context['user_id'],
                 methods=method_names)

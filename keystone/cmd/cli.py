@@ -468,6 +468,10 @@ class FernetRotate(BasePermissionsSetup):
         if futils.validate_key_repository(requires_write=True):
             futils.rotate_keys(keystone_user_id, keystone_group_id)
 
+            LOG.debug(
+                "ADRIANT_LOOK_HERE: fernet_rotate has been run."
+            )
+
         if (CONF.fernet_tokens.key_repository !=
                 CONF.fernet_receipts.key_repository):
             futils = fernet_utils.FernetUtils(
@@ -478,6 +482,10 @@ class FernetRotate(BasePermissionsSetup):
 
             if futils.validate_key_repository(requires_write=True):
                 futils.rotate_keys(keystone_user_id, keystone_group_id)
+
+                LOG.debug(
+                    "ADRIANT_LOOK_HERE: fernet_rotate has done receipts too."
+                )
 
 
 class TokenSetup(BasePermissionsSetup):
@@ -540,6 +548,10 @@ class TokenRotate(BasePermissionsSetup):
         if futils.validate_key_repository(requires_write=True):
             futils.rotate_keys(keystone_user_id, keystone_group_id)
 
+            LOG.debug(
+                "ADRIANT_LOOK_HERE: token_rotate happened?!"
+            )
+
 
 class ReceiptSetup(BasePermissionsSetup):
     """Setup a key repository for auth receipts.
@@ -598,6 +610,10 @@ class ReceiptRotate(BasePermissionsSetup):
         keystone_user_id, keystone_group_id = cls.get_user_group()
         if futils.validate_key_repository(requires_write=True):
             futils.rotate_keys(keystone_user_id, keystone_group_id)
+
+            LOG.debug(
+                "ADRIANT_LOOK_HERE: receipt_rotate happened?!"
+            )
 
 
 class CredentialSetup(BasePermissionsSetup):

@@ -13,6 +13,7 @@
 # under the License.
 
 import flask
+from oslo_log import log
 from oslo_serialization import jsonutils
 from six.moves import http_client
 
@@ -20,13 +21,16 @@ from keystone.common import authorization
 from keystone.common import provider_api
 from keystone import exception
 
-
+LOG = log.getLogger(__name__)
 PROVIDERS = provider_api.ProviderAPIs
 
 
 def extract_receipt(auth_context):
     receipt_id = flask.request.headers.get(
         authorization.AUTH_RECEIPT_HEADER, None)
+    LOG.debug(
+        "ADRIANT_LOOK_HERE: receipt_id is: %s" % receipt_id
+    )
     if receipt_id:
         receipt = PROVIDERS.receipt_provider_api.validate_receipt(
             receipt_id)
@@ -60,6 +64,9 @@ def _render_receipt_response_from_model(receipt):
         },
         'required_auth_methods': receipt.required_methods,
     }
+    LOG.debug(
+        "ADRIANT_LOOK_HERE: receipt_ref is: %s" % receipt_reference
+    )
     return receipt_reference
 
 
