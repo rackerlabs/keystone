@@ -46,6 +46,30 @@
       "revId": "7fa62c823af2fd5765bf7f68e4b0b3e0390881df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_8c0c093b",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-05T15:14:46Z",
+      "side": 1,
+      "message": "Maybe I was reading too far into it then. I was under the assumption we were moving in the direction of requiring absolute paths.",
+      "parentUuid": "3f79a3b5_61589624",
+      "range": {
+        "startLine": 413,
+        "startChar": 24,
+        "endLine": 413,
+        "endChar": 31
+      },
+      "revId": "7fa62c823af2fd5765bf7f68e4b0b3e0390881df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
