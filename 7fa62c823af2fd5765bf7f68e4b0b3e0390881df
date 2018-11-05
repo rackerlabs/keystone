@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_e6e6fcaf",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-05T14:30:15Z",
+      "side": 1,
+      "message": "We use a default absolute path for every key repository we use fernet for, but I don\u0027t think we actually document that anywhere.\n\nThe usage of abspath() here assumes it\u0027s working with an absolute path, right? Because the output of:\n\n  os.path.abspath(\u0027fernet-keys\u0027)\n\nand\n\n  os.path.abspath(\u0027/etc/keystone/fernet-keys\u0027)\n\ncould be different based on runtime.\n\nMaybe we need to have a follow-up patch to clarify our expectations of absolute paths.",
+      "range": {
+        "startLine": 413,
+        "startChar": 24,
+        "endLine": 413,
+        "endChar": 31
+      },
+      "revId": "7fa62c823af2fd5765bf7f68e4b0b3e0390881df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
