@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_568c452c",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-11-05T09:03:16Z",
+      "side": 1,
+      "message": "Maybe this func can be removed totally? Can\u0027t see much benefit for it.",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 81,
+        "endChar": 9
+      },
+      "revId": "1811220243e86af4ff1220125a9f8b52d4c95c64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
