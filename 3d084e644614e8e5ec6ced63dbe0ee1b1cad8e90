@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_6005cdc0",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3202,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-06T20:10:24Z",
+      "side": 1,
+      "message": "I wonder if we can ever drop these?",
+      "range": {
+        "startLine": 3202,
+        "startChar": 64,
+        "endLine": 3202,
+        "endChar": 74
+      },
+      "revId": "3d084e644614e8e5ec6ced63dbe0ee1b1cad8e90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
