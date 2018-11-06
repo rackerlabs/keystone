@@ -22,8 +22,30 @@ accessing protected endpoints.
 The returned token will contain information about the groups to which the
 federated user belongs.
 
-Example Identity API token response: `Various OpenStack token responses
-<identity-api-v3.md#authentication-responses>`__
+Example Identity API token response:
+
+.. code-block:: console
+
+   Headers:
+       X-Subject-Token: e80b74
+
+   {
+       "token": {
+           "expires_at": "2013-02-27T18:30:59.999999Z",
+           "issued_at": "2013-02-27T16:30:59.999999Z",
+           "methods": [
+               "password"
+           ],
+           "user": {
+               "domain": {
+                   "id": "1789d1",
+                   "name": "example.com"
+               },
+               "id": "0ca8f6",
+               "name": "Joe"
+           }
+       }
+   }
 
 Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/identity_provider_protocol_auth``
 
