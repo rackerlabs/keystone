@@ -23,7 +23,7 @@ The returned token will contain information about the groups to which the
 federated user belongs.
 
 Example Identity API token response: `Various OpenStack token responses
-<identity-api-v3.md#authentication-responses>`__
+<https://github.com/openstack-attic/identity-api/blob/master/v3/src/markdown/identity-api-v3.md#authentication-responses>`__
 
 Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/identity_provider_protocol_auth``
 
