@@ -22,6 +22,46 @@
       "revId": "577c96f579dfe760247a23ff229c0a27597a0ba2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_002c19fe",
+        "filename": "releasenotes/notes/bug-1473292-c21481e6aec29ec2.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-06T20:25:13Z",
+      "side": 1,
+      "message": "nit: we usually stick to lower case",
+      "range": {
+        "startLine": 23,
+        "startChar": 6,
+        "endLine": 23,
+        "endChar": 7
+      },
+      "revId": "577c96f579dfe760247a23ff229c0a27597a0ba2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_e036bd4f",
+        "filename": "releasenotes/notes/bug-1473292-c21481e6aec29ec2.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-06T20:25:13Z",
+      "side": 1,
+      "message": "Could elaborate on this by saying:\n\n  If you\u0027re relying on a custom implementation of the trust\n  backend, please be sure to implement the new method prior\n  to upgrading.",
+      "revId": "577c96f579dfe760247a23ff229c0a27597a0ba2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
