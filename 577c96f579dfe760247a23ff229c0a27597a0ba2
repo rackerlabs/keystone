@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_60062d88",
+        "filename": "keystone/trust/backends/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-06T20:23:49Z",
+      "side": 1,
+      "message": "What type is this supposed to be? Is it a string? Datetime object?",
+      "range": {
+        "startLine": 93,
+        "startChar": 21,
+        "endLine": 93,
+        "endChar": 25
+      },
+      "revId": "577c96f579dfe760247a23ff229c0a27597a0ba2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
