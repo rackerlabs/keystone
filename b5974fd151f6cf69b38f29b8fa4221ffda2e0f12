@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_3943a399",
+        "filename": "api-ref/source/v3-ext/federation/auth/auth.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-11-06T07:44:13Z",
+      "side": 1,
+      "message": "Please do not reference outside mirrors (such as github). \n\nPlease do not reference the attic. Those are considered archived/dead repos. If the data from that page needs to be in Keystone\u0027s documentation, please add it directly here.",
+      "range": {
+        "startLine": 26,
+        "startChar": 1,
+        "endLine": 26,
+        "endChar": 35
+      },
+      "revId": "b5974fd151f6cf69b38f29b8fa4221ffda2e0f12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
