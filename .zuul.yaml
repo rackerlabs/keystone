@@ -10,6 +10,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+- defaults:
+    irrelevant-files: &irrelevant-files
+      - ^.*\.rst$
+      - ^api-ref/.*$
+      - ^doc/.*$
+      - ^etc/.*$
+      - ^keystone/tests/unit/.*$
+      - ^releasenotes/.*$
+    tempest-irrelevant-files: &tempest-irrelevant-files
+      - ^(test-|)requirements.txt$
+      - ^.*\.rst$
+      - ^api-ref/.*$
+      - ^doc/.*$
+      - ^etc/.*$
+      - ^keystone/tests/unit/.*$
+      - ^releasenotes/.*$
+      - ^setup.cfg$
+
 - job:
     name: keystone-dsvm-functional
     parent: devstack-tempest
@@ -18,13 +36,7 @@
       - openstack-infra/devstack-gate
       - openstack/keystone
       - openstack/keystone-tempest-plugin
-    irrelevant-files:
-      - ^.*\.rst$
-      - ^api-ref/.*$
-      - ^doc/.*$
-      - ^etc/.*$
-      - ^keystone/tests/unit/.*$
-      - ^releasenotes/.*$
+    irrelevant-files: *irrelevant-files
     vars:
       tox_envlist: all
       tempest_test_regex: 'keystone_tempest_plugin'
@@ -69,13 +81,7 @@
     voting: false
     required-projects:
       - name: openstack/openstack-ansible-os_keystone
-    irrelevant-files:
-      - ^.*\.rst$
-      - ^api-ref/.*$
-      - ^doc/.*$
-      - ^etc/.*$
-      - ^keystone/tests/unit/.*$
-      - ^releasenotes/.*$
+    irrelevant-files: *irrelevant-files
     vars:
       tox_env: upgrade
       osa_test_repo: openstack/openstack-ansible-os_keystone
@@ -88,13 +94,7 @@
       Run test for keystone project.
 
       Uses tox with the ``patch_cover`` environment.
-    irrelevant-files:
-      - ^.*\.rst$
-      - ^api-ref/.*$
-      - ^doc/.*$
-      - ^etc/.*$
-      - ^keystone/tests/unit/.*$
-      - ^releasenotes/.*$
+    irrelevant-files: *irrelevant-files
     vars:
       tox_envlist: patch_cover
 
@@ -105,13 +105,7 @@
     run: playbooks/legacy/keystone-dsvm-grenade-multinode/run.yaml
     post-run: playbooks/legacy/keystone-dsvm-grenade-multinode/post.yaml
     timeout: 10800
-    irrelevant-files:
-      - ^.*\.rst$
-      - ^api-ref/.*$
-      - ^doc/.*$
-      - ^etc/.*$
-      - ^keystone/tests/unit/.*$
-      - ^releasenotes/.*$
+    irrelevant-files: *irrelevant-files
     required-projects:
       - openstack-dev/grenade
       - openstack-infra/devstack-gate
@@ -120,112 +114,42 @@
 
 - project:
     templates:
-      - openstack-cover-jobs
-      - openstack-lower-constraints-jobs
-      - openstack-python-jobs
-      - openstack-python35-jobs
-      - openstack-python36-jobs
-      - publish-openstack-docs-pti
-      - periodic-stable-jobs
-      - check-requirements
+      # - openstack-cover-jobs
+      # - openstack-lower-constraints-jobs
+      # - openstack-python-jobs
+      # - openstack-python35-jobs
+      # - openstack-python36-jobs
+      # - publish-openstack-docs-pti
+      # - periodic-stable-jobs
+      # - check-requirements
       - integrated-gate
       - integrated-gate-py35
-      - release-notes-jobs-python3
+      # - release-notes-jobs-python3
     check:
       jobs:
-        - keystone-dsvm-functional
-        - keystone-dsvm-py3-functional
-        - keystone-dsvm-functional-federation
-        - keystone-dsvm-py35-functional-federation
-        - keystoneclient-devstack-functional:
-            voting: false
-            irrelevant-files:
-              - ^.*\.rst$
-              - ^api-ref/.*$
-              - ^doc/.*$
-              - ^etc/.*$
-              - ^keystone/tests/unit/.*$
-              - ^releasenotes/.*$
-        - legacy-tempest-dsvm-ldap-domain-specific-driver:
-            voting: false
-            irrelevant-files:
-              - ^(test-|)requirements.txt$
-              - ^.*\.rst$
-              - ^api-ref/.*$
-              - ^doc/.*$
-              - ^etc/.*$
-              - ^keystone/tests/unit/.*$
-              - ^releasenotes/.*$
-              - ^setup.cfg$
         - tempest-full:
-            irrelevant-files:
-              - ^(test-|)requirements.txt$
-              - ^.*\.rst$
-              - ^api-ref/.*$
-              - ^doc/.*$
-              - ^etc/.*$
-              - ^keystone/tests/unit/.*$
-              - ^releasenotes/.*$
-              - ^setup.cfg$
-        - neutron-grenade:
-            irrelevant-files:
-              - ^(test-|)requirements.txt$
-              - ^.*\.rst$
-              - ^api-ref/.*$
-              - ^doc/.*$
-              - ^etc/.*$
-              - ^keystone/tests/unit/.*$
-              - ^releasenotes/.*$
-              - ^setup.cfg$
+            irrelevant-files: *tempest-irrelevant-files
+        - tempest-full-py3:
+            irrelevant-files: *tempest-irrelevant-files
     gate:
       jobs:
         - keystone-dsvm-functional
         - keystone-dsvm-py3-functional
         - tempest-full:
-            irrelevant-files:
-              - ^(test-|)requirements.txt$
-              - ^.*\.rst$
-              - ^api-ref/.*$
-              - ^doc/.*$
-              - ^etc/.*$
-              - ^keystone/tests/unit/.*$
-              - ^releasenotes/.*$
-              - ^setup.cfg$
+            irrelevant-files: *tempest-irrelevant-files
+        - tempest-full-py3:
+            irrelevant-files: *tempest-irrelevant-files
         - neutron-grenade:
-            irrelevant-files:
-              - ^(test-|)requirements.txt$
-              - ^.*\.rst$
-              - ^api-ref/.*$
-              - ^doc/.*$
-              - ^etc/.*$
-              - ^keystone/tests/unit/.*$
-              - ^releasenotes/.*$
-              - ^setup.cfg$
+            irrelevant-files: *tempest-irrelevant-files
     experimental:
       jobs:
         - keystone-tox-patch_cover
         - keystone-dsvm-grenade-multinode
         - openstack-ansible-keystone-rolling-upgrade
         - tempest-pg-full:
-            irrelevant-files:
-              - ^(test-|)requirements.txt$
-              - ^.*\.rst$
-              - ^api-ref/.*$
-              - ^doc/.*$
-              - ^etc/.*$
-              - ^keystone/tests/unit/.*$
-              - ^releasenotes/.*$
-              - ^setup.cfg$
+            irrelevant-files: *tempest-irrelevant-files
         - tempest-full-py3-opensuse150:
-            irrelevant-files:
-              - ^(test-|)requirements.txt$
-              - ^.*\.rst$
-              - ^api-ref/.*$
-              - ^doc/.*$
-              - ^etc/.*$
-              - ^keystone/tests/unit/.*$
-              - ^releasenotes/.*$
-              - ^setup.cfg$
+            irrelevant-files: *tempest-irrelevant-files
     post:
       jobs:
         - publish-loci-keystone
