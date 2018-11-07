@@ -87,9 +87,6 @@ credential_policies = [
         description='Create credential.',
         operations=[{'path': '/v3/credentials',
                      'method': 'POST'}],
-        deprecated_rule=deprecated_create_credential,
-        deprecated_reason=DEPRECATED_REASON,
-        deprecated_since=versionutils.deprecated.STEIN
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_credential',
