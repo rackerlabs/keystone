@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_631ffeb7",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 22348
+      },
+      "writtenOn": "2018-11-07T21:02:55Z",
+      "side": 1,
+      "message": "expected a list for dictionary value @ data[\u0027check\u0027][\u0027jobs\u0027]",
+      "range": {
+        "startLine": 121,
+        "startChar": 2,
+        "endLine": 187,
+        "endChar": 0
+      },
+      "revId": "5455dafa00fd2e140c8beac399b60ac48e6e9be8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
