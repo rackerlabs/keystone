@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_a984170f",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-07T22:35:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_99543700",
+      "range": {
+        "startLine": 49,
+        "startChar": 54,
+        "endLine": 49,
+        "endChar": 63
+      },
+      "revId": "70e60535f8b88a408b9875d7e112a77e1ac5ac34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_196107d4",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2018-08-10T10:36:24Z",
       "side": 1,
       "message": "(nit) \"users\u0027\" (possessive plural apostrophe)",
+      "range": {
+        "startLine": 121,
+        "startChar": 36,
+        "endLine": 121,
+        "endChar": 41
+      },
+      "revId": "70e60535f8b88a408b9875d7e112a77e1ac5ac34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_2978072a",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-07T22:35:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_196107d4",
       "range": {
         "startLine": 121,
         "startChar": 36,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_299d6757",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-07T22:35:46Z",
+      "side": 1,
+      "message": "Well, prior to refactoring for scope types, we use it for project and user creation.",
+      "parentUuid": "3f79a3b5_f98a0b68",
+      "revId": "70e60535f8b88a408b9875d7e112a77e1ac5ac34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_f93d2b8f",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 3
@@ -88,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_69a83f73",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-07T22:35:46Z",
+      "side": 1,
+      "message": "That\u0027s fair... I\u0027ve omitted the last bit.",
+      "parentUuid": "3f79a3b5_f93d2b8f",
+      "range": {
+        "startLine": 200,
+        "startChar": 15,
+        "endLine": 201,
+        "endChar": 72
+      },
+      "revId": "70e60535f8b88a408b9875d7e112a77e1ac5ac34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_d9614fab",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 3
@@ -99,6 +189,24 @@
       "writtenOn": "2018-08-10T10:36:24Z",
       "side": 1,
       "message": "I think the best example use case for unscoped tokens is the federated auth use case.",
+      "revId": "70e60535f8b88a408b9875d7e112a77e1ac5ac34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_c9dcf318",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-07T22:35:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_d9614fab",
       "revId": "70e60535f8b88a408b9875d7e112a77e1ac5ac34",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
