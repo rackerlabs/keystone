@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_899a7b0f",
+        "filename": "releasenotes/notes/bug-1729933-4a09201e9dface2a.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-07T22:53:52Z",
+      "side": 1,
+      "message": "Can we add that this change was only for the sake of consistency with other places in keystone that use `extra` and that we still highly discourage the use of `extra` anywhere?",
+      "revId": "1da2e01f35d5cd6fd5546ca4da680f8058b80553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
