@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_00686ef0",
+        "filename": "api-ref/source/v3/index.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-11-08T14:21:52Z",
+      "side": 1,
+      "message": "We\u0027re now in Stein, so we\u0027ll need to create a new section and increment the version to 3.12, here and in http://git.openstack.org/cgit/openstack/keystone/tree/keystone/version.py\n\nHowever I\u0027m not sure I agree with Lance that we should mention this here. This change on its own doesn\u0027t change the token schema, as far as I can tell it doesn\u0027t change the end-user experience at all, it\u0027s purely operator facing.",
+      "revId": "ebacf1daee1a9297f323b8efbb883b4cc81c8d09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
