@@ -37,6 +37,29 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_a63c32c0",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-11-08T14:56:31Z",
+      "side": 0,
+      "message": "If I\u0027m reading this right, it seems like DomainConfigResource now has a totally different get defined, \"GET/HEAD /v3/domains/{domain_id}/config/{group}/{option}\" which seems totally wrong.",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 139,
+        "endChar": 40
+      },
+      "revId": "9f2b84608e7297cc7ed41497ddf45841325a8fd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_915fab73",
         "filename": "keystone/api/domains.py",
         "patchSetId": 3
