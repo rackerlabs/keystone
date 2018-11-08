@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_a0d65ac3",
+        "filename": "doc/source/advanced-topics/federation/shibboleth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-11-08T14:07:50Z",
+      "side": 1,
+      "message": "I would rather our operator-facing documentation not refer to devstack at all. \n\nAlso the path /etc/apache2/sites-available is only applicable to debian/ubuntu and not to centos or suse.\n\nAs an alternative, I would suggest that we change \"*keystone.conf* vhost file\" above to a more generic reference, like \"the keystone Apache virtual host configuration\". Anyone familiar with Apache configuration will know where to look.",
+      "revId": "f516a83782ff2cd2f86f6814991861f13da71db5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
