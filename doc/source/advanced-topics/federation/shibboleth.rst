@@ -41,6 +41,10 @@ Add this *WSGIScriptAliasMatch* directive to your public vhost configuration::
 Make sure the *keystone.conf* vhost file contains a *<Location>* directive for the Shibboleth module and
 a *<Location>* directive for each identity provider::
 
+.. NOTE::
+    * Use vhost *keystone-wsgi-public.conf* in */etc/apache2/sites-available/* when configuring using
+      devstack.
+
     <Location /Shibboleth.sso>
         SetHandler shib
     </Location>
