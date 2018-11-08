@@ -60,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_c137d8da",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-11-08T15:32:13Z",
+      "side": 0,
+      "message": "The difference is code is:\n\n1) domain existence is verified. (Might be superfluous)\n\nGroup and option are optional in _get_config and the way we wire it up, we don\u0027t pass group or option when routed to domains/{domain_id}/config\n\nThe docstring below is wrong(ish). I am ok with maintaining the split get here, but it is not required to ensure response consistency",
+      "parentUuid": "3f79a3b5_a63c32c0",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 139,
+        "endChar": 40
+      },
+      "revId": "9f2b84608e7297cc7ed41497ddf45841325a8fd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_915fab73",
         "filename": "keystone/api/domains.py",
         "patchSetId": 3
