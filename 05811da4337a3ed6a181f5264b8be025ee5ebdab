@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_c1c7d83c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-08T15:42:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_e1a214ac",
+      "range": {
+        "startLine": 34,
+        "startChar": 28,
+        "endLine": 34,
+        "endChar": 38
+      },
+      "revId": "05811da4337a3ed6a181f5264b8be025ee5ebdab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_c18b581f",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-11-08T15:41:03Z",
       "side": 1,
       "message": "Use utils instead.",
+      "range": {
+        "startLine": 498,
+        "startChar": 8,
+        "endLine": 498,
+        "endChar": 18
+      },
+      "revId": "05811da4337a3ed6a181f5264b8be025ee5ebdab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_81cd605c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-08T15:42:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_c18b581f",
       "range": {
         "startLine": 498,
         "startChar": 8,
