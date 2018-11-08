@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_73fa57bb",
+        "filename": "keystone/tests/unit/ksfixtures/jwt_key_repository.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-08T16:04:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_218b2c17",
+      "range": {
+        "startLine": 17,
+        "startChar": 28,
+        "endLine": 17,
+        "endChar": 38
+      },
+      "revId": "9635f380b5109228a5d39536bfc187b873994db3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_418e6826",
         "filename": "keystone/tests/unit/ksfixtures/jwt_key_repository.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2018-11-08T15:41:36Z",
       "side": 1,
       "message": "Use utils instead.",
+      "range": {
+        "startLine": 33,
+        "startChar": 8,
+        "endLine": 33,
+        "endChar": 18
+      },
+      "revId": "9635f380b5109228a5d39536bfc187b873994db3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_332a9f2e",
+        "filename": "keystone/tests/unit/ksfixtures/jwt_key_repository.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-08T16:04:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_418e6826",
       "range": {
         "startLine": 33,
         "startChar": 8,
