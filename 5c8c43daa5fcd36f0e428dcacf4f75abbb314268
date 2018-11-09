@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_28fe9e03",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 930,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-11-09T10:04:20Z",
+      "side": 0,
+      "message": "I think this entire test case doesn\u0027t make sense without this config option, does it?",
+      "revId": "5c8c43daa5fcd36f0e428dcacf4f75abbb314268",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
