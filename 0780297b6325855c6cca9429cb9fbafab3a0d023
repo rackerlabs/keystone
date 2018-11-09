@@ -16,6 +16,24 @@
       "revId": "0780297b6325855c6cca9429cb9fbafab3a0d023",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_843244f2",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-11-09T01:24:34Z",
+      "side": 0,
+      "message": "we use oslo.cache instead now. the files `keystone.common.cache.backends` has been removed already. They are handled by oslo.cache instead.\nhttps://github.com/openstack/oslo.cache/blob/master/setup.cfg#L30-L31",
+      "parentUuid": "3f79a3b5_1be53f3e",
+      "revId": "0780297b6325855c6cca9429cb9fbafab3a0d023",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
