@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_d9ba53de",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-11-09T20:10:38Z",
+      "side": 1,
+      "message": "obtaining and using, right? I can obtain a token and use it in a different scope and I may be or not authorized to do it.",
+      "range": {
+        "startLine": 41,
+        "startChar": 44,
+        "endLine": 41,
+        "endChar": 53
+      },
+      "revId": "f8e6258f08edfc37aba56eafa4803f096f9a0582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_d99fb361",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-11-09T20:10:38Z",
+      "side": 1,
+      "message": "we talk about roles, but we don\u0027t have it in the glossary. I think that another useful information is about \"role assignments\".",
+      "range": {
+        "startLine": 58,
+        "startChar": 41,
+        "endLine": 58,
+        "endChar": 45
+      },
+      "revId": "f8e6258f08edfc37aba56eafa4803f096f9a0582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_1991ab50",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-11-09T20:10:38Z",
+      "side": 1,
+      "message": "this contradicts what you say in the Token section in the glossary (specifically that a token carries a user\u0027s authorization): \"A self-service resource that carries a user\u0027s authorization, allowing them to interact with OpenStack services.\"",
+      "range": {
+        "startLine": 194,
+        "startChar": 0,
+        "endLine": 194,
+        "endChar": 57
+      },
+      "revId": "f8e6258f08edfc37aba56eafa4803f096f9a0582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
