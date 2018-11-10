@@ -16,6 +16,24 @@
       "revId": "5c8c43daa5fcd36f0e428dcacf4f75abbb314268",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_05fa9cb9",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 930,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-11-10T03:06:41Z",
+      "side": 0,
+      "message": "Agreed, this test class can simply be removed.",
+      "parentUuid": "3f79a3b5_28fe9e03",
+      "revId": "5c8c43daa5fcd36f0e428dcacf4f75abbb314268",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
