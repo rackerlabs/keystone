@@ -84,6 +84,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_8b7eba17",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-11-11T00:57:42Z",
+      "side": 0,
+      "message": "Yeah, the old controller worked the same, with group and option being optional[0]. I will fix the docstring.  \n\n[0] https://github.com/openstack/keystone/blob/stable/rocky/keystone/resource/controllers.py#L120",
+      "parentUuid": "3f79a3b5_c137d8da",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 139,
+        "endChar": 40
+      },
+      "revId": "9f2b84608e7297cc7ed41497ddf45841325a8fd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_915fab73",
         "filename": "keystone/api/domains.py",
         "patchSetId": 3
