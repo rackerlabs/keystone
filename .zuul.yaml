@@ -52,11 +52,13 @@
         TEMPEST_PLUGINS: '/opt/stack/keystone-tempest-plugin'
         USE_PYTHON3: True
 
-# This job will execute 'tox -e upgrade' from the OSA
-# repo specified in 'osa_test_repo'.
+# Experimental
 - job:
     name: openstack-ansible-keystone-rolling-upgrade
     parent: openstack-ansible-cross-repo-functional
+    description: |
+      This job will execute 'tox -e upgrade' from the OSA
+      repo specified in 'osa_test_repo'.
     required-projects:
       - name: openstack/openstack-ansible-os_keystone
     vars:
