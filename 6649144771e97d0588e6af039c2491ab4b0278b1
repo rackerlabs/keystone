@@ -16,6 +16,24 @@
       "revId": "6649144771e97d0588e6af039c2491ab4b0278b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_43b4f081",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-13T08:20:26Z",
+      "side": 1,
+      "message": "I didn\u0027t refactor this out since there are several places that rely on it as the original interface.\n\nIt can be removed, but I figured it was still useful to have a method that invoked the directory creation as a method of the FernetUtils class and has the directory location as variables.",
+      "parentUuid": "3f79a3b5_b6ebe478",
+      "revId": "6649144771e97d0588e6af039c2491ab4b0278b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
