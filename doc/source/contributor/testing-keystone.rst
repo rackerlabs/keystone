@@ -259,7 +259,7 @@ from the tempest directory:
 .. _devstack plugin: https://docs.openstack.org/devstack/latest/plugins.html
 .. _tempest: https://git.openstack.org/cgit/openstack/tempest
 .. _tempest plugin: https://docs.openstack.org/tempest/latest/plugin.html
-.. _repository: http://git.openstack.org/cgit/openstack/keystone-tempest-plugin
+.. _repository: https://git.openstack.org/cgit/openstack/keystone-tempest-plugin
 
 Writing new API & Scenario Tests
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
