@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_d52c2496",
+        "filename": "keystone/api/users.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-11-13T22:43:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_0fb5af19",
+      "range": {
+        "startLine": 209,
+        "startChar": 34,
+        "endLine": 209,
+        "endChar": 68
+      },
+      "revId": "b3dd6200d2a98920ecdb872bc8ad0441fa2b569c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_cf3497ae",
         "filename": "keystone/api/users.py",
         "patchSetId": 1
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_f5292083",
+        "filename": "keystone/api/users.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-11-13T22:43:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_cf3497ae",
+      "revId": "b3dd6200d2a98920ecdb872bc8ad0441fa2b569c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_8fda1f48",
         "filename": "keystone/identity/schema.py",
         "patchSetId": 1
@@ -53,6 +95,24 @@
       "writtenOn": "2018-10-31T02:40:26Z",
       "side": 1,
       "message": "it is good to add max length check using CONF.identity.max_password_length as well.\nLike:\n\n_password_change_properties \u003d {\n    \u0027original_password\u0027: {\n        \u0027type\u0027: \u0027string\u0027\n    },\n    \u0027password\u0027: {\n        \u0027type\u0027: \u0027string\u0027\n    }\n}\nif CONF.strict_password_check:\n    _password_change_properties[\u0027original_password\u0027][\u0027maxLength\u0027] \u003d CONF.identity.max_password_length\n\n\nAnd \"pattern\" using CONF.security_compliance.password_regex. Then the related validation code can be removed as well.",
+      "revId": "b3dd6200d2a98920ecdb872bc8ad0441fa2b569c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_95446c50",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-11-13T22:43:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_8fda1f48",
       "revId": "b3dd6200d2a98920ecdb872bc8ad0441fa2b569c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
