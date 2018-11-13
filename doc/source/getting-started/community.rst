@@ -42,7 +42,7 @@ This is usually the best place to ask questions and find your way around. IRC
 stands for Internet Relay Chat and it is a way to chat online in real time.
 You can also ask a question and come back to the log files to read the answer
 later. Logs for the #openstack IRC channels are stored at
-`<http://eavesdrop.openstack.org/irclogs/>`_.
+`<https://eavesdrop.openstack.org/irclogs/>`_.
 
 For more information regarding OpenStack IRC channels please visit the
 `OpenStack IRC Wiki <https://wiki.openstack.org/wiki/IRC>`_.
@@ -85,7 +85,7 @@ events and posts from OpenStack contributors.
 
 `OpenStack Blog <https://openstack.org/blog>`_
 
-See also: `Planet OpenStack <http://planet.openstack.org/>`_, an aggregation of
+See also: `Planet OpenStack <https://planet.openstack.org/>`_, an aggregation of
 blogs about OpenStack from around the internet, combined into a web site and
 RSS feed. If you'd like to contribute with your blog posts, there are
 instructions for `adding your blog <https://wiki.openstack.org/AddingYourBlog>`_.

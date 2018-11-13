@@ -29,7 +29,7 @@ More information keystone's implementation of JSON Home can be found in the
 `specification`_.
 
 .. _`draft`: https://mnot.github.io/I-D/json-home/
-.. _`specification`: http://specs.openstack.org/openstack/keystone-specs/specs/keystone/juno/json-home.html
+.. _`specification`: https://specs.openstack.org/openstack/keystone-specs/specs/keystone/juno/json-home.html
 
 Requesting JSON Home Documents
 ==============================

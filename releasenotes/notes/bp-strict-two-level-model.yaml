@@ -6,7 +6,7 @@ features:
    value of the option `[unified_limit]/enforcement_model` to
    `strict_two_level` to enable it.
 
-   In this [`model <http://specs.openstack.org/openstack/keystone-specs/specs/keystone/rocky/strict-two-level-enforcement-model.html>`_]:
+   In this [`model <https://specs.openstack.org/openstack/keystone-specs/specs/keystone/rocky/strict-two-level-enforcement-model.html>`_]:
 
    1. The project depth is force limited to 2 level.
    2. Any child project's limit can not exceed the parent's.

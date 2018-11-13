@@ -37,7 +37,7 @@ security:
     requests and responses from Keystone.
 other:
   - |
-    [`#openstack-tc IRC log <http://eavesdrop.openstack.org/irclogs/%23openstack-tc/%23openstack-tc.2018-06-04.log.html#t2018-06-04T18:13:18>`_]
+    [`#openstack-tc IRC log <https://eavesdrop.openstack.org/irclogs/%23openstack-tc/%23openstack-tc.2018-06-04.log.html#t2018-06-04T18:13:18>`_]
     With Technical Comittee consensus the Keystone team is not wiring up the
     reminents of the V2.0 API that was maintained strictly due to a failure
     to copy/paste a direct deprecation notice on the controllers even though

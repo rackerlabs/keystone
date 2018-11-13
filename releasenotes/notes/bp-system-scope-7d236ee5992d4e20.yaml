@@ -11,7 +11,7 @@ fixes:
   - |
     [`bug 968696 <https://bugs.launchpad.net/keystone/+bug/968696>`_]
     The work to introduce `system-scope <https://blueprints.launchpad.net/keystone/+spec/system-scope>`_
-    in addition to associating `scope types <http://specs.openstack.org/openstack/oslo-specs/specs/queens/include-scope-in-policy.html>`_
+    in addition to associating `scope types <https://specs.openstack.org/openstack/oslo-specs/specs/queens/include-scope-in-policy.html>`_
     to operations with ``oslo.policy`` will give project developers the ability
     to fix `bug 968696 <https://bugs.launchpad.net/keystone/+bug/968696>`_.
   - |
