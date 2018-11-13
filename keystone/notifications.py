@@ -74,6 +74,7 @@ _SUBSCRIBERS = {}
 _notifier = None
 SERVICE = 'identity'
 
+ROOT_DOMAIN = '<<keystone.domain.root>>'
 
 CONF = keystone.conf.CONF
 
@@ -420,6 +421,11 @@ def _create_cadf_payload(operation, resource_type, resource_id,
         target_uri = taxonomy.UNKNOWN
     else:
         target_uri = CADF_TYPE_MAP.get(resource_type)
+
+    # NOTE(gagehugo): If the ID is the root domain, don't emit a notification
+    if resource_id == ROOT_DOMAIN:
+        return
+
     target = resource.Resource(typeURI=target_uri,
                                id=resource_id)
 
