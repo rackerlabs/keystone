@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_32b55cd0",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-11-14T20:54:51Z",
+      "side": 1,
+      "message": "shouldn\u0027t we at least log that than?",
+      "range": {
+        "startLine": 425,
+        "startChar": 11,
+        "endLine": 425,
+        "endChar": 19
+      },
+      "revId": "45dbf4a3cbcd79c8895f6508ee5a30326ecc09ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
