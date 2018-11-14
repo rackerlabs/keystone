@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_2080b89d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-11-14T02:35:12Z",
+      "side": 1,
+      "message": "The file mentioned in commit message does not have any change in this patch. Correct this too.",
+      "revId": "9e24fa9d6d9cd62119711744d32cdbbf64cdac58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_c091c4f8",
+        "filename": "doc/source/getting-started/community.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-11-14T02:35:12Z",
+      "side": 1,
+      "message": "This link does not work with https",
+      "revId": "9e24fa9d6d9cd62119711744d32cdbbf64cdac58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_6096b0f1",
+        "filename": "doc/source/getting-started/community.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-11-14T02:35:12Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "9e24fa9d6d9cd62119711744d32cdbbf64cdac58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_809bcc14",
+        "filename": "releasenotes/notes/convert-keystone-to-flask-80d980e239b662b0.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-11-14T02:35:12Z",
+      "side": 1,
+      "message": "This too does not work with https",
+      "revId": "9e24fa9d6d9cd62119711744d32cdbbf64cdac58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
