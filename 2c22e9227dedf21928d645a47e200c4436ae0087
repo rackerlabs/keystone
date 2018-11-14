@@ -46,6 +46,30 @@
       "revId": "2c22e9227dedf21928d645a47e200c4436ae0087",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_de42f967",
+        "filename": "doc/source/advanced-topics/federation/introduction.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 21723
+      },
+      "writtenOn": "2018-11-14T16:34:07Z",
+      "side": 1,
+      "message": "HTTPD is perfect if you explain in the description that HTTPD  is Apache and the Apache module.",
+      "parentUuid": "3f79a3b5_668c8581",
+      "range": {
+        "startLine": 237,
+        "startChar": 85,
+        "endLine": 237,
+        "endChar": 91
+      },
+      "revId": "2c22e9227dedf21928d645a47e200c4436ae0087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
