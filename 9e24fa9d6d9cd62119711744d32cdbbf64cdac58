@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_c05f844a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-11-14T02:52:10Z",
+      "side": 1,
+      "message": "So just \"Replacing the HTTP protocal with HTTPS\"",
+      "parentUuid": "3f79a3b5_2080b89d",
+      "revId": "9e24fa9d6d9cd62119711744d32cdbbf64cdac58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_c091c4f8",
         "filename": "doc/source/getting-started/community.rst",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_a05a885a",
+        "filename": "doc/source/getting-started/community.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-11-14T02:52:10Z",
+      "side": 1,
+      "message": "++, Nice catch. Some website don\u0027t support ssl.",
+      "parentUuid": "3f79a3b5_c091c4f8",
+      "revId": "9e24fa9d6d9cd62119711744d32cdbbf64cdac58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_6096b0f1",
         "filename": "doc/source/getting-started/community.rst",
         "patchSetId": 1
@@ -45,6 +81,40 @@
         "id": 27621
       },
       "writtenOn": "2018-11-14T02:35:12Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "9e24fa9d6d9cd62119711744d32cdbbf64cdac58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_e0508030",
+        "filename": "releasenotes/notes/bp-strict-two-level-model.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-11-14T02:52:10Z",
+      "side": 1,
+      "message": "It should be done in stable branch if hitting critical bug. Please do not change the releasenote which has been released already in master branch. It doesn\u0027t work at all. See http://logs.openstack.org/08/617808/1/check/build-openstack-releasenotes/76eff57/html/rocky.html The related link in the page is still \"http\"",
+      "revId": "9e24fa9d6d9cd62119711744d32cdbbf64cdac58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_600b102d",
+        "filename": "releasenotes/notes/bp-system-scope-7d236ee5992d4e20.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-11-14T02:52:10Z",
       "side": 1,
       "message": "ditto",
       "revId": "9e24fa9d6d9cd62119711744d32cdbbf64cdac58",
