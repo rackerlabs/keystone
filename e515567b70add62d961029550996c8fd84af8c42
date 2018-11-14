@@ -22,6 +22,30 @@
       "revId": "e515567b70add62d961029550996c8fd84af8c42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_d2ad08a5",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-11-14T20:41:53Z",
+      "side": 1,
+      "message": "The root domain id is typically hidden, and only shows up in the unit tests for setup. I will change this comment to better clarify this.",
+      "parentUuid": "3f79a3b5_d5d184fb",
+      "range": {
+        "startLine": 425,
+        "startChar": 4,
+        "endLine": 425,
+        "endChar": 77
+      },
+      "revId": "e515567b70add62d961029550996c8fd84af8c42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
