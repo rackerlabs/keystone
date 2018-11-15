@@ -69,6 +69,13 @@
         keystone: git://git.openstack.org/openstack/keystone
 
 - job:
+    name: keystone-dsvm-functional-federation-arm64
+    parent: keystone-dsvm-functional-federation
+    description: |
+        Keystone DSVM functional federation tests executed on arm64
+    nodeset: ubuntu-xenial-arm64
+
+- job:
     name: keystone-dsvm-py35-functional-federation
     parent: keystone-dsvm-functional-federation
     voting: false
@@ -154,6 +161,7 @@
         - keystone-dsvm-py3-functional
         - keystone-dsvm-py3-functional-arm64
         - keystone-dsvm-functional-federation
+        - keystone-dsvm-functional-federation-arm64
         - keystone-dsvm-py35-functional-federation
         - keystoneclient-devstack-functional:
             voting: false
