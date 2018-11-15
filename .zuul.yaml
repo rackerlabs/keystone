@@ -48,6 +48,14 @@
         USE_PYTHON3: True
 
 - job:
+    name: keystone-dsvm-py3-functional-arm64
+    parent: keystone-dsvm-py3-functional
+    voting: false
+    description: |
+        Keystone DSVM py3 functional tests executed on arm64
+    nodeset: ubuntu-xenial-arm64
+
+- job:
     name: keystone-dsvm-functional-federation
     parent: keystone-dsvm-functional
     voting: false
@@ -144,6 +152,7 @@
         - keystone-dsvm-functional
         - keystone-dsvm-functional-arm64
         - keystone-dsvm-py3-functional
+        - keystone-dsvm-py3-functional-arm64
         - keystone-dsvm-functional-federation
         - keystone-dsvm-py35-functional-federation
         - keystoneclient-devstack-functional:
@@ -191,6 +200,7 @@
         - keystone-dsvm-functional
         - keystone-dsvm-functional-arm64
         - keystone-dsvm-py3-functional
+        - keystone-dsvm-py3-functional-arm64
         - tempest-full:
             irrelevant-files:
               - ^(test-|)requirements.txt$
