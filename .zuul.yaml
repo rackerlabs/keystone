@@ -32,6 +32,14 @@
         TEMPEST_PLUGINS: '/opt/stack/keystone-tempest-plugin'
 
 - job:
+    name: keystone-dsvm-functional-arm64
+    parent: keystone-dsvm-functional
+    voting: false
+    description: |
+        Keystone DSVM functional tests executed on arm64
+    nodeset: ubuntu-xenial-arm64
+
+- job:
     name: keystone-dsvm-py3-functional
     parent: keystone-dsvm-functional
     vars:
@@ -134,6 +142,7 @@
     check:
       jobs:
         - keystone-dsvm-functional
+        - keystone-dsvm-functional-arm64
         - keystone-dsvm-py3-functional
         - keystone-dsvm-functional-federation
         - keystone-dsvm-py35-functional-federation
@@ -180,6 +189,7 @@
     gate:
       jobs:
         - keystone-dsvm-functional
+        - keystone-dsvm-functional-arm64
         - keystone-dsvm-py3-functional
         - tempest-full:
             irrelevant-files:
