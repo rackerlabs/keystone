@@ -84,6 +84,13 @@
         TEMPEST_PLUGINS: '/opt/stack/keystone-tempest-plugin'
         USE_PYTHON3: True
 
+- job:
+    name: keystone-dsvm-py35-functional-federation-arm64
+    parent: keystone-dsvm-py35-functional-federation
+    description: |
+        Keystone DSVM functional federation tests executed on arm64
+    nodeset: ubuntu-xenial-arm64
+
 # This job will execute 'tox -e upgrade' from the OSA
 # repo specified in 'osa_test_repo'.
 - job:
@@ -163,6 +170,7 @@
         - keystone-dsvm-functional-federation
         - keystone-dsvm-functional-federation-arm64
         - keystone-dsvm-py35-functional-federation
+        - keystone-dsvm-py35-functional-federation-arm64
         - keystoneclient-devstack-functional:
             voting: false
             irrelevant-files:
