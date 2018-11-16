@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_8ad986f2",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-11-16T02:12:08Z",
+      "side": 1,
+      "message": "the non-voting job should not in gate list.",
+      "revId": "90f2e9dca35287d853e591a712b834c3a023d8b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
