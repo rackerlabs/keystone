@@ -16,6 +16,24 @@
       "revId": "90f2e9dca35287d853e591a712b834c3a023d8b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_91a0cef4",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-11-16T19:37:34Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3f79a3b5_8ad986f2",
+      "revId": "90f2e9dca35287d853e591a712b834c3a023d8b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
