@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_16935bb2",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-11-16T09:16:10Z",
+      "side": 1,
+      "message": "Don\u0027t need this check, since request_id is always there.",
+      "range": {
+        "startLine": 105,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 31
+      },
+      "revId": "549e34d26f50d7cb3fb3fd0e292de054a000b1f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
