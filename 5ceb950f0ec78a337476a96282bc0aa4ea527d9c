@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_f8f554ca",
+        "filename": "doc/source/contributor/http-api.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-11-19T15:11:15Z",
+      "side": 1,
+      "message": "This can stay for now.",
+      "parentUuid": "3f79a3b5_98ca20a1",
+      "range": {
+        "startLine": 57,
+        "startChar": 54,
+        "endLine": 57,
+        "endChar": 64
+      },
+      "revId": "5ceb950f0ec78a337476a96282bc0aa4ea527d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_17a4ab4b",
         "filename": "doc/source/contributor/http-api.rst",
         "patchSetId": 2
