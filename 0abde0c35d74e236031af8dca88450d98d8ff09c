@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_18d5b048",
+        "filename": "doc/source/admin/health-check-middleware.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-11-19T15:05:47Z",
+      "side": 1,
+      "message": "This can be fixed in a follow up. I would say: Keystone uses functions from `oslo.middleware` with the url set as ``/healthcheck``. It is built into the running flask application and always available.\n\n\nThe change to wording is because it cannot be disabled without on-disk code change (not configurable).",
+      "range": {
+        "startLine": 8,
+        "startChar": 5,
+        "endLine": 8,
+        "endChar": 23
+      },
+      "revId": "0abde0c35d74e236031af8dca88450d98d8ff09c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
