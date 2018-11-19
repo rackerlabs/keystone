@@ -17,20 +17,21 @@
 
 from oslo_log import log
 
+from oslo_serialization import jsonutils
+
 from keystone.common.rbac_enforcer import policy
 from keystone import exception
 from keystone.policy.backends import base
-
 
 LOG = log.getLogger(__name__)
 
 
 class Policy(base.PolicyDriverBase):
     def enforce(self, credentials, action, target):
-        msg = 'enforce %(action)s: %(credentials)s'
-        LOG.debug(msg, {
-            'action': action,
-            'credentials': credentials})
+        LOG.debug('RBAC enforce: rule="%s" credentials=%s target=%s',
+                  action,
+                  jsonutils.dumps(credentials, skipkeys=True, sort_keys=True),
+                  jsonutils.dumps(target, skipkeys=True, sort_keys=True))
         policy.enforce(credentials, action, target)
 
     def create_policy(self, policy_id, policy):
