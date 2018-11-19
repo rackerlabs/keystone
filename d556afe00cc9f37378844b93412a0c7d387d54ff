@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_98b0e0e1",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-11-19T15:16:38Z",
+      "side": 1,
+      "message": "Uhm. This needs to have BOTH elements in the docstring not just replace. The method handles\n\n    GET/HEAD /v3/domains/{domain_id}/config\n    GET/HEAD /v3/domains/{domain_id}/config/{group}/{option}",
+      "revId": "d556afe00cc9f37378844b93412a0c7d387d54ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
