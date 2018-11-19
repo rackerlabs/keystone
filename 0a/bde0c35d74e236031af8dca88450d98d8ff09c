@@ -1,0 +1,11 @@
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: Vishakha Agarwal <agarwalvishakha18@gmail.com>
+Code-Review+1: Chason Chan <chason.chan@foxmail.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 19 Nov 2018 15:18:35 +0000
+Reviewed-on: https://review.openstack.org/615754
+Project: openstack/keystone
+Branch: refs/heads/master
