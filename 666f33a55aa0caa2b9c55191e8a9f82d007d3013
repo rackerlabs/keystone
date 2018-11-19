@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_20a70ebe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-19T21:22:10Z",
+      "side": 1,
+      "message": "Technically, keystone can run on any configured port, but we use 5000 for compatibility reasons in other parts of the docs.\n\nIn the future, it wouldn\u0027t be a bad idea to update the docs/scripts with a more sensible example like port 80 or 443.",
+      "range": {
+        "startLine": 10,
+        "startChar": 5,
+        "endLine": 10,
+        "endChar": 9
+      },
+      "revId": "666f33a55aa0caa2b9c55191e8a9f82d007d3013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
