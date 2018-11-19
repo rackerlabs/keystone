@@ -22,6 +22,30 @@
       "revId": "45dbf4a3cbcd79c8895f6508ee5a30326ecc09ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_9871c016",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-11-19T15:21:38Z",
+      "side": 1,
+      "message": "The issue is that CADF does not know how to handle non-UUID formed ids. Nothing should lean on the root domain for an initiator or anything else (until we expose it later down the line, which case we can remove this bit).\n\nThis will be undone once we make the root domain an exposed element.",
+      "parentUuid": "3f79a3b5_32b55cd0",
+      "range": {
+        "startLine": 425,
+        "startChar": 11,
+        "endLine": 425,
+        "endChar": 19
+      },
+      "revId": "45dbf4a3cbcd79c8895f6508ee5a30326ecc09ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
