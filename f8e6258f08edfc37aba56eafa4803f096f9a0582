@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_43b574ef",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-19T22:21:12Z",
+      "side": 1,
+      "message": "Simplified this a bit.",
+      "parentUuid": "3f79a3b5_d9ba53de",
+      "range": {
+        "startLine": 41,
+        "startChar": 44,
+        "endLine": 41,
+        "endChar": 53
+      },
+      "revId": "f8e6258f08edfc37aba56eafa4803f096f9a0582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_d99fb361",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 4
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_0321bc4f",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-19T22:21:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_d99fb361",
+      "range": {
+        "startLine": 58,
+        "startChar": 41,
+        "endLine": 58,
+        "endChar": 45
+      },
+      "revId": "f8e6258f08edfc37aba56eafa4803f096f9a0582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_1991ab50",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 4
@@ -59,6 +107,30 @@
       "writtenOn": "2018-11-09T20:10:38Z",
       "side": 1,
       "message": "this contradicts what you say in the Token section in the glossary (specifically that a token carries a user\u0027s authorization): \"A self-service resource that carries a user\u0027s authorization, allowing them to interact with OpenStack services.\"",
+      "range": {
+        "startLine": 194,
+        "startChar": 0,
+        "endLine": 194,
+        "endChar": 57
+      },
+      "revId": "f8e6258f08edfc37aba56eafa4803f096f9a0582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_834dcc3d",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-19T22:21:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_1991ab50",
       "range": {
         "startLine": 194,
         "startChar": 0,
