@@ -10,9 +10,24 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_log import versionutils
 from oslo_policy import policy
 
 from keystone.common.policies import base
+
+deprecated_update_region = policy.DeprecatedRule(
+    name=base.IDENTITY % 'update_region',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
+
+DEPRECATED_REASON = (
+    'As of the Stein release, the region API now understands default roles '
+    'and system-scoped tokens, making the API more granular without '
+    'compromising security. The new policies for this API account for these '
+    'changes automatically. Be sure to take these new defaults into '
+    'consideration if you are relying on overrides in your deployment for the '
+    'region API.'
+)
 
 region_policies = [
     policy.DocumentedRuleDefault(
@@ -50,11 +65,14 @@ region_policies = [
                      'method': 'PUT'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_region',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str='role:member',
         scope_types=['system'],
         description='Update region.',
         operations=[{'path': '/v3/regions/{region_id}',
-                     'method': 'PATCH'}]),
+                     'method': 'PATCH'}],
+        deprecated_rule=deprecated_update_region,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_region',
         check_str=base.RULE_ADMIN_REQUIRED,
