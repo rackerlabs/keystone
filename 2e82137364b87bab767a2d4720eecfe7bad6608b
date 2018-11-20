@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_4a7260b1",
+        "filename": "api-ref/source/v3/samples/admin/user-create-request.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-11-20T09:12:03Z",
+      "side": 1,
+      "message": "tab? the same nit in some other files as well.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 1
+      },
+      "revId": "2e82137364b87bab767a2d4720eecfe7bad6608b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
