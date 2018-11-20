@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_2675d4ff",
+        "filename": "keystone/tests/unit/protection/v3/test_domains.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-20T18:18:05Z",
+      "side": 1,
+      "message": "Yeah - that\u0027s a good idea, but we have a separate bug to track that fix.\n\nhttps://bugs.launchpad.net/keystone/+bug/1750660",
+      "parentUuid": "3f79a3b5_17d8bded",
+      "revId": "afffd4fcd6ca04a7acfe2989f2db6e6afb77ba4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_f7f3c16b",
         "filename": "keystone/tests/unit/protection/v3/test_domains.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2018-10-02T01:52:11Z",
       "side": 1,
       "message": "what if a user tries to create a domain. Can we add the test case for that failed requests also?",
+      "revId": "afffd4fcd6ca04a7acfe2989f2db6e6afb77ba4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_466fb028",
+        "filename": "keystone/tests/unit/protection/v3/test_domains.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 501,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-20T18:18:05Z",
+      "side": 1,
+      "message": "I\u0027m not sure I understand the question, but that\u0027s what this test is doing I believe?",
+      "parentUuid": "3f79a3b5_f7f3c16b",
       "revId": "afffd4fcd6ca04a7acfe2989f2db6e6afb77ba4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
