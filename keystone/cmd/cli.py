@@ -74,7 +74,7 @@ class BootStrap(BaseApp):
                                   'user during bootstrap process.'))
         # NOTE(morganfainberg): See below for ENV Variable that can be used
         # in lieu of the command-line arguments.
-        parser.add_argument('--bootstrap-password', default=None,
+        parser.add_argument('--bootstrap-password', default='password',
                             metavar='OS_BOOTSTRAP_PASSWORD',
                             help='The bootstrap user password')
         parser.add_argument('--bootstrap-project-name', default='admin',
