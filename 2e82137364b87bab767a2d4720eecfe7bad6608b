@@ -22,6 +22,30 @@
       "revId": "2e82137364b87bab767a2d4720eecfe7bad6608b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_d6a5b54a",
+        "filename": "api-ref/source/v3/samples/admin/user-create-request.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-20T13:25:54Z",
+      "side": 1,
+      "message": "Aha, good catch. Will fix.",
+      "parentUuid": "3f79a3b5_4a7260b1",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 1
+      },
+      "revId": "2e82137364b87bab767a2d4720eecfe7bad6608b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
