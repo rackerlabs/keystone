@@ -93,6 +93,30 @@
       "revId": "80db8ffabe6a08b2e4a0d9223f7773639e3d63c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_590f8ed3",
+        "filename": "doc/source/admin/identity-resource-options.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-11-20T21:32:24Z",
+      "side": 1,
+      "message": "++ for an example in a follow up, but it pays to be accurate the MFARules validator will barf otherwise.",
+      "parentUuid": "3f79a3b5_8a10784e",
+      "range": {
+        "startLine": 83,
+        "startChar": 6,
+        "endLine": 83,
+        "endChar": 24
+      },
+      "revId": "80db8ffabe6a08b2e4a0d9223f7773639e3d63c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
