@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_6a15dc3d",
+        "filename": "doc/source/admin/identity-resource-options.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-20T08:59:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_23107858",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 71
+      },
+      "revId": "80db8ffabe6a08b2e4a0d9223f7773639e3d63c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_e3184088",
         "filename": "doc/source/admin/identity-resource-options.rst",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2018-11-19T22:47:11Z",
       "side": 1,
       "message": "List of Lists of Strings",
+      "range": {
+        "startLine": 83,
+        "startChar": 6,
+        "endLine": 83,
+        "endChar": 24
+      },
+      "revId": "80db8ffabe6a08b2e4a0d9223f7773639e3d63c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_8a10784e",
+        "filename": "doc/source/admin/identity-resource-options.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-20T08:59:25Z",
+      "side": 1,
+      "message": "Kinda confusing, but we should add an example or something in a follow up.",
+      "parentUuid": "3f79a3b5_e3184088",
       "range": {
         "startLine": 83,
         "startChar": 6,
