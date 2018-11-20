@@ -34,7 +34,7 @@ freezegun==0.3.6
 future==0.16.0
 futurist==1.6.0
 greenlet==0.4.13
-hacking==0.12.0
+hacking==1.1.0
 idna==2.6
 imagesize==1.0.0
 iso8601==0.1.12
@@ -88,6 +88,7 @@ prettytable==0.7.2
 psycopg2==2.7.4
 pyasn1==0.4.2
 pycadf==1.1.0
+pycodestyle==2.0.0
 pycparser==2.18
 pyflakes==0.8.1
 Pygments==2.2.0
