@@ -24,6 +24,12 @@ deprecated_list_endpoints = policy.DeprecatedRule(
 deprecated_update_endpoint = policy.DeprecatedRule(
     name=base.IDENTITY % 'update_endpoint', check_str=base.RULE_ADMIN_REQUIRED,
 )
+deprecated_create_endpoint = policy.DeprecatedRule(
+    name=base.IDENTITY % 'create_endpoint', check_str=base.RULE_ADMIN_REQUIRED,
+)
+deprecated_delete_endpoint = policy.DeprecatedRule(
+    name=base.IDENTITY % 'delete_endpoint', check_str=base.RULE_ADMIN_REQUIRED,
+)
 
 DEPRECATED_REASON = """
 As of the Stein release, the endpoint API now understands default roles and
@@ -61,7 +67,10 @@ endpoint_policies = [
         scope_types=['system'],
         description='Create endpoint.',
         operations=[{'path': '/v3/endpoints',
-                     'method': 'POST'}]),
+                     'method': 'POST'}],
+        deprecated_rule=deprecated_create_endpoint,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_endpoint',
         check_str='role:member',
@@ -78,7 +87,10 @@ endpoint_policies = [
         scope_types=['system'],
         description='Delete endpoint.',
         operations=[{'path': '/v3/endpoints/{endpoint_id}',
-                     'method': 'DELETE'}])
+                     'method': 'DELETE'}],
+        deprecated_rule=deprecated_delete_endpoint,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN)
 ]
 
 
