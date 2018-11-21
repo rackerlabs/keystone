@@ -143,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_d257f358",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-11-21T02:29:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_b8327cbe",
+      "range": {
+        "startLine": 51,
+        "startChar": 32,
+        "endLine": 51,
+        "endChar": 36
+      },
+      "revId": "5ceb950f0ec78a337476a96282bc0aa4ea527d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_383e6c88",
         "filename": "doc/source/contributor/set-up-keystone.rst",
         "patchSetId": 2
@@ -154,6 +178,30 @@
       "writtenOn": "2018-11-19T15:09:09Z",
       "side": 1,
       "message": "Drop \", however\" it is superfluous.",
+      "range": {
+        "startLine": 92,
+        "startChar": 33,
+        "endLine": 92,
+        "endChar": 42
+      },
+      "revId": "5ceb950f0ec78a337476a96282bc0aa4ea527d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_f2bf8f76",
+        "filename": "doc/source/contributor/set-up-keystone.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-11-21T02:29:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_383e6c88",
       "range": {
         "startLine": 92,
         "startChar": 33,
