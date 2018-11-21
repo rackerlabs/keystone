@@ -15,8 +15,16 @@ from oslo_policy import policy
 
 from keystone.common.policies import base
 
+deprecated_create_region = policy.DeprecatedRule(
+    name=base.IDENTITY % 'create_region',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
 deprecated_update_region = policy.DeprecatedRule(
     name=base.IDENTITY % 'update_region',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
+deprecated_delete_region = policy.DeprecatedRule(
+    name=base.IDENTITY % 'delete_region',
     check_str=base.RULE_ADMIN_REQUIRED
 )
 
@@ -56,13 +64,16 @@ region_policies = [
                      'method': 'HEAD'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_region',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str='role:admin',
         scope_types=['system'],
         description='Create region.',
         operations=[{'path': '/v3/regions',
                      'method': 'POST'},
                     {'path': '/v3/regions/{region_id}',
-                     'method': 'PUT'}]),
+                     'method': 'PUT'}],
+        deprecated_rule=deprecated_create_region,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_region',
         check_str='role:member',
@@ -75,11 +86,14 @@ region_policies = [
         deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_region',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str='role:admin',
         scope_types=['system'],
         description='Delete region.',
         operations=[{'path': '/v3/regions/{region_id}',
-                     'method': 'DELETE'}])
+                     'method': 'DELETE'}],
+        deprecated_rule=deprecated_delete_region,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN),
 ]
 
 
