@@ -27,6 +27,14 @@ deprecated_update_service = policy.DeprecatedRule(
     name=base.IDENTITY % 'update_service',
     check_str=base.RULE_ADMIN_REQUIRED
 )
+deprecated_create_service = policy.DeprecatedRule(
+    name=base.IDENTITY % 'create_service',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
+deprecated_delete_service = policy.DeprecatedRule(
+    name=base.IDENTITY % 'delete_service',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
 
 DEPRECATED_REASON = """
 As of the Stein release, the service API now understands default roles and
@@ -59,11 +67,14 @@ service_policies = [
         deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_service',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str='role:admin',
         scope_types=['system'],
         description='Create service.',
         operations=[{'path': '/v3/services',
-                     'method': 'POST'}]),
+                     'method': 'POST'}],
+        deprecated_rule=deprecated_create_service,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_service',
         check_str='role:member',
@@ -76,11 +87,14 @@ service_policies = [
         deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_service',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str='role:admin',
         scope_types=['system'],
         description='Delete service.',
         operations=[{'path': '/v3/services/{service_id}',
-                     'method': 'DELETE'}])
+                     'method': 'DELETE'}],
+        deprecated_rule=deprecated_delete_service,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN)
 ]
 
 
