@@ -27,6 +27,14 @@ deprecated_update_idp = policy.DeprecatedRule(
     name=base.IDENTITY % 'update_identity_providers',
     check_str=base.RULE_ADMIN_REQUIRED
 )
+deprecated_create_idp = policy.DeprecatedRule(
+    name=base.IDENTITY % 'create_identity_providers',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
+deprecated_delete_idp = policy.DeprecatedRule(
+    name=base.IDENTITY % 'delete_identity_providers',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
 
 DEPRECATED_REASON = """
 As of the Stein release, the identity provider API now understands default
@@ -49,7 +57,10 @@ identity_provider_policies = [
         scope_types=['system'],
         description='Create identity provider.',
         operations=[{'path': '/v3/OS-FEDERATION/identity_providers/{idp_id}',
-                     'method': 'PUT'}]),
+                     'method': 'PUT'}],
+        deprecated_rule=deprecated_create_idp,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_identity_providers',
         check_str='role:reader',
@@ -104,7 +115,10 @@ identity_provider_policies = [
         scope_types=['system'],
         description='Delete identity provider.',
         operations=[{'path': '/v3/OS-FEDERATION/identity_providers/{idp_id}',
-                     'method': 'DELETE'}])
+                     'method': 'DELETE'}],
+        deprecated_rule=deprecated_delete_idp,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN),
 ]
 
 
