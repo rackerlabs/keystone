@@ -29,10 +29,11 @@ import six
 from six.moves import map, zip
 
 from keystone.common import driver_hints
+import keystone.conf
 from keystone import exception
 from keystone.i18n import _
 
-
+CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
 
 LDAP_VALUES = {'TRUE': True, 'FALSE': False}
@@ -177,9 +178,11 @@ def convert_ldap_result(ldap_result):
                 LOG.debug('Unable to decode value for attribute %s', kind)
 
         py_result.append((utf8_decode(dn), ldap_attrs))
-    if at_least_one_referral:
+    if at_least_one_referral and not CONF.ldap.chase_referrals:
         LOG.debug('Referrals were returned and ignored. Enable referral '
                   'chasing in keystone.conf via [ldap] chase_referrals')
+    elif at_least_one_referral:
+        LOG.debug('Multiple referrals were returned.')
 
     return py_result
 
