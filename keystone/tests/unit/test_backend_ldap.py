@@ -20,6 +20,7 @@ import uuid
 import fixtures
 import ldap
 import mock
+from oslo_log import log
 from oslo_log import versionutils
 import pkg_resources
 from six.moves import http_client
@@ -1912,6 +1913,28 @@ class LDAPIdentity(BaseLDAPIdentity):
             PROVIDERS.resource_api.delete_project(project['id'])
 
         mocked.assert_called_once()
+
+
+class LDAPLoggingTests(unit.TestCase):
+
+    def setUp(self):
+        super(LDAPLoggingTests, self).setUp()
+        self.logging_fixture = self.useFixture(fixtures.FakeLogger(
+            level=log.DEBUG)
+        )
+
+    def test_log_referral_warning_when_not_chasing_referrals(self):
+        self.config_fixture.config(group='ldap', chase_referrals=False)
+
+        expected_debug_message = (
+            'Referrals were returned and ignored. Enable referral chasing in '
+            'keystone.conf via [ldap] chase_referrals'
+        )
+
+        fake_result = [(None, {uuid.uuid4().hex: uuid.uuid4().hex})]
+        common_ldap.convert_ldap_result(fake_result)
+
+        self.assertIn(expected_debug_message, self.logging_fixture.output)
 
 
 class LDAPLimitTests(unit.TestCase, identity_tests.LimitTests):
