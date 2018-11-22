@@ -23,6 +23,10 @@ deprecated_list_mappings = policy.DeprecatedRule(
     name=base.IDENTITY % 'list_mappings',
     check_str=base.RULE_ADMIN_REQUIRED
 )
+deprecated_update_mapping = policy.DeprecatedRule(
+    name=base.IDENTITY % 'update_mapping',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
 
 DEPRECATED_REASON = """
 As of the Stein release, the federated mapping API now understands default
@@ -94,11 +98,14 @@ mapping_policies = [
                      'method': 'DELETE'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_mapping',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str='role:member',
         scope_types=['system'],
         description='Update a federated mapping.',
         operations=[{'path': '/v3/OS-FEDERATION/mappings/{mapping_id}',
-                     'method': 'PATCH'}])
+                     'method': 'PATCH'}],
+        deprecated_rule=deprecated_update_mapping,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN)
 ]
 
 
