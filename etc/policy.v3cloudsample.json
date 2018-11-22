@@ -207,12 +207,6 @@
     "identity:list_protocols": "rule:cloud_admin",
     "identity:delete_protocol": "rule:cloud_admin",
 
-    "identity:create_mapping": "rule:cloud_admin",
-    "identity:get_mapping": "rule:cloud_admin",
-    "identity:list_mappings": "rule:cloud_admin",
-    "identity:delete_mapping": "rule:cloud_admin",
-    "identity:update_mapping": "rule:cloud_admin",
-
     "identity:create_service_provider": "rule:cloud_admin",
     "identity:list_service_providers": "rule:cloud_admin",
     "identity:get_service_provider": "rule:cloud_admin",
