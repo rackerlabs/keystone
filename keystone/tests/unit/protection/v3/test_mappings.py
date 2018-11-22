@@ -136,3 +136,89 @@ class SystemReaderTests(base_classes.TestCaseWithBootstrap,
                 headers=self.headers,
                 expected_status_code=http_client.FORBIDDEN
             )
+
+
+class SystemMemberTests(base_classes.TestCaseWithBootstrap,
+                        common_auth.AuthTestMixin,
+                        _SystemUserMappingTests):
+
+    def setUp(self):
+        super(SystemMemberTests, self).setUp()
+        self.loadapp()
+        self.useFixture(ksfixtures.Policy(self.config_fixture))
+        self.config_fixture.config(group='oslo_policy', enforce_scope=True)
+
+        system_member = unit.new_user_ref(
+            domain_id=CONF.identity.default_domain_id
+        )
+        self.user_id = PROVIDERS.identity_api.create_user(
+            system_member
+        )['id']
+        PROVIDERS.assignment_api.create_system_grant_for_user(
+            self.user_id, self.bootstrapper.member_role_id
+        )
+
+        auth = self.build_authentication_request(
+            user_id=self.user_id, password=system_member['password'],
+            system=True
+        )
+
+        # Grab a token using the persona we're testing and prepare headers
+        # for requests we'll be making in the tests.
+        with self.test_client() as c:
+            r = c.post('/v3/auth/tokens', json=auth)
+            self.token_id = r.headers['X-Subject-Token']
+            self.headers = {'X-Auth-Token': self.token_id}
+
+    def test_user_cannot_create_mappings(self):
+        create = {
+            'mapping': {
+                'id': uuid.uuid4().hex,
+                'rules': [{
+                    'local': [{'user': {'name': '{0}'}}],
+                    'remote': [{'type': 'UserName'}],
+                }]
+            }
+        }
+        mapping_id = create['mapping']['id']
+
+        with self.test_client() as c:
+            c.put(
+                '/v3/OS-FEDERATION/mappings/%s' % mapping_id, json=create,
+                headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_can_update_mappings(self):
+        mapping = unit.new_mapping_ref()
+        mapping = PROVIDERS.federation_api.create_mapping(
+            mapping['id'], mapping
+        )
+
+        update = {
+            'mapping': {
+                'rules': [{
+                    'local': [{'user': {'name': '{0}'}}],
+                    'remote': [{'type': 'UserName'}],
+                }]
+            }
+        }
+
+        with self.test_client() as c:
+            c.patch(
+                '/v3/OS-FEDERATION/mappings/%s' % mapping['id'],
+                json=update, headers=self.headers
+            )
+
+    def test_user_cannot_delete_mappings(self):
+        mapping = unit.new_mapping_ref()
+        mapping = PROVIDERS.federation_api.create_mapping(
+            mapping['id'], mapping
+        )
+
+        with self.test_client() as c:
+            c.delete(
+                '/v3/OS-FEDERATION/mappings/%s' % mapping['id'],
+                headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
