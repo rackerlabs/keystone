@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_e8df7f36",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-11-23T01:44:31Z",
+      "side": 1,
+      "message": "And GET/HEAD /v3/domains/{domain_id}/config/{group}\n\nthe same as \"patch\" and \"delete\".",
+      "revId": "97279e34235a793194117d78d2c197bf6171e20d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_a8e5070a",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-11-23T01:44:31Z",
+      "side": 1,
+      "message": "it\u0027s good to add a docstring like DomainConfigGroupResource or DomainConfigOptionResource does.",
+      "revId": "97279e34235a793194117d78d2c197bf6171e20d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
