@@ -1,0 +1,9 @@
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Code-Review+2: wangxiyuan <wangxiyuan@huawei.com>
+Workflow+1: wangxiyuan <wangxiyuan@huawei.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Sat, 24 Nov 2018 03:37:47 +0000
+Reviewed-on: https://review.openstack.org/547288
+Project: openstack/keystone
+Branch: refs/heads/master
