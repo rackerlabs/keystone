@@ -27,6 +27,14 @@ deprecated_update_sp = policy.DeprecatedRule(
     name=base.IDENTITY % 'update_service_provider',
     check_str=base.RULE_ADMIN_REQUIRED
 )
+deprecated_create_sp = policy.DeprecatedRule(
+    name=base.IDENTITY % 'create_service_provider',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
+deprecated_delete_sp = policy.DeprecatedRule(
+    name=base.IDENTITY % 'delete_service_provider',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
 
 DEPRECATED_REASON = """
 As of the Stein release, the service provider API now understands default
@@ -39,7 +47,7 @@ relying on overrides in your deployment for the service provider API.
 service_provider_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_service_provider',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str='role:admin',
         # FIXME(lbragstad): Today, keystone doesn't support federation without
         # modifying configuration files. It makes sense to require system scope
         # for these operations until keystone supports a way to add federated
@@ -50,7 +58,10 @@ service_provider_policies = [
         description='Create federated service provider.',
         operations=[{'path': ('/v3/OS-FEDERATION/service_providers/'
                               '{service_provider_id}'),
-                     'method': 'PUT'}]),
+                     'method': 'PUT'}],
+        deprecated_rule=deprecated_create_sp,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_service_providers',
         check_str='role:reader',
@@ -104,12 +115,15 @@ service_provider_policies = [
         deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_service_provider',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str='role:admin',
         scope_types=['system'],
         description='Delete federated service provider.',
         operations=[{'path': ('/v3/OS-FEDERATION/service_providers/'
                               '{service_provider_id}'),
-                     'method': 'DELETE'}])
+                     'method': 'DELETE'}],
+        deprecated_rule=deprecated_delete_sp,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN)
 ]
 
 
