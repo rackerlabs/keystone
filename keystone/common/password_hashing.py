@@ -28,8 +28,7 @@ LOG = log.getLogger(__name__)
 
 SUPPORTED_HASHERS = frozenset([passlib.hash.bcrypt,
                                passlib.hash.scrypt,
-                               passlib.hash.pbkdf2_sha512,
-                               passlib.hash.sha512_crypt])
+                               passlib.hash.pbkdf2_sha512])
 
 _HASHER_NAME_MAP = {hasher.name: hasher for hasher in SUPPORTED_HASHERS}
 
@@ -38,8 +37,7 @@ _HASHER_NAME_MAP = {hasher.name: hasher for hasher in SUPPORTED_HASHERS}
 # a dictionary where the keys are the prefix (all hashedpasswords are
 # '$<ident>$<metadata>$<hash>') so we can do a fast-lookup on the hasher to
 # use. If has hasher has multiple ident options it is encoded in the
-# .ident_values attribute whereas hashers that have a single option
-# (sha512_crypt) only has the .ident attribute.
+# .ident_values attribute whereas hashers that have a single option.
 _HASHER_IDENT_MAP = {
     prefix: module for module, prefix in itertools.chain(
         *[zip([mod] * len(getattr(mod, 'ident_values', (mod.ident,))),
@@ -94,12 +92,6 @@ def hash_user_password(user):
         return user
 
     return dict(user, password=hash_password(password))
-
-
-def hash_password_compat(password):
-    password_utf8 = verify_length_and_trunc_password(password).encode('utf-8')
-    return passlib.hash.sha512_crypt.using(rounds=CONF.crypt_strength).hash(
-        password_utf8)
 
 
 def hash_password(password):
