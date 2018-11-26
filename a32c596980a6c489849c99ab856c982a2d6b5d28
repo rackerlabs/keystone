@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_3b883b1f",
+        "filename": "keystone/common/password_hashing.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-11-26T17:36:59Z",
+      "side": 0,
+      "message": "This can be removed, the rest of the code must stay. -2 can be reverted if only this code is removed in the patch.\n\nWe should also add a note indicating we can never remove the sha256 support.",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 22
+      },
+      "revId": "a32c596980a6c489849c99ab856c982a2d6b5d28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
