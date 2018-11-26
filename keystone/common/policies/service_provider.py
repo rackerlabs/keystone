@@ -23,6 +23,10 @@ deprecated_list_sp = policy.DeprecatedRule(
     name=base.IDENTITY % 'list_service_providers',
     check_str=base.RULE_ADMIN_REQUIRED
 )
+deprecated_update_sp = policy.DeprecatedRule(
+    name=base.IDENTITY % 'update_service_provider',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
 
 DEPRECATED_REASON = """
 As of the Stein release, the service provider API now understands default
@@ -89,12 +93,15 @@ service_provider_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_service_provider',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str='role:member',
         scope_types=['system'],
         description='Update federated service provider.',
         operations=[{'path': ('/v3/OS-FEDERATION/service_providers/'
                               '{service_provider_id}'),
-                     'method': 'PATCH'}]),
+                     'method': 'PATCH'}],
+        deprecated_rule=deprecated_update_sp,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_service_provider',
         check_str=base.RULE_ADMIN_REQUIRED,
