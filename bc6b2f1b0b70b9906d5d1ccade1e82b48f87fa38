@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_2915524c",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-26T22:18:58Z",
+      "side": 1,
+      "message": "Looks like this is all done under the covers. We don\u0027t have to change anything syntactically in keystone to make all this work?",
+      "revId": "bc6b2f1b0b70b9906d5d1ccade1e82b48f87fa38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_c955be20",
+        "filename": "releasenotes/notes/bug-1735250-b60332a7f288cf94.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-26T22:18:58Z",
+      "side": 1,
+      "message": "nit: \n\n  128 characters\n\njust for being explicit about the unit.",
+      "range": {
+        "startLine": 5,
+        "startChar": 41,
+        "endLine": 5,
+        "endChar": 44
+      },
+      "revId": "bc6b2f1b0b70b9906d5d1ccade1e82b48f87fa38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
