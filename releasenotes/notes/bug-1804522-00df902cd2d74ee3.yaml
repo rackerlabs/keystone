@@ -1,0 +1,32 @@
+---
+features:
+  - |
+    [`bug 1804522 <https://bugs.launchpad.net/keystone/+bug/1804522>`_]
+    The federated service provider API now supports the ``admin``, ``member``,
+    and ``reader`` default roles.
+upgrade:
+  - |
+    [`bug 1804522 <https://bugs.launchpad.net/keystone/+bug/1804522>`_]
+    The federated service provider API uses new default policies that
+    make it more accessible to end users and administrators. Please consider
+    these new defaults if your deployment overrides federated service provider
+    policies.
+deprecations:
+  - |
+    [`bug 1804522 <https://bugs.launchpad.net/keystone/+bug/1804522>`_]
+    The following federated service provider policy check strings have
+    been deprecated in favor of more clear and concise defaults:
+
+    * ``identity:get_service_provider``
+    * ``identity:list_service_providers``
+    * ``identity:create_service_provider``
+    * ``identity:update_service_provider``
+    * ``identity:delete_service_provider``
+
+    Please consider these new defaults if your deployment overrides the
+    federated service provider policies.
+security:
+  - |
+    [`bug 1804522 <https://bugs.launchpad.net/keystone/+bug/1804522>`_]
+    The federated service provider API now uses system-scope and default
+    roles to provide better accessibility to users in a secure way.
