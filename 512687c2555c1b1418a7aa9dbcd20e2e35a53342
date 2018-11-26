@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_69182acd",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-26T22:11:11Z",
+      "side": 0,
+      "message": "Do these need to reference?\n\n  irrelevant-files: *irrelevant-files",
+      "revId": "512687c2555c1b1418a7aa9dbcd20e2e35a53342",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
