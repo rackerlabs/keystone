@@ -16,6 +16,24 @@
       "revId": "0dc5c4edabd5cb0455ffe1c4f8cf8369f64b2197",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_4dd52fb7",
+        "filename": "keystone/common/context.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-27T10:35:37Z",
+      "side": 1,
+      "message": "Weird - I tried doing something like this locally [0], but I got a bunch of failures.\n\nI think part of the problem is that we used to rely on a dictionary representation of auth_context, which we got from calling to_policy_values on the context object. The failures could be related to the fact that we sometimes think we working with a dictionary instead of just using the context object that is available to us?\n\nI can dig into this a bit more and see if I can address it in a follow up patch.\n\n[0] https://pasted.tech/pastes/ad5d2bc37b1a965020e0d943c1e444028be04e1a.raw",
+      "parentUuid": "3f79a3b5_b253fedc",
+      "revId": "0dc5c4edabd5cb0455ffe1c4f8cf8369f64b2197",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
