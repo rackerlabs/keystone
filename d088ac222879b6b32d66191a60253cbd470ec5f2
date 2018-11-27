@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_a51ba86b",
+        "filename": ".zuul.yaml",
+        "patchSetId": 91
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 22348
+      },
+      "writtenOn": "2018-11-27T23:34:33Z",
+      "side": 1,
+      "message": "expected str for dictionary value @ data[\u0027experimental\u0027][\u0027jobs\u0027][1][\u0027keystone-dsvm-grenade-multinode\u0027]",
+      "range": {
+        "startLine": 114,
+        "startChar": 2,
+        "endLine": 146,
+        "endChar": 0
+      },
+      "revId": "d088ac222879b6b32d66191a60253cbd470ec5f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
