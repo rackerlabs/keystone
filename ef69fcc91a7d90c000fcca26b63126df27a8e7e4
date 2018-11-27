@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3f79a3b5_76046c6c",
+        "filename": "keystone/api/_shared/saml.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-27T19:38:45Z",
+      "side": 1,
+      "message": "We have everything we need here to generate group membership:\n\n   groups \u003d PROVIDERS.identity_api.list_groups_for_user(\n                    token.user_id)\n   samlized_groups \u003d _samlize_groups(groups)\n\nor we can just have samlize_token handle a list of group IDs.\n\nWe can implement a method that actually is explicit about converting groups from the OpenStack format to SAML, as opposed to putting it in the token model.",
+      "revId": "ef69fcc91a7d90c000fcca26b63126df27a8e7e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_f9d76120",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 11
@@ -13,6 +30,87 @@
       "writtenOn": "2018-11-22T03:54:17Z",
       "side": 1,
       "message": "this kind of format \"JSON:xxxx\" is just used for federation saml content. So I don\u0027t think we should add it in the token model.",
+      "revId": "ef69fcc91a7d90c000fcca26b63126df27a8e7e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_76dd4c10",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-27T19:38:45Z",
+      "side": 1,
+      "message": "++\n\nAs far as I can tell, groups are only included in token responses if keystone is dealing with a federated token, and we special case that when we render the token.\n\nSince user groups aren\u0027t really a formal attribute of tokens, we could omit this and build group membership where we need it in the federated identity provider code.\n\n[0] https://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/render_token.py#n116",
+      "parentUuid": "3f79a3b5_f9d76120",
+      "revId": "ef69fcc91a7d90c000fcca26b63126df27a8e7e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_76522c6c",
+        "filename": "releasenotes/notes/bug-1641625-fe463874dc5edb10.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-27T19:38:45Z",
+      "side": 1,
+      "message": "nit: keystone identity providers*",
+      "range": {
+        "startLine": 5,
+        "startChar": 17,
+        "endLine": 5,
+        "endChar": 20
+      },
+      "revId": "ef69fcc91a7d90c000fcca26b63126df27a8e7e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_96558853",
+        "filename": "releasenotes/notes/bug-1641625-fe463874dc5edb10.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-27T19:38:45Z",
+      "side": 1,
+      "message": "include*",
+      "range": {
+        "startLine": 5,
+        "startChar": 25,
+        "endLine": 5,
+        "endChar": 33
+      },
+      "revId": "ef69fcc91a7d90c000fcca26b63126df27a8e7e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_d6c4600f",
+        "filename": "releasenotes/notes/bug-1641625-fe463874dc5edb10.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-27T19:38:45Z",
+      "side": 1,
+      "message": "We should say what exactly the groups are:\n\n The ``openstack_groups`` SAML attribute is a list of JSON\n strings representing the OpenStack groups a user is a\n member of.",
       "revId": "ef69fcc91a7d90c000fcca26b63126df27a8e7e4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
