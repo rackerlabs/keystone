@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_b253fedc",
+        "filename": "keystone/common/context.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-11-27T09:37:59Z",
+      "side": 1,
+      "message": "So seems some key-values are missing. https://github.com/openstack/keystone/blob/master/keystone/server/flask/request_processing/middleware/auth_context.py#L422-L430",
+      "revId": "0dc5c4edabd5cb0455ffe1c4f8cf8369f64b2197",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
