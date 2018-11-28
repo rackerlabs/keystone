@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_da947e44",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2018-11-28T02:55:08Z",
+      "side": 1,
+      "message": "this needs to be changed to Tempest patch - https://review.openstack.org/#/c/618169/\n\nas that migrating the devstack-tempest to Bionic\n\nCurrent keystone jobs are still running on xenial. \n\n- http://logs.openstack.org/63/611563/4/check/keystone-dsvm-functional/7c217d6/job-output.txt.gz#_2018-11-26_08_57_38_414888\n\n- http://logs.openstack.org/63/611563/4/check/keystone-dsvm-py3-functional/0206b40/job-output.txt.gz#_2018-11-26_08_54_12_750109",
+      "range": {
+        "startLine": 19,
+        "startChar": 12,
+        "endLine": 19,
+        "endChar": 47
+      },
+      "revId": "dc9928ad94dd7c4396890e29a5b3c8945fa03f48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
