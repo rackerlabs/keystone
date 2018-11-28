@@ -22,6 +22,30 @@
       "revId": "aaa701d5a25a12e2c98f7f7cd10d7dc67ed162ba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_c1da511a",
+        "filename": ".zuul.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2018-11-28T09:30:39Z",
+      "side": 1,
+      "message": "I don\u0027t think that Ubuntu will do a major upgrade for an LTS release, so unless there is a different fix for [1], that would mean waiting for 20.04 LTS. \n\nIf you want to go forward with testing 3.0, installing from the Switch repo would seem to be a feasible approach, feel free to propose a patch for that.",
+      "parentUuid": "3f79a3b5_8d46d27d",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 4
+      },
+      "revId": "aaa701d5a25a12e2c98f7f7cd10d7dc67ed162ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
