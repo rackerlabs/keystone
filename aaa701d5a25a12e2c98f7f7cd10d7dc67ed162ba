@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_8d46d27d",
+        "filename": ".zuul.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-11-28T05:31:49Z",
+      "side": 1,
+      "message": "Shibbholeth 3.0 is released [0] which resolves the bug [1]. But it is not supported in Bionic yet, so we can continue using xenial till shibbholeth 3.0 is supported in bionic.\n\n\n[0] https://www.switch.ch/aai/guides/sp/installation/\n[1] https://bugs.launchpad.net/ubuntu/+source/xmltooling/+bug/1776489",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 4
+      },
+      "revId": "aaa701d5a25a12e2c98f7f7cd10d7dc67ed162ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
