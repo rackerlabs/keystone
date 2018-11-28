@@ -22,6 +22,30 @@
       "revId": "840b0f6738e354003701bbaaa0ee5a3c1795e7bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_9160200e",
+        "filename": "releasenotes/notes/bug-1804446-1a281eadbb044070.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-28T15:14:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_b9ed7324",
+      "range": {
+        "startLine": 5,
+        "startChar": 20,
+        "endLine": 5,
+        "endChar": 22
+      },
+      "revId": "840b0f6738e354003701bbaaa0ee5a3c1795e7bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
