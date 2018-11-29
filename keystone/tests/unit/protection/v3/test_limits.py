@@ -79,6 +79,69 @@ class _UserLimitTests(object):
             self.assertEqual(limit['id'], r.json['limits'][0]['id'])
 
 
+class _DomainAndProjectUserLimitTests(object):
+
+    def test_user_cannot_create_limits(self):
+        service = PROVIDERS.catalog_api.create_service(
+            uuid.uuid4().hex, unit.new_service_ref()
+        )
+
+        registered_limit = unit.new_registered_limit_ref(
+            service_id=service['id'], id=uuid.uuid4().hex
+        )
+        registered_limits = (
+            PROVIDERS.unified_limit_api.create_registered_limits(
+                [registered_limit]
+            )
+        )
+        registered_limit = registered_limits[0]
+
+        project = PROVIDERS.resource_api.create_project(
+            uuid.uuid4().hex,
+            unit.new_project_ref(domain_id=CONF.identity.default_domain_id)
+        )
+
+        create = {
+            'limits': [
+                unit.new_limit_ref(
+                    project_id=project['id'], service_id=service['id'],
+                    resource_name=registered_limit['resource_name'],
+                    resource_limit=5
+                )
+            ]
+        }
+
+        with self.test_client() as c:
+            c.post(
+                '/v3/limits', json=create, headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_cannot_update_limits(self):
+        limits = _create_limit_and_dependencies()
+        limit = limits[0]
+
+        update = {'limits': {'description': uuid.uuid4().hex}}
+
+        with self.test_client() as c:
+            c.patch(
+                '/v3/limits/%s' % limit['id'], json=update,
+                headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_cannot_delete_limits(self):
+        limits = _create_limit_and_dependencies()
+        limit = limits[0]
+
+        with self.test_client() as c:
+            c.delete(
+                '/v3/limits/%s' % limit['id'],
+                headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+
 class SystemReaderTests(base_classes.TestCaseWithBootstrap,
                         common_auth.AuthTestMixin,
                         _UserLimitTests):
@@ -341,3 +404,39 @@ class SystemAdminTests(base_classes.TestCaseWithBootstrap,
 
         with self.test_client() as c:
             c.delete('/v3/limits/%s' % limit['id'], headers=self.headers)
+
+
+class DomainUserTests(base_classes.TestCaseWithBootstrap,
+                      common_auth.AuthTestMixin,
+                      _UserLimitTests,
+                      _DomainAndProjectUserLimitTests):
+
+    def setUp(self):
+        super(DomainUserTests, self).setUp()
+        self.loadapp()
+        self.useFixture(ksfixtures.Policy(self.config_fixture))
+        self.config_fixture.config(group='oslo_policy', enforce_scope=True)
+
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+        self.domain_id = domain['id']
+        domain_admin = unit.new_user_ref(domain_id=self.domain_id)
+        self.user_id = PROVIDERS.identity_api.create_user(domain_admin)['id']
+        PROVIDERS.assignment_api.create_grant(
+            self.bootstrapper.admin_role_id, user_id=self.user_id,
+            domain_id=self.domain_id
+        )
+
+        auth = self.build_authentication_request(
+            user_id=self.user_id,
+            password=domain_admin['password'],
+            domain_id=self.domain_id
+        )
+
+        # Grab a token using the persona we're testing and prepare headers
+        # for requests we'll be making in the tests.
+        with self.test_client() as c:
+            r = c.post('/v3/auth/tokens', json=auth)
+            self.token_id = r.headers['X-Subject-Token']
+            self.headers = {'X-Auth-Token': self.token_id}
