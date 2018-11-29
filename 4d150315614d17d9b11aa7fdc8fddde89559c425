@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_f75ffa75",
+        "filename": "keystone/tests/unit/protection/v3/test_service_providers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-11-29T01:54:33Z",
+      "side": 1,
+      "message": "any assertEqual here?",
+      "revId": "4d150315614d17d9b11aa7fdc8fddde89559c425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
