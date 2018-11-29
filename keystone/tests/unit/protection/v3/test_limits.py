@@ -333,3 +333,63 @@ class DomainUserTests(base_classes.TestCaseWithBootstrap,
             r = c.post('/v3/auth/tokens', json=auth)
             self.token_id = r.headers['X-Subject-Token']
             self.headers = {'X-Auth-Token': self.token_id}
+
+
+class ProjectUserTests(base_classes.TestCaseWithBootstrap,
+                       common_auth.AuthTestMixin,
+                       _UserLimitTests):
+
+    def setUp(self):
+        super(ProjectUserTests, self).setUp()
+        self.loadapp()
+        self.useFixture(ksfixtures.Policy(self.config_fixture))
+        self.config_fixture.config(group='oslo_policy', enforce_scope=True)
+
+        # Reuse the system administrator account created during
+        # ``keystone-manage bootstrap``
+        self.user_id = self.bootstrapper.admin_user_id
+        auth = self.build_authentication_request(
+            user_id=self.user_id,
+            password=self.bootstrapper.admin_password,
+            project_id=self.bootstrapper.project_id
+        )
+
+        # Grab a token using the persona we're testing and prepare headers
+        # for requests we'll be making in the tests.
+        with self.test_client() as c:
+            r = c.post('/v3/auth/tokens', json=auth)
+            self.token_id = r.headers['X-Subject-Token']
+            self.headers = {'X-Auth-Token': self.token_id}
+
+    def test_user_can_list_limits(self):
+        limits = _create_limit_and_dependencies()
+        limit = limits[0]
+
+        # NOTE(lbragstad): Project users are only allowed to list limits for a
+        # project if they actually have a role assignment on the project and
+        # call the API with a project-scoped token.
+        PROVIDERS.assignment_api.create_grant(
+            self.bootstrapper.reader_role_id, user_id=self.user_id,
+            project_id=limit['project_id']
+        )
+        auth = self.build_authentication_request(
+            user_id=self.user_id,
+            password=self.bootstrapper.admin_password,
+            project_id=limit['project_id']
+        )
+        with self.test_client() as c:
+            r = c.post('/v3/auth/tokens', json=auth)
+            token_id = r.headers['X-Subject-Token']
+            headers = {'X-Auth-Token': token_id}
+
+        with self.test_client() as c:
+            r = c.get('/v3/limits', headers=headers)
+            self.assertTrue(len(r.json['limits']) == 1)
+            self.assertEqual(limit['id'], r.json['limits'][0]['id'])
+
+    def test_user_cannot_list_limits_with_project_role_assignment(self):
+        _create_limit_and_dependencies()
+
+        with self.test_client() as c:
+            r = c.get('/v3/limits', headers=self.headers)
+            self.assertEqual(0, len(r.json['limits']))
