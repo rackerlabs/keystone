@@ -18,7 +18,7 @@ limit_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_limit_model',
         check_str='',
-        scope_types=['system', 'project'],
+        scope_types=['system', 'domain', 'project'],
         description='Get limit enforcement model.',
         operations=[{'path': '/v3/limits/model',
                      'method': 'GET'},
@@ -27,13 +27,7 @@ limit_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_limit',
         check_str='',
-        # Getting a single limit or listing all limits should be information
-        # accessible to everyone. By setting scope_types=['system', 'project']
-        # we're making it so that anyone with a role on the system or a project
-        # can obtain this information.  Making changes to a limit should be
-        # considered a protected system-level API, as noted below with
-        # scope_types=['system'].
-        scope_types=['system', 'project'],
+        scope_types=['system', 'domain', 'project'],
         description='Show limit details.',
         operations=[{'path': '/v3/limits/{limit_id}',
                      'method': 'GET'},
@@ -42,7 +36,7 @@ limit_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_limits',
         check_str='',
-        scope_types=['system', 'project'],
+        scope_types=['system', 'domain', 'project'],
         description='List limits.',
         operations=[{'path': '/v3/limits',
                      'method': 'GET'},
