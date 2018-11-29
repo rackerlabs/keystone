@@ -22,6 +22,30 @@
       "revId": "4ee5255bded8bb5f3bf609bcecd5adef1ca21c4e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_aa15904d",
+        "filename": "keystone/common/policies/service_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-29T15:11:40Z",
+      "side": 1,
+      "message": "Oh - you\u0027re right. I missed those but since the policy is pretty much the same the tests didn\u0027t catch it.\n\nWill update, thanks!",
+      "parentUuid": "3f79a3b5_f7a4da4f",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 43
+      },
+      "revId": "4ee5255bded8bb5f3bf609bcecd5adef1ca21c4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
