@@ -7,6 +7,7 @@ features:
 upgrade:
   - |
     [`bug 1805372 <https://bugs.launchpad.net/keystone/+bug/1805372>`_]
+    [`bug 1818736 <https://bugs.launchpad.net/keystone/+bug/1818736>`_]
     Several of the registered limit and limit policies have been
     deprecated. The following policies now use ``role:admin and
     system_scope:all`` instead of ``rule:admin_required``:
@@ -26,5 +27,6 @@ upgrade:
 security:
   - |
     [`bug 1805372 <https://bugs.launchpad.net/keystone/+bug/1805372>`_]
+    [`bug 1818736 <https://bugs.launchpad.net/keystone/+bug/1818736>`_]
     The registered limit and limit APIs now uses system-scope and default roles
     to provide better accessibility to users in a secure way.
