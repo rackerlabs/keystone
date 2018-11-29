@@ -321,7 +321,15 @@ class PolicyJsonTestCase(unit.TestCase):
             'identity:list_users_in_group',
             'identity:remove_user_from_group',
             'identity:check_user_in_group',
-            'identity:add_user_to_group'
+            'identity:add_user_to_group',
+            'identity:create_limits',
+            'identity:get_project_limit',
+            'identity:get_domain_limit',
+            'identity:get_system_limit',
+            'identity:list_limits',
+            'identity:update_limit',
+            'identity:delete_limit',
+            'identity:get_limit_model'
         ]
         policy_keys = self._get_default_policy_rules()
         for p in removed_policies:
