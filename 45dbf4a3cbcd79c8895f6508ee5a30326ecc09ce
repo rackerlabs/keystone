@@ -46,6 +46,30 @@
       "revId": "45dbf4a3cbcd79c8895f6508ee5a30326ecc09ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_63e5103d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-11-29T18:19:35Z",
+      "side": 1,
+      "message": "thanks @Morgan.",
+      "parentUuid": "3f79a3b5_9871c016",
+      "range": {
+        "startLine": 425,
+        "startChar": 11,
+        "endLine": 425,
+        "endChar": 19
+      },
+      "revId": "45dbf4a3cbcd79c8895f6508ee5a30326ecc09ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
