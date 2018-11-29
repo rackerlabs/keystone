@@ -10,9 +10,31 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_log import versionutils
 from oslo_policy import policy
 
 from keystone.common.policies import base
+
+deprecated_update_limit = policy.DeprecatedRule(
+    name=base.IDENTITY % 'update_limit',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
+deprecated_create_limit = policy.DeprecatedRule(
+    name=base.IDENTITY % 'create_limit',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
+deprecated_delete_limit = policy.DeprecatedRule(
+    name=base.IDENTITY % 'delete_limit',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
+
+DEPRECATED_REASON = """
+As of the Stein release, the limit API now understands default roles and
+system-scoped tokens, making the API more granular by default without
+compromising security. The new policy defaults account for these changes
+automatically. Be sure to take these new defaults into consideration if you are
+relying on overrides in your deployment for the limit API.
+"""
 
 limit_policies = [
     policy.DocumentedRuleDefault(
@@ -50,25 +72,34 @@ limit_policies = [
                      'method': 'HEAD'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_limits',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str='role:admin',
         scope_types=['system'],
         description='Create limits.',
         operations=[{'path': '/v3/limits',
-                     'method': 'POST'}]),
+                     'method': 'POST'}],
+        deprecated_rule=deprecated_create_limit,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_limit',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str='role:admin',
         scope_types=['system'],
         description='Update limit.',
         operations=[{'path': '/v3/limits/{limit_id}',
-                     'method': 'PATCH'}]),
+                     'method': 'PATCH'}],
+        deprecated_rule=deprecated_update_limit,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_limit',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str='role:admin',
         scope_types=['system'],
         description='Delete limit.',
         operations=[{'path': '/v3/limits/{limit_id}',
-                     'method': 'DELETE'}])
+                     'method': 'DELETE'}],
+        deprecated_rule=deprecated_delete_limit,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN)
 ]
 
 
