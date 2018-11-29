@@ -235,7 +235,14 @@ class PolicyJsonTestCase(unit.TestCase):
             'identity:get_service',
             'identity:list_services',
             'identity:update_service',
-            'identity:delete_service'
+            'identity:delete_service',
+            'identity:create_limits',
+            'identity:project-limit:get',
+            'identity:domain-limit:get',
+            'identity:list_limits',
+            'identity:update_limit',
+            'identity:delete_limit',
+            'identity:get_limit_model'
         ]
         policy_keys = self._get_default_policy_rules()
         for p in removed_policies:
