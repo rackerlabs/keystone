@@ -11,7 +11,9 @@
     "default": "rule:admin_required",
 
     "identity:get_limit_model": "",
-    "identity:get_limit": "",
+    "identity:system-limit:get": "",
+    "identity:domain-limit:get": "",
+    "identity:project-limit:get": "",
     "identity:list_limits": "",
     "identity:create_limits": "rule:admin_required",
     "identity:update_limit": "rule:admin_required",
