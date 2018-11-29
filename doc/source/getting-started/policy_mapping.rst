@@ -31,7 +31,9 @@ identity:create_registered_limits                          POST /v3/registered_l
 identity:update_registered_limit                           PATCH /v3/registered_limits/{registered_limit_id}
 identity:delete_registered_limit                           DELETE /v3/registered_limits/{registered_limit_id}
 
-identity:get_limit                                         GET /v3/limits/{limit_id}
+identity:get_project_limit                                 GET /v3/limits/{limit_id}
+identity:get_domain_limit                                  GET /v3/limits/{limit_id}
+identity:get_system_limit                                  GET /v3/limits/{limit_id}
 identity:list_limits                                       GET /v3/limits
 identity:create_limits                                     POST /v3/limits
 identity:update_limit                                      PATCH /v3/limits/{limit_id}

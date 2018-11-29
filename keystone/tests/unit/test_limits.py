@@ -560,6 +560,22 @@ class LimitsTestCase(test_v3.RestfulTestCase):
 
     def setUp(self):
         super(LimitsTestCase, self).setUp()
+        # FIXME(lbragstad): Remove all this duplicated logic once we get all
+        # keystone tests using bootstrap consistently. This is something the
+        # bootstrap utility already does for us.
+        reader_role = {'id': uuid.uuid4().hex, 'name': 'reader'}
+        reader_role = PROVIDERS.role_api.create_role(
+            reader_role['id'], reader_role
+        )
+
+        member_role = {'id': uuid.uuid4().hex, 'name': 'member'}
+        member_role = PROVIDERS.role_api.create_role(
+            member_role['id'], member_role
+        )
+        PROVIDERS.role_api.create_implied_role(self.role_id, member_role['id'])
+        PROVIDERS.role_api.create_implied_role(
+            member_role['id'], reader_role['id']
+        )
 
         # Most of these tests require system-scoped tokens. Let's have one on
         # hand so that we can use it in tests when we need it.
@@ -961,15 +977,15 @@ class LimitsTestCase(test_v3.RestfulTestCase):
             '/limits?project_id=%s' % self.project_id,
             expected_status=http_client.OK)
         limits = r.result['limits']
-        self.assertEqual(0, len(limits))
+        self.assertEqual(2, len(limits))
+        for limit in limits:
+            self.assertEqual(self.project_id, limit['project_id'])
 
         # a system scoped request can specify the project_id filter
         r = self.get(
             '/limits?project_id=%s' % self.project_id,
             expected_status=http_client.OK,
-            auth=self.build_authentication_request(
-                user_id=self.user['id'], password=self.user['password'],
-                system=True)
+            token=self.system_admin_token
         )
         limits = r.result['limits']
         self.assertEqual(1, len(limits))
@@ -1046,6 +1062,7 @@ class LimitsTestCase(test_v3.RestfulTestCase):
         else:
             id1 = r.result['limits'][1]['id']
         self.get('/limits/fake_id',
+                 token=self.system_admin_token,
                  expected_status=http_client.NOT_FOUND)
         r = self.get('/limits/%s' % id1,
                      expected_status=http_client.OK)
