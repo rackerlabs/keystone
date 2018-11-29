@@ -1,0 +1,25 @@
+---
+features:
+  - |
+    [`bug 1805372 <https://bugs.launchpad.net/keystone/+bug/1805372>`_]
+    The registered limit API now supports the ``admin`` and ``member``
+    default roles.
+upgrade:
+  - |
+    [`bug 1805372 <https://bugs.launchpad.net/keystone/+bug/1805372>`_]
+    The registered limit API uses new default policies that
+    make it more accessible to end users and administrators. Please consider
+    these new defaults if your deployment overrides the registered limit
+    policies.
+deprecations:
+  - |
+    [`bug 1805372 <https://bugs.launchpad.net/keystone/+bug/1805372>`_]
+    Several policies used to protect the registered limit API
+    have been deprecated in favor of more clear and concise defaults.
+    Please consider these new defaults if your deployment overrides the
+    registered limit policies.
+security:
+  - |
+    [`bug 1805372 <https://bugs.launchpad.net/keystone/+bug/1805372>`_]
+    The registered limit API now uses system-scope and default
+    roles to provide better accessibility to users in a secure way.
