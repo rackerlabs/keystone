@@ -14,22 +14,40 @@ from oslo_policy import policy
 
 from keystone.common.policies import base
 
+SYSTEM_USER_OR_DOMAIN_USER = (
+    '(role:reader and system_scope:all) or '
+    'domain_id:%(target.limit.domain_id)s or '
+    'domain_id:%(target.limit.project.domain_id)s'
+)
+
+SYSTEM_USER_OR_PROJECT_USER = (
+    '(role:reader and system_scope:all) or '
+    'project_id:%(target.limit.project_id)s'
+)
+
 limit_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_limit_model',
         check_str='',
-        scope_types=['system', 'project'],
+        scope_types=['system', 'domain', 'project'],
         description='Get limit enforcement model.',
         operations=[{'path': '/v3/limits/model',
                      'method': 'GET'},
                     {'path': '/v3/limits/model',
                      'method': 'HEAD'}]),
     policy.DocumentedRuleDefault(
-        name=base.IDENTITY % 'get_limit',
-        check_str='(role:reader and system_scope:all) or '
-                  'project_id:%(target.limit.project_id)s or '
-                  'domain_id:%(target.limit.domain_id)s',
-        scope_types=['system', 'project', 'domain'],
+        name=base.IDENTITY % 'domain-limit:get',
+        check_str=SYSTEM_USER_OR_DOMAIN_USER,
+        scope_types=['system', 'domain'],
+        description='Show limit details.',
+        operations=[{'path': '/v3/limits/{limit_id}',
+                     'method': 'GET'},
+                    {'path': '/v3/limits/{limit_id}',
+                     'method': 'HEAD'}]),
+    policy.DocumentedRuleDefault(
+        name=base.IDENTITY % 'project-limit:get',
+        check_str=SYSTEM_USER_OR_PROJECT_USER,
+        scope_types=['system', 'project'],
         description='Show limit details.',
         operations=[{'path': '/v3/limits/{limit_id}',
                      'method': 'GET'},
@@ -38,7 +56,7 @@ limit_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_limits',
         check_str='',
-        scope_types=['system', 'project'],
+        scope_types=['system', 'domain', 'project'],
         description='List limits.',
         operations=[{'path': '/v3/limits',
                      'method': 'GET'},
