@@ -19,6 +19,14 @@ deprecated_update_registered_limit = policy.DeprecatedRule(
     name=base.IDENTITY % 'update_registered_limits',
     check_str=base.RULE_ADMIN_REQUIRED
 )
+deprecated_create_registered_limit = policy.DeprecatedRule(
+    name=base.IDENTITY % 'create_registered_limits',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
+deprecated_delete_registered_limit = policy.DeprecatedRule(
+    name=base.IDENTITY % 'delete_registered_limits',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
 
 DEPRECATED_REASON = """
 As of the Stein release, the registered limit API now understands default
@@ -55,11 +63,14 @@ registered_limit_policies = [
                      'method': 'HEAD'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_registered_limits',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str='role:admin',
         scope_types=['system'],
         description='Create registered limits.',
         operations=[{'path': '/v3/registered_limits',
-                     'method': 'POST'}]),
+                     'method': 'POST'}],
+        deprecated_rule=deprecated_create_registered_limit,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_registered_limit',
         check_str='role:member',
@@ -72,11 +83,14 @@ registered_limit_policies = [
         deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_registered_limit',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str='role:admin',
         scope_types=['system'],
         description='Delete registered limit.',
         operations=[{'path': '/v3/registered_limits/{registered_limit_id}',
-                     'method': 'DELETE'}])
+                     'method': 'DELETE'}],
+        deprecated_rule=deprecated_delete_registered_limit,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.STEIN)
 ]
 
 
