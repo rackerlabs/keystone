@@ -46,6 +46,30 @@
       "revId": "4879245e85fc952e23598ca550baa78df7efa6ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_95ff77fe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-30T18:38:00Z",
+      "side": 1,
+      "message": "Done\n\nColleen and I worked through this on IRC [0].\n\n[0] http://eavesdrop.openstack.org/irclogs/%23openstack-keystone/%23openstack-keystone.2018-11-30.log.html#t2018-11-30T16:09:16",
+      "parentUuid": "3f79a3b5_b2608c3a",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 68
+      },
+      "revId": "4879245e85fc952e23598ca550baa78df7efa6ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
