@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_d87a0678",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2018-11-30T19:27:01Z",
+      "side": 1,
+      "message": "nit: add space between GET and /v3 (also fixing the already existing comments).",
+      "revId": "bc2f0d03b6bf33140d88118428d7c7e6fb4f7e05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
