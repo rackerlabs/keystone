@@ -22,6 +22,30 @@
       "revId": "4879245e85fc952e23598ca550baa78df7efa6ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_b2608c3a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-11-30T16:08:59Z",
+      "side": 1,
+      "message": "Good question. The idea was to use member as something in between admin and reader. An admin could:\n\n* create\n* get\n* list\n* update\n* delete\n\nA member could:\n\n* get\n* list\n* update\n\nAnd a reader could:\n\n* get\n* list\n\nIt was really just using the member role to offer more flexibility between the two. Thinking about it from the sense that an admin could delegate update operations to another person, who isn\u0027t an admin.\n\nOpen to debate though, since I don\u0027t think we\u0027ve ever formally declared what roles should do what outside of the default that admins can do all the things.",
+      "parentUuid": "3f79a3b5_e76ba8b5",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 68
+      },
+      "revId": "4879245e85fc952e23598ca550baa78df7efa6ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
