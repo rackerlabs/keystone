@@ -10,6 +10,22 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import sqlalchemy as sql
+
 
 def upgrade(migrate_engine):
-    pass
+    meta = sql.MetaData()
+    meta.bind = migrate_engine
+
+    # In sqlite case, the "registered_limit" and "limit" tables were dropped
+    # and recreated in 047 migration script. So after 047, once either of them
+    # is changed, we should make sure the newly change is addressed.
+    if migrate_engine.name == 'sqlite':
+        limit_table = sql.Table('limit', meta, autoload=True)
+        registered_limit_table = sql.Table('registered_limit', meta,
+                                           autoload=True)
+        if not hasattr(limit_table.c, 'registered_limit_id'):
+            registered_limit_id = sql.Column(
+                'registered_limit_id', sql.String(64),
+                sql.ForeignKey(registered_limit_table.c.id))
+            limit_table.create_column(registered_limit_id)
