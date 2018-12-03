@@ -507,7 +507,7 @@ def new_limit_ref(**kwargs):
         'service_id': uuid.uuid4().hex,
         'resource_name': uuid.uuid4().hex,
         'resource_limit': 10,
-        'description': uuid.uuid4().hex
+        'description': uuid.uuid4().hex,
     }
 
     ref.update(kwargs)
