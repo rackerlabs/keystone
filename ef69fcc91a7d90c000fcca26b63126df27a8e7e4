@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_df5ad71d",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-12-03T08:54:56Z",
+      "side": 1,
+      "message": "Agreed",
+      "parentUuid": "3f79a3b5_76dd4c10",
+      "revId": "ef69fcc91a7d90c000fcca26b63126df27a8e7e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_76522c6c",
         "filename": "releasenotes/notes/bug-1641625-fe463874dc5edb10.yaml",
         "patchSetId": 11
@@ -128,6 +146,30 @@
       "writtenOn": "2018-11-22T03:54:17Z",
       "side": 1,
       "message": "not sure how is it relate to Upgrade?",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 8
+      },
+      "revId": "ef69fcc91a7d90c000fcca26b63126df27a8e7e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_7f9f03b2",
+        "filename": "releasenotes/notes/bug-1641625-fe463874dc5edb10.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-12-03T08:54:56Z",
+      "side": 1,
+      "message": "Agreed, upgrade release notes are for when an operator needs to take action to prepare for the change.",
+      "parentUuid": "3f79a3b5_999c2d5d",
       "range": {
         "startLine": 8,
         "startChar": 0,
