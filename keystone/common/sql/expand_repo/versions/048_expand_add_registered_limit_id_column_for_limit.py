@@ -24,3 +24,10 @@ def upgrade(migrate_engine):
         'registered_limit_id', sql.String(64),
         sql.ForeignKey(registered_limit_table.c.id))
     limit_table.create_column(registered_limit_id)
+
+    # This is the new table created in 047 migration script for SQLite case.
+    try:
+        limit_table_new = sql.Table('limit_new', meta, autoload=True)
+        limit_table_new.create_column(registered_limit_id)
+    except sql.exc.NoSuchTableError:
+        pass
