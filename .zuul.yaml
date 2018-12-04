@@ -137,8 +137,6 @@
             irrelevant-files: *tempest-irrelevant-files
         - tempest-full-py3:
             irrelevant-files: *tempest-irrelevant-files
-        - neutron-grenade:
-            irrelevant-files: *tempest-irrelevant-files
     gate:
       jobs:
         - keystone-dsvm-functional:
@@ -148,8 +146,6 @@
         - tempest-full:
             irrelevant-files: *tempest-irrelevant-files
         - tempest-full-py3:
-            irrelevant-files: *tempest-irrelevant-files
-        - neutron-grenade:
             irrelevant-files: *tempest-irrelevant-files
     experimental:
       jobs:
