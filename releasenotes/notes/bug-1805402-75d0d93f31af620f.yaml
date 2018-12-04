@@ -1,0 +1,33 @@
+---
+features:
+  - |
+    [`bug 1805402 <https://bugs.launchpad.net/keystone/+bug/1805402>`_]
+    The role API now supports the ``admin``, ``member``, and
+    ``reader`` default roles.
+upgrade:
+  - |
+    [`bug 1805402 <https://bugs.launchpad.net/keystone/+bug/1805402>`_]
+    The role API uses new default policies that make it more
+    accessible to end users and administrators in a secure way. Please
+    consider these new defaults if your deployment overrides role
+    policies.
+deprecations:
+  - |
+    [`bug 1805402 <https://bugs.launchpad.net/keystone/+bug/1805402>`_]
+    The following role policy check strings have been deprecated in
+    favor of more clear and concise defaults:
+
+    * ``identity:get_role``
+    * ``identity:list_roles``
+    * ``identity:create_role``
+    * ``identity:update_role``
+    * ``identity:delete_role``
+
+    Please consider these new default if your deployment overrides
+    role policies.
+security:
+  - |
+    [`bug 1805402 <https://bugs.launchpad.net/keystone/+bug/1805402>`_]
+    The role API now uses system-scope and default roles to provide
+    better accessibility to users in a secure way.
+
