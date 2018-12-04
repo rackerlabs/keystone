@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_cff0c5de",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-04T14:14:01Z",
+      "side": 1,
+      "message": "Despite this being a relatively trivial fix, it\u0027s nice to add some more context to the commit by including a description [0].\n\n[0] https://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "704580aa6b357c067e68410885df6fd119e7d61b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_94ff4002",
+        "filename": "api-ref/source/v3-ext/federation/auth/auth.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-04T14:14:01Z",
+      "side": 1,
+      "message": "These are slightly misleading since keystone automatically floors the datetimes used in tokens.\n\nhttps://git.openstack.org/cgit/openstack/keystone/tree/keystone/token/provider.py#n65",
+      "range": {
+        "startLine": 34,
+        "startChar": 46,
+        "endLine": 34,
+        "endChar": 53
+      },
+      "revId": "704580aa6b357c067e68410885df6fd119e7d61b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_0f079dca",
+        "filename": "api-ref/source/v3-ext/federation/auth/auth.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-04T14:14:01Z",
+      "side": 1,
+      "message": "We usually stick these into sample files and render them inline using literalinclude (other examples in this file).",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 4
+      },
+      "revId": "704580aa6b357c067e68410885df6fd119e7d61b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
