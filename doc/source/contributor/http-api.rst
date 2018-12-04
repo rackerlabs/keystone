@@ -26,7 +26,7 @@ Identity API v3 is a superset of all the functionality available in the
 Identity API v2.0 and several of its extensions, and provides a much more
 consistent developer experience.
 
-.. _`Identity API v2.0`: https://developer.openstack.org/api-ref/identity/v2/
+.. _`Identity API v2.0`: https://developer.openstack.org/api-ref/identity/v2-ext/
 .. _`Identity API v3`: https://developer.openstack.org/api-ref/identity/v3/
 
 History
