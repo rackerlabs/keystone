@@ -26,7 +26,8 @@ limit_policies = [
                      'method': 'HEAD'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_limit',
-        check_str='',
+        check_str='role:reader or project_id:%(target.project_id)s or'
+                  'domain_id:%(target.domain_id)s',
         # Getting a single limit or listing all limits should be information
         # accessible to everyone. By setting scope_types=['system', 'project']
         # we're making it so that anyone with a role on the system or a project
