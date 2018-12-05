@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_1ad1f22e",
+        "filename": "keystone/common/policies/domain.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-05T19:02:14Z",
+      "side": 1,
+      "message": "As determined in IRC, this isn\u0027t really member functionality. Let\u0027s keep this as admin only for now, but isolated to system-admins.",
+      "range": {
+        "startLine": 75,
+        "startChar": 8,
+        "endLine": 75,
+        "endChar": 35
+      },
+      "revId": "c7f74e6e37a3c501ccf25026e3ff62c99a1ca691",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
