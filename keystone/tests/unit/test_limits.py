@@ -547,7 +547,7 @@ class LimitsTestCase(test_v3.RestfulTestCase):
             body={'registered_limits': [ref1, ref2, ref3]},
             expected_status=http_client.CREATED)
 
-    def test_create_limit(self):
+    def test_create_project_limit(self):
         ref = unit.new_limit_ref(project_id=self.project_id,
                                  service_id=self.service_id,
                                  region_id=self.region_id,
@@ -559,9 +559,26 @@ class LimitsTestCase(test_v3.RestfulTestCase):
         limits = r.result['limits']
 
         self.assertIsNotNone(limits[0]['id'])
-        self.assertIsNotNone(limits[0]['project_id'])
+        self.assertIsNone(limits[0]['domain_id'])
         for key in ['service_id', 'region_id', 'resource_name',
-                    'resource_limit', 'description']:
+                    'resource_limit', 'description', 'project_id']:
+            self.assertEqual(limits[0][key], ref[key])
+
+    def test_create_domain_limit(self):
+        ref = unit.new_limit_ref(domain_id=self.domain_id,
+                                 service_id=self.service_id,
+                                 region_id=self.region_id,
+                                 resource_name='volume')
+        r = self.post(
+            '/limits',
+            body={'limits': [ref]},
+            expected_status=http_client.CREATED)
+        limits = r.result['limits']
+
+        self.assertIsNotNone(limits[0]['id'])
+        self.assertIsNone(limits[0]['project_id'])
+        for key in ['service_id', 'region_id', 'resource_name',
+                    'resource_limit', 'description', 'domain_id']:
             self.assertEqual(limits[0][key], ref[key])
 
     def test_create_limit_without_region(self):
@@ -811,12 +828,12 @@ class LimitsTestCase(test_v3.RestfulTestCase):
             self.assertEqual(limits[0][key], ref1[key])
 
     def test_list_limit_with_project_id_filter(self):
-        # Create a new projects and a 'non-admin' role for test. The assignment
+        # Create a new project and a 'non-admin' role for test. The assignment
         # is like:
         #
         # self.user -- admin -- self.project (default)
         # self.user -- non-admin -- the new project
-        # self.user -- admin -- system
+        # self.user -- * -- system
         project_2 = unit.new_project_ref(domain_id=self.domain_id)
         project_2_id = project_2['id']
         PROVIDERS.resource_api.create_project(project_2_id, project_2)
@@ -878,26 +895,116 @@ class LimitsTestCase(test_v3.RestfulTestCase):
         self.assertEqual(1, len(limits))
         self.assertEqual(self.project_id, limits[0]['project_id'])
 
+    def test_list_limit_with_domain_id_filter(self):
+        # Create a new domain and a 'non-admin' role for test. The assignment
+        # is like:
+        #
+        # self.user -- admin -- self.domain
+        # self.user -- non-admin -- the new domain
+        # self.user -- * -- system
+        domain_2 = unit.new_domain_ref()
+        domain_2_id = domain_2['id']
+        PROVIDERS.resource_api.create_domain(domain_2_id, domain_2)
+
+        role_2 = unit.new_role_ref(name='non-admin')
+        role_2_id = role_2['id']
+        PROVIDERS.role_api.create_role(role_2_id, role_2)
+
+        PROVIDERS.assignment_api.create_grant(
+            self.role_id, user_id=self.user_id, doamin_id=self.domain_id)
+        PROVIDERS.assignment_api.create_grant(
+            role_2_id, user_id=self.user_id, doamin_id=domain_2_id)
+        PROVIDERS.assignment_api.create_system_grant_for_user(
+            self.user_id, self.role_id)
+
+        # create two limit in different domains for test.
+        ref1 = unit.new_limit_ref(domain_id=self.domain_id,
+                                  service_id=self.service_id,
+                                  region_id=self.region_id,
+                                  resource_name='volume')
+        ref2 = unit.new_limit_ref(domain_id=domain_2_id,
+                                  service_id=self.service_id2,
+                                  resource_name='snapshot')
+        self.post(
+            '/limits',
+            body={'limits': [ref1, ref2]},
+            expected_status=http_client.CREATED)
+
+        # non system scoped request will get the limits in its domain.
+        r = self.get(
+            '/limits', expected_status=http_client.OK,
+            auth=self.build_authentication_request(
+                user_id=self.user['id'], password=self.user['password'],
+                domain_id=self.domain_id))
+        limits = r.result['limits']
+        self.assertEqual(1, len(limits))
+        self.assertEqual(self.domain_id, limits[0]['domain_id'])
+
+        r = self.get(
+            '/limits', expected_status=http_client.OK,
+            auth=self.build_authentication_request(
+                user_id=self.user['id'], password=self.user['password'],
+                domain_id=domain_2_id))
+        limits = r.result['limits']
+        self.assertEqual(1, len(limits))
+        self.assertEqual(domain_2_id, limits[0]['domain_id'])
+
+        # if non system scoped request contain domain_id filter, keystone
+        # will return an empty list.
+        r = self.get(
+            '/limits?domain_id=%s' % self.domain_id,
+            expected_status=http_client.OK)
+        limits = r.result['limits']
+        self.assertEqual(0, len(limits))
+
+        # a system scoped request can specify the domain_id filter
+        r = self.get(
+            '/limits?domain_id=%s' % self.domain_id,
+            expected_status=http_client.OK,
+            auth=self.build_authentication_request(
+                user_id=self.user['id'], password=self.user['password'],
+                system=True))
+        limits = r.result['limits']
+        self.assertEqual(1, len(limits))
+        self.assertEqual(self.domain_id, limits[0]['domain_id'])
+
     def test_show_limit(self):
         ref1 = unit.new_limit_ref(project_id=self.project_id,
                                   service_id=self.service_id,
                                   region_id=self.region_id,
                                   resource_name='volume')
-        ref2 = unit.new_limit_ref(project_id=self.project_id,
+        ref2 = unit.new_limit_ref(domain_id=self.domain_id,
                                   service_id=self.service_id2,
                                   resource_name='snapshot')
         r = self.post(
             '/limits',
             body={'limits': [ref1, ref2]},
             expected_status=http_client.CREATED)
-        id1 = r.result['limits'][0]['id']
+        if r.result['limits'][0]['resource_name'] == 'volume':
+            id1 = r.result['limits'][0]['id']
+            id2 = r.result['limits'][1]['id']
+        else:
+            id1 = r.result['limits'][1]['id']
+            id2 = r.result['limits'][0]['id']
+
         self.get('/limits/fake_id',
                  expected_status=http_client.NOT_FOUND)
+
         r = self.get('/limits/%s' % id1,
                      expected_status=http_client.OK)
         limit = r.result['limit']
+        self.assertIsNone(limit['domain_id'])
         for key in ['service_id', 'region_id', 'resource_name',
-                    'resource_limit', 'description']:
+                    'resource_limit', 'description', 'project_id']:
+            self.assertEqual(limit[key], ref1[key])
+
+        r = self.get('/limits/%s' % id2,
+                     expected_status=http_client.OK)
+        limit = r.result['limit']
+        self.assertIsNone(limit['project_id'])
+        self.assertIsNone(limit['region_id'])
+        for key in ['service_id', 'resource_name', 'resource_limit',
+                    'description', 'domain_id']:
             self.assertEqual(limit[key], ref1[key])
 
     def test_delete_limit(self):
