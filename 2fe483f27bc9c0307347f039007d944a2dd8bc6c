@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_b6081625",
+        "filename": "releasenotes/notes/removed-as-of-stein-5eb23253b72ab54e.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-12-05T21:07:09Z",
+      "side": 1,
+      "message": "nice catch",
+      "revId": "2fe483f27bc9c0307347f039007d944a2dd8bc6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
