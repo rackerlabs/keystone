@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_957e33be",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-12-05T19:59:41Z",
+      "side": 1,
+      "message": "Wrap this into a function and pass the function into \"build_target\" kwarg for the `enforce_call`. The function should return the dict you\u0027re creating there. see https://github.com/openstack/keystone/blob/9c91aa74daba42145c07d5dcc75592812a631701/keystone/api/system.py#L31 and where it is used: https://github.com/openstack/keystone/blob/9c91aa74daba42145c07d5dcc75592812a631701/keystone/api/system.py#L60-L61",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 43
+      },
+      "revId": "24acc3ea80b39be3c51b867c8b5fa80e5c6419ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
