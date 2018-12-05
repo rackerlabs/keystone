@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_5969ce20",
+        "filename": "keystone/tests/unit/protection/v3/test_registered_limits.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-12-05T03:42:43Z",
+      "side": 1,
+      "message": "what\u0027s the difference between \"member\" and \"reader\"? They have the same right for unified limits?",
+      "range": {
+        "startLine": 165,
+        "startChar": 6,
+        "endLine": 165,
+        "endChar": 23
+      },
+      "revId": "8658011e41c05f79694eb4df306e07a0db1ce9a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
