@@ -103,6 +103,9 @@
       - release-notes-jobs-python3
     check:
       jobs:
+        - openstack-tox-pep8:
+            files: &python-files
+              - ^.*\.py$
         - keystone-dsvm-functional:
             irrelevant-files: &irrelevant-files
               - ^.*\.rst$
@@ -141,6 +144,8 @@
             irrelevant-files: *tempest-irrelevant-files
     gate:
       jobs:
+        - openstack-tox-pep8:
+            files: *python-files
         - keystone-dsvm-functional:
             irrelevant-files: *irrelevant-files
         - keystone-dsvm-py3-functional:
