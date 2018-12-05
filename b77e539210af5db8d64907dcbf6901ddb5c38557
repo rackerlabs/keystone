@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_5c60dc9e",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2018-12-05T04:06:03Z",
+      "side": 0,
+      "message": "these does not replace the neutron-grenade job. This list is to define the irrelevant-files for those jobs.       - integrated-gate, integrated-gate-py35 template define the neutron-grenade and grenade-py3 jobs [1] and from there it gets added in run queue @L101, @102\n\nIf you want to remove the neutron-grenade job from integrated testing then you need to remove the job from template and there we can discuss whether it should be removed or not. IMO, we should not remove neutron-grenade job as commented on \nhttps://review.openstack.org/#/c/622488/ \n\n[1]\nhttp://git.openstack.org/cgit/openstack-infra/openstack-zuul-jobs/tree/zuul.d/zuul-legacy-project-templates.yaml#n57\n\nhttp://git.openstack.org/cgit/openstack-infra/openstack-zuul-jobs/tree/zuul.d/project-templates.yaml#n1391",
+      "range": {
+        "startLine": 140,
+        "startChar": 0,
+        "endLine": 142,
+        "endChar": 9
+      },
+      "revId": "b77e539210af5db8d64907dcbf6901ddb5c38557",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
