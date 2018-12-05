@@ -22,6 +22,30 @@
       "revId": "8658011e41c05f79694eb4df306e07a0db1ce9a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_5658a224",
+        "filename": "keystone/tests/unit/protection/v3/test_registered_limits.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-12-05T21:12:07Z",
+      "side": 1,
+      "message": "This repeats the same test setup/run as Reader, but in this case when the permissions are the same between reader/member, it\u0027s more for consistency.",
+      "parentUuid": "3f79a3b5_5969ce20",
+      "range": {
+        "startLine": 165,
+        "startChar": 6,
+        "endLine": 165,
+        "endChar": 23
+      },
+      "revId": "8658011e41c05f79694eb4df306e07a0db1ce9a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
