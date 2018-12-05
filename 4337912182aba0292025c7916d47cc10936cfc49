@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_16feaab4",
+        "filename": "keystone/common/policies/domain.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-12-05T21:22:20Z",
+      "side": 1,
+      "message": "reader can only get their own domain right? If they try to list them all, it is unauthorized?",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 31
+      },
+      "revId": "4337912182aba0292025c7916d47cc10936cfc49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
