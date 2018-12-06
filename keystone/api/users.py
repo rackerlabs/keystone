@@ -103,6 +103,20 @@ def _build_enforcer_target_data_owner_and_user_id_match():
     return ref
 
 
+def _build_user_target_enforcement():
+    target = {}
+    try:
+        target['user'] = PROVIDERS.identity_api.get_user(
+            flask.request.view_args.get('user_id')
+        )
+    except ks_exception.NotFound:  # nosec
+        # Defer existance in the event the user doesn't exist, we'll
+        # check this later anyway.
+        pass
+
+    return target
+
+
 def _format_role_entity(role_id):
     role = PROVIDERS.role_api.get_role(role_id)
     formatted_entity = role.copy()
@@ -134,7 +148,10 @@ class UserResource(ks_flask.ResourceBase):
 
         GET/HEAD /v3/users/{user_id}
         """
-        ENFORCER.enforce_call(action='identity:get_user')
+        ENFORCER.enforce_call(
+            action='identity:get_user',
+            build_target=_build_user_target_enforcement
+        )
         ref = PROVIDERS.identity_api.get_user(user_id)
         return self.wrap_member(ref)
 
@@ -185,7 +202,10 @@ class UserResource(ks_flask.ResourceBase):
 
         DELETE /v3/users/{user_id}
         """
-        ENFORCER.enforce_call(action='identity:delete_user')
+        ENFORCER.enforce_call(
+            action='identity:delete_user',
+            build_target=_build_user_target_enforcement
+        )
         PROVIDERS.identity_api.delete_user(user_id)
         return None, http_client.NO_CONTENT
 
