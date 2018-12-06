@@ -174,11 +174,14 @@ class UserResource(ks_flask.ResourceBase):
 
         POST /v3/users
         """
-        ENFORCER.enforce_call(action='identity:create_user')
         user_data = self.request_body_json.get('user', {})
         validation.lazy_validate(schema.user_create, user_data)
         user_data = self._normalize_dict(user_data)
         user_data = self._normalize_domain_id(user_data)
+        target = {'user': user_data}
+        ENFORCER.enforce_call(
+            action='identity:create_user', target_attr=target
+        )
         ref = PROVIDERS.identity_api.create_user(
             user_data,
             initiator=self.audit_initiator)
@@ -189,7 +192,11 @@ class UserResource(ks_flask.ResourceBase):
 
         PATCH /v3/users/{user_id}
         """
-        ENFORCER.enforce_call(action='identity:update_user')
+        ENFORCER.enforce_call(
+            action='identity:update_user',
+            build_target=_build_user_target_enforcement
+        )
+        PROVIDERS.identity_api.get_user(user_id)
         user_data = self.request_body_json.get('user', {})
         validation.lazy_validate(schema.user_update, user_data)
         self._require_matching_id(user_data)
