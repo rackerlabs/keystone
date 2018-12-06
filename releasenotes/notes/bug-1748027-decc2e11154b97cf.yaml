@@ -1,0 +1,27 @@
+---
+features:
+  - |
+    [`bug 1748027 <https://bugs.launchpad.net/keystone/+bug/1748027>`_]
+    The user API now supports the ``admin``, ``member``, and
+    ``reader`` default roles across system-scope, domain-scope, and
+    project-scope.
+upgrade:
+  - |
+    [`bug 1748027 <https://bugs.launchpad.net/keystone/+bug/1748027>`_]
+    The user API uses new default policies that make it more
+    accessible to end users and administrators in a secure way. Please
+    consider these new defaults if your deployment overrides
+    user policies.
+deprecations:
+  - |
+    [`bug 1748027 <https://bugs.launchpad.net/keystone/+bug/1748027>`_]
+    Several policies used to protect the user API have been
+    deprecated in favor of more clear and concise defaults. Please
+    consider these new default if your deployment overrides
+    user policies.
+security:
+  - |
+    [`bug 1748027 <https://bugs.launchpad.net/keystone/+bug/1748027>`_]
+    The user API now uses system-scope, domain-scope, project-scope and default
+    roles to provide better accessibility to users in a secure way.
+
