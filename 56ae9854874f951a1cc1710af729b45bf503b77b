@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_9d3403ad",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-12-06T20:42:58Z",
+      "side": 1,
+      "message": "Why are you changing this? It\u0027s nearly the same as what we have currently but drops the is_admin:1 part of the rule.",
+      "revId": "56ae9854874f951a1cc1710af729b45bf503b77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_1dd23360",
+        "filename": "releasenotes/notes/bug-1805402-75d0d93f31af620f.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-12-06T20:42:58Z",
+      "side": 1,
+      "message": "I would list all the changes here so it\u0027s easier to check what changed, looking through logs for deprecation warnings after you\u0027ve already upgraded is a hassle",
+      "revId": "56ae9854874f951a1cc1710af729b45bf503b77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
