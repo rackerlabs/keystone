@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_00a099a2",
+        "filename": "keystone/common/policies/limit.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-12-06T09:00:24Z",
+      "side": 1,
+      "message": "Was wondering if limits are now domain specific, the scope_types should include domain too?",
+      "revId": "13807bedbdb5890c79c648529dd1f4e6b2303be6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
