@@ -185,7 +185,12 @@ class PolicyJsonTestCase(unit.TestCase):
             'identity:get_credential',
             'identity:list_credentials',
             'identity:update_credential',
-            'identity:delete_credential'
+            'identity:delete_credential',
+            'identity:create_user',
+            'identity:get_user',
+            'identity:list_users',
+            'identity:update_user',
+            'identity:delete_user'
         ]
         policy_keys = self._get_default_policy_rules()
         for p in removed_policies:
