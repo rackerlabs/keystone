@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_8fce0a57",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-06T21:55:39Z",
+      "side": 1,
+      "message": "Just to simplify things and be explicit about not using \"is_admin\" terminology when we have different perspectives with scopes (e.g., system admin, domain admin, project admin).",
+      "parentUuid": "3f79a3b5_9d3403ad",
+      "revId": "56ae9854874f951a1cc1710af729b45bf503b77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_1dd23360",
         "filename": "releasenotes/notes/bug-1805402-75d0d93f31af620f.yaml",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2018-12-06T20:42:58Z",
       "side": 1,
       "message": "I would list all the changes here so it\u0027s easier to check what changed, looking through logs for deprecation warnings after you\u0027ve already upgraded is a hassle",
+      "revId": "56ae9854874f951a1cc1710af729b45bf503b77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_4f231213",
+        "filename": "releasenotes/notes/bug-1805402-75d0d93f31af620f.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-06T21:55:39Z",
+      "side": 1,
+      "message": "So something to the effect of:\n\n  The ``identity:get_role``, ``identity:create_role``, ``identity:list_roles``,\n  ``identity:update_role``, ``identity:delete_role`` policies have been\n  updated ....\n\n?",
+      "parentUuid": "3f79a3b5_1dd23360",
       "revId": "56ae9854874f951a1cc1710af729b45bf503b77b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
