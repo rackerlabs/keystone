@@ -1518,15 +1518,3 @@ class StrictTwoLevelLimitsTestCase(LimitsTestCase):
             '/limits/%s' % r.result['limits'][0]['id'],
             body={'limit': update_dict},
             expected_status=http_client.FORBIDDEN)
-
-    def test_create_domain_limit(self):
-        self.skipTest('enable this test once strict two level model support'
-                      'domain level check.')
-
-    def test_show_domain_limit(self):
-        self.skipTest('enable this test once strict two level model support'
-                      'domain level check.')
-
-    def test_list_limit_with_domain_id_filter(self):
-        self.skipTest('enable this test once strict two level model support'
-                      'domain level check.')
