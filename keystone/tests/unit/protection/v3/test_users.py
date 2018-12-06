@@ -135,6 +135,71 @@ class _SystemMemberAndReaderUserTests(object):
             )
 
 
+class _DomainUserTests(object):
+    """Common default functionality for all domain users."""
+
+    def test_user_can_get_users_within_their_domain(self):
+        user = PROVIDERS.identity_api.create_user(
+            unit.new_user_ref(domain_id=self.domain_id)
+        )
+
+        with self.test_client() as c:
+            c.get('/v3/users/%s' % user['id'], headers=self.headers)
+
+    def test_user_cannot_get_users_in_other_domains(self):
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+        user = PROVIDERS.identity_api.create_user(
+            unit.new_user_ref(domain_id=domain['id'])
+        )
+
+        with self.test_client() as c:
+            c.get(
+                '/v3/users/%s' % user['id'], headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_cannot_get_non_existant_user_forbidden(self):
+        with self.test_client() as c:
+            c.get(
+                '/v3/users/%s' % uuid.uuid4().hex, headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_can_list_users_within_domain(self):
+        with self.test_client() as c:
+            c.get(
+                '/v3/users?domain_id=%s' % self.domain_id,
+                headers=self.headers,
+            )
+
+    def test_user_cannot_list_users_within_domain_hyphened_query_string(self):
+        # ``domain-id`` isn't a formal filter so we ignore it. This will just
+        # default to using the user's scope and return the users from the
+        # domain they have authorization on.
+        with self.test_client() as c:
+            c.get(
+                '/v3/users?domain-id=%s' % self.domain_id,
+                headers=self.headers
+            )
+
+    def test_user_listing_users_in_other_domains_returns_empty_list(self):
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+        PROVIDERS.identity_api.create_user(
+            unit.new_user_ref(domain_id=domain['id'])
+        )
+
+        with self.test_client() as c:
+            r = c.get(
+                '/v3/users?domain_id=%s' % domain['id'],
+                headers=self.headers
+            )
+            self.assertEqual([], r.json['users'])
+
+
 class _DomainMemberAndReaderUserTests(object):
     """Functionality for all domain members and domain readers."""
 
@@ -546,6 +611,7 @@ class SystemAdminTests(base_classes.TestCaseWithBootstrap,
 class DomainReaderTests(base_classes.TestCaseWithBootstrap,
                         common_auth.AuthTestMixin,
                         _CommonUserTests,
+                        _DomainUserTests,
                         _DomainMemberAndReaderUserTests):
 
     def setUp(self):
@@ -581,6 +647,7 @@ class DomainReaderTests(base_classes.TestCaseWithBootstrap,
 class DomainMemberTests(base_classes.TestCaseWithBootstrap,
                         common_auth.AuthTestMixin,
                         _CommonUserTests,
+                        _DomainUserTests,
                         _DomainMemberAndReaderUserTests):
 
     def setUp(self):
@@ -615,6 +682,7 @@ class DomainMemberTests(base_classes.TestCaseWithBootstrap,
 
 class DomainAdminTests(base_classes.TestCaseWithBootstrap,
                        common_auth.AuthTestMixin,
+                       _DomainUserTests,
                        _CommonUserTests):
 
     def setUp(self):
@@ -685,6 +753,28 @@ class DomainAdminTests(base_classes.TestCaseWithBootstrap,
         with self.test_client() as c:
             c.post('/v3/users', json=create, headers=self.headers)
 
+    def test_user_can_create_users_within_domain_hyphened_domain_id(self):
+        # Finally, show that we can create a new user without any surprises.
+        # But if we specify a 'domain-id' instead of a 'domain_id', we get a
+        # Forbidden response because we fail a policy check before
+        # normalization occurs.
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+
+        create = {
+            'user': {
+                'domain-id': domain['id'],
+                'name': uuid.uuid4().hex
+            }
+        }
+
+        with self.test_client() as c:
+            c.post(
+                '/v3/users', json=create, headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
     def test_user_cannot_create_users_in_other_domain(self):
         domain = PROVIDERS.resource_api.create_domain(
             uuid.uuid4().hex, unit.new_domain_ref()
@@ -713,6 +803,26 @@ class DomainAdminTests(base_classes.TestCaseWithBootstrap,
             c.patch(
                 '/v3/users/%s' % user['id'], json=update, headers=self.headers
             )
+
+    def test_user_can_update_users_within_domain_hyphened_domain_id(self):
+        # If we try updating the user's 'domain_id' by specifying a
+        # 'domain-id', then it'll be stored into extras rather than normalized,
+        # and the user's actual 'domain_id' is not affected.
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+
+        user = PROVIDERS.identity_api.create_user(
+            unit.new_user_ref(domain_id=self.domain_id)
+        )
+
+        update = {'user': {'domain-id': domain['id']}}
+        with self.test_client() as c:
+            r = c.patch(
+                '/v3/users/%s' % user['id'], json=update, headers=self.headers
+            )
+            self.assertEqual(domain['id'], r.json['user']['domain-id'])
+            self.assertEqual(self.domain_id, r.json['user']['domain_id'])
 
     def test_user_cannot_update_users_in_other_domain(self):
         domain = PROVIDERS.resource_api.create_domain(
