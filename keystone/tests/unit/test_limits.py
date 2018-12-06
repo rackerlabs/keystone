@@ -1034,31 +1034,32 @@ class StrictTwoLevelLimitsTestCase(LimitsTestCase):
 
     def setUp(self):
         super(StrictTwoLevelLimitsTestCase, self).setUp()
-        # create two hierarchical projects trees for test.
+        # create two hierarchical projects trees for test. The first level is
+        # domain.
         #   A        D
         #  / \      / \
         # B   C    E   F
-        project_ref = {'project': {'name': 'A', 'enabled': True}}
-        response = self.post('/projects', body=project_ref)
-        self.project_A = response.json_body['project']
+        domain_ref = {'domain': {'name': 'A', 'enabled': True}}
+        response = self.post('/domains', body=domain_ref)
+        self.domain_A = response.json_body['domain']
         project_ref = {'project': {'name': 'B', 'enabled': True,
-                                   'parent_id': self.project_A['id']}}
+                                   'domain_id': self.domain_A['id']}}
         response = self.post('/projects', body=project_ref)
         self.project_B = response.json_body['project']
         project_ref = {'project': {'name': 'C', 'enabled': True,
-                                   'parent_id': self.project_A['id']}}
+                                   'domain_id': self.domain_A['id']}}
         response = self.post('/projects', body=project_ref)
         self.project_C = response.json_body['project']
 
-        project_ref = {'project': {'name': 'D', 'enabled': True}}
-        response = self.post('/projects', body=project_ref)
-        self.project_D = response.json_body['project']
+        domain_ref = {'domain': {'name': 'D', 'enabled': True}}
+        response = self.post('/domains', body=domain_ref)
+        self.domain_D = response.json_body['domain']
         project_ref = {'project': {'name': 'E', 'enabled': True,
-                                   'parent_id': self.project_D['id']}}
+                                   'domain_id': self.domain_D['id']}}
         response = self.post('/projects', body=project_ref)
         self.project_E = response.json_body['project']
         project_ref = {'project': {'name': 'F', 'enabled': True,
-                                   'parent_id': self.project_D['id']}}
+                                   'domain_id': self.domain_D['id']}}
         response = self.post('/projects', body=project_ref)
         self.project_F = response.json_body['project']
 
@@ -1072,7 +1073,7 @@ class StrictTwoLevelLimitsTestCase(LimitsTestCase):
         #     A,20             A,20
         #    / \      -->     / \
         #   B   C           B,15 C,18
-        ref = unit.new_limit_ref(project_id=self.project_A['id'],
+        ref = unit.new_limit_ref(domain_id=self.domain_A['id'],
                                  service_id=self.service_id,
                                  region_id=self.region_id,
                                  resource_name='volume',
@@ -1111,7 +1112,7 @@ class StrictTwoLevelLimitsTestCase(LimitsTestCase):
         #     A,20              A,20
         #    / \      -/->      / \
         #  B,15 C            B,15 C,21
-        ref = unit.new_limit_ref(project_id=self.project_A['id'],
+        ref = unit.new_limit_ref(domain_id=self.domain_A['id'],
                                  service_id=self.service_id,
                                  region_id=self.region_id,
                                  resource_name='volume',
@@ -1186,7 +1187,7 @@ class StrictTwoLevelLimitsTestCase(LimitsTestCase):
             body={'limits': [ref]},
             expected_status=http_client.CREATED)
 
-        ref = unit.new_limit_ref(project_id=self.project_A['id'],
+        ref = unit.new_limit_ref(domain_id=self.domain_A['id'],
                                  service_id=self.service_id,
                                  region_id=self.region_id,
                                  resource_name='volume',
@@ -1211,7 +1212,7 @@ class StrictTwoLevelLimitsTestCase(LimitsTestCase):
             body={'limits': [ref]},
             expected_status=http_client.CREATED)
 
-        ref = unit.new_limit_ref(project_id=self.project_A['id'],
+        ref = unit.new_limit_ref(domain_id=self.domain_A['id'],
                                  service_id=self.service_id,
                                  region_id=self.region_id,
                                  resource_name='volume',
@@ -1226,7 +1227,7 @@ class StrictTwoLevelLimitsTestCase(LimitsTestCase):
         #    A,12         D,9
         #    / \          / \
         #  B,9  C,5    E,5   F,4
-        ref_A = unit.new_limit_ref(project_id=self.project_A['id'],
+        ref_A = unit.new_limit_ref(domain_id=self.domain_A['id'],
                                    service_id=self.service_id,
                                    region_id=self.region_id,
                                    resource_name='volume',
@@ -1241,7 +1242,7 @@ class StrictTwoLevelLimitsTestCase(LimitsTestCase):
                                    region_id=self.region_id,
                                    resource_name='volume',
                                    resource_limit=5)
-        ref_D = unit.new_limit_ref(project_id=self.project_D['id'],
+        ref_D = unit.new_limit_ref(domain_id=self.domain_D['id'],
                                    service_id=self.service_id,
                                    region_id=self.region_id,
                                    resource_name='volume',
@@ -1267,7 +1268,7 @@ class StrictTwoLevelLimitsTestCase(LimitsTestCase):
         #    / \          / \
         #  B,9  C,5    E,5   F,10
         # because F will break the second limit tree.
-        ref_A = unit.new_limit_ref(project_id=self.project_A['id'],
+        ref_A = unit.new_limit_ref(domain_id=self.domain_A['id'],
                                    service_id=self.service_id,
                                    region_id=self.region_id,
                                    resource_name='volume',
@@ -1282,7 +1283,7 @@ class StrictTwoLevelLimitsTestCase(LimitsTestCase):
                                    region_id=self.region_id,
                                    resource_name='volume',
                                    resource_limit=5)
-        ref_D = unit.new_limit_ref(project_id=self.project_D['id'],
+        ref_D = unit.new_limit_ref(domain_id=self.domain_D['id'],
                                    service_id=self.service_id,
                                    region_id=self.region_id,
                                    resource_name='volume',
@@ -1312,7 +1313,7 @@ class StrictTwoLevelLimitsTestCase(LimitsTestCase):
         #    / \          / \
         #  B,9  C,5    E,5   F
         # because D will break the second limit tree.
-        ref_A = unit.new_limit_ref(project_id=self.project_A['id'],
+        ref_A = unit.new_limit_ref(domain_id=self.domain_A['id'],
                                    service_id=self.service_id,
                                    region_id=self.region_id,
                                    resource_name='volume',
@@ -1337,7 +1338,7 @@ class StrictTwoLevelLimitsTestCase(LimitsTestCase):
                                    region_id=self.region_id,
                                    resource_name='volume',
                                    resource_limit=5)
-        ref_D = unit.new_limit_ref(project_id=self.project_D['id'],
+        ref_D = unit.new_limit_ref(domain_id=self.domain_D['id'],
                                    service_id=self.service_id,
                                    region_id=self.region_id,
                                    resource_name='volume',
@@ -1352,7 +1353,7 @@ class StrictTwoLevelLimitsTestCase(LimitsTestCase):
         #     A,10             A,10
         #    / \      -->     / \
         #  B,6  C,7         B,6  C,9
-        ref_A = unit.new_limit_ref(project_id=self.project_A['id'],
+        ref_A = unit.new_limit_ref(domain_id=self.domain_A['id'],
                                    service_id=self.service_id,
                                    region_id=self.region_id,
                                    resource_name='volume',
@@ -1387,7 +1388,7 @@ class StrictTwoLevelLimitsTestCase(LimitsTestCase):
         #     A,10             A,10
         #    / \      -/->     / \
         #  B,6  C,7         B,6  C,11
-        ref_A = unit.new_limit_ref(project_id=self.project_A['id'],
+        ref_A = unit.new_limit_ref(domain_id=self.domain_A['id'],
                                    service_id=self.service_id,
                                    region_id=self.region_id,
                                    resource_name='volume',
@@ -1454,7 +1455,7 @@ class StrictTwoLevelLimitsTestCase(LimitsTestCase):
         #     A,10             A,8
         #    / \      -->     / \
         #  B,6  C,7         B,6  C,7
-        ref_A = unit.new_limit_ref(project_id=self.project_A['id'],
+        ref_A = unit.new_limit_ref(domain_id=self.domain_A['id'],
                                    service_id=self.service_id,
                                    region_id=self.region_id,
                                    resource_name='volume',
@@ -1489,7 +1490,7 @@ class StrictTwoLevelLimitsTestCase(LimitsTestCase):
         #     A,10             A,6
         #    / \      -/->     / \
         #  B,6  C,7         B,6  C,7
-        ref_A = unit.new_limit_ref(project_id=self.project_A['id'],
+        ref_A = unit.new_limit_ref(domain_id=self.domain_A['id'],
                                    service_id=self.service_id,
                                    region_id=self.region_id,
                                    resource_name='volume',
@@ -1518,15 +1519,3 @@ class StrictTwoLevelLimitsTestCase(LimitsTestCase):
             '/limits/%s' % r.result['limits'][0]['id'],
             body={'limit': update_dict},
             expected_status=http_client.FORBIDDEN)
-
-    def test_create_domain_limit(self):
-        self.skipTest('enable this test once strict two level model support'
-                      'domain level check.')
-
-    def test_show_domain_limit(self):
-        self.skipTest('enable this test once strict two level model support'
-                      'domain level check.')
-
-    def test_list_limit_with_domain_id_filter(self):
-        self.skipTest('enable this test once strict two level model support'
-                      'domain level check.')
