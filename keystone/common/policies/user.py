@@ -27,6 +27,11 @@ SYSTEM_READER_OR_DOMAIN_READER = (
     '(role:reader and system_scope:all) or role:reader'
 )
 
+SYSTEM_ADMIN_OR_DOMAIN_ADMIN = (
+    '(role:admin and system_scope:all) or '
+    '(role:admin and token.domain.id:%(target.user.domain_id)s)'
+)
+
 DEPRECATED_REASON = """
 As of the Stein release, the user API understands how to handle system-scoped
 tokens in addition to project and domain tokens, making the API more accessible
@@ -106,15 +111,8 @@ user_policies = [
                      'method': 'GET'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_user',
-        check_str='role:admin',
-        # FIXME(lbragstad): This can be considered either a system-level policy
-        # or a project-level policy. System administrator should have the
-        # ability to create users in any domain. Domain (or project)
-        # administrators should have the ability to create users in the domain
-        # they administer. The second case is going to require a policy check
-        # in code. Until that happens, we will leave this as a system-level
-        # policy.
-        scope_types=['system'],
+        check_str=SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
+        scope_types=['system', 'domain'],
         description='Create a user.',
         operations=[{'path': '/v3/users',
                      'method': 'POST'}],
@@ -123,10 +121,8 @@ user_policies = [
         deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_user',
-        check_str='role:admin',
-        # FIXME(lbragstad): See the above comment about adding support for
-        # project scope_types in the future.
-        scope_types=['system'],
+        check_str=SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
+        scope_types=['system', 'domain'],
         description='Update a user, including administrative password resets.',
         operations=[{'path': '/v3/users/{user_id}',
                      'method': 'PATCH'}],
@@ -135,10 +131,8 @@ user_policies = [
         deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_user',
-        check_str='role:admin',
-        # FIXME(lbragstad): See the above comment about adding support for
-        # project scope_types in the future.
-        scope_types=['system'],
+        check_str=SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
+        scope_types=['system', 'domain'],
         description='Delete a user.',
         operations=[{'path': '/v3/users/{user_id}',
                      'method': 'DELETE'}],
