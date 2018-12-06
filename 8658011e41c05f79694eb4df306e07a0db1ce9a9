@@ -46,6 +46,29 @@
       "revId": "8658011e41c05f79694eb4df306e07a0db1ce9a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_ebf1b998",
+        "filename": "keystone/tests/unit/protection/v3/test_registered_limits.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-06T15:50:40Z",
+      "side": 1,
+      "message": "The big difference is this, which is just showing that we\u0027re executing the same behavior with the ``member`` role as we are with the ``reader`` role. We\u0027re not letting ``member`` do something they shouldn\u0027t be allowed to do.",
+      "range": {
+        "startLine": 181,
+        "startChar": 8,
+        "endLine": 183,
+        "endChar": 9
+      },
+      "revId": "8658011e41c05f79694eb4df306e07a0db1ce9a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
