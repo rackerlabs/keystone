@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_308dbf7c",
+        "filename": "releasenotes/notes/bug-1805406-252b45d443af20b3.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-07T19:12:53Z",
+      "side": 1,
+      "message": "List these out.",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 17,
+        "endChar": 20
+      },
+      "revId": "b43e5a7d81f54630035ae403e1076a2e77f11a05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
