@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_143a05ee",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-12-07T08:16:20Z",
+      "side": 1,
+      "message": "Okay makes sense.\n\nWe still use the is_admin token elsewhere in keystone, e.g. http://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/rbac_enforcer/enforcer.py#n236 should we talk about removing those bits?",
+      "parentUuid": "3f79a3b5_8fce0a57",
+      "revId": "56ae9854874f951a1cc1710af729b45bf503b77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_1dd23360",
         "filename": "releasenotes/notes/bug-1805402-75d0d93f31af620f.yaml",
         "patchSetId": 1
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "So something to the effect of:\n\n  The ``identity:get_role``, ``identity:create_role``, ``identity:list_roles``,\n  ``identity:update_role``, ``identity:delete_role`` policies have been\n  updated ....\n\n?",
       "parentUuid": "3f79a3b5_1dd23360",
+      "revId": "56ae9854874f951a1cc1710af729b45bf503b77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_7460190d",
+        "filename": "releasenotes/notes/bug-1805402-75d0d93f31af620f.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-12-07T08:16:20Z",
+      "side": 1,
+      "message": "Maybe even with bullet points? I know it seems verbose but how else can an operator see exactly what\u0027s been changed in order to know how to adjust their custom policies for it?",
+      "parentUuid": "3f79a3b5_4f231213",
       "revId": "56ae9854874f951a1cc1710af729b45bf503b77b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
