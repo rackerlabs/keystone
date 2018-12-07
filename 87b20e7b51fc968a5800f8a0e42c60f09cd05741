@@ -141,6 +141,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_54ef16b1",
+        "filename": "doc/source/admin/identity-external-authentication.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-07T14:45:32Z",
+      "side": 1,
+      "message": "That\u0027s fair",
+      "parentUuid": "3f79a3b5_a9717715",
+      "range": {
+        "startLine": 34,
+        "startChar": 36,
+        "endLine": 34,
+        "endChar": 40
+      },
+      "revId": "87b20e7b51fc968a5800f8a0e42c60f09cd05741",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_277edce3",
         "filename": "doc/source/admin/identity-external-authentication.rst",
         "patchSetId": 1
