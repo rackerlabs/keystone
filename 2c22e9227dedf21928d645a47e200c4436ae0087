@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_613a93ef",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-12-07T16:05:25Z",
+      "side": 1,
+      "message": "There are more changes I\u0027d like to make to the rest of the guide to improve the flow.",
+      "parentUuid": "3f79a3b5_216fbbfb",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 21
+      },
+      "revId": "2c22e9227dedf21928d645a47e200c4436ae0087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_d4ed668d",
         "filename": "doc/source/advanced-topics/federation/configure_federation.rst",
         "patchSetId": 3
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_c12e07a9",
+        "filename": "doc/source/advanced-topics/federation/configure_federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-12-07T16:05:25Z",
+      "side": 1,
+      "message": "I started working on this before noticing Suramya\u0027s change to move it, I\u0027ll rebase this on top of that one.",
+      "parentUuid": "3f79a3b5_d4ed668d",
+      "revId": "2c22e9227dedf21928d645a47e200c4436ae0087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_341dba77",
         "filename": "doc/source/advanced-topics/federation/introduction.rst",
         "patchSetId": 3
@@ -53,6 +95,30 @@
       "writtenOn": "2018-12-07T15:40:27Z",
       "side": 1,
       "message": "nit: you include an example for a public-facing service (Google), do you think it would be possible to include one for internal-facing, too?",
+      "range": {
+        "startLine": 85,
+        "startChar": 2,
+        "endLine": 85,
+        "endChar": 31
+      },
+      "revId": "2c22e9227dedf21928d645a47e200c4436ae0087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_a4f75928",
+        "filename": "doc/source/advanced-topics/federation/introduction.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-12-07T16:05:25Z",
+      "side": 1,
+      "message": "Sure, I was thinking something like a university or corporation where IT services are focused on students or employees.",
+      "parentUuid": "3f79a3b5_341dba77",
       "range": {
         "startLine": 85,
         "startChar": 2,
