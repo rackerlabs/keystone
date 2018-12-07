@@ -123,6 +123,24 @@
       "revId": "56ae9854874f951a1cc1710af729b45bf503b77b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_a1bf4b77",
+        "filename": "releasenotes/notes/bug-1805402-75d0d93f31af620f.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-07T15:55:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_7460190d",
+      "revId": "56ae9854874f951a1cc1710af729b45bf503b77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
