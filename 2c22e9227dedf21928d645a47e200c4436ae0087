@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3f79a3b5_216fbbfb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-07T16:00:59Z",
+      "side": 1,
+      "message": "AFAICT - it looks like this patch addresses the concerns of the bug. Are you planning a subsequent patch to close this?",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 21
+      },
+      "revId": "2c22e9227dedf21928d645a47e200c4436ae0087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_d4ed668d",
         "filename": "doc/source/advanced-topics/federation/configure_federation.rst",
         "patchSetId": 3
