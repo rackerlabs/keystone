@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_b4878a0a",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-07T14:41:32Z",
+      "side": 1,
+      "message": "Yeah - I think now is a good time to do that and have those conversations. IMO, it makes sense to clean all this stuff up while we\u0027re in here doing the rest of the default roles + scope work anyway.\n\nIf keystone doesn\u0027t have anything that consumes is_admin anymore (via policy), I\u0027d think it would be safe to remove enforcer code that uses it then, right? So long as we have yet another release note for anyone building custom policy checks that might be using it?",
+      "parentUuid": "3f79a3b5_143a05ee",
+      "revId": "56ae9854874f951a1cc1710af729b45bf503b77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_1dd23360",
         "filename": "releasenotes/notes/bug-1805402-75d0d93f31af620f.yaml",
         "patchSetId": 1
