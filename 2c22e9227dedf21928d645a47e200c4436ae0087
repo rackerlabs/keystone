@@ -2,6 +2,63 @@
   "comments": [
     {
       "key": {
+        "uuid": "3f79a3b5_d4ed668d",
+        "filename": "doc/source/advanced-topics/federation/configure_federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-07T15:40:27Z",
+      "side": 1,
+      "message": "Do we plan to keep this in the advanced-topics section? Or will this eventually move to the admin guide?",
+      "revId": "2c22e9227dedf21928d645a47e200c4436ae0087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_341dba77",
+        "filename": "doc/source/advanced-topics/federation/introduction.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-07T15:40:27Z",
+      "side": 1,
+      "message": "nit: you include an example for a public-facing service (Google), do you think it would be possible to include one for internal-facing, too?",
+      "range": {
+        "startLine": 85,
+        "startChar": 2,
+        "endLine": 85,
+        "endChar": 31
+      },
+      "revId": "2c22e9227dedf21928d645a47e200c4436ae0087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_4f40e304",
+        "filename": "doc/source/advanced-topics/federation/introduction.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-07T15:40:27Z",
+      "side": 1,
+      "message": "The way this is rendering in the documentation makes it seem like \"Normal keystone\" is a subset or subtopic of \"SAML2.0\" [0], but we want normal keystone to be the sql/ldap configured authentication flow, right? We could pull the normal flow out as a precursor to the SAML flows.\n\n[0] http://logs.openstack.org/84/615384/3/check/openstack-tox-docs/2beb5a9/html/advanced-topics/federation/federated_identity.html#id1",
+      "revId": "2c22e9227dedf21928d645a47e200c4436ae0087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_a30b6fd2",
         "filename": "doc/source/advanced-topics/federation/introduction.rst",
         "patchSetId": 3
@@ -66,6 +123,29 @@
         "startChar": 85,
         "endLine": 237,
         "endChar": 91
+      },
+      "revId": "2c22e9227dedf21928d645a47e200c4436ae0087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_8ff91b82",
+        "filename": "doc/source/advanced-topics/federation/introduction.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-07T15:40:27Z",
+      "side": 1,
+      "message": "Looks like longer labels wrap in the rendering, but I\u0027m not sure what we can do about that.",
+      "range": {
+        "startLine": 239,
+        "startChar": 36,
+        "endLine": 240,
+        "endChar": 81
       },
       "revId": "2c22e9227dedf21928d645a47e200c4436ae0087",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
