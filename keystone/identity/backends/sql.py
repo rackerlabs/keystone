@@ -163,7 +163,8 @@ class Identity(base.IdentityDriverBase):
     @driver_hints.truncated
     def list_users(self, hints):
         with sql.session_for_read() as session:
-            query = session.query(model.User).outerjoin(model.LocalUser)
+            query = session.query(model.User).order_by(
+                model.User.id.asc()).outerjoin(model.LocalUser)
             query, hints = self._create_password_expires_query(session, query,
                                                                hints)
             user_refs = sql.filter_limit_query(model.User, query, hints)
@@ -312,7 +313,8 @@ class Identity(base.IdentityDriverBase):
     def list_groups_for_user(self, user_id, hints):
         with sql.session_for_read() as session:
             self.get_user(user_id)
-            query = session.query(model.Group).join(model.UserGroupMembership)
+            query = session.query(model.Group).order_by(
+                model.Group.id.asc()).join(model.UserGroupMembership)
             query = query.filter(model.UserGroupMembership.user_id == user_id)
             query = sql.filter_limit_query(model.Group, query, hints)
             return [g.to_dict() for g in query]
@@ -320,7 +322,8 @@ class Identity(base.IdentityDriverBase):
     def list_users_in_group(self, group_id, hints):
         with sql.session_for_read() as session:
             self.get_group(group_id)
-            query = session.query(model.User).outerjoin(model.LocalUser)
+            query = session.query(model.User).order_by(
+                model.User.id.asc()).outerjoin(model.LocalUser)
             query = query.join(model.UserGroupMembership)
             query = query.filter(
                 model.UserGroupMembership.group_id == group_id)

@@ -297,8 +297,12 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         url_by_name = '/users?name__iendswith=OF'
         r = self.get(url_by_name, auth=self.auth)
         self.assertEqual(2, len(r.result.get('users')))
-        self.assertEqual(user_list[7]['id'], r.result.get('users')[0]['id'])
-        self.assertEqual(user_list[10]['id'], r.result.get('users')[1]['id'])
+        sorted_users = sorted([user_list[7], user_list[10]],
+                              key=lambda x: x['id'])
+        self.assertEqual(sorted_users[0]['id'],
+                         r.result.get('users')[0]['id'])
+        self.assertEqual(sorted_users[1]['id'],
+                         r.result.get('users')[1]['id'])
 
         self._delete_test_data('user', user_list)
 
@@ -463,8 +467,10 @@ class IdentityPasswordExpiryFilteredTestCase(filtering.FilterTests,
             self._format_timestamp(
                 self.starttime + datetime.timedelta(days=2)), 'neq')
         resp_users = self.get(expire_at_url).result.get('users')
-        self.assertEqual(self.user['id'], resp_users[0]['id'])
-        self.assertEqual(self.user3['id'], resp_users[1]['id'])
+        sorted_users = sorted([self.user, self.user3],
+                              key=lambda x: x['id'])
+        self.assertEqual(sorted_users[0]['id'], resp_users[0]['id'])
+        self.assertEqual(sorted_users[1]['id'], resp_users[1]['id'])
 
     def test_list_users_by_password_expires_before(self):
         """Ensure users can be filtered on lt and lte.
@@ -477,15 +483,19 @@ class IdentityPasswordExpiryFilteredTestCase(filtering.FilterTests,
             self._format_timestamp(self.starttime + datetime.timedelta(
                 days=2, seconds=1)), 'lt')
         resp_users = self.get(expire_before_url).result.get('users')
-        self.assertEqual(self.user['id'], resp_users[0]['id'])
-        self.assertEqual(self.user2['id'], resp_users[1]['id'])
+        sorted_users = sorted([self.user, self.user2],
+                              key=lambda x: x['id'])
+        self.assertEqual(sorted_users[0]['id'], resp_users[0]['id'])
+        self.assertEqual(sorted_users[1]['id'], resp_users[1]['id'])
 
         expire_before_url = self._list_users_by_password_expires_at(
             self._format_timestamp(self.starttime + datetime.timedelta(
                 days=2)), 'lte')
         resp_users = self.get(expire_before_url).result.get('users')
-        self.assertEqual(self.user['id'], resp_users[0]['id'])
-        self.assertEqual(self.user2['id'], resp_users[1]['id'])
+        sorted_users = sorted([self.user, self.user2],
+                              key=lambda x: x['id'])
+        self.assertEqual(sorted_users[0]['id'], resp_users[0]['id'])
+        self.assertEqual(sorted_users[1]['id'], resp_users[1]['id'])
 
     def test_list_users_by_password_expires_after(self):
         """Ensure users can be filtered on gt and gte.
@@ -504,8 +514,10 @@ class IdentityPasswordExpiryFilteredTestCase(filtering.FilterTests,
             self._format_timestamp(self.starttime + datetime.timedelta(
                 days=2)), 'gte')
         resp_users = self.get(expire_after_url).result.get('users')
-        self.assertEqual(self.user2['id'], resp_users[0]['id'])
-        self.assertEqual(self.user3['id'], resp_users[1]['id'])
+        sorted_users = sorted([self.user2, self.user3],
+                              key=lambda x: x['id'])
+        self.assertEqual(sorted_users[0]['id'], resp_users[0]['id'])
+        self.assertEqual(sorted_users[1]['id'], resp_users[1]['id'])
 
     def test_list_users_by_password_expires_interval(self):
         """Ensure users can be filtered on time intervals.
@@ -658,8 +670,10 @@ class IdentityPasswordExpiryFilteredTestCase(filtering.FilterTests,
             self._format_timestamp(self.starttime + datetime.timedelta(
                 days=2)), 'gte')
         resp_users = self.get(expire_after_url).result.get('users')
-        self.assertEqual(self.user2['id'], resp_users[0]['id'])
-        self.assertEqual(self.user3['id'], resp_users[1]['id'])
+        sorted_users = sorted([self.user2, self.user3],
+                              key=lambda x: x['id'])
+        self.assertEqual(sorted_users[0]['id'], resp_users[0]['id'])
+        self.assertEqual(sorted_users[1]['id'], resp_users[1]['id'])
 
     def test_list_users_in_group_by_password_expires_interval(self):
         """Ensure users in a group can be filtered on time intervals.
@@ -679,8 +693,10 @@ class IdentityPasswordExpiryFilteredTestCase(filtering.FilterTests,
                 self._format_timestamp(self.starttime + datetime.timedelta(
                     days=3, seconds=1)), 'lt'))
         resp_users = self.get(expire_interval_url).result.get('users')
-        self.assertEqual(self.user2['id'], resp_users[0]['id'])
-        self.assertEqual(self.user3['id'], resp_users[1]['id'])
+        sorted_users = sorted([self.user2, self.user3],
+                              key=lambda x: x['id'])
+        self.assertEqual(sorted_users[0]['id'], resp_users[0]['id'])
+        self.assertEqual(sorted_users[1]['id'], resp_users[1]['id'])
 
         expire_interval_url = (
             self._list_users_in_group_by_multiple_password_expires_at(
@@ -689,8 +705,10 @@ class IdentityPasswordExpiryFilteredTestCase(filtering.FilterTests,
                 self._format_timestamp(self.starttime + datetime.timedelta(
                     days=3)), 'lte'))
         resp_users = self.get(expire_interval_url).result.get('users')
-        self.assertEqual(self.user2['id'], resp_users[0]['id'])
-        self.assertEqual(self.user3['id'], resp_users[1]['id'])
+        sorted_users = sorted([self.user2, self.user3],
+                              key=lambda x: x['id'])
+        self.assertEqual(sorted_users[0]['id'], resp_users[0]['id'])
+        self.assertEqual(sorted_users[1]['id'], resp_users[1]['id'])
 
     def test_list_users_in_group_by_password_expires_bad_operator_fails(self):
         """Ensure an invalid operator returns a Bad Request.
