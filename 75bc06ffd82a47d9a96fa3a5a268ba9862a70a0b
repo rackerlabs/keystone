@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_b903de63",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-12-10T13:53:00Z",
+      "side": 1,
+      "message": "For other reviewers: if my reading of https://dev.mysql.com/doc/refman/8.0/en/order-by-optimization.html is correct then this shouldn\u0027t have too much of a performance impact, but I don\u0027t have enough experience here to say for sure",
+      "revId": "75bc06ffd82a47d9a96fa3a5a268ba9862a70a0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_7efd2c3a",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-12-10T13:53:00Z",
+      "side": 1,
+      "message": "I don\u0027t think this query uses LIMIT, so does it still have the same probem? Or why is the ordering needed here?",
+      "revId": "75bc06ffd82a47d9a96fa3a5a268ba9862a70a0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
