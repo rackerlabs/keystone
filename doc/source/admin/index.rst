@@ -46,3 +46,4 @@ command-line client.
    event_notifications.rst
    auth-totp.rst
    identity-external-authentication.rst
+   configure_tokenless_x509.rst
