@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_a5ae489d",
+        "filename": "releasenotes/notes/bug-1794376-53ce14528f00f01d.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-10T22:00:19Z",
+      "side": 1,
+      "message": "I should list these out like I did with other patches.",
+      "revId": "792e9121c05d438e5cca986061618c4f8d2a93f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
