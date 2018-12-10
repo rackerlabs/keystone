@@ -16,6 +16,24 @@
       "revId": "c04756e0cdbe0694146be876e7bb0cd8272c9573",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_aa361eb1",
+        "filename": "doc/source/admin/identity-domain-specific-config.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-12-10T15:28:17Z",
+      "side": 1,
+      "message": "Oops, yes it\u0027s unrelated but better to have the newline IMO, I even thought we had a linter check for those at some point.",
+      "parentUuid": "3f79a3b5_ef274865",
+      "revId": "c04756e0cdbe0694146be876e7bb0cd8272c9573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
