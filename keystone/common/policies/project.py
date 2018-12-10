@@ -23,7 +23,7 @@ SYSTEM_READER_OR_DOMAIN_READER_OR_PROJECT_USER = (
     '(role:reader and system_scope:all) or '
     '(role:reader and domain_id:%(target.project.domain_id)s) or '
     '(role:reader and domain_id:%(target.user.domain_id)s) or '
-    'project_id:%(target.project.id)s'
+    'user_id:%(target.user.id)s'
 )
 
 SYSTEM_ADMIN_OR_DOMAIN_ADMIN = (
