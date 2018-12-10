@@ -1,0 +1,32 @@
+---
+features:
+  - |
+    [`bug 1805403 <https://bugs.launchpad.net/keystone/+bug/1805403>`_]
+    The project API now supports the ``admin``, ``member``, and
+    ``reader`` default roles.
+upgrade:
+  - |
+    [`bug 1805403 <https://bugs.launchpad.net/keystone/+bug/1805403>`_]
+    The project API uses new default policies that make it more
+    accessible to end users and administrators in a secure way. Please
+    consider these new defaults if your deployment overrides
+    project policies.
+deprecations:
+  - |
+    [`bug 1805403 <https://bugs.launchpad.net/keystone/+bug/1805403>`_]
+    The following project policy check strings have been deprecated in
+    favor of more clear and concise defaults:
+
+    * ``identity:get_project``
+    * ``identity:list_projects``
+    * ``identity:create_project``
+    * ``identity:update_project``
+    * ``identity:delete_project``
+
+    Please consider these new defaults if your deployment overrides project
+    policies.
+security:
+  - |
+    [`bug 1805403 <https://bugs.launchpad.net/keystone/+bug/1805403>`_]
+    The project API now uses system-scope and default roles to
+    provide better accessibility to users in a secure way.
