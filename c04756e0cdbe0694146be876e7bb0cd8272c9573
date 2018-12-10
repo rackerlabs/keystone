@@ -34,6 +34,24 @@
       "revId": "c04756e0cdbe0694146be876e7bb0cd8272c9573",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_b021aca3",
+        "filename": "doc/source/admin/identity-domain-specific-config.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-10T15:52:29Z",
+      "side": 1,
+      "message": "Me, too...",
+      "parentUuid": "3f79a3b5_aa361eb1",
+      "revId": "c04756e0cdbe0694146be876e7bb0cd8272c9573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
