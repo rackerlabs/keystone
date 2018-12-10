@@ -103,6 +103,20 @@ def _build_enforcer_target_data_owner_and_user_id_match():
     return ref
 
 
+def _build_user_target_enforcement():
+    target = {}
+    try:
+        target['user'] = PROVIDERS.identity_api.get_user(
+            flask.request.view_args.get('user_id')
+        )
+    except ks_exception.NotFound:  # nosec
+        # Defer existance in the event the user doesn't exist, we'll
+        # check this later anyway.
+        pass
+
+    return target
+
+
 def _format_role_entity(role_id):
     role = PROVIDERS.role_api.get_role(role_id)
     formatted_entity = role.copy()
@@ -223,7 +237,8 @@ class UserProjectsResource(ks_flask.ResourceBase):
     def get(self, user_id):
         filters = ('domain_id', 'enabled', 'name')
         ENFORCER.enforce_call(action='identity:list_user_projects',
-                              filters=filters)
+                              filters=filters,
+                              build_target=_build_user_target_enforcement)
         hints = self.build_driver_hints(filters)
         refs = PROVIDERS.assignment_api.list_projects_for_user(user_id)
         return self.wrap_collection(refs, hints=hints)
