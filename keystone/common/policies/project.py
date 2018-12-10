@@ -15,8 +15,15 @@ from oslo_policy import policy
 
 from keystone.common.policies import base
 
-SYSTEM_READER_OR_PROJECT_USER = (
-    '(role:reader and system_scope:all) or project_id:%(target.project.id)s'
+# We have two different variations of the domain check because the target
+# information could be different. If a user is calling the /v3/projects API,
+# then the target is a project's domain ID. If a user is calling the /v3/users
+# API, then the target is a user's domain ID.
+SYSTEM_READER_OR_DOMAIN_READER_OR_PROJECT_USER = (
+    '(role:reader and system_scope:all) or '
+    '(role:reader and domain_id:%(target.project.domain_id)s) or '
+    '(role:reader and domain_id:%(target.user.domain_id)s) or '
+    'project_id:%(target.project.id)s'
 )
 
 deprecated_list_projects = policy.DeprecatedRule(
@@ -55,19 +62,8 @@ automatically.
 project_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_project',
-        check_str=SYSTEM_READER_OR_PROJECT_USER,
-        # FIXME(lbragstad): The default check_str here should change to be just
-        # a role. The OR_TARGET_PROJECT bit of this check_str should actually
-        # be moved into keystone. A system administrator should be able to get
-        # any project in the deployement. A domain administrator should be
-        # able to get any project within their domain. A project administrator
-        # should be able to get their project or children of their project
-        # (maybe). This is going to require policy checks in code that make
-        # keystone smarter about handling these cases. Until we have those in
-        # place, we should keep scope_type commented out. Otherwise, we risk
-        # exposing information to people who don't have the correct
-        # authorization.
-        scope_types=['system', 'project'],
+        check_str=SYSTEM_READER_OR_DOMAIN_READER_OR_PROJECT_USER,
+        scope_types=['system', 'domain', 'project'],
         description='Show project details.',
         operations=[{'path': '/v3/projects/{project_id}',
                      'method': 'GET'}],
@@ -77,16 +73,7 @@ project_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_projects',
         check_str='role:reader',
-        # FIXME(lbragstad): This is set to 'system' until keystone is smart
-        # enough to tailor list_project responses for project-scoped tokens
-        # without exposing information that doesn't pertain to the scope of the
-        # token used to make the request. System administrators should be able
-        # to list all projects in the deployment. Domain administrators should
-        # be able to list all projects within their domain. Project
-        # administrators should be able to list projects they administer or
-        # possibly their children.  Until keystone is smart enought to handle
-        # those cases, keep scope_types set to 'system'.
-        scope_types=['system'],
+        scope_types=['system', 'domain'],
         description='List projects.',
         operations=[{'path': '/v3/projects',
                      'method': 'GET'}],
@@ -95,15 +82,8 @@ project_policies = [
         deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_user_projects',
-        check_str=SYSTEM_READER_OR_PROJECT_USER,
-        # FIXME(lbragstad): This is going to require keystone to be smarter
-        # about how it authorizes this API. A system administrator should be
-        # able to list all projects for a user. A domain administrator should
-        # be able to list all projects to users within their domain. A user
-        # should be able to list projects for themselves, including the
-        # hierarchy in place. Until we have those cases covered in code and
-        # tested, we should keep scope_types commented out.
-        # scope_types=['system', 'project'],
+        check_str=SYSTEM_READER_OR_DOMAIN_READER_OR_PROJECT_USER,
+        scope_types=['system', 'domain', 'project'],
         description='List projects for user.',
         operations=[{'path': '/v3/users/{user_id}/projects',
                      'method': 'GET'}],
