@@ -799,3 +799,262 @@ class DomainAdminTests(base_classes.TestCaseWithBootstrap,
                 '/v3/projects/%s' % uuid.uuid4().hex, headers=self.headers,
                 expected_status_code=http_client.FORBIDDEN
             )
+
+
+class ProjectUserTests(base_classes.TestCaseWithBootstrap,
+                       common_auth.AuthTestMixin):
+
+    def setUp(self):
+        super(ProjectUserTests, self).setUp()
+        self.loadapp()
+
+        self.policy_file = self.useFixture(temporaryfile.SecureTempFile())
+        self.policy_file_name = self.policy_file.file_name
+        self.useFixture(
+            ksfixtures.Policy(
+                self.config_fixture, policy_file=self.policy_file_name
+            )
+        )
+
+        self._override_policy()
+        self.config_fixture.config(group='oslo_policy', enforce_scope=True)
+
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+        self.domain_id = domain['id']
+
+        self.user_id = self.bootstrapper.admin_user_id
+        auth = self.build_authentication_request(
+            user_id=self.user_id,
+            password=self.bootstrapper.admin_password,
+            project_id=self.bootstrapper.project_id
+        )
+
+        # Grab a token using the persona we're testing and prepare headers
+        # for requests we'll be making in the tests.
+        with self.test_client() as c:
+            r = c.post('/v3/auth/tokens', json=auth)
+            self.token_id = r.headers['X-Subject-Token']
+            self.headers = {'X-Auth-Token': self.token_id}
+
+    def _override_policy(self):
+        # TODO(lbragstad): Remove this once the deprecated policies in
+        # keystone.common.policies.project have been removed. This is only
+        # here to make sure we test the new policies instead of the deprecated
+        # ones. Oslo.policy will OR deprecated policies with new policies to
+        # maintain compatibility and give operators a chance to update
+        # permissions or update policies without breaking users. This will
+        # cause these specific tests to fail since we're trying to correct this
+        # broken behavior with better scope checking.
+        with open(self.policy_file_name, 'w') as f:
+            overridden_policies = {
+                'identity:get_project': (
+                    pp.SYSTEM_READER_OR_DOMAIN_READER_OR_PROJECT_USER),
+                'identity:list_user_projects': (
+                    pp.SYSTEM_READER_OR_DOMAIN_READER_OR_PROJECT_USER),
+                'identity:list_projects': 'role:reader',
+                'identity:create_project': pp.SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
+                'identity:update_project': pp.SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
+                'identity:delete_project': pp.SYSTEM_ADMIN_OR_DOMAIN_ADMIN
+            }
+            f.write(jsonutils.dumps(overridden_policies))
+
+    def test_user_can_list_their_projects(self):
+        with self.test_client() as c:
+            r = c.get(
+                '/v3/users/%s/projects' % self.user_id, headers=self.headers,
+            )
+            self.assertEqual(1, len(r.json['projects']))
+            self.assertEqual(
+                self.bootstrapper.project_id, r.json['projects'][0]['id']
+            )
+
+    def test_user_cannot_list_projects_within_domain(self):
+        PROVIDERS.resource_api.create_project(
+            uuid.uuid4().hex,
+            unit.new_project_ref(domain_id=self.domain_id)
+        )
+
+        with self.test_client() as c:
+            c.get(
+                '/v3/projects', headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_cannot_list_projects_in_other_domain(self):
+        PROVIDERS.resource_api.create_project(
+            uuid.uuid4().hex,
+            unit.new_project_ref(domain_id=CONF.identity.default_domain_id)
+        )
+
+        with self.test_client() as c:
+            c.get(
+                '/v3/projects', headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_can_get_a_project_within_domain(self):
+        project = PROVIDERS.resource_api.create_project(
+            uuid.uuid4().hex,
+            unit.new_project_ref(domain_id=self.domain_id)
+        )
+
+        with self.test_client() as c:
+            c.get(
+                '/v3/projects/%s' % project['id'], headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_cannot_get_a_project_in_other_domain(self):
+        project = PROVIDERS.resource_api.create_project(
+            uuid.uuid4().hex,
+            unit.new_project_ref(domain_id=CONF.identity.default_domain_id)
+        )
+
+        with self.test_client() as c:
+            c.get(
+                '/v3/projects/%s' % project['id'], headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_cannot_list_projects_for_user_in_domain(self):
+        user = PROVIDERS.identity_api.create_user(
+            unit.new_user_ref(
+                self.domain_id,
+                id=uuid.uuid4().hex
+            )
+        )
+
+        project = PROVIDERS.resource_api.create_project(
+            uuid.uuid4().hex,
+            unit.new_project_ref(domain_id=self.domain_id)
+        )
+
+        PROVIDERS.assignment_api.create_grant(
+            self.bootstrapper.reader_role_id, user_id=user['id'],
+            project_id=project['id']
+        )
+
+        with self.test_client() as c:
+            c.get(
+                '/v3/users/%s/projects' % user['id'], headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_cannot_list_projects_for_user_in_other_domain(self):
+        user = PROVIDERS.identity_api.create_user(
+            unit.new_user_ref(
+                CONF.identity.default_domain_id,
+                id=uuid.uuid4().hex
+            )
+        )
+
+        project = PROVIDERS.resource_api.create_project(
+            uuid.uuid4().hex,
+            unit.new_project_ref(domain_id=CONF.identity.default_domain_id)
+        )
+
+        PROVIDERS.assignment_api.create_grant(
+            self.bootstrapper.reader_role_id, user_id=user['id'],
+            project_id=project['id']
+        )
+
+        with self.test_client() as c:
+            c.get(
+                '/v3/users/%s/projects' % user['id'], headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_cannot_create_projects_within_domain(self):
+        create = {'project': unit.new_project_ref(domain_id=self.domain_id)}
+
+        with self.test_client() as c:
+            c.post(
+                '/v3/projects', json=create, headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_cannot_create_projects_in_other_domains(self):
+        create = {
+            'project': unit.new_project_ref(
+                domain_id=CONF.identity.default_domain_id
+            )
+        }
+
+        with self.test_client() as c:
+            c.post(
+                '/v3/projects', json=create, headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_cannot_update_projects_within_domain(self):
+        project = PROVIDERS.resource_api.create_project(
+            uuid.uuid4().hex,
+            unit.new_project_ref(domain_id=self.domain_id)
+        )
+
+        update = {'project': {'description': uuid.uuid4().hex}}
+
+        with self.test_client() as c:
+            c.patch(
+                '/v3/projects/%s' % project['id'], json=update,
+                headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_cannot_update_projects_in_other_domain(self):
+        project = PROVIDERS.resource_api.create_project(
+            uuid.uuid4().hex,
+            unit.new_project_ref(domain_id=CONF.identity.default_domain_id)
+        )
+
+        update = {'project': {'description': uuid.uuid4().hex}}
+
+        with self.test_client() as c:
+            c.patch(
+                '/v3/projects/%s' % project['id'], json=update,
+                headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_cannot_update_non_existant_project_forbidden(self):
+        update = {'project': {'description': uuid.uuid4().hex}}
+
+        with self.test_client() as c:
+            c.patch(
+                '/v3/projects/%s' % uuid.uuid4().hex, json=update,
+                headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_cannot_delete_projects_within_domain(self):
+        project = PROVIDERS.resource_api.create_project(
+            uuid.uuid4().hex,
+            unit.new_project_ref(domain_id=self.domain_id)
+        )
+
+        with self.test_client() as c:
+            c.delete(
+                '/v3/projects/%s' % project['id'], headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_cannot_delete_projects_in_other_domain(self):
+        project = PROVIDERS.resource_api.create_project(
+            uuid.uuid4().hex,
+            unit.new_project_ref(domain_id=CONF.identity.default_domain_id)
+        )
+
+        with self.test_client() as c:
+            c.delete(
+                '/v3/projects/%s' % project['id'], headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_cannot_delete_non_existant_projects_forbidden(self):
+        with self.test_client() as c:
+            c.delete(
+                '/v3/projects/%s' % uuid.uuid4().hex, headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
