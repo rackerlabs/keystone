@@ -1,5 +1,5 @@
 ..
-      Copyright 2011-2012 OpenStack Foundation
+      Copyright 2018 SUSE Linux GmbH
       All Rights Reserved.
 
       Licensed under the Apache License, Version 2.0 (the "License"); you may
