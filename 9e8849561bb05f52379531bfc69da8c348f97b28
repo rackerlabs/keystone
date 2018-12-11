@@ -46,6 +46,30 @@
       "revId": "9e8849561bb05f52379531bfc69da8c348f97b28",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_885b1987",
+        "filename": "keystone/common/policies/domain.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-12-11T09:25:42Z",
+      "side": 1,
+      "message": "ah, I see that one.",
+      "parentUuid": "3f79a3b5_086dc998",
+      "range": {
+        "startLine": 39,
+        "startChar": 26,
+        "endLine": 39,
+        "endChar": 46
+      },
+      "revId": "9e8849561bb05f52379531bfc69da8c348f97b28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
