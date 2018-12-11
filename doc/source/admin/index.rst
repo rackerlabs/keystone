@@ -45,6 +45,7 @@ command-line client.
    endpoint-policy.rst
    event_notifications.rst
    auth-totp.rst
+   limit-list-size.rst
 
 .. toctree::
    :maxdepth: 2
