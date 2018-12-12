@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_58ab61d3",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-12T22:17:53Z",
+      "side": 1,
+      "message": "This is just an internal utility, right? Users shouldn\u0027t notice this \"off-by-one\" change, should they?",
+      "range": {
+        "startLine": 286,
+        "startChar": 60,
+        "endLine": 286,
+        "endChar": 61
+      },
+      "revId": "e118d5e6a356a355c599c0da577105e589373301",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
