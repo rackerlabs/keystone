@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_521a5fc8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-12T21:52:06Z",
+      "side": 1,
+      "message": "Outside of the message being confusing, isn\u0027t this a separate bug?\n\nIf this was getting logged when there wasn\u0027t a circular reference, then we probably have an issue with that logic. We should open a separate bug so that we can fix and test it separately.\n\nI think I\u0027m ok merging this as-is since it at least clarifies things.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 21
+      },
+      "revId": "78566e828659b201563e7d07823df30f7b00b0d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
