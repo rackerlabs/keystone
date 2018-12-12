@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_f81d8d64",
+        "filename": "keystone/common/policies/limit.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-12T22:12:52Z",
+      "side": 1,
+      "message": "How come we need this if this information is readable to anyone with a valid token?",
+      "revId": "e887fb41e31308bc9814e16ae4e22263242c763c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_d803f10a",
+        "filename": "keystone/common/policies/limit.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-12T22:12:52Z",
+      "side": 1,
+      "message": "We can probably remove this comment. Or at least update it to include context about domains.",
+      "range": {
+        "startLine": 31,
+        "startChar": 8,
+        "endLine": 36,
+        "endChar": 33
+      },
+      "revId": "e887fb41e31308bc9814e16ae4e22263242c763c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_b8171543",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-12T22:12:52Z",
+      "side": 1,
+      "message": "Some of these seem like personas that would make sense in the protection tests (keystone.tests.unit.protection.v3.test_limits)",
+      "range": {
+        "startLine": 552,
+        "startChar": 8,
+        "endLine": 556,
+        "endChar": 38
+      },
+      "revId": "e887fb41e31308bc9814e16ae4e22263242c763c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_5828417e",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2743,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-12T22:12:52Z",
+      "side": 1,
+      "message": "domain*",
+      "range": {
+        "startLine": 2743,
+        "startChar": 56,
+        "endLine": 2743,
+        "endChar": 63
+      },
+      "revId": "e887fb41e31308bc9814e16ae4e22263242c763c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
