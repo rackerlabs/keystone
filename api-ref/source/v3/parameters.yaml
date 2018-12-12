@@ -743,12 +743,6 @@ domain_enabled_update_request_body:
   in: body
   required: false
   type: string
-domain_id_response_body:
-  description: |
-    The ID of the domain.
-  in: body
-  required: true
-  type: string
 domain_ldap:
   description: |
     An ``ldap`` object. Required to set the LDAP
@@ -1573,6 +1567,18 @@ request_default_limit_body_not_required:
   in: body
   required: false
   type: integer
+request_limit_domain_id_not_required:
+  description: |
+    The name of the domain.
+  in: body
+  required: false
+  type: string
+request_limit_project_id_not_required:
+  description: |
+    The ID for the project.
+  in: body
+  required: false
+  type: string
 request_region_id_registered_limit_body_not_required:
   description: |
     The ID of the region that contains the service endpoint.
@@ -1690,6 +1696,12 @@ response_body_system_required:
   in: body
   required: true
   type: array
+response_limit_domain_id_body:
+  description: |
+    The ID of the domain.
+  in: body
+  required: true
+  type: string
 role:
   description: |
     A ``role`` object
