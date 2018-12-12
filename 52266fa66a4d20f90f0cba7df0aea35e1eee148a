@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_785f3d11",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-12T22:15:42Z",
+      "side": 1,
+      "message": "I\u0027m just noticing this now that I\u0027m re-reading the code, but maybe we could put a bit more information in here that tells how the limit is invalid.\n\nWe could do that in a follow-up, too.",
+      "range": {
+        "startLine": 118,
+        "startChar": 28,
+        "endLine": 118,
+        "endChar": 73
+      },
+      "revId": "52266fa66a4d20f90f0cba7df0aea35e1eee148a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
