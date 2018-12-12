@@ -16,6 +16,24 @@
       "revId": "b4f0d032430cd502e4296d6d09835f4ff6414396",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_7b73b751",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2018-12-12T23:23:32Z",
+      "side": 1,
+      "message": "The standards aren\u0027t entirely clear, as there are optional fields for specific activity[1] that one could have report specific measurement data (response time).\n\nThe CADF document[0] doesn\u0027t mention request_id or global_id specifically, but they could be considered attributes of an event IMO.\n\nHaving this in the basic notifications could also be an option if this isn\u0027t strictly CADF.\n\n[0] https://www.dmtf.org/sites/default/files/standards/documents/DSP0262_1.0.0.pdf#page\u003d23\n\n[1] https://www.dmtf.org/sites/default/files/standards/documents/DSP0262_1.0.0.pdf#page\u003d32",
+      "parentUuid": "3f79a3b5_b804f5c5",
+      "revId": "b4f0d032430cd502e4296d6d09835f4ff6414396",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
