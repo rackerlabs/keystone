@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_c92021b2",
+        "filename": "doc/source/admin/identity-sources.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-12-12T03:02:05Z",
+      "side": 1,
+      "message": "this should be removed.",
+      "range": {
+        "startLine": 34,
+        "startChar": 35,
+        "endLine": 34,
+        "endChar": 41
+      },
+      "revId": "dbd44db580967475e41f69cdbd588f51f81235f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
