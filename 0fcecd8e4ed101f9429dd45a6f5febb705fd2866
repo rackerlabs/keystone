@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_1242a794",
+        "filename": "doc/source/admin/manage-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-12T21:55:48Z",
+      "side": 1,
+      "message": "I could see this changing with application credentials, but we can figure out how we want to write that later.\n\nThanks for consolidating this stuff.",
+      "revId": "0fcecd8e4ed101f9429dd45a6f5febb705fd2866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
