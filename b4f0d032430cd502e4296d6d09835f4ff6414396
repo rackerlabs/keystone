@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_b804f5c5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-12T22:25:51Z",
+      "side": 1,
+      "message": "Is this pattern specific to the CADF specification, or is this something that we should consider adding to basic notifications as well?\n\nI think Morgan had a point here too in the bug report since CADF has more strict standards than the basic implementation we have since that doesn\u0027t technically follow a standard.",
+      "revId": "b4f0d032430cd502e4296d6d09835f4ff6414396",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
