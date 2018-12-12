@@ -743,6 +743,12 @@ domain_enabled_update_request_body:
   in: body
   required: false
   type: string
+domain_id_limit_request_body:
+  description: |
+    The name of the domain.
+  in: body
+  required: false
+  type: string
 domain_id_response_body:
   description: |
     The ID of the domain.
@@ -1366,6 +1372,12 @@ project_id:
     The ID for the project.
   in: body
   required: true
+  type: string
+project_id_limit_request_body:
+  description: |
+    The ID for the project.
+  in: body
+  required: false
   type: string
 project_name_request_body:
   description: |
