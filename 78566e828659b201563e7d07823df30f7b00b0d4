@@ -22,6 +22,30 @@
       "revId": "78566e828659b201563e7d07823df30f7b00b0d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_3068eaf1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2018-12-13T16:14:22Z",
+      "side": 1,
+      "message": "I don\u0027t have a problem with circular roles if they short-circuit and just expand as expected. It would in-fact be the behavior I would expect. Don\u0027t fail, just don\u0027t get stuck.\n\nI think this is the most correct solution. No further bug is needed. We don\u0027t really care if they are circular, we care about the expanded role-set.",
+      "parentUuid": "3f79a3b5_521a5fc8",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 21
+      },
+      "revId": "78566e828659b201563e7d07823df30f7b00b0d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
