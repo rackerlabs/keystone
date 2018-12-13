@@ -249,6 +249,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_54855308",
+        "filename": "keystone/tests/unit/protection/v3/test_projects.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-13T21:34:20Z",
+      "side": 1,
+      "message": "I think I have a mistake here.\n\nChanging it to \u0027(role:reader and system_scope:all) or project_id:%(target.project.id)s\u0027 should mean that a user with `reader` on the system can access this API and users with project scoped tokens matching the project ID supplied in the target can access this API.\n\nBut, according to keystone/api/users.py. we\u0027re not populating project information in the target dictionary when we do enforcement [0], at least not from what I can tell. I think my mistake might have been that I assumed this was a redundant check string with other policies in this module, but that example shows that it clearly doesn\u0027t make sense.\n\nOk, so if I have this straight. Default system users should be able to call this API. Users should be able to call this API with their own user ID (restoring the previous \"owner\" policy).\n\nShould we continue to evolve the policy to allow domain users to be able to call this API for users within their domain? Note, the output is likely going to need to be sanitized in that case to only include projects within the domain the user is in, too... Otherwise, it might be possible to leak information if a user has a role assignment on a project in another domain.\n\nGood catch.\n\n[0] https://git.openstack.org/cgit/openstack/keystone/tree/keystone/api/users.py#n225",
+      "parentUuid": "3f79a3b5_b1dcf944",
+      "range": {
+        "startLine": 104,
+        "startChar": 8,
+        "endLine": 104,
+        "endChar": 51
+      },
+      "revId": "698fe070c357578d77d534c80a7a7d670dc71d72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_2eb5f41a",
         "filename": "keystone/tests/unit/protection/v3/test_projects.py",
         "patchSetId": 2
