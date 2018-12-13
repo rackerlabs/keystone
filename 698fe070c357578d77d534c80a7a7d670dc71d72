@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_5f749103",
+        "filename": "keystone/api/projects.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-13T20:20:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_33179ba1",
+      "range": {
+        "startLine": 42,
+        "startChar": 16,
+        "endLine": 42,
+        "endChar": 25
+      },
+      "revId": "698fe070c357578d77d534c80a7a7d670dc71d72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_f38a83c1",
         "filename": "keystone/common/policies/project.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2018-12-13T12:47:55Z",
       "side": 1,
       "message": "Can we remove this now?",
+      "range": {
+        "startLine": 49,
+        "startChar": 8,
+        "endLine": 59,
+        "endChar": 24
+      },
+      "revId": "698fe070c357578d77d534c80a7a7d670dc71d72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_df5f4176",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-13T20:20:35Z",
+      "side": 1,
+      "message": "We could. I was going to wait until later in the chain where we implement support for domain users (since this patch is specific to system-reader functionality).",
+      "parentUuid": "3f79a3b5_f38a83c1",
       "range": {
         "startLine": 49,
         "startChar": 8,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_ff51dd66",
+        "filename": "keystone/tests/unit/protection/v3/test_projects.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-13T20:20:35Z",
+      "side": 1,
+      "message": "You\u0027re right. I can make this assertion stronger.",
+      "parentUuid": "3f79a3b5_0e96f8a0",
+      "revId": "698fe070c357578d77d534c80a7a7d670dc71d72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_4e3dd0b7",
         "filename": "keystone/tests/unit/protection/v3/test_projects.py",
         "patchSetId": 2
@@ -76,6 +142,30 @@
       "writtenOn": "2018-12-13T12:47:55Z",
       "side": 1,
       "message": "There\u0027s no reason this would be true, regardless of how the API is protected.",
+      "range": {
+        "startLine": 71,
+        "startChar": 12,
+        "endLine": 73,
+        "endChar": 13
+      },
+      "revId": "698fe070c357578d77d534c80a7a7d670dc71d72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_7fa14d3b",
+        "filename": "keystone/tests/unit/protection/v3/test_projects.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-13T20:20:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_4e3dd0b7",
       "range": {
         "startLine": 71,
         "startChar": 12,
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_bf55a522",
+        "filename": "keystone/tests/unit/protection/v3/test_projects.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-13T20:20:35Z",
+      "side": 1,
+      "message": "Yeah, this one caught me off guard...\n\nAs far as I can tell, based on the policy for this endpoint, this functionality was specific to system administrators, which is completely redundant with GET /v3/role_assignments and the usage of filters.\n\nIf this was originally developed to be introduced to end users, then it\u0027s completely redundant with GET /v3/auth/projects.\n\nTo be honest, I\u0027m not sure why this API exists.",
+      "parentUuid": "3f79a3b5_aec10486",
+      "range": {
+        "startLine": 104,
+        "startChar": 8,
+        "endLine": 104,
+        "endChar": 51
+      },
+      "revId": "698fe070c357578d77d534c80a7a7d670dc71d72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_2eb5f41a",
         "filename": "keystone/tests/unit/protection/v3/test_projects.py",
         "patchSetId": 2
@@ -122,6 +236,30 @@
       "writtenOn": "2018-12-13T12:47:55Z",
       "side": 1,
       "message": "This test doesn\u0027t make any sense to have in the RBAC tests, unless we want to test that an existing project a user doesn\u0027t have access to returns a 404 instead of a 403",
+      "range": {
+        "startLine": 139,
+        "startChar": 4,
+        "endLine": 144,
+        "endChar": 13
+      },
+      "revId": "698fe070c357578d77d534c80a7a7d670dc71d72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_7112e158",
+        "filename": "keystone/tests/unit/protection/v3/test_projects.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-13T20:20:35Z",
+      "side": 1,
+      "message": "Exactly.\n\nWhat I\u0027m testing for here is that people who are authorized call this API get a 404 and those who are not authorized get a 403, regardless of the project existing or not.",
+      "parentUuid": "3f79a3b5_2eb5f41a",
       "range": {
         "startLine": 139,
         "startChar": 4,
