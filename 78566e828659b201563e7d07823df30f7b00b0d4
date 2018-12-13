@@ -46,6 +46,30 @@
       "revId": "78566e828659b201563e7d07823df30f7b00b0d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_24b18c01",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-13T18:33:11Z",
+      "side": 1,
+      "message": "Sure - I guess when I read the wording it sounded like there was still work to do.",
+      "parentUuid": "3f79a3b5_3068eaf1",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 21
+      },
+      "revId": "78566e828659b201563e7d07823df30f7b00b0d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
