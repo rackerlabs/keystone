@@ -225,6 +225,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_b1dcf944",
+        "filename": "keystone/tests/unit/protection/v3/test_projects.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-12-13T20:42:40Z",
+      "side": 1,
+      "message": "The original rule is `rule:admin_or_owner` which translates to `role:admin or user_id:%(user_id)s`, which I think means the user can view their own projects by calling the API with their own user_id, so yes it would be redundant with /v3/auth/projects but we have a lot of redundancies. Doesn\u0027t changing it to `... or project_id:%(target.project.id)s` mean that an authorization on *any* project allows the user the right to call this API with *any* user_id as a request target? I do not read that as the original intention of this rule and even if it was that seems completely broken to me.",
+      "parentUuid": "3f79a3b5_bf55a522",
+      "range": {
+        "startLine": 104,
+        "startChar": 8,
+        "endLine": 104,
+        "endChar": 51
+      },
+      "revId": "698fe070c357578d77d534c80a7a7d670dc71d72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_2eb5f41a",
         "filename": "keystone/tests/unit/protection/v3/test_projects.py",
         "patchSetId": 2
