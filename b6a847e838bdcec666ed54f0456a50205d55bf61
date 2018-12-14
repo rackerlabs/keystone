@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_163a7431",
+        "filename": "keystone/api/projects.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2018-12-14T12:49:36Z",
+      "side": 1,
+      "message": "I think this deserves a comment.\n\nIs the idea that if you have a project-scoped token and you call /v3/projects you will get a list of one project? Is that more useful than just getting the project out of /v3/auth/tokens?\n\nWhat about in the hierarchical case: say I have a project-scoped token and I want to list it and the children of my project?\n\nIs this backwards compatible? Currently administrators still need a project-scoped token to be able to do anything useful, once we do this won\u0027t those admins suddenly stop being able to list all projects? I think it\u0027s broken, based on devstack failing: http://logs.openstack.org/15/624215/4/check/tempest-full/449b61f/job-output.txt.gz#_2018-12-13_23_07_55_324358",
+      "revId": "b6a847e838bdcec666ed54f0456a50205d55bf61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
