@@ -52,6 +52,24 @@
       "revId": "b4f0d032430cd502e4296d6d09835f4ff6414396",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_7c6626f3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-14T16:19:20Z",
+      "side": 1,
+      "message": "Ack - that said. Do we want to propose a follow-up to add this support for basic notifications, too?",
+      "parentUuid": "3f79a3b5_a0f90151",
+      "revId": "b4f0d032430cd502e4296d6d09835f4ff6414396",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
