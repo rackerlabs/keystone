@@ -1,0 +1,32 @@
+---
+features:
+  - |
+    [`bug 1804523 <https://bugs.launchpad.net/keystone/+bug/1804523>`_]
+    The federated protocol API now supports the ``admin``, ``member``,
+    and ``reader`` default roles.
+upgrade:
+  - |
+    [`bug 1804523 <https://bugs.launchpad.net/keystone/+bug/1804523>`_]
+    The federated protocol API uses new default policies that
+    make it more accessible to end users and administrators. Please consider
+    these new defaults if your deployment overrides federated protocol
+    policies.
+deprecations:
+  - |
+    [`bug 1804523 <https://bugs.launchpad.net/keystone/+bug/1804523>`_]
+    The following federated protocol policy check strings have been
+    deprecated in favor of more clear and concise defaults:
+
+    * ``identity:get_protocol``
+    * ``identity:list_protocols``
+    * ``identity:create_protocol``
+    * ``identity:update_protocol``
+    * ``identity:delete_protocol``
+
+    Please consider these new defaults if your deployment overrides
+    the federated protocol policies.
+security:
+  - |
+    [`bug 1804523 <https://bugs.launchpad.net/keystone/+bug/1804523>`_]
+    The federated protocol API now uses system-scope and default
+    roles to provide better accessibility to users in a secure way.
