@@ -34,6 +34,24 @@
       "revId": "b4f0d032430cd502e4296d6d09835f4ff6414396",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_a0f90151",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-12-14T02:43:27Z",
+      "side": 1,
+      "message": "the \"request_id\" and \"global_request_id\" is added into INITIATOR. \n\nIIUC, CADF sepc doesn\u0027t tell that what keys must(not) be in INITIATOR. It just describes its concept --- The RESOURCE that initiated, originated, or instigated the event\u0027s ACTION.\n\nIt\u0027s the reason why I\u0027m Ok with this patch.",
+      "parentUuid": "3f79a3b5_7b73b751",
+      "revId": "b4f0d032430cd502e4296d6d09835f4ff6414396",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
