@@ -34,6 +34,24 @@
       "revId": "c68793b6a4111940dd1c93ca96727771d51c4df5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_3769a75a",
+        "filename": "keystone/common/sql/contract_repo/versions/055_contract_add_domain_to_limit.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-14T17:25:39Z",
+      "side": 1,
+      "message": "Ah interesting... I suppose it\u0027s an ordering issue. If we did something like:\n\n* expand N\n* data_migrate N\n* contract N\n* expand N + 1\n* data_migrate N + 1\n* contract N + 1\n\nWe wouldn\u0027t need this step. Doesn\u0027t look like we describe how this works in our contributor documentation either [0].\n\n[0] https://docs.openstack.org/keystone/latest/contributor/database-migrations.html",
+      "parentUuid": "3f79a3b5_2c9c276e",
+      "revId": "c68793b6a4111940dd1c93ca96727771d51c4df5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
