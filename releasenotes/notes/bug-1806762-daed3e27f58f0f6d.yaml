@@ -1,0 +1,15 @@
+---
+upgrade:
+  - |
+    [`bug 1806762 <https://bugs.launchpad.net/keystone/+bug/1806762>`_]
+    The following policies have been removed from
+    ``etc/policy.v3cloudsample.json``:
+
+    * ``identity:create_protocol``
+    * ``identity:get_protocol``
+    * ``identity:list_protocols``
+    * ``identity:update_protocol``
+    * ``identity:delete_protocol``
+
+    These policies are being removed because they are obsolete with the addition
+    of default roles across keystone and more robust test coverage.
