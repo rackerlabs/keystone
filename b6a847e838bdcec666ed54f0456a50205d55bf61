@@ -16,6 +16,24 @@
       "revId": "b6a847e838bdcec666ed54f0456a50205d55bf61",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_37f447cd",
+        "filename": "keystone/api/projects.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-14T17:17:21Z",
+      "side": 1,
+      "message": "\u003e I think this deserves a comment.\n \u003e \n \u003e Is the idea that if you have a project-scoped token and you call\n \u003e /v3/projects you will get a list of one project? Is that more\n \u003e useful than just getting the project out of /v3/auth/tokens?\n\nIn my opinion, not really. Thinking about the flow of this whole interaction, we require the user to already know the project by having a project-scoped token to call this API. From an end-user perspective, I don\u0027t think this offers any advantage over using GET /v3/auth/projects to figure out what projects I can scope to, then authenticating for a scoped token. At that point, I\u0027m not sure I see a need to ask keystone for a list of at max one entity that I already know about.\n\nI could be glossing over other use cases, but I\u0027m hoping we can air those out. Maybe this API only makes sense as a system and domain level API.\n\n \u003e \n \u003e What about in the hierarchical case: say I have a project-scoped\n \u003e token and I want to list it and the children of my project?\n\nThat sounds like a more valid use case than what I describe above, and my logic here isn\u0027t going to fulfill that.\n\n \u003e \n \u003e Is this backwards compatible? Currently administrators still need a\n \u003e project-scoped token to be able to do anything useful, once we do\n \u003e this won\u0027t those admins suddenly stop being able to list all\n \u003e projects? I think it\u0027s broken, based on devstack failing:\n \u003e http://logs.openstack.org/15/624215/4/check/tempest-full/449b61f/job-output.txt.gz#_2018-12-13_23_07_55_324358\n\nYeah - it is. The more I tinker with this API and default roles; I\u0027m wondering if I need to approach it differently and not shoot for opening this up the project API initially.\n\nIf we keep this API isolated as a system-level API, then open it up to domain users by setting scope_types\u003d[\u0027system\u0027, \u0027domain\u0027], then we might still be able to provide backward compatibility for deployments that set `keystone.conf [oslo_policy] enforce_scope\u003dFalse`(which is the default) and use project-scoped tokens to call this API with an overridden policy.\n\nAlso, I would think opening functionality up to domain users is more of a step in the right direction than trying to open this up for per-project admins managing projects. From what operators seem to tell us, HMT isn\u0027t something that\u0027s on their radar, but domain support is.\n\nhttps://bugs.launchpad.net/openstack-publiccloud-wg/+bug/1771584\nhttps://bugs.launchpad.net/openstack-publiccloud-wg/+bug/1771581\n\nThoughts?",
+      "parentUuid": "3f79a3b5_163a7431",
+      "revId": "b6a847e838bdcec666ed54f0456a50205d55bf61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
