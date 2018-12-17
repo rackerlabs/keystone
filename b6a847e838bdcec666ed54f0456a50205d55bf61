@@ -52,6 +52,24 @@
       "revId": "b6a847e838bdcec666ed54f0456a50205d55bf61",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_15d48a1d",
+        "filename": "keystone/api/projects.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-17T14:45:35Z",
+      "side": 1,
+      "message": "If I understand correctly, you\u0027re not sure if we can modify the response in this way while `keystone.conf [oslo_policy] enforce_scope \u003d False` because that would be a backward incompatible, breaking change?\n\nAnother option we have would be to check the value of that configuration option here and modify the response accordingly. Ultimately changing line 135 to:\n\n  if self.oslo_context.project_id and CONF.oslo_policy.enforce_scope:\n\nIt would allow per-project users only see what they should while allowing project-scoped tokens to be used for administrative tasks until operators do their migrations.",
+      "parentUuid": "3f79a3b5_03d45c1d",
+      "revId": "b6a847e838bdcec666ed54f0456a50205d55bf61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
