@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_3a3c1ce9",
+        "filename": "releasenotes/notes/domain-level-limit-support-60e1e330d06227ed.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-12-17T08:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_3887855f",
+      "range": {
+        "startLine": 7,
+        "startChar": 41,
+        "endLine": 7,
+        "endChar": 50
+      },
+      "revId": "a4308c5b9bafab7ef77109e4d89045265d5b0c68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_5884c157",
         "filename": "releasenotes/notes/domain-level-limit-support-60e1e330d06227ed.yaml",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2018-12-12T22:18:29Z",
       "side": 1,
       "message": "cannot*",
+      "range": {
+        "startLine": 9,
+        "startChar": 54,
+        "endLine": 9,
+        "endChar": 61
+      },
+      "revId": "a4308c5b9bafab7ef77109e4d89045265d5b0c68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_ba4fcc8b",
+        "filename": "releasenotes/notes/domain-level-limit-support-60e1e330d06227ed.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-12-17T08:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_5884c157",
       "range": {
         "startLine": 9,
         "startChar": 54,
