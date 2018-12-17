@@ -1,0 +1,37 @@
+---
+features:
+  - |
+    [`bug 1805369 <https://bugs.launchpad.net/keystone/+bug/1805369>`_]
+    The group API now supports the ``admin``, ``member``, and
+    ``reader`` default roles.
+upgrade:
+  - |
+    [`bug 1805369 <https://bugs.launchpad.net/keystone/+bug/1805369>`_]
+    The group API uses new default policies that make it more
+    accessible to end users and administrators in a secure way. Please
+    consider these new defaults if your deployment overrides
+    group policies.
+deprecations:
+  - |
+    [`bug 1805369 <https://bugs.launchpad.net/keystone/+bug/1805369>`_]
+    The following group policy check strings have been deprecated in
+    favor of more clear and concise defaults:
+
+    * ``identity:get_group``
+    * ``identity:list_groups``
+    * ``identity:create_group``
+    * ``identity:update_group``
+    * ``identity:delete_group``
+    * ``identity:remove_user_from_group``
+    * ``identity:add_user_to_group``
+    * ``identity:list_groups_for_user``
+    * ``identity:list_users_in_group``
+    * ``identity:check_user_in_group``
+
+    Please consider these new defaults if your deployment overrides group
+    policies.
+security:
+  - |
+    [`bug 1805369 <https://bugs.launchpad.net/keystone/+bug/1805369>`_]
+    The group API now uses system-scope and default roles to
+    provide better accessibility to users in a secure way.
