@@ -13,6 +13,7 @@
 # under the License.
 
 import sys
+import uuid
 
 from oslo_log import log
 from pycadf import cadftaxonomy as taxonomy
@@ -147,10 +148,10 @@ class BaseUserInfo(provider_api.ProviderAPIMixin, object):
                     domain_name)
             else:
                 domain_ref = PROVIDERS.resource_api.get_domain(domain_id)
+            self._assert_domain_is_enabled(domain_ref)
         except exception.DomainNotFound as e:
             LOG.warning(six.text_type(e))
-            raise exception.Unauthorized(e)
-        self._assert_domain_is_enabled(domain_ref)
+            return {'id': uuid.uuid4().hex}
         return domain_ref
 
     def _validate_and_normalize_auth_data(self, auth_payload):
@@ -160,10 +161,11 @@ class BaseUserInfo(provider_api.ProviderAPIMixin, object):
         user_info = auth_payload['user']
         user_id = user_info.get('id')
         user_name = user_info.get('name')
-        domain_ref = {}
         if not user_id and not user_name:
             raise exception.ValidationError(attribute='id or name',
                                             target='user')
+        user_ref = {'id': uuid.uuid4().hex}
+        domain_ref = {'id': uuid.uuid4().hex}
         try:
             if user_name:
                 if 'domain' not in user_info:
@@ -176,6 +178,7 @@ class BaseUserInfo(provider_api.ProviderAPIMixin, object):
                 user_ref = PROVIDERS.identity_api.get_user(user_id)
                 domain_ref = PROVIDERS.resource_api.get_domain(
                     user_ref['domain_id'])
+                self._assert_user_is_enabled(user_ref)
                 self._assert_domain_is_enabled(domain_ref)
         except exception.UserNotFound as e:
             LOG.warning(six.text_type(e))
@@ -203,7 +206,6 @@ class BaseUserInfo(provider_api.ProviderAPIMixin, object):
                 event_type=_NOTIFY_EVENT,
                 reason=audit_reason)
             raise exception.Unauthorized(e)
-        self._assert_user_is_enabled(user_ref)
         self.user_ref = user_ref
         self.user_id = user_ref['id']
         self.domain_id = domain_ref['id']
