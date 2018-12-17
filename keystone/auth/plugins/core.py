@@ -12,7 +12,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import random
 import sys
+import time
 
 from oslo_log import log
 from pycadf import cadftaxonomy as taxonomy
@@ -115,6 +117,15 @@ class BaseUserInfo(provider_api.ProviderAPIMixin, object):
         self.user_ref = None
         self.METHOD_NAME = None
 
+    def _add_delay(self):
+        """Add a delay of 0 to 1 seconds between an action.
+
+        This function is used to help mask the time it takes to return a
+        non-existing resoure vs an existing one.
+        """
+        sysrand = random.SystemRandom()
+        time.sleep(sysrand.random())
+
     def _assert_domain_is_enabled(self, domain_ref):
         try:
             PROVIDERS.resource_api.assert_domain_enabled(
@@ -148,6 +159,7 @@ class BaseUserInfo(provider_api.ProviderAPIMixin, object):
             else:
                 domain_ref = PROVIDERS.resource_api.get_domain(domain_id)
         except exception.DomainNotFound as e:
+            self._add_delay()
             LOG.warning(six.text_type(e))
             raise exception.Unauthorized(e)
         self._assert_domain_is_enabled(domain_ref)
@@ -178,6 +190,7 @@ class BaseUserInfo(provider_api.ProviderAPIMixin, object):
                     user_ref['domain_id'])
                 self._assert_domain_is_enabled(domain_ref)
         except exception.UserNotFound as e:
+            self._add_delay()
             LOG.warning(six.text_type(e))
 
             # We need to special case USER NOT FOUND here for CADF
