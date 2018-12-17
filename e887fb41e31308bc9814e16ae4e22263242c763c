@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_da8f282a",
+        "filename": "keystone/common/policies/limit.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-12-17T07:59:29Z",
+      "side": 1,
+      "message": "I think \"project limit\" is more like a project scoped resources, which should be isolated by tenant. i.e. a user in project_A should not have the right to view the limit for project_B",
+      "parentUuid": "3f79a3b5_f81d8d64",
+      "revId": "e887fb41e31308bc9814e16ae4e22263242c763c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_d803f10a",
         "filename": "keystone/common/policies/limit.py",
         "patchSetId": 6
@@ -30,6 +48,30 @@
       "writtenOn": "2018-12-12T22:12:52Z",
       "side": 1,
       "message": "We can probably remove this comment. Or at least update it to include context about domains.",
+      "range": {
+        "startLine": 31,
+        "startChar": 8,
+        "endLine": 36,
+        "endChar": 33
+      },
+      "revId": "e887fb41e31308bc9814e16ae4e22263242c763c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_babfccc9",
+        "filename": "keystone/common/policies/limit.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-12-17T07:59:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_d803f10a",
       "range": {
         "startLine": 31,
         "startChar": 8,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_fac5445f",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-12-17T07:59:29Z",
+      "side": 1,
+      "message": "similar, but the assignment here is using for \"project_id\" or \"domain_id\" filter tests.\n\nsee:\ntest_list_limit_with_project_id_filter\ntest_list_limit_with_domain_id_filter",
+      "parentUuid": "3f79a3b5_b8171543",
+      "range": {
+        "startLine": 552,
+        "startChar": 8,
+        "endLine": 556,
+        "endChar": 38
+      },
+      "revId": "e887fb41e31308bc9814e16ae4e22263242c763c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_5828417e",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 6
@@ -76,6 +142,30 @@
       "writtenOn": "2018-12-12T22:12:52Z",
       "side": 1,
       "message": "domain*",
+      "range": {
+        "startLine": 2743,
+        "startChar": 56,
+        "endLine": 2743,
+        "endChar": 63
+      },
+      "revId": "e887fb41e31308bc9814e16ae4e22263242c763c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_fadc6445",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2743,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-12-17T07:59:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_5828417e",
       "range": {
         "startLine": 2743,
         "startChar": 56,
