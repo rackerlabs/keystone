@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_0460e9d0",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-12-17T02:50:58Z",
+      "side": 1,
+      "message": "the group is not registered, you should create one in keystone/conf as well.\n\nERROR I hit local:\n\nERROR keystone Traceback (most recent call last):\nERROR keystone   File \"/usr/local/bin/keystone-manage\", line 10, in \u003cmodule\u003e\nERROR keystone     sys.exit(main())\nERROR keystone   File \"/opt/stack/keystone/keystone/cmd/manage.py\", line 41, in main\nERROR keystone     cli.main(argv\u003dsys.argv, developer_config_file\u003ddeveloper_config)\nERROR keystone   File \"/opt/stack/keystone/keystone/cmd/cli.py\", line 1378, in main\nERROR keystone     CONF.command.cmd_class.main()\nERROR keystone   File \"/opt/stack/keystone/keystone/cmd/cli.py\", line 498, in main\nERROR keystone     CONF.jwt_tokens.key_repository, keystone_user_id\u003dkeystone_user_id,\nERROR keystone   File \"/usr/local/lib/python3.5/dist-packages/oslo_config/cfg.py\", line 2640, in __getattr__\nERROR keystone     raise NoSuchOptError(name)\nERROR keystone oslo_config.cfg.NoSuchOptError: no such option jwt_tokens in group [DEFAULT]",
+      "range": {
+        "startLine": 503,
+        "startChar": 17,
+        "endLine": 503,
+        "endChar": 27
+      },
+      "revId": "98af1c34332b0d36574b65d277f985fded1b9b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_4474a18a",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-12-17T02:50:58Z",
+      "side": 1,
+      "message": "how about saving private and public keys into different folders like what we did for PKI. If my memory is correct, we\u0027ll support multi key paris in the future. It\u0027s good and safer for saving them separately IMO.",
+      "range": {
+        "startLine": 506,
+        "startChar": 28,
+        "endLine": 506,
+        "endChar": 42
+      },
+      "revId": "98af1c34332b0d36574b65d277f985fded1b9b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_29514033",
+        "filename": "keystone/common/jwt_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-12-17T02:50:58Z",
+      "side": 1,
+      "message": "We use ES256 in the specs. ES256 is the ECDSA using P-256 and SHA-256. So I think it should be SECP256R1",
+      "range": {
+        "startLine": 19,
+        "startChar": 45,
+        "endLine": 19,
+        "endChar": 54
+      },
+      "revId": "98af1c34332b0d36574b65d277f985fded1b9b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
