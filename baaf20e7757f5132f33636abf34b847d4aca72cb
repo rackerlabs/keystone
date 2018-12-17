@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_aca54c04",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-17T20:14:24Z",
+      "side": 1,
+      "message": "This is likely going to be tough to understand in the future. It\u0027s not really apparent as to *why* we\u0027re doing this step.\n\nI\u0027m wondering if we can leverage pre/post hooks from flask here instead. For example, we use it for making sure we always protect APIs by checking to make sure a flask-specific variable is set in the RBAC enforcer. We might be able to use a similar pattern to solve this problem, which could help use \"resume normal authentication flow\" as Colleen mentioned, up until we\u0027re about the process the response and we can raise the 401.\n\nOnly suggesting that as a possible option since it might be simpler to understand long-term unless we add some comments and tests to make sure the order of operations here doesn\u0027t change. If a future refactor changes the order of statements here, we could be back to square one.",
+      "revId": "baaf20e7757f5132f33636abf34b847d4aca72cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
