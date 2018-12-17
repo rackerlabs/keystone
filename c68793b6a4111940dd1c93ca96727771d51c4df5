@@ -52,6 +52,24 @@
       "revId": "c68793b6a4111940dd1c93ca96727771d51c4df5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_7ac93484",
+        "filename": "keystone/common/sql/contract_repo/versions/055_contract_add_domain_to_limit.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-12-17T07:50:42Z",
+      "side": 1,
+      "message": "yeah, correct. But our test run it in a way as I mentioned.\n\nexample: https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_sql_upgrade.py#L2433",
+      "parentUuid": "3f79a3b5_3769a75a",
+      "revId": "c68793b6a4111940dd1c93ca96727771d51c4df5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
