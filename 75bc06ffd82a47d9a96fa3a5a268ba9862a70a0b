@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_99075721",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2018-12-18T17:47:29Z",
+      "side": 1,
+      "message": "oh also if the issue is that there\u0027s a LIMIT being added, then yes you absolutely need an ORDER BY for that to work deterministically.",
+      "parentUuid": "3f79a3b5_f9ba0b6e",
+      "revId": "75bc06ffd82a47d9a96fa3a5a268ba9862a70a0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_7efd2c3a",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 2
