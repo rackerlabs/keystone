@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_f9ba0b6e",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2018-12-18T17:42:52Z",
+      "side": 1,
+      "message": "if User.id is the primary key column as seems very likely here, it\u0027s indexed so the performance impact of ORDER BY for less than say 10M rows is close to zero.",
+      "parentUuid": "3f79a3b5_79f83b4a",
+      "revId": "75bc06ffd82a47d9a96fa3a5a268ba9862a70a0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_7efd2c3a",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 2
