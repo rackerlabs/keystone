@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_75f11797",
+        "filename": "keystone/common/policies/identity_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-18T23:28:18Z",
+      "side": 1,
+      "message": "This should be removed.",
+      "range": {
+        "startLine": 50,
+        "startChar": 23,
+        "endLine": 50,
+        "endChar": 42
+      },
+      "revId": "6356f948cce022814a3368d3858544b67d7fe6ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
