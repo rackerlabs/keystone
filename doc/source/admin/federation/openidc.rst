@@ -26,7 +26,7 @@ To install `mod_auth_openidc` on Ubuntu, perform the following:
 
 .. code-block:: bash
 
-  $ sudo apt-get install libapache2-mod-auth-openidc
+   # apt-get install libapache2-mod-auth-openidc
 
 This module is available for other distributions (Fedora/CentOS/Red Hat) from:
 https://github.com/pingidentity/mod_auth_openidc/releases
@@ -35,32 +35,32 @@ Enable the auth_openidc module:
 
 .. code-block:: bash
 
-   $ sudo a2enmod auth_openidc
+   # a2enmod auth_openidc
 
 In the keystone vhost file, locate the virtual host entry and add the following
 entries for OpenID Connect:
 
-.. code-block:: none
+.. code-block:: apache
 
-  <VirtualHost *:5000>
+   <VirtualHost *:5000>
 
-      ...
+       ...
 
-      OIDCClaimPrefix "OIDC-"
-      OIDCResponseType "id_token"
-      OIDCScope "openid email profile"
-      OIDCProviderMetadataURL <url_of_provider_metadata>
-      OIDCClientID <openid_client_id>
-      OIDCClientSecret <openid_client_secret>
-      OIDCCryptoPassphrase openstack
-      OIDCRedirectURI https://sp.keystone.example.org/v3/OS-FEDERATION/identity_providers/<idp_id>/protocols/openid/auth
+       OIDCClaimPrefix "OIDC-"
+       OIDCResponseType "id_token"
+       OIDCScope "openid email profile"
+       OIDCProviderMetadataURL <url_of_provider_metadata>
+       OIDCClientID <openid_client_id>
+       OIDCClientSecret <openid_client_secret>
+       OIDCCryptoPassphrase openstack
+       OIDCRedirectURI https://sp.keystone.example.org/v3/OS-FEDERATION/identity_providers/<idp_id>/protocols/openid/auth
 
-      <LocationMatch /v3/OS-FEDERATION/identity_providers/.*?/protocols/openid/auth>
-        AuthType openid-connect
-        Require valid-user
-        LogLevel debug
-      </LocationMatch>
-  </VirtualHost>
+       <LocationMatch /v3/OS-FEDERATION/identity_providers/.*?/protocols/openid/auth>
+         AuthType openid-connect
+         Require valid-user
+         LogLevel debug
+       </LocationMatch>
+   </VirtualHost>
 
 Note an example of an `OIDCProviderMetadataURL` instance is: https://accounts.google.com/.well-known/openid-configuration
 If not using `OIDCProviderMetadataURL`, then the following attributes
@@ -77,7 +77,7 @@ Once you are done, restart your Apache daemon:
 
 .. code-block:: bash
 
-    $ sudo service apache2 restart
+   # service apache2 restart
 
 Tips
 ----
