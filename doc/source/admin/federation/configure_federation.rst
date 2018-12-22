@@ -371,7 +371,9 @@ Identity Provider resource. The key name is decided by the Service Provider
 choice:
 
 * For ``mod_shib``: use ``Shib-Identity-Provider``
-* For ``mod_auth_mellon``: use ``MELLON_IDP``
+* For ``mod_auth_mellon``: the attribute name is configured with the
+  ``MellonIdP`` parameter in the VirtualHost configuration, if set to e.g.
+  ``IDP`` then use ``MELLON_IDP``
 * For ``mod_auth_openidc``: use ``HTTP_OIDC_ISS``
 
 It is recommended that this option be set on a per-protocol basis by creating a
