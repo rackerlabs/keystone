@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Catch all exceptions at the end of the nova-manage commands and print
+    traceback. It makes unexpected exceptions to be printed for debugging.
