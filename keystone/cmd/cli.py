@@ -18,6 +18,7 @@ from __future__ import print_function
 import datetime
 import os
 import sys
+import traceback
 import uuid
 
 import migrate
@@ -1346,4 +1347,8 @@ def main(argv=None, developer_config_file=None):
     if not CONF.default_config_files and not user_supplied_config_file:
         LOG.warning('Config file not found, using default configs.')
     keystone.conf.setup_logging()
-    CONF.command.cmd_class.main()
+    try:
+        CONF.command.cmd_class.main()
+    except Exception:
+        print(_("An error has occurred:\n%s") % traceback.format_exc())
+        return 1
