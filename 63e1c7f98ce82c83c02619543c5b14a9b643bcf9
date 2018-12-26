@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f769fc5_a4d5b9bb",
+        "filename": "keystone/api/_shared/saml.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-12-26T08:48:16Z",
+      "side": 1,
+      "message": "I suppose the group already contains domain_id and name, why get it again here?",
+      "range": {
+        "startLine": 63,
+        "startChar": 58,
+        "endLine": 63,
+        "endChar": 63
+      },
+      "revId": "63e1c7f98ce82c83c02619543c5b14a9b643bcf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f769fc5_ce05747c",
+        "filename": "keystone/api/_shared/saml.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-12-26T08:48:16Z",
+      "side": 1,
+      "message": "use json.dumps instead.",
+      "range": {
+        "startLine": 68,
+        "startChar": 41,
+        "endLine": 68,
+        "endChar": 57
+      },
+      "revId": "63e1c7f98ce82c83c02619543c5b14a9b643bcf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f769fc5_c478f5f9",
+        "filename": "keystone/federation/idp.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-12-26T08:48:16Z",
+      "side": 1,
+      "message": "the level should be the same with L197",
+      "range": {
+        "startLine": 200,
+        "startChar": 16,
+        "endLine": 200,
+        "endChar": 19
+      },
+      "revId": "63e1c7f98ce82c83c02619543c5b14a9b643bcf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f769fc5_648561ad",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-12-26T08:48:16Z",
+      "side": 1,
+      "message": "assertion_data is a dict, it can\u0027t be split obviously. So the related unittest should be added as well.",
+      "range": {
+        "startLine": 517,
+        "startChar": 20,
+        "endLine": 517,
+        "endChar": 34
+      },
+      "revId": "63e1c7f98ce82c83c02619543c5b14a9b643bcf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f769fc5_eea5d0b6",
+        "filename": "keystone/tests/unit/saml2/signed_saml2_assertion.xml",
+        "patchSetId": 14
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-12-26T08:48:16Z",
+      "side": 1,
+      "message": "L70 should be in the same level as L69",
+      "range": {
+        "startLine": 70,
+        "startChar": 6,
+        "endLine": 70,
+        "endChar": 8
+      },
+      "revId": "63e1c7f98ce82c83c02619543c5b14a9b643bcf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f769fc5_6e91c052",
+        "filename": "releasenotes/notes/bug-1641625-fe463874dc5edb10.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2018-12-26T08:48:16Z",
+      "side": 1,
+      "message": "again, I don\u0027t think this change will impact keystone upgrade.",
+      "revId": "63e1c7f98ce82c83c02619543c5b14a9b643bcf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
