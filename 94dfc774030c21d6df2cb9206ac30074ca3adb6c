@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f769fc5_47738781",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-12-26T09:57:23Z",
+      "side": 1,
+      "message": "Can we add little more brief for mappings acting same for reader as well as members?",
+      "revId": "94dfc774030c21d6df2cb9206ac30074ca3adb6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
