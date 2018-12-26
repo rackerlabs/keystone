@@ -396,31 +396,28 @@ class FernetSetup(BasePermissionsSetup):
     name = 'fernet_setup'
 
     @classmethod
-    def main(cls):
+    def initialize_fernet_key_repository(cls, keystone_user_id,
+                                         keystone_group_id, config_group=None):
         futils = fernet_utils.FernetUtils(
             CONF.fernet_tokens.key_repository,
             CONF.fernet_tokens.max_active_keys,
-            'fernet_tokens'
+            config_group
         )
-
-        keystone_user_id, keystone_group_id = cls.get_user_group()
         futils.create_key_directory(keystone_user_id, keystone_group_id)
         if futils.validate_key_repository(requires_write=True):
             futils.initialize_key_repository(
                 keystone_user_id, keystone_group_id)
 
+    @classmethod
+    def main(cls):
+        keystone_user_id, keystone_group_id = cls.get_user_group()
+        FernetSetup.initialize_fernet_key_repository(keystone_user_id, keystone_group_id,
+                                                     'fernet_tokens')
+
         if (os.path.abspath(CONF.fernet_tokens.key_repository) !=
                 os.path.abspath(CONF.fernet_receipts.key_repository)):
-            futils = fernet_utils.FernetUtils(
-                CONF.fernet_receipts.key_repository,
-                CONF.fernet_receipts.max_active_keys,
-                'fernet_receipts'
-            )
-
-            futils.create_key_directory(keystone_user_id, keystone_group_id)
-            if futils.validate_key_repository(requires_write=True):
-                futils.initialize_key_repository(
-                    keystone_user_id, keystone_group_id)
+            FernetSetup.initialize_fernet_key_repository(keystone_user_id, keystone_group_id,
+                                                         'fernet_receipts')
         elif(CONF.fernet_tokens.max_active_keys !=
                 CONF.fernet_receipts.max_active_keys):
             # WARNING(adriant): If the directories are the same,
