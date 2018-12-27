@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f769fc5_ac703374",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-27T21:49:25Z",
+      "side": 1,
+      "message": "For context, we can always reference https://review.openstack.org/#/c/615391/ here so that it\u0027s easier to trace.\n\nLooks like we need to clean something up in the setup or test itself in order to get it passing, but I think we can do that in parallel with correcting the docs.",
+      "range": {
+        "startLine": 9,
+        "startChar": 38,
+        "endLine": 10,
+        "endChar": 32
+      },
+      "revId": "67ecc72a0541d06f02a7cf1e6c5fd88a30756ac2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
