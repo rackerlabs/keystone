@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f769fc5_4c02bfb6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-27T21:57:22Z",
+      "side": 1,
+      "message": "keystone*",
+      "range": {
+        "startLine": 13,
+        "startChar": 38,
+        "endLine": 13,
+        "endChar": 42
+      },
+      "revId": "6638dc786d3686ac88e550f32bf0321d3c44b901",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f769fc5_ec138b0c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1352,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2018-12-27T21:57:22Z",
+      "side": 1,
+      "message": "If we know the case we\u0027re dealing with is specific to sqlalchemy, then it would be nice to try target that exception specifically. Blanket try/excepts like this hard to debug since they are so broad in nature due to all exceptions subclassing Exception in some way.\n\nIs there a specific timeout exception we can use from sqlalchemy instead?",
+      "range": {
+        "startLine": 1352,
+        "startChar": 4,
+        "endLine": 1352,
+        "endChar": 21
+      },
+      "revId": "6638dc786d3686ac88e550f32bf0321d3c44b901",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
