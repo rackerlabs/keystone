@@ -21,6 +21,7 @@ from keystone.common import cache
 from keystone.common import provider_api
 from keystone import exception
 from keystone.i18n import _
+from keystone.token import token_formatters
 
 LOG = log.getLogger(__name__)
 PROVIDERS = provider_api.ProviderAPIs
@@ -563,6 +564,30 @@ class TokenModel(object):
 
         self.id = token_id
         self.issued_at = issued_at
+
+    @property
+    def payload_class(self):
+        if self.oauth_scoped:
+            return token_formatters.OauthScopedPayload
+        elif self.trust_scoped:
+            return token_formatters.TrustScopedPayload
+        elif self.is_federated:
+            if self.project_scoped:
+                return token_formatters.FederatedProjectScopedPayload
+            elif self.domain_scoped:
+                return token_formatters.FederatedDomainScopedPayload
+            elif self.unscoped:
+                return token_formatters.FederatedUnscopedPayload
+        elif self.application_credential_id:
+            return token_formatters.ApplicationCredentialScopedPayload
+        elif self.project_scoped:
+            return token_formatters.ProjectScopedPayload
+        elif self.domain_scoped:
+            return token_formatters.DomainScopedPayload
+        elif self.system_scoped:
+            return token_formatters.SystemScopedPayload
+        else:
+            return token_formatters.UnscopedPayload
 
 
 class _TokenModelHandler(object):
