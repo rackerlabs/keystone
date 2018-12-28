@@ -49,6 +49,7 @@ class Provider(base.Provider):
             token.user_id,
             token.expires_at,
             token.audit_ids,
+            token.payload_class,
             methods=token.methods,
             system=token.system,
             domain_id=token.domain_id,
