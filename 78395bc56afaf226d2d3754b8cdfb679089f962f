@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f769fc5_f67a7586",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2018-12-28T06:37:24Z",
+      "side": 1,
+      "message": "Can remove this comment too.",
+      "revId": "78395bc56afaf226d2d3754b8cdfb679089f962f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
