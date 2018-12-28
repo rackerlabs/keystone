@@ -493,18 +493,12 @@ class TokenSetup(BasePermissionsSetup):
 
     @classmethod
     def main(cls):
-        futils = fernet_utils.FernetUtils(
-            # TODO(gagehugo) Change this to CONF.token
-            CONF.fernet_tokens.key_repository,
-            CONF.fernet_tokens.max_active_keys,
-            'fernet_tokens'
+        LOG.warning(
+            'This command is deprecated and no longer needed with the '
+            'token formats. It will be removed in Train. It is recommended'
+            'that you remove usage of this command or use fernet_setup '
+            'instead.'
         )
-
-        keystone_user_id, keystone_group_id = cls.get_user_group()
-        futils.create_key_directory(keystone_user_id, keystone_group_id)
-        if futils.validate_key_repository(requires_write=True):
-            futils.initialize_key_repository(
-                keystone_user_id, keystone_group_id)
 
 
 class TokenRotate(BasePermissionsSetup):
@@ -529,16 +523,12 @@ class TokenRotate(BasePermissionsSetup):
 
     @classmethod
     def main(cls):
-        futils = fernet_utils.FernetUtils(
-            # TODO(gagehugo) Change this to CONF.token
-            CONF.fernet_tokens.key_repository,
-            CONF.fernet_tokens.max_active_keys,
-            'fernet_tokens'
+        LOG.warning(
+            'This command is deprecated and no longer needed with the '
+            'token formats. It will be removed in Train. It is recommended'
+            'that you remove usage of this command or use fernet_rotate '
+            'instead.'
         )
-
-        keystone_user_id, keystone_group_id = cls.get_user_group()
-        if futils.validate_key_repository(requires_write=True):
-            futils.rotate_keys(keystone_user_id, keystone_group_id)
 
 
 class ReceiptSetup(BasePermissionsSetup):
