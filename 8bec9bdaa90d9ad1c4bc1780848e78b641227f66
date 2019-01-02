@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f769fc5_3e0e6d32",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1354,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-02T10:09:19Z",
+      "side": 1,
+      "message": "Any uncaught exception will already emit a traceback to the user, example: http://paste.openstack.org/show/739812/\n\nI feel that we should not actually be emitting tracebacks to the user, rather we should catch exceptions where they arise - not as a catch-all in this main function - and emit appropriate and helpful error messages, not tracebacks.",
+      "revId": "8bec9bdaa90d9ad1c4bc1780848e78b641227f66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f769fc5_9b31d30e",
+        "filename": "releasenotes/notes/bug-1809779-f400f369cf5e2584.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-02T10:09:19Z",
+      "side": 1,
+      "message": "keystone-manage",
+      "range": {
+        "startLine": 4,
+        "startChar": 43,
+        "endLine": 4,
+        "endChar": 54
+      },
+      "revId": "8bec9bdaa90d9ad1c4bc1780848e78b641227f66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
