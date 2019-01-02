@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1f769fc5_4104b315",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 26970
+      },
+      "writtenOn": "2019-01-02T01:36:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f769fc5_4c02bfb6",
+      "range": {
+        "startLine": 13,
+        "startChar": 38,
+        "endLine": 13,
+        "endChar": 42
+      },
+      "revId": "6638dc786d3686ac88e550f32bf0321d3c44b901",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f769fc5_ec138b0c",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-12-27T21:57:22Z",
       "side": 1,
       "message": "If we know the case we\u0027re dealing with is specific to sqlalchemy, then it would be nice to try target that exception specifically. Blanket try/excepts like this hard to debug since they are so broad in nature due to all exceptions subclassing Exception in some way.\n\nIs there a specific timeout exception we can use from sqlalchemy instead?",
+      "range": {
+        "startLine": 1352,
+        "startChar": 4,
+        "endLine": 1352,
+        "endChar": 21
+      },
+      "revId": "6638dc786d3686ac88e550f32bf0321d3c44b901",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f769fc5_a1126757",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1352,
+      "author": {
+        "id": 26970
+      },
+      "writtenOn": "2019-01-02T01:36:44Z",
+      "side": 1,
+      "message": "It\u0027s ImportError when operator use pymysql for the DB connection.\n\n  # keystone-manage --debug db_version\nTraceback (most recent call last):\n  File \"/opt/openstack/src/keystone/keystone/cmd/manage.py\", line 45, in main\n    cli.main(argv\u003dsys.argv, config_files\u003dconfig_files)\n  File \"/opt/openstack/src/keystone/keystone/cmd/cli.py\", line 1312, in main\n    CONF.command.cmd_class.main()\n  File \"/opt/openstack/src/keystone/keystone/cmd/cli.py\", line 489, in main\n    print(upgrades.get_db_version())\n  File \"/opt/openstack/src/keystone/keystone/common/sql/upgrades.py\", line 257, in get_db_version\n    with sql.session_for_read() as session:\n  File \"/opt/pyenv/versions/2.7.12/lib/python2.7/contextlib.py\", line 17, in __enter__\n    return self.gen.next()\n  File \"/opt/openstack/lib/python2.7/site-packages/oslo_db/sqlalchemy/enginefacade.py\", line 944, in _transaction_scope\n    allow_async\u003dself._allow_async) as resource:\n  File \"/opt/pyenv/versions/2.7.12/lib/python2.7/contextlib.py\", line 17, in __enter__\n    return self.gen.next()\n  File \"/opt/openstack/lib/python2.7/site-packages/oslo_db/sqlalchemy/enginefacade.py\", line 558, in _session\n    bind\u003dself.connection, mode\u003dself.mode)\n  File \"/opt/openstack/lib/python2.7/site-packages/oslo_db/sqlalchemy/enginefacade.py\", line 317, in _create_session\n    self._start()\n  File \"/opt/openstack/lib/python2.7/site-packages/oslo_db/sqlalchemy/enginefacade.py\", line 403, in _start\n    engine_args, maker_args)\n  File \"/opt/openstack/lib/python2.7/site-packages/oslo_db/sqlalchemy/enginefacade.py\", line 427, in _setup_for_connection\n    sql_connection\u003dsql_connection, **engine_kwargs)\n  File \"/opt/openstack/lib/python2.7/site-packages/oslo_db/sqlalchemy/engines.py\", line 134, in create_engine\n    engine \u003d sqlalchemy.create_engine(url, **engine_args)\n  File \"/opt/openstack/lib/python2.7/site-packages/sqlalchemy/engine/__init__.py\", line 386, in create_engine\n    return strategy.create(*args, **kwargs)\n  File \"/opt/openstack/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py\", line 75, in create\n    dbapi \u003d dialect_cls.dbapi(**dbapi_args)\n  File \"/opt/openstack/lib/python2.7/site-packages/sqlalchemy/dialects/mysql/pymysql.py\", line 49, in dbapi\n    return __import__(\u0027pymysql\u0027)\n  ImportError: No module named pymsql\n\n\nI agree that the empty exception should be avoided, but I\u0027m not sure where I can add the debugging message. Currently, It just exited without any message and it makes confusing for me. I wonder how other project deal with it, and nova made empty exception check like   this. \n\nMay I add ImportError instead of Exception?",
+      "parentUuid": "1f769fc5_ec138b0c",
       "range": {
         "startLine": 1352,
         "startChar": 4,
