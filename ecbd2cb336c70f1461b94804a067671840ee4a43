@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffd0ebdf_54982e69",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-03T21:28:38Z",
+      "side": 1,
+      "message": "Isn\u0027t keystone the Service Provider in this segment?",
+      "range": {
+        "startLine": 367,
+        "startChar": 50,
+        "endLine": 367,
+        "endChar": 66
+      },
+      "revId": "ecbd2cb336c70f1461b94804a067671840ee4a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffd0ebdf_94dc5619",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-03T21:28:38Z",
+      "side": 1,
+      "message": "For the sake of the example, are these supposed to be reversed?\n\n  https://horizon.acme.com\n  https://horizon.beta.com",
+      "range": {
+        "startLine": 407,
+        "startChar": 29,
+        "endLine": 407,
+        "endChar": 41
+      },
+      "revId": "ecbd2cb336c70f1461b94804a067671840ee4a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffd0ebdf_f4d602f2",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-03T21:28:38Z",
+      "side": 1,
+      "message": "Same comment here as in previous patches.",
+      "range": {
+        "startLine": 492,
+        "startChar": 5,
+        "endLine": 492,
+        "endChar": 14
+      },
+      "revId": "ecbd2cb336c70f1461b94804a067671840ee4a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
