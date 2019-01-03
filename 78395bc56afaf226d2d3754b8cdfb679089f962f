@@ -16,6 +16,24 @@
       "revId": "78395bc56afaf226d2d3754b8cdfb679089f962f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffd0ebdf_ccc10331",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-03T09:39:20Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "1f769fc5_f67a7586",
+      "revId": "78395bc56afaf226d2d3754b8cdfb679089f962f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
