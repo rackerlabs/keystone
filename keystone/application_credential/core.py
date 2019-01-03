@@ -124,6 +124,9 @@ class Manager(manager.Manager):
         :returns: a new application credential
         """
         application_credential = application_credential.copy()
+        # FIXME(cmurphy) WIP
+        if 'capabilities' in application_credential:
+            application_credential.pop('capabilities')
         user_id = application_credential['user_id']
         project_id = application_credential['project_id']
         roles = application_credential.pop('roles', [])
