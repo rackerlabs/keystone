@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffd0ebdf_8912ffb0",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-03T20:42:45Z",
+      "side": 1,
+      "message": "++",
+      "revId": "40e0f5d976d6b5172a408bdd548937e24361db35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffd0ebdf_c97d67e8",
+        "filename": "doc/source/admin/federation/mellon.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-03T20:42:45Z",
+      "side": 1,
+      "message": "Is this supposed to be org?",
+      "range": {
+        "startLine": 113,
+        "startChar": 28,
+        "endLine": 113,
+        "endChar": 31
+      },
+      "revId": "40e0f5d976d6b5172a408bdd548937e24361db35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
