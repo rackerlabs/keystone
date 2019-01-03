@@ -35,7 +35,8 @@ class ApplicationCredentialTestCase(test_v3.RestfulTestCase):
         self.config_fixture.config(group='auth',
                                    methods='password,application_credential')
 
-    def _app_cred_body(self, roles=None, name=None, expires=None, secret=None):
+    def _app_cred_body(self, roles=None, name=None, expires=None, secret=None,
+                       capabilities=None):
         name = name or uuid.uuid4().hex
         description = 'Credential for backups'
         app_cred_data = {
@@ -48,6 +49,8 @@ class ApplicationCredentialTestCase(test_v3.RestfulTestCase):
             app_cred_data['expires_at'] = expires
         if secret:
             app_cred_data['secret'] = secret
+        if capabilities is not None:
+            app_cred_data['capabilities'] = capabilities
         return {'application_credential': app_cred_data}
 
     def test_create_application_credential(self):
@@ -158,6 +161,23 @@ class ApplicationCredentialTestCase(test_v3.RestfulTestCase):
             body=app_cred_body_2,
             token=token_data.headers['x-subject-token'],
             expected_status=http_client.CREATED)
+
+    def test_create_application_credential_with_capabilities(self):
+        roles = [{'id': self.role_id}]
+        capabilities = [
+            {
+                'request_path': '/v2.1/servers',
+                # 'substitutions': {},
+                'request_method': 'POST',
+                'service': uuid.uuid4().hex,
+            }
+        ]
+        app_cred_body = self._app_cred_body(roles=roles,
+                                            capabilities=capabilities)
+        self.post('/users/%s/application_credentials' % self.user_id,
+                  body=app_cred_body,
+                  expected_status=http_client.CREATED)
+        # TODO(cmurphy) validate resp
 
     def test_list_application_credentials(self):
         resp = self.get('/users/%s/application_credentials' % self.user_id,
