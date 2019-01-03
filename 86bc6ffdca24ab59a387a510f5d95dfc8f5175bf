@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffd0ebdf_f4bb620b",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-03T21:20:29Z",
+      "side": 1,
+      "message": "++ keystone and ultimately the rest of OpenStack",
+      "range": {
+        "startLine": 138,
+        "startChar": 38,
+        "endLine": 138,
+        "endChar": 46
+      },
+      "revId": "86bc6ffdca24ab59a387a510f5d95dfc8f5175bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffd0ebdf_5427ce65",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-03T21:20:29Z",
+      "side": 1,
+      "message": "Nice - I left a comment about this in a different patch set. You\u0027ve addressed it here, thanks!",
+      "revId": "86bc6ffdca24ab59a387a510f5d95dfc8f5175bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffd0ebdf_54dcae45",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-03T21:20:29Z",
+      "side": 1,
+      "message": "Same comment here about using service.\n\nI\u0027m indifferent to which one we use, only mentioning this from a consistency perspective.\n\nhttps://docs.openstack.org/keystone/latest/install/keystone-install-ubuntu.html#finalize-the-installation",
+      "range": {
+        "startLine": 292,
+        "startChar": 5,
+        "endLine": 292,
+        "endChar": 14
+      },
+      "revId": "86bc6ffdca24ab59a387a510f5d95dfc8f5175bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
