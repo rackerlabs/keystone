@@ -107,6 +107,23 @@ class ApplicationCredentialTests(object):
                           self.app_cred_api.create_application_credential,
                           app_cred)
 
+    def test_create_application_credential_with_capabilities(self):
+        app_cred = self._new_app_cred_data(self.user_foo['id'],
+                                           project_id=self.tenant_bar['id'])
+        app_cred['capabilities'] = [{
+            'service': uuid.uuid4().hex,
+            'request_path': uuid.uuid4().hex,
+            'request_method': uuid.uuid4().hex[16:]
+        }]
+        resp = self.app_cred_api.create_application_credential(app_cred)
+        resp.pop('roles')
+        resp_capabilities = resp.pop('capabilities')
+        app_cred.pop('roles')
+        orig_capabilities = app_cred.pop('capabilities')
+        self.assertDictEqual(app_cred, resp)
+        for i, cap in enumerate(resp_capabilities):
+            self.assertDictEqual(orig_capabilities[i], cap)
+
     def test_get_application_credential(self):
         app_cred = self._new_app_cred_data(self.user_foo['id'],
                                            project_id=self.project_bar['id'])
