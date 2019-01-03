@@ -503,7 +503,8 @@ class UserAppCredListCreateResource(ks_flask.ResourceBase):
         # secret is only exposed after create, it is not stored
         'secret',
         'links',
-        'unrestricted'
+        'unrestricted',
+        'capabilities'
     ])
 
     @staticmethod
