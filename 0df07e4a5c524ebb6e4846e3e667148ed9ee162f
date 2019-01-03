@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffd0ebdf_ac4effbe",
+        "filename": "releasenotes/notes/bug-1804522-00df902cd2d74ee3.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-03T09:49:14Z",
+      "side": 1,
+      "message": "I think it would be good to enumerate which policies specifically have been changed, unless there\u0027s a better way to discover that (upgrading and then reading the logs is not a good way to find out which policies have been changed)",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 18,
+        "endChar": 24
+      },
+      "revId": "0df07e4a5c524ebb6e4846e3e667148ed9ee162f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
