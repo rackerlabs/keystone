@@ -114,6 +114,24 @@ class Manager(manager.Manager):
             app_cred_ref['roles'])
         return app_cred_ref
 
+    def _validate_capabilities(self, capabilities, allow_chained):
+        for capability in capabilities:
+            access_rules = PROVIDERS.access_rule_api.list_access_rules()
+            valid = False
+            for rule in access_rules:
+                if ((capability['service'] == rule['service'] or
+                     rule['service'] == 'any') and
+                    # FIXME(cmurphy) do proper string replacement and matching
+                    (capability['request_path'] == rule['path_format'] or
+                        rule['path_format'] == '{**}') and
+                    (capability['request_method'] == rule['method'] or
+                        rule['method'] == 'any') and
+                        (allow_chained == rule['allow_chained'])):
+                    valid = True
+                    break
+            if not valid:
+                raise exception.CapabilityNotAllowed
+
     def create_application_credential(self, application_credential,
                                       initiator=None):
         """Create a new application credential.
@@ -127,12 +145,16 @@ class Manager(manager.Manager):
         user_id = application_credential['user_id']
         project_id = application_credential['project_id']
         roles = application_credential.pop('roles', [])
+        capabilities = application_credential.pop('capabilities', None)
 
         self._assert_limit_not_exceeded(user_id)
         self._require_user_has_role_in_project(roles, user_id, project_id)
+        if capabilities:  # None or []
+            allow_chained = application_credential.get('allow_chained', False)
+            self._validate_capabilities(capabilities, allow_chained)
         unhashed_secret = application_credential['secret']
         ref = self.driver.create_application_credential(
-            application_credential, roles)
+            application_credential, roles, capabilities)
         ref['secret'] = unhashed_secret
         ref = self._process_app_cred(ref)
         notifications.Audit.created(
