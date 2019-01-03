@@ -29,6 +29,30 @@ _role_properties = {
     }
 }
 
+_capability_properties = {
+    'type': 'array',
+    'items': {
+        'type': 'object',
+        'properties': {
+            'path': {
+                'type': 'string',
+                'minLength': 0,
+                'maxLength': 225,
+                'pattern': '^\/.*'
+            },
+            'substitutions': {
+                'type': 'object'
+            },
+            'method': {
+                'type': 'string',
+                'pattern': '^(POST|GET|PATCH|PUT|DELETE)$'
+            },
+            'request_format_id': parameter_types.id_string,
+        },
+        'additionalProperties': False
+    }
+}
+
 _application_credential_properties = {
     'name': parameter_types.name,
     'description': validation.nullable(parameter_types.description),
@@ -39,7 +63,8 @@ _application_credential_properties = {
         'type': ['null', 'string']
     },
     'roles': _role_properties,
-    'unrestricted': parameter_types.boolean
+    'unrestricted': parameter_types.boolean,
+    'capabilities': _capability_properties
 }
 
 application_credential_create = {
