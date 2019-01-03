@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffd0ebdf_143b86d1",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-03T21:06:52Z",
+      "side": 1,
+      "message": "We use [0] in other parts of the guide. Do we want to maintain that for consistency?\n\n  # service apache2 restart\n\n[0] https://docs.openstack.org/keystone/latest/install/keystone-install-ubuntu.html#finalize-the-installation",
+      "range": {
+        "startLine": 532,
+        "startChar": 5,
+        "endLine": 532,
+        "endChar": 14
+      },
+      "revId": "ddb7083aae8aa2cad0f9f344247cecf20440dbc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
