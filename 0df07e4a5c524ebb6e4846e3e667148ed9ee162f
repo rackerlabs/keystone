@@ -22,6 +22,30 @@
       "revId": "0df07e4a5c524ebb6e4846e3e667148ed9ee162f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffd0ebdf_0821304e",
+        "filename": "releasenotes/notes/bug-1804522-00df902cd2d74ee3.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-03T15:40:22Z",
+      "side": 1,
+      "message": "You\u0027ve made this comment on a few other patches and I thought I addressed them, but I missed a few.\n\nWill fix. Thanks for the review.",
+      "parentUuid": "ffd0ebdf_ac4effbe",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 18,
+        "endChar": 24
+      },
+      "revId": "0df07e4a5c524ebb6e4846e3e667148ed9ee162f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
