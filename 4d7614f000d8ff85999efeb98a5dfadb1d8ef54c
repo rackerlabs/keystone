@@ -22,6 +22,53 @@
       "revId": "4d7614f000d8ff85999efeb98a5dfadb1d8ef54c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffd0ebdf_1a972f93",
+        "filename": "doc/source/admin/federation/openidc.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2019-01-03T22:51:06Z",
+      "side": 1,
+      "message": "Same",
+      "parentUuid": "ffd0ebdf_94ef7686",
+      "range": {
+        "startLine": 18,
+        "startChar": 16,
+        "endLine": 18,
+        "endChar": 55
+      },
+      "revId": "4d7614f000d8ff85999efeb98a5dfadb1d8ef54c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffd0ebdf_7a82fb51",
+        "filename": "doc/source/admin/federation/openidc.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2019-01-03T22:51:06Z",
+      "side": 1,
+      "message": "I\u0027m guessing this needs to be \"#keystone-as-a-service-provider-sp\"",
+      "range": {
+        "startLine": 24,
+        "startChar": 42,
+        "endLine": 24,
+        "endChar": 56
+      },
+      "revId": "4d7614f000d8ff85999efeb98a5dfadb1d8ef54c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
