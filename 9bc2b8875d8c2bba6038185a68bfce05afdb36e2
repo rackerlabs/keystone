@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffd0ebdf_4952d769",
+        "filename": "doc/source/admin/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 587,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-03T20:49:30Z",
+      "side": 1,
+      "message": "Do we care about these examples? Or should we try and generalize this a bit more in a separate patch?",
+      "range": {
+        "startLine": 587,
+        "startChar": 36,
+        "endLine": 587,
+        "endChar": 44
+      },
+      "revId": "9bc2b8875d8c2bba6038185a68bfce05afdb36e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffd0ebdf_e94e2bc0",
+        "filename": "doc/source/admin/federation/mellon.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-03T20:49:30Z",
+      "side": 1,
+      "message": "Nice... TIL",
+      "range": {
+        "startLine": 44,
+        "startChar": 16,
+        "endLine": 44,
+        "endChar": 22
+      },
+      "revId": "9bc2b8875d8c2bba6038185a68bfce05afdb36e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
