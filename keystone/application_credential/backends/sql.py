@@ -122,7 +122,8 @@ class ApplicationCredential(base.ApplicationCredentialDriverBase):
         app_cred_ref['secret_hash'] = hashed_secret
 
     @sql.handle_conflicts(conflict_type='application_credential')
-    def create_application_credential(self, application_credential, roles):
+    def create_application_credential(self, application_credential, roles,
+                                      capabilities):
         app_cred = application_credential.copy()
         self._hash_secret(app_cred)
         with sql.session_for_write() as session:
