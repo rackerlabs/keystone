@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffd0ebdf_e9aaab17",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-03T20:54:41Z",
+      "side": 1,
+      "message": "This piece is important, but it might reinforce the idea that you have to run Apache in order to setup identity federation in OpenStack. I\u0027ve heard others have been able to do it with other web servers, but I wonder if we want to elude to that here?",
+      "revId": "bc202f70433f435fc335bf0ddf460d89df55350a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
