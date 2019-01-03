@@ -545,6 +545,11 @@ class ApplicationCredentialNotFound(NotFound):
                        "%(application_credential_id)s.")
 
 
+class AllowedRequestNotPermitted(ValidationError):
+    message_format = _("The operator has not application credentials to make "
+                       "requests with that format: %(request_format_id)s.")
+
+
 class Conflict(Error):
     message_format = _("Conflict occurred attempting to store %(type)s -"
                        " %(details)s.")
