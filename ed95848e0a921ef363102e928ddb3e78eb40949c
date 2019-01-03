@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffd0ebdf_5434ae4a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-03T21:32:04Z",
+      "side": 1,
+      "message": "Aha - I\u0027ve been littering comments about this through the entire string of patches you have up.\n\nThis works for me, but we should update the installation guide as well since I think that\u0027s using `service`.",
+      "range": {
+        "startLine": 11,
+        "startChar": 25,
+        "endLine": 11,
+        "endChar": 34
+      },
+      "revId": "ed95848e0a921ef363102e928ddb3e78eb40949c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
