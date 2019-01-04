@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ffd0ebdf_3b279215",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-04T09:02:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffd0ebdf_a94b4385",
+      "range": {
+        "startLine": 340,
+        "startChar": 36,
+        "endLine": 341,
+        "endChar": 26
+      },
+      "revId": "b17a7fb80511eabec0bfc960e1f1ede3a109d1ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffd0ebdf_69455b70",
         "filename": "doc/source/admin/federation/configure_federation.rst",
         "patchSetId": 2
@@ -53,6 +77,24 @@
       "writtenOn": "2019-01-03T21:03:30Z",
       "side": 1,
       "message": "I\u0027m not sure I understand this bit. Is it specific to federated users?\n\nhttps://pasted.tech/pastes/809c5a9543c7da97a3b1d04c8f3f4e130ba3bad3.raw",
+      "revId": "b17a7fb80511eabec0bfc960e1f1ede3a109d1ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffd0ebdf_fb758afb",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-04T09:02:30Z",
+      "side": 1,
+      "message": "I don\u0027t think a non-admin user can use that command to list their own assignments? The CLI exposes GET /v3/OS-FEDERATION/projects and GET /v3/OS-FEDERATION/domains, there\u0027s no such equivalent for system assignments and I don\u0027t think we ever converted the CLI to use the regular /v3/auth/{projects,domains,system}",
+      "parentUuid": "ffd0ebdf_893f5fd5",
       "revId": "b17a7fb80511eabec0bfc960e1f1ede3a109d1ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
