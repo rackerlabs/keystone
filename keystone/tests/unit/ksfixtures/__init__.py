@@ -11,6 +11,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from keystone.tests.unit.ksfixtures.access_rules import AccessRules  # noqa
 from keystone.tests.unit.ksfixtures.auth_plugins import ConfigAuthPlugins  # noqa
 from keystone.tests.unit.ksfixtures.backendloader import BackendLoader  # noqa
 from keystone.tests.unit.ksfixtures.cache import Cache  # noqa
