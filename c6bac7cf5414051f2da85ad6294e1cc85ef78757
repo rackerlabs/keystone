@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffd0ebdf_d118a5d4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-04T10:51:16Z",
+      "side": 1,
+      "message": "Technically this is not just adding tests, I would prefer this was clear that this was adding \u0027domain\u0027 as a valid scope since that\u0027s quite a significant change.",
+      "revId": "c6bac7cf5414051f2da85ad6294e1cc85ef78757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
