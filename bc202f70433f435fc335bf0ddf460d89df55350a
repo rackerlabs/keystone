@@ -16,6 +16,24 @@
       "revId": "bc202f70433f435fc335bf0ddf460d89df55350a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffd0ebdf_3b3eb229",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-04T08:54:40Z",
+      "side": 1,
+      "message": "Addressed in https://review.openstack.org/#/c/627972/2/doc/source/admin/federation/configure_federation.rst@237",
+      "parentUuid": "ffd0ebdf_e9aaab17",
+      "revId": "bc202f70433f435fc335bf0ddf460d89df55350a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
