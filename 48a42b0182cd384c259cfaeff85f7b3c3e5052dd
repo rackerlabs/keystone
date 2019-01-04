@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffd0ebdf_ecef0ee7",
+        "filename": "releasenotes/notes/bug-1804522-00df902cd2d74ee3.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-04T11:44:09Z",
+      "side": 1,
+      "message": "This is kind of unclear, it\u0027s not that the rules listed below were deprecated but their old check strings. This still doesn\u0027t give a picture of what exactly has changed so I as an operator can\u0027t know without looking at the code whether the new defaults are satisfactory to me or if I should update my customizations.",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 18,
+        "endChar": 19
+      },
+      "revId": "48a42b0182cd384c259cfaeff85f7b3c3e5052dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
