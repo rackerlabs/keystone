@@ -70,6 +70,30 @@
       "revId": "48a42b0182cd384c259cfaeff85f7b3c3e5052dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffd0ebdf_48b87f29",
+        "filename": "releasenotes/notes/bug-1804522-00df902cd2d74ee3.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-04T17:02:57Z",
+      "side": 1,
+      "message": "Sounds good. Including the old and new check strings might get a bit long, but I\u0027ll play around with it and see how it renders.",
+      "parentUuid": "ffd0ebdf_74276414",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 18,
+        "endChar": 19
+      },
+      "revId": "48a42b0182cd384c259cfaeff85f7b3c3e5052dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
