@@ -1,0 +1,1111 @@
+{
+    "identity": [
+        {
+            "request_path": "/v3/users/*/application_credentials",
+            "request_method": "POST",
+            "allow_chained": false,
+            "context_keys": ["user_id"]
+        },
+        {
+            "request_path": "/v3/users/*/application_credentials",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/users/*/application_credentials/*",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/users/*/application_credentials/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/auth/catalog",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/auth/projects",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/auth/domains",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/auth/system",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/credentials",
+            "request_method": "POST",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/credentials",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/credentials/*",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/credentials/*",
+            "request_method": "PATCH",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/credentials/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/config/default",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/config/*/default",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/config/*/*/default",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/*/config/*/*",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/*/config/*/*",
+            "request_method": "PATCH",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/*/config/*/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/*/config/*",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/*/config/*",
+            "request_method": "PATCH",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/*/config/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/*/config",
+            "request_method": "PUT",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/*/config",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/*/config",
+            "request_method": "PATCH",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/*/config",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains",
+            "request_method": "POST",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/*",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/*",
+            "request_method": "PATCH",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/groups",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/groups",
+            "request_method": "POST",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/groups/*",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/groups/*",
+            "request_method": "PATCH",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/groups/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/groups/*/users",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/groups/*/users/*",
+            "request_method": "PUT",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/groups/*/users/*",
+            "request_method": "HEAD",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/groups/*/users/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/OS-INHERIT/domains/*/users/*/roles/*/inherited_to_projects",
+            "request_method": "PUT",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/OS-INHERIT/domains/*/groups/*/roles/*/inherited_to_projects",
+            "request_method": "PUT",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/OS-INHERIT/domains/*/users/*/roles/inherited_to_projects",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/OS-INHERIT/domains/*/groups/*/roles/inherited_to_projects",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/OS-INHERIT/domains/*/users/*/roles/*/inherited_to_projects",
+            "request_method": "HEAD",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/OS-INHERIT/domains/*/groups/*/roles/*/inherited_to_projects",
+            "request_method": "HEAD",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/OS-INHERIT/domains/*/users/*/roles/*/inherited_to_projects",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/OS-INHERIT/domains/*/groups/*/roles/*/inherited_to_projects",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/OS-INHERIT/projects/*/users/*/roles/*/inherited_to_projects",
+            "request_method": "PUT",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/OS-INHERIT/projects/*/groups/*/roles/*/inherited_to_projects",
+            "request_method": "PUT",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/OS-INHERIT/projects/*/users/*/roles/*/inherited_to_projects",
+            "request_method": "HEAD",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/OS-INHERIT/projects/*/groups/*/roles/*/inherited_to_projects",
+            "request_method": "HEAD",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/OS-INHERIT/projects/*/users/*/roles/*/inherited_to_projects",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/OS-INHERIT/projects/*/groups/*/roles/*/inherited_to_projects",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/role_assignments",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/auth/tokens/OS-PKI/revoked",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/policies",
+            "request_method": "POST",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/policies",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/policies/*",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/policies/*",
+            "request_method": "PATCH",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/policies/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/projects/*/tags",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/projects/*/tags",
+            "request_method": "PUT",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/projects/*/tags",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/projects/*/tags/*",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/projects/*/tags/*",
+            "request_method": "PUT",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/projects/*/tags/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/projects",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/projects",
+            "request_method": "POST",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/projects/*",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/projects/*",
+            "request_method": "PATCH",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/projects/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/regions/*",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/regions/*",
+            "request_method": "PATCH",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/regions/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/regions",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/regions",
+            "request_method": "POST",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/roles",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/roles",
+            "request_method": "POST",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/roles/*",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/roles/*",
+            "request_method": "PATCH",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/roles/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/*/groups/*/roles",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/*/groups/*/roles/*",
+            "request_method": "PUT",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/*/groups/*/roles/*",
+            "request_method": "HEAD",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/*/groups/*/roles/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/*/users/*/roles",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/*/users/*/roles/*",
+            "request_method": "PUT",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/*/users/*/roles/*",
+            "request_method": "HEAD",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/domains/*/users/*/roles/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/projects/*/groups/*/roles",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/projects/*/groups/*/roles/*",
+            "request_method": "PUT",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/projects/*/groups/*/roles/*",
+            "request_method": "HEAD",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/projects/*/groups/*/roles/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/projects/*/users/*/roles",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/projects/*/users/*/roles/*",
+            "request_method": "PUT",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/projects/*/users/*/roles/*",
+            "request_method": "HEAD",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/projects/*/users/*/roles/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/roles/*/implies",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/roles/*/implies/*",
+            "request_method": "PUT",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/roles/*/implies/*",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/roles/*/implies/*",
+            "request_method": "HEAD",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/roles/*/implies/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/role_assignments",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/role_inferences",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/services",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/services",
+            "request_method": "POST",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/services/*",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/services/*",
+            "request_method": "PATCH",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/services/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/endpoints",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/endpoints",
+            "request_method": "POST",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/endpoints/*",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/endpoints/*",
+            "request_method": "PATCH",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/endpoints/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/system/users/*/roles",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/system/users/*/roles/*",
+            "request_method": "PUT",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/system/users/*/roles/*",
+            "request_method": "HEAD",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/system/users/*/roles/*",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/system/users/*/roles/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/system/groups/*/roles",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/system/groups/*/roles/*",
+            "request_method": "PUT",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/system/groups/*/roles/*",
+            "request_method": "HEAD",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/system/groups/*/roles/*",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/system/groups/*/roles/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/registered_limits",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/registered_limits",
+            "request_method": "POST",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/registered_limits/*",
+            "request_method": "PATCH",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/registered_limits/*",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/registered_limits/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/limits/model",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/limits",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/limits",
+            "request_method": "POST",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/limits/*",
+            "request_method": "PATCH",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/limits/*",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/limits/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/users",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/users",
+            "request_method": "POST",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/users/*",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/users/*",
+            "request_method": "PATCH",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/users/*",
+            "request_method": "DELETE",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/users/*/groups",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/users/*/projects",
+            "request_method": "GET",
+            "allow_chained": false
+        },
+        {
+            "request_path": "/v3/users/*/password",
+            "request_method": "POST",
+            "allow_chained": false
+        }
+    ],
+    "image": [
+        {
+            "request_path": "/v1/images",
+            "request_method": "POST",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v1/images",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v1/images/detail",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v1/images/*",
+            "request_method": "PUT",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v1/images/*",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v1/images/*",
+            "request_method": "HEAD",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v1/images/*",
+            "request_method": "DELETE",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v1/images/*/members/*",
+            "request_method": "PUT",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v1/images/*/members",
+            "request_method": "PUT",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v1/images/*/members/*",
+            "request_method": "DELETE",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v1/shared-images/*",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/images/*/file",
+            "request_method": "PUT",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/images/*/file",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/images",
+            "request_method": "POST",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/images/*",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/images",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/images/*",
+            "request_method": "PATCH",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/images/*",
+            "request_method": "DELETE",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/images/*/actions/deactivate",
+            "request_method": "POST",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/images/*/actions/reactivate",
+            "request_method": "POST",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/schemas/images",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/schemas/image",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/schemas/members",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/schemas/member",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/images/*/members",
+            "request_method": "POST",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/images/*/members/*",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/images/*/members",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/images/*/members/*",
+            "request_method": "PUT",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/images/*/members/*",
+            "request_method": "DELETE",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/images/*/tags/*",
+            "request_method": "PUT",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/images/*/tags/*",
+            "request_method": "DELETE",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*/objects",
+            "request_method": "POST",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*/objects",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*/objects/*",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*/objects/*",
+            "request_method": "PUT",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*/objects/*",
+            "request_method": "DELETE",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*/properties",
+            "request_method": "POST",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*/properties",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*/properties/*",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*/properties/*",
+            "request_method": "PUT",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*/properties/*",
+            "request_method": "DELETE",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*/tags/*",
+            "request_method": "POST",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*/tags/*",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*/tags/*",
+            "request_method": "PUT",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*/tags/*",
+            "request_method": "DELETE",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*/tags",
+            "request_method": "POST",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*/tags",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*/tags",
+            "request_method": "DELETE",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces",
+            "request_method": "POST",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*",
+            "request_method": "PUT",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*",
+            "request_method": "DELETE",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/resource_types",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*/resource_types",
+            "request_method": "POST",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*/resource_types",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/metadefs/namespaces/*/resource_types/*",
+            "request_method": "DELETE",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/schemas/metadefs/namespace",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/schemas/metadefs/namespaces",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/schemas/metadefs/resource_type",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/schemas/metadefs/resource_types",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/schemas/metadefs/object",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/schemas/metadefs/objects",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/schemas/metadefs/property",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/schemas/metadefs/properties",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/schemas/metadefs/tag",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/schemas/metadefs/tags",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/schemas/tasks",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/schemas/task",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/tasks",
+            "request_method": "POST",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/tasks",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/v2/tasks/*",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/versions",
+            "request_method": "GET",
+            "allow_chained": true
+        },
+        {
+            "request_path": "/",
+            "request_method": "GET",
+            "allow_chained": true
+        }
+    ],
+    "block-storage": [
+        {
+            "request_path": "/v3/**",
+            "request_method": "GET",
+            "allow_chained": true
+        }
+    ],
+    "compute": [
+        {
+            "request_path": "**",
+            "request_method": "GET",
+            "allow_chained": true
+        }
+    ]
+}

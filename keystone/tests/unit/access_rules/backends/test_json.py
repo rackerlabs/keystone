@@ -1,0 +1,78 @@
+# Copyright 2019 SUSE Linux GmbH
+#
+# Licensed under the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+
+import uuid
+
+from keystone.access_rules.backends import json as json_driver
+from keystone.tests import unit
+from keystone.tests.unit.ksfixtures import access_rules
+
+
+class JSONDriverTestCase(unit.TestCase):
+    """Tests for validating the access rules driver."""
+
+    def setUp(self):
+        super(JSONDriverTestCase, self).setUp()
+        rules_file = '%s/access_rules.json' % unit.TESTCONF
+        self.useFixture(access_rules.AccessRules(self.config_fixture,
+                                                 rules_file=rules_file))
+        self.driver = json_driver.AccessRules()
+
+    def test_list_access_rules(self):
+        rules = self.driver.list_access_rules()
+        self.assertIn('identity', rules)
+        self.assertIn('image', rules)
+
+    def test_list_access_rules_for_service(self):
+        rules = self.driver.list_access_rules(service='image')
+        self.assertNotIn('identity', rules)
+        self.assertIn('image', rules)
+
+    def test_check_access_rules(self):
+        result = self.driver.check_access_rule('identity', '/v3/users', 'GET',
+                                               False)
+        self.assertTrue(result)
+        userid = uuid.uuid4().hex
+        check_path = '/v3/users/%(userid)s' % {'userid': userid}
+        result = self.driver.check_access_rule('identity', check_path, 'GET',
+                                               False)
+        self.assertTrue(result)
+        img = uuid.uuid4().hex
+        memb = uuid.uuid4().hex
+        check_path = '/v2/images/%(img)s/members/%(memb)s' % {'img': img,
+                                                              'memb': memb}
+        result = self.driver.check_access_rule('image', check_path, 'PUT',
+                                               True)
+        self.assertTrue(result)
+        result = self.driver.check_access_rule('image', '/servers', 'GET',
+                                               True)
+        self.assertFalse(result)
+        result = self.driver.check_access_rule('glance', '/v2/images', 'GET',
+                                               True)
+        self.assertFalse(result)
+        result = self.driver.check_access_rule('image', 'images', 'POST',
+                                               True)
+        self.assertFalse(result)
+        projectid = uuid.uuid4().hex
+        check_path = '/v3/%(projectid)s/volumes' % {'projectid': projectid}
+        result = self.driver.check_access_rule('block-storage', check_path,
+                                               'GET', True)
+        self.assertTrue(result)
+        check_path = '/v2/%(projectid)s/volumes' % {'projectid': projectid}
+        result = self.driver.check_access_rule('block-storage', check_path,
+                                               'GET', True)
+        self.assertFalse(result)
+        result = self.driver.check_access_rule('compute', '/v2.1/servers',
+                                               'GET', True)
+        self.assertTrue(result)
