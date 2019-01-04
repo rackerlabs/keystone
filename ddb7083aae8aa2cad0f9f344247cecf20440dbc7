@@ -22,6 +22,30 @@
       "revId": "ddb7083aae8aa2cad0f9f344247cecf20440dbc7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffd0ebdf_7be99a7e",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-04T09:03:53Z",
+      "side": 1,
+      "message": "I would rather convert the rest to systemctl, in a separate patch. The service command is outdated and systemctl works on all modern distros that we support.",
+      "parentUuid": "ffd0ebdf_143b86d1",
+      "range": {
+        "startLine": 532,
+        "startChar": 5,
+        "endLine": 532,
+        "endChar": 14
+      },
+      "revId": "ddb7083aae8aa2cad0f9f344247cecf20440dbc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
