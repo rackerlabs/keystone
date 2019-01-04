@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ffd0ebdf_3b76b2da",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-04T09:13:12Z",
+      "side": 1,
+      "message": "The apache module is really the service provider. I can clarify.",
+      "parentUuid": "ffd0ebdf_54982e69",
+      "range": {
+        "startLine": 367,
+        "startChar": 50,
+        "endLine": 367,
+        "endChar": 66
+      },
+      "revId": "ecbd2cb336c70f1461b94804a067671840ee4a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffd0ebdf_94dc5619",
         "filename": "doc/source/admin/federation/configure_federation.rst",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "ffd0ebdf_9b3f9ed5",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-04T09:13:12Z",
+      "side": 1,
+      "message": "This is just copy and pasted from the old websso page. Technically I guess we should use horizon.example.org or horizon.openstack.example.org.",
+      "parentUuid": "ffd0ebdf_94dc5619",
+      "range": {
+        "startLine": 407,
+        "startChar": 29,
+        "endLine": 407,
+        "endChar": 41
+      },
+      "revId": "ecbd2cb336c70f1461b94804a067671840ee4a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffd0ebdf_f4d602f2",
         "filename": "doc/source/admin/federation/configure_federation.rst",
         "patchSetId": 2
@@ -59,6 +107,30 @@
       "writtenOn": "2019-01-03T21:28:38Z",
       "side": 1,
       "message": "Same comment here as in previous patches.",
+      "range": {
+        "startLine": 492,
+        "startChar": 5,
+        "endLine": 492,
+        "endChar": 14
+      },
+      "revId": "ecbd2cb336c70f1461b94804a067671840ee4a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffd0ebdf_7b13da67",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-04T09:13:12Z",
+      "side": 1,
+      "message": "Responded on other patch",
+      "parentUuid": "ffd0ebdf_f4d602f2",
       "range": {
         "startLine": 492,
         "startChar": 5,
