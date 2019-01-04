@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffd0ebdf_4bf876c3",
+        "filename": "keystone/conf/jwt_tokens.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-04T20:52:48Z",
+      "side": 1,
+      "message": "I think this implementation is going to need a couple of options. I don\u0027t think we\u0027re going to be able to get away with a single configuration option without making some assumptions like we do with Fernet.\n\nWe can do a couple of things.\n\n1.) We have a single directory which contains only keys for validating tokens. We also have a signing key in a known, hardcoded, location. For example, the directory could be /etc/keystone/jwt-keys/validation-keys/ and the signing key could be /etc/keystone/jwt-keys/private.pem.\n\n2.) We have a single directory for validation keys and a configuration option pointing keystone to the signing key.\n\nThe first option isn\u0027t as complicated and doesn\u0027t require deployers to understand more options than required. Certificate rotation requires a renaming strategy that goes hand-in-hand with distribution across nodes.\n\nThoughts?",
+      "range": {
+        "startLine": 19,
+        "startChar": 5,
+        "endLine": 19,
+        "endChar": 19
+      },
+      "revId": "6ca7db694ca0a3458c071407b2da1c6f9ffbffd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
