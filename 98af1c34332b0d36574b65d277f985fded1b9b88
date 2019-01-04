@@ -116,6 +116,30 @@
       "revId": "98af1c34332b0d36574b65d277f985fded1b9b88",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffd0ebdf_4b12b65a",
+        "filename": "keystone/common/jwt_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-04T20:27:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_29514033",
+      "range": {
+        "startLine": 19,
+        "startChar": 45,
+        "endLine": 19,
+        "endChar": 54
+      },
+      "revId": "98af1c34332b0d36574b65d277f985fded1b9b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
