@@ -62,6 +62,30 @@
       "revId": "86bc6ffdca24ab59a387a510f5d95dfc8f5175bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffd0ebdf_7bb75a88",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-04T09:07:55Z",
+      "side": 1,
+      "message": "Responded on the other patch",
+      "parentUuid": "ffd0ebdf_54dcae45",
+      "range": {
+        "startLine": 292,
+        "startChar": 5,
+        "endLine": 292,
+        "endChar": 14
+      },
+      "revId": "86bc6ffdca24ab59a387a510f5d95dfc8f5175bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
