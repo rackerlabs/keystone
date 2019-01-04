@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ffd0ebdf_c0621117",
+        "filename": "doc/source/admin/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 587,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-04T08:01:02Z",
+      "side": 1,
+      "message": "I didn\u0027t notice these. These aren\u0027t referring to openstack services so I don\u0027t really feel like it\u0027s important to use the same convention.",
+      "parentUuid": "ffd0ebdf_4952d769",
+      "range": {
+        "startLine": 587,
+        "startChar": 36,
+        "endLine": 587,
+        "endChar": 44
+      },
+      "revId": "9bc2b8875d8c2bba6038185a68bfce05afdb36e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffd0ebdf_e94e2bc0",
         "filename": "doc/source/admin/federation/mellon.rst",
         "patchSetId": 2
