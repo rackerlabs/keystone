@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ffd0ebdf_f81ee26e",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-04T20:24:24Z",
+      "side": 1,
+      "message": "Good catch. I pulled this out into it\u0027s own change.",
+      "parentUuid": "3f79a3b5_0460e9d0",
+      "range": {
+        "startLine": 503,
+        "startChar": 17,
+        "endLine": 503,
+        "endChar": 27
+      },
+      "revId": "98af1c34332b0d36574b65d277f985fded1b9b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_4474a18a",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2018-12-17T02:50:58Z",
       "side": 1,
       "message": "how about saving private and public keys into different folders like what we did for PKI. If my memory is correct, we\u0027ll support multi key paris in the future. It\u0027s good and safer for saving them separately IMO.",
+      "range": {
+        "startLine": 506,
+        "startChar": 28,
+        "endLine": 506,
+        "endChar": 42
+      },
+      "revId": "98af1c34332b0d36574b65d277f985fded1b9b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffd0ebdf_cbfea604",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-04T20:24:24Z",
+      "side": 1,
+      "message": "So - we should have two different directories? One that defaults to /etc/keystone/jwt/signing-keys and one that defaults to /etc/keystone/jwt/validation-keys?",
+      "parentUuid": "3f79a3b5_4474a18a",
       "range": {
         "startLine": 506,
         "startChar": 28,
