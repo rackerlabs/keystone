@@ -46,6 +46,30 @@
       "revId": "48a42b0182cd384c259cfaeff85f7b3c3e5052dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffd0ebdf_74276414",
+        "filename": "releasenotes/notes/bug-1804522-00df902cd2d74ee3.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-04T15:06:10Z",
+      "side": 1,
+      "message": "Yes, I think that would be helpful, unless I\u0027m missing something and there\u0027s a better way to get that information.",
+      "parentUuid": "ffd0ebdf_140b788e",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 18,
+        "endChar": 19
+      },
+      "revId": "48a42b0182cd384c259cfaeff85f7b3c3e5052dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
