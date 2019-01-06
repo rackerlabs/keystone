@@ -22,6 +22,30 @@
       "revId": "e8b870fe777a8fdeb649e15784a8f9f92a02a801",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_fa26f816",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-06T17:03:14Z",
+      "side": 1,
+      "message": "Right. Do you have a suggestion for how I can frame that clearly?",
+      "parentUuid": "ffd0ebdf_4307001e",
+      "range": {
+        "startLine": 386,
+        "startChar": 7,
+        "endLine": 386,
+        "endChar": 10
+      },
+      "revId": "e8b870fe777a8fdeb649e15784a8f9f92a02a801",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
