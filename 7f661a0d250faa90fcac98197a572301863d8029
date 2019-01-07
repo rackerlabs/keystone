@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfd5e7cf_1d85f6ad",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2019-01-07T00:49:03Z",
+      "side": 1,
+      "message": "Wouldn\u0027t you also want to do the same with this?",
+      "range": {
+        "startLine": 492,
+        "startChar": 8,
+        "endLine": 503,
+        "endChar": 52
+      },
+      "revId": "7f661a0d250faa90fcac98197a572301863d8029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_bd914af4",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2019-01-07T00:49:03Z",
+      "side": 1,
+      "message": "And this?",
+      "range": {
+        "startLine": 528,
+        "startChar": 8,
+        "endLine": 537,
+        "endChar": 67
+      },
+      "revId": "7f661a0d250faa90fcac98197a572301863d8029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
