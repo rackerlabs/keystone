@@ -88,6 +88,24 @@
       "revId": "b6a847e838bdcec666ed54f0456a50205d55bf61",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_590e25e6",
+        "filename": "keystone/api/projects.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-07T15:07:58Z",
+      "side": 1,
+      "message": "\u003e I don\u0027t really like the idea of peeking into config in order to\n \u003e change the results of the API. I think what I\u0027d like to see is\n \u003e this:\n\nYeah - me either...\n\n \u003e \n \u003e * a system-scoped admin or reader can list all projects (this will\n \u003e still work for project-scoped admins with enforce_scope\u003dfalse for\n \u003e the time being)\n \u003e * a domain-scoped admin or reader can list all projects in their\n \u003e domain (won\u0027t break CI because we don\u0027t use domain admins for\n \u003e anything)\n \u003e * a project-scoped admin or reader can\u0027t list projects - listing\n \u003e one project isn\u0027t useful enough to be worth the extra complexity\n \u003e imo\n \u003e * defer dealing with hierarchical projects until enforce_scope is\n \u003e gone\n\nQuestion on your third bullet point. That\u0027s assuming enforce_scope\u003dTrue, right?",
+      "parentUuid": "dfd5e7cf_1f24060d",
+      "revId": "b6a847e838bdcec666ed54f0456a50205d55bf61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
