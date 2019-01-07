@@ -145,6 +145,24 @@
     },
     {
       "key": {
+        "uuid": "dfd5e7cf_6b66aaf0",
+        "filename": "keystone/api/projects.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-07T16:59:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfd5e7cf_742c5047",
+      "revId": "b6a847e838bdcec666ed54f0456a50205d55bf61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfd5e7cf_c8b79cd8",
         "filename": "keystone/common/policies/project.py",
         "patchSetId": 4
@@ -156,6 +174,30 @@
       "writtenOn": "2019-01-07T16:34:01Z",
       "side": 1,
       "message": "For now, we should revert this. Project API support with project-scoped tokens is going to be complicated since we support HMT (e.g., filtering subprojects when project admins call this API).\n\nThis will be easier to fix once we can assume enforce_scope\u003dTrue, because we don\u0027t have to support project admins being the deployment admins. Removing that case should make the filtering implementation easier and not based on configuration.",
+      "range": {
+        "startLine": 83,
+        "startChar": 32,
+        "endLine": 83,
+        "endChar": 39
+      },
+      "revId": "b6a847e838bdcec666ed54f0456a50205d55bf61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_0b635ede",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-07T16:59:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfd5e7cf_c8b79cd8",
       "range": {
         "startLine": 83,
         "startChar": 32,
@@ -191,6 +233,30 @@
     },
     {
       "key": {
+        "uuid": "dfd5e7cf_cb9a36c4",
+        "filename": "keystone/tests/unit/protection/v3/test_projects.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-07T16:59:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfd5e7cf_483e4c2a",
+      "range": {
+        "startLine": 28,
+        "startChar": 6,
+        "endLine": 28,
+        "endChar": 22
+      },
+      "revId": "b6a847e838bdcec666ed54f0456a50205d55bf61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfd5e7cf_e80aa088",
         "filename": "keystone/tests/unit/protection/v3/test_projects.py",
         "patchSetId": 4
@@ -202,6 +268,30 @@
       "writtenOn": "2019-01-07T16:37:20Z",
       "side": 1,
       "message": "Rewrite this to expect a 403. Support for this case can come at a late time, once we can safely assume system administrators are used consistently.",
+      "range": {
+        "startLine": 223,
+        "startChar": 8,
+        "endLine": 223,
+        "endChar": 35
+      },
+      "revId": "b6a847e838bdcec666ed54f0456a50205d55bf61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_eb9ffab1",
+        "filename": "keystone/tests/unit/protection/v3/test_projects.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-07T16:59:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfd5e7cf_e80aa088",
       "range": {
         "startLine": 223,
         "startChar": 8,
