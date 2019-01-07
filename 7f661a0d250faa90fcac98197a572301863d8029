@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "dfd5e7cf_4124e7c6",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2019-01-07T19:43:32Z",
+      "side": 1,
+      "message": "This comment can be removed since it was decided to leave the conf settings in the current place under fernet_tokens for now.\n\nSame with the one below.",
+      "range": {
+        "startLine": 493,
+        "startChar": 12,
+        "endLine": 493,
+        "endChar": 54
+      },
+      "revId": "7f661a0d250faa90fcac98197a572301863d8029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfd5e7cf_1d85f6ad",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 3
@@ -13,6 +36,30 @@
       "writtenOn": "2019-01-07T00:49:03Z",
       "side": 1,
       "message": "Wouldn\u0027t you also want to do the same with this?",
+      "range": {
+        "startLine": 492,
+        "startChar": 8,
+        "endLine": 503,
+        "endChar": 52
+      },
+      "revId": "7f661a0d250faa90fcac98197a572301863d8029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_7c7d126d",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2019-01-07T19:43:32Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "dfd5e7cf_1d85f6ad",
       "range": {
         "startLine": 492,
         "startChar": 8,
