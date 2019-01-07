@@ -106,6 +106,24 @@
       "revId": "b6a847e838bdcec666ed54f0456a50205d55bf61",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_d99d3567",
+        "filename": "keystone/api/projects.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-07T15:14:14Z",
+      "side": 1,
+      "message": "Right, I guess I mean the desired/future behavior since technically with enforce_scope\u003dFalse we\u0027d always have the behavior of the top bullet.",
+      "parentUuid": "dfd5e7cf_590e25e6",
+      "revId": "b6a847e838bdcec666ed54f0456a50205d55bf61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
