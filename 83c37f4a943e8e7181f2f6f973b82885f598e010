@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfd5e7cf_ac5edae3",
+        "filename": "doc/source/admin/federation/shibboleth.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-08T13:32:02Z",
+      "side": 1,
+      "message": "Previously we also mentioned about the usage of discovery protocol in case of more than one IdPs, where we do not required to mention IDP entity ID, but to configure SP with a discovery protocol. The information was less though.\n\nI tried configuring my SP with more than one IDP with [1].So my suggestion is to add more information regarding this in federation docs taking [1] as example? \n\n[1] https://github.com/ConsortiumGARR/idem-tutorials/blob/master/idem-fedops/HOWTO-Shibboleth/Embedded%20Discovery%20Service/Ubuntu/HOWTO%20Install%20and%20Configure%20a%20Shibboleth%20Embedded%20Discovery%20Service%20on%20Ubuntu%20Linux.md",
+      "revId": "83c37f4a943e8e7181f2f6f973b82885f598e010",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfd5e7cf_2c6aea7f",
+        "filename": "doc/source/admin/federation/shibboleth.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-08T13:32:02Z",
+      "side": 0,
+      "message": "Missing this part.",
+      "range": {
+        "startLine": 114,
+        "startChar": 2,
+        "endLine": 114,
+        "endChar": 81
+      },
+      "revId": "069392fe95f59d3ab5933644adefb27a48cfb4b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
