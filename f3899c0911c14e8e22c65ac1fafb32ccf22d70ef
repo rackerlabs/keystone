@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfd5e7cf_24a43a57",
+        "filename": "releasenotes/notes/bug-1804483-1d9ccfcb24f25f51.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-08T19:35:00Z",
+      "side": 1,
+      "message": "Update these to explain what the new policies are so that people don\u0027t have to dig through code to find that information.",
+      "revId": "f3899c0911c14e8e22c65ac1fafb32ccf22d70ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
