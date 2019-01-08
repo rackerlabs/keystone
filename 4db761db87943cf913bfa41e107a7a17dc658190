@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfd5e7cf_24f8bae3",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-08T19:04:16Z",
+      "side": 1,
+      "message": "We\u0027ll need to remove this and re-add the import. Doing [0] locally got everything passing for me.\n\n[0] https://pasted.tech/pastes/b24efe3bd9920e9c243006086ca372345ede6900.raw",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 2
+      },
+      "revId": "4db761db87943cf913bfa41e107a7a17dc658190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
