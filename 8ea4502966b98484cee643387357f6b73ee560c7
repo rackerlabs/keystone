@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfd5e7cf_a4734a15",
+        "filename": "releasenotes/notes/bug-1804446-1a281eadbb044070.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-08T19:31:20Z",
+      "side": 1,
+      "message": "Update these to say what they are being replaced with.",
+      "revId": "8ea4502966b98484cee643387357f6b73ee560c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
