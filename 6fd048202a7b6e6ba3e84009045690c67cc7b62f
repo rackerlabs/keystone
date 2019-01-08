@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfd5e7cf_24bd1a65",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-08T19:36:38Z",
+      "side": 1,
+      "message": "This should use a common definition.\n\nhttps://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/policies/base.py#n45",
+      "range": {
+        "startLine": 136,
+        "startChar": 18,
+        "endLine": 136,
+        "endChar": 32
+      },
+      "revId": "6fd048202a7b6e6ba3e84009045690c67cc7b62f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
