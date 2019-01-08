@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfd5e7cf_444cde9d",
+        "filename": "releasenotes/notes/bug-1804521-3c0d9f567e8f532f.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-08T19:37:29Z",
+      "side": 1,
+      "message": "These should list the policies that are changing and what they are changing to so that users don\u0027t have to dig through code to find that information.",
+      "revId": "b093b1105483bf7223717b9824dff17c49a399ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
