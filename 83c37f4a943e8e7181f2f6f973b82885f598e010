@@ -16,6 +16,24 @@
       "revId": "83c37f4a943e8e7181f2f6f973b82885f598e010",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_05a019f4",
+        "filename": "doc/source/admin/federation/shibboleth.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-08T15:17:26Z",
+      "side": 1,
+      "message": "I can add back the line about removing the discoveryURL, the reason I removed the note was I found things seemed to still work even when the line was left there, so removing the note made things simpler. My feeling is that implementing a discovery service is out of scope for this document, this should only be the bare minimum to get things to work.",
+      "parentUuid": "dfd5e7cf_ac5edae3",
+      "revId": "83c37f4a943e8e7181f2f6f973b82885f598e010",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
