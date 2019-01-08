@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfd5e7cf_c40d2e3f",
+        "filename": "releasenotes/notes/bug-1805372-af4ebf4b19500b72.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-08T19:39:39Z",
+      "side": 1,
+      "message": "These should explicitly saw how the policies are changing and what they are changing to so that users don\u0027t have to dig through code to find out what the difference is.",
+      "revId": "4403b9864bb2cc6a29b977b28ee4e811e71ff24b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
