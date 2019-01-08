@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfd5e7cf_c4552e52",
+        "filename": "releasenotes/notes/bug-1804516-24b0b10ed6fe0589.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-08T19:32:23Z",
+      "side": 1,
+      "message": "Update this to actually list the deprecated policies and what they are changing to.",
+      "revId": "97e0ba804857d96a1e6eefdd85e82f739062819e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
