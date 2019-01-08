@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dfd5e7cf_dca995df",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-08T09:24:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfd5e7cf_4124e7c6",
+      "range": {
+        "startLine": 493,
+        "startChar": 12,
+        "endLine": 493,
+        "endChar": 54
+      },
+      "revId": "7f661a0d250faa90fcac98197a572301863d8029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfd5e7cf_1d85f6ad",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 3
@@ -72,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "dfd5e7cf_7c974992",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-08T09:24:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfd5e7cf_7c7d126d",
+      "range": {
+        "startLine": 492,
+        "startChar": 8,
+        "endLine": 503,
+        "endChar": 52
+      },
+      "revId": "7f661a0d250faa90fcac98197a572301863d8029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfd5e7cf_bd914af4",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 3
@@ -83,6 +131,30 @@
       "writtenOn": "2019-01-07T00:49:03Z",
       "side": 1,
       "message": "And this?",
+      "range": {
+        "startLine": 528,
+        "startChar": 8,
+        "endLine": 537,
+        "endChar": 67
+      },
+      "revId": "7f661a0d250faa90fcac98197a572301863d8029",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_fc833955",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-08T09:24:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfd5e7cf_bd914af4",
       "range": {
         "startLine": 528,
         "startChar": 8,
