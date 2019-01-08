@@ -22,6 +22,30 @@
       "revId": "b35928d5dcd8615d11c199c68c512aaa1dca4ec9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_007b278c",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-08T15:45:43Z",
+      "side": 1,
+      "message": "Yep - that should be coming in a subsequent patch.\n\nhttps://review.openstack.org/#/c/624218/",
+      "parentUuid": "dfd5e7cf_0a510637",
+      "range": {
+        "startLine": 81,
+        "startChar": 22,
+        "endLine": 81,
+        "endChar": 28
+      },
+      "revId": "b35928d5dcd8615d11c199c68c512aaa1dca4ec9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
