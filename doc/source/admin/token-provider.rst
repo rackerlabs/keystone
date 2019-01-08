@@ -20,6 +20,10 @@ You can register your own token provider by configuring the following property:
   entry point for the token provider in the ``keystone.token.provider``
   namespace.
 
+Tokens do not need to be persisted at all, but require that you run
+ ``keystone-manage token_setup`` (also see the
+ ``keystone-manage token_rotate`` command).
+
 Below is the detailed list of the token formats supported by keystone.:
 
 Fernet
