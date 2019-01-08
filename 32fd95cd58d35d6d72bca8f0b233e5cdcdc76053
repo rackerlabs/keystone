@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dfd5e7cf_2048abca",
+        "filename": "keystone/api/_shared/saml.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-08T16:12:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfd5e7cf_99624d16",
+      "range": {
+        "startLine": 13,
+        "startChar": 7,
+        "endLine": 13,
+        "endChar": 11
+      },
+      "revId": "32fd95cd58d35d6d72bca8f0b233e5cdcdc76053",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfd5e7cf_74f770f7",
         "filename": "keystone/api/_shared/saml.py",
         "patchSetId": 17
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "dfd5e7cf_0019e7d5",
+        "filename": "keystone/api/_shared/saml.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-08T16:12:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfd5e7cf_74f770f7",
+      "range": {
+        "startLine": 53,
+        "startChar": 11,
+        "endLine": 53,
+        "endChar": 18
+      },
+      "revId": "32fd95cd58d35d6d72bca8f0b233e5cdcdc76053",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfd5e7cf_397321ea",
         "filename": "keystone/api/_shared/saml.py",
         "patchSetId": 17
@@ -82,6 +130,30 @@
       "writtenOn": "2019-01-07T15:42:00Z",
       "side": 1,
       "message": "Then here:\n\n  jsonutils.dumps(user_groups)\n\nI\u0027m not seeing anything real crazy with user_groups that would require us to use jsonutils (like nesting complex objects in the dictionary). Only making the comment for convention purposes.",
+      "range": {
+        "startLine": 69,
+        "startChar": 41,
+        "endLine": 69,
+        "endChar": 45
+      },
+      "revId": "32fd95cd58d35d6d72bca8f0b233e5cdcdc76053",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_8024f70e",
+        "filename": "keystone/api/_shared/saml.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-08T16:12:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfd5e7cf_397321ea",
       "range": {
         "startLine": 69,
         "startChar": 41,
@@ -140,6 +212,30 @@
     },
     {
       "key": {
+        "uuid": "dfd5e7cf_a0b7bb86",
+        "filename": "keystone/federation/idp.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-08T16:12:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfd5e7cf_f469208b",
+      "range": {
+        "startLine": 69,
+        "startChar": 31,
+        "endLine": 69,
+        "endChar": 35
+      },
+      "revId": "32fd95cd58d35d6d72bca8f0b233e5cdcdc76053",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfd5e7cf_343808d2",
         "filename": "keystone/federation/utils.py",
         "patchSetId": 17
@@ -163,6 +259,30 @@
     },
     {
       "key": {
+        "uuid": "dfd5e7cf_c0bc3f6b",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-08T16:12:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfd5e7cf_343808d2",
+      "range": {
+        "startLine": 518,
+        "startChar": 38,
+        "endLine": 518,
+        "endChar": 42
+      },
+      "revId": "32fd95cd58d35d6d72bca8f0b233e5cdcdc76053",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfd5e7cf_5456ec08",
         "filename": "releasenotes/notes/bug-1641625-fe463874dc5edb10.yaml",
         "patchSetId": 17
@@ -174,6 +294,30 @@
       "writtenOn": "2019-01-07T15:42:00Z",
       "side": 1,
       "message": "keystone configured as an Identity Provider*",
+      "range": {
+        "startLine": 5,
+        "startChar": 17,
+        "endLine": 5,
+        "endChar": 20
+      },
+      "revId": "32fd95cd58d35d6d72bca8f0b233e5cdcdc76053",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_20abcb1d",
+        "filename": "releasenotes/notes/bug-1641625-fe463874dc5edb10.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-08T16:12:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfd5e7cf_5456ec08",
       "range": {
         "startLine": 5,
         "startChar": 17,
