@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfd5e7cf_f5b7be85",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-08T22:07:58Z",
+      "side": 1,
+      "message": "This needs to be reworked otherwise anyone with the reader role is going to be able to list users in the deployment.",
+      "range": {
+        "startLine": 55,
+        "startChar": 18,
+        "endLine": 55,
+        "endChar": 32
+      },
+      "revId": "3c450209ade5d4f3802526e3e7f4f695229be15e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
