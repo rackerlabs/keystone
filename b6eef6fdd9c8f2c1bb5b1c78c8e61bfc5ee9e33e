@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfd5e7cf_2413dab7",
+        "filename": "releasenotes/notes/bug-1804523-d1768909b13b167e.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-08T19:30:21Z",
+      "side": 1,
+      "message": "This should be updated to have better descriptions as to what changed.",
+      "revId": "b6eef6fdd9c8f2c1bb5b1c78c8e61bfc5ee9e33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
