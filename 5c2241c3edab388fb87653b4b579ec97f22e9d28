@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dfd5e7cf_985f8240",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-01-09T06:27:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffd0ebdf_c9ed6726",
+      "revId": "5c2241c3edab388fb87653b4b579ec97f22e9d28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffd0ebdf_e9014bb1",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 3
@@ -30,6 +48,30 @@
       "writtenOn": "2019-01-03T20:36:34Z",
       "side": 1,
       "message": "I think we can remove this if we take the following approach:\n\n\n  def _determine_payload_class_from_token(self, token):\n      if token.oauth_scoped:\n          return self.token_formatters.OauthScopedPayload\n      elif token.trust_scoped:\n          return self.token_formatters.TrustScopedPayload\n      elif token.is_federated:\n          if token.project_scoped:\n              return self.token_formatters.FederatedProjectScopedPayload\n          elif token.domain_scoped:\n              return self.token_formatters.FederatedDomainScopedPayload\n          elif token.unscoped:\n              return self.token_formatters.FederatedUnscopedPayload\n      elif token.application_credential_id:\n          return self.token_formatters.ApplicationCredentialScopedPayload\n      elif token.project_scoped:\n          return self.token_formatters.ProjectScopedPayload\n      elif token.domain_scoped:\n          return self.token_formatters.DomainScopedPayload\n      elif token.system_scoped:\n          return self.token_formatters.SystemScopedPayload\n      else:\n          return self.token_formatters.UnscopedPayload\n\n  def generate_id_and_issued_at(self, token):\n      payload_class \u003d self._determine_payload_class_from_token(token)\n\nWhich has the advantage of keeping payload details specific to fernet out of the token model. Also, it keeps the token model from having a dependency on the token_formatter module, since we have that available as a property of the Provider instance here.",
+      "range": {
+        "startLine": 52,
+        "startChar": 18,
+        "endLine": 52,
+        "endChar": 31
+      },
+      "revId": "5c2241c3edab388fb87653b4b579ec97f22e9d28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_184cf29c",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-01-09T06:27:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffd0ebdf_e9014bb1",
       "range": {
         "startLine": 52,
         "startChar": 18,
