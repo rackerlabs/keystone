@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfd5e7cf_d765c746",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-09T20:26:58Z",
+      "side": 1,
+      "message": "unrelated changes?",
+      "range": {
+        "startLine": 531,
+        "startChar": 16,
+        "endLine": 531,
+        "endChar": 23
+      },
+      "revId": "5caec760a4f7b4ba5ab96b30bbcc746e50eb65c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
