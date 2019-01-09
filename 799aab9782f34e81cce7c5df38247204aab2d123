@@ -1,0 +1,147 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfd5e7cf_de2169fd",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-09T15:15:52Z",
+      "side": 1,
+      "message": "I think we need to bump this",
+      "range": {
+        "startLine": 19,
+        "startChar": 51,
+        "endLine": 19,
+        "endChar": 56
+      },
+      "revId": "799aab9782f34e81cce7c5df38247204aab2d123",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_de764907",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-09T15:15:52Z",
+      "side": 1,
+      "message": "I would move this section down to after X-Subject-Token and X-Auth-Token have been introduced",
+      "revId": "799aab9782f34e81cce7c5df38247204aab2d123",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_7eeddd89",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 638,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-09T15:15:52Z",
+      "side": 1,
+      "message": "In theory this shouldn\u0027t be limited to these two methods, would be better for the description to be a bit more general I think. You can still use password and totp as the example requests.",
+      "range": {
+        "startLine": 638,
+        "startChar": 11,
+        "endLine": 638,
+        "endChar": 28
+      },
+      "revId": "799aab9782f34e81cce7c5df38247204aab2d123",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_9e63e11a",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 711,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-09T15:15:52Z",
+      "side": 1,
+      "message": "The text for this doesn\u0027t well describe why an MFA request might emit this",
+      "revId": "799aab9782f34e81cce7c5df38247204aab2d123",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_1e77f1d6",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 718,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-09T15:15:52Z",
+      "side": 1,
+      "message": "Don\u0027t include these",
+      "range": {
+        "startLine": 714,
+        "startChar": 2,
+        "endLine": 718,
+        "endChar": 7
+      },
+      "revId": "799aab9782f34e81cce7c5df38247204aab2d123",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_1e25b1c2",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-09T15:15:52Z",
+      "side": 1,
+      "message": "Don\u0027t include these",
+      "range": {
+        "startLine": 793,
+        "startChar": 2,
+        "endLine": 797,
+        "endChar": 7
+      },
+      "revId": "799aab9782f34e81cce7c5df38247204aab2d123",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_52c1ed7f",
+        "filename": "doc/source/admin/multi-factor-authentication.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-09T15:15:52Z",
+      "side": 1,
+      "message": "I\u0027d prefer if this section went in the user guide, with a link to it from this admin guide.",
+      "revId": "799aab9782f34e81cce7c5df38247204aab2d123",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
