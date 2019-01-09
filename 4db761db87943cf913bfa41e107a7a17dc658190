@@ -22,6 +22,30 @@
       "revId": "4db761db87943cf913bfa41e107a7a17dc658190",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_5dc58c3b",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-09T03:58:52Z",
+      "side": 1,
+      "message": "Don\u0027t know how this happened.",
+      "parentUuid": "dfd5e7cf_24f8bae3",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 2
+      },
+      "revId": "4db761db87943cf913bfa41e107a7a17dc658190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
