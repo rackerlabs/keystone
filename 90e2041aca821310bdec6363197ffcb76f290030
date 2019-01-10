@@ -22,6 +22,30 @@
       "revId": "90e2041aca821310bdec6363197ffcb76f290030",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_39e1f3ff",
+        "filename": "keystone/common/policies/domain.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-01-10T21:25:46Z",
+      "side": 1,
+      "message": "Please ignore my previous comment. Looks like \u0027token.project.domain.id\u0027 will work as we added the token dict back here.\n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/context.py#L65",
+      "parentUuid": "bfdaf3ff_33eb52b1",
+      "range": {
+        "startLine": 49,
+        "startChar": 4,
+        "endLine": 49,
+        "endChar": 30
+      },
+      "revId": "90e2041aca821310bdec6363197ffcb76f290030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
