@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dfd5e7cf_a091d69b",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2019-01-10T02:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfd5e7cf_de2169fd",
+      "range": {
+        "startLine": 19,
+        "startChar": 51,
+        "endLine": 19,
+        "endChar": 56
+      },
+      "revId": "799aab9782f34e81cce7c5df38247204aab2d123",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfd5e7cf_de764907",
         "filename": "api-ref/source/v3/authenticate-v3.inc",
         "patchSetId": 3
@@ -36,6 +60,24 @@
       "writtenOn": "2019-01-09T15:15:52Z",
       "side": 1,
       "message": "I would move this section down to after X-Subject-Token and X-Auth-Token have been introduced",
+      "revId": "799aab9782f34e81cce7c5df38247204aab2d123",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_009302a5",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2019-01-10T02:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfd5e7cf_de764907",
       "revId": "799aab9782f34e81cce7c5df38247204aab2d123",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -65,6 +107,53 @@
     },
     {
       "key": {
+        "uuid": "dfd5e7cf_bd54a122",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 638,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2019-01-10T02:42:34Z",
+      "side": 1,
+      "message": "Will amend the title a bit, and include an extra line in the below text.",
+      "parentUuid": "dfd5e7cf_7eeddd89",
+      "range": {
+        "startLine": 638,
+        "startChar": 11,
+        "endLine": 638,
+        "endChar": 28
+      },
+      "revId": "799aab9782f34e81cce7c5df38247204aab2d123",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_a021d6fd",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 706,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2019-01-10T02:42:34Z",
+      "side": 1,
+      "message": "have also changed this to 401, because in this particular case 401 is Success.",
+      "range": {
+        "startLine": 706,
+        "startChar": 4,
+        "endLine": 706,
+        "endChar": 7
+      },
+      "revId": "799aab9782f34e81cce7c5df38247204aab2d123",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfd5e7cf_9e63e11a",
         "filename": "api-ref/source/v3/authenticate-v3.inc",
         "patchSetId": 3
@@ -82,6 +171,24 @@
     },
     {
       "key": {
+        "uuid": "dfd5e7cf_c01c1ac3",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 711,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2019-01-10T02:42:34Z",
+      "side": 1,
+      "message": "amusingly... the text: \"User must authenticate before making a request.\" is actually rather useless for ALL of these token API calls. If you are trying to get a token, the failure isn\u0027t because you weren\u0027t already authenticated...\n\nI\u0027ll add a couple of auth_receipt variants of 401, but we should probably consider beyond this patch adding a better 401 reason to all the auth attempt examples.",
+      "parentUuid": "dfd5e7cf_9e63e11a",
+      "revId": "799aab9782f34e81cce7c5df38247204aab2d123",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfd5e7cf_1e77f1d6",
         "filename": "api-ref/source/v3/authenticate-v3.inc",
         "patchSetId": 3
@@ -93,6 +200,30 @@
       "writtenOn": "2019-01-09T15:15:52Z",
       "side": 1,
       "message": "Don\u0027t include these",
+      "range": {
+        "startLine": 714,
+        "startChar": 2,
+        "endLine": 718,
+        "endChar": 7
+      },
+      "revId": "799aab9782f34e81cce7c5df38247204aab2d123",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_1d3b6deb",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 718,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2019-01-10T02:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfd5e7cf_1e77f1d6",
       "range": {
         "startLine": 714,
         "startChar": 2,
@@ -128,6 +259,30 @@
     },
     {
       "key": {
+        "uuid": "dfd5e7cf_20572605",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2019-01-10T02:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfd5e7cf_1e25b1c2",
+      "range": {
+        "startLine": 793,
+        "startChar": 2,
+        "endLine": 797,
+        "endChar": 7
+      },
+      "revId": "799aab9782f34e81cce7c5df38247204aab2d123",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfd5e7cf_52c1ed7f",
         "filename": "doc/source/admin/multi-factor-authentication.rst",
         "patchSetId": 3
@@ -139,6 +294,24 @@
       "writtenOn": "2019-01-09T15:15:52Z",
       "side": 1,
       "message": "I\u0027d prefer if this section went in the user guide, with a link to it from this admin guide.",
+      "revId": "799aab9782f34e81cce7c5df38247204aab2d123",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_3d49918a",
+        "filename": "doc/source/admin/multi-factor-authentication.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2019-01-10T02:42:34Z",
+      "side": 1,
+      "message": "Good idea.",
+      "parentUuid": "dfd5e7cf_52c1ed7f",
       "revId": "799aab9782f34e81cce7c5df38247204aab2d123",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
