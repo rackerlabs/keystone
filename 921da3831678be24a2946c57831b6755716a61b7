@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfd5e7cf_28b93fcb",
+        "filename": "keystone/common/policies/role_assignment.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-10T17:12:59Z",
+      "side": 0,
+      "message": "Any reason to remove the note?",
+      "range": {
+        "startLine": 38,
+        "startChar": 8,
+        "endLine": 44,
+        "endChar": 64
+      },
+      "revId": "921da3831678be24a2946c57831b6755716a61b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
