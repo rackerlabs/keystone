@@ -46,6 +46,30 @@
       "revId": "2bb4c58fe9cb12bf1b7cbbcdba0f31cb6ee2e2ed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_1998af68",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-01-10T21:31:11Z",
+      "side": 1,
+      "message": "ah my bad, this is Rocky!",
+      "parentUuid": "bfdaf3ff_f9cb6b6f",
+      "range": {
+        "startLine": 44,
+        "startChar": 5,
+        "endLine": 48,
+        "endChar": 49
+      },
+      "revId": "2bb4c58fe9cb12bf1b7cbbcdba0f31cb6ee2e2ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
