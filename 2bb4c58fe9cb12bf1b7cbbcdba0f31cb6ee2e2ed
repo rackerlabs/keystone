@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfd5e7cf_26865edd",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-10T05:15:08Z",
+      "side": 1,
+      "message": "From [1] we can see that the policies are getting updated as keystone folks are implementing system scopes things. \nSeems like as the [1] patch will be merged soon then we wont require this change.\n\n[1] https://review.openstack.org/#/c/605876/",
+      "range": {
+        "startLine": 44,
+        "startChar": 5,
+        "endLine": 48,
+        "endChar": 49
+      },
+      "revId": "2bb4c58fe9cb12bf1b7cbbcdba0f31cb6ee2e2ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
