@@ -46,6 +46,30 @@
       "revId": "5caec760a4f7b4ba5ab96b30bbcc746e50eb65c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd5e7cf_48e123d0",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-10T17:15:05Z",
+      "side": 1,
+      "message": "We could pull this out into a separate change. Just so we keep changes isolated to only the things required for that change, bug fix, or feature.\n\nThis would be an easy patch to approve separately.",
+      "parentUuid": "dfd5e7cf_662ea6fb",
+      "range": {
+        "startLine": 531,
+        "startChar": 16,
+        "endLine": 531,
+        "endChar": 23
+      },
+      "revId": "5caec760a4f7b4ba5ab96b30bbcc746e50eb65c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
