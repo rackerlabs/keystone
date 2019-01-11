@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfdaf3ff_c6ef9be7",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-11T10:11:33Z",
+      "side": 1,
+      "message": "The problem is that it\u0027s possible the user might have two different values configured for fernet_tokens or fernet_receipts, so this method will have to take config_group into account in order to use the right config values. For example see line 415 of the old change, it uses CONF.fernet_receipts.",
+      "range": {
+        "startLine": 390,
+        "startChar": 17,
+        "endLine": 390,
+        "endChar": 30
+      },
+      "revId": "9379f318e73454ef578040c3bd253c99c20d9986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
