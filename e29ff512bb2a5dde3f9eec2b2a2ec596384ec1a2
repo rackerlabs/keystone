@@ -22,6 +22,30 @@
       "revId": "e29ff512bb2a5dde3f9eec2b2a2ec596384ec1a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_abbb3be3",
+        "filename": "keystone/tests/unit/protection/v3/test_registered_limits.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-11T14:14:11Z",
+      "side": 1,
+      "message": "All the registered limit behavior for domain users is the same, so I just used a single user for these tests.\n\nI can break this out into DomainAdminUserTests, DomainMemberUserTests, DomainReaderUserTests if needed.",
+      "parentUuid": "bfdaf3ff_8183bd56",
+      "range": {
+        "startLine": 334,
+        "startChar": 8,
+        "endLine": 334,
+        "endChar": 20
+      },
+      "revId": "e29ff512bb2a5dde3f9eec2b2a2ec596384ec1a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
