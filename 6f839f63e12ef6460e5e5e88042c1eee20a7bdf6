@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfdaf3ff_267a2724",
+        "filename": "doc/source/admin/token-provider.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-11T10:15:09Z",
+      "side": 1,
+      "message": "This is duplicate information with the fernet section.\n\nI think we\u0027re still not sure what we actually want to do with these commands now that we have JWT as a token provider (soon) but also receipts using the fernet repository. I would recommend documenting the command in commands.rst as you did but not worry yet about mentioning it here until we decide which one we want to recommend.",
+      "revId": "6f839f63e12ef6460e5e5e88042c1eee20a7bdf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
