@@ -91,6 +91,30 @@
       "revId": "071e54493fd7626fca8a9b450585af1fd91eb2bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_cc2d7247",
+        "filename": "keystone/common/policies/domain.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-01-11T17:46:09Z",
+      "side": 1,
+      "message": "I understand it fine. :-)",
+      "parentUuid": "bfdaf3ff_e1188976",
+      "range": {
+        "startLine": 54,
+        "startChar": 70,
+        "endLine": 55,
+        "endChar": 27
+      },
+      "revId": "071e54493fd7626fca8a9b450585af1fd91eb2bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
