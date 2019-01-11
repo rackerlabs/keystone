@@ -22,6 +22,30 @@
       "revId": "921da3831678be24a2946c57831b6755716a61b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_ccd25235",
+        "filename": "keystone/common/policies/role_assignment.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-11T17:46:18Z",
+      "side": 0,
+      "message": "Have to remove this later while implementing project scope. Added back",
+      "parentUuid": "dfd5e7cf_28b93fcb",
+      "range": {
+        "startLine": 38,
+        "startChar": 8,
+        "endLine": 44,
+        "endChar": 64
+      },
+      "revId": "921da3831678be24a2946c57831b6755716a61b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

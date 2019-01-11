@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bfdaf3ff_ec32b6a7",
+        "filename": "keystone/common/policies/role_assignment.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-11T17:46:18Z",
+      "side": 1,
+      "message": "Done for system Reader",
+      "parentUuid": "dfd5e7cf_68f187cd",
+      "range": {
+        "startLine": 19,
+        "startChar": 4,
+        "endLine": 19,
+        "endChar": 17
+      },
+      "revId": "37961d9f012da833d089959cd393d45fc49b8904",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfd5e7cf_085ebbe5",
         "filename": "keystone/tests/unit/protection/v3/test_v3_assignment.py",
         "patchSetId": 8
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "bfdaf3ff_8cdc4a47",
+        "filename": "keystone/tests/unit/protection/v3/test_v3_assignment.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-11T17:46:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfd5e7cf_085ebbe5",
+      "revId": "37961d9f012da833d089959cd393d45fc49b8904",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfd5e7cf_6803c7b9",
         "filename": "keystone/tests/unit/protection/v3/test_v3_assignment.py",
         "patchSetId": 8
@@ -53,6 +95,24 @@
       "writtenOn": "2019-01-10T17:12:59Z",
       "side": 1,
       "message": "Testing here could get pretty intense because we could test that a system reader can list role assignments for users on projects, domains, and the system. We could do the same thing for groups.\n\nThat kind of testing would be more exhaustive and we\u0027d be able to modify those tests when we test this same API with domain and project users. Specifically, we need to make sure domain users aren\u0027t allowed to see role assignments outside of the domain they manage or system role assignments. Project users shouldn\u0027t be able to see any system assignments, domain assignments, or assignments for other projects.",
+      "revId": "37961d9f012da833d089959cd393d45fc49b8904",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_0cf05ac9",
+        "filename": "keystone/tests/unit/protection/v3/test_v3_assignment.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-11T17:46:18Z",
+      "side": 1,
+      "message": "I added more possible test cases, checking for system scopes.",
+      "parentUuid": "dfd5e7cf_6803c7b9",
       "revId": "37961d9f012da833d089959cd393d45fc49b8904",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
