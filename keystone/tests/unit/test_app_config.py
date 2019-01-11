@@ -25,7 +25,7 @@ class AppConfigTest(unit.TestCase):
     custom_config_dir = '/etc/kst/'
     custom_config_files = ['kst.conf', 'kst2.conf']
 
-    def test_config_files_have_default_values_when_envars_not_set(self):
+    def test_config_files_have_default_values_when_envars_not_set(self): 
         config_files = server_flask._get_config_files()
         config_files.sort()
         expected_config_files = []
