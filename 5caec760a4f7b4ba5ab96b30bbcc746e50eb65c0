@@ -70,6 +70,30 @@
       "revId": "5caec760a4f7b4ba5ab96b30bbcc746e50eb65c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_eddba27a",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-11T06:49:44Z",
+      "side": 1,
+      "message": "Thanks Lance for the suggestion. Updated a separate patch for it.\nhttps://review.openstack.org/#/c/630036/",
+      "parentUuid": "dfd5e7cf_48e123d0",
+      "range": {
+        "startLine": 531,
+        "startChar": 16,
+        "endLine": 531,
+        "endChar": 23
+      },
+      "revId": "5caec760a4f7b4ba5ab96b30bbcc746e50eb65c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
