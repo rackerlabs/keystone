@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfdaf3ff_664a6f81",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-11T10:37:05Z",
+      "side": 1,
+      "message": "nit - existence",
+      "range": {
+        "startLine": 41,
+        "startChar": 16,
+        "endLine": 41,
+        "endChar": 25
+      },
+      "revId": "071e54493fd7626fca8a9b450585af1fd91eb2bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_41087527",
+        "filename": "keystone/common/policies/domain.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-11T10:37:05Z",
+      "side": 1,
+      "message": "You already said this in the first sentence",
+      "range": {
+        "startLine": 54,
+        "startChar": 18,
+        "endLine": 54,
+        "endChar": 55
+      },
+      "revId": "071e54493fd7626fca8a9b450585af1fd91eb2bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_81fe5d03",
+        "filename": "keystone/common/policies/domain.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-11T10:37:05Z",
+      "side": 1,
+      "message": "some nits on wording - I would just include this in the first phrase, e.g. \"This policy allows system-, domain-, and project-scoped tokens...\" instead of appending this note.",
+      "range": {
+        "startLine": 52,
+        "startChar": 73,
+        "endLine": 54,
+        "endChar": 17
+      },
+      "revId": "071e54493fd7626fca8a9b450585af1fd91eb2bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_e1188976",
+        "filename": "keystone/common/policies/domain.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-11T10:37:05Z",
+      "side": 1,
+      "message": "\"tending to the deployment\" I understand what you mean but I feel like this might be difficult for a non-native speaker to parse. I would just say deployment administrators or system administrators.",
+      "range": {
+        "startLine": 54,
+        "startChar": 70,
+        "endLine": 55,
+        "endChar": 27
+      },
+      "revId": "071e54493fd7626fca8a9b450585af1fd91eb2bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
