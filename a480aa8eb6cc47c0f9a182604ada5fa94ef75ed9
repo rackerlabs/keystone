@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfdaf3ff_359eb663",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-12T14:46:40Z",
+      "side": 1,
+      "message": "Add a blank line here and try to keep the first line to 50 characters without wrapping over.",
+      "revId": "a480aa8eb6cc47c0f9a182604ada5fa94ef75ed9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_559b3a71",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-12T14:46:40Z",
+      "side": 1,
+      "message": "This part is great :)",
+      "revId": "a480aa8eb6cc47c0f9a182604ada5fa94ef75ed9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_b5dce646",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-12T14:46:40Z",
+      "side": 1,
+      "message": "These red marks indicates whitespace was added, could you clean them up?",
+      "revId": "a480aa8eb6cc47c0f9a182604ada5fa94ef75ed9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_95e3e205",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-12T14:46:40Z",
+      "side": 1,
+      "message": "Like the first test, let\u0027s move this out of the test_client block by moving it to the left to be aligned with start of the \u0027with\u0027, same with in the other tests.",
+      "revId": "a480aa8eb6cc47c0f9a182604ada5fa94ef75ed9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_15a612c3",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-12T14:46:40Z",
+      "side": 1,
+      "message": "I found the issue with this test, the new flask request doesn\u0027t convert the datetime object to a string properly, so you can do this explicitly with:\n\n expires \u003d str(expires)",
+      "revId": "a480aa8eb6cc47c0f9a182604ada5fa94ef75ed9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
