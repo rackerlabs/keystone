@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfdaf3ff_a8979a90",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2019-01-14T15:59:21Z",
+      "side": 1,
+      "message": "The original comment remains correct, please revert.",
+      "revId": "3f2ef1361b3ddaf6b256771f7d2c9de230a575f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_a8c55a90",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2019-01-14T15:59:21Z",
+      "side": 1,
+      "message": "The original comment remains true, it\u0027s either a string or the result of ldap.dn.str2dn",
+      "revId": "3f2ef1361b3ddaf6b256771f7d2c9de230a575f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_28608aa5",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2019-01-14T15:59:21Z",
+      "side": 1,
+      "message": "FWIW, this bug was just fixed upstream",
+      "revId": "3f2ef1361b3ddaf6b256771f7d2c9de230a575f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_089ee655",
+        "filename": "keystone/tests/unit/fakeldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2019-01-14T15:59:21Z",
+      "side": 1,
+      "message": "This comment needs to be reworded to take into account the text being added. Probably the two blocks of text need to be folded together.",
+      "revId": "3f2ef1361b3ddaf6b256771f7d2c9de230a575f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_88c2d632",
+        "filename": "keystone/tests/unit/fakeldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2019-01-14T15:59:21Z",
+      "side": 1,
+      "message": "Is this even needed now?",
+      "revId": "3f2ef1361b3ddaf6b256771f7d2c9de230a575f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_081346b7",
+        "filename": "keystone/tests/unit/test_ldap_livetest.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2019-01-14T15:59:21Z",
+      "side": 1,
+      "message": "FYI, this was just fixed upstream.",
+      "revId": "3f2ef1361b3ddaf6b256771f7d2c9de230a575f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_6821b2fb",
+        "filename": "keystone/tests/unit/test_ldap_tls_livetest.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2019-01-14T15:59:21Z",
+      "side": 1,
+      "message": "FYI, this was just fixed upstream.",
+      "revId": "3f2ef1361b3ddaf6b256771f7d2c9de230a575f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
