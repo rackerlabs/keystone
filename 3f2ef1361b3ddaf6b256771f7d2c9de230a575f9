@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "bfdaf3ff_f4e1f7ff",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 11805
+      },
+      "writtenOn": "2019-01-14T20:24:10Z",
+      "side": 1,
+      "message": "Yes, thanks very much for the fix. I changed the wording from \"fixed\" to \"released\" for the time being until the fix is included in a release.",
+      "parentUuid": "bfdaf3ff_28608aa5",
+      "revId": "3f2ef1361b3ddaf6b256771f7d2c9de230a575f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfdaf3ff_089ee655",
         "filename": "keystone/tests/unit/fakeldap.py",
         "patchSetId": 9
