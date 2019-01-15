@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfdaf3ff_12f9214c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-01-15T09:17:37Z",
+      "side": 1,
+      "message": "You call the function at L471 in classmethod way. So either change \"staticmethod\" to \"classmethod\" here or channge \"cls\" to \"FernetRotate\" there.\n\nAnd the same problem in other places as well.",
+      "range": {
+        "startLine": 386,
+        "startChar": 5,
+        "endLine": 386,
+        "endChar": 17
+      },
+      "revId": "dd5f9cb6c1a6d3e910dff58eb75df5408b6faeb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_92eaf1a9",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-01-15T09:17:37Z",
+      "side": 1,
+      "message": "of cause this is a code error for CI failure.\nhttp://logs.openstack.org/64/627364/7/check/tempest-full/681f694/job-output.txt.gz#_2019-01-15_07_46_36_199239\n\nconfig_group here is a string, you should not call the CONF in this way. Try\n\n    conf_group \u003d getattr(CONF, config_group)\n\ninstead.",
+      "revId": "dd5f9cb6c1a6d3e910dff58eb75df5408b6faeb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
