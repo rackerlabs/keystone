@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfdaf3ff_44003968",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-15T21:02:14Z",
+      "side": 1,
+      "message": "I\u0027m not sure how I\u0027m supposed to read this. Is this supposed to mean initialization for tokens *and* receipts? Since the underlying implementation doesn\u0027t really care too much about tokens or receipts, we could just remove this bit and keep the method names simpler.\n\n  def initialize_fernet_repository(...)",
+      "range": {
+        "startLine": 387,
+        "startChar": 26,
+        "endLine": 387,
+        "endChar": 39
+      },
+      "revId": "54eb620938d507cec9875795db814ede0a39bc5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_c4f3c99d",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-15T21:02:14Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "range": {
+        "startLine": 402,
+        "startChar": 22,
+        "endLine": 402,
+        "endChar": 35
+      },
+      "revId": "54eb620938d507cec9875795db814ede0a39bc5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
