@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfdaf3ff_77608da6",
+        "filename": "keystone/common/policies/limit.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-15T21:42:28Z",
+      "side": 1,
+      "message": "If I have the \u0027reader\u0027 role on a project, I will technically be able to call this API regardless of the project I\u0027m asking for, right? We might need some negative testing here.\n\nWe might require something like:\n\n  # system-scope administrator\n  (role:reader and system_scope:all) or\n  # someone with authorization on the project\n  project_id:%(target.limit.project_id)s or \n  # someone with authorization on the domain\n  domain_id:%(target.limit.domain_id)s",
+      "revId": "af431f8f92e0ce2ab3ba85147645981d1fcc3344",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_b7f035cb",
+        "filename": "keystone/limit/schema.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-15T21:42:28Z",
+      "side": 1,
+      "message": "Interesting - is this the default way to implement mutually exclusive groups in jsonschema?",
+      "revId": "af431f8f92e0ce2ab3ba85147645981d1fcc3344",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
