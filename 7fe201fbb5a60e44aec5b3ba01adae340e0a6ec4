@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfdaf3ff_b707d51c",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-15T22:14:37Z",
+      "side": 1,
+      "message": "nit: is number here meant to represent depth?",
+      "range": {
+        "startLine": 290,
+        "startChar": 17,
+        "endLine": 290,
+        "endChar": 19
+      },
+      "revId": "7fe201fbb5a60e44aec5b3ba01adae340e0a6ec4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
