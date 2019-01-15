@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfdaf3ff_779badc8",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-15T21:30:30Z",
+      "side": 1,
+      "message": "If I\u0027m reading this correctly, the if/elif here is strictly for limiting the returned set by a project id or a domain id.\n\nI wonder if that\u0027s something we could just build into the query and have the database do for us?",
+      "revId": "13ab5201be0a7a1910b9ca106905c5db76f5d98a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_17aa61d1",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-15T21:30:30Z",
+      "side": 1,
+      "message": "Is this still valid or should we be handling this different now?",
+      "range": {
+        "startLine": 58,
+        "startChar": 16,
+        "endLine": 59,
+        "endChar": 74
+      },
+      "revId": "13ab5201be0a7a1910b9ca106905c5db76f5d98a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
