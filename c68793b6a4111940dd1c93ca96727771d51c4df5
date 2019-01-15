@@ -70,6 +70,24 @@
       "revId": "c68793b6a4111940dd1c93ca96727771d51c4df5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_c42e69a4",
+        "filename": "keystone/common/sql/contract_repo/versions/055_contract_add_domain_to_limit.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-15T21:21:31Z",
+      "side": 1,
+      "message": "I suppose only SQLite is susceptible to this because we special-case the migration (contract_47). It looks like this part of the comment wasn\u0027t implemented [0]?\n\n[0] https://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/sql/contract_repo/versions/047_contract_expand_update_pk_for_unified_limit.py#n23",
+      "parentUuid": "3f79a3b5_7ac93484",
+      "revId": "c68793b6a4111940dd1c93ca96727771d51c4df5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
