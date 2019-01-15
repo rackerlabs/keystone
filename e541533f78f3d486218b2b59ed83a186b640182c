@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfdaf3ff_da172045",
+        "filename": "releasenotes/notes/domain-level-limit-support-60e1e330d06227ed.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-15T22:15:16Z",
+      "side": 1,
+      "message": "nit: limits*",
+      "range": {
+        "startLine": 5,
+        "startChar": 47,
+        "endLine": 5,
+        "endChar": 52
+      },
+      "revId": "e541533f78f3d486218b2b59ed83a186b640182c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
