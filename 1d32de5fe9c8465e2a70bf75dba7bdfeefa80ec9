@@ -87,6 +87,24 @@
       "revId": "1d32de5fe9c8465e2a70bf75dba7bdfeefa80ec9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_ab20c6b1",
+        "filename": "keystone/tests/unit/protection/v3/test_domains.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-16T15:04:41Z",
+      "side": 1,
+      "message": "I think they\u0027re more negative tests than anything else.",
+      "parentUuid": "bfdaf3ff_44f4b25b",
+      "revId": "1d32de5fe9c8465e2a70bf75dba7bdfeefa80ec9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
