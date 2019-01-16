@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfdaf3ff_81db61eb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-16T16:14:31Z",
+      "side": 1,
+      "message": "Could you please elaborate the commit message. The purpose of commit message is to help the reviewers to understand the problem statement for which the changes have been done. You can also provide the link to the notes you are referring here.",
+      "revId": "3bedd1957eb30066df1e1ee6d7ea5532e02f333d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_21f4f55a",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-16T16:14:31Z",
+      "side": 1,
+      "message": "unrelated changes?",
+      "revId": "3bedd1957eb30066df1e1ee6d7ea5532e02f333d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_c19f2901",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-16T16:14:31Z",
+      "side": 1,
+      "message": "does it make any difference moving this inside with?",
+      "revId": "3bedd1957eb30066df1e1ee6d7ea5532e02f333d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
