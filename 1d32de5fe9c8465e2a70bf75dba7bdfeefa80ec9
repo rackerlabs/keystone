@@ -46,6 +46,47 @@
       "revId": "1d32de5fe9c8465e2a70bf75dba7bdfeefa80ec9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_2463ae44",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-01-16T06:42:59Z",
+      "side": 1,
+      "message": "With memcache enabled this is fine. Without it, it would\u0027ve been two trips to the DB. It would be nice to think of a way to optimize it. Memcache is recommended so we should be OK.",
+      "parentUuid": "bfdaf3ff_0f63481c",
+      "range": {
+        "startLine": 43,
+        "startChar": 7,
+        "endLine": 43,
+        "endChar": 12
+      },
+      "revId": "1d32de5fe9c8465e2a70bf75dba7bdfeefa80ec9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_44f4b25b",
+        "filename": "keystone/tests/unit/protection/v3/test_domains.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-01-16T06:42:59Z",
+      "side": 1,
+      "message": "The test cases below doesn\u0027t seem relevant to the current change. But more testing is good. :-)",
+      "revId": "1d32de5fe9c8465e2a70bf75dba7bdfeefa80ec9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
