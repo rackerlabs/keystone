@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bfdaf3ff_6ddbd91a",
+        "filename": "keystone/api/_shared/saml.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-16T09:48:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfdaf3ff_41b155e1",
+      "revId": "2e426052c755812a4522961659ad49494322839c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfdaf3ff_c1ab0573",
         "filename": "keystone/api/_shared/saml.py",
         "patchSetId": 22
@@ -30,6 +48,30 @@
       "writtenOn": "2019-01-11T11:17:29Z",
       "side": 1,
       "message": "(nit) since this is only one group I would call it user_group",
+      "range": {
+        "startLine": 64,
+        "startChar": 12,
+        "endLine": 64,
+        "endChar": 23
+      },
+      "revId": "2e426052c755812a4522961659ad49494322839c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_8dd63df1",
+        "filename": "keystone/api/_shared/saml.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-16T09:48:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfdaf3ff_c1ab0573",
       "range": {
         "startLine": 64,
         "startChar": 12,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "bfdaf3ff_4d0a958a",
+        "filename": "keystone/api/_shared/saml.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-16T09:48:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfdaf3ff_a1bcc1bb",
+      "range": {
+        "startLine": 69,
+        "startChar": 12,
+        "endLine": 69,
+        "endChar": 23
+      },
+      "revId": "2e426052c755812a4522961659ad49494322839c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfdaf3ff_41aab585",
         "filename": "keystone/federation/utils.py",
         "patchSetId": 22
@@ -76,6 +142,30 @@
       "writtenOn": "2019-01-11T11:17:29Z",
       "side": 1,
       "message": "I would use value.startswith(\u0027JSON:\u0027), otherwise if the string had JSON in it for any other reason this would match. -1 for this since it\u0027s slightly dangerous not to be precise here.",
+      "range": {
+        "startLine": 517,
+        "startChar": 55,
+        "endLine": 517,
+        "endChar": 70
+      },
+      "revId": "2e426052c755812a4522961659ad49494322839c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_8def1daf",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-16T09:48:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfdaf3ff_41aab585",
       "range": {
         "startLine": 517,
         "startChar": 55,
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "bfdaf3ff_2d2cf100",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-16T09:48:16Z",
+      "side": 1,
+      "message": "Changed the following part. Done",
+      "parentUuid": "bfdaf3ff_217a1124",
+      "range": {
+        "startLine": 518,
+        "startChar": 54,
+        "endLine": 518,
+        "endChar": 82
+      },
+      "revId": "2e426052c755812a4522961659ad49494322839c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfdaf3ff_812adde4",
         "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
         "patchSetId": 22
@@ -122,6 +236,30 @@
       "writtenOn": "2019-01-11T11:17:29Z",
       "side": 1,
       "message": "This test case is confusing to me, why would there not be user groups for this test fixture?",
+      "range": {
+        "startLine": 180,
+        "startChar": 8,
+        "endLine": 186,
+        "endChar": 50
+      },
+      "revId": "2e426052c755812a4522961659ad49494322839c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_cd3a0533",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-16T09:48:16Z",
+      "side": 1,
+      "message": "Makes Sense. There will always be user groups for this test case. Removed the if condition",
+      "parentUuid": "bfdaf3ff_812adde4",
       "range": {
         "startLine": 180,
         "startChar": 8,
@@ -151,6 +289,24 @@
     },
     {
       "key": {
+        "uuid": "bfdaf3ff_2d15d19c",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1643,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-16T09:48:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfdaf3ff_a1cb611c",
+      "revId": "2e426052c755812a4522961659ad49494322839c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfdaf3ff_21d771c2",
         "filename": "keystone/tests/unit/saml2/signed_saml2_assertion.xml",
         "patchSetId": 22
@@ -174,6 +330,30 @@
     },
     {
       "key": {
+        "uuid": "bfdaf3ff_6d22f902",
+        "filename": "keystone/tests/unit/saml2/signed_saml2_assertion.xml",
+        "patchSetId": 22
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-16T09:48:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfdaf3ff_21d771c2",
+      "range": {
+        "startLine": 69,
+        "startChar": 89,
+        "endLine": 69,
+        "endChar": 96
+      },
+      "revId": "2e426052c755812a4522961659ad49494322839c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfdaf3ff_81ef3d86",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 22
@@ -185,6 +365,30 @@
       "writtenOn": "2019-01-11T11:17:29Z",
       "side": 1,
       "message": "same nitpick about the name here",
+      "range": {
+        "startLine": 3628,
+        "startChar": 52,
+        "endLine": 3628,
+        "endChar": 59
+      },
+      "revId": "2e426052c755812a4522961659ad49494322839c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_4d7db5e5",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 3628,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-16T09:48:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfdaf3ff_81ef3d86",
       "range": {
         "startLine": 3628,
         "startChar": 52,
