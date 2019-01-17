@@ -1,0 +1,129 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfdaf3ff_cfa7390b",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-17T17:00:47Z",
+      "side": 1,
+      "message": "Need to remove this space also",
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_aff0b5fe",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-17T17:00:47Z",
+      "side": 1,
+      "message": "I can\u0027t see the use of this variable \u0027roles\u0027.",
+      "range": {
+        "startLine": 83,
+        "startChar": 12,
+        "endLine": 83,
+        "endChar": 17
+      },
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_6fc72d98",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-17T17:00:47Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_8f493132",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-17T17:00:47Z",
+      "side": 1,
+      "message": "Any specific reason to convert into str?",
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_6fe88de1",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-17T17:00:47Z",
+      "side": 1,
+      "message": "We don\u0027t need this L170, as we already issued token  in L158.",
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_8fcff154",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-17T17:00:47Z",
+      "side": 1,
+      "message": "this self.get should be \u0027c.get\u0027?",
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_2fd8451c",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-17T17:00:47Z",
+      "side": 1,
+      "message": "Same for the below requests in this function.",
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
