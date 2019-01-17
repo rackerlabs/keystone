@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfdaf3ff_ab6d1705",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 10
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-01-17T05:35:10Z",
+      "side": 0,
+      "message": "So there\u0027s a subtle difference between this and https://review.openstack.org/#/c/605851/. This rule restricts to \"domain admin\" as oppose to the \"domain user\". In other words, one can scope to a domain with a role other than admin. This change may cause some concern for security folks.",
+      "range": {
+        "startLine": 44,
+        "startChar": 4,
+        "endLine": 44,
+        "endChar": 131
+      },
+      "revId": "64fb2dbd9b1e679622e6a7a344d2d095d8c91998",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
