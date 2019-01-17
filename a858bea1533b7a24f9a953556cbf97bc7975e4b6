@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfdaf3ff_4972694b",
+        "filename": "keystone/tests/unit/test_app_config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-17T16:03:32Z",
+      "side": 1,
+      "message": "You can remove these spaces.",
+      "revId": "a858bea1533b7a24f9a953556cbf97bc7975e4b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_09e461e0",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-17T16:03:32Z",
+      "side": 1,
+      "message": "IMO changing this will not make any difference.",
+      "revId": "a858bea1533b7a24f9a953556cbf97bc7975e4b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_69fbad78",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-17T16:03:32Z",
+      "side": 1,
+      "message": "Same for all these red highlighted area. These are the spaces created in the file. We can remove them",
+      "revId": "a858bea1533b7a24f9a953556cbf97bc7975e4b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_494349b0",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-17T16:03:32Z",
+      "side": 1,
+      "message": "Any specific reason for converting it to string?",
+      "revId": "a858bea1533b7a24f9a953556cbf97bc7975e4b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_a943d56b",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-17T16:03:32Z",
+      "side": 1,
+      "message": "As you have already issued a token in L158. I dont think we need to issue the token again.",
+      "revId": "a858bea1533b7a24f9a953556cbf97bc7975e4b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
