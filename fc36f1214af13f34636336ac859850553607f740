@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfdaf3ff_2cbfe8b0",
+        "filename": "api-ref/source/v3/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2019-01-18T02:07:38Z",
+      "side": 1,
+      "message": "I assume there was more, so feel free to amend the patch to add what else.",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 64
+      },
+      "revId": "fc36f1214af13f34636336ac859850553607f740",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
