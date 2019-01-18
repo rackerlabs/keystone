@@ -727,7 +727,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
 
             PROVIDERS.assignment_api.add_role_to_user_and_project(
                 user_id=user_ref['id'],
-                tenant_id=project_ref['id'],
+                project_id=project_ref['id'],
                 role_id=role_ref['id'])
 
         role_list = PROVIDERS.assignment_api.get_roles_for_user_and_project(
