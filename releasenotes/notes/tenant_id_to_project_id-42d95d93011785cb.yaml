@@ -1,0 +1,4 @@
+---
+upgrade:
+  - >
+    Has changed to use the named parameter 'project_id' instead of 'tenant_id'.
