@@ -1,0 +1,4 @@
+---
+upgrade:
+  - >
+    The assignment driver interface is changed.
