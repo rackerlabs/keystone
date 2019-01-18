@@ -1,0 +1,4 @@
+---
+fixes:
+  - >
+    This replaces the deprecated "tenant_id" with "project_id" all over the keystone.
