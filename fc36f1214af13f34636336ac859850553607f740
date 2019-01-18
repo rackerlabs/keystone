@@ -22,6 +22,47 @@
       "revId": "fc36f1214af13f34636336ac859850553607f740",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_e6fd786e",
+        "filename": "api-ref/source/v3/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-18T10:22:08Z",
+      "side": 1,
+      "message": "We can add to it later",
+      "parentUuid": "bfdaf3ff_2cbfe8b0",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 64
+      },
+      "revId": "fc36f1214af13f34636336ac859850553607f740",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_a6fbf076",
+        "filename": "keystone/api/discovery.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-18T10:22:08Z",
+      "side": 1,
+      "message": "Let\u0027s bump this to January 2019?",
+      "revId": "fc36f1214af13f34636336ac859850553607f740",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
