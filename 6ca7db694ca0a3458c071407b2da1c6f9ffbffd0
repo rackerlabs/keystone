@@ -22,6 +22,29 @@
       "revId": "6ca7db694ca0a3458c071407b2da1c6f9ffbffd0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_9291daf4",
+        "filename": "keystone/conf/jwt_tokens.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-18T19:02:48Z",
+      "side": 1,
+      "message": "I think this is going to be too general for this implementation. JWT doesn\u0027t necessarily prescribe encryption or signing in the name and it can be used to represent either.\n\nThe initial implementation of \"JWT\" in keystone is only going to support signing, so we should consider changing this to JWS, instead.\n\nAnother reason to change this to JWS is if we add encryption support for JWTs in the future. Asymmetric signing is done with private keys and validation is done with public keys. Providing encryption with asymmetric key pairs would require the encryption to be done with the public key and validation to be done with the private keys. This might make a difference in how keystone realizes the keys in a repository denoted \"JWT\".\n\nWe might be safer starting with a JWS section where we know the private key is used for signing and the public keys are used for validation. If/when we implement JWE support, we can consider consolidating if there is an opportunity to do so.",
+      "range": {
+        "startLine": 22,
+        "startChar": 21,
+        "endLine": 22,
+        "endChar": 24
+      },
+      "revId": "6ca7db694ca0a3458c071407b2da1c6f9ffbffd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
