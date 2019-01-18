@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfdaf3ff_accf5854",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2019-01-18T02:14:14Z",
+      "side": 1,
+      "message": "\"requests\" or \"in \u0027a\u0027 follow-up\"",
+      "range": {
+        "startLine": 26,
+        "startChar": 61,
+        "endLine": 27,
+        "endChar": 22
+      },
+      "revId": "36c3ace8d8e765b8002dba7ec238f5b40f8fe060",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
