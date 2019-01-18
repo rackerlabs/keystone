@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bfdaf3ff_b8d22fff",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-18T08:25:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfdaf3ff_2256852b",
+      "range": {
+        "startLine": 73,
+        "startChar": 12,
+        "endLine": 73,
+        "endChar": 17
+      },
+      "revId": "f2bebd6853ab4e666a19d173e01893417df0dbe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfdaf3ff_22044517",
         "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
         "patchSetId": 9
@@ -36,6 +60,30 @@
       "writtenOn": "2019-01-11T20:14:15Z",
       "side": 1,
       "message": "I think this might be messing with the test in a weird way. We\u0027re not performing any string substitution here, so this is the actual path used in the request. Since \u0027%s\u0027 is probably being ignored, you\u0027re actually getting back all 4 role assignments. The assertion at line 95 will need to be changed if we do something like:\n\n  ?user.id\u003d%s\u0027 % user[\u0027id\u0027],",
+      "range": {
+        "startLine": 91,
+        "startChar": 69,
+        "endLine": 91,
+        "endChar": 71
+      },
+      "revId": "f2bebd6853ab4e666a19d173e01893417df0dbe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_d8cff353",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-18T08:25:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfdaf3ff_22044517",
       "range": {
         "startLine": 91,
         "startChar": 69,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "bfdaf3ff_78d8471d",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-18T08:25:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfdaf3ff_dd03da0c",
+      "range": {
+        "startLine": 94,
+        "startChar": 12,
+        "endLine": 94,
+        "endChar": 17
+      },
+      "revId": "f2bebd6853ab4e666a19d173e01893417df0dbe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfdaf3ff_bd27f6b6",
         "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
         "patchSetId": 9
@@ -82,6 +154,24 @@
       "writtenOn": "2019-01-11T20:14:15Z",
       "side": 1,
       "message": "minor nit on the naming of this test\n\nWe could do something like\n\n  def test_user_can_filter_role_assignments_by_project(self):\n\nwhich is a little more descriptive in what we\u0027re filtering by.",
+      "revId": "f2bebd6853ab4e666a19d173e01893417df0dbe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_38087f90",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-18T08:25:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfdaf3ff_bd27f6b6",
       "revId": "f2bebd6853ab4e666a19d173e01893417df0dbe4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "bfdaf3ff_580d439f",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-18T08:25:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfdaf3ff_5d0fea2d",
+      "revId": "f2bebd6853ab4e666a19d173e01893417df0dbe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfdaf3ff_3d3b06d2",
         "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
         "patchSetId": 9
@@ -116,6 +224,24 @@
       "writtenOn": "2019-01-11T20:14:15Z",
       "side": 1,
       "message": "Similar comment here as above.",
+      "revId": "f2bebd6853ab4e666a19d173e01893417df0dbe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_f832f75d",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-18T08:25:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfdaf3ff_3d3b06d2",
       "revId": "f2bebd6853ab4e666a19d173e01893417df0dbe4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -145,6 +271,30 @@
     },
     {
       "key": {
+        "uuid": "bfdaf3ff_b840efa6",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-18T08:25:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfdaf3ff_9d5b122d",
+      "range": {
+        "startLine": 124,
+        "startChar": 75,
+        "endLine": 124,
+        "endChar": 76
+      },
+      "revId": "f2bebd6853ab4e666a19d173e01893417df0dbe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfdaf3ff_1d32c2f2",
         "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
         "patchSetId": 9
@@ -162,6 +312,24 @@
     },
     {
       "key": {
+        "uuid": "bfdaf3ff_d83db32b",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-18T08:25:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfdaf3ff_1d32c2f2",
+      "revId": "f2bebd6853ab4e666a19d173e01893417df0dbe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfdaf3ff_7d566e09",
         "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
         "patchSetId": 9
@@ -173,6 +341,30 @@
       "writtenOn": "2019-01-11T20:14:15Z",
       "side": 1,
       "message": "This might need to be:\n\n  \u0027project.id\u003d%s?user.id\u003d%s\u0027 % (project[\u0027id\u0027], user[\u0027id\u0027])\n\nI think `project` is actually a dictionary in this case, at least based on line 122. Same with user.",
+      "range": {
+        "startLine": 134,
+        "startChar": 52,
+        "endLine": 134,
+        "endChar": 59
+      },
+      "revId": "f2bebd6853ab4e666a19d173e01893417df0dbe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_9843abaf",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-18T08:25:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfdaf3ff_7d566e09",
       "range": {
         "startLine": 134,
         "startChar": 52,
@@ -208,6 +400,30 @@
     },
     {
       "key": {
+        "uuid": "bfdaf3ff_581b03cf",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-18T08:25:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfdaf3ff_9d74729b",
+      "range": {
+        "startLine": 173,
+        "startChar": 44,
+        "endLine": 173,
+        "endChar": 74
+      },
+      "revId": "f2bebd6853ab4e666a19d173e01893417df0dbe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfdaf3ff_bd9a96c2",
         "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
         "patchSetId": 9
@@ -219,6 +435,30 @@
       "writtenOn": "2019-01-11T20:14:15Z",
       "side": 1,
       "message": "From a system reader perspective, we just want to make sure we can list role assignments in any domain, which I think we\u0027ve confidently tested in the above test.",
+      "range": {
+        "startLine": 179,
+        "startChar": 8,
+        "endLine": 179,
+        "endChar": 58
+      },
+      "revId": "f2bebd6853ab4e666a19d173e01893417df0dbe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_f80bd779",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-18T08:25:00Z",
+      "side": 1,
+      "message": "Done.Removed the test",
+      "parentUuid": "bfdaf3ff_bd9a96c2",
       "range": {
         "startLine": 179,
         "startChar": 8,
@@ -271,6 +511,24 @@
     },
     {
       "key": {
+        "uuid": "bfdaf3ff_b829cfe6",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-18T08:25:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfdaf3ff_dd88ba72",
+      "revId": "f2bebd6853ab4e666a19d173e01893417df0dbe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfdaf3ff_9d82324f",
         "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
         "patchSetId": 9
@@ -282,6 +540,30 @@
       "writtenOn": "2019-01-11T20:14:15Z",
       "side": 1,
       "message": "Same comment here as above.",
+      "range": {
+        "startLine": 219,
+        "startChar": 44,
+        "endLine": 219,
+        "endChar": 74
+      },
+      "revId": "f2bebd6853ab4e666a19d173e01893417df0dbe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_d8261316",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-18T08:25:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfdaf3ff_9d82324f",
       "range": {
         "startLine": 219,
         "startChar": 44,
@@ -317,6 +599,30 @@
     },
     {
       "key": {
+        "uuid": "bfdaf3ff_387b9ff5",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-18T08:25:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfdaf3ff_1de3a235",
+      "range": {
+        "startLine": 225,
+        "startChar": 8,
+        "endLine": 225,
+        "endChar": 61
+      },
+      "revId": "f2bebd6853ab4e666a19d173e01893417df0dbe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfdaf3ff_3dc5468f",
         "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
         "patchSetId": 9
@@ -340,6 +646,30 @@
     },
     {
       "key": {
+        "uuid": "bfdaf3ff_5880e3c0",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-18T08:25:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfdaf3ff_3dc5468f",
+      "range": {
+        "startLine": 251,
+        "startChar": 44,
+        "endLine": 252,
+        "endChar": 34
+      },
+      "revId": "f2bebd6853ab4e666a19d173e01893417df0dbe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfdaf3ff_bd3616b4",
         "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
         "patchSetId": 9
@@ -351,6 +681,30 @@
       "writtenOn": "2019-01-11T20:14:15Z",
       "side": 1,
       "message": "Since we\u0027re passing self.headers in, I think we\u0027re actually calling this API with a system reader token. The test name makes this seam like we\u0027re testing that someone in a group can list role assignment, not the system user.",
+      "range": {
+        "startLine": 295,
+        "startChar": 65,
+        "endLine": 295,
+        "endChar": 77
+      },
+      "revId": "f2bebd6853ab4e666a19d173e01893417df0dbe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_5869c31e",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-18T08:25:00Z",
+      "side": 1,
+      "message": "Done. This is tested in above test case. Thus Removed it.",
+      "parentUuid": "bfdaf3ff_bd3616b4",
       "range": {
         "startLine": 295,
         "startChar": 65,
