@@ -22,6 +22,29 @@
       "revId": "e287f58fbbfb81f16270800581059be2083e547c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_5b6a1dee",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-18T09:43:48Z",
+      "side": 0,
+      "message": "You must not change the expected status code. If the test fails due to the status code being unexpected, that means you need to fix the test, not the status code.",
+      "range": {
+        "startLine": 272,
+        "startChar": 12,
+        "endLine": 272,
+        "endChar": 49
+      },
+      "revId": "e287f58fbbfb81f16270800581059be2083e547c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

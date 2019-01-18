@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "bfdaf3ff_9bee45b2",
+        "filename": "keystone/tests/unit/test_app_config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-18T09:43:48Z",
+      "side": 1,
+      "message": "This is an unrelated whitespace change, delete this empty line and then re-commit with `git commit --amend` and resubmit with `git review`",
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfdaf3ff_cfa7390b",
         "filename": "keystone/tests/unit/test_v3_application_credential.py",
         "patchSetId": 2
@@ -13,6 +30,23 @@
       "writtenOn": "2019-01-17T17:00:47Z",
       "side": 1,
       "message": "Need to remove this space also",
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_bb40e9a6",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-18T09:43:48Z",
+      "side": 1,
+      "message": "Move this to the left so that it lines up with \u0027with\u0027",
       "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -36,6 +70,81 @@
         "endLine": 83,
         "endChar": 17
       },
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_1b38153b",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-18T09:43:48Z",
+      "side": 1,
+      "message": "Seems to be an accidental copy and paste",
+      "parentUuid": "bfdaf3ff_aff0b5fe",
+      "range": {
+        "startLine": 83,
+        "startChar": 12,
+        "endLine": 83,
+        "endChar": 17
+      },
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_db3dad2b",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-18T09:43:48Z",
+      "side": 1,
+      "message": "Move this to the left so that it lines up with \u0027with\u0027",
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_7b4601c3",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-18T09:43:48Z",
+      "side": 1,
+      "message": "Move this to the left so that it lines up with \u0027with\u0027",
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_db6b6d1b",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-18T09:43:48Z",
+      "side": 1,
+      "message": "This resp variable isn\u0027t used anywhere and that will cause the pep8 tests to fail. You can just use c.post without assigning it to a variable. Same comment in the other tests. You can use `tox -epep8` to verify the pep8 tests before you submit the change.",
       "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -76,6 +185,24 @@
     },
     {
       "key": {
+        "uuid": "bfdaf3ff_3b7b99f5",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-18T09:43:48Z",
+      "side": 1,
+      "message": "There was an issue with flask\u0027s rest call not properly converting the datetime object and causing the test to produce a 400 error.",
+      "parentUuid": "bfdaf3ff_8f493132",
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfdaf3ff_6fe88de1",
         "filename": "keystone/tests/unit/test_v3_application_credential.py",
         "patchSetId": 2
@@ -87,6 +214,47 @@
       "writtenOn": "2019-01-17T17:00:47Z",
       "side": 1,
       "message": "We don\u0027t need this L170, as we already issued token  in L158.",
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_1b5fb572",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-18T09:43:48Z",
+      "side": 1,
+      "message": "Vishakha, see line 139 on the old change, this test specifically requires generating a second token.",
+      "parentUuid": "bfdaf3ff_6fe88de1",
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_9bdf25d5",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-18T09:43:48Z",
+      "side": 1,
+      "message": "This test is very similar to the test above it, it needs to generate a second token using the first application credential. Currently this test is testing the wrong thing because it is using the old token.",
+      "range": {
+        "startLine": 196,
+        "startChar": 41,
+        "endLine": 196,
+        "endChar": 46
+      },
       "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -110,6 +278,24 @@
     },
     {
       "key": {
+        "uuid": "bfdaf3ff_3bf2b971",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-18T09:43:48Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "bfdaf3ff_8fcff154",
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfdaf3ff_2fd8451c",
         "filename": "keystone/tests/unit/test_v3_application_credential.py",
         "patchSetId": 2
@@ -121,6 +307,167 @@
       "writtenOn": "2019-01-17T17:00:47Z",
       "side": 1,
       "message": "Same for the below requests in this function.",
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_3b9719ef",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-18T09:43:48Z",
+      "side": 1,
+      "message": "In this test too",
+      "range": {
+        "startLine": 234,
+        "startChar": 19,
+        "endLine": 234,
+        "endChar": 27
+      },
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_fb9c310f",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-18T09:43:48Z",
+      "side": 1,
+      "message": "c.head",
+      "range": {
+        "startLine": 264,
+        "startChar": 12,
+        "endLine": 264,
+        "endChar": 21
+      },
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_bb8a29bc",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-18T09:43:48Z",
+      "side": 1,
+      "message": "c.get",
+      "range": {
+        "startLine": 269,
+        "startChar": 19,
+        "endLine": 269,
+        "endChar": 27
+      },
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_db87edb4",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-18T09:43:48Z",
+      "side": 1,
+      "message": "c.head",
+      "range": {
+        "startLine": 275,
+        "startChar": 8,
+        "endLine": 275,
+        "endChar": 17
+      },
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_9b8de5d4",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-18T09:43:48Z",
+      "side": 1,
+      "message": "c.get",
+      "range": {
+        "startLine": 278,
+        "startChar": 8,
+        "endLine": 278,
+        "endChar": 16
+      },
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_3bc079e1",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-18T09:43:48Z",
+      "side": 1,
+      "message": "c.delete",
+      "range": {
+        "startLine": 292,
+        "startChar": 12,
+        "endLine": 292,
+        "endChar": 23
+      },
+      "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfdaf3ff_bb78e9c3",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-18T09:43:48Z",
+      "side": 1,
+      "message": "Here also you need to be generating a new token based on the application credential",
+      "range": {
+        "startLine": 340,
+        "startChar": 45,
+        "endLine": 340,
+        "endChar": 50
+      },
       "revId": "69211ec1e3ba028adb524bf87c519f916e9dd912",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
