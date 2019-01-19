@@ -3202,7 +3202,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
              'created_at_int', 'created_at', 'expires_at_int', 'expires_at']
         )
 
-    def test_migration_055_add_domain_to_limit(self):
+    def test_migration_055_add_application_credential_capabilities(self):
         self.expand(54)
         self.migrate(54)
         self.contract(54)
@@ -3222,6 +3222,66 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
              'resource_limit', 'description', 'internal_id',
              'registered_limit_id', 'domain_id'])
         self.assertTrue(limit_table.c.project_id.nullable)
+
+    def test_migration_056_add_domain_to_limit(self):
+        self.expand(55)
+        self.migrate(55)
+        self.contract(55)
+
+        self.assertTableDoesNotExist('capability')
+        self.assertTableDoesNotExist('application_credential_capability')
+
+        self.expand(56)
+        self.migrate(56)
+        self.contract(56)
+
+        self.assertTableExists('capability')
+        self.assertTableExists('application_credential_capability')
+        self.assertTableColumns(
+            'capability',
+            ['id', 'service', 'request_path', 'request_method']
+        )
+        self.assertTableColumns(
+            'application_credential_capability',
+            ['application_credential_id', 'capability_id']
+        )
+        self.assertTrue(self.does_fk_exist('application_credential_capability',
+                                           'application_credential_id'))
+        self.assertTrue(self.does_fk_exist('application_credential_capability',
+                                           'capability_id'))
+
+        app_cred_table = sqlalchemy.Table(
+            'application_credential', self.metadata, autoload=True
+        )
+        capability_table = sqlalchemy.Table(
+            'capability', self.metadata, autoload=True
+        )
+        app_cred_capability_table = sqlalchemy.Table(
+            'application_credential_capability',
+            self.metadata, autoload=True
+        )
+        app_cred = {
+            'internal_id': 1,
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'secret_hash': uuid.uuid4().hex,
+            'user_id': uuid.uuid4().hex,
+            'project_id': uuid.uuid4().hex
+        }
+        app_cred_table.insert().values(app_cred).execute()
+        capability = {
+            'id': 1,
+            'service': uuid.uuid4().hex,
+            'request_path': '/v2.1/servers',
+            'request_method': 'GET'
+        }
+        capability_table.insert().values(capability).execute()
+        app_cred_capability_rel = {
+            'application_credential_id': app_cred['internal_id'],
+            'capability_id': capability['id']
+        }
+        app_cred_capability_table.insert().values(
+            app_cred_capability_rel).execute()
 
 
 class MySQLOpportunisticFullMigration(FullMigration):
