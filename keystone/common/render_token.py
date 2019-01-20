@@ -141,5 +141,8 @@ def render_token_response_from_model(token, include_catalog=True):
         )
         restricted = not token.application_credential['unrestricted']
         token_reference['token'][key]['restricted'] = restricted
+        token_reference['token'][key]['capabilities'] = (
+            token.application_credential['capabilities']
+        )
 
     return token_reference
