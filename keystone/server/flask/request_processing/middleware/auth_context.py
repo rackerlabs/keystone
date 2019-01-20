@@ -55,6 +55,9 @@ LOG = log.getLogger(__name__)
 JSON_ENCODE_CONTENT_TYPES = set(['application/json',
                                  'application/json-home'])
 
+# minimum access rules support
+ACCESS_RULES_MIN_VERSION = token_model.ACCESS_RULES_MIN_VERSION
+
 
 def best_match_language(req):
     """Determine the best available locale.
@@ -236,11 +239,13 @@ class AuthContextMiddleware(provider_api.ProviderAPIMixin,
     kwargs_to_fetch_token = True
 
     def __init__(self, app):
-        super(AuthContextMiddleware, self).__init__(app, log=LOG)
+        super(AuthContextMiddleware, self).__init__(app, log=LOG,
+                                                    service_type='identity')
 
     def fetch_token(self, token, **kwargs):
         try:
-            token_model = self.token_provider_api.validate_token(token)
+            token_model = self.token_provider_api.validate_token(
+                token, access_rules_support=ACCESS_RULES_MIN_VERSION)
             return render_token.render_token_response_from_model(token_model)
         except exception.TokenNotFound:
             raise auth_token.InvalidToken(_('Could not find token'))
@@ -417,7 +422,9 @@ class AuthContextMiddleware(provider_api.ProviderAPIMixin,
             # Keystone enforces policy on some values that other services
             # do not, and should not, use.  This adds them in to the context.
             token = PROVIDERS.token_provider_api.validate_token(
-                request.user_token
+                request.user_token,
+                access_rules_support=request.headers.get(
+                    authorization.ACCESS_RULES_HEADER)
             )
             self._keystone_specific_values(token, request_context)
             request_context.auth_token = request.user_token
