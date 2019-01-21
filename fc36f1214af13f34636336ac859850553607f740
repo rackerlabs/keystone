@@ -63,6 +63,24 @@
       "revId": "fc36f1214af13f34636336ac859850553607f740",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_4bede1ed",
+        "filename": "keystone/api/discovery.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-21T21:04:25Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "bfdaf3ff_a6fbf076",
+      "revId": "fc36f1214af13f34636336ac859850553607f740",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
