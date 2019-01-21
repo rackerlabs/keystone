@@ -46,6 +46,30 @@
       "revId": "e0f8fce136d8b7e5429d7bae7f224fd94219eaf4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_ebd29534",
+        "filename": "keystone/tests/unit/protection/v3/test_limits.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-21T21:01:39Z",
+      "side": 1,
+      "message": "Actually it looks like we prevent project users from accessing limits for projects they don\u0027t have access to [0].\n\nBut we should have similar testing for domain users, to make sure they only get the project limits within the domain they have authorization on, instead of all project limits in the deployment.\n\n[0] https://review.openstack.org/#/c/621024/8/keystone/tests/unit/protection/v3/test_limits.py",
+      "parentUuid": "9fdfeff1_0b6599b5",
+      "range": {
+        "startLine": 303,
+        "startChar": 5,
+        "endLine": 303,
+        "endChar": 21
+      },
+      "revId": "e0f8fce136d8b7e5429d7bae7f224fd94219eaf4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
