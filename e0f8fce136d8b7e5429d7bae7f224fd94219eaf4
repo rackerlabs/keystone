@@ -22,6 +22,30 @@
       "revId": "e0f8fce136d8b7e5429d7bae7f224fd94219eaf4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_0b6599b5",
+        "filename": "keystone/tests/unit/protection/v3/test_limits.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-21T20:58:21Z",
+      "side": 1,
+      "message": "Domain limits are still being developed [0]. These tests are just making sure a user with a domain-scoped token can access the unified limits API, or at least some of it.\n\nWe should have some testing or discussion around whether or not a user should be able to list limit information for a project they\u0027re not authorized to access. Right now, the default is that the get limit API is unprotected, meaning anyone with a token can get a limit.\n\nYour comment makes me think we need to change that.\n\n[0] https://review.openstack.org/#/q/status:open+project:openstack/keystone+branch:master+topic:bp/domain-level-limit",
+      "parentUuid": "bfdaf3ff_f49690f0",
+      "range": {
+        "startLine": 303,
+        "startChar": 5,
+        "endLine": 303,
+        "endChar": 21
+      },
+      "revId": "e0f8fce136d8b7e5429d7bae7f224fd94219eaf4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
