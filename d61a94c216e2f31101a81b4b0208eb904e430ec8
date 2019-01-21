@@ -1,0 +1,256 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_3e03fe44",
+        "filename": "keystone/conf/jwt_tokens.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-21T17:26:53Z",
+      "side": 1,
+      "message": "This file should be removed since it was refactored out into its own change.\n\nhttps://review.openstack.org/#/c/628676/",
+      "revId": "d61a94c216e2f31101a81b4b0208eb904e430ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_5e004235",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-21T17:26:53Z",
+      "side": 1,
+      "message": "Update this to use `jws` instead of `jwt`.",
+      "range": {
+        "startLine": 55,
+        "startChar": 59,
+        "endLine": 55,
+        "endChar": 62
+      },
+      "revId": "d61a94c216e2f31101a81b4b0208eb904e430ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_1efaba41",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2812,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-21T17:26:53Z",
+      "side": 1,
+      "message": "Use the JWSKeyRepository instead.",
+      "range": {
+        "startLine": 2812,
+        "startChar": 37,
+        "endLine": 2812,
+        "endChar": 38
+      },
+      "revId": "d61a94c216e2f31101a81b4b0208eb904e430ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_9ea30a50",
+        "filename": "keystone/tests/unit/token/test_jwt_provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-21T17:26:53Z",
+      "side": 1,
+      "message": "Use JWS instead, since it\u0027s more specific than JWT.",
+      "range": {
+        "startLine": 26,
+        "startChar": 12,
+        "endLine": 26,
+        "endChar": 13
+      },
+      "revId": "d61a94c216e2f31101a81b4b0208eb904e430ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_1e8f1acd",
+        "filename": "keystone/tests/unit/token/test_jwt_provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-21T17:26:53Z",
+      "side": 1,
+      "message": "Update this, too.",
+      "range": {
+        "startLine": 31,
+        "startChar": 37,
+        "endLine": 31,
+        "endChar": 38
+      },
+      "revId": "d61a94c216e2f31101a81b4b0208eb904e430ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_dec2f2e9",
+        "filename": "keystone/token/providers/jwt/__init__.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-21T17:26:53Z",
+      "side": 1,
+      "message": "This should be a jws provider instead of jwt.",
+      "revId": "d61a94c216e2f31101a81b4b0208eb904e430ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_7eb74688",
+        "filename": "keystone/token/providers/jwt/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-21T17:26:53Z",
+      "side": 1,
+      "message": "These options need to be updated.",
+      "revId": "d61a94c216e2f31101a81b4b0208eb904e430ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_1ea87a1d",
+        "filename": "keystone/token/providers/jwt/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-21T17:26:53Z",
+      "side": 1,
+      "message": "public_keys",
+      "range": {
+        "startLine": 86,
+        "startChar": 8,
+        "endLine": 86,
+        "endChar": 18
+      },
+      "revId": "d61a94c216e2f31101a81b4b0208eb904e430ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_feaa5617",
+        "filename": "keystone/token/providers/jwt/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-21T17:26:53Z",
+      "side": 1,
+      "message": "This property should return an iterator, which is a list of keys (at least a list of one key). Then we can just iterate the list of public keys against a token.",
+      "revId": "d61a94c216e2f31101a81b4b0208eb904e430ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_be4b6e85",
+        "filename": "keystone/token/providers/jwt/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-21T17:26:53Z",
+      "side": 1,
+      "message": "This should be inside of a for loop for each public key",
+      "range": {
+        "startLine": 136,
+        "startChar": 8,
+        "endLine": 141,
+        "endChar": 44
+      },
+      "revId": "d61a94c216e2f31101a81b4b0208eb904e430ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_de50b235",
+        "filename": "setup.cfg",
+        "patchSetId": 7
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-21T17:26:53Z",
+      "side": 1,
+      "message": "jws*",
+      "range": {
+        "startLine": 147,
+        "startChar": 35,
+        "endLine": 147,
+        "endChar": 38
+      },
+      "revId": "d61a94c216e2f31101a81b4b0208eb904e430ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_7e450670",
+        "filename": "setup.cfg",
+        "patchSetId": 7
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-21T17:26:53Z",
+      "side": 1,
+      "message": "jws",
+      "range": {
+        "startLine": 147,
+        "startChar": 4,
+        "endLine": 147,
+        "endChar": 7
+      },
+      "revId": "d61a94c216e2f31101a81b4b0208eb904e430ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
