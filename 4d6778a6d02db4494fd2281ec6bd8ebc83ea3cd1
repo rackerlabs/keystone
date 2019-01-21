@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_f12a84e5",
+        "filename": "keystone/api/discovery.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-21T23:45:14Z",
+      "side": 1,
+      "message": "This could be reflective of today\u0027s date to match up with the git history.",
+      "range": {
+        "startLine": 33,
+        "startChar": 28,
+        "endLine": 33,
+        "endChar": 30
+      },
+      "revId": "4d6778a6d02db4494fd2281ec6bd8ebc83ea3cd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
