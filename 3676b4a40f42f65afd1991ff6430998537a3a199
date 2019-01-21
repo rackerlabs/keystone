@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_e39f23b2",
+        "filename": "keystone/conf/jws_tokens.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-21T16:12:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_4312af5a",
+      "range": {
+        "startLine": 22,
+        "startChar": 21,
+        "endLine": 22,
+        "endChar": 25
+      },
+      "revId": "3676b4a40f42f65afd1991ff6430998537a3a199",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_e3516310",
         "filename": "keystone/conf/jws_tokens.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2019-01-21T15:49:47Z",
       "side": 1,
       "message": "Remove this wording since it reads odd with the previous sentence.",
+      "range": {
+        "startLine": 38,
+        "startChar": 41,
+        "endLine": 38,
+        "endChar": 55
+      },
+      "revId": "3676b4a40f42f65afd1991ff6430998537a3a199",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_8334174c",
+        "filename": "keystone/conf/jws_tokens.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-21T16:12:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_e3516310",
       "range": {
         "startLine": 38,
         "startChar": 41,
