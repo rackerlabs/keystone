@@ -49,8 +49,15 @@ class RoleAssignmentsResource(ks_flask.ResourceBase):
             'group.id', 'role.id', 'scope.domain.id', 'scope.project.id',
             'scope.OS-INHERIT:inherited_to', 'user.id', 'scope.system'
         ]
-        ENFORCER.enforce_call(action='identity:list_role_assignments',
-                              filters=filters)
+        target = {}
+        if 'scope.domain.id' in flask.request.args:
+            domain_id = flask.request.args['scope.domain.id']
+            if domain_id:
+                target['domain'] = PROVIDERS.resource_api.get_domain(
+                    domain_id)
+        ENFORCER.enforce_call(
+            action='identity:list_role_assignments', filters=filters,
+            target_attr=target)
         return self._build_role_assignments_list()
 
     def _list_role_assignments_for_tree(self):
