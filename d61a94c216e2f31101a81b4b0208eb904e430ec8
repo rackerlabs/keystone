@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9fdfeff1_de3512f9",
+        "filename": "keystone/conf/__init__.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-21T17:27:43Z",
+      "side": 1,
+      "message": "This was pulled into its own change.\n\nhttps://review.openstack.org/#/c/628676/",
+      "range": {
+        "startLine": 38,
+        "startChar": 26,
+        "endLine": 38,
+        "endChar": 36
+      },
+      "revId": "d61a94c216e2f31101a81b4b0208eb904e430ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_3e03fe44",
         "filename": "keystone/conf/jwt_tokens.py",
         "patchSetId": 7
