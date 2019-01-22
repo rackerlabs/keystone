@@ -22,6 +22,53 @@
       "revId": "7fe201fbb5a60e44aec5b3ba01adae340e0a6ec4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_92fa0440",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2019-01-22T20:38:08Z",
+      "side": 1,
+      "message": "++, more clarification here would be good\n\nIt says we have 3 scenarios, so I assume 3 depths, but there are 5 lines.",
+      "parentUuid": "bfdaf3ff_b707d51c",
+      "range": {
+        "startLine": 290,
+        "startChar": 17,
+        "endLine": 290,
+        "endChar": 19
+      },
+      "revId": "7fe201fbb5a60e44aec5b3ba01adae340e0a6ec4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_12bdb464",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 727,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2019-01-22T20:38:08Z",
+      "side": 1,
+      "message": "This is nice",
+      "range": {
+        "startLine": 723,
+        "startChar": 0,
+        "endLine": 727,
+        "endChar": 21
+      },
+      "revId": "7fe201fbb5a60e44aec5b3ba01adae340e0a6ec4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
