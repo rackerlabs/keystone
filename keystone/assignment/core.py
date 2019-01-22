@@ -208,7 +208,7 @@ class Manager(manager.Manager):
     # TODO(henry-nash): We might want to consider list limiting this at some
     # point in the future.
     @MEMOIZE_COMPUTED_ASSIGNMENTS
-    def list_projects_for_user(self, user_id):
+    def list_projects_for_user(self, user_id, group_ids=None):
         # FIXME(lbragstad): Without the use of caching, listing effective role
         # assignments is slow, especially with large data set (lots of users
         # with multiple role assignments). This should serve as a marker in
@@ -218,6 +218,9 @@ class Manager(manager.Manager):
         # for more details.
         assignment_list = self.list_role_assignments(
             user_id=user_id, effective=True)
+        if group_ids:
+            assignment_list += self.list_role_assignments(
+                source_from_group_ids=group_ids, effective=True)
         # Use set() to process the list to remove any duplicates
         project_ids = list(set([x['project_id'] for x in assignment_list
                                 if x.get('project_id')]))
