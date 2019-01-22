@@ -228,6 +228,15 @@ class UserChangePasswordResource(ks_flask.ResourceBase):
         return None, http_client.NO_CONTENT
 
 
+def _combine_lists_uniquely(a, b):
+    # it's most likely that only one of these will be filled so avoid
+    # the combination if possible.
+    if a and b:
+        return {x['id']: x for x in a + b}.values()
+    else:
+        return a or b
+
+
 class UserProjectsResource(ks_flask.ResourceBase):
     collection_key = 'projects'
     member_key = 'project'
@@ -240,7 +249,17 @@ class UserProjectsResource(ks_flask.ResourceBase):
                               filters=filters,
                               build_target=_build_user_target_enforcement)
         hints = self.build_driver_hints(filters)
-        refs = PROVIDERS.assignment_api.list_projects_for_user(user_id)
+
+        group_ids = self.auth_context.get('group_ids')
+
+        user_p_refs = PROVIDERS.assignment_api.list_projects_for_user(user_id)
+
+        grp_p_refs = []
+        if group_ids:
+            grp_p_refs = PROVIDERS.assignment_api.list_projects_for_groups(
+                group_ids)
+        refs = _combine_lists_uniquely(user_p_refs, grp_p_refs)
+
         return self.wrap_collection(refs, hints=hints)
 
 
