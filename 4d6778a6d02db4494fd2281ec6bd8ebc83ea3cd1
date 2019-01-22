@@ -22,6 +22,30 @@
       "revId": "4d6778a6d02db4494fd2281ec6bd8ebc83ea3cd1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_bf560306",
+        "filename": "keystone/api/discovery.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2019-01-22T02:33:15Z",
+      "side": 1,
+      "message": "*facepalm*\n\nYes, that actually would be a better idea.",
+      "parentUuid": "9fdfeff1_f12a84e5",
+      "range": {
+        "startLine": 33,
+        "startChar": 28,
+        "endLine": 33,
+        "endChar": 30
+      },
+      "revId": "4d6778a6d02db4494fd2281ec6bd8ebc83ea3cd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
