@@ -15,6 +15,7 @@
 
 import copy
 import functools
+import html.parser
 import http.client
 import random
 
@@ -871,6 +872,23 @@ class TestClient:
         return self.request('PUT', path=path, headers=headers, body=body)
 
 
+class TestHTMLParser(html.parser.HTMLParser):
+
+    seen_start_tag = False
+    seen_end_tag = False
+    seen_data = False
+
+    def handle_starttag(self, tag, attrs):
+        self.seen_start_tag = True
+
+    def handle_endtag(self, tag):
+        self.seen_end_tag = True
+
+    def assertValid(self, test_case):
+        test_case.assertTrue(self.seen_start_tag)
+        test_case.assertTrue(self.seen_end_tag)
+
+
 class _VersionsEqual(tt_matchers.MatchesListwise):
     def __init__(self, expected):
         super().__init__(
@@ -1018,6 +1036,20 @@ class VersionTestCase(unit.TestCase):
         exp_json_home_data = {'resources': V3_JSON_HOME_RESOURCES}
 
         self._test_json_home('/v3', exp_json_home_data)
+
+    def test_xhttp_v3(self):
+        # If the request is /v3 and the Accept header is application/xhtml
+        # then the server responds with an XHTML page.
+        client = TestClient(self.public_app)
+        resp = client.get('/v3/', headers={'Accept': 'application/xhtml+xml'})
+        self.assertEqual(http.client.OK, resp.status_int)
+        self.assertEqual(
+            resp.headers['Content-Type'],
+            'application/xhtml+xml; charset=utf-8',
+        )
+        test_parser = TestHTMLParser()
+        test_parser.feed(resp.text)
+        test_parser.assertValid(self)
 
     def test_json_home_root(self):
         # If the request is / and the Accept header is application/json-home

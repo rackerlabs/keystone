@@ -16,6 +16,7 @@ import flask
 from flask import request
 from oslo_serialization import jsonutils
 
+from keystone.common import html
 from keystone.common import json_home
 import keystone.conf
 from keystone.server import flask as ks_flask
@@ -45,6 +46,7 @@ def _get_versions_list(identity_url):
 
 
 class MimeTypes:
+    XHTML = 'application/xhtml+xml'
     JSON = 'application/json'
     JSON_HOME = 'application/json-home'
 
@@ -54,7 +56,7 @@ def v3_mime_type_best_match():
         return MimeTypes.JSON
 
     return request.accept_mimetypes.best_match(
-        [MimeTypes.JSON, MimeTypes.JSON_HOME]
+        [MimeTypes.XHTML, MimeTypes.JSON, MimeTypes.JSON_HOME]
     )
 
 
@@ -101,6 +103,14 @@ def get_version_v3():
     else:
         identity_url = '%s/' % ks_flask.base_url()
         versions = _get_versions_list(identity_url)
+
+    if v3_mime_type_best_match() == MimeTypes.XHTML:
+
+        return flask.Response(
+            response=html.to_html({'version': versions['v3']}),
+            mimetype=MimeTypes.XHTML,
+        )
+    else:
         return flask.Response(
             response=jsonutils.dumps({'version': versions['v3']}),
             mimetype=MimeTypes.JSON,
