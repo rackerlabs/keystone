@@ -1,0 +1,245 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_45c5ca3b",
+        "filename": "keystone/tests/unit/test_app_config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-22T11:13:46Z",
+      "side": 1,
+      "message": "One space left to remove",
+      "revId": "4507b4a24989d24e7b9f9414cdf5586d97bb0fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_ed1860d4",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-22T11:13:46Z",
+      "side": 1,
+      "message": "1 extra space is here. You can check for indentations, styles by running tox -epep8 to avoid such type of errors.",
+      "range": {
+        "startLine": 91,
+        "startChar": 8,
+        "endLine": 91,
+        "endChar": 10
+      },
+      "revId": "4507b4a24989d24e7b9f9414cdf5586d97bb0fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_adb6d8d8",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-22T11:13:46Z",
+      "side": 1,
+      "message": "missing token_data",
+      "range": {
+        "startLine": 191,
+        "startChar": 18,
+        "endLine": 191,
+        "endChar": 28
+      },
+      "revId": "4507b4a24989d24e7b9f9414cdf5586d97bb0fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_6d69d023",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-22T11:13:46Z",
+      "side": 1,
+      "message": "c.post",
+      "range": {
+        "startLine": 207,
+        "startChar": 12,
+        "endLine": 207,
+        "endChar": 20
+      },
+      "revId": "4507b4a24989d24e7b9f9414cdf5586d97bb0fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_ad601834",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-22T11:13:46Z",
+      "side": 1,
+      "message": "c.get",
+      "range": {
+        "startLine": 210,
+        "startChar": 19,
+        "endLine": 210,
+        "endChar": 27
+      },
+      "revId": "4507b4a24989d24e7b9f9414cdf5586d97bb0fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_cd61dc3b",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-22T11:13:46Z",
+      "side": 1,
+      "message": "c.post",
+      "range": {
+        "startLine": 217,
+        "startChar": 12,
+        "endLine": 217,
+        "endChar": 20
+      },
+      "revId": "4507b4a24989d24e7b9f9414cdf5586d97bb0fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_0d4fe4bd",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-22T11:13:46Z",
+      "side": 1,
+      "message": "c.get",
+      "range": {
+        "startLine": 220,
+        "startChar": 19,
+        "endLine": 220,
+        "endChar": 26
+      },
+      "revId": "4507b4a24989d24e7b9f9414cdf5586d97bb0fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_6d91d052",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-22T11:13:46Z",
+      "side": 1,
+      "message": "expected_status_code",
+      "range": {
+        "startLine": 297,
+        "startChar": 24,
+        "endLine": 297,
+        "endChar": 38
+      },
+      "revId": "4507b4a24989d24e7b9f9414cdf5586d97bb0fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_4dd08cf8",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-22T11:13:46Z",
+      "side": 1,
+      "message": "This test case remaining to convert into flask\u0027s test client.",
+      "revId": "4507b4a24989d24e7b9f9414cdf5586d97bb0fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_ed8e202d",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-22T11:13:46Z",
+      "side": 1,
+      "message": "expected_status_code",
+      "range": {
+        "startLine": 302,
+        "startChar": 20,
+        "endLine": 302,
+        "endChar": 35
+      },
+      "revId": "4507b4a24989d24e7b9f9414cdf5586d97bb0fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_cd2a3ce6",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-22T11:13:46Z",
+      "side": 1,
+      "message": "Missing token_data",
+      "range": {
+        "startLine": 340,
+        "startChar": 18,
+        "endLine": 340,
+        "endChar": 28
+      },
+      "revId": "4507b4a24989d24e7b9f9414cdf5586d97bb0fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

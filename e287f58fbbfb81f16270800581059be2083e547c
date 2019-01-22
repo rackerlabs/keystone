@@ -45,6 +45,29 @@
       "revId": "e287f58fbbfb81f16270800581059be2083e547c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_cdb79cd8",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-22T11:13:46Z",
+      "side": 0,
+      "message": "This part is to be added in the new test case",
+      "range": {
+        "startLine": 150,
+        "startChar": 8,
+        "endLine": 154,
+        "endChar": 77
+      },
+      "revId": "e287f58fbbfb81f16270800581059be2083e547c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
