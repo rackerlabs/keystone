@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_2b363e05",
+        "filename": "keystone/limit/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-01-23T07:13:23Z",
+      "side": 1,
+      "message": "project_filter and domain_filter are mutually exclusive filters, not sure how to do it in SQL way.",
+      "parentUuid": "bfdaf3ff_779badc8",
+      "revId": "13ab5201be0a7a1910b9ca106905c5db76f5d98a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfdaf3ff_17aa61d1",
         "filename": "keystone/limit/core.py",
         "patchSetId": 7
@@ -30,6 +48,30 @@
       "writtenOn": "2019-01-15T21:30:30Z",
       "side": 1,
       "message": "Is this still valid or should we be handling this different now?",
+      "range": {
+        "startLine": 58,
+        "startChar": 16,
+        "endLine": 59,
+        "endChar": 74
+      },
+      "revId": "13ab5201be0a7a1910b9ca106905c5db76f5d98a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_4bf3829f",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-01-23T07:13:23Z",
+      "side": 1,
+      "message": "if the project is_domain\u003dTrue, we can create a domain level limit.",
+      "parentUuid": "bfdaf3ff_17aa61d1",
       "range": {
         "startLine": 58,
         "startChar": 16,
