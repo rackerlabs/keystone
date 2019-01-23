@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_67f6bafc",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-01-23T07:24:23Z",
+      "side": 1,
+      "message": "oh, it\u0027s should be No.\nJust for the line number. See L307, I explained every line\u0027s meaning.",
+      "parentUuid": "9fdfeff1_92fa0440",
+      "range": {
+        "startLine": 290,
+        "startChar": 17,
+        "endLine": 290,
+        "endChar": 19
+      },
+      "revId": "7fe201fbb5a60e44aec5b3ba01adae340e0a6ec4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_12bdb464",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 3
