@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_3c5af329",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2019-01-23T22:39:54Z",
+      "side": 1,
+      "message": "roles",
+      "range": {
+        "startLine": 12,
+        "startChar": 18,
+        "endLine": 12,
+        "endChar": 23
+      },
+      "revId": "4848c5b3db838d4b351ab72ece2c244f03e1e037",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_7c7cfbea",
+        "filename": "keystone/api/users.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2019-01-23T22:39:54Z",
+      "side": 1,
+      "message": "since they are only IDs, why not use \"set()\"?",
+      "range": {
+        "startLine": 258,
+        "startChar": 19,
+        "endLine": 258,
+        "endChar": 42
+      },
+      "revId": "4848c5b3db838d4b351ab72ece2c244f03e1e037",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
