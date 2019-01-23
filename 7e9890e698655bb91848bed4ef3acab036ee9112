@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_21897ac9",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 1451,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-23T13:50:53Z",
+      "side": 1,
+      "message": "This example does not work for me. Trying to set a local rule like this I get:\n\n Additional properties are not allowed (u\u0027groups\u0027 was unexpected)\n\nIf tests are passing this way then that means the tests need to be fixed to not allow this invalid configuration.\n\nIt needs to be something like:\n\n \"local\": [\n    {\n      \"user\": {\n        \"name\": \"{0}\"\n      }\n    }, {\n      \"groups\": \"{1}\"\n    }\n ]\n\nBut that doesn\u0027t work either when you try to authenticate:\n\n $ openstack token issue\n Invalid rule: {u\u0027groups\u0027: u\u0027[u\\\u0027{\\\u0027, u\\\u0027\"\\\u0027, u\\\u0027J\\\u0027, u\\\u0027S\\\u0027, u\\\u0027O\\\u0027, u\\\u0027N\\\u0027, u\\\u0027\"\\\u0027, u\\\u0027:\\\u0027, u\\\u0027 \\\u0027, u\\\u0027[\\\u0027, u\\\u0027]\\\u0027, u\\\u0027}\\\u0027]\u0027}. Both \u0027groups\u0027 and \u0027domain\u0027 keywords must be specified. (Disable insecure_debug mode to suppress these details.)\n\nAdding the domain keyword also doesn\u0027t fix it and doesn\u0027t make sense anyway because there is no way to get the group domain with this syntax.",
+      "revId": "7e9890e698655bb91848bed4ef3acab036ee9112",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
