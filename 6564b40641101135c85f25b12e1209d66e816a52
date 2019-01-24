@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_98c19531",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-24T23:08:23Z",
+      "side": 1,
+      "message": "A release or two ago, we attempted to establish a convention for naming these so that it was easier to figure out what exactly they were used for.\n\nLine 1357 is an example of the convention. This is something we can consider doing in a follow up.",
+      "range": {
+        "startLine": 517,
+        "startChar": 0,
+        "endLine": 517,
+        "endChar": 20
+      },
+      "revId": "6564b40641101135c85f25b12e1209d66e816a52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_988e75ce",
+        "filename": "doc/source/admin/resource-options.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-24T23:08:23Z",
+      "side": 1,
+      "message": "Most of this looks like it could have been its own change.",
+      "revId": "6564b40641101135c85f25b12e1209d66e816a52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_f846a17c",
+        "filename": "doc/source/user/multi-factor-authentication.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-24T23:08:23Z",
+      "side": 1,
+      "message": "We\u0027re pretty good at overloading terms. For additional clarity, I would mind saying \"system administrator\" just to make it clear we don\u0027t expose this to other \"admins\" that have roles on domains or projects.\n\nBut this is something we can do in a followup.",
+      "range": {
+        "startLine": 10,
+        "startChar": 56,
+        "endLine": 10,
+        "endChar": 61
+      },
+      "revId": "6564b40641101135c85f25b12e1209d66e816a52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
