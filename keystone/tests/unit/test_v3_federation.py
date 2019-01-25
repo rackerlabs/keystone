@@ -29,6 +29,7 @@ from saml2 import saml
 from saml2 import sigver
 from six.moves import http_client
 from six.moves import range, urllib, zip
+import webtest
 xmldsig = importutils.try_import("saml2.xmldsig")
 if not xmldsig:
     xmldsig = importutils.try_import("xmldsig")
@@ -49,6 +50,7 @@ from keystone.tests.unit import federation_fixtures
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import mapping_fixtures
 from keystone.tests.unit import test_v3
+from keystone.tests.unit import utils as test_utils
 
 
 CONF = keystone.conf.CONF
@@ -1911,6 +1913,61 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         r = self._issue_unscoped_token()
         token_resp = render_token.render_token_response_from_model(r)['token']
         self.assertValidMappedUser(token_resp)
+
+    @test_utils.wip(
+        'The fernet token formatter is not handling string types of non-uuid '
+        'strings properly', expected_exception=webtest.app.AppError,
+        bug='1813085')
+    def test_default_domain_scoped_token(self):
+        # Make sure federated users can get tokens scoped to the default
+        # domain, which has a non-uuid ID by default (e.g., `default`). We want
+        # to make sure the token provider handles string types properly if the
+        # ID isn't compressed into byte format during validation. Turn off
+        # cache on issue so that we validate the token online right after we
+        # get it to make sure the token provider is called.
+        self.config_fixture.config(group='token', cache_on_issue=False)
+
+        # Grab an unscoped token to get a domain-scoped token with.
+        token = self._issue_unscoped_token()
+
+        # Give the user a direct role assignment on the default domain, so they
+        # can get a federated domain-scoped token.
+        PROVIDERS.assignment_api.create_grant(
+            self.role_admin['id'], user_id=token.user_id,
+            domain_id=CONF.identity.default_domain_id
+        )
+
+        # Get a token scoped to the default domain with an ID of `default`,
+        # which isn't a uuid type, but we should be able to handle it
+        # accordingly in the token formatters/providers.
+        auth_request = {
+            'auth': {
+                'identity': {
+                    'methods': [
+                        'token'
+                    ],
+                    'token': {
+                        'id': token.id
+                    }
+                },
+                'scope': {
+                    'domain': {
+                        'id': CONF.identity.default_domain_id
+                    }
+                }
+            }
+        }
+        r = self.v3_create_token(auth_request)
+        domain_scoped_token_id = r.headers.get('X-Subject-Token')
+
+        # Validate the token to make sure the token providers handle non-uuid
+        # domain IDs properly.
+        headers = {'X-Subject-Token': domain_scoped_token_id}
+        self.get(
+            '/auth/tokens',
+            token=domain_scoped_token_id,
+            headers=headers
+        )
 
     def test_issue_the_same_unscoped_token_with_user_deleted(self):
         r = self._issue_unscoped_token()
