@@ -29,7 +29,6 @@ from saml2 import saml
 from saml2 import sigver
 from six.moves import http_client
 from six.moves import range, urllib, zip
-import webtest
 xmldsig = importutils.try_import("saml2.xmldsig")
 if not xmldsig:
     xmldsig = importutils.try_import("xmldsig")
@@ -50,7 +49,6 @@ from keystone.tests.unit import federation_fixtures
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import mapping_fixtures
 from keystone.tests.unit import test_v3
-from keystone.tests.unit import utils as test_utils
 
 
 CONF = keystone.conf.CONF
@@ -1914,10 +1912,6 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         token_resp = render_token.render_token_response_from_model(r)['token']
         self.assertValidMappedUser(token_resp)
 
-    @test_utils.wip(
-        'The fernet token formatter is not handling string types of non-uuid '
-        'strings properly', expected_exception=webtest.app.AppError,
-        bug='1813085')
     def test_default_domain_scoped_token(self):
         # Make sure federated users can get tokens scoped to the default
         # domain, which has a non-uuid ID by default (e.g., `default`). We want
