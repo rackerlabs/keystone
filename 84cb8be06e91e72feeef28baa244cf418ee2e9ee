@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_fb03f671",
+        "filename": "releasenotes/notes/bug-1805369-ed98d3fcfafb5c43.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-25T06:37:07Z",
+      "side": 1,
+      "message": "We should mention the new rules too so we don\u0027t have  to dig in to the code?",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 38
+      },
+      "revId": "84cb8be06e91e72feeef28baa244cf418ee2e9ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
