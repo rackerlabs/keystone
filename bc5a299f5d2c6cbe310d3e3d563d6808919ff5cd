@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_43256bc1",
+        "filename": "keystone/token/token_formatters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-01-26T07:25:58Z",
+      "side": 1,
+      "message": "I have a question maybe not related to the bug. why protocol_id didn\u0027t be encoded as \"idp_id\" did?",
+      "range": {
+        "startLine": 603,
+        "startChar": 16,
+        "endLine": 603,
+        "endChar": 27
+      },
+      "revId": "bc5a299f5d2c6cbe310d3e3d563d6808919ff5cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_a3bbf76f",
+        "filename": "keystone/token/token_formatters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-01-26T07:25:58Z",
+      "side": 1,
+      "message": "it could be just \"else\"",
+      "range": {
+        "startLine": 614,
+        "startChar": 8,
+        "endLine": 614,
+        "endChar": 36
+      },
+      "revId": "bc5a299f5d2c6cbe310d3e3d563d6808919ff5cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
