@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_f985275b",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-27T13:21:53Z",
+      "side": 1,
+      "message": "Let\u0027s name this py3 instead of py35 (the job on line 28 of this file is named correctly, the one on line 49 is wrong).\n\nIf this works on python3 I would suggest only adding a python3 job and not adding the python2 job.",
+      "range": {
+        "startLine": 106,
+        "startChar": 24,
+        "endLine": 106,
+        "endChar": 28
+      },
+      "revId": "27f63b05d2b799d751bf619025b2ea233718d846",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_39b64f40",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-27T13:21:53Z",
+      "side": 1,
+      "message": "You can add\n\n Depends-On: https://review.openstack.org/633374\n\nto this commit message to have this patch be tested in combination with the devstack support you added in the other patch. Alternatively you can submit these as a patch chain, with this change committed on top of the other commit in a branch.",
+      "revId": "27f63b05d2b799d751bf619025b2ea233718d846",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
