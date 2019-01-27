@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_347416fe",
+        "filename": ".zuul.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 22348
+      },
+      "writtenOn": "2019-01-27T22:10:54Z",
+      "side": 1,
+      "message": "Job keystone-dsvm-py35-functional-federation-centos7 not defined",
+      "range": {
+        "startLine": 114,
+        "startChar": 2,
+        "endLine": 200,
+        "endChar": 0
+      },
+      "revId": "ecefc09bfb2485eba15202e550b14d83d29f1080",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
