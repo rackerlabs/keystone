@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9fdfeff1_b9255f5e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-27T14:10:33Z",
+      "side": 1,
+      "message": "This should have this tag:\n\n Partial-bug: #1757000\n\nTo relate it to the bug https://bugs.launchpad.net/keystone/+bug/1757000",
+      "revId": "e303dd44b6f5c58c4b17de4ace58a12377a861ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_59fd53af",
         "filename": "devstack/lib/federation.sh",
         "patchSetId": 1
