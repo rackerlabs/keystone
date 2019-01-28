@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_770056ac",
+        "filename": "keystone/token/token_formatters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-28T15:05:30Z",
+      "side": 1,
+      "message": "Probably because it\u0027s highly unlikely we would encode it since it\u0027s usually a human-readable string (e.g., saml2, oidc, x509), where as idp_id could be a uuid.uuid4().hex, which we can encode as bytes for a smaller representation before handing it to msgpack.",
+      "parentUuid": "9fdfeff1_43256bc1",
+      "range": {
+        "startLine": 603,
+        "startChar": 16,
+        "endLine": 603,
+        "endChar": 27
+      },
+      "revId": "bc5a299f5d2c6cbe310d3e3d563d6808919ff5cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_a3bbf76f",
         "filename": "keystone/token/token_formatters.py",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2019-01-26T07:25:58Z",
       "side": 1,
       "message": "it could be just \"else\"",
+      "range": {
+        "startLine": 614,
+        "startChar": 8,
+        "endLine": 614,
+        "endChar": 36
+      },
+      "revId": "bc5a299f5d2c6cbe310d3e3d563d6808919ff5cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_77193620",
+        "filename": "keystone/token/token_formatters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-28T15:05:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_a3bbf76f",
       "range": {
         "startLine": 614,
         "startChar": 8,
