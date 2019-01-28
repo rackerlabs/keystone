@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_5030b39f",
+        "filename": "keystone/tests/unit/protection/v3/test_users.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-01-28T21:41:50Z",
+      "side": 1,
+      "message": "This needs a cleanup action. This should be covered in the comment in the previous patch.\n\nOtherwise this looks good.",
+      "range": {
+        "startLine": 166,
+        "startChar": 12,
+        "endLine": 166,
+        "endChar": 56
+      },
+      "revId": "ab2e1a818349fd31b99ff7c1c10031b483c56a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_70c3775e",
+        "filename": "keystone/tests/unit/protection/v3/test_users.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-01-28T21:41:50Z",
+      "side": 1,
+      "message": "Add cleanup_instance.",
+      "range": {
+        "startLine": 185,
+        "startChar": 8,
+        "endLine": 185,
+        "endChar": 20
+      },
+      "revId": "ab2e1a818349fd31b99ff7c1c10031b483c56a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_30b96fe8",
+        "filename": "keystone/tests/unit/protection/v3/test_users.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-01-28T21:41:50Z",
+      "side": 1,
+      "message": "See above.",
+      "range": {
+        "startLine": 201,
+        "startChar": 0,
+        "endLine": 202,
+        "endChar": 58
+      },
+      "revId": "ab2e1a818349fd31b99ff7c1c10031b483c56a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
