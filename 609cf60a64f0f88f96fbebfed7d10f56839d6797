@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_4091ca4d",
+        "filename": "releasenotes/notes/fix-policy-for-get-domain-api-c48f4a23adc044cd.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-01-28T17:07:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_e59c900f",
+      "range": {
+        "startLine": 8,
+        "startChar": 52,
+        "endLine": 8,
+        "endChar": 55
+      },
+      "revId": "609cf60a64f0f88f96fbebfed7d10f56839d6797",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_c5870cb5",
         "filename": "releasenotes/notes/fix-policy-for-get-domain-api-c48f4a23adc044cd.yaml",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2019-01-28T16:35:45Z",
       "side": 1,
       "message": "More so a massive refactor. I don\u0027t think any of the refactor introduce new functionality, just clean up a bunch of stuff.",
+      "range": {
+        "startLine": 10,
+        "startChar": 10,
+        "endLine": 10,
+        "endChar": 29
+      },
+      "revId": "609cf60a64f0f88f96fbebfed7d10f56839d6797",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_e081defc",
+        "filename": "releasenotes/notes/fix-policy-for-get-domain-api-c48f4a23adc044cd.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-01-28T17:07:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_c5870cb5",
       "range": {
         "startLine": 10,
         "startChar": 10,
