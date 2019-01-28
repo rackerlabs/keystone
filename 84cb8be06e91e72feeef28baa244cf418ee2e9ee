@@ -22,6 +22,30 @@
       "revId": "84cb8be06e91e72feeef28baa244cf418ee2e9ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_771ff6b6",
+        "filename": "releasenotes/notes/bug-1805369-ed98d3fcfafb5c43.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-28T15:16:33Z",
+      "side": 1,
+      "message": "Yes - you\u0027re right. Looks like I forgot to update this release note after we start rewriting them to include all that information.\n\nNice catch.",
+      "parentUuid": "9fdfeff1_fb03f671",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 38
+      },
+      "revId": "84cb8be06e91e72feeef28baa244cf418ee2e9ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
