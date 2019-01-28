@@ -39,6 +39,30 @@
       "revId": "12d56691034b8edc730fa042fdfac0fe65f7a647",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_91714a0f",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-28T13:48:40Z",
+      "side": 1,
+      "message": "I would not remove this comment, it actually still applies because CentOS still doesn\u0027t have its own official repo for shibboleth.",
+      "parentUuid": "9fdfeff1_7e7838c3",
+      "range": {
+        "startLine": 71,
+        "startChar": 10,
+        "endLine": 71,
+        "endChar": 69
+      },
+      "revId": "12d56691034b8edc730fa042fdfac0fe65f7a647",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
