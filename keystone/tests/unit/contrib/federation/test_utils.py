@@ -39,7 +39,6 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         self.cleanup_instance('flask_app')
 
     def assertValidMappedUserObject(self, mapped_properties,
-                                    user_type='ephemeral',
                                     domain_id=None):
         """Check whether mapped properties object has 'user' within.
 
@@ -51,7 +50,6 @@ class MappingRuleEngineTests(unit.BaseTestCase):
                       message='Missing user object in mapped properties')
         user = mapped_properties['user']
         self.assertIn('type', user)
-        self.assertEqual(user_type, user['type'])
         self.assertIn('domain', user)
         domain = user['domain']
         domain_name_or_id = domain.get('id') or domain.get('name')
@@ -907,7 +905,6 @@ class TestMappingLocals(unit.BaseTestCase):
             'user': {
                 'name': 'a_user',
                 'domain': {'id': 'Federated'},
-                'type': 'ephemeral'
             },
             'projects': [],
             'group_ids': ['d34db33f'],
@@ -925,7 +922,6 @@ class TestMappingLocals(unit.BaseTestCase):
             'user': {
                 'name': 'test_a_user',
                 'domain': {'id': 'Federated'},
-                'type': 'ephemeral'
             },
             'projects': [],
             'group_ids': [],
