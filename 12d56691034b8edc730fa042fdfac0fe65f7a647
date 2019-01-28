@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_1ebfacb0",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-28T07:47:46Z",
+      "side": 1,
+      "message": "Can you add a note here, \u0027is_fedora\u0027 check for all fedora distributions as mentioned in [1].\n\nhttp://git.openstack.org/cgit/openstack-dev/devstack/tree/functions-common#n447",
+      "revId": "12d56691034b8edc730fa042fdfac0fe65f7a647",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_7e7838c3",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-28T07:47:46Z",
+      "side": 1,
+      "message": "We can now remove this comment or can restructure it , as this patch is now supporting shibboleth for CentOS/RHEL.",
+      "range": {
+        "startLine": 71,
+        "startChar": 10,
+        "endLine": 71,
+        "endChar": 69
+      },
+      "revId": "12d56691034b8edc730fa042fdfac0fe65f7a647",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
