@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_10a9cb8e",
+        "filename": "keystone/tests/unit/protection/v3/test_users.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-01-28T21:43:49Z",
+      "side": 1,
+      "message": "Needs cleanup action (self.cleanup_instance)",
+      "range": {
+        "startLine": 216,
+        "startChar": 8,
+        "endLine": 216,
+        "endChar": 54
+      },
+      "revId": "638dcf498dbefca93dd629757cc0d88957d53a16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_909cdb6a",
+        "filename": "keystone/tests/unit/protection/v3/test_users.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-01-28T21:43:49Z",
+      "side": 1,
+      "message": "Same as comment above.",
+      "range": {
+        "startLine": 227,
+        "startChar": 0,
+        "endLine": 228,
+        "endChar": 58
+      },
+      "revId": "638dcf498dbefca93dd629757cc0d88957d53a16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
