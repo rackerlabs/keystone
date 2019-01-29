@@ -46,6 +46,30 @@
       "revId": "d9d81485ef6c4c27b6d49e9e92afd9e418c75558",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_73328f12",
+        "filename": "keystone/tests/unit/protection/v3/test_users.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-01-29T19:30:58Z",
+      "side": 1,
+      "message": "When you assign directly, e.g. \"self.token_id\" you need to delete that instance as cleanup, otherwise you have lingering references. This net can increase memory usage of the unit tests. The cleanup is for the bound values on the self.\n\nThis is not critical, but should be done in all cases so we don\u0027t leave lingering data when we pass beyond the test cases (and all sub-classes).",
+      "parentUuid": "9fdfeff1_bf99a8c4",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 104,
+        "endChar": 58
+      },
+      "revId": "d9d81485ef6c4c27b6d49e9e92afd9e418c75558",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
