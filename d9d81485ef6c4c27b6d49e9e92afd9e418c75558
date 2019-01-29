@@ -70,6 +70,30 @@
       "revId": "d9d81485ef6c4c27b6d49e9e92afd9e418c75558",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_4ecec2b4",
+        "filename": "keystone/tests/unit/protection/v3/test_users.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-29T19:49:24Z",
+      "side": 1,
+      "message": "I can\u0027t seem to validate this, but I could be doing something wrong. I\u0027m attempting to set an attribute of the test class in a test and see if it bleeds into other tests by checking its existence in setUp(). Here is the diff [0] and the output [1].\n\n[0] https://pasted.tech/pastes/e30858a282b7618ae6fe68cca7204170ca538dfc.raw\n[1] https://pasted.tech/pastes/f367719b5303216ded146434b2ed150d2ca1fb69.raw",
+      "parentUuid": "9fdfeff1_73328f12",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 104,
+        "endChar": 58
+      },
+      "revId": "d9d81485ef6c4c27b6d49e9e92afd9e418c75558",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
