@@ -22,6 +22,30 @@
       "revId": "d9d81485ef6c4c27b6d49e9e92afd9e418c75558",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_bf99a8c4",
+        "filename": "keystone/tests/unit/protection/v3/test_users.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-29T04:06:38Z",
+      "side": 1,
+      "message": "This uses the database fixture which drops everything before every test case is run.\n\nDoes this still need cleanup?",
+      "parentUuid": "9fdfeff1_d0e823e3",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 104,
+        "endChar": 58
+      },
+      "revId": "d9d81485ef6c4c27b6d49e9e92afd9e418c75558",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
