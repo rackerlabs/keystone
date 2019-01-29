@@ -5,7 +5,7 @@ Request an unscoped OS-FEDERATION token
 
 .. rest_method::  GET /v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}/auth
 
-A federated ephemeral user may request an unscoped token, which can be used to
+A federated user may request an unscoped token, which can be used to
 get a scoped token.
 
 If the user is mapped directly (mapped to an existing user), a standard,

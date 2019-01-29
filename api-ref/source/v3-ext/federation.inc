@@ -164,38 +164,8 @@ Required attributes:
    tries to directly map ``REMOTE_USER`` environment variable. If this variable
    is also unavailable the server returns an HTTP ``401 Unauthorized`` error.
 
-   If the ``user`` has the attribute ``type`` set to ``local`` as well as a
-   domain specified, the user is treated as existing in the local keystone
-   backend, and the server will attempt to fetch user details (id, name, roles,
-   groups) from the identity backend.
-
    If, however, the user does not exist in the backend, the server will
    respond with an appropriate HTTP error code.
-
-   If the ``type`` attribute is not set to ``local`` in the local rule and no
-   domain is specified, the user is deemed ephemeral and becomes a member of
-   the identity provider's domain.
-
-   An example of user object mapping to an existing local user:
-
-   ::
-
-       [
-           {
-               "local": [
-                   {
-                        "user": {
-                            "name": "username",
-                            "type": "local",
-                            "domain": {
-                                "name": "domain_name"
-                            }
-                        }
-                   }
-               ],
-            }
-        ]
-
 
    For attribute type and value mapping, identify the local resource type,
    attribute, and value:
@@ -215,7 +185,7 @@ Required attributes:
        ]
 
    This assigns authorization attributes, by way of role assignments on the
-   specified group, to ephemeral users. The users are not added to the group,
+   specified group, to federated users. The users are not added to the group,
    but for the duration of the token they will receive the same authorization
    as if they were.
 
