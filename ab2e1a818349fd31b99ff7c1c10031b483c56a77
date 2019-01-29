@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_3feb7813",
+        "filename": "keystone/tests/unit/protection/v3/test_users.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-29T04:08:10Z",
+      "side": 1,
+      "message": "Answered in the previous patch to try and keep all the context there. Thanks for the reviews.",
+      "parentUuid": "9fdfeff1_5030b39f",
+      "range": {
+        "startLine": 166,
+        "startChar": 12,
+        "endLine": 166,
+        "endChar": 56
+      },
+      "revId": "ab2e1a818349fd31b99ff7c1c10031b483c56a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_70c3775e",
         "filename": "keystone/tests/unit/protection/v3/test_users.py",
         "patchSetId": 5
