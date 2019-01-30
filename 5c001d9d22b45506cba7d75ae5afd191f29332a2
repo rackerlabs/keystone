@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_1b6b08b7",
+        "filename": "keystone/token/providers/jws/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-30T16:24:10Z",
+      "side": 1,
+      "message": "Might need to change this \u0027jws_tokens\u0027 to \u0027jwt_tokens\u0027 after the change in previous patch.",
+      "revId": "5c001d9d22b45506cba7d75ae5afd191f29332a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_5ba2f0fd",
+        "filename": "keystone/token/providers/jws/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-30T16:24:10Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "5c001d9d22b45506cba7d75ae5afd191f29332a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
