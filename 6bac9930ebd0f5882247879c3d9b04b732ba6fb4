@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_c0710c78",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-30T20:43:47Z",
+      "side": 0,
+      "message": "I wish we had some sort of versioning mechanism for mappings to make it easier to programmatically detect changes like this.\n\nDavid Stanek had ideas on how to do this, but they were never completed.",
+      "revId": "6bac9930ebd0f5882247879c3d9b04b732ba6fb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
