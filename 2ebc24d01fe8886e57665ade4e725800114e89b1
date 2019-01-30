@@ -22,6 +22,47 @@
       "revId": "2ebc24d01fe8886e57665ade4e725800114e89b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_c0e4ac0f",
+        "filename": "doc/source/admin/manage-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-30T20:50:41Z",
+      "side": 1,
+      "message": "We could say: \n\n  When a service authenticates for a token,\n\nWe could also add a definition to service tokens, so that it\u0027s apparent that there really isn\u0027t anything special about \"service\" tokens and that they really are just tokens associated to users with a special name.\n\nI think a lot of people trip when they see the term \"service token\" because they expect it to be difference contractually from any other token keystone issues.",
+      "parentUuid": "bfdaf3ff_49eb49db",
+      "range": {
+        "startLine": 269,
+        "startChar": 0,
+        "endLine": 269,
+        "endChar": 39
+      },
+      "revId": "2ebc24d01fe8886e57665ade4e725800114e89b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_20d6d829",
+        "filename": "doc/source/admin/manage-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-30T20:50:41Z",
+      "side": 1,
+      "message": "I almost wonder if we should add this to the keystonemiddleware documentation, too. I hate duplicating it, but it seems relevant to have there.",
+      "revId": "2ebc24d01fe8886e57665ade4e725800114e89b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
