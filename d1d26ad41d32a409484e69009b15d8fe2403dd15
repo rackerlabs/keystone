@@ -16,6 +16,24 @@
       "revId": "d1d26ad41d32a409484e69009b15d8fe2403dd15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_b3ceb2b1",
+        "filename": "doc/source/cli/commands.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-30T01:07:14Z",
+      "side": 1,
+      "message": "Yeah - I think this is caused by my editor.",
+      "parentUuid": "9fdfeff1_f00c30a6",
+      "revId": "d1d26ad41d32a409484e69009b15d8fe2403dd15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
