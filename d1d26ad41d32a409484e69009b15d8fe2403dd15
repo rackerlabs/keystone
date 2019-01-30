@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_f00c30a6",
+        "filename": "doc/source/cli/commands.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-01-30T00:15:48Z",
+      "side": 1,
+      "message": "Unrelated change?",
+      "revId": "d1d26ad41d32a409484e69009b15d8fe2403dd15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
