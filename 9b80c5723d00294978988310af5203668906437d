@@ -34,6 +34,24 @@
       "revId": "9b80c5723d00294978988310af5203668906437d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_2079f892",
+        "filename": "keystone/assignment/backends/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-30T20:32:21Z",
+      "side": 1,
+      "message": "I think I would just because it\u0027s changing the method signature. Even if someone is implementing their own drivers, they might be following a convention we establish upstream in our naming conventions.\n\nIf we include a release note, we\u0027re at least formally documenting the switch in the event they want to update.",
+      "parentUuid": "9fdfeff1_6102b43f",
+      "revId": "9b80c5723d00294978988310af5203668906437d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
