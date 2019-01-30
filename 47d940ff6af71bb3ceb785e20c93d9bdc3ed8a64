@@ -46,6 +46,47 @@
       "revId": "47d940ff6af71bb3ceb785e20c93d9bdc3ed8a64",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_207fbd15",
+        "filename": "keystone/conf/__init__.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-30T15:57:16Z",
+      "side": 1,
+      "message": "I think something went missing here, can see the comment \u0027done\u0027 but not the new patch set.",
+      "parentUuid": "9fdfeff1_a585ff5b",
+      "range": {
+        "startLine": 38,
+        "startChar": 26,
+        "endLine": 38,
+        "endChar": 36
+      },
+      "revId": "47d940ff6af71bb3ceb785e20c93d9bdc3ed8a64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_e0745538",
+        "filename": "keystone/conf/__init__.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-30T15:57:16Z",
+      "side": 1,
+      "message": "Here too, \u0027jwt_tokens\u0027",
+      "revId": "47d940ff6af71bb3ceb785e20c93d9bdc3ed8a64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
