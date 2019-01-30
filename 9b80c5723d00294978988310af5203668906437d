@@ -16,6 +16,24 @@
       "revId": "9b80c5723d00294978988310af5203668906437d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_6102b43f",
+        "filename": "keystone/assignment/backends/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-30T06:02:56Z",
+      "side": 1,
+      "message": "Lets see what other\u0027s say. Even I think it doesn\u0027t require release note",
+      "parentUuid": "9fdfeff1_b62a2029",
+      "revId": "9b80c5723d00294978988310af5203668906437d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
