@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_74e339da",
+        "filename": "doc/source/admin/manage-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-31T08:55:56Z",
+      "side": 1,
+      "message": "OK . Thanks lance. As in the above paragraph it is said that the service will attach both the tokens, the user\u0027s token and its own. So does that conclude that each service is having an separate token ?",
+      "parentUuid": "9fdfeff1_c0e4ac0f",
+      "range": {
+        "startLine": 269,
+        "startChar": 0,
+        "endLine": 269,
+        "endChar": 39
+      },
+      "revId": "2ebc24d01fe8886e57665ade4e725800114e89b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_20d6d829",
         "filename": "doc/source/admin/manage-services.rst",
         "patchSetId": 2
