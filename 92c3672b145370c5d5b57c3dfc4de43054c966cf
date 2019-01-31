@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_63cdc52f",
+        "filename": "keystone/token/providers/jws/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-31T05:30:24Z",
+      "side": 1,
+      "message": "A little confused here, as according to [1] , we have a default path set for private as well as public key in keystone.conf [jwt_tokens]. So According to this code we will look the keys in their default paths. Whereas if the user tries to setup with  keystone-manage create_jws_keypair [2], it will generate the keys in the current directory which can be anything. Wouldn\u0027t it will end up in SystemExit ?\n\n\n\n[1] https://review.openstack.org/#/c/628676/5/keystone/conf/jwt_tokens.py\n[2]https://review.openstack.org/#/c/615315/9/keystone/cmd/cli.py",
+      "range": {
+        "startLine": 42,
+        "startChar": 7,
+        "endLine": 44,
+        "endChar": 72
+      },
+      "revId": "92c3672b145370c5d5b57c3dfc4de43054c966cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
