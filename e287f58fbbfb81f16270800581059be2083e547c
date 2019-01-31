@@ -68,6 +68,29 @@
       "revId": "e287f58fbbfb81f16270800581059be2083e547c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_d4d22528",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-31T08:58:57Z",
+      "side": 0,
+      "message": "See the old version here.",
+      "range": {
+        "startLine": 159,
+        "startChar": 18,
+        "endLine": 159,
+        "endChar": 28
+      },
+      "revId": "e287f58fbbfb81f16270800581059be2083e547c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

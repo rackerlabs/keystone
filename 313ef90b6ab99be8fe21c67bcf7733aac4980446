@@ -1,0 +1,406 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_f448892d",
+        "filename": "keystone/tests/unit/test_app_config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-31T08:58:57Z",
+      "side": 1,
+      "message": "This file shouldn\u0027t be changed at all, and pep8 doesn\u0027t like the trailing whitespace here.\n\nhttp://logs.openstack.org/01/630301/4/check/openstack-tox-pep8/89a5752/job-output.txt.gz#_2019-01-30_22_30_27_258138",
+      "range": {
+        "startLine": 28,
+        "startChar": 72,
+        "endLine": 28,
+        "endChar": 73
+      },
+      "revId": "313ef90b6ab99be8fe21c67bcf7733aac4980446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_546395b2",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-31T08:58:57Z",
+      "side": 1,
+      "message": "pep8 doesn\u0027t like the extra blank line here\n\nhttp://logs.openstack.org/01/630301/4/check/openstack-tox-pep8/89a5752/job-output.txt.gz#_2019-01-30_22_30_37_510846",
+      "revId": "313ef90b6ab99be8fe21c67bcf7733aac4980446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_74349993",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-31T08:58:57Z",
+      "side": 1,
+      "message": "This variable is never used, so you don\u0027t need to assign anything to it.\n\nhttp://logs.openstack.org/01/630301/4/check/openstack-tox-pep8/89a5752/job-output.txt.gz#_2019-01-30_22_30_37_511294",
+      "range": {
+        "startLine": 165,
+        "startChar": 12,
+        "endLine": 165,
+        "endChar": 16
+      },
+      "revId": "313ef90b6ab99be8fe21c67bcf7733aac4980446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_54bf15d0",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-31T08:58:57Z",
+      "side": 1,
+      "message": "This is the token that needs to be used for the second c.post call...",
+      "range": {
+        "startLine": 183,
+        "startChar": 12,
+        "endLine": 183,
+        "endChar": 22
+      },
+      "revId": "313ef90b6ab99be8fe21c67bcf7733aac4980446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_14b50dee",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-31T08:58:57Z",
+      "side": 1,
+      "message": "...not this one.",
+      "range": {
+        "startLine": 186,
+        "startChar": 12,
+        "endLine": 186,
+        "endChar": 17
+      },
+      "revId": "313ef90b6ab99be8fe21c67bcf7733aac4980446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_94c81d74",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-31T08:58:57Z",
+      "side": 1,
+      "message": "This should use token_data.headers[\u0027x-subject-token\u0027] same as the old version.",
+      "range": {
+        "startLine": 190,
+        "startChar": 44,
+        "endLine": 190,
+        "endChar": 49
+      },
+      "revId": "313ef90b6ab99be8fe21c67bcf7733aac4980446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_94f25d99",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-31T08:58:57Z",
+      "side": 1,
+      "message": "You could reuse the same token here instead of creating a new one",
+      "range": {
+        "startLine": 201,
+        "startChar": 12,
+        "endLine": 201,
+        "endChar": 43
+      },
+      "revId": "313ef90b6ab99be8fe21c67bcf7733aac4980446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_b4ed21b8",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-31T08:58:57Z",
+      "side": 1,
+      "message": "here too",
+      "range": {
+        "startLine": 206,
+        "startChar": 12,
+        "endLine": 206,
+        "endChar": 43
+      },
+      "revId": "313ef90b6ab99be8fe21c67bcf7733aac4980446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_f43c0930",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-31T08:58:57Z",
+      "side": 1,
+      "message": "here too",
+      "range": {
+        "startLine": 215,
+        "startChar": 12,
+        "endLine": 215,
+        "endChar": 43
+      },
+      "revId": "313ef90b6ab99be8fe21c67bcf7733aac4980446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_d42a25d9",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-31T08:58:57Z",
+      "side": 1,
+      "message": "This needs to be converted to use test_client as well, so it should be:\n\n resp \u003d c.get(search_path,\n              expected_status_code\u003dhttp_client.OK,\n              headers\u003d{\u0027X-Auth-Token\u0027: token})",
+      "range": {
+        "startLine": 237,
+        "startChar": 12,
+        "endLine": 238,
+        "endChar": 59
+      },
+      "revId": "313ef90b6ab99be8fe21c67bcf7733aac4980446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_b41be1c7",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-31T08:58:57Z",
+      "side": 1,
+      "message": "This should also be converted, so\n\n resp \u003d c.get(search_path,\n              expected_status_code\u003dhttp_client.OK,\n              headers\u003d{\u0027X-Auth-Token\u0027: token})",
+      "range": {
+        "startLine": 244,
+        "startChar": 12,
+        "endLine": 244,
+        "endChar": 72
+      },
+      "revId": "313ef90b6ab99be8fe21c67bcf7733aac4980446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_34861115",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-31T08:58:57Z",
+      "side": 1,
+      "message": "These three lines all need one extra space so that the beginning lines up with the ( on line 250\n\nhttp://logs.openstack.org/01/630301/4/check/openstack-tox-pep8/89a5752/job-output.txt.gz#_2019-01-30_22_30_37_512019",
+      "range": {
+        "startLine": 251,
+        "startChar": 0,
+        "endLine": 253,
+        "endChar": 56
+      },
+      "revId": "313ef90b6ab99be8fe21c67bcf7733aac4980446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_1482edc8",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-31T08:58:57Z",
+      "side": 1,
+      "message": "This should also be converted, so:\n\n resp \u003d c.get(search_path,\n              expected_status_code\u003dhttp_client.OK,\n              headers\u003d{\u0027X-Auth-Token\u0027: token})",
+      "range": {
+        "startLine": 254,
+        "startChar": 12,
+        "endLine": 254,
+        "endChar": 72
+      },
+      "revId": "313ef90b6ab99be8fe21c67bcf7733aac4980446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_f46ac917",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-31T08:58:57Z",
+      "side": 1,
+      "message": "Would be better to just change the definition of MEMBER_PATH_FMT in the beginning of the file",
+      "range": {
+        "startLine": 268,
+        "startChar": 20,
+        "endLine": 268,
+        "endChar": 44
+      },
+      "revId": "313ef90b6ab99be8fe21c67bcf7733aac4980446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_9476dd3d",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-31T08:58:57Z",
+      "side": 1,
+      "message": "This needs to be indented several spaces to line up with the ( on the line above it.",
+      "revId": "313ef90b6ab99be8fe21c67bcf7733aac4980446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_94e33da4",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-31T08:58:57Z",
+      "side": 1,
+      "message": "Do not create a new token here",
+      "range": {
+        "startLine": 356,
+        "startChar": 12,
+        "endLine": 356,
+        "endChar": 57
+      },
+      "revId": "313ef90b6ab99be8fe21c67bcf7733aac4980446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_14e98d7e",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-31T08:58:57Z",
+      "side": 1,
+      "message": "This should be token_data.headers[\u0027x-subject-token\u0027] as it is in the old version",
+      "range": {
+        "startLine": 360,
+        "startChar": 46,
+        "endLine": 360,
+        "endChar": 51
+      },
+      "revId": "313ef90b6ab99be8fe21c67bcf7733aac4980446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_5492b54d",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-31T08:58:57Z",
+      "side": 1,
+      "message": "pep8 doesn\u0027t like this whitespace\n\nhttp://logs.openstack.org/01/630301/4/check/openstack-tox-pep8/89a5752/job-output.txt.gz#_2019-01-30_22_30_37_513392",
+      "range": {
+        "startLine": 361,
+        "startChar": 0,
+        "endLine": 361,
+        "endChar": 4
+      },
+      "revId": "313ef90b6ab99be8fe21c67bcf7733aac4980446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
