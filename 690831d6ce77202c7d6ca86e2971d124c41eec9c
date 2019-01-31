@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_34ba916d",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-01-31T09:01:36Z",
+      "side": 1,
+      "message": "In my experience I think the package generates keys on its own and this isn\u0027t necessary but I could be wrong",
+      "range": {
+        "startLine": 89,
+        "startChar": 8,
+        "endLine": 90,
+        "endChar": 60
+      },
+      "revId": "690831d6ce77202c7d6ca86e2971d124c41eec9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
