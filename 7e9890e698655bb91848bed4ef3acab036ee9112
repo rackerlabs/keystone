@@ -16,6 +16,24 @@
       "revId": "7e9890e698655bb91848bed4ef3acab036ee9112",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_360859d8",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 1451,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-31T06:32:55Z",
+      "side": 1,
+      "message": "Added the test for validation_schema for this local rule.\n\nBut Yes still I am stuck as the rule is not getting approved due to no domain. Any suggestions?",
+      "parentUuid": "9fdfeff1_21897ac9",
+      "revId": "7e9890e698655bb91848bed4ef3acab036ee9112",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
