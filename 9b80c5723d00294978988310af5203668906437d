@@ -52,6 +52,24 @@
       "revId": "9b80c5723d00294978988310af5203668906437d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_b62a09d8",
+        "filename": "keystone/assignment/backends/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-01-31T07:05:49Z",
+      "side": 1,
+      "message": "++. Done",
+      "parentUuid": "9fdfeff1_2079f892",
+      "revId": "9b80c5723d00294978988310af5203668906437d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
