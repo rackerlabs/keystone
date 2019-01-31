@@ -46,6 +46,30 @@
       "revId": "92c3672b145370c5d5b57c3dfc4de43054c966cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_cb3fd684",
+        "filename": "keystone/token/providers/jws/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-31T23:54:41Z",
+      "side": 1,
+      "message": "\u003e Is it like users have to copy the keys to the default paths?\n \u003e If so Can we enhance the exception message like So that user can\n \u003e get a hint about it?\n\n\nYep - exactly. If we implement create_jws_keypair to put the keys in the repositories listed in the configuration options, we run the risk of overloading the logic by assuming odd naming conventions, which might not be general enough for each deployment.\n\nBy requiring users to generate key pairs and copy them to locations manually, we can assume they know where the keys go and how they\u0027re generated. The public repository also has to be sync\u0027d across all keystone nodes in order for each API server to validation tokens for the cluster. This makes the naming difficult since we don\u0027t know what a safe convention is to avoid naming conflicts. Instead, the least we can do is generate a key pair and tell the user to name/move them to the proper repositories.\n\nI can add some clarification to the log message though.",
+      "parentUuid": "9fdfeff1_a3288d96",
+      "range": {
+        "startLine": 42,
+        "startChar": 7,
+        "endLine": 44,
+        "endChar": 72
+      },
+      "revId": "92c3672b145370c5d5b57c3dfc4de43054c966cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
