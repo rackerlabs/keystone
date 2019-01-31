@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_819a0fb6",
+        "filename": "releasenotes/notes/tenant_id_to_project_id-42d95d93011785cb.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-01-31T21:34:57Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9fdfeff1_664e2139",
+      "revId": "85a4a74f5140367178ede7fa29abc53caa01360c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_c6582dfb",
         "filename": "releasenotes/notes/tenant_id_to_project_id-42d95d93011785cb.yaml",
         "patchSetId": 5
