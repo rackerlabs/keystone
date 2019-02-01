@@ -1574,7 +1574,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
             password=self.just_a_user['password'],
             project_id=self.project['id'])
         url = '/users/%s/credentials/OS-EC2' % self.just_a_user['id']
-        r = self.post(url, body={'tenant_id': self.project['id']},
+        r = self.post(url, body={'project_id': self.project['id']},
                       auth=just_user_auth)
 
         # another normal user can't get the credential

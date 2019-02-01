@@ -495,14 +495,14 @@ class TestCredentialEc2(CredentialBaseTestCase):
 
     def _get_ec2_cred(self):
         uri = self._get_ec2_cred_uri()
-        r = self.post(uri, body={'tenant_id': self.project_id})
+        r = self.post(uri, body={'project_id': self.project_id})
         return r.result['credential']
 
     def test_ec2_create_credential(self):
         """Test ec2 credential creation."""
         ec2_cred = self._get_ec2_cred()
         self.assertEqual(self.user_id, ec2_cred['user_id'])
-        self.assertEqual(self.project_id, ec2_cred['tenant_id'])
+        self.assertEqual(self.project_id, ec2_cred['project_id'])
         self.assertIsNone(ec2_cred['trust_id'])
         self._validate_signature(access=ec2_cred['access'],
                                  secret=ec2_cred['secret'])
