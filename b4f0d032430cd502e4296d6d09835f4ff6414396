@@ -88,6 +88,29 @@
       "revId": "b4f0d032430cd502e4296d6d09835f4ff6414396",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_86a0d343",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 923,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-01T19:57:13Z",
+      "side": 1,
+      "message": "IMO this could be a separate test, but we can do that in a follow-up.",
+      "range": {
+        "startLine": 920,
+        "startChar": 8,
+        "endLine": 923,
+        "endChar": 56
+      },
+      "revId": "b4f0d032430cd502e4296d6d09835f4ff6414396",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
