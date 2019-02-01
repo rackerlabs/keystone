@@ -70,6 +70,24 @@
       "revId": "b4f0d032430cd502e4296d6d09835f4ff6414396",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_dc36b503",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 29525
+      },
+      "writtenOn": "2019-02-01T08:40:27Z",
+      "side": 1,
+      "message": "I may implement this for basic notifications after merging this patch, if required",
+      "parentUuid": "3f79a3b5_7c6626f3",
+      "revId": "b4f0d032430cd502e4296d6d09835f4ff6414396",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
