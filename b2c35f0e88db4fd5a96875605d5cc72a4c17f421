@@ -48,6 +48,47 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_4d58d186",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-01T11:59:19Z",
+      "side": 1,
+      "message": "It needs to use the new token it created in token_data, so\n\n headers\u003d{\u0027X-Auth-Token\u0027: token_data.headers[\u0027x-subject-token\u0027]}",
+      "parentUuid": "9fdfeff1_071aaa15",
+      "range": {
+        "startLine": 188,
+        "startChar": 19,
+        "endLine": 188,
+        "endChar": 62
+      },
+      "revId": "b2c35f0e88db4fd5a96875605d5cc72a4c17f421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_2d70ed07",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-01T11:59:19Z",
+      "side": 1,
+      "message": "This test is failing because the path needs to start with /v3",
+      "revId": "b2c35f0e88db4fd5a96875605d5cc72a4c17f421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_079dca64",
         "filename": "keystone/tests/unit/test_v3_application_credential.py",
         "patchSetId": 5
@@ -82,6 +123,30 @@
       "writtenOn": "2019-02-01T09:24:27Z",
       "side": 1,
       "message": "headers\u003d{\u0027X-Auth-Token\u0027: token}",
+      "range": {
+        "startLine": 357,
+        "startChar": 20,
+        "endLine": 357,
+        "endChar": 64
+      },
+      "revId": "b2c35f0e88db4fd5a96875605d5cc72a4c17f421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_add29dcf",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-01T11:59:19Z",
+      "side": 1,
+      "message": "headers\u003d{\u0027X-Auth-Token: token_data.headers[\u0027x-subject-token\u0027]}",
+      "parentUuid": "9fdfeff1_e7d8c653",
       "range": {
         "startLine": 357,
         "startChar": 20,
