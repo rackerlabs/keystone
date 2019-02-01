@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_1f43ca43",
+        "filename": "keystone/api/domains.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 28032
+      },
+      "writtenOn": "2019-02-01T14:42:13Z",
+      "side": 1,
+      "message": "Shouldn\u0027t we raise exceptions object rather than raise class?",
+      "range": {
+        "startLine": 125,
+        "startChar": 46,
+        "endLine": 125,
+        "endChar": 47
+      },
+      "revId": "9b86b0be25c69cf63dafc76d92c8bc02e206ed34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_dc579025",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 28032
+      },
+      "writtenOn": "2019-02-01T14:42:13Z",
+      "side": 1,
+      "message": "I guess `%{var}s` is not working. Probably you mean `%(var)s` format since current format broke CI.",
+      "range": {
+        "startLine": 191,
+        "startChar": 32,
+        "endLine": 191,
+        "endChar": 64
+      },
+      "revId": "9b86b0be25c69cf63dafc76d92c8bc02e206ed34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
