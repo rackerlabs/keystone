@@ -77,7 +77,7 @@ class TestTemplatedCatalog(unit.TestCase, catalog_tests.CatalogTests):
         self.assertEqual(2, len(catalog_ref['RegionOne']))
 
         region = PROVIDERS.catalog_api.driver.templates['RegionOne']
-        region['compute']['adminURL'] = 'http://localhost:8774/v1.1/$(tenant)s'
+        region['compute']['adminURL'] = 'http://localhost:8774/v1.1/$(project)s'
 
         # the malformed one has been removed
         catalog_ref = PROVIDERS.catalog_api.get_catalog('foo', 'bar')
@@ -314,7 +314,7 @@ class TestTemplatedCatalog(unit.TestCase, catalog_tests.CatalogTests):
     def test_list_endpoints(self):
         expected_urls = set(['http://localhost:$(public_port)s/v3',
                              'http://localhost:$(admin_port)s/v3',
-                             'http://localhost:8774/v1.1/$(tenant_id)s'])
+                             'http://localhost:8774/v1.1/$(project_id)s'])
         endpoints = PROVIDERS.catalog_api.list_endpoints()
         self.assertEqual(expected_urls, set(e['url'] for e in endpoints))
 
