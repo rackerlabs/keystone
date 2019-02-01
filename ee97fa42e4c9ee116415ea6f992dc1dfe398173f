@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_323e05b8",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 28032
+      },
+      "writtenOn": "2019-02-01T15:51:04Z",
+      "side": 1,
+      "message": "why do you import this but do not use?",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 40
+      },
+      "revId": "ee97fa42e4c9ee116415ea6f992dc1dfe398173f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_72a6cd11",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 28032
+      },
+      "writtenOn": "2019-02-01T15:51:04Z",
+      "side": 1,
+      "message": "I think the definition in base class should be updated too",
+      "range": {
+        "startLine": 32,
+        "startChar": 36,
+        "endLine": 32,
+        "endChar": 50
+      },
+      "revId": "ee97fa42e4c9ee116415ea6f992dc1dfe398173f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_7f153648",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 28032
+      },
+      "writtenOn": "2019-02-01T15:51:04Z",
+      "side": 1,
+      "message": "typo: public_user_id",
+      "range": {
+        "startLine": 35,
+        "startChar": 18,
+        "endLine": 35,
+        "endChar": 27
+      },
+      "revId": "ee97fa42e4c9ee116415ea6f992dc1dfe398173f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
