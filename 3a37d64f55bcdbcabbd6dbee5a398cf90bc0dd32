@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_526b89ef",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 28032
+      },
+      "writtenOn": "2019-02-01T16:22:44Z",
+      "side": 1,
+      "message": "maybe \n`valid \u003d True\n break`\ncan be simplified to `return`\nand \n`if not valid` line can be removed since if validation is successful we will simply return before this line",
+      "range": {
+        "startLine": 129,
+        "startChar": 20,
+        "endLine": 132,
+        "endChar": 52
+      },
+      "revId": "3a37d64f55bcdbcabbd6dbee5a398cf90bc0dd32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
