@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_d9f56758",
+        "filename": "doc/source/admin/manage-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-02-01T06:20:28Z",
+      "side": 1,
+      "message": "ok. Got the point. Thanks for the clarification.",
+      "parentUuid": "9fdfeff1_416c279b",
+      "range": {
+        "startLine": 269,
+        "startChar": 0,
+        "endLine": 269,
+        "endChar": 39
+      },
+      "revId": "2ebc24d01fe8886e57665ade4e725800114e89b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_20d6d829",
         "filename": "doc/source/admin/manage-services.rst",
         "patchSetId": 2
