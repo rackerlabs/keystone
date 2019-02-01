@@ -70,6 +70,30 @@
       "revId": "92c3672b145370c5d5b57c3dfc4de43054c966cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_59ce575a",
+        "filename": "keystone/token/providers/jws/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-02-01T05:55:57Z",
+      "side": 1,
+      "message": "++. Great Thanks.",
+      "parentUuid": "9fdfeff1_cb3fd684",
+      "range": {
+        "startLine": 42,
+        "startChar": 7,
+        "endLine": 44,
+        "endChar": 72
+      },
+      "revId": "92c3672b145370c5d5b57c3dfc4de43054c966cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
