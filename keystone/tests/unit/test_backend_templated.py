@@ -77,7 +77,7 @@ class TestTemplatedCatalog(unit.TestCase, catalog_tests.CatalogTests):
         self.assertEqual(2, len(catalog_ref['RegionOne']))
 
         region = PROVIDERS.catalog_api.driver.templates['RegionOne']
-        region['compute']['adminURL'] = 'http://localhost:8774/v1.1/$(tenant)s'
+        region['compute']['adminURL'] = 'http://localhost:8774/v1.1/$(project)s'
 
         # the malformed one has been removed
         catalog_ref = PROVIDERS.catalog_api.get_catalog('foo', 'bar')
