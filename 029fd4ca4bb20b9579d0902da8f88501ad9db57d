@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_2ded4db6",
+        "filename": "releasenotes/notes/tenant_id_to_project_id-42d95d93011785cb.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-01T11:51:15Z",
+      "side": 1,
+      "message": "Has changed to use the named parameter \u0027project_id\u0027 instead of \u0027tenant_id\u0027.",
+      "revId": "029fd4ca4bb20b9579d0902da8f88501ad9db57d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
