@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_e8a653c1",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-01T13:00:03Z",
+      "side": 1,
+      "message": "does this .loads call work? The JSON: prefix hasn\u0027t been stripped yet",
+      "range": {
+        "startLine": 518,
+        "startChar": 64,
+        "endLine": 518,
+        "endChar": 76
+      },
+      "revId": "3bce19eea5c3930692e771bc8dceb1e2fa6a6acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_48975f49",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-01T13:00:03Z",
+      "side": 1,
+      "message": ".dumps is just reversing the .loads and so the value remains a string, why not keep it as an object?",
+      "range": {
+        "startLine": 518,
+        "startChar": 38,
+        "endLine": 518,
+        "endChar": 53
+      },
+      "revId": "3bce19eea5c3930692e771bc8dceb1e2fa6a6acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_a8accb9e",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-01T13:00:03Z",
+      "side": 1,
+      "message": ".get looks for a key called \u0027JSON\u0027 in the dictionary, but there should not be a key called JSON, that should have been stripped before trying to load the string as a JSON object",
+      "range": {
+        "startLine": 518,
+        "startChar": 77,
+        "endLine": 518,
+        "endChar": 94
+      },
+      "revId": "3bce19eea5c3930692e771bc8dceb1e2fa6a6acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
