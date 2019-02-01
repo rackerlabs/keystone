@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_87269a67",
+        "filename": "keystone/tests/unit/test_app_config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-02-01T09:24:27Z",
+      "side": 1,
+      "message": "Only one single error left for pep8. Need to remove this space. pep8 will pass after this.",
+      "range": {
+        "startLine": 28,
+        "startChar": 71,
+        "endLine": 28,
+        "endChar": 73
+      },
+      "revId": "b2c35f0e88db4fd5a96875605d5cc72a4c17f421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_071aaa15",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-02-01T09:24:27Z",
+      "side": 1,
+      "message": "headers\u003d{\u0027X-Auth-Token\u0027: token}",
+      "range": {
+        "startLine": 188,
+        "startChar": 19,
+        "endLine": 188,
+        "endChar": 62
+      },
+      "revId": "b2c35f0e88db4fd5a96875605d5cc72a4c17f421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_079dca64",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-02-01T09:24:27Z",
+      "side": 1,
+      "message": "No need for this assignment. It is not used anywhere.",
+      "range": {
+        "startLine": 247,
+        "startChar": 11,
+        "endLine": 247,
+        "endChar": 19
+      },
+      "revId": "b2c35f0e88db4fd5a96875605d5cc72a4c17f421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_e7d8c653",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-02-01T09:24:27Z",
+      "side": 1,
+      "message": "headers\u003d{\u0027X-Auth-Token\u0027: token}",
+      "range": {
+        "startLine": 357,
+        "startChar": 20,
+        "endLine": 357,
+        "endChar": 64
+      },
+      "revId": "b2c35f0e88db4fd5a96875605d5cc72a4c17f421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
