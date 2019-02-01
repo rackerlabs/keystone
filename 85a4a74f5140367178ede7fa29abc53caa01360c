@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_3c434144",
+        "filename": "releasenotes/notes/tenant_id_to_project_id-42d95d93011785cb.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-02-01T07:08:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_664e2139",
+      "revId": "85a4a74f5140367178ede7fa29abc53caa01360c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_c6582dfb",
         "filename": "releasenotes/notes/tenant_id_to_project_id-42d95d93011785cb.yaml",
         "patchSetId": 5
@@ -48,6 +66,24 @@
       "writtenOn": "2019-01-31T20:51:16Z",
       "side": 1,
       "message": "I would be specific that the assignment driver interface changed.",
+      "revId": "85a4a74f5140367178ede7fa29abc53caa01360c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_5c3e45b8",
+        "filename": "releasenotes/notes/tenant_id_to_project_id-42d95d93011785cb.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-02-01T07:08:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_c6582dfb",
       "revId": "85a4a74f5140367178ede7fa29abc53caa01360c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
