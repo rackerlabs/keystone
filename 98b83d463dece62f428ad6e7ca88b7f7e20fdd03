@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9fdfeff1_ce758d33",
+        "filename": "keystone/token/providers/jws/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-02-02T03:21:25Z",
+      "side": 1,
+      "message": "So the same with Fernet, every time users issue or verify a token, it\u0027ll read the key files. I suppose this\u0027ll lead to a performance issue? especially for public keys, Is it possible to use cache here?",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 19
+      },
+      "revId": "98b83d463dece62f428ad6e7ca88b7f7e20fdd03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_aea049f5",
         "filename": "keystone/token/providers/jws/core.py",
         "patchSetId": 13
@@ -18,6 +41,29 @@
         "startChar": 13,
         "endLine": 122,
         "endChar": 32
+      },
+      "revId": "98b83d463dece62f428ad6e7ca88b7f7e20fdd03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_0e8075f4",
+        "filename": "keystone/token/providers/jws/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-02-02T03:21:25Z",
+      "side": 1,
+      "message": "this should be at the same level with L178, otherwise, any public key decode failed, it\u0027ll raise TokenNotFound.",
+      "range": {
+        "startLine": 186,
+        "startChar": 12,
+        "endLine": 186,
+        "endChar": 60
       },
       "revId": "98b83d463dece62f428ad6e7ca88b7f7e20fdd03",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
