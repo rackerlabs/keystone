@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "9fdfeff1_74ba30c1",
+        "filename": "doc/source/admin/manage-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-02T13:44:01Z",
+      "side": 1,
+      "message": "This markup is for shell operations. We could use a sphinx plugin to create a proper diagram.",
+      "revId": "2ebc24d01fe8886e57665ade4e725800114e89b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_b4aad86d",
+        "filename": "doc/source/admin/manage-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-02T13:44:01Z",
+      "side": 1,
+      "message": "Does the user client actually send an empty header like this?",
+      "revId": "2ebc24d01fe8886e57665ade4e725800114e89b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfdaf3ff_49eb49db",
         "filename": "doc/source/admin/manage-services.rst",
         "patchSetId": 2
@@ -121,6 +155,52 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_54b36ce9",
+        "filename": "doc/source/admin/manage-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-02T13:44:01Z",
+      "side": 1,
+      "message": "If it is using keystonemiddleware, it\u0027s always named this. In cases where services have another section with credentials, that is used for something else and is not going through keystonemiddleware and so would not understand service tokens anyway.",
+      "range": {
+        "startLine": 271,
+        "startChar": 60,
+        "endLine": 271,
+        "endChar": 75
+      },
+      "revId": "2ebc24d01fe8886e57665ade4e725800114e89b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_f4cdc065",
+        "filename": "doc/source/admin/manage-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-02T13:44:01Z",
+      "side": 1,
+      "message": "user\u0027s token",
+      "range": {
+        "startLine": 275,
+        "startChar": 73,
+        "endLine": 275,
+        "endChar": 78
+      },
+      "revId": "2ebc24d01fe8886e57665ade4e725800114e89b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_20d6d829",
         "filename": "doc/source/admin/manage-services.rst",
         "patchSetId": 2
@@ -132,6 +212,41 @@
       "writtenOn": "2019-01-30T20:50:41Z",
       "side": 1,
       "message": "I almost wonder if we should add this to the keystonemiddleware documentation, too. I hate duplicating it, but it seems relevant to have there.",
+      "revId": "2ebc24d01fe8886e57665ade4e725800114e89b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_14c96457",
+        "filename": "doc/source/admin/manage-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-02T13:44:01Z",
+      "side": 1,
+      "message": "Either a duplicate or at least a link",
+      "parentUuid": "9fdfeff1_20d6d829",
+      "revId": "2ebc24d01fe8886e57665ade4e725800114e89b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_b4c3b837",
+        "filename": "doc/source/admin/manage-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-02T13:44:01Z",
+      "side": 1,
+      "message": "Maybe also the spec?",
       "revId": "2ebc24d01fe8886e57665ade4e725800114e89b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
