@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_aea049f5",
+        "filename": "keystone/token/providers/jws/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-02-02T02:25:28Z",
+      "side": 1,
+      "message": "Should this be \"aud\" to follow jwt standard?",
+      "range": {
+        "startLine": 122,
+        "startChar": 13,
+        "endLine": 122,
+        "endChar": 32
+      },
+      "revId": "98b83d463dece62f428ad6e7ca88b7f7e20fdd03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
