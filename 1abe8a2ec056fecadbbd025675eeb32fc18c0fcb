@@ -16,6 +16,24 @@
       "revId": "1abe8a2ec056fecadbbd025675eeb32fc18c0fcb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_19c3dd8a",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-02T06:17:20Z",
+      "side": 1,
+      "message": "Oh, like where the keys were actually created? I can spin up a follow-on patch to add that.",
+      "parentUuid": "9fdfeff1_6b157348",
+      "revId": "1abe8a2ec056fecadbbd025675eeb32fc18c0fcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
