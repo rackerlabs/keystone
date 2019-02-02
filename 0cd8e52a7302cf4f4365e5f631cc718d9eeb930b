@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_3fb001dd",
+        "filename": "keystone/tests/unit/test_app_config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-02T18:07:49Z",
+      "side": 1,
+      "message": "This extra space is the only pep8 error left. If you are having trouble using your editor to remove it I can fix it for you.",
+      "revId": "0cd8e52a7302cf4f4365e5f631cc718d9eeb930b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_1fc97d57",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-02T18:07:49Z",
+      "side": 1,
+      "message": "This test is the last one that is failing. You changed the meaning of the test here, why did you change this to \u0027description\u0027? The test is about using the \u0027unrestricted\u0027 flag, not about adding a description.",
+      "revId": "0cd8e52a7302cf4f4365e5f631cc718d9eeb930b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
