@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_d9b8f511",
+        "filename": "doc/source/admin/jws-key-rotation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-02T06:18:11Z",
+      "side": 1,
+      "message": "Oh - good catch. I\u0027ll fix in the next revision.",
+      "parentUuid": "9fdfeff1_2ec3f98a",
+      "range": {
+        "startLine": 27,
+        "startChar": 70,
+        "endLine": 27,
+        "endChar": 73
+      },
+      "revId": "93d0a1e6e3ec9a9bfc1553acc7c537c2fef73445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_6edee13e",
         "filename": "doc/source/admin/tokens-overview.rst",
         "patchSetId": 3
