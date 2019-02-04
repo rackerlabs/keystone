@@ -28,6 +28,7 @@ from oslo_serialization import jsonutils
 import six
 from six.moves import http_client
 
+from keystone.common import authentication
 from keystone.common import authorization
 from keystone.common import context
 from keystone.common import driver_hints
@@ -1041,6 +1042,10 @@ def set_unenforced_ok():
     setattr(flask.g, enforcer._ENFORCEMENT_CHECK_ATTR, True)
 
 
+def set_authenticate_ok():
+    setattr(flask.g, authentication._AUTH_CHECK_ATTR, True)
+
+
 def unenforced_api(f):
     """Decorate a resource method to mark is as an unenforced API.
 
@@ -1055,5 +1060,6 @@ def unenforced_api(f):
     @functools.wraps(f)
     def wrapper(*args, **kwargs):
         set_unenforced_ok()
+        set_authenticate_ok()
         return f(*args, **kwargs)
     return wrapper
