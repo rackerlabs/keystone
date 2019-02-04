@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_1edbb14f",
+        "filename": "keystone/token/providers/jws/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-04T17:31:25Z",
+      "side": 1,
+      "message": "We talked about doing that in the original fernet implementation. IIRC, we didn\u0027t implement caching initially because we wanted new keys to be picked up immediately.\n\nIt\u0027s been a while since that optimization has been discussed. I\u0027ll see if I can come up with a way to do this. Do you mind if I experiment with that in a follow on or do you want it implemented in this patch?",
+      "parentUuid": "9fdfeff1_ce758d33",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 19
+      },
+      "revId": "98b83d463dece62f428ad6e7ca88b7f7e20fdd03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_aea049f5",
         "filename": "keystone/token/providers/jws/core.py",
         "patchSetId": 13
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_dece895a",
+        "filename": "keystone/token/providers/jws/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-04T17:31:25Z",
+      "side": 1,
+      "message": "Good question. Based on my interpretation of the specification [0], \"aud\" is the intended audience of the token. In the case of OpenStack, would that be the user or service users?\n\nI\u0027m not sure what we would put here since multiple actors can validate a token (e.g., administrators, services users, users themselves).\n\nOpenStack audit IDs are a bit different and specific to OpenStack in my opinion. I\u0027m not sure they exactly match up with any of the claims described in the specification, but I\u0027m curious if you have a different view point.\n\n[0] https://tools.ietf.org/html/rfc7519#section-4.1.3",
+      "parentUuid": "9fdfeff1_aea049f5",
+      "range": {
+        "startLine": 122,
+        "startChar": 13,
+        "endLine": 122,
+        "endChar": 32
+      },
+      "revId": "98b83d463dece62f428ad6e7ca88b7f7e20fdd03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_0e8075f4",
         "filename": "keystone/token/providers/jws/core.py",
         "patchSetId": 13
@@ -59,6 +107,30 @@
       "writtenOn": "2019-02-02T03:21:25Z",
       "side": 1,
       "message": "this should be at the same level with L178, otherwise, any public key decode failed, it\u0027ll raise TokenNotFound.",
+      "range": {
+        "startLine": 186,
+        "startChar": 12,
+        "endLine": 186,
+        "endChar": 60
+      },
+      "revId": "98b83d463dece62f428ad6e7ca88b7f7e20fdd03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_6474b09d",
+        "filename": "keystone/token/providers/jws/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-04T17:31:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_0e8075f4",
       "range": {
         "startLine": 186,
         "startChar": 12,
