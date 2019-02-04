@@ -26,6 +26,7 @@ from keystone.api._shared import authentication
 from keystone.api._shared import json_home_relations
 from keystone.api._shared import saml
 from keystone.auth import schema as auth_schema
+from keystone.common import authentication as authen
 from keystone.common import authorization
 from keystone.common import provider_api
 from keystone.common import rbac_enforcer
@@ -42,6 +43,7 @@ from keystone.server import flask as ks_flask
 
 
 CONF = keystone.conf.CONF
+AUTHEN = authen.AuthEnforcer
 ENFORCER = rbac_enforcer.RBACEnforcer
 LOG = log.getLogger(__name__)
 PROVIDERS = provider_api.ProviderAPIs
@@ -317,6 +319,7 @@ class AuthTokenResource(_AuthFederationWebSSOBase):
         response = flask.make_response(resp_body, http_client.CREATED)
         response.headers['X-Subject-Token'] = token.id
         response.headers['Content-Type'] = 'application/json'
+        AUTHEN.authorize_call()
         return response
 
     def delete(self):

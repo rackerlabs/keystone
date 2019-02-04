@@ -1202,7 +1202,7 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
                                                  password=password)
         self.post('/auth/tokens', body=data,
                   expected_status=http_client.UNAUTHORIZED)
-        note = self._get_last_note()
+        note = self._notifications[-2]
         initiator = note['initiator']
 
         # Confirm user-name specific event was emitted.
@@ -1221,7 +1221,7 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
                                                  password=password)
         self.post('/auth/tokens', body=data,
                   expected_status=http_client.UNAUTHORIZED)
-        note = self._get_last_note()
+        note = self._notifications[-2]
         initiator = note['initiator']
 
         # Confirm user-name specific event was emitted.
