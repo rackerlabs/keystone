@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_d810e152",
+        "filename": "keystone/tests/unit/protection/v3/test_users.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-04T14:49:32Z",
+      "side": 1,
+      "message": "Yeah - I can clean this up.",
+      "parentUuid": "9fdfeff1_9430f457",
+      "revId": "d9d81485ef6c4c27b6d49e9e92afd9e418c75558",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_742d50fc",
         "filename": "keystone/tests/unit/protection/v3/test_users.py",
         "patchSetId": 17
@@ -30,6 +48,24 @@
       "writtenOn": "2019-02-02T14:01:10Z",
       "side": 1,
       "message": "Maybe a test for users cannot get other users?",
+      "revId": "d9d81485ef6c4c27b6d49e9e92afd9e418c75558",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_380c8d3a",
+        "filename": "keystone/tests/unit/protection/v3/test_users.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-04T14:49:32Z",
+      "side": 1,
+      "message": "I agree. I attempted to keep this in a separate patch to mitigate sprawl in this change. Those are tested specifically for project users [0].\n\n[0] https://review.openstack.org/#/c/623322/4/keystone/tests/unit/protection/v3/test_users.py",
+      "parentUuid": "9fdfeff1_742d50fc",
       "revId": "d9d81485ef6c4c27b6d49e9e92afd9e418c75558",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -142,6 +178,24 @@
       "writtenOn": "2019-02-02T14:01:10Z",
       "side": 1,
       "message": "This seems like an API break?",
+      "revId": "d9d81485ef6c4c27b6d49e9e92afd9e418c75558",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_b8307dea",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-04T14:49:32Z",
+      "side": 1,
+      "message": "It is, in the interest of consistency and security.\n\nAccording to the guidelines [0], I can update the keystone version to account for this if you agree that will be sufficient.\n\n[0] https://specs.openstack.org/openstack/api-wg/guidelines/api_interoperability.html#interoperability",
+      "parentUuid": "9fdfeff1_d4ec3cbc",
       "revId": "d9d81485ef6c4c27b6d49e9e92afd9e418c75558",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
