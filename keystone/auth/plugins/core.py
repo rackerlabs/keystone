@@ -14,12 +14,14 @@
 
 import sys
 
+import flask
 from oslo_log import log
 from pycadf import cadftaxonomy as taxonomy
 from pycadf import reason
 from pycadf import resource
 import six
 
+from keystone.common import authentication
 from keystone.common import driver_hints
 from keystone.common import provider_api
 import keystone.conf
@@ -153,6 +155,19 @@ class BaseUserInfo(provider_api.ProviderAPIMixin, object):
         self._assert_domain_is_enabled(domain_ref)
         return domain_ref
 
+    def _handle_nonexistent_resource(self, user_info, err):
+        """Set the flask error and provide an invalid user.
+
+        This allows keystone to continue with its typical path to avoid
+        notifying a user early that a user or domain does not exist.
+        """
+        setattr(flask.g, authentication._ERR, err)
+        user_ref = {}
+        user_ref['id'] = user_info.get('id', 'NULL')
+        user_ref['name'] = user_info.get('name', 'NULL')
+        self.user_ref = user_ref
+        self.user_id = user_ref['id']
+
     def _validate_and_normalize_auth_data(self, auth_payload):
         if 'user' not in auth_payload:
             raise exception.ValidationError(attribute='user',
@@ -177,6 +192,10 @@ class BaseUserInfo(provider_api.ProviderAPIMixin, object):
                 domain_ref = PROVIDERS.resource_api.get_domain(
                     user_ref['domain_id'])
                 self._assert_domain_is_enabled(domain_ref)
+            self._assert_user_is_enabled(user_ref)
+        except exception.Unauthorized as e:
+            self._handle_nonexistent_resource(user_info, e)
+            return
         except exception.UserNotFound as e:
             LOG.warning(six.text_type(e))
 
@@ -202,11 +221,12 @@ class BaseUserInfo(provider_api.ProviderAPIMixin, object):
                 target=resource.Resource(typeURI=taxonomy.ACCOUNT_USER),
                 event_type=_NOTIFY_EVENT,
                 reason=audit_reason)
-            raise exception.Unauthorized(e)
-        self._assert_user_is_enabled(user_ref)
+            self._handle_nonexistent_resource(user_info, e)
+            return
         self.user_ref = user_ref
         self.user_id = user_ref['id']
         self.domain_id = domain_ref['id']
+        setattr(flask.g, authentication._AUTH_CHECK_ATTR, True)
 
 
 class UserAuthInfo(BaseUserInfo):

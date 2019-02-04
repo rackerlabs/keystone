@@ -22,6 +22,7 @@ from oslo_log import log
 import six
 
 from keystone.auth import core
+from keystone.common import authentication
 from keystone.common import provider_api
 from keystone import exception
 from keystone.federation import constants
@@ -150,7 +151,14 @@ def authenticate(auth_info, auth_context):
     auth_response = {'methods': []}
     for method_name in auth_info.get_method_names():
         method = core.get_auth_method(method_name)
-        resp = method.authenticate(auth_info.get_method_data(method_name))
+        try:
+            resp = method.authenticate(auth_info.get_method_data(method_name))
+        except exception.Unauthorized as err:
+            if not getattr(flask.g, authentication._ERR):
+                setattr(flask.g, authentication._ERR, err)
+            setattr(flask.g, authentication._AUTH_CHECK_ATTR, False)
+            auth_context['user_id'] = 'NULL'
+            resp = None
         if resp:
             if resp.status:
                 auth_context.setdefault(

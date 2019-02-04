@@ -18,6 +18,7 @@ import fixtures
 import itertools
 import operator
 import re
+import time
 import uuid
 
 import freezegun
@@ -44,6 +45,7 @@ from keystone import exception
 from keystone.identity.backends import resource_options as ro
 from keystone.tests.common import auth as common_auth
 from keystone.tests import unit
+from keystone.tests.unit import base_classes
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import test_v3
 
@@ -5720,3 +5722,43 @@ class ApplicationCredentialAuth(test_v3.RestfulTestCase):
             project_id=new_project['id'])
         self.v3_create_token(app_cred_auth,
                              expected_status=http_client.UNAUTHORIZED)
+
+
+class AuthOracleTests(base_classes.TestCaseWithBootstrap,
+                      common_auth.AuthTestMixin):
+
+    def setUp(self):
+        super(AuthOracleTests, self).setUp()
+        self.loadapp()
+
+    def test_invalid_user_time(self):
+        # Admin User
+        self.user_id = self.bootstrapper.admin_user_id
+        auth = self.build_authentication_request(
+            user_id=self.user_id,
+            password=self.bootstrapper.admin_password,
+            system=True
+        )
+
+        start = time.clock()
+        with self.test_client() as c:
+            r = c.post('/v3/auth/tokens', json=auth)
+            self.token_id = r.headers['X-Subject-Token']
+        end = time.clock()
+        valid_time = (end - start)
+
+        # Invalid User
+        auth = self.build_authentication_request(
+            user_id='NULL',
+            password='password',
+        )
+
+        start = time.clock()
+        with self.test_client() as c:
+            c.post('/v3/auth/tokens', json=auth,
+                   expected_status_code=http_client.UNAUTHORIZED)
+        end = time.clock()
+        invalid_time = (end - start)
+
+        # TODO(gagehugo): Fix this to actually be somewhat close
+        self.assertEqual(valid_time, invalid_time)
