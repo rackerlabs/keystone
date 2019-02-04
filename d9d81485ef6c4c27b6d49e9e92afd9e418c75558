@@ -235,6 +235,24 @@
       "revId": "d9d81485ef6c4c27b6d49e9e92afd9e418c75558",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_2320e29b",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-04T15:32:19Z",
+      "side": 1,
+      "message": "That\u0027s exactly my point, we don\u0027t have a mechanism for making backwards incompatible changes like this.",
+      "parentUuid": "9fdfeff1_783455fc",
+      "revId": "d9d81485ef6c4c27b6d49e9e92afd9e418c75558",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
