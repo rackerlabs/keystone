@@ -22,6 +22,30 @@
       "revId": "96eb890a086a62c2efd92e5b9dc585d167fb3361",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_7e6e66ca",
+        "filename": "keystone/tests/unit/test_v3_application_credential.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-02-05T16:13:48Z",
+      "side": 1,
+      "message": "++, but as Colleen implied this is not worth holding the patch up.",
+      "parentUuid": "9fdfeff1_d5e2daa0",
+      "range": {
+        "startLine": 272,
+        "startChar": 26,
+        "endLine": 272,
+        "endChar": 50
+      },
+      "revId": "96eb890a086a62c2efd92e5b9dc585d167fb3361",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
