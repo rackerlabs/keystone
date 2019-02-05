@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_cfbb1ec2",
+        "filename": "keystone/tests/unit/protection/v3/test_users.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-02-05T19:01:27Z",
+      "side": 1,
+      "message": "NIT: This could be done as a template string",
+      "range": {
+        "startLine": 33,
+        "startChar": 22,
+        "endLine": 33,
+        "endChar": 36
+      },
+      "revId": "40d3458fcb29df1daefce9455d1778e800cac378",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
