@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_34755fcd",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-05T18:27:18Z",
+      "side": 1,
+      "message": "I suppose this is leaking a little bit of the CADF specification into the implementation for basic notifications. Since the change here isn\u0027t exposing anything specific to the CADF spec, we\u0027re probably safe to use it solely for the request_id.",
+      "range": {
+        "startLine": 457,
+        "startChar": 22,
+        "endLine": 457,
+        "endChar": 26
+      },
+      "revId": "c29786a5b9d44e262944b226a196dc13e07f76f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_54ad832f",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 930,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-05T18:27:18Z",
+      "side": 1,
+      "message": "This could be its own change since this isn\u0027t specific to adding support to basic notifications.",
+      "revId": "c29786a5b9d44e262944b226a196dc13e07f76f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
