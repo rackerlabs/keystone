@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_2fe50a0b",
+        "filename": "releasenotes/notes/bug-1814589-f3e7f554bee1c317.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-05T18:53:39Z",
+      "side": 1,
+      "message": "We could probably just say this was causing a 500.",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 66
+      },
+      "revId": "d2135d6d0b29e810b964bc54e388ec9fa08031cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
