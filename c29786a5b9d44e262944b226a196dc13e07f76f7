@@ -57,6 +57,24 @@
       "revId": "c29786a5b9d44e262944b226a196dc13e07f76f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_d412c9b4",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 930,
+      "author": {
+        "id": 29525
+      },
+      "writtenOn": "2019-02-06T07:06:13Z",
+      "side": 1,
+      "message": "thanks, moved it to another change https://review.openstack.org/#/c/635101/",
+      "parentUuid": "9fdfeff1_f4e02dcf",
+      "revId": "c29786a5b9d44e262944b226a196dc13e07f76f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
