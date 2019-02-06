@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_6d1d500e",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 704,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-02-06T11:05:07Z",
+      "side": 1,
+      "message": "My direct_maps contains - \n\n[[\u0027bwilliams\u0027], [\u0027[{\"group_name\": \"group_1\", \"domain_name\": \"default\"}, {\"group_name\": \"group_2\", \"domain_name\": \"default\"}]\u0027]]",
+      "revId": "575cfd946284e173ecdbf7628fef550c7dd5316c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_2d1748f0",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 715,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-02-06T11:05:07Z",
+      "side": 1,
+      "message": "Not getting mapped here. May be a syntax issue??",
+      "range": {
+        "startLine": 715,
+        "startChar": 32,
+        "endLine": 715,
+        "endChar": 53
+      },
+      "revId": "575cfd946284e173ecdbf7628fef550c7dd5316c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
