@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_607c7cb5",
+        "filename": "keystone/token/providers/jws/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-02-06T05:16:24Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9fdfeff1_1edbb14f",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 19
+      },
+      "revId": "98b83d463dece62f428ad6e7ca88b7f7e20fdd03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_aea049f5",
         "filename": "keystone/token/providers/jws/core.py",
         "patchSetId": 13
