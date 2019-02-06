@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_e8260ebb",
+        "filename": "keystone/token/providers/jws/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-02-06T11:56:41Z",
+      "side": 1,
+      "message": "I don\u0027t have a clear idea. maybe something like what \t\nKristi did for mutable config: https://review.openstack.org/#/c/585417/2/keystone/conf/__init__.py L195 \nwhile Colleen and Morgan had left some concern there for this way.\n\nWhat I\u0027m sure is that this kind of performance issue is happed indeed in our public cloud. We may leave to a TODO here at least.",
+      "parentUuid": "9fdfeff1_607c7cb5",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 19
+      },
+      "revId": "98b83d463dece62f428ad6e7ca88b7f7e20fdd03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_aea049f5",
         "filename": "keystone/token/providers/jws/core.py",
         "patchSetId": 13
