@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_cb33f261",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-02-07T06:40:53Z",
+      "side": 1,
+      "message": "Since this is a experimental job,so does voting being false will make any difference over this? Just a little curious what makes both different? As Both will not impact gate job.",
+      "range": {
+        "startLine": 210,
+        "startChar": 12,
+        "endLine": 210,
+        "endChar": 25
+      },
+      "revId": "b3c3a24ef9a167fe19ab6ac01eb1ec28595f1764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
