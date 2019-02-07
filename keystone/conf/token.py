@@ -112,7 +112,8 @@ cache_on_issue = cfg.BoolOpt(
     help=utils.fmt("""
 Enable storing issued token data to token validation cache so that first token
 validation doesn't actually cause full validation cycle. This option has no
-effect unless global caching and token caching are enabled.
+effect unless global caching is enabled and will still cache tokens even if
+`[token] caching = False`.
 """))
 
 allow_expired_window = cfg.IntOpt(
