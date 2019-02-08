@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9fdfeff1_e866e555",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-02-08T07:01:47Z",
+      "side": 1,
+      "message": "We can add the details that test case also added for the same.",
+      "revId": "d2135d6d0b29e810b964bc54e388ec9fa08031cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_2fe50a0b",
         "filename": "releasenotes/notes/bug-1814589-f3e7f554bee1c317.yaml",
         "patchSetId": 3
