@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_88907997",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-02-08T05:55:25Z",
+      "side": 1,
+      "message": "We can initialize region_id with \u0027None\u0027 too or we can do that in L103, region_id \u003d limit.get(\u0027region_id\u0027, None)?",
+      "range": {
+        "startLine": 61,
+        "startChar": 53,
+        "endLine": 61,
+        "endChar": 63
+      },
+      "revId": "d30072ad37042d9887854ddf8fb853af50f18537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_0827a966",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-02-08T05:55:25Z",
+      "side": 1,
+      "message": "We have compared that the resource limit of parent and project limit in L117. As per my understanding the parent_limit_value is the usage value of parent?\nIf so then the project resource_limit  can be more than parent_limit_value but the total of both project resource_limit and parent_limit_value cannot be more than parent resource limit. Correct me if I am wrong?",
+      "range": {
+        "startLine": 72,
+        "startChar": 11,
+        "endLine": 76,
+        "endChar": 58
+      },
+      "revId": "d30072ad37042d9887854ddf8fb853af50f18537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_88495961",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-02-08T05:55:25Z",
+      "side": 1,
+      "message": "As we are fetching service_id, region_id, and resource_name while iterating over limits, then what difference will it make comparing again with the limits?",
+      "range": {
+        "startLine": 112,
+        "startChar": 35,
+        "endLine": 114,
+        "endChar": 71
+      },
+      "revId": "d30072ad37042d9887854ddf8fb853af50f18537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
