@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_a8de9dd7",
+        "filename": "releasenotes/notes/bug-1805406-252b45d443af20b3.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-02-08T07:20:34Z",
+      "side": 1,
+      "message": "trailing space left.",
+      "revId": "6127872a4f615ba63e51cf8154e692b1e1c127a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
