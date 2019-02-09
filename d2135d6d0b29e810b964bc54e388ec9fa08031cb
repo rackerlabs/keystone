@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_dd45cf16",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-02-09T01:16:06Z",
+      "side": 1,
+      "message": "I agree its a good idea to mention that in the commit msg as this scenario was never tested before.",
+      "parentUuid": "9fdfeff1_722172fb",
+      "revId": "d2135d6d0b29e810b964bc54e388ec9fa08031cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_2fe50a0b",
         "filename": "releasenotes/notes/bug-1814589-f3e7f554bee1c317.yaml",
         "patchSetId": 3
