@@ -16,6 +16,24 @@
       "revId": "556532abfc1b1750c32d078e33d61838935619a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_a53d3a8f",
+        "filename": "keystone/common/sql/expand_repo/versions/048_expand_add_registered_limit_id_column_for_limit.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-02-11T23:27:42Z",
+      "side": 1,
+      "message": "Yes we should. We will also need a new meta afaik, just to be sure.",
+      "parentUuid": "9fdfeff1_32a67355",
+      "revId": "556532abfc1b1750c32d078e33d61838935619a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
