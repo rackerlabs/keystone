@@ -11,9 +11,13 @@
 # under the License.
 
 import datetime
+import hashlib
 import os
 
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives import serialization
 import jwt
+from oslo_log import log
 from oslo_utils import timeutils
 
 from keystone.common import utils
@@ -23,6 +27,7 @@ from keystone.i18n import _
 from keystone.token.providers import base
 
 CONF = keystone.conf.CONF
+LOG = log.getLogger(__name__)
 
 
 class Provider(base.Provider):
@@ -84,6 +89,10 @@ class JWSFormatter(object):
     # of supported algorithms.
     algorithm = 'ES256'
 
+    def __init__(self):
+        self._public_keys = {}
+        self._load_public_keys()
+
     @property
     def private_key(self):
         private_key_path = os.path.join(
@@ -94,13 +103,31 @@ class JWSFormatter(object):
         return key
 
     @property
-    def public_keys(self):
-        keys = []
+    def public_key_hash(self):
+        """Hash of the private key's corresponding public key."""
+        private_key = serialization.load_pem_private_key(
+            self.private_key, password=None, backend=default_backend()
+        )
+
+        public_key = private_key.public_key().public_bytes(
+            encoding=serialization.Encoding.PEM,
+            format=serialization.PublicFormat.SubjectPublicKeyInfo
+        )
+
+        return self._hash_public_key(public_key)
+
+    def _load_public_keys(self):
         key_repo = CONF.jwt_tokens.jws_public_key_repository
         for keyfile in os.listdir(key_repo):
             with open(os.path.join(key_repo, keyfile), 'r') as f:
-                keys.append(f.read())
-        return keys
+                key = f.read()
+                key_hash = self._hash_public_key(key)
+                self._public_keys[key_hash] = key
+        LOG.info('Loaded public key repository')
+
+    def _hash_public_key(self, public_key):
+        return hashlib.sha256(public_key).hexdigest()
+
 
     def create_token(self, user_id, expires_at, audit_ids, methods,
                      system=None, domain_id=None, project_id=None,
@@ -128,8 +155,11 @@ class JWSFormatter(object):
             'openstack_idp_id': identity_provider_id,
             'openstack_protocol_id': protocol_id,
             'openstack_access_token_id': access_token_id,
-            'openstack_app_cred_id': app_cred_id
+            'openstack_app_cred_id': app_cred_id,
+            'openstack_public_key_hash': self.public_key_hash
         }
+
+        LOG.info('Using public key hash %r' % self.public_key_hash)
 
         # NOTE(lbragstad): Calling .items() on a dictionary in python 2 returns
         # a list but returns an iterable in python 3. Casting to a list makes
@@ -175,14 +205,38 @@ class JWSFormatter(object):
         )
 
     def _decode_token_from_id(self, token_id):
-        for public_key in self.public_keys:
+        # We don't rely on this as verified information, we're just grabbing
+        # the hash so that we can pre-emptively load the right public key to
+        # validate the signature.
+        payload = jwt.decode(token_id, verify=False)
+        public_key_hash = payload.get('openstack_public_key_hash', None)
+        LOG.info('Public key hash %r' % public_key_hash)
+
+        public_key = self._public_keys.get(public_key_hash, None)
+        LOG.info('Using public key %r' % public_key)
+        if not public_key:
+            self._load_public_keys()
+            public_key = self._public_keys.get(public_key_hash, None)
+            LOG.info('Using public key %r' % public_key)
+
+        if public_key:
+            keys = [public_key]
+        else:
+            # This is a catch all to ensure we try validating the token against
+            # all known public keys in the event we can't determine the proper
+            # public key based on the has in the token payload.
+            LOG.info('Unable to find public key, checking all keys')
+            keys = self._public_keys.values()
+
+        for key in keys:
             try:
                 return jwt.decode(
-                    token_id, public_key, algorithms=JWSFormatter.algorithm
+                    token_id, key, algorithms=JWSFormatter.algorithm
                 )
             except (jwt.InvalidSignatureError, jwt.DecodeError,
                     jwt.ExpiredSignatureError):
-                pass    # nosec: We want to exhaustively try all public keys
+                pass
+
         raise exception.TokenNotFound(token_id=token_id)
 
     def _convert_time_string_to_int(self, time_str):
