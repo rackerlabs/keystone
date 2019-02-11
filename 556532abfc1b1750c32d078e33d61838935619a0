@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_32a67355",
+        "filename": "keystone/common/sql/expand_repo/versions/048_expand_add_registered_limit_id_column_for_limit.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-11T20:09:13Z",
+      "side": 1,
+      "message": "For safety, should we check to make sure we\u0027re actually operating on a SQLite database before running this code?",
+      "revId": "556532abfc1b1750c32d078e33d61838935619a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
