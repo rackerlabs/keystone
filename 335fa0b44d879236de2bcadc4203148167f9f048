@@ -22,6 +22,53 @@
       "revId": "335fa0b44d879236de2bcadc4203148167f9f048",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_98c66b49",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2019-02-11T10:05:59Z",
+      "side": 1,
+      "message": "Agreed, I used to believe that both of them are the prerequisite for token caching, it\u0027s debatable.",
+      "parentUuid": "9fdfeff1_96cf217e",
+      "range": {
+        "startLine": 19,
+        "startChar": 64,
+        "endLine": 20,
+        "endChar": 64
+      },
+      "revId": "335fa0b44d879236de2bcadc4203148167f9f048",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_18e03bcc",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2019-02-11T10:05:59Z",
+      "side": 1,
+      "message": "This looks like a bug, if it still works why we need the option here?",
+      "range": {
+        "startLine": 110,
+        "startChar": 29,
+        "endLine": 111,
+        "endChar": 24
+      },
+      "revId": "335fa0b44d879236de2bcadc4203148167f9f048",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
