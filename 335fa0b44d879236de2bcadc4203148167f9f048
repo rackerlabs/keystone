@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_9e0dee91",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-11T16:33:15Z",
+      "side": 1,
+      "message": "Yeah - I think I agree. The original implementation of cache_on_issue should have checked if caching was enabled.\n\nUnfortunately, users could be using this without realizing it (if they have token caching disabled, the would still be caching tokens on issue). If we change the logic, we could negatively impact performance since we wouldn\u0027t be caching those tokens anymore.\n\nWe could address that with an upgrade release note.",
+      "parentUuid": "9fdfeff1_98c66b49",
+      "range": {
+        "startLine": 19,
+        "startChar": 64,
+        "endLine": 20,
+        "endChar": 64
+      },
+      "revId": "335fa0b44d879236de2bcadc4203148167f9f048",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_18e03bcc",
         "filename": "keystone/conf/token.py",
         "patchSetId": 2
@@ -60,6 +84,30 @@
       "writtenOn": "2019-02-11T10:05:59Z",
       "side": 1,
       "message": "This looks like a bug, if it still works why we need the option here?",
+      "range": {
+        "startLine": 110,
+        "startChar": 29,
+        "endLine": 111,
+        "endChar": 24
+      },
+      "revId": "335fa0b44d879236de2bcadc4203148167f9f048",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_9ed08ecb",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-11T16:33:15Z",
+      "side": 1,
+      "message": "Correct, Dolph actually had that same concern in the original review [0].\n\nI can push another revision of this patch that deprecates this option for removal.\n\n[0] https://review.openstack.org/#/c/309146/21",
+      "parentUuid": "9fdfeff1_18e03bcc",
       "range": {
         "startLine": 110,
         "startChar": 29,
