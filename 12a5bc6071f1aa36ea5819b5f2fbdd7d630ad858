@@ -22,6 +22,30 @@
       "revId": "12a5bc6071f1aa36ea5819b5f2fbdd7d630ad858",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_7eacca34",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-11T16:37:19Z",
+      "side": 1,
+      "message": "I think this patch is passing because this line is here. We need to work with the tempest folks to see what we should do about that patch.\n\nHere are the failures without the dependency on the devstack patch [0]. The tests assume that anyone with an admin domain-scoped token is a system administrator.\n\n[0] http://logs.openstack.org/19/623319/5/check/tempest-full/8cc3db9/testr_results.html.gz",
+      "parentUuid": "9fdfeff1_96972191",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 52
+      },
+      "revId": "12a5bc6071f1aa36ea5819b5f2fbdd7d630ad858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
