@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_2f07f31e",
+        "filename": "keystone/common/policies/role_assignment.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-11T16:21:02Z",
+      "side": 1,
+      "message": "nit: We could save a little space on indentation here by doing:\n\n  DEPRECATED_REASON \u003d \"\"\"\n  As of the Stein release...\n  \"\"\"\n\nI started rewriting some of the messages I was working on to fit that format, althrough it\u0027s strictly a cosmetic change.",
+      "range": {
+        "startLine": 23,
+        "startChar": 20,
+        "endLine": 23,
+        "endChar": 21
+      },
+      "revId": "3c8fa1e03886d91a6a9efbf615b736b9180b23d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_6acba952",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-11T16:21:02Z",
+      "side": 1,
+      "message": "nit: We could include the term \"filtering\" here since we\u0027re really testing that system readers can filter assignments by system.\n\nWe could also bolster the assertion of this test by making sure every assignment is actually a system assignment.\n\nhttps://pasted.tech/pastes/697d1a5020234e36a752fc627c632af1da0e29de.raw",
+      "range": {
+        "startLine": 57,
+        "startChar": 8,
+        "endLine": 57,
+        "endChar": 57
+      },
+      "revId": "3c8fa1e03886d91a6a9efbf615b736b9180b23d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_aaff5165",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-11T16:21:02Z",
+      "side": 1,
+      "message": "We duplicate this in several areas, so we could pull it into its own reusable function.",
+      "range": {
+        "startLine": 82,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 9
+      },
+      "revId": "3c8fa1e03886d91a6a9efbf615b736b9180b23d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_ea61d93a",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-11T16:21:02Z",
+      "side": 1,
+      "message": "We could invert the assertion here to say we only want to check that every user is, in fact, the user we filtered by.",
+      "range": {
+        "startLine": 128,
+        "startChar": 12,
+        "endLine": 129,
+        "endChar": 73
+      },
+      "revId": "3c8fa1e03886d91a6a9efbf615b736b9180b23d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_aae99180",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-11T16:21:02Z",
+      "side": 1,
+      "message": "I\u0027m not aware of include_names having any impact on the RBAC or authoritative behavior of the assignments API. We might consider removing this as a protection test since it\u0027s more of a functional thing.",
+      "range": {
+        "startLine": 131,
+        "startChar": 49,
+        "endLine": 131,
+        "endChar": 62
+      },
+      "revId": "3c8fa1e03886d91a6a9efbf615b736b9180b23d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_aa6c3108",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-11T16:21:02Z",
+      "side": 1,
+      "message": "Similar comment here as to the comment on line 198.",
+      "range": {
+        "startLine": 173,
+        "startChar": 8,
+        "endLine": 173,
+        "endChar": 58
+      },
+      "revId": "3c8fa1e03886d91a6a9efbf615b736b9180b23d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_cabad56c",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-11T16:21:02Z",
+      "side": 1,
+      "message": "Since we\u0027re operating within system-scope, this test is duplicated from the test on line 82. If we can filter by project, then we should be able to filter by any project with a system-scoped token.",
+      "range": {
+        "startLine": 198,
+        "startChar": 8,
+        "endLine": 198,
+        "endChar": 59
+      },
+      "revId": "3c8fa1e03886d91a6a9efbf615b736b9180b23d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_4aa6e555",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-11T16:21:02Z",
+      "side": 1,
+      "message": "We could add some tests to test group system assignments.",
+      "revId": "3c8fa1e03886d91a6a9efbf615b736b9180b23d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
