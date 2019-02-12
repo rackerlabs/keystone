@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_288fdfcd",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 909,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-02-12T01:53:00Z",
+      "side": 1,
+      "message": "this should be updated as well. But I assume it\u0027s not a small work since the \"tenant\" attr name which is used in many places would be changed.",
+      "range": {
+        "startLine": 904,
+        "startChar": 0,
+        "endLine": 909,
+        "endChar": 60
+      },
+      "revId": "8f0451f67f6e7a2ba4f1e5b7e9f45af26f0a6187",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_6804074b",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 929,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-02-12T01:53:00Z",
+      "side": 1,
+      "message": "projects",
+      "range": {
+        "startLine": 929,
+        "startChar": 34,
+        "endLine": 929,
+        "endChar": 41
+      },
+      "revId": "8f0451f67f6e7a2ba4f1e5b7e9f45af26f0a6187",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
