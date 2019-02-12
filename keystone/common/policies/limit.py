@@ -14,9 +14,12 @@ from oslo_policy import policy
 
 from keystone.common.policies import base
 
+RESOURCE_NAME = 'limit'
+
 limit_policies = [
     policy.DocumentedRuleDefault(
-        name=base.IDENTITY % 'get_limit_model',
+        name=base.POLICY_FORMAT % {'resource': 'limit_model',
+                                   'action': base.ACTION_GET},
         check_str='',
         scope_types=['system', 'project'],
         description='Get limit enforcement model.',
@@ -25,7 +28,8 @@ limit_policies = [
                     {'path': '/v3/limits/model',
                      'method': 'HEAD'}]),
     policy.DocumentedRuleDefault(
-        name=base.IDENTITY % 'get_limit',
+        name=base.POLICY_FORMAT % {'resource': RESOURCE_NAME,
+                                   'action': base.ACTION_GET},
         check_str='',
         # Getting a single limit or listing all limits should be information
         # accessible to everyone. By setting scope_types=['system', 'project']
@@ -40,7 +44,8 @@ limit_policies = [
                     {'path': '/v3/limits/{limit_id}',
                      'method': 'HEAD'}]),
     policy.DocumentedRuleDefault(
-        name=base.IDENTITY % 'list_limits',
+        name=base.POLICY_FORMAT % {'resource': RESOURCE_NAME,
+                                   'action': base.ACTION_LIST},
         check_str='',
         scope_types=['system', 'project'],
         description='List limits.',
@@ -49,21 +54,24 @@ limit_policies = [
                     {'path': '/v3/limits',
                      'method': 'HEAD'}]),
     policy.DocumentedRuleDefault(
-        name=base.IDENTITY % 'create_limits',
+        name=base.POLICY_FORMAT % {'resource': RESOURCE_NAME,
+                                   'action': base.ACTION_CREATE},
         check_str=base.SYSTEM_ADMIN,
         scope_types=['system'],
         description='Create limits.',
         operations=[{'path': '/v3/limits',
                      'method': 'POST'}]),
     policy.DocumentedRuleDefault(
-        name=base.IDENTITY % 'update_limit',
+        name=base.POLICY_FORMAT % {'resource': RESOURCE_NAME,
+                                   'action': base.ACTION_UPDATE},
         check_str=base.SYSTEM_ADMIN,
         scope_types=['system'],
         description='Update limit.',
         operations=[{'path': '/v3/limits/{limit_id}',
                      'method': 'PATCH'}]),
     policy.DocumentedRuleDefault(
-        name=base.IDENTITY % 'delete_limit',
+        name=base.POLICY_FORMAT % {'resource': RESOURCE_NAME,
+                                   'action': base.ACTION_DELETE},
         check_str=base.SYSTEM_ADMIN,
         scope_types=['system'],
         description='Delete limit.',

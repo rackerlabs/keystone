@@ -37,7 +37,7 @@ class LimitsResource(ks_flask.ResourceBase):
 
     def _list_limits(self):
         filters = ['service_id', 'region_id', 'resource_name', 'project_id']
-        ENFORCER.enforce_call(action='identity:list_limits', filters=filters)
+        ENFORCER.enforce_call(action='identity:limit:list', filters=filters)
         hints = self.build_driver_hints(filters)
         project_id_filter = hints.get_exact_filter_by_name('project_id')
         if project_id_filter:
@@ -53,7 +53,7 @@ class LimitsResource(ks_flask.ResourceBase):
         return self.wrap_collection(refs, hints=hints)
 
     def _get_limit(self, limit_id):
-        ENFORCER.enforce_call(action='identity:get_limit')
+        ENFORCER.enforce_call(action='identity:limit:get')
         ref = PROVIDERS.unified_limit_api.get_limit(limit_id)
         if (not self.oslo_context.is_admin and
                 not ('admin' in self.oslo_context.roles)):
@@ -70,7 +70,7 @@ class LimitsResource(ks_flask.ResourceBase):
         return self._list_limits()
 
     def post(self):
-        ENFORCER.enforce_call(action='identity:create_limits')
+        ENFORCER.enforce_call(action='identity:limit:create')
         limits_b = (flask.request.get_json(silent=True, force=True) or {}).get(
             'limits', {})
         validation.lazy_validate(schema.limit_create, limits_b)
@@ -82,7 +82,7 @@ class LimitsResource(ks_flask.ResourceBase):
         return refs, http_client.CREATED
 
     def patch(self, limit_id):
-        ENFORCER.enforce_call(action='identity:update_limit')
+        ENFORCER.enforce_call(action='identity:limit:update')
         limit = (flask.request.get_json(silent=True, force=True) or {}).get(
             'limit', {})
         validation.lazy_validate(schema.limit_update, limit)
@@ -91,14 +91,14 @@ class LimitsResource(ks_flask.ResourceBase):
         return self.wrap_member(ref)
 
     def delete(self, limit_id):
-        ENFORCER.enforce_call(action='identity:delete_limit')
+        ENFORCER.enforce_call(action='identity:limit:delete')
         return (PROVIDERS.unified_limit_api.delete_limit(limit_id),
                 http_client.NO_CONTENT)
 
 
 class LimitModelResource(flask_restful.Resource):
     def get(self):
-        ENFORCER.enforce_call(action='identity:get_limit_model')
+        ENFORCER.enforce_call(action='identity:limit_model:get')
         model = PROVIDERS.unified_limit_api.get_model()
         return {'model': model}
 

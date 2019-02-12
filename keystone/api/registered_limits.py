@@ -33,14 +33,14 @@ class RegisteredLimitResource(ks_flask.ResourceBase):
     json_home_resource_status = json_home.Status.EXPERIMENTAL
 
     def _get_registered_limit(self, registered_limit_id):
-        ENFORCER.enforce_call(action='identity:get_registered_limit')
+        ENFORCER.enforce_call(action='identity:registered_limit:get')
         ref = PROVIDERS.unified_limit_api.get_registered_limit(
             registered_limit_id)
         return self.wrap_member(ref)
 
     def _list_registered_limits(self):
         filters = ['service_id', 'region_id', 'resource_name']
-        ENFORCER.enforce_call(action='identity:list_registered_limits',
+        ENFORCER.enforce_call(action='identity:registered_limit:list',
                               filters=filters)
         hints = self.build_driver_hints(filters)
         refs = PROVIDERS.unified_limit_api.list_registered_limits(hints)
@@ -52,7 +52,7 @@ class RegisteredLimitResource(ks_flask.ResourceBase):
         return self._list_registered_limits()
 
     def post(self):
-        ENFORCER.enforce_call(action='identity:create_registered_limits')
+        ENFORCER.enforce_call(action='identity:registered_limit:create')
         reg_limits = (flask.request.get_json(
             silent=True, force=True) or {}).get('registered_limits', {})
         validation.lazy_validate(schema.registered_limit_create, reg_limits)
@@ -65,7 +65,7 @@ class RegisteredLimitResource(ks_flask.ResourceBase):
         return refs, http_client.CREATED
 
     def patch(self, registered_limit_id):
-        ENFORCER.enforce_call(action='identity:update_registered_limit')
+        ENFORCER.enforce_call(action='identity:registered_limit:update')
         registered_limit = (flask.request.get_json(
             silent=True, force=True) or {}).get('registered_limit', {})
         validation.lazy_validate(schema.registered_limit_update,
@@ -76,7 +76,7 @@ class RegisteredLimitResource(ks_flask.ResourceBase):
         return self.wrap_member(ref)
 
     def delete(self, registered_limit_id):
-        ENFORCER.enforce_call(action='identity:delete_registered_limit')
+        ENFORCER.enforce_call(action='identity:registered_limit:delete')
         return (PROVIDERS.unified_limit_api.delete_registered_limit(
             registered_limit_id), http_client.NO_CONTENT)
 
