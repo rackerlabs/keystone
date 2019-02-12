@@ -260,6 +260,30 @@
       "revId": "d30072ad37042d9887854ddf8fb853af50f18537",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_5169a2f6",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-02-12T15:34:08Z",
+      "side": 1,
+      "message": "yeah, the service_id, region_id and resource_name must be the same between parent limit and child limit.",
+      "parentUuid": "9fdfeff1_5949d3b4",
+      "range": {
+        "startLine": 112,
+        "startChar": 35,
+        "endLine": 114,
+        "endChar": 71
+      },
+      "revId": "d30072ad37042d9887854ddf8fb853af50f18537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
