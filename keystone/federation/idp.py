@@ -11,6 +11,7 @@
 # under the License.
 
 import datetime
+import json
 import os
 import subprocess  # nosec : see comments in the code below
 import uuid
@@ -48,7 +49,8 @@ class SAMLGenerator(object):
         self.assertion_id = uuid.uuid4().hex
 
     def samlize_token(self, issuer, recipient, user, user_domain_name, roles,
-                      project, project_domain_name, expires_in=None):
+                      project, project_domain_name, expires_in=None,
+                      sp_id=None):
         """Convert Keystone attributes to a SAML assertion.
 
         :param issuer: URL of the issuing party
@@ -76,7 +78,7 @@ class SAMLGenerator(object):
         saml_issuer = self._create_issuer(issuer)
         subject = self._create_subject(user, expiration_time, recipient)
         attribute_statement = self._create_attribute_statement(
-            user, user_domain_name, roles, project, project_domain_name)
+            user, user_domain_name, roles, project, project_domain_name, sp_id)
         authn_statement = self._create_authn_statement(issuer, expiration_time)
         signature = self._create_signature()
 
@@ -162,7 +164,7 @@ class SAMLGenerator(object):
         return subject
 
     def _create_attribute_statement(self, user, user_domain_name, roles,
-                                    project, project_domain_name):
+                                    project, project_domain_name, sp_id):
         """Create an object that represents a SAML AttributeStatement.
 
         <ns0:AttributeStatement>
@@ -218,6 +220,13 @@ class SAMLGenerator(object):
         attribute_statement.attribute.append(project_attribute)
         attribute_statement.attribute.append(project_domain_attribute)
         attribute_statement.attribute.append(user_domain_attribute)
+
+        additional_info = CONF.federation.assertion_additional_information
+        additional_info = json.loads(additional_info)
+        additional_pairs = additional_info[sp_id]
+        for key, values in additional_pairs:
+            attribute_statement.attribute.append(_build_attribute(key, values))
+
         return attribute_statement
 
     def _create_authn_statement(self, issuer, expiration_time):

@@ -50,5 +50,5 @@ def create_base_saml_assertion(auth):
     generator = keystone_idp.SAMLGenerator()
     response = generator.samlize_token(
         issuer, sp_url, subject, subject_domain_name,
-        role_names, project, project_domain_name)
+        role_names, project, project_domain_name, sp_id)
     return response, service_provider

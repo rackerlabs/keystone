@@ -32,6 +32,14 @@ Prefix to use when filtering environment variable names for federated
 assertions. Matched variables are passed into the federated mapping engine.
 """))
 
+assertion_additional_information = cfg.StrOpt(
+    'assertion_additional_information',
+    default='',
+    help=utils.fmt("""
+A json like object to store addition assertion information for each service
+provider. Like: {"service_provider_id": {"key1": "value1"}}
+"""))
+
 remote_id_attribute = cfg.StrOpt(
     'remote_id_attribute',
     help=utils.fmt("""
