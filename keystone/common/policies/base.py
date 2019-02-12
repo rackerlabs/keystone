@@ -13,6 +13,14 @@
 from oslo_policy import policy
 
 IDENTITY = 'identity:%s'
+
+POLICY_FORMAT = 'identity:%(resource)s:%(action)s'
+ACTION_GET = 'get'
+ACTION_LIST = 'list'
+ACTION_CREATE = 'create'
+ACTION_UPDATE = 'update'
+ACTION_DELETE = 'delete'
+
 RULE_ADMIN_REQUIRED = 'rule:admin_required'
 RULE_ADMIN_OR_OWNER = 'rule:admin_or_owner'
 RULE_ADMIN_OR_CREDENTIAL_OWNER = (
