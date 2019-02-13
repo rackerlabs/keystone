@@ -1,0 +1,5 @@
+---
+features:
+  - Allows operators to cache credentials to avoid lookups on the database.
+    This operation can be turned on/off through the configuration parameter of
+    keystone.conf [credential] caching.
