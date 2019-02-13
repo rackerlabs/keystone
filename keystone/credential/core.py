@@ -16,6 +16,7 @@
 
 import json
 
+from keystone.common import cache
 from keystone.common import driver_hints
 from keystone.common import manager
 from keystone.common import provider_api
@@ -24,6 +25,7 @@ from keystone import exception
 
 
 CONF = keystone.conf.CONF
+MEMOIZE = cache.get_memoization_decorator(group='credential')
 PROVIDERS = provider_api.ProviderAPIs
 
 
@@ -91,16 +93,24 @@ class Manager(manager.Manager):
         return credentials
 
     def list_credentials_for_user(self, user_id, type=None):
-        """List credentials for a specific user."""
-        credentials = self.driver.list_credentials_for_user(user_id, type=type)
+        credentials = self._list_credentials_for_user(user_id, type)
         for credential in credentials:
             credential = self._decrypt_credential(credential)
         return credentials
 
+    @MEMOIZE
+    def _list_credentials_for_user(self, user_id, type):
+        """List credentials for a specific user."""
+        return self.driver.list_credentials_for_user(user_id, type)
+
     def get_credential(self, credential_id):
         """Return a credential reference."""
-        credential = self.driver.get_credential(credential_id)
+        credential = self._get_credential(credential_id)
         return self._decrypt_credential(credential)
+
+    @MEMOIZE
+    def _get_credential(self, credential_id):
+        return self.driver.get_credential(credential_id)
 
     def create_credential(self, credential_id, credential):
         """Create a credential."""
@@ -109,6 +119,14 @@ class Manager(manager.Manager):
         ref.pop('key_hash', None)
         ref.pop('encrypted_blob', None)
         ref['blob'] = credential['blob']
+        if MEMOIZE.should_cache(ref):
+            self._get_credential.set(ref, self, credential_id)
+            self._list_credentials_for_user.invalidate(self,
+                                                       ref['user_id'],
+                                                       ref['type'])
+            self._list_credentials_for_user.invalidate(self,
+                                                       ref['user_id'],
+                                                       None)
         return ref
 
     def _validate_credential_update(self, credential_id, credential):
@@ -142,4 +160,53 @@ class Manager(manager.Manager):
             ref['blob'] = credential['blob']
         else:
             ref['blob'] = existing_blob
+        if MEMOIZE.should_cache(ref):
+            self._get_credential.set(ref, self, credential_id)
+            self._list_credentials_for_user.invalidate(self,
+                                                       ref['user_id'],
+                                                       ref['type'])
+            self._list_credentials_for_user.invalidate(self,
+                                                       ref['user_id'],
+                                                       None)
         return ref
+
+    def delete_credential(self, credential_id):
+        """Delete a credential."""
+        cred = self.get_credential(credential_id)
+        self.driver.delete_credential(credential_id)
+        self._get_credential.invalidate(self, credential_id)
+        self._list_credentials_for_user.invalidate(self,
+                                                   cred['user_id'],
+                                                   cred['type'])
+        self._list_credentials_for_user.invalidate(self,
+                                                   cred['user_id'],
+                                                   None)
+
+    def delete_credentials_for_project(self, project_id):
+        """Delete all credentials for a project."""
+        hints = driver_hints.Hints()
+        hints.add_filter('project_id', project_id)
+        creds = self.driver.list_credentials(hints)
+
+        self.driver.delete_credentials_for_project(project_id)
+        for cred in creds:
+            self._get_credential.invalidate(self, cred['id'])
+            self._list_credentials_for_user.invalidate(self,
+                                                       cred['user_id'],
+                                                       cred['type'])
+            self._list_credentials_for_user.invalidate(self,
+                                                       cred['user_id'],
+                                                       None)
+
+    def delete_credentials_for_user(self, user_id):
+        """Delete all credentials for a user."""
+        creds = self.driver.list_credentials_for_user(user_id)
+        self.driver.delete_credentials_for_user(user_id)
+        for cred in creds:
+            self._get_credential.invalidate(self, cred['id'])
+            self._list_credentials_for_user.invalidate(self,
+                                                       user_id,
+                                                       cred['type'])
+            self._list_credentials_for_user.invalidate(self,
+                                                       cred['user_id'],
+                                                       None)
