@@ -89,8 +89,9 @@ class TestMFARules(test_v3.RestfulTestCase):
         PROVIDERS.credential_api.create_credential(uuid.uuid4().hex, totp_cred)
 
         def cleanup(testcase):
-            totp_creds = testcase.credential_api.list_credentials_for_user(
-                testcase.user['id'], type='totp')
+            totp_creds = (
+                testcase.credential_api.list_totp_credentials_for_user(
+                    testcase.user['id']))
 
             for cred in totp_creds:
                 testcase.credential_api.delete_credential(cred['id'])
@@ -5271,13 +5272,14 @@ class TestAuthTOTP(test_v3.RestfulTestCase):
             project_id=self.project['id'])
 
     def cleanup(self):
-        totp_creds = PROVIDERS.credential_api.list_credentials_for_user(
-            self.default_domain_user['id'], type='totp')
+        totp_creds = (
+            PROVIDERS.credential_api.list_totp_credentials_for_user(
+                self.default_domain_user['id']))
 
-        other_creds = PROVIDERS.credential_api.list_credentials_for_user(
-            self.default_domain_user['id'], type='other')
+        ec2_creds = PROVIDERS.credential_api.list_ec2_credentials_for_user(
+            self.default_domain_user['id'])
 
-        for cred in itertools.chain(other_creds, totp_creds):
+        for cred in itertools.chain(ec2_creds, totp_creds):
             self.delete('/credentials/%s' % cred['id'],
                         expected_status=http_client.NO_CONTENT)
 

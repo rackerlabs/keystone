@@ -78,8 +78,8 @@ class TOTP(base.AuthMethodHandler):
         user_info = plugins.TOTPUserInfo.create(auth_payload, METHOD_NAME)
         auth_passcode = auth_payload.get('user').get('passcode')
 
-        credentials = PROVIDERS.credential_api.list_credentials_for_user(
-            user_info.user_id, type='totp')
+        credentials = PROVIDERS.credential_api.list_totp_credentials_for_user(
+            user_info.user_id)
 
         valid_passcode = False
         for credential in credentials:
