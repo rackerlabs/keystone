@@ -307,7 +307,7 @@ class UserOSEC2CredentialsResourceListCreate(_UserOSEC2CredBaseResource):
         ENFORCER.enforce_call(action='identity:ec2_list_credentials')
         PROVIDERS.identity_api.get_user(user_id)
         credential_refs = PROVIDERS.credential_api.list_credentials_for_user(
-            user_id, type=CRED_TYPE_EC2)
+            user_id, CRED_TYPE_EC2)
         collection_refs = [
             _convert_v3_to_ec2_credential(cred)
             for cred in credential_refs

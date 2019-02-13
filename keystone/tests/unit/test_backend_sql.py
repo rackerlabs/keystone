@@ -1102,13 +1102,13 @@ class SqlCredential(SqlTests):
 
     def test_list_credentials_for_user(self):
         credentials = PROVIDERS.credential_api.list_credentials_for_user(
-            self.user_foo['id'])
+            self.user_foo['id'], None)
         self._validateCredentialList(credentials, self.user_credentials)
 
     def test_list_credentials_for_user_and_type(self):
         cred = self.user_credentials[0]
         credentials = PROVIDERS.credential_api.list_credentials_for_user(
-            self.user_foo['id'], type=cred['type'])
+            self.user_foo['id'], cred['type'])
         self._validateCredentialList(credentials, [cred])
 
     def test_create_credential_is_encrypted_when_stored(self):

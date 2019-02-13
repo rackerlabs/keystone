@@ -84,7 +84,7 @@ class CredentialTestCase(CredentialBaseTestCase):
         # once we delete all credentials for self.project_id
         self.assertRaises(exception.CredentialNotFound,
                           PROVIDERS.credential_api.get_credential,
-                          credential_id=self.credential['id'])
+                          self.credential['id'])
 
     def test_credential_api_delete_credentials_for_user(self):
         PROVIDERS.credential_api.delete_credentials_for_user(self.user_id)
@@ -92,7 +92,7 @@ class CredentialTestCase(CredentialBaseTestCase):
         # once we delete all credentials for self.user_id
         self.assertRaises(exception.CredentialNotFound,
                           PROVIDERS.credential_api.get_credential,
-                          credential_id=self.credential['id'])
+                          self.credential['id'])
 
     def test_list_credentials(self):
         """Call ``GET /credentials``."""
@@ -561,7 +561,7 @@ class TestCredentialEc2(CredentialBaseTestCase):
         uri = '/'.join([self._get_ec2_cred_uri(), ec2_cred['access']])
         cred_from_credential_api = (
             PROVIDERS.credential_api
-            .list_credentials_for_user(self.user_id, type=CRED_TYPE_EC2))
+            .list_credentials_for_user(self.user_id, CRED_TYPE_EC2))
         self.assertEqual(1, len(cred_from_credential_api))
         self.delete(uri)
         self.assertRaises(exception.CredentialNotFound,

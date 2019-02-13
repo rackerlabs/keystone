@@ -90,7 +90,7 @@ class TestMFARules(test_v3.RestfulTestCase):
 
         def cleanup(testcase):
             totp_creds = testcase.credential_api.list_credentials_for_user(
-                testcase.user['id'], type='totp')
+                testcase.user['id'], 'totp')
 
             for cred in totp_creds:
                 testcase.credential_api.delete_credential(cred['id'])
@@ -5272,10 +5272,10 @@ class TestAuthTOTP(test_v3.RestfulTestCase):
 
     def cleanup(self):
         totp_creds = PROVIDERS.credential_api.list_credentials_for_user(
-            self.default_domain_user['id'], type='totp')
+            self.default_domain_user['id'], 'totp')
 
         other_creds = PROVIDERS.credential_api.list_credentials_for_user(
-            self.default_domain_user['id'], type='other')
+            self.default_domain_user['id'], 'other')
 
         for cred in itertools.chain(other_creds, totp_creds):
             self.delete('/credentials/%s' % cred['id'],

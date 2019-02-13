@@ -79,7 +79,7 @@ class TOTP(base.AuthMethodHandler):
         auth_passcode = auth_payload.get('user').get('passcode')
 
         credentials = PROVIDERS.credential_api.list_credentials_for_user(
-            user_info.user_id, type='totp')
+            user_info.user_id, 'totp')
 
         valid_passcode = False
         for credential in credentials:
