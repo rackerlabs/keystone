@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_982dd096",
+        "filename": "keystone/tests/unit/protection/v3/test_users.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2019-02-13T15:48:32Z",
+      "side": 1,
+      "message": "override?",
+      "range": {
+        "startLine": 564,
+        "startChar": 33,
+        "endLine": 564,
+        "endChar": 35
+      },
+      "revId": "cf4300041fb562a7229c76d43703c73405154bfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
