@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_a4168148",
+        "filename": "keystone/tests/unit/catalog/test_core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-02-13T02:18:30Z",
+      "side": 1,
+      "message": "This file should not changed since keystone and other projects may still support \"tenant_id\" in catalog. It can be dropped once updating the \"format_url\" function.",
+      "revId": "6155876d449e05dc3e0a1a7b89b69deb008a4433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_c43ce5c9",
+        "filename": "keystone/tests/unit/default_catalog.templates",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-02-13T02:18:30Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "6155876d449e05dc3e0a1a7b89b69deb008a4433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_e439e9d6",
+        "filename": "keystone/tests/unit/default_catalog_multi_region.templates",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-02-13T02:18:30Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "6155876d449e05dc3e0a1a7b89b69deb008a4433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_6453b918",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-02-13T02:18:30Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "6155876d449e05dc3e0a1a7b89b69deb008a4433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_04542dfd",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-02-13T02:18:30Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "6155876d449e05dc3e0a1a7b89b69deb008a4433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_24593134",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-02-13T02:18:30Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "6155876d449e05dc3e0a1a7b89b69deb008a4433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
