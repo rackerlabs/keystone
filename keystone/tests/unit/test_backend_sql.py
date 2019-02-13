@@ -1060,10 +1060,12 @@ class SqlModuleInitialization(unit.TestCase):
 
 class SqlCredential(SqlTests):
 
-    def _create_credential_with_user_id(self, user_id=uuid.uuid4().hex):
+    def _create_credential_with_user_id(self,
+                                        user_id=uuid.uuid4().hex,
+                                        type='ec2'):
         credential = unit.new_credential_ref(user_id=user_id,
                                              extra=uuid.uuid4().hex,
-                                             type=uuid.uuid4().hex)
+                                             type=type)
         PROVIDERS.credential_api.create_credential(
             credential['id'], credential
         )
@@ -1090,11 +1092,24 @@ class SqlCredential(SqlTests):
         self.credentials = []
         for _ in range(3):
             self.credentials.append(
-                self._create_credential_with_user_id())
-        self.user_credentials = []
+                self._create_credential_with_user_id(type='ec2'))
         for _ in range(3):
-            cred = self._create_credential_with_user_id(self.user_foo['id'])
+            self.credentials.append(
+                self._create_credential_with_user_id(type='totp'))
+        self.user_credentials = []
+        self.user_totp_credentials = []
+        self.user_ec2_credentials = []
+        for _ in range(3):
+            cred = self._create_credential_with_user_id(self.user_foo['id'],
+                                                        type='ec2')
             self.user_credentials.append(cred)
+            self.user_ec2_credentials.append(cred)
+            self.credentials.append(cred)
+        for _ in range(3):
+            cred = self._create_credential_with_user_id(self.user_foo['id'],
+                                                        type='totp')
+            self.user_credentials.append(cred)
+            self.user_totp_credentials.append(cred)
             self.credentials.append(cred)
 
     def test_list_credentials(self):
@@ -1106,16 +1121,15 @@ class SqlCredential(SqlTests):
         credentials = PROVIDERS.credential_api.list_credentials(hints)
         self._validateCredentialList(credentials, self.user_credentials)
 
-    def test_list_credentials_for_user(self):
+    def test_list_totp_credentials_for_user(self):
         credentials = PROVIDERS.credential_api.list_credentials_for_user(
-            self.user_foo['id'])
-        self._validateCredentialList(credentials, self.user_credentials)
+            self.user_foo['id'], 'totp')
+        self._validateCredentialList(credentials, self.user_totp_credentials)
 
-    def test_list_credentials_for_user_and_type(self):
-        cred = self.user_credentials[0]
+    def test_list_ec2_credentials_for_user(self):
         credentials = PROVIDERS.credential_api.list_credentials_for_user(
-            self.user_foo['id'], type=cred['type'])
-        self._validateCredentialList(credentials, [cred])
+            self.user_foo['id'], 'ec2')
+        self._validateCredentialList(credentials, self.user_ec2_credentials)
 
     def test_create_credential_is_encrypted_when_stored(self):
         credential = unit.new_credential_ref(user_id=uuid.uuid4().hex)

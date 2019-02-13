@@ -1587,7 +1587,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         # that reference this project
         self.assertRaises(exception.CredentialNotFound,
                           PROVIDERS.credential_api.get_credential,
-                          credential_id=credential['id'])
+                          credential['id'])
         # But the credential for project2 is unaffected
         r = PROVIDERS.credential_api.get_credential(credential2['id'])
         self.assertDictEqual(credential2, r)
