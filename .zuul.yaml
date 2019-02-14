@@ -115,6 +115,8 @@
         tls-proxy: false
       devstack_plugins:
         keystone: git://git.openstack.org/openstack/keystone
+      zuul_copy_output:
+        /etc/shibboleth: logs
 
 # Experimental
 - job:
@@ -124,6 +126,8 @@
       devstack_localrc:
         TEMPEST_PLUGINS: '/opt/stack/keystone-tempest-plugin'
         USE_PYTHON3: True
+      zuul_copy_output:
+        /etc/shibboleth: logs
 
 - project:
     templates:
