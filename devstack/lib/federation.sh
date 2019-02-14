@@ -125,6 +125,7 @@ function configure_federation {
     if [[ "$WSGI_MODE" == "uwsgi" ]]; then
         restart_service "devstack@keystone"
     fi
+    restart_apache_server
 
     # TODO(knikolla): We should not be relying on an external service. This
     # will be removed once we have an idp deployed during devstack install.
