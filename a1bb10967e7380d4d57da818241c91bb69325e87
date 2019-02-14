@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_0f12d862",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-14T21:16:33Z",
+      "side": 1,
+      "message": "This could be done in a separate patch, but we could optimize this if we refactor the kwarg out of the method signature.\n\n  @MEMOIZE\n  def list_credentials_for_user(self, user_id):",
+      "revId": "a1bb10967e7380d4d57da818241c91bb69325e87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
