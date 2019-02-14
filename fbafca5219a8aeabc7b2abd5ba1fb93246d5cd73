@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_5165ecb3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-14T15:13:37Z",
+      "side": 1,
+      "message": "samltest",
+      "range": {
+        "startLine": 9,
+        "startChar": 20,
+        "endLine": 9,
+        "endChar": 28
+      },
+      "revId": "fbafca5219a8aeabc7b2abd5ba1fb93246d5cd73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_9166f4ba",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-14T15:13:37Z",
+      "side": 1,
+      "message": "Is it up to the tempest plugin to configure this? Or how do we choose in the CI which IdP will be used?",
+      "revId": "fbafca5219a8aeabc7b2abd5ba1fb93246d5cd73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_f10c20ed",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-14T15:13:37Z",
+      "side": 1,
+      "message": "This only makes sense for samltest, will the tempest plugin or zuul job configure it to use openstack_user?",
+      "revId": "fbafca5219a8aeabc7b2abd5ba1fb93246d5cd73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_31d4e847",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-14T15:13:37Z",
+      "side": 1,
+      "message": "This seems not to be used at all",
+      "revId": "fbafca5219a8aeabc7b2abd5ba1fb93246d5cd73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
