@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_0c6e6bff",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2019-02-14T16:15:03Z",
+      "side": 1,
+      "message": "This allows people that are deploying the devstack plugin outside of the CI to overwrite the defaults and test their own IDP. \n\nTempest plugin will just leave the defaults.",
+      "parentUuid": "9fdfeff1_9166f4ba",
+      "revId": "fbafca5219a8aeabc7b2abd5ba1fb93246d5cd73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_f10c20ed",
         "filename": "devstack/lib/federation.sh",
         "patchSetId": 11
@@ -59,6 +77,24 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_8c79fbc5",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2019-02-14T16:15:03Z",
+      "side": 1,
+      "message": "See other comment.",
+      "parentUuid": "9fdfeff1_f10c20ed",
+      "revId": "fbafca5219a8aeabc7b2abd5ba1fb93246d5cd73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_31d4e847",
         "filename": "devstack/lib/federation.sh",
         "patchSetId": 11
@@ -70,6 +106,24 @@
       "writtenOn": "2019-02-14T15:13:37Z",
       "side": 1,
       "message": "This seems not to be used at all",
+      "revId": "fbafca5219a8aeabc7b2abd5ba1fb93246d5cd73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_0c474b79",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2019-02-14T16:15:03Z",
+      "side": 1,
+      "message": "Good call, will remove.",
+      "parentUuid": "9fdfeff1_31d4e847",
       "revId": "fbafca5219a8aeabc7b2abd5ba1fb93246d5cd73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
