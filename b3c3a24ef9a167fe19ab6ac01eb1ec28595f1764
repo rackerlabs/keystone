@@ -22,6 +22,30 @@
       "revId": "b3c3a24ef9a167fe19ab6ac01eb1ec28595f1764",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_a63d00c5",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-14T14:25:52Z",
+      "side": 1,
+      "message": "It\u0027s true that experimental jobs are by default non-voting and so using this flag isn\u0027t necessary.",
+      "parentUuid": "9fdfeff1_cb33f261",
+      "range": {
+        "startLine": 210,
+        "startChar": 12,
+        "endLine": 210,
+        "endChar": 25
+      },
+      "revId": "b3c3a24ef9a167fe19ab6ac01eb1ec28595f1764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
