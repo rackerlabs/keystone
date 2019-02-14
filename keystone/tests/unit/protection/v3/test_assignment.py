@@ -54,249 +54,562 @@ class SystemReaderTests(base_classes.TestCaseWithBootstrap,
             self.token_id = r.headers['X-Subject-Token']
             self.headers = {'X-Auth-Token': self.token_id}
 
-    def test_user_can_list_all_role_assignments_on_system(self):
-        role = PROVIDERS.role_api.create_role(
-            uuid.uuid4().hex, unit.new_role_ref()
-        )
+    def _setup_test_role_assignments(self):
+        # Utility to create assignments and return important data for
+        # assertions.
 
-        project = PROVIDERS.resource_api.create_project(
-            uuid.uuid4().hex,
-            unit.new_project_ref(domain_id=CONF.identity.default_domain_id)
-        )
+        # Since the role doesn't really matter too much, we can just re-use an
+        # existing role instead of creating a new one.
+        role_id = self.bootstrapper.reader_role_id
 
         user = PROVIDERS.identity_api.create_user(
             unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
-        )
-
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            self.user_id, project['id'], role['id']
-        )
-
-        with self.test_client() as c:
-            r = c.get('/v3/role_assignments?scope.system=all', headers=self.headers)
-            self.assertTrue(len(r.json['role_assignments']) == 2)
-            for assignment in r.json['role_assignments']:
-                self.assertNotEqual(user, assignment['user']['id'])
-
-    def test_user_can_list_role_assignments_by_project(self):
-        role = PROVIDERS.role_api.create_role(
-            uuid.uuid4().hex, unit.new_role_ref()
-        )
-
-        project = PROVIDERS.resource_api.create_project(
-            uuid.uuid4().hex,
-            unit.new_project_ref(domain_id=CONF.identity.default_domain_id)
-        )
-
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            self.user_id, project['id'], role['id']
-        )
-        with self.test_client() as c:
-            r = c.get('/v3/role_assignments?scope.project.id=%s' %
-                      project['id'],
-                      headers=self.headers)
-            self.assertTrue(len(r.json['role_assignments']) == 1)
-            for assignment in r.json['role_assignments']:
-                self.assertEqual(self.user_id, assignment['user']['id'])
-
-    def test_user_can_list_role_assignments_by_project_and_role(self):
-        role = PROVIDERS.role_api.create_role(
-            uuid.uuid4().hex, unit.new_role_ref()
-        )
-
-        project = PROVIDERS.resource_api.create_project(
-            uuid.uuid4().hex,
-            unit.new_project_ref(domain_id=CONF.identity.default_domain_id)
-        )
-
-        user = PROVIDERS.identity_api.create_user(
-            unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
-        )
-
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user['id'], project['id'], role['id']
-        )
-        with self.test_client() as c:
-            r = c.get('/v3/role_assignments?scope.project.id=%s&role.id=%s'
-                      % (project['id'], role['id']),
-                      headers=self.headers)
-            self.assertTrue(len(r.json['role_assignments']) == 1)
-            for assignment in r.json['role_assignments']:
-                self.assertEqual(user['id'], assignment['user']['id'])
-
-    def test_user_can_list_role_assignments_with_include_names(self):
-        role = PROVIDERS.role_api.create_role(
-            uuid.uuid4().hex, unit.new_role_ref()
-        )
-
-        project = PROVIDERS.resource_api.create_project(
-            uuid.uuid4().hex,
-            unit.new_project_ref(domain_id=CONF.identity.default_domain_id)
-        )
-
-        user = PROVIDERS.identity_api.create_user(
-            unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
-        )
-
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user['id'], project['id'], role['id']
-        )
-        with self.test_client() as c:
-            r = c.get('/v3/role_assignments?include_names=True?user.id=%s'
-                      % self.user_id, headers=self.headers)
-            self.assertTrue(len(r.json['role_assignments']) == 4)
-
-    def test_user_can_list_role_assignments_within_domain(self):
-        role = PROVIDERS.role_api.create_role(
-            uuid.uuid4().hex, unit.new_role_ref()
-        )
-
-        user = PROVIDERS.identity_api.create_user(
-            unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
-        )
-
-        PROVIDERS.assignment_api.create_grant(
-            role['id'], user_id=user['id'],
-            domain_id=CONF.identity.default_domain_id
-        )
-        with self.test_client() as c:
-            r = c.get('/v3/role_assignments?scope.domain.id=%s'
-                      % CONF.identity.default_domain_id, headers=self.headers)
-            self.assertTrue(len(r.json['role_assignments']) == 1)
-            for assignment in r.json['role_assignments']:
-                self.assertEqual(user['id'], assignment['user']['id'])
-
-    def test_user_can_list_role_assignments_another_domain(self):
-        role = PROVIDERS.role_api.create_role(
-            uuid.uuid4().hex, unit.new_role_ref()
-        )
-
-        domainD = unit.new_domain_ref()
-        domain = PROVIDERS.resource_api.create_domain(
-            domainD['id'], domainD
-        )
-
-        user = PROVIDERS.identity_api.create_user(
-            unit.new_user_ref(domain_id=domain['id'])
-        )
-
-        PROVIDERS.assignment_api.create_grant(
-            role['id'], user_id=user['id'],
-            domain_id=domain['id']
-        )
-        with self.test_client() as c:
-            r = c.get('/v3/role_assignments?scope.domain.id=%s'
-                      % domain['id'], headers=self.headers)
-            self.assertTrue(len(r.json['role_assignments']) == 1)
-            for assignment in r.json['role_assignments']:
-                self.assertEqual(user['id'], assignment['user']['id'])
-
-    def test_user_can_list_role_assignments_another_project(self):
-        role = PROVIDERS.role_api.create_role(
-            uuid.uuid4().hex, unit.new_role_ref()
-        )
-
-        project1 = PROVIDERS.resource_api.create_project(
-            uuid.uuid4().hex,
-            unit.new_project_ref(domain_id=CONF.identity.default_domain_id)
-        )
-
-        user = PROVIDERS.identity_api.create_user(
-            unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
-        )
-
-        PROVIDERS.assignment_api.add_role_to_user_and_project(
-            user['id'], project1['id'], role['id']
-        )
-        with self.test_client() as c:
-            r = c.get('/v3/role_assignments?scope.project.id=%s' %
-                      project1['id'],
-                      headers=self.headers)
-            self.assertTrue(len(r.json['role_assignments']) == 1)
-            for assignment in r.json['role_assignments']:
-                self.assertEqual(user['id'], assignment['user']['id'])
-
-    def test_user_can_list_group_role_assignments(self):
-        role = PROVIDERS.role_api.create_role(
-            uuid.uuid4().hex, unit.new_role_ref()
-        )
-
-        project = PROVIDERS.resource_api.create_project(
-            uuid.uuid4().hex,
-            unit.new_project_ref(domain_id=CONF.identity.default_domain_id)
-        )
-
-        group = PROVIDERS.identity_api.create_group(
-            unit.new_group_ref(domain_id=CONF.identity.default_domain_id))
-
-        PROVIDERS.identity_api.add_user_to_group(
-            user_id=self.user_id, group_id=group['id']
-        )
-
-        # Assign a role to the group on a project
-        PROVIDERS.assignment_api.create_grant(
-            role_id=role['id'], group_id=group['id'], project_id=project['id']
-        )
-        with self.test_client() as c:
-            r = c.get('/v3/role_assignments?group.id=%s'
-                      % group['id'], headers=self.headers)
-            self.assertTrue(len(r.json['role_assignments']) == 1)
-            for assignment in r.json['role_assignments']:
-                self.assertEqual(group['id'], assignment['group']['id'])
-
-    def test_user_can_list_group_role_assignments_within_project(self):
-        role = PROVIDERS.role_api.create_role(
-            uuid.uuid4().hex, unit.new_role_ref()
-        )
-
-        project = PROVIDERS.resource_api.create_project(
-            uuid.uuid4().hex,
-            unit.new_project_ref(domain_id=CONF.identity.default_domain_id)
         )
 
         group = PROVIDERS.identity_api.create_group(
             unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
         )
 
-        PROVIDERS.identity_api.add_user_to_group(
-            user_id=self.user_id, group_id=group['id']
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
         )
 
+        project = PROVIDERS.resource_api.create_project(
+            uuid.uuid4().hex,
+            unit.new_project_ref(domain_id=CONF.identity.default_domain_id)
+        )
+
+        # create a user+project role assignment.
         PROVIDERS.assignment_api.create_grant(
-            role_id=role['id'], group_id=group['id'], project_id=project['id']
-        )
-        with self.test_client() as c:
-            r = c.get('/v3/role_assignments?scope.project.id=%s'
-                      % project['id'],
-                      headers=self.headers)
-            self.assertTrue(len(r.json['role_assignments']) == 1)
-            for assignment in r.json['role_assignments']:
-                self.assertEqual(group['id'], assignment['group']['id'])
-
-    def test_user_can_list_group_role_assignments_within_domain(self):
-        role = PROVIDERS.role_api.create_role(
-            uuid.uuid4().hex, unit.new_role_ref()
-        )
-        domainD = unit.new_domain_ref()
-        domain = PROVIDERS.resource_api.create_domain(domainD['id'], domainD)
-
-        group = PROVIDERS.identity_api.create_group(
-            unit.new_group_ref(domain_id=domain['id'])
+            role_id, user_id=user['id'], project_id=project['id']
         )
 
-        PROVIDERS.identity_api.add_user_to_group(
-            user_id=self.user_id, group_id=group['id']
-        )
-
+        # create a user+domain role assignment.
         PROVIDERS.assignment_api.create_grant(
-            role_id=role['id'], group_id=group['id'],
-            domain_id=domain['id']
+            role_id, user_id=user['id'], domain_id=domain['id']
         )
 
+        # create a user+system role assignment.
+        PROVIDERS.assignment_api.create_system_grant_for_user(
+            user['id'], role_id
+        )
+
+        # create a group+project role assignment.
+        PROVIDERS.assignment_api.create_grant(
+            role_id, group_id=group['id'], project_id=project['id']
+        )
+
+        # create a group+domain role assignment.
+        PROVIDERS.assignment_api.create_grant(
+            role_id, group_id=group['id'], domain_id=domain['id']
+        )
+
+        # create a group+system role assignment.
+        PROVIDERS.assignment_api.create_system_grant_for_group(
+            group['id'], role_id
+        )
+
+        return {
+            'user_id': user['id'],
+            'group_id': group['id'],
+            'domain_id': domain['id'],
+            'project_id': project['id'],
+            'role_id': role_id,
+        }
+
+    def _extract_role_assignments_from_response_body(self, r):
+        # Condense the role assignment details into a set of key things we can
+        # use in assertions.
+        assignments = []
+        for assignment in r.json['role_assignments']:
+            a = {}
+            if 'project' in assignment['scope']:
+                a['project_id'] = assignment['scope']['project']['id']
+            elif 'domain' in assignment['scope']:
+                a['domain_id'] = assignment['scope']['domain']['id']
+            elif 'system' in assignment['scope']:
+                a['system'] = 'all'
+
+            if 'user' in assignment:
+                a['user_id'] = assignment['user']['id']
+            elif 'group' in assignment:
+                a['group_id'] = assignment['group']['id']
+
+            a['role_id'] = assignment['role']['id']
+
+            assignments.append(a)
+        return assignments
+
+    def test_user_can_list_all_role_assignments_in_the_deployment(self):
+        assignments = self._setup_test_role_assignments()
+        expected = [
+            # assignment of the user running the test case
+            {
+                'user_id': self.user_id,
+                'system': 'all',
+                'role_id': self.bootstrapper.reader_role_id
+            },
+            # this assignment is created by keystone-manage bootstrap
+            {
+                'user_id': self.bootstrapper.admin_user_id,
+                'project_id': self.bootstrapper.project_id,
+                'role_id': self.bootstrapper.admin_role_id
+            },
+            # this assignment is created by keystone-manage bootstrap
+            {
+                'user_id': self.bootstrapper.admin_user_id,
+                'system': 'all',
+                'role_id': self.bootstrapper.admin_role_id
+            },
+            {
+                'user_id': assignments['user_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'user_id': assignments['user_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'user_id': assignments['user_id'],
+                'system': 'all',
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'system': 'all',
+                'role_id': assignments['role_id']
+            }
+        ]
+
         with self.test_client() as c:
-            r = c.get('/v3/role_assignments?scope.domain.id=%s'
-                      % domain['id'],
-                      headers=self.headers)
-            self.assertTrue(len(r.json['role_assignments']) == 1)
-            for assignment in r.json['role_assignments']:
-                self.assertEqual(group['id'], assignment['group']['id'])
+            r = c.get('/v3/role_assignments', headers=self.headers)
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
+
+    def test_user_can_list_all_role_names_assignments_in_the_deployment(self):
+        assignments = self._setup_test_role_assignments()
+        expected = [
+            # assignment of the user running the test case
+            {
+                'user_id': self.user_id,
+                'system': 'all',
+                'role_id': self.bootstrapper.reader_role_id
+            },
+            # this assignment is created by keystone-manage bootstrap
+            {
+                'user_id': self.bootstrapper.admin_user_id,
+                'project_id': self.bootstrapper.project_id,
+                'role_id': self.bootstrapper.admin_role_id
+            },
+            # this assignment is created by keystone-manage bootstrap
+            {
+                'user_id': self.bootstrapper.admin_user_id,
+                'system': 'all',
+                'role_id': self.bootstrapper.admin_role_id
+            },
+            {
+                'user_id': assignments['user_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'user_id': assignments['user_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'user_id': assignments['user_id'],
+                'system': 'all',
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'system': 'all',
+                'role_id': assignments['role_id']
+            }
+        ]
+
+        with self.test_client() as c:
+            r = c.get(
+                '/v3/role_assignments?include_names=True', headers=self.headers
+            )
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
+
+    def test_user_can_filter_role_assignments_by_project(self):
+        assignments = self._setup_test_role_assignments()
+        expected = [
+            {
+                'user_id': assignments['user_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            }
+        ]
+        project_id = assignments['project_id']
+
+        with self.test_client() as c:
+            r = c.get(
+                '/v3/role_assignments?scope.project.id=%s' % project_id,
+                headers=self.headers
+            )
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
+
+    def test_user_can_filter_role_assignments_by_domain(self):
+        assignments = self._setup_test_role_assignments()
+        expected = [
+            {
+                'user_id': assignments['user_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            }
+        ]
+        domain_id = assignments['domain_id']
+
+        with self.test_client() as c:
+            r = c.get(
+                '/v3/role_assignments?scope.domain.id=%s' % domain_id,
+                headers=self.headers
+            )
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
+
+    def test_user_can_filter_role_assignments_by_system(self):
+        assignments = self._setup_test_role_assignments()
+        expected = [
+            # assignment of the user running the test case
+            {
+                'user_id': self.user_id,
+                'system': 'all',
+                'role_id': self.bootstrapper.reader_role_id
+            },
+            # this assignment is created by keystone-manage bootstrap
+            {
+                'user_id': self.bootstrapper.admin_user_id,
+                'system': 'all',
+                'role_id': self.bootstrapper.admin_role_id
+            },
+            {
+                'user_id': assignments['user_id'],
+                'system': 'all',
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'system': 'all',
+                'role_id': assignments['role_id']
+            }
+        ]
+
+        with self.test_client() as c:
+            r = c.get(
+                '/v3/role_assignments?scope.system=all',
+                headers=self.headers
+            )
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
+
+    def test_user_can_filter_role_assignments_by_user(self):
+        assignments = self._setup_test_role_assignments()
+        expected = [
+            # assignment of the user running the test case
+            {
+                'user_id': assignments['user_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'user_id': assignments['user_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'user_id': assignments['user_id'],
+                'system': 'all',
+                'role_id': assignments['role_id']
+            }
+        ]
+        user_id = assignments['user_id']
+
+        with self.test_client() as c:
+            r = c.get(
+                '/v3/role_assignments?user.id=%s' % user_id,
+                headers=self.headers
+            )
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
+
+    def test_user_can_filter_role_assignments_by_group(self):
+        assignments = self._setup_test_role_assignments()
+        expected = [
+            {
+                'group_id': assignments['group_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'system': 'all',
+                'role_id': assignments['role_id']
+            }
+        ]
+        group_id = assignments['group_id']
+
+        with self.test_client() as c:
+            r = c.get(
+                '/v3/role_assignments?group.id=%s' % group_id,
+                headers=self.headers
+            )
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
+
+    def test_user_can_filter_role_assignments_by_role(self):
+        assignments = self._setup_test_role_assignments()
+        expected = [
+            # assignment of the user running the test case
+            {
+                'user_id': self.user_id,
+                'system': 'all',
+                'role_id': self.bootstrapper.reader_role_id
+            },
+            {
+                'user_id': assignments['user_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'user_id': assignments['user_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'user_id': assignments['user_id'],
+                'system': 'all',
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'system': 'all',
+                'role_id': assignments['role_id']
+            }
+        ]
+        role_id = assignments['role_id']
+
+        with self.test_client() as c:
+            r = c.get(
+                '/v3/role_assignments?role.id=%s&include_names=True' % role_id,
+                headers=self.headers
+            )
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
+
+    def test_user_can_filter_role_assignments_by_project_and_role(self):
+        assignments = self._setup_test_role_assignments()
+        expected = [
+            {
+                'user_id': assignments['user_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            },
+        ]
+
+        with self.test_client() as c:
+            qs = (assignments['project_id'], assignments['role_id'])
+            r = c.get(
+                '/v3/role_assignments?scope.project.id=%s&role.id=%s' % qs,
+                headers=self.headers
+            )
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
+
+    def test_user_can_filter_role_assignments_by_domain_and_role(self):
+        assignments = self._setup_test_role_assignments()
+        expected = [
+            {
+                'user_id': assignments['user_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+        ]
+        qs = (assignments['domain_id'], assignments['role_id'])
+
+        with self.test_client() as c:
+            r = c.get(
+                '/v3/role_assignments?scope.domain.id=%s&role.id=%s' % qs,
+                headers=self.headers
+            )
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
+        pass
+
+    def test_user_can_filter_role_assignments_by_system_and_role(self):
+        assignments = self._setup_test_role_assignments()
+        expected = [
+            # assignment of the user running the test case
+            {
+                'user_id': self.user_id,
+                'system': 'all',
+                'role_id': self.bootstrapper.reader_role_id
+            },
+            {
+                'user_id': assignments['user_id'],
+                'system': 'all',
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'system': 'all',
+                'role_id': assignments['role_id']
+            }
+        ]
+        role_id = assignments['role_id']
+
+        with self.test_client() as c:
+            r = c.get(
+                '/v3/role_assignments?scope.system=all&role.id=%s' % role_id,
+                headers=self.headers
+            )
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
+
+    def test_user_can_filter_role_assignments_by_user_and_role(self):
+        assignments = self._setup_test_role_assignments()
+        expected = [
+            {
+                'user_id': assignments['user_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'user_id': assignments['user_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'user_id': assignments['user_id'],
+                'system': 'all',
+                'role_id': assignments['role_id']
+            }
+        ]
+        qs = (assignments['user_id'], assignments['role_id'])
+
+        with self.test_client() as c:
+            r = c.get(
+                '/v3/role_assignments?user.id=%s&role.id=%s' % qs,
+                headers=self.headers
+            )
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
+        pass
+
+    def test_user_can_filter_role_assignments_by_group_and_role(self):
+        assignments = self._setup_test_role_assignments()
+        expected = [
+            {
+                'group_id': assignments['group_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'system': 'all',
+                'role_id': assignments['role_id']
+            }
+        ]
+
+        with self.test_client() as c:
+            qs = (assignments['group_id'], assignments['role_id'])
+            r = c.get(
+                '/v3/role_assignments?group.id=%s&role.id=%s' % qs,
+                headers=self.headers
+            )
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
