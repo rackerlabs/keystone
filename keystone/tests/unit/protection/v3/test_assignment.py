@@ -54,6 +54,385 @@ class SystemReaderTests(base_classes.TestCaseWithBootstrap,
             self.token_id = r.headers['X-Subject-Token']
             self.headers = {'X-Auth-Token': self.token_id}
 
+    def _setup_test_role_assignments(self):
+        # Utility to create assignments and return important data for
+        # assertions.
+
+        # since the role doesn't really matter too much, we can just re-use an
+        # existing role instead of creating a new one.
+        role_id = self.bootstrapper.reader_role_id
+
+        user = PROVIDERS.identity_api.create_user(
+            unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        )
+
+        group = PROVIDERS.identity_api.create_group(
+            unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
+        )
+
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+
+        project = PROVIDERS.resource_api.create_project(
+            uuid.uuid4().hex,
+            unit.new_project_ref(domain_id=CONF.identity.default_domain_id)
+        )
+
+        # create a user+project role assignment.
+        PROVIDERS.assignment_api.create_grant(
+            role_id, user_id=user['id'], project_id=project['id']
+        )
+
+        # create a user+domain role assignment.
+        PROVIDERS.assignment_api.create_grant(
+            role_id, user_id=user['id'], domain_id=domain['id']
+        )
+
+        # create a user+system role assignment.
+        PROVIDERS.assignment_api.create_system_grant_for_user(
+            user['id'], role_id
+        )
+
+        # create a group+project role assignment.
+        PROVIDERS.assignment_api.create_grant(
+            role_id, group_id=group['id'], project_id=project['id']
+        )
+
+        # create a group+domain role assignment.
+        PROVIDERS.assignment_api.create_grant(
+            role_id, group_id=group['id'], domain_id=domain['id']
+        )
+
+        # create a group+system role assignment.
+        PROVIDERS.assignment_api.create_system_grant_for_group(
+            group['id'], role_id
+        )
+
+        return {
+            'user_id': user['id'],
+            'group_id': group['id'],
+            'domain_id': domain['id'],
+            'project_id': project['id'],
+            'role_id': role_id,
+        }
+
+    def _extract_role_assignments_from_response_body(self, r):
+        # Condense the role assignment details into a set of key things we can
+        # use in assertions.
+        assignments = []
+        for assignment in r.json['role_assignments']:
+            a = {}
+            if 'project' in assignment['scope']:
+                a['project_id'] = assignment['scope']['project']['id']
+            elif 'domain' in assignment['scope']:
+                a['domain_id'] = assignment['scope']['domain']['id']
+            elif 'system' in assignment['scope']:
+                a['system'] = 'all'
+
+            if 'user' in assignment:
+                a['user_id'] = assignment['user']['id']
+            elif 'group' in assignment:
+                a['group_id'] = assignment['group']['id']
+
+            a['role_id'] = assignment['role']['id']
+
+            assignments.append(a)
+        return assignments
+
+    def test_user_can_list_all_role_assignments(self):
+        # list all assignments and make sure every assignment created and all
+        # assignments from bootstrap exist.
+
+        assignments = self._setup_test_role_assignments()
+
+        expected = [
+            # assignment of the user running the test case
+            {
+                'user_id': self.user_id,
+                'system': 'all',
+                'role_id': self.bootstrapper.reader_role_id
+            },
+            # this assignment is created by keystone-manage bootstrap
+            {
+                'user_id': self.bootstrapper.admin_user_id,
+                'project_id': self.bootstrapper.project_id,
+                'role_id': self.bootstrapper.admin_role_id
+            },
+            # this assignment is created by keystone-manage bootstrap
+            {
+                'user_id': self.bootstrapper.admin_user_id,
+                'system': 'all',
+                'role_id': self.bootstrapper.admin_role_id
+            },
+            {
+                'user_id': assignments['user_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'user_id': assignments['user_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'user_id': assignments['user_id'],
+                'system': 'all',
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'system': 'all',
+                'role_id': assignments['role_id']
+            }
+        ]
+
+        with self.test_client() as c:
+            r = c.get(
+                '/v3/role_assignments?include_names=True',
+                headers=self.headers
+            )
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
+
+    def test_user_can_filter_role_assignments_by_project(self):
+        # grant the user additional roles on other projects.
+        # list assignments and make sure only the assignments for the project
+        # in question are returned.
+
+        assignments = self._setup_test_role_assignments()
+
+        expected = [
+            {
+                'user_id': assignments['user_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            }
+        ]
+        project_id = assignments['project_id']
+
+        with self.test_client() as c:
+            r = c.get(
+                '/v3/role_assignments?scope.project.id=%s' % project_id,
+                headers=self.headers
+            )
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
+
+    def test_user_can_filter_role_assignments_by_domain(self):
+        # create the user additional roles on other domains.
+        # make sure only assignments for the domain in question are returned,
+        # and don't include the users other assignments on projects, other
+        # domains, or the system.
+
+        assignments = self._setup_test_role_assignments()
+
+        expected = [
+            {
+                'user_id': assignments['user_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            }
+        ]
+        domain_id = assignments['domain_id']
+
+        with self.test_client() as c:
+            r = c.get(
+                '/v3/role_assignments?scope.domain.id=%s' % domain_id,
+                headers=self.headers
+            )
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
+
+    def test_user_can_filter_role_assignments_by_system(self):
+        # make sure only the user's system role assignments are returned,
+        # excluding the user's project or domain assignments.
+
+        assignments = self._setup_test_role_assignments()
+
+        expected = [
+            # assignment of the user running the test case
+            {
+                'user_id': self.user_id,
+                'system': 'all',
+                'role_id': self.bootstrapper.reader_role_id
+            },
+            # this assignment is created by keystone-manage bootstrap
+            {
+                'user_id': self.bootstrapper.admin_user_id,
+                'system': 'all',
+                'role_id': self.bootstrapper.admin_role_id
+            },
+            {
+                'user_id': assignments['user_id'],
+                'system': 'all',
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'system': 'all',
+                'role_id': assignments['role_id']
+            }
+        ]
+
+        with self.test_client() as c:
+            r = c.get(
+                '/v3/role_assignments?scope.system=all',
+                headers=self.headers
+            )
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
+
+    def test_user_can_filter_role_assignments_by_user(self):
+        # ensure the user has assignments on projects, domains, and the system.
+        # make sure the assignments returned are only for that user.
+
+        assignments = self._setup_test_role_assignments()
+
+        expected = [
+            # assignment of the user running the test case
+            {
+                'user_id': assignments['user_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'user_id': assignments['user_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'user_id': assignments['user_id'],
+                'system': 'all',
+                'role_id': assignments['role_id']
+            }
+        ]
+        user_id = assignments['user_id']
+
+        with self.test_client() as c:
+            r = c.get(
+                '/v3/role_assignments?user.id=%s' % user_id,
+                headers=self.headers
+            )
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
+
+    def test_user_can_filter_role_assignments_by_group(self):
+        # ensure the group has assignments on projects, domains, and the
+        # system.
+        # make sure the assignments returned are only for that group.
+
+        assignments = self._setup_test_role_assignments()
+
+        expected = [
+            {
+                'group_id': assignments['group_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'system': 'all',
+                'role_id': assignments['role_id']
+            }
+        ]
+        group_id = assignments['group_id']
+
+        with self.test_client() as c:
+            r = c.get(
+                '/v3/role_assignments?group.id=%s' % group_id,
+                headers=self.headers
+            )
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
+
+    def test_user_can_filter_role_assignments_by_role(self):
+        # reuse the same role for multiple assignments.
+        # make sure the assignments returned are only for that role.
+
+        assignments = self._setup_test_role_assignments()
+
+        expected = [
+            {
+                'user_id': assignments['user_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'user_id': assignments['user_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'user_id': assignments['user_id'],
+                'system': 'all',
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'system': 'all',
+                'role_id': assignments['role_id']
+            }
+        ]
+        role_id = assignments['role_id']
+
+        with self.test_client() as c:
+            r = c.get(
+                '/v3/role_assignments?role.id=%s' % role_id,
+                headers=self.headers
+            )
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
+
     def test_user_can_list_all_role_assignments_on_system(self):
         role = PROVIDERS.role_api.create_role(
             uuid.uuid4().hex, unit.new_role_ref()
