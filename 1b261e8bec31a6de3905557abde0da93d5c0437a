@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_3eb10345",
+        "filename": "releasenotes/notes/bug-1811605-9d23080d7e949c25.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-15T09:34:28Z",
+      "side": 1,
+      "message": "I guess the commit that broke this wasn\u0027t in rocky so it may not be necessary to include a release note.",
+      "revId": "1b261e8bec31a6de3905557abde0da93d5c0437a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
