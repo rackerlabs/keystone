@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_a73b9ee7",
+        "filename": "keystone/token/providers/jws/__init__.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-02-15T20:36:01Z",
+      "side": 1,
+      "message": "Please don\u0027t do this. It\u0027s pointless, it was a bad practice when we did it before and there is no reason to do this now.",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 55
+      },
+      "revId": "96adccd0ec0398251268f9ae89732005e340035c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_e71e866e",
+        "filename": "keystone/token/providers/jws/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-02-15T20:36:01Z",
+      "side": 1,
+      "message": "Thanks for the note here.",
+      "range": {
+        "startLine": 82,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 23
+      },
+      "revId": "96adccd0ec0398251268f9ae89732005e340035c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_623da4b9",
+        "filename": "keystone/token/providers/jws/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-02-15T20:36:01Z",
+      "side": 1,
+      "message": "It is probably easier to just use a straight comprehension and avoid py2-isms vs py3-isms:\n\n  payload \u003d {k: v for k, v in payload.items() if v is not None}\n\nThis is fine as is, and this is not a reason to change the code.",
+      "range": {
+        "startLine": 134,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 30
+      },
+      "revId": "96adccd0ec0398251268f9ae89732005e340035c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
