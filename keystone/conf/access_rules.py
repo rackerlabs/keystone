@@ -49,12 +49,22 @@ Path to access rules configuration. If not present, no access rules will be
 loaded and application credential capabilities will be unavailable.
 """))
 
+permissive = cfg.BoolOpt(
+    'permissive',
+    default=False,
+    help=utils.fmt("""
+Toggles permissive mode for access rules. When enabled, application
+credentials can be created with any capabilities regardless of operator's
+configuration.
+"""))
+
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
     driver,
     caching,
     cache_time,
     rules_file,
+    permissive,
 ]
 
 

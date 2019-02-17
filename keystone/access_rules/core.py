@@ -15,12 +15,15 @@
 """List access rules."""
 
 from keystone.common import cache
+from keystone.common import driver_hints
 from keystone.common import manager
+from keystone.common import provider_api
 import keystone.conf
 
 
 CONF = keystone.conf.CONF
 MEMOIZE = cache.get_memoization_decorator(group='access_rules')
+PROVIDERS = provider_api.ProviderAPIs
 
 
 class Manager(manager.Manager):
@@ -41,6 +44,23 @@ class Manager(manager.Manager):
                   whether the rule should allow indirect requests from services.
 
         """
+        if CONF.access_rules.permissive:
+            hints = driver_hints.Hints()
+            if service:
+                hints.add_filter('service', service)
+            rules = {}
+            services = PROVIDERS.catalog_api.list_services(hints=hints)
+            if service:
+                services = [svc for svc in services if svc['type'] == service]
+            for svc in services:
+                rules[svc['type']] = []
+                for method in ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']:
+                    rules[svc['type']].append({
+                        "request_path": "**",
+                        "request_method": method,
+                        "allow_chained": True
+                    })
+            return rules
         return self.driver.list_access_rules(service)
 
     @MEMOIZE
@@ -57,5 +77,7 @@ class Manager(manager.Manager):
                   configured access rules
 
         """
+        if CONF.access_rules.permissive:
+            return True
         return self.driver.check_access_rule(service, request_path,
                                              request_method, allow_chained)

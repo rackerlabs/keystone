@@ -12,9 +12,12 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import uuid
+
 from keystone.common import provider_api
 from keystone.tests import unit
 from keystone.tests.unit.ksfixtures import access_rules
+from keystone.tests.unit.ksfixtures import database
 
 PROVIDERS = provider_api.ProviderAPIs
 
@@ -42,3 +45,23 @@ class AccessRulesTest(unit.TestCase):
         result = PROVIDERS.access_rules_api.check_access_rule(
             'identity', '/v3/users', 'GET', False)
         self.assertTrue(result)
+
+
+class AccessRulesPermissiveTest(AccessRulesTest):
+
+    def setUp(self):
+        super(AccessRulesPermissiveTest, self).setUp()
+        self.config_fixture.config(group='access_rules', permissive=True)
+        self.useFixture(database.Database())
+        services = [
+            'identity',
+            'image',
+            'block-storage',
+            'network',
+            'compute',
+            'object'
+        ]
+        for service in services:
+            ref = unit.new_service_ref(type=service)
+            PROVIDERS.catalog_api.create_service(
+                uuid.uuid4().hex, ref)

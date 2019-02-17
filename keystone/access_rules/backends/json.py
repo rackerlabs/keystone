@@ -100,6 +100,8 @@ class AccessRules(base.AccessRulesDriverBase):
 
     def __init__(self):
         super(AccessRules, self).__init__()
+        if CONF.access_rules.permissive:
+            return
         access_rules_file = CONF.access_rules.rules_file
         self.access_rules = dict()
         self.access_rules_json = dict()
