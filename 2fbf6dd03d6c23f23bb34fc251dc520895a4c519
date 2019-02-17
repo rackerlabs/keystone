@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_286691ee",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-17T11:54:17Z",
+      "side": 1,
+      "message": "Could you add \"Partial-bug: #1724645\" so that it gets linked to the bug?",
+      "revId": "2fbf6dd03d6c23f23bb34fc251dc520895a4c519",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
