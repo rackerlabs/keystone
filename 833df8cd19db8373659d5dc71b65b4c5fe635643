@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_04913152",
+        "filename": "doc/source/contributor/proposing-features.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-18T10:51:27Z",
+      "side": 1,
+      "message": "Fix this",
+      "revId": "833df8cd19db8373659d5dc71b65b4c5fe635643",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_a4d705ee",
+        "filename": "doc/source/contributor/proposing-features.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-18T10:51:27Z",
+      "side": 1,
+      "message": "use the https version (else someone will try to \"fix\" it for us)",
+      "range": {
+        "startLine": 23,
+        "startChar": 7,
+        "endLine": 23,
+        "endChar": 11
+      },
+      "revId": "833df8cd19db8373659d5dc71b65b4c5fe635643",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_a4a9457c",
+        "filename": "doc/source/contributor/proposing-features.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-18T10:51:27Z",
+      "side": 1,
+      "message": "Please avoid using \"click here\" links for accessiblity reasons\n\nhttps://www.w3.org/QA/Tips/noClickHere",
+      "range": {
+        "startLine": 23,
+        "startChar": 1,
+        "endLine": 23,
+        "endChar": 5
+      },
+      "revId": "833df8cd19db8373659d5dc71b65b4c5fe635643",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_642cbd01",
+        "filename": "doc/source/contributor/proposing-features.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-18T10:51:27Z",
+      "side": 1,
+      "message": "Might also mention that sections shouldn\u0027t be deleted",
+      "revId": "833df8cd19db8373659d5dc71b65b4c5fe635643",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_64159d9b",
+        "filename": "doc/source/contributor/proposing-features.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-18T10:51:27Z",
+      "side": 1,
+      "message": "Morgan\u0027s change proposes opening the bug before the spec lands https://review.openstack.org/#/c/625282",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 32
+      },
+      "revId": "833df8cd19db8373659d5dc71b65b4c5fe635643",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
