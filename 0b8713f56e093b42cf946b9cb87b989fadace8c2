@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_445e4c77",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-18T20:48:51Z",
+      "side": 1,
+      "message": "I wonder if we want to overload the project_id in this API. We could keep the project ID specific to projects and look for `domain_id` in the request body for domain-level limits. The two would be a mutually exclusive set.\n\nI\u0027m curious what others think about overloading the project id.",
+      "range": {
+        "startLine": 55,
+        "startChar": 12,
+        "endLine": 55,
+        "endChar": 56
+      },
+      "revId": "0b8713f56e093b42cf946b9cb87b989fadace8c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
