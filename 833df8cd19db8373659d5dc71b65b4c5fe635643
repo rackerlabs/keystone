@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_d30e8939",
+        "filename": "doc/source/contributor/proposing-features.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-18T15:17:33Z",
+      "side": 1,
+      "message": "I\u0027m not up-to-date with the latest copyright practices, but we seem to be inconsistent with listing the copyrights. I\u0027ve omitted it for now, since other files in our docs don\u0027t have it and others just list 2011 - 2012.\n\nI can add this back in if you meant to correct the dates instead.",
+      "parentUuid": "9fdfeff1_04913152",
+      "revId": "833df8cd19db8373659d5dc71b65b4c5fe635643",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_a4d705ee",
         "filename": "doc/source/contributor/proposing-features.rst",
         "patchSetId": 4
@@ -65,6 +83,54 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_4f4aed5b",
+        "filename": "doc/source/contributor/proposing-features.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-18T15:17:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_a4d705ee",
+      "range": {
+        "startLine": 23,
+        "startChar": 7,
+        "endLine": 23,
+        "endChar": 11
+      },
+      "revId": "833df8cd19db8373659d5dc71b65b4c5fe635643",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_af2fd986",
+        "filename": "doc/source/contributor/proposing-features.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-18T15:17:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_a4a9457c",
+      "range": {
+        "startLine": 23,
+        "startChar": 1,
+        "endLine": 23,
+        "endChar": 5
+      },
+      "revId": "833df8cd19db8373659d5dc71b65b4c5fe635643",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_642cbd01",
         "filename": "doc/source/contributor/proposing-features.rst",
         "patchSetId": 4
@@ -82,6 +148,24 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_afe03928",
+        "filename": "doc/source/contributor/proposing-features.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-18T15:17:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_642cbd01",
+      "revId": "833df8cd19db8373659d5dc71b65b4c5fe635643",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_64159d9b",
         "filename": "doc/source/contributor/proposing-features.rst",
         "patchSetId": 4
@@ -93,6 +177,30 @@
       "writtenOn": "2019-02-18T10:51:27Z",
       "side": 1,
       "message": "Morgan\u0027s change proposes opening the bug before the spec lands https://review.openstack.org/#/c/625282",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 32
+      },
+      "revId": "833df8cd19db8373659d5dc71b65b4c5fe635643",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_4f874d14",
+        "filename": "doc/source/contributor/proposing-features.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-18T15:17:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_64159d9b",
       "range": {
         "startLine": 72,
         "startChar": 0,
