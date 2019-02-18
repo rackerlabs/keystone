@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_a75147db",
+        "filename": "keystone/tests/unit/protection/v3/test_mappings.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-18T11:10:41Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 465,
+        "startChar": 10,
+        "endLine": 465,
+        "endChar": 21
+      },
+      "revId": "224418e7dc4048143b3d6155f0498c5fe44f5117",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_275797cc",
+        "filename": "keystone/tests/unit/protection/v3/test_mappings.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-18T11:10:41Z",
+      "side": 1,
+      "message": "If this is just a member then it doesn\u0027t really make a difference what enforce_scope is set to?",
+      "revId": "224418e7dc4048143b3d6155f0498c5fe44f5117",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
