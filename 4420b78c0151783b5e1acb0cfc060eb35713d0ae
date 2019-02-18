@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_58871114",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-02-18T17:08:54Z",
+      "side": 1,
+      "message": "You changed this here but not the actual defaults policy strings.",
+      "range": {
+        "startLine": 368,
+        "startChar": 0,
+        "endLine": 377,
+        "endChar": 58
+      },
+      "revId": "4420b78c0151783b5e1acb0cfc060eb35713d0ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
