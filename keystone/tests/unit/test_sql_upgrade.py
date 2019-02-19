@@ -3230,11 +3230,6 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
 
         self.assertTableDoesNotExist('access_rule')
         self.assertTableDoesNotExist('application_credential_access_rule')
-
-        self.expand(56)
-        self.migrate(56)
-        self.contract(56)
-
         self.assertTableExists('access_rule')
         self.assertTableExists('application_credential_access_rule')
         self.assertTableColumns(
@@ -3282,6 +3277,26 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         }
         app_cred_access_rule_table.insert().values(
             app_cred_access_rule_rel).execute()
+
+    def test_migration_057_add__remote_id_attribute_to_federation_protocol(self):
+        self.expand(56)
+        self.migrate(56)
+        self.contract(56)
+
+        federation_protocol_table_name = 'federation_protocol'
+        self.assertTableColumns(
+            federation_protocol_table_name,
+            ['id', 'idp_id', 'mapping_id']
+        )
+
+        self.expand(57)
+        self.migrate(57)
+        self.contract(57)
+
+        self.assertTableColumns(
+            federation_protocol_table_name,
+            ['id', 'idp_id', 'mapping_id', 'remote_id_attribute']
+        )
 
 
 class MySQLOpportunisticFullMigration(FullMigration):
