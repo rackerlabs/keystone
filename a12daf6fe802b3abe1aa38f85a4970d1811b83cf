@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_31000cac",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-19T20:36:46Z",
+      "side": 1,
+      "message": "Interesting - we don\u0027t typically use this pattern. We usually just perform an invalidation.",
+      "revId": "a12daf6fe802b3abe1aa38f85a4970d1811b83cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_911c5814",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1105,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-19T20:36:46Z",
+      "side": 1,
+      "message": "I\u0027m not a big fan of passing None in as a parameter. We should at least name it as a variable before passing it into the method.\n\nOtherwise, we could try and remove any ambiguity in the code so that we can always assume type is going to be present. One way we could do that would be to implement methods specifically for the credential types we support.\n\n  def list_ec2_credentials_for_user(self, user_id):\n\n  def list_totp_credentials_for_user(self, user_id):",
+      "range": {
+        "startLine": 1105,
+        "startChar": 33,
+        "endLine": 1105,
+        "endChar": 37
+      },
+      "revId": "a12daf6fe802b3abe1aa38f85a4970d1811b83cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_f1d0442e",
+        "filename": "releasenotes/notes/bug-1815771-ae0e4118c552f01e.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-19T20:36:46Z",
+      "side": 1,
+      "message": "Allows operators",
+      "range": {
+        "startLine": 3,
+        "startChar": 4,
+        "endLine": 3,
+        "endChar": 13
+      },
+      "revId": "a12daf6fe802b3abe1aa38f85a4970d1811b83cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_5116f0f3",
+        "filename": "releasenotes/notes/bug-1815771-ae0e4118c552f01e.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-19T20:36:46Z",
+      "side": 1,
+      "message": "nit:\n\n  ``keystone.conf [credential] caching``.",
+      "range": {
+        "startLine": 5,
+        "startChar": 4,
+        "endLine": 5,
+        "endChar": 24
+      },
+      "revId": "a12daf6fe802b3abe1aa38f85a4970d1811b83cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
