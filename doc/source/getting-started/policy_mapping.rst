@@ -25,18 +25,18 @@ identity:create_endpoint                                   POST /v3/endpoints
 identity:update_endpoint                                   PATCH /v3/endpoints/{endpoint_id}
 identity:delete_endpoint                                   DELETE /v3/endpoints/{endpoint_id}
 
-identity:get_registered_limit                              GET /v3/registered_limits/{registered_limit_id}
-identity:list_registered_limits                            GET /v3/registered_limits
-identity:create_registered_limits                          POST /v3/registered_limits
-identity:update_registered_limit                           PATCH /v3/registered_limits/{registered_limit_id}
-identity:delete_registered_limit                           DELETE /v3/registered_limits/{registered_limit_id}
+identity:registered-limit:get                              GET /v3/registered_limits/{registered_limit_id}
+identity:registered-limit:list                             GET /v3/registered_limits
+identity:registered-limit:create                           POST /v3/registered_limits
+identity:registered-limit:update                           PATCH /v3/registered_limits/{registered_limit_id}
+identity:registered-limit:delete                           DELETE /v3/registered_limits/{registered_limit_id}
 
-identity:get_limit                                         GET /v3/limits/{limit_id}
-identity:list_limits                                       GET /v3/limits
-identity:create_limits                                     POST /v3/limits
-identity:update_limit                                      PATCH /v3/limits/{limit_id}
-identity:delete_limit                                      DELETE /v3/limits/{limit_id}
-identity:get_limit_model                                   GET /v3/limits/model
+identity:limit:get                                         GET /v3/limits/{limit_id}
+identity:limit:list                                        GET /v3/limits
+identity:limit:create                                      POST /v3/limits
+identity:limit:update                                      PATCH /v3/limits/{limit_id}
+identity:limit:delete                                      DELETE /v3/limits/{limit_id}
+identity:limit_model:get                                   GET /v3/limits/model
                                                            HEAD /v3/limits/model
 
 identity:get_domain                                        GET /v3/domains/{domain_id}

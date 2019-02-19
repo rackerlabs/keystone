@@ -14,12 +14,12 @@ from oslo_policy import policy
 
 from keystone.common.policies import base
 
-RESOURCE_NAME = 'registered_limit'
+RESOURCE_NAME = 'registered-limit'
 
 registered_limit_policies = [
     policy.DocumentedRuleDefault(
-        name=base.IDENTITY % {'resource': RESOURCE_NAME,
-                              'action': base.ACTION_GET},
+        name=base.POLICY_FORMAT % {'resource': RESOURCE_NAME,
+                                   'action': base.ACTION_GET},
         check_str='',
         scope_types=['system', 'domain', 'project'],
         description='Show registered limit details.',
@@ -28,8 +28,8 @@ registered_limit_policies = [
                     {'path': '/v3/registered_limits/{registered_limit_id}',
                      'method': 'HEAD'}]),
     policy.DocumentedRuleDefault(
-        name=base.IDENTITY % {'resource': RESOURCE_NAME,
-                              'action': base.ACTION_LIST},
+        name=base.POLICY_FORMAT % {'resource': RESOURCE_NAME,
+                                   'action': base.ACTION_LIST},
         check_str='',
         scope_types=['system', 'domain', 'project'],
         description='List registered limits.',
@@ -38,24 +38,24 @@ registered_limit_policies = [
                     {'path': '/v3/registered_limits',
                      'method': 'HEAD'}]),
     policy.DocumentedRuleDefault(
-        name=base.IDENTITY % {'resource': RESOURCE_NAME,
-                              'action': base.ACTION_CREATE},
+        name=base.POLICY_FORMAT % {'resource': RESOURCE_NAME,
+                                   'action': base.ACTION_CREATE},
         check_str=base.SYSTEM_ADMIN,
         scope_types=['system'],
         description='Create registered limits.',
         operations=[{'path': '/v3/registered_limits',
                      'method': 'POST'}]),
     policy.DocumentedRuleDefault(
-        name=base.IDENTITY % {'resource': RESOURCE_NAME,
-                              'action': base.ACTION_UPDATE},
+        name=base.POLICY_FORMAT % {'resource': RESOURCE_NAME,
+                                   'action': base.ACTION_UPDATE},
         check_str=base.SYSTEM_ADMIN,
         scope_types=['system'],
         description='Update registered limit.',
         operations=[{'path': '/v3/registered_limits/{registered_limit_id}',
                      'method': 'PATCH'}]),
     policy.DocumentedRuleDefault(
-        name=base.IDENTITY % {'resource': RESOURCE_NAME,
-                              'action': base.ACTION_DELETE},
+        name=base.POLICY_FORMAT % {'resource': RESOURCE_NAME,
+                                   'action': base.ACTION_DELETE},
         check_str=base.SYSTEM_ADMIN,
         scope_types=['system'],
         description='Delete registered limit.',

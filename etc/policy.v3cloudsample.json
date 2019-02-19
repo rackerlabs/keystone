@@ -28,12 +28,12 @@
     "identity:update_endpoint": "rule:cloud_admin",
     "identity:delete_endpoint": "rule:cloud_admin",
 
-    "identity:get_limit_model": "",
-    "identity:get_limit": "",
-    "identity:list_limits": "",
-    "identity:create_limits": "rule:admin_required",
-    "identity:update_limit": "rule:admin_required",
-    "identity:delete_limit": "rule:admin_required",
+    "identity:limit_model:get": "",
+    "identity:limit:get": "",
+    "identity:limit:list": "",
+    "identity:limit:create": "rule:admin_required",
+    "identity:limit:update": "rule:admin_required",
+    "identity:limit:delete": "rule:admin_required",
 
     "identity:get_domain": "rule:cloud_admin or rule:admin_and_matching_domain_id or token.project.domain.id:%(target.domain.id)s",
     "identity:list_domains": "rule:cloud_admin",
