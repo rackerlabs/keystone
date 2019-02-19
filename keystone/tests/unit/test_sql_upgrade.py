@@ -3223,6 +3223,45 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
              'registered_limit_id', 'domain_id'])
         self.assertTrue(limit_table.c.project_id.nullable)
 
+    def test_migration_056_add__remote_id_attribute_to_federation_protocol(self):
+        self.expand(55)
+        self.migrate(55)
+        self.contract(55)
+
+        federation_protocol_table_name = 'federation_protocol'
+        self.assertTableColumns(
+            federation_protocol_table_name,
+            ['id', 'idp_id', 'mapping_id']
+        )
+
+        self.expand(56)
+        self.migrate(56)
+        self.contract(56)
+
+        self.assertTableColumns(
+            federation_protocol_table_name,
+            ['id', 'idp_id', 'mapping_id', 'remote_id_attribute']
+        )
+
+        federation_protocol_table = sqlalchemy.Table(
+            federation_protocol_table_name, self.metadata, autoload=True
+        )
+
+        federation_protocol = {
+            'id': uuid.uuid4().hex,
+            'idp_id': uuid.uuid4().hex,
+            'mapping_id': uuid.uuid4().hex,
+            'remote_id_attribute': uuid.uuid4().hex
+        }
+        federation_protocol_table.insert().values(federation_protocol).execute()
+
+        federation_protocol_without_remote_id_attribute = {
+            'id': uuid.uuid4().hex,
+            'idp_id': uuid.uuid4().hex,
+            'mapping_id': uuid.uuid4().hex
+        }
+        federation_protocol_table.insert().values(federation_protocol_without_remote_id_attribute).execute()
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = db_fixtures.MySQLOpportunisticFixture
