@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_2c220a03",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-19T03:22:09Z",
+      "side": 1,
+      "message": "I have a bug report open to track this work, so you could add:\n\n  Partial-Bug: 1800161\n\nAdditionally, we could probably start a release note saying we\u0027re updating the names to be consistent across OpenStack services, even though these policies aren\u0027t deprecated.",
+      "revId": "ca0f225139ed44dc38b704dc9837781764e595ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_cc457eb6",
+        "filename": "keystone/common/policies/registered_limit.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-19T03:22:09Z",
+      "side": 1,
+      "message": "It looks like we need to change this, too. Otherwise, substitution isn\u0027t going to result in what we expect to check.",
+      "range": {
+        "startLine": 21,
+        "startChar": 18,
+        "endLine": 21,
+        "endChar": 26
+      },
+      "revId": "ca0f225139ed44dc38b704dc9837781764e595ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
