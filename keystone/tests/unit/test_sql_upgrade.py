@@ -3283,6 +3283,18 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         app_cred_access_rule_table.insert().values(
             app_cred_access_rule_rel).execute()
 
+    def test_migration_057_add__remote_id_attribute_to_federation_protocol(self):
+        federation_protocol_table_name = 'federation_protocol'
+        self.assertTableColumns(
+            federation_protocol_table_name,
+            ['id', 'idp_id', 'mapping_id']
+        )
+
+        self.assertTableColumns(
+            federation_protocol_table_name,
+            ['id', 'idp_id', 'mapping_id', 'remote_id_attribute']
+        )
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = db_fixtures.MySQLOpportunisticFixture
