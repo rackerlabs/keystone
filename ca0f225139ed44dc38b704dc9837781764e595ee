@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_cc4c9eca",
+        "filename": "keystone/common/policies/registered_limit.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-19T03:41:42Z",
+      "side": 1,
+      "message": "According to the documentation - we should consider using dashes in place of underscores:\n\nhttps://docs.openstack.org/oslo.policy/latest/user/usage.html#resources-and-subresources\n\n  RESOURCE_NAME \u003d \u0027registered-limit\u0027",
+      "revId": "ca0f225139ed44dc38b704dc9837781764e595ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_cc457eb6",
         "filename": "keystone/common/policies/registered_limit.py",
         "patchSetId": 2
