@@ -22,6 +22,30 @@
       "revId": "ebad027f21e9fc7f3420a700f22cb2ef422d6645",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_317eccaf",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-19T20:57:58Z",
+      "side": 1,
+      "message": "I think what I\u0027m trying to clarify is that people can toggle cache_on_issue all they want and if ``keystone.conf [cache] enabled\u003dFalse`` it won\u0027t make a difference. Ultimately, operators will need to ensure they have both options enabled in order for the feature to be turned on (even if they are just using the defaults).\n\nAlso, we use this same phrasing for caching options across keystone, so if we\u0027re going to change it in one place we should probably do it in others, too.\n\nhttps://git.openstack.org/cgit/openstack/keystone/tree/keystone/conf/catalog.py#n42\n\nDid I misunderstand your concern?",
+      "parentUuid": "9fdfeff1_bd18621e",
+      "range": {
+        "startLine": 120,
+        "startChar": 29,
+        "endLine": 120,
+        "endChar": 40
+      },
+      "revId": "ebad027f21e9fc7f3420a700f22cb2ef422d6645",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
