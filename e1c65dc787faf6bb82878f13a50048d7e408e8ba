@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_ebe6154b",
+        "filename": "keystone/access_rules/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-02-19T18:53:03Z",
+      "side": 1,
+      "message": "HEAD?",
+      "revId": "e1c65dc787faf6bb82878f13a50048d7e408e8ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
