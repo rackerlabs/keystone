@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_ef8f02cb",
+        "filename": "keystone/access_rules/__init__.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-02-19T18:48:01Z",
+      "side": 1,
+      "message": "NIT: We should stop doing this.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 48
+      },
+      "revId": "17db4ac215e78f5ea441ad0ff99ee220338e37f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_ef7dc2b2",
+        "filename": "keystone/access_rules/backends/base.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-02-19T18:48:01Z",
+      "side": 1,
+      "message": "NIT: This should be NotImplementedError() instead of exceptions.NotImplemented() (HTTP Not implemented). This should generate a pure 500 error not a 501. 501 implies the HTTP method is not implemented.",
+      "range": {
+        "startLine": 28,
+        "startChar": 14,
+        "endLine": 28,
+        "endChar": 40
+      },
+      "revId": "17db4ac215e78f5ea441ad0ff99ee220338e37f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_af2edaa8",
+        "filename": "keystone/access_rules/backends/json.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-02-19T18:48:01Z",
+      "side": 1,
+      "message": "Does this work for prefix-wildcard matching? NIT: should be part of the docstring.",
+      "range": {
+        "startLine": 93,
+        "startChar": 1,
+        "endLine": 97,
+        "endChar": 29
+      },
+      "revId": "17db4ac215e78f5ea441ad0ff99ee220338e37f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_6b10e550",
+        "filename": "keystone/access_rules/backends/json.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-02-19T18:48:01Z",
+      "side": 1,
+      "message": "NIT: I would probably pre-compile the regular expressions rather than re.match with a raw pattern. We can evaluate the benefits of sacrificing memory for CPU cost later.",
+      "range": {
+        "startLine": 157,
+        "startChar": 0,
+        "endLine": 161,
+        "endChar": 31
+      },
+      "revId": "17db4ac215e78f5ea441ad0ff99ee220338e37f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
