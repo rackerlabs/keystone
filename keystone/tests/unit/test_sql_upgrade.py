@@ -3363,6 +3363,26 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         self.assertEqual(trust['redelegation_count'],
                          upgraded_trust.redelegation_count)
 
+    def test_migration_063_add_remote_id_attribute_to_federation_protocol(self):
+        self.expand(62)
+        self.migrate(62)
+        self.contract(62)
+
+        federation_protocol_table_name = 'federation_protocol'
+        self.assertTableColumns(
+            federation_protocol_table_name,
+            ['id', 'idp_id', 'mapping_id']
+        )
+
+        self.expand(63)
+        self.migrate(63)
+        self.contract(63)
+
+        self.assertTableColumns(
+            federation_protocol_table_name,
+            ['id', 'idp_id', 'mapping_id', 'remote_id_attribute']
+        )
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = db_fixtures.MySQLOpportunisticFixture
