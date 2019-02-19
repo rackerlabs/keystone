@@ -78,6 +78,24 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_be2e0ea9",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2019-02-19T16:43:42Z",
+      "side": 1,
+      "message": "Ah, my apologies. It seems that I mistakenly merged the two sections when fixing the merge conflicts. Will keep a separate section for %IDP_ID% and \u0027keystone\u0027. Will revise in next patchset.",
+      "parentUuid": "9fdfeff1_00070f1a",
+      "revId": "fbafca5219a8aeabc7b2abd5ba1fb93246d5cd73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_f10c20ed",
         "filename": "devstack/lib/federation.sh",
         "patchSetId": 11
