@@ -45,7 +45,8 @@ class TestFederationProtocol(unit.TestCase):
     def test_create_protocol(self):
         protocol = {
             'id': uuid.uuid4().hex,
-            'mapping_id': self.mapping['id']
+            'mapping_id': self.mapping['id'],
+            'remote_id_attribute': uuid.uuid4().hex
         }
         protocol_ret = PROVIDERS.federation_api.create_protocol(
             self.idp['id'], protocol['id'], protocol
