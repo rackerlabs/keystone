@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_eb5db5ec",
+        "filename": "keystone/application_credential/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-02-19T18:56:02Z",
+      "side": 1,
+      "message": "Unrelated whitespace change?",
+      "revId": "721d12ba5734f5ba064a84c87d47789a307203c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
