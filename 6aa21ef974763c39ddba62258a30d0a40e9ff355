@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_113e16da",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-20T15:48:27Z",
+      "side": 1,
+      "message": "I suppose we could say here that this only applies to fetching a specific credential and not listing credentials.",
+      "revId": "6aa21ef974763c39ddba62258a30d0a40e9ff355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_71a9a222",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-20T15:48:27Z",
+      "side": 1,
+      "message": "This probably should have been made a private method initially. It appears that it\u0027s only used within keystone for fetching a users credentials, and not wired up publicly.\n\nThat said, we are now requiring the type for getting a users credentials to be either ec2 or totp even though it is possible for users to create credentials of whatever type they want.\n\nWe should either open up this to be a public API that isn\u0027t cacheable or just document somewhere that fetching credentials for a user outside of \u0027ec2\u0027 and \u0027totp\u0027 won\u0027t be cached.\n\nBut, again, since this is an internal method to keystone for the most part, it might make sense as a comment in the code.",
+      "range": {
+        "startLine": 102,
+        "startChar": 8,
+        "endLine": 102,
+        "endChar": 34
+      },
+      "revId": "6aa21ef974763c39ddba62258a30d0a40e9ff355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
