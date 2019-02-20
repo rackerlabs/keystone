@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_5e48302d",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3256,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-20T10:07:33Z",
+      "side": 1,
+      "message": "The lower-constraints unit tests are failing because the foreign keys in the federation_protocol table require some values to exist in the identity_provider and mapping tables first. You could create those values first but I would be okay with just omitting these table inserts from the test, I don\u0027t find them that important since the new attribute is just a string column and not a special key.",
+      "revId": "bd08cce4702b6ff31d3ad587d4a5dc43e7da5cad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
