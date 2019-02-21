@@ -15,6 +15,9 @@ from oslo_policy import policy
 
 from keystone.common.policies import base
 
+SYSTEM_READER_FOR_ROLE_ASSIGNMENT = (
+    '(' + base.SYSTEM_READER + ') or' 'role:reader and domain_id:%(target.domain_id)s')
+
 deprecated_list_role_assignments = policy.DeprecatedRule(
     name=base.IDENTITY % 'list_role_assignments',
     check_str=base.RULE_ADMIN_REQUIRED
@@ -31,8 +34,8 @@ account for these changes automatically.
 role_assignment_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_role_assignments',
-        check_str=base.SYSTEM_READER,
-        scope_types=['system'],
+        check_str=SYSTEM_READER_FOR_ROLE_ASSIGNMENT,
+        scope_types=['system', 'domain'],
         description='List role assignments.',
         operations=[{'path': '/v3/role_assignments',
                      'method': 'GET'},
