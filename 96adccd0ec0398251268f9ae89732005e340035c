@@ -115,6 +115,30 @@
       "revId": "96adccd0ec0398251268f9ae89732005e340035c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_1f5841f8",
+        "filename": "keystone/token/providers/jws/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-21T18:44:34Z",
+      "side": 1,
+      "message": "FWIW - this could get noisy if you enable debug logging and have several public keys in this repository. Especially since it\u0027s likely to try multiple keys on every validation.",
+      "parentUuid": "9fdfeff1_9fb6713e",
+      "range": {
+        "startLine": 185,
+        "startChar": 16,
+        "endLine": 185,
+        "endChar": 76
+      },
+      "revId": "96adccd0ec0398251268f9ae89732005e340035c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
