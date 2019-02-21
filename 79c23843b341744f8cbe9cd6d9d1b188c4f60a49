@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_9c820952",
+        "filename": "releasenotes/notes/bug-1804463-74537652166cf656.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-21T10:50:29Z",
+      "side": 1,
+      "message": "Missing the specifics of what changed",
+      "revId": "79c23843b341744f8cbe9cd6d9d1b188c4f60a49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
