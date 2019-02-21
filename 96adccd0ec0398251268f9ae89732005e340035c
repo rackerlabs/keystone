@@ -139,6 +139,30 @@
       "revId": "96adccd0ec0398251268f9ae89732005e340035c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_5f880921",
+        "filename": "keystone/token/providers/jws/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2019-02-21T18:58:06Z",
+      "side": 1,
+      "message": "After discussion in IRC, lets leave this for now and look into it with a follow-up. Logging here would indeed be very chatty.",
+      "parentUuid": "9fdfeff1_1f5841f8",
+      "range": {
+        "startLine": 185,
+        "startChar": 16,
+        "endLine": 185,
+        "endChar": 76
+      },
+      "revId": "96adccd0ec0398251268f9ae89732005e340035c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
