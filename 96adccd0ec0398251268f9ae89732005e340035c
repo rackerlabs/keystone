@@ -68,6 +68,29 @@
       "revId": "96adccd0ec0398251268f9ae89732005e340035c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_1f55a1fa",
+        "filename": "keystone/token/providers/jws/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2019-02-21T18:37:08Z",
+      "side": 1,
+      "message": "Would we want to log here that a pub key is invalid?",
+      "range": {
+        "startLine": 185,
+        "startChar": 16,
+        "endLine": 185,
+        "endChar": 76
+      },
+      "revId": "96adccd0ec0398251268f9ae89732005e340035c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
