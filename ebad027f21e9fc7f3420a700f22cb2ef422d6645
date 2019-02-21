@@ -46,6 +46,29 @@
       "revId": "ebad027f21e9fc7f3420a700f22cb2ef422d6645",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_b02cd601",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-02-21T07:51:58Z",
+      "side": 1,
+      "message": "I think my question arises as the wording of this help section sounded ambiguous to me.\nAgree with your explanation but I\u0027ve one query from it,\nfrom your explanation : both global caching and [token] caching options need to be enabled\nfrom the help section : global cache is controlling the behavior and [token] caching value has no impact\n\nSince there isn\u0027t a good reason to disable [token] caching but if we disable it, will it have any impact on the functionality of caching ?",
+      "range": {
+        "startLine": 120,
+        "startChar": 29,
+        "endLine": 121,
+        "endChar": 26
+      },
+      "revId": "ebad027f21e9fc7f3420a700f22cb2ef422d6645",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
