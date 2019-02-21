@@ -256,32 +256,6 @@ class _SystemUserTests(object):
             for assignment in actual:
                 self.assertIn(assignment, expected)
 
-    def test_user_can_filter_role_assignments_by_domain(self):
-        assignments = self._setup_test_role_assignments()
-        expected = [
-            {
-                'user_id': assignments['user_id'],
-                'domain_id': assignments['domain_id'],
-                'role_id': assignments['role_id']
-            },
-            {
-                'group_id': assignments['group_id'],
-                'domain_id': assignments['domain_id'],
-                'role_id': assignments['role_id']
-            }
-        ]
-        domain_id = assignments['domain_id']
-
-        with self.test_client() as c:
-            r = c.get(
-                '/v3/role_assignments?scope.domain.id=%s' % domain_id,
-                headers=self.headers
-            )
-            self.assertEqual(len(expected), len(r.json['role_assignments']))
-            actual = self._extract_role_assignments_from_response_body(r)
-            for assignment in actual:
-                self.assertIn(assignment, expected)
-
     def test_user_can_filter_role_assignments_by_system(self):
         assignments = self._setup_test_role_assignments()
 
@@ -450,32 +424,6 @@ class _SystemUserTests(object):
             for assignment in actual:
                 self.assertIn(assignment, expected)
 
-    def test_user_can_filter_role_assignments_by_domain_and_role(self):
-        assignments = self._setup_test_role_assignments()
-        expected = [
-            {
-                'user_id': assignments['user_id'],
-                'domain_id': assignments['domain_id'],
-                'role_id': assignments['role_id']
-            },
-            {
-                'group_id': assignments['group_id'],
-                'domain_id': assignments['domain_id'],
-                'role_id': assignments['role_id']
-            },
-        ]
-        qs = (assignments['domain_id'], assignments['role_id'])
-
-        with self.test_client() as c:
-            r = c.get(
-                '/v3/role_assignments?scope.domain.id=%s&role.id=%s' % qs,
-                headers=self.headers
-            )
-            self.assertEqual(len(expected), len(r.json['role_assignments']))
-            actual = self._extract_role_assignments_from_response_body(r)
-            for assignment in actual:
-                self.assertIn(assignment, expected)
-
     def test_user_can_filter_role_assignments_by_system_and_role(self):
         assignments = self._setup_test_role_assignments()
         self.expected.append({
@@ -606,6 +554,36 @@ class _SystemUserTests(object):
             for assignment in actual:
                 self.assertIn(assignment, expected)
 
+
+class _DomainUserTests(object):
+    """Common functionality for system users regardless of default role."""
+
+    def test_user_can_filter_role_assignments_by_domain(self):
+        assignments = self._setup_test_role_assignments()
+        expected = [
+            {
+                'user_id': assignments['user_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            }
+        ]
+        domain_id = assignments['domain_id']
+
+        with self.test_client() as c:
+            r = c.get(
+                '/v3/role_assignments?scope.domain.id=%s' % domain_id,
+                headers=self.headers
+            )
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
+
     def test_user_can_filter_role_assignments_by_domain_and_user(self):
         assignments = self._setup_test_role_assignments()
         expected = [
@@ -627,6 +605,42 @@ class _SystemUserTests(object):
             for assignment in actual:
                 self.assertIn(assignment, expected)
 
+        with self.test_client() as c:
+            r = c.get(
+                '/v3/role_assignments?scope.domain.id=%s' % qs,
+                headers=self.headers
+            )
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
+
+    def test_user_can_filter_role_assignments_by_domain_and_role(self):
+        assignments = self._setup_test_role_assignments()
+        expected = [
+            {
+                'user_id': assignments['user_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+            {
+                'group_id': assignments['group_id'],
+                'domain_id': assignments['domain_id'],
+                'role_id': assignments['role_id']
+            },
+        ]
+        qs = (assignments['domain_id'], assignments['role_id'])
+
+        with self.test_client() as c:
+            r = c.get(
+                '/v3/role_assignments?scope.domain.id=%s&role.id=%s' % qs,
+                headers=self.headers
+            )
+            self.assertEqual(len(expected), len(r.json['role_assignments']))
+            actual = self._extract_role_assignments_from_response_body(r)
+            for assignment in actual:
+                self.assertIn(assignment, expected)
+
     def test_user_can_filter_role_assignments_by_domain_and_group(self):
         assignments = self._setup_test_role_assignments()
         expected = [
@@ -634,7 +648,12 @@ class _SystemUserTests(object):
                 'group_id': assignments['group_id'],
                 'domain_id': assignments['domain_id'],
                 'role_id': assignments['role_id']
-            }
+            },
+            {
+                'group_id': assignments['group_id'],
+                'project_id': assignments['project_id'],
+                'role_id': assignments['role_id']
+            },
         ]
         qs = (assignments['domain_id'], assignments['group_id'])
 
@@ -652,7 +671,8 @@ class _SystemUserTests(object):
 class SystemReaderTests(base_classes.TestCaseWithBootstrap,
                         common_auth.AuthTestMixin,
                         _AssignmentTestUtilities,
-                        _SystemUserTests):
+                        _SystemUserTests,
+                        _DomainUserTests):
 
     def setUp(self):
         super(SystemReaderTests, self).setUp()
@@ -694,7 +714,8 @@ class SystemReaderTests(base_classes.TestCaseWithBootstrap,
 class SystemMemberTests(base_classes.TestCaseWithBootstrap,
                         common_auth.AuthTestMixin,
                         _AssignmentTestUtilities,
-                        _SystemUserTests):
+                        _SystemUserTests,
+                        _DomainUserTests):
 
     def setUp(self):
         super(SystemMemberTests, self).setUp()
@@ -736,7 +757,8 @@ class SystemMemberTests(base_classes.TestCaseWithBootstrap,
 class SystemAdminTests(base_classes.TestCaseWithBootstrap,
                        common_auth.AuthTestMixin,
                        _AssignmentTestUtilities,
-                       _SystemUserTests):
+                       _SystemUserTests,
+                       _DomainUserTests):
 
     def setUp(self):
         super(SystemAdminTests, self).setUp()
@@ -750,6 +772,48 @@ class SystemAdminTests(base_classes.TestCaseWithBootstrap,
         auth = self.build_authentication_request(
             user_id=self.user_id, password=self.bootstrapper.admin_password,
             system=True
+        )
+
+        # Grab a token using the persona we're testing and prepare headers
+        # for requests we'll be making in the tests.
+        with self.test_client() as c:
+            r = c.post('/v3/auth/tokens', json=auth)
+            self.token_id = r.headers['X-Subject-Token']
+            self.headers = {'X-Auth-Token': self.token_id}
+
+
+class DomainReaderTests(base_classes.TestCaseWithBootstrap,
+                        common_auth.AuthTestMixin,
+                        _AssignmentTestUtilities,
+                        _DomainUserTests):
+
+    def setUp(self):
+        super(DomainReaderTests, self).setUp()
+        self.loadapp()
+        self.useFixture(ksfixtures.Policy(self.config_fixture))
+        self.config_fixture.config(group='oslo_policy', enforce_scope=True)
+
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+        self.domain_id = domain['id']
+        domain_reader = unit.new_user_ref(domain_id=self.domain_id)
+        self.user_id = PROVIDERS.identity_api.create_user(domain_reader)['id']
+        PROVIDERS.assignment_api.create_grant(
+            self.bootstrapper.reader_role_id, user_id=self.user_id,
+            domain_id=self.domain_id
+        )
+        self.expected = [
+            # assignment of the user running the test case
+            {
+                'user_id': self.user_id,
+                'domain_id': self.domain_id,
+                'role_id': self.bootstrapper.member_role_id
+            }]
+
+        auth = self.build_authentication_request(
+            user_id=self.user_id, password=domain_reader['password'],
+            domain_id=self.domain_id,
         )
 
         # Grab a token using the persona we're testing and prepare headers
