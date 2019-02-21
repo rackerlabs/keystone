@@ -22,6 +22,30 @@
       "revId": "0b8713f56e093b42cf946b9cb87b989fadace8c2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_b064d622",
+        "filename": "keystone/limit/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-02-21T08:04:52Z",
+      "side": 1,
+      "message": "emm, I make \"project_id\" and \"domain_id\" mutually exclusive at API layer: https://review.openstack.org/#/c/622773/16/keystone/limit/schema.py@94\n\nI assume _assert_resource_exist is a common function for both \"project\" and \"domain\" limit.",
+      "parentUuid": "9fdfeff1_445e4c77",
+      "range": {
+        "startLine": 55,
+        "startChar": 12,
+        "endLine": 55,
+        "endChar": 56
+      },
+      "revId": "0b8713f56e093b42cf946b9cb87b989fadace8c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
