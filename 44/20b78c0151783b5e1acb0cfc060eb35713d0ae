@@ -1,0 +1,10 @@
+Code-Review+1: Colleen Murphy <colleen@gazlene.net>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Workflow+1: Lance Bragstad <lbragstad@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 21 Feb 2019 00:02:19 +0000
+Reviewed-on: https://review.openstack.org/637341
+Project: openstack/keystone
+Branch: refs/heads/stable/rocky
