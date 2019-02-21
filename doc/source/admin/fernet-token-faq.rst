@@ -363,3 +363,9 @@ If keystone were to receive a token that was created between 6:00 AM and 12:00
 PM the day before, encrypted with the ``1`` key, it would not be valid because
 it was already expired. This makes it possible for us to remove the ``1`` key
 from the repository without negative validation side-effects.
+
+.. note::
+   If retrieving expired tokens is needed (for example when services are
+   configured to use ServiceToken auth), the value of
+   ``allow_expired_window`` option from the ``[token]`` config section
+   should be taken as a token_expiration in the formula above.
