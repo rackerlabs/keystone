@@ -214,6 +214,27 @@ keystone for a list of projects they're allowed to access. Then they can
 exchange their unscoped token for a project-scoped token allowing them to
 perform actions within a particular project.
 
+Why are authorization scopes important?
+=======================================
+
+* gives you the tools to expose more of  your work to users
+* less custom authorization code in your service
+* consistency with other projects resulting in better user experience and
+  maintenance for operators
+
+How to I incorporate authorization scopes into a service?
+=========================================================
+
+* start by testing the API ruthlessly with protection tests
+* audit the API, which APIs in the service are project-scoped, domain-scoped,
+  or system-scoped? Are some a mix? If the answers to these questions do not
+  reflect reality, you should document it somewhere. Keystone went through this
+  exercise and we opened bugs to make sure we captured the behavior we desired
+  against the behavior we have
+* setting the scope_types variable and rewriting check strings
+* communicate, communicate, communicate
+* removing deprecated check strings
+
 Auth Token middleware
 =====================
 
