@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_26309407",
+        "filename": "keystone/common/policies/role_assignment.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-22T12:57:28Z",
+      "side": 0,
+      "message": "Has this been addressed? Or are we giving up on using this with project scope?",
+      "range": {
+        "startLine": 21,
+        "startChar": 28,
+        "endLine": 22,
+        "endChar": 43
+      },
+      "revId": "ace45841943ed6b698b8a5aea35a80c119c3cae3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
