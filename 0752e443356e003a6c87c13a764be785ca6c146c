@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_4364aa49",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3248,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-22T12:11:52Z",
+      "side": 1,
+      "message": "The pep8 job is failing because you\u0027re not using this variable. Since we\u0027re not testing the ability to insert a row any more, you can just remove this. You can run the pep8 jobs before submitting changes with `tox -epep8`.",
+      "range": {
+        "startLine": 3246,
+        "startChar": 8,
+        "endLine": 3248,
+        "endChar": 9
+      },
+      "revId": "0752e443356e003a6c87c13a764be785ca6c146c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
