@@ -284,6 +284,30 @@
       "revId": "d30072ad37042d9887854ddf8fb853af50f18537",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_a4675c4d",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-02-22T05:09:59Z",
+      "side": 1,
+      "message": "ok.thanks",
+      "parentUuid": "9fdfeff1_5169a2f6",
+      "range": {
+        "startLine": 112,
+        "startChar": 35,
+        "endLine": 114,
+        "endChar": 71
+      },
+      "revId": "d30072ad37042d9887854ddf8fb853af50f18537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
