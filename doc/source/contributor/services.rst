@@ -157,7 +157,8 @@ Good examples of system-scoped resources include:
   deployed in a cloud.
 * Endpoints: Endpoints that tell users where to find services deployed in a
   cloud.
-* Hypervisors: Hosts for servers that belong to various projects.
+* Hypervisors: Physical compute infrastructure that hosts instances where the
+  instances may, or may not, be owned by the same project.
 
 Domain Scope
 ------------
@@ -169,17 +170,17 @@ that must belong to a domain. Users and groups are good examples of this. The
 following is an example of how a domain-scoped token could be used against a
 service.
 
-Assume a domain exists called `Foo`. and it contains projects call `bar` and
-`baz`. Let's also assume both projects contain compute servers running a
-workload. If Alice is a domain administrator for `Foo`, she should be able to
-pass her domain-scoped token to nova and ask for a list of instances. If nova
-supports domain-scoped token, the response would contain all instances in
-projects `bar` and `baz`.
+Assume a domain exists called `Foo`, and it contains projects call `bar` and
+`baz`. Let's also assume both projects contain instances running a workload. If
+Alice is a domain administrator for `Foo`, she should be able to pass her
+domain-scoped token to nova and ask for a list of instances. If nova supports
+domain-scoped token, the response would contain all instances in projects `bar`
+and `baz`.
 
 Another example of using a domain-scoped token would be if Alice wanted to
-create a new project in domain `Foo`. When Alice sends a request for keystone
-to create a project, keystone should ensure the new project is created within
-the `Foo` domain, since that's the authorization associated to Alice's token.
+create a new project in domain `Foo`. When Alice sends a create project request
+to keystone, keystone should ensure the new project is created within the `Foo`
+domain, since that's the authorization associated to Alice's token.
 
 .. WARNING::
 
@@ -213,6 +214,216 @@ pending successful federated authentication, which they can use to query
 keystone for a list of projects they're allowed to access. Then they can
 exchange their unscoped token for a project-scoped token allowing them to
 perform actions within a particular project.
+
+Why are authorization scopes important?
+=======================================
+
+Flexibility for exposing your work
+----------------------------------
+
+OpenStack provides a rich set of APIs and functionality. We wrote some APIs
+with the intent of managing the deployment hardware, otherwise referred to as
+the deployment system. We wrote others to orchestrate resources in a project or
+a domain. Some APIs even operate on multiple levels. Since we use tokens to
+authorize a user's actions against a given service, they needed to handle
+different scope targets. For example, when a user asks for a new instance, we
+expect that instance to belong to a project; thus we expect a project relayed
+through the token's scope. This idea is fundamental in providing isolation, or
+tenancy, between projects in OpenStack.
+
+Initially, keystone only supported the ability to generate project-scoped
+tokens as a product of a user having a role assignment on a project.
+Consequently, services had no other choice but to require project-scoped tokens
+to protect almost all of their APIs, even if that wasn't an ideal option. Using
+project-scoped tokens to protect APIs they weren't designed to protect required
+operators to write custom policy checks to secure those APIs. An example
+showcases this more clearly.
+
+Let's assume an operator wanted to create a read-only role. Users with the
+`reader` role would be able to list things owned by the project, like
+instances, volumes, or snapshots. The operator also wants to have a read-only
+role for fellow operators or auditors, allowing them to view hypervisor
+information or endpoints and services. Reusing the existing 	`reader` role
+is difficult because users with that role on a project shouldn't see data about
+hypervisors, which would violate tenancy. Operators could create a new role
+called `operator` or `system-reader`, but then those users would still need to
+have that role assigned on a project to access deployment-level APIs. The
+concept of getting project-scoped tokens to access deployment-level resources
+raises the cognitive bar for users. Furthermore, this requires deployers to
+maintain all of this in policy files. You can quickly see how only using
+project-scope limits our ability to protect APIs without convoluted or
+expensive-to-maintain solutions.
+
+Each scope offered by keystone helps operators and users avoid these problems
+by giving you, the developer, multiple options for protecting APIs you write,
+instead of the one-size-fits-all approach we outgrew. You no longer have to
+hope an operator configures policy correctly so their users can consume the
+feature you wrote. The more options you have for protecting an API, the easier
+it is to provide default policies that expose more of your work to users
+safely.
+
+Less custom code
+----------------
+
+Another crucial benefit of authorization scopes offered by keystone is less
+custom code. For example, if you were writing an API to manage a
+deployment-level resource but only allowed to consume project-scoped tokens,
+how would you determine an operator from an end user? Would you attempt to
+standardize a role name? Would you look for a unique project in the token's
+scope? Would these checks be configurable in policy or hardcoded in your
+service?
+
+Chances are your solution might differ than that of another service. Having
+different scopes at your disposal, through keystone tokens, let's you build on
+a standard solution that other projects also consume, reducing the likelihood
+of accidentally developing inconsistencies between services. This commonality
+also gives us a similar set of terms we can use when we communicate with each
+other and users, allowing us to know what someone means by a `system-admin` and
+how that is different from a `project-admin`.
+
+How to I incorporate authorization scopes into a service?
+=========================================================
+
+Now that you understand the advantages of a shared approach to policy
+enforcement, the following section details the order of operations you can use
+to implement it in your service.
+
+Ruthless Testing
+----------------
+
+Policy enforcement implementations vary greatly across OpenStack services. Some
+enforce authorization near the top of the API while others push the logic
+deeper into the service. Differences and intricacies between services make
+testing imperative to adopt a uniform, consistent approach. Positive and
+negative protection testing helps us assert users with specific roles can, or
+cannot, access APIs. A protection test is similar to an API, or functional
+test, but purely focused on the authoritative outcome. In other words,
+protection testing is sufficient when we can assert that a user is or isn't
+allowed to do or see something. For example, a user with a role assignment on
+project `foo` shouldn't be able to list volumes in project `bar`. A user with a
+role on a project shouldn't be able to modify entries in the service catalog.
+Users with a `reader` role on the system, a domain, or a project shouldn't be
+able to make writable changes. You commonly see protection tests conclude with
+an assertion checking for a successful response code or an HTTP 403 Forbidden.
+
+If your service has minimal or non-existent protection coverage, you should
+start by introducing tests that exercise the current default policies, whatever
+those are. This step serves three major benefits.
+
+First, it puts us in the shoes of our users from an authorization perspective,
+allowing us to see the surface of the API a user has access to with a given
+assignment. This information helps audit the API to make sure the user has all
+the authorization to do what they `need
+<https://en.wikipedia.org/wiki/Principle_of_least_privilege>`_, but nothing
+more. We should note inconsistencies here as feedback that we should fix,
+especially since operators are probably attempting to fix these inconsistencies
+through customized policy today.
+
+Second, a collection of protection tests make sure we don't have unwanted
+security-related regressions. Imagine making a policy change that introduced a
+regression and allowed a user to access an API and data they aren't supposed to
+see. Conversely, imagine a patch that accidentally tightened restriction on an
+API that resulted in a broken workflow for users. Testing makes sure we catch
+cases like this early and handle them accordingly.
+
+Finally, protection tests help us use test-driven development to evolve policy
+enforcement. We can make a change and assert the behavior using tests locally,
+allowing us to be proactive and not reactive in our authoritative business
+logic.
+
+To get started, refer to the oslo.policy documentation that describes
+techniques for writing useful protection tests. This document also describes
+some historical context you might recognize in your service and how you should
+deal with it. You can also look at protection tests examples in other services,
+like `keystone
+<https://git.openstack.org/cgit/openstack/keystone/tree/keystone/tests/unit/protection/v3?id=77e50e49c5af37780b8b4cfe8721ba28e8a58183>`_
+or `cinder <https://review.openstack.org/#/c/602489/>`_. Note that these
+examples test the three default roles provided from keystone (reader, member,
+and admin) against the three scopes keystone offers, allowing for nine
+different personas without operators creating roles specific to their
+deployment. We recommend testing these personas where applicable in your
+service:
+
+* project reader
+* project member
+* project admin
+* system reader
+* system member
+* system admin
+* domain reader
+* domain member
+* domain admin
+
+Auditing the API
+----------------
+
+After going through the API and adding protection tests, you should have a good
+idea of how each API is or isn't exposed to end users. You might also have a
+list of areas where policies could be improved. For example, maybe you noticed
+an API in your service that consumes project-scoped tokens to protect a
+system-level resource. If your service has a bug tracker, you can use it to
+document these gaps. The following are some `bug reports
+<http://tinyurl.com/y5jc4bmo>`_ from when keystone audited its own API. For
+example, if your service has APIs for listing or getting resources, you could
+implement the reader role on that API.
+
+Setting scope types
+-------------------
+
+With testing in place and documented gaps, you can start refactoring. The first
+step is to start using oslo.policy for scope checking, which reduces complexity
+in your service by having a library do some lifting for you. For example, if
+you have an API that requires a project-scoped token, you can set the scope of
+the policy protecting that API accordingly. If a ``RuleDefault`` instance has
+scope associate to it, oslo.policy checks that it matches the scope of the
+token used to make the request. Note that this behavior is configurable,
+allowing operators to turn it on once all policies have a scope type and once
+operators have audited their assignments and educated their users on how to get
+the scope necessary to access an API. Once that happens, an operator can
+configure oslo.policy to reject requests made with the wrong scope. Otherwise,
+oslo.policy logs a warning for operators describing the mismatched scope.
+
+The oslo.policy library provides `documentation for setting scope
+<https://docs.openstack.org/oslo.policy/latest/user/usage.html#setting-scope>`_
+You can also see `keystone examples
+<https://review.openstack.org/#/q/status:merged+project:openstack/keystone+branch:master+topic:add-scope-types>`_
+or `placement examples <https://review.openstack.org/#/c/571201/1>`_ of setting
+scope types on policies.
+
+If you have difficulty deciding which scope an API or resource requires, try
+thinking about the intended user. Are they an operator managing the deployment?
+Then you might choose `system`. Are they an end user meant to operator only
+within a given project? Then `project` scope is likely what you need. Scopes
+aren't mutually exclusive. You may have APIs that require both. Keystone's user
+and project APIs are good examples of resources that need different scopes. If
+you still can't seem to find a solution, don't hesitate to send a note to the
+OpenStack Discuss mailing list tagged with [keystone] or ask in
+#openstack-keystone on IRC.
+
+Rewriting check string
+----------------------
+
+With oslo.policy able to check scope, you can start refactoring check strings
+where-ever necessary. For example, adding support for default roles or removing
+hardcoded ``is_admin: True`` checks. Remember that oslo.policy provides
+deprecation tooling that makes upgrades easier for operators. We encourage you
+to use the deprecation tooling when you change check strings. The following are
+a couple of `examples
+<https://review.openstack.org/#/q/(status:open+OR+status:merged)+project:openstack/keystone+branch:master+topic:implement-default-roles>`_
+that show how to build descriptive rule objects using all the default roles
+from keystone and consuming scopes.
+
+Communication
+-------------
+
+Communicating early and often is never a bad thing, especially when a change is
+going to impact operators. At this point, it's crucial to emphasize the changes
+you've made to policy enforcement in your service. Release notes are an
+excellent way to signal changes to operators. You can find examples when
+keystone implemented support for default roles. Additionally, you might have
+operators or users ask questions about the various scopes or what they mean.
+Don't hesitate to refer them to keystone's `scope documentation
+<https://docs.openstack.org/keystone/latest/admin/tokens-overview.html#authorization-scopes>`_.
 
 Auth Token middleware
 =====================
