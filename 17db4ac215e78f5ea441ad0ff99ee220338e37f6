@@ -95,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_8107d31d",
+        "filename": "keystone/access_rules/backends/json.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-02-24T22:48:11Z",
+      "side": 1,
+      "message": "Eh, just ignore my question, our url paths are not deep enough to justify: /*/users \nor /**/\u003cuuid\u003e",
+      "parentUuid": "9fdfeff1_01d5231b",
+      "range": {
+        "startLine": 93,
+        "startChar": 1,
+        "endLine": 97,
+        "endChar": 29
+      },
+      "revId": "17db4ac215e78f5ea441ad0ff99ee220338e37f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_6b10e550",
         "filename": "keystone/access_rules/backends/json.py",
         "patchSetId": 9
