@@ -22,6 +22,30 @@
       "revId": "b384d4b56e79f18547dd819561153cd3dd5eaa50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_617c2f20",
+        "filename": "keystone/access_rules/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-24T20:58:24Z",
+      "side": 1,
+      "message": "\"ValueError: dogpile.cache\u0027s default key creation function does not accept keyword arguments.\"",
+      "parentUuid": "9fdfeff1_0b50390a",
+      "range": {
+        "startLine": 34,
+        "startChar": 4,
+        "endLine": 34,
+        "endChar": 46
+      },
+      "revId": "b384d4b56e79f18547dd819561153cd3dd5eaa50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
