@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_01d5231b",
+        "filename": "keystone/access_rules/backends/json.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-24T20:34:22Z",
+      "side": 1,
+      "message": "By prefix-wildcard do you mean something like the way the paths component is matched as described here\n\nhttps://istio.io/docs/reference/config/authorization/istio.rbac.v1alpha1/#AccessRule\n\n? No, it doesn\u0027t do that.\n\nIs this not already in the docstring? Do you mean as part of the base driver instead of the json driver?",
+      "parentUuid": "9fdfeff1_af2edaa8",
+      "range": {
+        "startLine": 93,
+        "startChar": 1,
+        "endLine": 97,
+        "endChar": 29
+      },
+      "revId": "17db4ac215e78f5ea441ad0ff99ee220338e37f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_6b10e550",
         "filename": "keystone/access_rules/backends/json.py",
         "patchSetId": 9
