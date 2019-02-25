@@ -118,6 +118,30 @@
       "revId": "140a34b439d9aa60712a164b21622e721a60dfc2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_82f6ec8e",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-25T10:59:27Z",
+      "side": 0,
+      "message": "\u003e auth_context can\u0027t be None, it\u0027s always populated [0][1][2].\n\nFrom [0] it looks like that\u0027s actually not the case?\n\n[0] https://review.openstack.org/#/c/582635/6/keystone/api/_shared/EC2_S3_Resource.py",
+      "parentUuid": "3f79a3b5_e9968f4a",
+      "range": {
+        "startLine": 237,
+        "startChar": 8,
+        "endLine": 238,
+        "endChar": 35
+      },
+      "revId": "140a34b439d9aa60712a164b21622e721a60dfc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
