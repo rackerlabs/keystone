@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_cd52d812",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-25T20:26:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_425a6d83",
+      "revId": "21d81f46f88aa4cc1f42bd6b026af81c9c8af7e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_224f29bf",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2019-02-22T01:49:41Z",
       "side": 1,
       "message": "Link to examples of document/bugs would be useful",
+      "revId": "21d81f46f88aa4cc1f42bd6b026af81c9c8af7e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_ed579c00",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-25T20:26:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_224f29bf",
       "revId": "21d81f46f88aa4cc1f42bd6b026af81c9c8af7e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_cd6bb8b6",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-25T20:26:10Z",
+      "side": 1,
+      "message": "I added links to some patches where we\u0027ve changed check strings. If those aren\u0027t clear though, I can add some here.",
+      "parentUuid": "9fdfeff1_e24841b4",
+      "revId": "21d81f46f88aa4cc1f42bd6b026af81c9c8af7e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_02d9c5f2",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2019-02-22T01:49:41Z",
       "side": 1,
       "message": "It might just be me, but I\u0027d need it spelled out more that use of authorization scopes is a fundamental shift from the legacy way of doing things. That is, instead of an API that adjusts its behavior based on a fine-grained/complex custom policy.json configured by an operator, we have an API that adjusts its behavior based on the token scope it was called with and simpler or non-existent custom policy.json.\n\nAnd that end users need to be educated about how to set up roles with scopes and request different token scopes in Keystone before calling our API.",
+      "revId": "21d81f46f88aa4cc1f42bd6b026af81c9c8af7e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_ad3d14bc",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-25T20:26:10Z",
+      "side": 1,
+      "message": "Attempted to address this in the latest patch set. Let me know if you still have concerns, though.",
+      "parentUuid": "9fdfeff1_02d9c5f2",
       "revId": "21d81f46f88aa4cc1f42bd6b026af81c9c8af7e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
