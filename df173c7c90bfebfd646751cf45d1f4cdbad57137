@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_02899c73",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1013,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-25T10:41:43Z",
+      "side": 1,
+      "message": "Even if it\u0027s your own domain ID?",
+      "revId": "df173c7c90bfebfd646751cf45d1f4cdbad57137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_22e2a031",
+        "filename": "keystone/tests/unit/test_limits.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1047,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-25T10:41:43Z",
+      "side": 1,
+      "message": "Not sure how this is related to the rest of the change?",
+      "revId": "df173c7c90bfebfd646751cf45d1f4cdbad57137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
