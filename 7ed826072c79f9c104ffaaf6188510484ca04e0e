@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_a121a5b6",
+        "filename": "keystone/access_rules_config/backends/json.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-02-25T17:58:57Z",
+      "side": 1,
+      "message": "Should this set an empty dict? Is this intended to be an implicit None? I prefer explicit None",
+      "range": {
+        "startLine": 98,
+        "startChar": 11,
+        "endLine": 98,
+        "endChar": 18
+      },
+      "revId": "7ed826072c79f9c104ffaaf6188510484ca04e0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
