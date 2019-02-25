@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_cdc73898",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-25T20:56:45Z",
+      "side": 1,
+      "message": "nit: function,",
+      "range": {
+        "startLine": 299,
+        "startChar": 64,
+        "endLine": 299,
+        "endChar": 74
+      },
+      "revId": "183c11ba62088d726496fa3d57a10bd6681f9eb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_edcc7cbc",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-25T20:56:45Z",
+      "side": 1,
+      "message": "remove ,",
+      "range": {
+        "startLine": 300,
+        "startChar": 0,
+        "endLine": 300,
+        "endChar": 4
+      },
+      "revId": "183c11ba62088d726496fa3d57a10bd6681f9eb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_2d94c436",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-25T20:56:45Z",
+      "side": 1,
+      "message": "an instance of RuleDefault*",
+      "range": {
+        "startLine": 377,
+        "startChar": 48,
+        "endLine": 377,
+        "endChar": 49
+      },
+      "revId": "183c11ba62088d726496fa3d57a10bd6681f9eb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_6d708c41",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-25T20:56:45Z",
+      "side": 1,
+      "message": "associated",
+      "range": {
+        "startLine": 378,
+        "startChar": 6,
+        "endLine": 378,
+        "endChar": 15
+      },
+      "revId": "183c11ba62088d726496fa3d57a10bd6681f9eb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
