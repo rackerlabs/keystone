@@ -22,6 +22,30 @@
       "revId": "ace45841943ed6b698b8a5aea35a80c119c3cae3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_745ff40e",
+        "filename": "keystone/common/policies/role_assignment.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-25T22:07:39Z",
+      "side": 0,
+      "message": "No - I think we should keep this around until we have all the scopes supported with this API.\n\nLike many of the other patches implementing support for system-scope and default roles, this is limited to targeting system reader.\n\nI can revert this when I squash the subsequent patch into this one.",
+      "parentUuid": "9fdfeff1_26309407",
+      "range": {
+        "startLine": 21,
+        "startChar": 28,
+        "endLine": 22,
+        "endChar": 43
+      },
+      "revId": "ace45841943ed6b698b8a5aea35a80c119c3cae3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
