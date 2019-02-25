@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_82910c55",
+        "filename": "releasenotes/notes/bug-1806762-daed3e27f58f0f6d.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-25T10:50:41Z",
+      "side": 1,
+      "message": "This is a little inconsistent with your other release notes and doesn\u0027t include the fixes tag, see e.g. https://review.openstack.org/#/c/619282/5/releasenotes/notes/bug-1804462-59ad43f98242dea0.yaml",
+      "revId": "b15429364340c53190dee208cde1a124186c279d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
