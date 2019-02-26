@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_c714dd43",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-26T20:14:30Z",
+      "side": 1,
+      "message": "We should add a reference to https://bugs.launchpad.net/keystone/+bug/1816927\n\n  Closes-Bug: 1816927\n\nEven if it is a documentation fix, people maintaining their own distribution mechanisms will need to account for this. The reference to the details you provided in the bug report would be useful for them.",
+      "revId": "5fb1c8d1e210340698a48950581b00258c81c8b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
