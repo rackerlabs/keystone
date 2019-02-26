@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_73894173",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-26T09:35:16Z",
+      "side": 1,
+      "message": "I\u0027m still uneasy about this because the s3/ec2 auth shows this isn\u0027t true.\n\nOur documentation gives a specific meaning to the term `auth_context`[1] and I feel like creating one on the fly with just a user_id isn\u0027t really fulfilling our own definition.\n\n[1] https://docs.openstack.org/keystone/latest/contributor/auth-plugins.html#how-to-implement-an-authentication-plugin",
+      "range": {
+        "startLine": 11,
+        "startChar": 7,
+        "endLine": 12,
+        "endChar": 42
+      },
+      "revId": "257ca4b5a63b09b7aee0da85817ce8abd42c6e31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
