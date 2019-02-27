@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_9a25b1c4",
+        "filename": "keystone/access_rules_config/__init__.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-27T17:01:12Z",
+      "side": 1,
+      "message": "Morgan was telling me in a separate change I was making that we should stop using this pattern.\n\nThat could be a separate refactor though.",
+      "revId": "f9dce46c26ed4fa434660e24ebbee8bd4626d442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_7affad01",
+        "filename": "keystone/access_rules_config/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-27T17:01:12Z",
+      "side": 1,
+      "message": "This is a pre-optimization, but we could remove the kwarg and have two distinct methods. One for listing all access rules and one for filtering based on a service, which should allow us to cache both.\n\nWe could wire up the API layer to call the right one later on.",
+      "revId": "f9dce46c26ed4fa434660e24ebbee8bd4626d442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
