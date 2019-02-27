@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_c66fe48f",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-27T19:17:17Z",
+      "side": 1,
+      "message": "We can test that we get an example if we supply an access rule that hasn\u0027t been configured, too.",
+      "revId": "c0cfb0a5b4db3d78f91f3b07583fa5c0e1b09a7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
