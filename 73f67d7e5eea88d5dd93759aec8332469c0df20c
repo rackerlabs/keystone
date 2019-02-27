@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_1a4d4199",
+        "filename": "keystone/tests/unit/access_rules_config/backends/test_json.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-27T16:57:32Z",
+      "side": 1,
+      "message": "We could add a test to make sure we error out when parsing a bad json file. I attempted to do this manually, but couldn\u0027t get it to work (probably because the manager isn\u0027t wired up yet)?\n\nI haven\u0027t gotten to the other patches in the series yet, so I\u0027m not sure if you\u0027ve added it in a subsequent patch.",
+      "revId": "73f67d7e5eea88d5dd93759aec8332469c0df20c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
