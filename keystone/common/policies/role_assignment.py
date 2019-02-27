@@ -45,7 +45,7 @@ role_assignment_policies = [
         # make keystone smart enough to handle those cases in code, we can add
         # 'project' to the scope_types below. For now, this should be a system
         # administrator only operation to maintain backwards compatibility.
-        scope_types=['system', 'domain'],
+        scope_types=['system', 'domain', 'project'],
         description='List role assignments.',
         operations=[{'path': '/v3/role_assignments',
                      'method': 'GET'},
