@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_1738bc9d",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 938,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-27T16:04:12Z",
+      "side": 1,
+      "message": "I can see these tests being useful for project administrators, but I\u0027m on the fence about users with the `member` or `reader` roles. Thoughts?",
+      "revId": "ae7959db602e0830a08af8f06b184bb73eb1fb0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
