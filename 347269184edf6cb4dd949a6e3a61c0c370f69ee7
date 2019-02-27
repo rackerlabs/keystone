@@ -34,6 +34,24 @@
       "revId": "347269184edf6cb4dd949a6e3a61c0c370f69ee7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_6335c5f6",
+        "filename": "keystone/api/limits.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-27T22:28:57Z",
+      "side": 0,
+      "message": "got it",
+      "parentUuid": "9fdfeff1_f4b1a402",
+      "revId": "347269184edf6cb4dd949a6e3a61c0c370f69ee7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
