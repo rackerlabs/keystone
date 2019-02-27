@@ -908,6 +908,36 @@ class _DomainUserTests(object):
             self.assertEqual(0, len(r.json['role_assignments']))
 
 
+class _ProjectUserTests(object):
+
+    def test_user_can_list_all_assignments_in_their_project(self):
+        pass
+
+    def test_user_can_filter_role_assignments_by_their_project(self):
+        pass
+
+    def test_user_can_filter_role_assignments_by_user_of_project(self):
+        pass
+
+    def test_user_can_filter_role_assignments_by_group_of_project(self):
+        pass
+
+    def test_user_cannot_filter_role_assignments_by_system(self):
+        pass
+
+    def test_user_cannot_filter_role_assignments_by_domain(self):
+        pass
+
+    def test_user_cannot_filter_role_assignments_by_other_project(self):
+        pass
+
+    def test_user_cannot_filter_role_assignments_by_other_project_user(self):
+        pass
+
+    def test_user_cannot_filter_role_assignments_by_other_project_group(self):
+        pass
+
+
 class SystemReaderTests(base_classes.TestCaseWithBootstrap,
                         common_auth.AuthTestMixin,
                         _AssignmentTestUtilities,
