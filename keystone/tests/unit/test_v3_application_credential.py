@@ -253,6 +253,62 @@ class ApplicationCredentialTestCase(test_v3.RestfulTestCase):
                           json=app_cred_body,
                           expected_status_code=http_client.BAD_REQUEST)
 
+    # TODO(cmurphy): add tests for system roles?
+    def test_create_app_cred_with_access_rules_with_project_roles(self):
+        rules_file = '%s/access_rules_roles.json' % unit.TESTCONF
+        self.useFixture(access_rules_config.AccessRulesConfig(
+            self.config_fixture, rules_file=rules_file))
+        self.load_backends()
+        user = unit.create_user(PROVIDERS.identity_api,
+                                domain_id=test_v3.DEFAULT_DOMAIN_ID)
+        project = unit.new_project_ref(domain_id=test_v3.DEFAULT_DOMAIN_ID)
+        PROVIDERS.resource_api.create_project(project['id'], project)
+        reader_role = unit.new_role_ref(name='reader')
+        PROVIDERS.role_api.create_role(reader_role['id'], reader_role)
+        PROVIDERS.assignment_api.create_grant(
+            reader_role['id'],
+            user_id=user['id'],
+            project_id=project['id']
+        )
+        auth = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            project_id=project['id']
+        )
+        access_rules = [
+            {
+                'path': '/v2.1/servers',
+                'method': 'POST',
+                'service': 'compute',
+            }
+        ]
+        app_cred_body = self._app_cred_body(roles=[{'id': reader_role['id']}],
+                                            access_rules=access_rules)
+        with self.test_client() as c:
+            token = self.get_requested_token(auth)
+            resp = c.post('/v3/users/%s/application_credentials' % user['id'],
+                          headers={'X-Auth-Token': token},
+                          json=app_cred_body,
+                          expected_status_code=http_client.BAD_REQUEST)
+
+        member_role = unit.new_role_ref(name='member')
+        PROVIDERS.role_api.create_role(member_role['id'], member_role)
+        PROVIDERS.assignment_api.create_grant(
+            member_role['id'],
+            user_id=user['id'],
+            project_id=project['id']
+        )
+        app_cred_body = self._app_cred_body(roles=[{'id': member_role['id']}],
+                                            access_rules=access_rules)
+        with self.test_client() as c:
+            token = self.get_requested_token(auth)
+            resp = c.post('/v3/users/%s/application_credentials' % user['id'],
+                          headers={'X-Auth-Token': token},
+                          json=app_cred_body,
+                          expected_status_code=http_client.CREATED)
+            self.assertEqual(access_rules,
+                             resp.json['application_credential']['access_rules'])
+
     def test_list_application_credentials(self):
         with self.test_client() as c:
             token = self.get_scoped_token()

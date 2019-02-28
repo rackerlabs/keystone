@@ -1,0 +1,51 @@
+{
+    "identity": [
+        {
+            "path": "/v3/groups",
+            "method": "GET",
+            "roles": [
+                "reader",
+                "admin"
+            ]
+        },
+        {
+            "path": "/v3/groups",
+            "method": "POST",
+            "roles": [
+                "admin"
+            ]
+        },
+        {
+            "path": "/v3/groups/*",
+            "method": "GET",
+            "roles": [
+                "reader",
+                "admin"
+            ]
+        }
+    ],
+    "compute": [
+        {
+            "path": "/v2.1/servers",
+            "method": "POST",
+            "roles": [
+                "member"
+            ]
+        },
+        {
+            "path": "/v2.1/servers/*",
+            "method": "GET",
+            "roles": [
+                "member",
+                "reader"
+            ]
+        },
+        {
+            "path": "/v2.1/servers/*",
+            "method": "DELETE",
+            "roles": [
+                "admin"
+            ]
+        }
+    ]
+}

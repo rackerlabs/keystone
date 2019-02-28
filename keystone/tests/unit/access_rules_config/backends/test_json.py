@@ -82,3 +82,34 @@ class JSONDriverTestCase(unit.TestCase):
         result = self.driver.check_access_rule('compute', '/v2.1/servers',
                                                'GET')
         self.assertTrue(result)
+
+    def test_check_access_rule_for_empty_required_roles(self):
+        roles = [{'id': 'abc123'}]
+        self.assertTrue(self.driver.check_access_rule('identity', '/v3/users',
+                                                      'GET', roles=roles))
+
+
+class JSONDriverRulesWithRolesTestCase(unit.TestCase):
+    """Tests for validating access rules config with required roles."""
+
+    def setUp(self):
+        super(JSONDriverRulesWithRolesTestCase, self).setUp()
+        rules_file = '%s/access_rules_roles.json' % unit.TESTCONF
+        self.useFixture(access_rules_config.AccessRulesConfig(
+            self.config_fixture, rules_file=rules_file))
+        self.driver = json_driver.AccessRulesConfig()
+
+    def test_check_access_rule_has_one_required_role(self):
+        roles = [{'name': 'reader'}]
+        self.assertTrue(self.driver.check_access_rule('identity', '/v3/groups',
+                                                      'GET', roles=roles))
+
+    def test_check_access_rule_has_all_required_roles(self):
+        roles = [{'name': 'admin'}, {'name': 'reader'}]
+        self.assertTrue(self.driver.check_access_rule('identity', '/v3/groups',
+                                                      'GET', roles=roles))
+
+    def test_check_access_rule_has_no_required_roles(self):
+        roles = [{'name': 'member'}]
+        self.assertFalse(self.driver.check_access_rule('identity', '/v3/groups',
+                                                       'GET', roles=roles))
