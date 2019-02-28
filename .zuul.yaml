@@ -46,7 +46,7 @@
         keystone: git://git.openstack.org/openstack/keystone
 
 - job:
-    name: keystone-dsvm-py35-functional-federation
+    name: keystone-dsvm-py36-functional-federation
     parent: keystone-dsvm-functional-federation
     vars:
       devstack_localrc:
@@ -130,7 +130,6 @@
       - openstack-cover-jobs
       - openstack-lower-constraints-jobs
       - openstack-python-jobs
-      - openstack-python35-jobs
       - openstack-python36-jobs
       - openstack-python37-jobs
       - publish-openstack-docs-pti
@@ -154,7 +153,7 @@
         - keystone-dsvm-functional-federation:
             voting: false
             irrelevant-files: *irrelevant-files
-        - keystone-dsvm-py35-functional-federation:
+        - keystone-dsvm-py36-functional-federation:
             voting: false
             irrelevant-files: *irrelevant-files
         - keystoneclient-devstack-functional:
