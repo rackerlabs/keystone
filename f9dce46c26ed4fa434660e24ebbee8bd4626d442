@@ -87,6 +87,24 @@
       "revId": "f9dce46c26ed4fa434660e24ebbee8bd4626d442",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_41198777",
+        "filename": "keystone/access_rules_config/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-28T14:56:55Z",
+      "side": 1,
+      "message": "++\n\nI saw your patch for kwargs support *right* after I looked at this series. Thanks for the update!",
+      "parentUuid": "9fdfeff1_b9dd1a71",
+      "revId": "f9dce46c26ed4fa434660e24ebbee8bd4626d442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
