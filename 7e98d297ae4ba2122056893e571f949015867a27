@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_6395b83f",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-28T10:46:43Z",
+      "side": 1,
+      "message": "I think it would be safer to explicitly check domain_id instead of relying on !parent_id",
+      "range": {
+        "startLine": 77,
+        "startChar": 8,
+        "endLine": 77,
+        "endChar": 12
+      },
+      "revId": "7e98d297ae4ba2122056893e571f949015867a27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_03d70c25",
+        "filename": "keystone/limit/models/strict_two_level.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-28T10:46:43Z",
+      "side": 1,
+      "message": "(nit) a lambda this long should probably be a named function imo",
+      "range": {
+        "startLine": 111,
+        "startChar": 24,
+        "endLine": 111,
+        "endChar": 33
+      },
+      "revId": "7e98d297ae4ba2122056893e571f949015867a27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
