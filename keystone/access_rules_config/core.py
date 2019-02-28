@@ -63,12 +63,16 @@ class Manager(manager.Manager):
         return self.driver.list_access_rules_config(service)
 
     @MEMOIZE
-    def check_access_rule(self, service, request_path, request_method):
+    def check_access_rule(self, service, request_path, request_method,
+                          roles=[]):
         """Check access rule.
 
         :param str service: service type of rule to check
         :param str request_path: endpoint path to check
         :param str request_method: API HTTP method to check
+        :param list roles: list of role refs from the token or application
+                           credential, if a role is specified in the access
+                           rule config it must match one of the provided roles
 
         :returns: boolean indicating whether the rule matches one of the
                   configured access rules
@@ -77,4 +81,4 @@ class Manager(manager.Manager):
         if CONF.access_rules_config.permissive:
             return True
         return self.driver.check_access_rule(service, request_path,
-                                             request_method)
+                                             request_method, roles)

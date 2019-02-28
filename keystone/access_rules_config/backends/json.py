@@ -35,30 +35,36 @@ class AccessRulesConfig(base.AccessRulesConfigDriverBase):
             "identity": [
                 {
                     "path": "/v3/users",
-                    "method": "GET"
+                    "method": "GET",
+                    "roles": ["admin"]
                 },
                 {
                     "path": "/v3/users",
-                    "method": "POST"
+                    "method": "POST",
+                    "roles": ["admin"]
                 },
                 {
                     "path": "/v3/users/*",
-                    "method": "GET"
+                    "method": "GET",
+                    "roles": ["admin"]
                 },
                 {
                     "path": "/v3/users/*",
-                    "method": "PATCH"
+                    "method": "PATCH",
+                    "roles": ["admin"]
                 },
                 {
                     "path": "/v3/users/*",
-                    "method": "DELETE"
+                    "method": "DELETE",
+                    "roles": ["admin"]
                 }
                 ...
             ],
             "image": [
                 {
                     "path": "/v2/images",
-                    "method": "GET"
+                    "method": "GET",
+                    "roles": ["reader"]
                 },
                 ...
             ],
@@ -71,10 +77,12 @@ class AccessRulesConfig(base.AccessRulesConfigDriverBase):
             "identity": {
                 "GET": [
                     {
-                        "path": "/v3/users"
+                        "path": "/v3/users",
+                        "roles": ["admin"]
                     },
                     {
-                        "path": "/v3/users/*"
+                        "path": "/v3/users/*",
+                        "roles": ["admin"]
                     }
                     ...
                 ],
@@ -115,7 +123,7 @@ class AccessRulesConfig(base.AccessRulesConfigDriverBase):
                 try:
                     self.access_rules[service].setdefault(
                         rule['method'], []).append({
-                            'path': rule['path']
+                            k: rule[k] for k in rule if k != 'method'
                         })
                 except KeyError as e:
                     raise exception.AccessRulesConfigFileError(error=e)
@@ -143,6 +151,17 @@ class AccessRulesConfig(base.AccessRulesConfigDriverBase):
         regex = re.compile(path_regex)
         return regex.match(request_path)
 
+    def _role_matches(self, user_roles, required_roles):
+        # no role explicitly defined in the configured access rule means
+        # any are allowed
+        if not required_roles:
+            return True
+        # otherwise, one of the roles on the application credential (which
+        # may be either explicitly provided by the user or inferred from the
+        # token) must match one of the roles on the access rule
+        role_names = [r['name'] for r in user_roles]
+        return any(r in role_names for r in required_roles)
+
     def list_access_rules_config(self, service=None):
         """List access rules config in human readable form."""
         if service:
@@ -151,12 +170,14 @@ class AccessRulesConfig(base.AccessRulesConfigDriverBase):
             return {service: self.access_rules_json[service]}
         return self.access_rules_json
 
-    def check_access_rule(self, service, request_path, request_method):
+    def check_access_rule(self, service, request_path, request_method,
+                          roles=[]):
         """Check if an access rule exists in config."""
         if (service in self.access_rules
                 and request_method in self.access_rules[service]):
             rules = self.access_rules[service][request_method]
             for rule in rules:
-                if self._path_matches(request_path, rule['path']):
+                if (self._role_matches(roles, rule.get('roles')) and
+                        self._path_matches(request_path, rule['path'])):
                     return True
         return False
