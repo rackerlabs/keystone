@@ -517,11 +517,15 @@ class UserAppCredListCreateResource(ks_flask.ResourceBase):
         return secret
 
     @staticmethod
-    def _normalize_role_list(app_cred_roles):
+    def _normalize_role_list(app_cred_roles, user_id, project_id):
         roles = []
         for role in app_cred_roles:
             if role.get('id'):
-                roles.append(role)
+                try:
+                    roles.append(PROVIDERS.role_api.get_role(role['id']))
+                except ks_exception.RoleNotFound as e:
+                    raise ks_exception.ApplicationCredentialValidationError(
+                        detail=str(e))
             else:
                 roles.append(PROVIDERS.role_api.get_unique_role_by_name(
                     role['name']))
@@ -563,7 +567,7 @@ class UserAppCredListCreateResource(ks_flask.ResourceBase):
         app_cred_data['user_id'] = user_id
         app_cred_data['project_id'] = project_id
         app_cred_data['roles'] = self._normalize_role_list(
-            app_cred_data.get('roles', token.roles))
+            app_cred_data.get('roles', token.roles), user_id, project_id)
         if app_cred_data.get('expires_at'):
             app_cred_data['expires_at'] = utils.parse_expiration_date(
                 app_cred_data['expires_at'])

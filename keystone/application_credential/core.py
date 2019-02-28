@@ -114,12 +114,13 @@ class Manager(manager.Manager):
             app_cred_ref['roles'])
         return app_cred_ref
 
-    def _validate_access_rules(self, access_rules):
+    def _validate_access_rules(self, access_rules, roles):
         for access_rule in access_rules:
             valid = PROVIDERS.access_rules_config_api.check_access_rule(
                 access_rule['service'],
                 access_rule['path'],
-                access_rule['method'])
+                access_rule['method'],
+                roles)
             if not valid:
                 raise exception.AccessRuleNotAllowed
 
@@ -141,7 +142,7 @@ class Manager(manager.Manager):
         self._assert_limit_not_exceeded(user_id)
         self._require_user_has_role_in_project(roles, user_id, project_id)
         if access_rules:  # None or []
-            self._validate_access_rules(access_rules)
+            self._validate_access_rules(access_rules, roles)
         unhashed_secret = application_credential['secret']
         ref = self.driver.create_application_credential(
             application_credential, roles, access_rules)
