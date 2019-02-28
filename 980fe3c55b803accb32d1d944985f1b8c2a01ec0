@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_7d3b3e9b",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-28T14:52:41Z",
+      "side": 0,
+      "message": "I think we still want to keep this test here so that we ensure system users can actually filter by assignments by domain.",
+      "revId": "980fe3c55b803accb32d1d944985f1b8c2a01ec0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_fd464e21",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 477,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-28T14:52:41Z",
+      "side": 0,
+      "message": "Same comment here as above.",
+      "revId": "980fe3c55b803accb32d1d944985f1b8c2a01ec0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
