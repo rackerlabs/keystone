@@ -16,6 +16,24 @@
       "revId": "4ea23fea3d6b54823ffc7540dff107e1e833c16f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_6977dfd5",
+        "filename": "releasenotes/notes/bug-1750673-664a5c0792022b31.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-02-28T06:36:50Z",
+      "side": 1,
+      "message": "Sure lance.",
+      "parentUuid": "9fdfeff1_1da0f2f2",
+      "revId": "4ea23fea3d6b54823ffc7540dff107e1e833c16f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
