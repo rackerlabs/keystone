@@ -34,6 +34,24 @@
       "revId": "7c10155759f3d57d89c0534aad5e7ed7d87367dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_3341343a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-02-28T16:14:34Z",
+      "side": 1,
+      "message": "I can\u0027t seem to find a commit in oslo.cache that is specific to this. But I did find on uncapping dogpile. I wonder if we get this functionality via dogpile?\n\nMorgan probably knows...\n\nhttps://dogpilecache.sqlalchemy.org/en/latest/changelog.html#change-0.7.1-bug",
+      "parentUuid": "9fdfeff1_c137b7fd",
+      "revId": "7c10155759f3d57d89c0534aad5e7ed7d87367dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
