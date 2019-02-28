@@ -1,0 +1,302 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_1c3be29b",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-28T16:23:15Z",
+      "side": 1,
+      "message": "(nit) tokens",
+      "range": {
+        "startLine": 177,
+        "startChar": 14,
+        "endLine": 177,
+        "endChar": 19
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_bc5656cd",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-28T16:23:15Z",
+      "side": 1,
+      "message": "wonder if this should be quoted or backticked somehow?",
+      "range": {
+        "startLine": 181,
+        "startChar": 57,
+        "endLine": 181,
+        "endChar": 71
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_dcd0faca",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-28T16:23:15Z",
+      "side": 1,
+      "message": "maybe also hammer in the point by saying something like \"which makes no sense for abstractions like hypervisors that cannot belong to any project\"",
+      "range": {
+        "startLine": 250,
+        "startChar": 29,
+        "endLine": 252,
+        "endChar": 34
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_376041cf",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-28T16:23:15Z",
+      "side": 1,
+      "message": "maybe instead of this sentence, \"Chances are, different services will come up with different, inconsistent solutions for the same problem\" to make the point that being different is bad and not necessary.",
+      "range": {
+        "startLine": 276,
+        "startChar": 12,
+        "endLine": 276,
+        "endChar": 25
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_5ca3aa43",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-28T16:23:15Z",
+      "side": 1,
+      "message": "*from",
+      "range": {
+        "startLine": 276,
+        "startChar": 39,
+        "endLine": 276,
+        "endChar": 43
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_d7e695e7",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-28T16:23:15Z",
+      "side": 1,
+      "message": "For readability of the raw RST maybe split the URLs out to the end of the section instead of doing this embedded-style",
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_7756c95e",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-28T16:23:15Z",
+      "side": 1,
+      "message": "This makes me think we should pull out everything we added to keystone/tests/unit/protection into a testing library so that everyone can benefit from that pattern",
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_7777a9d5",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-28T16:23:15Z",
+      "side": 1,
+      "message": "or an API that only requires read-level access - and it would be good to mention somewhere in here how admin implies member implies reader so that people understand it\u0027s okay to have a policy use the reader role",
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_57a38543",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-28T16:23:15Z",
+      "side": 1,
+      "message": "Doesn\u0027t make sense to say \"the following\" and then a link to an external reference in the same sentence, \"the following\" implies there\u0027s going to be a list spelled out in the next line or paragraph",
+      "range": {
+        "startLine": 365,
+        "startChar": 21,
+        "endLine": 365,
+        "endChar": 43
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_17997d1d",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-28T16:23:15Z",
+      "side": 1,
+      "message": "maybe just https://bugs.launchpad.net/keystone/?field.tag\u003dsystem-scope",
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_7356dcd0",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-28T16:23:15Z",
+      "side": 1,
+      "message": "Maybe recommend what they need to do in order to accomodate a policy rule that has two scopes - since it won\u0027t be handled automatically by oslo.policy, the different behaviors need to be handled in the API code.",
+      "range": {
+        "startLine": 397,
+        "startChar": 27,
+        "endLine": 398,
+        "endChar": 75
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_f3696c8b",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-28T16:23:15Z",
+      "side": 1,
+      "message": "add a link",
+      "range": {
+        "startLine": 400,
+        "startChar": 0,
+        "endLine": 400,
+        "endChar": 30
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_d331c8a3",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-28T16:23:15Z",
+      "side": 1,
+      "message": "make it clear how it works - it\u0027s an OR operation and so it causes policies to be more permissive",
+      "range": {
+        "startLine": 409,
+        "startChar": 0,
+        "endLine": 409,
+        "endChar": 60
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_1313d002",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-28T16:23:15Z",
+      "side": 1,
+      "message": "again weird use of \"the following\"",
+      "range": {
+        "startLine": 410,
+        "startChar": 62,
+        "endLine": 410,
+        "endChar": 75
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
