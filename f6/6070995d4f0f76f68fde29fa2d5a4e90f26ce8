@@ -1,0 +1,9 @@
+Code-Review+2: ayoung <ayoung@redhat.com>
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Workflow+1: Colleen Murphy <colleen@gazlene.net>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 28 Feb 2019 13:08:10 +0000
+Reviewed-on: https://review.openstack.org/625733
+Project: openstack/keystone
+Branch: refs/heads/master
