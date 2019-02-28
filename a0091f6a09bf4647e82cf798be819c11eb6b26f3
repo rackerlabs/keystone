@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_4342f43c",
+        "filename": "setup.cfg",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-02-28T10:34:57Z",
+      "side": 0,
+      "message": "Should we go ahead and add 3.6 and 3.7 here?",
+      "revId": "a0091f6a09bf4647e82cf798be819c11eb6b26f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
