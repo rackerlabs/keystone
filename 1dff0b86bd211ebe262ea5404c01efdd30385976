@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_335b5586",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-01T19:11:20Z",
+      "side": 1,
+      "message": "This test was relying on the fact that we were duplicating policies in two different places. When it loaded the policy.v3cloudsample.json policy file, it never loaded the defaults. I noticed this when it randomly failed after removing a policy that was duplicated in both locations.\n\nLet\u0027s make sure we load the default rules and just use what\u0027s in ``policy.v3cloudsample.json`` as overrides until we get those policies fixed.",
+      "revId": "1dff0b86bd211ebe262ea5404c01efdd30385976",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
