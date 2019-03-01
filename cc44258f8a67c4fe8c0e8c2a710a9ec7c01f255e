@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_195bef21",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-01T16:39:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_1c3be29b",
+      "range": {
+        "startLine": 177,
+        "startChar": 14,
+        "endLine": 177,
+        "endChar": 19
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_bc5656cd",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 4
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_d987a760",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-01T16:39:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_bc5656cd",
+      "range": {
+        "startLine": 181,
+        "startChar": 57,
+        "endLine": 181,
+        "endChar": 71
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_dcd0faca",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 4
@@ -59,6 +107,30 @@
       "writtenOn": "2019-02-28T16:23:15Z",
       "side": 1,
       "message": "maybe also hammer in the point by saying something like \"which makes no sense for abstractions like hypervisors that cannot belong to any project\"",
+      "range": {
+        "startLine": 250,
+        "startChar": 29,
+        "endLine": 252,
+        "endChar": 34
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_9c5b4d84",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-01T16:39:32Z",
+      "side": 1,
+      "message": "Stolen, thanks!",
+      "parentUuid": "9fdfeff1_dcd0faca",
       "range": {
         "startLine": 250,
         "startChar": 29,
@@ -117,6 +189,54 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_7c9b0916",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-01T16:39:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_376041cf",
+      "range": {
+        "startLine": 276,
+        "startChar": 12,
+        "endLine": 276,
+        "endChar": 25
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_822bd17f",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-01T16:39:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_5ca3aa43",
+      "range": {
+        "startLine": 276,
+        "startChar": 39,
+        "endLine": 276,
+        "endChar": 43
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_5690664e",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 4
@@ -128,6 +248,30 @@
       "writtenOn": "2019-02-28T16:56:37Z",
       "side": 1,
       "message": "lets",
+      "range": {
+        "startLine": 277,
+        "startChar": 60,
+        "endLine": 277,
+        "endChar": 65
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_9c9eed03",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-01T16:39:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_5690664e",
       "range": {
         "startLine": 277,
         "startChar": 60,
@@ -157,6 +301,24 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_240b15d5",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-01T16:39:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_d7e695e7",
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_16bdfeaf",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 4
@@ -168,6 +330,30 @@
       "writtenOn": "2019-02-28T16:56:37Z",
       "side": 1,
       "message": "link?",
+      "range": {
+        "startLine": 334,
+        "startChar": 29,
+        "endLine": 334,
+        "endChar": 54
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_84d68126",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-01T16:39:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_16bdfeaf",
       "range": {
         "startLine": 334,
         "startChar": 29,
@@ -197,6 +383,24 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_c4a3299a",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-01T16:39:32Z",
+      "side": 1,
+      "message": "Yeah - I agree, but I\u0027ve come up short with ideas on how to do that.\n\nIf people follow the template we use in keystone, they\u0027ll be writing integration tests since the APIs are called with a token. We have the luxury of using tokens in protection tests without requiring another service.\n\nWe talked about this a little bit with Patrole in Denver, but we never really came to a conclusion on how we can re-use things sanely.\n\nI\u0027m hoping that people are more familiar with the tests now that we\u0027re merging more of the patches (not only in keystone, but in other services, too). Maybe it\u0027s time to revisit this and see if we can find a better solution for re-use than developer documentation in oslo.policy.",
+      "parentUuid": "9fdfeff1_7756c95e",
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_7777a9d5",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 4
@@ -208,6 +412,24 @@
       "writtenOn": "2019-02-28T16:23:15Z",
       "side": 1,
       "message": "or an API that only requires read-level access - and it would be good to mention somewhere in here how admin implies member implies reader so that people understand it\u0027s okay to have a policy use the reader role",
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_44ff3965",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-01T16:39:32Z",
+      "side": 1,
+      "message": "++\n\nI completely glossed over that detail but it\u0027s totally relevant. I attempted to give this its own section of the guide above, explaining why the relationship between those three roles are beneficial and how it helps us write more concise policies.\n\nLet me know if it contains the detail you\u0027re looking for.",
+      "parentUuid": "9fdfeff1_7777a9d5",
       "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -237,6 +459,30 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_045b7153",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-01T16:39:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_57a38543",
+      "range": {
+        "startLine": 365,
+        "startChar": 21,
+        "endLine": 365,
+        "endChar": 43
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_17997d1d",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 4
@@ -254,6 +500,24 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_a48e25ce",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-01T16:39:32Z",
+      "side": 1,
+      "message": "That was my original thought, but that query defaults to only returns bugs that are \"open\" and excludes bugs with fixes committed or released. In the event we fix everything in keystone, I\u0027d like the query to return the same examples, so people can reference those bug reports in the future.",
+      "parentUuid": "9fdfeff1_17997d1d",
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_f6d63af2",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 4
@@ -265,6 +529,30 @@
       "writtenOn": "2019-02-28T16:56:37Z",
       "side": 1,
       "message": "maybe a link to the oslo.policy doc that talks about it?",
+      "range": {
+        "startLine": 379,
+        "startChar": 32,
+        "endLine": 379,
+        "endChar": 61
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_c7648bb5",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-01T16:39:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_f6d63af2",
       "range": {
         "startLine": 379,
         "startChar": 32,
@@ -300,6 +588,30 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_020e0131",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-01T16:39:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_7356dcd0",
+      "range": {
+        "startLine": 397,
+        "startChar": 27,
+        "endLine": 398,
+        "endChar": 75
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_f3696c8b",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 4
@@ -311,6 +623,30 @@
       "writtenOn": "2019-02-28T16:23:15Z",
       "side": 1,
       "message": "add a link",
+      "range": {
+        "startLine": 400,
+        "startChar": 0,
+        "endLine": 400,
+        "endChar": 30
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_8708c3d8",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-01T16:39:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_f3696c8b",
       "range": {
         "startLine": 400,
         "startChar": 0,
@@ -346,6 +682,30 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_47b5fbeb",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-01T16:39:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_d331c8a3",
+      "range": {
+        "startLine": 409,
+        "startChar": 0,
+        "endLine": 409,
+        "endChar": 60
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_1313d002",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 4
@@ -357,6 +717,30 @@
       "writtenOn": "2019-02-28T16:23:15Z",
       "side": 1,
       "message": "again weird use of \"the following\"",
+      "range": {
+        "startLine": 410,
+        "startChar": 62,
+        "endLine": 410,
+        "endChar": 75
+      },
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_071db30d",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-01T16:39:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_1313d002",
       "range": {
         "startLine": 410,
         "startChar": 62,
