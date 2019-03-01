@@ -34,6 +34,24 @@
       "revId": "ae7959db602e0830a08af8f06b184bb73eb1fb0e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_01512d30",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 938,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-03-01T07:09:41Z",
+      "side": 1,
+      "message": "I also updated the patch with the project test cases just to\nlook for the possibility of which case should be restricted for project members and readers.",
+      "parentUuid": "9fdfeff1_8c9331a3",
+      "revId": "ae7959db602e0830a08af8f06b184bb73eb1fb0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
