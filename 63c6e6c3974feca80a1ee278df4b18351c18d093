@@ -22,6 +22,30 @@
       "revId": "63c6e6c3974feca80a1ee278df4b18351c18d093",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_71d23d5e",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-01T14:57:30Z",
+      "side": 1,
+      "message": "Good question. Disclaimer, I\u0027m not sure if there is a better way to do this that is more understandable.\n\nI made this an instance variable since the expected output changes depending on two things. The authorization of the user and the request they\u0027re making. For example, a system-reader should expect to see their assignment when they list all role assignments in the deployment or if they filter for system-only roles. They shouldn\u0027t expect to see their role assignment if they\u0027re filtering by project, domain, group, or user that isn\u0027t themselves.\n\nThe instance variable is created in setup since the information about the persona we\u0027re testing is easily available there. I also felt it was better to put that there instead of in the test case directly, which I\u0027m trying to keep generic so that it can be reused across personas. Where we\u0027re using `self.expected` is when we expect the user calling the API to see their own role assignment in the result. Where we\u0027re just using `expected`, the user isn\u0027t necessarily expecting to see their own role assignment in the response.\n\nIt\u0027s a little weird and not straight forward. Do you have any ideas for making this more clear?",
+      "parentUuid": "9fdfeff1_59088525",
+      "range": {
+        "startLine": 123,
+        "startChar": 8,
+        "endLine": 123,
+        "endChar": 21
+      },
+      "revId": "63c6e6c3974feca80a1ee278df4b18351c18d093",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
