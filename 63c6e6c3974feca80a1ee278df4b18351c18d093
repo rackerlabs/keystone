@@ -46,6 +46,30 @@
       "revId": "63c6e6c3974feca80a1ee278df4b18351c18d093",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_2f3c49e0",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-01T20:17:54Z",
+      "side": 1,
+      "message": "Okay, I think looking through the other patches in this stack this makes a little more sense.",
+      "parentUuid": "9fdfeff1_71d23d5e",
+      "range": {
+        "startLine": 123,
+        "startChar": 8,
+        "endLine": 123,
+        "endChar": 21
+      },
+      "revId": "63c6e6c3974feca80a1ee278df4b18351c18d093",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
