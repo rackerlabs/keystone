@@ -436,6 +436,24 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_f56290d9",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-01T21:19:28Z",
+      "side": 1,
+      "message": "+1 lgtm",
+      "parentUuid": "9fdfeff1_44ff3965",
+      "revId": "cc44258f8a67c4fe8c0e8c2a710a9ec7c01f255e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_57a38543",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 4
