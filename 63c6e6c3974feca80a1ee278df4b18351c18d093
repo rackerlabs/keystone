@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_59088525",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-01T11:02:23Z",
+      "side": 1,
+      "message": "I don\u0027t understand why this is being turned into an instance variable, isn\u0027t it/shouldn\u0027t it be being reset by every test?",
+      "range": {
+        "startLine": 123,
+        "startChar": 8,
+        "endLine": 123,
+        "endChar": 21
+      },
+      "revId": "63c6e6c3974feca80a1ee278df4b18351c18d093",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
