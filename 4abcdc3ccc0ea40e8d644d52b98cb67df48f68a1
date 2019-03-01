@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_83774ea0",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-01T22:40:40Z",
+      "side": 1,
+      "message": "Good call, reworded a bit.",
+      "parentUuid": "9fdfeff1_5216125b",
+      "range": {
+        "startLine": 248,
+        "startChar": 36,
+        "endLine": 248,
+        "endChar": 41
+      },
+      "revId": "4abcdc3ccc0ea40e8d644d52b98cb67df48f68a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_15a154f8",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 7
@@ -36,6 +60,30 @@
       "writtenOn": "2019-03-01T21:19:28Z",
       "side": 1,
       "message": "*bug",
+      "range": {
+        "startLine": 424,
+        "startChar": 61,
+        "endLine": 424,
+        "endChar": 65
+      },
+      "revId": "4abcdc3ccc0ea40e8d644d52b98cb67df48f68a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_23530219",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-01T22:40:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_15a154f8",
       "range": {
         "startLine": 424,
         "startChar": 61,
