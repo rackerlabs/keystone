@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_e13189ee",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-03-01T05:44:26Z",
+      "side": 0,
+      "message": "Thanks lance for the patch set update.",
+      "parentUuid": "9fdfeff1_7d3b3e9b",
+      "revId": "980fe3c55b803accb32d1d944985f1b8c2a01ec0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_fd464e21",
         "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
         "patchSetId": 3
