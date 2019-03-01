@@ -46,6 +46,30 @@
       "revId": "87b47bcb53328c4eb9fb152813e9bc2963f7771e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_31d91555",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-01T15:00:55Z",
+      "side": 1,
+      "message": "Got it. I suppose we could create a follow-on patch to try and share common test cases between domain users and system users?\n\nRight now, I updated it to be separate test classes, but I\u0027m open to refactoring it (either now or later, it\u0027s up to you).\n\nThanks for describing your thought process :)",
+      "parentUuid": "9fdfeff1_66428f6a",
+      "range": {
+        "startLine": 670,
+        "startChar": 24,
+        "endLine": 670,
+        "endChar": 40
+      },
+      "revId": "87b47bcb53328c4eb9fb152813e9bc2963f7771e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
