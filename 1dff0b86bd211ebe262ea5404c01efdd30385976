@@ -34,6 +34,24 @@
       "revId": "1dff0b86bd211ebe262ea5404c01efdd30385976",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_42d95754",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-03T16:48:48Z",
+      "side": 1,
+      "message": "Yeah, or something that the policy fixture  handles, maybe?",
+      "parentUuid": "9fdfeff1_c36f9626",
+      "revId": "1dff0b86bd211ebe262ea5404c01efdd30385976",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
