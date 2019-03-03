@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_02aeef2e",
+        "filename": "keystone/federation/idp.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-03T18:19:39Z",
+      "side": 1,
+      "message": "This isn\u0027t working correctly, this generates an assertion with one character per attribute, like this: http://paste.openstack.org/show/747201/",
+      "revId": "1c4231ff4fa72a0ea1262c1543791231b2b22150",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
