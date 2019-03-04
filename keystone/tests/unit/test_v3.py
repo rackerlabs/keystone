@@ -531,7 +531,7 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         response, and asserted to be equal.
 
         """
-        entities = resp.result.get(key)
+        entities = resp.json.get(key)
         self.assertIsNotNone(entities)
 
         if expected_length is not None:
@@ -541,7 +541,7 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             self.assertNotEmpty(entities)
 
         # collections should have relational links
-        self.assertValidListLinks(resp.result.get('links'),
+        self.assertValidListLinks(resp.json.get('links'),
                                   resource_url=resource_url)
 
         for entity in entities:
@@ -558,7 +558,7 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
     def assertValidResponse(self, resp, key, entity_validator, *args,
                             **kwargs):
         """Make assertions common to all API responses."""
-        entity = resp.result.get(key)
+        entity = resp.json.get(key)
         self.assertIsNotNone(entity)
         keys = kwargs.pop('keys_to_check', None)
         self.assertValidEntity(entity, keys_to_check=keys, *args, **kwargs)
@@ -1020,7 +1020,7 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
 
     def assertRoleInListResponse(self, resp, ref, expected=1):
         found_count = 0
-        for entity in resp.result.get('roles'):
+        for entity in resp.json.get('roles'):
             try:
                 self.assertValidRole(entity, ref=ref)
             except Exception:
@@ -1053,13 +1053,13 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
 
     def assertValidRoleAssignmentListResponse(self, resp, expected_length=None,
                                               resource_url=None):
-        entities = resp.result.get('role_assignments')
+        entities = resp.json.get('role_assignments')
 
         if expected_length or expected_length == 0:
             self.assertEqual(expected_length, len(entities))
 
         # Collections should have relational links
-        self.assertValidListLinks(resp.result.get('links'),
+        self.assertValidListLinks(resp.json.get('links'),
                                   resource_url=resource_url)
 
         for entity in entities:
@@ -1110,7 +1110,7 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
     def assertRoleAssignmentInListResponse(self, resp, ref, expected=1):
 
         found_count = 0
-        for entity in resp.result.get('role_assignments'):
+        for entity in resp.json.get('role_assignments'):
             try:
                 self.assertValidRoleAssignment(entity, ref=ref)
             except Exception:
