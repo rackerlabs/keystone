@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_0a4cbcc6",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-04T11:47:44Z",
+      "side": 1,
+      "message": "*existent",
+      "range": {
+        "startLine": 159,
+        "startChar": 50,
+        "endLine": 159,
+        "endChar": 58
+      },
+      "revId": "d62cb448bc49017aadfd5370a367f91e468effd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_8acd0c32",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-04T11:47:44Z",
+      "side": 1,
+      "message": "either Set...provide or Sets...provides",
+      "range": {
+        "startLine": 159,
+        "startChar": 35,
+        "endLine": 159,
+        "endChar": 43
+      },
+      "revId": "d62cb448bc49017aadfd5370a367f91e468effd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
