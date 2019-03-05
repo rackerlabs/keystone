@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_7c717244",
+        "filename": "keystone/api/limits.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-03-05T16:19:54Z",
+      "side": 1,
+      "message": "Do we need/want a system-scope version to be explicit?",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 104,
+        "endChar": 13
+      },
+      "revId": "d31b767c131ab4c49ef8d5ef89b2218b6cbfd2dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_3cdf6a0d",
+        "filename": "keystone/common/policies/limit.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-03-05T16:19:54Z",
+      "side": 1,
+      "message": "System scope isn\u0027t needed here, right? Domain scope is explicitly checked. \n\nWith the way policy works, I\u0027d like to see 3 explicit checks: System, Domain, Project rather than lumping these together.",
+      "range": {
+        "startLine": 18,
+        "startChar": 4,
+        "endLine": 18,
+        "endChar": 44
+      },
+      "revId": "d31b767c131ab4c49ef8d5ef89b2218b6cbfd2dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
