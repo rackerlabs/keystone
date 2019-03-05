@@ -46,6 +46,30 @@
       "revId": "4eff6816bb4c3e8ec116d7438dce469e24e12c20",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_a90a3e24",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-03-05T15:57:32Z",
+      "side": 1,
+      "message": "Got it. Thanks Lance.",
+      "parentUuid": "9fdfeff1_86440949",
+      "range": {
+        "startLine": 324,
+        "startChar": 0,
+        "endLine": 324,
+        "endChar": 55
+      },
+      "revId": "4eff6816bb4c3e8ec116d7438dce469e24e12c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
