@@ -35,3 +35,4 @@ Contributor Documentation
    translated-responses.rst
    architecture.rst
    external-dev.rst
+   vision-reflection.rst
