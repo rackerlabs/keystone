@@ -34,6 +34,24 @@
       "revId": "c0cfb0a5b4db3d78f91f3b07583fa5c0e1b09a7d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_34631adf",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-06T19:58:55Z",
+      "side": 1,
+      "message": "Yeah - exactly. Thanks for adding that as a test!",
+      "parentUuid": "9fdfeff1_a22cc301",
+      "revId": "c0cfb0a5b4db3d78f91f3b07583fa5c0e1b09a7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
