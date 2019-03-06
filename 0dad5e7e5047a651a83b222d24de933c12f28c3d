@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_847d0570",
+        "filename": "doc/source/contributor/vision-reflection.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-06T14:35:40Z",
+      "side": 1,
+      "message": "Should maybe also have an actual 1-2 sentence \"mission statement\" in this document?",
+      "revId": "0dad5e7e5047a651a83b222d24de933c12f28c3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_24b53132",
+        "filename": "doc/source/contributor/vision-reflection.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-06T14:35:40Z",
+      "side": 1,
+      "message": "Not sure we should actually bother to include this section",
+      "revId": "0dad5e7e5047a651a83b222d24de933c12f28c3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
