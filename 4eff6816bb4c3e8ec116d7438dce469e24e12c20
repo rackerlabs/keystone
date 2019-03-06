@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "5fc1f717_b875c29a",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2019-03-06T17:06:00Z",
+      "side": 1,
+      "message": "nit: called",
+      "range": {
+        "startLine": 168,
+        "startChar": 62,
+        "endLine": 168,
+        "endChar": 66
+      },
+      "revId": "4eff6816bb4c3e8ec116d7438dce469e24e12c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_b85f02e4",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2019-03-06T17:06:00Z",
+      "side": 1,
+      "message": "nit: While keystone does create the reader role, not many services support it. This may lead to confusion among cloud administrator expecting the reader to be fully functional out of the box. Might be worth clarifying that this is pending individual service support, or the cloud administrator manually changing the policy files to support that. This is the contributor guide, so this is not the right place for this comment, which targets operators.",
+      "range": {
+        "startLine": 304,
+        "startChar": 71,
+        "endLine": 307,
+        "endChar": 38
+      },
+      "revId": "4eff6816bb4c3e8ec116d7438dce469e24e12c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_8318801e",
         "filename": "doc/source/contributor/services.rst",
         "patchSetId": 8
