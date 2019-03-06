@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_14529e14",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 3284,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-06T19:56:11Z",
+      "side": 1,
+      "message": "We don\u0027t typically do a bunch of negative testing for migrations, but since this tests has nearly everything for it, we could totally follow this up with a patch that removes the app cred and tests that the CASCADE is working.\n\nNice tests!",
+      "revId": "182524d971020751131ba285a19aa317235e7737",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
