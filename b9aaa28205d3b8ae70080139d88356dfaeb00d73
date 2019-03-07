@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_899f484f",
+        "filename": "releasenotes/notes/bug-1816927-e17f4e596e611380.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-03-07T09:29:25Z",
+      "side": 1,
+      "message": "Since we have a bug reported for this which is fixed. So the release note should contain tag \"fixes\". You can take reference from [1].\n\n[1] https://github.com/openstack/keystone/blob/master/releasenotes/notes/bug-1291157-00b5c714a097e84c.yaml",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 5
+      },
+      "revId": "b9aaa28205d3b8ae70080139d88356dfaeb00d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
