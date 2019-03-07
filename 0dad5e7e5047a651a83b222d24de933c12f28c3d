@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5fc1f717_9df22a06",
+        "filename": "doc/source/contributor/vision-reflection.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-03-07T06:04:53Z",
+      "side": 1,
+      "message": "++. Multi-tenant authorization and authentication, pillars on which keystone stands.",
+      "parentUuid": "5fc1f717_847d0570",
+      "revId": "0dad5e7e5047a651a83b222d24de933c12f28c3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5fc1f717_37b8fc28",
         "filename": "doc/source/contributor/vision-reflection.rst",
         "patchSetId": 1
