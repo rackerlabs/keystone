@@ -60,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "5fc1f717_11c5a75b",
+        "filename": "doc/source/contributor/vision-reflection.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-08T10:06:13Z",
+      "side": 1,
+      "message": "Good point, this is a mirroring of the wording in the TC statement, \"...for applications that are running within the cloud itself, because no part of the application should need to reside outside of the cloud.\" I\u0027ll reword to ensure it\u0027s more general.",
+      "parentUuid": "5fc1f717_37b8fc28",
+      "range": {
+        "startLine": 40,
+        "startChar": 43,
+        "endLine": 40,
+        "endChar": 72
+      },
+      "revId": "0dad5e7e5047a651a83b222d24de933c12f28c3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5fc1f717_24b53132",
         "filename": "doc/source/contributor/vision-reflection.rst",
         "patchSetId": 1
