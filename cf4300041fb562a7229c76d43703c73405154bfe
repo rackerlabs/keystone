@@ -22,6 +22,30 @@
       "revId": "cf4300041fb562a7229c76d43703c73405154bfe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_fcd7874e",
+        "filename": "keystone/tests/unit/protection/v3/test_users.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-08T19:02:57Z",
+      "side": 1,
+      "message": "I meant this as a logical OR. Done.",
+      "parentUuid": "9fdfeff1_982dd096",
+      "range": {
+        "startLine": 564,
+        "startChar": 33,
+        "endLine": 564,
+        "endChar": 35
+      },
+      "revId": "cf4300041fb562a7229c76d43703c73405154bfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
