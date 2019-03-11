@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5fc1f717_5aa79f50",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-11T16:03:01Z",
+      "side": 1,
+      "message": "We have couple of bug reports we should associate with this patch.\n\n  Partial-Bug: 1750669\n  Partial-Bug: 1805368",
+      "revId": "85330281e4d151beb67f406ce82d5038d6b7a19e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5fc1f717_daa2af4b",
         "filename": "keystone/tests/unit/protection/v3/test_grant.py",
         "patchSetId": 1
