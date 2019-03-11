@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5fc1f717_e18345cb",
+        "filename": "releasenotes/notes/bug-1816927-e17f4e596e611380.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 9542
+      },
+      "writtenOn": "2019-03-11T13:18:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5fc1f717_899f484f",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 5
+      },
+      "revId": "b9aaa28205d3b8ae70080139d88356dfaeb00d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5fc1f717_54f57056",
         "filename": "releasenotes/notes/bug-1816927-e17f4e596e611380.yaml",
         "patchSetId": 3
@@ -36,6 +60,24 @@
       "writtenOn": "2019-03-07T16:56:00Z",
       "side": 1,
       "message": "We should also try and link to the bug report here - that way people can find the exact context of the problem documented there (without digging out git show).",
+      "revId": "b9aaa28205d3b8ae70080139d88356dfaeb00d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_a16d3d33",
+        "filename": "releasenotes/notes/bug-1816927-e17f4e596e611380.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 9542
+      },
+      "writtenOn": "2019-03-11T13:18:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5fc1f717_54f57056",
       "revId": "b9aaa28205d3b8ae70080139d88356dfaeb00d73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
