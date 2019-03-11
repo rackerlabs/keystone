@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_daa2af4b",
+        "filename": "keystone/tests/unit/protection/v3/test_grant.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-11T16:00:58Z",
+      "side": 1,
+      "message": "This could be erroring out on 418 because we\u0027re missing a slash here.",
+      "range": {
+        "startLine": 58,
+        "startChar": 23,
+        "endLine": 58,
+        "endChar": 24
+      },
+      "revId": "85330281e4d151beb67f406ce82d5038d6b7a19e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
