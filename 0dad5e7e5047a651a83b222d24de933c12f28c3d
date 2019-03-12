@@ -116,6 +116,29 @@
       "revId": "0dad5e7e5047a651a83b222d24de933c12f28c3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_dfdfe637",
+        "filename": "doc/source/contributor/vision-reflection.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2019-03-12T16:28:15Z",
+      "side": 1,
+      "message": "extra \u0027provide\u0027",
+      "range": {
+        "startLine": 103,
+        "startChar": 52,
+        "endLine": 103,
+        "endChar": 59
+      },
+      "revId": "0dad5e7e5047a651a83b222d24de933c12f28c3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
