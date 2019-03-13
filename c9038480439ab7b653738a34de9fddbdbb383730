@@ -22,6 +22,30 @@
       "revId": "c9038480439ab7b653738a34de9fddbdbb383730",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_77c5adf0",
+        "filename": ".zuul.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-13T07:49:40Z",
+      "side": 1,
+      "message": "That\u0027s on purpose due to https://bugs.launchpad.net/keystone/+bug/1802901\n\nWe switched the non-experimental federation jobs to run on opensuse and just kept this xenial one in experimental as a reference.",
+      "parentUuid": "5fc1f717_202d9efd",
+      "range": {
+        "startLine": 114,
+        "startChar": 13,
+        "endLine": 114,
+        "endChar": 41
+      },
+      "revId": "c9038480439ab7b653738a34de9fddbdbb383730",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
