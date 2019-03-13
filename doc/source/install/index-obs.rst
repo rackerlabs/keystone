@@ -20,7 +20,7 @@ are included.
    Please see the
    `OpenStack Training Labs <https://docs.openstack.org/training_labs/>`_.
 
-This guide documents the OpenStack Queens release.
+This guide documents the OpenStack Rocky release.
 
 .. warning::
 
