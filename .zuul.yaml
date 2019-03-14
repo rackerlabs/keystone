@@ -23,6 +23,11 @@
       tempest_test_regex: 'keystone_tempest_plugin'
       devstack_localrc:
         TEMPEST_PLUGINS: '/opt/stack/keystone-tempest-plugin'
+      devstack_local_conf:
+        $KEYSTONE_CONF:
+          security_compliance:
+            change_password_upon_first_use: true
+
 
 - job:
     name: keystone-dsvm-py3-functional
