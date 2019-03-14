@@ -23,6 +23,12 @@
       tempest_test_regex: 'keystone_tempest_plugin'
       devstack_localrc:
         TEMPEST_PLUGINS: '/opt/stack/keystone-tempest-plugin'
+      devstack_local_conf:
+        post-config:
+          $KEYSTONE_CONF:
+            security_compliance:
+              change_password_upon_first_use: true
+
 
 - job:
     name: keystone-dsvm-py3-functional
@@ -149,17 +155,17 @@
 
 - project:
     templates:
-      - openstack-cover-jobs
-      - openstack-lower-constraints-jobs
-      - openstack-python-jobs
-      - openstack-python36-jobs
-      - openstack-python37-jobs
-      - publish-openstack-docs-pti
-      - periodic-stable-jobs
+      #- openstack-cover-jobs
+      #- openstack-lower-constraints-jobs
+      #- openstack-python-jobs
+      #- openstack-python36-jobs
+      #- openstack-python37-jobs
+      #- publish-openstack-docs-pti
+      #- periodic-stable-jobs
       - check-requirements
-      - integrated-gate
-      - integrated-gate-py3
-      - release-notes-jobs-python3
+      #- integrated-gate
+      #- integrated-gate-py3
+      #- release-notes-jobs-python3
     check:
       jobs:
         - keystone-dsvm-functional:
@@ -170,64 +176,64 @@
               - ^etc/.*$
               - ^keystone/tests/unit/.*$
               - ^releasenotes/.*$
-        - keystone-dsvm-py3-functional:
-            irrelevant-files: *irrelevant-files
-        - keystone-dsvm-functional-federation-opensuse15:
-            voting: false
-            irrelevant-files: *irrelevant-files
-        - keystone-dsvm-py3-functional-federation-opensuse15:
-            voting: false
-            irrelevant-files: *irrelevant-files
-        - keystoneclient-devstack-functional:
-            voting: false
-            irrelevant-files: *irrelevant-files
-        - legacy-tempest-dsvm-ldap-domain-specific-driver:
-            voting: false
-            irrelevant-files: &tempest-irrelevant-files
-              - ^(test-|)requirements.txt$
-              - ^.*\.rst$
-              - ^api-ref/.*$
-              - ^doc/.*$
-              - ^etc/.*$
-              - ^keystone/tests/unit/.*$
-              - ^releasenotes/.*$
-              - ^setup.cfg$
-        - tempest-full:
-            irrelevant-files: *tempest-irrelevant-files
-        - tempest-full-py3:
-            irrelevant-files: *tempest-irrelevant-files
-        - neutron-grenade:
-            irrelevant-files: *tempest-irrelevant-files
-        - grenade-py3:
-            irrelevant-files: *tempest-irrelevant-files
+        #- keystone-dsvm-py3-functional:
+            #irrelevant-files: *irrelevant-files
+        #- keystone-dsvm-functional-federation-opensuse15:
+            #voting: false
+            #irrelevant-files: *irrelevant-files
+        #- keystone-dsvm-py3-functional-federation-opensuse15:
+            #voting: false
+            #irrelevant-files: *irrelevant-files
+        #- keystoneclient-devstack-functional:
+            #voting: false
+            #irrelevant-files: *irrelevant-files
+        #- legacy-tempest-dsvm-ldap-domain-specific-driver:
+            #voting: false
+            #irrelevant-files: &tempest-irrelevant-files
+              #- ^(test-|)requirements.txt$
+              #- ^.*\.rst$
+              #- ^api-ref/.*$
+              #- ^doc/.*$
+              #- ^etc/.*$
+              #- ^keystone/tests/unit/.*$
+              #- ^releasenotes/.*$
+              #- ^setup.cfg$
+        #- tempest-full:
+            #irrelevant-files: *tempest-irrelevant-files
+        #- tempest-full-py3:
+            #irrelevant-files: *tempest-irrelevant-files
+        #- neutron-grenade:
+            #irrelevant-files: *tempest-irrelevant-files
+        #- grenade-py3:
+            #irrelevant-files: *tempest-irrelevant-files
     gate:
       jobs:
         - keystone-dsvm-functional:
             irrelevant-files: *irrelevant-files
-        - keystone-dsvm-py3-functional:
-            irrelevant-files: *irrelevant-files
-        - tempest-full:
-            irrelevant-files: *tempest-irrelevant-files
-        - tempest-full-py3:
-            irrelevant-files: *tempest-irrelevant-files
-        - neutron-grenade:
-            irrelevant-files: *tempest-irrelevant-files
-        - grenade-py3:
-            irrelevant-files: *tempest-irrelevant-files
+        #- keystone-dsvm-py3-functional:
+            #irrelevant-files: *irrelevant-files
+        #- tempest-full:
+            #irrelevant-files: *tempest-irrelevant-files
+        #- tempest-full-py3:
+            #irrelevant-files: *tempest-irrelevant-files
+        #- neutron-grenade:
+            #irrelevant-files: *tempest-irrelevant-files
+        #- grenade-py3:
+            #irrelevant-files: *tempest-irrelevant-files
     experimental:
       jobs:
         - keystone-tox-patch_cover
-        - keystone-dsvm-grenade-multinode:
-            irrelevant-files: *irrelevant-files
-        - openstack-ansible-keystone-rolling-upgrade:
-            irrelevant-files: *irrelevant-files
-        - tempest-pg-full:
-            irrelevant-files: *tempest-irrelevant-files
-        - tempest-full-py3-opensuse150:
-            irrelevant-files: *tempest-irrelevant-files
-        - keystone-dsvm-functional-federation-centos7:
-            irrelevant-files: *irrelevant-files
-        - keystone-dsvm-functional-federation-ubuntu-xenial:
-            irrelevant-files: *irrelevant-files
-        - keystone-dsvm-py35-functional-federation-ubuntu-xenial:
-            irrelevant-files: *irrelevant-files
+        #- keystone-dsvm-grenade-multinode:
+            #irrelevant-files: *irrelevant-files
+        #- openstack-ansible-keystone-rolling-upgrade:
+            #irrelevant-files: *irrelevant-files
+        #- tempest-pg-full:
+            #irrelevant-files: *tempest-irrelevant-files
+        #- tempest-full-py3-opensuse150:
+            #irrelevant-files: *tempest-irrelevant-files
+        #- keystone-dsvm-functional-federation-centos7:
+            #irrelevant-files: *irrelevant-files
+        #- keystone-dsvm-functional-federation-ubuntu-xenial:
+            #irrelevant-files: *irrelevant-files
+        #- keystone-dsvm-py35-functional-federation-ubuntu-xenial:
+            #irrelevant-files: *irrelevant-files
