@@ -16,6 +16,24 @@
       "revId": "ac423a0b519d4bf15e73ebfd4b44b8be054527c2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_45d9971f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-15T21:20:53Z",
+      "side": 1,
+      "message": "Yeah - I think that is because the admin_domain_scope configuration option was still enabled.\n\nI was talking to gmann and it sounds like we should still remove it. I\u0027ve rebased and unwip\u0027d the patch to fix that option. I also added it as a depends on here, so we\u0027ll see what Zuul has to say.\n\nAs far as gmann and I understand, that option only affects keystone tests.\n\nhttps://review.openstack.org/#/c/624794/",
+      "parentUuid": "5fc1f717_039e3506",
+      "revId": "ac423a0b519d4bf15e73ebfd4b44b8be054527c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
