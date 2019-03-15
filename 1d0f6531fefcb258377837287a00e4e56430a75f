@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_e5852308",
+        "filename": "keystone/common/sql/expand_repo/versions/056_placeholder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-15T21:16:32Z",
+      "side": 1,
+      "message": "Don\u0027t we need to index these placeholders at 057? It looks like we already have a 056 in our repositories.\n\nhttps://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/sql/expand_repo/versions/056_expand_add_application_credential_access_rules.py",
+      "revId": "1d0f6531fefcb258377837287a00e4e56430a75f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
