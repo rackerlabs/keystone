@@ -1310,6 +1310,16 @@ class LDAPIdentity(BaseLDAPIdentity):
 
         self.assertEqual('junk1', user_refs[0]['name'])
         self.assertEqual('sn=junk1,dc=example,dc=com', user_refs[0]['dn'])
+        # verify search_s() args - attrlist is tricky due to ordering
+        args, _ = mock_search_s.call_args
+        self.assertEqual(
+            ('ou=Users,cn=example,cn=com', 1,
+             '(&(objectClass=inetOrgPerson)(cn=*))'),
+            args[0:3])
+        attrlist = sorted([attr for attr in args[3] if attr])
+        self.assertEqual(
+            ['cn', 'description', 'enabled', 'mail', 'sn', 'userPassword'],
+            attrlist)
 
     @mock.patch.object(common_ldap.KeystoneLDAPHandler, 'connect')
     @mock.patch.object(common_ldap.KeystoneLDAPHandler, 'search_s')
