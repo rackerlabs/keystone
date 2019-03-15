@@ -22,6 +22,30 @@
       "revId": "2aaa5071a97ef5a7049ed21013d2b72b8567a536",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_927fd5a9",
+        "filename": "keystone/common/sql/expand_repo/versions/057_expand_add__remote_id_attribute_to_federation_protocol_table.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-15T09:19:04Z",
+      "side": 1,
+      "message": "No, it would not be correct to call it \u0027remote_id\u0027. \u0027remote_id\u0027 would refer to the IdP\u0027s entity ID, like \u0027https://samltest.id/idp\u0027. \u0027remote_id_attribute\u0027 is not that, rather it\u0027s the Apache header that is set by the SP module that indicates where keystone should *look for* the remote ID, for example \u0027Shib-Identity-Provider\u0027 or \u0027MELLON_IDP\u0027. \u0027remote_id_attribute\u0027 also mirrors the keystone.conf option that this is replacing.",
+      "parentUuid": "5fc1f717_b4fc4170",
+      "range": {
+        "startLine": 22,
+        "startChar": 44,
+        "endLine": 22,
+        "endChar": 63
+      },
+      "revId": "2aaa5071a97ef5a7049ed21013d2b72b8567a536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
