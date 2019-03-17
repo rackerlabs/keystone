@@ -34,6 +34,24 @@
       "revId": "ac423a0b519d4bf15e73ebfd4b44b8be054527c2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_cd3925a4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2019-03-17T16:16:18Z",
+      "side": 1,
+      "message": "yeah, with both changes on tempest side it is working fine. let\u0027s remove the global admin domain scope as of now. we will use that based on test and keystone policy requirement case by case.",
+      "parentUuid": "5fc1f717_45d9971f",
+      "revId": "ac423a0b519d4bf15e73ebfd4b44b8be054527c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
