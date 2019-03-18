@@ -1,0 +1,31 @@
+---
+features:
+  - |
+    [`bug 1808859 <https://bugs.launchpad.net/keystone/+bug/1808859>`_]
+    The group API now supports using the ``domain`` scope type for performing
+    domain-specific actions on groups and group membership.
+deprecations:
+  - |
+    [`bug 1808859 <https://bugs.launchpad.net/keystone/+bug/1808859>`_]
+    The defaults for the following group policies have been updated to account for domain scope:
+
+    * ``identity:get_group`` now uses ``(role:reader and system_scope:all) or (role:reader and domain_id:%(target.group.domain_id)s)``
+    * ``identity:list_groups`` now uses ``(role:reader and system_scope:all) or (role:reader and domain_id:%(target.group.domain_id)s)``
+    * ``identity:list_groups_for_user`` now uses ``(role:reader and system_scope:all) or (role:reader and domain_id:%(target.user.domain_id)s) or user_id:%(user_id)s``
+    * ``identity:create_group`` now uses ``(role:admin and system_scope:all) or (role:admin and domain_id:%(target.group.domain_id)s)``
+    * ``identity:update_group`` now uses ``(role:admin and system_scope:all) or (role:admin and domain_id:%(target.group.domain_id)s)``
+    * ``identity:delete_group`` now uses ``(role:admin and system_scope:all) or (role:admin and domain_id:%(target.group.domain_id)s)``
+    * ``identity:list_users_in_group`` now uses ``(role:reader and system_scope:all) or (role:reader and domain_id:%(target.group.domain_id)s)``
+    * ``identity:remove_user_from_group`` now uses ``(role:admin and system_scope:all) or (role:admin and domain_id:%(target.group.domain_id)s and domain_id:%(target.user.domain_id)s)``
+    * ``identity:check_user_in_group`` now uses ``(role:reader and system_scope:all) or (role:reader and domain_id:%(target.group.domain_id)s)``
+    * ``identity:add_user_to_group`` now uses ``(role:admin and system_scope:all) or (role:admin and domain_id:%(target.group.domain_id)s and domain_id:%(target.user.domain_id)s)``
+
+    These new defaults account for system and domain scope. The old defaults
+    will become ineffective in a future release. Consider incorporating the
+    new defaults if your deployment overrides group policies.
+security:
+  - |
+    [`bug 1808859 <https://bugs.launchpad.net/keystone/+bug/1808859>`_]
+    The group API now supports using the ``domain`` scope for the reader,
+    member, and admin role to provide better accessibility to users in a
+    secure way.
