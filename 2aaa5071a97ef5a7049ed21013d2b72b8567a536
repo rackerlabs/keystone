@@ -97,6 +97,23 @@
       "revId": "2aaa5071a97ef5a7049ed21013d2b72b8567a536",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_676b65f0",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 3294,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-18T13:35:55Z",
+      "side": 1,
+      "message": "You should add back these migration steps so it\u0027s clear this is updated to version 57.",
+      "revId": "2aaa5071a97ef5a7049ed21013d2b72b8567a536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
