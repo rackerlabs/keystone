@@ -16,6 +16,24 @@
       "revId": "9d3bcde40a47f62f820a5e53422fd7cbe945132c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_7b154648",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 13686
+      },
+      "writtenOn": "2019-03-18T10:11:31Z",
+      "side": 1,
+      "message": "I believe we still need it for the values themselves, which are treated as bytes.\n\nReference:\nhttps://www.python-ldap.org/en/latest/bytes_mode.html#what-s-text-and-what-s-bytes",
+      "parentUuid": "5fc1f717_5bf16a00",
+      "revId": "9d3bcde40a47f62f820a5e53422fd7cbe945132c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
