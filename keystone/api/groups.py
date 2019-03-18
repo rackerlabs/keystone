@@ -21,12 +21,14 @@ from keystone.common import json_home
 from keystone.common import provider_api
 from keystone.common import rbac_enforcer
 from keystone.common import validation
+import keystone.conf
 from keystone import exception
 from keystone.identity import schema
 from keystone import notifications
 from keystone.server import flask as ks_flask
 
 
+CONF = keystone.conf.CONF
 ENFORCER = rbac_enforcer.RBACEnforcer
 PROVIDERS = provider_api.ProviderAPIs
 
@@ -73,11 +75,22 @@ class GroupsResource(ks_flask.ResourceBase):
         GET/HEAD /groups
         """
         filters = ['domain_id', 'name']
-        ENFORCER.enforce_call(action='identity:list_groups', filters=filters)
+        if self.oslo_context.domain_id:
+            target = {'group': {'domain_id': self.oslo_context.domain_id}}
+        else:
+            target = None
+        ENFORCER.enforce_call(action='identity:list_groups', filters=filters,
+                              target_attr=target)
         hints = self.build_driver_hints(filters)
         domain = self._get_domain_id_for_list_request()
         refs = PROVIDERS.identity_api.list_groups(domain_scope=domain,
                                                   hints=hints)
+        if (not self.oslo_context.system_scope and CONF.oslo_policy.enforce_scope):
+            filtered_refs = []
+            for ref in refs:
+                if ref['domain_id'] == target['group']['domain_id']:
+                    filtered_refs.append(ref)
+            refs = filtered_refs
         return self.wrap_collection(refs, hints=hints)
 
     def post(self):

@@ -15,8 +15,14 @@ from oslo_policy import policy
 
 from keystone.common.policies import base
 
-SYSTEM_READER_OR_OWNER = (
-    '(role:reader and system_scope:all) or user_id:%(user_id)s'
+SYSTEM_READER_OR_DOMAIN_READER_OR_OWNER = (
+    '(role:reader and system_scope:all) or '
+    '(role:reader and domain_id:%(target.user.domain_id)s) or '
+    'user_id:%(user_id)s'
+)
+
+SYSTEM_READER_OR_DOMAIN_READER = (
+    base.SYSTEM_READER + ' or domain_id:%(target.group.domain_id)s'
 )
 
 DEPRECATED_REASON = """
@@ -70,14 +76,8 @@ deprecated_add_user_to_group = policy.DeprecatedRule(
 group_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_group',
-        check_str=base.SYSTEM_READER,
-        # FIXME(lbragstad): Groups have traditionally been a resource managed
-        # by system or cloud administrators. If, or when, keystone supports the
-        # ability for groups to be created or managed by project
-        # administrators, scope_types should also include 'project'. Until
-        # then, let's make sure these APIs are only accessible to system
-        # administrators.
-        scope_types=['system'],
+        check_str=SYSTEM_READER_OR_DOMAIN_READER,
+        scope_types=['system', 'domain'],
         description='Show group details.',
         operations=[{'path': '/v3/groups/{group_id}',
                      'method': 'GET'},
@@ -88,8 +88,8 @@ group_policies = [
         deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_groups',
-        check_str=base.SYSTEM_READER,
-        scope_types=['system'],
+        check_str=SYSTEM_READER_OR_DOMAIN_READER,
+        scope_types=['system', 'domain'],
         description='List groups.',
         operations=[{'path': '/v3/groups',
                      'method': 'GET'},
@@ -100,8 +100,8 @@ group_policies = [
         deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_groups_for_user',
-        check_str=SYSTEM_READER_OR_OWNER,
-        scope_types=['system', 'project'],
+        check_str=SYSTEM_READER_OR_DOMAIN_READER_OR_OWNER,
+        scope_types=['system', 'domain', 'project'],
         description='List groups to which a user belongs.',
         operations=[{'path': '/v3/users/{user_id}/groups',
                      'method': 'GET'},
