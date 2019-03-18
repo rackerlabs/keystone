@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_5bf16a00",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-18T09:23:18Z",
+      "side": 1,
+      "message": "Would it be best to just get rid of this function completely?",
+      "revId": "9d3bcde40a47f62f820a5e53422fd7cbe945132c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
