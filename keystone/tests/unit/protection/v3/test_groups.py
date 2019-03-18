@@ -12,14 +12,17 @@
 
 import uuid
 
+from oslo_serialization import jsonutils
 from six.moves import http_client
 
+from keystone.common.policies import group as gp
 from keystone.common import provider_api
 import keystone.conf
 from keystone.tests.common import auth as common_auth
 from keystone.tests import unit
 from keystone.tests.unit import base_classes
 from keystone.tests.unit import ksfixtures
+from keystone.tests.unit.ksfixtures import temporaryfile
 
 CONF = keystone.conf.CONF
 PROVIDERS = provider_api.ProviderAPIs
@@ -121,7 +124,7 @@ class _SystemUserGroupTests(object):
             )
 
 
-class _SystemMemberAndReaderGroupTests(object):
+class _SystemAndDomainMemberAndReaderGroupTests(object):
     """Common default functionality for system readers and system members."""
 
     def test_user_cannot_create_group(self):
@@ -215,7 +218,7 @@ class _SystemMemberAndReaderGroupTests(object):
 class SystemReaderTests(base_classes.TestCaseWithBootstrap,
                         common_auth.AuthTestMixin,
                         _SystemUserGroupTests,
-                        _SystemMemberAndReaderGroupTests):
+                        _SystemAndDomainMemberAndReaderGroupTests):
 
     def setUp(self):
         super(SystemReaderTests, self).setUp()
@@ -249,7 +252,7 @@ class SystemReaderTests(base_classes.TestCaseWithBootstrap,
 class SystemMemberTests(base_classes.TestCaseWithBootstrap,
                         common_auth.AuthTestMixin,
                         _SystemUserGroupTests,
-                        _SystemMemberAndReaderGroupTests):
+                        _SystemAndDomainMemberAndReaderGroupTests):
 
     def setUp(self):
         super(SystemMemberTests, self).setUp()
@@ -382,6 +385,383 @@ class SystemAdminTests(base_classes.TestCaseWithBootstrap,
             c.delete(
                 '/v3/groups/%s/users/%s' % (group['id'], user['id']),
                 headers=self.headers
+            )
+
+
+class _DomainUserGroupTests(object):
+
+    def test_user_can_list_groups_in_domain(self):
+        # second domain
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+        # one group in new domain
+        group1 = PROVIDERS.identity_api.create_group(
+            unit.new_group_ref(domain_id=domain['id'])
+        )
+        # one group in user's domain
+        group2 = PROVIDERS.identity_api.create_group(
+            unit.new_group_ref(domain_id=self.domain_id)
+        )
+
+        # user should only see one group
+        with self.test_client() as c:
+            r = c.get('/v3/groups', headers=self.headers)
+            self.assertEqual(1, len(r.json['groups']))
+            self.assertNotIn(group1['id'], [g['id'] for g in r.json['groups']])
+            self.assertEqual(group2['id'], r.json['groups'][0]['id'])
+
+    def test_user_cannot_list_groups_in_other_domain(self):
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+        PROVIDERS.identity_api.create_group(
+            unit.new_group_ref(domain_id=domain['id'])
+        )
+        with self.test_client() as c:
+            r = c.get('/v3/groups?domain_id=%s' % domain['id'],
+                      headers=self.headers)
+            self.assertEqual(0, len(r.json['groups']))
+
+    def test_user_can_get_group_in_domain(self):
+        group = PROVIDERS.identity_api.create_group(
+            unit.new_group_ref(domain_id=self.domain_id)
+        )
+        with self.test_client() as c:
+            r = c.get('/v3/groups/%s' % group['id'],
+                      headers=self.headers)
+            self.assertEqual(group['id'], r.json['group']['id'])
+
+    def test_user_cannot_get_group_in_other_domain(self):
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+        group = PROVIDERS.identity_api.create_group(
+            unit.new_group_ref(domain_id=domain['id'])
+        )
+        with self.test_client() as c:
+            c.get('/v3/groups/%s' % group['id'],
+                  headers=self.headers,
+                  expected_status_code=http_client.FORBIDDEN)
+
+    def test_user_cannot_get_non_existent_group_forbidden(self):
+        with self.test_client() as c:
+            c.get(
+                '/v3/groups/%s' % uuid.uuid4().hex, headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_can_list_groups_in_domain_for_user_in_domain(self):
+        user = PROVIDERS.identity_api.create_user(
+            unit.new_user_ref(domain_id=self.domain_id)
+        )
+        group = PROVIDERS.identity_api.create_group(
+            unit.new_group_ref(domain_id=self.domain_id)
+        )
+        PROVIDERS.identity_api.add_user_to_group(user['id'], group['id'])
+        with self.test_client() as c:
+            r = c.get('/v3/users/%s/groups' % user['id'],
+                      headers=self.headers)
+            self.assertEqual(1, len(r.json['groups']))
+            self.assertEqual(group['id'], r.json['groups'][0]['id'])
+
+    def test_user_cannot_list_groups_in_own_domain_for_user_in_other_domain(self):
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+        user = PROVIDERS.identity_api.create_user(
+            unit.new_user_ref(domain_id=domain['id'])
+        )
+        group = PROVIDERS.identity_api.create_group(
+            unit.new_group_ref(domain_id=self.domain_id)
+        )
+        PROVIDERS.identity_api.add_user_to_group(user['id'], group['id'])
+        with self.test_client() as c:
+            c.get('/v3/users/%s/groups' % user['id'],
+                  headers=self.headers,
+                  expected_status_code=http_client.FORBIDDEN)
+
+    def test_user_cannot_list_groups_in_other_domain_for_user_in_own_domain(self):
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+        user = PROVIDERS.identity_api.create_user(
+            unit.new_user_ref(domain_id=self.domain_id)
+        )
+        # one group in other domain
+        group1 = PROVIDERS.identity_api.create_group(
+            unit.new_group_ref(domain_id=domain['id'])
+        )
+        # one group in own domain
+        group2 = PROVIDERS.identity_api.create_group(
+            unit.new_group_ref(domain_id=self.domain_id)
+        )
+        PROVIDERS.identity_api.add_user_to_group(user['id'], group1['id'])
+        PROVIDERS.identity_api.add_user_to_group(user['id'], group2['id'])
+        with self.test_client() as c:
+            r = c.get('/v3/users/%s/groups' % user['id'],
+                      headers=self.headers)
+            # only one group should be visible
+            self.assertEqual(1, len(r.json['groups']))
+            self.assertEqual(group2['id'], r.json['groups'][0]['id'])
+
+
+class DomainReaderTests(base_classes.TestCaseWithBootstrap,
+                        common_auth.AuthTestMixin,
+                        _DomainUserGroupTests,
+                        _SystemAndDomainMemberAndReaderGroupTests):
+
+    def setUp(self):
+        super(DomainReaderTests, self).setUp()
+        self.loadapp()
+        self.policy_file = self.useFixture(temporaryfile.SecureTempFile())
+        self.policy_file_name = self.policy_file.file_name
+        self.useFixture(
+            ksfixtures.Policy(
+                self.config_fixture, policy_file=self.policy_file_name
+            )
+        )
+        self._override_policy()
+        self.config_fixture.config(group='oslo_policy', enforce_scope=True)
+
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+        self.domain_id = domain['id']
+        domain_admin = unit.new_user_ref(domain_id=self.domain_id)
+        self.user_id = PROVIDERS.identity_api.create_user(domain_admin)['id']
+        PROVIDERS.assignment_api.create_grant(
+            self.bootstrapper.reader_role_id, user_id=self.user_id,
+            domain_id=self.domain_id
+        )
+
+        auth = self.build_authentication_request(
+            user_id=self.user_id,
+            password=domain_admin['password'],
+            domain_id=self.domain_id
+        )
+
+        # Grab a token using the persona we're testing and prepare headers
+        # for requests we'll be making in the tests.
+        with self.test_client() as c:
+            r = c.post('/v3/auth/tokens', json=auth)
+            self.token_id = r.headers['X-Subject-Token']
+            self.headers = {'X-Auth-Token': self.token_id}
+
+    def _override_policy(self):
+        # TODO(cmurphy): Remove this once the deprecated policies in
+        # keystone.common.policies.group have been removed. This is only
+        # here to make sure we test the new policies instead of the deprecated
+        # ones. Oslo.policy will OR deprecated policies with new policies to
+        # maintain compatibility and give operators a chance to update
+        # permissions or update policies without breaking users. This will
+        # cause these specific tests to fail since we're trying to correct this
+        # broken behavior with better scope checking.
+        with open(self.policy_file_name, 'w') as f:
+            overridden_policies = {
+                'identity:get_group': gp.SYSTEM_READER_OR_DOMAIN_READER,
+                'identity:list_groups': gp.SYSTEM_READER_OR_DOMAIN_READER,
+                'identity:list_groups_for_user': gp.SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_USER_OR_OWNER
+            }
+            f.write(jsonutils.dumps(overridden_policies))
+
+
+class DomainMemberTests(base_classes.TestCaseWithBootstrap,
+                        common_auth.AuthTestMixin,
+                        _DomainUserGroupTests,
+                        _SystemAndDomainMemberAndReaderGroupTests):
+
+    def setUp(self):
+        super(DomainMemberTests, self).setUp()
+        self.loadapp()
+        self.policy_file = self.useFixture(temporaryfile.SecureTempFile())
+        self.policy_file_name = self.policy_file.file_name
+        self.useFixture(
+            ksfixtures.Policy(
+                self.config_fixture, policy_file=self.policy_file_name
+            )
+        )
+        self._override_policy()
+        self.config_fixture.config(group='oslo_policy', enforce_scope=True)
+
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+        self.domain_id = domain['id']
+        domain_admin = unit.new_user_ref(domain_id=self.domain_id)
+        self.user_id = PROVIDERS.identity_api.create_user(domain_admin)['id']
+        PROVIDERS.assignment_api.create_grant(
+            self.bootstrapper.member_role_id, user_id=self.user_id,
+            domain_id=self.domain_id
+        )
+
+        auth = self.build_authentication_request(
+            user_id=self.user_id,
+            password=domain_admin['password'],
+            domain_id=self.domain_id
+        )
+
+        # Grab a token using the persona we're testing and prepare headers
+        # for requests we'll be making in the tests.
+        with self.test_client() as c:
+            r = c.post('/v3/auth/tokens', json=auth)
+            self.token_id = r.headers['X-Subject-Token']
+            self.headers = {'X-Auth-Token': self.token_id}
+
+    def _override_policy(self):
+        # TODO(cmurphy): Remove this once the deprecated policies in
+        # keystone.common.policies.group have been removed. This is only
+        # here to make sure we test the new policies instead of the deprecated
+        # ones. Oslo.policy will OR deprecated policies with new policies to
+        # maintain compatibility and give operators a chance to update
+        # permissions or update policies without breaking users. This will
+        # cause these specific tests to fail since we're trying to correct this
+        # broken behavior with better scope checking.
+        with open(self.policy_file_name, 'w') as f:
+            overridden_policies = {
+                'identity:get_group': gp.SYSTEM_READER_OR_DOMAIN_READER,
+                'identity:list_groups': gp.SYSTEM_READER_OR_DOMAIN_READER,
+                'identity:list_groups_for_user': gp.SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_USER_OR_OWNER
+            }
+            f.write(jsonutils.dumps(overridden_policies))
+
+class DomainAdminTests(base_classes.TestCaseWithBootstrap,
+                       common_auth.AuthTestMixin,
+                       _DomainUserGroupTests):
+
+    def setUp(self):
+        super(DomainAdminTests, self).setUp()
+        self.loadapp()
+        self.policy_file = self.useFixture(temporaryfile.SecureTempFile())
+        self.policy_file_name = self.policy_file.file_name
+        self.useFixture(
+            ksfixtures.Policy(
+                self.config_fixture, policy_file=self.policy_file_name
+            )
+        )
+        self._override_policy()
+        self.config_fixture.config(group='oslo_policy', enforce_scope=True)
+
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+        self.domain_id = domain['id']
+        domain_admin = unit.new_user_ref(domain_id=self.domain_id)
+        self.user_id = PROVIDERS.identity_api.create_user(domain_admin)['id']
+        PROVIDERS.assignment_api.create_grant(
+            self.bootstrapper.admin_role_id, user_id=self.user_id,
+            domain_id=self.domain_id
+        )
+
+        auth = self.build_authentication_request(
+            user_id=self.user_id,
+            password=domain_admin['password'],
+            domain_id=self.domain_id
+        )
+
+        # Grab a token using the persona we're testing and prepare headers
+        # for requests we'll be making in the tests.
+        with self.test_client() as c:
+            r = c.post('/v3/auth/tokens', json=auth)
+            self.token_id = r.headers['X-Subject-Token']
+            self.headers = {'X-Auth-Token': self.token_id}
+
+    def _override_policy(self):
+        # TODO(cmurphy): Remove this once the deprecated policies in
+        # keystone.common.policies.group have been removed. This is only
+        # here to make sure we test the new policies instead of the deprecated
+        # ones. Oslo.policy will OR deprecated policies with new policies to
+        # maintain compatibility and give operators a chance to update
+        # permissions or update policies without breaking users. This will
+        # cause these specific tests to fail since we're trying to correct this
+        # broken behavior with better scope checking.
+        with open(self.policy_file_name, 'w') as f:
+            overridden_policies = {
+                'identity:get_group': gp.SYSTEM_READER_OR_DOMAIN_READER,
+                'identity:list_groups': gp.SYSTEM_READER_OR_DOMAIN_READER,
+                'identity:list_groups_for_user': gp.SYSTEM_READER_OR_DOMAIN_READER_FOR_TARGET_USER_OR_OWNER,
+                'identity:create_group': gp.SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
+                'identity:update_group': gp.SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
+                'identity:delete_group': gp.SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
+            }
+            f.write(jsonutils.dumps(overridden_policies))
+
+    def test_user_can_create_group_for_own_domain(self):
+        create = {
+            'group': {
+                'name': uuid.uuid4().hex,
+                'domain_id': self.domain_id
+            }
+        }
+
+        with self.test_client() as c:
+            c.post('/v3/groups', json=create, headers=self.headers)
+
+    def test_user_cannot_create_group_for_other_domain(self):
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+
+        create = {
+            'group': {
+                'name': uuid.uuid4().hex,
+                'domain_id': domain['id']
+            }
+        }
+
+        with self.test_client() as c:
+            c.post('/v3/groups', json=create, headers=self.headers,
+                   expected_status_code=http_client.FORBIDDEN)
+
+    def test_user_can_update_group_in_own_domain(self):
+        group = PROVIDERS.identity_api.create_group(
+            unit.new_group_ref(domain_id=self.domain_id)
+        )
+
+        update = {'group': {'description': uuid.uuid4().hex}}
+        with self.test_client() as c:
+            c.patch(
+                '/v3/groups/%s' % group['id'], json=update,
+                headers=self.headers)
+
+    def test_user_cannot_update_group_in_other_domain(self):
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+        group = PROVIDERS.identity_api.create_group(
+            unit.new_group_ref(domain_id=domain['id'])
+        )
+
+        update = {'group': {'description': uuid.uuid4().hex}}
+        with self.test_client() as c:
+            c.patch(
+                '/v3/groups/%s' % group['id'], json=update,
+                headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
+            )
+
+    def test_user_can_delete_group_in_own_domain(self):
+        group = PROVIDERS.identity_api.create_group(
+            unit.new_group_ref(domain_id=self.domain_id)
+        )
+        with self.test_client() as c:
+            c.delete(
+                '/v3/groups/%s' % group['id'],
+                headers=self.headers
+            )
+
+    def test_user_cannot_delete_group_in_other_domain(self):
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+        group = PROVIDERS.identity_api.create_group(
+            unit.new_group_ref(domain_id=domain['id'])
+        )
+        with self.test_client() as c:
+            c.delete(
+                '/v3/groups/%s' % group['id'],
+                headers=self.headers,
+                expected_status_code=http_client.FORBIDDEN
             )
 
 
