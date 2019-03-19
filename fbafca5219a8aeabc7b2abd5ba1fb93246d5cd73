@@ -96,6 +96,24 @@
     },
     {
       "key": {
+        "uuid": "5fc1f717_3b0eb932",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2019-03-19T15:10:55Z",
+      "side": 1,
+      "message": "Actually, it seems correct. There are two apache sections in the apache config. One for keystone and one for IDP_ID.",
+      "parentUuid": "9fdfeff1_be2e0ea9",
+      "revId": "fbafca5219a8aeabc7b2abd5ba1fb93246d5cd73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_f10c20ed",
         "filename": "devstack/lib/federation.sh",
         "patchSetId": 11
@@ -160,6 +178,29 @@
       "side": 1,
       "message": "Good call, will remove.",
       "parentUuid": "9fdfeff1_31d4e847",
+      "revId": "fbafca5219a8aeabc7b2abd5ba1fb93246d5cd73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_9b99edd1",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2019-03-19T15:10:55Z",
+      "side": 1,
+      "message": "This seems to ask for a passphrase and therefore failing. Reverting back to the two-liner since that worked and I don\u0027t have time to debug.",
+      "range": {
+        "startLine": 133,
+        "startChar": 8,
+        "endLine": 134,
+        "endChar": 77
+      },
       "revId": "fbafca5219a8aeabc7b2abd5ba1fb93246d5cd73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
