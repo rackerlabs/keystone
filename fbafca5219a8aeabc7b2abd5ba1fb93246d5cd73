@@ -114,6 +114,24 @@
     },
     {
       "key": {
+        "uuid": "5fc1f717_5b97053c",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-19T15:21:45Z",
+      "side": 1,
+      "message": "My point is in configure_tests_settings we have `iniset $TEMPEST_CONFIG fed_scenario idp_id $IDP_ID` and so unless this default changes or we configure the CI somehow to change the default, the tempest tests will always run with samltest.id as the IdP, whereas I thought we wanted to switch to using keystone as the IdP.",
+      "parentUuid": "5fc1f717_3b0eb932",
+      "revId": "fbafca5219a8aeabc7b2abd5ba1fb93246d5cd73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_f10c20ed",
         "filename": "devstack/lib/federation.sh",
         "patchSetId": 11
