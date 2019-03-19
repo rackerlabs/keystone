@@ -1,0 +1,10 @@
+Code-Review+2: Tony Breeds <tony@bakeyournoodle.com>
+Code-Review+1: Adam Harwell <flux.adam@gmail.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Workflow+1: Lance Bragstad <lbragstad@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 19 Mar 2019 15:29:49 +0000
+Reviewed-on: https://review.openstack.org/599447
+Project: openstack/keystone
+Branch: refs/heads/stable/rocky
