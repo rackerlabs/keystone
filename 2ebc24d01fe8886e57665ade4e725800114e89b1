@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5fc1f717_01310ced",
+        "filename": "doc/source/admin/manage-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2019-03-19T16:11:39Z",
+      "side": 1,
+      "message": "Will do in follow-up.",
+      "parentUuid": "9fdfeff1_74ba30c1",
+      "revId": "2ebc24d01fe8886e57665ade4e725800114e89b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_b4aad86d",
         "filename": "doc/source/admin/manage-services.rst",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2019-02-02T13:44:01Z",
       "side": 1,
       "message": "Does the user client actually send an empty header like this?",
+      "revId": "2ebc24d01fe8886e57665ade4e725800114e89b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_5e8133c3",
+        "filename": "doc/source/admin/manage-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2019-03-19T16:11:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_b4aad86d",
       "revId": "2ebc24d01fe8886e57665ade4e725800114e89b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +191,30 @@
     },
     {
       "key": {
+        "uuid": "5fc1f717_413714e5",
+        "filename": "doc/source/admin/manage-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2019-03-19T16:11:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_d9f56758",
+      "range": {
+        "startLine": 269,
+        "startChar": 0,
+        "endLine": 269,
+        "endChar": 39
+      },
+      "revId": "2ebc24d01fe8886e57665ade4e725800114e89b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_54b36ce9",
         "filename": "doc/source/admin/manage-services.rst",
         "patchSetId": 2
@@ -178,6 +238,30 @@
     },
     {
       "key": {
+        "uuid": "5fc1f717_213a08cd",
+        "filename": "doc/source/admin/manage-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2019-03-19T16:11:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_54b36ce9",
+      "range": {
+        "startLine": 271,
+        "startChar": 60,
+        "endLine": 271,
+        "endChar": 75
+      },
+      "revId": "2ebc24d01fe8886e57665ade4e725800114e89b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_f4cdc065",
         "filename": "doc/source/admin/manage-services.rst",
         "patchSetId": 2
@@ -189,6 +273,30 @@
       "writtenOn": "2019-02-02T13:44:01Z",
       "side": 1,
       "message": "user\u0027s token",
+      "range": {
+        "startLine": 275,
+        "startChar": 73,
+        "endLine": 275,
+        "endChar": 78
+      },
+      "revId": "2ebc24d01fe8886e57665ade4e725800114e89b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_a126f8b9",
+        "filename": "doc/source/admin/manage-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2019-03-19T16:11:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_f4cdc065",
       "range": {
         "startLine": 275,
         "startChar": 73,
@@ -236,6 +344,24 @@
     },
     {
       "key": {
+        "uuid": "5fc1f717_6107b01a",
+        "filename": "doc/source/admin/manage-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2019-03-19T16:11:39Z",
+      "side": 1,
+      "message": "Will do in follow-up.",
+      "parentUuid": "9fdfeff1_14c96457",
+      "revId": "2ebc24d01fe8886e57665ade4e725800114e89b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_b4c3b837",
         "filename": "doc/source/admin/manage-services.rst",
         "patchSetId": 2
@@ -247,6 +373,24 @@
       "writtenOn": "2019-02-02T13:44:01Z",
       "side": 1,
       "message": "Maybe also the spec?",
+      "revId": "2ebc24d01fe8886e57665ade4e725800114e89b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_01182c73",
+        "filename": "doc/source/admin/manage-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2019-03-19T16:11:39Z",
+      "side": 1,
+      "message": "Will do in follow-up.",
+      "parentUuid": "9fdfeff1_b4c3b837",
       "revId": "2ebc24d01fe8886e57665ade4e725800114e89b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
