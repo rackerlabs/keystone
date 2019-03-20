@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_c45f7770",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-20T16:35:52Z",
+      "side": 1,
+      "message": "I don\u0027t think we need this anymore without admin_domain_scope \u003d True, which was patched in devstack.",
+      "revId": "c282142f276f92b52e43637c4e45c2481d892fc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
