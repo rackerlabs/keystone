@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_82207ef9",
+        "filename": "releasenotes/notes/bug-1819036-e2d24655c70d0aad.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-20T18:24:16Z",
+      "side": 1,
+      "message": "The releasenotes job is coughing on this missing \u003e",
+      "revId": "8cbaaa40023c5cfd9572ed3e891d9c7ca6584488",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_e2686222",
+        "filename": "releasenotes/notes/bug-1819036-e2d24655c70d0aad.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-20T18:24:16Z",
+      "side": 1,
+      "message": "sweet",
+      "range": {
+        "startLine": 8,
+        "startChar": 70,
+        "endLine": 8,
+        "endChar": 74
+      },
+      "revId": "8cbaaa40023c5cfd9572ed3e891d9c7ca6584488",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
