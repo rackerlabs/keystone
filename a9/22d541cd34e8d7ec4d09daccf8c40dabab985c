@@ -1,0 +1,9 @@
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+2: Sean McGinnis <sean.mcginnis@gmail.com>
+Workflow+1: Sean McGinnis <sean.mcginnis@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 20 Mar 2019 20:07:55 +0000
+Reviewed-on: https://review.openstack.org/642716
+Project: openstack/keystone
+Branch: refs/heads/stable/rocky
