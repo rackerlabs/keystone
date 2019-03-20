@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5fc1f717_539fcab3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-20T20:19:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5fc1f717_e325290a",
+      "range": {
+        "startLine": 10,
+        "startChar": 39,
+        "endLine": 10,
+        "endChar": 44
+      },
+      "revId": "ff1170e87a55a217414a95352b414522c029e7b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5fc1f717_0382b5c8",
         "filename": "keystone/common/policies/project.py",
         "patchSetId": 7
@@ -36,6 +60,30 @@
       "writtenOn": "2019-03-15T12:02:48Z",
       "side": 1,
       "message": "Remind me why it\u0027s target.project.domain_id here but just target.domain_id above?",
+      "range": {
+        "startLine": 46,
+        "startChar": 21,
+        "endLine": 46,
+        "endChar": 61
+      },
+      "revId": "ff1170e87a55a217414a95352b414522c029e7b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_1345c217",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-20T20:19:40Z",
+      "side": 1,
+      "message": "It\u0027s because we\u0027re working on a list API, which is kinda weird. Line 41 needs target.domain_id which is the domain ID from a domain-scoped token. Because we\u0027re not passing a project_id or anything like as a target, we can\u0027t use something like %(target.project.domain_id)s, since there isn\u0027t a project involved in this request.\n\nLine 41 is really just a way to ensure we require either a system-scoped token or a project-scoped token if someone is using the defaults.\n\nLine 46 is actually getting used on the GET /v3/projects/{project_id} API, so we can make assertions about the project in the request. If that makes sense?\n\n\nhttps://review.openstack.org/#/c/624220/7/keystone/api/projects.py,unified@119",
+      "parentUuid": "5fc1f717_0382b5c8",
       "range": {
         "startLine": 46,
         "startChar": 21,
