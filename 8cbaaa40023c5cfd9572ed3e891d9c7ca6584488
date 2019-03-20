@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5fc1f717_25ee7488",
+        "filename": "releasenotes/notes/bug-1819036-e2d24655c70d0aad.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-20T19:15:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5fc1f717_82207ef9",
+      "revId": "8cbaaa40023c5cfd9572ed3e891d9c7ca6584488",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5fc1f717_e2686222",
         "filename": "releasenotes/notes/bug-1819036-e2d24655c70d0aad.yaml",
         "patchSetId": 3
