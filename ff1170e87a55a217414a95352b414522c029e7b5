@@ -120,6 +120,30 @@
     },
     {
       "key": {
+        "uuid": "5fc1f717_4ee94f7e",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-21T13:58:01Z",
+      "side": 1,
+      "message": "Yep.\n\nI don\u0027t think it is very intuitive and it is hard for people to grok, myself included.\n\nOutside of that, I think it might be slightly accident prone because if a developer needs to use this technique, they should also be filtering the response accordingly. If they don\u0027t, we risk a security vulnerability.\n\nI\u0027m open to suggestions to make this easier to understand and less error-prone.",
+      "parentUuid": "5fc1f717_37d78126",
+      "range": {
+        "startLine": 46,
+        "startChar": 21,
+        "endLine": 46,
+        "endChar": 61
+      },
+      "revId": "ff1170e87a55a217414a95352b414522c029e7b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5fc1f717_83e305a4",
         "filename": "keystone/tests/unit/protection/v3/test_projects.py",
         "patchSetId": 7
