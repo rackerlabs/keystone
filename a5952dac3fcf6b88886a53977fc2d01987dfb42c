@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_54a48208",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-21T14:38:25Z",
+      "side": 1,
+      "message": "This needs to reuse the common definition.",
+      "range": {
+        "startLine": 151,
+        "startChar": 18,
+        "endLine": 151,
+        "endChar": 32
+      },
+      "revId": "a5952dac3fcf6b88886a53977fc2d01987dfb42c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
