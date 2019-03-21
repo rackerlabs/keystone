@@ -22,6 +22,30 @@
       "revId": "1d0e04d01d34390ed611119078fc8618054e842d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_22c08f2a",
+        "filename": "keystone/api/role_assignments.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-21T18:49:06Z",
+      "side": 1,
+      "message": "I don\u0027t think so, but it doesn\u0027t fail because it\u0027s just unnecessarily reassigning something?",
+      "parentUuid": "5fc1f717_02f0f3c8",
+      "range": {
+        "startLine": 74,
+        "startChar": 16,
+        "endLine": 74,
+        "endChar": 68
+      },
+      "revId": "1d0e04d01d34390ed611119078fc8618054e842d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
