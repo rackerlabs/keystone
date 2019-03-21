@@ -144,6 +144,30 @@
     },
     {
       "key": {
+        "uuid": "5fc1f717_ce069f21",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-21T14:02:02Z",
+      "side": 1,
+      "message": "Your guess is as good as mine. I think having a strong foundation of unit tests to copy off of that show how things are supposed to behave is a good start.",
+      "parentUuid": "5fc1f717_4ee94f7e",
+      "range": {
+        "startLine": 46,
+        "startChar": 21,
+        "endLine": 46,
+        "endChar": 61
+      },
+      "revId": "ff1170e87a55a217414a95352b414522c029e7b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5fc1f717_83e305a4",
         "filename": "keystone/tests/unit/protection/v3/test_projects.py",
         "patchSetId": 7
