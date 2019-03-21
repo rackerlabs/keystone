@@ -132,6 +132,24 @@
     },
     {
       "key": {
+        "uuid": "5fc1f717_97cf5556",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-21T09:40:13Z",
+      "side": 1,
+      "message": "We discussed this on IRC, this will be managed by the tempest plugin and both IdPs will be available in parallel at least for now.",
+      "parentUuid": "5fc1f717_5b97053c",
+      "revId": "fbafca5219a8aeabc7b2abd5ba1fb93246d5cd73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_f10c20ed",
         "filename": "devstack/lib/federation.sh",
         "patchSetId": 11
