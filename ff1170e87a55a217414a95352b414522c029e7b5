@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "5fc1f717_37d78126",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-21T09:36:37Z",
+      "side": 1,
+      "message": "Gotcha, this makes more sense after starting to work through it myself with the group API. The target.domain_id above comes from the target \u003d {\u0027domain_id\u0027: self.oslo_context.domain_id} in the GET project API.",
+      "parentUuid": "5fc1f717_1345c217",
+      "range": {
+        "startLine": 46,
+        "startChar": 21,
+        "endLine": 46,
+        "endChar": 61
+      },
+      "revId": "ff1170e87a55a217414a95352b414522c029e7b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5fc1f717_83e305a4",
         "filename": "keystone/tests/unit/protection/v3/test_projects.py",
         "patchSetId": 7
