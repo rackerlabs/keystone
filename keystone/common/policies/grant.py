@@ -15,6 +15,10 @@ from oslo_policy import policy
 
 from keystone.common.policies import base
 
+SYSTEM_READER_OR_DOMAIN_READER = (
+    '(' + base.SYSTEM_READER + ') or (' + base.DOMAIN_READER + ')'
+)
+
 deprecated_check_system_grant_for_user = policy.DeprecatedRule(
     name=base.IDENTITY % 'check_system_grant_for_user',
     check_str=base.RULE_ADMIN_REQUIRED
@@ -111,14 +115,14 @@ list_grants_operations = (
 grant_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'check_grant',
-        check_str=base.SYSTEM_READER,
+        check_str=SYSTEM_READER_OR_DOMAIN_READER,
         # FIXME(lbragstad): A system administrator should be able to grant role
         # assignments from any actor to any target in the deployment. Domain
         # administrators should only be able to grant access to the domain they
         # administer or projects within that domain. Once keystone is smart
         # enough to enforce those checks in code, we can add 'project' to the
         # list of scope_types below.
-        scope_types=['system'],
+        scope_types=['system', 'domain'],
         description=('Check a role grant between a target and an actor. A '
                      'target can be either a domain or a project. An actor '
                      'can be either a user or a group. These terms also apply '
@@ -131,10 +135,10 @@ grant_policies = [
         deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_grants',
-        check_str=base.SYSTEM_READER,
+        check_str=SYSTEM_READER_OR_DOMAIN_READER,
         # FIXME(lbragstad): See the above comment about scope_types before
         # adding 'project' to scope_types below.
-        scope_types=['system'],
+        scope_types=['system', 'domain'],
         description=('List roles granted to an actor on a target. A target '
                      'can be either a domain or a project. An actor can be '
                      'either a user or a group. For the OS-INHERIT APIs, it '
