@@ -15,6 +15,11 @@ from oslo_policy import policy
 
 from keystone.common.policies import base
 
+SYSTEM_ADMIN_OR_DOMAIN_ADMIN = (
+        ' + base.SYSTEM_ADMIN + ' or
+        '(role:admin and token.domain.id:%(target.user.domain_id)s)'
+)
+
 deprecated_check_system_grant_for_user = policy.DeprecatedRule(
     name=base.IDENTITY % 'check_system_grant_for_user',
     check_str=base.RULE_ADMIN_REQUIRED
@@ -147,10 +152,10 @@ grant_policies = [
         deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_grant',
-        check_str=base.SYSTEM_ADMIN,
+        check_str=SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
         # FIXME(lbragstad): See the above comment about scope_types before
         # adding 'project' to scope_types below.
-        scope_types=['system'],
+        scope_types=['system', 'domain'],
         description=('Create a role grant between a target and an actor. A '
                      'target can be either a domain or a project. An actor '
                      'can be either a user or a group. These terms also apply '
@@ -163,10 +168,10 @@ grant_policies = [
         deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'revoke_grant',
-        check_str=base.SYSTEM_ADMIN,
+        check_str=SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
         # FIXME(lbragstad): See the above comment about scope_types before
         # adding 'project' to scope_types below.
-        scope_types=['system'],
+        scope_types=['system', 'domain'],
         description=('Revoke a role grant between a target and an actor. A '
                      'target can be either a domain or a project. An actor '
                      'can be either a user or a group. These terms also apply '
