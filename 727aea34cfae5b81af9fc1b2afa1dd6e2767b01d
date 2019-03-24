@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_0679be91",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2019-03-24T14:44:55Z",
+      "side": 1,
+      "message": "Is there any convention to use upper case here?",
+      "range": {
+        "startLine": 15,
+        "startChar": 13,
+        "endLine": 15,
+        "endChar": 18
+      },
+      "revId": "727aea34cfae5b81af9fc1b2afa1dd6e2767b01d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
