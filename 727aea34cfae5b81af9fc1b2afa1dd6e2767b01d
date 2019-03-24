@@ -22,6 +22,30 @@
       "revId": "727aea34cfae5b81af9fc1b2afa1dd6e2767b01d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_56dc5373",
+        "filename": "doc/source/contributor/services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2019-03-24T21:42:22Z",
+      "side": 1,
+      "message": "The other page titles mostly follow with capitalization, not sure if there is a proper convention other than all those APA/Chicago/AP/MLA styles.",
+      "parentUuid": "5fc1f717_0679be91",
+      "range": {
+        "startLine": 15,
+        "startChar": 13,
+        "endLine": 15,
+        "endChar": 18
+      },
+      "revId": "727aea34cfae5b81af9fc1b2afa1dd6e2767b01d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
