@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_14430c15",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-25T11:20:24Z",
+      "side": 1,
+      "message": "This commit is packing a lot into a change that on first glance is supposed to just be a cleanup change, it would be a lot easier to digest if at least this part was split up. Can you elaborate on why it\u0027s acceptable to change the response code here?",
+      "range": {
+        "startLine": 16,
+        "startChar": 27,
+        "endLine": 18,
+        "endChar": 65
+      },
+      "revId": "ac31b8e1655e67dcc8a688dc2b2d645cbffa614a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
