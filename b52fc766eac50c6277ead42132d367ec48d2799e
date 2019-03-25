@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_e7b1e245",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-25T18:00:04Z",
+      "side": 1,
+      "message": "This should probably be deleted since we\u0027ve resolved this discussion I think",
+      "revId": "b52fc766eac50c6277ead42132d367ec48d2799e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
