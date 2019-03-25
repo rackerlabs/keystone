@@ -15,6 +15,14 @@ upgrade:
     accessible to end users and administrators in a secure way. Please
     consider these new defaults if your deployment overrides
     group policies.
+
+    All policies in ``policy.v3cloudsample.json`` that are redundant with the
+    defaults in code have been removed. This reduces maintainenance overhead
+    and leaves the ``policy.v3cloudsample.json`` policy file with only
+    overrides. These overrides will eventually be moved into code or new
+    defaults in keystone directly. If you're using the policies removed
+    from ``policy.v3cloudsample.json`` please check to see if you can migrate
+    to the new defaults or continue maintaining the policy as an override.
 deprecations:
   - |
     [`bug 1805369 <https://bugs.launchpad.net/keystone/+bug/1805369>`_]
