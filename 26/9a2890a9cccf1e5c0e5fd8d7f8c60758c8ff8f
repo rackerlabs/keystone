@@ -1,0 +1,13 @@
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Code-Review+1: Vieri <15050873171@163.com>
+Code-Review+1: zhangmeng <zhangmeng9502@gmail.com>
+Code-Review+2: Kristi Nikolla <kristi@nikolla.me>
+Code-Review+1: Filippo Inzaghi <zhao.daqing@99cloud.net>
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Workflow+1: Colleen Murphy <colleen@gazlene.net>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 25 Mar 2019 14:34:21 +0000
+Reviewed-on: https://review.openstack.org/638593
+Project: openstack/keystone
+Branch: refs/heads/master
