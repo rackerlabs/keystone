@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    [`bug 1801873 <https://bugs.launchpad.net/keystone/+bug/1801873>`_]
+    Fixes the inability to delete LDAP-backed domains.
