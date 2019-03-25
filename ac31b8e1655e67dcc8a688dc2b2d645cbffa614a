@@ -22,6 +22,30 @@
       "revId": "ac31b8e1655e67dcc8a688dc2b2d645cbffa614a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_99288897",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-25T16:49:43Z",
+      "side": 1,
+      "message": "I attempted to clarify. Let me know if it helps.",
+      "parentUuid": "5fc1f717_14430c15",
+      "range": {
+        "startLine": 16,
+        "startChar": 27,
+        "endLine": 18,
+        "endChar": 65
+      },
+      "revId": "ac31b8e1655e67dcc8a688dc2b2d645cbffa614a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
