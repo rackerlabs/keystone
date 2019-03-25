@@ -22,6 +22,30 @@
       "revId": "ca3234380493861354c8cb2fb9a80148aff3a03a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_c06a9a18",
+        "filename": "keystone/common/policies/role_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-25T13:41:25Z",
+      "side": 1,
+      "message": "Nice catch, I forgot to clean this up.",
+      "parentUuid": "5fc1f717_ab25f7c3",
+      "range": {
+        "startLine": 48,
+        "startChar": 41,
+        "endLine": 48,
+        "endChar": 50
+      },
+      "revId": "ca3234380493861354c8cb2fb9a80148aff3a03a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
