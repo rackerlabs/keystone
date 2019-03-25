@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_ab25f7c3",
+        "filename": "keystone/common/policies/role_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-25T10:05:34Z",
+      "side": 1,
+      "message": "I\u0027m not sure why even bother having a project scope type if all operations are forbidden to project users",
+      "range": {
+        "startLine": 48,
+        "startChar": 41,
+        "endLine": 48,
+        "endChar": 50
+      },
+      "revId": "ca3234380493861354c8cb2fb9a80148aff3a03a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
