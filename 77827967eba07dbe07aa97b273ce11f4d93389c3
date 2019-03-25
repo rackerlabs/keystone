@@ -16,6 +16,24 @@
       "revId": "77827967eba07dbe07aa97b273ce11f4d93389c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_15cc5868",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-25T19:32:47Z",
+      "side": 1,
+      "message": "Weird, it should be https://review.openstack.org/#/c/623321/",
+      "parentUuid": "5fc1f717_a4c3d8ec",
+      "revId": "77827967eba07dbe07aa97b273ce11f4d93389c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
