@@ -16,8 +16,8 @@ from oslo_policy import policy
 from keystone.common.policies import base
 
 SYSTEM_ADMIN_OR_DOMAIN_ADMIN = (
-        ' + base.SYSTEM_ADMIN + ' or
-        '(role:admin and token.domain.id:%(target.user.domain_id)s)'
+    ' + base.SYSTEM_ADMIN + ' or
+    '(role:admin and token.domain.id:%(target.user.domain_id)s)'
 )
 
 deprecated_check_system_grant_for_user = policy.DeprecatedRule(

@@ -1429,5 +1429,5 @@ class DomainAdminTests(base_classes.TestCaseWithBootstrap,
     def test_user_cannot_revoke_grant_for_group_on_another_domain(self):
         pass
 
-    def test_user_cannot_revoke_grant_for_group_on_another_project(self):
+    def test_user_cannot_revoke_grant_for_group_on_anothe_project(self):
         pass
