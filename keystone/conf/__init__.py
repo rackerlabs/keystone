@@ -51,6 +51,7 @@ from keystone.conf import shadow_users
 from keystone.conf import signing
 from keystone.conf import token
 from keystone.conf import tokenless_auth
+from keystone.conf import totp
 from keystone.conf import trust
 from keystone.conf import unified_limit
 from keystone.conf import wsgi
@@ -90,6 +91,7 @@ conf_modules = [
     signing,
     token,
     tokenless_auth,
+    totp,
     trust,
     unified_limit,
     wsgi
