@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_0432d6f2",
+        "filename": "keystone/tests/unit/protection/v3/test_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 11904
+      },
+      "writtenOn": "2019-03-26T15:00:41Z",
+      "side": 1,
+      "message": "Pedantic nit: six should be grouped with oslo_serialization for third party imports.",
+      "revId": "10305cf729a59ac43f752b31db154b0ee268a98b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
