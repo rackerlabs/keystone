@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_6c95bc31",
+        "filename": "releasenotes/notes/scope-and-default-roles-a733c235731bb558.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2019-03-26T18:21:30Z",
+      "side": 1,
+      "message": "Should have a comma after eventually.",
+      "revId": "60e0f00326ee41968730f9d72fc77cab26af3d9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
