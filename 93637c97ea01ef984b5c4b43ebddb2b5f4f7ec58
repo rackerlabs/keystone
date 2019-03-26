@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_e489ca74",
+        "filename": "keystone/common/policies/group.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-26T15:12:59Z",
+      "side": 1,
+      "message": "Is this needed if we have SYSTEM_READER_OR_DOMAIN_READER?",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 1
+      },
+      "revId": "93637c97ea01ef984b5c4b43ebddb2b5f4f7ec58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_44dd3e6e",
+        "filename": "keystone/common/policies/group.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-26T15:12:59Z",
+      "side": 1,
+      "message": "I think this can be SYSTEM_READER_OR_DOMAIN_READER, can\u0027t it?",
+      "range": {
+        "startLine": 170,
+        "startChar": 18,
+        "endLine": 170,
+        "endChar": 65
+      },
+      "revId": "93637c97ea01ef984b5c4b43ebddb2b5f4f7ec58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
