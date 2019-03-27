@@ -3408,6 +3408,17 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         # Now we should be able to delete the protocol
         PROVIDERS.federation_api.delete_protocol(self.IDP, protocol['id'])
 
+    def test_create_protocol_without_protocol_id_in_url(self):
+        # create a protocol, but do not put the ID in the URL
+        protocol = self.proto_ref(mapping_id=self.mapping['id'])
+        self.put('/OS-FEDERATION/identity_providers/{idp_id}/protocols/',
+                 body={'protocol': protocol},
+                 expected_status=http_client.METHOD_NOT_ALLOWED)
+        self.put('/OS-FEDERATION/identity_providers/{idp_id}/protocols',
+                 body={'protocol': protocol},
+                 expected_status=http_client.METHOD_NOT_ALLOWED)
+
+
     def _authenticate_via_saml(self):
         r = self._issue_unscoped_token()
         unscoped_token = r.id

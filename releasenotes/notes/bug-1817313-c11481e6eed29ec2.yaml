@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    [`bug 1817313 <https://bugs.launchpad.net/keystone/+bug/1817313>`_]
+    Explicitly raise METHOD NOT ALLOWED for OS-Federation protocols creation
+    if the protocol_id is not in the URL. This url structure is different
+    from other URL structures in Keystone because the ID is supplied in the
+    URI instead of in the request body. This is due to inconsitency and to
+    ensure backwards compatibility for previous behavior.
