@@ -16,6 +16,7 @@ import flask
 import flask_restful
 from oslo_serialization import jsonutils
 from six.moves import http_client
+import werkzeug.exceptions
 
 from keystone.api._shared import authentication
 from keystone.api._shared import json_home_relations
@@ -207,12 +208,19 @@ class IdentityProvidersProtocolsResource(_ResourceBase):
             self._add_related_links(r)
         return collection
 
-    def put(self, idp_id, protocol_id):
+    def put(self, idp_id, protocol_id=None):
         """Create protocol for an IDP.
 
         PUT /OS-Federation/identity_providers/{idp_id}/protocols/{protocol_id}
         """
         ENFORCER.enforce_call(action='identity:create_protocol')
+        if protocol_id is None:
+            # NOTE(morgan): If there is no protocol_id, raise a 405. This is
+            # done to eliminate the need to have a separate mapping / resource
+            # for the PUT/DELETE/PATCH methods since no-protocol-id is
+            # needed for LIST.
+            raise werkzeug.exceptions.MethodNotAllowed(
+                valid_methods=['GET'])
         protocol = self.request_body_json.get('protocol', {})
         validation.lazy_validate(schema.protocol_create, protocol)
         protocol = self._normalize_dict(protocol)
