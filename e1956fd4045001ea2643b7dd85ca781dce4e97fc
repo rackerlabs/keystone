@@ -22,6 +22,30 @@
       "revId": "e1956fd4045001ea2643b7dd85ca781dce4e97fc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_edabd8d2",
+        "filename": "keystone/common/policies/group.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-27T10:25:14Z",
+      "side": 1,
+      "message": "Oops, yes I accidentally reverted that fix.",
+      "parentUuid": "5fc1f717_def56ccc",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 30
+      },
+      "revId": "e1956fd4045001ea2643b7dd85ca781dce4e97fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
