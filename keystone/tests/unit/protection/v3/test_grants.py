@@ -1394,3 +1394,74 @@ class DomainMemberTests(base_classes.TestCaseWithBootstrap,
             r = c.post('/v3/auth/tokens', json=auth)
             self.token_id = r.headers['X-Subject-Token']
             self.headers = {'X-Auth-Token': self.token_id}
+
+
+class DomainAdminTests(base_classes.TestCaseWithBootstrap,
+                       common_auth.AuthTestMixin,
+                       _DomainUserTests,
+                       _DomainMemberAndReaderTests):
+
+    def setUp(self):
+        super(DomainAdminTests, self).setUp()
+        self.loadapp()
+        self.useFixture(ksfixtures.Policy(self.config_fixture))
+        self.config_fixture.config(group='oslo_policy', enforce_scope=True)
+
+        domain = PROVIDERS.resource_api.create_domain(
+            uuid.uuid4().hex, unit.new_domain_ref()
+        )
+        self.domain_id = domain['id']
+        domain_admin = unit.new_user_ref(domain_id=self.domain_id)
+        self.user_id = PROVIDERS.identity_api.create_user(domain_admin)['id']
+        PROVIDERS.assignment_api.create_grant(
+            self.bootstrapper.admin_role_id, user_id=self.user_id,
+            domain_id=self.domain_id
+        )
+
+        auth = self.build_authentication_request(
+            user_id=self.user_id, password=domain_admin['password'],
+            domain_id=self.domain_id,
+        )
+
+        # Grab a token using the persona we're testing and prepare headers
+        # for requests we'll be making in the tests.
+        with self.test_client() as c:
+            r = c.post('/v3/auth/tokens', json=auth)
+            self.token_id = r.headers['X-Subject-Token']
+            self.headers = {'X-Auth-Token': self.token_id}
+
+    def test_user_can_create_grant_for_user_on_project(self):
+        pass
+
+    def test_user_can_create_grant_for_user_on_domain(self):
+        pass
+
+    def test_user_can_create_grant_for_group_on_project(self):
+        pass
+
+    def test_user_can_create_grant_for_group_on_domain(self):
+        pass
+
+    def test_user_can_revoke_grant_from_user_on_project(self):
+        pass
+
+    def test_user_can_revoke_grant_from_user_on_domain(self):
+        pass
+
+    def test_user_can_revoke_grant_from_group_on_project(self):
+        pass
+
+    def test_user_can_revoke_grant_from_group_on_domain(self):
+        pass
+
+    def test_user_cannot_create_grant_for_user_on_another_domain(self):
+        pass
+
+    def test_user_cannot_create_grant_for_user_on_another_project(self):
+        pass
+
+    def test_user_cannot_revoke_grant_for_group_on_another_domain(self):
+        pass
+
+    def test_user_cannot_revoke_grant_for_group_on_another_project(self):
+        pass
