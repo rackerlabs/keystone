@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_7df551ca",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 922,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-27T16:39:56Z",
+      "side": 1,
+      "message": "Sometime in Train we should consider drying these tests up once all the scope-types and default roles work is done.",
+      "revId": "d1ff21fa375b7c82972f2b29a636e1fb20ddd6d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_3dfb49be",
+        "filename": "releasenotes/notes/bug-1805369-ed98d3fcfafb5c43.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-27T16:39:56Z",
+      "side": 1,
+      "message": "group policies, right?\n\nUnless we want to fast-follow this with https://review.openstack.org/#/c/622589/ ?",
+      "range": {
+        "startLine": 19,
+        "startChar": 8,
+        "endLine": 19,
+        "endChar": 16
+      },
+      "revId": "d1ff21fa375b7c82972f2b29a636e1fb20ddd6d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
