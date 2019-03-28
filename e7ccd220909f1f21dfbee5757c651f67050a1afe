@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_36b58c7e",
+        "filename": "keystone/api/os_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-03-28T22:06:37Z",
+      "side": 1,
+      "message": "BAH!",
+      "range": {
+        "startLine": 330,
+        "startChar": 0,
+        "endLine": 330,
+        "endChar": 4
+      },
+      "revId": "e7ccd220909f1f21dfbee5757c651f67050a1afe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
