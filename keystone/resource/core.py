@@ -12,6 +12,7 @@
 
 """Main entry point into the Resource service."""
 
+from keystone_iam_client import client as iam
 from oslo_log import log
 import six
 
@@ -213,18 +214,27 @@ class Manager(manager.Manager):
 
         self._enforce_project_constraints(project)
 
+        is_domain = project.get('is_domain')
+        if is_domain:
+            scope_fqn = iam.get_scope_fqn(domain=project["name"])
+        else:
+            domain = self.get_domain(project["domain_id"])
+            scope_fqn = iam.get_scope_fqn(domain=domain["name"],
+                                          project=project["name"])
+
         # We leave enforcing name uniqueness to the underlying driver (instead
         # of doing it in code in the project_constraints above), so as to allow
         # this check to be done at the storage level, avoiding race conditions
         # in multi-process keystone configurations.
         try:
-            ret = self.driver.create_project(project_id, project)
+            with iam.safe_register_scope(scope_fqn):
+                ret = self.driver.create_project(project_id, project)
         except exception.Conflict:
             raise exception.Conflict(
                 type='project',
                 details=self._generate_project_name_conflict_msg(project))
 
-        if project.get('is_domain'):
+        if is_domain:
             notifications.Audit.created(self._DOMAIN, project_id, initiator)
         else:
             notifications.Audit.created(self._PROJECT, project_id, initiator)
@@ -234,6 +244,30 @@ class Manager(manager.Manager):
                                          ret['domain_id'])
 
         assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
+
+        # Creating assignments
+
+        for group_name, role_name in iam.get_group_names_and_roles(scope_fqn):
+            group_ref = {
+                "name": group_name,
+                "description": "Automatically created group",
+            }
+            if is_domain:
+                group_ref["domain_id"] = project_id
+            else:
+                group_ref["domain_id"] = project["domain_id"]
+            group = PROVIDERS.identity_api.create_group(group_ref,
+                                                        initiator=initiator)
+
+            role = PROVIDERS.role_api.get_unique_role_by_name(role_name)
+            PROVIDERS.assignment_api.create_grant(
+                role["id"],
+                domain_id=project_id if is_domain else None,
+                project_id=None if is_domain else project_id,
+                group_id=group["id"],
+                inherited_to_projects=False,
+                initiator=initiator
+            )
 
         return ret
 
@@ -467,8 +501,20 @@ class Manager(manager.Manager):
         project = self.driver.get_project(project_id)
         if project.get('is_domain'):
             self._delete_domain(project, initiator)
+            scope_fqn = iam.get_scope_fqn(domain=project["name"])
+            domain_id = project_id
         else:
             self._delete_project(project, initiator, cascade)
+            domain = self.get_domain(project["domain_id"])
+            scope_fqn = iam.get_scope_fqn(domain=domain["name"],
+                                          project=project["name"])
+            domain_id = project["domain_id"]
+        iam.deregister_scope(scope_fqn)
+        for group_name, _ in iam.get_group_names_and_roles(scope_fqn):
+            group = PROVIDERS.identity_api.get_group_by_name(group_name,
+                                                             domain_id)
+            PROVIDERS.identity_api.delete_group(group["id"],
+                                                initiator=initiator)
 
     def _delete_project(self, project, initiator=None, cascade=False):
         project_id = project['id']
