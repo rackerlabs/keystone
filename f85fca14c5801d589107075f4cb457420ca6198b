@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_962fa0f4",
+        "filename": "keystone/api/os_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-03-28T22:04:22Z",
+      "side": 0,
+      "message": "why is this deleted? It\u0027s still used above",
+      "revId": "f85fca14c5801d589107075f4cb457420ca6198b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
