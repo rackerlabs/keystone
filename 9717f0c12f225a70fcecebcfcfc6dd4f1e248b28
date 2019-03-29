@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_f0bffef9",
+        "filename": "releasenotes/notes/bug-1817313-c11481e6eed29ec2.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-29T13:08:10Z",
+      "side": 1,
+      "message": "nit: 405 Method Not Allowed",
+      "range": {
+        "startLine": 5,
+        "startChar": 10,
+        "endLine": 5,
+        "endChar": 28
+      },
+      "revId": "9717f0c12f225a70fcecebcfcfc6dd4f1e248b28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_305ca6ec",
+        "filename": "releasenotes/notes/bug-1817313-c11481e6eed29ec2.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-03-29T13:08:10Z",
+      "side": 1,
+      "message": "nit: wrap in backticks to render as a literal",
+      "range": {
+        "startLine": 6,
+        "startChar": 11,
+        "endLine": 6,
+        "endChar": 22
+      },
+      "revId": "9717f0c12f225a70fcecebcfcfc6dd4f1e248b28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
