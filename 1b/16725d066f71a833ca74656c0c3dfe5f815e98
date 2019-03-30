@@ -1,0 +1,9 @@
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+2: wangxiyuan <wangxiyuan@huawei.com>
+Workflow+1: wangxiyuan <wangxiyuan@huawei.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Sat, 30 Mar 2019 10:44:05 +0000
+Reviewed-on: https://review.openstack.org/647498
+Project: openstack/keystone
+Branch: refs/heads/master
