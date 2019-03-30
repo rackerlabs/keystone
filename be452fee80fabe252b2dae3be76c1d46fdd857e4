@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_20fe8738",
+        "filename": "keystone/api/groups.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-03-30T09:13:17Z",
+      "side": 1,
+      "message": "Can we pass the filter action to db layer? Just something like:\n\nif self.oslo_context.domain_id:\n    hints.add_filter(\"domain_id\", self.oslo_context.domain_id)",
+      "revId": "be452fee80fabe252b2dae3be76c1d46fdd857e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
