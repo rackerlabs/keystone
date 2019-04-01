@@ -16,6 +16,24 @@
       "revId": "be452fee80fabe252b2dae3be76c1d46fdd857e4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_aad48d48",
+        "filename": "keystone/api/groups.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-04-01T03:38:29Z",
+      "side": 1,
+      "message": "Good idea, but this is consistent with how we\u0027re already doing it elsewhere. Can we fix it in a followup?",
+      "parentUuid": "5fc1f717_20fe8738",
+      "revId": "be452fee80fabe252b2dae3be76c1d46fdd857e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
