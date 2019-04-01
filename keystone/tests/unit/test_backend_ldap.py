@@ -1819,7 +1819,8 @@ class LDAPIdentity(BaseLDAPIdentity):
         self.assertEqual(self.user_foo['email'], user_ref['id'])
 
     @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
-    def test_get_id_from_dn_for_multivalued_attribute_id(self, mock_ldap_get):
+    def test_raise_not_found_dn_for_multivalued_attribute_id(self,
+                                                             mock_ldap_get):
         driver = PROVIDERS.identity_api._select_identity_driver(
             CONF.identity.default_domain_id)
         driver.user.id_attr = 'mail'
@@ -1836,10 +1837,29 @@ class LDAPIdentity(BaseLDAPIdentity):
             }
         )
 
+        # This is not a valid scenario, since we do not support multiple value
+        # attribute id on DN.
+        self.assertRaises(exception.NotFound,
+                          PROVIDERS.identity_api.get_user, email1)
+
+    @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
+    def test_get_id_from_dn(self, mock_ldap_get):
+        driver = PROVIDERS.identity_api._select_identity_driver(
+            CONF.identity.default_domain_id)
+        driver.user.id_attr = 'mail'
+
+        email1 = uuid.uuid4().hex
+        mock_ldap_get.return_value = (
+            'cn=nobodycares,dc=example,dc=com',
+            {
+                'sn': [uuid.uuid4().hex],
+                'mail': [email1],
+                'cn': 'nobodycares'
+            }
+        )
+
         user_ref = PROVIDERS.identity_api.get_user(email1)
-        # make sure we get the ID from DN (old behavior) if the ID attribute
-        # has multiple values
-        self.assertEqual('nobodycares', user_ref['id'])
+        self.assertEqual(email1, user_ref['id'])
 
     @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
     def test_id_attribute_not_found(self, mock_ldap_get):
