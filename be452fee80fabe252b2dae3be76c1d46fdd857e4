@@ -34,6 +34,24 @@
       "revId": "be452fee80fabe252b2dae3be76c1d46fdd857e4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_2ac09d7c",
+        "filename": "keystone/api/groups.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-04-01T03:42:13Z",
+      "side": 1,
+      "message": "ok. Then I\u0027m fine with this patch.",
+      "parentUuid": "5fc1f717_aad48d48",
+      "revId": "be452fee80fabe252b2dae3be76c1d46fdd857e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
