@@ -1293,9 +1293,30 @@ class BaseLdap(object):
         else:
             return self._id_to_dn_string(object_id)
 
-    @staticmethod
-    def _dn_to_id(dn):
-        return ldap.dn.str2dn(dn)[0][0][1]
+    def _dn_to_id(self, dn):
+        # Check if the naming attribute in the DN is the same as keystone's
+        # configured 'id' attribute'.  If so, extract the ID value from the DN
+        if self.id_attr == utf8_decode(
+                ldap.dn.str2dn(utf8_encode(dn))[0][0][0].lower()):
+            return utf8_decode(ldap.dn.str2dn(utf8_encode(dn))[0][0][1])
+        else:
+            # The 'ID' attribute is NOT in the DN, so we need to perform an
+            # LDAP search to look it up from the user entry itself.
+            with self.get_connection() as conn:
+                search_result = conn.search_s(dn, self.LDAP_SCOPE)
+
+            if search_result:
+                id_list = search_result[0][1][self.id_attr]
+                if len(id_list) > 1:
+                    raise exception.Conflict(type=self.id_attr,
+                                             details=_('Multiple id, %s.') %
+                                             id_list)
+                else:
+                    return id_list[0]
+            else:
+                message = _('DN attribute %(dn)s not found in LDAP') % (
+                    {'dn': dn})
+                raise exception.NotFound(message=message)
 
     def _ldap_res_to_model(self, res):
         # LDAP attribute names may be returned in a different case than
