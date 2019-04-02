@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_68f1ac95",
+        "filename": "releasenotes/notes/bug-1806762-c3bfc71cb9bb94f3.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-04-02T15:49:58Z",
+      "side": 1,
+      "message": "Confusing note - this change *improves* maintainability",
+      "range": {
+        "startLine": 15,
+        "startChar": 40,
+        "endLine": 15,
+        "endChar": 68
+      },
+      "revId": "a4615942a41ae7c7cd29320a59997dbe1a3b4602",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
