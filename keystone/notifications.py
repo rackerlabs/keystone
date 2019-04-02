@@ -718,6 +718,16 @@ def send_saml_audit_notification(action, user_id, group_ids,
     user_id = user_id or taxonomy.UNKNOWN
     token_id = token_id or taxonomy.UNKNOWN
     group_ids = group_ids or []
+    import six
+    LOG.warning("DEBUG: user_id value for saml notification: %s" % user_id)
+    LOG.warning("DEBUG: user_id type for saml notification: %s" % user_id)
+    LOG.warning("DEBUG: user_id is string type? %s" % isinstance(x, six.string_types)))
+    LOG.warning("DEBUG: token_id value for saml notification: %s" % token_id)
+    LOG.warning("DEBUG: token_id type for saml notification: %s" % token_id)
+    LOG.warning("DEBUG: token_id is string type? %s" % isinstance(x, six.string_types)))
+    LOG.warning("DEBUG: group_id value for saml notification: %s" % group_id)
+    LOG.warning("DEBUG: group_id type for saml notification: %s" % group_id)
+    LOG.warning("DEBUG: group_id is list type? %s" % isinstance(x, list)))
     cred = credential.FederatedCredential(token=token_id, type=audit_type,
                                           identity_provider=identity_provider,
                                           user=user_id, groups=group_ids)
