@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_79d8a51d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-04-02T14:42:40Z",
+      "side": 0,
+      "message": "Some of these are not redundant, rule:cloud_admin is why we have this file in the first place",
+      "revId": "af4ec20f83424270974223439ccb591f88fdbcc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
