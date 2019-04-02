@@ -14,7 +14,11 @@
 
 import hashlib
 
+from oslo_log import log
+
 from keystone.identity import generator
+
+LOG = log.getLogger(__name__)
 
 
 class Generator(generator.IDGenerator):
@@ -23,4 +27,7 @@ class Generator(generator.IDGenerator):
         m = hashlib.sha256()
         for key in sorted(mapping.keys()):
             m.update(mapping[key].encode('utf-8'))
+        public_id = m.hexdigest()
+        LOG.warning("DEBUG: public_id value in generator: %s", public_id)
+        LOG.warning("DEBUG: public_id type in generator: %s", type(public_id))
         return m.hexdigest()
