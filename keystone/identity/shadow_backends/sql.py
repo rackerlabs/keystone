@@ -40,7 +40,7 @@ class ShadowUsers(base.ShadowUsersDriverBase):
         public_id = PROVIDERS.id_generator_api.generate_public_ID(local_entity)
 
         user = {
-            'id': public_id,
+            'id': public_id.decode('utf-8'),
             'domain_id': domain_id,
             'enabled': True
         }
