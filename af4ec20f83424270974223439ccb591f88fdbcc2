@@ -16,6 +16,24 @@
       "revId": "af4ec20f83424270974223439ccb591f88fdbcc2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_686bec84",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-04-02T15:38:46Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "5fc1f717_79d8a51d",
+      "revId": "af4ec20f83424270974223439ccb591f88fdbcc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
