@@ -74,6 +74,8 @@ def handle_scoped_token(token, federation_api, identity_api):
     identity_provider = token.identity_provider_id
     protocol = token.protocol_id
     user_id = token.user_id
+    LOG.warning("DEBUG: user_id value in handle_scoped_token: %s", user_id)
+    LOG.warning("DEBUG: user_id type in handle_scoped_token: %s", type(user_id))
     group_ids = []
     for group_dict in token.federated_groups:
         group_ids.append(group_dict['id'])
@@ -287,6 +289,8 @@ def handle_unscoped_token(auth_payload, resource_api, federation_api,
         raise
     else:
         outcome = taxonomy.OUTCOME_SUCCESS
+        LOG.warning("DEBUG: user_id value in handle_unscoped_token: %s", user_id)
+        LOG.warning("DEBUG: user_id type in handle_unscoped_token: %s", type(user_id))
         notifications.send_saml_audit_notification('authenticate',
                                                    user_id, group_ids,
                                                    identity_provider,

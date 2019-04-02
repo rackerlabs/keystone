@@ -38,6 +38,8 @@ class ShadowUsers(base.ShadowUsersDriverBase):
                         'entity_type': 'user'}
 
         public_id = PROVIDERS.id_generator_api.generate_public_ID(local_entity)
+        if isinstance(public_id, bytes):
+            public_id = public_id.decode('utf-8')
 
         user = {
             'id': public_id,
