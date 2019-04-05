@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_63d98ff2",
+        "filename": "releasenotes/source/unreleased.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-04-05T05:13:20Z",
+      "side": 1,
+      "message": "Added twice",
+      "range": {
+        "startLine": 16,
+        "startChar": 5,
+        "endLine": 16,
+        "endChar": 39
+      },
+      "revId": "17e9bd539d89bdc30c0c943f69585ecb565ceef7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_83d4bbbc",
+        "filename": "releasenotes/source/unreleased.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-04-05T05:13:20Z",
+      "side": 1,
+      "message": "Added twice",
+      "range": {
+        "startLine": 22,
+        "startChar": 5,
+        "endLine": 22,
+        "endChar": 38
+      },
+      "revId": "17e9bd539d89bdc30c0c943f69585ecb565ceef7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
