@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5fc1f717_8b5fdc3f",
+        "filename": "keystone/exception.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2019-04-06T16:41:42Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "5fc1f717_81d5d3e7",
+      "revId": "44aebf7613aaf2665338fce120c1e56e6b9dcf6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5fc1f717_0111e3ac",
         "filename": "keystone/server/flask/common.py",
         "patchSetId": 8
@@ -53,6 +71,40 @@
         "endLine": 63,
         "endChar": 61
       },
+      "revId": "44aebf7613aaf2665338fce120c1e56e6b9dcf6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_4b55741d",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2019-04-06T16:41:42Z",
+      "side": 1,
+      "message": "This can be more descriptive: Call ``POST /domains`` with a valid `explicit_domain_id` set.",
+      "revId": "44aebf7613aaf2665338fce120c1e56e6b9dcf6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_0b31ac0b",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2019-04-06T16:41:42Z",
+      "side": 1,
+      "message": "It needs a test case where you try to set the same explicit ID for two different domains.",
       "revId": "44aebf7613aaf2665338fce120c1e56e6b9dcf6a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
