@@ -1,0 +1,11 @@
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+1: wangxiyuan <wangxiyuan@huawei.com>
+Code-Review+1: Vishakha Agarwal <agarwalvishakha18@gmail.com>
+Code-Review+2: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Workflow+1: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Sat, 06 Apr 2019 21:01:52 +0000
+Reviewed-on: https://review.openstack.org/605169
+Project: openstack/keystone
+Branch: refs/heads/master
