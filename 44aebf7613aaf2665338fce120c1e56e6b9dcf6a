@@ -221,6 +221,24 @@
       "revId": "44aebf7613aaf2665338fce120c1e56e6b9dcf6a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_c38a91ba",
+        "filename": "releasenotes/notes/bug-1794527-866b1caff67977f3.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-04-08T21:17:12Z",
+      "side": 1,
+      "message": "By the RFE bug: \n\n [`bug 1794527 \u003chttps://bugs.launchpad.net/keystone/+bug/1794527\u003e`_]",
+      "parentUuid": "5fc1f717_6e1dddbc",
+      "revId": "44aebf7613aaf2665338fce120c1e56e6b9dcf6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
