@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_e30c6d43",
+        "filename": "keystone/exception.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-04-08T21:17:12Z",
+      "side": 1,
+      "message": "uuid.UUID() is successful no matter whether it is UUID5 or some other version, if any UUID format is okay then let\u0027s just say UUID.",
+      "range": {
+        "startLine": 433,
+        "startChar": 63,
+        "endLine": 433,
+        "endChar": 68
+      },
+      "revId": "63e22ef3b39c38da7012d815c4a0215a19252c54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
