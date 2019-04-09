@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_be20a5b1",
+        "filename": "keystone/federation/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-04-09T18:00:39Z",
+      "side": 1,
+      "message": "You need to add \u0027remote_id_attribute\u0027 to this list as well, since it should also be mutable/changeable, this will ensure the protocol can be updated after creation.",
+      "revId": "5a2a3144c0b3de5186fc2ab2d5a4978cdaa8359a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
