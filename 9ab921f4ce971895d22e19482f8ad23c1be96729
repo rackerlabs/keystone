@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "3fce034c_ac17e3ed",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1840,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2019-04-10T19:21:02Z",
+      "side": 1,
+      "message": "It totally makes sense add another test scenario for it, I\u0027ll create this new test scenarios soon",
+      "parentUuid": "5fc1f717_79423b6a",
+      "revId": "9ab921f4ce971895d22e19482f8ad23c1be96729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5fc1f717_fc185976",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 5
@@ -64,6 +82,24 @@
       "writtenOn": "2019-04-10T18:47:54Z",
       "side": 1,
       "message": "It might be more appropriate to name this something like \u0027test_get_id_not_in_dn\u0027, as that is really what the test is doing.  In this case, the \u0027id\u0027 will be looked up from an attribute that is not in the DN.",
+      "revId": "9ab921f4ce971895d22e19482f8ad23c1be96729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_0c271767",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1846,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2019-04-10T19:21:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5fc1f717_fc185976",
       "revId": "9ab921f4ce971895d22e19482f8ad23c1be96729",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
