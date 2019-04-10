@@ -1,0 +1,6 @@
+---
+deprecations:
+  - |
+    The `[federation] federated_domain_name` option is depracated. All users
+    live in the identity provider's domain now, and the option is no longer
+    used.
