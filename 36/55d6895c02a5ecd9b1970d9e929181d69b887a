@@ -1,0 +1,12 @@
+Verified+1: Zuul
+Code-Review+1: Vishakha Agarwal <agarwalvishakha18@gmail.com>
+Code-Review+1: Sorin Sbarnea <ssbarnea@redhat.com>
+Code-Review+1: Colleen Murphy <colleen@gazlene.net>
+Code-Review+2: Ian Wienand <iwienand@redhat.com>
+Verified+2: Ian Wienand <iwienand@redhat.com>
+Workflow+1: Ian Wienand <iwienand@redhat.com>
+Submitted-by: Ian Wienand <iwienand@redhat.com>
+Submitted-at: Wed, 10 Apr 2019 00:46:32 +0000
+Reviewed-on: https://review.openstack.org/646433
+Project: openstack/keystone
+Branch: refs/heads/stable/pike
