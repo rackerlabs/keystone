@@ -16,6 +16,24 @@
       "revId": "10654b3556bee22a7f4c63619162771e1f082fb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_4c367fb7",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1310,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2019-04-10T19:20:23Z",
+      "side": 1,
+      "message": "My comment might be a bit unclear.  You are successfully extracting the first value of the ID attribute from the LDAP entry here at line 1309.  The check at line 1310 is supposed to check if you have multiple values in LDAP for the ID attribute, but you are checking the length of the first ID value.  I propose you do something like this:\n\n  if search_result:\n      if len(search_result[0][1][self.id_attr]) \u003e 1:\n          raise exception....\n      else:\n          return search_result[0][1][self.id_attr][0]\n\nWe really have 4 tests that should exercise this code:\n\n1 - The successful case where the ID attribute is single-valued and exists in the DN.  This is very common, and should already be covered by some of the basic LDAP tests we have.\n\n2 - The successful case where the ID attribute is single-valued and DOES NOT exist in the DN.  This is covered by your new \u0027test_get_id_from_dn\u0027 test in patch set 6.\n\n3 - The successful case where the ID attribute is multi-valued, but one of those values exists in the DN.  While we can\u0027t reliably support multi-valued ID attributes, we already used a heuristic to check if the ID attribute is in the DN and to just use that value even if more values exist in the entry.  Your new code still handles this case, but we do not have test coverage for it.  Please add a test.\n\n4 - The failure case where the ID attribute is multi-valued and DOES NOT exist in the DN.  In this case, an exception should be raised since we can\u0027t reliably determine the correct ID value to use.  You should cover this in your new \u0027test_raise_not_found_dn_for_multivalued_attribute_id\u0027 test in patch set 6, but the exception in that test seems wrong.  It currently looks for exception.NotFound, which means the LDAP entry wasn\u0027t even found.  I would expect us to hit exception.Conflict instead, thrown from line 1311 here in this file.",
+      "parentUuid": "5fc1f717_3c226153",
+      "revId": "10654b3556bee22a7f4c63619162771e1f082fb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
