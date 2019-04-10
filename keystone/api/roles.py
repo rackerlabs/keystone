@@ -14,6 +14,7 @@
 
 import flask
 import flask_restful
+import hashlib
 from six.moves import http_client
 
 from keystone.api._shared import implied_roles as shared
@@ -99,6 +100,17 @@ class RoleResource(ks_flask.ResourceBase):
         refs = PROVIDERS.role_api.list_roles(hints=hints)
         return self.wrap_collection(refs, hints=hints)
 
+    def _assign_unique_role_id(self, role):
+        ref = role.copy()
+        role_data = ref["name"]
+        if self._is_domain_role(role):
+            role_data += "domain:" + ref.get('domain_id')
+        else:
+            role_data += "global"
+
+        ref['id'] = hashlib.sha256(role_data.encode('utf8')).hexdigest()
+        return ref
+
     def post(self):
         """Create role.
 
@@ -110,7 +122,7 @@ class RoleResource(ks_flask.ResourceBase):
         else:
             ENFORCER.enforce_call(action='identity:create_role')
         validation.lazy_validate(schema.role_create, role)
-        role = self._assign_unique_id(role)
+        role = self._assign_unique_role_id(role)
         role = self._normalize_dict(role)
         ref = PROVIDERS.role_api.create_role(
             role['id'], role, initiator=self.audit_initiator)
