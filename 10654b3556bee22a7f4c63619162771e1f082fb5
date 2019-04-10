@@ -134,6 +134,24 @@
       "revId": "10654b3556bee22a7f4c63619162771e1f082fb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_4f2751b8",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1841,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-04-10T19:53:10Z",
+      "side": 1,
+      "message": "No, I mean currently we support multiple value attributes and this change breaks that, this change is introducing a regression.",
+      "parentUuid": "3fce034c_cc758fce",
+      "revId": "10654b3556bee22a7f4c63619162771e1f082fb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
