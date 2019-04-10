@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_c9404b09",
+        "filename": "keystone/server/flask/application.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-04-10T06:36:07Z",
+      "side": 1,
+      "message": "Same here",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 27
+      },
+      "revId": "ea9a98c92ab26e1f2dde223bc5486c609216dc56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_a93dbf8e",
+        "filename": "keystone/server/flask/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-04-10T06:36:07Z",
+      "side": 1,
+      "message": "Can use importerror instead of ModuleNotFoundError. Same as [1] \n\n[1] https://github.com/openstack/keystone/blob/106b28ad4c30948c293dc9200adb908893b24a35/keystone/common/utils.py#L151",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 27
+      },
+      "revId": "ea9a98c92ab26e1f2dde223bc5486c609216dc56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
