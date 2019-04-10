@@ -152,6 +152,24 @@
       "revId": "10654b3556bee22a7f4c63619162771e1f082fb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_4f751198",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1841,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2019-04-10T19:57:13Z",
+      "side": 1,
+      "message": "I don\u0027t think it is a regression.  Basically, we had a workaround in the code that Guang added quite some time back where we just grab the leftmost attribute value from the DN and return it as the ID when we encounter a multi-valued ID attribute.  This is not great since it is not guaranteed to be the right ID, but it should be consistent and works around a corner case.  I think we should leave this functionality for backwards compatibility in case someone is depending on it.  We want to try to work when we encounter a multi-valued attribute, and the DN check logic allows that in limited cases.\n\nThe new exception comes in where the above heuristic was not working properly.  We were never checking that the value we pull out of the DN and return is actually the ID attribute!  If you look at the old version of this test, we use \u0027mail\u0027 as the ID attribute in LDAP.  The test was ensuring that the returned value is \u0027nobodycares\u0027, which is the value of the \u0027cn\u0027 attribute.  This is never correct, as it is not the ID attribute.  In fact, this behavior is the bug that Raildo is fixing here, as the incorrect ID will lead to things like incorrect group membership evaluation in Keystone.",
+      "parentUuid": "3fce034c_cc758fce",
+      "revId": "10654b3556bee22a7f4c63619162771e1f082fb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
