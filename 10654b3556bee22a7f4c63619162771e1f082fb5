@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3fce034c_206c5207",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-04-10T23:23:54Z",
+      "side": 1,
+      "message": "is there a bug for this?",
+      "revId": "10654b3556bee22a7f4c63619162771e1f082fb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fce034c_4c051f7a",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 6
@@ -96,6 +113,24 @@
       "side": 1,
       "message": "good catch, I\u0027m going to update this in a follow-up patch.",
       "parentUuid": "5fc1f717_3c226153",
+      "revId": "10654b3556bee22a7f4c63619162771e1f082fb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_fb37dbe2",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1310,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-04-10T23:23:54Z",
+      "side": 1,
+      "message": "I don\u0027t think we should use this logic to determine the ID at all. It\u0027s rather inconsistent and unreliable as Nathan had indicated earlier. We should\u0027ve always use search to determine the ID.\n\nIf memory serves, I didn\u0027t introduce this code btw. :-) I couldn\u0027t get rid of it fast enough because we were still supporting read/write LDAP at the time I believe. Maybe now is the *right time* to get rid of it.",
+      "parentUuid": "5fc1f717_dcbf9dcd",
       "revId": "10654b3556bee22a7f4c63619162771e1f082fb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
