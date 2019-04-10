@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_3c226153",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1310,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2019-04-10T18:57:00Z",
+      "side": 1,
+      "message": "This looks like it might be incorrect.  We should have a string with the first ID value in \u0027id_attr\u0027.  You are trying to check for a multi-valued LDAP attribute, so I think you would want to check how many items are in here instead:\n\n  search_result[0][1][self.id_attr]",
+      "revId": "10654b3556bee22a7f4c63619162771e1f082fb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
