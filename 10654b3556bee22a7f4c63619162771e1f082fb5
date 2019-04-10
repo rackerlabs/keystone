@@ -34,6 +34,24 @@
       "revId": "10654b3556bee22a7f4c63619162771e1f082fb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_dcbf9dcd",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1310,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2019-04-10T19:21:02Z",
+      "side": 1,
+      "message": "good catch, I\u0027m going to update this in a follow-up patch.",
+      "parentUuid": "5fc1f717_3c226153",
+      "revId": "10654b3556bee22a7f4c63619162771e1f082fb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
