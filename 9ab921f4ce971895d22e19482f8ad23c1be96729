@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_3c6a61b2",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1298,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2019-04-10T18:47:54Z",
+      "side": 1,
+      "message": "(nit) Your comment is truncated.  I assume you meant \"extract the ID value from the DN.\".",
+      "revId": "9ab921f4ce971895d22e19482f8ad23c1be96729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_fc8db97b",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1311,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2019-04-10T18:47:54Z",
+      "side": 1,
+      "message": "Is it possible to add a test that triggers this exception?",
+      "revId": "9ab921f4ce971895d22e19482f8ad23c1be96729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_79423b6a",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1840,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2019-04-10T18:47:54Z",
+      "side": 1,
+      "message": "Good catch on a broken test.  The old test returned a value that wasn\u0027t even from the configured \u0027id\u0027 attribute!  Throwing an exception seems appropriate for this case.\n\nI think you should add another variation on this test though.  We should test the case where a multi-valued \u0027id\u0027 attribute is present in the entry, but the DN of the entry has one of those \u0027id\u0027 values as the left-most RDN.  The code has logic to handle this case, as it will find that it has a multi-valued attribute and will then fall-back to checking for the \u0027id\u0027 in the DN.  You can just duplicate this test (renaming it of course), but modify the DN to be \u0027mail\u003d\u003cemail1 UUID value\u003e\u0027.  The test can then check for these results:\n\n        user_ref \u003d PROVIDERS.identity_api.get_user(email1)\n        self.assertEqual(email1, user_ref[\u0027id\u0027])",
+      "revId": "9ab921f4ce971895d22e19482f8ad23c1be96729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_fc185976",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1846,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2019-04-10T18:47:54Z",
+      "side": 1,
+      "message": "It might be more appropriate to name this something like \u0027test_get_id_not_in_dn\u0027, as that is really what the test is doing.  In this case, the \u0027id\u0027 will be looked up from an attribute that is not in the DN.",
+      "revId": "9ab921f4ce971895d22e19482f8ad23c1be96729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
