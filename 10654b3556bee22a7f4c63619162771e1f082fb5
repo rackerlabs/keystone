@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3fce034c_6c501b34",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1298,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2019-04-10T19:46:13Z",
+      "side": 1,
+      "message": "damn, I deleted the last comment line, I\u0027ll update it properly.",
+      "parentUuid": "3fce034c_4c051f7a",
+      "range": {
+        "startLine": 1298,
+        "startChar": 67,
+        "endLine": 1298,
+        "endChar": 75
+      },
+      "revId": "10654b3556bee22a7f4c63619162771e1f082fb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5fc1f717_3c226153",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 6
@@ -89,6 +113,24 @@
       "writtenOn": "2019-04-10T19:43:02Z",
       "side": 1,
       "message": "Isn\u0027t this a regression?",
+      "revId": "10654b3556bee22a7f4c63619162771e1f082fb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_cc758fce",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1841,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2019-04-10T19:46:13Z",
+      "side": 1,
+      "message": "it\u0027s a regression, I need to backport it later for all supported releases.",
+      "parentUuid": "3fce034c_ecadeb31",
       "revId": "10654b3556bee22a7f4c63619162771e1f082fb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
