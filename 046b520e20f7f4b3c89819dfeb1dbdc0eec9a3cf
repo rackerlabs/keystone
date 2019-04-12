@@ -57,6 +57,24 @@
       "revId": "046b520e20f7f4b3c89819dfeb1dbdc0eec9a3cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_c64a1f7f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-04-12T21:02:09Z",
+      "side": 1,
+      "message": "Not necessarily, because it\u0027s checking hasattr(obj, \u0027iteritems\u0027), so on python3 it just wouldn\u0027t have gone into that case.",
+      "parentUuid": "9f436f4f_d5c19a30",
+      "revId": "046b520e20f7f4b3c89819dfeb1dbdc0eec9a3cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
