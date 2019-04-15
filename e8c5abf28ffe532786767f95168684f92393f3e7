@@ -22,6 +22,30 @@
       "revId": "e8c5abf28ffe532786767f95168684f92393f3e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_59ccb7bb",
+        "filename": "keystone/token/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-04-15T14:22:33Z",
+      "side": 1,
+      "message": "Those changes were for FederatedScopedPayload, this is for FederatedUnscopedPayload. Although that class inherits from this class, the disassemble class methods are completely independent so we have to repeat the case here.",
+      "parentUuid": "3fce034c_13f05567",
+      "range": {
+        "startLine": 561,
+        "startChar": 8,
+        "endLine": 569,
+        "endChar": 49
+      },
+      "revId": "e8c5abf28ffe532786767f95168684f92393f3e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
