@@ -66,6 +66,30 @@
     },
     {
       "key": {
+        "uuid": "3fce034c_0a13375e",
+        "filename": "keystone/common/sql/expand_repo/versions/057_expand_add__remote_id_attribute_to_federation_protocol_table.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-04-15T09:59:32Z",
+      "side": 1,
+      "message": "Thanks cmurphy got it.",
+      "parentUuid": "5fc1f717_927fd5a9",
+      "range": {
+        "startLine": 22,
+        "startChar": 44,
+        "endLine": 22,
+        "endChar": 63
+      },
+      "revId": "2aaa5071a97ef5a7049ed21013d2b72b8567a536",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5fc1f717_cd6ffc28",
         "filename": "keystone/federation/utils.py",
         "patchSetId": 9
