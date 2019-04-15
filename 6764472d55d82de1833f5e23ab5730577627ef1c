@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fce034c_8405dec4",
+        "filename": "keystone/conf/federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-04-15T08:37:07Z",
+      "side": 1,
+      "message": "As we are deprecating this option, and is stillused in files [1], don\u0027t we need to specify any domain now instead of this conf option? \n\n[1] http://codesearch.openstack.org/?q\u003dfederated_domain_name\u0026i\u003dnope\u0026files\u003d\u0026repos\u003d",
+      "revId": "6764472d55d82de1833f5e23ab5730577627ef1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
