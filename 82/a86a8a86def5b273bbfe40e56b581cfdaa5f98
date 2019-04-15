@@ -1,0 +1,9 @@
+Code-Review+2: wangxiyuan <wangxiyuan@huawei.com>
+Workflow+1: wangxiyuan <wangxiyuan@huawei.com>
+Code-Review+1: Vishakha Agarwal <agarwalvishakha18@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 15 Apr 2019 10:20:02 +0000
+Reviewed-on: https://review.openstack.org/652576
+Project: openstack/keystone
+Branch: refs/heads/master
