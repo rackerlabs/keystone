@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fce034c_d8b37097",
+        "filename": "keystone/server/flask/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2019-04-18T20:34:49Z",
+      "side": 0,
+      "message": "nice",
+      "range": {
+        "startLine": 129,
+        "startChar": 21,
+        "endLine": 129,
+        "endChar": 29
+      },
+      "revId": "0a66ef5328b26e166e9c4821aef4373ca4594d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
