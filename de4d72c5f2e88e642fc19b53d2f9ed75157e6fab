@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fce034c_db67d8b6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-04-19T13:54:20Z",
+      "side": 1,
+      "message": "I can\u0027t seem to verify this in the rendered documentation. Where is the de-duplication happening?",
+      "range": {
+        "startLine": 12,
+        "startChar": 35,
+        "endLine": 12,
+        "endChar": 47
+      },
+      "revId": "de4d72c5f2e88e642fc19b53d2f9ed75157e6fab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
