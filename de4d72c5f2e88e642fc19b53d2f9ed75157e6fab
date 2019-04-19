@@ -22,6 +22,30 @@
       "revId": "de4d72c5f2e88e642fc19b53d2f9ed75157e6fab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_5b10c8a8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-04-19T14:27:30Z",
+      "side": 1,
+      "message": "Right now if you go to https://developer.openstack.org/api-ref/identity/v3/index.html you see \"Identity API v3 (CURRENT)\" twice at the top, with this the topmost header is \"OpenStack API Documentation\".",
+      "parentUuid": "3fce034c_db67d8b6",
+      "range": {
+        "startLine": 12,
+        "startChar": 35,
+        "endLine": 12,
+        "endChar": 47
+      },
+      "revId": "de4d72c5f2e88e642fc19b53d2f9ed75157e6fab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
