@@ -1295,7 +1295,7 @@ class BaseLdap(object):
 
     @staticmethod
     def _dn_to_id(dn):
-        return ldap.dn.str2dn(dn)[0][0][1]
+        return ldap.dn.str2dn(utf8_encode(dn))[0][0][1]
 
     def _ldap_res_to_model(self, res):
         # LDAP attribute names may be returned in a different case than
@@ -1450,7 +1450,7 @@ class BaseLdap(object):
                  u'(objectClass=%(object_class)s))'
                  % {'id_attr': self.id_attr,
                     'id': ldap.filter.escape_filter_chars(
-                        six.text_type(object_id)),
+                        utf8_decode(object_id)),
                     'filter': (ldap_filter or self.ldap_filter or ''),
                     'object_class': self.object_class})
         with self.get_connection() as conn:
@@ -1493,10 +1493,9 @@ class BaseLdap(object):
 
     @driver_hints.truncated
     def _ldap_get_all(self, hints, ldap_filter=None):
+        filter = utf8_decode(ldap_filter or self.ldap_filter or '')
         query = u'(&%s(objectClass=%s)(%s=*))' % (
-            ldap_filter or self.ldap_filter or '',
-            self.object_class,
-            self.id_attr)
+            filter, self.object_class, self.id_attr)
         sizelimit = 0
         attrs = list(set(([self.id_attr] +
                           list(self.attribute_mapping.values()) +
