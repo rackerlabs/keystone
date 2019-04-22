@@ -152,7 +152,8 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
                             'name': {'type': 'string'}
                         },
                         'additionalProperties': False
-                    }
+                    },
+                    'tags': {'type': ['array', 'null']}
                 },
                 'additionalProperties': False
             }
