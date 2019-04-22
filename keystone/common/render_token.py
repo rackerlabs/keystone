@@ -60,7 +60,8 @@ def render_token_response_from_model(token, include_catalog=True):
                 'name': token.project_domain['name']
             },
             'id': token.trust_project['id'],
-            'name': token.trust_project['name']
+            'name': token.trust_project['name'],
+            'tags': token.project_tags
         }
         if token.trust.get('impersonation'):
             trustor_domain = PROVIDERS.resource_api.get_domain(
@@ -85,7 +86,8 @@ def render_token_response_from_model(token, include_catalog=True):
                 'name': token.project_domain['name']
             },
             'id': token.project['id'],
-            'name': token.project['name']
+            'name': token.project['name'],
+            'tags': token.project_tags
         }
         token_reference['token']['is_domain'] = token.project.get(
             'is_domain', False

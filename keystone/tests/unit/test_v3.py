@@ -99,7 +99,7 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
                         'additonalProperties': False,
                     },
                     'password_expires_at': {
-                        'type': ['string', 'null'],
+                        'type': ['null', 'string', ],
                         'pattern': unit.TIME_FORMAT_REGEX,
                     }
                 },
@@ -152,7 +152,8 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
                             'name': {'type': 'string'}
                         },
                         'additionalProperties': False
-                    }
+                    },
+                    'tags': {'type': ['array', 'null']}
                 },
                 'additionalProperties': False
             }
