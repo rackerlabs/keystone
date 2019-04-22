@@ -57,6 +57,7 @@ class TokenModel(object):
         self.project_id = None
         self.__project = None
         self.__project_domain = None
+        self.__project_tags = None
 
         self.trust_id = None
         self.__trust = None
@@ -173,6 +174,15 @@ class TokenModel(object):
                     self.project['domain_id']
                 )
         return self.__project_domain
+
+    @property
+    def project_tags(self):
+        if not self.__project_tags:
+            if self.project and self.project.get('tags'):
+                self.__project_tags = PROVIDERS.resource_api.list_project_tags(
+                    self.project_id
+                )
+        return self.__project_tags
 
     @property
     def application_credential(self):
