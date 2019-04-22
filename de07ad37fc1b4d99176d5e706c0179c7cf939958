@@ -16,6 +16,24 @@
       "revId": "de07ad37fc1b4d99176d5e706c0179c7cf939958",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffb9cba7_df8e6e2d",
+        "filename": "keystone/server/flask/application.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-04-22T16:21:57Z",
+      "side": 1,
+      "message": "There\u0027s a chicken-and-egg issue, we can\u0027t lift the cap in u-c because it breaks keystone, we can\u0027t raise the minimum in keystone because it would conflict with the cap in u-c. Besides, this is more flexible for packagers.",
+      "parentUuid": "ffb9cba7_df098edd",
+      "revId": "de07ad37fc1b4d99176d5e706c0179c7cf939958",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
