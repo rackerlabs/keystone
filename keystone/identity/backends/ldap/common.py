@@ -113,7 +113,7 @@ def py2ldap(val):
     if isinstance(val, bool):
         return u'TRUE' if val else u'FALSE'
     else:
-        return six.text_type(val)
+        return utf8_decode(val)
 
 
 def enabled2py(val):
@@ -1272,7 +1272,7 @@ class BaseLdap(object):
     def _id_to_dn_string(self, object_id):
         return u'%s=%s,%s' % (self.id_attr,
                               ldap.dn.escape_dn_chars(
-                                  six.text_type(object_id)),
+                                  utf8_decode(object_id)),
                               self.tree_dn)
 
     def _id_to_dn(self, object_id):
@@ -1284,7 +1284,7 @@ class BaseLdap(object):
                 u'(&(%(id_attr)s=%(id)s)(objectclass=%(objclass)s))' %
                 {'id_attr': self.id_attr,
                  'id': ldap.filter.escape_filter_chars(
-                     six.text_type(object_id)),
+                     utf8_decode(object_id)),
                  'objclass': self.object_class},
                 attrlist=DN_ONLY)
         if search_result:
@@ -1295,7 +1295,7 @@ class BaseLdap(object):
 
     @staticmethod
     def _dn_to_id(dn):
-        return ldap.dn.str2dn(dn)[0][0][1]
+        return ldap.dn.str2dn(utf8_encode(dn))[0][0][1]
 
     def _ldap_res_to_model(self, res):
         # LDAP attribute names may be returned in a different case than
@@ -1450,7 +1450,7 @@ class BaseLdap(object):
                  u'(objectClass=%(object_class)s))'
                  % {'id_attr': self.id_attr,
                     'id': ldap.filter.escape_filter_chars(
-                        six.text_type(object_id)),
+                        utf8_decode(object_id)),
                     'filter': (ldap_filter or self.ldap_filter or ''),
                     'object_class': self.object_class})
         with self.get_connection() as conn:
@@ -1493,10 +1493,9 @@ class BaseLdap(object):
 
     @driver_hints.truncated
     def _ldap_get_all(self, hints, ldap_filter=None):
+        filter = utf8_decode(ldap_filter or self.ldap_filter or '')
         query = u'(&%s(objectClass=%s)(%s=*))' % (
-            ldap_filter or self.ldap_filter or '',
-            self.object_class,
-            self.id_attr)
+            filter, self.object_class, self.id_attr)
         sizelimit = 0
         attrs = list(set(([self.id_attr] +
                           list(self.attribute_mapping.values()) +
@@ -1551,7 +1550,7 @@ class BaseLdap(object):
     def get_by_name(self, name, ldap_filter=None):
         query = (u'(%s=%s)' % (self.attribute_mapping['name'],
                                ldap.filter.escape_filter_chars(
-                                   six.text_type(name))))
+                                   utf8_decode(name))))
         res = self.get_all(query)
         try:
             return res[0]

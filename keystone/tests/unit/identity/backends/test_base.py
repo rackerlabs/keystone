@@ -40,7 +40,7 @@ class IdentityDriverTests(object):
     # value.
     expected_generates_uuids = True
 
-    def create_user(self, domain_id=None, **kwargs):
+    def create_user(self, domain_id=None, user_id=None, **kwargs):
         """Get a user for the test.
 
         Subclasses can override this to provide their own way to provide a user
@@ -48,7 +48,8 @@ class IdentityDriverTests(object):
         don't support create_user, this may go directly to the backend, or
         maybe it gets a user from a set of pre-created users.
         """
-        user_id = uuid.uuid4().hex
+        if user_id is None:
+            user_id = uuid.uuid4().hex
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
@@ -534,6 +535,15 @@ class IdentityDriverTests(object):
 
         actual_user = self.driver.authenticate(user['id'], password)
         self.assertEqual(user['id'], actual_user['id'])
+
+    def test_authenticate_for_user_with_special_char(self):
+        password = uuid.uuid4().hex
+        user = self.create_user(user_id='fl\xc3\xbcgel', password=password)
+
+        actual_user = self.driver.authenticate(user['id'], password)
+        # authenticate() returns unicode value of id in actual_user,
+        # converting it back to string to assert if equal with the id passed
+        self.assertEqual(user['id'], actual_user['id'].encode('utf-8'))
 
     def test_authenticate_wrong_password(self):
         user = self.create_user(password=uuid.uuid4().hex)
