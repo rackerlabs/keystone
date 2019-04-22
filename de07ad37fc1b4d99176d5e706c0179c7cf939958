@@ -34,6 +34,24 @@
       "revId": "de07ad37fc1b4d99176d5e706c0179c7cf939958",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffb9cba7_22c20d35",
+        "filename": "keystone/server/flask/application.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-04-22T16:52:38Z",
+      "side": 1,
+      "message": "The \"besides it\u0027s more flexible for packagers\" isn\u0027t really a worth-while argument this early in the cycle. The rest is fine as long as we move to bumping the minimum before the end of Train.",
+      "parentUuid": "ffb9cba7_df8e6e2d",
+      "revId": "de07ad37fc1b4d99176d5e706c0179c7cf939958",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
