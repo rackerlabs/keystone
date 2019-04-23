@@ -3146,8 +3146,12 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
 
     """
 
+    def setUp(self):
+        super(FederatedUserTests, self).setUp()
+        self.app_cred_api = PROVIDERS.application_credential_api
+
     def auth_plugin_config_override(self):
-        methods = ['saml2', 'token']
+        methods = ['saml2', 'token', 'application_credential']
         super(FederatedUserTests, self).auth_plugin_config_override(methods)
 
     def load_fixtures(self, fixtures):
@@ -3209,6 +3213,61 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         r = self.v3_request(path=path, method='GET',
                             expected_status=http_client.FORBIDDEN,
                             token=scoped_token)
+
+    def test_user_direct_application_credential(self):
+        # authenticate via saml get back a user id
+        user_id, unscoped_token = self._authenticate_via_saml()
+
+        # assign project role to federated user
+        PROVIDERS.assignment_api.add_role_to_user_and_project(
+            user_id, self.proj_employees['id'], self.role_employee['id'])
+
+        app_cred = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'secret': uuid.uuid4().hex,
+            'user_id': user_id,
+            'project_id': self.proj_employees['id'],
+            'description': uuid.uuid4().hex,
+            'roles': [{'id': self.role_employee['id']}]
+        }
+
+        app_cred_ref = self.app_cred_api.create_application_credential(
+            app_cred)
+
+        auth_data = self.build_authentication_request(
+            app_cred_id=app_cred_ref['id'], secret=app_cred_ref['secret'])
+        self.v3_create_token(auth_data, expected_status=http_client.CREATED)
+
+    def test_user_group_application_credential(self):
+        # authenticate via saml get back a user id
+        user_id, unscoped_token = self._authenticate_via_saml()
+
+        # add user to group
+        PROVIDERS.identity_api.add_user_to_group(
+            user_id=user_id, group_id=self.group_employees['id']
+        )
+
+        app_cred = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'secret': uuid.uuid4().hex,
+            'user_id': user_id,
+            'project_id': self.proj_employees['id'],
+            'description': uuid.uuid4().hex,
+            'roles': [{'id': self.role_employee['id']}]
+        }
+
+        app_cred_ref = self.app_cred_api.create_application_credential(
+            app_cred)
+
+        auth_data = self.build_authentication_request(
+            app_cred_id=app_cred_ref['id'], secret=app_cred_ref['secret'])
+        # TODO(jose-castro-leon): At the moment, application credentials
+        # does not allow to use group memberships for users. Once we have
+        # set the effective list of role_assignments to True, then we can
+        # set this test to expect_status=http_client.CREATED
+        self.v3_create_token(auth_data, expected_status=http_client.UNAUTHORIZED)
 
     def test_domain_scoped_user_role_assignment(self):
         # create domain and role

@@ -409,14 +409,20 @@ class TokenModel(object):
     def _get_application_credential_roles(self):
         roles = []
         app_cred_roles = self.application_credential['roles']
+        # TODO(jose-castro-leon): At the moment, application credentials
+        # does not allow to use group memberships for users. Once we have
+        # the renewable appcreds for federated users, we can set effective
+        # to True
+        assignment_list = PROVIDERS.assignment_api.list_role_assignments(
+            user_id=self.user_id,
+            project_id=self.project_id,
+            domain_id=self.domain_id,
+            effective=False)
+        user_roles = {x['role_id'] for x in assignment_list}
+
         for role in app_cred_roles:
-            try:
-                r = PROVIDERS.assignment_api.get_grant(
-                    role['id'], user_id=self.user_id,
-                    domain_id=self.domain_id, project_id=self.project_id)
-                roles.append({'id': r['id'], 'name': r['name']})
-            except exception.RoleAssignmentNotFound:
-                pass
+            if role['id'] in user_roles:
+                roles.append({'id': role['id'], 'name': role['name']})
 
         return roles
 
