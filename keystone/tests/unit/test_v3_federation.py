@@ -3146,8 +3146,12 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
 
     """
 
+    def setUp(self):
+        super(FederatedUserTests, self).setUp()
+        self.app_cred_api = PROVIDERS.application_credential_api
+
     def auth_plugin_config_override(self):
-        methods = ['saml2', 'token']
+        methods = ['saml2', 'token', 'application_credential']
         super(FederatedUserTests, self).auth_plugin_config_override(methods)
 
     def load_fixtures(self, fixtures):
@@ -3209,6 +3213,90 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         r = self.v3_request(path=path, method='GET',
                             expected_status=http_client.FORBIDDEN,
                             token=scoped_token)
+
+    def test_user_direct_application_credential(self):
+        # create project and role
+        project_ref = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id)
+        PROVIDERS.resource_api.create_project(project_ref['id'], project_ref)
+        role_ref = unit.new_role_ref()
+        PROVIDERS.role_api.create_role(role_ref['id'], role_ref)
+
+        # authenticate via saml get back a user id
+        user_id, unscoped_token = self._authenticate_via_saml()
+
+        # assign project role to federated user
+        PROVIDERS.assignment_api.add_role_to_user_and_project(
+            user_id, project_ref['id'], role_ref['id'])
+
+        app_cred = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'secret': uuid.uuid4().hex,
+            'user_id': user_id,
+            'project_id': project_ref['id'],
+            'description': uuid.uuid4().hex,
+            'roles': [{'id': role_ref['id']}]
+        }
+
+        app_cred_ref = self.app_cred_api.create_application_credential(
+            app_cred)
+
+        auth_data = self.build_authentication_request(
+            app_cred_id=app_cred_ref['id'], secret=app_cred_ref['secret'])
+        self.v3_create_token(auth_data, expected_status=http_client.CREATED)
+
+    def test_user_group_application_credential(self):
+        # create project and role
+        project_ref = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id)
+        PROVIDERS.resource_api.create_project(project_ref['id'], project_ref)
+        role_ref = unit.new_role_ref()
+        PROVIDERS.role_api.create_role(role_ref['id'], role_ref)
+        group_ref = unit.new_group_ref(
+            domain_id=CONF.identity.default_domain_id)
+        group_ref = PROVIDERS.identity_api.create_group(group_ref)
+
+        # authenticate via saml get back a user id
+        user_id, unscoped_token = self._authenticate_via_saml()
+
+        # assign role to group at project
+        PROVIDERS.assignment_api.create_grant(
+            role_ref['id'], group_id=group_ref['id'],
+            project_id=project_ref['id'],
+            domain_id=CONF.identity.default_domain_id
+        )
+
+        # add user to group
+        PROVIDERS.identity_api.add_user_to_group(
+            user_id=user_id, group_id=group_ref['id']
+        )
+
+        app_cred = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'secret': uuid.uuid4().hex,
+            'user_id': user_id,
+            'project_id': project_ref['id'],
+            'description': uuid.uuid4().hex,
+            'roles': [{'id': role_ref['id']}]
+        }
+
+        app_cred_ref = self.app_cred_api.create_application_credential(
+            app_cred)
+
+        auth_data = self.build_authentication_request(
+            app_cred_id=app_cred_ref['id'], secret=app_cred_ref['secret'])
+        self.v3_create_token(auth_data, expected_status=http_client.CREATED)
+
+        # remove user from group
+        PROVIDERS.identity_api.remove_user_from_group(
+            user_id=user_id, group_id=group_ref['id']
+        )
+
+        auth_data = self.build_authentication_request(
+            app_cred_id=app_cred_ref['id'], secret=app_cred_ref['secret'])
+        self.v3_create_token(auth_data, expected_status=http_client.UNAUTHORIZED)
 
     def test_domain_scoped_user_role_assignment(self):
         # create domain and role
