@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffb9cba7_03efb284",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-04-23T16:30:23Z",
+      "side": 1,
+      "message": "This can only be done for non-federated users until we have renewable app-creds. The reason is to avoid the scenario where a user comes in with an assertion that grants a group to the user and the user creates an app-cred to circumvent losing access to the group on a re-auth (loss of the group in the assertion from the IDP).\n\nSo, this needs to check if the user is a federated user and set \"effective\u003dTrue\" only in the case when the user is not federated.",
+      "range": {
+        "startLine": 416,
+        "startChar": 12,
+        "endLine": 416,
+        "endChar": 27
+      },
+      "revId": "43d1955a37ae15236eeeb52ac28936d049145174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffb9cba7_c3851aaf",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-04-23T16:30:23Z",
+      "side": 1,
+      "message": "This can just be a set, we don\u0027t need it to be a list. order doesn\u0027t really matter, a set comprehension would be sufficient:\n\n    {x[\u0027role_id\u0027] for x in assignment_list}\n\nIf you don\u0027t want a set-comprehension:\n\n   set([x[\u0027role_id\u0027] for x in assignment_list])\n\nThis also will be faster lookup(s) than the list scan on line 419 (only matters in really large sets of roles)",
+      "range": {
+        "startLine": 417,
+        "startChar": 8,
+        "endLine": 417,
+        "endChar": 71
+      },
+      "revId": "43d1955a37ae15236eeeb52ac28936d049145174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
