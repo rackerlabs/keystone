@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffb9cba7_42a256b0",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-04-25T14:46:44Z",
+      "side": 1,
+      "message": "NIT: No need for the outer {} in this case, it is already a set. Either use:\n\n  {x[\u0027role_id\u0027] for x in assignment_list}\n\nor\n\n  set([x[\u0027role_id\u0027] for x in assignment_list])",
+      "range": {
+        "startLine": 417,
+        "startChar": 21,
+        "endLine": 417,
+        "endChar": 67
+      },
+      "revId": "82fae8ea7bf304856a4ab36185a7975f2782f22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffb9cba7_a29a326b",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5699,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-04-25T14:46:44Z",
+      "side": 1,
+      "message": "Needs a federation test-case.",
+      "range": {
+        "startLine": 5699,
+        "startChar": 3,
+        "endLine": 5699,
+        "endChar": 67
+      },
+      "revId": "82fae8ea7bf304856a4ab36185a7975f2782f22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
