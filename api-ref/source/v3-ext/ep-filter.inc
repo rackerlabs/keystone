@@ -266,6 +266,16 @@ List all available endpoint groups.
 
 Relationship: ``https://docs.openstack.org/api/openstack-identity/3/ext/OS-EP-FILTER/1.0/rel/endpoint_groups``
 
+Request
+-------
+
+Parameters
+~~~~~~~~~~
+
+.. rest_parameters:: parameters.yaml
+
+   - name: eg_name_query
+
 Response
 --------
 
