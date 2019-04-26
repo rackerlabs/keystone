@@ -93,6 +93,13 @@ user_id_path:
   type: string
 
 # variables in query
+eg_name_query:
+  description: |
+    Filters the response by a endpoint group name.
+  in: query
+  required: false
+  type: string
+
 since_query:
   description: |
     A timestamp used to limit the list of results to events
