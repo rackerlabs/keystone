@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffb9cba7_9746397c",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-04-26T18:34:18Z",
+      "side": 1,
+      "message": "Doesn\u0027t this also need the domain_id if there is one?",
+      "revId": "09bb40154da96aa56a6189889dfde850538cd5b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
