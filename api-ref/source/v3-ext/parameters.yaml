@@ -120,6 +120,13 @@ trustor_user_id_query:
   required: false
   type: string
 
+eg_name_query:
+  description: |
+    Filters the response by a endpoint group name.
+  in: query
+  required: false
+  type: string
+
 # variables in body
 allow_redelegation:
   description: |

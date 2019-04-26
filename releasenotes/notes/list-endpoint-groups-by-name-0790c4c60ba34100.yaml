@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Fixes endpoint group listing by name. This allows the openstackclient
+    command to search endpoint groups by name. 

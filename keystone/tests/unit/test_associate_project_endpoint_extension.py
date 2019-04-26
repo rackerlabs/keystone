@@ -986,6 +986,29 @@ class EndpointGroupCRUDTestCase(EndpointFilterTestCase):
 
         self.head(url, expected_status=http_client.OK)
 
+    def test_list_endpoint_groups_in_project_by_name(self):
+        """GET & HEAD /OS-EP-FILTER/projects/{project_id}/endpoint_groups."""
+        # create an endpoint group to work with
+        endpoint_group_id = self._create_valid_endpoint_group(
+            self.DEFAULT_ENDPOINT_GROUP_URL, self.DEFAULT_ENDPOINT_GROUP_BODY)
+
+        # associate endpoint group with project
+        url = self._get_project_endpoint_group_url(
+            endpoint_group_id, self.project_id)
+        self.put(url)
+
+        url = ('/OS-EP-FILTER/projects/%(project_id)s/endpoint_groups'
+               '?name=%(eg_name)s' %
+               {'project_id': self.project_id,
+                'eg_name': 'endpoint_group_name'})
+        response = self.get(url, expected_status=http_client.OK)
+
+        self.assertEqual(
+            endpoint_group_id,
+            response.result['endpoint_groups'][0]['id'])
+
+        self.head(url, expected_status=http_client.OK)
+
     def test_list_endpoint_groups_in_invalid_project(self):
         """Test retrieving from invalid project."""
         project_id = uuid.uuid4().hex
