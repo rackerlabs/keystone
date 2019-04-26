@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffb9cba7_b2d4abbe",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3290,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-04-26T19:25:29Z",
+      "side": 1,
+      "message": "Should this test check to see if the effective roles include the group role, also shouldn\u0027t this fail because the user is granted access via the group not directly?",
+      "revId": "3589d074eb07159e9380ffb767fdf06fbafddf74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
