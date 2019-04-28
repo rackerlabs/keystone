@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "ffb9cba7_6b75cb31",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-04-28T22:22:30Z",
+      "side": 1,
+      "message": "Yeah. Technically, I don\u0027t think we intended to leak the domain_id via the token response at all, but we accidentally did when support for domain-specific roles was added to the role object. Then, we never filtered that attribute from our token response. We just passed the object through from the role API.\n\nUltimately, we\u0027re making sure we don\u0027t populate domain_id in the token response period. Based on how this works, it\u0027s actually not possible to have anything *but* None as a domain_id in this case (making it less than useful, anyway).",
+      "parentUuid": "ffb9cba7_6643c3b0",
+      "revId": "09bb40154da96aa56a6189889dfde850538cd5b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffb9cba7_061687a9",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 3
@@ -66,6 +84,30 @@
       "writtenOn": "2019-04-28T16:52:35Z",
       "side": 1,
       "message": "We should fix these too",
+      "range": {
+        "startLine": 341,
+        "startChar": 39,
+        "endLine": 341,
+        "endChar": 43
+      },
+      "revId": "09bb40154da96aa56a6189889dfde850538cd5b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffb9cba7_cb7cf720",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-04-28T22:22:30Z",
+      "side": 1,
+      "message": "++ I\u0027ll investigate",
+      "parentUuid": "ffb9cba7_061687a9",
       "range": {
         "startLine": 341,
         "startChar": 39,
