@@ -16,6 +16,24 @@
       "revId": "09bb40154da96aa56a6189889dfde850538cd5b8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffb9cba7_a6969b92",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-04-28T15:50:25Z",
+      "side": 1,
+      "message": "We only hit this case if there isn\u0027t a domain ID. If that\u0027s what you\u0027re asking?",
+      "parentUuid": "ffb9cba7_9746397c",
+      "revId": "09bb40154da96aa56a6189889dfde850538cd5b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
