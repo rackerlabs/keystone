@@ -34,6 +34,116 @@
       "revId": "09bb40154da96aa56a6189889dfde850538cd5b8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffb9cba7_6643c3b0",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-04-28T16:52:35Z",
+      "side": 1,
+      "message": "Oh, I missed that. So we don\u0027t include domain-specific roles in the token at all for trusts?",
+      "parentUuid": "ffb9cba7_a6969b92",
+      "revId": "09bb40154da96aa56a6189889dfde850538cd5b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffb9cba7_061687a9",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-04-28T16:52:35Z",
+      "side": 1,
+      "message": "We should fix these too",
+      "range": {
+        "startLine": 341,
+        "startChar": 39,
+        "endLine": 341,
+        "endChar": 43
+      },
+      "revId": "09bb40154da96aa56a6189889dfde850538cd5b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffb9cba7_261b8bd0",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-04-28T16:52:35Z",
+      "side": 1,
+      "message": "and here",
+      "range": {
+        "startLine": 346,
+        "startChar": 35,
+        "endLine": 346,
+        "endChar": 39
+      },
+      "revId": "09bb40154da96aa56a6189889dfde850538cd5b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffb9cba7_e61013ab",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-04-28T16:52:35Z",
+      "side": 1,
+      "message": "and here",
+      "range": {
+        "startLine": 362,
+        "startChar": 39,
+        "endLine": 362,
+        "endChar": 43
+      },
+      "revId": "09bb40154da96aa56a6189889dfde850538cd5b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffb9cba7_862917e7",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-04-28T16:52:35Z",
+      "side": 1,
+      "message": "and here",
+      "range": {
+        "startLine": 379,
+        "startChar": 29,
+        "endLine": 379,
+        "endChar": 33
+      },
+      "revId": "09bb40154da96aa56a6189889dfde850538cd5b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
