@@ -37,8 +37,12 @@ def json_body_before_request():
         # ValidationError message (as expected by our contract)
 
         # Explicitly check if the content is supposed to be json.
+        if 'Content-Type' not in flask.request:
+            content_type = ''
+        else:
+            content_type = flask.request['Content-Type']
         if (flask.request.is_json
-                or flask.request.headers['Content-Type'] == ''):
+                or content_type == ''):
             json_decoded = flask.request.get_json(force=True)
             if not isinstance(json_decoded, dict):
                 # In the case that the returned value was not a dict, force
