@@ -37,8 +37,17 @@ def json_body_before_request():
         # ValidationError message (as expected by our contract)
 
         # Explicitly check if the content is supposed to be json.
-        if (flask.request.is_json
-                or flask.request.headers['Content-Type'] == ''):
+        try:
+            # NOTE(morgan): flask.request is not iterable and is not an actual
+            # dict so .get() is not available. Use a try/except for the KeyError
+            # if `Content-Type` is incorrectly not available. This could be
+            # solved with an additonal `before_request` function by explicitly
+            # setting `Content-Type`, however, it makes more sense to keep all
+            # of the json body processing in one location
+            content_type = flask.request['Content-Type']
+        except KeyError:
+            content_type = ''
+        if flask.request.is_json or content_type == '':
             json_decoded = flask.request.get_json(force=True)
             if not isinstance(json_decoded, dict):
                 # In the case that the returned value was not a dict, force
