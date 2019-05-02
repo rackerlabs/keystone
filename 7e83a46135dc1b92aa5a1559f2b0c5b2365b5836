@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffb9cba7_70590b33",
+        "filename": "keystone/server/flask/request_processing/json_body.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-05-02T00:37:31Z",
+      "side": 1,
+      "message": "Comment to fix this here.",
+      "range": {
+        "startLine": 41,
+        "startChar": 19,
+        "endLine": 41,
+        "endChar": 64
+      },
+      "revId": "7e83a46135dc1b92aa5a1559f2b0c5b2365b5836",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
