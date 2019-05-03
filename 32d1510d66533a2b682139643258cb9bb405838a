@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfbec78f_4c6c1908",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 956,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-05-03T21:33:58Z",
+      "side": 1,
+      "message": "Don\u0027t you mean IGNORE_PASSWORD_REGEX_OPT",
+      "range": {
+        "startLine": 956,
+        "startChar": 12,
+        "endLine": 956,
+        "endChar": 55
+      },
+      "revId": "32d1510d66533a2b682139643258cb9bb405838a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfbec78f_600fa12e",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1390,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-05-03T21:33:58Z",
+      "side": 1,
+      "message": "can you use: _exempt_from_password_check ?",
+      "range": {
+        "startLine": 1388,
+        "startChar": 0,
+        "endLine": 1390,
+        "endChar": 43
+      },
+      "revId": "32d1510d66533a2b682139643258cb9bb405838a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
