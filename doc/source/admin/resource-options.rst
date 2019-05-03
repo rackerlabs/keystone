@@ -122,6 +122,31 @@ expired according to global configuration values.
 See the :ref:`security compliance documentation
 <security_compliance>` for more details.
 
+.. _ignore_password_regex:
+
+ignore_password_regex
+---------------------
+
+Type: ``Boolean``
+
+Opt into ignoring global password regex settings defined in
+``keystone.conf [security_compliance]`` on a per-user basis. Setting this
+option to ``True`` will allow users to set passwords that are not matching
+the allowed password regex according to global configuration values.
+
+.. code-block:: json
+
+   {
+       "user": {
+           "options": {
+               "ignore_password_regex": true
+           }
+       }
+   }
+
+See the `security compliance documentation
+<security-compliance.html>`_ for more details.
+
 .. _ignore_lockout_failure_attempts:
 
 ignore_lockout_failure_attempts

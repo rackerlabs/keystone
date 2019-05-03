@@ -35,6 +35,7 @@ from keystone.common.validation import validators
 import keystone.conf
 from keystone import exception
 from keystone.i18n import _
+from keystone.identity.backends import resource_options as iro
 from keystone.identity.mapping_backends import mapping
 from keystone import notifications
 from oslo_utils import timeutils
@@ -979,7 +980,7 @@ class Manager(manager.Manager):
     @exception_translated('user')
     def create_user(self, user_ref, initiator=None):
         user = user_ref.copy()
-        if 'password' in user:
+        if 'password' in user and not self._exempt_from_password_check(user):
             validators.validate_password(user['password'])
         user['name'] = user['name'].strip()
         user.setdefault('enabled', True)
@@ -1001,6 +1002,13 @@ class Manager(manager.Manager):
         notifications.Audit.created(self._USER, user['id'], initiator)
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
+
+    def _exempt_from_password_check(self, user_dict):
+        if user_dict.get('options', {}):
+            return bool(user_dict['options'].get(
+                iro.IGNORE_PASSWORD_REGEX_OPT.option_name, False))
+        else:
+            return False
 
     @domains_configured
     @exception_translated('user')
@@ -1157,7 +1165,7 @@ class Manager(manager.Manager):
         old_user_ref = self.get_user(user_id)
         user = user_ref.copy()
         self._require_matching_domain_id(user, old_user_ref)
-        if 'password' in user:
+        if 'password' in user and not self._exempt_from_password_check(user):
             validators.validate_password(user['password'])
         if 'name' in user:
             user['name'] = user['name'].strip()
@@ -1463,8 +1471,10 @@ class Manager(manager.Manager):
 
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(user_id))
+        user = driver.get_user(entity_id)
         try:
-            validators.validate_password(new_password)
+            if not self._exempt_from_password_check(user):
+                validators.validate_password(new_password)
             driver.change_password(entity_id, new_password)
         except exception.PasswordValidationError as ex:
             audit_reason = reason.Reason(str(ex), str(ex.code))
