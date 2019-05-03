@@ -988,3 +988,62 @@ class ChangePasswordRequiredAfterFirstUse(test_backend_sql.SqlTests):
         user['password'] = admin_password
         PROVIDERS.identity_api.update_user(user['id'], user)
         self.assertPasswordIsExpired(user['id'], admin_password)
+
+
+class IgnorePasswordRegexTests(test_backend_sql.SqlTests):
+    def setUp(self):
+        super(IgnorePasswordRegexTests, self).setUp()
+        self.password = 'mypassword2'
+        self.user_dict = self._get_user_dict(self.password)
+        # invalid regular expression, missing beginning '['
+        self.config_fixture.config(group='security_compliance',
+                                   password_regex='\S]+')
+
+    def test_create_user_with_ignore_password_regex(self):
+        user = self._create_user()
+        user = PROVIDERS.identity_api.get_user(user['id'])
+        self.assertTrue(user['enabled'])
+
+    def test_update_user_with_ignore_password_regex(self):
+        user = self._create_user()
+        user_dict = dict()
+        # When 'ignore_password_regex' option not passed
+        user_dict['password'] = 'mypassword3'
+        self.assertRaises(exception.PasswordValidationError,
+                          PROVIDERS.identity_api.update_user,
+                          user['id'], user_dict)
+
+        # When 'ignore_password_regex' option is passed
+        user_dict['options'] = {'ignore_password_regex': True}
+        PROVIDERS.identity_api.update_user(user['id'], user_dict)
+        with self.make_request():
+            PROVIDERS.identity_api.authenticate(
+                user_id=user['id'],
+                password='mypassword3')
+
+    def test_change_password_with_ignore_password_regex(self):
+        user = self._create_user()
+        with self.make_request():
+            PROVIDERS.identity_api.change_password(
+                user_id=user['id'],
+                original_password=self.password,
+                new_password='mypassword3')
+
+            PROVIDERS.identity_api.authenticate(
+                user_id=user['id'],
+                password='mypassword3')
+
+    def _create_user(self):
+        self.user_dict['options'] = {'ignore_password_regex': True}
+        user = PROVIDERS.identity_api.create_user(
+            self.user_dict)
+        return user
+
+    def _get_user_dict(self, password):
+        user = {
+            'name': 'TestUser',
+            'domain_id': CONF.identity.default_domain_id,
+            'enabled': True,
+            'password': password
+        }
+        return user
