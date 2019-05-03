@@ -1,0 +1,9 @@
+---
+features:
+  - |
+    [`bug 1827435 <https://bugs.launchpad.net/keystone/+bug/1827435>`_]
+    Added a new user option 'ignore_password_regex' (defaults to False).
+    When set to True, it overrides enforcing user password to match the
+    regular expression configured in
+    ``[security_compliance]password_regex`` option
+    in Keystone configuration file.
