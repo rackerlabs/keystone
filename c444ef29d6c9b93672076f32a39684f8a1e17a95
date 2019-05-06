@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfbec78f_674a3c56",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3270,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-05-06T17:49:55Z",
+      "side": 1,
+      "message": "I would think that the app-cred should fail to create if you reference a group-supplied role. Can we either have this patch changed or a followup for the following:\n\n1) Do setup (user/group)\n2) Attempt to create an app-cred with a group-role, should fail to create (if this isn\u0027t an API break)\n3) Add direct role to user (duplicating group role)\n4) Create App Cred (success)\n5) Auth (success)\n6) Remove direct assignment\n7) App Cred needs to be invalidated *or* now auth should fail if app cred is not invalidated.\n\n\nThis simply is my expectation that the app-cred should communicate it is not going to work as early as possible.\n\nWith all of that said, I am not opposed to the current workflow, I need to review one more time before upgrading to +2.",
+      "range": {
+        "startLine": 3270,
+        "startChar": 7,
+        "endLine": 3270,
+        "endChar": 81
+      },
+      "revId": "c444ef29d6c9b93672076f32a39684f8a1e17a95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
