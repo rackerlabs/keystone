@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfbec78f_459fb9b3",
+        "filename": "releasenotes/notes/filesystem-catalog-backend-a25bfc25262313b1.yaml",
+        "patchSetId": 19
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-05-09T17:42:14Z",
+      "side": 1,
+      "message": "bug.",
+      "range": {
+        "startLine": 4,
+        "startChar": 5,
+        "endLine": 4,
+        "endChar": 120
+      },
+      "revId": "e23473958f2643b594ac0987d9e1609f2172a8f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
