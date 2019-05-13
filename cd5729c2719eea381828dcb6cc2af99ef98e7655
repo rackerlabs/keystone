@@ -2,6 +2,176 @@
   "comments": [
     {
       "key": {
+        "uuid": "dfbec78f_9ec2a833",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-05-13T21:57:58Z",
+      "side": 1,
+      "message": "Keep in mind this puts DECRYPTED [plain text] credentials in the cache (potentially external, e.g. memcache with less guarding that keystone\u0027s config/internal runtime)\n\nThe decrypting *may* meed to be in the uncached version. This is likely a security issue that should not be introduced. We make effort to cache un-hashed passwords. These elements are equivalent to unhashed password and results in exposed plaintext secure data.",
+      "revId": "cd5729c2719eea381828dcb6cc2af99ef98e7655",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfbec78f_dea3409d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-05-13T21:57:58Z",
+      "side": 1,
+      "message": "You need to invalidate the lists here too.",
+      "revId": "cd5729c2719eea381828dcb6cc2af99ef98e7655",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfbec78f_1e96b83f",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-05-13T21:57:58Z",
+      "side": 1,
+      "message": "See note below about list invalidation",
+      "revId": "cd5729c2719eea381828dcb6cc2af99ef98e7655",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfbec78f_fe92c456",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-05-13T21:57:58Z",
+      "side": 1,
+      "message": "You need to invalidate the bare list as well. This is because the way you have this implemented the raw list_credentials may be type_none, so you cache all of the creds for the user and the type cache is only invalidated.\n\nYou need to add this line as well:\n\n    self._list_credentials_for_user.invalidate(self, cred[\u0027user_id\u0027], None)",
+      "revId": "cd5729c2719eea381828dcb6cc2af99ef98e7655",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfbec78f_1e81d8fb",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-05-13T21:57:58Z",
+      "side": 1,
+      "message": "Deletion must happen BEFORE invalidation otherwise a race could re-populate the list/get before the delete occurs. Move this line above 164.",
+      "revId": "cd5729c2719eea381828dcb6cc2af99ef98e7655",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfbec78f_3e861c15",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-05-13T21:57:58Z",
+      "side": 1,
+      "message": "See above note about list invalidation.",
+      "revId": "cd5729c2719eea381828dcb6cc2af99ef98e7655",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfbec78f_fe7ba424",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-05-13T21:57:58Z",
+      "side": 1,
+      "message": "See above note about list invalidation",
+      "revId": "cd5729c2719eea381828dcb6cc2af99ef98e7655",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfbec78f_9ea9487d",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-05-13T21:57:58Z",
+      "side": 1,
+      "message": "Why was this changed? This shouldn\u0027t need to be changed.",
+      "revId": "cd5729c2719eea381828dcb6cc2af99ef98e7655",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfbec78f_bea68caa",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-05-13T21:57:58Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "cd5729c2719eea381828dcb6cc2af99ef98e7655",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfbec78f_7ebed4b4",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1590,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-05-13T21:57:58Z",
+      "side": 1,
+      "message": "See previous comment on this.",
+      "revId": "cd5729c2719eea381828dcb6cc2af99ef98e7655",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfbec78f_de8ca5d8",
         "filename": "releasenotes/notes/bug-1815771-ae0e4118c552f01e.yaml",
         "patchSetId": 5
