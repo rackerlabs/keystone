@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dfbec78f_3e3861ec",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-05-13T17:39:43Z",
+      "side": 1,
+      "message": "Part of the issue is that detecting all the forms of federated users was not clear. This is aligning code so that the change can be a minimal fix.",
+      "parentUuid": "dfbec78f_fe74096a",
+      "range": {
+        "startLine": 420,
+        "startChar": 12,
+        "endLine": 420,
+        "endChar": 27
+      },
+      "revId": "c444ef29d6c9b93672076f32a39684f8a1e17a95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfbec78f_674a3c56",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 5
