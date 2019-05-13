@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "dfbec78f_fe74096a",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-05-13T16:59:45Z",
+      "side": 1,
+      "message": "This isn\u0027t really fixing anything yet. Can we partially fix it setting effective\u003dTrue for non-federated users?",
+      "range": {
+        "startLine": 420,
+        "startChar": 12,
+        "endLine": 420,
+        "endChar": 27
+      },
+      "revId": "c444ef29d6c9b93672076f32a39684f8a1e17a95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfbec78f_674a3c56",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 5
@@ -37,6 +60,30 @@
       "side": 1,
       "message": "Sure no problem, I need to review the tests\nAlthough I think the API allows to create the credential :S",
       "parentUuid": "dfbec78f_674a3c56",
+      "range": {
+        "startLine": 3270,
+        "startChar": 7,
+        "endLine": 3270,
+        "endChar": 81
+      },
+      "revId": "c444ef29d6c9b93672076f32a39684f8a1e17a95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfbec78f_de4ee536",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3270,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-05-13T16:59:45Z",
+      "side": 1,
+      "message": "Right, currently the broken behavior is that the app cred does get created but is nonfunctional.\n\nI don\u0027t want us to be testing for broken behavior. I would like to wait for the core issue to be fixed and then tests added.",
+      "parentUuid": "dfbec78f_9760b4a7",
       "range": {
         "startLine": 3270,
         "startChar": 7,
