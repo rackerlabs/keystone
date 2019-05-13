@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfbec78f_de8ca5d8",
+        "filename": "releasenotes/notes/bug-1815771-ae0e4118c552f01e.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-05-13T17:39:22Z",
+      "side": 1,
+      "message": "Could you link the bug report?",
+      "revId": "cd5729c2719eea381828dcb6cc2af99ef98e7655",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
