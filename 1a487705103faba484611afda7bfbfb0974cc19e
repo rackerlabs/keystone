@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfbec78f_5b43e713",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-05-13T16:23:28Z",
+      "side": 1,
+      "message": "(nit) an",
+      "range": {
+        "startLine": 98,
+        "startChar": 28,
+        "endLine": 98,
+        "endChar": 29
+      },
+      "revId": "1a487705103faba484611afda7bfbfb0974cc19e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfbec78f_fb22db51",
+        "filename": "keystone/api/os_ep_filter.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-05-13T16:23:28Z",
+      "side": 1,
+      "message": "The filter should be passed to the enforcer, for example like here https://opendev.org/openstack/keystone/src/branch/master/keystone/api/services.py#L37-L38",
+      "revId": "1a487705103faba484611afda7bfbfb0974cc19e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfbec78f_fbe73b11",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1008,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-05-13T16:23:28Z",
+      "side": 1,
+      "message": "There is nothing that asserts that the list really is filtered, for example by using the length of the response or using a negative test to assert that filtered-out groups are not in the response.",
+      "revId": "1a487705103faba484611afda7bfbfb0974cc19e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfbec78f_bbed43f1",
+        "filename": "releasenotes/notes/list-endpoint-groups-by-name-0790c4c60ba34100.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-05-13T16:23:28Z",
+      "side": 1,
+      "message": "Include a link to the bug report",
+      "revId": "1a487705103faba484611afda7bfbfb0974cc19e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
