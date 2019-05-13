@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfbec78f_5edf5539",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-05-13T17:06:22Z",
+      "side": 1,
+      "message": "Could add Related-Bug: #1777892",
+      "revId": "f0a86cd4ba524e15dd7e657dbd53fdcfd2796213",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
