@@ -1,0 +1,10 @@
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: Vishakha Agarwal <agarwalvishakha18@gmail.com>
+Code-Review+2: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Workflow+1: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 14 May 2019 23:43:58 +0000
+Reviewed-on: https://review.opendev.org/659118
+Project: openstack/keystone
+Branch: refs/heads/master
