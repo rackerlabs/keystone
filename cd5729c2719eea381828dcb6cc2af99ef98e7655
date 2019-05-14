@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dfbec78f_0c1680f2",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-05-14T16:43:09Z",
+      "side": 1,
+      "message": "should have said \"NEVER cache unhashed passwords\"",
+      "parentUuid": "dfbec78f_9ec2a833",
+      "revId": "cd5729c2719eea381828dcb6cc2af99ef98e7655",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfbec78f_dea3409d",
         "filename": "keystone/credential/core.py",
         "patchSetId": 5
