@@ -137,6 +137,24 @@
     },
     {
       "key": {
+        "uuid": "dfbec78f_ac641423",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1310,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2019-05-14T17:03:11Z",
+      "side": 1,
+      "message": "I wrote it, long before any of you were on the project.  Apologies.\nIs it safe to say that there is ALWAYS going to be an attribute in the user object that will contain the ID?  THe assumption when I wrote it was the ID was part of the DN, but that was long since supplanted by other mechansims.  I thought that, if you specified an ID attribute, this code was skipped.",
+      "parentUuid": "3fce034c_fb37dbe2",
+      "revId": "10654b3556bee22a7f4c63619162771e1f082fb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fce034c_ecadeb31",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 6
