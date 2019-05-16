@@ -42,13 +42,13 @@ def _get_certificate(name):
 class SimpleCertCAResource(flask_restful.Resource):
     @ks_flask.unenforced_api
     def get(self):
-        return _get_certificate(CONF.signing.ca_certs)
+        return _get_certificate()
 
 
 class SimpleCertListResource(flask_restful.Resource):
     @ks_flask.unenforced_api
     def get(self):
-        return _get_certificate(CONF.signing.certfile)
+        return _get_certificate()
 
 
 class SimpleCertAPI(ks_flask.APIBase):
