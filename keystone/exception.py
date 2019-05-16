@@ -594,10 +594,9 @@ class TrustConsumeMaximumAttempt(UnexpectedError):
                              "acquire lock.")
 
 
-class CertificateFilesUnavailable(UnexpectedError):
-    debug_message_format = _("Expected signing certificates are not available "
-                             "on the server. Please check Keystone "
-                             "configuration.")
+class APIUnavailable(UnexpectedError):
+    debug_message_format = _("The API service you have requested is not in"
+                             "operation.")
 
 
 class MalformedEndpoint(UnexpectedError):
