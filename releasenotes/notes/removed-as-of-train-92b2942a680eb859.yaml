@@ -1,0 +1,5 @@
+---
+other:
+  - |
+    [`blueprint removed-as-of-stein <https://blueprints.launchpad.net/keystone/+spec/removed-as-of-train>`_]
+    The deprecated config option `infer_roles` is removed now.
