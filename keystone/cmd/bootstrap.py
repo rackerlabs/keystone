@@ -176,14 +176,19 @@ class Bootstrapper(object):
                 PROVIDERS.identity_api.driver.authenticate(
                     user['id'], self.admin_password
                 )
-            except AssertionError:
+            except (AssertionError, exception.PasswordExpired):
                 # This means that authentication failed and that we need to
                 # update the user's password. This is going to persist a
                 # revocation event that will make all previous tokens for the
                 # user invalid, which is OK because it falls within the scope
                 # of revocation. If a password changes, we shouldn't be able to
                 # use tokens obtained with an old password.
+                # NOTE(pas-ha) PasswordExpired is raised when the bootstrap
+                # script is executed twice and security_compliance option
+                # change_password_on_first_use is set.
                 update['password'] = self.admin_password
+                update['options'] = {
+                    'ignore_change_password_upon_first_use': True}
 
             # Only make a call to update the user if the password has changed
             # or the user was previously disabled. This allows bootstrap to act
@@ -204,6 +209,8 @@ class Bootstrapper(object):
                     'name': self.admin_username,
                     'enabled': True,
                     'domain_id': self.default_domain_id,
+                    'options': {
+                        'ignore_change_password_upon_first_use': True},
                     'password': self.admin_password
                 }
             )
