@@ -28,27 +28,16 @@ CONF = keystone.conf.CONF
 _build_resource_relation = json_home_relations.os_simple_cert_resource_rel_func
 
 
-def _get_certificate(name):
-    try:
-        with open(name, 'r') as f:
-            body = f.read()
-    except IOError:
-        raise exception.CertificateFilesUnavailable()
-    resp = flask.make_response(body, http_client.OK)
-    resp.headers['Content-Type'] = 'application/x-pem-file'
-    return resp
-
-
 class SimpleCertCAResource(flask_restful.Resource):
     @ks_flask.unenforced_api
     def get(self):
-        return _get_certificate(CONF.signing.ca_certs)
+        return flask.make_response({}, http_client.FORBIDDEN)
 
 
 class SimpleCertListResource(flask_restful.Resource):
     @ks_flask.unenforced_api
     def get(self):
-        return _get_certificate(CONF.signing.certfile)
+        return flask.make_response({}, http_client.FORBIDDEN)
 
 
 class SimpleCertAPI(ks_flask.APIBase):
