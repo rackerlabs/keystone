@@ -50,11 +50,6 @@ os_revoke_resource_rel_func = functools.partial(
     json_home.build_v3_extension_resource_relation,
     extension_name='OS-REVOKE', extension_version='1.0')
 
-# OS-SIMPLE-CERT "extension"
-os_simple_cert_resource_rel_func = functools.partial(
-    json_home.build_v3_extension_resource_relation,
-    extension_name='OS-SIMPLE-CERT', extension_version='1.0')
-
 # OS-TRUST "extension"
 os_trust_resource_rel_func = functools.partial(
     json_home.build_v3_extension_resource_relation, extension_name='OS-TRUST',
