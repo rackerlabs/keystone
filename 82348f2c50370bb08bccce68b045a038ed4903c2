@@ -16,6 +16,24 @@
       "revId": "82348f2c50370bb08bccce68b045a038ed4903c2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfb3d3c7_a9326ba6",
+        "filename": "doc/source/contributor/how-can-i-help.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2019-05-17T19:08:22Z",
+      "side": 1,
+      "message": "++, we could describe this in the paragraph before the list of criteria for low-hanging.\n\n\"The goal of marking a bug as \"low hanging fruit\" is to provide a [statement/sign] that a particular bug would be a great way for someone who is newer to OpenStack/Python to get involved. The fix for such a bug would not require in-depth background context of the inner-workings of the project (aka tribal knowledge), and any required context is sufficiently documented in the documentation of the bug.\"\n\n^ maybe something like that, but a bit cleaner.",
+      "parentUuid": "bfb3d3c7_dd3f67b3",
+      "revId": "82348f2c50370bb08bccce68b045a038ed4903c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
