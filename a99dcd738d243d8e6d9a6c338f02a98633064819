@@ -45,6 +45,30 @@
       "revId": "a99dcd738d243d8e6d9a6c338f02a98633064819",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfb3d3c7_7d03db0e",
+        "filename": "releasenotes/notes/removed-as-of-train-92b2942a680eb859.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-05-17T02:32:53Z",
+      "side": 1,
+      "message": "I created a bug to track removals: https://bugs.launchpad.net/keystone/+bug/1829453 let\u0027s link to that bug here and use the Related-bug tag in the commit message so that it is tracked.",
+      "parentUuid": "bfb3d3c7_42bcf668",
+      "range": {
+        "startLine": 4,
+        "startChar": 30,
+        "endLine": 4,
+        "endChar": 35
+      },
+      "revId": "a99dcd738d243d8e6d9a6c338f02a98633064819",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
