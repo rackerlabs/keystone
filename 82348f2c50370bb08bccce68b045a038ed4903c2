@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfb3d3c7_dd3f67b3",
+        "filename": "doc/source/contributor/how-can-i-help.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-05-17T02:38:46Z",
+      "side": 1,
+      "message": "Maybe something about not needing deep background context or tribal knowledge, or else anything that does require significant context has been thoroughly triaged to the point where all required context is in documentation/the bug description/comments?",
+      "revId": "82348f2c50370bb08bccce68b045a038ed4903c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
