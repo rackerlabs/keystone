@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfb3d3c7_20f9b07f",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-05-17T16:46:37Z",
+      "side": 1,
+      "message": "Could you add basepython \u003d python3 here?",
+      "revId": "89096ccb107f0b3a33e77a3011be4a96f6fc7898",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
