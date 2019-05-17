@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfb3d3c7_a0bda069",
+        "filename": "doc/source/admin/resource-options.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-05-17T16:58:24Z",
+      "side": 1,
+      "message": "Suggested rewording:\n\n\"Opt into ignoring global inactivity lock settings\"",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 61
+      },
+      "revId": "7949b34b0b4a3dd338b1e496bc88d646ffa7ad2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfb3d3c7_00a82c1d",
+        "filename": "doc/source/admin/resource-options.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-05-17T16:58:24Z",
+      "side": 1,
+      "message": "The way I\u0027m reading the code makes this look false, am I wrong? Can you add a unit test showing it?",
+      "revId": "7949b34b0b4a3dd338b1e496bc88d646ffa7ad2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfb3d3c7_80609c34",
+        "filename": "releasenotes/notes/bug-1827431-2f078c13dfc9a02a.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-05-17T16:58:24Z",
+      "side": 1,
+      "message": "Please add a link to the bug report",
+      "revId": "7949b34b0b4a3dd338b1e496bc88d646ffa7ad2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
