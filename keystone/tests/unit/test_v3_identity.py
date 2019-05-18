@@ -21,7 +21,6 @@ import mock
 from oslo_db import exception as oslo_db_exception
 from oslo_log import log
 from six.moves import http_client
-from testtools import matchers
 
 from keystone.common import provider_api
 from keystone.common import sql
@@ -842,16 +841,12 @@ class UserSelfServiceChangingPasswordsTestCase(ChangePasswordTestCase):
             self.assertNotIn(lock_pw_opt, user['options'])
 
     def test_changing_password_with_missing_original_password_fails(self):
-        r = self.change_password(password=uuid.uuid4().hex,
-                                 expected_status=http_client.BAD_REQUEST)
-        self.assertThat(r.result['error']['message'],
-                        matchers.Contains('original_password'))
+        self.change_password(password=uuid.uuid4().hex,
+                             expected_status=http_client.BAD_REQUEST)
 
     def test_changing_password_with_missing_password_fails(self):
-        r = self.change_password(original_password=self.user_ref['password'],
-                                 expected_status=http_client.BAD_REQUEST)
-        self.assertThat(r.result['error']['message'],
-                        matchers.Contains('password'))
+        self.change_password(original_password=self.user_ref['password'],
+                             expected_status=http_client.BAD_REQUEST)
 
     def test_changing_password_with_incorrect_password_fails(self):
         self.change_password(password=uuid.uuid4().hex,

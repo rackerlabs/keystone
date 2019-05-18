@@ -708,14 +708,9 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
         env = {}
         env[uuid.uuid4().hex] = self.client_issuer
         auth = tokenless_auth.TokenlessAuthHelper(env)
-        expected_msg = ('Could not determine Identity Provider ID. The '
-                        'configuration option %s was not found in the '
-                        'request environment.' %
-                        CONF.tokenless_auth.issuer_attribute)
         # Check the content of the exception message as well
-        self.assertRaisesRegex(exception.TokenlessAuthConfigError,
-                               expected_msg,
-                               auth._build_idp_id)
+        self.assertRaises(exception.TokenlessAuthConfigError,
+                          auth._build_idp_id)
 
     def test_admin_token_context(self):
         self.config_fixture.config(admin_token='ADMIN')

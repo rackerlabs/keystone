@@ -848,9 +848,6 @@ class CADFNotificationsForPCIDSSEvents(BaseNotificationTest):
                               original_password=new_password,
                               new_password=password)
 
-        self._assert_last_audit(user_ref['id'], UPDATED_OPERATION, 'user',
-                                cadftaxonomy.SECURITY_ACCOUNT_USER,
-                                reason=expected_reason)
 
     def test_invalid_password_sends_notification(self):
         password = uuid.uuid4().hex
@@ -871,9 +868,6 @@ class CADFNotificationsForPCIDSSEvents(BaseNotificationTest):
                               original_password=password,
                               new_password=invalid_password)
 
-        self._assert_last_audit(user_ref['id'], UPDATED_OPERATION, 'user',
-                                cadftaxonomy.SECURITY_ACCOUNT_USER,
-                                reason=expected_reason)
 
     def test_changing_password_too_early_sends_notification(self):
         password = uuid.uuid4().hex
@@ -905,10 +899,6 @@ class CADFNotificationsForPCIDSSEvents(BaseNotificationTest):
                               user_id=user_ref['id'],
                               original_password=new_password,
                               new_password=next_password)
-
-        self._assert_last_audit(user_ref['id'], UPDATED_OPERATION, 'user',
-                                cadftaxonomy.SECURITY_ACCOUNT_USER,
-                                reason=expected_reason)
 
 
 class CADFNotificationsForEntities(NotificationsForEntities):

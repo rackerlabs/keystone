@@ -102,6 +102,20 @@ class ValidationError(Error):
                        " The server could not comply with the request"
                        " since it is either malformed or otherwise"
                        " incorrect. The client is assumed to be in error.")
+
+    message_base = _("Expecting to find attribute in target."
+                     " The server could not comply with the request"
+                     " since it is either malformed or otherwise"
+                     " incorrect. The client is assumed to be in error.")
+
+    def _build_message(self, message, **kwargs):
+
+        if message:
+            return message
+        message = _format_with_unicode_kwargs(self.message_format, kwargs)
+        LOG.warning('%s', message)
+        return self.message_base
+
     code = int(http_client.BAD_REQUEST)
     title = http_client.responses[http_client.BAD_REQUEST]
 
@@ -452,7 +466,7 @@ class DomainNotFound(NotFound):
 
 
 class ProjectNotFound(NotFound):
-    message_format = _("Could not find project: %(project_id)s.")
+    message_format = _("Could not find project")
 
 
 class ProjectTagNotFound(NotFound):

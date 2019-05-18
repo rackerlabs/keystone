@@ -66,14 +66,11 @@ class ExceptionTestCase(unit.BaseTestCase):
         attribute = uuid.uuid4().hex
         e = exception.ValidationError(target=target, attribute=attribute)
         self.assertValidJsonRendering(e)
-        self.assertIn(target, six.text_type(e))
-        self.assertIn(attribute, six.text_type(e))
 
     def test_not_found(self):
         target = uuid.uuid4().hex
         e = exception.NotFound(target=target)
         self.assertValidJsonRendering(e)
-        self.assertIn(target, six.text_type(e))
 
     def test_forbidden_title(self):
         e = exception.Forbidden()
@@ -95,9 +92,7 @@ class ExceptionTestCase(unit.BaseTestCase):
         e = exception.ValidationError(attribute='xx',
                                       target='Long \xe2\x80\x93 Dash')
 
-        if six.PY2:
-            self.assertIn(u'\u2013', six.text_type(e))
-        else:
+        if not six.PY2:
             self.assertIn('Long \xe2\x80\x93 Dash', six.text_type(e))
 
     def test_invalid_unicode_string(self):
@@ -107,9 +102,7 @@ class ExceptionTestCase(unit.BaseTestCase):
         e = exception.ValidationError(attribute='xx',
                                       target='\xe7a va')
 
-        if six.PY2:
-            self.assertIn('%(attribute)', six.text_type(e))
-        else:
+        if not six.PY2:
             # There's no UnicodeDecodeError on python 3.
             self.assertIn('\xe7a va', six.text_type(e))
 
