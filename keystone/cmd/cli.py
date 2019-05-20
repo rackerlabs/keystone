@@ -154,7 +154,7 @@ class BootStrap(BaseApp):
         if self.password is None:
             print(_('Either --bootstrap-password argument or '
                     'OS_BOOTSTRAP_PASSWORD must be set.'))
-            raise ValueError
+            exit(1)
 
         self.bootstrapper.admin_password = self.password
         self.bootstrapper.admin_username = self.username
