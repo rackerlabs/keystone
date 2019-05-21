@@ -69,6 +69,30 @@
       "revId": "a99dcd738d243d8e6d9a6c338f02a98633064819",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfb3d3c7_8bd73bee",
+        "filename": "releasenotes/notes/removed-as-of-train-92b2942a680eb859.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-05-21T04:57:19Z",
+      "side": 1,
+      "message": "Thanks Colleen. I wasn\u0027t sure whether I should lock a bug or a blueprint, but now I am :)",
+      "parentUuid": "bfb3d3c7_7d03db0e",
+      "range": {
+        "startLine": 4,
+        "startChar": 30,
+        "endLine": 4,
+        "endChar": 35
+      },
+      "revId": "a99dcd738d243d8e6d9a6c338f02a98633064819",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
