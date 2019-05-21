@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfb3d3c7_df2e3fa4",
+        "filename": "releasenotes/notes/removed-as-of-train-92b2942a680eb859.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-05-21T17:10:01Z",
+      "side": 1,
+      "message": "let\u0027s use \"other\" instead of \"fixes\" here as we have in the past (e.g. https://opendev.org/openstack/keystone/src/branch/master/releasenotes/notes/removed-as-of-stein-5eb23253b72ab54e.yaml)",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 5
+      },
+      "revId": "452b340d0d782e6f57751c74d208f8392a39f796",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
