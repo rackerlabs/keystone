@@ -22,6 +22,30 @@
       "revId": "452b340d0d782e6f57751c74d208f8392a39f796",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfb3d3c7_5cd8127e",
+        "filename": "releasenotes/notes/removed-as-of-train-92b2942a680eb859.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-05-22T03:57:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfb3d3c7_df2e3fa4",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 5
+      },
+      "revId": "452b340d0d782e6f57751c74d208f8392a39f796",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
