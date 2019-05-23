@@ -358,6 +358,13 @@ region_id_query:
   in: query
   required: false
   type: string
+request_nocatalog_unscoped_path_not_required:
+  description: |
+    (Since v3.1) No matter the value is True or False, the authentication
+    response excludes the service catalog for unscoped token.
+  in: query
+  required: false
+  type: string
 resource_name_query:
   description: |
     Filters the response by a specified resource name.
