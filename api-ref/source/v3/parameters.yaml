@@ -1645,6 +1645,13 @@ request_limit_project_id_not_required:
   in: body
   required: false
   type: string
+request_nocatalog_unscoped_path_not_required:
+  description: |
+    (Since v3.1) No matter the value is True or False, the authentication
+    response excludes the service catalog for unscoped token.
+  in: query
+  required: false
+  type: string
 request_region_id_registered_limit_body_not_required:
   description: |
     The ID of the region that contains the service endpoint.
