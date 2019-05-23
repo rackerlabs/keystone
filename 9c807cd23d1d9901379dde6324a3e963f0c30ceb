@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfb3d3c7_566455e4",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-05-23T06:26:43Z",
+      "side": 1,
+      "message": "Better to use sys.exit(1)?",
+      "range": {
+        "startLine": 157,
+        "startChar": 12,
+        "endLine": 157,
+        "endChar": 17
+      },
+      "revId": "9c807cd23d1d9901379dde6324a3e963f0c30ceb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
