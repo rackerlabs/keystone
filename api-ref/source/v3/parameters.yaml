@@ -263,6 +263,13 @@ nocatalog:
   in: query
   required: false
   type: string
+nocatalog-unscoped:
+  description: |
+    (Since v3.1) No matter the value is True or False, the authentication
+    response excludes the service catalog for unscoped token.
+  in: query
+  required: false
+  type: string
 parent_id_query:
   description: |
     Filters the response by a parent ID.

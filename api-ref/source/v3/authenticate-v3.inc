@@ -128,7 +128,7 @@ Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - nocatalog: nocatalog
+   - nocatalog: nocatalog-unscoped
    - domain: domain
    - name: user_name
    - auth: auth
@@ -329,7 +329,7 @@ Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - nocatalog: nocatalog
+   - nocatalog: nocatalog-unscoped
    - name: user_name
    - auth: auth
    - user: user
@@ -404,7 +404,7 @@ Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - nocatalog: nocatalog
+   - nocatalog: nocatalog-unscoped
    - identity: identity
    - token: auth_token
    - id: auth_token_id
@@ -590,7 +590,7 @@ Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - nocatalog: nocatalog
+   - nocatalog: nocatalog-unscoped
    - methods: auth_methods_token
    - auth: auth
    - token: auth_token
