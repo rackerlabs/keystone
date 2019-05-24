@@ -154,6 +154,12 @@ class ShadowUsers(base.ShadowUsersDriverBase):
         # remove local_user attributes from new_user_dict
         new_user_dict.pop('name', None)
         new_user_dict.pop('password', None)
+        # set enabled a strict bool value if it's value is integer
+        try:                                                                                                                                                                                                
+            int(new_user_dict['enabled'])
+            new_user_dict['enabled'] = True
+        except ValueError:
+            pass
         # create nonlocal_user dict
         new_nonlocal_user_dict = {
             'name': user_dict['name']
