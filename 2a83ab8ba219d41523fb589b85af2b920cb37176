@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfb3d3c7_f8f1966c",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2019-05-24T16:39:25Z",
+      "side": 1,
+      "message": "You cannot just assume that this will always be true. For LDAP specifically, there is a whole series of configuration options about how to figure out if a user should be enabled or not. https://github.com/openstack/keystone/blob/d2b5550214cecd8a753253066d61e3419e76e952/keystone/conf/ldap.py#L159-L202",
+      "revId": "2a83ab8ba219d41523fb589b85af2b920cb37176",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
