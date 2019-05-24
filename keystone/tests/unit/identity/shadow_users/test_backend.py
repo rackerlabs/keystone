@@ -47,6 +47,42 @@ class ShadowUsersBackendTests(object):
         user_ref = self._get_user_ref(new_nonlocal_user['id'])
         self.assertIsNone(user_ref.local_user)
 
+    def test_create_nonlocal_user_with_enabled_is_zero(self):
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user['enabled'] = 0
+        new_nonlocal_user = PROVIDERS.shadow_users_api.create_nonlocal_user(
+            user
+        )
+        user_ref = self._get_user_ref(new_nonlocal_user['id'])
+        self.assertFalse(user_ref.enabled)
+
+    def test_create_nonlocal_user_with_enabled_is_int(self):
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user['enabled'] = '544'
+        new_nonlocal_user = PROVIDERS.shadow_users_api.create_nonlocal_user(
+            user
+        )
+        user_ref = self._get_user_ref(new_nonlocal_user['id'])
+        self.assertTrue(user_ref.enabled)
+
+    def test_create_nonlocal_user_with_enabled_is_true(self):
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user['enabled'] = True
+        new_nonlocal_user = PROVIDERS.shadow_users_api.create_nonlocal_user(
+            user
+        )
+        user_ref = self._get_user_ref(new_nonlocal_user['id'])
+        self.assertTrue(user_ref.enabled)
+
+    def test_create_nonlocal_user_with_enabled_is_false(self):
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user['enabled'] = False
+        new_nonlocal_user = PROVIDERS.shadow_users_api.create_nonlocal_user(
+            user
+        )
+        user_ref = self._get_user_ref(new_nonlocal_user['id'])
+        self.assertFalse(user_ref.enabled)
+
     def test_nonlocal_user_unique_user_id_constraint(self):
         user_ref = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
         user = PROVIDERS.shadow_users_api.create_nonlocal_user(user_ref)
