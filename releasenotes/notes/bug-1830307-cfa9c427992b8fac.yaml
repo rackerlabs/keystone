@@ -1,0 +1,10 @@
+---
+fixes:
+  - |
+    [`bug 1636950 <https://bugs.launchpad.net/keystone/+bug/1830307`_]
+    In sqlalchemy 1.2.x version, Boolean datatype enforces strict
+    True/False/None values. Translate the integer except 0 to the
+    bool value before create nonlocal user. 0 is a special case used
+    in some cases where deployer can explicitly tell keystone to use
+    an alternative form for determining if the user is enabled. 0 means
+    being disabled.
