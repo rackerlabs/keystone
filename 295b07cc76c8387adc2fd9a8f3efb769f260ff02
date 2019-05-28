@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfb3d3c7_7554a4fe",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-05-28T18:39:56Z",
+      "side": 1,
+      "message": "An alternative would be to return 1 here and then do sys.exit(status) in main() the way we do for domain config upload https://opendev.org/openstack/keystone/src/branch/master/keystone/cmd/cli.py#L1100-L1102",
+      "revId": "295b07cc76c8387adc2fd9a8f3efb769f260ff02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
