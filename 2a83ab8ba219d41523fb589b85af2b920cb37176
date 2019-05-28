@@ -16,6 +16,24 @@
       "revId": "2a83ab8ba219d41523fb589b85af2b920cb37176",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfb3d3c7_c3a92c7c",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 16264
+      },
+      "writtenOn": "2019-05-28T02:15:07Z",
+      "side": 1,
+      "message": "Hi Kristi,\n\nThanks for your comments! submit the new patch for it. Since the enabled value has been processed by functionality _ldap_res_to_model, if it still in integer format, I think it is true. I think it also keep consistent with using sqlalchemy 1.1.x which take integer as bool True.",
+      "parentUuid": "bfb3d3c7_f8f1966c",
+      "revId": "2a83ab8ba219d41523fb589b85af2b920cb37176",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
