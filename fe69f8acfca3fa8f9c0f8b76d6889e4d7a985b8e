@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfb3d3c7_1b21c49f",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-05-29T18:31:00Z",
+      "side": 1,
+      "message": "This still misses Kristi\u0027s point about assuming whether the user is enabled or not. It cannot be hardcoded to True, it needs to read the existing value and convert it appropriately.",
+      "range": {
+        "startLine": 160,
+        "startChar": 36,
+        "endLine": 160,
+        "endChar": 43
+      },
+      "revId": "fe69f8acfca3fa8f9c0f8b76d6889e4d7a985b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfb3d3c7_fb3e30b6",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-05-29T18:31:00Z",
+      "side": 1,
+      "message": "This is not a good use of try/except. This should use if/else logic to check the value and set it conditionally, not use this goto-style jumping logic.",
+      "range": {
+        "startLine": 161,
+        "startChar": 8,
+        "endLine": 162,
+        "endChar": 16
+      },
+      "revId": "fe69f8acfca3fa8f9c0f8b76d6889e4d7a985b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
