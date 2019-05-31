@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfb3d3c7_c1f496f3",
+        "filename": "keystone/api/os_simple_cert.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-05-31T06:19:31Z",
+      "side": 0,
+      "message": "The API uses this class SimpleCertCAResource that requires the value from the CONF. I am looking for the better solution so that we do not need to get rid of whole API.",
+      "range": {
+        "startLine": 45,
+        "startChar": 31,
+        "endLine": 45,
+        "endChar": 53
+      },
+      "revId": "d2b5550214cecd8a753253066d61e3419e76e952",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
