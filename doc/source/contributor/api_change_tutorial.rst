@@ -28,9 +28,9 @@ In order to follow this tutorial, it is assumed that you have read our
 Proposing a change
 ------------------
 
-You need to create a blueprint, submit a specification against the
-`keystone-specs`_ repository and bring it up to discussion with the
-`keystone core team`_ for agreement.
+You need to create a bug, submit a specification against the `keystone-specs`_
+repository and bring it up to discussion with the `keystone core team`_ for
+agreement.
 
 .. _`keystone-specs`: https://opendev.org/openstack/keystone-specs/
 .. _`keystone core team`: https://review.opendev.org/#/admin/groups/9,members
@@ -38,10 +38,10 @@ You need to create a blueprint, submit a specification against the
 Create
 ~~~~~~
 
-#. `Create a blueprint`_ in launchpad;
+#. `Create a bug`_ in launchpad;
 #. git clone https://opendev.org/openstack/keystone-specs;
 #. cp `specs/template.rst` `specs/backlog/<feature>.rst`;
-#. Write the spec based on the template. Ensure the BP link points to the one
+#. Write the spec based on the template. Ensure the Bug link points to the one
    created in step 1;
 #. Also update the documentation at `api/v3/identity-api-v3.rst` to reflect the
    proposed API changes;
@@ -49,7 +49,7 @@ Create
 #. Propose agenda items to the `keystone meeting`_, and make sure someone
    who understands the subject can attend the meeting to answer questions.
 
-.. _`Create a blueprint`: https://blueprints.launchpad.net/keystone/+addspec
+.. _`Create a bug`: https://bugs.launchpad.net/keystone/+filebug
 .. _`template`: https://opendev.org/openstack/keystone-specs/src/branch/master/specs/template.rst
 .. _`keystone meeting`: https://wiki.openstack.org/wiki/Meetings/KeystoneMeeting
 
