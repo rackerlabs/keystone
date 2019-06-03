@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_d5bbb70b",
+        "filename": "api-ref/source/v3/samples/admin/endpoint-create-request.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-06-03T05:41:13Z",
+      "side": 1,
+      "message": "It will be region_id only, the parameter \"region\" is deprecated in release 3.2 and \"region_id\" is used since then.",
+      "range": {
+        "startLine": 4,
+        "startChar": 9,
+        "endLine": 4,
+        "endChar": 15
+      },
+      "revId": "69c80e6e0910841b1edb0854965564ff755bf084",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
