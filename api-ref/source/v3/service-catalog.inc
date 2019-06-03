@@ -378,7 +378,7 @@ Parameters
    - enabled: endpoint_enabled_not_required
    - interface: endpoint_interface
    - service_id: service_id
-   - region_id: region_id_not_required
+   - region: region_id_not_required
 
 Example
 ~~~~~~~
