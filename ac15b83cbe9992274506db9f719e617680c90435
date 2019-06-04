@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_aaf8f9c3",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2019-06-04T20:25:07Z",
+      "side": 1,
+      "message": "not a huge fan of this \"name\" for the query. You are not passing an actual query, right? What you are going to pass is just a name.",
+      "revId": "ac15b83cbe9992274506db9f719e617680c90435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
