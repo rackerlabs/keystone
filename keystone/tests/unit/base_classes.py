@@ -11,6 +11,8 @@
 # under the License.
 
 from oslo_config import fixture as config_fixture
+import testresources
+import testscenarios
 
 from keystone.cmd import bootstrap
 from keystone.common import provider_api
@@ -82,3 +84,38 @@ class TestCaseWithBootstrap(core.BaseTestCase):
             CONF.identity.default_domain_id, {'enabled': False}
         )
         PROVIDERS.resource_api.delete_domain(CONF.identity.default_domain_id)
+
+
+class TestCase(testresources.ResourcedTestCase, core.BaseTestCase):
+
+    resources = [('bootstrapper', ksfixtures.BootstrapResourceManager())]
+
+    def setUp(self):
+        self.useFixture(database.Database())
+        self.config_fixture = self.useFixture(config_fixture.Config(CONF))
+        CONF(args=[], project='keystone')
+        self.useFixture(
+            ksfixtures.KeyRepository(
+                self.config_fixture,
+                'fernet_tokens',
+                CONF.fernet_tokens.max_active_keys
+            )
+        )
+
+        self.useFixture(
+            ksfixtures.KeyRepository(
+                self.config_fixture,
+                'fernet_receipts',
+                CONF.fernet_receipts.max_active_keys
+            )
+        )
+        super(TestCase, self).setUp()
+        self.loadapp()
+
+
+def optimize_module_test_loader():
+    def load_tests(loader, found_tests, pattern):
+        result = testresources.OptimisingTestSuite()
+        result.addTests(testscenarios.generate_scenarios(found_tests))
+        return result
+    return load_tests
