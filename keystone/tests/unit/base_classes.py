@@ -11,6 +11,7 @@
 # under the License.
 
 from oslo_config import fixture as config_fixture
+import testresources
 
 from keystone.cmd import bootstrap
 from keystone.common import provider_api
@@ -82,3 +83,72 @@ class TestCaseWithBootstrap(core.BaseTestCase):
             CONF.identity.default_domain_id, {'enabled': False}
         )
         PROVIDERS.resource_api.delete_domain(CONF.identity.default_domain_id)
+
+
+class BootstrapResourceManager(testresources.TestResourceManager):
+
+    def __init__(self):
+        super(BootstrapResourceManager, self).__init__()
+        self.bootstrapper = None
+
+    def make(self, dependency_resources):
+        from pprint import pprint
+        pprint('CREATING A NEW BOOTSTRAPPER')
+        bootstrapper = bootstrap.Bootstrapper()
+        bootstrapper.admin_password = 'password'
+        bootstrapper.admin_username = 'admin'
+        bootstrapper.project_name = 'admin'
+        bootstrapper.admin_role_name = 'admin'
+        bootstrapper.service_name = 'keystone'
+        bootstrapper.public_url = 'http://localhost/identity/'
+
+        try:
+            PROVIDERS.resource_api.create_domain(
+                default_fixtures.ROOT_DOMAIN['id'],
+                default_fixtures.ROOT_DOMAIN)
+        except exception.Conflict:
+            pass
+
+        bootstrapper.bootstrap()
+        self.bootstrapper = bootstrapper
+        return self.bootstrapper
+
+    def _clean_default_domain(self):
+        PROVIDERS.resource_api.update_domain(
+            CONF.identity.default_domain_id, {'enabled': False}
+        )
+        PROVIDERS.resource_api.delete_domain(CONF.identity.default_domain_id)
+
+    def clean(self, resource):
+        PROVIDERS.resource_api.update_domain(
+            CONF.identity.default_domain_id, {'enabled': False}
+        )
+        PROVIDERS.resource_api.delete_domain(CONF.identity.default_domain_id)
+        PROVIDERS._clear_registry_instances()
+
+
+class TestCase(testresources.ResourcedTestCase, core.BaseTestCase):
+
+    resources = [('bootstrapper', BootstrapResourceManager())]
+
+    def setUp(self):
+        self.useFixture(database.Database())
+        self.config_fixture = self.useFixture(config_fixture.Config(CONF))
+        CONF(args=[], project='keystone')
+        self.useFixture(
+            ksfixtures.KeyRepository(
+                self.config_fixture,
+                'fernet_tokens',
+                CONF.fernet_tokens.max_active_keys
+            )
+        )
+
+        self.useFixture(
+            ksfixtures.KeyRepository(
+                self.config_fixture,
+                'fernet_receipts',
+                CONF.fernet_receipts.max_active_keys
+            )
+        )
+        super(TestCase, self).setUp()
+        self.loadapp()
