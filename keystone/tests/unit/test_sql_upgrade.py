@@ -3363,6 +3363,27 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         self.assertEqual(trust['redelegation_count'],
                          upgraded_trust.redelegation_count)
 
+    def test_migration_063_add_user_id_to_access_rule(self):
+        self.expand(62)
+        self.migrate(62)
+        self.contract(62)
+
+        self.assertTableColumns(
+            'access_rule',
+            ['id', 'service', 'path', 'method']
+        )
+
+        self.expand(63)
+        self.migrate(63)
+        self.contract(63)
+
+        self.assertTableColumns(
+            'access_rule',
+            ['id', 'external_id', 'user_id', 'service', 'path', 'method']
+        )
+        self.assertTrue(self.does_index_exist('access_rule', 'external_id'))
+        self.assertTrue(self.does_index_exist('access_rule', 'user_id'))
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = db_fixtures.MySQLOpportunisticFixture
