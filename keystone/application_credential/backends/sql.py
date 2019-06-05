@@ -65,8 +65,9 @@ class ApplicationCredentialRoleModel(sql.ModelBase, sql.ModelDictMixin):
 
 class AccessRuleModel(sql.ModelBase, sql.ModelDictMixin):
     __tablename__ = 'access_rule'
-    attributes = ['service', 'path', 'method']
+    attributes = ['id', 'user_id', 'service', 'path', 'method']
     id = sql.Column(sql.Integer, primary_key=True, nullable=False)
+    user_id = sql.Column(sql.String(64), index=True)
     service = sql.Column(sql.String(64))
     path = sql.Column(sql.String(128))
     method = sql.Column(sql.String(16))
