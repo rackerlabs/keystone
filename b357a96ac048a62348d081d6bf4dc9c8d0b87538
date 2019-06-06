@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_652f66f6",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1803,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-06-06T19:51:30Z",
+      "side": 0,
+      "message": "Wouldn\u0027t we still want the real domain ID to appear here?",
+      "revId": "b357a96ac048a62348d081d6bf4dc9c8d0b87538",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
