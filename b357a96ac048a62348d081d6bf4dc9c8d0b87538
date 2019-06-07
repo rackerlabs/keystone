@@ -16,6 +16,24 @@
       "revId": "b357a96ac048a62348d081d6bf4dc9c8d0b87538",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_e37024df",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1803,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2019-06-07T13:07:32Z",
+      "side": 0,
+      "message": "I don\u0027t think so. Which domain the ephemeral user is on is outside the scope of the mapping engine, which is what\u0027s being tested here. (aka, doesn\u0027t depend on mapping rules) https://github.com/openstack/keystone/blob/26911744c05669b748a09dae5016291070a4d1e5/keystone/identity/core.py#L1431-L1434",
+      "parentUuid": "9fb8cfa7_652f66f6",
+      "revId": "b357a96ac048a62348d081d6bf4dc9c8d0b87538",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
