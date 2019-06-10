@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_b24a4fa9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-06-10T20:20:57Z",
+      "side": 1,
+      "message": "This is adding it for all credentials, not just ec2",
+      "range": {
+        "startLine": 7,
+        "startChar": 21,
+        "endLine": 7,
+        "endChar": 24
+      },
+      "revId": "040c77d5ab0b135b880336938c42d12c3d18cfb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_129d5b09",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-06-10T20:20:57Z",
+      "side": 1,
+      "message": "It\u0027s a simple problem with a simple fix, but even so it would be best if the commit message had a few more components: 1) what the problem was before, 2) why that\u0027s a problem, 3) how this change fixes it (described in https://docs.openstack.org/contributors/common/git.html#commit-messages).\n\nThis should also add a reference to the bug report, like:\n\n Closes-bug: #1831918\n\nmore information on that here https://docs.openstack.org/contributors/common/git.html#tags",
+      "revId": "040c77d5ab0b135b880336938c42d12c3d18cfb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_b271ef0e",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-06-10T20:20:57Z",
+      "side": 1,
+      "message": "This isn\u0027t defined anywhere yet. You should define it toward the top of the class as _CRED \u003d \u0027credential\u0027.",
+      "range": {
+        "startLine": 135,
+        "startChar": 12,
+        "endLine": 135,
+        "endChar": 22
+      },
+      "revId": "040c77d5ab0b135b880336938c42d12c3d18cfb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_d257c357",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-06-10T20:20:57Z",
+      "side": 1,
+      "message": "you could use credential_id here",
+      "range": {
+        "startLine": 136,
+        "startChar": 12,
+        "endLine": 136,
+        "endChar": 28
+      },
+      "revId": "040c77d5ab0b135b880336938c42d12c3d18cfb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
