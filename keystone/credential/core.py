@@ -21,6 +21,7 @@ from keystone.common import manager
 from keystone.common import provider_api
 import keystone.conf
 from keystone import exception
+from keystone import notifications
 
 
 CONF = keystone.conf.CONF
@@ -37,6 +38,8 @@ class Manager(manager.Manager):
 
     driver_namespace = 'keystone.credential'
     _provides_api = 'credential_api'
+
+    _CRED = 'credential'
 
     def __init__(self):
         super(Manager, self).__init__(CONF.credential.driver)
@@ -102,13 +105,21 @@ class Manager(manager.Manager):
         credential = self.driver.get_credential(credential_id)
         return self._decrypt_credential(credential)
 
-    def create_credential(self, credential_id, credential):
+    def _get_credential(self, credential_id):
+        return self.driver.get_credential(credential_id)
+
+    def create_credential(self, credential_id, credential,
+                          initiator=None):
         """Create a credential."""
         credential_copy = self._encrypt_credential(credential)
         ref = self.driver.create_credential(credential_id, credential_copy)
         ref.pop('key_hash', None)
         ref.pop('encrypted_blob', None)
         ref['blob'] = credential['blob']
+        notifications.Audit.created(
+            self._CRED,
+            credential_id,
+            initiator)
         return ref
 
     def _validate_credential_update(self, credential_id, credential):
@@ -143,3 +154,47 @@ class Manager(manager.Manager):
         else:
             ref['blob'] = existing_blob
         return ref
+
+    def delete_credential(self, credential_id,
+                          initiator=None):
+        """Delete a credential."""
+        cred = self.get_credential(credential_id)
+        self.driver.delete_credential(credential_id)
+        self._get_credential.invalidate(self, credential_id)
+        self._list_credentials_for_user.invalidate(self,
+                                                   cred['user_id'],
+                                                   cred['type'])
+        self._list_credentials_for_user.invalidate(self,
+                                                   cred['user_id'],
+                                                   None)
+        notifications.Audit.deleted(
+            self._CRED, credential_id, initiator)
+
+    def delete_credentials_for_project(self, project_id):
+        """Delete all credentials for a project."""
+        hints = driver_hints.Hints()
+        hints.add_filter('project_id', project_id)
+        creds = self.driver.list_credentials(hints)
+
+        self.driver.delete_credentials_for_project(project_id)
+        for cred in creds:
+            self._get_credential.invalidate(self, cred['id'])
+            self._list_credentials_for_user.invalidate(self,
+                                                       cred['user_id'],
+                                                       cred['type'])
+            self._list_credentials_for_user.invalidate(self,
+                                                       cred['user_id'],
+                                                       None)
+
+    def delete_credentials_for_user(self, user_id):
+        """Delete all credentials for a user."""
+        creds = self.driver.list_credentials_for_user(user_id)
+        self.driver.delete_credentials_for_user(user_id)
+        for cred in creds:
+            self._get_credential.invalidate(self, cred['id'])
+            self._list_credentials_for_user.invalidate(self,
+                                                       user_id,
+                                                       cred['type'])
+            self._list_credentials_for_user.invalidate(self,
+                                                       cred['user_id'],
+                                                       None)
