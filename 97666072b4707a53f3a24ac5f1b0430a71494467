@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9fb8cfa7_ce85c55b",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-06-11T22:45:53Z",
+      "side": 1,
+      "message": "No, because the driver does the work of adding the user_id and converting the external_id, so we want to leave it this way so that we are testing that the driver is doing the conversion correctly.",
+      "parentUuid": "9fb8cfa7_c71e1aba",
+      "range": {
+        "startLine": 113,
+        "startChar": 7,
+        "endLine": 118,
+        "endChar": 10
+      },
+      "revId": "97666072b4707a53f3a24ac5f1b0430a71494467",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fb8cfa7_e71b1ec7",
         "filename": "keystone/tests/unit/application_credential/test_backends.py",
         "patchSetId": 4
