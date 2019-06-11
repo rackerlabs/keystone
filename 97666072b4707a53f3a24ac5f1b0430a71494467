@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_c71e1aba",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-06-11T10:54:05Z",
+      "side": 1,
+      "message": "Shouldn\u0027t we add test cases for the new schema including user_id and external_id ?",
+      "range": {
+        "startLine": 113,
+        "startChar": 7,
+        "endLine": 118,
+        "endChar": 10
+      },
+      "revId": "97666072b4707a53f3a24ac5f1b0430a71494467",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_e71b1ec7",
+        "filename": "keystone/tests/unit/application_credential/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-06-11T10:54:05Z",
+      "side": 1,
+      "message": "Same here?",
+      "range": {
+        "startLine": 131,
+        "startChar": 8,
+        "endLine": 136,
+        "endChar": 10
+      },
+      "revId": "97666072b4707a53f3a24ac5f1b0430a71494467",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
