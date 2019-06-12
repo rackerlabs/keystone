@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_d4c30288",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-06-12T19:04:47Z",
+      "side": 1,
+      "message": "This is going to fail the pep8 check for going over the line length :(",
+      "range": {
+        "startLine": 142,
+        "startChar": 83,
+        "endLine": 142,
+        "endChar": 104
+      },
+      "revId": "e7a9df89dfb3aa9332c27efe2abd395f34e17c01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
