@@ -80,13 +80,12 @@ system for enforcing that usage does not exceed limits. While they are coupled,
 they are distinct.
 
 Up to this point, we've established that keystone is the system for maintaining
-limit information. Keystone’s responsibility is to ensuring that any changes to
+limit information. Keystone’s responsibility is to ensure that any changes to
 limits are consistent with related limits currently stored in keystone.
 
-Individual services maintain and enforce usage. Services check for enforcement
-against the current limits at the time a resource allocation is requested by a
-particular user. A usage reflects the actual allocation of units of a
-particular resource to a consumer.
+Individual services maintain and enforce usage. Services check enforcement
+against the current limits at the time a user requests a resource. Usage
+reflects the actual resource allocation in units to a consumer.
 
 Given the above, the following is a possible and legal flow:
 
