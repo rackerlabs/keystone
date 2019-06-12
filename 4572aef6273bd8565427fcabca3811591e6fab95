@@ -1,0 +1,147 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_e29d300a",
+        "filename": "keystone/tests/unit/base_classes.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-12T15:24:20Z",
+      "side": 1,
+      "message": "This need to be a fixture resource\n\nhttps://github.com/testing-cabal/testresources/blob/master/testresources/__init__.py#L751",
+      "range": {
+        "startLine": 88,
+        "startChar": 31,
+        "endLine": 88,
+        "endChar": 64
+      },
+      "revId": "4572aef6273bd8565427fcabca3811591e6fab95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_45ef661d",
+        "filename": "keystone/tests/unit/base_classes.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-12T15:24:20Z",
+      "side": 1,
+      "message": "Have this depend on a db resource.\n\n  resource \u003d [(\u0027database\u0027, DatabaseResourceManager())]",
+      "revId": "4572aef6273bd8565427fcabca3811591e6fab95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_c5da7676",
+        "filename": "keystone/tests/unit/base_classes.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-12T15:24:20Z",
+      "side": 1,
+      "message": "Pass the bootstrap fixture to the super class.",
+      "range": {
+        "startLine": 91,
+        "startChar": 46,
+        "endLine": 91,
+        "endChar": 56
+      },
+      "revId": "4572aef6273bd8565427fcabca3811591e6fab95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_827a34b7",
+        "filename": "keystone/tests/unit/base_classes.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-12T15:24:20Z",
+      "side": 1,
+      "message": "This needs to be using a bootstrap fixture, which will live in ksfixtures.",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 62
+      },
+      "revId": "4572aef6273bd8565427fcabca3811591e6fab95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_65b70a3c",
+        "filename": "keystone/tests/unit/base_classes.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-12T15:24:20Z",
+      "side": 1,
+      "message": "These might need to be removed once we clean up the fixture resource bit on line 88.",
+      "range": {
+        "startLine": 116,
+        "startChar": 0,
+        "endLine": 127,
+        "endChar": 45
+      },
+      "revId": "4572aef6273bd8565427fcabca3811591e6fab95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_45c2065b",
+        "filename": "keystone/tests/unit/base_classes.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-12T15:24:20Z",
+      "side": 1,
+      "message": "We might need to include the database resource manager. Investigate this.",
+      "revId": "4572aef6273bd8565427fcabca3811591e6fab95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_c2ceec58",
+        "filename": "keystone/tests/unit/protection/v3/test_policies.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-12T15:24:20Z",
+      "side": 1,
+      "message": "We need:\n\n  load_tests \u003d base_classes.optimize_module_test_loader()\n\nhttps://github.com/openstack/oslo.db/blob/master/oslo_db/sqlalchemy/test_fixtures.py#L603-L608",
+      "revId": "4572aef6273bd8565427fcabca3811591e6fab95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
