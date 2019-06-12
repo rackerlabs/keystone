@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_08409e06",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-06-12T20:00:50Z",
+      "side": 1,
+      "message": "Oops, missed this before. This is introducing a change that wasn\u0027t there before and is unrelated to the main change. It\u0027s actually a very problematic change because delete_credential should return None, so there is no sense in using collecting the value and wrapping it to present to the user. Please undo this part.",
+      "range": {
+        "startLine": 171,
+        "startChar": 15,
+        "endLine": 171,
+        "endChar": 36
+      },
+      "revId": "ce81d34401a165cf1a785bdb2752aa995222828e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
