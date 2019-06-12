@@ -163,7 +163,13 @@ class ProjectResource(ks_flask.ResourceBase):
             action='identity:create_project', target_attr=target
         )
         validation.lazy_validate(schema.project_create, project)
-        project = self._assign_unique_id(project)
+
+        if project.get('id'):
+            ENFORCER.enforce_call(
+                action='identity:create_project_with_id', target_attr=target
+            )
+        else:
+            project = self._assign_unique_id(project)
         if not project.get('is_domain'):
             project = self._normalize_domain_id(project)
             # Our API requires that you specify the location in the hierarchy
