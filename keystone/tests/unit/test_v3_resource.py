@@ -876,6 +876,54 @@ class ResourceTestCase(test_v3.RestfulTestCase, test_v3.AssignmentTestMixin):
         resp = self.post('/projects', body={'project': ref})
         return resp.result['project'], tags
 
+    def test_create_project_explicit_id_ok(self):
+        """Call ``POST /projects``."""
+        PROVIDERS.assignment_api.create_system_grant_for_user(
+            self.user_id, self.role_id
+        )
+        ref = unit.new_project_ref(domain_id=self.domain_id)
+        explicit_id = uuid.uuid4().hex
+        ref['explicit_project_id'] = explicit_id
+        system_admin_token = self.get_system_scoped_token()
+
+        r = self.post(
+            '/projects',
+            body={'project': ref},
+            token=system_admin_token)
+        self.assertValidProjectResponse(r, ref)
+        self.assertEqual(explicit_id, r.result['project']['id'])
+
+    def test_create_project_explicit_id_not_allowed(self):
+        """Call ``POST /projects``."""
+        PROVIDERS.assignment_api.create_system_grant_for_user(
+            self.user_id, self.role_id
+        )
+        ref = unit.new_project_ref(domain_id=self.domain_id)
+        explicit_id = uuid.uuid4().hex
+        ref['explicit_project_id'] = explicit_id
+
+        self.post(
+            '/projects',
+            body={'project': ref},
+            expected_status=http_client.FORBIDDEN
+        )
+
+    def test_create_project_explicit_id_bad_format(self):
+        """Call ``POST /projects``."""
+        PROVIDERS.assignment_api.create_system_grant_for_user(
+            self.user_id, self.role_id
+        )
+        ref = unit.new_project_ref(domain_id=self.domain_id)
+        explicit_id = 'invalid'
+        ref['explicit_project_id'] = explicit_id
+        system_admin_token = self.get_system_scoped_token()
+
+        self.post(
+            '/projects',
+            body={'project': ref},
+            token=system_admin_token,
+            expected_status=http_client.BAD_REQUEST)
+
     def test_list_project_response_returns_tags(self):
         """Call ``GET /projects`` should always return tag attributes."""
         tagged_project, tags = self._create_project_and_tags()

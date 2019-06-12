@@ -52,15 +52,20 @@ _project_properties = {
     'options': ro.PROJECT_OPTIONS_REGISTRY.json_schema,
 }
 
+_project_create_properties = dict(_project_properties)
+_project_create_properties['explicit_project_id'] = validation.nullable(
+    parameter_types.id_string)
+
+
 # This is for updating a single project tag via the URL
 project_tag_create = _project_tag_name_properties
 
-# This is for updaing a project with a list of tags
+# This is for updating a project with a list of tags
 project_tags_update = _project_tags_list_properties
 
 project_create = {
     'type': 'object',
-    'properties': _project_properties,
+    'properties': _project_create_properties,
     # NOTE(lbragstad): A project name is the only parameter required for
     # project creation according to the Identity V3 API. We should think
     # about using the maxProperties validator here, and in update.

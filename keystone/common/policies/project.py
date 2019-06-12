@@ -190,6 +190,13 @@ project_policies = [
         deprecated_rule=deprecated_create_project,
     ),
     policy.DocumentedRuleDefault(
+        name=base.IDENTITY % 'create_project_with_id',
+        check_str=SYSTEM_ADMIN,
+        scope_types=['system'],
+        description='Create project with explicit ID.',
+        operations=[{'path': '/v3/projects',
+                     'method': 'POST'}]),
+    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_project',
         check_str=base.RULE_ADMIN_REQUIRED,
         scope_types=['system', 'domain', 'project'],
