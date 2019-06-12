@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_ab44ec47",
+        "filename": "keystone/tests/unit/ksfixtures/bootstrap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-12T20:45:07Z",
+      "side": 1,
+      "message": "This is going to be interesting because this is going to attempt to load all of keystone\u0027s subsystems. When this happens, the configuration object needs to point to the right key repository for fernet tokens and fernet receipts. If that directory doesn\u0027t exist, keystone fails to start.\n\nIn summary, we need the config_fixture object set up as well as the key repository fixtures *before* we can call this.\n\nThe tricky part with that is the KeyRepository fixture currently requires the config_fixture to be passed in. I\u0027m not sure how we can do that if we specify everything in `resources` to denote the dependency.\n\nhttps://pasted.tech/pastes/c0322fd6e75196d2cdd15513a4c33bf1d6202e8b.raw",
+      "range": {
+        "startLine": 35,
+        "startChar": 8,
+        "endLine": 35,
+        "endChar": 47
+      },
+      "revId": "f312aad1ce7d4879012cf9563c22c50edbc0409e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
