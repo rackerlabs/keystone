@@ -46,6 +46,11 @@ SYSTEM_ADMIN_OR_DOMAIN_ADMIN = (
     '(role:admin and domain_id:%(target.project.domain_id)s)'
 )
 
+
+SYSTEM_ADMIN = (
+    '(role:admin and system_scope:all)'
+)
+
 deprecated_list_projects = policy.DeprecatedRule(
     name=base.IDENTITY % 'list_projects',
     check_str=base.RULE_ADMIN_REQUIRED
@@ -124,6 +129,13 @@ project_policies = [
         deprecated_rule=deprecated_create_project,
         deprecated_reason=DEPRECATED_REASON,
         deprecated_since=versionutils.deprecated.STEIN),
+    policy.DocumentedRuleDefault(
+        name=base.IDENTITY % 'create_project_with_id',
+        check_str=SYSTEM_ADMIN,
+        scope_types=['system'],
+        description='Create project with explicit ID.',
+        operations=[{'path': '/v3/projects',
+                     'method': 'POST'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_project',
         check_str=SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
