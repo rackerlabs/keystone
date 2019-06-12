@@ -34,6 +34,24 @@
       "revId": "8f86b4d2bf916c11fd075b3bc9f9907791c28cbb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_48cd3b2f",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-06-12T16:13:19Z",
+      "side": 1,
+      "message": "XiYuan is right, we actually need to set this value when calling the function in order for it to be useful. That should happen here:\n\nhttps://opendev.org/openstack/keystone/src/branch/master/keystone/api/credentials.py#L142\nhttps://opendev.org/openstack/keystone/src/branch/master/keystone/api/credentials.py#L167\n\nExample:\n\nhttps://opendev.org/openstack/keystone/src/branch/master/keystone/api/users.py#L615-L616\nhttps://opendev.org/openstack/keystone/src/branch/master/keystone/api/users.py#L650-L651",
+      "parentUuid": "9fb8cfa7_a8b15749",
+      "revId": "8f86b4d2bf916c11fd075b3bc9f9907791c28cbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
