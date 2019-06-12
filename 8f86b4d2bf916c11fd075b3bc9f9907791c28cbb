@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_1f99c577",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-06-12T02:12:51Z",
+      "side": 1,
+      "message": "I think the value of \"initiator\" should be passed from API layer?",
+      "revId": "8f86b4d2bf916c11fd075b3bc9f9907791c28cbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
