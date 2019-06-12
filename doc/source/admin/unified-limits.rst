@@ -80,13 +80,12 @@ system for enforcing that usage does not exceed limits. While they are coupled,
 they are distinct.
 
 Up to this point, we've established that keystone is the system for maintaining
-limit information. Keystone’s responsibility is to ensuring that any changes to
+limit information. Keystone’s responsibility is to ensure that any changes to
 limits are consistent with related limits currently stored in keystone.
 
-Individual services maintain and enforce usage. Services check for enforcement
-against the current limits at the time a resource allocation is requested by a
-particular user. A usage reflects the actual allocation of units of a
-particular resource to a consumer.
+Individual services maintain and enforce usage. Services check enforcement
+against the current limits at the time a user requests a resource. Usage
+reflects the actual resource allocation in units to a consumer.
 
 Given the above, the following is a possible and legal flow:
 
@@ -141,21 +140,11 @@ deployment.
 
 Keystone exposes a ``GET /limits-model`` endpoint that returns the enforcement
 model selected by the deployment. This allows limit information to be
-discoverable and perserves interoperability between OpenStack deployments with
+discoverable and preserves interoperability between OpenStack deployments with
 different enforcement models.
-
-.. NOTE:: The API to expose the limit model configuration in keystone will be
-   implemented when keystone supports more than one enforcement model. Until
-   then, keystone only supports the following enforcement model.
 
 Flat
 ----
-
-.. NOTE::
-
-    The flat enforcement model is currently the only supported enforcement
-    model. Future work will add more enforcement models which will be
-    configurable via configuration files and discoverable via the API.
 
 Flat enforcement ignores all aspects of a project hierarchy. Each project is
 considered a peer to all other projects. The limits associated to the parents,
@@ -174,3 +163,30 @@ effective default, which is 10. The following operations would be possible:
 This is allowed with flat enforcement because the hierarchy is not taken into
 consideration during limit validation, even though a child project has a higher
 limit than a parent project.
+
+Strict Two Level
+----------------
+
+The ``strict_two_level`` enforcement model assumes the project hierarchy does
+not exceed two levels. The top layer can consist of projects or domains. For
+example, project `Alpha` can have a sub-project called `Beta` within this
+model. Project `Beta` cannot have a sub-project. The hierarchy is restrained to
+two layers. `Alpha` can also be a domain that contains project `Beta`, but
+`Beta` cannot have a sub-project. Regardless of the top layer consisting of
+projects or domains, the hierarchical depth is limited to two layers.
+
+Resource utilization is allowed to flow between projects in the hierarchy,
+depending on the limits. This property allows for more flexibility than the
+``flat`` enforcement model. The model is strict in that operators can set
+limits on parent projects or domains and the limits of the children may never
+exceed the parent.
+
+For example, assume domain `Alpha` contains two projects, `Beta` and `Charlie`.
+Projects `Beta` and `Charlie` are siblings so the hierarchy maintains a depth
+of two. A system administrator sets the limit of a resource on `Alpha` to 20.
+Both projects `Beta` and `Charlie` can consume resources until the total usage
+of `Alpha`, `Beta`, and `Charlie` reach 20. At that point, no more resources
+should be allocated to the tree. System administrators can also reserve
+portions of domain `Alpha`'s resource in sub-projects directly. Using the
+previous example, project `Beta` could have a limit of 12 resources, implicitly
+leaving 8 resources for `Charlie` to consume.
