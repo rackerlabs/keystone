@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9fb8cfa7_ce713378",
+        "filename": "keystone/tests/unit/base_classes.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-12T19:17:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fb8cfa7_e29d300a",
+      "range": {
+        "startLine": 88,
+        "startChar": 31,
+        "endLine": 88,
+        "endChar": 64
+      },
+      "revId": "4572aef6273bd8565427fcabca3811591e6fab95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fb8cfa7_45ef661d",
         "filename": "keystone/tests/unit/base_classes.py",
         "patchSetId": 2
@@ -65,6 +89,30 @@
     },
     {
       "key": {
+        "uuid": "9fb8cfa7_6e6cc79b",
+        "filename": "keystone/tests/unit/base_classes.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-12T19:17:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fb8cfa7_c5da7676",
+      "range": {
+        "startLine": 91,
+        "startChar": 46,
+        "endLine": 91,
+        "endChar": 56
+      },
+      "revId": "4572aef6273bd8565427fcabca3811591e6fab95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fb8cfa7_827a34b7",
         "filename": "keystone/tests/unit/base_classes.py",
         "patchSetId": 2
@@ -88,6 +136,30 @@
     },
     {
       "key": {
+        "uuid": "9fb8cfa7_2e080fd8",
+        "filename": "keystone/tests/unit/base_classes.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-12T19:17:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fb8cfa7_827a34b7",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 62
+      },
+      "revId": "4572aef6273bd8565427fcabca3811591e6fab95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fb8cfa7_65b70a3c",
         "filename": "keystone/tests/unit/base_classes.py",
         "patchSetId": 2
@@ -99,6 +171,30 @@
       "writtenOn": "2019-06-12T15:24:20Z",
       "side": 1,
       "message": "These might need to be removed once we clean up the fixture resource bit on line 88.",
+      "range": {
+        "startLine": 116,
+        "startChar": 0,
+        "endLine": 127,
+        "endChar": 45
+      },
+      "revId": "4572aef6273bd8565427fcabca3811591e6fab95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_4e0b03d5",
+        "filename": "keystone/tests/unit/base_classes.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-12T19:17:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fb8cfa7_65b70a3c",
       "range": {
         "startLine": 116,
         "startChar": 0,
