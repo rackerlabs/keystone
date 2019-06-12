@@ -297,6 +297,7 @@ class PolicyJsonTestCase(unit.TestCase):
             'identity:update_domain',
             'identity:delete_domain',
             'identity:create_project',
+            'identity:create_project_with_id',
             'identity:get_project',
             'identity:list_projects',
             'identity:update_project',
