@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_f33980f1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-06-12T17:08:36Z",
+      "side": 1,
+      "message": "Are you using the user_enabled_mask option? This setting should not be 544 when it gets to the shadow backend, it should already have been converted to a boolean by the ldap driver.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 14
+      },
+      "revId": "2a350e743660ea7a9f2fb5aa84cc417d8c624b49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_9370440a",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-06-12T17:08:36Z",
+      "side": 1,
+      "message": "This still needs to account for the case that new_user_dict[\u0027enabled\u0027] is 0, i.e., NOT enabled.",
+      "range": {
+        "startLine": 159,
+        "startChar": 39,
+        "endLine": 159,
+        "endChar": 43
+      },
+      "revId": "2a350e743660ea7a9f2fb5aa84cc417d8c624b49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
