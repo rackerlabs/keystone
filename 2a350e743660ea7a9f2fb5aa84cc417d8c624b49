@@ -45,6 +45,30 @@
       "revId": "2a350e743660ea7a9f2fb5aa84cc417d8c624b49",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_bc4e7035",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 16264
+      },
+      "writtenOn": "2019-06-13T01:25:29Z",
+      "side": 1,
+      "message": "Sorry, I still confused why 0 means not enabled. After ldap driver, this value should be real bool, like true or false. or integer if no  user_enabled_mask option used. Why integer 0 means disable?",
+      "parentUuid": "9fb8cfa7_9370440a",
+      "range": {
+        "startLine": 159,
+        "startChar": 39,
+        "endLine": 159,
+        "endChar": 43
+      },
+      "revId": "2a350e743660ea7a9f2fb5aa84cc417d8c624b49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
