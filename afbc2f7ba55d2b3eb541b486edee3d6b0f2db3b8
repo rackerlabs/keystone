@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_ca86df66",
+        "filename": "doc/source/admin/unified-limits.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-06-14T04:37:25Z",
+      "side": 1,
+      "message": "We can add domain_id too in this section since unified limits now supports domain_id too.",
+      "range": {
+        "startLine": 26,
+        "startChar": 2,
+        "endLine": 26,
+        "endChar": 11
+      },
+      "revId": "afbc2f7ba55d2b3eb541b486edee3d6b0f2db3b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_4a9aefb8",
+        "filename": "doc/source/admin/unified-limits.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-06-14T04:37:25Z",
+      "side": 1,
+      "message": "Was wondering of adding a domain limits section too ?",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 14
+      },
+      "revId": "afbc2f7ba55d2b3eb541b486edee3d6b0f2db3b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_0a62b7d8",
+        "filename": "doc/source/admin/unified-limits.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-06-14T04:37:25Z",
+      "side": 1,
+      "message": "NIT: permutation",
+      "range": {
+        "startLine": 100,
+        "startChar": 31,
+        "endLine": 100,
+        "endChar": 42
+      },
+      "revId": "afbc2f7ba55d2b3eb541b486edee3d6b0f2db3b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_ca781f91",
+        "filename": "doc/source/admin/unified-limits.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-06-14T04:37:25Z",
+      "side": 1,
+      "message": "NIT: usage",
+      "range": {
+        "startLine": 111,
+        "startChar": 2,
+        "endLine": 111,
+        "endChar": 8
+      },
+      "revId": "afbc2f7ba55d2b3eb541b486edee3d6b0f2db3b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_aacdabb7",
+        "filename": "doc/source/admin/unified-limits.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-06-14T04:37:25Z",
+      "side": 1,
+      "message": "As we discussed in train PTG should we add the blog details [1] explaining the reason of not supporting more than two level hierarchy for now ?\n\n[1] https://adam.younglogic.com/2018/05/tracking-quota/",
+      "range": {
+        "startLine": 173,
+        "startChar": 49,
+        "endLine": 174,
+        "endChar": 11
+      },
+      "revId": "afbc2f7ba55d2b3eb541b486edee3d6b0f2db3b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
