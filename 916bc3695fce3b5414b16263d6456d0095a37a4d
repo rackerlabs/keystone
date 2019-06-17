@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_bfc38238",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-17T15:46:01Z",
+      "side": 1,
+      "message": "We had very similar documentation already, we could link to it.\n\nhttps://docs.openstack.org/keystone/latest/contributor/proposing-features.html",
+      "revId": "916bc3695fce3b5414b16263d6456d0095a37a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_dfa756a7",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-17T15:46:01Z",
+      "side": 1,
+      "message": "nit: bug*  - since we\u0027re not dealing with an abbreviation we don\u0027t need to capitalize \"Bug\"",
+      "range": {
+        "startLine": 44,
+        "startChar": 52,
+        "endLine": 44,
+        "endChar": 55
+      },
+      "revId": "916bc3695fce3b5414b16263d6456d0095a37a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
