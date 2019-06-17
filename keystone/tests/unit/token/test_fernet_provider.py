@@ -352,6 +352,44 @@ class TestPayloads(unit.TestCase):
             actual_time_float)
         self.assertEqual(expected_time_str, actual_time_str)
 
+    def test_convert_or_decode_uuid_bytes(self):
+        payload_cls = token_formatters.BasePayload
+
+        expected_hex_uuid = uuid.uuid4().hex
+        uuid_obj = uuid.UUID(expected_hex_uuid)
+        expected_uuid_in_bytes = uuid_obj.bytes
+
+        actual_hex_uuid = payload_cls._convert_or_decode(
+            is_stored_as_bytes=True,
+            value=expected_uuid_in_bytes
+        )
+
+        self.assertEqual(expected_hex_uuid, actual_hex_uuid)
+
+    def test_convert_or_decode_binary_type(self):
+        payload_cls = token_formatters.BasePayload
+
+        expected_hex_uuid = uuid.uuid4().hex
+
+        actual_hex_uuid = payload_cls._convert_or_decode(
+            is_stored_as_bytes=False,
+            value=expected_hex_uuid.encode('utf-8')
+        )
+
+        self.assertEqual(expected_hex_uuid, actual_hex_uuid)
+
+    def test_convert_or_decode_text_type(self):
+        payload_cls = token_formatters.BasePayload
+
+        expected_hex_uuid = uuid.uuid4().hex
+
+        actual_hex_uuid = payload_cls._convert_or_decode(
+            is_stored_as_bytes=False,
+            value=expected_hex_uuid
+        )
+
+        self.assertEqual(expected_hex_uuid, actual_hex_uuid)
+
     def _test_payload(self, payload_class, exp_user_id=None, exp_methods=None,
                       exp_system=None, exp_project_id=None, exp_domain_id=None,
                       exp_trust_id=None, exp_federated_group_ids=None,
