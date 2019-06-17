@@ -34,6 +34,24 @@
       "revId": "82348f2c50370bb08bccce68b045a038ed4903c2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_f9727549",
+        "filename": "doc/source/contributor/how-can-i-help.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-17T18:14:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfb3d3c7_a9326ba6",
+      "revId": "82348f2c50370bb08bccce68b045a038ed4903c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
