@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9fb8cfa7_65ffb334",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-06-18T06:47:03Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "9fb8cfa7_bfc38238",
+      "revId": "916bc3695fce3b5414b16263d6456d0095a37a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fb8cfa7_02a7d251",
         "filename": "doc/source/contributor/api_change_tutorial.rst",
         "patchSetId": 1
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "9fb8cfa7_c593ffff",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-06-18T06:47:03Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "9fb8cfa7_02a7d251",
+      "range": {
+        "startLine": 31,
+        "startChar": 21,
+        "endLine": 31,
+        "endChar": 24
+      },
+      "revId": "916bc3695fce3b5414b16263d6456d0095a37a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fb8cfa7_dfa756a7",
         "filename": "doc/source/contributor/api_change_tutorial.rst",
         "patchSetId": 1
@@ -53,6 +95,30 @@
       "writtenOn": "2019-06-17T15:46:01Z",
       "side": 1,
       "message": "nit: bug*  - since we\u0027re not dealing with an abbreviation we don\u0027t need to capitalize \"Bug\"",
+      "range": {
+        "startLine": 44,
+        "startChar": 52,
+        "endLine": 44,
+        "endChar": 55
+      },
+      "revId": "916bc3695fce3b5414b16263d6456d0095a37a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_859d070c",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-06-18T06:47:03Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "9fb8cfa7_dfa756a7",
       "range": {
         "startLine": 44,
         "startChar": 52,
