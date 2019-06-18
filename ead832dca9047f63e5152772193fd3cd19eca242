@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_d7b968e9",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-18T15:59:33Z",
+      "side": 1,
+      "message": "nit: \n\nPlease refer to the `guide for proposing features`_ to learn more about the process.",
+      "range": {
+        "startLine": 33,
+        "startChar": 11,
+        "endLine": 34,
+        "endChar": 17
+      },
+      "revId": "ead832dca9047f63e5152772193fd3cd19eca242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
