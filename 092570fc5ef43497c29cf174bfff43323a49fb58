@@ -33,6 +33,24 @@
       "revId": "092570fc5ef43497c29cf174bfff43323a49fb58",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_bd337362",
+        "filename": "keystone/tests/unit/protection/v3/test_tokens.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-18T17:41:21Z",
+      "side": 1,
+      "message": "The token being validated is a domain-scoped token from a completely different user than the user calling the API. Both tokens are owned by different users.\n\nThis is simulating that a user without system-level authorization can\u0027t validate any token with their own token... Granted, if someone has a token all they need to do to validate it is set both of the headers, but...",
+      "parentUuid": "9fb8cfa7_5d73574e",
+      "revId": "092570fc5ef43497c29cf174bfff43323a49fb58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
