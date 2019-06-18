@@ -22,6 +22,23 @@
       "revId": "a5c75603eb4bad668e0c0b54934021605d6aa92c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_325332e5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-18T16:43:37Z",
+      "side": 1,
+      "message": "Maybe we can link to http://lists.openstack.org/pipermail/openstack-discuss/2019-May/006647.html",
+      "revId": "a5c75603eb4bad668e0c0b54934021605d6aa92c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
