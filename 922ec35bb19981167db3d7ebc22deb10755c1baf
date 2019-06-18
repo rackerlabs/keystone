@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_785e6946",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-06-18T18:27:02Z",
+      "side": 1,
+      "message": "Could we also have a test case that uses _test_payload to go through one or more of the payload classes to demonstrate the actual issue shown in the bug report?",
+      "revId": "922ec35bb19981167db3d7ebc22deb10755c1baf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_18188dd1",
+        "filename": "keystone/token/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 573,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-06-18T18:27:02Z",
+      "side": 1,
+      "message": "We could probably get rid of comments like this if we\u0027re doing this universally",
+      "revId": "922ec35bb19981167db3d7ebc22deb10755c1baf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
