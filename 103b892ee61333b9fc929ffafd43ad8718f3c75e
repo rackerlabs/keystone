@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_a0e8277c",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1309,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2019-06-18T23:53:21Z",
+      "side": 1,
+      "message": "Shouldn\u0027t the indexing here be protected with a try block that catches IndexError and KeyError? The IndexError is unlikely because python-ldap has returned a list with at least 1 2-tuple (because search result is non-empty). But it\u0027s entirely plausible you might get a KeyError on the id_attr.",
+      "revId": "103b892ee61333b9fc929ffafd43ad8718f3c75e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
