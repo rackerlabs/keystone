@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_1d32bfa8",
+        "filename": "keystone/common/policies/token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-06-18T17:36:06Z",
+      "side": 1,
+      "message": "Do we want to perhaps take this opportunity to deprecate this policy for removal to take care of https://opendev.org/openstack/keystone/src/branch/master/keystone/api/auth.py#L277-L281 ?",
+      "revId": "092570fc5ef43497c29cf174bfff43323a49fb58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_5d73574e",
+        "filename": "keystone/tests/unit/protection/v3/test_tokens.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-06-18T17:36:06Z",
+      "side": 1,
+      "message": "I\u0027m unclear how this works - where is the rule that says a user can\u0027t use a different token to validate a token that they own?",
+      "revId": "092570fc5ef43497c29cf174bfff43323a49fb58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
