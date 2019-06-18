@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_5d9a776e",
+        "filename": "doc/source/contributor/vision-reflection.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-18T17:35:44Z",
+      "side": 1,
+      "message": "nit: this could be a link\n\nhttps://en.wikipedia.org/wiki/Principle_of_least_privilege",
+      "range": {
+        "startLine": 132,
+        "startChar": 33,
+        "endLine": 132,
+        "endChar": 61
+      },
+      "revId": "6f6f78c21136e6461f186f97b72952efec5f4e6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
