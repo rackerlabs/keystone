@@ -16,6 +16,29 @@
       "revId": "afa9c73de335370d07423792bb19f96dc103eea3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_7b6c199c",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2019-06-19T08:20:57Z",
+      "side": 1,
+      "message": "\"nocatalog\" should imply what\u0027s it, does \"true\" or \"false\" should be set to it? I guess no.",
+      "range": {
+        "startLine": 363,
+        "startChar": 17,
+        "endLine": 363,
+        "endChar": 53
+      },
+      "revId": "afa9c73de335370d07423792bb19f96dc103eea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
