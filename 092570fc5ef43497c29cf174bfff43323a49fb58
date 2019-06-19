@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9fb8cfa7_deb40ef5",
+        "filename": "keystone/common/policies/token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-19T14:14:12Z",
+      "side": 1,
+      "message": "SOrry - I was going to look into this yesterday. Now that this merged, I\u0027ll investigate and propose a follow-up if needed.",
+      "parentUuid": "9fb8cfa7_1d32bfa8",
+      "revId": "092570fc5ef43497c29cf174bfff43323a49fb58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fb8cfa7_5d73574e",
         "filename": "keystone/tests/unit/protection/v3/test_tokens.py",
         "patchSetId": 3
