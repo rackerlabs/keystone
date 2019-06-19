@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9fb8cfa7_3e752f99",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 935
+      },
+      "writtenOn": "2019-06-19T08:57:59Z",
+      "side": 1,
+      "message": "I\u0027ve covered the project scoped payload from the original bug report; however its slightly artificial as the assembled content does not pass through msgpack prior to being unpacked by the dissemble methods so I\u0027ve added optional encoding of string values as part of the _test_payload helper.",
+      "parentUuid": "9fb8cfa7_785e6946",
+      "revId": "922ec35bb19981167db3d7ebc22deb10755c1baf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fb8cfa7_18188dd1",
         "filename": "keystone/token/token_formatters.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2019-06-18T18:27:02Z",
       "side": 1,
       "message": "We could probably get rid of comments like this if we\u0027re doing this universally",
+      "revId": "922ec35bb19981167db3d7ebc22deb10755c1baf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_be683fba",
+        "filename": "keystone/token/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 573,
+      "author": {
+        "id": 935
+      },
+      "writtenOn": "2019-06-19T08:57:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fb8cfa7_18188dd1",
       "revId": "922ec35bb19981167db3d7ebc22deb10755c1baf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
