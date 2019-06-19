@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9fb8cfa7_752d0aa7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-06-19T06:52:56Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "9fb8cfa7_b2f16204",
+      "range": {
+        "startLine": 7,
+        "startChar": 9,
+        "endLine": 7,
+        "endChar": 26
+      },
+      "revId": "a5c75603eb4bad668e0c0b54934021605d6aa92c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fb8cfa7_325332e5",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -36,6 +60,24 @@
       "writtenOn": "2019-06-18T16:43:37Z",
       "side": 1,
       "message": "Maybe we can link to http://lists.openstack.org/pipermail/openstack-discuss/2019-May/006647.html",
+      "revId": "a5c75603eb4bad668e0c0b54934021605d6aa92c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_952afe8d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-06-19T06:52:56Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "9fb8cfa7_325332e5",
       "revId": "a5c75603eb4bad668e0c0b54934021605d6aa92c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
