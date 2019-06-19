@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_127857f6",
+        "filename": "doc/source/admin/unified-limits.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 607,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-06-19T17:09:58Z",
+      "side": 1,
+      "message": "Should we also have an example for domain limits?",
+      "revId": "c49a64dd9a8a33cd2c802ffbca6a2912ebff67c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
