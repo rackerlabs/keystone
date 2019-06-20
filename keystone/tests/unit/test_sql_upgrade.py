@@ -3363,6 +3363,19 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         self.assertEqual(trust['redelegation_count'],
                          upgraded_trust.redelegation_count)
 
+    def test_migration_063_add_role_options(self):
+        self.expand(62)
+        self.migrate(62)
+        self.contract(62)
+
+        role_option = 'role_option'
+        self.assertTableDoesNotExist(role_option)
+        self.expand(63)
+        self.migrate(63)
+        self.contract(63)
+        self.assertTableColumns(role_option,
+                                ['role_id', 'option_id', 'option_value'])
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = db_fixtures.MySQLOpportunisticFixture
