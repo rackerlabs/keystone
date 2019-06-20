@@ -22,6 +22,30 @@
       "revId": "525fac0bc4199d977b59b5ae4057a0bb515ee7ab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_5089d023",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1312,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2019-06-20T19:07:56Z",
+      "side": 1,
+      "message": "Good catch, maybe ValueError should not be the right exception here, also I\u0027m ok on just logging this as an invalid search query",
+      "parentUuid": "9fb8cfa7_d56b721c",
+      "range": {
+        "startLine": 1312,
+        "startChar": 26,
+        "endLine": 1312,
+        "endChar": 36
+      },
+      "revId": "525fac0bc4199d977b59b5ae4057a0bb515ee7ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
