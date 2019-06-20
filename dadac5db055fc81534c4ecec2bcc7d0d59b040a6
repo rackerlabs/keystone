@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_44a7da0c",
+        "filename": "keystone/api/os_simple_cert.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-20T15:22:29Z",
+      "side": 1,
+      "message": "Instead of returning a 403, we could just return:\n\n  {\n      \u0027revoked\u0027: []\n  }\n\nas the response body. Then we\u0027re not changing the actual API.",
+      "range": {
+        "startLine": 33,
+        "startChar": 39,
+        "endLine": 33,
+        "endChar": 60
+      },
+      "revId": "dadac5db055fc81534c4ecec2bcc7d0d59b040a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_a4b7b63a",
+        "filename": "releasenotes/notes/removed-as-of-train-92b2942a680eb859.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-20T15:22:29Z",
+      "side": 1,
+      "message": "nit: are not removed*",
+      "range": {
+        "startLine": 13,
+        "startChar": 47,
+        "endLine": 13,
+        "endChar": 49
+      },
+      "revId": "dadac5db055fc81534c4ecec2bcc7d0d59b040a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

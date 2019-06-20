@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_44727aaf",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 5475,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-20T15:22:29Z",
+      "side": 0,
+      "message": "We could keep this behavior instead of throwing a 403 Forbidden. I\u0027d prefer to not change the API response code and instead just return the same thing no matter what.",
+      "range": {
+        "startLine": 5475,
+        "startChar": 8,
+        "endLine": 5475,
+        "endChar": 50
+      },
+      "revId": "94a1b57897b52f980176354a94830f63a26365dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
