@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_7e5cf5ec",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2019-06-20T01:39:47Z",
+      "side": 1,
+      "message": "alternatively, we can update the desc for \"nocatalog\" parameter.",
+      "range": {
+        "startLine": 361,
+        "startChar": 0,
+        "endLine": 361,
+        "endChar": 44
+      },
+      "revId": "a38dcfe99d1ce76b131b121cd1789c20987845ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
