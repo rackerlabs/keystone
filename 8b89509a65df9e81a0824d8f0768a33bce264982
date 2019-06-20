@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_1db3764f",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1308,
+      "author": {
+        "id": 25011
+      },
+      "writtenOn": "2019-06-20T14:17:29Z",
+      "side": 1,
+      "message": "this should be ldap.SCOPE_BASE since you\u0027re querying the object directly.",
+      "revId": "8b89509a65df9e81a0824d8f0768a33bce264982",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_22717b0d",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1312,
+      "author": {
+        "id": 25011
+      },
+      "writtenOn": "2019-06-20T14:17:29Z",
+      "side": 1,
+      "message": "I believe that you\u0027ll want to query out the self.id_attr which was requested in attrs, not the static value \u0027uid\u0027.  I\u0027d also name the result user_id, as that\u0027s what keystone would refer to this attribute as, in order to avoid confusion.\n\nuser_id \u003d attrs[self.id_attr][0]",
+      "revId": "8b89509a65df9e81a0824d8f0768a33bce264982",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_9db8c6e5",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1313,
+      "author": {
+        "id": 25011
+      },
+      "writtenOn": "2019-06-20T14:17:29Z",
+      "side": 1,
+      "message": "again, update to return user_id",
+      "revId": "8b89509a65df9e81a0824d8f0768a33bce264982",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
