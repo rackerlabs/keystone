@@ -159,7 +159,7 @@ Configure the Apache HTTP server
 
    .. code-block:: console
 
-      # ln -s /usr/share/keystone/wsgi-keystone.conf /etc/httpd/conf.d/
+      # ln -s /usr/share/keystone/wsgi-keystone.conf /etc/httpd/conf.d/wsgi-keystone.conf
 
    .. end
 
