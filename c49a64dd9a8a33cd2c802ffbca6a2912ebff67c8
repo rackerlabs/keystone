@@ -52,6 +52,24 @@
       "revId": "c49a64dd9a8a33cd2c802ffbca6a2912ebff67c8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_30ce9cb4",
+        "filename": "doc/source/admin/unified-limits.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 607,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-20T18:52:01Z",
+      "side": 1,
+      "message": "I kind of have part of the on lines 295 - 301. Do you want actual diagrams with domains?",
+      "parentUuid": "9fb8cfa7_d244ff76",
+      "revId": "c49a64dd9a8a33cd2c802ffbca6a2912ebff67c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
