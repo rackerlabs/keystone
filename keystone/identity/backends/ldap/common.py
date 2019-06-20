@@ -1293,9 +1293,45 @@ class BaseLdap(object):
         else:
             return self._id_to_dn_string(object_id)
 
+    def _dn_to_id(self, dn):
+        """Return the ID attribute value for a DN
+
+        :param value: DN to search
+        :returns: ID attribute value for DN
+        """
+        query = u'(&(objectClass=%s)(%s=*))' % (
+            self.object_class,
+            self.id_attr)
+        attrs = list(set([self.id_attr]))
+        with self.get_connection() as conn:
+            res = conn.search_s(dn,
+                                ldap.SCOPE_BASE,
+                                query,
+                                attrs)
+        _, attrs = res[0]
+        if len(attrs[self.id_attr]) = 1:
+            user_id = attrs[self.id_attr][0]
+        else:
+            # FIXME(gyee): if this is a multi-value attribute and it has
+            # multiple values, we can't use it as ID. Retain the dn_to_id
+            # logic here so it does not potentially break existing
+            # deployments. We need to fix our read-write LDAP logic so
+            # it does not get the ID from DN.
+            user_id = self._dn_to_rdn(dn)
+        return user_id
+
     @staticmethod
-    def _dn_to_id(dn):
+    def _dn_to_rdn_id(self, dn):
+        """Return the left-most RDN value
+
+        This is the old _dn_to_id() method that has been renamed and
+        retained for calls that still depend on this behavior.
+
+        :param value: DN to search
+        :returns: Left-most RDN value from DN
+        """
         return ldap.dn.str2dn(dn)[0][0][1]
+
 
     def _ldap_res_to_model(self, res):
         # LDAP attribute names may be returned in a different case than
@@ -1322,7 +1358,7 @@ class BaseLdap(object):
                        'as an ID. Will get the ID from DN instead') % (
                            {'id_attr': self.id_attr, 'dn': res[0]})
             LOG.warning(message)
-            id_val = self._dn_to_id(res[0])
+            id_val = self._dn_to_rdn_id(res[0])
         else:
             id_val = id_attrs[0]
         obj = self.model(id=id_val)
