@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_d56b721c",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1312,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-20T18:12:48Z",
+      "side": 1,
+      "message": "I looked at the immediate callers and they don\u0027t appear to handle this exception directly. Is this handled somewhere else up the stack?\n\nAlso, we are going to be returning the search to the end user? If so, should we be doing that or should we just log it and return a less sensitive message?",
+      "range": {
+        "startLine": 1312,
+        "startChar": 26,
+        "endLine": 1312,
+        "endChar": 36
+      },
+      "revId": "525fac0bc4199d977b59b5ae4057a0bb515ee7ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
