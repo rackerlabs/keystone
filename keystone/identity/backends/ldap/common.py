@@ -1293,9 +1293,25 @@ class BaseLdap(object):
         else:
             return self._id_to_dn_string(object_id)
 
-    @staticmethod
-    def _dn_to_id(dn):
-        return ldap.dn.str2dn(dn)[0][0][1]
+    def _dn_to_id(self, dn):
+        """Return the ID attribute value for a DN
+
+        :param value: DN to search
+        :returns: ID attribute value for DN
+        """
+        query = u'(&(objectClass=%s)(%s=*))' % (
+            self.object_class,
+            self.id_attr)
+        attrs = list(set([self.id_attr]))
+        with self.get_connection() as conn:
+            res = conn.search_s(dn,
+                                ldap.SCOPE_SUBTREE,
+                                query,
+                                attrs)
+        _, attrs = res[0]
+        uid = attrs['uid'][0]
+        return uid
+
 
     def _ldap_res_to_model(self, res):
         # LDAP attribute names may be returned in a different case than
