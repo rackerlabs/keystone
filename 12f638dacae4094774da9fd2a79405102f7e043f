@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_7033b414",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1312,
+      "author": {
+        "id": 25011
+      },
+      "writtenOn": "2019-06-20T19:44:47Z",
+      "side": 1,
+      "message": "We are still going to need to fall-back to _dn_to_rdn_id() result with the same logic as _ldap_res_to_model\n\nSuggest:\n\nif len(attrs[self.id_attr]) \u003d 1:\n    user_id \u003d attrs[self.id_attr][0]\nelse:\n    user_id \u003d self._dn_to_rdn(dn)",
+      "revId": "12f638dacae4094774da9fd2a79405102f7e043f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
