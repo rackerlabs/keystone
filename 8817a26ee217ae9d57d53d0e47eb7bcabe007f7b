@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_8a5f14e4",
+        "filename": "keystone/credential/providers/fernet/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2019-06-20T21:14:49Z",
+      "side": 1,
+      "message": "wow yeah good fix here",
+      "range": {
+        "startLine": 36,
+        "startChar": 63,
+        "endLine": 36,
+        "endChar": 76
+      },
+      "revId": "8817a26ee217ae9d57d53d0e47eb7bcabe007f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
