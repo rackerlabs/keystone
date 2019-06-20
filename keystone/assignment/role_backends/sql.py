@@ -10,9 +10,13 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 from oslo_db import exception as db_exception
+from sqlalchemy import orm
+from sqlalchemy.orm import collections
 
 from keystone.assignment.role_backends import base
+from keystone.assignment.role_backends import resource_options as options
 from keystone.common import driver_hints
+from keystone.common import resource_options
 from keystone.common import sql
 from keystone import exception
 
@@ -32,6 +36,8 @@ class Role(base.RoleDriverBase):
         with sql.session_for_write() as session:
             ref = RoleTable.from_dict(role)
             session.add(ref)
+            resource_options.resource_options_ref_to_mapper(
+                ref, RoleOption)
             return ref.to_dict()
 
     @driver_hints.truncated
@@ -71,10 +77,21 @@ class Role(base.RoleDriverBase):
         with sql.session_for_read() as session:
             return self._get_role(session, role_id).to_dict()
 
+    def _immutable(self, role):
+        immutable_option = role.get_resource_option(
+            options.IMMUTABLE_OPT.option_id)
+        return immutable_option and immutable_option.option_value
+
     @sql.handle_conflicts(conflict_type='role')
     def update_role(self, role_id, role):
         with sql.session_for_write() as session:
             ref = self._get_role(session, role_id)
+            if self._immutable(ref):
+                if (len(role.keys()) > 1 or
+                        'options' not in role or
+                        'immutable' not in role['options'] or
+                        role['options']['immutable'] is not False):
+                    raise exception.ResourceUpdateForbidden
             old_dict = ref.to_dict()
             for k in role:
                 old_dict[k] = role[k]
@@ -84,11 +101,21 @@ class Role(base.RoleDriverBase):
                     setattr(ref, attr, getattr(new_role, attr))
             ref.extra = new_role.extra
             ref.description = new_role.description
+            # Move the "_resource_options" attribute over to the real ref
+            # so that resource_options.resource_options_ref_to_mapper can
+            # handle the work.
+            setattr(ref, '_resource_options',
+                    getattr(new_role, '_resource_options', {}))
+            # Move options into the proper attribute mapper construct
+            resource_options.resource_options_ref_to_mapper(
+                ref, RoleOption)
             return ref.to_dict()
 
     def delete_role(self, role_id):
         with sql.session_for_write() as session:
             ref = self._get_role(session, role_id)
+            if self._immutable(ref):
+                raise exception.ResourceDeleteForbidden
             session.delete(ref)
 
     def _get_implied_role(self, session, prior_role_id, implied_role_id):
@@ -177,28 +204,64 @@ class ImpliedRoleTable(sql.ModelBase, sql.ModelDictMixin):
 
 class RoleTable(sql.ModelBase, sql.ModelDictMixinWithExtras):
 
+    def get_resource_option(self, option_id):
+        if option_id in self._resource_option_mapper.keys():
+            return self._resource_option_mapper[option_id]
+        return None
+
     def to_dict(self, include_extra_dict=False):
         d = super(RoleTable, self).to_dict(
             include_extra_dict=include_extra_dict)
         if d['domain_id'] == NULL_DOMAIN_ID:
             d['domain_id'] = None
+        d['options'] = resource_options.ref_mapper_to_dict_options(self)
         return d
 
     @classmethod
     def from_dict(cls, role_dict):
+        new_dict = role_dict.copy()
         if 'domain_id' in role_dict and role_dict['domain_id'] is None:
-            new_dict = role_dict.copy()
             new_dict['domain_id'] = NULL_DOMAIN_ID
-        else:
-            new_dict = role_dict
-        return super(RoleTable, cls).from_dict(new_dict)
+        resource_options = {}
+        options = new_dict.pop('options', {})
+        for opt in cls.resource_options_registry.options:
+            if opt.option_name in options:
+                opt_value = options[opt.option_name]
+                if opt_value is not None:
+                    opt.validator(opt_value)
+                resource_options[opt.option_id] = opt_value
+        role_obj = super(RoleTable, cls).from_dict(new_dict)
+        setattr(role_obj, '_resource_options', resource_options)
+        return role_obj
 
     __tablename__ = 'role'
     attributes = ['id', 'name', 'domain_id', 'description']
+    resource_options_registry = options.ROLE_OPTIONS_REGISTRY
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(255), nullable=False)
     domain_id = sql.Column(sql.String(64), nullable=False,
                            server_default=NULL_DOMAIN_ID)
     description = sql.Column(sql.String(255), nullable=True)
     extra = sql.Column(sql.JsonBlob())
+    _resource_option_mapper = orm.relationship(
+        'RoleOption',
+        single_parent=True,
+        cascade='all,delete,delete-orphan',
+        lazy='subquery',
+        backref='role',
+        collection_class=collections.attribute_mapped_collection('option_id'))
     __table_args__ = (sql.UniqueConstraint('name', 'domain_id'),)
+
+
+class RoleOption(sql.ModelBase):
+    __tablename__ = 'role_option'
+    role_id = sql.Column(sql.String(64), sql.ForeignKey('role.id',
+                         ondelete='CASCADE'), nullable=False,
+                         primary_key=True)
+    option_id = sql.Column(sql.String(4), nullable=False,
+                           primary_key=True)
+    option_value = sql.Column(sql.JsonBlob, nullable=False)
+
+    def __init__(self, option_id, option_value):
+        self.option_id = option_id
+        self.option_value = option_value

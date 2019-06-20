@@ -455,7 +455,8 @@ def new_role_ref(**kwargs):
         'id': uuid.uuid4().hex,
         'name': uuid.uuid4().hex,
         'description': uuid.uuid4().hex,
-        'domain_id': None
+        'domain_id': None,
+        'options': {}
     }
     ref.update(kwargs)
     return ref
