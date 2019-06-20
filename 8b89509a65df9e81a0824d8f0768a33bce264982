@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9fb8cfa7_01c0f47b",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1312,
+      "author": {
+        "id": 25011
+      },
+      "writtenOn": "2019-06-20T14:47:52Z",
+      "side": 1,
+      "message": "Given the FIXME at line 1331 in _ldap_res_to_model, i think we need to adopt the logic:\n\nif len(attrs[self.id_attr]) \u003e 1:\n  user_id \u003d ldap.dn.str2dn(dn)[0][0][1]",
+      "parentUuid": "9fb8cfa7_22717b0d",
+      "revId": "8b89509a65df9e81a0824d8f0768a33bce264982",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fb8cfa7_9db8c6e5",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 1
