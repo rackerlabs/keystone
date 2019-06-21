@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_5fd54f42",
+        "filename": "keystone/api/os_simple_cert.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-21T21:11:10Z",
+      "side": 1,
+      "message": "Looks like we can remove this now.",
+      "revId": "fdbf33b50ffc58e46fc0ffb19bac71694c6d3fe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_9fe1872d",
+        "filename": "keystone/api/os_simple_cert.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-21T21:11:10Z",
+      "side": 1,
+      "message": "Looks like we can remove this now, too.",
+      "revId": "fdbf33b50ffc58e46fc0ffb19bac71694c6d3fe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

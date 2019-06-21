@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9fb8cfa7_1fb597cd",
+        "filename": "keystone/conf/signing.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-21T21:11:10Z",
+      "side": 0,
+      "message": "Some of these options are still used in tests [0]. Those tests aren\u0027t failing because they\u0027re not actually run. TestFetchRevocationList doesn\u0027t actually inherit from any sort of testcase implementation, so they\u0027re ignored.\n\nWe should be running those tests and removing the options.\n\n[0] https://opendev.org/openstack/keystone/src/branch/master/keystone/tests/unit/test_v3_auth.py#L5472",
+      "revId": "94a1b57897b52f980176354a94830f63a26365dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fb8cfa7_44727aaf",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 14
