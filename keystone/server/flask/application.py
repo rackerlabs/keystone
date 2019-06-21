@@ -29,6 +29,7 @@ except ImportError:
     import werkzeug.wsgi as wsgi_dispatcher
 
 import keystone.api
+import keystone.conf
 from keystone import exception
 from keystone.server.flask import common as ks_flask
 from keystone.server.flask.request_processing import json_body
@@ -36,6 +37,7 @@ from keystone.server.flask.request_processing import req_logging
 
 from keystone.receipt import handlers as receipt_handlers
 
+CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
 
 
@@ -168,7 +170,8 @@ def application_factory(name='public'):
 
     # Load in Healthcheck and map it to /healthcheck
     hc_app = healthcheck.Healthcheck.app_factory(
-        {}, oslo_config_project='keystone')
+        CONF, oslo_config_project='keystone'
+    )
 
     # Use the simple form of the dispatch middleware, no extra logic needed
     # for legacy dispatching. This is to mount /healthcheck at a consistent
