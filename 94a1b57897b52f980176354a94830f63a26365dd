@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9fb8cfa7_b037c34d",
+        "filename": "keystone/conf/signing.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-24T15:03:55Z",
+      "side": 0,
+      "message": "Oh, dang. Looks like my name is on that, too. Sorry about that.\n\nYeah, the comment makes sense. You can disregard my comment about returning 200 OK. We\u0027ll plan to keep the API and have it return 403. Then we\u0027ll just remove the configuration options everywhere.\n\nWe can also just refactor those tests or remove them. Instead, we should just have two tests that ensure the if statement is working properly (e.g., one test to make sure we return a 403 and another to make sure we return a 410 when it makes sense).",
+      "parentUuid": "9fb8cfa7_8945c217",
+      "revId": "94a1b57897b52f980176354a94830f63a26365dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fb8cfa7_44727aaf",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 14
