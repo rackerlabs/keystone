@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9fb8cfa7_8945c217",
+        "filename": "keystone/conf/signing.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-06-24T10:01:03Z",
+      "side": 0,
+      "message": "When running these tests the API return code is 403 [1]. In order for API to return 200 with empty response it might require changing [2]. Is this the requested change?\n\n[1] http://paste.openstack.org/show/753294/\n[2] https://github.com/openstack/keystone/blob/master/keystone/api/auth.py#L268",
+      "parentUuid": "9fb8cfa7_1fb597cd",
+      "revId": "94a1b57897b52f980176354a94830f63a26365dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fb8cfa7_44727aaf",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 14
