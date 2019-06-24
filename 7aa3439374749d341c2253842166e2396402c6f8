@@ -22,6 +22,30 @@
       "revId": "7aa3439374749d341c2253842166e2396402c6f8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_eb76a9a4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-24T20:00:17Z",
+      "side": 1,
+      "message": "We also still claim experimental support for the limits API.",
+      "parentUuid": "9fb8cfa7_aae6b915",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 23
+      },
+      "revId": "7aa3439374749d341c2253842166e2396402c6f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
