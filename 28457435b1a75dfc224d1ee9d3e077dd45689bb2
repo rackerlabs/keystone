@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_cfaf2328",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-06-25T15:22:56Z",
+      "side": 1,
+      "message": "This would need to use else, otherwise str(0).isdigit() still evaluates to True and the enabled attribute is overwritten. You could also just cast the value directly with bool().",
+      "revId": "28457435b1a75dfc224d1ee9d3e077dd45689bb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
