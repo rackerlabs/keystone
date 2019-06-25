@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "9fb8cfa7_198a6e69",
+        "filename": "keystone/conf/signing.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-06-25T06:25:20Z",
+      "side": 0,
+      "message": "I added test cases for returning 403 and may be in future when we will remove the API, I can add 410 for it?",
+      "parentUuid": "9fb8cfa7_b037c34d",
+      "revId": "94a1b57897b52f980176354a94830f63a26365dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fb8cfa7_44727aaf",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 14
