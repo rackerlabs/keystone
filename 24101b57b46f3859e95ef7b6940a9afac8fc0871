@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_92a85978",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1315,
+      "author": {
+        "id": 25011
+      },
+      "writtenOn": "2019-06-26T16:09:58Z",
+      "side": 1,
+      "message": "this should be _dn_to_rdn_id  missing _id",
+      "revId": "24101b57b46f3859e95ef7b6940a9afac8fc0871",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
