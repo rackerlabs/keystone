@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_e6dc7775",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1316,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-26T19:13:02Z",
+      "side": 1,
+      "message": "What would this have done before if there were multiple values?",
+      "range": {
+        "startLine": 1316,
+        "startChar": 20,
+        "endLine": 1316,
+        "endChar": 61
+      },
+      "revId": "135435ec87a8e6ae62010a0f24585ce9bdaf99e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
