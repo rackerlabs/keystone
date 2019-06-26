@@ -321,7 +321,11 @@ class PolicyJsonTestCase(unit.TestCase):
             'identity:list_users_in_group',
             'identity:remove_user_from_group',
             'identity:check_user_in_group',
-            'identity:add_user_to_group'
+            'identity:add_user_to_group',
+            'identity:check_grant',
+            'identity:list_grants',
+            'identity:create_grant',
+            'identity:revoke_grant'
         ]
         policy_keys = self._get_default_policy_rules()
         for p in removed_policies:
