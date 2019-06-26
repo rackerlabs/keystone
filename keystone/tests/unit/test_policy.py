@@ -339,7 +339,11 @@ class PolicyJsonTestCase(unit.TestCase):
             'identity:check_policy_association_for_region_and_service',
             'identity:delete_policy_association_for_region_and_service',
             'identity:get_policy_for_endpoint',
-            'identity:list_endpoints_for_policy'
+            'identity:list_endpoints_for_policy',
+            'identity:check_grant',
+            'identity:list_grants',
+            'identity:create_grant',
+            'identity:revoke_grant',
         ]
         policy_keys = self._get_default_policy_rules()
         for p in removed_policies:
