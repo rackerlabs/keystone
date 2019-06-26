@@ -22,6 +22,30 @@
       "revId": "135435ec87a8e6ae62010a0f24585ce9bdaf99e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_05ff40ab",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1316,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2019-06-26T21:25:31Z",
+      "side": 1,
+      "message": "It would have returned the first value. Multiple values are not ordered so it would have been arbitrary which value was first. I see where you are going with this, it\u0027s a change in behavior, perhaps it\u0027s better to log a warning and continue to return the first value.",
+      "parentUuid": "9fb8cfa7_e6dc7775",
+      "range": {
+        "startLine": 1316,
+        "startChar": 20,
+        "endLine": 1316,
+        "endChar": 61
+      },
+      "revId": "135435ec87a8e6ae62010a0f24585ce9bdaf99e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
