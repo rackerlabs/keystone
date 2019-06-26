@@ -46,6 +46,30 @@
       "revId": "135435ec87a8e6ae62010a0f24585ce9bdaf99e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_48dd4d6e",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1316,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-26T22:29:01Z",
+      "side": 1,
+      "message": "Yeah - that would be reasonable. A detailed log message would be great for operators to diagnose problems in the event someone opens a ticket for getting the wrong value (assuming they know they have multiple values in LDAP - but maybe that\u0027s a bold assumption).",
+      "parentUuid": "9fb8cfa7_05ff40ab",
+      "range": {
+        "startLine": 1316,
+        "startChar": 20,
+        "endLine": 1316,
+        "endChar": 61
+      },
+      "revId": "135435ec87a8e6ae62010a0f24585ce9bdaf99e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
