@@ -16,6 +16,24 @@
       "revId": "28457435b1a75dfc224d1ee9d3e077dd45689bb2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_46079583",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 16264
+      },
+      "writtenOn": "2019-06-26T01:57:29Z",
+      "side": 1,
+      "message": "Thanks for comments! In fact, if works here since 0 has been translated to False, so it would not an integer anymore. But it looks a little confuse here, I will update to else.",
+      "parentUuid": "9fb8cfa7_cfaf2328",
+      "revId": "28457435b1a75dfc224d1ee9d3e077dd45689bb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
