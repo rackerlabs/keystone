@@ -29,6 +29,12 @@ SYSTEM_READER_OR_DOMAIN_READER = (
     '(role:reader and domain_id:%(target.group.domain_id)s)'
 )
 
+SYSTEM_ADMIN_OR_DOMAIN_ADMIN = (
+    '(' + base.SYSTEM_ADMIN + ') or '
+    '(role:admin and domain_id:%(target.user.domain_id)s) or '
+    '(role:admin and domain_id:%(target.group.domain_id)s)'
+)
+
 deprecated_check_system_grant_for_user = policy.DeprecatedRule(
     name=base.IDENTITY % 'check_system_grant_for_user',
     check_str=base.RULE_ADMIN_REQUIRED
@@ -126,12 +132,6 @@ grant_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'check_grant',
         check_str=SYSTEM_READER_OR_DOMAIN_READER,
-        # FIXME(lbragstad): A system administrator should be able to grant role
-        # assignments from any actor to any target in the deployment. Domain
-        # administrators should only be able to grant access to the domain they
-        # administer or projects within that domain. Once keystone is smart
-        # enough to enforce those checks in code, we can add 'project' to the
-        # list of scope_types below.
         scope_types=['system', 'domain'],
         description=('Check a role grant between a target and an actor. A '
                      'target can be either a domain or a project. An actor '
@@ -146,8 +146,6 @@ grant_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_grants',
         check_str=SYSTEM_READER_OR_DOMAIN_READER,
-        # FIXME(lbragstad): See the above comment about scope_types before
-        # adding 'project' to scope_types below.
         scope_types=['system', 'domain'],
         description=('List roles granted to an actor on a target. A target '
                      'can be either a domain or a project. An actor can be '
@@ -161,10 +159,8 @@ grant_policies = [
         deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_grant',
-        check_str=base.SYSTEM_ADMIN,
-        # FIXME(lbragstad): See the above comment about scope_types before
-        # adding 'project' to scope_types below.
-        scope_types=['system'],
+        check_str=SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
+        scope_types=['system', 'domain'],
         description=('Create a role grant between a target and an actor. A '
                      'target can be either a domain or a project. An actor '
                      'can be either a user or a group. These terms also apply '
@@ -177,10 +173,8 @@ grant_policies = [
         deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'revoke_grant',
-        check_str=base.SYSTEM_ADMIN,
-        # FIXME(lbragstad): See the above comment about scope_types before
-        # adding 'project' to scope_types below.
-        scope_types=['system'],
+        check_str=SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
+        scope_types=['system', 'domain'],
         description=('Revoke a role grant between a target and an actor. A '
                      'target can be either a domain or a project. An actor '
                      'can be either a user or a group. These terms also apply '
