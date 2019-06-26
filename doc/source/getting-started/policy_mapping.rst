@@ -108,11 +108,6 @@ identity:delete_implied_role                               DELETE /v3/roles/{pri
 identity:list_role_inference_rules                         GET /v3/role_inferences
 identity:check_implied_role                                HEAD /v3/roles/{prior_role_id}/implies/{implied_role_id}
 
-identity:check_grant                                       GET `grant_resources`_
-identity:list_grants                                       GET `grant_collections`_
-identity:create_grant                                      PUT `grant_resources`_
-identity:revoke_grant                                      DELETE `grant_resources`_
-
 identity:list_system_grants_for_user                       GET /v3/system/users/{user_id}/roles
 identity:check_system_grant_for_user                       GET /v3/system/users/{user_id}/roles/{role_id}
 identity:create_system_grant_for_user                      PUT /v3/system/users/{user_id}/roles/{role_id}
