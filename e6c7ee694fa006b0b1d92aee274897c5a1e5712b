@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_c1435d3e",
+        "filename": "keystone/common/policies/grant.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-26T20:02:29Z",
+      "side": 1,
+      "message": "We\u0027ll need to walk through what to do with these since we changing an already deprecated policy.",
+      "revId": "e6c7ee694fa006b0b1d92aee274897c5a1e5712b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
