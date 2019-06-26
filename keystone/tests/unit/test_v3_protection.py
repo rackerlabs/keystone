@@ -964,28 +964,6 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         # other than its own domain or not
         self._test_project_management(self.domainA['id'])
 
-    def test_domain_grants(self):
-        self.auth = self.build_authentication_request(
-            user_id=self.just_a_user['id'],
-            password=self.just_a_user['password'],
-            domain_id=self.domainA['id'])
-
-        self._test_grants('domains', self.domainA['id'],
-                          expected=exception.ForbiddenAction.code)
-
-        # Now, authenticate with a user that does have the domain admin role
-        self.auth = self.build_authentication_request(
-            user_id=self.domain_admin_user['id'],
-            password=self.domain_admin_user['password'],
-            domain_id=self.domainA['id'])
-
-        self._test_grants('domains', self.domainA['id'])
-
-        # Check that with such a token we cannot modify grants on a
-        # different domain
-        self._test_grants('domains', self.domainB['id'],
-                          expected=exception.ForbiddenAction.code)
-
     def test_domain_grants_by_cloud_admin(self):
         # Test domain grants with a cloud admin. This user should be
         # able to manage roles on any domain.
