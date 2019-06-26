@@ -16,6 +16,24 @@
       "revId": "194a2721d49cbee8bb749abd8f828d603f32a16c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_df7d7a1c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-06-26T15:25:58Z",
+      "side": 1,
+      "message": "The work here lines up with the updated spec, so I can see a case for reusing the old blueprint. I\u0027d also be in favor of just opening RFE bugs specific for this, especially since you\u0027ve done a nice job of isolating functionality across patches.\n\nIt\u0027s your call, but I think we should link it to the specification/bug somehow.",
+      "parentUuid": "9fb8cfa7_1c580088",
+      "revId": "194a2721d49cbee8bb749abd8f828d603f32a16c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
