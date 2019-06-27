@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9fb8cfa7_3956295e",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 5468,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-06-27T05:03:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fb8cfa7_720a85d2",
+      "range": {
+        "startLine": 5468,
+        "startChar": 47,
+        "endLine": 5468,
+        "endChar": 51
+      },
+      "revId": "a39b8c51fc73c2e62add1219470863403bb62125",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fb8cfa7_b2fb1dbc",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 17
@@ -36,6 +60,30 @@
       "writtenOn": "2019-06-26T19:09:41Z",
       "side": 1,
       "message": "nit: If/when*",
+      "range": {
+        "startLine": 5477,
+        "startChar": 47,
+        "endLine": 5477,
+        "endChar": 51
+      },
+      "revId": "a39b8c51fc73c2e62add1219470863403bb62125",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_5953dd6b",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 5477,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-06-27T05:03:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fb8cfa7_b2fb1dbc",
       "range": {
         "startLine": 5477,
         "startChar": 47,
