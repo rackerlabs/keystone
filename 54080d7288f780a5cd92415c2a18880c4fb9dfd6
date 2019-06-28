@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_8638f2d2",
+        "filename": "keystone/api/os_simple_cert.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-06-28T17:05:12Z",
+      "side": 1,
+      "message": "This wasn\u0027t a JSON API before and doesn\u0027t have anything to do with revocation. It simply returned the text of the cert. If it didn\u0027t exist, we deliberately raised a 500 with the CertificateFilesUnavailable error:\n\nhttps://developer.openstack.org/api-ref/identity/v3-ext/index.html?expanded\u003dshow-ca-certificate-detail#os-simple-cert-api\n\nI sort of think that\u0027s actually the correct behavior to maintain, it\u0027s the only behavior that makes sense.",
+      "range": {
+        "startLine": 32,
+        "startChar": 35,
+        "endLine": 32,
+        "endChar": 50
+      },
+      "revId": "54080d7288f780a5cd92415c2a18880c4fb9dfd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_265266df",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 5459,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-06-28T17:05:12Z",
+      "side": 1,
+      "message": "You should mention in the commit message why these tests were changed, since it\u0027s not immediately clear why the tests needed to be changed since this API wasn\u0027t changed. I might also suggest splitting this into a different patch.",
+      "revId": "54080d7288f780a5cd92415c2a18880c4fb9dfd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_266b4685",
+        "filename": "releasenotes/notes/removed-as-of-train-92b2942a680eb859.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-06-28T17:05:12Z",
+      "side": 1,
+      "message": "Add another upgrade release note explaining the consequences to the OS-SIMPLE-CERT API.",
+      "revId": "54080d7288f780a5cd92415c2a18880c4fb9dfd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
