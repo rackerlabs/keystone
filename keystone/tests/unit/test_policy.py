@@ -346,6 +346,9 @@ class PolicyJsonTestCase(unit.TestCase):
             'identity:delete_implied_role',
             'identity:list_role_inference_rules',
             'identity:check_implied_role',
+            'identity:get_access_rule',
+            'identity:list_access_rules',
+            'identity:delete_access_rule',
         ]
         policy_keys = self._get_default_policy_rules()
         for p in removed_policies:
