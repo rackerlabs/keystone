@@ -70,6 +70,30 @@
       "revId": "135435ec87a8e6ae62010a0f24585ce9bdaf99e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_ba6aebe9",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1316,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2019-06-28T14:14:36Z",
+      "side": 1,
+      "message": "Great, I\u0027ll more details explaining that we\u0027re returning the first id value in the case of multivalue id in the dn.",
+      "parentUuid": "9fb8cfa7_48dd4d6e",
+      "range": {
+        "startLine": 1316,
+        "startChar": 20,
+        "endLine": 1316,
+        "endChar": 61
+      },
+      "revId": "135435ec87a8e6ae62010a0f24585ce9bdaf99e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
