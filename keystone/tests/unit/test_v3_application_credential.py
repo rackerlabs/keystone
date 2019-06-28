@@ -207,10 +207,21 @@ class ApplicationCredentialTestCase(test_v3.RestfulTestCase):
                           headers={'X-Auth-Token': token},
                           json=app_cred_body,
                           expected_status_code=http_client.CREATED)
-        resp_access_rules = resp.json['application_credential']['access_rules']
-        self.assertIn('id', resp_access_rules[0])
-        resp_access_rules[0].pop('id')
-        self.assertEqual(access_rules[0], resp_access_rules[0])
+            resp_access_rules = resp.json['application_credential']['access_rules']
+            access_rule_id = resp_access_rules[0].pop('id')
+            self.assertEqual(access_rules[0], resp_access_rules[0])
+            resp = c.get('/v3/users/%s/access_rules' % self.user_id,
+                         headers={'X-Auth-Token': token})
+            resp_access_rule = resp.json['access_rules'][0]
+            resp_access_rule.pop('id')
+            resp_access_rule.pop('links')
+            self.assertEqual(access_rules[0], resp_access_rule)
+            resp = c.get('/v3/users/%s/access_rules/%s' % (
+                self.user_id, access_rule_id), headers={'X-Auth-Token': token})
+            resp_access_rule = resp.json['access_rule']
+            resp_access_rule.pop('id')
+            resp_access_rule.pop('links')
+            self.assertEqual(access_rules[0], resp_access_rule)
 
     def test_create_application_credential_with_duplicate_access_rule(self):
         roles = [{'id': self.role_id}]
