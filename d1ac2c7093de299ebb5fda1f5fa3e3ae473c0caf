@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_607fe614",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1313,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2019-06-28T15:30:19Z",
+      "side": 1,
+      "message": "I think you\u0027ve added the message on the wrong error case, you\u0027ve added it to the case where the attribute is not found. The case for when the attribute is multi-valued is below.",
+      "revId": "d1ac2c7093de299ebb5fda1f5fa3e3ae473c0caf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
