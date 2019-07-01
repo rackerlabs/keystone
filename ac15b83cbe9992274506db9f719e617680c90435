@@ -16,6 +16,46 @@
       "revId": "ac15b83cbe9992274506db9f719e617680c90435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_93bfb65f",
+        "filename": "keystone/api/os_ep_filter.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-07-01T19:20:49Z",
+      "side": 1,
+      "message": "Using a kwarg here isn\u0027t really necessary since the method signature of the callee doesn\u0027t define hints as a kwarg. We could just:\n\n  PROVIDERS.catalog_api.list_endpoint_groups(hints)\n\nOr we could adjust the method signature to actually make hints a real kwarg and provide a reasonable default of None (which is something we do elsewhere).\n\n  def list_endpoint_groups(self, hints\u003dNone):\n\nKeeping the call and the signature of the callee in sync helps readability regardless of which piece of code you\u0027re reading.",
+      "range": {
+        "startLine": 73,
+        "startChar": 58,
+        "endLine": 73,
+        "endChar": 69
+      },
+      "revId": "ac15b83cbe9992274506db9f719e617680c90435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_73d1e2cb",
+        "filename": "releasenotes/notes/list-endpoint-groups-by-name-0790c4c60ba34100.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-07-01T19:20:49Z",
+      "side": 1,
+      "message": "We usually try and incorporate the bug number into the name of the release note to avoid collisions and stick with a convention. The process is available here if you\u0027re curious: https://docs.openstack.org/keystone/latest/contributor/release-notes.html#release-notes-for-bugs",
+      "revId": "ac15b83cbe9992274506db9f719e617680c90435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
