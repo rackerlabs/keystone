@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_13142643",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1497,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-07-01T18:17:36Z",
+      "side": 1,
+      "message": "We should include a unit test for this. There is a test module that might be a good home for one.\n\nhttps://opendev.org/openstack/keystone/src/branch/master/keystone/tests/unit/identity/backends/test_ldap_common.py",
+      "revId": "af2de9efe85e8109855700515af6590e04cfd868",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
