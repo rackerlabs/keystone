@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb8cfa7_5354defd",
+        "filename": "releasenotes/notes/consistent-payload-decoding-cb76ccf505c2d9d1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-07-01T18:21:25Z",
+      "side": 1,
+      "message": "We usually put the bug number in the release note for organizational purposes, as noted in the process below.\n\nhttps://docs.openstack.org/keystone/latest/contributor/release-notes.html#release-notes-for-bugs",
+      "revId": "d8262030840aa2da0a0d2bc5aef13091f85fed91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
