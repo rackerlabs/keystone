@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9fb8cfa7_2a32045f",
+        "filename": "keystone/api/os_simple_cert.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-07-02T11:24:05Z",
+      "side": 1,
+      "message": "To maintain the behavior I have left it empty.",
+      "parentUuid": "9fb8cfa7_8638f2d2",
+      "range": {
+        "startLine": 32,
+        "startChar": 35,
+        "endLine": 32,
+        "endChar": 50
+      },
+      "revId": "54080d7288f780a5cd92415c2a18880c4fb9dfd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fb8cfa7_265266df",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 18
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "9fb8cfa7_4a9f3801",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 5459,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-07-02T11:24:05Z",
+      "side": 1,
+      "message": "Updated a new patch https://review.opendev.org/#/c/668654/",
+      "parentUuid": "9fb8cfa7_265266df",
+      "revId": "54080d7288f780a5cd92415c2a18880c4fb9dfd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fb8cfa7_266b4685",
         "filename": "releasenotes/notes/removed-as-of-train-92b2942a680eb859.yaml",
         "patchSetId": 18
@@ -53,6 +95,24 @@
       "writtenOn": "2019-06-28T17:05:12Z",
       "side": 1,
       "message": "Add another upgrade release note explaining the consequences to the OS-SIMPLE-CERT API.",
+      "revId": "54080d7288f780a5cd92415c2a18880c4fb9dfd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fb8cfa7_8a99b01f",
+        "filename": "releasenotes/notes/removed-as-of-train-92b2942a680eb859.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-07-02T11:24:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fb8cfa7_266b4685",
       "revId": "54080d7288f780a5cd92415c2a18880c4fb9dfd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
