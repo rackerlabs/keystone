@@ -1,0 +1,234 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_cc6823bc",
+        "filename": "keystone/tests/unit/protection/v3/test_grants.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 735,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-03T18:00:53Z",
+      "side": 1,
+      "message": "Should this be self.domain_id?",
+      "range": {
+        "startLine": 735,
+        "startChar": 40,
+        "endLine": 735,
+        "endChar": 71
+      },
+      "revId": "a96b4d06953d015ec5f838cfd2b3e2f3d51358d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_ac5fe70c",
+        "filename": "keystone/tests/unit/protection/v3/test_grants.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 755,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-03T18:00:53Z",
+      "side": 1,
+      "message": "self.domain_id?",
+      "range": {
+        "startLine": 755,
+        "startChar": 40,
+        "endLine": 755,
+        "endChar": 71
+      },
+      "revId": "a96b4d06953d015ec5f838cfd2b3e2f3d51358d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_6c9fafb4",
+        "filename": "keystone/tests/unit/protection/v3/test_grants.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 773,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-03T18:00:53Z",
+      "side": 1,
+      "message": "self.domain_id?",
+      "range": {
+        "startLine": 773,
+        "startChar": 41,
+        "endLine": 773,
+        "endChar": 72
+      },
+      "revId": "a96b4d06953d015ec5f838cfd2b3e2f3d51358d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_0ca4fb07",
+        "filename": "keystone/tests/unit/protection/v3/test_grants.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-03T18:00:53Z",
+      "side": 1,
+      "message": "self.domain_id?",
+      "range": {
+        "startLine": 778,
+        "startChar": 26,
+        "endLine": 778,
+        "endChar": 57
+      },
+      "revId": "a96b4d06953d015ec5f838cfd2b3e2f3d51358d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_ecaabfd0",
+        "filename": "keystone/tests/unit/protection/v3/test_grants.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 795,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-03T18:00:53Z",
+      "side": 1,
+      "message": "self.domain_id?",
+      "range": {
+        "startLine": 795,
+        "startChar": 41,
+        "endLine": 795,
+        "endChar": 72
+      },
+      "revId": "a96b4d06953d015ec5f838cfd2b3e2f3d51358d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_8c90eb97",
+        "filename": "keystone/tests/unit/protection/v3/test_grants.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 883,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-03T18:00:53Z",
+      "side": 1,
+      "message": "self.domain_id?",
+      "range": {
+        "startLine": 883,
+        "startChar": 40,
+        "endLine": 883,
+        "endChar": 71
+      },
+      "revId": "a96b4d06953d015ec5f838cfd2b3e2f3d51358d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_ac8da77c",
+        "filename": "keystone/tests/unit/protection/v3/test_grants.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 888,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-03T18:00:53Z",
+      "side": 1,
+      "message": "self.domain_id?",
+      "range": {
+        "startLine": 888,
+        "startChar": 26,
+        "endLine": 888,
+        "endChar": 57
+      },
+      "revId": "a96b4d06953d015ec5f838cfd2b3e2f3d51358d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_6ced6f24",
+        "filename": "keystone/tests/unit/protection/v3/test_grants.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 908,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-03T18:00:53Z",
+      "side": 1,
+      "message": "self.domain_id?",
+      "range": {
+        "startLine": 908,
+        "startChar": 40,
+        "endLine": 908,
+        "endChar": 71
+      },
+      "revId": "a96b4d06953d015ec5f838cfd2b3e2f3d51358d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_ecd87f80",
+        "filename": "keystone/tests/unit/protection/v3/test_grants.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 931,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-03T18:00:53Z",
+      "side": 1,
+      "message": "self.domain_id?",
+      "range": {
+        "startLine": 931,
+        "startChar": 41,
+        "endLine": 931,
+        "endChar": 72
+      },
+      "revId": "a96b4d06953d015ec5f838cfd2b3e2f3d51358d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_ace2872e",
+        "filename": "keystone/tests/unit/protection/v3/test_grants.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 958,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-03T18:00:53Z",
+      "side": 1,
+      "message": "self.domain_id?",
+      "range": {
+        "startLine": 958,
+        "startChar": 41,
+        "endLine": 958,
+        "endChar": 72
+      },
+      "revId": "a96b4d06953d015ec5f838cfd2b3e2f3d51358d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
