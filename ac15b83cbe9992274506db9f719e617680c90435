@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_5fc6f369",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-05T19:30:15Z",
+      "side": 1,
+      "message": "The _query suffix is conventional because it is part of the URL query parameters, so it would have been better to keep that convention. Could be fixed in a followup.",
+      "parentUuid": "9fb8cfa7_aaf8f9c3",
+      "revId": "ac15b83cbe9992274506db9f719e617680c90435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fb8cfa7_93bfb65f",
         "filename": "keystone/api/os_ep_filter.py",
         "patchSetId": 3
