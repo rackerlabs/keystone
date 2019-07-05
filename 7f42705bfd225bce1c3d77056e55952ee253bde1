@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_54e34306",
+        "filename": "keystone/api/os_simple_cert.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-07-05T06:20:09Z",
+      "side": 1,
+      "message": "This error message should be updated as well. Instead of saying that \"certificates are not available\", we should say something  that \"the API is useless now.\"",
+      "range": {
+        "startLine": 32,
+        "startChar": 24,
+        "endLine": 32,
+        "endChar": 51
+      },
+      "revId": "7f42705bfd225bce1c3d77056e55952ee253bde1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
