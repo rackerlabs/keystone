@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_85870e62",
+        "filename": "doc/source/contributor/programming-exercises.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-07-09T18:36:56Z",
+      "side": 1,
+      "message": "This is also a good way to get used to the workflow and its benefits (sharing working, pair programming, etc).",
+      "range": {
+        "startLine": 27,
+        "startChar": 44,
+        "endLine": 27,
+        "endChar": 77
+      },
+      "revId": "78080fcfba4df577f18705ebda9cd9ffe2868cd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
