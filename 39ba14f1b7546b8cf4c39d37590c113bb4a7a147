@@ -22,6 +22,30 @@
       "revId": "39ba14f1b7546b8cf4c39d37590c113bb4a7a147",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_df2b9c7f",
+        "filename": "keystone/common/policies/access_rule.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-09T14:29:40Z",
+      "side": 1,
+      "message": "I think not. For the moment, you can only create application credentials for projects, so project members should be able to see their application credentials, and I think system readers should be able to see users\u0027 access rules but I can\u0027t really think of a reason domain readers should need to. I\u0027m open to discuss it though.",
+      "parentUuid": "7faddb67_43e27c03",
+      "range": {
+        "startLine": 36,
+        "startChar": 8,
+        "endLine": 36,
+        "endChar": 41
+      },
+      "revId": "39ba14f1b7546b8cf4c39d37590c113bb4a7a147",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
