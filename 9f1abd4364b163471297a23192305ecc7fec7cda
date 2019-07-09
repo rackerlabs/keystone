@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_c8bbebc1",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 14495
+      },
+      "writtenOn": "2019-07-09T07:31:45Z",
+      "side": 1,
+      "message": "Thank you for posting a patch!\nIt may be worth noting that v3tokenless was merged into projects in Rocky for the most part. And is available only with V3 Client API.\nhttps://docs.openstack.org/python-keystoneclient/latest/using-api-v3.html#authenticating-using-sessions\nThanks!",
+      "range": {
+        "startLine": 451,
+        "startChar": 16,
+        "endLine": 451,
+        "endChar": 31
+      },
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
