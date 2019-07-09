@@ -407,16 +407,15 @@ class TokenModel(object):
         return roles
 
     def _get_application_credential_roles(self):
-        roles = []
         app_cred_roles = self.application_credential['roles']
-        for role in app_cred_roles:
-            try:
-                r = PROVIDERS.assignment_api.get_grant(
-                    role['id'], user_id=self.user_id,
-                    domain_id=self.domain_id, project_id=self.project_id)
-                roles.append({'id': r['id'], 'name': r['name']})
-            except exception.RoleAssignmentNotFound:
-                pass
+        effective_user_roles = (
+            PROVIDERS.assignment_api.get_roles_for_user_and_project(
+                self.user_id,
+                self.project_id
+            )
+        )
+        roles = [{'id': r['id'], 'name': r['name']} for r in app_cred_roles
+                 if r['id'] in effective_user_roles]
 
         return roles
 
