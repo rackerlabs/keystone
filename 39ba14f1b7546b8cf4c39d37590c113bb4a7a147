@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_43e27c03",
+        "filename": "keystone/common/policies/access_rule.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-07-09T08:16:25Z",
+      "side": 1,
+      "message": "These access rules are not scoped to domains?",
+      "range": {
+        "startLine": 36,
+        "startChar": 8,
+        "endLine": 36,
+        "endChar": 41
+      },
+      "revId": "39ba14f1b7546b8cf4c39d37590c113bb4a7a147",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
