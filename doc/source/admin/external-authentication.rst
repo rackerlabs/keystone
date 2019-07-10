@@ -72,22 +72,11 @@ identity backend to get a token from the controller.
 
 To use this method, Keystone should be running on HTTPD.
 
-X.509 example
--------------
+.. CAUTION::
 
-The following snippet for the Apache conf will authenticate the user based on
-a valid X.509 certificate from a known CA::
-
-    <VirtualHost _default_:5000>
-        SSLEngine on
-        SSLCertificateFile    /etc/ssl/certs/ssl.cert
-        SSLCertificateKeyFile /etc/ssl/private/ssl.key
-
-        SSLCACertificatePath /etc/ssl/allowed_cas
-        SSLCARevocationPath  /etc/ssl/allowed_cas
-        SSLUserName          SSL_CLIENT_S_DN_CN
-        SSLVerifyClient      require
-        SSLVerifyDepth       10
-
-        (...)
-    </VirtualHost>
+    Using X.509 SSL client certificate authentication with `external` method
+    is not recommended as `external` method is limited to a single domain.
+    Furthermore, there's no way to effectively distinguish SSL certificates
+    used for secure communication from SSL certificates used for user
+    authentication. X.509 SSL client certificate authentication should be use
+    with federation instead.
