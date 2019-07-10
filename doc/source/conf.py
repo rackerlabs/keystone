@@ -34,6 +34,7 @@
 # ones.
 extensions = ['sphinx.ext.coverage',
               'sphinx.ext.viewcode',
+              'sphinx.ext.graphviz',
               'oslo_config.sphinxconfiggen',
               'oslo_config.sphinxext',
               'oslo_policy.sphinxpolicygen',
@@ -208,15 +209,16 @@ htmlhelp_basename = 'keystonedoc'
 
 # -- Options for LaTeX output -------------------------------------------------
 
+# Disable usage of xindy https://bugzilla.redhat.com/show_bug.cgi?id=1643664
+latex_use_xindy = False
+
+latex_domain_indices = False
+
 latex_elements = {
-    # The paper size ('letterpaper' or 'a4paper').
-    # 'papersize': 'letterpaper',
-
-    # The font size ('10pt', '11pt' or '12pt').
-    # 'pointsize': '10pt',
-
-    # Additional stuff for the LaTeX preamble.
-    # 'preamble': '',
+    'makeindex': '',
+    'printindex': '',
+    'preamble': r'\setcounter{tocdepth}{3}',
+    'maxlistdepth': 10,
 }
 
 # Grouping the document tree into LaTeX files. List of tuples (source
