@@ -57,6 +57,7 @@ requests==2.14.2
 scrypt==0.8.0
 six==1.10.0
 Sphinx==1.6.5
+sphinxcontrib-svg2pdfconverter==0.1.0
 sqlalchemy-migrate==0.11.0
 SQLAlchemy==1.1.0
 stestr==1.0.0

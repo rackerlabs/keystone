@@ -43,6 +43,7 @@ extensions = ['sphinx.ext.coverage',
               'sphinxcontrib.seqdiag',
               'sphinx_feature_classification.support_matrix',
               'sphinxcontrib.blockdiag'
+              'sphinxcontrib.rsvgconverter',
               ]
 
 blockdiag_html_image_format = 'SVG'
