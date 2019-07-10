@@ -4,13 +4,13 @@ Using external authentication with Keystone
 
 When Keystone is executed in a web server like Apache HTTPD,
 it is possible to have the web server also handle authentication.
-This enables support for additional methods of authentication that 
+This enables support for additional methods of authentication that
 are not provided by the identity store backend and
 the authentication plugins that Keystone supports.
 
 Having the web server handle authentication is not exclusive, and both
 Keystone and the web server can provide different methods of authentication at
-the same time. For example, the web server can provide support for X.509 or
+the same time. For example, the web server can provide support for
 Kerberos authentication, while Keystone provides support for password
 authentication (with SQL or an identity store as the backend).
 
@@ -18,6 +18,15 @@ When the web server authenticates a user, it sets environment variables,
 usually ``REMOTE_USER``, which can be used in the underlying application.
 Keystone can be configured to use these environment variables to determine the
 identity of the user.
+
+.. CAUTION::
+
+    Using X.509 SSL client certificate authentication with `external` method
+    is not recommended as `external` method is limited to a single domain.
+    Furthermore, there's no way to effectively distinguish SSL certificates
+    used for secure communication from SSL certificates used for user
+    authentication. X.509 SSL client certificate authentication should only be
+    use with federation instead.
 
 Configuration
 =============
@@ -72,22 +81,28 @@ identity backend to get a token from the controller.
 
 To use this method, Keystone should be running on HTTPD.
 
-X.509 example
--------------
+Kerberos example
+----------------
 
 The following snippet for the Apache conf will authenticate the user based on
-a valid X.509 certificate from a known CA::
+a successful mutual authentication, assuming the `Domain` plugin is used::
 
-    <VirtualHost _default_:5000>
-        SSLEngine on
-        SSLCertificateFile    /etc/ssl/certs/ssl.cert
-        SSLCertificateKeyFile /etc/ssl/private/ssl.key
+    LoadModule      auth_kerb_module        /usr/lib64/apache2/mod_auth_kerb.so
 
-        SSLCACertificatePath /etc/ssl/allowed_cas
-        SSLCARevocationPath  /etc/ssl/allowed_cas
-        SSLUserName          SSL_CLIENT_S_DN_CN
-        SSLVerifyClient      require
-        SSLVerifyDepth       10
+    ProxyPass "/identity" "unix:/var/run/uwsgi/keystone-wsgi-public.socket|uwsgi://uwsgi-uds-keystone-wsgi-public/" retry=0
+    ProxyPass "/krb/identity" "unix:/var/run/uwsgi/keystone-wsgi-public.socket|uwsgi://uwsgi-uds-keystone-wsgi-public/" retry=0
 
-        (...)
-    </VirtualHost>
+    <Location "/krb/identity/v3/auth/tokens">
+        AuthType              Kerberos
+        AuthName              "Keystone Kerberos Login"
+        KrbMethodNegotiate    On
+        KrbMethodK5Passwd     Off
+        KrbServiceName        Any
+        KrbAuthRealms         FOO
+        Krb5KeyTab            /etc/keystone/keystone.keytab
+        KrbVerifyKDC          Off
+        KrbLocalUserMapping   On
+        KrbAuthoritative      On
+        Require               valid-user
+        SetEnv REMOTE_DOMAIN  FOO
+    </Location>
