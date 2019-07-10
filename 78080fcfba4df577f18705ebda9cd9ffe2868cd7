@@ -22,6 +22,30 @@
       "revId": "78080fcfba4df577f18705ebda9cd9ffe2868cd7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_4dc04651",
+        "filename": "doc/source/contributor/programming-exercises.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-10T20:42:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_85870e62",
+      "range": {
+        "startLine": 27,
+        "startChar": 44,
+        "endLine": 27,
+        "endChar": 77
+      },
+      "revId": "78080fcfba4df577f18705ebda9cd9ffe2868cd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
