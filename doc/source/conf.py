@@ -42,6 +42,7 @@ extensions = ['sphinx.ext.coverage',
               'sphinxcontrib.apidoc',
               'sphinxcontrib.seqdiag',
               'sphinx_feature_classification.support_matrix',
+              'sphinxcontrib.rsvgconverter',
               ]
 
 # sphinxcontrib.apidoc options
