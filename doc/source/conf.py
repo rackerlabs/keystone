@@ -34,6 +34,7 @@
 # ones.
 extensions = ['sphinx.ext.coverage',
               'sphinx.ext.viewcode',
+              'sphinx.ext.graphviz',
               'oslo_config.sphinxconfiggen',
               'oslo_config.sphinxext',
               'oslo_policy.sphinxpolicygen',
