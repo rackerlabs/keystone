@@ -16,6 +16,29 @@
       "revId": "af2de9efe85e8109855700515af6590e04cfd868",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_8d8dec32",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1497,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-07-10T10:25:50Z",
+      "side": 1,
+      "message": "In order to have consistency all over the keystone we can use decode method same as [1].\n\n[1] https://github.com/openstack/keystone/blob/c785729efee0daf472301719e0b41e9ff2b7c64d/keystone/receipt/receipt_formatters.py#L79\n\nThe query can be %(ldap_filter or self.ldap_filter or \u0027\u0027).decode(\u0027utf-8\u0027)",
+      "range": {
+        "startLine": 1497,
+        "startChar": 12,
+        "endLine": 1497,
+        "endChar": 62
+      },
+      "revId": "af2de9efe85e8109855700515af6590e04cfd868",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
