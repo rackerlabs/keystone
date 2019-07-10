@@ -219,6 +219,7 @@ latex_elements = {
     # 'preamble': '',
 }
 
+latex_additional_files = ["support_matrix.css"]
 # Grouping the document tree into LaTeX files. List of tuples (source
 # start file, target name, title, author, documentclass
 # [howto/manual]).
