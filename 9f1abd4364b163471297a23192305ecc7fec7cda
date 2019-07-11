@@ -670,6 +670,24 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_19335ff8",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-11T22:40:31Z",
+      "side": 1,
+      "message": "Yep, must have been an openssl bug, I was using 1.0.2g, switching to a newer distro worked.",
+      "parentUuid": "7faddb67_7e8daa79",
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_91e67044",
         "filename": "doc/source/admin/configure_tokenless_x509.rst",
         "patchSetId": 1
@@ -752,6 +770,30 @@
       "side": 1,
       "message": "This feature is using the federation mechanism so protocol should be configurable.",
       "parentUuid": "7faddb67_d1c5c88f",
+      "range": {
+        "startLine": 171,
+        "startChar": 25,
+        "endLine": 171,
+        "endChar": 49
+      },
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_d94e276e",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-11T22:40:31Z",
+      "side": 1,
+      "message": "Hmm, you are right that it works...but it shouldn\u0027t work. Generally federated auth requires you to use one of a few specific protocol names listed in the auth methods. This is doing some kind of magic to circumvent that.",
+      "parentUuid": "7faddb67_3e3bb29c",
       "range": {
         "startLine": 171,
         "startChar": 25,
