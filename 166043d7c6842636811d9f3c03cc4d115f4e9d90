@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_19bd9f01",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-11T22:40:31Z",
+      "side": 1,
+      "message": "identify",
+      "range": {
+        "startLine": 52,
+        "startChar": 19,
+        "endLine": 52,
+        "endChar": 27
+      },
+      "revId": "166043d7c6842636811d9f3c03cc4d115f4e9d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_f93d238f",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-11T22:40:31Z",
+      "side": 1,
+      "message": "Should be unindented, otherwise it renders as part of the code example",
+      "range": {
+        "startLine": 143,
+        "startChar": 0,
+        "endLine": 143,
+        "endChar": 2
+      },
+      "revId": "166043d7c6842636811d9f3c03cc4d115f4e9d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_56052445",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-11T22:40:31Z",
+      "side": 1,
+      "message": "needs a _ to turn it into a link",
+      "range": {
+        "startLine": 143,
+        "startChar": 6,
+        "endLine": 143,
+        "endChar": 30
+      },
+      "revId": "166043d7c6842636811d9f3c03cc4d115f4e9d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_f97c4384",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-11T22:40:31Z",
+      "side": 1,
+      "message": "There\u0027s no {1} in this mapping example, so this wouldn\u0027t map to anything",
+      "range": {
+        "startLine": 391,
+        "startChar": 29,
+        "endLine": 391,
+        "endChar": 46
+      },
+      "revId": "166043d7c6842636811d9f3c03cc4d115f4e9d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_39ee5bb4",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-11T22:40:31Z",
+      "side": 1,
+      "message": "Should this match the IP on line 502?",
+      "range": {
+        "startLine": 484,
+        "startChar": 13,
+        "endLine": 484,
+        "endChar": 21
+      },
+      "revId": "166043d7c6842636811d9f3c03cc4d115f4e9d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
