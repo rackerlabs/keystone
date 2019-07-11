@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_1bca7a6c",
+        "filename": "keystone/api/os_simple_cert.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-11T16:50:33Z",
+      "side": 1,
+      "message": "Not mentioned so far on this patch, but discussed in this week\u0027s keystone meeting:\n\nhttp://eavesdrop.openstack.org/meetings/keystone/2019/keystone.2019-07-09-16.00.log.html#l-98\n\nWe were discussing whether we should continue to raise a 500 or change this to a 410. I brought it up with the API-SIG:\n\nhttp://eavesdrop.openstack.org/irclogs/%23openstack-sdks/%23openstack-sdks.2019-07-11.log.html#t2019-07-11T16:18:01\n\nNaturally they recommended we find some more graceful way of handling this so that the behavior of a request that worked before (e.g. the ca_certs config option was set to a valid file path and this API returned a 200) would continue to work. This might still be possible - maybe we have it return some dummy contents or an empty string? If this isn\u0027t realistic they recommended changing this to return a 410.",
+      "revId": "0709ee778c3ab0d4842535a1c516c99c570db74e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
