@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_83c5ad5d",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Yeah, let me remove it as it should no longer be experimental.",
+      "parentUuid": "7faddb67_36177254",
+      "range": {
+        "startLine": 20,
+        "startChar": 4,
+        "endLine": 20,
+        "endChar": 60
+      },
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_7150940b",
         "filename": "doc/source/admin/configure_tokenless_x509.rst",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2019-07-10T01:56:22Z",
       "side": 1,
       "message": "eliminating",
+      "range": {
+        "startLine": 31,
+        "startChar": 39,
+        "endLine": 31,
+        "endChar": 51
+      },
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_03af7d94",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_7150940b",
       "range": {
         "startLine": 31,
         "startChar": 39,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_0388dd1c",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_712bb481",
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_1157e004",
         "filename": "doc/source/admin/configure_tokenless_x509.rst",
         "patchSetId": 1
@@ -76,6 +142,30 @@
       "writtenOn": "2019-07-10T01:56:22Z",
       "side": 1,
       "message": "Configuring",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 13
+      },
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_6378b129",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_1157e004",
       "range": {
         "startLine": 63,
         "startChar": 0,
@@ -105,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_83736d4d",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "This section has moved. I forgot to delete it here.",
+      "parentUuid": "7faddb67_914af052",
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_11a5a004",
         "filename": "doc/source/admin/configure_tokenless_x509.rst",
         "patchSetId": 1
@@ -116,6 +224,30 @@
       "writtenOn": "2019-07-10T01:56:22Z",
       "side": 1,
       "message": "This should be formatted the same as on line 18 (s/--/../)",
+      "range": {
+        "startLine": 105,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 9
+      },
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_23907943",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_11a5a004",
       "range": {
         "startLine": 105,
         "startChar": 0,
@@ -151,6 +283,30 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_83a84d77",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_b15e0c10",
+      "range": {
+        "startLine": 107,
+        "startChar": 55,
+        "endLine": 107,
+        "endChar": 63
+      },
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_519b18c8",
         "filename": "doc/source/admin/configure_tokenless_x509.rst",
         "patchSetId": 1
@@ -162,6 +318,30 @@
       "writtenOn": "2019-07-10T01:56:22Z",
       "side": 1,
       "message": "Explain what this is or link to an external reference",
+      "range": {
+        "startLine": 108,
+        "startChar": 15,
+        "endLine": 108,
+        "endChar": 25
+      },
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_6381918f",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_519b18c8",
       "range": {
         "startLine": 108,
         "startChar": 15,
@@ -197,6 +377,30 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_2332b911",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_d1270812",
+      "range": {
+        "startLine": 119,
+        "startChar": 34,
+        "endLine": 119,
+        "endChar": 56
+      },
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_31a8dcd9",
         "filename": "doc/source/admin/configure_tokenless_x509.rst",
         "patchSetId": 1
@@ -208,6 +412,24 @@
       "writtenOn": "2019-07-10T01:56:22Z",
       "side": 1,
       "message": "This needs a newline to render properly (see http://logs.openstack.org/90/669790/1/check/openstack-tox-docs/fd6c2d1/html/admin/configure_tokenless_x509.html#how-to-obtain-trusted-issuer-dn )",
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_832a8d8d",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_31a8dcd9",
       "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -237,6 +459,30 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_fe251aac",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "It would be difficult for operators to use this feature if they don\u0027t have a basic understanding of SSL and certificates. There are a lot of examples out there on how to generate a PKI already. I don\u0027t think we should go too deep in to educating people on what PKI and certificates are. Perhaps we can suggest them to read the OpenSSL book as a prereq?",
+      "parentUuid": "7faddb67_d16ce837",
+      "range": {
+        "startLine": 128,
+        "startChar": 37,
+        "endLine": 128,
+        "endChar": 52
+      },
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_d1ae28e6",
         "filename": "doc/source/admin/configure_tokenless_x509.rst",
         "patchSetId": 1
@@ -248,6 +494,24 @@
       "writtenOn": "2019-07-10T01:56:22Z",
       "side": 1,
       "message": "newline",
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_be37a2e3",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_d1ae28e6",
       "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -277,6 +541,30 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_1e4ef66e",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Yes, we should use client_cert.pem in this example.",
+      "parentUuid": "7faddb67_c3917b9b",
+      "range": {
+        "startLine": 133,
+        "startChar": 37,
+        "endLine": 133,
+        "endChar": 70
+      },
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_5184785e",
         "filename": "doc/source/admin/configure_tokenless_x509.rst",
         "patchSetId": 1
@@ -288,6 +576,24 @@
       "writtenOn": "2019-07-10T01:56:22Z",
       "side": 1,
       "message": "newline",
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_3e51720f",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_5184785e",
       "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -311,6 +617,24 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_fe5afa27",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_71873463",
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_23464f23",
         "filename": "doc/source/admin/configure_tokenless_x509.rst",
         "patchSetId": 1
@@ -328,6 +652,24 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_7e8daa79",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Which version of openssl are you using? I think you maybe hitting this bug.\n\nhttps://github.com/openssl/openssl/issues/5605\n\nThis is what I got, using opensuse/openSUSE-15.0-x86_64 vagrant box.\n\nvagrant@keystone-idp:~\u003e openssl x509 -issuer -noout -in /etc/glance/glance.pem -nameopt compat\nissuer\u003d/DC\u003dcom/DC\u003dsomedemo/O\u003dopenstack/OU\u003dkeystone/CN\u003dIntermediate CA\nvagrant@keystone-idp:~\u003e openssl version\nOpenSSL 1.1.0i-fips  14 Aug 2018",
+      "parentUuid": "7faddb67_23464f23",
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_91e67044",
         "filename": "doc/source/admin/configure_tokenless_x509.rst",
         "patchSetId": 1
@@ -339,6 +681,30 @@
       "writtenOn": "2019-07-10T01:56:22Z",
       "side": 1,
       "message": "multi-string?",
+      "range": {
+        "startLine": 166,
+        "startChar": 55,
+        "endLine": 166,
+        "endChar": 58
+      },
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_bed8027f",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_91e67044",
       "range": {
         "startLine": 166,
         "startChar": 55,
@@ -374,6 +740,30 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_3e3bb29c",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "This feature is using the federation mechanism so protocol should be configurable.",
+      "parentUuid": "7faddb67_d1c5c88f",
+      "range": {
+        "startLine": 171,
+        "startChar": 25,
+        "endLine": 171,
+        "endChar": 49
+      },
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_1141200c",
         "filename": "doc/source/admin/configure_tokenless_x509.rst",
         "patchSetId": 1
@@ -385,6 +775,30 @@
       "writtenOn": "2019-07-10T01:56:22Z",
       "side": 1,
       "message": "Does this apply if the terminator is haproxy?",
+      "range": {
+        "startLine": 174,
+        "startChar": 25,
+        "endLine": 176,
+        "endChar": 34
+      },
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_fe443a1d",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "It depends on how Apache map those X-SSL-* request headers into request env. i.e.\n\nSetEnvIf X-SSL-Issuer \"^(.*)$\" SSL_CLIENT_I_DN\u003d$0",
+      "parentUuid": "7faddb67_1141200c",
       "range": {
         "startLine": 174,
         "startChar": 25,
@@ -414,6 +828,24 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_9e4bc629",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_f1456416",
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_d173887f",
         "filename": "doc/source/admin/configure_tokenless_x509.rst",
         "patchSetId": 1
@@ -431,6 +863,24 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_be6fa290",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "No need. It is using the \u0027mapped\u0027 method as it is using the federation mechanism.",
+      "parentUuid": "7faddb67_d173887f",
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_b1684c87",
         "filename": "doc/source/admin/configure_tokenless_x509.rst",
         "patchSetId": 1
@@ -442,6 +892,30 @@
       "writtenOn": "2019-07-10T01:56:22Z",
       "side": 1,
       "message": "fix rendering",
+      "range": {
+        "startLine": 203,
+        "startChar": 0,
+        "endLine": 203,
+        "endChar": 9
+      },
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_5e030eb9",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_b1684c87",
       "range": {
         "startLine": 203,
         "startChar": 0,
@@ -517,6 +991,30 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_3e32d2a8",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_31ed3c8b",
+      "range": {
+        "startLine": 234,
+        "startChar": 4,
+        "endLine": 236,
+        "endChar": 21
+      },
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_713174a2",
         "filename": "doc/source/admin/configure_tokenless_x509.rst",
         "patchSetId": 1
@@ -528,6 +1026,30 @@
       "writtenOn": "2019-07-10T01:56:22Z",
       "side": 1,
       "message": "I don\u0027t think the above addition of a \"group\" section should be necessary, because of this. local users already have role assignments and perhaps group memberships. ephemeral users need to have the group membership defined here (or project role assignments, but iirc auto-provisioning doesn\u0027t work for this feature).",
+      "range": {
+        "startLine": 274,
+        "startChar": 61,
+        "endLine": 276,
+        "endChar": 22
+      },
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_deddbe42",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "You\u0027re right. Interestingly, mapping to local group still works if the assignment doens\u0027t exist.",
+      "parentUuid": "7faddb67_713174a2",
       "range": {
         "startLine": 274,
         "startChar": 61,
@@ -563,6 +1085,30 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_feb99ae8",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_11284032",
+      "range": {
+        "startLine": 315,
+        "startChar": 21,
+        "endLine": 315,
+        "endChar": 34
+      },
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_d121484f",
         "filename": "doc/source/admin/configure_tokenless_x509.rst",
         "patchSetId": 1
@@ -574,6 +1120,30 @@
       "writtenOn": "2019-07-10T01:56:22Z",
       "side": 1,
       "message": "I don\u0027t think this is true, the protocol name must match an entry point registered with setuptools: https://opendev.org/openstack/keystone/src/branch/master/setup.cfg#L78-L111",
+      "range": {
+        "startLine": 323,
+        "startChar": 20,
+        "endLine": 324,
+        "endChar": 26
+      },
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_becb2270",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "We are using the federation mechanism so the protocol name can be arbitrary.",
+      "parentUuid": "7faddb67_d121484f",
       "range": {
         "startLine": 323,
         "startChar": 20,
@@ -609,6 +1179,30 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_5eca2e6d",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_f11c8414",
+      "range": {
+        "startLine": 328,
+        "startChar": 12,
+        "endLine": 328,
+        "endChar": 19
+      },
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_31ae9c98",
         "filename": "doc/source/admin/configure_tokenless_x509.rst",
         "patchSetId": 1
@@ -620,6 +1214,24 @@
       "writtenOn": "2019-07-10T01:56:22Z",
       "side": 1,
       "message": "Probably don\u0027t want this",
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_7ec5aa5a",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_31ae9c98",
       "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -643,6 +1255,24 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_1ea276af",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Yes, it is a duplication. I removed the section from the top because this section is about the SSL terminator configuration.",
+      "parentUuid": "7faddb67_b1160cf1",
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_71d6542a",
         "filename": "doc/source/admin/configure_tokenless_x509.rst",
         "patchSetId": 1
@@ -654,6 +1284,24 @@
       "writtenOn": "2019-07-10T01:56:22Z",
       "side": 1,
       "message": "I think this comes from devstack and is inconsistent with your other apache examples and with the haproxy bind to 5000 in the above example.",
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_deab7e86",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_71d6542a",
       "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -683,6 +1331,30 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_fe9c3a5e",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "We should only be using v3 API now. V2 had been deprecated and removed.",
+      "parentUuid": "7faddb67_c8bbebc1",
+      "range": {
+        "startLine": 451,
+        "startChar": 16,
+        "endLine": 451,
+        "endChar": 31
+      },
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_b1eb6cda",
         "filename": "doc/source/admin/configure_tokenless_x509.rst",
         "patchSetId": 1
@@ -694,6 +1366,30 @@
       "writtenOn": "2019-07-10T01:56:22Z",
       "side": 1,
       "message": "I think you\u0027d more often find these in e.g. /etc/glance/certs/glance.pem and /etc/glance/private/glance_private_key.pem",
+      "range": {
+        "startLine": 452,
+        "startChar": 4,
+        "endLine": 453,
+        "endChar": 48
+      },
+      "revId": "9f1abd4364b163471297a23192305ecc7fec7cda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_5ead4e86",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-11T00:37:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_b1eb6cda",
       "range": {
         "startLine": 452,
         "startChar": 4,
