@@ -1,0 +1,13 @@
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+1: Andriy Shevchenko <huang.zhiping@99cloud.net>
+Code-Review+1: melissaml <ma.lei@99cloud.net>
+Code-Review+1: 98k <18552437190@163.com>
+Code-Review+2: wangxiyuan <wangxiyuan1007@gmail.com>
+Workflow+1: wangxiyuan <wangxiyuan1007@gmail.com>
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 15 Jul 2019 21:29:44 +0000
+Reviewed-on: https://review.opendev.org/670592
+Project: openstack/keystone
+Branch: refs/heads/master
