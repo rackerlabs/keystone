@@ -14,6 +14,7 @@ from oslo_policy import policy
 
 IDENTITY = 'identity:%s'
 RULE_ADMIN_REQUIRED = 'rule:admin_required'
+RULE_OWNER = 'user_id:%(user_id)s'
 RULE_ADMIN_OR_OWNER = 'rule:admin_or_owner'
 RULE_ADMIN_OR_CREDENTIAL_OWNER = (
     'rule:admin_required or '
@@ -30,6 +31,8 @@ RULE_SERVICE_ADMIN_OR_TOKEN_SUBJECT = (
     'rule:service_admin_or_token_subject')  # nosec
 RULE_SERVICE_OR_ADMIN = 'rule:service_or_admin'
 RULE_TRUST_OWNER = 'user_id:%(trust.trustor_user_id)s'
+RULE_SYSTEM_ADMIN_OR_OWNER = 'rule:system_admin_or_owner'
+RULE_SYSTEM_READER_OR_OWNER = 'rule:system_reader_or_owner'
 
 # We are explicitly setting system_scope:all in these check strings because
 # they provide backwards compatibility in the event a deployment sets
@@ -60,7 +63,7 @@ rules = [
         check_str='rule:admin_required or rule:service_role'),
     policy.RuleDefault(
         name='owner',
-        check_str='user_id:%(user_id)s'),
+        check_str=RULE_OWNER),
     policy.RuleDefault(
         name='admin_or_owner',
         check_str='rule:admin_required or rule:owner'),
@@ -73,6 +76,18 @@ rules = [
     policy.RuleDefault(
         name='service_admin_or_token_subject',
         check_str='rule:service_or_admin or rule:token_subject'),
+    policy.RuleDefault(
+        name='system_reader',
+        check_str=SYSTEM_READER),
+    policy.RuleDefault(
+        name='system_admin',
+        check_str=SYSTEM_ADMIN),
+    policy.RuleDefault(
+        name='system_admin_or_owner',
+        check_str='rule:system_admin or rule:owner'),
+    policy.RuleDefault(
+        name='system_reader_or_owner',
+        check_str='rule:system_reader or rule:owner'),
 ]
 
 

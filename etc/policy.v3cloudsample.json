@@ -5,6 +5,10 @@
     "admin_or_owner": "(rule:admin_required and domain_id:%(target.token.user.domain.id)s) or rule:owner",
     "admin_and_matching_domain_id": "rule:admin_required and domain_id:%(domain_id)s",
     "service_admin_or_owner": "rule:service_or_admin or rule:owner",
+    "system_admin": "role:admin and system_scope:all",
+    "system_reader": "role:reader and system_scope:all",
+    "system_admin_or_owner": "rule:system_admin or rule:owner",
+    "system_reader_or_owner": "rule:system_reader or rule:owner",
 
     "default": "rule:admin_required",
 

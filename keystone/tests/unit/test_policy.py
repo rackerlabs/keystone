@@ -369,7 +369,8 @@ class PolicyJsonTestCase(unit.TestCase):
         policy_rule_keys = [
             'admin_or_owner', 'admin_or_token_subject', 'admin_required',
             'owner', 'service_admin_or_token_subject', 'service_or_admin',
-            'service_role', 'token_subject', ]
+            'service_role', 'token_subject', 'system_admin', 'system_reader',
+            'system_admin_or_owner', 'system_reader_or_owner', ]
 
         def read_doc_targets():
             # Parse the doc/source/policy_mapping.rst file and return the
