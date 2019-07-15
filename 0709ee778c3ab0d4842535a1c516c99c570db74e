@@ -34,6 +34,24 @@
       "revId": "0709ee778c3ab0d4842535a1c516c99c570db74e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_1ab574cd",
+        "filename": "keystone/api/os_simple_cert.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-07-15T02:52:53Z",
+      "side": 1,
+      "message": "PKI things is removed long time ago. +1 for 410 by me, even there is a little API backward compatibility problem.",
+      "parentUuid": "7faddb67_85203c4a",
+      "revId": "0709ee778c3ab0d4842535a1c516c99c570db74e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
