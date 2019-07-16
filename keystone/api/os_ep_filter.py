@@ -87,7 +87,7 @@ class EndpointGroupsResource(ks_flask.ResourceBase):
         self._require_valid_filter(ep_group)
         ep_group = self._assign_unique_id(ep_group)
         return self.wrap_member(PROVIDERS.catalog_api.create_endpoint_group(
-            ep_group['id'], ep_group)), http_client.CREATED
+            ep_group)), http_client.CREATED
 
     def patch(self, endpoint_group_id):
         ENFORCER.enforce_call(action='identity:update_endpoint_group')

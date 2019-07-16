@@ -482,7 +482,7 @@ class Catalog(base.CatalogDriverBase):
             query = query.filter_by(project_id=project_id)
             query.delete(synchronize_session=False)
 
-    def create_endpoint_group(self, endpoint_group_id, endpoint_group):
+    def create_endpoint_group(self, endpoint_group):
         with sql.session_for_write() as session:
             endpoint_group_ref = EndpointGroup.from_dict(endpoint_group)
             session.add(endpoint_group_ref)
