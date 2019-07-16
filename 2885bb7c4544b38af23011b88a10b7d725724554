@@ -22,6 +22,30 @@
       "revId": "2885bb7c4544b38af23011b88a10b7d725724554",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_c5203faf",
+        "filename": "releasenotes/notes/depracated-as-of-train-de3fe41ff2251385.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2019-07-16T15:44:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fb8cfa7_e53a7632",
+      "range": {
+        "startLine": 4,
+        "startChar": 55,
+        "endLine": 4,
+        "endChar": 65
+      },
+      "revId": "2885bb7c4544b38af23011b88a10b7d725724554",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
