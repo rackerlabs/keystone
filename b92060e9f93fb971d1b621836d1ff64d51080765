@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_e1268868",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-16T22:38:52Z",
+      "side": 1,
+      "message": "These shouldn\u0027t need to be added here at all, see other comment.",
+      "parentUuid": "7faddb67_9e9a95b6",
+      "revId": "b92060e9f93fb971d1b621836d1ff64d51080765",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_1957a25a",
         "filename": "keystone/common/policies/application_credential.py",
         "patchSetId": 2
@@ -101,6 +119,41 @@
       "side": 1,
       "message": "Owner can still create application credential with a project-scoped token. Just that project admin cannot manager application credential on behalf of another user.",
       "parentUuid": "7faddb67_1957a25a",
+      "revId": "b92060e9f93fb971d1b621836d1ff64d51080765",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_413d1c8d",
+        "filename": "keystone/common/policies/application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-16T22:38:52Z",
+      "side": 1,
+      "message": "scope_types\u003dsystem when enforce_scope\u003dtrue will make it so you cannot use a project-scoped token to use this API.",
+      "parentUuid": "7faddb67_1e92254d",
+      "revId": "b92060e9f93fb971d1b621836d1ff64d51080765",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_213100a4",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-16T22:38:52Z",
+      "side": 1,
+      "message": "You shouldn\u0027t need to add these here, they are accessible from the module as base.SYSTEM_READER etc already and are just used by other policies, they don\u0027t need to be compiled into the full policies list. This is why the unit tests fail when these rules aren\u0027t added to the sample file.",
       "revId": "b92060e9f93fb971d1b621836d1ff64d51080765",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -142,6 +195,30 @@
       "side": 1,
       "message": "Only owner, with a project-scoped token, can create application credentials. Non-system users cannot manager application credential other their own. Should I word this differently?",
       "parentUuid": "7faddb67_f9de46d8",
+      "range": {
+        "startLine": 84,
+        "startChar": 4,
+        "endLine": 84,
+        "endChar": 77
+      },
+      "revId": "b92060e9f93fb971d1b621836d1ff64d51080765",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_e1dbe84b",
+        "filename": "keystone/tests/unit/protection/v3/test_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-16T22:38:52Z",
+      "side": 1,
+      "message": "Oh got it, yes this comment should be reworded to explain that domain and project users should not be able to perform app cred operations for app creds owned by other users.",
+      "parentUuid": "7faddb67_3ebe01b4",
       "range": {
         "startLine": 84,
         "startChar": 4,
