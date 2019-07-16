@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_c285985b",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-07-16T11:27:06Z",
+      "side": 1,
+      "message": "This should be removed too.",
+      "range": {
+        "startLine": 223,
+        "startChar": 30,
+        "endLine": 223,
+        "endChar": 41
+      },
+      "revId": "e82567e55261197bd6166190bfaa301957627349",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
