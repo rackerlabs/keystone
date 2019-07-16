@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_d9fa6a41",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-16T19:20:36Z",
+      "side": 1,
+      "message": "I think you could close this one too https://bugs.launchpad.net/keystone/+bug/1750615",
+      "revId": "b92060e9f93fb971d1b621836d1ff64d51080765",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_d9734a15",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-16T19:20:36Z",
+      "side": 1,
+      "message": "We\u0027re actually aiming for removing policies from this file https://bugs.launchpad.net/keystone/+bug/1806762",
+      "revId": "b92060e9f93fb971d1b621836d1ff64d51080765",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_1957a25a",
+        "filename": "keystone/common/policies/application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-16T19:20:36Z",
+      "side": 1,
+      "message": "These still need to allow for a project scope in the scope type. The reason is that when [oslo_policy]/enforce_scope\u003dtrue, oslo.policy will enforce the scope regardless of the check string. Users who only have a role assignment on a project and are using a project-scoped token need to be able to use this API.",
+      "revId": "b92060e9f93fb971d1b621836d1ff64d51080765",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_f9de46d8",
+        "filename": "keystone/tests/unit/protection/v3/test_application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-16T19:20:36Z",
+      "side": 1,
+      "message": "no - we definitely want non-system users to be able to perform app cred operations. Currently app creds are per-project and consequently only project users can create them.",
+      "range": {
+        "startLine": 84,
+        "startChar": 4,
+        "endLine": 84,
+        "endChar": 77
+      },
+      "revId": "b92060e9f93fb971d1b621836d1ff64d51080765",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
