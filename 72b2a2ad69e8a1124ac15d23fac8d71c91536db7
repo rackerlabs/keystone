@@ -16,6 +16,24 @@
       "revId": "72b2a2ad69e8a1124ac15d23fac8d71c91536db7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_e64b0f28",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-16T00:57:13Z",
+      "side": 1,
+      "message": "yeah, no need to specify domain in the mapping. I just tested it again with the ephemeral mapping this time.",
+      "parentUuid": "7faddb67_b560e3d0",
+      "revId": "72b2a2ad69e8a1124ac15d23fac8d71c91536db7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
