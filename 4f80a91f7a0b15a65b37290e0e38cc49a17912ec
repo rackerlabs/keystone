@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_599c3a0d",
+        "filename": "releasenotes/notes/deprecated-as-of-train-de3fe41ff2251385.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-16T19:26:25Z",
+      "side": 1,
+      "message": "deprecated",
+      "range": {
+        "startLine": 5,
+        "startChar": 55,
+        "endLine": 5,
+        "endChar": 65
+      },
+      "revId": "4f80a91f7a0b15a65b37290e0e38cc49a17912ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
