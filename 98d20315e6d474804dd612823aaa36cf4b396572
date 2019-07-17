@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_125e9475",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-07-17T06:55:56Z",
+      "side": 1,
+      "message": "If we look the conventions discussed in etherpad [0],\nCan we add required/not required attribute also? It makes easier for contributor to understand and also do not require to chase down in another file.  \n\n{request|response}_{attribute}_{location}_{required|not required}\n\nFor example -\nrequest_default_limit_body_not_required\n\n[0]  https://etherpad.openstack.org/p/queens-ptg-keystone-doc-cleanup",
+      "range": {
+        "startLine": 96,
+        "startChar": 0,
+        "endLine": 96,
+        "endChar": 25
+      },
+      "revId": "98d20315e6d474804dd612823aaa36cf4b396572",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
