@@ -70,6 +70,30 @@
       "revId": "39ba14f1b7546b8cf4c39d37590c113bb4a7a147",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_eaf654d7",
+        "filename": "keystone/common/policies/access_rule.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-17T17:08:01Z",
+      "side": 1,
+      "message": "I think the reader role should be able to do any GET action so I don\u0027t think we should distinguish between reader and admin for get_access_rule here.\n\nWe had a related discussion about domain admins and application credentials yesterday: http://eavesdrop.openstack.org/irclogs/%23openstack-keystone/%23openstack-keystone.2019-07-16.log.html#t2019-07-16T17:01:50\n\nI think the gist is that while domain admins can manage users themselves, we don\u0027t need them to manage things that the users own, i.e. application credentials, trusts, or access rules.\n\nWhen we add support for scoping an application credential to a domain, we\u0027ll have to add \u0027domain\u0027 to the scope type here, but we\u0027ll still have to ensure that users can only manage their own app creds and not another user\u0027s.",
+      "parentUuid": "7faddb67_e5ac4dee",
+      "range": {
+        "startLine": 36,
+        "startChar": 8,
+        "endLine": 36,
+        "endChar": 41
+      },
+      "revId": "39ba14f1b7546b8cf4c39d37590c113bb4a7a147",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
