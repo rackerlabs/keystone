@@ -46,6 +46,30 @@
       "revId": "e82567e55261197bd6166190bfaa301957627349",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_18431515",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-07-17T08:53:02Z",
+      "side": 1,
+      "message": "Since \u0027endpoint_id\u0027 isn\u0027t in use in this function. Can\u0027t we avoid passing it in here [1] and also updating [2]\n\n[1] https://github.com/openstack/keystone/blob/master/keystone/catalog/core.py#L200\n[2]https://github.com/openstack/keystone/blob/master/keystone/catalog/backends/base.py#L158",
+      "parentUuid": "7faddb67_ad4de13e",
+      "range": {
+        "startLine": 223,
+        "startChar": 30,
+        "endLine": 223,
+        "endChar": 41
+      },
+      "revId": "e82567e55261197bd6166190bfaa301957627349",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
