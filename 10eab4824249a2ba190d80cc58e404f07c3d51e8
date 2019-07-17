@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_d33ebeb6",
+        "filename": "keystone/api/os_ep_filter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-07-17T09:32:08Z",
+      "side": 0,
+      "message": "wait, this will break out-tree plubin as well.",
+      "revId": "10eab4824249a2ba190d80cc58e404f07c3d51e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
