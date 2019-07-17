@@ -197,6 +197,24 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_74348d93",
+        "filename": "keystone/common/policies/application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-17T15:20:05Z",
+      "side": 1,
+      "message": "Oh ok. Didn\u0027t know old policy is still being used. Let me update.",
+      "parentUuid": "7faddb67_0443b214",
+      "revId": "b92060e9f93fb971d1b621836d1ff64d51080765",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_213100a4",
         "filename": "keystone/common/policies/base.py",
         "patchSetId": 2
