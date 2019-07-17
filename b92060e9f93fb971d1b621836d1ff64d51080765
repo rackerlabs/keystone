@@ -179,6 +179,24 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_0443b214",
+        "filename": "keystone/common/policies/application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-17T00:57:33Z",
+      "side": 1,
+      "message": "The deprecated policies are still active because oslo.policy ORs the new and deprecated policies. They need to be overridden in the tests, like this: https://opendev.org/openstack/keystone/src/commit/10eab4824249a2ba190d80cc58e404f07c3d51e8/keystone/tests/unit/protection/v3/test_projects.py#L625-L646",
+      "parentUuid": "7faddb67_a443be41",
+      "revId": "b92060e9f93fb971d1b621836d1ff64d51080765",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_213100a4",
         "filename": "keystone/common/policies/base.py",
         "patchSetId": 2
