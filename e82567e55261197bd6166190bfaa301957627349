@@ -70,6 +70,30 @@
       "revId": "e82567e55261197bd6166190bfaa301957627349",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_78580955",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-07-17T09:27:05Z",
+      "side": 1,
+      "message": "that is the problem, if we change the interface in base.py, the third part out-tree catalog plugin driver will be broken.",
+      "parentUuid": "7faddb67_18431515",
+      "range": {
+        "startLine": 223,
+        "startChar": 30,
+        "endLine": 223,
+        "endChar": 41
+      },
+      "revId": "e82567e55261197bd6166190bfaa301957627349",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
