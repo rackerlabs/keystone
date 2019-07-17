@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_a162d008",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-17T00:23:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_e1268868",
+      "revId": "b92060e9f93fb971d1b621836d1ff64d51080765",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_1957a25a",
         "filename": "keystone/common/policies/application_credential.py",
         "patchSetId": 2
@@ -143,6 +161,24 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_a443be41",
+        "filename": "keystone/common/policies/application_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-17T00:23:50Z",
+      "side": 1,
+      "message": "Can you take a look at https://review.opendev.org/#/c/670926/2/keystone/tests/unit/protection/v3/test_application_credential.py line 55-80. The application credential was successfully created by owner with an project-scoped token. All the tests are performed with enforce_scope\u003dTrue. What am I missing?",
+      "parentUuid": "7faddb67_413d1c8d",
+      "revId": "b92060e9f93fb971d1b621836d1ff64d51080765",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_213100a4",
         "filename": "keystone/common/policies/base.py",
         "patchSetId": 2
@@ -154,6 +190,24 @@
       "writtenOn": "2019-07-16T22:38:52Z",
       "side": 1,
       "message": "You shouldn\u0027t need to add these here, they are accessible from the module as base.SYSTEM_READER etc already and are just used by other policies, they don\u0027t need to be compiled into the full policies list. This is why the unit tests fail when these rules aren\u0027t added to the sample file.",
+      "revId": "b92060e9f93fb971d1b621836d1ff64d51080765",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_c1226cb9",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-17T00:23:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_213100a4",
       "revId": "b92060e9f93fb971d1b621836d1ff64d51080765",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
