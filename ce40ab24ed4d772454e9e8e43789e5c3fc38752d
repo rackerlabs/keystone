@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_ea0bb426",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 20
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-17T17:50:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_07ec148d",
+      "range": {
+        "startLine": 12,
+        "startChar": 35,
+        "endLine": 12,
+        "endChar": 54
+      },
+      "revId": "ce40ab24ed4d772454e9e8e43789e5c3fc38752d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_d23c7c30",
         "filename": "keystone/api/auth.py",
         "patchSetId": 20
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_2a16ac56",
+        "filename": "keystone/api/auth.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-17T17:50:19Z",
+      "side": 1,
+      "message": "If the remote id attribute key is present in the flask environment, that is good enough to break here. There will only be one remote ID in the flask environment. We still use the remote ID we found in the flask environment to make sure we get to the right idp on line 351.",
+      "parentUuid": "7faddb67_d23c7c30",
+      "range": {
+        "startLine": 342,
+        "startChar": 12,
+        "endLine": 343,
+        "endChar": 21
+      },
+      "revId": "ce40ab24ed4d772454e9e8e43789e5c3fc38752d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_f2b418f4",
         "filename": "keystone/tests/unit/federation/test_core.py",
         "patchSetId": 20
@@ -59,6 +107,30 @@
       "writtenOn": "2019-07-17T06:43:45Z",
       "side": 1,
       "message": "Unrelated change? Can we do this into another patch updating others too such as L58.",
+      "range": {
+        "startLine": 48,
+        "startChar": 44,
+        "endLine": 48,
+        "endChar": 45
+      },
+      "revId": "ce40ab24ed4d772454e9e8e43789e5c3fc38752d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_6c15a13f",
+        "filename": "keystone/tests/unit/federation/test_core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-17T17:50:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_f2b418f4",
       "range": {
         "startLine": 48,
         "startChar": 44,
