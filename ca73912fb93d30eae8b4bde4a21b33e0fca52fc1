@@ -1,0 +1,273 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_72dd7ade",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-17T22:00:12Z",
+      "side": 1,
+      "message": "Could extract this from https://opendev.org/openstack/keystone/src/commit/815140f10aa1d7ea2cdf5d5c3132b5cb33afae44/keystone/tests/unit/application_credential/test_backends.py#L30 (just an idea, could be done later)",
+      "revId": "ca73912fb93d30eae8b4bde4a21b33e0fca52fc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_b5cafc9d",
+        "filename": "keystone/tests/unit/protection/v3/test_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-17T22:00:12Z",
+      "side": 1,
+      "message": "Maybe just _TestAppCredBase? The bootstrap part isn\u0027t an important part of this class, just of its parent.",
+      "range": {
+        "startLine": 31,
+        "startChar": 6,
+        "endLine": 31,
+        "endChar": 35
+      },
+      "revId": "ca73912fb93d30eae8b4bde4a21b33e0fca52fc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_9201163b",
+        "filename": "keystone/tests/unit/protection/v3/test_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-17T22:00:12Z",
+      "side": 1,
+      "message": "Confusing choice of word here, as the TestCaseWithBootstrap class is all about using `keystone-manage bootstrap` to create the initial admin user, which is different from what the create_user call is doing here.",
+      "range": {
+        "startLine": 37,
+        "startChar": 10,
+        "endLine": 37,
+        "endChar": 19
+      },
+      "revId": "ca73912fb93d30eae8b4bde4a21b33e0fca52fc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_129be617",
+        "filename": "keystone/tests/unit/protection/v3/test_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-17T22:00:12Z",
+      "side": 1,
+      "message": "Could use self.app_cred_project_id here for consistency with the line above",
+      "range": {
+        "startLine": 54,
+        "startChar": 23,
+        "endLine": 54,
+        "endChar": 49
+      },
+      "revId": "ca73912fb93d30eae8b4bde4a21b33e0fca52fc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_f2c08ae3",
+        "filename": "keystone/tests/unit/protection/v3/test_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-17T22:00:12Z",
+      "side": 1,
+      "message": "That\u0027s not what this method is doing",
+      "range": {
+        "startLine": 58,
+        "startChar": 43,
+        "endLine": 58,
+        "endChar": 71
+      },
+      "revId": "ca73912fb93d30eae8b4bde4a21b33e0fca52fc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_b26bf2ee",
+        "filename": "keystone/tests/unit/protection/v3/test_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-17T22:00:12Z",
+      "side": 1,
+      "message": "You could just use PROVIDERS.application_credential_api.create_application_credential(unit.new_application_credential_ref()) to create the app cred, if you\u0027re not actually testing the user\u0027s ability to create it.",
+      "revId": "ca73912fb93d30eae8b4bde4a21b33e0fca52fc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_d2478e76",
+        "filename": "keystone/tests/unit/protection/v3/test_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-17T22:00:12Z",
+      "side": 1,
+      "message": "I suggest to also have a test that ensures trying to look up a nonexistent app cred for another user results in a FORBIDDEN (as opposed to a NOT FOUND), e.g. https://opendev.org/openstack/keystone/src/commit/815140f10aa1d7ea2cdf5d5c3132b5cb33afae44/keystone/tests/unit/protection/v3/test_credentials.py#L198-L203",
+      "revId": "ca73912fb93d30eae8b4bde4a21b33e0fca52fc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_b57c3c72",
+        "filename": "keystone/tests/unit/protection/v3/test_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-17T22:00:12Z",
+      "side": 1,
+      "message": "I find this confusing, let\u0027s rename _SystemUserTests to  something else if it\u0027s not specific to system users",
+      "revId": "ca73912fb93d30eae8b4bde4a21b33e0fca52fc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_922276b8",
+        "filename": "keystone/tests/unit/protection/v3/test_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-17T22:00:12Z",
+      "side": 1,
+      "message": "This seems to be missing a test for being able to create one\u0027s own app cred?\n\nI think you may as well incorporate this into the Project*Tests or create a _ProjectUserTests class. Add tests there to show that users can create app creds for themselves but not for others.",
+      "range": {
+        "startLine": 346,
+        "startChar": 6,
+        "endLine": 346,
+        "endChar": 16
+      },
+      "revId": "ca73912fb93d30eae8b4bde4a21b33e0fca52fc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_f21c0a79",
+        "filename": "keystone/tests/unit/protection/v3/test_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-17T22:00:12Z",
+      "side": 1,
+      "message": "Missing domain member and domain reader tests",
+      "range": {
+        "startLine": 375,
+        "startChar": 6,
+        "endLine": 375,
+        "endChar": 22
+      },
+      "revId": "ca73912fb93d30eae8b4bde4a21b33e0fca52fc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_1220c6ab",
+        "filename": "keystone/tests/unit/protection/v3/test_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-17T22:00:12Z",
+      "side": 1,
+      "message": "Missing project member and project reader tests",
+      "range": {
+        "startLine": 415,
+        "startChar": 6,
+        "endLine": 415,
+        "endChar": 23
+      },
+      "revId": "ca73912fb93d30eae8b4bde4a21b33e0fca52fc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_75c804a5",
+        "filename": "releasenotes/notes/bug-1818725-96d698e22e648764.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-17T22:00:12Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 27,
+        "startChar": 51,
+        "endLine": 27,
+        "endChar": 52
+      },
+      "revId": "ca73912fb93d30eae8b4bde4a21b33e0fca52fc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_d5cd38b7",
+        "filename": "releasenotes/notes/bug-1818725-96d698e22e648764.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-17T22:00:12Z",
+      "side": 1,
+      "message": "Also bug 1750615",
+      "revId": "ca73912fb93d30eae8b4bde4a21b33e0fca52fc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
