@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_2516e556",
+        "filename": "keystone/common/policies/application_credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-07-18T07:05:24Z",
+      "side": 1,
+      "message": "The deprecated reason can be written the same as [1] to have consistency all over the keystone.\n\n[1] https://github.com/openstack/keystone/blob/master/keystone/common/policies/credential.py#L27",
+      "range": {
+        "startLine": 34,
+        "startChar": 20,
+        "endLine": 34,
+        "endChar": 23
+      },
+      "revId": "49a5a5f2349cfc4f8572cff095ff9d76240be9ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_734ed938",
+        "filename": "keystone/common/policies/application_credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-07-18T07:05:24Z",
+      "side": 1,
+      "message": "It might be easier implementing system-reader support before incorporating system admin?",
+      "range": {
+        "startLine": 84,
+        "startChar": 23,
+        "endLine": 84,
+        "endChar": 49
+      },
+      "revId": "49a5a5f2349cfc4f8572cff095ff9d76240be9ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_b3e4510e",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-07-18T07:05:24Z",
+      "side": 1,
+      "message": "The rules for SYSTEM_READER and SYSTEM_ADMIN is already defined in L49 and L50. Why not reusing those?",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 80
+      },
+      "revId": "49a5a5f2349cfc4f8572cff095ff9d76240be9ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
