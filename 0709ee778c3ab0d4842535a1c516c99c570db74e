@@ -52,6 +52,42 @@
       "revId": "0709ee778c3ab0d4842535a1c516c99c570db74e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_89fc8470",
+        "filename": "keystone/api/os_simple_cert.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-07-18T09:27:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_1bca7a6c",
+      "revId": "0709ee778c3ab0d4842535a1c516c99c570db74e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_e901786b",
+        "filename": "keystone/api/os_simple_cert.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-07-18T09:27:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_1ab574cd",
+      "revId": "0709ee778c3ab0d4842535a1c516c99c570db74e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
