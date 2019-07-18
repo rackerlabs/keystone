@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_e164324c",
+        "filename": "keystone/api/auth.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-07-18T05:59:18Z",
+      "side": 1,
+      "message": "thanks for clarifying",
+      "parentUuid": "7faddb67_2a16ac56",
+      "range": {
+        "startLine": 342,
+        "startChar": 12,
+        "endLine": 343,
+        "endChar": 21
+      },
+      "revId": "ce40ab24ed4d772454e9e8e43789e5c3fc38752d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_f2b418f4",
         "filename": "keystone/tests/unit/federation/test_core.py",
         "patchSetId": 20
