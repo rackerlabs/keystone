@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_e8e2cbd4",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-07-18T15:36:35Z",
+      "side": 1,
+      "message": "nit: we could link to generic federation documentation we have\n\nhttps://docs.openstack.org/keystone/latest/admin/federation/federated_identity.html",
+      "range": {
+        "startLine": 190,
+        "startChar": 30,
+        "endLine": 190,
+        "endChar": 52
+      },
+      "revId": "4fb4d8b8a4055dfacf13a409e590485461d766b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_48d3df04",
+        "filename": "doc/source/admin/configure_tokenless_x509.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-07-18T15:36:35Z",
+      "side": 1,
+      "message": "++\n\nThanks for elaborating on this.",
+      "revId": "4fb4d8b8a4055dfacf13a409e590485461d766b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
