@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_1649885e",
+        "filename": "doc/source/admin/external-authentication.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-18T16:55:11Z",
+      "side": 0,
+      "message": "Is there another safer example we could use, like kerberos? We\u0027re still allowing external auth so it would still be best to document it as long as we\u0027re also including a disclaimer.",
+      "revId": "e9ee189b4392bbd9ff4324cb194ee9e1e0818586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
