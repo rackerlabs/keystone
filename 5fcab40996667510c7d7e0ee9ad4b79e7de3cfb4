@@ -22,6 +22,76 @@
       "revId": "5fcab40996667510c7d7e0ee9ad4b79e7de3cfb4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_16973a4a",
+        "filename": "doc/source/admin/external-authentication.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2019-07-19T13:48:41Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7faddb67_b3d8d1ee",
+      "range": {
+        "startLine": 7,
+        "startChar": 66,
+        "endLine": 7,
+        "endChar": 67
+      },
+      "revId": "5fcab40996667510c7d7e0ee9ad4b79e7de3cfb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_7629ce34",
+        "filename": "doc/source/admin/external-authentication.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2019-07-19T13:48:41Z",
+      "side": 1,
+      "message": "\"used\"",
+      "range": {
+        "startLine": 81,
+        "startChar": 74,
+        "endLine": 81,
+        "endChar": 77
+      },
+      "revId": "5fcab40996667510c7d7e0ee9ad4b79e7de3cfb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_76ac6e9e",
+        "filename": "doc/source/admin/external-authentication.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2019-07-19T13:48:41Z",
+      "side": 1,
+      "message": "Do we want to recommend that x509 \"only\" be used with federation?",
+      "range": {
+        "startLine": 82,
+        "startChar": 4,
+        "endLine": 82,
+        "endChar": 28
+      },
+      "revId": "5fcab40996667510c7d7e0ee9ad4b79e7de3cfb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
