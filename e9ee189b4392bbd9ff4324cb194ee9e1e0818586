@@ -34,6 +34,24 @@
       "revId": "e9ee189b4392bbd9ff4324cb194ee9e1e0818586",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_93cd7fb8",
+        "filename": "doc/source/admin/external-authentication.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-07-19T09:10:43Z",
+      "side": 0,
+      "message": "The `CAUTION` is good.\n+1 for Colllen, this example part can be kept.",
+      "parentUuid": "7faddb67_9d5b50f4",
+      "revId": "e9ee189b4392bbd9ff4324cb194ee9e1e0818586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
