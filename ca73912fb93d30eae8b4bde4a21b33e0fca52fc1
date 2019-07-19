@@ -295,6 +295,24 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_4a0c2193",
+        "filename": "keystone/tests/unit/protection/v3/test_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-19T17:20:54Z",
+      "side": 1,
+      "message": "Without accounting for policy, it would return a 404. The test should assure us that the default policy prevents users from getting information about the existence of an app cred.",
+      "parentUuid": "7faddb67_6c5828f9",
+      "revId": "ca73912fb93d30eae8b4bde4a21b33e0fca52fc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_b57c3c72",
         "filename": "keystone/tests/unit/protection/v3/test_application_credential.py",
         "patchSetId": 4
@@ -324,6 +342,24 @@
       "side": 1,
       "message": "How about _SystemUserAndOwnerTests?",
       "parentUuid": "7faddb67_b57c3c72",
+      "revId": "ca73912fb93d30eae8b4bde4a21b33e0fca52fc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_0a2aa9d9",
+        "filename": "keystone/tests/unit/protection/v3/test_application_credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-19T17:20:54Z",
+      "side": 1,
+      "message": "wfm",
+      "parentUuid": "7faddb67_4c1f6c07",
       "revId": "ca73912fb93d30eae8b4bde4a21b33e0fca52fc1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
