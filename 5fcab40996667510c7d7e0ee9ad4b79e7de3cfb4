@@ -92,6 +92,30 @@
       "revId": "5fcab40996667510c7d7e0ee9ad4b79e7de3cfb4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_6a0a3d20",
+        "filename": "doc/source/admin/external-authentication.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-19T16:44:14Z",
+      "side": 1,
+      "message": "Yes. X.509 should be for federation only. External auth is only useful in a situation where the all the identities are managed by a single IDP and in a single monolithic domain. And it cannot be used in conjunction with federation either. X.509, on the other hand, have a lot more attributes then just the username mapping and it shouldn\u0027t be limited by external auth.",
+      "parentUuid": "7faddb67_76ac6e9e",
+      "range": {
+        "startLine": 82,
+        "startChar": 4,
+        "endLine": 82,
+        "endChar": 28
+      },
+      "revId": "5fcab40996667510c7d7e0ee9ad4b79e7de3cfb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
