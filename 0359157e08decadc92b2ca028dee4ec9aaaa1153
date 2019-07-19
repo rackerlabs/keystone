@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_5da07890",
+        "filename": "keystone/api/os_simple_cert.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-07-19T05:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_9607b818",
+      "revId": "0359157e08decadc92b2ca028dee4ec9aaaa1153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_0b588153",
         "filename": "keystone/exception.py",
         "patchSetId": 22
@@ -30,6 +48,24 @@
       "writtenOn": "2019-07-18T16:49:16Z",
       "side": 1,
       "message": "This exception isn\u0027t needed any more",
+      "revId": "0359157e08decadc92b2ca028dee4ec9aaaa1153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_fdaa846e",
+        "filename": "keystone/exception.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-07-19T05:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_0b588153",
       "revId": "0359157e08decadc92b2ca028dee4ec9aaaa1153",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -75,6 +111,54 @@
         "startChar": 54,
         "endLine": 18,
         "endChar": 65
+      },
+      "revId": "0359157e08decadc92b2ca028dee4ec9aaaa1153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_bdbaccbd",
+        "filename": "releasenotes/notes/removed-as-of-train-92b2942a680eb859.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-07-19T05:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_2b28dd94",
+      "range": {
+        "startLine": 18,
+        "startChar": 54,
+        "endLine": 18,
+        "endChar": 65
+      },
+      "revId": "0359157e08decadc92b2ca028dee4ec9aaaa1153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_1da680ac",
+        "filename": "releasenotes/notes/removed-as-of-train-92b2942a680eb859.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-07-19T05:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_0b2de1a6",
+      "range": {
+        "startLine": 18,
+        "startChar": 39,
+        "endLine": 18,
+        "endChar": 42
       },
       "revId": "0359157e08decadc92b2ca028dee4ec9aaaa1153",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
