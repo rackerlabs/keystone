@@ -16,6 +16,24 @@
       "revId": "e9ee189b4392bbd9ff4324cb194ee9e1e0818586",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_9d5b50f4",
+        "filename": "doc/source/admin/external-authentication.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-19T04:39:11Z",
+      "side": 0,
+      "message": "let me setup kerberos on my dev environment to get an accurate example",
+      "parentUuid": "7faddb67_1649885e",
+      "revId": "e9ee189b4392bbd9ff4324cb194ee9e1e0818586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
