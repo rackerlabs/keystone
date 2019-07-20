@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_46473578",
+        "filename": "keystone/catalog/backends/base.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2019-07-20T12:54:10Z",
+      "side": 1,
+      "message": "might be good to add some desc on the parameter of \"hints\", like what L65 did.",
+      "revId": "6cdb3a8374599a95303dc9bf14dbe96c2d4c0f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_e6618106",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1066,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2019-07-20T12:54:10Z",
+      "side": 1,
+      "message": "existent",
+      "range": {
+        "startLine": 1066,
+        "startChar": 32,
+        "endLine": 1066,
+        "endChar": 40
+      },
+      "revId": "6cdb3a8374599a95303dc9bf14dbe96c2d4c0f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
