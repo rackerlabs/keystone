@@ -1,0 +1,11 @@
+Code-Review+1: Elod Illes <elod.illes@est.tech>
+Code-Review+1: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: Vishakha Agarwal <agarwalvishakha18@gmail.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Sat, 20 Jul 2019 05:00:09 +0000
+Reviewed-on: https://review.opendev.org/666861
+Project: openstack/keystone
+Branch: refs/heads/stable/stein
