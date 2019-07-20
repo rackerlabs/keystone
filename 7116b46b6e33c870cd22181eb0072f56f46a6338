@@ -22,6 +22,30 @@
       "revId": "7116b46b6e33c870cd22181eb0072f56f46a6338",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_a67e29ac",
+        "filename": "keystone/api/os_simple_cert.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2019-07-20T12:25:55Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "7faddb67_4d3c38e0",
+      "range": {
+        "startLine": 34,
+        "startChar": 22,
+        "endLine": 36,
+        "endChar": 55
+      },
+      "revId": "7116b46b6e33c870cd22181eb0072f56f46a6338",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
