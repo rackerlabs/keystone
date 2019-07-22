@@ -45,6 +45,109 @@
       "revId": "13feeb03ab9b9358e40377c4c7a6fa4a44206c33",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_489ded08",
+        "filename": "doc/source/admin/caching-layer.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-22T22:53:39Z",
+      "side": 1,
+      "message": "Maybe this?\n\nSetting default backend to ``null`` effectively disable all caching even though [cache]enabled\u003dtrue.",
+      "range": {
+        "startLine": 76,
+        "startChar": 57,
+        "endLine": 76,
+        "endChar": 76
+      },
+      "revId": "13feeb03ab9b9358e40377c4c7a6fa4a44206c33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_288431b1",
+        "filename": "doc/source/admin/caching-layer.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-22T22:53:39Z",
+      "side": 1,
+      "message": "Note that Redis and memcached are very different. One is replicated and persisted, and the other is not.",
+      "revId": "13feeb03ab9b9358e40377c4c7a6fa4a44206c33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_48b64d8d",
+        "filename": "doc/source/admin/caching-layer.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-22T22:53:39Z",
+      "side": 1,
+      "message": "I am not sure if this statement is true. It all depends on the order in which the memcache ring is specified. Say if you have 3 Keystone instances and the memcache order is \"memcache1,memcache2,memcache3\" configured on all three, all three Keystone instances will see the data the same way.",
+      "range": {
+        "startLine": 90,
+        "startChar": 1,
+        "endLine": 92,
+        "endChar": 34
+      },
+      "revId": "13feeb03ab9b9358e40377c4c7a6fa4a44206c33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_0875b5cc",
+        "filename": "doc/source/admin/caching-layer.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-22T22:53:39Z",
+      "side": 1,
+      "message": "Also, memcache is a only useful if the same data is access repeatedly in a given interval. i.e.token validation data is perfect for caching. If the data is access sparingly during the cache duration, memcache will not help performance.",
+      "revId": "13feeb03ab9b9358e40377c4c7a6fa4a44206c33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_882f65a6",
+        "filename": "doc/source/admin/caching-layer.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-22T22:53:39Z",
+      "side": 1,
+      "message": "May want to explain that fernet token validating is pulling identity and resource data from the various backends. If those aren\u0027t cached, fernet token validation performance will not be optimal.",
+      "range": {
+        "startLine": 118,
+        "startChar": 67,
+        "endLine": 120,
+        "endChar": 37
+      },
+      "revId": "13feeb03ab9b9358e40377c4c7a6fa4a44206c33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
