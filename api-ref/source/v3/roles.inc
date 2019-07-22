@@ -605,7 +605,7 @@ Assign role to user on domain
 
 Assigns a role to a user on a domain.
 
-Relationship: ``https://developer.openstack.org/api-ref/identity/v3/index.html#assign-role-to-user-on-domain``
+Relationship: ``https://docs.openstack.org/api-ref/identity/v3/index.html#assign-role-to-user-on-domain``
 
 Request
 -------
@@ -1053,7 +1053,7 @@ List implied (inference) roles for role
 Lists implied (inference) roles for a role.
 
 Relationship:
-``https://developer.openstack.org/api-ref/identity/v3/#list-implied-roles-for-role``
+``https://docs.openstack.org/api-ref/identity/v3/#list-implied-roles-for-role``
 
 Request
 -------
@@ -1106,7 +1106,7 @@ Create role inference rule
 Creates a role inference rule.
 
 Relationship:
-``https://developer.openstack.org/api-ref/identity/v3/#create-role-inference-rule``
+``https://docs.openstack.org/api-ref/identity/v3/#create-role-inference-rule``
 
 Request
 -------
@@ -1161,7 +1161,7 @@ Get role inference rule
 Gets a role inference rule.
 
 Relationship:
-``https://developer.openstack.org/api-ref/identity/v3/#get-role-inference-rule``
+``https://docs.openstack.org/api-ref/identity/v3/#get-role-inference-rule``
 
 Request
 -------
@@ -1216,7 +1216,7 @@ Confirm role inference rule
 Checks a role role inference rule.
 
 Relationship:
-``https://developer.openstack.org/api-ref/identity/v3/#confirm-role-inference-rule``
+``https://docs.openstack.org/api-ref/identity/v3/#confirm-role-inference-rule``
 
 Request
 -------
@@ -1258,7 +1258,7 @@ Delete role inference rule
 Deletes a role inference rule.
 
 Relationship:
-``https://developer.openstack.org/api-ref/identity/v3/#delete-role-inference-rule``
+``https://docs.openstack.org/api-ref/identity/v3/#delete-role-inference-rule``
 
 Request
 -------
@@ -1356,7 +1356,7 @@ List all role inference rules
 Lists all role inference rules.
 
 Relationship:
-``https://developer.openstack.org/api-ref/identity/v3/#list-all-role-inference-rules``
+``https://docs.openstack.org/api-ref/identity/v3/#list-all-role-inference-rules``
 
 Response
 --------
