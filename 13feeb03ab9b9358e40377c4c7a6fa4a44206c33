@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_92d6b927",
+        "filename": "doc/source/admin/caching-layer.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2019-07-22T17:47:24Z",
+      "side": 1,
+      "message": "Do we need this word?",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 27
+      },
+      "revId": "13feeb03ab9b9358e40377c4c7a6fa4a44206c33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_b2197523",
+        "filename": "doc/source/admin/caching-layer.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2019-07-22T17:47:24Z",
+      "side": 1,
+      "message": "nit: something like:\n\n... imperative in order to achieve a responsive...",
+      "range": {
+        "startLine": 7,
+        "startChar": 26,
+        "endLine": 7,
+        "endChar": 36
+      },
+      "revId": "13feeb03ab9b9358e40377c4c7a6fa4a44206c33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
