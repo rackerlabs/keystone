@@ -1,18 +1,47 @@
-Caching layer
+Caching guide
 =============
 
-OpenStack Identity supports a caching layer that is above the configurable
-subsystems (for example, token). This gives you the flexibility to setup
-caching for all or some subsystems. OpenStack Identity uses the `oslo.cache
-<https://docs.openstack.org/oslo.cache/latest/>`__ library which allows
-flexible cache back ends. The majority of the caching configuration options are
-set in the ``[cache]`` section of the ``/etc/keystone/keystone.conf`` file. The
-``enabled`` option of the ``[cache]`` section must be set to ``True`` in order
-for any subsystem to cache responses. Each section that has the capability to
-be cached will have a ``caching`` boolean value that toggles caching behavior
-of that particular subsystem.
+Keystone supports a wide variety of caching options. These options allow
+operators to prescriptively cache certain resources in specific ways or apply a
+generic caching strategy to all keystone resources. Caching data within
+keystone is imperative to responsive OpenStack cluster. Keystone's caching
+strategy is driven by the `oslo.cache
+<https://docs.openstack.org/oslo.cache/latest/>`__ library.
 
-So to enable only the token back end caching, set the values as follows:
+This section of the configuration guide describes caching best practices.
+
+Global configuration
+--------------------
+
+Keystone exposes `oslo.cache` configuration options. These options are
+relatively generic and control the overall behavior of your caching strategy.
+You can find these options in the ``[cache]`` section of your ``keystone.conf``
+configuration file.
+
+This section includes a system-wide toggle that enables or disables caching.
+You want to make sure ``keystone.conf [cache] enabled`` is set to ``true`` if
+you want keystone to cache anything at all.
+
+.. code-block:: ini
+
+   [cache]
+   enabled=true
+
+Resource configuration
+----------------------
+
+In addition to generic configuration options, keystone supplies resource
+specific configuration options that describe the behavior for caching within a
+specific subsystem. For example, if you want to disable caching of identity
+data (e.g., user and groups), you can set ``keystone.conf [identity] caching``
+to ``False``. Additionally, you can specify specific timeouts for each
+subsystem. For example, setting some resources to have shorter timeouts that
+others. These options give you more control over, especially if you don't want
+the one-size-fits-all approach available from `oslo.limit`. By default,
+keystone enables caching for all subsystems, which is highly recommended.
+
+For example, the following configuration disables all backends with the
+exception of the token backend:
 
 .. code-block:: ini
 
@@ -40,56 +69,47 @@ So to enable only the token back end caching, set the values as follows:
    [token]
    caching=true
 
-.. note::
+Backend configuration
+---------------------
 
-   Each subsystem is configured to cache by default. However, the global
-   toggle for caching defaults to ``False``. A subsystem is only able to cache
-   responses if the global toggle is enabled.
+Keystone supports backend drivers for multiple caching backing via
+`oslo.cache`. The default backend is a null backend that doesn't do anything.
+Other options include Redis and Memcached.  Please be aware of Redis licensing
+`changes <https://redislabs.com/blog/redis-labs-modules-license-changes/>`_ if
+you're planning on using Redis in your deployment.
 
-Current functional back ends are:
+It is important to note the ways in which keystone can use caching backends and
+what implications it has on performance. A common deployment strategy is to
+deploy a Memcached instance alongside keystone. Keystone can reference a local
+copy of Memcached to store data for requests that specific keystone instance
+serves. If you're deployment is highly available and scales linearly, this
+might not be the most efficient caching option since each keystone instance
+caches requests in separate, local, Memcached instances. For example, a request
+to ``GET /v3/users/6ec6a3c`` on one keystone node will result in ``6ec6a3c``
+being cached locally, but a subsequent request to get the same user from
+another keystone server in the same deployment will require a round trip to the
+database since other keystone nodes aren't guaranteed to have user ``6ec6a3c``
+in their local Memcached instance. In the worst case, each keystone node needs
+to cache the same user before the performance benefits take place. To help
+mitigate this issue, you can configure keystone to shard cache keys across a
+cluster of Memcached servers. Supplying the same backend configuration across
+each keystone node allows a cache entry from one keystone node to be visible to
+others. Now when a request for ``GET /v3/users/6ec6a3c`` is routed to another
+keystone node, it results in a cache hit instead of a miss since all keystone
+instances are sharing a common cache. You can take advantage of this by
+specifying the same server order for ``keystone.conf [cache]
+memcached_servers`` across all keystone nodes.
 
-``dogpile.cache.null``
-   A "null" backend that effectively disables all cache operations.(Default)
+The following configuration shows how to setup caching to shard cache results
+across two different instances of Memcached:
 
-``dogpile.cache.memcached``
-   Memcached back end using the standard ``python-memcached`` library.
+.. code-block:: ini
 
-``dogpile.cache.pylibmc``
-   Memcached back end using the ``pylibmc`` library.
+   [cache]
 
-``dogpile.cache.bmemcached``
-   Memcached using the ``python-binary-memcached`` library.
-
-``dogpile.cache.redis``
-   Redis back end.
-
-``dogpile.cache.dbm``
-   Local DBM file back end.
-
-``dogpile.cache.memory``
-   In-memory cache, not suitable for use outside of testing as it does not
-   cleanup its internal cache on cache expiration and does not share cache
-   between processes. This means that caching and cache invalidation will not
-   be consistent or reliable.
-
-``dogpile.cache.memory_pickle``
-   In-memory cache, but serializes objects with pickle lib. It's not suitable
-   for use outside of testing. The reason is the same with
-   ``dogpile.cache.memory``
-
-``oslo_cache.mongo``
-   MongoDB as caching back end.
-
-``oslo_cache.memcache_pool``
-   Memcached backend that does connection pooling.
-
-``oslo_cache.etcd3gw``
-   Uses etcd 3.x for storage.
-
-``oslo_cache.dict``
-   A DictCacheBackend based on dictionary, not suitable for use outside of
-   testing as it does not share cache between processes.This means that caching
-   and cache invalidation will not be consistent or reliable.
+   enabled = true
+   backend = dogpile.cache.memcached
+   backend_argument = url:192.168.1.1:11211,url:192.168.1.2:11221
 
 Caching for tokens and tokens validation
 ----------------------------------------
@@ -179,19 +199,3 @@ be fully processed and cached.
     (set in the ``[cache]`` section of the configuration) before it is
     reflected. If this type of delay is an issue, we recommend disabling
     caching for that particular subsystem.
-
-Configure the Memcached back end example
-----------------------------------------
-
-The following example shows how to configure the memcached back end:
-
-.. code-block:: ini
-
-   [cache]
-
-   enabled = true
-   backend = dogpile.cache.memcached
-   backend_argument = url:127.0.0.1:11211
-
-You need to specify the URL to reach the ``memcached`` instance with the
-``backend_argument`` parameter.
