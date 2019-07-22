@@ -16,6 +16,24 @@
       "revId": "e3cf9efe04927f2ca70ec24f61d6e5165b7d91fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_68d469be",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 608,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-22T22:35:59Z",
+      "side": 1,
+      "message": "Just curious, what is a \"reference identifier\" and how does it being used? If it\u0027s not a URL then why bother putting it in URL form instead using something that does not cause typing fatigue?",
+      "parentUuid": "7faddb67_c8b6bd3f",
+      "revId": "e3cf9efe04927f2ca70ec24f61d6e5165b7d91fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
