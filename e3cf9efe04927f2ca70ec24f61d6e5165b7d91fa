@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_c8b6bd3f",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 608,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-22T21:51:42Z",
+      "side": 1,
+      "message": "The Relationship \"links\" in this page aren\u0027t supposed to be real URLs but just reference identifiers and as such shouldn\u0027t be changed, afaict the fact that they were changed in the past was a mistake.\n\nOTOH I am hard pressed to explain the usefulness of them...",
+      "revId": "e3cf9efe04927f2ca70ec24f61d6e5165b7d91fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
