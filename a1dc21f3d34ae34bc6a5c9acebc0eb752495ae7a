@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_8493be5c",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1300,
+      "author": {
+        "id": 11805
+      },
+      "writtenOn": "2019-07-23T20:36:23Z",
+      "side": 1,
+      "message": "Sorry I\u0027m late to this but isn\u0027t this incorrect for python3-ldap and bytes_mode\u003dFalse? For more context: https://opendev.org/openstack/keystone/commit/a2e7ccb4b32140f122c0beee0f3fcc1109db36bf",
+      "revId": "a1dc21f3d34ae34bc6a5c9acebc0eb752495ae7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
