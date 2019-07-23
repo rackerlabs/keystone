@@ -126,6 +126,29 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_e98cdb80",
+        "filename": "keystone/tests/unit/test_contrib_simple_cert.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-07-23T05:19:44Z",
+      "side": 0,
+      "message": "Removed the test case. Don\u0027t think it is valid to check the missing files",
+      "range": {
+        "startLine": 53,
+        "startChar": 8,
+        "endLine": 53,
+        "endChar": 32
+      },
+      "revId": "94a1b57897b52f980176354a94830f63a26365dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fb8cfa7_44727aaf",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 14
