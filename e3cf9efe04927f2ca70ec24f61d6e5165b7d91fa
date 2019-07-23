@@ -52,6 +52,24 @@
       "revId": "e3cf9efe04927f2ca70ec24f61d6e5165b7d91fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_ee02a10b",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 608,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2019-07-23T04:53:01Z",
+      "side": 1,
+      "message": "documented at https://docs.openstack.org/api-ref/identity/v3/index.html#relationships\n\nIn that case you should never change them ;(\n\nOk, will revert this.",
+      "parentUuid": "7faddb67_c8b6bd3f",
+      "revId": "e3cf9efe04927f2ca70ec24f61d6e5165b7d91fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
