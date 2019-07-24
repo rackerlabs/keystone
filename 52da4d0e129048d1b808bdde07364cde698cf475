@@ -46,6 +46,30 @@
       "revId": "52da4d0e129048d1b808bdde07364cde698cf475",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_cef1be03",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-24T22:11:55Z",
+      "side": 1,
+      "message": "Oh you\u0027re right it is. Changing this to RULE_OWNER would make it slightly less confusing but that\u0027s kind of a nitpick.",
+      "parentUuid": "7faddb67_4eb70e3c",
+      "range": {
+        "startLine": 50,
+        "startChar": 56,
+        "endLine": 50,
+        "endChar": 66
+      },
+      "revId": "52da4d0e129048d1b808bdde07364cde698cf475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
