@@ -22,6 +22,30 @@
       "revId": "52da4d0e129048d1b808bdde07364cde698cf475",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_4eb70e3c",
+        "filename": "keystone/common/policies/base.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-07-24T22:04:49Z",
+      "side": 1,
+      "message": "it is defined in line 64 as part of the default rules. But I can change \u0027rule:owner\u0027 to RULE_OWNER here if it makes it less confusing.",
+      "parentUuid": "7faddb67_b3514d65",
+      "range": {
+        "startLine": 50,
+        "startChar": 56,
+        "endLine": 50,
+        "endChar": 66
+      },
+      "revId": "52da4d0e129048d1b808bdde07364cde698cf475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
