@@ -1,0 +1,9 @@
+Code-Review+2: guang-yee <guang.yee@suse.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 24 Jul 2019 19:09:53 +0000
+Reviewed-on: https://review.opendev.org/672334
+Project: openstack/keystone
+Branch: refs/heads/master
