@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_ae979feb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-07-25T07:00:41Z",
+      "side": 1,
+      "message": "NIT: their",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 5
+      },
+      "revId": "ea4f5be8a8f24993c7284826cce21750f6fed3f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_51f24e08",
+        "filename": "keystone/tests/unit/protection/v3/test_grants.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1544,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-07-25T07:00:41Z",
+      "side": 1,
+      "message": "Can we add a test case for user too?test_user_cannot_revoke_grant_from_user_on_domain?",
+      "range": {
+        "startLine": 1544,
+        "startChar": 4,
+        "endLine": 1544,
+        "endChar": 58
+      },
+      "revId": "ea4f5be8a8f24993c7284826cce21750f6fed3f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
