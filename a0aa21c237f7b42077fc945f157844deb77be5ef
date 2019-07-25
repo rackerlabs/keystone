@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_eebeecfd",
+        "filename": "doc/source/admin/caching-layer.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-25T16:59:12Z",
+      "side": 0,
+      "message": "File could also be renamed if the title is being renamed",
+      "revId": "a0aa21c237f7b42077fc945f157844deb77be5ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_eeb7cc39",
+        "filename": "doc/source/admin/caching-layer.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-25T16:59:12Z",
+      "side": 0,
+      "message": "This is a section in the general configuration guide for keystone. Removing the documentation about the specific backends seems to be losing data. If we don\u0027t want to document these here then I guess we should at least replace it with a link directly to https://docs.openstack.org/oslo.cache/latest/configuration/index.html",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 33
+      },
+      "revId": "a0aa21c237f7b42077fc945f157844deb77be5ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_0ee1082b",
+        "filename": "doc/source/admin/caching-layer.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-07-25T16:59:12Z",
+      "side": 0,
+      "message": "With this gone, there\u0027s now no example for the all-in-one base case, maybe it could be mentioned first before the sharding case?",
+      "revId": "a0aa21c237f7b42077fc945f157844deb77be5ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
