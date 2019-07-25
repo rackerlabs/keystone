@@ -70,6 +70,29 @@
       "revId": "52da4d0e129048d1b808bdde07364cde698cf475",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_987222ad",
+        "filename": "keystone/tests/unit/protection/v3/test_application_credential.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-07-25T15:16:39Z",
+      "side": 1,
+      "message": "than*",
+      "range": {
+        "startLine": 119,
+        "startChar": 22,
+        "endLine": 119,
+        "endChar": 26
+      },
+      "revId": "52da4d0e129048d1b808bdde07364cde698cf475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
