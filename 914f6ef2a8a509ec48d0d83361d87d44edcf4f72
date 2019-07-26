@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_51d23836",
+        "filename": "keystone/conf/memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 19779
+      },
+      "writtenOn": "2019-07-26T11:59:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_117db61b",
+      "range": {
+        "startLine": 33,
+        "startChar": 45,
+        "endLine": 33,
+        "endChar": 50
+      },
+      "revId": "914f6ef2a8a509ec48d0d83361d87d44edcf4f72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_74df383a",
         "filename": "releasenotes/notes/deprecated-socket_timeout-option-d3358b4f2310706c.yaml",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2019-07-25T08:58:47Z",
       "side": 1,
       "message": "socket timeout",
+      "range": {
+        "startLine": 4,
+        "startChar": 8,
+        "endLine": 4,
+        "endChar": 16
+      },
+      "revId": "914f6ef2a8a509ec48d0d83361d87d44edcf4f72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_b115ace7",
+        "filename": "releasenotes/notes/deprecated-socket_timeout-option-d3358b4f2310706c.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 19779
+      },
+      "writtenOn": "2019-07-26T11:59:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_74df383a",
       "range": {
         "startLine": 4,
         "startChar": 8,
