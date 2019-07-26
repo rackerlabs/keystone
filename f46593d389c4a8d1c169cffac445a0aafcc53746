@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_668535cf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-07-26T14:31:31Z",
+      "side": 1,
+      "message": "I created a bug to track all the deprecations in the train release [1]. Could you link this as Partial-Bug in this commit message too?\n\n[1] https://bugs.launchpad.net/keystone/+bug/1838037",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 47
+      },
+      "revId": "f46593d389c4a8d1c169cffac445a0aafcc53746",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
