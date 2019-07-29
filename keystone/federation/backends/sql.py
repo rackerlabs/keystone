@@ -51,8 +51,10 @@ class FederationProtocolModel(sql.ModelBase, sql.ModelDictMixin):
 
 class IdentityProviderModel(sql.ModelBase, sql.ModelDictMixin):
     __tablename__ = 'identity_provider'
-    attributes = ['id', 'domain_id', 'enabled', 'description', 'remote_ids']
-    mutable_attributes = frozenset(['description', 'enabled', 'remote_ids'])
+    attributes = ['id', 'domain_id', 'enabled', 'description', 'remote_ids',
+                  'authorization_ttl']
+    mutable_attributes = frozenset(['description', 'enabled', 'remote_ids',
+                                    'authorization_ttl'])
 
     id = sql.Column(sql.String(64), primary_key=True)
     domain_id = sql.Column(sql.String(64), sql.ForeignKey('project.id'),
@@ -62,6 +64,7 @@ class IdentityProviderModel(sql.ModelBase, sql.ModelDictMixin):
     remote_ids = orm.relationship('IdPRemoteIdsModel',
                                   order_by='IdPRemoteIdsModel.remote_id',
                                   cascade='all, delete-orphan')
+    authorization_ttl = sql.Column(sql.Integer, nullable=True)
 
     @classmethod
     def from_dict(cls, dictionary):
