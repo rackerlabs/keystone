@@ -387,6 +387,23 @@ class UserGroupMembership(sql.ModelBase, sql.ModelDictMixin):
                           primary_key=True)
 
 
+class ExpiringUserGroupMembership(sql.ModelBase, sql.ModelDictMixin):
+    """Expiring group membership through federation mapping rules."""
+
+    __tablename__ = 'expiring_user_group_membership'
+    user_id = sql.Column(sql.String(64),
+                         sql.ForeignKey('user.id'),
+                         primary_key=True)
+    group_id = sql.Column(sql.String(64),
+                          sql.ForeignKey('group.id'),
+                          primary_key=True)
+    idp_id = sql.Column(sql.String(64),
+                        sql.ForeignKey('identity_provider.id',
+                                       ondelete='CASCADE'),
+                        primary_key=True)
+    last_verified = sql.Column(sql.DateTime, nullable=False)
+
+
 class UserOption(sql.ModelBase):
     __tablename__ = 'user_option'
     user_id = sql.Column(sql.String(64), sql.ForeignKey('user.id',
