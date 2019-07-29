@@ -3474,6 +3474,22 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         self.assertFalse(self.does_fk_exist('user', 'domain_id'))
         self.assertFalse(self.does_fk_exist('identity_provider', 'domain_id'))
 
+    def test_migration_073_contract_expiring_group_membership(self):
+        self.expand(72)
+        self.migrate(72)
+        self.contract(72)
+
+        membership_table = 'expiring_user_group_membership'
+        self.assertTableDoesNotExist(membership_table)
+
+        self.expand(73)
+        self.migrate(73)
+        self.contract(73)
+
+        self.assertTableColumns(
+            membership_table,
+            ['user_id', 'group_id', 'idp_id', 'last_verified'])
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = db_fixtures.MySQLOpportunisticFixture
