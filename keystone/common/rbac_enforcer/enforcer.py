@@ -45,6 +45,7 @@ class RBACEnforcer(object):
     __shared_state__ = {}
     __ENFORCER = None
     ACTION_STORE_ATTR = 'keystone:RBAC:action_name'
+    _enforcer_called_once = False
 
     def __init__(self):
         # NOTE(morgan): All Enforcer Instances use the same shared state;
@@ -78,8 +79,10 @@ class RBACEnforcer(object):
                          do_raise=do_raise)
 
         try:
-            return self._enforcer.enforce(
+            res = self._enforcer.enforce(
                 rule=action, target=target, creds=credentials, **extra)
+            self._enforcer_called_once = True
+            return res
         except common_policy.InvalidScope:
             raise exception.ForbiddenAction(action=action)
 
@@ -92,6 +95,8 @@ class RBACEnforcer(object):
         # The raw oslo-policy enforcer object
         if self.__ENFORCER is None:
             self.__ENFORCER = common_policy.Enforcer(CONF)
+            if self._enforcer_called_once:
+                self.__ENFORCER._logged_warnings_on_load = True
             self.register_rules(self.__ENFORCER)
         return self.__ENFORCER
 
