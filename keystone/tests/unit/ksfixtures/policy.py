@@ -29,4 +29,4 @@ class Policy(fixtures.Fixture):
         opts.set_defaults(self._config_fixture.conf)
         self._config_fixture.config(group='oslo_policy',
                                     policy_file=self._policy_file)
-        self.addCleanup(policy.reset)
+        #self.addCleanup(policy.reset)
