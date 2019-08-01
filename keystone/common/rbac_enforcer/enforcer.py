@@ -45,6 +45,7 @@ class RBACEnforcer(object):
     __shared_state__ = {}
     __ENFORCER = None
     ACTION_STORE_ATTR = 'keystone:RBAC:action_name'
+    suppress_warnings = False
 
     def __init__(self):
         # NOTE(morgan): All Enforcer Instances use the same shared state;
@@ -92,6 +93,8 @@ class RBACEnforcer(object):
         # The raw oslo-policy enforcer object
         if self.__ENFORCER is None:
             self.__ENFORCER = common_policy.Enforcer(CONF)
+            if self.suppress_warnings:
+                self.__ENFORCER.suppress_warnings = True
             self.register_rules(self.__ENFORCER)
         return self.__ENFORCER
 
