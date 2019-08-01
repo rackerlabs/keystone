@@ -657,6 +657,10 @@ class BaseTestCase(testtools.TestCase):
         warnings.filterwarnings('error', category=DeprecationWarning,
                                 module='^keystone\\.')
         warnings.simplefilter('error', exc.SAWarning)
+        warnings.filterwarnings('ignore', category=UserWarning,
+                                module='^oslo_policy\\.')
+        warnings.filterwarnings('ignore', category=DeprecationWarning,
+                                module='^oslo_context\\.')
         self.addCleanup(warnings.resetwarnings)
         # Ensure we have an empty threadlocal context at the start of each
         # test.
