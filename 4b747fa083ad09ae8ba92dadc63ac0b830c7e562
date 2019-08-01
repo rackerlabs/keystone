@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_c6005305",
+        "filename": "keystone/conf/memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-08-01T14:46:31Z",
+      "side": 1,
+      "message": "As a point, technically we don\u0027t need to deprecate this option, it isn\u0027t referenced/used. It could simply be dropped.",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 50
+      },
+      "revId": "4b747fa083ad09ae8ba92dadc63ac0b830c7e562",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
