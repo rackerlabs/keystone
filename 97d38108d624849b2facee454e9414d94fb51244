@@ -22,6 +22,30 @@
       "revId": "97d38108d624849b2facee454e9414d94fb51244",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_e8640bbb",
+        "filename": ".zuul.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-08-05T19:38:55Z",
+      "side": 0,
+      "message": "This is temporary so that we can quickly test the related oslo.policy change without waiting for a dozen tempest tests and without releasing oslo.policy. Will remove it in a future patchset before this merges.",
+      "parentUuid": "7faddb67_0505d013",
+      "range": {
+        "startLine": 150,
+        "startChar": 1,
+        "endLine": 231,
+        "endChar": 47
+      },
+      "revId": "97d38108d624849b2facee454e9414d94fb51244",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
