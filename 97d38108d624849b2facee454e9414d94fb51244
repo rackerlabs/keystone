@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_0505d013",
+        "filename": ".zuul.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-08-05T19:25:13Z",
+      "side": 0,
+      "message": "Is this delta expected/desired? That is a big .zuul change \n(I would prefer this to be separate if it is intended)",
+      "range": {
+        "startLine": 150,
+        "startChar": 1,
+        "endLine": 231,
+        "endChar": 47
+      },
+      "revId": "97d38108d624849b2facee454e9414d94fb51244",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
