@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_fdc60468",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-08-06T10:40:23Z",
+      "side": 1,
+      "message": "wrapping this in parenthesis will provide more clarity",
+      "range": {
+        "startLine": 214,
+        "startChar": 17,
+        "endLine": 214,
+        "endChar": 71
+      },
+      "revId": "01d17d72711c5f25807040787746bfb649e42f7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
