@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_6ca268fe",
+        "filename": "keystone/application_credential/backends/base.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-08-06T10:29:33Z",
+      "side": 1,
+      "message": "NIT: space missing in between.",
+      "range": {
+        "startLine": 130,
+        "startChar": 8,
+        "endLine": 131,
+        "endChar": 35
+      },
+      "revId": "05b090d7c7c1362ae294a48671e08475001edce0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_8cab2486",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-08-06T10:29:33Z",
+      "side": 1,
+      "message": "Since access_rule_id is not independent of app_creds. Should we add more details to the message returning the app creds id too?",
+      "range": {
+        "startLine": 553,
+        "startChar": 24,
+        "endLine": 553,
+        "endChar": 69
+      },
+      "revId": "05b090d7c7c1362ae294a48671e08475001edce0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
