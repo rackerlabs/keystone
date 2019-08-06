@@ -71,13 +71,9 @@ deprecated_delete_project = policy.DeprecatedRule(
     check_str=base.RULE_ADMIN_REQUIRED
 )
 
-DEPRECATED_REASON = """
-As of the Stein release, the project API understands how to handle
-system-scoped tokens in addition to project and domain tokens, making the API
-more accessible to users without compromising security or manageability for
-administrators. The new default policies for this API account for these changes
-automatically.
-"""
+DEPRECATED_REASON = (
+    "The project API is now aware of system scope and default roles."
+)
 
 project_policies = [
     policy.DocumentedRuleDefault(
