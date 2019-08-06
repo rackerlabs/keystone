@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_cdc10850",
+        "filename": "doc/source/install/keystone-install-rdo.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2019-08-06T21:11:25Z",
+      "side": 1,
+      "message": "nit on the wording, maybe something like:\n\n\"In this example, ``keystone`` is the name of both the operating system\u0027s user and group, which are specified by the ``--keystone-user`` and ``--keystone-group`` flags.\"\n\nor\n\n\"In this example, we will specify the operating system\u0027s user and group for keystone as ``keystone`` by using the ``--keystone-user`` and ``--keystone-group`` flags.\"",
+      "range": {
+        "startLine": 117,
+        "startChar": 6,
+        "endLine": 119,
+        "endChar": 17
+      },
+      "revId": "2c0dc352fdec0478d2f93cbd099f36f52929e815",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
