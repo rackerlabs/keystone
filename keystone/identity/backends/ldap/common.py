@@ -1741,6 +1741,7 @@ class EnabledEmuMixIn(BaseLdap):
 
     DEFAULT_GROUP_OBJECTCLASS = 'groupOfNames'
     DEFAULT_MEMBER_ATTRIBUTE = 'member'
+    DEFAULT_GROUP_MEMBERS_ARE_IDS = False
 
     def __init__(self, conf):
         super(EnabledEmuMixIn, self).__init__(conf)
@@ -1757,9 +1758,11 @@ class EnabledEmuMixIn(BaseLdap):
         if not self.use_group_config:
             self.member_attribute = self.DEFAULT_MEMBER_ATTRIBUTE
             self.group_objectclass = self.DEFAULT_GROUP_OBJECTCLASS
+            self.group_members_are_ids = self.DEFAULT_GROUP_MEMBERS_ARE_IDS
         else:
             self.member_attribute = conf.ldap.group_member_attribute
             self.group_objectclass = conf.ldap.group_objectclass
+            self.group_members_are_ids = conf.ldap.group_members_are_ids
 
         if not self.enabled_emulation_dn:
             naming_attr_name = 'cn'
@@ -1775,10 +1778,19 @@ class EnabledEmuMixIn(BaseLdap):
                            utf8_decode(naming_rdn[1]))
         self.enabled_emulation_naming_attr = naming_attr
 
-    def _get_enabled(self, object_id, conn):
-        dn = self._id_to_dn(object_id)
+    def _id_to_member_attribute_value(self, object_id):
+        """Convert id to value expected by member_attribute."""
+        if self.group_members_are_ids:
+            return object_id
+        return self._id_to_dn(object_id)
+
+    def _is_id_enabled(self, object_id, conn):
+        member_attr_val = self._id_to_member_attribute_value(object_id)
+        return self._is_member_enabled(member_attr_val, conn)
+
+    def _is_member_enabled(self, member_attr_val, conn):
         query = '(%s=%s)' % (self.member_attribute,
-                             ldap.filter.escape_filter_chars(dn))
+                             ldap.filter.escape_filter_chars(member_attr_val))
         try:
             enabled_value = conn.search_s(self.enabled_emulation_dn,
                                           ldap.SCOPE_BASE,
@@ -1789,24 +1801,26 @@ class EnabledEmuMixIn(BaseLdap):
             return bool(enabled_value)
 
     def _add_enabled(self, object_id):
+        member_attr_val = self._id_to_member_attribute_value(object_id)
         with self.get_connection() as conn:
-            if not self._get_enabled(object_id, conn):
+            if not self._is_member_enabled(member_attr_val, conn):
                 modlist = [(ldap.MOD_ADD,
                             self.member_attribute,
-                            [self._id_to_dn(object_id)])]
+                            [member_attr_val])]
                 try:
                     conn.modify_s(self.enabled_emulation_dn, modlist)
                 except ldap.NO_SUCH_OBJECT:
                     attr_list = [('objectClass', [self.group_objectclass]),
                                  (self.member_attribute,
-                                  [self._id_to_dn(object_id)]),
+                                  [member_attr_val]),
                                  self.enabled_emulation_naming_attr]
                     conn.add_s(self.enabled_emulation_dn, attr_list)
 
     def _remove_enabled(self, object_id):
+        member_attr_val = self._id_to_member_attribute_value(object_id)
         modlist = [(ldap.MOD_DELETE,
                     self.member_attribute,
-                    [self._id_to_dn(object_id)])]
+                    [member_attr_val])]
         with self.get_connection() as conn:
             try:
                 conn.modify_s(self.enabled_emulation_dn, modlist)
@@ -1831,7 +1845,7 @@ class EnabledEmuMixIn(BaseLdap):
             ref = super(EnabledEmuMixIn, self).get(object_id, ldap_filter)
             if ('enabled' not in self.attribute_ignore and
                     self.enabled_emulation):
-                ref['enabled'] = self._get_enabled(object_id, conn)
+                ref['enabled'] = self._is_id_enabled(object_id, conn)
             return ref
 
     def get_all(self, ldap_filter=None, hints=None):
@@ -1843,7 +1857,7 @@ class EnabledEmuMixIn(BaseLdap):
                         if x[0] != self.enabled_emulation_dn]
             with self.get_connection() as conn:
                 for obj_ref in obj_list:
-                    obj_ref['enabled'] = self._get_enabled(
+                    obj_ref['enabled'] = self._is_id_enabled(
                         obj_ref['id'], conn)
             return obj_list
         else:
