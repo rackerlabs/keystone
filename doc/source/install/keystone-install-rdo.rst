@@ -112,6 +112,12 @@ Install and configure components
 
 4. Initialize Fernet key repositories:
 
+   .. note::
+
+      ``--keystone-user`` and ``--keystone-group`` are not free to be chosen, they are
+      specified with the operating system's user and group. Here use the ``keystone``
+      by default.
+
    .. code-block:: console
 
       # keystone-manage fernet_setup --keystone-user keystone --keystone-group keystone
