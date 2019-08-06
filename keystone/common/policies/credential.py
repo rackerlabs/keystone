@@ -24,13 +24,8 @@ SYSTEM_ADMIN_OR_CRED_OWNER = (
     'or user_id:%(target.credential.user_id)s'
 )
 
-DEPRECATED_REASON = (
-    'As of the Stein release, the credential API now understands how to '
-    'handle system-scoped tokens in addition to project-scoped tokens, making '
-    'the API more accessible to users without compromising security or '
-    'manageability for administrators. The new default policies for this API '
-    'account for these changes automatically.'
-)
+DEPRECATED_REASON = "The credential API is now system-scope aware."
+
 deprecated_get_credential = policy.DeprecatedRule(
     name=base.IDENTITY % 'get_credential',
     check_str=base.RULE_ADMIN_REQUIRED

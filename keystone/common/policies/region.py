@@ -28,14 +28,7 @@ deprecated_delete_region = policy.DeprecatedRule(
     check_str=base.RULE_ADMIN_REQUIRED
 )
 
-DEPRECATED_REASON = (
-    'As of the Stein release, the region API now understands default roles '
-    'and system-scoped tokens, making the API more granular without '
-    'compromising security. The new policies for this API account for these '
-    'changes automatically. Be sure to take these new defaults into '
-    'consideration if you are relying on overrides in your deployment for the '
-    'region API.'
-)
+DEPRECATED_REASON = "The region API is now system-scope aware."
 
 region_policies = [
     policy.DocumentedRuleDefault(
