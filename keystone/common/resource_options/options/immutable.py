@@ -11,9 +11,9 @@
 # under the License.
 
 # Implement the "Immutable" resource option
-from keystone import exception
 from keystone.common.resource_options import core as ro_core
 from keystone.common.validation import parameter_types
+from keystone import exception
 
 IMMUTABLE_OPT = (
     ro_core.ResourceOption(
@@ -28,6 +28,7 @@ def check_resource_immutable(resource_ref):
     """Check to see if a resource is immutable.
 
     :param dict resource_ref: A dictionary reference of a resource to inspect
+
     """
     return resource_ref.get('options', {}).get(
         IMMUTABLE_OPT.option_name, False)
@@ -44,6 +45,7 @@ def check_immutable_update(original_resource_ref, new_resource_ref, type,
     :param resource_id: the id of the resource (e.g. project['id']),
                         usually a UUID
     :raises: ResourceUpdateForbidden
+
     """
     immutable = check_resource_immutable(original_resource_ref)
     if immutable:
@@ -55,14 +57,13 @@ def check_immutable_update(original_resource_ref, new_resource_ref, type,
 
 
 def check_immutable_delete(resource_ref, type, resource_id):
-    """
-    Check if a delete is allowed on a resource; reject if the resource is
-    immutable.
+    """Check if a delete is allowed on a resource. Reject if the resource is immutable.
 
     :param resource_ref: dict reference of the resource
     :param type: resource type (str) e.g. 'project'
     :param resource_id: id of the resource (str) e.g. project['id']
-    :raises ResourceDeleteForbidden
+    :raises: ResourceDeleteForbidden
+
     """
     if check_resource_immutable(resource_ref):
         raise exception.ResourceDeleteForbidden(
