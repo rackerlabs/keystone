@@ -242,6 +242,18 @@ def new_endpoint_ref(service_id, interface='public',
     return ref
 
 
+def new_endpoint_group_ref(filters):
+    ref = {
+        'endpoint_group': {
+            'id': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'filters': filters,
+            'name': uuid.uuid4().hex
+        }
+    }
+    return ref
+
+
 def new_endpoint_ref_with_region(service_id, region, interface='public',
                                  **kwargs):
     """Define an endpoint_ref having a pre-3.2 form.
