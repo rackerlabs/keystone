@@ -1,0 +1,10 @@
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+1: Vishakha Agarwal <agarwalvishakha18@gmail.com>
+Code-Review+2: Kristi Nikolla <kristi@nikolla.me>
+Workflow+1: Kristi Nikolla <kristi@nikolla.me>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 07 Aug 2019 00:32:55 +0000
+Reviewed-on: https://review.opendev.org/655166
+Project: openstack/keystone
+Branch: refs/heads/master
