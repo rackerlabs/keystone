@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_8e4a0d59",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-08-08T06:01:54Z",
+      "side": 1,
+      "message": "why not encode exp_domain_id?",
+      "revId": "ffa0918f5a92fd18c86703916d768012b0bea61b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_2e3679e9",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-08-08T06:01:54Z",
+      "side": 1,
+      "message": "exp_federated_group_id is always a list right?",
+      "revId": "ffa0918f5a92fd18c86703916d768012b0bea61b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
