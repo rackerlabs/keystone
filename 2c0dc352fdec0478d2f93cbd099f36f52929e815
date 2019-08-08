@@ -22,6 +22,30 @@
       "revId": "2c0dc352fdec0478d2f93cbd099f36f52929e815",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_a34e0294",
+        "filename": "doc/source/install/keystone-install-rdo.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-08-08T05:39:26Z",
+      "side": 1,
+      "message": "Don\u0027t we also need to document *why* and *when* to use those flags?",
+      "parentUuid": "7faddb67_cdc10850",
+      "range": {
+        "startLine": 117,
+        "startChar": 6,
+        "endLine": 119,
+        "endChar": 17
+      },
+      "revId": "2c0dc352fdec0478d2f93cbd099f36f52929e815",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
