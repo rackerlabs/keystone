@@ -1173,7 +1173,8 @@ class BaseLdap(object):
                                 self.options_name)
             attr_mapping = (getattr(conf.ldap, attr_mapping_opt)
                             or self.DEFAULT_EXTRA_ATTR_MAPPING)
-            self.extra_attr_mapping = self._parse_extra_attrs(attr_mapping)
+            self.attribute_mapping.update(
+                self._parse_extra_attrs(attr_mapping))
 
             ldap_filter = '%s_filter' % self.options_name
             self.ldap_filter = getattr(conf.ldap,
@@ -1208,7 +1209,8 @@ class BaseLdap(object):
                     'Format must be <ldap_attribute>:<keystone_attribute>',
                     item)
                 continue
-            mapping[ldap_attr] = attr_map
+            if attr_map:
+                mapping[attr_map] = ldap_attr
         return mapping
 
     def get_connection(self, user=None, password=None, end_user_auth=False):
@@ -1415,11 +1417,6 @@ class BaseLdap(object):
                 attr_type = self.attribute_mapping.get(k, k)
                 if attr_type is not None:
                     attrs.append((attr_type, [v]))
-                extra_attrs = [attr for attr, name
-                               in self.extra_attr_mapping.items()
-                               if name == k]
-                for attr in extra_attrs:
-                    attrs.append((attr, [v]))
 
         with self.get_connection() as conn:
             conn.add_s(self._id_to_dn(values['id']), attrs)
@@ -1484,8 +1481,7 @@ class BaseLdap(object):
         with self.get_connection() as conn:
             try:
                 attrs = list(set(([self.id_attr] +
-                                  list(self.attribute_mapping.values()) +
-                                  list(self.extra_attr_mapping.keys()))))
+                                  list(self.attribute_mapping.values()))))
                 res = conn.search_s(self.tree_dn,
                                     self.LDAP_SCOPE,
                                     query,
@@ -1527,8 +1523,7 @@ class BaseLdap(object):
             self.id_attr)
         sizelimit = 0
         attrs = list(set(([self.id_attr] +
-                          list(self.attribute_mapping.values()) +
-                          list(self.extra_attr_mapping.keys()))))
+                          list(self.attribute_mapping.values()))))
         if hints.limit:
             sizelimit = hints.limit['limit']
             res = self._ldap_get_limited(self.tree_dn,

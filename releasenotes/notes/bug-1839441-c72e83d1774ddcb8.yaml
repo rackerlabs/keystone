@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    This fixes the behavior in which the extra attributes defined for users and
+    groups are filtered inside the ldap backend making it non visible for the
+    API.
