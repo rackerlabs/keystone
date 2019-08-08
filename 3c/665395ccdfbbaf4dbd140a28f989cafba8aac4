@@ -1,0 +1,10 @@
+Code-Review+2: guang-yee <guang.yee@suse.com>
+Code-Review+1: Raildo Mascena <rmascena@redhat.com>
+Code-Review+2: Kristi Nikolla <kristi@nikolla.me>
+Workflow+1: Kristi Nikolla <kristi@nikolla.me>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 08 Aug 2019 22:14:47 +0000
+Reviewed-on: https://review.opendev.org/674934
+Project: openstack/keystone
+Branch: refs/heads/master
