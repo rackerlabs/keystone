@@ -22,6 +22,30 @@
       "revId": "f850095710071d1998bc7dabeeb7135dd75080bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_98c3108b",
+        "filename": "doc/source/admin/identity-sources.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2019-08-09T17:32:31Z",
+      "side": 0,
+      "message": "Ah, thought it was unused - misread the code. will readd",
+      "parentUuid": "7faddb67_d5b5d17f",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 47
+      },
+      "revId": "f850095710071d1998bc7dabeeb7135dd75080bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

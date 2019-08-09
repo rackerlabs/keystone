@@ -16,6 +16,24 @@
       "revId": "3005ecdc0c9e0b4344fa96c54a363e81c6052126",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_f8cec4b2",
+        "filename": "doc/source/admin/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2019-08-09T17:32:31Z",
+      "side": 1,
+      "message": "It will be a very long page - but yes, it\u0027s possible..\n\nLet me make that change...",
+      "parentUuid": "7faddb67_75717d0c",
+      "revId": "3005ecdc0c9e0b4344fa96c54a363e81c6052126",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
