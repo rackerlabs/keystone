@@ -26,6 +26,7 @@ import oslo_config.fixture
 from oslo_db.sqlalchemy import migration
 from oslo_log import log
 from oslo_serialization import jsonutils
+from oslo_upgradecheck import upgradecheck
 from six.moves import configparser
 from six.moves import http_client
 from six.moves import range
@@ -41,6 +42,7 @@ from keystone.cmd.doctor import ldap
 from keystone.cmd.doctor import security_compliance
 from keystone.cmd.doctor import tokens
 from keystone.cmd.doctor import tokens_fernet
+from keystone.cmd import status
 from keystone.common import provider_api
 from keystone.common.sql import upgrades
 import keystone.conf
@@ -1862,3 +1864,21 @@ class TestMappingEngineTester(unit.BaseTestCase):
         mapping_engine = cli.MappingEngineTester()
         self.assertRaises(exception.ValidationError,
                           mapping_engine.main)
+
+class CliStatusTestCase(unit.SQLDriverOverrides, unit.TestCase):
+
+    def setUp(self):
+        self.useFixture(database.Database())
+        super(CliStatusTestCase, self).setUp()
+        self.load_backends()
+        self.checks = status.Checks()
+
+    def test_check_immutable_roles(self):
+        role_ref = unit.new_role_ref(name='admin')
+        PROVIDERS.role_api.create_role(role_ref['id'], role_ref)
+        result = self.checks.check_default_roles_are_immutable()
+        self.assertEqual(upgradecheck.Code.FAILURE, result.code)
+        role_ref['options'] = {'immutable': True}
+        PROVIDERS.role_api.update_role(role_ref['id'], role_ref)
+        result = self.checks.check_default_roles_are_immutable()
+        self.assertEqual(upgradecheck.Code.SUCCESS, result.code)
