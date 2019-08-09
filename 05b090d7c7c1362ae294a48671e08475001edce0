@@ -45,6 +45,30 @@
       "revId": "05b090d7c7c1362ae294a48671e08475001edce0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_3898dc19",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-08-09T18:07:32Z",
+      "side": 1,
+      "message": "The functions that raise this error only use the ID, it would add an unnecessary amount of complexity to have them also look up the app cred or user in order to raise this error.",
+      "parentUuid": "7faddb67_8cab2486",
+      "range": {
+        "startLine": 553,
+        "startChar": 24,
+        "endLine": 553,
+        "endChar": 69
+      },
+      "revId": "05b090d7c7c1362ae294a48671e08475001edce0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
