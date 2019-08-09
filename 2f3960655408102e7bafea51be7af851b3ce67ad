@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_aee1e2fe",
+        "filename": "api-ref/source/v3/os-pki.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-08-09T20:04:37Z",
+      "side": 1,
+      "message": "Could remove this one too, I don\u0027t think it will ever return  a 409?",
+      "range": {
+        "startLine": 25,
+        "startChar": 5,
+        "endLine": 25,
+        "endChar": 8
+      },
+      "revId": "2f3960655408102e7bafea51be7af851b3ce67ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
