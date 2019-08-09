@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_75717d0c",
+        "filename": "doc/source/admin/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-08-09T17:17:15Z",
+      "side": 1,
+      "message": "The value in having these as literal includes was that you could search the whole document for whatever you\u0027re trying to configure. With it split up like this, each section is its own small document and you have to click into each one to see whether it has what you\u0027re looking for. Can we get the old functionality back without double-publishing them?",
+      "revId": "3005ecdc0c9e0b4344fa96c54a363e81c6052126",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
