@@ -12,9 +12,12 @@
 
 from oslo_upgradecheck import upgradecheck
 
+from keystone.common import provider_api
 import keystone.conf
+from keystone.server import backends
 
 CONF = keystone.conf.CONF
+PROVIDERS = provider_api.ProviderAPIs
 
 
 class Checks(upgradecheck.UpgradeCommands):
@@ -26,8 +29,29 @@ class Checks(upgradecheck.UpgradeCommands):
     policies actually exist within the roles backend.
     """
 
-    pass
+    def check_default_roles_are_immutable(self):
+        roles = PROVIDERS.role_api.list_roles()
+        default_roles = ('admin', 'member', 'reader',)
+        failed_roles = []
+        for role in [r for r in roles if r['name'] in default_roles]:
+            if not role.get('options', {}).get('immutable'):
+                failed_roles.append(role['name'])
+        if any(failed_roles):
+           return upgradecheck.Result(
+               upgradecheck.Code.FAILURE,
+               'Roles are not immutable: %s' % ', '.join(
+                   [r for r in failed_roles])
+           )
+        return upgradecheck.Result(
+            upgradecheck.Code.SUCCESS, 'Default role are immutable')
+
+    _upgrade_checks = (
+        ('Check default roles are immutable',
+         check_default_roles_are_immutable),
+    )
 
 
 def main():
+    keystone.conf.configure()
+    backends.load_backends()
     return upgradecheck.main(CONF, 'keystone', Checks())
