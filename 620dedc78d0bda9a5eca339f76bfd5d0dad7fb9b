@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_aefec235",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 843,
+      "author": {
+        "id": 2
+      },
+      "writtenOn": "2019-08-09T20:35:49Z",
+      "side": 1,
+      "message": "that would be a strange behavior.",
+      "range": {
+        "startLine": 843,
+        "startChar": 42,
+        "endLine": 843,
+        "endChar": 61
+      },
+      "revId": "620dedc78d0bda9a5eca339f76bfd5d0dad7fb9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
