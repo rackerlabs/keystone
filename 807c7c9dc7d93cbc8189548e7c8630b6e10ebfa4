@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_d511515f",
+        "filename": "keystone/conf/totp.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-08-09T17:28:42Z",
+      "side": 1,
+      "message": "May want to update",
+      "range": {
+        "startLine": 1,
+        "startChar": 12,
+        "endLine": 1,
+        "endChar": 16
+      },
+      "revId": "807c7c9dc7d93cbc8189548e7c8630b6e10ebfa4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_583358f7",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 5367,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-08-09T17:28:42Z",
+      "side": 1,
+      "message": "Looks like auth failure is what we\u0027re aiming for here",
+      "range": {
+        "startLine": 5367,
+        "startChar": 10,
+        "endLine": 5367,
+        "endChar": 68
+      },
+      "revId": "807c7c9dc7d93cbc8189548e7c8630b6e10ebfa4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_5848385b",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 5407,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-08-09T17:28:42Z",
+      "side": 1,
+      "message": "How about a test with included_previous_windows explicitly disabled as well?",
+      "revId": "807c7c9dc7d93cbc8189548e7c8630b6e10ebfa4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_f87244ad",
+        "filename": "releasenotes/notes/bug-1839577-1226d86ea0744055.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-08-09T17:28:42Z",
+      "side": 1,
+      "message": "explain how - by setting it to 0? (sometimes we disable things by setting them to -1)",
+      "range": {
+        "startLine": 6,
+        "startChar": 56,
+        "endLine": 6,
+        "endChar": 64
+      },
+      "revId": "807c7c9dc7d93cbc8189548e7c8630b6e10ebfa4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
