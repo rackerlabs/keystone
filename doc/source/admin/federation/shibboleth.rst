@@ -268,6 +268,4 @@ is your Identity Provider you do not need to upload this file.
 Continue configuring keystone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Continue configuring keystone`_
-
-.. _Continue configuring keystone: configure_federation.html#configuring-keystone
+:ref:`Continue configuring keystone <federation_configuring_keystone>`

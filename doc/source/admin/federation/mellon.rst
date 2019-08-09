@@ -143,6 +143,4 @@ Remember to reload Apache after finishing configuring Mellon:
 Continue configuring keystone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Continue configuring keystone`_
-
-.. _Continue configuring keystone: configure_federation.html#configuring-keystone
+:ref:`Continue configuring keystone <federation_configuring_keystone>`

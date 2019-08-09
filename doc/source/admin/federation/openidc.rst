@@ -109,16 +109,12 @@ Remember to reload Apache after altering the VirtualHost:
 
 .. note::
 
-   When creating `mapping rules`_, in keystone, note that the 'remote'
+   When creating :ref:`mapping rules <create_a_mapping>`, in keystone, note that the 'remote'
    attributes will be prefixed, with ``HTTP_``, so for instance, if you set
    ``OIDCClaimPrefix`` to ``OIDC-``, then a typical remote value to check for
    is: ``HTTP_OIDC_ISS``.
 
-.. _`mapping rules`: configure_federation.html#mapping
-
 Continue configuring keystone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Continue configuring keystone`_
-
-.. _Continue configuring keystone: configure_federation.html#configuring-keystone
+:ref:`Continue configuring keystone <federation_configuring_keystone>`

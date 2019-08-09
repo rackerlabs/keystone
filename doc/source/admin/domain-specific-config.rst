@@ -1,3 +1,5 @@
+.. _domain_specific_configuration:
+
 Domain-specific configuration
 =============================
 
