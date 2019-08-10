@@ -1,0 +1,9 @@
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Sat, 10 Aug 2019 04:26:55 +0000
+Reviewed-on: https://review.opendev.org/675667
+Project: openstack/keystone
+Branch: refs/heads/master
