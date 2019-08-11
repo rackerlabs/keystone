@@ -1,0 +1,11 @@
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+1: Vishakha Agarwal <agarwalvishakha18@gmail.com>
+Code-Review+1: Ghanshyam Mann <gmann@ghanshyammann.com>
+Code-Review+2: Dave Chen <dave.jungler@gmail.com>
+Workflow+1: Dave Chen <dave.jungler@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Sun, 11 Aug 2019 10:18:08 +0000
+Reviewed-on: https://review.opendev.org/673933
+Project: openstack/keystone
+Branch: refs/heads/master
