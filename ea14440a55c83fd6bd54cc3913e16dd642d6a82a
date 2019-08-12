@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_7cdb8820",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-08-12T22:04:30Z",
+      "side": 1,
+      "message": "These look redundant, we might end up with duplicated trust information here. Previously we only did the addtion to the trusts list once.",
+      "range": {
+        "startLine": 194,
+        "startChar": 0,
+        "endLine": 200,
+        "endChar": 55
+      },
+      "revId": "ea14440a55c83fd6bd54cc3913e16dd642d6a82a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
