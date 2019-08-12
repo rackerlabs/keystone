@@ -31,6 +31,8 @@ RULE_SERVICE_ADMIN_OR_TOKEN_SUBJECT = (
     'rule:service_admin_or_token_subject')  # nosec
 RULE_SERVICE_OR_ADMIN = 'rule:service_or_admin'
 RULE_TRUST_OWNER = 'user_id:%(trust.trustor_user_id)s'
+RULE_TRUSTOR = 'user_id:%(target.trust.trustor_user_id)s'
+RULE_TRUSTEE = 'user_id:%(target.trust.trustee_user_id)s'
 
 # We are explicitly setting system_scope:all in these check strings because
 # they provide backwards compatibility in the event a deployment sets

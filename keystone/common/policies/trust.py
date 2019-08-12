@@ -27,7 +27,8 @@ trust_policies = [
                      'method': 'POST'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_trusts',
-        check_str='',
+        check_str=(base.RULE_ADMIN_REQUIRED + ' or ' + base.RULE_TRUSTOR +
+                   ' or ' + base.RULE_TRUSTEE),
         scope_types=['project'],
         description='List trusts.',
         operations=[{'path': '/v3/OS-TRUST/trusts',
