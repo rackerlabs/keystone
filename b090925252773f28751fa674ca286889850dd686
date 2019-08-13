@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7faddb67_6feadad8",
+        "filename": "keystone/common/policies/policy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2019-08-13T15:41:05Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 46,
+        "startChar": 34,
+        "endLine": 46,
+        "endChar": 40
+      },
+      "revId": "b090925252773f28751fa674ca286889850dd686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_2fd5c21b",
         "filename": "keystone/tests/unit/protection/v3/test_policy.py",
         "patchSetId": 1
