@@ -48,14 +48,12 @@ TRUST_ID_PARAMETER_RELATION = _build_parameter_relation(
 
 def _build_trust_target_enforcement():
     target = {}
-    try:
-        target['trust'] = PROVIDERS.trust_api.get_trust(
-            flask.request.view_args.get('trust_id')
-        )
-    except exception.NotFound:  # nosec
-        # Defer existance in the event the trust doesn't exist, we'll
-        # check this later anyway.
-        pass
+    # NOTE(cmurphy) unlike other APIs, in the event the trust doesn't exist or
+    # has 0 remaining uses, we actually do expect it to return a 404 and not a
+    # 403, so don't catch NotFound here
+    target['trust'] = PROVIDERS.trust_api.get_trust(
+        flask.request.view_args.get('trust_id')
+    )
 
     return target
 
@@ -166,9 +164,35 @@ class TrustResource(ks_flask.ResourceBase):
         return roles
 
     def _get_trust(self, trust_id):
-        ENFORCER.enforce_call(action='identity:get_trust')
+        ENFORCER.enforce_call(action='identity:get_trust',
+                              build_target=_build_trust_target_enforcement)
+        if self.oslo_context.is_admin:
+            # policies are not loaded for the is_admin context, so need to
+            # block access here
+            raise exception.ForbiddenAction(
+                action=_('Requested user has no relation to this trust'))
+
         trust = PROVIDERS.trust_api.get_trust(trust_id)
-        _trustor_trustee_only(trust)
+
+        # NOTE(cmurphy) As of Train, the default policies enforce the
+        # identity:get_trust rule. However, in case the
+        # identity:get_trust rule has been locally overridden by the
+        # default that would have been produced by the sample config, we need
+        # to enforce it again and warn that the behavior is changing.
+        rules = policy._ENFORCER._enforcer.rules.get('identity:get_trust')
+        # rule check_str is ""
+        if isinstance(rules, op_checks.TrueCheck):
+            LOG.warning(
+                "The policy check string for rule \"identity:get_trust\" "
+                "has been overridden to \"always true\". In the next release, "
+                "this will cause the" "\"identity:get_trust\" action to "
+                "be fully permissive as hardcoded enforcement will be "
+                "removed. To correct this issue, either stop overriding the "
+                "\"identity:get_trust\" rule in config to accept the "
+                "defaults, or explicitly set a rule that is not empty."
+            )
+            _trustor_trustee_only(trust)
+
         _normalize_trust_expires_at(trust)
         _normalize_trust_roles(trust)
         return self.wrap_member(trust)
