@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_e8e48e10",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-08-13T05:37:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_ee9b5a63",
+      "revId": "ef6096930a30b47b549cfe18a1e94cd7251bfa52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_0edb5621",
         "filename": "keystone/common/policies/endpoint_group.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2019-08-09T20:14:51Z",
       "side": 1,
       "message": "I\u0027ll bring it up at the next meeting - I\u0027m proposing we make these messages less verbose and just provide only the necessary information https://review.opendev.org/674940",
+      "revId": "ef6096930a30b47b549cfe18a1e94cd7251bfa52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_68badee1",
+        "filename": "keystone/common/policies/endpoint_group.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-08-13T05:37:14Z",
+      "side": 1,
+      "message": "OK. Thanks for the prior information.",
+      "parentUuid": "7faddb67_0edb5621",
       "revId": "ef6096930a30b47b549cfe18a1e94cd7251bfa52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
