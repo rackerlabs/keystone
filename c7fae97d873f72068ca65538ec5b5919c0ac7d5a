@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_a83d282d",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1784,
+      "author": {
+        "id": 30491
+      },
+      "writtenOn": "2019-08-13T17:56:41Z",
+      "side": 1,
+      "message": "Yeah, this just follows the pattern of the two lines above it.",
+      "parentUuid": "7faddb67_8d7abeb7",
+      "range": {
+        "startLine": 1784,
+        "startChar": 4,
+        "endLine": 1784,
+        "endChar": 33
+      },
+      "revId": "c7fae97d873f72068ca65538ec5b5919c0ac7d5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_4878348e",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2019-08-13T17:45:05Z",
       "side": 1,
       "message": "/SMH\n\nI wonder why even bother with this kind of complexity. We should just get rid of this option and always use conf.ldap.group_member_attribute and conf.ldap.group_members_are_ids.\n\nI mean are there production deployments out there that use two different schema for group membership?!!! If there\u0027s one, I would like to know why.",
+      "range": {
+        "startLine": 1798,
+        "startChar": 8,
+        "endLine": 1798,
+        "endChar": 37
+      },
+      "revId": "c7fae97d873f72068ca65538ec5b5919c0ac7d5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_e8332061",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1798,
+      "author": {
+        "id": 30491
+      },
+      "writtenOn": "2019-08-13T17:56:41Z",
+      "side": 1,
+      "message": "It makes me wonder too. I can\u0027t really imagine it either, especially since it is not configurable otherwise. :/",
+      "parentUuid": "7faddb67_4878348e",
       "range": {
         "startLine": 1798,
         "startChar": 8,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_e85a4081",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1827,
+      "author": {
+        "id": 30491
+      },
+      "writtenOn": "2019-08-13T17:56:41Z",
+      "side": 1,
+      "message": "No, it\u0027s not. This line is taken from the original file (without conditional). This conditional works like all others on \u0027group_members_are_ids\u0027.",
+      "parentUuid": "7faddb67_4830349f",
+      "range": {
+        "startLine": 1827,
+        "startChar": 12,
+        "endLine": 1827,
+        "endChar": 42
+      },
+      "revId": "c7fae97d873f72068ca65538ec5b5919c0ac7d5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_a8f768d4",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 2
@@ -82,6 +154,30 @@
       "writtenOn": "2019-08-13T17:45:05Z",
       "side": 1,
       "message": "Definitely room for improvement on this one. We should cache the search result internally and reuse it. This enabled_emulation_dn is a fixed object and it shouldn\u0027t change that often. Perfect candidate for caching.",
+      "range": {
+        "startLine": 1828,
+        "startChar": 7,
+        "endLine": 1833,
+        "endChar": 66
+      },
+      "revId": "c7fae97d873f72068ca65538ec5b5919c0ac7d5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_6875f0f9",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1833,
+      "author": {
+        "id": 30491
+      },
+      "writtenOn": "2019-08-13T17:56:41Z",
+      "side": 1,
+      "message": "I doubt this is in scope of this particular change.",
+      "parentUuid": "7faddb67_a8f768d4",
       "range": {
         "startLine": 1828,
         "startChar": 7,
