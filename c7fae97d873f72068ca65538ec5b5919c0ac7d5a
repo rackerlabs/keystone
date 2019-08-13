@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_7ea60aae",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1784,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-08-13T19:47:10Z",
+      "side": 1,
+      "message": "I wonder why we hardcode those to begin with. If some production environment is using groupofNames to manage \"enabled\" users while using posixGroup to manage user group membership that would be wildly insane.",
+      "parentUuid": "7faddb67_a83d282d",
+      "range": {
+        "startLine": 1784,
+        "startChar": 4,
+        "endLine": 1784,
+        "endChar": 33
+      },
+      "revId": "c7fae97d873f72068ca65538ec5b5919c0ac7d5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_4878348e",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 2
@@ -143,6 +167,30 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_3edf320d",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1827,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-08-13T19:47:10Z",
+      "side": 1,
+      "message": "Sorry I was ranting about the need for_id_to_dn() where object_id is already a DN. Not your fault. Maybe we\u0027ll fix that in the follow-on patch.",
+      "parentUuid": "7faddb67_e85a4081",
+      "range": {
+        "startLine": 1827,
+        "startChar": 12,
+        "endLine": 1827,
+        "endChar": 42
+      },
+      "revId": "c7fae97d873f72068ca65538ec5b5919c0ac7d5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_a8f768d4",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 2
@@ -178,6 +226,30 @@
       "side": 1,
       "message": "I doubt this is in scope of this particular change.",
       "parentUuid": "7faddb67_a8f768d4",
+      "range": {
+        "startLine": 1828,
+        "startChar": 7,
+        "endLine": 1833,
+        "endChar": 66
+      },
+      "revId": "c7fae97d873f72068ca65538ec5b5919c0ac7d5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_5ef22e9c",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1833,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-08-13T19:47:10Z",
+      "side": 1,
+      "message": "Yeah I agreed. Maybe we can optimize this in the follow-on patch. Beyond that, we really need to re-evaluate this feature. The way it is implemented right now seem overly inefficient and unnecessarily complex.",
+      "parentUuid": "7faddb67_6875f0f9",
       "range": {
         "startLine": 1828,
         "startChar": 7,
