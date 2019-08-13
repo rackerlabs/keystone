@@ -10,27 +10,48 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_log import versionutils
 from oslo_policy import policy
 
 from keystone.common.policies import base
 
+deprecated_get_policy = policy.DeprecatedRule(
+    name=base.IDENTITY % 'get_policy',
+    check_str=base.RULE_ADMIN_REQUIRED,
+)
+
+deprecated_list_policies = policy.DeprecatedRule(
+    name=base.IDENTITY % 'list_policies',
+    check_str=base.RULE_ADMIN_REQUIRED,
+)
+
+
+DEPRECATED_REASON = "The Policy API is now system-scope aware."
+
+
 policy_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_policy',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.SYSTEM_READER,
         # This API isn't really exposed to usable, it's actually deprecated.
         # More-or-less adding scope_types to be consistent with other policies.
         scope_types=['system'],
         description='Show policy details.',
         operations=[{'path': '/v3/policy/{policy_id}',
-                     'method': 'GET'}]),
+                     'method': 'GET'}],
+        deprecated_rule=deprecated_get_policy,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.TRAIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'list_policies',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.SYSTEM_READER,
         scope_types=['system'],
         description='List policies.',
         operations=[{'path': '/v3/policies',
-                     'method': 'GET'}]),
+                     'method': 'GET'}],
+        deprecated_rule=deprecated_list_policies,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.TRAIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_policy',
         check_str=base.RULE_ADMIN_REQUIRED,
