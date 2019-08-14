@@ -140,10 +140,12 @@ class TestTrustOperations(test_v3.RestfulTestCase):
         self.delete(
             '/OS-TRUST/trusts/%(trust_id)s' % {'trust_id': trust['id']})
 
-        # ensure the trust is not found
+        # ensure the trust is no longer available. Requesting a non-existent
+        # trust will result in a 403 to prevent disclosing its existence or
+        # non-existence.
         self.get(
             '/OS-TRUST/trusts/%(trust_id)s' % {'trust_id': trust['id']},
-            expected_status=http_client.NOT_FOUND)
+            expected_status=http_client.FORBIDDEN)
 
     def test_list_trusts(self):
         # create three trusts with the same trustor and trustee
@@ -232,10 +234,12 @@ class TestTrustOperations(test_v3.RestfulTestCase):
         self.delete('/OS-TRUST/trusts/%(trust_id)s' % {
             'trust_id': trust['id']})
 
-        # ensure the trust isn't found
+        # ensure the trust is no longer available. Requesting a non-existent
+        # trust will result in a 403 to prevent disclosing its existence or
+        # non-existence.
         self.get('/OS-TRUST/trusts/%(trust_id)s' % {
             'trust_id': trust['id']},
-            expected_status=http_client.NOT_FOUND)
+            expected_status=http_client.FORBIDDEN)
 
     def test_create_trust_without_trustee_returns_bad_request(self):
         ref = unit.new_trust_ref(
@@ -474,9 +478,10 @@ class TestTrustOperations(test_v3.RestfulTestCase):
         self.delete(
             '/users/%(user_id)s' % {'user_id': trust['trustee_user_id']})
 
+        # requesting a non-existent trust results in an access error
         self.get(
             '/OS-TRUST/trusts/%(trust_id)s' % {'trust_id': trust['id']},
-            expected_status=http_client.NOT_FOUND)
+            expected_status=http_client.FORBIDDEN)
 
         # create another user as the new trustee
         trustee_user = unit.create_user(PROVIDERS.identity_api,

@@ -1,0 +1,25 @@
+---
+upgrade:
+  - |
+    Includes a change in the response to the GET /v3/OS-TRUST/trusts/{trust_id}
+    API if a trust is not found: now requesting a non-existent trust will
+    result in a response of HTTP 403 Forbidden to prevent disclosing whether
+    the trust exists.
+security:
+  - |
+    Fixes an oversight that allowed unauthorized users to gain knowledge about
+    the existence or non-existence of a trust. The GET
+    /v3/OS-TRUST/trusts/{trust_id} API will now return an HTTP 403 Forbidden if
+    either a trust does not exist or the requesting user has no association
+    with it (either as a trustor or trustee), where previously it might either
+    return an HTTP 403 Forbidden or HTTP 404 Not Found depending on whether the
+    trust existed and had remaining uses left on it.
+fixes:
+  - |
+    Fixes an oversight that allowed unauthorized users to gain knowledge about
+    the existence or non-existence of a trust. The GET
+    /v3/OS-TRUST/trusts/{trust_id} API will now return an HTTP 403 Forbidden if
+    either a trust does not exist or the requesting user has no association
+    with it (either as a trustor or trustee), where previously it might either
+    return an HTTP 403 Forbidden or HTTP 404 Not Found depending on whether the
+    trust existed and had remaining uses left on it.
