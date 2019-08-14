@@ -16,6 +16,24 @@
       "revId": "10ef3e8d8496227b9a79a3f180133f5598c08c35",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_5470ca08",
+        "filename": "keystone/common/policies/endpoint_group.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-08-14T03:15:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7faddb67_ed449276",
+      "revId": "10ef3e8d8496227b9a79a3f180133f5598c08c35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
