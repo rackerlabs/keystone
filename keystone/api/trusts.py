@@ -44,8 +44,8 @@ TRUST_ID_PARAMETER_RELATION = _build_parameter_relation(
 
 def _trustor_trustee_only(trust):
     user_id = flask.request.environ.get(context.REQUEST_CONTEXT_ENV).user_id
-    if user_id not in [trust.get('trustee_user_id'),
-                       trust.get('trustor_user_id')]:
+    if not trust or (user_id not in [trust.get('trustee_user_id'),
+                                     trust.get('trustor_user_id')]):
         raise exception.ForbiddenAction(
             action=_('Requested user has no relation to this trust'))
 
@@ -147,7 +147,13 @@ class TrustResource(ks_flask.ResourceBase):
 
     def _get_trust(self, trust_id):
         ENFORCER.enforce_call(action='identity:get_trust')
-        trust = PROVIDERS.trust_api.get_trust(trust_id)
+        trust = None
+        try:
+            trust = PROVIDERS.trust_api.get_trust(trust_id)
+        except exception.NotFound:
+            # unprivileged users should not have trust-nonexistence exposed to
+            # them, handle this in the next step
+            pass
         _trustor_trustee_only(trust)
         _normalize_trust_expires_at(trust)
         _normalize_trust_roles(trust)

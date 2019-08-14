@@ -4377,10 +4377,12 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
 
     def test_create_one_time_use_trust(self):
         trust = self._initialize_test_consume_trust(1)
-        # No more uses, the trust is made unavailable
+        # No more uses, the trust is made unavailable. Requesting a non-existent
+        # trust will result in a 403 to prevent disclosing its existence or
+        # non-existence.
         self.get(
             '/OS-TRUST/trusts/%(trust_id)s' % {'trust_id': trust['id']},
-            expected_status=http_client.NOT_FOUND)
+            expected_status=http_client.FORBIDDEN)
         # this time we can't get a trust token
         auth_data = self.build_authentication_request(
             user_id=self.trustee_user['id'],
@@ -4900,11 +4902,13 @@ class TestTrustChain(test_v3.RestfulTestCase):
 
             auth_token = self.get_requested_token(auth_data)
 
-            # Assert chained trust have been deleted
+            # Assert chained trust have been deleted. Requesting a non-existent
+            # trust will result in a 403 to prevent disclosing its existence or
+            # non-existence.
             self.get('/OS-TRUST/trusts/%(trust_id)s' % {
                 'trust_id': self.trust_chain[i + 1]['id']},
                 token=auth_token,
-                expected_status=http_client.NOT_FOUND)
+                expected_status=http_client.FORBIDDEN)
 
     def test_trustor_roles_revoked(self):
         self.assert_user_authenticate(self.user_list[0])
