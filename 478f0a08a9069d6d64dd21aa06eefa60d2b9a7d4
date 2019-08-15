@@ -22,6 +22,30 @@
       "revId": "478f0a08a9069d6d64dd21aa06eefa60d2b9a7d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_993bb9cf",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 8833
+      },
+      "writtenOn": "2019-08-15T17:15:32Z",
+      "side": 1,
+      "message": "\u003e What is the context where this is needed\n\nHmm.. Doesn\u0027t the bug provide the context? I\u0027ve seen this when deleting a bunch of domain users cocurrently from heat when deleting resources in a large stack. Traceback is there in the bug.\n\n\u003e This also should have a release note added to it.\n\nI think this fixes a bug. Do you always add releasenotes for bug fixes?",
+      "parentUuid": "7faddb67_dee597a5",
+      "range": {
+        "startLine": 95,
+        "startChar": 3,
+        "endLine": 95,
+        "endChar": 38
+      },
+      "revId": "478f0a08a9069d6d64dd21aa06eefa60d2b9a7d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
