@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_2b0fc888",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-08-15T18:45:13Z",
+      "side": 1,
+      "message": "NIT: this likely should be \"non-authorized users\" or \"unauthorized\". (not a -1)",
+      "range": {
+        "startLine": 154,
+        "startChar": 14,
+        "endLine": 154,
+        "endChar": 26
+      },
+      "revId": "d0baa0bafa885c6f5a7cc929326cf13fb97788e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_cb271412",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-08-15T18:45:13Z",
+      "side": 1,
+      "message": "The explicit forbiddenaction could be raised here, but consolidating is fine, comment addresses concerns of where it is handled.",
+      "range": {
+        "startLine": 156,
+        "startChar": 12,
+        "endLine": 156,
+        "endChar": 16
+      },
+      "revId": "d0baa0bafa885c6f5a7cc929326cf13fb97788e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_eb24500f",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4380,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-08-15T18:45:13Z",
+      "side": 1,
+      "message": "possible pep8 line-length, might be weird web formatting.",
+      "range": {
+        "startLine": 4380,
+        "startChar": 68,
+        "endLine": 4380,
+        "endChar": 80
+      },
+      "revId": "d0baa0bafa885c6f5a7cc929326cf13fb97788e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
