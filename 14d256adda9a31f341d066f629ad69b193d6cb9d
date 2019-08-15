@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_07cd26b6",
+        "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2019-08-15T11:51:11Z",
+      "side": 1,
+      "message": "Fixing in https://review.opendev.org/#/c/676662/1 in order to make it backportable independent from this change.",
+      "parentUuid": "7faddb67_029bd7c8",
+      "revId": "14d256adda9a31f341d066f629ad69b193d6cb9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_628acb64",
         "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
         "patchSetId": 1
