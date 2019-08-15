@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_dee597a5",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-08-15T17:06:27Z",
+      "side": 1,
+      "message": "Is this needed here as well and/or anywhere else?\n\nWhat is the context where this is needed, e.g. how widespread is the need to add this decorator.\n\nThanks for the fix and once you answer this it\u0027ll be easy to score/review the fix.\n\nThis also should have a release note added to it.",
+      "range": {
+        "startLine": 95,
+        "startChar": 3,
+        "endLine": 95,
+        "endChar": 38
+      },
+      "revId": "478f0a08a9069d6d64dd21aa06eefa60d2b9a7d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
