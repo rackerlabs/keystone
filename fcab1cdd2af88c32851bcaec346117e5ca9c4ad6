@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_e466bded",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-08-15T21:09:16Z",
+      "side": 1,
+      "message": "Interesting. Looks like the original logic is already preventing unauthorized users from obtaining the trust, even if they can guess the UUID or am I reading this wrong?",
+      "range": {
+        "startLine": 47,
+        "startChar": 4,
+        "endLine": 48,
+        "endChar": 68
+      },
+      "revId": "fcab1cdd2af88c32851bcaec346117e5ca9c4ad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
