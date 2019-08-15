@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_0284375d",
+        "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2019-08-15T09:22:43Z",
+      "side": 0,
+      "message": "The term \"accounts\" also seems questionable to me, but I\u0027m not 100% sure there as I\u0027m not a native speaker.\n\nFor me, talking about an \"account\" mostly would mean talking about a user and not about a project. Maybe someone can further improve the wording here.",
+      "revId": "5beddfaddbb4c59d7a24fa1d7ff534da4c69ddc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

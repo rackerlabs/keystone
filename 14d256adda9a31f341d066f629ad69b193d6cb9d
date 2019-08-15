@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_029bd7c8",
+        "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2019-08-15T09:22:43Z",
+      "side": 1,
+      "message": "This link also doesn\u0027t show anything useful anymore, but I haven\u0027t found a good replacement yet.\n\nI\u0027d also like to advocate using a cloud config instead of the old-fashioned RC file.",
+      "revId": "14d256adda9a31f341d066f629ad69b193d6cb9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_628acb64",
+        "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2019-08-15T09:22:43Z",
+      "side": 1,
+      "message": "While adding my comments I just noticed that we\u0027d need to add ``--long`` in order to see whether projects are enabled.",
+      "revId": "14d256adda9a31f341d066f629ad69b193d6cb9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
