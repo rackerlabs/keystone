@@ -46,6 +46,30 @@
       "revId": "478f0a08a9069d6d64dd21aa06eefa60d2b9a7d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_6452cd15",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-08-15T21:06:07Z",
+      "side": 1,
+      "message": "Yes, we try to have a release note for each bug fixed. Example from a past bug: https://github.com/openstack/keystone/blob/master/releasenotes/notes/bug-1594482-52a5dd1d8477b694.yaml\n\nThe bug does show context, but is this needed in more places, look at how deletion is done for projects, could you end up with a deadlock here as well as for users. Is this a wide-spread issue or very isolated to the user case?\n\nTrying to avoid having the same bug over and over and over again.",
+      "parentUuid": "7faddb67_993bb9cf",
+      "range": {
+        "startLine": 95,
+        "startChar": 3,
+        "endLine": 95,
+        "endChar": 38
+      },
+      "revId": "478f0a08a9069d6d64dd21aa06eefa60d2b9a7d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
