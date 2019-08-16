@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_4fc7a199",
+        "filename": "doc/source/admin/federated-identity.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-08-16T14:05:00Z",
+      "side": 1,
+      "message": "Better to use https://docs.openstack.org/keystone/rocky/advanced-topics/federation/federated_identity.html#mapping-combinations I think",
+      "revId": "058d2873b4ba649f984e044f580f14c99299fbe3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
