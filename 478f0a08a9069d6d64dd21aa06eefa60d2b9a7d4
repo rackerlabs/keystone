@@ -70,6 +70,30 @@
       "revId": "478f0a08a9069d6d64dd21aa06eefa60d2b9a7d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_3a7950fb",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 8833
+      },
+      "writtenOn": "2019-08-16T00:48:45Z",
+      "side": 1,
+      "message": "\u003e Yes, we try to have a release note for each bug fixed\n\nSorry, that does not seem true looking at some recent bug fix patches i.e https://review.opendev.org/#/c/674122/\n\nThe example you\u0027ve given has at least a change to the api behavior. This fix is neither a feature nor has any user visible impact (user won\u0027t know about it).\n\nI\u0027ve been working on OpenStack for last 7 years and have never seen someone -1 a patch for not having a release note for a bug fix that has no user visible impact. I hope the keystone team follows https://docs.openstack.org/project-team-guide/review-the-openstack-way.html\n\n\n\u003e  but is this needed in more places, look at how deletion is done for projects, could you end up with a deadlock here as well as for users.\n\nI don\u0027t know if this is needed at other places and have no way to know that without seeing an issue. In this case, I\u0027ve seen an issue, reported and fixed it.\n\n\u003e Trying to avoid having the same bug over and over and over again.\n\nThat way you would end up adding retry for every db operation (expecting a potential issue) and that wont be good thing to do.",
+      "parentUuid": "7faddb67_6452cd15",
+      "range": {
+        "startLine": 95,
+        "startChar": 3,
+        "endLine": 95,
+        "endChar": 38
+      },
+      "revId": "478f0a08a9069d6d64dd21aa06eefa60d2b9a7d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
