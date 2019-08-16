@@ -48,6 +48,7 @@ class Manager(manager.Manager):
 
     def _decrypt_credential(self, credential):
         """Return a decrypted credential reference."""
+        credential_copy = credential.copy()
         if credential['type'] == 'ec2':
             decrypted_blob = json.loads(
                 PROVIDERS.credential_provider_api.decrypt(
@@ -58,10 +59,10 @@ class Manager(manager.Manager):
             decrypted_blob = PROVIDERS.credential_provider_api.decrypt(
                 credential['encrypted_blob']
             )
-        credential['blob'] = decrypted_blob
-        credential.pop('key_hash', None)
-        credential.pop('encrypted_blob', None)
-        return credential
+        credential_copy['blob'] = decrypted_blob
+        credential_copy.pop('key_hash', None)
+        credential_copy.pop('encrypted_blob', None)
+        return credential_copy
 
     def _encrypt_credential(self, credential):
         """Return an encrypted credential reference."""
