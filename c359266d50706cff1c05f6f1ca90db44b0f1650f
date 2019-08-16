@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_2f7a6523",
+        "filename": "doc/source/admin/identity-caching-layer.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 10607
+      },
+      "writtenOn": "2019-08-16T14:17:16Z",
+      "side": 1,
+      "message": "Backported: https://review.opendev.org/#/c/676955/",
+      "parentUuid": "7faddb67_8f04b9c7",
+      "revId": "c359266d50706cff1c05f6f1ca90db44b0f1650f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_efe8cddf",
         "filename": "doc/source/admin/identity-concepts.rst",
         "patchSetId": 1
