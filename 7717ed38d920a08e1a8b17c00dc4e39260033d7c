@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_35a073f3",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-08-16T18:50:38Z",
+      "side": 1,
+      "message": "NIT: for ease of reading, do:\n\nIf trustor_user_id: XXXX\nelif trustee_user_id: XXX\nelse:\n\n\nThis ensures we clearly mark the fall through behavior and never end up with the unenforced programming error.",
+      "range": {
+        "startLine": 171,
+        "startChar": 0,
+        "endLine": 180,
+        "endChar": 53
+      },
+      "revId": "7717ed38d920a08e1a8b17c00dc4e39260033d7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
