@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_1a47b11f",
+        "filename": "keystone/common/policies/trust.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-08-16T06:12:14Z",
+      "side": 1,
+      "message": "I thought we are going to make this message a bit shorter so the log files are easier to read.",
+      "revId": "a27d6b2746b714575cab3f384c6c9a3600fc3ac1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
