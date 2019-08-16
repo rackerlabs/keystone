@@ -320,7 +320,7 @@ A rule hierarchy is as follows:
   only be set in a remote rule.
 
 For more information on mapping rules, see `Mapping Rules
-<https://docs.openstack.org/keystone/latest/advanced-topics/federation/federated_identity.html#mapping-rules>`_.
+<https://docs.openstack.org/keystone/11.0.1/federation/mapping_combinations.html#mapping-rules>`_.
 
 Mapping creation
 ----------------
