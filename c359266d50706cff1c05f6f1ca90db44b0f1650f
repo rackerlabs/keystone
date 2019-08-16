@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_8f04b9c7",
+        "filename": "doc/source/admin/identity-caching-layer.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-08-16T14:13:42Z",
+      "side": 1,
+      "message": "Would be better to backport https://review.opendev.org/647866 and needs to go to stable/stein first",
+      "revId": "c359266d50706cff1c05f6f1ca90db44b0f1650f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_efe8cddf",
+        "filename": "doc/source/admin/identity-concepts.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-08-16T14:13:42Z",
+      "side": 1,
+      "message": "This will need to be fixed in stable/stein too. Possibly we could backport https://review.opendev.org/675667 if that doesn\u0027t break the world",
+      "revId": "c359266d50706cff1c05f6f1ca90db44b0f1650f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_4fb1e100",
+        "filename": "doc/source/configuration/config-options.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-08-16T14:13:42Z",
+      "side": 1,
+      "message": "Same here, will need to be fixed in stable/stein but could possibly be handled by backporting https://review.opendev.org/675667",
+      "revId": "c359266d50706cff1c05f6f1ca90db44b0f1650f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
