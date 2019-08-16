@@ -46,6 +46,30 @@
       "revId": "fcab1cdd2af88c32851bcaec346117e5ca9c4ad6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_7a36e5b6",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-08-16T05:59:03Z",
+      "side": 1,
+      "message": "I see.",
+      "parentUuid": "7faddb67_444c719d",
+      "range": {
+        "startLine": 47,
+        "startChar": 4,
+        "endLine": 48,
+        "endChar": 68
+      },
+      "revId": "fcab1cdd2af88c32851bcaec346117e5ca9c4ad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
