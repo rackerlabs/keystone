@@ -1,0 +1,8 @@
+---
+fixes:
+  - >
+    [`bug 1840647 <https://bugs.launchpad.net/keystone/+bug/1840647>`_]
+    Ensures that no plain text credentials are ever cached. The fixes changes
+    the _decrypt_credential method to modify and return the copy of the
+    credential dictionary instead of in-place modification of the object
+    in memory.
