@@ -290,11 +290,12 @@ class IdentityDriverBase(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def add_user_to_group(self, user_id, group_id):
+    def add_user_to_group(self, user_id, group_id, expiring=False):
         """Add a user to a group.
 
         :param str user_id: User ID.
         :param str group_id: Group ID.
+        :param bool expiring: Whether this is an expiring group membership.
 
         :raises keystone.exception.UserNotFound: If the user doesn't exist.
         :raises keystone.exception.GroupNotFound: If the group doesn't exist.

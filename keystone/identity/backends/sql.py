@@ -27,7 +27,11 @@ from keystone.i18n import _
 from keystone.identity.backends import base
 from keystone.identity.backends import resource_options as options
 from keystone.identity.backends import sql_model as model
+from keystone.federation.backends import sql as federation_model
 
+# FIXME(knikolla): I can either import the provider here, or the model.
+# It might make more sense to import the model, since we depend on it
+# anyway.
 
 CONF = keystone.conf.CONF
 
@@ -263,7 +267,37 @@ class Identity(base.IdentityDriverBase):
             raise exception.PasswordAgeValidationError(
                 min_age_days=min_age_days, days_left=days_left)
 
-    def add_user_to_group(self, user_id, group_id):
+    def _add_user_to_group_expiring(self, user_id, group_id):
+        def get_federated_user():
+            with sql.session_for_read() as session:
+                query = session.query(model.FederatedUser)
+                query = query.filter_by(user_id=user_id)
+                rv = query.first()
+                if not rv:
+                    # Note(knikolla): This shouldn't really ever happen, since
+                    # this requires the user to already be logged in.
+                    raise exception.UserNotFound()
+                return rv
+
+        with sql.session_for_write() as session:
+            self.get_group(group_id)
+            user = get_federated_user()
+            query = session.query(model.ExpiringUserGroupMembership)
+            query = query.filter_by(user_id=user_id)
+            query = query.filter_by(group_id=group_id)
+            rv = query.first()
+
+            if rv:
+                rv.last_verified = datetime.datetime.utcnow()
+            else:
+                session.add(model.ExpiringUserGroupMembership(
+                    user_id=user_id,
+                    group_id=group_id,
+                    idp_id=user.idp_id,
+                    last_verified=datetime.datetime.utcnow()
+                ))
+
+    def _add_user_to_group(self, user_id, group_id):
         with sql.session_for_write() as session:
             self.get_group(group_id)
             self.get_user(user_id)
@@ -277,18 +311,65 @@ class Identity(base.IdentityDriverBase):
             session.add(model.UserGroupMembership(user_id=user_id,
                                                   group_id=group_id))
 
+    def add_user_to_group(self, user_id, group_id, expiring=False):
+        if expiring:
+            return self._add_user_to_group_expiring(user_id, group_id)
+        return self._add_user_to_group(user_id, group_id)
+
+    @staticmethod
+    def _get_query_for_expiring_group_memberships(session, user_id=None,
+                                                  group_id=None):
+        def check_expired(result):
+            not_expired = []
+            for entry in result:
+                elapsed = datetime.datetime.utcnow() - entry.last_verified
+                ttl = entry.authorization_ttl
+                if not ttl:
+                    ttl = CONF.federation.default_authorization_ttl
+                if elapsed < datetime.timedelta(minutes=ttl):
+                    not_expired.append(entry)
+            return not_expired
+
+        query = session.query(
+            model.ExpiringUserGroupMembership.group_id,
+            model.ExpiringUserGroupMembership.user_id,
+            model.ExpiringUserGroupMembership.last_verified,
+            federation_model.IdentityProviderModel.authorization_ttl
+        )
+        query = query.join(federation_model.IdentityProviderModel)
+        if user_id:
+            query = query.filter(
+                model.ExpiringUserGroupMembership.user_id == user_id
+            )
+        if group_id:
+            query = query.filter(
+                model.ExpiringUserGroupMembership.group_id == group_id
+            )
+        return check_expired(query.all())
+
     def check_user_in_group(self, user_id, group_id):
         with sql.session_for_read() as session:
             self.get_group(group_id)
             self.get_user(user_id)
+
+            # Note(knikolla): Check for normal group membership
             query = session.query(model.UserGroupMembership)
             query = query.filter_by(user_id=user_id)
             query = query.filter_by(group_id=group_id)
-            if not query.first():
-                raise exception.NotFound(_("User '%(user_id)s' not found in"
-                                           " group '%(group_id)s'") %
-                                         {'user_id': user_id,
-                                          'group_id': group_id})
+            if query.first():
+                return
+
+            # Note(knikolla): Check for expiring group membership
+            rv = self._get_query_for_expiring_group_memberships(
+                session, user_id=user_id, group_id=group_id
+            )
+            if rv:
+                return
+
+            raise exception.NotFound(_("User '%(user_id)s' not found in"
+                                       " group '%(group_id)s'") %
+                                     {'user_id': user_id,
+                                      'group_id': group_id})
 
     def remove_user_from_group(self, user_id, group_id):
         # We don't check if user or group are still valid and let the remove

@@ -12,8 +12,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
 import uuid
 
+import freezegun
 from six.moves import range
 from testtools import matchers
 
@@ -649,6 +651,35 @@ class IdentityTests(object):
             if (x['id'] == new_group['id']):
                 found = True
         self.assertTrue(found)
+
+    def test_add_user_to_group_expiring(self):
+        self._build_fed_resource()
+        domain = self._get_domain_fixture()
+
+        new_group = unit.new_group_ref(domain_id=domain['id'])
+        new_group = PROVIDERS.identity_api.create_group(new_group)
+
+        fed_dict = unit.new_federated_user_ref()
+        fed_dict['idp_id'] = 'myidp'
+        fed_dict['protocol_id'] = 'mapped'
+        new_user = PROVIDERS.shadow_users_api.create_federated_user(
+            domain['id'], fed_dict
+        )
+
+        PROVIDERS.identity_api.add_user_to_group(
+            new_user['id'], new_group['id'], expiring=True
+        )
+
+        PROVIDERS.identity_api.check_user_in_group(
+            new_user['id'], new_group['id']
+        )
+
+        ttl = datetime.timedelta(
+            minutes=CONF.federation.default_authorization_ttl + 5)
+        with freezegun.freeze_time(datetime.datetime.utcnow() + ttl):
+            PROVIDERS.identity_api.check_user_in_group(
+                new_user['id'], new_group['id']
+           )
 
     def test_add_user_to_group_returns_not_found(self):
         domain = self._get_domain_fixture()

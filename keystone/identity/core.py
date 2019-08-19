@@ -1234,7 +1234,8 @@ class Manager(manager.Manager):
 
     @domains_configured
     @exception_translated('group')
-    def add_user_to_group(self, user_id, group_id, initiator=None):
+    def add_user_to_group(self, user_id, group_id, initiator=None,
+                          expiring=False):
         @exception_translated('user')
         def get_entity_info_for_user(public_id):
             return self._get_domain_driver_and_entity_id(public_id)
@@ -1249,7 +1250,8 @@ class Manager(manager.Manager):
         self._assert_user_and_group_in_same_backend(
             user_entity_id, user_driver, group_entity_id, group_driver)
 
-        group_driver.add_user_to_group(user_entity_id, group_entity_id)
+        group_driver.add_user_to_group(user_entity_id, group_entity_id,
+                                       expiring=expiring)
 
         # Invalidate user role assignments cache region, as it may now need to
         # include role assignments from the specified group to its users
