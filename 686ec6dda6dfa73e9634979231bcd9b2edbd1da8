@@ -46,6 +46,30 @@
       "revId": "686ec6dda6dfa73e9634979231bcd9b2edbd1da8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_8818101e",
+        "filename": "keystone/tests/unit/protection/v3/test_trusts.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 960,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-08-19T23:33:07Z",
+      "side": 1,
+      "message": "Yeah, looks like in practice, we don\u0027t have that distinction right now.",
+      "parentUuid": "7faddb67_98f5c553",
+      "range": {
+        "startLine": 960,
+        "startChar": 12,
+        "endLine": 960,
+        "endChar": 43
+      },
+      "revId": "686ec6dda6dfa73e9634979231bcd9b2edbd1da8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
