@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_18cc75b9",
+        "filename": "keystone/tests/unit/protection/v3/test_trusts.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 960,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-08-19T19:59:43Z",
+      "side": 1,
+      "message": "Domain user or domain admin? I thought we do make that distinction.",
+      "range": {
+        "startLine": 960,
+        "startChar": 12,
+        "endLine": 960,
+        "endChar": 43
+      },
+      "revId": "686ec6dda6dfa73e9634979231bcd9b2edbd1da8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
