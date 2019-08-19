@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_6d56092d",
+        "filename": "keystone/common/policies/trust.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-08-19T19:45:46Z",
+      "side": 1,
+      "message": "system admin or trustor maybe? In case we need to cleanup the trusts on behalf of the owner? That\u0027s how it is for credential APIs I think.",
+      "range": {
+        "startLine": 118,
+        "startChar": 18,
+        "endLine": 118,
+        "endChar": 31
+      },
+      "revId": "ea7acd80362e27c44a299c70504c21fdc7953e21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
