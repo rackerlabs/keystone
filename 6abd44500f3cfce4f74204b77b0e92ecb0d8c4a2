@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_f86959f7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6928
+      },
+      "writtenOn": "2019-08-19T20:46:25Z",
+      "side": 1,
+      "message": "FWIW, it looks like this changed because keystone-all went away. Previously that\u0027s where the enable_lazy call lived.",
+      "revId": "6abd44500f3cfce4f74204b77b0e92ecb0d8c4a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
