@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_d9c02a2e",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-08-19T15:02:16Z",
+      "side": 1,
+      "message": "Triple sigh. Again, thanks for the note.",
+      "range": {
+        "startLine": 170,
+        "startChar": 0,
+        "endLine": 172,
+        "endChar": 51
+      },
+      "revId": "b5617eee416d168a674283e220f67e2a9f174a19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
