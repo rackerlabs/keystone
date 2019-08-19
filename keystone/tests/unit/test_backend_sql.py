@@ -16,6 +16,7 @@ import datetime
 from unittest import mock
 import uuid
 
+import freezegun
 from oslo_db import exception as db_exception
 from oslo_db import options
 import sqlalchemy
@@ -670,6 +671,84 @@ class SqlIdentity(SqlTests,
             group_refs = PROVIDERS.identity_api.list_groups_for_user(
                 negative_user['id'])
             self.assertEqual(0, len(group_refs))
+
+    def test_add_user_to_group_expiring(self):
+        self._build_fed_resource()
+        domain = self._get_domain_fixture()
+
+        new_group = unit.new_group_ref(domain_id=domain['id'])
+        new_group = PROVIDERS.identity_api.create_group(new_group)
+
+        fed_dict = unit.new_federated_user_ref()
+        fed_dict['idp_id'] = 'myidp'
+        fed_dict['protocol_id'] = 'mapped'
+        new_user = PROVIDERS.shadow_users_api.create_federated_user(
+            domain['id'], fed_dict
+        )
+
+        with freezegun.freeze_time(datetime.datetime.utcnow()) as frozen_time:
+            PROVIDERS.shadow_users_api.add_user_to_group_expires(
+                new_user['id'], new_group['id'])
+            PROVIDERS.identity_api.check_user_in_group(new_user['id'],
+                                                       new_group['id'])
+
+            # Expiration
+            ttl_plus_1 = datetime.timedelta(
+                minutes=CONF.federation.default_authorization_ttl + 1)
+            frozen_time.tick(ttl_plus_1)
+            self.assertRaises(exception.NotFound,
+                              PROVIDERS.identity_api.check_user_in_group,
+                              new_user['id'],
+                              new_group['id'])
+
+            # Renewal
+            PROVIDERS.shadow_users_api.add_user_to_group_expires(
+                new_user['id'], new_group['id'])
+            PROVIDERS.identity_api.check_user_in_group(new_user['id'],
+                                                       new_group['id'])
+
+    def test_add_user_to_group_expiring_list(self):
+        self._build_fed_resource()
+        domain = self._get_domain_fixture()
+
+        new_group = unit.new_group_ref(domain_id=domain['id'])
+        new_group = PROVIDERS.identity_api.create_group(new_group)
+        exp_new_group = unit.new_group_ref(domain_id=domain['id'])
+        exp_new_group = PROVIDERS.identity_api.create_group(exp_new_group)
+
+        fed_dict = unit.new_federated_user_ref()
+        fed_dict['idp_id'] = 'myidp'
+        fed_dict['protocol_id'] = 'mapped'
+        new_user = PROVIDERS.shadow_users_api.create_federated_user(
+            domain['id'], fed_dict
+        )
+
+        PROVIDERS.identity_api.add_user_to_group(new_user['id'],
+                                                 new_group['id'])
+        PROVIDERS.identity_api.check_user_in_group(new_user['id'],
+                                                   new_group['id'])
+
+        time = datetime.datetime.utcnow()
+        ttl = datetime.timedelta(
+            minutes=CONF.federation.default_authorization_ttl)
+        with freezegun.freeze_time(time) as frozen_time:
+            PROVIDERS.shadow_users_api.add_user_to_group_expires(
+                new_user['id'], exp_new_group['id'])
+            PROVIDERS.identity_api.check_user_in_group(new_user['id'],
+                                                       new_group['id'])
+
+            groups = PROVIDERS.identity_api.list_groups_for_user(
+                new_user['id'])
+            self.assertEqual(len(groups), 2)
+            for group in groups:
+                if group.get('expires'):
+                    self.assertEqual(group['expires'], time + ttl)
+
+            frozen_time.tick(datetime.timedelta(
+                minutes=CONF.federation.default_authorization_ttl + 1))
+            groups = PROVIDERS.identity_api.list_groups_for_user(
+                new_user['id'])
+            self.assertEqual(len(groups), 1)
 
     def test_storing_null_domain_id_in_project_ref(self):
         """Test the special storage of domain_id=None in sql resource driver.
