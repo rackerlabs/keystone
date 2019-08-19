@@ -22,6 +22,30 @@
       "revId": "686ec6dda6dfa73e9634979231bcd9b2edbd1da8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_98f5c553",
+        "filename": "keystone/tests/unit/protection/v3/test_trusts.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 960,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-08-19T20:34:49Z",
+      "side": 1,
+      "message": "I had the same question. Using just the admin is consistent with how the other unit tests are set up, and this was Lance\u0027s justification for it: https://review.opendev.org/#/c/621017/7/keystone/tests/unit/protection/v3/test_registered_limits.py",
+      "parentUuid": "7faddb67_18cc75b9",
+      "range": {
+        "startLine": 960,
+        "startChar": 12,
+        "endLine": 960,
+        "endChar": 43
+      },
+      "revId": "686ec6dda6dfa73e9634979231bcd9b2edbd1da8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
