@@ -1244,6 +1244,16 @@ links_user:
   in: body
   required: true
   type: object
+membership_expires_at:
+  description: |
+    The date and time when the group membership expires.
+
+    This is a response object attribute; not valid for requests.
+    A ``null`` value indicates that the membership never expires.
+  in: body
+  required: true
+  type: string
+  min_version: 3.14
 original_password:
   description: |
     The original password for the user.
