@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_991392b8",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-08-19T15:06:08Z",
+      "side": 1,
+      "message": "Shouldn\u0027t is_admin work like the old \"admin\" context? I\u0027m not sure why an admin is forbidden here.\n\nAdmin is like system scope. are we changing behavior here?",
+      "range": {
+        "startLine": 405,
+        "startChar": 0,
+        "endLine": 409,
+        "endChar": 73
+      },
+      "revId": "09e699baba89b94a020682ab7d916d67360f4481",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
