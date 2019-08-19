@@ -22,6 +22,30 @@
       "revId": "ea7acd80362e27c44a299c70504c21fdc7953e21",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_38005101",
+        "filename": "keystone/common/policies/trust.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-08-19T19:47:44Z",
+      "side": 1,
+      "message": "Nevermind, didn\u0027t realized it is being done in a separate patch here\n\nhttps://review.opendev.org/#/c/677004/3/keystone/common/policies/trust.py",
+      "parentUuid": "7faddb67_6d56092d",
+      "range": {
+        "startLine": 118,
+        "startChar": 18,
+        "endLine": 118,
+        "endChar": 31
+      },
+      "revId": "ea7acd80362e27c44a299c70504c21fdc7953e21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
