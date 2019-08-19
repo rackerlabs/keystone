@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_39913e53",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-08-19T15:01:13Z",
+      "side": 1,
+      "message": "Thanks for the note. This makes me a bit sad, but it\u0027s the right choice \u003d/.",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 52
+      },
+      "revId": "a09163a3202c32f05cf636559a95fe45c6ea272b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
