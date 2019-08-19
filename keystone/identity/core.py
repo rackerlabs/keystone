@@ -1309,6 +1309,9 @@ class Manager(manager.Manager):
             # driver selection, so remove any such filter
             self._mark_domain_id_filter_satisfied(hints)
         ref_list = driver.list_groups_for_user(entity_id, hints)
+        for ref in ref_list:
+            if 'expires' not in ref:
+                ref['expires'] = None
         return self._set_domain_id_and_mapping(
             ref_list, domain_id, driver, mapping.EntityType.GROUP)
 
