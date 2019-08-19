@@ -22,6 +22,30 @@
       "revId": "09e699baba89b94a020682ab7d916d67360f4481",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_f8b4f983",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-08-19T20:38:20Z",
+      "side": 1,
+      "message": "Talked about it in IRC but to follow up here - the _trustor_trustee_only function implicitly excludes the is_admin admin. By moving the logic into policies, we lose that exclusion because the policies aren\u0027t loaded for is_admin. So this makes the exclusion explicit.\n\nIn a later patch in the stack, we change the behavior by allowing the system admin to access these APIs. Since we\u0027re already doing that, maybe we should drop this here too - it seems pretty silly to exclude the admin from this resource.",
+      "parentUuid": "7faddb67_991392b8",
+      "range": {
+        "startLine": 405,
+        "startChar": 0,
+        "endLine": 409,
+        "endChar": 73
+      },
+      "revId": "09e699baba89b94a020682ab7d916d67360f4481",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
