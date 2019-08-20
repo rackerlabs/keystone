@@ -46,6 +46,30 @@
       "revId": "09e699baba89b94a020682ab7d916d67360f4481",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_bd697af8",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-08-20T20:43:05Z",
+      "side": 1,
+      "message": "What does \"oslo_context.is_admin\" means anyway? Is that God or Jesus?",
+      "parentUuid": "7faddb67_f8b4f983",
+      "range": {
+        "startLine": 405,
+        "startChar": 0,
+        "endLine": 409,
+        "endChar": 73
+      },
+      "revId": "09e699baba89b94a020682ab7d916d67360f4481",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
