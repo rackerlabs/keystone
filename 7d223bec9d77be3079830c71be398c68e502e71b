@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_19da344a",
+        "filename": "keystone/tests/unit/protection/v3/test_endpoint_group.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-08-20T04:40:55Z",
+      "side": 1,
+      "message": "maybe simplify with {\u0027endpoint_group\u0027: unit.new_endpoint_group_ref(...)}?",
+      "range": {
+        "startLine": 309,
+        "startChar": 8,
+        "endLine": 316,
+        "endChar": 9
+      },
+      "revId": "7d223bec9d77be3079830c71be398c68e502e71b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
