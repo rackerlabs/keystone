@@ -1,0 +1,9 @@
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+2: guang-yee <guang.yee@suse.com>
+Workflow+1: Colleen Murphy <colleen@gazlene.net>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 21 Aug 2019 02:21:09 +0000
+Reviewed-on: https://review.opendev.org/675272
+Project: openstack/keystone
+Branch: refs/heads/master
