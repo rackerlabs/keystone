@@ -34,6 +34,24 @@
       "revId": "f7fe68b9f7b2766650ca57f21049e95758918f49",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_34e6bb18",
+        "filename": "releasenotes/notes/federated-attr-a887677dbe0917cc.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-08-21T13:41:51Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3f79a3b5_bbaca436",
+      "revId": "f7fe68b9f7b2766650ca57f21049e95758918f49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
