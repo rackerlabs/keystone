@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_93081f27",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-08-21T14:11:47Z",
+      "side": 1,
+      "message": "Can add tag closes-bug?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 35
+      },
+      "revId": "2ccca93d8a1039ec12ae9a82dea196eccf8c269b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
