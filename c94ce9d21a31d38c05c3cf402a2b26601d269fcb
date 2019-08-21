@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_abb12de2",
+        "filename": "keystone/api/users.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 672,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-08-21T03:14:15Z",
+      "side": 1,
+      "message": "Is \"ref \u003d None\" most correct here or is ref \u003d {} more correct?\n\nObviously this works, consider this a NIT and not -1 worthy.",
+      "range": {
+        "startLine": 672,
+        "startChar": 8,
+        "endLine": 672,
+        "endChar": 18
+      },
+      "revId": "c94ce9d21a31d38c05c3cf402a2b26601d269fcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_0bc2c134",
+        "filename": "keystone/api/users.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-08-21T03:14:15Z",
+      "side": 1,
+      "message": "NIT: this is the same as the one on 671, this could be made a module-level function",
+      "range": {
+        "startLine": 704,
+        "startChar": 0,
+        "endLine": 714,
+        "endChar": 18
+      },
+      "revId": "c94ce9d21a31d38c05c3cf402a2b26601d269fcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_abffed63",
+        "filename": "keystone/application_credential/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2019-08-21T03:14:15Z",
+      "side": 1,
+      "message": "Do we need audit notification(s) here?",
+      "range": {
+        "startLine": 263,
+        "startChar": 0,
+        "endLine": 263,
+        "endChar": 57
+      },
+      "revId": "c94ce9d21a31d38c05c3cf402a2b26601d269fcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
