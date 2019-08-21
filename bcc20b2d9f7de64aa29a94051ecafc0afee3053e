@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_f85ff20b",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-08-21T13:41:51Z",
+      "side": 1,
+      "message": "NIT: a new line space will be better.",
+      "revId": "bcc20b2d9f7de64aa29a94051ecafc0afee3053e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
