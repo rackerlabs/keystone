@@ -1,0 +1,8 @@
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 22 Aug 2019 10:44:46 +0000
+Reviewed-on: https://review.opendev.org/677896
+Project: openstack/keystone
+Branch: refs/heads/stable/queens
