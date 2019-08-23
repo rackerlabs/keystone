@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_13a39ab3",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2019-08-23T19:26:27Z",
+      "side": 1,
+      "message": "gah, I missed one underscore :(",
+      "range": {
+        "startLine": 393,
+        "startChar": 4,
+        "endLine": 393,
+        "endChar": 5
+      },
+      "revId": "1bd1024e0389d31803d01a35a59a068b2282c84b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
