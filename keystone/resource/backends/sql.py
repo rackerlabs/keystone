@@ -11,7 +11,6 @@
 # under the License.
 
 from oslo_log import log
-from six import text_type
 from sqlalchemy import orm
 from sqlalchemy.sql import expression
 
@@ -19,6 +18,8 @@ from keystone.common import driver_hints
 from keystone.common import sql
 from keystone import exception
 from keystone.resource.backends import base
+from keystone.resource.backends import sql_model
+
 
 LOG = log.getLogger(__name__)
 
@@ -39,7 +40,7 @@ class Resource(base.ResourceDriverBase):
         return ref.id == base.NULL_DOMAIN_ID
 
     def _get_project(self, session, project_id):
-        project_ref = session.query(Project).get(project_id)
+        project_ref = session.query(sql_model.Project).get(project_id)
         if project_ref is None or self._is_hidden_ref(project_ref):
             raise exception.ProjectNotFound(project_id=project_id)
         return project_ref
@@ -50,7 +51,7 @@ class Resource(base.ResourceDriverBase):
 
     def get_project_by_name(self, project_name, domain_id):
         with sql.session_for_read() as session:
-            query = session.query(Project)
+            query = session.query(sql_model.Project)
             query = query.filter_by(name=project_name)
             if domain_id is None:
                 query = query.filter_by(
@@ -78,9 +79,10 @@ class Resource(base.ResourceDriverBase):
             if (f['name'] == 'domain_id' and f['value'] is None):
                 f['value'] = base.NULL_DOMAIN_ID
         with sql.session_for_read() as session:
-            query = session.query(Project)
-            query = query.filter(Project.id != base.NULL_DOMAIN_ID)
-            project_refs = sql.filter_limit_query(Project, query, hints)
+            query = session.query(sql_model.Project)
+            query = query.filter(sql_model.Project.id != base.NULL_DOMAIN_ID)
+            project_refs = sql.filter_limit_query(sql_model.Project, query,
+                                                  hints)
             return [project_ref.to_dict() for project_ref in project_refs]
 
     def list_projects_from_ids(self, ids):
@@ -88,8 +90,8 @@ class Resource(base.ResourceDriverBase):
             return []
         else:
             with sql.session_for_read() as session:
-                query = session.query(Project)
-                query = query.filter(Project.id.in_(ids))
+                query = session.query(sql_model.Project)
+                query = query.filter(sql_model.Project.id.in_(ids))
                 return [project_ref.to_dict() for project_ref in query.all()
                         if not self._is_hidden_ref(project_ref)]
 
@@ -98,9 +100,9 @@ class Resource(base.ResourceDriverBase):
             return []
         else:
             with sql.session_for_read() as session:
-                query = session.query(Project.id)
+                query = session.query(sql_model.Project.id)
                 query = (
-                    query.filter(Project.domain_id.in_(domain_ids)))
+                    query.filter(sql_model.Project.domain_id.in_(domain_ids)))
                 return [x.id for x in query.all()
                         if not self._is_hidden_ref(x)]
 
@@ -110,8 +112,9 @@ class Resource(base.ResourceDriverBase):
                 self._get_project(session, domain_id)
             except exception.ProjectNotFound:
                 raise exception.DomainNotFound(domain_id=domain_id)
-            query = session.query(Project)
-            project_refs = query.filter(Project.domain_id == domain_id)
+            query = session.query(sql_model.Project)
+            project_refs = query.filter(
+                sql_model.Project.domain_id == domain_id)
             return [project_ref.to_dict() for project_ref in project_refs]
 
     def list_projects_acting_as_domain(self, hints):
@@ -119,8 +122,8 @@ class Resource(base.ResourceDriverBase):
         return self.list_projects(hints)
 
     def _get_children(self, session, project_ids, domain_id=None):
-        query = session.query(Project)
-        query = query.filter(Project.parent_id.in_(project_ids))
+        query = session.query(sql_model.Project)
+        query = query.filter(sql_model.Project.parent_id.in_(project_ids))
         project_refs = query.all()
         return [project_ref.to_dict() for project_ref in project_refs]
 
@@ -173,13 +176,13 @@ class Resource(base.ResourceDriverBase):
     def list_projects_by_tags(self, filters):
         filtered_ids = []
         with sql.session_for_read() as session:
-            query = session.query(ProjectTag)
+            query = session.query(sql_model.ProjectTag)
             if 'tags' in filters.keys():
                 filtered_ids += self._filter_ids_by_tags(
                     query, filters['tags'].split(','))
             if 'tags-any' in filters.keys():
                 any_tags = filters['tags-any'].split(',')
-                subq = query.filter(ProjectTag.name.in_(any_tags))
+                subq = query.filter(sql_model.ProjectTag.name.in_(any_tags))
                 any_tags = [ptag['project_id'] for ptag in subq]
                 if 'tags' in filters.keys():
                     any_tags = set(any_tags) & set(filtered_ids)
@@ -192,7 +195,7 @@ class Resource(base.ResourceDriverBase):
                                                      blacklist_ids)
             if 'not-tags-any' in filters.keys():
                 any_tags = filters['not-tags-any'].split(',')
-                subq = query.filter(ProjectTag.name.in_(any_tags))
+                subq = query.filter(sql_model.ProjectTag.name.in_(any_tags))
                 blacklist_ids = [ptag['project_id'] for ptag in subq]
                 if 'not-tags' in filters.keys():
                     filtered_ids += blacklist_ids
@@ -202,16 +205,16 @@ class Resource(base.ResourceDriverBase):
                                                          blacklist_ids)
             if not filtered_ids:
                 return []
-            query = session.query(Project)
-            query = query.filter(Project.id.in_(filtered_ids))
+            query = session.query(sql_model.Project)
+            query = query.filter(sql_model.Project.id.in_(filtered_ids))
             return [project_ref.to_dict() for project_ref in query.all()
                     if not self._is_hidden_ref(project_ref)]
 
     def _filter_ids_by_tags(self, query, tags):
         filtered_ids = []
-        subq = query.filter(ProjectTag.name.in_(tags))
+        subq = query.filter(sql_model.ProjectTag.name.in_(tags))
         for ptag in subq:
-            subq_tags = query.filter(ProjectTag.project_id ==
+            subq_tags = query.filter(sql_model.ProjectTag.project_id ==
                                      ptag['project_id'])
             result = map(lambda x: x['name'], subq_tags.all())
             if set(tags) <= set(result):
@@ -219,7 +222,7 @@ class Resource(base.ResourceDriverBase):
         return filtered_ids
 
     def _filter_not_tags(self, session, filtered_ids, blacklist_ids):
-        subq = session.query(Project)
+        subq = session.query(sql_model.Project)
         valid_ids = [q['id'] for q in subq if q['id'] not in blacklist_ids]
         if filtered_ids:
             valid_ids = list(set(valid_ids) & set(filtered_ids))
@@ -230,7 +233,7 @@ class Resource(base.ResourceDriverBase):
     def create_project(self, project_id, project):
         new_project = self._encode_domain_id(project)
         with sql.session_for_write() as session:
-            project_ref = Project.from_dict(new_project)
+            project_ref = sql_model.Project.from_dict(new_project)
             session.add(project_ref)
             return project_ref.to_dict()
 
@@ -245,8 +248,8 @@ class Resource(base.ResourceDriverBase):
             # When we read the old_project_dict, any "null" domain_id will have
             # been decoded, so we need to re-encode it
             old_project_dict = self._encode_domain_id(old_project_dict)
-            new_project = Project.from_dict(old_project_dict)
-            for attr in Project.attributes:
+            new_project = sql_model.Project.from_dict(old_project_dict)
+            for attr in sql_model.Project.attributes:
                 if attr != 'id':
                     setattr(project_ref, attr, getattr(new_project, attr))
             project_ref.extra = new_project.extra
@@ -263,8 +266,8 @@ class Resource(base.ResourceDriverBase):
         if not project_ids:
             return
         with sql.session_for_write() as session:
-            query = session.query(Project).filter(Project.id.in_(
-                project_ids))
+            query = session.query(sql_model.Project).filter(
+                sql_model.Project.id.in_(project_ids))
             project_ids_from_bd = [p['id'] for p in query.all()]
             for project_id in project_ids:
                 if (project_id not in project_ids_from_bd or
@@ -320,7 +323,7 @@ class Resource(base.ResourceDriverBase):
             # some trees hit the max depth limit.
 
             for _ in range(max_depth + 1):
-                obj_list.append(orm.aliased(Project))
+                obj_list.append(orm.aliased(sql_model.Project))
 
             query = session.query(*obj_list)
 
@@ -333,76 +336,3 @@ class Resource(base.ResourceDriverBase):
 
             if exceeded_lines:
                 return [line[max_depth].id for line in exceeded_lines]
-
-
-class Project(sql.ModelBase, sql.ModelDictMixinWithExtras):
-    # NOTE(henry-nash): From the manager and above perspective, the domain_id
-    # is nullable.  However, to ensure uniqueness in multi-process
-    # configurations, it is better to still use the sql uniqueness constraint.
-    # Since the support for a nullable component of a uniqueness constraint
-    # across different sql databases is mixed, we instead store a special value
-    # to represent null, as defined in NULL_DOMAIN_ID above.
-
-    def to_dict(self, include_extra_dict=False):
-        d = super(Project, self).to_dict(
-            include_extra_dict=include_extra_dict)
-        if d['domain_id'] == base.NULL_DOMAIN_ID:
-            d['domain_id'] = None
-        return d
-
-    __tablename__ = 'project'
-    attributes = ['id', 'name', 'domain_id', 'description', 'enabled',
-                  'parent_id', 'is_domain', 'tags']
-    id = sql.Column(sql.String(64), primary_key=True)
-    name = sql.Column(sql.String(64), nullable=False)
-    domain_id = sql.Column(sql.String(64), sql.ForeignKey('project.id'),
-                           nullable=False)
-    description = sql.Column(sql.Text())
-    enabled = sql.Column(sql.Boolean)
-    extra = sql.Column(sql.JsonBlob())
-    parent_id = sql.Column(sql.String(64), sql.ForeignKey('project.id'))
-    is_domain = sql.Column(sql.Boolean, default=False, nullable=False,
-                           server_default='0')
-    _tags = orm.relationship(
-        'ProjectTag',
-        single_parent=True,
-        lazy='subquery',
-        cascade='all,delete-orphan',
-        backref='project',
-        primaryjoin='and_(ProjectTag.project_id==Project.id)'
-    )
-
-    # Unique constraint across two columns to create the separation
-    # rather than just only 'name' being unique
-    __table_args__ = (sql.UniqueConstraint('domain_id', 'name'),)
-
-    @property
-    def tags(self):
-        if self._tags:
-            return [tag.name for tag in self._tags]
-        return []
-
-    @tags.setter
-    def tags(self, values):
-        new_tags = []
-        for tag in values:
-            tag_ref = ProjectTag()
-            tag_ref.project_id = self.id
-            tag_ref.name = text_type(tag)
-            new_tags.append(tag_ref)
-        self._tags = new_tags
-
-
-class ProjectTag(sql.ModelBase, sql.ModelDictMixin):
-
-    def to_dict(self):
-        d = super(ProjectTag, self).to_dict()
-        return d
-
-    __tablename__ = 'project_tag'
-    attributes = ['project_id', 'name']
-    project_id = sql.Column(
-        sql.String(64), sql.ForeignKey('project.id', ondelete='CASCADE'),
-        nullable=False, primary_key=True)
-    name = sql.Column(sql.Unicode(255), nullable=False, primary_key=True)
-    __table_args__ = (sql.UniqueConstraint('project_id', 'name'),)

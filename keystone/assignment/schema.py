@@ -11,12 +11,14 @@
 # under the License.
 
 from keystone.common.validation import parameter_types
+from keystone.assignment.role_backends import resource_options as ro
 
 # Schema for Identity v3 API
 
 _role_properties = {
     'name': parameter_types.name,
-    'description': parameter_types.description
+    'description': parameter_types.description,
+    'options': ro.ROLE_OPTIONS_REGISTRY.json_schema
 }
 
 role_create = {

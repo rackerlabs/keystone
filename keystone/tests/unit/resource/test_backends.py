@@ -229,6 +229,7 @@ class ResourceTests(object):
 
     def test_list_projects(self):
         project_refs = PROVIDERS.resource_api.list_projects()
+        raise Exception(project_refs)
         project_count = len(default_fixtures.PROJECTS) + self.domain_count
         self.assertEqual(project_count, len(project_refs))
         for project in default_fixtures.PROJECTS:
