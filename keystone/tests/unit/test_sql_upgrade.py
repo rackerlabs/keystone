@@ -3434,6 +3434,28 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         self.assertTrue(self.does_unique_constraint_exist(
             'access_rule', ['user_id', 'service', 'path', 'method']))
 
+    def test_migration_066_add_role_and_prject_options_tables(self):
+        self.expand(65)
+        self.migrate(65)
+        self.contract(65)
+
+        role_option = 'role_option'
+        project_option = 'project_option'
+        self.assertTableDoesNotExist(role_option)
+        self.assertTableDoesNotExist(project_option)
+
+        self.expand(66)
+        self.migrate(66)
+        self.contract(66)
+
+        self.assertTableColumns(
+            project_option,
+            ['project_id', 'option_id', 'option_value'])
+
+        self.assertTableColumns(
+            role_option,
+            ['role_id', 'option_id', 'option_value'])
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = db_fixtures.MySQLOpportunisticFixture

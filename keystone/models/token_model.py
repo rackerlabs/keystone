@@ -19,6 +19,7 @@ import six
 
 from keystone.common import cache
 from keystone.common import provider_api
+from keystone.common.resource_options import core as ro_core
 from keystone import exception
 from keystone.i18n import _
 
@@ -134,18 +135,30 @@ class TokenModel(object):
     def user_domain(self):
         if not self.__user_domain:
             if self.user:
-                self.__user_domain = PROVIDERS.resource_api.get_domain(
+                domain = PROVIDERS.resource_api.get_domain(
                     self.user['domain_id']
                 )
+                # NOTE(morgan): DO NOT LEAK RESOURCE OPTIONS IN THE TOKEN. If
+                # there is a RESOURCE OPTION that needs to be acted upon, the resource
+                # should be directly queried. This can be altered in the future but
+                # there is no case resource options should leak on initial
+                # implementation
+                self.__user_domain = ro_core.filter_resource_options(domain)
         return self.__user_domain
 
     @property
     def domain(self):
         if not self.__domain:
             if self.domain_id:
-                self.__domain = PROVIDERS.resource_api.get_domain(
+                domain = PROVIDERS.resource_api.get_domain(
                     self.domain_id
                 )
+                # NOTE(morgan): DO NOT LEAK RESOURCE OPTIONS IN THE TOKEN. If
+                # there is a RESOURCE OPTION that needs to be acted upon, the resource
+                # should be directly queried. This can be altered in the future but
+                # there is no case resource options should leak on initial
+                # implementation
+                self.__domain = ro_core.filter_resource_options(domain)
         return self.__domain
 
     @property
@@ -156,9 +169,16 @@ class TokenModel(object):
     def project(self):
         if not self.__project:
             if self.project_id:
-                self.__project = PROVIDERS.resource_api.get_project(
+                project = PROVIDERS.resource_api.get_project(
                     self.project_id
                 )
+                # NOTE(morgan): DO NOT LEAK RESOURCE OPTIONS IN THE TOKEN. If
+                # there is a RESOURCE OPTION that needs to be acted upon, the resource
+                # should be directly queried. This can be altered in the future but
+                # there is no case resource options should leak on initial
+                # implementation
+                filtered = ro_core.filter_resource_options(project)
+                self.__project = filtered
         return self.__project
 
     @property
@@ -169,9 +189,15 @@ class TokenModel(object):
     def project_domain(self):
         if not self.__project_domain:
             if self.project and self.project.get('domain_id'):
-                self.__project_domain = PROVIDERS.resource_api.get_domain(
+                domain = PROVIDERS.resource_api.get_domain(
                     self.project['domain_id']
                 )
+                # NOTE(morgan): DO NOT LEAK RESOURCE OPTIONS IN THE TOKEN. If
+                # there is a RESOURCE OPTION that needs to be acted upon, the resource
+                # should be directly queried. This can be altered in the future but
+                # there is no case resource options should leak on initial
+                # implementation
+                self.__project_domain = ro_core.filter_resource_options(domain)
         return self.__project_domain
 
     @property
@@ -232,20 +258,30 @@ class TokenModel(object):
     def trust_project(self):
         if not self.__trust_project:
             if self.trust:
-                self.__trust_project = PROVIDERS.resource_api.get_project(
-                    self.trust['project_id']
-                )
+                project = PROVIDERS.resource_api.get_project(
+                    self.trust['project_id'])
+                # NOTE(morgan): DO NOT LEAK RESOURCE OPTIONS IN THE TOKEN. If
+                # there is a RESOURCE OPTION that needs to be acted upon, the resource
+                # should be directly queried. This can be altered in the future but
+                # there is no case resource options should leak on initial
+                # implementation
+                self.__trust_project = ro_core.filter_resource_options(project)
         return self.__trust_project
 
     @property
     def trust_project_domain(self):
         if not self.__trust_project_domain:
             if self.trust:
-                self.__trust_project_domain = (
-                    PROVIDERS.resource_api.get_domain(
-                        self.trust_project['domain_id']
-                    )
+                domain = PROVIDERS.resource_api.get_domain(
+                    self.trust_project['domain_id']
                 )
+                # NOTE(morgan): DO NOT LEAK RESOURCE OPTIONS IN THE TOKEN. If
+                # there is a RESOURCE OPTION that needs to be acted upon, the resource
+                # should be directly queried. This can be altered in the future but
+                # there is no case resource options should leak on initial
+                # implementation
+                self.__trust_project_domain = ro_core.filter_resource_options(
+                    domain)
         return self.__trust_project_domain
 
     def _get_system_roles(self):
@@ -438,7 +474,13 @@ class TokenModel(object):
             roles = self._get_project_roles()
         else:
             roles = []
-        return roles
+
+        # NOTE(morgan): DO NOT LEAK RESOURCE OPTIONS IN THE TOKEN. If
+        # there is a RESOURCE OPTION that needs to be acted upon, the resource
+        # should be directly queried. This can be altered in the future but
+        # there is no case resource options should leak on initial
+        # implementation
+        return [ro_core.filter_resource_options(r) for r in roles]
 
     def _validate_token_resources(self):
         if self.project and not self.project.get('enabled'):
