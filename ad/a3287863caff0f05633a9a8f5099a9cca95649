@@ -1,0 +1,8 @@
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 23 Aug 2019 01:13:40 +0000
+Reviewed-on: https://review.opendev.org/677461
+Project: openstack/keystone
+Branch: refs/heads/stable/rocky
