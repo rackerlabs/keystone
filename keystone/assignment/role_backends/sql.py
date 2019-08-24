@@ -15,6 +15,7 @@ from keystone.assignment.role_backends import base
 from keystone.assignment.role_backends import sql_model
 from keystone.common import driver_hints
 from keystone.common import resource_options
+from keystone.common.resource_options import options as ro_opt
 from keystone.common import sql
 from keystone import exception
 
@@ -73,6 +74,10 @@ class Role(base.RoleDriverBase):
     def update_role(self, role_id, role):
         with sql.session_for_write() as session:
             ref = self._get_role(session, role_id)
+            if self._is_immutable(ref):
+                if (len(role.keys()) > 1 or
+                        not role.get('options', {}).get('immutable', False)):
+                    raise exception.ResourceUpdateForbidden()
             old_dict = ref.to_dict()
             for k in role:
                 old_dict[k] = role[k]
@@ -92,9 +97,16 @@ class Role(base.RoleDriverBase):
                 ref, sql_model.RoleOption)
             return ref.to_dict()
 
+    def _is_immutable(self, ref):
+        immutable_option = resource_options.get_resource_option(
+            ref, ro_opt.IMMUTABLE_OPT.option_id)
+        return immutable_option and immutable_option.value
+
     def delete_role(self, role_id):
         with sql.session_for_write() as session:
             ref = self._get_role(session, role_id)
+            if self._is_immutable(ref):
+                raise exception.ResourceDeleteForbidden()
             session.delete(ref)
 
     def _get_implied_role(self, session, prior_role_id, implied_role_id):
