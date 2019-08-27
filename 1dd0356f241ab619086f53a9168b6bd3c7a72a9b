@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_0e4828b1",
+        "filename": "doc/source/conf.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 841
+      },
+      "writtenOn": "2019-08-27T12:49:36Z",
+      "side": 1,
+      "message": "It turns out it affects nothing.",
+      "revId": "1dd0356f241ab619086f53a9168b6bd3c7a72a9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
