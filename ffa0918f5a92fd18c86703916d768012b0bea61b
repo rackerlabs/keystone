@@ -33,6 +33,24 @@
       "revId": "ffa0918f5a92fd18c86703916d768012b0bea61b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_8ff636d8",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-08-28T19:03:42Z",
+      "side": 1,
+      "message": "Yes - I believe so https://opendev.org/openstack/keystone/src/branch/master/keystone/token/provider.py#L230-L232",
+      "parentUuid": "7faddb67_2e3679e9",
+      "revId": "ffa0918f5a92fd18c86703916d768012b0bea61b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
