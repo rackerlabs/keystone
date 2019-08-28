@@ -51,6 +51,24 @@
       "revId": "ffa0918f5a92fd18c86703916d768012b0bea61b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_4f759e31",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-08-28T19:13:02Z",
+      "side": 1,
+      "message": "It should always be a list of dictionaries with `id` as the only key if I\u0027m reading the code correctly. I don\u0027t think calling _encode_id() will actually do anything with a list since the type check of the if statement will always evaluate to False.\n\nWe could remove this bit, I removed it locally and the tests still passed.",
+      "parentUuid": "7faddb67_8ff636d8",
+      "revId": "ffa0918f5a92fd18c86703916d768012b0bea61b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
