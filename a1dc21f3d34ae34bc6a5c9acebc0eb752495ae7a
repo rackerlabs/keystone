@@ -16,6 +16,24 @@
       "revId": "a1dc21f3d34ae34bc6a5c9acebc0eb752495ae7a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_3c642221",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1300,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2019-08-28T18:37:53Z",
+      "side": 1,
+      "message": "Good catch Corey! I believe you\u0027re right and this probably copied before your patch landed. I should have picked up on this myself but missed it.",
+      "parentUuid": "7faddb67_8493be5c",
+      "revId": "a1dc21f3d34ae34bc6a5c9acebc0eb752495ae7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
