@@ -1,0 +1,11 @@
+Code-Review+1: Raildo Mascena <rmascena@redhat.com>
+Code-Review+1: Filippo Inzaghi <zhao.daqing@99cloud.net>
+Code-Review+1: pengyuesheng <pengyuesheng@gohighsec.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 29 Aug 2019 18:45:16 +0000
+Reviewed-on: https://review.opendev.org/672351
+Project: openstack/keystone
+Branch: refs/heads/stable/rocky
