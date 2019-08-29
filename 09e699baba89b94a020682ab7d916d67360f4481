@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7faddb67_1b46fac1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-08-29T16:19:47Z",
+      "side": 1,
+      "message": "nice :-)",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 69
+      },
+      "revId": "09e699baba89b94a020682ab7d916d67360f4481",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_991392b8",
         "filename": "keystone/api/trusts.py",
         "patchSetId": 5
