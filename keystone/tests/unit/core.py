@@ -487,6 +487,41 @@ def new_policy_ref(**kwargs):
     return ref
 
 
+def new_domain_config_ref(**kwargs):
+    ref = {
+        "identity": {
+            "driver": "ldap"
+        },
+        "ldap": {
+            "url": "ldap://myldap.com:389/",
+            "user_tree_dn": "ou=Users,dc=my_new_root,dc=org"
+        }
+    }
+
+    ref.update(kwargs)
+    return ref
+
+
+def new_domain_config_group_security_compliance_ref(**kwargs):
+    password_regex = uuid.uuid4().hex
+    password_regex_description = uuid.uuid4().hex
+    ref = {
+        "identity": {
+            "driver": "ldap"
+        },
+        "ldap": {
+            "url": "ldap://myldap.com:389/",
+            "user_tree_dn": "ou=Users,dc=my_new_root,dc=org"
+        },
+        'security_compliance': {
+            'password_regex': password_regex,
+            'password_regex_description': password_regex_description
+        }
+    }
+    ref.update(kwargs)
+    return ref
+
+
 def new_trust_ref(trustor_user_id, trustee_user_id, project_id=None,
                   impersonation=None, expires=None, role_ids=None,
                   role_names=None, remaining_uses=None,
