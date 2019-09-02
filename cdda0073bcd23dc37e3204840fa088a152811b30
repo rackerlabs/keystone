@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_038748b8",
+        "filename": "doc/source/conf.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 841
+      },
+      "writtenOn": "2019-09-02T12:32:59Z",
+      "side": 1,
+      "message": "I read through comments in past patch sets and know the graphviz extension is to create _static directory in doc/build/pdf directory. It looks tricky to use unnecessary sphinx extensions to solve other problems.\n\nHow about adding a command to create doc/build/pdf/_static directory to tox.ini? (A comment on why it is required would be nice too).",
+      "range": {
+        "startLine": 37,
+        "startChar": 14,
+        "endLine": 37,
+        "endChar": 36
+      },
+      "revId": "cdda0073bcd23dc37e3204840fa088a152811b30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
