@@ -22,6 +22,30 @@
       "revId": "cdda0073bcd23dc37e3204840fa088a152811b30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_720913da",
+        "filename": "doc/source/conf.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-09-03T18:23:22Z",
+      "side": 1,
+      "message": "Yes I agree the graphviz hack looks weird. Add a command in tox.ini seem to do the trick. Let me update. Thanks for the suggestion.",
+      "parentUuid": "7faddb67_038748b8",
+      "range": {
+        "startLine": 37,
+        "startChar": 14,
+        "endLine": 37,
+        "endChar": 36
+      },
+      "revId": "cdda0073bcd23dc37e3204840fa088a152811b30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
