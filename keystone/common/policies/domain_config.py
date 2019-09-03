@@ -30,6 +30,21 @@ deprecated_get_domain_config_default = policy.DeprecatedRule(
     check_str=base.RULE_ADMIN_REQUIRED,
 )
 
+deprecated_create_domain_config = policy.DeprecatedRule(
+    name=base.IDENTITY % 'create_domain_config',
+    check_str=base.RULE_ADMIN_REQUIRED,
+)
+
+deprecated_update_domain_config = policy.DeprecatedRule(
+    name=base.IDENTITY % 'update_domain_config',
+    check_str=base.RULE_ADMIN_REQUIRED,
+)
+
+deprecated_delete_domain_config = policy.DeprecatedRule(
+    name=base.IDENTITY % 'delete_domain_config',
+    check_str=base.RULE_ADMIN_REQUIRED,
+)
+
 
 DEPRECATED_REASON = """
 As of the Train release, the policy API now understands default roles and
@@ -42,7 +57,7 @@ relying on overrides in your deployment for the policy API.
 domain_config_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_domain_config',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.SYSTEM_ADMIN,
         # FIXME(lbragstad): The domain configuration API has traditionally
         # required system or cloud administrators. If, or when, keystone
         # implements the ability for project administrator to use these APIs,
@@ -58,7 +73,10 @@ domain_config_policies = [
                 'path': '/v3/domains/{domain_id}/config',
                 'method': 'PUT'
             }
-        ]
+        ],
+        deprecated_rule=deprecated_create_domain_config,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.TRAIN
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_domain_config',
@@ -131,7 +149,7 @@ domain_config_policies = [
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_domain_config',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.SYSTEM_ADMIN,
         scope_types=['system'],
         description=('Update domain configuration for either a domain, '
                      'specific group or a specific option in a group.'),
@@ -148,11 +166,14 @@ domain_config_policies = [
                 'path': '/v3/domains/{domain_id}/config/{group}/{option}',
                 'method': 'PATCH'
             }
-        ]
+        ],
+        deprecated_rule=deprecated_update_domain_config,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.TRAIN
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_domain_config',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.SYSTEM_ADMIN,
         scope_types=['system'],
         description=('Delete domain configuration for either a domain, '
                      'specific group or a specific option in a group.'),
@@ -169,7 +190,10 @@ domain_config_policies = [
                 'path': '/v3/domains/{domain_id}/config/{group}/{option}',
                 'method': 'DELETE'
             }
-        ]
+        ],
+        deprecated_rule=deprecated_delete_domain_config,
+        deprecated_reason=DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.TRAIN
     ),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_domain_config_default',
