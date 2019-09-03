@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    [`bug 1844207 <https://bugs.launchpad.net/keystone/+bug/1844207>`_]
+    In function _perform_auth, if no remote_id_name is found, we'll get
+    "NameError: name 'remote_id' is not defined" exception.
