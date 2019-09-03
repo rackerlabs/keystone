@@ -22,6 +22,30 @@
       "revId": "a5052879c5e039324722e57fcae448d4e9996d1a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_8b6346b1",
+        "filename": "keystone/api/auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 20190
+      },
+      "writtenOn": "2019-09-03T08:48:45Z",
+      "side": 1,
+      "message": "oh, if all continue from L346, then remote_id is never initialized, so adding whatever in L347 is of no use.",
+      "parentUuid": "7faddb67_eb399ad7",
+      "range": {
+        "startLine": 347,
+        "startChar": 12,
+        "endLine": 347,
+        "endChar": 65
+      },
+      "revId": "a5052879c5e039324722e57fcae448d4e9996d1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
