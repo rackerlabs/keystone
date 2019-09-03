@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_eb399ad7",
+        "filename": "keystone/api/auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-09-03T08:37:54Z",
+      "side": 1,
+      "message": "IMO instead of changing at L338, you can pass the default value None in the get method like-\nremote_id \u003d flask.request.environ.get(remote_id_name, None)",
+      "range": {
+        "startLine": 347,
+        "startChar": 12,
+        "endLine": 347,
+        "endChar": 65
+      },
+      "revId": "a5052879c5e039324722e57fcae448d4e9996d1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
