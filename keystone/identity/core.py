@@ -969,7 +969,7 @@ class Manager(manager.Manager):
             user = self.get_user(user_id)
         PROVIDERS.resource_api.assert_domain_enabled(user['domain_id'])
         if not user.get('enabled', True):
-            raise AssertionError(_('User is disabled: %s') % user_id)
+            raise exception.UserDisabled(user_id=user_id)
 
     @domains_configured
     @exception_translated('user')
