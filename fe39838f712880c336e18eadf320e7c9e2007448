@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_a76980be",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 972,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-09-04T08:32:23Z",
+      "side": 0,
+      "message": "This too gives the proper reasoning that user is disabled.",
+      "range": {
+        "startLine": 972,
+        "startChar": 18,
+        "endLine": 972,
+        "endChar": 69
+      },
+      "revId": "fe39838f712880c336e18eadf320e7c9e2007448",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
