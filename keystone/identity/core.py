@@ -963,13 +963,14 @@ class Manager(manager.Manager):
     def assert_user_enabled(self, user_id, user=None):
         """Assert the user and the user's domain are enabled.
 
-        :raise AssertionError if the user or the user's domain is disabled.
+        :raise UserDisabled if the user is disabled.
+        :raise AssertionError if the user's domain is disabled.
         """
         if user is None:
             user = self.get_user(user_id)
         PROVIDERS.resource_api.assert_domain_enabled(user['domain_id'])
         if not user.get('enabled', True):
-            raise AssertionError(_('User is disabled: %s') % user_id)
+            raise exception.UserDisabled(user_id=user_id)
 
     @domains_configured
     @exception_translated('user')
