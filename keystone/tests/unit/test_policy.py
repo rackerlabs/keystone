@@ -351,6 +351,11 @@ class PolicyJsonTestCase(unit.TestCase):
             'identity:create_domain_role',
             'identity:update_domain_role',
             'identity:delete_domain_role',
+            "identity:create_domain_config",
+            "identity:get_domain_config",
+            "identity:update_domain_config",
+            "identity:delete_domain_config",
+            "identity:get_domain_config_default",
         ]
         policy_keys = self._get_default_policy_rules()
         for p in removed_policies:
