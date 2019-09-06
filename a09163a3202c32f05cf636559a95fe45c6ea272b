@@ -22,6 +22,29 @@
       "revId": "a09163a3202c32f05cf636559a95fe45c6ea272b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_1c6096ce",
+        "filename": "keystone/common/policies/trust.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-09-06T20:54:03Z",
+      "side": 1,
+      "message": "So system-admins can no longer cleanup trusts?",
+      "range": {
+        "startLine": 78,
+        "startChar": 18,
+        "endLine": 78,
+        "endChar": 30
+      },
+      "revId": "a09163a3202c32f05cf636559a95fe45c6ea272b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
