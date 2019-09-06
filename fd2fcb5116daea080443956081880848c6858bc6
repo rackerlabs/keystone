@@ -1,0 +1,222 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_ad502f34",
+        "filename": "keystone/common/policies/domain_config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-06T20:00:05Z",
+      "side": 1,
+      "message": "domain config",
+      "range": {
+        "startLine": 35,
+        "startChar": 29,
+        "endLine": 35,
+        "endChar": 35
+      },
+      "revId": "fd2fcb5116daea080443956081880848c6858bc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_6d4a3781",
+        "filename": "keystone/common/policies/domain_config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-06T20:00:05Z",
+      "side": 1,
+      "message": "domain config",
+      "range": {
+        "startLine": 39,
+        "startChar": 48,
+        "endLine": 39,
+        "endChar": 54
+      },
+      "revId": "fd2fcb5116daea080443956081880848c6858bc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_ed7ce7b6",
+        "filename": "keystone/common/policies/domain_config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-06T20:00:05Z",
+      "side": 1,
+      "message": "This rule is not changing at all, so it does not need to be deprecated.",
+      "revId": "fd2fcb5116daea080443956081880848c6858bc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_6826a5ba",
+        "filename": "keystone/tests/unit/protection/v3/test_domain_config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-06T20:00:05Z",
+      "side": 1,
+      "message": "Why this rather than http_client.NOT_FOUND?",
+      "range": {
+        "startLine": 58,
+        "startChar": 39,
+        "endLine": 58,
+        "endChar": 68
+      },
+      "revId": "fd2fcb5116daea080443956081880848c6858bc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_c81b1971",
+        "filename": "keystone/tests/unit/protection/v3/test_domain_config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-06T20:00:05Z",
+      "side": 1,
+      "message": "existent",
+      "range": {
+        "startLine": 60,
+        "startChar": 30,
+        "endLine": 60,
+        "endChar": 38
+      },
+      "revId": "fd2fcb5116daea080443956081880848c6858bc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_c83479e1",
+        "filename": "keystone/tests/unit/protection/v3/test_domain_config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-06T20:00:05Z",
+      "side": 1,
+      "message": "existent",
+      "range": {
+        "startLine": 68,
+        "startChar": 30,
+        "endLine": 68,
+        "endChar": 38
+      },
+      "revId": "fd2fcb5116daea080443956081880848c6858bc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_e83135ee",
+        "filename": "keystone/tests/unit/protection/v3/test_domain_config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-06T20:00:05Z",
+      "side": 1,
+      "message": "http_client.NOT_FOUND",
+      "range": {
+        "startLine": 78,
+        "startChar": 39,
+        "endLine": 78,
+        "endChar": 68
+      },
+      "revId": "fd2fcb5116daea080443956081880848c6858bc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_a851fd10",
+        "filename": "keystone/tests/unit/protection/v3/test_domain_config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-06T20:00:05Z",
+      "side": 1,
+      "message": "existent",
+      "range": {
+        "startLine": 89,
+        "startChar": 30,
+        "endLine": 89,
+        "endChar": 38
+      },
+      "revId": "fd2fcb5116daea080443956081880848c6858bc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_685b052e",
+        "filename": "keystone/tests/unit/protection/v3/test_domain_config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-06T20:00:05Z",
+      "side": 1,
+      "message": "existent",
+      "range": {
+        "startLine": 100,
+        "startChar": 30,
+        "endLine": 100,
+        "endChar": 38
+      },
+      "revId": "fd2fcb5116daea080443956081880848c6858bc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_48a40909",
+        "filename": "keystone/tests/unit/protection/v3/test_domain_config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-06T20:00:05Z",
+      "side": 1,
+      "message": "I\u0027m not sure what the point of this test is - it\u0027s ultimately using the same domain and auth headers as the test above, and not using the newly created user and project at all. Do you want to maybe move this to a different class for project users as opposed to this class for system users?",
+      "revId": "fd2fcb5116daea080443956081880848c6858bc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
