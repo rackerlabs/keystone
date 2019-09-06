@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_dca51eb7",
+        "filename": "releasenotes/notes/bug-1818846-d1a8c77d20659ad6.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-09-06T21:18:53Z",
+      "side": 1,
+      "message": "sweet!",
+      "revId": "9be1caff97355099d25170fe390dd15d6f592d56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
