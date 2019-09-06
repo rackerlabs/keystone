@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_68822552",
+        "filename": "keystone/tests/unit/protection/v3/test_domain_config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-06T20:04:40Z",
+      "side": 1,
+      "message": "http_client.NOT_FOUND",
+      "range": {
+        "startLine": 370,
+        "startChar": 61,
+        "endLine": 370,
+        "endChar": 90
+      },
+      "revId": "edc1807211d0c50f3cf12f7deddb4aa7ed1ea85e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_08c5b18e",
+        "filename": "keystone/tests/unit/protection/v3/test_domain_config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-06T20:04:40Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem to be part of the policy, what is this actually testing?",
+      "revId": "edc1807211d0c50f3cf12f7deddb4aa7ed1ea85e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_28c2ed86",
+        "filename": "keystone/tests/unit/protection/v3/test_domain_config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-06T20:04:40Z",
+      "side": 1,
+      "message": "http_client.NOT_FOUND",
+      "range": {
+        "startLine": 473,
+        "startChar": 42,
+        "endLine": 473,
+        "endChar": 71
+      },
+      "revId": "edc1807211d0c50f3cf12f7deddb4aa7ed1ea85e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
