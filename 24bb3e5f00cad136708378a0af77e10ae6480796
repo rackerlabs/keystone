@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_1fbc0804",
+        "filename": "keystone/common/resource_options/options/immutable.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-06T22:27:59Z",
+      "side": 1,
+      "message": "I like this way of organizing it, thanks",
+      "revId": "24bb3e5f00cad136708378a0af77e10ae6480796",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
