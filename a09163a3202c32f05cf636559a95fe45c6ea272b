@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "5faad753_3cdc7273",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-06T20:59:38Z",
+      "side": 1,
+      "message": "No, it is not. is_admin is the god-mode admin that you would get if you used the admin token set in keystone.conf. It has no scope, and very importantly, all policies are ignored for it.",
+      "parentUuid": "5faad753_fcb7ba39",
+      "range": {
+        "startLine": 301,
+        "startChar": 24,
+        "endLine": 301,
+        "endChar": 50
+      },
+      "revId": "a09163a3202c32f05cf636559a95fe45c6ea272b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5faad753_1c6096ce",
         "filename": "keystone/common/policies/trust.py",
         "patchSetId": 7
