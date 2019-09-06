@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_dc643ebc",
+        "filename": "keystone/resource/backends/resource_options.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-06T21:06:43Z",
+      "side": 1,
+      "message": "Double license",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 20
+      },
+      "revId": "7689f3457a28cef6da06c2175f380a670069624e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
