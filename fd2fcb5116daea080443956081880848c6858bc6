@@ -217,6 +217,24 @@
       "revId": "fd2fcb5116daea080443956081880848c6858bc6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_08cb7153",
+        "filename": "keystone/tests/unit/protection/v3/test_domain_config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-06T20:20:55Z",
+      "side": 1,
+      "message": "Looking at the follow-on patches the idea makes sense since this will be mixed into the domain user and project user classes, but that still makes it unnecessary to create the new user/project/role.",
+      "parentUuid": "5faad753_48a40909",
+      "revId": "fd2fcb5116daea080443956081880848c6858bc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
