@@ -16,6 +16,24 @@
       "revId": "b100825a03920e59700dba7c45b2317344924867",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_2791c053",
+        "filename": "keystone/api/trusts.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-06T16:56:14Z",
+      "side": 1,
+      "message": "It will be logged on every call to GET /trusts/{}/roles, which is relatively infrequent. The other logging problem we were having was that the deprecation warning logs for every single policy were being emitted every time the policies were loaded, which was at least once per keystone process.",
+      "parentUuid": "7faddb67_5b53126d",
+      "revId": "b100825a03920e59700dba7c45b2317344924867",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
