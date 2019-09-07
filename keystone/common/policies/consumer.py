@@ -23,6 +23,18 @@ deprecated_list_consumers = policy.DeprecatedRule(
     name=base.IDENTITY % 'list_consumers',
     check_str=base.RULE_ADMIN_REQUIRED
 )
+deprecated_create_consumer = policy.DeprecatedRule(
+    name=base.IDENTITY % 'create_consumer',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
+deprecated_update_consumer = policy.DeprecatedRule(
+    name=base.IDENTITY % 'update_consumer',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
+deprecated_delete_consumer = policy.DeprecatedRule(
+    name=base.IDENTITY % 'delete_consumer',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
 
 DEPRECATED_REASON = """
 As of the Train release, the OAUTH1 consumer API understands how to
@@ -55,21 +67,21 @@ consumer_policies = [
         deprecated_since=versionutils.deprecated.TRAIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_consumer',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.SYSTEM_ADMIN,
         scope_types=['system'],
         description='Create OAUTH1 consumer.',
         operations=[{'path': '/v3/OS-OAUTH1/consumers',
                      'method': 'POST'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_consumer',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.SYSTEM_ADMIN,
         scope_types=['system'],
         description='Update OAUTH1 consumer.',
         operations=[{'path': '/v3/OS-OAUTH1/consumers/{consumer_id}',
                      'method': 'PATCH'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_consumer',
-        check_str=base.RULE_ADMIN_REQUIRED,
+        check_str=base.SYSTEM_ADMIN,
         scope_types=['system'],
         description='Delete OAUTH1 consumer.',
         operations=[{'path': '/v3/OS-OAUTH1/consumers/{consumer_id}',
