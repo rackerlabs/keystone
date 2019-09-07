@@ -22,6 +22,30 @@
       "revId": "a043f0e0a7bd9c4d1d1e33aa94776b7b257e6e2f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_8618ad81",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-09-07T13:29:52Z",
+      "side": 1,
+      "message": "This was the last patch for the policy and policy Association API. Do I need to add something else?",
+      "parentUuid": "5faad753_a87d7de8",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 6
+      },
+      "revId": "a043f0e0a7bd9c4d1d1e33aa94776b7b257e6e2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
