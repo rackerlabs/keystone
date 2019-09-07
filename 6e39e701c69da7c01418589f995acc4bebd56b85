@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5faad753_49c6456a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-09-07T17:57:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5faad753_c8f2399b",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 14
+      },
+      "revId": "6e39e701c69da7c01418589f995acc4bebd56b85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5faad753_a8e1fdd2",
         "filename": "keystone/tests/unit/protection/v3/test_domain_config.py",
         "patchSetId": 1
@@ -36,6 +60,24 @@
       "writtenOn": "2019-09-06T20:23:10Z",
       "side": 1,
       "message": "See note on this test from previous patch",
+      "revId": "6e39e701c69da7c01418589f995acc4bebd56b85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_e9a051a8",
+        "filename": "keystone/tests/unit/protection/v3/test_domain_config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-09-07T17:57:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5faad753_a8e1fdd2",
       "revId": "6e39e701c69da7c01418589f995acc4bebd56b85",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
