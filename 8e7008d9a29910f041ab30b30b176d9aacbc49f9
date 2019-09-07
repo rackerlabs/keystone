@@ -91,6 +91,40 @@
       "revId": "8e7008d9a29910f041ab30b30b176d9aacbc49f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_06f03d90",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2019-09-07T11:57:50Z",
+      "side": 1,
+      "message": "Add them here instead.",
+      "revId": "8e7008d9a29910f041ab30b30b176d9aacbc49f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_c62f85f4",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2019-09-07T11:57:50Z",
+      "side": 1,
+      "message": "Also here.",
+      "revId": "8e7008d9a29910f041ab30b30b176d9aacbc49f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
