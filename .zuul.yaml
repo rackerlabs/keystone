@@ -146,6 +146,23 @@
     name: keystone-dsvm-py35-functional-federation
     parent: keystone-dsvm-py35-functional-federation-ubuntu-xenial
 
+# Override tox timeouts
+- job:
+    name: openstack-tox-py37
+    timeout: 3600
+
+- job:
+    name: openstack-tox-py36
+    timeout: 3600
+
+- job:
+    name: openstack-tox-py27
+    timeout: 3600
+
+- job:
+    name: openstack-tox-cover
+    timeout: 3600
+
 - project:
     templates:
       - openstack-cover-jobs
