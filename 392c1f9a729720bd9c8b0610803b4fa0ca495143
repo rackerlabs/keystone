@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_7ddadbe9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-09-08T13:24:35Z",
+      "side": 1,
+      "message": "Can we add it also include the test cases for system member?",
+      "revId": "392c1f9a729720bd9c8b0610803b4fa0ca495143",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
