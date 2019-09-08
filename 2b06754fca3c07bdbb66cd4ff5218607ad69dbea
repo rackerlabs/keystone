@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_1d0ba78e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-09-08T13:00:12Z",
+      "side": 1,
+      "message": "It includes the system member also. I think commit message should include that too.",
+      "range": {
+        "startLine": 9,
+        "startChar": 58,
+        "endLine": 9,
+        "endChar": 70
+      },
+      "revId": "2b06754fca3c07bdbb66cd4ff5218607ad69dbea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
