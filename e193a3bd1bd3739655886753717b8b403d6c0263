@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_ef05b17b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-08T01:42:31Z",
+      "side": 1,
+      "message": "This is just adding tests, it is not changing the policies.",
+      "range": {
+        "startLine": 9,
+        "startChar": 12,
+        "endLine": 9,
+        "endChar": 45
+      },
+      "revId": "e193a3bd1bd3739655886753717b8b403d6c0263",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
