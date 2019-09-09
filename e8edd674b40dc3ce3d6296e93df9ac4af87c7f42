@@ -16,6 +16,24 @@
       "revId": "e8edd674b40dc3ce3d6296e93df9ac4af87c7f42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_71e67647",
+        "filename": "tox.ini",
+        "patchSetId": 15
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-09-09T16:39:41Z",
+      "side": 1,
+      "message": "I have a patch for that.\n\nhttps://review.opendev.org/#/c/679860/\n\nNot sure about the bug process for the sphinx stuff. Do I need to file a bugzilla bug or storyboard ticket?",
+      "parentUuid": "5faad753_d1388ad4",
+      "revId": "e8edd674b40dc3ce3d6296e93df9ac4af87c7f42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
