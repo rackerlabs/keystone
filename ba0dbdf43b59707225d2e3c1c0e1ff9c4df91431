@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_fe61e13a",
+        "filename": ".zuul.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-09-09T01:33:26Z",
+      "side": 1,
+      "message": "I guess this template can be removed, since you have added all its jobs below explicitly.\n\nhttps://opendev.org/openstack/openstack-zuul-jobs/src/branch/master/zuul.d/project-templates.yaml#L413",
+      "range": {
+        "startLine": 151,
+        "startChar": 0,
+        "endLine": 151,
+        "endChar": 28
+      },
+      "revId": "ba0dbdf43b59707225d2e3c1c0e1ff9c4df91431",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_3e21b9fc",
+        "filename": ".zuul.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-09-09T01:33:26Z",
+      "side": 1,
+      "message": "and this.\nhttps://opendev.org/openstack/openstack-zuul-jobs/src/branch/master/zuul.d/project-templates.yaml#L445",
+      "range": {
+        "startLine": 154,
+        "startChar": 0,
+        "endLine": 154,
+        "endChar": 36
+      },
+      "revId": "ba0dbdf43b59707225d2e3c1c0e1ff9c4df91431",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
