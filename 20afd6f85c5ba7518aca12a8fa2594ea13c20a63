@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_967d231e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-09T20:32:20Z",
+      "side": 1,
+      "message": "This doesn\u0027t make any sense. This change is enabling both \u0027system\u0027 and \u0027project\u0027 as a scope type for these APIs. EC2 credentials, like regular credentials, mostly only make sense as a project-scoped operation since they are managed by regular users.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 11
+      },
+      "revId": "20afd6f85c5ba7518aca12a8fa2594ea13c20a63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_d908ac29",
+        "filename": "keystone/common/policies/ec2_credential.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-09T20:32:20Z",
+      "side": 1,
+      "message": "Hmm weird that this behavior is inconsistent with ec2_get_credential and with the equivalent identity:list_credentials rule, but I see that it\u0027s compatible with the old rule. Might be worth mentioning why this one is weird in the commit message.",
+      "revId": "20afd6f85c5ba7518aca12a8fa2594ea13c20a63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_168ff323",
+        "filename": "keystone/common/policies/ec2_credential.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-09T20:32:20Z",
+      "side": 1,
+      "message": "This is changing the non-read-only operations. It\u0027s fine if you want to combine both system reader and system admin in one change, but the commit message needs to reflect that.",
+      "revId": "20afd6f85c5ba7518aca12a8fa2594ea13c20a63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
