@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_1e285332",
+        "filename": "keystone/common/policies/access_rule.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-09-10T15:45:55Z",
+      "side": 1,
+      "message": "Access rules are indirectly project specific, right? You can\u0027t create them directly with the API but only by creating an application credential (with access rules as an argument) and since app creds require projects each set of access rules are indirectly associated to a project, yeah?\n\nI\u0027m thinking about cases where we have many duplicate access rules in the backed. Each would be specific to an application credential. I\u0027m wondering if in the future we going to be able to optimize that case?",
+      "revId": "8e0d08bb741f40ad43e978739ef7c80b199683f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
