@@ -16,6 +16,24 @@
       "revId": "8e0d08bb741f40ad43e978739ef7c80b199683f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_7ef38774",
+        "filename": "keystone/common/policies/access_rule.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-10T15:54:06Z",
+      "side": 1,
+      "message": "Creating access rules are indirectly project specific, yes. My thinking here was that a system admin should be able to manage them and clean them up, since they aren\u0027t automatically deleted when an app cred is deleted. An access rule record isn\u0027t specific to a particular app cred, they are only specific to a user, so they won\u0027t be duplicated except when different users create the same ones.",
+      "parentUuid": "5faad753_1e285332",
+      "revId": "8e0d08bb741f40ad43e978739ef7c80b199683f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
