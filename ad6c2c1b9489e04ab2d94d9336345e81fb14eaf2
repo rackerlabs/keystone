@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_ca6c480a",
+        "filename": "keystone/tests/unit/protection/v3/test_domain_config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-09-10T01:03:54Z",
+      "side": 1,
+      "message": "existent",
+      "range": {
+        "startLine": 331,
+        "startChar": 38,
+        "endLine": 331,
+        "endChar": 39
+      },
+      "revId": "ad6c2c1b9489e04ab2d94d9336345e81fb14eaf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
