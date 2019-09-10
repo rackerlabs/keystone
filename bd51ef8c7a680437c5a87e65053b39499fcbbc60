@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_4a593858",
+        "filename": "keystone/common/policies/role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-09-10T01:09:44Z",
+      "side": 1,
+      "message": "I assume we\u0027ll tackle adding \u0027domain\u0027 to this at a later date?",
+      "range": {
+        "startLine": 135,
+        "startChar": 22,
+        "endLine": 135,
+        "endChar": 28
+      },
+      "revId": "bd51ef8c7a680437c5a87e65053b39499fcbbc60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
