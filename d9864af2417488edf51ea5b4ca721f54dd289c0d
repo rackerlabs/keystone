@@ -1,0 +1,101 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_e729239b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-10T23:14:21Z",
+      "side": 1,
+      "message": "It would be better if this happened in the next patch, removing the policies from the sample policy file is what breaks those tests.",
+      "revId": "d9864af2417488edf51ea5b4ca721f54dd289c0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_9a020609",
+        "filename": "keystone/tests/unit/protection/v3/test_ec2_credential.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-10T23:14:21Z",
+      "side": 1,
+      "message": "SystemReader can delete???",
+      "range": {
+        "startLine": 106,
+        "startChar": 7,
+        "endLine": 106,
+        "endChar": 25
+      },
+      "revId": "d9864af2417488edf51ea5b4ca721f54dd289c0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_9a50c60c",
+        "filename": "keystone/tests/unit/protection/v3/test_ec2_credential.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-10T23:14:21Z",
+      "side": 1,
+      "message": "How about cannot_delete?",
+      "revId": "d9864af2417488edf51ea5b4ca721f54dd289c0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_fa121a58",
+        "filename": "keystone/tests/unit/protection/v3/test_ec2_credential.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-10T23:14:21Z",
+      "side": 1,
+      "message": "How about delete?",
+      "revId": "d9864af2417488edf51ea5b4ca721f54dd289c0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_ba1ca26a",
+        "filename": "keystone/tests/unit/protection/v3/test_ec2_credential.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-10T23:14:21Z",
+      "side": 1,
+      "message": "This contains two tests test_user_can_delete_ec2_credentials_for_others and test_user_can_get_ec2_credentials_for_others I\u0027m pretty sure a project admin should not be able to do either of those things.",
+      "range": {
+        "startLine": 360,
+        "startChar": 24,
+        "endLine": 360,
+        "endChar": 60
+      },
+      "revId": "d9864af2417488edf51ea5b4ca721f54dd289c0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
