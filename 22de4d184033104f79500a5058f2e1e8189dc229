@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "5faad753_b6661629",
+        "filename": "keystone/tests/unit/protection/v3/test_policy_association.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-09-10T07:36:45Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 124,
+        "startChar": 39,
+        "endLine": 124,
+        "endChar": 48
+      },
+      "revId": "22de4d184033104f79500a5058f2e1e8189dc229",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5faad753_b6c136e7",
         "filename": "keystone/tests/unit/protection/v3/test_policy_association.py",
         "patchSetId": 1
@@ -36,6 +59,30 @@
       "writtenOn": "2019-09-10T07:35:26Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 125,
+        "startChar": 30,
+        "endLine": 125,
+        "endChar": 38
+      },
+      "revId": "22de4d184033104f79500a5058f2e1e8189dc229",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_9663da1a",
+        "filename": "keystone/tests/unit/protection/v3/test_policy_association.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-09-10T07:36:45Z",
+      "side": 1,
+      "message": "My bad. Don\u0027t change this.",
+      "parentUuid": "5faad753_b6c136e7",
       "range": {
         "startLine": 125,
         "startChar": 30,
