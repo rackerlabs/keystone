@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5faad753_4a6db896",
+        "filename": "keystone/tests/unit/protection/v3/test_grants.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 573,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-09-10T00:03:36Z",
+      "side": 1,
+      "message": "++ thanks for fixing this up",
+      "parentUuid": "7faddb67_1cc5b43d",
+      "range": {
+        "startLine": 573,
+        "startChar": 61,
+        "endLine": 573,
+        "endChar": 75
+      },
+      "revId": "9f7ad24bbe1a21d3d9b4a18c2b86de3ec062d28b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_9c90c444",
         "filename": "keystone/tests/unit/protection/v3/test_grants.py",
         "patchSetId": 12
