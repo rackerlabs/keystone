@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "5faad753_c5b648fb",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-11T19:04:21Z",
+      "side": 1,
+      "message": "They would have to use the openstack CLI. The bootstrap command is idempotent in that it can be re-run on upgrade and can be used to recreate resources that were accidentally destroyed somehow but it won\u0027t and shouldn\u0027t modify existing resources unexpectedly.",
+      "parentUuid": "5faad753_45c0187c",
+      "revId": "a80d83e76dfb1114b8cd1b31bd2f175d36ae18ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5faad753_1f503132",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 11
