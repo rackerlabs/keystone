@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_b3ffdf32",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-11T15:01:42Z",
+      "side": 1,
+      "message": "You mean the comments on the gerrit review? Those won\u0027t be persisted to the git history, this commit message will stop making sense once it is merged.",
+      "revId": "b2fe65af525f89b319d36d88a08b44085025dce9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
