@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_7f77e5d5",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-09-11T17:47:18Z",
+      "side": 1,
+      "message": "don\u0027t we need the same warning here that role is currently mutable?",
+      "revId": "a80d83e76dfb1114b8cd1b31bd2f175d36ae18ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_1f503132",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-09-11T17:47:18Z",
+      "side": 1,
+      "message": "is there a doc patch for this new option?",
+      "revId": "a80d83e76dfb1114b8cd1b31bd2f175d36ae18ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
