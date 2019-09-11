@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5faad753_45c0187c",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-09-11T18:58:04Z",
+      "side": 1,
+      "message": "Where does the update part happening, if user wants to convert the existing one to immutable? They\u0027ll have to use the openstack CLI then? I would\u0027ve imagined that if the --immutable-roles flag is specified, that the existing ones will be converted during bootstrap. Or maybe we don\u0027t run bootstrap during upgrade?",
+      "parentUuid": "5faad753_62bbca0d",
+      "revId": "a80d83e76dfb1114b8cd1b31bd2f175d36ae18ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5faad753_1f503132",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 11
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "The documentation for flags on individual options only exists as part of the command help afaict",
       "parentUuid": "5faad753_1f503132",
+      "revId": "a80d83e76dfb1114b8cd1b31bd2f175d36ae18ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_05ea200e",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-09-11T18:58:04Z",
+      "side": 1,
+      "message": "I see. I thought we need to generate the doc for these options.",
+      "parentUuid": "5faad753_0261b6a9",
       "revId": "a80d83e76dfb1114b8cd1b31bd2f175d36ae18ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
