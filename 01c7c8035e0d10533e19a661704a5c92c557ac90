@@ -16,6 +16,24 @@
       "revId": "01c7c8035e0d10533e19a661704a5c92c557ac90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_dfedb98b",
+        "filename": "keystone/cmd/status.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-11T17:43:17Z",
+      "side": 1,
+      "message": "Good catch, we should only be checking the global roles here",
+      "parentUuid": "5faad753_9f9e6152",
+      "revId": "01c7c8035e0d10533e19a661704a5c92c557ac90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
