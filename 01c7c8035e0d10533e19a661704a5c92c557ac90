@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_9f9e6152",
+        "filename": "keystone/cmd/status.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-09-11T17:33:18Z",
+      "side": 1,
+      "message": "we can have a domain-specific role and a global role with the same name right?",
+      "revId": "01c7c8035e0d10533e19a661704a5c92c557ac90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
