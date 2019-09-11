@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_d07051a8",
+        "filename": "keystone/tests/unit/protection/v3/test_grants.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 881,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-09-11T14:12:41Z",
+      "side": 1,
+      "message": "did we adjust our checks for line length?",
+      "revId": "f20ddeeaca20dbea68715fca0a1c6e118ae24167",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_904bb929",
+        "filename": "keystone/tests/unit/protection/v3/test_grants.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1531,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-09-11T14:12:41Z",
+      "side": 1,
+      "message": "I think this one should be self.domain_id according to the test name. Otherwise it\u0027s the same test as above.",
+      "range": {
+        "startLine": 1531,
+        "startChar": 26,
+        "endLine": 1531,
+        "endChar": 57
+      },
+      "revId": "f20ddeeaca20dbea68715fca0a1c6e118ae24167",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
