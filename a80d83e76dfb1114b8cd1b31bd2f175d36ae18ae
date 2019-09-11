@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "5faad753_258e3c2e",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-09-11T19:07:24Z",
+      "side": 1,
+      "message": "Sounds reasonable.",
+      "parentUuid": "5faad753_c5b648fb",
+      "revId": "a80d83e76dfb1114b8cd1b31bd2f175d36ae18ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5faad753_1f503132",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 11
