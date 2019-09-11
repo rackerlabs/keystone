@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5faad753_62bbca0d",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-11T18:09:12Z",
+      "side": 1,
+      "message": "The role already exists at this point, so changing it would be a matter of discovering it with the status check and then updating it with the role API.",
+      "parentUuid": "5faad753_7f77e5d5",
+      "revId": "a80d83e76dfb1114b8cd1b31bd2f175d36ae18ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5faad753_1f503132",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2019-09-11T17:47:18Z",
       "side": 1,
       "message": "is there a doc patch for this new option?",
+      "revId": "a80d83e76dfb1114b8cd1b31bd2f175d36ae18ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_0261b6a9",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-11T18:09:12Z",
+      "side": 1,
+      "message": "The documentation for flags on individual options only exists as part of the command help afaict",
+      "parentUuid": "5faad753_1f503132",
       "revId": "a80d83e76dfb1114b8cd1b31bd2f175d36ae18ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
