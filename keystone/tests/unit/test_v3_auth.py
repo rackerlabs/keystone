@@ -2417,6 +2417,25 @@ class TokenAPITests(object):
                                  allow_expired=True,
                                  expected_status=http_client.NOT_FOUND)
 
+    def test_system_scoped_token_works_with_domain_specific_drivers(self):
+        self.config_fixture.config(
+            group='identity', domain_specific_drivers_enabled=True
+        )
+
+        PROVIDERS.assignment_api.create_system_grant_for_user(
+            self.user['id'], self.role['id']
+        )
+
+        auth_request_body = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            system=True
+        )
+
+        r = self.v3_create_token(auth_request_body)
+        token_id = r.headers.get('X-Subject-Token')
+        self.get('/users', token=token_id)
+
 
 class TokenDataTests(object):
     """Test the data in specific token types."""
