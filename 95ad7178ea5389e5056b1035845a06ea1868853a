@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5faad753_f47a01ef",
+        "filename": "keystone/server/flask/request_processing/middleware/auth_context.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-12T16:09:10Z",
+      "side": 1,
+      "message": "Not sure what your question is. Passing the service_type is required by keystonemiddleware to make access rules work: https://opendev.org/openstack/keystonemiddleware/src/branch/master/keystonemiddleware/auth_token/__init__.py#L556-L560",
+      "parentUuid": "5faad753_747ff114",
+      "revId": "95ad7178ea5389e5056b1035845a06ea1868853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5faad753_74cdb164",
         "filename": "keystone/token/provider.py",
         "patchSetId": 30
@@ -30,6 +48,30 @@
       "writtenOn": "2019-09-12T16:04:18Z",
       "side": 1,
       "message": "nit: This variable name reads like a boolean instead of a float representing a version.\n\nI wasn\u0027t really sure what type we were dealing with until I got to this method and actually saw how it was being used.",
+      "range": {
+        "startLine": 207,
+        "startChar": 50,
+        "endLine": 207,
+        "endChar": 70
+      },
+      "revId": "95ad7178ea5389e5056b1035845a06ea1868853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_14cebd2d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-12T16:09:10Z",
+      "side": 1,
+      "message": "Might be because I have been thinking of it as moreorless a boolean, I don\u0027t anticipate that we\u0027ll increment the version. Suggestions for what to change it to? Maybe access_rules_support_version?",
+      "parentUuid": "5faad753_74cdb164",
       "range": {
         "startLine": 207,
         "startChar": 50,
