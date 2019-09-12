@@ -140,6 +140,30 @@
       "revId": "f23f435fb60a6a20866ed6d9bf0965574797ebc0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_8c1cd9c1",
+        "filename": "keystone/api/discovery.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-12T23:01:21Z",
+      "side": 1,
+      "message": "hmm I guess I\u0027ve never been entirely clear on what this date means, I think the last few times it changed it was changed to roughly the commit date",
+      "parentUuid": "5faad753_8cee19b2",
+      "range": {
+        "startLine": 33,
+        "startChar": 20,
+        "endLine": 33,
+        "endChar": 40
+      },
+      "revId": "f23f435fb60a6a20866ed6d9bf0965574797ebc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
