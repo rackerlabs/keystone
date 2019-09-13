@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_b157a558",
+        "filename": "keystone/common/policies/ec2_credential.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-09-13T13:30:35Z",
+      "side": 1,
+      "message": "In a future patch, we should consolidate these policies with the existing ones for credentials.\n\nhttps://opendev.org/openstack/keystone/src/branch/master/keystone/common/policies/credential.py#L18-L25",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 1
+      },
+      "revId": "cf2b02829d8ea809f3180de62d5e36e189c92df1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_b18a45bc",
+        "filename": "keystone/tests/unit/protection/v3/test_ec2_credential.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-09-13T13:30:35Z",
+      "side": 1,
+      "message": "We could add some testing to make sure users (who aren\u0027t system administrators) can\u0027t list credentials for other people. But I\u0027m fine with that being a follow up.\n\nSomething like https://opendev.org/openstack/keystone/src/branch/master/keystone/tests/unit/protection/v3/test_credentials.py#L205-L239",
+      "revId": "cf2b02829d8ea809f3180de62d5e36e189c92df1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
