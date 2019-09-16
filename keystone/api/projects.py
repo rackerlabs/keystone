@@ -236,7 +236,10 @@ class ProjectTagsResource(_ProjectTagResourceBase):
 
         GET /v3/projects/{project_id}/tags
         """
-        ENFORCER.enforce_call(action='identity:list_project_tags')
+        ENFORCER.enforce_call(
+            action='identity:list_project_tags',
+            build_target=_build_project_target_enforcement,
+        )
         ref = PROVIDERS.resource_api.list_project_tags(project_id)
         return self.wrap_member(ref)
 
@@ -268,7 +271,10 @@ class ProjectTagResource(_ProjectTagResourceBase):
 
         GET /v3/projects/{project_id}/tags/{value}
         """
-        ENFORCER.enforce_call(action='identity:get_project_tag')
+        ENFORCER.enforce_call(
+            action='identity:get_project_tag',
+            build_target=_build_project_target_enforcement,
+        )
         PROVIDERS.resource_api.get_project_tag(project_id, value)
         return None, http_client.NO_CONTENT
 
