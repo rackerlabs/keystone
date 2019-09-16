@@ -70,9 +70,42 @@ deprecated_delete_project = policy.DeprecatedRule(
     name=base.IDENTITY % 'delete_project',
     check_str=base.RULE_ADMIN_REQUIRED
 )
+deprecated_list_project_tags = policy.DeprecatedRule(
+    name=base.IDENTITY % 'list_project_tags',
+    check_str=base.RULE_ADMIN_OR_TARGET_PROJECT
+)
+deprecated_get_project_tag = policy.DeprecatedRule(
+    name=base.IDENTITY % 'get_project_tag',
+    check_str=base.RULE_ADMIN_OR_TARGET_PROJECT
+)
+deprecated_update_project_tag = policy.DeprecatedRule(
+    name=base.IDENTITY % 'update_project_tags',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
+deprecated_create_project_tag = policy.DeprecatedRule(
+    name=base.IDENTITY % 'create_project_tag',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
+deprecated_delete_project_tag = policy.DeprecatedRule(
+    name=base.IDENTITY % 'delete_project_tag',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
+deprecated_delete_project_tags = policy.DeprecatedRule(
+    name=base.IDENTITY % 'delete_project_tags',
+    check_str=base.RULE_ADMIN_REQUIRED
+)
+
 
 DEPRECATED_REASON = """
 As of the Stein release, the project API understands how to handle
+system-scoped tokens in addition to project and domain tokens, making the API
+more accessible to users without compromising security or manageability for
+administrators. The new default policies for this API account for these changes
+automatically.
+"""
+
+TAGS_DEPRECATED_REASON = """
+As of the Train release, the project tags API understands how to handle
 system-scoped tokens in addition to project and domain tokens, making the API
 more accessible to users without compromising security or manageability for
 administrators. The new default policies for this API account for these changes
@@ -154,7 +187,7 @@ project_policies = [
         # their domain. Project administrators should only be able to tag their
         # project. Until we have support for these cases in code and tested, we
         # should keep scope_types commented out.
-        # scope_types=['system', 'project'],
+        scope_types=['system', 'domain', 'project'],
         description='List tags for a project.',
         operations=[{'path': '/v3/projects/{project_id}/tags',
                      'method': 'GET'},
@@ -163,9 +196,7 @@ project_policies = [
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'get_project_tag',
         check_str=base.RULE_ADMIN_OR_TARGET_PROJECT,
-        # FIXME(lbragstad): See the above comments as to why this is commented
-        # out.
-        # scope_types=['system', 'project'],
+        scope_types=['system', 'domain', 'project'],
         description='Check if project contains a tag.',
         operations=[{'path': '/v3/projects/{project_id}/tags/{value}',
                      'method': 'GET'},
@@ -173,40 +204,44 @@ project_policies = [
                      'method': 'HEAD'}]),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'update_project_tags',
-        check_str=base.RULE_ADMIN_REQUIRED,
-        # FIXME(lbragstad): See the above comment for create_project as to why
-        # this is limited to only system-scope.
+        check_str=base.SYSTEM_ADMIN,
         scope_types=['system'],
         description='Replace all tags on a project with the new set of tags.',
         operations=[{'path': '/v3/projects/{project_id}/tags',
-                     'method': 'PUT'}]),
+                     'method': 'PUT'}],
+        deprecated_rule=deprecated_update_project_tag,
+        deprecated_reason=TAGS_DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.TRAIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_project_tag',
-        check_str=base.RULE_ADMIN_REQUIRED,
-        # FIXME(lbragstad): See the above comment for create_project as to why
-        # this is limited to only system-scope.
+        check_str=base.SYSTEM_ADMIN,
         scope_types=['system'],
         description='Add a single tag to a project.',
         operations=[{'path': '/v3/projects/{project_id}/tags/{value}',
-                     'method': 'PUT'}]),
+                     'method': 'PUT'}],
+        deprecated_rule=deprecated_create_project_tag,
+        deprecated_reason=TAGS_DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.TRAIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_project_tags',
-        check_str=base.RULE_ADMIN_REQUIRED,
-        # FIXME(lbragstad): See the above comment for create_project as to why
-        # this is limited to only system-scope.
+        check_str=base.SYSTEM_ADMIN,
         scope_types=['system'],
         description='Remove all tags from a project.',
         operations=[{'path': '/v3/projects/{project_id}/tags',
-                     'method': 'DELETE'}]),
+                     'method': 'DELETE'}],
+        deprecated_rule=deprecated_delete_project_tags,
+        deprecated_reason=TAGS_DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.TRAIN),
     policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'delete_project_tag',
-        check_str=base.RULE_ADMIN_REQUIRED,
-        # FIXME(lbragstad): See the above comment for create_project as to why
-        # this is limited to only system-scope.
+        check_str=base.SYSTEM_ADMIN,
         scope_types=['system'],
         description='Delete a specified tag from project.',
         operations=[{'path': '/v3/projects/{project_id}/tags/{value}',
-                     'method': 'DELETE'}])
+                     'method': 'DELETE'}],
+        deprecated_rule=deprecated_delete_project_tag,
+        deprecated_reason=TAGS_DEPRECATED_REASON,
+        deprecated_since=versionutils.deprecated.TRAIN)
 ]
 
 
