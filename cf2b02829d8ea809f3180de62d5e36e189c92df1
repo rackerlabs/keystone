@@ -39,6 +39,24 @@
       "revId": "cf2b02829d8ea809f3180de62d5e36e189c92df1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_cb9a466d",
+        "filename": "keystone/tests/unit/protection/v3/test_ec2_credential.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-16T21:08:58Z",
+      "side": 1,
+      "message": "Those exist under _SystemReaderAndMemberTests",
+      "parentUuid": "5faad753_b18a45bc",
+      "revId": "cf2b02829d8ea809f3180de62d5e36e189c92df1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
