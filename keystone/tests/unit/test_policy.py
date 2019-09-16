@@ -181,6 +181,7 @@ class PolicyJsonTestCase(unit.TestCase):
         # TODO(lbragstad): Once all policies have been removed from
         # policy.v3cloudsample.json, remove this test.
         removed_policies = [
+            'admin_or_owner',
             'identity:add_endpoint_group_to_project',
             'identity:add_endpoint_to_project',
             'identity:add_user_to_group',
@@ -193,6 +194,7 @@ class PolicyJsonTestCase(unit.TestCase):
             'identity:check_policy_association_for_service',
             'identity:check_system_grant_for_group',
             'identity:check_system_grant_for_user',
+            'identity:check_token',
             'identity:check_user_in_group',
             'identity:create_application_credential',
             'identity:create_consumer',
@@ -343,6 +345,7 @@ class PolicyJsonTestCase(unit.TestCase):
             'identity:revoke_grant',
             'identity:revoke_system_grant_for_group',
             'identity:revoke_system_grant_for_user',
+            'identity:revoke_token',
             'identity:update_consumer',
             'identity:update_credential',
             'identity:update_domain',
@@ -363,6 +366,7 @@ class PolicyJsonTestCase(unit.TestCase):
             'identity:update_service',
             'identity:update_service_provider',
             'identity:update_user',
+            'identity:validate_token',
             'service_or_admin',
             'service_role',
         ]
