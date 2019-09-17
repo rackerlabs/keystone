@@ -80,7 +80,7 @@ class RoleAssignmentsResource(ks_flask.ResourceBase):
             'group.id', 'role.id', 'scope.domain.id', 'scope.project.id',
             'scope.OS-INHERIT:inherited_to', 'user.id'
         ]
-        target = {}
+        target = None
         if 'scope.project.id' in flask.request.args:
             project_id = flask.request.args['scope.project.id']
             if project_id:
