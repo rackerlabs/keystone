@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_2b942b8b",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-17T15:25:59Z",
+      "side": 1,
+      "message": "Not domain admin?",
+      "range": {
+        "startLine": 206,
+        "startChar": 23,
+        "endLine": 206,
+        "endChar": 35
+      },
+      "revId": "39cf40b428599dbc832565fc832a3a8896e669ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
