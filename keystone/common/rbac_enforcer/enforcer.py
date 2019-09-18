@@ -45,13 +45,27 @@ class RBACEnforcer(object):
     __shared_state__ = {}
     __ENFORCER = None
     ACTION_STORE_ATTR = 'keystone:RBAC:action_name'
-    # FOR TESTS ONLY
-    suppress_deprecation_warnings = False
 
     def __init__(self):
         # NOTE(morgan): All Enforcer Instances use the same shared state;
         # BORG pattern.
         self.__dict__ = self.__shared_state__
+
+    def _emit_warning(self):
+        if not self._enforcer.warnings_count:
+            LOG.warning("Deprecated policy rules found. Use "
+                        "oslopolicy-policy-generate and "
+                        "oslopolicy-policy-upgrade to detect and resolve "
+                        "deprecated policies in your configuration.")
+            self._enforcer.warnings_count += 1
+
+    def _check_deprecated_rule(self, action):
+        registered_rule = self._enforcer.registered_rules[action]
+        deprecated_rule = registered_rule.deprecated_rule
+        if (deprecated_rule and
+                deprecated_rule.check_str != registered_rule.check_str and
+                registered_rule.name not in self._enforcer.file_rules):
+            self._emit_warning()
 
     def _enforce(self, credentials, action, target, do_raise=True):
         """Verify that the action is valid on the target in this context.
@@ -80,8 +94,10 @@ class RBACEnforcer(object):
                          do_raise=do_raise)
 
         try:
-            return self._enforcer.enforce(
+            result = self._enforcer.enforce(
                 rule=action, target=target, creds=credentials, **extra)
+            self._check_deprecated_rule(action)
+            return result
         except common_policy.InvalidScope:
             raise exception.ForbiddenAction(action=action)
 
@@ -94,9 +110,10 @@ class RBACEnforcer(object):
         # The raw oslo-policy enforcer object
         if self.__ENFORCER is None:
             self.__ENFORCER = common_policy.Enforcer(CONF)
-            if self.suppress_deprecation_warnings:
+            if flask.has_request_context():
                 self.__ENFORCER.suppress_deprecation_warnings = True
             self.register_rules(self.__ENFORCER)
+            self.__ENFORCER.warnings_count = 0
         return self.__ENFORCER
 
     @staticmethod
