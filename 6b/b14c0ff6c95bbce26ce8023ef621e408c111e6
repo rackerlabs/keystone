@@ -1,0 +1,17 @@
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: Dmitriy Rabotyagov (noonedeadpunk) <noonedeadpunk@ya.ru>
+Code-Review+1: Chandan Kumar (raukadah) <chkumar@redhat.com>
+Code-Review+1: Maksim Malchuk <maksim.malchuk@gmail.com>
+Code-Review+1: Sergei Raiskii <connoreika@gmail.com>
+Code-Review+1: Maxim Ardasov <dok2d@yandex.ru>
+Code-Review+1: Ilya Popov <ilya_p@hotmail.com>
+Code-Review+1: Margarita Shakhova <shakhova.margarita@gmail.com>
+Code-Review+1: yatin <ykarel@redhat.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Workflow+1: Lance Bragstad <lbragstad@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 18 Sep 2019 10:46:11 +0000
+Reviewed-on: https://review.opendev.org/682447
+Project: openstack/keystone
+Branch: refs/heads/master
