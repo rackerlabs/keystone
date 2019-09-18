@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_d9e8b817",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6928
+      },
+      "writtenOn": "2019-09-18T17:22:35Z",
+      "side": 1,
+      "message": "Nit: This seems a bit odd since it\u0027s being used as a boolean AFAICT.",
+      "range": {
+        "startLine": 60,
+        "startChar": 12,
+        "endLine": 60,
+        "endChar": 46
+      },
+      "revId": "81532bd125d2b437cc4babd361fcd5d2f477b291",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_9abc6f06",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6928
+      },
+      "writtenOn": "2019-09-18T17:22:35Z",
+      "side": 1,
+      "message": "There\u0027s another case where we log a deprecation warning in o.p: https://github.com/openstack/oslo.policy/blob/e433a3cbec5da0241bb1716b8bfda9fa927069ce/oslo_policy/policy.py#L666 \u003c- confirmation that deprecation warnings are evil? ;-)\n\nLooking at it, I wonder if it\u0027s possible that we\u0027re actually logging deprecation warnings for some rules twice. Those if blocks are not mutually exclusive. That\u0027s probably not helping this situation.\n\nUnless you\u0027re sure that none of your policy deprecations are only renames, that case should be covered here too. It\u0027s also a good reason to eventually move this to the library so we don\u0027t have to keep duplicating the logic.",
+      "revId": "81532bd125d2b437cc4babd361fcd5d2f477b291",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_da70a775",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6928
+      },
+      "writtenOn": "2019-09-18T17:22:35Z",
+      "side": 1,
+      "message": "Not sure I understand this. Don\u0027t you always want to suppress deprecation warnings in the parent class now?\n\nOh, no this is so you only suppress warnings in Keystone, not when running the other tools. Got it.\n\n(leaving the comment in case someone else has the same question)",
+      "revId": "81532bd125d2b437cc4babd361fcd5d2f477b291",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_da1e670b",
+        "filename": "keystone/tests/unit/ksfixtures/policy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6928
+      },
+      "writtenOn": "2019-09-18T17:22:35Z",
+      "side": 0,
+      "message": "Will the unit tests have a flask context? You may still need this to suppress warnings in the tests.",
+      "revId": "18e0080af3dcc0a96ff5d98aeb5f517080a35fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
