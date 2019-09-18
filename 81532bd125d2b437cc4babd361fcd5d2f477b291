@@ -116,6 +116,24 @@
       "revId": "81532bd125d2b437cc4babd361fcd5d2f477b291",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_8077203b",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6928
+      },
+      "writtenOn": "2019-09-18T19:48:10Z",
+      "side": 1,
+      "message": "Cool. I wonder if you also want an inverse check in the _check_deprecated_rule function so that you don\u0027t log both deprecation messages when running the standalone tools. I guess it doesn\u0027t hurt anything, but that message will be redundant and a little odd when you\u0027re already running the tool.",
+      "parentUuid": "3fa7e38b_60046416",
+      "revId": "81532bd125d2b437cc4babd361fcd5d2f477b291",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

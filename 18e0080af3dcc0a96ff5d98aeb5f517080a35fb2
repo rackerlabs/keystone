@@ -34,6 +34,24 @@
       "revId": "18e0080af3dcc0a96ff5d98aeb5f517080a35fb2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_20bbcce2",
+        "filename": "keystone/tests/unit/ksfixtures/policy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6928
+      },
+      "writtenOn": "2019-09-18T19:48:10Z",
+      "side": 0,
+      "message": "I\u0027m seeing them for some tests:\nhttps://zuul.opendev.org/t/openstack/build/5b824eec5f95460793e14a16df85705e/log/job-output.txt#5321\n\nAnd one of the failures included them:\nhttps://zuul.opendev.org/t/openstack/build/5b824eec5f95460793e14a16df85705e/log/job-output.txt#16964\n\nNot as many as before though, as evidenced by the fact that I could load the logs in my browser to get those links.",
+      "parentUuid": "3fa7e38b_a0325cf0",
+      "revId": "18e0080af3dcc0a96ff5d98aeb5f517080a35fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
