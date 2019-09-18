@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_4512a15a",
+        "filename": "keystone/common/policies/role_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-18T13:13:33Z",
+      "side": 1,
+      "message": "I did create a new release note but I should use a different deprecation reason here to indicate the right release.",
+      "parentUuid": "3fa7e38b_b282b94e",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 44
+      },
+      "revId": "a2e7994b96c0b3372c26057a24c4e5be809fbf8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_fc27adb5",
         "filename": "releasenotes/notes/bug-1844461-08a8bdc5f613b88d.yaml",
         "patchSetId": 3
