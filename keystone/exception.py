@@ -278,7 +278,7 @@ class SecurityError(Error):
 
 
 class Unauthorized(SecurityError):
-    message_format = _("The request you have made requires authentication.")
+    message_format = _("Failed to authenticate.")
     code = int(http_client.UNAUTHORIZED)
     title = http_client.responses[http_client.UNAUTHORIZED]
 
