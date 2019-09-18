@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_7d2e4da6",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-18T19:12:04Z",
+      "side": 1,
+      "message": "Yeah couldn\u0027t decide which way i wanted to do it, will switch it to a boolean",
+      "parentUuid": "3fa7e38b_d9e8b817",
+      "range": {
+        "startLine": 60,
+        "startChar": 12,
+        "endLine": 60,
+        "endChar": 46
+      },
+      "revId": "81532bd125d2b437cc4babd361fcd5d2f477b291",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_9abc6f06",
         "filename": "keystone/common/rbac_enforcer/enforcer.py",
         "patchSetId": 1
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_bd0da53f",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-18T19:12:04Z",
+      "side": 1,
+      "message": "Was planning to add the other case in the next round, thanks for pointing it out though or I would have forgotten",
+      "parentUuid": "3fa7e38b_9abc6f06",
+      "revId": "81532bd125d2b437cc4babd361fcd5d2f477b291",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_da70a775",
         "filename": "keystone/common/rbac_enforcer/enforcer.py",
         "patchSetId": 1
@@ -53,6 +95,24 @@
       "writtenOn": "2019-09-18T17:22:35Z",
       "side": 1,
       "message": "Not sure I understand this. Don\u0027t you always want to suppress deprecation warnings in the parent class now?\n\nOh, no this is so you only suppress warnings in Keystone, not when running the other tools. Got it.\n\n(leaving the comment in case someone else has the same question)",
+      "revId": "81532bd125d2b437cc4babd361fcd5d2f477b291",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_60046416",
+        "filename": "keystone/common/rbac_enforcer/enforcer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-18T19:12:04Z",
+      "side": 1,
+      "message": "I\u0027ll add a comment for clarity, yes it\u0027s because we don\u0027t want the keystone server to log the warnings but the policy tool still runs the keystone code and we do want those warnings.",
+      "parentUuid": "3fa7e38b_da70a775",
       "revId": "81532bd125d2b437cc4babd361fcd5d2f477b291",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
