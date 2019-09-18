@@ -596,7 +596,7 @@ If you are not familiar with the idea of federated identity, see the
 :ref:`introduction <federation_introduction>` first.
 
 When setting up `Keystone to Keystone`, it is easiest to
-:ref:`configure a keystone Service Provider <keystone-as-sp>`  first
+:ref:`keystone-as-sp` first
 with a sandbox Identity Provider such as
 `samltest.id`_.
 
