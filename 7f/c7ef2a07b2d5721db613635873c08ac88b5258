@@ -1,0 +1,9 @@
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: Vishakha Agarwal <agarwalvishakha18@gmail.com>
+Workflow+1: guang-yee <guang.yee@suse.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 18 Sep 2019 18:54:05 +0000
+Reviewed-on: https://review.opendev.org/674725
+Project: openstack/keystone
+Branch: refs/heads/master
