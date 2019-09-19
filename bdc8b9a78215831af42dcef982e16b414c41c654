@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_93a8c3db",
+        "filename": "keystone/common/policies/project_endpoint.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-19T18:25:43Z",
+      "side": 1,
+      "message": "I can just do another pass later",
+      "parentUuid": "3fa7e38b_f24338ae",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 69
+      },
+      "revId": "bdc8b9a78215831af42dcef982e16b414c41c654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_327230e5",
         "filename": "keystone/tests/protection/v3/test_project_endpoint.py",
         "patchSetId": 2
@@ -83,6 +107,30 @@
       "writtenOn": "2019-09-19T14:20:31Z",
       "side": 1,
       "message": "These tests would fail if we were using admin_role_id because the old policy would be OR\u0027d with the new policy.\n\nI was curious who these were passing without us overriding the policy file with the new defaults.",
+      "range": {
+        "startLine": 422,
+        "startChar": 30,
+        "endLine": 422,
+        "endChar": 44
+      },
+      "revId": "bdc8b9a78215831af42dcef982e16b414c41c654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_53d80b7e",
+        "filename": "keystone/tests/protection/v3/test_project_endpoint.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-19T18:25:43Z",
+      "side": 1,
+      "message": "Testing with enforce_scope\u003dfalse only makes sense if the admin role is used.",
+      "parentUuid": "3fa7e38b_f2549823",
       "range": {
         "startLine": 422,
         "startChar": 30,
