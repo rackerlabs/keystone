@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_f24338ae",
+        "filename": "keystone/common/policies/project_endpoint.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-09-19T14:18:29Z",
+      "side": 1,
+      "message": "I think Colleen is in the process of consolidating these? Do we want to go ahead and consolidate this one now, too?",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 69
+      },
+      "revId": "bdc8b9a78215831af42dcef982e16b414c41c654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_327230e5",
+        "filename": "keystone/tests/protection/v3/test_project_endpoint.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-09-19T14:18:29Z",
+      "side": 1,
+      "message": "This is getting a token for a project administrator, but we\u0027re not overriding the policies from what I can tell. How are these still passing if the base.RULE_ADMIN_REQUIRED policy is getting OR\u0027d with the new policies?",
+      "range": {
+        "startLine": 381,
+        "startChar": 0,
+        "endLine": 385,
+        "endChar": 51
+      },
+      "revId": "bdc8b9a78215831af42dcef982e16b414c41c654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
