@@ -45,6 +45,53 @@
       "revId": "bdc8b9a78215831af42dcef982e16b414c41c654",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_5246cc7e",
+        "filename": "keystone/tests/protection/v3/test_project_endpoint.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-09-19T14:20:31Z",
+      "side": 1,
+      "message": "Oh - this is because we\u0027re relying on enforce scope being set to True.",
+      "parentUuid": "3fa7e38b_327230e5",
+      "range": {
+        "startLine": 381,
+        "startChar": 0,
+        "endLine": 385,
+        "endChar": 51
+      },
+      "revId": "bdc8b9a78215831af42dcef982e16b414c41c654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_f2549823",
+        "filename": "keystone/tests/protection/v3/test_project_endpoint.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-09-19T14:20:31Z",
+      "side": 1,
+      "message": "These tests would fail if we were using admin_role_id because the old policy would be OR\u0027d with the new policy.\n\nI was curious who these were passing without us overriding the policy file with the new defaults.",
+      "range": {
+        "startLine": 422,
+        "startChar": 30,
+        "endLine": 422,
+        "endChar": 44
+      },
+      "revId": "bdc8b9a78215831af42dcef982e16b414c41c654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
