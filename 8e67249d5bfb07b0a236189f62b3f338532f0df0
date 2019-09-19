@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_333c6fc7",
+        "filename": "keystone/common/policies/project.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-19T18:15:07Z",
+      "side": 1,
+      "message": "If/when https://review.opendev.org/674940 merges I will come through and clean these up.",
+      "revId": "8e67249d5bfb07b0a236189f62b3f338532f0df0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
