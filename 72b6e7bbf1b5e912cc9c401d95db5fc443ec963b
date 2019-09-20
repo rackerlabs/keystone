@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_255bb754",
+        "filename": "doc/source/admin/identity-concepts.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2019-09-20T14:38:02Z",
+      "side": 0,
+      "message": "This is also in stable/stein and I\u0027m assuming master:\n\nhttps://raw.githubusercontent.com/openstack/keystone/stable/stein/doc/source/admin/identity-concepts.rst\n\nSo why is this a rocky-only fix? Also, I don\u0027t get a 404 for the link that is here so why change it?\n\nIn other words, once someone upgrades from rocky to stein they\u0027ll have the same issue (if there is even an issue here). I take it that SUSE doesn\u0027t care about that though because they are only targeting Rocky - which is evident to me from the flurry of docs related stable/rocky only patches I\u0027m seeing lately from SUSE developers.",
+      "revId": "72b6e7bbf1b5e912cc9c401d95db5fc443ec963b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_65176f53",
+        "filename": "doc/source/configuration/config-options.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2019-09-20T14:38:02Z",
+      "side": 0,
+      "message": "OK this is a 404 but it\u0027s also a problem on stein (is it a problem on master as well?):\n\nhttps://github.com/openstack/keystone/blob/stable/stein/doc/source/configuration/config-options.rst",
+      "revId": "72b6e7bbf1b5e912cc9c401d95db5fc443ec963b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

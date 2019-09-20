@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_2865cee1",
+        "filename": "doc/source/admin/identity-caching-layer.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2019-09-20T14:38:02Z",
+      "side": 1,
+      "message": "These were fixed with If0eb5fe8eddc5ee32395fb34a7896efdcf0aaea3 so why wasn\u0027t that just backported to stable/rocky separately?",
+      "revId": "c92cbca37e01f25510ed860b40fcdbd142cc6d2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
