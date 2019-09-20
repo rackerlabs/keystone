@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_793716b2",
+        "filename": "doc/source/admin/identity-concepts.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-20T16:24:50Z",
+      "side": 0,
+      "message": "\u003e \n \u003e So why is this a rocky-only fix? Also, I don\u0027t get a 404 for the\n \u003e link that is here so why change it?\n \u003e \n\nBecause it makes no sense to link to the in-development version of the documentation from the rocky documentation.\n\nAndreas made more futureproof fixes for these here\nhttps://review.opendev.org/675667\n\nand here for Stein\n\nhttps://review.opendev.org/676969\n\nbut my understanding was the change was too hard to backport to rocky. Alex explained in the commit message in patchset 2  of this change.",
+      "parentUuid": "3fa7e38b_255bb754",
+      "revId": "72b6e7bbf1b5e912cc9c401d95db5fc443ec963b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_65176f53",
         "filename": "doc/source/configuration/config-options.rst",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2019-09-20T14:38:02Z",
       "side": 0,
       "message": "OK this is a 404 but it\u0027s also a problem on stein (is it a problem on master as well?):\n\nhttps://github.com/openstack/keystone/blob/stable/stein/doc/source/configuration/config-options.rst",
+      "revId": "72b6e7bbf1b5e912cc9c401d95db5fc443ec963b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_7905d6c1",
+        "filename": "doc/source/configuration/config-options.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-20T16:24:50Z",
+      "side": 0,
+      "message": "Fix for stein https://review.opendev.org/676969",
+      "parentUuid": "3fa7e38b_65176f53",
       "revId": "72b6e7bbf1b5e912cc9c401d95db5fc443ec963b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
