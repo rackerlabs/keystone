@@ -16,6 +16,24 @@
       "revId": "15b416c34c49d038c059179feba38d9b398104ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_be4814cc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-20T16:04:31Z",
+      "side": 1,
+      "message": "Yes, Ben already opened a bug for it https://bugs.launchpad.net/oslo.policy/+bug/1844555",
+      "parentUuid": "3fa7e38b_7e061c89",
+      "revId": "15b416c34c49d038c059179feba38d9b398104ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
