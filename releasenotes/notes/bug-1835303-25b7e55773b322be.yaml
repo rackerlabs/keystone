@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    [`bug 1835303 <https://bugs.launchpad.net/keystone/+bug/1835303>`_]
+    In case of authentication failure or if authentication details are
+    correct but user/project/domain is disabled, etc cases exception
+    returned will be "Failed to authenticate".
