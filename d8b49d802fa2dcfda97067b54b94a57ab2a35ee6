@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_01ff9634",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-09-20T09:13:14Z",
+      "side": 0,
+      "message": "This reference link is working for me.",
+      "range": {
+        "startLine": 599,
+        "startChar": 0,
+        "endLine": 599,
+        "endChar": 61
+      },
+      "revId": "d8b49d802fa2dcfda97067b54b94a57ab2a35ee6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
