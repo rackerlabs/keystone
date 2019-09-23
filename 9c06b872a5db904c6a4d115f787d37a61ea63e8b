@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_dd84d660",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-23T16:20:47Z",
+      "side": 1,
+      "message": "To avoid further confusion like we already had, it would be nice to explain here why this is being proposed directly to stable/rocky and not cherry-picked (while still keeping in mind not to refer to the comments on the gerrit review since those aren\u0027t persisted to the git history).",
+      "revId": "9c06b872a5db904c6a4d115f787d37a61ea63e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
