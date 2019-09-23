@@ -34,6 +34,24 @@
       "revId": "c92cbca37e01f25510ed860b40fcdbd142cc6d2e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_9c0e6730",
+        "filename": "doc/source/admin/identity-caching-layer.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 10607
+      },
+      "writtenOn": "2019-09-23T11:59:03Z",
+      "side": 1,
+      "message": "That\u0027s on me, having performed the stein backport, I should have removed this but it must have simply slipped my mind.",
+      "parentUuid": "3fa7e38b_f969c6bd",
+      "revId": "c92cbca37e01f25510ed860b40fcdbd142cc6d2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
