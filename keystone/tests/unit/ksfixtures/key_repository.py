@@ -11,6 +11,7 @@
 # under the License.
 
 import fixtures
+import testresources
 
 from keystone.common import fernet_utils as utils
 
@@ -35,3 +36,10 @@ class KeyRepository(fixtures.Fixture):
         )
         fernet_utils.create_key_directory()
         fernet_utils.initialize_key_repository()
+
+
+class KeyRepositoryManager(testresources.FixtureResource):
+
+    def __init__(self, config_fixture, key_group, max_active_keys):
+        key_fixture = KeyRepository(config_fixture, key_group, max_active_keys)
+        super(KeyRepositoryManager, self).__init__(key_fixture)
