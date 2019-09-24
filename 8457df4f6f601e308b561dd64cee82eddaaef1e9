@@ -46,6 +46,30 @@
       "revId": "8457df4f6f601e308b561dd64cee82eddaaef1e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_ac4c3942",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-09-24T16:06:28Z",
+      "side": 1,
+      "message": "Sorry for the confusion. I meant the same that with this patch we will get rid of deprecation warnings opting immutable roles.",
+      "parentUuid": "3fa7e38b_069c4c5b",
+      "range": {
+        "startLine": 11,
+        "startChar": 8,
+        "endLine": 11,
+        "endChar": 64
+      },
+      "revId": "8457df4f6f601e308b561dd64cee82eddaaef1e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
