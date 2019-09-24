@@ -5409,10 +5409,11 @@ class TestAuthTOTP(test_v3.RestfulTestCase):
         creds = self._make_credentials('totp')
         secret = creds[-1]['blob']
 
-        past = datetime.datetime.utcnow() - datetime.timedelta(minutes=2)
-        with freezegun.freeze_time(past):
-            auth_data = self._make_auth_data_by_id(
-                totp._generate_totp_passcodes(secret)[0])
+        past = datetime.datetime.utcnow() - datetime.timedelta(minutes=2,
+                                                               seconds=10)
+        self.useFixture(fixture.TimeFixture(past))
+        auth_data = self._make_auth_data_by_id(
+            totp._generate_totp_passcodes(secret)[0])
 
         # Stop the clock otherwise there is a chance of auth failure due to
         # getting a different TOTP between the call here and the call in the
