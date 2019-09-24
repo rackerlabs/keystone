@@ -5446,7 +5446,8 @@ class TestAuthTOTP(test_v3.RestfulTestCase):
         creds = self._make_credentials('totp')
         secret = creds[-1]['blob']
 
-        past = datetime.datetime.utcnow() - datetime.timedelta(minutes=2)
+        past = datetime.datetime.utcnow() - datetime.timedelta(minutes=2,
+                                                               seconds=30)
         with freezegun.freeze_time(past):
             auth_data = self._make_auth_data_by_id(
                 totp._generate_totp_passcodes(secret)[0])
