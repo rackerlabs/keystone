@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_43a30bb3",
+        "filename": "releasenotes/notes/bug-1805880-3fc6b30309a4370f.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-25T02:11:40Z",
+      "side": 1,
+      "message": "This release note already exists in stable/stein, we can\u0027t modify it at this point.",
+      "revId": "762731c6a96720d6f15dbf13c217bbe007995317",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
