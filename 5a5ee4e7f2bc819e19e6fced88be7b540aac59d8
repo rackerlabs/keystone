@@ -39,6 +39,24 @@
       "revId": "5a5ee4e7f2bc819e19e6fced88be7b540aac59d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_dc6838ba",
+        "filename": "releasenotes/notes/bug-1805372-af4ebf4b19500b72.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-09-25T06:55:09Z",
+      "side": 1,
+      "message": "Added a new relaese note https://review.opendev.org/#/c/684531/",
+      "parentUuid": "3fa7e38b_83c7c364",
+      "revId": "5a5ee4e7f2bc819e19e6fced88be7b540aac59d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
