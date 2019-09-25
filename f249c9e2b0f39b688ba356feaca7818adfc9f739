@@ -22,6 +22,30 @@
       "revId": "f249c9e2b0f39b688ba356feaca7818adfc9f739",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_f33c33c9",
+        "filename": "keystone/common/policies/limit.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-25T16:33:14Z",
+      "side": 1,
+      "message": "Do you mean \"if a project user attempts to call this API on a *domain*-limit?\"\n\nMaybe, will have to add another test case for it.",
+      "parentUuid": "3fa7e38b_f822d2b8",
+      "range": {
+        "startLine": 21,
+        "startChar": 4,
+        "endLine": 21,
+        "endChar": 50
+      },
+      "revId": "f249c9e2b0f39b688ba356feaca7818adfc9f739",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
