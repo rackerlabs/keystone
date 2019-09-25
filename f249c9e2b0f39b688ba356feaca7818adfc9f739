@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_f822d2b8",
+        "filename": "keystone/common/policies/limit.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-09-25T16:30:17Z",
+      "side": 1,
+      "message": "Won\u0027t you need the None check here if a project user attempts to call this API on a project-limit?",
+      "range": {
+        "startLine": 21,
+        "startChar": 4,
+        "endLine": 21,
+        "endChar": 50
+      },
+      "revId": "f249c9e2b0f39b688ba356feaca7818adfc9f739",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
