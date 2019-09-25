@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_83eee3ea",
+        "filename": "keystone/tests/protection/v3/test_limits.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-25T02:10:38Z",
+      "side": 1,
+      "message": "without",
+      "range": {
+        "startLine": 690,
+        "startChar": 43,
+        "endLine": 690,
+        "endChar": 47
+      },
+      "revId": "5a5ee4e7f2bc819e19e6fced88be7b540aac59d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_83c7c364",
+        "filename": "releasenotes/notes/bug-1805372-af4ebf4b19500b72.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-25T02:10:38Z",
+      "side": 1,
+      "message": "This release note already exists in stable/stein so we can\u0027t modify it, will have to create a new one.",
+      "revId": "5a5ee4e7f2bc819e19e6fced88be7b540aac59d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
