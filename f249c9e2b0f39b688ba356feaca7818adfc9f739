@@ -70,6 +70,30 @@
       "revId": "f249c9e2b0f39b688ba356feaca7818adfc9f739",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_ee6a0cb1",
+        "filename": "keystone/common/policies/limit.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-09-25T17:16:56Z",
+      "side": 1,
+      "message": "This API is still experimental anyway, so I don\u0027t feel bad following up this patch with one that adds an explicit test.",
+      "parentUuid": "3fa7e38b_ae32d4f0",
+      "range": {
+        "startLine": 21,
+        "startChar": 4,
+        "endLine": 21,
+        "endChar": 50
+      },
+      "revId": "f249c9e2b0f39b688ba356feaca7818adfc9f739",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
