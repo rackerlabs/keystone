@@ -1,0 +1,22 @@
+---
+features:
+  - |
+    [`bug 1818736 <https://bugs.launchpad.net/keystone/+bug/1818736>`_]
+    The Limits API now supports domain and project scope for the ``admin``,
+    ``member``, and ``reader`` default roles.
+
+upgrade:
+  - |
+    [`bug 1818736 <https://bugs.launchpad.net/keystone/+bug/1818736>`_]
+    The ``identity:get_limit`` now use  ``(' + base.SYSTEM_READER + ') or ('
+    'domain_id:%(target.limit.domain.id)s or domain_id:%(target.limit.project.domain_id)s'
+    ') or (project_id:%(target.limit.project_id)s and not None:%(target.limit.project_id)s)``
+    These new defaults automatically account for system-scope and support
+    a read-only role, making it easier for system administrators to delegate
+    subsets of responsibility without compromising security. Please consider
+    these new defaults if your deployment overrides the limits policies.
+security:
+  - |
+    [`bug 1818736 <https://bugs.launchpad.net/keystone/+bug/1818736>`_]
+    The Limits API now uses system-scope and default roles to provide better
+    accessibility to users in a secure manner.
