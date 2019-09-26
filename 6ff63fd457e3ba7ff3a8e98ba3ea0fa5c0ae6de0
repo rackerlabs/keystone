@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_36ce2782",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2882,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-09-26T13:36:41Z",
+      "side": 1,
+      "message": "I\u0027m pretty sure we can just remove this whole test class. It looks redundant.",
+      "revId": "6ff63fd457e3ba7ff3a8e98ba3ea0fa5c0ae6de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_76ad7f99",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-09-26T13:36:41Z",
+      "side": 1,
+      "message": "This whole file can go. I\u0027m only keeping it around so that folks can see all these tests pass with the current defaults, which proves our migration from the old defaults to new defaults somewhat work with the policy.v3cloudsample.json file.",
+      "revId": "6ff63fd457e3ba7ff3a8e98ba3ea0fa5c0ae6de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
