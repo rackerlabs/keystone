@@ -33,6 +33,24 @@
       "revId": "6ff63fd457e3ba7ff3a8e98ba3ea0fa5c0ae6de0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_ee64294c",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 15054
+      },
+      "writtenOn": "2019-09-27T08:54:02Z",
+      "side": 1,
+      "message": "++,how about remove it in the new patchset. We have the test result already in this PS.",
+      "parentUuid": "3fa7e38b_76ad7f99",
+      "revId": "6ff63fd457e3ba7ff3a8e98ba3ea0fa5c0ae6de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
