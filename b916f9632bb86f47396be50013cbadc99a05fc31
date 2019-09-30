@@ -22,6 +22,30 @@
       "revId": "b916f9632bb86f47396be50013cbadc99a05fc31",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_6f4ecc97",
+        "filename": "doc/source/admin/external-authentication.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-09-30T23:50:42Z",
+      "side": 1,
+      "message": "Right, there are a number of issues with Kerberos.\n\n1. Single domain\n2. Require separate auth URL (i.e. /krb/identity/v3/auth/tokens)\n3. Limited number of attributes about the identity, just name and domain.\n4. It\u0027s not compatible with other external auth mechanisms. i.e. can\u0027t enable them at the same time.\n\nGiven that external auth only conveying a single attribute (REMOTE_USER), I am not not sure how useful it is in a large scale production environment. I am fine with deprecating it.",
+      "parentUuid": "3fa7e38b_ec6f2d25",
+      "range": {
+        "startLine": 107,
+        "startChar": 8,
+        "endLine": 107,
+        "endChar": 33
+      },
+      "revId": "b916f9632bb86f47396be50013cbadc99a05fc31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
