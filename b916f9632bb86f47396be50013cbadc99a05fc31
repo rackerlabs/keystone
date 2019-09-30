@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_ec6f2d25",
+        "filename": "doc/source/admin/external-authentication.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-30T18:37:19Z",
+      "side": 1,
+      "message": "This is the main issue, right? Any external auth can\u0027t be used with more than a single domain and that domain is hardcoded with SetEnv? If so, kerberos isn\u0027t really a better example than X.509, and we might as well keep the old example but deprecate external auth altogether.",
+      "range": {
+        "startLine": 107,
+        "startChar": 8,
+        "endLine": 107,
+        "endChar": 33
+      },
+      "revId": "b916f9632bb86f47396be50013cbadc99a05fc31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
