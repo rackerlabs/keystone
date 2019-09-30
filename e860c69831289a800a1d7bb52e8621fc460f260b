@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_4ca9a18d",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-30T18:22:11Z",
+      "side": 0,
+      "message": "Should we just remove this whole class?",
+      "range": {
+        "startLine": 642,
+        "startChar": 18,
+        "endLine": 642,
+        "endChar": 37
+      },
+      "revId": "e860c69831289a800a1d7bb52e8621fc460f260b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

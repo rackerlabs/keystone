@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_ec972d44",
+        "filename": "releasenotes/notes/bug-1806762-08ff9eecdc03c554.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-09-30T18:22:11Z",
+      "side": 1,
+      "message": "They need enforce_scope\u003dtrue to actually ensure it works the same though.",
+      "revId": "fc7aedc1c142c36d31487f1656739bfd4a553c2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
