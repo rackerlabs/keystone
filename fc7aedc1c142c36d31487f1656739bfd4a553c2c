@@ -16,6 +16,24 @@
       "revId": "fc7aedc1c142c36d31487f1656739bfd4a553c2c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_278777b9",
+        "filename": "releasenotes/notes/bug-1806762-08ff9eecdc03c554.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-10-02T20:26:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa7e38b_ec972d44",
+      "revId": "fc7aedc1c142c36d31487f1656739bfd4a553c2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
