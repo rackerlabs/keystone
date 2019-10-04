@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_fb1b13c7",
+        "filename": "doc/source/admin/tokens-overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-10-04T19:40:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa7e38b_12da94e8",
+      "revId": "10427eab43585429f5908866e8c84eb5f73b15f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_b2c94026",
         "filename": "doc/source/admin/tokens-overview.rst",
         "patchSetId": 1
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_1b6cef34",
+        "filename": "doc/source/admin/tokens-overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-10-04T19:40:58Z",
+      "side": 1,
+      "message": "I agree that most services won\u0027t use domains to put resources in, but what about users that call the /v2/servers API with a domain-scoped token?\n\nIs the right response a list of all instances owned by all projects within a domain?",
+      "parentUuid": "3fa7e38b_b2c94026",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 67
+      },
+      "revId": "10427eab43585429f5908866e8c84eb5f73b15f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_32feb038",
         "filename": "doc/source/admin/tokens-overview.rst",
         "patchSetId": 1
@@ -53,6 +95,30 @@
       "writtenOn": "2019-10-04T17:32:42Z",
       "side": 1,
       "message": "operations, actions",
+      "range": {
+        "startLine": 78,
+        "startChar": 69,
+        "endLine": 78,
+        "endChar": 76
+      },
+      "revId": "10427eab43585429f5908866e8c84eb5f73b15f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_3b676b54",
+        "filename": "doc/source/admin/tokens-overview.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-10-04T19:40:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa7e38b_32feb038",
       "range": {
         "startLine": 78,
         "startChar": 69,
