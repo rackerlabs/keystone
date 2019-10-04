@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_e61b7a70",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2882,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-10-04T19:59:27Z",
+      "side": 0,
+      "message": "Looks like we have a couple of gaps. Porting the missing tests over to keystone.tests.protection.v3.test_tokens",
+      "parentUuid": "3fa7e38b_928e8425",
+      "revId": "d4a6023de5bdfe5a6e9214579a35e083a45c1151",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_92b764d9",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2019-10-04T17:17:52Z",
       "side": 0,
       "message": "This isn\u0027t specific to policy.v3cloudsample.json. Are all of these tests redundant with the new protection tests?",
+      "revId": "d4a6023de5bdfe5a6e9214579a35e083a45c1151",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_3bac4b34",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-10-04T19:59:27Z",
+      "side": 0,
+      "message": "Yes - at least as far as I can tell. I\u0027ll add a note to the commit message.",
+      "parentUuid": "3fa7e38b_92b764d9",
       "revId": "d4a6023de5bdfe5a6e9214579a35e083a45c1151",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
