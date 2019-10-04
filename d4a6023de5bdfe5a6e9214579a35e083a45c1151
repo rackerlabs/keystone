@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_928e8425",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2882,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-10-04T17:17:52Z",
+      "side": 0,
+      "message": "I\u0027m not seeing how this is specific to policy.v3cloudsample.json ? Or can you say in the commit message which protection tests make this redundant?",
+      "revId": "d4a6023de5bdfe5a6e9214579a35e083a45c1151",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_92b764d9",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-10-04T17:17:52Z",
+      "side": 0,
+      "message": "This isn\u0027t specific to policy.v3cloudsample.json. Are all of these tests redundant with the new protection tests?",
+      "revId": "d4a6023de5bdfe5a6e9214579a35e083a45c1151",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
