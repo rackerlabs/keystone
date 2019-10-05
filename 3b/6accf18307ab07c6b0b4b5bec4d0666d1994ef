@@ -1,0 +1,9 @@
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+2: Dave Chen <dave.jungler@gmail.com>
+Workflow+1: Dave Chen <dave.jungler@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Sat, 05 Oct 2019 07:33:13 +0000
+Reviewed-on: https://review.opendev.org/686448
+Project: openstack/keystone
+Branch: refs/heads/master
