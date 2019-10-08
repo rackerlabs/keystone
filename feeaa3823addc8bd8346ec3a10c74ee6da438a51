@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_08d2395d",
+        "filename": "doc/source/getting-started/community.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6928
+      },
+      "writtenOn": "2019-10-08T16:47:53Z",
+      "side": 0,
+      "message": "Might be a good idea to update the wiki to point at the rendered version of this doc?",
+      "revId": "feeaa3823addc8bd8346ec3a10c74ee6da438a51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
