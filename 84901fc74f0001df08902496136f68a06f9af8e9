@@ -164,6 +164,30 @@
       "revId": "84901fc74f0001df08902496136f68a06f9af8e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_5ee0d226",
+        "filename": "doc/source/admin/service-api-protection.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-10-09T18:16:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa7e38b_9e108a50",
+      "range": {
+        "startLine": 137,
+        "startChar": 65,
+        "endLine": 137,
+        "endChar": 71
+      },
+      "revId": "84901fc74f0001df08902496136f68a06f9af8e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
