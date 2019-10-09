@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_fb1430a2",
+        "filename": "doc/source/admin/service-api-protection.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-10-09T17:50:10Z",
+      "side": 1,
+      "message": "Should we add the caveat that this doesn\u0027t apply universally to all services yet?",
+      "range": {
+        "startLine": 89,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 9
+      },
+      "revId": "84901fc74f0001df08902496136f68a06f9af8e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_bb0a3876",
+        "filename": "doc/source/admin/service-api-protection.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-10-09T17:50:10Z",
+      "side": 1,
+      "message": "in keystone",
+      "range": {
+        "startLine": 126,
+        "startChar": 59,
+        "endLine": 127,
+        "endChar": 13
+      },
+      "revId": "84901fc74f0001df08902496136f68a06f9af8e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_bb7f98dd",
+        "filename": "doc/source/admin/service-api-protection.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-10-09T17:50:10Z",
+      "side": 1,
+      "message": "also --role reader ?",
+      "range": {
+        "startLine": 137,
+        "startChar": 65,
+        "endLine": 137,
+        "endChar": 71
+      },
+      "revId": "84901fc74f0001df08902496136f68a06f9af8e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
