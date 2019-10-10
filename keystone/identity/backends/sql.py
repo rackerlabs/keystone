@@ -188,6 +188,11 @@ class Identity(base.IdentityDriverBase):
             return base.filter_user(
                 self._get_user(session, user_id).to_dict())
 
+    def get_user_idps_ref(self, user_id):
+        with sql.session_for_write() as session:
+            user = self._get_user(session, user_id)
+            return ', '.join(list(map(lambda fuser: str(fuser.idp_id), user.federated_users)))
+
     def get_user_by_name(self, user_name, domain_id):
         with sql.session_for_read() as session:
             query = session.query(model.User).join(model.LocalUser)
