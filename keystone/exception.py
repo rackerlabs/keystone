@@ -179,6 +179,11 @@ class StringLengthExceeded(ValidationError):
                        " of column %(type)s(CHAR(%(length)d)).")
 
 
+class CannotChangeEphemeralUserAttributes(ValidationError):
+    message_format = _("This user is ephemeral, you must change the"
+                       " user attributes on the Identity Provider %(idps)s.")
+
+
 class AmbiguityError(ValidationError):
     message_format = _("There are multiple %(resource)s entities named"
                        " '%(name)s'. Please use ID instead of names to"
