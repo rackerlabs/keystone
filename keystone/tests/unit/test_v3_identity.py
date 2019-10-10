@@ -396,6 +396,27 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.delete('/groups/%(group_id)s/users/%(user_id)s' % {
             'group_id': self.group_id, 'user_id': self.user['id']})
 
+    @mock.patch('keystone.identity.backends.sql_model.User.federated_users', new_callable=mock.PropertyMock)
+    def test_update_ephemeral_user(self, federated_user_mock):
+        user = unit.new_user_ref(domain_id=self.domain_id)
+        del user['id']
+
+        federated_user_a = model.FederatedUser()
+        federated_user_b = model.FederatedUser()
+        federated_user_a.idp_id = 'a_idp'
+        federated_user_b.idp_id = 'b_idp'
+        federated_user_mock.return_value = [federated_user_a, federated_user_b]
+
+        r = self.patch('/users/%(user_id)s' % {
+            'user_id': self.user['id']},
+            body={'user': user},
+            expected_status=http_client.BAD_REQUEST)
+
+        expected_response_message = "This user is ephemeral, you must change the user attributes" \
+                                    " on the Identity Provider a_idp, b_idp."
+
+        self.assertEqual(expected_response_message, r.result['error']['message'])
+
     def test_update_user(self):
         """Call ``PATCH /users/{user_id}``."""
         user = unit.new_user_ref(domain_id=self.domain_id)
