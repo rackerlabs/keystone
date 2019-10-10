@@ -1,0 +1,22 @@
+---
+issues:
+  - |
+    There is an inconsistency in the ephemeral user update flow. Every time I
+    update an ephemeral user, the keystone creates an entry in the local_user
+    table instead of just updating the entries in the user and federated_user
+    tables. Furthermore, if I try to do some operations using this user (that
+    has entries in all three tables), I get a "More than one user exists with
+    the name ..." error from the OpenStack Keystone API.
+upgrade:
+  - |
+    After applying this commit. A fix in the keystone database will be needed,
+    so we recommend to dump the local_user table before doing this process:
+
+    mysql db example:
+        - mysqldump -h db.service.stage.i.ewcs.ch -p -P 6033 -u keystone keystone federated_user local_user user > user_tables.sql
+        - mysql -h db.service.stage.i.ewcs.ch -D keystone -p -P 6033 -u keystone -e 'delete from local_user where user_id in (select user_id from federated_user);'
+
+    SQL:
+     - delete from local_user where user_id in (select user_id from federated_user);
+
+
