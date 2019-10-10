@@ -1032,7 +1032,13 @@ class Manager(manager.Manager):
                 fed_res = PROVIDERS.shadow_users_api.get_federated_users(
                     fed_hints)
                 break
-        return driver.list_users(hints) + fed_res
+
+        user_list = driver.list_users(hints)
+        for user in fed_res:
+            if user not in user_list:
+                user_list.append(user)
+
+        return user_list
 
     @domains_configured
     @exception_translated('user')
