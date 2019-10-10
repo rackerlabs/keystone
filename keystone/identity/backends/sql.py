@@ -204,6 +204,9 @@ class Identity(base.IdentityDriverBase):
     def update_user(self, user_id, user):
         with sql.session_for_write() as session:
             user_ref = self._get_user(session, user_id)
+            if len(user_ref.federated_users) > 0:
+                idps = ', '.join(list(map(lambda federated_user: str(federated_user.idp_id), user_ref.federated_users)))
+                raise exception.CannotChangeFederatedUserAttributes(idps=idps)
             old_user_dict = user_ref.to_dict()
             for k in user:
                 old_user_dict[k] = user[k]

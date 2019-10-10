@@ -678,6 +678,11 @@ class TokenlessAuthConfigError(ValidationError):
                        'was not found in the request environment.')
 
 
+class CannotChangeFederatedUserAttributes(ValidationError):
+    message_format = _("This user is federated, you must change the"
+                       " user attributes on the Identity Provider %(idps)s.")
+
+
 class CredentialEncryptionError(Exception):
     message_format = _("An unexpected error prevented the server "
                        "from accessing encrypted credentials.")

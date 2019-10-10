@@ -396,6 +396,30 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.delete('/groups/%(group_id)s/users/%(user_id)s' % {
             'group_id': self.group_id, 'user_id': self.user['id']})
 
+    @mock.patch('keystone.identity.backends.sql.Identity._get_user')
+    def test_update_federated_user(self, _get_user_mock):
+        user = unit.new_user_ref(domain_id=self.domain_id)
+        del user['id']
+
+        one_federated_user = model.FederatedUser.from_dict({'idp_id': "one_idp"})
+        two_federated_user = model.FederatedUser.from_dict({'idp_id': "two_idp"})
+
+        ref_user = model.User.from_dict(self.user)
+        ref_user.federated_users = [one_federated_user, two_federated_user]
+        _get_user_mock.return_value = ref_user
+
+        r = self.patch('/users/%(user_id)s' % {
+            'user_id': self.user['id']}, body={'user': user}, expected_status=http_client.BAD_REQUEST)
+
+        err_response = {
+            'result': "This user is federated, you must change the"
+                      " user attributes on the Identity Provider one_idp, two_idp.",
+            'code': 400
+        }
+
+        self.assertResponseStatus(r, err_response['code'])
+        self.assertEqual(err_response['result'], r.json['error']['message'])
+
     def test_update_user(self):
         """Call ``PATCH /users/{user_id}``."""
         user = unit.new_user_ref(domain_id=self.domain_id)
