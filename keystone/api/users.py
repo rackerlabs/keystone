@@ -221,6 +221,9 @@ class UserResource(ks_flask.ResourceBase):
             build_target=_build_user_target_enforcement
         )
         PROVIDERS.identity_api.get_user(user_id)
+        idps = PROVIDERS.identity_api.get_user_idps_ref(user_id)
+        if idps:
+            raise ks_exception.CannotChangeEphemeralUserAttributes(idps=idps)
         user_data = self.request_body_json.get('user', {})
         validation.lazy_validate(schema.user_update, user_data)
         self._require_matching_id(user_data)
