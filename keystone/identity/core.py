@@ -1032,7 +1032,10 @@ class Manager(manager.Manager):
                 fed_res = PROVIDERS.shadow_users_api.get_federated_users(
                     fed_hints)
                 break
-        return driver.list_users(hints) + fed_res
+
+        filtered_to_id_unique_users_list = list({user['id']: user for user in (driver.list_users(hints) +
+                                                                               fed_res)}.values())
+        return filtered_to_id_unique_users_list
 
     @domains_configured
     @exception_translated('user')
