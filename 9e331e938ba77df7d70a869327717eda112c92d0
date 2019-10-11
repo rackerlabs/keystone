@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_9e6e1ffe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-10-11T21:03:09Z",
+      "side": 1,
+      "message": "I think it was just a mistake.",
+      "parentUuid": "3fa7e38b_2dc3518b",
+      "range": {
+        "startLine": 18,
+        "startChar": 29,
+        "endLine": 19,
+        "endChar": 65
+      },
+      "revId": "9e331e938ba77df7d70a869327717eda112c92d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_2d48312b",
         "filename": "keystone/common/sql/contract_repo/versions/072_drop_domain_id_fk.py",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2019-10-11T06:29:02Z",
       "side": 1,
       "message": "Question: Do we really need this as domain.id isn\u0027t referenced to project.id foreign key[1] ?\n\n[1 https://github.com/openstack/keystone/blob/master/keystone/identity/backends/sql_model.py#L39]",
+      "range": {
+        "startLine": 28,
+        "startChar": 4,
+        "endLine": 36,
+        "endChar": 24
+      },
+      "revId": "9e331e938ba77df7d70a869327717eda112c92d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_de1fb769",
+        "filename": "keystone/common/sql/contract_repo/versions/072_drop_domain_id_fk.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-10-11T21:03:09Z",
+      "side": 1,
+      "message": "You\u0027re conflating the sqlalchemy model with the actual table. If you go to your devstack and do \u0027show create table `user`\u0027 on the keystone database in mysql you will see the foreign key exists.\n\nThese schema migrations are imperative instructions that act on the database itself to bring it from one state to another. The sqlalchemy model is a declarative description of what the table is supposed to look like and acts as an interface between the database and the calling code.",
+      "parentUuid": "3fa7e38b_2d48312b",
       "range": {
         "startLine": 28,
         "startChar": 4,
