@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_b2e23cd4",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1678,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-10-11T04:41:03Z",
+      "side": 1,
+      "message": "Its a powerful model to look for a list of files where file names matching a similar pattern.",
+      "range": {
+        "startLine": 1678,
+        "startChar": 22,
+        "endLine": 1678,
+        "endChar": 32
+      },
+      "revId": "1f860f939dcbd90a7a3b6cd88d21066e306dfd98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
