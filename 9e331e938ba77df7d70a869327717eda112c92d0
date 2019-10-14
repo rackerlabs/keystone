@@ -93,6 +93,30 @@
       "revId": "9e331e938ba77df7d70a869327717eda112c92d0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_1c078dcc",
+        "filename": "keystone/common/sql/contract_repo/versions/072_drop_domain_id_fk.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-10-14T06:44:12Z",
+      "side": 1,
+      "message": "Ahhh. Makes sense. Thanks",
+      "parentUuid": "3fa7e38b_de1fb769",
+      "range": {
+        "startLine": 28,
+        "startChar": 4,
+        "endLine": 36,
+        "endChar": 24
+      },
+      "revId": "9e331e938ba77df7d70a869327717eda112c92d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
