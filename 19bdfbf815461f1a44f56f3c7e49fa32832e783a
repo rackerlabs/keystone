@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_8996c44b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2019-10-15T15:10:14Z",
+      "side": 1,
+      "message": "Well, to be clear, this was hit in https://review.opendev.org/#/c/649097/ which makes py3 the default in devstack in ussuri so in that failure the grenade job is going from py2 train to py3 ussuri and failing on this pycodestyle thing.\n\nI will update https://review.opendev.org/#/c/649097/ to depend on this fix though to see if it does the trick.",
+      "range": {
+        "startLine": 14,
+        "startChar": 20,
+        "endLine": 15,
+        "endChar": 13
+      },
+      "revId": "19bdfbf815461f1a44f56f3c7e49fa32832e783a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
