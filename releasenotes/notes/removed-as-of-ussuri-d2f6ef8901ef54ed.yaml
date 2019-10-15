@@ -1,0 +1,6 @@
+---
+other:
+  - |
+    Dropping the Python2 support in OpenStack Ussuri according to
+    `the disscussion of keystone
+    <http://lists.openstack.org/pipermail/openstack-discuss/2019-October/010356.html>`_
