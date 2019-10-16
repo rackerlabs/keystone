@@ -503,15 +503,16 @@ class Manager(manager.Manager):
         user_refs = self.list_users(domain_scope=domain_id)
         group_refs = self.list_groups(domain_scope=domain_id)
 
-        for group in group_refs:
-            # Cleanup any existing groups.
-            try:
-                self.delete_group(group['id'])
-            except exception.GroupNotFound:
-                LOG.debug(('Group %(groupid)s not found when deleting domain '
-                           'contents for %(domainid)s, continuing with '
-                           'cleanup.'),
-                          {'groupid': group['id'], 'domainid': domain_id})
+        if not driver.is_sql:
+            for group in group_refs:
+                # Cleanup any existing groups.
+                try:
+                    self.delete_group(group['id'])
+                except exception.GroupNotFound:
+                    LOG.debug(('Group %(groupid)s not found when deleting '
+                               'domain contents for %(domainid)s, continuing '
+                               'with cleanup.'),
+                              {'groupid': group['id'], 'domainid': domain_id})
 
         # And finally, delete the users themselves
         for user in user_refs:
