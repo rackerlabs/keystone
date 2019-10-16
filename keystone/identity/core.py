@@ -16,15 +16,16 @@
 
 import copy
 import functools
-import itertools
-import operator
 import os
 import threading
 import uuid
 
+import itertools
+import operator
 from oslo_config import cfg
 from oslo_log import log
 from pycadf import reason
+from oslo_utils import timeutils
 
 from keystone import assignment  # TODO(lbragstad): Decouple this dependency
 from keystone.common import cache
@@ -37,8 +38,6 @@ from keystone import exception
 from keystone.i18n import _
 from keystone.identity.mapping_backends import mapping
 from keystone import notifications
-from oslo_utils import timeutils
-
 
 CONF = keystone.conf.CONF
 
@@ -243,7 +242,9 @@ class DomainConfigs(provider_api.ProviderAPIMixin, dict):
                 # The domain is valid, so we really do have an attempt at more
                 # than one SQL driver.
                 details = (
-                    _('Config API entity at /domains/%s/config') % domain_id)
+                        _(
+                            'Config API entity at /domains/%s/config') %
+                        domain_id)
                 raise exception.MultipleSQLDriversInConfig(source=details)
 
             # We fell out of the loop without either registering our domain or
@@ -252,7 +253,7 @@ class DomainConfigs(provider_api.ProviderAPIMixin, dict):
             msg = _('Exceeded attempts to register domain %(domain)s to use '
                     'the SQL driver, the last domain that appears to have '
                     'had it is %(last_domain)s, giving up') % {
-                        'domain': domain_id, 'last_domain': domain_registered}
+                      'domain': domain_id, 'last_domain': domain_registered}
             raise exception.UnexpectedError(msg)
 
         domain_config = {}
@@ -290,7 +291,7 @@ class DomainConfigs(provider_api.ProviderAPIMixin, dict):
         for domain in resource_api.list_domains():
             domain_config_options = (
                 PROVIDERS.domain_config_api.
-                get_config_with_sensitive_info(domain['id']))
+                    get_config_with_sensitive_info(domain['id']))
             if domain_config_options:
                 self._load_config_from_database(domain['id'],
                                                 domain_config_options)
@@ -366,7 +367,7 @@ class DomainConfigs(provider_api.ProviderAPIMixin, dict):
 
         latest_domain_config = (
             PROVIDERS.domain_config_api.
-            get_config_with_sensitive_info(domain_id))
+                get_config_with_sensitive_info(domain_id))
         domain_config_in_use = domain_id in self
 
         if latest_domain_config:
@@ -399,6 +400,7 @@ def domains_configured(f):
     to each call, and if requires load them,
 
     """
+
     @functools.wraps(f)
     def wrapper(self, *args, **kwargs):
         if (not self.domain_configs.configured and
@@ -412,11 +414,13 @@ def domains_configured(f):
                     self.domain_configs.setup_domain_drivers(
                         self.driver, PROVIDERS.resource_api)
         return f(self, *args, **kwargs)
+
     return wrapper
 
 
 def exception_translated(exception_type):
     """Wrap API calls to map to correct exception."""
+
     def _exception_translated(f):
         @functools.wraps(f)
         def wrapper(self, *args, **kwargs):
@@ -431,7 +435,9 @@ def exception_translated(exception_type):
                     raise AssertionError(_('Invalid user / password'))
                 else:
                     raise
+
         return wrapper
+
     return _exception_translated
 
 
@@ -503,15 +509,16 @@ class Manager(manager.Manager):
         user_refs = self.list_users(domain_scope=domain_id)
         group_refs = self.list_groups(domain_scope=domain_id)
 
-        for group in group_refs:
-            # Cleanup any existing groups.
-            try:
-                self.delete_group(group['id'])
-            except exception.GroupNotFound:
-                LOG.debug(('Group %(groupid)s not found when deleting domain '
-                           'contents for %(domainid)s, continuing with '
-                           'cleanup.'),
-                          {'groupid': group['id'], 'domainid': domain_id})
+        if driver.is_sql:
+            for group in group_refs:
+                # Cleanup any existing groups.
+                try:
+                    self.delete_group(group['id'])
+                except exception.GroupNotFound:
+                    LOG.debug(('Group %(groupid)s not found when deleting '
+                               'domain contents for %(domainid)s, continuing '
+                               'with cleanup.'),
+                              {'groupid': group['id'], 'domainid': domain_id})
 
         # And finally, delete the users themselves
         for user in user_refs:
@@ -705,8 +712,8 @@ class Manager(manager.Manager):
         """
         is_not_default_driver = driver is not self.driver
         return (is_not_default_driver or (
-            not driver.generates_uuids() and
-            not CONF.identity_mapping.backward_compatible_ids))
+                not driver.generates_uuids() and
+                not CONF.identity_mapping.backward_compatible_ids))
 
     def _clear_domain_id_if_domain_unaware(self, driver, ref):
         """Clear domain_id details if driver is not domain aware."""
@@ -740,7 +747,7 @@ class Manager(manager.Manager):
         # that would happen is that the default driver is LDAP and the
         # domain is anything other than None or the default domain.
         if (not driver.is_domain_aware() and driver == self.driver and
-            domain_id != CONF.identity.default_domain_id and
+                domain_id != CONF.identity.default_domain_id and
                 domain_id is not None):
             LOG.warning('Found multiple domains being mapped to a '
                         'driver that does not support that (e.g. '
@@ -1106,10 +1113,12 @@ class Manager(manager.Manager):
         if enabled_change or user.get('password') is not None:
             self._persist_revocation_event_for_user(user_id)
             reason = (
-                'Invalidating the token cache because user %(user_id)s was '
-                'enabled or disabled. Authorization will be calculated and '
-                'enforced accordingly the next time they authenticate or '
-                'validate a token.' % {'user_id': user_id}
+                    'Invalidating the token cache because user %(user_id)s '
+                    'was '
+                    'enabled or disabled. Authorization will be calculated '
+                    'and '
+                    'enforced accordingly the next time they authenticate or '
+                    'validate a token.' % {'user_id': user_id}
             )
             notifications.invalidate_token_cache_notification(reason)
 
