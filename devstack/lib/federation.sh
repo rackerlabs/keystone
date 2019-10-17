@@ -182,6 +182,10 @@ function configure_tests_settings {
 
     # Here we set any settings that might be need by the fed_scenario set of tests
     iniset $TEMPEST_CONFIG identity-feature-enabled federation True
+    # If not using samltest as an external IdP, tell tempest not to test that scenario
+    if [[ "$IDP_ID" != "samltest" ]] ; then
+        iniset $TEMPEST_CONFIG identity-feature-enabled external_idp false
+    fi
 
     # Identity provider settings
     iniset $TEMPEST_CONFIG fed_scenario idp_id $IDP_ID
