@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_93df9139",
+        "filename": "doc/source/admin/federation/configure_federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 11904
+      },
+      "writtenOn": "2019-10-18T18:33:40Z",
+      "side": 1,
+      "message": "Red Hat\n\n:)",
+      "range": {
+        "startLine": 46,
+        "startChar": 6,
+        "endLine": 46,
+        "endChar": 12
+      },
+      "revId": "cebed4114ba5d35b1f3c25873b053c464a08e2bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
