@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_b9593c36",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-10-21T16:26:17Z",
+      "side": 1,
+      "message": "I can see this group in keystone_tempest_plugin [1]. But I am not able to find identity-feature-enabled in L192.\n\n[1] https://github.com/openstack/keystone-tempest-plugin/blob/564670bead8da7669a2f1c82d0dd3cf41b75fd5b/keystone_tempest_plugin/config.py#L25",
+      "range": {
+        "startLine": 196,
+        "startChar": 27,
+        "endLine": 196,
+        "endChar": 39
+      },
+      "revId": "fb0be8e59917b5b637926d9526a64676af07ebf0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
