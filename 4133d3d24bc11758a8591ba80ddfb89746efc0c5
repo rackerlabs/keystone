@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_74d74951",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-10-21T17:30:09Z",
+      "side": 1,
+      "message": "(nitpick) this would be a good place to explain what the problem was and why trying to delete the group isn\u0027t a good idea for the ldap backend.",
+      "revId": "4133d3d24bc11758a8591ba80ddfb89746efc0c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
