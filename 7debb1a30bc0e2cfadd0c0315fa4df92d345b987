@@ -22,6 +22,30 @@
       "revId": "7debb1a30bc0e2cfadd0c0315fa4df92d345b987",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_797184de",
+        "filename": "doc/source/admin/federation/introduction.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-10-21T17:08:05Z",
+      "side": 1,
+      "message": "The SP sends an unscoped token in response to the user\u0027s auth request: https://docs.openstack.org/api-ref/identity/v3-ext/#request-an-unscoped-os-federation-token",
+      "parentUuid": "3fa7e38b_be7282ac",
+      "range": {
+        "startLine": 314,
+        "startChar": 5,
+        "endLine": 315,
+        "endChar": 65
+      },
+      "revId": "7debb1a30bc0e2cfadd0c0315fa4df92d345b987",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
