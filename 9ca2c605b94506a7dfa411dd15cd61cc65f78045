@@ -22,6 +22,30 @@
       "revId": "9ca2c605b94506a7dfa411dd15cd61cc65f78045",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_8101506d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-10-22T20:22:49Z",
+      "side": 1,
+      "message": "Done. That makes sense.\n\nFWIW - we\u0027re still going to have a conflict here since the ``token`` variable changed (``token_ref`` -\u003e ``token``).",
+      "parentUuid": "3fa7e38b_3b9c4b5a",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 41
+      },
+      "revId": "9ca2c605b94506a7dfa411dd15cd61cc65f78045",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
