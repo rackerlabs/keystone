@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3fa7e38b_b238609f",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2019-10-22T17:06:27Z",
+      "side": 1,
+      "message": "This seems to be available on fedora/centos as a package as well. So I think it is safe to keep it outside of the system conditionals.",
+      "revId": "fb0be8e59917b5b637926d9526a64676af07ebf0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_b9593c36",
         "filename": "devstack/lib/federation.sh",
         "patchSetId": 2
