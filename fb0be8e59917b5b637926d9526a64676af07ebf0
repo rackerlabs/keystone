@@ -46,6 +46,30 @@
       "revId": "fb0be8e59917b5b637926d9526a64676af07ebf0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_d28f1c73",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-10-22T16:54:01Z",
+      "side": 1,
+      "message": "Thanks. I missed that it as picking up from tempest.",
+      "parentUuid": "3fa7e38b_79fe6439",
+      "range": {
+        "startLine": 196,
+        "startChar": 27,
+        "endLine": 196,
+        "endChar": 39
+      },
+      "revId": "fb0be8e59917b5b637926d9526a64676af07ebf0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
