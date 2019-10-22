@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_735507fa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2019-10-22T20:45:48Z",
+      "side": 1,
+      "message": "This is from the stable/rocky backport but is not the same conflict for queens is it? IOW could this be updated so it\u0027s queens specific?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 20
+      },
+      "revId": "2737e3ba3468fa3dd9b53dc24ea7cfd7948b132f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
