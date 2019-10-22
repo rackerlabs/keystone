@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_6020d29c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2019-10-22T18:45:43Z",
+      "side": 1,
+      "message": "Generally I\u0027d like to see these show a cherry picked line per branch we\u0027re going from the original fix, so in this case you\u0027d have cherry-picked from e9612a672b88867e8df82d443a5ca08b1343a411 in stable/stein.",
+      "revId": "07c7ed73a8a79dfbd58e4ad40641520b0d5c5f5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
