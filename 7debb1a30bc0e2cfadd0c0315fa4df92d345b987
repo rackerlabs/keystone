@@ -46,6 +46,30 @@
       "revId": "7debb1a30bc0e2cfadd0c0315fa4df92d345b987",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_92776409",
+        "filename": "doc/source/admin/federation/introduction.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-10-22T17:34:43Z",
+      "side": 1,
+      "message": "Got it. This is what k2k architecture follows.",
+      "parentUuid": "3fa7e38b_797184de",
+      "range": {
+        "startLine": 314,
+        "startChar": 5,
+        "endLine": 315,
+        "endChar": 65
+      },
+      "revId": "7debb1a30bc0e2cfadd0c0315fa4df92d345b987",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
