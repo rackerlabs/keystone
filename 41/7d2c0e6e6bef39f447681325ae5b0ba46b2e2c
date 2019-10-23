@@ -1,0 +1,9 @@
+Code-Review+2: Lance Bragstad <lbragstad@redhat.com>
+Code-Review+2: Matt Riedemann <mriedem.os@gmail.com>
+Workflow+1: Matt Riedemann <mriedem.os@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 23 Oct 2019 17:29:10 +0000
+Reviewed-on: https://review.opendev.org/681849
+Project: openstack/keystone
+Branch: refs/heads/stable/rocky
