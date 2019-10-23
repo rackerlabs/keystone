@@ -40,7 +40,7 @@ def get_enforcer():
     # from the CONF object. This makes things easier here because we don't have
     # to parse arguments passed in from the command line and remove unexpected
     # arguments before building a Config object.
-    CONF([], project='keystone')
+    CONF(project='keystone')
     return _ENFORCER._enforcer
 
 
