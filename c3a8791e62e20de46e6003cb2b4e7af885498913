@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_16b828e3",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-10-24T07:23:33Z",
+      "side": 1,
+      "message": "according to this if any group is associated with the domain backed by ldap, we wont delete that group and directly delete domain?",
+      "range": {
+        "startLine": 506,
+        "startChar": 7,
+        "endLine": 506,
+        "endChar": 25
+      },
+      "revId": "c3a8791e62e20de46e6003cb2b4e7af885498913",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
