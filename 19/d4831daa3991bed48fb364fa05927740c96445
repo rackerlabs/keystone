@@ -1,0 +1,11 @@
+Code-Review+1: Radosław Piliszek <radoslaw.piliszek@gmail.com>
+Code-Review+1: Vishakha Agarwal <agarwalvishakha18@gmail.com>
+Code-Review+2: wangxiyuan <wangxiyuan1007@gmail.com>
+Code-Review+2: Kristi Nikolla <kristi@nikolla.me>
+Workflow+1: Kristi Nikolla <kristi@nikolla.me>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 24 Oct 2019 18:59:54 +0000
+Reviewed-on: https://review.opendev.org/689558
+Project: openstack/keystone
+Branch: refs/heads/master
