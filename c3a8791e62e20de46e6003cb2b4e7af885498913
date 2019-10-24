@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3fa7e38b_45bedaff",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-10-24T18:36:45Z",
+      "side": 1,
+      "message": "suggest moving these to inside the \u0027if driver.is_sql:\u0027 statement to improve efficiency. For LDAP driver, no need to perform the unnecessary lookups.",
+      "range": {
+        "startLine": 503,
+        "startChar": 8,
+        "endLine": 504,
+        "endChar": 61
+      },
+      "revId": "c3a8791e62e20de46e6003cb2b4e7af885498913",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_16b828e3",
         "filename": "keystone/identity/core.py",
         "patchSetId": 6
@@ -61,6 +84,30 @@
       "side": 1,
       "message": "Maybe this discussion will help provide context: http://eavesdrop.openstack.org/irclogs/%23openstack-keystone/%23openstack-keystone.2019-10-15.log.html#t2019-10-15T14:58:20\n\nGroups are the same as users, see below for how we handle them when the domain is deleted. A domain is the namespace for users and groups, and normally when we delete a domain there are notifications emitted and we try to clean up everything owned by that domain - projects, users, roles, and groups. But users and groups are part of a different driver than projects and roles. If we try to delete a user that is *owned* by the domain but *backed* by LDAP, we get an error because we can\u0027t write to LDAP. Same with groups.",
       "parentUuid": "3fa7e38b_4139f1a0",
+      "range": {
+        "startLine": 506,
+        "startChar": 7,
+        "endLine": 506,
+        "endChar": 25
+      },
+      "revId": "c3a8791e62e20de46e6003cb2b4e7af885498913",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_25395ea2",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-10-24T18:36:45Z",
+      "side": 1,
+      "message": "I see. Thanks for the context.",
+      "parentUuid": "3fa7e38b_a23a24c1",
       "range": {
         "startLine": 506,
         "startChar": 7,
