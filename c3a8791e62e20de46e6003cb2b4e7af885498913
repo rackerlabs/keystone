@@ -22,6 +22,30 @@
       "revId": "c3a8791e62e20de46e6003cb2b4e7af885498913",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_4139f1a0",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-10-24T15:37:10Z",
+      "side": 1,
+      "message": "This sounds weird. Do we mirror LDAP groups in Keystone? If not, why are there any LDAP groups in Keystone to delete?",
+      "parentUuid": "3fa7e38b_16b828e3",
+      "range": {
+        "startLine": 506,
+        "startChar": 7,
+        "endLine": 506,
+        "endChar": 25
+      },
+      "revId": "c3a8791e62e20de46e6003cb2b4e7af885498913",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
