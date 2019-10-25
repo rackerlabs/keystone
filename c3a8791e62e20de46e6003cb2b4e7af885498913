@@ -117,6 +117,30 @@
       "revId": "c3a8791e62e20de46e6003cb2b4e7af885498913",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_7d592259",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-10-25T10:02:33Z",
+      "side": 1,
+      "message": "ahhh ok. Thanks for sharing the logs.",
+      "parentUuid": "3fa7e38b_a23a24c1",
+      "range": {
+        "startLine": 506,
+        "startChar": 7,
+        "endLine": 506,
+        "endChar": 25
+      },
+      "revId": "c3a8791e62e20de46e6003cb2b4e7af885498913",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
