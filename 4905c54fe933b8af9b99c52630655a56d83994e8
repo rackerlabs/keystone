@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3fa7e38b_a4543323",
+        "filename": ".zuul.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2019-10-29T19:33:51Z",
+      "side": 1,
+      "message": "you need to drop this too",
+      "range": {
+        "startLine": 177,
+        "startChar": 8,
+        "endLine": 177,
+        "endChar": 23
+      },
+      "revId": "4905c54fe933b8af9b99c52630655a56d83994e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_c46e0f2b",
         "filename": ".zuul.yaml",
         "patchSetId": 2
@@ -47,6 +70,24 @@
       "writtenOn": "2019-10-29T19:22:46Z",
       "side": 1,
       "message": "And this one",
+      "revId": "4905c54fe933b8af9b99c52630655a56d83994e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_045c2749",
+        "filename": ".zuul.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2019-10-29T19:33:51Z",
+      "side": 1,
+      "message": "+1, this will be dropped with dropping integrated-gate too.",
+      "parentUuid": "3fa7e38b_2457e35c",
       "revId": "4905c54fe933b8af9b99c52630655a56d83994e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
