@@ -1,0 +1,11 @@
+Code-Review+1: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: Kristi Nikolla <kristi@nikolla.me>
+Code-Review+2: Sean McGinnis <sean.mcginnis@gmail.com>
+Code-Review+2: Matt Riedemann <mriedem.os@gmail.com>
+Workflow+1: Matt Riedemann <mriedem.os@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 29 Oct 2019 23:18:37 +0000
+Reviewed-on: https://review.opendev.org/689229
+Project: openstack/keystone
+Branch: refs/heads/stable/stein
