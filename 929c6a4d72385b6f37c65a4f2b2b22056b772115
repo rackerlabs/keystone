@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_93c29fe8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2019-10-29T17:08:31Z",
+      "side": 1,
+      "message": "Would have been better to cherry pick from stable/train ( d5f9c681fc04e10af29005ca2c0e9b498024c042 ) but that is approved now and this is the same so I won\u0027t make you redo this.",
+      "revId": "929c6a4d72385b6f37c65a4f2b2b22056b772115",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
