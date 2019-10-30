@@ -1,0 +1,11 @@
+Code-Review+1: Elod Illes <elod.illes@est.tech>
+Code-Review+1: Vishakha Agarwal <agarwalvishakha18@gmail.com>
+Code-Review+2: Lance Bragstad <lbragstad@redhat.com>
+Code-Review+2: Sean McGinnis <sean.mcginnis@gmail.com>
+Workflow+1: Sean McGinnis <sean.mcginnis@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 30 Oct 2019 18:09:03 +0000
+Reviewed-on: https://review.opendev.org/690070
+Project: openstack/keystone
+Branch: refs/heads/stable/stein
