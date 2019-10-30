@@ -22,6 +22,30 @@
       "revId": "a9d8f0a1555bbc674697fd41ce92772d80cdea17",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_5f8501ac",
+        "filename": "releasenotes/notes/removed-as-of-ussuri-d2f6ef8901ef54ed.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 30395
+      },
+      "writtenOn": "2019-10-30T12:08:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa7e38b_1ffb09be",
+      "range": {
+        "startLine": 5,
+        "startChar": 4,
+        "endLine": 5,
+        "endChar": 83
+      },
+      "revId": "a9d8f0a1555bbc674697fd41ce92772d80cdea17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
