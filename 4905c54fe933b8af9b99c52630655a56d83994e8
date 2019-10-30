@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_3912a559",
+        "filename": ".zuul.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 30395
+      },
+      "writtenOn": "2019-10-30T12:08:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa7e38b_a4543323",
+      "range": {
+        "startLine": 177,
+        "startChar": 8,
+        "endLine": 177,
+        "endChar": 23
+      },
+      "revId": "4905c54fe933b8af9b99c52630655a56d83994e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_c46e0f2b",
         "filename": ".zuul.yaml",
         "patchSetId": 2
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_191489e8",
+        "filename": ".zuul.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 30395
+      },
+      "writtenOn": "2019-10-30T12:08:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa7e38b_c46e0f2b",
+      "revId": "4905c54fe933b8af9b99c52630655a56d83994e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_64615b39",
         "filename": ".zuul.yaml",
         "patchSetId": 2
@@ -53,6 +95,24 @@
       "writtenOn": "2019-10-29T19:22:46Z",
       "side": 1,
       "message": "And this one",
+      "revId": "4905c54fe933b8af9b99c52630655a56d83994e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_f9164df2",
+        "filename": ".zuul.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 30395
+      },
+      "writtenOn": "2019-10-30T12:08:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa7e38b_64615b39",
       "revId": "4905c54fe933b8af9b99c52630655a56d83994e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +148,42 @@
       "side": 1,
       "message": "+1, this will be dropped with dropping integrated-gate too.",
       "parentUuid": "3fa7e38b_2457e35c",
+      "revId": "4905c54fe933b8af9b99c52630655a56d83994e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_990f19df",
+        "filename": ".zuul.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 30395
+      },
+      "writtenOn": "2019-10-30T12:08:47Z",
+      "side": 1,
+      "message": "Thanks!",
+      "parentUuid": "3fa7e38b_2457e35c",
+      "revId": "4905c54fe933b8af9b99c52630655a56d83994e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_d90911dd",
+        "filename": ".zuul.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 30395
+      },
+      "writtenOn": "2019-10-30T12:08:47Z",
+      "side": 1,
+      "message": "Thanks!",
+      "parentUuid": "3fa7e38b_045c2749",
       "revId": "4905c54fe933b8af9b99c52630655a56d83994e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
