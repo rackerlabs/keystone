@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_26090f2a",
+        "filename": "releasenotes/notes/removed-as-of-ussuri-d2f6ef8901ef54ed.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-10-31T08:34:55Z",
+      "side": 1,
+      "message": "The sentence can be at little symmetry.",
+      "range": {
+        "startLine": 4,
+        "startChar": 4,
+        "endLine": 6,
+        "endChar": 98
+      },
+      "revId": "2b77a921ed86b14727bb60640d0e1612f7e37530",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
