@@ -1,0 +1,11 @@
+Code-Review+1: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: Gage Hugo <gagehugo@gmail.com>
+Code-Review+2: Sean McGinnis <sean.mcginnis@gmail.com>
+Code-Review+2: Matt Riedemann <mriedem.os@gmail.com>
+Workflow+1: Matt Riedemann <mriedem.os@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 31 Oct 2019 03:22:04 +0000
+Reviewed-on: https://review.opendev.org/692128
+Project: openstack/keystone
+Branch: refs/heads/stable/queens
