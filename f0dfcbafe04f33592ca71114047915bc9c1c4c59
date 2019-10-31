@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_f153b214",
+        "filename": "releasenotes/notes/removed-as-of-ussuri-d2f6ef8901ef54ed.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 30395
+      },
+      "writtenOn": "2019-10-31T23:52:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa7e38b_96a03ba7",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 5
+      },
+      "revId": "f0dfcbafe04f33592ca71114047915bc9c1c4c59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_367aa723",
         "filename": "releasenotes/notes/removed-as-of-ussuri-d2f6ef8901ef54ed.yaml",
         "patchSetId": 6
@@ -53,6 +77,30 @@
       "writtenOn": "2019-10-30T15:49:36Z",
       "side": 1,
       "message": "I would say \"according to the TC deprecation timeline\" with a link to https://governance.openstack.org/tc/resolutions/20180529-python2-deprecation-timeline.html",
+      "range": {
+        "startLine": 4,
+        "startChar": 53,
+        "endLine": 6,
+        "endChar": 87
+      },
+      "revId": "f0dfcbafe04f33592ca71114047915bc9c1c4c59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_5151660d",
+        "filename": "releasenotes/notes/removed-as-of-ussuri-d2f6ef8901ef54ed.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 30395
+      },
+      "writtenOn": "2019-10-31T23:52:37Z",
+      "side": 1,
+      "message": "Yes, That is more acuurate.",
+      "parentUuid": "3fa7e38b_367aa723",
       "range": {
         "startLine": 4,
         "startChar": 53,
