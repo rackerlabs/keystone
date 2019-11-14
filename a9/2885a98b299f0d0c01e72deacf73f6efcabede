@@ -1,0 +1,12 @@
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: yanghongyu <yang.hongyu@99cloud.net>
+Code-Review+1: Andriy Shevchenko <huang.zhiping@99cloud.net>
+Code-Review+2: guang-yee <gyee@suse.com>
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Workflow+1: Colleen Murphy <colleen@gazlene.net>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 14 Nov 2019 10:28:52 +0000
+Reviewed-on: https://review.opendev.org/688601
+Project: openstack/keystone
+Branch: refs/heads/master
