@@ -722,3 +722,19 @@ class ResourceDeleteForbidden(ForbiddenNotSecurity):
     message_format = _('Unable to delete immutable %(type)s resource: '
                        '`%(resource_id)s. Set resource option "immutable" '
                        'to false first.')
+
+
+class RedirectRequired(Exception):
+    """Error class for redirection.
+
+    Child classes should define an HTTP redirect url
+    message_format.
+
+    """
+    redirect_url = None
+    code = http.client.FOUND
+
+    def __init__(self, redirect_url, **kwargs):
+        self.redirect_url = redirect_url
+
+        super(RedirectRequired, self).__init__(**kwargs)
