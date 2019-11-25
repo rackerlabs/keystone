@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_79369ab6",
+        "filename": "doc/source/admin/federation/openidc.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2019-11-25T18:51:19Z",
+      "side": 1,
+      "message": "This `dir` option here does not exist. That is why you are breaking the CI system.",
+      "range": {
+        "startLine": 160,
+        "startChar": 16,
+        "endLine": 160,
+        "endChar": 19
+      },
+      "revId": "f016dbca8e94e066d098845c915cf31ff89ee31e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
