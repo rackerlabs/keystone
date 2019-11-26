@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_8b8a0e18",
+        "filename": "doc/source/admin/federation/openidc.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2019-11-26T16:41:01Z",
+      "side": 1,
+      "message": "Oh nice! I wasn\u0027t aware that there was a directive that allowed both OIDC and OAuth 2.0 on the same directory. I usually kept this as OAuth 2.0. https://github.com/zmartzone/mod_auth_openidc/wiki/Single-Page-Applications#allowing-both-oauth-20-and-openid-connect",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 19
+      },
+      "revId": "f51b7243699c6258a9e030378cc1a4734ee64b77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
