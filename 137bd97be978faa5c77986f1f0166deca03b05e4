@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_a93d248f",
+        "filename": "releasenotes/notes/bug-1855080-08b28181b7cb2470.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2019-12-04T20:29:22Z",
+      "side": 1,
+      "message": "Is this still true?",
+      "range": {
+        "startLine": 20,
+        "startChar": 35,
+        "endLine": 21,
+        "endChar": 48
+      },
+      "revId": "137bd97be978faa5c77986f1f0166deca03b05e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
