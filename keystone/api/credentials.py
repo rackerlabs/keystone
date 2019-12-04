@@ -101,8 +101,7 @@ class CredentialResource(ks_flask.ResourceBase):
         # If the request was filtered, make sure to return only the
         # credentials specific to that user. This makes it so that users with
         # roles on projects can't see credentials that aren't theirs.
-        if (not self.oslo_context.system_scope and
-                CONF.oslo_policy.enforce_scope):
+        if (not self.oslo_context.system_scope):
             filtered_refs = []
             for ref in refs:
                 if ref['user_id'] == target['credential']['user_id']:
