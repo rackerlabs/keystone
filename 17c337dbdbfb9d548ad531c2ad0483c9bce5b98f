@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_91507b60",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-12-05T19:42:34Z",
+      "side": 1,
+      "message": "Yeah - I should have clarified I was referring the behavior of the bug in general.",
+      "parentUuid": "3fa7e38b_51c0c34a",
+      "range": {
+        "startLine": 97,
+        "startChar": 8,
+        "endLine": 98,
+        "endChar": 66
+      },
+      "revId": "17c337dbdbfb9d548ad531c2ad0483c9bce5b98f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_d15593fa",
         "filename": "keystone/api/credentials.py",
         "patchSetId": 3
