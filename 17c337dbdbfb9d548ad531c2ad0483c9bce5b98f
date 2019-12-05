@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_71393fd6",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-12-05T19:06:54Z",
+      "side": 1,
+      "message": "So - to make sure I understand it properly. This was failing because policy checks don\u0027t filter responses and this policy was being or\u0027d with the deprecated base.RULE_ADMIN_REQUIRED policy?",
+      "range": {
+        "startLine": 97,
+        "startChar": 8,
+        "endLine": 98,
+        "endChar": 66
+      },
+      "revId": "17c337dbdbfb9d548ad531c2ad0483c9bce5b98f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_d15593fa",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-12-05T19:06:54Z",
+      "side": 1,
+      "message": "Looking at the policy for identity:list_credentials, it\u0027s too bad we can\u0027t actually leverage the `or user_id:..` bit.",
+      "revId": "17c337dbdbfb9d548ad531c2ad0483c9bce5b98f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
