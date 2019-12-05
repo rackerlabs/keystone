@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_ee2a3ae4",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-12-05T09:59:07Z",
+      "side": 1,
+      "message": "Should we create a hyperlink here? The document doesn\u0027t show any [1]\n\n[1] https://storage.bhs1.cloud.ovh.net/v1/AUTH_dcaab5e32b234d56b626f72581e3644c/zuul_opendev_logs_710/697375/2/check/openstack-tox-docs/71065bc/docs/user/application_credentials.html",
+      "range": {
+        "startLine": 124,
+        "startChar": 0,
+        "endLine": 124,
+        "endChar": 17
+      },
+      "revId": "f9b4d1888deb8fbc167013019474bae29ee8845d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_0e047617",
+        "filename": "doc/source/user/application_credentials.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-12-05T09:59:07Z",
+      "side": 1,
+      "message": "This is nice to be compatible with every version of APIs.",
+      "range": {
+        "startLine": 208,
+        "startChar": 0,
+        "endLine": 232,
+        "endChar": 40
+      },
+      "revId": "f9b4d1888deb8fbc167013019474bae29ee8845d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
