@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_a93f55dd",
+        "filename": "api-ref/source/v3/application-credentials.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-12-05T17:30:34Z",
+      "side": 1,
+      "message": "It\u0027s not a body parameter, better to use _query",
+      "range": {
+        "startLine": 267,
+        "startChar": 46,
+        "endLine": 267,
+        "endChar": 51
+      },
+      "revId": "95aa8b739ba4017e4c1b62928729d28d54238e70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_297a85ba",
+        "filename": "api-ref/source/v3/application-credentials.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-12-05T17:30:34Z",
+      "side": 1,
+      "message": "better to use _not_required",
+      "range": {
+        "startLine": 267,
+        "startChar": 51,
+        "endLine": 267,
+        "endChar": 66
+      },
+      "revId": "95aa8b739ba4017e4c1b62928729d28d54238e70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
