@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_51c0c34a",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-12-05T19:27:41Z",
+      "side": 1,
+      "message": "Not sure which \"this\" you mean by \"this was failing\" -\n\nThe tempest test was failing on the first patchset because it is testing using the project-admin with enforce_scope\u003dfalse and expecting that user to be able to list all credentials. This enforcer call wasn\u0027t failing in that tempest test, it was the filtering happening below that was over-filtering the results into an empty list.\n\nOr if you\u0027re referring to the bug itself, it had nothing to do with rule:admin_required, the problem was that the target is target.credential.user_id.{current_user} which matches the policy check \u0027or user_id:%(target.credential.user_id)s\u0027, so the enforcer here passes - and correct, the enforcer doesn\u0027t do any filtering, we were relying on the filtering below. I was hoping the filters\u003dfilters could be used somehow here but that only checks the flask query params which aren\u0027t the problem here.",
+      "parentUuid": "3fa7e38b_71393fd6",
+      "range": {
+        "startLine": 97,
+        "startChar": 8,
+        "endLine": 98,
+        "endChar": 66
+      },
+      "revId": "17c337dbdbfb9d548ad531c2ad0483c9bce5b98f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_d15593fa",
         "filename": "keystone/api/credentials.py",
         "patchSetId": 3
@@ -36,6 +60,24 @@
       "writtenOn": "2019-12-05T19:06:54Z",
       "side": 1,
       "message": "Looking at the policy for identity:list_credentials, it\u0027s too bad we can\u0027t actually leverage the `or user_id:..` bit.",
+      "revId": "17c337dbdbfb9d548ad531c2ad0483c9bce5b98f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_b1c57792",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-12-05T19:27:41Z",
+      "side": 1,
+      "message": "Yeah, it\u0027s almost like we need some flag to trigger based on which part of the check string passed the enforcer.",
+      "parentUuid": "3fa7e38b_d15593fa",
       "revId": "17c337dbdbfb9d548ad531c2ad0483c9bce5b98f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
