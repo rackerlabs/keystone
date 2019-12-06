@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_5c1d2871",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1627,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-12-06T21:32:42Z",
+      "side": 1,
+      "message": "Should be in: query",
+      "revId": "83dc56f17ad7a25fdaf9027415051661806cae23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
