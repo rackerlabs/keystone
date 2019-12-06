@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_a0d8b8ef",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 30695
+      },
+      "writtenOn": "2019-12-06T14:32:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa7e38b_1b310ca3",
+      "revId": "104b925e67d0fea610939c4ecef1c663c6025939",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_5b88e469",
         "filename": "releasenotes/notes/fix-ephemeral-user-update-process-b0584a252509e7aa.yaml",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2019-12-05T17:50:46Z",
       "side": 1,
       "message": "The convention is to prefix the file path with bug-XXXXXX",
+      "revId": "104b925e67d0fea610939c4ecef1c663c6025939",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_e0ca3017",
+        "filename": "releasenotes/notes/fix-ephemeral-user-update-process-b0584a252509e7aa.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30695
+      },
+      "writtenOn": "2019-12-06T14:32:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa7e38b_5b88e469",
       "revId": "104b925e67d0fea610939c4ecef1c663c6025939",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_40ca241a",
+        "filename": "releasenotes/notes/fix-ephemeral-user-update-process-b0584a252509e7aa.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 30695
+      },
+      "writtenOn": "2019-12-06T14:32:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa7e38b_5baf84df",
+      "revId": "104b925e67d0fea610939c4ecef1c663c6025939",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_bb3a3894",
         "filename": "releasenotes/notes/fix-ephemeral-user-update-process-b0584a252509e7aa.yaml",
         "patchSetId": 10
@@ -64,6 +118,30 @@
       "writtenOn": "2019-12-05T17:50:46Z",
       "side": 1,
       "message": "Keep in mind that these release notes will appear on this page: https://docs.openstack.org/releasenotes/keystone/unreleased.html\n\nThere\u0027s no context for what \"this commit\" is. I would omit this section and add \"if you are affected by this bug...[take these steps]\" in the \"fixes\" note.",
+      "range": {
+        "startLine": 12,
+        "startChar": 19,
+        "endLine": 12,
+        "endChar": 30
+      },
+      "revId": "104b925e67d0fea610939c4ecef1c663c6025939",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_20c5a80a",
+        "filename": "releasenotes/notes/fix-ephemeral-user-update-process-b0584a252509e7aa.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 30695
+      },
+      "writtenOn": "2019-12-06T14:32:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa7e38b_bb3a3894",
       "range": {
         "startLine": 12,
         "startChar": 19,
