@@ -45,6 +45,30 @@
       "revId": "95aa8b739ba4017e4c1b62928729d28d54238e70",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_2f359ba8",
+        "filename": "api-ref/source/v3/application-credentials.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2019-12-06T09:55:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa7e38b_a93f55dd",
+      "range": {
+        "startLine": 267,
+        "startChar": 46,
+        "endLine": 267,
+        "endChar": 51
+      },
+      "revId": "95aa8b739ba4017e4c1b62928729d28d54238e70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
