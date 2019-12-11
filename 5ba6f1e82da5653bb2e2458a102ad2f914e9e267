@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_8bf8fc7b",
+        "filename": "releasenotes/notes/bug-1848342-317c9e4afa65a3ff.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 30695
+      },
+      "writtenOn": "2019-12-11T19:08:24Z",
+      "side": 1,
+      "message": "Thanks, this is looking better now.",
+      "parentUuid": "3fa7e38b_71990278",
+      "range": {
+        "startLine": 5,
+        "startChar": 66,
+        "endLine": 6,
+        "endChar": 60
+      },
+      "revId": "5ba6f1e82da5653bb2e2458a102ad2f914e9e267",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_51916645",
         "filename": "releasenotes/notes/bug-1848342-317c9e4afa65a3ff.yaml",
         "patchSetId": 12
@@ -64,6 +88,30 @@
         "startChar": 21,
         "endLine": 8,
         "endChar": 29
+      },
+      "revId": "5ba6f1e82da5653bb2e2458a102ad2f914e9e267",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_8b26bc15",
+        "filename": "releasenotes/notes/bug-1848342-317c9e4afa65a3ff.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 30695
+      },
+      "writtenOn": "2019-12-11T19:08:24Z",
+      "side": 1,
+      "message": "You are right. It will help the users to validate if they are with this bug.",
+      "parentUuid": "3fa7e38b_51916645",
+      "range": {
+        "startLine": 8,
+        "startChar": 10,
+        "endLine": 8,
+        "endChar": 11
       },
       "revId": "5ba6f1e82da5653bb2e2458a102ad2f914e9e267",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
