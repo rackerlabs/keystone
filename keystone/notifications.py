@@ -74,6 +74,7 @@ SAML_AUDIT_TYPE = 'http://docs.oasis-open.org/security/saml/v2.0'
 _SUBSCRIBERS = {}
 _notifier = None
 SERVICE = 'identity'
+PROVIDERS = provider_api.ProviderAPIs
 
 ROOT_DOMAIN = '<<keystone.domain.root>>'
 
@@ -97,6 +98,9 @@ def build_audit_initiator():
     if oslo_context.user_id:
         initiator.id = utils.resource_uuid(oslo_context.user_id)
         initiator.user_id = oslo_context.user_id
+
+    if oslo_context.username:
+        initiator.username = oslo_context.username
 
     if oslo_context.project_id:
         initiator.project_id = oslo_context.project_id
@@ -565,6 +569,12 @@ class CadfNotificationWrapper(object):
             target = resource.Resource(typeURI=taxonomy.ACCOUNT_USER)
             initiator = build_audit_initiator()
             initiator.user_id = user_id
+            try:
+                user_ref = PROVIDERS.identity_api.get_user(user_id)
+                initiator.username = user_ref['name']
+            except:
+                # Likely a user not found notification, move along
+                pass
             initiator.id = utils.resource_uuid(user_id)
             try:
                 result = f(wrapped_self, user_id, *args, **kwargs)
