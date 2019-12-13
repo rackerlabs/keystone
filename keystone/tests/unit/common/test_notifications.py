@@ -1202,6 +1202,19 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
         self.assertEqual(self.user_id, initiator.id)
         self.assertEqual(self.user_id, initiator.user_id)
 
+    def test_initiator_always_contains_user_name(self):
+        # Clear notifications
+        while self._notifications:
+            self._notifications.pop()
+
+        self.get_scoped_token()
+        self.assertEqual(len(self._notifications), 1)
+        note = self._notifications.pop()
+        initiator = note['initiator']
+        self.assertEqual(self.user_id, initiator.id)
+        self.assertEqual(self.user_id, initiator.user_id)
+        self.assertEqual(self.user['name'], initiator.username)
+
     def test_v3_authenticate_user_name_and_domain_id(self):
         user_id = self.user_id
         user_name = self.user['name']
