@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_fbdc7372",
+        "filename": "devstack/lib/scope.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2019-12-18T21:55:21Z",
+      "side": 1,
+      "message": "We don\u0027t want to use the defaults? Or is this so that we don\u0027t apply the logical OR for deprecated policies?",
+      "range": {
+        "startLine": 19,
+        "startChar": 4,
+        "endLine": 19,
+        "endChar": 80
+      },
+      "revId": "71ee705e78b9487e999ec21c46b82a162c568942",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
