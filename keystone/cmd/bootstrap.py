@@ -137,7 +137,13 @@ class Bootstrapper(object):
             # name instead.
             hints = driver_hints.Hints()
             hints.add_filter('name', role_name)
-            return PROVIDERS.role_api.list_roles(hints)[0]
+            roles = PROVIDERS.role_api.list_roles(hints)
+            # Only return global roles, domain-specific roles can't be used in
+            # system assignments and bootstrap isn't designed to work with
+            # domain-specific roles.
+            for role in roles:
+                if not role['domain_id']:
+                    return role
 
     def _ensure_implied_role(self, prior_role_id, implied_role_id):
         try:
