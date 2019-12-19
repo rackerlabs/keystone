@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+  In case of federated users with an empty federate group id list, authenticate
+  using `openid` method will fail if cache expires. This patchset works around
+  the problem by checking if federated group is none, instead of directly use
+  it in if condition.
