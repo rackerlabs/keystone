@@ -566,7 +566,7 @@ class FederatedUnscopedPayload(BasePayload):
 
     @classmethod
     def create_arguments_apply(cls, **kwargs):
-        return kwargs['federated_group_ids']
+        return kwargs['federated_group_ids'] is not None
 
     @classmethod
     def pack_group_id(cls, group_dict):
