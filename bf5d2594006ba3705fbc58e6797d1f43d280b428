@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_2b029673",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2019-12-22T13:26:50Z",
+      "side": 1,
+      "message": "whether?",
+      "range": {
+        "startLine": 9,
+        "startChar": 62,
+        "endLine": 9,
+        "endChar": 69
+      },
+      "revId": "bf5d2594006ba3705fbc58e6797d1f43d280b428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_4b059278",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2019-12-22T13:26:50Z",
+      "side": 1,
+      "message": "can you combine these two testcase into one?  maybe something like \n\ngroup_ids \u003d [uuid.uuid4().hex, []] is enough?",
+      "range": {
+        "startLine": 139,
+        "startChar": 0,
+        "endLine": 150,
+        "endChar": 54
+      },
+      "revId": "bf5d2594006ba3705fbc58e6797d1f43d280b428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_ebfb1e78",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2019-12-22T13:26:50Z",
+      "side": 1,
+      "message": "does this has anything to do with the change here?",
+      "range": {
+        "startLine": 216,
+        "startChar": 0,
+        "endLine": 221,
+        "endChar": 71
+      },
+      "revId": "bf5d2594006ba3705fbc58e6797d1f43d280b428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
