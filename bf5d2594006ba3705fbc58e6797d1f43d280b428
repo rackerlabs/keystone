@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_618d0d7b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 29071
+      },
+      "writtenOn": "2019-12-23T04:00:07Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "3fa7e38b_2b029673",
+      "range": {
+        "startLine": 9,
+        "startChar": 62,
+        "endLine": 9,
+        "endChar": 69
+      },
+      "revId": "bf5d2594006ba3705fbc58e6797d1f43d280b428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_4b059278",
         "filename": "keystone/tests/unit/token/test_fernet_provider.py",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_61466d53",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 29071
+      },
+      "writtenOn": "2019-12-23T04:00:07Z",
+      "side": 1,
+      "message": "I am afraid not. the last test case is used test when group id is empty",
+      "parentUuid": "3fa7e38b_4b059278",
+      "range": {
+        "startLine": 139,
+        "startChar": 0,
+        "endLine": 150,
+        "endChar": 54
+      },
+      "revId": "bf5d2594006ba3705fbc58e6797d1f43d280b428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_ebfb1e78",
         "filename": "keystone/tests/unit/token/test_fernet_provider.py",
         "patchSetId": 1
@@ -59,6 +107,30 @@
       "writtenOn": "2019-12-22T13:26:50Z",
       "side": 1,
       "message": "does this has anything to do with the change here?",
+      "range": {
+        "startLine": 216,
+        "startChar": 0,
+        "endLine": 221,
+        "endChar": 71
+      },
+      "revId": "bf5d2594006ba3705fbc58e6797d1f43d280b428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_414c9174",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 29071
+      },
+      "writtenOn": "2019-12-23T04:00:07Z",
+      "side": 1,
+      "message": "this test case is added intentionally for when cache is disabled. test case should succeed regardless of cache enabled or not.",
+      "parentUuid": "3fa7e38b_ebfb1e78",
       "range": {
         "startLine": 216,
         "startChar": 0,
