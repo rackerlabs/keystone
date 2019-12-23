@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_911e50ba",
+        "filename": "keystone/cmd/bootstrap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-12-23T19:44:05Z",
+      "side": 1,
+      "message": "How about just\n\nhints.add_filter(\u0027domain_id\u0027, None)\n\n?",
+      "revId": "f5dedc44ba886c37df68dd8f114b42ac538cbf0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_f126a422",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-12-23T19:44:05Z",
+      "side": 1,
+      "message": "Not sure why this is needed, the test passes for me without it.",
+      "range": {
+        "startLine": 342,
+        "startChar": 12,
+        "endLine": 343,
+        "endChar": 61
+      },
+      "revId": "f5dedc44ba886c37df68dd8f114b42ac538cbf0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
