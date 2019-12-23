@@ -2,6 +2,69 @@
   "comments": [
     {
       "key": {
+        "uuid": "3fa7e38b_71ff1435",
+        "filename": "doc/source/admin/federation/openidc.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-12-23T20:27:13Z",
+      "side": 1,
+      "message": "From the documentation, \"Used when OIDCProviderMetadataURL is not defined or the metadata obtained from that URL does not set it.\" - so I think in most cases this shouldn\u0027t be necessary?",
+      "revId": "f51b7243699c6258a9e030378cc1a4734ee64b77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_7184f4b2",
+        "filename": "doc/source/admin/federation/openidc.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-12-23T20:27:13Z",
+      "side": 1,
+      "message": "I would use note rather than warning. The warning appears as a big red box and indicates something dangerous is happening. note is just information that may be useful to some people.",
+      "range": {
+        "startLine": 99,
+        "startChar": 3,
+        "endLine": 99,
+        "endChar": 12
+      },
+      "revId": "f51b7243699c6258a9e030378cc1a4734ee64b77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_71687421",
+        "filename": "doc/source/admin/federation/openidc.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-12-23T20:27:13Z",
+      "side": 1,
+      "message": "nit: s/not/do not/",
+      "range": {
+        "startLine": 101,
+        "startChar": 20,
+        "endLine": 101,
+        "endChar": 23
+      },
+      "revId": "f51b7243699c6258a9e030378cc1a4734ee64b77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_8b8a0e18",
         "filename": "doc/source/admin/federation/openidc.inc",
         "patchSetId": 2
@@ -19,6 +82,241 @@
         "endLine": 103,
         "endChar": 19
       },
+      "revId": "f51b7243699c6258a9e030378cc1a4734ee64b77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_9163b045",
+        "filename": "doc/source/admin/federation/openidc.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-12-23T20:27:13Z",
+      "side": 1,
+      "message": "nit: s/:/./",
+      "range": {
+        "startLine": 103,
+        "startChar": 18,
+        "endLine": 103,
+        "endChar": 19
+      },
+      "revId": "f51b7243699c6258a9e030378cc1a4734ee64b77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_5189b8c4",
+        "filename": "doc/source/admin/federation/openidc.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-12-23T20:27:13Z",
+      "side": 1,
+      "message": "suggest simply \u003cIDP metadata directory\u003e",
+      "range": {
+        "startLine": 142,
+        "startChar": 20,
+        "endLine": 142,
+        "endChar": 43
+      },
+      "revId": "f51b7243699c6258a9e030378cc1a4734ee64b77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_f190e4f5",
+        "filename": "doc/source/admin/federation/openidc.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-12-23T20:27:13Z",
+      "side": 1,
+      "message": "So even though there are multiple identity providers, keystone is still configured for just one?",
+      "range": {
+        "startLine": 144,
+        "startChar": 88,
+        "endLine": 144,
+        "endChar": 94
+      },
+      "revId": "f51b7243699c6258a9e030378cc1a4734ee64b77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_f1b9c47b",
+        "filename": "doc/source/admin/federation/openidc.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-12-23T20:27:13Z",
+      "side": 1,
+      "message": "I would either elaborate on why we want to avoid the discovery process or omit this note.",
+      "range": {
+        "startLine": 153,
+        "startChar": 37,
+        "endLine": 153,
+        "endChar": 64
+      },
+      "revId": "f51b7243699c6258a9e030378cc1a4734ee64b77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_d13928f1",
+        "filename": "doc/source/admin/federation/openidc.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-12-23T20:27:13Z",
+      "side": 1,
+      "message": "This isn\u0027t bash, would suggest just using an empty code block statement",
+      "range": {
+        "startLine": 160,
+        "startChar": 16,
+        "endLine": 160,
+        "endChar": 20
+      },
+      "revId": "f51b7243699c6258a9e030378cc1a4734ee64b77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_312afc90",
+        "filename": "doc/source/admin/federation/openidc.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-12-23T20:27:13Z",
+      "side": 1,
+      "message": "Is this a path? Maybe use the path from the documentation \"/var/cache/apache2/mod_auth_openidc/metadata\"",
+      "range": {
+        "startLine": 162,
+        "startChar": 6,
+        "endLine": 162,
+        "endChar": 22
+      },
+      "revId": "f51b7243699c6258a9e030378cc1a4734ee64b77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_71095430",
+        "filename": "doc/source/admin/federation/openidc.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-12-23T20:27:13Z",
+      "side": 1,
+      "message": "Since this is supposed to demonstrate multiple IdPs, maybe describe what it would look like to have the second IdP\u0027s metadata here?",
+      "revId": "f51b7243699c6258a9e030378cc1a4734ee64b77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_fcfafb0e",
+        "filename": "doc/source/admin/federation/openidc.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-12-23T20:27:13Z",
+      "side": 1,
+      "message": "\"escaped\" is the wrong word, suggest saying \"url-encoded\" or \"percent-encoded\" if you mean to make it URL-safe.\n\nWhy does it need to be URL-safe?",
+      "range": {
+        "startLine": 171,
+        "startChar": 31,
+        "endLine": 171,
+        "endChar": 38
+      },
+      "revId": "f51b7243699c6258a9e030378cc1a4734ee64b77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_3c189374",
+        "filename": "doc/source/admin/federation/openidc.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-12-23T20:27:13Z",
+      "side": 1,
+      "message": "Maybe include an example above of a non-google IdP that has a name that needs to be encoded like this?",
+      "revId": "f51b7243699c6258a9e030378cc1a4734ee64b77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_7c37ebe5",
+        "filename": "doc/source/admin/federation/openidc.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-12-23T20:27:13Z",
+      "side": 1,
+      "message": "nit: overridden",
+      "range": {
+        "startLine": 191,
+        "startChar": 20,
+        "endLine": 191,
+        "endChar": 29
+      },
+      "revId": "f51b7243699c6258a9e030378cc1a4734ee64b77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_fc48bb62",
+        "filename": "doc/source/admin/federation/openidc.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2019-12-23T20:27:13Z",
+      "side": 1,
+      "message": "This wiki page seems to explain everything needed to configure multiple IdPs. Instead of maintaining this whole section, could we just add a link to that documentation and keep this limited to anything keystone-specific about the setup?",
       "revId": "f51b7243699c6258a9e030378cc1a4734ee64b77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
