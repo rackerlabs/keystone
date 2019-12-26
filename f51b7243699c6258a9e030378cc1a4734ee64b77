@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_9a209d4d",
+        "filename": "doc/source/admin/federation/openidc.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 30695
+      },
+      "writtenOn": "2019-12-26T19:47:18Z",
+      "side": 1,
+      "message": "You are correct, this configuration is needed if we use the AuthType auth-openidc, but when using the AuthType openid-connect, just the OIDCProviderMetadataURL is enough.",
+      "parentUuid": "3fa7e38b_71ff1435",
+      "revId": "f51b7243699c6258a9e030378cc1a4734ee64b77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_7184f4b2",
         "filename": "doc/source/admin/federation/openidc.inc",
         "patchSetId": 2
@@ -145,6 +163,30 @@
       "writtenOn": "2019-12-23T20:27:13Z",
       "side": 1,
       "message": "So even though there are multiple identity providers, keystone is still configured for just one?",
+      "range": {
+        "startLine": 144,
+        "startChar": 88,
+        "endLine": 144,
+        "endChar": 94
+      },
+      "revId": "f51b7243699c6258a9e030378cc1a4734ee64b77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_bac9d9ab",
+        "filename": "doc/source/admin/federation/openidc.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 30695
+      },
+      "writtenOn": "2019-12-26T19:47:18Z",
+      "side": 1,
+      "message": "This property is just to redirect the request to a protected URL. \n\nThe URL configured in this property must be a protected one, even if I use a URL from a specific IdP, it will work with multiple IdPs, as the desired IdP is defined by the query parameter ``iss`` and not the URL.\n\nI will leave this example as http://sp.keystone.example.org/redirect_uri to avoid misunderstanding.",
+      "parentUuid": "3fa7e38b_f190e4f5",
       "range": {
         "startLine": 144,
         "startChar": 88,
@@ -317,6 +359,24 @@
       "writtenOn": "2019-12-23T20:27:13Z",
       "side": 1,
       "message": "This wiki page seems to explain everything needed to configure multiple IdPs. Instead of maintaining this whole section, could we just add a link to that documentation and keep this limited to anything keystone-specific about the setup?",
+      "revId": "f51b7243699c6258a9e030378cc1a4734ee64b77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_5d669ff0",
+        "filename": "doc/source/admin/federation/openidc.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 30695
+      },
+      "writtenOn": "2019-12-26T19:47:18Z",
+      "side": 1,
+      "message": "Yes, there is a wiki page, but some configurations are not clearly defined in the wiki (like the metadata file .conf which must be an empty JSON `` {} `` if there is no configuration to be overridden) and it lacks some examples of metadata files, so I thought to create a section to ease the configuration process of multiple IdPs, but I agree with you, it will be one more documentation to maintain.",
+      "parentUuid": "3fa7e38b_fc48bb62",
       "revId": "f51b7243699c6258a9e030378cc1a4734ee64b77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
