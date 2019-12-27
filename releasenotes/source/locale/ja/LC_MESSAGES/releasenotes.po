@@ -707,7 +707,7 @@ msgstr ""
 "FEDERATION/projects`` と ``/OS-FEDERATION/domains`` API は非推奨となりまし"
 "た。これらの API は、もともと Juno リリースサイクル中に非推奨となりましたが、"
 "oslo の ``versionutils`` を使用して非推奨には決してしませんでした。この廃止に"
-"関する詳細は、廃止を提案した `パッチ <https://review.openstack.org/#/"
+"関する詳細は、廃止を提案した `パッチ <https://review.opendev.org/#/"
 "c/115423/>`_ にあります。"
 
 msgid ""
