@@ -46,6 +46,30 @@
       "revId": "71ee705e78b9487e999ec21c46b82a162c568942",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_fb0c21ec",
+        "filename": "devstack/lib/scope.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-01-02T15:25:51Z",
+      "side": 1,
+      "message": "++ thanks for the clarifying.",
+      "parentUuid": "3fa7e38b_b66822f4",
+      "range": {
+        "startLine": 19,
+        "startChar": 4,
+        "endLine": 19,
+        "endChar": 80
+      },
+      "revId": "71ee705e78b9487e999ec21c46b82a162c568942",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
