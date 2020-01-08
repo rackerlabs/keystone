@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_48cf6d53",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-01-08T19:13:21Z",
+      "side": 1,
+      "message": "You should be able to query keystone (`openstack user show/list`) and map the generated ID to the LDAP username (but I agree this is a good change anyway).",
+      "range": {
+        "startLine": 11,
+        "startChar": 34,
+        "endLine": 12,
+        "endChar": 28
+      },
+      "revId": "43a2ebb58f19a635fb5875c7fbd7d587c47b8678",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_486c4d6a",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 828,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-01-08T19:13:21Z",
+      "side": 1,
+      "message": "unimportant nitpick: username",
+      "range": {
+        "startLine": 828,
+        "startChar": 9,
+        "endLine": 828,
+        "endChar": 18
+      },
+      "revId": "43a2ebb58f19a635fb5875c7fbd7d587c47b8678",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
