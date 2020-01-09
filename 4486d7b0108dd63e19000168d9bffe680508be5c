@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_55c93257",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1159,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2020-01-09T15:56:12Z",
+      "side": 1,
+      "message": "Yup, done",
+      "parentUuid": "3fa7e38b_1aa210ae",
+      "range": {
+        "startLine": 1155,
+        "startChar": 16,
+        "endLine": 1159,
+        "endChar": 63
+      },
+      "revId": "4486d7b0108dd63e19000168d9bffe680508be5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_ba53bcdd",
         "filename": "keystone/tests/unit/common/test_notifications.py",
         "patchSetId": 7
@@ -36,6 +60,30 @@
       "writtenOn": "2020-01-09T06:59:14Z",
       "side": 1,
       "message": "\u0027username\u0027 just for the consistency.",
+      "range": {
+        "startLine": 1205,
+        "startChar": 38,
+        "endLine": 1205,
+        "endChar": 48
+      },
+      "revId": "4486d7b0108dd63e19000168d9bffe680508be5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_35ba76b9",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1205,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2020-01-09T15:56:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa7e38b_ba53bcdd",
       "range": {
         "startLine": 1205,
         "startChar": 38,
