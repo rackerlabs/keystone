@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_252525c0",
+        "filename": "keystone/federation/idp.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-01-14T21:44:43Z",
+      "side": 1,
+      "message": "The CI is failing because the signature is broken, I think because this doesn\u0027t build a valid attribute if groups is empty - \u0027\u0027.split(\u0027;\u0027) creates a list [\u0027\u0027] and the attribute becomes a single element list containing a null element. I think better not to add the list at all if there are no groups.\n\nFWIW besides looking at the apache and shibboleth logs I found that by inserting an rpdb break statement around here and checking groups_attribute.to_string() https://pypi.org/project/rpdb/",
+      "revId": "07c3a9e85bd3586887b85061721d631b31340a0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
