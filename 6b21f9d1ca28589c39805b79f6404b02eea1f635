@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_2c9da96b",
+        "filename": "doc/source/admin/federation/mapping_combinations.rst",
+        "patchSetId": 38
+      },
+      "lineNbr": 939,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-01-21T23:04:17Z",
+      "side": 1,
+      "message": "Since this new mapping can\u0027t be used in the same way as the regular local \"group\" rule, it would be good to include an example of it.",
+      "revId": "6b21f9d1ca28589c39805b79f6404b02eea1f635",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
