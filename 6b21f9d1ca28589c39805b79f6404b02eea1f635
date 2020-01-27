@@ -16,6 +16,24 @@
       "revId": "6b21f9d1ca28589c39805b79f6404b02eea1f635",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_d700e337",
+        "filename": "doc/source/admin/federation/mapping_combinations.rst",
+        "patchSetId": 38
+      },
+      "lineNbr": 939,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-01-27T07:26:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa7e38b_2c9da96b",
+      "revId": "6b21f9d1ca28589c39805b79f6404b02eea1f635",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
