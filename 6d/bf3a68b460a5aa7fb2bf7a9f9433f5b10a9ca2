@@ -1,0 +1,9 @@
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Workflow+1: Colleen Murphy <colleen@gazlene.net>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 28 Jan 2020 21:29:51 +0000
+Reviewed-on: https://review.opendev.org/702374
+Project: openstack/keystone
+Branch: refs/heads/master
