@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "3fa7e38b_80d8c750",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2020-01-28T20:08:12Z",
+      "side": 1,
+      "message": "(note to other reviewers: conflict is due to not having patch I4d99f630cb16e1d58261012e59d3a92c7035734c in stable/stein)",
+      "revId": "ba014fd189025df9c7632cb31c58f5027a8336ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_000ff7d3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2020-01-28T20:08:12Z",
+      "side": 1,
+      "message": "The cherry-pick should be done branch-by-branch (so that is less likely to have a conflict, miss a branch, follow/review the cherry-pick, etc.)\n\nAlso that would add the line at the end:\n(cherry picked from commit 51ff7be731450c183b3e3eb6d34493e986cc2635)",
+      "revId": "ba014fd189025df9c7632cb31c58f5027a8336ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_4737494c",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 2
@@ -13,6 +47,24 @@
       "writtenOn": "2020-01-09T16:52:59Z",
       "side": 1,
       "message": "Weird - this didn\u0027t cleanly apply during the cherry-pick. There should be a newline here.",
+      "revId": "ba014fd189025df9c7632cb31c58f5027a8336ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_c0b79fd6",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2020-01-28T20:08:12Z",
+      "side": 1,
+      "message": "This was the conflicting file so I guess needed some edit and missed the extra line. If that is added here, pep8 will be happy, too :)",
+      "parentUuid": "3fa7e38b_4737494c",
       "revId": "ba014fd189025df9c7632cb31c58f5027a8336ed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
