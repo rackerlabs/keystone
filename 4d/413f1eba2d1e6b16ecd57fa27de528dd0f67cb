@@ -1,0 +1,10 @@
+Code-Review+2: Lance Bragstad <lbragstad@redhat.com>
+Code-Review+1: Elod Illes <elod.illes@est.tech>
+Code-Review+2: Alan Pevec <alan.pevec@redhat.com>
+Workflow+1: Alan Pevec <alan.pevec@redhat.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 29 Jan 2020 03:52:59 +0000
+Reviewed-on: https://review.opendev.org/704453
+Project: openstack/keystone
+Branch: refs/heads/stable/train
