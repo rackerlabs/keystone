@@ -1,0 +1,10 @@
+Code-Review+1: Vishakha Agarwal <agarwalvishakha18@gmail.com>
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+2: Kristi Nikolla <kristi@nikolla.me>
+Workflow+1: Kristi Nikolla <kristi@nikolla.me>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 29 Jan 2020 23:53:46 +0000
+Reviewed-on: https://review.opendev.org/699013
+Project: openstack/keystone
+Branch: refs/heads/master
