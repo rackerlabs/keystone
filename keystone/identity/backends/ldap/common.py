@@ -644,6 +644,35 @@ def use_conn_pool(func):
     return wrapper
 
 
+class PooledLDAPStateConnector(ldappool.StateConnector):
+    """StateConnector impllementation whitch uses bytes mode set to false.
+
+    Class used by PooledLDAPHandler. Only two methods are overrided to set
+    bytes_mode and convert to utf credentials whitch is required by ldappool
+    library.
+
+    """
+    def __init__ (self, *args, **kw):
+        ldappool.ReconnectLDAPObject.__init__(self, bytes_mode=False, *args, **kw)
+        self.connected = False
+        self.who = ''
+        self.cred = ''
+        self._connection_time = None
+
+    def simple_bind_s(self, who='', cred='', serverctrls=None,
+                      clientctrls=None):
+        res = ldappool.ReconnectLDAPObject.simple_bind_s(self, utf8_decode(who),
+                                                         utf8_decode(cred),
+                                                         serverctrls,
+                                                         clientctrls)
+        self.connected = True
+        self.who = who
+        self.cred = cred
+        if self._connection_time is None:
+           self._connection_time = ldappool.time.time()
+        return res
+
+
 class PooledLDAPHandler(LDAPHandler):
     """LDAPHandler implementation which uses pooled connection manager.
 
@@ -674,7 +703,7 @@ class PooledLDAPHandler(LDAPHandler):
     """
 
     # Added here to allow override for testing
-    Connector = ldappool.StateConnector
+    Connector = PooledLDAPStateConnector
     auth_pool_prefix = 'auth_pool_'
 
     connection_pools = {}  # static connector pool dict
@@ -795,9 +824,9 @@ class PooledLDAPHandler(LDAPHandler):
         conn_ctxt = self._get_pool_connection()
         conn = conn_ctxt.__enter__()
         try:
-            msgid = conn.search_ext(base, scope,
-                                    filterstr, attrlist, attrsonly,
-                                    serverctrls, clientctrls,
+            msgid = conn.search_ext(utf8_decode(base), scope,
+                                    filterstr, map(utf8_decode, attrlist),
+                                    attrsonly, serverctrls, clientctrls,
                                     timeout, sizelimit)
         except Exception:
             conn_ctxt.__exit__(*sys.exc_info())
