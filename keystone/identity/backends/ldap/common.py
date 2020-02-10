@@ -174,7 +174,7 @@ def convert_ldap_result(ldap_result):
                 ldap_attrs[kind] = [val2py(x) for x in values]
             except UnicodeDecodeError:
                 LOG.debug('Unable to decode value for attribute %s', kind)
-        py_result.append((dn, ldap_attrs))
+        py_result.append((utf8_decode(dn), ldap_attrs))
     if at_least_one_referral:
         LOG.debug('Referrals were returned and ignored. Enable referral '
                   'chasing in keystone.conf via [ldap] chase_referrals')
