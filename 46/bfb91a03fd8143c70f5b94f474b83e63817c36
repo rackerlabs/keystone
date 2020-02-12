@@ -1,0 +1,9 @@
+Code-Review+1: Gage Hugo <gagehugo@gmail.com>
+Code-Review+2: Lance Bragstad <lbragstad@redhat.com>
+Workflow+1: Lance Bragstad <lbragstad@redhat.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 12 Feb 2020 00:13:33 +0000
+Reviewed-on: https://review.opendev.org/706095
+Project: openstack/keystone
+Branch: refs/heads/stable/rocky
