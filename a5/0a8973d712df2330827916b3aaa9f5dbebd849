@@ -1,0 +1,8 @@
+Code-Review+2: Lance Bragstad <lbragstad@redhat.com>
+Workflow+1: Colleen Murphy <colleen@gazlene.net>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 14 Feb 2020 19:15:10 +0000
+Reviewed-on: https://review.opendev.org/704895
+Project: openstack/keystone
+Branch: refs/heads/stable/rocky
