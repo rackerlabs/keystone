@@ -1,0 +1,8 @@
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Workflow+1: Colleen Murphy <colleen@gazlene.net>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Sat, 15 Feb 2020 02:55:45 +0000
+Reviewed-on: https://review.opendev.org/699847
+Project: openstack/keystone
+Branch: refs/heads/stable/rocky
