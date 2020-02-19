@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_9db4691f",
+        "filename": ".zuul.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 11904
+      },
+      "writtenOn": "2020-02-19T14:27:20Z",
+      "side": 1,
+      "message": "This should be dropped, then this patch rebased on top of that change.",
+      "range": {
+        "startLine": 230,
+        "startChar": 8,
+        "endLine": 231,
+        "endChar": 55
+      },
+      "revId": "f66137c568d3f01865dc99bcbf817405ed868356",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
