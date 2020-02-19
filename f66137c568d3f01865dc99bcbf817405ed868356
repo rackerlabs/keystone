@@ -22,6 +22,30 @@
       "revId": "f66137c568d3f01865dc99bcbf817405ed868356",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_5d9ef168",
+        "filename": ".zuul.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-02-19T18:53:20Z",
+      "side": 1,
+      "message": "Looks like it https://review.opendev.org/#/c/707874/",
+      "parentUuid": "3fa7e38b_9db4691f",
+      "range": {
+        "startLine": 230,
+        "startChar": 8,
+        "endLine": 231,
+        "endChar": 55
+      },
+      "revId": "f66137c568d3f01865dc99bcbf817405ed868356",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
