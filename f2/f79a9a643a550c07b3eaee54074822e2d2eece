@@ -1,0 +1,10 @@
+Code-Review+2: Lance Bragstad <lbragstad@redhat.com>
+Code-Review+1: Elod Illes <elod.illes@est.tech>
+Code-Review+2: Sean McGinnis <sean.mcginnis@gmail.com>
+Workflow+1: Sean McGinnis <sean.mcginnis@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 20 Feb 2020 15:03:07 +0000
+Reviewed-on: https://review.opendev.org/708779
+Project: openstack/keystone
+Branch: refs/heads/stable/stein
