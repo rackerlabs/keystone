@@ -1,0 +1,10 @@
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+2: Lance Bragstad <lbragstad@redhat.com>
+Workflow+1: Lance Bragstad <lbragstad@redhat.com>
+Code-Review+1: Kristi Nikolla <knikolla@icloud.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 20 Feb 2020 21:33:46 +0000
+Reviewed-on: https://review.opendev.org/705768
+Project: openstack/keystone
+Branch: refs/heads/stable/stein
