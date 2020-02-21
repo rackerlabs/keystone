@@ -1,0 +1,8 @@
+Code-Review+2: Sean McGinnis <sean.mcginnis@gmail.com>
+Workflow+1: Sean McGinnis <sean.mcginnis@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 21 Feb 2020 23:59:41 +0000
+Reviewed-on: https://review.opendev.org/709217
+Project: openstack/keystone
+Branch: refs/heads/stable/stein
