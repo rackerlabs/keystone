@@ -16,6 +16,24 @@
       "revId": "b3cbf60c3c764bd9e0cf6168156e5de71c081449",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fa4df85_4dc70847",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 5289,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2020-02-27T15:56:17Z",
+      "side": 0,
+      "message": "We\u0027re using freezegun in these tests in the same way that the oslo TimeFixture works, freezegun is more flexible for other situations as well. However there is something odd going on with the time setting with freezegun and the TOTP windows \u003e 1.\n\nI haven\u0027t seen the random test failure once switching to TimeFixture in the py36 test (specifically py36 for some reason), hence this change. I don\u0027t see a reason to modify the other tests since they haven\u0027t had any issues.",
+      "parentUuid": "1fa4df85_25dd0a70",
+      "revId": "b3cbf60c3c764bd9e0cf6168156e5de71c081449",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
