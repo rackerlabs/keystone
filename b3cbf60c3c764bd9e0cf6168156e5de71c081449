@@ -34,6 +34,24 @@
       "revId": "b3cbf60c3c764bd9e0cf6168156e5de71c081449",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fa4df85_322bfc30",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 5289,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-02-28T09:59:56Z",
+      "side": 0,
+      "message": "I can see the gate passing everytime after this change.",
+      "parentUuid": "1fa4df85_4dc70847",
+      "revId": "b3cbf60c3c764bd9e0cf6168156e5de71c081449",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
