@@ -680,12 +680,6 @@ default_project_id_request_body:
   in: body
   required: false
   type: string
-default_project_id_response_body:
-  description: |
-    The ID of the default project for the user.
-  in: body
-  required: false
-  type: string
 default_project_id_update_body:
   description: |
     The new ID of the default project for the user.
@@ -1842,12 +1836,28 @@ response_body_system_required:
   in: body
   required: true
   type: array
+response_default_project_id_body_required:
+  description: |
+    The ID of the default project for the user.
+  in: body
+  required: true
+  type: string
 response_limit_domain_id_body:
   description: |
     The ID of the domain.
   in: body
   required: true
   type: string
+response_user_options_body_required:
+  description: |
+    The resource options for the user. Only present in the response if set on
+    the user entity. Available resource options are
+    ``ignore_change_password_upon_first_use``, ``ignore_password_expiry``,
+    ``ignore_lockout_failure_attempts``, ``lock_password``,
+    ``multi_factor_auth_enabled``, and ``multi_factor_auth_rules``.
+  in: body
+  required: true
+  type: object
 role:
   description: |
     A ``role`` object
@@ -2137,16 +2147,6 @@ user_object:
 user_options_request_body:
   description: |
     The resource options for the user. Available resource options are
-    ``ignore_change_password_upon_first_use``, ``ignore_password_expiry``,
-    ``ignore_lockout_failure_attempts``, ``lock_password``,
-    ``multi_factor_auth_enabled``, and ``multi_factor_auth_rules``.
-  in: body
-  required: false
-  type: object
-user_options_response_body:
-  description: |
-    The resource options for the user. Only present in the response if set on
-    the user entity. Available resource options are
     ``ignore_change_password_upon_first_use``, ``ignore_password_expiry``,
     ``ignore_lockout_failure_attempts``, ``lock_password``,
     ``multi_factor_auth_enabled``, and ``multi_factor_auth_rules``.

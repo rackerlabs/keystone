@@ -52,7 +52,7 @@ Parameters
 
    - links: link_collection
    - users: users_object
-   - default_project_id: default_project_id_response_body
+   - default_project_id: response_default_project_id_body_required
    - domain_id: domain_id_response_body
    - enabled: enabled_user_response_body
    - id: id_user_body
@@ -121,14 +121,14 @@ Parameters
 .. rest_parameters:: parameters.yaml
 
    - user: user_object
-   - default_project_id: default_project_id_response_body
+   - default_project_id: response_default_project_id_body_required
    - domain_id: domain_id_response_body
    - enabled: enabled_user_response_body
    - id: id_user_body
    - links: links_user
    - name: user_name_response_body
    - password_expires_at: password_expires_at
-   - options: user_options_response_body
+   - options: response_user_options_body_required
 
 Status Codes
 ~~~~~~~~~~~~
@@ -179,7 +179,7 @@ Parameters
 .. rest_parameters:: parameters.yaml
 
    - user: user_object
-   - default_project_id: default_project_id_response_body
+   - default_project_id: response_default_project_id_body_required
    - domain_id: domain_id_response_body
    - enabled: enabled_user_response_body
    - id: id_user_body
@@ -252,14 +252,14 @@ Parameters
 .. rest_parameters:: parameters.yaml
 
    - user: user_object
-   - default_project_id: default_project_id_response_body
+   - default_project_id: response_default_project_id_body_required
    - domain_id: domain_id_response_body
    - enabled: enabled_user_response_body
    - id: id_user_body
    - links: links_user
    - name: user_name_response_body
    - password_expires_at: password_expires_at
-   - options: user_options_response_body
+   - options: response_user_options_body_required
 
 Status Codes
 ~~~~~~~~~~~~
