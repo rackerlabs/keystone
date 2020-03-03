@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fa4df85_5572ef4a",
+        "filename": "keystone/api/_shared/saml.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-03-03T15:28:10Z",
+      "side": 1,
+      "message": "Why not return the list of dictionaries here, and have samlize token convert it into appropriate format.",
+      "range": {
+        "startLine": 70,
+        "startChar": 8,
+        "endLine": 70,
+        "endChar": 36
+      },
+      "revId": "748bfb2d74201a5203466d29cfd4e56d71796d2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fa4df85_757feb14",
+        "filename": "keystone/federation/idp.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-03-03T15:28:10Z",
+      "side": 1,
+      "message": "This will not work, since \";\" is a valid character in a group name. Why do you not pass the actual list to the samlize_token function, instead of making it into a string and then splitting it back.",
+      "range": {
+        "startLine": 241,
+        "startChar": 36,
+        "endLine": 241,
+        "endChar": 53
+      },
+      "revId": "748bfb2d74201a5203466d29cfd4e56d71796d2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
