@@ -45,6 +45,30 @@
       "revId": "908bc1f412a8407999d13f75d41cdf1a730ca0fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fa4df85_fda4b4a7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 30491
+      },
+      "writtenOn": "2020-03-10T20:33:10Z",
+      "side": 1,
+      "message": "That\u0027s true. I thought you wanted them all squashed from your comment on creating TODOs in stable branches. I must\u0027ve misunderstood, sorry. :-( Please let me know how strong you feel about unsquashing now. :-)",
+      "parentUuid": "1fa4df85_7d0764cb",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 50
+      },
+      "revId": "908bc1f412a8407999d13f75d41cdf1a730ca0fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
