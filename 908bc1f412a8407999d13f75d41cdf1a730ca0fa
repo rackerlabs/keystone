@@ -69,6 +69,30 @@
       "revId": "908bc1f412a8407999d13f75d41cdf1a730ca0fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fa4df85_bdfb9c44",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-03-10T20:48:11Z",
+      "side": 1,
+      "message": "Sorry for miscommunicating, I just wanted them to be ready at the same time so that there wasn\u0027t a risk of the cleanup being forgotten. I got a second opinion on the matter: http://eavesdrop.openstack.org/irclogs/%23openstack-stable/%23openstack-stable.2020-03-10.log.html#t2020-03-10T20:37:02",
+      "parentUuid": "1fa4df85_fda4b4a7",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 50
+      },
+      "revId": "908bc1f412a8407999d13f75d41cdf1a730ca0fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
