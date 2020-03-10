@@ -93,6 +93,30 @@
       "revId": "908bc1f412a8407999d13f75d41cdf1a730ca0fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fa4df85_7d65241d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 30491
+      },
+      "writtenOn": "2020-03-10T20:52:33Z",
+      "side": 1,
+      "message": "Yeah, I agree completely. I should\u0027ve opposed squash proactively. :-) That said, I\u0027ll see to it tomorrow. Same with other branches.",
+      "parentUuid": "1fa4df85_bdfb9c44",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 50
+      },
+      "revId": "908bc1f412a8407999d13f75d41cdf1a730ca0fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
