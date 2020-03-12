@@ -11,6 +11,7 @@
 # under the License.
 
 import copy
+import datetime
 import os
 import random
 import re
@@ -38,9 +39,12 @@ from keystone.api import auth as auth_api
 from keystone.common import driver_hints
 from keystone.common import provider_api
 from keystone.common import render_token
+from keystone.common import sql
+
 import keystone.conf
 from keystone import exception
 from keystone.federation import idp as keystone_idp
+from keystone.identity.backends import sql_model as model
 from keystone.models import token_model
 from keystone import notifications
 from keystone.tests import unit
@@ -5047,3 +5051,16 @@ class K2KServiceCatalogTests(test_v3.RestfulTestCase):
         self.assertNotIn('service_providers', token['token'],
                          message=('Expected Service Catalog not to have '
                                   'service_providers'))
+
+    def test_set_last_active_for_local_user_using_idp(self):
+        self.config_fixture.config(group='security_compliance',
+                                   disable_user_account_days_inactive=90)
+        now = datetime.datetime.utcnow().date()
+        r = self._issue_unscoped_token()
+        token = render_token.render_token_response_from_model(r)['token']
+        user_ref = self._get_user_ref(token['user']['id'])
+        self.assertGreaterEqual(now, user_ref.last_active_at)
+
+    def _get_user_ref(self, user_id):
+        with sql.session_for_read() as session:
+            return session.query(model.User).get(user_id)
