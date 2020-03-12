@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Fixed a bug for federated users using security compliance settings: local users
+    using federated identity for authentication were incorrectly being locked out if
+    ``[security_compliance]/disable_user_account_days_inactive`` was enabled. Now
+    federated users will remain activated if they continue to refresh their logins
+    within the configured time frame.
