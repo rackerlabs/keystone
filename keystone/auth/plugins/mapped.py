@@ -273,6 +273,8 @@ def handle_unscoped_token(auth_payload, resource_api, federation_api,
                 user, mapped_properties, identity_provider, protocol)
         else:
             response_data = build_local_user_context(mapped_properties)
+            PROVIDERS.shadow_users_api.set_last_active_at(
+                response_data['user_id'])
 
     except Exception:
         # NOTE(topol): Diaper defense to catch any exception, so we can
