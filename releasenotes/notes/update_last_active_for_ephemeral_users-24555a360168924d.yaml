@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    It updates the "last_active_at" field for ephemeral user.
