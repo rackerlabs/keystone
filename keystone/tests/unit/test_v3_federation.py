@@ -11,6 +11,7 @@
 # under the License.
 
 import copy
+import datetime
 import os
 import random
 import re
@@ -33,14 +34,18 @@ xmldsig = importutils.try_import("saml2.xmldsig")
 if not xmldsig:
     xmldsig = importutils.try_import("xmldsig")
 
+import freezegun
 from keystone.api._shared import authentication
 from keystone.api import auth as auth_api
 from keystone.common import driver_hints
 from keystone.common import provider_api
 from keystone.common import render_token
+from keystone.common import sql
+
 import keystone.conf
 from keystone import exception
 from keystone.federation import idp as keystone_idp
+from keystone.identity.backends import sql_model as model
 from keystone.models import token_model
 from keystone import notifications
 from keystone.tests import unit
@@ -3486,6 +3491,23 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
 
         # Now we should be able to delete the protocol
         PROVIDERS.federation_api.delete_protocol(self.IDP, protocol['id'])
+
+    def test_set_last_active_for_local_user_using_idp(self):
+        self.config_fixture.config(group='security_compliance',
+                                   disable_user_account_days_inactive=90)
+        user_id, unscoped_token = self._authenticate_via_saml()
+        max_inactive_days = 90
+        # set last_active_at just below the max
+        time = (
+                datetime.datetime.utcnow() -
+                datetime.timedelta(max_inactive_days + 1)).date()
+
+        with freezegun.freeze_time(time):
+            self.head(
+                '/OS-FEDERATION/projects',
+                token=unscoped_token,
+                expected_status=http.client.OK
+            )
 
     def _authenticate_via_saml(self):
         r = self._issue_unscoped_token()

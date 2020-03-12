@@ -62,7 +62,8 @@ class Mapped(base.AuthMethodHandler):
                                                   PROVIDERS.identity_api,
                                                   PROVIDERS.assignment_api,
                                                   PROVIDERS.role_api)
-
+            PROVIDERS.shadow_users_api.set_last_active_at(
+                response_data['user_id'])
         return base.AuthHandlerResponse(status=True, response_body=None,
                                         response_data=response_data)
 
