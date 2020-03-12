@@ -11,6 +11,7 @@
 # under the License.
 
 import copy
+import datetime
 import os
 import random
 import re
@@ -38,9 +39,12 @@ from keystone.api import auth as auth_api
 from keystone.common import driver_hints
 from keystone.common import provider_api
 from keystone.common import render_token
+from keystone.common import sql
+
 import keystone.conf
 from keystone import exception
 from keystone.federation import idp as keystone_idp
+from keystone.identity.backends import sql_model as model
 from keystone.models import token_model
 from keystone import notifications
 from keystone.tests import unit
@@ -3487,12 +3491,25 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         # Now we should be able to delete the protocol
         PROVIDERS.federation_api.delete_protocol(self.IDP, protocol['id'])
 
+    def test_set_last_active_for_local_user_using_idp(self):
+        self.config_fixture.config(group='security_compliance',
+                                   disable_user_account_days_inactive=90)
+        now = datetime.datetime.utcnow().date()
+        r = self._issue_unscoped_token()
+        token = render_token.render_token_response_from_model(r)['token']
+        user_ref = self._get_user_ref(token['user']['id'])
+        self.assertGreaterEqual(now, user_ref.last_active_at)
+
     def _authenticate_via_saml(self):
         r = self._issue_unscoped_token()
         unscoped_token = r.id
         token_resp = render_token.render_token_response_from_model(r)['token']
         self.assertValidMappedUser(token_resp)
         return r.user_id, unscoped_token
+
+    def _get_user_ref(self, user_id):
+        with sql.session_for_read() as session:
+            return session.query(model.User).get(user_id)
 
 
 class ShadowMappingTests(test_v3.RestfulTestCase, FederatedSetupMixin):
