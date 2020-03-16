@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fa4df85_71b428d2",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1871,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-03-16T06:59:13Z",
+      "side": 1,
+      "message": "I think it should be true since it is required?",
+      "range": {
+        "startLine": 1871,
+        "startChar": 1,
+        "endLine": 1871,
+        "endChar": 17
+      },
+      "revId": "4dd00f9c550537d876f2dba22cbae8d9e086066d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fa4df85_11cb7453",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1884,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-03-16T06:59:13Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 1884,
+        "startChar": 2,
+        "endLine": 1884,
+        "endChar": 17
+      },
+      "revId": "4dd00f9c550537d876f2dba22cbae8d9e086066d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fa4df85_f1bfb8a7",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1888,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-03-16T06:59:13Z",
+      "side": 1,
+      "message": "NIT: space missing.",
+      "range": {
+        "startLine": 1888,
+        "startChar": 37,
+        "endLine": 1888,
+        "endChar": 47
+      },
+      "revId": "4dd00f9c550537d876f2dba22cbae8d9e086066d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fa4df85_31c6b04b",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1891,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-03-16T06:59:13Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 1891,
+        "startChar": 1,
+        "endLine": 1891,
+        "endChar": 17
+      },
+      "revId": "4dd00f9c550537d876f2dba22cbae8d9e086066d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fa4df85_51e6ccea",
+        "filename": "doc/source/admin/resource-options.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-03-16T06:59:13Z",
+      "side": 1,
+      "message": "NIT: Space Missing",
+      "revId": "4dd00f9c550537d876f2dba22cbae8d9e086066d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
