@@ -130,6 +130,13 @@ function upload_sp_metadata_to_samltest {
         return
     fi
 
+    echo x | openssl s_client -connect samltest.id:443
+    file /etc/ssl/ca-bundle.pem
+    cat /etc/ssl/ca-bundle.pem
+    zypper info ca-certificates ca-certificates-mozilla
+    openssl version
+    openssl x509 -noout -text -in /etc/ssl/ca-bundle.pem
+    awk -v cmd='openssl x509 -noout -subject' '/BEGIN/{close(cmd)};{print | cmd}' < /etc/ssl/ca-bundle.pem
     curl --form userfile=@"$FILES/${metadata_fname}" --form "submit=OK" "https://samltest.id/upload.php"
 }
 
