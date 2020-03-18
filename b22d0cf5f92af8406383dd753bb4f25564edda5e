@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fa4df85_0d3a4297",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1116,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-03-18T22:00:03Z",
+      "side": 1,
+      "message": "Are we letting non-federated users be updated into federated users? Do we want to allow that? (not sure what the answer is, just thinking out loud...)",
+      "revId": "b22d0cf5f92af8406383dd753bb4f25564edda5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
