@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fa4df85_b8a9fcdd",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-03-18T21:31:11Z",
+      "side": 1,
+      "message": "why is this a static method? it doesn\u0027t look like it needs to be?",
+      "revId": "2e2780a7fcd3d73de44fcc0da660c86547c90a3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fa4df85_98976091",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-03-18T21:31:11Z",
+      "side": 1,
+      "message": "(nit) it\u0027s slightly odd to add this test here because it\u0027s in between two tests that are testing the not_any_of function of the mapping engine, and this test isn\u0027t about that. would make more sense either at the end of this class or near other tests that are about groups.",
+      "revId": "2e2780a7fcd3d73de44fcc0da660c86547c90a3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
