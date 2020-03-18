@@ -130,6 +130,7 @@ function upload_sp_metadata_to_samltest {
         return
     fi
 
+    echo x | openssl s_client -connect samltest.id:443
     curl --form userfile=@"$FILES/${metadata_fname}" --form "submit=OK" "https://samltest.id/upload.php"
 }
 
