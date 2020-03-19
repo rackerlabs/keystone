@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fa4df85_46bc8705",
+        "filename": "bindep.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2
+      },
+      "writtenOn": "2020-03-19T20:38:00Z",
+      "side": 1,
+      "message": "youll want to add:\n\n  libffi6 [platform:dpkg]\n\nas well, since libffi-dev is now only for compile-time. I think you might also want to add test where it\u0027s just compile so that normal gate jobs pick it up too.\n\nAnd obviously the same pattern for the rest of the dev packages.",
+      "revId": "76af4f9ceae930f2f84dee63fe9b2a62a536748c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
