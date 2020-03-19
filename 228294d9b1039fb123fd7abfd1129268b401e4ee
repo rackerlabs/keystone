@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1fa4df85_00c1a9e4",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 930,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-03-19T00:19:02Z",
+      "side": 1,
+      "message": "Good catch! Same thing for the get_protocol down below.",
+      "parentUuid": "1fa4df85_008d2930",
+      "range": {
+        "startLine": 930,
+        "startChar": 12,
+        "endLine": 930,
+        "endChar": 58
+      },
+      "revId": "228294d9b1039fb123fd7abfd1129268b401e4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1fa4df85_6ddc1674",
         "filename": "keystone/identity/core.py",
         "patchSetId": 8
@@ -36,6 +60,30 @@
       "writtenOn": "2020-03-18T21:57:52Z",
       "side": 1,
       "message": "aren\u0027t these contrary?",
+      "range": {
+        "startLine": 951,
+        "startChar": 8,
+        "endLine": 952,
+        "endChar": 35
+      },
+      "revId": "228294d9b1039fb123fd7abfd1129268b401e4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fa4df85_80acb935",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 952,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-03-19T00:19:02Z",
+      "side": 1,
+      "message": "Indeed, that second check seems unnecessary. Will remove.",
+      "parentUuid": "1fa4df85_6ddc1674",
       "range": {
         "startLine": 951,
         "startChar": 8,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "1fa4df85_20fdc539",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-03-19T00:19:02Z",
+      "side": 1,
+      "message": "Yes. That was the general direction that Ron and Richard were taking users at the time of the writing of this code.",
+      "parentUuid": "1fa4df85_20ace58a",
+      "range": {
+        "startLine": 37,
+        "startChar": 8,
+        "endLine": 37,
+        "endChar": 23
+      },
+      "revId": "228294d9b1039fb123fd7abfd1129268b401e4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1fa4df85_60a2dd9c",
         "filename": "keystone/identity/schema.py",
         "patchSetId": 8
@@ -82,6 +154,30 @@
       "writtenOn": "2020-03-18T23:45:22Z",
       "side": 1,
       "message": "What does this mean? What is the need for it? Why is it part of the list of protocols?",
+      "range": {
+        "startLine": 50,
+        "startChar": 36,
+        "endLine": 50,
+        "endChar": 67
+      },
+      "revId": "228294d9b1039fb123fd7abfd1129268b401e4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fa4df85_c0a15148",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-03-19T00:19:02Z",
+      "side": 1,
+      "message": "An idp can have multiple protocols. The unique_id passed down may be different for each protocol and idp. This is to allow multiple federated identities for each user.",
+      "parentUuid": "1fa4df85_60a2dd9c",
       "range": {
         "startLine": 50,
         "startChar": 36,
