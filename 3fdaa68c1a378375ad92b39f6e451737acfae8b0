@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df33271e_40d17654",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-03-24T22:04:17Z",
+      "side": 1,
+      "message": "the whitespace here is unnecessarily different from the original https://review.opendev.org/#/c/664618/6/keystone/api/credentials.py so the backport doesn\u0027t seem clean",
+      "revId": "3fdaa68c1a378375ad92b39f6e451737acfae8b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df33271e_c0bc6607",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-03-24T22:04:17Z",
+      "side": 1,
+      "message": "I don\u0027t see this used anywhere",
+      "revId": "3fdaa68c1a378375ad92b39f6e451737acfae8b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df33271e_40469625",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-03-24T22:04:17Z",
+      "side": 1,
+      "message": "since these don\u0027t emit notifications is it necessary to add them here? the original change didn\u0027t change them or add them.",
+      "range": {
+        "startLine": 165,
+        "startChar": 4,
+        "endLine": 171,
+        "endChar": 56
+      },
+      "revId": "3fdaa68c1a378375ad92b39f6e451737acfae8b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
