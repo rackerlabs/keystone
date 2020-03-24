@@ -21,6 +21,7 @@ Contributor Documentation
 .. toctree::
    :maxdepth: 1
 
+   contributor.rst
    how-can-i-help.rst
    set-up-keystone.rst
    http-api.rst
