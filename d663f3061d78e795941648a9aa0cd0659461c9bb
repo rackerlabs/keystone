@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df33271e_14ffb301",
+        "filename": "keystone/common/sql/expand_repo/versions/073_expand_expiring_group_membership.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-03-24T23:15:27Z",
+      "side": 1,
+      "message": "this needs a test in https://opendev.org/openstack/keystone/src/branch/master/keystone/tests/unit/test_sql_upgrade.py",
+      "revId": "d663f3061d78e795941648a9aa0cd0659461c9bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df33271e_a08842c6",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-03-24T23:15:27Z",
+      "side": 1,
+      "message": "remind me why this needed to be a new table instead of new attributes in the UserGroupMembership table?",
+      "revId": "d663f3061d78e795941648a9aa0cd0659461c9bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df33271e_40bdf663",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-03-24T23:15:27Z",
+      "side": 1,
+      "message": "nope, can\u0027t do this. the federation driver is a separate backend from the identity driver. relationships between the two backends need to be maintained via the manager, not in sql.",
+      "range": {
+        "startLine": 411,
+        "startChar": 24,
+        "endLine": 413,
+        "endChar": 41
+      },
+      "revId": "d663f3061d78e795941648a9aa0cd0659461c9bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
