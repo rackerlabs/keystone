@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df33271e_a055e252",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-03-24T23:15:35Z",
+      "side": 1,
+      "message": "isn\u0027t this the wrong model?",
+      "range": {
+        "startLine": 349,
+        "startChar": 39,
+        "endLine": 349,
+        "endChar": 58
+      },
+      "revId": "f8b3c61c746e399bb23cc82599d98c70fa5e5b3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df33271e_20c71215",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-03-24T23:15:35Z",
+      "side": 1,
+      "message": "suggest instead \"add_user_to_expiring_group\"",
+      "range": {
+        "startLine": 199,
+        "startChar": 8,
+        "endLine": 199,
+        "endChar": 33
+      },
+      "revId": "f8b3c61c746e399bb23cc82599d98c70fa5e5b3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df33271e_a0da02e6",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-03-24T23:15:35Z",
+      "side": 1,
+      "message": "suggest using a more descriptive variable name",
+      "range": {
+        "startLine": 204,
+        "startChar": 16,
+        "endLine": 204,
+        "endChar": 18
+      },
+      "revId": "f8b3c61c746e399bb23cc82599d98c70fa5e5b3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
