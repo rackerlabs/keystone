@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "df33271e_2231cced",
+        "filename": "doc/source/contributor/contributing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-03-25T13:43:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df33271e_fec66616",
+      "range": {
+        "startLine": 25,
+        "startChar": 77,
+        "endLine": 25,
+        "endChar": 78
+      },
+      "revId": "247c533f06166ef0a30e995fafe4576042d7610d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df33271e_7eda56e9",
         "filename": "doc/source/contributor/contributing.rst",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "df33271e_423690e8",
+        "filename": "doc/source/contributor/contributing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-03-25T13:43:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df33271e_7eda56e9",
+      "range": {
+        "startLine": 31,
+        "startChar": 102,
+        "endLine": 31,
+        "endChar": 103
+      },
+      "revId": "247c533f06166ef0a30e995fafe4576042d7610d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df33271e_7eb1b68f",
         "filename": "doc/source/contributor/contributing.rst",
         "patchSetId": 2
@@ -59,6 +107,30 @@
       "writtenOn": "2020-03-25T09:28:56Z",
       "side": 1,
       "message": "How about _`keystone bug tracker`",
+      "range": {
+        "startLine": 36,
+        "startChar": 22,
+        "endLine": 36,
+        "endChar": 46
+      },
+      "revId": "247c533f06166ef0a30e995fafe4576042d7610d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df33271e_e236c4e7",
+        "filename": "doc/source/contributor/contributing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-03-25T13:43:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df33271e_7eb1b68f",
       "range": {
         "startLine": 36,
         "startChar": 22,
