@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "df33271e_e208842e",
+        "filename": "keystone/common/sql/expand_repo/versions/073_expand_expiring_group_membership.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-03-25T14:28:40Z",
+      "side": 1,
+      "message": "Thanks, will do that this evening.",
+      "parentUuid": "df33271e_14ffb301",
+      "revId": "d663f3061d78e795941648a9aa0cd0659461c9bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df33271e_a08842c6",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "df33271e_821a587a",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-03-25T14:28:40Z",
+      "side": 1,
+      "message": "My response at the time was that the implementation would be cleaner since idp_id and last_active would not apply to normal groups. But after doing the driver part I\u0027m not so sure of that anymore. I can spend a few hours this evening investigating the same table approach.",
+      "parentUuid": "df33271e_a08842c6",
+      "revId": "d663f3061d78e795941648a9aa0cd0659461c9bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df33271e_40bdf663",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 8
@@ -47,6 +83,30 @@
       "writtenOn": "2020-03-24T23:15:27Z",
       "side": 1,
       "message": "nope, can\u0027t do this. the federation driver is a separate backend from the identity driver. relationships between the two backends need to be maintained via the manager, not in sql.",
+      "range": {
+        "startLine": 411,
+        "startChar": 24,
+        "endLine": 413,
+        "endChar": 41
+      },
+      "revId": "d663f3061d78e795941648a9aa0cd0659461c9bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df33271e_829538e7",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-03-25T14:28:40Z",
+      "side": 1,
+      "message": "We already have foreign key dependencies to the federation model regardless of this. Line 341 and 348, FederatedUser model.",
+      "parentUuid": "df33271e_40bdf663",
       "range": {
         "startLine": 411,
         "startChar": 24,
