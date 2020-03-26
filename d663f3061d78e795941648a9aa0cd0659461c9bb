@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "df33271e_6773d8b2",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-03-26T01:40:21Z",
+      "side": 1,
+      "message": "If we join the tables, identity_provider would have to be part of the composite primary key as well, and any part of a primary key can\u0027t be null. That would mean that a user can\u0027t have group membership from more than one idp, or actual assignment. It\u0027s not possible for a user to have multiple idps for now, but that will change if federated attributes merges in its current form.",
+      "parentUuid": "df33271e_821a587a",
+      "revId": "d663f3061d78e795941648a9aa0cd0659461c9bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df33271e_40bdf663",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 8
