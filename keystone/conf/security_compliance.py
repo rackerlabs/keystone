@@ -98,7 +98,7 @@ password_regex = cfg.StrOpt(
 The regular expression used to validate password strength requirements. By
 default, the regular expression will match any password. The following is an
 example of a pattern which requires at least 1 letter, 1 digit, and have a
-minimum length of 7 characters: ^(?=.*\d)(?=.*[a-zA-Z]).{7,}$ This feature
+minimum length of 7 characters: ^(?=.*\\d)(?=.*[a-zA-Z]).{7,}$ This feature
 depends on the `sql` backend for the `[identity] driver`.
 """))
 
