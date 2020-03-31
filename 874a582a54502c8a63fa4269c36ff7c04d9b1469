@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df33271e_6d5ec976",
+        "filename": "test-requirements.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2020-03-31T02:56:32Z",
+      "side": 1,
+      "message": "let\u0027s do 3.1.0 here in case we minor version break something as it is hard to analyse the backward compatible changes on hacking from all users.",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 19
+      },
+      "revId": "874a582a54502c8a63fa4269c36ff7c04d9b1469",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
