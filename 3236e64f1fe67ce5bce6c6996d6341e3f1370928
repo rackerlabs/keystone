@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "df33271e_db4222ab",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 964,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-03-31T15:00:06Z",
+      "side": 1,
+      "message": "On second thought, I am concerned about the performance hit this would cause when listing users since it would turn it from one query to N queries.",
+      "parentUuid": "df33271e_7b06761e",
+      "revId": "3236e64f1fe67ce5bce6c6996d6341e3f1370928",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1fa4df85_cd598a35",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 23
