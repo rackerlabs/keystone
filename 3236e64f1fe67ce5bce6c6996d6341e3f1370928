@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "df33271e_7b06761e",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 964,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-03-31T14:46:54Z",
+      "side": 1,
+      "message": "Will do.",
+      "parentUuid": "1fa4df85_e0b7add7",
+      "revId": "3236e64f1fe67ce5bce6c6996d6341e3f1370928",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1fa4df85_cd598a35",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 23
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "df33271e_db2fc285",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-03-31T14:46:54Z",
+      "side": 1,
+      "message": "I thought so too, but tests fail with a conflict error without this. Investigating.",
+      "parentUuid": "1fa4df85_cd598a35",
+      "revId": "3236e64f1fe67ce5bce6c6996d6341e3f1370928",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1fa4df85_ada44e09",
         "filename": "releasenotes/notes/federated-attr-a887677dbe0917cc.yaml",
         "patchSetId": 23
@@ -47,6 +83,24 @@
       "writtenOn": "2020-03-18T21:51:21Z",
       "side": 1,
       "message": "I think I would add this to the final patch in the series, not the first.",
+      "revId": "3236e64f1fe67ce5bce6c6996d6341e3f1370928",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df33271e_c00eaf39",
+        "filename": "releasenotes/notes/federated-attr-a887677dbe0917cc.yaml",
+        "patchSetId": 23
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-03-31T14:46:54Z",
+      "side": 1,
+      "message": "Will do.",
+      "parentUuid": "1fa4df85_ada44e09",
       "revId": "3236e64f1fe67ce5bce6c6996d6341e3f1370928",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
