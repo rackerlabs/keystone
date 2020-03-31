@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "df33271e_7ef66365",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 952,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-03-31T15:59:38Z",
+      "side": 1,
+      "message": "On deeper look, it seems fine. First conditional checks for null, empty or nonexistent. Second conditional cleans it up if existent.",
+      "parentUuid": "1fa4df85_6ddc1674",
+      "range": {
+        "startLine": 951,
+        "startChar": 8,
+        "endLine": 952,
+        "endChar": 35
+      },
+      "revId": "228294d9b1039fb123fd7abfd1129268b401e4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1fa4df85_20ace58a",
         "filename": "keystone/identity/schema.py",
         "patchSetId": 8
