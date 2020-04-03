@@ -134,6 +134,30 @@
       "revId": "d663f3061d78e795941648a9aa0cd0659461c9bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df33271e_a459f535",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-03T18:19:23Z",
+      "side": 1,
+      "message": "ah okay fair enough",
+      "parentUuid": "df33271e_829538e7",
+      "range": {
+        "startLine": 411,
+        "startChar": 24,
+        "endLine": 413,
+        "endChar": 41
+      },
+      "revId": "d663f3061d78e795941648a9aa0cd0659461c9bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
