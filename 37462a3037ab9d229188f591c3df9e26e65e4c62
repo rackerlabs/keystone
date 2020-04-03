@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df33271e_8d44841d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-03T18:16:42Z",
+      "side": 1,
+      "message": "should we add support to this as well?",
+      "revId": "37462a3037ab9d229188f591c3df9e26e65e4c62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df33271e_8d5da4eb",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1314,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-03T18:16:42Z",
+      "side": 1,
+      "message": "Is this necessary? would it be okay to just omit this and have the non-existence of the expires key imply that there is no expiry?",
+      "revId": "37462a3037ab9d229188f591c3df9e26e65e4c62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
