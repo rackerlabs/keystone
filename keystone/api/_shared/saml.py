@@ -26,8 +26,11 @@ PROVIDERS = provider_api.ProviderAPIs
 
 def create_base_saml_assertion(auth):
     issuer = CONF.saml.idp_entity_id
+    print("issuer: %s", issuer)
     sp_id = auth['scope']['service_provider']['id']
+    print("sp_id %s", sp_id)
     service_provider = PROVIDERS.federation_api.get_sp(sp_id)
+    print("service provider%s", service_provider)
     federation_utils.assert_enabled_service_provider_object(service_provider)
     sp_url = service_provider['sp_url']
 

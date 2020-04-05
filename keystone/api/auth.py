@@ -421,19 +421,24 @@ class AuthFederationSaml2ECPResource(_AuthFederationWebSSOBase):
         POST /v3/auth/OS-FEDERATION/saml2/ecp
         """
         auth = self.request_body_json.get('auth')
+        print("auth %s", auth)
         validation.lazy_validate(federation_schema.saml_create, auth)
         saml_assertion, service_provider = saml.create_base_saml_assertion(
             auth)
+        print("saml_assertion and service_provider %s---%s ", (saml_assertion,
+                                                               service_provider))
         relay_state_prefix = service_provider['relay_state_prefix']
 
         generator = keystone_idp.ECPGenerator()
         ecp_assertion = generator.generate_ecp(
             saml_assertion, relay_state_prefix)
+        print("ecp_assertion %s", ecp_assertion.to_string())
         headers = _build_response_headers(service_provider)
         response = flask.make_response(
             ecp_assertion.to_string(), http.client.OK)
         for header, value in headers:
             response.headers[header] = value
+        print("response is %s", response.headers)
         return response
 
 
