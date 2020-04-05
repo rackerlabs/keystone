@@ -208,6 +208,8 @@ class SAMLGenerator(object):
         :returns: XML <AttributeStatement> object
 
         """
+        LOG.debug("Groups attributes are: %s", groups)
+
         def _build_attribute(attribute_name, attribute_values):
             attribute = saml.Attribute()
             attribute.name = attribute_name
@@ -238,6 +240,7 @@ class SAMLGenerator(object):
             groups_attribute = _build_attribute(
                 'openstack_groups', groups)
             attribute_statement.attribute.append(groups_attribute)
+        LOG.debug("attribute_statement %s", attribute_statement.to_string())
         return attribute_statement
 
     def _create_authn_statement(self, issuer, expiration_time):
