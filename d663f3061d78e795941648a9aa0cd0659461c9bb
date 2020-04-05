@@ -60,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "df33271e_e00380bd",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-04-05T17:23:05Z",
+      "side": 1,
+      "message": "What this does, is it adds an attribute called `user` to ExpiringUserGroupMembership objects, so that we can access the  membership\u0027s user by doing `.user`. We haven\u0027t needed to do that for normal group memberships.",
+      "parentUuid": "df33271e_3d50f4d4",
+      "range": {
+        "startLine": 64,
+        "startChar": 3,
+        "endLine": 68,
+        "endChar": 5
+      },
+      "revId": "d663f3061d78e795941648a9aa0cd0659461c9bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df33271e_9d5e60e7",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 8
