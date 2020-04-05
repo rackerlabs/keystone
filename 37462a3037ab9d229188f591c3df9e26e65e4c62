@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "df33271e_e3354aaa",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-04-05T19:15:09Z",
+      "side": 1,
+      "message": "This is going to be a bit more complex and I will try to get it done this Monday.",
+      "parentUuid": "df33271e_a09df867",
+      "revId": "37462a3037ab9d229188f591c3df9e26e65e4c62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df33271e_8d5da4eb",
         "filename": "keystone/identity/core.py",
         "patchSetId": 6
