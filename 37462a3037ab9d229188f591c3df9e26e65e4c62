@@ -51,6 +51,24 @@
       "revId": "37462a3037ab9d229188f591c3df9e26e65e4c62",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df33271e_205ba887",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1314,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-04-05T18:17:37Z",
+      "side": 1,
+      "message": "I\u0027m not sure about the answer to this question. I skimmed the api-wg and they don\u0027t seem to provide guidelines for that. I check on other usage of ours, specifically \u0027password_expires_at\u0027 and that is present and null/None when password for a user do not expire. For now I\u0027m keeping it, and renaming it to `membership_expires_at` to be more descriptive of what is actually expiring. We can talk about this during the meeting if it is okay to ommit entirely and I will be happy to update.",
+      "parentUuid": "df33271e_8d5da4eb",
+      "revId": "37462a3037ab9d229188f591c3df9e26e65e4c62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
