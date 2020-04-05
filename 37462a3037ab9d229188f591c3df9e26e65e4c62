@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "df33271e_a09df867",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-04-05T18:06:33Z",
+      "side": 1,
+      "message": "Sure thing. One thing of note that I realized just now, is the possibility of returning multiple entries with the same user and group going to cause issues with clients? Thinking out loud.",
+      "parentUuid": "df33271e_8d44841d",
+      "revId": "37462a3037ab9d229188f591c3df9e26e65e4c62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df33271e_8d5da4eb",
         "filename": "keystone/identity/core.py",
         "patchSetId": 6
