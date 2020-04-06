@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "df33271e_6a9e1455",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/parameters.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-06T23:48:38Z",
+      "side": 1,
+      "message": "could be clearer that this is set on the backend and not configurable by an API user. Maybe:\n\n\"If left unset, the default value configured in keystone will be used, if enabled.\"",
+      "range": {
+        "startLine": 40,
+        "startChar": 5,
+        "endLine": 40,
+        "endChar": 30
+      },
+      "revId": "1ce4b4dd76d8c855777807d7de4e1120d54cb6cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df33271e_29654ce2",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 3
