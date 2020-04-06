@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df33271e_1704e87a",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 761,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-04-06T07:26:58Z",
+      "side": 1,
+      "message": "Would it be more helpful to match the group ids too?",
+      "range": {
+        "startLine": 761,
+        "startChar": 12,
+        "endLine": 761,
+        "endChar": 44
+      },
+      "revId": "7170bb0a28b2d28412666d0cca8d1307e7d252a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
