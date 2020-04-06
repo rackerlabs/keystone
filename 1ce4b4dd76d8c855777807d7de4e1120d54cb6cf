@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df33271e_f226b2ba",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/parameters.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-04-06T07:50:35Z",
+      "side": 1,
+      "message": "ohh I see the default value for default_authorization_ttl is O mins. https://review.opendev.org/#/c/677469/10/keystone/conf/federation.py",
+      "range": {
+        "startLine": 40,
+        "startChar": 5,
+        "endLine": 40,
+        "endChar": 30
+      },
+      "revId": "1ce4b4dd76d8c855777807d7de4e1120d54cb6cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
