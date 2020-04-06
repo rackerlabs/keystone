@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df33271e_aa9adc6a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-06T23:42:09Z",
+      "side": 1,
+      "message": "Some of these commits - probably this one, since it\u0027s the one closing the bug - should update the API version number and add a \"What\u0027s new in $version\" section to the API ref",
+      "revId": "52b971bfb81a98d89ab1f626ed29f37a6ba2b097",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
