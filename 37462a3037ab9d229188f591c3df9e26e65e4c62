@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "df33271e_34275cb9",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-04-06T16:30:30Z",
+      "side": 1,
+      "message": "If a user has been assigned a group, and they also carry the group membership from mapping, the listing will have both entries, the normal one and the expiring one.",
+      "parentUuid": "df33271e_2beffb87",
+      "revId": "37462a3037ab9d229188f591c3df9e26e65e4c62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df33271e_8d5da4eb",
         "filename": "keystone/identity/core.py",
         "patchSetId": 6
