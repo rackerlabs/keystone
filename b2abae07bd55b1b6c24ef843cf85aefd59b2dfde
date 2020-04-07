@@ -46,6 +46,30 @@
       "revId": "b2abae07bd55b1b6c24ef843cf85aefd59b2dfde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df33271e_968c5536",
+        "filename": "keystone/conf/federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-07T14:37:34Z",
+      "side": 1,
+      "message": "I guess my point was I would rather it be definitive, as an operator I don\u0027t want to feel like this is going to change its meaning out from under me. I can\u0027t think of how else this would be used or why we would change it.",
+      "parentUuid": "df33271e_763551da",
+      "range": {
+        "startLine": 102,
+        "startChar": 10,
+        "endLine": 102,
+        "endChar": 19
+      },
+      "revId": "b2abae07bd55b1b6c24ef843cf85aefd59b2dfde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
