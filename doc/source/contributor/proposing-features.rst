@@ -67,12 +67,12 @@ making and why.
 To write a specification, you can follow the template provided in the
 repository. To start writing a new specification, copy the template to the
 directory that fits the project and release you plan to target. For example, if
-you want to propose a feature to keystone for the Stein release, you should do
+you want to propose a feature to keystone for the current release, you should do
 the following:
 
 .. code-block:: bash
 
-   $ cp specs/template.rst specs/keystone/stein/feature-foobar.rst
+   $ cp specs/template.rst specs/keystone/``<current release folder name>``/feature-foobar.rst
 
 Once you have a template in place, work through each section. Specifications
 should be descriptive and include use cases that justify the work. There are
