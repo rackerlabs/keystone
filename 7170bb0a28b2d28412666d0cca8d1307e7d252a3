@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "df33271e_9813e4b8",
+        "filename": "api-ref/source/v3/samples/admin/user-groups-list-response.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-07T13:37:05Z",
+      "side": 1,
+      "message": "This should be documented in paramaters.yaml too",
+      "revId": "7170bb0a28b2d28412666d0cca8d1307e7d252a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df33271e_1704e87a",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 8
