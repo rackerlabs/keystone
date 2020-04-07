@@ -70,6 +70,30 @@
       "revId": "b2abae07bd55b1b6c24ef843cf85aefd59b2dfde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df33271e_7159db58",
+        "filename": "keystone/conf/federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-04-07T15:01:33Z",
+      "side": 1,
+      "message": "Makes sense, updating.",
+      "parentUuid": "df33271e_968c5536",
+      "range": {
+        "startLine": 102,
+        "startChar": 10,
+        "endLine": 102,
+        "endChar": 19
+      },
+      "revId": "b2abae07bd55b1b6c24ef843cf85aefd59b2dfde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
