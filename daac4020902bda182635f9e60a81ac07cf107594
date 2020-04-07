@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df33271e_56f5a4ec",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 1247,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-07T19:30:08Z",
+      "side": 1,
+      "message": "this needs to be added to groups.inc",
+      "range": {
+        "startLine": 1247,
+        "startChar": 0,
+        "endLine": 1247,
+        "endChar": 21
+      },
+      "revId": "daac4020902bda182635f9e60a81ac07cf107594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df33271e_d6e09429",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 1247,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-07T19:30:08Z",
+      "side": 1,
+      "message": "we started trying to use the more descriptive naming convention we discussed a while ago https://etherpad.openstack.org/p/queens-ptg-keystone-doc-cleanup",
+      "range": {
+        "startLine": 1247,
+        "startChar": 0,
+        "endLine": 1247,
+        "endChar": 21
+      },
+      "revId": "daac4020902bda182635f9e60a81ac07cf107594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df33271e_b6db507b",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 1251,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-07T19:30:08Z",
+      "side": 1,
+      "message": "you don\u0027t need to say this, groups.inc will only include it in the response",
+      "range": {
+        "startLine": 1251,
+        "startChar": 4,
+        "endLine": 1251,
+        "endChar": 64
+      },
+      "revId": "daac4020902bda182635f9e60a81ac07cf107594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
