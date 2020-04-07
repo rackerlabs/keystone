@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df33271e_56112404",
+        "filename": "keystone/version.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-07T19:33:21Z",
+      "side": 1,
+      "message": "this will also need to be updated in keystone/api/discovery.py and keystone/tests/unit/test_versions.py",
+      "revId": "89f5baa3292e60f2d3a70b60ddd0864621ad0fe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
