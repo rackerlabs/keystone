@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df33271e_dced53b8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-07T20:54:54Z",
+      "side": 1,
+      "message": "Would be good to be more specific about what you\u0027re updating and why. I recommend undoing the change in proposing-features.rst and making this all about the python2 removal, and write the commit message about that.",
+      "revId": "78e9e3b7b681800b60c9244fdaa1a9e7e7571861",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df33271e_1c2a1b7d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-07T20:54:54Z",
+      "side": 1,
+      "message": "Not sure why this needed a bug report, my perspective is most bug reports should be pointing out specific things that need to be fixed or added. This was already tracked in the roadmap.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 21
+      },
+      "revId": "78e9e3b7b681800b60c9244fdaa1a9e7e7571861",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df33271e_bcadefeb",
+        "filename": "doc/source/contributor/proposing-features.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-07T20:54:54Z",
+      "side": 1,
+      "message": "I don\u0027t think this needs to be changed, this is just an example. The example shows the format, i.e. that the directory is lowercase and named after the release code name.",
+      "range": {
+        "startLine": 69,
+        "startChar": 64,
+        "endLine": 69,
+        "endChar": 75
+      },
+      "revId": "78e9e3b7b681800b60c9244fdaa1a9e7e7571861",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df33271e_5c802347",
+        "filename": "doc/source/contributor/set-up-keystone.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-07T20:54:54Z",
+      "side": 1,
+      "message": "I think we\u0027re doing 3.6 now",
+      "range": {
+        "startLine": 29,
+        "startChar": 10,
+        "endLine": 29,
+        "endChar": 13
+      },
+      "revId": "78e9e3b7b681800b60c9244fdaa1a9e7e7571861",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
