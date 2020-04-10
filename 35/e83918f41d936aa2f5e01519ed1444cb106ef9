@@ -1,0 +1,9 @@
+Code-Review+2: wangxiyuan <wangxiyuan1007@gmail.com>
+Code-Review+2: Kristi Nikolla <knikolla@icloud.com>
+Workflow+1: Kristi Nikolla <knikolla@icloud.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 10 Apr 2020 16:27:51 +0000
+Reviewed-on: https://review.opendev.org/718321
+Project: openstack/keystone
+Branch: refs/heads/master
