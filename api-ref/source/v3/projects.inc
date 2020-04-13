@@ -7,6 +7,7 @@
 A project is the base unit of resource ownership. Resources are owned by a
 specific project. A project is owned by a specific domain.
 
+
 (Since Identity API v3.4) You can create a hierarchy of projects by setting a
 ``parent_id`` when you create a project. All projects in a hierarchy must be
 owned by the same domain.
@@ -36,6 +37,8 @@ relevant resource creation allows this.
   is constrained to the characters in the Basic Multilingual Plane (BMP).
   Supplementary characters are not permitted. Note that this last restriction is
   generally true for all ``names`` within resources of the Identity API.
+  Creating a project, using a project scoped token, without specifying a domain or
+  domain_id, the project will automatically be created on the default domain.
 
 
 List projects
