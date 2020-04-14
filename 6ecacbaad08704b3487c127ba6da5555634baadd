@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4c43b2_351ab47c",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-14T18:49:41Z",
+      "side": 1,
+      "message": "would actually be even better to have three \\ here so that the output correctly includes a single \\ to demonstrate the \\d shorthand. the current documentation just has \u0027d\u0027 which isn\u0027t a valid regex class.",
+      "revId": "6ecacbaad08704b3487c127ba6da5555634baadd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
