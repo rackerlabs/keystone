@@ -16,6 +16,24 @@
       "revId": "6ecacbaad08704b3487c127ba6da5555634baadd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4c43b2_1b040915",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2020-04-14T19:35:48Z",
+      "side": 1,
+      "message": "Three \\ makes flake8 complain, so I added noqa. Now it passes and displays correctly for me.",
+      "parentUuid": "3f4c43b2_351ab47c",
+      "revId": "6ecacbaad08704b3487c127ba6da5555634baadd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
