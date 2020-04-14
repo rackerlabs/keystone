@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4c43b2_552dc041",
+        "filename": "keystone/tests/hacking/checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-14T18:18:57Z",
+      "side": 0,
+      "message": "how are these registered now?",
+      "revId": "bf9f5dec55e17e7aa71ac21b6c10108ebe0c538c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
