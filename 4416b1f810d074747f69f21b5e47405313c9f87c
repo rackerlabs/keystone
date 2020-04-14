@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "3f4c43b2_d59b906f",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2020-04-14T18:23:12Z",
+      "side": 1,
+      "message": "this is regex, flake8 complains about \\d",
+      "range": {
+        "startLine": 101,
+        "startChar": 31,
+        "endLine": 101,
+        "endChar": 61
+      },
+      "revId": "4416b1f810d074747f69f21b5e47405313c9f87c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f4c43b2_d518b01e",
         "filename": "keystone/tests/unit/test_v3_catalog.py",
         "patchSetId": 3
@@ -42,6 +65,24 @@
     },
     {
       "key": {
+        "uuid": "3f4c43b2_1594d836",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2020-04-14T18:23:12Z",
+      "side": 1,
+      "message": "flake8 complained - should I change to \"\\\\$\"?",
+      "parentUuid": "3f4c43b2_d518b01e",
+      "revId": "4416b1f810d074747f69f21b5e47405313c9f87c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f4c43b2_75dd5c41",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 3
@@ -53,6 +94,24 @@
       "writtenOn": "2020-04-14T18:18:57Z",
       "side": 1,
       "message": "this is an error message not a regex",
+      "revId": "4416b1f810d074747f69f21b5e47405313c9f87c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4c43b2_f5accc8d",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4313,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2020-04-14T18:23:12Z",
+      "side": 1,
+      "message": "Let me reword it, \\. is wrong here",
+      "parentUuid": "3f4c43b2_75dd5c41",
       "revId": "4416b1f810d074747f69f21b5e47405313c9f87c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
