@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4c43b2_e30428c9",
+        "filename": "api-ref/source/v3/projects.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-04-14T08:58:04Z",
+      "side": 1,
+      "message": "extra space added",
+      "revId": "87db1b04661141a80671b8b5c596543a7ea9b9ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
