@@ -75,14 +75,15 @@ code to implement such change.
 Architectural Recapitulation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As you saw in the :doc:`../getting-started/architecture` document, there are
-four logical levels of code at which a successful request calls: router,
-controller, manager and
-driver.
+As you saw in the :doc:`../getting-started/architecture` document, from rocky
+release of openstack keystone adopted `Flask-RESTful`_ that allows to define
+API's successfully and request calls to the appropriate manager and driver.
+
+.. _`Flask-RESTful`: https://flask-restful.readthedocs.io/en/latest/
 
 For the role backend, they can be found in the directory `keystone/assignment`,
-in the following paths, respectively: `routers.py`, `controllers.py`, `core.py`
-and `role_backends/sql.py` (currently only the SQL driver is supported).
+in the following paths, respectively: the keystone API's at `keystone/api` and
+`role_backends/sql.py` (currently only the SQL driver is supported).
 
 Changing the SQL Model and Driver
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -128,8 +129,8 @@ Changing the Manager
 
 Managers handle the business logic. Keystone provides the basic CRUD for role
 entities, that means that the role manager simply calls the driver with the
-arguments received from the controller, and then returns the driver's result
-back to controller. Additionally, it handles the cache management.
+arguments received from appropriate HTTP methods of 'role'resource. Additionally,
+it handles the cache management.
 
 Thus, there is no manager change needed to make it able to operate role
 entities with the new `description` attribute.
@@ -142,17 +143,20 @@ the test is whether the code is business logic and/or needs to be executed for
 each driver. Both common and business logics go in the manager, while backend
 specific logic goes in the drivers.
 
-Changing the Controller and Router
+Changing the SCHEMA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Business logic should not go in the controller. The controller should be viewed
-as a binding between the business logic and the HTTP protocol. Thus, it is in
-charge of calling the appropriate manager call and wrapping responses into HTTP
-format.
+JSON schemas are used to determine whether a provided role is a valid representation
+or not. Role create and role update schemas are available at
+`keystone/assignment/schema.py`. Validation for a role resource will look like this::
 
-Controllers use JSON schemas do determine whether a provided role is a valid
-representation or not. Role create and role update schemas are available at
-`keystone/assignment/schema.py`.
+    class RoleResource(ks_flask.ResourceBase):
+
+        def post(self):
+            """Create role.
+            ...
+            validation.lazy_validate(schema.role_create, role)
+            ...
 
 You will need to update their properties to include a `description` attribute::
 
@@ -161,11 +165,12 @@ You will need to update their properties to include a `description` attribute::
         'description': parameter_types.description
     }
 
-Besides doing the entity validation using such schemas, controllers pass and
-accept all the attributes to and from the manager. Thus, there is no further
-change needed at the controller level.
+However, you should add tests for API unit test to `keystone/tests/unit/test_v3_role.py`
+and document about the new parameter in the `api-ref`_.
 
-Furthermore, as role entities are passed in the request body to keystone calls,
+.. _api-ref: https://docs.openstack.org/api-ref/identity/
+
+Furthermore, as role entities are passed in the API request body to keystone calls,
 the role routes do not need to be changed; i.e the routes still are::
 
       POST /v3/roles
