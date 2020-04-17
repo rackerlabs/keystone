@@ -61,6 +61,15 @@ Time to cache credential data in seconds. This has no effect unless global
 caching is enabled.
 """))
 
+user_limit = cfg.IntOpt(
+    'user_limit',
+    default=-1,
+    help=utils.fmt("""
+Maximum number of credentials a user is permitted to create. A value of
+-1 means unlimited. If a limit is not set, users are permitted to create
+credentials at will, which could lead to bloat in the keystone database
+or open keystone to a DoS attack.
+"""))
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
@@ -68,7 +77,8 @@ ALL_OPTS = [
     provider,
     key_repository,
     caching,
-    cache_time
+    cache_time,
+    user_limit,
 ]
 
 
