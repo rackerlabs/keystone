@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4c43b2_b02fb29f",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-17T18:20:09Z",
+      "side": 1,
+      "message": "it was Rocky I believe",
+      "range": {
+        "startLine": 133,
+        "startChar": 56,
+        "endLine": 133,
+        "endChar": 61
+      },
+      "revId": "eaaa2a5f4fbef80ede708973822ae7a2da211042",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4c43b2_f384a460",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-17T18:20:09Z",
+      "side": 1,
+      "message": "\"Flask Application\" with capital A is not a proper noun, there\u0027s nothing called \"Flask Application\". I would suggest saying \"...keystone uses the `Flask-RESTful`_ library to provide a REST API interface to these services.\" with a link to the flask-restful documentation https://flask-restful.readthedocs.io/en/latest/",
+      "range": {
+        "startLine": 134,
+        "startChar": 5,
+        "endLine": 134,
+        "endChar": 22
+      },
+      "revId": "eaaa2a5f4fbef80ede708973822ae7a2da211042",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4c43b2_d387e860",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-17T18:20:09Z",
+      "side": 1,
+      "message": "flask.common",
+      "range": {
+        "startLine": 136,
+        "startChar": 36,
+        "endLine": 136,
+        "endChar": 48
+      },
+      "revId": "eaaa2a5f4fbef80ede708973822ae7a2da211042",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4c43b2_d36368b0",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-17T18:20:09Z",
+      "side": 1,
+      "message": "This is misleading and misses the gist of the original wording, which emphasizes the subclassing approach to routing. It would be more correct to discuss how each API resource inherits from the flask resource base to implement each HTTP method. Take a look at the code to try to explain what it\u0027s doing.",
+      "revId": "eaaa2a5f4fbef80ede708973822ae7a2da211042",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4c43b2_3015624b",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-17T18:20:09Z",
+      "side": 1,
+      "message": "This is used for auth, I would put it under the Authentication section or under the Credentials section, not make a new section",
+      "range": {
+        "startLine": 170,
+        "startChar": 4,
+        "endLine": 170,
+        "endChar": 33
+      },
+      "revId": "eaaa2a5f4fbef80ede708973822ae7a2da211042",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4c43b2_d3024809",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-17T18:20:09Z",
+      "side": 1,
+      "message": "this isn\u0027t related to OAuth1",
+      "range": {
+        "startLine": 185,
+        "startChar": 23,
+        "endLine": 185,
+        "endChar": 32
+      },
+      "revId": "eaaa2a5f4fbef80ede708973822ae7a2da211042",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4c43b2_9318c075",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-17T18:20:09Z",
+      "side": 1,
+      "message": "also part of either auth or credentials",
+      "range": {
+        "startLine": 202,
+        "startChar": 23,
+        "endLine": 202,
+        "endChar": 31
+      },
+      "revId": "eaaa2a5f4fbef80ede708973822ae7a2da211042",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4c43b2_f3282487",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-17T18:20:09Z",
+      "side": 1,
+      "message": "this is part of assignment",
+      "range": {
+        "startLine": 206,
+        "startChar": 23,
+        "endLine": 206,
+        "endChar": 29
+      },
+      "revId": "eaaa2a5f4fbef80ede708973822ae7a2da211042",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
