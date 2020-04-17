@@ -496,12 +496,13 @@
 # expiration time defined for it. (integer value)
 #expiration_time = 600
 
-# Dogpile.cache backend module. It is recommended that Memcache or Redis
-# (dogpile.cache.redis) be used in production deployments. For eventlet-based
-# or highly threaded servers, Memcache with pooling (oslo_cache.memcache_pool)
-# is recommended. For low thread servers, dogpile.cache.memcached is
-# recommended. Test environments with a single instance of the server can use
-# the dogpile.cache.memory backend. (string value)
+# Cache backend module. For eventlet-based or environments with hundreds of
+# threaded servers, Memcache with pooling (oslo_cache.memcache_pool) is
+# recommended. For environments with less than 100 threaded servers, Memcached
+# (dogpile.cache.memcached) or Redis (dogpile.cache.redis) is recommended. Test
+# environments with a single instance of the server can use the
+# dogpile.cache.memory backend. (string value)
+# Allowed values: oslo_cache.memcache_pool, oslo_cache.dict, dogpile.cache.memcached, dogpile.cache.redis, dogpile.cache.memory, dogpile.cache.null
 #backend = dogpile.cache.null
 
 # Arguments supplied to the backend module. Specify this option once per
@@ -613,35 +614,6 @@
 #allow_headers = X-Auth-Token,X-Openstack-Request-Id,X-Subject-Token,X-Project-Id,X-Project-Name,X-Project-Domain-Id,X-Project-Domain-Name,X-Domain-Id,X-Domain-Name
 
 
-[cors.subdomain]
-
-#
-# From oslo.middleware
-#
-
-# Indicate whether this resource may be shared with the domain received in the
-# requests "origin" header. Format: "<protocol>://<host>[:<port>]", no trailing
-# slash. Example: https://horizon.example.com (list value)
-#allowed_origin = <None>
-
-# Indicate that the actual request can include user credentials (boolean value)
-#allow_credentials = true
-
-# Indicate which headers are safe to expose to the API. Defaults to HTTP Simple
-# Headers. (list value)
-#expose_headers = X-Auth-Token,X-Openstack-Request-Id,X-Subject-Token
-
-# Maximum cache age of CORS preflight requests. (integer value)
-#max_age = 3600
-
-# Indicate which methods can be used during the actual request. (list value)
-#allow_methods = GET,PUT,POST,DELETE,PATCH
-
-# Indicate which header field names may be used during the actual request.
-# (list value)
-#allow_headers = X-Auth-Token,X-Openstack-Request-Id,X-Subject-Token,X-Project-Id,X-Project-Name,X-Project-Domain-Id,X-Project-Domain-Name,X-Domain-Id,X-Domain-Name
-
-
 [credential]
 
 #
@@ -666,6 +638,10 @@
 # Do not share this repository with the repository used to manage keys for
 # Fernet tokens. (string value)
 #key_repository = /etc/keystone/credential-keys/
+
+# The length of time in minutes for which a signed EC2 or S3 token request is
+# valid from the timestamp contained in the token request. (integer value)
+#auth_ttl = 15
 
 
 [database]
@@ -697,6 +673,10 @@
 # by the server configuration, set this to no value. Example: mysql_sql_mode=
 # (string value)
 #mysql_sql_mode = TRADITIONAL
+
+# If True, transparently enables support for handling MySQL Cluster (NDB).
+# (boolean value)
+#mysql_enable_ndb = false
 
 # Timeout before idle SQL connections are reaped. (integer value)
 # Deprecated group/name - [DEFAULT]/sql_idle_timeout
@@ -888,7 +868,7 @@
 #assertion_prefix =
 
 # Value to be used to obtain the entity ID of the Identity Provider from the
-# environment. For `mod_shib`, this would be `Shib-Identity-Provider`. For For
+# environment. For `mod_shib`, this would be `Shib-Identity-Provider`. For
 # `mod_auth_openidc`, this could be `HTTP_OIDC_ISS`. For `mod_auth_mellon`,
 # this could be `MELLON_IDP`. (string value)
 #remote_id_attribute = <None>
@@ -1050,6 +1030,51 @@
 # Maximum number of entities that will be returned in an identity collection.
 # (integer value)
 #list_limit = <None>
+
+# The password hashing algorithm to use for passwords stored within keystone.
+# (string value)
+# Allowed values: bcrypt, scrypt, pbkdf2_sha512
+#password_hash_algorithm = bcrypt
+
+# This option represents a trade off between security and performance. Higher
+# values lead to slower performance, but higher security. Changing this option
+# will only affect newly created passwords as existing password hashes already
+# have a fixed number of rounds applied, so it is safe to tune this option in a
+# running cluster.  The default for bcrypt is 12, must be between 4 and 31,
+# inclusive.  The default for scrypt is 16, must be within `range(1,32)`.  The
+# default for pbkdf_sha512 is 60000, must be within `range(1,1<<32)`  WARNING:
+# If using scrypt, increasing this value increases BOTH time AND memory
+# requirements to hash a password. (integer value)
+#password_hash_rounds = <None>
+
+# Optional block size to pass to scrypt hash function (the `r` parameter).
+# Useful for tuning scrypt to optimal performance for your CPU architecture.
+# This option is only used when the `password_hash_algorithm` option is set to
+# `scrypt`. Defaults to 8. (integer value)
+#scrypt_block_size = <None>
+
+# Optional parallelism to pass to scrypt hash function (the `p` parameter).
+# This option is only used when the `password_hash_algorithm` option is set to
+# `scrypt`. Defaults to 1. (integer value)
+#scrypt_parallelism = <None>
+
+# Number of bytes to use in scrypt and pbkfd2_sha512 hashing salt.  Default for
+# scrypt is 16 bytes. Default for pbkfd2_sha512 is 16 bytes.  Limited to a
+# maximum of 96 bytes due to the size of the column used to store password
+# hashes. (integer value)
+# Minimum value: 0
+# Maximum value: 96
+#salt_bytesize = <None>
+
+# This option tells keystone to continue to hash passwords with the
+# sha512_crypt algorithm for supporting rolling upgrades. sha512_crypt is
+# typically more insecure than bcrypt, pbkdf2, and scrypt. This option should
+# be set to `False` except in the case of performing a rolling upgrade where
+# some Keystone servers may not know how to verify non-sha512_crypt based
+# password hashes.  This option will be removed in the Queens release and is
+# only to support rolling upgrades from Ocata release to Pike release. (boolean
+# value)
+#rolling_upgrade_password_hash_compat = false
 
 
 [identity_mapping]
@@ -1504,6 +1529,14 @@
 # Password for decrypting ssl_key_file (if encrypted) (string value)
 #ssl_key_password = <None>
 
+# By default SSL checks that the name in the server's certificate matches the
+# hostname in the transport_url. In some configurations it may be preferable to
+# use the virtual hostname instead, for example if the server uses the Server
+# Name Indication TLS extension (rfc6066) to provide a certificate per virtual
+# host. Set ssl_verify_vhost to True if the server's SSL certificate uses the
+# virtual host name instead of the DNS name. (boolean value)
+#ssl_verify_vhost = false
+
 # DEPRECATED: Accept clients using either SSL or plain TCP (boolean value)
 # This option is deprecated for removal.
 # Its value may be silently ignored in the future.
@@ -1586,6 +1619,14 @@
 # 'dynamic'  - use legacy addresses if the message bus does not support routing
 # otherwise use routable addressing (string value)
 #addressing_mode = dynamic
+
+# Enable virtual host support for those message buses that do not natively
+# support virtual hosting (such as qpidd). When set to true the virtual host
+# name will be added to all message bus addresses, effectively creating a
+# private 'subnet' per virtual host. Set to False if the message bus supports
+# virtual hosting using the 'hostname' field in the AMQP 1.0 Open performative
+# as the name of the virtual host. (boolean value)
+#pseudo_vhost = true
 
 # address prefix used when sending to a specific server (string value)
 #server_request_prefix = exclusive
@@ -2305,10 +2346,15 @@
 # From keystone
 #
 
-# Entry point for the resource driver in the `keystone.resource` namespace.
-# Only a `sql` driver is supplied by keystone. Unless you are writing
-# proprietary drivers for keystone, you do not need to set this option. (string
-# value)
+# DEPRECATED: Entry point for the resource driver in the `keystone.resource`
+# namespace. Only a `sql` driver is supplied by keystone. Unless you are
+# writing proprietary drivers for keystone, you do not need to set this option.
+# (string value)
+# This option is deprecated for removal since P.
+# Its value may be silently ignored in the future.
+# Reason: Non-SQL resource cannot be used with SQL Identity and has been unable
+# to be used since Ocata. SQL Resource backend is a requirement as of Pike.
+# Setting this option no longer has an effect on how Keystone operates.
 #driver = sql
 
 # Toggle for resource caching. This has no effect unless global caching is
