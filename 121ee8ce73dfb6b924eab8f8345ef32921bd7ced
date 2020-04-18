@@ -16,6 +16,24 @@
       "revId": "121ee8ce73dfb6b924eab8f8345ef32921bd7ced",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4c43b2_0ad2aed2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-04-18T15:48:41Z",
+      "side": 1,
+      "message": "Thanks for the advice.",
+      "parentUuid": "3f4c43b2_73d09420",
+      "revId": "121ee8ce73dfb6b924eab8f8345ef32921bd7ced",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
