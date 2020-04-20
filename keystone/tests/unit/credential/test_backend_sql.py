@@ -13,6 +13,7 @@
 import uuid
 
 from keystone.common import provider_api
+from keystone.common import utils
 from keystone.credential.providers import fernet as credential_provider
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
@@ -49,6 +50,16 @@ class SqlCredential(SqlTests):
         credential = unit.new_credential_ref(user_id=user_id,
                                              extra=uuid.uuid4().hex,
                                              type=uuid.uuid4().hex)
+        PROVIDERS.credential_api.create_credential(
+            credential['id'], credential
+        )
+        return credential
+
+    def _create_credential_ec2_with_user_id(self, user_id=None):
+        if not user_id:
+            user_id = uuid.uuid4().hex
+        blob, credential = unit.new_ec2_credential(user_id=user_id,
+                                                   extra=uuid.uuid4().hex)
         PROVIDERS.credential_api.create_credential(
             credential['id'], credential
         )
@@ -102,3 +113,23 @@ class SqlCredential(SqlTests):
         # Make sure CredentialModel is handing over a text string
         # to the database. To avoid encoding issues
         self.assertIsInstance(ref.encrypted_blob, str)
+
+    def test_update_credential(self):
+        cred_dict = {'blob': uuid.uuid4().hex}
+        cred = self._create_credential_with_user_id(self.user_foo['id'])
+
+        credential = PROVIDERS.credential_api.update_credential(cred['id'],
+                                                                cred_dict)
+        self.assertEqual(cred['id'], credential['id'])
+
+    def test_update_ec2_credential(self):
+        # constant blob['access'] to assert with the new credential id
+        cred_dict = {'blob': '{"access": "2ad13250413a42839b77e94d1a555712"}'}
+
+        cred = self._create_credential_ec2_with_user_id(self.user_foo['id'])
+
+        credential = PROVIDERS.credential_api.update_credential(cred['id'],
+                                                                cred_dict)
+        new_credential_id = utils.hash_access_key(
+            "2ad13250413a42839b77e94d1a555712")
+        self.assertEqual(new_credential_id, credential['id'])
