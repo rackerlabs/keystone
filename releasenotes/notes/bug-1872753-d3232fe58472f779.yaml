@@ -1,0 +1,6 @@
+---
+fixes:
+  - >
+    [`bug 1872753 <https://bugs.launchpad.net/keystone/+bug/1872753>`_]
+    This allows to update the EC2 credential id when updating  EC2 credential access ID
+    in the blob field since EC2 credential id is created by hashing access ID.

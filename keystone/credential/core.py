@@ -15,11 +15,13 @@
 """Main entry point into the Credential service."""
 
 import json
+from oslo_serialization import jsonutils
 
 from keystone.common import cache
 from keystone.common import driver_hints
 from keystone.common import manager
 from keystone.common import provider_api
+from keystone.common import utils
 import keystone.conf
 from keystone import exception
 from keystone import notifications
@@ -161,6 +163,19 @@ class Manager(manager.Manager):
             existing_credential = self.get_credential(credential_id)
             existing_blob = existing_credential['blob']
         ref = self.driver.update_credential(credential_id, credential_copy)
+
+        # update the credential ID for ec2 credential in sql database
+        if 'blob' in credential and ref['type'] == 'ec2':
+            try:
+                blob = jsonutils.loads(credential.get('blob'))
+                if blob.get('access') is not None:
+                    new_credential_id = utils.hash_access_key(blob['access'])
+                    ref = self.driver.update_credential_id(
+                        credential_id, {'id': new_credential_id})
+            except (ValueError, TabError):
+                raise exception.ValidationError(
+                    message=_('Invalid blob in credential'))
+
         if MEMOIZE.should_cache(ref):
             self._get_credential.set(ref, self, credential_id)
             self._list_credentials_for_user.invalidate(self,

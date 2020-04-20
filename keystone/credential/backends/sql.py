@@ -101,6 +101,19 @@ class Credential(base.CredentialDriverBase):
             ref.extra = new_credential.extra
             return ref.to_dict()
 
+    @sql.handle_conflicts(conflict_type='credential')
+    def update_credential_id(self, credential_id, credential):
+        with sql.session_for_write() as session:
+            ref = self._get_credential(session, credential_id)
+            old_dict = ref.to_dict()
+            for k in credential:
+                old_dict[k] = credential[k]
+            new_credential = CredentialModel.from_dict(old_dict)
+            for attr in CredentialModel.attributes:
+                setattr(ref, attr, getattr(new_credential, attr))
+            ref.extra = new_credential.extra
+            return ref.to_dict()
+
     def delete_credential(self, credential_id):
         with sql.session_for_write() as session:
             ref = self._get_credential(session, credential_id)
