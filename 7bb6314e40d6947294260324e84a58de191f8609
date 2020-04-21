@@ -16,6 +16,24 @@
       "revId": "7bb6314e40d6947294260324e84a58de191f8609",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f493fa4_987164e4",
+        "filename": "lower-constraints.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2020-04-21T06:17:11Z",
+      "side": 0,
+      "message": "Indeed, let\u0027s keep this in as long as dependencies require it.",
+      "parentUuid": "1f493fa4_2448f3ca",
+      "revId": "7bb6314e40d6947294260324e84a58de191f8609",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
