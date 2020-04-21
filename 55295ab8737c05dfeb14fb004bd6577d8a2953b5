@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f493fa4_07733917",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 20223
+      },
+      "writtenOn": "2020-04-21T01:48:11Z",
+      "side": 1,
+      "message": "In my option, it should add like this\n\nif user_limit \u003e\u003d 0:\n    ...\nelse:\n    \u0027user_limit is not set\u0027 or user_limit \u003d -1",
+      "revId": "55295ab8737c05dfeb14fb004bd6577d8a2953b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
