@@ -1,0 +1,11 @@
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: Vishakha Agarwal <agarwalvishakha18@gmail.com>
+Code-Review+1: Hervé Beraud <hberaud@redhat.com>
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Workflow+1: Gage Hugo <gagehugo@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Sat, 25 Apr 2020 10:21:07 +0000
+Reviewed-on: https://review.opendev.org/715688
+Project: openstack/keystone
+Branch: refs/heads/master
