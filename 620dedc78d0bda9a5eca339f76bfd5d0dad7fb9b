@@ -46,6 +46,30 @@
       "revId": "620dedc78d0bda9a5eca339f76bfd5d0dad7fb9b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f493fa4_8396944b",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 843,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-04-27T15:35:35Z",
+      "side": 1,
+      "message": "It\u0027s just a copypaste error in the comment, the test itself is correct.",
+      "parentUuid": "7faddb67_24c191e5",
+      "range": {
+        "startLine": 843,
+        "startChar": 42,
+        "endLine": 843,
+        "endChar": 61
+      },
+      "revId": "620dedc78d0bda9a5eca339f76bfd5d0dad7fb9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
