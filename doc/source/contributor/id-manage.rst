@@ -14,18 +14,18 @@
       License for the specific language governing permissions and limitations
       under the License.
 
-Identity entity ID management between controllers and drivers
-=============================================================
+Enable drivers for domain-specific configuration
+================================================
 
 Keystone supports the option of having domain-specific backends for the
 identity driver (i.e. for user and group storage), allowing, for example,
 a different LDAP server for each domain. To ensure that Keystone can determine
 to which backend it should route an API call, starting with Juno, the
-identity manager will, provided that domain-specific backends are enabled,
-build on-the-fly a persistent mapping table between Keystone Public IDs that
-are presented to the controller and the domain that holds the entity, along
-with whatever local ID is understood by the driver.  This hides, for instance,
-the LDAP specifics of whatever ID is being used.
+identity manager will, provided that ":ref: `domain-specific backends
+<enable_drivers_for_domain>`" are enabled, build on-the-fly a persistent mapping
+table between Keystone Public IDs that are presented to the API and the domain
+that holds the entity, along with whatever local ID is understood by the driver.
+This hides, for instance, the LDAP specifics of whatever ID is being used.
 
 To ensure backward compatibility, the default configuration of either a
 single SQL or LDAP backend for Identity will not use the mapping table,
@@ -34,3 +34,5 @@ the same for the default LDAP backend is not required, then setting the
 configuration variable ``backward_compatible_ids`` to ``False`` will enable
 the mapping for the default LDAP driver, hence hiding the LDAP specifics of the
 IDs being used.
+
+.. _domain-specific backends: https://docs.openstack.org/keystone/latest/admin/configuration.html#enable-drivers-for-domain-specific-configuration-files
