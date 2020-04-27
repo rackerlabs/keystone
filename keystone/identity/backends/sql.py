@@ -46,7 +46,7 @@ class Identity(base.IdentityDriverBase):
     def _check_password(self, password, user_ref):
         """Check the specified password against the data store.
 
-        Note that we'll pass in the entire user_ref in case the subclass
+        Note that we'll pass the entire user_ref in case the subclass
         needs things like user_ref.get('name')
         For further justification, please see the follow up suggestion at
         https://blueprints.launchpad.net/keystone/+spec/sql-identiy-pam

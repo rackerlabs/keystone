@@ -32,7 +32,7 @@ Contributor Documentation
    api_change_tutorial.rst
    auth-plugins.rst
    database-migrations.rst
-   id-manage.rst
+   domain-specific-configuration.rst
    translated-responses.rst
    architecture.rst
    services.rst
