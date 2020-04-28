@@ -32,10 +32,20 @@
         TEMPEST_PLUGINS: '/opt/stack/keystone-tempest-plugin'
         USE_PYTHON3: True
 
+- nodeset:
+    name: keystone-single-node-opensuse-15
+    nodes:
+      - name: controller
+        label: opensuse-15-plain
+    groups:
+      - name: tempest
+        nodes:
+          - controller
+
 - job:
     name: keystone-dsvm-functional-federation-opensuse15
     parent: keystone-dsvm-functional
-    nodeset: devstack-single-node-opensuse-15
+    nodeset: keystone-single-node-opensuse-15
     vars:
       devstack_localrc:
         TEMPEST_PLUGINS: '/opt/stack/keystone-tempest-plugin'
@@ -176,51 +186,13 @@
     parent: keystone-dsvm-py35-functional-federation-ubuntu-xenial
 
 - project:
-    templates:
-      - openstack-cover-jobs
-      - openstack-lower-constraints-jobs
-      - openstack-python3-ussuri-jobs
-      - publish-openstack-docs-pti
-      - periodic-stable-jobs
-      - check-requirements
-      - integrated-gate-py3
-      - release-notes-jobs-python3
     check:
       jobs:
-        - keystone-dsvm-py3-functional:
-            irrelevant-files: &irrelevant-files
-              - ^.*\.rst$
-              - ^api-ref/.*$
-              - ^doc/.*$
-              - ^etc/.*$
-              - ^keystone/tests/unit/.*$
-              - ^releasenotes/.*$
         - keystone-dsvm-py3-functional-federation-opensuse15:
             voting: false
             irrelevant-files: *irrelevant-files
         - keystone-dsvm-py3-functional-federation-opensuse15-k2k:
             irrelevant-files: *irrelevant-files
-        - keystoneclient-devstack-functional:
-            voting: false
-            irrelevant-files: *irrelevant-files
-        - keystone-dsvm-ldap-domain-specific-driver:
-            voting: false
-            irrelevant-files: &tempest-irrelevant-files
-              - ^(test-|)requirements.txt$
-              - ^.*\.rst$
-              - ^api-ref/.*$
-              - ^doc/.*$
-              - ^etc/.*$
-              - ^keystone/tests/unit/.*$
-              - ^releasenotes/.*$
-              - ^setup.cfg$
-        - tempest-full-py3:
-            irrelevant-files: *tempest-irrelevant-files
-        - grenade-py3:
-            irrelevant-files: *tempest-irrelevant-files
-        - tempest-ipv6-only:
-            irrelevant-files: *tempest-irrelevant-files
-        - keystone-tox-protection
     gate:
       jobs:
         - keystone-dsvm-py3-functional:
