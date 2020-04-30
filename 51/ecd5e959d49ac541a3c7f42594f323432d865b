@@ -1,0 +1,9 @@
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+2: Kristi Nikolla <knikolla@icloud.com>
+Workflow+1: Kristi Nikolla <knikolla@icloud.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 30 Apr 2020 10:15:56 +0000
+Reviewed-on: https://review.opendev.org/723630
+Project: openstack/keystone
+Branch: refs/heads/master
