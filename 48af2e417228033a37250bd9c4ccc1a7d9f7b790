@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "1f493fa4_cbef6fae",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3498,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-05T17:37:30Z",
+      "side": 1,
+      "message": "The local user using federated identity cannot login after 90 days due to the option disable_user_account_days_inactive. The test case is already present [1]. Sorry for the confusion I will update the commit message that this patch adds/updates \"last_active_at\" for local user using federated identity.  \n[1]https://github.com/openstack/keystone/blob/74b2be3a415eb1298d4d91b9c5a1ff8cac3d8def/keystone/tests/unit/identity/test_backend_sql.py#L257",
+      "parentUuid": "1f493fa4_6082baca",
+      "revId": "48af2e417228033a37250bd9c4ccc1a7d9f7b790",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f493fa4_e0752afc",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 4
