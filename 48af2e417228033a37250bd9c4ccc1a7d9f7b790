@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f493fa4_80238605",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-05T16:56:14Z",
+      "side": 1,
+      "message": "\"denied 90\" is this missing a word? can you explain more?",
+      "range": {
+        "startLine": 13,
+        "startChar": 59,
+        "endLine": 13,
+        "endChar": 68
+      },
+      "revId": "48af2e417228033a37250bd9c4ccc1a7d9f7b790",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f493fa4_6082baca",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3498,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-05T16:56:14Z",
+      "side": 1,
+      "message": "The commit message says that the problem is that the user is unable to log in, can you form a unit test that demonstrates that problem?",
+      "revId": "48af2e417228033a37250bd9c4ccc1a7d9f7b790",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f493fa4_e0752afc",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3512,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-05T16:56:14Z",
+      "side": 1,
+      "message": "Please use the PROVIDERS interface here, do not use sql directly.",
+      "revId": "48af2e417228033a37250bd9c4ccc1a7d9f7b790",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
