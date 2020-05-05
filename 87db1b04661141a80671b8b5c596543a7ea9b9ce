@@ -16,6 +16,29 @@
       "revId": "87db1b04661141a80671b8b5c596543a7ea9b9ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f493fa4_6bdc5b46",
+        "filename": "api-ref/source/v3/projects.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-05T17:24:28Z",
+      "side": 1,
+      "message": "This seems to also be true when using a system scoped token, though not when using a domain scoped token.",
+      "range": {
+        "startLine": 40,
+        "startChar": 22,
+        "endLine": 40,
+        "endChar": 50
+      },
+      "revId": "87db1b04661141a80671b8b5c596543a7ea9b9ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
