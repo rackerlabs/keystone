@@ -70,6 +70,30 @@
       "revId": "6c73690f779a42a5c62914b6bc37f0ac2f41a3e3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f493fa4_10d7ad51",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-06T17:33:42Z",
+      "side": 1,
+      "message": "Which doc? I\u0027ll help review if someone wants to write it up and find the right place for it. Right now it seems like the way we handle these are so inconsistent that I wouldn\u0027t know what to document.",
+      "parentUuid": "1f493fa4_d5b1b7e3",
+      "range": {
+        "startLine": 337,
+        "startChar": 12,
+        "endLine": 337,
+        "endChar": 74
+      },
+      "revId": "6c73690f779a42a5c62914b6bc37f0ac2f41a3e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
