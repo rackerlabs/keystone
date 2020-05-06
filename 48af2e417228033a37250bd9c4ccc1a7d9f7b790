@@ -78,6 +78,24 @@
     },
     {
       "key": {
+        "uuid": "1f493fa4_39073f1f",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3498,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-06T10:33:41Z",
+      "side": 1,
+      "message": "As per my understanding the main author of this patch wants to set the \"last_active_at\" for local user in idp whenever he logins to his service provider. \n\nSo I need to add a test case where \" disable_user_account_days_inactive\u003d90\" is set for that user and he makes a login after (For example) 89 days, the last_active_at option should be updated and the user should not be disabled after 1 day?",
+      "parentUuid": "1f493fa4_0664aeb8",
+      "revId": "48af2e417228033a37250bd9c4ccc1a7d9f7b790",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f493fa4_e0752afc",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 4
