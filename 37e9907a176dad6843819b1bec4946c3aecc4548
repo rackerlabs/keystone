@@ -16,6 +16,24 @@
       "revId": "37e9907a176dad6843819b1bec4946c3aecc4548",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f493fa4_8b339013",
+        "filename": "keystone/api/credentials.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-06T18:46:39Z",
+      "side": 1,
+      "message": "It might have been better to never set trust_id and simply block trust-scoped tokens from creating credentials, but that was a choice made long ago. This at least makes app creds and access tokens consistent with trusts and prevents them from being abused the way they could have been before.",
+      "parentUuid": "1f493fa4_10716ddf",
+      "revId": "37e9907a176dad6843819b1bec4946c3aecc4548",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
