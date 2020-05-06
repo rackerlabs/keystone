@@ -22,6 +22,30 @@
       "revId": "6c73690f779a42a5c62914b6bc37f0ac2f41a3e3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f493fa4_75a383b2",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-06T17:00:41Z",
+      "side": 1,
+      "message": "This is the same behavior that we have for trust roles above. I don\u0027t think changing implied roles revokes active tokens, but at least the token will expire. I think this is safe enough for now and we can follow up later to make sure all of these token roles behave the same with regard to implied roles and discuss how to invalidate them.",
+      "parentUuid": "1f493fa4_f238493c",
+      "range": {
+        "startLine": 337,
+        "startChar": 12,
+        "endLine": 337,
+        "endChar": 74
+      },
+      "revId": "6c73690f779a42a5c62914b6bc37f0ac2f41a3e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
