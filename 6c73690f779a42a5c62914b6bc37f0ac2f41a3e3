@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f493fa4_f238493c",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2020-05-06T16:34:03Z",
+      "side": 1,
+      "message": "Will changing implied roles invalidate existing access tokens? Otherwise, this seem a bit dangerous as the roles can still change after the access token had issued.",
+      "range": {
+        "startLine": 337,
+        "startChar": 12,
+        "endLine": 337,
+        "endChar": 74
+      },
+      "revId": "6c73690f779a42a5c62914b6bc37f0ac2f41a3e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
