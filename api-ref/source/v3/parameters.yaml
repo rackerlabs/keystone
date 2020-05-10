@@ -433,6 +433,12 @@ service_id_query:
   in: query
   required: false
   type: string
+service_name_query:
+    description: |
+      Filters the response by a service name.
+    in: query
+    required: false
+    type: string
 service_type_query:
   description: |
     Filters the response by a service type. A valid
