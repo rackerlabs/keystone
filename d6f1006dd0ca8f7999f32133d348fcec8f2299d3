@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_8560c8d0",
+        "filename": "keystone/tests/unit/test_contrib_ec2_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-05-11T23:48:37Z",
+      "side": 1,
+      "message": "Agreed - primarily doing this for consistency with the original patch.",
+      "parentUuid": "ff570b3c_76bc5405",
+      "revId": "d6f1006dd0ca8f7999f32133d348fcec8f2299d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_9475a39b",
         "filename": "keystone/tests/unit/test_contrib_ec2_core.py",
         "patchSetId": 1
