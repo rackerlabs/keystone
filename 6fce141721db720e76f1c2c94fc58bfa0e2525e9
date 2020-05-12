@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_a50cd03b",
+        "filename": "doc/source/contributor/id-manage.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-12T22:14:37Z",
+      "side": 1,
+      "message": "Instead of replacing \"controllers\" with \"API\", could we replace this part with something that makes it clear what this section is really about - maybe \"... for domain-specific backends\"?",
+      "range": {
+        "startLine": 17,
+        "startChar": 29,
+        "endLine": 17,
+        "endChar": 53
+      },
+      "revId": "6fce141721db720e76f1c2c94fc58bfa0e2525e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_42acca33",
+        "filename": "doc/source/contributor/id-manage.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-12T22:14:37Z",
+      "side": 1,
+      "message": "The underline is now mismatched",
+      "revId": "6fce141721db720e76f1c2c94fc58bfa0e2525e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_e2507e61",
+        "filename": "doc/source/contributor/id-manage.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-12T22:14:37Z",
+      "side": 1,
+      "message": "This isn\u0027t future-proof, it would be better to use a relative link rather than treating it as an external site for the reasons given here https://review.opendev.org/675667",
+      "revId": "6fce141721db720e76f1c2c94fc58bfa0e2525e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
