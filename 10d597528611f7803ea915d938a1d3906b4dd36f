@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_858f0c22",
+        "filename": "doc/source/contributor/filtering-responsibilities.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-12T22:55:38Z",
+      "side": 1,
+      "message": "I would maybe say \"API resources\" or something else. \"API\" is very generic, it means the REST interface, not the implementation of the interface.",
+      "range": {
+        "startLine": 18,
+        "startChar": 35,
+        "endLine": 18,
+        "endChar": 38
+      },
+      "revId": "10d597528611f7803ea915d938a1d3906b4dd36f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_6508f8d8",
+        "filename": "doc/source/contributor/filtering-responsibilities.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-12T22:55:38Z",
+      "side": 1,
+      "message": "Underline and overline are mismatched from the header now",
+      "revId": "10d597528611f7803ea915d938a1d3906b4dd36f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_a59cd05d",
+        "filename": "doc/source/contributor/filtering-responsibilities.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-12T22:55:38Z",
+      "side": 1,
+      "message": "\"API resource\" or \"Flask resource\"",
+      "range": {
+        "startLine": 22,
+        "startChar": 63,
+        "endLine": 22,
+        "endChar": 66
+      },
+      "revId": "10d597528611f7803ea915d938a1d3906b4dd36f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_45adf486",
+        "filename": "doc/source/contributor/filtering-responsibilities.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-12T22:55:38Z",
+      "side": 1,
+      "message": "\"the API\" or \"the API resource\"",
+      "range": {
+        "startLine": 28,
+        "startChar": 48,
+        "endLine": 28,
+        "endChar": 51
+      },
+      "revId": "10d597528611f7803ea915d938a1d3906b4dd36f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_454974ce",
+        "filename": "doc/source/contributor/filtering-responsibilities.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-12T22:55:38Z",
+      "side": 1,
+      "message": "Before flask, the list methods of the controller and driver were usually named the same thing, for example ``list_users`` was used both in keystone/identity/controllers.py and keystone/identity/backend/sql.py. On this line, ``list_{entity}`` wasn\u0027t referring to the controller but to the driver. The drivers don\u0027t use methods like get(), they still use ``list_{entity}``. So I wouldn\u0027t change this line.",
+      "range": {
+        "startLine": 34,
+        "startChar": 30,
+        "endLine": 34,
+        "endChar": 37
+      },
+      "revId": "10d597528611f7803ea915d938a1d3906b4dd36f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_e5224801",
+        "filename": "doc/source/contributor/list-truncation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-12T22:55:38Z",
+      "side": 1,
+      "message": "It\u0027s unclear whether the original doc meant this to mean in the driver or controller, let\u0027s just say \"list operations\"",
+      "range": {
+        "startLine": 22,
+        "startChar": 22,
+        "endLine": 22,
+        "endChar": 36
+      },
+      "revId": "10d597528611f7803ea915d938a1d3906b4dd36f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_4577b403",
+        "filename": "doc/source/contributor/list-truncation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-12T22:55:38Z",
+      "side": 1,
+      "message": "If you\u0027re referring to ``[DEFAULT]/list_limit`` then mention that",
+      "range": {
+        "startLine": 27,
+        "startChar": 22,
+        "endLine": 27,
+        "endChar": 34
+      },
+      "revId": "10d597528611f7803ea915d938a1d3906b4dd36f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
