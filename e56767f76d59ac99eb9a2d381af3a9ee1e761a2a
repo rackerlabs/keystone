@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_ccef8485",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-12T10:14:08Z",
+      "side": 1,
+      "message": "We can use the following convention [0]. It is more of a readable and understandable format for the user. Example-\n\n request_service_name_query_not_required:\n\n[0] https://etherpad.openstack.org/p/queens-ptg-keystone-doc-cleanup",
+      "range": {
+        "startLine": 436,
+        "startChar": 0,
+        "endLine": 436,
+        "endChar": 19
+      },
+      "revId": "e56767f76d59ac99eb9a2d381af3a9ee1e761a2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
