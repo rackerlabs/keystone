@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_682e0ffb",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-12T23:58:25Z",
+      "side": 0,
+      "message": "I feel like you\u0027re trying to specifically remove the use of the term \"manager\" and I\u0027m not sure why? A manager is still a real thing in keystone, it\u0027s in the core.py file for a resource, and it\u0027s still where caching is handled.",
+      "revId": "07abf2fa4d5c2bc5dc1c77d700ac3589d1169d3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
