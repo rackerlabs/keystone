@@ -10,6 +10,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+- nodeset:
+    name: keystone-ubuntu-focal
+    nodes:
+      - name: controller
+        label: keystone-ubuntu-focal
+    groups:
+      - name: tempest
+        nodes:
+          - controller
+
 - job:
     name: keystone-dsvm-functional
     parent: devstack-tempest
@@ -35,7 +45,7 @@
 - job:
     name: keystone-dsvm-functional-federation-opensuse15
     parent: keystone-dsvm-functional
-    nodeset: devstack-single-node-opensuse-15
+    nodeset: keystone-ubuntu-focal
     vars:
       devstack_localrc:
         TEMPEST_PLUGINS: '/opt/stack/keystone-tempest-plugin'
@@ -62,6 +72,31 @@
 - job:
     name: keystone-dsvm-py3-functional-federation-opensuse15-k2k
     parent: keystone-dsvm-py3-functional-federation-opensuse15
+    vars:
+      devstack_localrc:
+        IDP_ID: k2k
+
+- job:
+    name: keystone-dsvm-py3-functional-federation-ubuntu-focal
+    parent: keystone-dsvm-functional
+    nodeset: keystone-ubuntu-focal
+    vars:
+      devstack_localrc:
+        TEMPEST_PLUGINS: '/opt/stack/keystone-tempest-plugin'
+        USE_PYTHON3: True
+        FORCE: True
+      devstack_services:
+        keystone-saml2-federation: true
+        tls-proxy: false
+      devstack_plugins:
+        keystone: https://opendev.org/openstack/keystone
+      zuul_copy_output:
+        /etc/shibboleth: logs
+        /var/log/shibboleth: logs
+
+- job:
+    name: keystone-dsvm-py3-functional-federation-ubuntu-focal-k2k
+    parent: keystone-dsvm-py3-functional-federation-ubuntu-focal
     vars:
       devstack_localrc:
         IDP_ID: k2k
@@ -195,10 +230,10 @@
               - ^etc/.*$
               - ^keystone/tests/unit/.*$
               - ^releasenotes/.*$
-        - keystone-dsvm-py3-functional-federation-opensuse15:
+        - keystone-dsvm-py3-functional-federation-ubuntu-focal:
             voting: false
             irrelevant-files: *irrelevant-files
-        - keystone-dsvm-py3-functional-federation-opensuse15-k2k:
+        - keystone-dsvm-py3-functional-federation-ubuntu-focal-k2k:
             irrelevant-files: *irrelevant-files
         - keystoneclient-devstack-functional:
             voting: false
@@ -225,7 +260,7 @@
       jobs:
         - keystone-dsvm-py3-functional:
             irrelevant-files: *irrelevant-files
-        - keystone-dsvm-py3-functional-federation-opensuse15-k2k:
+        - keystone-dsvm-py3-functional-federation-ubuntu-focal-k2k:
             irrelevant-files: *irrelevant-files
         - tempest-full-py3:
             irrelevant-files: *tempest-irrelevant-files
