@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_455a144f",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-12T23:31:35Z",
+      "side": 1,
+      "message": "This word doesn\u0027t really make sense here. In the old doc it was talking about a \"successful request\" not a successful API definition.",
+      "range": {
+        "startLine": 80,
+        "startChar": 6,
+        "endLine": 80,
+        "endChar": 18
+      },
+      "revId": "f68cf6961218cbe89d4c643bf80df64c812e0fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_e8369fe7",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-12T23:31:35Z",
+      "side": 1,
+      "message": "I don\u0027t think this sentence needs to change this much. Flask isn\u0027t really important here, it\u0027s an implementation detail. I would just keep it mostly the same, something like \"...there are three logical levels of code through which a request passes: the API routing and request handling layer, the resource manager, and the driver.\"",
+      "revId": "f68cf6961218cbe89d4c643bf80df64c812e0fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_c8a59b06",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-12T23:31:35Z",
+      "side": 1,
+      "message": "keystone/api isn\u0027t in this directory",
+      "range": {
+        "startLine": 84,
+        "startChar": 40,
+        "endLine": 84,
+        "endChar": 78
+      },
+      "revId": "f68cf6961218cbe89d4c643bf80df64c812e0fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_68ec4f29",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-12T23:31:35Z",
+      "side": 1,
+      "message": "This isn\u0027t capturing the original meaning. \"\u0027role\u0027resource\" isn\u0027t clear in this context. I would just replace \"controller\" in the original with \"API handler\" or \"API resource\" or \"API route\" or even \"API controller\"",
+      "range": {
+        "startLine": 132,
+        "startChar": 24,
+        "endLine": 132,
+        "endChar": 66
+      },
+      "revId": "f68cf6961218cbe89d4c643bf80df64c812e0fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_48e7cb41",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-12T23:31:35Z",
+      "side": 1,
+      "message": "Why is this capitalized?\n\nThis section was about changing the API interface, not just the schema.",
+      "range": {
+        "startLine": 146,
+        "startChar": 13,
+        "endLine": 146,
+        "endChar": 19
+      },
+      "revId": "f68cf6961218cbe89d4c643bf80df64c812e0fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_a844a71c",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-12T23:31:35Z",
+      "side": 1,
+      "message": "This is confusing because you haven\u0027t mentioned which file your example is in, and the previous sentence mentioned schema.py which is not where this API logic is.",
+      "range": {
+        "startLine": 151,
+        "startChar": 33,
+        "endLine": 151,
+        "endChar": 85
+      },
+      "revId": "f68cf6961218cbe89d4c643bf80df64c812e0fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_a85dc7ea",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-12T23:31:35Z",
+      "side": 1,
+      "message": "However what? This word doesn\u0027t make sense here.",
+      "range": {
+        "startLine": 168,
+        "startChar": 0,
+        "endLine": 168,
+        "endChar": 8
+      },
+      "revId": "f68cf6961218cbe89d4c643bf80df64c812e0fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

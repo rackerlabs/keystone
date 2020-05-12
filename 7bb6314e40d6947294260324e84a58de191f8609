@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_459334fb",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-12T23:31:35Z",
+      "side": 0,
+      "message": "There are still different logical levels, it would be unfortunate to lose that information. I think we could say there are three now, since flask kind of combines the router and controller layers.",
+      "range": {
+        "startLine": 78,
+        "startChar": 67,
+        "endLine": 79,
+        "endChar": 27
+      },
+      "revId": "7bb6314e40d6947294260324e84a58de191f8609",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_889ba3c7",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-12T23:31:35Z",
+      "side": 0,
+      "message": "this is still important",
+      "range": {
+        "startLine": 84,
+        "startChar": 71,
+        "endLine": 84,
+        "endChar": 78
+      },
+      "revId": "7bb6314e40d6947294260324e84a58de191f8609",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_68d56f43",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-12T23:31:35Z",
+      "side": 0,
+      "message": "This is still vital information. I would prefer to reword it rather than delete it.",
+      "range": {
+        "startLine": 148,
+        "startChar": 0,
+        "endLine": 151,
+        "endChar": 7
+      },
+      "revId": "7bb6314e40d6947294260324e84a58de191f8609",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_285097d4",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-12T23:31:35Z",
+      "side": 0,
+      "message": "This is important information.",
+      "revId": "7bb6314e40d6947294260324e84a58de191f8609",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
