@@ -278,8 +278,8 @@ empty condition
 
 
 
-Groups can have multiple values. Each value must be separated by a `;`
-Example: OIDC_GROUPS=developers;testers
+Groups, projects and roles can have multiple values. Each value must be
+separated by a `;`. Example: OIDC_GROUPS=developers;testers
 
 
 other conditions

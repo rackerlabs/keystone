@@ -1,0 +1,11 @@
+---
+features:
+  - |
+    Add support for mapping multiple auto-provisioned Projects from a
+    multi-value remote assertion. This allows you to e.g., map multiple groups
+    from an IdP into auto-provisioned projects. It is also possible to map
+    to multiple roles.
+issues:
+  - |
+    When mapping role names, the roles must already exist in the deployment
+    for the mapping to succeed, as roles are not automatically provisioned.
