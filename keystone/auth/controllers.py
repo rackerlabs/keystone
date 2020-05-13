@@ -130,7 +130,7 @@ class Auth(controller.V3Controller):
             method_names = list(method_names_set)
 
             app_cred_id = None
-            if 'application_credential' in method_names:
+            if 'application_credential' in auth['identity']['methods']:
                 token_auth = auth_info.auth['identity']
                 app_cred_id = token_auth['application_credential']['id']
 
