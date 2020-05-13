@@ -22,6 +22,30 @@
       "revId": "a5af128532d6af1617c9ed54244c5a47c5a1829a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_065fb60e",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 18044
+      },
+      "writtenOn": "2020-05-13T12:24:16Z",
+      "side": 1,
+      "message": "As discussed in bug, we don\u0027t want to get too specific about the failure since that gives more power to attackers. Still confused in this bug, what is expected ?",
+      "parentUuid": "3fa7e38b_cba4500b",
+      "range": {
+        "startLine": 281,
+        "startChar": 21,
+        "endLine": 281,
+        "endChar": 49
+      },
+      "revId": "a5af128532d6af1617c9ed54244c5a47c5a1829a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
