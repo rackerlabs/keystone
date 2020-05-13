@@ -826,6 +826,65 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         self.assertEqual(user_groups, group_list)
         self.assertEqual([], group_ids, )
 
+    def test_mapping_projects_mapped_name(self):
+        mapping = mapping_fixtures.MAPPING_PROJECTS_MAPPED_NAME
+        assertion = mapping_fixtures.EMPLOYEE_ASSERTION_MULTIPLE_GROUP_TYPES
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
+        values = rp.process(assertion)
+        expected_projects = [
+            {
+                "name": "BuildingX",
+                "roles": [{"name": "member"}]
+            },
+            {
+                "name": "BuildingY",
+                "roles": [{"name": "member"}]
+            }
+        ]
+
+        self.assertValidMappedUserObject(values)
+        self.assertEqual(expected_projects, values['projects'])
+
+    def test_mapping_projects_mapped_roles(self):
+        mapping = mapping_fixtures.MAPPING_PROJECTS_MAPPED_ROLES
+        assertion = mapping_fixtures.EMPLOYEE_ASSERTION_MULTIPLE_GROUP_TYPES
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
+        values = rp.process(assertion)
+        expected_username = mapping_fixtures.EMPLOYEE_ASSERTION['UserName']
+        expected_projects = [
+            {
+                "name": "Production",
+                "roles": [{"name": "Developer"}, {"name": "Employee"}]
+            },
+            {
+                "name": "Project for %s" % expected_username,
+                "roles": [{"name": "Admin"}]
+            }
+        ]
+
+        self.assertValidMappedUserObject(values)
+        self.assertEqual(expected_username, values['user']['name'])
+        self.assertEqual(expected_projects, values['projects'])
+
+    def test_mapping_projects_mapped_name_and_roles(self):
+        mapping = mapping_fixtures.MAPPING_PROJECT_MAPPED_NAME_AND_ROLES
+        assertion = mapping_fixtures.EMPLOYEE_ASSERTION_MULTIPLE_GROUP_TYPES
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
+        values = rp.process(assertion)
+        expected_projects = [
+            {
+                "name": "BuildingX",
+                "roles": [{"name": "Developer"}, {"name": "Employee"}]
+            },
+            {
+                "name": "BuildingY",
+                "roles": [{"name": "Developer"}, {"name": "Employee"}]
+            }
+        ]
+
+        self.assertValidMappedUserObject(values)
+        self.assertEqual(expected_projects, values['projects'])
+
 
 class TestUnicodeAssertionData(unit.BaseTestCase):
     """Ensure that unicode data in the assertion headers works.

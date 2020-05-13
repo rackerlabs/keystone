@@ -557,16 +557,8 @@ class RuleProcessor(object):
         return mapped_properties
 
     def _normalize_groups(self, identity_value):
-        # In this case, identity_value['groups'] is a string
-        # representation of a list, and we want a real list.  This is
-        # due to the way we do direct mapping substitutions today (see
-        # function _update_local_mapping() )
         if 'name' in identity_value['groups']:
-            try:
-                group_names_list = ast.literal_eval(
-                    identity_value['groups'])
-            except (ValueError, SyntaxError):
-                group_names_list = [identity_value['groups']]
+            group_names_list = self._expand_listlike(identity_value['groups'])
 
             def convert_json(group):
                 if group.startswith('JSON:'):
@@ -588,15 +580,40 @@ class RuleProcessor(object):
                         "specified.")
                 msg = msg % {'identity_value': identity_value}
                 raise exception.ValidationError(msg)
-            try:
-                group_names_list = ast.literal_eval(
-                    identity_value['groups'])
-            except (ValueError, SyntaxError):
-                group_names_list = [identity_value['groups']]
+
+            group_names_list = self._expand_listlike(identity_value['groups'])
             domain = identity_value['domain']
             group_dicts = [{'name': name, 'domain': domain} for name in
                            group_names_list]
         return group_dicts
+
+    def _normalize_projects(self, identity_value):
+        project_dicts = []
+        for project in identity_value['projects']:
+            project_names_list = self._expand_listlike(project['name'])
+            role_names_list = []
+            for role in project['roles']:
+                role_names_list.extend(self._expand_listlike(role['name']))
+            project_dicts.extend([{'name': p_name, 'roles': [
+                                    {'name': r_name}
+                                    for r_name in role_names_list
+                                 ]} for p_name in project_names_list])
+        return project_dicts
+
+    def _expand_listlike(self, value):
+        """If value is a string representation of a list, parse it to a real
+        list. Also, if the provided value contains only one element, it will
+        be parsed as a simple string, and not a list or the representation
+        of a list.
+
+        This is necessary due to the way we do direct mapping substitutions
+        today (see function _update_local_mapping())
+        """
+        try:
+            value_list = ast.literal_eval(value)
+        except (ValueError, SyntaxError):
+            value_list = [value]
+        return value_list
 
     def _transform(self, identity_values):
         """Transform local mappings, to an easier to understand format.
@@ -688,18 +705,10 @@ class RuleProcessor(object):
                 group_dicts = self._normalize_groups(identity_value)
                 group_names.extend(group_dicts)
             if 'group_ids' in identity_value:
-                # If identity_values['group_ids'] is a string representation
-                # of a list, parse it to a real list. Also, if the provided
-                # group_ids parameter contains only one element, it will be
-                # parsed as a simple string, and not a list or the
-                # representation of a list.
-                try:
-                    group_ids.update(
-                        ast.literal_eval(identity_value['group_ids']))
-                except (ValueError, SyntaxError):
-                    group_ids.update([identity_value['group_ids']])
+                group_ids.update(self._expand_listlike(identity_value['group_ids']))
             if 'projects' in identity_value:
-                projects = identity_value['projects']
+                project_dicts = self._normalize_projects(identity_value)
+                projects.extend(project_dicts)
 
         normalize_user(user)
 
