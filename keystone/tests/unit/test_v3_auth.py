@@ -50,6 +50,7 @@ PROVIDERS = provider_api.ProviderAPIs
 
 
 class TestMFARules(test_v3.RestfulTestCase):
+
     def config_overrides(self):
         super(TestMFARules, self).config_overrides()
 
@@ -463,6 +464,7 @@ class TestMFARules(test_v3.RestfulTestCase):
 
 
 class TestAuthInfo(common_auth.AuthTestMixin, testcase.TestCase):
+
     def setUp(self):
         super(TestAuthInfo, self).setUp()
         auth.core.load_auth_methods()
@@ -530,6 +532,7 @@ class TokenAPITests(object):
     # called by the enumerate-tests-in-file code. The way the functions get
     # resolved in Python for multiple inheritance means that a setUp in this
     # would get skipped by the testrunner.
+
     def doSetUp(self):
         r = self.v3_create_token(self.build_authentication_request(
             username=self.user['name'],
@@ -2717,6 +2720,7 @@ class TokenDataTests(object):
 
 
 class AllowRescopeScopedTokenDisabledTests(test_v3.RestfulTestCase):
+
     def config_overrides(self):
         super(AllowRescopeScopedTokenDisabledTests, self).config_overrides()
         self.config_fixture.config(
@@ -2756,6 +2760,7 @@ class AllowRescopeScopedTokenDisabledTests(test_v3.RestfulTestCase):
 
 class TestFernetTokenAPIs(test_v3.RestfulTestCase, TokenAPITests,
                           TokenDataTests):
+
     def config_overrides(self):
         super(TestFernetTokenAPIs, self).config_overrides()
         self.config_fixture.config(group='token', provider='fernet',
@@ -2820,6 +2825,7 @@ class TestFernetTokenAPIs(test_v3.RestfulTestCase, TokenAPITests,
 
 
 class TestJWSTokenAPIs(test_v3.RestfulTestCase, TokenAPITests, TokenDataTests):
+
     def config_overrides(self):
         super(TestJWSTokenAPIs, self).config_overrides()
         self.config_fixture.config(group='token', provider='jws',
@@ -3724,6 +3730,7 @@ class TestTokenRevokeApi(TestTokenRevokeById):
 
 
 class TestAuthExternalDisabled(test_v3.RestfulTestCase):
+
     def config_overrides(self):
         super(TestAuthExternalDisabled, self).config_overrides()
         self.config_fixture.config(
@@ -4833,6 +4840,7 @@ class TestTrustChain(test_v3.RestfulTestCase):
 
 
 class TestAuthContext(unit.TestCase):
+
     def setUp(self):
         super(TestAuthContext, self).setUp()
         self.auth_context = auth.core.AuthContext()
@@ -5131,6 +5139,7 @@ class TestAuthSpecificData(test_v3.RestfulTestCase):
 
 
 class TestTrustAuthFernetTokenProvider(TrustAPIBehavior, TestTrustChain):
+
     def config_overrides(self):
         super(TestTrustAuthFernetTokenProvider, self).config_overrides()
         self.config_fixture.config(group='token',
@@ -5490,6 +5499,88 @@ class ApplicationCredentialAuth(test_v3.RestfulTestCase):
         auth_data = self.build_authentication_request(
             app_cred_id=app_cred_ref['id'], secret=app_cred_ref['secret'])
         self.v3_create_token(auth_data, expected_status=http.client.CREATED)
+
+    def get_unscoped_token_from_application_credential_token_succeeds(self):
+        app_cred = self._make_app_cred()
+        app_cred_ref = self.app_cred_api.create_application_credential(
+            app_cred)
+        auth_data = self.build_authentication_request(
+            app_cred_id=app_cred_ref['id'], secret=app_cred_ref['secret'])
+        token = self.get_requested_token(auth_data)
+        auth_data = {
+            "auth": {
+                "identity": {
+                    "methods": [
+                        "token"
+                    ],
+                    "token": {
+                        "id": token
+                    }
+                },
+                "scope": "unscoped"
+            }
+        }
+        self.admin_request(
+            method='POST', path='/v3/auth/tokens', body=auth_data,
+            expected_status=http.client.CREATED
+        )
+
+    def get_scoped_token_from_application_credential_token_succeeds(self):
+        app_cred = self._make_app_cred()
+        app_cred_ref = self.app_cred_api.create_application_credential(
+            app_cred)
+        auth_data = self.build_authentication_request(
+            app_cred_id=app_cred_ref['id'], secret=app_cred_ref['secret'])
+        token = self.get_requested_token(auth_data)
+        auth_data = {
+            "auth": {
+                "identity": {
+                    "methods": [
+                        "token"
+                    ],
+                    "token": {
+                        "id": token
+                    }
+                },
+                "scope": {
+                    'project': {
+                        'id': self.project['id'],
+                    }
+                }
+            }
+        }
+        self.admin_request(
+            method='POST', path='/v3/auth/tokens', body=auth_data,
+            expected_status=http.client.CREATED
+        )
+
+    def get_system_scoped_token_from_application_credential_token_succeeds(
+            self):
+        app_cred = self._make_app_cred()
+        app_cred_ref = self.app_cred_api.create_application_credential(
+            app_cred)
+        auth_data = self.build_authentication_request(
+            app_cred_id=app_cred_ref['id'], secret=app_cred_ref['secret'])
+        token = self.get_requested_token(auth_data)
+        auth_data = {
+            "auth": {
+                "identity": {
+                    "methods": [
+                        "token"
+                    ],
+                    "token": {
+                        "id": token
+                    }
+                },
+                "scope": {
+                    'system': {'all': True}
+                }
+            }
+        }
+        self.admin_request(
+            method='POST', path='/v3/auth/tokens', body=auth_data,
+            expected_status=http.client.CREATED
+        )
 
     def test_validate_application_credential_token_populates_restricted(self):
         self.config_fixture.config(group='token', cache_on_issue=False)
