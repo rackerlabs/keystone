@@ -16,6 +16,24 @@
       "revId": "17592d342e755cc694f587133a8a1420d0fa707a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_bec03a7d",
+        "filename": "releasenotes/notes/bug-1873290-ff7f8e4cee15b75a.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-05-14T13:40:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_46c161e4",
+      "revId": "17592d342e755cc694f587133a8a1420d0fa707a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
