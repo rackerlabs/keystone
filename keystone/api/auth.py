@@ -19,6 +19,7 @@ import http.client
 from oslo_log import log
 from oslo_serialization import jsonutils
 from oslo_utils import strutils
+import re
 import urllib
 import werkzeug.exceptions
 
@@ -372,6 +373,70 @@ class AuthFederationWebSSOResource(_AuthFederationWebSSOBase):
         return self._perform_auth(protocol_id)
 
 
+class AuthFederationWebSSODiscoverResource(_AuthFederationWebSSOBase):
+    @classmethod
+    def _discover_openid_idp(cls):
+        target_link_uri = flask.request.args.get('target_link_uri')
+        oidc_callback = flask.request.args.get('oidc_callback')
+
+        if not (target_link_uri and oidc_callback):
+            msg = 'Malformed discovery request'
+            tr_msg = _('Malformed discovery request')
+            LOG.error(msg)
+            raise werkzeug.exceptions.BadRequest(description=tr_msg)
+
+        # Find the IdP encoded in the initiator URL
+        target_parsed = urllib.parse.urlparse(target_link_uri)
+        pattern = '/v3/auth/OS-FEDERATION/identity_providers/(.+)/protocols/.*'
+        match = re.match(pattern, target_parsed.path)
+        if match:
+            idp_id = match.groups()
+        else:
+            idps = PROVIDERS.federation_api.list_idps()
+            if len(idps) != 1:
+                msg = 'Could not automatically discover IdP'
+                tr_msg = _('Could not automatically discover IdP')
+                LOG.error(msg)
+                raise werkzeug.exceptions.BadRequest(description=tr_msg)
+            idp_id = idps[0]['id']
+
+        remote_ids = PROVIDERS.federation_api.get_idp(idp_id)['remote_ids']
+        callback_parsed = urllib.parse.urlparse(oidc_callback)
+
+        # Prevent open redirect
+        if callback_parsed.netloc != flask.request.host:
+            msg = 'Invalid callback URL'
+            tr_msg = _('Invalid callback URL')
+            LOG.error(msg)
+            raise werkzeug.exceptions.BadRequest(description=tr_msg)
+
+        callback_query = urllib.parse.parse_qs(callback_parsed.query)
+        callback_query['iss'] = remote_ids[0]
+        passthrough_params = ['target_link_uri', 'login_hint', 'scopes',
+                              'auth_request_params', 'x_csrf']
+        for key in passthrough_params:
+            request_value = flask.request.args.get(key)
+            if request_value is not None:
+                callback_query[key] = request_value
+        # Note: _replace method for named tuples is public and defined in docs
+        callback_replaced = callback_parsed._replace(
+            query=urllib.parse.urlencode(callback_query))
+        oidc_callback_url = urllib.parse.urlunparse(callback_replaced)
+
+        return flask.redirect(oidc_callback_url, code=302)
+
+    @ks_flask.unenforced_api
+    def get(self, protocol_id):
+        # NOTE(jasonandersonatuchicago): it's possible that SAML also supports
+        # some sort of discovery mechanism in the case of multiple IdPs.
+        # If that is implemented, this can go away.
+        if protocol_id != 'openid':
+            raise werkzeug.exceptions.BadRequest(
+                description="Only openid protocol supports discovery")
+
+        return self._discover_openid_idp()
+
+
 class AuthFederationWebSSOIDPsResource(_AuthFederationWebSSOBase):
     @classmethod
     def _perform_auth(cls, idp_id, protocol_id):
@@ -523,6 +588,18 @@ class AuthFederationAPI(ks_flask.APIBase):
         ks_flask.construct_resource_map(
             resource=AuthFederationWebSSOResource,
             url='/auth/OS-FEDERATION/websso/<string:protocol_id>',
+            resource_kwargs={},
+            rel='websso',
+            resource_relation_func=(
+                json_home_relations.os_federation_resource_rel_func),
+            path_vars={
+                'protocol_id': (
+                    json_home_relations.os_federation_parameter_rel_func(
+                        parameter_name='protocol_id'))}
+        ),
+        ks_flask.construct_resource_map(
+            resource=AuthFederationWebSSODiscoverResource,
+            url='/auth/OS-FEDERATION/websso/<string:protocol_id>/discover',
             resource_kwargs={},
             rel='websso',
             resource_relation_func=(
