@@ -263,6 +263,7 @@ texinfo_documents = [
 locale_dirs = ['locale/']
 
 # -- Options for openstackdocstheme -------------------------------------------
-repository_name = 'openstack/keystone'
-bug_project = 'keystone'
-bug_tag = 'doc'
+openstackdocs_auto_name = False
+openstackdocs_repo_name = 'openstack/keystone'
+openstackdocs_bug_project = 'keystone'
+openstackdocs_bug_tag = 'doc'
