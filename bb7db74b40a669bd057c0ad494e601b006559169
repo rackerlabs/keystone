@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_bd4cae9e",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-15T11:04:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_451df464",
+      "range": {
+        "startLine": 133,
+        "startChar": 51,
+        "endLine": 133,
+        "endChar": 55
+      },
+      "revId": "bb7db74b40a669bd057c0ad494e601b006559169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_c522a4a4",
         "filename": "doc/source/getting-started/architecture.rst",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_9d4f2a91",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-15T11:04:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_c522a4a4",
+      "range": {
+        "startLine": 138,
+        "startChar": 0,
+        "endLine": 138,
+        "endChar": 49
+      },
+      "revId": "bb7db74b40a669bd057c0ad494e601b006559169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_854d4c74",
         "filename": "doc/source/getting-started/architecture.rst",
         "patchSetId": 2
@@ -59,6 +107,30 @@
       "writtenOn": "2020-05-12T22:27:05Z",
       "side": 1,
       "message": "omit this",
+      "range": {
+        "startLine": 139,
+        "startChar": 35,
+        "endLine": 139,
+        "endChar": 70
+      },
+      "revId": "bb7db74b40a669bd057c0ad494e601b006559169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_dd49a28b",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-15T11:04:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_854d4c74",
       "range": {
         "startLine": 139,
         "startChar": 35,
@@ -140,6 +212,78 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_b8ff9cff",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-15T11:04:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_8576eca3",
+      "range": {
+        "startLine": 140,
+        "startChar": 50,
+        "endLine": 140,
+        "endChar": 58
+      },
+      "revId": "bb7db74b40a669bd057c0ad494e601b006559169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_5d03d20f",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-15T11:04:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_6550f80b",
+      "range": {
+        "startLine": 140,
+        "startChar": 9,
+        "endLine": 140,
+        "endChar": 15
+      },
+      "revId": "bb7db74b40a669bd057c0ad494e601b006559169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_7d08562b",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-15T11:04:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_454b3458",
+      "range": {
+        "startLine": 140,
+        "startChar": 16,
+        "endLine": 140,
+        "endChar": 43
+      },
+      "revId": "bb7db74b40a669bd057c0ad494e601b006559169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_e56408e8",
         "filename": "doc/source/getting-started/architecture.rst",
         "patchSetId": 2
@@ -151,6 +295,30 @@
       "writtenOn": "2020-05-12T22:27:05Z",
       "side": 1,
       "message": "exposes",
+      "range": {
+        "startLine": 141,
+        "startChar": 53,
+        "endLine": 141,
+        "endChar": 59
+      },
+      "revId": "bb7db74b40a669bd057c0ad494e601b006559169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_98029808",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-15T11:04:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_e56408e8",
       "range": {
         "startLine": 141,
         "startChar": 53,
@@ -232,6 +400,78 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_781d0465",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-15T11:04:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_4564d4e4",
+      "range": {
+        "startLine": 142,
+        "startChar": 40,
+        "endLine": 142,
+        "endChar": 41
+      },
+      "revId": "bb7db74b40a669bd057c0ad494e601b006559169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_d80c103d",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-15T11:04:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_056adcb1",
+      "range": {
+        "startLine": 142,
+        "startChar": 13,
+        "endLine": 142,
+        "endChar": 40
+      },
+      "revId": "bb7db74b40a669bd057c0ad494e601b006559169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_180e8831",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-15T11:04:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_255f200f",
+      "range": {
+        "startLine": 142,
+        "startChar": 53,
+        "endLine": 142,
+        "endChar": 54
+      },
+      "revId": "bb7db74b40a669bd057c0ad494e601b006559169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_c5a58406",
         "filename": "doc/source/getting-started/architecture.rst",
         "patchSetId": 2
@@ -249,6 +489,24 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_58180074",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-15T11:04:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_c5a58406",
+      "revId": "bb7db74b40a669bd057c0ad494e601b006559169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_c5cc64be",
         "filename": "doc/source/getting-started/architecture.rst",
         "patchSetId": 2
@@ -260,6 +518,30 @@
       "writtenOn": "2020-05-12T22:27:05Z",
       "side": 1,
       "message": "Routes for each API resource are defined by classes which inherit from ...",
+      "range": {
+        "startLine": 170,
+        "startChar": 0,
+        "endLine": 170,
+        "endChar": 88
+      },
+      "revId": "bb7db74b40a669bd057c0ad494e601b006559169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_f822b4a3",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-15T11:04:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_c5cc64be",
       "range": {
         "startLine": 170,
         "startChar": 0,
@@ -318,6 +600,54 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_1837a8e5",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-15T11:04:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_e5c0887f",
+      "range": {
+        "startLine": 171,
+        "startChar": 56,
+        "endLine": 171,
+        "endChar": 57
+      },
+      "revId": "bb7db74b40a669bd057c0ad494e601b006559169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_383c2cc7",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-15T11:04:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_05c65c9b",
+      "range": {
+        "startLine": 171,
+        "startChar": 43,
+        "endLine": 171,
+        "endChar": 44
+      },
+      "revId": "bb7db74b40a669bd057c0ad494e601b006559169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_65875863",
         "filename": "doc/source/getting-started/architecture.rst",
         "patchSetId": 2
@@ -335,6 +665,24 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_7836a4e8",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-15T11:04:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_65875863",
+      "revId": "bb7db74b40a669bd057c0ad494e601b006559169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_e5a9a8dd",
         "filename": "doc/source/getting-started/architecture.rst",
         "patchSetId": 2
@@ -346,6 +694,24 @@
       "writtenOn": "2020-05-12T22:27:05Z",
       "side": 1,
       "message": "The indentation is off below this line",
+      "revId": "bb7db74b40a669bd057c0ad494e601b006559169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_583120ec",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-15T11:04:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_e5a9a8dd",
       "revId": "bb7db74b40a669bd057c0ad494e601b006559169",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -421,6 +787,78 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_9850d80c",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-15T11:04:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_45c0547c",
+      "range": {
+        "startLine": 187,
+        "startChar": 4,
+        "endLine": 187,
+        "endChar": 10
+      },
+      "revId": "bb7db74b40a669bd057c0ad494e601b006559169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_d85a5028",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-15T11:04:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_e5452817",
+      "range": {
+        "startLine": 187,
+        "startChar": 31,
+        "endLine": 187,
+        "endChar": 54
+      },
+      "revId": "bb7db74b40a669bd057c0ad494e601b006559169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_f8575401",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-15T11:04:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_a544d01c",
+      "range": {
+        "startLine": 187,
+        "startChar": 11,
+        "endLine": 187,
+        "endChar": 27
+      },
+      "revId": "bb7db74b40a669bd057c0ad494e601b006559169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_6563d8b2",
         "filename": "doc/source/getting-started/architecture.rst",
         "patchSetId": 2
@@ -455,6 +893,54 @@
       "writtenOn": "2020-05-12T22:27:05Z",
       "side": 1,
       "message": "bind",
+      "range": {
+        "startLine": 188,
+        "startChar": 0,
+        "endLine": 188,
+        "endChar": 5
+      },
+      "revId": "bb7db74b40a669bd057c0ad494e601b006559169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_3841cc3a",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-15T11:04:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_6563d8b2",
+      "range": {
+        "startLine": 188,
+        "startChar": 29,
+        "endLine": 188,
+        "endChar": 34
+      },
+      "revId": "bb7db74b40a669bd057c0ad494e601b006559169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_183cc8bd",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-15T11:04:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_8560aca7",
       "range": {
         "startLine": 188,
         "startChar": 0,
