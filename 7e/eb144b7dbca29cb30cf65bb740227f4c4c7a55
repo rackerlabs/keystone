@@ -1,0 +1,11 @@
+Code-Review+2: Sean McGinnis <sean.mcginnis@gmail.com>
+Code-Review+1: Andrii Ostapenko <andrii.ostapenko@att.com>
+Code-Review+1: Ghanshyam Mann <gmann@ghanshyammann.com>
+Workflow+1: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: Gage Hugo <gagehugo@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Sun, 17 May 2020 23:09:12 +0000
+Reviewed-on: https://review.opendev.org/727372
+Project: openstack/keystone
+Branch: refs/heads/stable/train
