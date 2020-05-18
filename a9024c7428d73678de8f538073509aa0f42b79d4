@@ -16,6 +16,24 @@
       "revId": "a9024c7428d73678de8f538073509aa0f42b79d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_fcbc3a07",
+        "filename": ".zuul.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2020-05-18T18:00:40Z",
+      "side": 1,
+      "message": "integrated-gate have three jobs:\n\n- legacy-tempest-dsvm-neutron-full is not applicable to stable/pike\n- tempest-full\n- neutron-grenade\n\nDo I need to create a new project template just for tempest-ful? It is already included below.",
+      "parentUuid": "ff570b3c_63324960",
+      "revId": "a9024c7428d73678de8f538073509aa0f42b79d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
