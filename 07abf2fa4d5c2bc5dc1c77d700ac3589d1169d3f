@@ -16,6 +16,24 @@
       "revId": "07abf2fa4d5c2bc5dc1c77d700ac3589d1169d3f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_4cde5f11",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-18T10:48:47Z",
+      "side": 0,
+      "message": "I thought the user might get confused between managers and subsystems. So I preferred using one of them i.e Subsystems. But I agree with you that managers are a valid thing in keystone and caching is handled by it. I added the managers back in the doc.",
+      "parentUuid": "ff570b3c_682e0ffb",
+      "revId": "07abf2fa4d5c2bc5dc1c77d700ac3589d1169d3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
