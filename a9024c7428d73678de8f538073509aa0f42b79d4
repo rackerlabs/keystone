@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_63324960",
+        "filename": ".zuul.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2020-05-18T16:16:30Z",
+      "side": 1,
+      "message": "This template includes neutron-grenade, add the jobs that you *want* from https://opendev.org/openstack/openstack-zuul-jobs/src/branch/master/zuul.d/zuul-legacy-project-templates.yaml#L11 here and remove the template.",
+      "revId": "a9024c7428d73678de8f538073509aa0f42b79d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
