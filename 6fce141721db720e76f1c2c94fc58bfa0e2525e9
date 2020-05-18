@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_a471150f",
+        "filename": "doc/source/contributor/id-manage.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-18T08:48:59Z",
+      "side": 1,
+      "message": "Good suggestion. Thanks",
+      "parentUuid": "ff570b3c_a50cd03b",
+      "range": {
+        "startLine": 17,
+        "startChar": 29,
+        "endLine": 17,
+        "endChar": 53
+      },
+      "revId": "6fce141721db720e76f1c2c94fc58bfa0e2525e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_42acca33",
         "filename": "doc/source/contributor/id-manage.rst",
         "patchSetId": 3
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_e4682d1e",
+        "filename": "doc/source/contributor/id-manage.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-18T08:48:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_42acca33",
+      "revId": "6fce141721db720e76f1c2c94fc58bfa0e2525e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_e2507e61",
         "filename": "doc/source/contributor/id-manage.rst",
         "patchSetId": 3
@@ -53,6 +95,24 @@
       "writtenOn": "2020-05-12T22:14:37Z",
       "side": 1,
       "message": "This isn\u0027t future-proof, it would be better to use a relative link rather than treating it as an external site for the reasons given here https://review.opendev.org/675667",
+      "revId": "6fce141721db720e76f1c2c94fc58bfa0e2525e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_445ab982",
+        "filename": "doc/source/contributor/id-manage.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-18T08:48:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_e2507e61",
       "revId": "6fce141721db720e76f1c2c94fc58bfa0e2525e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
