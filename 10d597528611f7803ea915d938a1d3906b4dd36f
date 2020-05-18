@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_4cbf7f60",
+        "filename": "doc/source/contributor/filtering-responsibilities.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-18T11:13:27Z",
+      "side": 1,
+      "message": "I think API resource is good to use",
+      "parentUuid": "ff570b3c_858f0c22",
+      "range": {
+        "startLine": 18,
+        "startChar": 35,
+        "endLine": 18,
+        "endChar": 38
+      },
+      "revId": "10d597528611f7803ea915d938a1d3906b4dd36f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_6508f8d8",
         "filename": "doc/source/contributor/filtering-responsibilities.rst",
         "patchSetId": 3
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_acaf3b28",
+        "filename": "doc/source/contributor/filtering-responsibilities.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-18T11:13:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_6508f8d8",
+      "revId": "10d597528611f7803ea915d938a1d3906b4dd36f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_a59cd05d",
         "filename": "doc/source/contributor/filtering-responsibilities.rst",
         "patchSetId": 3
@@ -53,6 +95,30 @@
       "writtenOn": "2020-05-12T22:55:38Z",
       "side": 1,
       "message": "\"API resource\" or \"Flask resource\"",
+      "range": {
+        "startLine": 22,
+        "startChar": 63,
+        "endLine": 22,
+        "endChar": 66
+      },
+      "revId": "10d597528611f7803ea915d938a1d3906b4dd36f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_ccb26f94",
+        "filename": "doc/source/contributor/filtering-responsibilities.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-18T11:13:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_a59cd05d",
       "range": {
         "startLine": 22,
         "startChar": 63,
@@ -88,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_0ca90723",
+        "filename": "doc/source/contributor/filtering-responsibilities.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-18T11:13:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_45adf486",
+      "range": {
+        "startLine": 28,
+        "startChar": 48,
+        "endLine": 28,
+        "endChar": 51
+      },
+      "revId": "10d597528611f7803ea915d938a1d3906b4dd36f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_454974ce",
         "filename": "doc/source/contributor/filtering-responsibilities.rst",
         "patchSetId": 3
@@ -99,6 +189,30 @@
       "writtenOn": "2020-05-12T22:55:38Z",
       "side": 1,
       "message": "Before flask, the list methods of the controller and driver were usually named the same thing, for example ``list_users`` was used both in keystone/identity/controllers.py and keystone/identity/backend/sql.py. On this line, ``list_{entity}`` wasn\u0027t referring to the controller but to the driver. The drivers don\u0027t use methods like get(), they still use ``list_{entity}``. So I wouldn\u0027t change this line.",
+      "range": {
+        "startLine": 34,
+        "startChar": 30,
+        "endLine": 34,
+        "endChar": 37
+      },
+      "revId": "10d597528611f7803ea915d938a1d3906b4dd36f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_6c6fe3fb",
+        "filename": "doc/source/contributor/filtering-responsibilities.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-18T11:13:27Z",
+      "side": 1,
+      "message": "Thanks for the clarification here. Done",
+      "parentUuid": "ff570b3c_454974ce",
       "range": {
         "startLine": 34,
         "startChar": 30,
