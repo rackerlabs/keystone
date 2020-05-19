@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_cf1a3a15",
+        "filename": "doc/source/contributor/domain-specific-configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-19T20:10:03Z",
+      "side": 1,
+      "message": "This is not what I meant. Here is what I said:\n\n \u003e Instead of replacing \"controllers\" with \"API\", could we replace\n \u003e this part with something that makes it clear what this section is\n \u003e really about - maybe \"... for domain-specific backends\"?\n\nBy \"this part\" I meant the part I highlighted, which was just \"between API and drivers\". Enabling drivers is not what the section is about. It is still about identity entity ID management.\n\nSo my suggestion was for the title to become \"Identity entity ID management for domain-specific backends\". I also would not rename the file, there is no reason to do so.",
+      "revId": "8be60601321ebc140c701b7b3e44fa3b3eca59ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_6fc96e57",
+        "filename": "doc/source/contributor/domain-specific-configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-19T20:10:03Z",
+      "side": 1,
+      "message": "The link isn\u0027t coming out correctly, if you check the preview site: https://b5ee1ed3653a458879e1-60fa9bbec8248937c3af4b3a8047f40b.ssl.cf2.rackcdn.com/723403/7/check/openstack-tox-docs/6e15bc8/docs/contributor/domain-specific-configuration.html",
+      "revId": "8be60601321ebc140c701b7b3e44fa3b3eca59ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_8fd32204",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-19T20:10:03Z",
+      "side": 1,
+      "message": "This is unrelated to the doc change",
+      "revId": "8be60601321ebc140c701b7b3e44fa3b3eca59ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
