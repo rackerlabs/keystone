@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_cd8c02d9",
+        "filename": "doc/source/getting-started/architecture.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-19T21:19:54Z",
+      "side": 1,
+      "message": "I think you should be able to use \u0027...\u0027 here, using \u0027pass\u0027 without explanation makes it seem like this is an empty function",
+      "range": {
+        "startLine": 157,
+        "startChar": 12,
+        "endLine": 157,
+        "endChar": 16
+      },
+      "revId": "ea545821c7d6eac225271abd29b6f8b376978b72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
