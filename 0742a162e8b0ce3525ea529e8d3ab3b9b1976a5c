@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_0fca7219",
+        "filename": "doc/source/contributor/list-truncation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-19T20:13:17Z",
+      "side": 1,
+      "message": "see comment on ps3",
+      "range": {
+        "startLine": 22,
+        "startChar": 22,
+        "endLine": 22,
+        "endChar": 36
+      },
+      "revId": "0742a162e8b0ce3525ea529e8d3ab3b9b1976a5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_efcc5e36",
+        "filename": "doc/source/contributor/list-truncation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-19T20:13:17Z",
+      "side": 1,
+      "message": "see comment on ps3",
+      "range": {
+        "startLine": 27,
+        "startChar": 22,
+        "endLine": 27,
+        "endChar": 35
+      },
+      "revId": "0742a162e8b0ce3525ea529e8d3ab3b9b1976a5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
