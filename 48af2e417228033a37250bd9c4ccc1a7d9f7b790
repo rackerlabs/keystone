@@ -156,6 +156,24 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_c71a2415",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3498,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-19T19:47:02Z",
+      "side": 1,
+      "message": "The test needs to show that the user can log in 90 days (or any amount of time, whatever you want to configure in [security_compliance]) + 1 after they have initially logged in, because the problem now is that they can\u0027t. You can use freezegun or the oslotest timeutils fixture for this.",
+      "parentUuid": "ff570b3c_af5714ca",
+      "revId": "48af2e417228033a37250bd9c4ccc1a7d9f7b790",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f493fa4_e0752afc",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 4
@@ -185,6 +203,24 @@
       "side": 1,
       "message": "The \"last_active_at\" is updated directly in database and doesn\u0027t show when I use provider interface for showing the user details. So I queried SQL directly same as [1]. I was not able to find another way to do it.\n\n[1]https://github.com/openstack/keystone/blob/master/keystone/tests/unit/identity/shadow_users/test_backend.py#L157",
       "parentUuid": "1f493fa4_e0752afc",
+      "revId": "48af2e417228033a37250bd9c4ccc1a7d9f7b790",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_5c342a4a",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3512,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-19T19:47:02Z",
+      "side": 1,
+      "message": "You\u0027re right, that attribute isn\u0027t exposed to the manager. However if you restructure the test as requested above you won\u0027t need to inspect the user object directly so this won\u0027t be needed.",
+      "parentUuid": "ff570b3c_6fbdfcd6",
       "revId": "48af2e417228033a37250bd9c4ccc1a7d9f7b790",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
