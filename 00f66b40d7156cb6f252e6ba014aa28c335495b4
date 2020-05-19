@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_8fb4c281",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-19T20:37:04Z",
+      "side": 1,
+      "message": "Don\u0027t use github links. Github is just a mirror, it\u0027s not authoritative. Use opendev: https://opendev.org/openstack/oslo.cache",
+      "revId": "00f66b40d7156cb6f252e6ba014aa28c335495b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_d234a1e0",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-19T20:37:04Z",
+      "side": 1,
+      "message": "why change this example? They\u0027re both good examples I just don\u0027t know why change it",
+      "range": {
+        "startLine": 29,
+        "startChar": 67,
+        "endLine": 29,
+        "endChar": 77
+      },
+      "revId": "00f66b40d7156cb6f252e6ba014aa28c335495b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_52a41108",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-19T20:37:04Z",
+      "side": 1,
+      "message": "again not really sure why the example was changed? this is how the token provider is cached: https://opendev.org/openstack/keystone/src/branch/master/keystone/token/provider.py#L41-L43",
+      "range": {
+        "startLine": 35,
+        "startChar": 46,
+        "endLine": 35,
+        "endChar": 55
+      },
+      "revId": "00f66b40d7156cb6f252e6ba014aa28c335495b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_929a29b6",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-19T20:37:04Z",
+      "side": 1,
+      "message": "remove this extra word, it was fine before",
+      "range": {
+        "startLine": 49,
+        "startChar": 44,
+        "endLine": 49,
+        "endChar": 47
+      },
+      "revId": "00f66b40d7156cb6f252e6ba014aa28c335495b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_1292994c",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-19T20:37:04Z",
+      "side": 1,
+      "message": "This links to the admin section, but this is the contributor documentation - we should update the cache invalidation example code instead of deleting it. Here\u0027s how we do cache invalidation nowadays: https://opendev.org/openstack/keystone/src/branch/master/keystone/resource/core.py#L826",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 46
+      },
+      "revId": "00f66b40d7156cb6f252e6ba014aa28c335495b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
