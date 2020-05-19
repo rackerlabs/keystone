@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_6f385c9f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-19T11:44:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f493fa4_80238605",
+      "range": {
+        "startLine": 13,
+        "startChar": 59,
+        "endLine": 13,
+        "endChar": 68
+      },
+      "revId": "48af2e417228033a37250bd9c4ccc1a7d9f7b790",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f493fa4_6082baca",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 4
@@ -114,6 +138,24 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_af5714ca",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3498,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-19T11:44:57Z",
+      "side": 1,
+      "message": "Do I need to make other changes then? The \"last_active_at\" is updated in the database for the user.",
+      "parentUuid": "1f493fa4_70da7117",
+      "revId": "48af2e417228033a37250bd9c4ccc1a7d9f7b790",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f493fa4_e0752afc",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 4
@@ -125,6 +167,24 @@
       "writtenOn": "2020-05-05T16:56:14Z",
       "side": 1,
       "message": "Please use the PROVIDERS interface here, do not use sql directly.",
+      "revId": "48af2e417228033a37250bd9c4ccc1a7d9f7b790",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_6fbdfcd6",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3512,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-19T11:44:57Z",
+      "side": 1,
+      "message": "The \"last_active_at\" is updated directly in database and doesn\u0027t show when I use provider interface for showing the user details. So I queried SQL directly same as [1]. I was not able to find another way to do it.\n\n[1]https://github.com/openstack/keystone/blob/master/keystone/tests/unit/identity/shadow_users/test_backend.py#L157",
+      "parentUuid": "1f493fa4_e0752afc",
       "revId": "48af2e417228033a37250bd9c4ccc1a7d9f7b790",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
