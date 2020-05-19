@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ff570b3c_323d1ddd",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6928
+      },
+      "writtenOn": "2020-05-19T20:58:15Z",
+      "side": 1,
+      "message": "Nit: We typically refer to the Oslo projects by their . name, so oslo.cache vs. oslo_cache. oslo_cache is the module name for (possibly historical) technical reasons.",
+      "revId": "00f66b40d7156cb6f252e6ba014aa28c335495b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_8fb4c281",
         "filename": "doc/source/contributor/caching-layer.rst",
         "patchSetId": 4
