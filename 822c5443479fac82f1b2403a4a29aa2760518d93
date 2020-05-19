@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_3c5e9675",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-19T19:47:02Z",
+      "side": 1,
+      "message": "It\u0027s a specific type of local users - local users using a federated identity, which is what the original author said. It was not broken for all local users.",
+      "range": {
+        "startLine": 13,
+        "startChar": 33,
+        "endLine": 13,
+        "endChar": 44
+      },
+      "revId": "822c5443479fac82f1b2403a4a29aa2760518d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_9c6fe229",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-19T19:47:02Z",
+      "side": 1,
+      "message": "We\u0027re not touching the IdP here. This sentence doesn\u0027t make sense any more - the author\u0027s original sentence was correct.",
+      "range": {
+        "startLine": 14,
+        "startChar": 3,
+        "endLine": 14,
+        "endChar": 23
+      },
+      "revId": "822c5443479fac82f1b2403a4a29aa2760518d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_bc4906b8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-19T19:47:02Z",
+      "side": 1,
+      "message": "federated user",
+      "range": {
+        "startLine": 15,
+        "startChar": 51,
+        "endLine": 15,
+        "endChar": 55
+      },
+      "revId": "822c5443479fac82f1b2403a4a29aa2760518d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_5cd0aac9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-19T19:47:02Z",
+      "side": 1,
+      "message": "Being able to view the attribute is not important. The attribute is an implementation detail. The important thing is that the user can continue to log in as long as they are refreshing their active status by logging in regularly.",
+      "range": {
+        "startLine": 21,
+        "startChar": 26,
+        "endLine": 21,
+        "endChar": 30
+      },
+      "revId": "822c5443479fac82f1b2403a4a29aa2760518d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_7cd80eee",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-19T19:47:02Z",
+      "side": 1,
+      "message": "This is not about using keystone as an IdP, the problem existed for any federated user including external IdP users.",
+      "range": {
+        "startLine": 22,
+        "startChar": 21,
+        "endLine": 22,
+        "endChar": 36
+      },
+      "revId": "822c5443479fac82f1b2403a4a29aa2760518d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_1cc112e6",
+        "filename": "releasenotes/notes/update_last_active_for_ephemeral_users-24555a360168924d.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-19T19:47:02Z",
+      "side": 1,
+      "message": "Suggest instead:\n\nFixed a bug for federated users using security compliance settings: local users using federated identity for authentication were incorrectly being locked out if ``[security_compliance]/disable_user_account_days_inactive`` was enabled. Now federated users will remain activated if they continue to refresh their logins within the configured time frame.",
+      "range": {
+        "startLine": 4,
+        "startChar": 4,
+        "endLine": 5,
+        "endChar": 23
+      },
+      "revId": "822c5443479fac82f1b2403a4a29aa2760518d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
