@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_f5442476",
+        "filename": "doc/source/contributor/domain-specific-configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-20T09:24:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_cf1a3a15",
+      "revId": "8be60601321ebc140c701b7b3e44fa3b3eca59ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_6fc96e57",
         "filename": "doc/source/contributor/domain-specific-configuration.rst",
         "patchSetId": 7
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_d5476076",
+        "filename": "doc/source/contributor/domain-specific-configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-20T09:24:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_6fc96e57",
+      "revId": "8be60601321ebc140c701b7b3e44fa3b3eca59ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_8fd32204",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 7
@@ -47,6 +83,24 @@
       "writtenOn": "2020-05-19T20:10:03Z",
       "side": 1,
       "message": "This is unrelated to the doc change",
+      "revId": "8be60601321ebc140c701b7b3e44fa3b3eca59ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_155d5846",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-20T09:24:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_8fd32204",
       "revId": "8be60601321ebc140c701b7b3e44fa3b3eca59ba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
