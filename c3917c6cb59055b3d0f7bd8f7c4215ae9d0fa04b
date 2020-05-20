@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_2c7bee27",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-20T15:23:25Z",
+      "side": 1,
+      "message": "my bad - it\u0027s roles.py, not role.py",
+      "range": {
+        "startLine": 83,
+        "startChar": 18,
+        "endLine": 83,
+        "endChar": 25
+      },
+      "revId": "c3917c6cb59055b3d0f7bd8f7c4215ae9d0fa04b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
