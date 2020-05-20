@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_3875e2fa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-20T21:51:52Z",
+      "side": 1,
+      "message": "Should also mention that the file is different since this is pre-flask",
+      "revId": "115775e65123cb4439178c7286972354ddb42c70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_78647a4a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-20T21:51:52Z",
+      "side": 1,
+      "message": "would be good to cherry-pick from the next branch up and have a series of cherry-pick footers",
+      "revId": "115775e65123cb4439178c7286972354ddb42c70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
