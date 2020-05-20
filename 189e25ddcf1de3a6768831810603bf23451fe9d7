@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_7a900396",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-20T07:51:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_8de4ca0e",
+      "revId": "189e25ddcf1de3a6768831810603bf23451fe9d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_cdc36256",
         "filename": "doc/source/contributor/api_change_tutorial.rst",
         "patchSetId": 6
@@ -30,6 +48,30 @@
       "writtenOn": "2020-05-19T21:05:17Z",
       "side": 1,
       "message": "in the meeting today we discussed using \"API resource\"",
+      "range": {
+        "startLine": 131,
+        "startChar": 28,
+        "endLine": 131,
+        "endChar": 42
+      },
+      "revId": "189e25ddcf1de3a6768831810603bf23451fe9d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_baebbb10",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-20T07:51:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_cdc36256",
       "range": {
         "startLine": 131,
         "startChar": 28,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_9aeeb71f",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-20T07:51:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_0dc27a59",
+      "range": {
+        "startLine": 146,
+        "startChar": 26,
+        "endLine": 146,
+        "endChar": 34
+      },
+      "revId": "189e25ddcf1de3a6768831810603bf23451fe9d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_6db176e1",
         "filename": "doc/source/contributor/api_change_tutorial.rst",
         "patchSetId": 6
@@ -76,6 +142,30 @@
       "writtenOn": "2020-05-19T21:05:17Z",
       "side": 1,
       "message": "See the sentence before this - this section is supposed to be about the schema definition in keystone/assignment/schema.py. I don\u0027t think it\u0027s worthwhile to include this part of the flask code (remember this tutorial is about how to change the API - this part is most likely not going to need to change). If you feel strongly that it should be included, it needs to logically flow from an explanation of the flask code, not be inserted into an explanation of the schema definition in schema.py.",
+      "range": {
+        "startLine": 155,
+        "startChar": 32,
+        "endLine": 164,
+        "endChar": 15
+      },
+      "revId": "189e25ddcf1de3a6768831810603bf23451fe9d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_9a3cf793",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-20T07:51:45Z",
+      "side": 1,
+      "message": "The purpose of adding this was for the user to have a clear picture about where the validation is being done. But your point is totally valid that this doc is about making changes and we dont change anything in validation. So it should not be inserted.",
+      "parentUuid": "ff570b3c_6db176e1",
       "range": {
         "startLine": 155,
         "startChar": 32,
@@ -116,6 +206,30 @@
       "writtenOn": "2020-05-19T21:05:17Z",
       "side": 1,
       "message": "you don\u0027t need to add this word, \"request body\" is clear enough on its own.",
+      "range": {
+        "startLine": 182,
+        "startChar": 48,
+        "endLine": 182,
+        "endChar": 52
+      },
+      "revId": "189e25ddcf1de3a6768831810603bf23451fe9d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_faf1b302",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-20T07:51:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_0de39ada",
       "range": {
         "startLine": 182,
         "startChar": 48,
