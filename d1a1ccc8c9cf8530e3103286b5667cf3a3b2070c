@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_8fccb735",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-20T07:20:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_4d48f285",
+      "range": {
+        "startLine": 421,
+        "startChar": 38,
+        "endLine": 421,
+        "endChar": 43
+      },
+      "revId": "d1a1ccc8c9cf8530e3103286b5667cf3a3b2070c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_2d349efb",
         "filename": "keystone/tests/unit/test_v3_credential.py",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_efcf3326",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-20T07:20:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_2d349efb",
+      "range": {
+        "startLine": 429,
+        "startChar": 27,
+        "endLine": 429,
+        "endChar": 32
+      },
+      "revId": "d1a1ccc8c9cf8530e3103286b5667cf3a3b2070c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_68084427",
         "filename": "releasenotes/notes/bug-1872753-e2a934eac919ccde.yaml",
         "patchSetId": 2
@@ -59,6 +107,24 @@
       "writtenOn": "2020-05-19T21:27:21Z",
       "side": 1,
       "message": "Would be good to include why this was needed, suggest:\n\n Added validation to the EC2 credential API to prevent altering the ``access_id`` field in the blob attribute. This prevents accidentally orphaning an EC2 credential resource when an altered ``access_id`` no longer resolves to the credential\u0027s resource ID.",
+      "revId": "d1a1ccc8c9cf8530e3103286b5667cf3a3b2070c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_4f49ffb4",
+        "filename": "releasenotes/notes/bug-1872753-e2a934eac919ccde.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-20T07:20:59Z",
+      "side": 1,
+      "message": "Thanks for the suggestion.",
+      "parentUuid": "ff570b3c_68084427",
       "revId": "d1a1ccc8c9cf8530e3103286b5667cf3a3b2070c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
