@@ -64,7 +64,7 @@
       devstack_localrc:
         IDP_ID: k2k
 
-# This job will execute 'tox -e upgrade' from the OSA
+# This  job will execute 'tox -e upgrade' from the OSA
 # repo specified in 'osa_test_repo'.
 - job:
     name: openstack-ansible-keystone-rolling-upgrade
