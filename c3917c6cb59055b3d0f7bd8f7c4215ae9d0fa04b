@@ -22,6 +22,30 @@
       "revId": "c3917c6cb59055b3d0f7bd8f7c4215ae9d0fa04b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_ff57cc56",
+        "filename": "doc/source/contributor/api_change_tutorial.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-21T05:44:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_2c7bee27",
+      "range": {
+        "startLine": 83,
+        "startChar": 18,
+        "endLine": 83,
+        "endChar": 25
+      },
+      "revId": "c3917c6cb59055b3d0f7bd8f7c4215ae9d0fa04b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
