@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_baca829d",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-21T06:41:46Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ff570b3c_323d1ddd",
+      "revId": "00f66b40d7156cb6f252e6ba014aa28c335495b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_8fb4c281",
         "filename": "doc/source/contributor/caching-layer.rst",
         "patchSetId": 4
@@ -59,6 +77,30 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_9acdfeb8",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-21T06:41:46Z",
+      "side": 1,
+      "message": "I thought it is easier to understand. But I realized I shouldn\u0027t have changed the old example. Thanks for pointing it out.",
+      "parentUuid": "ff570b3c_d234a1e0",
+      "range": {
+        "startLine": 29,
+        "startChar": 67,
+        "endLine": 29,
+        "endChar": 77
+      },
+      "revId": "00f66b40d7156cb6f252e6ba014aa28c335495b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_52a41108",
         "filename": "doc/source/contributor/caching-layer.rst",
         "patchSetId": 4
@@ -70,6 +112,30 @@
       "writtenOn": "2020-05-19T20:37:04Z",
       "side": 1,
       "message": "again not really sure why the example was changed? this is how the token provider is cached: https://opendev.org/openstack/keystone/src/branch/master/keystone/token/provider.py#L41-L43",
+      "range": {
+        "startLine": 35,
+        "startChar": 46,
+        "endLine": 35,
+        "endChar": 55
+      },
+      "revId": "00f66b40d7156cb6f252e6ba014aa28c335495b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_fac7da94",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-21T06:41:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_52a41108",
       "range": {
         "startLine": 35,
         "startChar": 46,
@@ -105,6 +171,30 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_dac2d684",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-21T06:41:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_929a29b6",
+      "range": {
+        "startLine": 49,
+        "startChar": 44,
+        "endLine": 49,
+        "endChar": 47
+      },
+      "revId": "00f66b40d7156cb6f252e6ba014aa28c335495b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_1292994c",
         "filename": "doc/source/contributor/caching-layer.rst",
         "patchSetId": 4
@@ -116,6 +206,30 @@
       "writtenOn": "2020-05-19T20:37:04Z",
       "side": 1,
       "message": "This links to the admin section, but this is the contributor documentation - we should update the cache invalidation example code instead of deleting it. Here\u0027s how we do cache invalidation nowadays: https://opendev.org/openstack/keystone/src/branch/master/keystone/resource/core.py#L826",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 46
+      },
+      "revId": "00f66b40d7156cb6f252e6ba014aa28c335495b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_1ab9ee13",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-21T06:41:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_1292994c",
       "range": {
         "startLine": 64,
         "startChar": 0,
