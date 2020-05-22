@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    Mappings can now specify "whitelist" and "blacklist" conditionals as
+    regular expressions. Prior, only "not_any_of" and "any_one_of" conditionals
+    supported regular expression matching.

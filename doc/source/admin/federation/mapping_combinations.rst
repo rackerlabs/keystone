@@ -505,7 +505,17 @@ setting it to ``true``.
                        },
                        "group": {
                            "id": "0cd5e9"
-                       }
+                       },
+                       "projects": [
+                           {
+                               "name": "{1}",
+                               "roles": [
+                                   {
+                                       "name": "member"
+                                   }
+                               ]
+                           }
+                       ]
                    },
                ],
                "remote": [
@@ -518,14 +528,23 @@ setting it to ``true``.
                            ".*@yeah.com$"
                        ]
                        "regex": true
-                   }
+                   },
+                   {
+                       "type": "HTTP_OIDC_GROUPIDS",
+                       "whitelist": [
+                           "Project.*$"
+                       ],
+                       "regex": true
+                    }
                ]
            }
        ]
    }
 
 This allows any user with a claim containing a key with any value in
-``HTTP_OIDC_GROUPIDS`` to be mapped to group with id ``0cd5e9``.
+``HTTP_OIDC_GROUPIDS`` to be mapped to group with id ``0cd5e9``. Additionally,
+for every value in the ``HTTP_OIDC_GROUPIDS`` claim matching the string
+``Project.*``, the user will be assigned to the project with that name.
 
 Condition Combinations
 ----------------------
