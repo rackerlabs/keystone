@@ -101,6 +101,30 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_053e5c28",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-26T21:58:51Z",
+      "side": 1,
+      "message": "Feel free to use your own judgement, just add an explanation in the commit message.",
+      "parentUuid": "ff570b3c_9acdfeb8",
+      "range": {
+        "startLine": 29,
+        "startChar": 67,
+        "endLine": 29,
+        "endChar": 77
+      },
+      "revId": "00f66b40d7156cb6f252e6ba014aa28c335495b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_52a41108",
         "filename": "doc/source/contributor/caching-layer.rst",
         "patchSetId": 4
