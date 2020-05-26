@@ -116,6 +116,29 @@
       "revId": "07abf2fa4d5c2bc5dc1c77d700ac3589d1169d3f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_08ae73e6",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-26T21:58:51Z",
+      "side": 0,
+      "message": "Would be nice to keep this information - that the ``invalidate`` method exists on the decorated function. TBH I don\u0027t know exactly how that happens now (I think it\u0027s essentially the same as before but all happens under the hood in oslo.cache and dogpile) but it would still be best to emphasize that the .invalidate is called on the function, since it\u0027s a little confusing to see that just in code.",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 39
+      },
+      "revId": "07abf2fa4d5c2bc5dc1c77d700ac3589d1169d3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

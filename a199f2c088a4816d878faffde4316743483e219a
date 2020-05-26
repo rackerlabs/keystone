@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_e521a8fe",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-26T21:58:51Z",
+      "side": 1,
+      "message": "each call to",
+      "range": {
+        "startLine": 54,
+        "startChar": 24,
+        "endLine": 54,
+        "endChar": 31
+      },
+      "revId": "a199f2c088a4816d878faffde4316743483e219a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_8578acf8",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-26T21:58:51Z",
+      "side": 1,
+      "message": "the arguments",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 12
+      },
+      "revId": "a199f2c088a4816d878faffde4316743483e219a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_258d60d3",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-26T21:58:51Z",
+      "side": 1,
+      "message": "This is not what happens. ``get_memoization_decorator`` returns a decorator (a function). It\u0027s called when the module is loaded to generator the decorator, not at runtime to get a resource value.\n\nReading what we had before, ``MEMOIZE_TOKEN`` works exactly the same way: the callable function is still called because that is what gets the value from the backend, and then the value is passed to the decorator which is what determines whether to cache it for the future or not. So just keep this the same as before but update the name of the decorator.",
+      "range": {
+        "startLine": 57,
+        "startChar": 36,
+        "endLine": 57,
+        "endChar": 83
+      },
+      "revId": "a199f2c088a4816d878faffde4316743483e219a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_8519cc89",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-26T21:58:51Z",
+      "side": 1,
+      "message": "It\u0027s now all done by oslo.cache so this is not so much a recommendation as a requirement as these will get picked up by oslo.cache directly.",
+      "range": {
+        "startLine": 62,
+        "startChar": 7,
+        "endLine": 62,
+        "endChar": 41
+      },
+      "revId": "a199f2c088a4816d878faffde4316743483e219a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_452e94a5",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-26T21:58:51Z",
+      "side": 1,
+      "message": "The old version was documenting what the code to implement this looked like, intended to be read by developers. I don\u0027t think it\u0027s necessary to include information for operators here, that\u0027s not the point of this document and it\u0027s already included in the admin guide. Keystone doesn\u0027t handle cache_time on its own any more, it\u0027s all done by oslo.cache, so just say that.",
+      "range": {
+        "startLine": 64,
+        "startChar": 84,
+        "endLine": 74,
+        "endChar": 17
+      },
+      "revId": "a199f2c088a4816d878faffde4316743483e219a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
