@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_82ef13e8",
+        "filename": "doc/source/admin/federation/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-26T07:41:19Z",
+      "side": 1,
+      "message": "I noticed that the document doesn\u0027t contain any blacklist example. Could you please add one blacklist example too?",
+      "range": {
+        "startLine": 322,
+        "startChar": 1,
+        "endLine": 322,
+        "endChar": 32
+      },
+      "revId": "83dfacb0d4a7d6e9a59d94969d671554cb5cc27a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_e249af8b",
+        "filename": "releasenotes/notes/bug-1880252-51036d5353125e15.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-26T07:41:19Z",
+      "side": 1,
+      "message": "Can add \u0027fixes\u0027 too linking the bug hyperlink and details.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 9
+      },
+      "revId": "83dfacb0d4a7d6e9a59d94969d671554cb5cc27a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
