@@ -350,6 +350,15 @@ class Assignment(base.AssignmentDriverBase):
                     role_id=role_id, actor_id=actor_id, target_id=target_id
                 )
 
+    def delete_system_assignments(self, role_id):
+        with sql.session_for_write() as session:
+            q = session.query(SystemRoleAssignment)
+            q = q.filter_by(role_id=role_id)
+            if not q.delete(False):
+                raise exception.RoleAssignmentNotFound(
+                    role_id=role_id
+                )
+
 
 class RoleAssignment(sql.ModelBase, sql.ModelDictMixin):
     __tablename__ = 'assignment'
