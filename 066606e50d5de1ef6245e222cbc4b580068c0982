@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_6d8e0828",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 3493,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-27T21:35:30Z",
+      "side": 1,
+      "message": "This passes even without the change in mapped.py. It\u0027s not a valid test.",
+      "revId": "066606e50d5de1ef6245e222cbc4b580068c0982",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
