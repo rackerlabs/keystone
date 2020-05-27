@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_22f8abc2",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-27T10:15:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_e521a8fe",
+      "range": {
+        "startLine": 54,
+        "startChar": 24,
+        "endLine": 54,
+        "endChar": 31
+      },
+      "revId": "a199f2c088a4816d878faffde4316743483e219a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_8578acf8",
         "filename": "doc/source/contributor/caching-layer.rst",
         "patchSetId": 8
@@ -36,6 +60,30 @@
       "writtenOn": "2020-05-26T21:58:51Z",
       "side": 1,
       "message": "the arguments",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 12
+      },
+      "revId": "a199f2c088a4816d878faffde4316743483e219a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_02f3e7e8",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-27T10:15:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_8578acf8",
       "range": {
         "startLine": 55,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_a22ddb47",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-27T10:15:31Z",
+      "side": 1,
+      "message": "Done. Thanks for clarifying over this.",
+      "parentUuid": "ff570b3c_258d60d3",
+      "range": {
+        "startLine": 57,
+        "startChar": 36,
+        "endLine": 57,
+        "endChar": 83
+      },
+      "revId": "a199f2c088a4816d878faffde4316743483e219a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_8519cc89",
         "filename": "doc/source/contributor/caching-layer.rst",
         "patchSetId": 8
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_021c8711",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-27T10:15:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_8519cc89",
+      "range": {
+        "startLine": 62,
+        "startChar": 7,
+        "endLine": 62,
+        "endChar": 41
+      },
+      "revId": "a199f2c088a4816d878faffde4316743483e219a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_452e94a5",
         "filename": "doc/source/contributor/caching-layer.rst",
         "patchSetId": 8
@@ -105,6 +201,30 @@
       "writtenOn": "2020-05-26T21:58:51Z",
       "side": 1,
       "message": "The old version was documenting what the code to implement this looked like, intended to be read by developers. I don\u0027t think it\u0027s necessary to include information for operators here, that\u0027s not the point of this document and it\u0027s already included in the admin guide. Keystone doesn\u0027t handle cache_time on its own any more, it\u0027s all done by oslo.cache, so just say that.",
+      "range": {
+        "startLine": 64,
+        "startChar": 84,
+        "endLine": 74,
+        "endChar": 17
+      },
+      "revId": "a199f2c088a4816d878faffde4316743483e219a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_621bc31a",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-27T10:15:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_452e94a5",
       "range": {
         "startLine": 64,
         "startChar": 84,

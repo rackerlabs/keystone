@@ -139,6 +139,30 @@
       "revId": "07abf2fa4d5c2bc5dc1c77d700ac3589d1169d3f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_82d5371e",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-05-27T10:15:31Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "ff570b3c_08ae73e6",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 39
+      },
+      "revId": "07abf2fa4d5c2bc5dc1c77d700ac3589d1169d3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
