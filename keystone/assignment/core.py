@@ -1247,6 +1247,14 @@ class Manager(manager.Manager):
             actor_id, target_id, assignment_type
         )
 
+    def remove_stale_role_assignments(self):
+        role_ids = [role['id'] for role in PROVIDERS.role_api.list_roles()]
+        assignments = self.list_role_assignments()
+        for assignment in self.list_role_assignments():
+            if assignment['role_id'] not in role_ids:
+                PROVIDERS.assignment_api.delete_role_assignments(
+                    assignment['role_id'])
+
 
 class RoleManager(manager.Manager):
     """Default pivot point for the Role backend."""
@@ -1334,6 +1342,9 @@ class RoleManager(manager.Manager):
         ro_opt.check_immutable_delete(resource_ref=role,
                                       resource_type='role',
                                       resource_id=role_id)
+
+        # Deleting stale role assignments before deleting role.
+        PROVIDERS.assignment_api.remove_stale_role_assignments()
         PROVIDERS.assignment_api.delete_role_assignments(role_id)
         PROVIDERS.assignment_api._send_app_cred_notification_for_role_removal(
             role_id
