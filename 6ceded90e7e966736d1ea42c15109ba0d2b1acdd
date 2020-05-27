@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_8d5c3cee",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-27T21:29:18Z",
+      "side": 1,
+      "message": "I would rephrase this as \"These options are passed to and handled by oslo.cache.\"",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 84
+      },
+      "revId": "6ceded90e7e966736d1ea42c15109ba0d2b1acdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_ede5f80b",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-27T21:29:18Z",
+      "side": 1,
+      "message": "This phrase is misplaced. You can reference the original wording to see how this should be phrased. I would say:\n\n\"For cache invalidation, there is an ``invalidate`` method (attribute) on the decorated function. To invalidate the cache, pass the same arguments to the ``invalidate`` method as you would the normal function. This means you need to pass ``self`` as the first argument.\"",
+      "range": {
+        "startLine": 77,
+        "startChar": 80,
+        "endLine": 78,
+        "endChar": 18
+      },
+      "revId": "6ceded90e7e966736d1ea42c15109ba0d2b1acdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
