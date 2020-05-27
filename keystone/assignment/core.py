@@ -1335,6 +1335,10 @@ class RoleManager(manager.Manager):
                                       resource_type='role',
                                       resource_id=role_id)
         PROVIDERS.assignment_api.delete_role_assignments(role_id)
+
+        # Note(Vishakha): Deleting system role assignments from
+        # system_assignment table.
+        PROVIDERS.assignment_api.delete_system_assignments(role_id)
         PROVIDERS.assignment_api._send_app_cred_notification_for_role_removal(
             role_id
         )
