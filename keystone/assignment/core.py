@@ -1334,6 +1334,7 @@ class RoleManager(manager.Manager):
         ro_opt.check_immutable_delete(resource_ref=role,
                                       resource_type='role',
                                       resource_id=role_id)
+
         PROVIDERS.assignment_api.delete_role_assignments(role_id)
         PROVIDERS.assignment_api._send_app_cred_notification_for_role_removal(
             role_id
