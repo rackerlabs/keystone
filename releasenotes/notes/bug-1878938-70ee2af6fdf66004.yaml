@@ -1,0 +1,8 @@
+---
+fixes: >
+  - |
+    [`bug 1878938 <https://bugs.launchpad.net/keystone/+bug/1878938>`_]
+    Previously when a user used to have system role assignment and tries to delete
+    the same role, the system role assignments still existed in system_assignment
+    table. This fix ensures that deleting a role should delete all the its assignments
+    from every assignment table.
