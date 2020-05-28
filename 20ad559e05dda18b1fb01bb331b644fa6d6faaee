@@ -16,6 +16,24 @@
       "revId": "20ad559e05dda18b1fb01bb331b644fa6d6faaee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_4f5a06f3",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2020-05-28T16:51:31Z",
+      "side": 1,
+      "message": "My bad. That was the result of running tox. I inadvertently included it. Let me remove.",
+      "parentUuid": "ff570b3c_65a3d8b2",
+      "revId": "20ad559e05dda18b1fb01bb331b644fa6d6faaee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
