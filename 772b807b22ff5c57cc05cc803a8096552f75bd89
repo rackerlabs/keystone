@@ -16,6 +16,24 @@
       "revId": "772b807b22ff5c57cc05cc803a8096552f75bd89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_ea0ad776",
+        "filename": "keystone/cmd/doctor/caching.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2020-05-29T17:34:27Z",
+      "side": 1,
+      "message": "I\u0027m going for the first option that you described, trying to provide some more generic solution that can be used for other oslo.cache backends besides memcached.\n\nI\u0027m ok on making this more specific for memcached as you described, or maybe creating another symptom for memcached and keep this one here, thoughts?",
+      "parentUuid": "ff570b3c_6a9b6772",
+      "revId": "772b807b22ff5c57cc05cc803a8096552f75bd89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
