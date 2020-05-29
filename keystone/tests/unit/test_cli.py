@@ -956,6 +956,30 @@ class CachingDoctorTests(unit.TestCase):
                                    backend='dogpile.cache.memory')
         self.assertFalse(caching.symptom_caching_enabled_without_a_backend())
 
+    def test_caching_symptom_debug_log_enabled(self):
+        # Success Case: Debug logs for caching are properly configured
+        self.config_fixture.config(group='cache', enabled=True)
+        self.config_fixture.config(debug=True)
+        self.config_fixture.config(group='cache', debug_cache_backend=True)
+        self.config_fixture.config(
+            default_log_levels='oslo.cache=DEBUG,dogpile.core.dogpile=DEBUG')
+        self.assertTrue(caching.symptom_caching_debug_log_enabled())
+
+        # Failure Case 1: Debug enabled for Keystone but caching is not enabled
+        self.config_fixture.config(group='cache', enabled=True)
+        self.config_fixture.config(debug=True)
+        self.config_fixture.config(group='cache', debug_cache_backend=False)
+        self.assertFalse(caching.symptom_caching_debug_log_enabled())
+
+        # Failure Case 2: Debug enabled for Keystone and caching but default
+        # log level were not defined for olso.cache and dogpile
+        self.config_fixture.config(group='cache', enabled=True)
+        self.config_fixture.config(debug=True)
+        self.config_fixture.config(group='cache', debug_cache_backend=True)
+        self.config_fixture.config(
+            default_log_levels='oslo.cache=INFO,dogpile.core.dogpile=INFO')
+        self.assertFalse(caching.symptom_caching_debug_log_enabled())
+
 
 class CredentialDoctorTests(unit.TestCase):
 
