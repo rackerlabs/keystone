@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_9051cc39",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-05-29T20:19:44Z",
+      "side": 1,
+      "message": "this one was also changed",
+      "revId": "a99a1e3f973a2dd617fd3532d521f76e6c95bc6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
