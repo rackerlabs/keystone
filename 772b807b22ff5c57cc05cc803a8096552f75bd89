@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_6a9b6772",
+        "filename": "keystone/cmd/doctor/caching.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-05-29T17:25:09Z",
+      "side": 1,
+      "message": "I\u0027m thinking about the usability of this:\n\n- user is suspicious of a caching issue and wants to make sure keystone is using the cache\n- user runs doctor and notices they need to update the config\n- user updates the config\n- user re-runs doctor to make sure debug caching is configured properly\n- user bounces keystone and inspects logs\n\nIs that correct?\n\nAnother thing we could do pull the memcached string from keystone\u0027s CONF object and attempt to connect to it using dogpile directly. If the connection is successful, we don\u0027t emit the symptom. If it isn\u0027t successful, we tell the user that cache configuration is incorrect and they should go investigate. That would result in a flow like the following:\n\n- user is suspicious of a caching issue\n- user runs doctor and sees that keystone can\u0027t connect to memcached",
+      "revId": "772b807b22ff5c57cc05cc803a8096552f75bd89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
