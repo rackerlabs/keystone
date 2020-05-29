@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_9d072aca",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1736
+      },
+      "writtenOn": "2020-05-29T15:29:43Z",
+      "side": 1,
+      "message": "This code looks a bit racy.",
+      "range": {
+        "startLine": 131,
+        "startChar": 8,
+        "endLine": 132,
+        "endChar": 75
+      },
+      "revId": "824fe5412bc79f1ae41f65e6d3e0eed5c4748a56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
