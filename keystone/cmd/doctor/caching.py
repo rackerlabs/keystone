@@ -33,3 +33,13 @@ def symptom_caching_enabled_without_a_backend():
     point to a real caching backend like memcached.
     """
     return CONF.cache.enabled and CONF.cache.backend == 'dogpile.cache.null'
+
+
+def symptom_caching_debug_log_enabled():
+    """Enabling caching log is not completely configured.
+
+    Although debug level is enabled for Keystone, it's needed to enabled debug
+    level for the cache backend to be able to see the caching debug logs on the
+    Keystone logs files.
+    """
+    return CONF.debug and CONF.cache.enabled and CONF.cache.debug_cache_backend and ('oslo.cache=DEBUG' and 'dogpile.core.dogpile=DEBUG' in CONF.default_log_levels)
