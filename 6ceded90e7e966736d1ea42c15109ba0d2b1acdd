@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_934f21bc",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 28522
+      },
+      "writtenOn": "2020-05-29T08:51:15Z",
+      "side": 1,
+      "message": "I agree, I suppose we speak about the `expiration_time` here, this one is defined in the service\u0027s config [1] and then passed to oslo.cache through the keystone cache wrapper, so in this case keystone is part of the workflow on this point.\n\n[1] https://docs.openstack.org/oslo.cache/latest/configuration/index.html#cache.expiration_time",
+      "parentUuid": "ff570b3c_8d5c3cee",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 84
+      },
+      "revId": "6ceded90e7e966736d1ea42c15109ba0d2b1acdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_ede5f80b",
         "filename": "doc/source/contributor/caching-layer.rst",
         "patchSetId": 9
