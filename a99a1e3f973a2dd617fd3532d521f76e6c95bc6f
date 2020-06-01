@@ -16,6 +16,24 @@
       "revId": "a99a1e3f973a2dd617fd3532d521f76e6c95bc6f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_fb9aa05f",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2020-06-01T05:13:58Z",
+      "side": 1,
+      "message": "Dang it! Tox always regenerate this file. Is there a better way to handle this?",
+      "parentUuid": "ff570b3c_9051cc39",
+      "revId": "a99a1e3f973a2dd617fd3532d521f76e6c95bc6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
