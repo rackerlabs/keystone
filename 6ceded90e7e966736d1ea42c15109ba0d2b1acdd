@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_966a597e",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-06-01T07:02:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_934f21bc",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 84
+      },
+      "revId": "6ceded90e7e966736d1ea42c15109ba0d2b1acdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_ede5f80b",
         "filename": "doc/source/contributor/caching-layer.rst",
         "patchSetId": 9
@@ -60,6 +84,30 @@
       "writtenOn": "2020-05-27T21:29:18Z",
       "side": 1,
       "message": "This phrase is misplaced. You can reference the original wording to see how this should be phrased. I would say:\n\n\"For cache invalidation, there is an ``invalidate`` method (attribute) on the decorated function. To invalidate the cache, pass the same arguments to the ``invalidate`` method as you would the normal function. This means you need to pass ``self`` as the first argument.\"",
+      "range": {
+        "startLine": 77,
+        "startChar": 80,
+        "endLine": 78,
+        "endChar": 18
+      },
+      "revId": "6ceded90e7e966736d1ea42c15109ba0d2b1acdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_7667c5b8",
+        "filename": "doc/source/contributor/caching-layer.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-06-01T07:02:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_ede5f80b",
       "range": {
         "startLine": 77,
         "startChar": 80,
