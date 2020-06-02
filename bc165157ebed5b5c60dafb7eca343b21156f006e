@@ -22,6 +22,30 @@
       "revId": "bc165157ebed5b5c60dafb7eca343b21156f006e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_37f08b67",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2020-06-02T16:28:13Z",
+      "side": 1,
+      "message": "I do see application credential code in the rocky branch though. You mean we don\u0027t officially support this feature till Queens release? Not even as *experimental*?",
+      "parentUuid": "ff570b3c_9c5c1e4c",
+      "range": {
+        "startLine": 298,
+        "startChar": 0,
+        "endLine": 324,
+        "endChar": 52
+      },
+      "revId": "bc165157ebed5b5c60dafb7eca343b21156f006e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
