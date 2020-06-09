@@ -1,0 +1,9 @@
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+2: Wander Way <wanderwayout@gmail.com>
+Workflow+1: Wander Way <wanderwayout@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 09 Jun 2020 11:20:20 +0000
+Reviewed-on: https://review.opendev.org/723870
+Project: openstack/keystone
+Branch: refs/heads/master
