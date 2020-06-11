@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "ff570b3c_579c75be",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-06-11T22:42:30Z",
+      "side": 1,
+      "message": "Never mind, noticed your other comment :)",
+      "parentUuid": "ff570b3c_059da665",
+      "range": {
+        "startLine": 131,
+        "startChar": 8,
+        "endLine": 132,
+        "endChar": 75
+      },
+      "revId": "824fe5412bc79f1ae41f65e6d3e0eed5c4748a56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_85b096df",
         "filename": "keystone/tests/unit/credential/test_backend_sql.py",
         "patchSetId": 4
