@@ -22,6 +22,47 @@
       "revId": "824fe5412bc79f1ae41f65e6d3e0eed5c4748a56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_059da665",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-06-11T21:59:28Z",
+      "side": 1,
+      "message": "Do you have a suggestion to improve it? While I think you\u0027re right I think the chances of it causing a major issue is minuscule.",
+      "parentUuid": "ff570b3c_9d072aca",
+      "range": {
+        "startLine": 131,
+        "startChar": 8,
+        "endLine": 132,
+        "endChar": 75
+      },
+      "revId": "824fe5412bc79f1ae41f65e6d3e0eed5c4748a56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_85b096df",
+        "filename": "keystone/tests/unit/credential/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-06-11T21:59:28Z",
+      "side": 1,
+      "message": "It doesn\u0027t make sense to make the same call twice and assert the same thing. setUp already creates three credentials so if you set the limit at 2 then it\u0027s already over the limit. You could set it to 2 or 3 and then call this just once instead of twice, or better would be to set a higher limit like 4, validate that creating one more still works, but that the fifth one gets rejected.",
+      "revId": "824fe5412bc79f1ae41f65e6d3e0eed5c4748a56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
