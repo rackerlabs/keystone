@@ -87,6 +87,24 @@
       "revId": "824fe5412bc79f1ae41f65e6d3e0eed5c4748a56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_3053c7e4",
+        "filename": "keystone/tests/unit/credential/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-06-12T07:13:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff570b3c_85b096df",
+      "revId": "824fe5412bc79f1ae41f65e6d3e0eed5c4748a56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
