@@ -1,0 +1,10 @@
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: Ivan Kolodyazhny <e0ne@e0ne.info>
+Code-Review+1: Gage Hugo <gagehugo@gmail.com>
+Workflow+1: Colleen Murphy <colleen@gazlene.net>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 12 Jun 2020 15:59:49 +0000
+Reviewed-on: https://review.opendev.org/712541
+Project: openstack/keystone
+Branch: refs/heads/stable/stein
