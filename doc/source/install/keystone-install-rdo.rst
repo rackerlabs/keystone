@@ -60,9 +60,19 @@ Install and configure components
 
 #. Run the following command to install the packages:
 
+   **For CentOS 7 and RHEL 7**
+
    .. code-block:: console
 
       # yum install openstack-keystone httpd mod_wsgi
+
+   .. end
+
+   **For CentOS 8 and RHEL 8**
+
+   .. code-block:: console
+
+      # yum install openstack-keystone httpd python3-mod_wsgi
 
    .. end
 
