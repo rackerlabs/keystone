@@ -1,0 +1,11 @@
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: Ivan Kolodyazhny <e0ne@e0ne.info>
+Code-Review+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+2: Kristi Nikolla <knikolla@icloud.com>
+Workflow+1: Kristi Nikolla <knikolla@icloud.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 18 Jun 2020 11:14:46 +0000
+Reviewed-on: https://review.opendev.org/728387
+Project: openstack/keystone
+Branch: refs/heads/master
