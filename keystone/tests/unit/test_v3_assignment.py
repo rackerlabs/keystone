@@ -1995,7 +1995,6 @@ class AssignmentInheritanceTestCase(test_v3.RestfulTestCase,
 
         self._test_list_role_assignments_include_names(role)
 
-    @test_utils.wip("Skipped until Bug 1754677 is resolved")
     def test_remove_assignment_for_project_acting_as_domain(self):
         """Test goal: remove assignment for project acting as domain.
 
