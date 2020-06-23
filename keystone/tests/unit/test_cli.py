@@ -980,6 +980,63 @@ class CachingDoctorTests(unit.TestCase):
             default_log_levels='oslo.cache=INFO,dogpile.core.dogpile=INFO')
         self.assertFalse(caching.symptom_caching_debug_log_enabled())
 
+    @mock.patch('keystone.cmd.doctor.caching.cache.CACHE_REGION')
+    def test_symptom_connection_to_memcached(self, cache_mock):
+        self.config_fixture.config(group='cache', enabled=True)
+        self.config_fixture.config(
+            group='cache',
+            memcache_servers=['alpha.com:11211', 'beta.com:11211']
+        )
+        self.config_fixture.config(
+            group='cache', backend='dogpile.cache.memcached'
+        )
+
+        # No symptom detected: Caching driver can connect to both memcached
+        # servers
+        cache_mock.actual_backend.client.get_stats.return_value = (
+            [('alpha.com', {}), ('beta.com', {})]
+        )
+        self.assertFalse(caching.symptom_connection_to_memcached())
+
+        # Symptom detected: Caching driver can't connect to either memcached
+        # server
+        cache_mock.actual_backend.client.get_stats.return_value = []
+        self.assertTrue(caching.symptom_connection_to_memcached())
+
+        # Symptom detected: Caching driver can't connect to one memcached
+        # server
+        cache_mock.actual_backend.client.get_stats.return_value = [
+            ('alpha.com', {})
+        ]
+        self.assertTrue(caching.symptom_connection_to_memcached())
+
+        self.config_fixture.config(
+            group='cache',
+            memcache_servers=['alpha.com:11211', 'beta.com:11211']
+        )
+        self.config_fixture.config(
+            group='cache', backend='oslo_cache.memcache_pool'
+        )
+
+        # No symptom detected: Caching driver can connect to both memcached
+        # servers
+        cache_mock.actual_backend.client.get_stats.return_value = (
+            [('alpha.com', {}), ('beta.com', {})]
+        )
+        self.assertFalse(caching.symptom_connection_to_memcached())
+
+        # Symptom detected: Caching driver can't connect to either memcached
+        # server
+        cache_mock.actual_backend.client.get_stats.return_value = []
+        self.assertTrue(caching.symptom_connection_to_memcached())
+
+        # Symptom detected: Caching driver can't connect to one memcached
+        # server
+        cache_mock.actual_backend.client.get_stats.return_value = [
+            ('alpha.com', {})
+        ]
+        self.assertTrue(caching.symptom_connection_to_memcached())
+
 
 class CredentialDoctorTests(unit.TestCase):
 
