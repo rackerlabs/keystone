@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf51134e_d5a667ab",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-06-23T20:56:28Z",
+      "side": 1,
+      "message": "We could add to this method and use a separate context manager for the SystemRoleAssignment model. If we do that, then we don\u0027t need a separate change in the manager to clean up system role assignments.",
+      "range": {
+        "startLine": 260,
+        "startChar": 0,
+        "endLine": 263,
+        "endChar": 27
+      },
+      "revId": "aad6021e4edfae5608a3b22f31276bb6b4d60b52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf51134e_75fddb6c",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-06-23T20:56:28Z",
+      "side": 1,
+      "message": "This is adding an undocumented method to an interface (base.py). If we go this route, we need to document the new method signature in the abstract base class found in base.py.\n\nPeople who write their own assignment drivers use the interface to ensure they\u0027re providing an implementation keystone can use.",
+      "revId": "aad6021e4edfae5608a3b22f31276bb6b4d60b52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf51134e_f59bab6f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1341,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-06-23T20:56:28Z",
+      "side": 1,
+      "message": "Couldn\u0027t we update the delete_role_assignment method that\u0027s called on line 1337 instead of invoking a separate method?",
+      "range": {
+        "startLine": 1341,
+        "startChar": 33,
+        "endLine": 1341,
+        "endChar": 58
+      },
+      "revId": "aad6021e4edfae5608a3b22f31276bb6b4d60b52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
