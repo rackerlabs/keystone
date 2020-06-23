@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf51134e_a4410b3c",
+        "filename": "releasenotes/notes/bug-1332058-f25e2de40411b711.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-06-23T17:44:35Z",
+      "side": 1,
+      "message": "I\u0027m not sure if this is the best bug to associate this to, but I know we\u0027ve had several bugs about memcached configuration. I didn\u0027t want to open up another bug just for reporting this enhancement.\n\nI\u0027m open to suggestions here.",
+      "range": {
+        "startLine": 4,
+        "startChar": 10,
+        "endLine": 4,
+        "endChar": 17
+      },
+      "revId": "2bcc40628c0a37958c2d49260220c95bbefee950",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
