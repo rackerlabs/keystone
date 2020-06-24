@@ -66,6 +66,23 @@
     },
     {
       "key": {
+        "uuid": "bf51134e_7ce303da",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1248,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-06-24T01:43:55Z",
+      "side": 1,
+      "message": "I added another method here to clean up stale role assignments: \n\n    def remove_stale_role_assignments(self):\n        role_ids \u003d [role[\u0027id\u0027] for role in PROVIDERS.role_api.list_roles()]\n        assignments \u003d self.list_role_assignments()\n        for assignment in self.list_role_assignments():\n            if assignment[\u0027role_id\u0027] not in role_ids:\n                PROVIDERS.assignment_api.delete_role_assignments(assignment[\u0027role_id\u0027])\n\n\nThis is only one possible solution, we can certainly look into other options.\n\nI invoked this from delete_role below by calling:\n\n  PROVIDERS.assignment_api.remove_stale_role_assignments()",
+      "revId": "aad6021e4edfae5608a3b22f31276bb6b4d60b52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf51134e_7cbe63b4",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 5
