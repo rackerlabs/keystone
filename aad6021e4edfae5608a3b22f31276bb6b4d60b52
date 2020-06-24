@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bf51134e_3c722b4a",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-06-24T01:41:36Z",
+      "side": 1,
+      "message": "Something like this might work:\n\n  def delete_role_assignments(self, role_id):\n      with sql.session_for_write() as session:\n          q \u003d session.query(RoleAssignment)\n          q \u003d q.filter_by(role_id\u003drole_id)\n          q.delete(False)\n\n      with sql.session_for_write() as session:\n          q \u003d session.query(SystemRoleAssignment)\n          q \u003d q.filter_by(role_id\u003drole_id)\n          q.delete(False)",
+      "parentUuid": "bf51134e_d5a667ab",
+      "range": {
+        "startLine": 260,
+        "startChar": 0,
+        "endLine": 263,
+        "endChar": 27
+      },
+      "revId": "aad6021e4edfae5608a3b22f31276bb6b4d60b52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf51134e_75fddb6c",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 5
@@ -36,6 +60,23 @@
       "writtenOn": "2020-06-23T20:56:28Z",
       "side": 1,
       "message": "This is adding an undocumented method to an interface (base.py). If we go this route, we need to document the new method signature in the abstract base class found in base.py.\n\nPeople who write their own assignment drivers use the interface to ensure they\u0027re providing an implementation keystone can use.",
+      "revId": "aad6021e4edfae5608a3b22f31276bb6b4d60b52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf51134e_7cbe63b4",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1331,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-06-24T01:41:36Z",
+      "side": 1,
+      "message": "This bug is going to be problematic for deployments that are already in this state.\n\nWhen I recreated this locally, I noticed that using ``openstack role assignment list --names`` broke because the role was removed but the assignment wasn\u0027t.\n\nAs far as I can tell, I don\u0027t think you can fix this through the keystone API. Operators would be forced to interact with SQL directly.\n\nWe might want to think about ways to mitigate that issue (e.g., pruning orphaned role assignments prior to role deletion). Or offering a way to clean up orphaned role assignments.",
       "revId": "aad6021e4edfae5608a3b22f31276bb6b4d60b52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
