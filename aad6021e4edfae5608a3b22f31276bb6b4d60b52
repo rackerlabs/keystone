@@ -120,6 +120,30 @@
       "revId": "aad6021e4edfae5608a3b22f31276bb6b4d60b52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf51134e_a63e0fbe",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1341,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-06-25T12:03:46Z",
+      "side": 1,
+      "message": "Thanks lance for pointing this out. I thought It wouldn\u0027t be the correct way to update the existing function. That is why I decided to make a separate one same as def delete_domain_assignments and def delete_user_assignments. As per your suggestion, I think it is okay to add in the existing one, so I updated it inside delete_systems_assignments.",
+      "parentUuid": "bf51134e_f59bab6f",
+      "range": {
+        "startLine": 1341,
+        "startChar": 33,
+        "endLine": 1341,
+        "endChar": 58
+      },
+      "revId": "aad6021e4edfae5608a3b22f31276bb6b4d60b52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
