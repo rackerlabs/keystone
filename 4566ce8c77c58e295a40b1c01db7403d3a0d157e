@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf51134e_a2cc3835",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1256,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-06-25T14:19:14Z",
+      "side": 1,
+      "message": "I\u0027d like to hear what other people think about this approach.",
+      "revId": "4566ce8c77c58e295a40b1c01db7403d3a0d157e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf51134e_e2ebd074",
+        "filename": "releasenotes/notes/bug-1878938-70ee2af6fdf66004.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-06-25T14:19:14Z",
+      "side": 1,
+      "message": "Using verbiage like \"this fix\" is excellent for commit messages, but it\u0027s not ideal for release notes since they\u0027re all rendered on a single page (the reader doesn\u0027t really know what fix we\u0027re referencing).",
+      "range": {
+        "startLine": 7,
+        "startChar": 16,
+        "endLine": 7,
+        "endChar": 19
+      },
+      "revId": "4566ce8c77c58e295a40b1c01db7403d3a0d157e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
