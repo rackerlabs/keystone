@@ -70,6 +70,7 @@ class Manager(manager.Manager):
         assignment_driver = CONF.assignment.driver
         super(Manager, self).__init__(assignment_driver)
 
+        self.refs = None
         self.event_callbacks = {
             notifications.ACTIONS.deleted: {
                 'domain': [self._delete_domain_assignments],
@@ -925,10 +926,20 @@ class Manager(manager.Manager):
                     a['system'] = {'all': True}
                     system_assignments.append(a)
 
+            def fetch_prior_from_implied_role_ids(role_id, roles=[]):
+                for ref in self.refs:
+                    if ref['implied_role_id'] == role_id:
+                        roles.append(ref['prior_role_id'])
+                        fetch_prior_from_implied_role_ids(
+                            ref['prior_role_id'], roles=roles)
+                return roles
             if role_id:
+                self.refs = PROVIDERS.role_api.list_role_inference_rules()
+                roles = fetch_prior_from_implied_role_ids(
+                    role_id, roles=[role_id])
                 system_assignments = [
                     sa for sa in system_assignments
-                    if role_id == sa['role_id']
+                    if sa['role_id'] in roles
                 ]
 
         assignments = []
