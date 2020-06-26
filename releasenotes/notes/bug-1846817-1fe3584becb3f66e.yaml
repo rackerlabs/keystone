@@ -1,0 +1,9 @@
+---
+fixes:
+  - >
+    [`bug 1846817 <https://bugs.launchpad.net/keystone/+bug/1846817>`_]
+    As per the implied role, admin is implied to have member as well as
+    reader role. Thus for reader role for system user, keystone should list
+    the admin, member, role assignments for the user too. Same for member
+    role for system user, the admin role assignments should also be listed.
+    This fixes the filtering the list of system role assignments.
