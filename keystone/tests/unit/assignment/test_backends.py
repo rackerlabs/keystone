@@ -2678,6 +2678,54 @@ class AssignmentTests(AssignmentTestHelperMixin):
             role_id=role['id'])
         self.assertEqual([], role_assignments)
 
+    def _initial_setup_for_assignments_for_system_user(self):
+        PROVIDERS.role_api.create_implied_role(
+            prior_role_id=self.role_admin['id'],
+            implied_role_id=self.role_member['id'])
+        PROVIDERS.role_api.create_implied_role(
+            prior_role_id=self.role_member['id'],
+            implied_role_id=self.role_other['id'])
+
+        PROVIDERS.assignment_api.create_system_grant_for_user(
+            self.user_foo['id'], self.role_admin['id'])
+        PROVIDERS.assignment_api.create_system_grant_for_user(
+            self.user_foo['id'], self.role_member['id'])
+        PROVIDERS.assignment_api.create_system_grant_for_user(
+            self.user_foo['id'], self.role_other['id'])
+
+    def test_list_valid_system_role_assignments_admin_user(self):
+        self._initial_setup_for_assignments_for_system_user()
+        roles_ids = PROVIDERS.assignment_api.list_role_assignments(
+            system='all', role_id=self.role_admin['id'])
+        self.assertEqual(1, len(roles_ids))
+        roles = []
+        for role in roles_ids:
+            roles.append(role['role_id'])
+        self.assertIn(self.role_admin['id'], roles)
+
+    def test_list_valid_system_role_assignments_member_user(self):
+        self._initial_setup_for_assignments_for_system_user()
+        roles_ids = PROVIDERS.assignment_api.list_role_assignments(
+            system='all', role_id=self.role_member['id'])
+        self.assertEqual(2, len(roles_ids))
+        roles = []
+        for role in roles_ids:
+            roles.append(role['role_id'])
+        self.assertIn(self.role_admin['id'], roles)
+        self.assertIn(self.role_member['id'], roles)
+
+    def test_list_valid_system_role_assignments_other_user(self):
+        self._initial_setup_for_assignments_for_system_user()
+        roles_ids = PROVIDERS.assignment_api.list_role_assignments(
+            system='all', role_id=self.role_other['id'])
+        self.assertEqual(3, len(roles_ids))
+        roles = []
+        for role in roles_ids:
+            roles.append(role['role_id'])
+        self.assertIn(self.role_admin['id'], roles)
+        self.assertIn(self.role_member['id'], roles)
+        self.assertIn(self.role_other['id'], roles)
+
 
 class InheritanceTests(AssignmentTestHelperMixin):
 
