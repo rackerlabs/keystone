@@ -17,9 +17,11 @@ import functools
 import uuid
 
 import freezegun
+import fixtures
 import mock
 from oslo_db import exception as db_exception
 from oslo_db import options
+from oslo_log import log
 from six.moves import range
 import sqlalchemy
 from sqlalchemy import exc
@@ -731,6 +733,40 @@ class SqlIdentity(SqlTests,
         # users fetched.
         self.assertNotEqual(len(first_call_users), len(second_call_users))
         self.assertEqual(first_call_counter, counter.calls)
+
+    def test_update_user_with_stale_data_forces_retry(self):
+        # Capture log output so we know oslo.db attempted a retry
+        log_fixture = self.useFixture(fixtures.FakeLogger(level=log.DEBUG))
+
+        # Create a new user
+        user_dict = unit.new_user_ref(
+            domain_id=CONF.identity.default_domain_id)
+        new_user_dict = PROVIDERS.identity_api.create_user(user_dict)
+
+        session = sql.session_for_write()
+        side_effects = [
+            # Raise a StaleDataError simulating that another client has updated
+            # the user's password while this client's request was being
+            # processed
+            sqlalchemy.orm.exc.StaleDataError,
+            # The oslo.db library will retry the request, so the second time
+            # this method is called let's return a valid session object
+            session,
+            session
+        ]
+        sql.session_for_write = mock.Mock(side_effect=side_effects)
+
+        # Update a user's attribute, the first attempt will fail but oslo.db
+        # will handle the exception and retry, the second attempt will succeed
+        new_user_dict['email'] = uuid.uuid4().hex
+        PROVIDERS.identity_api.update_user(new_user_dict['id'], new_user_dict)
+
+        # Make sure oslo.db retried the update by checking the log output
+        expected_log_message = (
+            'Performing DB retry for function keystone.identity.backends.'
+            'sql.Identity.update_user'
+        )
+        self.assertIn(expected_log_message, log_fixture.output)
 
 
 class SqlTrust(SqlTests, trust_tests.TrustTests):
