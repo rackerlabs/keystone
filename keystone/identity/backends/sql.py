@@ -31,6 +31,24 @@ from keystone.identity.backends import sql_model as model
 
 CONF = keystone.conf.CONF
 
+# We use this to handle a rare case where at least two clients are updating the
+# same user's password. Keystone tracks previous passwords and will update old
+# passwords with an expiration time stamp. Password pruning and expiration is
+# handled in the User model (sql_model.py) password setter method. If two
+# clients update the same user's password, it's possible for both of them to
+# attempt to update the expiration for the old passwords. The client who
+# finishes first will also truncate old passwords when their session commits
+# the changes. The second client's update will fail because the record for the
+# oldest password will no longer exist. In this case, which only happens when
+# you're constantly updating the same user password, let's just retry the
+# request. A better solution would be to craft a specific SQL statement using
+# SELECT ... WHERE (e.g., a compare-and-swap approach) so that we can inspect
+# the affected rows. If zero rows were affected, we know the data in the UPDATE
+# was stale and we should retry anyway. This achieves a similiar result but
+# doesn't implement a complex SQL update query.
+def _stale_data_exception_checker(exc):
+    return isinstance(exc, sqlalchemy.orm.exc.StaleDataError)
+
 
 class Identity(base.IdentityDriverBase):
     # NOTE(henry-nash): Override the __init__() method so as to take a
@@ -208,6 +226,7 @@ class Identity(base.IdentityDriverBase):
             return base.filter_user(user_ref.to_dict())
 
     @sql.handle_conflicts(conflict_type='user')
+    @oslo_db_api.wrap_db_retry(exception_checker=_stale_data_exception_checker)
     def update_user(self, user_id, user):
         with sql.session_for_write() as session:
             user_ref = self._get_user(session, user_id)
