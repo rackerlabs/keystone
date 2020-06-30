@@ -208,6 +208,7 @@ class Identity(base.IdentityDriverBase):
             return base.filter_user(user_ref.to_dict())
 
     @sql.handle_conflicts(conflict_type='user')
+    @oslo_db_api.wrap_db_retry(retry_on_deadlock=True)
     def update_user(self, user_id, user):
         with sql.session_for_write() as session:
             user_ref = self._get_user(session, user_id)
