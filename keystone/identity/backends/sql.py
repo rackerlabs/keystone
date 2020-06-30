@@ -184,8 +184,14 @@ class Identity(base.IdentityDriverBase):
             for user in query:
                 user.default_project_id = None
 
-    def _get_user(self, session, user_id):
-        user_ref = session.query(model.User).get(user_id)
+    def _get_user(self, session, user_id, for_update=False):
+        if for_update:
+            user_ref = session.query(
+                model.User).with_for_update(
+                    nowait=True, of=model.User).get(user_id)
+        else:
+            user_ref = session.query(model.User).get(user_id)
+
         if not user_ref:
             raise exception.UserNotFound(user_id=user_id)
         return user_ref
@@ -210,7 +216,7 @@ class Identity(base.IdentityDriverBase):
     @sql.handle_conflicts(conflict_type='user')
     def update_user(self, user_id, user):
         with sql.session_for_write() as session:
-            user_ref = self._get_user(session, user_id)
+            user_ref = self._get_user(session, user_id, for_update=True)
             old_user_dict = user_ref.to_dict()
             for k in user:
                 old_user_dict[k] = user[k]
