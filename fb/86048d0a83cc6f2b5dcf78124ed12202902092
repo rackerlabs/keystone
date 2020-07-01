@@ -1,0 +1,10 @@
+Code-Review+2: Lance Bragstad <lbragstad@redhat.com>
+Code-Review+1: Vishakha Agarwal <agarwalvishakha18@gmail.com>
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Workflow+1: Gage Hugo <gagehugo@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 01 Jul 2020 19:20:47 +0000
+Reviewed-on: https://review.opendev.org/726995
+Project: openstack/keystone
+Branch: refs/heads/master
