@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "bf51134e_75ff1434",
+        "filename": "keystone/cmd/doctor/caching.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-07-02T20:48:35Z",
+      "side": 1,
+      "message": "What about oslo_cache.memcache_pool?",
+      "range": {
+        "startLine": 60,
+        "startChar": 53,
+        "endLine": 60,
+        "endChar": 76
+      },
+      "revId": "2bcc40628c0a37958c2d49260220c95bbefee950",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf51134e_d591c0f3",
+        "filename": "keystone/cmd/doctor/caching.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-07-02T20:48:35Z",
+      "side": 1,
+      "message": "This is redundant and inconsistent with the conditional on line 64, either this should be removed so it returns None or another return False should be added for the inner case on line 64 so that it\u0027s always returning either True or False and not None",
+      "range": {
+        "startLine": 66,
+        "startChar": 4,
+        "endLine": 67,
+        "endChar": 20
+      },
+      "revId": "2bcc40628c0a37958c2d49260220c95bbefee950",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf51134e_a4410b3c",
         "filename": "releasenotes/notes/bug-1332058-f25e2de40411b711.yaml",
         "patchSetId": 2
