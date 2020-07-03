@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bf51134e_fc9f8862",
+        "filename": "doc/source/admin/resource-options.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-07-03T12:18:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfb3d3c7_a0bda069",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 61
+      },
+      "revId": "7949b34b0b4a3dd338b1e496bc88d646ffa7ad2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfb3d3c7_00a82c1d",
         "filename": "doc/source/admin/resource-options.rst",
         "patchSetId": 2
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "bf51134e_1cafdc94",
+        "filename": "doc/source/admin/resource-options.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-07-03T12:18:25Z",
+      "side": 1,
+      "message": "Added the test case.",
+      "parentUuid": "bfb3d3c7_00a82c1d",
+      "revId": "7949b34b0b4a3dd338b1e496bc88d646ffa7ad2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfb3d3c7_80609c34",
         "filename": "releasenotes/notes/bug-1827431-2f078c13dfc9a02a.yaml",
         "patchSetId": 2
@@ -53,6 +95,24 @@
       "writtenOn": "2019-05-17T16:58:24Z",
       "side": 1,
       "message": "Please add a link to the bug report",
+      "revId": "7949b34b0b4a3dd338b1e496bc88d646ffa7ad2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf51134e_7c93785d",
+        "filename": "releasenotes/notes/bug-1827431-2f078c13dfc9a02a.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-07-03T12:18:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfb3d3c7_80609c34",
       "revId": "7949b34b0b4a3dd338b1e496bc88d646ffa7ad2a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
