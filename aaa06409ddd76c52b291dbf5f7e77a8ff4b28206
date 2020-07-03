@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf51134e_526f7b91",
+        "filename": "doc/source/admin/cli-manage-projects-users-and-roles.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2020-07-03T14:30:13Z",
+      "side": 1,
+      "message": "I prefer the statement in the other doc, but this is me nitpicking",
+      "range": {
+        "startLine": 87,
+        "startChar": 57,
+        "endLine": 88,
+        "endChar": 8
+      },
+      "revId": "aaa06409ddd76c52b291dbf5f7e77a8ff4b28206",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
