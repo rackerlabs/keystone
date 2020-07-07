@@ -175,10 +175,13 @@ class JWSFormatter(object):
         )
 
     def _decode_token_from_id(self, token_id):
+        options = dict()
+        options['verify_exp'] = False
         for public_key in self.public_keys:
             try:
                 return jwt.decode(
-                    token_id, public_key, algorithms=JWSFormatter.algorithm
+                    token_id, public_key, algorithms=JWSFormatter.algorithm,
+                    options=options
                 )
             except (jwt.InvalidSignatureError, jwt.DecodeError,
                     jwt.ExpiredSignatureError):
