@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf51134e_e6786b90",
+        "filename": "keystone/token/providers/jws/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-07-07T15:15:07Z",
+      "side": 1,
+      "message": "I double-checked the pyjwt code and the only place this is raised is in the _validate_exp() method that validates the public \"exp\" claim. Since we\u0027re bypassing that method, we don\u0027t need to include this anymore.",
+      "range": {
+        "startLine": 187,
+        "startChar": 20,
+        "endLine": 187,
+        "endChar": 45
+      },
+      "revId": "2c536a637156ba7b47b8e95f4135502e07aeea69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf51134e_66929ba1",
+        "filename": "releasenotes/notes/bug-1886017-bc2ad648d57101a2.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-07-07T15:15:07Z",
+      "side": 1,
+      "message": "nit: I\u0027d slightly reword this release note to remove the \"this\" and replace it with a more direct statement:\n\n  JWT validation now supports `allow_expired` query parameters.",
+      "revId": "2c536a637156ba7b47b8e95f4135502e07aeea69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
