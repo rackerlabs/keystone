@@ -3499,6 +3499,43 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
             ['id', 'domain_id', 'enabled', 'description',
              'authorization_ttl'])
 
+    def test_migration_079_adds_schema_version_to_mapping_table(self):
+        self.expand(78)
+        self.migrate(78)
+        self.contract(78)
+
+        mapping_table_name = 'mapping'
+        self.assertTableColumns(
+            mapping_table_name,
+            ['id', 'rules']
+        )
+
+        self.expand(79)
+        self.migrate(79)
+        self.contract(79)
+
+        self.assertTableColumns(
+            mapping_table_name,
+            ['id', 'rules', 'schema_version']
+        )
+
+        mapping_table = sqlalchemy.Table(
+            mapping_table_name, self.metadata, autoload=True
+        )
+
+        mapping = {
+            'id': uuid.uuid4().hex,
+            'rules': "{}",
+            'schema_version': "2.0"
+        }
+        mapping_table.insert().values(mapping).execute()
+
+        mapping_without_schema = {
+            'id': uuid.uuid4().hex,
+            'rules': "{}"
+        }
+        mapping_table.insert().values(mapping_without_schema).execute()
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = db_fixtures.MySQLOpportunisticFixture

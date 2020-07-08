@@ -124,10 +124,11 @@ class IdPRemoteIdsModel(sql.ModelBase, sql.ModelDictMixin):
 
 class MappingModel(sql.ModelBase, sql.ModelDictMixin):
     __tablename__ = 'mapping'
-    attributes = ['id', 'rules']
+    attributes = ['id', 'rules', 'schema_version']
 
     id = sql.Column(sql.String(64), primary_key=True)
     rules = sql.Column(sql.JsonBlob(), nullable=False)
+    schema_version = sql.Column(sql.String(5), nullable=False, default='1.0')
 
     @classmethod
     def from_dict(cls, dictionary):
@@ -313,6 +314,7 @@ class Federation(base.FederationDriverBase):
         ref = {}
         ref['id'] = mapping_id
         ref['rules'] = mapping.get('rules')
+        ref['schema_version'] = mapping.get('schema_version')
         with sql.session_for_write() as session:
             mapping_ref = MappingModel.from_dict(ref)
             session.add(mapping_ref)
