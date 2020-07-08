@@ -179,7 +179,8 @@ class FederatedSetupMixin(object):
     def mapping_ref(self, rules=None):
         return {
             'id': uuid.uuid4().hex,
-            'rules': rules or self.rules['rules']
+            'rules': rules or self.rules['rules'],
+            'schema_version': "1.0"
         }
 
     def _scope_request(self, unscoped_token_id, scope, scope_id):
