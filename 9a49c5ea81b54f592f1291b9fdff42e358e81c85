@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bf51134e_0b5d9146",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 947,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2020-07-08T17:22:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf51134e_2ec6aa4a",
+      "range": {
+        "startLine": 947,
+        "startChar": 25,
+        "endLine": 947,
+        "endChar": 26
+      },
+      "revId": "9a49c5ea81b54f592f1291b9fdff42e358e81c85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf51134e_4ef95e7e",
         "filename": "keystone/tests/unit/auth/plugins/test_mapped.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2020-07-08T13:38:48Z",
       "side": 1,
       "message": "I think you should remove these spaces.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 4
+      },
+      "revId": "9a49c5ea81b54f592f1291b9fdff42e358e81c85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf51134e_8b36c102",
+        "filename": "keystone/tests/unit/auth/plugins/test_mapped.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 28356
+      },
+      "writtenOn": "2020-07-08T17:22:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf51134e_4ef95e7e",
       "range": {
         "startLine": 24,
         "startChar": 0,
