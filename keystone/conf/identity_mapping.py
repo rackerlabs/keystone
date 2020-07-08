@@ -57,12 +57,32 @@ value to false is when configuring a fresh installation, although that is the
 recommended value.
 """))
 
+federation_attribute_mapping_schema_version = cfg.StrOpt(
+    'federation_attribute_mapping_schema_version',
+    default='1.0',
+    choices=['1.0', '1.1'],
+    help=utils.fmt("""The federation attribute mapping schema version.
+
+    The attribute mapping is used to map attributes from identity provivers
+    (IdPs) to OpenStack user data. The following are the supported versions:
+    * 1.0 -- the first attribute mapping schema. It allows operators to
+    execute static mappings between IdPs attributes and OpenStack logical
+    elements.
+    * 1.1 -- This federated attribute mapping schema is designed to
+    handle the `domain` attribute configured at the root of the attribute
+    mapping. When the `domain` attribute is configured, we should take it as
+    the default one for the attribute mapping, instead of the domain of the
+    IdP. Moreover, we should respect the override to it that can take place at
+    the `groups`, `user`, and `projects` attributes definition.
+    """))
+
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
     driver,
     generator,
     backward_compatible_ids,
+    federation_attribute_mapping_schema_version
 ]
 
 
