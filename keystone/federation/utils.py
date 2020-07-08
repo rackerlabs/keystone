@@ -13,6 +13,7 @@
 """Utilities for Federation Extension."""
 
 import ast
+import copy
 import re
 
 import flask
@@ -54,8 +55,20 @@ ROLE_PROPERTIES = {
     }
 }
 
+PROJECTS_SCHEMA = {
+    "type": "array",
+    "items": {
+        "type": "object",
+        "required": ["name", "roles"],
+        "additionalProperties": False,
+        "properties": {
+            "name": {"type": "string"},
+            "roles": ROLE_PROPERTIES
+        }
+    }
+}
 
-MAPPING_SCHEMA = {
+IDP_ATTRIBUTE_MAPPING_SCHEMA_1_0 = {
     "type": "object",
     "required": ['rules'],
     "properties": {
@@ -90,18 +103,7 @@ MAPPING_SCHEMA = {
                                     },
                                     "additionalProperties": False
                                 },
-                                "projects": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "required": ["name", "roles"],
-                                        "additionalProperties": False,
-                                        "properties": {
-                                            "name": {"type": "string"},
-                                            "roles": ROLE_PROPERTIES
-                                        }
-                                    }
-                                },
+                                "projects": PROJECTS_SCHEMA,
                                 "group": {
                                     "type": "object",
                                     "oneOf": [
@@ -234,6 +236,18 @@ MAPPING_SCHEMA = {
     }
 }
 
+# `IDP_ATTRIBUTE_MAPPING_SCHEMA_1_1` adds the domain option for projects,
+# the goal is to work in a similar fashion as `user` and `groups` properties
+IDP_ATTRIBUTE_MAPPING_SCHEMA_1_1 = copy.deepcopy(
+    IDP_ATTRIBUTE_MAPPING_SCHEMA_1_0)
+
+PROJECTS_SCHEMA_1_1 = copy.deepcopy(PROJECTS_SCHEMA)
+PROJECTS_SCHEMA_1_1["items"]["properties"][
+    "domain"] = {"$ref": "#/definitions/domain"}
+
+IDP_ATTRIBUTE_MAPPING_SCHEMA_1_1['properties']['rules']['items']['properties'][
+    'local']['items']['properties']['projects'] = PROJECTS_SCHEMA_1_1
+
 
 class DirectMaps(object):
     """An abstraction around the remote matches.
@@ -266,7 +280,10 @@ class DirectMaps(object):
 
 
 def validate_mapping_structure(ref):
-    v = jsonschema.Draft4Validator(MAPPING_SCHEMA)
+    version = CONF.identity_mapping.federation_attribute_mapping_schema_version
+
+    v = jsonschema.Draft4Validator(
+        IDP_ATTRIBUTE_MAPPING_SCHEMAS[version]['schema'])
 
     messages = ''
     for error in sorted(v.iter_errors(ref), key=str):
@@ -598,6 +615,21 @@ class RuleProcessor(object):
                            group_names_list]
         return group_dicts
 
+    def normalize_user(self, user, default_mapping_domain):
+        """Parse and validate user mapping."""
+        if user.get('type') is None:
+            user['type'] = UserType.EPHEMERAL
+
+        if user.get('type') not in (UserType.EPHEMERAL, UserType.LOCAL):
+            msg = _("User type %s not supported") % user.get('type')
+            raise exception.ValidationError(msg)
+
+    @staticmethod
+    def extract_groups(groups_by_domain):
+        for groups in list(groups_by_domain.values()):
+            for group in list({g['name']: g for g in groups}.values()):
+                yield group
+
     def _transform(self, identity_values):
         """Transform local mappings, to an easier to understand format.
 
@@ -632,23 +664,6 @@ class RuleProcessor(object):
         :rtype: dict
 
         """
-        def extract_groups(groups_by_domain):
-            for groups in list(groups_by_domain.values()):
-                for group in list({g['name']: g for g in groups}.values()):
-                    yield group
-
-        def normalize_user(user):
-            """Parse and validate user mapping."""
-            user_type = user.get('type')
-
-            if user_type and user_type not in (UserType.EPHEMERAL,
-                                               UserType.LOCAL):
-                msg = _("User type %s not supported") % user_type
-                raise exception.ValidationError(msg)
-
-            if user_type is None:
-                user['type'] = UserType.EPHEMERAL
-
         # initialize the group_ids as a set to eliminate duplicates
         user = {}
         group_ids = set()
@@ -672,18 +687,22 @@ class RuleProcessor(object):
             if 'user' in identity_value:
                 # if a mapping outputs more than one user name, log it
                 if user:
-                    LOG.warning('Ignoring user name')
+                    LOG.warning('Ignoring user [%s]',
+                                identity_value.get('user'))
                 else:
                     user = identity_value.get('user')
+                    self.normalize_user(user, identity_value.get('domain'))
+
             if 'group' in identity_value:
+
                 group = identity_value['group']
                 if 'id' in group:
                     group_ids.add(group['id'])
                 elif 'name' in group:
-                    domain = (group['domain'].get('name') or
-                              group['domain'].get('id'))
-                    groups_by_domain.setdefault(domain, list()).append(group)
-                group_names.extend(extract_groups(groups_by_domain))
+                    groups = self.process_group_by_name(
+                        group, groups_by_domain)
+
+                    group_names.extend(groups)
             if 'groups' in identity_value:
                 group_dicts = self._normalize_groups(identity_value)
                 group_names.extend(group_dicts)
@@ -698,15 +717,23 @@ class RuleProcessor(object):
                         ast.literal_eval(identity_value['group_ids']))
                 except (ValueError, SyntaxError):
                     group_ids.update([identity_value['group_ids']])
-            if 'projects' in identity_value:
-                projects = identity_value['projects']
 
-        normalize_user(user)
+            if 'projects' in identity_value:
+                projects = self.extract_projects(identity_value)
 
         return {'user': user,
                 'group_ids': list(group_ids),
                 'group_names': group_names,
                 'projects': projects}
+
+    def process_group_by_name(self, group, groups_by_domain):
+        domain = (group['domain'].get('name') or group['domain'].get('id'))
+        groups_by_domain.setdefault(domain, list()).append(group)
+
+        return RuleProcessor.extract_groups(groups_by_domain)
+
+    def extract_projects(self, identity_value):
+        return identity_value.get('projects', [])
 
     def _update_local_mapping(self, local, direct_maps):
         """Replace any {0}, {1} ... values with data from the assertion.
@@ -915,3 +942,51 @@ def assert_enabled_service_provider_object(service_provider):
         tr_msg = _('Service Provider %(sp)s is disabled') % {'sp': sp_id}
         LOG.debug(msg)
         raise exception.Forbidden(tr_msg)
+
+
+class RuleProcessorToHonourDomainOption(RuleProcessor):
+    """Handles the default domain configured in the attribute mapping
+
+    This rule processor is designed to handle the `domain` attribute
+    configured at the root of the attribute mapping. When this attribute is
+    configured, we should take it as the default one for the attribute
+    mapping, instead of the domain of the IdP. Moreover, we should respect
+    the override to it that can take place at the `groups`, `user`,
+    and `projects` attributes definition.
+    """
+
+    def __init__(self, mapping_id, rules):
+        super(RuleProcessorToHonourDomainOption, self).__init__(
+            mapping_id, rules)
+
+    def extract_projects(self, identity_value):
+        projects = identity_value.get("projects", [])
+        default_mapping_domain = identity_value.get("domain")
+        for project in projects:
+            if not project.get("domain"):
+                project["domain"] = default_mapping_domain
+        return projects
+
+    def normalize_user(self, user, default_mapping_domain):
+        super(RuleProcessorToHonourDomainOption, self).normalize_user(
+            user, default_mapping_domain)
+
+        if not user.get("domain"):
+            LOG.debug("Configuring the domain [%s] for user [%s].",
+                      default_mapping_domain, user)
+            user["domain"] = default_mapping_domain
+
+
+IDP_ATTRIBUTE_MAPPING_SCHEMAS = {
+    "1.0": {"schema": IDP_ATTRIBUTE_MAPPING_SCHEMA_1_0,
+            "processor": RuleProcessor},
+    "1.1": {"schema": IDP_ATTRIBUTE_MAPPING_SCHEMA_1_1,
+            "processor": RuleProcessorToHonourDomainOption}
+}
+
+
+def create_attribute_mapping_rules_processor(mapping_id, rules_to_process):
+    version = CONF.identity_mapping.federation_attribute_mapping_schema_version
+
+    return IDP_ATTRIBUTE_MAPPING_SCHEMAS[version]['processor'](
+        mapping_id, rules_to_process)
