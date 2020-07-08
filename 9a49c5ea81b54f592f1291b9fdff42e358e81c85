@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf51134e_2ec6aa4a",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 947,
+      "author": {
+        "id": 30695
+      },
+      "writtenOn": "2020-07-08T13:38:48Z",
+      "side": 1,
+      "message": "I think you should use American English here (Honor) as you are using it in others files and in the commit message.",
+      "range": {
+        "startLine": 947,
+        "startChar": 25,
+        "endLine": 947,
+        "endChar": 26
+      },
+      "revId": "9a49c5ea81b54f592f1291b9fdff42e358e81c85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf51134e_4ef95e7e",
+        "filename": "keystone/tests/unit/auth/plugins/test_mapped.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 30695
+      },
+      "writtenOn": "2020-07-08T13:38:48Z",
+      "side": 1,
+      "message": "I think you should remove these spaces.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 4
+      },
+      "revId": "9a49c5ea81b54f592f1291b9fdff42e358e81c85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
