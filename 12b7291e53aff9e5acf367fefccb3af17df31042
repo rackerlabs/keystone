@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf51134e_6f71b244",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2020-07-09T01:53:07Z",
+      "side": 1,
+      "message": "I\u0027m not sure that this makes anything worse, but at least on Galera, SELECT FOR UPDATE does not actually lock across masters, it instead will fail one of the writers if there are competing writes on two masters.  Assuming the \"handle_conflicts\" decorator will retry for \"Deadlock found when trying to get lock\", it will still be OK.   you\u0027ve probably seen this but http://www.joinfu.com/2015/01/understanding-reservations-concurrency-locking-in-nova/ is the classic openstack blog post on this topic.\n\nthat this also specifies NOWAIT, I guess this is already the intention, to fail fast into the retry decorator if there is competition for the row.\n\nbut then the commit message refers to the 500 server error due to stale data.   So, if you\u0027re looking for this to gracefully block other requests so that nothing raises, that\u0027s not what this will do.   I\u0027m not really sure what the relationship is between the 500 server errors you mention and the purpose of \"@sql.handle_conflicts\".\n\nRe: \"OF\", in the MySQL world this is only supported by MySQL 8, and not at all by MariaDB.  If this SELECT statement is only against the \"user\" table then I don\u0027t think OF makes any difference, it\u0027s used to indicate which of multiple tables in the statement should have the lock.",
+      "revId": "12b7291e53aff9e5acf367fefccb3af17df31042",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
