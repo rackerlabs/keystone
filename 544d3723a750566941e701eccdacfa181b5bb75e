@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf51134e_f47f4d63",
+        "filename": "doc/source/admin/federation/mapping_combinations.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-07-09T11:44:37Z",
+      "side": 1,
+      "message": "Can we enhance this documentation by giving projects and roles Mapping examples, and also mention about pre-condition that roles and project should exist when the assertion is mapped, then the mapping will work fine. It is an important piece of information for users.",
+      "range": {
+        "startLine": 281,
+        "startChar": 0,
+        "endLine": 282,
+        "endChar": 59
+      },
+      "revId": "544d3723a750566941e701eccdacfa181b5bb75e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf51134e_3a6d2fcc",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1697,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-07-09T11:44:37Z",
+      "side": 1,
+      "message": "It would be great if you can add one Mapping fixture for testing K2K federation and test for multiple projects.",
+      "revId": "544d3723a750566941e701eccdacfa181b5bb75e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf51134e_f4b3cde7",
+        "filename": "releasenotes/notes/bug-1878496-a2c5166ecfe3ca1a.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-07-09T11:44:37Z",
+      "side": 1,
+      "message": "Please add a link to the bug report",
+      "revId": "544d3723a750566941e701eccdacfa181b5bb75e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

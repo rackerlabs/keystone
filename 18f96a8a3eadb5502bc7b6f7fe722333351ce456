@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf51134e_5404394a",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1757,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-07-09T11:44:37Z",
+      "side": 0,
+      "message": "Any specific reason of removing this?",
+      "range": {
+        "startLine": 1749,
+        "startChar": 14,
+        "endLine": 1757,
+        "endChar": 21
+      },
+      "revId": "18f96a8a3eadb5502bc7b6f7fe722333351ce456",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
