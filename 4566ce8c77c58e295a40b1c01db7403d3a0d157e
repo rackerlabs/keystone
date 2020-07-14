@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "bf51134e_8bbdcf03",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1256,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-07-14T17:37:25Z",
+      "side": 1,
+      "message": "I understand the hesitation about having this run every time. I didn\u0027t feel entirely comfortable with adding this, but I wasn\u0027t coming up with an alternative.\n\nTo be clear, are you proposing we recommend that people fix this by modifying the database directly using SQL statements?",
+      "parentUuid": "bf51134e_6b8afb63",
+      "revId": "4566ce8c77c58e295a40b1c01db7403d3a0d157e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf51134e_e2ebd074",
         "filename": "releasenotes/notes/bug-1878938-70ee2af6fdf66004.yaml",
         "patchSetId": 6
