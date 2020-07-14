@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "bf51134e_6b8afb63",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1256,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-07-14T17:34:04Z",
+      "side": 1,
+      "message": "I am not in favor of having this method here. This will now run every time delete role is called, when it should be just a one-time cleanup and should never be needed again once the bug is fixed. I would prefer to omit this and instead add manual instructions to the release note on how to clean up the database. What do you think?",
+      "parentUuid": "bf51134e_a2cc3835",
+      "revId": "4566ce8c77c58e295a40b1c01db7403d3a0d157e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf51134e_e2ebd074",
         "filename": "releasenotes/notes/bug-1878938-70ee2af6fdf66004.yaml",
         "patchSetId": 6
