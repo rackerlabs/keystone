@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf51134e_9465c3e3",
+        "filename": "doc/source/admin/federation/mapping_combinations.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-07-16T18:45:27Z",
+      "side": 1,
+      "message": "nit: missing \"regex\": true.",
+      "range": {
+        "startLine": 391,
+        "startChar": 8,
+        "endLine": 393,
+        "endChar": 9
+      },
+      "revId": "feaf03443807676e0cf56b7a4458b978a065a132",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
