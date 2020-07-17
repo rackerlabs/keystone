@@ -775,9 +775,9 @@ Auto-Provisioning
 -----------------
 
 The mapping engine has the ability to aid in the auto-provisioning of resources
-when a federated user authenticates for the first time. This can be achieved
-using a specific mapping syntax that the mapping engine can parse and
-ultimately make decisions on.
+whenever a federated user authenticates. This can be achieved using a specific
+mapping syntax that the mapping engine can parse and ultimately make decisions
+on.
 
 For example, consider the following mapping:
 
@@ -855,6 +855,14 @@ It is important to note the following constraints apply when auto-provisioning:
 
 * Assignments are actually created for the user which is unlike the
   ephemeral group memberships.
+* By default, assignments are only ever created, never destroyed. If you need
+  to also automatically deprovision assignments that are no longer returned
+  by the mapping, use ``remove_dangling_assignments``.
+
+.. code-block:: ini
+
+   [mapped]
+   remove_dangling_assignments = True
 
 Since the creation of roles typically requires policy changes across other
 services in the deployment, it is expected that roles are created ahead of

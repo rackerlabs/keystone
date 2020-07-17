@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import collections
 import functools
 import uuid
 
@@ -21,6 +22,7 @@ from urllib import parse
 from keystone.auth import plugins as auth_plugins
 from keystone.auth.plugins import base
 from keystone.common import provider_api
+import keystone.conf
 from keystone import exception
 from keystone.federation import constants as federation_constants
 from keystone.federation import utils
@@ -29,6 +31,7 @@ from keystone import notifications
 
 LOG = log.getLogger(__name__)
 
+CONF = keystone.conf.CONF
 METHOD_NAME = 'mapped'
 PROVIDERS = provider_api.ProviderAPIs
 
@@ -176,6 +179,36 @@ def handle_unscoped_token(auth_payload, resource_api, federation_api,
                     project_id=project['id']
                 )
 
+    def remove_dangling_grants_from_mapping(shadow_projects, idp_domain_id,
+                                            existing_roles, existing_projects,
+                                            existing_grants, user,
+                                            assignment_api):
+        idp_domain_projects = [
+            project for project in existing_projects
+            if project['domain_id'] == idp_domain_id
+        ]
+        shadow_projects_by_name = {
+            shadow_project['name']: shadow_project
+            for shadow_project in shadow_projects
+        }
+        for project in idp_domain_projects:
+            granted_roles = set(existing_grants[project['id']])
+            shadow_project = shadow_projects_by_name.get(project['name'])
+            if shadow_project:
+                # Remove assignments not granted by mapping
+                shadow_roles = set([
+                    existing_roles[shadow_role['name']]['id']
+                    for shadow_role in shadow_project['roles']
+                ])
+                dangling_roles = granted_roles - shadow_roles
+            else:
+                # Remove all assignments for projects no longer mapped to user
+                dangling_roles = granted_roles
+
+            for role_id in dangling_roles:
+                assignment_api.delete_grant(
+                    role_id, user_id=user['id'], project_id=project['id'])
+
     def is_ephemeral_user(mapped_properties):
         return mapped_properties['user']['type'] == utils.UserType.EPHEMERAL
 
@@ -268,6 +301,25 @@ def handle_unscoped_token(auth_payload, resource_api, federation_api,
                     assignment_api,
                     resource_api
                 )
+
+                if CONF.mapped.remove_dangling_assignments:
+                    existing_projects = (
+                        assignment_api.list_projects_for_user(user['id']))
+                    existing_grants = collections.defaultdict(list)
+                    assignments = assignment_api.list_role_assignments(
+                        user_id=user['id'], strip_domain_roles=False)
+                    for assignment in assignments:
+                        (existing_grants[assignment['project_id']]
+                            .append(assignment['role_id']))
+                    remove_dangling_grants_from_mapping(
+                        mapped_properties['projects'],
+                        idp_domain_id,
+                        existing_roles,
+                        existing_projects,
+                        existing_grants,
+                        user,
+                        assignment_api
+                    )
 
             user_id = user['id']
             group_ids = mapped_properties['group_ids']

@@ -3810,6 +3810,50 @@ class ShadowMappingTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         role_ids = [r['id'] for r in roles]
         self.assertNotIn(self.role_admin['id'], role_ids)
 
+    def test_removing_dangling_role_assignments(self):
+        self.config_fixture.config(
+            group='mapped',
+            remove_dangling_assignments=True)
+        response = self._issue_unscoped_token()
+        self.assertValidMappedUser(
+            render_token.render_token_response_from_model(response)['token'])
+        unscoped_token = response.id
+        response = self.get('/auth/projects', token=unscoped_token)
+        project_ids = [p['id'] for p in response.json_body['projects']]
+        updated_mapping = copy.deepcopy(mapping_fixtures.MAPPING_PROJECTS)
+        updated_mapping['rules'][0]['local'][1]['projects'] = [
+            # Remove Production and personal project, downgrade role for Staging
+            {'name': 'Staging',
+             'roles': [{'name': 'observer'}]},
+        ]
+        PROVIDERS.federation_api.update_mapping(
+            self.mapping['id'], updated_mapping
+        )
+        response = self._issue_unscoped_token()
+        self.assertValidMappedUser(
+            render_token.render_token_response_from_model(response)['token'])
+        user_id = response.user_id
+        domain_role_assignments = (
+            PROVIDERS.assignment_api.list_role_assignments(
+                user_id=user_id,
+                strip_domain_roles=False
+            )
+        )
+        hints = driver_hints.Hints()
+        hints.add_filter('domain_id', self.idp['domain_id'])
+        roles = PROVIDERS.role_api.list_roles()
+        observer_role = [r for r in roles if r['name'] == 'observer'][0]
+        staging_project = PROVIDERS.resource_api.get_project_by_name(
+            'Staging', self.idp['domain_id']
+        )
+        self.assertEqual(
+            staging_project['id'], domain_role_assignments[0]['project_id']
+        )
+        self.assertEqual(user_id, domain_role_assignments[0]['user_id'])
+        self.assertEqual(observer_role['id'],
+            domain_role_assignments[0]['role_id'])
+        self.assertEqual(len(domain_role_assignments), 1)
+
 
 class JsonHomeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
     JSON_HOME_DATA = {

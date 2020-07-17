@@ -1,0 +1,10 @@
+---
+features:
+  - |
+    [`bug 1888029 <https://bugs.launchpad.net/keystone/+bug/1888029>`_]
+    Support for automatically deprovisioning role assignments that should no
+    longer be mapped to federated users, either according to an updated mapping
+    definition or changes to the user's group/roles on the external IdP. This
+    is disabled by default but can be turned on via the new
+    ``remove_dangling_assignments`` configuration option in the ``[mapped]``
+    group.
