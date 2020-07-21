@@ -86,6 +86,22 @@ class TestFederationUtils(unit.TestCase):
         self.attribute_mapping_schema_1_1['rules'][0]['local'][0]["projects"][
             0]['domain'] = {"name": "{some_place_holder}"}
 
+        self.attribute_mapping_schema_1_2 = copy.deepcopy(
+            self.attribute_mapping_schema_1_1)
+
+        self.attribute_mapping_schema_1_2['schema_version'] = '1.2'
+        self.project_as_object_for_schema_1_2 = [{
+            "name": "test-project",
+            "domain": {"name": "test-domain"},
+            "roles": [
+                {
+                    "name": "member"
+                }
+            ]
+        }]
+        self.attribute_mapping_schema_1_2['rules'][0]['local'][0][
+            "projects_json"] = "{place_holder_for_projects_as_json_property}"
+
         self.rule_processor = utils.RuleProcessor(
             self.mapping_id_mock, self.attribute_mapping_schema_1_0)
 
@@ -93,11 +109,18 @@ class TestFederationUtils(unit.TestCase):
             utils.RuleProcessorToHonorDomainOption(
                 self.mapping_id_mock, self.attribute_mapping_schema_1_1)
 
+        self.rule_processor_schema_1_2 =\
+            utils.RuleProcessorForProjectJsonAttribute(
+                self.mapping_id_mock, self.attribute_mapping_schema_1_2)
+
     def test_validate_mapping_structure_schema1_0(self):
         utils.validate_mapping_structure(self.attribute_mapping_schema_1_0)
 
     def test_validate_mapping_structure_schema1_1(self):
         utils.validate_mapping_structure(self.attribute_mapping_schema_1_1)
+
+    def test_validate_mapping_structure_schema1_2(self):
+        utils.validate_mapping_structure(self.attribute_mapping_schema_1_2)
 
     def test_normalize_user_no_type_set(self):
         user = {}
@@ -240,6 +263,30 @@ class TestFederationUtils(unit.TestCase):
 
         self.assertEqual([expected_project], result)
 
+    def test_rule_processor_project_json_property(self):
+        project = {'name': "project1"}
+        # When we reach the extract project phase, the json is already a
+        # python object.
+        project_json = {'name': "project2", 'domain': {"id": "domain_id"}}
+
+        identity_values = {'projects': [project.copy()],
+                           'domain': self.domain_mock,
+                           'projects_json': [project_json.copy()]}
+
+        result = self.rule_processor_schema_1_1.extract_projects(
+            identity_values)
+
+        expected_project1 = project.copy()
+        expected_project1['domain'] = self.domain_mock
+
+        self.assertEqual([expected_project1], result)
+
+        result = self.rule_processor_schema_1_2.extract_projects(
+            identity_values)
+
+        expected_project2 = project_json.copy()
+        self.assertEqual([expected_project1, expected_project2], result)
+
     def test_normalize_user_no_type_set_schema_1_1(self):
         user = {}
         self.rule_processor_schema_1_1.normalize_user(user, self.domain_mock)
@@ -289,3 +336,44 @@ class TestFederationUtils(unit.TestCase):
             self.attribute_mapping_schema_1_1)
 
         self.assertIsInstance(result, utils.RuleProcessorToHonorDomainOption)
+
+    def test_create_attribute_mapping_rules_processor_schema1_2(self):
+        result = utils.create_attribute_mapping_rules_processor(
+            self.attribute_mapping_schema_1_2)
+
+        self.assertIsInstance(
+            result, utils.RuleProcessorForProjectJsonAttribute)
+
+    def test_process_rule_mapping(self):
+        result = self.rule_processor.process_rule_mapping(["A", "B", "C"],
+                                                          "key", "{0} - {1}")
+
+        self.assertEqual("A - B", result)
+
+    def test_process_rule_mapping_rule_list(self):
+        rule = list([{'key': "k0", 'rule': "{0}"},
+                     {'key': "k2", 'rule': "{2}"},
+                     {'key': "k1", 'rule': "{1}"}])
+
+        result = self.rule_processor.process_rule_mapping(["A", "B", "C"],
+                                                          "key", rule)
+
+        expected_value = list([{'key': "k0", 'rule': "A"},
+                               {'key': "k2", 'rule': "C"},
+                               {'key': "k1", 'rule': "B"}])
+        self.assertEqual(expected_value, result)
+
+    def test_process_rule_mapping_rule_dict(self):
+        rule = {'rule1': "{0}", 'rule2': "{2}", 'rule3': "{1}"}
+
+        result = self.rule_processor.process_rule_mapping(["A", "B", "C"],
+                                                          "key", rule)
+
+        expected_value = {'rule1': "A", 'rule2': "C", 'rule3': "B"}
+        self.assertEqual(expected_value, result)
+
+    def test_process_rule_mapping_rule_project_json(self):
+        result = self.rule_processor_schema_1_2.process_rule_mapping([
+            self.project_as_object_for_schema_1_2], "projects_json", "{0}")
+
+        self.assertEqual(self.project_as_object_for_schema_1_2, result)
