@@ -38,8 +38,13 @@ class TestMappedPlugin(unit.TestCase):
 
         self.member_role_id = uuid.uuid4().hex
         self.member_role_name = "member"
+
+        self.admin_role_id = uuid.uuid4().hex
+        self.admin_role_name = "admin"
+
         self.existing_roles = {
-            self.member_role_name: {'id': self.member_role_id}}
+            self.member_role_name: {'id': self.member_role_id},
+            self.admin_role_name: {'id': self.admin_role_id}}
 
         self.shadow_project_mock = {'name': "test-project",
                                     'roles': [{'name': self.member_role_name}]}
@@ -48,8 +53,7 @@ class TestMappedPlugin(unit.TestCase):
             'name': "test-project-in-domain", 'domain': self.domain_mock,
             'roles': [{'name': self.member_role_name}]}
 
-        self.shadow_projects_mock = [self.shadow_project_mock,
-                                     self.shadow_project_in_domain_mock]
+        self.shadow_projects_mock = [self.shadow_project_in_domain_mock]
 
         self.user_mock = {'id': uuid.uuid4().hex,
                           'name': "test-user"}
@@ -94,88 +98,131 @@ class TestMappedPlugin(unit.TestCase):
 
     def test_handle_projects_from_mapping_project_exists(self):
         project_mock_1 = self.create_project_mock_for_shadow_project(
-            self.shadow_project_mock)
-        project_mock_2 = self.create_project_mock_for_shadow_project(
             self.shadow_project_in_domain_mock)
         self.resource_api_mock.get_project_by_name.side_effect = [
-            project_mock_1, project_mock_2]
+            project_mock_1]
+        self.assignment_api_mock.list_role_assignments.side_effect = [[
+            {"project_id": project_mock_1['id'],
+             "role_id": self.member_role_id}]
+        ]
 
         mapped.handle_projects_from_mapping(self.shadow_projects_mock,
-                                            self.idp_domain_uuid_mock,
                                             self.existing_roles,
                                             self.user_mock,
+                                            "1.2",
                                             self.assignment_api_mock,
                                             self.resource_api_mock
                                             )
 
         self.resource_api_mock.get_project_by_name.assert_has_calls([
             mock.call(self.shadow_project_in_domain_mock['name'],
-                      self.shadow_project_in_domain_mock['domain']['id']),
-            mock.call(self.shadow_project_mock['name'],
-                      self.idp_domain_uuid_mock)], any_order=True)
+                      self.shadow_project_in_domain_mock['domain']['id'])])
+
+        self.assignment_api_mock.create_grant.assert_has_calls([])
+
+    def test_handle_projects_from_mapping_project_exists_add_new_role(self):
+        project_mock_1 = self.create_project_mock_for_shadow_project(
+            self.shadow_project_in_domain_mock)
+        self.resource_api_mock.get_project_by_name.side_effect = [
+            project_mock_1]
+        self.assignment_api_mock.list_role_assignments.side_effect = [[
+            {"project_id": project_mock_1['id'],
+             "role_id": self.member_role_id}]
+        ]
+
+        project = self.shadow_projects_mock[0]
+        project['roles'] = [{'name': self.member_role_name},
+                            {'name': self.admin_role_name}]
+
+        mapped.handle_projects_from_mapping(self.shadow_projects_mock,
+                                            self.existing_roles,
+                                            self.user_mock,
+                                            "1.2",
+                                            self.assignment_api_mock,
+                                            self.resource_api_mock
+                                            )
+
+        self.resource_api_mock.get_project_by_name.assert_has_calls([
+            mock.call(self.shadow_project_in_domain_mock['name'],
+                      self.shadow_project_in_domain_mock['domain']['id'])])
 
         self.assignment_api_mock.create_grant.assert_has_calls([
-            mock.call(self.member_role_id, user_id=self.user_mock['id'],
-                      project_id=project_mock_1['id']),
-            mock.call(self.member_role_id, user_id=self.user_mock['id'],
-                      project_id=project_mock_2['id'])
-        ])
+            mock.call(self.admin_role_id, user_id=self.user_mock['id'],
+                      project_id=project_mock_1['id'])])
+
+    def test_handle_projects_from_mapping_project_exists_remove_role(self):
+        project_mock_1 = self.create_project_mock_for_shadow_project(
+            self.shadow_project_in_domain_mock)
+        self.resource_api_mock.get_project_by_name.side_effect = [
+            project_mock_1]
+        self.assignment_api_mock.list_role_assignments.side_effect = [[
+            {"project_id": project_mock_1['id'],
+             "role_id": self.member_role_id},
+            {"project_id": project_mock_1['id'],
+             "role_id": self.admin_role_id}]
+        ]
+
+        project = self.shadow_projects_mock[0]
+        project['roles'] = [{'name': self.member_role_name}]
+
+        mapped.handle_projects_from_mapping(self.shadow_projects_mock,
+                                            self.existing_roles,
+                                            self.user_mock,
+                                            "1.2",
+                                            self.assignment_api_mock,
+                                            self.resource_api_mock
+                                            )
+
+        self.resource_api_mock.get_project_by_name.assert_has_calls([
+            mock.call(self.shadow_project_in_domain_mock['name'],
+                      self.shadow_project_in_domain_mock['domain']['id'])])
+
+        self.assignment_api_mock.delete_grant.assert_has_calls([
+            mock.call(self.admin_role_id, user_id=self.user_mock['id'],
+                      project_id=project_mock_1['id'])])
 
     @mock.patch("uuid.UUID.hex", new_callable=mock.PropertyMock)
     def test_handle_projects_from_mapping_create_projects(self, uuid_mock):
         uuid_mock.return_value = "uuid"
 
         project_mock_1 = self.create_project_mock_for_shadow_project(
-            self.shadow_project_mock)
-
-        project_mock_2 = self.create_project_mock_for_shadow_project(
             self.shadow_project_in_domain_mock)
 
+        self.assignment_api_mock.list_role_assignments.side_effect = [[]]
+
         self.resource_api_mock.get_project_by_name.side_effect = [
-            ProjectNotFound(project_id=project_mock_1['name']),
-            ProjectNotFound(project_id=project_mock_2['name'])]
+            ProjectNotFound(project_id=project_mock_1['name'])]
 
         self.resource_api_mock.create_project.side_effect = [
-            project_mock_1, project_mock_2]
+            project_mock_1]
 
         mapped.handle_projects_from_mapping(self.shadow_projects_mock,
-                                            self.idp_domain_uuid_mock,
                                             self.existing_roles,
                                             self.user_mock,
+                                            "1.2",
                                             self.assignment_api_mock,
                                             self.resource_api_mock
                                             )
 
         self.resource_api_mock.get_project_by_name.assert_has_calls([
             mock.call(self.shadow_project_in_domain_mock['name'],
-                      self.shadow_project_in_domain_mock['domain']['id']),
-            mock.call(self.shadow_project_mock['name'],
-                      self.idp_domain_uuid_mock)], any_order=True)
+                      self.shadow_project_in_domain_mock['domain']['id'])])
 
         expected_project_ref1 = {
-            'id': "uuid",
-            'name': self.shadow_project_mock['name'],
-            'domain_id': self.idp_domain_uuid_mock
-        }
-
-        expected_project_ref2 = {
             'id': "uuid",
             'name': self.shadow_project_in_domain_mock['name'],
             'domain_id': self.shadow_project_in_domain_mock['domain']['id']
         }
 
         self.resource_api_mock.create_project.assert_has_calls([
-            mock.call(expected_project_ref1['id'], expected_project_ref1),
-            mock.call(expected_project_ref2['id'], expected_project_ref2)])
+            mock.call(expected_project_ref1['id'], expected_project_ref1)])
 
         self.assignment_api_mock.create_grant.assert_has_calls([
             mock.call(self.member_role_id, user_id=self.user_mock['id'],
-                      project_id=project_mock_1['id']),
-            mock.call(self.member_role_id, user_id=self.user_mock['id'],
-                      project_id=project_mock_2['id'])
-        ])
+                      project_id=project_mock_1['id'])])
 
     def create_project_mock_for_shadow_project(self, shadow_project):
         project = shadow_project.copy()
         project['id'] = uuid.uuid4().hex
+        project['domain'] = self.domain_mock
         return project
