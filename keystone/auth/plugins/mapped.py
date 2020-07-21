@@ -116,7 +116,6 @@ def configure_project_domain(shadow_project, idp_domain_id,
 
     LOG.debug('Processing domain for project: %s', shadow_project)
     domain = shadow_project.get('domain', {"id": idp_domain_id})
-
     if 'id' not in domain:
         db_domain = resource_api.get_domain_by_name(domain['name'])
         domain = {"id": db_domain.get('id')}
@@ -127,7 +126,7 @@ def configure_project_domain(shadow_project, idp_domain_id,
               shadow_project['name'], shadow_project['domain']['id'])
 
 
-def handle_projects_from_mapping(shadow_projects, idp_domain_id,
+def configure_federated_projects(shadow_projects, idp_domain_id,
                                  existing_roles, user, assignment_api,
                                  resource_api):
 
@@ -135,36 +134,149 @@ def handle_projects_from_mapping(shadow_projects, idp_domain_id,
         configure_project_domain(
             shadow_project, idp_domain_id, resource_api)
 
-        try:
-            # Check and see if the project already exists and if it
-            # does not, try to create it.
-            project = resource_api.get_project_by_name(
-                shadow_project['name'], shadow_project['domain']['id']
-            )
-        except exception.ProjectNotFound:
-            LOG.info(
-                'Project %(project_name)s does not exist. It will be '
-                'automatically provisioning for user %(user_id)s.',
-                {'project_name': shadow_project['name'],
-                 'user_id': user['id']}
-            )
-            project_ref = {
-                'id': uuid.uuid4().hex,
-                'name': shadow_project['name'],
-                'domain_id': shadow_project['domain']['id']
-            }
-            project = resource_api.create_project(
-                project_ref['id'],
-                project_ref
-            )
+    handle_projects_from_mapping(shadow_projects, existing_roles, user,
+                                 assignment_api, resource_api)
 
-        shadow_roles = shadow_project['roles']
-        for shadow_role in shadow_roles:
-            assignment_api.create_grant(
-                existing_roles[shadow_role['name']]['id'],
-                user_id=user['id'],
-                project_id=project['id']
-            )
+
+def retrieve_all_project_assignments(user, assignment_api):
+    user_assignments = assignment_api.list_role_assignments(user_id=user['id'])
+
+    assignments_by_projects = {}
+    for user_assignment in user_assignments:
+        # `project_id` only exist in project-role assingmnets.
+        user_assignment_project = user_assignment.get('project_id')
+        if not user_assignment_project:
+            continue
+
+        project_assignments_for_user = assignments_by_projects.get(
+            user_assignment_project, [])
+        project_assignments_for_user.append(user_assignment)
+
+        assignments_by_projects[
+            user_assignment_project] = project_assignments_for_user
+
+    return assignments_by_projects
+
+
+def create_or_show_project(shadow_project, user, resource_api):
+    project_domain = shadow_project['domain']
+    try:
+        # Check to see if the project already exists and if it
+        # does not, try to create it.
+        project = resource_api.get_project_by_name(
+            shadow_project['name'], project_domain['id']
+        )
+    except exception.ProjectNotFound:
+        LOG.debug('Project being created: %s', shadow_project)
+        LOG.info(
+            'Project %(project_name)s does not exist. It will be '
+            'automatically provisioning for user %(user_id)s.',
+            {'project_name': shadow_project['name'],
+             'user_id': user['id']}
+        )
+        project_ref = {
+            'id': uuid.uuid4().hex,
+            'name': shadow_project['name'],
+            'domain_id': project_domain['id']
+        }
+        project = resource_api.create_project(
+            project_ref['id'],
+            project_ref
+        )
+    return project
+
+
+def update_assignments(idp_user_project_shadow_role_ids, project, user,
+                       current_user_assignments, assignment_api):
+
+    for assignment in current_user_assignments:
+        # If the role is already in the assignment for this user
+        # and project, we can ignore it.
+        if assignment['role_id'] in idp_user_project_shadow_role_ids:
+            LOG.debug("Role [%s] is already assigned for user ["
+                      "%s] and project [%s].",
+                      assignment['role_id'], user, project)
+            idp_user_project_shadow_role_ids.remove(
+                assignment['role_id'])
+        else:
+            LOG.debug("Role [%s] was removed from the user [%s] "
+                      "in project [%s].", assignment['role_id'],
+                      user, project)
+            assignment_api.delete_grant(assignment['role_id'],
+                                        user_id=user['id'],
+                                        project_id=project['id'])
+
+    # After removing the roles from the user, and skipping the
+    # already assigned ones, we register the new ones
+    create_new_grants(idp_user_project_shadow_role_ids, project, user,
+                      assignment_api)
+
+
+def create_new_grants(all_roles, project, user, assignment_api):
+    for role in all_roles:
+        assignment_api.create_grant(role, user_id=user['id'],
+                                    project_id=project['id'])
+
+
+def remove_left_over_project_assignments(all_projects_ids_processed,
+                                         project_assignments_for_user,
+                                         shadow_projects, user,
+                                         assignment_api):
+
+    for project_id in project_assignments_for_user.keys():
+        if project_id not in all_projects_ids_processed:
+            LOG.debug("The project [%s] was not in the set of attributes"
+                      " [%s] that configure user access to projects from"
+                      " the IdP. Therefore, we will remove all user [%s]"
+                      " permissions to it.", project_id,
+                      shadow_projects, user)
+            assignments = project_assignments_for_user[project_id]
+            for assignment in assignments:
+                LOG.debug("Removing role [%s] from project [%s] and"
+                          " user [%s].", assignment['role_id'],
+                          project_id, user)
+                assignment_api.delete_grant(assignment['role_id'],
+                                            user_id=user['id'],
+                                            project_id=project_id)
+
+
+def handle_projects_from_mapping(shadow_projects, existing_roles, user,
+                                 assignment_api, resource_api):
+    project_assignments_for_user = retrieve_all_project_assignments(
+        user, assignment_api)
+
+    LOG.debug("Current project assignments [%s] for user [%s].",
+              project_assignments_for_user, user)
+
+    all_projects_ids_processed = set()
+    for shadow_project in shadow_projects:
+        project = create_or_show_project(shadow_project, user, resource_api)
+        all_projects_ids_processed.add(project['id'])
+
+        all_project_shadow_role_ids = []
+        for shadow_role in shadow_project['roles']:
+            all_project_shadow_role_ids.append(
+                existing_roles[shadow_role['name']]['id'])
+
+        # Assignments that the user has in the project
+        user_assignments = project_assignments_for_user.get(
+            project['id'], [])
+
+        # If user does not have assignment yet for the project.
+        # Therefore, we can create all of them.
+        if user_assignments:
+            update_assignments(all_project_shadow_role_ids, project, user,
+                               user_assignments, assignment_api)
+        else:
+            create_new_grants(all_project_shadow_role_ids, project, user,
+                              assignment_api)
+    LOG.debug("Projects [%s] assigned to user [%s].",
+              all_projects_ids_processed, user)
+    LOG.debug("All projects [%s] the user [%s] had before this login.",
+              project_assignments_for_user.keys(), user)
+    remove_left_over_project_assignments(
+        all_projects_ids_processed, project_assignments_for_user,
+        shadow_projects, user, assignment_api)
 
 
 def handle_unscoped_token(auth_payload, resource_api, federation_api,
@@ -286,7 +398,7 @@ def handle_unscoped_token(auth_payload, resource_api, federation_api,
                     idp_domain_id,
                     identity_provider
                 )
-                handle_projects_from_mapping(
+                configure_federated_projects(
                     mapped_properties['projects'],
                     idp_domain_id,
                     existing_roles,
