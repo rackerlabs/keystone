@@ -60,7 +60,7 @@ recommended value.
 federation_attribute_mapping_schema_version = cfg.StrOpt(
     'federation_attribute_mapping_schema_version',
     default='1.0',
-    choices=['1.0', '1.1'],
+    choices=['1.0', '1.1', '1.2'],
     help=utils.fmt("""The federation attribute mapping schema version.
 
     The attribute mapping is used to map attributes from identity provivers
@@ -74,6 +74,12 @@ federation_attribute_mapping_schema_version = cfg.StrOpt(
     the default one for the attribute mapping, instead of the domain of the
     IdP. Moreover, we should respect the override to it that can take place at
     the `groups`, `user`, and `projects` attributes definition.
+    * 1.2 -- Introduces the property `project_json` and enables operators to
+    execute the  following binding for projects ``project_json: {
+    extracted_attribute_index_that_has_is_a_project_json}``. This allows
+    operators to assign and remove users from projects (with specific roles) on
+    the fly, according to the data (as a json project definition) received from
+    IdPs.
     """))
 
 
