@@ -57,7 +57,6 @@ value to false is when configuring a fresh installation, although that is the
 recommended value.
 """))
 
-
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
     driver,
