@@ -206,6 +206,27 @@ class CredentialTestCase(CredentialBaseTestCase):
         self.assertEqual(CRED_TYPE_EC2, cred['type'])
         self.assertEqual(user1_id, cred['user_id'])
 
+    def test_list_credentials_filtered_by_invalid_filter(self):
+        """Call ``GET  /credentials?invalid={invalid}``."""
+        user1_id = uuid.uuid4().hex
+
+        PROVIDERS.assignment_api.create_system_grant_for_user(
+            self.user_id, self.role_id
+        )
+        token = self.get_system_scoped_token()
+
+        # Creating credentials for two different users
+        credential_user1_ec2 = unit.new_credential_ref(user_id=user1_id,
+                                                       type=CRED_TYPE_EC2)
+
+        PROVIDERS.credential_api.create_credential(
+            credential_user1_ec2['id'], credential_user1_ec2)
+
+        self.get(
+            '/credentials?invalid=invalid', token=token,
+            expected_status=http.client.BAD_REQUEST
+        )
+
     def test_create_credential(self):
         """Call ``POST /credentials``."""
         ref = unit.new_credential_ref(user_id=self.user['id'])

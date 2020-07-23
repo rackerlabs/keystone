@@ -842,6 +842,8 @@ class ResourceBase(flask_restful.Resource):
                 # means that there is no inexact filter for that key in this
                 # query.
                 if not key.startswith(valid_key + '__'):
+                    if key not in supported_filters:
+                        raise exception.InvalidRequestFilter(key=key)
                     continue
 
                 base_key, comparator = key.split('__', 1)
