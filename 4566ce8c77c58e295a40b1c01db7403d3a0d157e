@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "bf51134e_5f6746b8",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1256,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-07-24T12:18:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf51134e_8bbdcf03",
+      "revId": "4566ce8c77c58e295a40b1c01db7403d3a0d157e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf51134e_e2ebd074",
         "filename": "releasenotes/notes/bug-1878938-70ee2af6fdf66004.yaml",
         "patchSetId": 6
