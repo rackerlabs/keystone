@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    [`bug 1405574 <https://bugs.launchpad.net/keystone/+bug/1405574>`_]
+    It confirms that while fetching token endpoint group filters are applied which
+    reduces the size of token by adding test case.
