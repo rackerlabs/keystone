@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f560f44_cb8f67ca",
+        "filename": "api-ref/source/v3/service-catalog.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-07-28T16:54:55Z",
+      "side": 1,
+      "message": "this is not the right parameter. Use region_id_query",
+      "revId": "6662ecc2b2decf57e916c9117bbcaea881cd3101",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
