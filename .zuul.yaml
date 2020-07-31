@@ -204,7 +204,7 @@
 - project:
     templates:
       - openstack-cover-jobs
-      #- openstack-lower-constraints-jobs
+      - openstack-lower-constraints-jobs
       - openstack-python3-victoria-jobs
       - publish-openstack-docs-pti
       - periodic-stable-jobs
@@ -221,14 +221,6 @@
               - ^etc/.*$
               - ^keystone/tests/unit/.*$
               - ^releasenotes/.*$
-        - openstack-tox-lower-constraints:
-            nodeset: ubuntu-bionic
-            irrelevant-files: &func_irrelevant-files
-              - ^.*\.rst$
-              - ^api-ref/.*$
-              - ^doc/.*$
-              - ^etc/.*$
-              - ^releasenotes/.*$
         - keystone-dsvm-py3-functional-federation-ubuntu-focal:
             voting: false
             irrelevant-files: *irrelevant-files
@@ -237,6 +229,8 @@
         - keystoneclient-devstack-functional:
             voting: false
             irrelevant-files: *irrelevant-files
+        - openstack-tox-lower-constraints:
+            nodeset: ubuntu-focal
         - keystone-dsvm-ldap-domain-specific-driver:
             voting: false
             irrelevant-files: &tempest-irrelevant-files
@@ -257,9 +251,6 @@
         - keystone-tox-protection
     gate:
       jobs:
-        - openstack-tox-lower-constraints:
-            nodeset: ubuntu-bionic
-            irrelevant-files: *func_irrelevant-files
         - keystone-dsvm-py3-functional:
             irrelevant-files: *irrelevant-files
         - keystone-dsvm-py3-functional-federation-ubuntu-focal-k2k:
