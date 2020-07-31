@@ -204,7 +204,7 @@
 - project:
     templates:
       - openstack-cover-jobs
-      - openstack-lower-constraints-jobs
+      #- openstack-lower-constraints-jobs
       - openstack-python3-victoria-jobs
       - publish-openstack-docs-pti
       - periodic-stable-jobs
@@ -229,6 +229,8 @@
         - keystoneclient-devstack-functional:
             voting: false
             irrelevant-files: *irrelevant-files
+        - openstack-tox-lower-constraints:
+            nodeset: ubuntu-focal
         - keystone-dsvm-ldap-domain-specific-driver:
             voting: false
             irrelevant-files: &tempest-irrelevant-files
