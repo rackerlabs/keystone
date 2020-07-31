@@ -18,6 +18,7 @@ import functools
 import os.path
 import re
 import sys
+import uuid
 import weakref
 
 import ldap.controls
@@ -93,7 +94,16 @@ def utf8_decode(value):
     :raises UnicodeDecodeError: for invalid UTF-8 encoding
     """
     if isinstance(value, bytes):
-        return _utf8_decoder(value)[0]
+        try:
+            return _utf8_decoder(value)[0]
+        except UnicodeDecodeError:
+            pass
+
+        try:
+            return str(uuid.UUID(bytes_le=value))
+        except UnicodeDecodeError:
+            raise
+
     return str(value)
 
 
