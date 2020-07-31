@@ -1,0 +1,11 @@
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Code-Review+1: Vishakha Agarwal <agarwalvishakha18@gmail.com>
+Code-Review+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+2: Wander Way <wanderwayout@gmail.com>
+Workflow+1: Wander Way <wanderwayout@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 31 Jul 2020 08:42:30 +0000
+Reviewed-on: https://review.opendev.org/732852
+Project: openstack/keystone
+Branch: refs/heads/master
