@@ -18,6 +18,7 @@ import functools
 import os.path
 import re
 import sys
+import uuid
 import weakref
 
 import ldap.controls
@@ -129,6 +130,12 @@ def enabled2py(val):
     return utf8_decode(val)
 
 
+def objectguid2py(val):
+    """Similar to ldap2py, but only useful for objectGUID attributes."""
+    if isinstance(val, bytes):
+        return str(uuid.UUID(bytes_le=val))
+
+
 def ldap2py(val):
     """Convert an LDAP formatted value to Python type used by OpenStack.
 
@@ -171,7 +178,12 @@ def convert_ldap_result(ldap_result):
 
         for kind, values in attrs.items():
             try:
-                val2py = enabled2py if kind == 'enabled' else ldap2py
+                if kind == 'enabled':
+                    val2py = enabled2py
+                elif kind == 'objectGUID':
+                    val2py = objectguid2py
+                else:
+                    val2py = ldap2py
                 ldap_attrs[kind] = [val2py(x) for x in values]
             except UnicodeDecodeError:
                 LOG.debug('Unable to decode value for attribute %s', kind)
