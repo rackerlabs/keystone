@@ -1864,7 +1864,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
                       'blob': uuid.uuid4().hex,
                       'user_id': uuid.uuid4().hex,
                       'type': 'cert'}
-        self.assertRaises(db_exception.DBError,
+        self.assertRaises(sql.OperationalError,
                           self.insert_dict,
                           session,
                           credential_table_name,
@@ -1898,7 +1898,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
                       'user_id': uuid.uuid4().hex,
                       'key_hash': uuid.uuid4().hex,
                       'type': 'cert'}
-        self.assertRaises(db_exception.DBError,
+        self.assertRaises(sql.OperationalError,
                           self.insert_dict,
                           session,
                           credential_table_name,
@@ -2038,12 +2038,12 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         # confirm we cannot insert an idp during expand
         domain_id = _create_domain()
         new_idp = _get_new_idp(domain_id)
-        self.assertRaises(db_exception.DBError, self.insert_dict, session,
+        self.assertRaises(sql.OperationalError, self.insert_dict, session,
                           idp_name, new_idp)
 
         # confirm we cannot insert an idp during migrate
         self.migrate(12)
-        self.assertRaises(db_exception.DBError, self.insert_dict, session,
+        self.assertRaises(sql.OperationalError, self.insert_dict, session,
                           idp_name, new_idp)
 
         # confirm we can insert a new idp after contract
