@@ -1747,6 +1747,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         super(FullMigration, self).setUp()
         # Upgrade the legacy repository
         self.upgrade()
+        self.exception = db_exception.DBError
 
     def test_db_sync_check(self):
         checker = cli.DbSync()
@@ -1864,7 +1865,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
                       'blob': uuid.uuid4().hex,
                       'user_id': uuid.uuid4().hex,
                       'type': 'cert'}
-        self.assertRaises(db_exception.DBError,
+        self.assertRaises(self.exception,
                           self.insert_dict,
                           session,
                           credential_table_name,
@@ -1898,7 +1899,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
                       'user_id': uuid.uuid4().hex,
                       'key_hash': uuid.uuid4().hex,
                       'type': 'cert'}
-        self.assertRaises(db_exception.DBError,
+        self.assertRaises(self.exception,
                           self.insert_dict,
                           session,
                           credential_table_name,
@@ -2038,12 +2039,12 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         # confirm we cannot insert an idp during expand
         domain_id = _create_domain()
         new_idp = _get_new_idp(domain_id)
-        self.assertRaises(db_exception.DBError, self.insert_dict, session,
+        self.assertRaises(self.exception, self.insert_dict, session,
                           idp_name, new_idp)
 
         # confirm we cannot insert an idp during migrate
         self.migrate(12)
-        self.assertRaises(db_exception.DBError, self.insert_dict, session,
+        self.assertRaises(self.exception, self.insert_dict, session,
                           idp_name, new_idp)
 
         # confirm we can insert a new idp after contract
@@ -3503,13 +3504,9 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = db_fixtures.MySQLOpportunisticFixture
 
-    def test_migration_003_migrate_unencrypted_credentials(self):
-        self.skip_test_overrides('skipped to update u-c for PyMySql version'
-                                 'to 0.10.0')
-
-    def test_migration_012_add_domain_id_to_idp(self):
-        self.skip_test_overrides('skipped to update u-c for PyMySql version'
-                                 'to 0.10.0')
+    def setUp(self):
+        super(MySQLOpportunisticFullMigration, self).setUp()
+        self.exception = sql.OperationalError
 
 
 class PostgreSQLOpportunisticFullMigration(FullMigration):
