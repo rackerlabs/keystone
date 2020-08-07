@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f560f44_59d38404",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 3507,
+      "author": {
+        "id": 11904
+      },
+      "writtenOn": "2020-08-07T13:54:36Z",
+      "side": 1,
+      "message": "I don\u0027t think you want to use this. Probably want to use self.skip() instead.",
+      "range": {
+        "startLine": 3507,
+        "startChar": 16,
+        "endLine": 3507,
+        "endChar": 19
+      },
+      "revId": "052ba6d9be2c972c042a53123973f8ad3c03e9d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
