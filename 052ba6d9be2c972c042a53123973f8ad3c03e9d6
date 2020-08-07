@@ -22,6 +22,30 @@
       "revId": "052ba6d9be2c972c042a53123973f8ad3c03e9d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f560f44_d4647b4c",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 3507,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-08-07T14:39:42Z",
+      "side": 1,
+      "message": "Yes. I think so far it is a better option. Because using \"wip\" passing the test cases in one of the repo and failing for another.",
+      "parentUuid": "9f560f44_59d38404",
+      "range": {
+        "startLine": 3507,
+        "startChar": 16,
+        "endLine": 3507,
+        "endChar": 19
+      },
+      "revId": "052ba6d9be2c972c042a53123973f8ad3c03e9d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
