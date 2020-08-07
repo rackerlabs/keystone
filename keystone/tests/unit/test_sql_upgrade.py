@@ -3504,12 +3504,177 @@ class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = db_fixtures.MySQLOpportunisticFixture
 
     def test_migration_003_migrate_unencrypted_credentials(self):
-        self.skip_test_overrides('skipped to update u-c for PyMySql version'
-                                 'to 0.10.0')
+        self.useFixture(
+            ksfixtures.KeyRepository(
+                self.config_fixture,
+                'credential',
+                credential_fernet.MAX_ACTIVE_KEYS
+            )
+        )
+
+        session = self.sessionmaker()
+        credential_table_name = 'credential'
+
+        # upgrade each repository to 002
+        self.expand(2)
+        self.migrate(2)
+        self.contract(2)
+
+        # populate the credential table with some sample credentials
+        credentials = list()
+        for i in range(5):
+            credential = {'id': uuid.uuid4().hex,
+                          'blob': uuid.uuid4().hex,
+                          'user_id': uuid.uuid4().hex,
+                          'type': 'cert'}
+            credentials.append(credential)
+            self.insert_dict(session, credential_table_name, credential)
+
+        # verify the current schema
+        self.assertTableColumns(
+            credential_table_name,
+            ['id', 'user_id', 'project_id', 'type', 'blob', 'extra']
+        )
+
+        # upgrade expand repo to 003 to add new columns
+        self.expand(3)
+
+        # verify encrypted_blob and key_hash columns have been added and verify
+        # the original blob column is still there
+        self.assertTableColumns(
+            credential_table_name,
+            ['id', 'user_id', 'project_id', 'type', 'blob', 'extra',
+             'key_hash', 'encrypted_blob']
+        )
+
+        # verify triggers by making sure we can't write to the credential table
+        credential = {'id': uuid.uuid4().hex,
+                      'blob': uuid.uuid4().hex,
+                      'user_id': uuid.uuid4().hex,
+                      'type': 'cert'}
+        self.assertRaises(sql.OperationalError,
+                          self.insert_dict,
+                          session,
+                          credential_table_name,
+                          credential)
+
+        # upgrade migrate repo to 003 to migrate existing credentials
+        self.migrate(3)
+
+        # make sure we've actually updated the credential with the
+        # encrypted blob and the corresponding key hash
+        credential_table = sqlalchemy.Table(
+            credential_table_name,
+            self.metadata,
+            autoload=True
+        )
+        for credential in credentials:
+            filter = credential_table.c.id == credential['id']
+            cols = [credential_table.c.key_hash, credential_table.c.blob,
+                    credential_table.c.encrypted_blob]
+            q = sqlalchemy.select(cols).where(filter)
+            result = session.execute(q).fetchone()
+
+            self.assertIsNotNone(result.encrypted_blob)
+            self.assertIsNotNone(result.key_hash)
+            # verify the original blob column is still populated
+            self.assertEqual(result.blob, credential['blob'])
+
+        # verify we can't make any writes to the credential table
+        credential = {'id': uuid.uuid4().hex,
+                      'blob': uuid.uuid4().hex,
+                      'user_id': uuid.uuid4().hex,
+                      'key_hash': uuid.uuid4().hex,
+                      'type': 'cert'}
+        self.assertRaises(sql.OperationalError,
+                          self.insert_dict,
+                          session,
+                          credential_table_name,
+                          credential)
+
+        # upgrade contract repo to 003 to remove triggers and blob column
+        self.contract(3)
+
+        # verify the new schema doesn't have a blob column anymore
+        self.assertTableColumns(
+            credential_table_name,
+            ['id', 'user_id', 'project_id', 'type', 'extra', 'key_hash',
+             'encrypted_blob']
+        )
+
+        # verify that the triggers are gone by writing to the database
+        credential = {'id': uuid.uuid4().hex,
+                      'encrypted_blob': uuid.uuid4().hex,
+                      'key_hash': uuid.uuid4().hex,
+                      'user_id': uuid.uuid4().hex,
+                      'type': 'cert'}
+        self.insert_dict(session, credential_table_name, credential)
 
     def test_migration_012_add_domain_id_to_idp(self):
-        self.skip_test_overrides('skipped to update u-c for PyMySql version'
-                                 'to 0.10.0')
+        def _create_domain():
+            domain_id = uuid.uuid4().hex
+            domain = {
+                'id': domain_id,
+                'name': domain_id,
+                'enabled': True,
+                'description': uuid.uuid4().hex,
+                'domain_id': resource_base.NULL_DOMAIN_ID,
+                'is_domain': True,
+                'parent_id': None,
+                'extra': '{}'
+            }
+            self.insert_dict(session, 'project', domain)
+            return domain_id
+
+        def _get_new_idp(domain_id):
+            new_idp = {'id': uuid.uuid4().hex,
+                       'domain_id': domain_id,
+                       'enabled': True,
+                       'description': uuid.uuid4().hex}
+            return new_idp
+
+        session = self.sessionmaker()
+        idp_name = 'identity_provider'
+        self.expand(11)
+        self.migrate(11)
+        self.contract(11)
+        self.assertTableColumns(idp_name,
+                                ['id',
+                                 'enabled',
+                                 'description'])
+        # add some data
+        for i in range(5):
+            idp = {'id': uuid.uuid4().hex,
+                   'enabled': True,
+                   'description': uuid.uuid4().hex}
+            self.insert_dict(session, idp_name, idp)
+
+        # upgrade
+        self.expand(12)
+        self.assertTableColumns(idp_name,
+                                ['id',
+                                 'domain_id',
+                                 'enabled',
+                                 'description'])
+
+        # confirm we cannot insert an idp during expand
+        domain_id = _create_domain()
+        new_idp = _get_new_idp(domain_id)
+        self.assertRaises(sql.OperationalError, self.insert_dict, session,
+                          idp_name, new_idp)
+
+        # confirm we cannot insert an idp during migrate
+        self.migrate(12)
+        self.assertRaises(sql.OperationalError, self.insert_dict, session,
+                          idp_name, new_idp)
+
+        # confirm we can insert a new idp after contract
+        self.contract(12)
+        self.insert_dict(session, idp_name, new_idp)
+
+        # confirm domain_id column is not null
+        idp_table = sqlalchemy.Table(idp_name, self.metadata, autoload=True)
+        self.assertFalse(idp_table.c.domain_id.nullable)
 
 
 class PostgreSQLOpportunisticFullMigration(FullMigration):
