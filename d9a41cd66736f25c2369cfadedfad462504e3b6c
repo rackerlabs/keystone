@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9f560f44_f1dd3add",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-08-10T14:11:30Z",
+      "side": 1,
+      "message": "Yes we do https://review.opendev.org/#/c/745376/",
+      "parentUuid": "9f560f44_b1cd825e",
+      "range": {
+        "startLine": 22,
+        "startChar": 31,
+        "endLine": 23,
+        "endChar": 18
+      },
+      "revId": "d9a41cd66736f25c2369cfadedfad462504e3b6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f560f44_91fe7e68",
         "filename": "/COMMIT_MSG",
         "patchSetId": 10
@@ -60,6 +84,54 @@
       "side": 1,
       "message": "True, the Closes step should probably be on https://review.opendev.org/#/c/745376/ now.",
       "parentUuid": "9f560f44_91fe7e68",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 6
+      },
+      "revId": "d9a41cd66736f25c2369cfadedfad462504e3b6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f560f44_31f5f257",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-08-10T14:11:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f560f44_91fe7e68",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 6
+      },
+      "revId": "d9a41cd66736f25c2369cfadedfad462504e3b6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f560f44_51f22671",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-08-10T14:11:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f560f44_317e92e3",
       "range": {
         "startLine": 29,
         "startChar": 0,
