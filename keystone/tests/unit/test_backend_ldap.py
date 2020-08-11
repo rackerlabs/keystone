@@ -181,6 +181,9 @@ class AssignmentTests(assignment_tests.AssignmentTests):
     def test_del_role_assignment_by_domain_not_found(self):
         self.skip_test_overrides('N/A: LDAP does not support multiple domains')
 
+    def test_get_and_remove_role_grant_by_user_and_project(self):
+        self.skip_test_overrides('N/A: LDAP does not support multiple domains')
+
     def test_get_and_remove_role_grant_by_user_and_domain(self):
         self.skip_test_overrides('N/A: LDAP does not support multiple domains')
 
