@@ -22,6 +22,30 @@
       "revId": "28faa24e68467f7c10e00e433fec61914e172ca1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f560f44_91078c19",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-08-11T16:31:00Z",
+      "side": 1,
+      "message": "This filter function is called while checking or removing a grant.To perform these there are mandatory parameters role_id, user_id to check/remove grant on project_id or domain_id and group_id to check/remove grant on project_id or domain_id. I dont see any use case with neither of project_id or domain_id here. It\u0027s mandatory to pass domain or project.",
+      "parentUuid": "9f560f44_9dd5e3ba",
+      "range": {
+        "startLine": 85,
+        "startChar": 8,
+        "endLine": 85,
+        "endChar": 13
+      },
+      "revId": "28faa24e68467f7c10e00e433fec61914e172ca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
