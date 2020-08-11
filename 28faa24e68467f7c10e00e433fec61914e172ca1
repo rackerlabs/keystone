@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f560f44_9dd5e3ba",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2020-08-11T12:52:17Z",
+      "side": 1,
+      "message": "would there be a case where we are passing here neither domain_id nor project_id?",
+      "range": {
+        "startLine": 85,
+        "startChar": 8,
+        "endLine": 85,
+        "endChar": 13
+      },
+      "revId": "28faa24e68467f7c10e00e433fec61914e172ca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
