@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f560f44_ef01bc3b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2020-08-12T08:28:05Z",
+      "side": 1,
+      "message": "the alternitive fix would be to catch the deserialiseation error and then discard the token and revive a new one instead of a cached token.",
+      "range": {
+        "startLine": 10,
+        "startChar": 10,
+        "endLine": 10,
+        "endChar": 25
+      },
+      "revId": "7d6c71ba26694c21110280e741b9ffe2d36a94ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f560f44_6f93ec01",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2020-08-12T08:28:05Z",
+      "side": 1,
+      "message": "so this looks like a byte string vs text string conversion error.\n\nthey were using raw byte stings before and now they are using utf-8 text strings.",
+      "range": {
+        "startLine": 13,
+        "startChar": 1,
+        "endLine": 14,
+        "endChar": 32
+      },
+      "revId": "7d6c71ba26694c21110280e741b9ffe2d36a94ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f560f44_4ff38874",
+        "filename": "keystone/token/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2020-08-12T08:28:05Z",
+      "side": 1,
+      "message": "nit: delete",
+      "range": {
+        "startLine": 175,
+        "startChar": 66,
+        "endLine": 175,
+        "endChar": 74
+      },
+      "revId": "7d6c71ba26694c21110280e741b9ffe2d36a94ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
