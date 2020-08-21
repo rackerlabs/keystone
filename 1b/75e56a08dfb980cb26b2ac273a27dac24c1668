@@ -1,0 +1,8 @@
+Code-Review+2: Kristi Nikolla <knikolla@icloud.com>
+Workflow+1: Kristi Nikolla <knikolla@icloud.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 21 Aug 2020 15:12:00 +0000
+Reviewed-on: https://review.opendev.org/746049
+Project: openstack/keystone
+Branch: refs/heads/master
