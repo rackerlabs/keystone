@@ -48,6 +48,54 @@
     },
     {
       "key": {
+        "uuid": "9f560f44_6376b7a6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2020-08-24T18:33:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f560f44_c8240010",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 7
+      },
+      "revId": "6623a6974df1d7fb91cda4ddb854b1885eac1828",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f560f44_23479f4e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2020-08-24T18:33:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f560f44_281e5cba",
+      "range": {
+        "startLine": 9,
+        "startChar": 42,
+        "endLine": 9,
+        "endChar": 51
+      },
+      "revId": "6623a6974df1d7fb91cda4ddb854b1885eac1828",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f560f44_687974fa",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -59,6 +107,30 @@
       "writtenOn": "2020-08-24T18:13:36Z",
       "side": 1,
       "message": "Can you reorder this to be under the char limit?",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 12
+      },
+      "revId": "6623a6974df1d7fb91cda4ddb854b1885eac1828",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f560f44_437bb38a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2020-08-24T18:33:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f560f44_687974fa",
       "range": {
         "startLine": 10,
         "startChar": 0,
