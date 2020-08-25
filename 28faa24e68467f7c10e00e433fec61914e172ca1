@@ -46,6 +46,29 @@
       "revId": "28faa24e68467f7c10e00e433fec61914e172ca1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f560f44_aacb6d1b",
+        "filename": "releasenotes/notes/bug-1754677-13ee75ed1b473f26.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-08-25T21:09:33Z",
+      "side": 1,
+      "message": "(nit) release notes appear as a series of notes all grouped together describing the release as a whole, not alongside the code that fixes the bugs, so it would be better to refer to the bug in the past tense, i.e. this used to be a problem but it\u0027s now fixed in this release.",
+      "range": {
+        "startLine": 6,
+        "startChar": 50,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "28faa24e68467f7c10e00e433fec61914e172ca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
