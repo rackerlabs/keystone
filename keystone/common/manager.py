@@ -55,6 +55,8 @@ def response_truncated(f):
     the calculations of some other API (e.g. get role assignments for a given
     project).
 
+    Foobar.
+
     """
     @functools.wraps(f)
     def wrapper(self, *args, **kwargs):
