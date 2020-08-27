@@ -16,6 +16,24 @@
       "revId": "12b7291e53aff9e5acf367fefccb3af17df31042",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f560f44_37daf81c",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-08-27T21:20:58Z",
+      "side": 1,
+      "message": "Thanks for the context, Mike.\n\nI\u0027m updating the approach to try @wrap_db_retry()",
+      "parentUuid": "bf51134e_6f71b244",
+      "revId": "12b7291e53aff9e5acf367fefccb3af17df31042",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
