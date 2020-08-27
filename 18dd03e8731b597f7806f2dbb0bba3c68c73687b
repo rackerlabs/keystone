@@ -16,6 +16,24 @@
       "revId": "18dd03e8731b597f7806f2dbb0bba3c68c73687b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f560f44_300683cf",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 998,
+      "author": {
+        "id": 27621
+      },
+      "writtenOn": "2020-08-27T18:40:36Z",
+      "side": 1,
+      "message": "Thanks for the suggestion. Makes sense to me, also updated the patch",
+      "parentUuid": "9f560f44_f4b25593",
+      "revId": "18dd03e8731b597f7806f2dbb0bba3c68c73687b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
