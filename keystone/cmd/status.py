@@ -89,6 +89,7 @@ class Checks(upgradecheck.UpgradeCommands):
     )
 
 
+# entry point.
 def main():
     keystone.conf.configure()
     backends.load_backends()
