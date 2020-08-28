@@ -1,0 +1,9 @@
+Code-Review+2: Lance Bragstad <lbragstad@redhat.com>
+Code-Review+1: Kristi Nikolla <knikolla@bu.edu>
+Workflow+1: Lance Bragstad <lbragstad@redhat.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 28 Aug 2020 06:05:05 +0000
+Reviewed-on: https://review.opendev.org/745757
+Project: openstack/keystone
+Branch: refs/heads/stable/train
