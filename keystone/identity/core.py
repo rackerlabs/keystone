@@ -1088,6 +1088,10 @@ class Manager(manager.Manager):
                 fed_res = PROVIDERS.shadow_users_api.get_federated_users(
                     fed_hints)
                 break
+        if not driver.is_domain_aware():
+            # We are effectively satisfying any domain_id filter by the above
+            # driver selection, so remove any such filter.
+            self._mark_domain_id_filter_satisfied(hints)
         return driver.list_users(hints) + fed_res
 
     @domains_configured
@@ -1100,10 +1104,6 @@ class Manager(manager.Manager):
             # Force the domain_scope into the hint to ensure that we only get
             # back domains for that scope.
             self._ensure_domain_id_in_hints(hints, domain_scope)
-        else:
-            # We are effectively satisfying any domain_id filter by the above
-            # driver selection, so remove any such filter.
-            self._mark_domain_id_filter_satisfied(hints)
         hints = self._translate_expired_password_hints(hints)
         ref_list = self._handle_shadow_and_local_users(driver, hints)
         return self._set_domain_id_and_mapping(
