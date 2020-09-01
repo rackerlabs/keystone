@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f560f44_a25b28f4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-09-01T19:04:17Z",
+      "side": 1,
+      "message": "this isn\u0027t properly cherry-picked from https://review.opendev.org/#/c/747924/",
+      "revId": "fe54a86e2b6989258649bb37063a4449bcf13e87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
