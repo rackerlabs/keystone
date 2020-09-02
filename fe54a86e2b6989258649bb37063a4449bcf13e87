@@ -16,6 +16,24 @@
       "revId": "fe54a86e2b6989258649bb37063a4449bcf13e87",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f560f44_978292ff",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-09-02T16:29:34Z",
+      "side": 1,
+      "message": "Done\n\nI didn\u0027t see anything in the backport process that specifies each backport has to come from the next newest branch [0].\n\nI\u0027d thought I had a discussion with someone recently about backports being allowed to skip branches, but I can\u0027t find the review.\n\n[0] https://docs.openstack.org/project-team-guide/stable-branches.html#processes",
+      "parentUuid": "9f560f44_a25b28f4",
+      "revId": "fe54a86e2b6989258649bb37063a4449bcf13e87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
