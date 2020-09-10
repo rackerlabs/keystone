@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f560f44_81c2d432",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2020-09-10T13:39:38Z",
+      "side": 1,
+      "message": "does session_for_write() call session.commit() at the end of the block?",
+      "revId": "c839f3e235b44868dc7b12f91549a81b67d80131",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
