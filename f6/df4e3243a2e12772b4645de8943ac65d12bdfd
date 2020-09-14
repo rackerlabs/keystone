@@ -1,0 +1,9 @@
+Code-Review+2: Kristi Nikolla <knikolla@bu.edu>
+Code-Review+2: Wander Way <wanderwayout@gmail.com>
+Workflow+1: Wander Way <wanderwayout@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 14 Sep 2020 13:36:33 +0000
+Reviewed-on: https://review.opendev.org/745160
+Project: openstack/keystone
+Branch: refs/heads/master
