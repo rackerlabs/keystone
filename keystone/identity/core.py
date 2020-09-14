@@ -788,7 +788,7 @@ class Manager(manager.Manager):
         # compatibility mode).
         driver = self.driver
         if driver.generates_uuids():
-            if driver.is_domain_aware:
+            if driver.is_domain_aware():
                 # No mapping required, and the driver can handle the domain
                 # information itself.  The classic case of this is the
                 # current SQL driver.
