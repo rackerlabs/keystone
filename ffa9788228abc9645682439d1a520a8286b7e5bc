@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f560f44_fc2321a6",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1014,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-09-15T16:53:15Z",
+      "side": 1,
+      "message": "ignore_password_regex is already set to True in _create_user(), I don\u0027t think it should need to be set again when updating the user. Missing options don\u0027t override options on an active resource.",
+      "revId": "ffa9788228abc9645682439d1a520a8286b7e5bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
