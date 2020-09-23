@@ -33,15 +33,12 @@ class ConfigTestCase(unit.TestCase):
                 unit.dirs.etc(sample_file)]
         generator.main(args=args)
         config_files.insert(0, unit.dirs.etc(sample_file))
-        self.addCleanup(os.remove, unit.dirs.etc(sample_file))
         return config_files
 
     def test_config_default(self):
         self.assertIsNone(CONF.auth.password)
         self.assertIsNone(CONF.auth.token)
-
-    def test_profiler_config_default(self):
-        """Check config.set_config_defaults() has set [profiler]enabled."""
+        # Check config.set_config_defaults() has set [profiler]enabled.
         self.assertEqual(False, CONF.profiler.enabled)
 
 
