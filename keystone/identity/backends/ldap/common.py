@@ -340,6 +340,11 @@ def dn_startswith(descendant_dn, dn):
     return is_dn_equal(descendant_dn[-len(dn):], dn)
 
 
+def cleanup_connection_context_manager_callback(cm):
+    """Clean up ldappool.ConnectionManager instances manually."""
+    cm.__exit__(None, None, None)
+
+
 class LDAPHandler(object, metaclass=abc.ABCMeta):
     """Abstract class which defines methods for a LDAP API provider.
 
@@ -814,9 +819,10 @@ class PooledLDAPHandler(LDAPHandler):
             conn_ctxt.__exit__(*sys.exc_info())
             raise
         res = MsgId((conn, msgid))
-        weakref.ref(res, functools.partial(conn_ctxt.__exit__,
-                                           None, None, None))
-        return res
+        finalizer = weakref.finalize(
+            res, cleanup_connection_context_manager_callback, conn_ctxt
+        )
+        return res, finalizer
 
     def result3(self, msgid, all=1, timeout=None,
                 resp_ctrl_classes=None):
@@ -997,15 +1003,50 @@ class KeystoneLDAPHandler(LDAPHandler):
                 cookie='')
             page_ctrl_oid = ldap.controls.SimplePagedResultsControl.controlType
 
-        msgid = self.conn.search_ext(base,
-                                     scope,
-                                     filterstr,
-                                     attrlist,
-                                     serverctrls=[lc])
+        # The search_ext() is an asynchronous LDAP API. First, we search_ext()
+        # for the query. Next, we pass the message ID to the result3() method
+        # to get the actual data about the request from the LDAP server. The
+        # same connection used to get the message ID (e.g., make the original
+        # query) must be used to get the message results. This forces us to
+        # need the same connection across methods.
+        #
+        # Unfortunately, the ConnectionManager() is a context manager and it
+        # isn't designed to be shared across method calls outside the scope of
+        # a `with` statement. This is why we're invoking the context manager
+        # manually via __enter__ and __exit__ calls in the PooledLDAPHandler
+        # directly.
+        #
+        # The original weakref code was meant to invoke cleanup after the msgid
+        # was reassigned on the next loop of paging results. I don't think this
+        # worked as intended because I can't prove that the cleanup callback is
+        # ever invoked using:
+        #
+        # weakref.ref(res, callback)
+        #
+        # I don't think cleanup was ever invoked because we never reference the
+        # actual weak reference. According to the Python documentation on weak
+        # references, the cleanup code is invoked after the weak reference is
+        # called but the original object no longer exists.
+        #
+        # Instead, we might be able to use a weakref Finalizer, which is
+        # designed for this type of problem. Instead of carrying around a weak
+        # reference we don't really care about, we can invoke the Finalizer
+        # when we know we need to clean up the context manager. In our case, we
+        # get the finalizer when we perform the search_ext() and get a message
+        # ID. We're safe to clean things up (e.g., call finalizer()) after we
+        # call result3(msgid) since we're collected the data from that specific
+        # message ID, and we shouldn't need that specific connection context
+        # manager anymore.
+        msgid, finalizer = self.conn.search_ext(base,
+                                                scope,
+                                                filterstr,
+                                                attrlist,
+                                                serverctrls=[lc])
         # Endless loop request pages on ldap server until it has no data
         while True:
             # Request to the ldap server a page with 'page_size' entries
             rtype, rdata, rmsgid, serverctrls = self.conn.result3(msgid)
+            finalizer()
             # Receive the data
             res.extend(rdata)
             pctrls = [c for c in serverctrls
