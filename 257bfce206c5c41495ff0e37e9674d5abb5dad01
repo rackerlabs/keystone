@@ -17,6 +17,29 @@
       "revId": "257bfce206c5c41495ff0e37e9674d5abb5dad01",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f560f44_865ac67e",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 825,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-09-27T01:10:16Z",
+      "side": 1,
+      "message": "I\u0027m not a huge fan of this since it changes the return value of an implementation class to get things to work, so we\u0027d need to update the interface.",
+      "range": {
+        "startLine": 825,
+        "startChar": 8,
+        "endLine": 825,
+        "endChar": 29
+      },
+      "revId": "257bfce206c5c41495ff0e37e9674d5abb5dad01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
