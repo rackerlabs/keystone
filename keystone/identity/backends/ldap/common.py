@@ -340,6 +340,10 @@ def dn_startswith(descendant_dn, dn):
     return is_dn_equal(descendant_dn[-len(dn):], dn)
 
 
+def context_manager_cleanup(cm):
+    cm.__exit__(None, None, None)
+
+
 class LDAPHandler(object, metaclass=abc.ABCMeta):
     """Abstract class which defines methods for a LDAP API provider.
 
@@ -814,8 +818,9 @@ class PooledLDAPHandler(LDAPHandler):
             conn_ctxt.__exit__(*sys.exc_info())
             raise
         res = MsgId((conn, msgid))
-        weakref.ref(res, functools.partial(conn_ctxt.__exit__,
-                                           None, None, None))
+        self.connection_finalizer = weakref.finalize(
+            res, context_manager_cleanup, conn_ctxt
+        )
         return res
 
     def result3(self, msgid, all=1, timeout=None,
@@ -1006,6 +1011,11 @@ class KeystoneLDAPHandler(LDAPHandler):
         while True:
             # Request to the ldap server a page with 'page_size' entries
             rtype, rdata, rmsgid, serverctrls = self.conn.result3(msgid)
+            try:
+                self.connection_finalizer()
+                self.connection_finalizer = None
+            except AttributeError:
+                pass
             # Receive the data
             res.extend(rdata)
             pctrls = [c for c in serverctrls
