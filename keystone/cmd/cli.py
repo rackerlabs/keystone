@@ -166,7 +166,7 @@ class BootStrap(BaseApp):
         if self.password is None:
             print(_('ERROR: Either --bootstrap-password argument or '
                     'OS_BOOTSTRAP_PASSWORD must be set.'))
-            sys.exit(1)
+            return 1
 
         self.bootstrapper.admin_password = self.password
         self.bootstrapper.admin_username = self.username
@@ -192,7 +192,9 @@ class BootStrap(BaseApp):
     @classmethod
     def main(cls):
         klass = cls()
-        klass.do_bootstrap()
+        status = klass.do_bootstrap()
+        if status is not None:
+            sys.exit(status)
 
 
 class Doctor(BaseApp):
