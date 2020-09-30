@@ -1,0 +1,8 @@
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Workflow+1: Gage Hugo <gagehugo@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 30 Sep 2020 19:21:00 +0000
+Reviewed-on: https://review.opendev.org/754492
+Project: openstack/keystone
+Branch: refs/heads/master
