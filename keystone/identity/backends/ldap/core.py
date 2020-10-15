@@ -442,6 +442,8 @@ class GroupApi(common_ldap.BaseLdap):
                         "member:%s:" % LDAP_MATCHING_RULE_IN_CHAIN:
                         group_dn},
                     attrlist=[self.member_attribute])
+                attrs += self._ldap_get_list(group_dn, ldap.SCOPE_BASE,
+                                             attrlist=[self.member_attribute])
             else:
                 attrs = self._ldap_get_list(group_dn, ldap.SCOPE_BASE,
                                             attrlist=[self.member_attribute])
