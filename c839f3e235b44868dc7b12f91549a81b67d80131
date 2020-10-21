@@ -34,6 +34,24 @@
       "revId": "c839f3e235b44868dc7b12f91549a81b67d80131",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f65232a_c9567707",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-10-21T20:48:38Z",
+      "side": 1,
+      "message": "Actually - my previous comment was just the connection/session factory, which returns one of these [0].\n\nI think it attempts to commit changes here [1][2], which should be when the context manager is cleaned up?\n\nDoes that help?\n\n[0] https://opendev.org/openstack/oslo.db/src/branch/master/oslo_db/sqlalchemy/enginefacade.py#L584\n[1] https://opendev.org/openstack/oslo.db/src/branch/master/oslo_db/sqlalchemy/enginefacade.py#L663\n[2] https://opendev.org/openstack/oslo.db/src/branch/master/oslo_db/sqlalchemy/enginefacade.py#L691",
+      "parentUuid": "3f65232a_06b17c90",
+      "revId": "c839f3e235b44868dc7b12f91549a81b67d80131",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
