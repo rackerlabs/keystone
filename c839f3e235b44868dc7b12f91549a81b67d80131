@@ -16,6 +16,24 @@
       "revId": "c839f3e235b44868dc7b12f91549a81b67d80131",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f65232a_06b17c90",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-10-21T20:28:14Z",
+      "side": 1,
+      "message": "I\u0027m not entirely sure. That method returns an instance of  _TransactionContextManager from oslo.db.\n\nhttps://opendev.org/openstack/oslo.db/src/branch/master/oslo_db/sqlalchemy/enginefacade.py#L752\n\nShould we not be using that?\n\nAlso, I patched this into an environment and test it manually, but it doesn\u0027t appear to fix the issue.",
+      "parentUuid": "9f560f44_81c2d432",
+      "revId": "c839f3e235b44868dc7b12f91549a81b67d80131",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
