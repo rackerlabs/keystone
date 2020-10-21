@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f65232a_3e3be69c",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2020-10-21T13:36:26Z",
+      "side": 1,
+      "message": "iiuc the lines 441 to 443 filter the previous resoulg by group_dn, so I don\u0027t think that we were going to have a different result by requesting the get_list using group_dn as the base_dn.\n\nAlso, would be nice to have some unit tests, so we can take this doubts out with a better test result.",
+      "revId": "8e6d464deccce49cc41319440345e322b5999edb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
