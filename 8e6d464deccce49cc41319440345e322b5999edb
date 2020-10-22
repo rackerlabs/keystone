@@ -16,6 +16,24 @@
       "revId": "8e6d464deccce49cc41319440345e322b5999edb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f65232a_0d47d41f",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 29466
+      },
+      "writtenOn": "2020-10-22T10:40:21Z",
+      "side": 1,
+      "message": "The difference in the result is returning users which are not nested as well as users that are. I have updated the commit message to reflect this.",
+      "parentUuid": "3f65232a_3e3be69c",
+      "revId": "8e6d464deccce49cc41319440345e322b5999edb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
