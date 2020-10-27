@@ -565,6 +565,7 @@ class LockingOutUserTests(test_backend_sql.SqlTests):
         self.user = PROVIDERS.identity_api.create_user(user_dict)
 
     def test_locking_out_user_after_max_failed_attempts(self):
+<<<<<<< HEAD   (53d1cc Fix security issues with EC2 credentials)
         # authenticate with wrong password
         self.assertRaises(AssertionError,
                           PROVIDERS.identity_api.authenticate,
@@ -583,6 +584,25 @@ class LockingOutUserTests(test_backend_sql.SqlTests):
                           self.make_request(),
                           user_id=self.user['id'],
                           password=uuid.uuid4().hex)
+=======
+        with self.make_request():
+            # authenticate with wrong password
+            self.assertRaises(AssertionError,
+                              PROVIDERS.identity_api.authenticate,
+                              user_id=self.user['id'],
+                              password=uuid.uuid4().hex)
+            # authenticate with correct password
+            PROVIDERS.identity_api.authenticate(
+                user_id=self.user['id'],
+                password=self.password
+            )
+            # test locking out user after max failed attempts
+            self._fail_auth_repeatedly(self.user['id'])
+            self.assertRaises(exception.Unauthorized,
+                              PROVIDERS.identity_api.authenticate,
+                              user_id=self.user['id'],
+                              password=uuid.uuid4().hex)
+>>>>>>> CHANGE (bc5de5 Hide AccountLocked exception from end users)
 
     def test_lock_out_for_ignored_user(self):
         # mark the user as exempt from failed password attempts
@@ -605,6 +625,7 @@ class LockingOutUserTests(test_backend_sql.SqlTests):
         )
 
     def test_set_enabled_unlocks_user(self):
+<<<<<<< HEAD   (53d1cc Fix security issues with EC2 credentials)
         # lockout user
         self._fail_auth_repeatedly(self.user['id'])
         self.assertRaises(exception.AccountLocked,
@@ -620,10 +641,28 @@ class LockingOutUserTests(test_backend_sql.SqlTests):
             password=self.password
         )
         self.assertTrue(user_ret['enabled'])
+=======
+        with self.make_request():
+            # lockout user
+            self._fail_auth_repeatedly(self.user['id'])
+            self.assertRaises(exception.Unauthorized,
+                              PROVIDERS.identity_api.authenticate,
+                              user_id=self.user['id'],
+                              password=uuid.uuid4().hex)
+            # set enabled, user should be unlocked
+            self.user['enabled'] = True
+            PROVIDERS.identity_api.update_user(self.user['id'], self.user)
+            user_ret = PROVIDERS.identity_api.authenticate(
+                user_id=self.user['id'],
+                password=self.password
+            )
+            self.assertTrue(user_ret['enabled'])
+>>>>>>> CHANGE (bc5de5 Hide AccountLocked exception from end users)
 
     def test_lockout_duration(self):
         # freeze time
         with freezegun.freeze_time(datetime.datetime.utcnow()) as frozen_time:
+<<<<<<< HEAD   (53d1cc Fix security issues with EC2 credentials)
             # lockout user
             self._fail_auth_repeatedly(self.user['id'])
             self.assertRaises(exception.AccountLocked,
@@ -646,10 +685,35 @@ class LockingOutUserTests(test_backend_sql.SqlTests):
                               self.make_request(),
                               user_id=self.user['id'],
                               password=uuid.uuid4().hex)
+=======
+            with self.make_request():
+                # lockout user
+                self._fail_auth_repeatedly(self.user['id'])
+                self.assertRaises(exception.Unauthorized,
+                                  PROVIDERS.identity_api.authenticate,
+                                  user_id=self.user['id'],
+                                  password=uuid.uuid4().hex)
+                # freeze time past the duration, user should be unlocked and
+                # failed auth count should get reset
+                frozen_time.tick(delta=datetime.timedelta(
+                    seconds=CONF.security_compliance.lockout_duration + 1))
+                PROVIDERS.identity_api.authenticate(
+                    user_id=self.user['id'],
+                    password=self.password
+                )
+                # test failed auth count was reset by authenticating with the
+                # wrong password, should raise an assertion error and not
+                # account locked
+                self.assertRaises(AssertionError,
+                                  PROVIDERS.identity_api.authenticate,
+                                  user_id=self.user['id'],
+                                  password=uuid.uuid4().hex)
+>>>>>>> CHANGE (bc5de5 Hide AccountLocked exception from end users)
 
     def test_lockout_duration_failed_auth_cnt_resets(self):
         # freeze time
         with freezegun.freeze_time(datetime.datetime.utcnow()) as frozen_time:
+<<<<<<< HEAD   (53d1cc Fix security issues with EC2 credentials)
             # lockout user
             self._fail_auth_repeatedly(self.user['id'])
             self.assertRaises(exception.AccountLocked,
@@ -668,6 +732,25 @@ class LockingOutUserTests(test_backend_sql.SqlTests):
                               self.make_request(),
                               user_id=self.user['id'],
                               password=uuid.uuid4().hex)
+=======
+            with self.make_request():
+                # lockout user
+                self._fail_auth_repeatedly(self.user['id'])
+                self.assertRaises(exception.Unauthorized,
+                                  PROVIDERS.identity_api.authenticate,
+                                  user_id=self.user['id'],
+                                  password=uuid.uuid4().hex)
+                # freeze time past the duration, failed_auth_cnt should reset
+                frozen_time.tick(delta=datetime.timedelta(
+                    seconds=CONF.security_compliance.lockout_duration + 1))
+                # repeat failed auth the max times
+                self._fail_auth_repeatedly(self.user['id'])
+                # test user account is locked
+                self.assertRaises(exception.Unauthorized,
+                                  PROVIDERS.identity_api.authenticate,
+                                  user_id=self.user['id'],
+                                  password=uuid.uuid4().hex)
+>>>>>>> CHANGE (bc5de5 Hide AccountLocked exception from end users)
 
     def _fail_auth_repeatedly(self, user_id):
         wrong_password = uuid.uuid4().hex
