@@ -578,7 +578,7 @@ class LockingOutUserTests(test_backend_sql.SqlTests):
         )
         # test locking out user after max failed attempts
         self._fail_auth_repeatedly(self.user['id'])
-        self.assertRaises(exception.AccountLocked,
+        self.assertRaises(exception.Unauthorized,
                           PROVIDERS.identity_api.authenticate,
                           self.make_request(),
                           user_id=self.user['id'],
@@ -607,7 +607,7 @@ class LockingOutUserTests(test_backend_sql.SqlTests):
     def test_set_enabled_unlocks_user(self):
         # lockout user
         self._fail_auth_repeatedly(self.user['id'])
-        self.assertRaises(exception.AccountLocked,
+        self.assertRaises(exception.Unauthorized,
                           PROVIDERS.identity_api.authenticate,
                           self.make_request(),
                           user_id=self.user['id'],
@@ -626,7 +626,7 @@ class LockingOutUserTests(test_backend_sql.SqlTests):
         with freezegun.freeze_time(datetime.datetime.utcnow()) as frozen_time:
             # lockout user
             self._fail_auth_repeatedly(self.user['id'])
-            self.assertRaises(exception.AccountLocked,
+            self.assertRaises(exception.Unauthorized,
                               PROVIDERS.identity_api.authenticate,
                               self.make_request(),
                               user_id=self.user['id'],
@@ -652,7 +652,7 @@ class LockingOutUserTests(test_backend_sql.SqlTests):
         with freezegun.freeze_time(datetime.datetime.utcnow()) as frozen_time:
             # lockout user
             self._fail_auth_repeatedly(self.user['id'])
-            self.assertRaises(exception.AccountLocked,
+            self.assertRaises(exception.Unauthorized,
                               PROVIDERS.identity_api.authenticate,
                               self.make_request(),
                               user_id=self.user['id'],
@@ -663,7 +663,7 @@ class LockingOutUserTests(test_backend_sql.SqlTests):
             # repeat failed auth the max times
             self._fail_auth_repeatedly(self.user['id'])
             # test user account is locked
-            self.assertRaises(exception.AccountLocked,
+            self.assertRaises(exception.Unauthorized,
                               PROVIDERS.identity_api.authenticate,
                               self.make_request(),
                               user_id=self.user['id'],
