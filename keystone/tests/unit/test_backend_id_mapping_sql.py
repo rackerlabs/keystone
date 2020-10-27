@@ -13,6 +13,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import sys
 import uuid
 
 from testtools import matchers
@@ -138,6 +139,26 @@ class SqlIDMapping(test_backend_sql.SqlTests):
     def test_id_mapping_handles_unicode(self):
         initial_mappings = len(mapping_sql.list_id_mappings())
         local_id = u'fäké1'
+        local_entity = {'domain_id': self.domainA['id'],
+                        'local_id': local_id,
+                        'entity_type': mapping.EntityType.USER}
+
+        # Check no mappings for the new local entity
+        self.assertIsNone(PROVIDERS.id_mapping_api.get_public_id(local_entity))
+
+        # Create the new mapping and then read it back
+        public_id = PROVIDERS.id_mapping_api.create_id_mapping(local_entity)
+        self.assertThat(mapping_sql.list_id_mappings(),
+                        matchers.HasLength(initial_mappings + 1))
+        self.assertEqual(
+            public_id, PROVIDERS.id_mapping_api.get_public_id(local_entity))
+
+    def test_id_mapping_handles_bytes(self):
+        initial_mappings = len(mapping_sql.list_id_mappings())
+        if sys.version_info.major == 3:
+            local_id = b'FaKeID'
+        else:
+            local_id = 'FaKeID'
         local_entity = {'domain_id': self.domainA['id'],
                         'local_id': local_id,
                         'entity_type': mapping.EntityType.USER}

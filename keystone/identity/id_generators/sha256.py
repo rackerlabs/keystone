@@ -13,8 +13,8 @@
 # under the License.
 
 import hashlib
-
 from keystone.identity import generator
+import sys
 
 
 class Generator(generator.IDGenerator):
@@ -22,5 +22,12 @@ class Generator(generator.IDGenerator):
     def generate_public_ID(self, mapping):
         m = hashlib.sha256()
         for key in sorted(mapping.keys()):
-            m.update(mapping[key].encode('utf-8'))
+            # python-ldap >3.0 returns bytes data type for attribute values
+            # except distinguished names, relative distinguished names,
+            # attribute names, queries on python3.
+            # Please see Bytes/text management in python-ldap module.
+            if sys.version_info.major == 3 and isinstance(mapping[key], bytes):
+                m.update(mapping[key])
+            else:
+                m.update(mapping[key].encode('utf-8'))
         return m.hexdigest()
