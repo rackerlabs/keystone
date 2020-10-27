@@ -13,8 +13,8 @@
 # under the License.
 
 import hashlib
-
 from keystone.identity import generator
+import six
 
 
 class Generator(generator.IDGenerator):
@@ -22,5 +22,8 @@ class Generator(generator.IDGenerator):
     def generate_public_ID(self, mapping):
         m = hashlib.sha256()
         for key in sorted(mapping.keys()):
-            m.update(mapping[key].encode('utf-8'))
+            if six.PY3 and isinstance(mapping[key], six.binary_type):
+                m.update(mapping[key])
+            else:
+                m.update(mapping[key].encode('utf-8'))
         return m.hexdigest()
