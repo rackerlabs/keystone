@@ -81,30 +81,6 @@ user_policies = [
         deprecated_reason=DEPRECATED_REASON,
         deprecated_since=versionutils.deprecated.STEIN),
     policy.DocumentedRuleDefault(
-        name=base.IDENTITY % 'list_projects_for_user',
-        check_str='',
-        # NOTE(lbragstad): We explicitly omit scope_types from this policy
-        # because it's meant to be called with an unscoped token, which doesn't
-        # apply to scope_types or its purpose. So long as the user is in the
-        # system and has a valid token, they should be able to generate a list
-        # of projects they have access to.
-        description=('List all projects a user has access to via role '
-                     'assignments.'),
-        operations=[{'path': ' /v3/auth/projects',
-                     'method': 'GET'}]),
-    policy.DocumentedRuleDefault(
-        name=base.IDENTITY % 'list_domains_for_user',
-        check_str='',
-        # NOTE(lbragstad): We explicitly omit scope_types from this policy
-        # because it's meant to be called with an unscoped token, which doesn't
-        # apply to scope_types or its purpose. So long as the user is in the
-        # system and has a valid token, they should be able to generate a list
-        # of domains they have access to.
-        description=('List all domains a user has access to via role '
-                     'assignments.'),
-        operations=[{'path': '/v3/auth/domains',
-                     'method': 'GET'}]),
-    policy.DocumentedRuleDefault(
         name=base.IDENTITY % 'create_user',
         check_str=SYSTEM_ADMIN_OR_DOMAIN_ADMIN,
         scope_types=['system', 'domain'],
