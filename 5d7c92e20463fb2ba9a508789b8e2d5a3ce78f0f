@@ -16,6 +16,24 @@
       "revId": "5d7c92e20463fb2ba9a508789b8e2d5a3ce78f0f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f621f24_5d54d4ca",
+        "filename": "devstack/lib/scope.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-10-29T17:49:22Z",
+      "side": 1,
+      "message": "I didn\u0027t know this option existed, I think I wrote this before it existed. I would prefer to get this merged first and revise later.",
+      "parentUuid": "1f621f24_3d8e3878",
+      "revId": "5d7c92e20463fb2ba9a508789b8e2d5a3ce78f0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
