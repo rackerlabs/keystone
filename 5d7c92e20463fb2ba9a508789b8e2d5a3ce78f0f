@@ -34,6 +34,47 @@
       "revId": "5d7c92e20463fb2ba9a508789b8e2d5a3ce78f0f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f621f24_fd2040b3",
+        "filename": "devstack/lib/scope.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-10-29T18:31:46Z",
+      "side": 1,
+      "message": "Sounds good - I threw up a patch.\n\nhttps://review.opendev.org/#/c/760441/",
+      "parentUuid": "1f621f24_5d54d4ca",
+      "revId": "5d7c92e20463fb2ba9a508789b8e2d5a3ce78f0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f621f24_7d50b033",
+        "filename": "devstack/lib/scope.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-10-29T18:31:46Z",
+      "side": 1,
+      "message": "According to the tempest config help text, this should be either \u0027all\u0027 or None. Does this work with True?\n\nhttps://review.opendev.org/#/c/686073/8/tempest/config.py,unified",
+      "range": {
+        "startLine": 24,
+        "startChar": 45,
+        "endLine": 24,
+        "endChar": 49
+      },
+      "revId": "5d7c92e20463fb2ba9a508789b8e2d5a3ce78f0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
