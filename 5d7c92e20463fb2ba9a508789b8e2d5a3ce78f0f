@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f621f24_3d8e3878",
+        "filename": "devstack/lib/scope.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-10-29T17:46:14Z",
+      "side": 1,
+      "message": "Should we also opt into the new defaults?\n\n  iniset $KEYSTONE_CONF oslo_policy enforce_new_defaults true\n\nIIRC - this would make line 19 unnecessary.\n\nhttps://docs.openstack.org/keystone/latest/configuration/config-options.html#oslo_policy.enforce_new_defaults",
+      "revId": "5d7c92e20463fb2ba9a508789b8e2d5a3ce78f0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
