@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f621f24_3d4598b4",
+        "filename": "releasenotes/notes/bug-1878938-70ee2af6fdf66004.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-10-29T18:17:05Z",
+      "side": 1,
+      "message": "nit: wording like this is difficult to parse in a release note because they\u0027re all rendered together, without any context about the patch referenced by \u0027this fix\u0027.\n\nWe might consider omitting this since readers of the release notes probably just want to know what to do and not how keystone fixed the issue.",
+      "range": {
+        "startLine": 7,
+        "startChar": 11,
+        "endLine": 8,
+        "endChar": 32
+      },
+      "revId": "c1dcbb05b4488f1fa3e7af4d9171d11702d94119",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f621f24_3d4c78c6",
+        "filename": "releasenotes/notes/bug-1878938-70ee2af6fdf66004.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-10-29T18:17:05Z",
+      "side": 1,
+      "message": "I would call this out explicitly and say:\n\n If you are affected by this bug, you must remove stale system role assignment manually. The following is an example SQL statement you can use to do so, but you must verify it\u0027s applicability to your deployment\u0027s SQL implementation and version.",
+      "range": {
+        "startLine": 10,
+        "startChar": 36,
+        "endLine": 12,
+        "endChar": 12
+      },
+      "revId": "c1dcbb05b4488f1fa3e7af4d9171d11702d94119",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f621f24_ddd0e4cc",
+        "filename": "releasenotes/notes/bug-1878938-70ee2af6fdf66004.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-10-29T18:17:05Z",
+      "side": 1,
+      "message": "I don\u0027t think this is needed, it\u0027s implemented already.\n\nhttps://review.opendev.org/#/c/731087/10/keystone/assignment/backends/sql.py@260",
+      "range": {
+        "startLine": 15,
+        "startChar": 9,
+        "endLine": 15,
+        "endChar": 77
+      },
+      "revId": "c1dcbb05b4488f1fa3e7af4d9171d11702d94119",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
