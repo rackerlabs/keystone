@@ -99,6 +99,30 @@
       "revId": "5d7c92e20463fb2ba9a508789b8e2d5a3ce78f0f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f621f24_9d6dc79a",
+        "filename": "devstack/lib/scope.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-10-30T01:46:05Z",
+      "side": 1,
+      "message": "Cool - I rolled that into 760441",
+      "parentUuid": "1f621f24_130d2d3e",
+      "range": {
+        "startLine": 24,
+        "startChar": 45,
+        "endLine": 24,
+        "endChar": 49
+      },
+      "revId": "5d7c92e20463fb2ba9a508789b8e2d5a3ce78f0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
