@@ -1,0 +1,9 @@
+Code-Review+2: Kristi Nikolla <knikolla@bu.edu>
+Code-Review+2: Lance Bragstad <lbragstad@redhat.com>
+Workflow+1: Lance Bragstad <lbragstad@redhat.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 30 Oct 2020 23:10:35 +0000
+Reviewed-on: https://review.opendev.org/760593
+Project: openstack/keystone
+Branch: refs/heads/master
