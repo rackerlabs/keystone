@@ -1,0 +1,10 @@
+Code-Review+2: Lance Bragstad <lbragstad@redhat.com>
+Code-Review+1: Moisés Guimarães <moguimar@redhat.com>
+Code-Review+1: Gage Hugo <gagehugo@gmail.com>
+Workflow+1: Colleen Murphy <colleen@gazlene.net>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 02 Nov 2020 19:16:01 +0000
+Reviewed-on: https://review.opendev.org/759750
+Project: openstack/keystone
+Branch: refs/heads/stable/train
