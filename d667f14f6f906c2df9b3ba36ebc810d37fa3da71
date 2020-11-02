@@ -22,6 +22,23 @@
       "revId": "d667f14f6f906c2df9b3ba36ebc810d37fa3da71",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f621f24_0a566b5d",
+        "filename": "keystone/tests/protection/v3/test_application_credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-11-02T17:34:22Z",
+      "side": 1,
+      "message": "We need to port these to tempest tests.",
+      "revId": "d667f14f6f906c2df9b3ba36ebc810d37fa3da71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
