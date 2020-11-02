@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f621f24_8a627b3d",
+        "filename": "keystone/api/users.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-11-02T17:33:27Z",
+      "side": 1,
+      "message": "I\u0027m not sure how I feel about this because I feel like the flask request arguments should be immutable.\n\nAn alternative would be to rework the enforcement engine in keystone to allow callers to pass in first class target attributes.",
+      "range": {
+        "startLine": 150,
+        "startChar": 0,
+        "endLine": 150,
+        "endChar": 60
+      },
+      "revId": "d667f14f6f906c2df9b3ba36ebc810d37fa3da71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
