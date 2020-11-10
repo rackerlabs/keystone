@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f621f24_5c29ed87",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2020-11-10T15:17:35Z",
+      "side": 1,
+      "message": "This seems to be dead code. Probably left here while conflict was resolved.",
+      "range": {
+        "startLine": 109,
+        "startChar": 8,
+        "endLine": 109,
+        "endChar": 38
+      },
+      "revId": "dc4496d0b808f1ad2e9fa9e028138c2e9381bbb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
