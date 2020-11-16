@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f621f24_82659b20",
+        "filename": "keystone/identity/id_generators/sha256.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-11-16T22:56:15Z",
+      "side": 1,
+      "message": "This branch and the last stable branch of keystone are python3-only and we\u0027ve removed six from the codebase. Can this be done without six?",
+      "revId": "429c771c952e63538e3e7d978cf2faeff73470c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
