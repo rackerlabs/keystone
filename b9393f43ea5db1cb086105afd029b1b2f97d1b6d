@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f621f24_7d2a9e7e",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-11-16T23:08:56Z",
+      "side": 1,
+      "message": "I don\u0027t think it\u0027s correct to hardcode this attribute name, I\u0027m guessing it should probably come from the configurable group_member_attribute name: https://docs.openstack.org/keystone/latest/configuration/config-options.html#ldap.group_member_attribute",
+      "range": {
+        "startLine": 442,
+        "startChar": 25,
+        "endLine": 442,
+        "endChar": 33
+      },
+      "revId": "b9393f43ea5db1cb086105afd029b1b2f97d1b6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
