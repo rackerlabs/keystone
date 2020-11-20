@@ -1,0 +1,10 @@
+Code-Review+2: Lance Bragstad <lbragstad@redhat.com>
+Code-Review+1: wu.shiming <wushiming@yovole.com>
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Workflow+1: Colleen Murphy <colleen@gazlene.net>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 20 Nov 2020 01:13:24 +0000
+Reviewed-on: https://review.opendev.org/762207
+Project: openstack/keystone
+Branch: refs/heads/stable/queens
