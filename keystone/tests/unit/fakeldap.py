@@ -265,7 +265,7 @@ class FakeLdap(common.LDAPHandler):
             if tls_req_cert in list(common.LDAP_TLS_CERTS.values()):
                 ldap.set_option(ldap.OPT_X_TLS_REQUIRE_CERT, tls_req_cert)
             else:
-                raise ValueError("invalid TLS_REQUIRE_CERT tls_req_cert=%s",
+                raise ValueError("invalid TLS_REQUIRE_CERT tls_req_cert=%s" %
                                  tls_req_cert)
 
         if alias_dereferencing is not None:

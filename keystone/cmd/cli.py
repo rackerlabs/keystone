@@ -818,7 +818,7 @@ class TrustFlush(BaseApp):
                         CONF.command.date, '%d-%m-%Y')
                 except KeyError:
                     raise ValueError("'%s'Invalid input for date, should be "
-                                     "DD-MM-YYYY", CONF.command.date)
+                                     "DD-MM-YYYY" % CONF.command.date)
             else:
                 LOG.info("No date is supplied, keystone-manage will use the "
                          "system clock time at runtime ")
