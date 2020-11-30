@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b09fdb06_1f6ca2fa",
+        "filename": "keystone/tests/unit/test_backend_id_mapping_sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-11-30T19:29:49Z",
+      "side": 1,
+      "message": "Since this branch is python3-only, it would be a little cleaner not to bother with this check and to only code for python3, and if this needs to be backported to a branch that supports python2 to add the condition in that backport. This is just a nitpick though.",
+      "revId": "9d909cd7ff8e936e5e0291402a0831bebae3f29e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8c825153_7e2eb6f0",
+        "filename": "releasenotes/notes/bug-1901654-69b9f35d11cd0c75.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2020-11-30T19:29:49Z",
+      "side": 1,
+      "message": "This should include a link to the bug, check the other release notes for an example of the RST format.",
+      "revId": "9d909cd7ff8e936e5e0291402a0831bebae3f29e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
