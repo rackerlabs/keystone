@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3545ccd5_0e68a803",
+        "filename": "releasenotes/notes/bug-1901654-69b9f35d11cd0c75.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2020-12-09T22:19:47Z",
+      "side": 1,
+      "message": "fields*",
+      "range": {
+        "startLine": 6,
+        "startChar": 90,
+        "endLine": 6,
+        "endChar": 96
+      },
+      "revId": "7be6aea190d5f249dc6029e6b5c813025508c8c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
