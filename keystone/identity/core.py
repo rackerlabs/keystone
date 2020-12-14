@@ -1471,6 +1471,11 @@ class Manager(manager.Manager):
             notifications.Audit.updated(self._USER, user_id,
                                         initiator, reason=audit_reason)
             raise
+        #invalidate cache bacause password_expires_at changed
+        user_ref = self.get_user(user_id)
+        self.get_user.invalidate(self, user_id)
+        self.get_user_by_name.invalidate(self, user_ref['name'],
+                                         user_ref['domain_id'])
 
         notifications.Audit.updated(self._USER, user_id, initiator)
         self._persist_revocation_event_for_user(user_id)
