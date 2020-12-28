@@ -1,0 +1,40 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ce4b764_b867c89d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1474,
+      "author": {
+        "id": 27383
+      },
+      "writtenOn": "2020-12-28T07:25:42Z",
+      "side": 1,
+      "message": "\u003e pep8: K002 block comments should start with \u0027# \u0027\n\nPlease fix.",
+      "parentUuid": "5b68d9b0_28d6976e",
+      "revId": "b9e08bd5ef11c0d289e4106604b4144f826f944d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2c1b3787_f667f9ea",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1474,
+      "author": {
+        "id": 27383
+      },
+      "writtenOn": "2020-12-28T07:25:42Z",
+      "side": 1,
+      "message": "\u003e pep8: E265 block comment should start with \u0027# \u0027\n\nPlease fix.",
+      "parentUuid": "5e0cc8dd_75a211f2",
+      "revId": "b9e08bd5ef11c0d289e4106604b4144f826f944d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
