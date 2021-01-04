@@ -2688,7 +2688,7 @@ class TokenDataTests(object):
         r = self.get('/auth/tokens', headers=self.headers)
 
         # populate the response result with some extra data
-        r.result['token'][u'extra'] = str(uuid.uuid4().hex)
+        r.result['token']['extra'] = str(uuid.uuid4().hex)
         self.assertRaises(exception.SchemaValidationError,
                           self.assertValidUnscopedTokenResponse,
                           r)
@@ -2710,7 +2710,7 @@ class TokenDataTests(object):
         r = self.get('/auth/tokens', headers=self.headers)
 
         # populate the response result with some extra data
-        r.result['token'][u'extra'] = str(uuid.uuid4().hex)
+        r.result['token']['extra'] = str(uuid.uuid4().hex)
         self.assertRaises(exception.SchemaValidationError,
                           self.assertValidDomainScopedTokenResponse,
                           r)
@@ -2727,7 +2727,7 @@ class TokenDataTests(object):
         resp = self.get('/auth/tokens', headers=self.headers)
 
         # populate the response result with some extra data
-        resp.result['token'][u'extra'] = str(uuid.uuid4().hex)
+        resp.result['token']['extra'] = str(uuid.uuid4().hex)
         self.assertRaises(exception.SchemaValidationError,
                           self.assertValidProjectScopedTokenResponse,
                           resp)

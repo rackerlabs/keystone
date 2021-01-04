@@ -109,7 +109,7 @@ class IdentityTests(object):
                               password='password')
 
     def test_create_unicode_user_name(self):
-        unicode_name = u'name \u540d\u5b57'
+        unicode_name = 'name \u540d\u5b57'
         user = unit.new_user_ref(name=unicode_name,
                                  domain_id=CONF.identity.default_domain_id)
         ref = PROVIDERS.identity_api.create_user(user)

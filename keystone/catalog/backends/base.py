@@ -218,10 +218,10 @@ class CatalogDriverBase(provider_api.ProviderAPIMixin, object,
 
             { 'RegionOne':
                 {'compute': {
-                    'adminURL': u'http://host:8774/v1.1/project_id',
-                    'internalURL': u'http://host:8774/v1.1/project_id',
+                    'adminURL': 'http://host:8774/v1.1/project_id',
+                    'internalURL': 'http://host:8774/v1.1/project_id',
                     'name': 'Compute Service',
-                    'publicURL': u'http://host:8774/v1.1/project_id'},
+                    'publicURL': 'http://host:8774/v1.1/project_id'},
                  'ec2': {
                     'adminURL': 'http://host:8773/services/Admin',
                     'internalURL': 'http://host:8773/services/Cloud',

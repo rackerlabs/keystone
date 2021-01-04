@@ -184,7 +184,7 @@ class PolicyJsonTestCase(unit.TestCase):
                   'domain_id': uuid.uuid4().hex}
         credentials = {'username': uuid.uuid4().hex, 'token': uuid.uuid4().hex,
                        'project_name': None, 'user_id': uuid.uuid4().hex,
-                       'roles': [u'admin'], 'is_admin': True,
+                       'roles': ['admin'], 'is_admin': True,
                        'is_admin_project': True, 'project_id': None,
                        'domain_id': uuid.uuid4().hex}
 

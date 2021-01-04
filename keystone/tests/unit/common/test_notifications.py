@@ -1156,7 +1156,7 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
                     'typeURI': 'service/security/account/user',
                     'host': {'address': 'localhost'},
                     'id': 'openstack:0a90d95d-582c-4efb-9cbc-e2ca7ca9c341',
-                    'username': u'admin'
+                    'username': 'admin'
                 },
                 'target': {
                     'typeURI': 'service/security/account/user',
@@ -1168,10 +1168,10 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
                 },
                 'eventType': 'activity',
                 'eventTime': '2014-08-21T21:04:56.204536+0000',
-                'role': u'0e6b990380154a2599ce6b6e91548a68',
-                'domain': u'24bdcff1aab8474895dbaac509793de1',
+                'role': '0e6b990380154a2599ce6b6e91548a68',
+                'domain': '24bdcff1aab8474895dbaac509793de1',
                 'inherited_to_projects': False,
-                'group': u'c1e22dc67cbd469ea0e33bf428fe597a',
+                'group': 'c1e22dc67cbd469ea0e33bf428fe597a',
                 'action': 'created.role_assignment',
                 'outcome': 'success',
                 'id': 'openstack:782689dd-f428-4f13-99c7-5c70f94a5ac1'
