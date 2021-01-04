@@ -49,7 +49,7 @@ class TestFernetReceiptProvider(unit.TestCase):
             exception.ReceiptNotFound,
             self.provider.validate_receipt,
             receipt_id)
-        self.assertIn(receipt_id, u'%s' % e)
+        self.assertIn(receipt_id, '%s' % e)
 
 
 class TestValidate(unit.TestCase):

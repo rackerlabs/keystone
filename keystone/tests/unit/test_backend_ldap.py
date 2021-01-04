@@ -388,7 +388,7 @@ class BaseLDAPIdentity(LDAPTestSetup, IdentityTests, AssignmentTests,
         ldap_ = PROVIDERS.identity_api.driver.user.get_connection()
         res = ldap_.search_s(user_dn,
                              ldap.SCOPE_BASE,
-                             u'(sn=%s)' % user['name'])
+                             '(sn=%s)' % user['name'])
         if enabled_attr_name in res[0][1]:
             return res[0][1][enabled_attr_name]
         else:
@@ -405,7 +405,7 @@ class BaseLDAPIdentity(LDAPTestSetup, IdentityTests, AssignmentTests,
         user = PROVIDERS.identity_api.create_user(user)
         PROVIDERS.identity_api.get_user(user['id'])
 
-        user['password'] = u'fäképass2'
+        user['password'] = 'fäképass2'
         PROVIDERS.identity_api.update_user(user['id'], user)
 
         self.assertRaises(exception.Forbidden,
@@ -950,7 +950,7 @@ class BaseLDAPIdentity(LDAPTestSetup, IdentityTests, AssignmentTests,
 
         # Since we want to fake up this special ID, we'll squirt this
         # direct into the driver and bypass the manager layer.
-        user_id = u'Doe, John'
+        user_id = 'Doe, John'
         user = self.new_user_ref(id=user_id,
                                  domain_id=CONF.identity.default_domain_id)
         user = PROVIDERS.identity_api.driver.create_user(user_id, user)
@@ -997,7 +997,7 @@ class BaseLDAPIdentity(LDAPTestSetup, IdentityTests, AssignmentTests,
 
         # Since we want to fake up this special ID, we'll squirt this
         # direct into the driver and bypass the manager layer
-        user_id = u'Doe, John'
+        user_id = 'Doe, John'
         user = self.new_user_ref(id=user_id,
                                  domain_id=CONF.identity.default_domain_id)
         PROVIDERS.identity_api.driver.create_user(user_id, user)
@@ -1131,9 +1131,9 @@ class LDAPIdentity(BaseLDAPIdentity):
     def test_list_domains(self):
         domains = PROVIDERS.resource_api.list_domains()
         default_domain = unit.new_domain_ref(
-            description=u'The default domain',
+            description='The default domain',
             id=CONF.identity.default_domain_id,
-            name=u'Default')
+            name='Default')
         self.assertEqual([default_domain], domains)
 
     def test_authenticate_wrong_credentials(self):
@@ -1385,7 +1385,7 @@ class LDAPIdentity(BaseLDAPIdentity):
         self.config_fixture.config(group='ldap', user_enabled_invert=True,
                                    user_enabled_attribute='passwordisexpired')
         mock_ldap_get.return_value = (
-            u'uid=123456789,c=us,ou=our_ldap,o=acme.com',
+            'uid=123456789,c=us,ou=our_ldap,o=acme.com',
             {
                 'uid': [123456789],
                 'mail': ['shaun@acme.com'],
@@ -1406,12 +1406,12 @@ class LDAPIdentity(BaseLDAPIdentity):
         self.config_fixture.config(group='ldap', user_enabled_invert=True,
                                    user_enabled_attribute='passwordisexpired')
         mock_ldap_get.return_value = (
-            u'uid=123456789,c=us,ou=our_ldap,o=acme.com',
+            'uid=123456789,c=us,ou=our_ldap,o=acme.com',
             {
                 'uid': [123456789],
-                'mail': [u'shaun@acme.com'],
-                'passwordisexpired': [u'false'],
-                'cn': [u'uid=123456789,c=us,ou=our_ldap,o=acme.com']
+                'mail': ['shaun@acme.com'],
+                'passwordisexpired': ['false'],
+                'cn': ['uid=123456789,c=us,ou=our_ldap,o=acme.com']
             }
         )
 
@@ -2194,12 +2194,12 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity, unit.TestCase):
         self.config_fixture.config(group='ldap', user_enabled_invert=True,
                                    user_enabled_attribute='passwordisexpired')
         mock_ldap_get.return_value = (
-            u'uid=123456789,c=us,ou=our_ldap,o=acme.com',
+            'uid=123456789,c=us,ou=our_ldap,o=acme.com',
             {
                 'uid': [123456789],
-                'mail': [u'shaun@acme.com'],
-                'passwordisexpired': [u'false'],
-                'cn': [u'uid=123456789,c=us,ou=our_ldap,o=acme.com']
+                'mail': ['shaun@acme.com'],
+                'passwordisexpired': ['false'],
+                'cn': ['uid=123456789,c=us,ou=our_ldap,o=acme.com']
             }
         )
 
@@ -2360,9 +2360,9 @@ class LdapIdentityWithMapping(
     def test_list_domains(self):
         domains = PROVIDERS.resource_api.list_domains()
         default_domain = unit.new_domain_ref(
-            description=u'The default domain',
+            description='The default domain',
             id=CONF.identity.default_domain_id,
-            name=u'Default')
+            name='Default')
         self.assertEqual([default_domain], domains)
 
 

@@ -171,10 +171,10 @@ ROOT_DOMAIN = {'enabled': True,
                'name': '<<keystone.domain.root>>'}
 
 DOMAINS = [{'description':
-            (u'The default domain'),
+            ('The default domain'),
             'enabled': True,
             'id': DEFAULT_DOMAIN_ID,
-            'name': u'Default'}]
+            'name': 'Default'}]
 
 SERVICES = [{'id': uuid.uuid4().hex,
              'type': 'type_one',

@@ -135,7 +135,7 @@ class DnCompareTest(unit.BaseTestCase):
 
     def test_dn_equal_unicode(self):
         # is_dn_equal can accept unicode
-        dn = u'cn=fäké,ou=OpenStack'
+        dn = 'cn=fäké,ou=OpenStack'
         self.assertTrue(common_ldap.is_dn_equal(dn, dn))
 
     def test_dn_diff_length(self):
@@ -199,8 +199,8 @@ class DnCompareTest(unit.BaseTestCase):
 
     def test_startswith_unicode(self):
         # dn_startswith accepts unicode.
-        child = u'cn=fäké,ou=OpenStäck'
-        parent = u'ou=OpenStäck'
+        child = 'cn=fäké,ou=OpenStäck'
+        parent = 'ou=OpenStäck'
         self.assertTrue(common_ldap.dn_startswith(child, parent))
 
 
@@ -433,7 +433,7 @@ class CommonLdapTestCase(unit.BaseTestCase):
         self.assertNotIn('binary_attr', py_result[0][1])
 
     def test_utf8_conversion(self):
-        value_unicode = u'fäké1'
+        value_unicode = 'fäké1'
         value_utf8 = value_unicode.encode('utf-8')
 
         result_utf8 = common_ldap.utf8_encode(value_unicode)
@@ -453,7 +453,7 @@ class CommonLdapTestCase(unit.BaseTestCase):
                           100)
 
         result_unicode = common_ldap.utf8_decode(100)
-        self.assertEqual(u'100', result_unicode)
+        self.assertEqual('100', result_unicode)
 
     def test_user_id_begins_with_0(self):
         user_id = '0123456'

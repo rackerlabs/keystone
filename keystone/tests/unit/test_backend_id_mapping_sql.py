@@ -137,7 +137,7 @@ class SqlIDMapping(test_backend_sql.SqlTests):
 
     def test_id_mapping_handles_unicode(self):
         initial_mappings = len(mapping_sql.list_id_mappings())
-        local_id = u'fäké1'
+        local_id = 'fäké1'
         local_entity = {'domain_id': self.domainA['id'],
                         'local_id': local_id,
                         'entity_type': mapping.EntityType.USER}

@@ -82,7 +82,7 @@ class ExceptionTestCase(unit.BaseTestCase):
         self.assertEqual('Forbidden', j['error'].get('title'))
 
     def test_unicode_message(self):
-        message = u'Comment \xe7a va'
+        message = 'Comment \xe7a va'
         e = exception.Error(message)
 
         try:
@@ -265,7 +265,7 @@ class SecurityErrorTestCase(ExceptionTestCase):
     def test_unicode_argument_message(self):
         self.config_fixture.config(debug=False)
 
-        risky_info = u'\u7ee7\u7eed\u884c\u7f29\u8fdb\u6216'
+        risky_info = '\u7ee7\u7eed\u884c\u7f29\u8fdb\u6216'
         e = exception.Forbidden(message=risky_info)
         self.assertValidJsonRendering(e)
         self.assertNotIn(risky_info, str(e))

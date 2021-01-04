@@ -90,7 +90,7 @@ session:
 .. code-block:: python
 
    >>> mysession.auth.auth_ref.role_names
-   [u'anotherrole', u'Member']
+   ['anotherrole', 'Member']
 
 If you have more than one role assignment on a project, you can grant your
 application credential only a subset of your role assignments if desired. This

@@ -118,7 +118,7 @@ def py2ldap(val):
     :returns: unicode string representation of value.
     """
     if isinstance(val, bool):
-        return u'TRUE' if val else u'FALSE'
+        return 'TRUE' if val else 'FALSE'
     else:
         return str(val)
 
@@ -1300,7 +1300,7 @@ class BaseLdap(object):
                 url=self.LDAP_URL)
 
     def _id_to_dn_string(self, object_id):
-        return u'%s=%s,%s' % (self.id_attr,
+        return '%s=%s,%s' % (self.id_attr,
                               ldap.dn.escape_dn_chars(
                                   str(object_id)),
                               self.tree_dn)
@@ -1311,7 +1311,7 @@ class BaseLdap(object):
         with self.get_connection() as conn:
             search_result = conn.search_s(
                 self.tree_dn, self.LDAP_SCOPE,
-                u'(&(%(id_attr)s=%(id)s)(objectclass=%(objclass)s))' %
+                '(&(%(id_attr)s=%(id)s)(objectclass=%(objclass)s))' %
                 {'id_attr': self.id_attr,
                  'id': ldap.filter.escape_filter_chars(
                      str(object_id)),
@@ -1479,14 +1479,14 @@ class BaseLdap(object):
         # attribute
         result = []
         # consider attr = "cn" and
-        # ldap_result = [(u'cn=fake1,o=ex_domain', {'uid': ['fake_id1']}),
-        #                (u'cn=fake2,o=ex_domain', {'uid': ['fake_id2'],
+        # ldap_result = [('cn=fake1,o=ex_domain', {'uid': ['fake_id1']}),
+        #                ('cn=fake2,o=ex_domain', {'uid': ['fake_id2'],
         #                'cn': ['     ']}),
-        #                (u'cn=fake3,o=ex_domain', {'uid': ['fake_id3'],
+        #                ('cn=fake3,o=ex_domain', {'uid': ['fake_id3'],
         #                'cn': ['']}),
-        #                (u'cn=fake4,o=ex_domain', {'uid': ['fake_id4'],
+        #                ('cn=fake4,o=ex_domain', {'uid': ['fake_id4'],
         #                'cn': []}),
-        #                (u'cn=fake5,o=ex_domain', {'uid': ['fake_id5'],
+        #                ('cn=fake5,o=ex_domain', {'uid': ['fake_id5'],
         #                'cn': ["name"]})]
         for obj in ldap_result:
             # ignore ldap object(user/group entry) which has no attr set
@@ -1503,9 +1503,9 @@ class BaseLdap(object):
         return result
 
     def _ldap_get(self, object_id, ldap_filter=None):
-        query = (u'(&(%(id_attr)s=%(id)s)'
-                 u'%(filter)s'
-                 u'(objectClass=%(object_class)s))'
+        query = ('(&(%(id_attr)s=%(id)s)'
+                 '%(filter)s'
+                 '(objectClass=%(object_class)s))'
                  % {'id_attr': self.id_attr,
                     'id': ldap.filter.escape_filter_chars(
                         str(object_id)),
@@ -1551,7 +1551,7 @@ class BaseLdap(object):
 
     @driver_hints.truncated
     def _ldap_get_all(self, hints, ldap_filter=None):
-        query = u'(&%s(objectClass=%s)(%s=*))' % (
+        query = '(&%s(objectClass=%s)(%s=*))' % (
             ldap_filter or self.ldap_filter or '',
             self.object_class,
             self.id_attr)
@@ -1586,14 +1586,14 @@ class BaseLdap(object):
 
     def _ldap_get_list(self, search_base, scope, query_params=None,
                        attrlist=None):
-        query = u'(objectClass=%s)' % self.object_class
+        query = '(objectClass=%s)' % self.object_class
         if query_params:
 
             def calc_filter(attrname, value):
                 val_esc = ldap.filter.escape_filter_chars(value)
                 return '(%s=%s)' % (attrname, val_esc)
 
-            query = (u'(&%s%s)' %
+            query = ('(&%s%s)' %
                      (query, ''.join([calc_filter(k, v) for k, v in
                                       query_params.items()])))
         with self.get_connection() as conn:
@@ -1607,7 +1607,7 @@ class BaseLdap(object):
             return self._ldap_res_to_model(res)
 
     def get_by_name(self, name, ldap_filter=None):
-        query = (u'(%s=%s)' % (self.attribute_mapping['name'],
+        query = ('(%s=%s)' % (self.attribute_mapping['name'],
                                ldap.filter.escape_filter_chars(
                                    str(name))))
         res = self.get_all(query)
@@ -1745,16 +1745,16 @@ class BaseLdap(object):
             # booleans (this is related to bug #1411478).
 
             if filter_['comparator'] == 'equals':
-                query_term = (u'(%(attr)s=%(val)s)'
+                query_term = ('(%(attr)s=%(val)s)'
                               % {'attr': ldap_attr, 'val': val_esc})
             elif filter_['comparator'] == 'contains':
-                query_term = (u'(%(attr)s=*%(val)s*)'
+                query_term = ('(%(attr)s=*%(val)s*)'
                               % {'attr': ldap_attr, 'val': val_esc})
             elif filter_['comparator'] == 'startswith':
-                query_term = (u'(%(attr)s=%(val)s*)'
+                query_term = ('(%(attr)s=%(val)s*)'
                               % {'attr': ldap_attr, 'val': val_esc})
             elif filter_['comparator'] == 'endswith':
-                query_term = (u'(%(attr)s=*%(val)s)'
+                query_term = ('(%(attr)s=*%(val)s)'
                               % {'attr': ldap_attr, 'val': val_esc})
             else:
                 # It's a filter we don't understand, so let the caller
@@ -1783,7 +1783,7 @@ class BaseLdap(object):
                 satisfied_filters.append(filter_)
 
         if filter_list:
-            query = u'(&%s%s)' % (query, ''.join(filter_list))
+            query = '(&%s%s)' % (query, ''.join(filter_list))
 
         # Remove satisfied filters, then the caller will know remaining filters
         for filter_ in satisfied_filters:
