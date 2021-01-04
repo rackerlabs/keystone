@@ -553,9 +553,9 @@ class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
             self.domains[domain] = create_domain(
                 {'id': uuid.uuid4().hex, 'name': domain})
         self.default_domain = unit.new_domain_ref(
-            description=u'The default domain',
+            description='The default domain',
             id=CONF.identity.default_domain_id,
-            name=u'Default')
+            name='Default')
         self.domains['domain_default'] = create_domain(self.default_domain)
 
     def test_config_upload(self):

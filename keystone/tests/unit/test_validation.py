@@ -200,7 +200,7 @@ class EntityValidationTestCase(unit.BaseTestCase):
 
     def test_create_entity_with_unicode_name_validates(self):
         """Test that we successfully validate a unicode string."""
-        request_to_validate = {'name': u'αβγδ'}
+        request_to_validate = {'name': 'αβγδ'}
         self.create_schema_validator.validate(request_to_validate)
 
     def test_create_entity_with_invalid_enabled_format_raises_exception(self):

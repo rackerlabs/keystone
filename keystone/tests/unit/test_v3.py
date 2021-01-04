@@ -213,9 +213,9 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             PROVIDERS.resource_api.create_domain(resource_base.NULL_DOMAIN_ID,
                                                  root_domain)
             domain = unit.new_domain_ref(
-                description=(u'The default domain'),
+                description=('The default domain'),
                 id=DEFAULT_DOMAIN_ID,
-                name=u'Default')
+                name='Default')
             PROVIDERS.resource_api.create_domain(DEFAULT_DOMAIN_ID, domain)
 
     def load_sample_data(self, create_region_and_endpoints=True):

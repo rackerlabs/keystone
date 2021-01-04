@@ -183,7 +183,7 @@ class ResourceTests(object):
                           uuid.uuid4().hex)
 
     def test_create_update_delete_unicode_project(self):
-        unicode_project_name = u'name \u540d\u5b57'
+        unicode_project_name = 'name \u540d\u5b57'
         project = unit.new_project_ref(
             name=unicode_project_name,
             domain_id=CONF.identity.default_domain_id)
