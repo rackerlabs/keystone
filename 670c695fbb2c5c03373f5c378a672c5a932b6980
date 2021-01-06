@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7298874e_cb978f43",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1023,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-01-06T14:17:19Z",
+      "side": 1,
+      "message": "nit: I think the original name `l` was meant to represent an iterable (like a list).\n\nThe name `value` is less descriptive in the sense of what we expect, which is an iterable.",
+      "range": {
+        "startLine": 1023,
+        "startChar": 29,
+        "endLine": 1023,
+        "endChar": 34
+      },
+      "revId": "670c695fbb2c5c03373f5c378a672c5a932b6980",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
