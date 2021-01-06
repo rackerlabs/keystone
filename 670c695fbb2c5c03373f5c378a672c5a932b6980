@@ -22,6 +22,30 @@
       "revId": "670c695fbb2c5c03373f5c378a672c5a932b6980",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "800e01c5_9c979ef6",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1023,
+      "author": {
+        "id": 18816
+      },
+      "writtenOn": "2021-01-06T14:46:54Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7298874e_cb978f43",
+      "range": {
+        "startLine": 1023,
+        "startChar": 29,
+        "endLine": 1023,
+        "endChar": 34
+      },
+      "revId": "670c695fbb2c5c03373f5c378a672c5a932b6980",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
