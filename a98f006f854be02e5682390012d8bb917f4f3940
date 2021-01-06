@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ab0eccf_56807b1b",
+        "filename": "keystone/common/policies/user.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-01-06T14:12:01Z",
+      "side": 0,
+      "message": "Operators who are overriding policies won\u0027t know we\u0027ve removed these upstream unless they review the code or read a release note if we include one.\n\nWe should deprecate these and allow a release or two for operators to adjust their policies if they\u0027re overriding them.\n\nhttps://docs.openstack.org/oslo.policy/latest/reference/api/oslo_policy.html#oslo_policy.policy.DeprecatedRule\n\nYou should be able to do something like:\n\n  policy.DocumentedRuleDefault(\n      name\u003dbase.IDENTITY % \u0027list_projects_for_user\u0027,\n      check_str\u003d\u0027\u0027,\n      description\u003d(\u0027List all projects a user has access to via role \u0027\n                   \u0027assignments.\u0027),\n      operations\u003d[{\u0027path\u0027: \u0027 /v3/auth/projects\u0027,\n                   \u0027method\u0027: \u0027GET\u0027}],\n      deprecated_for_removal\u003dTrue\n  )",
+      "revId": "a98f006f854be02e5682390012d8bb917f4f3940",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
