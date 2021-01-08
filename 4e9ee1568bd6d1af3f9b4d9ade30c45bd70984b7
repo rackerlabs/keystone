@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dbd66afb_ed75e84e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-01-08T17:31:24Z",
+      "side": 1,
+      "message": "Based on the branch topic, this appears to be fixing a bug.\n\nCan you add some more context and a link to the bug report so that it\u0027s tracked with the fix. Also, if there is a way to test this, we should include it here, too.",
+      "revId": "4e9ee1568bd6d1af3f9b4d9ade30c45bd70984b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
