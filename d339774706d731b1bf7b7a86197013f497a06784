@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "476cba48_88022f79",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-01-08T17:36:55Z",
+      "side": 1,
+      "message": "I dug around a little bit but I couldn\u0027t find a link to the official deprecation of UPPER_CONSTRAINTS_FILE. Do you know if that exists somewhere? If so, I think we should add it here for context.",
+      "revId": "d339774706d731b1bf7b7a86197013f497a06784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
