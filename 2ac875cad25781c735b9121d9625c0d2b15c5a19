@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "98550d36_1e3f115f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-01-08T17:16:16Z",
+      "side": 1,
+      "message": "This may be obvious to some people who are familiar with the status of python3 support and testing, but it\u0027s nice to include some additional details in the commit message.\n\nFor example, we\u0027re removing explicit unicode because it\u0027s the default in python3.",
+      "revId": "2ac875cad25781c735b9121d9625c0d2b15c5a19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
