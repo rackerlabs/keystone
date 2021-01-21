@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5d61eec2_3e14d614",
+        "filename": "doc/source/admin/service-api-protection.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2021-01-21T19:11:12Z",
+      "side": 1,
+      "message": "+1. we can keep it something like \u0027public\u0027 or so. That can be used for all non-sensitive info and for audit or restricting some end user based on billing or so etc",
+      "range": {
+        "startLine": 73,
+        "startChar": 1,
+        "endLine": 75,
+        "endChar": 14
+      },
+      "revId": "59dc27358ef34d8aff0e9777cb7cf4eefb60a040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
