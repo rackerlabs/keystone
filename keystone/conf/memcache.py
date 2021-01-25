@@ -62,6 +62,14 @@ Number of seconds that an operation will wait to get a memcache client
 connection. This is used by the key value store system.
 """))
 
+pool_flush_on_reconnect = cfg.BoolOpt(
+    'memcache_pool_flush_on_reconnect',
+    default=True,
+    help=utils.fmt("""
+Global toggle if memcache will be flushed on reconnect.
+(oslo_cache.memcache_pool backend only).
+"""))
+
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
@@ -70,6 +78,7 @@ ALL_OPTS = [
     pool_maxsize,
     pool_unused_timeout,
     pool_connection_get_timeout,
+    pool_flush_on_reconnect,
 ]
 
 
