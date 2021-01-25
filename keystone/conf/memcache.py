@@ -70,6 +70,7 @@ ALL_OPTS = [
     pool_maxsize,
     pool_unused_timeout,
     pool_connection_get_timeout,
+    pool_flush_on_reconnect,
 ]
 
 

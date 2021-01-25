@@ -14,6 +14,8 @@
 
 """Main entry point into the Policy service."""
 
+from oslo_policy import policy
+
 from keystone.common import manager
 import keystone.conf
 from keystone import exception
@@ -21,6 +23,8 @@ from keystone import notifications
 
 
 CONF = keystone.conf.CONF
+DEFAULT_POLICY_FILENAME = 'policy.yaml'
+policy_opts.set_defaults(keystone.conf.CONF, DEFAULT_POLICY_FILENAME)
 
 
 class Manager(manager.Manager):
