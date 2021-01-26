@@ -1,0 +1,10 @@
+Workflow+1: Lance Bragstad <lbragstad@redhat.com>
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Code-Review+2: Lance Bragstad <lbragstad@redhat.com>
+Code-Review+1: Kristi Nikolla <knikolla@bu.edu>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 26 Jan 2021 17:00:50 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/760613
+Project: openstack/keystone
+Branch: refs/heads/stable/victoria
