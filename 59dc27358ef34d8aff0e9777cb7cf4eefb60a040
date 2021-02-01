@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "6454ee65_fa5e579e",
+        "filename": "doc/source/admin/service-api-protection.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-02-01T19:24:26Z",
+      "side": 1,
+      "message": "Good suggestion. I can clarify that in the next patch set, depending on how we want to handle the auditor clarification below.",
+      "parentUuid": "a6359b7d_e8cbc920",
+      "range": {
+        "startLine": 24,
+        "startChar": 35,
+        "endLine": 24,
+        "endChar": 41
+      },
+      "revId": "59dc27358ef34d8aff0e9777cb7cf4eefb60a040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5d61eec2_3e14d614",
         "filename": "doc/source/admin/service-api-protection.rst",
         "patchSetId": 1
@@ -88,6 +112,24 @@
     },
     {
       "key": {
+        "uuid": "1ebe0a04_e77c700c",
+        "filename": "doc/source/admin/service-api-protection.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-02-01T19:24:26Z",
+      "side": 1,
+      "message": "The --system all filter removes project or domain role assignments from the response. The following will give you all role assignments in the deployment:\n\n  $ openstack role assignment list --names",
+      "parentUuid": "e29aa103_0a5bf853",
+      "revId": "59dc27358ef34d8aff0e9777cb7cf4eefb60a040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "de808411_3d8383f6",
         "filename": "doc/source/admin/service-api-protection.rst",
         "patchSetId": 1
@@ -99,6 +141,30 @@
       "writtenOn": "2021-02-01T15:26:58Z",
       "side": 1,
       "message": "want to make sure, we\u0027re good with \u0027auditor\u0027 here?",
+      "range": {
+        "startLine": 241,
+        "startChar": 15,
+        "endLine": 241,
+        "endChar": 23
+      },
+      "revId": "59dc27358ef34d8aff0e9777cb7cf4eefb60a040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3692877a_6c698f7b",
+        "filename": "doc/source/admin/service-api-protection.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-02-01T19:24:26Z",
+      "side": 1,
+      "message": "I thought about keeping it here just for one auditing example, but maybe it\u0027s too conflicting with the statement at the beginning of the document.",
+      "parentUuid": "de808411_3d8383f6",
       "range": {
         "startLine": 241,
         "startChar": 15,
