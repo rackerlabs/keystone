@@ -164,6 +164,14 @@
         USE_PYTHON3: True
       zuul_copy_output:
         /etc/shibboleth: logs
+        /var/log/shibboleth: logs
+
+- job:
+    name: keystone-dsvm-py35-functional-federation-ubuntu-xenial-k2k
+    parent: keystone-dsvm-py35-functional-federation-ubuntu-xenial
+    vars:
+      devstack_localrc:
+        IDP_ID: k2k
 
 # Experimental
 # Transitional rename
@@ -196,11 +204,10 @@
               - ^etc/.*$
               - ^keystone/tests/unit/.*$
               - ^releasenotes/.*$
-        - keystone-dsvm-py3-functional-federation-opensuse15:
+        - keystone-dsvm-py35-functional-federation-ubuntu-xenial:
             voting: false
             irrelevant-files: *irrelevant-files
-        - keystone-dsvm-py3-functional-federation-opensuse15-k2k:
-            voting: false
+        - keystone-dsvm-py35-functional-federation-ubuntu-xenial-k2k:
             irrelevant-files: *irrelevant-files
         - keystoneclient-devstack-functional:
             voting: false
@@ -227,8 +234,7 @@
       jobs:
         - keystone-dsvm-py3-functional:
             irrelevant-files: *irrelevant-files
-        - keystone-dsvm-py3-functional-federation-opensuse15-k2k:
-            voting: false
+        - keystone-dsvm-py35-functional-federation-ubuntu-xenial-k2k:
             irrelevant-files: *irrelevant-files
         - tempest-full-py3:
             irrelevant-files: *tempest-irrelevant-files
