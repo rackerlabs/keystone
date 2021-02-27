@@ -1,0 +1,8 @@
+Code-Review+2: Wander Way <wanderwayout@gmail.com>
+Workflow+1: Wander Way <wanderwayout@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Sat, 27 Feb 2021 05:23:24 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/774248
+Project: openstack/keystone
+Branch: refs/heads/master
