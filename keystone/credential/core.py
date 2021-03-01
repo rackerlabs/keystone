@@ -36,6 +36,7 @@ class Manager(manager.Manager):
     See :mod:`keystone.common.manager.Manager` for more details on how this
     dynamically calls the backend.
 
+    Foobar.
     """
 
     driver_namespace = 'keystone.credential'
