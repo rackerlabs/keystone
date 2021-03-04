@@ -51,7 +51,7 @@ domain_policies = [
         name=base.IDENTITY % 'get_domain',
         # NOTE(lbragstad): This policy allows system, domain, and
         # project-scoped tokens.
-        check_str=SYSTEM_USER_OR_DOMAIN_USER_OR_PROJECT_USER,
+        check_str="",
         scope_types=['system', 'domain', 'project'],
         description='Show domain details.',
         operations=[{'path': '/v3/domains/{domain_id}',
