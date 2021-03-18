@@ -1,0 +1,9 @@
+Workflow+1: Colleen Murphy <colleen@gazlene.net>
+Code-Review+1: Kristi Nikolla <knikolla@bu.edu>
+Code-Review+2: Colleen Murphy <colleen@gazlene.net>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 18 Mar 2021 07:03:24 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/760615
+Project: openstack/keystone
+Branch: refs/heads/stable/train
