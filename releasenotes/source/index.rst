@@ -19,6 +19,7 @@
    :maxdepth: 1
 
    unreleased
+   wallaby
    ussuri
    train
    stein
