@@ -1,0 +1,12 @@
+Code-Review+1: Sean McGinnis <sean.mcginnis@gmail.com>
+Code-Review+2: Kristi Nikolla <knikolla@bu.edu>
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Code-Review+2: Lance Bragstad <lbragstad@redhat.com>
+Code-Review+1: mike_mp@zzzcomputing.com <mike_mp@zzzcomputing.com>
+Workflow+1: Gage Hugo <gagehugo@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 31 Mar 2021 08:31:53 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/738677
+Project: openstack/keystone
+Branch: refs/heads/master
