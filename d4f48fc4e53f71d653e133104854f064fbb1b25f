@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0cda94b5_07637543",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 895,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2021-03-31T12:11:44Z",
+      "side": 1,
+      "message": "This is failing on python3 because the module path is different between python2 and python3.\n\nWe either need to supply different expected messages based on the python version, or simplify the expected message.",
+      "revId": "d4f48fc4e53f71d653e133104854f064fbb1b25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
