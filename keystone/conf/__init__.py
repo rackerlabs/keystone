@@ -39,6 +39,7 @@ from keystone.conf import jwt_tokens
 from keystone.conf import jwt_token
 from keystone.conf import ldap
 from keystone.conf import memcache
+from keystone.conf import mapped
 from keystone.conf import oauth1
 from keystone.conf import policy
 from keystone.conf import receipt
@@ -78,6 +79,7 @@ conf_modules = [
     jwt_token,
     ldap,
     memcache,
+    mapped,
     oauth1,
     policy,
     receipt,

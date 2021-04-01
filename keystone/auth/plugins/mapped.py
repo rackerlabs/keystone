@@ -20,16 +20,19 @@ from urllib import parse
 
 from keystone.auth import plugins as auth_plugins
 from keystone.auth.plugins import base
+from keystone import assignment
 from keystone.common import provider_api
 from keystone import exception
 from keystone.federation import constants as federation_constants
 from keystone.federation import utils
 from keystone.i18n import _
 from keystone import notifications
+import keystone.conf
 
 LOG = log.getLogger(__name__)
 
 METHOD_NAME = 'mapped'
+CONF = keystone.conf.CONF.mapped
 PROVIDERS = provider_api.ProviderAPIs
 
 
@@ -145,36 +148,97 @@ def handle_unscoped_token(auth_payload, resource_api, federation_api,
                                      existing_roles, user, assignment_api,
                                      resource_api):
         for shadow_project in shadow_projects:
-            try:
-                # Check and see if the project already exists and if it
-                # does not, try to create it.
-                project = resource_api.get_project_by_name(
-                    shadow_project['name'], idp_domain_id
-                )
-            except exception.ProjectNotFound:
-                LOG.info(
-                    'Project %(project_name)s does not exist. It will be '
-                    'automatically provisioning for user %(user_id)s.',
-                    {'project_name': shadow_project['name'],
-                     'user_id': user['id']}
-                )
-                project_ref = {
-                    'id': uuid.uuid4().hex,
-                    'name': shadow_project['name'],
-                    'domain_id': idp_domain_id
-                }
-                project = resource_api.create_project(
-                    project_ref['id'],
-                    project_ref
-                )
+            project = None
 
-            shadow_roles = shadow_project['roles']
-            for shadow_role in shadow_roles:
-                assignment_api.create_grant(
-                    existing_roles[shadow_role['name']]['id'],
-                    user_id=user['id'],
-                    project_id=project['id']
-                )
+            if 'id' in shadow_project:
+                # id is given, first try to find existing project by id
+                try:
+                    project = resource_api.get_project(shadow_project['id'])
+
+                except exception.ProjectNotFound as e:
+                    if CONF.auto_create_project_by_id:
+                        LOG.info(
+                            'Project ID %(project_id)s does not exist. It will be '
+                            'automatically provisioning for user %(user_id)s.',
+                            {'project_id': shadow_project['id'],
+                             'user_id': user['id']}
+                        )
+
+                        new_project_name = shadow_project['id']
+                        if 'name' in shadow_project:
+                            new_project_name = shadow_project['name']
+
+                        project_ref = {
+                            'id': shadow_project['id'],
+                            'name': new_project_name,
+                            'domain_id': idp_domain_id
+                        }
+                        project = resource_api.create_project(
+                            project_ref['id'],
+                            project_ref
+                        )
+
+                    else:
+                        if CONF.ignore_uncreated_projects:
+                            LOG.warn(
+                                'Project id %(project_id)s for user %(user_id)s cannot be found '
+                                'and wont be created automaticly.',
+                                {'project_id': shadow_project['id'],
+                                 'user_id': user['id']}
+                            )                            
+                        else:
+                            raise e
+
+            elif 'name' in shadow_project:
+                # name is given, check if exists and maybe create new
+                try:
+                    project = resource_api.get_project_by_name(
+                        shadow_project['name'], idp_domain_id
+                    )
+
+                except exception.ProjectNotFound as e:
+                    if CONF.auto_create_project_by_name:
+                        LOG.info(
+                            'Project name %(project_name)s does not exist. It will be '
+                            'automatically provisioning for user %(user_id)s.',
+                            {'project_name': shadow_project['name'],
+                             'user_id': user['id']}
+                        )
+
+                        project_ref = {
+                            'id': uuid.uuid4().hex,
+                            'name': shadow_project['name'],
+                            'domain_id': idp_domain_id
+                        }
+                        project = resource_api.create_project(
+                            project_ref['id'],
+                            project_ref
+                        )
+
+                    else:
+                        if CONF.ignore_uncreated_projects:
+                            LOG.warn(
+                                'Project name %(project_name)s for user %(user_id)s cannot be found '
+                                'and wont be created automaticly.',
+                                {'project_name': shadow_project['name'],
+                                 'user_id': user['id']}
+                            )                            
+                        else:
+                            raise e
+
+            if project:
+                shadow_roles = shadow_project['roles']
+                for shadow_role in shadow_roles:
+                    assignment_api.create_grant(
+                        existing_roles[shadow_role['name']]['id'],
+                        user_id=user['id'],
+                        project_id=project['id']
+                    )
+                    LOG.info('Add assignment for project %(project_id)s user %(user_id)s role %(role_name)s.', {
+                        'project_id': str(project['id']),
+                        'user_id': str(user['id']),
+                        'role_name': str(shadow_role['name'])
+                    })
 
     def is_ephemeral_user(mapped_properties):
         return mapped_properties['user']['type'] == utils.UserType.EPHEMERAL
@@ -245,6 +309,11 @@ def handle_unscoped_token(auth_payload, resource_api, federation_api,
                 display_name,
                 email,
                 group_ids=mapped_properties['group_ids'])
+
+            # NOTE(pregusia): all assignments for user should be cleared
+            # because, if some project's IDs become missing from mapping
+            # that means that user should not have access to them
+            PROVIDERS.assignment_api.delete_user_assignments(user['id'])
 
             if 'projects' in mapped_properties:
                 idp_domain_id = federation_api.get_idp(

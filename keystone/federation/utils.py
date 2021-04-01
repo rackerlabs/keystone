@@ -94,13 +94,17 @@ MAPPING_SCHEMA = {
                                     "type": "array",
                                     "items": {
                                         "type": "object",
-                                        "required": ["name", "roles"],
+                                        "required": ["roles"],
                                         "additionalProperties": False,
                                         "properties": {
                                             "name": {"type": "string"},
+                                            "id": {"type": "string"},
                                             "roles": ROLE_PROPERTIES
                                         }
                                     }
+                                },
+                                "projects_spec": {
+                                    "type": "string"
                                 },
                                 "group": {
                                     "type": "object",
@@ -655,6 +659,24 @@ class RuleProcessor(object):
             if user_type is None:
                 user['type'] = UserType.EPHEMERAL
 
+        def parse_projects_spec(spec, projects):
+            for e in spec.split(','):
+                e = e.strip()
+                if e != '':
+                    arr = e.split(':')
+                    if len(arr) > 1:
+                        project_id = arr[0]
+                        roles = [ ]
+                        for rr in arr[1:]:
+                            roles.append({
+                                'name': rr
+                            })
+
+                        projects.append({
+                            'id': project_id,
+                            'roles': roles
+                        })
+
         # initialize the group_ids as a set to eliminate duplicates
         user = {}
         group_ids = set()
@@ -704,8 +726,11 @@ class RuleProcessor(object):
                         ast.literal_eval(identity_value['group_ids']))
                 except (ValueError, SyntaxError):
                     group_ids.update([identity_value['group_ids']])
+
             if 'projects' in identity_value:
                 projects = identity_value['projects']
+            if 'projects_spec' in identity_value:
+                parse_projects_spec(identity_value['projects_spec'], projects)
 
         normalize_user(user)
 
