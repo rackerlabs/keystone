@@ -54,6 +54,16 @@ ROLE_PROPERTIES = {
     }
 }
 
+PROJECTS_PROPERTIES = {
+    "type": "array",
+    "items": {
+        "type": "object",
+        "oneOf": [
+            {"$ref": "#/definitions/project_by_id"},
+            {"$ref": "#/definitions/project_by_name"}
+        ]
+    }
+}
 
 MAPPING_SCHEMA = {
     "type": "object",
@@ -90,17 +100,9 @@ MAPPING_SCHEMA = {
                                     },
                                     "additionalProperties": False
                                 },
-                                "projects": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "required": ["name", "roles"],
-                                        "additionalProperties": False,
-                                        "properties": {
-                                            "name": {"type": "string"},
-                                            "roles": ROLE_PROPERTIES
-                                        }
-                                    }
+                                "projects": PROJECTS_PROPERTIES,
+                                "projects_spec": {
+                                    "type": "string"
                                 },
                                 "group": {
                                     "type": "object",
@@ -236,6 +238,26 @@ MAPPING_SCHEMA = {
             },
             "additionalProperties": False,
             "required": ["name", "domain"]
+        },
+        "project_by_name": {
+            "type": "object",
+            "required": ["roles", "name"],
+            "additionalProperties": False,
+            "properties": {
+                "name": {"type": "string"},
+                "id": {"type": "string"},
+                "roles": ROLE_PROPERTIES
+            }
+        },
+        "project_by_id": {
+            "type": "object",
+            "required": ["roles", "id"],
+            "additionalProperties": False,
+            "properties": {
+                "name": {"type": "string"},
+                "id": {"type": "string"},
+                "roles": ROLE_PROPERTIES
+            }
         }
     }
 }
@@ -704,8 +726,11 @@ class RuleProcessor(object):
                         ast.literal_eval(identity_value['group_ids']))
                 except (ValueError, SyntaxError):
                     group_ids.update([identity_value['group_ids']])
+
             if 'projects' in identity_value:
                 projects = identity_value['projects']
+            if 'projects_spec' in identity_value:
+                parse_projects_spec(identity_value['projects_spec'], projects)
 
         normalize_user(user)
 
@@ -922,6 +947,25 @@ class RuleProcessor(object):
             raise exception.UnexpectedError(
                 _('Unexpected evaluation type "%(eval_type)s"') % {
                     'eval_type': eval_type})
+
+
+def parse_projects_spec(spec, projects):
+    for e in spec.split(','):
+        e = e.strip()
+        if e != '':
+            arr = e.split(':')
+            if len(arr) > 1:
+                project_id = arr[0]
+                roles = []
+                for rr in arr[1:]:
+                    roles.append({
+                        'name': rr
+                    })
+
+                projects.append({
+                    'id': project_id,
+                    'roles': roles
+                })
 
 
 def assert_enabled_identity_provider(federation_api, idp_id):
