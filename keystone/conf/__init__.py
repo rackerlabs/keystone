@@ -36,6 +36,7 @@ from keystone.conf import fernet_receipts
 from keystone.conf import fernet_tokens
 from keystone.conf import identity
 from keystone.conf import identity_mapping
+from keystone.conf import jwt_token
 from keystone.conf import jwt_tokens
 from keystone.conf import ldap
 from keystone.conf import memcache
@@ -74,6 +75,7 @@ conf_modules = [
     fernet_tokens,
     identity,
     identity_mapping,
+    jwt_token,
     jwt_tokens,
     ldap,
     memcache,

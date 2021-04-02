@@ -107,7 +107,8 @@ def handle_scoped_token(token, federation_api, identity_api):
 
 
 def handle_unscoped_token(auth_payload, resource_api, federation_api,
-                          identity_api, assignment_api, role_api):
+                          identity_api, assignment_api, role_api,
+                          custom_assertion=None):
 
     def validate_shadow_mapping(shadow_projects, existing_roles, idp_domain_id,
                                 idp_id):
@@ -197,7 +198,8 @@ def handle_unscoped_token(auth_payload, resource_api, federation_api,
 
         return resp
 
-    assertion = extract_assertion_data()
+    assertion = custom_assertion or extract_assertion_data()
+
     try:
         identity_provider = auth_payload['identity_provider']
     except KeyError:
