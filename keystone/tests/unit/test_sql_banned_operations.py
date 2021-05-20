@@ -135,7 +135,12 @@ class KeystoneMigrationsCheckers(test_migrations.WalkVersionsMixin):
 
         # Migration 106 simply allows the password column to be nullable.
         # This change would not impact a rolling upgrade.
-        106
+        106,
+
+        # Migration 79 changes a varchar column length, doesn't
+        # convert the data within that column/table and doesn't rebuild
+        # indexes.
+        79
     ]
 
     @property
