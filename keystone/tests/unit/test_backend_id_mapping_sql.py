@@ -33,7 +33,7 @@ class SqlIDMappingTable(test_backend_sql.SqlModels):
     def test_id_mapping(self):
         cols = (('public_id', sql.String, 64),
                 ('domain_id', sql.String, 64),
-                ('local_id', sql.String, 64),
+                ('local_id', sql.String, 255),
                 ('entity_type', sql.Enum, None))
         self.assertExpectedSchema('id_mapping', cols)
 
