@@ -49,7 +49,7 @@
         TEMPEST_PLUGINS: '/opt/stack/keystone-tempest-plugin'
       devstack_services:
         keystone-saml2-federation: true
-        tls-proxy: false
+        tls-proxy: true
       devstack_plugins:
         keystone: https://opendev.org/openstack/keystone
       zuul_copy_output:
@@ -84,7 +84,7 @@
         USE_PYTHON3: True
       devstack_services:
         keystone-saml2-federation: true
-        tls-proxy: false
+        tls-proxy: true
       devstack_plugins:
         keystone: https://opendev.org/openstack/keystone
       zuul_copy_output:
@@ -155,7 +155,7 @@
         TEMPEST_PLUGINS: '/opt/stack/keystone-tempest-plugin'
       devstack_services:
         keystone-saml2-federation: true
-        tls-proxy: false
+        tls-proxy: true
       devstack_plugins:
         keystone: https://opendev.org/openstack/keystone
       zuul_copy_output:
@@ -171,7 +171,7 @@
         TEMPEST_PLUGINS: '/opt/stack/keystone-tempest-plugin'
       devstack_services:
         keystone-saml2-federation: true
-        tls-proxy: false
+        tls-proxy: true
       devstack_plugins:
         keystone: https://opendev.org/openstack/keystone
       zuul_copy_output:
