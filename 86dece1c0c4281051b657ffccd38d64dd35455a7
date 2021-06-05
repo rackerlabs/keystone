@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0cf17787_4505564a",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 30491
+      },
+      "writtenOn": "2021-06-05T07:13:38Z",
+      "side": 1,
+      "message": "could use an explanation",
+      "range": {
+        "startLine": 122,
+        "startChar": 4,
+        "endLine": 122,
+        "endChar": 20
+      },
+      "revId": "86dece1c0c4281051b657ffccd38d64dd35455a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4223d162_85f1482d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 30491
+      },
+      "writtenOn": "2021-06-05T07:13:38Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 148,
+        "startChar": 4,
+        "endLine": 148,
+        "endChar": 20
+      },
+      "revId": "86dece1c0c4281051b657ffccd38d64dd35455a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
