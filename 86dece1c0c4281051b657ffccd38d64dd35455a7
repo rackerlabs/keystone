@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e678b651_14588373",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 16688
+      },
+      "writtenOn": "2021-06-07T13:04:28Z",
+      "side": 1,
+      "message": "Right, I\u0027ll push a new patch",
+      "parentUuid": "0cf17787_4505564a",
+      "range": {
+        "startLine": 122,
+        "startChar": 4,
+        "endLine": 122,
+        "endChar": 20
+      },
+      "revId": "86dece1c0c4281051b657ffccd38d64dd35455a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4223d162_85f1482d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 2
