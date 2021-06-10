@@ -262,7 +262,7 @@ auth section would look like this:
 
    [keystone_authtoken]
    auth_url = https://keystone.server/identity/v3
-   auth_type = v3applicationcredential
+   auth_type = application_credential
    application_credential_id = 6cb5fa6a13184e6fab65ba2108adf50c
    application_credential_secret= glance_secret
 
@@ -273,7 +273,7 @@ ID of its owner. For example:
 
    [keystone_authtoken]
    auth_url = https://keystone.server/identity/v3
-   auth_type = v3applicationcredential
+   auth_type = application_credential
    username = glance
    user_domain_name = Default
    application_credential_name = glance_cred
