@@ -1,0 +1,11 @@
+Code-Review+1: Radosław Piliszek <radoslaw.piliszek@gmail.com>
+Code-Review+2: Gage Hugo <gagehugo@gmail.com>
+Code-Review+1: Matthew Thode <mthode@mthode.org>
+Code-Review+2: Kristi Nikolla <knikolla@bu.edu>
+Workflow+1: Kristi Nikolla <knikolla@bu.edu>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 10 Jun 2021 01:23:35 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/keystone/+/794862
+Project: openstack/keystone
+Branch: refs/heads/master
