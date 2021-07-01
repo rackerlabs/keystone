@@ -42,6 +42,14 @@ class FernetUtils(object):
         self.max_active_keys = max_active_keys
         self.config_group = config_group
 
+    def is_world_readable(self):
+        stat_info = os.stat(self.key_repository)
+        if(stat_info.st_mode & stat.S_IROTH or
+           stat_info.st_mode & stat.S_IXOTH):
+            LOG.warning(
+                'key_repository is world readable: %s',
+                self.key_repository)
+
     def validate_key_repository(self, requires_write=False):
         """Validate permissions on the key repository directory."""
         # NOTE(lbragstad): We shouldn't need to check if the directory was
@@ -61,14 +69,6 @@ class FernetUtils(object):
                 'access it: %(key_repo)s',
                 {'key_repo': self.key_repository,
                  'config_group': self.config_group})
-        else:
-            # ensure the key repository isn't world-readable
-            stat_info = os.stat(self.key_repository)
-            if(stat_info.st_mode & stat.S_IROTH or
-               stat_info.st_mode & stat.S_IXOTH):
-                LOG.warning(
-                    'key_repository is world readable: %s',
-                    self.key_repository)
 
         return is_valid
 
