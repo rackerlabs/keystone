@@ -12,7 +12,6 @@
 
 import base64
 import os
-import stat
 
 from cryptography import fernet
 from oslo_log import log
@@ -61,14 +60,6 @@ class FernetUtils(object):
                 'access it: %(key_repo)s',
                 {'key_repo': self.key_repository,
                  'config_group': self.config_group})
-        else:
-            # ensure the key repository isn't world-readable
-            stat_info = os.stat(self.key_repository)
-            if(stat_info.st_mode & stat.S_IROTH or
-               stat_info.st_mode & stat.S_IXOTH):
-                LOG.warning(
-                    'key_repository is world readable: %s',
-                    self.key_repository)
 
         return is_valid
 
