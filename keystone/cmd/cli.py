@@ -410,6 +410,7 @@ class BasePermissionsSetup(BaseApp):
 
         futils.create_key_directory(keystone_user_id, keystone_group_id)
         if futils.validate_key_repository(requires_write=True):
+            futils.is_world_readable()
             futils.initialize_key_repository(
                 keystone_user_id, keystone_group_id)
 

@@ -32,7 +32,8 @@ def symptom_usability_of_Fernet_key_repository():
     )
     return (
         'fernet' in CONF.token.provider
-        and not fernet_utils.validate_key_repository())
+        and not fernet_utils.validate_key_repository()
+        and not fernet_utils.is_world_readable())
 
 
 def symptom_keys_in_Fernet_key_repository():
